@@ -1,0 +1,33 @@
+h1. faker
+
+h2. What
+
+Faker is used to easily generate fake data: names, addresses, phone numbers, etc.
+
+h2. Installing
+
+<pre syntax="ruby">sudo gem install faker</pre>
+
+h2. Usage
+
+Faker::Name.name #=> "Bob Hope"
+
+h2. Forum
+
+"http://groups.google.com/group/ruby-faker":http://groups.google.com/group/ruby-faker
+
+
+h2. How to submit patches
+
+Read the "8 steps for fixing other people's code":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/ and for section "8b: Submit patch to Google Groups":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups, use the Google Group above.
+
+The trunk repository is <code>svn://rubyforge.org/var/svn/faker/trunk</code> for anonymous access.
+
+h2. License
+
+This code is free to use under the terms of the MIT license. 
+
+h2. Contact
+
+Comments are welcome. Send an email to Benjamin Curtis via the "forum":http://groups.google.com/group/ruby-faker
+
