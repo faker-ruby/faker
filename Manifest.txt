@@ -5,9 +5,13 @@ README.txt
 Rakefile
 config/hoe.rb
 config/requirements.rb
+lib/extensions/array.rb
 lib/faker.rb
+lib/faker/address.rb
+lib/faker/company.rb
+lib/faker/name.rb
+lib/faker/phone_number.rb
 lib/faker/version.rb
-log/debug.log
 script/destroy
 script/generate
 script/txt2html
