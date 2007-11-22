@@ -5,10 +5,11 @@ README.txt
 Rakefile
 config/hoe.rb
 config/requirements.rb
-lib/extensions/array.rb
+lib/facets/random.rb
 lib/faker.rb
 lib/faker/address.rb
 lib/faker/company.rb
+lib/faker/internet.rb
 lib/faker/name.rb
 lib/faker/phone_number.rb
 lib/faker/version.rb
