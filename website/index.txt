@@ -2,7 +2,7 @@ h1. faker
 
 h2. What
 
-Faker is used to easily generate fake data: names, addresses, phone numbers, etc.
+Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 
 h2. Installing
 

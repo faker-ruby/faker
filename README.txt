@@ -13,4 +13,4 @@ Usage
 => Christophe Bartell
 
 > Faker::Name.first
-=> 
+=> Bob
