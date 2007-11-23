@@ -1,16 +1,8 @@
-Faker
-=====
+= Faker
 
 A port of Perl's Data::Faker library that generates fake data.
 
-Current generators:
-* Names: Full (default), first, and last 
-* Phone numbers
+== Usage
+* Faker::Name.name => "Christophe Bartell"
 
-Usage
-=====
-> Faker::Name
-=> Christophe Bartell
-
-> Faker::Name.first
-=> Bob
+* Faker::Internet.email => "kirsten.greenholt@corkeryfisher.info"
