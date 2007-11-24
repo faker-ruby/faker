@@ -10,7 +10,9 @@ h2. Installing
 
 h2. Usage
 
-Faker::Name.name #=> "Bob Hope"
+Faker::Name.name => "Bob Hope"
+
+"Read the docs":/rdoc
 
 h2. Forum
 
