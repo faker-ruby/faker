@@ -1,3 +1,10 @@
+== 0.2.1 2007-12-05
+* 1 major enhancement:
+  * Dropped facets to avoid conflict with ActiveSupport
+* 2 minor enhancements:
+  * Changed the output of user_name to randomly separate with a . or _
+  * Added a few tests
+
 == 0.1.0 2007-11-22
 
 * 1 major enhancement:
