@@ -2,7 +2,7 @@ module Faker
   class PhoneNumber
     class << self
       def phone_number
-        Faker.numerify(Formats.at_rand)
+        Faker.numerify(Formats.rand)
       end
     end
       

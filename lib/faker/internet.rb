@@ -6,19 +6,19 @@ module Faker
       end
       
       def free_email(name = nil)
-        [ user_name(name), %w(gmail.com yahoo.com hotmail.com).at_rand ].join('@')
+        [ user_name(name), %w(gmail.com yahoo.com hotmail.com).rand ].join('@')
       end
       
       def user_name(name = nil)
-        return name.scan(/\w+/).shuffle.join('.') if name
+        return name.scan(/\w+/).shuffle.join(%w(. _).rand).downcase if name
         
         [ 
           Proc.new { Name.first_name.gsub(/\W/, '').downcase },
           Proc.new { 
             [ Name.first_name, Name.last_name ].map {|n| 
               n.gsub(/\W/, '')
-            }.join('.').downcase }
-        ].at_rand.call
+            }.join(%w(. _).rand).downcase }
+        ].rand.call
       end
       
       def domain_name
@@ -30,7 +30,7 @@ module Faker
       end
       
       def domain_suffix
-        %w(co.uk com us uk ca biz info name).at_rand
+        %w(co.uk com us uk ca biz info name).rand
       end
     end
   end

@@ -5,7 +5,7 @@ README.txt
 Rakefile
 config/hoe.rb
 config/requirements.rb
-lib/facets/random.rb
+lib/extensions/array.rb
 lib/faker.rb
 lib/faker/address.rb
 lib/faker/company.rb

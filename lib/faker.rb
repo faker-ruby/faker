@@ -5,8 +5,9 @@ require 'faker/company'
 require 'faker/internet'
 require 'faker/name'
 require 'faker/phone_number'
+require 'faker/version'
 
-require 'facets/random'
+require 'extensions/array'
 
 module Faker
   def self.numerify(number_string)
