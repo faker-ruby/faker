@@ -1,3 +1,14 @@
+== 0.3.0 2008-01-01
+* 1 major enhancement:
+  * Added Lorem to generate fake Latin
+  * Added secondary_address to Address, and made inclusion of
+    secondary address in street_address optional (false by 
+    default).
+  * Added UK address methods [Caius Durling]
+* 2 minor enhancements:
+  * Changed the output of user_name to randomly separate with a . or _
+  * Added a few tests
+
 == 0.2.1 2007-12-05
 * 1 major enhancement:
   * Dropped facets to avoid conflict with ActiveSupport
