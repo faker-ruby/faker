@@ -24,15 +24,19 @@ module Faker
         ].rand.call
       end
       
-      def street_address
+      def street_address(include_secondary = false)
         Faker.numerify([
-          Proc.new { '##### %s' % street_name },
-          Proc.new { '##### %s' % street_name },
-          Proc.new { '##### %s' % street_name },
-          Proc.new { '##### %s' % street_name },
-          Proc.new { '##### %s Apt. ###' % street_name },
-          Proc.new { '##### %s Suite ###' % street_name }
-        ].rand.call)
+          '##### %s' % street_name,
+          '#### %s' % street_name,
+          '### %s' % street_name
+        ].rand + (include_secondary ? ' ' + secondary_address : ''))
+      end
+      
+      def secondary_address
+        Faker.numerify([
+          'Apt. ###',
+          'Suite ###'
+        ].rand)
       end
       
       # UK Variants
@@ -46,9 +50,9 @@ module Faker
       
       def uk_postcode
         Faker.bothify([
-          Proc.new { '??# #??' },
-          Proc.new { '??## #??' }
-        ].rand.call).upcase
+          '??# #??',
+          '??## #??'
+        ].rand).upcase
       end      
     end
   end
