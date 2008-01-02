@@ -5,11 +5,14 @@ README.txt
 Rakefile
 config/hoe.rb
 config/requirements.rb
+faker.tmproj
 lib/extensions/array.rb
+lib/extensions/object.rb
 lib/faker.rb
 lib/faker/address.rb
 lib/faker/company.rb
 lib/faker/internet.rb
+lib/faker/lorem.rb
 lib/faker/name.rb
 lib/faker/phone_number.rb
 lib/faker/version.rb
@@ -21,9 +24,6 @@ tasks/deployment.rake
 tasks/environment.rake
 tasks/website.rake
 test/test_faker.rb
+test/test_faker_internet.rb
+test/test_faker_name.rb
 test/test_helper.rb
-website/index.html
-website/index.txt
-website/javascripts/rounded_corners_lite.inc.js
-website/stylesheets/screen.css
-website/template.rhtml
