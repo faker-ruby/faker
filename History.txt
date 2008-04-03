@@ -1,5 +1,9 @@
+== 0.3.1 2008-04-03
+* 1 minor enhancement:
+  * Added city to Address
+
 == 0.3.0 2008-01-01
-* 1 major enhancement:
+* 3 major enhancements:
   * Added Lorem to generate fake Latin
   * Added secondary_address to Address, and made inclusion of
     secondary address in street_address optional (false by 
