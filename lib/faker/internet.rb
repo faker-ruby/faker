@@ -32,6 +32,13 @@ module Faker
       def domain_suffix
         %w(co.uk com us uk ca biz info name).rand
       end
+      
+      def ip_v4_address
+        [(0..255).to_a.rand,
+        (0..255).to_a.rand,
+        (0..255).to_a.rand,
+        (0..255).to_a.rand].join('.')
+      end
     end
   end
 end

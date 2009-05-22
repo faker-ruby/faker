@@ -33,4 +33,12 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_domain_suffix
     assert @tester.domain_suffix.match(/^\w+(\.\w+)?/)
   end
+
+  def test_ip_v4_address
+    assert_equal 3, @tester.ip_v4_address.count('.')
+
+    1000.times do
+      assert @tester.ip_v4_address.split('.').map{|octet| octet.to_i}.max <= 255
+    end
+  end
 end
