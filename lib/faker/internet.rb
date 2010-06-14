@@ -30,7 +30,7 @@ module Faker
       end
       
       def domain_suffix
-        %w(co.uk com us uk ca biz info name).rand
+        %w(co.uk com us ca biz info name).rand
       end
       
       def ip_v4_address
