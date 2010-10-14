@@ -9,7 +9,7 @@ require 'faker/phone_number'
 require 'faker/version'
 
 require 'extensions/array'
-require 'extensions/object'
+#require 'extensions/object'
 
 module Faker
   def self.numerify(number_string)
