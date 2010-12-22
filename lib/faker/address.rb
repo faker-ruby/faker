@@ -31,16 +31,23 @@ module Faker
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
 
-      # UK Variant
-      def uk_country
-        ['England', 'Scotland', 'Wales', 'Northern Ireland'].rand
-      end
-
       %w(street_suffix city_suffix city_prefix state_abbr state country county).each do |meth|
         define_method(meth) do
           I18n.translate("address.#{meth}").rand
         end
-      end      
+      end
+      
+      # You can add whatever you want to the locale file, and it will get 
+      # caught here... e.g., create a country_code array in your locale, 
+      # then you can call #country_code and it will act like #country
+      def method_missing(m, *args, &block)
+        # Use the alternate form of translate to get a nil rather than a "missing translation" string
+        if translation = I18n.translate(:address)[m]
+          translation.respond_to?(:rand) ? translation.rand : translation
+        else
+          super
+        end
+      end
       
       # Deprecated
       alias_method :earth_country, :country
