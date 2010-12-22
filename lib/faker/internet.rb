@@ -6,7 +6,7 @@ module Faker
       end
       
       def free_email(name = nil)
-        [ user_name(name), %w(gmail.com yahoo.com hotmail.com).rand ].join('@')
+        [ user_name(name), I18n.translate('internet.free_email').rand ].join('@')
       end
       
       def user_name(name = nil)
@@ -30,7 +30,7 @@ module Faker
       end
       
       def domain_suffix
-        %w(co.uk com us ca biz info name).rand
+        I18n.translate('internet.domain_suffix').rand
       end
       
       def ip_v4_address

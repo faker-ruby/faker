@@ -6,7 +6,7 @@ module Faker
       end
     
       def suffix
-        %w(Inc and\ Sons LLC Group).rand
+        I18n.translate('company.suffix').rand
       end
       
       # Generate a buzzword-laden catch phrase.
