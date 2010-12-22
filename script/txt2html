@@ -13,7 +13,7 @@ require 'syntax/convertors/html'
 require 'erb'
 require File.dirname(__FILE__) + '/../lib/faker/version.rb'
 
-version  = Faker::VERSION::STRING
+version  = Faker::VERSION
 download = 'http://rubyforge.org/projects/faker'
 
 class Fixnum

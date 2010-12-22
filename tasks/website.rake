@@ -1,16 +1,15 @@
 desc 'Generate website files'
-task :website_generate => :ruby_env do
+task :website_generate do
   (Dir['website/**/*.txt'] - Dir['website/version*.txt']).each do |txt|
-    sh %{ #{RUBY_APP} script/txt2html #{txt} > #{txt.gsub(/txt$/,'html')} }
+    sh %{ ./script/txt2html #{txt} > #{txt.gsub(/txt$/,'html')} }
   end
 end
 
 desc 'Upload website files to rubyforge'
 task :website_upload do
-  host = "#{rubyforge_username}@rubyforge.org"
-  remote_dir = "/var/www/gforge-projects/#{PATH}/"
+  remote_dir = "/var/www/gforge-projects/faker/"
   local_dir = 'website'
-  sh %{rsync -aCv #{local_dir}/ #{host}:#{remote_dir}}
+  sh %{rsync -acCv #{local_dir}/ #{ENV['USER']}@rubyforge.org:#{remote_dir}}
 end
 
 desc 'Generate and upload website files'
