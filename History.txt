@@ -1,3 +1,11 @@
+== 0.9.1 2010-12-23
+* 1 bug fix:
+  * Stopped setting I18n default locale
+* 1 major enhancement:
+  * Added method_missing to Address to add methods based on data in locale files
+* 1 minor enhancement:
+  * Added Swiss locale [Lukas Westermann]
+
 == 0.9.0 2010-12-22
 * 1 major enhancement:
   * Moved strings and some formats to locale files
