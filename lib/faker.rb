@@ -2,7 +2,7 @@ $:.unshift mydir = File.dirname(__FILE__)
 
 require 'i18n'
 I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
-I18n.load_path = Dir[File.join(mydir, 'locales', '*.yml')]
+I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
 
 require 'faker/address'
 require 'faker/company'
