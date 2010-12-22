@@ -1,3 +1,7 @@
+== 0.9.0 2010-12-22
+* 1 major enhancement:
+  * Moved strings and some formats to locale files
+
 == 0.3.1 2008-04-03
 * 1 minor enhancement:
   * Added city to Address
