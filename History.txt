@@ -1,4 +1,4 @@
-== 0.9.2 2010-12-28
+== 0.9.3 2010-12-28
 * 1 minor enhancement:
   * Added a faker namespace for translations
 
