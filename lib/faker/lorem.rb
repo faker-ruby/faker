@@ -2,7 +2,7 @@ module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
     def self.words(num = 3)
-      I18n.translate('lorem.words').shuffle[0, num]
+      I18n.translate('faker.lorem.words').shuffle[0, num]
     end
 
     def self.sentence(word_count = 4)

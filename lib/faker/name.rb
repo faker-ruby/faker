@@ -3,13 +3,13 @@ module Faker
     class << self
       
       def name
-        I18n.translate('name.formats').rand.collect {|meth| self.send(meth) }.join(' ')
+        I18n.translate('faker.name.formats').rand.collect {|meth| self.send(meth) }.join(' ')
       end
       
       # defines methods first_name, last_name, prefix, suffix
-      (I18n.translate(:name).keys - [:formats]).each do |meth|
+      (I18n.translate(:faker)[:name].keys - [:formats]).each do |meth|
         define_method(meth) do
-          I18n.translate("name.#{meth}").rand
+          I18n.translate("faker.name.#{meth}").rand
         end
       end      
 

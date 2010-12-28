@@ -18,22 +18,22 @@ module Faker
       end
 
       def street_address(include_secondary = false)
-        numerify("#{I18n.translate('address.street_address').rand} #{street_name}#{' ' + secondary_address if include_secondary}")
+        numerify("#{I18n.translate('faker.address.street_address').rand} #{street_name}#{' ' + secondary_address if include_secondary}")
       end
 
       def secondary_address
-        numerify(I18n.translate('address.secondary_address').rand)
+        numerify(I18n.translate('faker.address.secondary_address').rand)
       end
 
       def zip_code
-        bothify(I18n.translate('address.postcode').rand).upcase
+        bothify(I18n.translate('faker.address.postcode').rand).upcase
       end
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
 
       %w(street_suffix city_suffix city_prefix state_abbr state country county).each do |meth|
         define_method(meth) do
-          I18n.translate("address.#{meth}").rand
+          I18n.translate("faker.address.#{meth}").rand
         end
       end
       
@@ -42,7 +42,7 @@ module Faker
       # then you can call #country_code and it will act like #country
       def method_missing(m, *args, &block)
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
-        if translation = I18n.translate(:address)[m]
+        if translation = I18n.translate(:faker)[:address][m]
           translation.respond_to?(:rand) ? translation.rand : translation
         else
           super
