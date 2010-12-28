@@ -6,6 +6,6 @@ class TestFaker < Test::Unit::TestCase
   end
   
   def test_numerify
-    assert Faker.numerify('###').match(/\d{3}/)
+    assert Faker::Base.numerify('###').match(/\d{3}/)
   end
 end

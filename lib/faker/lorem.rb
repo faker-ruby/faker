@@ -1,6 +1,6 @@
 module Faker
   # Based on Perl's Text::Lorem
-  class Lorem
+  class Lorem < Base
     def self.words(num = 3)
       I18n.translate('lorem.words').shuffle[0, num]
     end

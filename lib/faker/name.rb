@@ -1,5 +1,5 @@
 module Faker
-  class Name
+  class Name < Base
     class << self
       
       def name

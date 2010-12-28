@@ -1,5 +1,5 @@
 module Faker
-  class Internet
+  class Internet < Base
     class << self
       def email(name = nil)
         [ user_name(name), domain_name ].join('@')

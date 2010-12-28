@@ -1,5 +1,5 @@
 module Faker
-  class Address
+  class Address < Base
     class << self
       def city
         [
@@ -18,15 +18,15 @@ module Faker
       end
 
       def street_address(include_secondary = false)
-        Faker.numerify("#{I18n.translate('address.street_address').rand} #{street_name}#{' ' + secondary_address if include_secondary}")
+        numerify("#{I18n.translate('address.street_address').rand} #{street_name}#{' ' + secondary_address if include_secondary}")
       end
 
       def secondary_address
-        Faker.numerify(I18n.translate('address.secondary_address').rand)
+        numerify(I18n.translate('address.secondary_address').rand)
       end
 
       def zip_code
-        Faker.bothify(I18n.translate('address.postcode').rand).upcase
+        bothify(I18n.translate('address.postcode').rand).upcase
       end
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code

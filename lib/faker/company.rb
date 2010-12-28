@@ -1,5 +1,5 @@
 module Faker
-  class Company
+  class Company < Base
     class << self
       def name
         Formats.rand.call
