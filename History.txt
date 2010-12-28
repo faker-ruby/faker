@@ -1,3 +1,7 @@
+== 0.9.2 2010-12-28
+* 1 minor enhancement:
+  * Added a faker namespace for translations
+
 == 0.9.2 2010-12-22
 * 1 bug fix:
   * Stopped stomping on I18n load path
