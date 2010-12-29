@@ -1,3 +1,7 @@
+== 0.9.4 2010-12-29
+* 1 minor bug fix:
+  * Stopped getting in the way of Rails' late locale loading
+
 == 0.9.3 2010-12-28
 * 1 minor enhancement:
   * Added a faker namespace for translations
