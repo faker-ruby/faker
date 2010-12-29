@@ -30,13 +30,14 @@ module Faker
       end
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
-
-      %w(street_suffix city_suffix city_prefix state_abbr state country county).each do |meth|
-        define_method(meth) do
-          fetch("address.#{meth}")
-        end
-      end
       
+      def street_suffix; fetch('address.street_suffix'); end
+      def city_suffix;   fetch('address.city_suffix');   end
+      def city_prefix;   fetch('address.city_prefix');   end
+      def state_abbr;    fetch('address.state_abbr');    end
+      def state;         fetch('address.state');         end
+      def country;       fetch('address.country');       end
+
       # You can add whatever you want to the locale file, and it will get 
       # caught here... e.g., create a country_code array in your locale, 
       # then you can call #country_code and it will act like #country
@@ -54,7 +55,7 @@ module Faker
       alias_method :us_state, :state
       alias_method :us_state_abbr, :state_abbr
       alias_method :uk_postcode, :zip_code
-      alias_method :uk_county, :county
+      def uk_county; county; end
 
     end
   end
