@@ -2,7 +2,7 @@ module Faker
   class PhoneNumber < Base
     class << self
       def phone_number
-        numerify(I18n.translate('faker.phone_number.formats').rand)
+        numerify(fetch('phone_number.formats'))
       end
     end
   end

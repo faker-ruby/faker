@@ -18,22 +18,22 @@ module Faker
       end
 
       def street_address(include_secondary = false)
-        numerify("#{I18n.translate('faker.address.street_address').rand} #{street_name}#{' ' + secondary_address if include_secondary}")
+        numerify("#{fetch('address.street_address')} #{street_name}#{' ' + secondary_address if include_secondary}")
       end
 
       def secondary_address
-        numerify(I18n.translate('faker.address.secondary_address').rand)
+        numerify(fetch('address.secondary_address'))
       end
 
       def zip_code
-        bothify(I18n.translate('faker.address.postcode').rand).upcase
+        bothify(fetch('address.postcode')).upcase
       end
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
 
       %w(street_suffix city_suffix city_prefix state_abbr state country county).each do |meth|
         define_method(meth) do
-          I18n.translate("faker.address.#{meth}").rand
+          fetch("address.#{meth}")
         end
       end
       

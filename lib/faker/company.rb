@@ -6,7 +6,7 @@ module Faker
       end
     
       def suffix
-        I18n.translate('faker.company.suffix').rand
+        fetch('company.suffix')
       end
       
       # Generate a buzzword-laden catch phrase.
