@@ -13,6 +13,19 @@ Usage
 * Faker::Name.name => "Christophe Bartell"
 * Faker::Internet.email => "kirsten.greenholt@corkeryfisher.info"
 
+Usage with Rails
+----------------
+
+If you want to change your locale with Rails from the default of :en, change
+config/application.rb, setting config.i18n.locale to whatever locale you
+want.  Change locale rather than default_locale (as suggested by the comments
+in that file) so that I18n's fallbacks will work properly and Faker can use
+the formats and data in en.yml (if there is no Faker localization for your
+locale).  If you'd prefer to set default_locale rather than locale, then
+you'll also need to add config.i18n.fallbacks.defaults = [:en] to your
+configuration to make the fallbacks work for Faker.
+
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
