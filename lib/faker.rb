@@ -1,5 +1,10 @@
 mydir = File.dirname(__FILE__)
 
+begin
+  require 'psych'
+rescue LoadError
+end
+
 require 'i18n'
 I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
 I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
