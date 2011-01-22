@@ -1,4 +1,4 @@
-$:.unshift mydir = File.dirname(__FILE__)
+mydir = File.dirname(__FILE__)
 
 require 'i18n'
 I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
