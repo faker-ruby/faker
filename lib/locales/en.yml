@@ -24,11 +24,25 @@ en:
       prefix: [Mr., Mrs., Ms., Miss, Dr.]
       suffix: [Jr., Sr., I, II, III, IV, V, MD, DDS, PhD, DVM]
       formats:
-        - [:prefix, :first_name, :last_name]
-        - [:first_name, :last_name, :suffix]
-        - [:first_name, :last_name]
-        - [:first_name, :last_name]
-        - [:first_name, :last_name]
-        - [:first_name, :last_name]
+        -
+          - :prefix
+          - :first_name
+          - :last_name
+        -
+          - :first_name
+          - :last_name
+          - :suffix
+        -
+          - :first_name
+          - :last_name
+        -
+          - :first_name
+          - :last_name
+        -
+          - :first_name
+          - :last_name
+        -
+          - :first_name
+          - :last_name
     phone_number:
       formats: ['###-###-####', '(###)###-####', '1-###-###-####', '###.###.####', '###-###-####', '(###)###-####', '1-###-###-####', '###.###.####', '###-###-#### x###', '(###)###-#### x###', '1-###-###-#### x###', '###.###.#### x###', '###-###-#### x####', '(###)###-#### x####', '1-###-###-#### x####', '###.###.#### x####', '###-###-#### x#####', '(###)###-#### x#####', '1-###-###-#### x#####', '###.###.#### x#####']
