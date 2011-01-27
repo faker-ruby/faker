@@ -1,3 +1,11 @@
+== 0.9.5 2011-01-27
+* 1 minor bug fix:
+  * Fixed YAML [Aaron Patterson]
+* 3 minor enhancements:
+  * Added default rake task to run all tests [Aaron Patterson]
+  * Removed shuffle method [Aaron Patterson]
+  * Use psych if present [Aaron Patterson]
+
 == 0.9.4 2010-12-29
 * 1 minor bug fix:
   * Stopped getting in the way of Rails' late locale loading
