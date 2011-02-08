@@ -1,8 +1,9 @@
 module Faker
-  # Based on Perl's Text::Lorem
-  class Lorem < Base
+  # Based on Perl's Text::Lorem and the software at http://www.rinkworks.com/dialect/
+  #   using an English translation of Lorem Ipsum's first paragraph
+  class Bork < Base
     def self.words(num = 3)
-      I18n.translate('faker.lorem.words').shuffle[0, num]
+      I18n.translate('faker.bork.words').shuffle[0, num]
     end
 
     def self.sentence(word_count = 4)
@@ -10,7 +11,7 @@ module Faker
     end
 
     def self.sentences(sentence_count = 3)
-      [].tap do |sentences|
+      returning([]) do |sentences|
         1.upto(sentence_count) do
           sentences << sentence
         end
@@ -22,7 +23,7 @@ module Faker
     end
 
     def self.paragraphs(paragraph_count = 3)
-      [].tap do |paragraphs|
+      returning([]) do |paragraphs|
         1.upto(paragraph_count) do
           paragraphs << paragraph
         end
