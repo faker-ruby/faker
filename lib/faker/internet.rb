@@ -34,10 +34,17 @@ module Faker
       end
       
       def ip_v4_address
-        [(0..255).to_a.rand,
-        (0..255).to_a.rand,
-        (0..255).to_a.rand,
-        (0..255).to_a.rand].join('.')
+        ary = (2..255).to_a
+        [ary.rand,
+        ary.rand,
+        ary.rand,
+        ary.rand].join('.')
+      end
+
+      def ip_v6_address
+        @@ip_v6_space ||= (0..65535).to_a
+        container = (1..8).map{ |_| @@ip_v6_space.rand }
+        container.map{ |n| n.to_s(16) }.join(':')
       end
     end
   end
