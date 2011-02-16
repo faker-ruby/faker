@@ -2,7 +2,7 @@ module Faker
   class Company < Base
     class << self
       def name
-        Formats.rand.call
+        Formats.sample.call
       end
     
       def suffix

@@ -7,14 +7,14 @@ module Faker
           '%s %s' % [city_prefix, Name.first_name],
           '%s%s' % [Name.first_name, city_suffix],
           '%s%s' % [Name.last_name, city_suffix],
-        ].rand
+        ].sample
       end
 
       def street_name
         [
           Proc.new { [Name.last_name, street_suffix].join(' ') },
           Proc.new { [Name.first_name, street_suffix].join(' ') }
-        ].rand.call
+        ].sample.call
       end
 
       def street_address(include_secondary = false)
@@ -44,7 +44,7 @@ module Faker
       def method_missing(m, *args, &block)
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
         if translation = I18n.translate(:faker)[:address][m]
-          translation.respond_to?(:rand) ? translation.rand : translation
+          translation.respond_to?(:sample) ? translation.sample : translation
         else
           super
         end

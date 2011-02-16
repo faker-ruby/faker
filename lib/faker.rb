@@ -34,7 +34,7 @@ module Faker
       # Helper for the common approach of grabbing a translation with an array
       # of values and selecting one of them
       def fetch(key)
-        I18n.translate("faker.#{key}").rand
+        I18n.translate("faker.#{key}").choice
       end
     end
   end
