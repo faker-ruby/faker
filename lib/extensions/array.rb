@@ -1,5 +1,5 @@
 class Array
-  def rand
-    self[Kernel.rand(length)]
-  end
+  def sample
+    self[rand(length)]
+  end unless defined?(:sample)
 end

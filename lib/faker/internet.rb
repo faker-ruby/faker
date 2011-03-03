@@ -10,15 +10,15 @@ module Faker
       end
       
       def user_name(name = nil)
-        return name.scan(/\w+/).shuffle.join(%w(. _).rand).downcase if name
+        return name.scan(/\w+/).shuffle.join(%w(. _).sample).downcase if name
         
         [ 
           Proc.new { Name.first_name.gsub(/\W/, '').downcase },
           Proc.new { 
             [ Name.first_name, Name.last_name ].map {|n| 
               n.gsub(/\W/, '')
-            }.join(%w(. _).rand).downcase }
-        ].rand.call
+            }.join(%w(. _).sample).downcase }
+        ].sample.call
       end
       
       def domain_name
@@ -35,15 +35,15 @@ module Faker
       
       def ip_v4_address
         ary = (2..255).to_a
-        [ary.rand,
-        ary.rand,
-        ary.rand,
-        ary.rand].join('.')
+        [ary.sample,
+        ary.sample,
+        ary.sample,
+        ary.sample].join('.')
       end
 
       def ip_v6_address
-        @@ip_v6_space ||= (0..65535).to_a
-        container = (1..8).map{ |_| @@ip_v6_space.rand }
+        @@ip_v6_space ||= (0..65535)
+        container = (1..8).map{ |_| @@ip_v6_space.sample }
         container.map{ |n| n.to_s(16) }.join(':')
       end
     end
