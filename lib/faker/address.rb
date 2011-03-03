@@ -36,7 +36,10 @@ module Faker
       def city_prefix;   fetch('address.city_prefix');   end
       def state_abbr;    fetch('address.state_abbr');    end
       def state;         fetch('address.state');         end
-      def country;       fetch('address.country');       end
+
+      def country
+        Faker::Country.country.short_name
+      end
 
       # You can add whatever you want to the locale file, and it will get 
       # caught here... e.g., create a country_code array in your locale, 

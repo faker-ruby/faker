@@ -40,12 +40,16 @@ module Faker
   end
 end
 
+require 'extensions/array'
+require 'extensions/hash'
+require 'extensions/numeric'
+require 'extensions/range'
+
 require 'faker/address'
 require 'faker/company'
+require 'faker/country'
 require 'faker/internet'
 require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
-
-require 'extensions/array'

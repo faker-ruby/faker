@@ -4,7 +4,7 @@ class Integer
     last -= 1 if exclude_end
     return nil if last < first
     return rand(last - first + 1) + first
-  end unless defined?(:random_delta)
+  end unless method_defined?(:random_delta)
 end
 
 class Numeric
@@ -13,5 +13,5 @@ class Numeric
     return nil if last < first
     return nil if exclude_end && last == first
     return (last - first) * rand + first
-  end unless defined?(:random_delta)
+  end unless method_defined?(:random_delta)
 end

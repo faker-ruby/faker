@@ -13,5 +13,5 @@ class Range
       end
     end
     n == 1 ? ary.first : ary
-  end unless defined?(:sample)
+  end unless method_defined?(:sample)
 end
