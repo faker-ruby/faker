@@ -47,5 +47,6 @@ require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
+require 'faker/cli'
 
 require 'extensions/array'
