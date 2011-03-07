@@ -4,15 +4,10 @@ require 'faker.rb'
 module Faker
   class CLI < Thor
 
-    default_task :help
 
-    desc "Help", "Help text for the command line tool"
-    def help
-      puts 'help text to do'
-    end
-
-    desc "Address", "Returns random data for an address"
-    def address(option)
+    desc "address", "Returns random data for an address"
+    def address(option='')
+      option = false
       case option
         when 'street_name'
           puts Faker::Address.street_name
@@ -39,7 +34,8 @@ module Faker
       end
     end
 
-    desc "Company", "Returns random data for a company"
+    desc "company", "Returns random data for a company"
+     method_option :name, :aliases => "-n", :desc => "returns a company name"
     def company(option)
       case option
         when 'name'
@@ -55,7 +51,7 @@ module Faker
         end
     end
 
-    desc "Internet", "Returns random internet data"
+    desc "internet", "Returns random internet data"
     def internet(option)
       case option
         when 'email'
