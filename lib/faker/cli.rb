@@ -5,7 +5,7 @@ module Faker
   class CLI < Thor
 
     desc "address [-f street_name|street_address|secondary_address|zip_code|street_suffix|city_suffix|state_abbr|state|country]", 
-    "Fake address data"
+    "Returns fake address data"
     method_option :faker_type, :aliases => "-f", :desc => "the faker data type"
     def address
       case options.faker_type
@@ -29,12 +29,12 @@ module Faker
           puts Faker::Address.country
         else
           puts "Usage: `faker address -f=street_address`"
-          puts "Run `faker address --help` for a list of valid types"
+          puts "Run `faker help address` for a list of valid types"
       end
     end
 
     desc "company [-f name|suffix|catch_phrase|bs]",
-    "Fake company data"
+    "Returns fake company data"
     method_option :faker_type, :aliases => "-f", :desc => "the faker data type"
     def company
       case options.faker_type
@@ -48,12 +48,12 @@ module Faker
           puts Faker::Company.bs
         else
           puts "Usage: `faker company -f=name`"
-          puts "Run `faker company --help` for a list of valid types"
+          puts "Run `faker help company` for a list of valid types"
         end
     end
 
     desc "internet [-f email|free_email|user_name|domain_name|ip_v4_address|ip_v6_address]",
-    "Fake internet data"
+    "Returns fake internet data"
     method_option :faker_type, :aliases => "-f", :desc => "the faker data type"
     def internet
       case options.faker_type
@@ -75,10 +75,58 @@ module Faker
           puts Faker::Internet.ip_v6_address
         else
           puts "Usage: `faker internet -f=email`"
-          puts "Run `faker internet --help` for a list of valid types"
+          puts "Run `faker help internet` for a list of valid types"
         end
     end
 
+    desc "lorum [-f words|sentence|sentences|paragraph|paragraphs -c 5]",
+    "Returns fake lorum data"
+    method_option :faker_type, :aliases => "-f", :desc => "the faker data type"
+    method_option :number, :type => :numeric, :aliases => "-n", :desc => "the number to return" 
+    def lorum
+      case options.faker_type
+        when 'words'
+          puts options.number ? Faker::Lorem.words(options.number) : Faker::Lorem.words
+        when 'sentence'
+          puts options.number ? Faker::Lorem.sentence(options.number) : Faker::Lorem.sentence
+        when 'sentences'
+          puts options.number ? Faker::Lorem.sentences(options.number) : Faker::Lorem.sentences
+        when 'paragraph'
+          puts options.number ? Faker::Lorem.paragraph(options.number) : Faker::Lorem.paragraph
+        when 'paragraphs'
+          puts options.number ? Faker::Lorem.paragraphs(options.number) : Faker::Lorem.paragraphs
+        else
+          puts "Usage: `faker lorum -f words -n 5`"
+          puts "Run `faker help lorum` for a list of valid types"
+        end
+    end
+
+    desc "name [-f name|first_name|last_name|prefix|suffix]",
+    "Returns fake name data"
+    method_option :faker_type, :aliases => "-f", :desc => "the faker data type"
+    def name
+      case options.faker_type
+        when 'name'
+          puts Faker::Name.name
+        when 'first_name'
+          puts Faker::Name.first_name
+        when 'last_name'
+          puts Faker::Name.last_name
+        when 'prefix'
+          puts Faker::Name.prefix
+        when 'suffix'
+          puts Faker::Name.suffix
+        else
+          puts "Usage: `faker name -f name`"
+          puts "Run `faker help name` for a list of valid types"
+        end
+    end
+
+    desc "phone_number",
+    "Returns fake phone number data"
+    def phone_number
+        puts Faker::PhoneNumber.phone_number
+    end
   end
 end
 #
