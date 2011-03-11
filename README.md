@@ -25,7 +25,19 @@ locale).  If you'd prefer to set default_locale rather than locale, then
 you'll also need to add config.i18n.fallbacks.defaults = [:en] to your
 configuration to make the fallbacks work for Faker.
 
+Command Line Usage
+----------------
+Faker is also usable from the command line. All methods are available
 
+    faker address -f street_name
+    faker company -f name
+    faker internet -f email
+    faker lorum -f sentences -n 10
+    faker name -f first_name
+    faker phone_number 
+
+Run `faker help` for general help or there is also help for each data type. For the address type for example run `faker help address`.
+    
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
