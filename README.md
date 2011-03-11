@@ -37,6 +37,8 @@ Faker is also usable from the command line. All methods are available
     faker phone_number 
 
 Run `faker help` for general help or there is also help for each data type. For the address type for example run `faker help address`.
+
+Note that if you installed using bundler you may need to use `bundle exec faker` rather than just `faker`.
     
 Customization
 ------------
