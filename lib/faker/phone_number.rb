@@ -6,7 +6,11 @@ module Faker
       end
 
       def cell_phone
-        numerify(fetch('cell_phone.formats'))
+        if (translation = I18n.translate(:faker)[:cell_phone]).is_a? Hash
+          numerify(translation[:formats].rand)
+        else
+          numerify(fetch('phone_number.formats'))
+        end
       end
     end
   end
