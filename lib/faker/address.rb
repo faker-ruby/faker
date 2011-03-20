@@ -18,7 +18,11 @@ module Faker
       end
 
       def street_address(include_secondary = false)
-        numerify("#{fetch('address.street_address')} #{street_name}#{' ' + secondary_address if include_secondary}")
+        if I18n.locale == :de
+          numerify("#{street} #{fetch('address.street_address')}#{' ' + secondary_address if include_secondary}")
+        else
+          numerify("#{fetch('address.street_address')} #{street_name}#{' ' + secondary_address if include_secondary}")
+        end
       end
 
       def secondary_address
