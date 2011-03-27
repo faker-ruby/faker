@@ -11,15 +11,19 @@ module Faker
       end
 
       def street_name
-        [
-          Proc.new { [Name.last_name, street_suffix].join(' ') },
-          Proc.new { [Name.first_name, street_suffix].join(' ') }
-        ].rand.call
+        if I18n.locale == :de
+          fetch('address.street_name')
+        else
+          [
+            Proc.new { [Name.last_name, street_suffix].join(' ') },
+            Proc.new { [Name.first_name, street_suffix].join(' ') }
+          ].rand.call
+        end
       end
 
       def street_address(include_secondary = false)
         if I18n.locale == :de
-          numerify("#{street} #{fetch('address.street_address')}#{' ' + secondary_address if include_secondary}")
+          numerify("#{street_name} #{fetch('address.street_address')}#{' ' + secondary_address if include_secondary}")
         else
           numerify("#{fetch('address.street_address')} #{street_name}#{' ' + secondary_address if include_secondary}")
         end
@@ -64,3 +68,6 @@ module Faker
     end
   end
 end
+
+# require "faker"; Faker::Config.locale = :de
+# Faker::Address.street_name
