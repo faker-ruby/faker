@@ -12,15 +12,21 @@ I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
 
 module Faker
   class Config
-    def self.locale=(locale)
-      I18n.locale = locale
+    @locale = nil
+
+    class << self
+      attr_writer :locale
+      def locale
+        @locale || I18n.locale
+      end
     end
   end
   
   class Base
     class << self
+      ## make sure numerify results doesn’t start with a zero
       def numerify(number_string)
-        number_string.gsub(/#/) { rand(10).to_s }
+        number_string.sub(/#/) { (rand(9)+1).to_s }.gsub(/#/) { rand(10).to_s }
       end
   
       def letterify(letter_string)
@@ -34,7 +40,7 @@ module Faker
       # Helper for the common approach of grabbing a translation with an array
       # of values and selecting one of them
       def fetch(key)
-        I18n.translate("faker.#{key}").rand
+        I18n.translate("faker.#{key}", :locale => Faker::Config.locale).rand
       end
     end
   end
@@ -49,3 +55,8 @@ require 'faker/phone_number'
 require 'faker/version'
 
 require 'extensions/array'
+
+# require "faker"
+# Faker::Config.locale
+# Faker::Base.fetch 'phone_number.formats'
+# Faker::Config.locale = :de

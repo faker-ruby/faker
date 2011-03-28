@@ -11,7 +11,7 @@ module Faker
       end
 
       def street_name
-        if I18n.locale == :de
+        if Faker::Config.locale == :de
           fetch('address.street_name')
         else
           [
@@ -22,7 +22,7 @@ module Faker
       end
 
       def street_address(include_secondary = false)
-        if I18n.locale == :de
+        if Faker::Config.locale == :de
           numerify("#{street_name} #{fetch('address.street_address')}#{' ' + secondary_address if include_secondary}")
         else
           numerify("#{fetch('address.street_address')} #{street_name}#{' ' + secondary_address if include_secondary}")
@@ -51,7 +51,7 @@ module Faker
       # then you can call #country_code and it will act like #country
       def method_missing(m, *args, &block)
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
-        if translation = I18n.translate(:faker)[:address][m]
+        if translation = I18n.translate(:faker, :locale => Faker::Config.locale)[:address][m]
           translation.respond_to?(:rand) ? translation.rand : translation
         else
           super
@@ -71,3 +71,5 @@ end
 
 # require "faker"; Faker::Config.locale = :de
 # Faker::Address.street_name
+# I18n.locale
+# Faker::Config.locale
