@@ -8,6 +8,7 @@ end
 require 'i18n'
 I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
 I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
+I18n.reload!
 
 
 module Faker
