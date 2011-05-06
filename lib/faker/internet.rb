@@ -46,6 +46,16 @@ module Faker
         container = (1..8).map{ |_| @@ip_v6_space.rand }
         container.map{ |n| n.to_s(16) }.join(':')
       end
+      
+      def mac_address
+        hex_ary = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E']
+        [hex_ary.rand + hex_ary.rand,
+        hex_ary.rand + hex_ary.rand,
+        hex_ary.rand + hex_ary.rand,
+        hex_ary.rand + hex_ary.rand,
+        hex_ary.rand + hex_ary.rand,
+        hex_ary.rand + hex_ary.rand].join(':')
+      end
     end
   end
 end

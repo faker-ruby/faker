@@ -49,4 +49,12 @@ class TestFakerInternet < Test::Unit::TestCase
       assert @tester.ip_v6_address.split('.').map{|h| "0x#{h}".hex}.max <= 65535
     end
   end
+  
+  def test_mac_address
+    assert_equal 5, @tester.mac_address.count(':')
+    
+    1000.times do
+      assert @tester.mac_address.split(':').map {|octet| "0x#{octet}".hex}.max <= 255
+    end
+  end
 end
