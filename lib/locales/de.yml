@@ -1,4 +1,4 @@
-de-de:
+de:
  faker:
   address:
    city_prefix: ["Alt", "Neu"]
