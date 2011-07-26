@@ -6,7 +6,6 @@ rescue LoadError
 end
 
 require 'i18n'
-I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
 I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
 I18n.reload!
 
@@ -35,7 +34,12 @@ module Faker
       # Helper for the common approach of grabbing a translation with an array
       # of values and selecting one of them
       def fetch(key)
-        I18n.translate("faker.#{key}").rand
+        candidates = begin
+          I18n.translate("faker.#{key}", :throw => true)
+        rescue
+          I18n.translate("faker.#{key}", :locale => :en)
+        end
+        candidates.rand
       end
     end
   end

@@ -2,7 +2,12 @@ module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
     def self.words(num = 3)
-      I18n.translate('faker.lorem.words').shuffle[0, num]
+      candidates = begin
+        I18n.translate('faker.lorem.words', :throw => true)
+      rescue
+        I18n.translate('faker.lorem.words', :locale => :en)
+      end
+      candidates.shuffle[0, num]
     end
 
     def self.sentence(word_count = 4)
