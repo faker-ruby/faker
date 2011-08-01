@@ -1,0 +1,24 @@
+en:
+  faker:
+    address:
+      postcode: ['?#? #?#']
+      state: [Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Nova Scotia, Ontario, Prince Edward Island, Quebec, Saskatchewan]
+      state_abbr: [AB, BC, MB, NB, NL, NS, ON, PE, QC, SK]
+    internet:
+      free_email: [gmail.com, yahoo.ca, hotmail.com]
+      domain_suffix: [ca, com, biz, info, name, net, org]
+    name:
+      formats:
+        -
+          - :prefix
+          - :first_name
+          - :last_name
+        -
+          - :first_name
+          - :last_name
+          - :suffix
+        -
+          - :first_name
+          - :last_name
+    phone_number:
+      formats: ['###-###-####', '(###)###-####', '###.###.####', '1-###-###-####', '###-###-#### x###', '(###)###-#### x###', '1-###-###-#### x###', '###.###.#### x###', '###-###-#### x####', '(###)###-#### x####', '1-###-###-#### x####', '###.###.#### x####', '###-###-#### x#####', '(###)###-#### x#####', '1-###-###-#### x#####', '###.###.#### x#####']
