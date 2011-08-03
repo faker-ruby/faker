@@ -44,8 +44,8 @@ nl:
     lorem:
       words: [alias, consequatur, aut, perferendis, sit, voluptatem, accusantium, doloremque, aperiam, eaque, ipsa, quae, ab, illo, inventore, veritatis, et, quasi, architecto, beatae, vitae, dicta, sunt, explicabo, aspernatur, aut, odit, aut, fugit, sed, quia, consequuntur, magni, dolores, eos, qui, ratione, voluptatem, sequi, nesciunt, neque, dolorem, ipsum, quia, dolor, sit, amet, consectetur, adipisci, velit, sed, quia, non, numquam, eius, modi, tempora, incidunt, ut, labore, et, dolore, magnam, aliquam, quaerat, voluptatem, ut, enim, ad, minima, veniam, quis, nostrum, exercitationem, ullam, corporis, nemo, enim, ipsam, voluptatem, quia, voluptas, sit, suscipit, laboriosam, nisi, ut, aliquid, ex, ea, commodi, consequatur, quis, autem, vel, eum, iure, reprehenderit, qui, in, ea, voluptate, velit, esse, quam, nihil, molestiae, et, iusto, odio, dignissimos, ducimus, qui, blanditiis, praesentium, laudantium, totam, rem, voluptatum, deleniti, atque, corrupti, quos, dolores, et, quas, molestias, excepturi, sint, occaecati, cupiditate, non, provident, sed, ut, perspiciatis, unde, omnis, iste, natus, error, similique, sunt, in, culpa, qui, officia, deserunt, mollitia, animi, id, est, laborum, et, dolorum, fuga, et, harum, quidem, rerum, facilis, est, et, expedita, distinctio, nam, libero, tempore, cum, soluta, nobis, est, eligendi, optio, cumque, nihil, impedit, quo, porro, quisquam, est, qui, minus, id, quod, maxime, placeat, facere, possimus, omnis, voluptas, assumenda, est, omnis, dolor, repellendus, temporibus, autem, quibusdam, et, aut, consequatur, vel, illum, qui, dolorem, eum, fugiat, quo, voluptas, nulla, pariatur, at, vero, eos, et, accusamus, officiis, debitis, aut, rerum, necessitatibus, saepe, eveniet, ut, et, voluptates, repudiandae, sint, et, molestiae, non, recusandae, itaque, earum, rerum, hic, tenetur, a, sapiente, delectus, ut, aut, reiciendis, voluptatibus, maiores, doloribus, asperiores, repellat]
     name:
-      first_name: [ "Sophie", "Lotte", "Sanne", "Lieke", "Emma", "Eva", "Fleur", "Noa", "Anna", "Julia", "Isa", "Lisa", "Iris", "Femke", "Britt", "Anouk", "Roos", "Amber", "Anne", "Maud", "Daan", "Tim", "Sem", "Jesse", "Ruben", "Thijs", "Stijn", "Lucas", "Thomas", "Milan", "Lars", "Sven", "Luuk", "Bram", "Julian", "Max", "Finn", "Niels", "Jayden", "Jasper", "Thomas", "", "Max", "Tim", "Daan", "Lars", "Niels", "Tom", "Kevin", "Rick", "Nick", "Bram", "Mike", "Jesse", "Sander", "Ruben", "Thijs", "Jan", "Luuk", "Bas", "Johannes"]
-      middle_name: ["van", "van de", "van den", "van 't", "van het", "de", "den"]
+      first_name: ["Amber", "Anna", "Anne", "Anouk", "Bas", "Bram", "Britt", "Daan", "Emma", "Eva", "Femke", "Finn", "Fleur", "Iris", "Isa", "Jan", "Jasper", "Jayden", "Jesse", "Johannes", "Julia", "Julian", "Kevin", "Lars", "Lieke", "Lisa", "Lotte", "Lucas", "Luuk", "Maud", "Max", "Mike", "Milan", "Nick", "Niels", "Noa", "Rick", "Roos", "Ruben", "Sander", "Sanne", "Sem", "Sophie", "Stijn", "Sven", "Thijs", "Thijs", "Thomas", "Tim", "Tom"]
+      tussenvoegsel: ["van", "van de", "van den", "van 't", "van het", "de", "den"]
       last_name:  ["Bakker", "Beek", "Berg", "Boer", "Bos", "Bosch", "Brink", "Broek", "Brouwer", "Bruin", "Dam", "Dekker", "Dijk", "Dijkstra", "Graaf", "Groot", "Haan", "Hendriks", "Heuvel", "Hoek", "Jacobs", "Jansen", "Janssen", "Jong", "Klein", "Kok", "Koning", "Koster", "Leeuwen", "Linden", "Maas", "Meer", "Meijer", "Mulder", "Peters", "Ruiter", "Schouten", "Smit", "Smits", "Stichting", "Veen", "Ven", "Vermeulen", "Visser", "Vliet", "Vos", "Vries", "Wal", "Willems", "Wit"]
       prefix: [Dhr., Mevr. Dr., Bsc, Msc, Prof.]
       suffix: [Jr., Sr., I, II, III, IV, V]
@@ -66,11 +66,11 @@ nl:
           - :last_name
         -
           - :first_name
-          - :middle_name
+          - :tussenvoegsel
           - :last_name
         -
           - :first_name
-          - :middle_name
+          - :tussenvoegsel
           - :last_name
     phone_number:
       formats: ["(####) ######", "##########", "06########", "06 #### ####"]
