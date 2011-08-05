@@ -4,6 +4,7 @@ de-ch:
       country_code: [CH, CH, CH, DE, AT, US, LI, US, HK, VN]
       postcode: ['1###', '2###', '3###', '4###', '5###', '6###', '7###', '8###', '9###']
     company:
+      plus: "und"
       suffix: [AG, GmbH, und Söhne, und Partner, "& Co.", Gruppe, LLC, Inc.]
     internet:
       domain_suffix: [com, net, biz, ch, de, li, at, ch, ch]

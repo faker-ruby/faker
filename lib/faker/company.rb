@@ -1,10 +1,12 @@
 module Faker
   class Company < Base
+    flexible :company
+
     class << self
       def name
         Formats.rand.call
       end
-    
+
       def suffix
         fetch('company.suffix')
       end
@@ -33,7 +35,7 @@ module Faker
     Formats = [
       Proc.new { [ Name.last_name, suffix ].join(' ') },
       Proc.new { [ Name.last_name, Name.last_name ].join('-') },
-      Proc.new { "%s, %s and %s" % [ Name.last_name, Name.last_name, Name.last_name ] }
+      Proc.new { "%s, %s %s %s" % [ Name.last_name, Name.last_name, plus, Name.last_name ] }
       ]
   end
 end

@@ -2,6 +2,7 @@
 no-nb:
   faker:
     company:
+      plus: "og"
       suffix: ["Gruppen", "AS", "ASA", "BA", "RFH", "og Sønner"]
     internet:
       domain_suffix: ["no", "com", "net", "org"]

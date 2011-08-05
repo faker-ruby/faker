@@ -37,6 +37,7 @@ nl:
       postcode: ["#### ??"]
       state: ["Noord-Holland", "Zuid-Holland", "Utrecht", "Zeeland", "Overijssel", "Gelderland", "Drenthe", "Friesland", "Groningen", "Noord-Braband", "Limburg"]
     company:
+      plus: "en"
       suffix: [BV, V.O.F., Group, en Zonen]
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
