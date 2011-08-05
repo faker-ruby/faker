@@ -1,5 +1,7 @@
 module Faker
   class Address < Base
+    flexible :address
+
     class << self
       def city
         [
@@ -38,18 +40,6 @@ module Faker
       def state;         fetch('address.state');         end
       def country;       fetch('address.country');       end
 
-      # You can add whatever you want to the locale file, and it will get 
-      # caught here... e.g., create a country_code array in your locale, 
-      # then you can call #country_code and it will act like #country
-      def method_missing(m, *args, &block)
-        # Use the alternate form of translate to get a nil rather than a "missing translation" string
-        if translation = I18n.translate(:faker)[:address][m]
-          translation.respond_to?(:rand) ? translation.rand : translation
-        else
-          super
-        end
-      end
-      
       # Deprecated
       alias_method :earth_country, :country
       alias_method :us_state, :state

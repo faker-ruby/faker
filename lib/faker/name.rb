@@ -1,5 +1,7 @@
 module Faker
   class Name < Base
+    flexible :name
+
     class << self
       
       def name

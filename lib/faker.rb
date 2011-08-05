@@ -37,6 +37,25 @@ module Faker
       def fetch(key)
         I18n.translate("faker.#{key}").rand
       end
+
+      def flexible(key)
+        @flexible_key = key
+      end
+
+      # You can add whatever you want to the locale file, and it will get caught here.
+      # E.g., in your locale file, create a
+      #   name:
+      #     girls_name: ["Alice", "Cheryl", "Tatiana"]
+      # Then you can call Faker::Name.girls_name and it will act like #first_name
+      def method_missing(m, *args, &block)
+        # Use the alternate form of translate to get a nil rather than a "missing translation" string
+        if translation = I18n.translate(:faker)[@flexible_key][m]
+          translation.respond_to?(:rand) ? translation.rand : translation
+        else
+          super
+        end
+      end
+
     end
   end
 end
