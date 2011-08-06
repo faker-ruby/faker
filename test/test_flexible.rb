@@ -24,4 +24,12 @@ class TestFlexible < Test::Unit::TestCase
     end
   end
 
+  def test_raises_no_method_error
+    I18n.with_locale(:xx) do
+      assert_raise(NoMethodError) do
+        Faker::Foodie.eeew
+      end
+    end
+  end
+
 end
