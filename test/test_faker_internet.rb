@@ -49,4 +49,14 @@ class TestFakerInternet < Test::Unit::TestCase
       assert @tester.ip_v6_address.split('.').map{|h| "0x#{h}".hex}.max <= 65535
     end
   end
+
+  def test_password
+    pwd = @tester.password
+    assert pwd.match(/\w+/)
+    assert_equal 8, pwd.length
+
+    pwd = @tester.password(13)
+    assert pwd.match(/\w+/)
+    assert_equal 13, pwd.length
+  end
 end

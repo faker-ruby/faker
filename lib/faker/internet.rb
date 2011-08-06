@@ -46,6 +46,13 @@ module Faker
         container = (1..8).map{ |_| @@ip_v6_space.rand }
         container.map{ |n| n.to_s(16) }.join(':')
       end
+
+      def password(len = 8)
+        chars = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
+        pass = ''
+        1.upto(len) { |i| pass << chars[rand(chars.size-1)] }
+        pass
+      end
     end
   end
 end
