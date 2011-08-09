@@ -8,6 +8,8 @@ no-nb:
         -
           - :city_root
           - :city_suffix
+      postcode: ["####"]
+      state: [""]
     company:
       plus: "og"
       suffix: ["Gruppen", "AS", "ASA", "BA", "RFH", "og Sønner"]
