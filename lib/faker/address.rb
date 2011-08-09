@@ -4,12 +4,28 @@ module Faker
 
     class << self
       def city
+        translated_city_format || default_city_format
+      end
+
+      def translated_city_format
+        formats = I18n.translate(:faker)[:address][:city_formats]
+        if formats
+          formats.rand.collect {|method| self.send(method) }.join
+        end
+      end
+
+      def default_city_format
         [
-          '%s %s%s' % [city_prefix, Name.first_name, city_suffix],
-          '%s %s' % [city_prefix, Name.first_name],
-          '%s%s' % [Name.first_name, city_suffix],
-          '%s%s' % [Name.last_name, city_suffix],
+          '%s %s%s' % [city_prefix, city_root, city_suffix],
+          '%s %s' % [city_prefix, city_root],
+          '%s%s' % [city_root, city_suffix],
+          '%s%s' % [city_root(:last_name), city_suffix],
         ].rand
+      end
+
+      def city_root(defaults_to = :first_name)
+        translations = I18n.translate(:faker)[:address][:city_root]
+        return translations ? translations.rand : Name.send(defaults_to)
       end
 
       def street_name
