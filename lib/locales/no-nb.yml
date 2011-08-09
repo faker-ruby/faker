@@ -8,7 +8,14 @@ no-nb:
         -
           - :city_root
           - :city_suffix
-      secondary_address: ['Leil. ###', 'Oppgang ?']
+      street_prefix: ["Øvre", "Nedre", "Søndre", "Gamle", "Østre", "Vestre"]
+      street_root: ["Eike", "Bjørke", "Gran", "Vass", "Furu", "Litj", "Lille", "Høy", "Fosse", "Elve", "Ku", "Konvall", "Soldugg", "Hestemyr", "Granitt", "Hegge", "Rogne", "Fiol", "Sol", "Ting", "Malm", "Klokker", "Preste", "Dam", "Geiterygg", "Bekke", "Berg", "Kirke", "Kors", "Bru", "Blåveis", "Torg", "Sjø"]
+      street_suffix: ["alléen", "bakken", "berget", "bråten", "eggen", "engen", "ekra", "faret", "flata", "gata", "gjerdet", "grenda", "gropa", "hagen", "haugen", "havna", "holtet", "høgda", "jordet", "kollen", "kroken", "lia", "lunden", "lyngen", "løkka", "marka", "moen", "myra", "plassen", "ringen", "roa", "røa", "skogen", "skrenten", "spranget", "stien", "stranda", "stubben", "stykket", "svingen", "tjernet", "toppen", "tunet", "vollen", "vika", "åsen"]
+      street_name_formats:
+        -
+          - :street_root
+          - :street_suffix
+      secondary_address: ['Leil. ###', 'Oppgang A', 'Oppgang B']
       postcode: ["####"]
       state: [""]
     company:
