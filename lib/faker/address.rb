@@ -29,6 +29,17 @@ module Faker
       end
 
       def street_name
+        translated_street_name_format || default_street_name_format
+      end
+
+      def translated_street_name_format
+        formats = I18n.translate(:faker)[:address][:street_name_formats]
+        if formats
+          formats.rand.collect {|method| self.send(method) }.join
+        end
+      end
+
+      def default_street_name_format
         [
           Proc.new { [Name.last_name, street_suffix].join(' ') },
           Proc.new { [Name.first_name, street_suffix].join(' ') }

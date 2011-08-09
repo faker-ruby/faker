@@ -9,14 +9,21 @@ class TestAddress < Test::Unit::TestCase
           :city_root => [:stone],
           :city_suffix => [:ledge],
           :city_formats => [[:city_root, :city_suffix]],
-          :secondary_address => ['Oppg. ? Leil. ##']
+          :secondary_address => ['Oppg. ? Leil. ##'],
+          :street_suffix => [:blvd]
         },
-        :name => {:first_name => [:beth]}
+        :name => {:first_name => [:beth], :last_name => [:wainwright]}
       }
     }
     xy = {
       :faker => {
-        :address => {:city_prefix => [:new], :city_suffix => [:burg]},
+        :address => {
+          :city_prefix => [:new],
+          :city_suffix => [:burg],
+          :street_name_formats => [[:street_root, :street_suffix]],
+          :street_root => [:hi],
+          :street_suffix => [:gate],
+        },
         :name => {:first_name => [:thomas], :last_name => [:andersen]}
       }
     }
@@ -61,6 +68,20 @@ class TestAddress < Test::Unit::TestCase
     I18n.with_locale(:xx) do
       address = Faker::Address.secondary_address
       assert address =~ /Oppg\.\ [a-z]\ Leil\.\ \d{2}/, "Unexpected format: #{address}"
+    end
+  end
+
+  def test_street_name_supports_default_format
+    I18n.with_locale(:xx) do
+      street = Faker::Address.street_name
+      expected = ['beth blvd', 'wainwright blvd']
+      assert expected.include?(street), "Expected #{street} to be included in [#{expected.join(', ')}]"
+    end
+  end
+
+  def test_street_name_formats_can_be_set_dynamically
+    I18n.with_locale(:xy) do
+      assert_equal "higate", Faker::Address.street_name
     end
   end
 
