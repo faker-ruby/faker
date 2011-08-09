@@ -5,7 +5,12 @@ class TestAddress < Test::Unit::TestCase
   def setup
     xx = {
       :faker => {
-        :address => {:city_root => [:stone], :city_suffix => [:ledge], :city_formats => [[:city_root, :city_suffix]]},
+        :address => {
+          :city_root => [:stone],
+          :city_suffix => [:ledge],
+          :city_formats => [[:city_root, :city_suffix]],
+          :secondary_address => ['Oppg. ? Leil. ##']
+        },
         :name => {:first_name => [:beth]}
       }
     }
@@ -49,6 +54,13 @@ class TestAddress < Test::Unit::TestCase
   def test_city_formats_can_be_set_dynamically
     I18n.with_locale(:xx) do
       assert_equal "stoneledge", Faker::Address.city
+    end
+  end
+
+  def test_secondary_address_is_both_numerified_and_letterified
+    I18n.with_locale(:xx) do
+      address = Faker::Address.secondary_address
+      assert address =~ /Oppg\.\ [a-z]\ Leil\.\ \d{2}/, "Unexpected format: #{address}"
     end
   end
 
