@@ -1,6 +1,13 @@
 # coding: utf-8
 no-nb:
   faker:
+    address:
+      city_root: ["Fet", "Gjes", "Høy", "Inn", "Lille", "Lo", "Mal", "Nord", "Nær", "Sand", "Sme", "Stav", "Stor", "Tand", "Ut", "Vest"]
+      city_suffix: ["berg", "borg", "by", "bø", "dal", "eid", "fjell", "fjord", "foss", "grunn", "hamn", "havn", "helle", "mark", "nes", "odden", "sand", "sjøen", "stad", "strand", "strøm", "sund", "vik", "vær", "våg", "ø", "øy", "ås"]
+      city_formats:
+        -
+          - :city_root
+          - :city_suffix
     company:
       plus: "og"
       suffix: ["Gruppen", "AS", "ASA", "BA", "RFH", "og Sønner"]
