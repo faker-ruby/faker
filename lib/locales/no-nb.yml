@@ -8,6 +8,7 @@ no-nb:
         -
           - :city_root
           - :city_suffix
+      secondary_address: ['Leil. ###', 'Oppgang ?']
       postcode: ["####"]
       state: [""]
     company:
