@@ -2,7 +2,27 @@ module Faker
   class Address < Base
     flexible :address
 
+    attr_reader :street_address, :city, :postcode, :state, :country
+
+    def initialize(locale)
+      I18n.with_locale(locale) do
+        @street_address = Address.street_address(rand(2) == 1 ? :include_secondary : false)
+        @city = Address.city
+        @postcode = Address.postcode
+        @state = Address.state
+        @country = Address.default_country
+      end
+    end
+
     class << self
+      def in(locale)
+        new(locale)
+      end
+
+      def address
+        new(I18n.locale)
+      end
+
       def city
         maybe(:city_formats) || default_city_format
       end

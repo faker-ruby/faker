@@ -1,4 +1,6 @@
 en-us:
   faker:
+    address:
+      default_country: "United States of America"
     internet:
       domain_suffix: [com, us, biz, info, name, net, org]

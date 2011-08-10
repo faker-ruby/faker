@@ -26,6 +26,7 @@ no-nb:
       secondary_address: ['Leil. ###', 'Oppgang A', 'Oppgang B']
       postcode: ["####"]
       state: [""]
+      default_country: "Norge"
     company:
       plus: "og"
       suffix: ["Gruppen", "AS", "ASA", "BA", "RFH", "og Sønner"]

@@ -6,13 +6,17 @@ class TestAddress < Test::Unit::TestCase
     xx = {
       :faker => {
         :address => {
-          :city_root => [:stone],
-          :city_suffix => [:ledge],
+          :city_root => ['Stone'],
+          :city_suffix => ['ledge'],
           :city_formats => [[:city_root, :city_suffix]],
-          :secondary_address => ['Oppg. ? Leil. ##'],
-          :street_suffix => [:blvd]
+          :secondary_address => ['##?'],
+          :street_suffix => ['Blvd'],
+          :building_number => ["#"],
+          :postcode => ["####"],
+          :state => ['empire'],
+          :default_country => ['Xu']
         },
-        :name => {:first_name => [:beth], :last_name => [:wainwright]}
+        :name => {:first_name => ['Beth'], :last_name => ['Wainwright']}
       }
     }
     xy = {
@@ -52,7 +56,7 @@ class TestAddress < Test::Unit::TestCase
 
   def test_city_root_with_translation
     I18n.with_locale(:xx) do
-      assert_equal :stone, Faker::Address.city_root
+      assert_equal 'Stone', Faker::Address.city_root
     end
   end
 
@@ -78,21 +82,21 @@ class TestAddress < Test::Unit::TestCase
 
   def test_city_formats_can_be_set_dynamically
     I18n.with_locale(:xx) do
-      assert_equal "stoneledge", Faker::Address.city
+      assert_equal "Stoneledge", Faker::Address.city
     end
   end
 
   def test_secondary_address_is_both_numerified_and_letterified
     I18n.with_locale(:xx) do
       address = Faker::Address.secondary_address
-      assert address =~ /Oppg\.\ [A-Z]\ Leil\.\ \d{2}/, "Unexpected format: #{address}"
+      assert address =~ /^\d{2}[A-Z]$/, "Unexpected format: #{address}"
     end
   end
 
   def test_street_name_supports_default_format
     I18n.with_locale(:xx) do
       street = Faker::Address.street_name
-      expected = ['beth blvd', 'wainwright blvd']
+      expected = ['Beth Blvd', 'Wainwright Blvd']
       assert expected.include?(street), "Expected #{street} to be included in [#{expected.join(', ')}]"
     end
   end
@@ -129,6 +133,21 @@ class TestAddress < Test::Unit::TestCase
       street = Faker::Address.street_address(:include_secondary)
       assert street =~ /^lowstreet\ \d{2}!\ \|\ Apt\.\ \d{3}$/, "Expected '#{street}' to match '<street_name> <building_number>! | Apt. <apartment_number>'"
     end
+  end
+
+  def test_create_an_address_for_a_given_locale
+    address = Faker::Address.in(:"xx")
+    street_regex = /^\d\ (Beth|Wainwright)\ Blvd(\ \d{2}[A-Z])?$/
+    assert address.street_address.match(street_regex), "unexpected street_address: #{address.street_address}"
+    assert_equal address.city, "Stoneledge"
+    assert address.postcode.match(/^\d{4}$/), "unexpected postcode: #{address.postcode}"
+    assert_equal address.state, "empire"
+    assert_equal address.country, "Xu"
+  end
+
+  def test_get_an_address_for_the_current_locale
+    address = Faker::Address.address
+    assert_equal address.country, "United States of America"
   end
 
 end

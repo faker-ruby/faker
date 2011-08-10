@@ -23,6 +23,16 @@ Usage
 * Faker::Address.city => "Zuid Stijndam"
 * Faker::Address.street_name => ""Bos straat"
 
+You can get addresses from different locales by sending in the locale code to the Address#in method.
+Faker::Address.in(:en)
+  => #<Faker::Address:0x00000101164840 @street_address="7076 Marquise Falls", @city="East Magnoliaside", @postcode="26161-5481", @state="Wisconsin", @country="United States of America">
+Faker::Address.in(:"no-nb")
+  => #<Faker::Address:0x00000102076d88 @street_address="Malmtoppen 58, Oppgang A", @city="Uthelle", @postcode="5616", @state="", @country="Norge">
+
+This does not change the locale settings.
+It assumes that the locale requested exists.
+Check I18n.available_locales if you are unsure.
+
 Usage with Rails
 ----------------
 

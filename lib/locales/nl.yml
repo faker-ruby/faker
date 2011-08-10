@@ -34,6 +34,7 @@ nl:
       street_suffix: ["straat", "laan", "weg", "plantsoen", "park"]
       secondary_address: ["1 hoog", "2 hoog", "3 hoog", "I", "II", "III", "a", "b", "c"]
       postcode: ["#### ??"]
+      default_country: "Nederland"
       state: ["Noord-Holland", "Zuid-Holland", "Utrecht", "Zeeland", "Overijssel", "Gelderland", "Drenthe", "Friesland", "Groningen", "Noord-Braband", "Limburg"]
     company:
       plus: "en"
