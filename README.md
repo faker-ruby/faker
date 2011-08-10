@@ -15,11 +15,9 @@ Usage
 * Faker::Company.bs => "monetize integrated bandwidth"
 * Faker::Address.street_address => "544 Mertz Estate"
 * Faker::Address.street_address(:include_secondary) => "459 Luettgen Overpass Apt. 846"
-
 * name = Faker::Name.name => "Julius Champlin"
 * Faker::Internet.email(name) => "julius.champlin@schoen.biz"
 * Faker::Internet.free_email(name) => "julius.champlin@hotmail.com"
-
 * Faker::Config.locale = :nl
 * Faker::Name.name => "Roos Janssen"
 * Faker::Address.city => "Zuid Stijndam"
@@ -61,5 +59,4 @@ Comments and feedback are welcome. Send an email to Benjamin Curtis via the [goo
 License
 -------
 This code is free to use under the terms of the MIT license.
-
 
