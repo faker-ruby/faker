@@ -67,7 +67,7 @@ class TestAddress < Test::Unit::TestCase
   def test_secondary_address_is_both_numerified_and_letterified
     I18n.with_locale(:xx) do
       address = Faker::Address.secondary_address
-      assert address =~ /Oppg\.\ [a-z]\ Leil\.\ \d{2}/, "Unexpected format: #{address}"
+      assert address =~ /Oppg\.\ [A-Z]\ Leil\.\ \d{2}/, "Unexpected format: #{address}"
     end
   end
 

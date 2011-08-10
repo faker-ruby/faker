@@ -25,7 +25,7 @@ module Faker
       end
   
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { ('a'..'z').to_a.rand }
+        letter_string.gsub(/\?/) { ('A'..'Z').to_a.rand }
       end
   
       def bothify(string)
