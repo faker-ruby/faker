@@ -22,7 +22,7 @@ no-nb:
           - :whitespace
           - :building_number
       street_joiner: ", "
-      building_number: ["#", "##", "###"]
+      building_number: ["#", "##"]
       secondary_address: ['Leil. ###', 'Oppgang A', 'Oppgang B']
       postcode: ["####"]
       state: [""]
