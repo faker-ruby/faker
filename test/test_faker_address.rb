@@ -23,13 +23,31 @@ class TestAddress < Test::Unit::TestCase
           :street_name_formats => [[:street_root, :street_suffix]],
           :street_root => [:hi],
           :street_suffix => [:gate],
+          :building_number => ["##"],
+          :secondary_address => ["Apt. ###"]
         },
         :name => {:first_name => [:thomas], :last_name => [:andersen]}
+      }
+    }
+    xz = {
+      :faker => {
+        :address => {
+          :building_number => ["##"],
+          :street_root => [:low],
+          :street_suffix => [:street],
+          :street_joiner => " | ",
+          :secondary_address => ['Apt. ###'],
+          :street_name_formats => [[:street_root, :street_suffix]],
+          :factorial => '!',
+          :whitespace => ' ',
+          :street_address_formats => [[:street_name, :whitespace, :building_number, :factorial]]
+        }
       }
     }
 
     I18n.backend.store_translations(:xx, xx)
     I18n.backend.store_translations(:xy, xy)
+    I18n.backend.store_translations(:xz, xz)
   end
 
   def test_city_root_with_translation
@@ -82,6 +100,34 @@ class TestAddress < Test::Unit::TestCase
   def test_street_name_formats_can_be_set_dynamically
     I18n.with_locale(:xy) do
       assert_equal "higate", Faker::Address.street_name
+    end
+  end
+
+  def test_street_address_supports_default_format
+    I18n.with_locale(:xy) do
+      street = Faker::Address.street_address
+      assert street =~ /^\d{2}\ higate$/, "Expected '#{street}' to match '<building_number> <street_name>'"
+    end
+  end
+
+  def test_street_address_supports_default_format_with_secondary
+    I18n.with_locale(:xy) do
+      street = Faker::Address.street_address(:include_secondary)
+      assert street =~ /^\d{2}\ higate\ Apt\.\ \d{3}$/, "Expected '#{street}' to match '<building_number> <street_name> Apt. <apartment_number>'"
+    end
+  end
+
+  def test_street_address_can_override_default_format
+    I18n.with_locale(:xz) do
+      street = Faker::Address.street_address
+      assert street =~ /^lowstreet \d{2}!$/, "Expected '#{street}' to match '<street_name> <building_number>!'"
+    end
+  end
+
+  def test_street_address_can_override_default_format_with_secondary
+      I18n.with_locale(:xz) do
+      street = Faker::Address.street_address(:include_secondary)
+      assert street =~ /^lowstreet\ \d{2}!\ \|\ Apt\.\ \d{3}$/, "Expected '#{street}' to match '<street_name> <building_number>! | Apt. <apartment_number>'"
     end
   end
 

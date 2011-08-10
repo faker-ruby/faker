@@ -4,23 +4,7 @@ module Faker
 
     class << self
       def city
-        translated_city_format || default_city_format
-      end
-
-      def translated_city_format
-        formats = I18n.translate(:faker)[:address][:city_formats]
-        if formats
-          formats.rand.collect {|method| self.send(method) }.join
-        end
-      end
-
-      def default_city_format
-        [
-          '%s %s%s' % [city_prefix, city_root, city_suffix],
-          '%s %s' % [city_prefix, city_root],
-          '%s%s' % [city_root, city_suffix],
-          '%s%s' % [city_root(:last_name), city_suffix],
-        ].rand
+        maybe(:city_formats) || default_city_format
       end
 
       def city_root(defaults_to = :first_name)
@@ -29,25 +13,21 @@ module Faker
       end
 
       def street_name
-        translated_street_name_format || default_street_name_format
-      end
-
-      def translated_street_name_format
-        formats = I18n.translate(:faker)[:address][:street_name_formats]
-        if formats
-          formats.rand.collect {|method| self.send(method) }.join
-        end
-      end
-
-      def default_street_name_format
-        [
-          Proc.new { [Name.last_name, street_suffix].join(' ') },
-          Proc.new { [Name.first_name, street_suffix].join(' ') }
-        ].rand.call
+        maybe(:street_name_formats) || default_street_name_format
       end
 
       def street_address(include_secondary = false)
-        numerify("#{fetch('address.street_address')} #{street_name}#{' ' + secondary_address if include_secondary}")
+        address = maybe(:street_address_formats) || default_street_address_format
+        address << street_joiner << secondary_address if include_secondary
+        address
+      end
+
+      def street_joiner
+        I18n.translate(:faker)[:address][:street_joiner] || ' '
+      end
+
+      def building_number
+        numerify(fetch('address.building_number'))
       end
 
       def secondary_address
@@ -55,7 +35,7 @@ module Faker
       end
 
       def zip_code
-        bothify(fetch('address.postcode')).upcase
+        bothify(fetch('address.postcode'))
       end
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
@@ -67,12 +47,41 @@ module Faker
       def state;         fetch('address.state');         end
       def country;       fetch('address.country');       end
 
+      # helper methods
+      def default_city_format
+        [
+          [city_prefix, ' ', city_root, city_suffix],
+          [city_prefix, ' ', city_root],
+          [city_root, city_suffix],
+          [city_root(:last_name), city_suffix],
+        ].rand.join
+      end
+
+      def default_street_name_format
+        [
+          [Name.last_name, street_suffix],
+          [Name.first_name, street_suffix]
+        ].rand.join(' ')
+      end
+
+      def default_street_address_format
+        [building_number, street_name].join(' ')
+      end
+
       # Deprecated
       alias_method :earth_country, :country
       alias_method :us_state, :state
       alias_method :us_state_abbr, :state_abbr
       alias_method :uk_postcode, :zip_code
       def uk_county; county; end
+
+      private
+      def maybe(key)
+        formats = I18n.translate(:faker)[:address][key]
+        if formats
+          formats.rand.collect {|method| self.send(method) }.join
+        end
+      end
 
     end
   end

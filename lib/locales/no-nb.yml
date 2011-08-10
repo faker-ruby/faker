@@ -15,6 +15,14 @@ no-nb:
         -
           - :street_root
           - :street_suffix
+      whitespace: " "
+      street_address_formats:
+        -
+          - :street_name
+          - :whitespace
+          - :building_number
+      street_joiner: ", "
+      building_number: ["#", "##", "###"]
       secondary_address: ['Leil. ###', 'Oppgang A', 'Oppgang B']
       postcode: ["####"]
       state: [""]
