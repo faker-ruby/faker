@@ -1,6 +1,6 @@
 Faker
 =====
-This gem is a port of Perl's Data::Faker library that generates fake data.  
+This gem is a port of Perl's Data::Faker library that generates fake data.
 
 It comes in very handy for taking screenshots (taking screenshots for my
 project, [Catch the Best](http://catchthebest.com/) was the original impetus
@@ -12,6 +12,18 @@ Usage
 -----
 * Faker::Name.name => "Christophe Bartell"
 * Faker::Internet.email => "kirsten.greenholt@corkeryfisher.info"
+* Faker::Company.bs => "monetize integrated bandwidth"
+* Faker::Address.street_address => "544 Mertz Estate"
+* Faker::Address.street_address(:include_secondary) => "459 Luettgen Overpass Apt. 846"
+
+* name = Faker::Name.name => "Julius Champlin"
+* Faker::Internet.email(name) => "julius.champlin@schoen.biz"
+* Faker::Internet.free_email(name) => "julius.champlin@hotmail.com"
+
+* Faker::Config.locale = :nl
+* Faker::Name.name => "Roos Janssen"
+* Faker::Address.city => "Zuid Stijndam"
+* Faker::Address.street_name => ""Bos straat"
 
 Usage with Rails
 ----------------
