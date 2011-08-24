@@ -3,7 +3,7 @@ pt-br:
     address:
       city_prefix: [Nova, Velha, Grande, Vila, Município de]
       city_suffix: [do Descoberto, de Nossa Senhora, do Norte, do Sul]
-      country: [ "Afeganistão", "Albânia", "Algéria, "Samoa, "Andorra", "Angola", "Anguilla", "Antigua and Barbada", "Argentina", "Armênia", "Aruba", "Austrália", 
+      country: [ "Afeganistão", "Albânia", "Algéria", "Samoa, "Andorra", "Angola", "Anguilla", "Antigua and Barbada", "Argentina", "Armênia", "Aruba", "Austrália", 
                  "Áustria", "Alzerbajão", "Bahamas", "Barém", "Bangladesh", "Barbado", "Belgrado", "Bélgica", "Belize", "Benin", "Bermuda", "Bhutan", "Bolívia", 
                  "Bôsnia", "Botuasuna", "Bouvetoia", "Brasil", "Arquipélago de Chagos", "Ilhas Virgens", "Brunei", "Bulgária", "Burkina Faso", "Burundi", "Cambójia", 
                  "Camarões", "Canadá", "Cabo Verde", "Ilhas Caiman", "República da África Central", "Chad", "Chile", "China", "Ilhas Natal", "Ilhas Cocos", "Colômbia", 
@@ -24,9 +24,9 @@ pt-br:
                  "Suécia", "Suíça", "Síria", "Taiwan", "Tajiquistão", "Tanzânia", "Tailândia", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidá e Tobago", "Tunísia", 
                  "Turquia", "Turcomenistão", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ucrânia", "Emirados Árabes Unidos", "Reino Unido", "Estados Unidos da América", 
                  "Estados Unidos das Ilhas Virgens", "Uruguai", "Uzbequistão", "Vanuatu", "Venezuela", "Vietnã", "Wallis and Futuna", "Sahara", "Yemen", "Zâmbia", "Zimbábue"]
-      street_address: ['#####', '####', '###']
+      street_address: ["#####", "####", "###"]
       street_suffix: ["Rua", "Avenida", "Travessa", "Ponte", "Alameda", "Marginal", "Viela", "Rodovia"]
-      secondary_address: ['Apto. ###', 'Sobrado ##', 'Casa #', 'Lote ##', 'Quadra ##']
+      secondary_address: ["Apto. ###", "Sobrado ##", "Casa #", "Lote ##", "Quadra ##"]
       # Though these are US-specific, they are here (in the default locale) for backwards compatibility
       postcode: ["#####", "#####-###"]
       state: ["Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"]
@@ -65,4 +65,4 @@ pt-br:
           - :first_name
           - :last_name
     phone_number:
-      formats: ['###-###-####', '(##)###-####', '55-(##)-###-####', '###.####']
+      formats: ["###-###-####", "(##)###-####", "55-(##)-###-####", "###.####"]
