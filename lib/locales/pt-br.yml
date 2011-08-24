@@ -3,7 +3,7 @@ pt-br:
     address:
       city_prefix: [Nova, Velha, Grande, Vila, Município de]
       city_suffix: [do Descoberto, de Nossa Senhora, do Norte, do Sul]
-      country: [ "Afeganistão", "Albânia", "Algéria", "Samoa, "Andorra", "Angola", "Anguilla", "Antigua and Barbada", "Argentina", "Armênia", "Aruba", "Austrália", 
+      country: [ "Afeganistão", "Albânia", "Algéria", "Samoa", "Andorra", "Angola", "Anguilla", "Antigua and Barbada", "Argentina", "Armênia", "Aruba", "Austrália", 
                  "Áustria", "Alzerbajão", "Bahamas", "Barém", "Bangladesh", "Barbado", "Belgrado", "Bélgica", "Belize", "Benin", "Bermuda", "Bhutan", "Bolívia", 
                  "Bôsnia", "Botuasuna", "Bouvetoia", "Brasil", "Arquipélago de Chagos", "Ilhas Virgens", "Brunei", "Bulgária", "Burkina Faso", "Burundi", "Cambójia", 
                  "Camarões", "Canadá", "Cabo Verde", "Ilhas Caiman", "República da África Central", "Chad", "Chile", "China", "Ilhas Natal", "Ilhas Cocos", "Colômbia", 
@@ -12,7 +12,7 @@ pt-br:
                  "Finlândia", "França", "Guiné Francesa", "Polinésia Francesa", "Gabão", "Gâmbia", "Georgia", "Alemanha", "Gana", "Gibraltar", "Grécia", "Groelândia", 
                  "Granada", "Guadalupe", "Guano", "Guatemala", "Guernsey", "Guiné", "Guiné-Bissau", "Guiana", "Haiti", "Heard Island and McDonald Islands", "Vaticano", 
                  "Honduras", "Hong Kong", "Hungria", "Iceland", "Índia", "Indonésia", "Irã", "Iraque", "Irlanda", "Ilha de Man", "Israel", "Itália", "Jamaica", "Japão", 
-                 "Jersey", "Jordânia", "Cazaquistão", "Quênia", "Kiribati", "Coreia do Norte", "Coreia do Sul", "Kuwait", "Kyrgyz Republic", "Lao People's Democratic Republic", 
+                 "Jersey", "Jordânia", "Cazaquistão", "Quênia", "Kiribati", "Coreia do Norte", "Coreia do Sul", "Kuwait", "Kyrgyz Republic", "República Democrática de Lao People", 
                  "Latvia", "Líbano", "Lesotho", "Libéria", "Libyan Arab Jamahiriya", "Liechtenstein", "Lituânia", "Luxemburgo", "Macao", "Macedônia", "Madagascar", "Malawi", 
                  "Malásia", "Maldives", "Mali", "Malta", "Ilhas Marshall", "Martinica", "Mauritânia", "Mauritius", "Mayotte", "México", "Micronésia", "Moldova", "Mônaco", 
                  "Mongólia", "Montenegro", "Montserrat", "Marrocos", "Moçambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Antilhas Holandesas", "Holanda", "Nova Caledonia", 
