@@ -41,7 +41,15 @@ module Faker
       # Helper for the common approach of grabbing a translation with an array
       # of values and selecting one of them
       def fetch(key)
-        I18n.translate("faker.#{key}", :locale => Faker::Config.locale).sample
+        translate("faker.#{key}").sample
+      end
+      
+      # Call I18n.translate with our configured locale if no
+      # locale is specified
+      def translate(*args)
+        opts = args.last.is_a?(Hash) ? args.pop : {}
+        opts[:locale] ||= Faker::Config.locale
+        I18n.translate(*args, opts)
       end
     end
   end

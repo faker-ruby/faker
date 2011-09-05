@@ -59,7 +59,7 @@ module Faker
       # then you can call #country_code and it will act like #country
       def method_missing(m, *args, &block)
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
-        if translation = I18n.translate(:faker, :locale => Faker::Config.locale)[:address][m]
+        if translation = translate(:faker)[:address][m]
           translation.respond_to?(:sample) ? translation.sample : translation
         else
           super

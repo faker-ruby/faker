@@ -3,8 +3,8 @@ module Faker
   class Lorem < Base
     def self.words(num = 3, supplemental = false)
       (
-        I18n.translate('faker.lorem.words', :locale => Faker::Config.locale) + 
-        (supplemental ? I18n.translate('faker.lorem.supplemental', :locale => Faker::Config.locale) : [])
+        translate('faker.lorem.words') + 
+        (supplemental ? translate('faker.lorem.supplemental') : [])
       ).shuffle[0, num]
     end
     
