@@ -38,6 +38,14 @@ module Faker
       def state;         fetch('address.state');         end
       def country;       fetch('address.country');       end
 
+      def latitude
+        ((rand * 180) - 90).to_s
+      end
+
+      def longitude
+        ((rand * 360) - 180).to_s
+      end
+
       # You can add whatever you want to the locale file, and it will get 
       # caught here... e.g., create a country_code array in your locale, 
       # then you can call #country_code and it will act like #country
