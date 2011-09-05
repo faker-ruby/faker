@@ -6,6 +6,10 @@ module Faker
       wordlist += I18n.translate('faker.lorem.supplemental') if supplemental
       wordlist.shuffle[0, num]
     end
+    
+    def self.characters(char_count = 255)
+      rand(36**char_count).to_s(36)
+    end
 
     def self.sentence(word_count = 4, supplemental = false)
       words(word_count + rand(6), supplemental).join(' ').capitalize + '.'
