@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Faker
   class Internet < Base
     class << self
