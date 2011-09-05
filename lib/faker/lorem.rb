@@ -2,9 +2,10 @@ module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
     def self.words(num = 3, supplemental = false)
-      wordlist = I18n.translate('faker.lorem.words', :locale => Faker::Config.locale)
-      wordlist += I18n.translate('faker.lorem.supplemental', :locale => Faker::Config.locale) if supplemental
-      wordlist.shuffle[0, num]
+      (
+        I18n.translate('faker.lorem.words', :locale => Faker::Config.locale) + 
+        (supplemental ? I18n.translate('faker.lorem.supplemental', :locale => Faker::Config.locale) : [])
+      ).shuffle[0, num]
     end
     
     def self.characters(char_count = 255)
