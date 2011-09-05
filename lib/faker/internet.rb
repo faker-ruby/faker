@@ -45,7 +45,7 @@ module Faker
       end
       
       def ip_v4_address
-        ary = (2..255).to_a
+        ary = (2..254).to_a
         [ary.rand,
         ary.rand,
         ary.rand,
