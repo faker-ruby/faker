@@ -1,4 +1,4 @@
-mydir = File.dirname(__FILE__)
+mydir = File.expand_path(File.dirname(__FILE__))
 
 begin
   require 'psych'
