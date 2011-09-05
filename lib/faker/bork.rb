@@ -11,7 +11,7 @@ module Faker
     end
 
     def self.sentences(sentence_count = 3)
-      returning([]) do |sentences|
+      [].tap do |sentences|
         1.upto(sentence_count) do
           sentences << sentence
         end
@@ -23,7 +23,7 @@ module Faker
     end
 
     def self.paragraphs(paragraph_count = 3)
-      returning([]) do |paragraphs|
+      [].tap do |paragraphs|
         1.upto(paragraph_count) do
           paragraphs << paragraph
         end
