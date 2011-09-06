@@ -30,7 +30,7 @@ nl:
                  "Turks-en Caicoseilanden", "Tuvalu", "Uganda", "Uruguay", "Vanuatu", "Venezuela", "Verenigd Koninkrijk", "Verenigde Arabische Emiraten", 
                  "Verenigde Staten van Amerika", "Vietnam", "Wake Island", "Wallis en Futuna", "Wereld", "West Bank", "Westelijke Sahara", "Zambia", 
                  "Zimbabwe", "Zuid-Afrika", "Zuid-Korea", "Zweden", "Zwitserland"]
-      street_address: ["Koninging Juliana", "Prinses Maxima", "Prinses Beatrix", "Meester van Vollenhoven", "Prinses Irene"]
+      building_number: ["Koninging Juliana", "Prinses Maxima", "Prinses Beatrix", "Meester van Vollenhoven", "Prinses Irene"]
       street_suffix: ["straat", "laan", "weg", "plantsoen", "park"]
       secondary_address: ["1 hoog", "2 hoog", "3 hoog", "I", "II", "III", "a", "b", "c"]
       # Though these are US-specific, they are here (in the default locale) for backwards compatibility

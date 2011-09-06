@@ -25,9 +25,9 @@ module Faker
 
       def street_address(include_secondary = false)
         if Faker::Config.locale == :de
-          numerify("#{street_name} #{fetch('address.street_address')}#{' ' + secondary_address if include_secondary}")
+          numerify("#{street_name} #{building_number}#{' ' + secondary_address if include_secondary}")
         else
-          numerify("#{fetch('address.street_address')} #{street_name}#{' ' + secondary_address if include_secondary}")
+          numerify("#{building_number} #{street_name}#{' ' + secondary_address if include_secondary}")
         end
       end
 

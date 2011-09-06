@@ -24,7 +24,7 @@ pt-br:
                  "Suécia", "Suíça", "Síria", "Taiwan", "Tajiquistão", "Tanzânia", "Tailândia", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidá e Tobago", "Tunísia", 
                  "Turquia", "Turcomenistão", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ucrânia", "Emirados Árabes Unidos", "Reino Unido", "Estados Unidos da América", 
                  "Estados Unidos das Ilhas Virgens", "Uruguai", "Uzbequistão", "Vanuatu", "Venezuela", "Vietnã", "Wallis and Futuna", "Sahara", "Yemen", "Zâmbia", "Zimbábue"]
-      street_address: ["#####", "####", "###"]
+      building_number: ["#####", "####", "###"]
       street_suffix: ["Rua", "Avenida", "Travessa", "Ponte", "Alameda", "Marginal", "Viela", "Rodovia"]
       secondary_address: ["Apto. ###", "Sobrado ##", "Casa #", "Lote ##", "Quadra ##"]
       # Though these are US-specific, they are here (in the default locale) for backwards compatibility
