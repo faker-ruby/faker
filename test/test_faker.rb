@@ -10,4 +10,8 @@ class TestFaker < Test::Unit::TestCase
       assert Faker::Base.numerify('###').match(/[1-9]\d{2}/)
     end
   end
+
+  def test_letterify
+    assert Faker::Base.letterify('???').match(/[A-Z]{3}/)
+  end
 end

@@ -36,7 +36,7 @@ module Faker
       end
 
       def zip_code
-        bothify(fetch('address.postcode')).upcase
+        bothify(fetch('address.postcode'))
       end
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code

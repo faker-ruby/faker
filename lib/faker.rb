@@ -30,7 +30,7 @@ module Faker
       end
   
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { ('a'..'z').to_a.sample }
+        letter_string.gsub(/\?/) { ('A'..'Z').to_a.sample }
       end
   
       def bothify(string)
