@@ -13,22 +13,17 @@ module Faker
       end
 
       def street_name
-        if Faker::Config.locale == :de
-          fetch('address.street_name')
-        else
-          [
-            Proc.new { [Name.last_name, street_suffix].join(' ') },
-            Proc.new { [Name.first_name, street_suffix].join(' ') }
-          ].sample.call
-        end
+        fetch('address.street_name_formats').collect {|meth| self.send(meth) }.join
+      end
+
+      def default_street_root
+        [Name.first_name, Name.last_name].sample
       end
 
       def street_address(include_secondary = false)
-        if Faker::Config.locale == :de
-          numerify("#{street_name} #{building_number}#{' ' + secondary_address if include_secondary}")
-        else
-          numerify("#{building_number} #{street_name}#{' ' + secondary_address if include_secondary}")
-        end
+        address = fetch('address.street_address_formats').collect {|meth| self.send(meth) }.join(' ')
+        address << " " << secondary_address if include_secondary
+        numerify(address)
       end
 
       def secondary_address
@@ -54,6 +49,10 @@ module Faker
 
       def longitude
         ((rand * 360) - 180).to_s
+      end
+
+      def space
+        " "
       end
 
       # Deprecated
