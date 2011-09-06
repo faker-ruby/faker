@@ -4,20 +4,11 @@ module Faker
 
     class << self
       def city
-        [
-          '%s %s%s' % [city_prefix, Name.first_name, city_suffix],
-          '%s %s' % [city_prefix, Name.first_name],
-          '%s%s' % [Name.first_name, city_suffix],
-          '%s%s' % [Name.last_name, city_suffix],
-        ].sample
+        fetch('address.city_formats').collect {|meth| self.send(meth) }.join
       end
 
       def street_name
         fetch('address.street_name_formats').collect {|meth| self.send(meth) }.join
-      end
-
-      def default_street_root
-        [Name.first_name, Name.last_name].sample
       end
 
       def street_address(include_secondary = false)
@@ -49,6 +40,10 @@ module Faker
 
       def longitude
         ((rand * 360) - 180).to_s
+      end
+
+      def default_root
+        [Name.first_name, Name.last_name].sample
       end
 
       def space
