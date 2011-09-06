@@ -11,6 +11,7 @@ de:
       postcode: ['#####', '#####']
       state_abbr: [NRW]
     company:
+      plus: "und"
       suffix: [GmbH, AG, Gruppe]
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
