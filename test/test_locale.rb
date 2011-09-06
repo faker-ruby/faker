@@ -3,6 +3,10 @@ require "test/unit"
 require "faker"
 
 class TestLocale < Test::Unit::TestCase
+  def teardown
+    Faker::Config.locale = nil
+  end
+
   def test_case_name
     I18n.locale = :en
     Faker::Config.locale = :de
