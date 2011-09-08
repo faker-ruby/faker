@@ -26,13 +26,13 @@ class TestFakerStreet < Test::Unit::TestCase
 
   def test_street_address_supports_flexible_formats
     I18n.with_locale(:shire) do
-      assert_match /Wide Cheerful Path \d/, Faker::Address.street_address
+      assert_match(/Wide Cheerful Path \d/, Faker::Address.street_address)
     end
   end
 
   def test_street_address_optionally_provides_secondary_address
     I18n.with_locale(:shire) do
-      assert_match /Wide Cheerful Path \d \(Green Door\)/, Faker::Address.street_address(:include_secondary)
+      assert_match(/Wide Cheerful Path \d \(Green Door\)/, Faker::Address.street_address(:include_secondary))
     end
   end
 end
