@@ -1,3 +1,30 @@
+== 1.0.0 2011-09-05
+* 2 major enhancements
+  * Moved all formats to locale files
+  * Stopped interfering with I18n's global settings for fallbacks
+* 3 minor bug fixes:
+  * Ruby 1.9.2 fixes [eMxyzptlk]
+  * UTF8 fixes [maxmiliano]
+  * Updated IPv4 generator to return valid addresses [Sylvain Desbureaux]
+* Many minor enhancements:
+  * Added bork locale for bork-ified lorem [johnbentcope]
+  * Added IPv6 address generator [jc00ke]
+  * Removed deprecation warnings for Array#rand [chrismarshall]
+  * Added German translation and I18n improvments [Matthias Kühnert]
+  * Added Dutch translation [moretea]
+  * Added Lat/Long generator [Andy Callaghan]
+  * Added buzzword-laden title generator [supercleanse]
+  * Added optional extended wordlist for lorem [chriskottom]
+  * Updated German translation [Jan Schwenzien]
+  * Locale improvements [suweller]
+  * Added limit to lorem generator [darrenterhune]
+  * Added Brazilian Portuguese translation [maxmiliano]
+  * Added Australian translation [madeindata]
+  * Added Canadian translation [igbanam]
+  * Added Norwegian translation [kytrinyx]
+  * Lots of translation-related cleanup [kytrinyx]
+  
+
 == 0.9.5 2011-01-27
 * 1 minor bug fix:
   * Fixed YAML [Aaron Patterson]
