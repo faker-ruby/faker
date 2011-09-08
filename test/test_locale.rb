@@ -6,6 +6,10 @@ LoadedYaml = ['en', 'en-bork'].inject({}) do |h, locale|
 end
 
 class TestLocale < Test::Unit::TestCase
+  def teardown
+    Faker::Config.locale = nil
+  end
+
   def test_locale_separate_from_i18n
     I18n.locale = :en
     Faker::Config.locale = :de

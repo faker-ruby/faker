@@ -1,32 +1,18 @@
 module Faker
   class Address < Base
+    flexible :address
+
     class << self
       def city
-        [
-          '%s %s%s' % [city_prefix, Name.first_name, city_suffix],
-          '%s %s' % [city_prefix, Name.first_name],
-          '%s%s' % [Name.first_name, city_suffix],
-          '%s%s' % [Name.last_name, city_suffix],
-        ].sample
+        parse('address.city')
       end
 
       def street_name
-        if Faker::Config.locale == :de
-          fetch('address.street_name')
-        else
-          [
-            Proc.new { [Name.last_name, street_suffix].join(' ') },
-            Proc.new { [Name.first_name, street_suffix].join(' ') }
-          ].sample.call
-        end
+        parse('address.street_name')
       end
 
       def street_address(include_secondary = false)
-        if Faker::Config.locale == :de
-          numerify("#{street_name} #{fetch('address.street_address')}#{' ' + secondary_address if include_secondary}")
-        else
-          numerify("#{fetch('address.street_address')} #{street_name}#{' ' + secondary_address if include_secondary}")
-        end
+        numerify(parse('address.street_address') + (include_secondary ? ' ' + secondary_address : ''))
       end
 
       def secondary_address
@@ -34,7 +20,7 @@ module Faker
       end
 
       def zip_code
-        bothify(fetch('address.postcode')).upcase
+        bothify(fetch('address.postcode'))
       end
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
@@ -54,18 +40,6 @@ module Faker
         ((rand * 360) - 180).to_s
       end
 
-      # You can add whatever you want to the locale file, and it will get 
-      # caught here... e.g., create a country_code array in your locale, 
-      # then you can call #country_code and it will act like #country
-      def method_missing(m, *args, &block)
-        # Use the alternate form of translate to get a nil rather than a "missing translation" string
-        if translation = translate(:faker)[:address][m]
-          translation.respond_to?(:sample) ? translation.sample : translation
-        else
-          super
-        end
-      end
-      
       # Deprecated
       alias_method :earth_country, :country
       alias_method :us_state, :state

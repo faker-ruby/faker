@@ -15,7 +15,7 @@ en-au:
       state_abbr: [NSW, QLD, NT, SA, WA, TAS, ACT, VIC]
       state: [New South Wales, Queensland, Northern Territory, South Australia, Western Australia, Tasmania, Australian Capital Territory, Victoria]
       postcode: ['0###', '2###', '3###', '4###', '5###', '6###', '7###']
-      street_address: ['####', '###', '##']
+      building_number: ['####', '###', '##']
       street_suffix: [Avenue, Boulevard, Circle, Circuit, Court, Crescent, Crest, Drive, Estate Dr, Grove, Hill, Island, Junction, Knoll, Lane, Loop, Mall, Manor, Meadow, Mews, Parade, Parkway, Pass, Place, Plaza, Ridge, Road, Run, Square, Station St, Street, Summit, Terrace, Track, Trail, View Rd, Way]
     phone_number:
       formats: ['0# #### ####', '+61 # #### ####', '04## #### ####', '+61 4## #### ####'] #iOS AUS phone formats

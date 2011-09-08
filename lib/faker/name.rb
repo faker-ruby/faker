@@ -1,9 +1,11 @@
 module Faker
   class Name < Base
+    flexible :name
+
     class << self
       
       def name
-        fetch('name.formats').collect {|meth| self.send(meth) }.join(' ')
+        parse('name.name')
       end
       
       def first_name; fetch('name.first_name'); end
