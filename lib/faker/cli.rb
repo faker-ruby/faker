@@ -49,7 +49,7 @@ module Faker
         else
           puts "Usage: `faker company -f=name`"
           puts "Run `faker help company` for a list of valid types"
-        end
+      end
     end
 
     desc "internet [-f email|free_email|user_name|domain_name|ip_v4_address|ip_v6_address]",
@@ -76,7 +76,7 @@ module Faker
         else
           puts "Usage: `faker internet -f=email`"
           puts "Run `faker help internet` for a list of valid types"
-        end
+      end
     end
 
     desc "lorum [-f words|sentence|sentences|paragraph|paragraphs -c 5]",
@@ -98,7 +98,7 @@ module Faker
         else
           puts "Usage: `faker lorum -f words -n 5`"
           puts "Run `faker help lorum` for a list of valid types"
-        end
+      end
     end
 
     desc "name [-f name|first_name|last_name|prefix|suffix]",
@@ -119,7 +119,7 @@ module Faker
         else
           puts "Usage: `faker name -f name`"
           puts "Run `faker help name` for a list of valid types"
-        end
+      end
     end
 
     desc "phone_number",
