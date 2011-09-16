@@ -1,5 +1,4 @@
 require 'thor'
-require 'faker.rb'
 
 module Faker
   class CLI < Thor
