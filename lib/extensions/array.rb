@@ -1,5 +1,7 @@
 class Array
-  def rand
-    self[Kernel.rand(length)]
+  unless self.method_defined? :sample
+    def sample
+      choice
+    end
   end
 end

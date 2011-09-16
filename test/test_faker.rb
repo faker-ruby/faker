@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFaker < Test::Unit::TestCase
 
@@ -6,6 +6,12 @@ class TestFaker < Test::Unit::TestCase
   end
   
   def test_numerify
-    assert Faker::Base.numerify('###').match(/\d{3}/)
+    100.times do
+      assert Faker::Base.numerify('###').match(/[1-9]\d{2}/)
+    end
+  end
+
+  def test_letterify
+    assert Faker::Base.letterify('???').match(/[A-Z]{3}/)
   end
 end

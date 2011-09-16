@@ -12,7 +12,7 @@ h2. Usage
 
 Faker::Name.name => "Bob Hope"
 
-"Read the docs":/rdoc
+"Read the docs":http://rubydoc.info/github/stympy/faker/master/frames
 
 h2. Forum
 
