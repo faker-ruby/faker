@@ -10,6 +10,10 @@ module Faker
         [ user_name(name), fetch('internet.free_email') ].join('@')
       end
       
+      def safe_email(name = nil)
+        [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
+      end
+      
       def user_name(name = nil)
         return name.scan(/\w+/).shuffle.join(%w(. _).sample).downcase if name
         
