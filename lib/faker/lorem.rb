@@ -15,7 +15,8 @@ module Faker
 
       def characters(char_count = 255)
         return '' if char_count.respond_to?(:to_i) && char_count.to_i < 1
-        rand(36**resolve(char_count)).to_s(36)
+        char_count = resolve(char_count)
+        rand(36**char_count).to_s(36).rjust(char_count, '0').chars.to_a.shuffle.join
       end
 
       def sentence(word_count = 4, supplemental = false)

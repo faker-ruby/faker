@@ -9,6 +9,14 @@ class TestFakerLorem < Test::Unit::TestCase
       @standard_wordlist + I18n.translate('faker.lorem.supplemental')
   end
 
+  def test_characters
+    assert @tester.characters.length == 255
+  end
+
+  def test_characters_with_args
+    1000.times { assert @tester.characters(500).length == 500 }
+  end
+
   # Words delivered by a standard request should be on the standard wordlist.
   def test_standard_words
     @words = @tester.words(1000)
