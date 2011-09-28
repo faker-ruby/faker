@@ -9,7 +9,7 @@ module Faker
     end
     
     def self.characters(char_count = 255)
-      rand(36**char_count).to_s(36)
+      rand(36**char_count).to_s(36).rjust(char_count, '0').chars.to_a.shuffle.join
     end
 
     def self.sentence(word_count = 4, supplemental = false)
