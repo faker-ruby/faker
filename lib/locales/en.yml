@@ -21,6 +21,7 @@ en:
         - "#{Name.last_name} #{street_suffix}"
       street_address:
         - "#{building_number} #{street_name}"
+      default_country: [United States of America]
 
     company:
       suffix: [Inc, and Sons, LLC, Group]

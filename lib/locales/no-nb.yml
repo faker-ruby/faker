@@ -21,6 +21,7 @@ no-nb:
         - "#{Name.last_name}#{common_street_suffix}"
       street_address:
         - "#{street_name} #{building_number}"
+      default_country: [Norge]
 
     company:
       suffix: ["Gruppen", "AS", "ASA", "BA", "RFH", "og Sønner"]

@@ -41,6 +41,7 @@ nl:
         - "#{street_name} #{building_number}"
       postcode: ["#### ??"]
       state: ["Noord-Holland", "Zuid-Holland", "Utrecht", "Zeeland", "Overijssel", "Gelderland", "Drenthe", "Friesland", "Groningen", "Noord-Braband", "Limburg"]
+      default_country: [Nederland]
 
     company:
       suffix: [BV, V.O.F., Group, en Zonen]
