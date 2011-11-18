@@ -2,7 +2,12 @@ nl:
   faker:
     address:
       city_prefix: [Noord, Oost, West, Zuid, Nieuw, Oud]
-      city_suffix: [dam, berg, aan de Rijn, aan de IJssel]
+      city_suffix: ["dam", "berg", " aan de Rijn", " aan de IJssel", "swaerd", "endrecht", "recht", "ambacht", "enmaes", "wijk", "sland", "stroom", "sluus", "dijk", "dorp", "burg", "veld", "sluis", "koop", "lek", "hout", "geest", "kerk", "woude", "hoven", "hoten", "ingen", "plas", "meer"]
+      city:
+        - "#{Name.first_name}#{city_suffix}"
+        - "#{Name.last_name}#{city_suffix}"
+        - "#{city_prefix} #{Name.first_name}#{city_suffix}"
+        - "#{city_prefix} #{Name.last_name}#{city_suffix}"
       country: [ "Afghanistan", "Akrotiri", "Albanië", "Algerije", "Amerikaanse Maagdeneilanden", "Amerikaans-Samoa", "Andorra", "Angola", "Anguilla",
                  "Antarctica", "Antigua en Barbuda", "Arctic Ocean", "Argentinië", "Armenië", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", 
                  "Australië", "Azerbeidzjan", "Bahama's", "Bahrein", "Bangladesh", "Barbados", "Belarus", "België", "Belize", "Benin", "Bermuda", "Bhutan", 
