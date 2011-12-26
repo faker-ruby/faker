@@ -47,7 +47,18 @@ module Faker
       # into method calls that can be used to generate a
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
-        fetch(key).scan(/#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|kls, meth, etc| (kls ? Faker.const_get(kls.chop) : self).send(meth) + etc.to_s }.join
+        fetch(key).scan(/#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|kls, meth, etc| 
+          # If the token had a class Prefix (e.g., Name.first_name)
+          # grab the constant, otherwise use self
+          cls = kls ? Faker.const_get(kls.chop) : self
+
+          # If the class has the method, call it, otherwise
+          # fetch the transation (i.e., faker.name.first_name)
+          text = cls.respond_to?(meth) ? cls.send(meth) : fetch("#{(kls || self).to_s.split('::').last.downcase}.#{meth.downcase}")
+          
+          # And tack on spaces, commas, etc. left over in the string
+          text += etc.to_s
+        }.join
       end
       
       # Call I18n.translate with our configured locale if no

@@ -1,3 +1,9 @@
+== 1.0.1 2011-09-27
+* 1 minor enhancement
+  * Added safe_email method to get someaddress@example.com [Kazimierz Kiełkowicz]
+* 1 bug fix:
+  * Use the locale fallback properly when parsing string formats
+
 == 1.0.0 2011-09-08
 * 2 major enhancements
   * Moved all formats to locale files
