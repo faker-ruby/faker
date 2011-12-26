@@ -21,33 +21,33 @@ module Faker
       end
     end
   end
-  
+
   class Base
     class << self
       ## make sure numerify results doesn’t start with a zero
       def numerify(number_string)
         number_string.sub(/#/) { (rand(9)+1).to_s }.gsub(/#/) { rand(10).to_s }
       end
-  
+
       def letterify(letter_string)
         letter_string.gsub(/\?/) { ('A'..'Z').to_a.sample }
       end
-  
+
       def bothify(string)
         letterify(numerify(string))
       end
-      
+
       # Helper for the common approach of grabbing a translation
       # with an array of values and selecting one of them.
       def fetch(key)
         translate("faker.#{key}").sample
       end
-      
+
       # Load formatted strings from the locale, "parsing" them
       # into method calls that can be used to generate a
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
-        fetch(key).scan(/#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|kls, meth, etc| 
+        fetch(key).scan(/#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|kls, meth, etc|
           # If the token had a class Prefix (e.g., Name.first_name)
           # grab the constant, otherwise use self
           cls = kls ? Faker.const_get(kls.chop) : self
@@ -55,12 +55,12 @@ module Faker
           # If the class has the method, call it, otherwise
           # fetch the transation (i.e., faker.name.first_name)
           text = cls.respond_to?(meth) ? cls.send(meth) : fetch("#{(kls || self).to_s.split('::').last.downcase}.#{meth.downcase}")
-          
+
           # And tack on spaces, commas, etc. left over in the string
           text += etc.to_s
         }.join
       end
-      
+
       # Call I18n.translate with our configured locale if no
       # locale is specified
       def translate(*args)
@@ -72,9 +72,9 @@ module Faker
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        I18n.translate(*(args.push(opts.merge(:locale => :en))))
+        I18n.translate(*(args.pop.push(opts.merge(:locale => :en))))
       end
-      
+
       def flexible(key)
         @flexible_key = key
       end
