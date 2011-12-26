@@ -2,7 +2,12 @@ nl:
   faker:
     address:
       city_prefix: [Noord, Oost, West, Zuid, Nieuw, Oud]
-      city_suffix: [dam, berg, aan de Rijn, aan de IJssel]
+      city_suffix: ["dam", "berg", " aan de Rijn", " aan de IJssel", "swaerd", "endrecht", "recht", "ambacht", "enmaes", "wijk", "sland", "stroom", "sluus", "dijk", "dorp", "burg", "veld", "sluis", "koop", "lek", "hout", "geest", "kerk", "woude", "hoven", "hoten", "ingen", "plas", "meer"]
+      city:
+        - "#{Name.first_name}#{city_suffix}"
+        - "#{Name.last_name}#{city_suffix}"
+        - "#{city_prefix} #{Name.first_name}#{city_suffix}"
+        - "#{city_prefix} #{Name.last_name}#{city_suffix}"
       country: [ "Afghanistan", "Akrotiri", "Albanië", "Algerije", "Amerikaanse Maagdeneilanden", "Amerikaans-Samoa", "Andorra", "Angola", "Anguilla",
                  "Antarctica", "Antigua en Barbuda", "Arctic Ocean", "Argentinië", "Armenië", "Aruba", "Ashmore and Cartier Islands", "Atlantic Ocean", 
                  "Australië", "Azerbeidzjan", "Bahama's", "Bahrein", "Bangladesh", "Barbados", "Belarus", "België", "Belize", "Benin", "Bermuda", "Bhutan", 
@@ -30,11 +35,18 @@ nl:
                  "Turks-en Caicoseilanden", "Tuvalu", "Uganda", "Uruguay", "Vanuatu", "Venezuela", "Verenigd Koninkrijk", "Verenigde Arabische Emiraten", 
                  "Verenigde Staten van Amerika", "Vietnam", "Wake Island", "Wallis en Futuna", "Wereld", "West Bank", "Westelijke Sahara", "Zambia", 
                  "Zimbabwe", "Zuid-Afrika", "Zuid-Korea", "Zweden", "Zwitserland"]
-      building_number: ["Koninging Juliana", "Prinses Maxima", "Prinses Beatrix", "Meester van Vollenhoven", "Prinses Irene"]
+      building_number: ["#", "##", "###", "###a", "###b", "###c", "### I", "### II", "### III"]
       street_suffix: ["straat", "laan", "weg", "plantsoen", "park"]
-      secondary_address: ["1 hoog", "2 hoog", "3 hoog", "I", "II", "III", "a", "b", "c"]
+      secondary_address: ["1 hoog", "2 hoog", "3 hoog"]
+      street_name:
+        - "#{Name.first_name}#{street_suffix}"
+        - "#{Name.last_name}#{street_suffix}"
+
+      street_address:
+        - "#{street_name} #{building_number}"
       postcode: ["#### ??"]
       state: ["Noord-Holland", "Zuid-Holland", "Utrecht", "Zeeland", "Overijssel", "Gelderland", "Drenthe", "Friesland", "Groningen", "Noord-Braband", "Limburg"]
+      default_country: [Nederland]
 
     company:
       suffix: [BV, V.O.F., Group, en Zonen]

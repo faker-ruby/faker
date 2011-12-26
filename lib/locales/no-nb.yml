@@ -16,11 +16,12 @@ no-nb:
         - "#{city_root}#{city_suffix}"
       street_name:
         - "#{street_root}#{street_suffix}"
-        - "#{street_suffix} #{street_root}#{street_suffix}"
+        - "#{street_prefix} #{street_root}#{street_suffix}"
         - "#{Name.first_name}#{common_street_suffix}"
         - "#{Name.last_name}#{common_street_suffix}"
       street_address:
         - "#{street_name} #{building_number}"
+      default_country: [Norge]
 
     company:
       suffix: ["Gruppen", "AS", "ASA", "BA", "RFH", "og Sønner"]

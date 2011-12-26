@@ -17,5 +17,6 @@ en-au:
       postcode: ['0###', '2###', '3###', '4###', '5###', '6###', '7###']
       building_number: ['####', '###', '##']
       street_suffix: [Avenue, Boulevard, Circle, Circuit, Court, Crescent, Crest, Drive, Estate Dr, Grove, Hill, Island, Junction, Knoll, Lane, Loop, Mall, Manor, Meadow, Mews, Parade, Parkway, Pass, Place, Plaza, Ridge, Road, Run, Square, Station St, Street, Summit, Terrace, Track, Trail, View Rd, Way]
+      default_country: [Australia]
     phone_number:
       formats: ['0# #### ####', '+61 # #### ####', '04## #### ####', '+61 4## #### ####'] #iOS AUS phone formats
