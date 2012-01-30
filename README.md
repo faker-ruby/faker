@@ -35,6 +35,9 @@ If you'd like to contribute code or formats/data for another locale, fork
 the project at [github](https://github.com/stympy/faker), make your changes,
 then send a pull request.
 
+**note**
+Run `bundle install` and `rake test` to confirm tests are passing.
+
 Contact
 -------
 Comments and feedback are welcome. Send an email to Benjamin Curtis via the [google group](http://groups.google.com/group/ruby-faker).
