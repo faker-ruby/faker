@@ -46,4 +46,16 @@ class TestFakerLorem < Test::Unit::TestCase
     assert(2 <= ss.length && ss.length <= 5)
     assert(2 <= ps.length && ps.length <= 5)
   end
+
+  def test_array_count_param
+    cs = @tester.characters([1,4])
+    ws = @tester.words([1,4])
+    ss = @tester.sentences([1,4])
+    ps = @tester.paragraphs([1,4])
+
+    assert(cs.length == 1 || cs.length == 4)
+    assert(ws.length == 1 || ws.length == 4)
+    assert(ss.length == 1 || ss.length == 4)
+    assert(ps.length == 1 || ps.length == 4)
+  end
 end
