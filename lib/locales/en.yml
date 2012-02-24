@@ -39,7 +39,11 @@ en:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
-          
+      job_title:
+        - ['Chief', 'District', 'Global', 'Internal', 'Junior', 'Lead', 'National', 'Product', 'Regional', 'Senior']
+        - ['Brand', 'Communications', 'Creative', 'Data', 'Design', 'Engineering', 'Executive', 'Integration', 'Marketing', 'Operations', 'Quality', 'Research', 'Sales', 'Team']
+        - ['Administrator', 'Analyst', 'Architect', 'Artist', 'Assistant', 'Coordinator', 'Developer', 'Director', 'Engineer', 'Liason', 'Lead', 'Officer', 'Person', 'Supervisor', 'Technician']
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, biz, info, name, net, org]
