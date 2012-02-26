@@ -145,6 +145,7 @@ end
 
 require 'faker/address'
 require 'faker/company'
+require 'faker/credit_card'
 require 'faker/internet'
 require 'faker/lorem'
 require 'faker/name'
