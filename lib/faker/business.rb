@@ -10,6 +10,10 @@ module Faker
       def credit_card_expiry_date
         Date.parse(fetch('business.credit_card_expiry_dates'))
       end
+      
+      def credit_card_type
+        fetch('business.credit_card_types')
+      end
     end
     
   end
