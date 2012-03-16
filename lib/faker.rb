@@ -143,6 +143,7 @@ module Faker
   end
 end
 
+require 'faker/moment'
 require 'faker/address'
 require 'faker/company'
 require 'faker/internet'
