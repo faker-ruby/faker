@@ -16,7 +16,10 @@ module Faker
     # before and after are the number of seconds into the day and both are inclusive    
     # ondate is set to today if not explicitly stated
     def self.time(ondate = nil, after = nil, before = nil)
+      # if ondate is a Time, convert to a date
+      ondate = Date.new(ondate.year, ondate.month, ondate.day) if ondate.is_a? Time
       ondate ||= Date.today
+
       after ||= 0
       before ||= (60 * 60 * 24)
       interval = (before - after).to_i
