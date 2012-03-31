@@ -7,7 +7,7 @@ class TestFakerVat < Test::Unit::TestCase
     Faker::Vat.number :poland
   end
 
-  def test_raises_no_constant
+  def test_raises_no_exist_country
     assert_raise(Faker::Vat::NoExistCountryError) do 
       Faker::Vat.number :no_exist_country
     end
