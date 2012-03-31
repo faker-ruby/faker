@@ -28,6 +28,7 @@ module Faker
     Letters = ULetters + Array('a'..'z')
 
     class << self
+
       ## make sure numerify results doesn’t start with a zero
       def numerify(number_string)
         number_string.sub(/#/) { (rand(9)+1).to_s }.gsub(/#/) { rand(10).to_s }
@@ -123,6 +124,20 @@ module Faker
         @flexible_key = key
       end
 
+      # Stolen from ActiveSupport
+      # activesupport/lib/active_support/inflector/methods.rb, line 212
+      #
+      def constantize(camel_cased_word)
+        names = camel_cased_word.split('::')
+        names.shift if names.empty? || names.first.empty?
+
+        constant = Object
+        names.each do |name|
+          constant = constant.const_defined?(name) ? constant.const_get(name) : constant.const_missing(name)
+        end
+        constant
+      end
+
       # You can add whatever you want to the locale file, and it will get caught here.
       # E.g., in your locale file, create a
       #   name:
@@ -150,5 +165,6 @@ require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
+require 'faker/vat'
 
 require 'extensions/array'
