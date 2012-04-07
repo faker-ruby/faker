@@ -9,6 +9,7 @@ module Faker
     end
     
     def self.characters(char_count = 255)
+      return "" if char_count < 1
       rand(36**char_count).to_s(36)
     end
 
