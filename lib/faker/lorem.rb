@@ -8,13 +8,14 @@ module Faker
 
       def words(num = 3, supplemental = false)
       (
-        translate('faker.lorem.words') + 
+        translate('faker.lorem.words') +
         (supplemental ? translate('faker.lorem.supplemental') : [])
       ).shuffle[0, num]
       end
-      
+
       def characters(char_count = 255)
-        rand(36**char_count).to_s(36)
+        return '' if char_count.to_i < 1
+        rand(36**char_count.to_i).to_s(36)
       end
 
       def sentence(word_count = 4, supplemental = false)
