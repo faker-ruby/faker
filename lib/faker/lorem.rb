@@ -1,6 +1,10 @@
 module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
+    def self.word(supplemental = false)
+      words(1, supplemental).first
+    end
+
     def self.words(num = 3, supplemental = false)
       (
         translate('faker.lorem.words') + 
