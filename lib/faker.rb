@@ -138,6 +138,22 @@ module Faker
         constant
       end
 
+      def send_to_locale_class(method_name)
+        begin
+          klass = locale_class_name.constantize
+          if klass && klass.respond_to?(method_name)
+            klass.send method_name
+          end
+        rescue NameError
+          nil
+        end
+      end
+
+      def locale_class_name
+        locale = Faker::Config.locale.to_s.split('-').map(&:capitalize).join("::")
+        "Faker::Locale::#{locale}::Base" 
+      end
+
       # You can add whatever you want to the locale file, and it will get caught here.
       # E.g., in your locale file, create a
       #   name:
@@ -165,6 +181,6 @@ require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
-require 'faker/vat'
-
-require 'extensions/array'
+require 'faker/identifier'
+Dir[File.dirname(__FILE__) + '/faker/locale/**/*.rb'].each { |f| require f }
+Dir[File.dirname(__FILE__) + '/extensions/**/*.rb'].each { |f| require f }
