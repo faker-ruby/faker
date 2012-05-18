@@ -151,7 +151,7 @@ module Faker
 
       def locale_class_name
         locale = Faker::Config.locale.to_s.split('-').map(&:capitalize).join("::")
-        "Faker::Locale::#{locale}::Base" 
+        "Faker::Locale::#{locale}".gsub(/^(\w+::\w+::\w+)$/){ "#{$1}::Base" }
       end
 
       # You can add whatever you want to the locale file, and it will get caught here.

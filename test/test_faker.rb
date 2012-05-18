@@ -16,7 +16,7 @@ class TestFaker < Test::Unit::TestCase
   end
 
   def test_locale_class
-    locales = { "pl" => "Faker::Locale::Pl::Base", "en-US" => "Faker::Locale::En::Us::Base" }
+    locales = { "en" => "Faker::Locale::En::Base", "en-US" => "Faker::Locale::En::Us" }
     locales.each do |k, v|
       Faker::Config.locale = k.to_sym
       assert_equal v, Faker::Base.locale_class_name
