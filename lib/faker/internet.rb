@@ -27,6 +27,13 @@ module Faker
             result = result * 2
           end
           return result
+        elsif specifier.kind_of? Range
+          tries = 0
+          begin
+            result = user_name specifier.min
+            tries += 1
+          end while not specifier.include? result.length and tries < 7
+          return result[0...specifier.max]
         end
         
         fix_umlauts([ 
