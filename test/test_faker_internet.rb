@@ -34,7 +34,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_user_name_with_range_arg
     (1..32).each do |min_length|
-      (min_length..32) do |max_length|
+      (min_length..32).each do |max_length|
         l = @tester.user_name((min_length..max_length)).length
         assert l >= min_length
         assert l <= max_length
