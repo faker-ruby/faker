@@ -14,8 +14,20 @@ module Faker
         [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
       end
       
-      def user_name(name = nil)
-        return name.scan(/\w+/).shuffle.join(%w(. _).sample).downcase if name
+      def user_name(specifier = nil)
+        if specifier.kind_of? String
+          return specifier.scan(/\w+/).shuffle.join(%w(. _).sample).downcase
+        elsif specifier.kind_of? Integer
+          tries = 0 # Don't try forever in case we get something like 1_000_000.
+          begin
+            result = user_name
+            tries += 1
+          end while result.length < specifier and tries < 7
+          until result.length >= specifier
+            result = result * 2
+          end
+          return result
+        end
         
         fix_umlauts([ 
           Proc.new { Name.first_name.gsub(/\W/, '').downcase },
