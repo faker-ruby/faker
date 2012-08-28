@@ -144,6 +144,11 @@ module Faker
         end
       end
 
+      # Generates a random value between the interval
+      def rand_in_range(from, to)
+        from, to = to, from if to < from
+        Random.new.rand(from..to)
+      end
     end
   end
 end
@@ -163,6 +168,9 @@ require 'faker/version'
 require 'faker/number'
 require 'faker/bitcoin'
 require 'faker/avatar'
+require 'faker/date'
+require 'faker/time'
+require 'faker/number'
 
 require 'extensions/array'
 require 'extensions/symbol'
