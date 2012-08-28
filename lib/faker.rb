@@ -139,6 +139,12 @@ module Faker
         end
       end
 
+      # Used by Faker::Date and Faker::Number
+      def rand_in_range(from, to)
+        from, to = to, from if to < from
+        rand * (to - from) + from
+      end
+
     end
   end
 end
@@ -150,5 +156,7 @@ require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
+require 'faker/date'
+require 'faker/number'
 
 require 'extensions/array'
