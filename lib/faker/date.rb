@@ -6,9 +6,10 @@ module Faker
         :all => (0..23),
         :day => (9..17),
         :night => (18..23),
-        :morning => (9..11),
+        :morning => (6..11),
         :afternoon => (12..17),
-        :dawn => (0..4)
+        :evening => (17..21),
+        :midnight => (0..4)
       }
 
       def between(from, to, options)
@@ -22,11 +23,11 @@ module Faker
         custom_date
       end
 
-      def future(max_days = 365, options = {:period => :all})
+      def forward(max_days = 365, options = {:period => :all})
         between(Time.now, Time.now + days(max_days), options)
       end
 
-      def past(max_days = 365, options = {:period => :all})
+      def backward(max_days = 365, options = {:period => :all})
         between(Time.now - days(max_days), Time.now, options)
       end
 

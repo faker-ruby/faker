@@ -139,12 +139,11 @@ module Faker
         end
       end
 
-      # Used by Faker::Date and Faker::Number
+      # Generates a random value between the interval
       def rand_in_range(from, to)
         from, to = to, from if to < from
         rand * (to - from) + from
       end
-
     end
   end
 end

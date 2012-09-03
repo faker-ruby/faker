@@ -2,7 +2,6 @@
 module Faker
   class Number < Base
     class << self
-
       def between(from = 1, to = 1500, options = {:integer => false})
         custom_number = rand_in_range(from.to_f, to.to_f)
         if options[:integer]
@@ -23,7 +22,6 @@ module Faker
         num = num * -1 if num > 0
         num
       end
-
     end
   end
 end
