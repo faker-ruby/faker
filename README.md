@@ -8,6 +8,12 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
+Installing
+----------
+```bash
+sudo gem install faker
+```
+
 Usage
 -----
 * Faker::Name.name => "Christophe Bartell"
