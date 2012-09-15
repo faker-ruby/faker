@@ -5,6 +5,24 @@ class TestFaker < Test::Unit::TestCase
   def setup
   end
 
+  def teardown
+    Faker::Config.locale = nil
+  end
+
+  def test_send_to_locale_class
+    Faker::Config.locale = :pl
+    Faker::Locale::Pl::Base.expects :vat
+    Faker::Base.send_to_locale_class(:vat)
+  end
+
+  def test_locale_class
+    locales = { "en" => "Faker::Locale::En::Base", "en-US" => "Faker::Locale::En::Us" }
+    locales.each do |k, v|
+      Faker::Config.locale = k.to_sym
+      assert_equal v, Faker::Base.locale_class_name
+    end
+  end
+
   def test_numerify
     100.times do
       assert Faker::Base.numerify('###').match(/[1-9]\d{2}/)
