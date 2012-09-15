@@ -1,4 +1,4 @@
-== 1.2 2012-09-15
+== 1.1 2012-09-15
 * 1 major change:
   * Removed deprecated methods from Address: earth_country, us_state, us_state_abbr, uk_postcode, uk_county
 * Many minor changes (please see github pull requests for credits)
