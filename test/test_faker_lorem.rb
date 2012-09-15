@@ -20,4 +20,11 @@ class TestFakerLorem < Test::Unit::TestCase
     @words = @tester.words(10000, true)
     @words.each {|w| assert @complete_wordlist.include?(w) }
   end
+
+  # Faker::Lorem.word generates random word from standart wordlist
+  def test_word
+    @tester = Faker::Lorem
+    @standard_wordlist = I18n.translate('faker.lorem.words')
+    1000.times { assert @standard_wordlist.include?(@tester.word) }
+  end
 end
