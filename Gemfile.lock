@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    faker (1.0.1)
+      i18n (~> 0.5)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    i18n (0.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  faker!
