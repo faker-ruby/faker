@@ -19,6 +19,10 @@ module Faker
         numerify(fetch('address.secondary_address'))
       end
 
+      def building_number
+        bothify(fetch('address.building_number'))
+      end
+
       def zip_code
         bothify(fetch('address.postcode'))
       end
