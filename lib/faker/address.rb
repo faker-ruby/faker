@@ -49,7 +49,7 @@ module Faker
       alias_method :us_state, :state
       alias_method :us_state_abbr, :state_abbr
       alias_method :uk_postcode, :zip_code
-      def uk_county; county; end
+      def uk_county; country; end
 
     end
   end
