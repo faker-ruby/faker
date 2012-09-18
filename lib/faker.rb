@@ -152,3 +152,4 @@ require 'faker/phone_number'
 require 'faker/version'
 
 require 'extensions/array'
+require 'extensions/symbol'
