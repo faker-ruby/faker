@@ -1,3 +1,7 @@
+== 1.1.2 2012-09-18
+* 1 minor change:
+  * Fixed Ruby 1.8 compatibility
+
 == 1.1.1 2012-09-17
 * 1 minor change:
   * Removed ja locale because of parse errors
