@@ -142,7 +142,7 @@ module Faker
       # Generates a random value between the interval
       def rand_in_range(from, to)
         from, to = to, from if to < from
-        rand * (to - from) + from
+        rand(from..to)
       end
     end
   end
@@ -156,6 +156,7 @@ require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
 require 'faker/date'
+require 'faker/time'
 require 'faker/number'
 
 require 'extensions/array'
