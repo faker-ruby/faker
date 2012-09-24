@@ -12,6 +12,7 @@ class TestFakerStreet < Test::Unit::TestCase
           :secondary_address => ["(Green Door)"],
           :street_address => ['#{street_name} #{building_number}'],
           :building_number => ["#"],
+          :time_zone => ["Pacific/Pago_Pago"],
         }
       }
     }
@@ -41,4 +42,11 @@ class TestFakerStreet < Test::Unit::TestCase
       assert_match(/^\d+ \w+ \w+/, Faker::Address.street_address)
     end
   end
+
+  def test_timezone_support
+    I18n.with_locale(:shire) do
+      assert_equal "Pacific/Pago_Pago", Faker::Address.time_zone
+    end
+  end
+
 end
