@@ -142,7 +142,7 @@ module Faker
       # Generates a random value between the interval
       def rand_in_range(from, to)
         from, to = to, from if to < from
-        rand(from..to)
+        Random.new.rand(from..to)
       end
     end
   end
