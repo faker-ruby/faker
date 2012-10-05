@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+#adapted from: http://rvm.beginrescueend.com/workflow/rvmrc/
+
+ruby_string="1.9.3"
+gemset_name="faker"
+
+if rvm list strings | grep -q "${ruby_string}" ; then
+
+# Load or create the specified environment
+if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
+&& -s "${rvm_path:-$HOME/.rvm}/environments/${ruby_string}@${gemset_name}" ]] ; then
+\. "${rvm_path:-$HOME/.rvm}/environments/${ruby_string}@${gemset_name}"
+else
+rvm --create use "${ruby_string}@${gemset_name}"
+fi
+
+else
+
+# Notify the user to install the desired interpreter before proceeding.
+echo "${ruby_string} was not found, please run 'rvm install ${ruby_string}' and then cd back into the project directory."
+
+fi

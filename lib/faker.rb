@@ -150,6 +150,7 @@ require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
+require 'faker/number'
 
 require 'extensions/array'
 require 'extensions/symbol'
