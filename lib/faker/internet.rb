@@ -16,14 +16,23 @@ module Faker
       
       def user_name(name = nil)
         return name.scan(/\w+/).shuffle.join(%w(. _).sample).downcase if name
-        
-        fix_umlauts([ 
-          Proc.new { Name.first_name.gsub(/\W/, '').downcase },
-          Proc.new { 
-            [ Name.first_name, Name.last_name ].map {|n| 
-              n.gsub(/\W/, '')
-            }.join(%w(. _).sample).downcase }
-        ].sample.call)
+
+        # If name is not provided, we will generate one using English locale.
+        locale        = Config.locale
+        Config.locale = :en
+
+        n = fix_umlauts([
+                            Proc.new { Name.first_name.gsub(/\W/, '').downcase },
+                            Proc.new {
+                              [Name.first_name, Name.last_name].map { |n|
+                                n.gsub(/\W/, '')
+                              }.join(%w(. _).sample).downcase }
+                        ].sample.call)
+
+        # Revert it back to the original locale
+        Config.locale = locale
+
+        n
       end
       
       def domain_name
@@ -42,7 +51,16 @@ module Faker
       end
       
       def domain_word
-        Company.name.split(' ').first.gsub(/\W/, '').downcase
+        # domain name should be English.
+        locale        = Config.locale
+        Config.locale = :en
+
+        n = Company.name.split(' ').first.gsub(/\W/, '').downcase
+
+        # Revert it back to the original locale
+        Config.locale = locale
+
+        n
       end
       
       def domain_suffix

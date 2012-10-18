@@ -30,7 +30,7 @@ module Faker
     class << self
       ## make sure numerify results doesn’t start with a zero
       def numerify(number_string)
-        number_string.sub(/#/) { (rand(9)+1).to_s }.gsub(/#/) { rand(10).to_s }
+        number_string.gsub(/#+/) { |m| m[0]=(rand(9)+1).to_s; m.gsub(/#/) { rand(10).to_s } }
       end
 
       def letterify(letter_string)
@@ -91,18 +91,18 @@ module Faker
       # into method calls that can be used to generate a
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
-        fetch(key).scan(/#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|kls, meth, etc|
+        fetch(key).gsub(/#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/) do
           # If the token had a class Prefix (e.g., Name.first_name)
           # grab the constant, otherwise use self
-          cls = kls ? Faker.const_get(kls.chop) : self
+          cls = $1 ? Faker.const_get($1.chop) : self
 
           # If the class has the method, call it, otherwise
           # fetch the transation (i.e., faker.name.first_name)
-          text = cls.respond_to?(meth) ? cls.send(meth) : fetch("#{(kls || self).to_s.split('::').last.downcase}.#{meth.downcase}")
+          text = cls.respond_to?($2) ? cls.send($2) : fetch("#{($1 || self).to_s.split('::').last.downcase}.#{$2.downcase}")
 
           # And tack on spaces, commas, etc. left over in the string
-          text += etc.to_s
-        }.join
+          text += $3.to_s
+        end        
       end
 
       # Call I18n.translate with our configured locale if no
