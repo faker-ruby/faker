@@ -19,12 +19,21 @@ module Faker
         numerify(fetch('address.secondary_address'))
       end
 
+      def building_number
+        bothify(fetch('address.building_number'))
+      end
+
       def zip_code
         bothify(fetch('address.postcode'))
       end
+
+      def time_zone
+        bothify(fetch('address.time_zone'))
+      end
+
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
-      
+
       def street_suffix; fetch('address.street_suffix'); end
       def city_suffix;   fetch('address.city_suffix');   end
       def city_prefix;   fetch('address.city_prefix');   end
@@ -39,13 +48,6 @@ module Faker
       def longitude
         ((rand * 360) - 180).to_s
       end
-
-      # Deprecated
-      alias_method :earth_country, :country
-      alias_method :us_state, :state
-      alias_method :us_state_abbr, :state_abbr
-      alias_method :uk_postcode, :zip_code
-      def uk_county; county; end
 
     end
   end

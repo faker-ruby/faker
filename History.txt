@@ -1,3 +1,24 @@
+==
+* 1 minor enhancement:
+  * Added time zones [sean-j-williamson]
+* 1 minor bug fix:
+  * Fixed names in the French locale [Romain Goyet]
+
+== 1.1.2 2012-09-18
+* 1 minor change:
+  * Fixed Ruby 1.8 compatibility
+
+== 1.1.1 2012-09-17
+* 1 minor change:
+  * Removed ja locale because of parse errors
+
+== 1.1.0 2012-09-15
+* 1 major change:
+  * Removed deprecated methods from Address: earth_country, us_state, us_state_abbr, uk_postcode, uk_county
+* Many minor changes (please see github pull requests for credits)
+  * Added many localizations 
+  * Added range and array support for Lorem
+
 == 1.0.1 2011-09-27
 * 1 minor enhancement
   * Added safe_email method to get someaddress@example.com [Kazimierz Kiełkowicz]

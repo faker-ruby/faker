@@ -17,7 +17,7 @@ module Faker
     class << self
       attr_writer :locale
       def locale
-        @locale || I18n.locale
+        @locale || I18n.locale.downcase
       end
     end
   end
@@ -152,3 +152,4 @@ require 'faker/phone_number'
 require 'faker/version'
 
 require 'extensions/array'
+require 'extensions/symbol'
