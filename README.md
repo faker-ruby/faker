@@ -16,8 +16,11 @@ sudo gem install faker
 
 Usage
 -----
-* Faker::Name.name => "Christophe Bartell"
-* Faker::Internet.email => "kirsten.greenholt@corkeryfisher.info"
+```ruby
+Faker::Name.name      #=> "Christophe Bartell"
+
+Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+```
 
 Customization
 ------------
