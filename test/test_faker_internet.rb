@@ -53,4 +53,16 @@ class TestFakerInternet < Test::Unit::TestCase
       assert @tester.ip_v6_address.split('.').map{|h| "0x#{h}".hex}.max <= 65535
     end
   end
+
+  def test_slug
+    assert @tester.slug.match(/^[a-z]+(_|\.|\-)[a-z]+$/)
+  end
+
+  def test_slug_with_content_arg
+    assert @tester.slug('Foo bAr baZ').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
+  end
+
+  def test_slug_with_glue_arg
+    assert @tester.slug(nil, '+').match(/^[a-z]+\+[a-z]+$/)
+  end
 end

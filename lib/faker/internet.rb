@@ -66,6 +66,11 @@ module Faker
       def url
         "http://#{domain_name}/#{user_name}"
       end
+
+      def slug(words = nil, glue = nil)
+        glue ||= %w[- _ .].sample
+        (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
+      end
     end
   end
 end
