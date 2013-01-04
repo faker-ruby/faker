@@ -25,7 +25,7 @@ Fork the code at "github":https://github.com/stympy/faker, make your changes, an
 
 h2. License
 
-This code is free to use under the terms of the MIT license. 
+This code is free to use under the terms of the MIT license.
 
 h2. Contact
 
