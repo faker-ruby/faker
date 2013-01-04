@@ -35,7 +35,7 @@ class TestFlexible < Test::Unit::TestCase
       end
     end
   end
-  
+
   def test_address_is_flexible
     I18n.with_locale(:home) do
       assert [:bed, :hospital, :airplane].include? Faker::Address.birthplace

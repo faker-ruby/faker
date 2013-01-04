@@ -9,7 +9,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #444;
 }
-h1 { 
+h1 {
   font-family: sans-serif;
   font-weight: normal;
   font-size: 4em;
@@ -132,7 +132,7 @@ pre, code {
 }
 
 .clickable {
-	cursor:	pointer; 
+	cursor:	pointer;
 	cursor:	hand;
 }
 

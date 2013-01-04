@@ -43,7 +43,7 @@ end
 if ARGV.length >= 1
   src, template = ARGV
   template ||= File.join(File.dirname(__FILE__), '/../website/template.rhtml')
-  
+
 else
   puts("Usage: #{File.split($0).last} source.txt [template.rhtml] > output.html")
   exit!

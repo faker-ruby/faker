@@ -1,6 +1,6 @@
 Faker
 =====
-This gem is a port of Perl's Data::Faker library that generates fake data.  
+This gem is a port of Perl's Data::Faker library that generates fake data.
 
 It comes in very handy for taking screenshots (taking screenshots for my
 project, [Catch the Best](http://catchthebest.com/) was the original impetus
