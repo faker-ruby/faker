@@ -25,7 +25,7 @@ module Faker
         numerify(fetch('tax_id_number'))
       end
       
-      #aliases for tax id number
+      # Aliases for tax id number
       def tin
         self.tax_id_number
       end
