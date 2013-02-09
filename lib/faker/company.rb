@@ -26,14 +26,8 @@ module Faker
       end
       
       # Aliases for tax id number
-      def tin
-        self.tax_id_number
-      end
-      
-      def ein
-        self.tax_id_number
-      end
-        
+      alias_method :tin, :tax_id_number
+      alias_method :ein, :tax_id_number
     end
     
   end
