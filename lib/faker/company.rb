@@ -20,6 +20,20 @@ module Faker
       def bs
         translate('faker.company.bs').collect {|list| list.sample }.join(' ')
       end
+      
+      def tax_id_number
+        numerify(fetch('tax_id_number'))
+      end
+      
+      #aliases for tax id number
+      def tin
+        self.tax_id_number
+      end
+      
+      def ein
+        self.tax_id_number
+      end
+        
     end
     
   end
