@@ -1,3 +1,5 @@
+require 'date'
+
 module Faker
   class Business < Base
     flexible :business
