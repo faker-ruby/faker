@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in lorem.gemspec
+# Specify your gem's dependencies in faker.gemspec
 gemspec
 
 group :development, :test do
