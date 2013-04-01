@@ -68,3 +68,10 @@ en:
 
     phone_number:
       formats: ['###-###-####', '(###)###-####', '1-###-###-####', '###.###.####', '###-###-####', '(###)###-####', '1-###-###-####', '###.###.####', '###-###-#### x###', '(###)###-#### x###', '1-###-###-#### x###', '###.###.#### x###', '###-###-#### x####', '(###)###-#### x####', '1-###-###-#### x####', '###.###.#### x####', '###-###-#### x#####', '(###)###-#### x#####', '1-###-###-#### x#####', '###.###.#### x#####']
+    commerce:
+      color: [red, green, blue, yellow, purple]
+      department: ["Books", "Movies, Music & Games", "Electronics & Computers", "Home, Garden & Tools", "Grocery, Health & Beauty", "Toys, Kids & Baby", "CLothing, Shoes & Jewelery", "Sports & Outdoors", "Automotive & Industrial"] 
+      product_name:
+        adjective: [Small, Ergonomic, Rustic, Intelligent, Gorgeous, Incredible, Fantastic, Practical, Sleek, Awesome]
+        material: [Steel, Wooden, Concrete, Plastic, Cotton, Granite, Rubber] 
+        product: [Chair, Car, Computer, Gloves, Pants, Shirt, Table, Shoes, Hat]
