@@ -14,15 +14,15 @@ module Faker
         [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
       end
       
-      def user_name(name = nil)
-        return name.scan(/\w+/).shuffle.join(%w(. _).sample).downcase if name
+      def user_name(name = nil, separators = %w(. _))
+        return name.scan(/\w+/).shuffle.join(separators.sample).downcase if name
         
         fix_umlauts([ 
           Proc.new { Name.first_name.gsub(/\W/, '').downcase },
           Proc.new { 
             [ Name.first_name, Name.last_name ].map {|n| 
               n.gsub(/\W/, '')
-            }.join(%w(. _).sample).downcase }
+            }.join(separators.sample).downcase }
         ].sample.call)
       end
       
