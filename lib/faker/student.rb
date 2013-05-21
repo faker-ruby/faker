@@ -8,12 +8,18 @@ module Faker
 
       #student ID#
       def id
-        (Random.rand 0..999999999).to_s
+        numerify(fetch('student.id'))
       end
 
       #student GPA
-      def gpa
-        (Random.rand 1.00..4.00).round(2).to_s
+      def gpa (low, high, precision)
+
+        #low = sprintf ()
+
+        low = low.to_f if precision > 0
+
+
+        (Random.rand low..high).round(precision).to_s 
       end
 
       def major
