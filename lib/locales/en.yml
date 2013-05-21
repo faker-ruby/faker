@@ -68,3 +68,12 @@ en:
 
     phone_number:
       formats: ['###-###-####', '(###)###-####', '1-###-###-####', '###.###.####', '###-###-####', '(###)###-####', '1-###-###-####', '###.###.####', '###-###-#### x###', '(###)###-#### x###', '1-###-###-#### x###', '###.###.#### x###', '###-###-#### x####', '(###)###-#### x####', '1-###-###-#### x####', '###.###.#### x####', '###-###-#### x#####', '(###)###-#### x#####', '1-###-###-#### x#####', '###.###.#### x#####']
+
+
+    student:
+
+      id: ['#########']
+      school_name: [Harvard, Princeton, Stanford, Columbia, MIT, Duke, Cornell, Dartmouth, Carnegie Mellon, UCLA, Yale, Notre Dame, Texas A&M, Purdue, Brigham Young, John Hopkins, Northwestern, Brown, Rice, Vanderbilt, Georgetown, Tufts, New York, Boston, Pepperdine, Syracuse, American, Baylor, Stony Brook]
+      major: [Accounting, Agriculture, Anthropology, Art, Biologial Sciences, Botany, Business Administration, Chemistry, Communication Studies, Computer Science, Computer Engineering, Economics, Education, Electrical Engineering, English, Environmental Science, Geography, Health Science, History, Humanities, Journalism, Kinesiology, Liberal Studies, Managment, Mathmatics, Mechanical Engineering, Microbiology, Music, Natural Science, Nursing, Philosophy, Physics, Political Science, Psychology, Scocial Science, Sociology, Statistics, Theatre Arts]
+
+

@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    faker (1.1.2)
+    faker (0.0.1)
       i18n (~> 0.5)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    i18n (0.6.0)
+    i18n (0.6.1)
     rake (0.9.2.2)
     test-unit (2.4.5)
 
