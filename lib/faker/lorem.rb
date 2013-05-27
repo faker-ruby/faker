@@ -20,7 +20,7 @@ module Faker
       end
 
       def sentence(word_count = 4, supplemental = false)
-        words(word_count + rand(6), supplemental).join(' ').capitalize + '.'
+        words(word_count, supplemental).join(' ').capitalize + '.'
       end
 
       def sentences(sentence_count = 3, supplemental = false)
