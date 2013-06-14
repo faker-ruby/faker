@@ -147,8 +147,6 @@ end
 require 'extensions/array'
 require 'extensions/symbol'
 require 'extensions/hash'
-require 'extensions/numeric'
-require 'extensions/range'
 
 require 'faker/address'
 require 'faker/company'
