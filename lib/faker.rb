@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 mydir = File.expand_path(File.dirname(__FILE__))
 
 begin
@@ -33,12 +34,14 @@ module Faker
         number_string.sub(/#/) { (rand(9)+1).to_s }.gsub(/#/) { rand(10).to_s }
       end
 
-      def letterify(letter_string)
-        letter_string.gsub(/\?/) { ULetters.sample }
+      def letterify(letter_string, capitalize=true)
+        letter_string.gsub(/\?/) { (capitalize ? ULetters : Letters).sample }
       end
 
-      def bothify(string)
-        letterify(numerify(string))
+      def bothify(string, capitalize=false)
+        letterify(numerify(string), capitalize).gsub(/\*/) do
+          (capitalize ? ULetters : Letters) + Numbers.sample
+        end
       end
 
       # Given a regular expression, attempt to generate a string
@@ -145,6 +148,7 @@ end
 
 require 'faker/address'
 require 'faker/company'
+require 'faker/finance'
 require 'faker/internet'
 require 'faker/lorem'
 require 'faker/name'
