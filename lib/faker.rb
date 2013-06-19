@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 mydir = File.expand_path(File.dirname(__FILE__))
 
 begin
@@ -80,7 +81,7 @@ module Faker
       def fetch(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.sample if fetched.respond_to?(:sample)
-        if fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        if fetched.respond_to?(:match) and fetched.match(/^\//) and fetched.match(/\/$/) # A regex
           regexify(fetched)
         else
           fetched
@@ -143,13 +144,15 @@ module Faker
   end
 end
 
+require 'extensions/array'
+require 'extensions/symbol'
+require 'extensions/hash'
+
 require 'faker/address'
 require 'faker/company'
+require 'faker/country'
 require 'faker/internet'
 require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
-
-require 'extensions/array'
-require 'extensions/symbol'

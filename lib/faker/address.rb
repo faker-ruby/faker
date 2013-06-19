@@ -39,7 +39,10 @@ module Faker
       def city_prefix;   fetch('address.city_prefix');   end
       def state_abbr;    fetch('address.state_abbr');    end
       def state;         fetch('address.state');         end
-      def country;       fetch('address.country');       end
+
+      def country
+        Faker::Country.country.short_name
+      end
 
       def latitude
         ((rand * 180) - 90).to_s
@@ -48,7 +51,6 @@ module Faker
       def longitude
         ((rand * 360) - 180).to_s
       end
-
     end
   end
 end
