@@ -39,965 +39,1163 @@ en:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
-    country:
-    - short_name: Afghanistan
-      iso_3166_1_alpha2: AF
-      official_name: Islamic Republic of Afghanistan
-      demonym: Afghan
-      tld: .af
-    - short_name: Albania
-      iso_3166_1_alpha2: AL
-      official_name: Republic of Albania
-      demonym: Albanian
-      tld: .al
-    - short_name: Algeria
-      iso_3166_1_alpha2: DZ
-      official_name: People’s Democratic Republic of Algeria
-      demonym: Algerian
-      tld: .dz
-    - short_name: Andorra
-      iso_3166_1_alpha2: AD
-      official_name: Principality of Andorra
-      demonym: Andorran
-      tld: .ad
-    - short_name: Angola
-      iso_3166_1_alpha2: AO
-      official_name: Republic of Angola
-      demonym: Angolan
-      tld: .ao
-    - short_name: Antigua and Barbuda
-      iso_3166_1_alpha2: AG
-      official_name: Antigua and Barbuda
-      demonym: [Antiguan, Barbudan]
-      tld: .ag
-    - short_name: Argentina
-      iso_3166_1_alpha2: AR
-      official_name: Argentine Republic
-      demonym: Argentine
-      tld: .ar
-    - short_name: Armenia
-      iso_3166_1_alpha2: AM
-      official_name: Republic of Armenia
-      demonym: Armenian
-      tld: .am
-    - short_name: Australia
-      iso_3166_1_alpha2: AU
-      official_name: Commonwealth of Australia
-      demonym: Australian
-      tld: .au
-    - short_name: Austria
-      iso_3166_1_alpha2: AT
-      official_name: Republic of Austria
-      demonym: Austrian
-      tld: .at
-    - short_name: Azerbaijan
-      iso_3166_1_alpha2: AZ
-      official_name: Republic of Azerbaijan
-      demonym: Azerbaijani
-      tld: .az
-    - short_name: Bahamas
-      iso_3166_1_alpha2: BS
-      official_name: Commonwealth of The Bahamas
-      demonym: Bahamian
-      tld: .bs
-    - short_name: Bahrain
-      iso_3166_1_alpha2: BH
-      official_name: Kingdom of Bahrain
-      demonym: Bahraini
-      tld: .bh
-    - short_name: Bangladesh
-      iso_3166_1_alpha2: BD
-      official_name: People’s Republic of Bangladesh
-      demonym: Bangladeshi
-      tld: .bd
-    - short_name: Barbados
-      iso_3166_1_alpha2: BB
-      official_name: Barbados
-      demonym: Barbadian
-      tld: .bb
-    - short_name: Belarus
-      iso_3166_1_alpha2: BY
-      demonym: Belarusian
-      tld: .by
-    - short_name: Belgium
-      iso_3166_1_alpha2: BE
-      official_name: Kingdom of Belgium
-      demonym: Belgian
-      tld: .be
-    - short_name: Belize
-      iso_3166_1_alpha2: BZ
-      official_name: Belize
-      demonym: Belizean
-      tld: .bz
-    - short_name: Benin
-      iso_3166_1_alpha2: BJ
-      official_name: Republic of Benin
-      demonym: [Beninese, Beninoi]
-      tld: .bj
-    - short_name: Bhutan
-      iso_3166_1_alpha2: BT
-      official_name: Kingdom of Bhutan
-      demonym: Bhutanese
-      tld: .bt
-    - short_name: Bolivia
-      iso_3166_1_alpha2: BO
-      official_name: Plurinational State of Bolivia
-      demonym: Bolivian
-      tld: .bo
-    - short_name: Bosnia and Herzegovina
-      iso_3166_1_alpha2: BA
-      official_name: Bosnia and Herzegovina
-      demonym: Bosnian
-      tld: .ba
-    - short_name: Botswana
-      iso_3166_1_alpha2: BW
-      official_name: Republic of Botswana
-      demonym: Batswana
-      tld: .bw
-    - short_name: Brazil
-      iso_3166_1_alpha2: BR
-      official_name: Federative Republic of Brazil
-      demonym: Brazilian
-      tld: .br
-    - short_name: Brunei
-      iso_3166_1_alpha2: BN
-      official_name: State of Brunei Darussalam
-      demonym: Bruneian
-      tld: .bn
-    - short_name: Bulgaria
-      iso_3166_1_alpha2: BG
-      official_name: Republic of Bulgaria
-      demonym: Bulgarian
-      tld: .bg
-    - short_name: Burkina Faso
-      iso_3166_1_alpha2: BF
-      demonym: Burkinabé
-      tld: .bf
-    - short_name: Burma
-      iso_3166_1_alpha2: MM
-      official_name: Union of Myanmar
-      demonym: [Burmese, Myanma]
-      tld: .mm
-    - short_name: Burundi
-      iso_3166_1_alpha2: BI
-      official_name: Republic of Burundi
-      demonym: Burundian
-      tld: .bi
-    - short_name: Cambodia
-      iso_3166_1_alpha2: KH
-      official_name: Kingdom of Cambodia
-      demonym: Khmer
-      tld: .kh
-    - short_name: Cameroon
-      iso_3166_1_alpha2: CM
-      official_name: Republic of Cameroon
-      demonym: Cameroonian
-      tld: .cm
-    - short_name: Canada
-      iso_3166_1_alpha2: CA
-      demonym: Canadian
-      tld: .ca
-    - short_name: Cape Verde
-      iso_3166_1_alpha2: CV
-      official_name: Republic of Cape Verde
-      demonym: Cape Verdean
-      tld: .cv
-    - short_name: Central African Republic
-      iso_3166_1_alpha2: CF
-      official_name: Central African Republic
-      demonym: Central African
-      tld: .cf
-    - short_name: Chad
-      iso_3166_1_alpha2: TD
-      official_name: Republic of Chad
-      demonym: Chadian
-      tld: .td
-    - short_name: Chile
-      iso_3166_1_alpha2: CL
-      official_name: Republic of Chile
-      demonym: Chilean
-      tld: .cl
-    - short_name: China
-      iso_3166_1_alpha2: CN
-      official_name: People’s Republic of China
-      demonym: Chinese
-      tld: .cn
-    - short_name: Colombia
-      iso_3166_1_alpha2: CO
-      official_name: Republic of Colombia
-      demonym: Colombian
-      tld: .co
-    - short_name: Comoros
-      iso_3166_1_alpha2: KM
-      official_name: Union of the Comoros
-      demonym: Comorian
-      tld: .km
-    - short_name: Democratic Republic of the Congo
-      sortable_name: Congo, Democratic Republic of the
-      iso_3166_1_alpha2: CD
-      demonym: Congolese
-      tld: .cd
-    - short_name: Republic of the Congo
-      sortable_name: Congo, Republic of the
-      iso_3166_1_alpha2: CG
-      demonym: Congolese
-      tld: .cg
-    - short_name: Costa Rica
-      iso_3166_1_alpha2: CR
-      official_name: Republic of Costa Rica
-      demonym: Costa Rican
-      tld: .cr
-    - short_name: Côte d’Ivoire
-      iso_3166_1_alpha2: CI
-      official_name: Republic of Côte d’Ivoire
-      demonym: [Ivorian, Ivoirian]
-      tld: .ci
-    - short_name: Croatia
-      iso_3166_1_alpha2: HR
-      official_name: Republic of Croatia
-      demonym: Croat
-      tld: .hr
-    - short_name: Cuba
-      iso_3166_1_alpha2: CU
-      official_name: Republic of Cuba
-      demonym: Cuban
-      tld: .cu
-    - short_name: Cyprus
-      iso_3166_1_alpha2: CY
-      official_name: Republic of Cyprus
-      demonym: Cypriot
-      tld: .cy
-    - short_name: Czech Republic
-      iso_3166_1_alpha2: CZ
-      official_name: Czech Republic
-      demonym: Czech
-      tld: .cz
-    - short_name: Denmark
-      iso_3166_1_alpha2: DK
-      official_name: Kingdom of Denmark
-      demonym: Danish
-      tld: .dk
-    - short_name: Djibouti
-      iso_3166_1_alpha2: DJ
-      official_name: Republic of Djibouti
-      demonym: Djiboutian
-      tld: .dj
-    - short_name: Dominica
-      iso_3166_1_alpha2: DM
-      official_name: Commonwealth of Dominica
-      demonym: Dominican
-      tld: .dm
-    - short_name: Dominican Republic
-      iso_3166_1_alpha2: DO
-      official_name: Dominican Republic
-      demonym: Dominican
-      tld: .do
-    - short_name: East Timor
-      iso_3166_1_alpha2: TL
-      official_name: Democratic Republic of Timor-Leste
-      demonym: East Timorese
-      tld: .tl
-    - short_name: Ecuador
-      iso_3166_1_alpha2: EC
-      official_name: Republic of Ecuador
-      demonym: Ecuadorian
-      tld: .ec
-    - short_name: Egypt
-      iso_3166_1_alpha2: EG
-      official_name: Arab Republic of Egypt
-      demonym: Egyptian
-      tld: .eg
-    - short_name: El Salvador
-      iso_3166_1_alpha2: SV
-      official_name: Republic of El Salvador
-      demonym: [Salvadorian, Salvadorean, Salvadoran, Central American]
-      tld: .sv
-    - short_name: Equatorial Guinea
-      iso_3166_1_alpha2: GQ
-      demonym: [Equatoguinean, Equatorial Guinean]
-      tld: .gq
-    - short_name: Eritrea
-      iso_3166_1_alpha2: ER
-      official_name: State of Eritrea
-      demonym: Eritrean
-      tld: .er
-    - short_name: Estonia
-      iso_3166_1_alpha2: EE
-      official_name: Republic of Estonia
-      demonym: Estonian
-      tld: .ee
-    - short_name: Ethiopia
-      iso_3166_1_alpha2: ET
-      official_name: Federal Democratic Republic of Ethiopia
-      demonym: Ethiopian
-      tld: .et
-    - short_name: Fiji
-      iso_3166_1_alpha2: FJ
-      official_name: Republic of the Fiji Islands
-      demonym: [Fiji Islander, Fijian]
-      tld: .fj
-    - short_name: Finland
-      iso_3166_1_alpha2: FI
-      official_name: Republic of Finland
-      demonym: [Finn, Finnish]
-      tld: .fi
-    - short_name: France
-      iso_3166_1_alpha2: FR
-      official_name: French Republic
-      demonym: French
-      tld: .fr
-    - short_name: Gabon
-      iso_3166_1_alpha2: GA
-      official_name: Gabonese Republic
-      demonym: [Gabonese, Gabonaise]
-      tld: .ga
-    - short_name: The Gambia
-      sortable_name: Gambia, The
-      iso_3166_1_alpha2: GM
-      official_name: Republic of the Gambia
-      demonym: Gambian
-      tld: .gm
-    - short_name: Georgia
-      iso_3166_1_alpha2: GE
-      demonym: Georgian
-      tld: .ge
-    - short_name: Germany
-      iso_3166_1_alpha2: DE
-      official_name: Federal Republic of Germany
-      demonym: German
-      tld: .de
-    - short_name: Ghana
-      iso_3166_1_alpha2: GH
-      official_name: Republic of Ghana
-      demonym: Ghanaian
-      tld: .gh
-    - short_name: Greece
-      iso_3166_1_alpha2: GR
-      official_name: Hellenic Republic
-      demonym: Greek
-      tld: .gr
-    - short_name: Grenada
-      iso_3166_1_alpha2: GD
-      demonym: [Grenadian, Greenz, Greens]
-      tld: .gd
-    - short_name: Guatemala
-      iso_3166_1_alpha2: GT
-      official_name: Republic of Guatemala
-      demonym: Guatemalan
-      tld: .gt
-    - short_name: Guinea
-      iso_3166_1_alpha2: GN
-      official_name: Republic of Guinea
-      demonym: Guinean
-      tld: .gn
-    - short_name: Guinea-Bissau
-      iso_3166_1_alpha2: GW
-      official_name: Republic of Guinea-Bissau
-      demonym: Bissau-Guinean
-      tld: .gw
-    - short_name: Guyana
-      iso_3166_1_alpha2: GY
-      official_name: Co-operative Republic of Guyana
-      demonym: Guyanese
-      tld: .gy
-    - short_name: Haiti
-      iso_3166_1_alpha2: HT
-      official_name: Republic of Haiti
-      demonym: Haitian
-      tld: .ht
-    - short_name: Honduras
-      iso_3166_1_alpha2: HN
-      official_name: Republic of Honduras
-      demonym: Honduran
-      tld: .hn
-    - short_name: Hungary
-      iso_3166_1_alpha2: HU
-      official_name: Hungarian Republic
-      demonym: Hungarian
-      tld: .hu
-    - short_name: Iceland
-      iso_3166_1_alpha2: IS
-      official_name: Iceland
-      demonym: Icelander
-      tld: .is
-    - short_name: India
-      iso_3166_1_alpha2: IN
-      official_name: Republic of India
-      demonym: Indian
-      tld: .in
-    - short_name: Indonesia
-      iso_3166_1_alpha2: ID
-      official_name: Republic of Indonesia
-      demonym: Indonesian
-      tld: .id
-    - short_name: Iran
-      iso_3166_1_alpha2: IR
-      official_name: Islamic Republic of Iran
-      demonym: Iranian
-      tld: .ir
-    - short_name: Iraq
-      iso_3166_1_alpha2: IQ
-      official_name: Republic of Iraq
-      demonym: Iraqi
-      tld: .iq
-    - short_name: Ireland
-      iso_3166_1_alpha2: IE
-      official_name: Ireland
-      demonym: Irish
-      tld: .ie
-    - short_name: Israel
-      iso_3166_1_alpha2: IL
-      official_name: State of Israel
-      demonym: Israeli
-      tld: .il
-    - short_name: Italy
-      iso_3166_1_alpha2: IT
-      official_name: Italian Republic
-      demonym: Italian
-      tld: .it
-    - short_name: Jamaica
-      iso_3166_1_alpha2: JM
-      official_name: Jamaica
-      demonym: Jamaican
-      tld: .jm
-    - short_name: Japan
-      iso_3166_1_alpha2: JP
-      official_name: Japan
-      demonym: Japanese
-      tld: .jp
-    - short_name: Jordan
-      iso_3166_1_alpha2: JO
-      official_name: Hashemite Kingdom of Jordan
-      demonym: Jordanian
-      tld: .jo
-    - short_name: Kazakhstan
-      iso_3166_1_alpha2: KZ
-      official_name: Republic of Kazakhstan
-      demonym: Kazakh
-      tld: .kz
-    - short_name: Kenya
-      iso_3166_1_alpha2: KE
-      official_name: Republic of Kenya
-      demonym: Kenyan
-      tld: .ke
-    - short_name: Kiribati
-      iso_3166_1_alpha2: KI
-      official_name: Republic of Kiribati
-      demonym: I-Kiribati
-      tld: .ki
-    - short_name: North Korea
-      iso_3166_1_alpha2: KP
-      official_name: Democratic People’s Republic of Korea
-      demonym: North Korean
-      tld: .kp
-    - short_name: South Korea
-      iso_3166_1_alpha2: KR
-      official_name: Republic of Korea
-      demonym: South Korean
-      tld: .kr
-    - short_name: Kuwait
-      iso_3166_1_alpha2: KW
-      official_name: State of Kuwait
-      demonym: Kuwaiti
-      tld: .kw
-    - short_name: Kyrgyzstan
-      iso_3166_1_alpha2: KG
-      official_name: Kyrgyz Republic
-      demonym: [Kyrgyz, Kyrgyzstani]
-      tld: .kg
-    - short_name: Laos
-      iso_3166_1_alpha2: LA
-      official_name: Lao People’s Democratic Republic
-      demonym: Laotian
-      tld: .la
-    - short_name: Latvia
-      iso_3166_1_alpha2: LV
-      official_name: Republic of Latvia
-      demonym: Latvian
-      tld: .lv
-    - short_name: Lebanon
-      iso_3166_1_alpha2: LB
-      official_name: Republic of Lebanon
-      demonym: Lebanese
-      tld: .lb
-    - short_name: Lesotho
-      iso_3166_1_alpha2: LS
-      official_name: Kingdom of Lesotho
-      demonym: Mosotho
-      tld: .ls
-    - short_name: Liberia
-      iso_3166_1_alpha2: LR
-      official_name: Republic of Liberia
-      demonym: Liberian
-      tld: .lr
-    - short_name: Libya
-      iso_3166_1_alpha2: LY
-      official_name: Great Socialist People’s Libyan Arab Jamahiriya
-      demonym: Libyan
-      tld: .ly
-    - short_name: Liechtenstein
-      iso_3166_1_alpha2: LI
-      official_name: Principality of Liechtenstein
-      demonym:
-        male: Liechtensteiner
-        female: Liechtensteinerin
-      tld: .li
-    - short_name: Lithuania
-      iso_3166_1_alpha2: LT
-      official_name: Republic of Lithuania
-      demonym: Lithuanian
-      tld: .lt
-    - short_name: Luxembourg
-      iso_3166_1_alpha2: LU
-      official_name: Grand Duchy of Luxembourg
-      demonym: Luxembourger
-      tld: .lu
-    - short_name: Macedonia
-      iso_3166_1_alpha2: MK
-      official_name: Republic of Macedonia
-      demonym: Macedonian
-      tld: .mk
-    - short_name: Madagascar
-      iso_3166_1_alpha2: MG
-      demonym: Malagasy
-      tld: .mg
-    - short_name: Malawi
-      iso_3166_1_alpha2: MW
-      official_name: Republic of Malaŵi
-      demonym: Malawian
-      tld: .mw
-    - short_name: Malaysia
-      iso_3166_1_alpha2: MY
-      official_name: Malaysia
-      demonym: Malaysian
-      tld: .my
-    - short_name: Maldives
-      iso_3166_1_alpha2: MV
-      official_name: Republic of Maldives
-      demonym: Maldivian
-      tld: .mv
-    - short_name: Mali
-      iso_3166_1_alpha2: ML
-      official_name: Republic of Mali
-      demonym: Malian
-      tld: .ml
-    - short_name: Malta
-      iso_3166_1_alpha2: MT
-      official_name: Republic of Malta
-      demonym: Maltese
-      tld: .mt
-    - short_name: Marshall Islands
-      iso_3166_1_alpha2: MH
-      demonym: Marshallese
-      tld: .mh
-    - short_name: Mauritania
-      iso_3166_1_alpha2: MR
-      official_name: Islamic Republic of Mauritania
-      demonym: Mauritanian
-      tld: .mr
-    - short_name: Mauritius
-      iso_3166_1_alpha2: MU
-      official_name: Republic of Mauritius
-      demonym: Mauritian
-      tld: .mu
-    - short_name: Mexico
-      iso_3166_1_alpha2: MX
-      official_name: United Mexican States
-      demonym: Mexican
-      tld: .mx
-    - short_name: Federated States of Micronesia
-      sortable_name: Micronesia, Federated States of
-      iso_3166_1_alpha2: FM
-      official_name: Federated States of Micronesia
-      demonym: Micronesian
-      tld: .fm
-    - short_name: Moldova
-      iso_3166_1_alpha2: MD
-      official_name: Republic of Moldova
-      demonym: [Moldovan, Moldavian]
-      tld: .md
-    - short_name: Monaco
-      iso_3166_1_alpha2: MC
-      official_name: Principality of Monaco
-      demonym: Monégasque
-      tld: .mc
-    - short_name: Mongolia
-      iso_3166_1_alpha2: MN
-      official_name: Mongolia
-      demonym: Mongolian
-      tld: .mn
-    - short_name: Montenegro
-      iso_3166_1_alpha2: ME
-      official_name: Montenegro
-      demonym: Montenegrin
-      tld: .me
-    - short_name: Morocco
-      iso_3166_1_alpha2: MA
-      official_name: Kingdom of Morocco
-      demonym: Moroccan
-      tld: .ma
-    - short_name: Mozambique
-      iso_3166_1_alpha2: MZ
-      official_name: Republic of Mozambique
-      demonym: Mozambican
-      tld: .mz
-    - short_name: Namibia
-      iso_3166_1_alpha2: NA
-      official_name: Republic of Namibia
-      demonym: Namibian
-      tld: .na
-    - short_name: Nauru
-      iso_3166_1_alpha2: NR
-      official_name: Republic of Nauru
-      demonym: Nauruan
-      tld: .nr
-    - short_name: Nepal
-      iso_3166_1_alpha2: NP
-      demonym: Nepali
-      tld: .np
-    - short_name: Netherlands
-      iso_3166_1_alpha2: NL
-      official_name: Kingdom of the Netherlands
-      tld: .nl
-    - short_name: New Zealand
-      iso_3166_1_alpha2: NZ
-      official_name: New Zealand
-      demonym: New Zealander
-      tld: .nz
-    - short_name: Nicaragua
-      iso_3166_1_alpha2: NI
-      official_name: Republic of Nicaragua
-      demonym: Nicaraguan
-      tld: .ni
-    - short_name: Niger
-      iso_3166_1_alpha2: NE
-      official_name: Republic of Niger
-      demonym: Nigerien
-      tld: .ne
-    - short_name: Nigeria
-      iso_3166_1_alpha2: NG
-      official_name: Federal Republic of Nigeria
-      demonym: Nigerian
-      tld: .ng
-    - short_name: Norway
-      iso_3166_1_alpha2: NO
-      official_name: Kingdom of Norway
-      demonym: Norwegian
-      tld: .no
-    - short_name: Oman
-      iso_3166_1_alpha2: OM
-      official_name: Sultanate of Oman
-      demonym: Omani
-      tld: .om
-    - short_name: Pakistan
-      iso_3166_1_alpha2: PK
-      official_name: Islamic Republic of Pakistan
-      demonym: Pakistani
-      tld: .pk
-    - short_name: Palau
-      iso_3166_1_alpha2: PW
-      official_name: Republic of Palau
-      demonym: Palauan
-      tld: .pw
-    - short_name: Panama
-      iso_3166_1_alpha2: PA
-      official_name: Republic of Panama
-      demonym: Panamanian
-      tld: .pa
-    - short_name: Papua New Guinea
-      iso_3166_1_alpha2: PG
-      official_name: Independent State of Papua New Guinea
-      demonym: Papua New Guinean
-      tld: .pg
-    - short_name: Paraguay
-      iso_3166_1_alpha2: PY
-      official_name: Republic of Paraguay
-      demonym: Paraguayan
-      tld: .py
-    - short_name: Peru
-      iso_3166_1_alpha2: PE
-      official_name: Republic of Peru
-      demonym: Peruvian
-      tld: .pe
-    - short_name: Philippines
-      iso_3166_1_alpha2: PH
-      official_name: Republic of the Philippines
-      demonym:
-        male: Filipino
-        female: Filipina
-      tld: .ph
-    - short_name: Poland
-      iso_3166_1_alpha2: PL
-      official_name: Republic of Poland
-      demonym: [Pole, Polish]
-      tld: .pl
-    - short_name: Portugal
-      iso_3166_1_alpha2: PT
-      official_name: Portuguese Republic
-      demonym: Portuguese
-      tld: .pt
-    - short_name: Qatar
-      iso_3166_1_alpha2: QA
-      official_name: State of Qatar
-      demonym: Qatari
-      tld: .qa
-    - short_name: Romania
-      iso_3166_1_alpha2: RO
-      official_name: Romania
-      demonym: Romanian
-      tld: .ro
-    - short_name: Russia
-      iso_3166_1_alpha2: RU
-      official_name: Russian Federation
-      demonym: Russian
-      tld: .ru
-    - short_name: Rwanda
-      iso_3166_1_alpha2: RW
-      official_name: Republic of Rwanda
-      demonym: [Rwandan, Rwandese]
-      tld: .rw
-    - short_name: Saint Kitts and Nevis
-      iso_3166_1_alpha2: KN
-      official_name: Federation of Saint Kitts and Nevis
-      demonym: [Kittitian, Kittian, Nevisian]
-      tld: .kn
-    - short_name: Saint Lucia
-      iso_3166_1_alpha2: LC
-      demonym: Saint Lucian
-      tld: .lc
-    - short_name: Saint Vincent and the Grenadines
-      iso_3166_1_alpha2: VC
-      official_name: Saint Vincent and the Grenadines
-      demonym: Vincentian
-      tld: .vc
-    - short_name: Samoa
-      iso_3166_1_alpha2: WS
-      official_name: Samoa
-      demonym: Samoan
-      tld: .ws
-    - short_name: San Marino
-      iso_3166_1_alpha2: SM
-      official_name: Republic of San Marino
-      demonym: Sammarinese
-      tld: .sm
-    - short_name: São Tomé and Príncipe
-      iso_3166_1_alpha2: ST
-      official_name: Democratic Republic of São Tomé and Príncipe
-      demonym: Santomean
-      tld: .st
-    - short_name: Saudi Arabia
-      iso_3166_1_alpha2: SA
-      official_name: Kingdom of Saudi Arabia
-      demonym: [Saudi, Saudi Arabian]
-      tld: .sa
-    - short_name: Senegal
-      iso_3166_1_alpha2: SN
-      official_name: Republic of Senegal
-      demonym: Senegalese
-      tld: .sn
-    - short_name: Serbia
-      iso_3166_1_alpha2: RS
-      official_name: Republic of Serbia
-      demonym: Serbian
-      tld: .rs
-    - short_name: Seychelles
-      iso_3166_1_alpha2: SC
-      official_name: Republic of Seychelles
-      demonym:
-      - Seychellois
-      - Seychelloise
-      tld: .sc
-    - short_name: Sierra Leone
-      iso_3166_1_alpha2: SL
-      official_name: Republic of Sierra Leone
-      demonym: Sierra Leonean
-      tld: .sl
-    - short_name: Singapore
-      iso_3166_1_alpha2: SG
-      official_name: Republic of Singapore
-      demonym: Singaporean
-      tld: .sg
-    - short_name: Slovakia
-      iso_3166_1_alpha2: SK
-      official_name: Slovak Republic
-      demonym: Slovak
-      tld: .sk
-    - short_name: Slovenia
-      iso_3166_1_alpha2: SI
-      official_name: Republic of Slovenia
-      demonym: Slovene
-      tld: .si
-    - short_name: Solomon Islands
-      iso_3166_1_alpha2: SB
-      official_name: Solomon Islands
-      demonym: Solomon Islander
-      tld: .sb
-    - short_name: Somalia
-      iso_3166_1_alpha2: SO
-      official_name: Republic of Somalia
-      demonym: [Somali, Somalian]
-      tld: .so
-    - short_name: South Africa
-      iso_3166_1_alpha2: ZA
-      official_name: Republic of South Africa
-      demonym: South African
-      tld: .za
-    - short_name: Spain
-      iso_3166_1_alpha2: ES
-      official_name: Kingdom of Spain
-      demonym: Spanish
-      tld: .es
-    - short_name: Sri Lanka
-      iso_3166_1_alpha2: LK
-      official_name: Democratic Socialist Republic of Sri Lanka
-      demonym: Sri Lankan
-      tld: .lk
-    - short_name: Sudan
-      iso_3166_1_alpha2: SD
-      official_name: Republic of Sudan
-      demonym: Sudanese
-      tld: .sd
-    - short_name: Suriname
-      iso_3166_1_alpha2: SR
-      official_name: Republic of Suriname
-      demonym: Surinamese
-      tld: .sr
-    - short_name: Swaziland
-      iso_3166_1_alpha2: SZ
-      official_name: Kingdom of Swaziland
-      demonym: Swazi
-      tld: .sz
-    - short_name: Sweden
-      iso_3166_1_alpha2: SE
-      official_name: Kingdom of Sweden
-      demonym: Swedish
-      tld: .se
-    - short_name: Switzerland
-      iso_3166_1_alpha2: CH
-      official_name: Swiss Confederation
-      demonym: Swiss
-      tld: .ch
-    - short_name: Syria
-      iso_3166_1_alpha2: SY
-      official_name: Syrian Arab Republic
-      demonym: Syrian
-      tld: .sy
-    - short_name: Tajikistan
-      iso_3166_1_alpha2: TJ
-      official_name: Republic of Tajikistan
-      demonym: Tajikistani
-      tld: .tj
-    - short_name: Tanzania
-      iso_3166_1_alpha2: TZ
-      official_name: United Republic of Tanzania
-      demonym: Tanzanian
-      tld: .tz
-    - short_name: Thailand
-      iso_3166_1_alpha2: TH
-      official_name: Kingdom of Thailand
-      demonym: Thai
-      tld: .th
-    - short_name: Togo
-      iso_3166_1_alpha2: TG
-      official_name: Togolese Republic
-      demonym: Togolese
-      tld: .tg
-    - short_name: Tonga
-      iso_3166_1_alpha2: TO
-      official_name: Kingdom of Tonga
-      demonym: Tongan
-      tld: .to
-    - short_name: Trinidad and Tobago
-      iso_3166_1_alpha2: TT
-      official_name: Republic of Trinidad and Tobago
-      demonym: [Trinidadian, Tobagonian]
-      tld: .tt
-    - short_name: Tunisia
-      iso_3166_1_alpha2: TN
-      official_name: Tunisian Republic
-      demonym: Tunisian
-      tld: .tn
-    - short_name: Turkey
-      iso_3166_1_alpha2: TR
-      official_name: Republic of Turkey
-      demonym: Turkish
-      tld: .tr
-    - short_name: Turkmenistan
-      iso_3166_1_alpha2: TM
-      official_name: Turkmenistan
-      demonym: Turkmen
-      tld: .tm
-    - short_name: Tuvalu
-      iso_3166_1_alpha2: TV
-      demonym: Tuvaluan
-      tld: .tv
-    - short_name: Uganda
-      iso_3166_1_alpha2: UG
-      official_name: Republic of Uganda
-      demonym: Ugandan
-      tld: .ug
-    - short_name: Ukraine
-      iso_3166_1_alpha2: UA
-      official_name: Ukraine
-      demonym: Ukrainian
-      tld: .ua
-    - short_name: United Arab Emirates
-      iso_3166_1_alpha2: AE
-      official_name: United Arab Emirates
-      demonym: Emirati
-      tld: .ae
-    - short_name: United Kingdom
-      iso_3166_1_alpha2: GB
-      official_name: United Kingdom of Great Britain
-      demonym: British
-      tld: .uk
-    - short_name: United States
-      iso_3166_1_alpha2: US
-      official_name: United States of America
-      demonym: American
-      tld: .us
-    - short_name: Uruguay
-      iso_3166_1_alpha2: UY
-      demonym: Uruguayan
-      tld: .uy
-    - short_name: Uzbekistan
-      iso_3166_1_alpha2: UZ
-      official_name: Republic of Uzbekistan
-      demonym: [Uzbekistani, Uzbek]
-      tld: .uz
-    - short_name: Vanuatu
-      iso_3166_1_alpha2: VU
-      official_name: Republic of Vanuatu
-      demonym: Ni-Vanuatu; Vanuatuan
-      tld: .vu
-    - short_name: Vatican City
-      official_name: Vatican City State
-      tld: .va
-    - short_name: Venezuela
-      iso_3166_1_alpha2: VE
-      official_name: Bolivarian Republic of Venezuela
-      demonym: Venezuelan
-      tld: .ve
-    - short_name: Vietnam
-      iso_3166_1_alpha2: VNabk
-      official_name: Socialist Republic of Vietnam
-      demonym: Vietnamese
-      tld: .vn
-    - short_name: Yemen
-      iso_3166_1_alpha2: YE
-      official_name: Republic of Yemen
-      demonym: Yemeni
-      tld: .ye
-    - short_name: Zambia
-      iso_3166_1_alpha2: ZM
-      official_name: Republic of Zambia
-      demonym: Zambian
-      tld: .zm
-    - short_name: Zimbabwe
-      iso_3166_1_alpha2: ZW
-      official_name: Republic of Zimbabwe
-      demonym: Zimbabwean
-      tld: .zw
+
+    iso_3166_1_alpha2: [AD, AE, AF, AG, AI, AL, AM, AO, AQ, AR, AS, AT, AU, AW, AX, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BM, BN, BO, BQ, BR, BS, BT, BV, BW, BY, BZ, CA, CC, CD, CF, CG, CH, CI, CK, CL, CM, CN, CO, CR, CU, CV, CW, CX, CY, CZ, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, EH, ER, ES, ET, FI, FJ, FK, FM, FO, FR, GA, GB, GD, GE, GF, GG, GH, GI, GL, GM, GN, GP, GQ, GR, GS, GT, GU, GW, GY, HK, HM, HN, HR, HT, HU, ID, IE, IL, IM, IN, IO, IQ, IR, IS, IT, JE, JM, JO, JP, KE, KG, KH, KI, KM, KN, KP, KR, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, LY, MA, MC, MD, ME, MF, MG, MH, MK, ML, MM, MN, MO, MP, MQ, MR, MS, MT, MU, MV, MW, MX, MY, MZ, NA, NC, NE, NF, NG, NI, NL, NO, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, PM, PN, PR, PS, PT, PW, PY, QA, RE, RO, RS, RU, RW, SA, SB, SC, SD, SE, SG, SH, SI, SJ, SK, SL, SM, SN, SO, SR, SS, ST, SV, SX, SY, SZ, TC, TD, TF, TG, TH, TJ, TK, TL, TM, TN, TO, TR, TT, TV, TW, TZ, UA, UG, UM, US, UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, YE, YT, ZA, ZM, ZW]
+
+    country_by_code:
+      AF:
+        short_name: Afghanistan
+        iso_3166_1_alpha2: AF
+        official_name: Islamic Republic of Afghanistan
+        demonym: Afghan
+        tld: .af
+      AL:
+        short_name: Albania
+        iso_3166_1_alpha2: AL
+        official_name: Republic of Albania
+        demonym: Albanian
+        tld: .al
+      DZ:
+        short_name: Algeria
+        iso_3166_1_alpha2: DZ
+        official_name: People’s Democratic Republic of Algeria
+        demonym: Algerian
+        tld: .dz
+      AD:
+        short_name: Andorra
+        iso_3166_1_alpha2: AD
+        official_name: Principality of Andorra
+        demonym: Andorran
+        tld: .ad
+      AO:
+        short_name: Angola
+        iso_3166_1_alpha2: AO
+        official_name: Republic of Angola
+        demonym: Angolan
+        tld: .ao
+      AG:
+        short_name: Antigua and Barbuda
+        iso_3166_1_alpha2: AG
+        official_name: Antigua and Barbuda
+        demonym: [Antiguan, Barbudan]
+        tld: .ag
+      AR:
+        short_name: Argentina
+        iso_3166_1_alpha2: AR
+        official_name: Argentine Republic
+        demonym: Argentine
+        tld: .ar
+      AM:
+        short_name: Armenia
+        iso_3166_1_alpha2: AM
+        official_name: Republic of Armenia
+        demonym: Armenian
+        tld: .am
+      AU:
+        short_name: Australia
+        iso_3166_1_alpha2: AU
+        official_name: Commonwealth of Australia
+        demonym: Australian
+        tld: .au
+      AT:
+        short_name: Austria
+        iso_3166_1_alpha2: AT
+        official_name: Republic of Austria
+        demonym: Austrian
+        tld: .at
+      AZ:
+        short_name: Azerbaijan
+        iso_3166_1_alpha2: AZ
+        official_name: Republic of Azerbaijan
+        demonym: Azerbaijani
+        tld: .az
+      BS:
+        short_name: Bahamas
+        iso_3166_1_alpha2: BS
+        official_name: Commonwealth of The Bahamas
+        demonym: Bahamian
+        tld: .bs
+      BH:
+        short_name: Bahrain
+        iso_3166_1_alpha2: BH
+        official_name: Kingdom of Bahrain
+        demonym: Bahraini
+        tld: .bh
+      BD:
+        short_name: Bangladesh
+        iso_3166_1_alpha2: BD
+        official_name: People’s Republic of Bangladesh
+        demonym: Bangladeshi
+        tld: .bd
+      BB:
+        short_name: Barbados
+        iso_3166_1_alpha2: BB
+        official_name: Barbados
+        demonym: Barbadian
+        tld: .bb
+      BY:
+        short_name: Belarus
+        iso_3166_1_alpha2: BY
+        demonym: Belarusian
+        tld: .by
+      BE:
+        short_name: Belgium
+        iso_3166_1_alpha2: BE
+        official_name: Kingdom of Belgium
+        demonym: Belgian
+        tld: .be
+      BZ:
+        short_name: Belize
+        iso_3166_1_alpha2: BZ
+        official_name: Belize
+        demonym: Belizean
+        tld: .bz
+      BJ:
+        short_name: Benin
+        iso_3166_1_alpha2: BJ
+        official_name: Republic of Benin
+        demonym: [Beninese, Beninoi]
+        tld: .bj
+      BT:
+        short_name: Bhutan
+        iso_3166_1_alpha2: BT
+        official_name: Kingdom of Bhutan
+        demonym: Bhutanese
+        tld: .bt
+      BO:
+        short_name: Bolivia
+        iso_3166_1_alpha2: BO
+        official_name: Plurinational State of Bolivia
+        demonym: Bolivian
+        tld: .bo
+      BA:
+        short_name: Bosnia and Herzegovina
+        iso_3166_1_alpha2: BA
+        official_name: Bosnia and Herzegovina
+        demonym: Bosnian
+        tld: .ba
+      BW:
+        short_name: Botswana
+        iso_3166_1_alpha2: BW
+        official_name: Republic of Botswana
+        demonym: Batswana
+        tld: .bw
+      BR:
+        short_name: Brazil
+        iso_3166_1_alpha2: BR
+        official_name: Federative Republic of Brazil
+        demonym: Brazilian
+        tld: .br
+      BN:
+        short_name: Brunei
+        iso_3166_1_alpha2: BN
+        official_name: State of Brunei Darussalam
+        demonym: Bruneian
+        tld: .bn
+      BG:
+        short_name: Bulgaria
+        iso_3166_1_alpha2: BG
+        official_name: Republic of Bulgaria
+        demonym: Bulgarian
+        tld: .bg
+      BF:
+        short_name: Burkina Faso
+        iso_3166_1_alpha2: BF
+        demonym: Burkinabé
+        tld: .bf
+      MM:
+        short_name: Burma
+        iso_3166_1_alpha2: MM
+        official_name: Union of Myanmar
+        demonym: [Burmese, Myanma]
+        tld: .mm
+      BI:
+        short_name: Burundi
+        iso_3166_1_alpha2: BI
+        official_name: Republic of Burundi
+        demonym: Burundian
+        tld: .bi
+      KH:
+        short_name: Cambodia
+        iso_3166_1_alpha2: KH
+        official_name: Kingdom of Cambodia
+        demonym: Khmer
+        tld: .kh
+      CM:
+        short_name: Cameroon
+        iso_3166_1_alpha2: CM
+        official_name: Republic of Cameroon
+        demonym: Cameroonian
+        tld: .cm
+      CA:
+        short_name: Canada
+        iso_3166_1_alpha2: CA
+        demonym: Canadian
+        tld: .ca
+      CV:
+        short_name: Cape Verde
+        iso_3166_1_alpha2: CV
+        official_name: Republic of Cape Verde
+        demonym: Cape Verdean
+        tld: .cv
+      CF:
+        short_name: Central African Republic
+        iso_3166_1_alpha2: CF
+        official_name: Central African Republic
+        demonym: Central African
+        tld: .cf
+      TD:
+        short_name: Chad
+        iso_3166_1_alpha2: TD
+        official_name: Republic of Chad
+        demonym: Chadian
+        tld: .td
+      CL:
+        short_name: Chile
+        iso_3166_1_alpha2: CL
+        official_name: Republic of Chile
+        demonym: Chilean
+        tld: .cl
+      CN:
+        short_name: China
+        iso_3166_1_alpha2: CN
+        official_name: People’s Republic of China
+        demonym: Chinese
+        tld: .cn
+      CO:
+        short_name: Colombia
+        iso_3166_1_alpha2: CO
+        official_name: Republic of Colombia
+        demonym: Colombian
+        tld: .co
+      KM:
+        short_name: Comoros
+        iso_3166_1_alpha2: KM
+        official_name: Union of the Comoros
+        demonym: Comorian
+        tld: .km
+      CD:
+        short_name: Democratic Republic of the Congo
+        sortable_name: Congo, Democratic Republic of the
+        iso_3166_1_alpha2: CD
+        demonym: Congolese
+        tld: .cd
+      CG:
+        short_name: Republic of the Congo
+        sortable_name: Congo, Republic of the
+        iso_3166_1_alpha2: CG
+        demonym: Congolese
+        tld: .cg
+      CR:
+        short_name: Costa Rica
+        iso_3166_1_alpha2: CR
+        official_name: Republic of Costa Rica
+        demonym: Costa Rican
+        tld: .cr
+      CI:
+        short_name: Côte d’Ivoire
+        iso_3166_1_alpha2: CI
+        official_name: Republic of Côte d’Ivoire
+        demonym: [Ivorian, Ivoirian]
+        tld: .ci
+      HR:
+        short_name: Croatia
+        iso_3166_1_alpha2: HR
+        official_name: Republic of Croatia
+        demonym: Croat
+        tld: .hr
+      CU:
+        short_name: Cuba
+        iso_3166_1_alpha2: CU
+        official_name: Republic of Cuba
+        demonym: Cuban
+        tld: .cu
+      CY:
+        short_name: Cyprus
+        iso_3166_1_alpha2: CY
+        official_name: Republic of Cyprus
+        demonym: Cypriot
+        tld: .cy
+      CZ:
+        short_name: Czech Republic
+        iso_3166_1_alpha2: CZ
+        official_name: Czech Republic
+        demonym: Czech
+        tld: .cz
+      DK:
+        short_name: Denmark
+        iso_3166_1_alpha2: DK
+        official_name: Kingdom of Denmark
+        demonym: Danish
+        tld: .dk
+      DJ:
+        short_name: Djibouti
+        iso_3166_1_alpha2: DJ
+        official_name: Republic of Djibouti
+        demonym: Djiboutian
+        tld: .dj
+      DM:
+        short_name: Dominica
+        iso_3166_1_alpha2: DM
+        official_name: Commonwealth of Dominica
+        demonym: Dominican
+        tld: .dm
+      DO:
+        short_name: Dominican Republic
+        iso_3166_1_alpha2: DO
+        official_name: Dominican Republic
+        demonym: Dominican
+        tld: .do
+      TL:
+        short_name: East Timor
+        iso_3166_1_alpha2: TL
+        official_name: Democratic Republic of Timor-Leste
+        demonym: East Timorese
+        tld: .tl
+      EC:
+        short_name: Ecuador
+        iso_3166_1_alpha2: EC
+        official_name: Republic of Ecuador
+        demonym: Ecuadorian
+        tld: .ec
+      EG:
+        short_name: Egypt
+        iso_3166_1_alpha2: EG
+        official_name: Arab Republic of Egypt
+        demonym: Egyptian
+        tld: .eg
+      SV:
+        short_name: El Salvador
+        iso_3166_1_alpha2: SV
+        official_name: Republic of El Salvador
+        demonym: [Salvadorian, Salvadorean, Salvadoran, Central American]
+        tld: .sv
+      GQ:
+        short_name: Equatorial Guinea
+        iso_3166_1_alpha2: GQ
+        demonym: [Equatoguinean, Equatorial Guinean]
+        tld: .gq
+      ER:
+        short_name: Eritrea
+        iso_3166_1_alpha2: ER
+        official_name: State of Eritrea
+        demonym: Eritrean
+        tld: .er
+      EE:
+        short_name: Estonia
+        iso_3166_1_alpha2: EE
+        official_name: Republic of Estonia
+        demonym: Estonian
+        tld: .ee
+      ET:
+        short_name: Ethiopia
+        iso_3166_1_alpha2: ET
+        official_name: Federal Democratic Republic of Ethiopia
+        demonym: Ethiopian
+        tld: .et
+      FJ:
+        short_name: Fiji
+        iso_3166_1_alpha2: FJ
+        official_name: Republic of the Fiji Islands
+        demonym: [Fiji Islander, Fijian]
+        tld: .fj
+      FI:
+        short_name: Finland
+        iso_3166_1_alpha2: FI
+        official_name: Republic of Finland
+        demonym: [Finn, Finnish]
+        tld: .fi
+      FR:
+        short_name: France
+        iso_3166_1_alpha2: FR
+        official_name: French Republic
+        demonym: French
+        tld: .fr
+      GA:
+        short_name: Gabon
+        iso_3166_1_alpha2: GA
+        official_name: Gabonese Republic
+        demonym: [Gabonese, Gabonaise]
+        tld: .ga
+      GM:
+        short_name: The Gambia
+        sortable_name: Gambia, The
+        iso_3166_1_alpha2: GM
+        official_name: Republic of the Gambia
+        demonym: Gambian
+        tld: .gm
+      GE:
+        short_name: Georgia
+        iso_3166_1_alpha2: GE
+        demonym: Georgian
+        tld: .ge
+      DE:
+        short_name: Germany
+        iso_3166_1_alpha2: DE
+        official_name: Federal Republic of Germany
+        demonym: German
+        tld: .de
+      GH:
+        short_name: Ghana
+        iso_3166_1_alpha2: GH
+        official_name: Republic of Ghana
+        demonym: Ghanaian
+        tld: .gh
+      GR:
+        short_name: Greece
+        iso_3166_1_alpha2: GR
+        official_name: Hellenic Republic
+        demonym: Greek
+        tld: .gr
+      GD:
+        short_name: Grenada
+        iso_3166_1_alpha2: GD
+        demonym: [Grenadian, Greenz, Greens]
+        tld: .gd
+      GT:
+        short_name: Guatemala
+        iso_3166_1_alpha2: GT
+        official_name: Republic of Guatemala
+        demonym: Guatemalan
+        tld: .gt
+      GN:
+        short_name: Guinea
+        iso_3166_1_alpha2: GN
+        official_name: Republic of Guinea
+        demonym: Guinean
+        tld: .gn
+      GW:
+        short_name: Guinea-Bissau
+        iso_3166_1_alpha2: GW
+        official_name: Republic of Guinea-Bissau
+        demonym: Bissau-Guinean
+        tld: .gw
+      GY:
+        short_name: Guyana
+        iso_3166_1_alpha2: GY
+        official_name: Co-operative Republic of Guyana
+        demonym: Guyanese
+        tld: .gy
+      HT:
+        short_name: Haiti
+        iso_3166_1_alpha2: HT
+        official_name: Republic of Haiti
+        demonym: Haitian
+        tld: .ht
+      HN:
+        short_name: Honduras
+        iso_3166_1_alpha2: HN
+        official_name: Republic of Honduras
+        demonym: Honduran
+        tld: .hn
+      HU:
+        short_name: Hungary
+        iso_3166_1_alpha2: HU
+        official_name: Hungarian Republic
+        demonym: Hungarian
+        tld: .hu
+      IS:
+        short_name: Iceland
+        iso_3166_1_alpha2: IS
+        official_name: Iceland
+        demonym: Icelander
+        tld: .is
+      IN:
+        short_name: India
+        iso_3166_1_alpha2: IN
+        official_name: Republic of India
+        demonym: Indian
+        tld: .in
+      ID:
+        short_name: Indonesia
+        iso_3166_1_alpha2: ID
+        official_name: Republic of Indonesia
+        demonym: Indonesian
+        tld: .id
+      IR:
+        short_name: Iran
+        iso_3166_1_alpha2: IR
+        official_name: Islamic Republic of Iran
+        demonym: Iranian
+        tld: .ir
+      IQ:
+        short_name: Iraq
+        iso_3166_1_alpha2: IQ
+        official_name: Republic of Iraq
+        demonym: Iraqi
+        tld: .iq
+      IE:
+        short_name: Ireland
+        iso_3166_1_alpha2: IE
+        official_name: Ireland
+        demonym: Irish
+        tld: .ie
+      IL:
+        short_name: Israel
+        iso_3166_1_alpha2: IL
+        official_name: State of Israel
+        demonym: Israeli
+        tld: .il
+      IT:
+        short_name: Italy
+        iso_3166_1_alpha2: IT
+        official_name: Italian Republic
+        demonym: Italian
+        tld: .it
+      JM:
+        short_name: Jamaica
+        iso_3166_1_alpha2: JM
+        official_name: Jamaica
+        demonym: Jamaican
+        tld: .jm
+      JP:
+        short_name: Japan
+        iso_3166_1_alpha2: JP
+        official_name: Japan
+        demonym: Japanese
+        tld: .jp
+      JO:
+        short_name: Jordan
+        iso_3166_1_alpha2: JO
+        official_name: Hashemite Kingdom of Jordan
+        demonym: Jordanian
+        tld: .jo
+      KZ:
+        short_name: Kazakhstan
+        iso_3166_1_alpha2: KZ
+        official_name: Republic of Kazakhstan
+        demonym: Kazakh
+        tld: .kz
+      KE:
+        short_name: Kenya
+        iso_3166_1_alpha2: KE
+        official_name: Republic of Kenya
+        demonym: Kenyan
+        tld: .ke
+      KI:
+        short_name: Kiribati
+        iso_3166_1_alpha2: KI
+        official_name: Republic of Kiribati
+        demonym: I-Kiribati
+        tld: .ki
+      KP:
+        short_name: North Korea
+        iso_3166_1_alpha2: KP
+        official_name: Democratic People’s Republic of Korea
+        demonym: North Korean
+        tld: .kp
+      KR:
+        short_name: South Korea
+        iso_3166_1_alpha2: KR
+        official_name: Republic of Korea
+        demonym: South Korean
+        tld: .kr
+      KW:
+        short_name: Kuwait
+        iso_3166_1_alpha2: KW
+        official_name: State of Kuwait
+        demonym: Kuwaiti
+        tld: .kw
+      KG:
+        short_name: Kyrgyzstan
+        iso_3166_1_alpha2: KG
+        official_name: Kyrgyz Republic
+        demonym: [Kyrgyz, Kyrgyzstani]
+        tld: .kg
+      LA:
+        short_name: Laos
+        iso_3166_1_alpha2: LA
+        official_name: Lao People’s Democratic Republic
+        demonym: Laotian
+        tld: .la
+      LV:
+        short_name: Latvia
+        iso_3166_1_alpha2: LV
+        official_name: Republic of Latvia
+        demonym: Latvian
+        tld: .lv
+      LB:
+        short_name: Lebanon
+        iso_3166_1_alpha2: LB
+        official_name: Republic of Lebanon
+        demonym: Lebanese
+        tld: .lb
+      LS:
+        short_name: Lesotho
+        iso_3166_1_alpha2: LS
+        official_name: Kingdom of Lesotho
+        demonym: Mosotho
+        tld: .ls
+      LR:
+        short_name: Liberia
+        iso_3166_1_alpha2: LR
+        official_name: Republic of Liberia
+        demonym: Liberian
+        tld: .lr
+      LY:
+        short_name: Libya
+        iso_3166_1_alpha2: LY
+        official_name: Great Socialist People’s Libyan Arab Jamahiriya
+        demonym: Libyan
+        tld: .ly
+      LI:
+        short_name: Liechtenstein
+        iso_3166_1_alpha2: LI
+        official_name: Principality of Liechtenstein
+        demonym:
+          male: Liechtensteiner
+          female: Liechtensteinerin
+        tld: .li
+      LT:
+        short_name: Lithuania
+        iso_3166_1_alpha2: LT
+        official_name: Republic of Lithuania
+        demonym: Lithuanian
+        tld: .lt
+      LU:
+        short_name: Luxembourg
+        iso_3166_1_alpha2: LU
+        official_name: Grand Duchy of Luxembourg
+        demonym: Luxembourger
+        tld: .lu
+      MK:
+        short_name: Macedonia
+        iso_3166_1_alpha2: MK
+        official_name: Republic of Macedonia
+        demonym: Macedonian
+        tld: .mk
+      MG:
+        short_name: Madagascar
+        iso_3166_1_alpha2: MG
+        demonym: Malagasy
+        tld: .mg
+      MW:
+        short_name: Malawi
+        iso_3166_1_alpha2: MW
+        official_name: Republic of Malaŵi
+        demonym: Malawian
+        tld: .mw
+      MY:
+        short_name: Malaysia
+        iso_3166_1_alpha2: MY
+        official_name: Malaysia
+        demonym: Malaysian
+        tld: .my
+      MV:
+        short_name: Maldives
+        iso_3166_1_alpha2: MV
+        official_name: Republic of Maldives
+        demonym: Maldivian
+        tld: .mv
+      ML:
+        short_name: Mali
+        iso_3166_1_alpha2: ML
+        official_name: Republic of Mali
+        demonym: Malian
+        tld: .ml
+      MT:
+        short_name: Malta
+        iso_3166_1_alpha2: MT
+        official_name: Republic of Malta
+        demonym: Maltese
+        tld: .mt
+      MH:
+        short_name: Marshall Islands
+        iso_3166_1_alpha2: MH
+        demonym: Marshallese
+        tld: .mh
+      MR:
+        short_name: Mauritania
+        iso_3166_1_alpha2: MR
+        official_name: Islamic Republic of Mauritania
+        demonym: Mauritanian
+        tld: .mr
+      MU:
+        short_name: Mauritius
+        iso_3166_1_alpha2: MU
+        official_name: Republic of Mauritius
+        demonym: Mauritian
+        tld: .mu
+      MX:
+        short_name: Mexico
+        iso_3166_1_alpha2: MX
+        official_name: United Mexican States
+        demonym: Mexican
+        tld: .mx
+      FM:
+        short_name: Federated States of Micronesia
+        sortable_name: Micronesia, Federated States of
+        iso_3166_1_alpha2: FM
+        official_name: Federated States of Micronesia
+        demonym: Micronesian
+        tld: .fm
+      MD:
+        short_name: Moldova
+        iso_3166_1_alpha2: MD
+        official_name: Republic of Moldova
+        demonym: [Moldovan, Moldavian]
+        tld: .md
+      MC:
+        short_name: Monaco
+        iso_3166_1_alpha2: MC
+        official_name: Principality of Monaco
+        demonym: Monégasque
+        tld: .mc
+      MN:
+        short_name: Mongolia
+        iso_3166_1_alpha2: MN
+        official_name: Mongolia
+        demonym: Mongolian
+        tld: .mn
+      ME:
+        short_name: Montenegro
+        iso_3166_1_alpha2: ME
+        official_name: Montenegro
+        demonym: Montenegrin
+        tld: .me
+      MA:
+        short_name: Morocco
+        iso_3166_1_alpha2: MA
+        official_name: Kingdom of Morocco
+        demonym: Moroccan
+        tld: .ma
+      MZ:
+        short_name: Mozambique
+        iso_3166_1_alpha2: MZ
+        official_name: Republic of Mozambique
+        demonym: Mozambican
+        tld: .mz
+      NA:
+        short_name: Namibia
+        iso_3166_1_alpha2: NA
+        official_name: Republic of Namibia
+        demonym: Namibian
+        tld: .na
+      NR:
+        short_name: Nauru
+        iso_3166_1_alpha2: NR
+        official_name: Republic of Nauru
+        demonym: Nauruan
+        tld: .nr
+      NP:
+        short_name: Nepal
+        iso_3166_1_alpha2: NP
+        demonym: Nepali
+        tld: .np
+      NL:
+        short_name: Netherlands
+        iso_3166_1_alpha2: NL
+        official_name: Kingdom of the Netherlands
+        tld: .nl
+      NZ:
+        short_name: New Zealand
+        iso_3166_1_alpha2: NZ
+        official_name: New Zealand
+        demonym: New Zealander
+        tld: .nz
+      NI:
+        short_name: Nicaragua
+        iso_3166_1_alpha2: NI
+        official_name: Republic of Nicaragua
+        demonym: Nicaraguan
+        tld: .ni
+      NE:
+        short_name: Niger
+        iso_3166_1_alpha2: NE
+        official_name: Republic of Niger
+        demonym: Nigerien
+        tld: .ne
+      NG:
+        short_name: Nigeria
+        iso_3166_1_alpha2: NG
+        official_name: Federal Republic of Nigeria
+        demonym: Nigerian
+        tld: .ng
+      NO:
+        short_name: Norway
+        iso_3166_1_alpha2: NO
+        official_name: Kingdom of Norway
+        demonym: Norwegian
+        tld: .no
+      OM:
+        short_name: Oman
+        iso_3166_1_alpha2: OM
+        official_name: Sultanate of Oman
+        demonym: Omani
+        tld: .om
+      PK:
+        short_name: Pakistan
+        iso_3166_1_alpha2: PK
+        official_name: Islamic Republic of Pakistan
+        demonym: Pakistani
+        tld: .pk
+      PW:
+        short_name: Palau
+        iso_3166_1_alpha2: PW
+        official_name: Republic of Palau
+        demonym: Palauan
+        tld: .pw
+      PA:
+        short_name: Panama
+        iso_3166_1_alpha2: PA
+        official_name: Republic of Panama
+        demonym: Panamanian
+        tld: .pa
+      PG:
+        short_name: Papua New Guinea
+        iso_3166_1_alpha2: PG
+        official_name: Independent State of Papua New Guinea
+        demonym: Papua New Guinean
+        tld: .pg
+      PY:
+        short_name: Paraguay
+        iso_3166_1_alpha2: PY
+        official_name: Republic of Paraguay
+        demonym: Paraguayan
+        tld: .py
+      PE:
+        short_name: Peru
+        iso_3166_1_alpha2: PE
+        official_name: Republic of Peru
+        demonym: Peruvian
+        tld: .pe
+      PH:
+        short_name: Philippines
+        iso_3166_1_alpha2: PH
+        official_name: Republic of the Philippines
+        demonym:
+          male: Filipino
+          female: Filipina
+        tld: .ph
+      PL:
+        short_name: Poland
+        iso_3166_1_alpha2: PL
+        official_name: Republic of Poland
+        demonym: [Pole, Polish]
+        tld: .pl
+      PT:
+        short_name: Portugal
+        iso_3166_1_alpha2: PT
+        official_name: Portuguese Republic
+        demonym: Portuguese
+        tld: .pt
+      QA:
+        short_name: Qatar
+        iso_3166_1_alpha2: QA
+        official_name: State of Qatar
+        demonym: Qatari
+        tld: .qa
+      RO:
+        short_name: Romania
+        iso_3166_1_alpha2: RO
+        official_name: Romania
+        demonym: Romanian
+        tld: .ro
+      RU:
+        short_name: Russia
+        iso_3166_1_alpha2: RU
+        official_name: Russian Federation
+        demonym: Russian
+        tld: .ru
+      RW:
+        short_name: Rwanda
+        iso_3166_1_alpha2: RW
+        official_name: Republic of Rwanda
+        demonym: [Rwandan, Rwandese]
+        tld: .rw
+      KN:
+        short_name: Saint Kitts and Nevis
+        iso_3166_1_alpha2: KN
+        official_name: Federation of Saint Kitts and Nevis
+        demonym: [Kittitian, Kittian, Nevisian]
+        tld: .kn
+      LC:
+        short_name: Saint Lucia
+        iso_3166_1_alpha2: LC
+        demonym: Saint Lucian
+        tld: .lc
+      VC:
+        short_name: Saint Vincent and the Grenadines
+        iso_3166_1_alpha2: VC
+        official_name: Saint Vincent and the Grenadines
+        demonym: Vincentian
+        tld: .vc
+      WS:
+        short_name: Samoa
+        iso_3166_1_alpha2: WS
+        official_name: Samoa
+        demonym: Samoan
+        tld: .ws
+      SM:
+        short_name: San Marino
+        iso_3166_1_alpha2: SM
+        official_name: Republic of San Marino
+        demonym: Sammarinese
+        tld: .sm
+      ST:
+        short_name: São Tomé and Príncipe
+        iso_3166_1_alpha2: ST
+        official_name: Democratic Republic of São Tomé and Príncipe
+        demonym: Santomean
+        tld: .st
+      SA:
+        short_name: Saudi Arabia
+        iso_3166_1_alpha2: SA
+        official_name: Kingdom of Saudi Arabia
+        demonym: [Saudi, Saudi Arabian]
+        tld: .sa
+      SN:
+        short_name: Senegal
+        iso_3166_1_alpha2: SN
+        official_name: Republic of Senegal
+        demonym: Senegalese
+        tld: .sn
+      RS:
+        short_name: Serbia
+        iso_3166_1_alpha2: RS
+        official_name: Republic of Serbia
+        demonym: Serbian
+        tld: .rs
+      SC:
+        short_name: Seychelles
+        iso_3166_1_alpha2: SC
+        official_name: Republic of Seychelles
+        demonym:
+          - Seychellois
+          - Seychelloise
+        tld: .sc
+      SL:
+        short_name: Sierra Leone
+        iso_3166_1_alpha2: SL
+        official_name: Republic of Sierra Leone
+        demonym: Sierra Leonean
+        tld: .sl
+      SG:
+        short_name: Singapore
+        iso_3166_1_alpha2: SG
+        official_name: Republic of Singapore
+        demonym: Singaporean
+        tld: .sg
+      SK:
+        short_name: Slovakia
+        iso_3166_1_alpha2: SK
+        official_name: Slovak Republic
+        demonym: Slovak
+        tld: .sk
+      SI:
+        short_name: Slovenia
+        iso_3166_1_alpha2: SI
+        official_name: Republic of Slovenia
+        demonym: Slovene
+        tld: .si
+      SB:
+        short_name: Solomon Islands
+        iso_3166_1_alpha2: SB
+        official_name: Solomon Islands
+        demonym: Solomon Islander
+        tld: .sb
+      SO:
+        short_name: Somalia
+        iso_3166_1_alpha2: SO
+        official_name: Republic of Somalia
+        demonym: [Somali, Somalian]
+        tld: .so
+      ZA:
+        short_name: South Africa
+        iso_3166_1_alpha2: ZA
+        official_name: Republic of South Africa
+        demonym: South African
+        tld: .za
+      ES:
+        short_name: Spain
+        iso_3166_1_alpha2: ES
+        official_name: Kingdom of Spain
+        demonym: Spanish
+        tld: .es
+      LK:
+        short_name: Sri Lanka
+        iso_3166_1_alpha2: LK
+        official_name: Democratic Socialist Republic of Sri Lanka
+        demonym: Sri Lankan
+        tld: .lk
+      SD:
+        short_name: Sudan
+        iso_3166_1_alpha2: SD
+        official_name: Republic of Sudan
+        demonym: Sudanese
+        tld: .sd
+      SR:
+        short_name: Suriname
+        iso_3166_1_alpha2: SR
+        official_name: Republic of Suriname
+        demonym: Surinamese
+        tld: .sr
+      SZ:
+        short_name: Swaziland
+        iso_3166_1_alpha2: SZ
+        official_name: Kingdom of Swaziland
+        demonym: Swazi
+        tld: .sz
+      SE:
+        short_name: Sweden
+        iso_3166_1_alpha2: SE
+        official_name: Kingdom of Sweden
+        demonym: Swedish
+        tld: .se
+      CH:
+        short_name: Switzerland
+        iso_3166_1_alpha2: CH
+        official_name: Swiss Confederation
+        demonym: Swiss
+        tld: .ch
+      SY:
+        short_name: Syria
+        iso_3166_1_alpha2: SY
+        official_name: Syrian Arab Republic
+        demonym: Syrian
+        tld: .sy
+      TJ:
+        short_name: Tajikistan
+        iso_3166_1_alpha2: TJ
+        official_name: Republic of Tajikistan
+        demonym: Tajikistani
+        tld: .tj
+      TZ:
+        short_name: Tanzania
+        iso_3166_1_alpha2: TZ
+        official_name: United Republic of Tanzania
+        demonym: Tanzanian
+        tld: .tz
+      TH:
+        short_name: Thailand
+        iso_3166_1_alpha2: TH
+        official_name: Kingdom of Thailand
+        demonym: Thai
+        tld: .th
+      TG:
+        short_name: Togo
+        iso_3166_1_alpha2: TG
+        official_name: Togolese Republic
+        demonym: Togolese
+        tld: .tg
+      TO:
+        short_name: Tonga
+        iso_3166_1_alpha2: TO
+        official_name: Kingdom of Tonga
+        demonym: Tongan
+        tld: .to
+      TT:
+        short_name: Trinidad and Tobago
+        iso_3166_1_alpha2: TT
+        official_name: Republic of Trinidad and Tobago
+        demonym: [Trinidadian, Tobagonian]
+        tld: .tt
+      TN:
+        short_name: Tunisia
+        iso_3166_1_alpha2: TN
+        official_name: Tunisian Republic
+        demonym: Tunisian
+        tld: .tn
+      TR:
+        short_name: Turkey
+        iso_3166_1_alpha2: TR
+        official_name: Republic of Turkey
+        demonym: Turkish
+        tld: .tr
+      TM:
+        short_name: Turkmenistan
+        iso_3166_1_alpha2: TM
+        official_name: Turkmenistan
+        demonym: Turkmen
+        tld: .tm
+      TV:
+        short_name: Tuvalu
+        iso_3166_1_alpha2: TV
+        demonym: Tuvaluan
+        tld: .tv
+      UG:
+        short_name: Uganda
+        iso_3166_1_alpha2: UG
+        official_name: Republic of Uganda
+        demonym: Ugandan
+        tld: .ug
+      UA:
+        short_name: Ukraine
+        iso_3166_1_alpha2: UA
+        official_name: Ukraine
+        demonym: Ukrainian
+        tld: .ua
+      AE:
+        short_name: United Arab Emirates
+        iso_3166_1_alpha2: AE
+        official_name: United Arab Emirates
+        demonym: Emirati
+        tld: .ae
+      GB:
+        short_name: United Kingdom
+        iso_3166_1_alpha2: GB
+        official_name: United Kingdom of Great Britain
+        demonym: British
+        tld: .uk
+      US:
+        short_name: United States
+        iso_3166_1_alpha2: US
+        official_name: United States of America
+        demonym: American
+        tld: .us
+      UY:
+        short_name: Uruguay
+        iso_3166_1_alpha2: UY
+        demonym: Uruguayan
+        tld: .uy
+      UZ:
+        short_name: Uzbekistan
+        iso_3166_1_alpha2: UZ
+        official_name: Republic of Uzbekistan
+        demonym: [Uzbekistani, Uzbek]
+        tld: .uz
+      VU:
+        short_name: Vanuatu
+        iso_3166_1_alpha2: VU
+        official_name: Republic of Vanuatu
+        demonym: Ni-Vanuatu; Vanuatuan
+        tld: .vu
+      VA:
+        short_name: Vatican City
+        iso_3166_1_alpha2: VA
+        official_name: Vatican City State
+        tld: .va
+      VE:
+        short_name: Venezuela
+        iso_3166_1_alpha2: VE
+        official_name: Bolivarian Republic of Venezuela
+        demonym: Venezuelan
+        tld: .ve
+      VN:
+        short_name: Vietnam
+        iso_3166_1_alpha2: VN
+        official_name: Socialist Republic of Vietnam
+        demonym: Vietnamese
+        tld: .vn
+      YE:
+        short_name: Yemen
+        iso_3166_1_alpha2: YE
+        official_name: Republic of Yemen
+        demonym: Yemeni
+        tld: .ye
+      ZM:
+        short_name: Zambia
+        iso_3166_1_alpha2: ZM
+        official_name: Republic of Zambia
+        demonym: Zambian
+        tld: .zm
+      ZW:
+        short_name: Zimbabwe
+        iso_3166_1_alpha2: ZW
+        official_name: Republic of Zimbabwe
+        demonym: Zimbabwean
+        tld: .zw
+
     partially_recognized_country:
     - short_name: Abkhazia
       official_name: Republic of Abkhazia

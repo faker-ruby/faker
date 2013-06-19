@@ -3,12 +3,13 @@ module Faker
     attr_reader :short_name, :tld, :iso_3166_1_alpha2
 
     def initialize(attributes)
-      @short_name = attributes['short_name']
-      @official_name = attributes['official_name']
-      @sortable_name = attributes['sortable_name']
-      @tld = attributes['tld']
-      @iso_3166_1_alpha2 = attributes['iso_3166_1_alpha2']
-      @demonym = attributes['demonym']
+      attr = attributes.symbolize_keys
+      @short_name = attr[:short_name]
+      @official_name = attr[:official_name]
+      @sortable_name = attr[:sortable_name]
+      @tld = attr[:tld]
+      @iso_3166_1_alpha2 = attr[:iso_3166_1_alpha2]
+      @demonym = attr[:demonym]
       recursively(@demonym, :symbolize_keys!) if @demonym.kind_of? Hash
     end
 
@@ -47,7 +48,7 @@ module Faker
       end
 
       def countries
-        @countries ||= I18n.translate('faker.country').map { |hash| Faker::Country.new(hash) }
+        @countries ||= I18n.translate('faker.country_by_code').map { |code, hash| Faker::Country.new(hash) }
       end
 
       def partially_recognized_countries
