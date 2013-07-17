@@ -153,3 +153,5 @@ require 'faker/version'
 
 require 'extensions/array'
 require 'extensions/symbol'
+
+require 'faker/flickr'
