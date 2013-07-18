@@ -4,7 +4,7 @@ module Faker
 
     class << self
       def name
-        parse('team.name').capitalize
+        parse('team.name')
       end
 
       def creature
@@ -12,7 +12,7 @@ module Faker
       end
 
       def state
-        fetch('faker.address.state')
+        fetch('faker.address.state').titleize
       end
     end
 
