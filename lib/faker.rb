@@ -148,6 +148,7 @@ require 'faker/company'
 require 'faker/internet'
 require 'faker/lorem'
 require 'faker/name'
+require 'faker/team'
 require 'faker/phone_number'
 require 'faker/version'
 
