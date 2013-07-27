@@ -5,3 +5,5 @@ pkg/*
 
 # Ignore Vim swap files.
 *.swp
+
+.DS_Store
