@@ -5,18 +5,18 @@ module Faker
       def email(name = nil)
         [ user_name(name), domain_name ].join('@')
       end
-      
+
       def free_email(name = nil)
         [ user_name(name), fetch('internet.free_email') ].join('@')
       end
-      
+
       def safe_email(name = nil)
         [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
       end
-      
-      def user_name(specifier = nil)
+
+      def user_name(specifier = nil, separators = %w(. _))
         if specifier.kind_of? String
-          return specifier.scan(/\w+/).shuffle.join(%w(. _).sample).downcase
+          return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
         elsif specifier.kind_of? Integer
           tries = 0 # Don't try forever in case we get something like 1_000_000.
           begin
@@ -35,20 +35,20 @@ module Faker
           end while not specifier.include? result.length and tries < 7
           return result[0...specifier.max]
         end
-        
-        fix_umlauts([ 
+
+        fix_umlauts([
           Proc.new { Name.first_name.gsub(/\W/, '').downcase },
-          Proc.new { 
-            [ Name.first_name, Name.last_name ].map {|n| 
+          Proc.new {
+            [ Name.first_name, Name.last_name ].map {|n|
               n.gsub(/\W/, '')
-            }.join(%w(. _).sample).downcase }
+            }.join(separators.sample).downcase }
         ].sample.call)
       end
-      
+
       def domain_name
         [ fix_umlauts(domain_word), domain_suffix ].join('.')
       end
-      
+
       def fix_umlauts(string)
         string.gsub(/[äöüß]/i) do |match|
             case match.downcase
@@ -59,15 +59,15 @@ module Faker
             end
         end
       end
-      
+
       def domain_word
         Company.name.split(' ').first.gsub(/\W/, '').downcase
       end
-      
+
       def domain_suffix
         fetch('internet.domain_suffix')
       end
-      
+
       def ip_v4_address
         ary = (2..254).to_a
         [ary.sample,
@@ -81,7 +81,7 @@ module Faker
         container = (1..8).map{ |_| @@ip_v6_space.sample }
         container.map{ |n| n.to_s(16) }.join(':')
       end
-      
+
       def url
         "http://#{domain_name}/#{user_name}"
       end
