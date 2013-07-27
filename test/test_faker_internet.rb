@@ -22,8 +22,34 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.user_name.match(/[a-z]+((_|\.)[a-z]+)?/)
   end
   
-  def test_user_name_with_arg
+  def test_user_name_with_string_arg
     assert @tester.user_name('bo peep').match(/(bo(_|\.)peep|peep(_|\.)bo)/)
+  end
+
+  def test_user_name_with_integer_arg
+    (1..32).each do |min_length|
+      assert @tester.user_name(min_length).length >= min_length
+    end
+  end
+
+  def test_user_name_with_closed_range_arg
+    (1..32).each do |min_length|
+      (min_length..32).each do |max_length|
+        l = @tester.user_name((min_length..max_length)).length
+        assert l >= min_length
+        assert l <= max_length
+      end
+    end
+  end
+
+  def test_user_name_with_open_range_arg
+    (1..32).each do |min_length|
+      (min_length+1..33).each do |max_length|
+        l = @tester.user_name((min_length...max_length)).length
+        assert l >= min_length
+        assert l <= max_length-1
+      end
+    end
   end
   
   def test_domain_name
