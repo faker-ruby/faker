@@ -151,6 +151,7 @@ require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
 require 'faker/business'
+require 'faker/commerce'
 require 'faker/version'
 require 'faker/number'
 
