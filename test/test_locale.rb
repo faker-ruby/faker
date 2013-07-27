@@ -35,7 +35,7 @@ class TestLocale < Test::Unit::TestCase
 
   def test_regex
     Faker::Config.locale = 'en-gb'
-    re = /[A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}/
+    re = /[A-PR-UWYZ][A-HK-Y]?[0-9][ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}/
     assert re.match(result = Faker::Address.postcode), "#{result} didn't match #{re}"
   end
 end
