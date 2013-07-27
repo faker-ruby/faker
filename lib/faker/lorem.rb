@@ -19,8 +19,8 @@ module Faker
         rand(36**char_count).to_s(36).rjust(char_count, '0').chars.to_a.shuffle.join
       end
 
-      def sentence(word_count = 4, supplemental = false)
-        words(word_count + rand(6), supplemental).join(' ').capitalize + '.'
+      def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
+        words(word_count + rand(random_words_to_add.to_i).to_i, supplemental).join(' ').capitalize + '.'
       end
 
       def sentences(sentence_count = 3, supplemental = false)
@@ -31,8 +31,8 @@ module Faker
         end
       end
 
-      def paragraph(sentence_count = 3, supplemental = false)
-        sentences(resolve(sentence_count) + rand(3), supplemental).join(' ')
+      def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 3)
+        sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i).to_i, supplemental).join(' ')
       end
 
       def paragraphs(paragraph_count = 3, supplemental = false)
