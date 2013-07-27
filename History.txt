@@ -1,8 +1,5 @@
-==
-* 1 minor enhancement:
-  * Added time zones [sean-j-williamson]
-* 1 minor bug fix:
-  * Fixed names in the French locale [Romain Goyet]
+== 1.2.0 2013-07-27
+* Many major and minor enhancements :)
 
 == 1.1.2 2012-09-18
 * 1 minor change:
