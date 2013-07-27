@@ -151,6 +151,7 @@ require 'faker/name'
 require 'faker/phone_number'
 require 'faker/business'
 require 'faker/version'
+require 'faker/number'
 
 require 'extensions/array'
 require 'extensions/symbol'
