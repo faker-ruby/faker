@@ -45,6 +45,10 @@ module Faker
         ].sample.call)
       end
 
+      def password
+        Lorem.words.join
+      end
+
       def domain_name
         [ fix_umlauts(domain_word), domain_suffix ].join('.')
       end
