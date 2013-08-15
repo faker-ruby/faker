@@ -7,9 +7,9 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    i18n (0.6.0)
-    rake (0.9.2.2)
-    test-unit (2.4.5)
+    i18n (0.6.5)
+    rake (10.1.0)
+    test-unit (2.5.5)
 
 PLATFORMS
   ruby
