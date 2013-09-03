@@ -1,0 +1,35 @@
+it:
+  faker:
+    address:
+      building_number: ['####', '###', '##', '#']
+      street_prefix: ["Via", "Viale", "Piazza", "Piazzale", "Strada", "Rotonda", "Incrocio"]
+      postcode: ['#####']
+      state: ["Lombardia", "Campania", "Lazio" , "Sicilia", "Veneto", "Piemonte", "Emilia-Romagna", "Puglia", "Toscana", "Calabria", "Sardegna", "Liguria", "Marche", "Abruzzo", "Trentino-Alto Adige", "Umbria", "Basilicata", "Molise", "Valle d'Aosta", "Friuli-Venezia Giulia"]
+      city_name: ["Agrigento", "Alessandria", "Ancona", "Aosta", "Arezzo", "Ascoli Piceno", "Asti", "Avellino", "Bari", "Barletta-Andria-Trani", "Belluno", "Benevento", "Bergamo", "Biella", "Bologna", "Bolzano", "Brescia", "Brindisi", "Cagliari", "Caltanissetta", "Campobasso", "Carbonia-Iglesias", "Caserta", "Catania", "Catanzaro", "Chieti", "Como", "Cosenza", "Cremona", "Crotone", "Cuneo", "Enna", "Fermo", "Ferrara", "Firenze", "Foggia", "Forl?-Cesena", "Frosinone", "Genova", "Gorizia", "Grosseto", "Imperia", "Isernia", "La Spezia", "L'Aquila", "Latina", "Lecce", "Lecco", "Livorno", "Lodi", "Lucca", "Macerata", "Mantova", "Massa-Carrara", "Matera", "Messina", "Milano", "Modena", "Monza e della Brianza", "Napoli", "Novara", "Nuoro", "Olbia-Tempio", "Oristano", "Padova", "Palermo", "Parma", "Pavia", "Perugia", "Pesaro e Urbino", "Pescara", "Piacenza", "Pisa", "Pistoia", "Pordenone", "Potenza", "Prato", "Ragusa", "Ravenna", "Reggio Calabria", "Reggio Emilia", "Rieti", "Rimini", "Roma", "Rovigo", "Salerno", "Medio Campidano", "Sassari", "Savona", "Siena", "Siracusa", "Sondrio", "Taranto", "Teramo", "Terni", "Torino", "Ogliastra", "Trapani", "Trento", "Treviso", "Trieste", "Udine", "Varese", "Venezia", "Verbano-Cusio-Ossola", "Vercelli", "Verona", "Vibo Valentia", "Vicenza", "Viterbo"]
+      city:
+        - "#{city_name}"
+      street_suffix: ["Merda", "Padella"]
+      street_name:
+        - "#{street_prefix} #{last_name}"
+      street_address:
+        - "#{street_name} #{building_number}"
+      default_country: [Italy]
+
+    company:
+      suffix: ["Srl", "Spa", "Srls", "Snc"]
+      name:
+        - "#{Name.last_name} #{suffix}"
+          
+    internet:
+      free_email: [gmail.com, live.com, yahoo.it, alice.it, libero.it, virgilio.it]
+      domain_suffix: [com, it, eu, info, name, net, org]
+
+    name:
+      first_name: ["Andrea", "Luca", "Marco", "Francesco", "Matteo", "Alessandro", "Davide", "Simone", "Federico", "Lorenzo", "Mattia", "Stefano", "Giuseppe", "Riccardo", "Daniele", "Michele", "Alessio", "Antonio", "Giovanni", "Nicola", "Gabriele", "Fabio", "Alberto", "Giacomo", "Giulio", "Filippo", "Gianluca", "Paolo", "Roberto", "Salvatore", "Emanuele", "Edoardo", "Enrico", "Vincenzo", "Nicolò", "Leonardo", "Jacopo", "Manuel", "Mirko", "Tommaso", "Pietro", "Luigi", "Giorgio", "Angelo", "Dario", "Valerio", "Domenico", "Claudio", "Alex", "Christian ", "Giulia", "Chiara", "Francesca", "Federica", "Sara", "Martina", "Valentina", "Alessia", "Silvia", "Elisa", "Ilaria", "Eleonora", "Giorgia", "Elena", "Laura", "Alice", "Alessandra", "Jessica", "Arianna", "Marta", "Veronica", "Roberta", "Anna", "Giada", "Claudia ", "Beatrice", "Valeria", "Michela", "Serena", "Camilla", "Irene", "Cristina", "Simona", "Maria", "Noemi", "Stefania", "Erika", "Sofia", "Lucia", "Vanessa", "Greta", "Debora", "Nicole", "Angela", "Paola", "Caterina", "Monica", "Erica", "Lisa", "Gaia"]
+      last_name: ["Rossi", "Russo", "Ferrari", "Esposito", "Bianchi", "Colombo", "Romano", "Ricci", "Gallo", "Greco", "Conti", "Marino", "De luca", "Bruno", "Costa", "Giordano", "Mancini", "Rizzo", "Lombardi", "Barbieri", "Moretti", "Fontana", "Santoro", "Caruso", "Mariani", "Rinaldi", "Martini", "Ferrara", "Galli", "Leone", "Serra", "Conte", "Villa", "Marini", "Ferri", "Bianco", "Monti", "De santis", "Parisi", "Fiore", "De angelis", "Longo", "Sanna", "Sala", "Romeo", "Martinelli", "Grassi", "Neri", "Marchetti", "Vitale", "Catalano", "Rosi", "Ruggiero", "Napoli", "Rosati", "Lorusso", "Maggi", "Giannini", "Lupo", "Ruggeri", "Bianchini", "Olivieri", "Papa", "Marra", "Berti", "Piazza", "Fumagalli", "Manca", "Boni", "D agostino", "Costantini", "Antonelli", "Verde", "Mori", "Bonetti", "Mauri", "Pisano", "Pinto", "Arena", "Filippi", "Negri", "Magnani", "Cirillo", "Nardi", "Tosi", "Carboni", "Ferrante", "Riccardi", "Pepe", "Basso", "Mattei", "De Marco", "Garofalo", "Leoni", "Piccolo", "Gatto", "Forte", "Cocco", "Bucci", "Mura", "Valeri", "Agostini", "Lillo", "Venturi", "Masi", "Moroni", "Falcone", "Mancuso", "Rubino", "Di Marco", "Scotti", "Salvi", "Franchini", "Giovannini", "Orsini", "Petrucci", "Trevisan", "Aiello", "Stefani", "Marchesi", "Pesce", "Pavan", "Fortunato", "Cozzolino", "Festa", "Scarpa", "Casadei", "Masini", "Genovese", "Rocchi", "Sole", "Romani", "Bartolini", "Fantini", "Antonini", "Castellani", "Brunetti", "Manfredi", "Cavalli", "Tarantino", "Clemente", "Toscano", "Mattioli", "Giuliano", "Pappalardo", "Natale", "Cosentino", "Diana", "Corradi", "Spada", "Fadda", "Pasini", "Pizzi", "Cioffi", "Franceschi", "Chiesa", "Radaelli", "Forti", "Valli", "Tucci", "Dini", "Perri", "Negro", "Campana", "Valentino", "Floris", "D amato", "Meli", "Manzo", "Cappelletti", "Carnevale", "Ferrario", "Salvatori", "Mora", "Cicci", "Quaranta", "Pandolfi", "Cuomo", "Antonella", "Di giacomo", "Cipriani", "Usai", "Porcu", "Manzi", "Cecchini", "Lupi", "Vaccaro", "Nobile", "Scala", "Alfano", "Fabris", "Palmisano", "Roberti", "Corso", "Carraro", "Quarta", "Grosso", "Durante", "Giuseppe", "Papi"]
+      name:
+        - "#{first_name} #{last_name}"
+        - "#{last_name} #{name_name}"
+
+    phone_number:
+      formats: ['01########', '02########', '03########', '04########', '05########', '06########', '07########', '+33 1########', '+33 2########', '+33 3########', '+33 4########', '+33 5########', '+33 6########', '+33 7########']
