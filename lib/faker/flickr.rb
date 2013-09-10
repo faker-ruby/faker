@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'FlickRaw'
+require 'flickraw'
 
 module Faker
   class Flickr < Base
