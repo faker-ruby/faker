@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'FlickRaw'
 
 module Faker
