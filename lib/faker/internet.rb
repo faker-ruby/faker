@@ -86,8 +86,8 @@ module Faker
         container.map{ |n| n.to_s(16) }.join(':')
       end
 
-      def url
-        "http://#{domain_name}/#{user_name}"
+      def url(host = domain_name, path = "/#{user_name}")
+        "http://#{host}#{path}"
       end
 
       def slug(words = nil, glue = nil)

@@ -96,4 +96,8 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_slug_with_glue_arg
     assert @tester.slug(nil, '+').match(/^[a-z]+\+[a-z]+$/)
   end
+
+  def test_url
+    assert @tester.url('domain.com', '/username').match(/^http:\/\/domain\.com\/username$/)
+  end
 end
