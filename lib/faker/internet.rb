@@ -45,8 +45,12 @@ module Faker
         ].sample.call)
       end
 
-      def password
-        Lorem.words.join
+      def password(min_length=0)
+        temp = Lorem.words.join
+        while temp.length < min_length
+          temp += Lorem.word
+        end
+        return temp
       end
 
       def domain_name

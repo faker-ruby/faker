@@ -57,6 +57,12 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.password.match(/\w{3}/)
   end
 
+  def test_password_with_integer_arg
+    (1..32).each do |min_length|
+      assert @tester.password(min_length).length >= min_length
+    end
+  end
+
   def test_domain_name
     assert @tester.domain_name.match(/\w+\.\w+/)
   end
