@@ -76,8 +76,10 @@ en:
 
     commerce:
       color: [red, green, blue, yellow, purple, mint green, teal, white, black, orange, pink, grey, maroon, violet, turquoise, tan, sky blue, salmon, plum, orchid, olive, magenta, lime, ivory, indigo, gold, fuchsia, cyan, azure, lavender, silver]
-      department: ["Books", "Movies, Music & Games", "Electronics & Computers", "Home, Garden & Tools", "Grocery, Health & Beauty", "Toys, Kids & Baby", "CLothing, Shoes & Jewelery", "Sports & Outdoors", "Automotive & Industrial"] 
+      size: [ infant, youth, teen, xsmall, small, medium, large, xlarge, 2xlarge, 3xlarge ]
+      department: ["Books", "Movies, Music & Games", "Electronics & Computers", "Home, Garden & Tools", "Grocery, Health & Beauty", "Toys, Kids & Baby", "Clothing, Shoes & Jewelery", "Sports & Outdoors", "Automotive & Industrial","Exercise & Fitness","Patio, Lawn & Garden","Kitchen & Dining","Pet Supplies", "Appliances", "Hardware"] 
       product_name:
         adjective: [Small, Ergonomic, Rustic, Intelligent, Gorgeous, Incredible, Fantastic, Practical, Sleek, Awesome]
         material: [Steel, Wooden, Concrete, Plastic, Cotton, Granite, Rubber] 
-        product: [Chair, Car, Computer, Gloves, Pants, Shirt, Table, Shoes, Hat]
+        product: [Chair, Car, Computer, Gloves, Pants, Shirt, Table, Shoes, Hat, Bed, Desk, Table]
+      product_number: ['??-##-###','??-####','??####','######']
