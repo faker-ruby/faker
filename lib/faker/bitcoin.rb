@@ -19,7 +19,7 @@ module Faker
         base = alphabet.size
 
         lv = 0
-        str.split('').reverse.each_with_index { |v,i| lv += v.ord * 256**i }
+        str.split('').reverse.each_with_index { |v,i| lv += v.unpack('C')[0] * 256**i }
 
         ret = ''
         while lv > 0 do
@@ -28,7 +28,7 @@ module Faker
         end
 
         npad = str.match(/^#{0.chr}*/)[0].to_s.size
-        alphabet[0]*npad + ret.reverse
+        '1'*npad + ret.reverse
       end
 
     end
