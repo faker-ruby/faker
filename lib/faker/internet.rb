@@ -20,7 +20,7 @@ module Faker
         elsif specifier.kind_of? Integer
           tries = 0 # Don't try forever in case we get something like 1_000_000.
           begin
-            result = user_name
+            result = user_name nil, separators
             tries += 1
           end while result.length < specifier and tries < 7
           until result.length >= specifier
@@ -30,7 +30,7 @@ module Faker
         elsif specifier.kind_of? Range
           tries = 0
           begin
-            result = user_name specifier.min
+            result = user_name specifier.min, separators
             tries += 1
           end while not specifier.include? result.length and tries < 7
           return result[0...specifier.max]
