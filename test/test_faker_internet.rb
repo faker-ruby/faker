@@ -52,6 +52,15 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_user_name_with_range_and_separators
+    (1..32).each do |min_length|
+      (min_length+1..33).each do |max_length|
+        u = @tester.user_name((min_length...max_length), %w(=))
+        assert u.length.between? min_length, max_length-1
+        assert u.match(/\A[a-z]+((=)?[a-z]*)*\z/)
+      end
+    end
+  end
 
   def test_password
     assert @tester.password.match(/\w{3}/)
