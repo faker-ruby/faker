@@ -18,3 +18,7 @@ uk:
       street_address:
         - "#{street_name}, #{building_number}"
       default_country: [Україна]
+
+    internet:
+      free_email: [i.ua, meta.ua, tyt.in.ua, ukr.net, gmail.com, yahoo.com, hotmail.com]
+      domain_suffix: [com, ua, info, com.ua, net.ua, org.ua, net, org, edu.ua, gov.ua, in.ua, at.ua, pp.ua, cherkassy.ua, ck.ua, chernigov.ua, cn.ua, chernovtsy.ua, cv.ua, crimea.ua, dnepropetrovsk.ua, dp.ua, donetsk.ua, dn.ua, ivano-frankivsk.ua, if.ua, kharkov.ua, kh.ua, kherson.ua, ks.ua, khmelnitskiy.ua, km.ua, kiev.ua, kirovograd.ua, kr.ua, lugansk.ua, lg.ua, lutsk.ua, lt.ua, lviv.ua, nikolaev.ua, mk.ua, odessa.ua, od.ua, poltava.ua, pl.ua, rovno.ua, rv.ua, sebastopol.ua, yalta.ua, sumy.ua, ternopil.ua, te.ua, uzhgorod.ua, uz.ua, vinnica.ua, vn.ua, zaporizhzhe.ua, zp.ua, zhitomir.ua, zt.ua, укр]
