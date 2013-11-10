@@ -7,11 +7,11 @@ def assert_list_translation(name, min_count, regex)
 end
 
 def all_ukrainian_characters
-	/^[-’ЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮйцукенгшщзхїфівапролджєячсмитьбю ]+$/i
+	/^[-’ҐЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮґйцукенгшщзхїфівапролджєячсмитьбю ]+$/i
 end
 
 def small_ukrainian_characters
-	/^[йцукенгшщзхїфівапролджєячсмитьбю.]+$/i
+	/^[ґйцукенгшщзхїфівапролджєячсмитьбю.]+$/i
 end
 
 class TestUkLocale < Test::Unit::TestCase
@@ -79,6 +79,11 @@ class TestUkLocale < Test::Unit::TestCase
 
 	def test_uk_locale_defines_phone_format
 		assert_equal Faker::Base.translate('faker.phone_number.formats').first, '(0##)###-##-##'
+	end
+
+	def test_uk_locale_defines_lorem
+		assert_list_translation('faker.lorem.words', 100, small_ukrainian_characters)
+		assert_list_translation('faker.lorem.supplemental', 100, small_ukrainian_characters)
 	end
 
 end
