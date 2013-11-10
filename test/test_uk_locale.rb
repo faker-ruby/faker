@@ -54,11 +54,31 @@ class TestUkLocale < Test::Unit::TestCase
 	end
 
 	def test_uk_locale_defines_male_first_name
-		assert_list_translation('faker.name.male_first_name',100, all_ukrainian_characters)
+		assert_list_translation('faker.name.male_first_name', 100, all_ukrainian_characters)
+	end
+
+	def test_uk_locale_defines_male_middle_name
+		assert_list_translation('faker.name.male_middle_name', 20, all_ukrainian_characters)
+	end
+
+	def test_uk_locale_defines_male_last_name
+		assert_list_translation('faker.name.male_last_name', 100, all_ukrainian_characters)
 	end
 
 	def test_uk_locale_defines_female_first_name
-		assert_list_translation('faker.name.female_first_name',50, all_ukrainian_characters)
+		assert_list_translation('faker.name.female_first_name', 50, all_ukrainian_characters)
+	end
+
+	def test_uk_locale_defines_female_middle_name
+		assert_list_translation('faker.name.female_middle_name', 20, all_ukrainian_characters)
+	end
+
+	def test_uk_locale_defines_female_last_name
+		assert_equal Faker::Base.translate('faker.name.female_last_name'), '#{male_last_name}'
+	end
+
+	def test_uk_locale_defines_phone_format
+		assert_equal Faker::Base.translate('faker.phone_number.formats').first, '(0##)###-##-##'
 	end
 
 end
