@@ -1,5 +1,19 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
+def assert_list_translation(name, min_count, regex)
+	list = Faker::Base.translate(name)
+	assert list.length >= min_count
+	assert_each_element_matches_regex(list, regex)
+end
+
+def all_ukrainian_characters
+	/^[-’ЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮйцукенгшщзхїфівапролджєячсмитьбю ]+$/i
+end
+
+def small_ukrainian_characters
+	/^[йцукенгшщзхїфівапролджєячсмитьбю.]+$/i
+end
+
 class TestUkLocale < Test::Unit::TestCase
 
 	class << self
@@ -16,44 +30,35 @@ class TestUkLocale < Test::Unit::TestCase
 	end
 
 	def test_uk_locale_defines_countries
-		assert Faker::Base.translate('faker.address.country').length > 100
-		Faker::Base.translate('faker.address.country').each do | c |
-			assert_match(/^[-’ЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮйцукенгшщзхїфівапролджєячсмитьбю ]+$/i, c)
-		end
+		assert_list_translation('faker.address.country', 100, all_ukrainian_characters)
 	end
 
 	def test_uk_locale_defines_building_number
-		Faker::Base.translate('faker.address.building_number').each do | bn |
-			assert_match(/^\#{1,3}$/, bn)
-		end				
+		assert_list_translation('faker.address.building_number', 1, /^\#{1,3}$/)
 	end
 
 	def test_uk_locale_defines_street_suffix
-		assert Faker::Base.translate('faker.address.street_suffix').length > 5
-		Faker::Base.translate('faker.address.street_suffix').each do | sp |
-			assert_match(/^[йцукенгшщзхїфівапролджєячсмитьбю.]+$/i, sp)
-		end						
+		assert_list_translation('faker.address.street_suffix', 5, small_ukrainian_characters)
 	end
 
 	def test_uk_locale_defines_states
-		assert Faker::Base.translate('faker.address.state').length > 20
-		Faker::Base.translate('faker.address.state').each do | s |
-			assert_match(/^[-ЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮйцукенгшщзхїфівапролджєячсмитьбю ]+$/i, s)
-		end
+		assert_list_translation('faker.address.state', 20, all_ukrainian_characters)
 	end
 
 	def test_uk_locale_defines_street_titles
-		assert Faker::Base.translate('faker.address.street_title').length > 100
-		Faker::Base.translate('faker.address.street_title').each do | st |
-			assert_match(/^[-ЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮйцукенгшщзхїфівапролджєячсмитьбю ]+$/i, st)
-		end
+		assert_list_translation('faker.address.street_title', 100, all_ukrainian_characters)
 	end
 
-		def test_uk_locale_defines_cities
-		assert Faker::Base.translate('faker.address.city_name').length > 100
-		Faker::Base.translate('faker.address.city_name').each do | c |
-			assert_match(/^[-’ЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮйцукенгшщзхїфівапролджєячсмитьбю ]+$/i, c)
-		end
+	def test_uk_locale_defines_cities
+		assert_list_translation('faker.address.city_name', 100, all_ukrainian_characters)
+	end
+
+	def test_uk_locale_defines_male_first_name
+		assert_list_translation('faker.name.male_first_name',100, all_ukrainian_characters)
+	end
+
+	def test_uk_locale_defines_female_first_name
+		assert_list_translation('faker.name.female_first_name',50, all_ukrainian_characters)
 	end
 
 end
