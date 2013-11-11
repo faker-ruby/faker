@@ -92,8 +92,16 @@ class TestUkLocale < Test::Unit::TestCase
 
 	def test_uk_locale_generates_lorem_with_first_capital_letter
 		test = Faker::Lorem.sentence
-		puts test
 		assert_match sentence, test
 	end
+
+	def test_uk_locale_defines_company_prefix
+		assert_list_translation('faker.company.prefix', 10, all_ukrainian_characters)
+	end
+
+	def test_uk_locale_defines_companies
+		assert_list_translation('faker.company.primary_name', 100, all_ukrainian_characters)
+	end
+
 
 end
