@@ -14,6 +14,10 @@ def small_ukrainian_characters
 	/^[ґйцукенгшщзхїфівапролджєячсмитьбю.]+$/i
 end
 
+def sentence
+	/^[ҐЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮ][ґйцукенгшщзхїфівапролджєячсмитьбю ]+\.$/i
+end
+
 class TestUkLocale < Test::Unit::TestCase
 
 	class << self
@@ -84,6 +88,12 @@ class TestUkLocale < Test::Unit::TestCase
 	def test_uk_locale_defines_lorem
 		assert_list_translation('faker.lorem.words', 100, small_ukrainian_characters)
 		assert_list_translation('faker.lorem.supplemental', 100, small_ukrainian_characters)
+	end
+
+	def test_uk_locale_generates_lorem_with_first_capital_letter
+		test = Faker::Lorem.sentence
+		puts test
+		assert_match sentence, test
 	end
 
 end
