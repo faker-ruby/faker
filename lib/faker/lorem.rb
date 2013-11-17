@@ -20,7 +20,7 @@ module Faker
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
-        # TODO: replace capitalize with something that works with cyrillic
+        # TODO: replace this with some gem or function that supports cyrillic capitalization
         result = words(word_count + rand(random_words_to_add.to_i).to_i, supplemental).join(' ') + '.'
         begin
           result[0] = translate('faker.lorem.capitalization')[result[0].to_sym]
