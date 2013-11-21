@@ -17,6 +17,15 @@ module Faker
         end
       end
 
+      # US only but International format
+      def int_phone
+        if parse('phone_number.int_format') == ""
+          numerify(fetch('phone_number.int_format'))
+        else
+          parse('phone_number.int_format')
+        end
+      end
+
       # US only
       def area_code
         begin
