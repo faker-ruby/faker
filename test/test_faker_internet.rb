@@ -135,6 +135,10 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_website_filters_special_characters
+    assert Faker::Internet.website("~!@{$%^&*()+|}test", "com").match(/^http:\/\/test\.com$/)
+  end
+
   def test_website_uses_suffix
     assert Faker::Internet.website("company", "com").match(/^http:\/\/company\.com$/)
   end

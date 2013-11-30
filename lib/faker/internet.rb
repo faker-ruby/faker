@@ -100,12 +100,14 @@ module Faker
 
         begin
           rules = translate('faker.lorem.transliteration')
-          company.split('').each do | ch |
-            transliterated_company << (rules[ch.to_sym] || ch)
+          company.split('').each do | ch |                       
+            transliterated_company << (rules[ch.to_sym] || ch)            
           end
         rescue I18n::MissingTranslationData
           transliterated_company = company
         end
+
+        transliterated_company = transliterated_company.gsub(/[^a-zA-Z0-9\-_\.]/,"") 
         
         "http://#{transliterated_company}.#{suffix}"
       end
