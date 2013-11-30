@@ -115,4 +115,21 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_url
     assert @tester.url('domain.com', '/username').match(/^http:\/\/domain\.com\/username$/)
   end
+
+  def test_website
+    assert Faker::Internet.website("company").match(/^http:\/\/company\./)
+  end
+
+  def test_website_transliterates
+    I18n.with_locale :uk do
+      assert Faker::Internet.website("компанія").match(/^http:\/\/kompaniya\./)
+    end
+    I18n.with_locale :ru do
+      assert Faker::Internet.website("компания").match(/^http:\/\/kompaniya\./)
+    end
+  end
+
+  def test_website_uses_suffix
+    assert Faker::Internet.website("company", "com").match(/^http:\/\/company\.com$/)
+  end
 end

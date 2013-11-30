@@ -94,6 +94,20 @@ module Faker
         "http://#{host}#{path}"
       end
 
+      def website(company = domain_name, suffix = domain_suffix)
+        transliterated_company = ''
+        # TODO: think about better transliteration method
+        company.split('').each do | ch |
+          begin
+            transliterated_company << translate('faker.lorem.transliteration')[ch.to_sym]
+          rescue I18n::MissingTranslationData
+            transliterated_company << ch
+          end
+        end          
+        
+        "http://#{transliterated_company}.#{suffix}"
+      end
+
       def slug(words = nil, glue = nil)
         glue ||= %w[- _ .].sample
         (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase

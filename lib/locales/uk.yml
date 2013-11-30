@@ -71,6 +71,74 @@ uk:
         б: Б
         ю: Ю
         ґ: Ґ
+      transliteration: 
+        й: j
+        ц: ts
+        у: u
+        к: k
+        е: e
+        н: n
+        г: g
+        ш: sh
+        щ: sch
+        з: z
+        х: h
+        ї: yi
+        ф: f
+        і: i
+        в: v
+        а: a
+        п: p
+        р: r
+        о: o
+        л: l
+        д: d
+        ж: zh
+        є: ye
+        я: ya
+        ч: ch
+        с: s
+        м: m
+        и: y
+        т: t
+        ь: ""
+        б: b
+        ю: yu
+        ґ: g
+
+        Й: J
+        Ц: Ts
+        У: U
+        К: K
+        Е: E
+        Н: N
+        Г: G
+        Ш: Sh
+        Щ: Sch
+        З: Z
+        Х: H
+        Ї: Yi
+        Ф: F
+        І: I
+        В: V
+        А: A
+        П: P
+        Р: R
+        О: O
+        Л: L
+        Д: D
+        Ж: Zh
+        Є: Ye
+        Я: Ya
+        Ч: Ch
+        С: S
+        М: M
+        И: Y
+        Т: T
+        Ь: ""
+        Б: B
+        Ю: Yu
+        Ґ: G
 
     name:
       # source: ukrainian wikipedia
