@@ -129,6 +129,12 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_website_transliteration_uses_fallback
+    I18n.with_locale :uk do
+      assert Faker::Internet.website("12312432").match(/^http:\/\/12312432\./)
+    end
+  end
+
   def test_website_uses_suffix
     assert Faker::Internet.website("company", "com").match(/^http:\/\/company\.com$/)
   end

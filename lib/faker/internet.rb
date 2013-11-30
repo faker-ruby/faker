@@ -95,15 +95,17 @@ module Faker
       end
 
       def website(company = domain_name, suffix = domain_suffix)
-        transliterated_company = ''
         # TODO: think about better transliteration method
-        company.split('').each do | ch |
-          begin
-            transliterated_company << translate('faker.lorem.transliteration')[ch.to_sym]
-          rescue I18n::MissingTranslationData
-            transliterated_company << ch
+        transliterated_company = ''
+
+        begin
+          rules = translate('faker.lorem.transliteration')
+          company.split('').each do | ch |
+            transliterated_company << (rules[ch.to_sym] || ch)
           end
-        end          
+        rescue I18n::MissingTranslationData
+          transliterated_company = company
+        end
         
         "http://#{transliterated_company}.#{suffix}"
       end
