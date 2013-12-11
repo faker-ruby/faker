@@ -2,11 +2,11 @@ module Faker
   class Number < Base
     class << self
       def number(digits)
-        rand(digits ** 10 - 1).to_s.center(digits, rand(9).to_s)
+        (1..digits).collect {digit}.join
       end
 
       def digit
-        rand(9).to_s
+        (rand() * 9).round.to_s
       end
     end
   end
