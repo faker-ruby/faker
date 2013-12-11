@@ -2,7 +2,7 @@ module Faker
   class Number < Base
     class << self
       def number(digits)
-        rand(10 ** digits).to_s.rjust(digits, '0')
+        (1..digits).collect {digit}.join
       end
 
       def decimal(l_digits, r_digits = 2)
@@ -12,7 +12,7 @@ module Faker
       end
 
       def digit
-        rand(9).to_s
+        (rand() * 9).round.to_s
       end
 
       def hexadecimal(digits)

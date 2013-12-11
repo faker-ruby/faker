@@ -7,10 +7,15 @@ class TestFakerNumber < Test::Unit::TestCase
 
   def test_number
     assert @tester.number(10).match(/[0-9]{10}/)
+
     10.times do |digits|
       digits += 1
       assert @tester.number(digits).match(/^[0-9]{#{digits}}$/)
     end
+
+    assert @tester.number(10).length == 10
+    assert @tester.number(1).length == 1
+    assert @tester.number(0) == ""
   end
 
   def test_decimal
@@ -20,6 +25,7 @@ class TestFakerNumber < Test::Unit::TestCase
 
   def test_digit
     assert @tester.digit.match(/[0-9]{1}/)
+    assert (1..1000).collect {|i| @tester.digit == "9"}.include?(true)
   end
 
   def test_between
