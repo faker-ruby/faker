@@ -7,7 +7,7 @@ class TestFakerNumber < Test::Unit::TestCase
   end
   
   def test_number
-    assert @tester.number(10).match(/[0-9]{10}/)
+    assert @tester.number(9).match(/\A[0-9]{9}\z/)
   end
   
   def test_digit
