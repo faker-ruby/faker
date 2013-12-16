@@ -6,7 +6,6 @@ rescue LoadError
 end
 
 require 'i18n'
-require 'flickraw'
 I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
 I18n.reload!
 

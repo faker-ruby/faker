@@ -8,12 +8,15 @@ module Faker
     class << self
 
       def image(tag=nil)
+        key = tag || 'default'
 
-        unless defined? $flickr_public_feed
-          $flickr_public_feed = Feedzirra::Feed.fetch_and_parse "http://api.flickr.com/services/feeds/photos_public.gne#{tag ? tag : ''}"
+        $flickr_public_feed ||= {}
+
+        unless $flickr_public_feed[key]
+          $flickr_public_feed[key] = Feedzirra::Feed.fetch_and_parse "http://api.flickr.com/services/feeds/photos_public.gne#{tag ? ('?tags='+tag) : ''}"
         end
 
-        $flickr_public_feed.entries.sample.links.last
+        $flickr_public_feed[key].entries.sample.links.last
       end
 
     end
