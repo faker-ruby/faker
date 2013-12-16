@@ -21,7 +21,8 @@ Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 
-Faker::Flicrk.image("tag1,tag2") #=> "http://farm4.staticflickr.com/3777/11403511074_029f4b2234_b.jpg" (random image from flickrs public feed)
+# random image from flickrs public feed api
+Faker::Flickr.image("tag1,tag2") #=> "http://farm4.staticflickr.com/3777/11403511074_029f4b2234_b.jpg"
 ```
 
 Customization
