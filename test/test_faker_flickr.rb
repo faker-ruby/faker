@@ -20,4 +20,17 @@ class TestFakerCity < Test::Unit::TestCase
     assert [:jpeg, :png].include? file_type
   end
 
+  def test_can_load_100_images
+
+    100.times{
+      image = Faker::Flickr.image("summer")
+
+      assert_not_nil image
+      file_type = FastImage.type(image)
+      assert [:jpeg, :png].include? file_type
+
+      sleep(1)  # include processing time
+    }
+  end
+
 end
