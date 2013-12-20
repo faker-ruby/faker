@@ -14,4 +14,24 @@ class TestFakerNumber < Test::Unit::TestCase
     assert @tester.digit.match(/[0-9]{1}/)
   end
 
+  def test_money_returns_float_with_two_digits_after_decimal_point
+  	assert @tester.money.to_s.match(/\d+\.\d{2}/)
+  end
+
+  def test_money_returns_positive_value
+  	assert @tester.money > 0
+  end
+
+  def test_money_returns_less_that_thousand
+  	assert @tester.money < 1000
+  end
+
+  def test_money_uses_from_option
+  	assert @tester.money(:from => 100) > 100
+  end
+
+  def test_money_uses_to_option
+  	assert @tester.money(:to => 100) < 100
+  end
+
 end
