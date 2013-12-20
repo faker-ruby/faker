@@ -76,7 +76,7 @@ en:
 
     commerce:
       color: [red, green, blue, yellow, purple, mint green, teal, white, black, orange, pink, grey, maroon, violet, turquoise, tan, sky blue, salmon, plum, orchid, olive, magenta, lime, ivory, indigo, gold, fuchsia, cyan, azure, lavender, silver]
-      department: ["Books", "Movies, Music & Games", "Electronics & Computers", "Home, Garden & Tools", "Grocery, Health & Beauty", "Toys, Kids & Baby", "CLothing, Shoes & Jewelery", "Sports & Outdoors", "Automotive & Industrial"] 
+      department: ["Books", "Movies, Music & Games", "Electronics & Computers", "Home, Garden & Tools", "Grocery, Health & Beauty", "Toys, Kids & Baby", "Clothing, Shoes & Jewelery", "Sports & Outdoors", "Automotive & Industrial"] 
       product_name:
         adjective: [Small, Ergonomic, Rustic, Intelligent, Gorgeous, Incredible, Fantastic, Practical, Sleek, Awesome]
         material: [Steel, Wooden, Concrete, Plastic, Cotton, Granite, Rubber] 
