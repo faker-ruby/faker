@@ -157,6 +157,7 @@ module Faker
   end
 end
 
+require 'faker/book'
 require 'faker/address'
 require 'faker/code'
 require 'faker/color'
@@ -180,7 +181,6 @@ require 'faker/number'
 require 'faker/hacker'
 require 'faker/app'
 require 'faker/slack_emoji'
-require 'faker/book'
 
 require 'extensions/array'
 require 'extensions/symbol'
