@@ -147,6 +147,7 @@ module Faker
   end
 end
 
+require 'faker/book'
 require 'faker/address'
 require 'faker/code'
 require 'faker/company'
