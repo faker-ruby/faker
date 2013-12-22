@@ -6,6 +6,5 @@ gemspec
 group :development, :test do
   gem "test-unit"
   gem "rake"
-  gem "debugger"
   gem "fastimage"
 end

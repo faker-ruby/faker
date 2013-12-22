@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'feedzirra'
-require 'debugger'
 
 module Faker
   class Flickr < Base
