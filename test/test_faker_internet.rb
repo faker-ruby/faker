@@ -92,6 +92,14 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_mac_address
+    assert_equal 5, @tester.mac_address.count(':')
+
+    1000.times do
+      assert @tester.mac_address.split(':').map(&:to_i).max <= 255
+    end
+  end
+
   def test_ip_v6_address
     assert_equal 7, @tester.ip_v6_address.count(':')
 

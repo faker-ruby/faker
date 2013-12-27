@@ -76,6 +76,10 @@ module Faker
         fetch('internet.domain_suffix')
       end
 
+      def mac_address
+        6.times.map { '%02x' % rand(256) }.join(':')
+      end
+
       def ip_v4_address
         ary = (2..254).to_a
         [ary.sample,
