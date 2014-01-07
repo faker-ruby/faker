@@ -7,7 +7,6 @@ end
 
 require 'i18n'
 I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
-I18n.reload!
 
 
 module Faker
