@@ -7,10 +7,13 @@ module Faker
       end
 
       def words(num = 3, supplemental = false)
-        (
+        resolved_num = resolve(num)
+        word_list = (
           translate('faker.lorem.words') +
           (supplemental ? translate('faker.lorem.supplemental') : [])
-        ).shuffle[0, resolve(num)]
+        )
+        word_list = word_list * ((resolved_num / word_list.length) + 1)
+        word_list.shuffle[0, resolved_num]
       end
 
       def characters(char_count = 255)

@@ -66,4 +66,14 @@ class TestFakerLorem < Test::Unit::TestCase
     assert(ss.length == 1 || ss.length == 4)
     assert(ps.length == 1 || ps.length == 4)
   end
+
+  def test_words_with_large_count_params
+    exact = @tester.words(500)
+    range = @tester.words(250..500)
+    array = @tester.words([250, 500])
+
+    assert(exact.length == 500)
+    assert(250 <= range.length && range.length <= 500)
+    assert(array.length == 250 || array.length == 500)
+  end
 end
