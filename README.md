@@ -11,7 +11,7 @@ development.
 Installing
 ----------
 ```bash
-sudo gem install faker
+gem install faker
 ```
 
 Usage
