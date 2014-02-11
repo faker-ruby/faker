@@ -14,13 +14,290 @@ Installing
 sudo gem install faker
 ```
 
-Usage
+##Usage
 -----
 ```ruby
 Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ```
+
+###Faker::Address
+-----------------
+
+```ruby
+Faker::Address.city #=> "Imogeneborough"
+
+Faker::Address.street_name #=> "Larkin Fork"
+
+Faker::Address.street_address #=> "282 Kevin Brook"
+
+Faker::Address.secondary_address #=> "Apt. 672"
+
+Faker::Address.building_number #=> "7304"
+
+Faker::Address.zip_code #=> "58517"
+
+Faker::Address.zip #=> "58517"
+
+Faker::Address.postcode #=> "58517"
+
+Faker::Address.time_zone #=> "Asia/Yakutsk"
+
+Faker::Address.street_suffix #=> "Street"
+
+Faker::Address.city_suffix #=> "fort"
+
+Faker::Address.city_prefix #=> "Lake"
+
+Faker::Address.state_abbr #=> "AP"
+
+Faker::Address.state #=> "California"
+
+Faker::Address.country #=> "French Guiana"
+
+Faker::Address.latitude #=> "-58.17256227443719"
+
+Faker::Address.longitude #=> "-156.65548382095133"
+
+
+```
+
+###Faker::Bitcoin
+-----------------
+
+```ruby
+
+Faker::Bitcoin.address #=> "1HUoGjmgChmnxxYhz87YytV4gVjfPaExmh"
+
+```
+
+###Faker::Business
+------------------
+
+```ruby
+
+Faker::Business.credit_card_number #=> "1228-1221-1221-1431"
+
+Faker::Business.credit_card_expiry_date #=> <Date: 2015-11-11 ((2457338j,0s,0n),+0s,2299161j)>
+
+Faker::Business.credit_card_type #=> "visa"
+
+```
+
+###Faker::Code
+--------------
+
+```ruby
+
+Faker::Code.isbn #=> "759021701-8"
+
+```
+
+###Faker::Commerce
+------------------
+
+```ruby
+
+Faker::Commerce.color #=> "lavender"
+
+Faker::Commerce.department #=> "Grocery, Health & Beauty"
+
+Faker::Commerce.product_name #=> "Practical Granite Shirt"
+
+```
+
+###Faker::Company
+-----------------
+
+```ruby
+
+Faker::Company.name #=> "Hirthe-Ritchie"
+
+Faker::Company.suffix #=> "Group"
+
+# Generate a buzzword-laden catch phrase.
+Faker::Company.catch_phrase #=> "Business-focused coherent parallelism"
+
+# When a straight answer won't do, BS to the rescue!
+Faker::Company.bs #=> "empower one-to-one web-readiness"
+
+Faker::Company.duns_number #=> "08-341-3736"
+
+```
+
+
+###Faker::Internet
+---------------
+
+```ruby
+# Optional argument name=nil
+Faker::Internet.email #=> "eliza@mann.net"
+
+Faker::Internet.email('Nancy') #=> "nancy@terry.biz"
+
+# Optional argument name=nil
+Faker::Internet.free_email #=> "freddy@gmail.com"
+
+Faker::Internet.free_email('Nancy') #=> "nancy@yahoo.com"
+
+# Optional argument name=nil
+Faker::Internet.safe_email #=> "christelle@example.org"
+
+Faker::Internet.safe_email('Nancy') #=> "nancy@example.net"
+
+# Optional arguments specifier=nil, separators=%w(. _)
+Faker::Internet.user_name #=> "alexie"
+
+Faker::Internet.user_name('Nancy') #=> "nancy"
+
+Faker::Internet.user_name('Nancy Johnson', %w(. _ -)) #=> "johnson-nancy"
+
+# Optional argument min_length=0
+Faker::Internet.password #=> "doloremquealiquidrerum"
+
+Faker::Internet.password(8) #=> "consecteturadasperiores"
+
+Faker::Internet.domain_name #=> "effertz.info"
+
+Faker::Internet.fix_umlauts('äöüß') #=> "aeoeuess"
+
+Faker::Internet.domain_word #=> "haleyziemann"
+
+Faker::Internet.domain_suffix #=> "info"
+
+Faker::Internet.ip_v4_address #=> "24.29.18.175"
+
+Faker::Internet.ip_v6_address #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
+
+# Optional arguments: host=domain_name, path="/#{user_name}"
+Faker::Internet.url #=> "http://thiel.com/chauncey_simonis"
+Faker::Internet.url('example.com') #=> "http://example.com/clotilde.swift"
+Faker::Internet.url('example.com', '/foobar.html') #=> "http://example.com/foobar.html"
+
+# Optional arguments: words=nil, glue=nil
+Faker::Internet.slug #=> "pariatur_laudantium"
+Faker::Internet.slug('foo bar') #=> "foo.bar"
+Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
+
+
+```
+
+###Faker::Lorem
+---------------
+
+```ruby
+
+Faker::Lorem.word #=> "repellendus"
+
+# Optional arguments: num=3, supplemental=false
+Faker::Lorem.words #=> ["dolores", "adipisci", "nesciunt"]
+Faker::Lorem.words(4) #=> ["culpa", "recusandae", "aut", "omnis"]
+Faker::Lorem.words(4, true) #=> ["colloco", "qui", "vergo", "deporto"]
+
+# Optional arguments: char_count=255
+Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omquh7br7dhqijwlawejpl765nb1716idmp3xnfo85v349pzy2o9rir23y2qhflwr71c1585fnynguiphkjm8p0vktwitcsm16lny7jzp9t4drwav3qmhz4yjq4k04x14gl6p148hulyqioo72tf8nwrxxcclfypz2lc58lsibgfe5w5p0xv95peafjjmm2frkhdc6duoky0aha"
+Faker::Lorem.characters(10) #=> "ang9cbhoa8"
+
+# Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
+Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
+Faker::Lorem.sentence(3) #=> "Commodi qui minus deserunt sed vero quia."
+Faker::Lorem.sentence(3, true) #=> "Inflammatio denego necessitatibus caelestis autus illum."
+Faker::Lorem.sentence(3, false, 4) #=> "Aut voluptatem illum fugit ut sit."
+Faker::Lorem.sentence(3, true, 4) #=> "Accusantium tantillus dolorem timor."
+
+# Optional arguments: sentence_count=3, supplemental=false
+Faker::Lorem.sentences #=> ["Vero earum commodi soluta.", "Quaerat fuga cumque et vero eveniet omnis ut.", "Cumque sit dolor ut est consequuntur."]
+Faker::Lorem.sentences(1) #=> ["Ut perspiciatis explicabo possimus doloribus enim quia."]
+Faker::Lorem.sentences(1, true) #=> ["Quis capillus curo ager veritatis voro et ipsum."]
+
+# Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
+Faker::Lorem.paragraph #=> "Neque dicta enim quasi. Qui corrupti est quisquam. Facere animi quod aut. Qui nulla consequuntur consectetur sapiente."
+Faker::Lorem.paragraph(2) #=> "Illo qui voluptas. Id sit quaerat enim aut cupiditate voluptates dolorum. Porro necessitatibus numquam dolor quia earum."
+Faker::Lorem.paragraph(2, true) #=> ""
+Faker::Lorem.paragraph(2, false, 4) #=> ""
+Faker::Lorem.paragraph(2, true, 4) #=> ""
+
+# Optional arguments: paragraph_count=3, supplemental=false
+Faker::Lorem.paragraphs #=> ""
+Faker::Lorem.paragraphs(1) #=> ""
+Faker::Lorem.paragraphs(1, true) #=> ""
+
+```
+
+###Faker::Name
+--------------
+
+```ruby
+
+Faker::Name.name #=> "Tyshawn Johns Sr."
+
+Faker::Name.first_name #=> "Kaci"
+
+Faker::Name.last_name #=> "Ernser"
+
+Faker::Name.prefix #=> "Mr."
+
+Faker::Name.suffix #=> "IV"
+
+Faker::Name.title #=> "Legacy Creative Director"
+
+```
+
+###Faker::Number
+----------------
+
+```ruby
+
+# Required parameter: digits
+Faker::Number.number(10) #=> "1968353479"
+
+Faker::Number.digit #=> "1"
+
+```
+
+###Faker::PhoneNumber
+---------------------
+
+Phone numbers may be in any of the following formats:
+
+  * 333-333-3333
+  * (333) 333-3333
+  * 1-333-333-3333
+  * 333.333.3333
+  * 333-333-3333
+  * 333-333-3333 x3333
+  * (333) 333-3333 x3333
+  * 1-333-333-3333 x3333
+  * 333.333.3333 x3333
+
+(Don't let the example output below fool you - any format can be returned at random.)
+
+```ruby
+
+Faker::PhoneNumber.phone_number #=> "397.693.1309"
+
+Faker::PhoneNumber.cell_phone #=> "(186)285-7925"
+
+# NOTE NOTE NOTE NOTE
+# For the 'US only' methods below, first you must do the following:
+Faker::Config.locale = 'en-us'
+
+# US only
+Faker::PhoneNumber.area_code #=> "201"
+
+# US only
+Faker::PhoneNumber.exchange_code #=> "208"
+
+# Optional parameter: length=4
+Faker::PhoneNumber.subscriber_number #=> "3873"
+
+Faker::PhoneNumber.subscriber_number(2) #=> "39"
+
+Faker::PhoneNumber.extension #=> "3764"
+
+```
+
 
 Customization
 ------------
