@@ -2,9 +2,9 @@ is:
   faker:
     address:
       country: ['Abkasía', 'Afganistan', 'Albanía', 'Alsír', 'Alþýðulýðveldið Kína', 'Andorra', 'Angóla', 'Antígva og Barbúda', 'Argentína', 'Armenía', 'Aserbaídsjan', 'Austur-Kongó', 'Austur-Tímor', 'Austurríki', 'Ástralía', 'Bahamaeyjar', 'Bandaríkin', 'Bangladess', 'Barbados', 'Barein', 'Belgía', 'Belís', 'Benín', 'Bólivía', 'Bosnía og Hersegóvína', 'Botsvana', 'Brasilía', 'Bretland', 'Brúnei', 'Búlgaría', 'Búrkína Fasó', 'Búrúndí', 'Bútan', 'Chile', 'Danmörk', 'Djíbútí', 'Dóminíka', 'Dóminíska lýðveldið', 'Egyptaland', 'Eistland', 'Ekvador', 'El Salvador', 'Erítrea', 'Eþíópía', 'Filippseyjar', 'Finnland', 'Fídjieyjar', 'Fílabeinsströndin', 'Frakkland', 'Gabon', 'Gambía', 'Gana', 'Georgía', 'Gínea', 'Gínea-Bissá', 'Grenada', 'Grikkland', 'Grænhöfðaeyjar', 'Gvatemala', 'Gvæjana', 'Haítí', 'Holland', 'Hondúras', 'Hvíta Rússland', 'Indland', 'Indónesía', 'Ísland', 'Íran', 'Írak', 'Írland', 'Ísrael', 'Ítalía', 'Jamaíka', 'Japan', 'Jemen', 'Jórdanía', 'Kambódía', 'Kamerún', 'Kanada', 'Kasakstan', 'Katar', 'Kenýa', 'Kirgistan', 'Kíribatí', 'Kosta Ríka', 'Kólumbía', 'Kómoreyjar', 'Króatía', 'Kúba', 'Kúveit', 'Kýpur', 'Laos', 'Lettland', 'Lesótó', 'Liechtenstein', 'Litháen', 'Líbanon', 'Líbería', 'Líbýa', 'Lúxemborg', 'Madagaskar', 'Makedónía', 'Malasía', 'Malaví', 'Maldíveyjar', 'Malí', 'Malta', 'Marokkó', 'Marshalleyjar', 'Máritanía', 'Máritíus', 'Mexíkó', 'Mið-Afríkulýðveldið', 'Miðbaugs-Gínea', 'Míkrónesía', 'Mjanmar', 'Moldóva', 'Mongólía', 'Mónakó', 'Mósambík', 'Nagornó-Karabak', 'Namibía', 'Nárú', 'Nepal', 'Níkaragva', 'Níger', 'Nígería', 'Norður-Kórea', 'Norður-Kýpur', 'Noregur', 'Nýja-Sjáland', 'Óman', 'Pakistan', 'Palá', 'Panama', 'Papúa Nýja-Gínea', 'Paragvæ', 'Perú', 'Portúgal', 'Pólland', 'Rúmenía', 'Rússland', 'Rúanda', 'Salómonseyjar', 'Sambía', 'Sameinuðu arabísku furstadæmin', 'Samóa', 'San Marínó', 'Sankti Kristófer og Nevis', 'Sankti Lúsía', 'Sankti Vinsent og Grenadíneyjar', 'Saó Tóme og Prinsípe', 'Sádí-Arabía', 'Senegal', 'Serbía', 'Seychelleseyjar', 'Simbabve', 'Singapúr', 'Síerra Leóne', 'Slóvakía', 'Slóvenía', 'Sómalía', 'Spánn', 'Srí Lanka', 'Suður-Afríka', 'Suður-Kórea', 'Súdan', 'Súrínam', 'Svartfjallaland', 'Svasíland', 'Sviss', 'Svíþjóð', 'Sýrland', 'Tadsjikistan', 'Taíland', 'Tansanía', 'Tékkland', 'Tonga', 'Tógó', 'Trínidad og Tóbagó', 'Tsjad', 'Túnis', 'Túrkmenistan', 'Tyrkland', 'Tævan', 'Ungverjaland', 'Úganda', 'Úkraína', 'Úrúgvæ', 'Úsbekistan', 'Vanúatú', 'Vatíkanið', 'Venesúela', 'Vestur-Kongó', 'Vestur-Sahara', 'Víetnam', 'Þýskaland']
-      building_number: ['###', '##', '#']
-      street_prefix: ['Grænu', 'Muru', 'Reykja', 'Skógar', 'Hnjúka', 'Eski', 'Hæðar', 'Skaga', 'Skriðu', 'Stafna', 'Ysta', 'Voga', 'Dal', 'Engja', 'Haga', 'Akra', 'Ystu', 'Hraun', 'Austur', 'Vestur', 'Norður', 'Suður', 'Hlíða', 'Urðar', 'Græna', 'Sel', 'Selja', 'Lyng', 'Hóla', 'Furu', 'Birki', 'Skóla', 'Holta', 'Hóls', 'Lyng', 'Tjarnar', 'Granda', 'Lóns', 'Öldu', 'Spóa', 'Öldu', 'Dal', 'Brogar', 'Helgu', 'Skúla', 'Egils', 'Þórðar', 'Þórólfs', 'Gunnlags', 'Þorsteins', 'Kveldúlfs', 'Ána', 'Dala', 'Garða', 'Mosa', 'Hrafna', 'Fálka', 'Arna', 'Réttar', 'Sól', 'Brákar', 'Spítala', 'Hellu', 'Þórs', 'Loka', 'Grettis', 'Njáls', 'Nönnu']
-      street_suffix: ['hlíð', 'stekk', 'götu', 'stræti', 'braut', 'vegi', 'hjalla', 'brekka', 'gerði', 'vör', 'tröð', 'smára', 'vogi', 'hvammi', 'nesi', 'mýri', 'grund', 'hólum', 'vangi', 'hrauni', 'stíg', 'barði', 'völlum', 'torgi', 'bergi', 'torgi', 'kletti', 'vík', 'höfða', 'nesi', 'bakka', 'rima']
+      building_number: ['1##', '##', '#']
+      street_prefix: ['Grænu', 'Muru', 'Reykja', 'Skógar', 'Hnjúka', 'Eski', 'Hæðar', 'Skaga', 'Skriðu', 'Stafna', 'Ysta', 'Voga', 'Dal', 'Engja', 'Haga', 'Akra', 'Hraun', 'Austur', 'Vestur', 'Norður', 'Suður', 'Hlíða', 'Urðar', 'Græna', 'Sel', 'Selja', 'Lyng', 'Hóla', 'Furu', 'Birki', 'Skóla', 'Holta', 'Hóls', 'Lyng', 'Tjarnar', 'Granda', 'Lóns', 'Öldu', 'Spóa', 'Öldu', 'Dal', 'Brogar', 'Helgu', 'Skúla', 'Egils', 'Þórðar', 'Þórólfs', 'Gunnlags', 'Þorsteins', 'Kveldúlfs', 'Ána', 'Dala', 'Garða', 'Mosa', 'Hrafna', 'Fálka', 'Arna', 'Réttar', 'Sól', 'Brákar', 'Spítala', 'Hellu', 'Þórs', 'Loka', 'Grettis', 'Njáls', 'Nönnu', 'Eski']
+      street_suffix: ['hlíð', 'stekk', 'götu', 'stræti', 'braut', 'vegi', 'hjalla', 'brekku', 'gerði', 'vör', 'tröð', 'smára', 'vogi', 'hvammi', 'nesi', 'mýri', 'grund', 'hólum', 'vangi', 'hrauni', 'stíg', 'barði', 'völlum', 'torgi', 'bergi', 'torgi', 'kletti', 'vík', 'höfða', 'nesi', 'bakka', 'rima', 'móum']
       secondary_address: ['Íbúð ###', 'Íb. #0#', '#. hæð', 'Kjallara', 'Jarðhæð']
       # Though these are US-specific, they are here (in the default locale) for backwards compatibility
       postcode: ['###']
@@ -54,7 +54,7 @@ is:
       title:
         descriptor: ['Yfirmaður', 'Forstöðumaður', 'Svæðisstjóri', 'Deildarstjóri', 'Innheimtustjóri', 'Kerfisfræðingur', 'Sendierindreki', 'Umsjónarmaður', 'Gæðastjóri', 'Fræþslufulltrúi', 'Ráðunautur', 'Ráðgjafi', 'Útibússtjóri', 'Leiðbeinandi', 'Þróunarstjóri']
         level: ['vöruþróunnar', 'gjaldeyismála', 'mannauðs', 'nýtni', 'gagnagrunns', 'æskulýðsmiðstöðva', 'atvinnuþróunnar']
-        job: ['á Íslandi', 'og jafnréttismála', 'í Evrópu', 'á alþjóðavísu', 'á heilbrigðissviði', 'á háskólastigi', 'í opinberri stjórnsýslu', 'kennara', 'atvinnuleitenda']
+        job: ['á Íslandi', 'og jafnréttismála', 'í Evrópu', 'á alþjóðavísu', 'á heilbrigðissviði', 'á háskólastigi', 'í opinberri stjórnsýslu', 'kennara', 'atvinnuleitenda', 'erlendra bóka']
       name:
         - "#{man_first_name} #{man_last_name}"
         - "#{man_first_name} #{man_last_name}"
@@ -68,13 +68,18 @@ is:
         - "#{woman_first_name} #{man_last_name} #{family_name}"
 
     phone_number:
-      formats: ['5##-####', '4##-####']
+      formats: [
+      '5##-1###', '5##-2###', '5##-3###', '5##-4###', '5##-5###', '5##-6###', '5##-7###', '5##-8###', '5##-9###',
+      '4##-1###', '4##-2###', '4##-3###', '4##-4###', '4##-5###', '4##-6###', '4##-7###', '4##-8###', '4##-9###'
+      ]
     cell_phone:
-        formats: ['6##-####', '7##-####', '8##-####']
+        formats: [
+        '6##-1###', '6##-2###', '6##-3###', '6##-4###', '6##-5###', '6##-6###', '6##-7###', '6##-8###', '6##-9###',
+        '7##-1###', '7##-2###', '7##-3###', '7##-4###', '7##-5###', '7##-6###', '7##-7###', '7##-8###', '7##-9###',
+        '8##-1###', '8##-2###', '8##-3###', '8##-4###', '8##-5###', '8##-6###', '8##-7###', '8##-8###', '8##-9###'
+        ]
 
     business:
-      credit_card_numbers: ['1234-2121-1221-1211', '1212-1221-1121-1234', '1211-1221-1234-2201', '1228-1221-1221-1431']
-      credit_card_expiry_dates: ['2011-10-12', '2012-11-12', '2015-11-11', '2013-9-12']
       credit_card_types: ['visa', 'mastercard', 'americanexpress']
 
     commerce:
