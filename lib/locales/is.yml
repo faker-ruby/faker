@@ -58,10 +58,12 @@ is:
         - "#{man_first_name} #{man_last_name}"
         - "#{man_first_name} #{man_last_name}"
         - "#{man_first_name} #{family_name}"
+        - "#{man_first_name} #{man_last_name} #{family_name}"
         - "#{woman_first_name} #{woman_last_name}"
         - "#{woman_first_name} #{woman_last_name}"
         - "#{woman_first_name} #{woman_last_name}"
         - "#{woman_first_name} #{family_name}"
+        - "#{woman_first_name} #{man_last_name} #{family_name}"
 
     phone_number:
       formats: ['5##-####', '4##-####']
