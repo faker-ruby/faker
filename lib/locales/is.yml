@@ -21,16 +21,18 @@ is:
       default_country: ['Ísland']
 
     company:
-      smb: ['Viðgerðarþjónusta', 'Trésmíðaverkstæði', 'Bókhaldsþjónusta', 'Hárgreiðslustofa', 'Lögmannsstofa', 'Gullsmíðaverkstæði']
-      smb_name: ['Sigurjóns', 'Gunnars', 'Sigríðar', 'Hönnu', 'Kristínar']
-      coop_prefix: ['Kaupfélag', 'Pöntunarfélag', 'Félagsstofnun', 'Byggingafélag', 'Sparisjóður', 'Innkaupafélag', 'Bóksala', 'Kaffistofa', 'Dvalarheimili']
-      coop_middle: ['aldraðra', 'fatlaðra', 'sérfróðra', 'erlendra', 'hreyfihamlaðra']
+      smb: ['Viðgerðarþjónusta', 'Trésmíðaverkstæði', 'Bókhaldsþjónusta', 'Hárgreiðslustofa', 'Lögmannsstofa', 'Gullsmíðaverkstæði', 'Útgáfufélag', 'Prentunarþjónusta', 'Kaffivélaverkstæði', 'Leðuriðja', 'Fiskverkun', 'Kjötvinnsla', 'Bílasala']
+      smb_name: ['Sigurjóns', 'Gunnars', 'Sigríðar', 'Hönnu', 'Kristínar', 'Hrólfs', 'Stefáns']
+      locale: ['Vesturlands', 'Reykjavíkur', 'Austurlands', 'Akureyrar', 'Norðurlands', 'Akraness', 'Siglufjarðar', 'Reyðarfjarðar', 'Búðardals', 'Vestfjarða', 'Ísafjarðar', 'Eyjafjarðar']
+      coop_prefix: ['Kaupfélag', 'Pöntunarfélag', 'Félagsstofnun', 'Byggingafélag', 'Sparisjóður', 'Innkaupafélag', 'Bóksala', 'Kaffistofa', 'Dvalarheimili', 'Ræktunarsamband']
+      coop_middle: ['aldraðra', 'fatlaðra', 'sérfróðra', 'erlendra', 'hreyfihamlaðra', 'atvinnulausra']
       coop_suffix: ['nörda', 'námsmanna', 'Borgfirðinga', 'stúdenta', 'sjómanna', 'Reykvíkinga', 'Kópavogsbúa', 'Hafnfirðinga', 'bifreiðaegenda', 'Eyfirðinga', 'Akureyringa', 'Skagamanna', 'Skagfirðinga', 'Húnvetninga', 'Austlendinga', 'fasteignasala']
-      org_prefix: ['Samtök', 'Félag', 'Vettvangur', 'Hreyfing', 'Landssamtök', 'Framkvæmdaráð']
-      org_suffix: ['lífeyissjóða', 'atvinnulífsins', 'atvinnurekenda', 'kvenna í atvinnurekstri', 'framsóknarmanna', 'pírata', 'öryrkja', 'smábátaeigenda', 'landeigenda', 'astmasjúklinga']
-      suffix: ['ehf', 'sf', 'slf']
+      org_prefix: ['Samtök', 'Félag', 'Vettvangur', 'Hreyfing', 'Landssamtök', 'Framkvæmdaráð', 'Samráðsvettvangur', 'Hagsmunasamtök']
+      org_suffix: ['lífeyissjóða', 'atvinnulífsins', 'atvinnurekenda', 'kvenna í atvinnurekstri', 'framsóknarmanna', 'pírata', 'öryrkja', 'smábátaeigenda', 'landeigenda', 'astmasjúklinga', 'jógakennara', 'kennara']
+      suffix: ['ehf', 'sf', 'slf', 'EHF', 'ehf.']
       name:
         - "#{smb} #{smb_name} #{suffix}"
+        - "#{smb} #{locale} #{suffix}"
         - "#{smb} #{smb_name} og #{smb_name} #{suffix}"
         - "#{coop_prefix} #{coop_middle} #{coop_suffix}"
         - "#{coop_prefix} #{coop_suffix}"
