@@ -1,4 +1,4 @@
-de-ch:
+de-CH:
   faker:
     address:
       country_code: [CH, CH, CH, DE, AT, US, LI, US, HK, VN]
