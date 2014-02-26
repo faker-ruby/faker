@@ -1,4 +1,4 @@
-en-ca:
+en-CA:
   faker:
     address:
       postcode: ['?#? #?#', '?#?#?#']

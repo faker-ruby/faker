@@ -22,7 +22,7 @@ class TesetEnUsLocale < Test::Unit::TestCase
   end
 
   def test_us_phone_methods_with_en_us_locale
-    Faker::Config.locale = 'en-us'
+    Faker::Config.locale = 'en-US'
 
     assert Faker::PhoneNumber.area_code.is_a? String
     assert Faker::PhoneNumber.area_code.to_i.is_a? Integer
@@ -34,7 +34,7 @@ class TesetEnUsLocale < Test::Unit::TestCase
   end
 
   def test_validity_of_phone_method_output
-    Faker::Config.locale = 'en-us'
+    Faker::Config.locale = 'en-US'
 
     # got the following regex from http://stackoverflow.com/a/123666/1210055 as an expression of the NANP standard.
     us_number_validation_regex = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/

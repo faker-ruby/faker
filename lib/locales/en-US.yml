@@ -1,4 +1,4 @@
-en-us:
+en-US:
   faker:
     internet:
       domain_suffix: [com, us, biz, info, name, net, org]
