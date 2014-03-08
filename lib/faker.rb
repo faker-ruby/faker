@@ -159,6 +159,7 @@ require 'faker/commerce'
 require 'faker/version'
 require 'faker/number'
 require 'faker/bitcoin'
+require 'faker/avatar'
 
 require 'extensions/array'
 require 'extensions/symbol'
