@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 mydir = File.expand_path(File.dirname(__FILE__))
 
 begin
@@ -150,6 +151,7 @@ end
 require 'faker/address'
 require 'faker/code'
 require 'faker/company'
+require 'faker/finance'
 require 'faker/internet'
 require 'faker/lorem'
 require 'faker/name'
