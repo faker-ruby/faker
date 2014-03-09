@@ -15,6 +15,8 @@ module Faker
       end
 
       def user_name(specifier = nil, separators = %w(. _))
+        fetch('internet.user_name')
+      rescue I18n::MissingTranslationData
         if specifier.kind_of? String
           return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
         elsif specifier.kind_of? Integer
@@ -69,6 +71,8 @@ module Faker
       end
 
       def domain_word
+        fetch('internet.domain_word')
+      rescue I18n::MissingTranslationData
         Company.name.split(' ').first.gsub(/\W/, '').downcase
       end
 
