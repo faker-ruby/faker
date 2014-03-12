@@ -42,11 +42,11 @@ module Faker
       def country;       fetch('address.country');       end
 
       def latitude
-        ((rand * 180) - 90).to_s
+        sprintf( "%0.05f", (rand * 180) - 90)
       end
 
       def longitude
-        ((rand * 360) - 180).to_s
+        sprintf( "%0.05f", (rand * 360) - 180)
       end
 
     end
