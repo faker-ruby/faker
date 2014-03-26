@@ -24,7 +24,9 @@ ko:
         - "#{Name.first_name} #{suffix}"
 
     internet:
+      user_name: ["uragirlimadog", "type0789", "tjdnfdp", "taesan4", "sungmin746", "sshinbal", "snailcharm", "shore0987", "nudlenudle", "kiminhye0", "jogisic"]
       free_email: [gmail.com, yahoo.co.kr, hanmail.net, naver.com]
+      domain_word: ["never", "nete", "pmeng", "kangame", "zmarket", "dcoutside", "nilbe", "imven", "zotsun", "snrclub", "12st"]
       domain_suffix: [co.kr, com, biz, info, ne.kr, net, or.kr, org]
 
     lorem:
