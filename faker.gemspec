@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://faker.rubyforge.org"
   s.summary     = %q{Easily generate fake data}
   s.description = %q{Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "faker"
 
