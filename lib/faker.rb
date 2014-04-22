@@ -78,8 +78,8 @@ module Faker
 
       # Helper for the common approach of grabbing a translation
       # with an array of values and selecting one of them.
-      def fetch(key)
-        fetched = translate("faker.#{key}")
+      def fetch(key, opt = {})
+        fetched = translate("faker.#{key}", opt)
         fetched = fetched.sample if fetched.respond_to?(:sample)
         if fetched.match(/^\//) and fetched.match(/\/$/) # A regex
           regexify(fetched)

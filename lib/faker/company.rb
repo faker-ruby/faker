@@ -7,6 +7,10 @@ module Faker
         parse('company.name')
       end
 
+      def english_name
+        parse('company.english_name')
+      end
+
       def suffix
         fetch('company.suffix')
       end
