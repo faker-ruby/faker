@@ -50,6 +50,7 @@ module Faker
         while temp.length < min_length
           temp += Lorem.word
         end
+        temp = temp[0..min_length] if min_length > 0 
         return temp
       end
 
