@@ -36,13 +36,14 @@ module Faker
           return result[0...specifier.max]
         end
 
-        fix_umlauts([
-          Proc.new { Name.first_name.gsub(/\W/, '').downcase },
-          Proc.new {
-            [ Name.first_name, Name.last_name ].map {|n|
-              n.gsub(/\W/, '')
-            }.join(separators.sample).downcase }
-        ].sample.call)
+        fix_multibyte_characters do
+          [ Proc.new { Name.first_name.gsub(/\W/, '').downcase },
+            Proc.new {
+              [ Name.first_name, Name.last_name ].map {|n|
+                n.gsub(/\W/, '')
+              }.join(separators.sample).downcase }
+          ].sample.call
+        end
       end
 
       def password(min_length=0)
@@ -54,7 +55,17 @@ module Faker
       end
 
       def domain_name
-        [ fix_umlauts(domain_word), domain_suffix ].join('.')
+        [ domain_word, domain_suffix ].join('.')
+      end
+
+      def fix_multibyte_characters
+        if Faker::Config.locale == :ja
+          Faker::Config.locale = nil
+          ja_locale = true
+        end
+        string = yield
+        Faker::Config.locale = :ja if ja_locale
+        fix_umlauts(string)
       end
 
       def fix_umlauts(string)
@@ -69,7 +80,9 @@ module Faker
       end
 
       def domain_word
-        Company.name.split(' ').first.gsub(/\W/, '').downcase
+        fix_multibyte_characters do
+          Company.name.split(' ').first.gsub(/\W/, '').downcase
+        end
       end
 
       def domain_suffix

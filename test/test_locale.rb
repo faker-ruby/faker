@@ -38,4 +38,19 @@ class TestLocale < Test::Unit::TestCase
     re = /[A-PR-UWYZ][A-HK-Y]?[0-9][ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}/
     assert re.match(result = Faker::Address.postcode), "#{result} didn't match #{re}"
   end
+
+  def test_ja_locale_user_name
+    Faker::Config.locale = :ja
+    assert Faker::Internet.user_name.match(/.+/)
+  end
+
+  def test_ja_locale_domain_name
+    Faker::Config.locale = :ja
+    assert Faker::Internet.email.match(/.+/)
+  end
+
+  def test_ja_locale_email
+    Faker::Config.locale = :ja
+    assert Faker::Internet.email.match(/.+@.+\.\w+/)
+  end
 end
