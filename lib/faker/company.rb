@@ -3,8 +3,16 @@ module Faker
     flexible :company
 
     class << self
-      def name
-        parse('company.name')
+      def name(opts = {})
+        max_length = opts.fetch(:max_length, Float::INFINITY)
+        max_tries = opts.fetch(:max_tries, 7)
+        tries = 0
+        begin
+          res = parse('company.name')
+          tries += 1
+        end while res.length > max_length and tries < max_tries
+        raise "Unable to match criteria within try limit (#{max_tries})" if tries >= max_tries
+        return res
       end
 
       def suffix
