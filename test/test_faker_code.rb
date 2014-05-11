@@ -12,4 +12,8 @@ class TestFakerCode < Test::Unit::TestCase
   def test_default_isbn13_regexp
     assert @tester.isbn(13).match(/^\d{12}-\d$/)
   end
+
+  def test_rut
+    assert @tester.rut.match(/^\d{1,8}-(\d|k)$/)
+  end
 end

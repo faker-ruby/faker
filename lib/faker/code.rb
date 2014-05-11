@@ -7,6 +7,12 @@ module Faker
         base == 13 ? generate_base13_isbn : generate_base10_isbn
       end
 
+      def rut
+        value = Number.number(8)
+        vd = rut_verificator_digit(value)
+        value << "-#{vd}"
+      end
+
     private
 
       def generate_base10_isbn
@@ -25,6 +31,11 @@ module Faker
         values.split(//).each_with_index.inject(0) do |sum, (value, index)|
           sum + block.call(value, index)
         end
+      end
+
+      def rut_verificator_digit(rut)
+        total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).collect{|a, b| a.to_i * b.to_i}.inject(:+)
+        (11 - total % 11).to_s.gsub(/10/, 'k').gsub(/11/, '0')
       end
     end
   end
