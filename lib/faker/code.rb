@@ -13,6 +13,12 @@ module Faker
         base == 8 ? generate_base8_ean : generate_base13_ean
       end
 
+      def rut
+        value = Number.number(8)
+        vd = rut_verificator_digit(value)
+        value << "-#{vd}"
+      end
+
     private
 
       def generate_base10_isbn
@@ -47,6 +53,11 @@ module Faker
 
       EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3, 1]
       EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]
+
+      def rut_verificator_digit(rut)
+        total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).collect{|a, b| a.to_i * b.to_i}.inject(:+)
+        (11 - total % 11).to_s.gsub(/10/, 'k').gsub(/11/, '0')
+      end
     end
   end
 end
