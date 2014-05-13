@@ -7,7 +7,7 @@ module Faker
         parse('address.city')
       end
 
-      def street_name
+      def street_name  
         parse('address.street_name')
       end
 
