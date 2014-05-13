@@ -171,6 +171,7 @@ require 'faker/avatar'
 require 'faker/date'
 require 'faker/time'
 require 'faker/number'
+require 'faker/hacker'
 
 require 'extensions/array'
 require 'extensions/symbol'
