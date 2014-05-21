@@ -22,7 +22,7 @@ module Faker
       end
 
       def duns_number
-        ('%09d' % rand(10 ** 9)).gsub(/(\d\d)(\d\d\d)(\d\d\d\d)/, '\\1-\\2-\\3')
+        ('%09d' % Faker::Config.random.rand(10 ** 9)).gsub(/(\d\d)(\d\d\d)(\d\d\d\d)/, '\\1-\\2-\\3')
       end
     end
 
