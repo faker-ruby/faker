@@ -13,12 +13,12 @@ module Faker
 
       # Generate a buzzword-laden catch phrase.
       def catch_phrase
-        translate('faker.company.buzzwords').collect {|list| list.sample }.join(' ')
+        translate('faker.company.buzzwords').collect {|list| list.sample(:random => Faker::Config.random) }.join(' ')
       end
 
       # When a straight answer won't do, BS to the rescue!
       def bs
-        translate('faker.company.bs').collect {|list| list.sample }.join(' ')
+        translate('faker.company.bs').collect {|list| list.sample(:random => Faker::Config.random) }.join(' ')
       end
 
       def duns_number

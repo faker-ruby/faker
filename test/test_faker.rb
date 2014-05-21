@@ -7,7 +7,6 @@ class TestFaker < Test::Unit::TestCase
 
   def test_numerify
     100.times do
-      puts Faker::Base.numerify('###')
       assert Faker::Base.numerify('###').match(/[1-9]\d{2}/)
     end
   end
