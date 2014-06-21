@@ -63,4 +63,9 @@ class TestFakerNumber < Test::Unit::TestCase
     assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
     assert random_number <= 100, "Expected <= 100, but got #{random_number}"
   end
+
+  def test_hexadecimal
+    assert @tester.hexadecimal(4).match(/[0-9a-f]{4}/)
+    assert @tester.hexadecimal(7).match(/[0-9a-f]{7}/)
+  end
 end

@@ -15,6 +15,12 @@ module Faker
         rand(9).to_s
       end
 
+      def hexadecimal(digits)
+        hex = ""
+        digits.times { hex += rand(15).to_s(16) }
+        hex
+      end
+
       def between(from = 1.00, to = 5000.00)
         Faker::Base::rand_in_range(from, to)
       end
