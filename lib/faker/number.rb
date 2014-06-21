@@ -14,6 +14,12 @@ module Faker
       def digit
         rand(9).to_s
       end
+
+      def hexadecimal(digits)
+        hex = ""
+        digits.times{ hex += rand(15).to_s(16) }
+        hex
+      end
     end
   end
 end

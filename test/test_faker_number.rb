@@ -23,4 +23,8 @@ class TestFakerNumber < Test::Unit::TestCase
     assert @tester.digit.match(/[0-9]{1}/)
   end
 
+  def test_hexadecimal
+    assert @tester.hexadecimal(4).match(/[0-9a-f]{4}/)
+    assert @tester.hexadecimal(7).match(/[0-9a-f]{7}/)
+  end
 end
