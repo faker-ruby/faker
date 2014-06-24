@@ -339,8 +339,18 @@ Faker::Hacker.verb  #=> "bypass"
 Faker::Hacker.ingverb #=> "synthesizing"
 ```
 
+###Faker::App
+-----------------
 
+```ruby
 
+Faker::App.name #=> "Treeflex"
+
+Faker::App.version #=> "0.7.9"
+
+Faker::App.author #=> "Daphne Swift"
+
+```
 
 Customization
 ------------
@@ -362,11 +372,11 @@ en-au-ocker:
     name:
       # Exiting faker field, new data
       first_name: [Charlotte, Ava, Chloe, Emily]
-      
+
       # New faker fields
       ocker_first_name: [Bazza, Bluey, Davo, Johno, Shano, Shazza]
       region: [South East Queensland, Wide Bay Burnett, Margaret River, Port Pirie, Gippsland, Elizabeth, Barossa]
-      
+
 ```
 
 Contributing

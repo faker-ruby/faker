@@ -90,7 +90,7 @@ en:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
-          
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, biz, info, name, net, org]
@@ -131,7 +131,7 @@ en:
       department: ["Books", "Movies", "Music", "Games", "Electronics", "Computers", "Home", "Garden", "Tools", "Grocery", "Health", "Beauty", "Toys", "Kids", "Baby", "Clothing", "Shoes", "Jewelery", "Sports", "Outdoors", "Automotive", "Industrial"]
       product_name:
         adjective: [Small, Ergonomic, Rustic, Intelligent, Gorgeous, Incredible, Fantastic, Practical, Sleek, Awesome]
-        material: [Steel, Wooden, Concrete, Plastic, Cotton, Granite, Rubber] 
+        material: [Steel, Wooden, Concrete, Plastic, Cotton, Granite, Rubber]
         product: [Chair, Car, Computer, Gloves, Pants, Shirt, Table, Shoes, Hat]
 
     team:
@@ -145,3 +145,10 @@ en:
       noun: [driver,protocol,bandwidth,panel,microchip,program,port,card,array, interface,system,sensor,firewall,hard drive,pixel,alarm,feed,monitor,application,transmitter,bus,circuit,capacitor,matrix]
       verb: [back up,bypass,hack,override,compress,copy,navigate,index,connect,generate,quantify,calculate,synthesize,input,transmit,program,reboot,parse]
       ingverb: [backing up,bypassing,hacking,overriding,compressing,copying, navigating,indexing,connecting,generating,quantifying,calculating, synthesizing,transmitting,programming,parsing]
+
+    app:
+      name: ['Redhold', 'Treeflex', 'Trippledex', 'Kanlam', 'Bigtax', 'Daltfresh', 'Toughjoyfax', 'Mat Lam Tam', 'Otcom', 'Tres-Zap', 'Y-Solowarm', 'Tresom', 'Voltsillam', 'Biodex', 'Greenlam', 'Viva', 'Matsoft', 'Temp', 'Zoolab', 'Subin', 'Rank', 'Job', 'Stringtough', 'Tin', 'It', 'Home Ing', 'Zamit', 'Sonsing', 'Konklab', 'Alpha', 'Latlux', 'Voyatouch', 'Alphazap', 'Holdlamis', 'Zaam-Dox', 'Sub-Ex', 'Quo Lux', 'Bamity', 'Ventosanzap', 'Lotstring', 'Hatity', 'Tempsoft', 'Overhold', 'Fixflex', 'Konklux', 'Zontrax', 'Tampflex', 'Span', 'Namfix', 'Transcof', 'Stim', 'Fix San', 'Sonair', 'Stronghold', 'Fintone', 'Y-find', 'Opela', 'Lotlux', 'Ronstring', 'Zathin', 'Duobam', 'Keylex']
+      version: ['0.#.#', '0.##', '#.##', '#.#', '#.#.#']
+      author:
+        - "#{Name.name}"
+        - "#{Company.name}"
