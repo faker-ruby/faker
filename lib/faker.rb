@@ -163,6 +163,7 @@ require 'faker/version'
 require 'faker/number'
 require 'faker/bitcoin'
 require 'faker/avatar'
+require 'faker/app'
 
 require 'extensions/array'
 require 'extensions/symbol'
