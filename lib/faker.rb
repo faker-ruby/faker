@@ -18,7 +18,7 @@ module Faker
     class << self
       attr_writer :locale
       def locale
-        @locale || I18n.locale.downcase
+        @locale || I18n.locale
       end
     end
   end
