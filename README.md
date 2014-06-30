@@ -1,6 +1,6 @@
 Faker
 =====
-This gem is a port of Perl's Data::Faker library that generates fake data.  
+This gem is a port of Perl's Data::Faker library that generates fake data.
 
 It comes in very handy for taking screenshots (taking screenshots for my
 project, [Catch the Best](http://catchthebest.com/) was the original impetus
@@ -91,6 +91,8 @@ Faker::Business.credit_card_type #=> "visa"
 ```ruby
 
 Faker::Code.isbn #=> "759021701-8"
+
+Faker::Code.ean #=> "4600051000057"
 
 ```
 
@@ -325,5 +327,3 @@ Comments and feedback are welcome. Send an email to Benjamin Curtis via the [goo
 License
 -------
 This code is free to use under the terms of the MIT license.
-
-
