@@ -126,6 +126,9 @@ Faker::Company.bs #=> "empower one-to-one web-readiness"
 
 Faker::Company.duns_number #=> "08-341-3736"
 
+# Get a random company logo url in GIF format.
+Faker::Company.logo #=> "http://www.biz-logo.com/examples/007.gif"
+
 ```
 
 
