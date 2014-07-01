@@ -26,20 +26,40 @@ module Faker
       def zip_code
         bothify(fetch('address.postcode'))
       end
+      alias_method :zip, :zip_code
+      alias_method :postcode, :zip_code
 
       def time_zone
         bothify(fetch('address.time_zone'))
       end
 
-      alias_method :zip, :zip_code
-      alias_method :postcode, :zip_code
+      def street_suffix
+        fetch('address.street_suffix')
+      end
 
-      def street_suffix; fetch('address.street_suffix'); end
-      def city_suffix;   fetch('address.city_suffix');   end
-      def city_prefix;   fetch('address.city_prefix');   end
-      def state_abbr;    fetch('address.state_abbr');    end
-      def state;         fetch('address.state');         end
-      def country;       fetch('address.country');       end
+      def city_suffix
+        fetch('address.city_suffix')
+      end
+
+      def city_prefix
+        fetch('address.city_prefix')
+      end
+
+      def state_abbr
+        fetch('address.state_abbr')
+      end
+
+      def state
+        fetch('address.state')
+      end
+
+      def country
+        fetch('address.country')
+      end
+
+      def country_code
+        fetch('address.country_code')
+      end
 
       def latitude
         ((rand * 180) - 90).to_s
