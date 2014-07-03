@@ -13,16 +13,16 @@ module Faker
 
       # Generate a buzzword-laden catch phrase.
       def catch_phrase
-        translate('faker.company.buzzwords').collect {|list| list.sample }.join(' ')
+        translate('faker.company.buzzwords').collect {|list| list.sample(:random => Faker::Config.random) }.join(' ')
       end
 
       # When a straight answer won't do, BS to the rescue!
       def bs
-        translate('faker.company.bs').collect {|list| list.sample }.join(' ')
+        translate('faker.company.bs').collect {|list| list.sample(:random => Faker::Config.random) }.join(' ')
       end
 
       def duns_number
-        ('%09d' % rand(10 ** 9)).gsub(/(\d\d)(\d\d\d)(\d\d\d\d)/, '\\1-\\2-\\3')
+        ('%09d' % Faker::Config.random.rand(10 ** 9)).gsub(/(\d\d)(\d\d\d)(\d\d\d\d)/, '\\1-\\2-\\3')
       end
 
       # Get a random company logo url in GIF format.
