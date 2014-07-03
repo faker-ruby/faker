@@ -1,4 +1,5 @@
 require 'date'
+require 'iso/iban'
 
 module Faker
   class Business < Base
@@ -15,6 +16,11 @@ module Faker
 
       def credit_card_type
         fetch('business.credit_card_types')
+      end
+
+      def iban(iso_country_code = nil)
+        iban = iso_country_code ? ISO::IBAN.random(iso_country_code) : ISO::IBAN.random
+        iban.compact
       end
     end
 

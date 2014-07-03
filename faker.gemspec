@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "faker"
 
   s.add_dependency('i18n', '~> 0.5')
+  s.add_dependency('iso-iban', '~> 0.1')
 
   s.files         = `git ls-files -- lib/*`.split("\n") + %w(History.txt License.txt README.md)
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

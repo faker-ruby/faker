@@ -83,6 +83,11 @@ Faker::Business.credit_card_expiry_date #=> <Date: 2015-11-11 ((2457338j,0s,0n),
 
 Faker::Business.credit_card_type #=> "visa"
 
+# Optional argument iso_country_code=nil
+Faker::Business.iban #=> "SE9520669868630320226589"
+
+Faker::Business.iban('CH') #=> "CH5869160ECu8YVVfIRQA"
+
 ```
 
 ###Faker::Code
