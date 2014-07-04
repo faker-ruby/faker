@@ -42,17 +42,19 @@ module Faker
       def generate_base8_ean
         values = regexify(/\d{7}/)
         check_digit = values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
-        values << (10 - check_digit).to_s
+        check_digit = check_digit == 0 ? 0 : 10 - check_digit
+        values << check_digit.to_s
       end
 
       def generate_base13_ean
         values = regexify(/\d{12}/)
         check_digit = values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
-        values << (10 - check_digit).to_s
+        check_digit = check_digit == 0 ? 0 : 10 - check_digit
+        values << check_digit.to_s
       end
 
-      EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3, 1]
-      EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]
+      EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3]
+      EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3]
 
       def rut_verificator_digit(rut)
         total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).collect{|a, b| a.to_i * b.to_i}.inject(:+)
