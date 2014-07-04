@@ -51,8 +51,8 @@ module Faker
         values << (check_digit == 10 ? 0 : check_digit).to_s
       end
 
-      EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3, 1]
-      EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1]
+      EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3]
+      EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3]
 
       def rut_verificator_digit(rut)
         total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).collect{|a, b| a.to_i * b.to_i}.inject(:+)
