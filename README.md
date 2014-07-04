@@ -349,12 +349,7 @@ rest.
 
 Contributing
 ------------
-If you'd like to contribute code or formats/data for another locale, fork
-the project at [github](https://github.com/stympy/faker), make your changes,
-then send a pull request.
-
-**note**
-Run `bundle install` and `rake test` to confirm tests are passing.
+See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/master/CONTRIBUTING.md).
 
 Contact
 -------
