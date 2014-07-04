@@ -1,3 +1,6 @@
+== 1.4.1 2014-07-04
+* Bugfix and cleanup
+
 == 1.4.0 2014-07-03
 * Many enhancements and bugfixes
 
