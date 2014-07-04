@@ -41,14 +41,14 @@ module Faker
 
       def generate_base8_ean
         values = regexify(/\d{7}/)
-        check_digit = values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
-        values << (10 - check_digit).to_s
+        check_digit = 10 - values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
+        values << (check_digit == 10 ? 0 : check_digit).to_s
       end
 
       def generate_base13_ean
         values = regexify(/\d{12}/)
-        check_digit = values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
-        values << (10 - check_digit).to_s
+        check_digit = 10 - values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
+        values << (check_digit == 10 ? 0 : check_digit).to_s
       end
 
       EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3, 1]
