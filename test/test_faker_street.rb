@@ -36,10 +36,10 @@ class TestFakerStreet < Test::Unit::TestCase
       assert_match(/Wide Cheerful Path \d \(Green Door\)/, Faker::Address.street_address(:include_secondary))
     end
   end
-  
+
   def test_street_address_with_locale_fallback
     I18n.with_locale('en-GB') do
-      assert_match(/^\d+ \w+ \w+/, Faker::Address.street_address)
+      assert_match(/^\d+ [\w']+ \w+/, Faker::Address.street_address)
     end
   end
 
