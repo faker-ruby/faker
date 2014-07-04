@@ -28,7 +28,7 @@ module Faker
       end
 
       def time_zone
-        bothify(fetch('address.time_zone'))
+        fetch('address.time_zone')
       end
 
       alias_method :zip, :zip_code
