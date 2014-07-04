@@ -45,17 +45,17 @@ module Faker
           end
         end
       end
-    end
 
-  private
+    private
 
-    # If an array or range is passed, a random value will be selected.
-    # All other values are simply returned.
-    def self.resolve(value)
-      case value
-      when Array then value[rand(value.size)]
-      when Range then rand((value.last+1) - value.first) + value.first
-      else value
+      # If an array or range is passed, a random value will be selected.
+      # All other values are simply returned.
+      def resolve(value)
+        case value
+        when Array then value[rand(value.size)]
+        when Range then rand((value.last+1) - value.first) + value.first
+        else value
+        end
       end
     end
   end
