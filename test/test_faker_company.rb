@@ -9,10 +9,7 @@ class TestFakerCompany < Test::Unit::TestCase
     assert @tester.duns_number.match(/\d\d-\d\d\d-\d\d\d\d/)
   end
 
-  require "open-uri"
   def test_logo
-    open("#{ @tester.logo }") do |f|
-	  assert f.readline.include?("GIF")
-	end
+	  assert @tester.logo.match(%r{http://www.biz-logo.com/examples/\d+\.gif})
   end
 end
