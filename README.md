@@ -108,6 +108,7 @@ Faker::Commerce.department #=> "Grocery, Health & Beauty"
 Faker::Commerce.product_name #=> "Practical Granite Shirt"
 
 Faker::Commerce.price #=> "44.6"
+
 ```
 
 ###Faker::Company
