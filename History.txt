@@ -1,3 +1,7 @@
+== 1.4.2 2014-07-15
+* Added Swedish locale
+* README update
+
 == 1.4.1 2014-07-04
 * Bugfix and cleanup
 
