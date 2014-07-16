@@ -103,7 +103,10 @@ Faker::Code.ean #=> "4600051000057"
 
 Faker::Commerce.color #=> "lavender"
 
+# Optional arguments max=3, fixed_amount=false
 Faker::Commerce.department #=> "Grocery, Health & Beauty"
+Faker::Commerce.department(5) #=> "Grocery, Books, Health & Beauty"
+Faker::Commerce.department(2, true) #=> "Books & Tools"
 
 Faker::Commerce.product_name #=> "Practical Granite Shirt"
 

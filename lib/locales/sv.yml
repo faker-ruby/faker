@@ -64,7 +64,7 @@ sv:
 
     commerce:
       color: [vit, silver, grå, svart, röd, grön, blå, gul, lila, indigo, guld, brun, rosa, purpur, korall]
-      department: ["Böcker", "Filmer, Musik & Spel", "Elektronik & Datorer", "Hem, Trädgård & Verktyg", "Livsmedel", "Hälsa & Skönhet", "Leksaker", "Klädsel, Skor & Smycken", "Sport"] 
+      department: ["Böcker", "Filmer", "Musik", "Spel", "Elektronik", "Datorer", "Hem", "Trädgård", "Verktyg", "Livsmedel", "Hälsa", "Skönhet", "Leksaker", "Klädsel", "Skor", "Smycken", "Sport"]
       product_name:
         adjective: [Liten, Ergonomisk, Robust, Intelligent, Söt, Otrolig, Fatastisk, Praktisk, Slimmad, Grym]
         material: [Stål, Metall, Trä, Betong, Plast, Bomul, Grnit, Gummi, Latex] 
