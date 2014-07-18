@@ -9,6 +9,14 @@ class TestFakerLorem < Test::Unit::TestCase
       @standard_wordlist + I18n.translate('faker.lorem.supplemental')
   end
 
+  def test_character
+    assert @tester.character.length == 1
+  end
+  
+  def test_character_type
+    assert @tester.character.class == String
+  end
+
   def test_characters
     assert @tester.characters.length == 255
   end

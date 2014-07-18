@@ -16,6 +16,10 @@ module Faker
         word_list.shuffle[0, resolved_num]
       end
 
+      def character
+        characters(1)
+      end
+
       def characters(char_count = 255)
         return '' if char_count.respond_to?(:to_i) && char_count.to_i < 1
         char_count = resolve(char_count)
