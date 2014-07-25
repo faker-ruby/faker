@@ -7,7 +7,7 @@ rescue LoadError
 end
 
 require 'i18n'
-I18n.enforce_available_locales = true
+defined? I18n.enforce_available_locales = true
 I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
 
 
