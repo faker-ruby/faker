@@ -23,8 +23,12 @@ module Faker
         bothify(fetch('address.building_number'))
       end
 
-      def zip_code
-        bothify(fetch('address.postcode'))
+      def zip_code(state_abbreviation = '')
+        return bothify(fetch('address.postcode')) if state_abbreviation === ''
+
+        # provide a zip code that is valid for the state provided
+        # see http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf
+        bothify(fetch('address.postcode_by_state.' + state_abbreviation))
       end
 
       def time_zone
