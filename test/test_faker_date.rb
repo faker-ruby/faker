@@ -49,4 +49,29 @@ class TestFakerDate < Test::Unit::TestCase
       @tester.between("9999-99-99", "9999-99-99")
     end
   end
+
+  def test_birthday
+    min = 40
+    max = 90
+    100.times do
+      t = Date.today
+      date_min = Date.new(t.year - min, t.month, t.day)
+      date_max = Date.new(t.year - max, t.month, t.day)
+      birthday = @tester.birthday(min, max)
+      assert birthday > date_max, "Expect > \"#{date_max}\", but got #{birthday}"
+      assert birthday < date_min, "Expect > \"#{date_max}\", but got #{birthday}"
+    end
+  end
+  def test_default_birthday
+    min = 10
+    max = 65
+    100.times do
+      t = Date.today
+      date_min = Date.new(t.year - min, t.month, t.day)
+      date_max = Date.new(t.year - max, t.month, t.day)
+      birthday = @tester.birthday
+      assert birthday > date_max, "Expect > \"#{date_max}\", but got #{birthday}"
+      assert birthday < date_min, "Expect > \"#{date_max}\", but got #{birthday}"
+    end
+  end
 end
