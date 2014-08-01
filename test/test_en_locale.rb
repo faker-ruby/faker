@@ -15,4 +15,11 @@ class TesetEnLocale < Test::Unit::TestCase
     assert_equal LoadedYaml['en']['address']['state_abbr'].size, 50
     assert_equal LoadedYaml['en']['address']['state_abbr'], ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
   end
+
+  def test_us_zip_codes
+    Faker::Config.locale = 'en-US'
+    expected = /\d{5}(\-\d{4})?/
+    assert_match(expected, Faker::Address.zip_code)
+  end
+
 end

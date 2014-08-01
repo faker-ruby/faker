@@ -40,4 +40,40 @@ class TesetEnUsLocale < Test::Unit::TestCase
     us_number_validation_regex = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/
     assert_match(us_number_validation_regex, Faker::PhoneNumber.phone_number)
   end
+
+  def test_us_invalid_state_raises_exception
+    Faker::Config.locale = 'en-US'
+    assert_raise I18n::MissingTranslationData do Faker::Address.zip_code('NA') end
+  end
+
+  def test_us_zip_codes_match_state
+
+    Faker::Config.locale = 'en-US'
+
+    state_abbr = 'AZ'
+    expected = /^850\d\d$/
+    assert_match(expected, Faker::Address.zip_code(state_abbr))
+
+    # disjointed ranges for these states
+    # http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf
+    state_abbr = 'AR'
+    expected = /^717\d\d$/
+    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    state_abbr = 'GA'
+    expected = /^301\d\d$/
+    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    state_abbr = 'MA'
+    expected = /^026\d\d$/
+    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    state_abbr = 'NY'
+    expected = /^122\d\d$/
+    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    state_abbr = 'TX'
+    expected = /^798\d\d$/
+    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    state_abbr = 'VA'
+    expected = /^222\d\d$/
+    assert_match(expected, Faker::Address.zip_code(state_abbr))
+
+  end
 end
