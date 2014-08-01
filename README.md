@@ -352,6 +352,23 @@ allowing you to get different formats by switching locales.  Just set
 Faker::Config.locale to the locale you want, and Faker will take care of the
 rest.
 
+If your locale doesn't already exist, create it in the \lib\locales\ directory
+and you can then override or add elements to suit
+
+```yaml
+
+en-au-ocker:
+  faker:
+    name:
+      # Exiting faker field, new data
+      first_name: [Charlotte, Ava, Chloe, Emily]
+      
+      # New faker fields
+      ocker_first_name: [Bazza, Bluey, Davo, Johno, Shano, Shazza]
+      region: [South East Queensland, Wide Bay Burnett, Margaret River, Port Pirie, Gippsland, Elizabeth, Barossa]
+      
+```
+
 Contributing
 ------------
 See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/master/CONTRIBUTING.md).
