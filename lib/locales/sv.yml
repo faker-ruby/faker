@@ -31,14 +31,14 @@ sv:
       name:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name}-#{Name.last_name}"
-        - "#{Name.last_name}, #{Name.last_name} #{suffix}"   
+        - "#{Name.last_name}, #{Name.last_name} #{suffix}"
 
     internet:
       domain_suffix: [se, nu, info, com, org]
 
     name:
       first_name_women: [Maria, Anna, Margareta, Elisabeth, Eva, Birgitta, Kristina, Karin, Elisabet, Marie]
-      fiest_name_men: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans ]
+      first_name_men: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans ]
       last_name: [Johansson, Andersson, Karlsson, Nilsson, Eriksson, Larsson, Olsson, Persson, Svensson, Gustafsson]
       prefix: [Dr., Prof., PhD.]
 
@@ -67,7 +67,7 @@ sv:
       department: ["Böcker", "Filmer", "Musik", "Spel", "Elektronik", "Datorer", "Hem", "Trädgård", "Verktyg", "Livsmedel", "Hälsa", "Skönhet", "Leksaker", "Klädsel", "Skor", "Smycken", "Sport"]
       product_name:
         adjective: [Liten, Ergonomisk, Robust, Intelligent, Söt, Otrolig, Fatastisk, Praktisk, Slimmad, Grym]
-        material: [Stål, Metall, Trä, Betong, Plast, Bomul, Grnit, Gummi, Latex] 
+        material: [Stål, Metall, Trä, Betong, Plast, Bomul, Grnit, Gummi, Latex]
         product: [Stol, Bil, Dator, Handskar, Pants, Shirt, Table, Shoes, Hat]
 
     team:
