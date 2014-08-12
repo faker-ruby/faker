@@ -1,11 +1,12 @@
 require 'digest'
+require 'securerandom'
 
 module Faker
   class Bitcoin < Base
     class << self
 
       def address
-        hash = rand(2**160).to_s(16)
+        hash = SecureRandom.hex(20)
         version = 0
         packed = version.chr + [hash].pack("H*")
         checksum = Digest::SHA2.digest(Digest::SHA2.digest(packed))[0..3]
