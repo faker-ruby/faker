@@ -51,3 +51,15 @@ ru:
         material: [Стальной, Деревянный, Бетонный, Пластиковый, Хлопковый, Гранитный, Резиновый]
         product: [Стул, Автомобиль, Компьютер, Берет, Кулон, Стол, Свитер, Ремень, Ботинок]
 
+    company:
+      prefix: [ИП, ООО, ЗАО, ОАО, НКО, ТСЖ, ОП]
+      suffix: [Снаб, Торг, Пром, Трейд, Сбыт]
+      name:
+        - "#{prefix} #{Name.female_first_name}"
+        - "#{prefix} #{Name.male_first_name}"
+        - "#{prefix} #{Name.male_last_name}"
+        - "#{prefix} #{suffix}#{suffix}"
+        - "#{prefix} #{suffix}#{suffix}#{suffix}"
+        - "#{prefix} #{Address.city_name}#{suffix}"
+        - "#{prefix} #{Address.city_name}#{suffix}#{suffix}"
+        - "#{prefix} #{Address.city_name}#{suffix}#{suffix}#{suffix}"
