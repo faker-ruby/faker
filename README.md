@@ -129,6 +129,8 @@ Faker::Company.catch_phrase #=> "Business-focused coherent parallelism"
 # When a straight answer won't do, BS to the rescue!
 Faker::Company.bs #=> "empower one-to-one web-readiness"
 
+Faker::Company.ein #=> "34-8488813"
+
 Faker::Company.duns_number #=> "08-341-3736"
 
 # Get a random company logo url in GIF format.
