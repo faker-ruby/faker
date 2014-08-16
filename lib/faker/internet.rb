@@ -37,11 +37,10 @@ module Faker
         end
 
         fix_umlauts([
-          Proc.new { Name.first_name.gsub(/\W/, '').downcase },
+          Proc.new { downcase_ascii_user_first_name },
           Proc.new {
-            [ Name.first_name, Name.last_name ].map {|n|
-              n.gsub(/\W/, '')
-            }.join(separators.sample).downcase }
+            [ downcase_ascii_user_first_name, downcase_ascii_user_last_name ].join(separators.sample).downcase
+          }
         ].sample.call)
       end
 
@@ -72,7 +71,14 @@ module Faker
       end
 
       def domain_word
-        Company.name.split(' ').first.gsub(/\W/, '').downcase
+        name = Company.name
+        word = name.split(' ').first.gsub(/\W/, '').downcase
+
+        unless word == ''
+          word
+        else
+          Company.english_name.split(' ').first.gsub(/\W/, '').downcase
+        end
       end
 
       def domain_suffix
@@ -106,6 +112,28 @@ module Faker
       def slug(words = nil, glue = nil)
         glue ||= %w[- _ .].sample
         (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
+      end
+
+      private
+
+      def downcase_ascii_user_first_name
+        downcase_name = Name.first_name.gsub(/\W/, '').downcase
+
+        unless downcase_name == ''
+          downcase_name
+        else
+          Name.english_first_name.gsub(/\W/, '').downcase
+        end
+      end
+
+      def downcase_ascii_user_last_name
+        downcase_name = Name.last_name.gsub(/\W/, '').downcase
+
+        unless downcase_name == ''
+          downcase_name
+        else
+          Name.english_last_name.gsub(/\W/, '').downcase
+        end
       end
     end
   end

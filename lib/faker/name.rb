@@ -13,6 +13,9 @@ module Faker
       def prefix;     fetch('name.prefix'); end
       def suffix;     fetch('name.suffix'); end
 
+      def english_first_name; fetch('name.first_name', locale: :en); end
+      def english_last_name;  fetch('name.first_name', locale: :en); end
+
       # Generate a buzzword-laden job title
       # Wordlist from http://www.bullshitjob.com/title/
       def title; fetch('name.title.descriptor') + ' ' + fetch('name.title.level') + ' ' + fetch('name.title.job'); end
