@@ -72,7 +72,10 @@ module Faker
       end
 
       def domain_word
-        Company.name.split(' ').first.gsub(/\W/, '').downcase
+        Faker::Config.locale = nil
+        I18n.with_locale('en') do
+          return Company.name.split(' ').first.gsub(/\W/, '').downcase
+        end
       end
 
       def domain_suffix
