@@ -157,6 +157,7 @@ module Faker
   end
 end
 
+require 'faker/auto'
 require 'faker/address'
 require 'faker/code'
 require 'faker/company'
