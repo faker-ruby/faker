@@ -10,57 +10,64 @@ module Faker
       end
 
       def year
-        rand(1981..::Time.now.year)
+        rand(2005..::Time.now.year)
       end
 
       def make
-        translate('faker.auto.makes').sample
+        fetch('auto.makes')
       end
 
-      def model
-        translate('faker.auto.models').sample
+      def model(make = '')
+        return fetch('auto.models_by_make').sample if make === ''
+        
+        fetch('auto.models_by_make.' + make)
+      end
+
+      def make_and_model
+        m = make
+        "#{m} #{model(m)}"
       end
 
       def style
-        translate('faker.auto.styles').sample
+        fetch('auto.styles')
       end
 
       def color
-        translate('faker.auto.colors').sample
+        fetch('auto.colors')
       end
 
       def transmission
-        translate('faker.auto.transmissions').sample
+        fetch('auto.transmissions')
       end
 
       def drive_type
-        translate('faker.auto.drive_types').sample
+        fetch('auto.drive_types')
       end
 
       def fuel_type
-        translate('faker.auto.fuel_types').sample
+        fetch('auto.fuel_types')
       end
 
       def door_count
-        "#{translate('faker.auto.door_count').sample} #{translate('faker.auto.door')}"
+        "#{fetch('auto.door_count')} #{fetch('auto.door')}"
       end
 
       def car_type
-        translate('faker.auto.car_types').sample
+        fetch('auto.car_types')
       end
 
       def engine
-       "#{translate('faker.auto.engine_size').sample} #{translate('faker.auto.cylinder_engine')}"
+       "#{fetch('auto.engine_size')} #{fetch('auto.cylinder_engine')}"
       end
 
       alias :engine_size :engine
 
       def car_options
-        translate('faker.auto.car_options').sample(rand(5..10))
+        rand(5...10).times.map { fetch('auto.car_options') }
       end
 
       def standard_specs
-        translate('faker.auto.standard_specs').sample(rand(5..10))
+        rand(5...10).times.map { fetch('auto.standard_specs') }
       end
     end
   end
