@@ -18,7 +18,7 @@ class TestFakerAuto < Test::Unit::TestCase
   def test_year
     year = @tester.year
     assert year >= 1981
-    assert year < ::Time.now.year
+    assert year <= ::Time.now.year
   end
 
   def test_door_count
@@ -33,6 +33,11 @@ class TestFakerAuto < Test::Unit::TestCase
     car_options = @tester.car_options
     assert car_options.length >= 5
     assert car_options.length < 10
+  end
+
+  def test_make_and_model
+    make_model = @tester.make_and_model
+    assert @tester.translate('faker.auto.makes').include?(make_model.split[0])
   end
 
   def test_standard_specs
