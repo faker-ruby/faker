@@ -316,6 +316,29 @@ Faker::PhoneNumber.extension #=> "3764"
 
 ```
 
+###Faker::Time
+---------------------
+
+```ruby
+# Random date between dates
+Faker::Time.between(2.days.ago, Time.now) #=> "2014-09-18 12:30:59 -0700"
+
+# Random date between dates (within specified part of the day)
+Faker::Time.between(2.days.ago, Time.now, :all) #=> "2014-09-19 07:03:30 -0700"
+Faker::Time.between(2.days.ago, Time.now, :day) #=> "2014-09-18 16:28:13 -0700"
+Faker::Time.between(2.days.ago, Time.now, :night) #=> "2014-09-20 19:39:38 -0700"
+Faker::Time.between(2.days.ago, Time.now, :morning) #=> "2014-09-19 08:07:52 -0700"
+Faker::Time.between(2.days.ago, Time.now, :afternoon) #=> "2014-09-18 12:10:34 -0700"
+Faker::Time.between(2.days.ago, Time.now, :evening) #=> "2014-09-19 20:21:03 -0700"
+Faker::Time.between(2.days.ago, Time.now, :midnight) #=> "2014-09-20 00:40:14 -0700"
+
+# Random time in the future (up to maximum of N days)
+Faker::Time.forward(23, :morning) # => "2014-09-26 06:54:47 -0700"
+
+# Random time in the past (up to maximum of N days)
+Faker::Time.backward(14, :evening) #=> "2014-09-17 19:56:33 -0700"
+```
+
 ###Faker::Hacker
 ---------------------
 Are you having trouble writing tech-savvy dialogue for your latest screenplay?
