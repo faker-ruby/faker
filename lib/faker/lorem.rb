@@ -50,6 +50,17 @@ module Faker
         end
       end
 
+      def letter
+        letters(1)
+      end
+
+      def letters(char_count = 255)
+        return '' if char_count.respond_to?(:to_i) && char_count.to_i < 1
+        char_count = resolve(char_count)
+        letters = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
+        (1..char_count).map { letters[rand(letters.length)] }.shuffle.join
+      end
+
     private
 
       # If an array or range is passed, a random value will be selected.

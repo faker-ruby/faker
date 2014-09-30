@@ -213,6 +213,8 @@ Faker::Lorem.words #=> ["dolores", "adipisci", "nesciunt"]
 Faker::Lorem.words(4) #=> ["culpa", "recusandae", "aut", "omnis"]
 Faker::Lorem.words(4, true) #=> ["colloco", "qui", "vergo", "deporto"]
 
+Faker::Lorem.character #=> "x"
+
 # Optional arguments: char_count=255
 Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omquh7br7dhqijwlawejpl765nb1716idmp3xnfo85v349pzy2o9rir23y2qhflwr71c1585fnynguiphkjm8p0vktwitcsm16lny7jzp9t4drwav3qmhz4yjq4k04x14gl6p148hulyqioo72tf8nwrxxcclfypz2lc58lsibgfe5w5p0xv95peafjjmm2frkhdc6duoky0aha"
 Faker::Lorem.characters(10) #=> "ang9cbhoa8"
@@ -241,6 +243,13 @@ Faker::Lorem.paragraphs #=> ""
 Faker::Lorem.paragraphs(1) #=> ""
 Faker::Lorem.paragraphs(1, true) #=> ""
 
+Faker::Lorem.letter #=> "x"
+
+# Optional arguments: char_count=255
+Faker::Lorem.letters #=>
+"ScWNDzuNadqCbcTospsMXGQcEdUxeGMFkrbKeUKrotzLBpuDYpgMJAQKNcJzxNHXDGcgSiDsjgWQTRGkGMKktTCfuHMhJnogQbWDJYqDAHxJnnKJHUjeeBryEYCAnxKzLUMPgthtcoQWBgtwzPvJJDMVqavaDytFJhZFDkCzDshqqwymwDMDRjNXwjkVGXmqbkDXyugFNdvcgnXKTkyBuBniDjKJwUbbxnhkxtujZVANPYmjZLLqXyqBJpNNErT"
+Faker::Lorem.letters(5) #=> "fSfyP"
+
 ```
 
 ###Faker::Name
@@ -259,6 +268,11 @@ Faker::Name.prefix #=> "Mr."
 Faker::Name.suffix #=> "IV"
 
 Faker::Name.title #=> "Legacy Creative Director"
+
+# Optional arguments: seperator=nil
+# If nil, we use a random seperator ('', '.', '. ')
+Faker::Name.initials #=> "D. D"
+Faker::Name.initials('.') #=> "M.G.P."
 
 ```
 

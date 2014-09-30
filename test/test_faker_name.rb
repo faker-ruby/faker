@@ -17,4 +17,9 @@ class TestFakerName < Test::Unit::TestCase
   def test_suffix
     assert @tester.suffix.match(/[A-Z][a-z]*\.?/)
   end
+
+  def test_initials
+    assert @tester.initials.match(/^([A-Za-z][. ]*){1,4}$/)
+    assert @tester.initials(';').match(/^([A-Za-z];){1,4}$/)
+  end
 end

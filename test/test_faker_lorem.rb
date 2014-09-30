@@ -84,4 +84,24 @@ class TestFakerLorem < Test::Unit::TestCase
     assert(250 <= range.length && range.length <= 500)
     assert(array.length == 250 || array.length == 500)
   end
+
+  def test_letter
+    assert @tester.letter.length == 1
+  end
+  
+  def test_letter_type
+    assert @tester.letter.class == String
+  end
+
+  def test_letters
+    assert @tester.letters.length == 255
+  end
+
+  def test_letters_with_args
+    1000.times do
+      l = @tester.letters 500
+      assert l.length == 500
+      assert l.match(/[^a-zA-Z]/).nil?
+    end
+  end
 end
