@@ -107,6 +107,10 @@ module Faker
         glue ||= %w[- _ .].sample
         (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
       end
+
+      def device_token
+        rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
+      end
     end
   end
 end
