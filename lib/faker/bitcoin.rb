@@ -11,13 +11,11 @@ module Faker
       }
 
       def address
-        version = PROTOCOL_VERSIONS[:main]
-        address_for_version(version)
+        address_for(:main)
       end
 
       def testnet_address
-        version = PROTOCOL_VERSIONS[:testnet]
-        address_for_version(version)
+        address_for(:testnet)
       end
 
       protected
@@ -39,7 +37,8 @@ module Faker
         '1'*npad + ret.reverse
       end
 
-      def address_for_version(version)
+      def address_for(network)
+        version = PROTOCOL_VERSIONS.fetch(network)
         hash = SecureRandom.hex(20)
         packed = version.chr + [hash].pack("H*")
         checksum = Digest::SHA2.digest(Digest::SHA2.digest(packed))[0..3]
