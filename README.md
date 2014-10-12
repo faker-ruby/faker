@@ -69,6 +69,7 @@ Faker::Address.longitude #=> "-156.65548382095133"
 ```ruby
 
 Faker::Bitcoin.address #=> "1HUoGjmgChmnxxYhz87YytV4gVjfPaExmh"
+Faker::Bitcoin.testnet_address #=> ""msHGunDvoEwmVFXvd2Bub1SNw5RP1YHJaf""
 
 ```
 
