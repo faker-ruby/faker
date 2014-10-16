@@ -8,6 +8,9 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_email
     assert @tester.email.match(/.+@.+\.\w+/)
+    I18n.with_locale(:ru) do
+      assert @tester.email.match(/.+@.+\.\w+/)
+    end
   end
 
   def test_free_email
