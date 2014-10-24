@@ -143,13 +143,13 @@ Faker::Company.logo #=> "http://www.biz-logo.com/examples/007.gif"
 ---------------------
 
 ```ruby
-Random date between dates
+# Random date between dates
 Faker::Date.between(2.days.ago, Date.today) #=> "Wed, 24 Sep 2014"
 
-Random date in the future (up to maximum of N days)
+# Random date in the future (up to maximum of N days)
 Faker::Date.forward(23) # => "Fri, 03 Oct 2014"
 
-Random date in the past (up to maximum of N days)
+# Random date in the past (up to maximum of N days)
 Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
 ```
 
