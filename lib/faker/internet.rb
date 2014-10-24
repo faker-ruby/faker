@@ -52,8 +52,7 @@ module Faker
           diff_rand = rand(diff_length + 1)
           temp += Lorem.characters(diff_rand)
         end
-        temp = temp[0..min_length] if min_length > 0
-        return temp
+        (min_length > 0) ? temp[0..min_length] : temp
       end
 
       def domain_name
