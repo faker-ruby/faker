@@ -37,10 +37,10 @@ module Faker
         end
 
         fix_umlauts([
-          Proc.new { Name.first_name.gsub(/\W/, '').downcase },
+          Proc.new { Name.first_name.gsub(/\W/, ('a'..'z').to_a[rand(26)]).downcase },
           Proc.new {
             [ Name.first_name, Name.last_name ].map {|n|
-              n.gsub(/\W/, '')
+              n.gsub(/\W/, ('a'..'z').to_a[rand(26)])
             }.join(separators.sample).downcase }
         ].sample.call)
       end
