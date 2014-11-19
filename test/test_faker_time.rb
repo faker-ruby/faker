@@ -66,7 +66,7 @@ class TestFakerTime < Test::Unit::TestCase
       random_forward  = @tester.forward(30,period, format)
       [random_backward, random_between, random_forward].each do |result|
           assert result.is_a?(String), "Expected a String, but got #{result.class}"
-          assert_nothing_thrown "Not a valid date string" do
+          assert_nothing_raised "Not a valid date string" do
             date_format = "%m/%d/%Y %I:%M %p"
             DateTime.strptime(result, date_format)
           end
