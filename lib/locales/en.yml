@@ -155,6 +155,6 @@ en:
         - "#{Company.name}"
   time:
     formats:
-      default: "%m/%d/%Y %I:%M %p"
+      us: "%m/%d/%Y %I:%M %p"
     am: "AM"
     pm: "PM"
