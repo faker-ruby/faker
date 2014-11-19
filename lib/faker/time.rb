@@ -11,18 +11,33 @@ module Faker
     }
 
     class << self
-      def between(from, to, period = :all)
-        super(from, to).to_time + random_time(period)
+      def between(from, to, period = :all, format = :utc)
+        if format == :us
+          time = super(from, to).to_time + random_time(period)
+          I18n.l( DateTime.parse(time.to_s) )
+        else
+          super(from, to).to_time + random_time(period)
+        end
+
       end
 
-      def forward(days = 365, period = :all)
-        super(days).to_time + random_time(period)
+      def forward(days = 365, period = :all, format = :utc)
+        if format == :us
+          time = super(days).to_time + random_time(period)
+          I18n.l( DateTime.parse(time.to_s) )
+        else
+          super(days).to_time + random_time(period)
+        end
       end
 
-      def backward(days = 365, period = :all)
-        super(days).to_time + random_time(period)
+      def backward(days = 365, period = :all, format = :utc)
+        if format == :us
+          time = super(days).to_time + random_time(period)
+          I18n.l( DateTime.parse(time.to_s) )
+        else
+          super(days).to_time + random_time(period)
+        end
       end
-
       private
 
       def random_time(period)
