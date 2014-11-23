@@ -95,6 +95,8 @@ Faker::Code.isbn #=> "759021701-8"
 
 Faker::Code.ean #=> "4600051000057"
 
+Faker::Code.color_hex #=> "#FF00FF"
+
 ```
 
 ###Faker::Commerce
