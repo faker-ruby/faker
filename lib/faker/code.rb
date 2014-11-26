@@ -64,7 +64,7 @@ module Faker
       end
 
       def rgb
-        [rand(0..255), rand(0..255), rand(0..255)]
+        Array.new(3) {rand(0..255)}
       end
 
       def hex_helper(num)
