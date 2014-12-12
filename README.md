@@ -407,6 +407,15 @@ Faker::App.author #=> "Daphne Swift"
 
 ```
 
+###Faker::ChuckNorris
+-----------------
+
+```ruby
+
+Faker::ChuckNorris.fact #=> "Chuck Norris can solve the Towers of Hanoi in one move."
+
+```
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
