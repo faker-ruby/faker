@@ -183,7 +183,7 @@ Faker::Hodor.sentences(1, true) #=> ["Hodor hodor hodor hodor hodor hodor hodor 
 
 # Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
 Faker::Hodor.paragraph #=> "Hodor hodor hodor hodor. Hodor hodor hodor hodor. Hodor hodor hodor hodor. Hodor hodor hodor hodor hodor."
-Faker::Hodor.paragraph(2) #=> "Hodor hodor hodor. Hodor hodor quaerat hodor hodor hodor hodor hodor. Hodor hodor hodor hodor hodor hodor."
+Faker::Hodor.paragraph(2) #=> "Hodor hodor hodor. Hodor hodor hodor hodor hodor hodor hodor hodor. Hodor hodor hodor hodor hodor hodor."
 Faker::Hodor.paragraph(2, true) #=> ""
 Faker::Hodor.paragraph(2, false, 4) #=> ""
 Faker::Hodor.paragraph(2, true, 4) #=> ""

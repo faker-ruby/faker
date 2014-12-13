@@ -22,9 +22,7 @@ module Faker
         char_count = resolve(char_count)
         hodor_chars = translate('faker.hodor').split('')
         characters = ''
-        char_count.times do |i|
-          characters.concat(hodor_chars[i%hodor_chars.length])
-        end
+        char_count.times { |i| characters.concat hodor_chars[i%hodor_chars.length] }
         characters
       end
     end
