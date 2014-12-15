@@ -23,12 +23,16 @@ module Faker
         bothify(fetch('address.building_number'))
       end
 
-      def zip_code
-        bothify(fetch('address.postcode'))
+      def zip_code(state_abbreviation = '')
+        return bothify(fetch('address.postcode')) if state_abbreviation === ''
+
+        # provide a zip code that is valid for the state provided
+        # see http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf
+        bothify(fetch('address.postcode_by_state.' + state_abbreviation))
       end
 
       def time_zone
-        bothify(fetch('address.time_zone'))
+        fetch('address.time_zone')
       end
 
       alias_method :zip, :zip_code
@@ -40,6 +44,7 @@ module Faker
       def state_abbr;    fetch('address.state_abbr');    end
       def state;         fetch('address.state');         end
       def country;       fetch('address.country');       end
+      def country_code;  fetch('address.country_code');  end
 
       def latitude
         sprintf( "%0.05f", (rand * 180) - 90)

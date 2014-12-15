@@ -1,6 +1,6 @@
 Faker
 =====
-This gem is a port of Perl's Data::Faker library that generates fake data.  
+This gem is a port of Perl's Data::Faker library that generates fake data.
 
 It comes in very handy for taking screenshots (taking screenshots for my
 project, [Catch the Best](http://catchthebest.com/) was the original impetus
@@ -69,6 +69,7 @@ Faker::Address.longitude #=> "-156.65548382095133"
 ```ruby
 
 Faker::Bitcoin.address #=> "1HUoGjmgChmnxxYhz87YytV4gVjfPaExmh"
+Faker::Bitcoin.testnet_address #=> ""msHGunDvoEwmVFXvd2Bub1SNw5RP1YHJaf""
 
 ```
 
@@ -92,6 +93,8 @@ Faker::Business.credit_card_type #=> "visa"
 
 Faker::Code.isbn #=> "759021701-8"
 
+Faker::Code.ean #=> "4600051000057"
+
 ```
 
 ###Faker::Commerce
@@ -101,9 +104,14 @@ Faker::Code.isbn #=> "759021701-8"
 
 Faker::Commerce.color #=> "lavender"
 
+# Optional arguments max=3, fixed_amount=false
 Faker::Commerce.department #=> "Grocery, Health & Beauty"
+Faker::Commerce.department(5) #=> "Grocery, Books, Health & Beauty"
+Faker::Commerce.department(2, true) #=> "Books & Tools"
 
 Faker::Commerce.product_name #=> "Practical Granite Shirt"
+
+Faker::Commerce.price #=> "44.6"
 
 ```
 
@@ -122,10 +130,28 @@ Faker::Company.catch_phrase #=> "Business-focused coherent parallelism"
 # When a straight answer won't do, BS to the rescue!
 Faker::Company.bs #=> "empower one-to-one web-readiness"
 
+Faker::Company.ein #=> "34-8488813"
+
 Faker::Company.duns_number #=> "08-341-3736"
+
+# Get a random company logo url in GIF format.
+Faker::Company.logo #=> "http://www.biz-logo.com/examples/007.gif"
 
 ```
 
+###Faker::Date
+---------------------
+
+```ruby
+# Random date between dates
+Faker::Date.between(2.days.ago, Date.today) #=> "Wed, 24 Sep 2014"
+
+# Random date in the future (up to maximum of N days)
+Faker::Date.forward(23) # => "Fri, 03 Oct 2014"
+
+# Random date in the past (up to maximum of N days)
+Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
+```
 
 ###Faker::Internet
 ---------------
@@ -153,10 +179,12 @@ Faker::Internet.user_name('Nancy') #=> "nancy"
 
 Faker::Internet.user_name('Nancy Johnson', %w(. _ -)) #=> "johnson-nancy"
 
-# Optional argument min_length=0
-Faker::Internet.password #=> "doloremquealiquidrerum"
+# Optional arguments: min_length=8, max_length=16
+Faker::Internet.password #=> "vg5msvy1uerg7"
 
-Faker::Internet.password(8) #=> "consecteturadasperiores"
+Faker::Internet.password(8) #=> "yfgjik0hgzdqs0"
+
+Faker::Internet.password(10, 20) #=> "eoc9shwd1hwq4vbgfw"
 
 Faker::Internet.domain_name #=> "effertz.info"
 
@@ -169,6 +197,10 @@ Faker::Internet.domain_suffix #=> "info"
 Faker::Internet.ip_v4_address #=> "24.29.18.175"
 
 Faker::Internet.ip_v6_address #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
+
+# Optional argument prefix=''
+Faker::Internet.mac_address #=> "e6:0d:00:11:ed:4f"
+Faker::Internet.mac_address('55:44:33') #=> "55:44:33:02:1d:9b"
 
 # Optional arguments: host=domain_name, path="/#{user_name}"
 Faker::Internet.url #=> "http://thiel.com/chauncey_simonis"
@@ -244,6 +276,22 @@ Faker::Name.title #=> "Legacy Creative Director"
 
 ```
 
+###Faker::Avatar
+----------------
+
+```ruby
+
+Faker::Avatar.image #=> "http://robohash.org/sitsequiquia.png?size=300x300"
+
+Faker::Avatar.image("my-own-slug") #=> "http://robohash.org/my-own-slug.png?size=300x300"
+
+Faker::Avatar.image("my-own-slug", "50x50") #=> "http://robohash.org/my-own-slug.png?size=50x50"
+
+Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "http://robohash.org/my-own-slug.jpg?size=50x50"
+
+Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-own-slug.bmp?size=50x50"
+```
+
 ###Faker::Number
 ----------------
 
@@ -281,7 +329,7 @@ Faker::PhoneNumber.cell_phone #=> "(186)285-7925"
 
 # NOTE NOTE NOTE NOTE
 # For the 'US only' methods below, first you must do the following:
-Faker::Config.locale = 'en-us'
+Faker::Config.locale = 'en-US'
 
 # US only
 Faker::PhoneNumber.area_code #=> "201"
@@ -298,6 +346,66 @@ Faker::PhoneNumber.extension #=> "3764"
 
 ```
 
+###Faker::Time
+---------------------
+
+```ruby
+# Random date between dates
+Faker::Time.between(2.days.ago, Time.now) #=> "2014-09-18 12:30:59 -0700"
+
+# Random date between dates (within specified part of the day)
+Faker::Time.between(2.days.ago, Time.now, :all) #=> "2014-09-19 07:03:30 -0700"
+Faker::Time.between(2.days.ago, Time.now, :day) #=> "2014-09-18 16:28:13 -0700"
+Faker::Time.between(2.days.ago, Time.now, :night) #=> "2014-09-20 19:39:38 -0700"
+Faker::Time.between(2.days.ago, Time.now, :morning) #=> "2014-09-19 08:07:52 -0700"
+Faker::Time.between(2.days.ago, Time.now, :afternoon) #=> "2014-09-18 12:10:34 -0700"
+Faker::Time.between(2.days.ago, Time.now, :evening) #=> "2014-09-19 20:21:03 -0700"
+Faker::Time.between(2.days.ago, Time.now, :midnight) #=> "2014-09-20 00:40:14 -0700"
+
+# Random time in the future (up to maximum of N days)
+Faker::Time.forward(23, :morning) # => "2014-09-26 06:54:47 -0700"
+
+# Random time in the past (up to maximum of N days)
+Faker::Time.backward(14, :evening) #=> "2014-09-17 19:56:33 -0700"
+```
+
+###Faker::Hacker
+---------------------
+Are you having trouble writing tech-savvy dialogue for your latest screenplay?
+Worry not! Hollywood-grade technical talk is ready to fill out any form where you need to look smart.
+
+```ruby
+# Full Phrase
+Faker::Hacker.say_something_smart #=> "Try to compress the SQL interface, maybe it will program the back-end hard drive!"
+
+# Short technical abbreviations
+Faker::Hacker.abbreviation  #=> "RAM"
+
+# Hacker centric adjectives
+Faker::Hacker.adjective   #=> "open-source"
+
+# Only the best hacker related nouns
+Faker::Hacker.noun   #=> "bandwidth"
+
+# Actions that hackers take
+Faker::Hacker.verb  #=> "bypass"
+
+# Verbs that end in -ing
+Faker::Hacker.ingverb #=> "synthesizing"
+```
+
+###Faker::App
+-----------------
+
+```ruby
+
+Faker::App.name #=> "Treeflex"
+
+Faker::App.version #=> "0.7.9"
+
+Faker::App.author #=> "Daphne Swift"
+
+```
 
 Customization
 ------------
@@ -309,14 +417,26 @@ allowing you to get different formats by switching locales.  Just set
 Faker::Config.locale to the locale you want, and Faker will take care of the
 rest.
 
+If your locale doesn't already exist, create it in the \lib\locales\ directory
+and you can then override or add elements to suit
+
+```yaml
+
+en-au-ocker:
+  faker:
+    name:
+      # Exiting faker field, new data
+      first_name: [Charlotte, Ava, Chloe, Emily]
+
+      # New faker fields
+      ocker_first_name: [Bazza, Bluey, Davo, Johno, Shano, Shazza]
+      region: [South East Queensland, Wide Bay Burnett, Margaret River, Port Pirie, Gippsland, Elizabeth, Barossa]
+
+```
+
 Contributing
 ------------
-If you'd like to contribute code or formats/data for another locale, fork
-the project at [github](https://github.com/stympy/faker), make your changes,
-then send a pull request.
-
-**note**
-Run `bundle install` and `rake test` to confirm tests are passing.
+See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/master/CONTRIBUTING.md).
 
 Contact
 -------
@@ -325,5 +445,3 @@ Comments and feedback are welcome. Send an email to Benjamin Curtis via the [goo
 License
 -------
 This code is free to use under the terms of the MIT license.
-
-

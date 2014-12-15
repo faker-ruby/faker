@@ -16,6 +16,10 @@ module Faker
         word_list.shuffle[0, resolved_num]
       end
 
+      def character
+        characters(1)
+      end
+
       def characters(char_count = 255)
         return '' if char_count.respond_to?(:to_i) && char_count.to_i < 1
         char_count = resolve(char_count)
@@ -45,17 +49,17 @@ module Faker
           end
         end
       end
-    end
 
-  private
+    private
 
-    # If an array or range is passed, a random value will be selected.
-    # All other values are simply returned.
-    def self.resolve(value)
-      case value
-      when Array then value[rand(value.size)]
-      when Range then rand((value.last+1) - value.first) + value.first
-      else value
+      # If an array or range is passed, a random value will be selected.
+      # All other values are simply returned.
+      def resolve(value)
+        case value
+        when Array then value[rand(value.size)]
+        when Range then rand((value.last+1) - value.first) + value.first
+        else value
+        end
       end
     end
   end

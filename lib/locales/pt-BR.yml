@@ -1,4 +1,4 @@
-pt-br:
+pt-BR:
   faker:
     address:
       city_prefix: [Nova, Velha, Grande, Vila, Município de]
@@ -54,4 +54,4 @@ pt-br:
       suffix: ["Jr.", "Neto", "Filho"]
 
     phone_number:
-      formats: ["###-###-####", "(##)###-####", "55-(##)-###-####", "###.####"]
+      formats: ["(##) ####-####", "+55 (##) ####-####", "(##) #####-####"]

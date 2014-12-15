@@ -7,8 +7,12 @@ rescue LoadError
 end
 
 require 'i18n'
+require 'set' # Fixes a bug in i18n 0.6.11
+
+if I18n.respond_to?(:enforce_available_locales=)
+  I18n.enforce_available_locales = true
+end
 I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
-I18n.reload!
 
 
 module Faker
@@ -18,7 +22,7 @@ module Faker
     class << self
       attr_writer :locale
       def locale
-        @locale || I18n.locale.downcase
+        @locale || I18n.locale
       end
     end
   end
@@ -144,6 +148,11 @@ module Faker
         end
       end
 
+      # Generates a random value between the interval
+      def rand_in_range(from, to)
+        from, to = to, from if to < from
+        Random.new.rand(from..to)
+      end
     end
   end
 end
@@ -163,6 +172,11 @@ require 'faker/version'
 require 'faker/number'
 require 'faker/bitcoin'
 require 'faker/avatar'
+require 'faker/date'
+require 'faker/time'
+require 'faker/number'
+require 'faker/hacker'
+require 'faker/app'
 
 require 'extensions/array'
 require 'extensions/symbol'

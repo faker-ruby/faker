@@ -10,10 +10,10 @@ module Faker
       end
 
       def cell_phone
-        if (translation = translate(:faker)[:cell_phone]).is_a? Hash
-          numerify(translation[:formats].sample)
+        if parse('cell_phone.formats') == ""
+          numerify(fetch('cell_phone.formats'))
         else
-          numerify(fetch('phone_number.formats'))
+          parse('cell_phone.formats')
         end
       end
 

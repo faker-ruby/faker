@@ -72,6 +72,13 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_password_max_with_integer_arg
+    (1..32).each do |min_length|
+      max_length = min_length + 4
+      assert @tester.password(min_length, max_length).length <= max_length
+    end
+  end
+
   def test_domain_name
     assert @tester.domain_name.match(/\w+\.\w+/)
   end
@@ -126,5 +133,9 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_url
     assert @tester.url('domain.com', '/username').match(/^http:\/\/domain\.com\/username$/)
+  end
+
+  def test_device_token
+    assert_equal 64, @tester.device_token.size
   end
 end
