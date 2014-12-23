@@ -18,10 +18,10 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Address.city.is_a? String
   end
 
-  def test_ja_zip_codes
+  def test_ja_post_codes
     Faker::Config.locale = 'ja'
     expected = /\d{3}(\-\d{4})?/
-    assert_match(expected, Faker::Address.zip_code)
+    assert_match(expected, Faker::Address.post_code)
   end
 
 end
