@@ -23,7 +23,7 @@ module Faker
         fetch('commerce.product_name.adjective') + ' ' + fetch('commerce.product_name.material') + ' ' + fetch('commerce.product_name.product')
       end
 
-      def price(from = 0, to = 100)
+      def price(from = 0, to = 100.0)
         (Faker::Base::rand_in_range(from, to) * 100).floor/100.0
       end
 
