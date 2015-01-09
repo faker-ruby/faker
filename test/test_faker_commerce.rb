@@ -5,15 +5,15 @@ class TestFakerCommerce < Test::Unit::TestCase
   def setup
     @tester = Faker::Commerce
   end
-  
+
   def test_color
     assert @tester.color.match(/[a-z]+\.?/)
   end
-  
+
   def test_department
     assert @tester.department.match(/[A-Z][a-z]+\.?/)
   end
-  
+
   def test_single_department_should_not_contain_separators
     assert_match(/\A[A-Za-z]+\z/, @tester.department(1))
   end
@@ -59,11 +59,17 @@ class TestFakerCommerce < Test::Unit::TestCase
     assert @tester.product_name.match(/[A-Z][a-z]+\.?/)
   end
 
-  def test_price
+  def default_test_price
     assert_includes 0..100, @tester.price
   end
 
   def test_price_is_float
     assert @tester.price.is_a? Float
+  end
+
+  def test_with_custom_range
+    price = Faker::Commerce.price(45,95)
+    assert_includes 45..95, price
+    assert_not_equal 0, price
   end
 end
