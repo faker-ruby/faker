@@ -113,6 +113,9 @@ Faker::Commerce.product_name #=> "Practical Granite Shirt"
 
 Faker::Commerce.price #=> "44.6"
 
+# Send in an optional range for price
+Faker::Commerce.price(5,10) #=> "6.0"
+
 ```
 
 ###Faker::Company
