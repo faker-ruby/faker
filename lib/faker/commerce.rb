@@ -24,7 +24,7 @@ module Faker
       end
 
       def price(from = 0, to = 100.0)
-        (Faker::Base::rand_in_range(from, to) * 100).floor/100.0
+        (rand_in_range(from, to) * 100).floor/100.0
       end
 
       private
