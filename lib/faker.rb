@@ -139,7 +139,6 @@ module Faker
       # Then you can call Faker::Name.girls_name and it will act like #first_name
       def method_missing(m, *args, &block)
         super unless @flexible_key
-
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
         if translation = translate(:faker)[@flexible_key][m]
           translation.respond_to?(:sample) ? translation.sample : translation
