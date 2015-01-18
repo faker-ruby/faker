@@ -159,6 +159,7 @@ end
 
 require 'faker/address'
 require 'faker/code'
+require 'faker/color'
 require 'faker/company'
 require 'faker/finance'
 require 'faker/internet'
