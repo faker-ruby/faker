@@ -72,7 +72,7 @@ module Faker
       end
 
       def domain_word
-        Company.name.split(' ').first.gsub(/[^[:alnum:]_]/, '').downcase
+        Company.name.gsub(/[^[:alnum:]_]/, '').downcase
       end
 
       def domain_suffix
