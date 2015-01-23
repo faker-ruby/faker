@@ -6,7 +6,7 @@ class TestFakerApp < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.author.match(/(\w+\.? ?){2,3}/)
+    assert @tester.author.match(/([[:alnum:]_]+\.? ?){2,3}/)
   end
 
 end

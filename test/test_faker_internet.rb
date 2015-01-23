@@ -7,7 +7,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_email
-    assert @tester.email.match(/.+@.+\.\w+/)
+    assert @tester.email.match(/.+@.+\.[[:alnum:]_]+/)
   end
 
   def test_free_email
@@ -63,7 +63,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_password
-    assert @tester.password.match(/\w{3}/)
+    assert @tester.password.match(/[[:alnum:]_]{3}/)
   end
 
   def test_password_with_integer_arg
@@ -80,15 +80,15 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_domain_name
-    assert @tester.domain_name.match(/\w+\.\w+/)
+    assert @tester.domain_name.match(/[[:alnum:]_]+\.[[:alnum:]_]+/)
   end
 
   def test_domain_word
-    assert @tester.domain_word.match(/^\w+$/)
+    assert @tester.domain_word.match(/^[[:alnum:]_]+$/)
   end
 
   def test_domain_suffix
-    assert @tester.domain_suffix.match(/^\w+(\.\w+)?/)
+    assert @tester.domain_suffix.match(/^[[:alnum:]_]+(\.[[:alnum:]_]+)?/)
   end
 
   def test_ip_v4_address

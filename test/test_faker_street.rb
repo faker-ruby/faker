@@ -39,7 +39,7 @@ class TestFakerStreet < Test::Unit::TestCase
 
   def test_street_address_with_locale_fallback
     I18n.with_locale('en-GB') do
-      assert_match(/^\d+ [\w']+ \w+/, Faker::Address.street_address)
+      assert_match(/^\d+ [[:alnum:]_']+ [[:alnum:]_]+/, Faker::Address.street_address)
     end
   end
 
