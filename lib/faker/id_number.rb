@@ -18,7 +18,7 @@ module Faker
       end
 
       def ssn_valid
-        ssn = "#{((1..899).to_a-[666]).sample}-#{numerify('##-####')}"
+        ssn = regexify(/[0-8]\d{2}-\d{2}-\d{4}/)
         # We could still have all 0s in one segment or another
         INVALID_SSN.any? { |regex| regex =~ ssn } ? ssn_valid : ssn
       end
