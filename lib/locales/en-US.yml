@@ -82,5 +82,6 @@ en-US:
         - "1-#{PhoneNumber.area_code}-#{PhoneNumber.exchange_code}-#{PhoneNumber.subscriber_number} x#{PhoneNumber.extension}"
         - "#{PhoneNumber.area_code}.#{PhoneNumber.exchange_code}.#{PhoneNumber.subscriber_number} x#{PhoneNumber.extension}"
     id_number:
-      valid: "#{ssn_valid}"
-      invalid: ['000-##-####','###-00-####','###-##-0000', '666-##-####', '9##-##-####']
+      valid: "#{IDNumber.ssn_valid}"
+      invalid: ['000-##-####', '###-00-####', '###-##-0000', '666-##-####', '9##-##-####']
+
