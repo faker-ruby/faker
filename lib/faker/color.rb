@@ -6,7 +6,7 @@ module Faker
       end
 
       def single_rgb_color
-        @single_rgb_color = rand(0..255)
+        @single_rgb_color = (0..255).to_a.sample
         @single_rgb_color
       end
 
@@ -19,12 +19,12 @@ module Faker
       end
 
       def single_hsl_color
-        @single_hsla_color = rand(0.00..360.00).round(2)
+        @single_hsla_color = (0.00..360.00).to_a.sample.round(2)
         @single_hsla_color
       end
 
       def alpha_channel
-        @alpha_channel = rand(0.00..1.00).round(2)
+        @alpha_channel = (0.00..1.00).to_a.sample.round(2)
         @alpha_channel
       end
 
