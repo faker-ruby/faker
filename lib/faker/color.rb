@@ -21,12 +21,25 @@ module Faker
         @single_hsla_color = rand(0.00..360.00).round(2)
       end
 
+      def alpha_channel
+        @alpha_channel = rand(0.00..1.00).round(2)
+      end
+
       def hsl_color
         @hsl_colors = []
         3.times do
           @hsl_colors.push single_hsl_color
         end
         @hsl_colors
+      end
+
+      def hsla_color
+        @hsla_colors = []
+        3.times do
+          @hsla_colors.push single_hsl_color
+        end
+        @hsla_colors.push alpha_channel
+        @hsla_colors
       end
     end
   end

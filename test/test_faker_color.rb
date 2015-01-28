@@ -34,4 +34,13 @@ class TestFakerColor < Test::Unit::TestCase
       assert color.between?(0.0, 360.0)
     end
   end
+
+  def test_hsla_color
+    @result = @tester.hsla_color
+    assert @result.length == 4
+
+    @result.each do |color|
+      assert color.between?(0.0, 360.0) || color.between?(0.0, 1.0)
+    end
+  end
 end
