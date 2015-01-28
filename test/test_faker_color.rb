@@ -8,4 +8,17 @@ class TestFakerColor < Test::Unit::TestCase
   def test_hex_color
     assert @tester.hex_color.match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
   end
+
+  def test_single_rgb_color
+    assert @tester.single_rgb_color.between?(0, 255)
+  end
+
+  def test_rgb_color
+    @result = @tester.rgb_color
+    assert @result.length == 3
+
+    @result.each do |color|
+      assert color.between?(0, 255)
+    end
+  end
 end
