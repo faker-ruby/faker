@@ -1,4 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require 'minitest/mock'
 
 class TestFakerNumber < Test::Unit::TestCase
   def setup
@@ -73,5 +74,19 @@ class TestFakerNumber < Test::Unit::TestCase
   def test_hexadecimal
     assert @tester.hexadecimal(4).match(/[0-9a-f]{4}/)
     assert @tester.hexadecimal(7).match(/[0-9a-f]{7}/)
+  end
+
+  def test_insignificant_zero
+    Faker::Number.stub :digit, 0 do
+      assert_equal '0', @tester.number(1)
+      100.times do
+        assert_match /^[1-9]0/, @tester.number(2)
+      end
+
+      assert_equal '0.0', @tester.decimal(1,1)
+      100.times do
+        assert_match /^0\.0[1-9]/, @tester.decimal(1,2)
+      end
+    end
   end
 end
