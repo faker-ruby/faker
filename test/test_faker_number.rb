@@ -28,6 +28,21 @@ class TestFakerNumber < Test::Unit::TestCase
     assert (1..1000).collect {|i| @tester.digit == "9"}.include?(true)
   end
 
+  def test_even_distribution
+    assert stats = {}
+    assert times = 10000
+
+    times.times do
+      assert num = @tester.digit
+      stats[num] ||= 0
+      assert stats[num] += 1
+    end
+
+    stats.each do |k, v|
+      assert_in_delta 10.0, 100.0 * v / times, 2.0
+    end
+  end
+
   def test_between
     100.times do
       random_number = @tester.between(-50, 50)
