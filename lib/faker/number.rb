@@ -12,7 +12,7 @@ module Faker
       end
 
       def digit
-        (rand() * 9).round.to_s
+        rand(10).to_s
       end
 
       def hexadecimal(digits)
