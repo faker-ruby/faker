@@ -14,6 +14,6 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_logo
-	  assert @tester.logo.match(%r{http://www.biz-logo.com/examples/\d+\.gif})
+	  assert @tester.logo.match(%r{http://pigment.github.io/fake-logos/logos/medium/color/\d+\.png})
   end
 end

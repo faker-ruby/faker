@@ -29,10 +29,10 @@ module Faker
         ('%09d' % rand(10 ** 9)).gsub(/(\d\d)(\d\d\d)(\d\d\d\d)/, '\\1-\\2-\\3')
       end
 
-      # Get a random company logo url in GIF format.
+      # Get a random company logo url in PNG format.
       def logo
-        rand_num = Random.rand(76) + 1
-        "http://www.biz-logo.com/examples/#{ rand_num < 10 ? "00" : "0" }#{rand_num}.gif"
+        rand_num = Random.rand(13) + 1
+        "http://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
     end
 

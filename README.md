@@ -134,8 +134,8 @@ Faker::Company.ein #=> "34-8488813"
 
 Faker::Company.duns_number #=> "08-341-3736"
 
-# Get a random company logo url in GIF format.
-Faker::Company.logo #=> "http://www.biz-logo.com/examples/007.gif"
+# Get a random company logo url in PNG format.
+Faker::Company.logo #=> "http://pigment.github.com/fake-logos/logos/medium/color/5.png"
 
 ```
 
