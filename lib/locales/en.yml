@@ -153,3 +153,8 @@ en:
       author:
         - "#{Name.name}"
         - "#{Company.name}"
+  time:
+    formats:
+      us: "%m/%d/%Y %I:%M %p"
+    am: "AM"
+    pm: "PM"
