@@ -122,7 +122,7 @@ module Faker
       end
 
       def ip_v4_cidr
-        "#{ip_v4_address}/#{[1..32].sample}"
+        "#{ip_v4_address}/#{1 + rand(31)}"
       end
 
       def ip_v6_address
@@ -132,7 +132,7 @@ module Faker
       end
 
       def ip_v6_cidr
-        "#{ip_v6_address}/#{[1..128].sample}"
+        "#{ip_v6_address}/#{1 + rand(127)}"
       end
 
       def url(host = domain_name, path = "/#{user_name}")
