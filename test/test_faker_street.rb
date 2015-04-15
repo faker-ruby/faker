@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/test_helper.rb'
 
 class TestFakerStreet < Test::Unit::TestCase
   def setup
+    I18n.config.enforce_available_locales = false
     shire = {
       :faker => {
         :address => {
