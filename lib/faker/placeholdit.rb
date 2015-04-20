@@ -1,7 +1,7 @@
 module Faker
   class Placeholdit < Base
     class << self
-      SUPPORTED_FORMATS = %w(png jpg bmp jpeg)
+      SUPPORTED_FORMATS = %w(png jpg gif jpeg)
 
       def image(size = '300x300', format = 'png', background_color = '000', text_color = nil, text = nil)
         raise ArgumentError, "Size should be specified in format 300x300" unless size.match(/^[0-9]+x[0-9]+$/)
