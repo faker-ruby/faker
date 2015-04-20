@@ -15,9 +15,6 @@ module Faker
         image_url += "&text=#{text}" if text
         image_url
       end
-      
     end
-    
   end
-  
 end
