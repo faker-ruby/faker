@@ -153,3 +153,6 @@ en:
       author:
         - "#{Name.name}"
         - "#{Company.name}"
+
+    slack_emoji:
+      smile: [':smile:',':simple smile:']
