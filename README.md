@@ -412,22 +412,31 @@ Faker::App.author #=> "Daphne Swift"
 
 ```ruby
 
+# Random Slack Emoji form people category
 Faker::SlackEmoji.people #=> ":sleepy:"
 
+# Random Slack Emoji form nature category
 Faker::SlackEmoji.nature #=> ":chestnut:"
 
+# Random Slack Emoji form food and drink category
 Faker::SlackEmoji.food_and_drink #=> ":tangerine:"
 
+# Random Slack Emoji form celebration category
 Faker::SlackEmoji.celebration #=> ":ribbon:"
 
+# Random Slack Emoji form activity category
 Faker::SlackEmoji.activity #=> ":performing_arts:"
 
+# Random Slack Emoji form travel and places category
 Faker::SlackEmoji.travel_and_places #=> ":truck:"
 
+# Random Slack Emoji form objects & symbols category
 Faker::SlackEmoji.objects_and_symbols #=> ":alarm_clock:"
 
+# Random Slack Emoji form custom category
 Faker::SlackEmoji.custom #=> ":suspect:"
 
+# Random Slack Emoji form any category
 Faker::SlackEmoji.emoji #=> ":last_quarter_moon:"
 
 ```
