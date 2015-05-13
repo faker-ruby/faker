@@ -407,6 +407,31 @@ Faker::App.author #=> "Daphne Swift"
 
 ```
 
+###Faker::SlackEmoji
+-----------------
+
+```ruby
+
+Faker::SlackEmoji.people #=> ":sleepy:"
+
+Faker::SlackEmoji.nature #=> ":chestnut:"
+
+Faker::SlackEmoji.food_and_drink #=> ":tangerine:"
+
+Faker::SlackEmoji.celebration #=> ":ribbon:"
+
+Faker::SlackEmoji.activity #=> ":performing_arts:"
+
+Faker::SlackEmoji.travel_and_places #=> ":truck:"
+
+Faker::SlackEmoji.objects_and_symbols #=> ":alarm_clock:"
+
+Faker::SlackEmoji.custom #=> ":suspect:"
+
+Faker::SlackEmoji.emoji #=> ":last_quarter_moon:"
+
+```
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
