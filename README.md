@@ -257,6 +257,35 @@ Faker::Lorem.paragraphs(1, true) #=> ""
 
 ```
 
+###Faker::Hodor
+---------------
+
+```ruby
+
+Faker::Hodor.word #=> "hodor"
+
+# Optional arguments: num=3
+Faker::Hodor.words #=> ["hodor", "hodor", "hodor"]
+Faker::Hodor.words(4) #=> ["hodor", "hodor", "hodor", "hodor"]
+
+# Optional arguments: word_count=4, random_words_to_add=6
+Faker::Hodor.sentence #=> "Hodor hodor hodor hodor hodor."
+Faker::Hodor.sentence(3, 0) #=> "Hodor hodor hodor."
+
+# Optional arguments: sentence_count=3
+Faker::Hodor.sentences #=> ["Hodor hodor hodor hodor.", "Hodor hodor hodor hodor."]
+Faker::Hodor.sentences(1) #=> ["Hodor hodor hodor hodor."]
+
+# Optional arguments: sentence_count=3, random_sentences_to_add=3
+Faker::Hodor.paragraph #=> "Hodor hodor hodor hodor hodor. Hodor hodor hodor hodor hodor. Hodor hodor hodor hodor hodor."
+Faker::Hodor.paragraph(2) #=> "Hodor hodor hodor hodor hodor. Hodor hodor hodor hodor hodor."
+
+# Optional arguments: paragraph_count=3
+Faker::Hodor.paragraphs #=> [ ..., ..., ... ]
+Faker::Hodor.paragraphs(1) #=> [ ... ]
+
+```
+
 ###Faker::Name
 --------------
 
