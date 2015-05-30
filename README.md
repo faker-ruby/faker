@@ -261,7 +261,6 @@ Faker::Lorem.paragraphs(1, true) #=> ""
 ---------------
 
 ```ruby
-
 Faker::Hodor.word #=> "hodor"
 
 # Optional arguments: num=3
@@ -283,7 +282,6 @@ Faker::Hodor.paragraph(2) #=> "Hodor hodor hodor hodor hodor. Hodor hodor hodor 
 # Optional arguments: paragraph_count=3
 Faker::Hodor.paragraphs #=> [ ..., ..., ... ]
 Faker::Hodor.paragraphs(1) #=> [ ... ]
-
 ```
 
 ###Faker::Name
