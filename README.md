@@ -50,11 +50,13 @@ Faker::Address.city_suffix #=> "fort"
 
 Faker::Address.city_prefix #=> "Lake"
 
-Faker::Address.state_abbr #=> "AP"
-
 Faker::Address.state #=> "California"
 
+Faker::Address.state_abbr #=> "AP"
+
 Faker::Address.country #=> "French Guiana"
+
+Faker::Address.country_code #=> "IT"
 
 Faker::Address.latitude #=> "-58.17256227443719"
 
