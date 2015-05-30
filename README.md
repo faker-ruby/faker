@@ -463,7 +463,7 @@ and you can then override or add elements to suit
 en-au-ocker:
   faker:
     name:
-      # Exiting faker field, new data
+      # Existing faker field, new data
       first_name: [Charlotte, Ava, Chloe, Emily]
 
       # New faker fields
