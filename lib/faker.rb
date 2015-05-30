@@ -177,6 +177,7 @@ require 'faker/time'
 require 'faker/number'
 require 'faker/hacker'
 require 'faker/app'
+require 'faker/slack_emoji'
 
 require 'extensions/array'
 require 'extensions/symbol'
