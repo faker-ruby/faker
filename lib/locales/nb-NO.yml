@@ -11,7 +11,7 @@ nb-NO:
       building_number: ["#", "##"]
       secondary_address: ['Leil. ###', 'Oppgang A', 'Oppgang B']
       postcode: ["####", "####", "####", "0###"]
-      state: [""]
+      state: [Østfold, Akershus, Oslo, Hedmark, Oppland, Buskerud, Vestfold, Telemark, Aust-Agder, Vest-Agder, Rogaland, Hordaland, Sogn og Fjordane, Møre og Romsdal, Sør-Trøndelag, Nord-Trøndelag, Nordland, Troms, Finnmark, Svalbard]
       city:
         - "#{city_root}#{city_suffix}"
       street_name:
