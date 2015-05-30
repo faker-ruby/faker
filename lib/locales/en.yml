@@ -131,9 +131,9 @@ en:
       color: [red, green, blue, yellow, purple, mint green, teal, white, black, orange, pink, grey, maroon, violet, turquoise, tan, sky blue, salmon, plum, orchid, olive, magenta, lime, ivory, indigo, gold, fuchsia, cyan, azure, lavender, silver]
       department: ["Books", "Movies", "Music", "Games", "Electronics", "Computers", "Home", "Garden", "Tools", "Grocery", "Health", "Beauty", "Toys", "Kids", "Baby", "Clothing", "Shoes", "Jewelery", "Sports", "Outdoors", "Automotive", "Industrial"]
       product_name:
-        adjective: [Small, Ergonomic, Rustic, Intelligent, Gorgeous, Incredible, Fantastic, Practical, Sleek, Awesome]
-        material: [Steel, Wooden, Concrete, Plastic, Cotton, Granite, Rubber]
-        product: [Chair, Car, Computer, Gloves, Pants, Shirt, Table, Shoes, Hat]
+        adjective: [Small, Ergonomic, Rustic, Intelligent, Gorgeous, Incredible, Fantastic, Practical, Sleek, Awesome, Enormous, Mediocre, Synergistic, Heavy Duty, Lightweight, Aerodynamic, Durable]
+        material: [Steel, Wooden, Concrete, Plastic, Cotton, Granite, Rubber, Leather, Silk, Wool, Linen, Marble, Iron, Bronze, Copper, Aluminum, Paper]
+        product: [Chair, Car, Computer, Gloves, Pants, Shirt, Table, Shoes, Hat, Plate, Knife, Bottle, Coat, Lamp, Keyboard, Bag, Bench, Clock, Watch, Wallet]
 
     team:
       creature: ['ants', 'bats', 'bears', 'bees', 'birds', 'buffalo', 'cats', 'chickens', 'cattle', 'dogs', 'dolphins', 'ducks', 'elephants', 'fishes', 'foxes', 'frogs', 'geese', 'goats', 'horses', 'kangaroos', 'lions', 'monkeys', 'owls', 'oxen', 'penguins', 'people', 'pigs', 'rabbits', 'sheep', 'tigers', 'whales', 'wolves', 'zebras', 'banshees', 'crows', 'black cats', 'chimeras', 'ghosts', 'conspirators', 'dragons', 'dwarves', 'elves', 'enchanters', 'exorcists', 'sons', 'foes', 'giants', 'gnomes', 'goblins', 'gooses', 'griffins', 'lycanthropes', 'nemesis', 'ogres', 'oracles', 'prophets', 'sorcerors', 'spiders', 'spirits', 'vampires', 'warlocks', 'vixens', 'werewolves', 'witches', 'worshipers', 'zombies', 'druids']

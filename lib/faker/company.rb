@@ -16,6 +16,10 @@ module Faker
         translate('faker.company.buzzwords').collect {|list| list.sample }.join(' ')
       end
 
+      def buzzword
+        translate('faker.company.buzzwords').flatten.sample
+      end
+
       # When a straight answer won't do, BS to the rescue!
       def bs
         translate('faker.company.bs').collect {|list| list.sample }.join(' ')
