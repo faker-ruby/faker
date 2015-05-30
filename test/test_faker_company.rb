@@ -20,4 +20,11 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_buzzword
     assert @tester.buzzword.match(/\w+\.?/)
   end
+
+  def test_swedish_organisation_number
+    org_no = @tester.swedish_organisation_number
+    assert org_no.match(/\d{10}/)
+    assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
+  end
+
 end

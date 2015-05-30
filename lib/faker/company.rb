@@ -38,7 +38,41 @@ module Faker
         rand_num = Random.rand(13) + 1
         "http://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
-    end
 
+      def swedish_organisation_number
+        base = ('%09d' % rand(10 ** 9))
+        base + luhn_algorithm(base).to_s
+      end
+
+    private
+
+      def luhn_algorithm(number)
+        multiplications = []
+
+        number.split(//).each_with_index do |digit, i|
+          if i % 2 == 0
+              multiplications << digit.to_i * 2
+            else
+              multiplications << digit.to_i
+          end
+        end
+
+        sum = 0
+
+        multiplications.each do |num|
+          num.to_s.each_byte do |character|
+            sum += character.chr.to_i
+          end
+        end
+
+        if sum % 10 == 0
+          control_digit = 0
+        else
+          control_digit = (sum / 10 + 1) * 10 - sum
+        end
+
+        control_digit
+      end
+    end
   end
 end
