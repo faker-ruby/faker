@@ -351,9 +351,11 @@ Faker::PhoneNumber.extension #=> "3764"
 
 ```ruby
 # Random date between dates
-Faker::Time.between(2.days.ago, Time.now) #=> "2014-09-18 12:30:59 -0700"
+Faker::Time.between(DateTime.now - 1, DateTime.now) #=> "2014-09-18 12:30:59 -0700"
 
 # Random date between dates (within specified part of the day)
+# You can install the active_support gem to facilitate time manipulation like 45.minutes + 2.hours
+require "as-duration"
 Faker::Time.between(2.days.ago, Time.now, :all) #=> "2014-09-19 07:03:30 -0700"
 Faker::Time.between(2.days.ago, Time.now, :day) #=> "2014-09-18 16:28:13 -0700"
 Faker::Time.between(2.days.ago, Time.now, :night) #=> "2014-09-20 19:39:38 -0700"
