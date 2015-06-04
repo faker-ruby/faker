@@ -9,7 +9,7 @@ module Faker
         raise ArgumentError, "background_color must be a hex value without '#'" unless background_color.match(/((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/)
         raise ArgumentError, "text_color must be a hex value without '#'" unless text_color.nil? || text_color.match(/((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/)
 
-        image_url = "http://placehold.it/#{size}.#{format}"
+        image_url = "https://placehold.it/#{size}.#{format}"
         image_url += "/#{background_color}"
         image_url += "/#{text_color}" if text_color
         image_url += "&text=#{text}" if text
