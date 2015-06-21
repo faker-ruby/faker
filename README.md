@@ -448,7 +448,7 @@ Faker::SlackEmoji.emoji #=> ":last_quarter_moon:"
 ###Faker::Team
 -----------------
 
-ruby ```
+```ruby
 
 # Random Team Creature
 Faker::Team.creature #=> "gooses"
