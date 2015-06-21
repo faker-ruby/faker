@@ -10,4 +10,8 @@ class TestFakerTeam < Test::Unit::TestCase
     assert @tester.name.match(/(\w+\.? ?){2}/)
   end
 
+  def test_sport
+    assert @tester.sport.match(/(\w+\.? ?){2}/)
+  end
+
 end
