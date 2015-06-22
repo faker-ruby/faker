@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d63706b9-7dd5-4b21-b978-6f6a081076a5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/locales/en-UG.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test_en_ug_locale.rb" />
-    </list>
+    <list default="true" id="d63706b9-7dd5-4b21-b978-6f6a081076a5" name="Default" comment="" />
     <ignored path="faker-1.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -53,8 +50,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/locales/en-UG.yml" />
         <option value="$PROJECT_DIR$/test/test_en_ug_locale.rb" />
+        <option value="$PROJECT_DIR$/lib/locales/en-UG.yml" />
       </list>
     </option>
   </component>
