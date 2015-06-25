@@ -173,3 +173,8 @@ en:
         - "#{travel_and_places}"
         - "#{objects_and_symbols}"
         - "#{custom}"
+
+    workout:
+      exercise: [Arnold Dumbbell Press, Ab Crunch Machine, Barbell Shrug, Bench Dips, Bench Press, Cable Crunch, Cable Chest Press, Clean Pull, Deadlift, Dip Machine, Dips, Dumbbell Bicep Curl, Dumbbell Flyes, Dumble Rows, Exercise Ball Crunch, Front Dumbbell Raise, Front Incline Dumbbell Raise, Good Morning, Hack Squat, Hang Clean, Military Press, Plank, Squat ]
+        
+
