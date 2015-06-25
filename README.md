@@ -467,10 +467,10 @@ Faker::Team.sport #=> "lacrosse"
 ```ruby
 
 # Random Exercise
-Faker::Workout.exercise => "Front Dumbbell Raise" 
+Faker::Workout.exercise #=> "Front Dumbbell Raise" 
 
 # Random Cardio Exercise 
-Faker::Workout.random_cardio => "10 minutes on the treadmill" 
+Faker::Workout.random_cardio #=> "10 minutes on the treadmill" 
 
 ```
 
