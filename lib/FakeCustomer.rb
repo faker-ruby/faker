@@ -33,7 +33,7 @@ class FakeCustomer
 	@first_name = Faker::Name.first_name
 	@middle_name = Faker::Name.first_name #first name can also be used as a middle name
 	@last_name =  Faker::Name.last_name
-	@full_name = Faker::Name.name
+	@full_name = "#{@first_name} #{@middle_name} #{@last_name}"
 	@credit_card_number = Faker::Business.credit_card_number
 	@credit_card_expiry_date = Faker::Business.credit_card_expiry_date
 	@credit_card_type = Faker::Business.credit_card_type
