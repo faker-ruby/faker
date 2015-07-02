@@ -79,6 +79,12 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_password_could_achieve_max_length
+    passwords = []
+    64.times {passwords << @tester.password(14, 16) }
+    assert passwords.select {|item| item.length == 16}.size >= 1
+  end
+
   def test_domain_name
     assert @tester.domain_name.match(/\w+\.\w+/)
   end
