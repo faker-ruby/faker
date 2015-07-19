@@ -57,7 +57,7 @@ module Faker
       end
 
       def domain_name
-        [ fix_umlauts(domain_word), domain_suffix ].join('.')
+        [ domain_word, domain_suffix ].join('.')
       end
 
       def fix_umlauts(string)
@@ -72,7 +72,9 @@ module Faker
       end
 
       def domain_word
-        Company.name.split(' ').first.gsub(/\W/, '').downcase
+        I18n.with_locale(:en) do
+          Company.name.split(' ').first.gsub(/\W/, '').downcase
+        end
       end
 
       def domain_suffix
