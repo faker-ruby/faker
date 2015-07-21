@@ -26,7 +26,9 @@ nep:
         - "#{female_first_name} #{last_name}"
         - "#{first_name} #{last_name}"
     address:
-      postcode: [0000]
+      default_time_zone: ["Asia/Kathmandu"]
+      default_country_code: ["NP"]
+      postcode: ['#####']
       state:  [
                 "Baglung", "Banke", "Bara", "Bardiya", "Bhaktapur", "Bhojupu", "Chitwan", "Dailekh", "Dang", "Dhading", "Dhankuta", "Dhanusa", "Dolakha",
                 "Dolpha", "Gorkha", "Gulmi", "Humla", "Ilam", "Jajarkot", "Jhapa", "Jumla", "Kabhrepalanchok", "Kalikot", "Kapilvastu", "Kaski", "Kathmandu",
