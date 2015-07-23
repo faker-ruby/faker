@@ -12,8 +12,6 @@ Gem::Specification.new do |s|
   s.description = %q{Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.}
   s.license     = 'MIT'
 
-  s.rubyforge_project = "faker"
-
   s.add_dependency('i18n', '~> 0.5')
 
   s.files         = `git ls-files -- lib/*`.split("\n") + %w(History.txt License.txt README.md)

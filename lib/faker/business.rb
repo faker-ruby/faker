@@ -10,7 +10,7 @@ module Faker
       end
 
       def credit_card_expiry_date
-        ::Date.parse(fetch('business.credit_card_expiry_dates'))
+        ::Date.today + (365 * (rand(4) + 1))
       end
 
       def credit_card_type

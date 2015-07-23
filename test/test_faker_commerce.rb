@@ -59,6 +59,10 @@ class TestFakerCommerce < Test::Unit::TestCase
     assert @tester.product_name.match(/[A-Z][a-z]+\.?/)
   end
 
+  def test_material
+    assert @tester.material.match(/[A-Z][a-z]+\.?/)
+  end
+
   def test_price
     assert_includes 0..100, @tester.price
   end

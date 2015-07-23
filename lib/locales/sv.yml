@@ -45,7 +45,7 @@ sv:
       title:
         descriptor: [Lead, Senior, Direct, Corporate, Dynamic, Future, Product, National, Regional, District, Central, Global, Customer, Investor, Dynamic, International, Legacy, Forward, Internal, Human, Chief, Principal]
         level: [Solutions, Program, Brand, Security, Research, Marketing, Directives, Implementation, Integration, Functionality, Response, Paradigm, Tactics, Identity, Markets, Group, Division, Applications, Optimization, Operations, Infrastructure, Intranet, Communications, Web, Branding, Quality, Assurance, Mobility, Accounts, Data, Creative, Configuration, Accountability, Interactions, Factors, Usability, Metrics]
-        job: [Supervisor, Associate, Executive, Liason, Officer, Manager, Engineer, Specialist, Director, Coordinator, Administrator, Architect, Analyst, Designer, Planner, Orchestrator, Technician, Developer, Producer, Consultant, Assistant, Facilitator, Agent, Representative, Strategist]
+        job: [Supervisor, Associate, Executive, Liaison, Officer, Manager, Engineer, Specialist, Director, Coordinator, Administrator, Architect, Analyst, Designer, Planner, Orchestrator, Technician, Developer, Producer, Consultant, Assistant, Facilitator, Agent, Representative, Strategist]
       name:
         - "#{first_name_women} #{last_name}"
         - "#{first_name_men} #{last_name}"
@@ -66,9 +66,9 @@ sv:
       color: [vit, silver, grå, svart, röd, grön, blå, gul, lila, indigo, guld, brun, rosa, purpur, korall]
       department: ["Böcker", "Filmer", "Musik", "Spel", "Elektronik", "Datorer", "Hem", "Trädgård", "Verktyg", "Livsmedel", "Hälsa", "Skönhet", "Leksaker", "Klädsel", "Skor", "Smycken", "Sport"]
       product_name:
-        adjective: [Liten, Ergonomisk, Robust, Intelligent, Söt, Otrolig, Fatastisk, Praktisk, Slimmad, Grym]
-        material: [Stål, Metall, Trä, Betong, Plast, Bomul, Grnit, Gummi, Latex]
-        product: [Stol, Bil, Dator, Handskar, Pants, Shirt, Table, Shoes, Hat]
+        adjective: [Liten, Ergonomisk, Robust, Intelligent, Söt, Otrolig, Fatastisk, Praktisk, Slimmad, Grym, Enorm, Mediokra, Synergistic, Tung, Lätt, Aerodynamisk, Tålig]
+        material: [Stål, Metall, Trä, Betong, Plast, Bomul, Grnit, Gummi, Latex, Läder , Silke, Ull, Linne, Marmor, Järn, Brons, Koppar, Aluminium, Papper]
+        product: [Stol, Bil, Dator, Handskar, Pants, Shirt, Table, Shoes, Hat, Plate, Kniv, Flaska, Coat, Lampa. Tangentbord, Bag, Bänk, Klocka, Titta, Plånbok]
 
     team:
       suffix: [IF, FF, BK, HK, AIF, SK, FC, SK, BoIS, FK, BIS, FIF, IK]
