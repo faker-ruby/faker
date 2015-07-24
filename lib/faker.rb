@@ -158,6 +158,7 @@ module Faker
 end
 
 require 'faker/address'
+require 'faker/book'
 require 'faker/code'
 require 'faker/color'
 require 'faker/company'

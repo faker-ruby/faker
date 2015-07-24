@@ -173,3 +173,8 @@ en:
         - "#{travel_and_places}"
         - "#{objects_and_symbols}"
         - "#{custom}"
+
+    book:
+      title: ['A Year of Walking', 'Candy For Two', 'Walking and Running', 'The Frog Catchers Field Manual', 'Tomato in the Window', 'A Dozen Heros', 'Finding a New Sun', 'Stop Asking, Just Do']
+      author: "#{Name.name}"
+      publisher: ['Parker Publishing', 'Page Crunch', 'Word Burner', 'Printed Works', 'Opus Reader', 'Booklet', 'Offprint', 'Bookfolio']
