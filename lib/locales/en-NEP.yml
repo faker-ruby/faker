@@ -45,5 +45,9 @@ nep:
       suffix: ['Pvt Ltd', 'Group', 'Ltd', 'Limited']
     phone_number:
       formats: ['##-#######', '+977-#-#######', '+977########']
+    nation:
+      default_country: [Nepal]
+      default_nationality: [Nepali]
+      language: [Nepali, Maithili, Nepal, Magar, Bhojpuri]
 
 
