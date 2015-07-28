@@ -479,6 +479,22 @@ Faker::Team.sport #=> "lacrosse"
 
 ```
 
+###Faker::Book
+------------------
+
+```ruby
+
+# Random Book Title
+Faker::Book.title #=> "The Odd Sister"
+
+# Random Author
+Faker::Book.author #=> "Alysha Olsen"
+
+# Random Publisher
+Faker::Book.publisher #=> "Opus Reader"
+
+```
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
