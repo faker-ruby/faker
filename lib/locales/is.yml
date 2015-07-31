@@ -1,0 +1,87 @@
+is:
+  faker:
+    address:
+      country: ['Abkasía', 'Afganistan', 'Albanía', 'Alsír', 'Alþýðulýðveldið Kína', 'Andorra', 'Angóla', 'Antígva og Barbúda', 'Argentína', 'Armenía', 'Aserbaídsjan', 'Austur-Kongó', 'Austur-Tímor', 'Austurríki', 'Ástralía', 'Bahamaeyjar', 'Bandaríkin', 'Bangladess', 'Barbados', 'Barein', 'Belgía', 'Belís', 'Benín', 'Bólivía', 'Bosnía og Hersegóvína', 'Botsvana', 'Brasilía', 'Bretland', 'Brúnei', 'Búlgaría', 'Búrkína Fasó', 'Búrúndí', 'Bútan', 'Chile', 'Danmörk', 'Djíbútí', 'Dóminíka', 'Dóminíska lýðveldið', 'Egyptaland', 'Eistland', 'Ekvador', 'El Salvador', 'Erítrea', 'Eþíópía', 'Filippseyjar', 'Finnland', 'Fídjieyjar', 'Fílabeinsströndin', 'Frakkland', 'Gabon', 'Gambía', 'Gana', 'Georgía', 'Gínea', 'Gínea-Bissá', 'Grenada', 'Grikkland', 'Grænhöfðaeyjar', 'Gvatemala', 'Gvæjana', 'Haítí', 'Holland', 'Hondúras', 'Hvíta Rússland', 'Indland', 'Indónesía', 'Ísland', 'Íran', 'Írak', 'Írland', 'Ísrael', 'Ítalía', 'Jamaíka', 'Japan', 'Jemen', 'Jórdanía', 'Kambódía', 'Kamerún', 'Kanada', 'Kasakstan', 'Katar', 'Kenýa', 'Kirgistan', 'Kíribatí', 'Kosta Ríka', 'Kólumbía', 'Kómoreyjar', 'Króatía', 'Kúba', 'Kúveit', 'Kýpur', 'Laos', 'Lettland', 'Lesótó', 'Liechtenstein', 'Litháen', 'Líbanon', 'Líbería', 'Líbýa', 'Lúxemborg', 'Madagaskar', 'Makedónía', 'Malasía', 'Malaví', 'Maldíveyjar', 'Malí', 'Malta', 'Marokkó', 'Marshalleyjar', 'Máritanía', 'Máritíus', 'Mexíkó', 'Mið-Afríkulýðveldið', 'Miðbaugs-Gínea', 'Míkrónesía', 'Mjanmar', 'Moldóva', 'Mongólía', 'Mónakó', 'Mósambík', 'Nagornó-Karabak', 'Namibía', 'Nárú', 'Nepal', 'Níkaragva', 'Níger', 'Nígería', 'Norður-Kórea', 'Norður-Kýpur', 'Noregur', 'Nýja-Sjáland', 'Óman', 'Pakistan', 'Palá', 'Panama', 'Papúa Nýja-Gínea', 'Paragvæ', 'Perú', 'Portúgal', 'Pólland', 'Rúmenía', 'Rússland', 'Rúanda', 'Salómonseyjar', 'Sambía', 'Sameinuðu arabísku furstadæmin', 'Samóa', 'San Marínó', 'Sankti Kristófer og Nevis', 'Sankti Lúsía', 'Sankti Vinsent og Grenadíneyjar', 'Saó Tóme og Prinsípe', 'Sádí-Arabía', 'Senegal', 'Serbía', 'Seychelleseyjar', 'Simbabve', 'Singapúr', 'Síerra Leóne', 'Slóvakía', 'Slóvenía', 'Sómalía', 'Spánn', 'Srí Lanka', 'Suður-Afríka', 'Suður-Kórea', 'Súdan', 'Súrínam', 'Svartfjallaland', 'Svasíland', 'Sviss', 'Svíþjóð', 'Sýrland', 'Tadsjikistan', 'Taíland', 'Tansanía', 'Tékkland', 'Tonga', 'Tógó', 'Trínidad og Tóbagó', 'Tsjad', 'Túnis', 'Túrkmenistan', 'Tyrkland', 'Tævan', 'Ungverjaland', 'Úganda', 'Úkraína', 'Úrúgvæ', 'Úsbekistan', 'Vanúatú', 'Vatíkanið', 'Venesúela', 'Vestur-Kongó', 'Vestur-Sahara', 'Víetnam', 'Þýskaland']
+      building_number: ['1##', '##', '#']
+      street_prefix: ['Grænu', 'Muru', 'Reykja', 'Skógar', 'Hnjúka', 'Eski', 'Hæðar', 'Skaga', 'Skriðu', 'Stafna', 'Ysta', 'Voga', 'Dal', 'Engja', 'Haga', 'Akra', 'Hraun', 'Austur', 'Vestur', 'Norður', 'Suður', 'Hlíða', 'Urðar', 'Græna', 'Sel', 'Selja', 'Lyng', 'Hóla', 'Furu', 'Birki', 'Skóla', 'Holta', 'Hóls', 'Lyng', 'Tjarnar', 'Granda', 'Lóns', 'Öldu', 'Spóa', 'Öldu', 'Dal', 'Brogar', 'Helgu', 'Skúla', 'Egils', 'Þórðar', 'Þórólfs', 'Gunnlags', 'Þorsteins', 'Kveldúlfs', 'Ána', 'Dala', 'Garða', 'Mosa', 'Hrafna', 'Fálka', 'Arna', 'Réttar', 'Sól', 'Brákar', 'Spítala', 'Hellu', 'Þórs', 'Loka', 'Grettis', 'Njáls', 'Nönnu', 'Eski']
+      street_suffix: ['hlíð', 'stekk', 'götu', 'stræti', 'braut', 'vegi', 'hjalla', 'brekku', 'gerði', 'vör', 'tröð', 'smára', 'vogi', 'hvammi', 'nesi', 'mýri', 'grund', 'hólum', 'vangi', 'hrauni', 'stíg', 'barði', 'völlum', 'torgi', 'bergi', 'torgi', 'kletti', 'vík', 'höfða', 'nesi', 'bakka', 'rima', 'móum']
+      secondary_address: ['Íbúð ###', 'Íb. #0#', '#. hæð', 'Kjallara', 'Jarðhæð']
+      # Though these are US-specific, they are here (in the default locale) for backwards compatibility
+      postcode: ['###']
+      state: []
+      state_abbr: []
+      time_zone: []
+      city_name: ['Reykjavík', 'Vogar', 'Kópavogur', 'Garðabær', 'Hafnarfjörður', 'Garðabær', 'Reykjanesbær', 'Grindavík', 'Sandgerði', 'Garður', 'Mosfellsbær', 'Akranes', 'Borgarnes', 'Reykholt', 'Stykkishólmur', 'Flatey á Breiðafirði', 'Grundarfjörður', 'Ólafsvík', 'Snæfellsbær', 'Hellissandur', 'Búðardalur', 'Reykhólahreppur', 'Ísafjörður', 'Hnífsdalur', 'Bolungarvík', 'Súðavík', 'Flateyri', 'Suðureyri', 'Patreksfjörður', 'Patreksfjörður', 'Tálknafjörður', 'Bíldudalur', 'Þingeyri', 'Staður', 'Hólmavík', 'Drangsnes', 'Árneshreppur', 'Hvammstangi', 'Blönduós', 'Skagaströnd', 'Sauðárkrókur', 'Varmahlíð', 'Hofsós', 'Fljót', 'Siglufjörður', 'Akureyri', 'Grenivík', 'Grímsey', 'Dalvík', 'Ólafsfjörður', 'Hrísey', 'Húsavík', 'Fosshóll', 'Laugar', 'Mývatn', 'Kópasker', 'Raufarhöfn', 'Þórshöfn', 'Bakkafjörður', 'Vopnafjörður', 'Egilsstaðir', 'Seyðisfjörður', 'Mjóifjörður', 'Borgarfjörður eystri', 'Reyðarfjörður', 'Eskifjörður', 'Neskaupstaður', 'Fáskrúðsfjörður', 'Stöðvarfjörður', 'Breiðdalsvík', 'Djúpivogur', 'Höfn', 'Höfn', 'Öræfi', 'Selfoss', 'Hveragerði', 'Þorlákshöfn', 'Ölfus', 'Eyrarbakki', 'Stokkseyri', 'Laugarvatn', 'Flúðir', 'Hella', 'Hvolsvöllur', 'Vík', 'Kirkjubæjarklaustur', 'Vestmannaeyjar']
+      city:
+        - "#{city_name}"
+      street_name:
+        - "#{street_prefix}#{street_suffix}"
+      street_address:
+        - "#{street_name} #{building_number}"
+      default_country: ['Ísland']
+
+    company:
+      smb: ['Viðgerðarþjónusta', 'Trésmíðaverkstæði', 'Bókhaldsþjónusta', 'Hárgreiðslustofa', 'Lögmannsstofa', 'Gullsmíðaverkstæði', 'Útgáfufélag', 'Prentunarþjónusta', 'Kaffivélaverkstæði', 'Leðuriðja', 'Fiskverkun', 'Kjötvinnsla', 'Bílasala']
+      smb_name: ['Sigurjóns', 'Gunnars', 'Sigríðar', 'Hönnu', 'Kristínar', 'Hrólfs', 'Stefáns']
+      locale: ['Vesturlands', 'Reykjavíkur', 'Austurlands', 'Akureyrar', 'Norðurlands', 'Akraness', 'Siglufjarðar', 'Reyðarfjarðar', 'Búðardals', 'Vestfjarða', 'Ísafjarðar', 'Eyjafjarðar']
+      coop_prefix: ['Kaupfélag', 'Pöntunarfélag', 'Félagsstofnun', 'Byggingafélag', 'Sparisjóður', 'Innkaupafélag', 'Bóksala', 'Kaffistofa', 'Dvalarheimili', 'Ræktunarsamband']
+      coop_middle: ['aldraðra', 'fatlaðra', 'sérfróðra', 'erlendra', 'hreyfihamlaðra', 'atvinnulausra']
+      coop_suffix: ['nörda', 'námsmanna', 'Borgfirðinga', 'stúdenta', 'sjómanna', 'Reykvíkinga', 'Kópavogsbúa', 'Hafnfirðinga', 'bifreiðaegenda', 'Eyfirðinga', 'Akureyringa', 'Skagamanna', 'Skagfirðinga', 'Húnvetninga', 'Austlendinga', 'fasteignasala']
+      org_prefix: ['Samtök', 'Félag', 'Vettvangur', 'Hreyfing', 'Landssamtök', 'Framkvæmdaráð', 'Samráðsvettvangur', 'Hagsmunasamtök']
+      org_suffix: ['lífeyissjóða', 'atvinnulífsins', 'atvinnurekenda', 'kvenna í atvinnurekstri', 'framsóknarmanna', 'pírata', 'öryrkja', 'smábátaeigenda', 'landeigenda', 'astmasjúklinga', 'jógakennara', 'kennara']
+      suffix: ['ehf', 'sf', 'slf', 'EHF', 'ehf.']
+      name:
+        - "#{smb} #{smb_name} #{suffix}"
+        - "#{smb} #{locale} #{suffix}"
+        - "#{smb} #{smb_name} og #{smb_name} #{suffix}"
+        - "#{coop_prefix} #{coop_middle} #{coop_suffix}"
+        - "#{coop_prefix} #{coop_suffix}"
+        - "#{org_prefix} #{org_suffix}"
+        - "#{coop_prefix} #{coop_middle} #{coop_suffix}"
+          
+    internet:
+      free_email: [gmail.com, yahoo.com, hotmail.com]
+      domain_suffix: [is, com, org, net]
+
+
+
+    name:
+      man_first_name: ['Jón', 'Sigurður', 'Guðmundur', 'Gunnar', 'Ólafur', 'Einar', 'Kristján', 'Magnús', 'Stefán', 'Jóhann', 'Björn', 'Árni', 'Arnar', 'Bjarni', 'Helgi', 'Halldór', 'Pétur', 'Kristinn', 'Daníel', 'Gísli', 'Ragnar', 'Þorsteinn', 'Guðjón', 'Sveinn', 'Páll', 'Birgir', 'Óskar', 'Aron', 'Davíð', 'Andri', 'Róbert', 'Haukur', 'Jóhannes', 'Tómas', 'Karl', 'Bjarki', 'Ágúst', 'Ásgeir', 'Viktor', 'Haraldur', 'Alexander', 'Kjartan', 'Atli', 'Sigurjón', 'Brynjar', 'Friðrik', 'Þórður', 'Benedikt', 'Hörður', 'Hilmar', 'Baldur', 'Jónas', 'Rúnar', 'Egill', 'Eiríkur', 'Kristófer', 'Kári', 'Sindri', 'Björgvin', 'Guðni', 'Sverrir', 'Sævar', 'Örn', 'Ómar', 'Hlynur', 'Snorri', 'Ingvar', 'Elvar', 'Reynir', 'Ingólfur', 'Ísak', 'Jakob', 'Ívar', 'Ari', 'Garðar', 'Þórir', 'Þórarinn', 'Grétar', 'Hafsteinn', 'Matthías', 'Arnór', 'Tryggvi', 'Anton', 'Eyþór', 'Axel', 'Valdimar', 'Vilhjálmur', 'Steinar', 'Ingi', 'Birkir', 'Hjalti', 'Dagur', 'Hermann', 'Gunnlaugur', 'Hjörtur', 'Hákon', 'Þorvaldur', 'Emil', 'Hannes', 'Skúli']
+      woman_first_name: ['Guðrún', 'Anna', 'Kristín', 'Sigríður', 'Margrét', 'Helga', 'Sigrún', 'Ingibjörg', 'Jóhanna', 'María', 'Elín', 'Katrín', 'Hildur', 'Ragnheiður', 'Guðbjörg', 'Ásta', 'Lilja', 'Erla', 'Eva', 'Guðný', 'Elísabet', 'Ólöf', 'Steinunn', 'Auður', 'Hulda', 'Sara', 'Sólveig', 'Bryndís', 'Kolbrún', 'Inga', 'Berglind', 'Þórunn', 'Ásdís', 'Unnur', 'Þóra', 'Íris', 'Hrafnhildur', 'Jóna', 'Rakel', 'Birna', 'Þórdís', 'Halldóra', 'Erna', 'Linda', 'Karen', 'Edda', 'Hanna', 'Valgerður', 'Jónína', 'Hafdís', 'Sigurbjörg', 'Guðlaug', 'Sandra', 'Telma', 'Thelma', 'Harpa', 'Kristjana', 'Tinna', 'Lára', 'Brynja', 'Hjördís', 'Helena', 'Andrea', 'Arna', 'Stefanía', 'Hrefna', 'Aðalheiður', 'Hólmfríður', 'Ragnhildur', 'Rósa', 'Björg', 'Aníta', 'Emilía', 'Sóley', 'Áslaug', 'Halla', 'Laufey', 'Ágústa', 'Dagný', 'Sunna', 'Sigurlaug', 'Ingunn', 'Elsa', 'Marta', 'Agnes', 'Soffía', 'Þorbjörg', 'Rannveig', 'Elva', 'Svava', 'Ása', 'Ester', 'Esther', 'Júlía', 'Vigdís', 'Fanney', 'Eyrún', 'Ragna', 'Herdís', 'Rebekka', 'Alexandra', 'Þuríður']
+      man_last_name: ['Jónsson', 'Sigurðsson', 'Guðmundsson', 'Gunnarsson', 'Ólafsson', 'Einarsson', 'Kristjánsson', 'Magnússson', 'Stefánsson', 'Jóhannsson', 'Björnsson', 'Árnason', 'Arnarsson', 'Bjarnason', 'Helgason', 'Halldórsson', 'Pétursson', 'Kristinsson', 'Daníelsson', 'Gíslason', 'Ragnarsson', 'Þorsteinsson', 'Guðjónsson', 'Sveinsson', 'Pálsson', 'Birgisson', 'Óskarsson', 'Aronsson', 'Davíðsson', 'Andrason', 'Róbertsson', 'Hauksson', 'Jóhannesson', 'Tómasson', 'Karlsson', 'Bjarkason', 'Ágústsson', 'Ásgeirsson', 'Viktorsson', 'Haraldsson', 'Alexandersson', 'Kjartansson', 'Atlason', 'Sigurjónsson', 'Brynjarsson', 'Friðriksson', 'Þórðarson', 'Benediktsson', 'Harðarson', 'Hilmarsson', 'Baldursson', 'Jónassson', 'Rúnarsson', 'Egilsson', 'Eiríksson', 'Kristófersson', 'Kárason', 'Sindrason', 'Björgvinsson', 'Guðnason', 'Sverrisson', 'Sævarsson', 'Arnarsson', 'Ómarsson', 'Hlynsson', 'Snorason', 'Ingvarsson', 'Elvarsson', 'Reynisson', 'Ingólfsson', 'Ísaksson', 'Jakobsson', 'Ívarsson', 'Arason', 'Garðarsson', 'Þórisson', 'Þórarinnsson', 'Grétarsson', 'Hafsteinnsson', 'Matthíassson', 'Arnórsson', 'Tryggvason', 'Antonsson', 'Eyþórsson', 'Axelsson', 'Valdimarsson', 'Vilhjálmursson', 'Steinarsson', 'Ingason', 'Birkirsson', 'Hjaltason', 'Dagsson', 'Hermannsson', 'Gunnlaugsson', 'Hjartarson', 'Hákonsson', 'Þorvaldsson', 'Emilsson', 'Hannesson', 'Skúlason']
+      woman_last_name: ['Jónsdóttir', 'Sigurðsdóttir', 'Guðmundsdóttir', 'Gunnarsdóttir', 'Ólafsdóttir', 'Einarsdóttir', 'Kristjánsdóttir', 'Magnússdóttir', 'Stefánsdóttir', 'Jóhannsdóttir', 'Björnsdóttir', 'Árnadóttir', 'Arnarsdóttir', 'Bjarnadóttir', 'Helgadóttir', 'Halldórsdóttir', 'Pétursdóttir', 'Kristinsdóttir', 'Daníelsdóttir', 'Gísladóttir', 'Ragnarsdóttir', 'Þorsteinsdóttir', 'Guðjónsdóttir', 'Sveinsdóttir', 'Pálsdóttir', 'Birgisdóttir', 'Óskarsdóttir', 'Aronsdóttir', 'Davíðsdóttir', 'Andradóttir', 'Róbertsdóttir', 'Hauksdóttir', 'Jóhannesdóttir', 'Tómasdóttir', 'Karlsdóttir', 'Bjakadóttir', 'Ágústsdóttir', 'Ásgeirsdóttir', 'Viktorsdóttir', 'Haraldsdóttir', 'Alexandersdóttir', 'Kjartansdóttir', 'Atladóttir', 'Sigurjónsdóttir', 'Brynjarsdóttir', 'Friðriksdóttir', 'Þórðardóttir', 'Benediktsdóttir', 'Harðardóttir', 'Hilmarsdóttir', 'Baldursdóttir', 'Jónassdóttir', 'Rúnarsdóttir', 'Egilsdóttir', 'Eiríksdóttir', 'Kristófersdóttir', 'Káradóttir', 'Sindradóttir', 'Björgvinsdóttir', 'Guðnadóttir', 'Sverrisdóttir', 'Sævarsdóttir', 'Arnarsdóttir', 'Ómarsdóttir', 'Hlynsdóttir', 'Snoradóttir', 'Ingvarsdóttir', 'Elvarsdóttir', 'Reynisdóttir', 'Ingólfsdóttir', 'Ísaksdóttir', 'Jakobsdóttir', 'Ívarsdóttir', 'Aradóttir', 'Garðarsdóttir', 'Þórisdóttir', 'Þórarinnsdóttir', 'Grétarsdóttir', 'Hafsteinnsdóttir', 'Matthíassdóttir', 'Arnórsdóttir', 'Tryggvadóttir', 'Antonsdóttir', 'Eyþórsdóttir', 'Axelsdóttir', 'Valdimarsdóttir', 'Vilhjálmursdóttir', 'Steinarsdóttir', 'Ingadóttir', 'Birkirsdóttir', 'Hjaltadóttir', 'Dagsdóttir', 'Hermannsdóttir', 'Gunnlaugsdóttir', 'Hjartardóttir', 'Hákonsdóttir', 'Þorvaldsdóttir', 'Emilsdóttir', 'Hannesdóttir', 'Skúladóttir']
+      family_name: ['Waage', 'Breiðdal', 'Bender', 'Zoega', 'Thorarensen', 'Blöndal', 'Hansen', 'Olsen', 'Möller', 'Thoroddsen', 'Andersen', 'Nielsen', 'Bergmann', 'Thorlacius', 'Briem', 'Jensen', 'Hjaltested', 'Petersen', 'Hjaltalín', 'Norðdahl', 'Fjeldsted', 'Scheving', 'Kvaran', 'Diego']
+      title:
+        descriptor: ['Yfirmaður', 'Forstöðumaður', 'Svæðisstjóri', 'Deildarstjóri', 'Innheimtustjóri', 'Kerfisfræðingur', 'Sendierindreki', 'Umsjónarmaður', 'Gæðastjóri', 'Fræþslufulltrúi', 'Ráðunautur', 'Ráðgjafi', 'Útibússtjóri', 'Leiðbeinandi', 'Þróunarstjóri']
+        level: ['vöruþróunnar', 'gjaldeyismála', 'mannauðs', 'nýtni', 'gagnagrunns', 'æskulýðsmiðstöðva', 'atvinnuþróunnar']
+        job: ['á Íslandi', 'og jafnréttismála', 'í Evrópu', 'á alþjóðavísu', 'á heilbrigðissviði', 'á háskólastigi', 'í opinberri stjórnsýslu', 'kennara', 'atvinnuleitenda', 'erlendra bóka']
+      name:
+        - "#{man_first_name} #{man_last_name}"
+        - "#{man_first_name} #{man_last_name}"
+        - "#{man_first_name} #{man_last_name}"
+        - "#{man_first_name} #{family_name}"
+        - "#{man_first_name} #{man_last_name} #{family_name}"
+        - "#{woman_first_name} #{woman_last_name}"
+        - "#{woman_first_name} #{woman_last_name}"
+        - "#{woman_first_name} #{woman_last_name}"
+        - "#{woman_first_name} #{family_name}"
+        - "#{woman_first_name} #{man_last_name} #{family_name}"
+
+    phone_number:
+      formats: [
+      '5##-1###', '5##-2###', '5##-3###', '5##-4###', '5##-5###', '5##-6###', '5##-7###', '5##-8###', '5##-9###',
+      '4##-1###', '4##-2###', '4##-3###', '4##-4###', '4##-5###', '4##-6###', '4##-7###', '4##-8###', '4##-9###'
+      ]
+    cell_phone:
+        formats: [
+        '6##-1###', '6##-2###', '6##-3###', '6##-4###', '6##-5###', '6##-6###', '6##-7###', '6##-8###', '6##-9###',
+        '7##-1###', '7##-2###', '7##-3###', '7##-4###', '7##-5###', '7##-6###', '7##-7###', '7##-8###', '7##-9###',
+        '8##-1###', '8##-2###', '8##-3###', '8##-4###', '8##-5###', '8##-6###', '8##-7###', '8##-8###', '8##-9###'
+        ]
+
+    business:
+      credit_card_types: ['visa', 'mastercard', 'americanexpress']
+
+    commerce:
+      color: ['rauður', 'grænn', 'blár', 'gulur', 'fjólublár', 'mintugrænn', 'blágrænn', 'hvítur', 'svartur', 'appelsínugulur', 'bleikur', 'grár', 'vínrauður', 'grár', 'purpurarauður', 'steingrár', 'silfurgrár', 'ljósgrár', 'skærgrænn']
+      department: ['Bækur', 'Kvikmyndir, tónlist og tölvuleikir', 'Raftæki og tölvur', 'Heimilistæki', 'Lífrænar vörur', 'Leikföng', 'Fatnaður, skór og skartgripir', 'Íþróttir og útivera', 'Bílavörur'] 

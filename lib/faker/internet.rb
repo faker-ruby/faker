@@ -61,18 +61,36 @@ module Faker
       end
 
       def fix_umlauts(string)
-        string.gsub(/[äöüß]/i) do |match|
-            case match.downcase
-                when "ä" 'ae'
-                when "ö" 'oe'
-                when "ü" 'ue'
-                when "ß" 'ss'
-            end
-        end
+        string = string.gsub('ä','a')
+        string = string.gsub('Ä','a')
+        string = string.gsub('ö','o')
+        string = string.gsub('Ö','ö')
+        string = string.gsub('ü','u')
+        string = string.gsub('Ü','u')
+        string = string.gsub('ß','sz')
+        string = string.gsub('þ','th')
+        string = string.gsub('Þ','th')
+        string = string.gsub('æ','ae')
+        string = string.gsub('Æ','æ')
+        string = string.gsub('á','a')
+        string = string.gsub('Á','a')
+        string = string.gsub('ó','o')
+        string = string.gsub('Ó','o')
+        string = string.gsub('é','e')
+        string = string.gsub('É','e')
+        string = string.gsub('ú','u')
+        string = string.gsub('Ú','u')
+        string = string.gsub('í','i')
+        string = string.gsub('Í','i')
+        string = string.gsub('ý','y')
+        string = string.gsub('Ý','y')
+        string = string.gsub('ð','d')
+        string = string.gsub('Ð','d')
+        return string
       end
 
       def domain_word
-        Company.name.split(' ').first.gsub(/\W/, '').downcase
+        fix_umlauts(Company.name.downcase).split(' ').first.gsub(/\W/,'')
       end
 
       def domain_suffix
