@@ -16,7 +16,7 @@ module Faker
 
       def user_name(specifier = nil, separators = %w(. _))
         if specifier.kind_of? String
-          return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
+          return specifier.scan(/[[:alnum:]_]+/).shuffle.join(separators.sample).downcase
         elsif specifier.kind_of? Integer
           tries = 0 # Don't try forever in case we get something like 1_000_000.
           begin
@@ -37,10 +37,10 @@ module Faker
         end
 
         fix_umlauts([
-          Proc.new { Name.first_name.gsub(/\W/, '').downcase },
+          Proc.new { Name.first_name.gsub(/[^[:alnum:]_]/, '').downcase },
           Proc.new {
             [ Name.first_name, Name.last_name ].map {|n|
-              n.gsub(/\W/, '')
+              n.gsub(/[^[:alnum:]_]/, '')
             }.join(separators.sample).downcase }
         ].sample.call)
       end
@@ -72,7 +72,7 @@ module Faker
       end
 
       def domain_word
-        Company.name.split(' ').first.gsub(/\W/, '').downcase
+        Company.name.gsub(/[^[:alnum:]_]/, '').downcase
       end
 
       def domain_suffix

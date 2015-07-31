@@ -7,7 +7,7 @@ class TestFakerName < Test::Unit::TestCase
   end
   
   def test_name
-    assert @tester.name.match(/(\w+\.? ?){2,3}/)
+    assert @tester.name.match(/([[:alnum:]_]+\.? ?){2,3}/)
   end
   
   def test_prefix
