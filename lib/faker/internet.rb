@@ -3,11 +3,11 @@ module Faker
   class Internet < Base
     class << self
       def email(name = nil)
-        [ user_name(name), domain_name ].join('@')
+        [user_name(name), domain_name].join('@')
       end
 
       def free_email(name = nil)
-        [ user_name(name), fetch('internet.free_email') ].join('@')
+        [user_name(name), fetch('internet.free_email')].join('@')
       end
 
       def safe_email(name = nil)
@@ -36,13 +36,12 @@ module Faker
           return result[0...specifier.max]
         end
 
-        fix_umlauts([
-          Proc.new { Name.first_name.gsub(/\W/, '').downcase },
-          Proc.new {
-            [ Name.first_name, Name.last_name ].map {|n|
-              n.gsub(/\W/, '')
-            }.join(separators.sample).downcase }
-        ].sample.call)
+        [
+          Char.prepare(Name.first_name),
+          [Name.first_name, Name.last_name].map{ |name|
+            Char.prepare name
+          }.join(separators.sample)
+        ].sample
       end
 
       def password(min_length = 8, max_length = 16)
@@ -57,22 +56,18 @@ module Faker
       end
 
       def domain_name
-        [ fix_umlauts(domain_word), domain_suffix ].join('.')
+        [Char.prepare(domain_word), domain_suffix].join('.')
       end
 
       def fix_umlauts(string)
-        string.gsub(/[äöüß]/i) do |match|
-            case match.downcase
-                when "ä" 'ae'
-                when "ö" 'oe'
-                when "ü" 'ue'
-                when "ß" 'ss'
-            end
-        end
+        Char.fix_umlauts string
       end
 
       def domain_word
-        Company.name.split(' ').first.gsub(/\W/, '').downcase
+        if %w(uk).include? Config.locale
+          return Char.prepare Company.name.split(' ')[1]
+        end
+        Char.prepare Company.name.split(' ').first
       end
 
       def domain_suffix

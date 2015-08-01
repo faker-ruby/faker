@@ -183,3 +183,5 @@ require 'faker/book'
 
 require 'extensions/array'
 require 'extensions/symbol'
+
+require 'helpers/char'
