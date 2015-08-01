@@ -5,7 +5,7 @@ module Faker
       # Generates a 10 digit NPI (National Provider Identifier
       # issued to health care providers in the United States)
       def npi
-        Random.new.rand(10 ** 10).to_s
+        Random.new.rand(10 ** 10).to_s.rjust(10, '0')
       end
 
       # By default generates 10 sign isbn code in format 123456789-X
