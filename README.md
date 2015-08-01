@@ -8,6 +8,8 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
+NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
+
 Installing
 ----------
 ```bash
