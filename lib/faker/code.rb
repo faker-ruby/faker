@@ -1,13 +1,13 @@
 module Faker
   class Code < Base
     class << self
-            
-      # Generates a 10 digit NPI (National Provider Identifier 
-      # issued to health care providers in the United States) 
+
+      # Generates a 10 digit NPI (National Provider Identifier
+      # issued to health care providers in the United States)
       def npi
         Random.new.rand(10 ** 10).to_s
       end
-        
+
       # By default generates 10 sign isbn code in format 123456789-X
       # You can pass 13 to generate new 13 sign code
       def isbn(base = 10)
