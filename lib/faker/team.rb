@@ -12,7 +12,7 @@ module Faker
       end
 
       def state
-        fetch('faker.address.state').titleize
+        fetch('address.state')
       end
     end
 
