@@ -92,6 +92,15 @@ en:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
 
+    university:
+      prefix: [The, Northern, North, Western, West, Southern, South, Eastern, East]
+      suffix: [University, Institute, College, Academy]
+      name:
+        - "#{Name.last_name} #{University.suffix}"
+        - "#{University.prefix} #{Name.last_name} #{University.suffix}"
+        - "#{University.prefix} #{Name.last_name}"
+        - "#{University.prefix} #{Address.state} #{University.suffix}"
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, biz, info, name, net, org, io, co]
