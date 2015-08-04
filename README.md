@@ -500,6 +500,16 @@ Faker::Book.publisher #=> "Opus Reader"
 
 ```
 
+###Faker::University
+------------------
+
+```ruby
+
+# Random University Name
+Faker::University.name #=> "South Texas College"
+
+```
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
