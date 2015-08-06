@@ -15,6 +15,10 @@ class TestFakerBook < Test::Unit::TestCase
   end
 
   def test_publisher
-    assert @tester.author.match(/(\w+\.? ?){2,3}/)
+    assert @tester.publisher.match(/(\w+\.? ?){2,3}/)
+  end
+
+  def test_genre
+    assert @tester.genre.match(/(\w+\.? ?){2,3}/)
   end
 end
