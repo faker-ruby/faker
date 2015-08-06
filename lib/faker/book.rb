@@ -14,6 +14,10 @@ module Faker
       def publisher
         fetch('book.publisher')
       end
+
+      def genre
+        fetch('book.genre')
+      end
     end
   end
 end
