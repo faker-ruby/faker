@@ -475,6 +475,17 @@ Faker::Team.sport #=> "lacrosse"
 
 ```
 
+###Faker::Nation
+-----------------
+
+```ruby
+
+# Random Nationality
+Faker::Nation.nationality #=> "Armenians"
+
+# Random Language
+Faker::Nation.language #=> "English"
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
