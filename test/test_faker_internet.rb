@@ -135,6 +135,12 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.url('domain.com', '/username').match(/^http:\/\/domain\.com\/username$/)
   end
 
+  def test_uri
+    assert @tester.uri(:git).match(/^git:\/\//)
+    assert @tester.uri(:git, 'example.org').match(/^git:\/\/example\.org/)
+    assert @tester.uri(:git, 'example.org', '/path').match(/^git:\/\/example\.org\/path$/)
+  end
+
   def test_device_token
     assert_equal 64, @tester.device_token.size
   end

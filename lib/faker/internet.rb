@@ -98,6 +98,10 @@ module Faker
         "http://#{host}#{path}"
       end
 
+      def uri(protocol, host = domain_name, path = "/#{user_name}")
+        "#{protocol}://#{host}#{path}"
+      end
+
       def slug(words = nil, glue = nil)
         glue ||= %w[- _ .].sample
         (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
