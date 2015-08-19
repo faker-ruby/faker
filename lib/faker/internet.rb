@@ -44,14 +44,14 @@ module Faker
         ].sample
       end
 
-      def password(min_length = 8, max_length = 16)
+      def password(min_length = 8, max_length = (min_length * 2))
         temp = Lorem.characters(min_length)
         diff_length = max_length - min_length
         if diff_length > 0
           diff_rand = rand(diff_length + 1)
           temp += Lorem.characters(diff_rand)
         end
-        temp = temp[0..min_length] if min_length > 0
+        temp = temp[0..(min_length + diff_rand)] if min_length > 0
         return temp
       end
 
