@@ -484,7 +484,6 @@ Faker::Team.sport #=> "lacrosse"
 
 ```
 
-<<<<<<< HEAD
 ###Faker::Workout
 -----------------
 
@@ -506,7 +505,6 @@ for example), Faker uses the I18n gem to store strings (like state names) and
 formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
 allowing you to get different formats by switching locales.  Just set
 Faker::Config.locale to the locale you want, and Faker will take care of the
-=======
 ###Faker::Book
 ------------------
 
@@ -533,7 +531,6 @@ Faker::University.name #=> "South Texas College"
 
 ```
 
->>>>>>> 210981ba67818d7a57c5042d6a0698f8140a10e1
 Customization
 ------------
 Since you may want to make addresses and other types of data look different

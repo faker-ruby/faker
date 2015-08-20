@@ -18,6 +18,5 @@ module Faker
         ]
       end
     end
-
   end
 end
