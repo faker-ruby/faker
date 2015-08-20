@@ -31,7 +31,7 @@ fr:
       name:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name} et #{Name.last_name}"
-          
+
     internet:
       free_email: [gmail.com, yahoo.fr, hotmail.fr]
       domain_suffix: [com, fr, eu, info, name, net, org]
@@ -53,3 +53,8 @@ fr:
 
     phone_number:
       formats: ['01########', '02########', '03########', '04########', '05########', '06########', '07########', '+33 1########', '+33 2########', '+33 3########', '+33 4########', '+33 5########', '+33 6########', '+33 7########']
+
+    book:
+      title: ['La Discipline des orphelins', 'Le Couloir de tous les mépris', "L'Odeur du sanglier", 'La Promise du voyeur', "L'Odyssée invisible", 'La Soumission comme passion', 'Le Siècle de la rue voisine', 'Le Désir des femmes fortes', 'Pourquoi je mens ?', 'La Peau des savants', 'La progéniture du mal']
+      author: "#{Name.name}"
+      publisher: ['Éditions du Soleil', 'La Perdrix', 'Les Éditions jaune turquoise', 'Bordel père et fils', 'Au lecteur éclairé', 'Lire en dormant']
