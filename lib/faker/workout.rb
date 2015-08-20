@@ -12,9 +12,9 @@ module Faker
       end
                     
       def cardio 
-        [ "#{rand(1..3)}0 minutes on the elliptical",
-          "#{rand(1..3)}0 minutes on the treadmill",
-          "Jog for #{rand(1..3)}0 minutes"
+        [ "#{rand(3)+1}0 minutes on the elliptical",
+          "#{rand(3)+1}0 minutes on the treadmill",
+          "Jog for #{rand(3)+1}0 minutes"
         ]
       end
     end
