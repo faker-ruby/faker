@@ -8,6 +8,8 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
+NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
+
 Installing
 ----------
 ```bash
@@ -129,6 +131,8 @@ Faker::Company.suffix #=> "Group"
 # Generate a buzzword-laden catch phrase.
 Faker::Company.catch_phrase #=> "Business-focused coherent parallelism"
 
+Faker::Company.buzzword #=> "Business-focused"
+
 # When a straight answer won't do, BS to the rescue!
 Faker::Company.bs #=> "empower one-to-one web-readiness"
 
@@ -138,6 +142,8 @@ Faker::Company.duns_number #=> "08-341-3736"
 
 # Get a random company logo url in PNG format.
 Faker::Company.logo #=> "http://pigment.github.com/fake-logos/logos/medium/color/5.png"
+
+Faker::Company.swedish_organisation_number #=> "7718797652"
 
 ```
 
@@ -302,6 +308,20 @@ Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-o
 # Required parameter: digits
 Faker::Number.number(10) #=> "1968353479"
 
+# Required parameter: l_digits
+Faker::Number.decimal(2) #=> "11.88"
+
+Faker::Number.decimal(2, 3) #=> "18.843"
+
+# Required parameter: digits
+Faker::Number.hexadecimal(3) #=> "e74"
+
+Faker::Number.between(1, 10) #=> 7
+
+Faker::Number.positive #=> 235.59238499107653
+
+Faker::Number.negative #=> -4480.042585669558
+
 Faker::Number.digit #=> "1"
 
 ```
@@ -456,11 +476,15 @@ Faker::Team.creature #=> "gooses"
 # Random Team Name created from random US State (Faker::Address.state) prepended to a random Team Creature
 Faker::Team.name #=> "Oregon vixens"
 
+# Random Team State
+Faker::Team.state #=> "Oregon"
+
 # Random Team Sport
 Faker::Team.sport #=> "lacrosse"
 
 ```
 
+<<<<<<< HEAD
 ###Faker::Workout
 -----------------
 
@@ -482,6 +506,34 @@ for example), Faker uses the I18n gem to store strings (like state names) and
 formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
 allowing you to get different formats by switching locales.  Just set
 Faker::Config.locale to the locale you want, and Faker will take care of the
+=======
+###Faker::Book
+------------------
+
+```ruby
+
+# Random Book Title
+Faker::Book.title #=> "The Odd Sister"
+
+# Random Author
+Faker::Book.author #=> "Alysha Olsen"
+
+# Random Publisher
+Faker::Book.publisher #=> "Opus Reader"
+
+```
+
+###Faker::University
+------------------
+
+```ruby
+
+# Random University Name
+Faker::University.name #=> "South Texas College"
+
+```
+
+>>>>>>> 210981ba67818d7a57c5042d6a0698f8140a10e1
 Customization
 ------------
 Since you may want to make addresses and other types of data look different

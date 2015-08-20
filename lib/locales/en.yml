@@ -92,6 +92,15 @@ en:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
 
+    university:
+      prefix: [The, Northern, North, Western, West, Southern, South, Eastern, East]
+      suffix: [University, Institute, College, Academy]
+      name:
+        - "#{Name.last_name} #{University.suffix}"
+        - "#{University.prefix} #{Name.last_name} #{University.suffix}"
+        - "#{University.prefix} #{Name.last_name}"
+        - "#{University.prefix} #{Address.state} #{University.suffix}"
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, biz, info, name, net, org, io, co]
@@ -149,7 +158,7 @@ en:
       ingverb: [backing up,bypassing,hacking,overriding,compressing,copying,navigating,indexing,connecting,generating,quantifying,calculating, synthesizing,transmitting,programming,parsing]
 
     app:
-      name: ['Redhold', 'Treeflex', 'Trippledex', 'Kanlam', 'Bigtax', 'Daltfresh', 'Toughjoyfax', 'Mat Lam Tam', 'Otcom', 'Tres-Zap', 'Y-Solowarm', 'Tresom', 'Voltsillam', 'Biodex', 'Greenlam', 'Viva', 'Matsoft', 'Temp', 'Zoolab', 'Subin', 'Rank', 'Job', 'Stringtough', 'Tin', 'It', 'Home Ing', 'Zamit', 'Sonsing', 'Konklab', 'Alpha', 'Latlux', 'Voyatouch', 'Alphazap', 'Holdlamis', 'Zaam-Dox', 'Sub-Ex', 'Quo Lux', 'Bamity', 'Ventosanzap', 'Lotstring', 'Hatity', 'Tempsoft', 'Overhold', 'Fixflex', 'Konklux', 'Zontrax', 'Tampflex', 'Span', 'Namfix', 'Transcof', 'Stim', 'Fix San', 'Sonair', 'Stronghold', 'Fintone', 'Y-find', 'Opela', 'Lotlux', 'Ronstring', 'Zathin', 'Duobam', 'Keylex']
+      name: ['Redhold', 'Treeflex', 'Trippledex', 'Kanlam', 'Bigtax', 'Daltfresh', 'Toughjoyfax', 'Mat Lam Tam', 'Otcom', 'Tres-Zap', 'Y-Solowarm', 'Tresom', 'Voltsillam', 'Biodex', 'Greenlam', 'Viva', 'Matsoft', 'Temp', 'Zoolab', 'Subin', 'Rank', 'Job', 'Stringtough', 'Tin', 'It', 'Home Ing', 'Zamit', 'Sonsing', 'Konklab', 'Alpha', 'Latlux', 'Voyatouch', 'Alphazap', 'Holdlamis', 'Zaam-Dox', 'Sub-Ex', 'Quo Lux', 'Bamity', 'Ventosanzap', 'Lotstring', 'Hatity', 'Tempsoft', 'Overhold', 'Fixflex', 'Konklux', 'Zontrax', 'Tampflex', 'Span', 'Namfix', 'Transcof', 'Stim', 'Fix San', 'Sonair', 'Stronghold', 'Fintone', 'Y-find', 'Opela', 'Lotlux', 'Ronstring', 'Zathin', 'Duobam', 'Keylex', 'Andalax', 'Solarbreeze', 'Cookley', 'Vagram', 'Aerified', 'Pannier', 'Asoka', 'Regrant', 'Wrapsafe', 'Prodder', 'Bytecard', 'Bitchip', 'Veribet', 'Gembucket', 'Cardguard', 'Bitwolf', 'Cardify', 'Domainer', 'Flowdesk', 'Flexidy']
       version: ['0.#.#', '0.##', '#.##', '#.#', '#.#.#']
       author:
         - "#{Name.name}"
@@ -176,5 +185,8 @@ en:
 
     workout:
       exercise: [Arnold Dumbbell Press, Ab Crunch Machine, Barbell Shrug, Bench Dips, Bench Press, Cable Crunch, Cable Chest Press, Clean Pull, Deadlift, Dip Machine, Dips, Dumbbell Bicep Curl, Dumbbell Flyes, Dumble Rows, Exercise Ball Crunch, Front Dumbbell Raise, Front Incline Dumbbell Raise, Good Morning, Hack Squat, Hang Clean, Military Press, Plank, Squat ]
-        
 
+    book:
+      title: ['A Year of Walking', 'Candy For Two', 'Walking and Running', 'The Frog Catchers Field Manual', 'Tomato in the Window', 'A Dozen Heros', 'Finding a New Sun', 'Stop Asking, Just Do', 'What Lives on Pluto', 'Fishing With Chips', 'No Lonely Stars', 'Free Parking', 'Next Day Previous Night', 'Burning Water', 'Slicker Than Rain', 'Future Discretions', 'Covered and Warm', 'The Odd Sister', 'Falling Flags', 'Keyboard For Hire', 'Ready, Set, Die', 'Same Way Through', 'The Zookeeper and Her Tiger']
+      author: "#{Name.name}"
+      publisher: ['Parker Publishing', 'Page Crunch', 'Word Burner', 'Printed Works', 'Opus Reader', 'Booklet', 'Offprint', 'Bookfolio', 'Book Crunch', 'Page Feeder']

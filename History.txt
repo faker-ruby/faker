@@ -1,3 +1,16 @@
+== 1.5.0 2015-08-17
+* Added logos
+* Added Slack Emoji
+* Updated image generators
+* Updated Dutch Locale
+* Added support for generating RGB values, HSL colors, alpha channel, and HSLA colors
+* Added locale for Uganda
+* Added basic Ukrainian support
+* Added university name generator
+* Updated documentation
+* Updated a variety of locales
+* Various fixes
+
 == 1.4.3 2014-08-15
 * Updated Russian locale
 * Added EIN generator
