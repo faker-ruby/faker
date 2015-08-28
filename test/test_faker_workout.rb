@@ -5,7 +5,7 @@ class TestFakerWorkout < Test::Unit::TestCase
      @workout = Faker::Workout
      @cardio  = @workout.cardio
   end
-  
+
   def test_cardio
     assert @cardio.size == 3    
     @cardio.each do |element|
@@ -13,9 +13,9 @@ class TestFakerWorkout < Test::Unit::TestCase
        assert element != ""
     end        
   end  
-  
+
   def test_exercise
     assert @workout.exercise.match(/\w+/)
   end
-  
+
 end
