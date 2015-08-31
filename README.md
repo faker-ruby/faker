@@ -141,7 +141,7 @@ Faker::Company.ein #=> "34-8488813"
 Faker::Company.duns_number #=> "08-341-3736"
 
 # Get a random company logo url in PNG format.
-Faker::Company.logo #=> "http://pigment.github.com/fake-logos/logos/medium/color/5.png"
+Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/color/5.png"
 
 Faker::Company.swedish_organisation_number #=> "7718797652"
 
@@ -289,15 +289,15 @@ Faker::Name.title #=> "Legacy Creative Director"
 
 ```ruby
 
-Faker::Avatar.image #=> "http://robohash.org/sitsequiquia.png?size=300x300"
+Faker::Avatar.image #=> "https://robohash.org/sitsequiquia.png?size=300x300"
 
-Faker::Avatar.image("my-own-slug") #=> "http://robohash.org/my-own-slug.png?size=300x300"
+Faker::Avatar.image("my-own-slug") #=> "https://robohash.org/my-own-slug.png?size=300x300"
 
-Faker::Avatar.image("my-own-slug", "50x50") #=> "http://robohash.org/my-own-slug.png?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50") #=> "https://robohash.org/my-own-slug.png?size=50x50"
 
-Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "http://robohash.org/my-own-slug.jpg?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "https://robohash.org/my-own-slug.jpg?size=50x50"
 
-Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-own-slug.bmp?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "https://robohash.org/my-own-slug.bmp?size=50x50"
 ```
 
 ###Faker::Number
