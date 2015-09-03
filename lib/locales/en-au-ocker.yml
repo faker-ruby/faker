@@ -6,9 +6,9 @@
 en-au-ocker:
   faker:
     name:
-      first_name: [Charlotte, Ava, Chloe, Emily, Olivia, Zoe, Lily, Sophie, Amelia, Sofia, Ella, Isabella, Ruby, Sienna, Mia+3, Grace, Emma, Ivy, Layla, Abigail, Isla, Hannah, Zara, Lucy, Evie, Annabelle, Madison, Alice, Georgia, Maya, Madeline, Audrey, Scarlett, Isabelle, Chelsea, Mila, Holly, Indiana, Poppy, Harper, Sarah, Alyssa, Jasmine, Imogen, Hayley, Pheobe, Eva, Evelyn, Mackenzie, Ayla, Oliver, Jack, Jackson, William, Ethan, Charlie, Lucas, Cooper, Lachlan, Noah, Liam, Alexander, Max, Isaac, Thomas, Xavier, Oscar, Benjamin, Aiden, Mason, Samuel, James, Levi, Riley, Harrison, Ryan, Henry, Jacob, Joshua, Leo, Zach, Harry, Hunter, Flynn, Archie, Tyler, Elijah, Hayden, Jayden, Blake, Archer, Ashton, Sebastian, Zachery, Lincoln, Mitchell, Luca, Nathan, Kai, Connor, Tom, Nigel, Matt, Sean]
+      first_name: [Charlene, Bruce, Charlotte, Ava, Chloe, Emily, Olivia, Zoe, Lily, Sophie, Amelia, Sofia, Ella, Isabella, Ruby, Sienna, Mia+3, Grace, Emma, Ivy, Layla, Abigail, Isla, Hannah, Zara, Lucy, Evie, Annabelle, Madison, Alice, Georgia, Maya, Madeline, Audrey, Scarlett, Isabelle, Chelsea, Mila, Holly, Indiana, Poppy, Harper, Sarah, Alyssa, Jasmine, Imogen, Hayley, Pheobe, Eva, Evelyn, Mackenzie, Ayla, Oliver, Jack, Jackson, William, Ethan, Charlie, Lucas, Cooper, Lachlan, Noah, Liam, Alexander, Max, Isaac, Thomas, Xavier, Oscar, Benjamin, Aiden, Mason, Samuel, James, Levi, Riley, Harrison, Ryan, Henry, Jacob, Joshua, Leo, Zach, Harry, Hunter, Flynn, Archie, Tyler, Elijah, Hayden, Jayden, Blake, Archer, Ashton, Sebastian, Zachery, Lincoln, Mitchell, Luca, Nathan, Kai, Connor, Tom, Nigel, Matt, Sean]
       last_name: [Smith, Jones, Williams, Brown, Wilson, Taylor, Morton, White, Martin, Anderson, Thompson, Nguyen, Thomas, Walker, Harris, Lee, Ryan, Robinson, Kelly, King, Rausch, Ridge, Connolly, LeQuesne]
-      ocker_first_name: [Bazza, Bluey, Davo, Johno, Shano, Shazza]
+      ocker_first_name: [Bazza, Bluey, Davo, Johno, Shano, Shazza, Wazza, Charl, Darl]
     company:
       suffix: [Pty Ltd, and Sons, Corp, Group, Brothers, Partners]
     internet:
