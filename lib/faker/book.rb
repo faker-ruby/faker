@@ -25,6 +25,9 @@ module Faker
         isbn_without_checksum + calculate_checkdigit(isbn_without_checksum)
       end
 
+      alias_method :isbn, :isbn_ten
+      alias_method :asin, :isbn_ten
+
       private
 
       def calculate_checkdigit(raw_isbn)
@@ -47,9 +50,6 @@ module Faker
         end
         check_digit.to_s
       end
-
-      alias_method :isbn, :isbn_ten
-      alias_method :asin, :isbn_ten
     end
   end
 end
