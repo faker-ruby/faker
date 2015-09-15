@@ -28,4 +28,8 @@ class TestFakerCode < Test::Unit::TestCase
   def test_rut
     assert @tester.rut.match(/^\d{1,8}-(\d|k)$/)
   end
+
+  def test_color_hex
+    assert @tester.color_hex.match(/\A#[a-f0-9]{6}\z/)
+  end
 end
