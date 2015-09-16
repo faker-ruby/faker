@@ -15,33 +15,35 @@ module Faker
       end
 
       def user_name(specifier = nil, separators = %w(. _))
-        if specifier.kind_of? String
-          return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
-        elsif specifier.kind_of? Integer
-          tries = 0 # Don't try forever in case we get something like 1_000_000.
-          begin
-            result = user_name nil, separators
-            tries += 1
-          end while result.length < specifier and tries < 7
-          until result.length >= specifier
-            result = result * 2
+        I18n.with_locale(LocaleSwitcher.switch(:internet)) do
+          if specifier.kind_of? String
+            return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
+          elsif specifier.kind_of? Integer
+            tries = 0 # Don't try forever in case we get something like 1_000_000.
+            begin
+              result = user_name nil, separators
+              tries += 1
+            end while result.length < specifier and tries < 7
+            until result.length >= specifier
+              result = result * 2
+            end
+            return result
+          elsif specifier.kind_of? Range
+            tries = 0
+            begin
+              result = user_name specifier.min, separators
+              tries += 1
+            end while not specifier.include? result.length and tries < 7
+            return result[0...specifier.max]
           end
-          return result
-        elsif specifier.kind_of? Range
-          tries = 0
-          begin
-            result = user_name specifier.min, separators
-            tries += 1
-          end while not specifier.include? result.length and tries < 7
-          return result[0...specifier.max]
-        end
 
-        [
-          Char.prepare(Name.first_name),
-          [Name.first_name, Name.last_name].map{ |name|
-            Char.prepare name
-          }.join(separators.sample)
-        ].sample
+          [
+            Char.prepare(Name.first_name),
+            [Name.first_name, Name.last_name].map{ |name|
+              Char.prepare name
+            }.join(separators.sample)
+          ].sample
+        end
       end
 
       def password(min_length = 8, max_length = 16)

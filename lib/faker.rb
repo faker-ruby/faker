@@ -186,3 +186,4 @@ require 'extensions/array'
 require 'extensions/symbol'
 
 require 'helpers/char'
+require 'helpers/locale_switcher'
