@@ -58,7 +58,9 @@ module Faker
       end
 
       def domain_name
-        [Char.prepare(domain_word), domain_suffix].join('.')
+        I18n.with_locale(LocaleSwitcher.switch(:internet)) do
+          [Char.prepare(domain_word), domain_suffix].join('.')
+        end
       end
 
       def fix_umlauts(string)
