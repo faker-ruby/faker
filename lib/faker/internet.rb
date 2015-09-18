@@ -87,11 +87,19 @@ module Faker
         ary.sample,
         ary.sample].join('.')
       end
+      
+      def ip_v4_cidr
+        "#{ip_v4_address}/#{[1..32].sample}"
+      end
 
       def ip_v6_address
         @@ip_v6_space ||= (0..65535).to_a
         container = (1..8).map{ |_| @@ip_v6_space.sample }
         container.map{ |n| n.to_s(16) }.join(':')
+      end
+      
+      def ip_v6_cidr
+        "#{ip_v6_address}/#{[1..128].sample}"
       end
 
       def url(host = domain_name, path = "/#{user_name}")
