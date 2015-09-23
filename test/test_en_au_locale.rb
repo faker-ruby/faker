@@ -14,7 +14,6 @@ class TestEnAuLocale < Test::Unit::TestCase
     assert Faker::Name.last_name.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.city.is_a? String
-    assert Faker::Address.region.is_a? String
   end
 
   def test_aussie_mobiles_start_with_04
