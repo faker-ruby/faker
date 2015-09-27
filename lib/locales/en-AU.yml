@@ -20,3 +20,5 @@ en-AU:
       default_country: [Australia]
     phone_number:
       formats: ['0# #### ####', '+61 # #### ####', '04## ### ###', '+61 4## ### ###'] #iOS AUS phone formats
+    team:
+      sport: ['basketball', 'football', 'footy', 'netball', 'rugby']

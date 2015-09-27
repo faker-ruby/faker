@@ -159,7 +159,9 @@ end
 
 require 'faker/address'
 require 'faker/code'
+require 'faker/color'
 require 'faker/company'
+require 'faker/university'
 require 'faker/finance'
 require 'faker/internet'
 require 'faker/lorem'
@@ -177,6 +179,10 @@ require 'faker/time'
 require 'faker/number'
 require 'faker/hacker'
 require 'faker/app'
+require 'faker/slack_emoji'
+require 'faker/book'
 
 require 'extensions/array'
 require 'extensions/symbol'
+
+require 'helpers/char'

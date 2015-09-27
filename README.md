@@ -8,6 +8,8 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
+NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
+
 Installing
 ----------
 ```bash
@@ -50,11 +52,13 @@ Faker::Address.city_suffix #=> "fort"
 
 Faker::Address.city_prefix #=> "Lake"
 
-Faker::Address.state_abbr #=> "AP"
-
 Faker::Address.state #=> "California"
 
+Faker::Address.state_abbr #=> "AP"
+
 Faker::Address.country #=> "French Guiana"
+
+Faker::Address.country_code #=> "IT"
 
 Faker::Address.latitude #=> "-58.17256227443719"
 
@@ -127,6 +131,8 @@ Faker::Company.suffix #=> "Group"
 # Generate a buzzword-laden catch phrase.
 Faker::Company.catch_phrase #=> "Business-focused coherent parallelism"
 
+Faker::Company.buzzword #=> "Business-focused"
+
 # When a straight answer won't do, BS to the rescue!
 Faker::Company.bs #=> "empower one-to-one web-readiness"
 
@@ -134,8 +140,10 @@ Faker::Company.ein #=> "34-8488813"
 
 Faker::Company.duns_number #=> "08-341-3736"
 
-# Get a random company logo url in GIF format.
-Faker::Company.logo #=> "http://www.biz-logo.com/examples/007.gif"
+# Get a random company logo url in PNG format.
+Faker::Company.logo #=> "http://pigment.github.com/fake-logos/logos/medium/color/5.png"
+
+Faker::Company.swedish_organisation_number #=> "7718797652"
 
 ```
 
@@ -246,14 +254,14 @@ Faker::Lorem.sentences(1, true) #=> ["Quis capillus curo ager veritatis voro et 
 # Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
 Faker::Lorem.paragraph #=> "Neque dicta enim quasi. Qui corrupti est quisquam. Facere animi quod aut. Qui nulla consequuntur consectetur sapiente."
 Faker::Lorem.paragraph(2) #=> "Illo qui voluptas. Id sit quaerat enim aut cupiditate voluptates dolorum. Porro necessitatibus numquam dolor quia earum."
-Faker::Lorem.paragraph(2, true) #=> ""
-Faker::Lorem.paragraph(2, false, 4) #=> ""
-Faker::Lorem.paragraph(2, true, 4) #=> ""
+Faker::Lorem.paragraph(2, true) #=> "Cedo vero adipisci. Theatrum crustulum coaegresco tonsor crastinus stabilis. Aliqua crur consequatur amor una tolero sum."
+Faker::Lorem.paragraph(2, false, 4) #=> "Neque aut et nemo aut incidunt voluptates. Dolore cum est sint est. Vitae assumenda porro odio dolores fugiat. Est voluptatum quia rerum."
+Faker::Lorem.paragraph(2, true, 4) #=> "Vomito unde uxor annus. Et patior utilis sursum."
 
 # Optional arguments: paragraph_count=3, supplemental=false
-Faker::Lorem.paragraphs #=> ""
-Faker::Lorem.paragraphs(1) #=> ""
-Faker::Lorem.paragraphs(1, true) #=> ""
+Faker::Lorem.paragraphs #=> ["Dolores quis quia ad quo voluptates. Maxime delectus totam numquam. Necessitatibus vel atque qui dolore.", "Id neque nemo. Dolores iusto facere est ad. Accusamus ipsa dolor ut.", "Et officiis ut hic. Sunt asperiores minus distinctio debitis ipsa dolor. Minima eos deleniti."]
+Faker::Lorem.paragraphs(1) #=> ["Labore voluptas sequi. Ratione nulla eaque quia molestiae fugit. At quam laboriosam aut ut dignissimos."]
+Faker::Lorem.paragraphs(1, true) #=> ["Depulso animi cunctatio amicitia adficio. Vester viduo qui despirmatio voluptas. Validus laudantium adopto ut agnitio venustas. Aer arcus odio esse."]
 
 ```
 
@@ -299,6 +307,20 @@ Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-o
 
 # Required parameter: digits
 Faker::Number.number(10) #=> "1968353479"
+
+# Required parameter: l_digits
+Faker::Number.decimal(2) #=> "11.88"
+
+Faker::Number.decimal(2, 3) #=> "18.843"
+
+# Required parameter: digits
+Faker::Number.hexadecimal(3) #=> "e74"
+
+Faker::Number.between(1, 10) #=> 7
+
+Faker::Number.positive #=> 235.59238499107653
+
+Faker::Number.negative #=> -4480.042585669558
 
 Faker::Number.digit #=> "1"
 
@@ -351,9 +373,11 @@ Faker::PhoneNumber.extension #=> "3764"
 
 ```ruby
 # Random date between dates
-Faker::Time.between(2.days.ago, Time.now) #=> "2014-09-18 12:30:59 -0700"
+Faker::Time.between(DateTime.now - 1, DateTime.now) #=> "2014-09-18 12:30:59 -0700"
 
 # Random date between dates (within specified part of the day)
+# You can install the active_support gem to facilitate time manipulation like 45.minutes + 2.hours
+require "as-duration"
 Faker::Time.between(2.days.ago, Time.now, :all) #=> "2014-09-19 07:03:30 -0700"
 Faker::Time.between(2.days.ago, Time.now, :day) #=> "2014-09-18 16:28:13 -0700"
 Faker::Time.between(2.days.ago, Time.now, :night) #=> "2014-09-20 19:39:38 -0700"
@@ -407,6 +431,85 @@ Faker::App.author #=> "Daphne Swift"
 
 ```
 
+###Faker::SlackEmoji
+-----------------
+
+```ruby
+
+# Random Slack Emoji from people category
+Faker::SlackEmoji.people #=> ":sleepy:"
+
+# Random Slack Emoji from nature category
+Faker::SlackEmoji.nature #=> ":chestnut:"
+
+# Random Slack Emoji from food and drink category
+Faker::SlackEmoji.food_and_drink #=> ":tangerine:"
+
+# Random Slack Emoji from celebration category
+Faker::SlackEmoji.celebration #=> ":ribbon:"
+
+# Random Slack Emoji from activity category
+Faker::SlackEmoji.activity #=> ":performing_arts:"
+
+# Random Slack Emoji from travel and places category
+Faker::SlackEmoji.travel_and_places #=> ":truck:"
+
+# Random Slack Emoji from objects & symbols category
+Faker::SlackEmoji.objects_and_symbols #=> ":alarm_clock:"
+
+# Random Slack Emoji from custom category
+Faker::SlackEmoji.custom #=> ":suspect:"
+
+# Random Slack Emoji from any category
+Faker::SlackEmoji.emoji #=> ":last_quarter_moon:"
+
+```
+
+###Faker::Team
+-----------------
+
+```ruby
+
+# Random Team Creature
+Faker::Team.creature #=> "gooses"
+
+# Random Team Name created from random US State (Faker::Address.state) prepended to a random Team Creature
+Faker::Team.name #=> "Oregon vixens"
+
+# Random Team State
+Faker::Team.state #=> "Oregon"
+
+# Random Team Sport
+Faker::Team.sport #=> "lacrosse"
+
+```
+
+###Faker::Book
+------------------
+
+```ruby
+
+# Random Book Title
+Faker::Book.title #=> "The Odd Sister"
+
+# Random Author
+Faker::Book.author #=> "Alysha Olsen"
+
+# Random Publisher
+Faker::Book.publisher #=> "Opus Reader"
+
+```
+
+###Faker::University
+------------------
+
+```ruby
+
+# Random University Name
+Faker::University.name #=> "South Texas College"
+
+```
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
@@ -425,7 +528,7 @@ and you can then override or add elements to suit
 en-au-ocker:
   faker:
     name:
-      # Exiting faker field, new data
+      # Existing faker field, new data
       first_name: [Charlotte, Ava, Chloe, Emily]
 
       # New faker fields
