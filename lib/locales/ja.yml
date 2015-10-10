@@ -14,15 +14,19 @@ ja:
       street_name:
         - "#{Name.first_name}#{street_suffix}"
         - "#{Name.last_name}#{street_suffix}"
+
     phone_number:
       formats: ['0####-#-####', '0###-##-####', '0##-###-####', '0#-####-####']
+
     cell_phone:
       formats: ['090-####-####', '080-####-####', '070-####-####']
+
     name:
       last_name: ["佐藤", "鈴木", "高橋", "田中", "渡辺", "伊藤", "山本", "中村", "小林", "加藤", "吉田", "山田", "佐々木", "山口", "斎藤", "松本", "井上", "木村", "林", "清水"]
       first_name: ["大翔", "蓮", "颯太", "樹", "大和", "陽翔", "陸斗", "太一", "海翔", "蒼空", "翼", "陽菜", "結愛", "結衣", "杏", "莉子", "美羽", "結菜", "心愛", "愛菜", "美咲"]
       name:
         - "#{last_name} #{first_name}"
+
     university:
       prefix: ["北海道", "東北", "関東", "中部", "近畿", "中国", "四国", "九州"]
       suffix: ["大学", "医科大学", "芸術大学", "音楽大学", "工業大学"]
@@ -30,6 +34,7 @@ ja:
         - "#{Name.last_name}#{University.suffix}"
         - "#{University.prefix}#{Name.last_name}#{University.suffix}"
         - "#{University.prefix}#{Address.city_prefix}#{University.suffix}"
+
     company:
       suffix: ["株式会社", "有限会社", "合名会社", "合資会社", "合同会社"]
       category: ["水産", "農林", "鉱業", "建設", "食品", "印刷", "電気", "ガス", "情報", "通信", "運輸", "銀行", "保険"]
