@@ -55,3 +55,9 @@ de:
 
     cell_phone:
       formats: ['+49-1##-#######', '+49-1###-########']
+
+    book:
+      title: ['Ein Jahr Der Wander', 'Süßigkeiten Für Zwei', 'Gehen Und Laufen', 'Tomaten Im Fenster', 'Die Suche Nach Einer Neuen Sun', 'Was Lives On Pluto', 'Fischerei Mit Chips', 'Keine Einsame Sterne', 'Gratis Parkplätze', 'Nächster Tag Vorheriger Nacht', 'Brennende Wasser', 'Glatter Als Regen', 'Überdachte Und Warm', 'Gleichem Weg Auf', 'Der Zoowärter Und Ihr Tiger']
+      author: "#{Name.name}"
+      publisher: ['Wort Brenner', 'Druckwerke', 'Broschüre', 'Seite Einzug']
+
