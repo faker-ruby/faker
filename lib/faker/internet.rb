@@ -11,12 +11,12 @@ module Faker
       end
 
       def safe_email(name = nil)
-        [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
+        [user_name(name), 'example.'+ %w[org com net].shuffle(random: Faker::Config.random).first].join('@')
       end
 
       def user_name(specifier = nil, separators = %w(. _))
         if specifier.kind_of? String
-          return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
+          return specifier.scan(/\w+/).shuffle(random: Faker::Config.random).join(separators.sample(random: Faker::Config.random)).downcase
         elsif specifier.kind_of? Integer
           tries = 0 # Don't try forever in case we get something like 1_000_000.
           begin
@@ -40,8 +40,8 @@ module Faker
           Char.prepare(Name.first_name),
           [Name.first_name, Name.last_name].map{ |name|
             Char.prepare name
-          }.join(separators.sample)
-        ].sample
+          }.join(separators.sample(random: Faker::Config.random))
+        ].sample(random: Faker::Config.random)
       end
 
       def password(min_length = 8, max_length = 16)
@@ -82,15 +82,15 @@ module Faker
 
       def ip_v4_address
         ary = (2..254).to_a
-        [ary.sample,
-        ary.sample,
-        ary.sample,
-        ary.sample].join('.')
+        [ary.sample(random: Faker::Config.random),
+         ary.sample(random: Faker::Config.random),
+         ary.sample(random: Faker::Config.random),
+         ary.sample(random: Faker::Config.random)].join('.')
       end
 
       def ip_v6_address
         @@ip_v6_space ||= (0..65535).to_a
-        container = (1..8).map{ |_| @@ip_v6_space.sample }
+        container = (1..8).map{ |_| @@ip_v6_space.sample(random: Faker::Config.random) }
         container.map{ |n| n.to_s(16) }.join(':')
       end
 
@@ -99,12 +99,12 @@ module Faker
       end
 
       def slug(words = nil, glue = nil)
-        glue ||= %w[- _ .].sample
+        glue ||= %w[- _ .].sample(random: Faker::Config.random)
         (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
       end
 
       def device_token
-        rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
+        rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle(random: Faker::Config.random).join
       end
     end
   end
