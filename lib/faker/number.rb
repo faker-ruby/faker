@@ -12,12 +12,12 @@ module Faker
       end
 
       def digit
-        (rand() * 9).round.to_s
+        (Faker::Config.random.rand() * 9).round.to_s
       end
 
       def hexadecimal(digits)
         hex = ""
-        digits.times { hex += rand(15).to_s(16) }
+        digits.times { hex += Faker::Config.random.rand(15).to_s(16) }
         hex
       end
 

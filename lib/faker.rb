@@ -18,11 +18,18 @@ I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
 module Faker
   class Config
     @locale = nil
+    @random = nil
 
     class << self
       attr_writer :locale
+      attr_writer :random
+
       def locale
         @locale || I18n.locale
+      end
+
+      def random
+        @random || Random.new
       end
     end
   end
@@ -35,11 +42,11 @@ module Faker
     class << self
       ## make sure numerify results doesn’t start with a zero
       def numerify(number_string)
-        number_string.sub(/#/) { (rand(9)+1).to_s }.gsub(/#/) { rand(10).to_s }
+        number_string.sub(/#/) { ( Faker::Config.random.rand(9)+1).to_s }.gsub(/#/) { Faker::Config.random.rand(10).to_s }
       end
 
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { ULetters.sample }
+        letter_string.gsub(/\?/) { ULetters.sample(random: Faker::Config.random) }
       end
 
       def bothify(string)
@@ -68,23 +75,23 @@ module Faker
       def regexify(re)
         re = re.source if re.respond_to?(:source) # Handle either a Regexp or a String that looks like a Regexp
         re.
-          gsub(/^\/?\^?/, '').gsub(/\$?\/?$/, '').                                                                      # Ditch the anchors
-          gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}').                                                             # All {2} become {2,2} and ? become {0,1}
-          gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                # [12]{1,2} becomes [12] or [12][12]
-          gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
-          gsub(/(\\?.)\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
-          gsub(/\((.*?)\)/) {|match| match.gsub(/[\(\)]/, '').split('|').sample }.                                      # (this|that) becomes 'this' or 'that'
-          gsub(/\[([^\]]+)\]/) {|match| match.gsub(/(\w\-\w)/) {|range| Array(Range.new(*range.split('-'))).sample } }. # All A-Z inside of [] become C (or X, or whatever)
-          gsub(/\[([^\]]+)\]/) {|match| $1.split('').sample }.                                                          # All [ABC] become B (or A or C)
-          gsub('\d') {|match| Numbers.sample }.
-          gsub('\w') {|match| Letters.sample }
+          gsub(/^\/?\^?/, '').gsub(/\$?\/?$/, '').                                                                                                  # Ditch the anchors
+          gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}').                                                                                         # All {2} become {2,2} and ? become {0,1}
+          gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample(random: Faker::Config.random)}.               # [12]{1,2} becomes [12] or [12][12]
+          gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample(random: Faker::Config.random)}.               # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+          gsub(/(\\?.)\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample(random: Faker::Config.random)}.                     # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+          gsub(/\((.*?)\)/) {|match| match.gsub(/[\(\)]/, '').split('|').sample(random: Faker::Config.random)}.                                     # (this|that) becomes 'this' or 'that'
+          gsub(/\[([^\]]+)\]/) {|match| match.gsub(/(\w\-\w)/) {|range| Array(Range.new(*range.split('-'))).sample(random: Faker::Config.random)}}. # All A-Z inside of [] become C (or X, or whatever)
+          gsub(/\[([^\]]+)\]/) {|match| $1.split('').sample(random: Faker::Config.random)}.                                                         # All [ABC] become B (or A or C)
+          gsub('\d') {|match| Numbers.sample(random: Faker::Config.random)}.
+          gsub('\w') {|match| Letters.sample(random: Faker::Config.random)}
       end
 
       # Helper for the common approach of grabbing a translation
       # with an array of values and selecting one of them.
       def fetch(key)
         fetched = translate("faker.#{key}")
-        fetched = fetched.sample if fetched.respond_to?(:sample)
+        fetched = fetched.sample(random: Faker::Config.random) if fetched.respond_to?(:sample)
         if fetched.match(/^\//) and fetched.match(/\/$/) # A regex
           regexify(fetched)
         else
@@ -142,7 +149,7 @@ module Faker
 
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
         if translation = translate(:faker)[@flexible_key][m]
-          translation.respond_to?(:sample) ? translation.sample : translation
+          translation.respond_to?(:sample) ? translation.sample(random: Faker::Config.random) : translation
         else
           super
         end
