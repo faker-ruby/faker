@@ -106,6 +106,10 @@ module Faker
       def device_token
         rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
       end
+
+      def twitter
+        "@#{user_name}"
+      end
     end
   end
 end

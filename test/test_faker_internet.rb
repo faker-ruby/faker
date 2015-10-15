@@ -138,4 +138,8 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_device_token
     assert_equal 64, @tester.device_token.size
   end
+
+  def test_twitter
+    assert @tester.twitter.match(/^@[a-z]+((_|\.)[a-z]+)?$/)
+  end
 end
