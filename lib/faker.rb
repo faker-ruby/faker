@@ -181,6 +181,7 @@ require 'faker/hacker'
 require 'faker/app'
 require 'faker/slack_emoji'
 require 'faker/book'
+require 'faker/hipster'
 
 require 'extensions/array'
 require 'extensions/symbol'
