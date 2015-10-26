@@ -36,4 +36,8 @@ class TestFakerAvatar < Test::Unit::TestCase
   def test_avatar_with_set
     assert @tester.image('faker', '300x300', 'jpg', 'set2').match(/http:\/\/robohash\.org\/faker\.jpg.*set=set2/)
   end
+
+  def test_avatar_with_bgset
+    assert @tester.image('faker', '300x300', 'jpg', 'set1', 'bg1').match(/http:\/\/robohash\.org\/faker\.jpg.*bgset=bg1/)
+  end
 end

@@ -298,6 +298,8 @@ Faker::Avatar.image("my-own-slug", "50x50") #=> "http://robohash.org/my-own-slug
 Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "http://robohash.org/my-own-slug.jpg?size=50x50"
 
 Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-own-slug.bmp?size=50x50"
+
+Faker::Avatar.image("my-own-slug", "50x50", "bmp", "set1", "bg1") #=> "http://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
 ```
 
 ###Faker::Number
