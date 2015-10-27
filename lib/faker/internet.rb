@@ -44,7 +44,7 @@ module Faker
         ].sample
       end
 
-      def password(min_length = 8, max_length = 16, mix_case = true, special_chars = true)
+      def password(min_length = 8, max_length = 16, mix_case = true, special_chars = false)
         temp = Lorem.characters(min_length)
         diff_length = max_length - min_length
         if diff_length > 0
