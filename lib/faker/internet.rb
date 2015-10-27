@@ -44,7 +44,7 @@ module Faker
         ].sample
       end
 
-      def password(min_length = 8, max_length = 16)
+      def password(min_length = 8, max_length = 16, mix_case = true)
         temp = Lorem.characters(min_length)
         diff_length = max_length - min_length
         if diff_length > 0
@@ -52,6 +52,11 @@ module Faker
           temp += Lorem.characters(diff_rand)
         end
         temp = temp[0..min_length] if min_length > 0
+        if mix_case
+          temp.chars.each_with_index do |char, index|
+            temp[index] = char.upcase if index % 2 == 0
+          end
+        end
         return temp
       end
 

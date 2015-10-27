@@ -79,6 +79,14 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_password_with_mixed_case
+    assert @tester.password.match(/[A-Z]+/)
+  end
+
+  def test_password_without_mixed_case
+    assert @tester.password(8, 12, false).match(/[^A-Z]+/)
+  end
+
   def test_domain_name
     assert @tester.domain_name.match(/\w+\.\w+/)
   end
