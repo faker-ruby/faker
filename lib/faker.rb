@@ -122,10 +122,13 @@ module Faker
         opts[:raise] = true
         I18n.translate(*(args.push(opts)))
       rescue I18n::MissingTranslationData
+        opts = args.last.is_a?(Hash) ? args.pop : {}
+        opts[:locale] = :en
+
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        I18n.translate(*(args.push(opts.merge(:locale => :en))))
+        I18n.translate(*(args.push(opts)))
       end
 
       def flexible(key)
