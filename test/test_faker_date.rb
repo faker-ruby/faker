@@ -58,10 +58,11 @@ class TestFakerDate < Test::Unit::TestCase
       date_min = Date.new(t.year - min, t.month, t.day)
       date_max = Date.new(t.year - max, t.month, t.day)
       birthday = @tester.birthday(min, max)
-      assert birthday > date_max, "Expect > \"#{date_max}\", but got #{birthday}"
-      assert birthday < date_min, "Expect > \"#{date_max}\", but got #{birthday}"
+      assert birthday >= date_max, "Expect > \"#{date_max}\", but got #{birthday}"
+      assert birthday <= date_min, "Expect > \"#{date_max}\", but got #{birthday}"
     end
   end
+
   def test_default_birthday
     min = 10
     max = 65
@@ -70,7 +71,7 @@ class TestFakerDate < Test::Unit::TestCase
       date_min = Date.new(t.year - min, t.month, t.day)
       date_max = Date.new(t.year - max, t.month, t.day)
       birthday = @tester.birthday
-      assert birthday > date_max, "Expect > \"#{date_max}\", but got #{birthday}"
+      assert birthday >= date_max, "Expect > \"#{date_max}\", but got #{birthday}"
       assert birthday < date_min, "Expect > \"#{date_max}\", but got #{birthday}"
     end
   end
