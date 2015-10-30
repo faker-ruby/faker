@@ -110,7 +110,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_ip_v4_address
     assert_equal 3, @tester.ip_v4_address.count('.')
 
-    1000.times do
+    100.times do
       assert @tester.ip_v4_address.split('.').map{|octet| octet.to_i}.max <= 255
     end
   end
@@ -119,7 +119,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_equal 5, @tester.mac_address.count(':')
     assert_equal 5, @tester.mac_address("").count(':')
 
-    1000.times do
+    100.times do
       assert @tester.mac_address.split(':').map{|d| d.to_i(16)}.max <= 255
     end
 
@@ -130,7 +130,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_ip_v6_address
     assert_equal 7, @tester.ip_v6_address.count(':')
 
-    1000.times do
+    100.times do
       assert @tester.ip_v6_address.split('.').map{|h| "0x#{h}".hex}.max <= 65535
     end
   end
