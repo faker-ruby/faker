@@ -194,6 +194,10 @@ Faker::Internet.password(8) #=> "yfgjik0hgzdqs0"
 
 Faker::Internet.password(10, 20) #=> "eoc9shwd1hwq4vbgfw"
 
+Faker::Internet.password(10, 20, true) #=> "3k5qS15aNmG"
+
+Faker::Internet.password(10, 20, true, true) #=> "*%NkOnJsH4"
+
 Faker::Internet.domain_name #=> "effertz.info"
 
 Faker::Internet.fix_umlauts('äöüß') #=> "aeoeuess"
