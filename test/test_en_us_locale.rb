@@ -76,4 +76,14 @@ class TesetEnUsLocale < Test::Unit::TestCase
     assert_match(expected, Faker::Address.zip_code(state_abbr))
 
   end
+
+  def test_valid_id_number
+    id_num = Faker::IDNumber.valid
+    assert Faker::IDNumber::INVALID_SSN.none? { |regex| id_num =~ regex }
+  end
+
+  def test_invalid_id_number
+    id_num = Faker::IDNumber.invalid
+    assert Faker::IDNumber::INVALID_SSN.any? { |regex| id_num =~ regex }
+  end
 end

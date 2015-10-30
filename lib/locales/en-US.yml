@@ -81,6 +81,11 @@ en-US:
         - "(#{PhoneNumber.area_code}) #{PhoneNumber.exchange_code}-#{PhoneNumber.subscriber_number} x#{PhoneNumber.extension}"
         - "1-#{PhoneNumber.area_code}-#{PhoneNumber.exchange_code}-#{PhoneNumber.subscriber_number} x#{PhoneNumber.extension}"
         - "#{PhoneNumber.area_code}.#{PhoneNumber.exchange_code}.#{PhoneNumber.subscriber_number} x#{PhoneNumber.extension}"
+
+    id_number:
+      valid: "#{IDNumber.ssn_valid}"
+      invalid: ['000-##-####', '###-00-####', '###-##-0000', '666-##-####', '9##-##-####']
+
     cell_phone:
       formats:
         - "#{PhoneNumber.area_code}-#{PhoneNumber.exchange_code}-#{PhoneNumber.subscriber_number}"
