@@ -289,15 +289,15 @@ Faker::Name.title #=> "Legacy Creative Director"
 
 ```ruby
 
-Faker::Avatar.image #=> "http://robohash.org/sitsequiquia.png?size=300x300"
+Faker::Avatar.image #=> "https://robohash.org/sitsequiquia.png?size=300x300"
 
-Faker::Avatar.image("my-own-slug") #=> "http://robohash.org/my-own-slug.png?size=300x300"
+Faker::Avatar.image("my-own-slug") #=> "https://robohash.org/my-own-slug.png?size=300x300"
 
-Faker::Avatar.image("my-own-slug", "50x50") #=> "http://robohash.org/my-own-slug.png?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50") #=> "https://robohash.org/my-own-slug.png?size=50x50"
 
-Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "http://robohash.org/my-own-slug.jpg?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "https://robohash.org/my-own-slug.jpg?size=50x50"
 
-Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-own-slug.bmp?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "https://robohash.org/my-own-slug.bmp?size=50x50"
 ```
 
 ###Faker::Number
