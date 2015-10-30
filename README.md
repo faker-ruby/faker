@@ -504,6 +504,9 @@ Faker::Book.author #=> "Alysha Olsen"
 # Random Publisher
 Faker::Book.publisher #=> "Opus Reader"
 
+# Random Genre
+Faker::Book.genre #=> "Mystery"
+
 ```
 
 ###Faker::University
