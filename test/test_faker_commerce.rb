@@ -65,6 +65,9 @@ class TestFakerCommerce < Test::Unit::TestCase
 
   def test_price
     assert_includes 0..100, @tester.price
+    assert_instance_of Float, @tester.price(5..6)
+    assert_includes 5..6, @tester.price(5..6)
+    assert_includes 990...1000, @tester.price(990...1000)
   end
 
   def test_price_is_float

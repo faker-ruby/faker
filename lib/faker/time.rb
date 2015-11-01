@@ -12,7 +12,16 @@ module Faker
 
     class << self
       def between(from, to, period = :all)
-        super(from, to).to_time + random_time(period)
+        time_parameters = from.is_a?(::Time) && to.is_a?(::Time)
+
+        if time_parameters
+          random_time = Faker::Base::rand_in_range(from.to_f, to.to_f)
+          random_time = ::Time.at(random_time)
+        else
+          random_time = super(from, to).to_time + random_time(period)
+        end
+
+        random_time
       end
 
       def forward(days = 365, period = :all)

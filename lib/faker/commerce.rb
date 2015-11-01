@@ -27,9 +27,9 @@ module Faker
         fetch('commerce.product_name.material')
       end
 
-      def price
+      def price(range=0..100.0)
         random = Random.new
-        (random.rand(0..100.0) * 100).floor/100.0
+        (random.rand(range) * 100).floor/100.0
       end
 
       private

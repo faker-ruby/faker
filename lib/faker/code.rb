@@ -26,6 +26,17 @@ module Faker
         value << "-#{vd}"
       end
 
+      # By default generates a Singaporean NRIC ID for someone
+      # who is born between the age of 18 and 65.
+      def nric(min_age = 18, max_age = 65)
+        birthyear = Date.birthday(min_age, max_age).year
+        prefix = birthyear < 2000 ? 'S' : 'T'
+        values = birthyear.to_s[-2..-1]
+        values << regexify(/\d{5}/)
+        check_alpha = generate_nric_check_alphabet(values, prefix)
+        "#{prefix}#{values}#{check_alpha}"
+      end
+
     private
 
       def generate_base10_isbn
@@ -64,6 +75,13 @@ module Faker
       def rut_verificator_digit(rut)
         total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).collect{|a, b| a.to_i * b.to_i}.inject(:+)
         (11 - total % 11).to_s.gsub(/10/, 'k').gsub(/11/, '0')
+      end
+
+      def generate_nric_check_alphabet(values, prefix)
+        weight = %w(2 7 6 5 4 3 2)
+        total = values.split(//).zip(weight).collect { |a, b| a.to_i * b.to_i }.inject(:+)
+        total = total + 4 if prefix == 'T'
+        %w(A B C D E F G H I Z J)[10 - total % 11]
       end
     end
   end

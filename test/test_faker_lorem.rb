@@ -12,7 +12,7 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_character
     assert @tester.character.length == 1
   end
-  
+
   def test_character_type
     assert @tester.character.class == String
   end
@@ -22,7 +22,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_characters_with_args
-    1000.times { assert @tester.characters(500).length == 500 }
+    100.times { assert @tester.characters(500).length == 500 }
   end
 
   # Words delivered by a standard request should be on the standard wordlist.
@@ -41,7 +41,7 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_word
     @tester = Faker::Lorem
     @standard_wordlist = I18n.translate('faker.lorem.words')
-    1000.times { assert @standard_wordlist.include?(@tester.word) }
+    100.times { assert @standard_wordlist.include?(@tester.word) }
   end
 
   def test_exact_count_param

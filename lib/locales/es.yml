@@ -36,6 +36,16 @@ es:
         - "#{Name.last_name} #{Name.last_name} #{suffix}"
         - "#{Name.last_name}, #{Name.last_name} y #{Name.last_name} Asociados"
 
+      university:
+            prefix: [El, Septentrional, Norte, Occidental, Oeste, Del Sur, Sur, Oriental, Oriente]
+            suffix: [Universidad, Instituto, Academia]
+            name:
+              - "#{Name.last_name} #{University.suffix}"
+              - "#{University.prefix} #{Name.last_name} #{University.suffix}"
+              - "#{University.prefix} #{Name.last_name}"
+              - "#{University.prefix} #{Address.state} #{University.suffix}"
+
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, es, info, com.es, org]
