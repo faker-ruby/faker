@@ -122,10 +122,13 @@ module Faker
         opts[:raise] = true
         I18n.translate(*(args.push(opts)))
       rescue I18n::MissingTranslationData
+        opts = args.last.is_a?(Hash) ? args.pop : {}
+        opts[:locale] = :en
+
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        I18n.translate(*(args.push(opts.merge(:locale => :en))))
+        I18n.translate(*(args.push(opts)))
       end
 
       def flexible(key)
@@ -174,14 +177,17 @@ require 'faker/version'
 require 'faker/number'
 require 'faker/bitcoin'
 require 'faker/avatar'
+require 'faker/placeholdit'
 require 'faker/date'
 require 'faker/time'
 require 'faker/number'
 require 'faker/hacker'
 require 'faker/app'
+require 'faker/id_number'
 require 'faker/slack_emoji'
 require 'faker/book'
 require 'faker/hipster'
+require 'faker/shakespeare'
 
 require 'extensions/array'
 require 'extensions/symbol'

@@ -1,19 +1,32 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerTime < Test::Unit::TestCase
+  TEN_HOURS = 36000
+
   def setup
     @tester      = Faker::Time
     @time_ranges = Faker::Time::TIME_RANGES
   end
 
-  def test_between
-    from = Time.local(2012, 01, 01,  0,  0,  0)
-    to   = Time.local(2013, 01, 01, 23, 59, 59)
+  def test_between_with_time_parameters
+    from = Time.local(2014, 12, 28, 06, 0, 0)
+    to   = Time.local(2014, 12, 30, 13, 0, 0)
 
     100.times do
       random_time = @tester.between(from, to)
       assert random_time >= from, "Expected >= \"#{from}\", but got #{random_time}"
       assert random_time <= to  , "Expected <= \"#{to}\", but got #{random_time}"
+    end
+  end
+
+  def test_between_with_date_parameters
+    from = Date.parse("2014-12-28")
+    to   = Date.parse("2014-12-30")
+
+    100.times do
+      random_time = @tester.between(from, to)
+      assert random_time.to_date >= from, "Expected >= \"#{from}\", but got #{random_time}"
+      assert random_time.to_date <= to  , "Expected <= \"#{to}\", but got #{random_time}"
     end
   end
 
@@ -46,10 +59,16 @@ class TestFakerTime < Test::Unit::TestCase
 
   def test_return_type
     random_backward = @tester.backward(5)
-    random_between  = @tester.between(Date.today, Date.today + 5)
+    random_between_dates = @tester.between(Date.today, Date.today + 5)
+    random_between_times = @tester.between(Time.now, Time.now + TEN_HOURS)
     random_forward  = @tester.forward(5)
 
-    [random_backward, random_between, random_forward].each do |result|
+    [
+      random_backward,
+      random_between_dates,
+      random_between_times,
+      random_forward
+    ].each do |result|
       assert result.is_a?(Time), "Expected a Time object, but got #{result.class}"
     end
   end

@@ -11,6 +11,10 @@ module Faker
         fetch('company.suffix')
       end
 
+      def industry
+        fetch('company.industry')
+      end
+
       # Generate a buzzword-laden catch phrase.
       def catch_phrase
         translate('faker.company.buzzwords').collect {|list| list.sample }.join(' ')
@@ -36,7 +40,7 @@ module Faker
       # Get a random company logo url in PNG format.
       def logo
         rand_num = Random.rand(13) + 1
-        "http://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
+        "https://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
 
       def swedish_organisation_number

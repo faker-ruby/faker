@@ -141,7 +141,7 @@ Faker::Company.ein #=> "34-8488813"
 Faker::Company.duns_number #=> "08-341-3736"
 
 # Get a random company logo url in PNG format.
-Faker::Company.logo #=> "http://pigment.github.com/fake-logos/logos/medium/color/5.png"
+Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/color/5.png"
 
 Faker::Company.swedish_organisation_number #=> "7718797652"
 
@@ -193,6 +193,10 @@ Faker::Internet.password #=> "vg5msvy1uerg7"
 Faker::Internet.password(8) #=> "yfgjik0hgzdqs0"
 
 Faker::Internet.password(10, 20) #=> "eoc9shwd1hwq4vbgfw"
+
+Faker::Internet.password(10, 20, true) #=> "3k5qS15aNmG"
+
+Faker::Internet.password(10, 20, true, true) #=> "*%NkOnJsH4"
 
 Faker::Internet.domain_name #=> "effertz.info"
 
@@ -289,15 +293,17 @@ Faker::Name.title #=> "Legacy Creative Director"
 
 ```ruby
 
-Faker::Avatar.image #=> "http://robohash.org/sitsequiquia.png?size=300x300"
+Faker::Avatar.image #=> "https://robohash.org/sitsequiquia.png?size=300x300"
 
-Faker::Avatar.image("my-own-slug") #=> "http://robohash.org/my-own-slug.png?size=300x300"
+Faker::Avatar.image("my-own-slug") #=> "https://robohash.org/my-own-slug.png?size=300x300"
 
-Faker::Avatar.image("my-own-slug", "50x50") #=> "http://robohash.org/my-own-slug.png?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50") #=> "https://robohash.org/my-own-slug.png?size=50x50"
 
-Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "http://robohash.org/my-own-slug.jpg?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "https://robohash.org/my-own-slug.jpg?size=50x50"
 
-Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-own-slug.bmp?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "https://robohash.org/my-own-slug.bmp?size=50x50"
+
+Faker::Avatar.image("my-own-slug", "50x50", "bmp", "set1", "bg1") #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
 ```
 
 ###Faker::Number
@@ -498,6 +504,9 @@ Faker::Book.author #=> "Alysha Olsen"
 # Random Publisher
 Faker::Book.publisher #=> "Opus Reader"
 
+# Random Genre
+Faker::Book.genre #=> "Mystery"
+
 ```
 
 ###Faker::University
@@ -507,6 +516,25 @@ Faker::Book.publisher #=> "Opus Reader"
 
 # Random University Name
 Faker::University.name #=> "South Texas College"
+
+```
+
+###Faker::Placeholdit
+----------------
+
+```ruby
+
+Faker::Placeholdit.image #=> "http://placehold.it/300x300.png/000"
+
+Faker::Placeholdit.image("50x50") #=> "http://placehold.it/50x50.png/000"
+
+Faker::Placeholdit.image("50x50", 'jpg') #=> "http://placehold.it/50x50.jpg/000"
+
+Faker::Placeholdit.image("50x50", 'gif', 'ffffff') #=> "http://placehold.it/50x50.gif/ffffff"
+
+Faker::Placeholdit.image("50x50", 'jpeg', 'ffffff', '000') #=> "http://placehold.it/50x50.jpeg/ffffff/000"
+
+Faker::Placeholdit.image("50x50", 'jpg', 'ffffff', '000', 'Some Custom Text') #=> "http://placehold.it/50x50.jpg/ffffff/000?text='Some Custom Text'"
 
 ```
 

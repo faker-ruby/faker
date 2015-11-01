@@ -15,36 +15,38 @@ module Faker
       end
 
       def user_name(specifier = nil, separators = %w(. _))
-        if specifier.kind_of? String
-          return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
-        elsif specifier.kind_of? Integer
-          tries = 0 # Don't try forever in case we get something like 1_000_000.
-          begin
-            result = user_name nil, separators
-            tries += 1
-          end while result.length < specifier and tries < 7
-          until result.length >= specifier
-            result = result * 2
+        I18n.with_locale(:en) do
+          if specifier.kind_of? String
+            return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
+          elsif specifier.kind_of? Integer
+            tries = 0 # Don't try forever in case we get something like 1_000_000.
+            begin
+              result = user_name nil, separators
+              tries += 1
+            end while result.length < specifier and tries < 7
+            until result.length >= specifier
+              result = result * 2
+            end
+            return result
+          elsif specifier.kind_of? Range
+            tries = 0
+            begin
+              result = user_name specifier.min, separators
+              tries += 1
+            end while not specifier.include? result.length and tries < 7
+            return result[0...specifier.max]
           end
-          return result
-        elsif specifier.kind_of? Range
-          tries = 0
-          begin
-            result = user_name specifier.min, separators
-            tries += 1
-          end while not specifier.include? result.length and tries < 7
-          return result[0...specifier.max]
-        end
 
-        [
-          Char.prepare(Name.first_name),
-          [Name.first_name, Name.last_name].map{ |name|
-            Char.prepare name
-          }.join(separators.sample)
-        ].sample
+          [
+            Char.prepare(Name.first_name),
+            [Name.first_name, Name.last_name].map{ |name|
+              Char.prepare name
+            }.join(separators.sample)
+          ].sample
+        end
       end
 
-      def password(min_length = 8, max_length = 16)
+      def password(min_length = 8, max_length = 16, mix_case = true, special_chars = false)
         temp = Lorem.characters(min_length)
         diff_length = max_length - min_length
         if diff_length > 0
@@ -52,11 +54,25 @@ module Faker
           temp += Lorem.characters(diff_rand)
         end
         temp = temp[0..min_length] if min_length > 0
+
+        if mix_case
+          temp.chars.each_with_index do |char, index|
+            temp[index] = char.upcase if index % 2 == 0
+          end
+        end
+
+        if special_chars
+          chars = %w(! @ # $ % ^ & *)
+          Random.rand(min_length).times do |i|
+            temp[i] = chars[Random.rand(chars.length)]
+          end
+        end
+
         return temp
       end
 
       def domain_name
-        [Char.prepare(domain_word), domain_suffix].join('.')
+        I18n.with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
       end
 
       def fix_umlauts(string)
@@ -87,11 +103,19 @@ module Faker
         ary.sample,
         ary.sample].join('.')
       end
+      
+      def ip_v4_cidr
+        "#{ip_v4_address}/#{[1..32].sample}"
+      end
 
       def ip_v6_address
         @@ip_v6_space ||= (0..65535).to_a
         container = (1..8).map{ |_| @@ip_v6_space.sample }
         container.map{ |n| n.to_s(16) }.join(':')
+      end
+      
+      def ip_v6_cidr
+        "#{ip_v6_address}/#{[1..128].sample}"
       end
 
       def url(host = domain_name, path = "/#{user_name}")

@@ -53,7 +53,6 @@ module Faker
       def longitude
         ((rand * 360) - 180).to_s
       end
-
     end
   end
 end

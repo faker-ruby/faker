@@ -25,3 +25,5 @@ zh-CN:
         - "#{last_name}#{first_name}"
     phone_number:
       formats: ['###-########', '####-########', '###########']
+    cell_phone:
+      formats: ['1##########']
