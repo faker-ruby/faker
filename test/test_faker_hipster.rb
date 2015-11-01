@@ -15,13 +15,13 @@ class TestFakerHipster < Test::Unit::TestCase
     @words.each {|w| assert @standard_wordlist.include?(w) }
   end
 
-  # Words requested from the supplemental list should all be in that list.
-  def test_supplemental_words
-    @words = @tester.words(10000, true)
-    @words.each {|w| assert @complete_wordlist.include?(w) }
-  end
-  #
-  # # Faker::Lorem.word generates random word from standart wordlist
+  # # Words requested from the supplemental list should all be in that list.
+  # def test_supplemental_words
+  #   @words = @tester.words(10000, true)
+  #   @words.each {|w| assert @complete_wordlist.include?(w) }
+  # end
+
+  # # Faker::Hipster.word generates random word from standart wordlist
   # def test_word
   #   @tester = Faker::Hipster
   #   @standard_wordlist = I18n.translate('faker.hipster.words')
