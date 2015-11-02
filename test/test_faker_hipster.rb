@@ -10,15 +10,21 @@ class TestFakerHipster < Test::Unit::TestCase
   end
 
   # Words delivered by a standard request should be on the standard wordlist.
-  def test_hipster_words
+  def test_words
     @words = @tester.words(1000)
-    @words.each {|w| assert @standard_wordlist.include?(w) }
+    @words.each { |w| assert @standard_wordlist.include?(w) }
+  end
+
+  # Words should not return any word with spaces
+  def test_words_without_spaces
+    @words = @tester.words(1000)
+    @words.each { |w| assert !w.match(/\s/) }
   end
 
   # Words requested from the supplemental list should all be in that list.
   def test_supplemental_words
     @words = @tester.words(10000, true)
-    @words.each {|w| assert @complete_wordlist.include?(w) }
+    @words.each { |w| assert @complete_wordlist.include?(w) }
   end
 
   # Faker::Hipster.word generates random word from standart wordlist
@@ -26,6 +32,12 @@ class TestFakerHipster < Test::Unit::TestCase
     @tester = Faker::Hipster
     @standard_wordlist = I18n.translate('faker.hipster.words')
     1000.times { assert @standard_wordlist.include?(@tester.word) }
+  end
+
+  # Word should not return any word with spaces
+  def test_word_without_spaces
+    @tester = Faker::Hipster
+    1000.times { assert !@tester.word.match(/\s/) }
   end
 
   def test_exact_count_param
