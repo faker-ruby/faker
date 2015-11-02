@@ -186,6 +186,7 @@ require 'faker/app'
 require 'faker/id_number'
 require 'faker/slack_emoji'
 require 'faker/book'
+require 'faker/hipster'
 require 'faker/shakespeare'
 
 require 'extensions/array'
