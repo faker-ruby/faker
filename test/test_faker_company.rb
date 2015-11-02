@@ -27,4 +27,8 @@ class TestFakerCompany < Test::Unit::TestCase
     assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
   end
 
+  def test_profession
+    assert @tester.profession.match(/[a-z ]+\.?/)
+  end
+
 end

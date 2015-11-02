@@ -145,6 +145,9 @@ Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/colo
 
 Faker::Company.swedish_organisation_number #=> "7718797652"
 
+# Get a random profession
+Faker::Company.profession #=> "firefighter"
+
 ```
 
 ###Faker::Date

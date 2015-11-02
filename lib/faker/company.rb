@@ -48,6 +48,10 @@ module Faker
         base + luhn_algorithm(base).to_s
       end
 
+      def profession
+        fetch('company.profession')
+      end
+
     private
 
       def luhn_algorithm(number)
