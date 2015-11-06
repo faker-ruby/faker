@@ -28,7 +28,7 @@ module Faker
       end
 
       def price(range=0..100.0)
-        random = Random.new
+        random = Random::DEFAULT
         (random.rand(range) * 100).floor/100.0
       end
 
