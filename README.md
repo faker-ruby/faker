@@ -83,7 +83,6 @@ Faker::Bitcoin.testnet_address #=> ""msHGunDvoEwmVFXvd2Bub1SNw5RP1YHJaf""
 ```ruby
 
 Faker::Book.title #=> "Covered and Warm"
-Faker::Book.genre #=> ""msHGunDvoEwmVFXvd2Bub1SNw5RP1YHJaf""
 Faker::Book.publisher #=> "Offprint"
 Faker::Book.author #=> "Bo Collier"
 
