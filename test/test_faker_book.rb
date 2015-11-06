@@ -11,6 +11,7 @@ class TestFakerBook < Test::Unit::TestCase
   end
 
   def test_author
+    assert_false (@tester.author.eql?('#{Name.name}'))
     assert @tester.author.match(/(\w+\.? ?){2,3}/)
   end
 
