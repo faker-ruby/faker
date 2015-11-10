@@ -15,6 +15,10 @@ module Faker
         fetch('company.industry')
       end
 
+      def department
+        fetch('company.department')
+      end
+
       # Generate a buzzword-laden catch phrase.
       def catch_phrase
         translate('faker.company.buzzwords').collect {|list| list.sample }.join(' ')
