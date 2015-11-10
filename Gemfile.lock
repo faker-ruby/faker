@@ -8,6 +8,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     i18n (0.6.9)
+    minitest (5.8.2)
     rake (10.1.0)
     test-unit (2.5.5)
 
@@ -16,6 +17,7 @@ PLATFORMS
 
 DEPENDENCIES
   faker!
+  minitest
   rake
   test-unit
 
