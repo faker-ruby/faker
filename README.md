@@ -211,6 +211,10 @@ Faker::Internet.domain_suffix #=> "info"
 
 Faker::Internet.ip_v4_address #=> "24.29.18.175"
 
+# Guaranteed not to be in 10.0.0.0/8, 127.0.0.0/8, 169.254.0.0/16,
+# 172.16.0.0/12, or 192.168.0.0/16
+Faker::Internet.public_ip_v4_address #=> "24.29.18.175"
+
 Faker::Internet.ip_v6_address #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
 
 # Optional argument prefix=''

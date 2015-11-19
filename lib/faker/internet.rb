@@ -103,7 +103,24 @@ module Faker
         ary.sample,
         ary.sample].join('.')
       end
-      
+
+      def public_ip_v4_address
+        private_nets = [
+          /^10\./,
+          /^127\./,
+          /^169\.254\./,
+          /^172\.(16|17|18|19|2\d|30|31)\./,
+          /^192\.168\./
+        ]
+
+        is_private = lambda {|addr| private_nets.any?{|net| net =~ addr}}
+        addr = nil
+        begin
+          addr = ip_v4_address
+        end while is_private[addr]
+        addr
+      end
+
       def ip_v4_cidr
         "#{ip_v4_address}/#{[1..32].sample}"
       end
@@ -113,7 +130,7 @@ module Faker
         container = (1..8).map{ |_| @@ip_v6_space.sample }
         container.map{ |n| n.to_s(16) }.join(':')
       end
-      
+
       def ip_v6_cidr
         "#{ip_v6_address}/#{[1..128].sample}"
       end

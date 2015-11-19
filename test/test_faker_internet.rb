@@ -115,6 +115,23 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_public_ip_v4_address
+    ten_dot = /^10\./
+    one_two_seven = /^127\./
+    one_six_nine = /^169\.254/
+    one_nine_two = /^192\.168\./
+    one_seven_two = /^172\.(16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)\./
+
+    1000.times do
+      address = @tester.public_ip_v4_address
+      assert_not_match ten_dot, address
+      assert_not_match one_two_seven, address
+      assert_not_match one_six_nine, address
+      assert_not_match one_nine_two, address
+      assert_not_match one_seven_two, address
+    end
+  end
+
   def test_mac_address
     assert_equal 5, @tester.mac_address.count(':')
     assert_equal 5, @tester.mac_address("").count(':')
