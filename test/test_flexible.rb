@@ -9,6 +9,7 @@ end
 class TestFlexible < Test::Unit::TestCase
 
   def setup
+    I18n.config.enforce_available_locales = false
     I18n.backend.store_translations(:xx, :faker => {:chow => {:yummie => [:fudge, :chocolate, :caramel], :taste => "delicious"}})
     I18n.backend.store_translations(:home, :faker => {:address => {:birthplace => [:bed, :hospital, :airplane]}})
     I18n.backend.store_translations(:kindergarden, :faker => {:name => {:girls_name => [:alice, :cheryl, :tatiana]}})

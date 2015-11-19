@@ -3,6 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 class TestFakerCommerce < Test::Unit::TestCase
 
   def setup
+    I18n.config.enforce_available_locales = false
     @tester = Faker::Commerce
   end
 

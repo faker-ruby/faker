@@ -309,6 +309,26 @@ Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "https://robohash.org/my-
 Faker::Avatar.image("my-own-slug", "50x50", "bmp", "set1", "bg1") #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
 ```
 
+###Faker::Image
+----------------
+
+```ruby
+
+Faker::Image.image_url #=> "http://lorempixel.com/400/200/abstract"
+
+Faker::Image.iimage_url(size: "300x400") #=> "http://lorempixel.com/300/400/abstract"
+
+Faker::Image.image_url(category: "random") #=> "http://lorempixel.com/400/200"
+
+Faker::Image.image_url(category: "sports") #=> "http://lorempixel.com/400/200/sports"
+
+Faker::Image.image_url(category: "cats", size: "300x500") #=> "http://lorempixel.com/300/500/cats"
+
+Faker::Image.image_url(number: 3) #=> "http://lorempixel.com/400/200/abstract/3"
+
+Faker::Image.image_url(number: 3, category: "fashion", size: "640x480") #=> "http://lorempixel.com/640/480/fashion/3"
+```
+
 ###Faker::Number
 ----------------
 
