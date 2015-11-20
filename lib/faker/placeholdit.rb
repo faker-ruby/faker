@@ -12,7 +12,7 @@ module Faker
         image_url = "https://placehold.it/#{size}.#{format}"
         image_url += "/#{background_color}"
         image_url += "/#{text_color}" if text_color
-        image_url += "&text=#{text}" if text
+        image_url += "?text=#{text}" if text
         image_url
       end
     end
