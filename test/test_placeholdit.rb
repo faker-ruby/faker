@@ -51,7 +51,7 @@ class TestPlaceholdit < Test::Unit::TestCase
 
   def test_avatar_background_with_wrong_three_char_hex
     assert_raise ArgumentError do
-    @tester.image('300x300', 'jpg', 'ffz')
+      @tester.image('300x300', 'jpg', 'ffz')
     end
   end
 
@@ -79,6 +79,14 @@ class TestPlaceholdit < Test::Unit::TestCase
     assert_raise ArgumentError do
       @tester.image('300x300', 'jpg', 'ffffff', '00p')
     end
+  end
+
+  def test_text_not_present
+    assert @tester.image('300x300', 'jpg', 'fff', '000').match(/https:\/\/placehold\.it\/[^\\?]+$/)
+  end
+
+  def test_text_present
+    assert @tester.image('300x300', 'jpg', 'fff', '000', 'hello').match(/https:\/\/placehold\.it\/(.+)\?text=hello/)
   end
 
 end
