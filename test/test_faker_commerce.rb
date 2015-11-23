@@ -23,6 +23,7 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_department_should_accept_localized_separator
+    @old_locales = I18n.config.available_locales
     data = {
       :faker => {
         :separator => ' + ',
@@ -33,9 +34,11 @@ class TestFakerCommerce < Test::Unit::TestCase
     }
 
     I18n.backend.store_translations(:xy, data)
+    I18n.config.available_locales += [ :xy ]
     I18n.with_locale(:xy) do
       assert_match ' + ', @tester.department(2, true)
     end
+    I18n.config.available_locales = @old_locales
   end
 
   def test_department_should_have_exact_number_of_categories_when_fixed_amount
