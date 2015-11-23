@@ -1,3 +1,8 @@
+== 1.6.0 2015-11-20
+* Lots of bug fixes -- most notably, a fix for email addresses and domains in non-en locales
+* Updated locales: de, en-AU, en-NZ, en-SG, en-US, en-au-ocker, en, es, fr, he, it, ja, nb-NO, pl, pt-BR, sk, and zh-CN
+* Updated classes: Address, Avatar, Book, Code, Commerce, Company, Hipster, IDNumber, Internet, Number, Placeholdit, Shakespeare, and Time 
+
 == 1.5.0 2015-08-17
 * Added logos
 * Added Slack Emoji
