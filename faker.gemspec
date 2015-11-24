@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.add_dependency('i18n', '~> 0.5')
+  s.add_dependency('google-search', '~> 1.0.3')
 
   s.files         = `git ls-files -- lib/*`.split("\n") + %w(History.txt License.txt README.md)
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
