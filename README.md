@@ -131,8 +131,6 @@ Faker::Company.suffix #=> "Group"
 # Generate a buzzword-laden catch phrase.
 Faker::Company.catch_phrase #=> "Business-focused coherent parallelism"
 
-Faker::Company.buzzword #=> "Business-focused"
-
 # When a straight answer won't do, BS to the rescue!
 Faker::Company.bs #=> "empower one-to-one web-readiness"
 
@@ -557,7 +555,7 @@ Faker::Hipster.word #=> "irony"
 Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
 Faker::Hipster.words(4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
 Faker::Hipster.words(4, true) #=> ["iste", "seitan", "normcore", "provident"]
-Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"] 
+Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"]
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
 Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
