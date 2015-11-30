@@ -6,7 +6,9 @@ class TestFakerVideo < Test::Unit::TestCase
   end
 
   def test_urls
-    assert @tester.urls('test',1).is_a?(Array)
+    Google::Search::Image.stub :initialize, Google::Search::Image do
+      assert @tester.urls('test',1).is_a?(Array)
+    end
   end
 
 end
