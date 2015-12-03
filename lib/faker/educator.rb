@@ -10,6 +10,10 @@ module Faker
       def secondary_school
         "#{fetch('educator.name')} #{fetch('educator.secondary')}"
       end
+
+      def campus
+        "#{fetch('educator.name')} Campus"
+      end
     end
   end
 end
