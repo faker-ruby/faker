@@ -8,7 +8,7 @@ module Faker
       end
 
       def course
-        "#{fetch('educator.tertiary.course.type')} #{educator.tertiary.course.subject}"
+        "#{fetch('educator.tertiary.course.type')} #{fetch('educator.tertiary.course.subject')}"
       end
 
       def secondary_school
