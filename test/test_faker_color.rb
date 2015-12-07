@@ -5,6 +5,10 @@ class TestFakerColor < Test::Unit::TestCase
     @tester = Faker::Color
   end
 
+  def test_color_name
+    assert @tester.color_name.match(/[a-z]+\.?/)
+  end
+
   def test_hex_color
     assert @tester.hex_color.match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
   end

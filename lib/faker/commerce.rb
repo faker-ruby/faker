@@ -3,7 +3,7 @@ module Faker
 
     class << self
       def color
-        fetch('commerce.color')
+        fetch('color.name')
       end
 
       def department(max = 3, fixed_amount = false)
