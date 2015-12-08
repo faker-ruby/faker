@@ -1,11 +1,10 @@
 module Faker
   class Code < Base
     class << self
-
       # Generates a 10 digit NPI (National Provider Identifier
       # issued to health care providers in the United States)
       def npi
-        Random.new.rand(10 ** 10).to_s.rjust(10, '0')
+        Random.new.rand(10**10).to_s.rjust(10, '0')
       end
 
       # By default generates 10 sign isbn code in format 123456789-X
@@ -37,7 +36,7 @@ module Faker
         "#{prefix}#{values}#{check_alpha}"
       end
 
-    private
+      private
 
       def generate_base10_isbn
         values = regexify(/\d{9}/)
@@ -52,20 +51,20 @@ module Faker
       end
 
       def sum(values, &block)
-        values.split(//).each_with_index.inject(0) do |sum, (value, index)|
+        values.split(//).each_with_index.reduce(0) do |sum, (value, index)|
           sum + block.call(value, index)
         end
       end
 
       def generate_base8_ean
         values = regexify(/\d{7}/)
-        check_digit = 10 - values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
+        check_digit = 10 - values.split(//).each_with_index.reduce(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
         values << (check_digit == 10 ? 0 : check_digit).to_s
       end
 
       def generate_base13_ean
         values = regexify(/\d{12}/)
-        check_digit = 10 - values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
+        check_digit = 10 - values.split(//).each_with_index.reduce(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
         values << (check_digit == 10 ? 0 : check_digit).to_s
       end
 
@@ -73,14 +72,14 @@ module Faker
       EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3]
 
       def rut_verificator_digit(rut)
-        total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).collect{|a, b| a.to_i * b.to_i}.inject(:+)
+        total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).map { |a, b| a.to_i * b.to_i }.inject(:+)
         (11 - total % 11).to_s.gsub(/10/, 'k').gsub(/11/, '0')
       end
 
       def generate_nric_check_alphabet(values, prefix)
         weight = %w(2 7 6 5 4 3 2)
-        total = values.split(//).zip(weight).collect { |a, b| a.to_i * b.to_i }.inject(:+)
-        total = total + 4 if prefix == 'T'
+        total = values.split(//).zip(weight).map { |a, b| a.to_i * b.to_i }.inject(:+)
+        total += 4 if prefix == 'T'
         %w(A B C D E F G H I Z J)[10 - total % 11]
       end
     end

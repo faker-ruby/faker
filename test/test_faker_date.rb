@@ -6,13 +6,13 @@ class TestFakerDate < Test::Unit::TestCase
   end
 
   def test_between
-    from = Date.parse("2012-01-01")
-    to   = Date.parse("2013-01-01")
+    from = Date.parse('2012-01-01')
+    to   = Date.parse('2013-01-01')
 
     100.times do
       random_date = @tester.between(from, to)
       assert random_date >= from, "Expected >= \"#{from}\", but got #{random_date}"
-      assert random_date <= to  , "Expected <= \"#{to}\", but got #{random_date}"
+      assert random_date <= to, "Expected <= \"#{to}\", but got #{random_date}"
     end
   end
 
@@ -46,7 +46,7 @@ class TestFakerDate < Test::Unit::TestCase
 
   def test_invalid_date
     assert_raise ArgumentError do
-      @tester.between("9999-99-99", "9999-99-99")
+      @tester.between('9999-99-99', '9999-99-99')
     end
   end
 

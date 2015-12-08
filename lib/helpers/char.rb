@@ -10,16 +10,16 @@ module Faker
     def self.fix_umlauts(string)
       string.gsub(/[äöüß]/i) do |match|
         case match.downcase
-          when "ä" 'ae'
-          when "ö" 'oe'
-          when "ü" 'ue'
-          when "ß" 'ss'
+        when 'ä' 'ae'
+        when 'ö' 'oe'
+        when 'ü' 'ue'
+        when 'ß' 'ss'
         end
       end
     end
 
     def self.romanize_cyrillic(string)
-      if Faker::Config.locale == "uk"
+      if Faker::Config.locale == 'uk'
         # Based on conventions abopted by BGN/PCGN for Ukrainian
         uk_chars = {
           'а' => 'a',  'б' => 'b',  'в' => 'v',  'г' => 'h',  'ґ' => 'g',  'д' => 'd',

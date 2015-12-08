@@ -11,37 +11,36 @@ module Faker
       end
 
       def safe_email(name = nil)
-        [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
+        [user_name(name), 'example.' + %w(org com net).shuffle.first].join('@')
       end
 
       def user_name(specifier = nil, separators = %w(. _))
         I18n.with_locale(:en) do
-          if specifier.kind_of? String
+          if specifier.is_a? String
             return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
-          elsif specifier.kind_of? Integer
+          elsif specifier.is_a? Integer
             tries = 0 # Don't try forever in case we get something like 1_000_000.
             begin
               result = user_name nil, separators
               tries += 1
-            end while result.length < specifier and tries < 7
-            until result.length >= specifier
-              result = result * 2
-            end
+            end while result.length < specifier && tries < 7
+            result *= 2 until result.length >= specifier
             return result
-          elsif specifier.kind_of? Range
+          elsif specifier.is_a? Range
             tries = 0
-            begin
+            loop do
               result = user_name specifier.min, separators
               tries += 1
-            end while not specifier.include? result.length and tries < 7
+              break unless !(specifier.include? result.length) && tries < 7
+            end
             return result[0...specifier.max]
           end
 
           [
             Char.prepare(Name.first_name),
-            [Name.first_name, Name.last_name].map{ |name|
+            [Name.first_name, Name.last_name].map do |name|
               Char.prepare name
-            }.join(separators.sample)
+            end.join(separators.sample)
           ].sample
         end
       end
@@ -57,7 +56,7 @@ module Faker
 
         if mix_case
           temp.chars.each_with_index do |char, index|
-            temp[index] = char.upcase if index % 2 == 0
+            temp[index] = char.upcase if index.even?
           end
         end
 
@@ -68,7 +67,7 @@ module Faker
           end
         end
 
-        return temp
+        temp
       end
 
       def domain_name
@@ -90,18 +89,18 @@ module Faker
         fetch('internet.domain_suffix')
       end
 
-      def mac_address(prefix='')
-        prefix_digits = prefix.split(':').map{ |d| d.to_i(16) }
-        address_digits = (6 - prefix_digits.size).times.map{ rand(256) }
-        (prefix_digits + address_digits).map{ |d| '%02x' % d }.join(':')
+      def mac_address(prefix = '')
+        prefix_digits = prefix.split(':').map { |d| d.to_i(16) }
+        address_digits = (6 - prefix_digits.size).times.map { rand(256) }
+        (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
       end
 
       def ip_v4_address
         ary = (2..254).to_a
         [ary.sample,
-        ary.sample,
-        ary.sample,
-        ary.sample].join('.')
+         ary.sample,
+         ary.sample,
+         ary.sample].join('.')
       end
 
       def public_ip_v4_address
@@ -113,11 +112,12 @@ module Faker
           /^192\.168\./
         ]
 
-        is_private = lambda {|addr| private_nets.any?{|net| net =~ addr}}
+        is_private = ->(addr) { private_nets.any? { |net| net =~ addr } }
         addr = nil
-        begin
+        loop do
           addr = ip_v4_address
-        end while is_private[addr]
+          break unless is_private[addr]
+        end
         addr
       end
 
@@ -126,9 +126,9 @@ module Faker
       end
 
       def ip_v6_address
-        @@ip_v6_space ||= (0..65535).to_a
-        container = (1..8).map{ |_| @@ip_v6_space.sample }
-        container.map{ |n| n.to_s(16) }.join(':')
+        @@ip_v6_space ||= (0..655_35).to_a
+        container = (1..8).map { |_| @@ip_v6_space.sample }
+        container.map { |n| n.to_s(16) }.join(':')
       end
 
       def ip_v6_cidr
@@ -140,12 +140,12 @@ module Faker
       end
 
       def slug(words = nil, glue = nil)
-        glue ||= %w[- _ .].sample
-        (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
+        glue ||= %w(- _ .).sample
+        (words || Faker::Lorem.words(2).join(' ')).gsub(' ', glue).downcase
       end
 
       def device_token
-        rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
+        rand(16**64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
       end
     end
   end

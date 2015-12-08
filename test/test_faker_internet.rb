@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerInternet < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Internet
   end
@@ -44,19 +43,19 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_user_name_with_open_range_arg
     (1..32).each do |min_length|
-      (min_length+1..33).each do |max_length|
+      (min_length + 1..33).each do |max_length|
         l = @tester.user_name((min_length...max_length)).length
         assert l >= min_length
-        assert l <= max_length-1
+        assert l <= max_length - 1
       end
     end
   end
 
   def test_user_name_with_range_and_separators
     (1..32).each do |min_length|
-      (min_length+1..33).each do |max_length|
+      (min_length + 1..33).each do |max_length|
         u = @tester.user_name((min_length...max_length), %w(=))
-        assert u.length.between? min_length, max_length-1
+        assert u.length.between? min_length, max_length - 1
         assert u.match(/\A[a-z]+((=)?[a-z]*)*\z/)
       end
     end
@@ -111,7 +110,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_equal 3, @tester.ip_v4_address.count('.')
 
     100.times do
-      assert @tester.ip_v4_address.split('.').map{|octet| octet.to_i}.max <= 255
+      assert @tester.ip_v4_address.split('.').map { |octet| octet.to_i }.max <= 255
     end
   end
 
@@ -134,21 +133,21 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_mac_address
     assert_equal 5, @tester.mac_address.count(':')
-    assert_equal 5, @tester.mac_address("").count(':')
+    assert_equal 5, @tester.mac_address('').count(':')
 
     100.times do
-      assert @tester.mac_address.split(':').map{|d| d.to_i(16)}.max <= 255
+      assert @tester.mac_address.split(':').map { |d| d.to_i(16) }.max <= 255
     end
 
-    assert @tester.mac_address("fa:fa:fa").start_with?("fa:fa:fa")
-    assert @tester.mac_address("01:02").start_with?("01:02")
+    assert @tester.mac_address('fa:fa:fa').start_with?('fa:fa:fa')
+    assert @tester.mac_address('01:02').start_with?('01:02')
   end
 
   def test_ip_v6_address
     assert_equal 7, @tester.ip_v6_address.count(':')
 
     100.times do
-      assert @tester.ip_v6_address.split('.').map{|h| "0x#{h}".hex}.max <= 65535
+      assert @tester.ip_v6_address.split('.').map { |h| "0x#{h}".hex }.max <= 655_35
     end
   end
 
@@ -165,7 +164,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_url
-    assert @tester.url('domain.com', '/username').match(/^http:\/\/domain\.com\/username$/)
+    assert @tester.url('domain.com', '/username').match(%r{^http:\/\/domain\.com\/username$})
   end
 
   def test_device_token

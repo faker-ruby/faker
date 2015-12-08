@@ -30,5 +30,4 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_profession
     assert @tester.profession.match(/[a-z ]+\.?/)
   end
-
 end

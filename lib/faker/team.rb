@@ -15,6 +15,5 @@ module Faker
         fetch('address.state')
       end
     end
-
   end
 end

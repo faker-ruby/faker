@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper.rb'
 
 class TestFakerLorem < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Lorem
     @standard_wordlist = I18n.translate('faker.lorem.words')
@@ -28,13 +27,13 @@ class TestFakerLorem < Test::Unit::TestCase
   # Words delivered by a standard request should be on the standard wordlist.
   def test_standard_words
     @words = @tester.words(1000)
-    @words.each {|w| assert @standard_wordlist.include?(w) }
+    @words.each { |w| assert @standard_wordlist.include?(w) }
   end
 
   # Words requested from the supplemental list should all be in that list.
   def test_supplemental_words
-    @words = @tester.words(10000, true)
-    @words.each {|w| assert @complete_wordlist.include?(w) }
+    @words = @tester.words(100_00, true)
+    @words.each { |w| assert @complete_wordlist.include?(w) }
   end
 
   # Faker::Lorem.word generates random word from standart wordlist
@@ -64,10 +63,10 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_array_count_param
-    cs = @tester.characters([1,4])
-    ws = @tester.words([1,4])
-    ss = @tester.sentences([1,4])
-    ps = @tester.paragraphs([1,4])
+    cs = @tester.characters([1, 4])
+    ws = @tester.words([1, 4])
+    ss = @tester.sentences([1, 4])
+    ps = @tester.paragraphs([1, 4])
 
     assert(cs.length == 1 || cs.length == 4)
     assert(ws.length == 1 || ws.length == 4)

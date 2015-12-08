@@ -43,11 +43,12 @@ class TesetEnUsLocale < Test::Unit::TestCase
 
   def test_us_invalid_state_raises_exception
     Faker::Config.locale = 'en-US'
-    assert_raise I18n::MissingTranslationData do Faker::Address.zip_code('NA') end
+    assert_raise I18n::MissingTranslationData do
+      Faker::Address.zip_code('NA')
+    end
   end
 
   def test_us_zip_codes_match_state
-
     Faker::Config.locale = 'en-US'
 
     state_abbr = 'AZ'
@@ -74,7 +75,6 @@ class TesetEnUsLocale < Test::Unit::TestCase
     state_abbr = 'VA'
     expected = /^222\d\d$/
     assert_match(expected, Faker::Address.zip_code(state_abbr))
-
   end
 
   def test_valid_id_number

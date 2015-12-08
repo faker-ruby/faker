@@ -1,6 +1,6 @@
 module Faker
   class Finance < Base
-    CREDIT_CARD_TYPES = [ :visa, :mastercard,  :discover, :american_express, :diners_club, :jcb, :switch, :solo, :dankort, :maestro, :forbrugsforeningen, :laser ]
+    CREDIT_CARD_TYPES = [:visa, :mastercard, :discover, :american_express, :diners_club, :jcb, :switch, :solo, :dankort, :maestro, :forbrugsforeningen, :laser]
 
     class << self
       def credit_card(*types)
@@ -10,9 +10,9 @@ module Faker
 
         # calculate the luhn checksum digit
         multiplier = 1
-        luhn_sum = template.gsub(/[^0-9]/, '').split('').reverse.map(&:to_i).inject(0) do |sum, digit|
+        luhn_sum = template.gsub(/[^0-9]/, '').split('').reverse.map(&:to_i).reduce(0) do |sum, digit|
           multiplier = (multiplier == 2 ? 1 : 2)
-          sum + (digit * multiplier).to_s.split('').map(&:to_i).inject(0) { |digit_sum, cur| digit_sum + cur }
+          sum + (digit * multiplier).to_s.split('').map(&:to_i).reduce(0) { |a, e| a + e }
         end
         # the sum plus whatever the last digit is must be a multiple of 10. So, the
         # last digit must be 10 - the last digit of the sum.
