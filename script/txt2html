@@ -42,7 +42,7 @@ class Time
 end
 
 def convert_syntax(syntax, source)
-  Syntax::Convertors::HTML.for_syntax(syntax).convert(source).gsub(/!^<pre>|<\/pre>$!/, '')
+  Syntax::Convertors::HTML.for_syntax(syntax).convert(source).gsub(%r{!^<pre>|</pre>$!}, '')
 end
 
 if ARGV.length >= 1
@@ -62,9 +62,11 @@ File.open(src) do |fsrc|
   title_text = fsrc.readline
   body_text = fsrc.read
   syntax_items = []
-  body_text.gsub!(/!<(pre|code)[^>]*?syntax=['"]([^'"]+)[^>]*>(.*?)<\/\1>!m/) do
+  body_text.gsub!(%r{!<(pre|code)[^>]*?syntax=['"]([^'"]+)[^>]*>(.*?)</\1>!m}) do
     ident = syntax_items.length
-    element, syntax, source = Regexp.last_match[1], Regexp.last_match[2], Regexp.last_match[3]
+    element = Regexp.last_match[1]
+    syntax = Regexp.last_match[2]
+    source = Regexp.last_match[3]
     syntax_items << "<#{element} class='syntax'>#{convert_syntax(syntax, source)}</#{element}>"
     "syntax-temp-#{ident}"
   end

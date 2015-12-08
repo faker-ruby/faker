@@ -17,7 +17,7 @@ module Faker
 
       # Generate a buzzword-laden catch phrase.
       def catch_phrase
-        translate('faker.company.buzzwords').map { |list| list.sample }.join(' ')
+        translate('faker.company.buzzwords').map(&:sample).join(' ')
       end
 
       def buzzword
@@ -26,7 +26,7 @@ module Faker
 
       # When a straight answer won't do, BS to the rescue!
       def bs
-        translate('faker.company.bs').map { |list| list.sample }.join(' ')
+        translate('faker.company.bs').map(&:sample).join(' ')
       end
 
       def ein

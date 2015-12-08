@@ -22,5 +22,8 @@ Metrics/CyclomaticComplexity:
 Metrics/PerceivedComplexity:
   Max: 10
 
+Metrics/AbcSize:
+  Max: 65
+
 EndOfLine:
   Enabled: false

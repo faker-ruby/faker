@@ -66,7 +66,7 @@ module Faker
       def regexify(re)
         re = re.source if re.respond_to?(:source) # Handle either a Regexp or a String that looks like a Regexp
         re
-          .gsub(/^\/?\^?/, '').gsub(/\$?\/?$/, '')                                                                                                                     # Ditch the anchors
+          .gsub(%r{^\/?\^?}, '').gsub(%r{\$?\/?$}, '')                                                                                                                     # Ditch the anchors
           .gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}')                                                                                                            # All {2} become {2,2} and ? become {0,1}
           .gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) { Regexp.last_match[1] * Array(Range.new(Regexp.last_match[2].to_i, Regexp.last_match[3].to_i)).sample }                # [12]{1,2} becomes [12] or [12][12]
           .gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) { Regexp.last_match[1] * Array(Range.new(Regexp.last_match[2].to_i, Regexp.last_match[3].to_i)).sample }                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
@@ -83,7 +83,7 @@ module Faker
       def fetch(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.sample if fetched.respond_to?(:sample)
-        if fetched.match(/^\//) && fetched.match(/\/$/) # A regex
+        if fetched.match(%r{^\/}) && fetched.match(%r{\/$}) # A regex
           regexify(fetched)
         else
           fetched
