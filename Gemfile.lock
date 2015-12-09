@@ -2,12 +2,16 @@ PATH
   remote: .
   specs:
     faker (1.6.1)
+      google-search (~> 1.0.3)
       i18n (~> 0.5)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    google-search (1.0.3)
+      json
     i18n (0.7.0)
+    json (1.8.3)
     minitest (5.8.3)
     rake (10.1.0)
     test-unit (2.5.5)
