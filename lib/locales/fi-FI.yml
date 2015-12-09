@@ -12,7 +12,7 @@ fi-FI:
       street_name:
         - "#{Name.last_name}#{street_suffix}"
       street_address:
-        - "#{street_name}#{building_number}号"
+        - "#{street_name}#{building_number}"
       default_country: [Suomi]
 
     name:
