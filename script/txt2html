@@ -13,8 +13,9 @@ require 'syntax/convertors/html'
 require 'erb'
 require File.dirname(__FILE__) + '/../lib/faker/version.rb'
 
-version  = Faker::VERSION
-download = 'http://rubyforge.org/projects/faker'
+# When are these used?
+# version  = Faker::VERSION
+# download = 'http://rubyforge.org/projects/faker'
 
 class Fixnum
   def ordinal
@@ -22,30 +23,34 @@ class Fixnum
     return 'th' if (10..19).include?(self % 100)
     # others
     case self % 10
-    when 1: return 'st'
-    when 2: return 'nd'
-    when 3: return 'rd'
-    else    return 'th'
+    when 1
+      return 'st'
+    when 2
+      return 'nd'
+    when 3
+      return 'rd'
+    else
+      return 'th'
     end
   end
 end
 
 class Time
   def pretty
-    return "#{mday}#{mday.ordinal} #{strftime('%B')} #{year}"
+    "#{mday}#{mday.ordinal} #{strftime('%B')} #{year}"
   end
 end
 
 def convert_syntax(syntax, source)
-  return Syntax::Convertors::HTML.for_syntax(syntax).convert(source).gsub(%r!^<pre>|</pre>$!,'')
+  Syntax::Convertors::HTML.for_syntax(syntax).convert(source).gsub(%r{!^<pre>|</pre>$!}, '')
 end
 
 if ARGV.length >= 1
   src, template = ARGV
   template ||= File.join(File.dirname(__FILE__), '/../website/template.rhtml')
-  
+
 else
-  puts("Usage: #{File.split($0).last} source.txt [template.rhtml] > output.html")
+  puts("Usage: #{File.split($PROGRAM_NAME).last} source.txt [template.rhtml] > output.html")
   exit!
 end
 
@@ -57,18 +62,21 @@ File.open(src) do |fsrc|
   title_text = fsrc.readline
   body_text = fsrc.read
   syntax_items = []
-  body_text.gsub!(%r!<(pre|code)[^>]*?syntax=['"]([^'"]+)[^>]*>(.*?)</\1>!m){
+  body_text.gsub!(%r{!<(pre|code)[^>]*?syntax=['"]([^'"]+)[^>]*>(.*?)</\1>!m}) do
     ident = syntax_items.length
-    element, syntax, source = $1, $2, $3
+    element = Regexp.last_match[1]
+    syntax = Regexp.last_match[2]
+    source = Regexp.last_match[3]
     syntax_items << "<#{element} class='syntax'>#{convert_syntax(syntax, source)}</#{element}>"
     "syntax-temp-#{ident}"
-  }
-  title = RedCloth.new(title_text).to_html.gsub(%r!<.*?>!,'').strip
+  end
+  title = RedCloth.new(title_text).to_html.gsub(/!<.*?>!/, '').strip
   body = RedCloth.new(body_text).to_html
-  body.gsub!(%r!(?:<pre><code>)?syntax-temp-(\d+)(?:</code></pre>)?!){ syntax_items[$1.to_i] }
+  body.gsub!(%r{!(?:<pre><code>)?syntax-temp-(\d+)(?:</code></pre>)?!}) { syntax_items[Regexp.last_match[1].to_i] }
 end
-stat = File.stat(src)
-created = stat.ctime
-modified = stat.mtime
+# When are these used?
+# stat = File.stat(src)
+# created = stat.ctime
+# modified = stat.mtime
 
 $stdout << template.result(binding)

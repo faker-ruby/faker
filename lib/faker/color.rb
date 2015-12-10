@@ -2,7 +2,7 @@ module Faker
   class Color < Base
     class << self
       def hex_color
-        @hex_color = "#%06x" % (rand * 0xffffff)
+        @hex_color = format('#%06x', rand * 0xffffff)
       end
 
       def color_name
@@ -23,7 +23,7 @@ module Faker
       end
 
       def single_hsl_color
-        @single_hsla_color = Faker::Base::rand_in_range(0.0, 360.00).round(2)
+        @single_hsla_color = Faker::Base.rand_in_range(0.0, 360.00).round(2)
         @single_hsla_color
       end
 

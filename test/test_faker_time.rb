@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerTime < Test::Unit::TestCase
-  TEN_HOURS = 36000
+  TEN_HOURS = 360_00
 
   def setup
     @tester      = Faker::Time
@@ -15,18 +15,18 @@ class TestFakerTime < Test::Unit::TestCase
     100.times do
       random_time = @tester.between(from, to)
       assert random_time >= from, "Expected >= \"#{from}\", but got #{random_time}"
-      assert random_time <= to  , "Expected <= \"#{to}\", but got #{random_time}"
+      assert random_time <= to, "Expected <= \"#{to}\", but got #{random_time}"
     end
   end
 
   def test_between_with_date_parameters
-    from = Date.parse("2014-12-28")
-    to   = Date.parse("2014-12-30")
+    from = Date.parse('2014-12-28')
+    to   = Date.parse('2014-12-30')
 
     100.times do
       random_time = @tester.between(from, to)
       assert random_time.to_date >= from, "Expected >= \"#{from}\", but got #{random_time}"
-      assert random_time.to_date <= to  , "Expected <= \"#{to}\", but got #{random_time}"
+      assert random_time.to_date <= to, "Expected <= \"#{to}\", but got #{random_time}"
     end
   end
 
