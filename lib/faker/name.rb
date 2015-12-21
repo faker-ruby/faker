@@ -8,6 +8,10 @@ module Faker
         parse('name.name')
       end
 
+      def name_with_middle
+        parse('name.name_with_middle')
+      end
+
       def first_name; fetch('name.first_name'); end
       def last_name;  fetch('name.last_name'); end
       def prefix;     fetch('name.prefix'); end
