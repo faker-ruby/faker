@@ -208,5 +208,5 @@ en:
       name:
         - "#{Superhero.prefix} #{Superhero.descriptor} #{Superhero.suffix}"
         - "#{Superhero.prefix} #{Superhero.descriptor}"
-        - "#{Superhero.descriptor} #{Superhero.suffix"
+        - "#{Superhero.descriptor} #{Superhero.suffix}"
         - "#{Superhero.descriptor}"
