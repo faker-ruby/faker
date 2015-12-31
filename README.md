@@ -601,6 +601,19 @@ Faker::Hipster.paragraphs(1) #=> ["Skateboard cronut synth +1 fashion axe. Pop-u
 Faker::Hipster.paragraphs(1, true) #=> ["Quae direct trade pbr&b quo taxidermy autem loko. Umami quas ratione migas cardigan sriracha minima. Tenetur perspiciatis pickled sed eum doloribus truffaut. Excepturi dreamcatcher meditation."]
 ```
 
+###Faker::Superhero
+------------------
+
+```ruby
+
+# Random Superhero name
+Faker::Superhero.name #=> "Magnificent Shatterstar"
+
+# Random Superhero power
+Faker::Superhero.power #=> "Photokinesis"
+
+```
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
