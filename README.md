@@ -574,7 +574,7 @@ Faker::Hipster.word #=> "irony"
 Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
 Faker::Hipster.words(4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
 Faker::Hipster.words(4, true) #=> ["iste", "seitan", "normcore", "provident"]
-Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"] 
+Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"]
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
 Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
@@ -599,6 +599,23 @@ Faker::Hipster.paragraph(2, true, 4) #=> "Deep v gluten-free unde waistcoat aper
 Faker::Hipster.paragraphs #=> ["Tilde microdosing blog cliche meggings. Intelligentsia five dollar toast forage yuccie. Master kitsch knausgaard. Try-hard everyday trust fund mumblecore.", "Normcore viral pickled. Listicle humblebrag swag tote bag. Taxidermy street hammock neutra butcher cred kale chips. Blog portland humblebrag trust fund irony.", "Single-origin coffee fixie cleanse tofu xoxo. Post-ironic tote bag ramps gluten-free locavore mumblecore hammock. Umami loko twee. Ugh kitsch before they sold out."]
 Faker::Hipster.paragraphs(1) #=> ["Skateboard cronut synth +1 fashion axe. Pop-up polaroid skateboard asymmetrical. Ennui fingerstache shoreditch before they sold out. Tattooed pitchfork ramps. Photo booth yr messenger bag raw denim bespoke locavore lomo synth."]
 Faker::Hipster.paragraphs(1, true) #=> ["Quae direct trade pbr&b quo taxidermy autem loko. Umami quas ratione migas cardigan sriracha minima. Tenetur perspiciatis pickled sed eum doloribus truffaut. Excepturi dreamcatcher meditation."]
+```
+
+###Faker::StarWars
+----------------
+
+```ruby
+Faker::StarWars.character #=> "Anakin Skywalker"
+
+Faker::StarWars.droid #=> "C-3PO"
+
+Faker::StarWars.planet #=> "Tatooine"
+
+Faker::StarWars.quote #=> "Aren’t you a little short for a Stormtrooper?"
+
+Faker::StarWars.specie #=> "Gungan"
+
+Faker::StarWars.vehicle #=> "Sandcrawler"
 ```
 
 Customization
