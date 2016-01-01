@@ -595,7 +595,7 @@ Faker::Hipster.word #=> "irony"
 Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
 Faker::Hipster.words(4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
 Faker::Hipster.words(4, true) #=> ["iste", "seitan", "normcore", "provident"]
-Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"] 
+Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"]
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
 Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
@@ -632,7 +632,24 @@ Faker::Superhero.name #=> "Magnificent Shatterstar"
 
 # Random Superhero power
 Faker::Superhero.power #=> "Photokinesis"
+```
 
+
+###Faker::StarWars
+----------------
+
+```ruby
+Faker::StarWars.character #=> "Anakin Skywalker"
+
+Faker::StarWars.droid #=> "C-3PO"
+
+Faker::StarWars.planet #=> "Tatooine"
+
+Faker::StarWars.quote #=> "Aren’t you a little short for a Stormtrooper?"
+
+Faker::StarWars.specie #=> "Gungan"
+
+Faker::StarWars.vehicle #=> "Sandcrawler"
 ```
 
 Customization

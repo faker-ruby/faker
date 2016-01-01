@@ -192,6 +192,7 @@ require 'faker/shakespeare'
 require 'faker/superhero'
 require 'faker/beer'
 require 'faker/boolean'
+require 'faker/star_wars'
 
 require 'extensions/array'
 require 'extensions/symbol'
