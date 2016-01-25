@@ -115,6 +115,17 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_ip_v4_cidr
+    prefix_regex = /\/\d{,2}$/
+    allowed_prefixes = (1..32)
+
+    1000.times do
+      address = @tester.ip_v4_cidr
+      assert_match prefix_regex, address
+      assert_includes allowed_prefixes, address.split(/\//)[1].to_i
+    end
+  end
+
   def test_public_ip_v4_address
     ten_dot = /^10\./
     one_two_seven = /^127\./
@@ -149,6 +160,17 @@ class TestFakerInternet < Test::Unit::TestCase
 
     100.times do
       assert @tester.ip_v6_address.split('.').map{|h| "0x#{h}".hex}.max <= 65535
+    end
+  end
+
+  def test_ip_v6_cidr
+    prefix_regex = /\/\d{,3}$/
+    allowed_prefixes = (1..128)
+
+    1000.times do
+      address = @tester.ip_v6_cidr
+      assert_match prefix_regex, address
+      assert_includes allowed_prefixes, address.split(/\//)[1].to_i
     end
   end
 
