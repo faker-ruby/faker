@@ -10,9 +10,11 @@ class TestCaLocale < Test::Unit::TestCase
 	end
 
 	def test_ca_methods
-		assert Faker::Name.first_name.is_a? String
+		assert Faker::Name.female_first_name.is_a? String
+		assert Faker::Name.female_prefix.is_a? String
+		assert Faker::Name.male_first_name.is_a? String
+		assert Faker::Name.male_prefix.is_a? String
 		assert Faker::Name.last_name.is_a? String
-		assert Faker::Name.prefix.is_a? String
 		assert Faker::Name.name.is_a? String
 	end
 end
