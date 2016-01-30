@@ -15,6 +15,8 @@ class TestCaLocale < Test::Unit::TestCase
 		assert Faker::Name.male_first_name.is_a? String
 		assert Faker::Name.male_prefix.is_a? String
 		assert Faker::Name.last_name.is_a? String
+		assert Faker::Name.first_name.is_a? String
 		assert Faker::Name.name.is_a? String
+		assert Faker::Color.name.is_a? String
 	end
 end
