@@ -5,6 +5,7 @@ gemspec
 
 group :development, :test do
   gem "test-unit"
+  gem "rspec"
   gem "rake"
   gem "minitest"
 end
