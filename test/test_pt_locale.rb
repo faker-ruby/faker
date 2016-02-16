@@ -2,12 +2,11 @@ require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestEsLocale < Test::Unit::TestCase
   def setup
-    @previous_locale = Faker::Config.locale
     Faker::Config.locale = "pt"
   end
 
   def teardown
-    Faker::Config.locale = @previous_locale
+    Faker::Config.locale = nil
   end
 
   def test_pl_phone_number
