@@ -37,9 +37,9 @@ sv:
       domain_suffix: [se, nu, info, com, org]
 
     name:
-      first_name_women: [Maria, Anna, Margareta, Elisabeth, Eva, Birgitta, Kristina, Karin, Elisabet, Marie]
-      first_name_men: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans ]
-      last_name: [Johansson, Andersson, Karlsson, Nilsson, Eriksson, Larsson, Olsson, Persson, Svensson, Gustafsson]
+      first_name_women: [Maria, Anna, Margareta, Elisabeth, Eva, Birgitta, Kristina, Karin, Elisabet, Marie, Åsa, Hjördis, Ingegärd]
+      first_name_men: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans, Jörgen, Göran, Håkan, Kåre]
+      last_name: [Johansson, Andersson, Karlsson, Nilsson, Eriksson, Larsson, Olsson, Persson, Svensson, Gustafsson, Åslund, Östlund, Änglund]
       prefix: [Dr., Prof., PhD.]
 
       title:
