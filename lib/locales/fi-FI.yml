@@ -18,10 +18,11 @@ fi-FI:
     name:
       first_name_women: [Eija, Helena, Anu, Riitta, Heta, Kanerva, Tytti, Saimi, Kaari, Emma, Elli]
       first_name_men: [Erkki, Toni, Aki, Iiro, Marko, Henri, Juha, Iivari, Arto, Eelis, Markus, Olli]
+      first_name: [Erkki, Toni, Aki, Iiro, Marko, Henri, Juha, Iivari, Arto, Eelis, Markus, Olli, Eija, Helena, Anu, Riitta, Heta, Kanerva, Tytti, Saimi, Kaari, Emma, Elli]
       last_name: [Ahokas, Uotila, Pennanen, Meriluoto, Ilkka, Jantunen, Liukkonen, Eronen, Ojanen, Ruutu, Jantunen, Isometsä]
       name:
-        - "#{first_name_women} #{last_name}"
-        - "#{first_name_men} #{last_name}"
+        - "#{first_name} #{last_name}"
+
     phone_number:
       formats: ['##-######', '###-#######']
     cell_phone:
