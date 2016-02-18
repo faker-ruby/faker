@@ -10,7 +10,7 @@ module Faker
       end
 
       def account_number
-        # return 10 digit number
+        return rand.to_s[2..11]
       end
 
       def iban
