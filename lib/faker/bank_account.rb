@@ -21,7 +21,7 @@ module Faker
         return swift_codes.sample
       end
 
-      def insitution_name
+      def institution_name
         return names.sample
       end
 
@@ -75,22 +75,3 @@ module Faker
     end
   end
 end
-
-
-# Faker::BankAccount.routing_number
-# # => '1291131673'
-# Faker::BankAccount.routing_number(true) # true to use the rare "fraction" notation
-# # => '11-3167/1210'
-# Faker::BankAccount.account_number
-# # => '0114584906'
-# Faker::BankAccount.iban
-# # => 'GR16 0110 1250 0000 0001 2300 695'
-# Faker::BankAccount.swift
-# # => 'DEUTDFF'
-# Faker::BankAccount.institution_name
-# # => 'Ontario Agriculture Bank'
-# # => 'First Bank of Osaka'
-# # => 'Commerce Bank of Stockholm'
-# # => 'Great American Sperm Bank'
-
-
