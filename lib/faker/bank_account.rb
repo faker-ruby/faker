@@ -41,7 +41,7 @@ module Faker
       end
 
       def valid_routing_number
-        for i in 0..500000
+        for i in 0..50
           micr = compile_routing_number
           if checksum(micr)
             break
