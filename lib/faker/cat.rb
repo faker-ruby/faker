@@ -8,7 +8,7 @@ module Faker
       end
 
       def breed
-        parse('cat.breed')
+        fetch('cat.breed')
       end
 
       def registry
