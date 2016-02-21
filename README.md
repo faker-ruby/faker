@@ -8,7 +8,12 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
+### NOTE
+
+* While Faker generates data at random, returned values are not guaranteed to be unique.
+* This is the `master` branch of Faker and may contain changes that are not yet released.
+  Please refer the README of your version for the available methods.
+  List of all versions is [available here](https://github.com/stympy/faker/releases).
 
 Installing
 ----------
