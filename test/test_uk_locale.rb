@@ -2,16 +2,15 @@ require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestUkLocale < Test::Unit::TestCase
   def setup
-    @previous_locale = Faker::Config.locale
-    Faker::Config.locale = "uk"
+    Faker::Config.locale = 'uk'
   end
 
   def teardown
-    Faker::Config.locale = @previous_locale
+    Faker::Config.locale = nil
   end
 
   def test_uk_email_at_symbol_is_not_followed_by_dot
-    assert Faker::Internet.email.match(/.+@[^.].+\.\w+/)
+    assert Faker::Internet.email.match(/.+@[^.].+\.[A-Za-z\u{410}-\u{44f}]+/)
   end
 
   def test_uk_domain_word_returns_latin_chars
