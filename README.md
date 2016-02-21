@@ -8,7 +8,12 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
+### NOTE
+
+* While Faker generates data at random, returned values are not guaranteed to be unique.
+* This is the `master` branch of Faker and may contain changes that are not yet released.
+  Please refer the README of your version for the available methods.
+  List of all versions is [available here](https://github.com/stympy/faker/releases).
 
 Installing
 ----------
@@ -174,6 +179,9 @@ Faker::Company.profession #=> "firefighter"
 # Random date between dates
 Faker::Date.between(2.days.ago, Date.today) #=> "Wed, 24 Sep 2014"
 
+# Randome date between dates except for certain date
+Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today) #=> "Wed, 24 Sep 2014"
+
 # Random date in the future (up to maximum of N days)
 Faker::Date.forward(23) # => "Fri, 03 Oct 2014"
 
@@ -232,7 +240,11 @@ Faker::Internet.ip_v4_address #=> "24.29.18.175"
 # 172.16.0.0/12, or 192.168.0.0/16
 Faker::Internet.public_ip_v4_address #=> "24.29.18.175"
 
+Faker::Internet.ip_v4_cidr #=> "24.29.18.175/21"
+
 Faker::Internet.ip_v6_address #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
+
+Faker::Internet.ip_v6_cidr #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df/78"
 
 # Optional argument prefix=''
 Faker::Internet.mac_address #=> "e6:0d:00:11:ed:4f"
@@ -353,6 +365,18 @@ Faker::Number.positive #=> 235.59238499107653
 Faker::Number.negative #=> -4480.042585669558
 
 Faker::Number.digit #=> "1"
+
+```
+
+###Faker::Boolean
+----------------
+
+```ruby
+
+# Optional parameter: true_ratio=0.5
+Faker::Boolean.boolean #=> true
+
+Faker::Boolean.boolean(0.2) #=> false
 
 ```
 
@@ -574,7 +598,7 @@ Faker::Hipster.word #=> "irony"
 Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
 Faker::Hipster.words(4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
 Faker::Hipster.words(4, true) #=> ["iste", "seitan", "normcore", "provident"]
-Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"] 
+Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"]
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
 Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
@@ -599,6 +623,36 @@ Faker::Hipster.paragraph(2, true, 4) #=> "Deep v gluten-free unde waistcoat aper
 Faker::Hipster.paragraphs #=> ["Tilde microdosing blog cliche meggings. Intelligentsia five dollar toast forage yuccie. Master kitsch knausgaard. Try-hard everyday trust fund mumblecore.", "Normcore viral pickled. Listicle humblebrag swag tote bag. Taxidermy street hammock neutra butcher cred kale chips. Blog portland humblebrag trust fund irony.", "Single-origin coffee fixie cleanse tofu xoxo. Post-ironic tote bag ramps gluten-free locavore mumblecore hammock. Umami loko twee. Ugh kitsch before they sold out."]
 Faker::Hipster.paragraphs(1) #=> ["Skateboard cronut synth +1 fashion axe. Pop-up polaroid skateboard asymmetrical. Ennui fingerstache shoreditch before they sold out. Tattooed pitchfork ramps. Photo booth yr messenger bag raw denim bespoke locavore lomo synth."]
 Faker::Hipster.paragraphs(1, true) #=> ["Quae direct trade pbr&b quo taxidermy autem loko. Umami quas ratione migas cardigan sriracha minima. Tenetur perspiciatis pickled sed eum doloribus truffaut. Excepturi dreamcatcher meditation."]
+```
+
+###Faker::Superhero
+------------------
+
+```ruby
+
+# Random Superhero name
+Faker::Superhero.name #=> "Magnificent Shatterstar"
+
+# Random Superhero power
+Faker::Superhero.power #=> "Photokinesis"
+```
+
+
+###Faker::StarWars
+----------------
+
+```ruby
+Faker::StarWars.character #=> "Anakin Skywalker"
+
+Faker::StarWars.droid #=> "C-3PO"
+
+Faker::StarWars.planet #=> "Tatooine"
+
+Faker::StarWars.quote #=> "Aren’t you a little short for a Stormtrooper?"
+
+Faker::StarWars.specie #=> "Gungan"
+
+Faker::StarWars.vehicle #=> "Sandcrawler"
 ```
 
 Customization

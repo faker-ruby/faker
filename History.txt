@@ -1,3 +1,11 @@
+== 1.6.2 2016-02-20
+* Fix for locale-switching (Russian email addresses)
+* Added Faker::Beer, Faker::Boolean, Faker::Cat, Faker::StarWars, and Faker::Superhero
+* Added Faker::Color.color_name
+* Added Faker::Date.between_except
+* Fixed Faker::Internet.ip_v4_cidr and Faker::Internet.ip_v6_cidr
+* Added locales: ca, ca-CAT, da-DK, fi-FI, and pt
+
 == 1.6.1 2015-11-23
 * Fix for locale issues in tests
 

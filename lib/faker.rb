@@ -24,6 +24,11 @@ module Faker
       def locale
         @locale || I18n.locale
       end
+
+      def own_locale
+        @locale
+      end
+
     end
   end
 
@@ -131,6 +136,15 @@ module Faker
         I18n.translate(*(args.push(opts)))
       end
 
+      # Executes block with given locale set.
+      def with_locale(tmp_locale = nil)
+        current_locale = Faker::Config.own_locale
+        Faker::Config.locale = tmp_locale
+        I18n.with_locale(tmp_locale) { yield }
+      ensure
+        Faker::Config.locale = current_locale
+      end
+
       def flexible(key)
         @flexible_key = key
       end
@@ -161,6 +175,7 @@ module Faker
 end
 
 require 'faker/address'
+require 'faker/cat'
 require 'faker/code'
 require 'faker/color'
 require 'faker/company'
@@ -188,6 +203,10 @@ require 'faker/slack_emoji'
 require 'faker/book'
 require 'faker/hipster'
 require 'faker/shakespeare'
+require 'faker/superhero'
+require 'faker/beer'
+require 'faker/boolean'
+require 'faker/star_wars'
 
 require 'extensions/array'
 require 'extensions/symbol'
