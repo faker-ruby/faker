@@ -11,7 +11,7 @@ class TestUkLocale < Test::Unit::TestCase
   end
 
   def test_uk_email_at_symbol_is_not_followed_by_dot
-    assert Faker::Internet.email.match(/.+@[^.].+\.[A-Za-zА-Яа-я]+/)
+    assert Faker::Internet.email.match(/.+@[^.].+\.[A-Za-z\u{410}-\u{44f}]+/)
   end
 
   def test_uk_domain_word_returns_latin_chars
