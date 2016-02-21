@@ -132,6 +132,14 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_ip_v4_cidr
+    assert @tester.ip_v4_cidr.match(/\/\d{1,2}$/)
+
+    1000.times do
+      assert (1..32).include?(@tester.ip_v4_cidr.split('/').last.to_i)
+    end
+  end
+
   def test_mac_address
     assert_equal 5, @tester.mac_address.count(':')
     assert_equal 5, @tester.mac_address("").count(':')
@@ -149,6 +157,14 @@ class TestFakerInternet < Test::Unit::TestCase
 
     100.times do
       assert @tester.ip_v6_address.split('.').map{|h| "0x#{h}".hex}.max <= 65535
+    end
+  end
+
+  def test_ip_v6_cidr
+    assert @tester.ip_v6_cidr.match(/\/\d{1,3}$/)
+
+    1000.times do
+      assert (1..128).include?(@tester.ip_v6_cidr.split('/').last.to_i)
     end
   end
 

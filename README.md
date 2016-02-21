@@ -237,7 +237,11 @@ Faker::Internet.ip_v4_address #=> "24.29.18.175"
 # 172.16.0.0/12, or 192.168.0.0/16
 Faker::Internet.public_ip_v4_address #=> "24.29.18.175"
 
+Faker::Internet.ip_v4_cidr #=> "24.29.18.175/21"
+
 Faker::Internet.ip_v6_address #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
+
+Faker::Internet.ip_v6_cidr #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df/78"
 
 # Optional argument prefix=''
 Faker::Internet.mac_address #=> "e6:0d:00:11:ed:4f"
