@@ -189,6 +189,7 @@ require 'faker/slack_emoji'
 require 'faker/book'
 require 'faker/hipster'
 require 'faker/shakespeare'
+require 'faker/superhero'
 
 require 'extensions/array'
 require 'extensions/symbol'
