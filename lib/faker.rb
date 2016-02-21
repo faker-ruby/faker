@@ -191,6 +191,7 @@ require 'faker/hipster'
 require 'faker/shakespeare'
 require 'faker/superhero'
 require 'faker/beer'
+require 'faker/boolean'
 
 require 'extensions/array'
 require 'extensions/symbol'
