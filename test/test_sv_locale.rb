@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestSVLocale < Test::Unit::TestCase
   def setup
-    Faker::Config.locale = :sv
+    Faker::Config.locale = 'sv'
   end
 
   def teardown

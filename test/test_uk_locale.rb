@@ -2,12 +2,11 @@ require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestUkLocale < Test::Unit::TestCase
   def setup
-    @previous_locale = Faker::Config.locale
-    Faker::Config.locale = "uk"
+    Faker::Config.locale = 'uk'
   end
 
   def teardown
-    Faker::Config.locale = @previous_locale
+    Faker::Config.locale = nil
   end
 
   def test_uk_email_at_symbol_is_not_followed_by_dot
