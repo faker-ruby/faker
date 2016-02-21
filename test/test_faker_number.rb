@@ -92,15 +92,15 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_insignificant_zero
-    Faker::Number.stub :digit, 0 do
+    @tester.stub :digit, 0 do
       assert_equal '0', @tester.number(1)
       100.times do
-        assert_match /^[1-9]0/, @tester.number(2)
+        assert_match (/^[1-9]0/), @tester.number(2)
       end
 
       assert_equal '0.0', @tester.decimal(1,1)
       100.times do
-        assert_match /^0\.0[1-9]/, @tester.decimal(1,2)
+        assert_match (/^0\.0[1-9]/), @tester.decimal(1,2)
       end
     end
   end
