@@ -24,6 +24,11 @@ module Faker
       def locale
         @locale || I18n.locale
       end
+
+      def own_locale
+        @locale
+      end
+
     end
   end
 
@@ -129,6 +134,15 @@ module Faker
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
         I18n.translate(*(args.push(opts)))
+      end
+
+      # Executes block with given locale set.
+      def with_locale(tmp_locale = nil)
+        current_locale = Faker::Config.own_locale
+        Faker::Config.locale = tmp_locale
+        I18n.with_locale(tmp_locale) { yield }
+      ensure
+        Faker::Config.locale = current_locale
       end
 
       def flexible(key)

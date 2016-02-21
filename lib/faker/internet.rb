@@ -15,7 +15,7 @@ module Faker
       end
 
       def user_name(specifier = nil, separators = %w(. _))
-        I18n.with_locale(:en) do
+        with_locale(:en) do
           if specifier.kind_of? String
             return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
           elsif specifier.kind_of? Integer
@@ -72,7 +72,7 @@ module Faker
       end
 
       def domain_name
-        I18n.with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
+        with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
       end
 
       def fix_umlauts(string)
