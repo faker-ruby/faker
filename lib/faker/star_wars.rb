@@ -2,7 +2,7 @@ module Faker
   class StarWars < Base
     class << self
       def character
-        planets.sample
+        characters.sample
       end
 
       def droid
