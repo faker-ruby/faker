@@ -1,3 +1,8 @@
+== 1.6.3 2016-02-23
+* Fix for UTF problem in Ruby 1.9.3
+* Fix for Faker::StarWars.character
+* Updated sv locale
+
 == 1.6.2 2016-02-20
 * Fix for locale-switching (Russian email addresses)
 * Added Faker::Beer, Faker::Boolean, Faker::Cat, Faker::StarWars, and Faker::Superhero
