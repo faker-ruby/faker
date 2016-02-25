@@ -5,15 +5,19 @@ class TestFakerName < Test::Unit::TestCase
   def setup
     @tester = Faker::Name
   end
-  
+
   def test_name
     assert @tester.name.match(/(\w+\.? ?){2,3}/)
   end
-  
+
+  def test_first_and_last_name
+    [:first_name, :last_name].each { |name| assert @tester.send(name).match(/^\w+$/) }
+  end
+
   def test_prefix
     assert @tester.prefix.match(/[A-Z][a-z]+\.?/)
   end
-  
+
   def test_suffix
     assert @tester.suffix.match(/[A-Z][a-z]*\.?/)
   end

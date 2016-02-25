@@ -8,4 +8,9 @@ Rake::TestTask.new do |t|
   t.warning = true
 end
 
-task :default => :test
+task :spec do
+  Rake::Task["test"].execute
+  sh 'rspec'
+end
+
+task :default => :spec
