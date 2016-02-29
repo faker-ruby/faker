@@ -17,6 +17,10 @@ module Faker
         end
       end
 
+      def calling_code
+        fetch('phone_number.calling_code')
+      end
+
       # US only
       def area_code
         begin
