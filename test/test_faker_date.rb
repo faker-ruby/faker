@@ -54,7 +54,7 @@ class TestFakerDate < Test::Unit::TestCase
     min = 40
     max = 90
     100.times do
-      t = (::Date.today.day == 29 && ::Date.today.month == 2) ? ::Date.today - 1 : Date.today
+      t = (::Date.today.day == 29 && ::Date.today.month == 2) ? ::Date.today - 1 : ::Date.today
       date_min = Date.new(t.year - min, t.month, t.day)
       date_max = Date.new(t.year - max, t.month, t.day)
       birthday = @tester.birthday(min, max)
@@ -66,7 +66,7 @@ class TestFakerDate < Test::Unit::TestCase
     min = 10
     max = 65
     100.times do
-      t = (::Date.today.day == 29 && ::Date.today.month == 2) ? ::Date.today - 1 : Date.today
+      t = (::Date.today.day == 29 && ::Date.today.month == 2) ? ::Date.today - 1 : ::Date.today
       date_min = Date.new(t.year - min, t.month, t.day)
       date_max = Date.new(t.year - max, t.month, t.day)
       birthday = @tester.birthday
