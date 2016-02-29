@@ -23,7 +23,7 @@ module Faker
       end
 
       def birthday(min_age = 18, max_age = 65)
-        t = ::Date.today -1
+        t = ::Date.today - 1
         from =  ::Date.new(t.year - min_age, t.month, t.day)
         to   =  ::Date.new(t.year - max_age, t.month, t.day)
 
