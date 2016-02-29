@@ -1,0 +1,11 @@
+pkg/*
+
+# Ignore Vim backup files.
+*~
+
+# Ignore Vim swap files.
+*.swp
+
+.DS_Store
+
+.idea/*
