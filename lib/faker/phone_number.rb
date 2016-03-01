@@ -17,6 +17,16 @@ module Faker
         end
       end
 
+      # for instance just to pt_BR
+      # see https://en.wikipedia.org/wiki/MSISDN
+      def msisdn
+        if parse('msisdn.formats') == ""
+          numerify(fetch('msisdn.formats'))
+        else
+          parse('msisdn.formats')
+        end
+      end
+
       # US only
       def area_code
         begin
