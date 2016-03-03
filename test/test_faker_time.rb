@@ -74,8 +74,9 @@ class TestFakerTime < Test::Unit::TestCase
   end
 
   def test_time_period
-    from = Date.today
-    to   = Date.today + 15
+    # These dates are chosen to avoid any conflict with DST. When period is not strictly respected.
+    from = Date.parse("2016-09-01")
+    to   = Date.parse("2016-09-15")
 
     100.times do
       period          = @time_ranges.keys.to_a.sample
