@@ -676,6 +676,49 @@ Faker::Beer.alcohol #=> "6.3%"
 Faker::Beer.blg #=> "18.5°Blg"
 ```
 
+###Faker::Wine
+----------------
+
+```ruby
+Faker::Wine.varietal #=> "Pinot Noir"
+
+Faker::Wine.vintage #=> "2007"
+
+Faker::Wine.new_vintage #=> "2011"
+
+Faker::Wine.old_vintage #=> "1989"
+
+Faker::Wine.appellation #=> "Châteauneuf-du-Pape"
+
+Faker::Wine.producer #=> "Robert Mondavi"
+
+Faker::Wine.note #=> "burnt toast"
+
+Faker::Wine.process #=> "in new French oak"
+
+Faker::Wine.process_description #=> "After a year on lees, the wine is matured for 2 years in bottle."
+
+Faker::Wine.publication #=> "Wine Advocate"
+
+Faker::Wine.points #=> "94"
+
+Faker::Wine.rating #=> "Rated 96 points by Wine Advocate"
+
+Faker::Wine.name #=> "Le Ragose, Nord, Primitivo - 2014"
+
+Faker::Wine.nickname #=> "Cavalo"
+
+Faker::Wine.adjective #=> "balanced"
+
+Faker::Wine.description #=> "A reserved, yet dry expression of the style with sherry on the nose."
+
+Faker::Wine.snob #=> "I don't drink anything younger than 1998."
+
+Faker::Wine.food #=> "pizza"
+
+Faker::Wine.pairing #=> "Pairs well with blue cheese."
+```
+
 
 
 Customization
