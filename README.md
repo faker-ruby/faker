@@ -676,7 +676,15 @@ Faker::Beer.alcohol #=> "6.3%"
 Faker::Beer.blg #=> "18.5°Blg"
 ```
 
+###Faker::Job
 
+```ruby
+Faker::Job.title #=> "Lead Accounting Associate"
+
+Faker::Job.field #=> "Manufacturing"
+
+Faker::Job.key_skill #=> "Teamwork"
+```
 
 Customization
 ------------
