@@ -1,5 +1,6 @@
 module Faker
   class Code < Base
+    flexible :code
     class << self
 
       # Generates a 10 digit NPI (National Provider Identifier
@@ -35,6 +36,11 @@ module Faker
         values << regexify(/\d{5}/)
         check_alpha = generate_nric_check_alphabet(values, prefix)
         "#{prefix}#{values}#{check_alpha}"
+      end
+
+      # Retrieves a real Amazon ASIN code
+      def asin
+        fetch('code.asin')
       end
 
     private

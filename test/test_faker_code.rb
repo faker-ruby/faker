@@ -29,6 +29,10 @@ class TestFakerCode < Test::Unit::TestCase
     assert @tester.rut.match(/^\d{1,8}-(\d|k)$/)
   end
 
+  def test_asin
+    assert @tester.asin.match(/^B000([A-Z]|\d){6}$/)
+  end
+
   def test_nric
     assert @tester.nric.match(/^(S|T)\d{7}[A-JZ]$/)
   end
