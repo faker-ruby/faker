@@ -38,7 +38,8 @@ module Faker
         "#{prefix}#{values}#{check_alpha}"
       end
 
-      # Retrieves a real Amazon ASIN code
+      # Retrieves a real Amazon ASIN code list taken from
+      # https://archive.org/details/asin_listing
       def asin
         fetch('code.asin')
       end
