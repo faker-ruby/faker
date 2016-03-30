@@ -676,7 +676,12 @@ Faker::Beer.alcohol #=> "6.3%"
 Faker::Beer.blg #=> "18.5°Blg"
 ```
 
+###Faker::ChuckNorris
+----------------
 
+```ruby
+Faker::ChuckNorris.fact #=> "Chuck Norris can solve the Towers of Hanoi in one move."
+```
 
 Customization
 ------------

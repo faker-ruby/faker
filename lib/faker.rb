@@ -207,6 +207,7 @@ require 'faker/superhero'
 require 'faker/beer'
 require 'faker/boolean'
 require 'faker/star_wars'
+require 'faker/chuck_norris'
 
 require 'extensions/array'
 require 'extensions/symbol'
