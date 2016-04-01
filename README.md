@@ -322,6 +322,8 @@ Faker::Name.suffix #=> "IV"
 
 Faker::Name.title #=> "Legacy Creative Director"
 
+Faker::Name.game_of_thrones #=> "Jaime Lannister"
+
 ```
 
 ###Faker::Avatar
