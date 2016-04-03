@@ -5,7 +5,7 @@ class TestFakerCity < Test::Unit::TestCase
     @old_locales = I18n.config.available_locales
     xx = {
       faker: {
-        name: { first_name: ['alice'], last_name: ['smith'] },
+        name: { female_first_name: ['alice'], male_first_name: ['alice'], last_name: ['smith'] },
         address: { city_prefix: ['west'], city_suffix: ['burg'] }
       }
     }

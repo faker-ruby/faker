@@ -17,6 +17,14 @@ class TestFakerName < Test::Unit::TestCase
     assert @tester.first_name.match(/(\w+\.? ?){3,4}/)
   end
 
+  def test_male_first_name
+    assert @tester.male_first_name.match(/(\w+\.? ?){3,4}/)
+  end
+
+  def test_female_first_name
+    assert @tester.female_first_name.match(/(\w+\.? ?){3,4}/)
+  end
+
   def test_middle_name
     assert @tester.middle_name.match(/(\w+\.? ?){3,4}/)
   end
