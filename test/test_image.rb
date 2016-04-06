@@ -16,15 +16,14 @@ class TestFakerImage < Test::Unit::TestCase
     assert @tester.image('faker', '150x320').match(/http:\/\/loremflickr\.com\/(\d+)\/(\d+)\/(.+)/)[3] == 'faker'
   end
 
+  def test_image_with_no_args
+    assert @tester.image.match(/http:\/\/loremflickr\.com\/(\d+)\/(\d+)/)[1] == '300'
+    assert @tester.image.match(/http:\/\/loremflickr\.com\/(\d+)\/(\d+)/)[2] == '300'
+  end
+
   def test_image_with_incorrect_size
     assert_raise ArgumentError do
       @tester.image(nil, '150x320z')
-    end
-  end
-
-  def test_image_with_no_size
-    assert_raise ArgumentError do
-      @tester.image(nil, nil)
     end
   end
 end
