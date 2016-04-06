@@ -310,17 +310,19 @@ Faker::Lorem.paragraphs(1, true) #=> ["Depulso animi cunctatio amicitia adficio.
 
 ```ruby
 
-Faker::Name.name #=> "Tyshawn Johns Sr."
+Faker::Name.name        #=> "Tyshawn Johns Sr."
 
-Faker::Name.first_name #=> "Kaci"
+Faker::Name.first_name  #=> "Kaci"
 
-Faker::Name.last_name #=> "Ernser"
+Faker::Name.middle_name #=> "Madilyn"
 
-Faker::Name.prefix #=> "Mr."
+Faker::Name.last_name   #=> "Ernser"
 
-Faker::Name.suffix #=> "IV"
+Faker::Name.prefix      #=> "Mr."
 
-Faker::Name.title #=> "Legacy Creative Director"
+Faker::Name.suffix      #=> "IV"
+
+Faker::Name.title       #=> "Legacy Creative Director"
 
 ```
 
