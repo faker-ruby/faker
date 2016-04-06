@@ -322,6 +322,9 @@ Faker::Name.suffix #=> "IV"
 
 Faker::Name.title #=> "Legacy Creative Director"
 
+Faker::Name.initials #=> "NJM"
+Faker::Name.initials(2) #=> "NM"
+
 ```
 
 ###Faker::Avatar

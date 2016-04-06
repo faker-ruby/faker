@@ -17,6 +17,10 @@ module Faker
       # Wordlist from http://www.bullshitjob.com/title/
       def title; fetch('name.title.descriptor') + ' ' + fetch('name.title.level') + ' ' + fetch('name.title.job'); end
 
+      def initials(character_count=3)
+        (0...character_count).map { (65 + rand(26)).chr }.join
+      end
+
     end
   end
 end
