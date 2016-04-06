@@ -349,9 +349,11 @@ Generates an image using [loremflickr](http://loremflickr.com/).
 
 ```ruby
 
-Faker::Image.image(nil, "300x300") #=> "http://loremflickr.com/300/300"
+Faker::Image.image #=> "http://loremflickr.com/300/300"
 
-Faker::Image.image("my-own-slug", "50x50") #=> "http://loremflickr.com/300/300/my-own-slug"
+Faker::Image.image(nil, "200x200") #=> "http://loremflickr.com/200/200"
+
+Faker::Image.image("my-own-slug", "50x50") #=> "http://loremflickr.com/50/50/my-own-slug"
 ```
 
 ###Faker::Number
