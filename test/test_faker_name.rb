@@ -10,6 +10,10 @@ class TestFakerName < Test::Unit::TestCase
     assert @tester.name.match(/(\w+\.? ?){2,3}/)
   end
   
+  def test_name_with_middle
+    assert @tester.name_with_middle.match(/(\w+\.? ?){3,4}/)
+  end
+  
   def test_prefix
     assert @tester.prefix.match(/[A-Z][a-z]+\.?/)
   end

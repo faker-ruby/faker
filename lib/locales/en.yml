@@ -130,6 +130,13 @@ en:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{first_name} #{last_name}"
+        - "#{first_name} #{first_name} #{last_name} #{suffix}"
+        - "#{first_name} #{first_name} #{last_name}"
+        - "#{first_name} #{first_name} #{last_name}"
+        - "#{first_name} #{first_name} #{last_name}"
+        - "#{first_name} #{first_name} #{last_name}"
 
     phone_number:
       formats: ['###-###-####', '(###) ###-####', '1-###-###-####', '###.###.####', '###-###-####', '(###) ###-####', '1-###-###-####', '###.###.####', '###-###-#### x###', '(###) ###-#### x###', '1-###-###-#### x###', '###.###.#### x###', '###-###-#### x####', '(###) ###-#### x####', '1-###-###-#### x####', '###.###.#### x####', '###-###-#### x#####', '(###) ###-#### x#####', '1-###-###-#### x#####', '###.###.#### x#####']
