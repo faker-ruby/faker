@@ -270,7 +270,7 @@ Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
 Faker::Lorem.word #=> "repellendus"
 
-# Optional arguments: num=3, supplemental=false
+# Optional arguments: num=3, supplemental=false (words from a supplementary list of Lorem-like words)
 Faker::Lorem.words #=> ["dolores", "adipisci", "nesciunt"]
 Faker::Lorem.words(4) #=> ["culpa", "recusandae", "aut", "omnis"]
 Faker::Lorem.words(4, true) #=> ["colloco", "qui", "vergo", "deporto"]
