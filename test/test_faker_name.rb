@@ -21,4 +21,12 @@ class TestFakerName < Test::Unit::TestCase
   def test_suffix
     assert @tester.suffix.match(/[A-Z][a-z]*\.?/)
   end
+
+  def test_job_titles
+    @job_titles = Faker::Name.job_titles
+    @job_titles.each do |title|
+       assert !title.nil?
+       assert title != ""
+    end       
+  end
 end

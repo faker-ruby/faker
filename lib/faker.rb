@@ -96,6 +96,18 @@ module Faker
           fetched
         end
       end
+      
+      # Helper for the common approach of grabbing a translation 
+      # with an array of values and returning all of them.
+      def fetch_all(key)
+        fetched = translate("faker.#{key}")
+        fetched = fetched.last if fetched.size <= 1
+        if !fetched.respond_to?(:sample) && fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+          regexify(fetched)
+        else
+          fetched
+        end
+      end
 
       # Load formatted strings from the locale, "parsing" them
       # into method calls that can be used to generate a
