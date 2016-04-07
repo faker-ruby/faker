@@ -9,8 +9,8 @@ class TestFakerTime < Test::Unit::TestCase
   end
 
   def test_between_with_time_parameters
-    from = Time.local(2014, 12, 28, 06, 0, 0)
-    to   = Time.local(2014, 12, 30, 13, 0, 0)
+    from = Time.at(0)
+    to   = Time.at(2145945600)
 
     100.times do
       random_time = @tester.between(from, to)
@@ -20,8 +20,8 @@ class TestFakerTime < Test::Unit::TestCase
   end
 
   def test_between_with_date_parameters
-    from = Date.parse("2014-12-28")
-    to   = Date.parse("2014-12-30")
+    from = Time.at(0).to_date
+    to   = Time.at(2145945600).to_date
 
     100.times do
       random_time = @tester.between(from, to)
@@ -74,8 +74,8 @@ class TestFakerTime < Test::Unit::TestCase
   end
 
   def test_time_period
-    from = Date.today
-    to   = Date.today + 15
+    from = Time.at(0).to_date
+    to   = Time.at(2145945600).to_date
 
     100.times do
       period          = @time_ranges.keys.to_a.sample
@@ -85,8 +85,8 @@ class TestFakerTime < Test::Unit::TestCase
       random_between  = @tester.between(from, to, period)
       random_forward  = @tester.forward(30, period)
 
-      [random_backward, random_between, random_forward].each do |result|
-        assert period_range.include?(result.hour.to_i), "\"#{result.hour}\" expected to be included in Faker::Time::TIME_RANGES[:#{period}] range"
+      [random_backward, random_between, random_forward].each_with_index do |result, index|
+        assert period_range.include?(result.hour.to_i), "#{[:random_backward, :random_between, :random_forward][index]}: \"#{result}\" expected to be included in Faker::Time::TIME_RANGES[:#{period}] range"
       end
     end
   end

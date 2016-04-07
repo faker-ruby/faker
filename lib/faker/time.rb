@@ -12,41 +12,30 @@ module Faker
 
     class << self
       def between(from, to, period = :all)
-        time_parameters = from.is_a?(::Time) && to.is_a?(::Time)
-
-        if time_parameters
-          random_time = Faker::Base::rand_in_range(from.to_f, to.to_f)
-          random_time = ::Time.at(random_time)
-        else
-          random_time = super(from, to).to_time + random_time(period)
-        end
-
-        random_time
+        date_with_random_time(super(from, to), period)
       end
 
       def forward(days = 365, period = :all)
-        super(days).to_time + random_time(period)
+        date_with_random_time(super(days), period)
       end
 
       def backward(days = 365, period = :all)
-        super(days).to_time + random_time(period)
+        date_with_random_time(super(days), period)
       end
 
       private
 
-      def random_time(period)
-        hours(period) + minutes + seconds
+      def date_with_random_time(date, period)
+        ::Time.local(date.year, date.month, date.day, hours(period), minutes, seconds)
       end
 
       def hours(period)
         raise ArgumentError, 'invalid period' unless TIME_RANGES.has_key? period
-        hour_at_period = TIME_RANGES[period].to_a.sample
-
-        (60 * 60 * hour_at_period)
+        TIME_RANGES[period].to_a.sample
       end
 
       def minutes
-        60 * seconds
+        seconds
       end
 
       def seconds
