@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.add_dependency('i18n', '~> 0.5')
 
   s.files         = Dir['lib/**/*'] + %w(History.txt License.txt README.md)
-  s.test_files    = Dir['{test,spec,features}/**/*']
   s.executables   = Dir['bin/*'].map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 end
