@@ -96,8 +96,8 @@ module Faker
           fetched
         end
       end
-      
-      # Helper for the common approach of grabbing a translation 
+
+      # Helper for the common approach of grabbing a translation
       # with an array of values and returning all of them.
       def fetch_all(key)
         fetched = translate("faker.#{key}")
@@ -220,6 +220,7 @@ require 'faker/beer'
 require 'faker/boolean'
 require 'faker/star_wars'
 require 'faker/chuck_norris'
+require 'faker/crypto'
 
 require 'extensions/array'
 require 'extensions/symbol'
