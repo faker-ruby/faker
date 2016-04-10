@@ -37,7 +37,59 @@ module Faker
         "#{prefix}#{values}#{check_alpha}"
       end
 
+      # Generate GSM modem, device or mobile phone 15 digit IMEI number.
+      def imei
+        generate_imei
+      end
+
     private
+
+      # Reporting body identifier
+      RBI = %w(01 10 30 33 35 44 45 49 50 51 52 53 54 86 91 98 99).freeze
+
+      def generate_imei
+        pos = 0
+        str = Array.new(15, 0)
+        sum = 0
+        t = 0
+        len_offset = 0
+        len = 15
+
+        # Fill in the first two values of the string based with the specified prefix.
+        # Reporting Body Identifier list: http://en.wikipedia.org/wiki/Reporting_Body_Identifier
+        arr = RBI.sample
+        str[0] = arr[0].to_i
+        str[1] = arr[1].to_i
+        pos = 2
+
+        # Fill all the remaining numbers except for the last one with random values.
+        while pos < (len - 1)
+          str[pos] = rand(0..9)
+          pos += 1
+        end
+
+        # Calculate the Luhn checksum of the values thus far
+        len_offset = (len + 1) % 2
+        for pos in (0..(len - 1))
+          if (pos + len_offset) % 2 != 0
+            t = str[pos] * 2
+
+            if t > 9
+              t -= 9
+            end
+
+            sum += t
+          else
+            sum += str[pos]
+          end
+        end
+
+        # Choose the last digit so that it causes the entire string to pass the checksum.
+        str[len - 1] = (10 - (sum % 10)) % 10
+
+        # Output the IMEI value.
+        str.join('')
+      end
 
       def generate_base10_isbn
         values = regexify(/\d{9}/)
