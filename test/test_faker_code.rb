@@ -32,4 +32,28 @@ class TestFakerCode < Test::Unit::TestCase
   def test_nric
     assert @tester.nric.match(/^(S|T)\d{7}[A-JZ]$/)
   end
+
+  def test_imei_regexp
+    assert @tester.imei.match(/\A[\d\.\:\-\s]+\z/i)
+  end
+
+  def test_imei_luhn_value
+    assert luhn_checksum_valid(@tester.imei)
+  end
+
+  def luhn_checksum_valid(numbers)
+    sum = 0
+    i = 0
+
+    numbers.each_char do |ch|
+      n = ch.to_i
+      n *= 2 if i.odd?
+      n = 1 + (n - 10) if n >= 10
+
+      sum += n
+      i += 1
+    end
+
+    (sum % 10).zero?
+  end
 end
