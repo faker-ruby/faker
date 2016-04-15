@@ -703,6 +703,19 @@ Faker::Beer.blg #=> "18.5°Blg"
 Faker::ChuckNorris.fact #=> "Chuck Norris can solve the Towers of Hanoi in one move."
 ```
 
+###Faker::Educator
+-------------------
+
+```ruby
+Faker::Educator.university #=> "Mallowtown Technical College"
+
+Faker::Educator.secondary_school #=> "Iceborough Secodary College"
+
+Faker::Educator.course #=> "Associate Degree in Criminology"
+
+Faker::Educator.campus #=> "Vertapple Campus"
+```
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
