@@ -1,5 +1,6 @@
 module Faker
   class Code < Base
+    flexible :code
     class << self
 
       # Generates a 10 digit NPI (National Provider Identifier
@@ -40,6 +41,12 @@ module Faker
       # Generate GSM modem, device or mobile phone 15 digit IMEI number.
       def imei
         generate_imei
+      end
+
+      # Retrieves a real Amazon ASIN code list taken from
+      # https://archive.org/details/asin_listing
+      def asin
+        fetch('code.asin')
       end
 
     private
