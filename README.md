@@ -1,5 +1,9 @@
-Faker
+Faker 
 =====
+
+<!-- Badges -->
+<a href="http://badge.fury.io/rb/faker"><img src="https://badge.fury.io/rb/faker@2x.png" alt="Gem Version" height="18"></a>
+
 This gem is a port of Perl's Data::Faker library that generates fake data.
 
 It comes in very handy for taking screenshots (taking screenshots for my
