@@ -12,8 +12,12 @@ class TestEnAuLocale < Test::Unit::TestCase
   def test_au_methods_with_en_au_locale
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
+    assert Faker::Company.suffix.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.city.is_a? String
+    assert Faker::Address.state_abbr.is_a? String
+    assert Faker::Address.state.is_a? String
+    assert Faker::Address.default_country.is_a? String
   end
 
   def test_aussie_mobiles_start_with_04
