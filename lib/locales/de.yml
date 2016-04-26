@@ -50,6 +50,9 @@ de:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
 
+    color:
+      name: [rot, grün, blau, gelb, lila, weiß, schwarz, orange, rosa, grau, braun, violett, türkis]
+
     phone_number:
       formats: ['(0###) #########', '(0####) #######', '+49-###-#######', '+49-####-########']
 
