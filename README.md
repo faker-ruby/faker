@@ -15,6 +15,45 @@ development.
   Please refer the README of your version for the available methods.
   List of all versions is [available here](https://github.com/stympy/faker/releases).
 
+Contents
+--------
+
+- [Installing](#installing)
+- [Usage](#usage)
+  - [Faker::Address](#fakeraddress)
+  - [Faker::Bitcoin](#fakerbitcoin)
+  - [Faker::Business](#fakerbusiness)
+  - [Faker::Code](#fakercode)
+  - [Faker::Color](#fakercolor)
+  - [Faker::Commerce](#fakercommerce)
+  - [Faker::Company](#fakercompany)
+  - [Faker::Date](#fakerdate)
+  - [Faker::Internet](#fakerinternet)
+  - [Faker::Lorem](#fakerlorem)
+  - [Faker::Name](#fakername)
+  - [Faker::Number](#fakernumber)
+  - [Faker::Boolean](#fakerboolean)
+  - [Faker::PhoneNumber](#fakerphonenumber)
+  - [Faker::Time](#fakertime)
+  - [Faker::Hacker](#fakerhacker)
+  - [Faker::Crypto](#fakercrypto)
+  - [Faker::App](#fakerapp)
+  - [Faker::SlackEmoji](#fakerslackemoji)
+  - [Faker::Team](#fakerteam)
+  - [Faker::Book](#fakerbook)
+  - [Faker::University](#fakeruniversity)
+  - [Faker::Placeholdit](#fakerplaceholdit)
+  - [Faker::Hipster](#fakerhipster)
+  - [Faker::Superhero](#fakersuperhero)
+  - [Faker::StarWars](#fakerstarwars)
+  - [Faker::Beer](#fakerbeer)
+  - [Faker::ChuckNorris](#fakerchucknorris)
+  - [Faker::Educator](#fakereducator)
+- [Customization](#customization)
+- [Contributing](#contributing)
+- [Contact](#contact)
+- [License](#license)
+  
 Installing
 ----------
 ```bash
@@ -29,7 +68,7 @@ Faker::Name.name      #=> "Christophe Bartell"
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ```
 
-###Faker::Address
+### Faker::Address
 -----------------
 
 ```ruby
