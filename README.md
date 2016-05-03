@@ -35,6 +35,7 @@ Contents
   - [Faker::Boolean](#fakerboolean)
   - [Faker::PhoneNumber](#fakerphonenumber)
   - [Faker::Time](#fakertime)
+    [Faker::TimeCode](#fakertimecode)
   - [Faker::Hacker](#fakerhacker)
   - [Faker::Crypto](#fakercrypto)
   - [Faker::App](#fakerapp)
@@ -53,7 +54,7 @@ Contents
 - [Contributing](#contributing)
 - [Contact](#contact)
 - [License](#license)
-  
+
 Installing
 ----------
 ```bash
