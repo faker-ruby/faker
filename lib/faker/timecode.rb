@@ -21,7 +21,7 @@ module Faker
       private
 
       def random_timecode(period)
-        ::TimeCode.local(hours(period), minutes, seconds, frames)
+        ::Time.local(hours(period), minutes, seconds, frames)
       end
 
       def hours(period)
