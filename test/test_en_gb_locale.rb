@@ -26,4 +26,15 @@ class TestEnGbLocale < Test::Unit::TestCase
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/,'')
     assert_equal '0', mobile[0]
   end
+
+  def test_gb_postcode_has_outcode_and_incode
+    postcode = Faker::Address.postcode
+    assert_equal 2, postcode.split(' ').length
+  end
+
+  def test_gb_postcode_incode_is_valid
+    #The letters C I K M O V are not used in the second part of the Postcode.
+    incode = Faker::Address.postcode.split(' ')[1]
+    assert_match(/\d[ABDEFGHJLNPQRSTUWXYZ]{2}/, incode)
+  end
 end
