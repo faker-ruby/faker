@@ -79,6 +79,22 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_password_with_mixed_case
+    assert @tester.password.match(/[A-Z]+/)
+  end
+
+  def test_password_without_mixed_case
+    assert @tester.password(8, 12, false).match(/[^A-Z]+/)
+  end
+
+  def test_password_with_special_chars
+    assert @tester.password(8, 12, true, true).match(/[!@#\$%\^&\*]+/)
+  end
+
+  def test_password_without_special_chars
+    assert @tester.password(8, 12, true).match(/[^!@#\$%\^&\*]+/)
+  end
+
   def test_domain_name
     assert @tester.domain_name.match(/\w+\.\w+/)
   end
@@ -94,8 +110,33 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_ip_v4_address
     assert_equal 3, @tester.ip_v4_address.count('.')
 
-    1000.times do
+    100.times do
       assert @tester.ip_v4_address.split('.').map{|octet| octet.to_i}.max <= 255
+    end
+  end
+
+  def test_public_ip_v4_address
+    ten_dot = /^10\./
+    one_two_seven = /^127\./
+    one_six_nine = /^169\.254/
+    one_nine_two = /^192\.168\./
+    one_seven_two = /^172\.(16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)\./
+
+    1000.times do
+      address = @tester.public_ip_v4_address
+      assert_not_match ten_dot, address
+      assert_not_match one_two_seven, address
+      assert_not_match one_six_nine, address
+      assert_not_match one_nine_two, address
+      assert_not_match one_seven_two, address
+    end
+  end
+
+  def test_ip_v4_cidr
+    assert @tester.ip_v4_cidr.match(/\/\d{1,2}$/)
+
+    1000.times do
+      assert (1..32).include?(@tester.ip_v4_cidr.split('/').last.to_i)
     end
   end
 
@@ -103,7 +144,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_equal 5, @tester.mac_address.count(':')
     assert_equal 5, @tester.mac_address("").count(':')
 
-    1000.times do
+    100.times do
       assert @tester.mac_address.split(':').map{|d| d.to_i(16)}.max <= 255
     end
 
@@ -114,8 +155,16 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_ip_v6_address
     assert_equal 7, @tester.ip_v6_address.count(':')
 
-    1000.times do
+    100.times do
       assert @tester.ip_v6_address.split('.').map{|h| "0x#{h}".hex}.max <= 65535
+    end
+  end
+
+  def test_ip_v6_cidr
+    assert @tester.ip_v6_cidr.match(/\/\d{1,3}$/)
+
+    1000.times do
+      assert (1..128).include?(@tester.ip_v6_cidr.split('/').last.to_i)
     end
   end
 

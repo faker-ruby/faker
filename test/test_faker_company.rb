@@ -14,7 +14,7 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_logo
-    assert @tester.logo.match(%r{http://pigment.github.io/fake-logos/logos/medium/color/\d+\.png})
+    assert @tester.logo.match(%r{https://pigment.github.io/fake-logos/logos/medium/color/\d+\.png})
   end
 
   def test_buzzword
@@ -25,6 +25,10 @@ class TestFakerCompany < Test::Unit::TestCase
     org_no = @tester.swedish_organisation_number
     assert org_no.match(/\d{10}/)
     assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
+  end
+
+  def test_profession
+    assert @tester.profession.match(/[a-z ]+\.?/)
   end
 
 end

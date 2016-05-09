@@ -1,0 +1,29 @@
+fi-FI:
+  faker:
+    address:
+      city_prefix: [Haap, He, Kau, Oul, Ra, Ni, 'No', Ke, La, Or]
+      city_suffix: [sjärvi, kano, ahe, inen, esi, uma, mi, inen, valta, mina]
+      building_number: ['###', '##', '#']
+      street_suffix: [katu, gatan, ranta]
+      postcode: ['#####']
+      state: [Turun ja Porin lääni, Uudenmaan ja Hämeen lääni, Pohjanmaan lääni, Viipurin ja Savonlinnan lääni, Käkisalmen lääni, Savonlinnan ja Kymenkartanon lääni, Kymenkartanon ja Savon lääni]
+      city:
+        - "#{city_prefix}#{city_suffix}"
+      street_name:
+        - "#{Name.last_name}#{street_suffix}"
+      street_address:
+        - "#{street_name}#{building_number}"
+      default_country: [Suomi]
+
+    name:
+      first_name_women: [Eija, Helena, Anu, Riitta, Heta, Kanerva, Tytti, Saimi, Kaari, Emma, Elli]
+      first_name_men: [Erkki, Toni, Aki, Iiro, Marko, Henri, Juha, Iivari, Arto, Eelis, Markus, Olli]
+      first_name: [Erkki, Toni, Aki, Iiro, Marko, Henri, Juha, Iivari, Arto, Eelis, Markus, Olli, Eija, Helena, Anu, Riitta, Heta, Kanerva, Tytti, Saimi, Kaari, Emma, Elli]
+      last_name: [Ahokas, Uotila, Pennanen, Meriluoto, Ilkka, Jantunen, Liukkonen, Eronen, Ojanen, Ruutu, Jantunen, Isometsä]
+      name:
+        - "#{first_name} #{last_name}"
+
+    phone_number:
+      formats: ['##-######', '###-#######']
+    cell_phone:
+      formats: ['0##-#######']

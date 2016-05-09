@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 # Specify your gem's dependencies in faker.gemspec
 gemspec
@@ -6,4 +6,5 @@ gemspec
 group :development, :test do
   gem "test-unit"
   gem "rake"
+  gem "minitest"
 end

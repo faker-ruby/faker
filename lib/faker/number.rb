@@ -2,17 +2,39 @@ module Faker
   class Number < Base
     class << self
       def number(digits)
+        num = ''
+        if digits > 1
+          num = non_zero_digit
+          digits -= 1
+        end
+        num + leading_zero_number(digits)
+      end
+
+      def leading_zero_number(digits)
         (1..digits).collect {digit}.join
+      end
+
+      def decimal_part digits
+        num = ''
+        if digits > 1
+          num = non_zero_digit
+          digits -= 1
+        end
+        leading_zero_number(digits) + num
       end
 
       def decimal(l_digits, r_digits = 2)
         l_d = self.number(l_digits)
-        r_d = self.number(r_digits)
+        r_d = self.decimal_part(r_digits)
         "#{l_d}.#{r_d}"
       end
 
+      def non_zero_digit
+        ( rand(9) + 1 ).to_s
+      end
+
       def digit
-        (rand() * 9).round.to_s
+        rand(10).to_s
       end
 
       def hexadecimal(digits)
