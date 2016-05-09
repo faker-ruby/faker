@@ -2,12 +2,35 @@ module Faker
   class Mobile < Base
     class << self
 
+
+      # meid - 14 hex -
+      # imei - 14 + 1 - checksum
+
       def imei(imei_salt = '')
-        imei_base = imei_salt
-        (14 - imei_base.size).times do
-          imei_base << (0..9).to_a.sample.to_s
+        luhn_checksum(meid(imei_salt))
+      end
+
+      def meid(meid_salt = '')
+        (14 - meid_salt.size).times do
+          meid_salt << (0..9).to_a.sample.to_s
         end
-        to_valid_luhn(imei_base)
+        meid_salt
+      end
+
+
+      def esn(type = nil)
+        case type
+          when 'active', :active
+            esn_salt = 'BE'
+          when 'unsupported', :unsupported
+            esn_salt = 'DD'
+          when 'stolen', :stolen
+            esn_salt = 'FF'
+          else
+            esn_salt = ''
+        end
+        esn_salt << Digest::MD5.hexdigest(DateTime.now.to_i.to_s).to_s[0, 8 - esn_salt.size]
+        esn_salt
       end
 
       def uicc(type = 'GSM')
@@ -19,20 +42,20 @@ module Faker
           else
             fail 'Wrong type was provided [type: ' + type + ']'
         end
-        to_valid_luhn(temp_value)
+        luhn_checksum(temp_value)
       end
-      
+
       private
 
-      def to_valid_luhn(number)
+      def luhn_checksum(number)
         sum = 0
-        number.split(//).each_with_index.map do |x, i|
-          y = x.to_i * (2 - ((i + 1) % 2))
+        number.split(//).reverse.each_with_index.map do |x, i|
+          y = x.to_i * (2 - (i % 2))
           sum += (y < 10 ? y : y - 9)
         end
-        sum % 10 == 0 ? "#{number}0" : "#{number}#{10 - (sum % 10)}"
+        check = sum % 10
+        check == 0 ? "#{number}0" : "#{number}#{10 - check}"
       end
-
     end
   end
 end
