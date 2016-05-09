@@ -23,6 +23,42 @@ module Faker
         date_with_random_time(super(days), period)
       end
 
+      def high_res_time
+        nowtime = '%10.4f' % ::Time.now.to_f
+        nowtime = nowtime.to_f * 10_000
+        nowtime = nowtime.to_i
+        nowtime
+      end
+
+      def todays_date
+        today = ::Date.today
+        reg_date = today.to_s
+        reg_date
+      end
+
+      def time_and_date
+        td = ::Time.now
+        td = td.strftime('%Y-%m-%d %H:%M')
+        td
+      end
+
+      def expiry_date
+        today = ::Date.today
+        exp_date = today + 365
+        exp_date = exp_date.to_s
+        exp_date
+      end
+
+      def tomorrow
+        time1 = ::Time.new
+        future = time1 + 86_400
+        future.strftime('%Y-%m-%d')
+      end
+
+      def currentepoch
+        ::Time.now.to_i
+      end
+
       private
 
       def date_with_random_time(date, period)
