@@ -2,6 +2,10 @@
 module Faker
   class Internet < Base
     class << self
+      @@tld_list = ['asia', 'be', 'biz', 'bz', 'ca', 'cc', 'co', 'com', 'es', 'in', 'info', 'it', 'me',
+                    'mobi', 'name', 'net', 'nl', 'org', 'pro', 'tel', 'tv', 'tw', 'us', 'ws', 'xxx', 'com.au',
+                    'com.br', 'uk', 'vc', 'at', 'de', 'desi', 'aero', 'example', 'sexy', 'mm-example', 'ruhr',
+                    'dance', 'nu', 'global', 'tokyo', 'nyc', 'xyz', 'scot', 'quebec', 'cymru']
       def email(name = nil)
         [user_name(name), domain_name].join('@')
       end
@@ -75,15 +79,48 @@ module Faker
         with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
       end
 
+
+      def domain(options = {})
+        length = 20
+        tld = get_domain_tld(options)
+        if tld.eql?('name')
+          domain_prefix = options.key?(:prefix) ? options[:prefix] : 'nametld'
+        else
+          domain_prefix = options.key?(:prefix) ? options[:prefix] + '-' : ''
+        end
+        length = options[:length] if options.key?(:length)
+
+        if options.key?(:format)
+          case options[:format]
+            # when 'timestamp', 'time' , 'time-stamp'
+            #   d_name =
+            when 'word', 'name'
+              d_name = Lorem.word
+            else
+              d_name = Digest::MD5.hexdigest(DateTime.now.to_f.to_s + rand.to_s)[0..(length - domain_prefix.size)]
+          end
+        else
+          d_name = Digest::MD5.hexdigest(DateTime.now.to_f.to_s + rand.to_s)[0..(length - domain_prefix.size)]
+        end
+        tld.eql?('name') ? "#{domain_prefix}.#{d_name}.#{tld}" : "#{domain_prefix}#{d_name}.#{tld}"
+      end
+
       def fix_umlauts(string)
         Char.fix_umlauts string
       end
 
-      def domain_word
-        if %w(uk).include? Config.locale
-          return Char.prepare Company.name.split(' ')[1]
+      def domain_word(charset = 'en')
+        if %w(uk ru).include? Config.locale
+          word = Company.name.split(' ')[1]
+        else
+          word =  Company.name.split(' ').first
         end
-        Char.prepare Company.name.split(' ').first
+
+        if charset.eql?('en')
+          word = Char.prepare word
+          # elsif charset.eql?('local')
+        end
+         word
       end
 
       def domain_suffix
@@ -132,6 +169,31 @@ module Faker
         lambda { |addr| private_nets_regex.any? { |net| net =~ addr } }
       end
 
+      def ip_v4_address_abc
+        ary = (2..254).to_a
+        [(1..223).to_a.sample,
+         ary.sample,
+         ary.sample,
+         ary.sample].join('.')
+      end
+
+      def public_ip_v4_address_abc
+        private_nets = [
+            /^10\./,
+            /^127\./,
+            /^169\.254\./,
+            /^172\.(16|17|18|19|2\d|30|31)\./,
+            /^192\.168\./
+        ]
+
+        is_private = lambda { |addr| private_nets.any? { |net| net =~ addr } }
+        addr = nil
+        begin
+          addr = ip_v4_address_abc
+        end while is_private[addr]
+        addr
+      end
+
       def ip_v4_cidr
         "#{ip_v4_address}/#{1 + rand(31)}"
       end
@@ -155,6 +217,24 @@ module Faker
 
       def device_token
         rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
+      end
+
+      private
+
+      def get_domain_tld(options)
+        if options.key?(:tld)
+          tld = options[:tld]
+        elsif options.key?(:gtld)
+          tld = options[:gtld]
+          if options.key?(:cctld)
+            tld << '.' + options[:cctld]
+          end
+        elsif options.key?(:cctld)
+          tld = options[:cctld]
+        else
+          tld = @@tld_list.sample
+        end
+        tld
       end
     end
   end
