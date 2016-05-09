@@ -307,7 +307,7 @@ Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
 ```
 
-###Faker::Internet
+###Faker::File
 ---------------
 ```ruby
 Faker::File.extension #=> "mp3"
