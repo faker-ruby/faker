@@ -94,14 +94,20 @@ module Faker
           case options[:format]
             # when 'timestamp', 'time' , 'time-stamp'
             #   d_name =
-            when 'word', 'name'
+            when 'word', 'name', :word, :name
               d_name = Lorem.word
-            else
-              d_name = Digest::MD5.hexdigest(DateTime.now.to_f.to_s + rand.to_s)[0..(length - domain_prefix.size)]
+            when :idn, 'idn'
+              if options.key?(:language)
+                domain_prefix = domain_word(language: options[:language] )
+              else
+                puts 'In order to generate IDN domain, "language" option must be provided'
+                fail
+              end
           end
         else
-          d_name = Digest::MD5.hexdigest(DateTime.now.to_f.to_s + rand.to_s)[0..(length - domain_prefix.size)]
+
         end
+        d_name = Digest::MD5.hexdigest(DateTime.now.to_f.to_s + rand.to_s)[0..(length - domain_prefix.size)] unless d_name
         tld.eql?('name') ? "#{domain_prefix}.#{d_name}.#{tld}" : "#{domain_prefix}#{d_name}.#{tld}"
       end
 
@@ -109,18 +115,24 @@ module Faker
         Char.fix_umlauts string
       end
 
-      def domain_word(charset = 'en')
+      def domain_word(options = {:charset => 'en'})
+        if options.key?(:language)
+          current_local = Faker::Config.locale unless options[:language].eql?(Faker::Config.locale)
+        end
+        Faker::Config.locale = charset if current_local
+
         if %w(uk ru).include? Config.locale
           word = Company.name.split(' ')[1]
         else
           word =  Company.name.split(' ').first
         end
 
-        if charset.eql?('en')
+        if options[:charset].eql?('en')
           word = Char.prepare word
           # elsif charset.eql?('local')
         end
-         word
+        Faker::Config.locale = current_local if current_local
+        word
       end
 
       def domain_suffix
