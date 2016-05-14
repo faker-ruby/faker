@@ -11,6 +11,7 @@ GEM
     minitest (5.8.3)
     rake (10.1.0)
     test-unit (2.5.5)
+    timecop (0.8.1)
 
 PLATFORMS
   ruby
@@ -20,3 +21,7 @@ DEPENDENCIES
   minitest
   rake
   test-unit
+  timecop
+
+BUNDLED WITH
+   1.11.2
