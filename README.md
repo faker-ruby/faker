@@ -49,11 +49,12 @@ Contents
   - [Faker::Beer](#fakerbeer)
   - [Faker::ChuckNorris](#fakerchucknorris)
   - [Faker::Educator](#fakereducator)
+  - [Faker::Music](#fakermusic)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
 - [License](#license)
-  
+
 Installing
 ----------
 ```bash
@@ -753,6 +754,16 @@ Faker::Educator.secondary_school #=> "Iceborough Secodary College"
 Faker::Educator.course #=> "Associate Degree in Criminology"
 
 Faker::Educator.campus #=> "Vertapple Campus"
+```
+
+
+###Faker::Music
+-------------------
+
+```ruby
+Faker::Music.key #=> "C"
+
+Faker::Music.instrument #=> "Ukelele"
 ```
 
 Customization
