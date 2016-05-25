@@ -1,5 +1,6 @@
-Faker
-=====
+# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker)
+
+
 This gem is a port of Perl's Data::Faker library that generates fake data.
 
 It comes in very handy for taking screenshots (taking screenshots for my
@@ -53,7 +54,7 @@ Contents
 - [Contributing](#contributing)
 - [Contact](#contact)
 - [License](#license)
-  
+
 Installing
 ----------
 ```bash
