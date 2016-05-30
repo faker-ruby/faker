@@ -97,11 +97,7 @@ module Faker
       end
 
       def ip_v4_address
-        ary = (2..254).to_a
-        [ary.sample,
-        ary.sample,
-        ary.sample,
-        ary.sample].join('.')
+        (1..4).map { rand(2..254) }.join('.')
       end
 
       def public_ip_v4_address
@@ -126,9 +122,7 @@ module Faker
       end
 
       def ip_v6_address
-        @@ip_v6_space ||= (0..65535).to_a
-        container = (1..8).map{ |_| @@ip_v6_space.sample }
-        container.map{ |n| n.to_s(16) }.join(':')
+        (1..8).map { rand(65536).to_s(16) }.join(':')
       end
 
       def ip_v6_cidr
