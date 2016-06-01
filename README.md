@@ -29,6 +29,7 @@ Contents
   - [Faker::Company](#fakercompany)
   - [Faker::Date](#fakerdate)
   - [Faker::Internet](#fakerinternet)
+  - [Faker::File](#fakerfile)
   - [Faker::Lorem](#fakerlorem)
   - [Faker::Name](#fakername)
   - [Faker::Number](#fakernumber)
@@ -53,7 +54,7 @@ Contents
 - [Contributing](#contributing)
 - [Contact](#contact)
 - [License](#license)
-  
+
 Installing
 ----------
 ```bash
@@ -304,6 +305,18 @@ Faker::Internet.slug('foo bar') #=> "foo.bar"
 Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
 
+```
+
+###Faker::File
+---------------
+```ruby
+Faker::File.extension #=> "mp3"
+Faker::File.mime_type #=> "application/pdf"
+# Optional arguments: dir, name, extension, directory_separator
+Faker::File.fileName('path/to') #=> "path/to/something_random.jpg"
+Faker::File.fileName('foo/bar', 'baz') #=> "foo/bar/baz.zip"
+Faker::File.fileName('foo/bar', 'baz', 'doc') #=> "foo/bar/baz.doc"
+Faker::File.fileName('foo/bar', 'baz', 'mp3', '\') #=> "foo\bar\baz.mp3"
 ```
 
 ###Faker::Lorem
