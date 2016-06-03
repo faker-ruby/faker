@@ -20,3 +20,6 @@ DEPENDENCIES
   minitest
   rake
   test-unit
+
+BUNDLED WITH
+   1.10.4
