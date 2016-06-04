@@ -244,3 +244,17 @@ en:
         course:
           subject: ['Arts', 'Business', 'Education', 'Applied Science (Psychology)', 'Architectural Technology', 'Biological Science', 'Biomedical Science', 'Commerce', 'Communications', 'Creative Arts', 'Criminology', 'Design', 'Engineering', 'Forensic Science', 'Health Science', 'Information Systems', 'Computer Science', 'Law', 'Nursing', 'Medicine', 'Psychology', 'Teaching']
           type: ['Associate Degree in', 'Bachelor of', 'Master of']
+
+    space:
+      planet: ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+      moon: ['Moon', 'Luna', 'Deimos', 'Phobos', 'Ganymede', 'Callisto', 'Io', 'Europa', 'Titan', 'Rhea', 'Iapetus', 'Dione', 'Tethys', 'Hyperion', 'Ariel', 'Puck', 'Oberon', 'Umbriel', 'Triton', 'Proteus']
+      galaxy: ['Milky Way', 'Andromeda', 'Triangulum', 'Whirlpool', 'Blackeye', 'Sunflower', 'Pinwheel', 'Hoags Object', 'Centaurus A', 'Messier 83']
+      nebula: ['Lagoon Nebula', 'Eagle Nebula', 'Triffid Nebula', 'Dumbell Nebula', 'Orion Nebula', ' Ring Nebula', 'Bodes Nebula', 'Owl Nebula']
+      star_cluster: ['Wild Duck', 'Hyades', 'Coma', 'Butterfly', 'Messier 7', 'Pleiades', 'Beehive Cluster', 'Pearl Cluster', 'Hodge 301', 'Jewel Box Cluster', 'Wishing Well Cluster', 'Diamond Cluster', 'Trumpler 10', 'Collinder 140', 'Liller 1', 'Koposov II', 'Koposov I', 'Djorgovski 1', 'Arp-Madore 1', 'NGC 6144', 'NGC 2808', 'NGC 1783', 'Messier 107', 'Messier 70', 'Omega Centauri', 'Palomar 12', 'Palomar 4', 'Palomar 6', 'Pyxis Cluster', 'Segue 3']
+      constellation: ['Big Dipper', 'Litte Dipper', 'Orion', 'Loe', 'Gemini', 'Cancer', 'Canis Minor', 'Canis Major', 'Ursa Major', 'Ursa Minor', 'Virgo', 'Libra', 'Scorpius', 'Sagittarius', 'Lyra', 'Capricornus', 'Aquarius', 'Pisces', 'Aries', 'Leo Minor', 'Auriga']
+      star: ['Sun', 'Proxima Centauri', 'Rigil Kentaurus', 'Barnards Star', 'Wolf 359', 'Luyten 726-8A', 'Luyten 726-8B', 'Sirius A', 'Sirius B', 'Ross 154', 'Ross 248', 'Procyon A', 'Procyon B', 'Vega', 'Rigel', 'Arcturus', 'Betelgeuse', 'Mahasim', 'Polaris']
+      agency: ['National Aeronautics and Space Administration', 'European Space Agency', 'German Aerospace Center', 'Indian Space Research Organization', 'China National Space Administration', 'UK Space Agency', 'Brazilian Space Agency', 'Mexican Space Agency', 'Israeli Space Agency', 'Italian Space Agency', 'Japan Aerospace Exploration Agency', 'National Space Agency of Ukraine', 'Russian Federal Space Agency', 'Swedish National Space Board']
+      agency_abv: ['NASA', 'AEM', 'AEB', 'UKSA', 'CSA', 'CNSA', 'ESA', 'DLR', 'ISRO', 'JAXA', 'ISA', 'CNES', 'NSAU', 'ROSCOSMOS', 'SNSB']
+      nasa_space_craft: ['Orion', 'Mercury', 'Gemini', 'Apollo', 'Enterprise', 'Columbia', 'Challenger', 'Discovery', 'Atlantis', 'Endeavour']
+      company: ['SpaceX', 'Blue Origin', 'Virgin Galactic', 'SpaceDev', 'Bigelow Aerospace', 'Orbital Sciences', 'JPL', 'NASA Jet Propulsion Laboratory']
+      distance_measurement: ['light years', 'AU', 'parsecs', 'kiloparsecs', 'megaparsecs']
