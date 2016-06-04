@@ -760,7 +760,7 @@ Faker::Educator.campus #=> "Vertapple Campus"
 ----------------
 
 ```ruby
-# Random planet from out Solar System
+# Random planet from our Solar System
 Faker::Space.planet #=> "Venus"
 
 # Random moon from our Solar System
