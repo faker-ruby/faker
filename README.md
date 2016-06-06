@@ -49,6 +49,7 @@ Contents
   - [Faker::Beer](#fakerbeer)
   - [Faker::ChuckNorris](#fakerchucknorris)
   - [Faker::Educator](#fakereducator)
+  - [Faker::Vehicle](#fakervehicle)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -209,6 +210,9 @@ Faker::Company.duns_number #=> "08-341-3736"
 Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/color/5.png"
 
 Faker::Company.swedish_organisation_number #=> "7718797652"
+
+# Generate an Australian Business Number
+Faker::Company.australian_business_number #=> "81137773602"
 
 # Get a random profession
 Faker::Company.profession #=> "firefighter"
@@ -753,6 +757,18 @@ Faker::Educator.secondary_school #=> "Iceborough Secodary College"
 Faker::Educator.course #=> "Associate Degree in Criminology"
 
 Faker::Educator.campus #=> "Vertapple Campus"
+```
+
+###Faker::Vehicle
+------------------
+
+```ruby
+
+# Generate vehicle identification number
+Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
+
+# Random vehicle manufacturer
+Faker::Vehicle.manufacture #=> "JAGUAR CARS LTD"
 ```
 
 Customization
