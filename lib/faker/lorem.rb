@@ -23,8 +23,8 @@ module Faker
       end
 
       def characters(char_count = 255)
-        return '' if char_count.respond_to?(:to_i) && char_count.to_i < 1
         char_count = resolve(char_count)
+        return '' if char_count.to_i < 1
         Array.new(char_count) { CHARACTERS.sample }.join
       end
 

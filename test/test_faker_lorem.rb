@@ -21,6 +21,12 @@ class TestFakerLorem < Test::Unit::TestCase
     assert @tester.characters.length == 255
   end
 
+  def test_characters_negatives
+    assert_equal '', @tester.characters(-1)
+    assert_equal '', @tester.characters((-2..-1))
+    assert_equal '', @tester.characters([-1, -2])
+  end
+
   def test_characters_with_args
     100.times { assert @tester.characters(500).length == 500 }
   end
