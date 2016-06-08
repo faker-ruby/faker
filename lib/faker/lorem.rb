@@ -58,8 +58,8 @@ module Faker
       # All other values are simply returned.
       def resolve(value)
         case value
-        when Array then value[rand(value.size)]
-        when Range then rand((value.last+1) - value.first) + value.first
+        when Array then value.sample
+        when Range then rand value
         else value
         end
       end

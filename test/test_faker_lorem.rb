@@ -63,6 +63,18 @@ class TestFakerLorem < Test::Unit::TestCase
     assert(2 <= ps.length && ps.length <= 5)
   end
 
+  def test_exclusive_range_count_param
+    cs = @tester.characters(2...3)
+    ws = @tester.words(2...3)
+    ss = @tester.sentences(2...3)
+    ps = @tester.paragraphs(2...3)
+
+    assert_equal(2, cs.length)
+    assert_equal(2, ws.length)
+    assert_equal(2, ss.length)
+    assert_equal(2, ps.length)
+  end
+
   def test_array_count_param
     cs = @tester.characters([1,4])
     ws = @tester.words([1,4])
