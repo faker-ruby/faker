@@ -51,6 +51,7 @@ Contents
   - [Faker::ChuckNorris](#fakerchucknorris)
   - [Faker::Educator](#fakereducator)
   - [Faker::Space](#fakerspace)
+  - [Faker::Music](#fakermusic)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -759,6 +760,7 @@ Faker::Educator.course #=> "Associate Degree in Criminology"
 Faker::Educator.campus #=> "Vertapple Campus"
 ```
 
+<<<<<<< HEAD
 ###Faker::Space
 ----------------
 
@@ -798,6 +800,16 @@ Faker::Space.company #=> "SpaceX"
 
 # Random unit of stellar distance with number
 Faker::Space.distance_measurement #=> "15 parsecs"
+=======
+
+###Faker::Music
+-------------------
+
+```ruby
+Faker::Music.key #=> "C"
+
+Faker::Music.instrument #=> "Ukelele"
+>>>>>>> 6913b64a23ce5885c21f37a7250e0d8eb9c7d3de
 ```
 
 Customization

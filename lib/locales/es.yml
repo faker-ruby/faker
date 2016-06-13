@@ -72,3 +72,5 @@ es:
       formats: ['9##-###-###', '9##.###.###', '9## ### ###', '9########']
     cell_phone:
       formats: ['6##-###-###', '6##.###.###', '6## ### ###', '6########']
+    music:
+      instruments: ['Guitarra Eléctrica', 'Guitarra Acústica', 'Flauta', 'Trompeta', 'Clarinete', 'Violonchelo', 'Arpa', 'Xilofón', 'Armónica', 'Acordión', 'Organo', 'Piano', 'Ukelele', 'Saxofón', 'Bateria', 'Violín', 'Bajo']
