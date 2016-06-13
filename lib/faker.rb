@@ -223,6 +223,7 @@ require 'faker/chuck_norris'
 require 'faker/crypto'
 require 'faker/educator'
 require 'faker/space'
+require 'faker/yoda'
 
 require 'extensions/array'
 require 'extensions/symbol'
