@@ -222,6 +222,7 @@ require 'faker/star_wars'
 require 'faker/chuck_norris'
 require 'faker/crypto'
 require 'faker/educator'
+require 'faker/space'
 
 require 'extensions/array'
 require 'extensions/symbol'
