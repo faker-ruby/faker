@@ -52,6 +52,18 @@ module Faker
         end
       end
 
+      def question(word_count = 4, supplemental = false, random_words_to_add = 6)
+        words(word_count + rand(random_words_to_add.to_i).to_i, supplemental).join(' ').capitalize + '?'
+      end
+
+      def questions(question_count = 3, supplemental = false)
+        [].tap do |questions|
+          1.upto(resolve(question_count)) do
+            questions << question(3, supplemental)
+          end
+        end
+      end
+
     private
 
       # If an array or range is passed, a random value will be selected.
