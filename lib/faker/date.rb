@@ -32,13 +32,41 @@ module Faker
 
       def birthday(min_age = 18, max_age = 65)
         t = ::Date.today
-        from =  ::Date.new(t.year - min_age, t.month, t.day)
-        to   =  ::Date.new(t.year - max_age, t.month, t.day)
+        top_bound, bottom_bound = prepare_bounds(t, min_age, max_age)
+        years = handled_leap_years(top_bound, bottom_bound)
+
+        from =  ::Date.new(years[0], t.month, t.day)
+        to   =  ::Date.new(years[1], t.month, t.day)
 
         between(from, to).to_date
       end
 
       private
+
+      def prepare_bounds(t, min_age, max_age)
+        [t.year - min_age, t.year - max_age]
+      end
+
+      def handled_leap_years(top_bound, bottom_bound)
+        if (top_bound % 4) != 0 || (bottom_bound % 4) != 0
+          [
+            customized_bound(top_bound),
+            customized_bound(bottom_bound, true)
+          ]
+        else
+          [top_bound, bottom_bound]
+        end
+      end
+
+      def customized_bound(bound, increase = false)
+        if (bound % 4) != 0
+          bound = bound + 1 if increase
+          bound = bound - 1 unless increase
+          customized_bound(bound, increase)
+        else
+          bound
+        end
+      end
 
       def get_date_object(date)
         date = ::Date.parse(date) if date.is_a?(String)

@@ -7,4 +7,5 @@ group :development, :test do
   gem "test-unit"
   gem "rake"
   gem "minitest"
+  gem "timecop"
 end
