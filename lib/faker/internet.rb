@@ -100,21 +100,36 @@ module Faker
         (1..4).map { rand(2..254) }.join('.')
       end
 
+      def private_ip_v4_address
+        is_private = private_net_checker
+        addr = nil
+        begin
+          addr = ip_v4_address
+        end while !is_private[addr]
+        addr
+      end
+
       def public_ip_v4_address
-        private_nets = [
+        is_private = private_net_checker
+        addr = nil
+        begin
+          addr = ip_v4_address
+        end while is_private[addr]
+        addr
+      end
+
+      def private_nets_regex
+        [
           /^10\./,
           /^127\./,
           /^169\.254\./,
           /^172\.(16|17|18|19|2\d|30|31)\./,
           /^192\.168\./
         ]
+      end
 
-        is_private = lambda {|addr| private_nets.any?{|net| net =~ addr}}
-        addr = nil
-        begin
-          addr = ip_v4_address
-        end while is_private[addr]
-        addr
+      def private_net_checker
+        lambda { |addr| private_nets_regex.any? { |net| net =~ addr } }
       end
 
       def ip_v4_cidr
