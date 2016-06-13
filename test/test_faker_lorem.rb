@@ -21,6 +21,12 @@ class TestFakerLorem < Test::Unit::TestCase
     assert @tester.characters.length == 255
   end
 
+  def test_characters_negatives
+    assert_equal '', @tester.characters(-1)
+    assert_equal '', @tester.characters((-2..-1))
+    assert_equal '', @tester.characters([-1, -2])
+  end
+
   def test_characters_with_args
     100.times { assert @tester.characters(500).length == 500 }
   end
@@ -61,6 +67,18 @@ class TestFakerLorem < Test::Unit::TestCase
     assert(2 <= ws.length && ws.length <= 5)
     assert(2 <= ss.length && ss.length <= 5)
     assert(2 <= ps.length && ps.length <= 5)
+  end
+
+  def test_exclusive_range_count_param
+    cs = @tester.characters(2...3)
+    ws = @tester.words(2...3)
+    ss = @tester.sentences(2...3)
+    ps = @tester.paragraphs(2...3)
+
+    assert_equal(2, cs.length)
+    assert_equal(2, ws.length)
+    assert_equal(2, ss.length)
+    assert_equal(2, ps.length)
   end
 
   def test_array_count_param
