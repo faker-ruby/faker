@@ -48,6 +48,13 @@ module Faker
         base + luhn_algorithm(base).to_s
       end
 
+      def australian_business_number
+        base = ('%09d' % rand(10 ** 9))
+        abn = '00' + base
+
+        (99 - (abn_checksum(abn) % 89)).to_s + base
+      end
+
       def profession
         fetch('company.profession')
       end
@@ -81,6 +88,18 @@ module Faker
 
         control_digit
       end
+
+      def abn_checksum(abn)
+        abn_weights = [10,1,3,5,7,9,11,13,15,17,19]
+        sum = 0
+
+        abn_weights.each_with_index do |weight, i|
+          sum += weight * abn[i].to_i
+        end
+
+        sum
+      end
+
     end
   end
 end

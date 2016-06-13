@@ -265,3 +265,147 @@ en:
     music:
       instruments: ['Electric Guitar', 'Acoustic Guitar', 'Flute', 'Trumpet', 'Clarinet', 'Cello', 'Harp', 'Xylophone', 'Harmonica', 'Accordion', 'Organ', 'Piano', 'Ukelele', 'Saxophone', 'Drums', 'Violin', 'Bass Guitar']
 
+    vehicle:
+      year: [A, L, Y, B, M, 1, C, N, 2, D, P, 3, E, R, 4, F, S, 5, G, T, 6, H, V, 7, J, W, 8, K, X, 9]
+      manufacture:
+        - name: MARQUESS ELECTRIC CAR COMPANY
+          wmi: 15E
+          wmi_ext:
+        - name: AJAX MANUFACTURING COMPANY, INC.
+          wmi: 1A9
+          wmi_ext: 396
+        - name: DAIMLERCHRYSLER CORPORATION
+          wmi: 1B6
+          wmi_ext:
+        - name: BAY EQUIPMENT & REPAIR
+          wmi: 1B9
+          wmi_ext: 290
+        - name: CHOPPER GUY'S, INC.
+          wmi: 1C9
+          wmi_ext: 564
+        - name: COMMERCIAL MOBILE SYSTEMS
+          wmi: 1C9
+          wmi_ext: ACA
+        - name: FORD MOTOR COMPANY
+          wmi: 1F1
+          wmi_ext:
+        - name: AMERICAN TRANSPORTATION CORPORATION
+          wmi: 1F8
+          wmi_ext:
+        - name: FMC CORP
+          wmi: 1F9
+          wmi_ext: 041
+        - name: GENERAL MOTORS CORPORATION
+          wmi: 1G8
+          wmi_ext:
+        - name: AUTOMOTRIZ PEYCHA, S.A. DE C.V.
+          wmi: 3A9
+          wmi_ext: 068
+        - name: REGIOBUS, S.A. DE C.V.
+          wmi: 3R9
+          wmi_ext: 097
+        - name: Interstate West Corporation
+          wmi: 4RA
+          wmi_ext:
+        - name: HONDA MANUFACTURING OF ALABAMA
+          wmi: 5FS
+          wmi_ext:
+        - name: IMECA S.R.L.
+          wmi: 8C9
+          wmi_ext: ME1
+        - name: FIAT DIESEL BRASIL S/A
+          wmi: 9BE
+          wmi_ext:
+        - name: WOODGATE HOLDINGS LIMITED
+          wmi: DLA
+          wmi_ext:
+        - name: SOMACOA (STE. MALGACHE DE
+          wmi: GA1
+          wmi_ext:
+        - name: ISUZU MOTORS LIMITED
+          wmi: J81
+          wmi_ext:
+        - name: HYUNDAI MOTOR CO LTD
+          wmi: KPH
+          wmi_ext:
+        - name: SSANGYONG MOTOR COMPANY
+          wmi: KPL
+          wmi_ext:
+        - name: HUBEI CHILE AUTOMOBILE CO.LTD
+          wmi: L1C
+          wmi_ext:
+        - name: SICHUAN LESHAN BUS WORKS
+          wmi: LLD
+          wmi_ext:
+        - name: HERO HONDA MOTORS LTD
+          wmi: MB4
+          wmi_ext:
+        - name: AEON MOTOR CO., LTD.
+          wmi: RF3
+          wmi_ext:
+        - name: CHYONG HORNG ENTERPRISE CO., LTD.
+          wmi: RF4
+          wmi_ext:
+        - name: YULON MOTOR CO., LTD.
+          wmi: RF5
+          wmi_ext:
+        - name: DIN-LI METAL INDUSTRIAL CO LTD
+          wmi: RFW
+          wmi_ext:
+        - name: JAGUAR CARS LTD
+          wmi: SAJ
+          wmi_ext:
+        - name: LAND ROVER GROUP LTD
+          wmi: SAL
+          wmi_ext:
+        - name: ROVER GROUP LTD
+          wmi: SAR
+          wmi_ext:
+        - name: ZAKLAD BUDOWY I REMONTOW NACZEP WIE
+          wmi: SU9
+          wmi_ext: WL1
+        - name: SANOCKA FABRYKA AUTOBUSOW SFA
+          wmi: SUA
+          wmi_ext:
+        - name: Z.P.U.P.S. TRAMP TRAIL
+          wmi: SUB
+          wmi_ext:
+        - name: WYTWORNIA POJAZDOW MELEX
+          wmi: SXM
+          wmi_ext:
+        - name: MOWAG
+          wmi: TAM
+          wmi_ext:
+        - name: CSEPEL AUTOGYAR
+          wmi: TRC
+          wmi_ext:
+        - name: AUTOMOBILES TALBOT
+          wmi: VF4
+          wmi_ext:
+        - name: IVECO UNIC SA
+          wmi: VF5
+          wmi_ext:
+        - name: RENAULT VEHICULES INDUSTRIELS
+          wmi: VF6
+          wmi_ext:
+        - name: KIBO KOMMUNALMASCHINEN GMBH & CO.KG
+          wmi: W09
+          wmi_ext: K10
+        - name: BMW MOTORSPORT GMBH
+          wmi: WBS
+          wmi_ext:
+        - name: P. BARTHAU STAHLBAU
+          wmi: WBT
+          wmi_ext:
+        - name: BMW AG
+          wmi: WBW
+          wmi_ext:
+        - name: DAIMLERCHRYLSER AG
+          wmi: WD2
+          wmi_ext:
+        - name: DAIMLERCHRYSLER AG
+          wmi: WD3
+          wmi_ext:
+        - name: MANDOS S.A.
+          wmi: XF9
+          wmi_ext: D41
