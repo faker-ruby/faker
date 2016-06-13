@@ -7,7 +7,7 @@ module Faker
       end
 
       def version
-        if parse('app.version') == ""
+        if parse('app.version') == ''
           numerify(fetch('app.version'))
         else
           parse('app.version')
