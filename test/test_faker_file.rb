@@ -14,8 +14,8 @@ class TestFakerFile < Test::Unit::TestCase
     assert @tester.mime_type.match(/(.*)\/(.*)+/)
   end
 
-  def test_filename
-    assert @tester.fileName.match(/([a-z\-_]*)(\\|\/)([a-z\-_]*)\.([a-z]{2,4})/)
+  def test_file_name
+    assert @tester.file_name.match(/([a-z\-_]*)(\\|\/)([a-z\-_]*)\.([a-z]{2,4})/)
   end
 
 end
