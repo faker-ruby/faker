@@ -16,8 +16,7 @@ module Faker
         name = Faker::Lorem::word().downcase unless name
         ext = extension unless ext
 
-        file_name = [dir, name].join(directory_separator)
-        file_name += '.#{ext}'
+        [dir, name].join(directory_separator) + ".#{ext}"
       end
     end
   end

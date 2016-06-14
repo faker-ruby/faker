@@ -15,7 +15,7 @@ class TestFakerFile < Test::Unit::TestCase
   end
 
   def test_file_name
-    assert @tester.file_name.match(/([a-z\-_]*)(\\|\/)([a-z\-_]*)\.([a-z]{2,4})/)
+    assert @tester.file_name.match(/([a-z\-_]+)(\\|\/)([a-z\-_]+)\.([a-z]+)/)
   end
 
 end
