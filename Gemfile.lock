@@ -22,6 +22,3 @@ DEPENDENCIES
   rake
   test-unit
   timecop
-
-BUNDLED WITH
-   1.11.2
