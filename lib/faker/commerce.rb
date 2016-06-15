@@ -6,7 +6,7 @@ module Faker
         fetch('color.name')
       end
 
-      def department(max = 3, fixed_amount = false)
+      def department(max: 3, fixed_amount: false)
         num = max if fixed_amount
         num ||= 1 + rand(max)
 
@@ -27,7 +27,7 @@ module Faker
         fetch('commerce.product_name.material')
       end
 
-      def price(range=0..100.0)
+      def price(range: 0..100.0)
         random = Random::DEFAULT
         (random.rand(range) * 100).floor/100.0
       end

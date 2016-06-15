@@ -23,19 +23,19 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_user_name_with_string_arg
-    assert @tester.user_name('bo peep').match(/(bo(_|\.)peep|peep(_|\.)bo)/)
+    assert @tester.user_name(specifier: 'bo peep').match(/(bo(_|\.)peep|peep(_|\.)bo)/)
   end
 
   def test_user_name_with_integer_arg
     (1..32).each do |min_length|
-      assert @tester.user_name(min_length).length >= min_length
+      assert @tester.user_name(specifier: min_length).length >= min_length
     end
   end
 
   def test_user_name_with_closed_range_arg
     (1..32).each do |min_length|
       (min_length..32).each do |max_length|
-        l = @tester.user_name((min_length..max_length)).length
+        l = @tester.user_name(specifier: (min_length..max_length)).length
         assert l >= min_length
         assert l <= max_length
       end
@@ -45,7 +45,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_user_name_with_open_range_arg
     (1..32).each do |min_length|
       (min_length+1..33).each do |max_length|
-        l = @tester.user_name((min_length...max_length)).length
+        l = @tester.user_name(specifier: (min_length...max_length)).length
         assert l >= min_length
         assert l <= max_length-1
       end
@@ -55,7 +55,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_user_name_with_range_and_separators
     (1..32).each do |min_length|
       (min_length+1..33).each do |max_length|
-        u = @tester.user_name((min_length...max_length), %w(=))
+        u = @tester.user_name(specifier: (min_length...max_length), separators: %w(=))
         assert u.length.between? min_length, max_length-1
         assert u.match(/\A[a-z]+((=)?[a-z]*)*\z/)
       end
@@ -68,14 +68,14 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_integer_arg
     (1..32).each do |min_length|
-      assert @tester.password(min_length).length >= min_length
+      assert @tester.password(min_length: min_length).length >= min_length
     end
   end
 
   def test_password_max_with_integer_arg
     (1..32).each do |min_length|
       max_length = min_length + 4
-      assert @tester.password(min_length, max_length).length <= max_length
+      assert @tester.password(min_length: min_length, max_length: max_length).length <= max_length
     end
   end
 
@@ -84,15 +84,15 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_password_without_mixed_case
-    assert @tester.password(8, 12, false).match(/[^A-Z]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: false).match(/[^A-Z]+/)
   end
 
   def test_password_with_special_chars
-    assert @tester.password(8, 12, true, true).match(/[!@#\$%\^&\*]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: true, special_chars: true).match(/[!@#\$%\^&\*]+/)
   end
 
   def test_password_without_special_chars
-    assert @tester.password(8, 12, true).match(/[^!@#\$%\^&\*]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: true).match(/[^!@#\$%\^&\*]+/)
   end
 
   def test_domain_name
@@ -157,14 +157,14 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_mac_address
     assert_equal 5, @tester.mac_address.count(':')
-    assert_equal 5, @tester.mac_address("").count(':')
+    assert_equal 5, @tester.mac_address(prefix: "").count(':')
 
     100.times do
       assert @tester.mac_address.split(':').map{|d| d.to_i(16)}.max <= 255
     end
 
-    assert @tester.mac_address("fa:fa:fa").start_with?("fa:fa:fa")
-    assert @tester.mac_address("01:02").start_with?("01:02")
+    assert @tester.mac_address(prefix: "fa:fa:fa").start_with?("fa:fa:fa")
+    assert @tester.mac_address(prefix: "01:02").start_with?("01:02")
   end
 
   def test_ip_v6_address
@@ -188,15 +188,15 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_slug_with_content_arg
-    assert @tester.slug('Foo bAr baZ').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
+    assert @tester.slug(words: 'Foo bAr baZ').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
   end
 
   def test_slug_with_glue_arg
-    assert @tester.slug(nil, '+').match(/^[a-z]+\+[a-z]+$/)
+    assert @tester.slug(glue: '+').match(/^[a-z]+\+[a-z]+$/)
   end
 
   def test_url
-    assert @tester.url('domain.com', '/username').match(/^http:\/\/domain\.com\/username$/)
+    assert @tester.url(host: 'domain.com', path: '/username').match(/^http:\/\/domain\.com\/username$/)
   end
 
   def test_device_token

@@ -1,31 +1,31 @@
 module Faker
   class Number < Base
     class << self
-      def number(digits)
+      def number(digits:)
         num = ''
         if digits > 1
           num = non_zero_digit
           digits -= 1
         end
-        num + leading_zero_number(digits)
+        num + leading_zero_number(digits: digits)
       end
 
-      def leading_zero_number(digits)
+      def leading_zero_number(digits:)
         (1..digits).collect {digit}.join
       end
 
-      def decimal_part digits
+      def decimal_part(digits:)
         num = ''
         if digits > 1
           num = non_zero_digit
           digits -= 1
         end
-        leading_zero_number(digits) + num
+        leading_zero_number(digits: digits) + num
       end
 
-      def decimal(l_digits, r_digits = 2)
-        l_d = self.number(l_digits)
-        r_d = self.decimal_part(r_digits)
+      def decimal(whole_digits:, decimal_digits: 2)
+        l_d = self.number(digits: whole_digits)
+        r_d = self.decimal_part(digits: decimal_digits)
         "#{l_d}.#{r_d}"
       end
 
@@ -37,23 +37,23 @@ module Faker
         rand(10).to_s
       end
 
-      def hexadecimal(digits)
+      def hexadecimal(digits:)
         hex = ""
         digits.times { hex += rand(15).to_s(16) }
         hex
       end
 
-      def between(from = 1.00, to = 5000.00)
+      def between(from: 1.00, to: 5000.00)
         Faker::Base::rand_in_range(from, to)
       end
 
-      def positive(from = 1.00, to = 5000.00)
-        random_number = between(from, to)
+      def positive(from: 1.00, to: 5000.00)
+        random_number = between(from: from, to: to)
         greater_than_zero(random_number)
       end
 
-      def negative(from = -5000.00, to = -1.00)
-        random_number = between(from, to)
+      def negative(from: -5000.00, to: -1.00)
+        random_number = between(from: from, to: to)
         less_than_zero(random_number)
       end
 

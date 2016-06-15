@@ -11,7 +11,7 @@ module Faker
         parse('address.street_name')
       end
 
-      def street_address(include_secondary = false)
+      def street_address(include_secondary: false)
         numerify(parse('address.street_address') + (include_secondary ? ' ' + secondary_address : ''))
       end
 
@@ -23,7 +23,7 @@ module Faker
         bothify(fetch('address.building_number'))
       end
 
-      def zip_code(state_abbreviation = '')
+      def zip_code(state_abbreviation: '')
         return bothify(fetch('address.postcode')) if state_abbreviation === ''
 
         # provide a zip code that is valid for the state provided

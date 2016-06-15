@@ -11,16 +11,16 @@ module Faker
     }
 
     class << self
-      def between(from, to, period = :all)
-        date_with_random_time(super(from, to), period)
+      def between(from:, to:, period: :all)
+        date_with_random_time(super(from: from, to: to), period)
       end
 
-      def forward(days = 365, period = :all)
-        date_with_random_time(super(days), period)
+      def forward(days: 365, period: :all)
+        date_with_random_time(super(days: days), period)
       end
 
-      def backward(days = 365, period = :all)
-        date_with_random_time(super(days), period)
+      def backward(days: 365, period: :all)
+        date_with_random_time(super(days: days), period)
       end
 
       private

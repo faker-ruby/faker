@@ -1,36 +1,36 @@
 module Faker
   class Date < Base
     class << self
-      def between(from, to)
+      def between(from:, to:)
         from = get_date_object(from)
         to   = get_date_object(to)
 
         Faker::Base::rand_in_range(from, to)
       end
 
-      def between_except(from, to, excepted)
+      def between_except(from:, to:, excepted:)
         begin
-          date = between(from, to)
+          date = between(from: from, to: to)
         end while date == excepted
 
         date
       end
 
-      def forward(days = 365)
+      def forward(days: 365)
         from = ::Date.today + 1
         to   = ::Date.today + days
 
-        between(from, to).to_date
+        between(from: from, to: to).to_date
       end
 
-      def backward(days = 365)
+      def backward(days: 365)
         from = ::Date.today - days
         to   = ::Date.today - 1
 
-        between(from, to).to_date
+        between(from: from, to: to).to_date
       end
 
-      def birthday(min_age = 18, max_age = 65)
+      def birthday(min_age: 18, max_age: 65)
         t = ::Date.today
         top_bound, bottom_bound = prepare_bounds(t, min_age, max_age)
         years = handled_leap_years(top_bound, bottom_bound)
@@ -38,7 +38,7 @@ module Faker
         from =  ::Date.new(years[0], t.month, t.day)
         to   =  ::Date.new(years[1], t.month, t.day)
 
-        between(from, to).to_date
+        between(from: from, to: to).to_date
       end
 
       private
