@@ -2,7 +2,7 @@ module Faker
   class Color < Base
     class << self
       def hex_color
-        @hex_color = "#%06x" % (rand * 0xffffff)
+        @hex_color = '#%06x' % (rand * 0xffffff)
       end
 
       def color_name
