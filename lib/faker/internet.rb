@@ -47,11 +47,11 @@ module Faker
       end
 
       def password(min_length: 8, max_length: 16, mix_case: true, special_chars: false)
-        temp = Lorem.characters(char_count: min_length)
+        temp = Lorem.characters(min_length)
         diff_length = max_length - min_length
         if diff_length > 0
           diff_rand = rand(diff_length + 1)
-          temp += Lorem.characters(char_count: diff_rand)
+          temp += Lorem.characters(diff_rand)
         end
         temp = temp[0..min_length] if min_length > 0
 
@@ -150,7 +150,7 @@ module Faker
 
       def slug(words: nil, glue: nil)
         glue ||= %w[- _ .].sample
-        (words || Faker::Lorem::words(num: 2).join(' ')).gsub(' ', glue).downcase
+        (words || Faker::Lorem::words(count: 2).join(' ')).gsub(' ', glue).downcase
       end
 
       def device_token

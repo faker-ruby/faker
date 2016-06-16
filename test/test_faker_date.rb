@@ -19,11 +19,11 @@ class TestFakerDate < Test::Unit::TestCase
   def test_between_except
     from = Date.parse("2012-01-01")
     to   = Date.parse("2012-01-05")
-    excepted = Date.parse("2012-01-03")
+    except = Date.parse("2012-01-03")
 
     100.times do
-      random_date = @tester.between_except(from: from, to: to, excepted: excepted)
-      assert random_date != excepted, "Expected != \"#{excepted}\", but got #{random_date}"
+      random_date = @tester.between_except(from: from, to: to, except: except)
+      assert random_date != except, "Expected != \"#{except}\", but got #{random_date}"
     end
   end
 

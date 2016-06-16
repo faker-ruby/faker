@@ -8,10 +8,10 @@ module Faker
         Faker::Base::rand_in_range(from, to)
       end
 
-      def between_except(from:, to:, excepted:)
+      def between_except(from:, to:, except:)
         begin
           date = between(from: from, to: to)
-        end while date == excepted
+        end while date == except
 
         date
       end
