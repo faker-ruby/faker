@@ -11,7 +11,7 @@ module Faker
     }
 
     class << self
-      def between(from:, to:, period: :all)
+      def between(from: raise(ArgumentError), to: raise(ArgumentError), period: :all)
         date_with_random_time(super(from: from, to: to), period)
       end
 

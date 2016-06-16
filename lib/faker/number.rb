@@ -1,7 +1,7 @@
 module Faker
   class Number < Base
     class << self
-      def number(digits:)
+      def number(digits: raise(ArgumentError))
         num = ''
         if digits > 1
           num = non_zero_digit
@@ -10,11 +10,11 @@ module Faker
         num + leading_zero_number(digits: digits)
       end
 
-      def leading_zero_number(digits:)
+      def leading_zero_number(digits: raise(ArgumentError))
         (1..digits).collect {digit}.join
       end
 
-      def decimal_part(digits:)
+      def decimal_part(digits: raise(ArgumentError))
         num = ''
         if digits > 1
           num = non_zero_digit
@@ -23,7 +23,7 @@ module Faker
         leading_zero_number(digits: digits) + num
       end
 
-      def decimal(whole_digits:, decimal_digits: 2)
+      def decimal(whole_digits: raise(ArgumentError), decimal_digits: 2)
         l_d = self.number(digits: whole_digits)
         r_d = self.decimal_part(digits: decimal_digits)
         "#{l_d}.#{r_d}"
@@ -37,7 +37,7 @@ module Faker
         rand(10).to_s
       end
 
-      def hexadecimal(digits:)
+      def hexadecimal(digits: raise(ArgumentError))
         hex = ""
         digits.times { hex += rand(15).to_s(16) }
         hex

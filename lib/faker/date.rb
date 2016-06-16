@@ -1,14 +1,14 @@
 module Faker
   class Date < Base
     class << self
-      def between(from:, to:)
+      def between(from: raise(ArgumentError), to: raise(ArgumentError))
         from = get_date_object(from)
         to   = get_date_object(to)
 
         Faker::Base::rand_in_range(from, to)
       end
 
-      def between_except(from:, to:, except:)
+      def between_except(from: raise(ArgumentError), to: raise(ArgumentError), except: raise(ArgumentError))
         begin
           date = between(from: from, to: to)
         end while date == except
