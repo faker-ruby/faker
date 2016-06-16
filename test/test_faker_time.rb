@@ -90,4 +90,10 @@ class TestFakerTime < Test::Unit::TestCase
       end
     end
   end
+
+  def test_missing_required_args
+    assert_raise ArgumentError do
+      @tester.between
+    end
+  end
 end

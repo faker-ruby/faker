@@ -104,4 +104,13 @@ class TestFakerNumber < Test::Unit::TestCase
       end
     end
   end
+
+  def test_missing_required_args
+    assert_raise ArgumentError do
+      @tester.number
+      @tester.leading_zero_number
+      @tester.decimal
+      @tester.hexadecimal
+    end
+  end
 end

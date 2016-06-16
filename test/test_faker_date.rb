@@ -86,4 +86,11 @@ class TestFakerDate < Test::Unit::TestCase
       assert birthday < date_min, "Expect > \"#{date_max}\", but got #{birthday}"
     end
   end
+
+  def test_missing_required_args
+    assert_raise ArgumentError do
+      @tester.between
+      @tester.between_except
+    end
+  end
 end
