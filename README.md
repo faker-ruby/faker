@@ -662,7 +662,7 @@ Faker::University.name #=> "South Texas College"
 
 ```ruby
 
-# Optional parameters: size: '300x300', format: 'png', background_color: '000', text_color: nil, text: nil
+# Optional parameters: size: '300x300', format: 'png', background_color: nil, text_color: nil, text: nil
 Faker::Placeholdit.image #=> "http://placehold.it/300x300.png/000"
 
 Faker::Placeholdit.image(size: "50x50") #=> "http://placehold.it/50x50.png/000"
