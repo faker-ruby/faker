@@ -33,6 +33,7 @@ Contents
   - [Faker::File](#fakerfile)
   - [Faker::Lorem](#fakerlorem)
   - [Faker::Name](#fakername)
+  - [Faker::Avatar](#fakeravatar)
   - [Faker::Number](#fakernumber)
   - [Faker::Boolean](#fakerboolean)
   - [Faker::PhoneNumber](#fakerphonenumber)
@@ -54,6 +55,7 @@ Contents
   - [Faker::Space](#fakerspace)
   - [Faker::Music](#fakermusic)
   - [Faker::Vehicle](#fakervehicle)
+  - [Faker::Cat](#fakercat)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -838,6 +840,20 @@ Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
 
 # Random vehicle manufacturer
 Faker::Vehicle.manufacture #=> "JAGUAR CARS LTD"
+```
+
+###Faker::Cat
+------------------
+
+```ruby
+# Random cat name
+Faker::Cat.name #=> "Shadow"
+
+# Random cat breed
+Faker::Cat.breed #=> "British Semipi-longhair"
+
+# Random cat registry
+Faker::Cat.registry #=> "American Cat Fanciers Association"
 ```
 
 Customization
