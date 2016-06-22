@@ -10,6 +10,10 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.email.match(/.+@.+\.\w+/)
   end
 
+  def test_educational_email
+    assert @tester.educational_email.match(/.+\@.+\.edu/)
+  end
+
   def test_free_email
     assert @tester.free_email.match(/.+@(gmail|hotmail|yahoo)\.com/)
   end
