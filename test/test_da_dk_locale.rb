@@ -15,6 +15,10 @@ class TestDaDkLocale < Test::Unit::TestCase
     assert Faker::Name.last_name.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.city.is_a? String
+    assert Faker::Address.city_prefix.is_a? String
+    assert Faker::Address.city_suffix.is_a? String
+    assert Faker::Address.country.is_a? String
+    assert Faker::Address.state.is_a? String
   end
 
   def test_da_dk_phone_number
