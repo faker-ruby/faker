@@ -30,5 +30,4 @@ class TestEnLocale < Test::Unit::TestCase
     id_num = Faker::IDNumber.invalid
     assert Faker::IDNumber::INVALID_SSN.any? { |regex| id_num =~ regex }
   end
-
 end

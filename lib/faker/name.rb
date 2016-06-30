@@ -3,7 +3,6 @@ module Faker
     flexible :name
 
     class << self
-
       def name
         parse('name.name')
       end

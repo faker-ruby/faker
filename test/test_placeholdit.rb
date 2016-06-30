@@ -88,5 +88,4 @@ class TestPlaceholdit < Test::Unit::TestCase
   def test_text_present
     assert @tester.image('300x300', 'jpg', 'fff', '000', 'hello').match(/https:\/\/placehold\.it\/(.+)\?text=hello/)
   end
-
 end

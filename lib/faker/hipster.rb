@@ -12,7 +12,7 @@ module Faker
           translate('faker.hipster.words') +
           (supplemental ? translate('faker.lorem.words') : [])
         )
-        word_list = word_list * ((resolved_num / word_list.length) + 1)
+        word_list *= (resolved_num / word_list.length) + 1
 
         return word_list.shuffle[0, resolved_num] if spaces_allowed
         words = word_list.shuffle[0, resolved_num]
@@ -43,14 +43,14 @@ module Faker
         end
       end
 
-    private
+      private
 
       # If an array or range is passed, a random value will be selected.
       # All other values are simply returned.
       def resolve(value)
         case value
         when Array then value[rand(value.size)]
-        when Range then rand((value.last+1) - value.first) + value.first
+        when Range then rand((value.last + 1) - value.first) + value.first
         else value
         end
       end

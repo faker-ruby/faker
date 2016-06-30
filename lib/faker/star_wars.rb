@@ -38,8 +38,8 @@ module Faker
 
       def planets
         ['Alderaan', 'Bespin', 'Coruscant', 'DQar', 'Dagobah', 'Endor', 'Geonosis', 'Hoth',
-          'Hosnian Prime',  'Jakku', 'Kamino', 'Kashyyyk', 'Lothal', 'Mustafar', 'Naboo',
-          'Sullust', 'Takodana', 'Tatooine', 'Utapau', 'Yavin']
+         'Hosnian Prime', 'Jakku', 'Kamino', 'Kashyyyk', 'Lothal', 'Mustafar', 'Naboo',
+         'Sullust', 'Takodana', 'Tatooine', 'Utapau', 'Yavin']
       end
 
       def quotes

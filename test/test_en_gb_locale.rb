@@ -18,12 +18,12 @@ class TestEnGbLocale < Test::Unit::TestCase
   end
 
   def test_gb_phone_starts_with_zero
-    phone = Faker::PhoneNumber.phone_number.gsub(/\D/,'')
+    phone = Faker::PhoneNumber.phone_number.gsub(/\D/, '')
     assert_equal '0', phone[0]
   end
 
   def test_gb_cell_phone_starts_with_zero
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/,'')
+    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_equal '0', mobile[0]
   end
 
@@ -33,7 +33,7 @@ class TestEnGbLocale < Test::Unit::TestCase
   end
 
   def test_gb_postcode_incode_is_valid
-    #The letters C I K M O V are not used in the second part of the Postcode.
+    # The letters C I K M O V are not used in the second part of the Postcode.
     incode = Faker::Address.postcode.split(' ')[1]
     assert_match(/\d[ABDEFGHJLNPQRSTUWXYZ]{2}/, incode)
   end

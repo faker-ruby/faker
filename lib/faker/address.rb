@@ -35,8 +35,8 @@ module Faker
         fetch('address.time_zone')
       end
 
-      alias_method :zip, :zip_code
-      alias_method :postcode, :zip_code
+      alias zip zip_code
+      alias postcode zip_code
 
       def street_suffix; fetch('address.street_suffix'); end
       def city_suffix;   fetch('address.city_suffix');   end

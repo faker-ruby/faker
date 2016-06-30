@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerFile < Test::Unit::TestCase
-
   def setup
     @tester = Faker::File
   end
@@ -17,5 +16,4 @@ class TestFakerFile < Test::Unit::TestCase
   def test_file_name
     assert @tester.file_name.match(/([a-z\-_]+)(\\|\/)([a-z\-_]+)\.([a-z]+)/)
   end
-
 end

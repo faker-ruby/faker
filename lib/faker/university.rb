@@ -14,7 +14,6 @@ module Faker
       def suffix
         fetch('university.suffix')
       end
-
     end
   end
 end

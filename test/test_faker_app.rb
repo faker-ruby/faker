@@ -8,5 +8,4 @@ class TestFakerApp < Test::Unit::TestCase
   def test_name
     assert @tester.author.match(/(\w+\.? ?){2,3}/)
   end
-
 end

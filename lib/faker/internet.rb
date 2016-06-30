@@ -11,7 +11,7 @@ module Faker
       end
 
       def safe_email(name = nil)
-        [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
+        [user_name(name), 'example.' + %w(org com net).sample].join('@')
       end
 
       def user_name(specifier = nil, separators = %w(. _))
@@ -25,7 +25,7 @@ module Faker
               tries += 1
             end while result.length < specifier and tries < 7
             until result.length >= specifier
-              result = result * 2
+              result *= 2
             end
             return result
           elsif specifier.kind_of? Range
@@ -39,9 +39,9 @@ module Faker
 
           [
             Char.prepare(Name.first_name),
-            [Name.first_name, Name.last_name].map{ |name|
-              Char.prepare name
-            }.join(separators.sample)
+            [Name.first_name, Name.last_name]
+              .map { |name| Char.prepare name }
+              .join(separators.sample)
           ].sample
         end
       end
@@ -57,7 +57,7 @@ module Faker
 
         if mix_case
           temp.chars.each_with_index do |char, index|
-            temp[index] = char.upcase if index % 2 == 0
+            temp[index] = char.upcase if index.even?
           end
         end
 
@@ -68,7 +68,7 @@ module Faker
           end
         end
 
-        return temp
+        temp
       end
 
       def domain_name
@@ -90,10 +90,10 @@ module Faker
         fetch('internet.domain_suffix')
       end
 
-      def mac_address(prefix='')
-        prefix_digits = prefix.split(':').map{ |d| d.to_i(16) }
-        address_digits = (6 - prefix_digits.size).times.map{ rand(256) }
-        (prefix_digits + address_digits).map{ |d| '%02x' % d }.join(':')
+      def mac_address(prefix = '')
+        prefix_digits = prefix.split(':').map { |d| d.to_i(16) }
+        address_digits = Array.new(6 - prefix_digits.size) { rand(256) }
+        (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
       end
 
       def ip_v4_address
@@ -137,7 +137,7 @@ module Faker
       end
 
       def ip_v6_address
-        (1..8).map { rand(65536).to_s(16) }.join(':')
+        (1..8).map { rand(65_536).to_s(16) }.join(':')
       end
 
       def ip_v6_cidr
@@ -149,12 +149,12 @@ module Faker
       end
 
       def slug(words = nil, glue = nil)
-        glue ||= %w[- _ .].sample
-        (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
+        glue ||= %w(- _ .).sample
+        (words || Faker::Lorem.words(2).join(' ')).gsub(' ', glue).downcase
       end
 
       def device_token
-        rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
+        rand(16**64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
       end
     end
   end
