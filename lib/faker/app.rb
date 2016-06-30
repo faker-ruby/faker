@@ -1,7 +1,6 @@
 module Faker
   class App < Base
     class << self
-
       def name
         fetch('app.name')
       end

@@ -1,7 +1,6 @@
 module Faker
   class Shakespeare < Base
     class << self
-
       def hamlet_quote
         hamlet.sample
       end
@@ -39,7 +38,6 @@ module Faker
          "When sorrows come, they come not single spies, but in battalions."]
       end
 
-
       def as_you_like_it
         ["All the world 's a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts.",
          "Can one desire too much of a good thing?.",
@@ -50,7 +48,6 @@ module Faker
          "For ever and a day.",
          "The fool doth think he is wise, but the wise man knows himself to be a fool."]
       end
-
 
       def king_richard_iii
         ["Now is the winter of our discontent.",
@@ -76,8 +73,6 @@ module Faker
          "See, how she leans her cheek upon her hand! O that I were a glove upon that hand, that I might touch that cheek!.",
          "Not stepping o'er the bounds of modesty."]
       end
-
     end
   end
 end
-

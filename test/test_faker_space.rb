@@ -52,5 +52,4 @@ class TestFakerSpace < Test::Unit::TestCase
   def test_distance_measurement
     assert @tester.distance_measurement.match(/(\w+\.? ?){2,3}/)
   end
-
 end

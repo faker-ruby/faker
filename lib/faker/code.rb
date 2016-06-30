@@ -2,11 +2,10 @@ module Faker
   class Code < Base
     flexible :code
     class << self
-
       # Generates a 10 digit NPI (National Provider Identifier
       # issued to health care providers in the United States)
       def npi
-        Random.new.rand(10 ** 10).to_s.rjust(10, '0')
+        Random.new.rand(10**10).to_s.rjust(10, '0')
       end
 
       # By default generates 10 sign isbn code in format 123456789-X
@@ -49,7 +48,7 @@ module Faker
         fetch('code.asin')
       end
 
-    private
+      private
 
       # Reporting body identifier
       RBI = %w(01 10 30 33 35 44 45 49 50 51 52 53 54 86 91 98 99).freeze
@@ -78,16 +77,12 @@ module Faker
         # Calculate the Luhn checksum of the values thus far
         len_offset = (len + 1) % 2
         for pos in (0..(len - 1))
-          if (pos + len_offset) % 2 != 0
-            t = str[pos] * 2
-
-            if t > 9
-              t -= 9
-            end
-
-            sum += t
-          else
+          if (pos + len_offset).even?
             sum += str[pos]
+          else
+            t = str[pos] * 2
+            t -= 9 if t > 9
+            sum += t
           end
         end
 
@@ -118,28 +113,28 @@ module Faker
 
       def generate_base8_ean
         values = regexify(/\d{7}/)
-        check_digit = 10 - values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
+        check_digit = 10 - values.split(//).each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
         values << (check_digit == 10 ? 0 : check_digit).to_s
       end
 
       def generate_base13_ean
         values = regexify(/\d{12}/)
-        check_digit = 10 - values.split(//).each_with_index.inject(0){ |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
+        check_digit = 10 - values.split(//).each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
         values << (check_digit == 10 ? 0 : check_digit).to_s
       end
 
-      EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3]
-      EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3]
+      EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3].freeze
+      EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3].freeze
 
       def rut_verificator_digit(rut)
-        total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).collect{|a, b| a.to_i * b.to_i}.inject(:+)
+        total = rut.to_s.rjust(8, '0').split(//).zip(%w(3 2 7 6 5 4 3 2)).collect { |a, b| a.to_i * b.to_i }.inject(:+)
         (11 - total % 11).to_s.gsub(/10/, 'k').gsub(/11/, '0')
       end
 
       def generate_nric_check_alphabet(values, prefix)
         weight = %w(2 7 6 5 4 3 2)
         total = values.split(//).zip(weight).collect { |a, b| a.to_i * b.to_i }.inject(:+)
-        total = total + 4 if prefix == 'T'
+        total += 4 if prefix == 'T'
         %w(A B C D E F G H I Z J)[10 - total % 11]
       end
     end

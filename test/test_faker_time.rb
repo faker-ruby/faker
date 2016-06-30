@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerTime < Test::Unit::TestCase
-  TEN_HOURS = 36000
+  TEN_HOURS = 36_000
 
   def setup
     @tester      = Faker::Time
@@ -10,7 +10,7 @@ class TestFakerTime < Test::Unit::TestCase
 
   def test_between_with_time_parameters
     from = Time.at(0)
-    to   = Time.at(2145945600)
+    to   = Time.at(2_145_945_600)
 
     100.times do
       random_time = @tester.between(from, to)
@@ -21,7 +21,7 @@ class TestFakerTime < Test::Unit::TestCase
 
   def test_between_with_date_parameters
     from = Time.at(0).to_date
-    to   = Time.at(2145945600).to_date
+    to   = Time.at(2_145_945_600).to_date
 
     100.times do
       random_time = @tester.between(from, to)
@@ -61,7 +61,7 @@ class TestFakerTime < Test::Unit::TestCase
     random_backward = @tester.backward(5)
     random_between_dates = @tester.between(Date.today, Date.today + 5)
     random_between_times = @tester.between(Time.now, Time.now + TEN_HOURS)
-    random_forward  = @tester.forward(5)
+    random_forward = @tester.forward(5)
 
     [
       random_backward,
@@ -75,7 +75,7 @@ class TestFakerTime < Test::Unit::TestCase
 
   def test_time_period
     from = Time.at(0).to_date
-    to   = Time.at(2145945600).to_date
+    to   = Time.at(2_145_945_600).to_date
 
     100.times do
       period          = @time_ranges.keys.to_a.sample

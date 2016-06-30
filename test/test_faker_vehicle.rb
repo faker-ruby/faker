@@ -22,17 +22,16 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   private
 
-    def transliterate(character)
-      @vin_chars.index(character) % 10
-    end
+  def transliterate(character)
+    @vin_chars.index(character) % 10
+  end
 
-    def calculate_vin_weight(character, i)
-      transliterate(character) * @vin_map.index(@vin_weights[i])
-    end
+  def calculate_vin_weight(character, i)
+    transliterate(character) * @vin_map.index(@vin_weights[i])
+  end
 
-    def vin_checksum(vin)
-      checksum_index = vin.split('').each_with_index.map(&method(:calculate_vin_weight)).inject(:+)
-      @vin_map[checksum_index % 11]
-    end
-
+  def vin_checksum(vin)
+    checksum_index = vin.split('').each_with_index.map(&method(:calculate_vin_weight)).inject(:+)
+    @vin_map[checksum_index % 11]
+  end
 end

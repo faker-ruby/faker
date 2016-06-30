@@ -13,38 +13,38 @@ class TestFakerStarWars < Test::Unit::TestCase
   def test_strings
     assert @characters.size == 33
     @characters.each do |character|
-       assert !character.nil?
-       assert character != ""
+      assert !character.nil?
+      assert character != ''
     end
 
-  	assert @droids.size == 21
+    assert @droids.size == 21
     @droids.each do |droid|
-       assert !droid.nil?
-       assert droid != ""
+      assert !droid.nil?
+      assert droid != ''
     end
 
     assert @planets.size == 20
     @planets.each do |planet|
       assert !planet.nil?
-      assert planet != ""
+      assert planet != ''
     end
 
-  	assert @quotes.size == 30
+    assert @quotes.size == 30
     @quotes.each do |quote|
-       assert !quote.nil?
-       assert quote != ""
+      assert !quote.nil?
+      assert quote != ''
     end
 
-  	assert @species.size == 9
+    assert @species.size == 9
     @species.each do |specie|
-       assert !specie.nil?
-       assert specie != ""
+      assert !specie.nil?
+      assert specie != ''
     end
 
     assert @vehicles.size == 21
     @vehicles.each do |vehicle|
-       assert !vehicle.nil?
-       assert vehicle != ""
+      assert !vehicle.nil?
+      assert vehicle != ''
     end
   end
 

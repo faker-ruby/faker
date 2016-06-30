@@ -17,6 +17,5 @@ module Faker
         fetch('business.credit_card_types')
       end
     end
-
   end
 end

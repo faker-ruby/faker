@@ -11,10 +11,10 @@ module Faker
       end
 
       def leading_zero_number(digits)
-        (1..digits).collect {digit}.join
+        (1..digits).collect { digit }.join
       end
 
-      def decimal_part digits
+      def decimal_part(digits)
         num = ''
         if digits > 1
           num = non_zero_digit
@@ -24,13 +24,13 @@ module Faker
       end
 
       def decimal(l_digits, r_digits = 2)
-        l_d = self.number(l_digits)
-        r_d = self.decimal_part(r_digits)
+        l_d = number(l_digits)
+        r_d = decimal_part(r_digits)
         "#{l_d}.#{r_d}"
       end
 
       def non_zero_digit
-        ( rand(9) + 1 ).to_s
+        (rand(9) + 1).to_s
       end
 
       def digit
@@ -38,13 +38,13 @@ module Faker
       end
 
       def hexadecimal(digits)
-        hex = ""
+        hex = ''
         digits.times { hex += rand(15).to_s(16) }
         hex
       end
 
       def between(from = 1.00, to = 5000.00)
-        Faker::Base::rand_in_range(from, to)
+        Faker::Base.rand_in_range(from, to)
       end
 
       def positive(from = 1.00, to = 5000.00)

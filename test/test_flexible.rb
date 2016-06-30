@@ -7,14 +7,13 @@ module Faker
 end
 
 class TestFlexible < Test::Unit::TestCase
-
   def setup
     @old_locales = I18n.config.available_locales
-    I18n.backend.store_translations(:xx, :faker => {:chow => {:yummie => [:fudge, :chocolate, :caramel], :taste => "delicious"}})
-    I18n.backend.store_translations(:home, :faker => {:address => {:birthplace => [:bed, :hospital, :airplane]}})
-    I18n.backend.store_translations(:kindergarden, :faker => {:name => {:girls_name => [:alice, :cheryl, :tatiana]}})
-    I18n.backend.store_translations(:work, :faker => {:company => {:do_stuff => [:work, :work, :work]}})
-    I18n.config.available_locales += [ :xx, :home, :kindergarden, :work ]
+    I18n.backend.store_translations(:xx, faker: { chow: { yummie: [:fudge, :chocolate, :caramel], taste: 'delicious' } })
+    I18n.backend.store_translations(:home, faker: { address: { birthplace: [:bed, :hospital, :airplane] } })
+    I18n.backend.store_translations(:kindergarden, faker: { name: { girls_name: [:alice, :cheryl, :tatiana] } })
+    I18n.backend.store_translations(:work, faker: { company: { do_stuff: [:work, :work, :work] } })
+    I18n.config.available_locales += [:xx, :home, :kindergarden, :work]
   end
 
   def teardown
@@ -30,7 +29,7 @@ class TestFlexible < Test::Unit::TestCase
 
   def test_flexible_single_value
     I18n.with_locale(:xx) do
-      assert_equal "delicious", Faker::Foodie.taste
+      assert_equal 'delicious', Faker::Foodie.taste
     end
   end
 

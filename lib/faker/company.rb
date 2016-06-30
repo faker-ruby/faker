@@ -17,7 +17,7 @@ module Faker
 
       # Generate a buzzword-laden catch phrase.
       def catch_phrase
-        translate('faker.company.buzzwords').collect {|list| list.sample }.join(' ')
+        translate('faker.company.buzzwords').collect(&:sample).join(' ')
       end
 
       def buzzword
@@ -26,15 +26,15 @@ module Faker
 
       # When a straight answer won't do, BS to the rescue!
       def bs
-        translate('faker.company.bs').collect {|list| list.sample }.join(' ')
+        translate('faker.company.bs').collect(&:sample).join(' ')
       end
 
       def ein
-        ('%09d' % rand(10 ** 9)).gsub(/(\d\d)(\d\d\d\d\d\d\d)/, '\\1-\\2')
+        format('%09d', rand(10**9)).gsub(/(\d\d)(\d\d\d\d\d\d\d)/, '\\1-\\2')
       end
 
       def duns_number
-        ('%09d' % rand(10 ** 9)).gsub(/(\d\d)(\d\d\d)(\d\d\d\d)/, '\\1-\\2-\\3')
+        format('%09d', rand(10**9)).gsub(/(\d\d)(\d\d\d)(\d\d\d\d)/, '\\1-\\2-\\3')
       end
 
       # Get a random company logo url in PNG format.
@@ -44,12 +44,12 @@ module Faker
       end
 
       def swedish_organisation_number
-        base = ('%09d' % rand(10 ** 9))
+        base = format('%09d', rand(10**9))
         base + luhn_algorithm(base).to_s
       end
 
       def australian_business_number
-        base = ('%09d' % rand(10 ** 9))
+        base = format('%09d', rand(10**9))
         abn = '00' + base
 
         (99 - (abn_checksum(abn) % 89)).to_s + base
@@ -59,16 +59,16 @@ module Faker
         fetch('company.profession')
       end
 
-    private
+      private
 
       def luhn_algorithm(number)
         multiplications = []
 
         number.split(//).each_with_index do |digit, i|
-          if i % 2 == 0
-              multiplications << digit.to_i * 2
-            else
-              multiplications << digit.to_i
+          if i.even?
+            multiplications << digit.to_i * 2
+          else
+            multiplications << digit.to_i
           end
         end
 
@@ -90,7 +90,7 @@ module Faker
       end
 
       def abn_checksum(abn)
-        abn_weights = [10,1,3,5,7,9,11,13,15,17,19]
+        abn_weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
         sum = 0
 
         abn_weights.each_with_index do |weight, i|
@@ -99,7 +99,6 @@ module Faker
 
         sum
       end
-
     end
   end
 end

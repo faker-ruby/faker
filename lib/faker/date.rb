@@ -5,7 +5,7 @@ module Faker
         from = get_date_object(from)
         to   = get_date_object(to)
 
-        Faker::Base::rand_in_range(from, to)
+        Faker::Base.rand_in_range(from, to)
       end
 
       def between_except(from, to, excepted)
@@ -60,8 +60,8 @@ module Faker
 
       def customized_bound(bound, increase = false)
         if (bound % 4) != 0
-          bound = bound + 1 if increase
-          bound = bound - 1 unless increase
+          bound += 1 if increase
+          bound -= 1 unless increase
           customized_bound(bound, increase)
         else
           bound
