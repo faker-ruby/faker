@@ -1,3 +1,16 @@
+== 1.6.4 2016-07-06
+* Removed support for Ruby 1.9.3
+* Added Faker::ChuckNorris, Faker::Crypto, Faker::Educator, Faker::File, Faker::Music, Faker::Space, Faker::Vehicle, and Faker::Yoda
+* Fixed bug with credit card types
+* DST fixes in Faker::Time
+* Added Faker::Name.name_with_middle
+* Added Faker::Code.imei
+* Added Faker::Code.asin
+* Added Faker::Lorem.question and Faker::Lorem.questions
+* Added Faker::Internet.private_ip_v4_address
+* Added Faker::Company.australian_business_number
+* Other miscellaneous fixes and locale updates
+
 == 1.6.3 2016-02-23
 * Fix for UTF problem in Ruby 1.9.3
 * Fix for Faker::StarWars.character
