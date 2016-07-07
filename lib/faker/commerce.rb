@@ -36,7 +36,7 @@ module Faker
 
       def categories(num)
         categories = []
-        while categories.length < num do
+        while categories.length < num
           category = fetch('commerce.department')
           categories << category unless categories.include?(category)
         end
