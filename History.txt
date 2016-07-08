@@ -1,3 +1,6 @@
+== 1.6.5 2016-07-08
+* Removed Faker::ChuckNorris.name
+
 == 1.6.4 2016-07-06
 * Removed support for Ruby 1.9.3
 * Added Faker::ChuckNorris, Faker::Crypto, Faker::Educator, Faker::File, Faker::Music, Faker::Space, Faker::Vehicle, and Faker::Yoda
