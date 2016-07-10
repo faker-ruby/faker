@@ -57,6 +57,13 @@ de:
     color:
       name: [rot, grün, blau, gelb, lila, weiß, schwarz, orange, rosa, grau, braun, violett, türkis, oliv, beige, ocker, sand, mocka, bordeaux, aprikose, mint-grün, magenta, gold, silber, bronze, limette, azur, pink]
 
+    commerce:
+      department: ["Bücher", "Filme", "Musik", "Spiele", "Elektronik", "Computer", "Zu Hause", "Garten", "Werkzeug", "Lebensmittel", "Gesundheit", "Schönheit", "Spiele", "Kinder", "Baby", "Kleider", "Schuhe", "Juwelen", "Sport", "Outdoor", "Auto", "Industrie"]
+      product_name:
+        adjective: [Kleine, Ergonomische, Rustikale, Intelligente, Wunderschöne, Unglaubliche, Fantastische, Praktische, Elegante, Tolle, Enorme, Mittelmäßige, Synergetische, Schwerlast, Leichte, Aerodynamische, Haltbare]
+        material: [Stahl, Holz, Beton, Plastik, Baumwoll, Granit, Gummi, Leder, Seiden, Wolle, Leinen, Marmor, Eisen, Bronze, Kupfer, Aluminium, Papier]
+        product: [Stühle, Autos, Computer, Handschue, Hosen, Hemden, Tische, Schuhe, Hüte, Teller, Messer, Flaschen, Jacke, Lampe, Tastatur, Tasche, Bank, Uhr, Armbanduhr, Geldbörse]
+
     phone_number:
       formats: ['(0###) #########', '(0####) #######', '+49-###-#######', '+49-####-########']
 
