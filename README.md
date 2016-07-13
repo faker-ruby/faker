@@ -54,6 +54,7 @@ Contents
   - [Faker::Space](#fakerspace)
   - [Faker::Music](#fakermusic)
   - [Faker::Vehicle](#fakervehicle)
+  - [Faker::GameOfThrones](#fakergameofthrones)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -838,6 +839,17 @@ Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
 
 # Random vehicle manufacturer
 Faker::Vehicle.manufacture #=> "JAGUAR CARS LTD"
+```
+
+###Faker::GameOfThrones
+----------------
+
+```ruby
+Faker::GameOfThrones.character #=> "Tyrion Lannister"
+
+Faker::GameOfThrones.house #=> "Stark"
+
+Faker::GameOfThrones.city #=> "Lannisport"
 ```
 
 Customization
