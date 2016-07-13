@@ -227,6 +227,7 @@ require 'faker/space'
 require 'faker/yoda'
 require 'faker/music'
 require 'faker/vehicle'
+require 'faker/game_of_thrones'
 
 require 'extensions/array'
 require 'extensions/symbol'
