@@ -144,7 +144,9 @@ module Faker
         "#{ip_v6_address}/#{1 + rand(127)}"
       end
 
-      def url(host = domain_name, path = "/#{user_name}")
+      def url(host = domain_name, path = "/#{user_name}", **options)
+        host = options.fetch(:host, host)
+        path = options.fetch(:path, path)
         "http://#{host}#{path}"
       end
 
