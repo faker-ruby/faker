@@ -5,7 +5,7 @@ module Faker
         from = get_date_object(from)
         to   = get_date_object(to)
 
-        Faker::Base::rand_in_range(from, to)
+        Faker::Base.rand_in_range(from, to)
       end
 
       def between_except(from, to, excepted)
