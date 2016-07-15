@@ -145,9 +145,10 @@ module Faker
       end
 
       def url(host = domain_name, path = "/#{user_name}", **options)
+        scheme = options.fetch(:scheme, 'http')
         host = options.fetch(:host, host)
         path = options.fetch(:path, path)
-        "http://#{host}#{path}"
+        "#{scheme}://#{host}#{path}"
       end
 
       def slug(words = nil, glue = nil)

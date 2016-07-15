@@ -207,6 +207,10 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.url('example.com', path: '/username').match(/^http:\/\/example\.com\/username/)
   end
 
+  def test_url_https
+    assert @tester.url(scheme: 'https').match(/^https:\/\//)
+  end
+
   def test_device_token
     assert_equal 64, @tester.device_token.size
   end
