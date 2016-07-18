@@ -228,7 +228,7 @@ require 'faker/yoda'
 require 'faker/music'
 require 'faker/vehicle'
 require 'faker/game_of_thrones'
-require 'pokemon'
+require 'faker/pokemon'
 
 require 'extensions/array'
 require 'extensions/symbol'
