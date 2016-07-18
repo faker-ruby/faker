@@ -55,6 +55,7 @@ Contents
   - [Faker::Music](#fakermusic)
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
+  - [Faker::Pokemon](#pokemon)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -850,6 +851,15 @@ Faker::GameOfThrones.character #=> "Tyrion Lannister"
 Faker::GameOfThrones.house #=> "Stark"
 
 Faker::GameOfThrones.city #=> "Lannisport"
+```
+
+###Faker::Pokemon
+----------------
+
+```ruby
+Faker::Pokemon.name #=> "Pikachu"
+
+Faker::Pokemon.location #=> "Pallet Town"
 ```
 
 Customization
