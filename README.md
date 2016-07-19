@@ -55,7 +55,7 @@ Contents
   - [Faker::Music](#fakermusic)
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
-  - [Faker::Pokemon](#pokemon)
+  - [Faker::Pokemon](#fakerpokemon)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
