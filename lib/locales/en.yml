@@ -266,23 +266,23 @@ en:
       instruments: ['Electric Guitar', 'Acoustic Guitar', 'Flute', 'Trumpet', 'Clarinet', 'Cello', 'Harp', 'Xylophone', 'Harmonica', 'Accordion', 'Organ', 'Piano', 'Ukelele', 'Saxophone', 'Drums', 'Violin', 'Bass Guitar']
 
     vehicle:
-      year: [A, L, Y, B, M, 1, C, N, 2, D, P, 3, E, R, 4, F, S, 5, G, T, 6, H, V, 7, J, W, 8, K, X, 9]
+      year: [A, L, Y, B, M, '1', C, N, '2', D, P, '3', E, R, '4', F, S, '5', G, T, '6', H, V, '7', J, W, '8', K, X, '9']
       manufacture:
         - name: MARQUESS ELECTRIC CAR COMPANY
           wmi: 15E
           wmi_ext:
         - name: AJAX MANUFACTURING COMPANY, INC.
           wmi: 1A9
-          wmi_ext: 396
+          wmi_ext: '396'
         - name: DAIMLERCHRYSLER CORPORATION
           wmi: 1B6
           wmi_ext:
         - name: BAY EQUIPMENT & REPAIR
           wmi: 1B9
-          wmi_ext: 290
+          wmi_ext: '290'
         - name: CHOPPER GUY'S, INC.
           wmi: 1C9
-          wmi_ext: 564
+          wmi_ext: '564'
         - name: COMMERCIAL MOBILE SYSTEMS
           wmi: 1C9
           wmi_ext: ACA
@@ -294,16 +294,16 @@ en:
           wmi_ext:
         - name: FMC CORP
           wmi: 1F9
-          wmi_ext: 041
+          wmi_ext: '041'
         - name: GENERAL MOTORS CORPORATION
           wmi: 1G8
           wmi_ext:
         - name: AUTOMOTRIZ PEYCHA, S.A. DE C.V.
           wmi: 3A9
-          wmi_ext: 068
+          wmi_ext: '068'
         - name: REGIOBUS, S.A. DE C.V.
           wmi: 3R9
-          wmi_ext: 097
+          wmi_ext: '097'
         - name: Interstate West Corporation
           wmi: 4RA
           wmi_ext:
