@@ -21,8 +21,8 @@ module Faker
       def manufacture
         fetch_all('vehicle.manufacture').sample["name"]
       end
-      
-    private
+
+      private
 
       def calculate_vin_weight(character, i)
         (@vin_chars.index(character) % 10) * @vin_map.index(@vin_weights [i])

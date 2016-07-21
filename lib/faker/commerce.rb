@@ -12,11 +12,7 @@ module Faker
 
         categories = categories(num)
 
-        if num > 1
-          merge_categories(categories)
-        else
-          categories[0]
-        end
+        num > 1 ? merge_categories(categories) : categories[0]
       end
 
       def product_name
