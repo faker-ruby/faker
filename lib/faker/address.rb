@@ -53,6 +53,10 @@ module Faker
       def longitude
         ((rand * 360) - 180).to_s
       end
+
+      def time_zone_abbr
+        fetch('address.time_zone_abbr')
+      end
     end
   end
 end

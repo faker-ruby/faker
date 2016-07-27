@@ -115,6 +115,8 @@ Faker::Address.latitude #=> "-58.17256227443719"
 
 Faker::Address.longitude #=> "-156.65548382095133"
 
+Faker::Address.time_zone_abbr #=> "UTC"
+
 
 ```
 

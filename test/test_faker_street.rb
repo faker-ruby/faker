@@ -55,4 +55,7 @@ class TestFakerStreet < Test::Unit::TestCase
     end
   end
 
+  def test_time_zone_abbr
+    assert Faker::Address.time_zone_abbr.match(/\w+/)
+  end
 end
