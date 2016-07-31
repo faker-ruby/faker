@@ -56,6 +56,7 @@ Contents
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
+  - [Faker::LordOfTheRings](#fakerlordoftherings)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -860,6 +861,15 @@ Faker::GameOfThrones.city #=> "Lannisport"
 Faker::Pokemon.name #=> "Pikachu"
 
 Faker::Pokemon.location #=> "Pallet Town"
+```
+
+###Faker::LordOfTheRings
+----------------
+
+```ruby
+Faker::LordOfTheRings.character #=> "Legolas"
+
+Faker::LordOfTheRings.location #=> "Helm's Deep"
 ```
 
 Customization
