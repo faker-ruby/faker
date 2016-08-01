@@ -75,3 +75,9 @@ nl:
 
     phone_number:
       formats: ["(####) ######", "##########", "06########", "06 #### ####"]
+
+    university:
+      prefix: [Universiteit, Hogeschool]
+      name:
+        - "#{University.prefix} #{Name.last_name}"
+        - "#{University.prefix} #{Address.city}"
