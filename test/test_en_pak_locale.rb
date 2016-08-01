@@ -21,6 +21,6 @@ class TestEnPakLocale < Test::Unit::TestCase
   end
 
   def test_en_pak_default_country
-    assert_includes 'Pakistan', Faker::Address.default_country
+    assert_match(/\A(Pakistan|Islamic Republic of Pakistan)\z/, Faker::Address.default_country)
   end
 end
