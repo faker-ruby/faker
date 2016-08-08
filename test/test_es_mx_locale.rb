@@ -24,6 +24,8 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Company.name.is_a? String
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
+    assert Faker::University.suffix.is_a? String
+    assert Faker::University.prefix.is_a? String
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
