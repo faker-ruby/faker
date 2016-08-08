@@ -56,6 +56,7 @@ Contents
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
+  - [Faker::Pet](#fakerpet)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -860,6 +861,15 @@ Faker::GameOfThrones.city #=> "Lannisport"
 Faker::Pokemon.name #=> "Pikachu"
 
 Faker::Pokemon.location #=> "Pallet Town"
+```
+
+###Faker::Pet
+----------------
+
+```ruby
+Faker::Pet.name #=> "Biscuit"
+
+Faker::Pet.type #=> "Gecko"
 ```
 
 Customization
