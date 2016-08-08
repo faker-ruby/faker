@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
-class TestFakerCat < Test::Unit::TestCase
+class TestFakerPet < Test::Unit::TestCase
   def setup
     @tester = Faker::Pet
   end
