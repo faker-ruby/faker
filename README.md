@@ -56,6 +56,7 @@ Contents
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
+  - [Faker::RockBand](#fakerrockband)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -860,6 +861,13 @@ Faker::GameOfThrones.city #=> "Lannisport"
 Faker::Pokemon.name #=> "Pikachu"
 
 Faker::Pokemon.location #=> "Pallet Town"
+```
+
+###Faker::RockBand
+----------------
+
+```ruby
+Faker::RockBand.name #=> "Led Zeppelin"
 ```
 
 Customization
