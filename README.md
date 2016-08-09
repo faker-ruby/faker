@@ -56,7 +56,7 @@ Contents
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
-  - [Faker::Band](#fakerrockband)
+  - [Faker::RockBand](#fakerrockband)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
