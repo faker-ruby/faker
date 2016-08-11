@@ -31,4 +31,26 @@ class TestEnLocale < Test::Unit::TestCase
     assert Faker::IDNumber::INVALID_SSN.any? { |regex| id_num =~ regex }
   end
 
+  def test_values_trimmed
+    en_file = YAML.load_file('lib/locales/en.yml')
+    check_hash(en_file)
+  end
+
+  def check_hash(myHash)
+    myHash.each { |key, value| check_value(value) unless (key == 'separator') }
+  end
+
+  def check_value(value)
+    if value.is_a?(Hash)
+      check_hash(value)
+    elsif value.is_a?(Array)
+      check_array(value)
+    else
+      assert_nil(value.strip!) unless value.nil?
+    end
+  end
+
+  def check_array(array)
+    array.each { |value| check_value(value) }
+  end
 end
