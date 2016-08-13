@@ -12,12 +12,9 @@ Gem::Specification.new do |s|
   s.description = %q{Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.}
   s.license     = 'MIT'
 
-  s.rubyforge_project = "faker"
-
   s.add_dependency('i18n', '~> 0.5')
 
-  s.files         = `git ls-files -- lib/*`.split("\n") + %w(History.txt License.txt README.md)
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = Dir['lib/**/*'] + %w(History.txt License.txt README.md)
+  s.executables   = Dir['bin/*'].map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 end

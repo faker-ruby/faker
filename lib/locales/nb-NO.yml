@@ -11,7 +11,7 @@ nb-NO:
       building_number: ["#", "##"]
       secondary_address: ['Leil. ###', 'Oppgang A', 'Oppgang B']
       postcode: ["####", "####", "####", "0###"]
-      state: [""]
+      state: [Østfold, Akershus, Oslo, Hedmark, Oppland, Buskerud, Vestfold, Telemark, Aust-Agder, Vest-Agder, Rogaland, Hordaland, Sogn og Fjordane, Møre og Romsdal, Sør-Trøndelag, Nord-Trøndelag, Nordland, Troms, Finnmark, Svalbard]
       city:
         - "#{city_root}#{city_suffix}"
       street_name:
@@ -29,7 +29,7 @@ nb-NO:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} og #{Name.last_name}"
-      
+
     internet:
       domain_suffix: ["no", "com", "net", "org"]
 
@@ -49,4 +49,7 @@ nb-NO:
         - "#{first_name} #{last_name}"
 
     phone_number:
+      formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]
+
+    cell_phone:
       formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]

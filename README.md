@@ -1,5 +1,6 @@
-Faker
-=====
+# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
+
+
 This gem is a port of Perl's Data::Faker library that generates fake data.
 
 It comes in very handy for taking screenshots (taking screenshots for my
@@ -7,6 +8,58 @@ project, [Catch the Best](http://catchthebest.com/) was the original impetus
 for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
+
+### NOTE
+
+* While Faker generates data at random, returned values are not guaranteed to be unique.
+* This is the `master` branch of Faker and may contain changes that are not yet released.
+  Please refer the README of your version for the available methods.
+  List of all versions is [available here](https://github.com/stympy/faker/releases).
+
+Contents
+--------
+
+- [Installing](#installing)
+- [Usage](#usage)
+  - [Faker::Address](#fakeraddress)
+  - [Faker::Bitcoin](#fakerbitcoin)
+  - [Faker::Business](#fakerbusiness)
+  - [Faker::Code](#fakercode)
+  - [Faker::Color](#fakercolor)
+  - [Faker::Commerce](#fakercommerce)
+  - [Faker::Company](#fakercompany)
+  - [Faker::Date](#fakerdate)
+  - [Faker::Internet](#fakerinternet)
+  - [Faker::File](#fakerfile)
+  - [Faker::Lorem](#fakerlorem)
+  - [Faker::Name](#fakername)
+  - [Faker::Number](#fakernumber)
+  - [Faker::Boolean](#fakerboolean)
+  - [Faker::PhoneNumber](#fakerphonenumber)
+  - [Faker::Time](#fakertime)
+  - [Faker::Hacker](#fakerhacker)
+  - [Faker::Crypto](#fakercrypto)
+  - [Faker::App](#fakerapp)
+  - [Faker::SlackEmoji](#fakerslackemoji)
+  - [Faker::Team](#fakerteam)
+  - [Faker::Book](#fakerbook)
+  - [Faker::University](#fakeruniversity)
+  - [Faker::Placeholdit](#fakerplaceholdit)
+  - [Faker::Hipster](#fakerhipster)
+  - [Faker::Superhero](#fakersuperhero)
+  - [Faker::StarWars](#fakerstarwars)
+  - [Faker::Beer](#fakerbeer)
+  - [Faker::ChuckNorris](#fakerchucknorris)
+  - [Faker::Educator](#fakereducator)
+  - [Faker::Space](#fakerspace)
+  - [Faker::Music](#fakermusic)
+  - [Faker::Vehicle](#fakervehicle)
+  - [Faker::GameOfThrones](#fakergameofthrones)
+  - [Faker::Pokemon](#fakerpokemon)
+- [Customization](#customization)
+- [Contributing](#contributing)
+- [Contact](#contact)
+- [License](#license)
 
 Installing
 ----------
@@ -22,7 +75,7 @@ Faker::Name.name      #=> "Christophe Bartell"
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ```
 
-###Faker::Address
+### Faker::Address
 -----------------
 
 ```ruby
@@ -50,11 +103,13 @@ Faker::Address.city_suffix #=> "fort"
 
 Faker::Address.city_prefix #=> "Lake"
 
-Faker::Address.state_abbr #=> "AP"
-
 Faker::Address.state #=> "California"
 
+Faker::Address.state_abbr #=> "AP"
+
 Faker::Address.country #=> "French Guiana"
+
+Faker::Address.country_code #=> "IT"
 
 Faker::Address.latitude #=> "-58.17256227443719"
 
@@ -69,7 +124,7 @@ Faker::Address.longitude #=> "-156.65548382095133"
 ```ruby
 
 Faker::Bitcoin.address #=> "1HUoGjmgChmnxxYhz87YytV4gVjfPaExmh"
-Faker::Bitcoin.testnet_address #=> ""msHGunDvoEwmVFXvd2Bub1SNw5RP1YHJaf""
+Faker::Bitcoin.testnet_address #=> "msHGunDvoEwmVFXvd2Bub1SNw5RP1YHJaf"
 
 ```
 
@@ -94,6 +149,27 @@ Faker::Business.credit_card_type #=> "visa"
 Faker::Code.isbn #=> "759021701-8"
 
 Faker::Code.ean #=> "4600051000057"
+
+Faker::Code.imei #= "546327785982623"
+
+Faker::Code.asin #=> "B00000IGGJ"
+
+```
+
+###Faker::Color
+---------------
+
+```ruby
+
+Faker::Color.hex_color #=> "#31a785"
+
+Faker::Color.color_name #=> "yellow"
+
+Faker::Color.rgb_color #=> [54, 233, 67]
+
+Faker::Color.hsl_color #=> [69.87, 169.66, 225.3]
+
+Faker::Color.hsla_color #=> [154.77, 232.36, 58.9, 0.26170574657729073]
 
 ```
 
@@ -127,6 +203,8 @@ Faker::Company.suffix #=> "Group"
 # Generate a buzzword-laden catch phrase.
 Faker::Company.catch_phrase #=> "Business-focused coherent parallelism"
 
+Faker::Company.buzzword #=> "Business-focused"
+
 # When a straight answer won't do, BS to the rescue!
 Faker::Company.bs #=> "empower one-to-one web-readiness"
 
@@ -135,7 +213,15 @@ Faker::Company.ein #=> "34-8488813"
 Faker::Company.duns_number #=> "08-341-3736"
 
 # Get a random company logo url in PNG format.
-Faker::Company.logo #=> "http://pigment.github.com/fake-logos/logos/medium/color/5.png"
+Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/color/5.png"
+
+Faker::Company.swedish_organisation_number #=> "7718797652"
+
+# Generate an Australian Business Number
+Faker::Company.australian_business_number #=> "81137773602"
+
+# Get a random profession
+Faker::Company.profession #=> "firefighter"
 
 ```
 
@@ -145,6 +231,9 @@ Faker::Company.logo #=> "http://pigment.github.com/fake-logos/logos/medium/color
 ```ruby
 # Random date between dates
 Faker::Date.between(2.days.ago, Date.today) #=> "Wed, 24 Sep 2014"
+
+# Random date between dates except for certain date
+Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today) #=> "Wed, 24 Sep 2014"
 
 # Random date in the future (up to maximum of N days)
 Faker::Date.forward(23) # => "Fri, 03 Oct 2014"
@@ -186,6 +275,10 @@ Faker::Internet.password(8) #=> "yfgjik0hgzdqs0"
 
 Faker::Internet.password(10, 20) #=> "eoc9shwd1hwq4vbgfw"
 
+Faker::Internet.password(10, 20, true) #=> "3k5qS15aNmG"
+
+Faker::Internet.password(10, 20, true, true) #=> "*%NkOnJsH4"
+
 Faker::Internet.domain_name #=> "effertz.info"
 
 Faker::Internet.fix_umlauts('äöüß') #=> "aeoeuess"
@@ -196,7 +289,17 @@ Faker::Internet.domain_suffix #=> "info"
 
 Faker::Internet.ip_v4_address #=> "24.29.18.175"
 
+# Private IP range according to RFC 1918 and 127.0.0.0/8 and 169.254.0.0/16.
+Faker::Internet.private_ip_v4_address #=> "10.0.0.1"
+
+# Guaranteed not to be in the ip range from the private_ip_v4_address method.
+Faker::Internet.public_ip_v4_address #=> "24.29.18.175"
+
+Faker::Internet.ip_v4_cidr #=> "24.29.18.175/21"
+
 Faker::Internet.ip_v6_address #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
+
+Faker::Internet.ip_v6_cidr #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df/78"
 
 # Optional argument prefix=''
 Faker::Internet.mac_address #=> "e6:0d:00:11:ed:4f"
@@ -215,6 +318,18 @@ Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
 ```
 
+###Faker::File
+---------------
+```ruby
+Faker::File.extension #=> "mp3"
+Faker::File.mime_type #=> "application/pdf"
+# Optional arguments: dir, name, extension, directory_separator
+Faker::File.file_name('path/to') #=> "path/to/something_random.jpg"
+Faker::File.file_name('foo/bar', 'baz') #=> "foo/bar/baz.zip"
+Faker::File.file_name('foo/bar', 'baz', 'doc') #=> "foo/bar/baz.doc"
+Faker::File.file_name('foo/bar', 'baz', 'mp3', '\') #=> "foo\bar\baz.mp3"
+```
+
 ###Faker::Lorem
 ---------------
 
@@ -222,7 +337,7 @@ Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
 Faker::Lorem.word #=> "repellendus"
 
-# Optional arguments: num=3, supplemental=false
+# Optional arguments: num=3, supplemental=false (words from a supplementary list of Lorem-like words)
 Faker::Lorem.words #=> ["dolores", "adipisci", "nesciunt"]
 Faker::Lorem.words(4) #=> ["culpa", "recusandae", "aut", "omnis"]
 Faker::Lorem.words(4, true) #=> ["colloco", "qui", "vergo", "deporto"]
@@ -246,14 +361,14 @@ Faker::Lorem.sentences(1, true) #=> ["Quis capillus curo ager veritatis voro et 
 # Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
 Faker::Lorem.paragraph #=> "Neque dicta enim quasi. Qui corrupti est quisquam. Facere animi quod aut. Qui nulla consequuntur consectetur sapiente."
 Faker::Lorem.paragraph(2) #=> "Illo qui voluptas. Id sit quaerat enim aut cupiditate voluptates dolorum. Porro necessitatibus numquam dolor quia earum."
-Faker::Lorem.paragraph(2, true) #=> ""
-Faker::Lorem.paragraph(2, false, 4) #=> ""
-Faker::Lorem.paragraph(2, true, 4) #=> ""
+Faker::Lorem.paragraph(2, true) #=> "Cedo vero adipisci. Theatrum crustulum coaegresco tonsor crastinus stabilis. Aliqua crur consequatur amor una tolero sum."
+Faker::Lorem.paragraph(2, false, 4) #=> "Neque aut et nemo aut incidunt voluptates. Dolore cum est sint est. Vitae assumenda porro odio dolores fugiat. Est voluptatum quia rerum."
+Faker::Lorem.paragraph(2, true, 4) #=> "Vomito unde uxor annus. Et patior utilis sursum."
 
 # Optional arguments: paragraph_count=3, supplemental=false
-Faker::Lorem.paragraphs #=> ""
-Faker::Lorem.paragraphs(1) #=> ""
-Faker::Lorem.paragraphs(1, true) #=> ""
+Faker::Lorem.paragraphs #=> ["Dolores quis quia ad quo voluptates. Maxime delectus totam numquam. Necessitatibus vel atque qui dolore.", "Id neque nemo. Dolores iusto facere est ad. Accusamus ipsa dolor ut.", "Et officiis ut hic. Sunt asperiores minus distinctio debitis ipsa dolor. Minima eos deleniti."]
+Faker::Lorem.paragraphs(1) #=> ["Labore voluptas sequi. Ratione nulla eaque quia molestiae fugit. At quam laboriosam aut ut dignissimos."]
+Faker::Lorem.paragraphs(1, true) #=> ["Depulso animi cunctatio amicitia adficio. Vester viduo qui despirmatio voluptas. Validus laudantium adopto ut agnitio venustas. Aer arcus odio esse."]
 
 ```
 
@@ -262,17 +377,19 @@ Faker::Lorem.paragraphs(1, true) #=> ""
 
 ```ruby
 
-Faker::Name.name #=> "Tyshawn Johns Sr."
+Faker::Name.name             #=> "Tyshawn Johns Sr."
 
-Faker::Name.first_name #=> "Kaci"
+Faker::Name.name_with_middle #=> "Aditya Elton Douglas"
 
-Faker::Name.last_name #=> "Ernser"
+Faker::Name.first_name       #=> "Kaci"
 
-Faker::Name.prefix #=> "Mr."
+Faker::Name.last_name        #=> "Ernser"
 
-Faker::Name.suffix #=> "IV"
+Faker::Name.prefix           #=> "Mr."
 
-Faker::Name.title #=> "Legacy Creative Director"
+Faker::Name.suffix           #=> "IV"
+
+Faker::Name.title            #=> "Legacy Creative Director"
 
 ```
 
@@ -281,15 +398,17 @@ Faker::Name.title #=> "Legacy Creative Director"
 
 ```ruby
 
-Faker::Avatar.image #=> "http://robohash.org/sitsequiquia.png?size=300x300"
+Faker::Avatar.image #=> "https://robohash.org/sitsequiquia.png?size=300x300"
 
-Faker::Avatar.image("my-own-slug") #=> "http://robohash.org/my-own-slug.png?size=300x300"
+Faker::Avatar.image("my-own-slug") #=> "https://robohash.org/my-own-slug.png?size=300x300"
 
-Faker::Avatar.image("my-own-slug", "50x50") #=> "http://robohash.org/my-own-slug.png?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50") #=> "https://robohash.org/my-own-slug.png?size=50x50"
 
-Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "http://robohash.org/my-own-slug.jpg?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "https://robohash.org/my-own-slug.jpg?size=50x50"
 
-Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-own-slug.bmp?size=50x50"
+Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "https://robohash.org/my-own-slug.bmp?size=50x50"
+
+Faker::Avatar.image("my-own-slug", "50x50", "bmp", "set1", "bg1") #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
 ```
 
 ###Faker::Number
@@ -300,7 +419,33 @@ Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "http://robohash.org/my-o
 # Required parameter: digits
 Faker::Number.number(10) #=> "1968353479"
 
+# Required parameter: l_digits
+Faker::Number.decimal(2) #=> "11.88"
+
+Faker::Number.decimal(2, 3) #=> "18.843"
+
+# Required parameter: digits
+Faker::Number.hexadecimal(3) #=> "e74"
+
+Faker::Number.between(1, 10) #=> 7
+
+Faker::Number.positive #=> 235.59238499107653
+
+Faker::Number.negative #=> -4480.042585669558
+
 Faker::Number.digit #=> "1"
+
+```
+
+###Faker::Boolean
+----------------
+
+```ruby
+
+# Optional parameter: true_ratio=0.5
+Faker::Boolean.boolean #=> true
+
+Faker::Boolean.boolean(0.2) #=> false
 
 ```
 
@@ -351,16 +496,19 @@ Faker::PhoneNumber.extension #=> "3764"
 
 ```ruby
 # Random date between dates
-Faker::Time.between(2.days.ago, Time.now) #=> "2014-09-18 12:30:59 -0700"
+Faker::Time.between(DateTime.now - 1, DateTime.now) #=> "2014-09-18 12:30:59 -0700"
 
 # Random date between dates (within specified part of the day)
-Faker::Time.between(2.days.ago, Time.now, :all) #=> "2014-09-19 07:03:30 -0700"
-Faker::Time.between(2.days.ago, Time.now, :day) #=> "2014-09-18 16:28:13 -0700"
-Faker::Time.between(2.days.ago, Time.now, :night) #=> "2014-09-20 19:39:38 -0700"
-Faker::Time.between(2.days.ago, Time.now, :morning) #=> "2014-09-19 08:07:52 -0700"
-Faker::Time.between(2.days.ago, Time.now, :afternoon) #=> "2014-09-18 12:10:34 -0700"
-Faker::Time.between(2.days.ago, Time.now, :evening) #=> "2014-09-19 20:21:03 -0700"
-Faker::Time.between(2.days.ago, Time.now, :midnight) #=> "2014-09-20 00:40:14 -0700"
+# You can install the as-duration gem to facilitate time manipulation like 45.minutes + 2.hours
+# (not needed if you already have activesupport, which is included with Rails)
+require 'as-duration'
+Faker::Time.between(2.days.ago, Date.today, :all) #=> "2014-09-19 07:03:30 -0700"
+Faker::Time.between(2.days.ago, Date.today, :day) #=> "2014-09-18 16:28:13 -0700"
+Faker::Time.between(2.days.ago, Date.today, :night) #=> "2014-09-20 19:39:38 -0700"
+Faker::Time.between(2.days.ago, Date.today, :morning) #=> "2014-09-19 08:07:52 -0700"
+Faker::Time.between(2.days.ago, Date.today, :afternoon) #=> "2014-09-18 12:10:34 -0700"
+Faker::Time.between(2.days.ago, Date.today, :evening) #=> "2014-09-19 20:21:03 -0700"
+Faker::Time.between(2.days.ago, Date.today, :midnight) #=> "2014-09-20 00:40:14 -0700"
 
 # Random time in the future (up to maximum of N days)
 Faker::Time.forward(23, :morning) # => "2014-09-26 06:54:47 -0700"
@@ -394,6 +542,19 @@ Faker::Hacker.verb  #=> "bypass"
 Faker::Hacker.ingverb #=> "synthesizing"
 ```
 
+###Faker::Crypto
+---------------------
+
+```ruby
+
+Faker::Crypto.md5 #=> "6b5ed240042e8a65c55ddb826c3408e6"
+
+Faker::Crypto.sha1 #=> "4e99e31c51eef8b2d290e709f757f92e558a503f"
+
+Faker::Crypto.sha256 #=> "51e4dbb424cd9db1ec5fb989514f2a35652ececef33f21c8dd1fd61bb8e3929d"
+
+```
+
 ###Faker::App
 -----------------
 
@@ -405,6 +566,300 @@ Faker::App.version #=> "0.7.9"
 
 Faker::App.author #=> "Daphne Swift"
 
+```
+
+###Faker::SlackEmoji
+-----------------
+
+```ruby
+
+# Random Slack Emoji from people category
+Faker::SlackEmoji.people #=> ":sleepy:"
+
+# Random Slack Emoji from nature category
+Faker::SlackEmoji.nature #=> ":chestnut:"
+
+# Random Slack Emoji from food and drink category
+Faker::SlackEmoji.food_and_drink #=> ":tangerine:"
+
+# Random Slack Emoji from celebration category
+Faker::SlackEmoji.celebration #=> ":ribbon:"
+
+# Random Slack Emoji from activity category
+Faker::SlackEmoji.activity #=> ":performing_arts:"
+
+# Random Slack Emoji from travel and places category
+Faker::SlackEmoji.travel_and_places #=> ":truck:"
+
+# Random Slack Emoji from objects & symbols category
+Faker::SlackEmoji.objects_and_symbols #=> ":alarm_clock:"
+
+# Random Slack Emoji from custom category
+Faker::SlackEmoji.custom #=> ":suspect:"
+
+# Random Slack Emoji from any category
+Faker::SlackEmoji.emoji #=> ":last_quarter_moon:"
+
+```
+
+###Faker::Team
+-----------------
+
+```ruby
+
+# Random Team Creature
+Faker::Team.creature #=> "gooses"
+
+# Random Team Name created from random US State (Faker::Address.state) prepended to a random Team Creature
+Faker::Team.name #=> "Oregon vixens"
+
+# Random Team State
+Faker::Team.state #=> "Oregon"
+
+# Random Team Sport
+Faker::Team.sport #=> "lacrosse"
+
+```
+
+###Faker::Book
+------------------
+
+```ruby
+
+# Random Book Title
+Faker::Book.title #=> "The Odd Sister"
+
+# Random Author
+Faker::Book.author #=> "Alysha Olsen"
+
+# Random Publisher
+Faker::Book.publisher #=> "Opus Reader"
+
+# Random Genre
+Faker::Book.genre #=> "Mystery"
+
+```
+
+###Faker::University
+------------------
+
+```ruby
+
+# Random University Name
+Faker::University.name #=> "South Texas College"
+
+```
+
+###Faker::Placeholdit
+----------------
+
+```ruby
+
+Faker::Placeholdit.image #=> "http://placehold.it/300x300.png/000"
+
+Faker::Placeholdit.image("50x50") #=> "http://placehold.it/50x50.png/000"
+
+Faker::Placeholdit.image("50x50", 'jpg') #=> "http://placehold.it/50x50.jpg/000"
+
+Faker::Placeholdit.image("50x50", 'gif', 'ffffff') #=> "http://placehold.it/50x50.gif/ffffff"
+
+Faker::Placeholdit.image("50x50", 'jpeg', 'ffffff', '000') #=> "http://placehold.it/50x50.jpeg/ffffff/000"
+
+Faker::Placeholdit.image("50x50", 'jpg', 'ffffff', '000', 'Some Custom Text') #=> "http://placehold.it/50x50.jpg/ffffff/000?text='Some Custom Text'"
+
+```
+
+###Faker::Hipster
+----------------
+Adapted from [Hipster Ipsum](http://hipsum.co/)
+
+```ruby
+
+Faker::Hipster.word #=> "irony"
+
+# Optional arguments: num=3, supplemental=false, spaces_allowed = false
+Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
+Faker::Hipster.words(4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
+Faker::Hipster.words(4, true) #=> ["iste", "seitan", "normcore", "provident"]
+Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"]
+
+# Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
+Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
+Faker::Hipster.sentence(3) #=> "Pour-over swag godard."
+Faker::Hipster.sentence(3, true) #=> "Beard laboriosam sequi celiac."
+Faker::Hipster.sentence(3, false, 4) #=> "Bitters retro mustache aesthetic biodiesel 8-bit."
+Faker::Hipster.sentence(3, true, 4) #=> "Occaecati deleniti messenger bag meh crucifix autem."
+
+# Optional arguments: sentence_count=3, supplemental=false
+Faker::Hipster.sentences #=> ["Godard pitchfork vinegar chillwave everyday 90's whatever.", "Pour-over artisan distillery street waistcoat.", "Salvia yr leggings franzen blue bottle."]
+Faker::Hipster.sentences(1) #=> ["Before they sold out pinterest venmo umami try-hard ugh hoodie artisan."]
+Faker::Hipster.sentences(1, true) #=> ["Et sustainable optio aesthetic et."]
+
+# Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
+Faker::Hipster.paragraph #=> "Migas fingerstache pbr&b tofu. Polaroid distillery typewriter echo tofu actually. Slow-carb fanny pack pickled direct trade scenester mlkshk plaid. Banjo venmo chambray cold-pressed typewriter. Fap skateboard intelligentsia."
+Faker::Hipster.paragraph(2) #=> "Yolo tilde farm-to-table hashtag. Lomo kitsch disrupt forage +1."
+Faker::Hipster.paragraph(2, true) #=> "Typewriter iste ut viral kombucha voluptatem. Sint voluptates saepe. Direct trade irony chia excepturi yuccie. Biodiesel esse listicle et quam suscipit."
+Faker::Hipster.paragraph(2, false, 4) #=> "Selvage vhs chartreuse narwhal vinegar. Authentic vinyl truffaut carry vhs pop-up. Hammock everyday iphone locavore thundercats bitters vegan goth. Fashion axe banh mi shoreditch whatever artisan."
+Faker::Hipster.paragraph(2, true, 4) #=> "Deep v gluten-free unde waistcoat aperiam migas voluptas dolorum. Aut drinking illo sustainable sapiente. Direct trade fanny pack kale chips ennui semiotics."
+
+# Optional arguments: paragraph_count=3, supplemental=false
+Faker::Hipster.paragraphs #=> ["Tilde microdosing blog cliche meggings. Intelligentsia five dollar toast forage yuccie. Master kitsch knausgaard. Try-hard everyday trust fund mumblecore.", "Normcore viral pickled. Listicle humblebrag swag tote bag. Taxidermy street hammock neutra butcher cred kale chips. Blog portland humblebrag trust fund irony.", "Single-origin coffee fixie cleanse tofu xoxo. Post-ironic tote bag ramps gluten-free locavore mumblecore hammock. Umami loko twee. Ugh kitsch before they sold out."]
+Faker::Hipster.paragraphs(1) #=> ["Skateboard cronut synth +1 fashion axe. Pop-up polaroid skateboard asymmetrical. Ennui fingerstache shoreditch before they sold out. Tattooed pitchfork ramps. Photo booth yr messenger bag raw denim bespoke locavore lomo synth."]
+Faker::Hipster.paragraphs(1, true) #=> ["Quae direct trade pbr&b quo taxidermy autem loko. Umami quas ratione migas cardigan sriracha minima. Tenetur perspiciatis pickled sed eum doloribus truffaut. Excepturi dreamcatcher meditation."]
+```
+
+###Faker::Superhero
+------------------
+
+```ruby
+
+# Random Superhero name
+Faker::Superhero.name #=> "Magnificent Shatterstar"
+
+# Random Superhero power
+Faker::Superhero.power #=> "Photokinesis"
+```
+
+
+###Faker::StarWars
+----------------
+
+```ruby
+Faker::StarWars.character #=> "Anakin Skywalker"
+
+Faker::StarWars.droid #=> "C-3PO"
+
+Faker::StarWars.planet #=> "Tatooine"
+
+Faker::StarWars.quote #=> "Aren’t you a little short for a Stormtrooper?"
+
+Faker::StarWars.specie #=> "Gungan"
+
+Faker::StarWars.vehicle #=> "Sandcrawler"
+```
+
+###Faker::Beer
+----------------
+
+```ruby
+Faker::Beer.name #=> "Hercules Double IPA"
+
+Faker::Beer.style #=> "Belgian Strong Ale"
+
+Faker::Beer.hop #=> "Equinox"
+
+Faker::Beer.yeast #=> "2278 - Czech Pils"
+
+Faker::Beer.malts #=> "Rye malt"
+
+Faker::Beer.ibu #=> "40 IBU"
+
+Faker::Beer.alcohol #=> "6.3%"
+
+Faker::Beer.blg #=> "18.5°Blg"
+```
+
+###Faker::ChuckNorris
+----------------
+
+```ruby
+Faker::ChuckNorris.fact #=> "Chuck Norris can solve the Towers of Hanoi in one move."
+```
+
+###Faker::Educator
+-------------------
+
+```ruby
+Faker::Educator.university #=> "Mallowtown Technical College"
+
+Faker::Educator.secondary_school #=> "Iceborough Secodary College"
+
+Faker::Educator.course #=> "Associate Degree in Criminology"
+
+Faker::Educator.campus #=> "Vertapple Campus"
+```
+
+###Faker::Space
+----------------
+
+```ruby
+# Random planet from our Solar System
+Faker::Space.planet #=> "Venus"
+
+# Random moon from our Solar System
+Faker::Space.moon #=> "Europa"
+
+# Random galaxy
+Faker::Space.galaxy #=> "Andromeda"
+
+# Random nebula name
+Faker::Space.nebula #=> "Triffid Nebula"
+
+# Random star cluster
+Faker::Space.star_cluster #=> "Messier 70"
+
+# Random constellation
+Faker::Space.constellation #=> "Orion"
+
+# Random star
+Faker::Space.star #=> "Proxima Centauri"
+
+# Random national space agency
+Faker::Space.agency #=> "Japan Aerospace Exploration Agency"
+
+# Random space agency abbreviation
+Faker::Space.agency_abv #=> "NASA"
+
+# Random spacecraft name (limited to NASA)
+Faker::Space.nasa_space_craft #=> "Endeavour"
+
+# Random private space company title
+Faker::Space.company #=> "SpaceX"
+
+# Random unit of stellar distance with number
+Faker::Space.distance_measurement #=> "15 parsecs"
+```
+
+
+###Faker::Music
+-------------------
+
+```ruby
+Faker::Music.key #=> "C"
+
+Faker::Music.instrument #=> "Ukelele"
+```
+
+###Faker::Vehicle
+------------------
+
+```ruby
+
+# Generate vehicle identification number
+Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
+
+# Random vehicle manufacturer
+Faker::Vehicle.manufacture #=> "JAGUAR CARS LTD"
+```
+
+###Faker::GameOfThrones
+----------------
+
+```ruby
+Faker::GameOfThrones.character #=> "Tyrion Lannister"
+
+Faker::GameOfThrones.house #=> "Stark"
+
+Faker::GameOfThrones.city #=> "Lannisport"
+```
+
+###Faker::Pokemon
+----------------
+
+```ruby
+Faker::Pokemon.name #=> "Pikachu"
+
+Faker::Pokemon.location #=> "Pallet Town"
 ```
 
 Customization
@@ -425,7 +880,7 @@ and you can then override or add elements to suit
 en-au-ocker:
   faker:
     name:
-      # Exiting faker field, new data
+      # Existing faker field, new data
       first_name: [Charlotte, Ava, Chloe, Emily]
 
       # New faker fields

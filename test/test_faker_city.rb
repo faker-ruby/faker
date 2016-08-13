@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/test_helper.rb'
 
 class TestFakerCity < Test::Unit::TestCase
   def setup
+    @old_locales = I18n.config.available_locales
     xx = {
       :faker => {
         :name => {:first_name => ['alice'], :last_name => ['smith']},
@@ -9,6 +10,7 @@ class TestFakerCity < Test::Unit::TestCase
       }
     }
     I18n.backend.store_translations(:xx, xx)
+    I18n.config.available_locales += [ :xx ]
 
     xy = {
       :faker => {
@@ -22,6 +24,11 @@ class TestFakerCity < Test::Unit::TestCase
       }
     }
     I18n.backend.store_translations(:xy, xy)
+    I18n.config.available_locales += [ :xy ]
+  end
+
+  def teardown
+    I18n.config.available_locales = @old_locales
   end
 
   def test_default_city_formats

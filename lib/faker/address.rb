@@ -53,7 +53,6 @@ module Faker
       def longitude
         sprintf( "%0.05f", (rand * 360) - 180)
       end
-
     end
   end
 end

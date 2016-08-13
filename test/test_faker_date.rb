@@ -16,6 +16,17 @@ class TestFakerDate < Test::Unit::TestCase
     end
   end
 
+  def test_between_except
+    from = Date.parse("2012-01-01")
+    to   = Date.parse("2012-01-05")
+    excepted = Date.parse("2012-01-03")
+
+    100.times do
+      random_date = @tester.between_except(from, to, excepted)
+      assert random_date != excepted, "Expected != \"#{excepted}\", but got #{random_date}"
+    end
+  end
+
   def test_forward
     today = Date.today
 
@@ -58,10 +69,11 @@ class TestFakerDate < Test::Unit::TestCase
       date_min = Date.new(t.year - min, t.month, t.day)
       date_max = Date.new(t.year - max, t.month, t.day)
       birthday = @tester.birthday(min, max)
-      assert birthday > date_max, "Expect > \"#{date_max}\", but got #{birthday}"
-      assert birthday < date_min, "Expect > \"#{date_max}\", but got #{birthday}"
+      assert birthday >= date_max, "Expect > \"#{date_max}\", but got #{birthday}"
+      assert birthday <= date_min, "Expect > \"#{date_max}\", but got #{birthday}"
     end
   end
+
   def test_default_birthday
     min = 10
     max = 65
@@ -70,7 +82,7 @@ class TestFakerDate < Test::Unit::TestCase
       date_min = Date.new(t.year - min, t.month, t.day)
       date_max = Date.new(t.year - max, t.month, t.day)
       birthday = @tester.birthday
-      assert birthday > date_max, "Expect > \"#{date_max}\", but got #{birthday}"
+      assert birthday >= date_max, "Expect > \"#{date_max}\", but got #{birthday}"
       assert birthday < date_min, "Expect > \"#{date_max}\", but got #{birthday}"
     end
   end
