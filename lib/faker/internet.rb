@@ -11,7 +11,7 @@ module Faker
       end
 
       def safe_email(name = nil)
-        [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
+        [user_name(name), 'example.' + domain_suffix].join('@')
       end
 
       def user_name(specifier = nil, separators = %w(. _))
