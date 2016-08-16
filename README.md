@@ -56,6 +56,7 @@ Contents
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
+  - [Faker::Workout](#fakerworkout)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -860,6 +861,17 @@ Faker::GameOfThrones.city #=> "Lannisport"
 Faker::Pokemon.name #=> "Pikachu"
 
 Faker::Pokemon.location #=> "Pallet Town"
+```
+
+###Faker::Workout
+-----------------
+
+```ruby
+# Random Exercise
+Faker::Workout.exercise #=> "Front Dumbbell Raise"
+
+# Random Cardio Exercise
+Faker::Workout.cardio #=> "10 minutes on the treadmill"
 ```
 
 Customization
