@@ -5,13 +5,13 @@ module Faker
         fetch('food.ingredients')
       end
 
-      def spices
+      def spice
         fetch('food.spices')
       end
 
       def measurement
-        ["1/4 ", "1/3 ", "1/2 ", "1 ", "2 ", "3 "].sample + fetch('food.measurements')
-      end
+        fetch('food.measurement_sizes') + fetch('food.measurements')
+      end  
     end
   end
 end
