@@ -229,6 +229,7 @@ require 'faker/music'
 require 'faker/vehicle'
 require 'faker/game_of_thrones'
 require 'faker/pokemon'
+require 'faker/food'
 
 require 'extensions/array'
 require 'extensions/symbol'
