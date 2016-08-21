@@ -1,3 +1,5 @@
+
+
 module Faker
   class Fillmurray < Base
     class << self
@@ -7,10 +9,7 @@ module Faker
         raise ArgumentError, "Height should be a number in string format" unless height.match(/^[0-9]+$/)
         raise ArgumentError, "Grayscale should be a boolean" unless [true, false].include?(grayscale)
 
-        fillmurray_url = grayscale ? "http://fillmurray.org/g/#{width}/#{height}" : "http://fillmurray.org/#{width}/#{height}"
-
-        # This outputs as if grayscale is false even if you call Faker::Fillmurray.image(true) for some reason
-        puts fillmurray_url
+        fillmurray_url = grayscale == true ? "http://fillmurray.com/g/#{width}/#{height}" : "http://fillmurray.com/#{width}/#{height}"
       
         fillmurray_url 
       end
