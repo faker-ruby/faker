@@ -2,6 +2,8 @@
 module Faker
   class Internet < Base
     class << self
+      @@password = nil
+
       def email(name = nil)
         [user_name(name), domain_name].join('@')
       end
@@ -68,7 +70,13 @@ module Faker
           end
         end
 
-        return temp
+        @@password = temp
+
+        return @@password
+      end
+
+      def password_confirmation
+        return @@password
       end
 
       def domain_name
