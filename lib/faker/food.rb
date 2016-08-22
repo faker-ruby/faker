@@ -10,8 +10,8 @@ module Faker
       end
 
       def measurement
-        fetch('food.measurement_sizes') + fetch('food.measurements')
-      end  
+        fetch('food.measurement_sizes') + " " + fetch('food.measurements')
+      end
     end
   end
 end
