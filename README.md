@@ -56,6 +56,7 @@ Contents
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
+  - [Faker::AdvertiserId](#fakeradvertiserid)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -860,6 +861,13 @@ Faker::GameOfThrones.city #=> "Lannisport"
 Faker::Pokemon.name #=> "Pikachu"
 
 Faker::Pokemon.location #=> "Pallet Town"
+```
+
+###Faker::AdvertiserId
+----------------
+
+```ruby
+Faker::AdvertiserId.id #=> "4925ED29-0D80-4692-9F0E-D9C900783E97"
 ```
 
 Customization
