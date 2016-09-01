@@ -242,6 +242,48 @@ Faker::Date.forward(23) # => "Fri, 03 Oct 2014"
 Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
 ```
 
+###Faker::Hodor
+---------------
+
+```ruby
+
+Faker::Hodor.word #=> “hodor”
+
+# Optional arguments: num=3, supplemental=false
+Faker::Hodor.words #=> ["hodor", "hodor", "hodor"]
+Faker::Hodor.words(4) #=> ["hodor", "hodor", "hodor", "hodor"]
+Faker::Hodor.words(4, true) #=> ["hodor", "hodor", "hodor", "hodor"]
+
+# Optional arguments: char_count=255
+Faker::Hodor.characters #=> "hodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodorhodor"
+Faker::Hodor.characters(10) #=> “hodorhodor”
+
+# Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
+Faker::Hodor.sentence #=> “Hodor hodor hodor hodor hodor hodor."
+Faker::Hodor.sentence(3) #=> “Hodor hodor hodor hodor hodor hodor hodor."
+Faker::Hodor.sentence(3, true) #=> “Hodor hodor hodor hodor hodor hodor."
+Faker::Hodor.sentence(3, false, 4) #=> “Hodor hodor hodor hodor hodor hodor."
+Faker::Hodor.sentence(3, true, 4) #=> “Hodor hodor hodor hodor."
+
+# Optional arguments: sentence_count=3, supplemental=false
+Faker::Hodor.sentences #=> ["Hodor hodor hodor hodor.", "Hodor hodor hodor hodor hodor hodor hodor hodor.", "Hodor hodor hodor hodor hodor hodor."]
+Faker::Hodor.sentences(1) #=> ["Hodor hodor hodor hodor hodor hodor hodor."]
+Faker::Hodor.sentences(1, true) #=> ["Hodor hodor hodor hodor hodor hodor hodor hodor."]
+
+# Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
+Faker::Hodor.paragraph #=> "Hodor hodor hodor hodor. Hodor hodor hodor hodor. Hodor hodor hodor hodor. Hodor hodor hodor hodor hodor."
+Faker::Hodor.paragraph(2) #=> "Hodor hodor hodor. Hodor hodor hodor hodor hodor hodor hodor hodor. Hodor hodor hodor hodor hodor hodor."
+Faker::Hodor.paragraph(2, true) #=> ""
+Faker::Hodor.paragraph(2, false, 4) #=> ""
+Faker::Hodor.paragraph(2, true, 4) #=> ""
+
+# Optional arguments: paragraph_count=3, supplemental=false
+Faker::Hodor.paragraphs #=> ""
+Faker::Hodor.paragraphs(1) #=> ""
+Faker::Hodor.paragraphs(1, true) #=> ""
+
+```
+
 ###Faker::Internet
 ---------------
 

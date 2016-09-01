@@ -103,6 +103,8 @@ en:
         - "#{University.prefix} #{Name.last_name}"
         - "#{University.prefix} #{Address.state} #{University.suffix}"
 
+    hodor: 'hodor'
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, biz, info, name, net, org, io, co]
