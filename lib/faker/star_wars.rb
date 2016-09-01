@@ -1,3 +1,6 @@
+require_relative "../faker.rb"
+require 'pry'
+
 module Faker
   class StarWars < Base
     class << self
@@ -17,18 +20,15 @@ module Faker
         fetch('star_wars.quotes')
       end
 
-      def specie
-        species.sample
+      def species
+        fetch('star_wars.species')
       end
 
       def vehicle
         fetch('star_wars.vehicles')
       end
-
-      def species
-        ['Ewok', 'Hutt', 'Gungan', 'Ithorian', 'Jawa', 'Neimoidian', 'Sullustan', 'Wookiee', 'Mon Calamari']
-      end
-
     end
   end
 end
+binding.pry
+Faker::StarWars
