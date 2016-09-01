@@ -2,7 +2,7 @@ module Faker
   class StarWars < Base
     class << self
       def character
-        characters.sample
+        fetch('star_wars.characters')
       end
 
       def droid
@@ -23,12 +23,6 @@ module Faker
 
       def vehicle
         vehicles.sample
-      end
-
-      def characters
-        ['Padme Amidala', 'Jar Jar Binks', 'Borvo the Hutt', 'Darth Caedus', 'Boba Fett', 'Jabba the Hutt', 'Obi-Wan Kenobi', 'Darth Maul', 'Leia Organa', 'Sheev Palpatine',
-         'Kylo Ren', 'Darth Sidious', 'Anakin Skywalker', 'Luke Skywalker', 'Ben Solo', 'Han Solo', 'Darth Vader', 'Watto', 'Mace Windu', 'Yoda', 'Count Dooku', 'Sebulba',
-         'Qui-Gon Jinn', 'Chewbacca', 'Jango Fett', 'Lando Calrissian', 'Bail Organa', 'Wedge Antilles', 'Poe Dameron', 'Ki-Adi-Mundi', 'Nute Gunray', 'Panaka', 'Rune Haako']
       end
 
       def droids
