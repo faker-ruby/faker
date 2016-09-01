@@ -6,7 +6,7 @@ module Faker
       end
 
       def droid
-        droids.sample
+        fetch('star_wars.droids')
       end
 
       def planet
@@ -23,11 +23,6 @@ module Faker
 
       def vehicle
         vehicles.sample
-      end
-
-      def droids
-        ['2-1B', '4-LOM', 'ASP', 'B2-RP', 'B1', 'BD-3000', 'FA-4', 'GH-7', 'GNK', 'LM-432', 'ID9', '11-4D', '2-1B', '327-T', '4-LOM', 'B4-D4',
-         'NR-N99', 'C-3PO', 'R2-D2', 'BB-8', 'R2-Q5']
       end
 
       def planets
