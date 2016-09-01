@@ -203,8 +203,6 @@ Faker::Company.suffix #=> "Group"
 # Generate a buzzword-laden catch phrase.
 Faker::Company.catch_phrase #=> "Business-focused coherent parallelism"
 
-Faker::Company.buzzword #=> "Business-focused"
-
 # When a straight answer won't do, BS to the rescue!
 Faker::Company.bs #=> "empower one-to-one web-readiness"
 
