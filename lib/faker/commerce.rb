@@ -6,6 +6,14 @@ module Faker
         fetch('color.name')
       end
 
+      def promotion_code(digits = 6)
+        [
+          fetch('commerce.promotion_code.adjective'),
+          fetch('commerce.promotion_code.noun'),
+          Faker::Number.number(digits)
+        ].join
+      end
+
       def department(max = 3, fixed_amount = false)
         num = max if fixed_amount
         num ||= 1 + rand(max)
