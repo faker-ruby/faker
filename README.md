@@ -862,6 +862,17 @@ Faker::Pokemon.name #=> "Pikachu"
 Faker::Pokemon.location #=> "Pallet Town"
 ```
 
+###Faker::Food
+----------------
+
+```ruby
+Faker::Food.ingredient #=> "Sweet Potato"
+
+Faker::Food.spice #=> "Caraway Seed"
+
+Faker::Food.measurement #=> "1/4 tablespoon"
+```
+
 Customization
 ------------
 Since you may want to make addresses and other types of data look different
