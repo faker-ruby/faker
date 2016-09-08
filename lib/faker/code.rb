@@ -77,7 +77,7 @@ module Faker
 
         # Calculate the Luhn checksum of the values thus far
         len_offset = (len + 1) % 2
-        for pos in (0..(len - 1))
+        (0..(len - 1)).each do |pos|
           if (pos + len_offset) % 2 != 0
             t = str[pos] * 2
 
