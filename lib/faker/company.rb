@@ -59,17 +59,13 @@ module Faker
         fetch('company.profession')
       end
 
-    private
+      private
 
       def luhn_algorithm(number)
         multiplications = []
 
         number.split(//).each_with_index do |digit, i|
-          if i % 2 == 0
-              multiplications << digit.to_i * 2
-            else
-              multiplications << digit.to_i
-          end
+          i % 2 == 0 ? multiplications << digit.to_i * 2 : multiplications << digit.to_i
         end
 
         sum = 0
@@ -80,13 +76,7 @@ module Faker
           end
         end
 
-        if sum % 10 == 0
-          control_digit = 0
-        else
-          control_digit = (sum / 10 + 1) * 10 - sum
-        end
-
-        control_digit
+        sum % 10 == 0 ? 0 : (sum / 10 + 1) * 10 - sum
       end
 
       def abn_checksum(abn)

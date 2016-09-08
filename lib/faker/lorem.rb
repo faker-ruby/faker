@@ -64,7 +64,7 @@ module Faker
         end
       end
 
-    private
+      private
 
       # If an array or range is passed, a random value will be selected.
       # All other values are simply returned.

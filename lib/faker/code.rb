@@ -49,7 +49,7 @@ module Faker
         fetch('code.asin')
       end
 
-    private
+      private
 
       # Reporting body identifier
       RBI = %w(01 10 30 33 35 44 45 49 50 51 52 53 54 86 91 98 99).freeze
@@ -81,9 +81,7 @@ module Faker
           if (pos + len_offset) % 2 != 0
             t = str[pos] * 2
 
-            if t > 9
-              t -= 9
-            end
+            t -= 9 if t > 9
 
             sum += t
           else

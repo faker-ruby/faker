@@ -68,11 +68,7 @@ module Faker
       end
 
       def should_be(number, method_to_compare)
-        if number.send(method_to_compare, 0)
-          number
-        else
-          number * -1
-        end
+        number.send(method_to_compare, 0) ? number : number * -1
       end
     end
   end
