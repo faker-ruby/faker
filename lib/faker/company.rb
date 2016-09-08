@@ -65,12 +65,12 @@ module Faker
         multiplications = []
 
         number.split(//).each_with_index do |digit, i|
-          if i % 2 == 0
-              multiplications << digit.to_i * 2
-            else
-              multiplications << digit.to_i
-          end
+          if i.even?
+            multiplications << digit.to_i * 2
+          else
+            multiplications << digit.to_i
         end
+      end
 
         sum = 0
 
