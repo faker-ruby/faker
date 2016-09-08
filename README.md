@@ -57,6 +57,7 @@ Contents
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
   - [Faker::Workout](#fakerworkout)
+  - [Faker::Food](#fakerfood)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -189,6 +190,10 @@ Faker::Commerce.department(2, true) #=> "Books & Tools"
 Faker::Commerce.product_name #=> "Practical Granite Shirt"
 
 Faker::Commerce.price #=> "44.6"
+
+# Generate a random promotion code.
+# Optional argument digits = 6 for number of random digits in suffix
+Faker::Commerce.promotion_code #=> "AmazingDeal829102"
 
 ```
 
@@ -872,6 +877,17 @@ Faker::Workout.exercise #=> "Front Dumbbell Raise"
 
 # Random Cardio Exercise
 Faker::Workout.cardio #=> "10 minutes on the treadmill"
+```
+
+###Faker::Food
+----------------
+
+```ruby
+Faker::Food.ingredient #=> "Sweet Potato"
+
+Faker::Food.spice #=> "Caraway Seed"
+
+Faker::Food.measurement #=> "1/4 tablespoon"
 ```
 
 Customization

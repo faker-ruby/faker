@@ -31,6 +31,11 @@ class TestFakerInternet < Test::Unit::TestCase
       assert @tester.user_name(min_length).length >= min_length
     end
   end
+  
+  def test_user_name_with_very_large_integer_arg
+    exception = assert_raises(ArgumentError) { @tester.user_name(10000000) }
+    assert_equal('Given argument is too large', exception.message)
+  end
 
   def test_user_name_with_closed_range_arg
     (1..32).each do |min_length|
