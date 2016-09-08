@@ -56,6 +56,7 @@ Contents
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
+  - [Faker::Food](#fakerfood)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
