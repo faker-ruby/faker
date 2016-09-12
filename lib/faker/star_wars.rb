@@ -1,6 +1,3 @@
-require_relative "../faker.rb"
-require 'pry'
-
 module Faker
   class StarWars < Base
     class << self
@@ -30,5 +27,3 @@ module Faker
     end
   end
 end
-binding.pry
-Faker::StarWars
