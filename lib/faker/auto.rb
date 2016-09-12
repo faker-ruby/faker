@@ -17,10 +17,9 @@ module Faker
         fetch('auto.makes')
       end
 
-      def model(make = '')
-        return fetch('auto.models_by_make').sample if make === ''
-        
-        fetch('auto.models_by_make.' + make)
+      def model(_make = '')
+        return fetch('auto.models_by_make').values.flatten.sample if _make.empty?
+        fetch('auto.models_by_make.' + _make)
       end
 
       def make_and_model
@@ -59,7 +58,6 @@ module Faker
       def engine
        "#{fetch('auto.engine_size')} #{fetch('auto.cylinder_engine')}"
       end
-
       alias :engine_size :engine
 
       def car_options
