@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
-class TestDeAtLocale < Test::Unit::TestCase
+class TestDeChLocale < Test::Unit::TestCase
   def setup
-    Faker::Config.locale = 'de-AT'
+    Faker::Config.locale = 'de-CH'
   end
 
   def teardown
