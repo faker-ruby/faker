@@ -23,7 +23,7 @@ module Faker
           if specifier.kind_of? String
             return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
           elsif specifier.kind_of? Integer
-            # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error 
+            # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error
             raise ArgumentError, "Given argument is too large" if specifier > 10**6
             tries = 0 # Don't try forever in case we get something like 1_000_000.
             begin
@@ -179,6 +179,31 @@ module Faker
 
       def private_net_checker
         lambda { |addr| private_nets_regex.any? { |net| net =~ addr } }
+      end
+
+      def ip_v4_address_abc
+        ary = (2..254).to_a
+        [(1..223).to_a.sample,
+         ary.sample,
+         ary.sample,
+         ary.sample].join('.')
+      end
+
+      def public_ip_v4_address_abc
+        private_nets = [
+            /^10\./,
+            /^127\./,
+            /^169\.254\./,
+            /^172\.(16|17|18|19|2\d|30|31)\./,
+            /^192\.168\./
+        ]
+
+        is_private = lambda { |addr| private_nets.any? { |net| net =~ addr } }
+        addr = nil
+        begin
+          addr = ip_v4_address_abc
+        end while is_private[addr]
+        addr
       end
 
       def ip_v4_address_abc
