@@ -97,10 +97,14 @@ module Faker
             when 'word', 'name', :word, :name
               d_name = Lorem.word
             when :idn, 'idn'
-              if options.key?(:language)
+              if options.key?(:prefix)
+                domain_prefix = options[:prefix]
+                d_name = Number.number(20)[0..(length - domain_prefix.size)]
+              elsif options.key?(:language)
                 domain_prefix = domain_word(language: options[:language] )
+                d_name = DateTime.now.to_i.to_s[0..(length - domain_prefix.size)]
               else
-                puts 'In order to generate IDN domain, "language" option must be provided'
+                puts 'In order to generate IDN domain, "language" or "prefix" option must be provided'
                 fail
               end
           end
@@ -119,7 +123,7 @@ module Faker
         if options.key?(:language)
           current_local = Faker::Config.locale unless options[:language].eql?(Faker::Config.locale)
         end
-        Faker::Config.locale = charset if current_local
+        Faker::Config.locale = options[:language] if current_local
 
         if %w(uk ru).include? Config.locale
           word = Company.name.split(' ')[1]
@@ -146,39 +150,28 @@ module Faker
       end
 
       def ip_v4_address
-        (1..4).map { rand(2..254) }.join('.')
-      end
-
-      def private_ip_v4_address
-        is_private = private_net_checker
-        addr = nil
-        begin
-          addr = ip_v4_address
-        end while !is_private[addr]
-        addr
+        ary = (2..254).to_a
+        [ary.sample,
+        ary.sample,
+        ary.sample,
+        ary.sample].join('.')
       end
 
       def public_ip_v4_address
-        is_private = private_net_checker
-        addr = nil
-        begin
-          addr = ip_v4_address
-        end while is_private[addr]
-        addr
-      end
-
-      def private_nets_regex
-        [
+        private_nets = [
           /^10\./,
           /^127\./,
           /^169\.254\./,
           /^172\.(16|17|18|19|2\d|30|31)\./,
           /^192\.168\./
         ]
-      end
 
-      def private_net_checker
-        lambda { |addr| private_nets_regex.any? { |net| net =~ addr } }
+        is_private = lambda {|addr| private_nets.any?{|net| net =~ addr}}
+        addr = nil
+        begin
+          addr = ip_v4_address
+        end while is_private[addr]
+        addr
       end
 
       def ip_v4_address_abc
@@ -211,7 +204,9 @@ module Faker
       end
 
       def ip_v6_address
-        (1..8).map { rand(65536).to_s(16) }.join(':')
+        @@ip_v6_space ||= (0..65535).to_a
+        container = (1..8).map{ |_| @@ip_v6_space.sample }
+        container.map{ |n| n.to_s(16) }.join(':')
       end
 
       def ip_v6_cidr

@@ -4,6 +4,7 @@ en-US:
       domain_suffix: [com, us, biz, info, name, net, org, io, co]
     address:
       default_country: [United States, United States of America, USA]
+      country_code: ['US']
       postcode_by_state:
         AL: '350##'
         AK: '995##'

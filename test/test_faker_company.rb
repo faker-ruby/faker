@@ -39,7 +39,7 @@ class TestFakerCompany < Test::Unit::TestCase
     assert @tester.profession.match(/[a-z ]+\.?/)
   end
 
-  private 
+  private
 
     def abn_checksum(abn)
       abn_weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
@@ -47,6 +47,6 @@ class TestFakerCompany < Test::Unit::TestCase
       abn.split('').map(&:to_i).each_with_index.map do |n, i|
         (i == 0 ? n-1 : n) * abn_weights[i]
       end.inject(:+)
-    end  
+    end
 
 end

@@ -1,6 +1,6 @@
 $:.push File.expand_path("../lib", __FILE__)
 require "faker/version"
-require 'simpleidn' # needed to convert non latin names in to the puny-code
+# require 'simpleidn' # needed to convert non latin names in to the puny-code
 
 
 Gem::Specification.new do |s|
@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.add_dependency('i18n', '~> 0.5')
+  s.add_dependency('simpleidn')
 
   s.files         = Dir['lib/**/*'] + %w(History.txt License.txt README.md)
   s.executables   = Dir['bin/*'].map{ |f| File.basename(f) }
