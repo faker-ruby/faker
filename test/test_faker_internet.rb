@@ -122,15 +122,17 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_private_ip_v4_address
     ten_dot = /^10\./
-    one_two_seven = /^127\./
+    hundred = /^100\.(6[4..9]|7\d|8\d|9\d|10\d|11\d|12[^789])\./
+    one_nine_eight = /^198\.(18|19)\./
     one_six_nine = /^169\.254/
     one_nine_two = /^192\.168\./
+    one_nine_two_zero = /^192\.0\.0\./
     one_seven_two = /^172\.(16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)\./
 
     1000.times do
       address = @tester.private_ip_v4_address
       assert_match Regexp.new(
-        "(#{ten_dot})|(#{one_two_seven})|(#{one_six_nine})|(#{one_nine_two})|(#{one_seven_two})"
+        "(#{ten_dot})|(#{one_nine_eight})|(#{one_six_nine})|(#{one_nine_two})|(#{one_nine_two_zero})|(#{one_seven_two})|(#{hundred})"
       ), address
     end
   end
