@@ -150,54 +150,74 @@ module Faker
       end
 
       def ip_v4_address
-        ary = (2..254).to_a
-        [ary.sample,
-        ary.sample,
-        ary.sample,
-        ary.sample].join('.')
+        uint_to_ip rand(0..0xffffffff) # rand int that will be in the range 0.0.0.0-255.255.255
+      end
+
+      def private_ip_v4_address
+        is_private = private_net_checker
+        addr = nil
+        begin
+          addr = not_reserved_ipv4
+        end while !is_private[addr]
+        puts is_private[addr]
+        uint_to_ip(addr)
       end
 
       def public_ip_v4_address
-        private_nets = [
-          /^10\./,
-          /^127\./,
-          /^169\.254\./,
-          /^172\.(16|17|18|19|2\d|30|31)\./,
-          /^192\.168\./
-        ]
-
-        is_private = lambda {|addr| private_nets.any?{|net| net =~ addr}}
+        is_private = private_net_checker
         addr = nil
         begin
-          addr = ip_v4_address
+          addr = not_reserved_ipv4
         end while is_private[addr]
-        addr
+        puts is_private[addr]
+        uint_to_ip(addr)
       end
 
-      def ip_v4_address_abc
-        ary = (2..254).to_a
-        [(1..223).to_a.sample,
-         ary.sample,
-         ary.sample,
-         ary.sample].join('.')
-      end
-
-      def public_ip_v4_address_abc
-        private_nets = [
-            /^10\./,
-            /^127\./,
-            /^169\.254\./,
-            /^172\.(16|17|18|19|2\d|30|31)\./,
-            /^192\.168\./
+      def private_nets_regex
+        [
+            /^1010\d{24}$/,                        #10.0.0.0/8
+            /^110010001\d{22}$/,                   #100.64.0.0/10
+            /^101011000001\d{20}$/,                #172.16.0.0/12
+            /^110000000000000000000000\d{8}$/,     #192.0.0.0/24
+            /^1100000010101000\d{16}$/,            #192.168.0.0/16
+            /^110000000001001\d{17}$/             #198.18.0.0/15 -> [192.to_s(2)+'000' + 18.to_s(2)]
         ]
-
-        is_private = lambda { |addr| private_nets.any? { |net| net =~ addr } }
-        addr = nil
-        begin
-          addr = ip_v4_address_abc
-        end while is_private[addr]
-        addr
       end
+
+      def reserved_nets_regex
+        [
+            /^1111111\d{24}$/,                     #127.0.0.0/8
+            /^1010100111111110\d{16}$/,            #169.254.0.0/16
+            /^110000000000000000000010\d{8}$/,     #192.0.2.0/24
+            /^11000000001100110{8}\d{8}$/,         #198.51.100.0/24
+            /^110010110000000001110001\d{8}$/,     #203.0.113.0/24
+            /^1110\d{28}$/,                        #224.0.0.0/4
+            /^1111\d{28}$/                         #240.0.0.0/4
+        ]
+      end
+
+      def private_net_checker
+        lambda { |addr| private_nets_regex.any? { |net| net =~ addr.to_s(2) } }
+      end
+
+      def reserved_net_checker
+        lambda { |addr| reserved_nets_regex.any? { |net| net =~ addr.to_s(2) } }
+      end
+
+
+      # copy from https://github.com/ipaddress-gem/ipaddress/blob/master/lib/ipaddress.rb
+      def uint_to_ip(uint)
+        unless(uint.is_a? Numeric and uint <= 0xffffffff and uint >= 0)
+          raise(::ArgumentError, "not a long integer: #{uint.inspect}")
+        end
+        ret = []
+        4.times do
+          ret.unshift(uint & 0xff)
+          uint >>= 8
+        end
+        ret.join('.')
+      end
+
 
       def ip_v4_cidr
         "#{ip_v4_address}/#{1 + rand(31)}"
@@ -225,8 +245,17 @@ module Faker
       def device_token
         rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
       end
-
+      
       private
+
+      def not_reserved_ipv4
+        is_reserved = reserved_net_checker
+        addr = nil
+        begin
+          addr = rand(0x1000000..0xfffffffe) # rand int that will be in the range 1.0.0.0-255.255.255
+        end while is_reserved[addr]
+        addr
+      end
 
       def get_domain_tld(options)
         if options.key?(:tld)
