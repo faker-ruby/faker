@@ -1,6 +1,5 @@
 $:.push File.expand_path("../lib", __FILE__)
 require "faker/version"
-# require 'simpleidn' # needed to convert non latin names in to the puny-code
 
 
 Gem::Specification.new do |s|
