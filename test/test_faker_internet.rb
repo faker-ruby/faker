@@ -122,7 +122,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_private_ip_v4_address
     ten_dot = /^10\./
-    hundred = /^100\.(6[^0123]|7\d|8\d|9\d|10\d|11\d|12[^789])\./
+    hundred = /^100\.(6[^0123]|7\d|8\d|9\d|10\d|11\d|12[^89])\./
     one_nine_eight = /^198\.(18|19)\./
     one_six_nine = /^169\.254/
     one_nine_two = /^192\.168\./
