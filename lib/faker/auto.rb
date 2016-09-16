@@ -6,11 +6,11 @@ module Faker
       end
 
       def mileage
-        rand(10_000..90_000)
+        rand_in_range(10_000, 90_000)
       end
 
       def year
-        rand(2005..::Time.now.year)
+        rand_in_range(2005, ::Time.now.year)
       end
 
       def make
