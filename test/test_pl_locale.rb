@@ -12,6 +12,11 @@ class TestPlLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
+  def test_pl_names
+    names = Faker::Base.fetch_all('name.first_name') + Faker::Base.fetch_all('name.last_name')
+    names.each { |name| assert_match(/([\wĄąĆćĘęŁłÓóŚśŻżŹź]+\.? ?){2,3}/,name)}
+  end
+
   def test_pl_phone_number
     prefixes = (0..999).map { Faker::PhoneNumber.phone_number[0,2] }.uniq.sort
     assert_equal @phone_prefixes, prefixes
