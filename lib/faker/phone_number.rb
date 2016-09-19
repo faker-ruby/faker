@@ -17,25 +17,22 @@ module Faker
         end
       end
 
-      # US only
       def area_code
         begin
-          fetch('phone_number.area_code')
+          numerify(fetch('phone_number.area_code'))
         rescue I18n::MissingTranslationData
           nil
         end
       end
 
-      # US only
       def exchange_code
         begin
-          fetch('phone_number.exchange_code')
+          numerify(fetch('phone_number.exchange_code'))
         rescue I18n::MissingTranslationData
           nil
         end
       end
 
-      # US only
       # Can be used for both extensions and last four digits of phone number.
       # Since extensions can be of variable length, this method taks a length parameter
       def subscriber_number(length = 4)
