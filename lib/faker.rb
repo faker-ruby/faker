@@ -90,7 +90,7 @@ module Faker
       def fetch(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.sample if fetched.respond_to?(:sample)
-        if fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        if fetched.respond_to?(:match) && fetched.match(/^\//) && fetched.match(/\/$/) # A regex
           regexify(fetched)
         else
           fetched
@@ -186,6 +186,7 @@ module Faker
   end
 end
 
+require 'faker/auto'
 require 'faker/address'
 require 'faker/cat'
 require 'faker/code'
