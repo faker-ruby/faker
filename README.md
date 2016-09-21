@@ -115,7 +115,37 @@ Faker::Address.latitude #=> "-58.17256227443719"
 
 Faker::Address.longitude #=> "-156.65548382095133"
 
+```
 
+###Faker::App
+-----------------
+
+```ruby
+
+Faker::App.name #=> "Treeflex"
+
+Faker::App.version #=> "0.7.9"
+
+Faker::App.author #=> "Daphne Swift"
+
+```
+
+###Faker::Avatar
+----------------
+
+```ruby
+
+Faker::Avatar.image #=> "https://robohash.org/sitsequiquia.png?size=300x300"
+
+Faker::Avatar.image("my-own-slug") #=> "https://robohash.org/my-own-slug.png?size=300x300"
+
+Faker::Avatar.image("my-own-slug", "50x50") #=> "https://robohash.org/my-own-slug.png?size=50x50"
+
+Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "https://robohash.org/my-own-slug.jpg?size=50x50"
+
+Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "https://robohash.org/my-own-slug.bmp?size=50x50"
+
+Faker::Avatar.image("my-own-slug", "50x50", "bmp", "set1", "bg1") #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
 ```
 
 ###Faker::Bitcoin
@@ -125,6 +155,18 @@ Faker::Address.longitude #=> "-156.65548382095133"
 
 Faker::Bitcoin.address #=> "1HUoGjmgChmnxxYhz87YytV4gVjfPaExmh"
 Faker::Bitcoin.testnet_address #=> "msHGunDvoEwmVFXvd2Bub1SNw5RP1YHJaf"
+
+```
+
+###Faker::Boolean
+----------------
+
+```ruby
+
+# Optional parameter: true_ratio=0.5
+Faker::Boolean.boolean #=> true
+
+Faker::Boolean.boolean(0.2) #=> false
 
 ```
 
@@ -229,6 +271,19 @@ Faker::Company.profession #=> "firefighter"
 
 ```
 
+###Faker::Crypto
+---------------------
+
+```ruby
+
+Faker::Crypto.md5 #=> "6b5ed240042e8a65c55ddb826c3408e6"
+
+Faker::Crypto.sha1 #=> "4e99e31c51eef8b2d290e709f757f92e558a503f"
+
+Faker::Crypto.sha256 #=> "51e4dbb424cd9db1ec5fb989514f2a35652ececef33f21c8dd1fd61bb8e3929d"
+
+```
+
 ###Faker::Date
 ---------------------
 
@@ -256,6 +311,31 @@ Faker::File.file_name('path/to') #=> "path/to/something_random.jpg"
 Faker::File.file_name('foo/bar', 'baz') #=> "foo/bar/baz.zip"
 Faker::File.file_name('foo/bar', 'baz', 'doc') #=> "foo/bar/baz.doc"
 Faker::File.file_name('foo/bar', 'baz', 'mp3', '\') #=> "foo\bar\baz.mp3"
+```
+
+###Faker::Hacker
+---------------------
+Are you having trouble writing tech-savvy dialogue for your latest screenplay?
+Worry not! Hollywood-grade technical talk is ready to fill out any form where you need to look smart.
+
+```ruby
+# Full Phrase
+Faker::Hacker.say_something_smart #=> "Try to compress the SQL interface, maybe it will program the back-end hard drive!"
+
+# Short technical abbreviations
+Faker::Hacker.abbreviation  #=> "RAM"
+
+# Hacker centric adjectives
+Faker::Hacker.adjective   #=> "open-source"
+
+# Only the best hacker related nouns
+Faker::Hacker.noun   #=> "bandwidth"
+
+# Actions that hackers take
+Faker::Hacker.verb  #=> "bypass"
+
+# Verbs that end in -ing
+Faker::Hacker.ingverb #=> "synthesizing"
 ```
 
 ###Faker::Internet
@@ -334,8 +414,6 @@ Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
 ```
 
-
-
 ###Faker::Lorem
 ---------------
 
@@ -399,24 +477,6 @@ Faker::Name.title            #=> "Legacy Creative Director"
 
 ```
 
-###Faker::Avatar
-----------------
-
-```ruby
-
-Faker::Avatar.image #=> "https://robohash.org/sitsequiquia.png?size=300x300"
-
-Faker::Avatar.image("my-own-slug") #=> "https://robohash.org/my-own-slug.png?size=300x300"
-
-Faker::Avatar.image("my-own-slug", "50x50") #=> "https://robohash.org/my-own-slug.png?size=50x50"
-
-Faker::Avatar.image("my-own-slug", "50x50", "jpg") #=> "https://robohash.org/my-own-slug.jpg?size=50x50"
-
-Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "https://robohash.org/my-own-slug.bmp?size=50x50"
-
-Faker::Avatar.image("my-own-slug", "50x50", "bmp", "set1", "bg1") #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
-```
-
 ###Faker::Number
 ----------------
 
@@ -440,18 +500,6 @@ Faker::Number.positive #=> 235.59238499107653
 Faker::Number.negative #=> -4480.042585669558
 
 Faker::Number.digit #=> "1"
-
-```
-
-###Faker::Boolean
-----------------
-
-```ruby
-
-# Optional parameter: true_ratio=0.5
-Faker::Boolean.boolean #=> true
-
-Faker::Boolean.boolean(0.2) #=> false
 
 ```
 
@@ -521,57 +569,6 @@ Faker::Time.forward(23, :morning) # => "2014-09-26 06:54:47 -0700"
 
 # Random time in the past (up to maximum of N days)
 Faker::Time.backward(14, :evening) #=> "2014-09-17 19:56:33 -0700"
-```
-
-###Faker::Hacker
----------------------
-Are you having trouble writing tech-savvy dialogue for your latest screenplay?
-Worry not! Hollywood-grade technical talk is ready to fill out any form where you need to look smart.
-
-```ruby
-# Full Phrase
-Faker::Hacker.say_something_smart #=> "Try to compress the SQL interface, maybe it will program the back-end hard drive!"
-
-# Short technical abbreviations
-Faker::Hacker.abbreviation  #=> "RAM"
-
-# Hacker centric adjectives
-Faker::Hacker.adjective   #=> "open-source"
-
-# Only the best hacker related nouns
-Faker::Hacker.noun   #=> "bandwidth"
-
-# Actions that hackers take
-Faker::Hacker.verb  #=> "bypass"
-
-# Verbs that end in -ing
-Faker::Hacker.ingverb #=> "synthesizing"
-```
-
-###Faker::Crypto
----------------------
-
-```ruby
-
-Faker::Crypto.md5 #=> "6b5ed240042e8a65c55ddb826c3408e6"
-
-Faker::Crypto.sha1 #=> "4e99e31c51eef8b2d290e709f757f92e558a503f"
-
-Faker::Crypto.sha256 #=> "51e4dbb424cd9db1ec5fb989514f2a35652ececef33f21c8dd1fd61bb8e3929d"
-
-```
-
-###Faker::App
------------------
-
-```ruby
-
-Faker::App.name #=> "Treeflex"
-
-Faker::App.version #=> "0.7.9"
-
-Faker::App.author #=> "Daphne Swift"
-
 ```
 
 ###Faker::SlackEmoji
