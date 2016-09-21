@@ -225,6 +225,13 @@ Faker::Business.credit_card_type #=> "visa"
 
 ```
 
+###Faker::ChuckNorris
+----------------
+
+```ruby
+Faker::ChuckNorris.fact #=> "Chuck Norris can solve the Towers of Hanoi in one move."
+```
+
 ###Faker::Code
 --------------
 
@@ -344,6 +351,20 @@ Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
 
 ```
 
+###Faker::Educator
+-------------------
+
+```ruby
+Faker::Educator.university #=> "Mallowtown Technical College"
+
+Faker::Educator.secondary_school #=> "Iceborough Secodary College"
+
+Faker::Educator.course #=> "Associate Degree in Criminology"
+
+Faker::Educator.campus #=> "Vertapple Campus"
+
+```
+
 ###Faker::File
 ---------------
 ```ruby
@@ -354,6 +375,30 @@ Faker::File.file_name('path/to') #=> "path/to/something_random.jpg"
 Faker::File.file_name('foo/bar', 'baz') #=> "foo/bar/baz.zip"
 Faker::File.file_name('foo/bar', 'baz', 'doc') #=> "foo/bar/baz.doc"
 Faker::File.file_name('foo/bar', 'baz', 'mp3', '\') #=> "foo\bar\baz.mp3"
+
+```
+
+###Faker::Food
+----------------
+
+```ruby
+Faker::Food.ingredient #=> "Sweet Potato"
+
+Faker::Food.spice #=> "Caraway Seed"
+
+Faker::Food.measurement #=> "1/4 tablespoon"
+
+```
+
+###Faker::GameOfThrones
+----------------
+
+```ruby
+Faker::GameOfThrones.character #=> "Tyrion Lannister"
+
+Faker::GameOfThrones.house #=> "Stark"
+
+Faker::GameOfThrones.city #=> "Lannisport"
 
 ```
 
@@ -496,7 +541,6 @@ Faker::Internet.slug #=> "pariatur_laudantium"
 Faker::Internet.slug('foo bar') #=> "foo.bar"
 Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
-
 ```
 
 ###Faker::Lorem
@@ -539,6 +583,15 @@ Faker::Lorem.paragraphs #=> ["Dolores quis quia ad quo voluptates. Maxime delect
 Faker::Lorem.paragraphs(1) #=> ["Labore voluptas sequi. Ratione nulla eaque quia molestiae fugit. At quam laboriosam aut ut dignissimos."]
 Faker::Lorem.paragraphs(1, true) #=> ["Depulso animi cunctatio amicitia adficio. Vester viduo qui despirmatio voluptas. Validus laudantium adopto ut agnitio venustas. Aer arcus odio esse."]
 
+```
+
+###Faker::Music
+-------------------
+
+```ruby
+Faker::Music.key #=> "C"
+
+Faker::Music.instrument #=> "Ukelele"
 ```
 
 ###Faker::Name
@@ -649,6 +702,15 @@ Faker::Placeholdit.image("50x50", 'jpg', 'ffffff', '000', 'Some Custom Text') #=
 
 ```
 
+###Faker::Pokemon
+----------------
+
+```ruby
+Faker::Pokemon.name #=> "Pikachu"
+
+Faker::Pokemon.location #=> "Pallet Town"
+```
+
 ###Faker::SlackEmoji
 -----------------
 
@@ -680,6 +742,48 @@ Faker::SlackEmoji.custom #=> ":suspect:"
 
 # Random Slack Emoji from any category
 Faker::SlackEmoji.emoji #=> ":last_quarter_moon:"
+
+```
+
+###Faker::Space
+----------------
+
+```ruby
+# Random planet from our Solar System
+Faker::Space.planet #=> "Venus"
+
+# Random moon from our Solar System
+Faker::Space.moon #=> "Europa"
+
+# Random galaxy
+Faker::Space.galaxy #=> "Andromeda"
+
+# Random nebula name
+Faker::Space.nebula #=> "Triffid Nebula"
+
+# Random star cluster
+Faker::Space.star_cluster #=> "Messier 70"
+
+# Random constellation
+Faker::Space.constellation #=> "Orion"
+
+# Random star
+Faker::Space.star #=> "Proxima Centauri"
+
+# Random national space agency
+Faker::Space.agency #=> "Japan Aerospace Exploration Agency"
+
+# Random space agency abbreviation
+Faker::Space.agency_abv #=> "NASA"
+
+# Random spacecraft name (limited to NASA)
+Faker::Space.nasa_space_craft #=> "Endeavour"
+
+# Random private space company title
+Faker::Space.company #=> "SpaceX"
+
+# Random unit of stellar distance with number
+Faker::Space.distance_measurement #=> "15 parsecs"
 
 ```
 
@@ -768,77 +872,6 @@ Faker::University.name #=> "South Texas College"
 
 ```
 
-###Faker::ChuckNorris
-----------------
-
-```ruby
-Faker::ChuckNorris.fact #=> "Chuck Norris can solve the Towers of Hanoi in one move."
-```
-
-###Faker::Educator
--------------------
-
-```ruby
-Faker::Educator.university #=> "Mallowtown Technical College"
-
-Faker::Educator.secondary_school #=> "Iceborough Secodary College"
-
-Faker::Educator.course #=> "Associate Degree in Criminology"
-
-Faker::Educator.campus #=> "Vertapple Campus"
-```
-
-###Faker::Space
-----------------
-
-```ruby
-# Random planet from our Solar System
-Faker::Space.planet #=> "Venus"
-
-# Random moon from our Solar System
-Faker::Space.moon #=> "Europa"
-
-# Random galaxy
-Faker::Space.galaxy #=> "Andromeda"
-
-# Random nebula name
-Faker::Space.nebula #=> "Triffid Nebula"
-
-# Random star cluster
-Faker::Space.star_cluster #=> "Messier 70"
-
-# Random constellation
-Faker::Space.constellation #=> "Orion"
-
-# Random star
-Faker::Space.star #=> "Proxima Centauri"
-
-# Random national space agency
-Faker::Space.agency #=> "Japan Aerospace Exploration Agency"
-
-# Random space agency abbreviation
-Faker::Space.agency_abv #=> "NASA"
-
-# Random spacecraft name (limited to NASA)
-Faker::Space.nasa_space_craft #=> "Endeavour"
-
-# Random private space company title
-Faker::Space.company #=> "SpaceX"
-
-# Random unit of stellar distance with number
-Faker::Space.distance_measurement #=> "15 parsecs"
-```
-
-
-###Faker::Music
--------------------
-
-```ruby
-Faker::Music.key #=> "C"
-
-Faker::Music.instrument #=> "Ukelele"
-```
-
 ###Faker::Vehicle
 ------------------
 
@@ -849,38 +882,9 @@ Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
 
 # Random vehicle manufacturer
 Faker::Vehicle.manufacture #=> "JAGUAR CARS LTD"
+
 ```
 
-###Faker::GameOfThrones
-----------------
-
-```ruby
-Faker::GameOfThrones.character #=> "Tyrion Lannister"
-
-Faker::GameOfThrones.house #=> "Stark"
-
-Faker::GameOfThrones.city #=> "Lannisport"
-```
-
-###Faker::Pokemon
-----------------
-
-```ruby
-Faker::Pokemon.name #=> "Pikachu"
-
-Faker::Pokemon.location #=> "Pallet Town"
-```
-
-###Faker::Food
-----------------
-
-```ruby
-Faker::Food.ingredient #=> "Sweet Potato"
-
-Faker::Food.spice #=> "Caraway Seed"
-
-Faker::Food.measurement #=> "1/4 tablespoon"
-```
 
 Customization
 ------------
