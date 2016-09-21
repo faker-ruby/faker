@@ -1,3 +1,6 @@
+== 1.6.7 2016-09-20
+* Added Faker::Space.meteorite
+
 == 1.6.6 2016-07-25
 * Added Faker::GameOfThrones, Faker::Pokemon
 * Fixes for Faker::Vehicle.vin, Faker::Hacker.say_something_smart
