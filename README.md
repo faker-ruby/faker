@@ -246,6 +246,18 @@ Faker::Date.forward(23) # => "Fri, 03 Oct 2014"
 Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
 ```
 
+###Faker::File
+---------------
+```ruby
+Faker::File.extension #=> "mp3"
+Faker::File.mime_type #=> "application/pdf"
+# Optional arguments: dir, name, extension, directory_separator
+Faker::File.file_name('path/to') #=> "path/to/something_random.jpg"
+Faker::File.file_name('foo/bar', 'baz') #=> "foo/bar/baz.zip"
+Faker::File.file_name('foo/bar', 'baz', 'doc') #=> "foo/bar/baz.doc"
+Faker::File.file_name('foo/bar', 'baz', 'mp3', '\') #=> "foo\bar\baz.mp3"
+```
+
 ###Faker::Internet
 ---------------
 
@@ -322,17 +334,7 @@ Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
 ```
 
-###Faker::File
----------------
-```ruby
-Faker::File.extension #=> "mp3"
-Faker::File.mime_type #=> "application/pdf"
-# Optional arguments: dir, name, extension, directory_separator
-Faker::File.file_name('path/to') #=> "path/to/something_random.jpg"
-Faker::File.file_name('foo/bar', 'baz') #=> "foo/bar/baz.zip"
-Faker::File.file_name('foo/bar', 'baz', 'doc') #=> "foo/bar/baz.doc"
-Faker::File.file_name('foo/bar', 'baz', 'mp3', '\') #=> "foo\bar\baz.mp3"
-```
+
 
 ###Faker::Lorem
 ---------------
