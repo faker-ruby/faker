@@ -17,8 +17,8 @@ module Faker
         quotes.sample
       end
 
-      def specie
-        species.sample
+      def species
+        species_list.sample
       end
 
       def vehicle
@@ -54,7 +54,7 @@ module Faker
          "Fear is the path to the dark side... fear leads to anger... anger leads to hate... hate leads to suffering.", "Do. Or do not. There is no try."]
       end
 
-      def species
+      def species_list
         ['Ewok', 'Hutt', 'Gungan', 'Ithorian', 'Jawa', 'Neimoidian', 'Sullustan', 'Wookiee', 'Mon Calamari']
       end
 

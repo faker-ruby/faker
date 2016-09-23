@@ -6,7 +6,7 @@ class TestFakerStarWars < Test::Unit::TestCase
     @droids = Faker::StarWars.droids
     @planets = Faker::StarWars.planets
     @quotes = Faker::StarWars.quotes
-    @species = Faker::StarWars.species
+    @species = Faker::StarWars.species_list
     @vehicles = Faker::StarWars.vehicles
   end
 
@@ -64,8 +64,8 @@ class TestFakerStarWars < Test::Unit::TestCase
     assert Faker::StarWars.quote.match(/\w+/)
   end
 
-  def test_specie
-    assert Faker::StarWars.specie.match(/\w+/)
+  def test_species
+    assert Faker::StarWars.species.match(/\w+/)
   end
 
   def test_vehicle
