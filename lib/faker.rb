@@ -233,6 +233,6 @@ require 'faker/food'
 
 require 'extensions/array'
 require 'extensions/symbol'
-require 'extensions/string'
+require 'extensions/object'
 
 require 'helpers/char'
