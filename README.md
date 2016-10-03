@@ -57,6 +57,7 @@ Contents
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
   - [Faker::Food](#fakerfood)
+  - [Faker::TwinPeaks](#fakertwinpeaks)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -876,6 +877,17 @@ Faker::Food.ingredient #=> "Sweet Potato"
 Faker::Food.spice #=> "Caraway Seed"
 
 Faker::Food.measurement #=> "1/4 tablespoon"
+```
+
+###Faker::TwinPeaks
+----------------
+
+```ruby
+Faker::TwinPeaks.character #=> "Dale Cooper"
+
+Faker::TwinPeaks.location #=> "Black Lodge"
+
+Faker::TwinPeaks.quote #=> "The owls are not what they seem."
 ```
 
 Customization
