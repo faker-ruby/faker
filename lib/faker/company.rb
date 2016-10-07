@@ -43,8 +43,12 @@ module Faker
         "https://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
 
+      # Get a random Swedish organization number. See more here https://sv.wikipedia.org/wiki/Organisationsnummer
       def swedish_organisation_number
-        base = ('%09d' % rand(10 ** 9))
+        # Valid leading digit: 1, 2, 3, 5, 6, 7, 8, 9
+        # Valid third digit: >= 2
+        # Last digit is a control digit
+        base = [[1, 2, 3, 5, 6, 7, 8, 9].sample, (0..9).to_a.sample, (2..9).to_a.sample, ('%06d' % rand(10 ** 6))].join
         base + luhn_algorithm(base).to_s
       end
 
