@@ -204,6 +204,18 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.url('domain.com', '/username').match(/^http:\/\/domain\.com\/username$/)
   end
 
+  def test_url_hash_paremeters
+    assert @tester.url(host: 'example.com', path: '/a_path').match(/^http:\/\/example\.com\/a_path$/)
+  end
+
+  def test_url_mixed_parameters
+    assert @tester.url('example.com', path: '/username').match(/^http:\/\/example\.com\/username/)
+  end
+
+  def test_url_https
+    assert @tester.url(scheme: 'https').match(/^https:\/\//)
+  end
+
   def test_device_token
     assert_equal 64, @tester.device_token.size
   end
