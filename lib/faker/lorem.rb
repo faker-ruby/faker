@@ -28,7 +28,7 @@ module Faker
         Array.new(char_count) { CHARACTERS.sample }.join
       end
 
-      def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
+      def sentence(word_count = 4, supplemental = false, random_words_to_add = 0)
         words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + '.'
       end
 
@@ -40,7 +40,7 @@ module Faker
         end
       end
 
-      def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 3)
+      def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 0)
         sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(' ')
       end
 
@@ -52,7 +52,7 @@ module Faker
         end
       end
 
-      def question(word_count = 4, supplemental = false, random_words_to_add = 6)
+      def question(word_count = 4, supplemental = false, random_words_to_add = 0)
         words(word_count + rand(random_words_to_add.to_i).to_i, supplemental).join(' ').capitalize + '?'
       end
 
