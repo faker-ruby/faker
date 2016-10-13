@@ -23,7 +23,7 @@ class TestFakerMusic < Test::Unit::TestCase
   def test_key_types
     assert @tester.key_types.size == 2
     @tester.key_types.each do |key_type|
-      assert !key_variant.nil?
+      assert !key_type.nil?
     end
   end
 
