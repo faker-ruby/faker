@@ -6,7 +6,7 @@ module Faker
       end
 
       def chord
-        keys.sample + chord_types.sample
+        key + chord_types.sample
       end
 
       def instrument

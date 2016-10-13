@@ -36,6 +36,6 @@ class TestFakerMusic < Test::Unit::TestCase
   end
 
   def test_chord
-    assert @tester.name.match(/([A-Z])+([a-zA-Z0-9]{0,4})/)
+    assert @tester.name.match(/([A-Z])+(b|#){0,1}+([a-zA-Z0-9]{0,4})/)
   end
 end
