@@ -3,7 +3,7 @@ es-MX:
   faker:
     address:
       city_prefix: [Ecatepec, Guadalajara, Puebla, Juárez, Tijuana, León, Zapopan, Monterrey, Nezahualcóyotl, Chihuahua, Naucalpan, Mérida, San Luis Potosí, Aguascalientes, Hermosillo, Saltillo, Mexicali, Culiacán, Guadalupe, Acapulco, Tlalnepantla, Cancún, Querétaro, Chimalhuacán, Torreón, Morelia, Reynosa, Tlaquepaque, Tuxtla, Durango, Toluca, Apodaca, Matamoros, San Nicolás de los Garza, Veracruz, Xalapa, Tonalá, Mazatlán, Irapuato, Nuevo Laredo, Xico, Villahermosa, General Escobedo, Celaya, Cuernavaca, Tepic, Ixtapaluca]
-      building_number: ['s/n.', '#', '##', '#', '##']
+      building_number: ['S/N', '#', '##', '###', '####', '#####']
       street_prefix: [Arroyo, Avenida, Bajada, Barranco, Calle, Camino, Carretera, Conjunto, Entrada, Escalinata, Explanada, Glorieta, Grupo, Huerta, Jardines, Lago, Manzana, Mercado, Monte, Muelle, Parque, Pasaje, Paseo, Plaza, Privada, Prolongación, Quinta, Rampa, Rincón, Salida, Sector, Subida, Vía]
       secondary_address: ['Depto. ###', 'Interior ###', 'Piso #']
       postcode: ['#####']
