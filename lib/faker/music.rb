@@ -16,6 +16,10 @@ module Faker
       def key_variants
         ['b', '#', '']
       end
+
+      def key_types
+        ['', 'm']
+      end
     end
   end
 end

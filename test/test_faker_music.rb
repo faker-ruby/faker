@@ -20,8 +20,15 @@ class TestFakerMusic < Test::Unit::TestCase
     end
   end
 
+  def test_key_types
+    assert @tester.key_types.size == 2
+    @tester.key_types.each do |key_type|
+      assert !key_variant.nil?
+    end
+  end
+
   def test_key
-    assert @tester.name.match(/([A-Z])+(b|#){0,1}/)
+    assert @tester.name.match(/([A-Z])+(b|#){0,1}+(m){0,1}/)
   end
 
   def test_instrument
