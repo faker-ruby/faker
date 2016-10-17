@@ -16,7 +16,7 @@ module Faker
       end
 
       def secondary_address
-        numerify(fetch('address.secondary_address'))
+        bothify(fetch('address.secondary_address'))
       end
 
       def building_number
