@@ -16,4 +16,8 @@ class TestFakerGameOfThrones < Test::Unit::TestCase
   def test_city
     assert @tester.city.match(/\w+/)
   end
+
+  def test_quote
+    assert @tester.quote.match(/\w+/)
+  end
 end

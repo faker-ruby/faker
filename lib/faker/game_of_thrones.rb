@@ -12,6 +12,10 @@ module Faker
       def city
         fetch('game_of_thrones.cities')
       end
+
+      def quote
+        fetch('game_of_thrones.quotes')
+      end
     end
   end
 end
