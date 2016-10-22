@@ -14,7 +14,7 @@ module Faker
       end
 
       def dragon
-        fetch('game_of_thrones.cities')
+        fetch('game_of_thrones.dragons')
       end
     end
   end
