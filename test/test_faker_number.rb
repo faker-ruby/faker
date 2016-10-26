@@ -51,8 +51,8 @@ class TestFakerNumber < Test::Unit::TestCase
     variance = values.inject(0) { |variance, value| variance + (value - mean) ** 2 } / (n-1).to_f
     std_dev = Math.sqrt variance
 
-    assert_in_delta 150.0, mean, 5
-    assert_in_delta 100.0, std_dev, 5
+    assert_in_delta 150.0, mean, 5.0
+    assert_in_delta 100.0, std_dev, 3.0
   end
 
   def test_between
