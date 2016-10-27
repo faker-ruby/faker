@@ -46,9 +46,9 @@ class TestFakerNumber < Test::Unit::TestCase
 
   def test_normal
     n = 10000
-    values = n.times.map { @tester.normal 150, 100 }
+    values = n.times.map { @tester.normal(150.0, 100.0) }
     mean = values.reduce(:+) / n.to_f
-    variance = values.inject(0) { |variance, value| variance + (value - mean) ** 2 } / (n-1).to_f
+    variance = values.inject(0) { |variance, value| variance + (value - mean) ** 2 } / (n - 1).to_f
     std_dev = Math.sqrt variance
 
     assert_in_delta 150.0, mean, 5.0
