@@ -31,7 +31,7 @@ class TestFakerInternet < Test::Unit::TestCase
       assert @tester.user_name(min_length).length >= min_length
     end
   end
-  
+
   def test_user_name_with_very_large_integer_arg
     exception = assert_raises(ArgumentError) { @tester.user_name(10000000) }
     assert_equal('Given argument is too large', exception.message)
@@ -206,5 +206,13 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_device_token
     assert_equal 64, @tester.device_token.size
+  end
+
+  def test_issue_685_regression
+    blacklisted_email_domains= [/.+@moore.io$/]
+    email_methods= @tester.public_methods.map(&:to_s).keep_if{|m| m.match(/email/)}.map(&:to_sym)
+    email_methods.each { |method| blacklisted_email_domains.each do |domain|
+      refute @tester.public_send(method).match(domain)
+    end }
   end
 end
