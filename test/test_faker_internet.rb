@@ -212,7 +212,7 @@ class TestFakerInternet < Test::Unit::TestCase
     blacklisted_email_domains= [/.+@moore.io$/]
     email_methods= @tester.public_methods.map(&:to_s).keep_if{|m| m.match(/email/)}.map(&:to_sym)
     email_methods.each { |method| blacklisted_email_domains.each do |domain|
-      refute @tester.public_send(method).match(domain)
+      512.times { refute @tester.public_send(method).match(domain) }
     end }
   end
 end
