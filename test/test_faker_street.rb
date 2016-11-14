@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/test_helper.rb'
 
 class TestFakerStreet < Test::Unit::TestCase
   def setup
+    @tester = Faker::Address
     @old_locales = I18n.config.available_locales
     shire = {
       :faker => {
@@ -27,36 +28,36 @@ class TestFakerStreet < Test::Unit::TestCase
 
   def test_street_name_supports_flexible_formats
     I18n.with_locale(:shire) do
-      assert_equal 'Wide Cheerful Path', Faker::Address.street_name
+      assert_equal 'Wide Cheerful Path', @tester.street_name
     end
   end
 
   def test_street_address_supports_flexible_formats
     I18n.with_locale(:shire) do
-      assert_match(/Wide Cheerful Path \d/, Faker::Address.street_address)
+      assert_match(/Wide Cheerful Path \d/, @tester.street_address)
     end
   end
 
   def test_street_address_optionally_provides_secondary_address
     I18n.with_locale(:shire) do
-      assert_match(/Wide Cheerful Path \d \(Green Door\)/, Faker::Address.street_address(:include_secondary))
+      assert_match(/Wide Cheerful Path \d \(Green Door\)/, @tester.street_address(:include_secondary))
     end
   end
 
   def test_street_address_with_locale_fallback
     I18n.with_locale('en-GB') do
-      assert_match(/^\d+ [\w']+ \w+/, Faker::Address.street_address)
+      assert_match(/^\d+ [\w']+ \w+/, @tester.street_address)
     end
   end
 
   def test_timezone_support
     I18n.with_locale(:shire) do
-      assert_equal 'Pacific/Pago_Pago', Faker::Address.time_zone
+      assert_equal 'Pacific/Pago_Pago', @tester.time_zone
     end
   end
 
   def test_full_address
-    assert_match(/^\d+ [\w'\s]+\, [\w'\s]+\, [\w']+ \d+/, Faker::Address.full_address)
+    assert_match(/^\d+ [\w'\s]+\, [\w'\s]+\, [\w']+ \d+/, @tester.full_address)
   end
 
 end
