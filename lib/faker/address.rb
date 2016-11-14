@@ -53,6 +53,11 @@ module Faker
       def longitude
         ((rand * 360) - 180).to_s
       end
+
+      # American-like address
+      def full_address
+        "#{street_address}, #{city}, #{state_abbr} #{zip_code}"
+      end
     end
   end
 end
