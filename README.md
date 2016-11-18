@@ -367,7 +367,7 @@ Faker::Lorem.sentences(1) #=> ["Ut perspiciatis explicabo possimus doloribus eni
 Faker::Lorem.sentences(1, true) #=> ["Quis capillus curo ager veritatis voro et ipsum."]
 
 # Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
-# The 'random_sentences_to_add' increases the paragraph's sentence count by a random value within (0..random_sentences_to_add).
+# The 'random_sentences_to_add' argument increases the paragraph's sentence count by a random value within (0..random_sentences_to_add).
 # To specify an exact sentence count for a paragraph, set random_sentences_to_add equal to 0.
 # By default, sentences will have a random number of words within the range (3..6).
 Faker::Lorem.paragraph #=> "Neque dicta enim quasi. Qui corrupti est quisquam. Facere animi quod aut. Qui nulla consequuntur consectetur sapiente."
