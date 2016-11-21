@@ -53,7 +53,6 @@ module Faker
           diff_rand = rand(diff_length + 1)
           temp += Lorem.characters(diff_rand)
         end
-        temp = temp[0..min_length] if min_length > 0
 
         if mix_case
           temp.chars.each_with_index do |char, index|
