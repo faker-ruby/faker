@@ -26,4 +26,12 @@ class TestFaker < Test::Unit::TestCase
     end
   end
 
+  def test_unique
+    unique_numbers = 8.times.map do
+      Faker::Base.unique.numerify('#')
+    end
+
+    assert_equal(unique_numbers.uniq, unique_numbers)
+  end
+
 end
