@@ -57,7 +57,9 @@ class TestFakerStreet < Test::Unit::TestCase
   end
 
   def test_full_address
-    assert_match(/^\d+ [\w'\s]+\, [\w'\s]+\, [\w']+ \d+/, @tester.full_address)
+    I18n.with_locale('en') do
+      assert_match(/^(.+\s)?\d+ [\w'\s]+\, [\w'\s]+\, [\w']+ \d+/, @tester.full_address)
+    end
   end
 
 end

@@ -54,9 +54,8 @@ module Faker
         ((rand * 360) - 180).to_s
       end
 
-      # American-like address
       def full_address
-        "#{street_address}, #{city}, #{state_abbr} #{zip_code}"
+        parse('address.full_address')
       end
     end
   end
