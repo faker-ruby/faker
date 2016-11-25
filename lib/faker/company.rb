@@ -69,8 +69,8 @@ module Faker
             multiplications << digit.to_i * 2
           else
             multiplications << digit.to_i
+          end
         end
-      end
 
         sum = 0
 
