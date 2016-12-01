@@ -626,6 +626,19 @@ Faker::Team.sport #=> "lacrosse"
 
 ```
 
+###Faker::Workout
+-----------------
+
+```ruby
+
+# Random Exercise
+Faker::Workout.exercise #=> "Front Dumbbell Raise"
+
+# Random Cardio Exercise
+Faker::Workout.random_cardio #=> "10 minutes on the treadmill"
+
+```
+
 ###Faker::Book
 ------------------
 
