@@ -626,6 +626,27 @@ Faker::Team.sport #=> "lacrosse"
 
 ```
 
+###Faker::Workout
+-----------------
+
+```ruby
+
+# Random Exercise
+Faker::Workout.exercise #=> "Front Dumbbell Raise" 
+
+# Random Cardio Exercise 
+Faker::Workout.random_cardio #=> "10 minutes on the treadmill" 
+
+```
+
+Customization
+------------
+Since you may want to make addresses and other types of data look different
+depending on where in the world you are (US postal codes vs. UK postal codes,
+for example), Faker uses the I18n gem to store strings (like state names) and
+formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
+allowing you to get different formats by switching locales.  Just set
+Faker::Config.locale to the locale you want, and Faker will take care of the
 ###Faker::Book
 ------------------
 
