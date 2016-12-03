@@ -25,7 +25,7 @@ class TestCaCatLocale < Test::Unit::TestCase
     assert Faker::University.name.is_a? String
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.name.is_a? String
-    assert Faker::Pokemon.names.is_a? String
-    assert Faker::Pokemon.locations.is_a? String
+    assert Faker::Pokemon.name.is_a? String
+    assert Faker::Pokemon.location.is_a? String
   end
 end
