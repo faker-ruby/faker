@@ -230,6 +230,7 @@ require 'faker/vehicle'
 require 'faker/game_of_thrones'
 require 'faker/pokemon'
 require 'faker/food'
+require 'faker/ancient'
 
 require 'extensions/array'
 require 'extensions/symbol'

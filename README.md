@@ -57,6 +57,7 @@ Contents
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
   - [Faker::Food](#fakerfood)
+  - [Faker::Ancient](#fakerancient)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -876,6 +877,19 @@ Faker::Food.ingredient #=> "Sweet Potato"
 Faker::Food.spice #=> "Caraway Seed"
 
 Faker::Food.measurement #=> "1/4 tablespoon"
+```
+
+###Faker::Ancient
+----------------
+
+```ruby
+Faker::Ancient.god #=> "Zeus"
+
+Faker::Ancient.primordial #=> "Gaia"
+
+Faker::Ancient.titan #=> "Atlas"
+
+Faker::Ancient.hero #=> "Achilles"
 ```
 
 Customization
