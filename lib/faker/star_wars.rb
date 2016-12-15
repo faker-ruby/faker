@@ -28,7 +28,7 @@ module Faker
       def wookie_sentence
         sentence = wookie_words.sample.capitalize
 
-        rand(1..10).times { sentence += " " + wookie_words.sample}
+        rand(0..10).times { sentence += " " + wookie_words.sample}
 
         sentence + ['.','?','!'].sample
       end
