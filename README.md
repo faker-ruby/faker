@@ -24,6 +24,7 @@ Contents
   - [Faker::Address](#fakeraddress)
   - [Faker::Bitcoin](#fakerbitcoin)
   - [Faker::Business](#fakerbusiness)
+  - [Faker::Bank](#fakerbank)
   - [Faker::Code](#fakercode)
   - [Faker::Color](#fakercolor)
   - [Faker::Commerce](#fakercommerce)
@@ -57,6 +58,7 @@ Contents
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
   - [Faker::Food](#fakerfood)
+  - [Faker::Ancient](#fakerancient)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -141,6 +143,23 @@ Faker::Business.credit_card_expiry_date #=> <Date: 2015-11-11 ((2457338j,0s,0n),
 Faker::Business.credit_card_type #=> "visa"
 
 ```
+
+###Faker::Bank
+------------------
+
+```ruby
+
+Faker::Bank.name #=> "ABN AMRO CORPORATE FINANCE LIMITED"
+
+Faker::Bank.bic_swift #=> "AAFMGB21"
+
+Faker::Bank.iban #=> "GB76DZJM33188515981979"
+
+# Optional argument bank_country_code(EU only)
+Faker::Bank.iban("be") #=> "BE6375388567752043"
+
+```
+
 
 ###Faker::Code
 --------------
@@ -876,6 +895,19 @@ Faker::Food.ingredient #=> "Sweet Potato"
 Faker::Food.spice #=> "Caraway Seed"
 
 Faker::Food.measurement #=> "1/4 tablespoon"
+```
+
+###Faker::Ancient
+----------------
+
+```ruby
+Faker::Ancient.god #=> "Zeus"
+
+Faker::Ancient.primordial #=> "Gaia"
+
+Faker::Ancient.titan #=> "Atlas"
+
+Faker::Ancient.hero #=> "Achilles"
 ```
 
 Customization
