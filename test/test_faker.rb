@@ -33,5 +33,13 @@ class TestFaker < Test::Unit::TestCase
     srand(seed)
     assert v == Faker::Base.rand_in_range(0, 1000)
   end
+  
+  def test_unique
+    unique_numbers = 8.times.map do
+      Faker::Base.unique.numerify('#')
+    end
+
+    assert_equal(unique_numbers.uniq, unique_numbers)
+  end
 
 end

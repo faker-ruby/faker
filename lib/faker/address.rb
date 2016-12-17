@@ -53,6 +53,10 @@ module Faker
       def longitude
         ((rand * 360) - 180).to_s
       end
+
+      def full_address
+        parse('address.full_address')
+      end
     end
   end
 end

@@ -201,7 +201,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_url
-    assert @tester.url('domain.com', '/username').match(/^http:\/\/domain\.com\/username$/)
+    assert @tester.url('domain.com', '/username', 'https').match(/^https:\/\/domain\.com\/username$/)
   end
 
   def test_device_token
