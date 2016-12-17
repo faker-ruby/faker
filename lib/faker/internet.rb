@@ -143,8 +143,8 @@ module Faker
         "#{ip_v6_address}/#{1 + rand(127)}"
       end
 
-      def url(host = domain_name, path = "/#{user_name}")
-        "http://#{host}#{path}"
+      def url(host = domain_name, path = "/#{user_name}", scheme = 'http')
+        "#{scheme}://#{host}#{path}"
       end
 
       def slug(words = nil, glue = nil)
