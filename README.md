@@ -24,6 +24,7 @@ Contents
   - [Faker::Address](#fakeraddress)
   - [Faker::Bitcoin](#fakerbitcoin)
   - [Faker::Business](#fakerbusiness)
+  - [Faker::Bank](#fakerbank)
   - [Faker::Code](#fakercode)
   - [Faker::Color](#fakercolor)
   - [Faker::Commerce](#fakercommerce)
@@ -58,6 +59,7 @@ Contents
   - [Faker::Pokemon](#fakerpokemon)
   - [Faker::Food](#fakerfood)
   - [Faker::LoremPixel](#fakerlorempixel)
+  - [Faker::Ancient](#fakerancient)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -142,6 +144,23 @@ Faker::Business.credit_card_expiry_date #=> <Date: 2015-11-11 ((2457338j,0s,0n),
 Faker::Business.credit_card_type #=> "visa"
 
 ```
+
+###Faker::Bank
+------------------
+
+```ruby
+
+Faker::Bank.name #=> "ABN AMRO CORPORATE FINANCE LIMITED"
+
+Faker::Bank.bic_swift #=> "AAFMGB21"
+
+Faker::Bank.iban #=> "GB76DZJM33188515981979"
+
+# Optional argument bank_country_code(EU only)
+Faker::Bank.iban("be") #=> "BE6375388567752043"
+
+```
+
 
 ###Faker::Code
 --------------
@@ -897,7 +916,19 @@ Faker::LoremPixel.image("50x60", false, 'sports', 3) #=> "http://lorempixel.com/
 Faker::LoremPixel.image("50x60", false, 'sports', 3, 'Dummy-text') #=> "http://lorempixel.com/50/60/sports/3/Dummy-text"
 
 Faker::LoremPixel.image("50x60", false, 'sports', nil, 'Dummy-text') #=> "http://lorempixel.com/50/60/sports/Dummy-text"
+```
 
+###Faker::Ancient
+----------------
+
+```ruby
+Faker::Ancient.god #=> "Zeus"
+
+Faker::Ancient.primordial #=> "Gaia"
+
+Faker::Ancient.titan #=> "Atlas"
+
+Faker::Ancient.hero #=> "Achilles"
 ```
 
 Customization
