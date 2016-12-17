@@ -3,8 +3,8 @@ module Faker
     flexible :address
 
     class << self
-      def city
-        parse('address.city')
+      def city(options = {})
+        parse(options[:with_state] ? 'address.city_with_state' : 'address.city')
       end
 
       def street_name
@@ -16,7 +16,7 @@ module Faker
       end
 
       def secondary_address
-        numerify(fetch('address.secondary_address'))
+        bothify(fetch('address.secondary_address'))
       end
 
       def building_number
