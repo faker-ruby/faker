@@ -379,6 +379,9 @@ Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omq
 Faker::Lorem.characters(10) #=> "ang9cbhoa8"
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
+# The 'random_words_to_add' argument increases the sentence's word count by a random value within (0..random_words_to_add).
+# To specify an exact word count for a sentence, set word_count to the number you want and random_words_to_add equal to 0.
+# By default, sentences will have a random number of words within the range (4..10).
 Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
 Faker::Lorem.sentence(3) #=> "Commodi qui minus deserunt sed vero quia."
 Faker::Lorem.sentence(3, true) #=> "Inflammatio denego necessitatibus caelestis autus illum."
@@ -391,6 +394,9 @@ Faker::Lorem.sentences(1) #=> ["Ut perspiciatis explicabo possimus doloribus eni
 Faker::Lorem.sentences(1, true) #=> ["Quis capillus curo ager veritatis voro et ipsum."]
 
 # Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
+# The 'random_sentences_to_add' argument increases the paragraph's sentence count by a random value within (0..random_sentences_to_add).
+# To specify an exact sentence count for a paragraph, set sentence_count to the number you want and random_sentences_to_add equal to 0.
+# By default, sentences will have a random number of words within the range (3..6).
 Faker::Lorem.paragraph #=> "Neque dicta enim quasi. Qui corrupti est quisquam. Facere animi quod aut. Qui nulla consequuntur consectetur sapiente."
 Faker::Lorem.paragraph(2) #=> "Illo qui voluptas. Id sit quaerat enim aut cupiditate voluptates dolorum. Porro necessitatibus numquam dolor quia earum."
 Faker::Lorem.paragraph(2, true) #=> "Cedo vero adipisci. Theatrum crustulum coaegresco tonsor crastinus stabilis. Aliqua crur consequatur amor una tolero sum."
