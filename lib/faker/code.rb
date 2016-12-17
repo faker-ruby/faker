@@ -77,9 +77,9 @@ module Faker
 
         # Calculate the Luhn checksum of the values thus far
         len_offset = (len + 1) % 2
-        (0..(len - 1)).each do |pos|
-          if (pos + len_offset) % 2 != 0
-            t = str[pos] * 2
+        (0..(len - 1)).each do |position|
+          if (position + len_offset) % 2 != 0
+            t = str[position] * 2
 
             if t > 9
               t -= 9
@@ -87,7 +87,7 @@ module Faker
 
             sum += t
           else
-            sum += str[pos]
+            sum += str[position]
           end
         end
 

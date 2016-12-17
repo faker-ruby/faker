@@ -2,7 +2,7 @@ require 'test/unit'
 require 'rubygems'
 require 'timecop'
 require 'yaml'
-YAML::ENGINE.yamler = 'syck' if defined? YAML::ENGINE
+YAML::ENGINE.yamler = 'psych' if defined? YAML::ENGINE
 require File.expand_path(File.dirname(__FILE__) + '/../lib/faker')
 
 # configure I18n
