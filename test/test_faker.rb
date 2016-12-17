@@ -26,6 +26,14 @@ class TestFaker < Test::Unit::TestCase
     end
   end
 
+  def test_deterministic_rand_in_range
+    seed = srand
+    srand(seed)
+    v = Faker::Base.rand_in_range(0, 1000)
+    srand(seed)
+    assert v == Faker::Base.rand_in_range(0, 1000)
+  end
+  
   def test_unique
     unique_numbers = 8.times.map do
       Faker::Base.unique.numerify('#')

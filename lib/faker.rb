@@ -180,7 +180,7 @@ module Faker
       # Generates a random value between the interval
       def rand_in_range(from, to)
         from, to = to, from if to < from
-        Random.new.rand(from..to)
+        rand(from..to)
       end
 
       def unique(max_retries = 10_000)
