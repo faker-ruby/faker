@@ -8,6 +8,7 @@ class TestFakerStarWars < Test::Unit::TestCase
     @quotes = Faker::StarWars.quotes
     @species = Faker::StarWars.species
     @vehicles = Faker::StarWars.vehicles
+    @wookie_words = Faker::StarWars.wookie_words
   end
 
   def test_strings
@@ -46,6 +47,12 @@ class TestFakerStarWars < Test::Unit::TestCase
        assert !vehicle.nil?
        assert vehicle != ""
     end
+
+    assert @wookie_words.size == 22
+    @wookie_words.each do |word|
+       assert !word.nil?
+       assert word != ""
+    end
   end
 
   def test_character
@@ -70,5 +77,9 @@ class TestFakerStarWars < Test::Unit::TestCase
 
   def test_vehicle
     assert Faker::StarWars.vehicle.match(/\w+/)
+  end
+
+  def test_wookie_sentence
+    assert Faker::StarWars.wookie_sentence.match(/\w+/)
   end
 end
