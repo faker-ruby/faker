@@ -357,6 +357,9 @@ en:
     music:
       instruments: ['Electric Guitar', 'Acoustic Guitar', 'Flute', 'Trumpet', 'Clarinet', 'Cello', 'Harp', 'Xylophone', 'Harmonica', 'Accordion', 'Organ', 'Piano', 'Ukelele', 'Saxophone', 'Drums', 'Violin', 'Bass Guitar']
 
+    artist:
+      names: ["Donatello", "Botticelli", "Michelangelo", "Raphael", "Titian", "Durer", "Caravaggio", "Rubens", "Bernini", "Rembrandt", "Pissarro", "Manet", "Degas", "Cezanne", "Monet", "Renoir", "Cassatt", "Gauguin", "Munch", "Klimt", "Matisse", "Picasso", "Kandinsky", "Chagall", "Seurat", "Magritte", "Escher", "Rothko", "Dali", "Kahlo", "Pollock", "Warhol", "Vettriano", "Da Vinci", "El Greco", "Winslow Homer", "Paul Klee", "Edward Hopper", "Diego Rivera", "Vincent", "Joan Miro", "Ansel Adams"]
+
     vehicle:
       year: [A, L, Y, B, M, '1', C, N, '2', D, P, '3', E, R, '4', F, S, '5', G, T, '6', H, V, '7', J, W, '8', K, X, '9']
       manufacture:
