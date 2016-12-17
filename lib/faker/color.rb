@@ -23,21 +23,18 @@ module Faker
       end
 
       def single_hsl_color
-        @single_hsla_color = Faker::Base::rand_in_range(0.0, 360.00).round(2)
-        @single_hsla_color
+        hsl_hue
       end
 
       def alpha_channel
-        @alpha_channel = rand
-        @alpha_channel
+        rand.round(2)
       end
 
       def hsl_color
-        @hsl_colors = []
-        3.times do
-          @hsl_colors.push single_hsl_color
-        end
-        @hsl_colors
+        hsl_colors = []
+        hsl_colors << hsl_hue
+        2.times { hsl_colors << rand.round(2) }
+        hsl_colors
       end
 
       def hsla_color
@@ -48,6 +45,13 @@ module Faker
         @hsla_colors.push alpha_channel
         @hsla_colors
       end
+
+      private
+
+      def hsl_hue
+        Faker::Base::rand_in_range(0, 360)
+      end
+
     end
   end
 end
