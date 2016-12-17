@@ -182,6 +182,10 @@ module Faker
         from, to = to, from if to < from
         Random.new.rand(from..to)
       end
+
+      def unique(max_retries = 10_000)
+        @unique_generator ||= UniqueGenerator.new(self, max_retries)
+      end
     end
   end
 end
@@ -239,3 +243,4 @@ require 'extensions/array'
 require 'extensions/symbol'
 
 require 'helpers/char'
+require 'helpers/unique_generator'

@@ -11,7 +11,8 @@ development.
 
 ### NOTE
 
-* While Faker generates data at random, returned values are not guaranteed to be unique.
+* While Faker generates data at random, returned values are not guaranteed to be unique by default.
+  You must explicity specify when you require unique values, see [details](#ensuring-unique-values).
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
   List of all versions is [available here](https://github.com/stympy/faker/releases).
@@ -77,6 +78,12 @@ gem install faker
 Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+```
+
+####Ensuring unique values
+Prefix your method call with `unique`. For example:
+```ruby
+Faker::Name.unique.name # This will return a unique name every time it is called
 ```
 
 ### Faker::Address
