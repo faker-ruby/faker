@@ -20,4 +20,8 @@ class TestFakerGameOfThrones < Test::Unit::TestCase
   def test_quote
     assert @tester.quote.match(/\w+/)
   end
+
+  def test_dragon
+    assert @tester.dragon.match(/\w+/)
+  end
 end

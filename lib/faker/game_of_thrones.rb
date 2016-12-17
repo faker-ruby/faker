@@ -16,6 +16,10 @@ module Faker
       def quote
         fetch('game_of_thrones.quotes')
       end
+
+      def dragon
+        fetch('game_of_thrones.dragons')
+      end
     end
   end
 end

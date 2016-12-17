@@ -3,6 +3,9 @@ en-US:
     internet:
       domain_suffix: [com, us, biz, info, name, net, org, io, co]
     address:
+      full_address:
+        - "#{street_address}, #{city}, #{state_abbr} #{zip_code}"
+        - "#{secondary_address} #{street_address}, #{city}, #{state_abbr} #{zip_code}"
       default_country: [United States, United States of America, USA]
       postcode_by_state:
         AL: '350##'
