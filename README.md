@@ -462,6 +462,9 @@ Faker::Number.decimal(2) #=> "11.88"
 
 Faker::Number.decimal(2, 3) #=> "18.843"
 
+# Required parameters: mean, standard_deviation
+Faker::Number.normal(50, 3.5) #=> 47.14669604069156
+
 # Required parameter: digits
 Faker::Number.hexadecimal(3) #=> "e74"
 
