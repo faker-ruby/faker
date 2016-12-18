@@ -247,7 +247,7 @@ Faker::Company.duns_number #=> "08-341-3736"
 # Get a random company logo url in PNG format.
 Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/color/5.png"
 
-Faker::Company.swedish_organisation_number #=> "7718797652"
+Faker::Company.swedish_organisation_number #=> "7962578022"
 
 # Generate an Australian Business Number
 Faker::Company.australian_business_number #=> "81137773602"
