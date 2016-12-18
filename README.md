@@ -868,6 +868,8 @@ Faker::Space.distance_measurement #=> "15 parsecs"
 ```ruby
 Faker::Music.key #=> "C"
 
+Faker::Music.chord => "Amaj7"
+
 Faker::Music.instrument #=> "Ukelele"
 ```
 
