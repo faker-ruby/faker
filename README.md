@@ -11,7 +11,8 @@ development.
 
 ### NOTE
 
-* While Faker generates data at random, returned values are not guaranteed to be unique.
+* While Faker generates data at random, returned values are not guaranteed to be unique by default.
+  You must explicity specify when you require unique values, see [details](#ensuring-unique-values).
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
   List of all versions is [available here](https://github.com/stympy/faker/releases).
@@ -24,6 +25,7 @@ Contents
   - [Faker::Address](#fakeraddress)
   - [Faker::Bitcoin](#fakerbitcoin)
   - [Faker::Business](#fakerbusiness)
+  - [Faker::Bank](#fakerbank)
   - [Faker::Code](#fakercode)
   - [Faker::Color](#fakercolor)
   - [Faker::Commerce](#fakercommerce)
@@ -57,6 +59,8 @@ Contents
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
   - [Faker::Food](#fakerfood)
+  - [Faker::LoremPixel](#fakerlorempixel)
+  - [Faker::Ancient](#fakerancient)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -74,6 +78,12 @@ gem install faker
 Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+```
+
+####Ensuring unique values
+Prefix your method call with `unique`. For example:
+```ruby
+Faker::Name.unique.name # This will return a unique name every time it is called
 ```
 
 ### Faker::Address
@@ -141,6 +151,23 @@ Faker::Business.credit_card_expiry_date #=> <Date: 2015-11-11 ((2457338j,0s,0n),
 Faker::Business.credit_card_type #=> "visa"
 
 ```
+
+###Faker::Bank
+------------------
+
+```ruby
+
+Faker::Bank.name #=> "ABN AMRO CORPORATE FINANCE LIMITED"
+
+Faker::Bank.bic_swift #=> "AAFMGB21"
+
+Faker::Bank.iban #=> "GB76DZJM33188515981979"
+
+# Optional argument bank_country_code(EU only)
+Faker::Bank.iban("be") #=> "BE6375388567752043"
+
+```
+
 
 ###Faker::Code
 --------------
@@ -220,7 +247,7 @@ Faker::Company.duns_number #=> "08-341-3736"
 # Get a random company logo url in PNG format.
 Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/color/5.png"
 
-Faker::Company.swedish_organisation_number #=> "7718797652"
+Faker::Company.swedish_organisation_number #=> "7962578022"
 
 # Generate an Australian Business Number
 Faker::Company.australian_business_number #=> "81137773602"
@@ -352,6 +379,9 @@ Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omq
 Faker::Lorem.characters(10) #=> "ang9cbhoa8"
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
+# The 'random_words_to_add' argument increases the sentence's word count by a random value within (0..random_words_to_add).
+# To specify an exact word count for a sentence, set word_count to the number you want and random_words_to_add equal to 0.
+# By default, sentences will have a random number of words within the range (4..10).
 Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
 Faker::Lorem.sentence(3) #=> "Commodi qui minus deserunt sed vero quia."
 Faker::Lorem.sentence(3, true) #=> "Inflammatio denego necessitatibus caelestis autus illum."
@@ -364,6 +394,9 @@ Faker::Lorem.sentences(1) #=> ["Ut perspiciatis explicabo possimus doloribus eni
 Faker::Lorem.sentences(1, true) #=> ["Quis capillus curo ager veritatis voro et ipsum."]
 
 # Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
+# The 'random_sentences_to_add' argument increases the paragraph's sentence count by a random value within (0..random_sentences_to_add).
+# To specify an exact sentence count for a paragraph, set sentence_count to the number you want and random_sentences_to_add equal to 0.
+# By default, sentences will have a random number of words within the range (3..6).
 Faker::Lorem.paragraph #=> "Neque dicta enim quasi. Qui corrupti est quisquam. Facere animi quod aut. Qui nulla consequuntur consectetur sapiente."
 Faker::Lorem.paragraph(2) #=> "Illo qui voluptas. Id sit quaerat enim aut cupiditate voluptates dolorum. Porro necessitatibus numquam dolor quia earum."
 Faker::Lorem.paragraph(2, true) #=> "Cedo vero adipisci. Theatrum crustulum coaegresco tonsor crastinus stabilis. Aliqua crur consequatur amor una tolero sum."
@@ -428,6 +461,9 @@ Faker::Number.number(10) #=> "1968353479"
 Faker::Number.decimal(2) #=> "11.88"
 
 Faker::Number.decimal(2, 3) #=> "18.843"
+
+# Required parameters: mean, standard_deviation
+Faker::Number.normal(50, 3.5) #=> 47.14669604069156
 
 # Required parameter: digits
 Faker::Number.hexadecimal(3) #=> "e74"
@@ -832,6 +868,8 @@ Faker::Space.distance_measurement #=> "15 parsecs"
 ```ruby
 Faker::Music.key #=> "C"
 
+Faker::Music.chord => "Amaj7"
+
 Faker::Music.instrument #=> "Ukelele"
 ```
 
@@ -856,6 +894,8 @@ Faker::GameOfThrones.character #=> "Tyrion Lannister"
 Faker::GameOfThrones.house #=> "Stark"
 
 Faker::GameOfThrones.city #=> "Lannisport"
+
+Faker::GameOfThrones.dragon #=> "Drogon"
 ```
 
 ###Faker::Pokemon
@@ -876,6 +916,39 @@ Faker::Food.ingredient #=> "Sweet Potato"
 Faker::Food.spice #=> "Caraway Seed"
 
 Faker::Food.measurement #=> "1/4 tablespoon"
+```
+
+###Faker::LoremPixel
+----------------
+
+```ruby
+
+Faker::LoremPixel.image #=> "http://lorempixel.com/300/300"
+
+Faker::LoremPixel.image("50x60") #=> "http://lorempixel.com/50/60"
+
+Faker::LoremPixel.image("50x60", true) #=> "http://lorempixel.com/g/50/60"
+
+Faker::LoremPixel.image("50x60", false, 'sports') #=> "http://lorempixel.com/50/60/sports"
+
+Faker::LoremPixel.image("50x60", false, 'sports', 3) #=> "http://lorempixel.com/50/60/sports/3"
+
+Faker::LoremPixel.image("50x60", false, 'sports', 3, 'Dummy-text') #=> "http://lorempixel.com/50/60/sports/3/Dummy-text"
+
+Faker::LoremPixel.image("50x60", false, 'sports', nil, 'Dummy-text') #=> "http://lorempixel.com/50/60/sports/Dummy-text"
+```
+
+###Faker::Ancient
+----------------
+
+```ruby
+Faker::Ancient.god #=> "Zeus"
+
+Faker::Ancient.primordial #=> "Gaia"
+
+Faker::Ancient.titan #=> "Atlas"
+
+Faker::Ancient.hero #=> "Achilles"
 ```
 
 Customization

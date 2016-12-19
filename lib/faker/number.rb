@@ -43,6 +43,13 @@ module Faker
         hex
       end
 
+      def normal(mean, standard_deviation)
+        theta = 2 * Math::PI * rand
+        rho = Math.sqrt(-2 * Math.log(1 - rand))
+        scale = standard_deviation * rho
+        mean + scale * Math.cos(theta)
+      end
+
       def between(from = 1.00, to = 5000.00)
         Faker::Base::rand_in_range(from, to)
       end
