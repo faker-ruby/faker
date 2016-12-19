@@ -21,6 +21,10 @@ module Faker
         ['b', '#', '']
       end
 
+      def key_types
+        ['', 'm']
+      end
+
       def chord_types
         ['', 'maj', '6', 'maj7', 'm', 'm7', '-7', '7', 'dom7', 'dim', 'dim7', 'm7b5']
       end
