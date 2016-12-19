@@ -19,7 +19,8 @@ class TestEsMxLocale < Test::Unit::TestCase
   end
 
   def test_es_mx_address_city
-    assert Faker::Address.city_prefix.nil?
+    assert Faker::Address.city_prefix.empty?
+    assert Faker::Address.city_suffix.empty?
     assert Faker::Address.city.is_a?(String)
     assert Faker::Address.city(with_state: true).is_a?(String)
     assert Faker::Address.city(with_state: true).split(', ').count == 2
