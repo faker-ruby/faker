@@ -26,4 +26,20 @@ class TestPlLocale < Test::Unit::TestCase
     prefixes = (0..999).map { Faker::PhoneNumber.cell_phone[0,2] }.uniq.sort
     assert_equal @cell_prefixes, prefixes
   end
+
+  def test_pl_methods
+    assert Faker::Address.country.is_a? String
+    assert Faker::Address.state.is_a? String
+    assert Faker::Address.state_abbr.is_a? String
+    assert Faker::Address.city_name.is_a? String
+    assert Faker::Company.suffix.is_a? String
+    assert Faker::Company.buzzwords.is_a? Array
+    assert Faker::Company.bs.is_a? String
+    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.domain_suffix.is_a? String
+    assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.last_name.is_a? String
+    assert Faker::Name.prefix.is_a? String
+    assert Faker::Name.title.is_a? String
+  end
 end
