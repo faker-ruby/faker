@@ -330,7 +330,7 @@ en:
 
     educator:
       name: ['Marblewald', 'Mallowtown', 'Brookville', 'Flowerlake', 'Falconholt', 'Ostbarrow', 'Lakeacre', 'Clearcourt', 'Ironston', 'Mallowpond', 'Iceborough', 'Icelyn', 'Brighthurst', 'Bluemeadow', 'Vertapple', 'Ironbarrow']
-      secondary: ['High School', 'Secodary College', 'High']
+      secondary: ['High School', 'Secondary College', 'High']
       tertiary:
         type: ['College', 'University', 'Technical College', 'TAFE']
         course:
