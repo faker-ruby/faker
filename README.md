@@ -813,7 +813,7 @@ Faker::ChuckNorris.fact #=> "Chuck Norris can solve the Towers of Hanoi in one m
 ```ruby
 Faker::Educator.university #=> "Mallowtown Technical College"
 
-Faker::Educator.secondary_school #=> "Iceborough Secodary College"
+Faker::Educator.secondary_school #=> "Iceborough Secondary College"
 
 Faker::Educator.course #=> "Associate Degree in Criminology"
 
