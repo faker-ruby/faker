@@ -90,7 +90,7 @@ module Faker
       def fetch(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.sample if fetched.respond_to?(:sample)
-        if fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        if fetched && fetched.match(/^\//) and fetched.match(/\/$/) # A regex
           regexify(fetched)
         else
           fetched
@@ -180,7 +180,11 @@ module Faker
       # Generates a random value between the interval
       def rand_in_range(from, to)
         from, to = to, from if to < from
-        Random.new.rand(from..to)
+        rand(from..to)
+      end
+
+      def unique(max_retries = 10_000)
+        @unique_generator ||= UniqueGenerator.new(self, max_retries)
       end
     end
   end
@@ -226,13 +230,19 @@ require 'faker/educator'
 require 'faker/space'
 require 'faker/yoda'
 require 'faker/music'
+require 'faker/artist'
 require 'faker/vehicle'
 require 'faker/game_of_thrones'
 require 'faker/pokemon'
 require 'faker/food'
+require 'faker/lorem_pixel'
+require 'faker/esport'
+require 'faker/bank'
+require 'faker/ancient'
 require 'faker/twin_peaks'
 
 require 'extensions/array'
 require 'extensions/symbol'
 
 require 'helpers/char'
+require 'helpers/unique_generator'
