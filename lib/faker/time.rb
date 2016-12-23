@@ -11,22 +11,26 @@ module Faker
     }
 
     class << self
-      def between(from, to, period = :all)
-        date_with_random_time(super(from, to), period)
+      def between(from, to, period = :all, format = nil)
+        time_with_format(date_with_random_time(super(from, to), period), format)
       end
 
-      def forward(days = 365, period = :all)
-        date_with_random_time(super(days), period)
+      def forward(days = 365, period = :all, format = nil)
+        time_with_format(date_with_random_time(super(days), period), format)
       end
 
-      def backward(days = 365, period = :all)
-        date_with_random_time(super(days), period)
+      def backward(days = 365, period = :all, format = nil)
+        time_with_format(date_with_random_time(super(days), period), format)
       end
 
       private
 
       def date_with_random_time(date, period)
         ::Time.local(date.year, date.month, date.day, hours(period), minutes, seconds)
+      end
+
+      def time_with_format(time, format)
+        format.nil? ? time : I18n.l( DateTime.parse(time.to_s), :format => format )
       end
 
       def hours(period)
