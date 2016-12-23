@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 class TestUkLocale < Test::Unit::TestCase
   def setup
     @previous_locale = Faker::Config.locale
-    Faker::Config.locale = "uk"
+    Faker::Config.locale = :uk
   end
 
   def teardown
