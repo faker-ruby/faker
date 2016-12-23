@@ -26,7 +26,7 @@ module Faker
       private
 
       def date_with_random_time(date, period)
-        ::Time.local(date.year, date.month, date.day, hours(period), minutes, seconds)
+        ::Time.zone.local(date.year, date.month, date.day, hours(period), minutes, seconds)
       end
 
       def hours(period)
