@@ -79,8 +79,8 @@ module Faker
       end
 
       def domain_word
-        if %w(uk).include? Config.locale
-          return Char.prepare Company.name.split(' ')[1]
+        if %w(uk ru).include? Config.locale.to_s
+          return Char.prepare Company.name.split(' ').last
         end
         Char.prepare Company.name.split(' ').first
       end

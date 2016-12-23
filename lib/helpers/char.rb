@@ -19,7 +19,7 @@ module Faker
     end
 
     def self.romanize_cyrillic(string)
-      if Faker::Config.locale == "uk"
+      if %w(uk ru).include?(Faker::Config.locale.to_s)
         # Based on conventions abopted by BGN/PCGN for Ukrainian
         uk_chars = {
           'а' => 'a',  'б' => 'b',  'в' => 'v',  'г' => 'h',  'ґ' => 'g',  'д' => 'd',
