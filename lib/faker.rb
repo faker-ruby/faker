@@ -242,6 +242,7 @@ require 'faker/ancient'
 require 'faker/twin_peaks'
 require 'faker/lord_of_the_rings'
 require 'faker/rock_band'
+require 'faker/fillmurray'
 
 require 'extensions/array'
 require 'extensions/symbol'
