@@ -35,6 +35,8 @@ Contents
   - [Faker::File](#fakerfile)
   - [Faker::Lorem](#fakerlorem)
   - [Faker::Name](#fakername)
+  - [Faker::Avatar](#fakeravatar)
+  - [Faker::Cat](#fakercat)
   - [Faker::Number](#fakernumber)
   - [Faker::Boolean](#fakerboolean)
   - [Faker::PhoneNumber](#fakerphonenumber)
@@ -976,6 +978,20 @@ Faker::TwinPeaks.quote #=> "The owls are not what they seem."
 Faker::LordOfTheRings.character #=> "Legolas"
 
 Faker::LordOfTheRings.location #=> "Helm's Deep"
+```
+
+###Faker::Cat
+------------------
+
+```ruby
+# Random cat name
+Faker::Cat.name #=> "Shadow"
+
+# Random cat breed
+Faker::Cat.breed #=> "British Semipi-longhair"
+
+# Random cat registry
+Faker::Cat.registry #=> "American Cat Fanciers Association"
 ```
 
 Customization
