@@ -19,14 +19,14 @@ module Faker
           if specifier.kind_of? String
             return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
           elsif specifier.kind_of? Integer
+            # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error 
+            raise ArgumentError, "Given argument is too large" if specifier > 10**6
             tries = 0 # Don't try forever in case we get something like 1_000_000.
             begin
               result = user_name nil, separators
               tries += 1
             end while result.length < specifier and tries < 7
-            until result.length >= specifier
-              result = result * 2
-            end
+            result = result * (specifier/result.length + 1) if specifier > 0
             return result
           elsif specifier.kind_of? Range
             tries = 0
@@ -53,7 +53,6 @@ module Faker
           diff_rand = rand(diff_length + 1)
           temp += Lorem.characters(diff_rand)
         end
-        temp = temp[0..min_length] if min_length > 0
 
         if mix_case
           temp.chars.each_with_index do |char, index|
@@ -144,8 +143,8 @@ module Faker
         "#{ip_v6_address}/#{1 + rand(127)}"
       end
 
-      def url(host = domain_name, path = "/#{user_name}")
-        "http://#{host}#{path}"
+      def url(host = domain_name, path = "/#{user_name}", scheme = 'http')
+        "#{scheme}://#{host}#{path}"
       end
 
       def slug(words = nil, glue = nil)

@@ -30,4 +30,16 @@ class TestEnNzLocale < Test::Unit::TestCase
     assert Faker::Address.region.is_a? String
     assert Faker::Address.region_abbr.is_a? String
   end
+
+  def test_team_sport_with_en_nz_locale
+    assert Faker::Team.sport.is_a? String
+  end
+
+  def test_team_names_with_en_nz_locale
+    assert Faker::Team.name.is_a? String
+  end
+
+  def test_university_names_with_en_nz_locale
+    assert Faker::University.name.is_a? String
+  end
 end
