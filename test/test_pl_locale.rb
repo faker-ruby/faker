@@ -12,6 +12,11 @@ class TestPlLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
+  def test_pl_names
+    names = Faker::Base.fetch_all('name.first_name') + Faker::Base.fetch_all('name.last_name')
+    names.each { |name| assert_match(/([\wĄąĆćĘęŁłÓóŚśŻżŹź]+\.? ?){2,3}/,name)}
+  end
+
   def test_pl_phone_number
     prefixes = (0..999).map { Faker::PhoneNumber.phone_number[0,2] }.uniq.sort
     assert_equal @phone_prefixes, prefixes
@@ -20,5 +25,21 @@ class TestPlLocale < Test::Unit::TestCase
   def test_pl_cell_phone
     prefixes = (0..999).map { Faker::PhoneNumber.cell_phone[0,2] }.uniq.sort
     assert_equal @cell_prefixes, prefixes
+  end
+
+  def test_pl_methods
+    assert Faker::Address.country.is_a? String
+    assert Faker::Address.state.is_a? String
+    assert Faker::Address.state_abbr.is_a? String
+    assert Faker::Address.city_name.is_a? String
+    assert Faker::Company.suffix.is_a? String
+    assert Faker::Company.buzzwords.is_a? Array
+    assert Faker::Company.bs.is_a? String
+    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.domain_suffix.is_a? String
+    assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.last_name.is_a? String
+    assert Faker::Name.prefix.is_a? String
+    assert Faker::Name.title.is_a? String
   end
 end
