@@ -239,6 +239,7 @@ require 'faker/lorem_pixel'
 require 'faker/esport'
 require 'faker/bank'
 require 'faker/ancient'
+require 'faker/twin_peaks'
 
 require 'extensions/array'
 require 'extensions/symbol'

@@ -61,6 +61,7 @@ Contents
   - [Faker::Food](#fakerfood)
   - [Faker::LoremPixel](#fakerlorempixel)
   - [Faker::Ancient](#fakerancient)
+  - [Faker::TwinPeaks](#fakertwinpeaks)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -951,6 +952,17 @@ Faker::Ancient.primordial #=> "Gaia"
 Faker::Ancient.titan #=> "Atlas"
 
 Faker::Ancient.hero #=> "Achilles"
+```
+
+###Faker::TwinPeaks
+----------------
+
+```ruby
+Faker::TwinPeaks.character #=> "Dale Cooper"
+
+Faker::TwinPeaks.location #=> "Black Lodge"
+
+Faker::TwinPeaks.quote #=> "The owls are not what they seem."
 ```
 
 Customization
