@@ -65,6 +65,7 @@ Contents
   - [Faker::Ancient](#fakerancient)
   - [Faker::TwinPeaks](#fakertwinpeaks)
   - [Faker::LordOfTheRings](#fakerlordoftherings)
+  - [Faker::RockBand](#fakerrockband)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -992,6 +993,13 @@ Faker::Cat.breed #=> "British Semipi-longhair"
 
 # Random cat registry
 Faker::Cat.registry #=> "American Cat Fanciers Association"
+```
+
+###Faker::RockBand
+----------------
+
+```ruby
+Faker::RockBand.name #=> "Led Zeppelin"
 ```
 
 Customization

@@ -241,6 +241,7 @@ require 'faker/bank'
 require 'faker/ancient'
 require 'faker/twin_peaks'
 require 'faker/lord_of_the_rings'
+require 'faker/rock_band'
 
 require 'extensions/array'
 require 'extensions/symbol'
