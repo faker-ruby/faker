@@ -31,6 +31,7 @@ Contents
   - [Faker::Date](#fakerdate)
   - [Faker::Internet](#fakerinternet)
   - [Faker::File](#fakerfile)
+  - [Faker::Fillmurray](#fakerfillmurray)
   - [Faker::Lorem](#fakerlorem)
   - [Faker::Name](#fakername)
   - [Faker::Number](#fakernumber)
@@ -669,7 +670,7 @@ Faker::Placeholdit.image("50x50", 'jpg', 'ffffff', '000', 'Some Custom Text') #=
 
 ```
 
-###FAKER::Fillmurray
+###Faker::Fillmurray
 -------------------
 
 ```ruby
