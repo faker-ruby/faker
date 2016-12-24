@@ -240,6 +240,7 @@ require 'faker/esport'
 require 'faker/bank'
 require 'faker/ancient'
 require 'faker/twin_peaks'
+require 'faker/lord_of_the_rings'
 
 require 'extensions/array'
 require 'extensions/symbol'

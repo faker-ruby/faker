@@ -62,6 +62,7 @@ Contents
   - [Faker::LoremPixel](#fakerlorempixel)
   - [Faker::Ancient](#fakerancient)
   - [Faker::TwinPeaks](#fakertwinpeaks)
+  - [Faker::LordOfTheRings](#fakerlordoftherings)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -966,6 +967,15 @@ Faker::TwinPeaks.character #=> "Dale Cooper"
 Faker::TwinPeaks.location #=> "Black Lodge"
 
 Faker::TwinPeaks.quote #=> "The owls are not what they seem."
+```
+
+###Faker::LordOfTheRings
+----------------
+
+```ruby
+Faker::LordOfTheRings.character #=> "Legolas"
+
+Faker::LordOfTheRings.location #=> "Helm's Deep"
 ```
 
 Customization
