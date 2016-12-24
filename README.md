@@ -716,11 +716,7 @@ Faker::Placeholdit.image("50x50", 'jpg', 'ffffff', '000', 'Some Custom Text') #=
 
 ```
 
-<<<<<<< HEAD
 ###Faker::Fillmurray
-=======
-###FAKER::Fillmurray
->>>>>>> 553e6f1c3e0629ceca690bb47fe4ae23d89435b7
 -------------------
 
 ```ruby

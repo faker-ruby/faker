@@ -234,9 +234,6 @@ require 'faker/artist'
 require 'faker/vehicle'
 require 'faker/game_of_thrones'
 require 'faker/pokemon'
-<<<<<<< HEAD
-require 'faker/fillmurray'
-=======
 require 'faker/food'
 require 'faker/lorem_pixel'
 require 'faker/esport'
@@ -247,7 +244,6 @@ require 'faker/lord_of_the_rings'
 require 'faker/rock_band'
 require 'faker/fillmurray'
 require 'faker/job'
->>>>>>> 553e6f1c3e0629ceca690bb47fe4ae23d89435b7
 
 require 'extensions/array'
 require 'extensions/symbol'
