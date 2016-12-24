@@ -105,7 +105,7 @@ Faker::Address.zip_code #=> "58517"
 
 Faker::Address.zip #=> "58517"
 
-Faker::Address.postcode #=> "58517"
+Faker::Address.postcode #=> "76032-4907" or "58517"
 
 Faker::Address.time_zone #=> "Asia/Yakutsk"
 
