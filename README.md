@@ -33,6 +33,7 @@ Contents
   - [Faker::Date](#fakerdate)
   - [Faker::Internet](#fakerinternet)
   - [Faker::File](#fakerfile)
+  - [Faker::Fillmurray](#fakerfillmurray)
   - [Faker::Lorem](#fakerlorem)
   - [Faker::Name](#fakername)
   - [Faker::Avatar](#fakeravatar)
