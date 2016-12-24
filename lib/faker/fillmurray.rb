@@ -8,8 +8,8 @@ module Faker
         raise ArgumentError, "Grayscale should be a boolean" unless [true, false].include?(grayscale)
 
         fillmurray_url = grayscale == true ? "https://fillmurray.com/g/#{width}/#{height}" : "https://fillmurray.com/#{width}/#{height}"
-      
-        fillmurray_url 
+
+        fillmurray_url
       end
     end
   end
