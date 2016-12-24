@@ -862,6 +862,9 @@ Faker::Space.company #=> "SpaceX"
 
 # Random unit of stellar distance with number
 Faker::Space.distance_measurement #=> "15 parsecs"
+
+# Random meteorite name
+Faker::Space.meteorite #=> "Ensisheim"
 ```
 
 

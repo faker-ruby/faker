@@ -53,4 +53,7 @@ class TestFakerSpace < Test::Unit::TestCase
     assert @tester.distance_measurement.match(/(\w+\.? ?){2,3}/)
   end
 
+  def test_meteorite
+    assert @tester.meteorite.match(/(\w+\.? ?){2,3}/)
+  end
 end
