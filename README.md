@@ -58,6 +58,7 @@ Contents
   - [Faker::Vehicle](#fakervehicle)
   - [Faker::GameOfThrones](#fakergameofthrones)
   - [Faker::Pokemon](#fakerpokemon)
+  - [Faker::Workout](#fakerworkout)
   - [Faker::Food](#fakerfood)
   - [Faker::LoremPixel](#fakerlorempixel)
   - [Faker::Ancient](#fakerancient)
@@ -911,6 +912,17 @@ Faker::GameOfThrones.dragon #=> "Drogon"
 Faker::Pokemon.name #=> "Pikachu"
 
 Faker::Pokemon.location #=> "Pallet Town"
+```
+
+###Faker::Workout
+-----------------
+
+```ruby
+# Random Exercise
+Faker::Workout.exercise #=> "Front Dumbbell Raise"
+
+# Random Cardio Exercise
+Faker::Workout.cardio #=> "10 minutes on the treadmill"
 ```
 
 ###Faker::Food
