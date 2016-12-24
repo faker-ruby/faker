@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('github_changelog_generator', '~> 1.14')
   s.add_runtime_dependency('i18n', '~> 0.5')
 
-  s.files         = Dir['lib/**/*'] + %w(History.txt License.txt README.md)
+  s.files         = Dir['lib/**/*'] + %w(History.md License.txt CHANGELOG.md README.md)
   s.executables   = Dir['bin/*'].map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 end
