@@ -30,11 +30,11 @@ module Faker
       end
 
       def ein
-        ('%09d' % rand(10 ** 9)).gsub(/(\d\d)(\d\d\d\d\d\d\d)/, '\\1-\\2')
+        ('%09d' % rand(10 ** 9)).gsub(/(\d{2})(\d{7})/, '\\1-\\2')
       end
 
       def duns_number
-        ('%09d' % rand(10 ** 9)).gsub(/(\d\d)(\d\d\d)(\d\d\d\d)/, '\\1-\\2-\\3')
+        ('%09d' % rand(10 ** 9)).gsub(/(\d{2})(\d{3})(\d{4})/, '\\1-\\2-\\3')
       end
 
       # Get a random company logo url in PNG format.
@@ -54,7 +54,7 @@ module Faker
 
       def australian_business_number
         base = ('%09d' % rand(10 ** 9))
-        abn = '00' + base
+        abn = "00#{base}" 
 
         (99 - (abn_checksum(abn) % 89)).to_s + base
       end
