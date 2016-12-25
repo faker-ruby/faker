@@ -1,5 +1,17 @@
 # Change Log
 
+## [v1.7.1](https://github.com/stympy/faker/tree/v1.7.1) (2016-12-25)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.7.0...v1.7.1)
+
+**Closed issues:**
+
+- Getting "Segmentation fault: 11" when I upgrade last 3 repos to faker 1.7.0 [\#780](https://github.com/stympy/faker/issues/780)
+- New release? [\#767](https://github.com/stympy/faker/issues/767)
+
+**Merged pull requests:**
+
+- Added Faker::Fillmurray hotlink to usages list [\#779](https://github.com/stympy/faker/pull/779) ([Jedeu](https://github.com/Jedeu))
+
 ## [v1.7.0](https://github.com/stympy/faker/tree/v1.7.0) (2016-12-24)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.6.6...v1.7.0)
 
