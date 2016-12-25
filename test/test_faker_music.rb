@@ -8,7 +8,7 @@ class TestFakerMusic < Test::Unit::TestCase
   def test_keys
     assert @tester.keys.size == 7
     @tester.keys.each do |key|
-       refute key.blank?
+       refute key.to_s.empty?
     end
   end
 

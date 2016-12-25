@@ -11,22 +11,22 @@ class TestFakerShakespeare < Test::Unit::TestCase
   def test_quotes
     assert @romeo_and_juliet.size == 11
     @romeo_and_juliet.each do |quote|
-       refute quote.blank?
+       refute quote.to_s.empty?
     end
 
 	assert @king_richard_iii.size == 8
     @king_richard_iii.each do |quote|
-       refute quote.blank?
+       refute quote.to_s.empty?
     end
 
 	assert @as_you_like_it.size == 8
     @as_you_like_it.each do |quote|
-       refute quote.blank?
+       refute quote.to_s.empty?
     end
 
 	assert @hamlet.size == 18
     @hamlet.each do |quote|
-       refute quote.blank?
+       refute quote.to_s.empty?
     end
   end
 

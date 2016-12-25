@@ -25,7 +25,7 @@ class TestFakerName < Test::Unit::TestCase
   def test_job_titles
     @job_titles = Faker::Name.job_titles
     @job_titles.each do |title|
-       refute title.blank?
+       refute title.to_s.empty?
     end
   end
 end

@@ -247,7 +247,6 @@ require 'faker/job'
 
 require 'extensions/array'
 require 'extensions/symbol'
-require 'extensions/object'
 
 require 'helpers/char'
 require 'helpers/unique_generator'

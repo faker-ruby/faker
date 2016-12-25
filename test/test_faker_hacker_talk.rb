@@ -9,7 +9,7 @@ class TestFakerHacker < Test::Unit::TestCase
   def test_phrases
     assert @phrases.size == 8
     @phrases.each do |phrase|
-       refute phrase.blank?
+       refute phrase.to_s.empty?
     end
   end
 
