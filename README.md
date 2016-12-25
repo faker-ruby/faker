@@ -455,6 +455,20 @@ Faker::Avatar.image("my-own-slug", "50x50", "bmp") #=> "https://robohash.org/my-
 Faker::Avatar.image("my-own-slug", "50x50", "bmp", "set1", "bg1") #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
 ```
 
+###Faker::Image
+----------------
+
+Generates an image using [loremflickr](http://loremflickr.com/).
+
+```ruby
+
+Faker::Image.image #=> "http://loremflickr.com/300/300"
+
+Faker::Image.image(nil, "200x200") #=> "http://loremflickr.com/200/200"
+
+Faker::Image.image("my-own-slug", "50x50") #=> "http://loremflickr.com/50/50/my-own-slug"
+```
+
 ###Faker::Number
 ----------------
 
