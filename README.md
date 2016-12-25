@@ -42,6 +42,7 @@ Contents
   - [Faker::Boolean](#fakerboolean)
   - [Faker::PhoneNumber](#fakerphonenumber)
   - [Faker::Time](#fakertime)
+    [Faker::TimeCode](#fakertimecode)
   - [Faker::Hacker](#fakerhacker)
   - [Faker::Crypto](#fakercrypto)
   - [Faker::App](#fakerapp)
