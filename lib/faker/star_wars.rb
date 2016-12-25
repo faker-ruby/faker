@@ -25,6 +25,14 @@ module Faker
         vehicles.sample
       end
 
+      def wookie_sentence
+        sentence = wookie_words.sample.capitalize
+
+        rand(0..10).times { sentence += " " + wookie_words.sample}
+
+        sentence + ['.','?','!'].sample
+      end
+
       def characters
         ['Padme Amidala', 'Jar Jar Binks', 'Borvo the Hutt', 'Darth Caedus', 'Boba Fett', 'Jabba the Hutt', 'Obi-Wan Kenobi', 'Darth Maul', 'Leia Organa', 'Sheev Palpatine',
          'Kylo Ren', 'Darth Sidious', 'Anakin Skywalker', 'Luke Skywalker', 'Ben Solo', 'Han Solo', 'Darth Vader', 'Watto', 'Mace Windu', 'Yoda', 'Count Dooku', 'Sebulba',
@@ -61,6 +69,11 @@ module Faker
       def vehicles
         ['V-Wing Fighter', 'ATT Battle Tank', 'Naboo N-1 Starfighter', 'Vulture Droid', 'Republic Cruiser', 'Naboo Royal Starship', 'Gungan Bongo Submarine', 'Flash Speeder', 'Trade Federation Battleship', 'Millennium Falcon',
          'Sith Infiltrator', 'AT-ST Walker', 'TIE Bomber', 'Imperial Shuttle', 'Sandcrawler', 'TIE Interceptor', 'Speeder Bike', 'Death Star', 'AT-AT Walker', 'Imperial Star Destroyer', 'X-Wing Fighter']
+      end
+
+      def wookie_words
+        ['wyaaaaaa', 'ruh', 'huewaa', 'muaa', 'mumwa', 'wua', 'ga', 'ma', 'ahuma', 'ooma', 'youw', 'kabukk', 'wyogg',
+          'gwyaaaag', 'roooarrgh', 'ur', 'ru', 'roo', 'hnn-rowr', 'yrroonn', 'nng', 'rarr']
       end
     end
   end

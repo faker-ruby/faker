@@ -50,7 +50,7 @@ module Faker
       def resolve(value)
         case value
         when Array then value[rand(value.size)]
-        when Range then rand((value.last+1) - value.first) + value.first
+        when Range then value.to_a[rand(value.size)]
         else value
         end
       end
