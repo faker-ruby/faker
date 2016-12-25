@@ -49,6 +49,10 @@ module Faker
       def distance_measurement
         rand(10..100).to_s + ' ' + fetch('space.distance_measurement')
       end
+
+      def meteorite
+        fetch('space.meteorite')
+      end
     end
   end
 end

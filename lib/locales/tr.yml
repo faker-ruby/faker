@@ -1,0 +1,26 @@
+# encoding: utf-8
+tr:
+  faker:
+    name:
+      first_name: [Mehmet, Yiğit, Batuhan, Burak, İrem, Buse, Selim, Caner]
+      last_name: [Davut, Sağdıç, Özdemir, Özkanlı, Ekkaldır, Zengel, Eren]
+      prefix: [Sn., Av., Dr.]
+      title:
+        job: ['Müdür','Şef','Koordinatör', 'Ajan','Hacı','Başkan','Reyiz']
+      name:
+        - "#{prefix} #{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{last_name} #{first_name}"
+
+    internet:
+      free_email: [gmail.com, hotmail.com.tr, yandex.com.tr]
+      domain_suffix: [co, com, com.tr, net, org]
+      safe_email: ['mesela.com']
+
+
+    address:
+      city_name: ['İstanbul', 'İzmir', 'Eskişehir', 'Şırnak', 'Edirne', 'Van' ]
+      city:
+        - "#{city_name}"
+      country: [Afganistan, Amerika Birleşik Devletleri, Fransa, Hollanda, Belçika, Nepal, Hindistan, Kuala Lumpur, Rusya]
+      default_country: [Turkey]

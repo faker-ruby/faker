@@ -24,6 +24,8 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_swedish_organisation_number
     org_no = @tester.swedish_organisation_number
     assert org_no.match(/\d{10}/)
+    assert [1, 2, 3, 5, 6, 7, 8, 9].include?(org_no[0].to_i)
+    assert org_no[2].to_i >= 2
     assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
   end
 

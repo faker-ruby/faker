@@ -39,8 +39,7 @@ module Faker
 
       def address_for(network)
         version = PROTOCOL_VERSIONS.fetch(network)
-        hash = SecureRandom.hex(20)
-        packed = version.chr + [hash].pack("H*")
+        packed = version.chr + Random::DEFAULT.bytes(20)
         checksum = Digest::SHA2.digest(Digest::SHA2.digest(packed))[0..3]
         base58(packed + checksum)
       end
