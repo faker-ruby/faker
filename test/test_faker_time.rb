@@ -109,5 +109,15 @@ class TestFakerTime < Test::Unit::TestCase
         assert period_range.include?(result.hour.to_i), "#{[:random_backward, :random_between, :random_forward][index]}: \"#{result}\" expected to be included in Faker::Time::TIME_RANGES[:#{period}] range"
       end
     end
+
+    from = Time.now
+    to   = Time.now + 100
+
+    100.times do
+      period          = :between
+      random_between  = @tester.between(from, to, period)
+      assert random_between >= from, "Expected >= \"#{from}\", but got #{random_between}"
+      assert random_between <= to  , "Expected <= \"#{to}\", but got #{random_between}"
+    end
   end
 end

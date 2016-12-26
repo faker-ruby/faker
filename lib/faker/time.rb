@@ -12,7 +12,8 @@ module Faker
 
     class << self
       def between(from, to, period = :all, format = nil)
-        time_with_format(date_with_random_time(super(from, to), period), format)
+        time = period == :between ? rand(from..to) : date_with_random_time(super(from, to), period)
+        time_with_format(time, format)
       end
 
       def forward(days = 365, period = :all, format = nil)
