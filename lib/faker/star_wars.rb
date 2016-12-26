@@ -75,6 +75,11 @@ module Faker
         ['wyaaaaaa', 'ruh', 'huewaa', 'muaa', 'mumwa', 'wua', 'ga', 'ma', 'ahuma', 'ooma', 'youw', 'kabukk', 'wyogg',
           'gwyaaaag', 'roooarrgh', 'ur', 'ru', 'roo', 'hnn-rowr', 'yrroonn', 'nng', 'rarr']
       end
+
+      def specie
+        puts "#{self}.#{__method__} is deprecated and will be removed. Switch to the functionally identical #{self}.species at your convenience."
+        species
+      end
     end
   end
 end
