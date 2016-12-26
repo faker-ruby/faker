@@ -20,25 +20,22 @@ module Faker
 
         categories = categories(num)
 
-        if num > 1
-          merge_categories(categories)
-        else
-          categories[0]
-        end
+        return merge_categories(categories) if num > 1
+        categories[0]
       end
 
       def product_name
-        fetch('commerce.product_name.adjective') + ' ' + fetch('commerce.product_name.material') + ' ' + fetch('commerce.product_name.product')
+        "#{fetch('commerce.product_name.adjective')} #{fetch('commerce.product_name.material')} #{fetch('commerce.product_name.product')}"
       end
 
       def material
         fetch('commerce.product_name.material')
       end
 
-      def price(range=0..100.0, string=false)
+      def price(range=0..100.0, as_string=false)
         random = Random::DEFAULT
         price = (random.rand(range) * 100).floor/100.0
-        if string
+        if as_string
           price_parts = price.to_s.split('.')
           price = price_parts[0] + price_parts[-1].ljust(2, "0")
         end
