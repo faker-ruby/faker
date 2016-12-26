@@ -76,4 +76,8 @@ class TestFakerStarWars < Test::Unit::TestCase
   def test_wookie_sentence
     assert Faker::StarWars.wookie_sentence.match(/\w+/)
   end
+
+  def test_specie # Ensure StarWars.specie calls continue to work. To be removed when StarWars.specie is removed.
+    assert Faker::StarWars.specie.match(/\w+/)
+  end
 end
