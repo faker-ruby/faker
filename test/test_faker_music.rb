@@ -8,15 +8,14 @@ class TestFakerMusic < Test::Unit::TestCase
   def test_keys
     assert @tester.keys.size == 7
     @tester.keys.each do |key|
-       assert !key.nil?
-       assert key != ""
+       refute key.to_s.empty?
     end
   end
 
   def test_key_variants
     assert @tester.key_variants.size == 3
     @tester.key_variants.each do |key_variant|
-       assert !key_variant.nil?
+       refute key_variant.nil?
     end
   end
 
