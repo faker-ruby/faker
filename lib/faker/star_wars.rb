@@ -77,7 +77,7 @@ module Faker
       end
 
       def specie
-        puts "#{self}.#{__method__} is deprecated and will be removed. Switch to the functionally identical #{self}.species at your convenience."
+        puts "#{self}.#{__method__} is deprecated and will be removed. Switch to the functionally identical #{self}.species at your convenience." unless caller[0].to_s.include? "test" 
         species
       end
     end
