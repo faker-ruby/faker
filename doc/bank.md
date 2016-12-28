@@ -2,7 +2,7 @@
 ```ruby
 Faker::Bank.name #=> "ABN AMRO CORPORATE FINANCE LIMITED"
 
-Faker::Bank.bic_swift #=> "AAFMGB21"
+Faker::Bank.swift_bic #=> "AAFMGB21"    
 
 Faker::Bank.iban #=> "GB76DZJM33188515981979"
 
