@@ -1,5 +1,6 @@
 module Faker
   class Finance < Base
+
     CREDIT_CARD_TYPES = [:visa, :mastercard, :discover, :american_express,
                          :diners_club, :jcb, :switch, :solo, :dankort,
                          :maestro, :forbrugsforeningen, :laser].freeze
@@ -20,8 +21,7 @@ module Faker
         # last digit must be 10 - the last digit of the sum.
         luhn_digit = (10 - (luhn_sum % 10)) % 10
 
-        template.gsub! 'L', luhn_digit.to_s
-        template
+        template.gsub('L', luhn_digit.to_s)
       end
     end
   end

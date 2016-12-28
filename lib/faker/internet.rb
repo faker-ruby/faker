@@ -1,7 +1,7 @@
-# encoding: utf-8
 module Faker
   class Internet < Base
     class << self
+
       def email(name = nil)
         [user_name(name), domain_name].join('@')
       end
@@ -11,36 +11,35 @@ module Faker
       end
 
       def safe_email(name = nil)
-        [user_name(name), 'example.'+ %w[org com net].shuffle.first].join('@')
+        [user_name(name), 'example.'+ %w[org com net].sample].join('@')
       end
 
       def user_name(specifier = nil, separators = %w(. _))
         with_locale(:en) do
-          if specifier.kind_of? String
+          if specifier.respond_to?(:scan)
             return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
-          elsif specifier.kind_of? Integer
+          elsif specifier.kind_of?(Integer)
             # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error 
             raise ArgumentError, "Given argument is too large" if specifier > 10**6
             tries = 0 # Don't try forever in case we get something like 1_000_000.
             begin
-              result = user_name nil, separators
+              result = user_name(nil, separators)
               tries += 1
-            end while result.length < specifier and tries < 7
-            result = result * (specifier/result.length + 1) if specifier > 0
-            return result
-          elsif specifier.kind_of? Range
+            end while result.length < specifier && tries < 7
+            return result * (specifier/result.length + 1) if specifier > 0
+          elsif specifier.kind_of?(Range)
             tries = 0
             begin
-              result = user_name specifier.min, separators
+              result = user_name(specifier.min, separators)
               tries += 1
-            end while not specifier.include? result.length and tries < 7
+            end while !specifier.include?(result.length) && tries < 7
             return result[0...specifier.max]
           end
 
           [
             Char.prepare(Name.first_name),
             [Name.first_name, Name.last_name].map{ |name|
-              Char.prepare name
+              Char.prepare(name)
             }.join(separators.sample)
           ].sample
         end
@@ -56,7 +55,7 @@ module Faker
 
         if mix_case
           temp.chars.each_with_index do |char, index|
-            temp[index] = char.upcase if index % 2 == 0
+            temp[index] = char.upcase if index.even?
           end
         end
 
@@ -67,7 +66,7 @@ module Faker
           end
         end
 
-        return temp
+        temp
       end
 
       def domain_name
@@ -75,14 +74,12 @@ module Faker
       end
 
       def fix_umlauts(string)
-        Char.fix_umlauts string
+        Char.fix_umlauts(string)
       end
 
       def domain_word
-        if %w(uk).include? Config.locale
-          return Char.prepare Company.name.split(' ')[1]
-        end
-        Char.prepare Company.name.split(' ').first
+        return Char.prepare(Company.name.split(' ')[1]) if Config.locale == 'uk'
+        Char.prepare(Company.name.split(' ').first)
       end
 
       def domain_suffix
