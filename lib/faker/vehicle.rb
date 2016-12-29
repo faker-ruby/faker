@@ -10,8 +10,8 @@ module Faker
         manufacture = fetch_all('vehicle.manufacture').sample
 
         c = @vin_chars.split('').reject{ |n| n == '.'}
-        vehicle_identification_number = manufacture["wmi"].split('').concat( Array.new(14) { c.sample } )
-        (12..14).to_a.each_with_index { |n, i| vehicle_identification_number[n] = manufacture["win_ext"][i] } unless manufacture["win_ext"].nil?
+        vehicle_identification_number = manufacture[:wmi].split('').concat( Array.new(14) { c.sample } )
+        (12..14).to_a.each_with_index { |n, i| vehicle_identification_number[n] = manufacture[:win_ext][i] } unless manufacture[:win_ext].nil?
         vehicle_identification_number[10] = fetch('vehicle.year')
         vehicle_identification_number[8] = vin_checksum(vehicle_identification_number)
 
@@ -19,7 +19,7 @@ module Faker
       end
 
       def manufacture
-        fetch_all('vehicle.manufacture').sample["name"]
+        fetch_all('vehicle.manufacture').sample[:name]
       end
       
     private
