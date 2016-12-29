@@ -106,26 +106,45 @@ module Faker
       end
 
       def public_ip_v4_address
-        is_private = private_net_checker
+        is_reserved = reserved_net_checker
         addr = nil
         begin
           addr = ip_v4_address
-        end while is_private[addr]
+        end while is_reserved[addr]
         addr
       end
 
       def private_nets_regex
         [
-          /^10\./,
-          /^127\./,
-          /^169\.254\./,
-          /^172\.(16|17|18|19|2\d|30|31)\./,
-          /^192\.168\./
+          /^10\./,                                       # 10.0.0.0    – 10.255.255.255
+          /^100\.(6[4-9]|[7-9]\d|1[0-1]\d|12[0-7])\./,   # 100.64.0.0  – 100.127.255.255
+          /^127\./,                                      # 127.0.0.0   – 127.255.255.255
+          /^169\.254\./,                                 # 169.254.0.0 – 169.254.255.255
+          /^172\.(1[6-9]|2\d|3[0-1])\./,                 # 172.16.0.0  – 172.31.255.255
+          /^192\.0\.0\./,                                # 192.0.0.0   – 192.0.0.255
+          /^192\.168\./,                                 # 192.168.0.0 – 192.168.255.255
+          /^198\.(1[8-9])\./                             # 198.18.0.0  – 198.19.255.255
         ]
       end
 
       def private_net_checker
         lambda { |addr| private_nets_regex.any? { |net| net =~ addr } }
+      end
+
+      def reserved_nets_regex
+        [
+          /^0\./,                 # 0.0.0.0      – 0.255.255.255
+          /^192\.0\.2\./,         # 192.0.2.0    – 192.0.2.255
+          /^192\.88\.99\./,       # 192.88.99.0  – 192.88.99.255
+          /^198\.51\.100\./,      # 198.51.100.0 – 198.51.100.255
+          /^203\.0\.113\./,       # 203.0.113.0  – 203.0.113.255
+          /^(22[4-9]|23\d)\./,    # 224.0.0.0    – 239.255.255.255
+          /^(24\d|25[0-5])\./     # 240.0.0.0    – 255.255.255.254  and  255.255.255.255
+        ]
+      end
+
+      def reserved_net_checker
+        lambda { |addr| (private_nets_regex + reserved_nets_regex).any? { |net| net =~ addr } }
       end
 
       def ip_v4_cidr
