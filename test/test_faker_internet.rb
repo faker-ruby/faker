@@ -121,34 +121,50 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_private_ip_v4_address
-    ten_dot = /^10\./
-    one_two_seven = /^127\./
-    one_six_nine = /^169\.254/
-    one_nine_two = /^192\.168\./
-    one_seven_two = /^172\.(16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)\./
+    regexps = [
+        /^10\./,                                       # 10.0.0.0    – 10.255.255.255
+        /^100\.(6[4-9]|[7-9]\d|1[0-1]\d|12[0-7])\./,   # 100.64.0.0  – 100.127.255.255
+        /^127\./,                                      # 127.0.0.0   – 127.255.255.255
+        /^169\.254\./,                                 # 169.254.0.0 – 169.254.255.255
+        /^172\.(1[6-9]|2\d|3[0-1])\./,                 # 172.16.0.0  – 172.31.255.255
+        /^192\.0\.0\./,                                # 192.0.0.0   – 192.0.0.255
+        /^192\.168\./,                                 # 192.168.0.0 – 192.168.255.255
+        /^198\.(1[8-9])\./                             # 198.18.0.0  – 198.19.255.255
+    ]
+    expected = Regexp.new regexps.collect{|reg| "(#{reg})"}.join('|')
 
     1000.times do
       address = @tester.private_ip_v4_address
-      assert_match Regexp.new(
-        "(#{ten_dot})|(#{one_two_seven})|(#{one_six_nine})|(#{one_nine_two})|(#{one_seven_two})"
-      ), address
+      assert_match expected, address
     end
   end
 
   def test_public_ip_v4_address
-    ten_dot = /^10\./
-    one_two_seven = /^127\./
-    one_six_nine = /^169\.254/
-    one_nine_two = /^192\.168\./
-    one_seven_two = /^172\.(16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)\./
+    private = [
+        /^10\./,                                       # 10.0.0.0    – 10.255.255.255
+        /^100\.(6[4-9]|[7-9]\d|1[0-1]\d|12[0-7])\./,   # 100.64.0.0  – 100.127.255.255
+        /^127\./,                                      # 127.0.0.0   – 127.255.255.255
+        /^169\.254\./,                                 # 169.254.0.0 – 169.254.255.255
+        /^172\.(1[6-9]|2\d|3[0-1])\./,                 # 172.16.0.0  – 172.31.255.255
+        /^192\.0\.0\./,                                # 192.0.0.0   – 192.0.0.255
+        /^192\.168\./,                                 # 192.168.0.0 – 192.168.255.255
+        /^198\.(1[8-9])\./                             # 198.18.0.0  – 198.19.255.255
+    ]
+
+    reserved = [
+        /^0\./,                 # 0.0.0.0      – 0.255.255.255
+        /^192\.0\.2\./,         # 192.0.2.0    – 192.0.2.255
+        /^192\.88\.99\./,       # 192.88.99.0  – 192.88.99.255
+        /^198\.51\.100\./,      # 198.51.100.0 – 198.51.100.255
+        /^203\.0\.113\./,       # 203.0.113.0  – 203.0.113.255
+        /^(22[4-9]|23\d)\./,    # 224.0.0.0    – 239.255.255.255
+        /^(24\d|25[0-5])\./     # 240.0.0.0    – 255.255.255.254  and  255.255.255.255
+    ]
 
     1000.times do
       address = @tester.public_ip_v4_address
-      assert_not_match ten_dot, address
-      assert_not_match one_two_seven, address
-      assert_not_match one_six_nine, address
-      assert_not_match one_nine_two, address
-      assert_not_match one_seven_two, address
+      private.each { |reg| assert_not_match reg, address }
+      reserved.each { |reg| assert_not_match reg, address }
     end
   end
 
