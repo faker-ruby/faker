@@ -1,5 +1,31 @@
 # Change Log
 
+## [v1.7.2](https://github.com/stympy/faker/tree/v1.7.2) (2017-01-03)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.7.1...v1.7.2)
+
+**Closed issues:**
+
+- Faker::Avatar error: read server certificate B: certificate verify failed [\#763](https://github.com/stympy/faker/issues/763)
+- assert Faker::Internet.email.match\(/.+@\[^.\].+\.\w+/\) fails randomly [\#737](https://github.com/stympy/faker/issues/737)
+- Incorrect HSL color format [\#728](https://github.com/stympy/faker/issues/728)
+- Can we add the \#Hacktoberfest label for pull requests this month [\#717](https://github.com/stympy/faker/issues/717)
+- Faker::Boolean.boolean error [\#714](https://github.com/stympy/faker/issues/714)
+- Faker::Food not found [\#688](https://github.com/stympy/faker/issues/688)
+- Fix seed for random values [\#684](https://github.com/stympy/faker/issues/684)
+- README alphabetical order of Usage [\#660](https://github.com/stympy/faker/issues/660)
+- At which point do we break off functionality? [\#653](https://github.com/stympy/faker/issues/653)
+- Time zone abbreviation  [\#631](https://github.com/stympy/faker/issues/631)
+- ruby 2.3.1 rails 5 [\#627](https://github.com/stympy/faker/issues/627)
+- Faker::Time::between doesn't respect requested period [\#526](https://github.com/stympy/faker/issues/526)
+
+**Merged pull requests:**
+
+- IPv4: private and reserved [\#784](https://github.com/stympy/faker/pull/784) ([randoum](https://github.com/randoum))
+- Update bank method [\#783](https://github.com/stympy/faker/pull/783) ([swapnilchincholkar](https://github.com/swapnilchincholkar))
+- Refactors code in some base classes [\#782](https://github.com/stympy/faker/pull/782) ([tiagofsilva](https://github.com/tiagofsilva))
+- Refactors code in some base classes [\#781](https://github.com/stympy/faker/pull/781) ([tiagofsilva](https://github.com/tiagofsilva))
+- Refute blank [\#707](https://github.com/stympy/faker/pull/707) ([SherSpock](https://github.com/SherSpock))
+
 ## [v1.7.1](https://github.com/stympy/faker/tree/v1.7.1) (2016-12-25)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.7.0...v1.7.1)
 
