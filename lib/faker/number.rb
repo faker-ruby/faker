@@ -14,7 +14,7 @@ module Faker
         (1..digits).collect {digit}.join
       end
 
-      def decimal_part digits
+      def decimal_part(digits)
         num = ''
         if digits > 1
           num = non_zero_digit
@@ -30,7 +30,7 @@ module Faker
       end
 
       def non_zero_digit
-        ( rand(9) + 1 ).to_s
+        (rand(9) + 1).to_s
       end
 
       def digit
