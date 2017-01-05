@@ -97,20 +97,16 @@ module Faker
       end
 
       def private_ip_v4_address
-        is_private = private_net_checker
-        addr = nil
         begin
           addr = ip_v4_address
-        end while !is_private[addr]
+        end while !private_net_checker[addr]
         addr
       end
 
       def public_ip_v4_address
-        is_reserved = reserved_net_checker
-        addr = nil
         begin
           addr = ip_v4_address
-        end while is_reserved[addr]
+        end while reserved_net_checker[addr]
         addr
       end
 
@@ -144,7 +140,7 @@ module Faker
       end
 
       def reserved_net_checker
-        lambda { |addr| (private_nets_regex + reserved_nets_regex).any? { |net| net =~ addr } }
+        ->(addr){ (private_nets_regex + reserved_nets_regex).any? { |net| net =~ addr } }
       end
 
       def ip_v4_cidr

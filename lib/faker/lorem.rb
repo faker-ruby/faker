@@ -33,11 +33,7 @@ module Faker
       end
 
       def sentences(sentence_count = 3, supplemental = false)
-        [].tap do |sentences|
-          1.upto(resolve(sentence_count)) do
-            sentences << sentence(3, supplemental)
-          end
-        end
+        1.upto(resolve(sentence_count)).collect { sentence(3, supplemental) }
       end
 
       def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 3)
@@ -45,11 +41,7 @@ module Faker
       end
 
       def paragraphs(paragraph_count = 3, supplemental = false)
-        [].tap do |paragraphs|
-          1.upto(resolve(paragraph_count)) do
-            paragraphs << paragraph(3, supplemental)
-          end
-        end
+        1.upto(resolve(paragraph_count)).collect { paragraph(3, supplemental) }
       end
 
       def question(word_count = 4, supplemental = false, random_words_to_add = 6)
@@ -57,11 +49,7 @@ module Faker
       end
 
       def questions(question_count = 3, supplemental = false)
-        [].tap do |questions|
-          1.upto(resolve(question_count)) do
-            questions << question(3, supplemental)
-          end
-        end
+        1.upto(resolve(question_count)).collect { question(3, supplemental) }
       end
 
     private
