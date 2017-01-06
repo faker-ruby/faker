@@ -11,9 +11,9 @@ Faker::Address.secondary_address #=> "Apt. 672"
 
 Faker::Address.building_number #=> "7304"
 
-Faker::Address.zip_code #=> "58517"
+Faker::Address.zip_code #=> "58517" or "23285-4905"
 
-Faker::Address.zip #=> "58517"
+Faker::Address.zip #=> "58517" or "66259-8212"
 
 Faker::Address.postcode #=> "76032-4907" or "58517"
 
