@@ -244,6 +244,7 @@ require 'faker/lord_of_the_rings'
 require 'faker/rock_band'
 require 'faker/fillmurray'
 require 'faker/job'
+require 'faker/famous_last_words'
 
 require 'extensions/array'
 require 'extensions/symbol'
