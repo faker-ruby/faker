@@ -6,6 +6,10 @@ module Faker
       def active
         fetch('electrical_components.active')
       end
+
+      def passive
+        fetch('electrical_components.passive')
+      end
     end
   end
 end
