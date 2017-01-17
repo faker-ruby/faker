@@ -10,6 +10,10 @@ module Faker
       def passive
         fetch('electrical_components.passive')
       end
+
+      def electromechanical
+        fetch('electrical_components.electromechanical')
+      end
     end
   end
 end
