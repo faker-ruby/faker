@@ -1,18 +1,16 @@
 module Faker
   class ElectricalComponents < Base
     flexible :electrical_components
+    def active
+      fetch('electrical_components.active')
+    end
 
-      def active
-        fetch('electrical_components.active')
-      end
+    def passive
+      fetch('electrical_components.passive')
+    end
 
-      def passive
-        fetch('electrical_components.passive')
-      end
-
-      def electromechanical
-        fetch('electrical_components.electromechanical')
-      end
-
+    def electromechanical
+      fetch('electrical_components.electromechanical')
+    end
   end
 end
