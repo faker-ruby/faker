@@ -68,6 +68,7 @@ Contents
   - [Faker::TwinPeaks](doc/twin_peaks.md)
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
+  - [Faker::Zelda](doc/zelda.md)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
