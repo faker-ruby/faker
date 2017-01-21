@@ -100,7 +100,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     credentials     = auth[:credentials]
     access_token    = auth[:extra][:access_token]
     raw_info        = auth[:extra][:raw_info]
-    urls            = "https://twitter.com/#{info[:nickname]}"
+    url             = "https://twitter.com/#{info[:nickname]}"
 
     assert_equal "twitter", provider
     assert_equal 6, uid.length
