@@ -71,7 +71,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info[:first_name]
     assert_instance_of String, info[:last_name]
     assert_instance_of String, info[:image]
-    assert_equal true, info[:verified]
+    assert is_boolean?(info[:verified])
     assert_instance_of String, credentials[:token]
     assert_instance_of Fixnum, credentials[:expires_at]
     assert_equal true, credentials[:expires]
@@ -87,7 +87,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal info[:email], extra_raw_info[:email]
     assert_instance_of Fixnum, extra_raw_info[:timezone]
     assert_instance_of String, extra_raw_info[:locale]
-    assert_equal true, extra_raw_info[:verified]
+    assert is_boolean?(extra_raw_info[:verified])
     assert_instance_of String, extra_raw_info[:updated_time]
   end
 
