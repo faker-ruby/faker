@@ -13,7 +13,6 @@ module Faker
     end
 
     class << self
-
       def google
         uid = Number.number(9)
         auth = Omniauth.new()
@@ -38,7 +37,7 @@ module Faker
             raw_info: {
               sub:  uid,
               email: email,
-              email_verified: true,
+              email_verified: random_boolean,
               name: auth.name,
               given_name: auth.first_name,
               family_name: auth.last_name,
@@ -79,7 +78,7 @@ module Faker
             first_name: auth.first_name,
             last_name: auth.last_name,
             image: image,
-            verified: true
+            verified: random_boolean
           },
           credentials: {
             token: Crypto.md5,
@@ -102,7 +101,7 @@ module Faker
               email: email,
               timezone: timezone,
               locale: 'en_US',
-              verified: true,
+              verified: random_boolean,
               updated_time: updated_time
             }
           }
@@ -185,13 +184,15 @@ module Faker
       def linkedin
         uid = Number.number(6)
         auth = Omniauth.new()
-        email = "#{auth.first_name.downcase}@#{auth.last_name.downcase}.com"
+        first_name = auth.first_name.downcase
+        last_name = auth.last_name.downcase
+        email = "#{first_name}@#{last_name}.com"
         location = city_state
         description = Lorem.sentence
         token = Crypto.md5
         secret = Crypto.md5
         industry = Commerce.department
-        url = "http://www.linkedin.com/in/#{auth.first_name.downcase}#{auth.last_name.downcase}"
+        url = "http://www.linkedin.com/in/#{first_name}#{last_name}"
         {
           "provider" => "linkedin",
           "uid" => uid,
@@ -259,14 +260,16 @@ module Faker
           (-12..12).to_a.shuffle.pop
         end
 
+        def time_now
+          Object::Time.now.to_s.split(' ')
+        end
+
         def updated_time
-          time = Object::Time.now.to_s.split(' ')
-          "#{Date.backward(365).to_s}T#{time[1]}#{time[2]}"
+          "#{Date.backward(365).to_s}T#{time_now[1..2].join('')}"
         end
 
         def created_at
-          time = Object::Time.now.to_s.split(' ')
-          Date.backward(3650).strftime("%a %b %d #{time[1]} #{time[2]} %Y")
+          Date.backward(3650).strftime("%a %b %d #{time_now[1..2].join(' ')} %Y")
         end
 
         def image
