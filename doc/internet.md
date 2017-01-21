@@ -72,4 +72,5 @@ Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
 Faker::Internet::Omniauth.google #=> randomized Google omniauth hash (see: https://github.com/zquestz/omniauth-google-oauth2#auth-hash)
 Faker::Internet::Omniauth.facebook #=> randomized Facebook omniauth hash (see: https://github.com/mkdynamic/omniauth-facebook#auth-hash)
+Faker::Internet::Omniauth.twitter #=> randomized Facebook omniauth hash (see: https://github.com/arunagw/omniauth-twitter#authentication-hash)
 ```
