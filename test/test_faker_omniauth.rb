@@ -52,11 +52,40 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
   end
 
   def test_omniauth_facebook
-    auth = @tester.facebook
+    auth            = @tester.facebook
+    provider        = auth[:provider]
+    uid             = auth[:uid]
+    info            = auth[:info]
+    credentials     = auth[:credentials]
+    extra_raw_info  = auth[:extra][:raw_info]
+    username        = (info[:first_name][0] + info[:last_name]).downcase
+    location        = extra_raw_info[:location]
 
-    assert_equal "facebook", auth[:provider]
-    assert_equal 7, auth[:uid].length
-    # assert_equal auth[:]
+    assert_equal "facebook", provider
+    assert_equal 7, uid.length
+    assert_equal "#{info[:first_name].downcase}@#{info[:last_name].downcase}.com",
+      info[:email]
+    assert_equal 2, info[:name].split(' ').count
+    assert_instance_of String, info[:first_name]
+    assert_instance_of String, info[:last_name]
+    assert_instance_of String, info[:image]
+    assert_equal true, info[:verified]
+    assert_instance_of String, credentials[:token]
+    assert_instance_of Fixnum, credentials[:expires_at]
+    assert_equal true, credentials[:expires]
+    assert_equal uid, extra_raw_info[:id]
+    assert_equal info[:name], extra_raw_info[:name]
+    assert_equal info[:first_name], extra_raw_info[:first_name]
+    assert_equal info[:last_name], extra_raw_info[:last_name]
+    assert_equal "http://www.facebook.com/#{username}", extra_raw_info[:link]
+    assert_equal username, extra_raw_info[:username]
+    assert_equal 9, location[:id].length
+    assert_instance_of String, location[:name]
+    assert ["female", "male"].include?(extra_raw_info[:gender])
+    assert_equal info[:email], extra_raw_info[:email]
+    assert_instance_of Fixnum, extra_raw_info[:timezone]
+    assert_instance_of String, extra_raw_info[:locale]
+    assert_equal true, extra_raw_info[:verified]
+    assert_instance_of String, extra_raw_info[:updated_time]
   end
-
 end
