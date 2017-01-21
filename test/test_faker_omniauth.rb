@@ -14,6 +14,8 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     credentials     = auth[:credentials]
     extra_raw_info  = auth[:extra][:raw_info]
     id_info         = auth[:id_info]
+    plus_url        = "https://plus.google.com/#{auth[:uid]}"
+    openid_id       = "https://www.google.com/accounts/o8/id?id=#{auth[:uid]}"
 
     assert_equal "google_oauth2", provider
     assert_equal 9, uid.length
@@ -32,7 +34,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal info[:name], extra_raw_info[:name]
     assert_equal info[:first_name], extra_raw_info[:given_name]
     assert_equal info[:last_name], extra_raw_info[:family_name]
-    assert_equal "https://plus.google.com/#{auth[:uid]}", extra_raw_info[:profile]
+    assert_equal plus_url, extra_raw_info[:profile]
     assert_instance_of String, extra_raw_info[:picture]
     assert is_gender?(extra_raw_info[:gender])
     assert_instance_of String, extra_raw_info[:birthday]
@@ -47,8 +49,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal "APP_ID", id_info["aud"]
     assert_instance_of String, id_info["iat"]
     assert_instance_of String, id_info["exp"]
-    assert_equal "https://www.google.com/accounts/o8/id?id=#{auth[:uid]}",
-      id_info["openid_id"]
+    assert_equal openid_id, id_info["openid_id"]
   end
 
   def test_omniauth_facebook
@@ -60,11 +61,12 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     extra_raw_info  = auth[:extra][:raw_info]
     username        = (info[:first_name][0] + info[:last_name]).downcase
     location        = extra_raw_info[:location]
+    email           = "#{info[:first_name].downcase}@#{info[:last_name].downcase}.com"
+    url             = "http://www.facebook.com/#{username}"
 
     assert_equal "facebook", provider
     assert_equal 7, uid.length
-    assert_equal "#{info[:first_name].downcase}@#{info[:last_name].downcase}.com",
-      info[:email]
+    assert_equal email, info[:email]
     assert_equal 2, word_count(info[:name])
     assert_instance_of String, info[:first_name]
     assert_instance_of String, info[:last_name]
@@ -77,7 +79,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal info[:name], extra_raw_info[:name]
     assert_equal info[:first_name], extra_raw_info[:first_name]
     assert_equal info[:last_name], extra_raw_info[:last_name]
-    assert_equal "http://www.facebook.com/#{username}", extra_raw_info[:link]
+    assert_equal url, extra_raw_info[:link]
     assert_equal username, extra_raw_info[:username]
     assert_equal 9, location[:id].length
     assert_instance_of String, location[:name]
@@ -98,6 +100,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     credentials     = auth[:credentials]
     access_token    = auth[:extra][:access_token]
     raw_info        = auth[:extra][:raw_info]
+    urls            = "https://twitter.com/#{info[:nickname]}"
 
     assert_equal "twitter", provider
     assert_equal 6, uid.length
@@ -107,7 +110,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info[:image]
     assert_instance_of String, info[:description]
     assert_equal nil, urls[:Website]
-    assert_equal "https://twitter.com/#{info[:nickname]}", urls[:Twitter]
+    assert_equal url, urls[:Twitter]
     assert_instance_of String, credentials[:token]
     assert_instance_of String, credentials[:secret]
     assert_instance_of String, access_token
@@ -161,13 +164,15 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     access_token    = extra["access_token"]
     params          = access_token["params"]
     raw_info        = extra["raw_info"]
-    url             = "http://www.linkedin.com/in/#{info['first_name'].downcase}#{info['last_name'].downcase}"
+    first_name      = info['first_name'].downcase
+    last_name       = info['last_name'].downcase
+    url             = "http://www.linkedin.com/in/#{first_name}#{last_name}"
+    email           = "#{first_name}@#{last_name}.com"
 
     assert_equal "linkedin", provider
     assert_equal 6, uid.length
     assert_equal 2, word_count(info["name"])
-    assert_equal "#{info['first_name'].downcase}@#{info['last_name'].downcase}.com",
-      info["email"]
+    assert_equal email, info["email"]
     assert_equal info["name"], info["nickname"]
     assert_instance_of String, info["first_name"]
     assert_instance_of String, info["last_name"]
