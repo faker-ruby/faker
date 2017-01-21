@@ -94,7 +94,7 @@ module Faker
             username: username,
             location: {
               id: Number.number(9),
-              name: "#{Address.city}, #{Address.state}"
+              name: city_state
             },
             gender: gender,
             email: email,
@@ -102,6 +102,79 @@ module Faker
             locale: 'en_US',
             verified: true,
             updated_time: updated_time
+          }
+        }
+      }
+    end
+
+    def self.twitter
+      uid = Number.number(6)
+      auth = Omniauth.new()
+      location = city_state
+      description = Lorem.sentence
+      {
+        provider: "twitter",
+        uid: uid,
+        info: {
+          nickname: auth.name.downcase.gsub(' ', ''),
+          name: auth.name,
+          location: location,
+          image: image,
+          description: description,
+          urls: {
+            Website: nil,
+            Twitter: "https://twitter.com/#{auth.name.downcase.gsub(' ', '')}"
+          }
+        },
+        credentials: {
+          token: Crypto.md5,
+          secret: Crypto.md5
+        },
+        extra: {
+          access_token: "",
+          raw_info: {
+            name: auth.name,
+            listed_count: random_number_from_range(1..10),
+            profile_sidebar_border_color: Color.hex_color,
+            url: nil,
+            lang: 'en',
+            statuses_count: random_number_from_range(1..1000),
+            profile_image_url: image,
+            profile_background_image_url_https: image,
+            location: location,
+            time_zone: Address.city,
+            follow_request_sent: random_boolean,
+            id: uid,
+            profile_background_tile: random_boolean,
+            profile_sidebar_fill_color: Color.hex_color,
+            followers_count: random_number_from_range(1..10000),
+            default_profile_image: random_boolean,
+            screen_name: '',
+            following: random_boolean,
+            utc_offset: timezone,
+            verified: random_boolean,
+            favourites_count: random_number_from_range(1..10),
+            profile_background_color: Color.hex_color,
+            is_translator: random_boolean,
+            friends_count: random_number_from_range(1..10000),
+            notifications: random_boolean,
+            geo_enabled: random_boolean,
+            profile_background_image_url: image,
+            protected: random_boolean,
+            description: description,
+            profile_link_color: Color.hex_color,
+            created_at: created_at,
+            id_str: uid,
+            profile_image_url_https: image,
+            default_profile: random_boolean,
+            profile_use_background_image: random_boolean,
+            entities: {
+              description: {
+                urls: []
+              }
+            },
+            profile_text_color: Color.hex_color,
+            contributors_enabled: random_boolean
           }
         }
       }
@@ -126,8 +199,25 @@ module Faker
         "#{Date.backward(365).to_s}T#{time[1]}#{time[2]}"
       end
 
+      def self.created_at
+        time = Object::Time.now.to_s.split(' ')
+        Date.backward(3650).strftime("%a %b %d #{time[1]} #{time[2]} %Y")
+      end
+
       def self.image
         Placeholdit.image
+      end
+
+      def self.city_state
+        "#{Address.city}, #{Address.state}"
+      end
+
+      def self.random_number_from_range(range)
+        range.to_a.shuffle.pop
+      end
+
+      def self.random_boolean
+        [true, false].shuffle.pop
       end
   end
 end
