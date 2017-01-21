@@ -34,7 +34,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal info[:last_name], extra_raw_info[:family_name]
     assert_equal "https://plus.google.com/#{auth[:uid]}", extra_raw_info[:profile]
     assert_instance_of String, extra_raw_info[:picture]
-    assert ["female", "male"].include?(extra_raw_info[:gender])
+    assert is_gender?(extra_raw_info[:gender])
     assert_instance_of String, extra_raw_info[:birthday]
     assert_equal "en", extra_raw_info[:local]
     assert_instance_of String, extra_raw_info[:hd]
@@ -81,7 +81,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal username, extra_raw_info[:username]
     assert_equal 9, location[:id].length
     assert_instance_of String, location[:name]
-    assert ["female", "male"].include?(extra_raw_info[:gender])
+    assert is_gender?(extra_raw_info[:gender])
     assert_equal info[:email], extra_raw_info[:email]
     assert_instance_of Fixnum, extra_raw_info[:timezone]
     assert_instance_of String, extra_raw_info[:locale]
@@ -151,11 +151,63 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert is_boolean?(raw_info[:contributors_enabled])
   end
 
+  def test_omniauth_linkedin
+    auth            = @tester.linkedin
+    provider        = auth["provider"]
+    uid             = auth["uid"]
+    info            = auth["info"]
+    credentials     = auth["credentials"]
+    extra           = auth["extra"]
+    access_token    = extra["access_token"]
+    params          = access_token["params"]
+    raw_info        = auth["raw_info"]
+
+    assert_equal "linkedin", provider
+    assert_equal 6, uid.length
+    assert_equal 2, word_count(info["name"])
+    assert_equal "#{info['first_name'].downcase}@#{info['last_name'].downcase}.com",
+      info[:email]
+    assert_equal info["name"], info["nickname"]
+    assert_instance_of String, info["first_name"]
+    assert_instance_of String, info["last_name"]
+    assert_equal 2, info[:location].split(', ').count
+    assert_instance_of String, info["description"]
+    assert_instance_of String, info["image"]
+    assert_instance_of String, info["phone"]
+    assert_instance_of String, info["headline"]
+    assert_instance_of String, info["industry"]
+    assert_equal "http://www.linkedin.com/in/#{first_name.downcase}#{last_name.downcase}",
+      info["urls"]["public_profile"]
+    assert_instance_of String, credentials["token"]
+    assert_instance_of String, credentials["secret"]
+    assert_equal credentials["token"], access_token["token"]
+    assert_equal credentials["secret"], access_token["secret"]
+    refute access_token["consumer"]
+    assert_equal credentials["token"], params[:oauth_token]
+    assert_equal credentials["secret"], params[:oauth_token_secret]
+    assert_instance_of Fixnum, params[:oauth_expires_in]
+    assert_instance_of Fixnum, params[:oauth_authorization_expires_in]
+    refute access_token["response"]
+    assert_equal info["first_name"], raw_info["first_name"]
+    assert_equal info["headline"], raw_info["headline"]
+    assert_equal uid, raw_info["id"]
+    assert_equal info["industry"], raw_info["industry"]
+    assert_equal info["last_name"], raw_info["last_name"]
+    assert_instance_of String, raw_info["location"]["country"]["code"]
+    assert_instance_of String, raw_info["location"]["name"]
+    assert_instance_of String, raw_info["pictureUrl"]
+    assert_equal info["urls"]["public_profile"], raw_info["publicProfileUrl"]
+  end
+
   def word_count(string)
     string.split(' ').length
   end
 
   def is_boolean?(test)
     !!test == test
+  end
+
+  def is_gender?(test)
+    ["female", "male"].include?(test)
   end
 end
