@@ -17,7 +17,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
 
     assert_equal "google_oauth2", provider
     assert_equal 9, uid.length
-    assert_equal 2, info[:name].split(' ').count
+    assert_equal 2, word_count(info[:name])
     assert_equal "#{info[:first_name].downcase}@example.com", info[:email]
     assert_equal info[:name].split(' ').first, info[:first_name]
     assert_equal info[:name].split(' ').last, info[:last_name]
@@ -65,7 +65,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 7, uid.length
     assert_equal "#{info[:first_name].downcase}@#{info[:last_name].downcase}.com",
       info[:email]
-    assert_equal 2, info[:name].split(' ').count
+    assert_equal 2, word_count(info[:name])
     assert_instance_of String, info[:first_name]
     assert_instance_of String, info[:last_name]
     assert_instance_of String, info[:image]
@@ -87,5 +87,75 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, extra_raw_info[:locale]
     assert_equal true, extra_raw_info[:verified]
     assert_instance_of String, extra_raw_info[:updated_time]
+  end
+
+  def test_omniauth_twitter
+    auth            = @tester.twitter
+    provider        = auth[:provider]
+    uid             = auth[:uid]
+    info            = auth[:info]
+    urls            = info[:urls]
+    credentials     = auth[:credentials]
+    access_token    = auth[:extra][:access_token]
+    raw_info        = auth[:extra][:raw_info]
+
+    assert_equal "twitter", provider
+    assert_equal 6, uid.length
+    assert_equal info[:name].downcase.gsub(' ', ''), info[:nickname]
+    assert_equal 3, word_count(info)
+    assert_equal 2, word_count(info[:location])
+    assert_instance_of String, info[:image]
+    assert_instance_of String, info[:description]
+    assert_equal nil, urls[:Website]
+    assert_equal "https://twitter.com/#{info[:nickname]}", urls[:Twitter]
+    assert_instance_of String, credentials[:token]
+    assert_instance_of String, credentials[:secret]
+    assert_instance_of String, access_token
+    assert_equal info[:name], raw_info[:name]
+    assert_instance_of Fixnum, raw_info[:listed_count]
+    assert_instance_of String, raw_info[:profile_sidebar_border_color]
+    assert_equal nil, raw_info[:url]
+    assert_equal "en", raw_info[:lang]
+    assert_instance_of Fixnum, raw_info[:statuses_count]
+    assert_instance_of String, raw_info[:profile_image_url]
+    assert_instance_of String, raw_info[:profile_background_image_url_https]
+    assert_equal info[:location], raw_info[:location]
+    assert_equal 1, word_count(raw_info[:time_zone])
+    assert is_boolean?(raw_info[:follow_request_sent])
+    assert_equal uid, raw_info[:id]
+    assert is_boolean?(raw_info[:profile_background_tile])
+    assert_instance_of String, raw_info[:profile_sidebar_fill_color]
+    assert_instance_of Fixnum, raw_info[:followers_count]
+    assert is_boolean?(raw_info[:default_profile_image])
+    assert_equal "", raw_info[:screen_name]
+    assert is_boolean?(raw_info[:following])
+    assert_instance_of Fixnum, raw_info[:utc_offset]
+    assert is_boolean?(raw_info[:verified])
+    assert_instance_of Fixnum, raw_info[:favourites_count]
+    assert_instance_of String, raw_info[:profile_background_color]
+    assert is_boolean?(raw_info[:is_translator])
+    assert_instance_of Fixnum, raw_info[:friends_count]
+    assert is_boolean?(raw_info[:notifications])
+    assert is_boolean?(raw_info[:geo_enabled])
+    assert_instance_of String, raw_info[:profile_background_image_url]
+    assert is_boolean?(raw_info[:protected])
+    assert_equal info[:description], raw_info[:description]
+    assert_instance_of String, raw_info[:profile_link_color]
+    assert_instance_of String, raw_info[:created_at]
+    assert_equal uid, raw_info[:id_str]
+    assert_instance_of String, raw_info[:profile_image_url_https]
+    assert is_boolean?(raw_info[:default_profile])
+    assert is_boolean?(raw_info[:profile_use_background_image])
+    assert_instance_of Array, raw_info[:entities][:description][:urls]
+    assert_instance_of String, raw_info[:profile_text_color]
+    assert is_boolean?(raw_info[:contributors_enabled])
+  end
+
+  def word_count(string)
+    string.split(' ').length
+  end
+
+  def is_boolean?(test)
+    !!test == test
   end
 end
