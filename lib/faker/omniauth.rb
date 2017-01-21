@@ -180,6 +180,69 @@ module Faker
       }
     end
 
+    def self.linkedin
+      uid = Number.number(6)
+      auth = Omniauth.new()
+      email = "#{auth.first_name.downcase}@#{auth.last_name.downcase}.com"
+      location = city_state
+      description = Lorem.sentence
+      token = Crypto.md5
+      secret = Crypto.md5
+      industry = Commerce.department
+      url = "http://www.linkedin.com/in/#{auth.first_name.downcase}#{auth.last_name.downcase}"
+      {
+        "provider" => "linkedin",
+        "uid" => uid,
+        "info" => {
+          "name" => auth.name,
+          "email" => email,
+          "nickname" => auth.name,
+          "first_name" => auth.first_name,
+          "last_name" => auth.last_name,
+          "location" => location,
+          "description" => description,
+          "image" => image,
+          "phone" => PhoneNumber.phone_number,
+          "headline" => description,
+          "industry" => industry,
+          "urls" => {
+            "public_profile" => url
+          }
+        },
+        "credentials" => {
+          "token" => token,
+          "secret" => secret
+        },
+        "extra" => {
+          "access_token" => {
+            "token" => token,
+            "secret" => secret,
+            "consumer" => nil,
+            "params" => {
+              oauth_token: token,
+              oauth_token_secret: secret,
+              oauth_expires_in: one_hour_from_now.to_i,
+              oauth_authorization_expires_in: one_hour_from_now.to_i,
+            },
+            "response" => nil
+          },
+          "raw_info" => {
+            "firstName" => auth.first_name,
+            "headline" => description,
+            "id" => uid,
+            "industry" => industry,
+            "lastName" => auth.last_name,
+            "location" => {
+              "country" => { "code" => Address.country_code.downcase },
+              "name" => city_state.split(', ').first,
+            },
+            "pictureUrl" => image,
+            "publicProfileUrl" => url
+          }
+        }
+      }
+    end
+
     private
 
       def self.one_hour_from_now
