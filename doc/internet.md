@@ -70,6 +70,7 @@ Faker::Internet.slug #=> "pariatur_laudantium"
 Faker::Internet.slug('foo bar') #=> "foo.bar"
 Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
 
+# Omniauth is a library that standardizes multi-provider authentication for web applications. Each of the following methods will return a randomized hash that mimics the hash returned by each of these omniauth strategies.
 Faker::Internet::Omniauth.google #=> randomized Google omniauth hash (see: https://github.com/zquestz/omniauth-google-oauth2#auth-hash)
 Faker::Internet::Omniauth.facebook #=> randomized Facebook omniauth hash (see: https://github.com/mkdynamic/omniauth-facebook#auth-hash)
 Faker::Internet::Omniauth.twitter #=> randomized Twitter omniauth hash (see: https://github.com/arunagw/omniauth-twitter#authentication-hash)
