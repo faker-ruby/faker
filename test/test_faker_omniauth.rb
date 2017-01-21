@@ -120,7 +120,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, raw_info[:profile_image_url]
     assert_instance_of String, raw_info[:profile_background_image_url_https]
     assert_equal info[:location], raw_info[:location]
-    assert_equal 1, word_count(raw_info[:time_zone])
+    assert_instance_of String, raw_info[:time_zone]
     assert is_boolean?(raw_info[:follow_request_sent])
     assert_equal uid, raw_info[:id]
     assert is_boolean?(raw_info[:profile_background_tile])
@@ -160,24 +160,24 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     extra           = auth["extra"]
     access_token    = extra["access_token"]
     params          = access_token["params"]
-    raw_info        = auth["raw_info"]
+    raw_info        = extra["raw_info"]
+    url             = "http://www.linkedin.com/in/#{info['first_name'].downcase}#{info['last_name'].downcase}"
 
     assert_equal "linkedin", provider
     assert_equal 6, uid.length
     assert_equal 2, word_count(info["name"])
     assert_equal "#{info['first_name'].downcase}@#{info['last_name'].downcase}.com",
-      info[:email]
+      info["email"]
     assert_equal info["name"], info["nickname"]
     assert_instance_of String, info["first_name"]
     assert_instance_of String, info["last_name"]
-    assert_equal 2, info[:location].split(', ').count
+    assert_equal 2, info["location"].split(', ').count
     assert_instance_of String, info["description"]
     assert_instance_of String, info["image"]
     assert_instance_of String, info["phone"]
     assert_instance_of String, info["headline"]
     assert_instance_of String, info["industry"]
-    assert_equal "http://www.linkedin.com/in/#{first_name.downcase}#{last_name.downcase}",
-      info["urls"]["public_profile"]
+    assert_equal url, info["urls"]["public_profile"]
     assert_instance_of String, credentials["token"]
     assert_instance_of String, credentials["secret"]
     assert_equal credentials["token"], access_token["token"]
@@ -188,11 +188,11 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of Fixnum, params[:oauth_expires_in]
     assert_instance_of Fixnum, params[:oauth_authorization_expires_in]
     refute access_token["response"]
-    assert_equal info["first_name"], raw_info["first_name"]
+    assert_equal info["first_name"], raw_info["firstName"]
     assert_equal info["headline"], raw_info["headline"]
     assert_equal uid, raw_info["id"]
     assert_equal info["industry"], raw_info["industry"]
-    assert_equal info["last_name"], raw_info["last_name"]
+    assert_equal info["last_name"], raw_info["lastName"]
     assert_instance_of String, raw_info["location"]["country"]["code"]
     assert_instance_of String, raw_info["location"]["name"]
     assert_instance_of String, raw_info["pictureUrl"]
