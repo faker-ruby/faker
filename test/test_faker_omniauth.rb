@@ -102,8 +102,8 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal "twitter", provider
     assert_equal 6, uid.length
     assert_equal info[:name].downcase.gsub(' ', ''), info[:nickname]
-    assert_equal 3, word_count(info)
-    assert_equal 2, word_count(info[:location])
+    assert_equal 2, word_count(info[:name])
+    assert_equal 2, info[:location].split(', ').length
     assert_instance_of String, info[:image]
     assert_instance_of String, info[:description]
     assert_equal nil, urls[:Website]
@@ -114,7 +114,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal info[:name], raw_info[:name]
     assert_instance_of Fixnum, raw_info[:listed_count]
     assert_instance_of String, raw_info[:profile_sidebar_border_color]
-    assert_equal nil, raw_info[:url]
+    refute raw_info[:url]
     assert_equal "en", raw_info[:lang]
     assert_instance_of Fixnum, raw_info[:statuses_count]
     assert_instance_of String, raw_info[:profile_image_url]
