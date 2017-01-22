@@ -1,6 +1,5 @@
 module Faker
   class Omniauth < Base
-    require 'pry'
     require 'time'
     attr_reader :name,
                 :first_name,
