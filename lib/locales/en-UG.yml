@@ -1,3 +1,4 @@
+# Uganda formatted data types
 en-UG:
   faker:
     internet:
@@ -126,3 +127,6 @@ en-UG:
         Tamale, Tendo, Tizikara, Tuhame, Tumusiime, Tumwebaze, Tumwesigye, Tumwiine, Turyasingura, Tusiime, Twasiima, Twesigomwe,
         Wasswa, Wavamuno, Were
       ]
+
+    currency:
+      symbol: "UGX"

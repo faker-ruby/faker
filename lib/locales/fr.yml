@@ -1,3 +1,4 @@
+# France formatted data types
 fr:
   faker:
     address:
@@ -61,3 +62,6 @@ fr:
       title: ['La Discipline des orphelins', 'Le Couloir de tous les mépris', "L'Odeur du sanglier", 'La Promise du voyeur', "L'Odyssée invisible", 'La Soumission comme passion', 'Le Siècle de la rue voisine', 'Le Désir des femmes fortes', 'Pourquoi je mens ?', 'La Peau des savants', 'La progéniture du mal']
       author: "#{Name.name}"
       publisher: ['Éditions du Soleil', 'La Perdrix', 'Les Éditions jaune turquoise', 'Bordel père et fils', 'Au lecteur éclairé', 'Lire en dormant']
+
+    currency:
+      symbol: "€"

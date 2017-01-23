@@ -1,3 +1,4 @@
+# South Africa formatted data types
 en-ZA:
   faker:
     internet:
@@ -10,9 +11,9 @@ en-ZA:
        KwaZulu-Natal, Mpumalanga, Eastern Cape]
       province:
         - "#{provinces}"
-      cities: [ Polokwane, Johannesburg, Pretoria, Tshwane,Durban, 
-        Pietermaritzburg, Nelspruit, Cape Town, Stellenbosch, Port Elizabeth, 
-        East London, Kimberley, Rustenburg, Bloemfontein ] 
+      cities: [ Polokwane, Johannesburg, Pretoria, Tshwane,Durban,
+        Pietermaritzburg, Nelspruit, Cape Town, Stellenbosch, Port Elizabeth,
+        East London, Kimberley, Rustenburg, Bloemfontein ]
       city:
           - "#{cities}"
     phone_number:
@@ -49,3 +50,6 @@ en-ZA:
 
     id_number:
       formats: ["##########08#"]
+
+    currency:
+      symbol: "R"

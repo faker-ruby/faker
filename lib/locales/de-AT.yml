@@ -1,3 +1,4 @@
+# Austria formatted data types
 de-AT:
   faker:
     address:
@@ -47,3 +48,6 @@ de-AT:
 
     cell_phone:
       formats: ['+43-6##-#######', '06##-########', '+436#########', '06##########']
+
+    currency:
+      symbol: "€"

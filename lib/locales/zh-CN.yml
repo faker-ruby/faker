@@ -1,3 +1,4 @@
+# China formatted data types
 # coding: utf-8
 zh-CN:
   faker:
@@ -27,3 +28,6 @@ zh-CN:
       formats: ['###-########', '####-########', '###########']
     cell_phone:
       formats: ['1##########']
+
+    currency:
+      symbol: "¥"

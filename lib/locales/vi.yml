@@ -1,3 +1,4 @@
+# Vietnam formatted data types
 # encoding: UTF-8
 vi:
   faker:
@@ -13,7 +14,7 @@ vi:
       city:
         - "#{city_root}"
       postcode: /[A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}/
-      county: ["Avon", "Bedfordshire", "Berkshire", "Borders", "Buckinghamshire", "Cambridgeshire", "Central", 
+      county: ["Avon", "Bedfordshire", "Berkshire", "Borders", "Buckinghamshire", "Cambridgeshire", "Central",
               "Cheshire", "Cleveland", "Clwyd", "Cornwall", "County Antrim", "County Armagh", "County Down",
               "County Fermanagh", "County Londonderry", "County Tyrone", "Cumbria", "Derbyshire", "Devon",
               "Dorset", "Dumfries and Galloway", "Durham", "Dyfed", "East Sussex", "Essex", "Fife", "Gloucestershire",
@@ -34,7 +35,7 @@ vi:
       first_name: ["Phạm", "Nguyễn", "Trần", "Lê", "Lý", "Hoàng", "Phan", "Vũ", "Tăng",
                    "Đặng", "Bùi", "Đỗ", "Hồ", "Ngô", "Dương", "Đào", "Đoàn", "Vương",
                    "Trịnh", "Đinh", "Lâm", "Phùng", "Mai", "Tô", "Trương", "Hà"]
-      last_name: ["Nam", "Trung", "Thanh", "Thị", "Văn", "Dương", "Tăng", "Quốc", "Như", 
+      last_name: ["Nam", "Trung", "Thanh", "Thị", "Văn", "Dương", "Tăng", "Quốc", "Như",
                  "Phạm", "Nguyễn", "Trần", "Lê", "Lý", "Hoàng", "Phan", "Vũ", "Tăng",
                  "Đặng", "Bùi", "Đỗ", "Hồ", "Ngô", "Dương", "Đào", "Đoàn", "Vương",
                  "Trịnh", "Đinh", "Lâm", "Phùng", "Mai", "Tô", "Trương", "Hà",
@@ -57,7 +58,9 @@ vi:
               "chín", "mười", "thôi", "việc", "nghỉ", "làm", "nhà", "cửa", "xe", "đạp", "ác",
               "độc", "khoảng", "khoan", "thuyền", "tàu", "bè", "lầu", "xanh", "đỏ", "tím", "vàng",
               "kim", "chỉ", "khâu", "may", "vá", "em", "anh", "yêu", "thương", "thích", "con", "cái",
-              "bàn", "ghế", "tủ", "quần", "áo", "nón", "dép", "giày", "lỗi", "được", "ghét", "giết", 
+              "bàn", "ghế", "tủ", "quần", "áo", "nón", "dép", "giày", "lỗi", "được", "ghét", "giết",
               "chết", "hết", "tôi", "bạn", "tui", "trời", "trăng", "mây", "gió", "máy", "hàng", "hóa",
               "leo", "núi", "bơi", "biển", "chìm", "xuồng", "nước", "ngọt", "ruộng", "đồng", "quê", "hương"]
-              
+
+    currency:
+      symbol: "₫"

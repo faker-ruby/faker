@@ -21,3 +21,5 @@ en-IND:
       suffix: [Pvt Ltd, Limited, Ltd, and Sons, Corp, Group, Brothers]
     phone_number:
       formats: ['+91###-###-####', '+91##########', '+91-###-#######']
+    currency:
+      symbol: "₹"

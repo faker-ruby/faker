@@ -1,3 +1,4 @@
+# Mexico formatted data types
 # encoding: utf-8
 es-MX:
   faker:
@@ -87,3 +88,6 @@ es-MX:
         - "044 (#{PhoneNumber.lada_tres}) ### ####"
         - "044 #{PhoneNumber.lada_dos}-####-####"
         - "044 #{PhoneNumber.lada_tres}-###-####"
+
+    currency:
+      symbol: "$"

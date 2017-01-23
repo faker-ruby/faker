@@ -1,3 +1,4 @@
+# Switzerland formatted data types
 de-CH:
   faker:
     address:
@@ -17,3 +18,6 @@ de-CH:
 
     phone_number:
       formats: ['0800 ### ###', '0800 ## ## ##', '0## ### ## ##', '0## ### ## ##', '+41 ## ### ## ##', '0900 ### ###', '076 ### ## ##', '+4178 ### ## ##', '0041 79 ### ## ##']
+
+    currency:
+      symbol: "CHF"

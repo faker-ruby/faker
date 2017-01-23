@@ -1,3 +1,4 @@
+# Brazil formatted data types
 pt-BR:
   faker:
     address:
@@ -83,3 +84,6 @@ pt-BR:
 
     phone_number:
       formats: ["(##) ####-####", "+55 (##) ####-####", "(##) #####-####"]
+
+    currency:
+      symbol: "R$"

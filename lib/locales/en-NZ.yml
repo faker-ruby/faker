@@ -40,3 +40,6 @@ en-NZ:
     team:
       sport: [basketball, football, rugby league, netball, rugby union, hockey, cricket, golf, boxing, rowing, motorsport, tennis, athletics, sailing, surf life saving, squash]
       name: [Tall Blacks, All Whites, Warriors, Silver Ferns, All Blacks, Black Sticks, Black Caps]
+
+    currency:
+      symbol: "$"
