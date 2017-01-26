@@ -26,7 +26,7 @@ module Faker
     end
 
     def self.clear
-      ObjectSpace.each_object(self) { |generator| generator.clear }
+      ObjectSpace.each_object(self, &:clear)
     end
   end
 end
