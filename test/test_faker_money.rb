@@ -6,6 +6,10 @@ class TestFakerMoney < Test::Unit::TestCase
     @tester = Faker::Money
   end
 
+  def teardown
+    Faker::Config.locale = nil
+  end
+
   def test_money
     assert_instance_of Float, @tester.money
     assert_includes 0..100, @tester.money
@@ -25,10 +29,6 @@ class TestFakerMoney < Test::Unit::TestCase
     Faker::Config.locale = :vi
     assert_instance_of Fixnum, @tester.money
     assert_includes 500..1000, @tester.money(500, 1000, 5)
-
-    Faker::Config.locale = :en
-    assert_instance_of Float, @tester.money
-    assert_includes 50..100, @tester.money(50, 100, 1)
   end
 
   def test_money_with_zero_padding
@@ -39,7 +39,7 @@ class TestFakerMoney < Test::Unit::TestCase
 
   def test_money_with_symbol
     Faker::Config.locale = :en
-    assert @tester.money_with_symbol.match(/\$\d{1,3}\.\d{2}/)
+    assert @tester.money_with_symbol.match(/\$\d{1,2}\.\d{2}/)
     Faker::Config.locale = :sk
     assert @tester.money_with_symbol(300,700,3).match(/\€\d{3}\.\d{3}/)
     Faker::Config.locale = 'pl'
@@ -61,7 +61,7 @@ class TestFakerMoney < Test::Unit::TestCase
 
   def test_money_without_cents_with_symbol
     Faker::Config.locale = :en
-    assert @tester.money_without_cents_with_symbol.match(/\$\d{1,3}/)
+    assert @tester.money_without_cents_with_symbol.match(/\$\d{1,2}/)
     Faker::Config.locale = :de
     assert @tester.money_without_cents_with_symbol(300,700).match(/\€\d{3}/)
     Faker::Config.locale = 'en-GB'
