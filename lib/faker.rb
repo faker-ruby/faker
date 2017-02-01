@@ -245,6 +245,7 @@ require 'faker/rock_band'
 require 'faker/fillmurray'
 require 'faker/job'
 require 'faker/demographic'
+require 'faker/twitter'
 
 require 'extensions/array'
 require 'extensions/symbol'
