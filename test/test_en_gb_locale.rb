@@ -37,4 +37,12 @@ class TestEnGbLocale < Test::Unit::TestCase
     incode = Faker::Address.postcode.split(' ')[1]
     assert_match(/\d[ABDEFGHJLNPQRSTUWXYZ]{2}/, incode)
   end
+
+  def test_gb_postcode_outcode_is_valid
+    outcode = Faker::Address.postcode.split(' ')[0]
+    assert_includes(2..4, outcode.length)
+    assert_match(/\w{1,2}\d{1,2}\w?/,outcode)
+    assert_match(/^[A-PR-UWYZ][A-HK-Y0-9]/,outcode)
+    assert_match(/\w{1,2}\d{1,2}|\w\d[ABCDEFGHJKPSTUW]|\w\w\d[ABEHMNPRVWXY]/,outcode)
+  end
 end
