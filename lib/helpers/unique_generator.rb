@@ -20,5 +20,13 @@ module Faker
     end
 
     RetryLimitExceeded = Class.new(StandardError)
+
+    def clear
+      @previous_results.clear
+    end
+
+    def self.clear
+      ObjectSpace.each_object(self, &:clear)
+    end
   end
 end
