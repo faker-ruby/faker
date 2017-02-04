@@ -30,4 +30,22 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.image('50x60', false, ['dog', 'cat'], true) == 'http://loremflickr.com/50/60/dog,cat/all'
   end
 
+  def test_pixelated_image_without_search_terms
+    assert_raise ArgumentError do
+      @tester.pixelated_image('50x60')
+    end
+  end
+
+  def test_pixelated_image_with_single_search_term
+    assert @tester.pixelated_image('50x60', ['faker']) == 'http://loremflickr.com/p/50/60/faker'
+  end
+
+  def test_pixelated_image_with_multiple_search_terms
+    assert @tester.pixelated_image('50x60', ['dog', 'cat']) == 'http://loremflickr.com/p/50/60/dog,cat'
+  end
+
+  def test_pixelated_image_with_search_terms_and_match_all
+    assert @tester.pixelated_image('50x60', ['dog', 'cat'], true) == 'http://loremflickr.com/p/50/60/dog,cat/all'
+  end
+
 end

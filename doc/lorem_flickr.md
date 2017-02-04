@@ -12,4 +12,10 @@ Faker::LoremFlickr.image("50x60", false, ['sports']) #=> "http://loremflickr.com
 Faker::LoremFlickr.image("50x60", false, ['sports', 'fitness']) #=> "http://loremflickr.com/50/60/sports,fitness"
 
 Faker::LoremFlickr.image("50x60", false, ['sports', 'fitness'], true) #=> "http://loremflickr.com/50/60/sports,fitness/all"
+
+Faker::LoremFlickr.pixelated_image("50x60", ['sports']) #=> "http://loremflickr.com/p/50/60/sports"
+
+Faker::LoremFlickr.pixelated_image("50x60", ['sports', 'fitness']) #=> "http://loremflickr.com/p/50/60/sports,fitness"
+
+Faker::LoremFlickr.pixelated_image("50x60", ['sports', 'fitness'], true) #=> "http://loremflickr.com/p/50/60/sports,fitness/all"
 ```
