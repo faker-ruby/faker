@@ -68,6 +68,7 @@ Contents
   - [Faker::Team](doc/team.md)
   - [Faker::Time](doc/time.md)
   - [Faker::TwinPeaks](doc/twin_peaks.md)
+  - [Faker::Twitter](doc/twitter.md)
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
 - [Customization](#customization)
