@@ -4,6 +4,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
 
   def setup
     @tester = Faker::LoremFlickr
+    @colorizations = %w(red green blue)
   end
 
   def test_image
@@ -61,15 +62,21 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_colorized_image_with_single_search_term
-    assert @tester.colorized_image('50x60', 'red', ['faker']) == 'http://loremflickr.com/red/50/60/faker'
+    @colorizations.each do |colorization|
+      assert @tester.colorized_image('50x60', colorization, ['faker']) == "http://loremflickr.com/#{colorization}/50/60/faker"
+    end
   end
 
   def test_colorized_image_with_multiple_search_terms
-    assert @tester.colorized_image('50x60', 'red', ['dog', 'cat']) == 'http://loremflickr.com/red/50/60/dog,cat'
+    @colorizations.each do |colorization|
+      assert @tester.colorized_image('50x60', colorization, ['dog', 'cat']) == "http://loremflickr.com/#{colorization}/50/60/dog,cat"
+    end
   end
 
   def test_colorized_image_with_search_terms_and_match_all
-    assert @tester.colorized_image('50x60', 'red', ['dog', 'cat'], true) == 'http://loremflickr.com/red/50/60/dog,cat/all'
+    @colorizations.each do |colorization|
+      assert @tester.colorized_image('50x60', colorization, ['dog', 'cat'], true) == "http://loremflickr.com/#{colorization}/50/60/dog,cat/all"
+    end
   end
 
 end
