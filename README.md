@@ -97,6 +97,15 @@ Prefix your method call with `unique`. For example:
 Faker::Name.unique.name # This will return a unique name every time it is called
 ```
 
+If too many unique values are requested from a generator that has a limited
+number of potential values, a `Faker::UniqueGenerator::RetryLimitExceeded`
+exception may be raised. It is possible to clear the record of unique values
+that have been returned, for example between tests.
+```ruby
+Faker::Name.unique.clear # Clears used values for Faker::Name
+Faker::UniqueGenerator.clear # Clears used values for all generators
+```
+
 ## Customization
 
 Since you may want to make addresses and other types of data look different
