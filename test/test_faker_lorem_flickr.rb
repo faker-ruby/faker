@@ -26,4 +26,8 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.image('50x60', false, ['dog', 'cat']) == 'http://loremflickr.com/50/60/dog,cat'
   end
 
+  def test_image_with_search_terms_and_match_all
+    assert @tester.image('50x60', false, ['dog', 'cat'], true) == 'http://loremflickr.com/50/60/dog,cat/all'
+  end
+
 end
