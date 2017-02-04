@@ -106,4 +106,8 @@ class TestFakerLorem < Test::Unit::TestCase
     assert(250 <= range.length && range.length <= 500)
     assert(array.length == 250 || array.length == 500)
   end
+
+  def test_multibyte
+    assert_equal ["😀", "😡", "❤"], @tester.multibyte
+  end
 end
