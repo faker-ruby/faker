@@ -48,4 +48,28 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.pixelated_image('50x60', ['dog', 'cat'], true) == 'http://loremflickr.com/p/50/60/dog,cat/all'
   end
 
+  def test_colorized_image_without_search_terms
+    assert_raise ArgumentError do
+      @tester.colorized_image('50x60', 'red')
+    end
+  end
+
+  def test_colorized_image_with_unsupported_colorization
+    assert_raise ArgumentError do
+      @tester.colorized_image('50x60', 'yellow')
+    end
+  end
+
+  def test_colorized_image_with_single_search_term
+    assert @tester.colorized_image('50x60', 'red', ['faker']) == 'http://loremflickr.com/red/50/60/faker'
+  end
+
+  def test_colorized_image_with_multiple_search_terms
+    assert @tester.colorized_image('50x60', 'red', ['dog', 'cat']) == 'http://loremflickr.com/red/50/60/dog,cat'
+  end
+
+  def test_colorized_image_with_search_terms_and_match_all
+    assert @tester.colorized_image('50x60', 'red', ['dog', 'cat'], true) == 'http://loremflickr.com/red/50/60/dog,cat/all'
+  end
+
 end

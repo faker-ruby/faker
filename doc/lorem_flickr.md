@@ -18,4 +18,10 @@ Faker::LoremFlickr.pixelated_image("50x60", ['sports']) #=> "http://loremflickr.
 Faker::LoremFlickr.pixelated_image("50x60", ['sports', 'fitness']) #=> "http://loremflickr.com/p/50/60/sports,fitness"
 
 Faker::LoremFlickr.pixelated_image("50x60", ['sports', 'fitness'], true) #=> "http://loremflickr.com/p/50/60/sports,fitness/all"
+
+Faker::LoremFlickr.colorized_image("50x60", 'red', ['sports']) #=> "http://loremflickr.com/red/50/60/sports"
+
+Faker::LoremFlickr.colorized_image("50x60", 'red', ['sports', 'fitness']) #=> "http://loremflickr.com/red/50/60/sports,fitness"
+
+Faker::LoremFlickr.colorized_image("50x60", 'red', ['sports', 'fitness'], true) #=> "http://loremflickr.com/red/50/60/sports,fitness/all"
 ```
