@@ -1,3 +1,4 @@
+# Norway formatted data types
 # coding: utf-8
 nb-NO:
   faker:
@@ -53,3 +54,6 @@ nb-NO:
 
     cell_phone:
       formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]
+
+    currency:
+      symbol: "kr"

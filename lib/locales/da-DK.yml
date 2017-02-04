@@ -1,3 +1,4 @@
+# Denmark formatted data types
 da-DK:
   faker:
     address:
@@ -67,3 +68,6 @@ da-DK:
 
       name:
         - "#{Address.city} #{suffix}"
+
+    currency:
+      symbol: "kr"

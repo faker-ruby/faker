@@ -1,3 +1,4 @@
+# Catalonia formatted data types
 # encoding: utf-8
 ca-CAT:
   faker:
@@ -22,3 +23,5 @@ ca-CAT:
       formats: ['9##-###-###', '9##.###.###', '9## ### ###', '9########']
     cell_phone:
       formats: ['6##-###-###', '6##.###.###', '6## ### ###', '6########']
+    currency:
+      symbol: "€"

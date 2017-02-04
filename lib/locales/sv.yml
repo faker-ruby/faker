@@ -1,4 +1,4 @@
-
+# Sweden formatted data types
 sv:
   faker:
     address:
@@ -71,3 +71,6 @@ sv:
       suffix: [IF, FF, BK, HK, AIF, SK, FC, SK, BoIS, FK, BIS, FIF, IK]
       name:
         - "#{Address.city} #{suffix}"
+
+    currency:
+      symbol: "kr"

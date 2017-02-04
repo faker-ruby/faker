@@ -1,3 +1,4 @@
+# Pakistan formatted data types
 en-PAK:
   faker:
     name:
@@ -15,3 +16,6 @@ en-PAK:
       suffix: [Pvt Ltd, Limited, Ltd, and Sons, Corp, Group, Brothers, CO]
     phone_number:
       formats: ['+92##########', '+92 ### #######', '03##-#######']
+
+    currency:
+      symbol: "₨"

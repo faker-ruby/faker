@@ -1,3 +1,4 @@
+# Ukraine formatted data types
 uk:
   faker:
     separator: " та "
@@ -73,3 +74,6 @@ uk:
         - "#{prefix} #{Name.male_last_name}"
         - "#{prefix} #{Address.city_name}#{product}#{suffix}"
         - "#{prefix} #{Address.city_name}#{suffix}"
+
+    currency:
+      symbol: "₴"

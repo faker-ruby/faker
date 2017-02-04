@@ -1,3 +1,4 @@
+# Spain formatted data types
 # encoding: utf-8
 es:
   faker:
@@ -74,3 +75,6 @@ es:
       formats: ['6##-###-###', '6##.###.###', '6## ### ###', '6########']
     music:
       instruments: ['Guitarra Eléctrica', 'Guitarra Acústica', 'Flauta', 'Trompeta', 'Clarinete', 'Violonchelo', 'Arpa', 'Xilofón', 'Armónica', 'Acordión', 'Organo', 'Piano', 'Ukelele', 'Saxofón', 'Bateria', 'Violín', 'Bajo']
+
+    currency:
+      symbol: "€"

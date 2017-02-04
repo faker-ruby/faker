@@ -31,3 +31,5 @@ en-au-ocker:
       formats: ['0# #### ####', '+61 # #### ####', '+61 4## ### ###'] #iOS AUS phone formats
     cell_phone:
       formats: ['04##-###-###', '(0) 4##-###-###', '04## ### ###', '04########', '04## ## ## ##']
+    currency:
+      symbol: "$"

@@ -1,3 +1,4 @@
+# Russia formatted data types
 ru:
   faker:
     separator: " и "
@@ -63,3 +64,6 @@ ru:
         - "#{prefix} #{Address.city_name}#{suffix}"
         - "#{prefix} #{Address.city_name}#{suffix}#{suffix}"
         - "#{prefix} #{Address.city_name}#{suffix}#{suffix}#{suffix}"
+
+    currency:
+      symbol: "₽"

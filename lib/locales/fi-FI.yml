@@ -1,3 +1,4 @@
+# Finland formatted data types
 fi-FI:
   faker:
     address:
@@ -27,3 +28,6 @@ fi-FI:
       formats: ['##-######', '###-#######']
     cell_phone:
       formats: ['0##-#######']
+
+    currency:
+      symbol: "€"

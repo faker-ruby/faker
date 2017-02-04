@@ -1,3 +1,4 @@
+# Taiwan formatted data types
 # coding: utf-8
 zh-TW:
   faker:
@@ -25,3 +26,6 @@ zh-TW:
         - "#{last_name}#{first_name}"
     phone_number:
       formats: ['###-########', '####-########', '###########']
+
+    currency:
+      symbol: "NT$"

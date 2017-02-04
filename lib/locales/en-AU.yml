@@ -24,3 +24,5 @@ en-AU:
       formats: ['04##-###-###', '(0) 4##-###-###', '04## ### ###', '04########', '04## ## ## ##']
     team:
       sport: ['basketball', 'football', 'footy', 'netball', 'rugby']
+    currency:
+      symbol: "$"

@@ -73,3 +73,6 @@ en-NG:
       default_country: [Nigeria]
     phone_number:
       formats: ['080########', '070########', '090########', '081########', '071########', '091########']
+
+    currency:
+      symbol: "₦"

@@ -1,3 +1,4 @@
+# Netherlands formatted data types
 nl:
   faker:
     address:
@@ -9,31 +10,31 @@ nl:
         - "#{city_prefix} #{Name.first_name}#{city_suffix}"
         - "#{city_prefix} #{Name.last_name}#{city_suffix}"
       country: [ "Afghanistan", "Akrotiri", "Albanië", "Algerije", "Amerikaanse Maagdeneilanden", "Amerikaans-Samoa", "Andorra", "Angola", "Anguilla",
-                 "Antarctica", "Antigua en Barbuda", "Noordelijke IJszee", "Argentinië", "Armenië", "Aruba", "Ashmore- en Cartiereilanden", "Atlantische Oceaan", 
-                 "Australië", "Azerbeidzjan", "Bahama's", "Bahrein", "Bangladesh", "Barbados", "Belarus", "België", "Belize", "Benin", "Bermuda", "Bhutan", 
-                 "Bolivië", "Bosnië-Herzegovina", "Botswana", "Bouveteiland", "Brazilië", "Brits Indische Oceaanterritorium", "Britse Maagdeneilanden", 
+                 "Antarctica", "Antigua en Barbuda", "Noordelijke IJszee", "Argentinië", "Armenië", "Aruba", "Ashmore- en Cartiereilanden", "Atlantische Oceaan",
+                 "Australië", "Azerbeidzjan", "Bahama's", "Bahrein", "Bangladesh", "Barbados", "Belarus", "België", "Belize", "Benin", "Bermuda", "Bhutan",
+                 "Bolivië", "Bosnië-Herzegovina", "Botswana", "Bouveteiland", "Brazilië", "Brits Indische Oceaanterritorium", "Britse Maagdeneilanden",
                  "Brunei", "Bulgarije", "Burkina Faso", "Burundi", "Cambodja", "Canada", "Caymaneilanden", "Centraal-Afrikaanse Republiek", "Chili", "China",
-                 "Christmaseiland", "Clipperton", "Cocoseilanden", "Colombia", "Comoren (Unie)", "Congo (Democratische Republiek)", 
-                 "Congo (Volksrepubliek)", "Cook", "Coral Sea Islands", "Costa Rica", "Cuba", "Cyprus", "Denemarken", "Dhekelia", "Djibouti", "Dominica", 
-                 "Dominicaanse Republiek", "Duitsland", "Ecuador", "Egypte", "El Salvador", "Equatoriaal-Guinea", "Eritrea", "Estland", "Ethiopië", 
-                 "Europese Unie", "Falkland", "Faeröer", "Fiji", "Filipijnen", "Finland", "Frankrijk", "Frans-Polynesië", 
-                 "Franse Zuidelijke en Antarctische Gebieden", "Gabon", "Gambia", "Gaza Strip", "Georgië", "Ghana", "Gibraltar", "Grenada", "Griekenland", 
-                 "Groenland", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinee-Bissau", "Guyana", "Haïti", "Heard en McDonaldeilanden", "Heilige Stoel", 
-                 "Honduras", "Hongarije", "Hongkong", "Ierland", "IJsland", "India", "Indian Ocean", "Indonesië", "Irak", "Iran", "Isle of Man", "Israël", 
-                 "Italië", "Ivoorkust", "Jamaica", "Jan Mayen", "Japan", "Jemen", "Jersey", "Jordanië", "Kaapverdië", "Kameroen", "Kazachstan", "Kenia", 
-                 "Kirgizstan", "Kiribati", "Koeweit", "Kroatië", "Laos", "Lesotho", "Letland", "Libanon", "Liberia", "Libië", "Liechtenstein", "Litouwen", 
-                 "Luxemburg", "Macao", "Macedonië", "Madagaskar", "Malawi", "Maldiven", "Maleisië", "Mali", "Malta", "Marokko", "Marshalleilanden", "Mauritanië", 
-                 "Mauritius", "Mayotte", "Mexico", "Micronesia, Federale Staten van", "Moldavië", "Monaco", "Mongolië", "Montenegro", "Montserrat", "Mozambique", 
-                 "Myanmar", "Namibië", "Nauru", "Navassa", "Nederland", "Nederlandse Antillen", "Nepal", "Ngwane", "Nicaragua", "Nieuw-Caledonië", 
-                 "Nieuw-Zeeland", "Niger", "Nigeria", "Niue", "Noordelijke Marianen", "Noord-Korea", "Noorwegen", "Norfolk (eiland)", "Oekraïne", "Oezbekistan", 
-                 "Oman", "Oostenrijk", "Grote Oceaan", "Pakistan", "Palau", "Panama", "Papoea-Nieuw-Guinea", "Paracel Islands", "Paraguay", "Peru", "Pitcairn", 
-                 "Polen", "Portugal", "Puerto Rico", "Qatar", "Roemenië", "Rusland", "Rwanda", "Saint Helena", "Saint Lucia", "Saint Vincent en de Grenadines", 
-                 "Saint-Pierre en Miquelon", "Salomon", "Samoa", "San Marino", "São Tomé en Principe", "Saudi-Arabië", "Senegal", "Servië", "Seychellen", 
-                 "Sierra Leone", "Singapore", "Sint-Kitts en Nevis", "Slovenië", "Slowakije", "Soedan", "Somalië", "South Georgia and the South Sandwich Islands", 
-                 "Zuidelijke Oceaan", "Spanje", "Spratly Islands", "Sri Lanka", "Suriname", "Svalbard", "Syrië", "Tadzjikistan", "Taiwan", "Tanzania", "Thailand", 
-                 "Timor Leste", "Togo", "Tokelau", "Tonga", "Trinidad en Tobago", "Tsjaad", "Tsjechië", "Tunesië", "Turkije", "Turkmenistan", 
-                 "Turks-en Caicoseilanden", "Tuvalu", "Uganda", "Uruguay", "Vanuatu", "Venezuela", "Verenigd Koninkrijk", "Verenigde Arabische Emiraten", 
-                 "Verenigde Staten van Amerika", "Vietnam", "Wake (eiland)", "Wallis en Futuna", "Wereld", "Westelijke Jordaanoever", "Westelijke Sahara", "Zambia", 
+                 "Christmaseiland", "Clipperton", "Cocoseilanden", "Colombia", "Comoren (Unie)", "Congo (Democratische Republiek)",
+                 "Congo (Volksrepubliek)", "Cook", "Coral Sea Islands", "Costa Rica", "Cuba", "Cyprus", "Denemarken", "Dhekelia", "Djibouti", "Dominica",
+                 "Dominicaanse Republiek", "Duitsland", "Ecuador", "Egypte", "El Salvador", "Equatoriaal-Guinea", "Eritrea", "Estland", "Ethiopië",
+                 "Europese Unie", "Falkland", "Faeröer", "Fiji", "Filipijnen", "Finland", "Frankrijk", "Frans-Polynesië",
+                 "Franse Zuidelijke en Antarctische Gebieden", "Gabon", "Gambia", "Gaza Strip", "Georgië", "Ghana", "Gibraltar", "Grenada", "Griekenland",
+                 "Groenland", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinee-Bissau", "Guyana", "Haïti", "Heard en McDonaldeilanden", "Heilige Stoel",
+                 "Honduras", "Hongarije", "Hongkong", "Ierland", "IJsland", "India", "Indian Ocean", "Indonesië", "Irak", "Iran", "Isle of Man", "Israël",
+                 "Italië", "Ivoorkust", "Jamaica", "Jan Mayen", "Japan", "Jemen", "Jersey", "Jordanië", "Kaapverdië", "Kameroen", "Kazachstan", "Kenia",
+                 "Kirgizstan", "Kiribati", "Koeweit", "Kroatië", "Laos", "Lesotho", "Letland", "Libanon", "Liberia", "Libië", "Liechtenstein", "Litouwen",
+                 "Luxemburg", "Macao", "Macedonië", "Madagaskar", "Malawi", "Maldiven", "Maleisië", "Mali", "Malta", "Marokko", "Marshalleilanden", "Mauritanië",
+                 "Mauritius", "Mayotte", "Mexico", "Micronesia, Federale Staten van", "Moldavië", "Monaco", "Mongolië", "Montenegro", "Montserrat", "Mozambique",
+                 "Myanmar", "Namibië", "Nauru", "Navassa", "Nederland", "Nederlandse Antillen", "Nepal", "Ngwane", "Nicaragua", "Nieuw-Caledonië",
+                 "Nieuw-Zeeland", "Niger", "Nigeria", "Niue", "Noordelijke Marianen", "Noord-Korea", "Noorwegen", "Norfolk (eiland)", "Oekraïne", "Oezbekistan",
+                 "Oman", "Oostenrijk", "Grote Oceaan", "Pakistan", "Palau", "Panama", "Papoea-Nieuw-Guinea", "Paracel Islands", "Paraguay", "Peru", "Pitcairn",
+                 "Polen", "Portugal", "Puerto Rico", "Qatar", "Roemenië", "Rusland", "Rwanda", "Saint Helena", "Saint Lucia", "Saint Vincent en de Grenadines",
+                 "Saint-Pierre en Miquelon", "Salomon", "Samoa", "San Marino", "São Tomé en Principe", "Saudi-Arabië", "Senegal", "Servië", "Seychellen",
+                 "Sierra Leone", "Singapore", "Sint-Kitts en Nevis", "Slovenië", "Slowakije", "Soedan", "Somalië", "South Georgia and the South Sandwich Islands",
+                 "Zuidelijke Oceaan", "Spanje", "Spratly Islands", "Sri Lanka", "Suriname", "Svalbard", "Syrië", "Tadzjikistan", "Taiwan", "Tanzania", "Thailand",
+                 "Timor Leste", "Togo", "Tokelau", "Tonga", "Trinidad en Tobago", "Tsjaad", "Tsjechië", "Tunesië", "Turkije", "Turkmenistan",
+                 "Turks-en Caicoseilanden", "Tuvalu", "Uganda", "Uruguay", "Vanuatu", "Venezuela", "Verenigd Koninkrijk", "Verenigde Arabische Emiraten",
+                 "Verenigde Staten van Amerika", "Vietnam", "Wake (eiland)", "Wallis en Futuna", "Wereld", "Westelijke Jordaanoever", "Westelijke Sahara", "Zambia",
                  "Zimbabwe", "Zuid-Afrika", "Zuid-Korea", "Zweden", "Zwitserland"]
       building_number: ["#", "##", "###", "###a", "###b", "###c", "### I", "### II", "### III"]
       street_suffix: ["straat", "laan", "weg", "plantsoen", "park"]
@@ -81,3 +82,6 @@ nl:
       name:
         - "#{University.prefix} #{Name.last_name}"
         - "#{University.prefix} #{Address.city}"
+
+    currency:
+      symbol: "€"

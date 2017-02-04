@@ -1,3 +1,4 @@
+# USA formatted data types
 en-US:
   faker:
     internet:
@@ -99,3 +100,6 @@ en-US:
         - "(#{PhoneNumber.area_code}) #{PhoneNumber.exchange_code}-#{PhoneNumber.subscriber_number}"
         - "1-#{PhoneNumber.area_code}-#{PhoneNumber.exchange_code}-#{PhoneNumber.subscriber_number}"
         - "#{PhoneNumber.area_code}.#{PhoneNumber.exchange_code}.#{PhoneNumber.subscriber_number}"
+
+    currency:
+      symbol: "$"
