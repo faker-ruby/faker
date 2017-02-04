@@ -15,6 +15,12 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.image('50x60') == 'http://loremflickr.com/50/60'
   end
 
+  def test_image_with_incorrect_size
+    assert_raise ArgumentError do
+      @tester.image('300x300s')
+    end
+  end
+
   def test_image_with_is_gray
     assert @tester.image('50x60', true) == 'http://loremflickr.com/g/50/60'
   end
@@ -29,6 +35,12 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
 
   def test_image_with_search_terms_and_match_all
     assert @tester.image('50x60', false, ['dog', 'cat'], true) == 'http://loremflickr.com/50/60/dog,cat/all'
+  end
+
+  def test_pixelated_image_with_incorrect_size
+    assert_raise ArgumentError do
+      @tester.pixelated_image('300x300s')
+    end
   end
 
   def test_pixelated_image_without_search_terms
@@ -47,6 +59,12 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
 
   def test_pixelated_image_with_search_terms_and_match_all
     assert @tester.pixelated_image('50x60', ['dog', 'cat'], true) == 'http://loremflickr.com/p/50/60/dog,cat/all'
+  end
+
+  def test_colorized_image_with_incorrect_size
+    assert_raise ArgumentError do
+      @tester.colorized_image('300x300s')
+    end
   end
 
   def test_colorized_image_without_search_terms
