@@ -48,6 +48,7 @@ Contents
   - [Faker::Friends](doc/friends.md)
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
   - [Faker::Hacker](doc/hacker.md)
+  - [Faker::HarryPotter](doc/harry_potter.md)
   - [Faker::Hipster](doc/hipster.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
