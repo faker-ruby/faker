@@ -246,6 +246,7 @@ require 'faker/fillmurray'
 require 'faker/job'
 require 'faker/demographic'
 require 'faker/harry_potter'
+require 'faker/friends'
 
 require 'extensions/array'
 require 'extensions/symbol'
