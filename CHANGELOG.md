@@ -1,5 +1,38 @@
 # Change Log
 
+## [v1.7.3](https://github.com/stympy/faker/tree/v1.7.3) (2017-02-04)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.7.2...v1.7.3)
+
+**Closed issues:**
+
+- Creates invalid UK postcodes [\#790](https://github.com/stympy/faker/issues/790)
+- remove first name Adolf [\#788](https://github.com/stympy/faker/issues/788)
+- Config for adding format restriction. [\#695](https://github.com/stympy/faker/issues/695)
+- How to avoid special characters in faker string field [\#615](https://github.com/stympy/faker/issues/615)
+- Add Demographic Data [\#585](https://github.com/stympy/faker/issues/585)
+- OmniAuth ready responses [\#507](https://github.com/stympy/faker/issues/507)
+- US Zip Codes Sometimes Returns Non-Actual Zip Codes [\#275](https://github.com/stympy/faker/issues/275)
+
+**Merged pull requests:**
+
+- Harry Potter [\#820](https://github.com/stympy/faker/pull/820) ([jaclynjessup](https://github.com/jaclynjessup))
+- Update readme [\#819](https://github.com/stympy/faker/pull/819) ([ktrant84](https://github.com/ktrant84))
+- en.yml: Typo Golum -\> Gollum [\#816](https://github.com/stympy/faker/pull/816) ([jtibbertsma](https://github.com/jtibbertsma))
+- Add Faker::Twitter [\#815](https://github.com/stympy/faker/pull/815) ([abraham](https://github.com/abraham))
+- Fixed Validity of UK postcodes [\#814](https://github.com/stympy/faker/pull/814) ([darkstego](https://github.com/darkstego))
+- Fixed russian locale [\#813](https://github.com/stympy/faker/pull/813) ([fobo66](https://github.com/fobo66))
+- Allow unique values to be cleared [\#810](https://github.com/stympy/faker/pull/810) ([dslh](https://github.com/dslh))
+- Friends info [\#808](https://github.com/stympy/faker/pull/808) ([ktrant84](https://github.com/ktrant84))
+- Update superhero.md [\#805](https://github.com/stympy/faker/pull/805) ([Frylock13](https://github.com/Frylock13))
+- adds Zelda [\#800](https://github.com/stympy/faker/pull/800) ([audy](https://github.com/audy))
+- Remove the word 'fap' [\#798](https://github.com/stympy/faker/pull/798) ([probablycorey](https://github.com/probablycorey))
+- en.yml: fix typo in demographic race [\#797](https://github.com/stympy/faker/pull/797) ([PascalSchumacher](https://github.com/PascalSchumacher))
+- Adds Faker::Demographic [\#796](https://github.com/stympy/faker/pull/796) ([baron816](https://github.com/baron816))
+- Typofix: nfinite -\> Infinite [\#795](https://github.com/stympy/faker/pull/795) ([mgold](https://github.com/mgold))
+- Update output for zip functions [\#787](https://github.com/stympy/faker/pull/787) ([yovasx2](https://github.com/yovasx2))
+- doc fix job.md [\#786](https://github.com/stympy/faker/pull/786) ([ieldanr](https://github.com/ieldanr))
+- Refactors code in some Faker basic classes [\#785](https://github.com/stympy/faker/pull/785) ([tiagofsilva](https://github.com/tiagofsilva))
+
 ## [v1.7.2](https://github.com/stympy/faker/tree/v1.7.2) (2017-01-03)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.7.1...v1.7.2)
 
