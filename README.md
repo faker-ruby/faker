@@ -61,6 +61,7 @@ Contents
   - [Faker::PhoneNumber](doc/phone_number.md)
   - [Faker::Placeholdit](doc/placeholdit.md)
   - [Faker::Pokemon](doc/pokemon.md)
+  - [Faker::RickAndMorty](doc/rick_and_morty.md)
   - [Faker::RockBand](doc/rock_band.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Space](doc/space.md)
