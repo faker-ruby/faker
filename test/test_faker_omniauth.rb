@@ -30,7 +30,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal true, credentials[:expires]
     assert_equal 9, extra_raw_info[:sub].length
     assert_equal info[:email], extra_raw_info[:email]
-    assert_equal true, extra_raw_info[:email_verified]
+    assert [true, false].include? extra_raw_info[:email_verified]
     assert_equal info[:name], extra_raw_info[:name]
     assert_equal info[:first_name], extra_raw_info[:given_name]
     assert_equal info[:last_name], extra_raw_info[:family_name]
