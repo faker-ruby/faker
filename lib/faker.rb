@@ -250,6 +250,7 @@ require 'faker/omniauth'
 require 'faker/twitter'
 require 'faker/harry_potter'
 require 'faker/friends'
+require 'faker/rick_and_morty'
 
 require 'extensions/array'
 require 'extensions/symbol'
