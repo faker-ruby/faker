@@ -12,7 +12,7 @@ module Faker
 
     class << self
       def between(from, to, period = :all, format = nil)
-        time = period == :between ? rand(from..to) : date_with_random_time(super(from, to), period)
+        time = period == :between ? Faker::Config.random.rand(from..to) : date_with_random_time(super(from, to), period)
         time_with_format(time, format)
       end
 
@@ -36,7 +36,7 @@ module Faker
 
       def hours(period)
         raise ArgumentError, 'invalid period' unless TIME_RANGES.has_key? period
-        TIME_RANGES[period].to_a.sample
+        TIME_RANGES[period].to_a.sample(random: Faker::Config.random)
       end
 
       def minutes
@@ -44,7 +44,7 @@ module Faker
       end
 
       def seconds
-        (0..59).to_a.sample
+        (0..59).to_a.sample(random: Faker::Config.random)
       end
     end
   end

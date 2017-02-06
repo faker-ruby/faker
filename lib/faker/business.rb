@@ -10,7 +10,7 @@ module Faker
       end
 
       def credit_card_expiry_date
-        ::Date.today + (365 * (rand(4) + 1))
+        ::Date.today + (365 * (Faker::Config.random.rand(4) + 1))
       end
 
       def credit_card_type

@@ -3,19 +3,19 @@ module Faker
     class << self
 
       def hamlet_quote
-        hamlet.sample
+        hamlet.sample(random: Faker::Config.random)
       end
 
       def as_you_like_it_quote
-        as_you_like_it.sample
+        as_you_like_it.sample(random: Faker::Config.random)
       end
 
       def king_richard_iii_quote
-        king_richard_iii.sample
+        king_richard_iii.sample(random: Faker::Config.random)
       end
 
       def romeo_and_juliet_quote
-        romeo_and_juliet.sample
+        romeo_and_juliet.sample(random: Faker::Config.random)
       end
 
       def hamlet

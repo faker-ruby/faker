@@ -2,7 +2,7 @@ module Faker
   class Color < Base
     class << self
       def hex_color
-        '#%06x' % (rand * 0xffffff)
+        '#%06x' % (Faker::Config.random.rand * 0xffffff)
       end
 
       def color_name
@@ -10,7 +10,7 @@ module Faker
       end
 
       def single_rgb_color
-        (0..255).to_a.sample
+        (0..255).to_a.sample(random: Faker::Config.random)
       end
 
       def rgb_color
@@ -19,11 +19,11 @@ module Faker
 
       # returns [hue, saturation, lightness]
       def hsl_color
-        [(0..360).to_a.sample, rand.round(2), rand.round(2)]
+        [(0..360).to_a.sample(random: Faker::Config.random), Faker::Config.random.rand.round(2), Faker::Config.random.rand.round(2)]
       end
 
       def hsla_color
-        hsl_color << rand.round(1)
+        hsl_color << Faker::Config.random.rand.round(1)
       end
     end
   end

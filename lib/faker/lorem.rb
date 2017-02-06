@@ -5,7 +5,7 @@ module Faker
 
     class << self
       def word
-        translate('faker.lorem.words').sample
+        translate('faker.lorem.words').sample(random: Faker::Config.random)
       end
 
       def words(num = 3, supplemental = false)
@@ -19,17 +19,17 @@ module Faker
       end
 
       def character
-        CHARACTERS.sample
+        CHARACTERS.sample(random: Faker::Config.random)
       end
 
       def characters(char_count = 255)
         char_count = resolve(char_count)
         return '' if char_count.to_i < 1
-        Array.new(char_count) { CHARACTERS.sample }.join
+        Array.new(char_count) { CHARACTERS.sample(random: Faker::Config.random) }.join
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
-        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + '.'
+        words(word_count + Faker::Config.random.rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + '.'
       end
 
       def sentences(sentence_count = 3, supplemental = false)
@@ -37,7 +37,7 @@ module Faker
       end
 
       def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 3)
-        sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(' ')
+        sentences(resolve(sentence_count) + Faker::Config.random.rand(random_sentences_to_add.to_i), supplemental).join(' ')
       end
 
       def paragraphs(paragraph_count = 3, supplemental = false)
@@ -45,7 +45,7 @@ module Faker
       end
 
       def question(word_count = 4, supplemental = false, random_words_to_add = 6)
-        words(word_count + rand(random_words_to_add.to_i).to_i, supplemental).join(' ').capitalize + '?'
+        words(word_count + Faker::Config.random.rand(random_words_to_add.to_i).to_i, supplemental).join(' ').capitalize + '?'
       end
 
       def questions(question_count = 3, supplemental = false)
@@ -58,8 +58,8 @@ module Faker
       # All other values are simply returned.
       def resolve(value)
         case value
-        when Array then value.sample
-        when Range then rand value
+        when Array then value.sample(random: Faker::Config.random)
+        when Range then Faker::Config.random.rand value
         else value
         end
       end

@@ -30,22 +30,22 @@ module Faker
       end
 
       def non_zero_digit
-        (rand(9) + 1).to_s
+        (Faker::Config.random.rand(9) + 1).to_s
       end
 
       def digit
-        rand(10).to_s
+        Faker::Config.random.rand(10).to_s
       end
 
       def hexadecimal(digits)
         hex = ""
-        digits.times { hex += rand(15).to_s(16) }
+        digits.times { hex += Faker::Config.random.rand(15).to_s(16) }
         hex
       end
 
       def normal(mean, standard_deviation)
-        theta = 2 * Math::PI * rand
-        rho = Math.sqrt(-2 * Math.log(1 - rand))
+        theta = 2 * Math::PI * Faker::Config.random.rand
+        rho = Math.sqrt(-2 * Math.log(1 - Faker::Config.random.rand))
         scale = standard_deviation * rho
         mean + scale * Math.cos(theta)
       end
