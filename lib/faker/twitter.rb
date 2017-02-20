@@ -40,7 +40,7 @@ module Faker
           profile_text_color: Faker::Color.hex_color,
           profile_use_background_image: Faker::Boolean.boolean(0.4),
           protected: Faker::Boolean.boolean(0.1),
-          screen_name: Faker::Internet.user_name,
+          screen_name: Faker::Internet.user_name(nil, ['_']),
           statuses_count: Faker::Number.between(1, 100_000),
           time_zone: Faker::Address.time_zone,
           url: Faker::Internet.url('example.com'),
