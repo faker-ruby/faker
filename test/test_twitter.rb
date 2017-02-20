@@ -13,6 +13,13 @@ class TestFakerTwitter < Test::Unit::TestCase
     assert_nil user[:status][:user]
   end
 
+  def test_user_with_email
+    user = @tester.user(include_email: true)
+    assert user.is_a?(Hash)
+    assert user.keys.count == 42
+    assert user[:email].is_a?(String)
+  end
+
   def test_user_without_status
     user = @tester.user(include_status: false)
     assert user.is_a?(Hash)

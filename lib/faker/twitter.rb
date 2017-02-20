@@ -1,7 +1,7 @@
 module Faker
   class Twitter < Base
     class << self
-      def user(include_status: true)
+      def user(include_status: true, include_email: false)
         user_id = id
         background_image_url = Faker::LoremPixel.image('600x400') # TODO: Make the dimensions change
         profile_image_url = Faker::Avatar.image(user_id, '48x48')
@@ -48,6 +48,7 @@ module Faker
           verified: Faker::Boolean.boolean(0.1)
         }
         user[:status] = Faker::Twitter.status(include_user: false) if include_status
+        user[:email] = Faker::Internet.safe_email if include_email
         user
       end
 
