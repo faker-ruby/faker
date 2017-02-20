@@ -31,6 +31,7 @@ class TestFakerTwitter < Test::Unit::TestCase
     status = @tester.status
     assert status.is_a?(Hash)
     assert status.keys.count == 25
+    assert status[:entities].is_a?(Hash)
     assert status[:user].is_a?(Hash)
     assert_nil status[:user][:status]
   end
@@ -40,5 +41,14 @@ class TestFakerTwitter < Test::Unit::TestCase
     assert status.is_a?(Hash)
     assert status.keys.count == 24
     assert_nil status[:user]
+  end
+
+  def test_status_with_photo
+    status = @tester.status(include_photo: true)
+    assert status.is_a?(Hash)
+    assert status.keys.count == 25
+    assert status[:entities].is_a?(Hash)
+    assert status[:entities][:media].count == 1
+    assert status[:entities][:media].first.keys.count == 10
   end
 end

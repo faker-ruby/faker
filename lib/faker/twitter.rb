@@ -52,7 +52,7 @@ module Faker
         user
       end
 
-      def status(include_user: true)
+      def status(include_user: true, include_photo: false)
         status_id = id
         status = {
           id: status_id,
@@ -60,7 +60,7 @@ module Faker
           contributors: nil,
           coordinates: nil,
           created_at: created_at,
-          entities:  status_entities,
+          entities:  status_entities(include_photo: include_photo),
           favorite_count: Faker::Number.between(1, 10_000),
           favorited: false,
           geo: nil,
@@ -81,6 +81,7 @@ module Faker
           truncated: false
         }
         status[:user] = Faker::Twitter.user(include_status: false) if include_user
+        status[:text] = "#{status[:text]} #{status[:entities][:media].first[:url]}" if include_photo
         status
       end
 
@@ -109,12 +110,57 @@ module Faker
         }
       end
 
-      def status_entities
-        {
+      def status_entities(include_photo: false)
+        entities = {
           hashtags:  [],
           symbols:  [],
           user_mentions:  [],
           urls:  []
+        }
+        entities[:media] = [photo_entity] if include_photo
+        entities
+      end
+
+      def photo_entity
+        # TODO: Dynamic image sizes
+        # TODO: Return accurate indices
+        media_url = Faker::LoremPixel.image('1064x600')
+        media_id = id
+        {
+          id: media_id,
+          id_str: media_id.to_s,
+          indices:  [
+            103,
+            126
+          ],
+          media_url: media_url.sub('https://', 'http://'),
+          media_url_https: media_url,
+          url: Faker::Internet.url('example.com'),
+          display_url: 'example.com',
+          expanded_url: Faker::Internet.url('example.com'),
+          type: 'photo',
+          sizes:  {
+            medium:  {
+              w: 1064,
+              h: 600,
+              resize: 'fit'
+            },
+            large:  {
+              w: 1064,
+              h: 600,
+              resize: 'fit'
+            },
+            small:  {
+              w: 680,
+              h: 383,
+              resize: 'fit'
+            },
+            thumb:  {
+              w: 150,
+              h: 150,
+              resize: 'crop'
+            }
+          }
         }
       end
     end
