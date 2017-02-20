@@ -13,7 +13,7 @@ module Faker
           location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}, #{Faker::Address.country_code}",
           description: Faker::Lorem.sentence,
           url: Faker::Internet.url('example.com'),
-          entities:  nil, # TODO
+          entities:  user_entities,
           protected: Faker::Boolean.boolean(0.1),
           followers_count: Faker::Number.between(1, 10_000_000),
           friends_count: Faker::Number.between(1, 100_000),
@@ -59,7 +59,7 @@ module Faker
           id_str: status_id.to_s,
           text: Faker::Lorem.sentence,
           truncated: false,
-          entities:  nil, # TODO
+          entities:  status_entities,
           source: "<a href=\"#{Faker::Internet.url('example.com')}\" rel=\"nofollow\">#{Faker::Company.name}</a>",
           in_reply_to_status_id: nil,
           nil: nil,
@@ -95,6 +95,26 @@ module Faker
 
       def utc_offset
         Faker::Number.between(-43_200, 50_400)
+      end
+
+      def user_entities
+        {
+          url:  {
+            urls: []
+          },
+          description:  {
+            urls: []
+          }
+        }
+      end
+
+      def status_entities
+        {
+          hashtags:  [],
+          symbols:  [],
+          user_mentions:  [],
+          urls:  []
+        }
       end
     end
   end
