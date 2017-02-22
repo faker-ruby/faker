@@ -52,9 +52,20 @@ module Faker
         base + luhn_algorithm(base).to_s
       end
 
+      # Get a random Norwegian organization number. Info: https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/
+      def norwegian_organisation_number
+        # Valid leading digit: 8, 9
+        mod11_check = nil
+        while mod11_check.nil?
+          base = [[8, 9].sample, ('%07d' % rand(10 ** 7))].join
+          mod11_check = mod11(base)
+        end
+        base + mod11_check.to_s
+      end
+
       def australian_business_number
         base = ('%09d' % rand(10 ** 9))
-        abn = "00#{base}" 
+        abn = "00#{base}"
 
         (99 - (abn_checksum(abn) % 89)).to_s + base
       end
@@ -64,6 +75,27 @@ module Faker
       end
 
     private
+
+      # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb
+      def mod11(number)
+        weight = [2, 3, 4, 5, 6, 7,
+                  2, 3, 4, 5, 6, 7,
+                  2, 3, 4, 5, 6, 7]
+
+        sum = 0
+
+        number.to_s.reverse.chars.each_with_index do |char, i|
+          sum += char.to_i * weight[i]
+        end
+
+        remainder = sum % 11
+
+        case remainder
+        when 0 then remainder
+        when 1 then nil
+        else 11 - remainder
+        end
+      end
 
       def luhn_algorithm(number)
         multiplications = []
