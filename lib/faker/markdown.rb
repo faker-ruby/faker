@@ -22,7 +22,7 @@ module Faker
         number.times do |i|
           result << "#{i.to_s}. #{Faker::Lorem.sentence(1)} \n"
         end
-        result.join(' ')
+        result.join('')
       end
 
       def unordered_list
@@ -49,6 +49,16 @@ module Faker
           table << "#{Faker::Lorem.word} | #{Faker::Lorem.word} | #{Faker::Lorem.word}"
         end
         table.join("\n")
+      end
+
+      def random_markdown
+        send(available_methods[rand(0..available_methods.length - 1)])
+      end
+
+      private
+
+      def available_methods
+        Faker::Markdown.public_methods(false) - Base.methods
       end
 
     end
