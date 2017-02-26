@@ -39,6 +39,10 @@ module Faker
         "`#{Faker::Lorem.sentence(1)}`"
       end
 
+      def block_code
+        "```ruby\n#{Faker::Lorem.sentence(1)}\n```"
+      end
+
     end
   end
 end

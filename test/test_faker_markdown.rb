@@ -41,4 +41,15 @@ class TestFakerMarkdown < Test::Unit::TestCase
     assert_equal(test_trigger.last, "`")
   end
 
+  def test_block_code
+    test_trigger = @tester.block_code.split('')
+
+    assert_equal(test_trigger[0], "`")
+    assert_equal(test_trigger[1], "`")
+    assert_equal(test_trigger[2], "`")
+    assert_equal(test_trigger[-1], "`")
+    assert_equal(test_trigger[-2], "`")
+    assert_equal(test_trigger[-3], "`")
+  end
+
 end
