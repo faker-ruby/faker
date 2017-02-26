@@ -6,7 +6,7 @@ class TestFakerMarkdown < Test::Unit::TestCase
   end
 
   def test_headers
-    assert @tester.headers.match(/\W/)
+    assert @tester.headers.match(/\W \w+/)
   end
 
 end

@@ -3,7 +3,7 @@ module Faker
     class << self
 
       def headers
-        fetch('markdown.headers')
+        "#{fetch('markdown.headers')} #{Faker::Lorem.word.capitalize}"
       end
 
     end
