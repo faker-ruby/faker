@@ -52,4 +52,14 @@ class TestFakerMarkdown < Test::Unit::TestCase
     assert_equal(test_trigger[-3], "`")
   end
 
+  def test_table
+    test_trigger = @tester.table.split("\n")
+
+    test_trigger.each do |table_data|
+      assert_instance_of(String, table_data)
+    end
+
+    assert_equal(test_trigger.length, 3)
+  end
+
 end

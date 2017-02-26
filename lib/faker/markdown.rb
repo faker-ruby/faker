@@ -43,6 +43,14 @@ module Faker
         "```ruby\n#{Faker::Lorem.sentence(1)}\n```"
       end
 
+      def table
+        table = []
+        3.times do
+          table << "#{Faker::Lorem.word} | #{Faker::Lorem.word} | #{Faker::Lorem.word}"
+        end
+        table.join("\n")
+      end
+
     end
   end
 end
