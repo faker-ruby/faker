@@ -15,6 +15,30 @@ module Faker
         words.join(' ')
       end
 
+      def ordered_list
+        number = rand(1..10)
+
+        result = []
+        number.times do |i|
+          result << "#{i.to_s}. #{Faker::Lorem.sentence(1)} \n"
+        end
+        result.join(' ')
+      end
+
+      def unordered_list
+        number = rand(1..10)
+
+        result = []
+        number.times do |i|
+          result << "* #{Faker::Lorem.sentence(1)} \n"
+        end
+        result.join('')
+      end
+
+      def inline_code
+        "`#{Faker::Lorem.sentence(1)}`"
+      end
+
     end
   end
 end

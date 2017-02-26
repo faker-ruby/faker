@@ -6,11 +6,39 @@ class TestFakerMarkdown < Test::Unit::TestCase
   end
 
   def test_headers
-    assert @tester.headers.match(/\W \w+/)
+    test_trigger = @tester.headers.split(' ')
+
+    assert(test_trigger.length == 2)
+    assert(test_trigger.first.include?('#'))
   end
 
   def test_emphasis
-    assert @tester.emphasis.match(/\W \w+/)
+    test_trigger = @tester.emphasis.split('')
+
+    assert(test_trigger.to_set.intersect?(["_", "~", "*", "**"].to_set))
+  end
+
+  def test_ordered_list
+    test_trigger = @tester.ordered_list.split("\n")
+
+    test_trigger.each do |line|
+      assert_instance_of(Fixnum, line[0].to_i)
+    end
+  end
+
+  def test_unordered_list
+    test_trigger = @tester.unordered_list.split("\n")
+
+    test_trigger.each do |line|
+      assert_equal("*", line[0])
+    end
+  end
+
+  def test_inline_code
+    test_trigger = @tester.inline_code.split('')
+
+    assert_equal(test_trigger.first, "`")
+    assert_equal(test_trigger.last, "`")
   end
 
 end
