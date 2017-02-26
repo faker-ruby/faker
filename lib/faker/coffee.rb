@@ -7,8 +7,13 @@ module Faker
         fetch('coffee.silly_blend_name')
       end
 
+      # would be nice if this parsed to a country and region
       def origin
-        fetch('coffee.origin')
+        country = fetch('coffee.country')
+        search_country = country.downcase
+        search_country.split(' ').join('_') if search_country.split(' ').length > 1
+        region = fetch("coffee.regions.#{search_country}")
+        "#{region}, #{country}"
       end
 
       def farm
@@ -20,7 +25,7 @@ module Faker
       end
 
       def notes
-        fetch('coffee.notes')
+        parse('coffee.notes')
       end
     end
   end
