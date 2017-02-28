@@ -37,22 +37,19 @@ class TestFakerMarkdown < Test::Unit::TestCase
   def test_inline_code
     test_trigger = @tester.inline_code.split('')
 
-    result = test_trigger.find_all do |letter|
-      letter == "`"
-    end
-
-    assert_equal(2, result.length)
+    assert_equal(test_trigger.first, "`")
+    assert_equal(test_trigger.last, "`")
   end
 
   def test_block_code
     test_trigger = @tester.block_code.split('')
 
-    assert_equal("`", test_trigger[0])
-    assert_equal("`", test_trigger[1])
-    assert_equal("`", test_trigger[2])
-    assert_equal("`", test_trigger[-1])
-    assert_equal("`", test_trigger[-2])
-    assert_equal("`", test_trigger[-3])
+    assert_equal(test_trigger[0], "`")
+    assert_equal(test_trigger[1], "`")
+    assert_equal(test_trigger[2], "`")
+    assert_equal(test_trigger[-1], "`")
+    assert_equal(test_trigger[-2], "`")
+    assert_equal(test_trigger[-3], "`")
   end
 
   def test_table
@@ -62,13 +59,13 @@ class TestFakerMarkdown < Test::Unit::TestCase
       assert_instance_of(String, table_data)
     end
 
-    assert_equal(3, test_trigger.length)
+    assert_equal(test_trigger.length, 3)
   end
 
   def test_random_markdown
     test_trigger = @tester.random_markdown
 
-    assert_instance_of(String, test_trigger)
+    assert_instance_of( String, test_trigger)
   end
 
 end
