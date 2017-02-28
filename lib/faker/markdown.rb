@@ -7,7 +7,7 @@ module Faker
       end
 
       def emphasis
-        paragraph = Lorem.paragraph(2)
+        paragraph = Faker::Lorem.paragraph(3)
         words = paragraph.split(' ')
         position = rand(0..words.length - 1)
         formatting = fetch('markdown.emphasis')
@@ -20,9 +20,9 @@ module Faker
 
         result = []
         number.times do |i|
-          result << "#{(i + 1).to_s}. #{Lorem.sentence(1)}"
+          result << "#{i.to_s}. #{Faker::Lorem.sentence(1)} \n"
         end
-        result.join("\n")
+        result.join('')
       end
 
       def unordered_list
@@ -30,13 +30,13 @@ module Faker
 
         result = []
         number.times do |i|
-          result << "* #{Lorem.sentence}"
+          result << "* #{Faker::Lorem.sentence(1)} \n"
         end
-        result.join("\n")
+        result.join('')
       end
 
       def inline_code
-        "#{Lorem.sentence(1)} `#{Lorem.sentence(1)}` #{Lorem.sentence(1)}"
+        "`#{Faker::Lorem.sentence(1)}`"
       end
 
       def block_code
