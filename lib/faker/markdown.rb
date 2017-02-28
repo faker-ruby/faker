@@ -3,7 +3,7 @@ module Faker
     class << self
 
       def headers
-        "#{fetch('markdown.headers')} #{Faker::Lorem.word.capitalize}"
+        "#{fetch('markdown.headers')} #{Lorem.word.capitalize}"
       end
 
       def emphasis
@@ -40,25 +40,25 @@ module Faker
       end
 
       def block_code
-        "```ruby\n#{Faker::Lorem.sentence(1)}\n```"
+        "```ruby\n#{Lorem.sentence(1)}\n```"
       end
 
       def table
         table = []
         3.times do
-          table << "#{Faker::Lorem.word} | #{Faker::Lorem.word} | #{Faker::Lorem.word}"
+          table << "#{Lorem.word} | #{Lorem.word} | #{Lorem.word}"
         end
         table.join("\n")
       end
 
-      def random_markdown
+      def random
         send(available_methods[rand(0..available_methods.length - 1)])
       end
 
       private
 
       def available_methods
-        Faker::Markdown.public_methods(false) - Base.methods
+        Markdown.public_methods(false) - Base.methods
       end
 
     end

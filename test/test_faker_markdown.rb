@@ -62,8 +62,8 @@ class TestFakerMarkdown < Test::Unit::TestCase
     assert_equal(test_trigger.length, 3)
   end
 
-  def test_random_markdown
-    test_trigger = @tester.random_markdown
+  def test_random
+    test_trigger = @tester.random
 
     assert_instance_of( String, test_trigger)
   end
