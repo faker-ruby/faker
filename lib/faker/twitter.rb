@@ -85,14 +85,14 @@ module Faker
         status
       end
 
+      def screen_name
+        Faker::Internet.user_name(nil, ['_'])[0...20]
+      end
+
       private
 
       def id
         Faker::Number.between(1, 9_223_372_036_854_775_807)
-      end
-
-      def screen_name
-        Faker::Internet.user_name(nil, ['_'])[0...20]
       end
 
       def created_at
