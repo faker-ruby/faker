@@ -1,6 +1,6 @@
 module Faker
   class Blog < Base
-    class << self      
+    class << self
       def author
         {
           name: Faker::Name.unique.name,
@@ -8,20 +8,20 @@ module Faker
         }
       end
 
-      def post
+      def post(author = nil)
         {
           title: self.title,
           body: self.body,
-          author: nil
+          author: author
         }
       end
 
-      def comment
+      def comment(post = nil)
         {
           nickname: self.nickname,
           email: Faker::Internet.email,
           body: translate('faker.blog.comment').sample,
-          post: nil
+          post: post
         }
       end
 

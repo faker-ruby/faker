@@ -33,4 +33,12 @@ class TestFakerBlog < Test::Unit::TestCase
   def test_comment_type
     assert @tester.comment.class == Hash
   end
+
+  def test_post_params
+    assert @tester.post({name: "author"})[:author][:name].class == String
+  end
+
+  def test_comment_params
+    assert @tester.comment({title: "title"})[:post][:title].class == String
+  end
 end
