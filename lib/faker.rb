@@ -252,6 +252,7 @@ require 'faker/harry_potter'
 require 'faker/friends'
 require 'faker/rick_and_morty'
 require 'faker/matz'
+require 'faker/dragon_ball'
 
 require 'extensions/array'
 require 'extensions/symbol'
