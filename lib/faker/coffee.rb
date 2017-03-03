@@ -1,7 +1,5 @@
 module Faker
   class Coffee < Base
-    flexible :coffee
-
     class << self
       def blend_name
         parse('coffee.blend_name')
