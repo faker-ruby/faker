@@ -1,6 +1,10 @@
 module Faker
   class Number < Base
     class << self
+      def boolean
+        rand(2) == 1
+      end
+
       def number(digits)
         num = ''
         if digits > 1
