@@ -2,7 +2,7 @@ module Faker
   class Music < Base
     class << self
       def key
-        keys.sample + key_variants.sample(random: Faker::Config.random)
+        keys.sample(random: Faker::Config.random) + key_variants.sample(random: Faker::Config.random)
       end
 
       def chord

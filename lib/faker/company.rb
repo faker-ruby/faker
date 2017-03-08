@@ -57,7 +57,7 @@ module Faker
         # Valid leading digit: 8, 9
         mod11_check = nil
         while mod11_check.nil?
-          base = [[8, 9].sample(random: Faker::Config.random), ('%07d' % rand(10 ** 7))].join
+          base = [[8, 9].sample(random: Faker::Config.random), ('%07d' % Faker::Config.random.rand(10 ** 7))].join
           mod11_check = mod11(base)
         end
         base + mod11_check.to_s

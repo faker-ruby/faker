@@ -14,8 +14,8 @@ module Faker
         )
         word_list = word_list * ((resolved_num / word_list.length) + 1)
 
-        return word_list.shuffle[0, resolved_num] if spaces_allowed
-        words = word_list.shuffle[0, resolved_num]
+        return word_list.shuffle(random: Faker::Config.random)[0, resolved_num] if spaces_allowed
+        words = word_list.shuffle(random: Faker::Config.random)[0, resolved_num]
         words.each_with_index { |w, i| words[i] = word if w.match(/\s/) }
       end
 

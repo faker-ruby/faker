@@ -15,7 +15,7 @@ module Faker
           (supplemental ? translate('faker.lorem.supplemental') : [])
         )
         word_list = word_list * ((resolved_num / word_list.length) + 1)
-        word_list.shuffle[0, resolved_num]
+        word_list.shuffle(random: Faker::Config.random)[0, resolved_num]
       end
 
       def character

@@ -27,10 +27,10 @@ class TestFaker < Test::Unit::TestCase
   end
 
   def test_deterministic_rand_in_range
-    seed = srand
-    srand(seed)
+    Faker::Config.random = Random.new(42)
     v = Faker::Base.rand_in_range(0, 1000)
-    srand(seed)
+
+    Faker::Config.random = Random.new(42)
     assert v == Faker::Base.rand_in_range(0, 1000)
   end
   

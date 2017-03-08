@@ -73,7 +73,7 @@ module Faker
         with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
       end
 
-      def fix_umlauts(string)
+      def fix_umlauts(string='')
         Char.fix_umlauts(string)
       end
 
@@ -93,7 +93,11 @@ module Faker
       end
 
       def ip_v4_address
-        (1..4).map { Faker::Config.random.rand(2..254) }.join('.')
+        ary = (2..254).to_a
+        [ary.sample(:random => Faker::Config.random),
+        ary.sample(:random => Faker::Config.random),
+        ary.sample(:random => Faker::Config.random),
+        ary.sample(:random => Faker::Config.random)].join('.')
       end
 
       def private_ip_v4_address
@@ -165,7 +169,7 @@ module Faker
       end
 
       def device_token
-        Faker::Config.random.rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
+        Faker::Config.random.rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle(random: Faker::Config.random).join
       end
     end
   end
