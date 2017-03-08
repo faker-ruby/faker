@@ -25,7 +25,7 @@ private
   def deterministic_random? first, method_name
     second= eval(method_name)
     (first== second) || raise(
-      "#{method_name} has an entropy leak; use \"Faker::Config.random.rand\""
+      "#{method_name} has an entropy leak; use \"Faker::Config.random.rand\" or \"Array#sample(random: Faker::Config.random)\". Method to lookup for: sample, shuffle, rand"
     )
   end
 
