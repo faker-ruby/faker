@@ -26,6 +26,14 @@ class TestFaker < Test::Unit::TestCase
     end
   end
 
+  def test_deterministic_fetch
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.fetch('name.first_name')
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.fetch('name.first_name')
+  end
+
   def test_deterministic_rand_in_range
     Faker::Config.random = Random.new(42)
     v = Faker::Base.rand_in_range(0, 1000)
