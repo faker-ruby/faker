@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.add_runtime_dependency('i18n', '~> 0.5')
+  s.required_ruby_version = '>= 2.1'
 
   s.files         = Dir['lib/**/*'] + %w(History.md License.txt CHANGELOG.md README.md)
   s.require_paths = ["lib"]

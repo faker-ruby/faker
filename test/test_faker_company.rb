@@ -29,6 +29,13 @@ class TestFakerCompany < Test::Unit::TestCase
     assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
   end
 
+  def test_norwegian_organisation_number
+    org_no = @tester.norwegian_organisation_number
+    assert org_no.match(/\d{9}/)
+    assert [8, 9].include?(org_no[0].to_i)
+    assert org_no[8] == @tester.send(:mod11, org_no[0..7]).to_s
+  end
+
   def test_australian_business_number
     abn = @tester.australian_business_number
     checksum = abn_checksum(abn)
@@ -41,7 +48,7 @@ class TestFakerCompany < Test::Unit::TestCase
     assert @tester.profession.match(/[a-z ]+\.?/)
   end
 
-  private 
+  private
 
     def abn_checksum(abn)
       abn_weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
@@ -49,6 +56,6 @@ class TestFakerCompany < Test::Unit::TestCase
       abn.split('').map(&:to_i).each_with_index.map do |n, i|
         (i == 0 ? n-1 : n) * abn_weights[i]
       end.inject(:+)
-    end  
+    end
 
 end

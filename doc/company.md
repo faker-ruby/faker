@@ -22,6 +22,8 @@ Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/colo
 
 Faker::Company.swedish_organisation_number #=> "7962578022"
 
+Faker::Company.norwegian_organisation_number #=> "839071558"
+
 # Generate an Australian Business Number
 Faker::Company.australian_business_number #=> "81137773602"
 

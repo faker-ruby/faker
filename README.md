@@ -45,19 +45,24 @@ Contents
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
   - [Faker::Food](doc/food.md)
+  - [Faker::Friends](doc/friends.md)
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
   - [Faker::Hacker](doc/hacker.md)
+  - [Faker::HarryPotter](doc/harry_potter.md)
   - [Faker::Hipster](doc/hipster.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
   - [Faker::Lorem](doc/lorem.md)
+  - [Faker::Matz](doc/matz.md)
   - [Faker::Music](doc/music.md)
   - [Faker::Name](doc/name.md)
   - [Faker::Number](doc/number.md)
+  - [Faker::Omniauth](doc/omniauth.md)
   - [Faker::PhoneNumber](doc/phone_number.md)
   - [Faker::Placeholdit](doc/placeholdit.md)
   - [Faker::Pokemon](doc/pokemon.md)
+  - [Faker::RickAndMorty](doc/rick_and_morty.md)
   - [Faker::RockBand](doc/rock_band.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Space](doc/space.md)
@@ -66,8 +71,10 @@ Contents
   - [Faker::Team](doc/team.md)
   - [Faker::Time](doc/time.md)
   - [Faker::TwinPeaks](doc/twin_peaks.md)
+  - [Faker::Twitter](doc/twitter.md)
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
+  - [Faker::Zelda](doc/zelda.md)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -92,6 +99,21 @@ Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 Prefix your method call with `unique`. For example:
 ```ruby
 Faker::Name.unique.name # This will return a unique name every time it is called
+```
+
+If too many unique values are requested from a generator that has a limited
+number of potential values, a `Faker::UniqueGenerator::RetryLimitExceeded`
+exception may be raised. It is possible to clear the record of unique values
+that have been returned, for example between tests.
+```ruby
+Faker::Name.unique.clear # Clears used values for Faker::Name
+Faker::UniqueGenerator.clear # Clears used values for all generators
+```
+It is also possible to add a random number to the end of faker data to increase the 
+likelihood of unique data being generated. For example:
+
+```ruby
+Faker::Name.unique + ((1..1000).to_a).sample
 ```
 
 ## Customization
