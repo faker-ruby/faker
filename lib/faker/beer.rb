@@ -25,15 +25,15 @@ module Faker
       end
 
       def ibu
-        rand(10..100).to_s + ' IBU'
+        Faker::Config.random.rand(10..100).to_s + ' IBU'
       end
 
       def alcohol
-        rand(2.0..10.0).round(1).to_s + '%'
+        Faker::Config.random.rand(2.0..10.0).round(1).to_s + '%'
       end
 
       def blg
-        rand(5.0..20.0).round(1).to_s + '°Blg'
+        Faker::Config.random.rand(5.0..20.0).round(1).to_s + '°Blg'
       end
     end
   end

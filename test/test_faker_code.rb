@@ -10,10 +10,10 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_deterministic_npi
-    seed = srand
-    srand(seed)
+    Faker::Config.random = Random.new(42)
     v = @tester.npi
-    srand(seed)
+    Faker::Config.random = Random.new(42)
+
     assert v == @tester.npi
   end
 

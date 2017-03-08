@@ -5,7 +5,7 @@ module Faker
 
     class << self
       def say_something_smart
-        phrases.sample
+        phrases.sample(random: Faker::Config.random)
       end
 
       def abbreviation

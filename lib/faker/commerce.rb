@@ -16,7 +16,7 @@ module Faker
 
       def department(max = 3, fixed_amount = false)
         num = max if fixed_amount
-        num ||= 1 + rand(max)
+        num ||= 1 + Faker::Config.random.rand(max)
 
         categories = categories(num)
 
@@ -33,8 +33,7 @@ module Faker
       end
 
       def price(range=0..100.0, as_string=false)
-        random = Random::DEFAULT
-        price = (random.rand(range) * 100).floor/100.0
+        price = (Faker::Config.random.rand(range) * 100).floor/100.0
         if as_string
           price_parts = price.to_s.split('.')
           price = price_parts[0] + price_parts[-1].ljust(2, "0")

@@ -11,13 +11,13 @@ module Faker
       end
 
       def safe_email(name = nil)
-        [user_name(name), 'example.'+ %w[org com net].sample].join('@')
+        [user_name(name), 'example.'+ %w[org com net].sample(random: Faker::Config.random)].join('@')
       end
 
       def user_name(specifier = nil, separators = %w(. _))
         with_locale(:en) do
           if specifier.respond_to?(:scan)
-            return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
+            return specifier.scan(/\w+/).shuffle.join(separators.sample(random: Faker::Config.random)).downcase
           elsif specifier.kind_of?(Integer)
             # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error 
             raise ArgumentError, "Given argument is too large" if specifier > 10**6
@@ -40,8 +40,8 @@ module Faker
             Char.prepare(Name.first_name),
             [Name.first_name, Name.last_name].map{ |name|
               Char.prepare(name)
-            }.join(separators.sample)
-          ].sample
+            }.join(separators.sample(random: Faker::Config.random))
+          ].sample(random: Faker::Config.random)
         end
       end
 
@@ -49,7 +49,7 @@ module Faker
         temp = Lorem.characters(min_length)
         diff_length = max_length - min_length
         if diff_length > 0
-          diff_rand = rand(diff_length + 1)
+          diff_rand = Faker::Config.random.rand(diff_length + 1)
           temp += Lorem.characters(diff_rand)
         end
 
@@ -61,8 +61,8 @@ module Faker
 
         if special_chars
           chars = %w(! @ # $ % ^ & *)
-          Random.rand(min_length).times do |i|
-            temp[i] = chars[Random.rand(chars.length)]
+          Faker::Config.random.rand(min_length).times do |i|
+            temp[i] = chars[Faker::Config.random.rand(chars.length)]
           end
         end
 
@@ -73,7 +73,7 @@ module Faker
         with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
       end
 
-      def fix_umlauts(string)
+      def fix_umlauts(string='')
         Char.fix_umlauts(string)
       end
 
@@ -88,12 +88,16 @@ module Faker
 
       def mac_address(prefix='')
         prefix_digits = prefix.split(':').map{ |d| d.to_i(16) }
-        address_digits = (6 - prefix_digits.size).times.map{ rand(256) }
+        address_digits = (6 - prefix_digits.size).times.map{ Faker::Config.random.rand(256) }
         (prefix_digits + address_digits).map{ |d| '%02x' % d }.join(':')
       end
 
       def ip_v4_address
-        (1..4).map { rand(2..254) }.join('.')
+        ary = (2..254).to_a
+        [ary.sample(:random => Faker::Config.random),
+        ary.sample(:random => Faker::Config.random),
+        ary.sample(:random => Faker::Config.random),
+        ary.sample(:random => Faker::Config.random)].join('.')
       end
 
       def private_ip_v4_address
@@ -144,15 +148,15 @@ module Faker
       end
 
       def ip_v4_cidr
-        "#{ip_v4_address}/#{1 + rand(31)}"
+        "#{ip_v4_address}/#{1 + Faker::Config.random.rand(31)}"
       end
 
       def ip_v6_address
-        (1..8).map { rand(65536).to_s(16) }.join(':')
+        (1..8).map { Faker::Config.random.rand(65536).to_s(16) }.join(':')
       end
 
       def ip_v6_cidr
-        "#{ip_v6_address}/#{1 + rand(127)}"
+        "#{ip_v6_address}/#{1 + Faker::Config.random.rand(127)}"
       end
 
       def url(host = domain_name, path = "/#{user_name}", scheme = 'http')
@@ -160,12 +164,12 @@ module Faker
       end
 
       def slug(words = nil, glue = nil)
-        glue ||= %w[- _ .].sample
+        glue ||= %w[- _ .].sample(random: Faker::Config.random)
         (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
       end
 
       def device_token
-        rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
+        Faker::Config.random.rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle(random: Faker::Config.random).join
       end
     end
   end
