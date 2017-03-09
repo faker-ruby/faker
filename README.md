@@ -64,6 +64,7 @@ Contents
   - [Faker::Pokemon](doc/pokemon.md)
   - [Faker::RickAndMorty](doc/rick_and_morty.md)
   - [Faker::RockBand](doc/rock_band.md)
+  - [Faker::RuPaul](doc/rupaul.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarWars](doc/star_wars.md)
@@ -109,7 +110,7 @@ that have been returned, for example between tests.
 Faker::Name.unique.clear # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
 ```
-It is also possible to add a random number to the end of faker data to increase the 
+It is also possible to add a random number to the end of faker data to increase the
 likelihood of unique data being generated. For example:
 
 ```ruby
