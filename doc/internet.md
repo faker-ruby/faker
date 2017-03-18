@@ -23,6 +23,9 @@ Faker::Internet.user_name('Nancy') #=> "nancy"
 
 Faker::Internet.user_name('Nancy Johnson', %w(. _ -)) #=> "johnson-nancy"
 
+# Optional arguments: min_length=5, max_length=8
+Faker::Internet.user_name(5..8)
+
 # Optional arguments: min_length=8, max_length=16
 Faker::Internet.password #=> "vg5msvy1uerg7"
 
