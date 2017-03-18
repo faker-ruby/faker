@@ -2,7 +2,7 @@ module Faker
   class Hipster < Base
     class << self
       def word
-        random_word = translate('faker.hipster.words').sample
+        random_word = sample(translate('faker.hipster.words'))
         random_word.match(/\s/) ? word : random_word
       end
 
@@ -14,8 +14,8 @@ module Faker
         )
         word_list = word_list * ((resolved_num / word_list.length) + 1)
 
-        return word_list.shuffle[0, resolved_num] if spaces_allowed
-        words = word_list.shuffle[0, resolved_num]
+        return shuffle(word_list)[0, resolved_num] if spaces_allowed
+        words = shuffle(word_list)[0, resolved_num]
         words.each_with_index { |w, i| words[i] = word if w.match(/\s/) }
       end
 

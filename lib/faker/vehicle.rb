@@ -7,10 +7,10 @@ module Faker
     class << self
       #ISO 3779
       def vin
-        _, wmi, wmi_ext = fetch_all('vehicle.manufacture').sample
+        _, wmi, wmi_ext = sample(fetch_all('vehicle.manufacture'))
 
         c = VIN_CHARS.split('').reject{ |n| n == '.'}
-        vehicle_identification_number = wmi.split('').concat( Array.new(14) { c.sample } )
+        vehicle_identification_number = wmi.split('').concat( Array.new(14) { sample(c) } )
         (12..14).to_a.each_with_index { |n, i| vehicle_identification_number[n] = wmi_ext[i] } unless wmi_ext.nil?
         vehicle_identification_number[10] = fetch('vehicle.year')
         vehicle_identification_number[8] = vin_checksum(vehicle_identification_number)
@@ -19,7 +19,7 @@ module Faker
       end
 
       def manufacture
-        fetch_all('vehicle.manufacture').sample.first
+        sample(fetch_all('vehicle.manufacture')).first
       end
 
     private

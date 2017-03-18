@@ -2,11 +2,11 @@ module Faker
   class Music < Base
     class << self
       def key
-        keys.sample + key_variants.sample
+        sample(keys) + sample(key_variants)
       end
 
       def chord
-        key + chord_types.sample
+        key + sample(chord_types)
       end
 
       def instrument

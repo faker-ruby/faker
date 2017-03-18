@@ -2,35 +2,35 @@ module Faker
   class StarWars < Base
     class << self
       def character
-        characters.sample
+        sample(characters)
       end
 
       def droid
-        droids.sample
+        sample(droids)
       end
 
       def planet
-        planets.sample
+        sample(planets)
       end
 
       def quote
-        quotes.sample
+        sample(quotes)
       end
 
       def specie
-        species.sample
+        sample(species)
       end
 
       def vehicle
-        vehicles.sample
+        sample(vehicles)
       end
 
       def wookie_sentence
-        sentence = wookie_words.sample.capitalize
+        sentence = sample(wookie_words).capitalize
 
-        rand(0..10).times { sentence += " " + wookie_words.sample}
+        rand(0..10).times { sentence += " " + sample(wookie_words)}
 
-        sentence + ['.','?','!'].sample
+        sentence + sample(['.','?','!'])
       end
 
       def characters

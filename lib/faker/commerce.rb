@@ -33,8 +33,7 @@ module Faker
       end
 
       def price(range=0..100.0, as_string=false)
-        random = Random::DEFAULT
-        price = (random.rand(range) * 100).floor/100.0
+        price = (rand(range) * 100).floor/100.0
         if as_string
           price_parts = price.to_s.split('.')
           price = price_parts[0] + price_parts[-1].ljust(2, "0")
