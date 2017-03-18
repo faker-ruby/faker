@@ -82,7 +82,7 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_price_with_srand
-    srand(12345)
+    Faker::Config.random = Random.new(12345)
     assert_equal 92.96, @tester.price
   end
 

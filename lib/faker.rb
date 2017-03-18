@@ -18,9 +18,12 @@ I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
 module Faker
   class Config
     @locale = nil
+    @random = nil
 
     class << self
       attr_writer :locale
+      attr_writer :random
+
       def locale
         @locale || I18n.locale
       end
@@ -29,6 +32,9 @@ module Faker
         @locale
       end
 
+      def random
+        @random || Random::DEFAULT
+      end
     end
   end
 
@@ -44,7 +50,7 @@ module Faker
       end
 
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { ULetters.sample }
+        letter_string.gsub(/\?/) { sample(ULetters) }
       end
 
       def bothify(string)
@@ -75,21 +81,20 @@ module Faker
         re.
           gsub(/^\/?\^?/, '').gsub(/\$?\/?$/, '').                                                                      # Ditch the anchors
           gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}').                                                             # All {2} become {2,2} and ? become {0,1}
-          gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                # [12]{1,2} becomes [12] or [12][12]
-          gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
-          gsub(/(\\?.)\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
-          gsub(/\((.*?)\)/) {|match| match.gsub(/[\(\)]/, '').split('|').sample }.                                      # (this|that) becomes 'this' or 'that'
-          gsub(/\[([^\]]+)\]/) {|match| match.gsub(/(\w\-\w)/) {|range| Array(Range.new(*range.split('-'))).sample } }. # All A-Z inside of [] become C (or X, or whatever)
-          gsub(/\[([^\]]+)\]/) {|match| $1.split('').sample }.                                                          # All [ABC] become B (or A or C)
-          gsub('\d') {|match| Numbers.sample }.
-          gsub('\w') {|match| Letters.sample }
+          gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) {|match| $1 * sample(Array(Range.new($2.to_i, $3.to_i))) }.                # [12]{1,2} becomes [12] or [12][12]
+          gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) {|match| $1 * sample(Array(Range.new($2.to_i, $3.to_i))) }.                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+          gsub(/(\\?.)\{(\d+),(\d+)\}/) {|match| $1 * sample(Array(Range.new($2.to_i, $3.to_i))) }.                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+          gsub(/\((.*?)\)/) {|match| sample(match.gsub(/[\(\)]/, '').split('|')) }.                                      # (this|that) becomes 'this' or 'that'
+          gsub(/\[([^\]]+)\]/) {|match| match.gsub(/(\w\-\w)/) {|range| sample(Array(Range.new(*range.split('-')))) } }. # All A-Z inside of [] become C (or X, or whatever)
+          gsub(/\[([^\]]+)\]/) {|match| sample($1.split('')) }.                                                          # All [ABC] become B (or A or C)
+          gsub('\d') {|match| sample(Numbers) }.
+          gsub('\w') {|match| sample(Letters) }
       end
 
       # Helper for the common approach of grabbing a translation
       # with an array of values and selecting one of them.
       def fetch(key)
-        fetched = translate("faker.#{key}")
-        fetched = fetched.sample if fetched.respond_to?(:sample)
+        fetched = sample(translate("faker.#{key}"))
         if fetched && fetched.match(/^\//) and fetched.match(/\/$/) # A regex
           regexify(fetched)
         else
@@ -171,7 +176,7 @@ module Faker
 
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
         if translation = translate(:faker)[@flexible_key][m]
-          translation.respond_to?(:sample) ? translation.sample : translation
+          sample(translation)
         else
           super
         end
@@ -186,73 +191,23 @@ module Faker
       def unique(max_retries = 10_000)
         @unique_generator ||= UniqueGenerator.new(self, max_retries)
       end
+
+      def sample(list)
+        list.respond_to?(:sample) ? list.sample(random: Faker::Config.random) : list
+      end
+
+      def shuffle(list)
+        list.shuffle(random: Faker::Config.random)
+      end
+
+      def rand(max = nil)
+        max ? Faker::Config.random.rand(max) : Faker::Config.random.rand
+      end
     end
   end
 end
 
-require 'faker/address'
-require 'faker/cat'
-require 'faker/code'
-require 'faker/color'
-require 'faker/company'
-require 'faker/university'
-require 'faker/finance'
-require 'faker/internet'
-require 'faker/file'
-require 'faker/lorem'
-require 'faker/name'
-require 'faker/team'
-require 'faker/phone_number'
-require 'faker/business'
-require 'faker/commerce'
-require 'faker/version'
-require 'faker/number'
-require 'faker/bitcoin'
-require 'faker/avatar'
-require 'faker/placeholdit'
-require 'faker/date'
-require 'faker/time'
-require 'faker/number'
-require 'faker/hacker'
-require 'faker/app'
-require 'faker/id_number'
-require 'faker/slack_emoji'
-require 'faker/book'
-require 'faker/hipster'
-require 'faker/shakespeare'
-require 'faker/superhero'
-require 'faker/beer'
-require 'faker/boolean'
-require 'faker/star_wars'
-require 'faker/chuck_norris'
-require 'faker/crypto'
-require 'faker/educator'
-require 'faker/space'
-require 'faker/yoda'
-require 'faker/music'
-require 'faker/artist'
-require 'faker/vehicle'
-require 'faker/game_of_thrones'
-require 'faker/pokemon'
-require 'faker/food'
-require 'faker/lorem_pixel'
-require 'faker/esport'
-require 'faker/bank'
-require 'faker/ancient'
-require 'faker/twin_peaks'
-require 'faker/lord_of_the_rings'
-require 'faker/rock_band'
-require 'faker/fillmurray'
-require 'faker/job'
-require 'faker/demographic'
-require 'faker/zelda'
-require 'faker/omniauth'
-require 'faker/twitter'
-require 'faker/harry_potter'
-require 'faker/friends'
-require 'faker/rick_and_morty'
-require 'faker/matz'
-require 'faker/coffee'
+Dir.glob(File.join(File.dirname(__FILE__), 'faker','*.rb')).each {|f| require f }
 
 require 'extensions/array'
 require 'extensions/symbol'

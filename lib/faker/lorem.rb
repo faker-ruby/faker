@@ -5,7 +5,7 @@ module Faker
 
     class << self
       def word
-        translate('faker.lorem.words').sample
+        sample(translate('faker.lorem.words'))
       end
 
       def words(num = 3, supplemental = false)
@@ -15,17 +15,17 @@ module Faker
           (supplemental ? translate('faker.lorem.supplemental') : [])
         )
         word_list = word_list * ((resolved_num / word_list.length) + 1)
-        word_list.shuffle[0, resolved_num]
+        shuffle(word_list)[0, resolved_num]
       end
 
       def character
-        CHARACTERS.sample
+        sample(CHARACTERS)
       end
 
       def characters(char_count = 255)
         char_count = resolve(char_count)
         return '' if char_count.to_i < 1
-        Array.new(char_count) { CHARACTERS.sample }.join
+        Array.new(char_count) { sample(CHARACTERS) }.join
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
@@ -58,7 +58,7 @@ module Faker
       # All other values are simply returned.
       def resolve(value)
         case value
-        when Array then value.sample
+        when Array then sample(value)
         when Range then rand value
         else value
         end
