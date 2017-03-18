@@ -550,6 +550,8 @@ en:
         "Everyone has an individual background. Someone may come from Python, someone else may come from Perl, and they may be surprised by different aspects of the language. Then they come up to me and say, 'I was surprised by this feature of the language, so therefore Ruby violates the principle of least surprise.' Wait. Wait. The principle of least surprise is not for you only.",
         "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too."
       ]
+    dragon_ball:
+      characters: ["Goku", "Bulma", "Kami", "Yamcha", "Krillin", "Tien", "Piccolo", "Gohan", "Vegeta", "Kid Trunks", "Goten", "Future Trunks", "Pan", "Android 18", "Android 16", "Android 17", "Android 19", "Android 20", "Beerus", "Chaozu", "Chi-Chi", "Launch", "Mr. Satan", "Oolong", "Puar", "Videl", "Whis", "Yajirobe", "Demon King Piccolo", "Freeza", "Cell", "Majin Buu", "Goku Black", "Zamasu", "Baba", "Bra", "Bardock", "Champa", "Dende", "Dr. Gero", "Captain Ginyu", "Grandpa Gohan", "Jaco", "King Kai", "Supreme Kai", "Elder Kai", "Mr. Popo", "Nappa", "Uub", "Pilaf", "Raditz", "Shenron", "Vados", "Zarbon", "Broly", "Cooler", "King Cold", "Garlic Jr", "King Vegeta", "Nail", "Guru", "Hit", "Super Saiyan Goku", "Super Saiyan 2 Goku", "Super Saiyan 3 Goku", "Super Saiyan Vegeta", "Super Saiyan 2 Vegeta", "Majin Vegeta", "Super Saiyan Gohan", "Super Saiyan 2 Gohan", "Super Saiyan Goten", "Super Saiyan Trunks", "Vegito", "Gogeta", "Super Saiyan Blue Goku", "Super Saiyan Blue Vegeta", "Mystic Gohan"]
     rupaul:
       quotes: [
         "Glamazon!",
