@@ -36,6 +36,7 @@ Contents
   - [Faker::Cat](doc/cat.md)
   - [Faker::ChuckNorris](doc/chuck_norris.md)
   - [Faker::Code](doc/code.md)
+  - [Faker::Coffee](doc/coffee.md)
   - [Faker::Color](doc/color.md)
   - [Faker::Commerce](doc/commerce.md)
   - [Faker::Company](doc/company.md)
