@@ -42,7 +42,7 @@ module Faker
               family_name: auth.last_name,
               profile: "https://plus.google.com/#{uid}",
               picture: image,
-              gender: ["male", "female"].shuffle.pop,
+              gender: gender,
               birthday: Date.backward(36400).strftime("%Y-%m-%d"),
               local: "en",
               hd: "#{Company.name.downcase}.com"
@@ -252,11 +252,11 @@ module Faker
         end
 
         def gender
-          ["male", "female"].shuffle.pop
+          shuffle(["male", "female"]).pop
         end
 
         def timezone
-          (-12..12).to_a.shuffle.pop
+          shuffle((-12..12).to_a).pop
         end
 
         def time_now
@@ -280,11 +280,11 @@ module Faker
         end
 
         def random_number_from_range(range)
-          range.to_a.shuffle.pop
+          shuffle(range.to_a).pop
         end
 
         def random_boolean
-          [true, false].shuffle.pop
+          shuffle([true, false]).pop
         end
 
       end

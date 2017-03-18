@@ -64,7 +64,7 @@ module Faker
 
         # Fill in the first two values of the string based with the specified prefix.
         # Reporting Body Identifier list: http://en.wikipedia.org/wiki/Reporting_Body_Identifier
-        arr = RBI.sample
+        arr = sample(RBI)
         str[0] = arr[0].to_i
         str[1] = arr[1].to_i
         pos = 2

@@ -11,15 +11,15 @@ module Faker
       end
 
       def safe_email(name = nil)
-        [user_name(name), 'example.'+ %w[org com net].sample].join('@')
+        [user_name(name), 'example.'+ sample(%w[org com net])].join('@')
       end
 
       def user_name(specifier = nil, separators = %w(. _))
         with_locale(:en) do
           if specifier.respond_to?(:scan)
-            return specifier.scan(/\w+/).shuffle.join(separators.sample).downcase
+            return specifier.scan(/\w+/).shuffle.join(sample(separators)).downcase
           elsif specifier.kind_of?(Integer)
-            # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error 
+            # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error
             raise ArgumentError, "Given argument is too large" if specifier > 10**6
             tries = 0 # Don't try forever in case we get something like 1_000_000.
             begin
@@ -36,12 +36,12 @@ module Faker
             return result[0...specifier.max]
           end
 
-          [
+          sample([
             Char.prepare(Name.first_name),
             [Name.first_name, Name.last_name].map{ |name|
               Char.prepare(name)
-            }.join(separators.sample)
-          ].sample
+            }.join(sample(separators))
+          ])
         end
       end
 
@@ -61,8 +61,8 @@ module Faker
 
         if special_chars
           chars = %w(! @ # $ % ^ & *)
-          Random.rand(min_length).times do |i|
-            temp[i] = chars[Random.rand(chars.length)]
+          rand(min_length).times do |i|
+            temp[i] = chars[rand(chars.length)]
           end
         end
 
@@ -73,7 +73,7 @@ module Faker
         with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
       end
 
-      def fix_umlauts(string)
+      def fix_umlauts(string='')
         Char.fix_umlauts(string)
       end
 
@@ -93,7 +93,8 @@ module Faker
       end
 
       def ip_v4_address
-        (1..4).map { rand(2..254) }.join('.')
+        ary = (2..254).to_a
+        [ sample(ary), sample(ary), sample(ary), sample(ary) ].join('.')
       end
 
       def private_ip_v4_address
@@ -160,12 +161,12 @@ module Faker
       end
 
       def slug(words = nil, glue = nil)
-        glue ||= %w[- _ .].sample
+        glue ||= sample(%w[- _ .])
         (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
       end
 
       def device_token
-        rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a.shuffle.join
+        shuffle(rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a).join
       end
     end
   end

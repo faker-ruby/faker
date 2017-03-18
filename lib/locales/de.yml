@@ -31,6 +31,39 @@ de:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} und #{Name.last_name}"
 
+    compass:
+      cardinal:
+        word: ['Norden', 'Osten', 'Süden', 'Westen']
+        abbreviation:  ['N', 'E', 'S', 'W']
+        azimuth:  ['0', '90', '180', '270']
+      ordinal:
+        word:  ['Nordosten', 'Südosten', 'Südwesten', 'Nordwesten']
+        abbreviation:  ['NO', 'SO', 'SW', 'NW']
+        azimuth:  ['45', '135', '225', '315']
+      half-wind:
+        word:  ['Nord-Nordost', 'Ost-Nordost', 'Ost-Südost', 'Süd-Südost', 'Süd-Südwest', 'West-Südwest', 'West-Nordwest', 'Nord-Nordwest']
+        abbreviation:  ['NNO', 'ONO', 'OSO', 'SSO', 'SSW', 'WSW', 'WNW', 'NNW']
+        azimuth:  ['22.5', '67.5', '112.5', '157.5', '202.5', '247.5', '292.5', '337.5']
+      quarter-wind:
+        word:  ['Norden von Osten', 'Nordosten von Norden', 'Nordosten von Osten', 'Osten von Norden', 'Osten von Süden', 'Südosten von Osten', 'Südosten von Süden', 'Süden von Osten', 'Süden von Westen', 'Südwesten von Süden', 'Südwesten von Westen', 'Westen von Süden', 'Westen von Norden', 'Nordwesten von Westen', 'Nordwesten von Norden', 'Norden von Westen']
+        abbreviation:  ['NvO', 'NOvN', 'NOvO', 'OvN', 'OvS', 'SOvO', 'SOvS', 'SvO', 'SvW', 'SWvS', 'SWvW', 'WvS', 'WvN', 'NWvW', 'NWvN', 'NvW']
+        azimuth:  ['11.25', '33.75', '56.25', '78.75', '101.25', '123.75', '146.25', '168.75', '191.25', '213.75', '236.25', '258.75', '281.25', '303.75', '326.25', '348.75']
+      direction:
+        - "#{cardinal}"
+        - "#{ordinal}"
+        - "#{half_wind}"
+        - "#{quarter_wind}"
+      abbreviation:
+        - "#{cardinal_abbreviation}"
+        - "#{ordinal_abbreviation}"
+        - "#{half_wind_abbreviation}"
+        - "#{quarter_wind_abbreviation}"
+      azimuth:
+        - "#{cardinal_azimuth}"
+        - "#{ordinal_azimuth}"
+        - "#{half_wind_azimuth}"
+        - "#{quarter_wind_azimuth}"
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com, gmx.de, web.de, mail.de, freenet.de]
       domain_suffix: [com, info, name, net, org, de, ch]
