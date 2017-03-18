@@ -13,6 +13,7 @@ if I18n.respond_to?(:enforce_available_locales=)
   I18n.enforce_available_locales = true
 end
 I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
+I18n.reload! if I18n.backend.initialized?
 
 
 module Faker
