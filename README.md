@@ -39,6 +39,7 @@ Contents
   - [Faker::Color](doc/color.md)
   - [Faker::Commerce](doc/commerce.md)
   - [Faker::Company](doc/company.md)
+  - [Faker::Compass](doc/compass.md)
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::Date](doc/date.md)
   - [Faker::Demographic](doc/demographic.md)
@@ -110,7 +111,7 @@ that have been returned, for example between tests.
 Faker::Name.unique.clear # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
 ```
-It is also possible to add a random number to the end of faker data to increase the 
+It is also possible to add a random number to the end of faker data to increase the
 likelihood of unique data being generated. For example:
 
 ```ruby

@@ -103,6 +103,39 @@ en:
       industry: ["Defense & Space", "Computer Hardware", "Computer Software", "Computer Networking", "Internet", "Semiconductors", "Telecommunications", "Law Practice", "Legal Services", "Management Consulting", "Biotechnology", "Medical Practice", "Hospital & Health Care", "Pharmaceuticals", "Veterinary", "Medical Devices", "Cosmetics", "Apparel & Fashion", "Sporting Goods", "Tobacco", "Supermarkets", "Food Production", "Consumer Electronics", "Consumer Goods", "Furniture", "Retail", "Entertainment", "Gambling & Casinos", "Leisure, Travel & Tourism", "Hospitality", "Restaurants", "Sports", "Food & Beverages", "Motion Pictures and Film", "Broadcast Media", "Museums and Institutions", "Fine Art", "Performing Arts", "Recreational Facilities and Services", "Banking", "Insurance", "Financial Services", "Real Estate", "Investment Banking", "Investment Management", "Accounting", "Construction", "Building Materials", "Architecture & Planning", "Civil Engineering", "Aviation & Aerospace", "Automotive", "Chemicals", "Machinery", "Mining & Metals", "Oil & Energy", "Shipbuilding", "Utilities", "Textiles", "Paper & Forest Products", "Railroad Manufacture", "Farming", "Ranching", "Dairy", "Fishery", "Primary / Secondary Education", "Higher Education", "Education Management", "Research", "Military", "Legislative Office", "Judiciary", "International Affairs", "Government Administration", "Executive Office", "Law Enforcement", "Public Safety", "Public Policy", "Marketing and Advertising", "Newspapers", "Publishing", "Printing", "Information Services", "Libraries", "Environmental Services", "Package / Freight Delivery", "Individual & Family Services", "Religious Institutions", "Civic & Social Organization", "Consumer Services", "Transportationg / Trucking / Railroad", "Warehousing", "Airlines / Aviation", "Maritime", "Information Technology and Services", "Market Research", "Public Relations and Communications", "Design", "Nonprofit Organization Management", "Fund-Raising", "Program Development", "Writing and Editing", "Staffing and Recruiting", "Professional Training & Coaching", "Venture Capital & Private Equity", "Political Organization", "Translation and Localization", "Computer Games", "Events Services", "Arts and Crafts", "Electrical / Electronic Manufacturing", "Online Media", "Nanotechnology", "Music", "Logistics and Supply Chain", "Plastics", "Computer & Network Security", "Wireless", "Alternative Dispute Resolution", "Security and Investigations", "Facilities Services", "Outsourcing / Offshoring", "Health, Wellness and Fitness", "Alternative Medicine", "Media Production", "Animation", "Commercial Real Estate", "Capital Markets", "Think Tanks", "Philanthropy", "E-Learning", "Wholesale", "Import and Export", "Mechanical or Industrial Engineering", "Photography", "Human Resources", "Business Supplies and Equipment", "Mental Health Care", "Graphic Design", "International Trade and Development", "Wine and Spirits", "Luxury Goods & Jewelry", "Renewables & Environment", "Glass, Ceramics & Concrete", "Packaging and Containers", "Industrial Automation", "Government Relations"]
       profession: ["teacher", "actor", "musician", "philosopher", "writer", "doctor", "accountant", "agriculturist", "architect", "economist", "engineer", "interpreter", "attorney at law", "advocate", "librarian", "statistician", "human resources", "firefighter", "judge", "police officer", "astronomer", "biologist", "chemist", "physicist", "programmer", "web developer", "designer"]
 
+    compass:
+      cardinal:
+        word: ['north', 'east', 'south', 'west']
+        abbreviation:  ['N', 'E', 'S', 'W']
+        azimuth:  ['0', '90', '180', '270']
+      ordinal:
+        word:  ['northeast', 'southeast', 'southwest', 'northwest']
+        abbreviation:  ['NE', 'SE', 'SW', 'NW']
+        azimuth:  ['45', '135', '225', '315']
+      half-wind:
+        word:  ['north-northeast', 'east-northeast', 'east-southeast', 'south-southeast', 'south-southwest', 'west-southwest', 'west-northwest', 'north-northwest']
+        abbreviation:  ['NNE', 'ENE', 'ESE', 'SSE', 'SSW', 'WSW', 'WNW', 'NNW']
+        azimuth:  ['22.5', '67.5', '112.5', '157.5', '202.5', '247.5', '292.5', '337.5']
+      quarter-wind:
+        word:  ['north by east', 'northeast by north', 'northeast by east', 'east by north', 'east by south', 'southeast by east', 'southeast by south', 'south by east', 'south by west', 'southwest by south', 'southwest by west', 'west by south', 'west by north', 'northwest by west', 'northwest by north', 'north by west']
+        abbreviation:  ['NbE', 'NEbN', 'NEbE', 'EbN', 'EbS', 'SEbE', 'SEbS', 'SbE', 'SbW', 'SWbS', 'SWbW', 'WbS', 'WbN', 'NWbW', 'NWbN', 'NbW']
+        azimuth:  ['11.25', '33.75', '56.25', '78.75', '101.25', '123.75', '146.25', '168.75', '191.25', '213.75', '236.25', '258.75', '281.25', '303.75', '326.25', '348.75']
+      direction:
+        - "#{cardinal}"
+        - "#{ordinal}"
+        - "#{half_wind}"
+        - "#{quarter_wind}"
+      abbreviation:
+        - "#{cardinal_abbreviation}"
+        - "#{ordinal_abbreviation}"
+        - "#{half_wind_abbreviation}"
+        - "#{quarter_wind_abbreviation}"
+      azimuth:
+        - "#{cardinal_azimuth}"
+        - "#{ordinal_azimuth}"
+        - "#{half_wind_azimuth}"
+        - "#{quarter_wind_azimuth}"
+
     university:
       prefix: [The, Northern, North, Western, West, Southern, South, Eastern, East]
       suffix: [University, Institute, College, Academy]
