@@ -26,11 +26,44 @@ class TestFaker < Test::Unit::TestCase
     end
   end
 
+  def test_deterministic_numerify
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.numerify('###')
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.numerify('###')
+  end
+
+  def test_deterministic_regexify
+    re = /^(1-?)[2-8][0-1][0-9]-\d{3}-\d{4}$/
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.regexify(re)
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.regexify(re)
+  end
+
+  def test_deterministic_letterify
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.letterify('???')
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.letterify('???')
+  end
+
+  def test_deterministic_fetch
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.fetch('name.first_name')
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.fetch('name.first_name')
+  end
+
   def test_deterministic_rand_in_range
-    seed = srand
-    srand(seed)
+    Faker::Config.random = Random.new(42)
     v = Faker::Base.rand_in_range(0, 1000)
-    srand(seed)
+
+    Faker::Config.random = Random.new(42)
     assert v == Faker::Base.rand_in_range(0, 1000)
   end
   

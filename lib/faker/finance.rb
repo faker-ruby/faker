@@ -8,7 +8,7 @@ module Faker
     class << self
       def credit_card(*types)
         types = CREDIT_CARD_TYPES if types.empty?
-        type = types.sample
+        type = sample(types)
         template = numerify(fetch("credit_card.#{type}"))
 
         # calculate the luhn checksum digit

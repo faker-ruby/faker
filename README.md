@@ -12,7 +12,8 @@ development.
 ### NOTE
 
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
-  You must explicity specify when you require unique values, see [details](#ensuring-unique-values).
+  You must explicity specify when you require unique values, see [details](#ensuring-unique-values). 
+  Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
   List of all versions is [available here](https://github.com/stympy/faker/releases).
@@ -114,6 +115,23 @@ likelihood of unique data being generated. For example:
 
 ```ruby
 Faker::Name.unique + ((1..1000).to_a).sample
+```
+
+### Deterministic Random
+
+Faker supports seeding of its pseudo-random number generator (PRNG) to provide deterministic output of repeated method calls.
+
+```ruby
+Faker::Config.random = Random.new(42)
+Faker::Company.bs #=> "seize collaborative mindshare"
+Faker::Company.bs #=> "engage strategic platforms"
+Faker::Config.random = Random.new(42)
+Faker::Company.bs #=> "seize collaborative mindshare"
+Faker::Company.bs #=> "engage strategic platforms"
+
+Faker::Config.random = nil # seeds the PRNG using default entropy sources
+Faker::Config.random.seed #=> 185180369676275068918401850258677722187
+Faker::Company.bs #=> "cultivate viral synergies"
 ```
 
 ## Customization

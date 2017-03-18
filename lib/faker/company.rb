@@ -17,16 +17,16 @@ module Faker
 
       # Generate a buzzword-laden catch phrase.
       def catch_phrase
-        translate('faker.company.buzzwords').collect {|list| list.sample }.join(' ')
+        translate('faker.company.buzzwords').collect {|list| sample(list) }.join(' ')
       end
 
       def buzzword
-        translate('faker.company.buzzwords').flatten.sample
+        sample(translate('faker.company.buzzwords').flatten)
       end
 
       # When a straight answer won't do, BS to the rescue!
       def bs
-        translate('faker.company.bs').collect {|list| list.sample }.join(' ')
+        translate('faker.company.bs').collect {|list| sample(list) }.join(' ')
       end
 
       def ein
@@ -39,7 +39,7 @@ module Faker
 
       # Get a random company logo url in PNG format.
       def logo
-        rand_num = Random.rand(13) + 1
+        rand_num = rand(13) + 1
         "https://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
 
@@ -48,7 +48,7 @@ module Faker
         # Valid leading digit: 1, 2, 3, 5, 6, 7, 8, 9
         # Valid third digit: >= 2
         # Last digit is a control digit
-        base = [[1, 2, 3, 5, 6, 7, 8, 9].sample, (0..9).to_a.sample, (2..9).to_a.sample, ('%06d' % rand(10 ** 6))].join
+        base = [sample([1, 2, 3, 5, 6, 7, 8, 9]), sample((0..9).to_a), sample((2..9).to_a), ('%06d' % rand(10 ** 6))].join
         base + luhn_algorithm(base).to_s
       end
 
@@ -57,7 +57,7 @@ module Faker
         # Valid leading digit: 8, 9
         mod11_check = nil
         while mod11_check.nil?
-          base = [[8, 9].sample, ('%07d' % rand(10 ** 7))].join
+          base = [sample([8, 9]), ('%07d' % rand(10 ** 7))].join
           mod11_check = mod11(base)
         end
         base + mod11_check.to_s

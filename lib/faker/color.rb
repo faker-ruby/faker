@@ -10,7 +10,7 @@ module Faker
       end
 
       def single_rgb_color
-        (0..255).to_a.sample
+        sample((0..255).to_a)
       end
 
       def rgb_color
@@ -19,7 +19,7 @@ module Faker
 
       # returns [hue, saturation, lightness]
       def hsl_color
-        [(0..360).to_a.sample, rand.round(2), rand.round(2)]
+        [sample((0..360).to_a), rand.round(2), rand.round(2)]
       end
 
       def hsla_color
