@@ -600,3 +600,6 @@ en:
         "Life Is About Using The Whole Box Of Crayons",
         "When The Going Gets Tough, The Tough Reinvent"
       ]
+    markdown:
+      headers: ["#", "##", "###", "####", "#####", "######"]
+      emphasis: ["_", "~", "*", "**"]
