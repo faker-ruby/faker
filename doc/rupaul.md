@@ -1,5 +1,5 @@
 # Faker::RuPaul
 
 ```ruby
-Faker::RuPaul.qupte #=> "That's Funny, Tell Another One"
+Faker::RuPaul.quote #=> "That's Funny, Tell Another One"
 ```
