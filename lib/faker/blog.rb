@@ -3,8 +3,8 @@ module Faker
     class << self
       def author
         {
-          name: Faker::Name.unique.name,
-          email: Faker::Internet.unique.email
+          name: self.name,
+          email: self.email
         }
       end
 
@@ -19,22 +19,32 @@ module Faker
       def comment(post = nil)
         {
           nickname: self.nickname,
-          email: Faker::Internet.email,
-          body: translate('faker.blog.comment').sample,
+          email: self.email,
+          body: self.body,
           post: post
         }
       end
 
+      def name
+        Faker::Name.name
+      end
+
+      def email
+        Faker::Internet.email
+      end
+
       def nickname
-        translate('faker.blog.nickname').sample
+        l = translate('faker.blog.nickname').length
+        i = Faker::Config.random.rand(l)
+        translate('faker.blog.nickname')[i]
       end
 
       def title
-        translate('faker.blog.title').sample
+        Faker::Lorem.sentence
       end
 
       def body
-        translate('faker.blog.body').sample
+        Faker::Lorem.paragraph
       end
     end
   end
