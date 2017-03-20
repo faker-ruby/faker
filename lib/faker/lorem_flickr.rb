@@ -3,9 +3,8 @@ module Faker
     class << self
       SUPPORTED_COLORIZATIONS = %w(red green blue)
 
-      def image(size = '300x300', is_gray = false, search_terms = [], match_all = false)
-        format = 'g' if is_gray
-        build_url(size, format, search_terms, match_all)
+      def image(size = '300x300', search_terms = [], match_all = false)
+        build_url(size, nil, search_terms, match_all)
       end
 
       def grayscale_image(size = '300x300', search_terms = ['all'], match_all = false)
