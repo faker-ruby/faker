@@ -37,6 +37,32 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.image('50x60', false, ['dog', 'cat'], true) == 'http://loremflickr.com/50/60/dog,cat/all'
   end
 
+  def test_grayscale_image
+    @tester.grayscale_image == 'http://loremflickr.com/g/300/300/all'
+  end
+
+  def test_grayscale_image_with_incorrect_size
+    assert_raise ArgumentError do
+      @tester.grayscale_image('300x300s')
+    end
+  end
+
+  def test_grayscale_image_without_search_terms
+    @tester.grayscale_image('50x60') == 'http://loremflickr.com/g/50/60/all'
+  end
+
+  def test_grayscale_image_with_single_search_term
+    assert @tester.grayscale_image('50x60', ['faker']) == 'http://loremflickr.com/g/50/60/faker'
+  end
+
+  def test_grayscale_image_with_multiple_search_terms
+    assert @tester.grayscale_image('50x60', ['dog', 'cat']) == 'http://loremflickr.com/g/50/60/dog,cat'
+  end
+
+  def test_grayscale_image_with_search_terms_and_match_all
+    assert @tester.grayscale_image('50x60', ['dog', 'cat'], true) == 'http://loremflickr.com/g/50/60/dog,cat/all'
+  end
+
   def test_pixelated_image
     @tester.pixelated_image == 'http://loremflickr.com/p/300/300/all'
   end
