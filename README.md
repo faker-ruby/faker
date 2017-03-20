@@ -12,7 +12,8 @@ development.
 ### NOTE
 
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
-  You must explicity specify when you require unique values, see [details](#ensuring-unique-values).
+  You must explicity specify when you require unique values, see [details](#ensuring-unique-values). 
+  Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
   List of all versions is [available here](https://github.com/stympy/faker/releases).
@@ -35,12 +36,15 @@ Contents
   - [Faker::Cat](doc/cat.md)
   - [Faker::ChuckNorris](doc/chuck_norris.md)
   - [Faker::Code](doc/code.md)
+  - [Faker::Coffee](doc/coffee.md)
   - [Faker::Color](doc/color.md)
   - [Faker::Commerce](doc/commerce.md)
   - [Faker::Company](doc/company.md)
+  - [Faker::Compass](doc/compass.md)
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::Date](doc/date.md)
   - [Faker::Demographic](doc/demographic.md)
+  - [Faker::DragonBall](doc/dragon_ball.md)
   - [Faker::Educator](doc/educator.md)
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
@@ -65,6 +69,7 @@ Contents
   - [Faker::Pokemon](doc/pokemon.md)
   - [Faker::RickAndMorty](doc/rick_and_morty.md)
   - [Faker::RockBand](doc/rock_band.md)
+  - [Faker::RuPaul](doc/rupaul.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarWars](doc/star_wars.md)
@@ -109,6 +114,29 @@ that have been returned, for example between tests.
 ```ruby
 Faker::Name.unique.clear # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
+```
+It is also possible to add a random number to the end of faker data to increase the
+likelihood of unique data being generated. For example:
+
+```ruby
+Faker::Name.unique + ((1..1000).to_a).sample
+```
+
+### Deterministic Random
+
+Faker supports seeding of its pseudo-random number generator (PRNG) to provide deterministic output of repeated method calls.
+
+```ruby
+Faker::Config.random = Random.new(42)
+Faker::Company.bs #=> "seize collaborative mindshare"
+Faker::Company.bs #=> "engage strategic platforms"
+Faker::Config.random = Random.new(42)
+Faker::Company.bs #=> "seize collaborative mindshare"
+Faker::Company.bs #=> "engage strategic platforms"
+
+Faker::Config.random = nil # seeds the PRNG using default entropy sources
+Faker::Config.random.seed #=> 185180369676275068918401850258677722187
+Faker::Company.bs #=> "cultivate viral synergies"
 ```
 
 ## Customization

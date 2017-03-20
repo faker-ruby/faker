@@ -9,7 +9,10 @@ to know that you have a clean slate: `bundle && bundle exec rake`
 require no new tests. If you are adding functionality or fixing a bug, we need
 a test!
 
-4. Make the test pass.
+4. Make the test pass.  Always use `sample`, `shuffle`, and `rand` from
+the Base class (just like the rest of the code) rather than
+`Array#sample`, `Array#shuffle` and `Kernel#rand` to preserve the
+deterministic feature.
 
 5. Push to your fork and submit a pull request.
 

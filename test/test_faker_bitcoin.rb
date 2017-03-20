@@ -7,10 +7,9 @@ class TestFakerBitcoin < Test::Unit::TestCase
   end
 
   def test_deterministic_address
-    seed = srand
-    srand(seed)
+    Faker::Config.random = Random.new(42)
     v = Faker::Bitcoin.address
-    srand(seed)
+    Faker::Config.random = Random.new(42)
     assert v == Faker::Bitcoin.address
   end
 
