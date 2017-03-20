@@ -11,7 +11,7 @@ class TestFakerBlog < Test::Unit::TestCase
   end
 
   def test_title_type
-    assert @tester.title.class == String
+    assert String === @tester.title
   end
 
   def test_body
@@ -19,26 +19,26 @@ class TestFakerBlog < Test::Unit::TestCase
   end
 
   def test_body_type
-    assert @tester.title.class == String
+    assert String === @tester.title
   end
 
   def test_author_type
-    assert @tester.author.class == Hash
+    assert Hash === @tester.author
   end
 
   def test_post_type
-    assert @tester.post.class == Hash
+    assert Hash === @tester.post
   end
 
   def test_comment_type
-    assert @tester.comment.class == Hash
+    assert Hash === @tester.comment
   end
 
   def test_post_params
-    assert @tester.post({name: "author"})[:author][:name].class == String
+    assert String === @tester.post({name: "author"})[:author][:name]
   end
 
   def test_comment_params
-    assert @tester.comment({title: "title"})[:post][:title].class == String
+    assert String === @tester.comment({title: "title"})[:post][:title]
   end
 end
