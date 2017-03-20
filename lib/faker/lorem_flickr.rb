@@ -8,13 +8,13 @@ module Faker
         build_url(size, format, search_terms, match_all)
       end
 
-      def pixelated_image(size = '300x300', search_terms = [], match_all = false)
+      def pixelated_image(size = '300x300', search_terms = ['all'], match_all = false)
         raise ArgumentError, 'Search terms must be specified for pixelated images' unless search_terms.any?
 
         build_url(size, 'p', search_terms, match_all)
       end
 
-      def colorized_image(size = '300x300', color = 'red', search_terms = [], match_all = false)
+      def colorized_image(size = '300x300', color = 'red', search_terms = ['all'], match_all = false)
         raise ArgumentError, 'Search terms must be specified for colorized images' unless search_terms.any?
         raise ArgumentError, "Supported colorizations are #{SUPPORTED_COLORIZATIONS.join(', ')}" unless SUPPORTED_COLORIZATIONS.include?(color)
 

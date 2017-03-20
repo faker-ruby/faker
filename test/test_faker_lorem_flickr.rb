@@ -37,6 +37,10 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.image('50x60', false, ['dog', 'cat'], true) == 'http://loremflickr.com/50/60/dog,cat/all'
   end
 
+  def test_pixelated_image
+    @tester.pixelated_image == 'http://loremflickr.com/p/300/300/all'
+  end
+
   def test_pixelated_image_with_incorrect_size
     assert_raise ArgumentError do
       @tester.pixelated_image('300x300s')
@@ -44,9 +48,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_pixelated_image_without_search_terms
-    assert_raise ArgumentError do
-      @tester.pixelated_image('50x60')
-    end
+    @tester.pixelated_image('50x60') == 'http://loremflickr.com/p/50/60/all'
   end
 
   def test_pixelated_image_with_single_search_term
@@ -61,6 +63,10 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.pixelated_image('50x60', ['dog', 'cat'], true) == 'http://loremflickr.com/p/50/60/dog,cat/all'
   end
 
+  def test_colorized_image
+    @tester.colorized_image == 'http://loremflickr.com/red/300/300/all'
+  end
+
   def test_colorized_image_with_incorrect_size
     assert_raise ArgumentError do
       @tester.colorized_image('300x300s')
@@ -68,9 +74,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_colorized_image_without_search_terms
-    assert_raise ArgumentError do
-      @tester.colorized_image('50x60', 'red')
-    end
+    @tester.colorized_image('50x60', 'red') == 'http://loremflickr.com/red/50/60/all'
   end
 
   def test_colorized_image_with_unsupported_colorization
