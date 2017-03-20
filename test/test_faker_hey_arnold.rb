@@ -1,0 +1,19 @@
+require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+
+class TestFakerHeyArnold < Test::Unit::TestCase
+  def setup
+    @tester = Faker::HeyArnold
+  end
+
+  def test_character
+    assert @tester.character.match(/\w+/)
+  end
+
+  def test_location
+    assert @tester.location.match(/\w+/)
+  end
+
+  def test_quote
+    assert @tester.quote.match(/\w+/)
+  end
+end
