@@ -63,6 +63,7 @@ Contents
   - [Faker::Name](doc/name.md)
   - [Faker::Number](doc/number.md)
   - [Faker::Omniauth](doc/omniauth.md)
+  - [Faker::Overwatch](doc/overwatch.md)
   - [Faker::PhoneNumber](doc/phone_number.md)
   - [Faker::Placeholdit](doc/placeholdit.md)
   - [Faker::Pokemon](doc/pokemon.md)
