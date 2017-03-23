@@ -14,7 +14,6 @@ class TestBgLocale < Test::Unit::TestCase
     assert Faker::Address.building_number.is_a? String
     assert Faker::Address.street_suffix.is_a? String
     assert Faker::Address.postcode.is_a? String
-    # assert Faker::Address.state.is_a? String
     assert Faker::Address.street_title.is_a? String
     assert Faker::Address.city_name.is_a? String
     assert Faker::Address.city.is_a? String
