@@ -40,7 +40,7 @@ module Faker
           profile_text_color: Faker::Color.hex_color,
           profile_use_background_image: Faker::Boolean.boolean(0.4),
           protected: Faker::Boolean.boolean(0.1),
-          screen_name: Faker::Internet.user_name(nil, ['_']),
+          screen_name: screen_name,
           statuses_count: Faker::Number.between(1, 100_000),
           time_zone: Faker::Address.time_zone,
           url: Faker::Internet.url('example.com'),
@@ -83,6 +83,10 @@ module Faker
         status[:user] = Faker::Twitter.user(include_status: false) if include_user
         status[:text] = "#{status[:text]} #{status[:entities][:media].first[:url]}" if include_photo
         status
+      end
+
+      def screen_name
+        Faker::Internet.user_name(nil, ['_'])[0...20]
       end
 
       private

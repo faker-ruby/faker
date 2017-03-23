@@ -12,7 +12,7 @@ development.
 ### NOTE
 
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
-  You must explicity specify when you require unique values, see [details](#ensuring-unique-values). 
+  You must explicity specify when you require unique values, see [details](#ensuring-unique-values).
   Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
@@ -36,6 +36,7 @@ Contents
   - [Faker::Cat](doc/cat.md)
   - [Faker::ChuckNorris](doc/chuck_norris.md)
   - [Faker::Code](doc/code.md)
+  - [Faker::Coffee](doc/coffee.md)
   - [Faker::Color](doc/color.md)
   - [Faker::Commerce](doc/commerce.md)
   - [Faker::Company](doc/company.md)
@@ -43,6 +44,7 @@ Contents
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::Date](doc/date.md)
   - [Faker::Demographic](doc/demographic.md)
+  - [Faker::DragonBall](doc/dragon_ball.md)
   - [Faker::Educator](doc/educator.md)
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
@@ -51,6 +53,7 @@ Contents
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
   - [Faker::Hacker](doc/hacker.md)
   - [Faker::HarryPotter](doc/harry_potter.md)
+  - [Faker::HeyArnold](doc/hey_arnold.md)
   - [Faker::Hipster](doc/hipster.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
@@ -61,6 +64,7 @@ Contents
   - [Faker::Name](doc/name.md)
   - [Faker::Number](doc/number.md)
   - [Faker::Omniauth](doc/omniauth.md)
+  - [Faker::Overwatch](doc/overwatch.md)
   - [Faker::PhoneNumber](doc/phone_number.md)
   - [Faker::Placeholdit](doc/placeholdit.md)
   - [Faker::Pokemon](doc/pokemon.md)

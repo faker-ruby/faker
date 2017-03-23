@@ -20,4 +20,6 @@ Faker::Twitter.user(include_email: true) # Simulate an authenticated user with t
 Faker::Twitter.status #=> {:id=>8821452687517076614, :text=>"Ea et laboriosam vel non."...
 Faker::Twitter.status(include_user: false) # Just get a status object with no embed user
 Faker::Twitter.status(include_photo: true) # Includes entities for an attached image
+
+Faker::Twitter.screen_name #=> "audreanne_hackett"
 ```
