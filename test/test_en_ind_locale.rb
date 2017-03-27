@@ -24,4 +24,9 @@ class TestEnIndLocale < Test::Unit::TestCase
   def test_en_ind_postal_code
     assert_match(/[\d]{6}$/, Faker::Address.postcode)
   end
+
+  def test_en_ind_city
+    assert_match(/(\w+\.? ?){2,3}/, Faker::Address.city)
+  end
+
 end
