@@ -119,7 +119,8 @@ module Faker
       # into method calls that can be used to generate a
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
-        fetch(key).scan(/(\(?)#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|prefix, kls, meth, etc|
+        fetched = fetch(key)
+        parts = fetched.scan(/(\(?)#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|prefix, kls, meth, etc|
           # If the token had a class Prefix (e.g., Name.first_name)
           # grab the constant, otherwise use self
           cls = kls ? Faker.const_get(kls.chop) : self
@@ -134,7 +135,9 @@ module Faker
 
           # And tack on spaces, commas, etc. left over in the string
           text += etc.to_s
-        }.join
+        }
+        # If the fetched key couldn't be parsed, then fallback to numerify
+        parts.any? ? parts.join : numerify(fetched)
       end
 
       # Call I18n.translate with our configured locale if no
