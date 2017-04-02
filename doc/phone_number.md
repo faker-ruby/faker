@@ -22,7 +22,7 @@ Faker::PhoneNumber.cell_phone #=> "(186)285-7925"
 # NOTE NOTE NOTE NOTE
 # For the 'US only' methods below, first you must do the following:
 Faker::Config.locale = 'en-US'
-**or for Canada**
+# or for Canada
 Faker::Config.locale = 'en-CA'
 
 # US only
