@@ -9,3 +9,5 @@ pkg/*
 .DS_Store
 
 .idea/*
+
+.ruby-*
