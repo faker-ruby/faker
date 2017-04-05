@@ -38,6 +38,7 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Book.title.is_a? String
     assert Faker::Book.author.is_a? String
     assert Faker::Book.publisher.is_a? String
+    assert Faker::Book.quote.is_a? String
   end
 
   def test_fr_phone_format
