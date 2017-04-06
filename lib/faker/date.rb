@@ -35,8 +35,8 @@ module Faker
         top_bound, bottom_bound = prepare_bounds(t, min_age, max_age)
         years = handled_leap_years(top_bound, bottom_bound)
 
-        from =  ::Date.new(years[0], t.month, t.day)
-        to   =  ::Date.new(years[1], t.month, t.day)
+        from =  ::Date.new(years[1], t.month, t.day)
+        to   =  ::Date.new(years[0], t.month, t.day)
 
         between(from, to).to_date
       end
