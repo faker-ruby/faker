@@ -61,7 +61,7 @@ module Faker
 
         if special_chars
           chars = %w(! @ # $ % ^ & *)
-          rand(min_length).times do |i|
+          rand(1..min_length).times do |i|
             temp[i] = chars[rand(chars.length)]
           end
         end
