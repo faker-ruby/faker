@@ -16,8 +16,4 @@ class TestFakerLeagueOfLegends < Test::Unit::TestCase
   def test_quotes
     assert @tester.quotes.match(/\w+/)
   end
-
-  def test_rage
-    assert @tester.rage.match(/\w+/)
-  end
 end

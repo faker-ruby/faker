@@ -12,10 +12,6 @@ module Faker
       def quotes
         fetch('league_of_legends.quotes')
       end
-
-      def rage
-        fetch('league_of_legends.rage')
-      end
     end
   end
 end

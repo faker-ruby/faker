@@ -7,5 +7,4 @@ Faker::LeagueOfLegends.location #=> "Demacia"
 
 Faker::LeagueOfLegends.quotes #=> "Purge the unjust."
 
-Faker::LeagueOfLegends.rage #=> "gg jungle afk open mid"
 ```
