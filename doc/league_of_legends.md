@@ -1,11 +1,11 @@
 # Faker::LeagueOfLegends
 
 ```ruby
-Faker::LeagueOfLegends.champion #=> "Jarvan IV"
+Faker::LeagueOfLegends.champions #=> "Jarvan IV"
 
 Faker::LeagueOfLegends.location #=> "Demacia"
 
-Faker::LeagueOfLegends.quote #=> "Purge the unjust."
+Faker::LeagueOfLegends.quotes #=> "Purge the unjust."
 
 Faker::LeagueOfLegends.rage #=> "gg jungle afk open mid"
 ```
