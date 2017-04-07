@@ -1,16 +1,16 @@
 module Faker
   class LeagueOfLegends < Base
     class << self
-      def champions
-        fetch('league_of_legends.champions')
+      def champion
+        fetch('league_of_legends.champion')
       end
 
       def location
         fetch('league_of_legends.location')
       end
 
-      def quotes
-        fetch('league_of_legends.quotes')
+      def quote
+        fetch('league_of_legends.quote')
       end
     end
   end
