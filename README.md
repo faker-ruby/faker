@@ -55,6 +55,7 @@ Contents
   - [Faker::HarryPotter](doc/harry_potter.md)
   - [Faker::HeyArnold](doc/hey_arnold.md)
   - [Faker::Hipster](doc/hipster.md)
+  - [Faker::HowIMetYourMother](doc/how_i_met_your_mother.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::LeagueOfLegends](doc/league_of_legends.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
