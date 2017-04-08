@@ -71,6 +71,7 @@ Contents
   - [Faker::Placeholdit](doc/placeholdit.md)
   - [Faker::Pokemon](doc/pokemon.md)
   - [Faker::RickAndMorty](doc/rick_and_morty.md)
+  - [Faker::Robin](doc/robin.md)
   - [Faker::RockBand](doc/rock_band.md)
   - [Faker::RuPaul](doc/rupaul.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
