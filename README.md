@@ -56,6 +56,7 @@ Contents
   - [Faker::HeyArnold](doc/hey_arnold.md)
   - [Faker::Hipster](doc/hipster.md)
   - [Faker::Internet](doc/internet.md)
+  - [Faker::LeagueOfLegends](doc/league_of_legends.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
   - [Faker::Lorem](doc/lorem.md)
