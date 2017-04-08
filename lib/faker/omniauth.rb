@@ -29,7 +29,7 @@ module Faker
           credentials:  {
             token: Crypto.md5,
             refresh_token: Crypto.md5,
-            expires_at: one_hour_from_now.to_i,
+            expires_at: Time.forward.to_i,
             expires: true
           },
           extra: {
@@ -57,7 +57,7 @@ module Faker
             "email" => email,
             "aud" => "APP_ID",
             "iat" => Number.number(10),
-            "exp" => one_hour_from_now.to_i.to_s,
+            "exp" => Time.forward.to_i.to_s,
             "openid_id" => "https://www.google.com/accounts/o8/id?id=#{uid}"
           }
         }
@@ -81,7 +81,7 @@ module Faker
           },
           credentials: {
             token: Crypto.md5,
-            expires_at: one_hour_from_now.to_i,
+            expires_at: Time.forward.to_i,
             expires: true
           },
           extra: {
@@ -101,7 +101,7 @@ module Faker
               timezone: timezone,
               locale: 'en_US',
               verified: random_boolean,
-              updated_time: updated_time
+              updated_time: Time.backward.iso8601
             }
           }
         }
@@ -163,7 +163,7 @@ module Faker
               protected: random_boolean,
               description: description,
               profile_link_color: Color.hex_color,
-              created_at: created_at,
+              created_at: Time.backward.strftime("%a %b %d %H:%M:%S %z %Y"),
               id_str: uid,
               profile_image_url_https: image,
               default_profile: random_boolean,
@@ -223,8 +223,8 @@ module Faker
               "params" => {
                 oauth_token: token,
                 oauth_token_secret: secret,
-                oauth_expires_in: one_hour_from_now.to_i,
-                oauth_authorization_expires_in: one_hour_from_now.to_i,
+                oauth_expires_in: Time.forward.to_i,
+                oauth_authorization_expires_in: Time.forward.to_i,
               },
               "response" => nil
             },
@@ -247,28 +247,12 @@ module Faker
 
       private
 
-        def one_hour_from_now
-          Object::Time.now + (60 * 60)
-        end
-
         def gender
           shuffle(["male", "female"]).pop
         end
 
         def timezone
           shuffle((-12..12).to_a).pop
-        end
-
-        def time_now
-          Object::Time.now.to_s.split(' ')
-        end
-
-        def updated_time
-          "#{Date.backward(365).to_s}T#{time_now[1..2].join('')}"
-        end
-
-        def created_at
-          Date.backward(3650).strftime("%a %b %d #{time_now[1..2].join(' ')} %Y")
         end
 
         def image
@@ -287,6 +271,6 @@ module Faker
           shuffle([true, false]).pop
         end
 
-      end
+    end
   end
 end
