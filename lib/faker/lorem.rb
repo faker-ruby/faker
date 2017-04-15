@@ -1,7 +1,7 @@
 module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
-    CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a
+    CHARACTERS = ('1'..'9').to_a + ('a'..'z').to_a
 
     class << self
       def word
