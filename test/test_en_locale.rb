@@ -46,6 +46,7 @@ class TestEnLocale < Test::Unit::TestCase
     elsif value.is_a?(Array)
       check_array(value)
     else
+      # require 'pry'; binding.pry
       assert_nil(value.strip!) unless value.nil?
     end
   end
@@ -54,3 +55,4 @@ class TestEnLocale < Test::Unit::TestCase
     array.each { |value| check_value(value) }
   end
 end
+
