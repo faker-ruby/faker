@@ -87,6 +87,7 @@ Contents
   - [Faker::Twitter](doc/twitter.md)
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
+  - [Faker::WorldOfWarcraft](doc/world_of_warcraft.md)
   - [Faker::Zelda](doc/zelda.md)
 - [Customization](#customization)
 - [Contributing](#contributing)
