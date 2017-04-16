@@ -54,4 +54,3 @@ class TestEnLocale < Test::Unit::TestCase
     array.each { |value| check_value(value) }
   end
 end
-
