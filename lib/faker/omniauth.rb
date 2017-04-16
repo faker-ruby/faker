@@ -301,8 +301,8 @@ module Faker
               public_gists: random_number_from_range(1..1000),
               followers: random_number_from_range(1..1000),
               following: random_number_from_range(1..1000),
-              created_at: Time.backward(365).iso8601,
-              updated_at: Time.backward(14).iso8601
+              created_at: Time.backward(36400).iso8601,
+              updated_at: Time.backward(2).iso8601
             }
           }
         }
