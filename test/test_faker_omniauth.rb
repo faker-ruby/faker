@@ -254,8 +254,12 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal received_events_url, extra_raw_info[:received_events_url]
     assert_equal "User", extra_raw_info[:type]
     assert_instance_of String, extra_raw_info[:location]
+    assert_instance_of String, extra_raw_info[:avatar_url]
     assert_equal "", extra_raw_info[:gravatar_id]
     assert_equal nil, extra_raw_info[:hireable]
+    assert_equal nil, extra_raw_info[:blog]
+    assert_equal nil, extra_raw_info[:company]
+    assert_equal nil, extra_raw_info[:bio]
     assert is_boolean?(extra_raw_info[:site_admin])
     assert_equal info[:email], extra_raw_info[:email]
     assert_instance_of Fixnum, extra_raw_info[:public_repos]
