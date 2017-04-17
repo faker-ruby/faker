@@ -258,10 +258,10 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal nil, extra_raw_info[:hireable]
     assert is_boolean?(extra_raw_info[:site_admin])
     assert_equal info[:email], extra_raw_info[:email]
-    assert_instance_of Integer, extra_raw_info[:public_repos]
-    assert_instance_of Integer, extra_raw_info[:public_gists]
-    assert_instance_of Integer, extra_raw_info[:followers]
-    assert_instance_of Integer, extra_raw_info[:following]
+    assert_instance_of Fixnum, extra_raw_info[:public_repos]
+    assert_instance_of Fixnum, extra_raw_info[:public_gists]
+    assert_instance_of Fixnum, extra_raw_info[:followers]
+    assert_instance_of Fixnum, extra_raw_info[:following]
     assert_instance_of String, extra_raw_info[:created_at]
     assert_instance_of String, extra_raw_info[:updated_at]
   end
