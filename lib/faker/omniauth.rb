@@ -245,6 +245,70 @@ module Faker
         }
       end
 
+      def github
+        uid = Number.number(8)
+        auth = Omniauth.new()
+        first_name = auth.first_name.downcase
+        last_name  = auth.last_name.downcase
+        login = "#{first_name}-#{last_name}"
+        html_url = "https://github.com/#{login}"
+        api_url = "https://api.github.com/users/#{login}"
+        email = "#{first_name}@example.com"
+
+        {
+          provider: "github",
+          uid: uid,
+          info: {
+            nickname: login,
+            email: email,
+            name: auth.name,
+            image: image,
+            urls:{
+              GitHub: html_url
+            }
+          },
+          credentials: {
+            token: Crypto.md5,
+            expires:  false
+          },
+          extra: {
+            raw_info: {
+              login: login,
+              id: uid,
+              avatar_url: image,
+              gravatar_id: "",
+              url: api_url,
+              html_url: html_url,
+              followers_url: "#{api_url}/followers",
+              following_url: "#{api_url}/following{/other_user}",
+              gists_url: "#{api_url}/gists{/gist_id}",
+              starred_url: "#{api_url}/starred{/owner}{/repo}",
+              subscriptions_url: "#{api_url}/subscriptions",
+              organizations_url: "#{api_url}/orgs",
+              repos_url: "#{api_url}/repos",
+              events_url: "#{api_url}/events{/privacy}",
+              received_events_url: "#{api_url}/received_events",
+              type: "User",
+              site_admin:  random_boolean,
+              name: auth.name,
+              company: nil,
+              blog: nil,
+              location: city_state,
+              email: email,
+              hireable: nil,
+              bio: nil,
+              public_repos: random_number_from_range(1..1000),
+              public_gists: random_number_from_range(1..1000),
+              followers: random_number_from_range(1..1000),
+              following: random_number_from_range(1..1000),
+              created_at: Time.backward(36400).iso8601,
+              updated_at: Time.backward(2).iso8601
+            }
+          }
+        }
+
+      end
+
       private
 
         def gender
