@@ -228,21 +228,26 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
 
     assert_equal "github", provider
     assert_equal 8, uid.length
+    assert_equal uid, extra_raw_info[:id]
     assert_equal email, info[:email]
-    assert_equal 2, word_count(info[:name])
+    assert_equal email, extra_raw_info[:email]
+    assert_equal 2, word_count(name)
+    assert_instance_of String, name
+    assert_equal name, extra_raw_info[:name]
 
-    assert_instance_of String, info[:name]
-    assert_instance_of String, info[:nickname]
+    assert_equal login, extra_raw_info[:login]
+    assert_instance_of String, login
     assert_instance_of String, info[:image]
     assert_instance_of Hash, info[:urls]
     assert_instance_of String, info[:urls][:GitHub]
+
     assert_instance_of String, credentials[:token]
     assert_equal false, credentials[:expires]
-    assert_equal uid, extra_raw_info[:id]
-    assert_equal name, extra_raw_info[:name]
-    assert_equal login, extra_raw_info[:login]
-    assert_equal html_url, extra_raw_info[:html_url]
+
+    assert_instance_of String, extra_raw_info[:avatar_url]
+    assert_equal "", extra_raw_info[:gravatar_id]
     assert_equal api_url, extra_raw_info[:url]
+    assert_equal html_url, extra_raw_info[:html_url]
     assert_equal followers_url, extra_raw_info[:followers_url]
     assert_equal following_url, extra_raw_info[:following_url]
     assert_equal gists_url, extra_raw_info[:gists_url]
@@ -253,21 +258,19 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal events_url, extra_raw_info[:events_url]
     assert_equal received_events_url, extra_raw_info[:received_events_url]
     assert_equal "User", extra_raw_info[:type]
-    assert_instance_of String, extra_raw_info[:location]
-    assert_instance_of String, extra_raw_info[:avatar_url]
-    assert_equal "", extra_raw_info[:gravatar_id]
-    assert_equal nil, extra_raw_info[:hireable]
-    assert_equal nil, extra_raw_info[:blog]
-    assert_equal nil, extra_raw_info[:company]
-    assert_equal nil, extra_raw_info[:bio]
     assert is_boolean?(extra_raw_info[:site_admin])
-    assert_equal info[:email], extra_raw_info[:email]
+    assert_equal nil, extra_raw_info[:company]
+    assert_equal nil, extra_raw_info[:blog]
+    assert_instance_of String, extra_raw_info[:location]
+    assert_equal nil, extra_raw_info[:hireable]
+    assert_equal nil, extra_raw_info[:bio]
     assert_instance_of Fixnum, extra_raw_info[:public_repos]
     assert_instance_of Fixnum, extra_raw_info[:public_gists]
     assert_instance_of Fixnum, extra_raw_info[:followers]
     assert_instance_of Fixnum, extra_raw_info[:following]
     assert_instance_of String, extra_raw_info[:created_at]
     assert_instance_of String, extra_raw_info[:updated_at]
+
   end
 
   def word_count(string)
