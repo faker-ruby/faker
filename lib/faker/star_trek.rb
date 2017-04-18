@@ -1,20 +1,20 @@
 module Faker
   class StarTrek < Base
     class << self
-      def characters
-        fetch('star_trek.characters')
+      def character
+        fetch('star_trek.character')
       end
 
-      def locations
-        fetch('star_trek.locations')
+      def location
+        fetch('star_trek.location')
       end
 
-      def species
-        fetch('star_trek.species')
+      def specie
+        fetch('star_trek.specie')
       end
    
-      def villains
-        fetch('star_trek.villains')
+      def villain
+        fetch('star_trek.villain')
       end
     end
   end
