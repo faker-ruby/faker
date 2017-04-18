@@ -1,12 +1,12 @@
 # Faker::StarTrek
 
 ```ruby
-Faker::StarTrek.characters #=> "Spock"
+Faker::StarTrek.character #=> "Spock"
 
-Faker::StarTrek.locations #=> "Cardassia"
+Faker::StarTrek.location #=> "Cardassia"
 
-Faker::StarTrek.species #=> "Ferengi"
+Faker::StarTrek.specie #=> "Ferengi"
 
-Faker::StarTrek.villains #=> "Khan Noonien Singh"
+Faker::StarTrek.villain #=> "Khan Noonien Singh"
 
 ```
