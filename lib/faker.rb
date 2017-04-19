@@ -140,13 +140,21 @@ module Faker
         parts.any? ? parts.join : numerify(fetched)
       end
 
+      def with_indifferent_access(values)
+        return values unless values.is_a?(Array)
+
+        values.map do |v|
+          v.respond_to?(:with_indifferent_access) ? v.with_indifferent_access : v
+        end
+      end
+
       # Call I18n.translate with our configured locale if no
       # locale is specified
       def translate(*args)
         opts = args.last.is_a?(Hash) ? args.pop : {}
         opts[:locale] ||= Faker::Config.locale
         opts[:raise] = true
-        I18n.translate(*(args.push(opts)))
+        with_indifferent_access(I18n.translate(*(args.push(opts))))
       rescue I18n::MissingTranslationData
         opts = args.last.is_a?(Hash) ? args.pop : {}
         opts[:locale] = :en
@@ -154,7 +162,7 @@ module Faker
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        I18n.translate(*(args.push(opts)))
+        with_indifferent_access(I18n.translate(*(args.push(opts))))
       end
 
       # Executes block with given locale set.
