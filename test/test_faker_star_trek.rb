@@ -5,7 +5,7 @@ class TestFakerStarTrek < Test::Unit::TestCase
     @tester = Faker::StarTrek
   end
 
-  def test_champions
+  def test_characters
     assert @tester.character.match(/\w+/)
   end
 
