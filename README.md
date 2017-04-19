@@ -56,6 +56,7 @@ Contents
   - [Faker::HarryPotter](doc/harry_potter.md)
   - [Faker::HeyArnold](doc/hey_arnold.md)
   - [Faker::Hipster](doc/hipster.md)
+  - [Faker::Hobbit](doc/hobbit.md)
   - [Faker::HowIMetYourMother](doc/how_i_met_your_mother.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::Job](doc/job.md)
