@@ -34,6 +34,7 @@ Contents
   - [Faker::Boolean](doc/boolean.md)
   - [Faker::Business](doc/business.md)
   - [Faker::Cat](doc/cat.md)
+  - [Faker::ChileRUT](doc/chile_rut.md)
   - [Faker::ChuckNorris](doc/chuck_norris.md)
   - [Faker::Code](doc/code.md)
   - [Faker::Coffee](doc/coffee.md)
