@@ -16,4 +16,16 @@ class TestFakerLeagueOfLegends < Test::Unit::TestCase
   def test_quotes
     assert @tester.quote.match(/\w+/)
   end
+
+  def test_quotes
+    assert @tester.summoner_spell.match(/\w+/)
+  end
+
+  def test_quotes
+    assert @tester.masteries.match(/\w+/)
+  end
+
+  def test_quotes
+    assert @tester.rank.match(/\w+/)
+  end
 end
