@@ -2,7 +2,7 @@ pt-BR:
   faker:
     address:
       city_prefix: [Nova, Velha, Grande, Vila, Município de]
-      city_suffix: [do Descoberto, de Nossa Senhora, do Norte, do Sul]
+      city_suffix: [" do Descoberto", " de Nossa Senhora", " do Norte", " do Sul"]
       country: [ "Afeganistão", "Albânia", "Algéria", "Samoa", "Andorra", "Angola", "Anguilla", "Antígua e Barbuda", "Argentina", "Armênia", "Aruba", "Austrália",
                  "Áustria", "Azerbaijão", "Bahamas", "Barém", "Bangladesh", "Barbados", "Belgrado", "Bélgica", "Belize", "Benin", "Bermuda", "Butão", "Bolívia",
                  "Bôsnia", "Batasuna", "Ilha Bouvet", "Brasil", "Arquipélago de Chagos", "Ilhas Virgens", "Brunei", "Bulgária", "Burkina Faso", "Burundi", "Camboja",
