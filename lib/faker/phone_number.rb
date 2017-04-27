@@ -18,10 +18,19 @@ module Faker
         end
       end
 
-      # US only
+      # US, ZA only
       def exchange_code
         begin
           fetch('phone_number.exchange_code')
+        rescue I18n::MissingTranslationData
+          nil
+        end
+      end
+
+      # ZA only
+      def dial_code
+        begin
+          fetch('phone_number.dial_code')
         rescue I18n::MissingTranslationData
           nil
         end
