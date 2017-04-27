@@ -12,6 +12,10 @@ module Faker
       def quote
         fetch('silicon_valley.quote')
       end
+
+      def email
+        fetch('silicon_valley.email')
+      end
     end
   end
 end

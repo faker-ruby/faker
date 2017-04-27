@@ -16,4 +16,8 @@ class TestFakerSiliconValley < Test::Unit::TestCase
   def test_quote
     assert @silicon_valley.quote.match(/\w+/)
   end
+
+  def test_email
+    assert @silicon_valley.email.match(/\w+/)
+  end
 end
