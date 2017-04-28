@@ -223,4 +223,12 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_device_token
     assert_equal 64, @tester.device_token.size
   end
+
+  def test_issue_685_regression
+    blacklisted_email_domains= [/.+@moore.io$/]
+    email_methods= @tester.public_methods.map(&:to_s).keep_if{|m| m.match(/email/)}.map(&:to_sym)
+    email_methods.each { |method| blacklisted_email_domains.each do |domain|
+      512.times { refute @tester.public_send(method).match(domain) }
+    end }
+  end
 end
