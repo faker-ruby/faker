@@ -716,3 +716,12 @@ en:
         "The road goes ever on and on",
         "Never laugh at live dragons, Bilbo you fool!" ]
       location: ["Bree", "The Shire", "Rivendell", "The Misty Mountains", "Beorn's Hall", "Mirkwood", "Esgaroth", "Erebor", "Bag-End", "Under-Hill", "Mount Gram", "Green Fields", "Last Desert", "Lonely Mountain", "Withered Heath", "Country Round", "Long Lake", "River Running", "Mines of Moria", "Green Dragon Inn", "Bywater", "The Great Mill", "Wilderland", "Gondolin", "Land Beyond", "Goblin Gate", "Carrock", "High Pass", "Great River", "Grey Mountains", "Land of the Necromancer", "Long Marshes", "Forest River", "Lake Town", "Dorwinion", "Ravenhill", "Iron Hills", "Mount Gundabad"]
+    measurement:
+      height: ["inch", "foot"]
+      length: ["yard", "foot", "mile"]
+      volume: ["cup", "tablespoon", "teaspoon", "quart", "pint", "gallon", "fluid ounce"]
+      weight: ["pound", "ounce", "ton"]
+      metric_height: ["centimeter", "meter"]
+      metric_length: ["millimeter", "centimeter", "decimeter", "meter", "dekameter", "hectometer", "kilometer"]
+      metric_volume: ["milliliter", "liter"]
+      metric_weight: ["milligram", "centigram", "decigram", "gram", "dekagram", "hectogram", "kilogram", "metric ton"]
