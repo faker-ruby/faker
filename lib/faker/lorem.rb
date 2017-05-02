@@ -54,15 +54,15 @@ module Faker
 
       private
       def locale_period
-        translate('faker.lorem.punctuation.period') || '.'
+        translate('faker.lorem.punctuation.period')
       end
 
       def locale_space
-        translate('faker.lorem.punctuation.space') || ' '
+        translate('faker.lorem.punctuation.space')
       end
 
       def locale_question_mark
-        translate('faker.lorem.punctuation.question_mark') || '?'
+        translate('faker.lorem.punctuation.question_mark')
       end
 
       # If an array or range is passed, a random value will be selected.
