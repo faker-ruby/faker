@@ -9,7 +9,7 @@ class TestFakerLeagueOfLegends < Test::Unit::TestCase
     assert @tester.champion.match(/\w+/)
   end
 
-  def test_location
+  def test_locations
     assert @tester.location.match(/\w+/)
   end
 
@@ -17,15 +17,15 @@ class TestFakerLeagueOfLegends < Test::Unit::TestCase
     assert @tester.quote.match(/\w+/)
   end
 
-  def test_quotes
+  def test_summoners_spells
     assert @tester.summoner_spell.match(/\w+/)
   end
 
-  def test_quotes
+  def test_masteries
     assert @tester.masteries.match(/\w+/)
   end
 
-  def test_quotes
+  def test_ranks
     assert @tester.rank.match(/\w+/)
   end
 end
