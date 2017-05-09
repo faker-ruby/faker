@@ -5,7 +5,11 @@ class TestFakerFillmurray < Test::Unit::TestCase
     @tester = Faker::Fillmurray
   end
 
-  def test_fillmurray
+  def test_fillmurray_with_no_arguments
+    assert @tester.image.match(/https:\/\/fillmurray\.com\/(\d+)\/(\d+)/)[1] != nil
+  end
+
+  def test_fillmurray_with_all_arguments
     assert @tester.image(false, '300', '300').match(/https:\/\/fillmurray\.com\/(\d+)\/(\d+)/) != nil
   end
 
@@ -17,7 +21,7 @@ class TestFakerFillmurray < Test::Unit::TestCase
     assert_raise ArgumentError do
       @tester.image(false, '300', 'nine-thousand')
     end
-      
+
   end
 
   def test_fillmurray_with_incorrect_width_format
