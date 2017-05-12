@@ -225,11 +225,11 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_user_agent
-    assert_equal "Please pass in a browswer name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent
-    assert_equal "Please pass in a browswer name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent(nil)
-    assert_equal "Please pass in a browswer name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent(123)
-    assert_equal "Please pass in a browswer name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent(:asdf)
-    assert_equal "Please pass in a browswer name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent("asdf")
+    assert_equal "Please pass in a browser name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent
+    assert_equal "Please pass in a browser name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent(nil)
+    assert_equal "Please pass in a browser name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent(123)
+    assert_equal "Please pass in a browser name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent(:asdf)
+    assert_equal "Please pass in a browser name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)", @tester.user_agent("asdf")
     assert_equal "Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0", @tester.user_agent("FireFox")
     assert_equal "Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0", @tester.user_agent("firefox")
     assert_equal "Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0", @tester.user_agent(:Firefox)

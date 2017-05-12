@@ -181,15 +181,15 @@ module Faker
         }
 
         if symbol == nil
-          "Please pass in a browswer name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)"
+          "Please pass in a browser name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)"
         elsif symbol.is_a? Integer
-          "Please pass in a browswer name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)"
+          "Please pass in a browser name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)"
         elsif symbol != nil 
           lower_case_symbol = symbol.downcase.to_sym  
           if uas_hash.has_key?(lower_case_symbol)
             uas_hash[lower_case_symbol]
           else 
-            "Please pass in a browswer name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)"
+            "Please pass in a browser name such as (AOL, Chrome, FireFox, InternetExplorer, Netscape, Opera, and Safari)"
           end 
         end
       end
