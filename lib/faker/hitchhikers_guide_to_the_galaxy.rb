@@ -9,6 +9,10 @@ module Faker
         fetch('hitchhikers_guide_to_the_galaxy.locations')
       end
 
+      def marvin_quote
+        fetch('hitchhikers_guide_to_the_galaxy.marvin_quote')
+      end
+
       def planet
         fetch('hitchhikers_guide_to_the_galaxy.planets')
       end

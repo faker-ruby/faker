@@ -13,6 +13,10 @@ class TestFakerHitchhikersGuideToTheGalaxy < Test::Unit::TestCase
     assert @tester.location.match(/\w+/)
   end
 
+  def test_marvin_quote
+    assert @tester.marvin_quote.match(/\w+/)
+  end
+
   def test_planet
     assert @tester.planet.match(/\w+/)
   end
