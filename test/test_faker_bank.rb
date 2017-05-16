@@ -40,11 +40,10 @@ class TestFakerBank < Test::Unit::TestCase
   def test_iban_es; assert @tester.iban("es").match(/\d{20}/); end
   def test_iban_se; assert @tester.iban("se").match(/\d{20}/); end
   def test_iban_sk; assert @tester.iban("sk").match(/\d{24}/); end
+
+  def test_iban_invalid
+    assert_raise ArgumentError.new("Could not find iban details for bad") do
+       @tester.iban("bad")
+    end
+  end
 end
-
-
-
-
-
-
-
