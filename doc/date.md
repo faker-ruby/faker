@@ -14,6 +14,6 @@ Faker::Date.forward(50) # => #<Date: 2017-06-02 ((2457907j,0s,0n),+0s,2299161j)>
 Faker::Date.backward(14) #=> #<Date: 2017-05-02 ((2457907j,0s,0n),+0s,2299161j)>
 
 # Random birthday date. The returned Date will be such that a person born on that date will currently
-# be between x and y years old. x and y are integers
+# be between min_age and max_age years old. min_age and max_age are integers
 Faker::Date.birthday(5, 8) # => #<Date: 2009-05-24 ((2454976j,0s,0n),+0s,2299161j)>
 ```
