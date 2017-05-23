@@ -37,4 +37,6 @@ Faker::Address.latitude #=> "-58.17256227443719"
 
 Faker::Address.longitude #=> "-156.65548382095133"
 
+Faker::Address.mailing_address #=> "Jaylen Bode II\n1592 Volkman Canyon\n99837-5073\nLithuania"
+
 ```

@@ -31,6 +31,8 @@ en:
         - "#{Name.last_name} #{street_suffix}"
       street_address:
         - "#{building_number} #{street_name}"
+      mailing_address:
+        - "#{Name.first_name} #{Name.last_name}\n#{building_number} #{street_name}\n#{postcode}\n#{country}"
       full_address:
         - "#{street_address}, #{city}, #{state_abbr} #{zip_code}"
         - "#{secondary_address} #{street_address}, #{city}, #{state_abbr} #{zip_code}"

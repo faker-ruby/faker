@@ -60,7 +60,8 @@ class TestFakerZipCode < Test::Unit::TestCase
     assert_raises I18n::MissingTranslationData do
       I18n.with_locale(:xz) do
         @tester.zip_code('MI')
-      end  
+      end
     end
   end
+
 end

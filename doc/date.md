@@ -2,17 +2,18 @@
 
 ```ruby
 # Random date between dates
-Faker::Date.between(2.days.ago, Date.today) #=> "Wed, 24 Sep 2014"
+Faker::Date.between("2012-03-15", Date.today) #=> #<Date: 2012-11-02 ((2456234j,0s,0n),+0s,2299161j)>
 
 # Random date between dates except for certain date
-Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today) #=> "Wed, 24 Sep 2014"
+Faker::Date.between_except(Date.new(2015, 04, 23), Date.new(2019, 06, 07), Date.today) #=> #<Date: 2017-11-02 ((2456234j,0s,0n),+0s,2299161j)>
 
 # Random date in the future (up to maximum of N days)
-Faker::Date.forward(23) # => "Fri, 03 Oct 2014"
+Faker::Date.forward(50) # => #<Date: 2017-06-02 ((2457907j,0s,0n),+0s,2299161j)>
 
 # Random date in the past (up to maximum of N days)
-Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
+Faker::Date.backward(14) #=> #<Date: 2017-05-02 ((2457907j,0s,0n),+0s,2299161j)>
 
-# Random birthday date (maximum age between 18 and 65)
-Faker::Date.birthday(18, 65) #=> "Mar, 28 Mar 1986"
+# Random birthday date. The returned Date will be such that a person born on that date will currently
+# be between min_age and max_age years old. min_age and max_age are integers
+Faker::Date.birthday(5, 8) # => #<Date: 2009-05-24 ((2454976j,0s,0n),+0s,2299161j)>
 ```
