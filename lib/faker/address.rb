@@ -35,6 +35,10 @@ module Faker
         fetch('address.time_zone')
       end
 
+      def mailing_address
+        parse('address.mailing_address')
+      end
+
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
 
