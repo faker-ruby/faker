@@ -168,6 +168,12 @@ module Faker
       def device_token
         shuffle(rand(16 ** 64).to_s(16).rjust(64, '0').chars.to_a).join
       end
+
+      def user_agent(vendor = nil)
+        agent_hash = translate('faker.internet.user_agent')
+        agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
+        sample(agents)
+      end
     end
   end
 end
