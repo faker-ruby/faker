@@ -16,5 +16,4 @@ class TestFakerFood < Test::Unit::TestCase
   def test_measurement
     assert @tester.measurement.split(" ").length == 2
   end
-
 end
