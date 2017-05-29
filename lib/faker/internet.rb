@@ -160,6 +160,10 @@ module Faker
         "#{scheme}://#{host}#{path}"
       end
 
+      def secure_url(host = domain_name, path = "/#{user_name}")
+        "https://#{host}#{path}"
+      end
+
       def slug(words = nil, glue = nil)
         glue ||= sample(%w[- _ .])
         (words || Faker::Lorem::words(2).join(' ')).gsub(' ', glue).downcase
