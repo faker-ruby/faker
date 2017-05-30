@@ -13,8 +13,8 @@ module Faker
         fetch('witcher.schools')
       end
 
-      def city
-        fetch('witcher.cities')
+      def location
+        fetch('witcher.locations')
       end
 
       def quote
