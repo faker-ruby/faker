@@ -72,4 +72,8 @@ Faker::Internet.url('example.com', '/foobar.html') #=> "http://example.com/fooba
 Faker::Internet.slug #=> "pariatur_laudantium"
 Faker::Internet.slug('foo bar') #=> "foo.bar"
 Faker::Internet.slug('foo bar', '-') #=> "foo-bar"
+
+# Optional argument: vendor=nil
+Faker::Internet.user_agent #=> "Mozilla/5.0 (compatible; MSIE 9.0; AOL 9.7; AOLBuild 4343.19; Windows NT 6.1; WOW64; Trident/5.0; FunWebProducts)"
+Faker::Internet.user_agent(:firefox) #=> "Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0"
 ```

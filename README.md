@@ -58,6 +58,7 @@ Contents
   - [Faker::Hipster](doc/hipster.md)
   - [Faker::Hobbit](doc/hobbit.md)
   - [Faker::HowIMetYourMother](doc/how_i_met_your_mother.md)
+  - [Faker::HitchhikersGuideToTheGalaxy](doc/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::Job](doc/job.md)
   - [Faker::LeagueOfLegends](doc/league_of_legends.md)
