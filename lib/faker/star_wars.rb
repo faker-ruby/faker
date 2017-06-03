@@ -59,7 +59,7 @@ module Faker
          "You know, that little droid is going to cause me a lot of trouble.", "If you\'re saying that coming here was a bad idea, I\'m starting to agree with you.", "You\'ll find I\'m full of surprises!",
          "Aren\'t you a little short for a Stormtrooper?", "You are unwise to lower your defenses!", "R2-D2, you know better than to trust a strange computer!", "Truly wonderful, the mind of a child is.",
          "That is why you fail.", "A Jedi uses the Force for knowledge and defense, never for attack.", "Adventure. Excitement. A Jedi craves not these things.", "Judge me by my size, do you?",
-         "Fear is the path to the dark side... fear leads to anger... anger leads to hate... hate leads to suffering.", "Do. Or do not. There is no try."]
+         "Fear is the path to the dark side... fear leads to anger... anger leads to hate... hate leads to suffering.", "Do. Or do not. There is no try.", "Good Anakin, good. Kill him now."]
       end
 
       def species
