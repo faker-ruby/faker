@@ -24,6 +24,7 @@ class TestFakerUniversity < Test::Unit::TestCase
 
   def test_greek_organization
     assert @tester.greek_organization.match(/\w+\.?/)
+    assert @tester.greek_organization.length == 3
   end
 
   def test_greek_organization_is_assembled_from_greek_alphabet
