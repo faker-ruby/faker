@@ -47,6 +47,7 @@ Contents
   - [Faker::Dessert](doc/dessert.md)
   - [Faker::DragonBall](doc/dragon_ball.md)
   - [Faker::Educator](doc/educator.md)
+  - [Faker::ElderScrolls](doc/elder_scrolls.md)
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
   - [Faker::Food](doc/food.md)
