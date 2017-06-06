@@ -8,5 +8,6 @@ module Faker
       def quote
         fetch('seinfeld.quote')
       end
+    end 
   end
 end
