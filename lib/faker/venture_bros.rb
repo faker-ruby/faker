@@ -5,16 +5,16 @@
  +        fetch('venture_bros.character')
  +      end
 
-        def organizations
-          fetch('venture_bros.organizations')
+        def organization
+          fetch('venture_bros.organization')
         end
 
-+       def vehicles
-+         fetch('venture_bros.vehicles')
++       def vehicle
++         fetch('venture_bros.vehicle')
 +       end
  +
- +      def quotes
- +        fetch('venture_bros.quotes')
+ +      def quote
+ +        fetch('venture_bros.quote')
  +      end
  +    end
  +  end
