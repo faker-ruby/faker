@@ -26,6 +26,10 @@ In order to update a locale with more translation features, simply add a new fie
 # /lib/locales/zh-CN.yml
 
 hipster: ["屌丝"]
+
+# Now this should work:
+
+Faker::Hipster.word #=> "屌丝"
 ```
 
 After you've done that, find or create a test file for the locale you've updated and test the functionality for that language.
