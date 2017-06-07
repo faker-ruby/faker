@@ -6,19 +6,19 @@ class TestFakerVentureBros < Test::Unit::TestCase
     @tester = Faker::VentureBros
   end
 
-  def test_characters
+  def test_character
     assert @tester.character.match(/\w+/)
   end
 
-  def test_vehicles
+  def test_vehicle
     assert @tester.vehicle.match(/\w+/)
   end
 
-  def test_organizations
+  def test_organization
     assert @tester.organization.match(/\w+/)
   end
 
-  def test_quotes
+  def test_quote
     assert @tester.quote.match(/\w+/)
   end
 end
