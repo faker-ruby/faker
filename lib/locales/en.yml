@@ -416,7 +416,7 @@ en:
       names: ["Donatello", "Botticelli", "Michelangelo", "Raphael", "Titian", "Durer", "Caravaggio", "Rubens", "Bernini", "Rembrandt", "Pissarro", "Manet", "Degas", "Cezanne", "Monet", "Renoir", "Cassatt", "Gauguin", "Munch", "Klimt", "Matisse", "Picasso", "Kandinsky", "Chagall", "Seurat", "Magritte", "Escher", "Rothko", "Dali", "Kahlo", "Pollock", "Warhol", "Vettriano", "Da Vinci", "El Greco", "Winslow Homer", "Paul Klee", "Edward Hopper", "Diego Rivera", "Vincent", "Joan Miro", "Ansel Adams"]
 
     elder_scrolls:
-      race: ["Altmer, Argonian, Bosmer, Breton, Dunmer, Imperial, Kajiit, Nord, Orc, Redguard"]
+      race: ["Altmer", "Argonian", "Bosmer", "Breton", "Dunmer", "Imperial", "Kajiit", "Nord", "Orc", "Redguard"]
 
       creature: ["Bear", "Cave Bear", "Chaurus", "Death Hound", "Snow Bear", "Wolf", "Ice Wolf", "Pit Wolf", "Sabre Cat", "Skeever", "Mudcrab", "Horker", "Ice Wraith", "Werewolf", "Troll", "Frost Troll", "Werebear", "Blue Dartwing", "Orange Dartwing", "Torchbugs", "Slaughterfish", "Chaurus Hunter", "Dremora Lord", "Flame Atronach", "Frost Atronach", "Storm Atronach", "Daedric Prince", "Dremora", "Lurker", "Seeker", "Draugr", "Restless Draugr", "Draugr Overlord", "Draugr Wright", "Draugr Deathlord", "Draugr Scourge", "Draugr Death Overlord", "Draugr Thrall", "Spider Worker", "Spider Soldier", "Spider Guardian", "Dwarven Shpere", "Dwarven Centurion", "Falmer", "Falmer Archer", "Falmer Gloomlurker", "Falmer Shaman", "Falmer Spellsword", "Falmer Shadowmaster", "Falmer Nightprowler", "Falmer Warmonger", "Feral Falmer", "Frostbite Spider", "Giant", "Frost Giant", "Hagraven", "Corrupted Shade", "Skeleton", "Spriggan", "Spriggan Matron", "Spriggan Earth Mother", "Wisp", "Shade", "Wispmother"]
 
