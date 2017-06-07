@@ -67,6 +67,7 @@ Contents
   - [Faker::Lorem](doc/lorem.md)
   - [Faker::Markdown](doc/markdown.md)
   - [Faker::Matz](doc/matz.md)
+  - [Faker::MovieQuotes](doc/movie_quotes.md)
   - [Faker::Music](doc/music.md)
   - [Faker::Name](doc/name.md)
   - [Faker::Number](doc/number.md)
