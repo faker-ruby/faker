@@ -92,20 +92,26 @@ module Faker
         (prefix_digits + address_digits).map{ |d| '%02x' % d }.join(':')
       end
 
-      def ip_v4_address
-        uint_to_ip(rand(0..0xffffffff)) # rand int that will be in the range 0.0.0.0-255.255.255
+      def ip_v4_address(type=:decimal)
+        bin_address = rand(0..0xffffffff) # rand int that will be in the range 0.0.0.0-255.255.255
+        case type
+          when :binary, 'binary'
+            return bin_address
+          else
+            return uint_to_ip(bin_address)
+        end
       end
 
       def private_ip_v4_address
         begin
-          addr = ip_v4_address
+          addr = ip_v4_address(:binary)
         end while !private_net_checker[addr]
         uint_to_ip(addr)
       end
 
       def public_ip_v4_address
         begin
-          addr = ip_v4_address
+          addr = ip_v4_address(:binary)
         end while reserved_net_checker[addr]
         uint_to_ip(addr)
       end
