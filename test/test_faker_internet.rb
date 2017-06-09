@@ -1,5 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
-
+require 'byebug'
 class TestFakerInternet < Test::Unit::TestCase
 
   def setup
@@ -93,7 +93,11 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_password_with_special_chars
-    assert @tester.password(8, 12, true, true).match(/[!@#\$%\^&\*]+/)
+    assert @tester.password(8, 12, false, true).match(/[!@#\$%\^&\*]+/)
+  end
+
+  def test_password_with_mixed_case_and_special_chars
+    assert @tester.password(8, 12, true, true).match(/[!@#\$%\^&\*](.+)[A-Z]|[A-Z](.+)[!@#\$%\^&\*]/)
   end
 
   def test_password_without_special_chars
