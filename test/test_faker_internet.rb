@@ -1,5 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
-require 'byebug'
+
 class TestFakerInternet < Test::Unit::TestCase
 
   def setup
