@@ -68,6 +68,19 @@ pt-BR:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} e #{Name.last_name}"
 
+    university:
+      prefix: [Universidade, Faculdade, Centro Tecnológico]
+      region: [Federal, Estadual, Municipal, Rural, Regional, Católica, Metodista]
+      suffix: ['do Sul', 'do Norte', 'a Distância', 'EAD', 'do Leste', 'do Oeste', 'do Nordeste', 'do Suldeste', 'da Floresta Amazônica', 'da Caatinga', 'Atlântica']
+      name:
+              - "#{University.prefix} #{Name.last_name} #{University.suffix}"
+              - "#{University.prefix} do(a) #{Address.state} #{University.suffix}"
+              - "#{University.prefix} do(a) #{Address.state}"
+              - "#{University.prefix} #{University.region} do(a) #{Address.state}"
+              - "#{University.prefix} #{University.region} do(a) #{Address.state} #{University.suffix}"
+              - "#{University.prefix} #{Name.last_name} #{University.suffix}"
+              - "#{University.prefix} #{Name.last_name}"
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com, live.com, bol.com.br]
       domain_suffix: [br, com, biz, info, name, net, org]
