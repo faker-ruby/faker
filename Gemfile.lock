@@ -17,6 +17,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   faker!
@@ -26,4 +27,4 @@ DEPENDENCIES
   timecop
 
 BUNDLED WITH
-   1.14.5
+   1.15.1
