@@ -1,6 +1,8 @@
 # Faker::Food
 
 ```ruby
+Faker::Food.dish #=> "Caesar Salad"
+
 Faker::Food.ingredient #=> "Sweet Potato"
 
 Faker::Food.spice #=> "Caraway Seed"

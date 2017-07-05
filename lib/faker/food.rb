@@ -1,6 +1,10 @@
 module Faker
   class Food < Base
     class << self
+      def dish
+        fetch('food.dish')
+      end
+
       def ingredient
         fetch('food.ingredients')
       end
