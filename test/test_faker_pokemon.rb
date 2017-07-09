@@ -13,4 +13,9 @@ class TestFakerPokemon < Test::Unit::TestCase
     assert @tester.location.match(/\w+/)
   end
 
+  def test_move
+    assert @tester.move.match(/\w+/)
+  end
+
+
 end

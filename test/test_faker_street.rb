@@ -14,6 +14,8 @@ class TestFakerStreet < Test::Unit::TestCase
           :secondary_address => ['(Green Door)'],
           :street_address => ['#{street_name} #{building_number}'],
           :building_number => ['#'],
+          :community_prefix => ['Pine'],
+          :community_suffix => ['Place'],
           :time_zone => ['Pacific/Pago_Pago'],
         }
       }
@@ -35,6 +37,12 @@ class TestFakerStreet < Test::Unit::TestCase
   def test_street_address_supports_flexible_formats
     I18n.with_locale(:shire) do
       assert_match(/Wide Cheerful Path \d/, @tester.street_address)
+    end
+  end
+
+  def test_street_address_supports_flexible_formats
+    I18n.with_locale(:shire) do
+      assert_match(/Pine Place/, @tester.community)
     end
   end
 
