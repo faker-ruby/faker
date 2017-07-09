@@ -46,6 +46,7 @@ Contents
   - [Faker::Demographic](doc/demographic.md)
   - [Faker::Dessert](doc/dessert.md)
   - [Faker::DragonBall](doc/dragon_ball.md)
+  - [Faker::DrWho](doc/dr_who.md)
   - [Faker::Educator](doc/educator.md)
   - [Faker::FamilyGuy](doc/family_guy.md)
   - [Faker::File](doc/file.md)
