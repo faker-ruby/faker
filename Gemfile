@@ -8,4 +8,5 @@ group :development, :test do
   gem "rake"
   gem "minitest"
   gem "timecop"
+  gem "pry"
 end
