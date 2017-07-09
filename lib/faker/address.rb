@@ -23,6 +23,10 @@ module Faker
         bothify(fetch('address.building_number'))
       end
 
+      def community
+        parse('address.community')
+      end
+
       def zip_code(state_abbreviation = '')
         return bothify(fetch('address.postcode')) if state_abbreviation === ''
 
