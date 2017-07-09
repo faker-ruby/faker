@@ -65,6 +65,7 @@ Contents
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
   - [Faker::Lorem](doc/lorem.md)
+  - [Faker::Lovecraft](doc/lovecraft.md)
   - [Faker::Markdown](doc/markdown.md)
   - [Faker::Matz](doc/matz.md)
   - [Faker::Music](doc/music.md)
