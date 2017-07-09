@@ -69,6 +69,7 @@ Contents
   - [Faker::Lovecraft](doc/lovecraft.md)
   - [Faker::Markdown](doc/markdown.md)
   - [Faker::Matz](doc/matz.md)
+    [Faker::MostInterestingManInTheWorld](doc/most_interesting_man_in_the_world.md)
   - [Faker::Music](doc/music.md)
   - [Faker::Name](doc/name.md)
   - [Faker::Number](doc/number.md)
