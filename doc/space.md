@@ -1,5 +1,7 @@
 # Faker::Space
 
+Available since version 1.6.4.
+
 ```ruby
 # Random planet from our Solar System
 Faker::Space.planet #=> "Venus"

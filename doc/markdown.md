@@ -1,5 +1,7 @@
 # Faker::Markdown
 
+Available since version 1.8.0.
+
 Generates markdown formatting with Lorem Ipsum text
 
 ```ruby

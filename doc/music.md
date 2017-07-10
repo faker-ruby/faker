@@ -1,5 +1,7 @@
 # Faker::Music
 
+Available since version 1.6.4.
+
 ```ruby
 Faker::Music.key #=> "C"
 

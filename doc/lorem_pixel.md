@@ -1,5 +1,7 @@
 # Faker::LoremPixel
 
+Available since version 1.7.0.
+
 ```ruby
 Faker::LoremPixel.image #=> "http://lorempixel.com/300/300"
 
