@@ -1,8 +1,6 @@
 # Faker::Robin
 
 ```ruby
+# 367 elements
 Faker::Robin.quote #=> "Holy Razors Edge"
-Faker::Robin.quote #=> "Holy Alter Ego"
-Faker::Robin.quote #=> "Holy Relief"
-Faker::Robin.quote #=> "Holy Pressure Cooker"
 ```
