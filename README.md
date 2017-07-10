@@ -87,6 +87,7 @@ Contents
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
   - [Faker::StarWars](doc/star_wars.md)
+  - [Faker::String](doc/string.md)
   - [Faker::Superhero](doc/superhero.md)
   - [Faker::Team](doc/team.md)
   - [Faker::Time](doc/time.md)
