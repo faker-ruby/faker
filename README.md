@@ -70,6 +70,7 @@ Contents
   - [Faker::Lovecraft](doc/lovecraft.md)
   - [Faker::Markdown](doc/markdown.md)
   - [Faker::Matz](doc/matz.md)
+  - [Faker::Movie](doc/movie.md)
   - [Faker::Music](doc/music.md)
   - [Faker::Name](doc/name.md)
   - [Faker::Number](doc/number.md)
