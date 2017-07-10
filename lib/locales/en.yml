@@ -175,6 +175,7 @@ en:
       name:
         - "#{Address.state} #{creature}"
       sport: ['baseball', 'basketball', 'football', 'hockey', 'rugby', 'lacrosse', 'soccer']
+      mascot: ['Raymond', 'Bailey', 'Rocky', 'Screech', 'Steely McBeam', 'Nordy', 'Hugo', 'Griz', 'Iceburgh', 'Mr. Redlegs', 'Benny the Bull', 'Big Red', 'Suns Gorilla', 'Pirate Parrot', 'Ragar the Viking', 'JazzBear', 'Wally the Green Monster', 'Burnie', 'K.C. Wolf', 'Sausages', 'Mr. Met', 'Youppi', 'The Raptor', 'Jaxson De Ville', 'Phanatic']
 
     hacker:
       abbreviation: [TCP,HTTP,SDD,RAM,GB,CSS,SSL,AGP,SQL,FTP,PCI,AI,ADP,RSS,XML,EXE,COM,HDD,THX,SMTP,SMS,USB,PNG,SAS,IB,SCSI,JSON,XSS,JBOD]
