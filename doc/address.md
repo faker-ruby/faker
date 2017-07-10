@@ -11,7 +11,7 @@ Faker::Address.secondary_address #=> "Apt. 672"
 
 Faker::Address.building_number #=> "7304"
 
-Faker::Address.community #=> "University Crossing Apartments"
+Faker::Address.community #=> "University Crossing"
 
 Faker::Address.zip_code #=> "58517" or "23285-4905"
 
