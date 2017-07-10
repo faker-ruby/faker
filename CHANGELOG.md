@@ -1,5 +1,31 @@
 # Change Log
 
+## [v1.8.1](https://github.com/stympy/faker/tree/v1.8.1) (2017-07-10)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.0...v1.8.1)
+
+**Closed issues:**
+
+- Faker::Internet.domain\_word == "" [\#956](https://github.com/stympy/faker/issues/956)
+- Faker::Coffee [\#935](https://github.com/stympy/faker/issues/935)
+- Internet password method sometimes doesn't include special chars [\#927](https://github.com/stympy/faker/issues/927)
+- Faker HowIMet [\#917](https://github.com/stympy/faker/issues/917)
+- NoMethodError: super: no superclass method `backward' for Faker::Time:Class [\#915](https://github.com/stympy/faker/issues/915)
+- Faker 1.8 release [\#906](https://github.com/stympy/faker/issues/906)
+- Material missing in Faker::Commerce documentation [\#901](https://github.com/stympy/faker/issues/901)
+- Tests fail that have nothing to do with my changes. What should I do? [\#864](https://github.com/stympy/faker/issues/864)
+- uninitialized constant Faker::RuPaul [\#856](https://github.com/stympy/faker/issues/856)
+- Faker::Internet.domain\_word returns empty string [\#843](https://github.com/stympy/faker/issues/843)
+- unitilialized constant Faker::Demographic [\#812](https://github.com/stympy/faker/issues/812)
+
+**Merged pull requests:**
+
+- Fix Address.community documentation [\#972](https://github.com/stympy/faker/pull/972) ([landongrindheim](https://github.com/landongrindheim))
+- edit superclass [\#971](https://github.com/stympy/faker/pull/971) ([iz4blue](https://github.com/iz4blue))
+- adding important data for hipster to en.yml [\#946](https://github.com/stympy/faker/pull/946) ([dbwest](https://github.com/dbwest))
+- Locale: update zh-CN cell phone formats [\#934](https://github.com/stympy/faker/pull/934) ([liluo](https://github.com/liluo))
+- Fixing special chars addition in passwords. [\#926](https://github.com/stympy/faker/pull/926) ([allam-matsubara](https://github.com/allam-matsubara))
+- Update commerce documentation [\#907](https://github.com/stympy/faker/pull/907) ([dv2](https://github.com/dv2))
+
 ## [v1.8.0](https://github.com/stympy/faker/tree/v1.8.0) (2017-07-09)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.7.3...v1.8.0)
 
