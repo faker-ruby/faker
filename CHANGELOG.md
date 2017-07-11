@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.8.2](https://github.com/stympy/faker/tree/v1.8.2) (2017-07-10)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.1...v1.8.2)
+
+**Closed issues:**
+
+- Cannot require 'faker' after update to 1.8.1 [\#975](https://github.com/stympy/faker/issues/975)
+- NoMethodError: super: no superclass method `between' for Faker::Time:Class [\#973](https://github.com/stympy/faker/issues/973)
+
 ## [v1.8.1](https://github.com/stympy/faker/tree/v1.8.1) (2017-07-10)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.0...v1.8.1)
 
@@ -28,12 +36,6 @@
 
 ## [v1.8.0](https://github.com/stympy/faker/tree/v1.8.0) (2017-07-09)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.7.3...v1.8.0)
-
-**Changes**
-
-- The default translation file, `en.yml`, is now being split into
-  multiple translation files, with one translation file per class.  See
-  the [locale README](./lib/locales/en/README.md) for more info.
 
 **Closed issues:**
 
