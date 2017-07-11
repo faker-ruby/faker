@@ -211,7 +211,7 @@ module Faker
   end
 end
 
-Dir.glob(File.join(File.dirname(__FILE__), 'faker','*.rb')).each {|f| require f }
+Dir.glob(File.join(File.dirname(__FILE__), 'faker','*.rb')).sort.each {|f| require f }
 
 require 'extensions/array'
 require 'extensions/symbol'
