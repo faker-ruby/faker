@@ -75,6 +75,9 @@ module Faker
         ['wyaaaaaa', 'ruh', 'huewaa', 'muaa', 'mumwa', 'wua', 'ga', 'ma', 'ahuma', 'ooma', 'youw', 'kabukk', 'wyogg',
           'gwyaaaag', 'roooarrgh', 'ur', 'ru', 'roo', 'hnn-rowr', 'yrroonn', 'nng', 'rarr']
       end
+
+      alias_method :wookie_sentence, :wookiee_sentence
+      alias_method :wookie_words, :wookiee_words
     end
   end
 end
