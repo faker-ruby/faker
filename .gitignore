@@ -9,3 +9,7 @@ pkg/*
 .DS_Store
 
 .idea/*
+
+# Ignore rvm and rbenv files
+.ruby-version
+.ruby-gemset
