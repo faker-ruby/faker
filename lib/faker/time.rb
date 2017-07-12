@@ -8,7 +8,7 @@ module Faker
       :afternoon => (12..17),
       :evening => (17..21),
       :midnight => (0..4)
-    }
+    }.freeze
 
     class << self
       def between(from, to, period = :all, format = nil)

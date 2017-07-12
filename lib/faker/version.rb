@@ -1,3 +1,3 @@
 module Faker #:nodoc:
-  VERSION = "1.8.2"
+  VERSION = "1.8.2".freeze
 end
