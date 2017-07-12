@@ -1,8 +1,10 @@
 # Faker::File
 
 ```ruby
+# 32 elements
 Faker::File.extension #=> "mp3"
 
+# 67 elements
 Faker::File.mime_type #=> "application/pdf"
 
 # Optional arguments: dir, name, extension, directory_separator
