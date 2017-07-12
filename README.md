@@ -95,6 +95,7 @@ Contents
   - [Faker::Twitter](doc/twitter.md)
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
+  - [Faker::VentureBros](doc/venture_bros.md)
   - [Faker::Zelda](doc/zelda.md)
 - [Customization](#customization)
 - [Contributing](#contributing)
