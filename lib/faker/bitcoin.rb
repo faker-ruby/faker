@@ -3,13 +3,14 @@ require 'securerandom'
 
 module Faker
   class Bitcoin < Base
+    PROTOCOL_VERSIONS = {
+      main: 0,
+      testnet: 111
+    }.freeze
+
+    ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'.freeze
+
     class << self
-
-      PROTOCOL_VERSIONS = {
-        main: 0,
-        testnet: 111
-      }
-
       def address
         address_for(:main)
       end
@@ -21,20 +22,17 @@ module Faker
       protected
 
       def base58(str)
-        alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
-        base = alphabet.size
-
         lv = 0
-        str.split('').reverse.each_with_index { |v,i| lv += v.unpack('C')[0] * 256**i }
+        str.split('').reverse.each_with_index { |v, i| lv += v.unpack('C')[0] * 256**i }
 
         ret = ''
         while lv > 0 do
-          lv, mod = lv.divmod(base)
-          ret << alphabet[mod]
+          lv, mod = lv.divmod(ALPHABET.size)
+          ret << ALPHABET[mod]
         end
 
         npad = str.match(/^#{0.chr}*/)[0].to_s.size
-        '1'*npad + ret.reverse
+        '1' * npad + ret.reverse
       end
 
       def address_for(network)
