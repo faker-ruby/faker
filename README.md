@@ -98,6 +98,7 @@ Contents
   - [Faker::Time](doc/time.md)
   - [Faker::TwinPeaks](doc/twin_peaks.md)
   - [Faker::Twitter](doc/twitter.md)
+  - [Faker::UmphreysMcgee](doc/umphreys_mcgee.md)
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
   - [Faker::VentureBros](doc/venture_bros.md)
