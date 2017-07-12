@@ -32,6 +32,7 @@ Contents
   - [Faker::Bitcoin](doc/bitcoin.md)
   - [Faker::Book](doc/book.md)
   - [Faker::Boolean](doc/boolean.md)
+  - [Faker::BossaNova](doc/bossa_nova.md)
   - [Faker::Business](doc/business.md)
   - [Faker::Cat](doc/cat.md)
   - [Faker::ChuckNorris](doc/chuck_norris.md)
