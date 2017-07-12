@@ -166,7 +166,8 @@ Faker::Config.locale to the locale you want, and Faker will take care of the
 rest.
 
 If your locale doesn't already exist, create it in the \lib\locales\ directory
-and you can then override or add elements to suit
+and you can then override or add elements to suit your needs. See more about how to
+use locales [here](lib/locales/README.md)
 
 ```yaml
 
