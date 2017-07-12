@@ -94,6 +94,7 @@ Contents
   - [Faker::StarWars](doc/star_wars.md)
   - [Faker::Superhero](doc/superhero.md)
   - [Faker::Team](doc/team.md)
+  - [Faker::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
   - [Faker::Time](doc/time.md)
   - [Faker::TwinPeaks](doc/twin_peaks.md)
   - [Faker::Twitter](doc/twitter.md)
