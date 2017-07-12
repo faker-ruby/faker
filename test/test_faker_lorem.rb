@@ -50,6 +50,10 @@ class TestFakerLorem < Test::Unit::TestCase
     100.times { assert @standard_wordlist.include?(@tester.word) }
   end
 
+  def test_exact_sentence_word_count
+    assert_equal 2, @tester.sentence(2, false, 0).split(' ').length
+  end
+
   def test_exact_count_param
     assert(@tester.characters(2).length == 2)
     assert(@tester.words(2).length == 2)

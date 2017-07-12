@@ -45,7 +45,7 @@ module Faker
       end
 
       def question(word_count = 4, supplemental = false, random_words_to_add = 6)
-        words(word_count + rand(random_words_to_add.to_i).to_i, supplemental).join(' ').capitalize + '?'
+        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + '?'
       end
 
       def questions(question_count = 3, supplemental = false)

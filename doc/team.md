@@ -12,4 +12,7 @@ Faker::Team.state #=> "Oregon"
 
 # Random Team Sport
 Faker::Team.sport #=> "lacrosse"
+
+# Random Team Mascot
+Faker::Team.mascot #=> "Hugo"
 ```
