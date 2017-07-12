@@ -61,7 +61,7 @@ module Faker
 
         if special_chars
           chars = %w(! @ # $ % ^ & *)
-          rand(min_length).times do |i|
+          rand(1..min_length).times do |i|
             temp[i] = chars[rand(chars.length)]
           end
         end
@@ -78,8 +78,7 @@ module Faker
       end
 
       def domain_word
-        return Char.prepare(Company.name.split(' ')[1]) if Config.locale == 'uk'
-        Char.prepare(Company.name.split(' ').first)
+        with_locale(:en) { Char.prepare(Company.name.split(' ').first) }
       end
 
       def domain_suffix
