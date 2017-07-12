@@ -83,6 +83,7 @@ Contents
   - [Faker::Robin](doc/robin.md)
   - [Faker::RockBand](doc/rock_band.md)
   - [Faker::RuPaul](doc/rupaul.md)
+  - [Faker::Seinfeld](doc/seinfeld.md)
   - [Faker::Simpsons](doc/simpsons.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Space](doc/space.md)
