@@ -25,10 +25,10 @@ module Faker
         sample(vehicles)
       end
 
-      def wookie_sentence
-        sentence = sample(wookie_words).capitalize
+      def wookiee_sentence
+        sentence = sample(wookiee_words).capitalize
 
-        rand(0..10).times { sentence += " " + sample(wookie_words)}
+        rand(0..10).times { sentence += " " + sample(wookiee_words)}
 
         sentence + sample(['.','?','!'])
       end
@@ -71,10 +71,13 @@ module Faker
          'Sith Infiltrator', 'AT-ST Walker', 'TIE Bomber', 'Imperial Shuttle', 'Sandcrawler', 'TIE Interceptor', 'Speeder Bike', 'Death Star', 'AT-AT Walker', 'Imperial Star Destroyer', 'X-Wing Fighter']
       end
 
-      def wookie_words
+      def wookiee_words
         ['wyaaaaaa', 'ruh', 'huewaa', 'muaa', 'mumwa', 'wua', 'ga', 'ma', 'ahuma', 'ooma', 'youw', 'kabukk', 'wyogg',
           'gwyaaaag', 'roooarrgh', 'ur', 'ru', 'roo', 'hnn-rowr', 'yrroonn', 'nng', 'rarr']
       end
+
+      alias_method :wookie_sentence, :wookiee_sentence
+      alias_method :wookie_words, :wookiee_words
     end
   end
 end
