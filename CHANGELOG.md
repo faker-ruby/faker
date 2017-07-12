@@ -1,6 +1,26 @@
 # Change Log
 
-## [v1.8.2](https://github.com/stympy/faker/tree/v1.8.2) (2017-07-10)
+## [v1.8.3](https://github.com/stympy/faker/tree/v1.8.3) (2017-07-12)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.2...v1.8.3)
+
+**Closed issues:**
+
+- Can't pass zero \(0\) to the default rand method \(Faker override\) [\#976](https://github.com/stympy/faker/issues/976)
+- Add Faker::Address.mailing\_address [\#841](https://github.com/stympy/faker/issues/841)
+
+**Merged pull requests:**
+
+- Fix tests warnings [\#979](https://github.com/stympy/faker/pull/979) ([gssbzn](https://github.com/gssbzn))
+- \[\#976\] Handles zero as max for rand [\#978](https://github.com/stympy/faker/pull/978) ([gssbzn](https://github.com/gssbzn))
+- Fix spelling of Wookiee [\#977](https://github.com/stympy/faker/pull/977) ([miloprice](https://github.com/miloprice))
+- Faker: Umphreys mcgee [\#942](https://github.com/stympy/faker/pull/942) ([Ryanspink1](https://github.com/Ryanspink1))
+- Faker: Venture bros [\#940](https://github.com/stympy/faker/pull/940) ([Ryanspink1](https://github.com/Ryanspink1))
+- seinfeld faker  [\#936](https://github.com/stympy/faker/pull/936) ([cews7](https://github.com/cews7))
+- elder scrolls faker [\#933](https://github.com/stympy/faker/pull/933) ([CjMoore](https://github.com/CjMoore))
+- Add greek\_organization method to University Faker [\#932](https://github.com/stympy/faker/pull/932) ([andrewdwooten](https://github.com/andrewdwooten))
+- add Hogwarts and Ilvermorny houses to Harry Potter faker [\#925](https://github.com/stympy/faker/pull/925) ([samanthamorco](https://github.com/samanthamorco))
+
+## [v1.8.2](https://github.com/stympy/faker/tree/v1.8.2) (2017-07-11)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.1...v1.8.2)
 
 **Closed issues:**
@@ -138,7 +158,7 @@
 - Fixed russian locale [\#813](https://github.com/stympy/faker/pull/813) ([fobo66](https://github.com/fobo66))
 - Allow unique values to be cleared [\#810](https://github.com/stympy/faker/pull/810) ([dslh](https://github.com/dslh))
 - Friends info [\#808](https://github.com/stympy/faker/pull/808) ([ktrant84](https://github.com/ktrant84))
-- Update superhero.md [\#805](https://github.com/stympy/faker/pull/805) ([Frylock13](https://github.com/Frylock13))
+- Update superhero.md [\#805](https://github.com/stympy/faker/pull/805) ([VitaliyFry](https://github.com/VitaliyFry))
 - adds Zelda [\#800](https://github.com/stympy/faker/pull/800) ([audy](https://github.com/audy))
 - Remove the word 'fap' [\#798](https://github.com/stympy/faker/pull/798) ([probablycorey](https://github.com/probablycorey))
 - en.yml: fix typo in demographic race [\#797](https://github.com/stympy/faker/pull/797) ([PascalSchumacher](https://github.com/PascalSchumacher))
