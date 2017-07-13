@@ -40,7 +40,7 @@ class TestFakerStreet < Test::Unit::TestCase
     end
   end
 
-  def test_street_address_supports_flexible_formats
+  def test_community_supports_flexible_formats
     I18n.with_locale(:shire) do
       assert_match(/Pine Place/, @tester.community)
     end

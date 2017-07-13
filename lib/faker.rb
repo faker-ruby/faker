@@ -205,7 +205,13 @@ module Faker
       end
 
       def rand(max = nil)
-        max ? Faker::Config.random.rand(max) : Faker::Config.random.rand
+        if max.nil?
+          Faker::Config.random.rand
+        elsif max.is_a?(Range) || max.to_i > 0
+          Faker::Config.random.rand(max)
+        else
+          0
+        end
       end
     end
   end

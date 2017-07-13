@@ -13,5 +13,5 @@ Faker::StarWars.specie #=> "Gungan"
 
 Faker::StarWars.vehicle #=> "Sandcrawler"
 
-Faker::StarWars.wookie_sentence #=> "Yrroonn ru ooma roo ahuma ur roooarrgh hnn-rowr."
+Faker::StarWars.wookiee_sentence #=> "Yrroonn ru ooma roo ahuma ur roooarrgh hnn-rowr."
 ```

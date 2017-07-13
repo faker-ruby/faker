@@ -66,7 +66,30 @@ class TestFaker < Test::Unit::TestCase
     Faker::Config.random = Random.new(42)
     assert v == Faker::Base.rand_in_range(0, 1000)
   end
-  
+
+  def test_rand_for_nil
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(nil)
+    end
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand
+    end
+  end
+
+  def test_rand_for_zero
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(0)
+    end
+    assert_equal 0, Faker::Base.rand(0)
+  end
+
+  def test_rand_for_range
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(0..6)
+    end
+    assert_includes 0..6, Faker::Base.rand(0..6)
+  end
+
   def test_unique
     unique_numbers = 8.times.map do
       Faker::Base.unique.numerify('#')
@@ -74,5 +97,4 @@ class TestFaker < Test::Unit::TestCase
 
     assert_equal(unique_numbers.uniq, unique_numbers)
   end
-
 end

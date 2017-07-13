@@ -20,5 +20,8 @@ class TestFakerFood < Test::Unit::TestCase
   def test_measurement
     assert @tester.measurement.split(" ").length == 2
   end
-
+  
+  def test_metric_measurement
+    assert @tester.metric_measurement.match(/\w+/)
+  end  
 end
