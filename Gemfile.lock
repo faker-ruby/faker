@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    faker (1.8.3)
+    faker (1.8.4)
       i18n (~> 0.5)
 
 GEM

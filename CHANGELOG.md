@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.8.4](https://github.com/stympy/faker/tree/v1.8.4) (2017-07-12)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.3...v1.8.4)
+
+**Merged pull requests:**
+
+- Remove errant tab character in YAML [\#981](https://github.com/stympy/faker/pull/981) ([steveh](https://github.com/steveh))
+
 ## [v1.8.3](https://github.com/stympy/faker/tree/v1.8.3) (2017-07-12)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.2...v1.8.3)
 
