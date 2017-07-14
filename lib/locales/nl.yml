@@ -44,7 +44,7 @@ nl:
 
       street_address:
         - "#{street_name} #{building_number}"
-      postcode: ["#### ??"]
+      postcode: /\d{4} [A-Z]{2}(?<!SA|SS|SD)/
       state: ["Noord-Holland", "Zuid-Holland", "Utrecht", "Zeeland", "Overijssel", "Gelderland", "Drenthe", "Friesland", "Groningen", "Noord-Brabant", "Limburg"]
       default_country: [Nederland]
 
