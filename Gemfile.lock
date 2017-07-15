@@ -13,7 +13,7 @@ GEM
     rake (12.0.0)
     test-unit (3.2.5)
       power_assert
-    timecop (0.9.0)
+    timecop (0.9.1)
 
 PLATFORMS
   ruby
