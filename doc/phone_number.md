@@ -25,9 +25,13 @@ Faker::Config.locale = 'en-US'
 
 # US only
 Faker::PhoneNumber.area_code #=> "201"
+## Count ##
+# en-US: 268 
 
 # US only
 Faker::PhoneNumber.exchange_code #=> "208"
+## Count ##
+# en-US: 283 # en-ZA: 283 
 
 # Optional parameter: length=4
 Faker::PhoneNumber.subscriber_number #=> "3873"

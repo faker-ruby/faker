@@ -4,9 +4,13 @@ Adapted from [Hipster Ipsum](http://hipsum.co/)
 
 ```ruby
 Faker::Hipster.word #=> "irony"
+## Count ##
+# de: 90 # en: 203 
 
 # Optional arguments: num=3, supplemental=false, spaces_allowed = false
 Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
+## Count ##
+# de: 90 # en: 203 
 Faker::Hipster.words(4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
 Faker::Hipster.words(4, true) #=> ["iste", "seitan", "normcore", "provident"]
 Faker::Hipster.words(4, true, true) #=> ["qui", "magni", "craft beer", "est"]

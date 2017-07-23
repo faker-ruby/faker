@@ -8,11 +8,15 @@ Faker::Internet.email('Nancy') #=> "nancy@terry.biz"
 
 # Optional argument name=nil
 Faker::Internet.free_email #=> "freddy@gmail.com"
+## Count ##
+# bg: 6 # de-AT: 3 # de: 7 # en-CA: 3 # en-IND: 3 # nep: 4 # en-PAK: 3 # es-MX: 4 # es: 3 # fr: 3 # it: 6 # ko: 4 # nl: 6 # pl: 3 # pt-BR: 5 # pt: 5 # ru: 6 # sk: 3 # tr: 3 # uk: 7 
 
 Faker::Internet.free_email('Nancy') #=> "nancy@yahoo.com"
 
 # Optional argument name=nil
 Faker::Internet.safe_email #=> "christelle@example.org"
+## Count ##
+# tr: dynamic 
 
 Faker::Internet.safe_email('Nancy') #=> "nancy@example.net"
 
@@ -44,6 +48,8 @@ Faker::Internet.fix_umlauts('äöüß') #=> "aeoeuess"
 Faker::Internet.domain_word #=> "haleyziemann"
 
 Faker::Internet.domain_suffix #=> "info"
+## Count ##
+# bg: 6 # da-DK: 3 # de-AT: 8 # de-CH: 9 # de: 7 # en-au-ocker: 6 # en-AU: 6 # en-CA: 7 # en-GB: 5 # en-IND: 8 # nep: 5 # en-NG: 10 # en-NZ: 11 # en-PAK: 8 # en-UG: 6 # en-US: 9 # en-ZA: 3 # es-MX: 7 # es: 5 # fr: 11 # it: 8 # ko: 8 # nb-NO: 4 # nl: 4 # pl: 5 # pt-BR: 7 # pt: 6 # ru: 6 # sk: 5 # sv: 5 # tr: 5 # uk: 60 # vi: 5 
 
 Faker::Internet.ip_v4_address #=> "24.29.18.175"
 
