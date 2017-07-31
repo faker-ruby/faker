@@ -116,6 +116,11 @@ Contents
 ```bash
 gem install faker
 ```
+Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the most up to date, change the line in your gemfile to:
+
+```bash
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+```
 
 ## Usage
 
