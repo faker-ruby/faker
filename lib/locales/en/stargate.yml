@@ -2,4 +2,6 @@ en:
   faker:
     stargate:
       characters: ["Jack O'Neill", "Teal'c", "Daniel Jackson", "Samantha Carter", "Janet Frasier", "George Hammond", "Jonas Quinn", "Cameron Mitchell", "Vala Mal Doran", "Kawalsky", "Jacob Carter", "Kasuf", "Sha're", "Skaara", "Thor", "Anubis", "Apophis", "Ba'al", "Cronus", "Hathor", "Heru-ur", "Klorel", "Ra", "Amonet", "Osiris", "Sokar", "Bra'tac", "Lantash", "Selmak", "Jolinar", "Martouf", "Cassandra"]
+      planets: ["Abydos", "Asuras", "Athos", "Celestis", "Chulak", "Dakara", "Earth", "Langara", "Lantea", "Orilla", "P3X-888", "Sateda", "Tollana", "Vorash"]
+      quotes: []
 
