@@ -30,6 +30,7 @@ Contents
   - [Faker::Bank](doc/bank.md)
   - [Faker::Beer](doc/beer.md)
   - [Faker::Bitcoin](doc/bitcoin.md)
+  - [Faker::Blog](doc/blog.md)
   - [Faker::Book](doc/book.md)
   - [Faker::Boolean](doc/boolean.md)
   - [Faker::BossaNova](doc/bossa_nova.md)

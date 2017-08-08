@@ -1,0 +1,81 @@
+# encoding: utf-8
+es-CL:
+  faker:
+    blog:
+      nickname:
+        - Chela
+        - Celia
+        - Charo
+        - Rosario
+        - Chabela
+        - Isabel
+        - Coté
+        - María José
+        - Kena
+        - Eugenia
+        - Lola
+        - Dolores
+        - Maite
+        - María Teresa
+        - Maru
+        - María Eugenia
+        - Maruja
+        - María Eugenia
+        - Meche
+        - Mercedes
+        - Nena
+        - Elena
+        - María Elena
+        - Pachi
+        - Paz
+        - Pepa
+        - Josefina
+        - Toya
+        - Victoria
+        - Beto
+        - Alberto
+        - Humberto
+        - Checho
+        - Sergio
+        - Coke
+        - Jorge
+        - Cucho
+        - Agustín
+        - Feña
+        - Fernando
+        - Keno
+        - Eugenio
+        - Guillermo
+        - Memo
+        - Jano
+        - Alejandro
+        - Kike
+        - Enrique
+        - Lalo
+        - Eduardo
+        - Lucho
+        - Luís
+        - Moncho
+        - Ramón
+        - Nacho
+        - Ignacio
+        - Nano
+        - Hernán
+        - Pancho
+        - Francisco
+        - Pato
+        - Patricio
+        - Pepe
+        - José
+        - Pipe
+        - Felipe
+        - Tatán
+        - Sebastián
+        - Tito
+        - Héctor
+        - Ernesto
+        - Toño
+        - Antonio
+        - Vicho
+        - Bicho
+        - Vicente
