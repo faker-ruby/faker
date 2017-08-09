@@ -26,7 +26,7 @@ class TestLocale < Test::Unit::TestCase
 
   def test_locale_override_when_calling_translate
     Faker::Config.locale = 'en-BORK'
-    assert_equal Faker::Base.translate('faker.lorem.words', :locale => :en).first, LoadedYaml['en']['lorem']['words'].first
+    assert_equal Faker::Base.translate('faker.separator', :locale => :en), LoadedYaml['en']['separator']
   end
 
   def test_translation_fallback
