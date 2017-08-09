@@ -32,7 +32,7 @@ class TestLocale < Test::Unit::TestCase
   def test_translation_fallback
     Faker::Config.locale = 'en-BORK'
     assert_nil LoadedYaml['en-BORK']['name']
-    assert_equal Faker::Base.translate('faker.name.first_name').first, LoadedYaml['en']['name']['first_name'].first
+    assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
   end
 
   def test_regex
