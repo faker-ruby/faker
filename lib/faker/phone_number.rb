@@ -9,6 +9,10 @@ module Faker
         parse('cell_phone.formats')
       end
 
+      def calling_code
+        fetch('phone_number.calling_code')
+      end
+
       # US only
       def area_code
         begin
