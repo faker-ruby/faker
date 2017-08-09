@@ -29,6 +29,7 @@ class TestEsLocale < Test::Unit::TestCase
 
   def test_translation_fallback
     assert_nil LoadedEsYaml['es']['company']['bs']
-    assert_equal Faker::Base.translate('faker.company.bs'), LoadedEsYaml['en']['company']['bs']
+    assert_not_nil LoadedEsYaml['es']['address']['city_prefix']
+    assert_equal Faker::Base.translate('faker.address.city_prefix'), LoadedEsYaml['es']['address']['city_prefix']
   end
 end
