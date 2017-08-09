@@ -274,9 +274,6 @@ en:
        "Life Is About Using The Whole Box Of Crayons",
        "When The Going Gets Tough, The Tough Reinvent"
       ]
-    markdown:
-      headers: ["#", "##", "###", "####", "#####", "######"]
-      emphasis: ["_", "~", "*", "**"]
     overwatch:
       heroes: ["Ana", "Bastion", "D.va", "Genji", "Hanzo", "Junkrat", "Lucio", "McCree", "Mei", "Mercy", "Orisa", "Pharah", "Reaper", "Reinhardt", "Roadhog", "Soldier 76", "Sombra", "Symmetra", "Torbjorn", "Tracer", "Widowmaker", "Winston", "Zarya", "Zenyatta"]
       locations: ["Adlersbrunn", "Dorado", "Ecopoint: Antarctica", "Eichenwalde", "Hanamura", "Hollywood", "Ilios", "King's Row", "Lijiang Tower", "Nepal", "Numbani", "Oasis", "Route 66", "Temple of Anubis", "Volskaya Industries", "Watchpoint: Gibraltar"]
