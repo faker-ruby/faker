@@ -1,8 +1,8 @@
 module Faker
   class Types < Base
     CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a
-    SIMPLE_TYPES = ["string", "fixnum"]
-    COMPLEX_TYPES = ["hash", "array"]
+    SIMPLE_TYPES = [:string, :fixnum]
+    COMPLEX_TYPES = [:hash, :array]
     
     class << self
       def string(words=1)
@@ -46,7 +46,7 @@ module Faker
         ar
       end
       
-      def constant(mod, key, val)
+      def constant(mod=nil, key=nil, val=nil)
         key = self.string if key.nil?
         val = self.string if val.nil?
         mod.const_set(titleize(key), val) if mod
@@ -56,9 +56,9 @@ module Faker
       def random_type
         type_to_use = SIMPLE_TYPES[rand(0..SIMPLE_TYPES.length - 1)]
         case type_to_use
-        when "string"
+        when :string
           self.string
-        when "fixnum"
+        when :fixnum
           self.integer
         else
           self.integer
@@ -69,13 +69,13 @@ module Faker
         types = SIMPLE_TYPES + COMPLEX_TYPES
         type_to_use = types[rand(0..types.length - 1)]
         case type_to_use
-        when "string"
+        when :string
           self.string
-        when "fixnum"
+        when :fixnum
           self.integer
-        when "hash"
+        when :hash
           self.hash
-        when "array"
+        when :array
           self.array
         else
           self.integer
