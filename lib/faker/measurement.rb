@@ -51,44 +51,44 @@ module Faker
       def metric_height(amount = rand(10))
         ensure_valid_amount(amount)
         if amount == ALL
-          make_plural(fetch('measurement.height'))
+          make_plural(fetch('measurement.metric_height'))
         elsif amount == NONE
-          fetch('measurement.height')
+          fetch('measurement.metric_height')
         else
-          "#{amount} #{check_for_plural(fetch('measurement.height'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.metric_height'), amount)}"
         end
       end
 
       def metric_length(amount = rand(10))
         ensure_valid_amount(amount)
         if amount == ALL
-          make_plural(fetch('measurement.length'))
+          make_plural(fetch('measurement.metric_length'))
         elsif amount == NONE
-          fetch('measurement.length')
+          fetch('measurement.metric_length')
         else
-          "#{amount} #{check_for_plural(fetch('measurement.length'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.metric_length'), amount)}"
         end
       end
 
       def metric_volume(amount = rand(10))
         ensure_valid_amount(amount)
         if amount == ALL
-          make_plural(fetch('measurement.volume'))
+          make_plural(fetch('measurement.metric_volume'))
         elsif amount == NONE
-          fetch('measurement.volume')
+          fetch('measurement.metric_volume')
         else
-          "#{amount} #{check_for_plural(fetch('measurement.volume'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.metric_volume'), amount)}"
         end
       end
 
       def metric_weight(amount = rand(10))
         ensure_valid_amount(amount)
         if amount == ALL
-          make_plural(fetch('measurement.weight'))
+          make_plural(fetch('measurement.metric_weight'))
         elsif amount == NONE
-          fetch('measurement.weight')
+          fetch('measurement.metric_weight')
         else
-          "#{amount} #{check_for_plural(fetch('measurement.weight'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.metric_weight'), amount)}"
         end
       end
 
