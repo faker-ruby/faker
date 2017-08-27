@@ -52,11 +52,11 @@ module Faker
       def country_code_long;  fetch('address.country_code_long'); end
 
       def latitude
-        ((rand * 180) - 90).to_s
+        sprintf( "%0.05f", (rand * 180) - 90)
       end
 
       def longitude
-        ((rand * 360) - 180).to_s
+        sprintf( "%0.05f", (rand * 360) - 180)
       end
 
       def full_address
