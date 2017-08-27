@@ -1,0 +1,87 @@
+en:
+  faker:
+    bank:
+      name: ["UBS CLEARING AND EXECUTION SERVICES LIMITED", "ABN AMRO CORPORATE FINANCE LIMITED", "ABN AMRO FUND MANAGERS LIMITED", "ABN AMRO HOARE GOVETT SECURITIES", "ABN AMRO HOARE GOVETT CORPORATE FINANCE LTD.", "ALKEN ASSET MANAGEMENT", "ALKEN ASSET MANAGEMENT", "ABN AMRO HOARE GOVETT LIMITED", "AAC CAPITAL PARTNERS LIMITED", "ABBOTSTONE AGRICULTURAL PROPERTY UNIT TRUST", "ABN AMRO QUOTED INVESTMENTS (UK) LIMITED", "ABN AMRO MEZZANINE (UK) LIMITED", "ABBEY LIFE", "SANTANDER UK PLC", "OTKRITIE SECURITIES LIMITED", "ABC INTERNATIONAL BANK PLC", "ALLIED BANK PHILIPPINES (UK) PLC", "ABU DHABI ISLAMIC BANK", "ABG SUNDAL COLLIER LIMITED", "PGMS (GLASGOW) LIMITED", "ABINGWORTH MANAGEMENT LIMITED", "THE ROYAL BANK OF SCOTLAND PLC (FORMER RBS NV)"]
+      swift_bic: ["AACCGB21", "AACNGB21", "AAFMGB21", "AAHOGB21", "AAHVGB21", "AANLGB21", "AANLGB2L", "AAOGGB21", "AAPEGB21", "AAPUGB21", "AAQIGB21", "ABAZGB21", "ABBEGB21", "ABBYGB2L", "ABCCGB22", "ABCEGB2L", "ABCMGB21", "ABDIGB21", "ABECGB21", "ABFIGB21", "ABMNGB21", "ABNAGB21VOC" ]
+      iban_details:
+        - bank_country_code: "AT"
+          iban_letter_code: '0'
+          iban_digits: '18'
+        - bank_country_code: "BG"
+          iban_letter_code: '4'
+          iban_digits: '14'
+        - bank_country_code: "BE"
+          iban_letter_code: '0'
+          iban_digits: '14'
+        - bank_country_code: "CY"
+          iban_letter_code: '0'
+          iban_digits: '26'
+        - bank_country_code: "CZ"
+          iban_letter_code: '0'
+          iban_digits: '22'
+        - bank_country_code: "DE"
+          iban_letter_code: '0'
+          iban_digits: '20'
+        - bank_country_code: "DK"
+          iban_letter_code: '0'
+          iban_digits: '16'
+        - bank_country_code: "EE"
+          iban_letter_code: '0'
+          iban_digits: '18'
+        - bank_country_code: "ES"
+          iban_letter_code: '0'
+          iban_digits: '22'
+        - bank_country_code: "FI"
+          iban_letter_code: '0'
+          iban_digits: '16'
+        - bank_country_code: "FR"
+          iban_letter_code: '0'
+          iban_digits: '25'
+        - bank_country_code: "GB"
+          iban_letter_code: '4'
+          iban_digits: '14'
+        - bank_country_code: "GR"
+          iban_letter_code: '0'
+          iban_digits: '25'
+        - bank_country_code: "HU"
+          iban_letter_code: '0'
+          iban_digits: '28'
+        - bank_country_code: "HR"
+          iban_letter_code: '0'
+          iban_digits: '19'
+        - bank_country_code: "IE"
+          iban_letter_code: '4'
+          iban_digits: '16'
+        - bank_country_code: "IT"
+          iban_letter_code: '0'
+          iban_digits: '25'
+        - bank_country_code: "LV"
+          iban_letter_code: '4'
+          iban_digits: '15'
+        - bank_country_code: "LT"
+          iban_letter_code: '0'
+          iban_digits: '14'
+        - bank_country_code: "LU"
+          iban_letter_code: '0'
+          iban_digits: '16'
+        - bank_country_code: "PL"
+          iban_letter_code: '0'
+          iban_digits: '24'
+        - bank_country_code: "PT"
+          iban_letter_code: '0'
+          iban_digits: '18'
+        - bank_country_code: "MT"
+          iban_letter_code: '4'
+          iban_digits: '26'
+        - bank_country_code: "NL"
+          iban_letter_code: '4'
+          iban_digits: '12'
+        - bank_country_code: "RO"
+          iban_letter_code: '4'
+          iban_digits: '18'
+        - bank_country_code: "SE"
+          iban_letter_code: '0'
+          iban_digits: '22'
+        - bank_country_code: "SK"
+          iban_letter_code: '0'
+          iban_digits: '22'

@@ -3,8 +3,8 @@ module Faker
     flexible :address
 
     class << self
-      def city
-        parse('address.city')
+      def city(options = {})
+        parse(options[:with_state] ? 'address.city_with_state' : 'address.city')
       end
 
       def street_name
@@ -16,11 +16,15 @@ module Faker
       end
 
       def secondary_address
-        numerify(fetch('address.secondary_address'))
+        bothify(fetch('address.secondary_address'))
       end
 
       def building_number
         bothify(fetch('address.building_number'))
+      end
+
+      def community
+        parse('address.community')
       end
 
       def zip_code(state_abbreviation = '')
@@ -38,13 +42,14 @@ module Faker
       alias_method :zip, :zip_code
       alias_method :postcode, :zip_code
 
-      def street_suffix; fetch('address.street_suffix'); end
-      def city_suffix;   fetch('address.city_suffix');   end
-      def city_prefix;   fetch('address.city_prefix');   end
-      def state_abbr;    fetch('address.state_abbr');    end
-      def state;         fetch('address.state');         end
-      def country;       fetch('address.country');       end
-      def country_code;  fetch('address.country_code');  end
+      def street_suffix;      fetch('address.street_suffix');     end
+      def city_suffix;        fetch('address.city_suffix');       end
+      def city_prefix;        fetch('address.city_prefix');       end
+      def state_abbr;         fetch('address.state_abbr');        end
+      def state;              fetch('address.state');             end
+      def country;            fetch('address.country');           end
+      def country_code;       fetch('address.country_code');      end
+      def country_code_long;  fetch('address.country_code_long'); end
 
       def latitude
         sprintf( "%0.05f", (rand * 180) - 90)
@@ -52,6 +57,10 @@ module Faker
 
       def longitude
         sprintf( "%0.05f", (rand * 360) - 180)
+      end
+
+      def full_address
+        parse('address.full_address')
       end
     end
   end

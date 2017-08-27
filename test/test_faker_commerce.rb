@@ -10,6 +10,14 @@ class TestFakerCommerce < Test::Unit::TestCase
     assert @tester.color.match(/[a-z]+\.?/)
   end
 
+  def test_promotion_code
+    assert @tester.promotion_code.match(/[A-Z][a-z]+[A-Z][a-z]+\d{6}/)
+  end
+
+  def test_promotion_code_should_have_specified_number_of_digits
+    assert @tester.promotion_code(3).match(/[A-Z][a-z]+[A-Z][a-z]+\d{3}/)
+  end
+
   def test_department
     assert @tester.department.match(/[A-Z][a-z]+\.?/)
   end
@@ -74,7 +82,7 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_price_with_srand
-    srand(12345)
+    Faker::Config.random = Random.new(12345)
     assert_equal 92.96, @tester.price
   end
 

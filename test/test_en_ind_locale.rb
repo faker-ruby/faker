@@ -20,4 +20,13 @@ class TestEnIndLocale < Test::Unit::TestCase
     assert Faker::Internet.domain_suffix.is_a? String
     assert Faker::Company.suffix.is_a? String
   end
+
+  def test_en_ind_postal_code
+    assert_match(/[\d]{6}$/, Faker::Address.postcode)
+  end
+
+  def test_en_ind_city
+    assert_match(/(\w+\.? ?){2,3}/, Faker::Address.city)
+  end
+
 end

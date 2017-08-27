@@ -6,7 +6,7 @@ module Faker
       # Generates a 10 digit NPI (National Provider Identifier
       # issued to health care providers in the United States)
       def npi
-        Random.new.rand(10 ** 10).to_s.rjust(10, '0')
+        rand(10 ** 10).to_s.rjust(10, '0')
       end
 
       # By default generates 10 sign isbn code in format 123456789-X
@@ -64,7 +64,7 @@ module Faker
 
         # Fill in the first two values of the string based with the specified prefix.
         # Reporting Body Identifier list: http://en.wikipedia.org/wiki/Reporting_Body_Identifier
-        arr = RBI.sample
+        arr = sample(RBI)
         str[0] = arr[0].to_i
         str[1] = arr[1].to_i
         pos = 2
@@ -77,9 +77,9 @@ module Faker
 
         # Calculate the Luhn checksum of the values thus far
         len_offset = (len + 1) % 2
-        for pos in (0..(len - 1))
-          if (pos + len_offset) % 2 != 0
-            t = str[pos] * 2
+        (0..(len - 1)).each do |position|
+          if (position + len_offset) % 2 != 0
+            t = str[position] * 2
 
             if t > 9
               t -= 9
@@ -87,7 +87,7 @@ module Faker
 
             sum += t
           else
-            sum += str[pos]
+            sum += str[position]
           end
         end
 

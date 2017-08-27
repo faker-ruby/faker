@@ -9,9 +9,18 @@ to know that you have a clean slate: `bundle && bundle exec rake`
 require no new tests. If you are adding functionality or fixing a bug, we need
 a test!
 
-4. Make the test pass.
+4. Make the test pass.  Always use `sample`, `shuffle`, and `rand` from
+the Base class (just like the rest of the code) rather than
+`Array#sample`, `Array#shuffle` and `Kernel#rand` to preserve the
+deterministic feature.
 
-5. Push to your fork and submit a pull request.
+5. When adding a new class, add a new yaml file to
+`lib/locales/en` rather than adding translations to
+`lib/locales/en.yml`.  For example, if you add Faker::MyThing,
+put your translations in `lib/locales/en/my_thing.yml`.  See [the locale
+README](./lib/locales/en/README.md) for more info.
+
+6. Push to your fork and submit a pull request.
 
 Syntax:
 

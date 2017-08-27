@@ -73,6 +73,26 @@ class TestFakerTime < Test::Unit::TestCase
     end
   end
 
+  def test_format
+    from = Date.today
+    to   = Date.today + 15
+    format = :us
+    100.times do
+      period = @time_ranges.keys.to_a.sample
+
+      random_backward  = @tester.backward(30,period, format)
+      random_between  = @tester.between(from,to,period, format)
+      random_forward  = @tester.forward(30,period, format)
+      [random_backward, random_between, random_forward].each do |result|
+          assert result.is_a?(String), "Expected a String, but got #{result.class}"
+          assert_nothing_raised "Not a valid date string" do
+            date_format = "%m/%d/%Y %I:%M %p"
+            DateTime.strptime(result, date_format)
+          end
+      end
+    end
+  end
+
   def test_time_period
     from = Time.at(0).to_date
     to   = Time.at(2145945600).to_date
@@ -88,6 +108,16 @@ class TestFakerTime < Test::Unit::TestCase
       [random_backward, random_between, random_forward].each_with_index do |result, index|
         assert period_range.include?(result.hour.to_i), "#{[:random_backward, :random_between, :random_forward][index]}: \"#{result}\" expected to be included in Faker::Time::TIME_RANGES[:#{period}] range"
       end
+    end
+
+    from = Time.now
+    to   = Time.now + 100
+
+    100.times do
+      period          = :between
+      random_between  = @tester.between(from, to, period)
+      assert random_between >= from, "Expected >= \"#{from}\", but got #{random_between}"
+      assert random_between <= to  , "Expected <= \"#{to}\", but got #{random_between}"
     end
   end
 end
