@@ -16,6 +16,10 @@ module Faker
       def book
         fetch('harry_potter.books')
       end
+
+      def house
+        fetch('harry_potter.houses')
+      end
     end
   end
 end

@@ -32,6 +32,7 @@ Contents
   - [Faker::Bitcoin](doc/bitcoin.md)
   - [Faker::Book](doc/book.md)
   - [Faker::Boolean](doc/boolean.md)
+  - [Faker::BossaNova](doc/bossa_nova.md)
   - [Faker::Business](doc/business.md)
   - [Faker::Cat](doc/cat.md)
   - [Faker::ChuckNorris](doc/chuck_norris.md)
@@ -46,7 +47,10 @@ Contents
   - [Faker::Demographic](doc/demographic.md)
   - [Faker::Dessert](doc/dessert.md)
   - [Faker::DragonBall](doc/dragon_ball.md)
+  - [Faker::DrWho](doc/dr_who.md)
   - [Faker::Educator](doc/educator.md)
+  - [Faker::ElderScrolls](doc/elder_scrolls.md)
+  - [Faker::FamilyGuy](doc/family_guy.md)
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
   - [Faker::Food](doc/food.md)
@@ -65,8 +69,12 @@ Contents
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
   - [Faker::Lorem](doc/lorem.md)
+  - [Faker::Lovecraft](doc/lovecraft.md)
   - [Faker::Markdown](doc/markdown.md)
   - [Faker::Matz](doc/matz.md)
+  - [Faker::Measurement](doc/measurement.md)
+  - [Faker::MostInterestingManInTheWorld](doc/most_interesting_man_in_the_world.md)
+  - [Faker::Movie](doc/movie.md)
   - [Faker::Music](doc/music.md)
   - [Faker::Name](doc/name.md)
   - [Faker::Number](doc/number.md)
@@ -79,17 +87,24 @@ Contents
   - [Faker::Robin](doc/robin.md)
   - [Faker::RockBand](doc/rock_band.md)
   - [Faker::RuPaul](doc/rupaul.md)
+  - [Faker::Seinfeld](doc/seinfeld.md)
+  - [Faker::Simpsons](doc/simpsons.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
   - [Faker::StarWars](doc/star_wars.md)
   - [Faker::Superhero](doc/superhero.md)
   - [Faker::Team](doc/team.md)
+  - [Faker::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
   - [Faker::Time](doc/time.md)
   - [Faker::TwinPeaks](doc/twin_peaks.md)
   - [Faker::Twitter](doc/twitter.md)
+  - [Faker::UmphreysMcgee](doc/umphreys_mcgee.md)
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
+  - [Faker::VentureBros](doc/venture_bros.md)
+  - [Faker::Witcher](doc/witcher.md)
+  - [Faker::WorldOfWarcraft](doc/world_of_warcraft.md)
   - [Faker::Zelda](doc/zelda.md)
 - [Customization](#customization)
 - [Contributing](#contributing)
@@ -160,7 +175,8 @@ Faker::Config.locale to the locale you want, and Faker will take care of the
 rest.
 
 If your locale doesn't already exist, create it in the \lib\locales\ directory
-and you can then override or add elements to suit
+and you can then override or add elements to suit your needs. See more about how to
+use locales [here](lib/locales/README.md)
 
 ```yaml
 
