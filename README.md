@@ -111,6 +111,12 @@ Contents
 - [Contact](#contact)
 - [License](#license)
 
+## Requirements
+
+### Ruby
+
+faker now requires Ruby version >= 2.1.
+
 ## Installing
 
 ```bash
