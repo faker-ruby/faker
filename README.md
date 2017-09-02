@@ -120,6 +120,8 @@ gem install faker
 ## Usage
 
 ```ruby
+require `faker`
+
 Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
