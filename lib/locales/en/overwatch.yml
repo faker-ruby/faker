@@ -1,8 +1,8 @@
 en:
   faker:
     overwatch:
-      heroes: ["Ana", "Bastion", "D.va", "Genji", "Hanzo", "Junkrat", "Lucio", "McCree", "Mei", "Mercy", "Orisa", "Pharah", "Reaper", "Reinhardt", "Roadhog", "Soldier 76", "Sombra", "Symmetra", "Torbjorn", "Tracer", "Widowmaker", "Winston", "Zarya", "Zenyatta"]
-      locations: ["Adlersbrunn", "Dorado", "Ecopoint: Antarctica", "Eichenwalde", "Hanamura", "Hollywood", "Ilios", "King's Row", "Lijiang Tower", "Nepal", "Numbani", "Oasis", "Route 66", "Temple of Anubis", "Volskaya Industries", "Watchpoint: Gibraltar"]
+      heroes: ["Ana", "Bastion", "D.va", "Doomfist", "Genji", "Hanzo", "Junkrat", "Lucio", "McCree", "Mei", "Mercy", "Orisa", "Pharah", "Reaper", "Reinhardt", "Roadhog", "Soldier 76", "Sombra", "Symmetra", "Torbjorn", "Tracer", "Widowmaker", "Winston", "Zarya", "Zenyatta"]
+      locations: ["Adlersbrunn", "Chateau Guillard", "Dorado", "Ecopoint: Antarctica", "Eichenwalde", "Hanamura", "Hollywood", "Ilios", "Junkertown", "King's Row", "Lijiang Tower", "Nepal", "Numbani", "Oasis", "Route 66", "Temple of Anubis", "Volskaya Industries", "Watchpoint: Gibraltar"]
       quotes: [
        "It's high noon",
        "Pass into the Iris",
@@ -28,5 +28,7 @@ en:
        "Repetition is the path to mastery",
        "I am on fire, but an extinguisher is not required",
        "I'm the one who does his job. I'm thinking, you're the other one",
-       "You're just a glitch in the system"
+       "You're just a glitch in the system",
+       "Cease your resistance!",
+       "Meteor Strike!"
       ]
