@@ -11,5 +11,5 @@ Faker::Dog.breed #=> "Yorkshire Terrier"
 Faker::Dog.sound #=> "woof woof"
 
 # Random dog meme phrase
-Faker::Dog.breed #=> "smol pupperino"
+Faker::Dog.meme_phrase #=> "smol pupperino"
 ```
