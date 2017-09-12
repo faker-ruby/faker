@@ -29,6 +29,19 @@ class TestFakerCompany < Test::Unit::TestCase
     assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
   end
 
+  def test_french_siren_number
+    siren = @tester.french_siren_number
+    assert siren.match(/\A\d{9}\z/)
+    assert siren[8] == @tester.send(:luhn_algorithm, siren[0..-2]).to_s
+  end
+
+  def test_french_siret_number
+    siret = @tester.french_siret_number
+    assert siret.match(/\A\d{14}\z/)
+    assert siret[8] == @tester.send(:luhn_algorithm, siret[0..7]).to_s
+    assert siret[13] == @tester.send(:luhn_algorithm, siret[0..-2]).to_s
+  end
+
   def test_norwegian_organisation_number
     org_no = @tester.norwegian_organisation_number
     assert org_no.match(/\d{9}/)
