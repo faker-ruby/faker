@@ -6,7 +6,7 @@ en:
         "Captain Jack Harkness", "Astrid Peth", "Sarah Jane Smith", "Jackson Lake", "Lady Christina de Souza",
         "Adelaide Brooke", "Wilfred Mott", "Amy Pond" ]
       the_doctors: [
-        "First Doctor", "Second Doctor", "Third Doctor", "Fourth Doctor", "Fifth Doctor", "Seventh Doctor",
+        "First Doctor", "Second Doctor", "Third Doctor", "Fourth Doctor", "Fifth Doctor", "Sixth Doctor", "Seventh Doctor",
         "Eighth Doctor", "Ninth Doctor", "Tenth Doctor", "Eleventh Doctor", "Twelfth Doctor"
       ]
       catch_phrases: [
@@ -38,7 +38,7 @@ en:
         "Crossing into established events is strictly forbidden. Except for cheap tricks.",
       ]
       villians: [
-        "Helen A", "Abzorbaloff", "Animus", "The Master",
+        "Helen A", "Abzorbaloff", "Animus", "The Master", "Davros", "Dalek Emperor"
       ]
       species: [
         "Time Lord", "Dalek", "Thal", "Dal", "Voord", "Sensorite", "Slyther", "Didonian", "Sand Beast", "Animus",
