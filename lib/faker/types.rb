@@ -23,34 +23,27 @@ module Faker
       end
       
       def hash(key_count=1)
-        hsh = {}
-        key_count.times do
-          hsh = hsh.merge({self.string.to_sym => self.random_type})
+        Hash.new.tap do |hsh|
+          key_count.times do
+            hsh.merge!({self.string.to_sym => self.random_type})
+          end
         end
-        hsh
       end
       
       def complex_hash(key_count=1)
-        hsh = {}
-        key_count.times do
-          hsh = hsh.merge({self.string.to_sym => self.random_complex_type})
+        Hash.new.tap do |hsh|
+          key_count.times do
+            hsh.merge!({self.string.to_sym => self.random_complex_type})
+          end
         end
-        hsh
       end
       
       def array(len=1)
-        ar = []
-        len.times do
-          ar.push self.random_type
+        Array.new.tap do |ar|
+          len.times do
+            ar.push self.random_type
+          end
         end
-        ar
-      end
-      
-      def constant(mod=nil, key=nil, val=nil)
-        key = self.string if key.nil?
-        val = self.string if val.nil?
-        mod.const_set(titleize(key), val) if mod
-        Object.const_set(titleize(key), val) unless mod # sets const on main object, be CAREFUL!!!
       end
       
       def random_type

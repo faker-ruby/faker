@@ -73,11 +73,4 @@ class TestFakerTypes < Test::Unit::TestCase
     expected = "Foobar"
     assert @tester.send(:titleize, val) == expected
   end
-  
-  def test_constant_gets_set_to_correct_value
-    key = Faker::Lorem.word
-    value = Faker::Lorem.word
-    @tester.constant(TestModule, key, value)
-    assert TestModule.const_get(@tester.send(:titleize, key)) == value
-  end
 end
