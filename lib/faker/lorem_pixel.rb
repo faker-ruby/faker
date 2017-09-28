@@ -9,6 +9,7 @@ module Faker
         else
           # LoremPixel used to have positional arguments. This is now deprecated in favor of named arguments
           # However, in order to prevent breaking existing applications, shim the arguments into a hash
+          raise ArgumentError, 'Arguments can be passed as a hash, or positionally, but not both' if args.any?{ |arg| arg.is_a?(Hash) }
           names = [:size, :grayscale, :category, :id, :text]
           options = Faker::Arguments::to_named(args, names)
         end
