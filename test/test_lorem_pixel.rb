@@ -63,4 +63,8 @@ class TestLoremPixel < Test::Unit::TestCase
     end
   end
 
+  def test_image_with_named_arguments
+    assert @tester.image(size: '300x300', grayscale: false, category: 'animals', id: 3, text: 'Dummy-text').match(/http:\/\/lorempixel\.com\/\d+\/\d+\/.+\/3\/(.+)/)[1] == 'Dummy-text'
+  end
+
 end
