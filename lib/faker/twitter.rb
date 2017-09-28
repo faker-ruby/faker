@@ -3,7 +3,7 @@ module Faker
     class << self
       def user(include_status: true, include_email: false)
         user_id = id
-        background_image_url = Faker::LoremPixel.image('600x400') # TODO: Make the dimensions change
+        background_image_url = Faker::LoremPixel.image(size: '600x400') # TODO: Make the dimensions change
         profile_image_url = Faker::Avatar.image(user_id, '48x48')
         user = {
           id: user_id,
@@ -31,7 +31,7 @@ module Faker
           profile_background_image_url_https: background_image_url,
           profile_background_image_url: background_image_url.sub('https://', 'http://'),
           profile_background_tile: Faker::Boolean.boolean(0.1),
-          profile_banner_url: Faker::LoremPixel.image('1500x500'),
+          profile_banner_url: Faker::LoremPixel.image(size: '1500x500'),
           profile_image_url_https: profile_image_url,
           profile_image_url: profile_image_url.sub('https://', 'http://'),
           profile_link_color: Faker::Color.hex_color,

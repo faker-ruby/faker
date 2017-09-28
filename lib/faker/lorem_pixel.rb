@@ -19,9 +19,9 @@ module Faker
       def create_image(size: '300x300', grayscale: false, category: nil, id: nil, text: nil)
         raise ArgumentError, 'Size should be specified in format 300x300' unless size.match(/^[0-9]+x[0-9]+$/)
         raise ArgumentError, "Supported categories are #{SUPPORTED_CATEGORIES.join(', ')}" unless category.nil? || SUPPORTED_CATEGORIES.include?(category)
-        raise ArgumentError, 'Category required when number is passed' if !number.nil? && category.nil?
-        raise ArgumentError, 'Number must be between 1 and 10' unless number.nil? || (1..10).include?(number)
-        raise ArgumentError, 'Category and number must be passed when text is passed' if !text.nil? && number.nil? && category.nil?
+        raise ArgumentError, 'Category required when number is passed' if !id.nil? && category.nil?
+        raise ArgumentError, 'Id must be between 1 and 10' unless id.nil? || (1..10).include?(id)
+        raise ArgumentError, 'Category and Id must be passed when text is passed' if !text.nil? && id.nil? && category.nil?
 
         url_parts = ['http://lorempixel.com']
         url_parts << 'g' if grayscale
