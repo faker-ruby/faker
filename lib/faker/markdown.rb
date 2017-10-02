@@ -48,6 +48,7 @@ module Faker
         3.times do
           table << "#{Lorem.word} | #{Lorem.word} | #{Lorem.word}"
         end
+        table.insert(1, '---- | ---- | ----')
         table.join("\n")
       end
 
