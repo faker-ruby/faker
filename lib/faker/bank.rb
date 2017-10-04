@@ -13,7 +13,8 @@ module Faker
 
       def iban(country_code = "GB")
         [
-          country_code.upcase + Array.new(2) { rand(10) }.join,
+          country_code.upcase,
+          Array.new(2) { rand(10) },
           iban_range(country_code, :letter_code) { (65 + rand(26)).chr },
           iban_range(country_code, :digits) { rand(10) }
         ].join
