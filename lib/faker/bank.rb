@@ -11,21 +11,27 @@ module Faker
         fetch('bank.swift_bic')
       end
 
-      def iban(bank_country_code="GB")
-        details = iban_details.find { |country| country["bank_country_code"] == bank_country_code.upcase }
-        raise ArgumentError, "Could not find iban details for #{bank_country_code}" unless details
-        bcc = details["bank_country_code"] + 2.times.map{ rand(10) }.join
-        ilc = (0...details["iban_letter_code"].to_i).map{ (65 + rand(26)).chr }.join
-        ib  = details["iban_digits"].to_i.times.map{ rand(10) }.join
-        bcc + ilc + ib
+      def iban(country_code = "GB")
+        [
+          country_code.upcase,
+          Array.new(2) { rand(10) },
+          iban_range(country_code, :letter_code) { (65 + rand(26)).chr },
+          iban_range(country_code, :digits) { rand(10) }
+        ].join
       end
 
       private
 
-      def iban_details
-        fetch_all('bank.iban_details')
+      def iban_range(country_code, number_type)
+        array_length = iban_length(country_code, number_type)
+        Array.new(array_length) { yield }
+      end
+
+      def iban_length(country_code, number_type)
+        fetch("bank.iban_details.#{country_code.downcase}.#{number_type}").to_i
+      rescue I18n::MissingTranslationData
+        raise ArgumentError, "Could not find iban details for #{country_code}"
       end
     end
   end
 end
-
