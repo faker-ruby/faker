@@ -75,7 +75,7 @@ en:
           digits: '26'
         nl:
           letter_code: '4'
-          digits: '12'
+          digits: '10'
         ro:
           letter_code: '4'
           digits: '18'
