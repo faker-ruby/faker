@@ -8,16 +8,26 @@ Faker::Hacker.say_something_smart #=> "Try to compress the SQL interface, maybe 
 
 # Short technical abbreviations
 Faker::Hacker.abbreviation  #=> "RAM"
+## Count ##
+# en: 29 
 
 # Hacker centric adjectives
 Faker::Hacker.adjective   #=> "open-source"
+## Count ##
+# en: 18 
 
 # Only the best hacker related nouns
 Faker::Hacker.noun   #=> "bandwidth"
+## Count ##
+# en: 24 
 
 # Actions that hackers take
 Faker::Hacker.verb  #=> "bypass"
+## Count ##
+# en: 18 
 
 # Verbs that end in -ing
 Faker::Hacker.ingverb #=> "synthesizing"
+## Count ##
+# en: 16 
 ```

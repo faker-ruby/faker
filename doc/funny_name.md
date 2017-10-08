@@ -2,6 +2,8 @@
 
 ```ruby
 Faker::FunnyName.name #=> "Sam Pull"
+## Count ##
+# en: 751 
 
 Faker::FunnyName.two_word_name #=> "Shirley Knot"
 

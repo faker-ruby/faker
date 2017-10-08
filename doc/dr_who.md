@@ -4,6 +4,8 @@
 Faker::DrWho.character    #=> "Captain Jack Harness"
 
 Faker::DrWho.the_doctor   #=> "Ninth Doctor"
+## Count ##
+# de: 12 
 
 Faker::DrWho.catch_phrase #=> "Fantastic!"
 

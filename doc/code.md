@@ -8,4 +8,6 @@ Faker::Code.ean #=> "4600051000057"
 Faker::Code.imei #= "546327785982623"
 
 Faker::Code.asin #=> "B00000IGGJ"
+## Count ##
+# en: 500 
 ```

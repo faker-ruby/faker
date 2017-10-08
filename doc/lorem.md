@@ -2,9 +2,13 @@
 
 ```ruby
 Faker::Lorem.word #=> "repellendus"
+## Count ##
+# de: 249 # en-BORK: 103 # en: 249 # fr: 249 # ko: 128 # nl: 249 # pl: 249 # pt-BR: 249 # pt: 249 # sk: 249 # vi: 103 
 
 # Optional arguments: num=3, supplemental=false (words from a supplementary list of Lorem-like words)
 Faker::Lorem.words #=> ["dolores", "adipisci", "nesciunt"]
+## Count ##
+# de: 249 # en-BORK: 103 # en: 249 # fr: 249 # ko: 128 # nl: 249 # pl: 249 # pt-BR: 249 # pt: 249 # sk: 249 # vi: 103 
 Faker::Lorem.words(4) #=> ["culpa", "recusandae", "aut", "omnis"]
 Faker::Lorem.words(4, true) #=> ["colloco", "qui", "vergo", "deporto"]
 
