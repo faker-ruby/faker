@@ -1,8 +1,8 @@
 module Faker
     class Science < Base
       class << self
-        def elements
-          fetch('science.elements')
+        def element
+          fetch('science.element')
         end
   
       end
