@@ -12,6 +12,7 @@ ko:
       street_suffix: ["읍", "면", "동"]
       street_name:
         - "#{street_root}#{street_suffix}"
+      default_country: [대한민국]
 
     phone_number:
       formats: ['0#-#####-####', '0##-###-####', '0##-####-####']

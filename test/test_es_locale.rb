@@ -24,11 +24,12 @@ class TestEsLocale < Test::Unit::TestCase
   end
 
   def test_locale_override_when_calling_translate
-    assert_equal Faker::Base.translate('faker.lorem.words', :locale => :en).first, LoadedEsYaml['en']['lorem']['words'].first
+    assert_equal Faker::Base.translate('faker.separator', :locale => :en), LoadedEsYaml['en']['separator']
   end
 
   def test_translation_fallback
     assert_nil LoadedEsYaml['es']['company']['bs']
-    assert_equal Faker::Base.translate('faker.company.bs'), LoadedEsYaml['en']['company']['bs']
+    assert_not_nil LoadedEsYaml['es']['address']['city_prefix']
+    assert_equal Faker::Base.translate('faker.address.city_prefix'), LoadedEsYaml['es']['address']['city_prefix']
   end
 end
