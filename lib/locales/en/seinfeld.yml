@@ -1,0 +1,5 @@
+en:
+  faker:
+    seinfeld:
+      character: ["George Costanza", "Kramer", "Elaine Benes", "Newman", "Jerry Seinfeld", "Frank Costanza", "Morty Seinfeld", "Estelle Costanza", "Susan Ross", "Helen Seinfeld", "J Peterman", "Uncle Leo", "David Puddy", "Justin Pitt", "Kenny Bania", "Crazy Joe Davola", "Jackie Chiles", "Jack Klompus", "Ruthie Cohen", "Tim Whatley", "Sue Ellen", "Bob Sacamano"]
+      quote: ["I'm not a lesbian. I hate men, but I'm not a lesbian", "You're gonna over-dry your laundry", "This isn't a good time", "That’s the true spirit of Christmas; people being helped by people other than me", "You’re becoming one of the glitterati", "Father, I’ve never done this before, so I’m not sure about what I’m supposed to do", "She’s one of those low-talkers. You can’t hear a word she’s saying!", "Why do they make the condom packets so hard to open?", "This woman hates me so much, I’m starting to like her"]

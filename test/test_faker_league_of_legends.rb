@@ -6,26 +6,26 @@ class TestFakerLeagueOfLegends < Test::Unit::TestCase
   end
 
   def test_champions
-    assert @tester.champion.match(/\w+/)
+    assert_match(/\w+/, @tester.champion)
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match(/\w+/, @tester.location)
   end
 
-  def test_quotes
-    assert @tester.quote.match(/\w+/)
+  def test_quote
+    assert_match(/\w+/, @tester.quote)
   end
 
-  def test_quotes
-    assert @tester.summoner_spell.match(/\w+/)
+  def test_summoner_spell
+    assert_match(/\w+/, @tester.summoner_spell)
   end
 
-  def test_quotes
-    assert @tester.masteries.match(/\w+/)
+  def test_masteries
+    assert_match(/\w+/, @tester.masteries)
   end
 
-  def test_quotes
-    assert @tester.rank.match(/\w+/)
+  def test_rank
+    assert_match(/\w+/, @tester.rank)
   end
 end

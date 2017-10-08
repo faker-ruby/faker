@@ -20,4 +20,8 @@ class TestFakerHarryPotter < Test::Unit::TestCase
   def test_book
     assert @tester.book.match(/\w+/)
   end
+
+  def test_house
+    assert @tester.house.match(/\w+/)
+  end
 end

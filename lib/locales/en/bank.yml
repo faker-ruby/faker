@@ -1,0 +1,87 @@
+en:
+  faker:
+    bank:
+      name: ["UBS CLEARING AND EXECUTION SERVICES LIMITED", "ABN AMRO CORPORATE FINANCE LIMITED", "ABN AMRO FUND MANAGERS LIMITED", "ABN AMRO HOARE GOVETT SECURITIES", "ABN AMRO HOARE GOVETT CORPORATE FINANCE LTD.", "ALKEN ASSET MANAGEMENT", "ALKEN ASSET MANAGEMENT", "ABN AMRO HOARE GOVETT LIMITED", "AAC CAPITAL PARTNERS LIMITED", "ABBOTSTONE AGRICULTURAL PROPERTY UNIT TRUST", "ABN AMRO QUOTED INVESTMENTS (UK) LIMITED", "ABN AMRO MEZZANINE (UK) LIMITED", "ABBEY LIFE", "SANTANDER UK PLC", "OTKRITIE SECURITIES LIMITED", "ABC INTERNATIONAL BANK PLC", "ALLIED BANK PHILIPPINES (UK) PLC", "ABU DHABI ISLAMIC BANK", "ABG SUNDAL COLLIER LIMITED", "PGMS (GLASGOW) LIMITED", "ABINGWORTH MANAGEMENT LIMITED", "THE ROYAL BANK OF SCOTLAND PLC (FORMER RBS NV)"]
+      swift_bic: ["AACCGB21", "AACNGB21", "AAFMGB21", "AAHOGB21", "AAHVGB21", "AANLGB21", "AANLGB2L", "AAOGGB21", "AAPEGB21", "AAPUGB21", "AAQIGB21", "ABAZGB21", "ABBEGB21", "ABBYGB2L", "ABCCGB22", "ABCEGB2L", "ABCMGB21", "ABDIGB21", "ABECGB21", "ABFIGB21", "ABMNGB21", "ABNAGB21VOC" ]
+      iban_details:
+        at:
+          letter_code: '0'
+          digits: '18'
+        bg:
+          letter_code: '4'
+          digits: '14'
+        be:
+          letter_code: '0'
+          digits: '14'
+        cy:
+          letter_code: '0'
+          digits: '26'
+        cz:
+          letter_code: '0'
+          digits: '22'
+        de:
+          letter_code: '0'
+          digits: '20'
+        dk:
+          letter_code: '0'
+          digits: '16'
+        ee:
+          letter_code: '0'
+          digits: '18'
+        es:
+          letter_code: '0'
+          digits: '22'
+        fi:
+          letter_code: '0'
+          digits: '16'
+        fr:
+          letter_code: '0'
+          digits: '25'
+        gb:
+          letter_code: '4'
+          digits: '14'
+        gr:
+          letter_code: '0'
+          digits: '25'
+        hu:
+          letter_code: '0'
+          digits: '28'
+        hr:
+          letter_code: '0'
+          digits: '19'
+        ie:
+          letter_code: '4'
+          digits: '16'
+        it:
+          letter_code: '0'
+          digits: '25'
+        lv:
+          letter_code: '4'
+          digits: '15'
+        lt:
+          letter_code: '0'
+          digits: '14'
+        lu:
+          letter_code: '0'
+          digits: '16'
+        pl:
+          letter_code: '0'
+          digits: '24'
+        pt:
+          letter_code: '0'
+          digits: '18'
+        mt:
+          letter_code: '4'
+          digits: '26'
+        nl:
+          letter_code: '4'
+          digits: '10'
+        ro:
+          letter_code: '4'
+          digits: '18'
+        se:
+          letter_code: '0'
+          digits: '22'
+        sk:
+          letter_code: '0'
+          digits: '22'

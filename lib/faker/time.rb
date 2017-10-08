@@ -1,5 +1,5 @@
 module Faker
-  class Time < Date
+  class Time < Faker::Date
     TIME_RANGES = {
       :all => (0..23),
       :day => (9..17),
