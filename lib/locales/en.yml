@@ -7,6 +7,7 @@ en:
 
   faker:
     separator: ' & '
+<<<<<<< HEAD
     address:
       city_prefix: [North, East, West, South, New, Lake, Port]
       city_suffix: [town, ton, land, ville, berg, burgh, borough, bury, view, port, mouth, stad, furt, chester, mouth, fort, haven, side, shire]
@@ -780,3 +781,5 @@ en:
       ]
       species: ["Algolian Suntiger", "Arcturan MegaDonkey", "Arcturan Megagrasshopper", "Azgoths of Kria", "Babel Fish", "Belcerebon", "Boghog", "Cow", "Damogran Frond Crested Eagle", "Dentrassis", "Dolphins", "Flaybooz", "Golgafrinchan", "Grebulon", "Grebulons", "Hingefreel", "Hooloovoo", "Human", "Jatravartid", "Mattress", "Mice", "Mouse", "Nanites", "Perfectly Normal Beast", "Ravenous Bugblatter Beast of Traal", "Sarkopsi", "Shaltanac", "Silastic Armorfiends", "Silver Tongued Devils", "Vl'Hurg", "Vogon"]
       starships: ["Billion Year Bunker", "Bistromath", "Golgafrinchan Ark Fleet Ship B", "Heart of Gold", "Krikkit One", "RW6", "Starship Titanic", "Tanngrisnir", "Vogon Constructor Fleet"]
+=======
+>>>>>>> upstream/master
