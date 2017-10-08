@@ -5,6 +5,10 @@ module Faker
           fetch('science.element')
         end
   
+        def scientist
+            fetch('science.scientist')
+        end
+
       end
     end
   end

@@ -9,4 +9,8 @@ class TestFakerScience < Test::Unit::TestCase
     assert @tester.element.match(/\w+/)
   end
 
+  def test_scientist
+    assert @tester.scientist.match(/\w+/)
+  end
+
 end
