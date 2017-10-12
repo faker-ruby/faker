@@ -27,6 +27,7 @@ Contents
   - [Faker::Ancient](doc/ancient.md)
   - [Faker::App](doc/app.md)
   - [Faker::Avatar](doc/avatar.md)
+  - [Faker::BackToTheFuture](doc/back_to_the_future.md)
   - [Faker::Bank](doc/bank.md)
   - [Faker::Beer](doc/beer.md)
   - [Faker::Bitcoin](doc/bitcoin.md)
