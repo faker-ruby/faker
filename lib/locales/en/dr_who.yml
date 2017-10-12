@@ -3,23 +3,42 @@ en:
     dr_who:
       character: [
         "Dr. Who", "The Doctor", "Tardis", "Rose Tyler", "Adam Mitchell", "Mickey Smith", "Donna Noble", "Martha Jones",
-        "Captain Jack Harness", "Astrid Peth", "Sarah Jane Smith", "Jackson Lake", "Lady Christina de Souza",
-        "Adelaide Brooke", "Wilfred Mott" ]
+        "Captain Jack Harkness", "Astrid Peth", "Sarah Jane Smith", "Jackson Lake", "Lady Christina de Souza",
+        "Adelaide Brooke", "Wilfred Mott", "Amy Pond" ]
       the_doctors: [
-        "First Doctor", "Second Doctor", "Third Doctor", "Fourth Doctor", "Fifth Doctor", "Seventh Doctor",
+        "First Doctor", "Second Doctor", "Third Doctor", "Fourth Doctor", "Fifth Doctor", "Sixth Doctor", "Seventh Doctor",
         "Eighth Doctor", "Ninth Doctor", "Tenth Doctor", "Eleventh Doctor", "Twelfth Doctor"
       ]
       catch_phrases: [
         "Fantastic!", "I’m sorry. I’m so sorry.", "Bow ties are cool.", "Mmm I wonder ... Aha!",
         "Brave heart, Tegan.", "Would you care for a jelly baby?", "Reverse the polarity of the neutron flow.",
         "Somewhere there’s danger, somewhere there’s injustice, somewhere else, the tea’s getting cold.",
-        "When I say run, run. (pause) RUN!", "Mm? What’s that, my boy?"
+        "When I say run, run. (pause) RUN!", "Mm? What’s that, my boy?", "Allons-y!"
       ]
       quotes: [
-        "Lots of planets have a north!",
+        "Lots of planets have a north!", "This is my timey-wimey detector. It goes 'ding' when there's stuff.",
+        "Bananas are good.", "I wear a fez now. Fezzes are cool.", "Can you hold? I have to eat a biscuit.",
+        "If we're gonna die, let's die looking like a Peruvian folk band.",
+        "You want weapons? We're in a library! Books! The best weapons in the world!",
+        "Come on, Rory! It isn't rocket science, it's just quantum physics!",
+        "We're all stories in the end. Just make it a good one, eh?",
+        "Big flashy things have my name written all over them. Well... not yet, give me time and a crayon.",
+        "You don't want to take over the universe. You wouldn't know what to do with it beyond shout at it.",
+        "A straight line may be the shortest distance between two points, but it is by no means the most interesting.",
+        "See the bowtie? I wear it and I don't care. That's why it's cool.",
+        "I saw the Fall of Troy! World War Five! I was pushing boxes at the Boston Tea Party! Now I'm gonna die in a dungeon... in Cardiff!",
+        "Bunk beds are cool, a bed with a ladder, you can't beat that!",
+        "The universe is big. It’s vast and complicated and ridiculous. And sometimes, very rarely, impossible things just happen and we call them miracles.",
+        "Do what I do. Hold tight and pretend it’s a plan!",
+        "900 years of time and space, and I’ve never been slapped by someone’s mother.",
+        "Never ignore coincidence. Unless, of course, you’re busy. In which case, always ignore coincidence.",
+        "The assembled hordes of Genghis Khan couldn't get through that door, and, believe me, they've tried.",
+        "Your wish is my command. But be careful what you wish for.",
+        "Aw, I wanted to be ginger! I've never been ginger!",
+        "Crossing into established events is strictly forbidden. Except for cheap tricks.",
       ]
       villians: [
-        "Helen A", "Abzorbaloff", "Animus", "The Master",
+        "Helen A", "Abzorbaloff", "Animus", "The Master", "Davros", "Dalek Emperor"
       ]
       species: [
         "Time Lord", "Dalek", "Thal", "Dal", "Voord", "Sensorite", "Slyther", "Didonian", "Sand Beast", "Animus",
@@ -71,4 +90,3 @@ en:
         "Quill", "Shadow Kin", "Arn", "Lothan", "Leaf Dragon", "Lankin", "Killer petals", "Lorr", "Sentient oil",
         "Vardy", "Sea Creature", "Lure Fish", "Dryad", "The Monks"
       ]
-
