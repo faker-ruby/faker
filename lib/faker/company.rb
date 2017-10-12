@@ -52,6 +52,18 @@ module Faker
         base + luhn_algorithm(base).to_s
       end
 
+      # Get a random French SIREN number. See more here https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
+      def french_siren_number
+        base = (1..8).map { rand(10) }.join
+        base + luhn_algorithm(base).to_s
+      end
+
+      def french_siret_number
+        location = rand(100).to_s.rjust(4, '0')
+        org_no = french_siren_number + location
+        org_no + luhn_algorithm(org_no).to_s
+      end
+
       # Get a random Norwegian organization number. Info: https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/
       def norwegian_organisation_number
         # Valid leading digit: 8, 9
