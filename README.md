@@ -89,6 +89,7 @@ Contents
   - [Faker::Robin](doc/robin.md)
   - [Faker::RockBand](doc/rock_band.md)
   - [Faker::RuPaul](doc/rupaul.md)
+  - [Faker::Science](doc/science.md)
   - [Faker::Seinfeld](doc/seinfeld.md)
   - [Faker::SiliconValley](doc/silicon_valley.md)
   - [Faker::Simpsons](doc/simpsons.md)
