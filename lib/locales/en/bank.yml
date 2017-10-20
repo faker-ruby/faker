@@ -33,7 +33,7 @@ en:
           digits: '22'
         fi:
           letter_code: '0'
-          digits: '16'
+          digits: '14'
         fr:
           letter_code: '0'
           digits: '25'
