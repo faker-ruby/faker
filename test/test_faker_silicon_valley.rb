@@ -30,6 +30,6 @@ class TestFakerSiliconValley < Test::Unit::TestCase
   end
 
   def test_urls
-    assert @tester.url('domain.com', 'http').match(/^http:\/\/domain\.com$/)
+    assert @tester.url.match(/\w+/)
   end
 end
