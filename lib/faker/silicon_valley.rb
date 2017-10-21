@@ -12,6 +12,22 @@ module Faker
       def quote
         fetch('silicon_valley.quotes')
       end
+
+      def app
+        fetch('silicon_valley.apps')
+      end
+
+      def invention
+        fetch('silicon_valley.inventions')
+      end
+
+      def motto
+        fetch('silicon_valley.mottos')
+      end
+
+      def url
+        fetch('silicon_valley.urls')
+      end
     end
   end
 end
