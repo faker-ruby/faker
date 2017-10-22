@@ -14,16 +14,18 @@ module Faker
       end
 
       def quote (character = '')
-        return bothify(fetch('dune.quotes.' + fetch('dune.quotes'.to_a).to_s)) if character === ''
+        return bothify(fetch('dune.quotes.' + fetch('dune.quotes'.keys))) if character === ''
 
         # error check if character not included in dune.yml
+
         bothify(fetch('dune.quotes.' + character))
       end
 
       def saying (source = '')
-        return bothify(fetch('dune.sayings.' + fetch('dune.sayings'.to_a).to_s))) if source === ''
+        return bothify(fetch('dune.sayings.' + fetch('dune.sayings'.keys))) if source === ''
 
         # error check if source not included in dune.yml
+
         bothify(fetch('dune.sayings.' + source))
       end
     end
