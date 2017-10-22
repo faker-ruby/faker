@@ -1,0 +1,17 @@
+en:
+  faker:
+    invoice:
+      reference:
+        # '#' means the place where check digit is placed
+        ee:
+          # Source: http://www.pangaliit.ee/en/settlements-and-standards/reference-number-of-the-invoice
+          check_digit_method: method_731
+          pattern: '\d{1,19}#'
+        fi:
+          # Source: https://wiki.xmldation.com/support/fk/finnish_reference_number
+          check_digit_method: method_731
+          pattern: '\d{3,19}#'
+        'no':
+          # Source: https://www.nordea.com/Images/37-48872/Func_Spec_Credit_Advice.pdf
+          check_digit_method: kidmod10
+          pattern: '\d{24}#'
