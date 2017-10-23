@@ -79,7 +79,7 @@ module Faker
       def calculate_weighted_sum(base, weight_factors)
         base.to_s.reverse.each_char.with_index.map { |digit,index|
           digit.to_i * weight_factors.at(index % weight_factors.length)
-        }.sum
+        }.reduce(:+) # reduce(:+) = sum() but with better ruby version support
       end
 
       # MOD-10 - remainder
