@@ -4,9 +4,6 @@ module Faker
     flexible :invoice
 
     class << self
-      def reference
-      end
-
       # International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
       def creditor_reference(country_code = 'FI')
         ref = reference
