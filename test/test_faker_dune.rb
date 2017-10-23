@@ -17,32 +17,36 @@ class TestFakerDune < Test::Unit::TestCase
     assert @tester.planet.match(/\w+/)
   end
 
-  def test_quote
-    assert @tester.quote.match(/\w+/)
-  end
-
-  def test_quote
+  def test_random_quote
     assert @tester.quote.match(/\w+/)
   end
 
   # test good match
-  def test_quote
-    assert @tester.quote.match(/\w+/)
+  def test_random_character_quote
+    assert @tester.quote("paul").match(/\w+/)
   end
 
   # test error on no match
-  def test_saying
+  def test_invalid_quote
+    assert_raise ArgumentError do
+      @tester.quote("Luke Skywalker")
+    end
+  end
+
+  def test_random_saying
     assert @tester.saying.match(/\w+/)
   end
 
   # test good match
-  def test_saying
-    assert @tester.saying.match(/\w+/)
+  def test_random_source_saying
+    assert @tester.saying("fremen").match(/\w+/)
   end
 
   # test error on no match
-  def test_saying
-    assert @tester.saying.match(/\w+/)
+  def test_invalid_saying
+    assert_raise ArgumentError do
+      @tester.saying("Ewoks")
+    end
   end
 
 end

@@ -1,8 +1,8 @@
 module Faker
   class Dune < Base
     class << self
-      QUOTED_CHARACTERS = %w(translate("faker.dune.quotes"))
-      SAYING_SOURCES = %w(translate("faker.dune.sources"))
+      # QUOTED_CHARACTERS = fetch("dune.quotes")
+      # SAYING_SOURCES = %w(translate("faker.dune.sources"))
 
       def character
         fetch('dune.characters')
@@ -16,20 +16,38 @@ module Faker
         fetch('dune.planets')
       end
 
-      def quote (character = '')
-        return bothify(fetch('dune.quotes.' + fetch('dune.quotes'.keys))) if character === ''
+      def quote (character = nil)
+        quoted_characters = translate('faker.dune.quotes').keys
 
-        # error check if character not included in dune.yml
-        raise ArgumentError, "Characters quoted can be left blank or #{QUOTED_CHARACTERS.join(', ')}" unless QUOTED_CHARACTERS.include?(character)
-        bothify(fetch('dune.quotes.' + character))
+        if character.nil?
+          character = sample(quoted_characters).to_s
+        else
+          character.to_s.downcase!
+
+          unless quoted_characters.include?(character.to_sym)
+            raise ArgumentError,
+              "Characters quoted can be left blank or #{quoted_characters.join(', ')}"
+          end
+        end
+
+        return fetch('dune.quotes.' + character)
       end
 
-      def saying (source = '')
-        return bothify(fetch('dune.sayings.' + fetch('dune.sayings'.keys))) if source === ''
+      def saying (source = nil)
+        sourced_sayings = translate('faker.dune.sayings').keys
 
-        # error check if source not included in dune.yml
-        raise ArgumentError, "Sources quoted can be left blank or #{SAYING_SOURCES.join(', ')}" unless SAYING_SOURCES.include?(source)
-        bothify(fetch('dune.sayings.' + source))
+        if source.nil?
+          source = sample(sourced_sayings).to_s
+        else
+          source.to_s.downcase!
+
+          unless sourced_sayings.include?(source.to_sym)
+            raise ArgumentError,
+              "Sources quoted in sayings can be left blank or #{sourced_sayings.join(', ')}"
+          end
+        end
+
+        return fetch('dune.sayings.' + source)
       end
     end
   end
