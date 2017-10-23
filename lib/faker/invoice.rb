@@ -5,37 +5,39 @@ module Faker
 
     class << self
       # International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
-      def creditor_reference(country_code = 'FI')
-        ref = reference
+      # ref is optional so that we can create unit tests
+      def creditor_reference(country_code = 'FI', ref='')
+        ref = reference if ref.empty?
 
         'RF' + iban_checksum('RF',ref) + ref
       end
 
       # Payment references have some rules in certain countries
-      def reference(country_code = 'FI')
+      # ref is optional so that we can create unit tests
+      def reference(country_code = 'FI', ref='')
 
         pattern = fetch("invoice.reference.#{country_code.downcase}.pattern")
 
-        reference = Base.regexify(/#{pattern}/)
+        ref = Base.regexify(/#{pattern}/) if ref.empty?
 
         # If reference contains reserved '#' characters we need to calculate check_digits as well
-        check_digit_match = reference.match(/#+/)
+        check_digit_match = ref.match(/#+/)
         if check_digit_match
           # Get the method for selected language
           check_digit_method = fetch("invoice.reference.#{country_code.downcase}.check_digit_method")
 
           # Calculate the check digit with matching method name
           # Trim all '#' from the reference before calculating that
-          check_digit = self.send(check_digit_method,reference.tr('#',''))
+          check_digit = self.send(check_digit_method,ref.tr('#',''))
 
           # Make sure that our check digit is as long as all of the '###' we found
           check_digit = check_digit.to_s.rjust(check_digit_match[0].length, '0')
 
           # Replace all of the
-          reference.sub!(check_digit_match[0], check_digit)
+          ref.sub!(check_digit_match[0], check_digit)
         end
 
-        reference
+        ref
       end
 
       private
