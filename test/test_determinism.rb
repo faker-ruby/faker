@@ -45,7 +45,7 @@ private
 
   def subclasses
     Faker.constants.delete_if do |subclass|
-      [:Base, :Char, :Config, :Date, :Internet, :Time, :VERSION].include?(subclass)
+      [:Base, :Char, :Config, :Date, :Internet, :Invoice, :Time, :VERSION].include?(subclass)
     end.sort
   end
 

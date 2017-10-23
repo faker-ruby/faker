@@ -4,6 +4,12 @@ module Faker
     flexible :invoice
 
     class << self
+
+      # Generate random amount between values with 2 decimals
+      def amount_between(from, to)
+        Faker::Base.rand_in_range(from, to).round(2)
+      end
+
       # International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
       # ref is optional so that we can create unit tests
       def creditor_reference(country_code = 'FI', ref='')
