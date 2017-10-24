@@ -111,7 +111,7 @@ en:
           - "Bounty hunters! We don\'t need this scum."
           - "If they follow standard Imperial procedure, they'll dump their garbage before they go to light-speed."
           - "Hokey religions and ancient weapons are no match for a good blaster at your side, kid."
-        jabba_the_hut:
+        jabba_the_hutt:
           - "Solo, la pa loiya Solo! (Solo, come out of there! Solo!)"
           - "Bone duwa pweepway? (Have you now?)"
           - "Han, ma bookie, keel-ee calleya ku kah. (Han, my boy, you disappoint me.)"
@@ -210,5 +210,37 @@ en:
           - "Do. Or do not. There is no try."
           - “Luminous beings are we... not this crude matter.”
           - "Train yourself to let go of everything you fear to lose."
-
+      alternate_character_spellings:
+        admiral_ackbar: ['akbar', 'ackbar', 'admiral ackbar', 'admiral akbar']
+        ahsoka_tano: ['ahsoka', 'tano', 'ahsoka tano']
+        anakin_skywalker: ['anakin', 'anakin skywalker', 'ani', 'ani skywalker']
+        asajj_ventress: ['asajj', 'ventress', 'asajj ventress']
+        bendu: ['the bendu', 'bendu']
+        boba_fett: ['boba fett', 'bobafett']
+        c_3po: ['c 3po', 'c3po', 'c3p0']
+        count_dooku: ['dooku', 'count dooku']
+        darth_caedus: ['caedus', 'darth caedus']
+        darth_vader: ['vader', 'darth vader']
+        emperor_palpatine: ['the emperor', 'sheev palpatine', 'emperor', 'palpatine', 'senator palpatine', 'darth sidious', 'sidious']
+        finn: ['fn2187', 'fn-2187', 'fin']
+        general_hux: ['general hux', 'hux']
+        grand_admiral_thrawn: ['thrawn', 'admiral thrawn', 'grand admiral thrawn']
+        grand_moff_tarkin: ['tarkin', 'grand moff tarkin', 'moff tarkin']
+        greedo: ['greedo']
+        han_solo: ['han', 'solo', 'han solo', 'general han solo', 'general solo']
+        jabba_the_hutt: ['jabba', 'jabba the hut', 'jabba the hutt']
+        jar_jar_binks: ['jar-jar', 'jar jar binks', 'jar-jar binks', 'the best character']
+        k_2so: ['k2so', 'k-2so', 'k-2s0']
+        kylo_ren: ['kylo', 'kylo ren', 'ben solo', 'ren']
+        lando_calrissian: ['lando', 'lando calrissian', 'general lando', 'general lando calrissian', 'general calrissian']
+        leia_organa: ['leia', 'princess leia', 'leia skywalker', 'leia organa', 'general leia', 'senator leia', 'general leia organa', 'senator leia organa', 'leia organa solo']
+        luke_skywalker: ['luke', 'luke skywalker']
+        mace_windu: ['mace', 'mace windu', 'windu', 'master mace windu']
+        maz_kanata: ['maz', 'maz kanata']
+        obi_wan_kenobi: ['obi kenobi', 'ben', 'ben kenobi', 'obi wan kenobi', 'obi-wan', 'obi wan', 'obi-wan kenobi', ]
+        padme_amidala: ['senator amidala', 'queen amidala', 'padme', 'amidala', 'padme amidala']
+        qui_gon_jinn: ['qui-gon', 'qui gon', 'qui-gon jinn', 'qui gon jinn', 'qui-gonn jin', 'qui gonn', 'master qui-gon', 'master qui gon']
+        rey: ['rey']
+        shmi_skywalker: ['shmi', 'shmi skywalker']
+        yoda: ['master yoda', 'yoda']
 # This data can be found on: http://www.starwars.com/databank

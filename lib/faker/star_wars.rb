@@ -80,6 +80,10 @@ module Faker
 
       alias_method :wookie_sentence, :wookiee_sentence
       alias_method :wookie_words, :wookiee_words
+
+      def alternate_character_spelling
+
+      end
     end
   end
 end
