@@ -45,8 +45,25 @@ module Faker
         fetch('star_wars.planets')
       end
 
-      def quotes
-        fetch('star_wars.quotes')
+      def quotes(character = nil)
+        quoted_characters = translate('faker.star_wars.quotes').keys
+
+        if character.nil?
+          character = sample(quoted_characters).to_s
+        else
+          character.to_s.downcase!
+
+          # check alternate spellings, nicknames, titles of characters
+          # darth_vader: ['vader', 'darth', 'james earl jones']
+          # if darth_vader.include? character
+          #   character = :darth_vader
+
+          unless quoted_characters.include?(character.to_sym)
+            raise ArgumentError,
+              "Character for quotes can be left blank or #{quoted_characters.join(', ')}"
+        end
+
+        fetch('star_wars.quotes.' + character)
       end
 
       def species

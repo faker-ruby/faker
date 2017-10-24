@@ -147,7 +147,7 @@ en:
         lando_calrissian:
           - "Why you slimy, double-crossing, no-good swindler. You've got a lot of guts coming here, after what you pulled."
           - "How you doin\' Chewbacca? Still hanging around with this loser?"
-          - "But how could they be jamming us if they don\’t know… that we\’re… coming?"
+          - "But how could they be jamming us if they don\’t know that we\’re coming?"
         leia_organa:
           - "You do have your moments. Not many, but you have them."
           - "I have a bad feeling about this."
@@ -198,7 +198,7 @@ en:
           - "The garbage'll do"
         shmi_skywalker:
           - "You can't stop change any more than you can stop the suns from setting."
-          - "The Republic doesn't exist out here. We must survive on our own."
+          - "The Republic doesn\'t exist out here. We must survive on our own."
         yoda:
           - "Wars not make one great."
           - "Truly wonderful, the mind of a child is."
@@ -209,6 +209,6 @@ en:
           - "Judge me by my size, do you?"
           - "Do. Or do not. There is no try."
           - “Luminous beings are we... not this crude matter.”
-          - "Train yourself to let go of everything you fear to lose"
+          - "Train yourself to let go of everything you fear to lose."
 
 # This data can be found on: http://www.starwars.com/databank
