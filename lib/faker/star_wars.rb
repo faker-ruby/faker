@@ -13,10 +13,6 @@ module Faker
         sample(planets)
       end
 
-      def quote
-        sample(quotes)
-      end
-
       def specie
         sample(species)
       end
@@ -45,22 +41,22 @@ module Faker
         fetch('star_wars.planets')
       end
 
-      def quotes(character = nil)
-        quoted_characters = translate('faker.star_wars.quotes').keys
+      def quote(character = nil)
+        quoted_characters = translate('faker.star_wars.quotes')
 
         if character.nil?
-          character = sample(quoted_characters).to_s
+          character = sample(quoted_characters.keys).to_s
         else
           character.to_s.downcase!
 
           # check alternate spellings, nicknames, titles of characters
-          # darth_vader: ['vader', 'darth', 'james earl jones']
-          # if darth_vader.include? character
-          #   character = :darth_vader
+          translate('faker.star_wars.alternate_character_spellings').each do |k, v|
+            character = k.to_s if v.include?(character)
+          end
 
-          unless quoted_characters.include?(character.to_sym)
-            raise ArgumentError,
-              "Character for quotes can be left blank or #{quoted_characters.join(', ')}"
+          unless quoted_characters.keys.include?(character.to_sym)
+            raise ArgumentError, "Character for quotes can be left blank or #{quoted_characters.keys.join(', ')}"
+          end
         end
 
         fetch('star_wars.quotes.' + character)
@@ -81,9 +77,6 @@ module Faker
       alias_method :wookie_sentence, :wookiee_sentence
       alias_method :wookie_words, :wookiee_words
 
-      def alternate_character_spelling
-
-      end
     end
   end
 end
