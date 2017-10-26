@@ -9,6 +9,8 @@ Faker::StarWars.planet #=> "Tatooine"
 
 Faker::StarWars.quote #=> "Aren’t you a little short for a Stormtrooper?"
 
+Faker::StarWars.quote("leia_organa") #=> "Aren’t you a little short for a Stormtrooper?"
+
 Faker::StarWars.specie #=> "Gungan"
 
 Faker::StarWars.vehicle #=> "Sandcrawler"
