@@ -1,10 +1,9 @@
-#encoding: utf-8
-#frozen_string_literal: true
+# encoding: utf-8
+# frozen_string_literal: true
 
 require File.expand_path(File.dirname(__FILE__) + '/test_helper')
 
 class TestFakerBreakingBad < Test::Unit::TestCase
-
   def setup
     @tester = Faker::BreakingBad
   end
@@ -16,5 +15,4 @@ class TestFakerBreakingBad < Test::Unit::TestCase
   def test_episode
     10.times { assert @tester.episode.match(/[\w]+/) }
   end
-
-end #class TestFakerBreakingBad
+end
