@@ -16,7 +16,7 @@ Faker::Stripe.card_error #=> "4000000000000002"
 
 ProTip:
 
-For Stripe email and charge amount, use:
+For Stripe charge amount and email:
 
 ```ruby
 Faker::Number.between(3,10) #=> 100
