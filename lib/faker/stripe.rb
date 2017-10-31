@@ -31,6 +31,9 @@ module Faker
         return fetch('stripe.invalid_cards.' + card_error)
       end
 
+      def valid_card_object
+        sample('stripe.valid_card_objects')
+      end
 
     end
   end
