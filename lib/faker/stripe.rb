@@ -5,10 +5,8 @@ module Faker
         valid_cards = translate('faker.stripe.valid_cards').keys
 
         if card_type.nil?
-          card_type = sample(valid_cards)
+          card_type = sample(valid_cards).to_s
         else
-          card_type.to_s.downcase!
-
           unless valid_cards.include?(card_type.to_sym)
             raise ArgumentError,
               "Valid credit cards argument can be left blank or include #{valid_cards.join(', ')}"
@@ -22,10 +20,8 @@ module Faker
         invalid_cards = translate('faker.stripe.invalid_cards').keys
 
         if card_error.nil?
-          card_error = sample(valid_cards)
+          card_error = sample(invalid_cards).to_s
         else
-          card_error.to_s.downcase!
-
           unless invalid_cards.include?(card_error.to_sym)
             raise ArgumentError,
               "Invalid credit cards argument can be left blank or include #{invalid_cards.join(', ')}"
