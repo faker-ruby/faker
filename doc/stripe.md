@@ -4,19 +4,18 @@
 
 
 ```ruby
-Faker::Stripe.valid_card #=> "4242424242424242"
+Faker::Stripe.valid_card #=> 4242424242424242
 
-Faker::Stripe.valid_card("visa_debit") #=> "4000056655665556"
+Faker::Stripe.valid_card("visa_debit") #=> 4000056655665556
 
-Faker::Stripe.valid_us_token #=> "tok_mastercard"
+Faker::Stripe.invalid_card #=> 4000000000000002
 
-Faker::Stripe.card_error #=> "4000000000000002"
+Faker::Stripe.invalid_card("addressZipFail") #=> 4000000000000010
 
 ```
 
 ProTip:
-
-For Stripe charge amount and email:
+Use some of the other handy Faker classes for Stripe charge amounts and email.
 
 ```ruby
 Faker::Number.between(3,10) #=> 100
