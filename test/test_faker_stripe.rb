@@ -4,7 +4,6 @@ class TestFakerStripe < Test::Unit::TestCase
 
   def setup
     @tester = Faker::Stripe
-    @valid_card_object_list = I18n.translate('faker.stripe.valid_card_objects')
   end
 
   def test_valid_card
@@ -23,9 +22,20 @@ class TestFakerStripe < Test::Unit::TestCase
     assert @tester.invalid_card("zipFail").match(/\w+/)
   end
 
-  def test_valid_card_object
-    # assert @valid_card_object_list.any?{|hash| hash[:ccv] == @tester.valid_card_object[:ccv]}
-    assert @valid_card_object_list.include?(@tester.valid_card_object)
+  def test_valid_exp_mo
+    assert @tester.valid_month.match(/\d{2}/)
   end
+
+  def test_valid_exp_yr
+    assert @tester.valid_year.match(/\d{2}/)
+  end
+
+  def test_valid_ccv
+    assert @tester.valid_ccv.match(/\d{3}/)
+  end
+
+  def test_valid_amex_ccv
+    assert @tester.valid_amex_ccv.match(/\d{4}/)
+  end  
 end
 

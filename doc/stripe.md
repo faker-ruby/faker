@@ -12,11 +12,13 @@ Faker::Stripe.invalid_card #=> 4000000000000002
 
 Faker::Stripe.invalid_card("addressZipFail") #=> 4000000000000010
 
-Faker::Stripe.valid_card_object #=>  {type:   "american express",
-                                #     number: "378282246310005",
-                                #     exp_mo: 10,
-                                #     exp_yr: 2018,
-                                #     ccv:    1234}
+Faker::Stripe.valid_month #=> "10"
+
+Faker::Stripe.valid_year #=> "18"
+
+Faker::Stripe.valid_ccv #=> 123
+
+Faker::Stripe.valid_amex_ccv #=> 1234
 ```
 
 ProTip:

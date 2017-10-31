@@ -31,9 +31,21 @@ module Faker
         return fetch('stripe.invalid_cards.' + card_error)
       end
 
-      def valid_card_object
-        sample('stripe.valid_card_objects')
+      def valid_month
+        fetch('stripe.valid_exp_mo')
       end
+
+      def valid_year
+        fetch('stripe.valid_exp_yr')
+      end
+
+      def valid_ccv
+        fetch('stripe.valid_ccv')
+      end
+
+      def valid_amex_ccv
+        fetch('stripe.valid_amex_ccv')
+      end      
 
     end
   end

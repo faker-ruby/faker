@@ -29,35 +29,8 @@ en:
         declineExpired:         "4000000000000069"  # Charge is declined with an expired_card code.
         declineProcessingError: "4000000000000119"  # Charge is declined with a processing_error code.
         declineIncorrectNumber: "4242424242424241"  # Charge is declined with an incorrect_number code as the card number fails the Luhn check.
-      valid_card_objects:
-        - type:   "visa"
-          number: "#{valid_cards.visa}"
-          exp_mo: "#{Time.new.month < 10 ? '%02d' % Time.new.month : Time.new.month}"
-          exp_yr: "#{Time.new.year + Faker::Number.number(1)}"
-          ccv:    "#{Faker::Number.number(3)}"
-        - type:   "mastercard"
-          number: "#{valid_cards.mc}"
-          exp_mo: "#{Time.new.month < 10 ? '%02d' % Time.new.month : Time.new.month}"
-          exp_yr: "#{Time.new.year + Faker::Number.number(1)}"
-          ccv:    "#{Faker::Number.number(3)}"
-        - type:   "american express"
-          number: "#{valid_cards.amex}"
-          exp_mo: "#{Time.new.month < 10 ? '%02d' % Time.new.month : Time.new.month}"
-          exp_yr: "#{Time.new.year + Faker::Number.number(1)}"
-          ccv:    "#{Faker::Number.number(4)}"
-        - type:   "discover"
-          number: "#{valid_cards.discover}"
-          exp_mo: "#{Time.new.month < 10 ? '%02d' % Time.new.month : Time.new.month}"
-          exp_yr: "#{Time.new.year + Faker::Number.number(1)}"
-          ccv:    "#{Faker::Number.number(3)}"
-        - type:   "diners_club"
-          number: "#{valid_cards.diners_club}"
-          exp_mo: "#{Time.new.month < 10 ? '%02d' % Time.new.month : Time.new.month}"
-          exp_yr: "#{Time.new.year + Faker::Number.number(1)}"
-          ccv:    "#{Faker::Number.number(3)}"
-        - type:   "jcb"
-          number: "#{valid_cards.jcb}"
-          exp_mo: "#{Time.new.month < 10 ? '%02d' % Time.new.month : Time.new.month}"
-          exp_yr: "#{Time.new.year + Faker::Number.number(1)}"
-          ccv:    "#{Faker::Number.number(3)}"
+      valid_exp_mo:   "#{Time.new.month < 10 ? '%02d' % Time.new.month : Time.new.month}"
+      valid_exp_yr:   "#{'%02d' % (Time.new.year + 1)}"
+      valid_ccv:      Faker::Number.between(100,999)
+      valid_amex_ccv: Faker::Number.between(1000,9999)
 # https://stripe.com/docs/testing
