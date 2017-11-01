@@ -52,8 +52,12 @@ module Faker
         table.join("\n")
       end
 
-      def random
-        send(available_methods[rand(0..available_methods.length - 1)])
+      def random(excluded = nil)
+        method_list = available_methods
+        unless excluded.nil?
+          excluded.each {|ex| method_list.delete_if {|meth| meth == ex.to_sym}}
+        end
+        send(method_list[rand(0..available_methods.length - 1)])
       end
 
       private
