@@ -26,4 +26,7 @@ Faker::Markdown.table #=> "ad | similique | voluptatem\n---- | ---- | ----\ncorr
 
 # Random - randomly chooses an above method
 Faker::Markdown.random #=> returns output from a single method outlined above
+# Random("excluded_method") - will exclude the passed in method name
+Faker::Markdown.random("table") #=> returns output from any single method outlined above except for "table"
+Faker::Markdown.random("ordered_list", "unordered_list") #=> returns output from any single method outlined above except for either ordered_list and unordered_list
 ```
