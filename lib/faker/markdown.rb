@@ -56,7 +56,7 @@ module Faker
         send(available_methods[rand(0..available_methods.length - 1)])
       end
 
-      def sandwich(sentences = nil, repeat = 1)
+      def sandwich(sentences = 3, repeat = 1)
         text_block = []
         text_block << headers
         repeat.times do
