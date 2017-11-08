@@ -1,0 +1,5 @@
+en:
+  faker:
+    wrestling:
+      names: ["John Cena"]
+      moves: ["Five Knuckle Shuffle"]
