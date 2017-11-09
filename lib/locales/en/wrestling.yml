@@ -1,5 +1,5 @@
 en:
   faker:
     wrestling:
-      names: ["John Cena"]
-      moves: ["Five Knuckle Shuffle"]
+      names: ["Bruno Sammartino", "Superstar Billy Graham", "Bob Backlund", "Antonio Inoki", "The Iron Sheik", "Hulk Hogan", "André the Giant", "Randy Savage", "The Ultimate Warrior", "Sgt. Slaughter", "The Undertaker", "Ric Flair", "Bret Hart", "Yokozuna", "Diesel", "Shawn Michaels", "Sycho Sid", "Stone Cold Steve Austin", "Kane", "The Rock", "Mankind", "Triple H", "Vince McMahon", "Big Show", "Kurt Angle", "Chris Jericho", "Brock Lesnar", "Eddie Guerrero", "John 'Bradshaw' Layfield", "John Cena", "Edge", "Rob Van Dam", "Randy Orton", "Jeff Hardy", "Batista", "Sheamus", "The Miz", "CM Punk", "Rey Mysterio", "Alberto Del Rio", "Daniel Bryan", "Seth Rollins", "Roman Reigns", "Dean Ambrose", "AJ Styles", "Bray Wyatt", "Jinder Mahal"]
+      moves: ["Bearhug"]
