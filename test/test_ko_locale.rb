@@ -11,6 +11,7 @@ class TestKoLocale < Test::Unit::TestCase
 
   def test_ko_methods
     assert Faker::Address.postcode.is_a? String
+    assert_equal(5, Faker::Address.postcode.length)
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.city_name.is_a? String
