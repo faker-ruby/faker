@@ -43,6 +43,15 @@ module Faker
         "https://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
 
+      # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/Número_de_identificación_fiscal
+      def spanish_organisation_number
+        # Valid leading character: A, B, C, D, E, F, G, H, J, N, P, Q, R, S, U, V, W
+        # 7 digit numbers
+        letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'N', 'P', 'Q', 'R', 'S', 'U', 'V', 'W']
+        base = [sample(letters), ('%07d' % rand(10 ** 7))].join
+        base
+      end
+
       # Get a random Swedish organization number. See more here https://sv.wikipedia.org/wiki/Organisationsnummer
       def swedish_organisation_number
         # Valid leading digit: 1, 2, 3, 5, 6, 7, 8, 9
