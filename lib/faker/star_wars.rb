@@ -13,10 +13,6 @@ module Faker
         sample(planets)
       end
 
-      def quote
-        sample(quotes)
-      end
-
       def specie
         sample(species)
       end
@@ -45,8 +41,25 @@ module Faker
         fetch('star_wars.planets')
       end
 
-      def quotes
-        fetch('star_wars.quotes')
+      def quote(character = nil)
+        quoted_characters = translate('faker.star_wars.quotes')
+
+        if character.nil?
+          character = sample(quoted_characters.keys).to_s
+        else
+          character.to_s.downcase!
+
+          # check alternate spellings, nicknames, titles of characters
+          translate('faker.star_wars.alternate_character_spellings').each do |k, v|
+            character = k.to_s if v.include?(character)
+          end
+
+          unless quoted_characters.keys.include?(character.to_sym)
+            raise ArgumentError, "Character for quotes can be left blank or #{quoted_characters.keys.join(', ')}"
+          end
+        end
+
+        fetch('star_wars.quotes.' + character)
       end
 
       def species
@@ -63,6 +76,7 @@ module Faker
 
       alias_method :wookie_sentence, :wookiee_sentence
       alias_method :wookie_words, :wookiee_words
+
     end
   end
 end
