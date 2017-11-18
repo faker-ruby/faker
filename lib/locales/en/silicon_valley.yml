@@ -1,8 +1,8 @@
 en:
   faker:
     silicon_valley:
-      characters: [ "Richard Hendricks", "Erlich Bachman", "Nelson \"Big Head\" Bighetti", "Bertram Gilfoyle", "Dinesh Chugtai", "Monica Hall", "Donald \"Jared\" Dunn", "Gavin Belson", "Jian Yang", "Laurie Bream", "Russ Hanneman", "Jack Barker", "Keenan Feldspar" ]
-      companies: [ "Pied Piper", "Hooli", "Raviga Capital", "Endframe", "Bachmanity", "Maleant Data Systems Solutions", "Aviato" ]
+      characters: [ "Richard Hendricks", "Erlich Bachman", "Nelson \"Big Head\" Bighetti", "Bertram Gilfoyle", "Dinesh Chugtai", "Monica Hall", "Donald \"Jared\" Dunn", "Gavin Belson", "Jian Yang", "Laurie Bream", "Russ Hanneman", "Jack \"Action Jack\" Barker", "Keenan Feldspar", "Ed Chen", "Peter Gregory", "Ron LaFlamme" ]
+      companies: [ "Pied Piper", "Hooli", "Raviga Capital Management", "Endframe", "Bachmanity", "Maleant Data Systems Solutions", "Aviato", "Coleman-Blair", "Raviga", "Yoyodyne", "Intersite", "Infotrode", "Bream-Hall", "SeeFood Technologies Inc", "Retinabyte", "VidClone Graphics", "Entercross Systems", "Turnwire" ]
       quotes: [
         "I don't want to live in a world where someone else is making the world a better place better than we are.",
         "I firmly believe we can only achieve greatness if first, we achieve goodness",
@@ -21,4 +21,32 @@ en:
         "I was gonna sleep last night, but, uh... I thought I had this solve for this computational trust issue I've been working on, but it turns out, I didn't have a solve. But it was too late. I had already drank the whole pot of coffee.",
         "I extended my compression algorithm to support... get this... 12-bit color. Okay, so our users will be able to experience a 10 percent increase in image quality with absolutely no increase in server load whatsoever. Just-Just-Just... Just watch this. Before. After. Before. After.",
         "You listen to me, you muscle-bound handsome Adonis: tech is reserved for people like me, okay? The freaks, the weirdos, the misfits, the geeks, the dweebs, the dorks! Not you!"
+      ]
+      apps: [ "Nip Alert", "Astraphile", "Panic-a-Tech", "Spinder", "Nucleus", "Pegg'd", "Clinkle", "Tables", "HooliChat", "PiperChat", "Not Hotdog", "PeaceFare", "CodeRag" ]
+      inventions: [ "Telehuman", "Liquid Shrimp", "Bit Soup", "Audacious", "Tres Comas Tequila", "Pipey", "Always Blue", "Cold Duck", "Skycrane", "Octopus Recipes", "Limp Biscuit", "Hooli Box", "Box Two", "Table", "Anton", "BamBot", "Human Heater" ]
+      mottos: [
+        "Cloud-based, disruptive systems",
+        "Creating unique cross-platform technologies",
+        "Making the world a better place",
+        "Awesome world-changing compression company",
+        "So maybe the reason we share so much is because we understand that without sharing, we can't survive. And sharing is tables.",
+        "Forced adoption through aggressive guerrilla marketing",
+        "Powered by the spirit of exploration and the thrill of the pursuit of the unimaginable",
+        "We not only think outside of the box, we think outside of the box that box is in - and so on - until innovation is free of all boxes that would contain and constrain it",
+        "Our products are products, producing unrivaled results",
+        "Oh, danger will most certainly be proceeded in the face of. Right in its face. Right in it.",
+        "Isn't it time someone put the venture back into venture capital?",
+        "Are bandwidth costs harshing on your vibe?",
+        "The drink that doesn't give a fuck!"
+      ]
+      urls: [
+        "http://raviga.com",
+        "http://breamhall.com",
+        "http://piedpiper.com",
+        "http://hooli.com",
+        "http://bachmanity.com",
+        "http://aviato.com",
+        "http://coderag.com",
+        "http://endframesystems.com",
+        "http://drinkhomicide.com"
       ]

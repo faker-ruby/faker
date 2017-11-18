@@ -16,4 +16,20 @@ class TestFakerSiliconValley < Test::Unit::TestCase
   def test_quotes
     assert @tester.quote.match(/\w+/)
   end
+
+  def test_apps
+    assert @tester.app.match(/\w+/)
+  end
+
+  def test_inventions
+    assert @tester.invention.match(/\w+/)
+  end
+
+  def test_mottos
+    assert @tester.motto.match(/\w+/)
+  end
+
+  def test_urls
+    assert @tester.url.match(/\w+/)
+  end
 end
