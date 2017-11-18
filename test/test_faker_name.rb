@@ -28,4 +28,9 @@ class TestFakerName < Test::Unit::TestCase
        refute title.to_s.empty?
     end
   end
+
+  def test_initials
+    assert @tester.initials.match(/[A-Z]{3}/)
+    assert @tester.initials(2).match(/[A-Z]{2}/)
+  end
 end
