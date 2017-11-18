@@ -53,6 +53,7 @@ Contents
   - [Faker::Dune](doc/dune.md)
   - [Faker::Educator](doc/educator.md)
   - [Faker::ElderScrolls](doc/elder_scrolls.md)
+  - [Faker::Fallout](doc/fallout.md)
   - [Faker::FamilyGuy](doc/family_guy.md)
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
