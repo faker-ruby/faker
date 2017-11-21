@@ -112,6 +112,7 @@ Contents
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
   - [Faker::VentureBros](doc/venture_bros.md)
+  - [Faker::VForVendetta](doc/v_for_vendetta.md)
   - [Faker::Witcher](doc/witcher.md)
   - [Faker::WorldOfWarcraft](doc/world_of_warcraft.md)
   - [Faker::Zelda](doc/zelda.md)
