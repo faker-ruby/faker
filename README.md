@@ -69,6 +69,7 @@ Contents
   - [Faker::HitchhikersGuideToTheGalaxy](doc/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::Job](doc/job.md)
+  - [Faker::Kpop](doc/kpop.md)
   - [Faker::LeagueOfLegends](doc/league_of_legends.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
