@@ -75,4 +75,9 @@ class TestFakerHipster < Test::Unit::TestCase
     assert(250 <= range.length && range.length <= 500)
     assert(array.length == 250 || array.length == 500)
   end
+
+  def test_paragraph_char_count
+    paragraph = @tester.paragraph_by_chars(256)
+    assert(paragraph.length == 256)
+  end
 end

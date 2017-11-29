@@ -57,6 +57,16 @@ module Faker
         end
       end
 
+      def paragraph_by_chars(chars = 256)
+        paragraph = paragraph(3)
+
+        while paragraph.length < chars
+          paragraph += " " + paragraph(3)
+        end
+
+        paragraph[0...chars-1] + "."
+      end
+
       private
 
       # If an array or range is passed, a random value will be selected.
