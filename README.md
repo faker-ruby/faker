@@ -159,12 +159,6 @@ that have been returned, for example between tests.
 Faker::Name.unique.clear # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
 ```
-It is also possible to add a random number to the end of faker data to increase the
-likelihood of unique data being generated. For example:
-
-```ruby
-Faker::Name.unique + ((1..1000).to_a).sample
-```
 
 ### Deterministic Random
 
