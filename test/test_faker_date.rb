@@ -76,6 +76,37 @@ class TestFakerDate < Test::Unit::TestCase
     end
   end
 
+  def test_birthday_when_min_age_equals_max_age
+    min = 0
+    max = 0
+
+    birthday = @tester.birthday(min, max)
+
+    assert_equal birthday, Date.today
+  end
+
+  def test_birthday_on_newborns
+    min = 0
+    max = 4
+
+    t = Date.today
+    birthdate_min = Date.new(t.year - max, t.month, t.day)
+    birthdate_max = Date.new(t.year - min, t.month, t.day)
+
+    birthdays = []
+
+    10.times do
+      birthday = @tester.birthday(min, max)
+
+      birthdays << birthday
+
+      assert birthday >= birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
+      assert birthday <= birthdate_max, "Expect <= \"#{birthdate_max}\", but got #{birthday}"
+    end
+
+    assert birthdays.uniq.size > 1
+  end
+
   def test_default_birthday
     min = 10
     max = 65
