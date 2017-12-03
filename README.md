@@ -48,6 +48,7 @@ Contents
   - [Faker::Date](doc/date.md)
   - [Faker::Demographic](doc/demographic.md)
   - [Faker::Dessert](doc/dessert.md)
+  - [Faker::Dog](doc/dog.md)
   - [Faker::DragonBall](doc/dragon_ball.md)
   - [Faker::DrWho](doc/dr_who.md)
   - [Faker::Dune](doc/dune.md)

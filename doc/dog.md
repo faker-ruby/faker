@@ -12,4 +12,16 @@ Faker::Dog.sound #=> "woof woof"
 
 # Random dog meme phrase
 Faker::Dog.meme_phrase #=> "smol pupperino"
+
+# Random dog age
+Faker::Dog.age #=> "puppy"
+
+# Random dog gender
+Faker::Dog.gender #=> "female"
+
+# Random dog coat length
+Faker::Dog.coat_length #=> "short"
+
+# Random dog size
+Faker::Dog.size #=> "small"
 ```
