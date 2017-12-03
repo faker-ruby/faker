@@ -1,5 +1,5 @@
 module Faker
-  class Cat < Base
+  class Dog < Base
     flexible :dog
 
     class << self
@@ -17,6 +17,22 @@ module Faker
 
       def meme_phrase
         fetch('dog.meme_phrase')
+      end
+
+      def age
+        fetch('dog.age')
+      end
+
+      def gender
+        fetch('dog.gender')
+      end
+
+      def coat_length
+        fetch('dog.coat_length')
+      end
+
+      def size
+        fetch('dog.size')
       end
     end
   end
