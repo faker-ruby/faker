@@ -16,9 +16,7 @@ module Faker
       end
 
       def greek_organization
-        organization = ''
-        3.times { |_| organization += sample(greek_alphabet) }
-        organization
+        3.times.map { |_| sample(greek_alphabet) }.join
       end
 
       def greek_alphabet
