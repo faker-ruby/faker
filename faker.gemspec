@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = %q{Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.}
   s.license     = 'MIT'
 
-  s.add_runtime_dependency('i18n', '~> 0.5')
+  s.add_runtime_dependency('i18n', '~> 0.9.1')
   s.required_ruby_version = '>= 2.1'
 
   s.files         = Dir['lib/**/*'] + %w(History.md License.txt CHANGELOG.md README.md)
