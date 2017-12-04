@@ -3,12 +3,14 @@ module Faker
     require 'time'
     attr_reader :name,
                 :first_name,
-                :last_name
+                :last_name,
+                :email
 
     def initialize
       @name = "#{Name.first_name} #{Name.last_name}"
       @first_name = name.split(' ').first
       @last_name = name.split(' ').last
+      @email = Internet.safe_email(name)
     end
 
     class << self
@@ -23,7 +25,7 @@ module Faker
             name: auth.name,
             first_name: auth.first_name,
             last_name: auth.last_name,
-            email: email,
+            email: auth.email,
             image: image
           },
           credentials:  {
@@ -35,7 +37,7 @@ module Faker
           extra: {
             raw_info: {
               sub:  uid,
-              email: email,
+              email: auth.email,
               email_verified: random_boolean,
               name: auth.name,
               given_name: auth.first_name,
@@ -54,7 +56,7 @@ module Faker
             "email_verified" => "true",
             "sub" => Number.number(28).to_s,
             "azp" => "APP_ID",
-            "email" => email,
+            "email" => auth.email,
             "aud" => "APP_ID",
             "iat" => Number.number(10),
             "exp" => Time.forward.to_i.to_s,
@@ -72,7 +74,7 @@ module Faker
           provider: "facebook",
           uid: uid,
           info: {
-            email: email,
+            email: auth.email,
             name: auth.name,
             first_name: auth.first_name,
             last_name: auth.last_name,
@@ -97,7 +99,7 @@ module Faker
                 name: city_state
               },
               gender: gender,
-              email: email,
+              email: auth.email,
               timezone: timezone,
               locale: 'en_US',
               verified: random_boolean,
@@ -197,7 +199,7 @@ module Faker
           "uid" => uid,
           "info" => {
             "name" => auth.name,
-            "email" => email,
+            "email" => auth.email,
             "nickname" => auth.name,
             "first_name" => auth.first_name,
             "last_name" => auth.last_name,
@@ -260,7 +262,7 @@ module Faker
           uid: uid,
           info: {
             nickname: login,
-            email: email,
+            email: auth.email,
             name: auth.name,
             image: image,
             urls:{
@@ -294,7 +296,7 @@ module Faker
               company: nil,
               blog: nil,
               location: city_state,
-              email: email,
+              email: auth.email,
               hireable: nil,
               bio: nil,
               public_repos: random_number_from_range(1..1000),
