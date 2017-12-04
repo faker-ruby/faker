@@ -17,7 +17,7 @@ module Faker
       def user_name(specifier = nil, separators = %w(. _))
         with_locale(:en) do
           if specifier.respond_to?(:scan)
-            return specifier.scan(/\w+/).shuffle.join(sample(separators)).downcase
+            return shuffle(specifier.scan(/\w+/)).join(sample(separators)).downcase
           elsif specifier.kind_of?(Integer)
             # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error
             raise ArgumentError, "Given argument is too large" if specifier > 10**6

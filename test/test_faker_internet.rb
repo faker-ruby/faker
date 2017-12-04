@@ -26,6 +26,12 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.user_name('bo peep').match(/(bo(_|\.)peep|peep(_|\.)bo)/)
   end
 
+  def test_user_name_with_string_arg_determinism
+    deterministically_verify -> { @tester.user_name('bo peep') }, depth: 4 do |subject|
+      assert subject.match(/(bo(_|\.)peep|peep(_|\.)bo)/)
+    end
+  end
+
   def test_user_name_with_integer_arg
     (1..32).each do |min_length|
       assert @tester.user_name(min_length).length >= min_length
