@@ -9,7 +9,7 @@ Faker::Omniauth.google #=>
 #   :uid => "123456789",
 #   :info => {
 #     :name => "John Doe",
-#     :email => "john@company_name.com",
+#     :email => "john.doe@example.com",
 #     :first_name => "John",
 #     :last_name => "Doe",
 #     :image => "https://lh3.googleusercontent.com/url/photo.jpg"
@@ -23,7 +23,7 @@ Faker::Omniauth.google #=>
 #   :extra => {
 #     :raw_info => {
 #       :sub => "123456789",
-#       :email => "user@domain.example.com",
+#       :email => "john.doe@example.com",
 #       :email_verified => true,
 #       :name => "John Doe",
 #       :given_name => "John",
@@ -33,7 +33,7 @@ Faker::Omniauth.google #=>
 #       :gender => "male",
 #       :birthday => "0000-06-25",
 #       :locale => "en",
-#       :hd => "company_name.com"
+#       :hd => "example.com"
 #     },
 #     :id_info => {
 #       "iss" => "accounts.google.com",
@@ -55,7 +55,7 @@ Faker::Omniauth.facebook #=>
 #   provider: 'facebook',
 #   uid: '1234567',
 #   info: {
-#     email: 'joe@bloggs.com',
+#     email: 'joe_bloggs@example.com',
 #     name: 'Joe Bloggs',
 #     first_name: 'Joe',
 #     last_name: 'Bloggs',
@@ -77,7 +77,7 @@ Faker::Omniauth.facebook #=>
 #       username: 'jbloggs',
 #       location: { id: '123456789', name: 'Palo Alto, California' },
 #       gender: 'male',
-#       email: 'joe@bloggs.com',
+#       email: 'joe_bloggs@example.com',
 #       timezone: -8,
 #       locale: 'en_US',
 #       verified: true,
@@ -160,7 +160,7 @@ Faker::Omniauth.linkedin #=>
 #   "uid"=>"AbC123",
 #   "info"=> {
 #     "name"=>"John Doe",
-#     "email"=>"john@doe.com",
+#     "email"=>"doe.john@example.com",
 #     "nickname"=>"John Doe",
 #     "first_name"=>"John",
 #     "last_name"=>"Doe",
@@ -211,7 +211,7 @@ Faker::Omniauth.github #=>
 #   :uid =>"95144751",
 #   :info => {
 #     :nickname => "jackson-keeling",
-#     :email => "jackson@example.com",
+#     :email => "jackson.keeling@example.com",
 #     :name => "Jackson Keeling",
 #     :image => "https://placehold.it/300x300.png",
 #     :urls => {
@@ -245,7 +245,7 @@ Faker::Omniauth.github #=>
 #       :company => nil,
 #       :blog => nil,
 #       :location => "Paigeton, Massachusetts",
-#       :email => "jackson@example.com",
+#       :email => "jackson.keeling@example.com",
 #       :hireable => nil,
 #       :bio => nil,
 #       :public_repos => 263,
