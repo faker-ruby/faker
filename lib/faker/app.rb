@@ -15,7 +15,7 @@ module Faker
       end
 
       def semantic_version(major: 0..9, minor: 0..9, patch: 1..9)
-        [ major, minor, patch ].map {|chunk| Array(chunk).sample }.join('.')
+        [ major, minor, patch ].map {|chunk| sample(Array(chunk)) }.join('.')
       end
 
     end
