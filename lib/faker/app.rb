@@ -14,13 +14,10 @@ module Faker
         parse('app.author')
       end
 
-      def semantic_version(from_major = 0, to_major = 9, from_minor = 0, to_minor = 9, from_patch = 1, to_patch = 9)
-        "#{random_inclusive(from_major, to_major)}.#{random_inclusive(from_minor, to_minor)}.#{random_inclusive(from_patch, to_patch)}"
+      def semantic_version(major: 0..9, minor: 0..9, patch: 1..9)
+        [ major, minor, patch ].map {|chunk| Array(chunk).sample }.join('.')
       end
 
-      def random_inclusive(min=1, max=9)
-        (rand(max - min + 1) + min).to_s
-      end
     end
   end
 end
