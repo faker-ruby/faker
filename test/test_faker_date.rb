@@ -17,13 +17,34 @@ class TestFakerDate < Test::Unit::TestCase
   end
 
   def test_between_except
-    from = Date.parse("2012-01-01")
-    to   = Date.parse("2012-01-05")
+    from     = Date.parse("2012-01-01")
+    to       = Date.parse("2012-01-05")
     excepted = Date.parse("2012-01-03")
 
     100.times do
       random_date = @tester.between_except(from, to, excepted)
+      assert_not_nil random_date
       assert random_date != excepted, "Expected != \"#{excepted}\", but got #{random_date}"
+    end
+  end
+
+  def test_between_except_with_strings
+    from     = "2012-01-01"
+    to       = "2012-01-05"
+    excepted = "2012-01-03"
+
+    excepted_date = Date.parse(excepted)
+
+    100.times do
+      random_date = @tester.between_except(from, to, excepted)
+      assert_not_nil random_date
+      assert random_date != excepted_date, "Expected != \"#{excepted}\", but got #{random_date}"
+    end
+  end
+
+  def test_between_except_with_same_from_to_and_except
+    assert_raise ArgumentError do
+      @tester.between_except("2012-01-01", "2012-01-01", "2012-01-01")
     end
   end
 
