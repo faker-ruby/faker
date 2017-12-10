@@ -9,11 +9,13 @@ module Faker
       end
 
       def between_except(from, to, excepted)
-        begin
-          date = between(from, to)
-        end while date == excepted
+        raise ArgumentError, "From date, to date and excepted date must not be the same" if from == to && to == excepted
+        excepted = get_date_object(excepted)
 
-        date
+        loop do
+          date = between(from, to)
+          break date.to_date if date != excepted
+        end
       end
 
       def forward(days = 365)
