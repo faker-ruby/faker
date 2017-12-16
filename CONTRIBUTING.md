@@ -20,7 +20,12 @@ deterministic feature.
 put your translations in `lib/locales/en/my_thing.yml`.  See [the locale
 README](./lib/locales/en/README.md) for more info.
 
-6. Push to your fork and submit a pull request.
+6. Methods with optional arguments should use keyword rather than positional 
+arguments. An exception to this could be a method that takes only one 
+optional argument, and it's unlikely that that method would ever take more
+than one optional argument.
+
+7. Push to your fork and submit a pull request.
 
 Syntax:
 
