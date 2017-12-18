@@ -5,6 +5,10 @@ class TestFakerStarWars < Test::Unit::TestCase
     @tester = Faker::StarWars
   end
 
+  def test_call_sign
+    assert @tester.call_sign.match(/\w+/)
+  end
+
   def test_character
     assert @tester.character.match(/\w+/)
   end

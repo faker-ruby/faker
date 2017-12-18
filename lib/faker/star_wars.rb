@@ -1,6 +1,18 @@
 module Faker
   class StarWars < Base
     class << self
+      def call_squadron
+        sample(call_squadrons)
+      end
+
+      def call_sign
+        numerify(parse('star_wars.call_sign'))
+      end
+
+      def call_number
+        sample(call_numbers)
+      end
+
       def character
         sample(characters)
       end
@@ -27,6 +39,14 @@ module Faker
         rand(0..10).times { sentence += " " + sample(wookiee_words)}
 
         sentence + sample(['.','?','!'])
+      end
+
+      def call_numbers
+        fetch('star_wars.call_numbers')
+      end
+
+      def call_squadrons
+        fetch('star_wars.call_squadrons')
       end
 
       def characters
