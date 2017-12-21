@@ -1,5 +1,18 @@
 # Change Log
 
+## [v1.8.6](https://github.com/stympy/faker/tree/v1.8.6) (2017-12-21)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.5...v1.8.6)
+
+**Additions**
+
+- Faker::App.semantic_version
+- Faker::Types
+- New methods in Faker::StarWars: call_squadron, call_sign, call_number
+
+**Other changes**
+
+- Changed i18n depedency from `~> 0.9.1` to `>= 0.7`
+
 ## [v1.8.5](https://github.com/stympy/faker/tree/v1.8.5) (2017-12-06)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.4...v1.8.5)
 
