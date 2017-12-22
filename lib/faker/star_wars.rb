@@ -42,23 +42,23 @@ module Faker
       end
 
       def call_numbers
-        fetch('star_wars.call_numbers')
+        fetch_all('star_wars.call_numbers')
       end
 
       def call_squadrons
-        fetch('star_wars.call_squadrons')
+        fetch_all('star_wars.call_squadrons')
       end
 
       def characters
-        fetch('star_wars.characters')
+        fetch_all('star_wars.characters')
       end
 
       def droids
-        fetch('star_wars.droids')
+        fetch_all('star_wars.droids')
       end
 
       def planets
-        fetch('star_wars.planets')
+        fetch_all('star_wars.planets')
       end
 
       def quote(character = nil)
@@ -83,15 +83,15 @@ module Faker
       end
 
       def species
-        fetch('star_wars.species')
+        fetch_all('star_wars.species')
       end
 
       def vehicles
-        fetch('star_wars.vehicles')
+        fetch_all('star_wars.vehicles')
       end
 
       def wookiee_words
-        fetch('star_wars.wookiee_words')
+        fetch_all('star_wars.wookiee_words')
       end
 
       alias_method :wookie_sentence, :wookiee_sentence

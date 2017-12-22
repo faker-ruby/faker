@@ -53,4 +53,36 @@ class TestFakerStarWars < Test::Unit::TestCase
   def test_wookiee_sentence
     assert @tester.wookiee_sentence.match(/\w+/)
   end
+
+  def test_call_numbers
+    assert @tester.call_numbers.is_a?(Array)
+  end
+
+  def test_call_squadrons
+    assert @tester.call_squadrons.is_a?(Array)
+  end
+
+  def test_characters
+    assert @tester.characters.is_a?(Array)
+  end
+
+  def test_droids
+    assert @tester.droids.is_a?(Array)
+  end
+
+  def test_planets
+    assert @tester.planets.is_a?(Array)
+  end
+
+  def test_species
+    assert @tester.species.is_a?(Array)
+  end
+
+  def test_vehicles
+    assert @tester.vehicles.is_a?(Array)
+  end
+
+  def test_wookiee_words
+    assert @tester.wookiee_words.is_a?(Array)
+  end
 end
