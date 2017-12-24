@@ -104,6 +104,7 @@ Contents
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
   - [Faker::StarWars](doc/star_wars.md)
+  - [Faker::Stripe](doc/stripe.md)
   - [Faker::Superhero](doc/superhero.md)
   - [Faker::Team](doc/team.md)
   - [Faker::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
