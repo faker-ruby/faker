@@ -98,6 +98,7 @@ Contents
   - [Faker::RuPaul](doc/rupaul.md)
   - [Faker::Science](doc/science.md)
   - [Faker::Seinfeld](doc/seinfeld.md)
+  - [Faker::SemanticVersion](doc/semantic_version.md)
   - [Faker::SiliconValley](doc/silicon_valley.md)
   - [Faker::Simpsons](doc/simpsons.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
