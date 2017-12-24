@@ -44,6 +44,7 @@ Contents
   - [Faker::Commerce](doc/commerce.md)
   - [Faker::Company](doc/company.md)
   - [Faker::Compass](doc/compass.md)
+  - [Faker::Currency](doc/currency.md)
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::Date](doc/date.md)
   - [Faker::Demographic](doc/demographic.md)
