@@ -21,8 +21,8 @@ Faker::Markdown.inline_code #=> "Aut eos quis suscipit. `Dignissimos voluptatem 
 # Code Block - generates a code block formatted in ruby
 Faker::Markdown.block_code #=> "```ruby\nEos quasi qui.\n```"
 
-# Table - generates a 3x3 table
-Faker::Markdown.table #=> "ad | similique | voluptatem\ncorrupti | est | rerum\nmolestiae | quidem | et"
+# Table - generates a 3x4 table with a row of headings, a row of hyphens and two rows of data
+Faker::Markdown.table #=> "ad | similique | voluptatem\n---- | ---- | ----\ncorrupti | est | rerum\nmolestiae | quidem | et"
 
 # Random - randomly chooses an above method
 Faker::Markdown.random #=> returns output from a single method outlined above

@@ -1,6 +1,234 @@
 # Change Log
 
-## [v1.7.3](https://github.com/stympy/faker/tree/v1.7.3) (2017-02-04)
+## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)
+
+**Additions**
+
+- Faker::Company.type
+- Faker::Job.education_level and Faker::Job.employment_type
+- More characters and quotes for Seinfeld
+
+**Fixes**
+
+- Revert a change in 1.8.5 that caused Star Wars methods to return a
+  single string rather than an array (#1093)
+
+## [v1.8.6](https://github.com/stympy/faker/tree/v1.8.6) (2017-12-21)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.5...v1.8.6)
+
+**Additions**
+
+- Faker::App.semantic_version
+- Faker::Types
+- New methods in Faker::StarWars: call_squadron, call_sign, call_number
+
+**Other changes**
+
+- Changed i18n depedency from `~> 0.9.1` to `>= 0.7`
+
+## [v1.8.5](https://github.com/stympy/faker/tree/v1.8.5) (2017-12-06)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.4...v1.8.5)
+
+**Closed issues:**
+
+- The latest version does not contain Faker::ProgarmmingLanguage, but the documentation said it does. [\#1083](https://github.com/stympy/faker/issues/1083)
+- undefined method `initials' for Faker::Name:Class [\#1076](https://github.com/stympy/faker/issues/1076)
+- Undefined method `dish' for Faker::Food:Class [\#1038](https://github.com/stympy/faker/issues/1038)
+- Need Silicon Valley [\#1026](https://github.com/stympy/faker/issues/1026)
+- Would it be possible to tie quotes to characters? [\#1011](https://github.com/stympy/faker/issues/1011)
+- Generated phone numbers dont seem to be valid. [\#1010](https://github.com/stympy/faker/issues/1010)
+- Faker::RickAndMorty not supported in 1.7.3 [\#988](https://github.com/stympy/faker/issues/988)
+- Weird crash with Faker 1.8.3 [\#982](https://github.com/stympy/faker/issues/982)
+- Faker::PhoneNumber.cell\_phone not enforcing locale [\#499](https://github.com/stympy/faker/issues/499)
+- https url scheme [\#459](https://github.com/stympy/faker/issues/459)
+- New feature: Google video and image searching [\#306](https://github.com/stympy/faker/issues/306)
+- The array extension method :sample throw an argument error when the array is empty [\#94](https://github.com/stympy/faker/issues/94)
+- phone\_number can generate invalid US numbers [\#24](https://github.com/stympy/faker/issues/24)
+
+**Merged pull requests:**
+
+- Fixes a few typos in names and deletes a duplicate [\#1084](https://github.com/stympy/faker/pull/1084) ([katelovescode](https://github.com/katelovescode))
+- Fix Faker::Dog and add tests [\#1082](https://github.com/stympy/faker/pull/1082) ([wtanna](https://github.com/wtanna))
+- Remove broken example from README [\#1081](https://github.com/stympy/faker/pull/1081) ([dentarg](https://github.com/dentarg))
+- Remove problematic char from German street roots [\#1080](https://github.com/stympy/faker/pull/1080) ([Kjir](https://github.com/Kjir))
+- Add Faker::VForVendetta [\#1073](https://github.com/stympy/faker/pull/1073) ([backpackerhh](https://github.com/backpackerhh))
+- Fixes typos, removes a duplicate [\#1072](https://github.com/stympy/faker/pull/1072) ([katelovescode](https://github.com/katelovescode))
+- "Flint\s\sof the mountains" ==\> "Flint\sof the mountains" [\#1071](https://github.com/stympy/faker/pull/1071) ([seanwedig](https://github.com/seanwedig))
+- add ru\_chars to Char [\#1070](https://github.com/stympy/faker/pull/1070) ([startaper](https://github.com/startaper))
+- Updated documentation to match correct methods [\#1069](https://github.com/stympy/faker/pull/1069) ([LasseSviland](https://github.com/LasseSviland))
+- Add the @flexible\_key value to the Vehicle Class [\#1067](https://github.com/stympy/faker/pull/1067) ([agustin](https://github.com/agustin))
+- kpop [\#1066](https://github.com/stympy/faker/pull/1066) ([j0shuachen](https://github.com/j0shuachen))
+- Change git URL to use https instead git protocol [\#1065](https://github.com/stympy/faker/pull/1065) ([buncismamen](https://github.com/buncismamen))
+- Add more quotes to the silicon valley yml file to provide more variety [\#1060](https://github.com/stympy/faker/pull/1060) ([danielwheeler1987](https://github.com/danielwheeler1987))
+- change korean postcode format [\#1058](https://github.com/stympy/faker/pull/1058) ([sunghyuk](https://github.com/sunghyuk))
+- Breaking bad [\#1056](https://github.com/stympy/faker/pull/1056) ([danilobarion1986](https://github.com/danilobarion1986))
+- Star wars quotes [\#1054](https://github.com/stympy/faker/pull/1054) ([russellschmidt](https://github.com/russellschmidt))
+- Dune and Potential Solution to Issue 1011 [\#1051](https://github.com/stympy/faker/pull/1051) ([russellschmidt](https://github.com/russellschmidt))
+- add Malaysia's commercials and islamics bank [\#1045](https://github.com/stympy/faker/pull/1045) ([sanik90](https://github.com/sanik90))
+- organize and add star wars data [\#1043](https://github.com/stympy/faker/pull/1043) ([tjchecketts](https://github.com/tjchecketts))
+- Fix usage document [\#1040](https://github.com/stympy/faker/pull/1040) ([sashiyama](https://github.com/sashiyama))
+- introduce Aqua Teen Hunger Force characters [\#1037](https://github.com/stympy/faker/pull/1037) ([ethagnawl](https://github.com/ethagnawl))
+- added 1 hero, 2 locations and 2 quotes [\#1016](https://github.com/stympy/faker/pull/1016) ([murog](https://github.com/murog))
+- Fix usage document. [\#1013](https://github.com/stympy/faker/pull/1013) ([n0h0](https://github.com/n0h0))
+- Add dumb and dumber class [\#1008](https://github.com/stympy/faker/pull/1008) ([cnharris10](https://github.com/cnharris10))
+- Update Russian resources [\#1002](https://github.com/stympy/faker/pull/1002) ([edubenetskiy](https://github.com/edubenetskiy))
+- Add more Seinfeld characters [\#1001](https://github.com/stympy/faker/pull/1001) ([gregeinfrank](https://github.com/gregeinfrank))
+- Adds Faker::OnePiece [\#998](https://github.com/stympy/faker/pull/998) ([Leohige](https://github.com/Leohige))
+- Stargate [\#997](https://github.com/stympy/faker/pull/997) ([katymccloskey](https://github.com/katymccloskey))
+- Tells users how to handle uninitialized constant error [\#995](https://github.com/stympy/faker/pull/995) ([jwpincus](https://github.com/jwpincus))
+- Renamed word\_of\_warcraft to world\_of\_warcraft [\#994](https://github.com/stympy/faker/pull/994) ([Ranhiru](https://github.com/Ranhiru))
+- Add default\_country for Japan and Korea [\#990](https://github.com/stympy/faker/pull/990) ([Mangoov](https://github.com/Mangoov))
+- Fix typo in de.yml [\#986](https://github.com/stympy/faker/pull/986) ([IngoAlbers](https://github.com/IngoAlbers))
+- Add pt-BR translate [\#985](https://github.com/stympy/faker/pull/985) ([marcosvpcortes](https://github.com/marcosvpcortes))
+- Fix for NL postal code [\#984](https://github.com/stympy/faker/pull/984) ([petrosg](https://github.com/petrosg))
+- French traduction for Faker::Pokemon [\#983](https://github.com/stympy/faker/pull/983) ([Dakurei](https://github.com/Dakurei))
+- Added material to the Commerce docs. [\#903](https://github.com/stympy/faker/pull/903) ([mrstebo](https://github.com/mrstebo))
+- Added Spanish Organization Number [\#897](https://github.com/stympy/faker/pull/897) ([cmunozgar](https://github.com/cmunozgar))
+
+## [v1.8.4](https://github.com/stympy/faker/tree/v1.8.4) (2017-07-13)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.3...v1.8.4)
+
+**Merged pull requests:**
+
+- Remove errant tab character in YAML [\#981](https://github.com/stympy/faker/pull/981) ([steveh](https://github.com/steveh))
+
+## [v1.8.3](https://github.com/stympy/faker/tree/v1.8.3) (2017-07-12)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.2...v1.8.3)
+
+**Closed issues:**
+
+- Can't pass zero \(0\) to the default rand method \(Faker override\) [\#976](https://github.com/stympy/faker/issues/976)
+- Add Faker::Address.mailing\_address [\#841](https://github.com/stympy/faker/issues/841)
+
+**Merged pull requests:**
+
+- Fix tests warnings [\#979](https://github.com/stympy/faker/pull/979) ([gssbzn](https://github.com/gssbzn))
+- \[\#976\] Handles zero as max for rand [\#978](https://github.com/stympy/faker/pull/978) ([gssbzn](https://github.com/gssbzn))
+- Fix spelling of Wookiee [\#977](https://github.com/stympy/faker/pull/977) ([miloprice](https://github.com/miloprice))
+- Faker: Umphreys mcgee [\#942](https://github.com/stympy/faker/pull/942) ([Ryanspink1](https://github.com/Ryanspink1))
+- Faker: Venture bros [\#940](https://github.com/stympy/faker/pull/940) ([Ryanspink1](https://github.com/Ryanspink1))
+- seinfeld faker  [\#936](https://github.com/stympy/faker/pull/936) ([cews7](https://github.com/cews7))
+- elder scrolls faker [\#933](https://github.com/stympy/faker/pull/933) ([CjMoore](https://github.com/CjMoore))
+- Add greek\_organization method to University Faker [\#932](https://github.com/stympy/faker/pull/932) ([andrewdwooten](https://github.com/andrewdwooten))
+- add Hogwarts and Ilvermorny houses to Harry Potter faker [\#925](https://github.com/stympy/faker/pull/925) ([samanthamorco](https://github.com/samanthamorco))
+
+## [v1.8.2](https://github.com/stympy/faker/tree/v1.8.2) (2017-07-11)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.1...v1.8.2)
+
+**Closed issues:**
+
+- Cannot require 'faker' after update to 1.8.1 [\#975](https://github.com/stympy/faker/issues/975)
+- NoMethodError: super: no superclass method `between' for Faker::Time:Class [\#973](https://github.com/stympy/faker/issues/973)
+
+## [v1.8.1](https://github.com/stympy/faker/tree/v1.8.1) (2017-07-10)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.0...v1.8.1)
+
+**Closed issues:**
+
+- Faker::Internet.domain\_word == "" [\#956](https://github.com/stympy/faker/issues/956)
+- Faker::Coffee [\#935](https://github.com/stympy/faker/issues/935)
+- Internet password method sometimes doesn't include special chars [\#927](https://github.com/stympy/faker/issues/927)
+- Faker HowIMet [\#917](https://github.com/stympy/faker/issues/917)
+- NoMethodError: super: no superclass method `backward' for Faker::Time:Class [\#915](https://github.com/stympy/faker/issues/915)
+- Faker 1.8 release [\#906](https://github.com/stympy/faker/issues/906)
+- Material missing in Faker::Commerce documentation [\#901](https://github.com/stympy/faker/issues/901)
+- Tests fail that have nothing to do with my changes. What should I do? [\#864](https://github.com/stympy/faker/issues/864)
+- uninitialized constant Faker::RuPaul [\#856](https://github.com/stympy/faker/issues/856)
+- Faker::Internet.domain\_word returns empty string [\#843](https://github.com/stympy/faker/issues/843)
+- unitilialized constant Faker::Demographic [\#812](https://github.com/stympy/faker/issues/812)
+
+**Merged pull requests:**
+
+- Fix Address.community documentation [\#972](https://github.com/stympy/faker/pull/972) ([landongrindheim](https://github.com/landongrindheim))
+- edit superclass [\#971](https://github.com/stympy/faker/pull/971) ([iz4blue](https://github.com/iz4blue))
+- adding important data for hipster to en.yml [\#946](https://github.com/stympy/faker/pull/946) ([dbwest](https://github.com/dbwest))
+- Locale: update zh-CN cell phone formats [\#934](https://github.com/stympy/faker/pull/934) ([liluo](https://github.com/liluo))
+- Fixing special chars addition in passwords. [\#926](https://github.com/stympy/faker/pull/926) ([allam-matsubara](https://github.com/allam-matsubara))
+- Update commerce documentation [\#907](https://github.com/stympy/faker/pull/907) ([dv2](https://github.com/dv2))
+
+## [v1.8.0](https://github.com/stympy/faker/tree/v1.8.0) (2017-07-09)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.7.3...v1.8.0)
+
+**Closed issues:**
+
+- Zelda Location [\#968](https://github.com/stympy/faker/issues/968)
+- Real passwords / passphrases [\#962](https://github.com/stympy/faker/issues/962)
+- Generating fake link \[Feature Request\] [\#955](https://github.com/stympy/faker/issues/955)
+- Clean-up Robin's "Holy Steam Valve" quote [\#948](https://github.com/stympy/faker/issues/948)
+- Faker::Time.between produces times out of range [\#894](https://github.com/stympy/faker/issues/894)
+- \[Feature Request\] Add User Agent strings [\#880](https://github.com/stympy/faker/issues/880)
+- Faker::Omniauth is not deterministic and breaking the build [\#876](https://github.com/stympy/faker/issues/876)
+- undefined method `name =' or undefined method `  =' [\#871](https://github.com/stympy/faker/issues/871)
+- Faker::French Suggestion [\#869](https://github.com/stympy/faker/issues/869)
+- Documentation not correct for Faker::Color.hsl\_color and hsla\_color [\#866](https://github.com/stympy/faker/issues/866)
+- Faker::PhoneNumber.area\_code and .exchange\_code returning nil [\#861](https://github.com/stympy/faker/issues/861)
+- Faker::RickAndMorty not available in v1.7.3 from RubyGems [\#851](https://github.com/stympy/faker/issues/851)
+- Adding Faker to Create in controller, possible? [\#842](https://github.com/stympy/faker/issues/842)
+- Faker 1.7.3 uses Ruby 2 features [\#825](https://github.com/stympy/faker/issues/825)
+- Fillmurry = error [\#823](https://github.com/stympy/faker/issues/823)
+- Base\#numerify generating phone numbers and other number fields with a weird format [\#741](https://github.com/stympy/faker/issues/741)
+- Markdown/HTML Support [\#630](https://github.com/stympy/faker/issues/630)
+- Update WIKI and clean README [\#588](https://github.com/stympy/faker/issues/588)
+- Can't overwrite locale elements using the .yml file [\#424](https://github.com/stympy/faker/issues/424)
+- Faker::Lorem.paragraph raises I18n::MissingTranslationData without manual locale override [\#278](https://github.com/stympy/faker/issues/278)
+- Generate unique values [\#251](https://github.com/stympy/faker/issues/251)
+
+**Merged pull requests:**
+
+- Add Faker::Address.community [\#969](https://github.com/stympy/faker/pull/969) ([landongrindheim](https://github.com/landongrindheim))
+- Added Faker::Food.dish [\#967](https://github.com/stympy/faker/pull/967) ([aomega08](https://github.com/aomega08))
+- Add translations for Malaysia [\#965](https://github.com/stympy/faker/pull/965) ([alienxp03](https://github.com/alienxp03))
+- Adds some new dutch names to the locales [\#961](https://github.com/stympy/faker/pull/961) ([stefanvermaas](https://github.com/stefanvermaas))
+- French traduction for Faker::Pokemon [\#960](https://github.com/stympy/faker/pull/960) ([Dakurei](https://github.com/Dakurei))
+- Add characters to the RickAndMorty database [\#958](https://github.com/stympy/faker/pull/958) ([roninCode](https://github.com/roninCode))
+- \[Resolved\] Internet domain word issue [\#957](https://github.com/stympy/faker/pull/957) ([SagareGanesh](https://github.com/SagareGanesh))
+- Pokemon\#moves [\#954](https://github.com/stympy/faker/pull/954) ([joel-g](https://github.com/joel-g))
+- Remove extraneous text from Robin quote [\#953](https://github.com/stympy/faker/pull/953) ([jsteel](https://github.com/jsteel))
+- Added Simpsons. [\#950](https://github.com/stympy/faker/pull/950) ([RaimundHuebel](https://github.com/RaimundHuebel))
+- add default task test for rake [\#923](https://github.com/stympy/faker/pull/923) ([stephengroat](https://github.com/stephengroat))
+- Use the latest Rubies on Travis CI [\#920](https://github.com/stympy/faker/pull/920) ([hisas](https://github.com/hisas))
+- Add meaningful error message when country code not found [\#916](https://github.com/stympy/faker/pull/916) ([mrstebo](https://github.com/mrstebo))
+- Add Faker::HitchhikersGuideToTheGalaxy [\#914](https://github.com/stympy/faker/pull/914) ([pedroCervi](https://github.com/pedroCervi))
+- Add Funny Name [\#912](https://github.com/stympy/faker/pull/912) ([jsonreeder](https://github.com/jsonreeder))
+- Fix pt-BR city suffix [\#896](https://github.com/stympy/faker/pull/896) ([marcelo-leal](https://github.com/marcelo-leal))
+- Adds League of Legends summoner spells, masteries and rank [\#892](https://github.com/stympy/faker/pull/892) ([DonkeyFish456](https://github.com/DonkeyFish456))
+- fix typo in test file [\#890](https://github.com/stympy/faker/pull/890) ([akintner](https://github.com/akintner))
+- Hobbit characters, locations, & quotes [\#889](https://github.com/stympy/faker/pull/889) ([ski-climb](https://github.com/ski-climb))
+- Added Omniauth Github faker [\#888](https://github.com/stympy/faker/pull/888) ([ahmed-taj](https://github.com/ahmed-taj))
+- Add locations to Faker::Zelda [\#885](https://github.com/stympy/faker/pull/885) ([thejonanshow](https://github.com/thejonanshow))
+- add all setup and files for star trek faker [\#884](https://github.com/stympy/faker/pull/884) ([akintner](https://github.com/akintner))
+- improve german cell phone numbers [\#882](https://github.com/stympy/faker/pull/882) ([timoschilling](https://github.com/timoschilling))
+- Add How I Met Your Mother [\#879](https://github.com/stympy/faker/pull/879) ([jdconrad89](https://github.com/jdconrad89))
+- Add League of Legends [\#878](https://github.com/stympy/faker/pull/878) ([Dpalazzari](https://github.com/Dpalazzari))
+- Add Faker::Robin [\#868](https://github.com/stympy/faker/pull/868) ([leanucci](https://github.com/leanucci))
+- Fixed hsla and hsla\_color documentation. [\#867](https://github.com/stympy/faker/pull/867) ([mrstebo](https://github.com/mrstebo))
+- Add links to doc in README [\#865](https://github.com/stympy/faker/pull/865) ([taleh007](https://github.com/taleh007))
+- Added bg locale [\#858](https://github.com/stympy/faker/pull/858) ([ppopov1357](https://github.com/ppopov1357))
+- Add Faker::Overwatch [\#857](https://github.com/stympy/faker/pull/857) ([tomdracz](https://github.com/tomdracz))
+- Add Faker::HeyArnold [\#855](https://github.com/stympy/faker/pull/855) ([MatthewDG](https://github.com/MatthewDG))
+- Fix India Postal Code format [\#853](https://github.com/stympy/faker/pull/853) ([dv2](https://github.com/dv2))
+- Fix typo in music.md [\#852](https://github.com/stympy/faker/pull/852) ([martinbjeldbak](https://github.com/martinbjeldbak))
+- Fixed regex pattern in TestLocale::test\_regex. [\#849](https://github.com/stympy/faker/pull/849) ([karlwilbur](https://github.com/karlwilbur))
+- Faker::Compass [\#848](https://github.com/stympy/faker/pull/848) ([karlwilbur](https://github.com/karlwilbur))
+- en.yml: demographic, demonym: add missing double quote before Fijian [\#847](https://github.com/stympy/faker/pull/847) ([PascalSchumacher](https://github.com/PascalSchumacher))
+- Update Zelda with Breath of the Wild [\#846](https://github.com/stympy/faker/pull/846) ([lauramosher](https://github.com/lauramosher))
+- add RuPaul quotes [\#845](https://github.com/stympy/faker/pull/845) ([raphaeleidus](https://github.com/raphaeleidus))
+- Add example for Faker::Date.birthday [\#844](https://github.com/stympy/faker/pull/844) ([janpieper](https://github.com/janpieper))
+- Adds Coffee [\#840](https://github.com/stympy/faker/pull/840) ([nathanjh](https://github.com/nathanjh))
+- WIP add dragon ball characters to faker [\#839](https://github.com/stympy/faker/pull/839) ([Cdunagan05](https://github.com/Cdunagan05))
+- Update README.md [\#836](https://github.com/stympy/faker/pull/836) ([jbkimble](https://github.com/jbkimble))
+- Truncate Twitter screen\_name length [\#834](https://github.com/stympy/faker/pull/834) ([abraham](https://github.com/abraham))
+- Improve Faker::Twitter compatibility [\#831](https://github.com/stympy/faker/pull/831) ([abraham](https://github.com/abraham))
+- doc: Add Internet.name length optional arguments [\#830](https://github.com/stympy/faker/pull/830) ([li-xinyang](https://github.com/li-xinyang))
+- Matz [\#829](https://github.com/stympy/faker/pull/829) ([denys281](https://github.com/denys281))
+- Add norwegian organization number [\#827](https://github.com/stympy/faker/pull/827) ([leifcr](https://github.com/leifcr))
+- \[Resolved\] Fillmurray image Fixnum match issue [\#824](https://github.com/stympy/faker/pull/824) ([SagareGanesh](https://github.com/SagareGanesh))
+- Rick and morty [\#821](https://github.com/stympy/faker/pull/821) ([JessCodes](https://github.com/JessCodes))
+- Fix i18n file load issue [\#811](https://github.com/stympy/faker/pull/811) ([jacknoble](https://github.com/jacknoble))
+- Create a Dessert faker [\#791](https://github.com/stympy/faker/pull/791) ([susiirwin](https://github.com/susiirwin))
+
+## [v1.7.3](https://github.com/stympy/faker/tree/v1.7.3) (2017-02-05)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.7.2...v1.7.3)
 
 **Closed issues:**
@@ -23,7 +251,7 @@
 - Fixed russian locale [\#813](https://github.com/stympy/faker/pull/813) ([fobo66](https://github.com/fobo66))
 - Allow unique values to be cleared [\#810](https://github.com/stympy/faker/pull/810) ([dslh](https://github.com/dslh))
 - Friends info [\#808](https://github.com/stympy/faker/pull/808) ([ktrant84](https://github.com/ktrant84))
-- Update superhero.md [\#805](https://github.com/stympy/faker/pull/805) ([Frylock13](https://github.com/Frylock13))
+- Update superhero.md [\#805](https://github.com/stympy/faker/pull/805) ([vitaliy-fry](https://github.com/vitaliy-fry))
 - adds Zelda [\#800](https://github.com/stympy/faker/pull/800) ([audy](https://github.com/audy))
 - Remove the word 'fap' [\#798](https://github.com/stympy/faker/pull/798) ([probablycorey](https://github.com/probablycorey))
 - en.yml: fix typo in demographic race [\#797](https://github.com/stympy/faker/pull/797) ([PascalSchumacher](https://github.com/PascalSchumacher))
@@ -110,7 +338,7 @@
 - Added nb-NO locale unit tests [\#758](https://github.com/stympy/faker/pull/758) ([Newman101](https://github.com/Newman101))
 - Added Japanese unit tests [\#757](https://github.com/stympy/faker/pull/757) ([Newman101](https://github.com/Newman101))
 - Update educator.rb [\#755](https://github.com/stympy/faker/pull/755) ([huyderman](https://github.com/huyderman))
-- Some Turkish Translations \#1 [\#754](https://github.com/stympy/faker/pull/754) ([MrWilhelm](https://github.com/MrWilhelm))
+- Some Turkish Translations \#1 [\#754](https://github.com/stympy/faker/pull/754) ([BatuhanW](https://github.com/BatuhanW))
 - Add some german translations ... [\#753](https://github.com/stympy/faker/pull/753) ([Kjarrigan](https://github.com/Kjarrigan))
 - Add method for ensuring unique values [\#752](https://github.com/stympy/faker/pull/752) ([jonmast](https://github.com/jonmast))
 - Delete unneeded line for Faker::Internet.password [\#751](https://github.com/stympy/faker/pull/751) ([bakunyo](https://github.com/bakunyo))
@@ -162,7 +390,7 @@
 - Added default country check to en-PAK unit tests [\#652](https://github.com/stympy/faker/pull/652) ([Newman101](https://github.com/Newman101))
 - Added even method to Luhn algorithm [\#650](https://github.com/stympy/faker/pull/650) ([Newman101](https://github.com/Newman101))
 - Add more names to pt-BR [\#649](https://github.com/stympy/faker/pull/649) ([haggen](https://github.com/haggen))
-- Add Nigerian locale to locales [\#647](https://github.com/stympy/faker/pull/647) ([andela-oosiname](https://github.com/andela-oosiname))
+- Add Nigerian locale to locales [\#647](https://github.com/stympy/faker/pull/647) ([oluosiname](https://github.com/oluosiname))
 - Refactor Luhn Checksum [\#619](https://github.com/stympy/faker/pull/619) ([Newman101](https://github.com/Newman101))
 - Added en-SG unit tests [\#618](https://github.com/stympy/faker/pull/618) ([Newman101](https://github.com/Newman101))
 - Improved de-AT unit tests [\#614](https://github.com/stympy/faker/pull/614) ([Newman101](https://github.com/Newman101))

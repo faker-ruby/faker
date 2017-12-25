@@ -14,6 +14,7 @@ ja:
       street_name:
         - "#{Name.first_name}#{street_suffix}"
         - "#{Name.last_name}#{street_suffix}"
+      default_country: [日本]
 
     phone_number:
       formats: ['0####-#-####', '0###-##-####', '0##-###-####', '0#-####-####']

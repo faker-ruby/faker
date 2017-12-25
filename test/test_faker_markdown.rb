@@ -58,8 +58,8 @@ class TestFakerMarkdown < Test::Unit::TestCase
     test_trigger.each do |table_data|
       assert_instance_of(String, table_data)
     end
-
-    assert_equal(test_trigger.length, 3)
+    assert_equal(test_trigger.length, 4)
+    assert_equal(test_trigger[1], "---- | ---- | ----")
   end
 
   def test_random

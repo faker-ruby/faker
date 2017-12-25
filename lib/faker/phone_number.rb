@@ -9,7 +9,7 @@ module Faker
         parse('cell_phone.formats')
       end
 
-      # US only
+      # US and Canada only
       def area_code
         begin
           fetch('phone_number.area_code')
@@ -18,7 +18,7 @@ module Faker
         end
       end
 
-      # US only
+      # US and Canada only
       def exchange_code
         begin
           fetch('phone_number.exchange_code')
@@ -27,7 +27,7 @@ module Faker
         end
       end
 
-      # US only
+      # US and Canada only
       # Can be used for both extensions and last four digits of phone number.
       # Since extensions can be of variable length, this method taks a length parameter
       def subscriber_number(length = 4)

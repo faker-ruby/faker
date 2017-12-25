@@ -1,19 +1,21 @@
 PATH
   remote: .
   specs:
-    faker (1.8.0)
-      i18n (~> 0.5)
+    faker (1.8.7)
+      i18n (>= 0.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    i18n (0.8.1)
-    minitest (5.10.1)
-    power_assert (1.0.1)
-    rake (12.0.0)
-    test-unit (3.2.3)
+    concurrent-ruby (1.0.5)
+    i18n (0.9.1)
+      concurrent-ruby (~> 1.0)
+    minitest (5.10.3)
+    power_assert (1.1.1)
+    rake (12.3.0)
+    test-unit (3.2.6)
       power_assert
-    timecop (0.8.1)
+    timecop (0.9.1)
 
 PLATFORMS
   ruby
@@ -26,4 +28,4 @@ DEPENDENCIES
   timecop
 
 BUNDLED WITH
-   1.14.5
+   1.16.0

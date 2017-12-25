@@ -9,11 +9,13 @@ module Faker
       end
 
       def between_except(from, to, excepted)
-        begin
-          date = between(from, to)
-        end while date == excepted
+        raise ArgumentError, "From date, to date and excepted date must not be the same" if from == to && to == excepted
+        excepted = get_date_object(excepted)
 
-        date
+        loop do
+          date = between(from, to)
+          break date.to_date if date != excepted
+        end
       end
 
       def forward(days = 365)
@@ -32,44 +34,30 @@ module Faker
 
       def birthday(min_age = 18, max_age = 65)
         t = ::Date.today
-        top_bound, bottom_bound = prepare_bounds(t, min_age, max_age)
-        years = handled_leap_years(top_bound, bottom_bound)
 
-        from =  ::Date.new(years[0], t.month, t.day)
-        to   =  ::Date.new(years[1], t.month, t.day)
+        from = birthday_date(t, max_age)
+        to   = birthday_date(t, min_age)
 
         between(from, to).to_date
       end
 
       private
 
-      def prepare_bounds(t, min_age, max_age)
-        [t.year - min_age, t.year - max_age]
-      end
+      def birthday_date(date, age)
+        year = date.year - age
 
-      def handled_leap_years(top_bound, bottom_bound)
-        if (top_bound % 4) != 0 || (bottom_bound % 4) != 0
-          [
-            customized_bound(top_bound),
-            customized_bound(bottom_bound, true)
-          ]
-        else
-          [top_bound, bottom_bound]
-        end
-      end
+        day =
+          if date.day == 29 && date.month == 2 && !::Date.leap?(year)
+            28
+          else
+            date.day
+          end
 
-      def customized_bound(bound, increase = false)
-        if (bound % 4) != 0
-          bound += 1 if increase
-          bound -= 1 unless increase
-          customized_bound(bound, increase)
-        else
-          bound
-        end
+        ::Date.new(year, date.month, day)
       end
 
       def get_date_object(date)
-        date = ::Date.parse(date) if date.is_a?(String)
+        date = ::Date.parse(date) if date.is_a?(::String)
         date = date.to_date if date.respond_to?(:to_date)
         date
       end

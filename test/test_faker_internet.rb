@@ -223,4 +223,19 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_device_token
     assert_equal 64, @tester.device_token.size
   end
+
+  def test_user_agent_with_no_argument
+    assert @tester.user_agent.match(/Mozilla|Opera/)
+  end
+
+  def test_user_agent_with_valid_argument
+    assert @tester.user_agent(:opera).match(/Opera/)
+    assert @tester.user_agent("opera").match(/Opera/)
+  end
+
+  def test_user_agent_with_invalid_argument
+    assert @tester.user_agent(:ie).match(/Mozilla|Opera/)
+    assert @tester.user_agent(nil).match(/Mozilla|Opera/)
+    assert @tester.user_agent(1).match(/Mozilla|Opera/)
+  end
 end
