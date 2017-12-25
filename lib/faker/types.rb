@@ -24,8 +24,8 @@ module Faker
 
       def hash(key_count=1)
         Hash.new.tap do |hsh|
-          key_count.times do
-            hsh.merge!({self.string.to_sym => self.random_type})
+          Lorem.words(key_count * 2).uniq.first(key_count).each do |s|
+            hsh.merge!({s.to_sym => self.random_type})
           end
         end
       end
