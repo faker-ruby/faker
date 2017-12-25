@@ -32,4 +32,8 @@ class TestFakerSiliconValley < Test::Unit::TestCase
   def test_urls
     assert @tester.url.match(/\w+/)
   end
+
+  def test_email
+    assert @tester.email.match(/\w+/)
+  end
 end
