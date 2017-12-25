@@ -4,7 +4,7 @@ module Faker
     def self.prepare(string)
       result = romanize_cyrillic string
       result = fix_umlauts result
-      result.gsub(/\W/, '').downcase
+      Faker::Config.locale == "ru"? result : result.gsub(/\W/, '').downcase
     end
 
     def self.fix_umlauts(string)
