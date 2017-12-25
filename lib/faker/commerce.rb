@@ -36,7 +36,7 @@ module Faker
         price = (rand(range) * 100).floor/100.0
         if as_string
           price_parts = price.to_s.split('.')
-          price = price_parts[0] + price_parts[-1].ljust(2, "0")
+          price = price_parts[0] + '.' + price_parts[-1].ljust(2, "0")
         end
         price
       end
