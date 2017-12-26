@@ -204,4 +204,58 @@ Faker::Omniauth.linkedin #=>
 #     }
 #   }
 # }
+
+Faker::Omniauth.github #=>
+# {
+#   :provider =>"github",
+#   :uid =>"95144751",
+#   :info => {
+#     :nickname => "jackson-keeling",
+#     :email => "jackson@example.com",
+#     :name => "Jackson Keeling",
+#     :image => "https://placehold.it/300x300.png",
+#     :urls => {
+#       :GitHub => "https://github.com/jackson-keeling"
+#     }
+#   },
+#   :credentials => {
+#     :token => "9ea49b946a31b705a0168295a0caa195",
+#     :expires => false
+#   },
+#   :extra => {
+#     :raw_info => {
+#       :login => "jackson-keeling",
+#       :id => "95144751",
+#       :avatar_url => "https://placehold.it/300x300.png",
+#       :gravatar_id => "",
+#       :url => "https://api.github.com/users/jackson-keeling",
+#       :html_url => "https://github.com/jackson-keeling",
+#       :followers_url => "https://api.github.com/users/jackson-keeling/followers",
+#       :following_url => "https://api.github.com/users/jackson-keeling/following{/other_user}",
+#       :gists_url => "https://api.github.com/users/jackson-keeling/gists{/gist_id}",
+#       :starred_url => "https://api.github.com/users/jackson-keeling/starred{/owner}{/repo}",
+#       :subscriptions_url => "https://api.github.com/users/jackson-keeling/subscriptions",
+#       :organizations_url => "https://api.github.com/users/jackson-keeling/orgs",
+#       :repos_url => "https://api.github.com/users/jackson-keeling/repos",
+#       :events_url => "https://api.github.com/users/jackson-keeling/events{/privacy}",
+#       :received_events_url => "https://api.github.com/users/jackson-keeling/received_events",
+#       :type => "User",
+#       :site_admin => true,
+#       :name => "Jackson Keeling",
+#       :company => nil,
+#       :blog => nil,
+#       :location => "Paigeton, Massachusetts",
+#       :email => "jackson@example.com",
+#       :hireable => nil,
+#       :bio => nil,
+#       :public_repos => 263,
+#       :public_gists => 658,
+#       :followers => 294,
+#       :following => 865,
+#       :created_at => "2017-03-10T19:49:54+03:00",
+#       :updated_at => "2017-04-04T10:32:08+03:00"
+#     }
+#   }
+# }
+
 ```

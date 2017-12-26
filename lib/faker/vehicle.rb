@@ -1,5 +1,7 @@
 module Faker
   class Vehicle < Base
+    flexible :vehicle
+
     VIN_CHARS = '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'
     VIN_MAP = '0123456789X'
     VIN_WEIGHTS = '8765432X098765432'

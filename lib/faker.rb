@@ -12,7 +12,7 @@ require 'set' # Fixes a bug in i18n 0.6.11
 if I18n.respond_to?(:enforce_available_locales=)
   I18n.enforce_available_locales = true
 end
-I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
+I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 I18n.reload! if I18n.backend.initialized?
 
 
@@ -96,7 +96,7 @@ module Faker
       # with an array of values and selecting one of them.
       def fetch(key)
         fetched = sample(translate("faker.#{key}"))
-        if fetched && fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        if fetched && fetched.match(/^\//) && fetched.match(/\/$/) # A regex
           regexify(fetched)
         else
           fetched
@@ -108,7 +108,7 @@ module Faker
       def fetch_all(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.last if fetched.size <= 1
-        if !fetched.respond_to?(:sample) && fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        if !fetched.respond_to?(:sample) && fetched.match(/^\//) && fetched.match(/\/$/) # A regex
           regexify(fetched)
         else
           fetched
@@ -205,13 +205,19 @@ module Faker
       end
 
       def rand(max = nil)
-        max ? Faker::Config.random.rand(max) : Faker::Config.random.rand
+        if max.nil?
+          Faker::Config.random.rand
+        elsif max.is_a?(Range) || max.to_i > 0
+          Faker::Config.random.rand(max)
+        else
+          0
+        end
       end
     end
   end
 end
 
-Dir.glob(File.join(File.dirname(__FILE__), 'faker','*.rb')).each {|f| require f }
+Dir.glob(File.join(File.dirname(__FILE__), 'faker','*.rb')).sort.each {|f| require f }
 
 require 'extensions/array'
 require 'extensions/symbol'

@@ -13,4 +13,11 @@ class TestFakerZelda < Test::Unit::TestCase
     assert @tester.character.match(/\w+\.?/)
   end
 
+  def test_location
+    assert @tester.location.match(/\w+\.?/)
+  end
+
+  def test_item
+    assert @tester.item.match(/\w+\.?/)
+  end
 end
