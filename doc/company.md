@@ -22,6 +22,8 @@ Faker::Company.logo #=> "https://pigment.github.com/fake-logos/logos/medium/colo
 
 Faker::Company.swedish_organisation_number #=> "7962578022"
 
+Faker::Company.czech_organisation_number #=> ""
+
 Faker::Company.french_siren_number #=> "819489626"
 
 Faker::Company.french_siret_number #=> "81948962600013"
