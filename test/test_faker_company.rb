@@ -39,7 +39,7 @@ class TestFakerCompany < Test::Unit::TestCase
     org_no = @tester.czech_organisation_number
     assert org_no.match(/\d{8}/)
     assert [0, 1, 2, 3, 5, 6, 7, 8, 9].include?(org_no[0].to_i)
-    assert czech_o_n_checksum(org_no) == org_no[-1]
+    assert czech_o_n_checksum(org_no) == org_no[-1].to_i
   end
 
   def test_french_siren_number
