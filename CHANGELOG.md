@@ -116,6 +116,7 @@
 - phone\_number can generate invalid US numbers [\#24](https://github.com/stympy/faker/issues/24)
 
 **Merged pull requests:**
+- Adds turkish phone number formats [PR #1106](https://github.com/stympy/faker/pull/1106/files) [@zasman](https://github.com/ZASMan)
 
 - Fixes a few typos in names and deletes a duplicate [\#1084](https://github.com/stympy/faker/pull/1084) ([katelovescode](https://github.com/katelovescode))
 - Fix Faker::Dog and add tests [\#1082](https://github.com/stympy/faker/pull/1082) ([wtanna](https://github.com/wtanna))
