@@ -14,6 +14,14 @@ class TestFakerStripe < Test::Unit::TestCase
     assert @tester.valid_card("visa").match(/\A\d{16}\z/)
   end
 
+  def test_valid_token
+    assert @tester.valid_token.match(/\Atok_/)
+  end
+
+  def test_specific_valid_token
+    assert @tester.valid_token("visa").match(/\Atok_visa\z/)
+  end
+
   def test_invalid_card
     assert @tester.invalid_card.match(/\A\d{16}\z/)
   end
