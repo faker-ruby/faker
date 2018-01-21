@@ -2,38 +2,51 @@ module Faker
   class Vehicle < Base
     flexible :vehicle
 
-    VIN_CHARS = '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'
-    VIN_MAP = '0123456789X'
-    VIN_WEIGHTS = '8765432X098765432'
+    VIN_REGEX = /^[A-HJ-NPRS-Z0-9]{8}$/
+    VIN_LETTERS = 'ABCDEFGHJKLMNPRSTUVWXYZ'.freeze
+    VIN_MAP = '12345678123457923456789'.freeze
+    VIN_WEIGHTS = [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2].freeze
 
     class << self
-      #ISO 3779
-      def vin
-        _, wmi, wmi_ext = sample(fetch_all('vehicle.manufacture'))
-
-        c = VIN_CHARS.split('').reject{ |n| n == '.'}
-        vehicle_identification_number = wmi.split('').concat( Array.new(14) { sample(c) } )
-        (12..14).to_a.each_with_index { |n, i| vehicle_identification_number[n] = wmi_ext[i] } unless wmi_ext.nil?
-        vehicle_identification_number[10] = fetch('vehicle.year')
-        vehicle_identification_number[8] = vin_checksum(vehicle_identification_number)
-
-        vehicle_identification_number.join.upcase
+      def vin(number = nil)
+        first_eight = first_eight(number)
+        last_eight = last_eight(number)
+        check_digit = calculate_vin_check_digit(first_eight + '0' + last_eight).to_s
+        first_eight + check_digit + last_eight
       end
 
       def manufacture
-        sample(fetch_all('vehicle.manufacture')).first
+        fetch('vehicle.manufacture')
       end
 
-    private
+      private
 
-      def calculate_vin_weight(character, i)
-        (VIN_CHARS.index(character) % 10) * VIN_MAP.index(VIN_WEIGHTS[i])
+      def first_eight(number)
+        return number[0...8] unless number.nil?
+        regexify(VIN_REGEX)
       end
 
-      def vin_checksum(vehicle_identification_number)
-        VIN_MAP[vehicle_identification_number.each_with_index.map(&method(:calculate_vin_weight)).inject(:+) % 11]
+      def last_eight(number)
+        return number[0...8] unless number.nil?
+        regexify(VIN_REGEX)
       end
 
+      def calculate_vin_check_digit(vin)
+        sum = 0
+        vin.each_char.with_index do |c, i|
+          n = vin_char_to_number(c).to_i
+          weight = VIN_WEIGHTS[i]
+          sum += weight * n
+        end
+        mod = sum % 11
+        mod == 10 ? 'X' : mod
+      end
+
+      def vin_char_to_number(char)
+        index = VIN_LETTERS.split('').index(char)
+        return char.to_i if index.nil?
+        VIN_MAP[index]
+      end
     end
   end
 end
