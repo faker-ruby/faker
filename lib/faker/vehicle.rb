@@ -19,6 +19,8 @@ module Faker
         fetch('vehicle.manufacture')
       end
 
+      alias :make :manufacture
+
       private
 
       def first_eight(number)
