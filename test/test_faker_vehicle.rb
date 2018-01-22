@@ -14,6 +14,10 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert @tester.manufacture.match(/\w+\.?/)
   end
 
+  def test_color
+    assert @tester.color.match(/\w+\.?/)
+  end
+
   def test_flexible_key
     flexible_key = @tester.instance_variable_get("@flexible_key")
     assert flexible_key == :vehicle

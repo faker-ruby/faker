@@ -19,7 +19,11 @@ module Faker
         fetch('vehicle.manufacture')
       end
 
-      alias :make :manufacture
+      alias make manufacture
+
+      def color
+        fetch('vehicle.colors')
+      end
 
       private
 
