@@ -100,6 +100,7 @@ Contents
   - [Faker::Seinfeld](doc/seinfeld.md)
   - [Faker::SiliconValley](doc/silicon_valley.md)
   - [Faker::Simpsons](doc/simpsons.md)
+  - [Faker::SingularSiegler](doc/singular_siegler.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
