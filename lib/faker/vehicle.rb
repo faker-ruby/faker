@@ -25,6 +25,10 @@ module Faker
         fetch('vehicle.colors')
       end
 
+      def transmission
+        fetch('vehicle.transmissions')
+      end
+
       private
 
       def first_eight(number)

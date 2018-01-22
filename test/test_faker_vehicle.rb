@@ -1,6 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerVehicle < Test::Unit::TestCase
+  WORD_MATCH = /\w+\.?/
+
   def setup
     @tester = Faker::Vehicle
   end
@@ -11,11 +13,15 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_manufacture
-    assert @tester.manufacture.match(/\w+\.?/)
+    assert_match WORD_MATCH, @tester.manufacture
   end
 
   def test_color
-    assert @tester.color.match(/\w+\.?/)
+    assert_match WORD_MATCH, @tester.color
+  end
+
+  def test_transmission
+    assert_match WORD_MATCH, @tester.transmission
   end
 
   def test_flexible_key
