@@ -47,7 +47,12 @@ module Faker
 
       def car_options(min = 5, max = 10)
         options = fetch_all('vehicle.car_options')
-        rand_in_range(min, max).times.map { sample(options) }
+        Array.new(rand_in_range(min, max)) { sample(options) }
+      end
+
+      def standard_specs(min = 5, max = 10)
+        specs = fetch_all('vehicle.standard_specs')
+        Array.new(rand_in_range(min, max)) { sample(specs) }
       end
 
       private

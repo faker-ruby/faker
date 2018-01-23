@@ -46,6 +46,12 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert options.size == 5
   end
 
+  def test_standard_specs
+    options = @tester.standard_specs(5, 5)
+    assert options.is_a?(Array)
+    assert options.size == 5
+  end
+
   def test_flexible_key
     flexible_key = @tester.instance_variable_get("@flexible_key")
     assert flexible_key == :vehicle
