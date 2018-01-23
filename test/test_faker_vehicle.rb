@@ -40,6 +40,12 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert_match WORD_MATCH, @tester.car_type
   end
 
+  def test_car_option
+    options = @tester.car_options(5, 5)
+    assert options.is_a?(Array)
+    assert options.size == 5
+  end
+
   def test_flexible_key
     flexible_key = @tester.instance_variable_get("@flexible_key")
     assert flexible_key == :vehicle

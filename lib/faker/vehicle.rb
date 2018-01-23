@@ -45,6 +45,11 @@ module Faker
         fetch('vehicle.car_types')
       end
 
+      def car_options(min = 5, max = 10)
+        options = fetch_all('vehicle.car_options')
+        rand_in_range(min, max).times.map { sample(options) }
+      end
+
       private
 
       def first_eight(number)

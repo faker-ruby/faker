@@ -8,3 +8,4 @@ en:
       fuel_types: ['Compressed Natural Gas', 'Diesel', 'E-85/Gasoline', 'Electric', 'Gasoline', 'Gasoline Hybrid', 'Ethanol']
       styles: ["XL","L","ESi","XLE"]
       car_types: ["Cargo Van", "Convertible", "Coupe", "Crew Cab Pickup", "Extended Cab Pickup", "Hatchback", "Minivan", "Passenger Van", "Regular Cab Pickup", "SUV", "Sedan", "Wagon"]
+      car_options: ["A/C: Front", "Airbag: Driver", "AM/FM Stereo", "A/C: Rear", "Airbag: Passenger", "Cassette Player", "Cruise Control", "Airbag: Side", "CD (Single Disc)", "Navigation", "Alarm", "CD (Multi Disc)", "Power Locks", "Antilock Brakes", "MP3 (Single Disc)", "Power Steering", "Fog Lights", "MP3 (Multi Disc)", "Keyless Entry", "Premium Sound", "Integrated Phone", "DVD System", "Bucket Seats", "Power Windows", "Alloy Wheels", "Leather Interior", "Rear Window Defroster", "Moonroof/Sunroof", "Memory Seats", "Rear Window Wiper", "Third Row Seats", "Power Seats", "Tinted Glass", "Tow Package"]
