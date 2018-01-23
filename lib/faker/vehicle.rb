@@ -59,8 +59,16 @@ module Faker
         sample(fetch_all('vehicle.doors'))
       end
 
+      alias door_count doors
+
       def engine_size
         sample(fetch_all('vehicle.engine_sizes'))
+      end
+
+      alias engine engine_size
+
+      def year
+        Faker::Time.backward(rand_in_range(365, 5475), :all, '%Y')
       end
 
       private
