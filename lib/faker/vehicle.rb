@@ -55,6 +55,14 @@ module Faker
         Array.new(rand_in_range(min, max)) { sample(specs) }
       end
 
+      def doors
+        sample(fetch_all('vehicle.doors'))
+      end
+
+      def engine_size
+        sample(fetch_all('vehicle.engine_sizes'))
+      end
+
       private
 
       def first_eight(number)
