@@ -33,6 +33,10 @@ module Faker
         fetch('vehicle.drive_types')
       end
 
+      def fuel_type
+        fetch('vehicle.fuel_types')
+      end
+
       private
 
       def first_eight(number)
