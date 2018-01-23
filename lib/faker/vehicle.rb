@@ -29,6 +29,10 @@ module Faker
         fetch('vehicle.transmissions')
       end
 
+      def drive_type
+        fetch('vehicle.drive_types')
+      end
+
       private
 
       def first_eight(number)
