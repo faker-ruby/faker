@@ -32,6 +32,10 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert_match WORD_MATCH, @tester.fuel_type
   end
 
+  def test_style
+    assert_match WORD_MATCH, @tester.style
+  end
+
   def test_flexible_key
     flexible_key = @tester.instance_variable_get("@flexible_key")
     assert flexible_key == :vehicle

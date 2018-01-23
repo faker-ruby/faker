@@ -6,3 +6,4 @@ en:
       transmissions: ['Automanual', 'Automatic', 'CVT', 'Manual']
       drive_types: ['4x2/2-wheel drive', '4x4/4-wheel drive', 'AWD', 'FWD', 'RWD']
       fuel_types: ['Compressed Natural Gas', 'Diesel', 'E-85/Gasoline', 'Electric', 'Gasoline', 'Gasoline Hybrid', 'Ethanol']
+      styles: ["XL","L","ESi","XLE"]

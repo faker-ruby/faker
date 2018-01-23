@@ -37,6 +37,10 @@ module Faker
         fetch('vehicle.fuel_types')
       end
 
+      def style
+        fetch('vehicle.styles')
+      end
+
       private
 
       def first_eight(number)
