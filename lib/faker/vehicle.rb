@@ -41,6 +41,10 @@ module Faker
         fetch('vehicle.styles')
       end
 
+      def car_type
+        fetch('vehicle.car_types')
+      end
+
       private
 
       def first_eight(number)

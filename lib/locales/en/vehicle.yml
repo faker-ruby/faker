@@ -7,3 +7,4 @@ en:
       drive_types: ['4x2/2-wheel drive', '4x4/4-wheel drive', 'AWD', 'FWD', 'RWD']
       fuel_types: ['Compressed Natural Gas', 'Diesel', 'E-85/Gasoline', 'Electric', 'Gasoline', 'Gasoline Hybrid', 'Ethanol']
       styles: ["XL","L","ESi","XLE"]
+      car_types: ["Cargo Van", "Convertible", "Coupe", "Crew Cab Pickup", "Extended Cab Pickup", "Hatchback", "Minivan", "Passenger Van", "Regular Cab Pickup", "SUV", "Sedan", "Wagon"]
