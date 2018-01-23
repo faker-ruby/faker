@@ -68,6 +68,12 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert @tester.year.size == 4
   end
 
+  def test_mileage
+    mileage = @tester.mileage(5, 10)
+    assert mileage >= 5
+    assert mileage <= 10
+  end
+
   def test_flexible_key
     flexible_key = @tester.instance_variable_get("@flexible_key")
     assert flexible_key == :vehicle

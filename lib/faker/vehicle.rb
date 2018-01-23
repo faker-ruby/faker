@@ -6,6 +6,8 @@ module Faker
     VIN_LETTERS = 'ABCDEFGHJKLMNPRSTUVWXYZ'.freeze
     VIN_MAP = '12345678123457923456789'.freeze
     VIN_WEIGHTS = [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2].freeze
+    MILEAGE_MIN = 10_000
+    MILEAGE_MAX = 90_000
 
     class << self
       def vin(number = nil)
@@ -70,6 +72,12 @@ module Faker
       def year
         Faker::Time.backward(rand_in_range(365, 5475), :all, '%Y')
       end
+
+      def mileage(min = MILEAGE_MIN, max = MILEAGE_MAX)
+        rand_in_range(min, max)
+      end
+
+      alias kilometrage mileage
 
       private
 
