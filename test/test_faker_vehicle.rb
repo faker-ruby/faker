@@ -74,6 +74,11 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert mileage <= 10
   end
 
+  def test_license_plate
+    license_plate = @tester.license_plate
+    assert license_plate.match(/^[A-Z]{3}-[1-9]{4}$/)
+  end
+
   def test_flexible_key
     flexible_key = @tester.instance_variable_get("@flexible_key")
     assert flexible_key == :vehicle

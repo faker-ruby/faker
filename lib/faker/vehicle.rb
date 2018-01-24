@@ -79,6 +79,14 @@ module Faker
 
       alias kilometrage mileage
 
+      def license_plate(state_abreviation = nil)
+        if state_abreviation.nil?
+          return regexify(bothify(fetch('vehicle.license_plate')))
+        end
+        key = 'vehicle.license_plate_by_state.' + state_abreviation
+        regexify(bothify(fetch(key)))
+      end
+
       private
 
       def first_eight(number)
