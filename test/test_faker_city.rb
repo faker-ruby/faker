@@ -9,8 +9,8 @@ class TestFakerCity < Test::Unit::TestCase
         address: { city_prefix: ['west'], city_suffix: ['burg'] }
       }
     }
-    I18n.backend.store_translations(:xx, xx)
     I18n.config.available_locales += [:xx]
+    I18n.backend.store_translations(:xx, xx)
 
     # rubocop:disable Lint/InterpolationCheck
     xy = {
@@ -25,8 +25,8 @@ class TestFakerCity < Test::Unit::TestCase
       }
     }
     # rubocop:enable Lint/InterpolationCheck
-    I18n.backend.store_translations(:xy, xy)
     I18n.config.available_locales += [:xy]
+    I18n.backend.store_translations(:xy, xy)
   end
 
   def teardown

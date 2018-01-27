@@ -9,11 +9,11 @@ end
 class TestFlexible < Test::Unit::TestCase
   def setup
     @old_locales = I18n.config.available_locales
+    I18n.config.available_locales += %i[xx home kindergarden work]
     I18n.backend.store_translations(:xx, faker: { chow: { yummie: %i[fudge chocolate caramel], taste: 'delicious' } })
     I18n.backend.store_translations(:home, faker: { address: { birthplace: %i[bed hospital airplane] } })
     I18n.backend.store_translations(:kindergarden, faker: { name: { girls_name: %i[alice cheryl tatiana] } })
     I18n.backend.store_translations(:work, faker: { company: { do_stuff: %i[work work work] } })
-    I18n.config.available_locales += %i[xx home kindergarden work]
   end
 
   def teardown
