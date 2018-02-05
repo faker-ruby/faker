@@ -18,6 +18,10 @@ module Faker
       def notes
         parse('coffee.notes')
       end
+      
+      def intensifier
+        fetch('coffee.intensifier')
+      end
 
       private
 
