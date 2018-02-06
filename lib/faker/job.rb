@@ -8,6 +8,7 @@ module Faker
         parse('job.title')
       end
 
+      def position;  fetch('job.position'); end
       def field;     fetch('job.field'); end
       def key_skill; fetch('job.key_skills'); end
 
