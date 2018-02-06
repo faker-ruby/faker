@@ -2,6 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerBank < Test::Unit::TestCase
 
+  IBAN_HEADER = '[A-Z]{2}[0-9]{2}'
+
   def setup
     @tester = Faker::Bank
   end
@@ -18,106 +20,482 @@ class TestFakerBank < Test::Unit::TestCase
     assert @tester.iban.match(/[A-Z]{4}\d{14}/)
   end
 
+  # Andorra
+  def test_iban_ad
+    account = @tester.iban('ad')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}\d{8}[A-Z0-9]{12}$/)
+  end
+
+  # United Arab Emirates
+  def test_iban_ae
+    account = @tester.iban('ae')
+    assert account.length == 23
+    assert account.match(/^#{IBAN_HEADER}\d{19}$/)
+  end
+
+  # Albania
+  def test_iban_al
+    account = @tester.iban('al')
+    assert account.length == 28
+    assert account.match(/^#{IBAN_HEADER}\d{8}[A-Z0-9]{16}$/)
+  end
+
+  # Austria
   def test_iban_at
-    assert @tester.iban("at").match(/\d{16}/)
+    account = @tester.iban('at')
+    assert account.length == 20
+    assert account.match(/^#{IBAN_HEADER}\d{16}$/)
   end
 
-  def test_iban_pl
-    assert @tester.iban("pl").match(/\d{8}[A-Z0-9]{16}/)
+  # Azerbaijan, Republic of
+  def test_iban_az
+    account = @tester.iban('az')
+    assert account.length == 28
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{20}$/)
   end
 
+  # Bosnia
+  def test_iban_ba
+    account = @tester.iban('ba')
+    assert account.length == 20
+    assert account.match(/^#{IBAN_HEADER}\d{16}$/)
+  end
+
+  # Belgium
   def test_iban_be
-    assert @tester.iban("be").match(/\d{12}/)
+    account = @tester.iban('be')
+    assert account.length == 16
+    assert account.match(/^#{IBAN_HEADER}\d{12}$/)
   end
 
+  # Bulgaria
   def test_iban_bg
-    assert @tester.iban("bg").match(/[A-Z]{4}\d{6}[A-Z0-9]{8}/)
+    account = @tester.iban('bg')
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{6}[A-Z0-9]{8}$/)
   end
 
-  def test_iban_hr
-    assert @tester.iban("hr").match(/\d{17}/)
+  # Bahrain
+  def test_iban_bh
+    account = @tester.iban('bh')
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{14}$/)
   end
 
+  # Brazil
+  def test_iban_br
+    account = @tester.iban('br')
+    assert account.length == 29
+    assert account.match(/^#{IBAN_HEADER}[0-9]{8}[0-9]{5}[0-9]{10}[A-Z]{1}[A-Z0-9]{1}$/)
+  end
+
+  # Switzerland
+  def test_iban_ch
+    account = @tester.iban('ch')
+    assert account.length == 21
+    assert account.match(/^#{IBAN_HEADER}\d{5}[A-Z0-9]{12}$/)
+  end
+
+  # Costa Rica
+  def test_iban_cr
+    account = @tester.iban('cr')
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}0\d{3}\d{14}$/)
+  end
+
+  # Cyprus
   def test_iban_cy
-    assert @tester.iban("cy").match(/\d{8}[A-Z0-9]{16}/)
+    account = @tester.iban('cy')
+    assert account.length == 28
+    assert account.match(/^#{IBAN_HEADER}\d{8}[A-Z0-9]{16}$/)
   end
 
+  # Czech Republic
   def test_iban_cz
-    assert @tester.iban("cz").match(/\d{20}/)
+    account = @tester.iban('cz')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}\d{20}$/)
   end
 
-  def test_iban_dk
-    assert @tester.iban("dk").match(/\d{14}/)
-  end
-
-  def test_iban_ee
-    assert @tester.iban("ee").match(/\d{16}/)
-  end
-
-  def test_iban_fi
-    assert @tester.iban("fi").match(/\d{14}/)
-  end
-
-  def test_iban_fr
-    assert @tester.iban("fr").match(/\d{10}[A-Z0-9]{11}\d{2}/)
-  end
-
+  # Germany
   def test_iban_de
-    assert @tester.iban("de").match(/\d{18}/)
+    account = @tester.iban('de')
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}\d{18}$/)
   end
 
-  def test_iban_gr
-    assert @tester.iban("gr").match(/\d{7}[A-Z0-9]{16}/)
+  # Denmark
+  def test_iban_dk
+    account = @tester.iban('dk')
+    assert account.length == 18
+    assert account.match(/^#{IBAN_HEADER}\d{14}$/)
   end
 
-  def test_iban_hu
-    assert @tester.iban("hu").match(/\d{24}/)
+  # Dominican Republic
+  def test_iban_do
+    account = @tester.iban('do')
+    assert account.length == 28
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{20}$/)
   end
 
-  def test_iban_ie
-    assert @tester.iban("ie").match(/[A-Z]{4}\d{14}/)
+  # Estonia
+  def test_iban_ee
+    account = @tester.iban('ee')
+    assert account.length == 20
+    assert account.match(/^#{IBAN_HEADER}\d{16}$/)
   end
 
-  def test_iban_it
-    assert @tester.iban("it").match(/[A-Z]\d{10}[A-Z0-9]{12}/)
-  end
-
-  def test_iban_lv
-    assert @tester.iban("lv").match(/[A-Z]{4}[A-Z0-9]{13}/)
-  end
-
-  def test_iban_lt
-    assert @tester.iban("lt").match(/\d{16}/)
-  end
-
-  def test_iban_lu
-    assert @tester.iban("lu").match(/\d{3}[A-Z0-9]{13}/)
-  end
-
-  def test_iban_mt
-    assert @tester.iban("mt").match(/[A-Z]{4}\d{5}[A-Z0-9]{18}/)
-  end
-
-  def test_iban_nl
-    assert @tester.iban("nl").match(/\ANL\d{2}[A-Z]{4}\d{10}\z/)
-  end
-
-  def test_iban_ro
-    assert @tester.iban("ro").match(/[A-Z]{4}[A-Z0-9]{16}/)
-  end
-
+  # Spain
   def test_iban_es
-    assert @tester.iban("es").match(/\d{20}/)
+    account = @tester.iban('es')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}\d{20}$/)
   end
 
+  # Finland
+  def test_iban_fi
+    account = @tester.iban('fi')
+    assert account.length == 18
+    assert account.match(/^#{IBAN_HEADER}\d{14}$/)
+  end
+
+  # Faroe Islands
+  def test_iban_fo
+    account = @tester.iban('fo')
+    assert account.length == 18
+    assert account.match(/^#{IBAN_HEADER}\d{14}$/)
+  end
+
+  # France
+  def test_iban_fr
+    account = @tester.iban('fr')
+    assert account.length == 27
+    assert account.match(/^#{IBAN_HEADER}\d{10}[A-Z0-9]{11}\d{2}$/)
+  end
+
+  # United Kingdom
+  def test_iban_gb
+    account = @tester.iban('gb')
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{14}$/)
+  end
+
+  # Georgia
+  def test_iban_ge
+    account = @tester.iban('ge')
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{2}\d{16}$/)
+  end
+
+  # Gibraltar
+  def test_iban_gi
+    account = @tester.iban('gi')
+    assert account.length == 23
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{15}$/)
+  end
+
+  # Greenland
+  def test_iban_gl
+    account = @tester.iban('gl')
+    assert account.length == 18
+    assert account.match(/^#{IBAN_HEADER}\d{14}$/)
+  end
+
+  # Greece
+  def test_iban_gr
+    account = @tester.iban('gr')
+    assert account.length == 27
+    assert account.match(/^#{IBAN_HEADER}\d{7}[A-Z0-9]{16}$/)
+  end
+
+  # Guatemala
+  def test_iban_gt
+    account = @tester.iban('gt')
+    assert account.length == 28
+    assert account.match(/^#{IBAN_HEADER}[A-Z0-9]{4}\d{2}\d{2}[A-Z0-9]{16}$/)
+  end
+
+  # Croatia
+  def test_iban_hr
+    account = @tester.iban('hr')
+    assert account.length == 21
+    assert account.match(/^#{IBAN_HEADER}\d{17}$/)
+  end
+
+  # Hungary
+  def test_iban_hu
+    account = @tester.iban('hu')
+    assert account.length == 28
+    assert account.match(/^#{IBAN_HEADER}\d{24}$/)
+  end
+
+  # Ireland
+  def test_iban_ie
+    account = @tester.iban('ie')
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{14}$/)
+  end
+
+  # Israel
+  def test_iban_il
+    account = @tester.iban('il')
+    assert account.length == 23
+    assert account.match(/^#{IBAN_HEADER}\d{19}$/)
+  end
+
+  # Iceland
+  def test_iban_is
+    account = @tester.iban('is')
+    assert account.length == 26
+    assert account.match(/^#{IBAN_HEADER}\d{22}$/)
+  end
+
+  # Italy
+  def test_iban_it
+    account = @tester.iban('it')
+    assert account.length == 27
+    assert account.match(/^#{IBAN_HEADER}[A-Z]\d{10}[A-Z0-9]{12}$/)
+  end
+
+  # Kuwait
+  def test_iban_kw
+    account = @tester.iban('kw')
+    assert account.length == 30
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{22}$/)
+  end
+
+  # Kazakhstan
+  def test_iban_kz
+    account = @tester.iban('kz')
+    assert account.length == 20
+    assert account.match(/^#{IBAN_HEADER}[0-9]{3}[A-Z0-9]{13}$/)
+  end
+
+  # Lebanon
+  def test_iban_lb
+    account = @tester.iban('lb')
+    assert account.length == 28
+    assert account.match(/^#{IBAN_HEADER}\d{4}[A-Z0-9]{20}$/)
+  end
+
+  # Liechtenstein
+  def test_iban_li
+    account = @tester.iban('li')
+    assert account.length == 21
+    assert account.match(/^#{IBAN_HEADER}\d{5}[A-Z0-9]{12}$/)
+  end
+
+  # Lithuania
+  def test_iban_lt
+    account = @tester.iban('lt')
+    assert account.length == 20
+    assert account.match(/^#{IBAN_HEADER}\d{16}$/)
+  end
+
+  # Luxembourg
+  def test_iban_lu
+    account = @tester.iban('lu')
+    assert account.length == 20
+    assert account.match(/^#{IBAN_HEADER}\d{3}[A-Z0-9]{13}$/)
+  end
+
+  # Latvia
+  def test_iban_lv
+    account = @tester.iban('lv')
+    assert account.length == 21
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{13}$/)
+  end
+
+  # Monaco
+  def test_iban_mc
+    account = @tester.iban('mc')
+    assert account.length == 27
+    assert account.match(/^#{IBAN_HEADER}\d{10}[A-Z0-9]{11}\d{2}$/)
+  end
+
+  # Moldova
+  def test_iban_md
+    account = @tester.iban('md')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{2}[A-Z0-9]{18}$/)
+  end
+
+  # Montenegro
+  def test_iban_me
+    account = @tester.iban('me')
+
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}\d{18}$/)
+  end
+
+  # Macedonia
+  def test_iban_mk
+    account = @tester.iban('mk')
+    assert account.length == 19
+    assert account.match(/^#{IBAN_HEADER}\d{3}[A-Z0-9]{10}\d{2}$/)
+  end
+
+  # Mauritania
+  def test_iban_mr
+    account = @tester.iban('mr')
+    assert account.length == 27
+    assert account.match(/^#{IBAN_HEADER}\d{23}$/)
+  end
+
+  # Malta
+  def test_iban_mt
+    account = @tester.iban('mt')
+    assert account.length == 31
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{5}[A-Z0-9]{18}$/)
+  end
+
+  # Mauritius
+  def test_iban_mu
+    account = @tester.iban('mu')
+    assert account.length == 30
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{19}[A-Z]{3}$/)
+  end
+
+  # Netherlands
+  def test_iban_nl
+    account = @tester.iban('nl')
+    assert account.length == 18
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{10}$/)
+  end
+
+  # Norway
+  def test_iban_no
+    account = @tester.iban('no')
+    assert account.length == 15
+    assert account.match(/^#{IBAN_HEADER}\d{11}$/)
+  end
+
+  # Pakistan
+  def test_iban_pk
+    account = @tester.iban('pk')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{16}$/)
+  end
+
+  # Poland
+  def test_iban_pl
+    account = @tester.iban('pl')
+    assert account.length == 28
+    assert account.match(/^#{IBAN_HEADER}\d{8}[A-Z0-9]{16}$/)
+  end
+
+  # Palestinian Territory, Occupied
+  def test_iban_ps
+    account = @tester.iban('ps')
+    assert account.length == 29
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{21}$/)
+  end
+
+  # Portugal
+  def test_iban_pt
+    account = @tester.iban('pt')
+    assert account.length == 25
+    assert account.match(/^#{IBAN_HEADER}\d{21}$/)
+  end
+
+  # Qatar
+  def test_iban_qa
+    account = @tester.iban('qa')
+    assert account.length == 29
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{21}$/)
+  end
+
+  # Romania
+  def test_iban_ro
+    account = @tester.iban('ro')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{16}$/)
+  end
+
+  # Serbia
+  def test_iban_rs
+    account = @tester.iban('rs')
+    assert account.length == 22
+    assert account.match(/^#{IBAN_HEADER}\d{18}$/)
+  end
+
+  # Saudi Arabia
+  def test_iban_sa
+    account = @tester.iban('sa')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}\d{2}[A-Z0-9]{18}$/)
+  end
+
+  # Sweden
   def test_iban_se
-    assert @tester.iban("se").match(/\d{20}/)
+    account = @tester.iban('se')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}\d{20}$/)
   end
 
+  # Slovenia
+  def test_iban_si
+    account = @tester.iban('si')
+    assert account.length == 19
+    assert account.match(/^#{IBAN_HEADER}\d{15}$/)
+  end
+
+  # Slovakia
   def test_iban_sk
-    assert @tester.iban("sk").match(/\d{24}/)
+    account = @tester.iban('sk')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}\d{20}$/)
   end
 
+  # San Marino
+  def test_iban_sm
+    account = @tester.iban('sm')
+    assert account.length == 27
+    assert account.match(/^#{IBAN_HEADER}[A-Z]\d{10}[A-Z0-9]{12}$/)
+  end
+
+  # Timor-Leste
+  def test_iban_tl
+    account = @tester.iban('tl')
+    assert account.length == 23
+    assert account.match(/^#{IBAN_HEADER}\d{19}$/)
+  end
+
+  # Tunisia
+  def test_iban_tn
+    account = @tester.iban('tn')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}\d{20}$/)
+  end
+
+  # Turkey
+  def test_iban_tr
+    account = @tester.iban('tr')
+    assert account.length == 26
+    assert account.match(/^#{IBAN_HEADER}\d{5}[A-Z0-9]{17}$/)
+  end
+
+  # Ukraine
+  def test_iban_ua
+    account = @tester.iban('ua')
+    assert account.length == 29
+    assert account.match(/^#{IBAN_HEADER}\d{25}$/)
+  end
+
+  # Virgin Islands, British
+  def test_iban_vg
+    account = @tester.iban('vg')
+    assert account.length == 24
+    assert account.match(/^#{IBAN_HEADER}[A-Z]{4}\d{16}$/)
+  end
+
+  # Kosovo, Republic of
+  def test_iban_xk
+    account = @tester.iban('xk')
+    assert account.length == 20
+    assert account.match(/^#{IBAN_HEADER}\d{16}$/)
+  end
 
   def test_iban_invalid
     assert_raise ArgumentError.new("Could not find iban details for bad") do

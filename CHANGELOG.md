@@ -1,5 +1,32 @@
 # Change Log
 
+## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)
+
+**Additions**
+
+- Faker::Company.type
+- Faker::Job.education_level and Faker::Job.employment_type
+- More characters and quotes for Seinfeld
+
+**Fixes**
+
+- Revert a change in 1.8.5 that caused Star Wars methods to return a
+  single string rather than an array (#1093)
+
+## [v1.8.6](https://github.com/stympy/faker/tree/v1.8.6) (2017-12-21)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.5...v1.8.6)
+
+**Additions**
+
+- Faker::App.semantic_version
+- Faker::Types
+- New methods in Faker::StarWars: call_squadron, call_sign, call_number
+
+**Other changes**
+
+- Changed i18n depedency from `~> 0.9.1` to `>= 0.7`
+
 ## [v1.8.5](https://github.com/stympy/faker/tree/v1.8.5) (2017-12-06)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.4...v1.8.5)
 

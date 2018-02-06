@@ -33,4 +33,6 @@ Faker::Company.australian_business_number #=> "81137773602"
 
 # Get a random profession
 Faker::Company.profession #=> "firefighter"
+
+Faker::Company.type #=> "Privately Held"
 ```
