@@ -10,6 +10,9 @@ Faker::Types.character #=> "n"
 # Random Integer
 Faker::Types.integer #=> 1
 
+# Random Boolean
+Faker::Types.boolean #=> true
+
 # Random Hash (with random keys and values)
 Faker::Types.hash #=> {name: "bob"}
 

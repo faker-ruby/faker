@@ -22,6 +22,10 @@ module Faker
         rand(from..to).to_i
       end
 
+      def boolean
+        rand(2).even?
+      end
+
       def hash(key_count=1)
         Hash.new.tap do |hsh|
           Lorem.words(key_count * 2).uniq.first(key_count).each do |s|

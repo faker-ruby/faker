@@ -34,6 +34,10 @@ class TestFakerTypes < Test::Unit::TestCase
     assert val < to && val >= from
   end
 
+  def tests_boolean
+    assert_includes [true, false], @tester.boolean
+  end
+
   def test_hash_returns_a_hash
     assert @tester.hash.class == Hash
   end
