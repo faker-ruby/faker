@@ -13,20 +13,32 @@ module Faker
         fetch('restaurant.description')
       end
 
-      def reviews
+      def review
         fetch('restaurant.review')
       end
 
-      def hours
-        fetch_all('restaurant.days').map { |day| "#{day} #{get_am_hour} to #{get_pm_hour}" }
+      def hours(options = :regular)
+        if options == :military
+          fetch_all('restaurant.days').map { |day| "#{day} #{get_military}" }
+        else
+          fetch_all('restaurant.days').map { |day| "#{day} #{get_hours}" }
+        end
       end
 
-      def get_am_hour
-        "#{fetch('restaurant.hour')}:#{fetch('restaurant.minute')} AM"
+      def get_hours
+        "#{get_hour} AM to #{get_hour} PM"
       end
 
-      def get_pm_hour
-        "#{fetch('restaurant.hour')}:#{fetch('restaurant.minute')} PM"
+      def get_military
+        "#{get_hour} to #{get_hour_military}"
+      end
+
+      def get_hour
+        "#{fetch('restaurant.hour')}:#{fetch('restaurant.minute')}"
+      end
+
+      def get_hour_military
+        "#{fetch('restaurant.hour').to_i + 12}:#{fetch('restaurant.minute')}"
       end
     end
   end
