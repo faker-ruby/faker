@@ -13,6 +13,10 @@ module Faker
       def location
         fetch('zelda.locations')
       end
+
+      def item
+        fetch('zelda.items')
+      end
     end
   end
 end

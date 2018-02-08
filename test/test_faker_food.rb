@@ -9,6 +9,10 @@ class TestFakerFood < Test::Unit::TestCase
     assert @tester.dish.match(/\w+/)
   end
 
+  def test_description
+    assert @tester.description.match(/\w+/)
+  end
+
   def test_ingredient
     assert @tester.ingredient.match(/\w+/)
   end

@@ -24,3 +24,9 @@ tr:
         - "#{city_name}"
       country: [Afganistan, Amerika Birleşik Devletleri, Fransa, Hollanda, Belçika, Nepal, Hindistan, Kuala Lumpur, Rusya]
       default_country: [Turkey]
+
+    book:
+      title: ['Taht Oyunları', 'Maymunlar Gezegeni', 'Benim Adım Kırmızı', 'Uykuların Doğusu', 'Yılanların Öcü']
+      author: "#{Name.name}"
+      publisher: ['Babıali Kültür Yayıncılığı', 'İletişim Yayınları', 'Turkuvaz Kitap', 'Kaynak Yayınları']
+      quote: ['Sabır acıdır, meyvesi tatlıdır', 'Dost kara günde belli olur', 'Çıkmayan candan umit kesilmez', 'Gözden uzak olan gönülden de uzak olur.']

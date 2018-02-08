@@ -37,3 +37,5 @@ en-MS:
       default_country: [Malaysia]
     phone_number:
       formats: ['03#######', '+601########']
+    bank:
+      name: [Affin Bank Berhad, Agro Bank Berhad, Alliance Bank Malaysia Berhad, AmBank Berhad, Bank Islam Berhad, Bank Muamalat Berhad, Bank Rakyat Berhad, Bank Simpanan Nasional, CIMB Bank Berhad, Hong Leong Bank Berhad, Malayan Banking Berhad, Public Bank Berhad, RHB Bank Berhad, Tabung Haji]

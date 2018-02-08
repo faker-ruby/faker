@@ -29,6 +29,7 @@ class TestEnMsLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert Faker::PhoneNumber.cell_phone.is_a? String
+    assert Faker::Bank.name.is_a? String
   end
 
   def test_en_ms_default_country
