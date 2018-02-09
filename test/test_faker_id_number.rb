@@ -26,4 +26,22 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert sample[7..9].split().map{:to_i}.all?{:is_digit?}
   end
 
+  def test_spanish_DNI
+    sample = @tester.spanish_citizen_number #format 00000000-A # checks:
+    assert sample.length == 10
+    assert sample[0..7].split().map{:to_i}.all?{:is_digit?}
+    assert sample[8] == "-"
+    assert "TRWAGMYFPDXBNJZSQVHLCKE".include?(sample[9])
+  end
+
+  def test_spanish_NIE
+    sample = @tester.spanish_foreign_citizen_number # format X-0000000-A -- generally X but lately also Y
+    assert sample.length == 11
+    assert "XY".include?(sample[0])
+    assert sample[1] == "-"
+    assert sample[2..8].split().map{:to_i}.all?{:is_digit?}
+    assert sample[9] == "-"
+    assert "TRWAGMYFPDXBNJZSQVHLCKE".include?(sample[10])
+  end
+
 end
