@@ -25,6 +25,17 @@ module Faker
         INVALID_SSN.any? { |regex| regex =~ ssn } ? ssn_valid : ssn
       end
 
+      def spanish_citizen_number
+        checks = "TRWAGMYFPDXBNJZSQVHLCKE"
+        "#{Faker::Number.number(8)}-#{checks[rand(checks.length)]}"
+      end
+
+      def spanish_foreign_citizen_number
+        checks = "TRWAGMYFPDXBNJZSQVHLCKE"
+        code = "XY"
+        "#{code[rand(code.length)]}-#{Faker::Number.number(7)}-#{checks[rand(checks.length)]}"
+      end
+
       private
 
       def _translate(key)
