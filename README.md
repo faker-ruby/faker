@@ -110,6 +110,7 @@ Contents
   - [Faker::Superhero](doc/superhero.md)
   - [Faker::Team](doc/team.md)
   - [Faker::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
+  - [Faker::TheITCrowd](doc/the_it_crowd.md)
   - [Faker::TheThickOfIt](doc/the_thick_of_it.md)
   - [Faker::Time](doc/time.md)
   - [Faker::TwinPeaks](doc/twin_peaks.md)
