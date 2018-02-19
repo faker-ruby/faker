@@ -27,7 +27,10 @@ module Faker
 
       def spanish_citizen_number
         checks = "TRWAGMYFPDXBNJZSQVHLCKE"
-        "#{Faker::Number.number(8)}-#{checks[rand(checks.length)]}"
+        num = Faker::Number.number(8)
+        mod = num.to_i % 23
+        check = checks[mod]
+        "#{num}-#{check}"
       end
 
       def spanish_foreign_citizen_number

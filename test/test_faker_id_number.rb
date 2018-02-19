@@ -28,10 +28,11 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_spanish_DNI
     sample = @tester.spanish_citizen_number
-    assert sample.length == 10
+    assert_equal 10, sample.length
     assert sample[0..7].split().map{:to_i}.all?{:is_digit?}
-    assert sample[8] == "-"
-    assert "TRWAGMYFPDXBNJZSQVHLCKE".include?(sample[9])
+    assert_equal sample[8], "-"
+    mod = sample[0..7].to_i % 23
+    assert_equal "TRWAGMYFPDXBNJZSQVHLCKE"[mod], sample[9]
   end
 
   def test_spanish_NIE
