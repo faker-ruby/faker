@@ -35,8 +35,13 @@ module Faker
 
       def spanish_foreign_citizen_number
         checks = "TRWAGMYFPDXBNJZSQVHLCKE"
-        code = "XY"
-        "#{code[rand(code.length)]}-#{Faker::Number.number(7)}-#{checks[rand(checks.length)]}"
+        code = "XYZ"
+        digits = Faker::Number.number(7)
+        prefix = code[rand(code.length)]
+        prefix_val = "XYZ".index(prefix).to_s
+        mod = (prefix_val ++ digits.to_s).to_i % 23
+        check = checks[mod]
+        "#{prefix}-#{digits}-#{check}"
       end
 
       private

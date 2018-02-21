@@ -37,12 +37,14 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_spanish_NIE
     sample = @tester.spanish_foreign_citizen_number
-    assert sample.length == 11
-    assert "XY".include?(sample[0])
-    assert sample[1] == "-"
+    assert_equal 11, sample.length
+    assert "XYZ".include?(sample[0])
+    assert_equal "-", sample[1]
     assert sample[2..8].split().map{:to_i}.all?{:is_digit?}
-    assert sample[9] == "-"
-    assert "TRWAGMYFPDXBNJZSQVHLCKE".include?(sample[10])
+    assert_equal "-", sample[9]
+    prefix = "XYZ".index(sample[0]).to_s
+    mod = (prefix ++ sample[2..8]).to_i % 23
+    assert_equal "TRWAGMYFPDXBNJZSQVHLCKE"[mod], sample[10]
   end
 
 end
