@@ -66,7 +66,7 @@ Faker::Internet.ip_v6_cidr #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df/78"
 Faker::Internet.mac_address #=> "e6:0d:00:11:ed:4f"
 Faker::Internet.mac_address('55:44:33') #=> "55:44:33:02:1d:9b"
 
-# Optional arguments: host=domain_name, path="/#{user_name}"
+# Optional arguments: host=domain_name, path="/#{user_name}", scheme=scheme
 Faker::Internet.url #=> "http://thiel.com/chauncey_simonis"
 Faker::Internet.url('example.com') #=> "http://example.com/clotilde.swift"
 Faker::Internet.url('example.com', '/foobar.html') #=> "http://example.com/foobar.html"
