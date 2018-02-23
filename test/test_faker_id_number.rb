@@ -43,7 +43,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert sample[2..8].split().map{:to_i}.all?{:is_digit?}
     assert_equal "-", sample[9]
     prefix = "XYZ".index(sample[0]).to_s
-    mod = (prefix ++ sample[2..8]).to_i % 23
+    mod = ("#{prefix}#{sample[2..8]}").to_i % 23
     assert_equal "TRWAGMYFPDXBNJZSQVHLCKE"[mod], sample[10]
   end
 
