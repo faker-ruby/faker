@@ -1,0 +1,13 @@
+# encoding: utf-8
+en-KE:
+  faker:
+    name:
+      male_first_name: [Aasir, Absko, Adamu, Alamini, Alhaadi, Ashura, Barasa, Chege, Chilemba, Chitundu, Chiumbo, Darweshi, Fadhili, Feruzi, Feye, Gacoki, Gakere, Gakuru, Gatete, Gathee, Gathii, Gatimu, Geteye, Gichinga, Gicicio, Gikuyu, Githinji, Gitonga, Jaali, Jimiyu, Keanjaho, Makalani, Mpenda, Mukami, Natori, Ndwiga, Nuru, Obama, Obuya, Ochieng, Odikinyi, Odongo, Odour, Ohon, Ojwang, Okello, Okeyo, Oluoch, Omariba, Omondi,Omwancha, Onkwani, Opiyo, Osogo, Othenio, Othiambo, Owiti, Owuor, Pili, Reth, Riitho, Ruguru, Ruhiu, Sarki, Seghen, Sokoro, Thabiti, Tumaini, Tuwile, Wachiru, Waithaka, Waitimu, Waiyaki, Wamai, Wambua, Wamugunda, Wamukota, Wamwarav, Wangombe, Wangondu, Wanjala, Wanjohi, Waruhiu, Warui, Wasaki, Waweru, Wekesa, Yaro]
+      female_first_name: [Absco, Abuya, Achieng, Adimu, Adongo, Afaafa, Akello, Akeyo, Almasi, Aluna, Aluoch, Aminifu, Angavu, Angweng, Anyango, Apiyo, Arogo, Asilia, Atieno, Awino, Barongo, Bishara, Chausiku, Chineye, Chuki, Dabiku, Dhakiya, Ducha, Duni, Durah, Durra, Eidi, Elinah, Esiankiki, Eucabeth, Fanaka, Faraja, Farashuu, Felistas, Firyali, Gakeri, Gasira, Gathoni, Gheche, Hamisi, Hanuni, Hashiki, Hawla, Hiari, Huso,Indusa, Ingumba, Jumapili, Jumapili, Kaweria, Kerubo, Kioni, Kwamboka, Machupa, Mandere, Mugure, Mukondi, Mumbi, Murigo, Muthoni, Mwassaa, Nafula, Nduta, Ngendo, Ngina, Njeri, Njoki, Nuru, Nyaguthii, Nyambura, Nyanjera, Nyawira, Nyokabi, Sikudhani, Vatusia, Visola, Waceera, Wairimu, Waitherero, Wakiuru, Walta, Wambui, Wamuhu, Wamuiru, Wamweru, Wangai, Wangari, Wangera, Wangu, Wanja, Wanjeri, Wanjiku, Wanjiru, Waseme, Winda, Winta, Wokabi, Xinavane, Xolani, Yumna, Yusra, Zaafarani, Zahra, Zalika, Zarifa, Zawadi, Zera, Zuwena]
+      first_name:
+        - "#{female_first_name}"
+        - "#{male_first_name}"
+      last_name: [Aguda, Ahabwe, Attah, Bagiire, Boro, Gbadamosi, Gueye, Igwe, Kasaija, Kategaya, Kone, Mbanefo, Nwosu, Okonjo, Onwudiwe, Otafiire, Sow]
+      name:
+        - "#{female_first_name} #{last_name}"
+        - "#{male_first_name} #{last_name}"
