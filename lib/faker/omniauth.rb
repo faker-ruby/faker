@@ -6,16 +6,16 @@ module Faker
                 :last_name
 
     def initialize
-      @name = "#{Name.first_name} #{Name.last_name}"
-      @first_name = name.split(' ').first
-      @last_name = name.split(' ').last
+      @first_name = Name.first_name
+      @last_name = Name.last_name
+      @name = "#{@first_name} #{@last_name}"
     end
 
     class << self
       def google
         uid = Number.number(9)
         auth = Omniauth.new()
-        email = "#{auth.first_name.downcase}@example.com"
+        email = [Internet.user_name(auth.name), Internet.domain_name].join('@')
         {
           provider: "google_oauth2",
           uid: uid,
@@ -66,8 +66,8 @@ module Faker
       def facebook
         uid = Number.number(7)
         auth = Omniauth.new()
-        username = "#{auth.first_name.downcase[0]}#{auth.last_name.downcase}"
-        email = "#{auth.first_name.downcase}@#{auth.last_name.downcase}.com"
+        username = Internet.user_name(auth.name, %w(.))
+        email = [username, Internet.domain_name].join('@')
         {
           provider: "facebook",
           uid: uid,
@@ -111,19 +111,20 @@ module Faker
         uid = Number.number(6)
         auth = Omniauth.new()
         location = city_state
+        nickname = Internet.user_name(auth.name, %w(_))
         description = Lorem.sentence
         {
           provider: "twitter",
           uid: uid,
           info: {
-            nickname: auth.name.downcase.gsub(' ', ''),
+            nickname: nickname,
             name: auth.name,
             location: location,
             image: image,
             description: description,
             urls: {
               Website: nil,
-              Twitter: "https://twitter.com/#{auth.name.downcase.gsub(' ', '')}"
+              Twitter: "https://twitter.com/#{nickname}"
             }
           },
           credentials: {
@@ -183,15 +184,14 @@ module Faker
       def linkedin
         uid = Number.number(6)
         auth = Omniauth.new()
-        first_name = auth.first_name.downcase
-        last_name = auth.last_name.downcase
-        email = "#{first_name}@#{last_name}.com"
+        username = Internet.user_name(auth.name, [''])
+        email = [username, Internet.domain_name].join('@')
         location = city_state
         description = Lorem.sentence
         token = Crypto.md5
         secret = Crypto.md5
         industry = Commerce.department
-        url = "http://www.linkedin.com/in/#{first_name}#{last_name}"
+        url = "http://www.linkedin.com/in/#{username}"
         {
           "provider" => "linkedin",
           "uid" => uid,
@@ -248,12 +248,10 @@ module Faker
       def github
         uid = Number.number(8)
         auth = Omniauth.new()
-        first_name = auth.first_name.downcase
-        last_name  = auth.last_name.downcase
-        login = "#{first_name}-#{last_name}"
+        login = Internet.user_name(auth.name, %w(-))
         html_url = "https://github.com/#{login}"
         api_url = "https://api.github.com/users/#{login}"
-        email = "#{first_name}@example.com"
+        email = [login, Internet.domain_name].join('@')
 
         {
           provider: "github",
