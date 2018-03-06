@@ -84,6 +84,7 @@ Contents
   - [Faker::Movie](doc/movie.md)
   - [Faker::Music](doc/music.md)
   - [Faker::Name](doc/name.md)
+  - [Faker::NewGirl](doc/new_girl.md)
   - [Faker::Number](doc/number.md)
   - [Faker::Omniauth](doc/omniauth.md)
   - [Faker::OnePiece](doc/one_piece.md)
