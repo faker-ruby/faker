@@ -14,6 +14,10 @@ class TestFakerElderScrolls < Test::Unit::TestCase
     assert @tester.region.match(/\w+/)
   end
 
+  def test_city
+    assert @tester.city.match(/\w+/)
+  end
+
   def test_dragon
     assert @tester.dragon.match(/\w+/)
   end
@@ -21,4 +25,9 @@ class TestFakerElderScrolls < Test::Unit::TestCase
   def test_creature
     assert @tester.creature.match(/\w+/)
   end
+
+  def test_name
+    assert @tester.name.match(/\w+/)
+  end
+
 end
