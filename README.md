@@ -89,6 +89,7 @@ Contents
   - [Faker::Omniauth](doc/omniauth.md)
   - [Faker::OnePiece](doc/one_piece.md)
   - [Faker::Overwatch](doc/overwatch.md)
+  - [Faker::ParksAndRec](doc/parks_and_rec.md)
   - [Faker::PhoneNumber](doc/phone_number.md)
   - [Faker::Placeholdit](doc/placeholdit.md)
   - [Faker::Pokemon](doc/pokemon.md)
