@@ -1,4 +1,4 @@
-# Faker::RickAndMorty
+# Faker::ParksAndRec
 
 ```ruby
 Faker::ParksAndRec.character #=> "Leslie Knope"
