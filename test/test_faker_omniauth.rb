@@ -20,7 +20,11 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal "google_oauth2", provider
     assert_equal 9, uid.length
     assert_equal 2, word_count(info[:name])
-    assert_equal "#{info[:first_name].downcase}@example.com", info[:email]
+    puts info[:email]
+    puts info[:first_name]
+    puts info[:last_name]
+    assert info[:email].include?(info[:name].split(/\W+/).first.downcase)
+    assert info[:email].include?(info[:name].split(/\W+/).last.downcase)
     assert_equal info[:name].split(' ').first, info[:first_name]
     assert_equal info[:name].split(' ').last, info[:last_name]
     assert_instance_of String, info[:image]
@@ -59,14 +63,12 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     info            = auth[:info]
     credentials     = auth[:credentials]
     extra_raw_info  = auth[:extra][:raw_info]
-    username        = (info[:first_name][0] + info[:last_name]).downcase
     location        = extra_raw_info[:location]
-    email           = "#{info[:first_name].downcase}@#{info[:last_name].downcase}.com"
-    url             = "http://www.facebook.com/#{username}"
 
     assert_equal "facebook", provider
     assert_equal 7, uid.length
-    assert_equal email, info[:email]
+    assert info[:email].include?(info[:first_name].downcase)
+    assert info[:email].include?(info[:last_name].downcase)
     assert_equal 2, word_count(info[:name])
     assert_instance_of String, info[:first_name]
     assert_instance_of String, info[:last_name]
@@ -79,8 +81,9 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal info[:name], extra_raw_info[:name]
     assert_equal info[:first_name], extra_raw_info[:first_name]
     assert_equal info[:last_name], extra_raw_info[:last_name]
-    assert_equal url, extra_raw_info[:link]
-    assert_equal username, extra_raw_info[:username]
+    assert extra_raw_info[:link].include?(extra_raw_info[:username])
+    assert extra_raw_info[:username].include?(info[:first_name].downcase)
+    assert extra_raw_info[:username].include?(info[:last_name].downcase)
     assert_equal 9, location[:id].length
     assert_instance_of String, location[:name]
     assert is_gender?(extra_raw_info[:gender])
@@ -104,7 +107,8 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
 
     assert_equal "twitter", provider
     assert_equal 6, uid.length
-    assert_equal info[:name].downcase.gsub(' ', ''), info[:nickname]
+    assert info[:nickname].include?(info[:name].split(/\W+/).first.downcase)
+    assert info[:nickname].include?(info[:name].split(/\W+/).last.downcase)
     assert_equal 2, word_count(info[:name])
     assert_equal 2, info[:location].split(', ').length
     assert_instance_of String, info[:image]
@@ -166,13 +170,12 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     raw_info        = extra["raw_info"]
     first_name      = info['first_name'].downcase
     last_name       = info['last_name'].downcase
-    url             = "http://www.linkedin.com/in/#{first_name}#{last_name}"
-    email           = "#{first_name}@#{last_name}.com"
 
     assert_equal "linkedin", provider
     assert_equal 6, uid.length
     assert_equal 2, word_count(info["name"])
-    assert_equal email, info["email"]
+    assert info["email"].include?(first_name)
+    assert info["email"].include?(last_name)
     assert_equal info["name"], info["nickname"]
     assert_instance_of String, info["first_name"]
     assert_instance_of String, info["last_name"]
@@ -182,7 +185,8 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info["phone"]
     assert_instance_of String, info["headline"]
     assert_instance_of String, info["industry"]
-    assert_equal url, info["urls"]["public_profile"]
+    assert info["urls"]["public_profile"].include?(first_name)
+    assert info["urls"]["public_profile"].include?(last_name)
     assert_instance_of String, credentials["token"]
     assert_instance_of String, credentials["secret"]
     assert_equal credentials["token"], access_token["token"]
@@ -213,7 +217,6 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     credentials     = auth[:credentials]
     name            = info[:name]
     login           = info[:nickname]
-    email           = "#{name.split(' ').first.downcase}@example.com"
     html_url        = "https://github.com/#{login}"
     api_url         = "https://api.github.com/users/#{login}"
     followers_url   = "#{api_url}/followers"
@@ -229,8 +232,9 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal "github", provider
     assert_equal 8, uid.length
     assert_equal uid, extra_raw_info[:id]
-    assert_equal email, info[:email]
-    assert_equal email, extra_raw_info[:email]
+    assert info[:email].include?(info[:name].split(/\W+/).first.downcase)
+    assert info[:email].include?(info[:name].split(/\W+/).last.downcase)
+    assert_equal info[:email], extra_raw_info[:email]
     assert_equal 2, word_count(name)
     assert_instance_of String, name
     assert_equal name, extra_raw_info[:name]
