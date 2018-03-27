@@ -13,11 +13,11 @@ module Faker
       end
 
       def first_name
-        fetch('name.first_name')
+        parse('name.first_name')
       end
 
       def last_name
-        fetch('name.last_name')
+        parse('name.last_name')
       end
 
       def prefix
