@@ -31,8 +31,13 @@ class TestFakerColor < Test::Unit::TestCase
     assert @result.length == 3
 
     assert @result[0].between?(0, 360)
-    assert @result[0].is_a?(Fixnum)
 
+    if RUBY_VERSION < '2.4.0'
+      assert @result[0].is_a?(Fixnum)
+    else
+      assert @result[0].is_a?(Integer)
+    end
+    
     assert @result[1].between?(0.0, 1.0)
     assert @result[2].between?(0.0, 1.0)
   end

@@ -24,7 +24,11 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_integer
-    assert @tester.integer.class == Fixnum
+    if RUBY_VERSION < '2.4.0'
+      assert @tester.integer.class == Fixnum
+    else
+      assert @tester.integer.class == Integer
+    end
   end
 
   def test_integer_between
