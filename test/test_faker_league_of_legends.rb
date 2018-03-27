@@ -28,4 +28,16 @@ class TestFakerLeagueOfLegends < Test::Unit::TestCase
   def test_rank
     assert_match(/\w+/, @tester.rank)
   end
+
+  def test_lane
+    assert_match(/\w+/, @tester.lane)
+  end
+
+  def test_champion_role
+    assert_match(/\w+/, @tester.champion_role)
+  end
+
+  def test_long_lane
+    assert_match(/\w+/, @tester.game_role)
+  end
 end

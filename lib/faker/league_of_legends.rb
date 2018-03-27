@@ -24,6 +24,18 @@ module Faker
       def rank
         fetch('league_of_legends.rank')
       end
+
+      def lane
+        fetch("league_of_legends.lane")
+      end
+
+      def game_role
+        fetch("league_of_legends.game_role")
+      end
+
+      def champion_role
+        fetch("league_of_legends.champion_role")
+      end
     end
   end
 end
