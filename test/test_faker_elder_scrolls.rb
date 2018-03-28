@@ -30,4 +30,11 @@ class TestFakerElderScrolls < Test::Unit::TestCase
     assert @tester.name.match(/\w+/)
   end
 
+  def test_first_name
+    assert @tester.first_name.match(/\w+/)
+  end
+
+  def test_last_name
+    assert @tester.last_name.match(/\w+/)
+  end
 end
