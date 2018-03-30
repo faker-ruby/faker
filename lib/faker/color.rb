@@ -5,6 +5,10 @@ module Faker
         @hex_color = "#%06x" % (rand * 0xffffff)
       end
 
+      def color_name
+        fetch('color.name')
+      end
+
       def single_rgb_color
         @single_rgb_color = (0..255).to_a.sample
         @single_rgb_color

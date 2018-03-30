@@ -3,7 +3,7 @@ module Faker
 
     class << self
       def color
-        fetch('commerce.color')
+        fetch('color.name')
       end
 
       def department(max = 3, fixed_amount = false)
@@ -27,16 +27,16 @@ module Faker
         fetch('commerce.product_name.material')
       end
 
-      def price
-        random = Random.new
-        (random.rand(0..100.0) * 100).floor/100.0
+      def price(range=0..100.0)
+        random = Random::DEFAULT
+        (random.rand(range) * 100).floor/100.0
       end
 
       private
 
       def categories(num)
         categories = []
-        while categories.length < num do
+        while categories.length < num
           category = fetch('commerce.department')
           categories << category unless categories.include?(category)
         end

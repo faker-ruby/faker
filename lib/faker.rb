@@ -24,6 +24,11 @@ module Faker
       def locale
         @locale || I18n.locale
       end
+
+      def own_locale
+        @locale
+      end
+
     end
   end
 
@@ -92,6 +97,18 @@ module Faker
         end
       end
 
+      # Helper for the common approach of grabbing a translation
+      # with an array of values and returning all of them.
+      def fetch_all(key)
+        fetched = translate("faker.#{key}")
+        fetched = fetched.last if fetched.size <= 1
+        if !fetched.respond_to?(:sample) && fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+          regexify(fetched)
+        else
+          fetched
+        end
+      end
+
       # Load formatted strings from the locale, "parsing" them
       # into method calls that can be used to generate a
       # formatted translation: e.g., "#{first_name} #{last_name}".
@@ -122,10 +139,22 @@ module Faker
         opts[:raise] = true
         I18n.translate(*(args.push(opts)))
       rescue I18n::MissingTranslationData
+        opts = args.last.is_a?(Hash) ? args.pop : {}
+        opts[:locale] = :en
+
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        I18n.translate(*(args.push(opts.merge(:locale => :en))))
+        I18n.translate(*(args.push(opts)))
+      end
+
+      # Executes block with given locale set.
+      def with_locale(tmp_locale = nil)
+        current_locale = Faker::Config.own_locale
+        Faker::Config.locale = tmp_locale
+        I18n.with_locale(tmp_locale) { yield }
+      ensure
+        Faker::Config.locale = current_locale
       end
 
       def flexible(key)
@@ -158,11 +187,14 @@ module Faker
 end
 
 require 'faker/address'
+require 'faker/cat'
 require 'faker/code'
 require 'faker/color'
 require 'faker/company'
+require 'faker/university'
 require 'faker/finance'
 require 'faker/internet'
+require 'faker/file'
 require 'faker/lorem'
 require 'faker/name'
 require 'faker/team'
@@ -173,13 +205,33 @@ require 'faker/version'
 require 'faker/number'
 require 'faker/bitcoin'
 require 'faker/avatar'
+require 'faker/placeholdit'
 require 'faker/date'
 require 'faker/time'
 require 'faker/number'
 require 'faker/hacker'
 require 'faker/app'
+require 'faker/id_number'
 require 'faker/slack_emoji'
 require 'faker/nation'
+require 'faker/book'
+require 'faker/hipster'
+require 'faker/shakespeare'
+require 'faker/superhero'
+require 'faker/beer'
+require 'faker/boolean'
+require 'faker/star_wars'
+require 'faker/chuck_norris'
+require 'faker/crypto'
+require 'faker/educator'
+require 'faker/space'
+require 'faker/yoda'
+require 'faker/music'
+require 'faker/vehicle'
+require 'faker/game_of_thrones'
+require 'faker/pokemon'
+
 require 'extensions/array'
 require 'extensions/symbol'
 
+require 'helpers/char'
