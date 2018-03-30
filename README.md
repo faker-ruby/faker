@@ -637,6 +637,8 @@ Faker::Nation.nationality #=> "Armenians"
 # Random Language
 Faker::Nation.language #=> "English"
 
+```
+
 ###Faker::Book
 ------------------
 
