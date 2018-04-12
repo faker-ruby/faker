@@ -11,7 +11,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     info            = auth[:info]
     credentials     = auth[:credentials]
     extra_raw_info  = auth[:extra][:raw_info]
-    id_info         = auth[:id_info]
+    id_info         = auth[:extra][:id_info]
     plus_url        = "https://plus.google.com/#{auth[:uid]}"
     openid_id       = "https://www.google.com/accounts/o8/id?id=#{auth[:uid]}"
 
@@ -62,6 +62,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     auth                  = @tester.google(name: custom_name)
     info                  = auth[:info]
     extra_raw_info        = auth[:extra][:raw_info]
+    id_info               = auth[:extra][:id_info]
 
     assert_instance_of String, info[:name]
     assert_equal 2, word_count(info[:name])
@@ -79,7 +80,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     auth            = @tester.google(email: custom_email)
     info            = auth[:info]
     extra_raw_info  = auth[:extra][:raw_info]
-    id_info         = auth[:id_info]
+    id_info         = auth[:extra][:id_info]
 
     assert_instance_of String, info[:email]
     assert_equal custom_email, info[:email]
