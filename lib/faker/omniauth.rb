@@ -35,7 +35,7 @@ module Faker
             raw_info: {
               sub:  uid,
               email: auth.email,
-              email_verified: random_boolean,
+              email_verified: random_boolean.to_s,
               name: auth.name,
               given_name: auth.first_name,
               family_name: auth.last_name,
@@ -49,13 +49,13 @@ module Faker
             id_info: {
               "iss" => "accounts.google.com",
               "at_hash" => Crypto.md5,
-              "email_verified" => "true",
+              "email_verified" => true,
               "sub" => Number.number(28).to_s,
               "azp" => "APP_ID",
               "email" => auth.email,
               "aud" => "APP_ID",
-              "iat" => Number.number(10),
-              "exp" => Time.forward.to_i.to_s,
+              "iat" => Time.forward.to_i,
+              "exp" => Time.forward.to_i,
               "openid_id" => "https://www.google.com/accounts/o8/id?id=#{uid}"
             }            
           }
