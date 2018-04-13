@@ -1,6 +1,15 @@
 module Faker
   class PhoneNumber < Base
     class << self
+
+      def lada_dos
+        parse('phone_number.lada_dos')
+      end
+
+      def lada_tres
+        parse('phone_number.lada_tres')
+      end
+
       def phone_number
         parse('phone_number.formats')
       end
