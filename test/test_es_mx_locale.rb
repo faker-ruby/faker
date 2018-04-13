@@ -44,4 +44,9 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Name.name.is_a? String
   end
 
+  def test_es_mx_phone_number
+    assert Faker::PhoneNumber.lada_dos.is_a? String
+    assert Faker::PhoneNumber.lada_tres.is_a? String
+  end
+
 end
