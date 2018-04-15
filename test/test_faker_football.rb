@@ -18,6 +18,6 @@ class TestFakerFootball < Test::Unit::TestCase
   end
 
   def test_competition
-    asssert @tester.competition.match(/\w+/)
+    assert @tester.competition.match(/\w+/)
   end
 end
