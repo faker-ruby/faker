@@ -10,7 +10,7 @@ module Faker
       end
 
       def coach
-        fetch('football.coachs')
+        fetch('football.coaches')
       end
 
       def competition
