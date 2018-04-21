@@ -125,6 +125,7 @@ Contents
   - [Faker::Witcher](doc/witcher.md)
   - [Faker::WorldOfWarcraft](doc/world_of_warcraft.md)
   - [Faker::Zelda](doc/zelda.md)
+  - [Faker::Nation](doc/nation.md)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
