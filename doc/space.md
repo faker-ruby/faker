@@ -39,4 +39,7 @@ Faker::Space.distance_measurement #=> "15 parsecs"
 
 # Random meteorite name
 Faker::Space.meteorite #=> "Ensisheim"
+
+# Random launch vehicule name
+Faker::Space.launch_vehicule #=> "Saturn IV"
 ```
