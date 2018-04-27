@@ -30,6 +30,11 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Address.secondary_address.is_a? String
   end
 
+  def test_es_mx_phone_number
+    assert Faker::PhoneNumber.phone_number.is_a? String
+    assert Faker::PhoneNumber.cell_phone.is_a? String
+  end
+
   def test_es_mx_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.prefix.is_a? String
