@@ -8,14 +8,14 @@ class TestFakerTypes < Test::Unit::TestCase
     @tester = Faker::Types
   end
 
-  def test_string_is_or_correct_type
-    assert @tester.string.class == String
+  def test_rb_string_is_or_correct_type
+    assert @tester.rb_string.class == String
   end
 
   def test_string_returns_correct_number_of_words
-    assert @tester.string(1).split(' ').length == 1
-    assert @tester.string(5).split(' ').length == 5
-    assert @tester.string(0).split(' ').empty?
+    assert @tester.rb_string(1).split(' ').length == 1
+    assert @tester.rb_string(5).split(' ').length == 5
+    assert @tester.rb_string(0).split(' ').empty?
   end
 
   def test_character
@@ -24,47 +24,47 @@ class TestFakerTypes < Test::Unit::TestCase
 
   def test_integer
     if RUBY_VERSION < '2.4.0'
-      assert @tester.integer.class == Fixnum
+      assert @tester.rb_integer.class == Fixnum
     else
-      assert @tester.integer.class == Integer
+      assert @tester.rb_integer.class == Integer
     end
   end
 
-  def test_integer_between
+  def test_rb_integer_between
     from = Faker::Number.number.to_i
     to = from + Faker::Number.number.to_i
-    val = @tester.integer(from, to)
+    val = @tester.rb_integer(from, to)
     assert val < to && val >= from
   end
 
-  def test_hash_returns_a_hash
-    assert @tester.hash.class == Hash
+  def test_rb_hash_returns_a_hash
+    assert @tester.rb_hash.class == Hash
   end
 
   def test_hash_returns_the_correct_number_of_keys
-    assert @tester.hash(3).keys.length == 3
-    assert @tester.hash(0).keys.empty?
-    assert @tester.hash.keys.length == 1
+    assert @tester.rb_hash(3).keys.length == 3
+    assert @tester.rb_hash(0).keys.empty?
+    assert @tester.rb_hash.keys.length == 1
   end
 
-  def test_complex_hash_returns_a_hash
-    assert @tester.complex_hash.class == Hash
+  def test_complex_rb_hash_returns_a_hash
+    assert @tester.complex_rb_hash.class == Hash
   end
 
   def test_complex_hash_returns_the_correct_number_of_keys
-    assert @tester.complex_hash(3).keys.length == 3
-    assert @tester.complex_hash(0).keys.empty?
-    assert @tester.complex_hash.keys.length == 1
+    assert @tester.complex_rb_hash(3).keys.length == 3
+    assert @tester.complex_rb_hash(0).keys.empty?
+    assert @tester.complex_rb_hash.keys.length == 1
   end
 
-  def test_array_returns_array
-    assert @tester.array.class == Array
+  def test_rb_array_returns_array
+    assert @tester.rb_array.class == Array
   end
 
   def test_array_has_the_right_array
-    assert @tester.array(3).length == 3
-    assert @tester.array(0).empty?
-    assert @tester.array.length == 1
+    assert @tester.rb_array(3).length == 3
+    assert @tester.rb_array(0).empty?
+    assert @tester.rb_array.length == 1
   end
 
   def test_titleize
