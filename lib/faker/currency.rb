@@ -9,6 +9,10 @@ module Faker
       def code
         fetch('currency.code')
       end
+
+      def symbol
+        fetch('currency.symbol')
+      end
     end
   end
 end
