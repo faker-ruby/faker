@@ -12,4 +12,8 @@ class TestFakerCurrency < Test::Unit::TestCase
   def test_code
     assert @tester.code.match(/[A-Z]{3}/)
   end
+
+  def test_symbol
+    assert @tester.symbol.length > 1
+  end
 end
