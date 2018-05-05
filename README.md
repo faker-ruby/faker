@@ -62,6 +62,7 @@ Contents
   - [Faker::Food](doc/food.md)
   - [Faker::Friends](doc/friends.md)
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
+  - [Faker::Gender](doc/gender.md)
   - [Faker::Hacker](doc/hacker.md)
   - [Faker::HarryPotter](doc/harry_potter.md)
   - [Faker::HeyArnold](doc/hey_arnold.md)
