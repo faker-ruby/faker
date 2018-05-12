@@ -63,8 +63,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     auth                  = @tester.google(name: custom_name)
     info                  = auth[:info]
     extra_raw_info        = auth[:extra][:raw_info]
-    id_info               = auth[:id_info]
-
+    
     assert_instance_of String, info[:name]
     assert_equal 2, word_count(info[:name])
     assert_equal custom_name, info[:name]
@@ -202,7 +201,6 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
   def test_omniauth_facebook_with_uid
     custom_uid      = '12345'
     auth            = @tester.facebook(uid: custom_uid)
-    info            = auth[:info]
     extra_raw_info  = auth[:extra][:raw_info]
 
     assert_instance_of String, auth[:uid]
@@ -340,7 +338,6 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
   def test_omniauth_twitter_with_uid
     custom_uid  = '12345'
     auth        = @tester.twitter(uid: custom_uid)
-    info        = auth[:info]
     raw_info    = auth[:extra][:raw_info]
 
     assert_instance_of String, auth[:uid]
@@ -535,7 +532,6 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
   def test_omniauth_github_with_uid
     custom_uid      = '12345'
     auth            = @tester.github(uid: custom_uid)
-    info            = auth[:info]
     extra_raw_info  = auth[:extra][:raw_info]
 
     assert_instance_of String, auth[:uid]
