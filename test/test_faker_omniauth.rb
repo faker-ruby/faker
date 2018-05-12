@@ -25,7 +25,13 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info[:image]
     assert_instance_of String, credentials[:token]
     assert_instance_of String, credentials[:refresh_token]
-    assert_instance_of Fixnum, credentials[:expires_at]
+    
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, credentials[:expires_at]
+    else
+      assert_instance_of Integer, credentials[:expires_at]
+    end
+    
     assert_equal true, credentials[:expires]
     assert_equal 9, extra_raw_info[:sub].length
     assert_equal info[:email], extra_raw_info[:email]
@@ -114,7 +120,13 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info[:image]
     assert is_boolean?(info[:verified])
     assert_instance_of String, credentials[:token]
-    assert_instance_of Fixnum, credentials[:expires_at]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, credentials[:expires_at]
+    else
+      assert_instance_of Integer, credentials[:expires_at]
+    end
+
     assert_equal true, credentials[:expires]
     assert_equal uid, extra_raw_info[:id]
     assert_equal info[:name], extra_raw_info[:name]
@@ -126,7 +138,13 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, location[:name]
     assert is_gender?(extra_raw_info[:gender])
     assert_equal info[:email], extra_raw_info[:email]
-    assert_instance_of Fixnum, extra_raw_info[:timezone]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, extra_raw_info[:timezone]
+    else
+      assert_instance_of Integer, extra_raw_info[:timezone]
+    end
+
     assert_instance_of String, extra_raw_info[:locale]
     assert is_boolean?(extra_raw_info[:verified])
     assert_instance_of String, extra_raw_info[:updated_time]
@@ -214,11 +232,23 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, credentials[:secret]
     assert_instance_of String, access_token
     assert_equal info[:name], raw_info[:name]
-    assert_instance_of Fixnum, raw_info[:listed_count]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, raw_info[:listed_count]
+    else
+      assert_instance_of Integer, raw_info[:listed_count]
+    end
+    
     assert_instance_of String, raw_info[:profile_sidebar_border_color]
     refute raw_info[:url]
     assert_equal "en", raw_info[:lang]
-    assert_instance_of Fixnum, raw_info[:statuses_count]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, raw_info[:statuses_count]
+    else
+      assert_instance_of Integer, raw_info[:statuses_count]
+    end
+
     assert_instance_of String, raw_info[:profile_image_url]
     assert_instance_of String, raw_info[:profile_background_image_url_https]
     assert_equal info[:location], raw_info[:location]
@@ -227,16 +257,40 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal uid, raw_info[:id]
     assert is_boolean?(raw_info[:profile_background_tile])
     assert_instance_of String, raw_info[:profile_sidebar_fill_color]
-    assert_instance_of Fixnum, raw_info[:followers_count]
+    
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, raw_info[:followers_count]
+    else
+      assert_instance_of Integer, raw_info[:followers_count]
+    end
+    
     assert is_boolean?(raw_info[:default_profile_image])
     assert_equal "", raw_info[:screen_name]
     assert is_boolean?(raw_info[:following])
-    assert_instance_of Fixnum, raw_info[:utc_offset]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, raw_info[:utc_offset]
+    else
+      assert_instance_of Integer, raw_info[:utc_offset]
+    end
+
     assert is_boolean?(raw_info[:verified])
-    assert_instance_of Fixnum, raw_info[:favourites_count]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, raw_info[:favourites_count]
+    else
+      assert_instance_of Integer, raw_info[:favourites_count]
+    end
+
     assert_instance_of String, raw_info[:profile_background_color]
     assert is_boolean?(raw_info[:is_translator])
-    assert_instance_of Fixnum, raw_info[:friends_count]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, raw_info[:friends_count]
+    else
+      assert_instance_of Integer, raw_info[:friends_count]
+    end
+
     assert is_boolean?(raw_info[:notifications])
     assert is_boolean?(raw_info[:geo_enabled])
     assert_instance_of String, raw_info[:profile_background_image_url]
@@ -325,8 +379,15 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     refute access_token["consumer"]
     assert_equal credentials["token"], params[:oauth_token]
     assert_equal credentials["secret"], params[:oauth_token_secret]
-    assert_instance_of Fixnum, params[:oauth_expires_in]
-    assert_instance_of Fixnum, params[:oauth_authorization_expires_in]
+    
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, params[:oauth_expires_in]
+      assert_instance_of Fixnum, params[:oauth_authorization_expires_in]
+    else
+      assert_instance_of Integer, params[:oauth_expires_in]
+      assert_instance_of Integer, params[:oauth_authorization_expires_in]
+    end
+
     refute access_token["response"]
     assert_equal info["first_name"], raw_info["firstName"]
     assert_equal info["headline"], raw_info["headline"]
@@ -423,10 +484,19 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, extra_raw_info[:location]
     assert_equal nil, extra_raw_info[:hireable]
     assert_equal nil, extra_raw_info[:bio]
-    assert_instance_of Fixnum, extra_raw_info[:public_repos]
-    assert_instance_of Fixnum, extra_raw_info[:public_gists]
-    assert_instance_of Fixnum, extra_raw_info[:followers]
-    assert_instance_of Fixnum, extra_raw_info[:following]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, extra_raw_info[:public_repos]
+      assert_instance_of Fixnum, extra_raw_info[:public_gists]
+      assert_instance_of Fixnum, extra_raw_info[:followers]
+      assert_instance_of Fixnum, extra_raw_info[:following]
+    else
+      assert_instance_of Integer, extra_raw_info[:public_repos]
+      assert_instance_of Integer, extra_raw_info[:public_gists]
+      assert_instance_of Integer, extra_raw_info[:followers]
+      assert_instance_of Integer, extra_raw_info[:following]
+    end
+
     assert_instance_of String, extra_raw_info[:created_at]
     assert_instance_of String, extra_raw_info[:updated_at]
   end
