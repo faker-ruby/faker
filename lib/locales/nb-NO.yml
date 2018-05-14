@@ -29,7 +29,7 @@ nb-NO:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} og #{Name.last_name}"
-      
+
     internet:
       domain_suffix: ["no", "com", "net", "org"]
 
@@ -49,4 +49,7 @@ nb-NO:
         - "#{first_name} #{last_name}"
 
     phone_number:
+      formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]
+
+    cell_phone:
       formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]

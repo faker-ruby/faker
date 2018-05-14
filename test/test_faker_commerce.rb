@@ -5,15 +5,23 @@ class TestFakerCommerce < Test::Unit::TestCase
   def setup
     @tester = Faker::Commerce
   end
-  
+
   def test_color
     assert @tester.color.match(/[a-z]+\.?/)
   end
-  
+
+  def test_promotion_code
+    assert @tester.promotion_code.match(/[A-Z][a-z]+[A-Z][a-z]+\d{6}/)
+  end
+
+  def test_promotion_code_should_have_specified_number_of_digits
+    assert @tester.promotion_code(3).match(/[A-Z][a-z]+[A-Z][a-z]+\d{3}/)
+  end
+
   def test_department
     assert @tester.department.match(/[A-Z][a-z]+\.?/)
   end
-  
+
   def test_single_department_should_not_contain_separators
     assert_match(/\A[A-Za-z]+\z/, @tester.department(1))
   end
@@ -23,6 +31,7 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_department_should_accept_localized_separator
+    @old_locales = I18n.config.available_locales
     data = {
       :faker => {
         :separator => ' + ',
@@ -33,9 +42,11 @@ class TestFakerCommerce < Test::Unit::TestCase
     }
 
     I18n.backend.store_translations(:xy, data)
+    I18n.config.available_locales += [ :xy ]
     I18n.with_locale(:xy) do
       assert_match ' + ', @tester.department(2, true)
     end
+    I18n.config.available_locales = @old_locales
   end
 
   def test_department_should_have_exact_number_of_categories_when_fixed_amount
@@ -65,9 +76,22 @@ class TestFakerCommerce < Test::Unit::TestCase
 
   def test_price
     assert_includes 0..100, @tester.price
+    assert_instance_of Float, @tester.price(5..6)
+    assert_includes 5..6, @tester.price(5..6)
+    assert_includes 990...1000, @tester.price(990...1000)
+  end
+
+  def test_price_with_srand
+    Faker::Config.random = Random.new(12345)
+    assert_equal 92.96, @tester.price
   end
 
   def test_price_is_float
     assert @tester.price.is_a? Float
+  end
+
+  def test_when_as_string_is_true
+    assert @tester.price(0..100.0, true).is_a?(String)
+    assert @tester.price(100..500.0, true).include?('.')
   end
 end

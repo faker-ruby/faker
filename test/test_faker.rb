@@ -26,4 +26,75 @@ class TestFaker < Test::Unit::TestCase
     end
   end
 
+  def test_deterministic_numerify
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.numerify('###')
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.numerify('###')
+  end
+
+  def test_deterministic_regexify
+    re = /^(1-?)[2-8][0-1][0-9]-\d{3}-\d{4}$/
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.regexify(re)
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.regexify(re)
+  end
+
+  def test_deterministic_letterify
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.letterify('???')
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.letterify('???')
+  end
+
+  def test_deterministic_fetch
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.fetch('name.first_name')
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.fetch('name.first_name')
+  end
+
+  def test_deterministic_rand_in_range
+    Faker::Config.random = Random.new(42)
+    v = Faker::Base.rand_in_range(0, 1000)
+
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Base.rand_in_range(0, 1000)
+  end
+
+  def test_rand_for_nil
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(nil)
+    end
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand
+    end
+  end
+
+  def test_rand_for_zero
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(0)
+    end
+    assert_equal 0, Faker::Base.rand(0)
+  end
+
+  def test_rand_for_range
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(0..6)
+    end
+    assert_includes 0..6, Faker::Base.rand(0..6)
+  end
+
+  def test_unique
+    unique_numbers = 8.times.map do
+      Faker::Base.unique.numerify('#')
+    end
+
+    assert_equal(unique_numbers.uniq, unique_numbers)
+  end
 end

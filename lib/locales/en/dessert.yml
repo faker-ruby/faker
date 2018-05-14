@@ -1,0 +1,6 @@
+en:
+  faker:
+    dessert:
+      variety: ["Cake", "Cookie", "Pie", "Ice Cream", "Pudding", "Sweet Bread"]
+      topping: ["Rainbow Sprinkles", "Chocolate Chips", "Whipped Cream", "Frosting", "Peanut Butter", "Gummy Bears", "Mocha Drizzle", "Caramel", "Bacon" ]
+      flavor: ["Vanilla", "Chocolate", "Strawberries", "Birthday Cake", "Salted Caramel", "Banana", "Butter Pecan" ]

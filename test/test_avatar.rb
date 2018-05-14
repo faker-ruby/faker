@@ -6,15 +6,15 @@ class TestFakerAvatar < Test::Unit::TestCase
   end
 
   def test_avatar
-    assert @tester.image.match(/http:\/\/robohash\.org\/(.+)\.png/)[1] != nil
+    assert @tester.image.match(/https:\/\/robohash\.org\/(.+)\.png/)[1] != nil
   end
 
   def test_avatar_with_param
-    assert @tester.image('faker').match(/http:\/\/robohash\.org\/(.+)\.png/)[1] == 'faker'
+    assert @tester.image('faker').match(/https:\/\/robohash\.org\/(.+)\.png/)[1] == 'faker'
   end
 
   def test_avatar_with_correct_size
-    assert @tester.image('faker', '150x320').match(/http:\/\/robohash\.org\/faker\.png\?size=(.+)&.*/)[1] == '150x320'
+    assert @tester.image('faker', '150x320').match(/https:\/\/robohash\.org\/faker\.png\?size=(.+)&.*/)[1] == '150x320'
   end
 
   def test_avatar_with_incorrect_size
@@ -24,7 +24,7 @@ class TestFakerAvatar < Test::Unit::TestCase
   end
 
   def test_avatar_with_supported_format
-    assert @tester.image('faker', '300x300', 'jpg').match(/http:\/\/robohash\.org\/faker\.jpg/)
+    assert @tester.image('faker', '300x300', 'jpg').match(/https:\/\/robohash\.org\/faker\.jpg/)
   end
 
   def test_avatar_with_incorrect_format
@@ -34,6 +34,10 @@ class TestFakerAvatar < Test::Unit::TestCase
   end
 
   def test_avatar_with_set
-    assert @tester.image('faker', '300x300', 'jpg', 'set2').match(/http:\/\/robohash\.org\/faker\.jpg.*set=set2/)
+    assert @tester.image('faker', '300x300', 'jpg', 'set2').match(/https:\/\/robohash\.org\/faker\.jpg.*set=set2/)
+  end
+
+  def test_avatar_with_bgset
+    assert @tester.image('faker', '300x300', 'jpg', 'set1', 'bg1').match(/https:\/\/robohash\.org\/faker\.jpg.*bgset=bg1/)
   end
 end

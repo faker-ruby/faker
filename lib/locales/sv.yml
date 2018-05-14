@@ -37,9 +37,10 @@ sv:
       domain_suffix: [se, nu, info, com, org]
 
     name:
-      first_name_women: [Maria, Anna, Margareta, Elisabeth, Eva, Birgitta, Kristina, Karin, Elisabet, Marie]
-      first_name_men: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans ]
-      last_name: [Johansson, Andersson, Karlsson, Nilsson, Eriksson, Larsson, Olsson, Persson, Svensson, Gustafsson]
+      first_name_women: [Maria, Anna, Margareta, Elisabeth, Eva, Birgitta, Kristina, Karin, Elisabet, Marie, Åsa, Hjördis, Ingegärd]
+      first_name_men: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans, Jörgen, Göran, Håkan, Kåre]
+      first_name: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans, Jörgen, Göran, Håkan, Kåre, Maria, Anna, Margareta, Elisabeth, Eva, Birgitta, Kristina, Karin, Elisabet, Marie, Åsa, Hjördis, Ingegärd]
+      last_name: [Johansson, Andersson, Karlsson, Nilsson, Eriksson, Larsson, Olsson, Persson, Svensson, Gustafsson, Åslund, Östlund, Änglund]
       prefix: [Dr., Prof., PhD.]
 
       title:
@@ -47,20 +48,16 @@ sv:
         level: [Solutions, Program, Brand, Security, Research, Marketing, Directives, Implementation, Integration, Functionality, Response, Paradigm, Tactics, Identity, Markets, Group, Division, Applications, Optimization, Operations, Infrastructure, Intranet, Communications, Web, Branding, Quality, Assurance, Mobility, Accounts, Data, Creative, Configuration, Accountability, Interactions, Factors, Usability, Metrics]
         job: [Supervisor, Associate, Executive, Liaison, Officer, Manager, Engineer, Specialist, Director, Coordinator, Administrator, Architect, Analyst, Designer, Planner, Orchestrator, Technician, Developer, Producer, Consultant, Assistant, Facilitator, Agent, Representative, Strategist]
       name:
-        - "#{first_name_women} #{last_name}"
-        - "#{first_name_men} #{last_name}"
-        - "#{first_name_women} #{last_name}"
-        - "#{first_name_men} #{last_name}"
-        - "#{first_name_women} #{last_name}"
-        - "#{first_name_men} #{last_name}"
-        - "#{prefix} #{first_name_men} #{last_name}"
-        - "#{prefix} #{first_name_women} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{prefix} #{first_name} #{last_name}"
 
     phone_number:
       formats: ['####-#####', '####-######']
     cell_phone:
-      common_cell_prefix: [070, 076, 073]
-      formats: ['#{common_cell_prefix}-###-####']
+      formats:
+        - '070-###-####'
+        - '076-###-####'
+        - '073-###-####'
 
     commerce:
       color: [vit, silver, grå, svart, röd, grön, blå, gul, lila, indigo, guld, brun, rosa, purpur, korall]

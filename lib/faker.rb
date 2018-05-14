@@ -12,17 +12,29 @@ require 'set' # Fixes a bug in i18n 0.6.11
 if I18n.respond_to?(:enforce_available_locales=)
   I18n.enforce_available_locales = true
 end
-I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
+I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
+I18n.reload! if I18n.backend.initialized?
 
 
 module Faker
   class Config
     @locale = nil
+    @random = nil
 
     class << self
       attr_writer :locale
+      attr_writer :random
+
       def locale
         @locale || I18n.locale
+      end
+
+      def own_locale
+        @locale
+      end
+
+      def random
+        @random || Random::DEFAULT
       end
     end
   end
@@ -39,7 +51,7 @@ module Faker
       end
 
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { ULetters.sample }
+        letter_string.gsub(/\?/) { sample(ULetters) }
       end
 
       def bothify(string)
@@ -70,22 +82,33 @@ module Faker
         re.
           gsub(/^\/?\^?/, '').gsub(/\$?\/?$/, '').                                                                      # Ditch the anchors
           gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}').                                                             # All {2} become {2,2} and ? become {0,1}
-          gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                # [12]{1,2} becomes [12] or [12][12]
-          gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
-          gsub(/(\\?.)\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
-          gsub(/\((.*?)\)/) {|match| match.gsub(/[\(\)]/, '').split('|').sample }.                                      # (this|that) becomes 'this' or 'that'
-          gsub(/\[([^\]]+)\]/) {|match| match.gsub(/(\w\-\w)/) {|range| Array(Range.new(*range.split('-'))).sample } }. # All A-Z inside of [] become C (or X, or whatever)
-          gsub(/\[([^\]]+)\]/) {|match| $1.split('').sample }.                                                          # All [ABC] become B (or A or C)
-          gsub('\d') {|match| Numbers.sample }.
-          gsub('\w') {|match| Letters.sample }
+          gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) {|match| $1 * sample(Array(Range.new($2.to_i, $3.to_i))) }.                # [12]{1,2} becomes [12] or [12][12]
+          gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) {|match| $1 * sample(Array(Range.new($2.to_i, $3.to_i))) }.                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+          gsub(/(\\?.)\{(\d+),(\d+)\}/) {|match| $1 * sample(Array(Range.new($2.to_i, $3.to_i))) }.                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+          gsub(/\((.*?)\)/) {|match| sample(match.gsub(/[\(\)]/, '').split('|')) }.                                      # (this|that) becomes 'this' or 'that'
+          gsub(/\[([^\]]+)\]/) {|match| match.gsub(/(\w\-\w)/) {|range| sample(Array(Range.new(*range.split('-')))) } }. # All A-Z inside of [] become C (or X, or whatever)
+          gsub(/\[([^\]]+)\]/) {|match| sample($1.split('')) }.                                                          # All [ABC] become B (or A or C)
+          gsub('\d') {|match| sample(Numbers) }.
+          gsub('\w') {|match| sample(Letters) }
       end
 
       # Helper for the common approach of grabbing a translation
       # with an array of values and selecting one of them.
       def fetch(key)
+        fetched = sample(translate("faker.#{key}"))
+        if fetched && fetched.match(/^\//) && fetched.match(/\/$/) # A regex
+          regexify(fetched)
+        else
+          fetched
+        end
+      end
+
+      # Helper for the common approach of grabbing a translation
+      # with an array of values and returning all of them.
+      def fetch_all(key)
         fetched = translate("faker.#{key}")
-        fetched = fetched.sample if fetched.respond_to?(:sample)
-        if fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        fetched = fetched.last if fetched.size <= 1
+        if !fetched.respond_to?(:sample) && fetched.match(/^\//) && fetched.match(/\/$/) # A regex
           regexify(fetched)
         else
           fetched
@@ -96,7 +119,8 @@ module Faker
       # into method calls that can be used to generate a
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
-        fetch(key).scan(/(\(?)#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|prefix, kls, meth, etc|
+        fetched = fetch(key)
+        parts = fetched.scan(/(\(?)#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|prefix, kls, meth, etc|
           # If the token had a class Prefix (e.g., Name.first_name)
           # grab the constant, otherwise use self
           cls = kls ? Faker.const_get(kls.chop) : self
@@ -111,7 +135,9 @@ module Faker
 
           # And tack on spaces, commas, etc. left over in the string
           text += etc.to_s
-        }.join
+        }
+        # If the fetched key couldn't be parsed, then fallback to numerify
+        parts.any? ? parts.join : numerify(fetched)
       end
 
       # Call I18n.translate with our configured locale if no
@@ -122,10 +148,22 @@ module Faker
         opts[:raise] = true
         I18n.translate(*(args.push(opts)))
       rescue I18n::MissingTranslationData
+        opts = args.last.is_a?(Hash) ? args.pop : {}
+        opts[:locale] = :en
+
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        I18n.translate(*(args.push(opts.merge(:locale => :en))))
+        I18n.translate(*(args.push(opts)))
+      end
+
+      # Executes block with given locale set.
+      def with_locale(tmp_locale = nil)
+        current_locale = Faker::Config.own_locale
+        Faker::Config.locale = tmp_locale
+        I18n.with_locale(tmp_locale) { yield }
+      ensure
+        Faker::Config.locale = current_locale
       end
 
       def flexible(key)
@@ -142,7 +180,7 @@ module Faker
 
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
         if translation = translate(:faker)[@flexible_key][m]
-          translation.respond_to?(:sample) ? translation.sample : translation
+          sample(translation)
         else
           super
         end
@@ -151,38 +189,38 @@ module Faker
       # Generates a random value between the interval
       def rand_in_range(from, to)
         from, to = to, from if to < from
-        Random.new.rand(from..to)
+        rand(from..to)
+      end
+
+      def unique(max_retries = 10_000)
+        @unique_generator ||= UniqueGenerator.new(self, max_retries)
+      end
+
+      def sample(list)
+        list.respond_to?(:sample) ? list.sample(random: Faker::Config.random) : list
+      end
+
+      def shuffle(list)
+        list.shuffle(random: Faker::Config.random)
+      end
+
+      def rand(max = nil)
+        if max.nil?
+          Faker::Config.random.rand
+        elsif max.is_a?(Range) || max.to_i > 0
+          Faker::Config.random.rand(max)
+        else
+          0
+        end
       end
     end
   end
 end
 
-require 'faker/address'
-require 'faker/code'
-require 'faker/color'
-require 'faker/company'
-require 'faker/university'
-require 'faker/finance'
-require 'faker/internet'
-require 'faker/lorem'
-require 'faker/name'
-require 'faker/team'
-require 'faker/phone_number'
-require 'faker/business'
-require 'faker/commerce'
-require 'faker/version'
-require 'faker/number'
-require 'faker/bitcoin'
-require 'faker/avatar'
-require 'faker/date'
-require 'faker/time'
-require 'faker/number'
-require 'faker/hacker'
-require 'faker/app'
-require 'faker/slack_emoji'
-require 'faker/book'
+Dir.glob(File.join(File.dirname(__FILE__), 'faker','*.rb')).sort.each {|f| require f }
 
 require 'extensions/array'
 require 'extensions/symbol'
 
 require 'helpers/char'
+require 'helpers/unique_generator'

@@ -8,11 +8,15 @@ module Faker
       end
 
       def author
-        fetch('book.author')
+        parse('book.author')
       end
 
       def publisher
         fetch('book.publisher')
+      end
+
+      def genre
+        fetch('book.genre')
       end
     end
   end
