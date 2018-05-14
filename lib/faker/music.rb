@@ -14,7 +14,7 @@ module Faker
       end
 
       def keys
-        ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+        %w[C D E F G A B]
       end
 
       def key_variants

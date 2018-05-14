@@ -16,6 +16,4 @@ class TestFakerPokemon < Test::Unit::TestCase
   def test_move
     assert @tester.move.match(/\w+/)
   end
-
-
 end

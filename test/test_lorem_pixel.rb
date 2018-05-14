@@ -6,15 +6,15 @@ class TestLoremPixel < Test::Unit::TestCase
   end
 
   def test_lorempixel
-    assert @tester.image.match(/https:\/\/lorempixel\.com\/(\d+\/\d+)/)[1] != nil
+    assert !@tester.image.match(%r{https:\/\/lorempixel\.com\/(\d+\/\d+)})[1].nil?
   end
 
   def test_lorempixel_insecure
-    assert @tester.image('300x300', nil, nil, nil, nil, secure: false).match(/http:\/\/lorempixel\.com\/(\d+\/\d+)/)[1] != nil
+    assert !@tester.image('300x300', nil, nil, nil, nil, secure: false).match(%r{http:\/\/lorempixel\.com\/(\d+\/\d+)})[1].nil?
   end
 
   def test_image_with_custom_size
-    assert @tester.image('3x3').match(/https:\/\/lorempixel\.com\/(\d+\/\d+)/)[1] == '3/3'
+    assert @tester.image('3x3').match(%r{https:\/\/lorempixel\.com\/(\d+\/\d+)})[1] == '3/3'
   end
 
   def test_image_with_incorrect_size
@@ -24,11 +24,11 @@ class TestLoremPixel < Test::Unit::TestCase
   end
 
   def test_image_gray
-    assert @tester.image('300x300', true).match(/https:\/\/lorempixel\.com\/g\/\d+\/\d+/)
+    assert @tester.image('300x300', true).match(%r{https:\/\/lorempixel\.com\/g\/\d+\/\d+})
   end
 
   def test_image_with_supported_category
-    assert @tester.image('300x300', false, 'animals').match(/https:\/\/lorempixel\.com\/\d+\/\d+\/(.*)/)[1] == 'animals'
+    assert @tester.image('300x300', false, 'animals').match(%r{https:\/\/lorempixel\.com\/\d+\/\d+\/(.*)})[1] == 'animals'
   end
 
   def test_image_with_incorrect_category
@@ -38,7 +38,7 @@ class TestLoremPixel < Test::Unit::TestCase
   end
 
   def test_image_with_supported_category_and_correct_number
-    assert @tester.image('300x300', false, 'animals', 3).match(/https:\/\/lorempixel\.com\/\d+\/\d+\/.+\/(\d+)/)[1] == '3'
+    assert @tester.image('300x300', false, 'animals', 3).match(%r{https:\/\/lorempixel\.com\/\d+\/\d+\/.+\/(\d+)})[1] == '3'
   end
 
   def test_image_with_supported_category_and_incorrect_number
@@ -54,11 +54,11 @@ class TestLoremPixel < Test::Unit::TestCase
   end
 
   def test_image_with_text_correct_number_and_supported_category
-    assert @tester.image('300x300', false, 'animals', 3, 'Dummy-text').match(/https:\/\/lorempixel\.com\/\d+\/\d+\/.+\/3\/(.+)/)[1] == 'Dummy-text'
+    assert @tester.image('300x300', false, 'animals', 3, 'Dummy-text').match(%r{https:\/\/lorempixel\.com\/\d+\/\d+\/.+\/3\/(.+)})[1] == 'Dummy-text'
   end
 
   def test_image_with_text_supported_category_and_text_without_number
-    assert @tester.image('300x300', false, 'animals', nil, 'Dummy-text').match(/https:\/\/lorempixel\.com\/\d+\/\d+\/.+\/(.+)/)[1] == 'Dummy-text'
+    assert @tester.image('300x300', false, 'animals', nil, 'Dummy-text').match(%r{https:\/\/lorempixel\.com\/\d+\/\d+\/.+\/(.+)})[1] == 'Dummy-text'
   end
 
   def test_image_with_text_without_number_and_category
@@ -66,5 +66,4 @@ class TestLoremPixel < Test::Unit::TestCase
       @tester.image('300x300', false, nil, nil, 'Dummy-text')
     end
   end
-
 end
