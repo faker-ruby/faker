@@ -5,12 +5,19 @@ class TestFakerAvatar < Test::Unit::TestCase
     @tester = Faker::Avatar
   end
 
-  def test_avatar
+  def test_avatar_without_params
     assert @tester.image.match(/https:\/\/robohash\.org\/(.+)\.png/)[1] != nil
   end
 
-  def test_avatar_with_param
+  def test_avatar_with_slug_param
     assert @tester.image('faker').match(/https:\/\/robohash\.org\/(.+)\.png/)[1] == 'faker'
+  end
+
+  def test_avatar_default_params
+    matches = @tester.image('faker').match(/https:\/\/robohash\.org\/faker\.(.+)\?size=(\d+x\d+)&set=(.+).*$/)
+    assert matches[1] == 'png'
+    assert matches[2] == '300x300'
+    assert matches[3] == 'set1'
   end
 
   def test_avatar_with_correct_size
