@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rubocop')
   s.add_development_dependency('test-unit')
   s.add_development_dependency('timecop')
+  s.add_development_dependency('coveralls')
   s.required_ruby_version = '>= 2.1'
 
   s.files         = Dir['lib/**/*'] + %w[History.md License.txt CHANGELOG.md README.md]
