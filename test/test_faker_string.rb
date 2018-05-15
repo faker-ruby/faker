@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerString < Test::Unit::TestCase
@@ -11,7 +12,7 @@ class TestFakerString < Test::Unit::TestCase
   end
 
   def test_is_string
-    assert ::String === @tester.random
+    assert @tester.random.is_a?(String)
   end
 
   def test_has_valid_encoding
@@ -28,11 +29,11 @@ class TestFakerString < Test::Unit::TestCase
   end
 
   def test_nil_is_zero
-    2.times { assert @tester.random(nil).length == 0 }
+    2.times { assert @tester.random(nil).empty? }
   end
 
   def test_int_length
-    [0, -1, 1, rand(500), rand(4096)- 2048].each do |len|
+    [0, -1, 1, rand(500), rand(-2048..2047)].each do |len|
       8.times { assert @tester.random(len).length == [0, len].max }
     end
   end
@@ -49,7 +50,7 @@ class TestFakerString < Test::Unit::TestCase
     array = [0, -1, 1, 1024, rand(2048)]
     8.times { assert array.include? @tester.random(array).length }
 
-    num = rand(4096)- 2048
+    num = rand(-2048..2047)
     array = [num, num, num]
     8.times { assert @tester.random(array).length == [0, num].max }
   end
@@ -58,6 +59,6 @@ class TestFakerString < Test::Unit::TestCase
     test = lambda do
       @tester.random([1, (2..5), [3, (-7...6)], nil])
     end
-    16.times { assert ((0..5).include? test.call.length) }
+    16.times { assert(((0..5).cover? test.call.length)) }
   end
 end

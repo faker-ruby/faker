@@ -22,11 +22,10 @@ class TestFakerWitcher < Test::Unit::TestCase
   end
 
   def test_monster
-  	assert @witcher.monster.match(/\w+/)
+    assert @witcher.monster.match(/\w+/)
   end
 
   def test_quote
-  	assert @witcher.quote.match(/\w+/)
+    assert @witcher.quote.match(/\w+/)
   end
-
 end

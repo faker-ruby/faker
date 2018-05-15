@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerFile < Test::Unit::TestCase
-
   def setup
     @tester = Faker::File
   end
@@ -11,11 +10,10 @@ class TestFakerFile < Test::Unit::TestCase
   end
 
   def test_mime_type_format
-    assert @tester.mime_type.match(/(.*)\/(.*)+/)
+    assert @tester.mime_type.match(%r{(.*)\/(.*)+})
   end
 
   def test_file_name
-    assert @tester.file_name.match(/([a-z\-_]+)(\\|\/)([a-z\-_]+)\.([a-z]+)/)
+    assert @tester.file_name.match(%r{([a-z\-_]+)(\\|\/)([a-z\-_]+)\.([a-z]+)})
   end
-
 end

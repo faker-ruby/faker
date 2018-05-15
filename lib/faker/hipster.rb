@@ -3,7 +3,7 @@ module Faker
     class << self
       def word
         random_word = sample(translate('faker.hipster.words'))
-        random_word.match(/\s/) ? word : random_word
+        random_word =~ /\s/ ? word : random_word
       end
 
       def words(num = 3, supplemental = false, spaces_allowed = false)
@@ -12,11 +12,11 @@ module Faker
           translate('faker.hipster.words') +
           (supplemental ? translate('faker.lorem.words') : [])
         )
-        word_list = word_list * ((resolved_num / word_list.length) + 1)
+        word_list *= ((resolved_num / word_list.length) + 1)
 
         return shuffle(word_list)[0, resolved_num] if spaces_allowed
         words = shuffle(word_list)[0, resolved_num]
-        words.each_with_index { |w, i| words[i] = word if w.match(/\s/) }
+        words.each_with_index { |w, i| words[i] = word if w =~ /\s/ }
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
@@ -43,7 +43,7 @@ module Faker
         end
       end
 
-    private
+      private
 
       # If an array or range is passed, a random value will be selected.
       # All other values are simply returned.

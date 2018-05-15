@@ -12,7 +12,7 @@ module Faker
       def specie
         fetch('star_trek.specie')
       end
-   
+
       def villain
         fetch('star_trek.villain')
       end

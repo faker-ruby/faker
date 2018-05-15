@@ -1,7 +1,6 @@
 module Faker
   class Markdown < Base
     class << self
-
       def headers
         "#{fetch('markdown.headers')} #{Lorem.word.capitalize}"
       end
@@ -20,7 +19,7 @@ module Faker
 
         result = []
         number.times do |i|
-          result << "#{i.to_s}. #{Faker::Lorem.sentence(1)} \n"
+          result << "#{i}. #{Faker::Lorem.sentence(1)} \n"
         end
         result.join('')
       end
@@ -29,7 +28,7 @@ module Faker
         number = rand(1..10)
 
         result = []
-        number.times do |i|
+        number.times do |_i|
           result << "* #{Faker::Lorem.sentence(1)} \n"
         end
         result.join('')
@@ -61,7 +60,6 @@ module Faker
       def available_methods
         Markdown.public_methods(false) - Base.methods
       end
-
     end
   end
 end
