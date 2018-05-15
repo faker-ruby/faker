@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerName < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Name
   end
@@ -33,7 +32,7 @@ class TestFakerName < Test::Unit::TestCase
   def test_job_titles
     @job_titles = Faker::Name.job_titles
     @job_titles.each do |title|
-       refute title.to_s.empty?
+      refute title.to_s.empty?
     end
   end
 

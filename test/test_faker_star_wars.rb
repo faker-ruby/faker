@@ -27,18 +27,18 @@ class TestFakerStarWars < Test::Unit::TestCase
 
   # test good match
   def test_random_character_quote
-    assert @tester.quote("admiral_ackbar").match(/\w+/)
+    assert @tester.quote('admiral_ackbar').match(/\w+/)
   end
 
   # test good alternate spelling match
   def test_random_character_alt_spelling_quote
-    assert @tester.quote("ackbar").match(/\w+/)
+    assert @tester.quote('ackbar').match(/\w+/)
   end
 
   # test error on no match
   def test_invalid_quote
     assert_raise ArgumentError do
-      @tester.quote("Leto Atreides")
+      @tester.quote('Leto Atreides')
     end
   end
 

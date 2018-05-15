@@ -1,7 +1,6 @@
 module Faker
   class SlackEmoji < Base
     class << self
-
       def people
         fetch('slack_emoji.people')
       end
@@ -37,7 +36,6 @@ module Faker
       def emoji
         parse('slack_emoji.emoji')
       end
-
     end
   end
 end

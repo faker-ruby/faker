@@ -1,14 +1,11 @@
-#encoding: utf-8
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 require File.expand_path(File.dirname(__FILE__) + '/test_helper')
 
 class TestFakerSimpsons < Test::Unit::TestCase
-
   def setup
     Faker::Config.locale = nil
   end
-
 
   def test_characters
     10.times { assert Faker::Simpsons.character.match(/[\w]+/) }
@@ -22,10 +19,8 @@ class TestFakerSimpsons < Test::Unit::TestCase
     10.times { assert Faker::Simpsons.quote.match(/[\w]+/) }
   end
 
-
   def test_locales
-    [nil,'en','de',#...
-    ].each do |locale_name|
+    [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
       assert Faker::Simpsons.character.is_a? String
       assert Faker::Simpsons.location .is_a? String

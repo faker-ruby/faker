@@ -25,9 +25,9 @@ module Faker
         case unit
         when :imperial
           inches = rand_in_range(57, 86)
-          return "#{inches / 12} ft, #{inches % 12} in"
+          "#{inches / 12} ft, #{inches % 12} in"
         when :metric
-          return rand_in_range(1.45, 2.13).round(2).to_s
+          rand_in_range(1.45, 2.13).round(2).to_s
         end
       end
     end

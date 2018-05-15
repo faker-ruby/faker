@@ -14,8 +14,8 @@ class TestFakerMeasurement < Test::Unit::TestCase
   end
 
   def volume
-    singular_unit = @tester.volume("none")
-    plural_unit = @tester.volume("all")
+    singular_unit = @tester.volume('none')
+    plural_unit = @tester.volume('all')
     custom_amount_float = @tester.volume(1.5)
     custom_amount_integer = @tester.volume(276)
 
@@ -47,7 +47,7 @@ class TestFakerMeasurement < Test::Unit::TestCase
   end
 
   def test_invalid_amount_error
-    amount = "hello world!"
+    amount = 'hello world!'
 
     assert_raise ArgumentError do
       @tester.volume(amount)

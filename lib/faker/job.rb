@@ -3,14 +3,17 @@ module Faker
     flexible :job
 
     class << self
-
       def title
         parse('job.title')
       end
 
-      def field;     fetch('job.field'); end
-      def key_skill; fetch('job.key_skills'); end
+      def field
+        fetch('job.field')
+      end
 
+      def key_skill
+        fetch('job.key_skills')
+      end
     end
   end
 end
