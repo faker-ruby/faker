@@ -47,7 +47,7 @@ module Faker
     class << self
       ## make sure numerify results doesn’t start with a zero
       def numerify(number_string)
-        number_string.sub(/#/) { (rand(9)+1).to_s }.gsub(/#/) { rand(10).to_s }
+        number_string.sub(/#/) { (Numbers.sample+1).to_s }.gsub(/#/) { Numbers.sample.to_s }
       end
 
       def letterify(letter_string)
