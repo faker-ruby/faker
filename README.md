@@ -60,6 +60,7 @@ Contents
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
   - [Faker::Food](doc/food.md)
+  - [Faker::Football](doc/football.md)
   - [Faker::Friends](doc/friends.md)
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
   - [Faker::Gender](doc/gender.md)
