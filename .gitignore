@@ -1,5 +1,8 @@
 pkg/*
 
+# Ignore Coveralls files
+.coveralls/*
+
 # Ignore Vim backup files.
 *~
 

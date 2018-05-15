@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.add_runtime_dependency('i18n', '>= 0.7')
+  s.add_development_dependency('coveralls')
   s.add_development_dependency('minitest')
   s.add_development_dependency('rake')
   s.add_development_dependency('rubocop')
