@@ -1,5 +1,6 @@
 module Faker
   class IDNumber < Base
+    CHECKS = 'TRWAGMYFPDXBNJZSQVHLCKE'.freeze
     INVALID_SSN = [
       /0{3}-\d{2}-\d{4}/,
       /\d{3}-0{2}-\d{4}/,
@@ -21,6 +22,23 @@ module Faker
         ssn = regexify(/[0-8]\d{2}-\d{2}-\d{4}/)
         # We could still have all 0s in one segment or another
         INVALID_SSN.any? { |regex| regex =~ ssn } ? ssn_valid : ssn
+      end
+
+      def spanish_citizen_number
+        num = Faker::Number.number(8)
+        mod = num.to_i % 23
+        check = CHECKS[mod]
+        "#{num}-#{check}"
+      end
+
+      def spanish_foreign_citizen_number
+        code = 'XYZ'
+        digits = Faker::Number.number(7)
+        prefix = code[rand(code.length)]
+        prefix_val = 'XYZ'.index(prefix).to_s
+        mod = "#{prefix_val}#{digits}".to_i % 23
+        check = CHECKS[mod]
+        "#{prefix}-#{digits}-#{check}"
       end
 
       private
