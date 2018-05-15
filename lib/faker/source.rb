@@ -5,7 +5,7 @@ module Faker
         fetch("source.hello_world.#{lang}")
       end
 
-      def print(str = 'some string', lang = :ruby)
+      def print(str: 'some string', lang: :ruby)
         code = fetch("source.print.#{lang}")
         code.gsub('faker_string_to_print', str)
       end
