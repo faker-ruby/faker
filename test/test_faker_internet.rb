@@ -217,6 +217,10 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.slug('Foo bAr baZ').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
   end
 
+  def test_slug_with_unwanted_content_arg
+    assert @tester.slug('Foo.. bAr., baZ,,').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
+  end
+
   def test_slug_with_glue_arg
     assert @tester.slug(nil, '+').match(/^[a-z]+\+[a-z]+$/)
   end
