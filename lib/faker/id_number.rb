@@ -1,16 +1,14 @@
 module Faker
   class IDNumber < Base
-
     INVALID_SSN = [
-        /0{3}-\d{2}-\d{4}/,
-        /\d{3}-0{2}-\d{4}/,
-        /\d{3}-\d{2}-0{4}/,
-        /666-\d{2}-\d{4}/,
-        /9\d{2}-\d{2}-\d{4}/
-    ]
+      /0{3}-\d{2}-\d{4}/,
+      /\d{3}-0{2}-\d{4}/,
+      /\d{3}-\d{2}-0{4}/,
+      /666-\d{2}-\d{4}/,
+      /9\d{2}-\d{2}-\d{4}/
+    ].freeze
 
     class << self
-
       def valid
         _translate('valid')
       end
@@ -31,6 +29,5 @@ module Faker
         parse("id_number.#{key}")
       end
     end
-
   end
 end

@@ -1,14 +1,14 @@
 module Faker
   class Time < Faker::Date
     TIME_RANGES = {
-      :all => (0..23),
-      :day => (9..17),
-      :night => (18..23),
-      :morning => (6..11),
-      :afternoon => (12..17),
-      :evening => (17..21),
-      :midnight => (0..4)
-    }
+      all: (0..23),
+      day: (9..17),
+      night: (18..23),
+      morning: (6..11),
+      afternoon: (12..17),
+      evening: (17..21),
+      midnight: (0..4)
+    }.freeze
 
     class << self
       def between(from, to, period = :all, format = nil)
@@ -31,11 +31,11 @@ module Faker
       end
 
       def time_with_format(time, format)
-        format.nil? ? time : I18n.l( DateTime.parse(time.to_s), :format => format )
+        format.nil? ? time : I18n.l(DateTime.parse(time.to_s), format: format)
       end
 
       def hours(period)
-        raise ArgumentError, 'invalid period' unless TIME_RANGES.has_key? period
+        raise ArgumentError, 'invalid period' unless TIME_RANGES.key? period
         sample(TIME_RANGES[period].to_a)
       end
 

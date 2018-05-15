@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerCommerce < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Commerce
   end
@@ -33,16 +32,16 @@ class TestFakerCommerce < Test::Unit::TestCase
   def test_department_should_accept_localized_separator
     @old_locales = I18n.config.available_locales
     data = {
-      :faker => {
-        :separator => ' + ',
-        :commerce => {
-          :department => ['Books', 'Movies']
+      faker: {
+        separator: ' + ',
+        commerce: {
+          department: %w[Books Movies]
         }
       }
     }
 
     I18n.backend.store_translations(:xy, data)
-    I18n.config.available_locales += [ :xy ]
+    I18n.config.available_locales += [:xy]
     I18n.with_locale(:xy) do
       assert_match ' + ', @tester.department(2, true)
     end
@@ -82,7 +81,7 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_price_with_srand
-    Faker::Config.random = Random.new(12345)
+    Faker::Config.random = Random.new(12_345)
     assert_equal 92.96, @tester.price
   end
 

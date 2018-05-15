@@ -1,7 +1,6 @@
 module Faker
   class Currency < Base
     class << self
-
       def name
         fetch('currency.name')
       end

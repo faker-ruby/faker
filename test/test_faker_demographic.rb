@@ -22,7 +22,7 @@ class TestFakerDemographic < Test::Unit::TestCase
   end
 
   def test_sex
-    assert ["Male", "Female"].include?(@tester.sex)
+    assert %w[Male Female].include?(@tester.sex)
   end
 
   def test_height

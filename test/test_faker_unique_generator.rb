@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerUniqueGenerator < Test::Unit::TestCase
-
   def test_generates_unique_values
     generator = Faker::UniqueGenerator.new(Faker::Base, 10_000)
 

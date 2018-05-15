@@ -37,12 +37,19 @@ en:
         c_3po:
           - "I have a bad feeling about this."
           - "R2-D2, you know better than to trust a strange computer!"
+          - "You’ll be malfunctioning within a day, you nearsighted scrap pile."
           - "I'm terribly sorry about all this. After all, he's only a Wookiee!"
           - "Don’t you call me a mindless philosopher, you overweight glob of grease!"
           - "We're doomed."
           - "I suggest a new strategy, R2. Let the Wookiee win."
           - "We seem to be made to suffer. It's our lot in life."
           - "I'm backwards you filthy furball!"
+          - "If I told you half the things I've heard about this Jabba the Hutt, you'd probably short circuit."
+          - "Don’t worry about Master Luke. I’m sure he’ll be all right. He’s quite clever, you know… for a human being."
+          - "I can’t abide these Jawas. Disgusting creatures."
+          - "It's against my programming to impersonate a deity."
+          - "Just you reconsider playing that message for him! No, I don't think he likes you at all. No, I don't like you either."
+          - "Now don't you forget this! Why I should stick my neck out for you is far beyond my capacity!"
         count_dooku:
           - "Twice the pride, double the fall."
         darth_caedus:
@@ -150,6 +157,7 @@ en:
           - "Why you slimy, double-crossing, no-good swindler. You've got a lot of guts coming here, after what you pulled."
           - "How you doin' Chewbacca? Still hanging around with this loser?"
           - "But how could they be jamming us if they don't know that we're coming?"
+          - "This deal is getting worse all the time."
         leia_organa:
           - "You do have your moments. Not many, but you have them."
           - "I have a bad feeling about this."
@@ -212,6 +220,8 @@ en:
           - "Do. Or do not. There is no try."
           - "Luminous beings are we... not this crude matter."
           - "Train yourself to let go of everything you fear to lose."
+          - "Size matters not. Look at me. Judge me by my size, do you?"
+          - "Ohhh. Great warrior. Wars not make one great."
       alternate_character_spellings:
         admiral_ackbar: ['akbar', 'ackbar', 'admiral ackbar', 'admiral akbar', 'admiral_ackbar']
         ahsoka_tano: ['ahsoka', 'tano', 'ahsoka tano', 'ahsoka_tano']
