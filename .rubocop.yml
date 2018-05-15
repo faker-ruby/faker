@@ -1,20 +1,25 @@
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+Lint/UnifiedInteger:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
 Metrics/LineLength:
   Enabled: false
 Metrics/MethodLength:
   Enabled: false
-Metrics/ClassLength:
-  Enabled: false
-Metrics/BlockLength:
-  Enabled: false
-Metrics/AbcSize:
-  Enabled: false
 Metrics/PerceivedComplexity:
   Enabled: false
-Metrics/CyclomaticComplexity:
-  Enabled: false
-Style/Documentation:
-  Enabled: false
+
 Style/DateTime:
   Enabled: false
-Lint/UnifiedInteger:
+Style/Documentation:
   Enabled: false
