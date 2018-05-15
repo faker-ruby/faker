@@ -6,4 +6,3 @@ unless :symbol.respond_to?(:downcase)
     end
   end
 end
-

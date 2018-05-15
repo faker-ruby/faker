@@ -15,7 +15,7 @@ class TestFakerMarkdown < Test::Unit::TestCase
   def test_emphasis
     test_trigger = @tester.emphasis.split('')
 
-    assert(test_trigger.to_set.intersect?(["_", "~", "*", "**"].to_set))
+    assert(test_trigger.to_set.intersect?(['_', '~', '*', '**'].to_set))
   end
 
   def test_ordered_list
@@ -34,26 +34,26 @@ class TestFakerMarkdown < Test::Unit::TestCase
     test_trigger = @tester.unordered_list.split("\n")
 
     test_trigger.each do |line|
-      assert_equal("*", line[0])
+      assert_equal('*', line[0])
     end
   end
 
   def test_inline_code
     test_trigger = @tester.inline_code.split('')
 
-    assert_equal(test_trigger.first, "`")
-    assert_equal(test_trigger.last, "`")
+    assert_equal(test_trigger.first, '`')
+    assert_equal(test_trigger.last, '`')
   end
 
   def test_block_code
     test_trigger = @tester.block_code.split('')
 
-    assert_equal(test_trigger[0], "`")
-    assert_equal(test_trigger[1], "`")
-    assert_equal(test_trigger[2], "`")
-    assert_equal(test_trigger[-1], "`")
-    assert_equal(test_trigger[-2], "`")
-    assert_equal(test_trigger[-3], "`")
+    assert_equal(test_trigger[0], '`')
+    assert_equal(test_trigger[1], '`')
+    assert_equal(test_trigger[2], '`')
+    assert_equal(test_trigger[-1], '`')
+    assert_equal(test_trigger[-2], '`')
+    assert_equal(test_trigger[-3], '`')
   end
 
   def test_table
@@ -63,7 +63,7 @@ class TestFakerMarkdown < Test::Unit::TestCase
       assert_instance_of(String, table_data)
     end
     assert_equal(test_trigger.length, 4)
-    assert_equal(test_trigger[1], "---- | ---- | ----")
+    assert_equal(test_trigger[1], '---- | ---- | ----')
   end
 
   def test_random
@@ -71,5 +71,4 @@ class TestFakerMarkdown < Test::Unit::TestCase
 
     assert_instance_of(String, test_trigger)
   end
-
 end

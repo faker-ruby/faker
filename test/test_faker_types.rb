@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerTypes < Test::Unit::TestCase
-
   module TestModule
   end
 
@@ -14,9 +13,9 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_string_returns_correct_number_of_words
-    assert @tester.string(1).split(" ").length == 1
-    assert @tester.string(5).split(" ").length == 5
-    assert @tester.string(0).split(" ").length == 0
+    assert @tester.string(1).split(' ').length == 1
+    assert @tester.string(5).split(' ').length == 5
+    assert @tester.string(0).split(' ').empty?
   end
 
   def test_character
@@ -43,11 +42,9 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_hash_returns_the_correct_number_of_keys
-    key_count = 3
     assert @tester.hash(3).keys.length == 3
-    key_count = 0
-    assert @tester.hash(0).keys.length == 0
-    assert @tester.hash().keys.length == 1
+    assert @tester.hash(0).keys.empty?
+    assert @tester.hash.keys.length == 1
   end
 
   def test_complex_hash_returns_a_hash
@@ -56,8 +53,8 @@ class TestFakerTypes < Test::Unit::TestCase
 
   def test_complex_hash_returns_the_correct_number_of_keys
     assert @tester.complex_hash(3).keys.length == 3
-    assert @tester.complex_hash(0).keys.length == 0
-    assert @tester.complex_hash().keys.length == 1
+    assert @tester.complex_hash(0).keys.empty?
+    assert @tester.complex_hash.keys.length == 1
   end
 
   def test_array_returns_array
@@ -65,16 +62,14 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_array_has_the_right_array
-    len = 3
     assert @tester.array(3).length == 3
-    len = 0
-    assert @tester.array(0).length == 0
-    assert @tester.array().length == 1
+    assert @tester.array(0).empty?
+    assert @tester.array.length == 1
   end
 
   def test_titleize
-    val = "foobar"
-    expected = "Foobar"
+    val = 'foobar'
+    expected = 'Foobar'
     assert @tester.send(:titleize, val) == expected
   end
 end

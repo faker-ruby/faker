@@ -1,8 +1,8 @@
 module Faker
   class Measurement < Base
     class << self
-      ALL = "all"
-      NONE = "none"
+      ALL = 'all'.freeze
+      NONE = 'none'.freeze
 
       def height(amount = rand(10))
         ensure_valid_amount(amount)
@@ -11,7 +11,7 @@ module Faker
         elsif amount == NONE
           fetch('measurement.height')
         else
-          "#{amount.to_s} #{check_for_plural(fetch('measurement.height'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.height'), amount)}"
         end
       end
 
@@ -22,7 +22,7 @@ module Faker
         elsif amount == NONE
           fetch('measurement.length')
         else
-          "#{amount.to_s} #{check_for_plural(fetch('measurement.length'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.length'), amount)}"
         end
       end
 
@@ -33,7 +33,7 @@ module Faker
         elsif amount == NONE
           fetch('measurement.volume')
         else
-          "#{amount.to_s} #{check_for_plural(fetch('measurement.volume'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.volume'), amount)}"
         end
       end
 
@@ -44,7 +44,7 @@ module Faker
         elsif amount == NONE
           fetch('measurement.weight')
         else
-          "#{amount.to_s} #{check_for_plural(fetch('measurement.weight'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.weight'), amount)}"
         end
       end
 
@@ -55,7 +55,7 @@ module Faker
         elsif amount == NONE
           fetch('measurement.height')
         else
-          "#{amount.to_s} #{check_for_plural(fetch('measurement.height'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.height'), amount)}"
         end
       end
 
@@ -66,7 +66,7 @@ module Faker
         elsif amount == NONE
           fetch('measurement.length')
         else
-          "#{amount.to_s} #{check_for_plural(fetch('measurement.length'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.length'), amount)}"
         end
       end
 
@@ -77,7 +77,7 @@ module Faker
         elsif amount == NONE
           fetch('measurement.volume')
         else
-          "#{amount.to_s} #{check_for_plural(fetch('measurement.volume'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.volume'), amount)}"
         end
       end
 
@@ -88,16 +88,14 @@ module Faker
         elsif amount == NONE
           fetch('measurement.weight')
         else
-          "#{amount.to_s} #{check_for_plural(fetch('measurement.weight'), amount)}"
+          "#{amount} #{check_for_plural(fetch('measurement.weight'), amount)}"
         end
       end
 
       private
 
       def ensure_valid_amount(amount)
-        unless amount == NONE || amount == ALL || amount.is_a?(Integer) || amount.is_a?(Float)
-          raise ArgumentError, 'invalid amount'
-        end
+        raise ArgumentError, 'invalid amount' unless amount == NONE || amount == ALL || amount.is_a?(Integer) || amount.is_a?(Float)
       end
 
       def check_for_plural(text, number)
@@ -110,14 +108,14 @@ module Faker
 
       def make_plural(text)
         case text
-        when "foot"
-          "feet"
-        when "inch"
-          "inches"
-        when "fluid ounce"
-          "fluid ounces"
-        when "metric ton"
-          "metric tons"
+        when 'foot'
+          'feet'
+        when 'inch'
+          'inches'
+        when 'fluid ounce'
+          'fluid ounces'
+        when 'metric ton'
+          'metric tons'
         else
           "#{text}s"
         end

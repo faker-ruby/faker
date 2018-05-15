@@ -24,7 +24,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_spanish_organisation_number
     org_no = @tester.spanish_organisation_number
     assert org_no.match(/\D\d{7}/)
-    assert ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'N', 'P', 'Q', 'R', 'S', 'U', 'V', 'W'].include?(org_no[0].to_s)
+    assert %w[A B C D E F G H J N P Q R S U V W].include?(org_no[0].to_s)
   end
 
   def test_swedish_organisation_number
@@ -60,7 +60,7 @@ class TestFakerCompany < Test::Unit::TestCase
     checksum = abn_checksum(abn)
 
     assert abn.match(/\d{11}/)
-    assert checksum % 89 == 0
+    assert((checksum % 89).zero?)
   end
 
   def test_profession
@@ -69,12 +69,11 @@ class TestFakerCompany < Test::Unit::TestCase
 
   private
 
-    def abn_checksum(abn)
-      abn_weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+  def abn_checksum(abn)
+    abn_weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
-      abn.split('').map(&:to_i).each_with_index.map do |n, i|
-        (i == 0 ? n-1 : n) * abn_weights[i]
-      end.inject(:+)
-    end
-
+    abn.split('').map(&:to_i).each_with_index.map do |n, i|
+      (i.zero? ? n - 1 : n) * abn_weights[i]
+    end.inject(:+)
+  end
 end
