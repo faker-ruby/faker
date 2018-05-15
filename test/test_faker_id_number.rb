@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerIdNumber < Test::Unit::TestCase
-
   def setup
     @tester = Faker::IDNumber
   end
@@ -32,7 +31,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert sample[0..7].split().map{:to_i}.all?{:is_digit?}
     assert_equal sample[8], "-"
     mod = sample[0..7].to_i % 23
-    assert_equal "TRWAGMYFPDXBNJZSQVHLCKE"[mod], sample[9]
+    assert_equal Faker::IDNumber::CHECKS[mod], sample[9]
   end
 
   def test_spanish_NIE
@@ -44,7 +43,6 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal "-", sample[9]
     prefix = "XYZ".index(sample[0]).to_s
     mod = ("#{prefix}#{sample[2..8]}").to_i % 23
-    assert_equal "TRWAGMYFPDXBNJZSQVHLCKE"[mod], sample[10]
+    assert_equal Faker::IDNumber::CHECKS[mod], sample[10]
   end
-
 end

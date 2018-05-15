@@ -1,16 +1,15 @@
 module Faker
   class IDNumber < Base
-
+    CHECKS = 'TRWAGMYFPDXBNJZSQVHLCKE'.freeze
     INVALID_SSN = [
-        /0{3}-\d{2}-\d{4}/,
-        /\d{3}-0{2}-\d{4}/,
-        /\d{3}-\d{2}-0{4}/,
-        /666-\d{2}-\d{4}/,
-        /9\d{2}-\d{2}-\d{4}/
+      /0{3}-\d{2}-\d{4}/,
+      /\d{3}-0{2}-\d{4}/,
+      /\d{3}-\d{2}-0{4}/,
+      /666-\d{2}-\d{4}/,
+      /9\d{2}-\d{2}-\d{4}/
     ]
 
     class << self
-
       def valid
         _translate('valid')
       end
@@ -26,21 +25,19 @@ module Faker
       end
 
       def spanish_citizen_number
-        checks = "TRWAGMYFPDXBNJZSQVHLCKE"
         num = Faker::Number.number(8)
         mod = num.to_i % 23
-        check = checks[mod]
+        check = CHECKS[mod]
         "#{num}-#{check}"
       end
 
       def spanish_foreign_citizen_number
-        checks = "TRWAGMYFPDXBNJZSQVHLCKE"
         code = "XYZ"
         digits = Faker::Number.number(7)
         prefix = code[rand(code.length)]
         prefix_val = "XYZ".index(prefix).to_s
         mod = ("#{prefix_val}#{digits.to_s}").to_i % 23
-        check = checks[mod]
+        check = CHECKS[mod]
         "#{prefix}-#{digits}-#{check}"
       end
 
@@ -50,6 +47,5 @@ module Faker
         parse("id_number.#{key}")
       end
     end
-
   end
 end
