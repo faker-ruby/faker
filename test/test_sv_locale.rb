@@ -22,7 +22,7 @@ class TestSVLocale < Test::Unit::TestCase
     assert Faker::PhoneNumber.phone_number.match(/^\d{4}[\s\-]?\d{4,6}$/)
   end
 
-  def test_sv_post_code 
+  def test_sv_post_code
     assert Faker::Address.postcode.match(/^[\d]{5}$/)
   end
 end
