@@ -107,6 +107,7 @@ Contents
   - [Faker::SiliconValley](doc/silicon_valley.md)
   - [Faker::Simpsons](doc/simpsons.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
+  - [Faker::Source](doc/source.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
   - [Faker::StarWars](doc/star_wars.md)
