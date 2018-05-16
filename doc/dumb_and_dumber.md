@@ -1,4 +1,4 @@
-# Faker::Seinfeld
+# Faker::DumbAndDumber
 
 ```ruby
 
