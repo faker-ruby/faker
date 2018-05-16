@@ -8,5 +8,4 @@ class TestFakerNatoPhoneticAlphabet < Test::Unit::TestCase
   def test_code_word
     assert @tester.code_word.match(/\w+/)
   end
-
 end
