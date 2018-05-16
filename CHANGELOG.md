@@ -4,6 +4,7 @@
 ### Latest update: 2018-05-16
 
 **Additions**
+- Fix: Moved the Google Omniauth key id_info from root into extra [@SirRawlins](https://github.com/SirRawlins)
 - Add coveralls [@vbrazo](https://github.com/vbrazo)
 - Add Spanish citizen id and docs [@PuZZleDucK](https://github.com/PuZZleDucK)
 - use default rake task [@stephengroat](https://github.com/stephengroat)
