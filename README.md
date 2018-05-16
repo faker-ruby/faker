@@ -1,4 +1,4 @@
-# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
+# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker) [![Coverage Status](https://coveralls.io/repos/github/stympy/faker/badge.svg?branch=master)](https://coveralls.io/github/stympy/faker?branch=master)
 
 
 This gem is a port of Perl's Data::Faker library that generates fake data.
@@ -71,6 +71,7 @@ Contents
   - [Faker::Hobbit](doc/hobbit.md)
   - [Faker::HowIMetYourMother](doc/how_i_met_your_mother.md)
   - [Faker::HitchhikersGuideToTheGalaxy](doc/hitchhikers_guide_to_the_galaxy.md)
+  - [Faker::IDNumber](doc/id_number.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::Job](doc/job.md)
   - [Faker::Kpop](doc/kpop.md)

@@ -11,7 +11,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     info            = auth[:info]
     credentials     = auth[:credentials]
     extra_raw_info  = auth[:extra][:raw_info]
-    id_info         = auth[:id_info]
+    id_info         = auth[:extra][:id_info]
     plus_url        = "https://plus.google.com/#{auth[:uid]}"
     openid_id       = "https://www.google.com/accounts/o8/id?id=#{auth[:uid]}"
 
@@ -34,7 +34,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal true, credentials[:expires]
     assert_equal 9, extra_raw_info[:sub].length
     assert_equal info[:email], extra_raw_info[:email]
-    assert [true, false].include? extra_raw_info[:email_verified]
+    assert %w[true false].include? extra_raw_info[:email_verified]
     assert_equal info[:name], extra_raw_info[:name]
     assert_equal info[:first_name], extra_raw_info[:given_name]
     assert_equal info[:last_name], extra_raw_info[:family_name]
@@ -46,13 +46,13 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, extra_raw_info[:hd]
     assert_equal 'accounts.google.com', id_info['iss']
     assert_instance_of String, id_info['at_hash']
-    assert_instance_of String, id_info['email_verified']
+    assert [true, false].include? id_info['email_verified']
     assert_equal 28, id_info['sub'].length
     assert_equal 'APP_ID', id_info['azp']
     assert_equal info[:email], id_info['email']
     assert_equal 'APP_ID', id_info['aud']
-    assert_instance_of String, id_info['iat']
-    assert_instance_of String, id_info['exp']
+    assert_instance_of Fixnum, id_info['iat']
+    assert_instance_of Fixnum, id_info['exp']
     assert_equal openid_id, id_info['openid_id']
   end
 
@@ -79,7 +79,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     auth            = @tester.google(email: custom_email)
     info            = auth[:info]
     extra_raw_info  = auth[:extra][:raw_info]
-    id_info         = auth[:id_info]
+    id_info         = auth[:extra][:id_info]
 
     assert_instance_of String, info[:email]
     assert_equal custom_email, info[:email]

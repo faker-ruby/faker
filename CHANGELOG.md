@@ -1,5 +1,31 @@
 # Change Log
 
+## HEAD Unreleased
+### Latest update: 2018-05-16
+
+**Additions**
+- Fix: Moved the Google Omniauth key id_info from root into extra [@SirRawlins](https://github.com/SirRawlins)
+- Add coveralls [@vbrazo](https://github.com/vbrazo)
+- Add Spanish citizen id and docs [@PuZZleDucK](https://github.com/PuZZleDucK)
+- use default rake task [@stephengroat](https://github.com/stephengroat)
+- Modify Faker::Internet.slug [@philduffen](https://github.com/philduffen)
+- Rubocop + fixes [@stephengroat](https://github.com/stephengroat)
+- Add Faker::Football [@AlexGascon](https://github.com/AlexGascon)
+- adds both inclusive and binary gender option [@jmkoni](https://github.com/jmkoni)
+- Fix ranges for Brazilian zip codes [@lucasqueiroz](https://github.com/lucasqueiroz)
+- Fix formatting for Brazilian phone and cell phone numbers [@lucasqueiroz](https://github.com/lucasqueiroz)
+- Update locales - Faker::Overwatch [@tanner0101](https://github.com/tanner0101)
+- Finnish locale has 50 most common male, female, and last names [@Glenf](https://github.com/Glenf)
+- Correct the spelling of Gringotts [@rhoen](https://github.com/rhoen)
+- First_name and last_name should use the parse method - :ru locale [@vbrazo](https://github.com/vbrazo)
+- Add Nation object, its specs and docs [@gkunwar](https://github.com/gkunwar) 
+- Fixes NL postcode [@JonathanWThom](https://github.com/JonathanWThom)
+- Update Faker::Number.between docs [@SpyMaster356](https://github.com/SpyMaster356)
+- Fix Fixnum reference warning [@vbrazo](https://github.com/vbrazo)
+- Fix tests warning [@vbrazo](https://github.com/vbrazo)
+- Add Faker::MichaelScott API [@snayrouz](https://github.com/snayrouz)
+- New collaborator - Vitor Oliveira [@vbrazo](https://github.com/vbrazo)
+
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)
 
