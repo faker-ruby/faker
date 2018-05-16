@@ -2,12 +2,23 @@ require 'test/unit'
 require 'rubygems'
 require 'timecop'
 require 'yaml'
+
+# add Coveralls and SimpleCov support
+begin
+  require 'simplecov'
+  require 'coveralls'
+
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+  ]
+  SimpleCov.start
+rescue LoadError
+  puts 'Coverage disabled, enable by installing simplecov'
+end
+
 YAML::ENGINE.yamler = 'psych' if defined? YAML::ENGINE
 require File.expand_path(File.dirname(__FILE__) + '/../lib/faker')
-
-# add Coveralls support
-require 'coveralls'
-Coveralls.wear!
 
 # configure I18n
 locales_path = File.expand_path(File.dirname(__FILE__) + '../lib/locales')
