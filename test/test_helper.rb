@@ -1,8 +1,3 @@
-require 'test/unit'
-require 'rubygems'
-require 'timecop'
-require 'yaml'
-
 # add Coveralls and SimpleCov support
 begin
   require 'simplecov'
@@ -12,10 +7,17 @@ begin
     SimpleCov::Formatter::HTMLFormatter,
     Coveralls::SimpleCov::Formatter
   ]
-  SimpleCov.start
+  SimpleCov.start do
+    add_filter '/test/'
+  end
 rescue LoadError
   puts 'Coverage disabled, enable by installing simplecov'
 end
+
+require 'test/unit'
+require 'rubygems'
+require 'timecop'
+require 'yaml'
 
 YAML::ENGINE.yamler = 'psych' if defined? YAML::ENGINE
 require File.expand_path(File.dirname(__FILE__) + '/../lib/faker')
