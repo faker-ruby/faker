@@ -9,6 +9,10 @@ class TestFakerFood < Test::Unit::TestCase
     assert @tester.dish.match(/\w+/)
   end
 
+  def test_description
+    assert @tester.description.match(/\w+/)
+  end
+
   def test_ingredient
     assert @tester.ingredient.match(/\w+/)
   end
@@ -18,10 +22,10 @@ class TestFakerFood < Test::Unit::TestCase
   end
 
   def test_measurement
-    assert @tester.measurement.split(" ").length == 2
+    assert @tester.measurement.split(' ').length == 2
   end
-  
+
   def test_metric_measurement
     assert @tester.metric_measurement.match(/\w+/)
-  end  
+  end
 end

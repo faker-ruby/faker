@@ -6,6 +6,7 @@ module Faker
       @previous_results = Hash.new { |hash, key| hash[key] = Set.new }
     end
 
+    # rubocop:disable Style/MethodMissing
     def method_missing(name, *arguments)
       @max_retries.times do
         result = @generator.public_send(name, *arguments)
@@ -17,6 +18,11 @@ module Faker
       end
 
       raise RetryLimitExceeded
+    end
+    # rubocop:enable Style/MethodMissing
+
+    def respond_to_missing?(method_name, include_private = false)
+      method_name.to_s.start_with?('faker_') || super
     end
 
     RetryLimitExceeded = Class.new(StandardError)

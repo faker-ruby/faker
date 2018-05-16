@@ -1,10 +1,7 @@
-#encoding: utf-8
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 module Faker
-
   class DrWho < Base
-
     def self.character
       fetch('dr_who.character')
     end
@@ -28,7 +25,5 @@ module Faker
     def self.specie
       fetch('dr_who.species')
     end
-
-  end #class DrWho
-
-end #module Faker
+  end
+end

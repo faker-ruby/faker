@@ -20,5 +20,4 @@ class TestFakerAncient < Test::Unit::TestCase
   def test_hero
     assert @tester.hero.match(/\w+/)
   end
-
 end

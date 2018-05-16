@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper.rb'
 
 class TestFakerLovecraft < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Lovecraft
     @wordlist = I18n.translate('faker.lovecraft.words')
@@ -40,15 +39,15 @@ class TestFakerLovecraft < Test::Unit::TestCase
     ss = @tester.sentences(2..5)
     ps = @tester.paragraphs(2..5)
 
-    assert(2 <= ws.length && ws.length <= 5)
-    assert(2 <= ss.length && ss.length <= 5)
-    assert(2 <= ps.length && ps.length <= 5)
+    assert(ws.length >= 2 && ws.length <= 5)
+    assert(ss.length >= 2 && ss.length <= 5)
+    assert(ps.length >= 2 && ps.length <= 5)
   end
 
   def test_array_count_param
-    ws = @tester.words([1,4])
-    ss = @tester.sentences([1,4])
-    ps = @tester.paragraphs([1,4])
+    ws = @tester.words([1, 4])
+    ss = @tester.sentences([1, 4])
+    ps = @tester.paragraphs([1, 4])
 
     assert(ws.length == 1 || ws.length == 4)
     assert(ss.length == 1 || ss.length == 4)
@@ -61,7 +60,7 @@ class TestFakerLovecraft < Test::Unit::TestCase
     array = @tester.words([250, 500])
 
     assert(exact.length == 500)
-    assert(250 <= range.length && range.length <= 500)
+    assert(range.length >= 250 && range.length <= 500)
     assert(array.length == 250 || array.length == 500)
   end
 

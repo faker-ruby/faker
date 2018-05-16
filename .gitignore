@@ -1,11 +1,15 @@
 pkg/*
 
+# Ignore Coveralls files
+.coveralls/*
+
 # Ignore Vim backup files.
 *~
 
 # Ignore Vim swap files.
 *.swp
 
+# Ignore Finder metadata.
 .DS_Store
 
 .idea/*
