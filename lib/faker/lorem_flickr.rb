@@ -1,7 +1,7 @@
 module Faker
   class LoremFlickr < Base
     class << self
-      SUPPORTED_COLORIZATIONS = %w(red green blue)
+      SUPPORTED_COLORIZATIONS = %w[red green blue].freeze
 
       def image(size = '300x300', search_terms = [], match_all = false)
         build_url(size, nil, search_terms, match_all)
@@ -29,7 +29,7 @@ module Faker
       private
 
       def build_url(size, format, search_terms, match_all)
-        raise ArgumentError, 'Size should be specified in format 300x300' unless size.match(/^[0-9]+x[0-9]+$/)
+        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
 
         url_parts = ['http://loremflickr.com']
         url_parts << format
