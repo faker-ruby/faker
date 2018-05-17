@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicule [@gauth-ier](https://github.com/Gauth-ier)
 - [PR #1198](https://github.com/stympy/faker/pull/1135) Rename methods on Faker::Types to avoid shadowing ruby standard methods [@MarcPer](https://github.com/MarcPer) 
 - [PR #1135](https://github.com/stympy/faker/pull/1135) Added documentation for dumb and dumber [@cnharris10](https://github.com/cnharris10) 
 - [PR #1142](https://github.com/stympy/faker/pull/1142) Missing i18n jobs fix [@PuZZleDucK](https://github.com/PuZZleDucK) 
