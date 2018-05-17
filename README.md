@@ -77,6 +77,7 @@ Contents
   - [Faker::Kpop](doc/kpop.md)
   - [Faker::LeagueOfLegends](doc/league_of_legends.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
+  - [Faker::LoremFlickr](doc/lorem_flickr.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
   - [Faker::Lorem](doc/lorem.md)
   - [Faker::Lovecraft](doc/lovecraft.md)
