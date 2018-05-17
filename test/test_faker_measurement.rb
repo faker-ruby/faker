@@ -7,6 +7,7 @@ class TestFakerMeasurement < Test::Unit::TestCase
 
   def height
     assert @tester.height.match(/\d\s[a-z]/)
+    assert @tester.height(1).match(/\d\s[a-z]/)
   end
 
   def height_all
@@ -48,8 +49,14 @@ class TestFakerMeasurement < Test::Unit::TestCase
 
   def weight
     assert @tester.weight.match(/\d\s[a-z]/)
-    assert @tester.weight('all').match(/\d\s[a-z]/)
-    assert @tester.weight('none').match(/\d\s[a-z]/)
+  end
+
+  def weight_none
+    assert @tester.weight_none.match(/\d\s[a-z]/)
+  end
+
+  def weight_all
+    assert @tester.weight_all.match(/\d\s[a-z]/)
   end
 
   def metric_height
@@ -57,11 +64,11 @@ class TestFakerMeasurement < Test::Unit::TestCase
   end
 
   def metric_height_all
-    assert @tester.metric_height('all').match(/\d\s[a-z]/)
+    assert @tester.metric_height_all.match(/\d\s[a-z]/)
   end
 
   def metric_height_none
-    assert @tester.metric_height('none').match(/\d\s[a-z]/)
+    assert @tester.metric_height_none.match(/\d\s[a-z]/)
   end
 
   def metric_length
@@ -69,11 +76,11 @@ class TestFakerMeasurement < Test::Unit::TestCase
   end
 
   def metric_length_all
-    assert @tester.metric_length('all').match(/\d\s[a-z]/)
+    assert @tester.metric_length_all.match(/\d\s[a-z]/)
   end
 
   def metric_length_none
-    assert @tester.metric_length('none').match(/\d\s[a-z]/)
+    assert @tester.metric_length_none.match(/\d\s[a-z]/)
   end
 
   def metric_volume
@@ -81,23 +88,24 @@ class TestFakerMeasurement < Test::Unit::TestCase
   end
 
   def metric_volume_all
-    assert @tester.metric_volume('all').match(/\d\s[a-z]/)
+    assert @tester.metric_volume_all.match(/\d\s[a-z]/)
   end
 
   def metric_volume_none
-    assert @tester.metric_volume('none').match(/\d\s[a-z]/)
+    assert @tester.metric_volume_none.match(/\d\s[a-z]/)
   end
 
   def metric_weight
     assert @tester.metric_weight.match(/\d\s[a-z]/)
+    assert @tester.metric_weight(1).match(/\d\s[a-z]/)
   end
 
   def metric_weight_all
-    assert @tester.metric_weight.match(/\d\s[a-z]/)
+    assert @tester.metric_weight_all.match(/\d\s[a-z]/)
   end
 
   def metric_weight_none
-    assert @tester.metric_weight.match(/\d\s[a-z]/)
+    assert @tester.metric_weight_none.match(/\d\s[a-z]/)
   end
 
   def test_invalid_amount_error
