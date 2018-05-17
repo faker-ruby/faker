@@ -1,10 +1,11 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-05-16
+### Latest update: 2018-05-17
 
 **Additions**
 
+- [PR #1198](https://github.com/stympy/faker/pull/1135) Rename methods on Faker::Types to avoid shadowing ruby standard methods [@MarcPer](https://github.com/MarcPer) 
 - [PR #1135](https://github.com/stympy/faker/pull/1135) Added documentation for dumb and dumber [@cnharris10](https://github.com/cnharris10) 
 - [PR #1142](https://github.com/stympy/faker/pull/1142) Missing i18n jobs fix [@PuZZleDucK](https://github.com/PuZZleDucK) 
 - [PR #1213](https://github.com/stympy/faker/pull/1213) Add missing tests after adding Coveralls [@vbrazo](https://github.com/vbrazo) 
