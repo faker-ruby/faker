@@ -16,5 +16,4 @@ class TestFakerCat < Test::Unit::TestCase
   def test_registry
     assert @tester.registry.match(/\w+\.?/)
   end
-
 end
