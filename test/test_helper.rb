@@ -8,7 +8,7 @@ begin
     Coveralls::SimpleCov::Formatter
   ]
   SimpleCov.start do
-    add_filter ['/test/', 'lib/helpers', 'lib/extensions']
+    add_filter ['.bundle', 'lib/helpers', 'lib/extensions', 'test']
   end
 rescue LoadError
   puts 'Coverage disabled, enable by installing simplecov'

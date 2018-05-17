@@ -6,90 +6,114 @@ module Faker
 
       def height(amount = rand(10))
         ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.height'))
-        elsif amount == NONE
-          fetch('measurement.height')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.height'), amount)}"
-        end
+
+        "#{amount} #{check_for_plural(fetch('measurement.height'), amount)}"
+      end
+
+      def height_all
+        make_plural(fetch('measurement.height'))
+      end
+
+      def height_none
+        fetch('measurement.height')
       end
 
       def length(amount = rand(10))
         ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.length'))
-        elsif amount == NONE
-          fetch('measurement.length')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.length'), amount)}"
-        end
+
+        "#{amount} #{check_for_plural(fetch('measurement.length'), amount)}"
+      end
+
+      def length_all
+        make_plural(fetch('measurement.length'))
+      end
+
+      def length_none
+        fetch('measurement.length')
       end
 
       def volume(amount = rand(10))
         ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.volume'))
-        elsif amount == NONE
-          fetch('measurement.volume')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.volume'), amount)}"
-        end
+
+        "#{amount} #{check_for_plural(fetch('measurement.volume'), amount)}"
+      end
+
+      def volume_all
+        make_plural(fetch('measurement.volume'))
+      end
+
+      def volume_none
+        fetch('measurement.volume')
       end
 
       def weight(amount = rand(10))
         ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.weight'))
-        elsif amount == NONE
-          fetch('measurement.weight')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.weight'), amount)}"
-        end
+
+        "#{amount} #{check_for_plural(fetch('measurement.weight'), amount)}"
+      end
+
+      def weight_all
+        make_plural(fetch('measurement.weight'))
+      end
+
+      def weight_none
+        fetch('measurement.weight')
       end
 
       def metric_height(amount = rand(10))
         ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.height'))
-        elsif amount == NONE
-          fetch('measurement.height')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.height'), amount)}"
-        end
+
+        "#{amount} #{check_for_plural(fetch('measurement.height'), amount)}"
+      end
+
+      def metric_height_all
+        make_plural(fetch('measurement.height'))
+      end
+
+      def metric_height_none
+        fetch('measurement.height')
       end
 
       def metric_length(amount = rand(10))
         ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.length'))
-        elsif amount == NONE
-          fetch('measurement.length')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.length'), amount)}"
-        end
+
+        "#{amount} #{check_for_plural(fetch('measurement.length'), amount)}"
+      end
+
+      def metric_length_all
+        make_plural(fetch('measurement.length'))
+      end
+
+      def metric_length_none
+        fetch('measurement.height')
       end
 
       def metric_volume(amount = rand(10))
         ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.volume'))
-        elsif amount == NONE
-          fetch('measurement.volume')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.volume'), amount)}"
-        end
+
+        "#{amount} #{check_for_plural(fetch('measurement.volume'), amount)}"
+      end
+
+      def metric_volume_all
+        make_plural(fetch('measurement.volume'))
+      end
+
+      def metric_volume_none
+        fetch('measurement.volume')
       end
 
       def metric_weight(amount = rand(10))
         ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.weight'))
-        elsif amount == NONE
-          fetch('measurement.weight')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.weight'), amount)}"
-        end
+
+        "#{amount} #{check_for_plural(fetch('measurement.weight'), amount)}"
+      end
+
+      def metric_weight_all
+        make_plural(fetch('measurement.weight'))
+      end
+
+      def metric_weight_none
+        fetch('measurement.weight')
       end
 
       private
