@@ -34,6 +34,7 @@
 - [PR #1172](https://github.com/stympy/faker/pull/1172) Fix Fixnum reference warning [@vbrazo](https://github.com/vbrazo)
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 - [PR #1193](https://github.com/stympy/faker/pull/1193) Add Faker::MichaelScott API [@snayrouz](https://github.com/snayrouz)
+- [PR #818](https://github.com/stympy/faker/pull/818) LoremFlickr support [@mrstebo](https://github.com/mrstebo)
 - New collaborator - Vitor Oliveira [@vbrazo](https://github.com/vbrazo)
 
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
