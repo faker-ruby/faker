@@ -75,10 +75,6 @@ module Faker
         with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
       end
 
-      def fix_umlauts(string = '')
-        Char.fix_umlauts(string)
-      end
-
       def domain_word
         with_locale(:en) { Char.prepare(Company.name.split(' ').first) }
       end
