@@ -18,6 +18,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_user_name
+    assert @tester.user_name(0..3).match(/[a-z]+((_|\.)[a-z]+)?/)
     assert @tester.user_name.match(/[a-z]+((_|\.)[a-z]+)?/)
   end
 
