@@ -1,4 +1,4 @@
-# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker) [![Coverage Status](https://coveralls.io/repos/github/stympy/faker/badge.svg?branch=master)](https://coveralls.io/github/stympy/faker?branch=master)
+# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker) [![Coverage Status](https://coveralls.io/repos/github/stympy/faker/badge.svg)](https://coveralls.io/github/stympy/faker)
 
 
 This gem is a port of Perl's Data::Faker library that generates fake data.
@@ -108,6 +108,7 @@ Contents
   - [Faker::SiliconValley](doc/silicon_valley.md)
   - [Faker::Simpsons](doc/simpsons.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
+  - [Faker::Source](doc/source.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
   - [Faker::StarWars](doc/star_wars.md)

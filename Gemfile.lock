@@ -53,7 +53,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coveralls
+  coveralls (>= 0.8.21)
   faker!
   minitest
   rake
