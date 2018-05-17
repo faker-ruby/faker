@@ -4,6 +4,8 @@
 ### Latest update: 2018-05-16
 
 **Additions**
+
+- Added Nato Phonetic Alphabet [@timcustard](https://github.com/timcustard)
 - Add Faker::Source [@graciano](https://github.com/graciano)
 - Fix: Moved the Google Omniauth key id_info from root into extra [@SirRawlins](https://github.com/SirRawlins)
 - Add coveralls [@vbrazo](https://github.com/vbrazo)

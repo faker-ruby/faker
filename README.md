@@ -88,6 +88,7 @@ Contents
   - [Faker::Music](doc/music.md)
   - [Faker::Name](doc/name.md)
   - [Faker::Nation](doc/nation.md)
+  - [Faker::NatoPhoneticAlphabet](doc/nato_phonetic_alphabet.md)
   - [Faker::NewGirl](doc/new_girl.md)
   - [Faker::Number](doc/number.md)
   - [Faker::Omniauth](doc/omniauth.md)
