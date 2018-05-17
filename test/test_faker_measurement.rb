@@ -9,8 +9,24 @@ class TestFakerMeasurement < Test::Unit::TestCase
     assert @tester.height.match(/\d\s[a-z]/)
   end
 
+  def height_all
+    assert @tester.height('all').match(/\d\s[a-z]/)
+  end
+
+  def height_none
+    assert @tester.height('none').match(/\d\s[a-z]/)
+  end
+
   def length
     assert @tester.length(0).match(/\d\s[a-z]/)
+  end
+
+  def length_all
+    assert @tester.length('all').match(/\d\s[a-z]/)
+  end
+
+  def length_none
+    assert @tester.length('none').match(/\d\s[a-z]/)
   end
 
   def volume
@@ -30,20 +46,60 @@ class TestFakerMeasurement < Test::Unit::TestCase
     assert @tester.weight.match(/\d\s[a-z]/)
   end
 
+  def weight_all
+    assert @tester.weight('all').match(/\d\s[a-z]/)
+  end
+
+  def weight_none
+    assert @tester.weight('none').match(/\d\s[a-z]/)
+  end
+
   def metric_height
     assert @tester.metric_height.match(/\d\s[a-z]/)
+  end
+
+  def metric_height_all
+    assert @tester.metric_height('all').match(/\d\s[a-z]/)
+  end
+
+  def metric_height_none
+    assert @tester.metric_height('none').match(/\d\s[a-z]/)
   end
 
   def metric_length
     assert @tester.metric_length.match(/\d\s[a-z]/)
   end
 
+  def metric_length_all
+    assert @tester.metric_length('all').match(/\d\s[a-z]/)
+  end
+
+  def metric_length_none
+    assert @tester.metric_length('none').match(/\d\s[a-z]/)
+  end
+
   def metric_volume
     assert @tester.metric_volume.match(/\d\s[a-z]/)
   end
 
+  def metric_volume_all
+    assert @tester.metric_volume('all').match(/\d\s[a-z]/)
+  end
+
+  def metric_volume_none
+    assert @tester.metric_volume('none').match(/\d\s[a-z]/)
+  end
+
   def metric_weight
     assert @tester.metric_weight.match(/\d\s[a-z]/)
+  end
+
+  def metric_weight_all
+    assert @tester.metric_weight('all').match(/\d\s[a-z]/)
+  end
+
+  def metric_weight_none
+    assert @tester.metric_weight('none').match(/\d\s[a-z]/)
   end
 
   def test_invalid_amount_error
