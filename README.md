@@ -52,6 +52,7 @@ Contents
   - [Faker::Dog](doc/dog.md)
   - [Faker::DragonBall](doc/dragon_ball.md)
   - [Faker::DrWho](doc/dr_who.md)
+  - [Faker::DumbAndDumber](doc/dumb_and_dumber.md)
   - [Faker::Dune](doc/dune.md)
   - [Faker::Educator](doc/educator.md)
   - [Faker::ElderScrolls](doc/elder_scrolls.md)
