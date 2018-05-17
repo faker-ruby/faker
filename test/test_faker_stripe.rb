@@ -9,12 +9,24 @@ class TestFakerStripe < Test::Unit::TestCase
     assert @tester.valid_card.match(/\A\d{14,16}\z/)
   end
 
+  def test_valid_card_error
+    assert_raise ArgumentError do
+      assert @tester.valid_card(Faker::Lorem.word)
+    end
+  end
+
   def test_specific_valid_card
     assert @tester.valid_card('visa').match(/\A\d{16}\z/)
   end
 
   def test_invalid_card
     assert @tester.invalid_card.match(/\A\d{16}\z/)
+  end
+
+  def test_invalid_card_error
+    assert_raise ArgumentError do
+      assert @tester.invalid_card(Faker::Lorem.word)
+    end
   end
 
   def test_specific_error_invalid_card
