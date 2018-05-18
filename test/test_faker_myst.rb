@@ -17,8 +17,8 @@ class TestFakerMyst < Test::Unit::TestCase
     assert @tester.age.match(/\w+/)
   end
 
-  def test_person
-    assert @tester.person.match(/\w+/)
+  def test_character
+    assert @tester.character.match(/\w+/)
   end
 
   def test_quote

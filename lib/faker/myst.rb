@@ -13,8 +13,8 @@ module Faker
         fetch('myst.ages')
       end
 
-      def person
-        fetch('myst.people')
+      def character
+        fetch('myst.characters')
       end
 
       def quote

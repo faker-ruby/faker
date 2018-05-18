@@ -87,6 +87,7 @@ Contents
   - [Faker::MostInterestingManInTheWorld](doc/most_interesting_man_in_the_world.md)
   - [Faker::Movie](doc/movie.md)
   - [Faker::Music](doc/music.md)
+  - [Faker::Myst](doc/myst.md)
   - [Faker::Name](doc/name.md)
   - [Faker::Nation](doc/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/nato_phonetic_alphabet.md)
