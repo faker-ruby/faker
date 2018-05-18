@@ -5,14 +5,15 @@
 
 **Additions**
 
+- [PR #1199](https://github.com/stympy/faker/pull/1199) Add Faker::StrangerThings [@Connerh92](https://github.com/Connerh92)
 - [PR #1204](https://github.com/stympy/faker/pull/1204) Update sample output of `Faker::App.version` [@joshuapinter](https://github.com/joshuapinter)
 - [PR #1218](https://github.com/stympy/faker/pull/1218) Add Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicule [@gauth-ier](https://github.com/Gauth-ier)
 - [PR #1211](https://github.com/stympy/faker/pull/1211) Add bands, genres, and albums to Music [@jmkoni](https://github.com/jmkoni)
-- [PR #1198](https://github.com/stympy/faker/pull/1135) Rename methods on Faker::Types to avoid shadowing ruby standard methods [@MarcPer](https://github.com/MarcPer) 
-- [PR #1135](https://github.com/stympy/faker/pull/1135) Added documentation for dumb and dumber [@cnharris10](https://github.com/cnharris10) 
-- [PR #1142](https://github.com/stympy/faker/pull/1142) Missing i18n jobs fix [@PuZZleDucK](https://github.com/PuZZleDucK) 
-- [PR #1213](https://github.com/stympy/faker/pull/1213) Add missing tests after adding Coveralls [@vbrazo](https://github.com/vbrazo) 
+- [PR #1198](https://github.com/stympy/faker/pull/1135) Rename methods on Faker::Types to avoid shadowing ruby standard methods [@MarcPer](https://github.com/MarcPer)
+- [PR #1135](https://github.com/stympy/faker/pull/1135) Added documentation for dumb and dumber [@cnharris10](https://github.com/cnharris10)
+- [PR #1142](https://github.com/stympy/faker/pull/1142) Missing i18n jobs fix [@PuZZleDucK](https://github.com/PuZZleDucK)
+- [PR #1213](https://github.com/stympy/faker/pull/1213) Add missing tests after adding Coveralls [@vbrazo](https://github.com/vbrazo)
 - [PR #1215](https://github.com/stympy/faker/pull/1215) Added Nato Phonetic Alphabet [@timcustard](https://github.com/timcustard)
 - [PR #1212](https://github.com/stympy/faker/pull/1212) Coveralls should ignore test folder [@vbrazo](https://github.com/timcustard)
 - [PR #1209](https://github.com/stympy/faker/pull/1209) Add Faker::Source [@graciano](https://github.com/graciano)
@@ -23,16 +24,16 @@
 - [PR #1136](https://github.com/stympy/faker/pull/1136) Modify Faker::Internet.slug [@philduffen](https://github.com/philduffen)
 - [PR #924](https://github.com/stympy/faker/pull/924) Rubocop + fixes [@stephengroat](https://github.com/stephengroat)
 - [PR #1189](https://github.com/stympy/faker/pull/1189) Add Faker::Football [@AlexGascon](https://github.com/AlexGascon)
-- [PR #1202](https://github.com/stympy/faker/pull/1202) adds both inclusive and binary gender option [@jmkoni](https://github.com/jmkoni) 
-- [PR #1124](https://github.com/stympy/faker/pull/1124) Fix ranges for Brazilian zip codes [@lucasqueiroz](https://github.com/lucasqueiroz) 
-- [PR #1122](https://github.com/stympy/faker/pull/1122) Fix formatting for Brazilian phone and cell phone numbers [@lucasqueiroz](https://github.com/lucasqueiroz) 
-- [PR #1138](https://github.com/stympy/faker/pull/1138) Update locales - Faker::Overwatch [@tanner0101](https://github.com/tanner0101) 
-- [PR #1203](https://github.com/stympy/faker/pull/1203) Finnish locale has 50 most common male, female, and last names [@Glenf](https://github.com/Glenf) 
-- [PR #1183](https://github.com/stympy/faker/pull/1183) Correct the spelling of Gringotts [@rhoen](https://github.com/rhoen) 
+- [PR #1202](https://github.com/stympy/faker/pull/1202) adds both inclusive and binary gender option [@jmkoni](https://github.com/jmkoni)
+- [PR #1124](https://github.com/stympy/faker/pull/1124) Fix ranges for Brazilian zip codes [@lucasqueiroz](https://github.com/lucasqueiroz)
+- [PR #1122](https://github.com/stympy/faker/pull/1122) Fix formatting for Brazilian phone and cell phone numbers [@lucasqueiroz](https://github.com/lucasqueiroz)
+- [PR #1138](https://github.com/stympy/faker/pull/1138) Update locales - Faker::Overwatch [@tanner0101](https://github.com/tanner0101)
+- [PR #1203](https://github.com/stympy/faker/pull/1203) Finnish locale has 50 most common male, female, and last names [@Glenf](https://github.com/Glenf)
+- [PR #1183](https://github.com/stympy/faker/pull/1183) Correct the spelling of Gringotts [@rhoen](https://github.com/rhoen)
 - [PR #1170](https://github.com/stympy/faker/pull/1170) First_name and last_name should use the parse method - :ru locale [@vbrazo](https://github.com/vbrazo)
-- [PR #1190](https://github.com/stympy/faker/pull/1190) Add Nation object, its specs and docs [@gkunwar](https://github.com/gkunwar) 
-- [PR #1197](https://github.com/stympy/faker/pull/1197) Fixes NL postcode [@JonathanWThom](https://github.com/JonathanWThom) 
-- [PR #1177](https://github.com/stympy/faker/pull/1177) Update Faker::Number.between docs [@SpyMaster356](https://github.com/SpyMaster356) 
+- [PR #1190](https://github.com/stympy/faker/pull/1190) Add Nation object, its specs and docs [@gkunwar](https://github.com/gkunwar)
+- [PR #1197](https://github.com/stympy/faker/pull/1197) Fixes NL postcode [@JonathanWThom](https://github.com/JonathanWThom)
+- [PR #1177](https://github.com/stympy/faker/pull/1177) Update Faker::Number.between docs [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #1172](https://github.com/stympy/faker/pull/1172) Fix Fixnum reference warning [@vbrazo](https://github.com/vbrazo)
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 - [PR #1193](https://github.com/stympy/faker/pull/1193) Add Faker::MichaelScott API [@snayrouz](https://github.com/snayrouz)
@@ -490,7 +491,7 @@
 ## v1.6.0 (2015-11-23)
 * Lots of bug fixes -- most notably, a fix for email addresses and domains in non-en locales
 * Updated locales: de, en-AU, en-NZ, en-SG, en-US, en-au-ocker, en, es, fr, he, it, ja, nb-NO, pl, pt-BR, sk, and zh-CN
-* Updated classes: Address, Avatar, Book, Code, Commerce, Company, Hipster, IDNumber, Internet, Number, Placeholdit, Shakespeare, and Time 
+* Updated classes: Address, Avatar, Book, Code, Commerce, Company, Hipster, IDNumber, Internet, Number, Placeholdit, Shakespeare, and Time
 
 ## v1.5.0 (2015-08-17)
 * Added logos
@@ -540,7 +541,7 @@
 * 1 major change:
     * Removed deprecated methods from Address: earth_country, us_state, us_state_abbr, uk_postcode, uk_county
 * Many minor changes (please see github pull requests for credits)
-    * Added many localizations 
+    * Added many localizations
     * Added range and array support for Lorem
 
 ## v1.0.1 (2011-09-27)
@@ -574,7 +575,7 @@
     * Added Canadian translation [igbanam]
     * Added Norwegian translation [kytrinyx]
     * Lots of translation-related cleanup [kytrinyx]
-  
+
 
 ## v0.9.5 (2011-01-27)
 * 1 minor bug fix:
@@ -616,7 +617,7 @@
 * 3 major enhancements:
     * Added Lorem to generate fake Latin
     * Added secondary_address to Address, and made inclusion of
-    secondary address in street_address optional (false by 
+    secondary address in street_address optional (false by
     default).
     * Added UK address methods [Caius Durling]
 
