@@ -1,7 +1,7 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-05-17
+### Latest update: 2018-05-18
 
 **Additions**
 
@@ -37,6 +37,7 @@
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 - [PR #1193](https://github.com/stympy/faker/pull/1193) Add Faker::MichaelScott API [@snayrouz](https://github.com/snayrouz)
 - [PR #818](https://github.com/stympy/faker/pull/818) LoremFlickr support [@mrstebo](https://github.com/mrstebo)
+- [PR #1179](https://github.com/stympy/faker/pull/1179) Random color with Placeholdit [@nicolas-brousse](https://github.com/nicolas-brousse)
 - New collaborator - Vitor Oliveira [@vbrazo](https://github.com/vbrazo)
 
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
