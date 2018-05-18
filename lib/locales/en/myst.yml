@@ -3,7 +3,7 @@ en:
     myst:
       games: [ "Myst", "Riven: The Sequel to Myst", "Myst III: Exile", "Myst IV: Revelation", "Uru: Ages Beyond Myst", "Myst V: End of Ages" ]
       creatures: [ "squee", "sunner", "wahrks", "ytrams", "scarab beetles", "bahro", "karnaks", "Mangree", "Zeftyr" ]
-      people: [ "The Stranger", "Atrus", "Sirrus", "Achenar", "Ghen", "Catherine", "Saavedro", "Yeesha", "Esher", "Atrius", "Ti'ana" ]
+      characters: [ "The Stranger", "Atrus", "Sirrus", "Achenar", "Ghen", "Catherine", "Saavedro", "Yeesha", "Esher", "Atrius", "Ti'ana" ]
       ages: [
         # Myst
         "Myst", "Stoneship", "Mechanical", "Channelwood", "Selenitic", "Earth", "Rime",
