@@ -1,11 +1,9 @@
-# frozen_string_literal: true
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
-
+# rubocop:disable Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
-
   def setup
-    @all_methods= all_methods.freeze
-    @first_run= []
+    @all_methods = all_methods.freeze
+    @first_run = []
   end
 
   def test_determinism
@@ -20,21 +18,19 @@ class TestDeterminism < Test::Unit::TestCase
     end
   end
 
-private
+  private
 
-  def deterministic_random? first, method_name
-    second= eval(method_name)
-    (first== second) || raise(
+  def deterministic_random?(first, method_name)
+    second = eval(method_name)
+    (first == second) || raise(
       "#{method_name} has an entropy leak; use \"Faker::Config.random.rand\" or \"Array#sample(random: Faker::Config.random)\". Method to lookup for: sample, shuffle, rand"
     )
   end
 
-  def store_result method_name
-    begin
-      @first_run<< eval(method_name)
-    rescue => exception
-      raise %Q[#{method_name} raised "#{exception}"]
-    end
+  def store_result(method_name)
+    @first_run << eval(method_name)
+  rescue StandardError => exception
+    raise %(#{method_name} raised "#{exception}")
   end
 
   def all_methods
@@ -45,7 +41,7 @@ private
 
   def subclasses
     Faker.constants.delete_if do |subclass|
-      [:Base, :Char, :Config, :Date, :Internet, :Time, :VERSION].include?(subclass)
+      %i[Base Char Config Date Internet Time VERSION].include?(subclass)
     end.sort
   end
 
@@ -55,3 +51,4 @@ private
     end.sort
   end
 end
+# rubocop:enable Security/Eval,Style/EvalWithLocation

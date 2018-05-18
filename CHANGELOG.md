@@ -1,5 +1,44 @@
 # Change Log
 
+## HEAD Unreleased
+### Latest update: 2018-05-17
+
+**Additions**
+
+- [PR #1204](https://github.com/stympy/faker/pull/1204) Update sample output of `Faker::App.version` [@joshuapinter](https://github.com/joshuapinter)
+- [PR #1218](https://github.com/stympy/faker/pull/1218) Add Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
+- [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicule [@gauth-ier](https://github.com/Gauth-ier)
+- [PR #1211](https://github.com/stympy/faker/pull/1211) Add bands, genres, and albums to Music [@jmkoni](https://github.com/jmkoni)
+- [PR #1198](https://github.com/stympy/faker/pull/1135) Rename methods on Faker::Types to avoid shadowing ruby standard methods [@MarcPer](https://github.com/MarcPer) 
+- [PR #1135](https://github.com/stympy/faker/pull/1135) Added documentation for dumb and dumber [@cnharris10](https://github.com/cnharris10) 
+- [PR #1142](https://github.com/stympy/faker/pull/1142) Missing i18n jobs fix [@PuZZleDucK](https://github.com/PuZZleDucK) 
+- [PR #1213](https://github.com/stympy/faker/pull/1213) Add missing tests after adding Coveralls [@vbrazo](https://github.com/vbrazo) 
+- [PR #1215](https://github.com/stympy/faker/pull/1215) Added Nato Phonetic Alphabet [@timcustard](https://github.com/timcustard)
+- [PR #1212](https://github.com/stympy/faker/pull/1212) Coveralls should ignore test folder [@vbrazo](https://github.com/timcustard)
+- [PR #1209](https://github.com/stympy/faker/pull/1209) Add Faker::Source [@graciano](https://github.com/graciano)
+- [PR #1181](https://github.com/stympy/faker/pull/1181) Fix: Moved the Google Omniauth key id_info from root into extra [@SirRawlins](https://github.com/SirRawlins)
+- [PR #1210](https://github.com/stympy/faker/pull/1210) Add coveralls [@vbrazo](https://github.com/vbrazo)
+- [PR #1147](https://github.com/stympy/faker/pull/1147) Add Spanish citizen id and docs [@PuZZleDucK](https://github.com/PuZZleDucK)
+- [PR #1207](https://github.com/stympy/faker/pull/1207) use default rake task [@stephengroat](https://github.com/stephengroat)
+- [PR #1136](https://github.com/stympy/faker/pull/1136) Modify Faker::Internet.slug [@philduffen](https://github.com/philduffen)
+- [PR #924](https://github.com/stympy/faker/pull/924) Rubocop + fixes [@stephengroat](https://github.com/stephengroat)
+- [PR #1189](https://github.com/stympy/faker/pull/1189) Add Faker::Football [@AlexGascon](https://github.com/AlexGascon)
+- [PR #1202](https://github.com/stympy/faker/pull/1202) adds both inclusive and binary gender option [@jmkoni](https://github.com/jmkoni) 
+- [PR #1124](https://github.com/stympy/faker/pull/1124) Fix ranges for Brazilian zip codes [@lucasqueiroz](https://github.com/lucasqueiroz) 
+- [PR #1122](https://github.com/stympy/faker/pull/1122) Fix formatting for Brazilian phone and cell phone numbers [@lucasqueiroz](https://github.com/lucasqueiroz) 
+- [PR #1138](https://github.com/stympy/faker/pull/1138) Update locales - Faker::Overwatch [@tanner0101](https://github.com/tanner0101) 
+- [PR #1203](https://github.com/stympy/faker/pull/1203) Finnish locale has 50 most common male, female, and last names [@Glenf](https://github.com/Glenf) 
+- [PR #1183](https://github.com/stympy/faker/pull/1183) Correct the spelling of Gringotts [@rhoen](https://github.com/rhoen) 
+- [PR #1170](https://github.com/stympy/faker/pull/1170) First_name and last_name should use the parse method - :ru locale [@vbrazo](https://github.com/vbrazo)
+- [PR #1190](https://github.com/stympy/faker/pull/1190) Add Nation object, its specs and docs [@gkunwar](https://github.com/gkunwar) 
+- [PR #1197](https://github.com/stympy/faker/pull/1197) Fixes NL postcode [@JonathanWThom](https://github.com/JonathanWThom) 
+- [PR #1177](https://github.com/stympy/faker/pull/1177) Update Faker::Number.between docs [@SpyMaster356](https://github.com/SpyMaster356) 
+- [PR #1172](https://github.com/stympy/faker/pull/1172) Fix Fixnum reference warning [@vbrazo](https://github.com/vbrazo)
+- [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
+- [PR #1193](https://github.com/stympy/faker/pull/1193) Add Faker::MichaelScott API [@snayrouz](https://github.com/snayrouz)
+- [PR #818](https://github.com/stympy/faker/pull/818) LoremFlickr support [@mrstebo](https://github.com/mrstebo)
+- New collaborator - Vitor Oliveira [@vbrazo](https://github.com/vbrazo)
+
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)
 

@@ -17,5 +17,4 @@ class TestCountryCode < Test::Unit::TestCase
   def test_country_code_long_expected_length
     assert_equal(3, Faker::Address.country_code_long.length)
   end
-
 end

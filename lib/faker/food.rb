@@ -20,7 +20,7 @@ module Faker
       def measurement
         fetch('food.measurement_sizes') + ' ' + fetch('food.measurements')
       end
-      
+
       def metric_measurement
         fetch('food.metric_measurements')
       end

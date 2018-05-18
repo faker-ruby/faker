@@ -20,5 +20,4 @@ class TestFakerShakespeare < Test::Unit::TestCase
   def test_hamlet_quote
     assert @tester.hamlet_quote.match(/\w+/)
   end
-
 end
