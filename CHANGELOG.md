@@ -50,6 +50,7 @@
 
 - Revert a change in 1.8.5 that caused Star Wars methods to return a
   single string rather than an array (#1093)
+- Update sample output of `Faker::App.version` (#1204) ([joshuapinter](https://github.com/joshuapinter))
 
 ## [v1.8.6](https://github.com/stympy/faker/tree/v1.8.6) (2017-12-21)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.5...v1.8.6)
