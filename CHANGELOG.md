@@ -5,6 +5,13 @@
 
 **Additions**
 
+- [PR #1223](https://github.com/stympy/faker/pull/1223) Fix minitest warnings [@vbrazo](https://github.com/vbrazo)
+- [PR #1174](https://github.com/stympy/faker/pull/1174) Dota2 API: Str Heroes, heroes quotes, Items, Teams, Players [@felipesousafs](https://github.com/darylf)
+- [PR #974](https://github.com/stympy/faker/pull/974) Specify version number each class was introduced [@darylf](https://github.com/darylf)
+- [PR #1221](https://github.com/stympy/faker/pull/1221) Updated the Readme file with the new logo [@tobaloidee](https://github.com/tobaloidee)
+- [PR #439](https://github.com/stympy/faker/pull/439) Remove Eichmann surname [@jonahwh](https://github.com/jonahwh)
+- [PR #1220](https://github.com/stympy/faker/pull/1220) Updates for Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
+- [PR #1128](https://github.com/stympy/faker/pull/1128) Use ruby syntax highlighting in Omniauth doc [@swrobel](https://github.com/swrobel)
 - [PR #1204](https://github.com/stympy/faker/pull/1204) Update sample output of `Faker::App.version` [@joshuapinter](https://github.com/joshuapinter)
 - [PR #1218](https://github.com/stympy/faker/pull/1218) Add Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicule [@gauth-ier](https://github.com/Gauth-ier)
