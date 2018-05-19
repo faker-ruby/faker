@@ -1,8 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerBank < Test::Unit::TestCase
-
-  IBAN_HEADER = '[A-Z]{2}[0-9]{2}'
+  IBAN_HEADER = '[A-Z]{2}[0-9]{2}'.freeze
 
   def setup
     @tester = Faker::Bank
@@ -498,8 +497,8 @@ class TestFakerBank < Test::Unit::TestCase
   end
 
   def test_iban_invalid
-    assert_raise ArgumentError.new("Could not find iban details for bad") do
-       @tester.iban("bad")
+    assert_raise ArgumentError.new('Could not find iban details for bad') do
+      @tester.iban('bad')
     end
   end
 end

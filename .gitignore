@@ -1,5 +1,11 @@
 pkg/*
 
+# Ignore Bundle folder
+.bundle/*
+
+# Ignore Coveralls files
+coverage/*
+
 # Ignore Vim backup files.
 *~
 

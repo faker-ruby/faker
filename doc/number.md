@@ -15,6 +15,8 @@ Faker::Number.normal(50, 3.5) #=> 47.14669604069156
 # Required parameter: digits
 Faker::Number.hexadecimal(3) #=> "e74"
 
+# Required parameters: minimum value, maximum value
+# Boundary numbers are inclusive
 Faker::Number.between(1, 10) #=> 7
 
 Faker::Number.positive #=> 235.59238499107653

@@ -1,4 +1,4 @@
-$:.unshift File.dirname(__FILE__)
+$LOAD_PATH.unshift File.dirname(__FILE__)
 
 Dir['tasks/**/*.rake'].each { |rake| load rake }
 
@@ -13,4 +13,7 @@ task :console do
   IRB.start
 end
 
-task default: %w[test]
+require 'rubocop/rake_task'
+RuboCop::RakeTask.new
+
+task default: %w[test rubocop]

@@ -1,5 +1,7 @@
 # Faker::SlackEmoji
 
+Available since version 1.5.0.
+
 ```ruby
 # Random Slack Emoji from people category
 Faker::SlackEmoji.people #=> ":sleepy:"
