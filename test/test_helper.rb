@@ -3,10 +3,8 @@ begin
   require 'simplecov'
   require 'coveralls'
 
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-    SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter
-  ]
+  simplecov_params = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(simplecov_params)
   SimpleCov.start do
     add_filter ['.bundle', 'lib/helpers', 'lib/extensions', 'test']
   end
