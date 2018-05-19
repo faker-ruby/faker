@@ -1,5 +1,7 @@
 # Faker::HeyArnold
 
+Available since version 1.8.0.
+
 ```ruby
 
 Faker::HeyArnold.character #=> "Arnold"

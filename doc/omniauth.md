@@ -1,5 +1,7 @@
 Faker::Omniauth
 
+Available since version 1.8.0.
+
 [Omniauth](https://github.com/omniauth/omniauth) is a library that standardizes multi-provider authentication for web applications.  Each of the following methods will return a randomized hash that mimics the hash returned by each of these omniauth strategies.
 
 ```ruby

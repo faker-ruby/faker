@@ -1,5 +1,7 @@
 # Faker::GameOfThrones
 
+Available since version 1.6.6.
+
 ```ruby
 Faker::GameOfThrones.character #=> "Tyrion Lannister"
 

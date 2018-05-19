@@ -1,5 +1,7 @@
 # Faker::App
 
+Available since version 1.4.3.
+
 ```ruby
 Faker::App.name #=> "Treeflex"
 
