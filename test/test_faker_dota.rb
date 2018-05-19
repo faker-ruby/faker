@@ -12,29 +12,24 @@ class TestFakerDota < Test::Unit::TestCase
   end
 
   def test_hero
-    assert_match(/\w+/, @tester.hero)
-    puts @tester.hero
+    assert @tester.hero.match(/\w+/)
   end
 
   def test_item
-    assert_match(/\w+/, @tester.item)
-    puts @tester.item
+    assert @tester.item.match(/\w+/)
   end
 
   def test_team
-    assert_match(/\w+/, @tester.team)
-    puts @tester.team
+    assert @tester.team.match(/\w+/)
   end
 
   def test_player
-    assert_match(/\w+/, @tester.player)
-    puts @tester.player
+    assert @tester.player.match(/\w+/)
   end
 
   def test_heroes_quotes
     @heroes.each do |hero|
       assert_match(/\w+/, @tester.quote(hero))
-      puts(hero.upcase + ': ' + @tester.quote(hero))
     end
   end
 
