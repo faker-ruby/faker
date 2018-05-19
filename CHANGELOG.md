@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1222](https://github.com/stympy/faker/pull/1222) Add paragraph_by_chars functionality [@jguthrie100](https://github.com/jguthrie100)
 - [PR #1204](https://github.com/stympy/faker/pull/1204) Update sample output of `Faker::App.version` [@joshuapinter](https://github.com/joshuapinter)
 - [PR #1218](https://github.com/stympy/faker/pull/1218) Add Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicule [@gauth-ier](https://github.com/Gauth-ier)
