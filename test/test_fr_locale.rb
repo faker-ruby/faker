@@ -38,15 +38,16 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Book.title.is_a? String
     assert Faker::Book.author.is_a? String
     assert Faker::Book.publisher.is_a? String
+    assert Faker::Book.quote.is_a? String
   end
 
   def test_fr_phone_format
-    phone = Faker::PhoneNumber.phone_number.gsub(/\D/,'')
+    phone = Faker::PhoneNumber.phone_number.gsub(/\D/, '')
     assert_match(/^(0|33)([1-5]|[8-9])\d{8}$/, phone)
   end
 
   def test_fr_cell_phone_format
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/,'')
+    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_match(/^(0|33)(6|7)\d{8}$/, mobile)
   end
 

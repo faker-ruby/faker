@@ -15,3 +15,6 @@ Faker::SiliconValley.invention # => "Tres Comas Tequila"
 Faker::SiliconValley.motto # => "Our products are products, producing unrivaled results"
 
 Faker::SiliconValley.url # => "http://www.piedpiper.com"
+
+Faker::SiliconValley.email #=> "richard@piedpiper.test"
+```

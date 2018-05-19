@@ -6,7 +6,7 @@ module Faker
       end
 
       def fhtagn(number_of = 1)
-        number_of.times.collect { fetch('lovecraft.fhtagn') }.join(". ")
+        Array.new(number_of) { fetch('lovecraft.fhtagn') }.join('. ')
       end
 
       def deity
@@ -23,19 +23,18 @@ module Faker
 
       def word
         random_word = sample(translate('faker.lovecraft.words'))
-        random_word.match(/\s/) ? word : random_word
+        random_word =~ /\s/ ? word : random_word
       end
 
       def words(num = 3, spaces_allowed = false)
         resolved_num = resolve(num)
         word_list = translate('faker.lovecraft.words')
-        word_list = word_list * ((resolved_num / word_list.length) + 1)
+        word_list *= ((resolved_num / word_list.length) + 1)
 
         return shuffle(word_list)[0, resolved_num] if spaces_allowed
         words = shuffle(word_list)[0, resolved_num]
-        words.each_with_index { |w, i| words[i] = word if w.match(/\s/) }
+        words.each_with_index { |w, i| words[i] = word if w =~ /\s/ }
       end
-
 
       def sentences(sentence_count = 3)
         [].tap do |sentences|

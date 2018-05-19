@@ -16,5 +16,4 @@ class TestFakerDessert < Test::Unit::TestCase
   def test_flavor
     assert @tester.flavor.match(/\w+\.?/)
   end
-
 end

@@ -1,5 +1,7 @@
 # Faker::FunnyName
 
+Available since version 1.8.0.
+
 ```ruby
 Faker::FunnyName.name #=> "Sam Pull"
 

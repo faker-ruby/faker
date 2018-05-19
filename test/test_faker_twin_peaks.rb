@@ -15,5 +15,5 @@ class TestFakerTwinPeaks < Test::Unit::TestCase
 
   def test_quote
     assert @tester.quote.match(/\w+/)
-  end  
+  end
 end

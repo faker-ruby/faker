@@ -5,6 +5,10 @@ module Faker
         fetch('food.dish')
       end
 
+      def description
+        fetch('food.descriptions')
+      end
+
       def ingredient
         fetch('food.ingredients')
       end
@@ -16,7 +20,7 @@ module Faker
       def measurement
         fetch('food.measurement_sizes') + ' ' + fetch('food.measurements')
       end
-      
+
       def metric_measurement
         fetch('food.metric_measurements')
       end

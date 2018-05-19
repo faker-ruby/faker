@@ -1,5 +1,7 @@
 # Faker::HarryPotter
 
+Available since version 1.7.3.
+
 ```ruby
 Faker::HarryPotter.character #=> "Harry Potter"
 

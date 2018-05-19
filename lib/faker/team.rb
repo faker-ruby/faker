@@ -19,6 +19,5 @@ module Faker
         fetch('team.mascot')
       end
     end
-
   end
 end

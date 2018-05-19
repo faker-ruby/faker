@@ -28,6 +28,10 @@ module Faker
       def url
         fetch('silicon_valley.urls')
       end
+
+      def email
+        fetch('silicon_valley.email')
+      end
     end
   end
 end
