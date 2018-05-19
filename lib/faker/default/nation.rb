@@ -8,6 +8,10 @@ module Faker
         fetch('nation.nationality')
       end
 
+      def flag
+        fetch('nation.flag')
+      end
+
       def language
         fetch('nation.language')
       end

@@ -7,6 +7,10 @@ class TestFakerNation < Test::Unit::TestCase
     @tester = Faker::Nation
   end
 
+  def test_flag
+    assert @tester.flag.match(/\p{M}*+/)
+  end
+
   def test_nationality
     assert @tester.nationality.match(/(\w+\.? ?){2,3}/)
   end
@@ -19,7 +23,7 @@ class TestFakerNation < Test::Unit::TestCase
     assert @tester.capital_city.match(/(\w+\.? ?){2,3}/)
   end
 
-  def test_natinonal_sport
+  def test_national_sport
     assert @tester.national_sport.match(/(\w+\.? ?){2,3}/)
   end
 end
