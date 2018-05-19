@@ -102,7 +102,7 @@ module Faker
         result = []
         weights = [6, 5, 7, 2, 3, 4, 5, 6, 7]
         loop do
-          result = Array.new(3) { (rand(9) + 1) } + Array.new(7) { rand(10) }
+          result = Array.new(3) { rand(1..9) } + Array.new(7) { rand(10) }
           break if (weight_sum(result, weights) % 11) == result[9]
         end
         result.join('')
