@@ -504,9 +504,9 @@ en:
         - "#{field} #{position}"
         - "#{seniority} #{position}"
     dessert:
-      variety: ["Cake", "Cookie", "Pie", "Ice Cream", "Pudding", "Sweet Bread"]
-      topping: ["Rainbow Sprinkles", "Chocolate Chips", "Whipped Cream", "Frosting", "Peanut Butter", "Gummy Bears", "Mocha Drizzle", "Caramel", "Bacon" ]
-      flavor: ["Vanilla", "Chocolate", "Strawberries", "Birthday Cake", "Salted Caramel", "Banana", "Butter Pecan" ]
+      variety: ["Cake", "Cookie", "Pie", "Ice Cream", "Pudding", "Sweet Bread", "Brownies"]
+      topping: ["Rainbow Sprinkles", "Chocolate Chips", "Whipped Cream", "Frosting", "Peanut Butter", "Gummy Bears", "Mocha Drizzle", "Caramel", "Bacon", "Coconut", "Kix", "Cheerios", Peanuts" ]
+      flavor: ["Vanilla", "Chocolate", "Strawberry", "Birthday Cake", "Salted Caramel", "Banana", "Butter Pecan", "Mint Chocolate Chip", "Peanut Butter Cup", "Lemon Chiffon", "Mud Pie" ]
     demographic:
       race: ["American Indian or Alaska Native", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "White"]
       sex: ["Male", "Female"]
