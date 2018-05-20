@@ -1,5 +1,7 @@
 # Faker::Space
 
+Available since version 1.6.4.
+
 ```ruby
 # Random planet from our Solar System
 Faker::Space.planet #=> "Venus"
@@ -39,4 +41,7 @@ Faker::Space.distance_measurement #=> "15 parsecs"
 
 # Random meteorite name
 Faker::Space.meteorite #=> "Ensisheim"
+
+# Random launch vehicule name
+Faker::Space.launch_vehicule #=> "Saturn IV"
 ```

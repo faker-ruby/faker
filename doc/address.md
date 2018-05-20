@@ -1,5 +1,7 @@
 # Faker::Address
 
+Available since version 0.3.0.
+
 ```ruby
 Faker::Address.city #=> "Imogeneborough"
 
@@ -10,6 +12,8 @@ Faker::Address.street_address #=> "282 Kevin Brook"
 Faker::Address.secondary_address #=> "Apt. 672"
 
 Faker::Address.building_number #=> "7304"
+
+Faker::Address.community #=> "University Crossing"
 
 Faker::Address.zip_code #=> "58517" or "23285-4905"
 
@@ -32,6 +36,8 @@ Faker::Address.state_abbr #=> "AP"
 Faker::Address.country #=> "French Guiana"
 
 Faker::Address.country_code #=> "IT"
+
+Faker::Address.country_code_long #=> "ITA"
 
 Faker::Address.latitude #=> "-58.17256227443719"
 

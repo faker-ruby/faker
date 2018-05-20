@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerUniqueGenerator < Test::Unit::TestCase
-
   def test_generates_unique_values
     generator = Faker::UniqueGenerator.new(Faker::Base, 10_000)
 
@@ -24,4 +23,30 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
     end
   end
 
+  def test_clears_unique_values
+    stubbed_generator = Object.new
+    def stubbed_generator.test
+      1
+    end
+
+    generator = Faker::UniqueGenerator.new(stubbed_generator, 3)
+
+    assert_equal(1, generator.test)
+
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator.test
+    end
+
+    Faker::UniqueGenerator.clear
+
+    assert_equal(1, generator.test)
+
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator.test
+    end
+
+    generator.clear
+
+    assert_equal(1, generator.test)
+  end
 end
