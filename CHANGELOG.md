@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1134](https://github.com/stympy/faker/pull/792) Add Faker::FamousLastWords ([susiirwin](https://github.com/susiirwin))
 - [PR #1134](https://github.com/stympy/faker/pull/1134) Test against latest Ruby versions [@tagliala](https://github.com/tagliala)
 - [PR #794](https://github.com/stympy/faker/pull/794) Adding country code + minor locale updates [@vveliev](https://github.com/vveliev)
 - [PR #1108](https://github.com/stympy/faker/pull/1108) Update Faker::Dessert [@natalietate](https://github.com/natalietate)
@@ -371,7 +372,6 @@
 - undefined method `Number' for Faker:Module [\#153](https://github.com/stympy/faker/issues/153)
 
 **Merged pull requests:**
-- Add Faker::FamousLastWords [\#792](https://github.com/stympy/faker/pull/792) ([susiirwin](https://github.com/susiirwin))
 - Refactors code in Faker::Color [\#777](https://github.com/stympy/faker/pull/777) ([tiagofsilva](https://github.com/tiagofsilva))
 - Add Faker::TwinPeaks \[fixed\] [\#775](https://github.com/stympy/faker/pull/775) ([pedantic-git](https://github.com/pedantic-git))
 - Added wookie\_sentence method documentation to README [\#772](https://github.com/stympy/faker/pull/772) ([toddnestor](https://github.com/toddnestor))
