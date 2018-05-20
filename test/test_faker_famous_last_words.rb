@@ -6,7 +6,7 @@ class TestFakerFamousLastWords < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.phrase.match(/\w+\.?/)
+    assert @tester.last_words.match(/\w+/)
   end
 
 end
