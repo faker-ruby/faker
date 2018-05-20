@@ -14,6 +14,6 @@ class TestFakerCurrency < Test::Unit::TestCase
   end
 
   def test_symbol
-    assert @tester.symbol.length > 1
+    assert_instance_of String, @tester.symbol
   end
 end

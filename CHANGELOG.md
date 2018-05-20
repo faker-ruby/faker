@@ -5,6 +5,8 @@
 
 **Additions**
 
+- [PR #1144](https://github.com/stympy/faker/pull/1144) Added polish_register_of_national_economy and polish_taxpayer_identification_number ([rafalpetryka](https://github.com/rafalpetryka))
+- [PR #1232](https://github.com/stympy/faker/pull/1144) Fix file permissions ([tagliala](https://github.com/tagliala))
 - [PR #246](https://github.com/stympy/faker/pull/246) latitude and longitude should be float instead of string. ([zeitnot](https://github.com/zeitnot))
 - [PR #1117](https://github.com/stympy/faker/pull/1117) Added Ukrainian entries to yml ([RomanIsko](https://github.com/RomanIsko))
 - [PR #1201](https://github.com/stympy/faker/pull/1201) Adding Currency Symbol to Faker ([SaimonL](https://github.com/SaimonL))
