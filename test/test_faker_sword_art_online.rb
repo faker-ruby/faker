@@ -20,9 +20,4 @@ class TestFakerSwordArtOnline < Test::Unit::TestCase
   def test_item
     assert @tester.item.match(/\w+\.?/)
   end
-
-  def test_quest
-    assert @tester.quest.match(/\w+\.?/)
-  end
-
 end
