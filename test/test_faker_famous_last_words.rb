@@ -8,5 +8,4 @@ class TestFakerFamousLastWords < Test::Unit::TestCase
   def test_name
     assert @tester.last_words.match(/\w+/)
   end
-
 end
