@@ -2,7 +2,7 @@ require 'simplecov'
 require 'simplecov-console'
 SimpleCov.formatter = SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start do
-  add_filter ['.bundle', 'lib/extensions', 'test']
+  add_filter ['.bundle', 'test']
 end
 
 require 'test/unit'
