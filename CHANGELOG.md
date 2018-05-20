@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1230](https://github.com/stympy/faker/pull/1230) Add Faker::SwordArtOnline ([lnchambers](https://github.com/lnchambers))
 - [PR #1205](https://github.com/stympy/faker/pull/1205) Show the type of field that violated a uniqueness constraint [@AndrewRayCode](https://github.com/AndrewRayCode)
 - [PR #1134](https://github.com/stympy/faker/pull/792) Add Faker::FamousLastWords ([susiirwin](https://github.com/susiirwin))
 - [PR #1229](https://github.com/stympy/faker/pull/1229) sv.yml: Typos [@olleolleolle](https://github.com/olleolleolle)
