@@ -16,7 +16,7 @@ If you are not familiar with Rubocop, spend some time studying their page and a 
 
 4. Please add a test for your change. Only refactoring and documentation changes
 require no new tests. If you are adding functionality or fixing a bug, we need
-a test!
+a test! We use [Minitest](https://github.com/seattlerb/minitest) in this project. If you're not familiar with Minitest and are comfortable with Rspec, please ask a collaborator to review your PR.
 
 5. Make the test pass. Always use `sample`, `shuffle`, and `rand` from
 the Base class (just like the rest of the code) rather than
