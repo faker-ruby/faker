@@ -97,6 +97,28 @@ module Faker
         fetch('company.profession')
       end
 
+      # Get a random Polish taxpayer identification number More info https://pl.wikipedia.org/wiki/NIP
+      def polish_taxpayer_identification_number
+        result = []
+        weights = [6, 5, 7, 2, 3, 4, 5, 6, 7]
+        loop do
+          result = Array.new(3) { rand(1..9) } + Array.new(7) { rand(10) }
+          break if (weight_sum(result, weights) % 11) == result[9]
+        end
+        result.join('')
+      end
+
+      # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
+      def polish_register_of_national_economy(length = 9)
+        raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
+        random_digits = []
+        loop do
+          random_digits = Array.new(length) { rand(10) }
+          break if collect_regon_sum(random_digits) == random_digits.last
+        end
+        random_digits.join('')
+      end
+
       private
 
       # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb
@@ -156,6 +178,24 @@ module Faker
           sum += weight * abn[i].to_i
         end
 
+        sum
+      end
+
+      def collect_regon_sum(array)
+        weights = if array.size == 9
+                    [8, 9, 2, 3, 4, 5, 6, 7]
+                  else
+                    [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8]
+                  end
+        sum = weight_sum(array, weights) % 11
+        sum == 10 ? 0 : sum
+      end
+
+      def weight_sum(array, weights)
+        sum = 0
+        (0..weights.size - 1).each do |index|
+          sum += (array[index] * weights[index])
+        end
         sum
       end
     end
