@@ -5,7 +5,12 @@
 
 **Additions**
 
+- [PR #1205](https://github.com/stympy/faker/pull/1205) Show the type of field that violated a uniqueness constraint [@AndrewRayCode](https://github.com/AndrewRayCode)
 - [PR #1134](https://github.com/stympy/faker/pull/792) Add Faker::FamousLastWords ([susiirwin](https://github.com/susiirwin))
+- [PR #1229](https://github.com/stympy/faker/pull/1229) sv.yml: Typos [@olleolleolle](https://github.com/olleolleolle)
+- [PR #1228](https://github.com/stympy/faker/pull/1228) Added Japanese color to yml [@katao](https://github.com/katao)
+- [PR #1227](https://github.com/stympy/faker/pull/1227) Update RuboCop to 0.56.0 [@tagliala](https://github.com/tagliala)
+- [PR #1225](https://github.com/stympy/faker/pull/1225) Test against latest Ruby versions [@tagliala](https://github.com/tagliala)
 - [PR #1134](https://github.com/stympy/faker/pull/1134) Test against latest Ruby versions [@tagliala](https://github.com/tagliala)
 - [PR #794](https://github.com/stympy/faker/pull/794) Adding country code + minor locale updates [@vveliev](https://github.com/vveliev)
 - [PR #1108](https://github.com/stympy/faker/pull/1108) Update Faker::Dessert [@natalietate](https://github.com/natalietate)

@@ -33,7 +33,7 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
 
     generator.my_field
 
-    assert_raise_message "Retry limit exceeded for my_field" do
+    assert_raise_message 'Retry limit exceeded for my_field' do
       generator.my_field
     end
   end
