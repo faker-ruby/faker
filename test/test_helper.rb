@@ -1,3 +1,10 @@
+require 'simplecov'
+require 'simplecov-console'
+SimpleCov.formatter = SimpleCov.formatter = SimpleCov::Formatter::Console
+SimpleCov.start do
+  add_filter ['.bundle', 'lib/extensions', 'test']
+end
+
 require 'test/unit'
 require 'rubygems'
 require 'timecop'
