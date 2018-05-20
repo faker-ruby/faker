@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=c9b8356df2031a5a72462555fe898245cf24d83c7bb82c40ddb5c6c6976c4319
 sudo: false
 language: ruby
 cache: bundler
@@ -8,7 +11,13 @@ rvm:
   - 2.4.3
   - 2.5.0
   - ruby-head
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script: bundle exec rake
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 matrix:
  allow_failures:
    - rvm: ruby-head
