@@ -5,6 +5,9 @@
 
 **Additions**
 
+- [PR #246](https://github.com/stympy/faker/pull/246) latitude and longitude should be float instead of string. ([zeitnot](https://github.com/zeitnot))
+- [PR #1117](https://github.com/stympy/faker/pull/1117) Added Ukrainian entries to yml ([RomanIsko](https://github.com/RomanIsko))
+- [PR #1201](https://github.com/stympy/faker/pull/1201) Adding Currency Symbol to Faker ([SaimonL](https://github.com/SaimonL))
 - [PR #1230](https://github.com/stympy/faker/pull/1230) Add Faker::SwordArtOnline ([lnchambers](https://github.com/lnchambers))
 - [PR #1205](https://github.com/stympy/faker/pull/1205) Show the type of field that violated a uniqueness constraint [@AndrewRayCode](https://github.com/AndrewRayCode)
 - [PR #1134](https://github.com/stympy/faker/pull/792) Add Faker::FamousLastWords ([susiirwin](https://github.com/susiirwin))
