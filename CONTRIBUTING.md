@@ -25,7 +25,30 @@ arguments. An exception to this could be a method that takes only one
 optional argument, and it's unlikely that that method would ever take more
 than one optional argument.
 
-7. Push to your fork and submit a pull request.
+7. If you need to update your branch with master before merging, you should follow these steps:
+```ruby
+# GitHub ID: vbrazo
+# Branch: fixes/fix-warnings
+
+git remote -v # Show all Remote Branches
+git remote add faker git@github.com:stympy/faker.git # if you don't have the faker remote address yet
+git checkout master # switch to the master branch
+git reset --hard HEAD~50 # because your branch master might have things that don't need anymore
+git pull faker master # now you're good to go
+git push -f [your remote address] master # now your master is updated
+# in this case it would be git push -f vbrazo master
+
+# if you want to update your fixes/fix-warnings branch after updating your master:
+git checkout fixes/fix-warnings
+git merge --no-ff master
+git status # to see what files have conflicts. Fix the conflicts and commit them
+git add .
+git commit -m 'Fix merge conflicts with master'
+git push -f [your remote address] fixes/fix-warnings
+# in this case it would be git push -f vbrazo fixes/fix-warnings
+```
+
+8. Push to your fork and submit a pull request.
 
 Syntax:
 
