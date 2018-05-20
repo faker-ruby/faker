@@ -7,7 +7,6 @@ class TestFakerDessert < Test::Unit::TestCase
 
   def test_variety
     assert @tester.variety.match(/\w+/)
-      puts @tester.variety
   end
 
   def test_topping
