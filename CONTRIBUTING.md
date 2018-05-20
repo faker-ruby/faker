@@ -5,27 +5,36 @@ We love pull requests. Here's a quick guide:
 2. Run the tests. We only take pull requests with passing tests, and it's great
 to know that you have a clean slate: `bundle && bundle exec rake`
 
-3. Add a test for your change. Only refactoring and documentation changes
+3. We are using [Rubocop](https://github.com/bbatsov/rubocop) because we love static code analyzers. 
+
+Ways to run Rubocop:
+- `bundle exec rubocop`
+- `bundle exec rake` would run the test suite and after that it runs the Ruby static code analyzer.
+If you want to try to fix the rubocop violations, you should run `bundle exec rubocop -a` to try to autocorrect the issues. If this last command doesn't solve the violations, you'll need to google.
+
+If you are not familiar with Rubocop, spend some time studying their page and a few study cases on the internet.
+
+4. Please add a test for your change. Only refactoring and documentation changes
 require no new tests. If you are adding functionality or fixing a bug, we need
 a test!
 
-4. Make the test pass.  Always use `sample`, `shuffle`, and `rand` from
+5. Make the test pass. Always use `sample`, `shuffle`, and `rand` from
 the Base class (just like the rest of the code) rather than
 `Array#sample`, `Array#shuffle` and `Kernel#rand` to preserve the
 deterministic feature.
 
-5. When adding a new class, add a new yaml file to
+6. When adding a new class, add a new yaml file to
 `lib/locales/en` rather than adding translations to
 `lib/locales/en.yml`.  For example, if you add Faker::MyThing,
 put your translations in `lib/locales/en/my_thing.yml`.  See [the locale
 README](./lib/locales/en/README.md) for more info.
 
-6. Methods with optional arguments should use keyword rather than positional 
+7. Methods with optional arguments should use keyword rather than positional 
 arguments. An exception to this could be a method that takes only one 
 optional argument, and it's unlikely that that method would ever take more
 than one optional argument.
 
-7. If you need to update your branch with master before merging, you should follow these steps:
+8. If you need to update your branch with master before merging, you should follow these steps:
 ```ruby
 # GitHub ID: vbrazo
 # Branch: fixes/fix-warnings
