@@ -5,6 +5,9 @@
 
 **Additions**
 
+- [PR #1134](https://github.com/stympy/faker/pull/1134) Test against latest Ruby versions [@tagliala](https://github.com/tagliala)
+- [PR #794](https://github.com/stympy/faker/pull/794) Adding country code + minor locale updates [@vveliev](https://github.com/vveliev)
+- [PR #1108](https://github.com/stympy/faker/pull/1108) Update Faker::Dessert [@natalietate](https://github.com/natalietate)
 - [PR #1223](https://github.com/stympy/faker/pull/1223) Fix minitest warnings [@vbrazo](https://github.com/vbrazo)
 - [PR #1174](https://github.com/stympy/faker/pull/1174) Dota2 API: Str Heroes, heroes quotes, Items, Teams, Players [@felipesousafs](https://github.com/darylf)
 - [PR #974](https://github.com/stympy/faker/pull/974) Specify version number each class was introduced [@darylf](https://github.com/darylf)
