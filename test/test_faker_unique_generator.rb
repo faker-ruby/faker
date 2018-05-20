@@ -23,6 +23,21 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
     end
   end
 
+  def test_includes_field_name_in_error
+    stubbed_generator = Object.new
+    def stubbed_generator.my_field
+      1
+    end
+
+    generator = Faker::UniqueGenerator.new(stubbed_generator, 3)
+
+    generator.my_field
+
+    assert_raise_message "Retry limit exceeded for my_field" do
+      generator.my_field
+    end
+  end
+
   def test_clears_unique_values
     stubbed_generator = Object.new
     def stubbed_generator.test

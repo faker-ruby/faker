@@ -17,7 +17,7 @@ module Faker
         return result
       end
 
-      raise RetryLimitExceeded
+      raise RetryLimitExceeded, "Retry limit exceeded for #{name}"
     end
     # rubocop:enable Style/MethodMissingSuper
 
