@@ -56,11 +56,10 @@ DEPENDENCIES
   coveralls (>= 0.8.21)
   faker!
   minitest
-  pry
   rake
   rubocop
   test-unit
   timecop
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
