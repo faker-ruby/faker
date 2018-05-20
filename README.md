@@ -120,6 +120,7 @@ Contents
   - [Faker::String](doc/string.md)
   - [Faker::Stripe](doc/stripe.md)
   - [Faker::Superhero](doc/superhero.md)
+  - [Faker::SwordArtOnline](doc/sword_art_online.md)
   - [Faker::Team](doc/team.md)
   - [Faker::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
   - [Faker::TheITCrowd](doc/the_it_crowd.md)
