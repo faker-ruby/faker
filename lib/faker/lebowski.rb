@@ -4,7 +4,7 @@ module Faker
       def actor
         fetch('lebowski.actors')
       end
-      
+
       def character
         fetch('lebowski.characters')
       end

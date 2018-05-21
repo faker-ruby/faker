@@ -1,47 +1,47 @@
 module Faker
   class Types < Base
     CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a
-    SIMPLE_TYPES = [:string, :fixnum]
-    COMPLEX_TYPES = [:hash, :array]
+    SIMPLE_TYPES = %i[string fixnum].freeze
+    COMPLEX_TYPES = %i[hash array].freeze
 
     class << self
-      def string(words=1)
+      def rb_string(words = 1)
         resolved_num = resolve(words)
-        word_list = (
+        word_list =
           translate('faker.lorem.words')
-        )
-        word_list = word_list * ((resolved_num / word_list.length) + 1)
-        shuffle(word_list)[0, resolved_num].join(" ")
+
+        word_list *= ((resolved_num / word_list.length) + 1)
+        shuffle(word_list)[0, resolved_num].join(' ')
       end
 
       def character
         sample(CHARACTERS)
       end
 
-      def integer(from=0, to=100)
+      def rb_integer(from = 0, to = 100)
         rand(from..to).to_i
       end
 
-      def hash(key_count=1)
-        Hash.new.tap do |hsh|
+      def rb_hash(key_count = 1)
+        {}.tap do |hsh|
           Lorem.words(key_count * 2).uniq.first(key_count).each do |s|
-            hsh.merge!({s.to_sym => self.random_type})
+            hsh.merge!(s.to_sym => random_type)
           end
         end
       end
 
-      def complex_hash(key_count=1)
-        Hash.new.tap do |hsh|
+      def complex_rb_hash(key_count = 1)
+        {}.tap do |hsh|
           Lorem.words(key_count * 2).uniq.first(key_count).each do |s|
-            hsh.merge!({s.to_sym => self.random_complex_type})
+            hsh.merge!(s.to_sym => random_complex_type)
           end
         end
       end
 
-      def array(len=1)
-        Array.new.tap do |ar|
+      def rb_array(len = 1)
+        [].tap do |ar|
           len.times do
-            ar.push self.random_type
+            ar.push random_type
           end
         end
       end
@@ -50,11 +50,11 @@ module Faker
         type_to_use = SIMPLE_TYPES[rand(0..SIMPLE_TYPES.length - 1)]
         case type_to_use
         when :string
-          self.string
+          rb_string
         when :fixnum
-          self.integer
+          rb_integer
         else
-          self.integer
+          rb_integer
         end
       end
 
@@ -63,15 +63,15 @@ module Faker
         type_to_use = types[rand(0..types.length - 1)]
         case type_to_use
         when :string
-          self.string
+          rb_string
         when :fixnum
-          self.integer
+          rb_integer
         when :hash
-          self.hash
+          rb_hash
         when :array
-          self.array
+          rb_array
         else
-          self.integer
+          rb_integer
         end
       end
 

@@ -26,5 +26,4 @@ class TestKoLocale < Test::Unit::TestCase
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.name.is_a? String
   end
-
 end

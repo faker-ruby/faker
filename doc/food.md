@@ -1,5 +1,7 @@
 # Faker::Food
 
+Available since version 1.7.0.
+
 ```ruby
 
 Faker::Food.dish #=> "Caesar Salad"
