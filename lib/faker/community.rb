@@ -6,7 +6,7 @@ module Faker
       end
 
       def quotes
-       fetch('community.quotes')
+        fetch('community.quotes')
       end
     end
   end
