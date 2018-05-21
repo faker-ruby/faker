@@ -37,6 +37,7 @@ Contents
   - [Faker::Boolean](doc/boolean.md)
   - [Faker::BossaNova](doc/bossa_nova.md)
   - [Faker::Business](doc/business.md)
+  - [Faker::Cannabis](doc/cannabis.md)
   - [Faker::Cat](doc/cat.md)
   - [Faker::ChuckNorris](doc/chuck_norris.md)
   - [Faker::Code](doc/code.md)
