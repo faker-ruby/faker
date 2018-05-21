@@ -53,6 +53,7 @@ module Faker
       end
 
       private
+
       def locale_period
         translate('faker.lorem.punctuation.period')
       end
