@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1125](https://github.com/stympy/faker/pull/1125) Added Faker::Community ([geoffhull03](https://github.com/geoffhull03))
 - [PR #1129](https://github.com/stympy/faker/pull/1129) Added SingularSiegler quotes ([splashinn](https://github.com/splashinn))
 - [PR #1144](https://github.com/stympy/faker/pull/1144) Added polish_register_of_national_economy and polish_taxpayer_identification_number ([rafalpetryka](https://github.com/rafalpetryka))
 - [PR #1232](https://github.com/stympy/faker/pull/1144) Fix file permissions ([tagliala](https://github.com/tagliala))
