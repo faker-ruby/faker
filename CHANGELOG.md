@@ -5,6 +5,9 @@
 
 **Additions**
 
+- [PR #987](https://github.com/stympy/faker/pull/987) Add Faker::Cannabis class [@GhostGroup](https://github.com/GhostGroup)
+- [PR #1236](https://github.com/stympy/faker/pull/1236) Updates dessert faker [@susiirwin](https://github.com/susiirwin)
+- [PR #1146](https://github.com/stympy/faker/pull/1146) Update company docs [@PuZZleDucK](https://github.com/PuZZleDucK)
 - [PR #1199](https://github.com/stympy/faker/pull/1199) Add Faker::StrangerThings [@Connerh92](https://github.com/Connerh92)
 - [PR #1125](https://github.com/stympy/faker/pull/1125) Added Faker::Community ([geoffhull03](https://github.com/geoffhull03))
 - [PR #1129](https://github.com/stympy/faker/pull/1129) Added SingularSiegler quotes ([splashinn](https://github.com/splashinn))
