@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1199](https://github.com/stympy/faker/pull/1199) Add Faker::StrangerThings [@Connerh92](https://github.com/Connerh92)
 - [PR #1125](https://github.com/stympy/faker/pull/1125) Added Faker::Community ([geoffhull03](https://github.com/geoffhull03))
 - [PR #1129](https://github.com/stympy/faker/pull/1129) Added SingularSiegler quotes ([splashinn](https://github.com/splashinn))
 - [PR #1144](https://github.com/stympy/faker/pull/1144) Added polish_register_of_national_economy and polish_taxpayer_identification_number ([rafalpetryka](https://github.com/rafalpetryka))
