@@ -1,5 +1,7 @@
 # Faker::StarWars
 
+Available since version 1.6.2.
+
 ```ruby
 Faker::StarWars.call_sign #=> "Grey 5"
 

@@ -28,5 +28,4 @@ class TestEnIndLocale < Test::Unit::TestCase
   def test_en_ind_city
     assert_match(/(\w+\.? ?){2,3}/, Faker::Address.city)
   end
-
 end

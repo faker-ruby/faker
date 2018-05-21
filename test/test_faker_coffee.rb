@@ -16,7 +16,8 @@ class TestFakerCoffee < Test::Unit::TestCase
   def test_origin
     assert origin = @tester.origin.match(/\A(?<region>([[:alnum:]]+'?-?.?,?\s?){1,5}), (?<country>([[:alnum:]]+\s?){1,5})\z/)
 
-    region, country = origin[:region], origin[:country]
+    region = origin[:region]
+    country = origin[:country]
     search_format_country = country.split.length > 1 ? country.downcase.split.join('_') : country.downcase
     regions = Faker::Base.fetch_all("coffee.regions.#{search_format_country}")
 
@@ -26,7 +27,7 @@ class TestFakerCoffee < Test::Unit::TestCase
 
   def test_notes
     assert notes = @tester.notes
-                   .match(/\A(?<intensifier>[\s\w-]+), (?<body>[\s\w-]+), (?<f1>[!\s\w-]+), (?<f2>[!\s\w-]+), (?<f3>[!\s\w-]+)\z/)
+                          .match(/\A(?<intensifier>[\s\w-]+), (?<body>[\s\w-]+), (?<f1>[!\s\w-]+), (?<f2>[!\s\w-]+), (?<f3>[!\s\w-]+)\z/)
 
     assert @intensifiers.include?(notes[:intensifier])
     assert @body_descriptors.include?(notes[:body])

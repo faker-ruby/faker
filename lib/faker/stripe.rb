@@ -9,11 +9,11 @@ module Faker
         else
           unless valid_cards.include?(card_type.to_sym)
             raise ArgumentError,
-              "Valid credit cards argument can be left blank or include #{valid_cards.join(', ')}"
+                  "Valid credit cards argument can be left blank or include #{valid_cards.join(', ')}"
           end
         end
 
-        return fetch('stripe.valid_cards.' + card_type)
+        fetch('stripe.valid_cards.' + card_type)
       end
 
       def invalid_card(card_error = nil)
@@ -24,15 +24,15 @@ module Faker
         else
           unless invalid_cards.include?(card_error.to_sym)
             raise ArgumentError,
-              "Invalid credit cards argument can be left blank or include #{invalid_cards.join(', ')}"
+                  "Invalid credit cards argument can be left blank or include #{invalid_cards.join(', ')}"
           end
         end
 
-        return fetch('stripe.invalid_cards.' + card_error)
+        fetch('stripe.invalid_cards.' + card_error)
       end
 
       def month
-        "%02d" % rand_in_range(1, 12)
+        format('%02d', rand_in_range(1, 12))
       end
 
       def year
@@ -41,9 +41,8 @@ module Faker
       end
 
       def ccv(card_type = nil)
-        (card_type.to_s == "amex" ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s
+        (card_type.to_s == 'amex' ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s
       end
-
     end
   end
 end

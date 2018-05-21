@@ -24,5 +24,4 @@ class TestFakerVerb < Test::Unit::TestCase
   def test_ing_form
     assert @tester.ing_form.match(/\w+/)
   end
-
 end

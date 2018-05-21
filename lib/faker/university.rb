@@ -16,12 +16,12 @@ module Faker
       end
 
       def greek_organization
-        3.times.map { |_| sample(greek_alphabet) }.join
+        Array.new(3) { |_| sample(greek_alphabet) }.join
       end
 
       def greek_alphabet
-        ['Α', 'B', 'Γ', 'Δ', 'E', 'Z', 'H', 'Θ', 'I', 'K', 'Λ', 'M', 'N', 'Ξ',
-         'O', 'Π', 'P', 'Σ', 'T', 'Y', 'Φ', 'X', 'Ψ', 'Ω']
+        %w[Α B Γ Δ E Z H Θ I K Λ M N Ξ
+           O Π P Σ T Y Φ X Ψ Ω]
       end
     end
   end
