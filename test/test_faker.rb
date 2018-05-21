@@ -1,9 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFaker < Test::Unit::TestCase
-
-  def setup
-  end
+  def setup; end
 
   def test_numerify
     100.times do
@@ -66,13 +64,35 @@ class TestFaker < Test::Unit::TestCase
     Faker::Config.random = Random.new(42)
     assert v == Faker::Base.rand_in_range(0, 1000)
   end
-  
+
+  def test_rand_for_nil
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(nil)
+    end
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand
+    end
+  end
+
+  def test_rand_for_zero
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(0)
+    end
+    assert_equal 0, Faker::Base.rand(0)
+  end
+
+  def test_rand_for_range
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(0..6)
+    end
+    assert_includes 0..6, Faker::Base.rand(0..6)
+  end
+
   def test_unique
-    unique_numbers = 8.times.map do
+    unique_numbers = Array.new(8) do
       Faker::Base.unique.numerify('#')
     end
 
     assert_equal(unique_numbers.uniq, unique_numbers)
   end
-
 end

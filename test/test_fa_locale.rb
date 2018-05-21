@@ -14,5 +14,4 @@ class TestFaLocale < Test::Unit::TestCase
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
   end
-
 end

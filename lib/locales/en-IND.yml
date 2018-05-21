@@ -8,7 +8,7 @@ en-IND:
       last_name: [Abbott, Achari, Acharya, Adiga, Agarwal, Ahluwalia, Ahuja, Arora, Asan, Bandopadhyay, Banerjee, Bharadwaj, Bhat, Butt, Bhattacharya, Bhattathiri, Chaturvedi, Chattopadhyay, Chopra, Desai, Deshpande, Devar, Dhawan, Dubashi, Dutta, Dwivedi, Embranthiri, Ganaka, Gandhi, Gill, Gowda, Guha, Guneta, Gupta, Iyer, Iyengar, Jain, Jha, Johar, Joshi, Kakkar, Kaniyar, Kapoor, Kaul, Kaur, Khan, Khanna, Khatri, Kocchar, Mahajan, Malik, Marar, Menon, Mehra,Mehrotra, Mishra, Mukhopadhyay, Nayar, Naik, Nair, Nambeesan, Namboothiri, Nehru, Pandey, Panicker, Patel, Patil, Pilla, Pillai, Pothuvaal, Prajapat, Rana, Reddy, Saini, Sethi, Shah, Sharma, Shukla, Singh, Sinha, Somayaji, Tagore, Talwar, Tandon, Trivedi, Varrier, Varma, Varman, Verma]
     address:
       postcode: ['######']
-      city: ['Bengaluru', 'Chennai', 'Hyderabad', 'Kolkata', 'Mumbai', 'New Delhi', 'Thiruvananthapuram']
+      city: [Bengaluru, Chennai, Hyderabad, Kolkata, Mumbai, New Delhi, Thiruvananthapuram, Visakhapatnam]
       state: [Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jammu and Kashmir, Jharkhand, Karnataka, Kerala, Madya Pradesh, Maharashtra, Manipur, Meghalaya, Mizoram, Nagaland, Orissa, Punjab, Rajasthan, Sikkim, Tamil Nadu, Tripura, Uttaranchal, Uttar Pradesh, West Bengal, Andaman and Nicobar Islands, Chandigarh, Dadar and Nagar Haveli, Daman and Diu, Delhi, Lakshadweep, Pondicherry]
       state_abbr: [AP, AR, AS, BR, CG, DL, GA, GJ, HR, HP, JK, JS, KA, KL, MP, MH, MN, ML, MZ, NL, OR, PB, RJ, SK, TN, TR, UK, UP, WB, AN, CH, DN, DD, LD, PY]
       default_country: [India, Indian Republic, Bharat, Hindustan]
