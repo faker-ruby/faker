@@ -1,10 +1,8 @@
-#encoding: utf-8
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 require File.expand_path(File.dirname(__FILE__) + '/test_helper')
 
 class TestFakerCannabis < Test::Unit::TestCase
-
   def setup
     Faker::Config.locale = nil
   end
@@ -50,8 +48,7 @@ class TestFakerCannabis < Test::Unit::TestCase
   end
 
   def test_locales
-    [nil,'en','de',#...
-    ].each do |locale_name|
+    [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
       assert Faker::Cannabis.strain.is_a? String
       assert Faker::Cannabis.cannabinoid_abbreviation.is_a? String

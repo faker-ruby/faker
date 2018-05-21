@@ -1,10 +1,7 @@
-#encoding: utf-8
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 module Faker
-
   class Cannabis < Base
-
     def self.strain
       fetch('cannabis.strains')
     end
@@ -44,7 +41,5 @@ module Faker
     def self.website
       fetch('cannabis.websites')
     end
-
-  end #class Cannabis
-
-end #module Faker
+  end
+end
