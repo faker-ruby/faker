@@ -14,7 +14,7 @@ module Faker
           translate('faker.lorem.words') +
           (supplemental ? translate('faker.lorem.supplemental') : [])
         )
-        word_list = word_list * ((resolved_num / word_list.length) + 1)
+        word_list *= ((resolved_num / word_list.length) + 1)
         shuffle(word_list)[0, resolved_num]
       end
 
@@ -52,7 +52,7 @@ module Faker
         1.upto(resolve(question_count)).collect { question(3, supplemental) }
       end
 
-    private
+      private
 
       # If an array or range is passed, a random value will be selected.
       # All other values are simply returned.

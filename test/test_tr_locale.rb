@@ -32,4 +32,11 @@ class TestTRLocale < Test::Unit::TestCase
     assert Faker::Address.city.is_a? String
     assert Faker::Address.country.is_a? String
   end
+
+  def test_tr_book_fields
+    assert Faker::Book.title.is_a? String
+    assert Faker::Book.author.is_a? String
+    assert Faker::Book.publisher.is_a? String
+    assert Faker::Book.quote.is_a? String
+  end
 end

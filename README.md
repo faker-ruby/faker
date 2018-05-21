@@ -1,5 +1,6 @@
-# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
+![logotype a happy-07](https://user-images.githubusercontent.com/36028424/40263395-4318481e-5b44-11e8-92e5-3dcc1ce169b3.png)
 
+# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker) [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
 
 This gem is a port of Perl's Data::Faker library that generates fake data.
 
@@ -26,7 +27,9 @@ Contents
   - [Faker::Address](doc/address.md)
   - [Faker::Ancient](doc/ancient.md)
   - [Faker::App](doc/app.md)
+  - [Faker::AquaTeenHungerForce](doc/aqua_teen_hunger_force.md)
   - [Faker::Avatar](doc/avatar.md)
+  - [Faker::BackToTheFuture](doc/back_to_the_future.md)
   - [Faker::Bank](doc/bank.md)
   - [Faker::Beer](doc/beer.md)
   - [Faker::Bitcoin](doc/bitcoin.md)
@@ -40,22 +43,31 @@ Contents
   - [Faker::Coffee](doc/coffee.md)
   - [Faker::Color](doc/color.md)
   - [Faker::Commerce](doc/commerce.md)
+  - [Faker::Community](doc/community.md)
   - [Faker::Company](doc/company.md)
   - [Faker::Compass](doc/compass.md)
+  - [Faker::Currency](doc/currency.md)
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::Date](doc/date.md)
   - [Faker::Demographic](doc/demographic.md)
   - [Faker::Dessert](doc/dessert.md)
+  - [Faker::Dog](doc/dog.md)
+  - [Faker::Dota](doc/dota.md)
   - [Faker::DragonBall](doc/dragon_ball.md)
   - [Faker::DrWho](doc/dr_who.md)
+  - [Faker::DumbAndDumber](doc/dumb_and_dumber.md)
+  - [Faker::Dune](doc/dune.md)
   - [Faker::Educator](doc/educator.md)
   - [Faker::ElderScrolls](doc/elder_scrolls.md)
+  - [Faker::Fallout](doc/fallout.md)
   - [Faker::FamilyGuy](doc/family_guy.md)
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
   - [Faker::Food](doc/food.md)
+  - [Faker::Football](doc/football.md)
   - [Faker::Friends](doc/friends.md)
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
+  - [Faker::Gender](doc/gender.md)
   - [Faker::Hacker](doc/hacker.md)
   - [Faker::HarryPotter](doc/harry_potter.md)
   - [Faker::HeyArnold](doc/hey_arnold.md)
@@ -63,10 +75,13 @@ Contents
   - [Faker::Hobbit](doc/hobbit.md)
   - [Faker::HowIMetYourMother](doc/how_i_met_your_mother.md)
   - [Faker::HitchhikersGuideToTheGalaxy](doc/hitchhikers_guide_to_the_galaxy.md)
+  - [Faker::IDNumber](doc/id_number.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::Job](doc/job.md)
+  - [Faker::Kpop](doc/kpop.md)
   - [Faker::LeagueOfLegends](doc/league_of_legends.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
+  - [Faker::LoremFlickr](doc/lorem_flickr.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
   - [Faker::Lorem](doc/lorem.md)
   - [Faker::Lovecraft](doc/lovecraft.md)
@@ -76,33 +91,52 @@ Contents
   - [Faker::MostInterestingManInTheWorld](doc/most_interesting_man_in_the_world.md)
   - [Faker::Movie](doc/movie.md)
   - [Faker::Music](doc/music.md)
+  - [Faker::Myst](doc/myst.md)
   - [Faker::Name](doc/name.md)
+  - [Faker::Nation](doc/nation.md)
+  - [Faker::NatoPhoneticAlphabet](doc/nato_phonetic_alphabet.md)
+  - [Faker::NewGirl](doc/new_girl.md)
   - [Faker::Number](doc/number.md)
   - [Faker::Omniauth](doc/omniauth.md)
+  - [Faker::OnePiece](doc/one_piece.md)
   - [Faker::Overwatch](doc/overwatch.md)
+  - [Faker::ParksAndRec](doc/parks_and_rec.md)
   - [Faker::PhoneNumber](doc/phone_number.md)
   - [Faker::Placeholdit](doc/placeholdit.md)
   - [Faker::Pokemon](doc/pokemon.md)
+  - [Faker::ProgrammingLanguage](doc/programming_language.md)
   - [Faker::RickAndMorty](doc/rick_and_morty.md)
   - [Faker::Robin](doc/robin.md)
   - [Faker::RockBand](doc/rock_band.md)
   - [Faker::RuPaul](doc/rupaul.md)
+  - [Faker::Science](doc/science.md)
   - [Faker::Seinfeld](doc/seinfeld.md)
+  - [Faker::SiliconValley](doc/silicon_valley.md)
   - [Faker::Simpsons](doc/simpsons.md)
+  - [Faker::SingularSiegler](doc/singular_siegler.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
+  - [Faker::Source](doc/source.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
   - [Faker::StarWars](doc/star_wars.md)
+  - [Faker::StrangerThings](doc/stranger_things.md)
+  - [Faker::String](doc/string.md)
+  - [Faker::Stripe](doc/stripe.md)
   - [Faker::Superhero](doc/superhero.md)
+  - [Faker::SwordArtOnline](doc/sword_art_online.md)
   - [Faker::Team](doc/team.md)
   - [Faker::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
+  - [Faker::TheITCrowd](doc/the_it_crowd.md)
+  - [Faker::TheThickOfIt](doc/the_thick_of_it.md)
   - [Faker::Time](doc/time.md)
   - [Faker::TwinPeaks](doc/twin_peaks.md)
   - [Faker::Twitter](doc/twitter.md)
+  - [Faker::Types](doc/types.md)
   - [Faker::UmphreysMcgee](doc/umphreys_mcgee.md)
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
   - [Faker::VentureBros](doc/venture_bros.md)
+  - [Faker::VForVendetta](doc/v_for_vendetta.md)
   - [Faker::Witcher](doc/witcher.md)
   - [Faker::WorldOfWarcraft](doc/world_of_warcraft.md)
   - [Faker::Zelda](doc/zelda.md)
@@ -116,10 +150,17 @@ Contents
 ```bash
 gem install faker
 ```
+Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your gemfile to:
+
+```ruby
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+```
 
 ## Usage
 
 ```ruby
+require 'faker'
+
 Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
@@ -139,12 +180,6 @@ that have been returned, for example between tests.
 ```ruby
 Faker::Name.unique.clear # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
-```
-It is also possible to add a random number to the end of faker data to increase the
-likelihood of unique data being generated. For example:
-
-```ruby
-Faker::Name.unique + ((1..1000).to_a).sample
 ```
 
 ### Deterministic Random

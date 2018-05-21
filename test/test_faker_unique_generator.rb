@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerUniqueGenerator < Test::Unit::TestCase
-
   def test_generates_unique_values
     generator = Faker::UniqueGenerator.new(Faker::Base, 10_000)
 
@@ -21,6 +20,21 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
 
     assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
       generator.test
+    end
+  end
+
+  def test_includes_field_name_in_error
+    stubbed_generator = Object.new
+    def stubbed_generator.my_field
+      1
+    end
+
+    generator = Faker::UniqueGenerator.new(stubbed_generator, 3)
+
+    generator.my_field
+
+    assert_raise_message 'Retry limit exceeded for my_field' do
+      generator.my_field
     end
   end
 

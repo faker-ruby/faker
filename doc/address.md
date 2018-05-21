@@ -1,5 +1,7 @@
 # Faker::Address
 
+Available since version 0.3.0.
+
 ```ruby
 Faker::Address.city #=> "Imogeneborough"
 
