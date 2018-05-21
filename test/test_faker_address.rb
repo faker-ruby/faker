@@ -62,11 +62,11 @@ class TestFakerAddress < Test::Unit::TestCase
   end
 
   def test_latitude
-    assert @tester.latitude.match(/-?\d+\.\d+/)
+    assert_instance_of Float, @tester.latitude
   end
 
   def test_longitude
-    assert @tester.longitude.match(/-?\d+\.\d+/)
+    assert_instance_of Float, @tester.longitude
   end
 
   def test_full_address

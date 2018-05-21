@@ -1,17 +1,8 @@
-# add Coveralls and SimpleCov support
-begin
-  require 'simplecov'
-  require 'coveralls'
-
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-    SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter
-  ]
-  SimpleCov.start do
-    add_filter ['.bundle', 'lib/helpers', 'lib/extensions', 'test']
-  end
-rescue LoadError
-  puts 'Coverage disabled, enable by installing simplecov'
+require 'simplecov'
+require 'simplecov-console'
+SimpleCov.formatter = SimpleCov.formatter = SimpleCov::Formatter::Console
+SimpleCov.start do
+  add_filter ['.bundle', 'test']
 end
 
 require 'test/unit'

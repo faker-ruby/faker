@@ -67,6 +67,38 @@ class TestFakerCompany < Test::Unit::TestCase
     assert @tester.profession.match(/[a-z ]+\.?/)
   end
 
+  def test_polish_taxpayer_identification_number
+    number = @tester.polish_taxpayer_identification_number
+    control_sum = 0
+    [6, 5, 7, 2, 3, 4, 5, 6, 7].each_with_index do |control, index|
+      control_sum += control * number[index].to_i
+    end
+    assert control_sum.modulo(11) != 10
+  end
+
+  def test_polish_register_of_national_economy
+    # 8 length should fail
+    assert_raise ArgumentError do
+      @tester.polish_register_of_national_economy(8)
+    end
+    # 9 length
+    number = @tester.polish_register_of_national_economy
+    control_sum = 0
+    [8, 9, 2, 3, 4, 5, 6, 7].each_with_index do |control, index|
+      control_sum += control * number[index].to_i
+    end
+    control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
+    assert control_number == number[8].to_i
+    # 14 length
+    number = @tester.polish_register_of_national_economy(14)
+    control_sum = 0
+    [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8].each_with_index do |control, index|
+      control_sum += control * number[index].to_i
+    end
+    control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
+    assert control_number == number[13].to_i
+  end
+
   private
 
   def abn_checksum(abn)

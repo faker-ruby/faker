@@ -1,4 +1,6 @@
-# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker) [![Coverage Status](https://coveralls.io/repos/github/stympy/faker/badge.svg/)](https://coveralls.io/github/stympy/faker)
+![logotype a happy-07](https://user-images.githubusercontent.com/36028424/40263395-4318481e-5b44-11e8-92e5-3dcc1ce169b3.png)
+
+# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker) [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
 
 This gem is a port of Perl's Data::Faker library that generates fake data.
 
@@ -41,6 +43,7 @@ Contents
   - [Faker::Coffee](doc/coffee.md)
   - [Faker::Color](doc/color.md)
   - [Faker::Commerce](doc/commerce.md)
+  - [Faker::Community](doc/community.md)
   - [Faker::Company](doc/company.md)
   - [Faker::Compass](doc/compass.md)
   - [Faker::Currency](doc/currency.md)
@@ -49,6 +52,7 @@ Contents
   - [Faker::Demographic](doc/demographic.md)
   - [Faker::Dessert](doc/dessert.md)
   - [Faker::Dog](doc/dog.md)
+  - [Faker::Dota](doc/dota.md)
   - [Faker::DragonBall](doc/dragon_ball.md)
   - [Faker::DrWho](doc/dr_who.md)
   - [Faker::DumbAndDumber](doc/dumb_and_dumber.md)
@@ -87,6 +91,7 @@ Contents
   - [Faker::MostInterestingManInTheWorld](doc/most_interesting_man_in_the_world.md)
   - [Faker::Movie](doc/movie.md)
   - [Faker::Music](doc/music.md)
+  - [Faker::Myst](doc/myst.md)
   - [Faker::Name](doc/name.md)
   - [Faker::Nation](doc/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/nato_phonetic_alphabet.md)
@@ -108,6 +113,7 @@ Contents
   - [Faker::Seinfeld](doc/seinfeld.md)
   - [Faker::SiliconValley](doc/silicon_valley.md)
   - [Faker::Simpsons](doc/simpsons.md)
+  - [Faker::SingularSiegler](doc/singular_siegler.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Source](doc/source.md)
   - [Faker::Space](doc/space.md)
@@ -117,6 +123,7 @@ Contents
   - [Faker::String](doc/string.md)
   - [Faker::Stripe](doc/stripe.md)
   - [Faker::Superhero](doc/superhero.md)
+  - [Faker::SwordArtOnline](doc/sword_art_online.md)
   - [Faker::Team](doc/team.md)
   - [Faker::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
   - [Faker::TheITCrowd](doc/the_it_crowd.md)

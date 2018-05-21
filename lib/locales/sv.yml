@@ -63,9 +63,9 @@ sv:
       color: [vit, silver, grå, svart, röd, grön, blå, gul, lila, indigo, guld, brun, rosa, purpur, korall]
       department: ["Böcker", "Filmer", "Musik", "Spel", "Elektronik", "Datorer", "Hem", "Trädgård", "Verktyg", "Livsmedel", "Hälsa", "Skönhet", "Leksaker", "Klädsel", "Skor", "Smycken", "Sport"]
       product_name:
-        adjective: [Liten, Ergonomisk, Robust, Intelligent, Söt, Otrolig, Fatastisk, Praktisk, Slimmad, Grym, Enorm, Mediokra, Synergistic, Tung, Lätt, Aerodynamisk, Tålig]
-        material: [Stål, Metall, Trä, Betong, Plast, Bomul, Grnit, Gummi, Latex, Läder , Silke, Ull, Linne, Marmor, Järn, Brons, Koppar, Aluminium, Papper]
-        product: [Stol, Bil, Dator, Handskar, Pants, Shirt, Table, Shoes, Hat, Plate, Kniv, Flaska, Coat, Lampa. Tangentbord, Bag, Bänk, Klocka, Titta, Plånbok]
+        adjective: [Liten, Ergonomisk, Robust, Intelligent, Söt, Otrolig, Fantastisk, Praktisk, Slimmad, Grym, Enorm, Mediokra, Synergistic, Tung, Lätt, Aerodynamisk, Tålig]
+        material: [Stål, Metall, Trä, Betong, Plast, Bomull, Granit, Gummi, Latex, Läder, Silke, Ull, Linne, Marmor, Järn, Brons, Koppar, Aluminium, Papper]
+        product: [Stol, Bil, Dator, Handskar, Pants, Shirt, Table, Shoes, Hat, Plate, Kniv, Flaska, Coat, Lampa, Tangentbord, Bag, Bänk, Klocka, Titta, Plånbok]
 
     team:
       suffix: [IF, FF, BK, HK, AIF, SK, FC, SK, BoIS, FK, BIS, FIF, IK]

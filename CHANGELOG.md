@@ -1,11 +1,35 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-05-17
+### Latest update: 2018-05-18
 
 **Additions**
 
 - [PR #1199](https://github.com/stympy/faker/pull/1199) Add Faker::StrangerThings [@Connerh92](https://github.com/Connerh92)
+- [PR #1125](https://github.com/stympy/faker/pull/1125) Added Faker::Community ([geoffhull03](https://github.com/geoffhull03))
+- [PR #1129](https://github.com/stympy/faker/pull/1129) Added SingularSiegler quotes ([splashinn](https://github.com/splashinn))
+- [PR #1144](https://github.com/stympy/faker/pull/1144) Added polish_register_of_national_economy and polish_taxpayer_identification_number ([rafalpetryka](https://github.com/rafalpetryka))
+- [PR #1232](https://github.com/stympy/faker/pull/1144) Fix file permissions ([tagliala](https://github.com/tagliala))
+- [PR #246](https://github.com/stympy/faker/pull/246) latitude and longitude should be float instead of string. ([zeitnot](https://github.com/zeitnot))
+- [PR #1117](https://github.com/stympy/faker/pull/1117) Added Ukrainian entries to yml ([RomanIsko](https://github.com/RomanIsko))
+- [PR #1201](https://github.com/stympy/faker/pull/1201) Adding Currency Symbol to Faker ([SaimonL](https://github.com/SaimonL))
+- [PR #1230](https://github.com/stympy/faker/pull/1230) Add Faker::SwordArtOnline ([lnchambers](https://github.com/lnchambers))
+- [PR #1205](https://github.com/stympy/faker/pull/1205) Show the type of field that violated a uniqueness constraint [@AndrewRayCode](https://github.com/AndrewRayCode)
+- [PR #1134](https://github.com/stympy/faker/pull/792) Add Faker::FamousLastWords ([susiirwin](https://github.com/susiirwin))
+- [PR #1229](https://github.com/stympy/faker/pull/1229) sv.yml: Typos [@olleolleolle](https://github.com/olleolleolle)
+- [PR #1228](https://github.com/stympy/faker/pull/1228) Added Japanese color to yml [@katao](https://github.com/katao)
+- [PR #1227](https://github.com/stympy/faker/pull/1227) Update RuboCop to 0.56.0 [@tagliala](https://github.com/tagliala)
+- [PR #1225](https://github.com/stympy/faker/pull/1225) Test against latest Ruby versions [@tagliala](https://github.com/tagliala)
+- [PR #1134](https://github.com/stympy/faker/pull/1134) Test against latest Ruby versions [@tagliala](https://github.com/tagliala)
+- [PR #794](https://github.com/stympy/faker/pull/794) Adding country code + minor locale updates [@vveliev](https://github.com/vveliev)
+- [PR #1108](https://github.com/stympy/faker/pull/1108) Update Faker::Dessert [@natalietate](https://github.com/natalietate)
+- [PR #1223](https://github.com/stympy/faker/pull/1223) Fix minitest warnings [@vbrazo](https://github.com/vbrazo)
+- [PR #1174](https://github.com/stympy/faker/pull/1174) Dota2 API: Str Heroes, heroes quotes, Items, Teams, Players [@felipesousafs](https://github.com/darylf)
+- [PR #974](https://github.com/stympy/faker/pull/974) Specify version number each class was introduced [@darylf](https://github.com/darylf)
+- [PR #1221](https://github.com/stympy/faker/pull/1221) Updated the Readme file with the new logo [@tobaloidee](https://github.com/tobaloidee)
+- [PR #439](https://github.com/stympy/faker/pull/439) Remove Eichmann surname [@jonahwh](https://github.com/jonahwh)
+- [PR #1220](https://github.com/stympy/faker/pull/1220) Updates for Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
+- [PR #1128](https://github.com/stympy/faker/pull/1128) Use ruby syntax highlighting in Omniauth doc [@swrobel](https://github.com/swrobel)
 - [PR #1204](https://github.com/stympy/faker/pull/1204) Update sample output of `Faker::App.version` [@joshuapinter](https://github.com/joshuapinter)
 - [PR #1218](https://github.com/stympy/faker/pull/1218) Add Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicule [@gauth-ier](https://github.com/Gauth-ier)
@@ -38,6 +62,7 @@
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 - [PR #1193](https://github.com/stympy/faker/pull/1193) Add Faker::MichaelScott API [@snayrouz](https://github.com/snayrouz)
 - [PR #818](https://github.com/stympy/faker/pull/818) LoremFlickr support [@mrstebo](https://github.com/mrstebo)
+- [PR #1179](https://github.com/stympy/faker/pull/1179) Random color with Placeholdit [@nicolas-brousse](https://github.com/nicolas-brousse)
 - New collaborator - Vitor Oliveira [@vbrazo](https://github.com/vbrazo)
 
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
@@ -361,7 +386,6 @@
 - undefined method `Number' for Faker:Module [\#153](https://github.com/stympy/faker/issues/153)
 
 **Merged pull requests:**
-
 - Refactors code in Faker::Color [\#777](https://github.com/stympy/faker/pull/777) ([tiagofsilva](https://github.com/tiagofsilva))
 - Add Faker::TwinPeaks \[fixed\] [\#775](https://github.com/stympy/faker/pull/775) ([pedantic-git](https://github.com/pedantic-git))
 - Added wookie\_sentence method documentation to README [\#772](https://github.com/stympy/faker/pull/772) ([toddnestor](https://github.com/toddnestor))
