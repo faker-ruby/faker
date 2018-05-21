@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1129](https://github.com/stympy/faker/pull/1129) Added SingularSiegler quotes ([splashinn](https://github.com/splashinn))
 - [PR #1144](https://github.com/stympy/faker/pull/1144) Added polish_register_of_national_economy and polish_taxpayer_identification_number ([rafalpetryka](https://github.com/rafalpetryka))
 - [PR #1232](https://github.com/stympy/faker/pull/1144) Fix file permissions ([tagliala](https://github.com/tagliala))
 - [PR #246](https://github.com/stympy/faker/pull/246) latitude and longitude should be float instead of string. ([zeitnot](https://github.com/zeitnot))
