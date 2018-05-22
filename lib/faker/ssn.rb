@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Faker
   class Ssn < Base
     class << self
       def swedish(hyphen: true, full_year: true)
-        date = Date.birthday.to_s.gsub('-', '')
+        date = Date.birthday.to_s.delete('-')
         serial = rand(999).to_s.rjust(3, '0')
 
         ssn = date + serial
@@ -10,17 +12,16 @@ module Faker
 
         ssn.insert(-4, '-') if hyphen
         ssn.slice!(0..1) unless full_year
-        return ssn + checksum
+        ssn + checksum
       end
 
-      private 
+      private
 
-      def luhn_checksum(s)
-        digits = s.split('').each_with_index.map { |n, i| n.to_i * (2 - i % 2) }
-        sum = digits.inject(0) { |sum, digit| sum + digit.to_i }
-        return (10 - sum % 10) % 10
+      def luhn_checksum(str)
+        digits = str.split('').each_with_index.map { |n, i| n.to_i * (2 - i % 2) }
+        sum = digits.inject(0) { |acc, digit| acc + digit.to_i }
+        (10 - sum % 10) % 10
       end
-
     end
   end
 end

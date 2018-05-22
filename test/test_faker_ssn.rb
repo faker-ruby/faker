@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.dirname(__FILE__) + '/test_helper.rb'
 
 class TestFakerSSN < Test::Unit::TestCase
