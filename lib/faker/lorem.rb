@@ -29,7 +29,7 @@ module Faker
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
-        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + '.'
+        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + locale_period
       end
 
       def sentences(sentence_count = 3, supplemental = false)
@@ -37,7 +37,7 @@ module Faker
       end
 
       def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 3)
-        sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(' ')
+        sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(locale_space)
       end
 
       def paragraphs(paragraph_count = 3, supplemental = false)
@@ -45,7 +45,7 @@ module Faker
       end
 
       def question(word_count = 4, supplemental = false, random_words_to_add = 6)
-        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + '?'
+        words(word_count + rand(random_words_to_add.to_i), supplemental).join(locale_space).capitalize + locale_question_mark
       end
 
       def questions(question_count = 3, supplemental = false)
@@ -53,6 +53,18 @@ module Faker
       end
 
       private
+
+      def locale_period
+        translate('faker.lorem.punctuation.period') || '.'
+      end
+
+      def locale_space
+        translate('faker.lorem.punctuation.space') || ' '
+      end
+
+      def locale_question_mark
+        translate('faker.lorem.punctuation.question_mark') || '?'
+      end
 
       # If an array or range is passed, a random value will be selected.
       # All other values are simply returned.
