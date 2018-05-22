@@ -1,10 +1,11 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-05-18
+### Latest update: 2018-05-21
 
 **Additions**
 
+- [PR #1239](https://github.com/stympy/faker/pull/1239) Update Faker::Food ([susiirwin](https://github.com/susiirwin))
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 - [PR #987](https://github.com/stympy/faker/pull/987) Add Faker::Cannabis class [@GhostGroup](https://github.com/GhostGroup)
 - [PR #1236](https://github.com/stympy/faker/pull/1236) Updates dessert faker [@susiirwin](https://github.com/susiirwin)
