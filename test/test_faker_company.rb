@@ -99,6 +99,10 @@ class TestFakerCompany < Test::Unit::TestCase
     assert control_number == number[13].to_i
   end
 
+  def test_mod11
+    assert @tester.send(:mod11, 0)
+  end
+
   private
 
   def abn_checksum(abn)
