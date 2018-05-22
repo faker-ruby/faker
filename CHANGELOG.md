@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1106](https://github.com/stympy/faker/pull/1106/files) Adds turkish phone number formats [@zasman](https://github.com/ZASMan)
 - [PR #1239](https://github.com/stympy/faker/pull/1239) Update Faker::Food ([susiirwin](https://github.com/susiirwin))
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 - [PR #987](https://github.com/stympy/faker/pull/987) Add Faker::Cannabis class [@GhostGroup](https://github.com/GhostGroup)
