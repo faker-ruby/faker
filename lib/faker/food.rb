@@ -13,6 +13,14 @@ module Faker
         fetch('food.ingredients')
       end
 
+      def fruits
+        fetch('food.fruits')
+      end
+
+      def vegetables
+        fetch('food.vegetables')
+      end
+
       def spice
         fetch('food.spices')
       end
