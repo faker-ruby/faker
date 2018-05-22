@@ -41,4 +41,8 @@ class TestUkLocale < Test::Unit::TestCase
   def test_uk_company_prefix_returns_true_value
     assert_send([Faker::Company, :prefix])
   end
+
+  def test_uk_romanize_cyrillic
+    assert Faker::Char.romanize_cyrillic('').is_a? String
+  end
 end
