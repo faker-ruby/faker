@@ -5,6 +5,7 @@
 
 **Additions**
 
+- [PR #1106](https://github.com/stympy/faker/pull/1106/files) Adds turkish phone number formats [@zasman](https://github.com/ZASMan)
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 - [PR #987](https://github.com/stympy/faker/pull/987) Add Faker::Cannabis class [@GhostGroup](https://github.com/GhostGroup)
 - [PR #1236](https://github.com/stympy/faker/pull/1236) Updates dessert faker [@susiirwin](https://github.com/susiirwin)
@@ -116,7 +117,6 @@
 - phone\_number can generate invalid US numbers [\#24](https://github.com/stympy/faker/issues/24)
 
 **Merged pull requests:**
-- Adds turkish phone number formats [PR #1106](https://github.com/stympy/faker/pull/1106/files) [@zasman](https://github.com/ZASMan)
 
 - Fixes a few typos in names and deletes a duplicate [\#1084](https://github.com/stympy/faker/pull/1084) ([katelovescode](https://github.com/katelovescode))
 - Fix Faker::Dog and add tests [\#1082](https://github.com/stympy/faker/pull/1082) ([wtanna](https://github.com/wtanna))
