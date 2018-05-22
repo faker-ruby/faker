@@ -8,13 +8,13 @@ class TestFakerSSN < Test::Unit::TestCase
   def test_swedish_social_security_number
     ssn = @tester.swedish
     assert_equal 13, ssn.length
-    assert ssn.include?("-")
+    assert ssn.include?('-')
   end
 
   def test_swedish_ssn_without_hyphen
     ssn = @tester.swedish hyphen: false
     assert_equal 12, ssn.length
-    assert !ssn.include?("-")
+    assert !ssn.include?('-')
   end
 
   def test_swedish_ssn_without_full_year

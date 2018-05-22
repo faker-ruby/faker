@@ -2,13 +2,13 @@ module Faker
   class Ssn < Base
     class << self
       def swedish(hyphen: true, full_year: true)
-        date = Date.birthday.to_s.gsub("-", "")
-        serial = rand(999).to_s.rjust(3, "0")
+        date = Date.birthday.to_s.gsub('-', '')
+        serial = rand(999).to_s.rjust(3, '0')
 
         ssn = date + serial
         checksum = luhn_checksum(ssn[2..-1]).to_s
 
-        ssn.insert(-4, "-") if hyphen
+        ssn.insert(-4, '-') if hyphen
         ssn.slice!(0..1) unless full_year
         return ssn + checksum
       end
