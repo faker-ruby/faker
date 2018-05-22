@@ -72,4 +72,11 @@ class TestFakerTypes < Test::Unit::TestCase
     expected = 'Foobar'
     assert @tester.send(:titleize, val) == expected
   end
+
+  def test_resolve
+    array = [1, 2, 3]
+    range = 1..10
+    assert array.include?(@tester.send(:resolve, array))
+    assert range.include?(@tester.send(:resolve, range))
+  end
 end
