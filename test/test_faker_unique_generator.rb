@@ -8,6 +8,14 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
     assert_equal([1, 2], result.sort)
   end
 
+  def test_respond_to_missing
+    stubbed_generator = Object.new
+
+    generator = Faker::UniqueGenerator.new(stubbed_generator, 3)
+
+    assert_equal(generator.send(:respond_to_missing?, 'faker_address'), true)
+  end
+
   def test_returns_error_when_retries_exceeded
     stubbed_generator = Object.new
     def stubbed_generator.test
