@@ -12,4 +12,8 @@ class TestFakerNation < Test::Unit::TestCase
   def test_language
     assert @tester.language.match(/[A-Z][a-z]+\.?/)
   end
+
+  def test_capital_city
+    assert @tester.capital_city.match(/(\w+\.? ?){2,3}/)
+  end
 end
