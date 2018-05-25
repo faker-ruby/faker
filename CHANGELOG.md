@@ -4,6 +4,7 @@
 ### Latest update: 2018-05-22
 
 ### Feature Request
+- [PR #1250](https://github.com/stympy/faker/pull/1250) House appliances [rafaelcpalmeida](https://github.com/rafaelcpalmeida)
 - [PR #1239](https://github.com/stympy/faker/pull/1239) Update Faker::Food to separate out Fruits and Veggies [susiirwin](https://github.com/susiirwin)
 - [PR #1221](https://github.com/stympy/faker/pull/1221) Updated the Readme file with the new logo [@tobaloidee](https://github.com/tobaloidee)
 - [PR #1109](https://github.com/stympy/faker/pull/1109) Added Princess Bride [@jayphodges](https://github.com/jayphodges)
