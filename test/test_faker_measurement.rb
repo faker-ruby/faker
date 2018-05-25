@@ -5,7 +5,7 @@ class TestFakerMeasurement < Test::Unit::TestCase
     @tester = Faker::Measurement
   end
 
-  def height
+  def test_height
     assert @tester.height.match(/\d\s[a-z]/)
     assert @tester.height(1).match(/\d\s[a-z]/)
   end
