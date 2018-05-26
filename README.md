@@ -73,6 +73,7 @@ Contents
   - [Faker::Food](doc/food.md)
   - [Faker::Football](doc/football.md)
   - [Faker::Friends](doc/friends.md)
+  - [Faker::FunnyName](doc/funny_name.md)
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
   - [Faker::Gender](doc/gender.md)
   - [Faker::Hacker](doc/hacker.md)
