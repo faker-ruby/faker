@@ -43,6 +43,10 @@ module Faker
         "https://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
 
+      def type
+        fetch('company.type')
+      end
+
       # rubocop:disable Style/AsciiComments
       # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/Número_de_identificación_fiscal
       # rubocop:enable Style/AsciiComments
