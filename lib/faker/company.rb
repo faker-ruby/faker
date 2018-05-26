@@ -47,6 +47,10 @@ module Faker
         fetch('company.type')
       end
 
+      def profession
+        fetch('company.profession')
+      end
+
       # rubocop:disable Style/AsciiComments
       # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/Número_de_identificación_fiscal
       # rubocop:enable Style/AsciiComments
@@ -95,10 +99,6 @@ module Faker
         abn = "00#{base}"
 
         (99 - (abn_checksum(abn) % 89)).to_s + base
-      end
-
-      def profession
-        fetch('company.profession')
       end
 
       # Get a random Polish taxpayer identification number More info https://pl.wikipedia.org/wiki/NIP
