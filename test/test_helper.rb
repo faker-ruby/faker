@@ -1,6 +1,5 @@
 require 'simplecov'
-require 'simplecov-console'
-SimpleCov.formatter = SimpleCov.formatter = SimpleCov::Formatter::Console
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
 SimpleCov.start do
   add_filter ['.bundle', 'test']
 end
