@@ -15,7 +15,6 @@ task :console do
 end
 
 task :coverage_report do
-  require 'rubygems'
   require 'launchy'
 
   Launchy.open('coverage/index.html')

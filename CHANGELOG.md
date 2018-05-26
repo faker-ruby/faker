@@ -4,9 +4,10 @@
 ### Latest update: 2018-05-22
 
 ### Feature Request
-- [PR #1247](https://github.com/stympy/faker/pull/1247) Generate capital city of random Nation [gkunwar](https://github.com/gkunwar)
-- [PR #1250](https://github.com/stympy/faker/pull/1250) House appliances [rafaelcpalmeida](https://github.com/rafaelcpalmeida)
-- [PR #1239](https://github.com/stympy/faker/pull/1239) Update Faker::Food to separate out Fruits and Veggies [susiirwin](https://github.com/susiirwin)
+- [PR #1258](https://github.com/stympy/faker/pull/1258) Remove simplecov-console and add coverage_report rake task [@vbrazo](https://github.com/vbrazo)
+- [PR #1247](https://github.com/stympy/faker/pull/1247) Generate capital city of random Nation [@gkunwar](https://github.com/gkunwar)
+- [PR #1250](https://github.com/stympy/faker/pull/1250) House appliances [@rafaelcpalmeida](https://github.com/rafaelcpalmeida)
+- [PR #1239](https://github.com/stympy/faker/pull/1239) Update Faker::Food to separate out Fruits and Veggies [@susiirwin](https://github.com/susiirwin)
 - [PR #1221](https://github.com/stympy/faker/pull/1221) Updated the Readme file with the new logo [@tobaloidee](https://github.com/tobaloidee)
 - [PR #1109](https://github.com/stympy/faker/pull/1109) Added Princess Bride [@jayphodges](https://github.com/jayphodges)
 - [PR #987](https://github.com/stympy/faker/pull/987) Add Faker::Cannabis class [@GhostGroup](https://github.com/GhostGroup)
@@ -72,6 +73,8 @@
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 
 ### Documentation
+- [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [mrstebo](https://github.com/mrstebo)
+- [PR #1256](https://github.com/stympy/faker/pull/1256) Fixing documentation - Faker::Name to Faker::Zelda [mrstebo](https://github.com/mrstebo)
 - [PR #1254](https://github.com/stympy/faker/pull/1254) Added missing documentation. [mrstebo](https://github.com/mrstebo)
 - [PR #1252](https://github.com/stympy/faker/pull/1252) Add missing documentation - Faker::Address to Faker::Myst [vbrazo](https://github.com/vbrazo)
 - [PR #1248](https://github.com/stympy/faker/pull/1248) Remove duplications from company.md [vrinek](https://github.com/vrinek)
