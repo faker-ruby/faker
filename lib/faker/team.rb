@@ -15,6 +15,10 @@ module Faker
         fetch('address.state')
       end
 
+      def sport
+        fetch('team.sport')
+      end
+
       def mascot
         fetch('team.mascot')
       end
