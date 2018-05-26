@@ -27,6 +27,7 @@ Contents
   - [Faker::Address](doc/address.md)
   - [Faker::Ancient](doc/ancient.md)
   - [Faker::App](doc/app.md)
+  - [Faker::Appliance](doc/appliance.md)
   - [Faker::AquaTeenHungerForce](doc/aqua_teen_hunger_force.md)
   - [Faker::Avatar](doc/avatar.md)
   - [Faker::BackToTheFuture](doc/back_to_the_future.md)
