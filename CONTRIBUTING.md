@@ -40,7 +40,7 @@ than one optional argument.
 
 9. Push to your fork and submit a pull request.
 
-### Github Flow for collaborator and contributors
+### Github Flow for contributors and collaborators
 
 For those of you with commit access, please check out Scott Chacon's blog post about [github flow](http://scottchacon.com/2011/08/31/github-flow.html)
 
@@ -51,12 +51,12 @@ For those of you with commit access, please check out Scott Chacon's blog post a
 > * After someone else has reviewed and signed off on the feature, you can merge it into master
 
 If you're reviewing a PR, you should ask youserlf:
-- Does it work as described? A PR should have a great description.
-- Is it understandable?
-- Is it well implemented?
-- Is it well tested?
-- Is it well documented?
-- Is it following the structure of the project?
+> * Does it work as described? A PR should have a great description.
+> * Is it understandable?
+> * Is it well implemented?
+> * Is it well tested?
+> * Is it well documented?
+> * Is it following the structure of the project?
 
 ### Syntax/Good practices:
 
