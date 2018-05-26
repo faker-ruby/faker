@@ -21,6 +21,10 @@ class TestFakerCompany < Test::Unit::TestCase
     assert @tester.buzzword.match(/\w+\.?/)
   end
 
+  def test_type
+    assert @tester.type.match(/\w+/)
+  end
+
   def test_spanish_organisation_number
     org_no = @tester.spanish_organisation_number
     assert org_no.match(/\D\d{7}/)
