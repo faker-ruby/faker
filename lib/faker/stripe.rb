@@ -16,6 +16,21 @@ module Faker
         fetch('stripe.valid_cards.' + card_type)
       end
 
+      def valid_token(card_type = nil)
+        valid_tokens = translate('faker.stripe.valid_tokens').keys
+
+        if card_type.nil?
+          card_type = sample(valid_tokens).to_s
+        else
+          unless valid_tokens.include?(card_type.to_sym)
+            raise ArgumentError,
+                  "Valid credit cards argument can be left blank or include #{valid_tokens.join(', ')}"
+          end
+        end
+
+        fetch('stripe.valid_tokens.' + card_type)
+      end
+
       def invalid_card(card_error = nil)
         invalid_cards = translate('faker.stripe.invalid_cards').keys
 
