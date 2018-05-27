@@ -28,12 +28,19 @@ class TestLvLocale < Test::Unit::TestCase
   def test_lv_address_methods
     assert Faker::Address.state.is_a? String
     assert Faker::Address.city_name.is_a? String
+    assert Faker::Address.postcode.is_a? String
+    assert Faker::Address.building_number.is_a? String
+    assert Faker::Address.street_suffix.is_a? String
+    assert Faker::Address.city.is_a? String
+    assert Faker::Address.street_name.is_a? String
+    assert Faker::Address.street_address.is_a? String
   end
 
   def test_lv_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.buzzwords.is_a? Array
     assert Faker::Company.bs.is_a? String
+    assert Faker::Company.name.is_a? String
   end
 
   def test_lv_internet_methods
