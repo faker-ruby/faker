@@ -36,9 +36,9 @@ module Faker
       def wookiee_sentence
         sentence = sample(wookiee_words).capitalize
 
-        rand(0..10).times { sentence += " " + sample(wookiee_words)}
+        rand(0..10).times { sentence += ' ' + sample(wookiee_words) }
 
-        sentence + sample(['.','?','!'])
+        sentence + sample(['.', '?', '!'])
       end
 
       def call_numbers
@@ -74,7 +74,7 @@ module Faker
             character = k.to_s if v.include?(character)
           end
 
-          unless quoted_characters.keys.include?(character.to_sym)
+          unless quoted_characters.key?(character.to_sym)
             raise ArgumentError, "Character for quotes can be left blank or #{quoted_characters.keys.join(', ')}"
           end
         end
@@ -94,9 +94,8 @@ module Faker
         fetch_all('star_wars.wookiee_words')
       end
 
-      alias_method :wookie_sentence, :wookiee_sentence
-      alias_method :wookie_words, :wookiee_words
-
+      alias wookie_sentence wookiee_sentence
+      alias wookie_words wookiee_words
     end
   end
 end

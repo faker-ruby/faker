@@ -1,5 +1,94 @@
 # Change Log
 
+## HEAD Unreleased
+### Latest update: 2018-05-22
+
+### Feature Request
+- [PR #1258](https://github.com/stympy/faker/pull/1258) Remove simplecov-console and add coverage_report rake task [@vbrazo](https://github.com/vbrazo)
+- [PR #1247](https://github.com/stympy/faker/pull/1247) Generate capital city of random Nation [@gkunwar](https://github.com/gkunwar)
+- [PR #1250](https://github.com/stympy/faker/pull/1250) House appliances [@rafaelcpalmeida](https://github.com/rafaelcpalmeida)
+- [PR #1239](https://github.com/stympy/faker/pull/1239) Update Faker::Food to separate out Fruits and Veggies [@susiirwin](https://github.com/susiirwin)
+- [PR #1221](https://github.com/stympy/faker/pull/1221) Updated the Readme file with the new logo [@tobaloidee](https://github.com/tobaloidee)
+- [PR #1109](https://github.com/stympy/faker/pull/1109) Added Princess Bride [@jayphodges](https://github.com/jayphodges)
+- [PR #987](https://github.com/stympy/faker/pull/987) Add Faker::Cannabis class [@GhostGroup](https://github.com/GhostGroup)
+- [PR #1199](https://github.com/stympy/faker/pull/1199) Add Faker::StrangerThings [@Connerh92](https://github.com/Connerh92)
+- [PR #1129](https://github.com/stympy/faker/pull/1129) Added SingularSiegler quotes [@splashinn](https://github.com/splashinn)
+- [PR #1235](https://github.com/stympy/faker/pull/1235) Added Faker::Community [@vbrazo](https://github.com/vbrazo)
+- [PR #1144](https://github.com/stympy/faker/pull/1144) Added polish_register_of_national_economy and polish_taxpayer_identification_number [@rafalpetryka](https://github.com/rafalpetryka)
+- [PR #1201](https://github.com/stympy/faker/pull/1201) Adding Currency Symbol to Faker [@SaimonL](https://github.com/SaimonL)
+- [PR #1230](https://github.com/stympy/faker/pull/1230) Add Faker::SwordArtOnline [@lnchambers](https://github.com/lnchambers)
+- [PR #792](https://github.com/stympy/faker/pull/792) Add Faker::FamousLastWords [@susiirwin](https://github.com/susiirwin)
+- [PR #1174](https://github.com/stympy/faker/pull/1174) Dota API: Str Heroes, heroes quotes, Items, Teams, Players [@felipesousafs](https://github.com/darylf)
+- [PR #1220](https://github.com/stympy/faker/pull/1220) Updates for Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
+- [PR #1218](https://github.com/stympy/faker/pull/1218) Add Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
+- [PR #818](https://github.com/stympy/faker/pull/818) LoremFlickr support [@mrstebo](https://github.com/mrstebo)
+- [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicule [@gauth-ier](https://github.com/Gauth-ier)
+- [PR #1211](https://github.com/stympy/faker/pull/1211) Add bands, genres, and albums to Music [@jmkoni](https://github.com/jmkoni)
+- [PR #1215](https://github.com/stympy/faker/pull/1215) Added Nato Phonetic Alphabet [@timcustard](https://github.com/timcustard)
+- [PR #1209](https://github.com/stympy/faker/pull/1209) Add Faker::Source [@graciano](https://github.com/graciano)
+- [PR #1147](https://github.com/stympy/faker/pull/1147) Add Spanish citizen id and docs [@PuZZleDucK](https://github.com/PuZZleDucK)
+- [PR #1189](https://github.com/stympy/faker/pull/1189) Add Faker::Football [@AlexGascon](https://github.com/AlexGascon)
+- [PR #1202](https://github.com/stympy/faker/pull/1202) adds both inclusive and binary gender option [@jmkoni](https://github.com/jmkoni)
+- [PR #1193](https://github.com/stympy/faker/pull/1193) Add Faker::MichaelScott API [@snayrouz](https://github.com/snayrouz)
+- [PR #1179](https://github.com/stympy/faker/pull/1179) Random color with Placeholdit [@nicolas-brousse](https://github.com/nicolas-brousse)
+- [PR #1190](https://github.com/stympy/faker/pull/1190) Add Nation object, its specs and docs [@gkunwar](https://github.com/gkunwar)
+- [PR #1210](https://github.com/stympy/faker/pull/1210) Add coveralls [@vbrazo](https://github.com/vbrazo)
+- [PR #924](https://github.com/stympy/faker/pull/924) Rubocop + fixes [@stephengroat](https://github.com/stephengroat)
+- [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
+
+### Update/add locales
+- [PR #1140](https://github.com/stympy/faker/pull/1140) Add Estonian and Latvian locales [@maciej-szlosarczyk](https://github.com/maciej-szlosarczyk)
+- [PR #1249](https://github.com/stympy/faker/pull/1249) Update list of name prefixes for sv locale. [kamilbielawski](https://github.com/kamilbielawski)
+- [PR #1228](https://github.com/stympy/faker/pull/1228) Added Japanese color to yml [@katao](https://github.com/katao)
+- [PR #1106](https://github.com/stympy/faker/pull/1106) Adds turkish phone number formats [@zasman](https://github.com/ZASMan)
+- [PR #794](https://github.com/stympy/faker/pull/794) Adding country code + minor locale updates [@vveliev](https://github.com/vveliev)
+- [PR #439](https://github.com/stympy/faker/pull/439) Remove Eichmann surname [@jonahwh](https://github.com/jonahwh)
+- [PR #1203](https://github.com/stympy/faker/pull/1203) Finnish locale has 50 most common male, female, and last names [@Glenf](https://github.com/Glenf)
+- [PR #1183](https://github.com/stympy/faker/pull/1183) Correct the spelling of Gringotts [@rhoen](https://github.com/rhoen)
+- [PR #1236](https://github.com/stympy/faker/pull/1236) Updates dessert faker [@susiirwin](https://github.com/susiirwin)
+- [PR #1229](https://github.com/stympy/faker/pull/1229) sv.yml: Typos [@olleolleolle](https://github.com/olleolleolle)
+- [PR #1108](https://github.com/stympy/faker/pull/1108) Update Faker::Dessert [@natalietate](https://github.com/natalietate)
+- [PR #1122](https://github.com/stympy/faker/pull/1122) Fix formatting for Brazilian phone and cell phone numbers [@lucasqueiroz](https://github.com/lucasqueiroz)
+- [PR #1138](https://github.com/stympy/faker/pull/1138) Update locales - Faker::Overwatch [@tanner0101](https://github.com/tanner0101)
+- [PR #1117](https://github.com/stympy/faker/pull/1117) Added Ukrainian entries to yml [@RomanIsko](https://github.com/RomanIsko)
+
+### Bug/Fixes
+- [PR #1241](https://github.com/stympy/faker/pull/1241) Add missing tests reported by SimpleCov [@aamarill](https://github.com/aamarill)
+- [PR #1240](https://github.com/stympy/faker/pull/1240) Add some tests [@aamarill](https://github.com/aamarill)
+- [PR #1238](https://github.com/stympy/faker/pull/1238) pluralized file to match link name in the readme [@Connerh92](https://github.com/Connerh92)
+- [PR #1232](https://github.com/stympy/faker/pull/1232) Fix file permissions [@tagliala](https://github.com/tagliala)
+- [PR #1205](https://github.com/stympy/faker/pull/1205) Show the type of field that violated a uniqueness constraint [@AndrewRayCode](https://github.com/AndrewRayCode)
+- [PR #1227](https://github.com/stympy/faker/pull/1227) Update RuboCop to 0.56.0 [@tagliala](https://github.com/tagliala)
+- [PR #1225](https://github.com/stympy/faker/pull/1225) Test against latest Ruby versions [@tagliala](https://github.com/tagliala)
+- [PR #1134](https://github.com/stympy/faker/pull/1134) Test against latest Ruby versions [@tagliala](https://github.com/tagliala)
+- [PR #1223](https://github.com/stympy/faker/pull/1223) Fix minitest warnings [@vbrazo](https://github.com/vbrazo)
+- [PR #1198](https://github.com/stympy/faker/pull/1198) Rename methods on Faker::Types to avoid shadowing ruby standard methods [@MarcPer](https://github.com/MarcPer)
+- [PR #1142](https://github.com/stympy/faker/pull/1142) Missing i18n jobs fix [@PuZZleDucK](https://github.com/PuZZleDucK)
+- [PR #1213](https://github.com/stympy/faker/pull/1213) Add missing tests after adding Coveralls [@vbrazo](https://github.com/vbrazo)
+- [PR #1212](https://github.com/stympy/faker/pull/1212) Coveralls should ignore test folder [@vbrazo](https://github.com/timcustard)
+- [PR #1181](https://github.com/stympy/faker/pull/1181) Fix: Moved the Google Omniauth key id_info from root into extra [@SirRawlins](https://github.com/SirRawlins)
+- [PR #1207](https://github.com/stympy/faker/pull/1207) use default rake task [@stephengroat](https://github.com/stephengroat)
+- [PR #1136](https://github.com/stympy/faker/pull/1136) Modify Faker::Internet.slug [@philduffen](https://github.com/philduffen)
+- [PR #1170](https://github.com/stympy/faker/pull/1170) First_name and last_name should use the parse method - :ru locale [@vbrazo](https://github.com/vbrazo)
+- [PR #1197](https://github.com/stympy/faker/pull/1197) Fixes NL postcode [@JonathanWThom](https://github.com/JonathanWThom)
+- [PR #1172](https://github.com/stympy/faker/pull/1172) Fix Fixnum reference warning [@vbrazo](https://github.com/vbrazo)
+- [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
+
+### Documentation
+- [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [mrstebo](https://github.com/mrstebo)
+- [PR #1256](https://github.com/stympy/faker/pull/1256) Fixing documentation - Faker::Name to Faker::Zelda [mrstebo](https://github.com/mrstebo)
+- [PR #1254](https://github.com/stympy/faker/pull/1254) Added missing documentation. [mrstebo](https://github.com/mrstebo)
+- [PR #1252](https://github.com/stympy/faker/pull/1252) Add missing documentation - Faker::Address to Faker::Myst [vbrazo](https://github.com/vbrazo)
+- [PR #1248](https://github.com/stympy/faker/pull/1248) Remove duplications from company.md [vrinek](https://github.com/vrinek)
+- [PR #1146](https://github.com/stympy/faker/pull/1146) Update company docs [@PuZZleDucK](https://github.com/PuZZleDucK)
+- [PR #974](https://github.com/stympy/faker/pull/974) Specify version number each class was introduced [@darylf](https://github.com/darylf)
+- [PR #1128](https://github.com/stympy/faker/pull/1128) Use ruby syntax highlighting in Omniauth doc [@swrobel](https://github.com/swrobel)
+- [PR #1204](https://github.com/stympy/faker/pull/1204) Update sample output of `Faker::App.version` [@joshuapinter](https://github.com/joshuapinter)
+- [PR #1135](https://github.com/stympy/faker/pull/1135) Added documentation for dumb and dumber [@cnharris10](https://github.com/cnharris10)
+- [PR #1177](https://github.com/stympy/faker/pull/1177) Update Faker::Number.between docs [@SpyMaster356](https://github.com/SpyMaster356)
+- [PR #1124](https://github.com/stympy/faker/pull/1124) Fix ranges for Brazilian zip codes [@lucasqueiroz](https://github.com/lucasqueiroz)
+- New collaborator - Vitor Oliveira [@vbrazo](https://github.com/vbrazo)
+
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)
 
@@ -321,7 +410,6 @@
 - undefined method `Number' for Faker:Module [\#153](https://github.com/stympy/faker/issues/153)
 
 **Merged pull requests:**
-
 - Refactors code in Faker::Color [\#777](https://github.com/stympy/faker/pull/777) ([tiagofsilva](https://github.com/tiagofsilva))
 - Add Faker::TwinPeaks \[fixed\] [\#775](https://github.com/stympy/faker/pull/775) ([pedantic-git](https://github.com/pedantic-git))
 - Added wookie\_sentence method documentation to README [\#772](https://github.com/stympy/faker/pull/772) ([toddnestor](https://github.com/toddnestor))
@@ -451,7 +539,7 @@
 ## v1.6.0 (2015-11-23)
 * Lots of bug fixes -- most notably, a fix for email addresses and domains in non-en locales
 * Updated locales: de, en-AU, en-NZ, en-SG, en-US, en-au-ocker, en, es, fr, he, it, ja, nb-NO, pl, pt-BR, sk, and zh-CN
-* Updated classes: Address, Avatar, Book, Code, Commerce, Company, Hipster, IDNumber, Internet, Number, Placeholdit, Shakespeare, and Time 
+* Updated classes: Address, Avatar, Book, Code, Commerce, Company, Hipster, IDNumber, Internet, Number, Placeholdit, Shakespeare, and Time
 
 ## v1.5.0 (2015-08-17)
 * Added logos
@@ -501,7 +589,7 @@
 * 1 major change:
     * Removed deprecated methods from Address: earth_country, us_state, us_state_abbr, uk_postcode, uk_county
 * Many minor changes (please see github pull requests for credits)
-    * Added many localizations 
+    * Added many localizations
     * Added range and array support for Lorem
 
 ## v1.0.1 (2011-09-27)
@@ -535,7 +623,7 @@
     * Added Canadian translation [igbanam]
     * Added Norwegian translation [kytrinyx]
     * Lots of translation-related cleanup [kytrinyx]
-  
+
 
 ## v0.9.5 (2011-01-27)
 * 1 minor bug fix:
@@ -577,7 +665,7 @@
 * 3 major enhancements:
     * Added Lorem to generate fake Latin
     * Added secondary_address to Address, and made inclusion of
-    secondary address in street_address optional (false by 
+    secondary address in street_address optional (false by
     default).
     * Added UK address methods [Caius Durling]
 

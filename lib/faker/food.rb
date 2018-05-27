@@ -13,6 +13,14 @@ module Faker
         fetch('food.ingredients')
       end
 
+      def fruits
+        fetch('food.fruits')
+      end
+
+      def vegetables
+        fetch('food.vegetables')
+      end
+
       def spice
         fetch('food.spices')
       end
@@ -20,7 +28,7 @@ module Faker
       def measurement
         fetch('food.measurement_sizes') + ' ' + fetch('food.measurements')
       end
-      
+
       def metric_measurement
         fetch('food.metric_measurements')
       end

@@ -43,5 +43,4 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.name.is_a? String
   end
-
 end

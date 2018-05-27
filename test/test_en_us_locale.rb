@@ -40,7 +40,7 @@ class TestEnUsLocale < Test::Unit::TestCase
   end
 
   def test_us_invalid_state_raises_exception
-    assert_raise I18n::MissingTranslationData do Faker::Address.zip_code('NA') end
+    assert_raise(I18n::MissingTranslationData) { Faker::Address.zip_code('NA') }
   end
 
   def test_us_zip_codes_match_state
@@ -72,11 +72,11 @@ class TestEnUsLocale < Test::Unit::TestCase
 
   def test_valid_id_number
     id_num = Faker::IDNumber.valid
-    assert Faker::IDNumber::INVALID_SSN.none? { |regex| id_num =~ regex }
+    assert(Faker::IDNumber::INVALID_SSN.none? { |regex| id_num =~ regex })
   end
 
   def test_invalid_id_number
     id_num = Faker::IDNumber.invalid
-    assert Faker::IDNumber::INVALID_SSN.any? { |regex| id_num =~ regex }
+    assert(Faker::IDNumber::INVALID_SSN.any? { |regex| id_num =~ regex })
   end
 end
