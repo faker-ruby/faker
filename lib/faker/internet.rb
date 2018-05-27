@@ -5,6 +5,10 @@ module Faker
         [user_name(name), domain_name].join('@')
       end
 
+      def educational_email(name = nil)
+        [user_name(name), [domain_name.split('.').first, 'edu'].join('.')].join('@')
+      end
+
       def free_email(name = nil)
         [user_name(name), fetch('internet.free_email')].join('@')
       end
