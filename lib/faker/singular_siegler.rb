@@ -1,7 +1,7 @@
 module Faker
   class SingularSiegler < Base
     class << self
-      def quotes
+      def quote
         fetch('singular_siegler.quotes')
       end
     end

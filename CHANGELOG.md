@@ -4,7 +4,10 @@
 ### Latest update: 2018-05-22
 
 ### Feature Request
-- [PR #1239](https://github.com/stympy/faker/pull/1239) Update Faker::Food to separate out Fruits and Veggies [susiirwin](https://github.com/susiirwin)
+- [PR #1258](https://github.com/stympy/faker/pull/1258) Remove simplecov-console and add coverage_report rake task [@vbrazo](https://github.com/vbrazo)
+- [PR #1247](https://github.com/stympy/faker/pull/1247) Generate capital city of random Nation [@gkunwar](https://github.com/gkunwar)
+- [PR #1250](https://github.com/stympy/faker/pull/1250) House appliances [@rafaelcpalmeida](https://github.com/rafaelcpalmeida)
+- [PR #1239](https://github.com/stympy/faker/pull/1239) Update Faker::Food to separate out Fruits and Veggies [@susiirwin](https://github.com/susiirwin)
 - [PR #1221](https://github.com/stympy/faker/pull/1221) Updated the Readme file with the new logo [@tobaloidee](https://github.com/tobaloidee)
 - [PR #1109](https://github.com/stympy/faker/pull/1109) Added Princess Bride [@jayphodges](https://github.com/jayphodges)
 - [PR #987](https://github.com/stympy/faker/pull/987) Add Faker::Cannabis class [@GhostGroup](https://github.com/GhostGroup)
@@ -35,7 +38,7 @@
 
 ### Update/add locales
 - [PR #1140](https://github.com/stympy/faker/pull/1140) Add Estonian and Latvian locales [@maciej-szlosarczyk](https://github.com/maciej-szlosarczyk)
-- [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
+- [PR #1249](https://github.com/stympy/faker/pull/1249) Update list of name prefixes for sv locale. [kamilbielawski](https://github.com/kamilbielawski)
 - [PR #1228](https://github.com/stympy/faker/pull/1228) Added Japanese color to yml [@katao](https://github.com/katao)
 - [PR #1106](https://github.com/stympy/faker/pull/1106) Adds turkish phone number formats [@zasman](https://github.com/ZASMan)
 - [PR #794](https://github.com/stympy/faker/pull/794) Adding country code + minor locale updates [@vveliev](https://github.com/vveliev)
@@ -50,7 +53,7 @@
 - [PR #1117](https://github.com/stympy/faker/pull/1117) Added Ukrainian entries to yml [@RomanIsko](https://github.com/RomanIsko)
 
 ### Bug/Fixes
-- [PR #1248](https://github.com/stympy/faker/pull/1248) Remove duplications from company.md [@vrinek](https://github.com/vrinek)
+- [PR #1241](https://github.com/stympy/faker/pull/1241) Add missing tests reported by SimpleCov [@aamarill](https://github.com/aamarill)
 - [PR #1240](https://github.com/stympy/faker/pull/1240) Add some tests [@aamarill](https://github.com/aamarill)
 - [PR #1238](https://github.com/stympy/faker/pull/1238) pluralized file to match link name in the readme [@Connerh92](https://github.com/Connerh92)
 - [PR #1232](https://github.com/stympy/faker/pull/1232) Fix file permissions [@tagliala](https://github.com/tagliala)
@@ -72,6 +75,11 @@
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 
 ### Documentation
+- [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [mrstebo](https://github.com/mrstebo)
+- [PR #1256](https://github.com/stympy/faker/pull/1256) Fixing documentation - Faker::Name to Faker::Zelda [mrstebo](https://github.com/mrstebo)
+- [PR #1254](https://github.com/stympy/faker/pull/1254) Added missing documentation. [mrstebo](https://github.com/mrstebo)
+- [PR #1252](https://github.com/stympy/faker/pull/1252) Add missing documentation - Faker::Address to Faker::Myst [vbrazo](https://github.com/vbrazo)
+- [PR #1248](https://github.com/stympy/faker/pull/1248) Remove duplications from company.md [vrinek](https://github.com/vrinek)
 - [PR #1146](https://github.com/stympy/faker/pull/1146) Update company docs [@PuZZleDucK](https://github.com/PuZZleDucK)
 - [PR #974](https://github.com/stympy/faker/pull/974) Specify version number each class was introduced [@darylf](https://github.com/darylf)
 - [PR #1128](https://github.com/stympy/faker/pull/1128) Use ruby syntax highlighting in Omniauth doc [@swrobel](https://github.com/swrobel)

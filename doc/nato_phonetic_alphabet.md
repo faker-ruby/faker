@@ -1,6 +1,6 @@
-# Faker::Hobbit
+# Faker::NatoPhoneticAlphabet
 
 ```ruby
 # A code word from the NATO phonetic alphabet
-Faker::NatoPhoneticAlphabet #=> "Hotel"
+Faker::NatoPhoneticAlphabet.code_word #=> "Hotel"
 ```
