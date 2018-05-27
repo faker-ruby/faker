@@ -24,11 +24,11 @@ module Faker
         else
           unless valid_tokens.include?(card_type.to_sym)
             raise ArgumentError,
-              "Valid credit cards argument can be left blank or include #{valid_tokens.join(', ')}"
+                  "Valid credit cards argument can be left blank or include #{valid_tokens.join(', ')}"
           end
         end
 
-        return fetch('stripe.valid_tokens.' + card_type)
+        fetch('stripe.valid_tokens.' + card_type)
       end
 
       def invalid_card(card_error = nil)

@@ -20,11 +20,11 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_valid_token
-    assert @tester.valid_token.match(/\Atok_/)
+    assert @tester.valid_token.match(/\w+/)
   end
 
   def test_specific_valid_token
-    assert @tester.valid_token("visa").match(/\Atok_visa\z/)
+    assert @tester.valid_token('visa').match(/\Atok_visa\z/)
   end
 
   def test_invalid_card
