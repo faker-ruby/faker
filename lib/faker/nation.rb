@@ -9,6 +9,11 @@ module Faker
       def language
         fetch('nation.language')
       end
+
+      # Fetch random capital city
+      def capital_city
+        fetch('nation.capital_city')
+      end
     end
   end
 end
