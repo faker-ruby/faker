@@ -45,4 +45,8 @@ Faker::Lorem.paragraphs(1, true) #=> ["Depulso animi cunctatio amicitia adficio.
 # Optional arguments: question_count = 3, supplemental = false
 Faker::Lorem.question #=> "Aliquid culpa aut ipsam unde ullam labore?"
 Faker::Lorem.questions(3) #=> ["Necessitatibus deserunt animi?", "At hic dolores autem consequatur ut?", "Aliquam velit ex adipisci voluptatem placeat?"]
+
+# Optional arguments: chars=3, supplemental=false
+Faker::Lorem.paragraph_by_chars #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
+Faker::Lorem.paragraph_by_chars(256, false) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
 ```
