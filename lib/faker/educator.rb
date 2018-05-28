@@ -4,7 +4,7 @@ module Faker
 
     class << self
       def university
-        "#{fetch('educator.name')} #{fetch('educator.tertiary.type')}"
+        "#{parse('educator.name')} #{fetch('educator.tertiary.type')}"
       end
 
       def course
@@ -12,11 +12,11 @@ module Faker
       end
 
       def secondary_school
-        "#{fetch('educator.name')} #{fetch('educator.secondary')}"
+        "#{parse('educator.name')} #{fetch('educator.secondary')}"
       end
 
       def campus
-        "#{fetch('educator.name')} Campus"
+        "#{parse('educator.name')} Campus"
       end
     end
   end

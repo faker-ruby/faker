@@ -9,6 +9,14 @@ class TestFakerCode < Test::Unit::TestCase
     assert @tester.npi.match(/[0-9]{10}/)
   end
 
+  def test_deterministic_npi
+    Faker::Config.random = Random.new(42)
+    v = @tester.npi
+    Faker::Config.random = Random.new(42)
+
+    assert v == @tester.npi
+  end
+
   def test_default_isbn_regexp
     assert @tester.isbn.match(/^\d{9}-[\d|X]$/)
   end
