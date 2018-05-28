@@ -83,8 +83,8 @@ class TestFakerMarkdown < Test::Unit::TestCase
     assert(test_array[0].split(' ').length == 2)
     assert(test_array[0].split(' ').first.include?('#'))
 
-    assert(test_array[1].count('.') == 3)
-
+    assert_instance_of(String, test_array[0])
+    assert_instance_of(String, test_array[1])
     assert_instance_of(String, test_array[2])
   end
 end
