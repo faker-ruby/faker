@@ -82,13 +82,6 @@ class TestFakerMarkdown < Test::Unit::TestCase
     end
   end
 
-  private
-
-  def random_method
-    method_list = Faker::Markdown.public_methods(false) - Faker::Base.methods
-    method_list[rand(0..method_list.length - 1)]
-  end
-
   def test_sandwich
     test_trigger = @tester.sandwich
 
@@ -103,5 +96,12 @@ class TestFakerMarkdown < Test::Unit::TestCase
     assert_instance_of(String, test_array[0])
     assert_instance_of(String, test_array[1])
     assert_instance_of(String, test_array[2])
+  end
+
+  private
+
+  def random_method
+    method_list = Faker::Markdown.public_methods(false) - Faker::Base.methods
+    method_list[rand(0..method_list.length - 1)]
   end
 end
