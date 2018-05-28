@@ -17,6 +17,14 @@ class TestFakerFood < Test::Unit::TestCase
     assert @tester.ingredient.match(/\w+/)
   end
 
+  def test_fruits
+    assert @tester.fruits.match(/\w+/)
+  end
+
+  def test_vegetables
+    assert @tester.vegetables.match(/\w+/)
+  end
+
   def test_spice
     assert @tester.spice.match(/\w+/)
   end

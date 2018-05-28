@@ -4,6 +4,12 @@
 # Required parameter: digits
 Faker::Number.number(10) #=> "1968353479"
 
+# Required parameter: digits
+Faker::Number.leading_zero_number(10) #=> "0669336915"
+
+# Required parameter: digits
+Faker::Number.decimal_part(2) #=> "0074009009"
+
 # Required parameter: l_digits
 Faker::Number.decimal(2) #=> "11.88"
 
@@ -22,6 +28,8 @@ Faker::Number.between(1, 10) #=> 7
 Faker::Number.positive #=> 235.59238499107653
 
 Faker::Number.negative #=> -4480.042585669558
+
+Faker::Number.non_zero_digit #=> "8"
 
 Faker::Number.digit #=> "1"
 ```

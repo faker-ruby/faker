@@ -53,8 +53,6 @@ module Faker
           rb_string
         when :fixnum
           rb_integer
-        else
-          rb_integer
         end
       end
 
@@ -70,8 +68,6 @@ module Faker
           rb_hash
         when :array
           rb_array
-        else
-          rb_integer
         end
       end
 
