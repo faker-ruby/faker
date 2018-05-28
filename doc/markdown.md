@@ -28,4 +28,11 @@ Faker::Markdown.table #=> "ad | similique | voluptatem\n---- | ---- | ----\ncorr
 
 # Random - randomly chooses an above method
 Faker::Markdown.random #=> returns output from a single method outlined above
+
+# Sandwich - creates a simulated blog-esque text-heavy block in markdown
+Faker::Markdown.sandwich #=> returns newline separated content of 1 header, 1 default lorem paragraph, and 1 random markdown element
+
+Faker::Markdown.sandwich(5) #=> returns newline separated content of 1 header, 1 5-sentence lorem paragraph, and 1 random markdown element
+
+Faker::Markdown.sandwich(6, 3) #=> returns newline separated content of 1 header, and then 3 sections consisting of, here, 1 6-sentence lorem paragraph and 1 random markdown element. The random markdown element is chosen at random in each iteration of the paragraph-markdown pairing.
 ```
