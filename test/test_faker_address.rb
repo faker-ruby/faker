@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerAddress < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Address
   end
@@ -31,7 +30,7 @@ class TestFakerAddress < Test::Unit::TestCase
   end
 
   def test_time_zone
-    assert @tester.time_zone.match(/\w+\/\w+/)
+    assert @tester.time_zone.match(%r{\w+\/\w+})
   end
 
   def test_street_suffix
@@ -63,11 +62,11 @@ class TestFakerAddress < Test::Unit::TestCase
   end
 
   def test_latitude
-    assert @tester.latitude.match(/-?\d+\.\d+/)
+    assert_instance_of Float, @tester.latitude
   end
 
   def test_longitude
-    assert @tester.longitude.match(/-?\d+\.\d+/)
+    assert_instance_of Float, @tester.longitude
   end
 
   def test_full_address

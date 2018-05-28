@@ -12,5 +12,4 @@ class TestFakerScience < Test::Unit::TestCase
   def test_scientist
     assert @tester.scientist.match(/\w+/)
   end
-
 end
