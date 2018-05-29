@@ -18,8 +18,8 @@ module Faker
       end
 
       def model(_make = '')
-        return fetch('auto.models_by_make').values.flatten.sample if _make.empty?
-        fetch('auto.models_by_make.' + _make)
+        return fetch("auto.models_by_make.#{make}") if _make.empty?
+        fetch("auto.models_by_make.#{_make}")
       end
 
       def make_and_model
