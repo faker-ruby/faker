@@ -38,8 +38,52 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert year <= ::Time.now.year
   end
 
+  def test_make
+    assert @tester.make.match(/\w+\.?/)
+  end
+
+  def test_model
+    assert @tester.model.match(/\w+\.?/)
+  end
+
+  def test_model_with_make
+    assert @tester.model('Toyota').match(/\w+\.?/)
+  end
+
+  def test_make_and_model
+    assert @tester.make_and_model.match(/\w+\s\w+/)
+  end
+
+  def test_style
+    assert @tester.style.match(/\w+\.?/)
+  end
+
+  def test_color
+    assert @tester.color.match(/\w+\.?/)
+  end
+
+  def test_transmission
+    assert @tester.transmission.match(/\w+\.?/)
+  end
+
+  def test_drive_type
+    assert @tester.drive_type.match(/\w+\.?/)
+  end
+
+  def test_fuel_type
+    assert @tester.fuel_type.match(/\w+\.?/)
+  end
+
   def test_door_count
     assert @tester.door_count.match(/\d Door/)
+  end
+
+  def test_car_type
+    assert @tester.car_type.match(/\w+\.?/)
+  end
+
+  def test_engine
+    assert @tester.engine.match(/\d Cylinder Engine/)
   end
 
   def test_engine_size
@@ -50,11 +94,6 @@ class TestFakerVehicle < Test::Unit::TestCase
     car_options = @tester.car_options
     assert car_options.length >= 5
     assert car_options.length < 10
-  end
-
-  def test_make_and_model
-    make_model = @tester.make_and_model
-    assert @tester.translate('faker.vehicle.makes').include?(make_model.split[0])
   end
 
   def test_standard_specs
