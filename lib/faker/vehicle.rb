@@ -36,9 +36,9 @@ module Faker
         fetch('vehicle.makes')
       end
 
-      def model(_make = '')
-        return fetch("vehicle.models_by_make.#{make}") if _make.empty?
-        fetch("vehicle.models_by_make.#{_make}")
+      def model(make_of_model = '')
+        return fetch("vehicle.models_by_make.#{make}") if make_of_model.empty?
+        fetch("vehicle.models_by_make.#{make_of_model}")
       end
 
       def make_and_model
@@ -75,16 +75,16 @@ module Faker
       end
 
       def engine
-       "#{fetch('vehicle.engine_size')} #{fetch('vehicle.cylinder_engine')}"
+        "#{fetch('vehicle.engine_size')} #{fetch('vehicle.cylinder_engine')}"
       end
-      alias :engine_size :engine
+      alias engine_size engine
 
       def car_options
-        rand(5...10).times.map { fetch('vehicle.car_options') }
+        Array.new(rand(5...10)) { fetch('vehicle.car_options') }
       end
 
       def standard_specs
-        rand(5...10).times.map { fetch('vehicle.standard_specs') }
+        Array.new(rand(5...10)) { fetch('vehicle.standard_specs') }
       end
 
       private
