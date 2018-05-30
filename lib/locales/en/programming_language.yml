@@ -1,0 +1,5 @@
+en:
+  faker:
+    programming_language:
+      name: ["FORTRAN", "ALGOL", "Newspeak", "D", "Prolog", "Simula", "JavaScript", "Java", "C#", "Clojure", "COBOL", "Lua", "Smalltalk", "Swift", "Ruby", "Lisp", "Scala", "C", "Python", "Scheme", "Fortress", "C++", "Go", "Perl", "Haskell"]
+      creator: ["John Backus", "Friedrich L. Bauer", "Gilad Bracha", "Walter Bright", "Alain Colmerauer", "Ole-Johan Dahl", "Brendan Eich", "James Gosling", "Anders Hejlsberg", "Rich Hickey", "Roberto Ierusalimschy", "Alan Kay", "Dan Ingalls", "Chris Lattner", "Yukihiro Matsumoto", "John McCarthy", "Martin Odersky", "Dennis Ritchie", "Guido van Rossum", "Guy L. Steele, Jr.", "Bjarne Stroustrup", "Don Syme", "Ken Thompson", "Larry Wall", "Philip Wadler"]

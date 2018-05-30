@@ -1,17 +1,19 @@
 module Faker
   class Vehicle < Base
-    @vin_chars = '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'
-    @vin_map = '0123456789X'
-    @vin_weights = '8765432X098765432'
+    flexible :vehicle
+
+    VIN_CHARS = '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'.freeze
+    VIN_MAP = '0123456789X'.freeze
+    VIN_WEIGHTS = '8765432X098765432'.freeze
 
     class << self
-      #ISO 3779
+      # ISO 3779
       def vin
-        manufacture = fetch_all('vehicle.manufacture').sample
+        _, wmi, wmi_ext = sample(fetch_all('vehicle.manufacture'))
 
-        c = @vin_chars.split('').reject{ |n| n == '.'}
-        vehicle_identification_number = manufacture["wmi"].split('').concat( Array.new(14) { c.sample } )
-        (12..14).to_a.each_with_index { |n, i| vehicle_identification_number[n] = manufacture["win_ext"][i] } unless manufacture["win_ext"].nil?
+        c = VIN_CHARS.split('').reject { |n| n == '.' }
+        vehicle_identification_number = wmi.split('').concat(Array.new(14) { sample(c) })
+        (12..14).to_a.each_with_index { |n, i| vehicle_identification_number[n] = wmi_ext[i] } unless wmi_ext.nil?
         vehicle_identification_number[10] = fetch('vehicle.year')
         vehicle_identification_number[8] = vin_checksum(vehicle_identification_number)
 
@@ -19,19 +21,18 @@ module Faker
       end
 
       def manufacture
-        fetch_all('vehicle.manufacture').sample["name"]
+        sample(fetch_all('vehicle.manufacture')).first
       end
-      
-    private
 
-      def calculate_vin_weight(character, i)
-        (@vin_chars.index(character) % 10) * @vin_map.index(@vin_weights [i])
+      private
+
+      def calculate_vin_weight(character, idx)
+        (VIN_CHARS.index(character) % 10) * VIN_MAP.index(VIN_WEIGHTS[idx])
       end
 
       def vin_checksum(vehicle_identification_number)
-        @vin_map[vehicle_identification_number.each_with_index.map(&method(:calculate_vin_weight)).inject(:+) % 11]
+        VIN_MAP[vehicle_identification_number.each_with_index.map(&method(:calculate_vin_weight)).inject(:+) % 11]
       end
-
     end
   end
 end
