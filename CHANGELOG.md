@@ -4,6 +4,8 @@
 ### Latest update: 2018-05-27
 
 ### Feature Request
+
+-[PR #1259](https://github.com/stympy/faker/pull/1259) Add the ability to add separators to emails. [@aamarill](https://github.com/aamarill))
 - [PR #1064](https://github.com/stympy/faker/pull/1064) Add Faker::Markdown.sandwich [@russellschmidt](https://github.com/russellschmidt)
 - [PR #1222](https://github.com/stympy/faker/pull/1222) Add paragraph_by_chars functionality [@jguthrie100](https://github.com/jguthrie100)
 - [PR #1107](https://github.com/stympy/faker/pull/1107) Add tokens to Faker::Stripe [@wecohere](https://github.com/wecohere)
