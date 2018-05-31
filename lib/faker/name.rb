@@ -36,7 +36,7 @@ module Faker
       end
 
       def job_titles
-        fetch_all('name.title.job')
+        fetch_all('job.position')
       end
     end
   end
