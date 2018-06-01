@@ -71,4 +71,20 @@ class TestFakerMarkdown < Test::Unit::TestCase
 
     assert_instance_of(String, test_trigger)
   end
+
+  def test_sandwich
+    test_trigger = @tester.sandwich
+
+    test_array = []
+    test_trigger.each_line { |substr| test_array << substr }
+
+    assert(test_array.length == 3)
+
+    assert(test_array[0].split(' ').length == 2)
+    assert(test_array[0].split(' ').first.include?('#'))
+
+    assert_instance_of(String, test_array[0])
+    assert_instance_of(String, test_array[1])
+    assert_instance_of(String, test_array[2])
+  end
 end

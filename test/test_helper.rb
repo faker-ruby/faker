@@ -1,13 +1,16 @@
+require 'simplecov'
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+SimpleCov.start do
+  add_filter ['.bundle', 'test', 'lib/extensions']
+end
+
 require 'test/unit'
 require 'rubygems'
 require 'timecop'
 require 'yaml'
+
 YAML::ENGINE.yamler = 'psych' if defined? YAML::ENGINE
 require File.expand_path(File.dirname(__FILE__) + '/../lib/faker')
-
-# add Coveralls support
-require 'coveralls'
-Coveralls.wear!
 
 # configure I18n
 locales_path = File.expand_path(File.dirname(__FILE__) + '../lib/locales')

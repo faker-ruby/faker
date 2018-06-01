@@ -25,7 +25,11 @@ class TestFakerDemographic < Test::Unit::TestCase
     assert %w[Male Female].include?(@tester.sex)
   end
 
-  def test_height
+  def test_height_imperial
+    assert @tester.height(:imperial).match(/\w+/)
+  end
+
+  def test_height_metric
     assert @tester.height.match(/\w+/)
   end
 end

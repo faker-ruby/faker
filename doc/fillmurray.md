@@ -1,5 +1,7 @@
 # Faker::Fillmurray
 
+Available since version 1.7.1.
+
 ```ruby
 Faker::Fillmurray.image #=> "http://fillmurray.com/300/300"
 
