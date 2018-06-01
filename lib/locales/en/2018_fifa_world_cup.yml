@@ -246,10 +246,10 @@ en:
         #Tunisia announced a 29-man preliminary squad on 14 May 2018.
         Tunisia:
           coach: ["Nabil Maâloul"]
-          goalkeepers: [""],
-          defenders: [""],
-          midfielders: [""],
-          forwards: [""]
+          goalkeepers: [Aymen Mathlouthi (Al-Baten), Moez Ben Cherifia (ES Tunis), Farouk Ben Mustapha (Al-Shabab), Moez Hassen (Chateauroux).],
+          defenders: [Rami Bedoui (ES Sahel), Yohan Benalouane (Leicester City), Syam Ben Youssef (Kasimpasa), Dylan Bronn (Gent), Khalil Chammam (ES Tunis), Oussama Haddadi (Dijon) , Ali Maaloul (Al-Ahly), Yassine Meriah (CS Sfaxien), Hamdi Nagguez (Zamalek), Bilel Mohsni (Dundee United)],
+          midfielders: [Mohamed Amine Ben Amor (Al-Ahli SC), Sai-Eddine Khaoui (Troyes), Ahmed Khalil (Club Africain), Ellyes Skhiri (Montpellier), Ferjani Sassi (Al-Nasr), Ghaylene Chaalali (ES Tunis), Mohamed Wael Larbi (Tours), Karim Laribi (Cesena)],
+          forwards: [Anice Badri (ES Tunis), Fakhreddine Ben Youssef (Al-Ittifaq), Naim Sliti (Dijon), Bassem Srarfi (Nice), Ahmed Akaichi (Al-Ittihad), Wahbi Khazri (Rennes), Saber Khalifa (Club Africain)]
 
         #Columbia announced a 35-man preliminary squad on 14 May 2018.
         Columbia:
