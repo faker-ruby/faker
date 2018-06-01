@@ -137,4 +137,28 @@ en:
             midfielders: [""],
             forwards: [""]
         group_F:
-          
+          Germany:
+            coach: ["Joachim Löw"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Mexico:
+            coach: ["Juan Carlos Osorio"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          South Korea:
+            coach: ["Shin Tae-yong"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Sweden:
+            coach: ["Janne Andersson"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+        group_G:
