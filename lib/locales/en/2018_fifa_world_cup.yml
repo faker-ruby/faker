@@ -84,34 +84,34 @@ en:
           #Australia announced a 32-man preliminary squad on 6 May 2018. The squad was reduced to 26 players on 14 May. The squad was extended to 27 players with the call-up of Jamie Maclaren on 28 May 2018.
           Australia:
             coach: ["Bert van Marwijk"],
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Mat Ryan", "Danny Vukovic", "Brad Jones"],
+            defenders: ["Aziz Behich", "Milos Degenek", "Matthew Jurman", "James Meredith", "Josh Risdon", "Trent Sainsbury", "Fran Karacic"],
+            midfielders: ["Josh Brillante", "Mile Jedinak", "Mark Milligan", "Robbie Kruse", "Jackson Irvine", "Massimo Luongo", "Aaron Mooy", "Tom Rogic", "James Troisi"],
+            forwards: ["Tim Cahill", "Tomi Juric", "Mathew Leckie", "Andrew Nabbout", "Nikita Rukavytsya", "Dimitri Petratos", "Jamie Maclaren", "Daniel Arzani"]
 
           #Denmark announced a 35-man preliminary squad on 14 May 2018. The squad was reduced to 27 players on 27 May 2018.
           Denmark:
             coach: ["Åge Hareide"],
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Kasper Schmeichel", "Jonas Lossl", "Frederik Ronow", "Jesper Hansen"],
+            defenders: ["Simon Kjaer", "Andreas Christensen", "Mathias Jorgensen", "Jannik Vestergaard", "Andreas Bjelland", "Henrik Dalsgaard", "Peter Ankersen", "Jens Stryger Larsen", "Riza Durmisi", "Jonas Knudsen", "Nicolai Boilesen"],
+            midfielders: ["William Kvist", "Thomas Delaney", "Lukas Lerager", "Lasse Schone", "Mike Jensen", "Christian Eriksen", "Daniel Wass", "Pierre-Emile Hojbjerg", "Mathias Jensen", "Michael Krohn-Dehli", "Robert Skov"],
+            forwards: ["Pione Sisto", "Martin Braithwaite", "Andreas Cornelius", "Viktor Fischer", "Yussuf Poulsen", "Nicolai Jorgensen", "Nicklas Bendtner", "Kasper Dolberg", "Kenneth Zohore"]
 
           #France announced a final squad on 17 May 2018.
           France:
             coach: ["Didier Deschamps"],
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Hugo Lloris", "Alphonse Areola", "Steve Mandanda"],
+            defenders: ["Raphael Varane", "Samuel Umtiti", "Presnel Kimpembe", "Djibril Sidibe", "Benjamin Mendy", "Lucas Hernandez", "Benjamin Pavard", "Adil Rami"],
+            midfielders: ["N’Golo Kante", "Paul Pogba", "Thomas Lemar", "Blaise Matuidi", "Corentin Tolisso", "Steven N’Zonzi"],
+            forwards: ["Antoine Griezmann", "Kylian Mbappe", "Olivier Giroud", "Ousmane Dembele", "Florian Thauvin", "Nabil Fekir"]
 
           #Peru announced a 24-man preliminary squad on 16 May 2018. The final squad was announced on 30 May. The squad was expanded to 24 players on 31 May after the suspension of Paolo Guerrero was lifted.
           Peru:
             coach: ["Ricardo Gareca"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Pedro Gallese", "Jose Carvallo", "Carlos Caceda"],
+            defenders: ["Luis Abram", "Luis Advincula", "Miguel Araujo", "Aldo Corzo", "Nilson Loyola", "Christian Ramos", "Alberto Rodriguez", "Anderson Santamaría", "Miguel Trauco"],
+            midfielders: ["Pedro Aquino", "Wilmer Cartagena", "Christian Cueva", "Edison Flores", "Paolo Hurtado", "Sergio Pena", "Andy Polo", "Renato Tapia", "Yoshimar Yotun"],
+            forwards: ["Paolo Guerrero", "Andre Carrillo", "Raul Ruidiaz", "Jefferson Farfan"]
 
         group_D:
 
