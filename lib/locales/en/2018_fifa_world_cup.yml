@@ -23,10 +23,10 @@ en:
           #Russia announced a 28-man preliminary squad on May 11 2018. On May 14, it replaced defender Ruslan Kambolov with Sergei Ignashevich.
           Russia:
             coach: ["Stanislav Cherchesov"],
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Igor Akinfeev", "Vladimir Gabulov", "Soslan Dzhanaev", "Andrei Lunev"],
+            defenders: ["Vladimir Granat", "Fyodor Kudryashov", "Ilya Kutepov", "Roman Neustadter", "Konstantin Rausch", "Andrei Semyonov", "Igor Smolnikov", "Mario Fernandes", "Sergei Ignashevich"],
+            midfielders: ["Yury Gazinsky", "Alan Dzagoev", "Alexander Golovin", "Alexander Erokhin", "Yury Zhirkov", "Daler Kuzyaev", "Roman Zobnin", "Alexander Samedov", "Anton Miranchuk", "Alexander Tashyev", "Denis Cheryshev"],
+            forwards: ["Artem Dzyuba", "Alexei Miranchuk", "Fyodor Smolov", "Fyodor Chalov"]
 
           #Saudi Arabia announced 28-man preliminary squad on 17 May 2018.
           Saudi_Arabia:
