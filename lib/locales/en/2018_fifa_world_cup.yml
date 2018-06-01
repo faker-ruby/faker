@@ -66,10 +66,10 @@ en:
           #Portugal cut its preliminary squad down to 23 on 17 May 2018.
           Portugal:
             coach: ["Fernando Santos"],
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Anthony Lopes", "Beto", "Rui Patricio"],
+            defenders: ["Bruno Alves", "Cedric Soares", "Jose Fonte", "Mario Rui", "Pepe", "Raphael Guerreiro", "Ricardo Pereira", "Ruben Dias"],
+            midfielders: ["Adrien Silva", "Bruno Fernandes", "Joao Mario", "Joao Moutinho", "Manuel Fernandes", "William Carvalho"],
+            forwards: ["Andre Silva", "Bernardo Silva", "Cristiano Ronaldo", "Gelson Martins", "Goncalo Guedes", "Ricardo Quaresma"]
 
           #Spain named its 23-man squad on 21 May 2018.
           Spain:
