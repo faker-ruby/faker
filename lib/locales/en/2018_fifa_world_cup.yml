@@ -61,3 +61,53 @@ en:
             defenders: [""],
             midfielders: [""],
             forwards: [""]
+        group_C:
+          Australia:
+            coach: ["Bert van Marwijk"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Denmark:
+            coach: ["Åge Hareide"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          France:
+            coach: ["Didier Deschamps"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Peru:
+            coach: ["Ricardo Gareca"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+        group_D:
+          Argentina:
+            coach: ["Jorge Sampaoli"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Croatia:
+            coach: ["Zlatko Dalić"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Iceland:
+            coach: ["Heimir Hallgrímsson"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Nigeria:
+            coach: ["Gernot Rohr"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
