@@ -1,5 +1,7 @@
 # Faker::Simpsons
 
+Available since version 1.8.0.
+
 ```ruby
 Faker::Simpsons.character #=> "Charles Montgomery Burns"
 

@@ -1,5 +1,7 @@
 # Faker::Address
 
+Available since version 0.3.0.
+
 ```ruby
 Faker::Address.city #=> "Imogeneborough"
 
@@ -40,5 +42,7 @@ Faker::Address.country_code_long #=> "ITA"
 Faker::Address.latitude #=> "-58.17256227443719"
 
 Faker::Address.longitude #=> "-156.65548382095133"
+
+Faker::Address.full_address #=> "282 Kevin Brook, Imogeneborough, CA 58517"
 
 ```

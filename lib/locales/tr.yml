@@ -17,6 +17,8 @@ tr:
       domain_suffix: [co, com, com.tr, net, org]
       safe_email: ['mesela.com']
 
+    phone_number:
+      formats: ["90-###-###-####", "90.###.###.####", "90 ### ### ####", "90##########"]
 
     address:
       city_name: ['İstanbul', 'İzmir', 'Eskişehir', 'Şırnak', 'Edirne', 'Van' ]

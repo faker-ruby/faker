@@ -1,7 +1,6 @@
 module Faker
   class Food < Base
     class << self
-
       # Retrieves a typical dish from each country
       def dish
         fetch('food.dish')
@@ -12,9 +11,19 @@ module Faker
         fetch('food.descriptions')
       end
 
-      # Retrieves an ingredient for dishe
+      # Retrieves an ingredient
       def ingredient
         fetch('food.ingredients')
+      end
+
+      # Retrieves a fruit
+      def fruits
+        fetch('food.fruits')
+      end
+
+      # Retrieves a vegetable
+      def vegetables
+        fetch('food.vegetables')
       end
 
       # Retrieves some random spice

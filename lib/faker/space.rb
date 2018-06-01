@@ -53,6 +53,10 @@ module Faker
       def meteorite
         fetch('space.meteorite')
       end
+
+      def launch_vehicule
+        fetch('space.launch_vehicule')
+      end
     end
   end
 end

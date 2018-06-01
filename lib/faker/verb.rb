@@ -16,7 +16,7 @@ module Faker
       def simple_present
         fetch('verbs.simple_present')
       end
-      
+
       def ing_form
         fetch('verbs.ing_form')
       end
