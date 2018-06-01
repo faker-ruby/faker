@@ -186,4 +186,28 @@ en:
             defenders: [""],
             midfielders: [""],
             forwards: [""]
-          
+        group_H:
+          Columbia:
+            coach: ["José Pékerman"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Japan:
+            coach: ["Akira Nishino"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Poland:
+            coach: ["Adam Nawałka"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Senegal:
+            coach: ["Aliou Cissé"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
