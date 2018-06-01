@@ -11,11 +11,53 @@ en:
         group_G: ["Belgium", "England", "Panama", "Tunisia"],
         group_H: ["Columbia", "Japan", "Poland", "Senegal"]
       teams:
-        Egypt:
-          coach: ["Héctor Cúper"],
-          goalkeepers: ["Essam El-Hadary", "Mohamed El-Shennawy", "Sherif Ekramy", "Mohamed Awad"],
-          defenders: ["Ahmed Fathi", "Saad Samir", "Ayman Ashraf", "Mahmoud Hamdy 'El Wensh'", "Mohamed Abdel Shafy", "Ahmed Hegazi", "Ali Gabr", "Ahmed El Mohamady", "Karim Hafez", "Omar Gaber", "Amro Tarek"],
-          midfielders: ["Tarek Hamed", "Mahmoud Abdel Aziz", "Shikabala", "Abdallah El-Said", "Sam Morsy", "Mohamed ElNeny", "Mahmoud 'Kahraba'", "Ramadan Sobhi", "Mahmoud 'Trezeguet'", "Amr Warda"],
-          forwards: ["Marwan Mohsen", "Ahmed Gomaa", "Ahmed Hassan 'Koka'", "Mohamed Salah"]
-        Russia:
-          coach: [""]
+        group_A:
+          Egypt:
+            coach: ["Héctor Cúper"],
+            goalkeepers: ["Essam El-Hadary", "Mohamed El-Shennawy", "Sherif Ekramy", "Mohamed Awad"],
+            defenders: ["Ahmed Fathi", "Saad Samir", "Ayman Ashraf", "Mahmoud Hamdy 'El Wensh'", "Mohamed Abdel Shafy", "Ahmed Hegazi", "Ali Gabr", "Ahmed El Mohamady", "Karim Hafez", "Omar Gaber", "Amro Tarek"],
+            midfielders: ["Tarek Hamed", "Mahmoud Abdel Aziz", "Shikabala", "Abdallah El-Said", "Sam Morsy", "Mohamed ElNeny", "Mahmoud 'Kahraba'", "Ramadan Sobhi", "Mahmoud 'Trezeguet'", "Amr Warda"],
+            forwards: ["Marwan Mohsen", "Ahmed Gomaa", "Ahmed Hassan 'Koka'", "Mohamed Salah"]
+          Russia:
+            coach: ["Stanislav Cherchesov"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Saudi_Arabia:
+            coach: ["Juan Antonio Pizzi"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Uruguay:
+            coach: ["Óscar Tabárez"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+        group_B:
+          Iran:
+            coach: ["Carlos Queiroz"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Morocco:
+            coach: ["Hervé Renard"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Portugal:
+            coach: ["Fernando Santos"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Spain:
+            coach: ["Julen Lopetegui"],
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
