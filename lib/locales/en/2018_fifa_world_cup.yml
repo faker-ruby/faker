@@ -1,0 +1,21 @@
+en:
+  faker:
+    2018_fifa_world_cup:
+      groups:
+        group_A: ["Egypt", "Russia", "Saudi Arabia", "Uruguay"],
+        group_B: ["Iran", "Morocco", "Portugal", "Spain"],
+        group_C: ["Australia", "Denmark", "France", "Peru"],
+        group_D: ["Argentina", "Croatia", "Iceland", "Nigeria"],
+        group_E: ["Brazil", "Costa Rica", "Serbia", "Switzerland"],
+        group_F: ["Germany", "Mexico", "South Korea", "Sweden"],
+        group_G: ["Belgium", "England", "Panama", "Tunisia"],
+        group_H: ["Columbia", "Japan", "Poland", "Senegal"]
+      teams:
+        Egypt:
+          coach: ["Héctor Cúper"],
+          goalkeepers: ["Essam El-Hadary", "Mohamed El-Shennawy", "Sherif Ekramy", "Mohamed Awad"],
+          defenders: ["Ahmed Fathi", "Saad Samir", "Ayman Ashraf", "Mahmoud Hamdy 'El Wensh'", "Mohamed Abdel Shafy", "Ahmed Hegazi", "Ali Gabr", "Ahmed El Mohamady", "Karim Hafez", "Omar Gaber", "Amro Tarek"],
+          midfielders: ["Tarek Hamed", "Mahmoud Abdel Aziz", "Shikabala", "Abdallah El-Said", "Sam Morsy", "Mohamed ElNeny", "Mahmoud 'Kahraba'", "Ramadan Sobhi", "Mahmoud 'Trezeguet'", "Amr Warda"],
+          forwards: ["Marwan Mohsen", "Ahmed Gomaa", "Ahmed Hassan 'Koka'", "Mohamed Salah"]
+        Russia:
+          coach: [""]
