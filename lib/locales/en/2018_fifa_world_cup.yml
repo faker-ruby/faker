@@ -230,55 +230,55 @@ en:
         #England announced a final squad on 16 May 2018.
         England:
           coach: ["Gareth Southgate"]
-          goalkeepers: [Jack Butland (Stoke), Jordan Pickford (Everton), Nick Pope (Burnley)],
-          defenders: [Trent Alexander-Arnold (Liverpool), Gary Cahill (Chelsea), Phil Jones (Manchester United), Harry Maguire (Leicester City), Danny Rose (Tottenham), John Stones (Manchester City), Kieran Trippier (Tottenham), Kyle Walker (Manchester City)],
-          midfielders: [Dele Alli (Tottenham), Fabian Delph (Manchester City), Eric Dier (Tottenham), Jordan Henderson (Liverpool), Jesse Lingard (Manchester United), Ruben Loftus-Cheek (Crystal Palace), Ashley Young (Manchester United)],
-          forwards: [Harry Kane (Tottenham), Marcus Rashford (Manchester United), Raheem Sterling (Manchester City), Jamie Vardy (Leicester City), Danny Welbeck (Arsenal)]
+          goalkeepers: ["Jack Butland" (Stoke), "Jordan Pickford" (Everton), "Nick Pope" (Burnley)],
+          defenders: ["Trent Alexander-Arnold" (Liverpool), "Gary Cahill" (Chelsea), "Phil Jones" (Manchester United), "Harry Maguire" (Leicester City), "Danny Rose" (Tottenham), "John Stones" (Manchester City), "Kieran Trippier" (Tottenham), Kyle Walker (Manchester City)],
+          midfielders: ["Dele Alli" (Tottenham), "Fabian Delph" (Manchester City), "Eric Dier" (Tottenham), "Jordan Henderson" (Liverpool), "Jesse Lingard" (Manchester United), "Ruben Loftus-Cheek" (Crystal Palace), "Ashley Young" (Manchester United)],
+          forwards: ["Harry Kane" (Tottenham), "Marcus Rashford" (Manchester United), "Raheem Sterling" (Manchester City), "Jamie Vardy" (Leicester City), "Danny Welbeck" (Arsenal)]
 
         #Panama announced a final squad was announced on 30 May 2018.
         Panama:
           coach: ["Hernán Darío Gómez"]
-          goalkeepers: [Jose Calderon (Chorrillo FC), Jaime Penedo (Dinamo Bucharest), Alex Rodriguez (San Francisco FC)],
-          defenders: [Felipe Baloy (CSD Municipal), Harold Cummings (San Jose Earthquakes), Eric Davis (DAC Dunajska Streda), Fidel Escobar (New York Red Bulls), Adolfo Machado (Houston Dynamo), Michael Murillo (New York Red Bulls), Luis Ovalle (CD Olimpia), Roman Torres (Seattle Sounders)],
-          midfielders: [Edgar Barcenas (Cafetaleros de Tapachula), Armando Cooper (Club Universidad de Chile), Anibal Godoy (San Jose Earthquakes), Gabriel Gómez (Bucaramanga), Valentin Pimentel (Plaza Amador), Alberto Quintero (Universitario de Lima), Jose Luis Rodriguez (KAA Gent)],
-          forwards: [Abdiel Arroyo (LD Alajuelense), Ismael Diaz (Deportivo La Coruna), Blas Perez (CSD Municipal), Luis Tejada (Sports Boys), Gabriel Torres (CD Huachipato)]
+          goalkeepers: ["Jose Calderon" (Chorrillo FC), "Jaime Penedo" (Dinamo Bucharest), "Alex Rodriguez" (San Francisco FC)],
+          defenders: ["Felipe Baloy" (CSD Municipal), "Harold Cummings" (San Jose Earthquakes), "Eric Davis" (DAC Dunajska Streda), "Fidel Escobar" (New York Red Bulls), "Adolfo Machado" (Houston Dynamo), "Michael Murillo" (New York Red Bulls), "Luis Ovalle" (CD Olimpia), "Roman Torres" (Seattle Sounders)],
+          midfielders: ["Edgar Barcenas" (Cafetaleros de Tapachula), "Armando Cooper" (Club Universidad de Chile), "Anibal Godoy" (San Jose Earthquakes), "Gabriel Gómez" (Bucaramanga), "Valentin Pimentel" (Plaza Amador), "Alberto Quintero" (Universitario de Lima), "Jose Luis Rodriguez" (KAA Gent)],
+          forwards: ["Abdiel Arroyo" (LD Alajuelense), "Ismael Diaz" (Deportivo La Coruna), "Blas Perez" (CSD Municipal), "Luis Tejada" (Sports Boys), "Gabriel Torres" (CD Huachipato)]
 
         #Tunisia announced a 29-man preliminary squad on 14 May 2018.
         Tunisia:
           coach: ["Nabil Maâloul"]
-          goalkeepers: [Aymen Mathlouthi (Al-Baten), Moez Ben Cherifia (ES Tunis), Farouk Ben Mustapha (Al-Shabab), Moez Hassen (Chateauroux).],
-          defenders: [Rami Bedoui (ES Sahel), Yohan Benalouane (Leicester City), Syam Ben Youssef (Kasimpasa), Dylan Bronn (Gent), Khalil Chammam (ES Tunis), Oussama Haddadi (Dijon) , Ali Maaloul (Al-Ahly), Yassine Meriah (CS Sfaxien), Hamdi Nagguez (Zamalek), Bilel Mohsni (Dundee United)],
-          midfielders: [Mohamed Amine Ben Amor (Al-Ahli SC), Sai-Eddine Khaoui (Troyes), Ahmed Khalil (Club Africain), Ellyes Skhiri (Montpellier), Ferjani Sassi (Al-Nasr), Ghaylene Chaalali (ES Tunis), Mohamed Wael Larbi (Tours), Karim Laribi (Cesena)],
-          forwards: [Anice Badri (ES Tunis), Fakhreddine Ben Youssef (Al-Ittifaq), Naim Sliti (Dijon), Bassem Srarfi (Nice), Ahmed Akaichi (Al-Ittihad), Wahbi Khazri (Rennes), Saber Khalifa (Club Africain)]
+          goalkeepers: ["Aymen Mathlouthi" (Al-Baten), "Moez Ben Cherifia" (ES Tunis), "Farouk Ben Mustapha" (Al-Shabab), "Moez Hassen" (Chateauroux).],
+          defenders: ["Rami Bedoui" (ES Sahel), "Yohan Benalouane" (Leicester City), "Syam Ben Youssef" (Kasimpasa), "Dylan Bronn" (Gent), "Khalil Chammam" (ES Tunis), "Oussama Haddadi" (Dijon) , "Ali Maaloul" (Al-Ahly), "Yassine Meriah" (CS Sfaxien), "Hamdi Nagguez" (Zamalek), "Bilel Mohsni" (Dundee United)],
+          midfielders: ["Mohamed Amine Ben Amor" (Al-Ahli SC), "Sai-Eddine Khaoui" (Troyes), "Ahmed Khalil" (Club Africain), "Ellyes Skhiri" (Montpellier), "Ferjani Sassi" (Al-Nasr), "Ghaylene Chaalali" (ES Tunis), "Mohamed Wael Larbi" (Tours), "Karim Laribi" (Cesena)],
+          forwards: ["Anice Badri" (ES Tunis), "Fakhreddine Ben Youssef" (Al-Ittifaq), "Naim Sliti" (Dijon), "Bassem Srarfi" (Nice), "Ahmed Akaichi" (Al-Ittihad), "Wahbi Khazri" (Rennes), "Saber Khalifa" (Club Africain)]
 
         #Columbia announced a 35-man preliminary squad on 14 May 2018.
         Columbia:
           coach: ["José Pékerman"]
-          goalkeepers: [David Ospina (Arsenal), Camilo Vargas (Deportivo Cali), Ivan Arboleda (Banfield), Jose Fernando Cuadrado (Once Caldas)],
-          defenders: [Cristian Zapata (Milan), Davinson Sanchez (Tottenham), Santiago Arias (PSV Eindhoven), Oscar Murillo (Pachuca), Frank Fabra (Boca Juniors), Johan Mojica (Girona ), Yerry Mina (Barcelona), William Tesillo (Santa Fe), Bernardo Espinosa (Girona), Stefan Medina (Monterrey), Farid Diaz (Olimpia)],
-          midfielders: [Wilmar Barrios (Boca Juniors), Carlos Sanchez (Espanyol), Jefferson Lerma (Levante), Jose Izquierdo (Brighton & Hove Albion), James Rodriguez (Bayern Munich), Giovanni Moreno (Shanghai Shenhua), Abel Aguilar (Deportivo Cali), Mateus Uribe (America), Yimmi Chara (Junior), Juan Fernando Quintero (River Plate), Edwin Cardona (Boca Juniors), Juan Cuadrado (Juventus), Gustavo Cuellar (Flamengo), Sebastian Pérez (Boca Juniors)],
-          forwards: [Radamel Falcao (Monaco), Duvan Zapata (Sampdoria), Miguel Borja (Palmeiras), Carlos Bacca (Villarreal), Luis Fernando Muriel (Sevilla), Teofilo Gutierrez (Junior)]
+          goalkeepers: ["David Ospina" (Arsenal), "Camilo Vargas" (Deportivo Cali), "Ivan Arboleda" (Banfield), "Jose Fernando Cuadrado" (Once Caldas)],
+          defenders: ["Cristian Zapata" (Milan), "Davinson Sanchez" (Tottenham), "Santiago Arias" (PSV Eindhoven), "Oscar Murillo" (Pachuca), "Frank Fabra" (Boca Juniors), "Johan Mojica" (Girona ), "Yerry Mina" (Barcelona), "William Tesillo" (Santa Fe), "Bernardo Espinosa" (Girona), "Stefan Medina" (Monterrey), "Farid Diaz" (Olimpia)],
+          midfielders: ["Wilmar Barrios" (Boca Juniors), "Carlos Sanchez" (Espanyol), "Jefferson Lerma" (Levante), "Jose Izquierdo" (Brighton & Hove Albion), "James Rodriguez" (Bayern Munich), "Giovanni Moreno" (Shanghai Shenhua), "Abel Aguilar" (Deportivo Cali), "Mateus Uribe" (America), "Yimmi Chara" (Junior), "Juan Fernando Quintero" (River Plate), "Edwin Cardona" (Boca Juniors), "Juan Cuadrado" (Juventus), "Gustavo Cuellar" (Flamengo), "Sebastian Pérez" (Boca Juniors)],
+          forwards: ["Radamel Falcao" (Monaco), "Duvan Zapata" (Sampdoria), "Miguel Borja" (Palmeiras), "Carlos Bacca" (Villarreal), "Luis Fernando Muriel" (Sevilla), "Teofilo Gutierrez" (Junior)]
 
         #Japan announced a final squad on 31 May 2018.
         Japan:
           coach: ["Akira Nishino"]
-          goalkeepers: [Eiji Kawashima (Metz); Masaaki Higashiguchi (Gamba Osaka); Kosuke Nakamura (Kashiwa Reysol)],
-          defenders: [Yuto Nagatomo (Galatasaray); Tomoaki Makino, Wataru Endo (Urawa Reds); Maya Yoshida (Southampton); Hiroki Sakai (Marseille); Gotoku Sakai (Hamburg); Gen Shoji, Naomichi Ueda (Kashima Antlers)],
-          midfielders: [Makoto Hasebe (Eintracht Frankfurt); Toshihiro Aoyama (Sanfrecce Hiroshima); Keisuke Honda (Pachuca); Takashi Inui (Eibar); Shinji Kagawa (Dortmund); Hotaru Yamaguchi (Cerezo Osaka); Genki Haraguchi, Takashi Usami (Fortuna Dusseldorf); Gaku Shibasaki (Getafe); Ryota Oshima (Kawasaki Frontale); Kento Misao (Kashima Antlers); Yosuke Ideguchi (Leonesa)],
-          forwards: [Shinji Okazaki (Leicester); Yuya Osako (Werder Bremen); Yoshinori Muto (Mainz); Takuma Asano (Stuttgart)]
+          goalkeepers: ["Eiji Kawashima" (Metz), "Masaaki Higashiguchi" (Gamba Osaka), "Kosuke Nakamura" (Kashiwa Reysol)],
+          defenders: ["Yuto Nagatomo" (Galatasaray), "Tomoaki Makino", "Wataru Endo" (Urawa Reds), "Maya Yoshida" (Southampton), "Hiroki Sakai" (Marseille), "Gotoku Sakai" (Hamburg), "Gen Shoji", "Naomichi Ueda" (Kashima Antlers)],
+          midfielders: ["Makoto Hasebe" (Eintracht Frankfurt), "Toshihiro Aoyama" (Sanfrecce Hiroshima), "Keisuke Honda" (Pachuca), "Takashi Inui" (Eibar), "Shinji Kagawa" (Dortmund), "Hotaru Yamaguchi" (Cerezo Osaka), "Genki Haraguchi", "Takashi Usami" (Fortuna Dusseldorf), "Gaku Shibasaki" (Getafe), "Ryota Oshima" (Kawasaki Frontale), "Kento Misao" (Kashima Antlers), "Yosuke Ideguchi" (Leonesa)],
+          forwards: ["Shinji Okazaki" (Leicester), "Yuya Osako" (Werder Bremen), "Yoshinori Muto" (Mainz), "Takuma Asano" (Stuttgart)]
 
         #Poland announced a 35-man preliminary squad on 11 May 2018. The squad was reduced to 32 players on 18 May.
         Poland:
           coach: ["Adam Nawałka"]
-          goalkeepers: [Bartosz Bialkowski (Ipswich Town), Lukasz Fabianski (Swansea City), Lukasz Skorupski (Roma), Wojciech Szczesny (Juventus)],
-          defenders: [Jan Bednarek (Southampton), Bartosz Bereszynski (Sampdoria), Thiago Cionek (SPAL), Kamil Glik (Monaco), Artur Jedrzejczyk (Legia Warsaw), Marcin Kaminski (Stuttgart), Tomasz Kedziora (Dynamo Kyiv), Michal Pazdan (Legia Warsaw), Lukasz Piszczek (Borussia Dortmund)],
-          midfielders: [Jakub Blaszczykowski (Wolfsburg), Pawel Dawidowicz (Palermo), Przemyslaw Frankowski (Jagiellonia Bialystok), Jacek Goralski (Ludogorets Razgrad), Kamil Grosicki (Hull City), Damian Kadzior (Gornik Zabrze), Grzegorz Krychowiak (West Bromwich Albion), Rafal Kurzawa (Gornik Zabrze), Karol Linetty (Sampdoria), Maciej Makuszewski (Lech Poznan), Krzysztof Maczynski (Legia Warsaw), Slawomir Peszko (Lechnia Gdansk), Maciej Rybus (Lokomotiv Moscow), Sebastian Szymanski (Legia Warsaw), Piotr Zielinski (Napoli), Szymon Zurkowski (Gornik Zabrze)],
-          forwards: [Dawid Kownacki (Sampdoria), Robert Lewandowski (Bayern Munich), Arkadiusz Milik (Napoli), Krzysztof Piatek (Cracovia), Lukasz Teodorczyk (Anderlecht), Kamil Wilczek (Brondby)]
+          goalkeepers: ["Bartosz Bialkowski" (Ipswich Town), "Lukasz Fabianski" (Swansea City), "Lukasz Skorupski" (Roma), "Wojciech Szczesny" (Juventus)],
+          defenders: ["Jan Bednarek" (Southampton), "Bartosz Bereszynski" (Sampdoria), "Thiago Cionek" (SPAL), "Kamil Glik" (Monaco), "Artur Jedrzejczyk" (Legia Warsaw), "Marcin Kaminski" (Stuttgart), "Tomasz Kedziora" (Dynamo Kyiv), "Michal Pazdan" (Legia Warsaw), "Lukasz Piszczek" (Borussia Dortmund)],
+          midfielders: ["Jakub Blaszczykowski" (Wolfsburg), "Pawel Dawidowicz" (Palermo), "Przemyslaw Frankowski" (Jagiellonia Bialystok), "Jacek Goralski" (Ludogorets Razgrad), "Kamil Grosicki" (Hull City), "Damian Kadzior" (Gornik Zabrze), "Grzegorz Krychowiak" (West Bromwich Albion), "Rafal Kurzawa" (Gornik Zabrze), "Karol Linetty" (Sampdoria)," Maciej Makuszewski" (Lech Poznan), "Krzysztof Maczynski" (Legia Warsaw), "Slawomir Peszko "(Lechnia Gdansk), "Maciej Rybus" (Lokomotiv Moscow), "Sebastian Szymanski" (Legia Warsaw), "Piotr Zielinski" (Napoli), "Szymon Zurkowski" (Gornik Zabrze)],
+          forwards: ["Dawid Kownacki" (Sampdoria), "Robert Lewandowski" (Bayern Munich), "Arkadiusz Milik" (Napoli), "Krzysztof Piatek" (Cracovia), "Lukasz Teodorczyk" (Anderlecht), "Kamil Wilczek" (Brondby)]
 
         #Senegal announced a final squad on 17 May 2018.
         Senegal:
           coach: ["Aliou Cissé"]
-          goalkeepers: [Abdoulaye Diallo (Stade Rennes), Alfred Gomis (SPAL), Khadim Ndiaye (Horoya)],
-          defenders: [Lamine Gassama (Alanyaspor), Saliou Ciss (Valenciennes), Kalidou Koulibaly (Napoli), Kara Mbodii (Anderlecht), Youssouf Sabaly (Bordeaux), Salif Sane (Hannover 96), Moussa Wague (Eupen)],
-          midfielders: [Idrissa Gueye (Everton), Cheikhou Kouyate (West Ham United), Alfred Ndiaye (Wolverhampton Wanderers), Badou Ndiaye (Stoke City), Cheikh Ndoye (Birmingham City), Ismaila Sarr (Stade Rennes)],
-          forwards: [Keita Balde (Monaco), Mame Biram Diouf (Stoke City), Moussa Konate (Amiens), Sadio Mane (Liverpool), Mbaye Niang (Torino), Diafra Sakho (Stade Rennes), Moussa Sow (Bursaspor)]
+          goalkeepers: ["Abdoulaye Diallo" (Stade Rennes), "Alfred Gomis" (SPAL), "Khadim Ndiaye" (Horoya)],
+          defenders: ["Lamine Gassama" (Alanyaspor), "Saliou Ciss" (Valenciennes), "Kalidou Koulibaly" (Napoli), "Kara Mbodii" (Anderlecht), "Youssouf Sabaly" (Bordeaux), "Salif Sane" (Hannover 96), "Moussa Wague" (Eupen)],
+          midfielders: ["Idrissa Gueye" (Everton), "Cheikhou Kouyate" (West Ham United), "Alfred Ndiaye" (Wolverhampton Wanderers), "Badou Ndiaye" (Stoke City), "Cheikh Ndoye" (Birmingham City), "Ismaila Sarr" (Stade Rennes)],
+          forwards: ["Keita Balde" (Monaco), "Mame Biram Diouf" (Stoke City), "Moussa Konate" (Amiens), "Sadio Mane" (Liverpool), "Mbaye Niang" (Torino), "Diafra Sakho" (Stade Rennes), "Moussa Sow" (Bursaspor)]
