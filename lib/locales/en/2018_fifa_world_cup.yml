@@ -111,3 +111,30 @@ en:
             defenders: [""],
             midfielders: [""],
             forwards: [""]
+        group_E:
+          Brazil:
+            coach: ["Adenor Leonardo Bacchi"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Costa_Rica:
+            coach: ["Óscar Ramírez"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Serbia:
+            coach: ["Mladen Krstajić"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Switzerland:
+            coach: ["Vladimir Petković"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+        group_F:
+          
