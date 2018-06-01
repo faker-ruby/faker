@@ -1,6 +1,22 @@
 en:
   faker:
     2018_fifa_world_cup:
+      teams:  ["Egypt", "Russia",
+              "Saudi Arabia", "Uruguay",
+              "Iran", "Morocco",
+              "Portugal", "Spain",
+              "Australia", "Denmark",
+              "France", "Peru",
+              "Argentina", "Croatia",
+              "Iceland", "Nigeria",
+              "Brazil", "Costa Rica",
+              "Serbia", "Switzerland",
+              "Germany", "Mexico",
+              "South Korea", "Sweden",
+              "Belgium", "England",
+              "Panama", "Tunisia",
+              "Columbia", "Japan",
+              "Poland", "Senegal" ]
       groups:
         group_A: ["Egypt", "Russia", "Saudi Arabia", "Uruguay"],
         group_B: ["Iran", "Morocco", "Portugal", "Spain"],
@@ -10,275 +26,259 @@ en:
         group_F: ["Germany", "Mexico", "South Korea", "Sweden"],
         group_G: ["Belgium", "England", "Panama", "Tunisia"],
         group_H: ["Columbia", "Japan", "Poland", "Senegal"]
-      teams:
-        group_A:
+      rosters:
+        #Egypt announced a 29-man preliminary squad on 14 May 2018.
+        Egypt:
+          coach: ["Héctor Cúper"],
+          goalkeepers: ["Essam El-Hadary", "Mohamed El-Shennawy", "Sherif Ekramy", "Mohamed Awad"],
+          defenders: ["Ahmed Fathi", "Saad Samir", "Ayman Ashraf", "Mahmoud Hamdy 'El Wensh'", "Mohamed Abdel Shafy", "Ahmed Hegazi", "Ali Gabr", "Ahmed El Mohamady", "Karim Hafez", "Omar Gaber", "Amro Tarek"],
+          midfielders: ["Tarek Hamed", "Mahmoud Abdel Aziz", "Shikabala", "Abdallah El-Said", "Sam Morsy", "Mohamed ElNeny", "Mahmoud 'Kahraba'", "Ramadan Sobhi", "Mahmoud 'Trezeguet'", "Amr Warda"],
+          forwards: ["Marwan Mohsen", "Ahmed Gomaa", "Ahmed Hassan 'Koka'", "Mohamed Salah"]
 
-          #Egypt announced a 29-man preliminary squad on 14 May 2018.
-          Egypt:
-            coach: ["Héctor Cúper"],
-            goalkeepers: ["Essam El-Hadary", "Mohamed El-Shennawy", "Sherif Ekramy", "Mohamed Awad"],
-            defenders: ["Ahmed Fathi", "Saad Samir", "Ayman Ashraf", "Mahmoud Hamdy 'El Wensh'", "Mohamed Abdel Shafy", "Ahmed Hegazi", "Ali Gabr", "Ahmed El Mohamady", "Karim Hafez", "Omar Gaber", "Amro Tarek"],
-            midfielders: ["Tarek Hamed", "Mahmoud Abdel Aziz", "Shikabala", "Abdallah El-Said", "Sam Morsy", "Mohamed ElNeny", "Mahmoud 'Kahraba'", "Ramadan Sobhi", "Mahmoud 'Trezeguet'", "Amr Warda"],
-            forwards: ["Marwan Mohsen", "Ahmed Gomaa", "Ahmed Hassan 'Koka'", "Mohamed Salah"]
+        #Russia announced a 28-man preliminary squad on May 11 2018. On May 14, it replaced defender Ruslan Kambolov with Sergei Ignashevich.
+        Russia:
+          coach: ["Stanislav Cherchesov"],
+          goalkeepers: ["Igor Akinfeev", "Vladimir Gabulov", "Soslan Dzhanaev", "Andrei Lunev"],
+          defenders: ["Vladimir Granat", "Fyodor Kudryashov", "Ilya Kutepov", "Roman Neustadter", "Konstantin Rausch", "Andrei Semyonov", "Igor Smolnikov", "Mario Fernandes", "Sergei Ignashevich"],
+          midfielders: ["Yury Gazinsky", "Alan Dzagoev", "Alexander Golovin", "Alexander Erokhin", "Yury Zhirkov", "Daler Kuzyaev", "Roman Zobnin", "Alexander Samedov", "Anton Miranchuk", "Alexander Tashyev", "Denis Cheryshev"],
+          forwards: ["Artem Dzyuba", "Alexei Miranchuk", "Fyodor Smolov", "Fyodor Chalov"]
 
-          #Russia announced a 28-man preliminary squad on May 11 2018. On May 14, it replaced defender Ruslan Kambolov with Sergei Ignashevich.
-          Russia:
-            coach: ["Stanislav Cherchesov"],
-            goalkeepers: ["Igor Akinfeev", "Vladimir Gabulov", "Soslan Dzhanaev", "Andrei Lunev"],
-            defenders: ["Vladimir Granat", "Fyodor Kudryashov", "Ilya Kutepov", "Roman Neustadter", "Konstantin Rausch", "Andrei Semyonov", "Igor Smolnikov", "Mario Fernandes", "Sergei Ignashevich"],
-            midfielders: ["Yury Gazinsky", "Alan Dzagoev", "Alexander Golovin", "Alexander Erokhin", "Yury Zhirkov", "Daler Kuzyaev", "Roman Zobnin", "Alexander Samedov", "Anton Miranchuk", "Alexander Tashyev", "Denis Cheryshev"],
-            forwards: ["Artem Dzyuba", "Alexei Miranchuk", "Fyodor Smolov", "Fyodor Chalov"]
+        #Saudi Arabia announced 28-man preliminary squad on 17 May 2018.
+        Saudi_Arabia:
+          coach: ["Juan Antonio Pizzi"],
+          goalkeepers: ["Assaf Al-Qarny", "Mohammed Al-Owais", "Yasser Al-Musailem", "Abdullah Al-Mayuf"],
+          defenders: ["Mansoor Al-Harbi", "Yasser Al-Shahrani", "Mohammed Al-Breik", "Saeed Al-Mowalad", "Motaz Hawsawi", "Osama Hawsawi", "Omar Hawsawi", "Mohammed Jahfali", "Ali Al-Bulaihi"],
+          midfielders: ["Abdullah Al-Khaibari", "Abdulmalek Al-Khaibri", "Abdullah Otayf", "Taiseer Al-Jassim", "Houssain Al-Mogahwi", "Salman Al-Faraj", "Nawaf Al-Abed", "Mohamed Kanno", "Hattan Bahebri", "Mohammed Al-Kwikbi", "Salem Al-Dawsari", "Yehya Al-Shehri"],
+          forwards: ["Fahad Al-Muwallad", "Mohammad Al-Sahlawi", "Muhannad Assiri"]
 
-          #Saudi Arabia announced 28-man preliminary squad on 17 May 2018.
-          Saudi_Arabia:
-            coach: ["Juan Antonio Pizzi"],
-            goalkeepers: ["Assaf Al-Qarny", "Mohammed Al-Owais", "Yasser Al-Musailem", "Abdullah Al-Mayuf"],
-            defenders: ["Mansoor Al-Harbi", "Yasser Al-Shahrani", "Mohammed Al-Breik", "Saeed Al-Mowalad", "Motaz Hawsawi", "Osama Hawsawi", "Omar Hawsawi", "Mohammed Jahfali", "Ali Al-Bulaihi"],
-            midfielders: ["Abdullah Al-Khaibari", "Abdulmalek Al-Khaibri", "Abdullah Otayf", "Taiseer Al-Jassim", "Houssain Al-Mogahwi", "Salman Al-Faraj", "Nawaf Al-Abed", "Mohamed Kanno", "Hattan Bahebri", "Mohammed Al-Kwikbi", "Salem Al-Dawsari", "Yehya Al-Shehri"],
-            forwards: ["Fahad Al-Muwallad", "Mohammad Al-Sahlawi", "Muhannad Assiri"]
+        #Uruguay named a 26-man preliminary roster on May 15 2018.
+        Uruguay:
+          coach: ["Óscar Tabárez"],
+          goalkeepers: ["Fernando Muslera", "Martin Silva", "Martin Campana"],
+          defenders: ["Diego Godin", "Sebastian Coates", "Jose Maria Gimenez", "Maximiliano Pereira", "Gaston Silva", "Martin Caceres", "Guillermo Varela"],
+          midfielders: ["Nahitan Nandez", "Lucas Torreira", "Matias Vecino", "Federico Valverde", "Rodrigo Bentancur", "Carlos Sanchez", "Giorgian De Arrascaeta", "Diego Laxalt", "Cristian Rodriguez", "Jonathan Urretaviscaya", "Nicolas Lodeiro", "Gaston Ramirez"],
+          forwards: ["Cristhian Stuani", "Maxi Gomez", "Edinson Cavani", "Luis Suarez"]
 
-          #Uruguay named a 26-man preliminary roster on May 15 2018.
-          Uruguay:
-            coach: ["Óscar Tabárez"],
-            goalkeepers: ["Fernando Muslera", "Martin Silva", "Martin Campana"],
-            defenders: ["Diego Godin", "Sebastian Coates", "Jose Maria Gimenez", "Maximiliano Pereira", "Gaston Silva", "Martin Caceres", "Guillermo Varela"],
-            midfielders: ["Nahitan Nandez", "Lucas Torreira", "Matias Vecino", "Federico Valverde", "Rodrigo Bentancur", "Carlos Sanchez", "Giorgian De Arrascaeta", "Diego Laxalt", "Cristian Rodriguez", "Jonathan Urretaviscaya", "Nicolas Lodeiro", "Gaston Ramirez"],
-            forwards: ["Cristhian Stuani", "Maxi Gomez", "Edinson Cavani", "Luis Suarez"]
+        #Iran announced a 35-man preliminary squad on 13 May 2018. The squad was reduced to 24 players on 20 May 2018.
+        Iran:
+          coach: ["Carlos Queiroz"],
+          goalkeepers: ["Alireza Beiranvand", "Rashid Mazaheri", "Amir Abedzadeh"],
+          defenders: ["Ramin Rezaeian", "Mohammad Reza Khanzadeh", "Morteza Pouraliganji", "Mohammad Ansari", "Pejman Montazeri", "Seyed Majid Hosseini", "Milad Mohammadi", "Roozbeh Cheshmi"],
+          midfielders: ["Saeid Ezatolahi", "Masoud Shojaei", "Mahdi Torabi", "Ashkan Dejagah", "Omid Ebrahimi", "Ehsan Hajsafi", "Ali Gholizadeh", "Vahid Amiri"],
+          forwards: ["Alireza Jahanbakhsh", "Karim Ansarifard", "Saman Ghoddos", "Mahdi Taremi", "Sardar Azmoun", "Reza Ghoochannejhad"]
 
-        group_B:
+        #Morocco announced its 23-man squad on 17 May 2018.
+        Morocco:
+          coach: ["Hervé Renard"],
+          goalkeepers: ["Mounir El Kajoui", "Yassine Bounou", "Ahmad Reda Tagnaouti"],
+          defenders: ["Medhi Benatia", "Romain Saiss", "Manuel Da Costa", "Badr Benoun", "Nabil Dirar", "Achraf Hakimi", "Hamza Mendyl"],
+          midfielders: ["Mbark Boussoufa", "Karim El Ahmadi", "Youssef Ait Bennasser", "Sofyan Amrabat", "Younes Belhanda", "Faycal Fajr", "Amine Harit", "Hakim Ziyech"],
+          forwards: ["Khalid Boutaib", "Aziz Bouhaddouz", "Ayoub El Kaabi", "Nordin Amrabat", "Mehdi Carcela"]
 
-          #Iran announced a 35-man preliminary squad on 13 May 2018. The squad was reduced to 24 players on 20 May 2018.
-          Iran:
-            coach: ["Carlos Queiroz"],
-            goalkeepers: ["Alireza Beiranvand", "Rashid Mazaheri", "Amir Abedzadeh"],
-            defenders: ["Ramin Rezaeian", "Mohammad Reza Khanzadeh", "Morteza Pouraliganji", "Mohammad Ansari", "Pejman Montazeri", "Seyed Majid Hosseini", "Milad Mohammadi", "Roozbeh Cheshmi"],
-            midfielders: ["Saeid Ezatolahi", "Masoud Shojaei", "Mahdi Torabi", "Ashkan Dejagah", "Omid Ebrahimi", "Ehsan Hajsafi", "Ali Gholizadeh", "Vahid Amiri"],
-            forwards: ["Alireza Jahanbakhsh", "Karim Ansarifard", "Saman Ghoddos", "Mahdi Taremi", "Sardar Azmoun", "Reza Ghoochannejhad"]
+        #Portugal cut its preliminary squad down to 23 on 17 May 2018.
+        Portugal:
+          coach: ["Fernando Santos"],
+          goalkeepers: ["Anthony Lopes", "Beto", "Rui Patricio"],
+          defenders: ["Bruno Alves", "Cedric Soares", "Jose Fonte", "Mario Rui", "Pepe", "Raphael Guerreiro", "Ricardo Pereira", "Ruben Dias"],
+          midfielders: ["Adrien Silva", "Bruno Fernandes", "Joao Mario", "Joao Moutinho", "Manuel Fernandes", "William Carvalho"],
+          forwards: ["Andre Silva", "Bernardo Silva", "Cristiano Ronaldo", "Gelson Martins", "Goncalo Guedes", "Ricardo Quaresma"]
 
-          #Morocco announced its 23-man squad on 17 May 2018.
-          Morocco:
-            coach: ["Hervé Renard"],
-            goalkeepers: ["Mounir El Kajoui", "Yassine Bounou", "Ahmad Reda Tagnaouti"],
-            defenders: ["Medhi Benatia", "Romain Saiss", "Manuel Da Costa", "Badr Benoun", "Nabil Dirar", "Achraf Hakimi", "Hamza Mendyl"],
-            midfielders: ["Mbark Boussoufa", "Karim El Ahmadi", "Youssef Ait Bennasser", "Sofyan Amrabat", "Younes Belhanda", "Faycal Fajr", "Amine Harit", "Hakim Ziyech"],
-            forwards: ["Khalid Boutaib", "Aziz Bouhaddouz", "Ayoub El Kaabi", "Nordin Amrabat", "Mehdi Carcela"]
+        #Spain named its 23-man squad on 21 May 2018.
+        Spain:
+          coach: ["Julen Lopetegui"],
+          goalkeepers: ["Kepa Arrizabalaga", "David de Gea", "Pepe Reina"],
+          defenders: ["Jordi Alba", "Cesar Azpiliqueta", "Dani Carvajal", "Nacho Fernandez", "Nacho Monreal", "Alvaro Odriozola", "Gerard Pique", "Sergio Ramos"],
+          midfielders: ["Thiago Alcantara", "Sergio Busquets", "Andres Iniesta", "Isco", "Koke", "Saul Niguez", "David Silva"],
+          forwards: ["Marco Asensio", "Iago Aspas", "Diego Costa", "Rodrigo Moreno", "Lucas Vazquez"]
 
-          #Portugal cut its preliminary squad down to 23 on 17 May 2018.
-          Portugal:
-            coach: ["Fernando Santos"],
-            goalkeepers: ["Anthony Lopes", "Beto", "Rui Patricio"],
-            defenders: ["Bruno Alves", "Cedric Soares", "Jose Fonte", "Mario Rui", "Pepe", "Raphael Guerreiro", "Ricardo Pereira", "Ruben Dias"],
-            midfielders: ["Adrien Silva", "Bruno Fernandes", "Joao Mario", "Joao Moutinho", "Manuel Fernandes", "William Carvalho"],
-            forwards: ["Andre Silva", "Bernardo Silva", "Cristiano Ronaldo", "Gelson Martins", "Goncalo Guedes", "Ricardo Quaresma"]
+        #Australia announced a 32-man preliminary squad on 6 May 2018. The squad was reduced to 26 players on 14 May. The squad was extended to 27 players with the call-up of Jamie Maclaren on 28 May 2018.
+        Australia:
+          coach: ["Bert van Marwijk"],
+          goalkeepers: ["Mat Ryan", "Danny Vukovic", "Brad Jones"],
+          defenders: ["Aziz Behich", "Milos Degenek", "Matthew Jurman", "James Meredith", "Josh Risdon", "Trent Sainsbury", "Fran Karacic"],
+          midfielders: ["Josh Brillante", "Mile Jedinak", "Mark Milligan", "Robbie Kruse", "Jackson Irvine", "Massimo Luongo", "Aaron Mooy", "Tom Rogic", "James Troisi"],
+          forwards: ["Tim Cahill", "Tomi Juric", "Mathew Leckie", "Andrew Nabbout", "Nikita Rukavytsya", "Dimitri Petratos", "Jamie Maclaren", "Daniel Arzani"]
 
-          #Spain named its 23-man squad on 21 May 2018.
-          Spain:
-            coach: ["Julen Lopetegui"],
-            goalkeepers: ["Kepa Arrizabalaga", "David de Gea", "Pepe Reina"],
-            defenders: ["Jordi Alba", "Cesar Azpiliqueta", "Dani Carvajal", "Nacho Fernandez", "Nacho Monreal", "Alvaro Odriozola", "Gerard Pique", "Sergio Ramos"],
-            midfielders: ["Thiago Alcantara", "Sergio Busquets", "Andres Iniesta", "Isco", "Koke", "Saul Niguez", "David Silva"],
-            forwards: ["Marco Asensio", "Iago Aspas", "Diego Costa", "Rodrigo Moreno", "Lucas Vazquez"]
+        #Denmark announced a 35-man preliminary squad on 14 May 2018. The squad was reduced to 27 players on 27 May 2018.
+        Denmark:
+          coach: ["Åge Hareide"],
+          goalkeepers: ["Kasper Schmeichel", "Jonas Lossl", "Frederik Ronow", "Jesper Hansen"],
+          defenders: ["Simon Kjaer", "Andreas Christensen", "Mathias Jorgensen", "Jannik Vestergaard", "Andreas Bjelland", "Henrik Dalsgaard", "Peter Ankersen", "Jens Stryger Larsen", "Riza Durmisi", "Jonas Knudsen", "Nicolai Boilesen"],
+          midfielders: ["William Kvist", "Thomas Delaney", "Lukas Lerager", "Lasse Schone", "Mike Jensen", "Christian Eriksen", "Daniel Wass", "Pierre-Emile Hojbjerg", "Mathias Jensen", "Michael Krohn-Dehli", "Robert Skov"],
+          forwards: ["Pione Sisto", "Martin Braithwaite", "Andreas Cornelius", "Viktor Fischer", "Yussuf Poulsen", "Nicolai Jorgensen", "Nicklas Bendtner", "Kasper Dolberg", "Kenneth Zohore"]
 
-        group_C:
+        #France announced a final squad on 17 May 2018.
+        France:
+          coach: ["Didier Deschamps"],
+          goalkeepers: ["Hugo Lloris", "Alphonse Areola", "Steve Mandanda"],
+          defenders: ["Raphael Varane", "Samuel Umtiti", "Presnel Kimpembe", "Djibril Sidibe", "Benjamin Mendy", "Lucas Hernandez", "Benjamin Pavard", "Adil Rami"],
+          midfielders: ["N’Golo Kante", "Paul Pogba", "Thomas Lemar", "Blaise Matuidi", "Corentin Tolisso", "Steven N’Zonzi"],
+          forwards: ["Antoine Griezmann", "Kylian Mbappe", "Olivier Giroud", "Ousmane Dembele", "Florian Thauvin", "Nabil Fekir"]
 
-          #Australia announced a 32-man preliminary squad on 6 May 2018. The squad was reduced to 26 players on 14 May. The squad was extended to 27 players with the call-up of Jamie Maclaren on 28 May 2018.
-          Australia:
-            coach: ["Bert van Marwijk"],
-            goalkeepers: ["Mat Ryan", "Danny Vukovic", "Brad Jones"],
-            defenders: ["Aziz Behich", "Milos Degenek", "Matthew Jurman", "James Meredith", "Josh Risdon", "Trent Sainsbury", "Fran Karacic"],
-            midfielders: ["Josh Brillante", "Mile Jedinak", "Mark Milligan", "Robbie Kruse", "Jackson Irvine", "Massimo Luongo", "Aaron Mooy", "Tom Rogic", "James Troisi"],
-            forwards: ["Tim Cahill", "Tomi Juric", "Mathew Leckie", "Andrew Nabbout", "Nikita Rukavytsya", "Dimitri Petratos", "Jamie Maclaren", "Daniel Arzani"]
+        #Peru announced a 24-man preliminary squad on 16 May 2018. The final squad was announced on 30 May. The squad was expanded to 24 players on 31 May after the suspension of Paolo Guerrero was lifted.
+        Peru:
+          coach: ["Ricardo Gareca"]
+          goalkeepers: ["Pedro Gallese", "Jose Carvallo", "Carlos Caceda"],
+          defenders: ["Luis Abram", "Luis Advincula", "Miguel Araujo", "Aldo Corzo", "Nilson Loyola", "Christian Ramos", "Alberto Rodriguez", "Anderson Santamaría", "Miguel Trauco"],
+          midfielders: ["Pedro Aquino", "Wilmer Cartagena", "Christian Cueva", "Edison Flores", "Paolo Hurtado", "Sergio Pena", "Andy Polo", "Renato Tapia", "Yoshimar Yotun"],
+          forwards: ["Paolo Guerrero", "Andre Carrillo", "Raul Ruidiaz", "Jefferson Farfan"]
 
-          #Denmark announced a 35-man preliminary squad on 14 May 2018. The squad was reduced to 27 players on 27 May 2018.
-          Denmark:
-            coach: ["Åge Hareide"],
-            goalkeepers: ["Kasper Schmeichel", "Jonas Lossl", "Frederik Ronow", "Jesper Hansen"],
-            defenders: ["Simon Kjaer", "Andreas Christensen", "Mathias Jorgensen", "Jannik Vestergaard", "Andreas Bjelland", "Henrik Dalsgaard", "Peter Ankersen", "Jens Stryger Larsen", "Riza Durmisi", "Jonas Knudsen", "Nicolai Boilesen"],
-            midfielders: ["William Kvist", "Thomas Delaney", "Lukas Lerager", "Lasse Schone", "Mike Jensen", "Christian Eriksen", "Daniel Wass", "Pierre-Emile Hojbjerg", "Mathias Jensen", "Michael Krohn-Dehli", "Robert Skov"],
-            forwards: ["Pione Sisto", "Martin Braithwaite", "Andreas Cornelius", "Viktor Fischer", "Yussuf Poulsen", "Nicolai Jorgensen", "Nicklas Bendtner", "Kasper Dolberg", "Kenneth Zohore"]
+        #Argentina announced a 35-man preliminary squad on 14 May 2018. The final squad was announced on 21 May. Injured Sergio Romero was replaced by Nahuel Guzmán on 23 May.
+        Argentina:
+          coach: ["Jorge Sampaoli"]
+          goalkeepers: ["Franco Armani", "Willy Caballero", "Sergio Romero"],
+          defenders: ["Marcos Acuna", "Cristian Ansaldi", "Federico Fazio", "Javier Mascherano", "Gabriel Mercado", "Nicolas Otamendi", "Marcos Rojo", "Eduardo Salvio", "Nicolas Tagliafico"],
+          midfielders: ["Ever Banega", "Lucas Biglia", "Angel Di Maria", "Manuel Lanzini", "Giovani Lo Celso", "Maxi Meza", "Cristian Pavon"],
+          forwards: ["Sergio Aguero", "Paulo Dybala", "Gonzalo Higuain", "Lionel Messi"]
 
-          #France announced a final squad on 17 May 2018.
-          France:
-            coach: ["Didier Deschamps"],
-            goalkeepers: ["Hugo Lloris", "Alphonse Areola", "Steve Mandanda"],
-            defenders: ["Raphael Varane", "Samuel Umtiti", "Presnel Kimpembe", "Djibril Sidibe", "Benjamin Mendy", "Lucas Hernandez", "Benjamin Pavard", "Adil Rami"],
-            midfielders: ["N’Golo Kante", "Paul Pogba", "Thomas Lemar", "Blaise Matuidi", "Corentin Tolisso", "Steven N’Zonzi"],
-            forwards: ["Antoine Griezmann", "Kylian Mbappe", "Olivier Giroud", "Ousmane Dembele", "Florian Thauvin", "Nabil Fekir"]
+        #Croatia announced a 32-man preliminary squad on 14 May 2018. The squad was reduced to 24 players on 21 May.
+        Croatia:
+          coach: ["Zlatko Dalić"]
+          goalkeepers: ["Danijel Subasic", "Lovre Kalinic", "Dominik Livakovic"],
+          defenders: ["Vedran Corluka", "Domagoj Vida", "Ivan Strinic", "Dejan Lovren", "Sime Vrsaljko", "Josip Pivaric" , "Tin Jedvaj", "Matej Mitrovic", "Duje Caleta-Car"],
+          midfielders: ["Luka Modric", "Ivan Rakitic", "Mateo Kovacic", "Milan Badelj", "Marcelo Brozovic", "Filip Bradaric"],
+          forwards: ["Mario Mandzukic", "Ivan Perisic", "Nikola Kalinic", "Andrej Kramaric", "Marko Pjaca", "Ante Rebic"]
 
-          #Peru announced a 24-man preliminary squad on 16 May 2018. The final squad was announced on 30 May. The squad was expanded to 24 players on 31 May after the suspension of Paolo Guerrero was lifted.
-          Peru:
-            coach: ["Ricardo Gareca"]
-            goalkeepers: ["Pedro Gallese", "Jose Carvallo", "Carlos Caceda"],
-            defenders: ["Luis Abram", "Luis Advincula", "Miguel Araujo", "Aldo Corzo", "Nilson Loyola", "Christian Ramos", "Alberto Rodriguez", "Anderson Santamaría", "Miguel Trauco"],
-            midfielders: ["Pedro Aquino", "Wilmer Cartagena", "Christian Cueva", "Edison Flores", "Paolo Hurtado", "Sergio Pena", "Andy Polo", "Renato Tapia", "Yoshimar Yotun"],
-            forwards: ["Paolo Guerrero", "Andre Carrillo", "Raul Ruidiaz", "Jefferson Farfan"]
+        #Iceland announced a final squad on 11 May 2018.
+        Iceland:
+          coach: ["Heimir Hallgrímsson"]
+          goalkeepers: ["Hannes Thor Halldorsson"," Runar Alex Runarsson", "Frederik Schram"],
+          defenders: ["Birkir Mar Saevarsson", "Ragnar Sigurdsson", "Kari Arnason", "Ari Freyr Skulason", "Sverrir Ingi Ingason", "Hordur Bjorgvin Magnusson", "Samuel Kari Fridridsson", "Holmar Orn Eyjolfsson"],
+          midfielders: ["Aaron Einar Gunnarsson", "Gylfi Sigurdsson", "Emil Hallfredsson", "Birkir Bjarnason", "Johann Berg Gudmundsson", "Olafur Ingi Skulason", "Arnor Ingvi Traustason", "Rurik Gislason"],
+          forwards: ["Alfred Finnbogason", "Jon Dadi Bodvarsson", "Bjorn Bergmann Sigurdarson", "Albert Gudmundsson"]
 
-        group_D:
+        #Nigeria announced a 30-man preliminary squad on 14 May 2018. The squad was reduced to 29 players on 27 May as Moses Simon withdrew injured. The squad was reduced to 25 players on 30 May.
+        Nigeria:
+          coach: ["Gernot Rohr"]
+          goalkeepers: ["Ikechukwu Ezenwa", "Daniel Akpeyi", "Francis Uzoho", "Dele Ajiboye"],
+          defenders: ["William Troost-Ekong", "Leon Balogun", "Ola Aina" , "Kenneth Omeruo", "Brian Idowu", "Chidozie Awaziem", "Abdullahi Shehu", "Elderson Echiejile", "Tyronne Ebuehi", "Stephen Eze"],
+          midfielders: ["John Obi Mikel", "Ogenyi Onazi", "John Ogu", "Wilfred Ndidi", "Uche Agbo", "Oghenekaro Etebo", "Joel Obi", "Mikel Agu"],
+          forwards: ["Odion Ighalo", "Ahmed Musa", "Victor Moses", "Alex Iwobi", "Kelechi Iheanacho", "Moses Simon", "Junior Lokosa", "Simeon Nwankwo"]
 
-          #Argentina announced a 35-man preliminary squad on 14 May 2018. The final squad was announced on 21 May. Injured Sergio Romero was replaced by Nahuel Guzmán on 23 May.
-          Argentina:
-            coach: ["Jorge Sampaoli"]
-            goalkeepers: ["Franco Armani", "Willy Caballero", "Sergio Romero"],
-            defenders: ["Marcos Acuna", "Cristian Ansaldi", "Federico Fazio", "Javier Mascherano", "Gabriel Mercado", "Nicolas Otamendi", "Marcos Rojo", "Eduardo Salvio", "Nicolas Tagliafico"],
-            midfielders: ["Ever Banega", "Lucas Biglia", "Angel Di Maria", "Manuel Lanzini", "Giovani Lo Celso", "Maxi Meza", "Cristian Pavon"],
-            forwards: ["Sergio Aguero", "Paulo Dybala", "Gonzalo Higuain", "Lionel Messi"]
+        #Brazil announced a final squad on 14 May 2018.
+        Brazil:
+          coach: ["Adenor Leonardo Bacchi"]
+          goalkeepers: ["Alisson", "Ederson", "Cassio"],
+          defenders: ["Danilo", "Fagner", "Marcelo", "Filipe Luis", "Thiago Silva", "Marquinhos", "Miranda", "Pedro Geromel"],
+          midfielders: ["Casemiro", "Fernandinho", "Paulinho", "Fred", "Renato Augusto", "Philippe Coutinho", "Willian", "Douglas Costa"],
+          forwards: ["Neymar", "Taison", "Gabriel Jesus", "Roberto Firmino"]
 
-          #Croatia announced a 32-man preliminary squad on 14 May 2018. The squad was reduced to 24 players on 21 May.
-          Croatia:
-            coach: ["Zlatko Dalić"]
-            goalkeepers: ["Danijel Subasic", "Lovre Kalinic", "Dominik Livakovic"],
-            defenders: ["Vedran Corluka", "Domagoj Vida", "Ivan Strinic", "Dejan Lovren", "Sime Vrsaljko", "Josip Pivaric" , "Tin Jedvaj", "Matej Mitrovic", "Duje Caleta-Car"],
-            midfielders: ["Luka Modric", "Ivan Rakitic", "Mateo Kovacic", "Milan Badelj", "Marcelo Brozovic", "Filip Bradaric"],
-            forwards: ["Mario Mandzukic", "Ivan Perisic", "Nikola Kalinic", "Andrej Kramaric", "Marko Pjaca", "Ante Rebic"]
+        #Costa Rica announced a final squad on 14 May 2018.
+        Costa_Rica:
+          coach: ["Óscar Ramírez"]
+          goalkeepers: ["Keylor Navas", "Patrick Pemberton", "Leonel Moreira"],
+          defenders: ["Cristian Gamboa", "Ian Smith", "Ronald Matarrita", "Bryan Oviedo", "Oscar Duarte", "Giancarlo Gonzalez", "Francisco Calvo", "Kendall Waston", "Johnny Acosta"],
+          midfielders: ["David Guzman", "Yeltsin Tejeda", "Celso Borges", "Randall Azofeifa", "Rodney Wallace", "Bryan Ruiz", "Daniel Colindres", "Christian Bolanos"],
+          forwards: ["Johan Venegas", "Joel Campbell", "Marco Urena"]
 
-          #Iceland announced a final squad on 11 May 2018.
-          Iceland:
-            coach: ["Heimir Hallgrímsson"]
-            goalkeepers: ["Hannes Thor Halldorsson"," Runar Alex Runarsson", "Frederik Schram"],
-            defenders: ["Birkir Mar Saevarsson", "Ragnar Sigurdsson", "Kari Arnason", "Ari Freyr Skulason", "Sverrir Ingi Ingason", "Hordur Bjorgvin Magnusson", "Samuel Kari Fridridsson", "Holmar Orn Eyjolfsson"],
-            midfielders: ["Aaron Einar Gunnarsson", "Gylfi Sigurdsson", "Emil Hallfredsson", "Birkir Bjarnason", "Johann Berg Gudmundsson", "Olafur Ingi Skulason", "Arnor Ingvi Traustason", "Rurik Gislason"],
-            forwards: ["Alfred Finnbogason", "Jon Dadi Bodvarsson", "Bjorn Bergmann Sigurdarson", "Albert Gudmundsson"]
+        #Serbia announced a 27-man preliminary squad on 24 May 2018.
+        Serbia:
+          coach: ["Mladen Krstajić"]
+          goalkeepers: ["Vladimir Stojkovic", "Predrag Rajkovic", "Marko Dmitrovic", "Aleksandar Jovanovic"],
+          defenders: ["Branislav Ivanovic",  "Aleksandar Kolarov", "Antonio Rukavina", "Matija Nastasic", "Dusko Tosic", "Uros Spajic", "Milos Veljkovic", "Nikola Milenkovic", "Milan Rodic"],
+          midfielders: ["Dusan Tadic", "Nemanja Matic", "Adem Ljajic", "Luka Milivojevic", "Filip Kostic", "Andrija Zivkovic", "Mijat Gacinovic", "Marko Grujic", "Nemanja Maksimovic", "Sergej Milinkovic-Savic", "Nemanja Radonjic"],
+          forwards: ["Aleksandar Mitrovic", "Aleksandar Prijovic", "Luka Jovic"]
 
-          #Nigeria announced a 30-man preliminary squad on 14 May 2018. The squad was reduced to 29 players on 27 May as Moses Simon withdrew injured. The squad was reduced to 25 players on 30 May.
-          Nigeria:
-            coach: ["Gernot Rohr"]
-            goalkeepers: ["Ikechukwu Ezenwa", "Daniel Akpeyi", "Francis Uzoho", "Dele Ajiboye"],
-            defenders: ["William Troost-Ekong", "Leon Balogun", "Ola Aina" , "Kenneth Omeruo", "Brian Idowu", "Chidozie Awaziem", "Abdullahi Shehu", "Elderson Echiejile", "Tyronne Ebuehi", "Stephen Eze"],
-            midfielders: ["John Obi Mikel", "Ogenyi Onazi", "John Ogu", "Wilfred Ndidi", "Uche Agbo", "Oghenekaro Etebo", "Joel Obi", "Mikel Agu"],
-            forwards: ["Odion Ighalo", "Ahmed Musa", "Victor Moses", "Alex Iwobi", "Kelechi Iheanacho", "Moses Simon", "Junior Lokosa", "Simeon Nwankwo"]
+        #Switzerland announced a 26-man preliminary squad on 25 May 2018. The final squad will be announced on 4 June.
+        Switzerland:
+          coach: ["Vladimir Petković"]
+          goalkeepers: ["Yann Sommer", "Roman Bürki", "Gregor Kobel", "Yvon Mvogo"],
+          defenders: ["Stephan Lichtsteiner", "Johan Djourou", "Ricardo Rodríguez", "Fabian Schär", "Michael Lang", "François Moubandje", "Silvan Widmer", "Manuel Akanji", "	Nico Elvedi"],
+          midfielders: ["Valon Behrami", "Xherdan Shaqiri", "Gelson Fernandes", "Blerim Džemaili", "Granit Xhaka", "Steven Zuber", "Remo Freuler", "Denis Zakaria", "Edimilson Fernandes"],
+          forwards: ["Haris Seferović", "Josip Drmić", "Breel Embolo", "Mario Gavranović"]
 
-        group_E:
+        #Germany announced a 27-man preliminary squad on 15 May 2018.
+        Germany:
+          coach: ["Joachim Löw"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #Brazil announced a final squad on 14 May 2018.
-          Brazil:
-            coach: ["Adenor Leonardo Bacchi"]
-            goalkeepers: ["Alisson", "Ederson", "Cassio"],
-            defenders: ["Danilo", "Fagner", "Marcelo", "Filipe Luis", "Thiago Silva", "Marquinhos", "Miranda", "Pedro Geromel"],
-            midfielders: ["Casemiro", "Fernandinho", "Paulinho", "Fred", "Renato Augusto", "Philippe Coutinho", "Willian", "Douglas Costa"],
-            forwards: ["Neymar", "Taison", "Gabriel Jesus", "Roberto Firmino"]
+        #Mexico announced a 28-man preliminary squad on 14 May 2018. The squad was reduced to 27 players on 23 May as Néstor Araujo withdrew injured.
+        Mexico:
+          coach: ["Juan Carlos Osorio"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #Costa Rica announced a final squad on 14 May 2018.
-          Costa_Rica:
-            coach: ["Óscar Ramírez"]
-            goalkeepers: ["Keylor Navas", "Patrick Pemberton", "Leonel Moreira"],
-            defenders: ["Cristian Gamboa", "Ian Smith", "Ronald Matarrita", "Bryan Oviedo", "Oscar Duarte", "Giancarlo Gonzalez", "Francisco Calvo", "Kendall Waston", "Johnny Acosta"],
-            midfielders: ["David Guzman", "Yeltsin Tejeda", "Celso Borges", "Randall Azofeifa", "Rodney Wallace", "Bryan Ruiz", "Daniel Colindres", "Christian Bolanos"],
-            forwards: ["Johan Venegas", "Joel Campbell", "Marco Urena"]
+        #South Korea announced a 28-man preliminary squad on 14 May 2018. The squad was reduced to 26 players on 22 May as Kwon Chang-hoon and Lee Keun-ho withdrew injured.
+        South Korea:
+          coach: ["Shin Tae-yong"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #Serbia announced a 27-man preliminary squad on 24 May 2018.
-          Serbia:
-            coach: ["Mladen Krstajić"]
-            goalkeepers: ["Vladimir Stojkovic", "Predrag Rajkovic", "Marko Dmitrovic", "Aleksandar Jovanovic"],
-            defenders: ["Branislav Ivanovic",  "Aleksandar Kolarov", "Antonio Rukavina", "Matija Nastasic", "Dusko Tosic", "Uros Spajic", "Milos Veljkovic", "Nikola Milenkovic", "Milan Rodic"],
-            midfielders: ["Dusan Tadic", "Nemanja Matic", "Adem Ljajic", "Luka Milivojevic", "Filip Kostic", "Andrija Zivkovic", "Mijat Gacinovic", "Marko Grujic", "Nemanja Maksimovic", "Sergej Milinkovic-Savic", "Nemanja Radonjic"],
-            forwards: ["Aleksandar Mitrovic", "Aleksandar Prijovic", "Luka Jovic"]
+        #Sweden announced a final squad on 15 May 2018.
+        Sweden:
+          coach: ["Janne Andersson"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #Switzerland announced a 26-man preliminary squad on 25 May 2018. The final squad will be announced on 4 June.
-          Switzerland:
-            coach: ["Vladimir Petković"]
-            goalkeepers: ["Yann Sommer", "Roman Bürki", "Gregor Kobel", "Yvon Mvogo"],
-            defenders: ["Stephan Lichtsteiner", "Johan Djourou", "Ricardo Rodríguez", "Fabian Schär", "Michael Lang", "François Moubandje", "Silvan Widmer", "Manuel Akanji", "	Nico Elvedi"],
-            midfielders: ["Valon Behrami", "Xherdan Shaqiri", "Gelson Fernandes", "Blerim Džemaili", "Granit Xhaka", "Steven Zuber", "Remo Freuler", "Denis Zakaria", "Edimilson Fernandes"],
-            forwards: ["Haris Seferović", "Josip Drmić", "Breel Embolo", "Mario Gavranović"]
+        #Belgium announced a 28-man preliminary squad on 21 May 2018.
+        Belgium:
+          coach: ["Roberto Martínez"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-        group_F:
+        #England announced a final squad on 16 May 2018.
+        England:
+          coach: ["Gareth Southgate"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #Germany announced a 27-man preliminary squad on 15 May 2018.
-          Germany:
-            coach: ["Joachim Löw"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+        #Panama announced a final squad was announced on 30 May 2018.
+        Panama:
+          coach: ["Hernán Darío Gómez"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #Mexico announced a 28-man preliminary squad on 14 May 2018. The squad was reduced to 27 players on 23 May as Néstor Araujo withdrew injured.
-          Mexico:
-            coach: ["Juan Carlos Osorio"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+        #Tunisia announced a 29-man preliminary squad on 14 May 2018.
+        Tunisia:
+          coach: ["Nabil Maâloul"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #South Korea announced a 28-man preliminary squad on 14 May 2018. The squad was reduced to 26 players on 22 May as Kwon Chang-hoon and Lee Keun-ho withdrew injured.
-          South Korea:
-            coach: ["Shin Tae-yong"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+        #Columbia announced a 35-man preliminary squad on 14 May 2018.
+        Columbia:
+          coach: ["José Pékerman"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #Sweden announced a final squad on 15 May 2018.
-          Sweden:
-            coach: ["Janne Andersson"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+        #Japan announced a final squad on 31 May 2018.
+        Japan:
+          coach: ["Akira Nishino"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-        group_G:
+        #Poland announced a 35-man preliminary squad on 11 May 2018. The squad was reduced to 32 players on 18 May.
+        Poland:
+          coach: ["Adam Nawałka"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
 
-          #Belgium announced a 28-man preliminary squad on 21 May 2018.
-          Belgium:
-            coach: ["Roberto Martínez"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
-
-          #England announced a final squad on 16 May 2018.
-          England:
-            coach: ["Gareth Southgate"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
-
-          #Panama announced a final squad was announced on 30 May 2018.
-          Panama:
-            coach: ["Hernán Darío Gómez"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
-
-          #Tunisia announced a 29-man preliminary squad on 14 May 2018.
-          Tunisia:
-            coach: ["Nabil Maâloul"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
-
-        group_H:
-
-          #Columbia announced a 35-man preliminary squad on 14 May 2018.
-          Columbia:
-            coach: ["José Pékerman"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
-
-          #Japan announced a final squad on 31 May 2018.
-          Japan:
-            coach: ["Akira Nishino"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
-
-          #Poland announced a 35-man preliminary squad on 11 May 2018. The squad was reduced to 32 players on 18 May.
-          Poland:
-            coach: ["Adam Nawałka"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
-
-          #Senegal announced a final squad on 17 May 2018.
-          Senegal:
-            coach: ["Aliou Cissé"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+        #Senegal announced a final squad on 17 May 2018.
+        Senegal:
+          coach: ["Aliou Cissé"]
+          goalkeepers: [""],
+          defenders: [""],
+          midfielders: [""],
+          forwards: [""]
