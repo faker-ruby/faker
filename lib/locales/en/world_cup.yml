@@ -1,6 +1,6 @@
 en:
   faker:
-    2018_fifa_world_cup:
+    world_cup:
       teams:  ["Egypt", "Russia",
               "Saudi Arabia", "Uruguay",
               "Iran", "Morocco",
