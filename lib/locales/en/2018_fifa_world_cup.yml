@@ -58,10 +58,10 @@ en:
           #Morocco announced its 23-man squad on 17 May 2018.
           Morocco:
             coach: ["Hervé Renard"],
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Mounir El Kajoui", "Yassine Bounou", "Ahmad Reda Tagnaouti"],
+            defenders: ["Medhi Benatia", "Romain Saiss", "Manuel Da Costa", "Badr Benoun", "Nabil Dirar", "Achraf Hakimi", "Hamza Mendyl"],
+            midfielders: ["Mbark Boussoufa", "Karim El Ahmadi", "Youssef Ait Bennasser", "Sofyan Amrabat", "Younes Belhanda", "Faycal Fajr", "Amine Harit", "Hakim Ziyech"],
+            forwards: ["Khalid Boutaib", "Aziz Bouhaddouz", "Ayoub El Kaabi", "Nordin Amrabat", "Mehdi Carcela"]
 
           #Portugal cut its preliminary squad down to 23 on 17 May 2018.
           Portugal:
