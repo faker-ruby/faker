@@ -26,7 +26,7 @@ en:
         group_F: ["Germany", "Mexico", "South Korea", "Sweden"],
         group_G: ["Belgium", "England", "Panama", "Tunisia"],
         group_H: ["Columbia", "Japan", "Poland", "Senegal"]
-      rosters:
+      rosters: #rosters are not officially set until 4 June 2018
         #Egypt announced a 29-man preliminary squad on 14 May 2018.
         Egypt:
           coach: ["Héctor Cúper"],
