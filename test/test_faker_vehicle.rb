@@ -34,7 +34,7 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def test_year
     year = @tester.year
-    assert year >= 1981
+    assert year >= 2005
     assert year <= ::Time.now.year
   end
 
