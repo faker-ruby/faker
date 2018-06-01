@@ -162,3 +162,28 @@ en:
             midfielders: [""],
             forwards: [""]
         group_G:
+          Belgium:
+            coach: ["Roberto Martínez"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          England:
+            coach: ["Gareth Southgate"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Panama:
+            coach: ["Hernán Darío Gómez"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          Tunisia:
+            coach: ["Nabil Maâloul"]
+            goalkeepers: [""],
+            defenders: [""],
+            midfielders: [""],
+            forwards: [""]
+          
