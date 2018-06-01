@@ -12,7 +12,7 @@ module Faker
         fetch('food.descriptions')
       end
 
-      # Retrieves a ingredient for dishes
+      # Retrieves an ingredient for dishe
       def ingredient
         fetch('food.ingredients')
       end
@@ -27,7 +27,7 @@ module Faker
         fetch('food.measurement_sizes') + ' ' + fetch('food.measurements')
       end
 
-      # Retrieves metric measures
+      # Retrieves metric mesurements
       def metric_measurement
         fetch('food.metric_measurements')
       end
