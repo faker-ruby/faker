@@ -31,10 +31,10 @@ en:
           #Saudi Arabia announced 28-man preliminary squad on 17 May 2018.
           Saudi_Arabia:
             coach: ["Juan Antonio Pizzi"],
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Assaf Al-Qarny", "Mohammed Al-Owais", "Yasser Al-Musailem", "Abdullah Al-Mayuf"],
+            defenders: ["Mansoor Al-Harbi", "Yasser Al-Shahrani", "Mohammed Al-Breik", "Saeed Al-Mowalad", "Motaz Hawsawi", "Osama Hawsawi", "Omar Hawsawi", "Mohammed Jahfali", "Ali Al-Bulaihi"],
+            midfielders: ["Abdullah Al-Khaibari", "Abdulmalek Al-Khaibri", "Abdullah Otayf", "Taiseer Al-Jassim", "Houssain Al-Mogahwi", "Salman Al-Faraj", "Nawaf Al-Abed", "Mohamed Kanno", "Hattan Bahebri", "Mohammed Al-Kwikbi", "Salem Al-Dawsari", "Yehya Al-Shehri"],
+            forwards: ["Fahad Al-Muwallad", "Mohammad Al-Sahlawi", "Muhannad Assiri"]
 
           #Uruguay named a 26-man preliminary roster on May 15 2018.
           Uruguay:
