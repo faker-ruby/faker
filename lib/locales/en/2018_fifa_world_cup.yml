@@ -74,10 +74,10 @@ en:
           #Spain named its 23-man squad on 21 May 2018.
           Spain:
             coach: ["Julen Lopetegui"],
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Kepa Arrizabalaga", "David de Gea", "Pepe Reina"],
+            defenders: ["Jordi Alba", "Cesar Azpiliqueta", "Dani Carvajal", "Nacho Fernandez", "Nacho Monreal", "Alvaro Odriozola", "Gerard Pique", "Sergio Ramos"],
+            midfielders: ["Thiago Alcantara", "Sergio Busquets", "Andres Iniesta", "Isco", "Koke", "Saul Niguez", "David Silva"],
+            forwards: ["Marco Asensio", "Iago Aspas", "Diego Costa", "Rodrigo Moreno", "Lucas Vazquez"]
 
         group_C:
 
