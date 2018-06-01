@@ -152,34 +152,34 @@ en:
           #Brazil announced a final squad on 14 May 2018.
           Brazil:
             coach: ["Adenor Leonardo Bacchi"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Alisson", "Ederson", "Cassio"],
+            defenders: ["Danilo", "Fagner", "Marcelo", "Filipe Luis", "Thiago Silva", "Marquinhos", "Miranda", "Pedro Geromel"],
+            midfielders: ["Casemiro", "Fernandinho", "Paulinho", "Fred", "Renato Augusto", "Philippe Coutinho", "Willian", "Douglas Costa"],
+            forwards: ["Neymar", "Taison", "Gabriel Jesus", "Roberto Firmino"]
 
           #Costa Rica announced a final squad on 14 May 2018.
           Costa_Rica:
             coach: ["Óscar Ramírez"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Keylor Navas", "Patrick Pemberton", "Leonel Moreira"],
+            defenders: ["Cristian Gamboa", "Ian Smith", "Ronald Matarrita", "Bryan Oviedo", "Oscar Duarte", "Giancarlo Gonzalez", "Francisco Calvo", "Kendall Waston", "Johnny Acosta"],
+            midfielders: ["David Guzman", "Yeltsin Tejeda", "Celso Borges", "Randall Azofeifa", "Rodney Wallace", "Bryan Ruiz", "Daniel Colindres", "Christian Bolanos"],
+            forwards: ["Johan Venegas", "Joel Campbell", "Marco Urena"]
 
           #Serbia announced a 27-man preliminary squad on 24 May 2018.
           Serbia:
             coach: ["Mladen Krstajić"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Vladimir Stojkovic", "Predrag Rajkovic", "Marko Dmitrovic", "Aleksandar Jovanovic"],
+            defenders: ["Branislav Ivanovic",  "Aleksandar Kolarov", "Antonio Rukavina", "Matija Nastasic", "Dusko Tosic", "Uros Spajic", "Milos Veljkovic", "Nikola Milenkovic", "Milan Rodic"],
+            midfielders: ["Dusan Tadic", "Nemanja Matic", "Adem Ljajic", "Luka Milivojevic", "Filip Kostic", "Andrija Zivkovic", "Mijat Gacinovic", "Marko Grujic", "Nemanja Maksimovic", "Sergej Milinkovic-Savic", "Nemanja Radonjic"],
+            forwards: ["Aleksandar Mitrovic", "Aleksandar Prijovic", "Luka Jovic"]
 
           #Switzerland announced a 26-man preliminary squad on 25 May 2018. The final squad will be announced on 4 June.
           Switzerland:
             coach: ["Vladimir Petković"]
-            goalkeepers: [""],
-            defenders: [""],
-            midfielders: [""],
-            forwards: [""]
+            goalkeepers: ["Yann Sommer", "Roman Bürki", "Gregor Kobel", "Yvon Mvogo"],
+            defenders: ["Stephan Lichtsteiner", "Johan Djourou", "Ricardo Rodríguez", "Fabian Schär", "Michael Lang", "François Moubandje", "Silvan Widmer", "Manuel Akanji", "	Nico Elvedi"],
+            midfielders: ["Valon Behrami", "Xherdan Shaqiri", "Gelson Fernandes", "Blerim Džemaili", "Granit Xhaka", "Steven Zuber", "Remo Freuler", "Denis Zakaria", "Edimilson Fernandes"],
+            forwards: ["Haris Seferović", "Josip Drmić", "Breel Embolo", "Mario Gavranović"]
 
         group_F:
 
