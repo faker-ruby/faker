@@ -190,42 +190,42 @@ en:
         #Germany announced a 27-man preliminary squad on 15 May 2018.
         Germany:
           coach: ["Joachim Löw"]
-          goalkeepers: [Bernd Leno (Bayer Leverkusen), Manuel Neuer (Bayern Munich), Marc-Andre ter Stegen (Barcelona), Kevin Trapp (Paris Saint-Germain)],
-          defenders: [Jerome Boateng (Bayern Munich), Matthias Ginter (Borussia Monchengladbach), Jonas Hector (Cologne), Mats Hummels (Bayern Munich), Joshua Kimmich (Bayern Munich), Marvin Plattenhardt (Hertha Berlin), Antonio Rudiger (Chelsea), Niklas Sule (Bayern Munich), Jonathan Tah (Bayer Leverkusen)],
-          midfielders: [Julian Draxler (Paris Saint-Germain), Leon Goretzka (Schalke 04), Ilkay Gundogan (Manchester City), Sami Khedira (Juventus), Toni Kroos (Real Madrid), Mesut Ozil (Arsenal), Marco Reus (Borussia Dortmund), Sebastian Rudy (Bayern Munich)],
-          forwards: [Julian Brandt (Bayer Leverkusen), Mario Gomez (VfB Stuttgart), Thomas Muller (Bayern Munich), Nils Petersen (Freiburg), Leroy Sane (Manchester City), Timo Werner (RB Leipzig)]
+          goalkeepers: ["Bernd Leno" (Bayer Leverkusen), "Manuel Neuer" (Bayern Munich), "Marc-Andre ter Stegen" (Barcelona), "Kevin Trapp" (Paris Saint-Germain)],
+          defenders: ["Jerome Boateng" (Bayern Munich), "Matthias Ginter" (Borussia Monchengladbach), "Jonas Hector" (Cologne), "Mats Hummels" (Bayern Munich), "Joshua Kimmich" (Bayern Munich), "Marvin Plattenhardt" (Hertha Berlin), "Antonio Rudiger" (Chelsea), "Niklas Sule"(Bayern Munich), "Jonathan Tah" (Bayer Leverkusen)],
+          midfielders: ["Julian Draxler" (Paris Saint-Germain), "Leon Goretzka" (Schalke 04), "Ilkay Gundogan" (Manchester City), "Sami Khedira" (Juventus), "Toni Kroos" (Real Madrid), "Mesut Ozil" (Arsenal), "Marco Reus" (Borussia Dortmund), "Sebastian Rudy" (Bayern Munich)],
+          forwards: ["Julian Brandt" (Bayer Leverkusen), "Mario Gomez" (VfB Stuttgart), "Thomas Muller" (Bayern Munich), "Nils Petersen" (Freiburg), "Leroy Sane" (Manchester City), "Timo Werner" (RB Leipzig)]
 
         #Mexico announced a 28-man preliminary squad on 14 May 2018. The squad was reduced to 27 players on 23 May as Néstor Araujo withdrew injured.
         Mexico:
           coach: ["Juan Carlos Osorio"]
-          goalkeepers: [Guillermo Ochoa (Standard Liege), Alfredo Talavera (Toluca), Jesus Corona (Cruz Azul)],
-          defenders: [Carlos Salcedo (Eintracht Frankfurt), Diego Reyes (Porto), Hector Moreno (Real Sociedad), Hugo Ayala (Tigres), Oswaldo Alanis (Chivas), Edson Alvarez (Club America), Jesus Gallardo (Pumas), Miguel Layun (Sevilla)],
-          midfielders: [esus Molina (Monterrey), Rafa Marquez (Atlas), Hector Herrera (Porto), Jonathan dos Santos (LA Galaxy), Andres Guardado (Real Betis), Erick Gutierrez (Pachuca), Marco Fabian (Eintracht Frankfurt), Giovani Dos Santos (LA Galaxy)],
-          forwards: [Javier “Chicharito” Hernandez (West Ham United), Raul Jimenez (Benfica), Oribe Peralta (Club America), Jesus “Tecatito” Corona (Porto), Carlos Vela (LAFC), Javier Aquino (Tigres), Hirving Lozano (PSV), Jurgen Damm (Tigres)]
+          goalkeepers: ["Guillermo Ochoa" (Standard Liege), "Alfredo Talavera" (Toluca), "Jesus Corona" (Cruz Azul)],
+          defenders: ["Carlos Salcedo" (Eintracht Frankfurt), "Diego Reyes" (Porto), "Hector Moreno" (Real Sociedad), "Hugo Ayala" (Tigres), "Oswaldo Alanis" (Chivas), "Edson Alvarez" (Club America), "Jesus Gallardo" (Pumas), "Miguel Layun" (Sevilla)],
+          midfielders: ["Jesus Molina" (Monterrey), "Rafa Marquez" (Atlas), "Hector Herrera" (Porto), "Jonathan dos Santos" (LA Galaxy), "Andres Guardado" (Real Betis), "Erick Gutierrez" (Pachuca), "Marco Fabian" (Eintracht Frankfurt), "Giovani Dos Santos" (LA Galaxy)],
+          forwards: ["Javier 'Chicharito' Hernandez" (West Ham United), "Raul Jimenez" (Benfica), "Oribe Peralta" (Club America), "Jesus 'Tecatito' Corona" (Porto), "Carlos Vela" (LAFC), "Javier Aquino" (Tigres), "Hirving Lozano" (PSV), "Jurgen Damm" (Tigres)]
 
         #South Korea announced a 28-man preliminary squad on 14 May 2018. The squad was reduced to 26 players on 22 May as Kwon Chang-hoon and Lee Keun-ho withdrew injured.
         South Korea:
           coach: ["Shin Tae-yong"]
-          goalkeepers: [Kim Seung-gyu (Vissel Kobe), Kim Jin-hyeon (Cerezo Osaka), Cho Hyun-woo (Daegu FC)],
-          defenders: [Kim Young-gwon (Guangzhou Evergrande), Jang Hyun-soo (FC Tokyo), Jung Seung-hyun (Sagan Tosu), Yun Yong-sun (Seongnam FC), Kwon Kyung-won (Tianjin Quanjian), Oh Ban-suk (Jeju United), Kim Jin-su (Jeonbuk Hyundai Motors), Kim Min-woo (Sangju Sangmu), Park Joo-ho (Ulsan Hyundai), Hong Chul (Sangju Sangmu), Go Yo-han (FC Seoul), Lee Yong (Jeonbuk Hyundai Motors)],
+          goalkeepers: ["Kim Seung-gyu" (Vissel Kobe), "Kim Jin-hyeon" (Cerezo Osaka), "Cho Hyun-woo" (Daegu FC)],
+          defenders: ["Kim Young-gwon" (Guangzhou Evergrande), "Jang Hyun-soo" (FC Tokyo), "Jung Seung-hyun" (Sagan Tosu), "Yun Yong-sun" (Seongnam FC), "Kwon Kyung-won" (Tianjin Quanjian), "Oh Ban-suk "(Jeju United), "Kim Jin-su" (Jeonbuk Hyundai Motors), "Kim Min-woo" (Sangju Sangmu), "Park Joo-ho" (Ulsan Hyundai), "Hong Chul" (Sangju Sangmu), "Go Yo-han" (FC Seoul), "Lee Yong" (Jeonbuk Hyundai Motors)],
           midfielders: [Ki Sung-yueng (Swansea City), Jung Woo-young (Vissel Kobe), Ju Se-jong (Asan Mugunghwa FC), Koo Ja-cheol (FC Augsburg), Lee Jae-sung (Jeonbuk Hyundai Motors), Lee Seung-woo (Hellas Verona), Moon Seon-min (Incheon United), Lee Chung-yong (Crystal Palace)],
-          forwards: [Kim Shin-wook (Jeonbuk Hyundai Motors), Son Heung-min (Tottenham Hotspur), Hwang Hee-chan (FC Red Bull Salzburg), Lee Keun-ho (Gangwon FC)]
+          forwards: ["Kim Shin-wook" (Jeonbuk Hyundai Motors), "Son Heung-min" (Tottenham Hotspur), "Hwang Hee-chan" (FC Red Bull Salzburg), "Lee Keun-ho" (Gangwon FC)]
 
         #Sweden announced a final squad on 15 May 2018.
         Sweden:
           coach: ["Janne Andersson"]
-          goalkeepers: [Robin Olsen (FC Copenhagen), Karl-Johan Johnsson (Guingamp), Kristoffer Nordfeldt (Swansea City)],
-          defenders: [Mikael Lustig (Celtic), Victor Lindelof (Manchester United), Andreas Granqvist (Krasnodar), Martin Olsson (Swansea City), Ludwig Augustinsson (Werder Bremen), Filip Helander (Bologna), Pontus Jansson (Leeds United), Emil Krafth (Bologna)],
-          midfielders: [Emil Forsberg (RB Leipzig), Albin Ekdal (Hamburg), Viktor Claesson (Krasnodar), Gustav Svensson (Seattle Sounders/USA), Sebastian Larsson (Hull City), Jimmy Durmaz (Toulouse), Oscar Hiljemark (Genoa), Marcus Rohden (Crotone)],
-          forwards: [Marcus Berg (Al Ain), Ola Toivonen (Toulouse), John Guidetti (Celta Vigo), Isaac Kiese-Thelin (Waasland-Beveren)]
+          goalkeepers: ["Robin Olsen" (FC Copenhagen), "Karl-Johan Johnsson" (Guingamp), "Kristoffer Nordfeldt" (Swansea City)],
+          defenders: ["Mikael Lustig" (Celtic), "Victor Lindelof" (Manchester United), "Andreas Granqvist" (Krasnodar), "Martin Olsson" (Swansea City), "Ludwig Augustinsson" (Werder Bremen), "Filip Helander" (Bologna), "Pontus Jansson" (Leeds United), "Emil Krafth" (Bologna)],
+          midfielders: ["Emil Forsberg" (RB Leipzig), "Albin Ekdal" (Hamburg), "Viktor Claesson" (Krasnodar), "Gustav Svensson" (Seattle Sounders/USA), "Sebastian Larsson" (Hull City), "Jimmy Durmaz" (Toulouse), "Oscar Hiljemark" (Genoa), "Marcus Rohden" (Crotone)],
+          forwards: ["Marcus Berg" (Al Ain), "Ola Toivonen" (Toulouse), "John Guidetti" (Celta Vigo), "Isaac Kiese-Thelin" (Waasland-Beveren)]
 
         #Belgium announced a 28-man preliminary squad on 21 May 2018.
         Belgium:
           coach: ["Roberto Martínez"]
-          goalkeepers: [Koen Casteels (Wolfsburg), Thibaut Courtois (Chelsea), Simon Mignolet (Liverpool), Matz Sels (Newcastle)],
-          defenders: [Toby Alderweireld (Tottenham), Dedryck Boyata (Celtic), Laurent Ciman (Los Angeles FC), Christian Kabasele (Watford), Vincent Kompany (Manchester City), Jordan Lukaku (Lazio), Thomas Meunier (Paris Saint-Germain), Thomas Vermaelen (Barcelona), Jan Vertonghen (Tottenham)],
-          midfielders: [Nacer Chadli (West Brom), Kevin De Bruyne (Manchester City), Mousa Dembele (Tottenham), Leander Dendoncker (Anderlecht), Marouane Fellaini (Manchester United), Youri Tielemans (Monaco), Axel Witsel (Tianjin Quanjian)],
-          forwards: [Michy Batshuayi (Chelsea), Christian Benteke (Crystal Palace), Yannick Carrasco (Dalian Yifang), Eden Hazard (Chelsea), Thorgan Hazard (Borussia Monchengladbach), Adnan Januzaj (Real Sociedad), Romelu Lukaku (Manchester United), Dries Mertens (Napoli)]
+          goalkeepers: ["Koen Casteels" (Wolfsburg), "Thibaut Courtois" (Chelsea), "Simon Mignolet" (Liverpool), "Matz Sels" (Newcastle)],
+          defenders: ["Toby Alderweireld" (Tottenham), "Dedryck Boyata" (Celtic), "Laurent Ciman" (Los Angeles FC), "Christian Kabasele" (Watford), "Vincent Kompany" (Manchester City), "Jordan Lukaku" (Lazio), "Thomas Meunier" (Paris Saint-Germain), "Thomas Vermaelen" (Barcelona), "Jan Vertonghen" (Tottenham)],
+          midfielders: ["Nacer Chadli" (West Brom), "Kevin De Bruyne" (Manchester City), "Mousa Dembele" (Tottenham), "Leander Dendoncker" (Anderlecht), "Marouane Fellaini" (Manchester United), "Youri Tielemans" (Monaco), "Axel Witsel" (Tianjin Quanjian)],
+          forwards: ["Michy Batshuayi" (Chelsea), "Christian Benteke" (Crystal Palace), "Yannick Carrasco"(Dalian Yifang), "Eden Hazard" (Chelsea), "Thorgan Hazard" (Borussia Monchengladbach), "Adnan Januzaj" (Real Sociedad), "Romelu Lukaku" (Manchester United), "Dries Mertens" (Napoli)]
 
         #England announced a final squad on 16 May 2018.
         England:
