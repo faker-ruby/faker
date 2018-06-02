@@ -1,5 +1,7 @@
 # Faker::File
 
+Available since version 1.6.4.
+
 ```ruby
 Faker::File.extension #=> "mp3"
 

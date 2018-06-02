@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper.rb'
 
 class TestFakerBusiness < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Business
     @credit_card_number_list = I18n.translate('faker.business.credit_card_numbers')
@@ -30,5 +29,4 @@ class TestFakerBusiness < Test::Unit::TestCase
     assert @credit_card_types.include?(type1)
     assert @credit_card_types.include?(type2)
   end
-
 end

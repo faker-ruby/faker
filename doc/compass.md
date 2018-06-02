@@ -1,5 +1,7 @@
 # Faker::Compass
 
+Available since version 1.8.0.
+
 ```ruby
 # A random direction
 Faker::Compass.direction                 #=> "southeast"

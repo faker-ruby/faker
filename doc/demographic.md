@@ -1,5 +1,7 @@
 # Faker::Demographic
 
+Available since version 1.7.3.
+
 ```ruby
 Faker::Demographic.race #=> "Native Hawaiian or Other Pacific Islander"
 
