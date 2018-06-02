@@ -1,9 +1,10 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-06-01
+### Latest update: 2018-06-02
 
 ### Feature Request
+- [PR #1101](https://github.com/stympy/faker/pull/1101) Add Faker::Company.czech_organisation_number [@jindrichskupa](https://github.com/jindrichskupa)
 - [PR #1265](https://github.com/stympy/faker/pull/1265) Add Faker::WorldCup [@snayrouz](https://github.com/snayrouz)
 - [PR #1141](https://github.com/stympy/faker/pull/1141) Add Faker::Coffee.intensifier [@oyeanuj](https://github.com/oyeanuj)
 - [PR #1260](https://github.com/stympy/faker/pull/1260) Add Faker::Auto features to Faker::Vehicle [@mrstebo](https://github.com/mrstebo)
