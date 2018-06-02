@@ -1,5 +1,5 @@
 module Faker
-  class FifaWorldCup < Base
+  class WorldCup < Base
     class << self
       def team
         fetch('world_cup.teams')
