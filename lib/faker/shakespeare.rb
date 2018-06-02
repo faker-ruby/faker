@@ -1,7 +1,6 @@
 module Faker
   class Shakespeare < Base
     class << self
-
       def hamlet_quote
         sample(hamlet)
       end
@@ -26,7 +25,6 @@ module Faker
         fetch('shakespeare.as_you_like_it')
       end
 
-
       def king_richard_iii
         fetch('shakespeare.king_richard_iii')
       end
@@ -34,7 +32,6 @@ module Faker
       def romeo_and_juliet
         fetch('shakespeare.romeo_and_juliet')
       end
-
     end
   end
 end

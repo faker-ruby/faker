@@ -1,10 +1,9 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerSlackEmoji < Test::Unit::TestCase
-
   def setup
     @tester = Faker::SlackEmoji
-    @emoticon_regex= /^:([\w-]+):$/
+    @emoticon_regex = /^:([\w-]+):$/
   end
 
   def test_people
