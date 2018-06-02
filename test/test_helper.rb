@@ -1,7 +1,14 @@
+require 'simplecov'
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+SimpleCov.start do
+  add_filter ['.bundle', 'test', 'lib/extensions']
+end
+
 require 'test/unit'
 require 'rubygems'
 require 'timecop'
 require 'yaml'
+
 YAML::ENGINE.yamler = 'psych' if defined? YAML::ENGINE
 require File.expand_path(File.dirname(__FILE__) + '/../lib/faker')
 
@@ -27,8 +34,10 @@ I18n.enforce_available_locales = true
 def deterministically_verify(subject_proc, depth: 2, random: nil)
   raise 'need block' unless block_given?
 
-  depth.times.inject([]) { |results, index|
+  # rubocop:disable Style/MultilineBlockChain
+  depth.times.inject([]) do |results, _index|
     Faker::Config.random = random || Random.new(42)
     results << subject_proc.call.freeze.tap { |s| yield(s) }
-  }.repeated_combination(2) { |(first, second)| assert_equal first, second }
+  end.repeated_combination(2) { |(first, second)| assert_equal first, second }
+  # rubocop:enable Style/MultilineBlockChain
 end

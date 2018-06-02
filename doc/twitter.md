@@ -1,5 +1,7 @@
 # Faker::Twitter
 
+Available since version 1.7.3.
+
 Generate realistic Twitter user and status objects similar to what you would get back from the API.
 
 ```json

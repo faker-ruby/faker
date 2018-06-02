@@ -29,10 +29,9 @@ module Faker
         fetch('elder_scrolls.first_name')
       end
 
-      def first_name
+      def last_name
         fetch('elder_scrolls.last_name')
       end
-
     end
   end
 end

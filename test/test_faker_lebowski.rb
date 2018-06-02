@@ -1,15 +1,14 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerLebowski < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Lebowski
   end
-  
+
   def test_actor
     assert @tester.actor.match(/\w+/)
   end
-  
+
   def test_character
     assert @tester.character.match(/\w+/)
   end

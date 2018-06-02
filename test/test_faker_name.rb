@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerName < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Name
   end
@@ -12,6 +11,14 @@ class TestFakerName < Test::Unit::TestCase
 
   def test_name_with_middle
     assert @tester.name_with_middle.match(/(\w+\.? ?){3,4}/)
+  end
+
+  def test_first_name
+    assert @tester.first_name.match(/(\w+\.? ?){3,4}/)
+  end
+
+  def test_last_name
+    assert @tester.last_name.match(/(\w+\.? ?){3,4}/)
   end
 
   def test_prefix
@@ -25,7 +32,7 @@ class TestFakerName < Test::Unit::TestCase
   def test_job_titles
     @job_titles = Faker::Name.job_titles
     @job_titles.each do |title|
-       refute title.to_s.empty?
+      refute title.to_s.empty?
     end
   end
 

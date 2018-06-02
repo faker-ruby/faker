@@ -3,7 +3,6 @@ module Faker
     flexible :name
 
     class << self
-
       def name
         parse('name.name')
       end
@@ -13,11 +12,11 @@ module Faker
       end
 
       def first_name
-        fetch('name.first_name')
+        parse('name.first_name')
       end
 
       def last_name
-        fetch('name.last_name')
+        parse('name.last_name')
       end
 
       def prefix
@@ -34,8 +33,8 @@ module Faker
         "#{fetch('name.title.descriptor')} #{fetch('name.title.level')} #{fetch('name.title.job')}"
       end
 
-      def initials(character_count=3)
-        (0...character_count).map { (65 + rand(26)).chr }.join
+      def initials(character_count = 3)
+        (0...character_count).map { rand(65..90).chr }.join
       end
 
       def job_titles
