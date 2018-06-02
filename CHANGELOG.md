@@ -4,6 +4,7 @@
 ### Latest update: 2018-06-01
 
 ### Feature Request
+- [PR #1265](https://github.com/stympy/faker/pull/1265) Add Faker::WorldCup [@snayrouz](https://github.com/snayrouz)
 - [PR #1141](https://github.com/stympy/faker/pull/1141) Add Faker::Coffee.intensifier [@oyeanuj](https://github.com/oyeanuj)
 - [PR #1260](https://github.com/stympy/faker/pull/1260) Add Faker::Auto features to Faker::Vehicle [@mrstebo](https://github.com/mrstebo)
 - [PR #1259](https://github.com/stympy/faker/pull/1259) Add the ability to add separators to emails. [@aamarill](https://github.com/aamarill)
