@@ -11,34 +11,26 @@ module Faker
 
       # US and Canada only
       def area_code
-        begin
-          fetch('phone_number.area_code')
-        rescue I18n::MissingTranslationData
-          nil
-        end
+        fetch('phone_number.area_code')
+      rescue I18n::MissingTranslationData
+        nil
       end
 
       # US and Canada only
       def exchange_code
-        begin
-          fetch('phone_number.exchange_code')
-        rescue I18n::MissingTranslationData
-          nil
-        end
+        fetch('phone_number.exchange_code')
+      rescue I18n::MissingTranslationData
+        nil
       end
 
       # US and Canada only
       # Can be used for both extensions and last four digits of phone number.
       # Since extensions can be of variable length, this method taks a length parameter
       def subscriber_number(length = 4)
-        begin
-          rand.to_s[2..(1 + length)]
-        rescue I18n::MissingTranslationData
-          nil
-        end
+        rand.to_s[2..(1 + length)]
       end
 
-      alias_method :extension, :subscriber_number
+      alias extension subscriber_number
     end
   end
 end

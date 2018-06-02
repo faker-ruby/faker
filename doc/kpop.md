@@ -1,6 +1,7 @@
 # Faker::Kpop
 
 ```ruby
+
 Faker::Kpop.i_groups # 1990's og groups =>  "Seo Taiji and Boys"
 
 Faker::Kpop.ii_groups # 2000's groups =>  "Girls' Generation"
