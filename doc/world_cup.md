@@ -11,5 +11,5 @@ Faker::WorldCup.group('group_A') #=> "Saudi Arabia"
 
 Faker::WorldCup.roster #=> "Héctor Cúper"
 
-Faker::WorldCup.roster(country = 'Russia', type = 'coach') #=> "Stanislav Cherchesov"
+Faker::WorldCup.roster('Russia', 'coach') #=> "Stanislav Cherchesov"
 ```
