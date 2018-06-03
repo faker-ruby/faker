@@ -1,8 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
-LoadedEsYaml = ['en', 'es'].inject({}) do |h, locale|
+LoadedEsYaml = %w[en es].each_with_object({}) do |locale, h|
   h[locale] = YAML.load_file(File.expand_path(File.dirname(__FILE__) + "/../lib/locales/#{locale}.yml"))[locale]['faker']
-  h
 end
 
 class TestEsLocale < Test::Unit::TestCase
@@ -24,7 +23,7 @@ class TestEsLocale < Test::Unit::TestCase
   end
 
   def test_locale_override_when_calling_translate
-    assert_equal Faker::Base.translate('faker.separator', :locale => :en), LoadedEsYaml['en']['separator']
+    assert_equal Faker::Base.translate('faker.separator', locale: :en), LoadedEsYaml['en']['separator']
   end
 
   def test_translation_fallback

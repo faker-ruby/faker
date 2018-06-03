@@ -33,7 +33,4 @@ class TestFakerUniversity < Test::Unit::TestCase
       assert @alphabet.include?(letter)
     end
   end
-
-
-
 end
