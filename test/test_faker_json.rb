@@ -24,5 +24,4 @@ class TestFakerJson < Test::Unit::TestCase
     assert JSON.parse(json).flatten[3].flatten[3].flatten.length.equal?(6)
     assert JSON.parse(json).flatten[5].flatten[5].flatten.length.equal?(6)
   end
-
 end
