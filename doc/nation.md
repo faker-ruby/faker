@@ -1,5 +1,7 @@
 # Faker::Nation
 
+It might be available in the next version.
+
 ```ruby
 # Random Nationality
 Faker::Nation.nationality #=> "Nepalese"

@@ -1,6 +1,6 @@
 # Faker::Cannabis
 
-Available since version 1.8.0.
+It might be available in the next version.
 
 ```ruby
 # Random strain
