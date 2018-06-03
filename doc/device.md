@@ -1,16 +1,12 @@
 # Faker::Device
 ```ruby
-Faker::Device.model_name #=> ""
+Faker::Device.model_name #=> "iPhone 4"
 
-Faker::Device.platform #=> ""    
+Faker::Device.platform #=> "webOS"    
 
-Faker::Device.uuid #=> ""
+Faker::Device.version #=> "4"
 
-Faker::Device.version #=> ""
+Faker::Device.build_number #=> "5"
 
-Faker::Device.build_number #=> ""
-
-Faker::Device.manufacturer #=> ""
-
-Faker::Device.serial #=> ""
+Faker::Device.manufacturer #=> "Apple"
 ```
