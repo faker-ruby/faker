@@ -29,7 +29,8 @@ module Faker
 
       def zip_code(state_abbreviation = '')
         if state_abbreviation.empty?
-          return numerify(fetch('address.postcode'), leading_zero: true)
+          letterified_string = letterify(fetch('address.postcode'))
+          return numerify(letterified_string, leading_zero: true)
         end
 
         # provide a zip code that is valid for the state provided
