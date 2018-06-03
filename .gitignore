@@ -12,6 +12,9 @@ coverage/*
 # Ignore Vim swap files.
 *.swp
 
+# Ignore Ctags
+/tags
+
 # Ignore Finder metadata.
 .DS_Store
 
