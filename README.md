@@ -55,6 +55,7 @@ Contents
   - [Faker::Date](doc/date.md)
   - [Faker::Demographic](doc/demographic.md)
   - [Faker::Dessert](doc/dessert.md)
+  - [Faker::Device](doc/device.md)
   - [Faker::Dog](doc/dog.md)
   - [Faker::Dota](doc/dota.md)
   - [Faker::DrWho](doc/dr_who.md)
