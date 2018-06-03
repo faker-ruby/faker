@@ -14,11 +14,13 @@ class TestFakerDevice < Test::Unit::TestCase
   end
 
   def test_version
-    assert @tester.version.is_a? Integer
+    assert @tester.version > 0
+    assert @tester.version <= 1000
   end
 
   def test_build_number
-    assert @tester.build_number.is_a? Integer
+    assert @tester.build_number > 0
+    assert @tester.build_number <= 500
   end
 
   def test_manufacturer

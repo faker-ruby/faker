@@ -10,11 +10,11 @@ module Faker
       end
 
       def version
-        Faker::Number.between(1, 5)
+        Faker::Number.between(1, 1000)
       end
 
       def build_number
-        Faker::Number.between(1, 5)
+        Faker::Number.between(1, 500)
       end
 
       def manufacturer
