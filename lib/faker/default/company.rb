@@ -194,7 +194,7 @@ module Faker
       def luhn_algorithm(number)
         multiplications = []
 
-        number.reverse.split(//).each_with_index do |digit, i|
+        number.to_s.reverse.split(//).each_with_index do |digit, i|
           multiplications << if i.even?
                                digit.to_i * 2
                              else

@@ -4,42 +4,31 @@ module Faker
   class Number < Base
     class << self
       def number(digits = 10)
-        num = ''
+        return if digits < 1
+        return 0 if digits == 1
 
-        if digits > 1
-          num = non_zero_digit
-          digits -= 1
-        end
-
-        num + (1..digits).collect { digit }.join
-      end
-
-      def leading_zero_number(digits = 10)
-        '0' + (2..digits).collect { digit }.join
-      end
-
-      def decimal_part(digits = 10)
-        num = ''
-        if digits > 1
-          num = non_zero_digit
-          digits -= 1
-        end
-        leading_zero_number(digits) + num
+        # Ensure the first digit is not zero
+        ([non_zero_digit] + generate(digits - 1)).join.to_i
       end
 
       def decimal(l_digits = 5, r_digits = 2)
-        l_d = number(l_digits)
-        r_d = decimal_part(r_digits)
-
-        "#{l_d}.#{r_d}"
+        l_d = number(l_digits).to_s
+        r_d = if r_digits == 1
+                0
+              else
+                # Ensure the last digit is not zero
+                # so it does not get truncated on converting to float
+                generate(r_digits - 1).join + non_zero_digit.to_s
+              end
+        "#{l_d}.#{r_d}".to_f
       end
 
       def non_zero_digit
-        rand(1..9).to_s
+        rand(1..9)
       end
 
       def digit
-        rand(10).to_s
+        rand(10)
       end
 
       def hexadecimal(digits = 6)
@@ -76,6 +65,12 @@ module Faker
       end
 
       private
+
+      def generate(count)
+        return [] if count.zero?
+
+        Array.new(count) { digit }
+      end
 
       def greater_than_zero(number)
         should_be(number, :>)
