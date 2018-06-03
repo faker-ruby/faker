@@ -23,3 +23,10 @@ Style/DateTime:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Style/EvalWithLocation:
+  Exclude:
+    - 'lib/faker/json.rb'
+
+Security/Eval:
+  Exclude:
+    - 'lib/faker/json.rb'
