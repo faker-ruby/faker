@@ -17,7 +17,7 @@ module Faker
 
       # Fetch random natinal sport
       def national_sport
-        fetch('nation.sport')
+        fetch('team.sport')
       end
     end
   end

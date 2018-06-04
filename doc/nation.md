@@ -11,4 +11,4 @@ Faker::Nation.language #=> "Nepali"
 Faker::Nation.capital_city #=> "Kathmandu"
 
 # Random Natinal Sport
-Faker::Nation.national_sport #=> "Dandi Biyo"
+Faker::Nation.national_sport #=> "dandi biyo"
