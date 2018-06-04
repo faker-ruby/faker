@@ -3,8 +3,8 @@ module Faker
 
     class << self
 
-      def musical
-        fetch('show.musical')
+      def adult_musical
+        fetch('show.adult_musical')
       end
 
       def kids_musical
