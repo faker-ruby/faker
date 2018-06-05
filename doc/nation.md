@@ -1,5 +1,7 @@
 # Faker::Nation
 
+It might be available in the next version.
+
 ```ruby
 # Random Nationality
 Faker::Nation.nationality #=> "Nepalese"
@@ -9,3 +11,6 @@ Faker::Nation.language #=> "Nepali"
 
 # Random Capital City
 Faker::Nation.capital_city #=> "Kathmandu"
+
+# Random Natinal Sport
+Faker::Nation.national_sport #=> "dandi biyo"

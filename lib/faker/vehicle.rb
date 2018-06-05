@@ -24,6 +24,69 @@ module Faker
         sample(fetch_all('vehicle.manufacture')).first
       end
 
+      def mileage
+        rand_in_range(10_000, 90_000)
+      end
+
+      def year
+        rand_in_range(2005, ::Time.now.year)
+      end
+
+      def make
+        fetch('vehicle.makes')
+      end
+
+      def model(make_of_model = '')
+        return fetch("vehicle.models_by_make.#{make}") if make_of_model.empty?
+        fetch("vehicle.models_by_make.#{make_of_model}")
+      end
+
+      def make_and_model
+        m = make
+        "#{m} #{model(m)}"
+      end
+
+      def style
+        fetch('vehicle.styles')
+      end
+
+      def color
+        fetch('vehicle.colors')
+      end
+
+      def transmission
+        fetch('vehicle.transmissions')
+      end
+
+      def drive_type
+        fetch('vehicle.drive_types')
+      end
+
+      def fuel_type
+        fetch('vehicle.fuel_types')
+      end
+
+      def door_count
+        "#{fetch('vehicle.door_count')} #{fetch('vehicle.door')}"
+      end
+
+      def car_type
+        fetch('vehicle.car_types')
+      end
+
+      def engine
+        "#{fetch('vehicle.engine_size')} #{fetch('vehicle.cylinder_engine')}"
+      end
+      alias engine_size engine
+
+      def car_options
+        Array.new(rand(5...10)) { fetch('vehicle.car_options') }
+      end
+
+      def standard_specs
+        Array.new(rand(5...10)) { fetch('vehicle.standard_specs') }
+      end
+
       private
 
       def calculate_vin_weight(character, idx)

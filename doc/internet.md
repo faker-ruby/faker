@@ -1,10 +1,12 @@
 # Faker::Internet
 
 ```ruby
-# Optional argument name=nil
+# Optional arguments name=nil, *separators
 Faker::Internet.email #=> "eliza@mann.net"
 
 Faker::Internet.email('Nancy') #=> "nancy@terry.biz"
+
+Faker::Internet.email('Janelle Santiago', '+') #=> janelle+santiago@becker.com"
 
 # Optional argument name=nil
 Faker::Internet.free_email #=> "freddy@gmail.com"
