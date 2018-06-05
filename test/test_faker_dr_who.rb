@@ -15,6 +15,10 @@ class TestFakerDrWho < Test::Unit::TestCase
     10.times { assert Faker::DrWho.the_doctor.match(/[\w]+/) }
   end
 
+  def test_actor
+    10.times { assert Faker::DrWho.actor.match(/[\w]+/) }
+  end
+
   def test_catch_phrase
     10.times { assert Faker::DrWho.catch_phrase.match(/[\w]+/) }
   end
