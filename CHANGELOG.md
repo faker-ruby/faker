@@ -1,9 +1,10 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-06-02
+### Latest update: 2018-06-05
 
 ### Feature Request
+- [PR #1268](https://github.com/stympy/faker/pull/1268) Add Faker::Nation.national_sport [@gkunwar](https://github.com/gkunwar)
 - [PR #1273](https://github.com/stympy/faker/pull/1273) Add Faker::Device [@vbrazo](https://github.com/vbrazo)
 - [PR #1272](https://github.com/stympy/faker/pull/1272) Add Faker::DrWho.actor [@timcustard](https://github.com/timcustard)
 - [PR #1270](https://github.com/stympy/faker/pull/1270) Add Faker::Name.middle_name [@vbrazo](https://github.com/vbrazo)
@@ -49,6 +50,7 @@
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 
 ### Update/add locales
+- [PR #1275](https://github.com/stympy/faker/pull/1275) Fix typo; RedWine should be two words [@johnmuhl](https://github.com/johnmuhl)
 - [PR #1269](https://github.com/stympy/faker/pull/1269) Update Faker::ProgrammingLanguage.name locales [@vbrazo](https://github.com/vbrazo)
 - [PR #1140](https://github.com/stympy/faker/pull/1140) Add Estonian and Latvian locales [@maciej-szlosarczyk](https://github.com/maciej-szlosarczyk)
 - [PR #1249](https://github.com/stympy/faker/pull/1249) Update list of name prefixes for sv locale. [kamilbielawski](https://github.com/kamilbielawski)
