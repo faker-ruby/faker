@@ -1,7 +1,7 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-05-27
+### Latest update: 2018-06-05
 
 ### Feature Request
 - [PR #1064](https://github.com/stympy/faker/pull/1064) Add Faker::Markdown.sandwich [@russellschmidt](https://github.com/russellschmidt)
@@ -40,6 +40,8 @@
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 
 ### Update/add locales
+- [PR #1262](https://github.com/stympy/faker/pull/1262) Add fr_CH locale [@elentras](https://github.com/elentras)
+- [PR #1261](https://github.com/stympy/faker/pull/1261) Add fr_CA locale [@elentras](https://github.com/elentras)
 - [PR #1140](https://github.com/stympy/faker/pull/1140) Add Estonian and Latvian locales [@maciej-szlosarczyk](https://github.com/maciej-szlosarczyk)
 - [PR #1249](https://github.com/stympy/faker/pull/1249) Update list of name prefixes for sv locale. [kamilbielawski](https://github.com/kamilbielawski)
 - [PR #1228](https://github.com/stympy/faker/pull/1228) Added Japanese color to yml [@katao](https://github.com/katao)
