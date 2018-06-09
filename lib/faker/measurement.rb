@@ -5,98 +5,38 @@ module Faker
       NONE = 'none'.freeze
 
       def height(amount = rand(10))
-        ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.height'))
-        elsif amount == NONE
-          fetch('measurement.height')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.height'), amount)}"
-        end
+        define_measurement_locale(amount, 'height')
       end
 
       def length(amount = rand(10))
-        ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.length'))
-        elsif amount == NONE
-          fetch('measurement.length')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.length'), amount)}"
-        end
+        define_measurement_locale(amount, 'length')
       end
 
       def volume(amount = rand(10))
-        ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.volume'))
-        elsif amount == NONE
-          fetch('measurement.volume')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.volume'), amount)}"
-        end
+        define_measurement_locale(amount, 'volume')
       end
 
       def weight(amount = rand(10))
-        ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.weight'))
-        elsif amount == NONE
-          fetch('measurement.weight')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.weight'), amount)}"
-        end
+        define_measurement_locale(amount, 'weight')
       end
 
       def metric_height(amount = rand(10))
-        ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.metric_height'))
-        elsif amount == NONE
-          fetch('measurement.metric_height')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.metric_height'), amount)}"
-        end
+        define_measurement_locale(amount, 'metric_height')
       end
 
       def metric_length(amount = rand(10))
-        ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.metric_length'))
-        elsif amount == NONE
-          fetch('measurement.metric_length')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.metric_length'), amount)}"
-        end
+        define_measurement_locale(amount, 'metric_length')
       end
 
       def metric_volume(amount = rand(10))
-        ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.metric_volume'))
-        elsif amount == NONE
-          fetch('measurement.metric_volume')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.metric_volume'), amount)}"
-        end
+        define_measurement_locale(amount, 'metric_volume')
       end
 
       def metric_weight(amount = rand(10))
-        ensure_valid_amount(amount)
-        if amount == ALL
-          make_plural(fetch('measurement.metric_weight'))
-        elsif amount == NONE
-          fetch('measurement.metric_weight')
-        else
-          "#{amount} #{check_for_plural(fetch('measurement.metric_weight'), amount)}"
-        end
+        define_measurement_locale(amount, 'metric_weight')
       end
 
       private
-
-      def ensure_valid_amount(amount)
-        raise ArgumentError, 'invalid amount' unless amount == NONE || amount == ALL || amount.is_a?(Integer) || amount.is_a?(Float)
-      end
 
       def check_for_plural(text, number)
         if number && number != 1
@@ -104,6 +44,23 @@ module Faker
         else
           text
         end
+      end
+
+      def define_measurement_locale(amount, locale)
+        ensure_valid_amount(amount)
+        if amount == ALL
+          make_plural(fetch("measurement.#{locale}"))
+        elsif amount == NONE
+          fetch("measurement.#{locale}")
+        else
+          locale = check_for_plural(fetch("measurement.#{locale}"), amount)
+
+          "#{amount} #{locale}"
+        end
+      end
+
+      def ensure_valid_amount(amount)
+        raise ArgumentError, 'invalid amount' unless amount == NONE || amount == ALL || amount.is_a?(Integer) || amount.is_a?(Float)
       end
 
       def make_plural(text)

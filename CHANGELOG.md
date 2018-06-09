@@ -1,7 +1,7 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-06-05
+### Latest update: 2018-06-09
 
 ### Feature Request
 - [PR #1268](https://github.com/stympy/faker/pull/1268) Add Faker::Nation.national_sport [@gkunwar](https://github.com/gkunwar)
