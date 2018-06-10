@@ -134,6 +134,7 @@ Contents
   - [Faker::StrangerThings](doc/stranger_things.md)
   - [Faker::String](doc/string.md)
   - [Faker::Stripe](doc/stripe.md)
+  - [Faker::Ssn](doc/ssn.md)
   - [Faker::Superhero](doc/superhero.md)
   - [Faker::SwordArtOnline](doc/sword_art_online.md)
   - [Faker::Team](doc/team.md)
