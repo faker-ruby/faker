@@ -6,6 +6,10 @@ module Faker
       def quote
         fetch('rupaul.quotes')
       end
+
+      def queen
+        fetch('rupaul.queens')
+      end
     end
   end
 end

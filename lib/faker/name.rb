@@ -3,7 +3,6 @@ module Faker
     flexible :name
 
     class << self
-
       def name
         parse('name.name')
       end
@@ -13,25 +12,29 @@ module Faker
       end
 
       def first_name
-        fetch('name.first_name')
+        parse('name.first_name')
       end
 
-      def last_name 
-        fetch('name.last_name')
+      def last_name
+        parse('name.last_name')
       end
 
-      def prefix 
+      def prefix
         fetch('name.prefix')
       end
 
-      def suffix 
+      def suffix
         fetch('name.suffix')
       end
 
       # Generate a buzzword-laden job title
       # Wordlist from http://www.bullshitjob.com/title/
-      def title 
+      def title
         "#{fetch('name.title.descriptor')} #{fetch('name.title.level')} #{fetch('name.title.job')}"
+      end
+
+      def initials(character_count = 3)
+        (0...character_count).map { rand(65..90).chr }.join
       end
 
       def job_titles

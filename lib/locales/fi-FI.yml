@@ -16,10 +16,10 @@ fi-FI:
       default_country: [Suomi]
 
     name:
-      first_name_women: [Eija, Helena, Anu, Riitta, Heta, Kanerva, Tytti, Saimi, Kaari, Emma, Elli]
-      first_name_men: [Erkki, Toni, Aki, Iiro, Marko, Henri, Juha, Iivari, Arto, Eelis, Markus, Olli]
-      first_name: [Erkki, Toni, Aki, Iiro, Marko, Henri, Juha, Iivari, Arto, Eelis, Markus, Olli, Eija, Helena, Anu, Riitta, Heta, Kanerva, Tytti, Saimi, Kaari, Emma, Elli]
-      last_name: [Ahokas, Uotila, Pennanen, Meriluoto, Ilkka, Jantunen, Liukkonen, Eronen, Ojanen, Ruutu, Jantunen, Isometsä]
+      first_name_women: [Maria, Helena, Anneli, Johanna, Kaarina, Marjatta, Hannele, Kristiina, Liisa, Emilia, Elina, Tuulikki, Annikki, Maarit, Sofia, Susanna, Leena, Katariina, Anna, Marja, Sinikka, Inkeri, Riitta, Kyllikki, Aino, Tuula, Anne, Päivi, Orvokki, Ritva, Tellervo, Maija, Pirjo, Karoliina, Pauliina, Minna, Sari, Irmeli, Eeva, Tiina, Laura, Eveliina, Marika, Elisabet, Tarja, Pirkko, Satu, Anja, Mari, Hanna]
+      first_name_men: [Juhani, Olavi, Antero, Tapani, Johannes, Tapio, Mikael, Kalevi, Matti, Pekka, Petteri, Ilmari, Sakari, Matias, Antti, Juha, Heikki, Kristian, Timo, Kari, Mikko, Markus, Jari, Jukka, Kalervo, Markku, Aleksi, Jaakko, Petri, Oskari, Mika, Henrik, Lauri, Erkki, Veikko, Hannu, Seppo, Ville, Ensio, Ari, Janne, Valtteri, Marko, Pentti, Tuomas, Sami, Juho, Eero, Martti, Erik]
+      first_name: [Maria, Helena, Anneli, Johanna, Kaarina, Marjatta, Hannele, Kristiina, Liisa, Emilia, Elina, Tuulikki, Annikki, Maarit, Sofia, Susanna, Leena, Katariina, Anna, Marja, Sinikka, Inkeri, Riitta, Kyllikki, Aino, Tuula, Anne, Päivi, Orvokki, Ritva, Tellervo, Maija, Pirjo, Karoliina, Pauliina, Minna, Sari, Irmeli, Eeva, Tiina, Laura, Eveliina, Marika, Elisabet, Tarja, Pirkko, Satu, Anja, Mari, Hanna, Juhani, Olavi, Antero, Tapani, Johannes, Tapio, Mikael, Kalevi, Matti, Pekka, Petteri, Ilmari, Sakari, Matias, Antti, Juha, Heikki, Kristian, Timo, Kari, Mikko, Markus, Jari, Jukka, Kalervo, Markku, Aleksi, Jaakko, Petri, Oskari, Mika, Henrik, Lauri, Erkki, Veikko, Hannu, Seppo, Ville, Ensio, Ari, Janne, Valtteri, Marko, Pentti, Tuomas, Sami, Juho, Eero, Martti, Erik]
+      last_name: [Korhonen, Virtanen, Mäkinen, Nieminen, Mäkelä, Hämäläinen, Laine, Heikkinen, Koskinen, Järvinen, Lehtonen, Lehtinen, Saarinen, Salminen, Heinonen, Niemi, Heikkilä, Kinnunen, Salonen, Turunen, Salo, Laitinen, Tuominen, Rantanen, Karjalainen, Jokinen, Mattila, Savolainen, Lahtinen, Ahonen, Ojala, Leppänen, Väisänen, Hiltunen, Kallio, Miettinen, Leinonen, Pitkänen, Aaltonen, Manninen, Hakala, Koivisto, Anttila, Laaksonen, Hirvonen, Räsänen, Lehto, Laakso, Toivonen, Mustonen]
       name:
         - "#{first_name} #{last_name}"
 

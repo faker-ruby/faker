@@ -1,5 +1,7 @@
 # Faker::Markdown
 
+Available since version 1.8.0.
+
 Generates markdown formatting with Lorem Ipsum text
 
 ```ruby
@@ -21,9 +23,16 @@ Faker::Markdown.inline_code #=> "Aut eos quis suscipit. `Dignissimos voluptatem 
 # Code Block - generates a code block formatted in ruby
 Faker::Markdown.block_code #=> "```ruby\nEos quasi qui.\n```"
 
-# Table - generates a 3x3 table
-Faker::Markdown.table #=> "ad | similique | voluptatem\ncorrupti | est | rerum\nmolestiae | quidem | et"
+# Table - generates a 3x4 table with a row of headings, a row of hyphens and two rows of data
+Faker::Markdown.table #=> "ad | similique | voluptatem\n---- | ---- | ----\ncorrupti | est | rerum\nmolestiae | quidem | et"
 
 # Random - randomly chooses an above method
 Faker::Markdown.random #=> returns output from a single method outlined above
+
+# Sandwich - creates a simulated blog-esque text-heavy block in markdown
+Faker::Markdown.sandwich #=> returns newline separated content of 1 header, 1 default lorem paragraph, and 1 random markdown element
+
+Faker::Markdown.sandwich(5) #=> returns newline separated content of 1 header, 1 5-sentence lorem paragraph, and 1 random markdown element
+
+Faker::Markdown.sandwich(6, 3) #=> returns newline separated content of 1 header, and then 3 sections consisting of, here, 1 6-sentence lorem paragraph and 1 random markdown element. The random markdown element is chosen at random in each iteration of the paragraph-markdown pairing.
 ```
