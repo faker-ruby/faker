@@ -1,5 +1,7 @@
 # Faker::Dota
 
+It might be available in the next version.
+
 ```ruby
 # Random hero
 Faker::Dota.hero #=> "Abaddon"
@@ -15,4 +17,5 @@ Faker::Dota.player #=> "Dendi"
 
 # Random quote
 Faker::Dota.quote #=> "Easy now, this stuff is explosive!"
+Faker::Dota.quote(hero = 'alchemist') #=> "Better living through alchemy!"
 ```

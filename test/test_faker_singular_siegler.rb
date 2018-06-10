@@ -6,6 +6,6 @@ class TestFakerSingularSiegler < Test::Unit::TestCase
   end
 
   def test_quote
-    assert @tester.quotes.match(/\w/)
+    assert @tester.quote.match(/\w/)
   end
 end

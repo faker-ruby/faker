@@ -55,6 +55,16 @@ module Faker
         send(available_methods[rand(0..available_methods.length - 1)])
       end
 
+      def sandwich(sentences = 3, repeat = 1)
+        text_block = []
+        text_block << headers
+        repeat.times do
+          text_block << Faker::Lorem.paragraph(sentences)
+          text_block << random
+        end
+        text_block.join("\n")
+      end
+
       private
 
       def available_methods

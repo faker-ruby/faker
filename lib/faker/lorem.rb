@@ -44,6 +44,14 @@ module Faker
         1.upto(resolve(paragraph_count)).collect { paragraph(3, supplemental) }
       end
 
+      def paragraph_by_chars(chars = 256, supplemental = false)
+        paragraph = paragraph(3, supplemental)
+
+        paragraph += ' ' + paragraph(3, supplemental) while paragraph.length < chars
+
+        paragraph[0...chars - 1] + '.'
+      end
+
       def question(word_count = 4, supplemental = false, random_words_to_add = 6)
         words(word_count + rand(random_words_to_add.to_i), supplemental).join(locale_space).capitalize + locale_question_mark
       end

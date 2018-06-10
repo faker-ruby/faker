@@ -43,6 +43,14 @@ module Faker
         "https://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
 
+      def type
+        fetch('company.type')
+      end
+
+      def profession
+        fetch('company.profession')
+      end
+
       # rubocop:disable Style/AsciiComments
       # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/Número_de_identificación_fiscal
       # rubocop:enable Style/AsciiComments
@@ -61,6 +69,17 @@ module Faker
         # Last digit is a control digit
         base = [sample([1, 2, 3, 5, 6, 7, 8, 9]), sample((0..9).to_a), sample((2..9).to_a), format('%06d', rand(10**6))].join
         base + luhn_algorithm(base).to_s
+      end
+
+      def czech_organisation_number
+        sum = 0
+        base = []
+        [8, 7, 6, 5, 4, 3, 2].each do |weight|
+          base << sample((0..9).to_a)
+          sum += (weight * base.last)
+        end
+        base << (11 - (sum % 11)) % 10
+        base.join
       end
 
       # Get a random French SIREN number. See more here https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
@@ -91,10 +110,6 @@ module Faker
         abn = "00#{base}"
 
         (99 - (abn_checksum(abn) % 89)).to_s + base
-      end
-
-      def profession
-        fetch('company.profession')
       end
 
       # Get a random Polish taxpayer identification number More info https://pl.wikipedia.org/wiki/NIP

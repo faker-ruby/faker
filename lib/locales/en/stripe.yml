@@ -16,6 +16,16 @@ en:
         diners_club:   "30569309025904"
         diners_club_2: "38520000023237"
         jcb:           "3530111333300000"
+      valid_tokens:
+        visa:          "tok_visa"
+        visa_debit:    "tok_visa_debit"
+        mc:            "tok_mastercard"
+        mc_debit:      "tok_mastercard_debit"
+        mc_prepaid:    "tok_mastercard_prepaid"
+        amex:          "tok_amex"
+        discover:      "tok_discover"
+        diners_club:   "tok_diners"
+        jcb:           "tok_jcb"
       invalid_cards:
         addressZipFail:         "4000000000000010"  # The address_line1_check and address_zip_check verifications fail. If your account is blocking payments that fail ZIP code validation, the charge is declined.
         addressFail:            "4000000000000028"  # Charge succeeds but the address_line1_check verification fails.

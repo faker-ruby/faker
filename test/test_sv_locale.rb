@@ -15,6 +15,7 @@ class TestSVLocale < Test::Unit::TestCase
     assert Faker::Name.first_name_men.is_a? String
     assert Faker::Name.first_name_women.is_a? String
     assert Faker::Name.last_name.is_a? String
+    assert Faker::Name.prefix.is_a? String
   end
 
   def test_sv_phone_number

@@ -33,6 +33,8 @@ Faker::Company.profession #=> "firefighter"
 
 Faker::Company.swedish_organisation_number #=> "7962578022"
 
+Faker::Company.czech_organisation_number #=> "77778171"
+
 Faker::Company.french_siren_number #=> "819489626"
 
 Faker::Company.french_siret_number #=> "81948962600013"
@@ -43,14 +45,9 @@ Faker::Company.australian_business_number #=> "81137773602"
 
 Faker::Company.spanish_organisation_number #=> "P2344979"
 
-# Get a random profession
-Faker::Company.profession #=> "firefighter"
-
 # Get a random Polish taxpayer identification number
 Faker::Company.polish_taxpayer_identification_number #=> "1060000062"
 
 # Get a random Polish register of national economy number
 Faker::Company.polish_register_of_national_economy #=> "123456785"
-
-Faker::Company.type #=> "Privately Held"
 ```
