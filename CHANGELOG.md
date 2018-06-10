@@ -4,6 +4,7 @@
 ### Latest update: 2018-06-09
 
 ### Feature Request
+- [PR #877](https://github.com/stympy/faker/pull/877) Add Canada SIN generator in Faker::Code [@gkunwar](https://github.com/gkunwar)
 - [PR #1268](https://github.com/stympy/faker/pull/1268) Add Faker::Nation.national_sport [@gkunwar](https://github.com/gkunwar)
 - [PR #1273](https://github.com/stympy/faker/pull/1273) Add Faker::Device [@vbrazo](https://github.com/vbrazo)
 - [PR #1272](https://github.com/stympy/faker/pull/1272) Add Faker::DrWho.actor [@timcustard](https://github.com/timcustard)
