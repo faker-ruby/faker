@@ -3,6 +3,8 @@ module Faker
     flexible :name
 
     class << self
+      extend Gem::Deprecate
+
       def name
         parse('name.name')
       end
@@ -38,6 +40,9 @@ module Faker
       def job_titles
         fetch_all('job.position')
       end
+
+      deprecate :title, 'Faker::Job.title', 2018, 9
+      deprecate :job_titles, :none, 2018, 9
     end
   end
 end
