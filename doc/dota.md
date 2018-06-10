@@ -1,5 +1,7 @@
 # Faker::Dota
 
+It might be available in the next version.
+
 ```ruby
 # Random hero
 Faker::Dota.hero #=> "Abaddon"

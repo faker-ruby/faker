@@ -16,4 +16,8 @@ class TestFakerNation < Test::Unit::TestCase
   def test_capital_city
     assert @tester.capital_city.match(/(\w+\.? ?){2,3}/)
   end
+
+  def test_natinonal_sport
+    assert @tester.national_sport.match(/(\w+\.? ?){2,3}/)
+  end
 end

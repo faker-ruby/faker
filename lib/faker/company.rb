@@ -71,6 +71,17 @@ module Faker
         base + luhn_algorithm(base).to_s
       end
 
+      def czech_organisation_number
+        sum = 0
+        base = []
+        [8, 7, 6, 5, 4, 3, 2].each do |weight|
+          base << sample((0..9).to_a)
+          sum += (weight * base.last)
+        end
+        base << (11 - (sum % 11)) % 10
+        base.join
+      end
+
       # Get a random French SIREN number. See more here https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
       def french_siren_number
         base = (1..8).map { rand(10) }.join
