@@ -29,7 +29,7 @@ module Faker
       end
 
       def multibyte
-        ['😀', "\xF0\x9F\x98\xA1", "\xE2\x9D\xA4"]
+        sample('faker.multibyte')
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)

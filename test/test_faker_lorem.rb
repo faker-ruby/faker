@@ -107,7 +107,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_multibyte
-    assert_equal ['😀', '😡', '❤'], @tester.multibyte
+    assert @tester.multibyte.is_a? String
   end
 
   def test_paragraph_char_count
