@@ -1,8 +1,12 @@
 module Faker
   class Internet < Base
     class << self
-      def email(name = nil)
-        [user_name(name), domain_name].join('@')
+      def email(name = nil, *separators)
+        if separators
+          [user_name(name, separators), domain_name].join('@')
+        else
+          [user_name(name), domain_name].join('@')
+        end
       end
 
       def free_email(name = nil)

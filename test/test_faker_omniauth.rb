@@ -24,13 +24,6 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info[:image]
     assert_instance_of String, credentials[:token]
     assert_instance_of String, credentials[:refresh_token]
-
-    if RUBY_VERSION < '2.4.0'
-      assert_instance_of Fixnum, credentials[:expires_at]
-    else
-      assert_instance_of Integer, credentials[:expires_at]
-    end
-
     assert_equal true, credentials[:expires]
     assert_equal 9, extra_raw_info[:sub].length
     assert_equal info[:email], extra_raw_info[:email]
@@ -51,9 +44,25 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 'APP_ID', id_info['azp']
     assert_equal info[:email], id_info['email']
     assert_equal 'APP_ID', id_info['aud']
-    assert_instance_of Fixnum, id_info['iat']
-    assert_instance_of Fixnum, id_info['exp']
     assert_equal openid_id, id_info['openid_id']
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, credentials[:expires_at]
+    else
+      assert_instance_of Integer, credentials[:expires_at]
+    end
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, id_info['iat']
+    else
+      assert_instance_of Integer, id_info['iat']
+    end
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, id_info['exp']
+    else
+      assert_instance_of Integer, id_info['exp']
+    end
   end
 
   def test_omniauth_google_with_name

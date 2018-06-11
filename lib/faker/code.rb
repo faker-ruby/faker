@@ -48,6 +48,25 @@ module Faker
         fetch('code.asin')
       end
 
+      # Generates Social Insurance Number issued in Canada
+      # https://en.wikipedia.org/wiki/Social_Insurance_Number
+      def sin
+        # 1   - province or temporary resident
+        # 2-8 - random numbers
+        # 9   - checksum
+
+        # 1st digit. 8,0 are not used
+        registry = Faker::Base.sample([1, 2, 3, 4, 5, 6, 7, 9]).to_s
+
+        # generate 2nd to 8th
+        partial = Array.new(7) { Faker::Config.random.rand(0..9) }.join
+
+        # Generate 9th digit
+        check_digit = generate_sin_check_digit(registry + partial + '0').to_s
+
+        registry + partial + check_digit
+      end
+
       private
 
       # Reporting body identifier
@@ -137,6 +156,30 @@ module Faker
         total = values.split(//).zip(weight).collect { |a, b| a.to_i * b.to_i }.inject(:+)
         total += 4 if prefix == 'T'
         %w[A B C D E F G H I Z J][10 - total % 11]
+      end
+
+      def generate_sin_check_digit(digits)
+        # Fast Luhn checksum code from luhn.js:
+        # https://gist.github.com/ShirtlessKirk/2134376
+
+        len = 9
+        mul = 0
+
+        luhn_arr = [
+          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+          [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]
+        ]
+        sum = 0
+
+        while len > 0
+          len -= 1
+          num = digits[len].to_i
+          sum += luhn_arr[mul][num]
+          mul ^= 1
+        end
+
+        checksum = sum % 10
+        checksum.zero? ? checksum : (10 - checksum)
       end
     end
   end

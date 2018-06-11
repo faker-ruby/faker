@@ -9,6 +9,10 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.email.match(/.+@.+\.\w+/)
   end
 
+  def test_email_with_separators
+    assert @tester.email('jane doe', '+').match(/.+\+.+@.+\.\w+/)
+  end
+
   def test_free_email
     assert @tester.free_email.match(/.+@(gmail|hotmail|yahoo)\.com/)
   end
@@ -18,6 +22,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_user_name
+    assert @tester.user_name(0..3).match(/[a-z]+((_|\.)[a-z]+)?/)
     assert @tester.user_name.match(/[a-z]+((_|\.)[a-z]+)?/)
   end
 

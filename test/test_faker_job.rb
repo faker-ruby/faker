@@ -16,4 +16,8 @@ class TestFakerJob < Test::Unit::TestCase
   def test_key_skill
     assert @tester.key_skill.match(/(\w+\.? ?)/)
   end
+
+  def test_position
+    assert @tester.position.match(/(\w+\.? ?)/)
+  end
 end

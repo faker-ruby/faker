@@ -37,6 +37,10 @@ class TestPlaceholdit < Test::Unit::TestCase
     assert @tester.image('300x300', 'jpg', 'fff').match(%r{https:\/\/placehold\.it\/(.+)(jpg?)\/fff})
   end
 
+  def test_avatar_background_with_random_color
+    assert @tester.image('300x300', 'jpg', :random).match(%r{https:\/\/placehold\.it\/(.+)(jpg?)\/[a-f0-9]{6}})
+  end
+
   def test_avatar_background_with_wrong_six_char_hex
     assert_raise ArgumentError do
       @tester.image('300x300', 'jpg', 'fffffz')
@@ -61,6 +65,10 @@ class TestPlaceholdit < Test::Unit::TestCase
 
   def test_avatar_font_color_with_correct_three_char_hex
     assert @tester.image('300x300', 'jpg', 'fff', '000').match(%r{https:\/\/placehold\.it\/(.+)(jpg?)\/fff})
+  end
+
+  def test_avatar_font_color_with_random_color
+    assert @tester.image('300x300', 'jpg', 'fff', :random).match(%r{https:\/\/placehold\.it\/(.+)(jpg?)\/fff\/[a-f0-9]{6}})
   end
 
   def test_avatar_font_color_with_wrong_six_char_hex

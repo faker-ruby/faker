@@ -43,6 +43,14 @@ module Faker
         "https://pigment.github.io/fake-logos/logos/medium/color/#{rand_num}.png"
       end
 
+      def type
+        fetch('company.type')
+      end
+
+      def profession
+        fetch('company.profession')
+      end
+
       # rubocop:disable Style/AsciiComments
       # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/Número_de_identificación_fiscal
       # rubocop:enable Style/AsciiComments
@@ -61,6 +69,17 @@ module Faker
         # Last digit is a control digit
         base = [sample([1, 2, 3, 5, 6, 7, 8, 9]), sample((0..9).to_a), sample((2..9).to_a), format('%06d', rand(10**6))].join
         base + luhn_algorithm(base).to_s
+      end
+
+      def czech_organisation_number
+        sum = 0
+        base = []
+        [8, 7, 6, 5, 4, 3, 2].each do |weight|
+          base << sample((0..9).to_a)
+          sum += (weight * base.last)
+        end
+        base << (11 - (sum % 11)) % 10
+        base.join
       end
 
       # Get a random French SIREN number. See more here https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
@@ -93,8 +112,26 @@ module Faker
         (99 - (abn_checksum(abn) % 89)).to_s + base
       end
 
-      def profession
-        fetch('company.profession')
+      # Get a random Polish taxpayer identification number More info https://pl.wikipedia.org/wiki/NIP
+      def polish_taxpayer_identification_number
+        result = []
+        weights = [6, 5, 7, 2, 3, 4, 5, 6, 7]
+        loop do
+          result = Array.new(3) { rand(1..9) } + Array.new(7) { rand(10) }
+          break if (weight_sum(result, weights) % 11) == result[9]
+        end
+        result.join('')
+      end
+
+      # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
+      def polish_register_of_national_economy(length = 9)
+        raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
+        random_digits = []
+        loop do
+          random_digits = Array.new(length) { rand(10) }
+          break if collect_regon_sum(random_digits) == random_digits.last
+        end
+        random_digits.join('')
       end
 
       private
@@ -156,6 +193,24 @@ module Faker
           sum += weight * abn[i].to_i
         end
 
+        sum
+      end
+
+      def collect_regon_sum(array)
+        weights = if array.size == 9
+                    [8, 9, 2, 3, 4, 5, 6, 7]
+                  else
+                    [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8]
+                  end
+        sum = weight_sum(array, weights) % 11
+        sum == 10 ? 0 : sum
+      end
+
+      def weight_sum(array, weights)
+        sum = 0
+        (0..weights.size - 1).each do |index|
+          sum += (array[index] * weights[index])
+        end
         sum
       end
     end

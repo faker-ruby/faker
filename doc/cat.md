@@ -1,5 +1,7 @@
 # Faker::Cat
 
+Available since version 1.6.2.
+
 ```ruby
 # Random cat name
 Faker::Cat.name #=> "Shadow"

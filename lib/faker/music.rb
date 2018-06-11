@@ -28,6 +28,18 @@ module Faker
       def chord_types
         ['', 'maj', '6', 'maj7', 'm', 'm7', '-7', '7', 'dom7', 'dim', 'dim7', 'm7b5']
       end
+
+      def band
+        fetch('music.bands')
+      end
+
+      def album
+        fetch('music.albums')
+      end
+
+      def genre
+        fetch('music.genres')
+      end
     end
   end
 end

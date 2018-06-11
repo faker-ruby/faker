@@ -5,7 +5,7 @@ class TestFakerMeasurement < Test::Unit::TestCase
     @tester = Faker::Measurement
   end
 
-  def height
+  def test_height
     assert @tester.height.match(/\d\s[a-z]/)
   end
 
@@ -21,9 +21,9 @@ class TestFakerMeasurement < Test::Unit::TestCase
 
     assert singular_unit.match(/\A\D+[^s]\z/)
     assert plural_unit.match(/\A\D+[s]\z/)
+    assert @tester.volume.match(/\d\s[a-z]/)
     assert custom_amount_float.match(/\d\s[a-z]+[s]\z/)
     assert custom_amount_integer.match(/\d\s[a-z]+[s]\z/)
-    assert @tester.volume.match(/\d\s[a-z]/)
   end
 
   def weight
@@ -44,6 +44,7 @@ class TestFakerMeasurement < Test::Unit::TestCase
 
   def metric_weight
     assert @tester.metric_weight.match(/\d\s[a-z]/)
+    assert @tester.metric_weight(1).match(/\d\s[a-z]/)
   end
 
   def test_invalid_amount_error

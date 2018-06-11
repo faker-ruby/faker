@@ -26,6 +26,82 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert flexible_key == :vehicle
   end
 
+  def test_mileage
+    mileage = @tester.mileage
+    assert mileage >= 10_000
+    assert mileage < 90_000
+  end
+
+  def test_year
+    year = @tester.year
+    assert year >= 2005
+    assert year <= ::Time.now.year
+  end
+
+  def test_make
+    assert @tester.make.match(/\w+\.?/)
+  end
+
+  def test_model
+    assert @tester.model.match(/\w+\.?/)
+  end
+
+  def test_model_with_make
+    assert @tester.model('Toyota').match(/\w+\.?/)
+  end
+
+  def test_make_and_model
+    assert @tester.make_and_model.match(/\w+\s\w+/)
+  end
+
+  def test_style
+    assert @tester.style.match(/\w+\.?/)
+  end
+
+  def test_color
+    assert @tester.color.match(/\w+\.?/)
+  end
+
+  def test_transmission
+    assert @tester.transmission.match(/\w+\.?/)
+  end
+
+  def test_drive_type
+    assert @tester.drive_type.match(/\w+\.?/)
+  end
+
+  def test_fuel_type
+    assert @tester.fuel_type.match(/\w+\.?/)
+  end
+
+  def test_door_count
+    assert @tester.door_count.match(/\d Door/)
+  end
+
+  def test_car_type
+    assert @tester.car_type.match(/\w+\.?/)
+  end
+
+  def test_engine
+    assert @tester.engine.match(/\d Cylinder Engine/)
+  end
+
+  def test_engine_size
+    assert @tester.engine_size.match(/\d Cylinder Engine/)
+  end
+
+  def test_car_options
+    car_options = @tester.car_options
+    assert car_options.length >= 5
+    assert car_options.length < 10
+  end
+
+  def test_standard_specs
+    standard_specs = @tester.standard_specs
+    assert standard_specs.length >= 5
+    assert standard_specs.length < 10
+  end
+
   private
 
   def transliterate(character)
