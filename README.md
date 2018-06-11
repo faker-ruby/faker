@@ -64,6 +64,7 @@ Contents
   - [Faker::Dune](doc/dune.md)
   - [Faker::Educator](doc/educator.md)
   - [Faker::ElderScrolls](doc/elder_scrolls.md)
+  - [Faker::ElectricalComponents](doc/electrical_components.md)
   - [Faker::Esport](doc/esport.md)
   - [Faker::Fallout](doc/fallout.md)
   - [Faker::FamilyGuy](doc/family_guy.md)
