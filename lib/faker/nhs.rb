@@ -10,7 +10,7 @@ module Faker
                                                    .join('')
       end
 
-      def check_digit(number)
+      def check_digit(number = 0)
         sum = 0
         number.to_s.chars.each_with_index do |digit, idx|
           position = idx + 1

@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
-class TestCaCatLocale < Test::Unit::TestCase
+class TestJaLocale < Test::Unit::TestCase
   def setup
-    Faker::Config.locale = 'ca-CAT'
+    Faker::Config.locale = 'ja'
   end
 
   def teardown
@@ -17,6 +17,7 @@ class TestCaCatLocale < Test::Unit::TestCase
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.street_name.is_a? String
+    assert Faker::Lorem.words.is_a? Array
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.name.is_a? String

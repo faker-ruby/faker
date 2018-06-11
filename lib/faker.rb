@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
-mydir = File.expand_path(File.dirname(__FILE__))
+mydir = __dir__
 
 begin
   require 'psych'
-rescue LoadError
 end
 
 require 'i18n'
@@ -12,15 +10,18 @@ require 'set' # Fixes a bug in i18n 0.6.11
 if I18n.respond_to?(:enforce_available_locales=)
   I18n.enforce_available_locales = true
 end
-I18n.load_path += Dir[File.join(mydir, 'locales', '*.yml')]
-
+I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
+I18n.reload! if I18n.backend.initialized?
 
 module Faker
   class Config
     @locale = nil
+    @random = nil
 
     class << self
       attr_writer :locale
+      attr_writer :random
+
       def locale
         @locale || I18n.locale
       end
@@ -29,6 +30,9 @@ module Faker
         @locale
       end
 
+      def random
+        @random || Random::DEFAULT
+      end
     end
   end
 
@@ -38,13 +42,13 @@ module Faker
     Letters = ULetters + Array('a'..'z')
 
     class << self
-      ## make sure numerify results doesn’t start with a zero
+      ## make sure numerify results do not start with a zero
       def numerify(number_string)
-        number_string.sub(/#/) { (rand(9)+1).to_s }.gsub(/#/) { rand(10).to_s }
+        number_string.sub(/#/) { rand(1..9).to_s }.gsub(/#/) { rand(10).to_s }
       end
 
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { ULetters.sample }
+        letter_string.gsub(/\?/) { sample(ULetters) }
       end
 
       def bothify(string)
@@ -70,27 +74,26 @@ module Faker
       #
       # "U3V  3TP"
       #
-      def regexify(re)
-        re = re.source if re.respond_to?(:source) # Handle either a Regexp or a String that looks like a Regexp
-        re.
-          gsub(/^\/?\^?/, '').gsub(/\$?\/?$/, '').                                                                      # Ditch the anchors
-          gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}').                                                             # All {2} become {2,2} and ? become {0,1}
-          gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                # [12]{1,2} becomes [12] or [12][12]
-          gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
-          gsub(/(\\?.)\{(\d+),(\d+)\}/) {|match| $1 * Array(Range.new($2.to_i, $3.to_i)).sample }.                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
-          gsub(/\((.*?)\)/) {|match| match.gsub(/[\(\)]/, '').split('|').sample }.                                      # (this|that) becomes 'this' or 'that'
-          gsub(/\[([^\]]+)\]/) {|match| match.gsub(/(\w\-\w)/) {|range| Array(Range.new(*range.split('-'))).sample } }. # All A-Z inside of [] become C (or X, or whatever)
-          gsub(/\[([^\]]+)\]/) {|match| $1.split('').sample }.                                                          # All [ABC] become B (or A or C)
-          gsub('\d') {|match| Numbers.sample }.
-          gsub('\w') {|match| Letters.sample }
+      def regexify(reg)
+        reg = reg.source if reg.respond_to?(:source) # Handle either a Regexp or a String that looks like a Regexp
+        reg
+          .gsub(%r{^\/?\^?}, '').gsub(%r{\$?\/?$}, '') # Ditch the anchors
+          .gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}') # All {2} become {2,2} and ? become {0,1}
+          .gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # [12]{1,2} becomes [12] or [12][12]
+          .gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+          .gsub(/(\\?.)\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+          .gsub(/\((.*?)\)/) { |match| sample(match.gsub(/[\(\)]/, '').split('|')) } # (this|that) becomes 'this' or 'that'
+          .gsub(/\[([^\]]+)\]/) { |match| match.gsub(/(\w\-\w)/) { |range| sample(Array(Range.new(*range.split('-')))) } } # All A-Z inside of [] become C (or X, or whatever)
+          .gsub(/\[([^\]]+)\]/) { |_match| sample(Regexp.last_match(1).split('')) } # All [ABC] become B (or A or C)
+          .gsub('\d') { |_match| sample(Numbers) }
+          .gsub('\w') { |_match| sample(Letters) }
       end
 
       # Helper for the common approach of grabbing a translation
       # with an array of values and selecting one of them.
       def fetch(key)
-        fetched = translate("faker.#{key}")
-        fetched = fetched.sample if fetched.respond_to?(:sample)
-        if fetched && fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        fetched = sample(translate("faker.#{key}"))
+        if fetched && fetched.match(%r{^\/}) && fetched.match(%r{\/$}) # A regex
           regexify(fetched)
         else
           fetched
@@ -102,7 +105,7 @@ module Faker
       def fetch_all(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.last if fetched.size <= 1
-        if !fetched.respond_to?(:sample) && fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        if !fetched.respond_to?(:sample) && fetched.match(%r{^\/}) && fetched.match(%r{\/$}) # A regex
           regexify(fetched)
         else
           fetched
@@ -113,7 +116,8 @@ module Faker
       # into method calls that can be used to generate a
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
-        fetch(key).scan(/(\(?)#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|prefix, kls, meth, etc|
+        fetched = fetch(key)
+        parts = fetched.scan(/(\(?)#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map do |prefix, kls, meth, etc|
           # If the token had a class Prefix (e.g., Name.first_name)
           # grab the constant, otherwise use self
           cls = kls ? Faker.const_get(kls.chop) : self
@@ -127,8 +131,10 @@ module Faker
           text += cls.respond_to?(meth) ? cls.send(meth) : fetch("#{(kls || self).to_s.split('::').last.downcase}.#{meth.downcase}")
 
           # And tack on spaces, commas, etc. left over in the string
-          text += etc.to_s
-        }.join
+          text + etc.to_s
+        end
+        # If the fetched key couldn't be parsed, then fallback to numerify
+        parts.any? ? parts.join : numerify(fetched)
       end
 
       # Call I18n.translate with our configured locale if no
@@ -137,7 +143,7 @@ module Faker
         opts = args.last.is_a?(Hash) ? args.pop : {}
         opts[:locale] ||= Faker::Config.locale
         opts[:raise] = true
-        I18n.translate(*(args.push(opts)))
+        I18n.translate(*args.push(opts))
       rescue I18n::MissingTranslationData
         opts = args.last.is_a?(Hash) ? args.pop : {}
         opts[:locale] = :en
@@ -145,7 +151,7 @@ module Faker
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        I18n.translate(*(args.push(opts)))
+        I18n.translate(*args.push(opts))
       end
 
       # Executes block with given locale set.
@@ -166,15 +172,19 @@ module Faker
       #   name:
       #     girls_name: ["Alice", "Cheryl", "Tatiana"]
       # Then you can call Faker::Name.girls_name and it will act like #first_name
-      def method_missing(m, *args, &block)
+      def method_missing(mth, *args, &block)
         super unless @flexible_key
 
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
-        if translation = translate(:faker)[@flexible_key][m]
-          translation.respond_to?(:sample) ? translation.sample : translation
+        if (translation = translate(:faker)[@flexible_key][mth])
+          sample(translation)
         else
           super
         end
+      end
+
+      def respond_to_missing?(method_name, include_private = false)
+        super
       end
 
       # Generates a random value between the interval
@@ -184,68 +194,31 @@ module Faker
       end
 
       def unique(max_retries = 10_000)
-        @unique_generator ||= UniqueGenerator.new(self, max_retries)
+        @unique ||= UniqueGenerator.new(self, max_retries)
+      end
+
+      def sample(list)
+        list.respond_to?(:sample) ? list.sample(random: Faker::Config.random) : list
+      end
+
+      def shuffle(list)
+        list.shuffle(random: Faker::Config.random)
+      end
+
+      def rand(max = nil)
+        if max.nil?
+          Faker::Config.random.rand
+        elsif max.is_a?(Range) || max.to_i > 0
+          Faker::Config.random.rand(max)
+        else
+          0
+        end
       end
     end
   end
 end
 
-require 'faker/address'
-require 'faker/cat'
-require 'faker/code'
-require 'faker/color'
-require 'faker/company'
-require 'faker/university'
-require 'faker/finance'
-require 'faker/internet'
-require 'faker/file'
-require 'faker/lorem'
-require 'faker/name'
-require 'faker/team'
-require 'faker/phone_number'
-require 'faker/business'
-require 'faker/commerce'
-require 'faker/version'
-require 'faker/number'
-require 'faker/bitcoin'
-require 'faker/avatar'
-require 'faker/placeholdit'
-require 'faker/date'
-require 'faker/time'
-require 'faker/number'
-require 'faker/hacker'
-require 'faker/app'
-require 'faker/id_number'
-require 'faker/slack_emoji'
-require 'faker/book'
-require 'faker/hipster'
-require 'faker/shakespeare'
-require 'faker/superhero'
-require 'faker/beer'
-require 'faker/boolean'
-require 'faker/star_wars'
-require 'faker/chuck_norris'
-require 'faker/crypto'
-require 'faker/educator'
-require 'faker/space'
-require 'faker/yoda'
-require 'faker/music'
-require 'faker/artist'
-require 'faker/vehicle'
-require 'faker/game_of_thrones'
-require 'faker/pokemon'
-require 'faker/food'
-require 'faker/lorem_pixel'
-require 'faker/esport'
-require 'faker/bank'
-require 'faker/ancient'
-require 'faker/twin_peaks'
-require 'faker/lord_of_the_rings'
-require 'faker/rock_band'
-require 'faker/fillmurray'
-require 'faker/job'
-require 'faker/demographic'
-require 'faker/nhs'
+Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| require f }
 
 require 'extensions/array'
 require 'extensions/symbol'
