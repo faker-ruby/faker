@@ -1,7 +1,7 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-06-09
+### Latest update: 2018-06-11
 
 ### Feature Request
 - [PR #1050](https://github.com/stympy/faker/pull/1050) Add Faker::Invoice to generate valid bank slip references [@onnimonni](https://github.com/onnimonni)
