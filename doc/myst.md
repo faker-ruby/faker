@@ -1,5 +1,7 @@
 # Faker::Myst
 
+It might be available in the next version.
+
 ```ruby
 Faker::Myst.game #=> "Myst III: Exile"
 

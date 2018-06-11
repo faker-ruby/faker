@@ -1,5 +1,10 @@
 fi-FI:
   faker:
+    invoice:
+      reference:
+        # Source: https://wiki.xmldation.com/support/fk/finnish_reference_number
+        check_digit_method: method_731
+        pattern: '\d{3,19}#'
     address:
       city_prefix: [Haap, He, Kau, Oul, Ra, Ni, 'No', Ke, La, Or]
       city_suffix: [sjärvi, kano, ahe, inen, esi, uma, mi, inen, valta, mina]

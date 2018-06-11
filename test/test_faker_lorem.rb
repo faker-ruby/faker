@@ -106,6 +106,10 @@ class TestFakerLorem < Test::Unit::TestCase
     assert(array.length == 250 || array.length == 500)
   end
 
+  def test_multibyte
+    assert @tester.multibyte.is_a? String
+  end
+
   def test_paragraph_char_count
     paragraph = @tester.paragraph_by_chars(256)
     assert(paragraph.length == 256)

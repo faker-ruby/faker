@@ -16,4 +16,6 @@ Faker::Code.nric(27, 34) #=> S8505970Z
 Faker::Code.imei #= "546327785982623"
 
 Faker::Code.asin #=> "B00000IGGJ"
+
+Fake::Code:sin #=> "159160274"
 ```
