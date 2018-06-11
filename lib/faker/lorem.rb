@@ -28,6 +28,10 @@ module Faker
         Array.new(char_count) { sample(CHARACTERS) }.join
       end
 
+      def multibyte
+        sample('faker.multibyte')
+      end
+
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
         words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + locale_period
       end
