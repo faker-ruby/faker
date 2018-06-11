@@ -1,8 +1,8 @@
 # Faker::Measurement
 
-# For each, if you don't pass in an integer or float, it randomly selects an integer between 1 and 10.
-# If you pass in "none", it returns the singular version of the measurement unit, without a number.
-# If you pass in "all", it returns the plural version of the measurement unit, without a number.
+### For each, if you don't pass in an integer or float, it randomly selects an integer between 1 and 10.
+### If you pass in "none", it returns the singular version of the measurement unit, without a number.
+### If you pass in "all", it returns the plural version of the measurement unit, without a number.
 
 ```ruby
 Faker::Measurement.height #=> "6 inches"

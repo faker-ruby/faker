@@ -53,6 +53,12 @@ class TestFakerCode < Test::Unit::TestCase
     assert luhn_checksum_valid(@tester.imei)
   end
 
+  def test_sin
+    assert @tester.sin.match(/\d{9}/)
+    assert @tester.sin.length == 9
+    assert luhn_checksum_valid(@tester.sin)
+  end
+
   def luhn_checksum_valid(numbers)
     sum = 0
     i = 0

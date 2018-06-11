@@ -4,24 +4,26 @@ class TestFakerStreet < Test::Unit::TestCase
   def setup
     @tester = Faker::Address
     @old_locales = I18n.config.available_locales
+    # rubocop:disable Lint/InterpolationCheck
     shire = {
-      :faker => {
-        :address => {
-          :street_name => ['#{street_prefix} #{street_root} #{street_suffix}'],
-          :street_prefix => ['Wide'],
-          :street_root => ['Cheerful'],
-          :street_suffix => ['Path'],
-          :secondary_address => ['(Green Door)'],
-          :street_address => ['#{street_name} #{building_number}'],
-          :building_number => ['#'],
-          :community_prefix => ['Pine'],
-          :community_suffix => ['Place'],
-          :time_zone => ['Pacific/Pago_Pago'],
+      faker: {
+        address: {
+          street_name: ['#{street_prefix} #{street_root} #{street_suffix}'],
+          street_prefix: ['Wide'],
+          street_root: ['Cheerful'],
+          street_suffix: ['Path'],
+          secondary_address: ['(Green Door)'],
+          street_address: ['#{street_name} #{building_number}'],
+          building_number: ['#'],
+          community_prefix: ['Pine'],
+          community_suffix: ['Place'],
+          time_zone: ['Pacific/Pago_Pago']
         }
       }
     }
+    # rubocop:enable Lint/InterpolationCheck
     I18n.backend.store_translations(:shire, shire)
-    I18n.config.available_locales += [ :shire ]
+    I18n.config.available_locales += [:shire]
   end
 
   def teardown
@@ -69,5 +71,4 @@ class TestFakerStreet < Test::Unit::TestCase
       assert_match(/^(.+\s)?\d+ [\w'\s]+\, [\w'\s]+\, [\w']+ \d+/, @tester.full_address)
     end
   end
-
 end
