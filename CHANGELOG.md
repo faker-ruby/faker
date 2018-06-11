@@ -108,6 +108,10 @@
 - [PR #1124](https://github.com/stympy/faker/pull/1124) Fix ranges for Brazilian zip codes [@lucasqueiroz](https://github.com/lucasqueiroz)
 - New collaborator - Vitor Oliveira [@vbrazo](https://github.com/vbrazo)
 
+### Deprecation
+- [PR #1264](https://github.com/stympy/faker/pull/1264) Prepare Faker::Name.job_titles and Faker::Name.title for deprecation
+  - Removing these methods as they are available in `Faker::Job`
+
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)
 

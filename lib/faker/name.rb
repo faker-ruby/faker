@@ -3,6 +3,8 @@ module Faker
     flexible :name
 
     class << self
+      extend Gem::Deprecate
+
       def name
         parse('name.name')
       end
@@ -27,10 +29,8 @@ module Faker
         fetch('name.suffix')
       end
 
-      # Generate a buzzword-laden job title
-      # Wordlist from http://www.bullshitjob.com/title/
       def title
-        "#{fetch('name.title.descriptor')} #{fetch('name.title.level')} #{fetch('name.title.job')}"
+        Faker::Job.title
       end
 
       def initials(character_count = 3)
@@ -38,8 +38,11 @@ module Faker
       end
 
       def job_titles
-        fetch_all('name.title.job')
+        fetch_all('job.position')
       end
+
+      deprecate :title, 'Faker::Job.title', 2018, 9
+      deprecate :job_titles, :none, 2018, 9
     end
   end
 end
