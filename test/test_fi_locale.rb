@@ -28,6 +28,7 @@ class TestFiLocale < Test::Unit::TestCase
     assert Faker::Invoice.creditor_reference.is_a? String
     assert Faker::Invoice.reference.is_a? String
     assert Faker::Invoice.reference('515141803475128').is_a? String
+    assert Faker::Invoice.reference('515141803475128#') == '5151418034751285'
   end
 
   def test_fi_phone_number
