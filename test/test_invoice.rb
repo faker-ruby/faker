@@ -12,7 +12,7 @@ class TestFakerInvoice < Test::Unit::TestCase
     100.times do
       random_amount = @tester.amount_between(from, to)
       assert random_amount >= from, "Expected >= \"#{from}\", but got #{random_amount}"
-      assert random_amount <= to  , "Expected <= \"#{to}\", but got #{random_amount}"
+      assert random_amount <= to, "Expected <= \"#{to}\", but got #{random_amount}"
     end
   end
 
@@ -38,17 +38,17 @@ class TestFakerInvoice < Test::Unit::TestCase
 
   # Test check digits with few valid payloads
   def test_reference_fi_checksum
-    reference = @tester.reference('FI','515141803475128#')
+    reference = @tester.reference('FI', '515141803475128#')
     assert reference == '5151418034751285'
   end
 
   def test_reference_ee_checksum
-    reference = @tester.reference('EE','4106453482608858924#')
+    reference = @tester.reference('EE', '4106453482608858924#')
     assert reference == '41064534826088589243'
   end
 
   def test_reference_no_checksum
-    reference = @tester.reference('NO','699027016279494093882102#')
+    reference = @tester.reference('NO', '699027016279494093882102#')
     assert reference == '6990270162794940938821025'
   end
 
@@ -59,7 +59,7 @@ class TestFakerInvoice < Test::Unit::TestCase
 
   # Test RF reference with valid payload
   def test_creditor_reference_fi_checksum
-    reference = @tester.creditor_reference('FI','5151418034751285')
+    reference = @tester.creditor_reference('FI', '5151418034751285')
     assert reference == 'RF835151418034751285'
   end
 end
