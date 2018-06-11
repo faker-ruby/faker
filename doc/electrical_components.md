@@ -1,5 +1,7 @@
 # Faker::ElectricalComponents
 
+It might be available in the next version.
+
 ```ruby
 Faker::ElectricalComponents.active #=> "Transistor"
 
