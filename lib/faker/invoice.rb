@@ -4,7 +4,7 @@ module Faker
 
     class << self
       # Generate random amount between values with 2 decimals
-      def amount_between(from, to)
+      def amount_between(from = 0, to = 0)
         Faker::Base.rand_in_range(from, to).round(2)
       end
 
