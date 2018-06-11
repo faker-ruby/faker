@@ -1,7 +1,6 @@
 module Faker
   class File < Base
     class << self
-
       def extension
         fetch('file.extension')
       end
@@ -11,14 +10,12 @@ module Faker
       end
 
       def file_name(dir = nil, name = nil, ext = nil, directory_separator = '/')
-
-        dir = Faker::Internet::slug unless dir
-        name = Faker::Lorem::word.downcase unless name
+        dir ||= Faker::Internet.slug
+        name ||= Faker::Lorem.word.downcase
         ext ||= extension
 
         [dir, name].join(directory_separator) + ".#{ext}"
       end
-
     end
   end
 end

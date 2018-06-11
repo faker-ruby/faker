@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 class TestFakerBirthdayInLeapYear < Test::Unit::TestCase
   def setup
     @tester = Faker::Date
-    @today = Date.parse("2016-02-29")
+    @today = Date.parse('2016-02-29')
     @min = 18
     @max = 65
   end
@@ -19,11 +19,11 @@ class TestFakerBirthdayInLeapYear < Test::Unit::TestCase
     end
 
     assert_raise ArgumentError do
-       ::Date.new(@today.year - @min, @today.month, @today.day)
+      ::Date.new(@today.year - @min, @today.month, @today.day)
     end
 
     assert_raise ArgumentError do
-       ::Date.new(@today.year - @max, @today.month, @today.day)
+      ::Date.new(@today.year - @max, @today.month, @today.day)
     end
   end
 end

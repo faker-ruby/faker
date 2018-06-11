@@ -10,10 +10,10 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_deterministic_npi
-    seed = srand
-    srand(seed)
+    Faker::Config.random = Random.new(42)
     v = @tester.npi
-    srand(seed)
+    Faker::Config.random = Random.new(42)
+
     assert v == @tester.npi
   end
 
@@ -51,6 +51,12 @@ class TestFakerCode < Test::Unit::TestCase
 
   def test_imei_luhn_value
     assert luhn_checksum_valid(@tester.imei)
+  end
+
+  def test_sin
+    assert @tester.sin.match(/\d{9}/)
+    assert @tester.sin.length == 9
+    assert luhn_checksum_valid(@tester.sin)
   end
 
   def luhn_checksum_valid(numbers)
