@@ -28,8 +28,12 @@ module Faker
         Array.new(char_count) { sample(CHARACTERS) }.join
       end
 
+      def multibyte
+        sample('faker.multibyte')
+      end
+
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 0)
-        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + '.'
+        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + locale_period
       end
 
       def sentences(sentence_count = 3, supplemental = false)
@@ -37,7 +41,7 @@ module Faker
       end
 
       def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 0)
-        sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(' ')
+        sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(locale_space)
       end
 
       def paragraphs(paragraph_count = 3, supplemental = false)
@@ -53,7 +57,7 @@ module Faker
       end
 
       def question(word_count = 4, supplemental = false, random_words_to_add = 0)
-        words(word_count + rand(random_words_to_add.to_i).to_i, supplemental).join(' ').capitalize + '?'
+        words(word_count + rand(random_words_to_add.to_i).to_i, supplemental).join(' ').capitalize + locale_question_mark
       end
 
       def questions(question_count = 3, supplemental = false)

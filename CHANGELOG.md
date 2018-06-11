@@ -1,11 +1,20 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-05-27
+### Latest update: 2018-06-09
 
 ### Feature Request
-
--[PR #1259](https://github.com/stympy/faker/pull/1259) Add the ability to add separators to emails. [@aamarill](https://github.com/aamarill))
+- [PR #877](https://github.com/stympy/faker/pull/877) Add Canada SIN generator in Faker::Code [@gkunwar](https://github.com/gkunwar)
+- [PR #1268](https://github.com/stympy/faker/pull/1268) Add Faker::Nation.national_sport [@gkunwar](https://github.com/gkunwar)
+- [PR #1273](https://github.com/stympy/faker/pull/1273) Add Faker::Device [@vbrazo](https://github.com/vbrazo)
+- [PR #1272](https://github.com/stympy/faker/pull/1272) Add Faker::DrWho.actor [@timcustard](https://github.com/timcustard)
+- [PR #1270](https://github.com/stympy/faker/pull/1270) Add Faker::Name.middle_name [@vbrazo](https://github.com/vbrazo)
+- [PR #1266](https://github.com/stympy/faker/pull/1266) Add Faker::Science.element_symbol [@timcustard](https://github.com/timcustard)
+- [PR #1101](https://github.com/stympy/faker/pull/1101) Add Faker::Company.czech_organisation_number [@jindrichskupa](https://github.com/jindrichskupa)
+- [PR #1265](https://github.com/stympy/faker/pull/1265) Add Faker::WorldCup [@snayrouz](https://github.com/snayrouz)
+- [PR #1141](https://github.com/stympy/faker/pull/1141) Add Faker::Coffee.intensifier [@oyeanuj](https://github.com/oyeanuj)
+- [PR #1260](https://github.com/stympy/faker/pull/1260) Add Faker::Auto features to Faker::Vehicle [@mrstebo](https://github.com/mrstebo)
+- [PR #1259](https://github.com/stympy/faker/pull/1259) Add the ability to add separators to emails. [@aamarill](https://github.com/aamarill)
 - [PR #1064](https://github.com/stympy/faker/pull/1064) Add Faker::Markdown.sandwich [@russellschmidt](https://github.com/russellschmidt)
 - [PR #1222](https://github.com/stympy/faker/pull/1222) Add paragraph_by_chars functionality [@jguthrie100](https://github.com/jguthrie100)
 - [PR #1107](https://github.com/stympy/faker/pull/1107) Add tokens to Faker::Stripe [@wecohere](https://github.com/wecohere)
@@ -42,6 +51,10 @@
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 
 ### Update/add locales
+- [PR #1262](https://github.com/stympy/faker/pull/1262) Add fr_CH locale [@elentras](https://github.com/elentras)
+- [PR #1261](https://github.com/stympy/faker/pull/1261) Add fr_CA locale [@elentras](https://github.com/elentras)
+- [PR #1275](https://github.com/stympy/faker/pull/1275) Fix typo; RedWine should be two words [@johnmuhl](https://github.com/johnmuhl)
+- [PR #1269](https://github.com/stympy/faker/pull/1269) Update Faker::ProgrammingLanguage.name locales [@vbrazo](https://github.com/vbrazo)
 - [PR #1140](https://github.com/stympy/faker/pull/1140) Add Estonian and Latvian locales [@maciej-szlosarczyk](https://github.com/maciej-szlosarczyk)
 - [PR #1249](https://github.com/stympy/faker/pull/1249) Update list of name prefixes for sv locale. [kamilbielawski](https://github.com/kamilbielawski)
 - [PR #1228](https://github.com/stympy/faker/pull/1228) Added Japanese color to yml [@katao](https://github.com/katao)
@@ -80,11 +93,12 @@
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 
 ### Documentation
-- [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [mrstebo](https://github.com/mrstebo)
-- [PR #1256](https://github.com/stympy/faker/pull/1256) Fixing documentation - Faker::Name to Faker::Zelda [mrstebo](https://github.com/mrstebo)
-- [PR #1254](https://github.com/stympy/faker/pull/1254) Added missing documentation. [mrstebo](https://github.com/mrstebo)
-- [PR #1252](https://github.com/stympy/faker/pull/1252) Add missing documentation - Faker::Address to Faker::Myst [vbrazo](https://github.com/vbrazo)
-- [PR #1248](https://github.com/stympy/faker/pull/1248) Remove duplications from company.md [vrinek](https://github.com/vrinek)
+- [PR #1121](https://github.com/stympy/faker/pull/1121) Better docs for Faker::Food.description [@jujulisan](https://github.com/jujulisan)
+- [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [@mrstebo](https://github.com/mrstebo)
+- [PR #1256](https://github.com/stympy/faker/pull/1256) Fixing documentation - Faker::Name to Faker::Zelda [@mrstebo](https://github.com/mrstebo)
+- [PR #1254](https://github.com/stympy/faker/pull/1254) Added missing documentation. [@mrstebo](https://github.com/mrstebo)
+- [PR #1252](https://github.com/stympy/faker/pull/1252) Add missing documentation - Faker::Address to Faker::Myst [@vbrazo](https://github.com/vbrazo)
+- [PR #1248](https://github.com/stympy/faker/pull/1248) Remove duplications from company.md [@vrinek](https://github.com/vrinek)
 - [PR #1146](https://github.com/stympy/faker/pull/1146) Update company docs [@PuZZleDucK](https://github.com/PuZZleDucK)
 - [PR #974](https://github.com/stympy/faker/pull/974) Specify version number each class was introduced [@darylf](https://github.com/darylf)
 - [PR #1128](https://github.com/stympy/faker/pull/1128) Use ruby syntax highlighting in Omniauth doc [@swrobel](https://github.com/swrobel)
@@ -93,6 +107,10 @@
 - [PR #1177](https://github.com/stympy/faker/pull/1177) Update Faker::Number.between docs [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #1124](https://github.com/stympy/faker/pull/1124) Fix ranges for Brazilian zip codes [@lucasqueiroz](https://github.com/lucasqueiroz)
 - New collaborator - Vitor Oliveira [@vbrazo](https://github.com/vbrazo)
+
+### Deprecation
+- [PR #1264](https://github.com/stympy/faker/pull/1264) Prepare Faker::Name.job_titles and Faker::Name.title for deprecation
+  - Removing these methods as they are available in `Faker::Job`
 
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)
@@ -253,7 +271,7 @@
 - Faker::Time.between produces times out of range [\#894](https://github.com/stympy/faker/issues/894)
 - \[Feature Request\] Add User Agent strings [\#880](https://github.com/stympy/faker/issues/880)
 - Faker::Omniauth is not deterministic and breaking the build [\#876](https://github.com/stympy/faker/issues/876)
-- undefined method `name =' or undefined method `  =' [\#871](https://github.com/stympy/faker/issues/871)
+- undefined method `name =' or undefined method `  =' [\#871](https://github.com/stympy/faker/issues/871)
 - Faker::French Suggestion [\#869](https://github.com/stympy/faker/issues/869)
 - Documentation not correct for Faker::Color.hsl\_color and hsla\_color [\#866](https://github.com/stympy/faker/issues/866)
 - Faker::PhoneNumber.area\_code and .exchange\_code returning nil [\#861](https://github.com/stympy/faker/issues/861)
