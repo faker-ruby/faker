@@ -1,4 +1,3 @@
-
 module Faker
   class Invoice < Base
     flexible :invoice
@@ -11,7 +10,7 @@ module Faker
 
       # International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
       # ref is optional so that we can create unit tests
-      def creditor_reference(_country_code = 'FI', ref = '')
+      def creditor_reference(ref = '')
         ref = reference if ref.empty?
 
         'RF' + iban_checksum('RF', ref) + ref
@@ -19,8 +18,8 @@ module Faker
 
       # Payment references have some rules in certain countries
       # ref is optional so that we can create unit tests
-      def reference(country_code = 'FI', ref = '')
-        pattern = fetch("invoice.reference.#{country_code.downcase}.pattern")
+      def reference(ref = '')
+        pattern = fetch('invoice.reference.pattern')
 
         ref = Base.regexify(/#{pattern}/) if ref.empty?
 
@@ -28,7 +27,7 @@ module Faker
         check_digit_match = ref.match(/#+/)
         if check_digit_match
           # Get the method for selected language
-          check_digit_method = fetch("invoice.reference.#{country_code.downcase}.check_digit_method")
+          check_digit_method = fetch('invoice.reference.check_digit_method')
 
           # Calculate the check digit with matching method name
           # Trim all '#' from the reference before calculating that
