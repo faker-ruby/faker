@@ -1,6 +1,8 @@
 # Faker::Source
 Need to generate a code sample for something? Just give me the language (defaults to `ruby`, obviously).
 
+It might be available in the next version.
+
 ```ruby
 # Optional argument: lang=:ruby
 Faker::Source.hello_world #=> "print 'Hello World!'"

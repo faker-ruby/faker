@@ -5,6 +5,8 @@ Faker::DrWho.character    #=> "Captain Jack Harness"
 
 Faker::DrWho.the_doctor   #=> "Ninth Doctor"
 
+Faker::DrWho.actor        #=> "Matt Smith"
+
 Faker::DrWho.catch_phrase #=> "Fantastic!"
 
 Faker::DrWho.quote        #=> "Lots of planets have a north!"
