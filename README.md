@@ -108,7 +108,7 @@ Contents
   - [Faker::Nation](doc/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/nato_phonetic_alphabet.md)
   - [Faker::NewGirl](doc/new_girl.md)
-  - [Faker::NHS](doc/nhs.md)
+  - [Faker::NationalHealthService](doc/national_health_service.md)
   - [Faker::Number](doc/number.md)
   - [Faker::Omniauth](doc/omniauth.md)
   - [Faker::OnePiece](doc/one_piece.md)
