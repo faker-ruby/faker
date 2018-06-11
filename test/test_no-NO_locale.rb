@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
-class TestNoLocale < Test::Unit::TestCase
+class TestNoNOLocale < Test::Unit::TestCase
   def setup
     Faker::Config.locale = 'no-NO'
   end
@@ -9,7 +9,7 @@ class TestNoLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_fi_invoice_methods
+  def test_no_invoice_methods
     assert Faker::Invoice.creditor_reference.is_a? String
     assert Faker::Invoice.reference.is_a? String
     assert Faker::Invoice.reference('699027016279494093882102#').is_a? String

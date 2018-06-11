@@ -2,7 +2,6 @@ fi-FI:
   faker:
     invoice:
       reference:
-        # '#' means the place where check digit is placed
         # Source: https://wiki.xmldation.com/support/fk/finnish_reference_number
         check_digit_method: method_731
         pattern: '\d{3,19}#'
