@@ -1,9 +1,10 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-06-09
+### Latest update: 2018-06-11
 
 ### Feature Request
+- [PR #1050](https://github.com/stympy/faker/pull/1050) Add Faker::Invoice to generate valid bank slip references [@onnimonni](https://github.com/onnimonni)
 - [PR #817](https://github.com/stympy/faker/pull/817) Faker::Lorem.multibyte for multibyte chars [@frankywahl](https://github.com/frankywahl)
 - [PR #877](https://github.com/stympy/faker/pull/877) Add Canada SIN generator in Faker::Code [@gkunwar](https://github.com/gkunwar)
 - [PR #1268](https://github.com/stympy/faker/pull/1268) Add Faker::Nation.national_sport [@gkunwar](https://github.com/gkunwar)
