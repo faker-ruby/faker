@@ -55,6 +55,7 @@
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 
 ### Update/add locales
+- [PR #1281](https://github.com/stympy/faker/pull/1281) Some competitions were in the coaches array [@Eusebiotrigo](https://github.com/Eusebiotrigo)
 - [PR #1103](https://github.com/stympy/faker/pull/1103) Fix inconsistent capitalization in dishes, ingredients and spices, and some other small issues under 'food' [@evrimfeyyaz](https://github.com/evrimfeyyaz)
 - [PR #1262](https://github.com/stympy/faker/pull/1262) Add fr_CH locale [@elentras](https://github.com/elentras)
 - [PR #1261](https://github.com/stympy/faker/pull/1261) Add fr_CA locale [@elentras](https://github.com/elentras)
