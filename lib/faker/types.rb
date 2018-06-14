@@ -5,6 +5,8 @@ module Faker
     COMPLEX_TYPES = %i[hash array].freeze
 
     class << self
+      extend Gem::Deprecate
+
       def string(words = 1)
         resolved_num = resolve(words)
         word_list =
@@ -70,6 +72,12 @@ module Faker
           array
         end
       end
+
+      deprecate :string, :rb_string, 2018, 9
+      deprecate :integer, :rb_integer, 2018, 9
+      deprecate :hash, :rb_hash, 2018, 9
+      deprecate :complex_hash, :complex_rb_hash, 2018, 9
+      deprecate :array, :rb_array, 2018, 9
 
       private
 
