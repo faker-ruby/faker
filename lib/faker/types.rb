@@ -73,6 +73,12 @@ module Faker
         end
       end
 
+      alias rb_string string
+      alias rb_integer integer
+      alias rb_hash hash
+      alias complex_rb_hash complex_hash
+      alias rb_array array
+
       deprecate :string, :rb_string, 2018, 9
       deprecate :integer, :rb_integer, 2018, 9
       deprecate :hash, :rb_hash, 2018, 9
