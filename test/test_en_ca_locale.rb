@@ -44,5 +44,4 @@ class TestEnCaLocale < Test::Unit::TestCase
     expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
     assert_match(expected, Faker::Address.postcode)
   end
-
 end

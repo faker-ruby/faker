@@ -1,12 +1,18 @@
 # Faker::Vehicle
 
+Available since version 1.6.4.
+
 ```ruby
-# Generate vehicle identification number
 Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
 
 # Random vehicle manufacturer
-Faker::Vehicle.manufacture #=> "Brilliance"
-Faker::Vehicle.make #=> "Citroën"
+Faker::Vehicle.manufacture #=> "Lamborghini"
+Faker::Vehicle.make #=> "Honda"
+
+# Random vehicle model
+Faker::Vehicle.model #=> "A8"
+Faker::Vehicle.model('Toyota') #=> "Prius"
+Faker::Vehicle.make_and_model #=> "Dodge Charger"
 
 # Random vehicle color
 Faker::Vehicle.color #=> "Red"
@@ -28,13 +34,9 @@ Faker::Vehicle.car_type #=> "Sedan"
 
 # Random car options
 Faker::Vehicle.car_options #=> ["DVD System", "MP3 (Single Disc)", "Tow Package", "CD (Multi Disc)", "Cassette Player", "Bucket Seats", "Cassette Player", "Leather Interior", "AM/FM Stereo", "Third Row Seats"]
-Faker::Vehicle.car_options(7) #=> ["MP3 (Single Disc)", "A/C: Front", "Antilock Brakes", "Tinted Glass", "Integrated Phone", "Cassette Player", "Third Row Seats"]
-Faker::Vehicle.car_options(8, 25) #=> ["Power Locks", "Bucket Seats", "A/C: Rear", "Power Locks", "Tinted Glass", "Alloy Wheels", "Tinted Glass", "Tow Package", "Power Windows", "Antilock Brakes", "Leather Interior", "Power Steering", "A/C: Front", "DVD System", "Power Windows", "DVD System", "Rear Window Defroster", "Integrated Phone", "MP3 (Single Disc)", "Rear Window Wiper", "MP3 (Single Disc)", "Premium Sound", "Airbag: Driver", "CD (Multi Disc)"]
 
 # Random standard car specs
 Faker::Vehicle.standard_specs #=> ["Full-size spare tire w/aluminum alloy wheel", "Back-up camera", "Carpeted cargo area", "Silver accent IP trim finisher -inc: silver shifter finisher", "Back-up camera", "Water-repellent windshield & front door glass", "Floor carpeting"]
-Faker::Vehicle.standard_specs(1) #=> ["Rear-window defogger w/auto-off timer"]
-Faker::Vehicle.standard_specs(2, 3) #=> ["Black roof molding", "200mm front axle"]
 
 # Random number of doors
 Faker::Vehicle.doors #=> 1

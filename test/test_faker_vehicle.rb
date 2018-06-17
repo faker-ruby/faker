@@ -20,6 +20,11 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert_match WORD_MATCH, @tester.color
   end
 
+  def test_flexible_key
+    flexible_key = @tester.instance_variable_get('@flexible_key')
+    assert flexible_key == :vehicle
+  end
+
   def test_transmission
     assert_match WORD_MATCH, @tester.transmission
   end
@@ -40,32 +45,14 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert_match WORD_MATCH, @tester.car_type
   end
 
-  def test_car_option
-    options = @tester.car_options(5, 5)
-    assert options.is_a?(Array)
-    assert options.size == 5
-  end
-
-  def test_standard_specs
-    options = @tester.standard_specs(5, 5)
-    assert options.is_a?(Array)
-    assert options.size == 5
-  end
-
   def test_doors
     doors = @tester.doors
     assert doors > 0
     assert doors.is_a?(Integer)
   end
 
-  def test_engine_size
-    engine_size = @tester.engine_size
-    assert engine_size > 0
-    assert engine_size.is_a?(Integer)
-  end
-
-  def test_year
-    assert @tester.year.size == 4
+  def test_engine
+    assert @tester.engine.match(/\d Cylinder Engine/)
   end
 
   def test_mileage
@@ -76,11 +63,40 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def test_license_plate
     license_plate = @tester.license_plate
-    assert license_plate.match(/^[A-Z]{3}-[1-9]{4}$/)
+    assert license_plate.match(/^[A-Z]{3}\S[1-9]{4}$/)
   end
 
-  def test_flexible_key
-    flexible_key = @tester.instance_variable_get("@flexible_key")
-    assert flexible_key == :vehicle
+  def test_make
+    assert_match WORD_MATCH, @tester.make
+  end
+
+  def test_model
+    assert_match WORD_MATCH, @tester.model
+  end
+
+  def test_model_with_make
+    assert_match WORD_MATCH, @tester.model('Toyota')
+  end
+
+  def test_make_and_model
+    assert_match WORD_MATCH, @tester.make_and_model
+  end
+
+  def test_door_count
+    doors = @tester.door_count
+    assert doors > 0
+    assert doors.is_a?(Integer)
+  end
+
+  def test_car_options
+    car_options = @tester.car_options
+    assert car_options.length >= 5
+    assert car_options.length < 10
+  end
+
+  def test_standard_specs
+    standard_specs = @tester.standard_specs
+    assert standard_specs.length >= 5
+    assert standard_specs.length < 10
   end
 end

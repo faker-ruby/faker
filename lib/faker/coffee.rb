@@ -19,6 +19,10 @@ module Faker
         parse('coffee.notes')
       end
 
+      def intensifier
+        fetch('coffee.intensifier')
+      end
+
       private
 
       def search_format(key)
