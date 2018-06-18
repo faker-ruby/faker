@@ -1,21 +1,21 @@
 class Array
-  unless self.method_defined? :sample
-    def sample(n = nil)
-      #based on code from https://github.com/marcandre/backports
-      size = self.length
-      return self[Kernel.rand(size)] if n.nil?
+  unless method_defined? :sample
+    def sample(arr = nil)
+      # based on code from https://github.com/marcandre/backports
+      size = length
+      return self[Kernel.rand(size)] if arr.nil?
 
-      n = n.to_int
-      raise ArgumentError, "negative array size" if n < 0
+      arr = arr.to_int
+      raise ArgumentError, 'negative array size' if arr < 0
 
-      n = size if n > size
+      arr = size if arr > size
 
       result = Array.new(self)
-      n.times do |i|
+      arr.times do |i|
         r = i + Kernel.rand(size - i)
         result[i], result[r] = result[r], result[i]
       end
-      result[n..size] = []
+      result[arr..size] = []
       result
     end
   end

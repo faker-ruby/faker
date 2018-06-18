@@ -9,6 +9,14 @@ class TestFakerCode < Test::Unit::TestCase
     assert @tester.npi.match(/[0-9]{10}/)
   end
 
+  def test_deterministic_npi
+    Faker::Config.random = Random.new(42)
+    v = @tester.npi
+    Faker::Config.random = Random.new(42)
+
+    assert v == @tester.npi
+  end
+
   def test_default_isbn_regexp
     assert @tester.isbn.match(/^\d{9}-[\d|X]$/)
   end
@@ -43,6 +51,12 @@ class TestFakerCode < Test::Unit::TestCase
 
   def test_imei_luhn_value
     assert luhn_checksum_valid(@tester.imei)
+  end
+
+  def test_sin
+    assert @tester.sin.match(/\d{9}/)
+    assert @tester.sin.length == 9
+    assert luhn_checksum_valid(@tester.sin)
   end
 
   def luhn_checksum_valid(numbers)

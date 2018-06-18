@@ -20,8 +20,12 @@ class TestEnAuLocale < Test::Unit::TestCase
     assert Faker::Address.default_country.is_a? String
   end
 
+  def test_en_au_default_country
+    assert_equal 'Australia', Faker::Address.default_country
+  end
+
   def test_aussie_mobiles_start_with_04
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/,'')
+    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_equal '0', mobile[0]
     assert_equal '4', mobile[1]
   end
