@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'irb'
-require 'irb/completion'
-$LOAD_PATH << './lib'
-
-require 'faker'
-
-IRB.start
