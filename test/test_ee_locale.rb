@@ -48,6 +48,12 @@ class TestEeLocale < Test::Unit::TestCase
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
+  def test_ee_invoice_methods
+    assert Faker::Invoice.creditor_reference.is_a? String
+    assert Faker::Invoice.reference.is_a? String
+    assert Faker::Invoice.reference('4106453482608858924').is_a? String
+  end
+
   def test_ee_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
