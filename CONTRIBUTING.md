@@ -14,9 +14,7 @@ If you want to try to fix the rubocop violations, you should run `bundle exec ru
 
 If you are not familiar with Rubocop, spend some time studying their page and a few study cases on the internet.
 
-4. Please add a test for your change. Only refactoring and documentation changes
-require no new tests. If you are adding functionality or fixing a bug, we need
-a test! We use [Minitest](https://github.com/seattlerb/minitest) in this project. If you're not familiar with Minitest and are comfortable with Rspec, please ask a contributor/collaborator to review your PR.
+4. Please add a test for your change. Only refactoring and documentation changes require no new tests. If you are adding functionality or fixing a bug, we need a test! We use [Minitest](https://github.com/seattlerb/minitest) in this project. If you're not familiar with Minitest and are comfortable with Rspec, please ask a contributor/collaborator to review your PR.
 
 5. Make the test pass. Always use `sample`, `shuffle`, and `rand` from
 the Base class (just like the rest of the code) rather than
@@ -66,3 +64,7 @@ If you're reviewing a PR, you should ask youserlf:
 * `MyClass.my_method(my_arg)` not `my_method( my_arg )` or `my_method my_arg`.
 * `a = b` and not `a=b`.
 * Follow the conventions you see used in the source already.
+
+### Tips
+
+* Use the `rake console` task to start a session with Faker loaded.
