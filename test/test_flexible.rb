@@ -22,8 +22,7 @@ class TestFlexible < Test::Unit::TestCase
 
   def test_flexible_multiple_values
     I18n.with_locale(:xx) do
-      actual = Faker::Foodie.yummie
-      assert %i[fudge chocolate caramel].include? actual
+      assert %i[fudge chocolate caramel].include? Faker::Foodie.yummie
     end
   end
 
