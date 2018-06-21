@@ -26,9 +26,9 @@ class TestFakerZipCode < Test::Unit::TestCase
       }
     }
 
+    I18n.config.available_locales += %i[xy xz]
     I18n.backend.store_translations(:xy, locale_without_state)
     I18n.backend.store_translations(:xz, locale_with_state)
-    I18n.config.available_locales += %i[xy xz]
     @tester = Faker::Address
   end
 

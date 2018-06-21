@@ -22,8 +22,8 @@ class TestFakerStreet < Test::Unit::TestCase
       }
     }
     # rubocop:enable Lint/InterpolationCheck
-    I18n.backend.store_translations(:shire, shire)
     I18n.config.available_locales += [:shire]
+    I18n.backend.store_translations(:shire, shire)
   end
 
   def teardown

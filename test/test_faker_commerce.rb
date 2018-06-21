@@ -40,8 +40,8 @@ class TestFakerCommerce < Test::Unit::TestCase
       }
     }
 
-    I18n.backend.store_translations(:xy, data)
     I18n.config.available_locales += [:xy]
+    I18n.backend.store_translations(:xy, data)
     I18n.with_locale(:xy) do
       assert_match ' + ', @tester.department(2, true)
     end
