@@ -1,9 +1,10 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-06-11
+### Latest update: 2018-06-13
 
 ### Feature Request
+- [PR #1283](https://github.com/stympy/faker/pull/1283) Add Faker::Military [@jjasghar](https://github.com/jjasghar)
 - [PR #1279](https://github.com/stympy/faker/pull/1279) Add Faker::HarryPotter.spell [@A9u](https://github.com/A9u)
 - [PR #799](https://github.com/stympy/faker/pull/799) Faker::ElectricalComponents [@bheim6](https://github.com/bheim6)
 - [PR #1050](https://github.com/stympy/faker/pull/1050) Add Faker::Invoice to generate valid bank slip references [@onnimonni](https://github.com/onnimonni)
@@ -55,6 +56,7 @@
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 
 ### Update/add locales
+- [PR #616](https://github.com/stympy/faker/pull/616) add german commerce translations [@weh](https://github.com/weh)
 - [PR #1281](https://github.com/stympy/faker/pull/1281) Some competitions were in the coaches array [@Eusebiotrigo](https://github.com/Eusebiotrigo)
 - [PR #1103](https://github.com/stympy/faker/pull/1103) Fix inconsistent capitalization in dishes, ingredients and spices, and some other small issues under 'food' [@evrimfeyyaz](https://github.com/evrimfeyyaz)
 - [PR #1262](https://github.com/stympy/faker/pull/1262) Add fr_CH locale [@elentras](https://github.com/elentras)
@@ -99,7 +101,8 @@
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
-- [PR #719](https://github.com/stympy/faker/pull/719) Random words to add should be 0 [@swapsCAPS](https://github.com/swapsCAPS)
+- [PR #1288](https://github.com/stympy/faker/pull/1288) rake console changes - description and contributing.md [@MarcPer](https://github.com/MarcPer)
+- [PR #1283](https://github.com/stympy/faker/pull/1283) Add Faker::Military [@jjasghar](https://github.com/jjasghar)
 
 ### Documentation
 - [PR #1121](https://github.com/stympy/faker/pull/1121) Better docs for Faker::Food.description [@jujulisan](https://github.com/jujulisan)
