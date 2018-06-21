@@ -32,9 +32,19 @@ class TestFlexible < Test::Unit::TestCase
     end
   end
 
-  def test_raises_no_method_error
+  def test_flexible_fallbacks_to_english
+    I18n.backend.store_translations(:en, faker: { chow: { taste: 'superdelicious' } })
+
+    I18n.with_locale(:home) do
+      assert_equal 'superdelicious', Faker::Foodie.taste
+    end
+
+    I18n.reload!
+  end
+
+  def test_raises_missing_translation_data_when_not_even_english_defined
     I18n.with_locale(:xx) do
-      assert_raise(NoMethodError) do
+      assert_raise(I18n::MissingTranslationData) do
         Faker::Foodie.eeew
       end
     end

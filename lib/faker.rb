@@ -176,8 +176,7 @@ module Faker
       def method_missing(mth, *args, &block)
         super unless @flexible_key
 
-        # Use the alternate form of translate to get a nil rather than a "missing translation" string
-        if (translation = translate(:faker)[@flexible_key][mth])
+        if (translation = translate("faker.#{@flexible_key}.#{mth}"))
           sample(translation)
         else
           super
