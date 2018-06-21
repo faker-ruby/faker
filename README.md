@@ -53,6 +53,7 @@ Contents
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::Currency](doc/currency.md)
   - [Faker::Date](doc/date.md)
+  - [Faker::DateTime](doc/date_time.md)
   - [Faker::Demographic](doc/demographic.md)
   - [Faker::Dessert](doc/dessert.md)
   - [Faker::Device](doc/device.md)
