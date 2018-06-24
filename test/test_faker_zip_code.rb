@@ -36,6 +36,12 @@ class TestFakerZipCode < Test::Unit::TestCase
     I18n.config.available_locales = @old_locales
   end
 
+  def test_zip_code_can_have_leading_zero
+    zip_codes = []
+    1000.times { zip_codes << @tester.zip_code }
+    assert zip_codes.any? { |zip_code| zip_code[0].to_i.zero? }
+  end
+
   def test_default_zip_codes_without_states
     I18n.with_locale(:xy) do
       zip_codes = @zip_codes_without_state
