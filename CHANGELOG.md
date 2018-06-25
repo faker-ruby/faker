@@ -79,6 +79,7 @@
 - [PR #1117](https://github.com/stympy/faker/pull/1117) Added Ukrainian entries to yml [@RomanIsko](https://github.com/RomanIsko)
 
 ### Bug/Fixes
+- [PR #1292](https://github.com/stympy/faker/pull/1292) Fix flexible keys crashing when current locale does not provide them [@deivid-rodriguez](https://github.com/deivid-rodriguez)
 - [PR #1274](https://github.com/stympy/faker/pull/1274) Allow Faker::Address.zip_code to have leading zero [@igor-starostenko](https://github.com/igor-starostenko)
 - [PR #1241](https://github.com/stympy/faker/pull/1241) Add missing tests reported by SimpleCov [@aamarill](https://github.com/aamarill)
 - [PR #1240](https://github.com/stympy/faker/pull/1240) Add some tests [@aamarill](https://github.com/aamarill)
