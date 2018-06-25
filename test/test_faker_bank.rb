@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerBank < Test::Unit::TestCase
   IBAN_HEADER = '[A-Z]{2}[0-9]{2}'.freeze
