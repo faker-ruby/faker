@@ -14,7 +14,19 @@ module Faker
       end
 
       def first_name
-        parse('name.first_name')
+        if parse('name.first_name').empty?
+          fetch('name.first_name')
+        else
+          parse('name.first_name')
+        end
+      end
+
+      def male_first_name
+        fetch('name.male_first_name')
+      end
+
+      def female_first_name
+        fetch('name.female_first_name')
       end
 
       def last_name

@@ -4,6 +4,7 @@
 ### Latest update: 2018-06-20
 
 ### Feature Request
+- [PR #551](https://github.com/stympy/faker/pull/551) Add gender to name generator [@Maicolben](https://github.com/Maicolben)
 - [PR #1283](https://github.com/stympy/faker/pull/1283) Add Faker::Military [@jjasghar](https://github.com/jjasghar)
 - [PR #1279](https://github.com/stympy/faker/pull/1279) Add Faker::HarryPotter.spell [@A9u](https://github.com/A9u)
 - [PR #799](https://github.com/stympy/faker/pull/799) Faker::ElectricalComponents [@bheim6](https://github.com/bheim6)
