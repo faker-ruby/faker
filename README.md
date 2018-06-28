@@ -101,6 +101,7 @@ Contents
   - [Faker::Matz](doc/matz.md)
   - [Faker::Measurement](doc/measurement.md)
   - [Faker::MichaelScott](doc/michael_scott.md)
+  - [Faker::Military](doc/military.md)
   - [Faker::MostInterestingManInTheWorld](doc/most_interesting_man_in_the_world.md)
   - [Faker::Movie](doc/movie.md)
   - [Faker::Music](doc/music.md)

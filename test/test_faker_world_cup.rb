@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerWorldCup < Test::Unit::TestCase
   def setup
@@ -7,6 +7,14 @@ class TestFakerWorldCup < Test::Unit::TestCase
 
   def test_team
     assert @tester.team.match(/\w+/)
+  end
+
+  def test_stadium
+    assert @tester.stadium.match(/\w+/)
+  end
+
+  def test_city
+    assert @tester.city.match(/\w+/)
   end
 
   def test_group

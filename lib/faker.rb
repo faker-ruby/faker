@@ -42,8 +42,9 @@ module Faker
     Letters = ULetters + Array('a'..'z')
 
     class << self
-      ## make sure numerify results do not start with a zero
-      def numerify(number_string)
+      ## by default numerify results do not start with a zero
+      def numerify(number_string, leading_zero: false)
+        return number_string.gsub(/#/) { rand(10).to_s } if leading_zero
         number_string.sub(/#/) { rand(1..9).to_s }.gsub(/#/) { rand(10).to_s }
       end
 
@@ -175,8 +176,7 @@ module Faker
       def method_missing(mth, *args, &block)
         super unless @flexible_key
 
-        # Use the alternate form of translate to get a nil rather than a "missing translation" string
-        if (translation = translate(:faker)[@flexible_key][mth])
+        if (translation = translate("faker.#{@flexible_key}.#{mth}"))
           sample(translation)
         else
           super

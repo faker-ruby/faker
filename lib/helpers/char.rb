@@ -1,4 +1,3 @@
-
 module Faker
   module Char
     def self.prepare(string)

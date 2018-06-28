@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require_relative 'test_helper'
 
 class TestFakerZipCode < Test::Unit::TestCase
   def setup
@@ -26,14 +26,20 @@ class TestFakerZipCode < Test::Unit::TestCase
       }
     }
 
+    I18n.config.available_locales += %i[xy xz]
     I18n.backend.store_translations(:xy, locale_without_state)
     I18n.backend.store_translations(:xz, locale_with_state)
-    I18n.config.available_locales += %i[xy xz]
     @tester = Faker::Address
   end
 
   def teardown
     I18n.config.available_locales = @old_locales
+  end
+
+  def test_zip_code_can_have_leading_zero
+    zip_codes = []
+    1000.times { zip_codes << @tester.zip_code }
+    assert zip_codes.any? { |zip_code| zip_code[0].to_i.zero? }
   end
 
   def test_default_zip_codes_without_states

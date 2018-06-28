@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require File.expand_path(File.dirname(__FILE__) + '/test_helper')
+require_relative 'test_helper'
 
 class TestFakerSimpsons < Test::Unit::TestCase
   def setup

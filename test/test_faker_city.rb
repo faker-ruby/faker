@@ -1,16 +1,16 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require_relative 'test_helper'
 
 class TestFakerCity < Test::Unit::TestCase
   def setup
     @old_locales = I18n.config.available_locales
     xx = {
       faker: {
-        name: { first_name: ['alice'], last_name: ['smith'] },
+        name: { female_first_name: ['alice'], male_first_name: ['alice'], last_name: ['smith'] },
         address: { city_prefix: ['west'], city_suffix: ['burg'] }
       }
     }
-    I18n.backend.store_translations(:xx, xx)
     I18n.config.available_locales += [:xx]
+    I18n.backend.store_translations(:xx, xx)
 
     # rubocop:disable Lint/InterpolationCheck
     xy = {
@@ -25,8 +25,8 @@ class TestFakerCity < Test::Unit::TestCase
       }
     }
     # rubocop:enable Lint/InterpolationCheck
-    I18n.backend.store_translations(:xy, xy)
     I18n.config.available_locales += [:xy]
+    I18n.backend.store_translations(:xy, xy)
   end
 
   def teardown

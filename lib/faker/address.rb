@@ -28,7 +28,10 @@ module Faker
       end
 
       def zip_code(state_abbreviation = '')
-        return bothify(fetch('address.postcode')) if state_abbreviation.empty?
+        if state_abbreviation.empty?
+          letterified_string = letterify(fetch('address.postcode'))
+          return numerify(letterified_string, leading_zero: true)
+        end
 
         # provide a zip code that is valid for the state provided
         # see http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf

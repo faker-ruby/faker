@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerName < Test::Unit::TestCase
   def setup
@@ -15,6 +15,14 @@ class TestFakerName < Test::Unit::TestCase
 
   def test_first_name
     assert @tester.first_name.match(/(\w+\.? ?){3,4}/)
+  end
+
+  def test_male_first_name
+    assert @tester.male_first_name.match(/(\w+\.? ?){3,4}/)
+  end
+
+  def test_female_first_name
+    assert @tester.female_first_name.match(/(\w+\.? ?){3,4}/)
   end
 
   def test_middle_name
