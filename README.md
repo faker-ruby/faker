@@ -66,6 +66,7 @@ Contents
   - [Faker::ElderScrolls](doc/elder_scrolls.md)
   - [Faker::ElectricalComponents](doc/electrical_components.md)
   - [Faker::Esport](doc/esport.md)
+  - [Faker::Ethereum](doc/ethereum.md)
   - [Faker::Fallout](doc/fallout.md)
   - [Faker::FamilyGuy](doc/family_guy.md)
   - [Faker::FamousLastWords](doc/famous_last_words.md)
