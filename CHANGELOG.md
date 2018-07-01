@@ -1,9 +1,10 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-06-20
+### Latest update: 2018-07-01
 
 ### Feature Request
+- [PR #1004](https://github.com/stympy/faker/pull/1004) Add Faker::Ethereum [@kaizenx](https://github.com/kaizenx)
 - [PR #551](https://github.com/stympy/faker/pull/551) Add gender to name generator [@Maicolben](https://github.com/Maicolben)
 - [PR #1283](https://github.com/stympy/faker/pull/1283) Add Faker::Military [@jjasghar](https://github.com/jjasghar)
 - [PR #1279](https://github.com/stympy/faker/pull/1279) Add Faker::HarryPotter.spell [@A9u](https://github.com/A9u)
