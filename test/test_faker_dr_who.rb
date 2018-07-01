@@ -1,14 +1,11 @@
-#encoding: utf-8
-#frozen_string_literal: true
+# frozen_string_literal: true
 
-require File.expand_path(File.dirname(__FILE__) + '/test_helper')
+require_relative 'test_helper'
 
 class TestFakerDrWho < Test::Unit::TestCase
-
   def setup
     Faker::Config.locale = nil
   end
-
 
   def test_character
     10.times { assert Faker::DrWho.character.match(/[\w]+/) }
@@ -16,6 +13,10 @@ class TestFakerDrWho < Test::Unit::TestCase
 
   def test_the_doctor
     10.times { assert Faker::DrWho.the_doctor.match(/[\w]+/) }
+  end
+
+  def test_actor
+    10.times { assert Faker::DrWho.actor.match(/[\w]+/) }
   end
 
   def test_catch_phrase
@@ -34,10 +35,8 @@ class TestFakerDrWho < Test::Unit::TestCase
     10.times { assert Faker::DrWho.specie.match(/[\w]+/) }
   end
 
-
   def test_locales
-    [nil,'en','de',#...
-    ].each do |locale_name|
+    [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
       assert Faker::DrWho.character   .is_a? String
       assert Faker::DrWho.the_doctor  .is_a? String
@@ -47,5 +46,4 @@ class TestFakerDrWho < Test::Unit::TestCase
       assert Faker::DrWho.specie      .is_a? String
     end
   end
-
-end #class TestFakerDrWho
+end

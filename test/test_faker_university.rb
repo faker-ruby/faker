@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerUniversity < Test::Unit::TestCase
   def setup
@@ -23,7 +23,7 @@ class TestFakerUniversity < Test::Unit::TestCase
   end
 
   def test_greek_organization
-    assert @tester.greek_organization.match(/\w+\.?/)
+    assert @tester.greek_organization.match(/\p{Greek}|\w+/)
     assert @tester.greek_organization.length == 3
   end
 
@@ -33,7 +33,4 @@ class TestFakerUniversity < Test::Unit::TestCase
       assert @alphabet.include?(letter)
     end
   end
-
-
-
 end

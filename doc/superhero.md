@@ -1,5 +1,7 @@
 # Faker::Superhero
 
+Available since version 1.6.2.
+
 ```ruby
 # Random Superhero name
 Faker::Superhero.name #=> "Magnificent Shatterstar"

@@ -8,6 +8,10 @@ module Faker
       def location
         fetch('lord_of_the_rings.locations')
       end
+
+      def quote
+        fetch('lord_of_the_rings.quotes')
+      end
     end
   end
 end

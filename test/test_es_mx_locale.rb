@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestEsMxLocale < Test::Unit::TestCase
   def setup
@@ -43,5 +43,4 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.name.is_a? String
   end
-
 end

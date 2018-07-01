@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestKoLocale < Test::Unit::TestCase
   def setup
@@ -11,6 +11,7 @@ class TestKoLocale < Test::Unit::TestCase
 
   def test_ko_methods
     assert Faker::Address.postcode.is_a? String
+    assert_equal(5, Faker::Address.postcode.length)
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.city_name.is_a? String
@@ -25,5 +26,4 @@ class TestKoLocale < Test::Unit::TestCase
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.name.is_a? String
   end
-
 end

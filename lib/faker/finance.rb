@@ -1,9 +1,8 @@
 module Faker
   class Finance < Base
-
-    CREDIT_CARD_TYPES = [:visa, :mastercard, :discover, :american_express,
-                         :diners_club, :jcb, :switch, :solo, :dankort,
-                         :maestro, :forbrugsforeningen, :laser].freeze
+    CREDIT_CARD_TYPES = %i[visa mastercard discover american_express
+                           diners_club jcb switch solo dankort
+                           maestro forbrugsforeningen laser].freeze
 
     class << self
       def credit_card(*types)
