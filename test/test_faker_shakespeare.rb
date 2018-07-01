@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerShakespeare < Test::Unit::TestCase
   def setup
@@ -20,5 +20,4 @@ class TestFakerShakespeare < Test::Unit::TestCase
   def test_hamlet_quote
     assert @tester.hamlet_quote.match(/\w+/)
   end
-
 end

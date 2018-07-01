@@ -1,6 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
-class TestZhCnLocale < Test::Unit::TestCase
+class TestZhLocale < Test::Unit::TestCase
   def setup
     Faker::Config.locale = 'zh-CN'
   end

@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require_relative 'test_helper'
 
 class TestFakerCode < Test::Unit::TestCase
   def setup
@@ -51,6 +51,12 @@ class TestFakerCode < Test::Unit::TestCase
 
   def test_imei_luhn_value
     assert luhn_checksum_valid(@tester.imei)
+  end
+
+  def test_sin
+    assert @tester.sin.match(/\d{9}/)
+    assert @tester.sin.length == 9
+    assert luhn_checksum_valid(@tester.sin)
   end
 
   def luhn_checksum_valid(numbers)

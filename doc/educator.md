@@ -1,5 +1,7 @@
 # Faker::Educator
 
+Available since version 1.6.4.
+
 ```ruby
 Faker::Educator.university #=> "Mallowtown Technical College"
 

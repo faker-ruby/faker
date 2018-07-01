@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerVerb < Test::Unit::TestCase
   def setup
@@ -24,5 +24,4 @@ class TestFakerVerb < Test::Unit::TestCase
   def test_ing_form
     assert @tester.ing_form.match(/\w+/)
   end
-
 end
