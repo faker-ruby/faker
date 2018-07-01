@@ -11,8 +11,8 @@ class TestFakerBank < Test::Unit::TestCase
     assert Faker::Bank.routing_number.match(/\d{9}/)
   end
 
-  def test_fraction_notation
-    fraction = Faker::Bank.routing_number(true)
+  def test_routing_number_with_format
+    fraction = Faker::Bank.routing_number_with_format
     assert fraction.match(/\d{1,2}[-]\d{1,4}[\/]\d{1,4}/)
   end
 
