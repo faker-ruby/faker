@@ -50,6 +50,7 @@ Contents
   - [Faker::DrWho](doc/dr_who.md)
   - [Faker::Educator](doc/educator.md)
   - [Faker::ElderScrolls](doc/elder_scrolls.md)
+  - [Faker::Ethereum](doc/ethereum.md)
   - [Faker::FamilyGuy](doc/family_guy.md)
   - [Faker::File](doc/file.md)
   - [Faker::Fillmurray](doc/fillmurray.md)
