@@ -1,5 +1,7 @@
 # Faker::Overwatch
 
+Available since version 1.8.0.
+
 ```ruby
 Faker::Overwatch.hero #=> "Tracer"
 
