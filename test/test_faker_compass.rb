@@ -1,11 +1,11 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerCompass < Test::Unit::TestCase
   def setup
     @tester = Faker::Compass
     @word_pattern = /\w+/
     @multiword_pattern = /^\w+ by \w+$/
-    @combined_pattern = /^(?:\w+|\w+ by \w+)$/
+    @combined_pattern = /^(?:\w+|\w+ by \w+|[\w\-]+)$/
     @number_pattern = /^[\d]+(?:.\d\d?)?$/
     @letter_pattern = /^[NEWS]?[NEWS](?:b?[NEWS])?$/
   end

@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerLordOfTheRings < Test::Unit::TestCase
   def setup
@@ -11,5 +11,9 @@ class TestFakerLordOfTheRings < Test::Unit::TestCase
 
   def test_location
     assert @tester.location.match(/\w+/)
+  end
+
+  def test_quote
+    assert @tester.quote.match(/\w+/)
   end
 end
