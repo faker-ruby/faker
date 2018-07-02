@@ -97,60 +97,61 @@ module Faker
         (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
       end
 
-      def ip_v4_address
-        ary = (2..254).to_a
-        [sample(ary), sample(ary), sample(ary), sample(ary)].join('.')
+      def ip_v4_address(type=:decimal)
+        bin_address = rand(0..0xffffffff) # rand int that will be in the range 0.0.0.0-255.255.255
+        case type
+          when :binary, 'binary'
+            return bin_address
+          else
+            return uint_to_ip(bin_address)
+        end
       end
 
       def private_ip_v4_address
-        addr = nil
-        loop do
-          addr = ip_v4_address
-          break if private_net_checker[addr]
-        end
-        addr
+        begin
+          addr = ip_v4_address(:binary)
+        end while !private_net_checker[addr]
+        uint_to_ip(addr)
       end
 
       def public_ip_v4_address
-        addr = nil
-        loop do
-          addr = ip_v4_address
-          break unless reserved_net_checker[addr]
-        end
-        addr
+        begin
+          addr = ip_v4_address(:binary)
+        end while reserved_net_checker[addr]
+        uint_to_ip(addr)
       end
 
       def private_nets_regex
         [
-          /^10\./,                                       # 10.0.0.0    - 10.255.255.255
-          /^100\.(6[4-9]|[7-9]\d|1[0-1]\d|12[0-7])\./,   # 100.64.0.0  - 100.127.255.255
-          /^127\./,                                      # 127.0.0.0   - 127.255.255.255
-          /^169\.254\./,                                 # 169.254.0.0 - 169.254.255.255
-          /^172\.(1[6-9]|2\d|3[0-1])\./,                 # 172.16.0.0  - 172.31.255.255
-          /^192\.0\.0\./,                                # 192.0.0.0   - 192.0.0.255
-          /^192\.168\./,                                 # 192.168.0.0 - 192.168.255.255
-          /^198\.(1[8-9])\./                             # 198.18.0.0  - 198.19.255.255
+            /^1010\d{24}$/,                        #10.0.0.0/8
+            /^110010001\d{22}$/,                   #100.64.0.0/10
+            /^101011000001\d{20}$/,                #172.16.0.0/12
+            /^110000000000000000000000\d{8}$/,     #192.0.0.0/24
+            /^1100000010101000\d{16}$/,            #192.168.0.0/16
+            /^110001100001001\d{17}$/              #198.18.0.0/15 -> [198.to_s(2)+'000' + 18.to_s(2)]
         ]
-      end
-
-      def private_net_checker
-        ->(addr) { private_nets_regex.any? { |net| net =~ addr } }
       end
 
       def reserved_nets_regex
         [
-          /^0\./,                 # 0.0.0.0      - 0.255.255.255
-          /^192\.0\.2\./,         # 192.0.2.0    - 192.0.2.255
-          /^192\.88\.99\./,       # 192.88.99.0  - 192.88.99.255
-          /^198\.51\.100\./,      # 198.51.100.0 - 198.51.100.255
-          /^203\.0\.113\./,       # 203.0.113.0  - 203.0.113.255
-          /^(22[4-9]|23\d)\./,    # 224.0.0.0    - 239.255.255.255
-          /^(24\d|25[0-5])\./     # 240.0.0.0    - 255.255.255.254  and  255.255.255.255
+            /^\d{,24}$/,                            #0.0.0.0/8
+            /^1111111\d{24}$/,                     #127.0.0.0/8
+            /^1010100111111110\d{16}$/,            #169.254.0.0/16
+            /^110000000000000000000010\d{8}$/,     #192.0.2.0/24
+            /^110000000101100001100011\d{8}$/,     #192.88.99.0/24
+            /^11000000001100110{8}\d{8}$/,         #198.51.100.0/24
+            /^110010110000000001110001\d{8}$/,     #203.0.113.0/24
+            /^1110\d{28}$/,                        #224.0.0.0/4
+            /^1111\d{28}$/                         #240.0.0.0/4, #255.255.255.255
         ]
       end
 
+      def private_net_checker
+        lambda { |addr| private_nets_regex.any? { |net| net =~ addr.to_s(2) } }
+      end
+
       def reserved_net_checker
-        ->(addr) { (private_nets_regex + reserved_nets_regex).any? { |net| net =~ addr } }
+        ->(addr){ (private_nets_regex + reserved_nets_regex).any? { |net| net =~ addr.to_s(2) } }
       end
 
       def ip_v4_cidr
@@ -182,6 +183,19 @@ module Faker
         agent_hash = translate('faker.internet.user_agent')
         agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
         sample(agents)
+      end
+
+      # copy from https://github.com/ipaddress-gem/ipaddress/blob/master/lib/ipaddress.rb
+      def uint_to_ip(uint)
+        unless(uint.is_a? Numeric and uint <= 0xffffffff and uint >= 0)
+          raise(::ArgumentError, "not a long integer: #{uint.inspect}")
+        end
+        ret = []
+        4.times do
+          ret.unshift(uint & 0xff)
+          uint >>= 8
+        end
+        ret.join('.')
       end
     end
   end

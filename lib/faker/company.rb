@@ -51,9 +51,7 @@ module Faker
         fetch('company.profession')
       end
 
-      # rubocop:disable Style/AsciiComments
       # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/Número_de_identificación_fiscal
-      # rubocop:enable Style/AsciiComments
       def spanish_organisation_number
         # Valid leading character: A, B, C, D, E, F, G, H, J, N, P, Q, R, S, U, V, W
         # 7 digit numbers
