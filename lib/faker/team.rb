@@ -12,9 +12,16 @@ module Faker
       end
 
       def state
-        fetch('faker.address.state').titleize
+        fetch('address.state')
+      end
+
+      def sport
+        fetch('team.sport')
+      end
+
+      def mascot
+        fetch('team.mascot')
       end
     end
-
   end
 end
