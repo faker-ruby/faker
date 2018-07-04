@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestEeLocale < Test::Unit::TestCase
   def setup
-    @phone_prefixes = %w[32 33 35 38 39 43 44 45 46 47 48 61 62 63 64 65 66
+    @phone_prefixes = %w[32 33 35 38 39 43 44 45 46 47 48 61 62 63 64 65
                          67 68 69 71 72 73 74 75 76 77 78 79 88].sort
     @cell_prefixes  = %w[5 8].sort
     @previous_locale = Faker::Config.locale
