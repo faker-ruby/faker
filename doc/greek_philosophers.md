@@ -1,6 +1,6 @@
 # Faker::GreekPhilosophers
 
-Available since version 1.6.2.
+It might be available in the next version.
 
 ```ruby
 Faker::GreekPhilosophers.name #=> "Socrates"
