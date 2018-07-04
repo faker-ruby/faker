@@ -58,7 +58,7 @@ module Faker
           diff_rand = rand(diff_length + 1)
           temp += Lorem.characters(diff_rand)
         end
-        
+
         if mix_case
           temp.chars.each_with_index do |char, index|
             temp[index] = char.upcase if index.even?
