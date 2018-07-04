@@ -1,9 +1,10 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-07-01
+### Latest update: 2018-07-04
 
 ### Feature Request
+- [PR #1300](https://github.com/stympy/faker/pull/1300) Add Faker::GreekPhilosophers [@15ngburton](https://github.com/15ngburton)
 - [PR #1004](https://github.com/stympy/faker/pull/1004) Add Faker::Ethereum [@kaizenx](https://github.com/kaizenx)
 - [PR #551](https://github.com/stympy/faker/pull/551) Add gender to name generator [@Maicolben](https://github.com/Maicolben)
 - [PR #1283](https://github.com/stympy/faker/pull/1283) Add Faker::Military [@jjasghar](https://github.com/jjasghar)
