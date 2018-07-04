@@ -101,7 +101,7 @@ class TestFakerInternet < Test::Unit::TestCase
     end
     assert passwords.select { |item| item.length == 16 }.size >= 1
   end
-  
+
   def test_password_with_mixed_case
     assert @tester.password.match(/[A-Z]+/)
   end
