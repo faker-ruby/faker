@@ -49,7 +49,7 @@ module Faker
         sample((0..59).to_a)
       end
 
-      deprecate :between, 'Faker::Time.between', 2018, 9
+      # deprecate :between, 'Faker::Time.between', 2018, 9
     end
   end
 end
