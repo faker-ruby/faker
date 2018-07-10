@@ -34,5 +34,12 @@ module Faker
     def self.clear
       ObjectSpace.each_object(self, &:clear)
     end
+
+    def exclude(name, arguments, values)
+      values ||= []
+      values.each do |value|
+        @previous_results[[name, arguments]] << value
+      end
+    end
   end
 end
