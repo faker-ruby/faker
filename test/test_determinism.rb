@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 # rubocop:disable Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
   def setup
@@ -43,7 +43,7 @@ class TestDeterminism < Test::Unit::TestCase
 
   def subclasses
     Faker.constants.delete_if do |subclass|
-      %i[Base Char Config Date Internet Time DateTime VERSION].include?(subclass)
+      %i[Base Bank Char Config Date Internet Time DateTime VERSION].include?(subclass)
     end.sort
   end
 

@@ -5,6 +5,10 @@ It might be available in the next version.
 ```ruby
 Faker::WorldCup.team #=> "South Korea"
 
+Faker::WorldCup.stadium #=> "Ekaterinburg Arena"
+
+Faker::WorldCup.city #=> "Saint Petersburg"
+
 Faker::WorldCup.group #=> "Egypt"
 
 Faker::WorldCup.group('group_A') #=> "Saudi Arabia"

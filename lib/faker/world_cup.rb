@@ -5,6 +5,14 @@ module Faker
         fetch('world_cup.teams')
       end
 
+      def city
+        fetch('world_cup.cities')
+      end
+
+      def stadium
+        fetch('world_cup.stadiums')
+      end
+
       def group(group = 'group_A')
         fetch("world_cup.groups.#{group}")
       end

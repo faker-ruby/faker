@@ -1,10 +1,23 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerBank < Test::Unit::TestCase
   IBAN_HEADER = '[A-Z]{2}[0-9]{2}'.freeze
 
   def setup
     @tester = Faker::Bank
+  end
+
+  def test_routing_number
+    assert Faker::Bank.routing_number.match(/\d{9}/)
+  end
+
+  def test_routing_number_with_format
+    fraction = Faker::Bank.routing_number_with_format
+    assert fraction.match(/\d{1,2}[-]\d{1,4}[\/]\d{1,4}/)
+  end
+
+  def test_account_number
+    assert Faker::Bank.account_number.match(/\d{10}/)
   end
 
   def test_name
