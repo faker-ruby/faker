@@ -23,3 +23,7 @@ Style/DateTime:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Style/For:
+  Enabled: false
+Style/RegexpLiteral:
+  Enabled: false

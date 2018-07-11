@@ -86,7 +86,7 @@ module Faker
       end
 
       def screen_name
-        Faker::Internet.user_name(nil, ['_'])[0...20]
+        Faker::Internet.username(nil, ['_'])[0...20]
       end
 
       private

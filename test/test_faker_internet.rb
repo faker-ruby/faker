@@ -21,56 +21,60 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.safe_email.match(/.+@example.(com|net|org)/)
   end
 
-  def test_user_name
-    assert @tester.user_name(0..3).match(/[a-z]+((_|\.)[a-z]+)?/)
-    assert @tester.user_name.match(/[a-z]+((_|\.)[a-z]+)?/)
+  def test_username
+    assert @tester.username(0..3).match(/[a-z]+((_|\.)[a-z]+)?/)
+    assert @tester.username.match(/[a-z]+((_|\.)[a-z]+)?/)
   end
 
-  def test_user_name_with_string_arg
-    assert @tester.user_name('bo peep').match(/(bo(_|\.)peep|peep(_|\.)bo)/)
+  def test_user_name_alias
+    assert_equal @tester.method(:username), @tester.method(:user_name)
   end
 
-  def test_user_name_with_string_arg_determinism
-    deterministically_verify -> { @tester.user_name('bo peep') }, depth: 4 do |subject|
+  def test_username_with_string_arg
+    assert @tester.username('bo peep').match(/(bo(_|\.)peep|peep(_|\.)bo)/)
+  end
+
+  def test_username_with_string_arg_determinism
+    deterministically_verify -> { @tester.username('bo peep') }, depth: 4 do |subject|
       assert subject.match(/(bo(_|\.)peep|peep(_|\.)bo)/)
     end
   end
 
-  def test_user_name_with_integer_arg
+  def test_username_with_integer_arg
     (1..32).each do |min_length|
-      assert @tester.user_name(min_length).length >= min_length
+      assert @tester.username(min_length).length >= min_length
     end
   end
 
-  def test_user_name_with_very_large_integer_arg
-    exception = assert_raises(ArgumentError) { @tester.user_name(10_000_000) }
+  def test_username_with_very_large_integer_arg
+    exception = assert_raises(ArgumentError) { @tester.username(10_000_000) }
     assert_equal('Given argument is too large', exception.message)
   end
 
-  def test_user_name_with_closed_range_arg
+  def test_username_with_closed_range_arg
     (1..32).each do |min_length|
       (min_length..32).each do |max_length|
-        l = @tester.user_name((min_length..max_length)).length
+        l = @tester.username((min_length..max_length)).length
         assert l >= min_length
         assert l <= max_length
       end
     end
   end
 
-  def test_user_name_with_open_range_arg
+  def test_username_with_open_range_arg
     (1..32).each do |min_length|
       (min_length + 1..33).each do |max_length|
-        l = @tester.user_name((min_length...max_length)).length
+        l = @tester.username((min_length...max_length)).length
         assert l >= min_length
         assert l <= max_length - 1
       end
     end
   end
 
-  def test_user_name_with_range_and_separators
+  def test_username_with_range_and_separators
     (1..32).each do |min_length|
       (min_length + 1..33).each do |max_length|
-        u = @tester.user_name((min_length...max_length), %w[=])
+        u = @tester.username((min_length...max_length), %w[=])
         assert u.length.between? min_length, max_length - 1
         assert u.match(/\A[a-z]+((=)?[a-z]*)*\z/)
       end
