@@ -1,5 +1,13 @@
 require_relative 'test_helper'
 
+module Faker
+  class TestFake
+    def self.a_class_method
+      'called a_class_method'
+    end
+  end
+end
+
 class TestFaker < Test::Unit::TestCase
   def setup; end
 
@@ -63,6 +71,24 @@ class TestFaker < Test::Unit::TestCase
 
     Faker::Config.random = Random.new(42)
     assert v == Faker::Base.rand_in_range(0, 1000)
+  end
+
+  def test_parse
+    data = {
+      faker: {
+        simple: { lookup: 'a value' },
+        class: {
+          call_method: "\#{TestFake.a_class_method}",
+          use_translation: "\#{TestFake.use_i18n}"
+        },
+        test_fake: { use_i18n: 'used i18n for translation' }
+      }
+    }
+    I18n.backend.store_translations(Faker::Config.locale, data)
+
+    assert_equal(Faker::Base.parse('simple.lookup'), 'a value')
+    assert_equal(Faker::Base.parse('class.call_method'), 'called a_class_method')
+    assert_equal(Faker::Base.parse('class.use_translation'), 'used i18n for translation')
   end
 
   def test_rand_for_nil
