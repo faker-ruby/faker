@@ -37,6 +37,13 @@ class TestFakerTime < Test::Unit::TestCase
       random_time = @tester.forward(10)
       assert random_time > today.to_time, "Expected > \"#{today}\", but got #{random_time}"
     end
+
+    today = Time.now
+
+    100.times do
+      random_time = @tester.forward(10)
+      assert random_time > today, "Expected > \"#{today}\", but got #{random_time}"
+    end
   end
 
   def test_backward
@@ -46,26 +53,22 @@ class TestFakerTime < Test::Unit::TestCase
       random_time = @tester.backward(10)
       assert random_time < tomorrow.to_time, "Expected < \"#{tomorrow}\", but got #{random_time}"
     end
-  end
 
-  def test_invalid_period_error
-    from = Date.today
-    to   = Date.today + 15
+    tomorrow = (Date.today + 1).to_time
 
-    assert_raise ArgumentError do
-      @tester.between(from, to, :invalid_period)
+    100.times do
+      random_time = @tester.backward(10)
+      assert random_time < tomorrow, "Expected < \"#{tomorrow}\", but got #{random_time}"
     end
   end
 
   def test_return_type
     random_backward = @tester.backward(5)
-    random_between_dates = @tester.between(Date.today, Date.today + 5)
     random_between_times = @tester.between(Time.now, Time.now + TEN_HOURS)
     random_forward = @tester.forward(5)
 
     [
       random_backward,
-      random_between_dates,
       random_between_times,
       random_forward
     ].each do |result|
@@ -81,8 +84,8 @@ class TestFakerTime < Test::Unit::TestCase
       period = @time_ranges.keys.to_a.sample
 
       random_backward = @tester.backward(30, period, format)
-      random_between  = @tester.between(from, to, period, format)
-      random_forward  = @tester.forward(30, period, format)
+      random_between = @tester.between(from, to, format)
+      random_forward = @tester.forward(30, period, format)
       [random_backward, random_between, random_forward].each do |result|
         assert result.is_a?(String), "Expected a String, but got #{result.class}"
         assert_nothing_raised 'Not a valid date string' do
@@ -102,10 +105,9 @@ class TestFakerTime < Test::Unit::TestCase
       period_range    = @time_ranges[period]
 
       random_backward = @tester.backward(30, period)
-      random_between  = @tester.between(from, to, period)
-      random_forward  = @tester.forward(30, period)
+      random_forward = @tester.forward(30, period)
 
-      [random_backward, random_between, random_forward].each_with_index do |result, index|
+      [random_backward, random_forward].each_with_index do |result, index|
         assert period_range.include?(result.hour.to_i), "#{%i[random_backward random_between random_forward][index]}: \"#{result}\" expected to be included in Faker::Time::TIME_RANGES[:#{period}] range"
       end
     end
@@ -114,8 +116,7 @@ class TestFakerTime < Test::Unit::TestCase
     to   = Time.now + 100
 
     100.times do
-      period          = :between
-      random_between  = @tester.between(from, to, period)
+      random_between = @tester.between(from, to)
       assert random_between >= from, "Expected >= \"#{from}\", but got #{random_between}"
       assert random_between <= to, "Expected <= \"#{to}\", but got #{random_between}"
     end

@@ -43,7 +43,7 @@ class TestDeterminism < Test::Unit::TestCase
 
   def subclasses
     Faker.constants.delete_if do |subclass|
-      %i[Base Bank Char Config Date Internet Time VERSION].include?(subclass)
+      %i[Base Bank Char Config Date Internet Time DateTime VERSION].include?(subclass)
     end.sort
   end
 
