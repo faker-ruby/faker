@@ -1,6 +1,18 @@
 module Faker
   class StarWars < Base
     class << self
+      def call_squadron
+        sample(call_squadrons)
+      end
+
+      def call_sign
+        numerify(parse('star_wars.call_sign'))
+      end
+
+      def call_number
+        sample(call_numbers)
+      end
+
       def character
         sample(characters)
       end
@@ -24,21 +36,29 @@ module Faker
       def wookiee_sentence
         sentence = sample(wookiee_words).capitalize
 
-        rand(0..10).times { sentence += " " + sample(wookiee_words)}
+        rand(0..10).times { sentence += ' ' + sample(wookiee_words) }
 
-        sentence + sample(['.','?','!'])
+        sentence + sample(['.', '?', '!'])
+      end
+
+      def call_numbers
+        fetch_all('star_wars.call_numbers')
+      end
+
+      def call_squadrons
+        fetch_all('star_wars.call_squadrons')
       end
 
       def characters
-        fetch('star_wars.characters')
+        fetch_all('star_wars.characters')
       end
 
       def droids
-        fetch('star_wars.droids')
+        fetch_all('star_wars.droids')
       end
 
       def planets
-        fetch('star_wars.planets')
+        fetch_all('star_wars.planets')
       end
 
       def quote(character = nil)
@@ -54,7 +74,7 @@ module Faker
             character = k.to_s if v.include?(character)
           end
 
-          unless quoted_characters.keys.include?(character.to_sym)
+          unless quoted_characters.key?(character.to_sym)
             raise ArgumentError, "Character for quotes can be left blank or #{quoted_characters.keys.join(', ')}"
           end
         end
@@ -63,20 +83,19 @@ module Faker
       end
 
       def species
-        fetch('star_wars.species')
+        fetch_all('star_wars.species')
       end
 
       def vehicles
-        fetch('star_wars.vehicles')
+        fetch_all('star_wars.vehicles')
       end
 
       def wookiee_words
-        fetch('star_wars.wookiee_words')
+        fetch_all('star_wars.wookiee_words')
       end
 
-      alias_method :wookie_sentence, :wookiee_sentence
-      alias_method :wookie_words, :wookiee_words
-
+      alias wookie_sentence wookiee_sentence
+      alias wookie_words wookiee_words
     end
   end
 end

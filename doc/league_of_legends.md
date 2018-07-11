@@ -1,5 +1,7 @@
 # Faker::LeagueOfLegends
 
+Available since version 1.8.0.
+
 ```ruby
 Faker::LeagueOfLegends.champion #=> "Jarvan IV"
 

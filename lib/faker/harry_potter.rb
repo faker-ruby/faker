@@ -20,6 +20,10 @@ module Faker
       def house
         fetch('harry_potter.houses')
       end
+
+      def spell
+        fetch('harry_potter.spells')
+      end
     end
   end
 end

@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerPokemon < Test::Unit::TestCase
   def setup
@@ -16,6 +16,4 @@ class TestFakerPokemon < Test::Unit::TestCase
   def test_move
     assert @tester.move.match(/\w+/)
   end
-
-
 end

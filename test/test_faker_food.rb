@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
 class TestFakerFood < Test::Unit::TestCase
   def setup
@@ -9,8 +9,20 @@ class TestFakerFood < Test::Unit::TestCase
     assert @tester.dish.match(/\w+/)
   end
 
+  def test_description
+    assert @tester.description.match(/\w+/)
+  end
+
   def test_ingredient
     assert @tester.ingredient.match(/\w+/)
+  end
+
+  def test_fruits
+    assert @tester.fruits.match(/\w+/)
+  end
+
+  def test_vegetables
+    assert @tester.vegetables.match(/\w+/)
   end
 
   def test_spice
@@ -18,10 +30,10 @@ class TestFakerFood < Test::Unit::TestCase
   end
 
   def test_measurement
-    assert @tester.measurement.split(" ").length == 2
+    assert @tester.measurement.split(' ').length == 2
   end
-  
+
   def test_metric_measurement
     assert @tester.metric_measurement.match(/\w+/)
-  end  
+  end
 end
