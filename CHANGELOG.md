@@ -138,8 +138,6 @@
 ### Deprecation
 - [PR #1264](https://github.com/stympy/faker/pull/1264) Prepare Faker::Name.job_titles and Faker::Name.title for deprecation
   - Removing these methods as they are available in `Faker::Job`
-- [PR #1287](https://github.com/stympy/faker/pull/1287) Prepare Faker::Time.between for deprecation
-  - This method will only return Time Objects. For DateTime Objects there will be a new class Faker::DateTime
 
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)

@@ -11,8 +11,6 @@ module Faker
     }.freeze
 
     class << self
-      extend Gem::Deprecate
-
       def between(from, to, period = :all, format = nil)
         time = period == :between ? rand(from..to) : date_with_random_time(super(from, to), period)
         time_with_format(time, format)
@@ -48,8 +46,6 @@ module Faker
       def seconds
         sample((0..59).to_a)
       end
-
-      deprecate :between, 'Faker::Time.between', 2018, 9
     end
   end
 end
