@@ -2,8 +2,8 @@
 
 ## HEAD Unreleased
 
-## [v1.9.0](https://github.com/stympy/faker/tree/v1.9.0) (2018-07-11)
-[Full Changelog](https://github.com/stympy/faker/compare/v1.8.7...v1.9.0)
+## [v1.9.1](https://github.com/stympy/faker/tree/v1.9.1) (2018-07-11)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.7...v1.9.1)
 
 ### Feature Request
 - [PR #1308](https://github.com/stympy/faker/pull/1308) Add Faker::BojackHorseman [@saurabhudaniya200](https://github.com/saurabhudaniya200)
