@@ -37,6 +37,5 @@ module Faker
     def self.buzzword
       fetch('cannabis.buzzwords')
     end
-
   end
 end
