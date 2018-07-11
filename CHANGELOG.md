@@ -6,6 +6,7 @@
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.7...v1.9.1)
 
 ### Feature Request
+- [PR #801](https://github.com/stympy/faker/pull/801) Add Faker::NHS - Support for the British National Health Service [@substrakt-health](https://github.com/substrakt-health)
 - [PR #1308](https://github.com/stympy/faker/pull/1308) Add Faker::BojackHorseman [@saurabhudaniya200](https://github.com/saurabhudaniya200)
 - [PR #1292](https://github.com/stympy/faker/pull/1292) Add Faker::Bank - account_number and routing_number [@vbrazo](https://github.com/vbrazo)
 - [PR #1300](https://github.com/stympy/faker/pull/1300) Add Faker::GreekPhilosophers [@15ngburton](https://github.com/15ngburton)
