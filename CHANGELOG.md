@@ -4,6 +4,7 @@
 ### Latest update: 2018-07-04
 
 ### Feature Request
+- [PR #1308](https://github.com/stympy/faker/pull/1308) Add Faker::BojackHorseman [@saurabhudaniya200](https://github.com/saurabhudaniya200)
 - [PR #1292](https://github.com/stympy/faker/pull/1292) Add Faker::Bank - account_number and routing_number [@vbrazo](https://github.com/vbrazo)
 - [PR #1300](https://github.com/stympy/faker/pull/1300) Add Faker::GreekPhilosophers [@15ngburton](https://github.com/15ngburton)
 - [PR #1004](https://github.com/stympy/faker/pull/1004) Add Faker::Ethereum [@kaizenx](https://github.com/kaizenx)
@@ -84,6 +85,7 @@
 - [PR #1117](https://github.com/stympy/faker/pull/1117) Added Ukrainian entries to yml [@RomanIsko](https://github.com/RomanIsko)
 
 ### Bug/Fixes
+- [PR #1305](https://github.com/stympy/faker/pull/1305) Fix YAML syntax - single quote escape (on vehicle.yml) [@YumaInaura](https://github.com/YumaInaura)
 - [PR #1196](https://github.com/stympy/faker/pull/1196) Fix PhoneNumber in es-MX [@drewish](https://github.com/drewish)
 - [PR #1133](https://github.com/stympy/faker/pull/1133) Fix I18n 0.9.3 compatibility [@tagliala](https://github.com/tagliala)
 - [PR #1292](https://github.com/stympy/faker/pull/1292) Fix flexible keys crashing when current locale does not provide them [@deivid-rodriguez](https://github.com/deivid-rodriguez)
@@ -110,6 +112,8 @@
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
+- [PR #1304](https://github.com/stympy/faker/pull/1304) Fix Faker::Source ruby language examples [@YumaInaura](https://github.com/YumaInaura)
+- [PR #1306](https://github.com/stympy/faker/pull/1306) Rename Internet#user_name to #username [@tylerhunt](https://github.com/tylerhunt)
 - [PR #1293](https://github.com/stympy/faker/pull/1293) Update RuboCop to 0.57.2 [@tagliala](https://github.com/tagliala)
 - [PR #1294](https://github.com/stympy/faker/pull/1294) Simpler requiring of test helper [@deivid-rodriguez](https://github.com/deivid-rodriguez)
 - [PR #1288](https://github.com/stympy/faker/pull/1288) rake console changes - description and contributing.md [@MarcPer](https://github.com/MarcPer)
