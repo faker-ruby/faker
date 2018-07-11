@@ -43,10 +43,6 @@ class TestFakerCannabis < Test::Unit::TestCase
     10.times { assert Faker::Cannabis.buzzword.match(/[\w]+/) }
   end
 
-  def test_website
-    10.times { assert Faker::Cannabis.website.match(/[\w]+/) }
-  end
-
   def test_locales
     [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
@@ -59,7 +55,6 @@ class TestFakerCannabis < Test::Unit::TestCase
       assert Faker::Cannabis.category.is_a? String
       assert Faker::Cannabis.type.is_a? String
       assert Faker::Cannabis.buzzword.is_a? String
-      assert Faker::Cannabis.website.is_a? String
     end
   end
 end
