@@ -2,6 +2,9 @@
 
 ## HEAD Unreleased
 
+### Bug/Fixes
+- [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
+
 ### Feature Request
 - [PR #801](https://github.com/stympy/faker/pull/801) Add Faker::NHS - Support for the British National Health Service [@substrakt-health](https://github.com/substrakt-health)
 
