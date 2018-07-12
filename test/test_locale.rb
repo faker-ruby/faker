@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'test_helper'
 
 LoadedYaml = ['en', 'en-BORK'].each_with_object({}) do |locale, h|

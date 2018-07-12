@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Internet < Base
     class << self
@@ -30,7 +32,7 @@ module Faker
               tries += 1
               break unless result.length < specifier && tries < 7
             end
-            return result * (specifier / result.length + 1) if specifier > 0
+            return result * (specifier / result.length + 1) if specifier.positive?
           elsif specifier.is_a?(Range)
             tries = 0
             result = nil
@@ -54,7 +56,7 @@ module Faker
       def password(min_length = 8, max_length = 16, mix_case = true, special_chars = false)
         temp = Lorem.characters(min_length)
         diff_length = max_length - min_length
-        if diff_length > 0
+        if diff_length.positive?
           diff_rand = rand(diff_length + 1)
           temp += Lorem.characters(diff_rand)
         end
