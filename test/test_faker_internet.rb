@@ -98,6 +98,14 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_password_could_achieve_max_length
+    passwords = []
+    64.times do
+      passwords << @tester.password(14, 16)
+    end
+    assert passwords.select { |item| item.length == 16 }.size >= 1
+  end
+
   def test_password_with_mixed_case
     assert @tester.password.match(/[A-Z]+/)
   end
