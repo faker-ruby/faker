@@ -32,6 +32,7 @@ module Faker
       def last_name
         parse('name.last_name')
       end
+      alias middle_name last_name
 
       def prefix
         fetch('name.prefix')
