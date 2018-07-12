@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Types < Base
     CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a

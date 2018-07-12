@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class ElectricalComponents < Base
     flexible :electrical_components

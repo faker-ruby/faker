@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 mydir = __dir__
 
 begin
@@ -94,7 +96,7 @@ module Faker
       # with an array of values and selecting one of them.
       def fetch(key)
         fetched = sample(translate("faker.#{key}"))
-        if fetched && fetched.match(%r{^\/}) && fetched.match(%r{\/$}) # A regex
+        if fetched&.match(%r{^\/}) && fetched&.match(%r{\/$}) # A regex
           regexify(fetched)
         else
           fetched
@@ -214,7 +216,7 @@ module Faker
       def rand(max = nil)
         if max.nil?
           Faker::Config.random.rand
-        elsif max.is_a?(Range) || max.to_i > 0
+        elsif max.is_a?(Range) || max.to_i.positive?
           Faker::Config.random.rand(max)
         else
           0
@@ -225,9 +227,6 @@ module Faker
 end
 
 Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| require f }
-
-require 'extensions/array'
-require 'extensions/symbol'
 
 require 'helpers/char'
 require 'helpers/unique_generator'

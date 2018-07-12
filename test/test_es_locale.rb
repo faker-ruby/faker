@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'test_helper'
 
 LoadedEsYaml = %w[en es].each_with_object({}) do |locale, h|

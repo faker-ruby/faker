@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Dune < Base
     class << self
@@ -22,7 +24,7 @@ module Faker
         if character.nil?
           character = sample(quoted_characters).to_s
         else
-          character.to_s.downcase!
+          character = character.to_s.downcase
 
           unless quoted_characters.include?(character.to_sym)
             raise ArgumentError,
@@ -39,7 +41,7 @@ module Faker
         if source.nil?
           source = sample(sourced_sayings).to_s
         else
-          source.to_s.downcase!
+          source = source.to_s.downcase
 
           unless sourced_sayings.include?(source.to_sym)
             raise ArgumentError,

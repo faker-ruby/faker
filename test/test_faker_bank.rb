@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require_relative 'test_helper'
 
 class TestFakerBank < Test::Unit::TestCase
-  IBAN_HEADER = '[A-Z]{2}[0-9]{2}'.freeze
+  IBAN_HEADER = '[A-Z]{2}[0-9]{2}'
 
   def setup
     @tester = Faker::Bank
