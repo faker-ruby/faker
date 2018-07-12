@@ -6,9 +6,14 @@
 - [PR #527](https://github.com/stympy/faker/pull/527) Fix time period test that could result in a flake test within 15 days [@melonhead901](https://github.com/melonhead901)
 - [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
 
+### Chores
+- [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
+
 ### Feature Request
+- [PR #1115](https://github.com/stympy/faker/pull/1115) Add Faker::Cosmere [@JauntyJames](https://github.com/JauntyJames)
 - [PR #801](https://github.com/stympy/faker/pull/801) Add Faker::NHS - Support for the British National Health Service [@substrakt-health](https://github.com/substrakt-health)
 
+------------------------------------------------------------------------------
 ## [v1.9.1](https://github.com/stympy/faker/tree/v1.9.1) (2018-07-11)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.7...v1.9.1)
 
