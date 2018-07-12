@@ -39,7 +39,7 @@ module Faker
           check_digit = check_digit.to_s.rjust(check_digit_match[0].length, '0')
 
           # Replace all of the
-          ref.sub!(check_digit_match[0], check_digit)
+          ref = ref.sub(check_digit_match[0], check_digit)
         end
 
         ref

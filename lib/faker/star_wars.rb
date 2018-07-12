@@ -69,7 +69,7 @@ module Faker
         if character.nil?
           character = sample(quoted_characters.keys).to_s
         else
-          character.to_s.downcase!
+          character = character.to_s.downcase
 
           # check alternate spellings, nicknames, titles of characters
           translate('faker.star_wars.alternate_character_spellings').each do |k, v|
