@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('simplecov')
   s.add_development_dependency('test-unit')
   s.add_development_dependency('timecop')
-  s.required_ruby_version = '>= 2.1'
+  s.required_ruby_version = '>= 2.3'
 
   s.files         = Dir['lib/**/*'] + %w[History.md License.txt CHANGELOG.md README.md]
   s.require_paths = ['lib']
