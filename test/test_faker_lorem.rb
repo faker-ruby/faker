@@ -116,4 +116,10 @@ class TestFakerLorem < Test::Unit::TestCase
     paragraph = @tester.paragraph_by_chars(256)
     assert(paragraph.length == 256)
   end
+
+  def test_unique_with_already_set_values
+    values = ('a'..'z').to_a + ('0'..'9').to_a
+    @tester.unique.exclude(:character, [], values)
+    assert_raise(Faker::UniqueGenerator::RetryLimitExceeded) { @tester.unique.character }
+  end
 end

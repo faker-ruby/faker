@@ -203,6 +203,18 @@ Faker::Name.unique.clear # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
 ```
 
+You also can give some already used values to the unique generator if you have
+collisions with the generated data (i.e: using FactoryBot with random and
+manually set values).
+
+```ruby
+# Usage:
+# Faker::<generator>.unique.exclude(method, arguments, list)
+
+# Add 'azerty' and 'wxcvbn' to the string generator with 6 char length
+Faker::Lorem.unique.exclude :string, [6], %w[azerty wxcvbn]
+```
+
 ### Deterministic Random
 
 Faker supports seeding of its pseudo-random number generator (PRNG) to provide deterministic output of repeated method calls.
