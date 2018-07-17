@@ -1,0 +1,96 @@
+en:
+  faker:
+    restaurant:
+      name_prefix:
+        - "??"
+        - "???"
+        - "##"
+        - "###"
+        - "####"
+        - Belly
+        - Big
+        - Blue Plate
+        - Fast
+        - Fat
+        - Golden
+        - Hungry
+        - Salty
+        - Silver
+        - Smokestack
+        - Spice
+        - Sugar
+        - Sweet
+        - Thirsty
+        - Red
+        - Blue
+        - Green
+        - Orange
+      name_suffix:
+        - Bakery
+        - Bar & Grill
+        - BBQ
+        - Box
+        - Brasserie
+        - Burger
+        - Cafe
+        - Coffee
+        - Creamery
+        - Curry
+        - Deli
+        - Diner
+        - Dragon
+        - Eatery
+        - Eats
+        - Gastropub
+        - Grill
+        - Grill & Tap
+        - House
+        - Juice Bar
+        - King
+        - Kitchen
+        - Pizza
+        - Pub
+        - Shakes
+        - Spoon
+        - Steakhouse
+        - Subs
+        - Sushi
+      name:
+        - "#{name_prefix} #{name_suffix}"
+      type:
+        - African
+        - American (New)
+        - American (Traditional)
+        - Argentinian
+        - Asian
+        - Bakery
+        - Bar
+        - Brazilian
+        - Burgers
+        - Caribbean
+        - Chinese
+        - Comfort Food
+        - Desserts
+        - Ethiopean
+        - European
+        - French
+        - German
+        - Greek
+        - Healthy
+        - Ice Cream
+        - Indian
+        - Italian
+        - Japanese
+        - Juice & Smoothies
+        - Korean
+        - Mexican
+        - Pizza
+        - Ramen
+        - Sandwiches
+        - Senegalese
+        - Sushi
+        - Tex Mex
+        - Thai
+        - Vegan
+        - Vegetarian
+        - Vietnamese
