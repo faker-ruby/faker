@@ -14,4 +14,12 @@ class TestFakerRestaurant < Test::Unit::TestCase
   def test_type
     assert @tester.type.is_a?(String)
   end
+
+  def test_description
+    assert @tester.name.is_a?(String)
+  end
+
+  def test_review
+    assert @tester.type.is_a?(String)
+  end
 end
