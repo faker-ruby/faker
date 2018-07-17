@@ -11,6 +11,7 @@
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
 ### Feature Request
+- [PR #1314](https://github.com/stympy/faker/pull/1314) Add Faker::SouthPark [@saurabhudaniya200](https://github.com/saurabhudaniya200)
 - [PR #1313](https://github.com/stympy/faker/pull/1313) Add Faker::Restaurant [@dwhitlow](https://github.com/dwhitlow)
 - [PR #1307](https://github.com/stympy/faker/pull/1307) Add "exclude" method to UniqueGenerator [@mtancoigne](https://github.com/mtancoigne)
 - [PR #1115](https://github.com/stympy/faker/pull/1115) Add Faker::Cosmere [@JauntyJames](https://github.com/JauntyJames)
