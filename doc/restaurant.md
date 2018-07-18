@@ -1,5 +1,7 @@
 # Faker::Restaurant
 
+It might be available in the next version.
+
 ```ruby
 Faker::Restaurant.name          #=> "Curry King"
 
