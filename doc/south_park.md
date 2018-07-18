@@ -1,5 +1,7 @@
 # Faker::SouthPark
 
+It might be available in the next version.
+
 ```ruby
 Faker::SouthPark.character #=> "Mr. Garrison"
 
