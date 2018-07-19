@@ -3,6 +3,9 @@
 ## HEAD Unreleased
 ### Latest update: 2018-06-20
 
+### Suggestion
+- [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
+
 ### Feature Request
 - [PR #551](https://github.com/stympy/faker/pull/551) Add gender to name generator [@Maicolben](https://github.com/Maicolben)
 - [PR #1283](https://github.com/stympy/faker/pull/1283) Add Faker::Military [@jjasghar](https://github.com/jjasghar)
