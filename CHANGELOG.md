@@ -1,12 +1,34 @@
 # Change Log
 
 ## HEAD Unreleased
-### Latest update: 2018-06-20
+
+### Bug/Fixes
+- [PR #527](https://github.com/stympy/faker/pull/527) Fix time period test that could result in a flake test within 15 days [@melonhead901](https://github.com/melonhead901)
+- [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
+
+### Chores
+- [PR #1311](https://github.com/stympy/faker/pull/1311) Target Ruby 2.3 [@tagliala](https://github.com/tagliala)
+- [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
+
+### Feature Request
+- [PR #1314](https://github.com/stympy/faker/pull/1314) Add Faker::SouthPark [@saurabhudaniya200](https://github.com/saurabhudaniya200)
+- [PR #1313](https://github.com/stympy/faker/pull/1313) Add Faker::Restaurant [@dwhitlow](https://github.com/dwhitlow)
+- [PR #1307](https://github.com/stympy/faker/pull/1307) Add "exclude" method to UniqueGenerator [@mtancoigne](https://github.com/mtancoigne)
+- [PR #1115](https://github.com/stympy/faker/pull/1115) Add Faker::Cosmere [@JauntyJames](https://github.com/JauntyJames)
+- [PR #801](https://github.com/stympy/faker/pull/801) Add Faker::NHS - Support for the British National Health Service [@substrakt-health](https://github.com/substrakt-health)
 
 ### Suggestion
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
+------------------------------------------------------------------------------
+## [v1.9.1](https://github.com/stympy/faker/tree/v1.9.1) (2018-07-11)
+[Full Changelog](https://github.com/stympy/faker/compare/v1.8.7...v1.9.1)
+
 ### Feature Request
+- [PR #1308](https://github.com/stympy/faker/pull/1308) Add Faker::BojackHorseman [@saurabhudaniya200](https://github.com/saurabhudaniya200)
+- [PR #1292](https://github.com/stympy/faker/pull/1292) Add Faker::Bank - account_number and routing_number [@vbrazo](https://github.com/vbrazo)
+- [PR #1300](https://github.com/stympy/faker/pull/1300) Add Faker::GreekPhilosophers [@15ngburton](https://github.com/15ngburton)
+- [PR #1004](https://github.com/stympy/faker/pull/1004) Add Faker::Ethereum [@kaizenx](https://github.com/kaizenx)
 - [PR #551](https://github.com/stympy/faker/pull/551) Add gender to name generator [@Maicolben](https://github.com/Maicolben)
 - [PR #1283](https://github.com/stympy/faker/pull/1283) Add Faker::Military [@jjasghar](https://github.com/jjasghar)
 - [PR #1279](https://github.com/stympy/faker/pull/1279) Add Faker::HarryPotter.spell [@A9u](https://github.com/A9u)
@@ -84,6 +106,8 @@
 - [PR #1117](https://github.com/stympy/faker/pull/1117) Added Ukrainian entries to yml [@RomanIsko](https://github.com/RomanIsko)
 
 ### Bug/Fixes
+- [PR #1305](https://github.com/stympy/faker/pull/1305) Fix YAML syntax - single quote escape (on vehicle.yml) [@YumaInaura](https://github.com/YumaInaura)
+- [PR #1196](https://github.com/stympy/faker/pull/1196) Fix PhoneNumber in es-MX [@drewish](https://github.com/drewish)
 - [PR #1133](https://github.com/stympy/faker/pull/1133) Fix I18n 0.9.3 compatibility [@tagliala](https://github.com/tagliala)
 - [PR #1292](https://github.com/stympy/faker/pull/1292) Fix flexible keys crashing when current locale does not provide them [@deivid-rodriguez](https://github.com/deivid-rodriguez)
 - [PR #1274](https://github.com/stympy/faker/pull/1274) Allow Faker::Address.zip_code to have leading zero [@igor-starostenko](https://github.com/igor-starostenko)
@@ -109,6 +133,8 @@
 - [PR #1173](https://github.com/stympy/faker/pull/1173) Fix tests warning [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
+- [PR #1304](https://github.com/stympy/faker/pull/1304) Fix Faker::Source ruby language examples [@YumaInaura](https://github.com/YumaInaura)
+- [PR #1306](https://github.com/stympy/faker/pull/1306) Rename Internet#user_name to #username [@tylerhunt](https://github.com/tylerhunt)
 - [PR #1293](https://github.com/stympy/faker/pull/1293) Update RuboCop to 0.57.2 [@tagliala](https://github.com/tagliala)
 - [PR #1294](https://github.com/stympy/faker/pull/1294) Simpler requiring of test helper [@deivid-rodriguez](https://github.com/deivid-rodriguez)
 - [PR #1288](https://github.com/stympy/faker/pull/1288) rake console changes - description and contributing.md [@MarcPer](https://github.com/MarcPer)
@@ -133,8 +159,6 @@
 ### Deprecation
 - [PR #1264](https://github.com/stympy/faker/pull/1264) Prepare Faker::Name.job_titles and Faker::Name.title for deprecation
   - Removing these methods as they are available in `Faker::Job`
-- [PR #1287](https://github.com/stympy/faker/pull/1287) Prepare Faker::Time.between for deprecation
-  - This method will only return Time Objects. For DateTime Objects there will be a new class Faker::DateTime
 
 ## [v1.8.7](https://github.com/stympy/faker/tree/v1.8.7) (2017-12-22)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.6...v1.8.7)
