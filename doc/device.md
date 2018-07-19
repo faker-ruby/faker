@@ -1,6 +1,6 @@
 # Faker::Device
 
-It might be available in the next version.
+Available since version 1.9.0.
 
 ```ruby
 Faker::Device.build_number #=> "5"

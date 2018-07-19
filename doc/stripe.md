@@ -1,7 +1,6 @@
 # Faker::Stripe
 
-### Test Stripe transactions without hardcoding card numbers and tokens
-
+Test Stripe transactions without hardcoding card numbers and tokens
 
 ```ruby
 Faker::Stripe.valid_card #=> "4242424242424242"

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov'
 SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
 SimpleCov.start do
@@ -27,7 +29,7 @@ I18n.enforce_available_locales = true
 # @param random [Integer] A random number seed; Used to override the default.
 #
 # @example
-#   deterministically_verify ->{ @tester.user_name('bo peep') } do |subject|
+#   deterministically_verify ->{ @tester.username('bo peep') } do |subject|
 #     assert subject.match(/(bo(_|\.)peep|peep(_|\.)bo)/)
 #   end
 #

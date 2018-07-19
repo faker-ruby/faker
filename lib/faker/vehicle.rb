@@ -1,13 +1,12 @@
+# frozen_string_literal: true
+
 module Faker
   class Vehicle < Base
     flexible :vehicle
 
-    VIN_REGEX = /^[A-HJ-NPRS-Z0-9]{8}$/
-    VIN_LETTERS = 'ABCDEFGHJKLMNPRSTUVWXYZ'.freeze
-    VIN_MAP = '12345678123457923456789'.freeze
-    VIN_WEIGHTS = [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2].freeze
-    MILEAGE_MIN = 10_000
-    MILEAGE_MAX = 90_000
+    VIN_CHARS = '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'
+    VIN_MAP = '0123456789X'
+    VIN_WEIGHTS = '8765432X098765432'
 
     class << self
       def vin(number = nil)

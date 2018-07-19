@@ -1,3 +1,5 @@
+AllCops:
+  TargetRubyVersion: 2.3
 
 Lint/AmbiguousBlockAssociation:
   Enabled: false
@@ -22,4 +24,8 @@ Metrics/PerceivedComplexity:
 Style/DateTime:
   Enabled: false
 Style/Documentation:
+  Enabled: false
+Style/For:
+  Enabled: false
+Style/RegexpLiteral:
   Enabled: false

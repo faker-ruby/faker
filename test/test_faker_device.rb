@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerDevice < Test::Unit::TestCase
   def setup
@@ -14,12 +16,12 @@ class TestFakerDevice < Test::Unit::TestCase
   end
 
   def test_version
-    assert @tester.version > 0
+    assert @tester.version.positive?
     assert @tester.version <= 1000
   end
 
   def test_build_number
-    assert @tester.build_number > 0
+    assert @tester.build_number.positive?
     assert @tester.build_number <= 500
   end
 

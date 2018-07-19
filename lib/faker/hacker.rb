@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Port of http://shinytoylabs.com/jargon/
 module Faker
   class Hacker < Base

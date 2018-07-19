@@ -1,6 +1,6 @@
 # Faker::NatoPhoneticAlphabet
 
-It might be available in the next version.
+Available since version 1.9.0.
 
 ```ruby
 # A code word from the NATO phonetic alphabet

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Faker
   class Measurement < Base
     class << self
-      ALL = 'all'.freeze
-      NONE = 'none'.freeze
+      ALL = 'all'
+      NONE = 'none'
 
       def height(amount = rand(10))
         define_measurement_locale(amount, 'height')

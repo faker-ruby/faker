@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Code < Base
     flexible :code
@@ -171,7 +173,7 @@ module Faker
         ]
         sum = 0
 
-        while len > 0
+        while len.positive?
           len -= 1
           num = digits[len].to_i
           sum += luhn_arr[mul][num]
