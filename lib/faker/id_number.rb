@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module Faker
   class IDNumber < Base
-    CHECKS = 'TRWAGMYFPDXBNJZSQVHLCKE'.freeze
+    CHECKS = 'TRWAGMYFPDXBNJZSQVHLCKE'
     INVALID_SSN = [
       /0{3}-\d{2}-\d{4}/,
       /\d{3}-0{2}-\d{4}/,

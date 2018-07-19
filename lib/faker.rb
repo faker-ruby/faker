@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 mydir = __dir__
 
 begin
@@ -94,7 +96,7 @@ module Faker
       # with an array of values and selecting one of them.
       def fetch(key)
         fetched = sample(translate("faker.#{key}"))
-        if fetched && fetched.match(%r{^\/}) && fetched.match(%r{\/$}) # A regex
+        if fetched&.match(%r{^\/}) && fetched&.match(%r{\/$}) # A regex
           regexify(fetched)
         else
           fetched
@@ -127,9 +129,15 @@ module Faker
           # In either case the information will be retained for reconstruction of the string.
           text = prefix
 
-          # If the class has the method, call it, otherwise
-          # fetch the transation (i.e., faker.name.first_name)
-          text += cls.respond_to?(meth) ? cls.send(meth) : fetch("#{(kls || self).to_s.split('::').last.downcase}.#{meth.downcase}")
+          # If the class has the method, call it, otherwise fetch the transation
+          # (e.g., faker.phone_number.area_code)
+          text += if cls.respond_to?(meth)
+                    cls.send(meth)
+                  else
+                    # Do just enough snake casing to convert PhoneNumber to phone_number
+                    key_path = cls.to_s.split('::').last.gsub(/([a-z\d])([A-Z])/, '\1_\2').downcase
+                    fetch("#{key_path}.#{meth.downcase}")
+                  end
 
           # And tack on spaces, commas, etc. left over in the string
           text + etc.to_s
@@ -208,7 +216,7 @@ module Faker
       def rand(max = nil)
         if max.nil?
           Faker::Config.random.rand
-        elsif max.is_a?(Range) || max.to_i > 0
+        elsif max.is_a?(Range) || max.to_i.positive?
           Faker::Config.random.rand(max)
         else
           0
@@ -219,9 +227,6 @@ module Faker
 end
 
 Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| require f }
-
-require 'extensions/array'
-require 'extensions/symbol'
 
 require 'helpers/char'
 require 'helpers/unique_generator'

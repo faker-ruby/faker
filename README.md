@@ -35,6 +35,7 @@ Contents
   - [Faker::Bank](doc/bank.md)
   - [Faker::Beer](doc/beer.md)
   - [Faker::Bitcoin](doc/bitcoin.md)
+  - [Faker::BojackHorseman](doc/bojack_horseman.md)
   - [Faker::Book](doc/book.md)
   - [Faker::Boolean](doc/boolean.md)
   - [Faker::BossaNova](doc/bossa_nova.md)
@@ -50,6 +51,7 @@ Contents
   - [Faker::Community](doc/community.md)
   - [Faker::Company](doc/company.md)
   - [Faker::Compass](doc/compass.md)
+  - [Faker::Cosmere](doc/cosmere.md)
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::Currency](doc/currency.md)
   - [Faker::Date](doc/date.md)
@@ -66,6 +68,7 @@ Contents
   - [Faker::ElderScrolls](doc/elder_scrolls.md)
   - [Faker::ElectricalComponents](doc/electrical_components.md)
   - [Faker::Esport](doc/esport.md)
+  - [Faker::Ethereum](doc/ethereum.md)
   - [Faker::Fallout](doc/fallout.md)
   - [Faker::FamilyGuy](doc/family_guy.md)
   - [Faker::FamousLastWords](doc/famous_last_words.md)
@@ -78,6 +81,7 @@ Contents
   - [Faker::FunnyName](doc/funny_name.md)
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
   - [Faker::Gender](doc/gender.md)
+  - [Faker::GreekPhilosophers](doc/greek_philosophers.md)
   - [Faker::Hacker](doc/hacker.md)
   - [Faker::HarryPotter](doc/harry_potter.md)
   - [Faker::HeyArnold](doc/hey_arnold.md)
@@ -110,6 +114,7 @@ Contents
   - [Faker::Nation](doc/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/nato_phonetic_alphabet.md)
   - [Faker::NewGirl](doc/new_girl.md)
+  - [Faker::NationalHealthService](doc/national_health_service.md)
   - [Faker::Number](doc/number.md)
   - [Faker::Omniauth](doc/omniauth.md)
   - [Faker::OnePiece](doc/one_piece.md)
@@ -120,6 +125,7 @@ Contents
   - [Faker::Pokemon](doc/pokemon.md)
   - [Faker::PrincessBride](doc/princess_bride.md)
   - [Faker::ProgrammingLanguage](doc/programming_language.md)
+  - [Faker::Restaurant](doc/restaurant.md)
   - [Faker::RickAndMorty](doc/rick_and_morty.md)
   - [Faker::Robin](doc/robin.md)
   - [Faker::RockBand](doc/rock_band.md)
@@ -131,6 +137,7 @@ Contents
   - [Faker::SingularSiegler](doc/singular_siegler.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Source](doc/source.md)
+  - [Faker::SouthPark](doc/south_park.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
   - [Faker::StarWars](doc/star_wars.md)
@@ -196,6 +203,18 @@ that have been returned, for example between tests.
 ```ruby
 Faker::Name.unique.clear # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
+```
+
+You also can give some already used values to the unique generator if you have
+collisions with the generated data (i.e: using FactoryBot with random and
+manually set values).
+
+```ruby
+# Usage:
+# Faker::<generator>.unique.exclude(method, arguments, list)
+
+# Add 'azerty' and 'wxcvbn' to the string generator with 6 char length
+Faker::Lorem.unique.exclude :string, [6], %w[azerty wxcvbn]
 ```
 
 ### Deterministic Random

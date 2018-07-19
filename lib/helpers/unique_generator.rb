@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class UniqueGenerator
     @marked_unique = Set.new # Holds names of generators with unique values
@@ -41,6 +43,13 @@ module Faker
     def self.clear
       marked_unique.each(&:clear)
       marked_unique.clear
+    end
+
+    def exclude(name, arguments, values)
+      values ||= []
+      values.each do |value|
+        @previous_results[[name, arguments]] << value
+      end
     end
   end
 end

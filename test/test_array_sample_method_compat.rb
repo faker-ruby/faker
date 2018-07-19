@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'test_helper'
 
 # when these tests are run under Ruby 1.8.7, they will use the

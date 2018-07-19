@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Faker
   class Vehicle < Base
     flexible :vehicle
 
-    VIN_CHARS = '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'.freeze
-    VIN_MAP = '0123456789X'.freeze
-    VIN_WEIGHTS = '8765432X098765432'.freeze
+    VIN_CHARS = '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'
+    VIN_MAP = '0123456789X'
+    VIN_WEIGHTS = '8765432X098765432'
 
     class << self
       # ISO 3779

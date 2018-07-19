@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base

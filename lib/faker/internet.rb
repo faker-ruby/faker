@@ -1,23 +1,25 @@
+# frozen_string_literal: true
+
 module Faker
   class Internet < Base
     class << self
       def email(name = nil, *separators)
         if separators
-          [user_name(name, separators), domain_name].join('@')
+          [username(name, separators), domain_name].join('@')
         else
-          [user_name(name), domain_name].join('@')
+          [username(name), domain_name].join('@')
         end
       end
 
       def free_email(name = nil)
-        [user_name(name), fetch('internet.free_email')].join('@')
+        [username(name), fetch('internet.free_email')].join('@')
       end
 
       def safe_email(name = nil)
-        [user_name(name), 'example.' + sample(%w[org com net])].join('@')
+        [username(name), 'example.' + sample(%w[org com net])].join('@')
       end
 
-      def user_name(specifier = nil, separators = %w[. _])
+      def username(specifier = nil, separators = %w[. _])
         with_locale(:en) do
           return shuffle(specifier.scan(/\w+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
           if specifier.is_a?(Integer)
@@ -26,16 +28,16 @@ module Faker
             tries = 0 # Don't try forever in case we get something like 1_000_000.
             result = nil
             loop do
-              result = user_name(nil, separators)
+              result = username(nil, separators)
               tries += 1
               break unless result.length < specifier && tries < 7
             end
-            return result * (specifier / result.length + 1) if specifier > 0
+            return result * (specifier / result.length + 1) if specifier.positive?
           elsif specifier.is_a?(Range)
             tries = 0
             result = nil
             loop do
-              result = user_name(specifier.min, separators)
+              result = username(specifier.min, separators)
               tries += 1
               break unless !specifier.include?(result.length) && tries < 7
             end
@@ -54,7 +56,7 @@ module Faker
       def password(min_length = 8, max_length = 16, mix_case = true, special_chars = false)
         temp = Lorem.characters(min_length)
         diff_length = max_length - min_length
-        if diff_length > 0
+        if diff_length.positive?
           diff_rand = rand(diff_length + 1)
           temp += Lorem.characters(diff_rand)
         end
@@ -165,7 +167,7 @@ module Faker
         "#{ip_v6_address}/#{rand(1..127)}"
       end
 
-      def url(host = domain_name, path = "/#{user_name}", scheme = 'http')
+      def url(host = domain_name, path = "/#{username}", scheme = 'http')
         "#{scheme}://#{host}#{path}"
       end
 
@@ -183,6 +185,8 @@ module Faker
         agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
         sample(agents)
       end
+
+      alias user_name username
     end
   end
 end

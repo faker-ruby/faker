@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'test_helper'
 
 class TestFakerTime < Test::Unit::TestCase
@@ -94,8 +96,9 @@ class TestFakerTime < Test::Unit::TestCase
   end
 
   def test_time_period
-    from = Time.at(0).to_date
-    to   = Time.at(2_145_945_600).to_date
+    # These dates are chosen to avoid any conflict with DST. When period is not strictly respected.
+    from = Date.parse('2018-09-01')
+    to   = Date.parse('2018-09-15')
 
     100.times do
       period          = @time_ranges.keys.to_a.sample

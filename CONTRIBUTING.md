@@ -2,39 +2,23 @@ We love pull requests. Here's a quick guide:
 
 1. Fork the repo.
 
-2. Run the tests. We only take pull requests with passing tests, and it's great
-to know that you have a clean slate: `bundle && bundle exec rake`
+2. Run the tests. We only take pull requests with passing tests, and it's great to know that you have a clean slate: `bundle && bundle exec rake`
 
 3. We are using [Rubocop](https://github.com/bbatsov/rubocop) because we love static code analyzers. 
 
 Ways to run Rubocop:
 - `bundle exec rubocop`
 - `bundle exec rake` would run the test suite and after that it runs the Ruby static code analyzer.
-If you want to try to fix the rubocop violations, you should run `bundle exec rubocop -a` to try to autocorrect the issues. If this last command doesn't solve the violations, you'll need to google.
 
-If you are not familiar with Rubocop, spend some time studying their page and a few study cases on the internet.
+4. Please add a test for your change. Only refactoring and documentation changes require no new tests. If you are adding functionality or fixing a bug, we need a test! We use [Minitest](https://github.com/seattlerb/minitest) in this project.
 
-4. Please add a test for your change. Only refactoring and documentation changes require no new tests. If you are adding functionality or fixing a bug, we need a test! We use [Minitest](https://github.com/seattlerb/minitest) in this project. If you're not familiar with Minitest and are comfortable with Rspec, please ask a contributor/collaborator to review your PR.
+5. Make the test pass. Always use `sample`, `shuffle`, and `rand` from the Base class (just like the rest of the code) rather than `Array#sample`, `Array#shuffle` and `Kernel#rand` to preserve the deterministic feature.
 
-5. Make the test pass. Always use `sample`, `shuffle`, and `rand` from
-the Base class (just like the rest of the code) rather than
-`Array#sample`, `Array#shuffle` and `Kernel#rand` to preserve the
-deterministic feature.
+6. We care about code coverage and use `SimpleCov` to analyze the code and generate test coverage reports. It's possible to check the test coverage by running  `bundle exec rake coverage_report`. Please make sure to not decrease our `current % covered`.
 
-6. We care about code coverage and use `SimpleCov` to analyze the code and generate
-test coverage reports. It's possible to check the test coverage by running 
-`bundle exec rake coverage_report`. Please make sure to not decrease our `current % covered`.
+7. When adding a new class, add a new yaml file to `lib/locales/en` rather than adding translations to `lib/locales/en.yml`.  For example, if you add Faker::MyThing, put your translations in `lib/locales/en/my_thing.yml`.  See [the locale README](./lib/locales/en/README.md) for more info.
 
-7. When adding a new class, add a new yaml file to
-`lib/locales/en` rather than adding translations to
-`lib/locales/en.yml`.  For example, if you add Faker::MyThing,
-put your translations in `lib/locales/en/my_thing.yml`.  See [the locale
-README](./lib/locales/en/README.md) for more info.
-
-8. Methods with optional arguments should use keyword rather than positional 
-arguments. An exception to this could be a method that takes only one 
-optional argument, and it's unlikely that that method would ever take more
-than one optional argument.
+8. Methods with optional arguments should use keyword rather than positional arguments. An exception to this could be a method that takes only one optional argument, and it's unlikely that that method would ever take more than one optional argument.
 
 9. Push to your fork and submit a pull request.
 

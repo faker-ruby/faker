@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'digest'
 require 'securerandom'
 
@@ -26,8 +28,8 @@ module Faker
         lv = 0
         str.split('').reverse.each_with_index { |v, i| lv += v.unpack('C')[0] * 256**i }
 
-        ret = ''
-        while lv > 0
+        ret = +''
+        while lv.positive?
           lv, mod = lv.divmod(base)
           ret << alphabet[mod]
         end
