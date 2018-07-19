@@ -17,6 +17,9 @@
 - [PR #1115](https://github.com/stympy/faker/pull/1115) Add Faker::Cosmere [@JauntyJames](https://github.com/JauntyJames)
 - [PR #801](https://github.com/stympy/faker/pull/801) Add Faker::NHS - Support for the British National Health Service [@substrakt-health](https://github.com/substrakt-health)
 
+### Suggestion
+- [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
+
 ------------------------------------------------------------------------------
 ## [v1.9.1](https://github.com/stympy/faker/tree/v1.9.1) (2018-07-11)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.7...v1.9.1)

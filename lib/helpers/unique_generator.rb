@@ -2,8 +2,15 @@
 
 module Faker
   class UniqueGenerator
+    @marked_unique = Set.new # Holds names of generators with unique values
+
+    class << self
+      attr_reader :marked_unique
+    end
+
     def initialize(generator, max_retries)
       @generator = generator
+      self.class.marked_unique.add(self)
       @max_retries = max_retries
       @previous_results = Hash.new { |hash, key| hash[key] = Set.new }
     end
@@ -34,7 +41,8 @@ module Faker
     end
 
     def self.clear
-      ObjectSpace.each_object(self, &:clear)
+      marked_unique.each(&:clear)
+      marked_unique.clear
     end
 
     def exclude(name, arguments, values)
