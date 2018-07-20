@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-equire_relative 'test_helper'
+require_relative 'test_helper'
 
 def setup
   @tester = Faker::GratefulDead
