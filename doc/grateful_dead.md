@@ -1,9 +1,7 @@
 # Faker::GratefulDead
 
 ```ruby
-Faker::GratefulDead.player #=> "Jerry Garcia"
-```
+  Faker::GratefulDead.player #=> "Jerry Garcia"
 
-```ruby
-Faker::GratefulDead.song #=> "China Cat Sunflower"
+  Faker::GratefulDead.song #=> "China Cat Sunflower"
 ```

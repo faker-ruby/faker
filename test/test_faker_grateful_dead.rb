@@ -1,15 +1,17 @@
 # frozen_string_literal: truer
 
-equire_relative 'test_helper'
+require_relative 'test_helper'
 
-def setup
-  @tester = Faker::GratefulDead
-end
+class TestFakerGratefulDead < Test::Unit::TestCase
+  def setup
+    @tester = Faker::GratefulDead
+  end
 
-def test_player
-  assert @tester.player.match(/\w/)
-end
+  def test_player
+    assert @tester.player.match(/\w/)
+  end
 
-def test_song
-  assert @tester.song.match(/\w/)
+  def test_song
+    assert @tester.song.match(/\w/)
+  end
 end
