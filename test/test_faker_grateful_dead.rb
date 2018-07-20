@@ -1,4 +1,4 @@
-# frozen_string_literal: truer
+# frozen_string_literal: true
 
 equire_relative 'test_helper'
 
