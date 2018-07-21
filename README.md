@@ -81,6 +81,7 @@ Contents
   - [Faker::FunnyName](doc/funny_name.md)
   - [Faker::GameOfThrones](doc/game_of_thrones.md)
   - [Faker::Gender](doc/gender.md)
+  - [Faker::GratefulDead](doc/grateful_dead.md)
   - [Faker::GreekPhilosophers](doc/greek_philosophers.md)
   - [Faker::Hacker](doc/hacker.md)
   - [Faker::HarryPotter](doc/harry_potter.md)
