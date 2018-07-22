@@ -43,6 +43,7 @@ Contents
   - [Faker::Business](doc/business.md)
   - [Faker::Cannabis](doc/cannabis.md)
   - [Faker::Cat](doc/cat.md)
+  - [Faker::ChileRut](doc/chile_rut.md)
   - [Faker::ChuckNorris](doc/chuck_norris.md)
   - [Faker::Code](doc/code.md)
   - [Faker::Coffee](doc/coffee.md)
