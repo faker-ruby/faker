@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 module Faker
-  class ChileRUT < Base
+  class ChileRut < Base
     class << self
-      @@last_RUT = nil
+      @last_rut = nil
 
       # Fixed param added for testing a specific RUT and check digit combination.
-      def RUT(min_RUT = 1, fixed = false)
-        @@last_RUT = fixed ? min_RUT : rand_in_range(min_RUT, 99_999_999)
+      def rut(min_rut = 1, fixed = false)
+        @last_rut = fixed ? min_rut : rand_in_range(min_rut, 99_999_999)
       end
 
       def dv
-        split_reversed_RUT = @@last_RUT.to_s.reverse.split('')
+        split_reversed_rut = @last_rut.to_s.reverse.split('')
         seq = [2, 3, 4, 5, 6, 7]
         i = 0
-        digit_sum = split_reversed_RUT.reduce(0) do |sum, n|
+        digit_sum = split_reversed_rut.reduce(0) do |sum, n|
           partial_result = sum.to_i + (n.to_i * seq[i])
           i = i == 5 ? 0 : i + 1
           partial_result
@@ -32,13 +34,11 @@ module Faker
         dv
       end
 
-      def full_RUT(min_RUT = 0, fixed = false)
-        "#{RUT(min_RUT, fixed)}-#{dv}"
+      def full_rut(min_rut = 0, fixed = false)
+        "#{rut(min_rut, fixed)}-#{dv}"
       end
 
-      def last_RUT
-        @@last_RUT
-      end
+      attr_reader :last_rut
     end
   end
 end
