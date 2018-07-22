@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Pokemon < Base
     class << self
@@ -7,6 +9,10 @@ module Faker
 
       def location
         fetch('pokemon.locations')
+      end
+
+      def move
+        fetch('pokemon.moves')
       end
     end
   end

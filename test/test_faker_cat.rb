@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerCat < Test::Unit::TestCase
   def setup
@@ -16,5 +18,4 @@ class TestFakerCat < Test::Unit::TestCase
   def test_registry
     assert @tester.registry.match(/\w+\.?/)
   end
-
 end

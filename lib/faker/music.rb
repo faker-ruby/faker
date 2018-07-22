@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Music < Base
     class << self
@@ -14,7 +16,7 @@ module Faker
       end
 
       def keys
-        ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+        %w[C D E F G A B]
       end
 
       def key_variants
@@ -27,6 +29,18 @@ module Faker
 
       def chord_types
         ['', 'maj', '6', 'maj7', 'm', 'm7', '-7', '7', 'dom7', 'dim', 'dim7', 'm7b5']
+      end
+
+      def band
+        fetch('music.bands')
+      end
+
+      def album
+        fetch('music.albums')
+      end
+
+      def genre
+        fetch('music.genres')
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Space < Base
     flexible :space
@@ -52,6 +54,10 @@ module Faker
 
       def meteorite
         fetch('space.meteorite')
+      end
+
+      def launch_vehicule
+        fetch('space.launch_vehicule')
       end
     end
   end

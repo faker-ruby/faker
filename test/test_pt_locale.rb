@@ -1,8 +1,10 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestPtLocale < Test::Unit::TestCase
   def setup
-    Faker::Config.locale = "pt"
+    Faker::Config.locale = 'pt'
   end
 
   def teardown

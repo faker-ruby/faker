@@ -1,9 +1,17 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
+
+module Faker
+  class TestFake
+    def self.a_class_method
+      'called a_class_method'
+    end
+  end
+end
 
 class TestFaker < Test::Unit::TestCase
-
-  def setup
-  end
+  def setup; end
 
   def test_numerify
     100.times do
@@ -66,13 +74,53 @@ class TestFaker < Test::Unit::TestCase
     Faker::Config.random = Random.new(42)
     assert v == Faker::Base.rand_in_range(0, 1000)
   end
-  
+
+  def test_parse
+    data = {
+      faker: {
+        simple: { lookup: 'a value' },
+        class: {
+          call_method: "\#{TestFake.a_class_method}",
+          use_translation: "\#{TestFake.use_i18n}"
+        },
+        test_fake: { use_i18n: 'used i18n for translation' }
+      }
+    }
+    I18n.backend.store_translations(Faker::Config.locale, data)
+
+    assert_equal(Faker::Base.parse('simple.lookup'), 'a value')
+    assert_equal(Faker::Base.parse('class.call_method'), 'called a_class_method')
+    assert_equal(Faker::Base.parse('class.use_translation'), 'used i18n for translation')
+  end
+
+  def test_rand_for_nil
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(nil)
+    end
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand
+    end
+  end
+
+  def test_rand_for_zero
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(0)
+    end
+    assert_equal 0, Faker::Base.rand(0)
+  end
+
+  def test_rand_for_range
+    assert_nothing_raised ArgumentError do
+      Faker::Base.rand(0..6)
+    end
+    assert_includes 0..6, Faker::Base.rand(0..6)
+  end
+
   def test_unique
-    unique_numbers = 8.times.map do
+    unique_numbers = Array.new(8) do
       Faker::Base.unique.numerify('#')
     end
 
     assert_equal(unique_numbers.uniq, unique_numbers)
   end
-
 end

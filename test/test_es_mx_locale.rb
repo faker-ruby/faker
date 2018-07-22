@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestEsMxLocale < Test::Unit::TestCase
   def setup
@@ -30,6 +32,11 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Address.secondary_address.is_a? String
   end
 
+  def test_es_mx_phone_number
+    assert Faker::PhoneNumber.phone_number.is_a? String
+    assert Faker::PhoneNumber.cell_phone.is_a? String
+  end
+
   def test_es_mx_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.prefix.is_a? String
@@ -43,5 +50,4 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.name.is_a? String
   end
-
 end

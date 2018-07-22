@@ -1,24 +1,26 @@
+# frozen_string_literal: true
+
 module Faker
   class Esport < Base
     class << self
       def player
-        fetch('esports.players')
+        fetch('esport.players')
       end
 
       def team
-        fetch('esports.teams')
+        fetch('esport.teams')
       end
 
       def league
-        fetch('esports.leagues')
+        fetch('esport.leagues')
       end
 
       def event
-        fetch('esports.events')
+        fetch('esport.events')
       end
 
       def game
-        fetch('esports.games')
+        fetch('esport.games')
       end
     end
   end

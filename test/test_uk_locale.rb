@@ -1,9 +1,11 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestUkLocale < Test::Unit::TestCase
   def setup
     @previous_locale = Faker::Config.locale
-    Faker::Config.locale = "uk"
+    Faker::Config.locale = 'uk'
   end
 
   def teardown
@@ -27,18 +29,22 @@ class TestUkLocale < Test::Unit::TestCase
   end
 
   def test_uk_city_prefix_absent
-    assert_equal("", Faker::Address.city_prefix)
+    assert_equal('', Faker::Address.city_prefix)
   end
 
   def test_uk_city_suffix_absent
-    assert_equal("", Faker::Address.city_suffix)
+    assert_equal('', Faker::Address.city_suffix)
   end
 
   def test_uk_states_do_not_have_abbreviations
-    assert_equal("", Faker::Address.state_abbr)
+    assert_equal('', Faker::Address.state_abbr)
   end
 
   def test_uk_company_prefix_returns_true_value
     assert_send([Faker::Company, :prefix])
+  end
+
+  def test_uk_romanize_cyrillic
+    assert Faker::Char.romanize_cyrillic('').is_a? String
   end
 end

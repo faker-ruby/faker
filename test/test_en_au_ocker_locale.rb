@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestEnAuOckerLocale < Test::Unit::TestCase
   def setup
@@ -18,7 +20,7 @@ class TestEnAuOckerLocale < Test::Unit::TestCase
   end
 
   def test_aussie_mobiles_start_with_04
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/,'')
+    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_equal '0', mobile[0]
     assert_equal '4', mobile[1]
   end
