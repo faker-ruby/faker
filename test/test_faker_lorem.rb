@@ -110,6 +110,7 @@ class TestFakerLorem < Test::Unit::TestCase
 
   def test_multibyte
     assert @tester.multibyte.is_a? String
+    assert %w[😀 ❤ 😡].include?(@tester.multibyte)
   end
 
   def test_paragraph_char_count
