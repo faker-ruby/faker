@@ -92,6 +92,7 @@ Contents
   - [Faker::Hobbit](doc/hobbit.md)
   - [Faker::HowIMetYourMother](doc/how_i_met_your_mother.md)
   - [Faker::IDNumber](doc/id_number.md)
+  - [Faker::IndustrySegments](doc/industry_segments.md)
   - [Faker::Internet](doc/internet.md)
   - [Faker::Invoice](doc/invoice.md)
   - [Faker::Job](doc/job.md)
