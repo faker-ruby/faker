@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class TestFakerIndustrySegments < Test::Unit::TestCase
-
   def setup
     @tester = Faker::IndustrySegments
   end
@@ -21,5 +22,4 @@ class TestFakerIndustrySegments < Test::Unit::TestCase
   def test_sub_sector
     assert @tester.sub_sector.match(/(\w+\.? ?){2,3}/)
   end
-
 end

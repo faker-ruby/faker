@@ -1,7 +1,7 @@
 en:
   faker:
     grateful_dead:
-      player: [ "Jerry Garcia",
+      players: [ "Jerry Garcia",
                 "Bob Weir",
                 "Bill Kreutzmann",
                 "Phil Lesh",
@@ -12,8 +12,7 @@ en:
                 "Keith Godchaux",
                 "Bruce Hornsby",
                 "John Barlow" ]
-
-      song: [ "Touch of Grey",
+      songs: [ "Touch of Grey",
               "Althea",
               "Ripple",
               "Truckin",

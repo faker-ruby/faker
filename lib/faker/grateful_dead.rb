@@ -4,11 +4,11 @@ module Faker
   class GratefulDead < Base
     class << self
       def player
-        fetch('grateful_dead.player')
+        fetch('grateful_dead.players')
       end
 
       def song
-        fetch('grateful_dead.song')
+        fetch('grateful_dead.songs')
       end
     end
   end

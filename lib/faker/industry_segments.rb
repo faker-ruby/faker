@@ -1,4 +1,5 @@
-# encoding: utf-8
+# frozen_string_literal: true
+
 module Faker
   class IndustrySegments < Base
     flexible :industry_segments
