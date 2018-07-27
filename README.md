@@ -40,6 +40,7 @@ Contents
   - [Faker::Boolean](doc/boolean.md)
   - [Faker::BossaNova](doc/bossa_nova.md)
   - [Faker::BreakingBad](doc/breaking_bad.md)
+  - [Faker::Buffy](doc/buffy.md)
   - [Faker::Business](doc/business.md)
   - [Faker::Cannabis](doc/cannabis.md)
   - [Faker::Cat](doc/cat.md)
