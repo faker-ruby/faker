@@ -16,11 +16,11 @@ module Faker
       end
 
       def big_bad
-        fetch('buffy.celebrities')
+        fetch('buffy.big_bads')
       end
 
       def episode
-        fetch('buffy.celebrities')
+        fetch('buffy.episodes')
       end
     end
   end
