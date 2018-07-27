@@ -2,7 +2,7 @@
 
 Available since version 1.9.1.
 
-A fun collection of hundreds of your favorite DC Comics Heroes, Heroines, Villains, Alter Egos and Side Characters. Enjoy!
+A fun collection of hundreds of your favorite DC Comics Heroes, Heroines, Villains, Alter Egos and Side Characters. Have fun!
 
 ```ruby
 Faker::DcComics.hero #=> "Batman"
