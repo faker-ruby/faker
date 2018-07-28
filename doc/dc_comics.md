@@ -1,6 +1,6 @@
 # Faker::DcComics
 
-Available since version 1.9.1.
+It might be available in the next version.
 
 A fun collection of hundreds of your favorite DC Comics Heroes, Heroines, Villains, Alter Egos and Side Characters. Have fun!
 
