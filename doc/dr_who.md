@@ -1,7 +1,7 @@
 # Faker::DrWho
 
 ```ruby
-Faker::DrWho.character    #=> "Captain Jack Harness"
+Faker::DrWho.character    #=> "Captain Jack Harkness"
 
 Faker::DrWho.the_doctor   #=> "Ninth Doctor"
 
