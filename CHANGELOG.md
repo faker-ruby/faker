@@ -11,6 +11,8 @@
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
 ### Feature Request
+- [PR #1319](https://github.com/stympy/faker/pull/1319) Added Faker::DC Comics [@JoelLindow](https://github.com/JoelLindow)
+- [PR #1320](https://github.com/stympy/faker/pull/1320) Add Faker::Buffy [@inveterateliterate](https://github.com/inveterateliterate)
 - [PR #1148](https://github.com/stympy/faker/pull/1148) Adding Industry Segments Class [@cdesch](https://github.com/cdesch)
 - [PR #893](https://github.com/stympy/faker/pull/893) Add Faker::ChileRut [@oxfist](https://github.com/oxfist)
 - [PR #1315](https://github.com/stympy/faker/pull/1315) Add Faker::GratefulDead [@wileybaba](https://github.com/wileybaba)
@@ -22,6 +24,9 @@
 
 ### Suggestion
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
+
+### Update/add locales
+- [PR #1316](https://github.com/stympy/faker/pull/1316) Add more dishes to the menu [@bjacquet](https://github.com/bjacquet)
 
 ------------------------------------------------------------------------------
 ## [v1.9.1](https://github.com/stympy/faker/tree/v1.9.1) (2018-07-11)
