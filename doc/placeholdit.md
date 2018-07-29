@@ -17,3 +17,18 @@ Faker::Placeholdit.image("50x50", 'jpeg', :random, :random) #=> "http://placehol
 
 Faker::Placeholdit.image("50x50", 'jpg', 'ffffff', '000', 'Some Custom Text') #=> "http://placehold.it/50x50.jpg/ffffff/000?text='Some Custom Text'"
 ```
+
+## Tips
+
+If you want to have this file downloaded, like in your tests, you could use this following piece of code:
+
+```ruby
+def image_file(size = '300x300', format = 'png', background_color = nil, text_color = nil, text = nil)
+  file = Tempfile.new("faker_placeholdit")
+  file.binmode
+  file << Net::HTTP.get(URI(Faker::Placeholdit.image(size, format, background_color, text_color, text)))
+  file.close
+
+  ::File.new(file.path)
+end
+```
