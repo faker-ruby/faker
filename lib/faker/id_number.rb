@@ -51,9 +51,7 @@ module Faker
           8
         ].join
 
-        checksum_digit = south_african_id_checksum_digit(id_number)
-
-        [id_number, checksum_digit].join
+        [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
       private
