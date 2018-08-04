@@ -43,10 +43,9 @@ module Faker
         "#{prefix}-#{digits}-#{check}"
       end
 
-      # YYMMDDNNNNCRP
       def valid_south_african_id_number
         id_number = [
-          south_african_id_date_of_birth,
+          Faker::Date.birthday.strftime('%y%m%d'),
           Faker::Number.number(4),
           [0, 1].sample(random: Faker::Config.random),
           8
@@ -58,14 +57,6 @@ module Faker
       end
 
       private
-
-      def south_african_id_date_of_birth
-        date_of_birth = Faker::Date.between(
-          ::Date.parse('1900-01-01'),
-          ::Date.parse('2018-01-01')
-        )
-        date_of_birth.strftime('%y%m%d')
-      end
 
       def south_african_id_checksum_digit(id_number)
         value_parts = id_number.chars
