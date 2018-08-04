@@ -43,7 +43,47 @@ module Faker
         "#{prefix}-#{digits}-#{check}"
       end
 
+      # YYMMDDNNNNCRP
+      def valid_south_african_id_number
+        id_number = [
+          south_african_id_date_of_birth,
+          Faker::Number.number(4),
+          [0, 1].sample(random: Faker::Config.random),
+          8
+        ].join
+
+        checksum_digit = south_african_id_checksum_digit(id_number)
+
+        [id_number, checksum_digit].join
+      end
+
       private
+
+      def south_african_id_date_of_birth
+        date_of_birth = Faker::Date.between(
+          ::Date.parse('1900-01-01'),
+          ::Date.parse('2018-01-01')
+        )
+        date_of_birth.strftime('%y%m%d')
+      end
+
+      def south_african_id_checksum_digit(id_number)
+        value_parts = id_number.chars
+        even_digits = value_parts
+                      .select
+                      .with_index { |_, i| (i + 1).even? }
+        odd_digits_without_last_character = value_parts[0...-1]
+                                            .select
+                                            .with_index { |_, i| (i + 1).odd? }
+
+        sum_of_odd_digits = odd_digits_without_last_character.map(&:to_i).reduce(:+)
+        even_digits_times_two = (even_digits.join('').to_i * 2).to_s
+        sum_of_even_digits = even_digits_times_two.chars.map(&:to_i).reduce(:+)
+
+        total_sum = sum_of_odd_digits + sum_of_even_digits
+
+        ((10 - (total_sum % 10)) % 10).to_s
+      end
 
       def _translate(key)
         parse("id_number.#{key}")

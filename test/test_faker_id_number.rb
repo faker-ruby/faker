@@ -47,4 +47,14 @@ class TestFakerIdNumber < Test::Unit::TestCase
     mod = "#{prefix}#{sample[2..8]}".to_i % 23
     assert_equal Faker::IDNumber::CHECKS[mod], sample[10]
   end
+
+  def test_valid_south_african_id_number
+    sample = @tester.valid_south_african_id_number
+    assert_equal 13, sample.length
+    assert_match(/^\d{13}$/, sample)
+    date_of_birth_string = "19#{sample[0..1]}/#{sample[2..3]}/#{sample[4..5]}}"
+    assert Date.parse(date_of_birth_string)
+    assert_include [0, 1], sample[10].to_i
+    assert_equal '8', sample[11]
+  end
 end
