@@ -54,6 +54,24 @@ module Faker
         [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
+      def invalid_south_african_id_number
+        invalid_date_of_birth = [
+          Faker::Number.number(2),
+          Faker::Number.between(13, 99),
+          Faker::Number.number(32, 99)
+        ].map(&:to_s)
+        .join
+
+        id_number = [
+          invalid_date_of_birth,
+          Faker::Number.number(4),
+          [0, 1].sample(random: Faker::Config.random),
+          8
+        ].join
+
+        [id_number, south_african_id_checksum_digit(id_number)].join
+      end
+
       private
 
       def south_african_id_checksum_digit(id_number)

@@ -52,9 +52,21 @@ class TestFakerIdNumber < Test::Unit::TestCase
     sample = @tester.valid_south_african_id_number
     assert_equal 13, sample.length
     assert_match(/^\d{13}$/, sample)
-    date_of_birth_string = "19#{sample[0..1]}/#{sample[2..3]}/#{sample[4..5]}}"
-    assert Date.parse(date_of_birth_string)
     assert_include [0, 1], sample[10].to_i
     assert_equal '8', sample[11]
+    date_of_birth_string = "19#{sample[0..1]}/#{sample[2..3]}/#{sample[4..5]}}"
+    assert Date.parse(date_of_birth_string)
+  end
+
+  def test_invalid_south_african_id_number
+    sample = @tester.invalid_south_african_id_number
+    assert_equal 13, sample.length
+    assert_match(/^\d{13}$/, sample)
+    assert_include [0, 1], sample[10].to_i
+    assert_equal '8', sample[11]
+    date_of_birth_string = "19#{sample[0..1]}/#{sample[2..3]}/#{sample[4..5]}}"
+    assert_raises ArgumentError do
+      Date.parse(date_of_birth_string)
+    end
   end
 end
