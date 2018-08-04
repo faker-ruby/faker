@@ -10,6 +10,8 @@ module Faker
       /666-\d{2}-\d{4}/,
       /9\d{2}-\d{2}-\d{4}/
     ].freeze
+    ZA_RACE_DIGIT = '8'
+    ZA_CITIZENSHIP_DIGITS = %w[0 1].freeze
 
     class << self
       def valid
@@ -47,8 +49,8 @@ module Faker
         id_number = [
           Faker::Date.birthday.strftime('%y%m%d'),
           Faker::Number.number(4),
-          [0, 1].sample(random: Faker::Config.random),
-          8
+          ZA_CITIZENSHIP_DIGITS.sample(random: Faker::Config.random),
+          ZA_RACE_DIGIT
         ].join
 
         [id_number, south_african_id_checksum_digit(id_number)].join
@@ -64,8 +66,8 @@ module Faker
         id_number = [
           invalid_date_of_birth,
           Faker::Number.number(4),
-          [0, 1].sample(random: Faker::Config.random),
-          8
+          ZA_CITIZENSHIP_DIGITS.sample(random: Faker::Config.random),
+          ZA_RACE_DIGIT
         ].join
 
         [id_number, south_african_id_checksum_digit(id_number)].join
