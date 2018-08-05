@@ -142,6 +142,7 @@ Contents
   - [Faker::SingularSiegler](doc/singular_siegler.md)
   - [Faker::SlackEmoji](doc/slack_emoji.md)
   - [Faker::Source](doc/source.md)
+  - [Faker::SouthAfrica](doc/south_africa.md)
   - [Faker::SouthPark](doc/south_park.md)
   - [Faker::Space](doc/space.md)
   - [Faker::StarTrek](doc/star_trek.md)
