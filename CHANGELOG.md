@@ -11,6 +11,7 @@
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
 ### Feature Request
+- [PR #1324](https://github.com/stympy/faker/pull/1319) Add Faker::SouthAfrica [@bradleymarques](https://github.com/bradleymarques)
 - [PR #1319](https://github.com/stympy/faker/pull/1319) Added Faker::DC Comics [@JoelLindow](https://github.com/JoelLindow)
 - [PR #1320](https://github.com/stympy/faker/pull/1320) Add Faker::Buffy [@inveterateliterate](https://github.com/inveterateliterate)
 - [PR #1148](https://github.com/stympy/faker/pull/1148) Adding Industry Segments Class [@cdesch](https://github.com/cdesch)
