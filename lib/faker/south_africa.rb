@@ -3,6 +3,10 @@
 module Faker
   class SouthAfrica < Base
     class << self
+      def id_number
+        Faker::IDNumber.south_african_id_number
+      end
+
       def valid_id_number
         Faker::IDNumber.valid_south_african_id_number
       end

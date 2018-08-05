@@ -7,6 +7,13 @@ class TestFakerSouthAfrica < Test::Unit::TestCase
     @tester = Faker::SouthAfrica
   end
 
+  def test_id_number
+    stubbed_id_number = '7201010001081'
+    Faker::IDNumber.stub :south_african_id_number, stubbed_id_number do
+      assert_equal stubbed_id_number, @tester.id_number
+    end
+  end
+
   def test_valid_id_number
     stubbed_id_number = '7201010001081'
     Faker::IDNumber.stub :valid_south_african_id_number, stubbed_id_number do

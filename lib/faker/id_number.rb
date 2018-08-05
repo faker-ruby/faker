@@ -56,6 +56,8 @@ module Faker
         [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
+      alias south_african_id_number valid_south_african_id_number
+
       def invalid_south_african_id_number
         invalid_date_of_birth = [
           Faker::Number.number(2),

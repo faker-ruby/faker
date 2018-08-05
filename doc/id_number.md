@@ -14,6 +14,8 @@ Faker::IDNumber.spanish_citizen_number #=> "53290236-H"
 Faker::IDNumber.spanish_foreign_citizen_number #=> "Z-1600870-Y"
 
 # Generate a valid South African ID Number
+Faker::IDNumber.south_african_id_number #=> "8105128870184"
+# or
 Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
 
 # Generate an invalid South African ID Number
