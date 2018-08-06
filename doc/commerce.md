@@ -12,8 +12,8 @@ Faker::Commerce.material #=> "Steel"
 
 Faker::Commerce.product_name #=> "Practical Granite Shirt"
 
-Faker::Commerce.price #=> "44.6"
-Faker::Commerce.price(range = 0..10.0, as_string = false) #=> "2.18"
+Faker::Commerce.price #=> 44.6
+Faker::Commerce.price(range = 0..10.0, as_string = true) #=> "2.18"
 
 # Generate a random promotion code.
 # Optional argument digits = 6 for number of random digits in suffix
