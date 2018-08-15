@@ -3,23 +3,22 @@
 require_relative 'test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
+  WORD_MATCH = /\w+\.?/
+
   def setup
     @tester = Faker::Vehicle
-    @vin_chars = '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'
-    @vin_map = '0123456789X'
-    @vin_weights = '8765432X098765432'
   end
 
   def test_vin
-    vin = @tester.vin
-    checksum = vin_checksum(vin)
-
-    assert vin.length == 17
-    assert vin[8] == checksum
+    assert_match Faker::Vehicle::VIN_REGEX, @tester.vin
   end
 
   def test_manufacture
-    assert @tester.manufacture.match(/\w+\.?/)
+    assert_match WORD_MATCH, @tester.manufacture
+  end
+
+  def test_color
+    assert_match WORD_MATCH, @tester.color
   end
 
   def test_flexible_key
@@ -28,94 +27,84 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert flexible_key == :vehicle
   end
 
-  def test_mileage
-    mileage = @tester.mileage
-    assert mileage >= 10_000
-    assert mileage < 90_000
-  end
-
-  def test_year
-    year = @tester.year
-    assert year >= 2005
-    assert year <= ::Time.now.year
-  end
-
-  def test_make
-    assert @tester.make.match(/\w+\.?/)
-  end
-
-  def test_model
-    assert @tester.model.match(/\w+\.?/)
-  end
-
-  def test_model_with_make
-    assert @tester.model('Toyota').match(/\w+\.?/)
-  end
-
-  def test_make_and_model
-    assert @tester.make_and_model.match(/\w+\s\w+/)
-  end
-
-  def test_style
-    assert @tester.style.match(/\w+\.?/)
-  end
-
-  def test_color
-    assert @tester.color.match(/\w+\.?/)
-  end
-
   def test_transmission
-    assert @tester.transmission.match(/\w+\.?/)
+    assert_match WORD_MATCH, @tester.transmission
   end
 
   def test_drive_type
-    assert @tester.drive_type.match(/\w+\.?/)
+    assert_match WORD_MATCH, @tester.drive_type
   end
 
   def test_fuel_type
-    assert @tester.fuel_type.match(/\w+\.?/)
+    assert_match WORD_MATCH, @tester.fuel_type
   end
 
-  def test_door_count
-    assert @tester.door_count.match(/\d Door/)
+  def test_style
+    assert_match WORD_MATCH, @tester.style
   end
 
   def test_car_type
-    assert @tester.car_type.match(/\w+\.?/)
+    assert_match WORD_MATCH, @tester.car_type
+  end
+
+  def test_doors
+    doors_condition(@tester.doors)
   end
 
   def test_engine
     assert @tester.engine.match(/\d Cylinder Engine/)
   end
 
-  def test_engine_size
-    assert @tester.engine_size.match(/\d Cylinder Engine/)
+  def test_mileage
+    mileage = @tester.mileage(5, 10)
+
+    assert mileage >= 5 && mileage <= 10
+  end
+
+  def test_license_plate
+    assert_match WORD_MATCH, @tester.license_plate
+  end
+
+  def test_license_plate_with_params
+    assert_match WORD_MATCH, @tester.license_plate('CA')
+  end
+
+  def test_make
+    assert_match WORD_MATCH, @tester.make
+  end
+
+  def test_model
+    assert_match WORD_MATCH, @tester.model
+  end
+
+  def test_model_with_make
+    assert_match WORD_MATCH, @tester.model('Toyota')
+  end
+
+  def test_make_and_model
+    assert_match WORD_MATCH, @tester.make_and_model
+  end
+
+  def test_door_count
+    doors_condition(@tester.door_count)
   end
 
   def test_car_options
     car_options = @tester.car_options
-    assert car_options.length >= 5
-    assert car_options.length < 10
+
+    assert car_options.length >= 5 && car_options.length < 10
   end
 
   def test_standard_specs
     standard_specs = @tester.standard_specs
-    assert standard_specs.length >= 5
-    assert standard_specs.length < 10
+
+    assert standard_specs.length >= 5 && standard_specs.length < 10
   end
 
   private
 
-  def transliterate(character)
-    @vin_chars.index(character) % 10
-  end
-
-  def calculate_vin_weight(character, idx)
-    transliterate(character) * @vin_map.index(@vin_weights[idx])
-  end
-
-  def vin_checksum(vin)
-    checksum_index = vin.split('').each_with_index.map(&method(:calculate_vin_weight)).inject(:+)
-    @vin_map[checksum_index % 11]
+  def doors_condition(doors)
+    assert doors.positive?
+    assert doors.is_a?(Integer)
   end
 end

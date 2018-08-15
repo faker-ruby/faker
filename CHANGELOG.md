@@ -92,6 +92,7 @@
 - [PR #1210](https://github.com/stympy/faker/pull/1210) Add coveralls [@vbrazo](https://github.com/vbrazo)
 - [PR #924](https://github.com/stympy/faker/pull/924) Rubocop + fixes [@stephengroat](https://github.com/stephengroat)
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
+- [PR #1130](https://github.com/stympy/faker/pull/1130) Faker::Vehicle API updates [@lucasqueiroz](https://github.com/lucasqueiroz)
 
 ### Update/add locales
 - [PR #1297](https://github.com/stympy/faker/pull/1297) Faker::WorldCup updates [@JoaoHenriqueVale](https://github.com/JoaoHenriqueVale)
