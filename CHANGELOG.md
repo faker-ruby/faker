@@ -14,6 +14,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1130](https://github.com/stympy/faker/pull/1130) Faker::Vehicle API updates [@lucasqueiroz](https://github.com/lucasqueiroz)
 - [PR #1324](https://github.com/stympy/faker/pull/1319) Add Faker::SouthAfrica [@bradleymarques](https://github.com/bradleymarques)
 - [PR #1319](https://github.com/stympy/faker/pull/1319) Added Faker::DC Comics [@JoelLindow](https://github.com/JoelLindow)
 - [PR #1320](https://github.com/stympy/faker/pull/1320) Add Faker::Buffy [@inveterateliterate](https://github.com/inveterateliterate)
@@ -30,6 +31,8 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1332](https://github.com/stympy/faker/pull/1332) Fix typo in buffy.big_bads [@tragiclifestories](https://github.com/tragiclifestories)
+- [PR #1327](https://github.com/stympy/faker/pull/1327) fixed 2 quotes [@MinimumViablePerson](https://github.com/MinimumViablePerson)
 - [PR #1316](https://github.com/stympy/faker/pull/1316) Add more dishes to the menu [@bjacquet](https://github.com/bjacquet)
 
 ------------------------------------------------------------------------------
@@ -92,7 +95,6 @@
 - [PR #1210](https://github.com/stympy/faker/pull/1210) Add coveralls [@vbrazo](https://github.com/vbrazo)
 - [PR #924](https://github.com/stympy/faker/pull/924) Rubocop + fixes [@stephengroat](https://github.com/stephengroat)
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
-- [PR #1130](https://github.com/stympy/faker/pull/1130) Faker::Vehicle API updates [@lucasqueiroz](https://github.com/lucasqueiroz)
 
 ### Update/add locales
 - [PR #1297](https://github.com/stympy/faker/pull/1297) Faker::WorldCup updates [@JoaoHenriqueVale](https://github.com/JoaoHenriqueVale)
