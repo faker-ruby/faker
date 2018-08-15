@@ -10,8 +10,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_vin
-    vin = @tester.vin('11111111011111111')
-    assert vin == '11111111111111111'
+    assert_match Faker::Vehicle::VIN_REGEX, @tester.vin
   end
 
   def test_manufacture
@@ -24,6 +23,7 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def test_flexible_key
     flexible_key = @tester.instance_variable_get('@flexible_key')
+
     assert flexible_key == :vehicle
   end
 
@@ -48,9 +48,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_doors
-    doors = @tester.doors
-    assert doors > 0
-    assert doors.is_a?(Integer)
+    doors_condition(@tester.doors)
   end
 
   def test_engine
@@ -59,13 +57,16 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def test_mileage
     mileage = @tester.mileage(5, 10)
-    assert mileage >= 5
-    assert mileage <= 10
+
+    assert mileage >= 5 && mileage <= 10
   end
 
   def test_license_plate
-    license_plate = @tester.license_plate
-    assert license_plate.match(/^[A-Z]{3}\S[1-9]{4}$/)
+    assert_match WORD_MATCH, @tester.license_plate
+  end
+
+  def test_license_plate_with_params
+    assert_match WORD_MATCH, @tester.license_plate('CA')
   end
 
   def test_make
@@ -85,20 +86,25 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_door_count
-    doors = @tester.door_count
-    assert doors > 0
-    assert doors.is_a?(Integer)
+    doors_condition(@tester.door_count)
   end
 
   def test_car_options
     car_options = @tester.car_options
-    assert car_options.length >= 5
-    assert car_options.length < 10
+
+    assert car_options.length >= 5 && car_options.length < 10
   end
 
   def test_standard_specs
     standard_specs = @tester.standard_specs
-    assert standard_specs.length >= 5
-    assert standard_specs.length < 10
+
+    assert standard_specs.length >= 5 && standard_specs.length < 10
+  end
+
+  private
+
+  def doors_condition(doors)
+    assert doors.positive?
+    assert doors.is_a?(Integer)
   end
 end
