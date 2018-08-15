@@ -10,19 +10,92 @@ en-ZA:
        KwaZulu-Natal, Mpumalanga, Eastern Cape]
       province:
         - "#{provinces}"
-      cities: [ Polokwane, Johannesburg, Pretoria, Tshwane,Durban, 
-        Pietermaritzburg, Nelspruit, Cape Town, Stellenbosch, Port Elizabeth, 
-        East London, Kimberley, Rustenburg, Bloemfontein ] 
+      cities: [ Polokwane, Johannesburg, Pretoria, Tshwane,Durban,
+        Pietermaritzburg, Nelspruit, Cape Town, Stellenbosch, Port Elizabeth,
+        East London, Kimberley, Rustenburg, Bloemfontein ]
       city:
           - "#{cities}"
     phone_number:
       # https://en.wikipedia.org/wiki/Telephone_numbers_in_South_Africa
-      dial_code: ['10', '11', '12', '13', '14', '15', '16', '17', '18', '21', '22', '23', '24', '27', '28', '31', '32', '33', '34', '35', '36', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '51', '53', '54', '56', '57', '58']
-      exchange_code: ["201", "202", "203", "205", "206", "207", "208", "209", "210", "212", "213", "214", "215", "216", "217", "218", "219", "224", "225", "227", "228", "229", "231", "234", "239", "240", "248", "251", "252", "253", "254", "256", "260", "262", "267", "269", "270", "276", "281", "283", "301", "302", "303", "304", "305", "307", "308", "309", "310", "312", "313", "314", "315", "316", "317", "318", "319", "320", "321", "323", "330", "331", "334", "336", "337", "339", "347", "351", "352", "360", "361", "386", "401", "402", "404", "405", "406", "407", "408", "409", "410", "412", "413", "414", "415", "417", "419", "423", "424", "425", "434", "435", "440", "443", "445", "464", "469", "470", "475", "478", "479", "480", "484", "501", "502", "503", "504", "505", "507", "508", "509", "510", "512", "513", "515", "516", "517", "518", "520", "530", "540", "541", "551", "557", "559", "561", "562", "563", "564", "567", "570", "571", "573", "574", "580", "585", "586", "601", "602", "603", "605", "606", "607", "608", "609", "610", "612", "614", "615", "616", "617", "618", "619", "620", "623", "626", "630", "631", "636", "641", "646", "650", "651", "660", "661", "662", "667", "678", "682", "701", "702", "703", "704", "706", "707", "708", "712", "713", "714", "715", "716", "717", "718", "719", "720", "724", "727", "731", "732", "734", "737", "740", "754", "757", "760", "763", "765", "770", "772", "773", "774", "775", "781", "785", "786", "801", "802", "803", "804", "805", "806", "808", "810", "812", "813", "814", "815", "816", "817", "818", "828", "830", "831", "832", "835", "843", "845", "847", "848", "850", "856", "857", "858", "859", "860", "862", "863", "864", "865", "870", "872", "878", "901", "903", "904", "906", "907", "908", "909", "910", "912", "913", "914", "915", "916", "917", "918", "919", "920", "925", "928", "931", "936", "937", "940", "941", "947", "949", "952", "954", "956", "959", "970", "971", "972", "973", "975", "978", "979", "980", "984", "985", "989"]
       formats:
-        - "0#{PhoneNumber.dial_code}-#{PhoneNumber.exchange_code} ####"
-        - "(0#{PhoneNumber.dial_code}) #{PhoneNumber.exchange_code}-####"
-        - "27#{PhoneNumber.dial_code}-#{PhoneNumber.exchange_code} ####"
+        # National Dialling codes
+        - "010 ### ####" # New overlay plan for Johannesburg
+        - "011 ### ####" # Witwatersrand region around Johannesburg, currently code for entire Greater Johannesburg
+        - "012 ### ####" # Pretoria and surrounding towns (also includes Brits)
+        - "013 ### ####" # Eastern Gauteng (Bronkhorstspruit) and Western and northern Mpumalanga: Middelburg, Witbank and Nelspruit
+        - "014 ### ####" # Northern North West and Southwestern Limpopo: Rustenburg and Modimolle
+        - "015 ### ####" # Northern and Eastern Limpopo: Polokwane
+        - "016 ### ####" # Vaal Triangle: Vereeniging, Vanderbijlpark and Sasolburg, which constitutes an anomaly, since Sasolburg isn't the old Transvaal.
+        - "017 ### ####" # Southern Mpumalanga: Ermelo
+        - "018 ### ####" # Southern North West: Lichtenburg, Potchefstroom and Klerksdorp
+        - "021 ### ####" # Cape Town metropole and surrounds, including Stellenbosch, Somerset West and Gordon's Bay
+        - "022 ### ####" # Boland and West Coast: Malmesbury
+        - "023 ### ####" # Worcester and greater Karoo, including Beaufort West
+        - "024 ### ####" # Somerset West (Became 021 in 1996)
+        - "027 ### ####" # Namaqualand (Northern Cape): Vredendal, Calvinia, Clanwilliam, Springbok, Alexander Bay, Port Nolloth
+        - "028 ### ####" # Southern region: Swellendam and Caledon / Hermanus region.
+        - "031 ### ####" # Durban
+        - "032 ### ####" # KZN North coast region: Verulam, Tongaat, Ballito and Stanger
+        - "033 ### ####" # Pietermaritzburg and KwaZulu-Natal Midlands
+        - "034 ### ####" # Vryheid, Newcastle and Northern KZN
+        - "035 ### ####" # Zululand region: St. Lucia, Richards Bay, Ulundi
+        - "036 ### ####" # Drakensberg region: Ladysmith
+        - "039 ### ####" # South coast: Port Shepstone and interior, and Eastern Pondoland (in Eastern Cape)
+        - "040 ### ####" # Bhisho
+        - "041 ### ####" # Port Elizabeth and Uitenhage
+        - "042 ### ####" # Southern region: Humansdorp
+        - "043 ### ####" # East London and surrounds
+        - "044 ### ####" # Garden Route, including Oudtshoorn, Knysna, Plettenberg Bay, Mossel Bay and George
+        - "045 ### ####" # Central region: Queenstown
+        - "046 ### ####" # Southern region: Grahamstown, Bathurst, Port Alfred, Kenton-on-Sea
+        - "047 ### ####" # Mthatha / most of previous Transkei
+        - "048 ### ####" # Northern region: Steynsburg
+        - "049 ### ####" # Western region: Graaff-Reinet
+        - "051 ### ####" # Central and southern region: Bloemfontein, and Aliwal North in E Cape
+        - "053 ### ####" # Kimberley, eastern part of Northern Cape, far west of NW province
+        - "054 ### ####" # Upington, Gordonia region
+        - "056 ### ####" # Northern Free State: Kroonstad
+        - "057 ### ####" # Northern Free State: Welkom (Goldfields region)
+        - "058 ### ####" # Eastern Free State: Bethlehem
+        # International Dialling codes
+        - "+2710 ### ####" # New overlay plan for Johannesburg
+        - "+2711 ### ####" # Witwatersrand region around Johannesburg, currently code for entire Greater Johannesburg
+        - "+2712 ### ####" # Pretoria and surrounding towns (also includes Brits)
+        - "+2713 ### ####" # Eastern Gauteng (Bronkhorstspruit) and Western and northern Mpumalanga: Middelburg, Witbank and Nelspruit
+        - "+2714 ### ####" # Northern North West and Southwestern Limpopo: Rustenburg and Modimolle
+        - "+2715 ### ####" # Northern and Eastern Limpopo: Polokwane
+        - "+2716 ### ####" # Vaal Triangle: Vereeniging, Vanderbijlpark and Sasolburg, which constitutes an anomaly, since Sasolburg isn't the old Transvaal.
+        - "+2717 ### ####" # Southern Mpumalanga: Ermelo
+        - "+2718 ### ####" # Southern North West: Lichtenburg, Potchefstroom and Klerksdorp
+        - "+2721 ### ####" # Cape Town metropole and surrounds, including Stellenbosch, Somerset West and Gordon's Bay
+        - "+2722 ### ####" # Boland and West Coast: Malmesbury
+        - "+2723 ### ####" # Worcester and greater Karoo, including Beaufort West
+        - "+2724 ### ####" # Somerset West (Became 021 in 1996)
+        - "+2727 ### ####" # Namaqualand (Northern Cape): Vredendal, Calvinia, Clanwilliam, Springbok, Alexander Bay, Port Nolloth
+        - "+2728 ### ####" # Southern region: Swellendam and Caledon / Hermanus region.
+        - "+2731 ### ####" # Durban
+        - "+2732 ### ####" # KZN North coast region: Verulam, Tongaat, Ballito and Stanger
+        - "+2733 ### ####" # Pietermaritzburg and KwaZulu-Natal Midlands
+        - "+2734 ### ####" # Vryheid, Newcastle and Northern KZN
+        - "+2735 ### ####" # Zululand region: St. Lucia, Richards Bay, Ulundi
+        - "+2736 ### ####" # Drakensberg region: Ladysmith
+        - "+2739 ### ####" # South coast: Port Shepstone and interior, and Eastern Pondoland (in Eastern Cape)
+        - "+2740 ### ####" # Bhisho
+        - "+2741 ### ####" # Port Elizabeth and Uitenhage
+        - "+2742 ### ####" # Southern region: Humansdorp
+        - "+2743 ### ####" # East London and surrounds
+        - "+2744 ### ####" # Garden Route, including Oudtshoorn, Knysna, Plettenberg Bay, Mossel Bay and George
+        - "+2745 ### ####" # Central region: Queenstown
+        - "+2746 ### ####" # Southern region: Grahamstown, Bathurst, Port Alfred, Kenton-on-Sea
+        - "+2747 ### ####" # Mthatha / most of previous Transkei
+        - "+2748 ### ####" # Northern region: Steynsburg
+        - "+2749 ### ####" # Western region: Graaff-Reinet
+        - "+2751 ### ####" # Central and southern region: Bloemfontein, and Aliwal North in E Cape
+        - "+2753 ### ####" # Kimberley, eastern part of Northern Cape, far west of NW province
+        - "+2754 ### ####" # Upington, Gordonia region
+        - "+2756 ### ####" # Northern Free State: Kroonstad
+        - "+2757 ### ####" # Northern Free State: Welkom (Goldfields region)
+        - "+2758 ### ####" # Eastern Free State: Bethlehem
     cell_phone:
       formats:
         # vodacom
@@ -32,20 +105,35 @@ en-ZA:
         - "+2779 ### ####"
         - "+2760 ### ####"
         - "+2761 ### ####"
+        - "082 ### ####"
+        - "072 ### ####"
+        - "076 ### ####"
+        - "079 ### ####"
+        - "060 ### ####"
+        - "061 ### ####"
         # mtn
         - "+2783 ### ####"
         - "+2773 ### ####"
         - "+2763 ### ####"
+        - "083 ### ####"
+        - "073 ### ####"
+        - "063 ### ####"
         # 8ta
         - "+2781 ### ####"
         - "+2761 ### ####"
+        - "081 ### ####"
+        - "061 ### ####"
         # cell-c
         - "+2784 ### ####"
         - "+2774 ### ####"
+        - "084 ### ####"
+        - "074 ### ####"
     name:
       last_name: [Dlamini, Zulu, Mabunda, Makhanya, Khoza, Zuma, Zondi]
       first_name: [Rapulane, Nthabiseng, Kopano, Mpho, Lungelo,
         Ziyanda, Nqobile, Monde]
 
+    # Can produce an invalid South African ID Number
+    # (See Faker::SouthAfrica.valid_id_number for alternative)
     id_number:
       formats: ["##########08#"]

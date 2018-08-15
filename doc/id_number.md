@@ -8,8 +8,16 @@ Faker::IDNumber.valid #=> "552-56-3593"
 Faker::IDNumber.invalid #=> "311-72-0000"
 
 # Generate a Spanish citizen identifier (DNI)
-Faker::IDNumber.spanish_citizen_number
+Faker::IDNumber.spanish_citizen_number #=> "53290236-H"
 
 # Generate a Spanish foreign born citizen identifier (NIE)
-Faker::IDNumber.spanish_foreign_citizen_number
+Faker::IDNumber.spanish_foreign_citizen_number #=> "Z-1600870-Y"
+
+# Generate a valid South African ID Number
+Faker::IDNumber.south_african_id_number #=> "8105128870184"
+# or
+Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
+
+# Generate an invalid South African ID Number
+Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
 ```

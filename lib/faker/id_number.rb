@@ -10,6 +10,8 @@ module Faker
       /666-\d{2}-\d{4}/,
       /9\d{2}-\d{2}-\d{4}/
     ].freeze
+    ZA_RACE_DIGIT = '8'
+    ZA_CITIZENSHIP_DIGITS = %w[0 1].freeze
 
     class << self
       def valid
@@ -43,7 +45,55 @@ module Faker
         "#{prefix}-#{digits}-#{check}"
       end
 
+      def valid_south_african_id_number
+        id_number = [
+          Faker::Date.birthday.strftime('%y%m%d'),
+          Faker::Number.number(4),
+          ZA_CITIZENSHIP_DIGITS.sample(random: Faker::Config.random),
+          ZA_RACE_DIGIT
+        ].join
+
+        [id_number, south_african_id_checksum_digit(id_number)].join
+      end
+
+      alias south_african_id_number valid_south_african_id_number
+
+      def invalid_south_african_id_number
+        invalid_date_of_birth = [
+          Faker::Number.number(2),
+          Faker::Number.between(13, 99),
+          Faker::Number.between(32, 99)
+        ].map(&:to_s).join
+
+        id_number = [
+          invalid_date_of_birth,
+          Faker::Number.number(4),
+          ZA_CITIZENSHIP_DIGITS.sample(random: Faker::Config.random),
+          ZA_RACE_DIGIT
+        ].join
+
+        [id_number, south_african_id_checksum_digit(id_number)].join
+      end
+
       private
+
+      def south_african_id_checksum_digit(id_number)
+        value_parts = id_number.chars
+        even_digits = value_parts
+                      .select
+                      .with_index { |_, i| (i + 1).even? }
+        odd_digits_without_last_character = value_parts[0...-1]
+                                            .select
+                                            .with_index { |_, i| (i + 1).odd? }
+
+        sum_of_odd_digits = odd_digits_without_last_character.map(&:to_i).reduce(:+)
+        even_digits_times_two = (even_digits.join('').to_i * 2).to_s
+        sum_of_even_digits = even_digits_times_two.chars.map(&:to_i).reduce(:+)
+
+        total_sum = sum_of_odd_digits + sum_of_even_digits
+
+        ((10 - (total_sum % 10)) % 10).to_s
+      end
 
       def _translate(key)
         parse("id_number.#{key}")
