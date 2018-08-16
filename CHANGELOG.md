@@ -3,6 +3,7 @@
 ## HEAD Unreleased
 
 ### Bug/Fixes
+- [PR #1334](https://github.com/stympy/faker/pull/1334) Faker::Number.leading_zero_number should always start with 0 [@vbrazo](https://github.com/vbrazo)
 - [PR #1317](https://github.com/stympy/faker/pull/1317) Change Faker::Lorem.multibyte logic [@ShabelnikM](https://github.com/ShabelnikM)
 - [PR #527](https://github.com/stympy/faker/pull/527) Fix time period test that could result in a flake test within 15 days [@melonhead901](https://github.com/melonhead901)
 - [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
