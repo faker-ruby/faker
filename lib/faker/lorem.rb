@@ -31,7 +31,7 @@ module Faker
       end
 
       def multibyte
-        sample('faker.multibyte')
+        sample(translate('faker.lorem.multibyte')).pack('C*').force_encoding('utf-8')
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 0)
