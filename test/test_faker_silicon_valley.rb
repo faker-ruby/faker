@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerSiliconValley < Test::Unit::TestCase
   def setup
@@ -15,5 +17,25 @@ class TestFakerSiliconValley < Test::Unit::TestCase
 
   def test_quotes
     assert @tester.quote.match(/\w+/)
+  end
+
+  def test_apps
+    assert @tester.app.match(/\w+/)
+  end
+
+  def test_inventions
+    assert @tester.invention.match(/\w+/)
+  end
+
+  def test_mottos
+    assert @tester.motto.match(/\w+/)
+  end
+
+  def test_urls
+    assert @tester.url.match(/\w+/)
+  end
+
+  def test_email
+    assert @tester.email.match(/\w+/)
   end
 end

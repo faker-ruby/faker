@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestEnIndLocale < Test::Unit::TestCase
   def setup
@@ -28,5 +30,4 @@ class TestEnIndLocale < Test::Unit::TestCase
   def test_en_ind_city
     assert_match(/(\w+\.? ?){2,3}/, Faker::Address.city)
   end
-
 end

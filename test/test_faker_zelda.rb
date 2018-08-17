@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerZelda < Test::Unit::TestCase
   def setup
@@ -15,5 +17,9 @@ class TestFakerZelda < Test::Unit::TestCase
 
   def test_location
     assert @tester.location.match(/\w+\.?/)
+  end
+
+  def test_item
+    assert @tester.item.match(/\w+\.?/)
   end
 end

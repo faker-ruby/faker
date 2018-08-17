@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestDeLocale < Test::Unit::TestCase
   def setup
@@ -35,12 +37,10 @@ class TestDeLocale < Test::Unit::TestCase
     assert Faker::Book.author.is_a? String
     assert Faker::Book.publisher.is_a? String
 
-
-
     assert Faker::Food.ingredient.is_a? String
     assert Faker::Food.spice.is_a? String
     assert Faker::Food.measurement.is_a? String
-    
+
     assert Faker::Music.instrument.is_a? String
 
     assert Faker::Pokemon.name.is_a? String
@@ -57,7 +57,7 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_cell_phone_countrycode
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/,'')
+    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_equal '4', mobile[0]
     assert_equal '9', mobile[1]
   end

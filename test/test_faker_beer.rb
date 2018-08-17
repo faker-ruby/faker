@@ -1,7 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerBeer < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Beer
   end
@@ -37,5 +38,4 @@ class TestFakerBeer < Test::Unit::TestCase
   def test_blg
     assert @tester.blg.match(/(\w+\.? ?){2,3}/)
   end
-
 end

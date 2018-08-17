@@ -1,5 +1,7 @@
 # Faker::TwinPeaks
 
+Available since version 1.7.0.
+
 ```ruby
 Faker::TwinPeaks.character #=> "Dale Cooper"
 

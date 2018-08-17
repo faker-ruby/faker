@@ -1,7 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerJob < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Job
   end
@@ -16,5 +17,9 @@ class TestFakerJob < Test::Unit::TestCase
 
   def test_key_skill
     assert @tester.key_skill.match(/(\w+\.? ?)/)
+  end
+
+  def test_position
+    assert @tester.position.match(/(\w+\.? ?)/)
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class HarryPotter < Base
     class << self
@@ -19,6 +21,10 @@ module Faker
 
       def house
         fetch('harry_potter.houses')
+      end
+
+      def spell
+        fetch('harry_potter.spells')
       end
     end
   end

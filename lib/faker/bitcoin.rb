@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 require 'digest'
 require 'securerandom'
 
 module Faker
   class Bitcoin < Base
     class << self
-
       PROTOCOL_VERSIONS = {
         main: 0,
         testnet: 111
-      }
+      }.freeze
 
       def address
         address_for(:main)
@@ -25,16 +26,16 @@ module Faker
         base = alphabet.size
 
         lv = 0
-        str.split('').reverse.each_with_index { |v,i| lv += v.unpack('C')[0] * 256**i }
+        str.split('').reverse.each_with_index { |v, i| lv += v.unpack('C')[0] * 256**i }
 
-        ret = ''
-        while lv > 0 do
+        ret = +''
+        while lv.positive?
           lv, mod = lv.divmod(base)
           ret << alphabet[mod]
         end
 
         npad = str.match(/^#{0.chr}*/)[0].to_s.size
-        '1'*npad + ret.reverse
+        '1' * npad + ret.reverse
       end
 
       def address_for(network)

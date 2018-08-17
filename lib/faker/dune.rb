@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Dune < Base
     class << self
@@ -22,15 +24,15 @@ module Faker
         if character.nil?
           character = sample(quoted_characters).to_s
         else
-          character.to_s.downcase!
+          character = character.to_s.downcase
 
           unless quoted_characters.include?(character.to_sym)
             raise ArgumentError,
-              "Characters quoted can be left blank or #{quoted_characters.join(', ')}"
+                  "Characters quoted can be left blank or #{quoted_characters.join(', ')}"
           end
         end
 
-        return fetch('dune.quotes.' + character)
+        fetch('dune.quotes.' + character)
       end
 
       def saying(source = nil)
@@ -39,15 +41,15 @@ module Faker
         if source.nil?
           source = sample(sourced_sayings).to_s
         else
-          source.to_s.downcase!
+          source = source.to_s.downcase
 
           unless sourced_sayings.include?(source.to_sym)
             raise ArgumentError,
-              "Sources quoted in sayings can be left blank or #{sourced_sayings.join(', ')}"
+                  "Sources quoted in sayings can be left blank or #{sourced_sayings.join(', ')}"
           end
         end
 
-        return fetch('dune.sayings.' + source)
+        fetch('dune.sayings.' + source)
       end
     end
   end

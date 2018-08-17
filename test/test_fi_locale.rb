@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFiLocale < Test::Unit::TestCase
   def setup
@@ -22,6 +24,13 @@ class TestFiLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.state.is_a? String
+  end
+
+  def test_fi_invoice_methods
+    assert Faker::Invoice.creditor_reference.is_a? String
+    assert Faker::Invoice.reference.is_a? String
+    assert Faker::Invoice.reference('515141803475128').is_a? String
+    assert Faker::Invoice.reference('515141803475128#') == '5151418034751285'
   end
 
   def test_fi_phone_number

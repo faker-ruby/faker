@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class LordOfTheRings < Base
     class << self
@@ -7,6 +9,10 @@ module Faker
 
       def location
         fetch('lord_of_the_rings.locations')
+      end
+
+      def quote
+        fetch('lord_of_the_rings.quotes')
       end
     end
   end

@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerDune < Test::Unit::TestCase
   def setup
@@ -23,13 +25,13 @@ class TestFakerDune < Test::Unit::TestCase
 
   # test good match
   def test_random_character_quote
-    assert @tester.quote("paul").match(/\w+/)
+    assert @tester.quote('paul').match(/\w+/)
   end
 
   # test error on no match
   def test_invalid_quote
     assert_raise ArgumentError do
-      @tester.quote("Luke Skywalker")
+      @tester.quote('Luke Skywalker')
     end
   end
 
@@ -39,14 +41,13 @@ class TestFakerDune < Test::Unit::TestCase
 
   # test good match
   def test_random_source_saying
-    assert @tester.saying("fremen").match(/\w+/)
+    assert @tester.saying('fremen').match(/\w+/)
   end
 
   # test error on no match
   def test_invalid_saying
     assert_raise ArgumentError do
-      @tester.saying("Ewoks")
+      @tester.saying('Ewoks')
     end
   end
-
 end

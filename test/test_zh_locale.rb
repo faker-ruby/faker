@@ -1,6 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
 
-class TestZhCnLocale < Test::Unit::TestCase
+require_relative 'test_helper'
+
+class TestZhLocale < Test::Unit::TestCase
   def setup
     Faker::Config.locale = 'zh-CN'
   end
