@@ -7,6 +7,12 @@ class TestFakerFood < Test::Unit::TestCase
     @tester = Faker::Food
   end
 
+  def test_flexible_key
+    flexible_key = @tester.instance_variable_get('@flexible_key')
+
+    assert flexible_key == :food
+  end
+
   def test_dish
     assert @tester.dish.match(/\w+/)
   end

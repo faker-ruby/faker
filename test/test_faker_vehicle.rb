@@ -17,8 +17,6 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert_match WORD_MATCH, @tester.manufacture
   end
 
-  private
-
   def test_color
     assert_match WORD_MATCH, @tester.color
   end

@@ -2,6 +2,8 @@
 
 module Faker
   class Food < Base
+    flexible :food
+
     class << self
       # Retrieves a typical dish from each country
       def dish
