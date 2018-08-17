@@ -180,9 +180,11 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def luhn_checksum(luhn)
-    luhn.each_char.map(&:to_i).reverse.each_with_index.map do |n, i|
+    luhn_split = luhn.each_char.map(&:to_i).reverse.each_with_index.map do |n, i|
       x = i.odd? ? n * 2 : n
       x > 9 ? x - 9 : x
-    end.compact.sum
+    end
+
+    luhn_split.compact.inject(0) { |sum, x| sum + x }
   end
 end
