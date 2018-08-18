@@ -23,7 +23,6 @@ Faker::SouthAfrica.cell_phone #=> "082 946 7470"
 # Generate South African company registration numbers:
 Faker::SouthAfrica.pty_ltd_registration_number #=> "5301/714689/07"
 Faker::SouthAfrica.close_corporation_registration_number #=> "CK74/7585/23"
-Faker::SouthAfrica.close_corporation_registration_number #=> "7259/9663575/23"
 Faker::SouthAfrica.listed_company_registration_number #=> "7039/3135/06"
 Faker::SouthAfrica.trust_registration_number #=> "IT38/6489900"
 Faker::SouthAfrica.vat_number #=> "ZA79494416181"
