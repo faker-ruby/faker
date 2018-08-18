@@ -26,6 +26,7 @@ class TestEnZaLocale < Test::Unit::TestCase
   def test_en_za_company
     assert Faker::Company.name.is_a? String
     assert Faker::Company.type.is_a? String
+    assert Faker::Company.suffix.is_a? String
   end
 
   def test_en_za_name
