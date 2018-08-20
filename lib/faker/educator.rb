@@ -17,7 +17,7 @@ module Faker
       deprecate :course, :course_name, 2018, 10
 
       def subject
-        fetch('educator.tertiary.degree.subject').to_s
+        fetch('educator.tertiary.degree.subject')
       end
 
       def course_name
