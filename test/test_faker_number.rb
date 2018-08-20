@@ -9,8 +9,8 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_leading_zero_number
-    assert @tester.leading_zero_number.match(/[0-9]{10}/)
-    assert @tester.leading_zero_number(9).match(/[0-9]{9}/)
+    assert_match(/^0[0-9]{9}/, @tester.leading_zero_number)
+    assert_match(/^0[0-9]{8}/, @tester.leading_zero_number(9))
   end
 
   def test_number
