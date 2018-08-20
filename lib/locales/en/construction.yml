@@ -1,0 +1,13 @@
+en:
+  faker:
+    construction:
+      materials: [
+        "wood",
+        "vinyl",
+        "glass",
+        "plastic",
+        "rubber",
+        "plexiglass",
+        "steel",
+        "stone"
+      ]
