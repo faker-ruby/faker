@@ -14,7 +14,7 @@ module Faker
       end
 
       alias course degree
-      deprecate :course, :course_name, 2018, 7
+      deprecate :course, :course_name, 2018, 10
 
       def subject
         fetch('educator.tertiary.degree.subject').to_s
