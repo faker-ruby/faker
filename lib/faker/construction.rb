@@ -2,8 +2,12 @@
 
 module Faker
   class Construction < Base
-    def self.materials
+    def self.material
       fetch('construction.materials')
+    end
+
+    def self.subcontract_category
+      fetch('construction.subcontract_categories')
     end
   end
 end

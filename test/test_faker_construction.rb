@@ -7,14 +7,19 @@ class TestFakerConstruction < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_materials
-    10.times { assert Faker::Construction.materials.match(/[\w]+/) }
+  def test_material
+    10.times { assert Faker::Construction.material.match(/[\w]+/) }
+  end
+
+  def test_subcontract_category
+    10.times { assert Faker::Construction.material.match(/[\w]+/) }
   end
 
   def test_locales
     [nil, 'en'].each do |locale_name|
       Faker::Config.locale = locale_name
-      assert Faker::Construction.materials.is_a? String
+      assert Faker::Construction.material.is_a? String
+      assert Faker::Construction.subcontract_category.is_a? String
     end
   end
 end
