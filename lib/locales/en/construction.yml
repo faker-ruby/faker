@@ -2,17 +2,17 @@ en:
   faker:
     construction:
       materials: [
-        "aluminum",
-        "brass",
-        "glass",
-        "granite",
-        "plastic",
-        "plexiglass",
-        "rubber",
-        "steel",
-        "stone",
-        "vinyl",
-        "wood"
+        "Aluminum",
+        "Brass",
+        "Glass",
+        "Granite",
+        "Plastic",
+        "Plexiglass",
+        "Rubber",
+        "Steel",
+        "Stone",
+        "Vinyl",
+        "Wood"
       ]
       subcontract_categories: [
         "Asphalt Paving",
