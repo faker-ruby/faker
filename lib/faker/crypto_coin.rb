@@ -24,7 +24,7 @@ module Faker
       end
       
       def coin_hash
-        {name: coin_name, acronym: acronym, url_logo: url_logo}
+        { name: coin_name, acronym: acronym, url_logo: url_logo }
       end
     end
   end
