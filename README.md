@@ -55,6 +55,7 @@ Contents
   - [Faker::Compass](doc/compass.md)
   - [Faker::Cosmere](doc/cosmere.md)
   - [Faker::Crypto](doc/crypto.md)
+  - [Faker::CryptoCoin](doc/crypto_coin.md)
   - [Faker::Currency](doc/currency.md)
   - [Faker::Date](doc/date.md)
   - [Faker::DcComics](doc/dc_comics.md)

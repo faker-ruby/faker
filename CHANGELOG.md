@@ -20,6 +20,7 @@
 
 ### Feature Request
 - [PR #1342](https://github.com/stympy/faker/pull/1342) Added Faker::CryptoCoin scope [@jacksonpires](https://github.com/jacksonpires)
+- [PR #1338](https://github.com/stympy/faker/pull/1338) Add new translations to the en-ZA locale [@bradleymarques](https://github.com/bradleymarques)
 - [PR #1130](https://github.com/stympy/faker/pull/1130) Faker::Vehicle API updates [@lucasqueiroz](https://github.com/lucasqueiroz)
 - [PR #1324](https://github.com/stympy/faker/pull/1319) Add Faker::SouthAfrica [@bradleymarques](https://github.com/bradleymarques)
 - [PR #1319](https://github.com/stympy/faker/pull/1319) Added Faker::DC Comics [@JoelLindow](https://github.com/JoelLindow)
