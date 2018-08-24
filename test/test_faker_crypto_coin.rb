@@ -16,7 +16,7 @@ class TestFakerCryptoCoin < Test::Unit::TestCase
   end
 
   def test_url_logo
-    assert @tester.url_logo.match(/^https:\/\/imgur.com\/a\/......./)
+    assert @tester.url_logo.match(/^https:\/\/i.imgur.com\/.......\./)
   end
 
   def test_coin_hash
