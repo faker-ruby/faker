@@ -8,6 +8,16 @@ class TestFakerFinance < Test::Unit::TestCase
   end
 
   def test_vat_number
+    assert Faker::Finance.vat_number.match(/\w+/)
+  end
+
+  def test_vat_number_with_invalid_params
+    assert_raise ArgumentError do
+      Faker::Finance.vat_number(Faker::Lorem.word)
+    end
+  end
+
+  def test_vat_number_with_params
     Faker::Finance::VAT_NUMBER_TYPES.each do |country|
       assert Faker::Finance.vat_number(country).match(/\w+/)
     end
