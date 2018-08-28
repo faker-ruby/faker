@@ -17,7 +17,7 @@ class TestFakerFinance < Test::Unit::TestCase
     end
   end
 
-  def test_vat_number_with_params
+  def test_vat_number_with_valid_params
     Faker::Finance.vat_number_keys.each do |country|
       assert Faker::Finance.vat_number(country).match(/\w+/)
     end
