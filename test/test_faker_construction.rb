@@ -8,11 +8,11 @@ class TestFakerConstruction < Test::Unit::TestCase
   end
 
   def test_material
-    10.times { assert Faker::Construction.material.match(/[\w]+/) }
+    assert Faker::Construction.material.match(/[\w]+/)
   end
 
   def test_subcontract_category
-    10.times { assert Faker::Construction.material.match(/[\w]+/) }
+    assert Faker::Construction.material.match(/[\w]+/)
   end
 
   def test_locales
