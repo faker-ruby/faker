@@ -1,94 +1,69 @@
 # frozen_string_literal: true
 
 module Faker
-  # Based on Perl's Text::Lorem
-  class Lorem < Base
-    CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a
-
+  module Lorem
     class << self
+      extend Gem::Deprecate
+
       def word
-        sample(translate('faker.lorem.words'))
+        Faker::Lorem::Ipsum.word
       end
 
       def words(num = 3, supplemental = false)
-        resolved_num = resolve(num)
-        word_list = (
-          translate('faker.lorem.words') +
-          (supplemental ? translate('faker.lorem.supplemental') : [])
-        )
-        word_list *= ((resolved_num / word_list.length) + 1)
-        shuffle(word_list)[0, resolved_num]
+        Faker::Lorem::Ipsum.words(num, supplemental)
       end
 
       def character
-        sample(CHARACTERS)
+        Faker::Lorem::Ipsum.character
       end
 
       def characters(char_count = 255)
-        char_count = resolve(char_count)
-        return '' if char_count.to_i < 1
-        Array.new(char_count) { sample(CHARACTERS) }.join
+        Faker::Lorem::Ipsum.characters(char_count)
       end
 
       def multibyte
-        sample(translate('faker.lorem.multibyte')).pack('C*').force_encoding('utf-8')
+        Faker::Lorem::Ipsum.multibyte
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 0)
-        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + locale_period
+        Faker::Lorem::Ipsum.sentence(word_count, supplemental, random_words_to_add)
       end
 
       def sentences(sentence_count = 3, supplemental = false)
-        1.upto(resolve(sentence_count)).collect { sentence(3, supplemental) }
+        Faker::Lorem::Ipsum.sentences(sentence_count, supplemental)
       end
 
       def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 0)
-        sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(locale_space)
+        Faker::Lorem::Ipsum.paragraph(sentence_count, supplemental, random_sentences_to_add)
       end
 
       def paragraphs(paragraph_count = 3, supplemental = false)
-        1.upto(resolve(paragraph_count)).collect { paragraph(3, supplemental) }
+        Faker::Lorem::Ipsum.paragraphs(paragraph_count, supplemental)
       end
 
       def paragraph_by_chars(chars = 256, supplemental = false)
-        paragraph = paragraph(3, supplemental)
-
-        paragraph += ' ' + paragraph(3, supplemental) while paragraph.length < chars
-
-        paragraph[0...chars - 1] + '.'
+        Faker::Lorem::Ipsum.paragraph_by_chars(chars, supplemental)
       end
 
       def question(word_count = 4, supplemental = false, random_words_to_add = 0)
-        words(word_count + rand(random_words_to_add), supplemental).join(' ').capitalize + locale_question_mark
+        Faker::Lorem::Ipsum.question(word_count, supplemental, random_words_to_add)
       end
 
       def questions(question_count = 3, supplemental = false)
-        1.upto(resolve(question_count)).collect { question(3, supplemental) }
+        Faker::Lorem::Ipsum.questions(question_count, supplemental)
       end
 
-      private
-
-      def locale_period
-        translate('faker.lorem.punctuation.period') || '.'
-      end
-
-      def locale_space
-        translate('faker.lorem.punctuation.space') || ' '
-      end
-
-      def locale_question_mark
-        translate('faker.lorem.punctuation.question_mark') || '?'
-      end
-
-      # If an array or range is passed, a random value will be selected.
-      # All other values are simply returned.
-      def resolve(value)
-        case value
-        when Array then sample(value)
-        when Range then rand value
-        else value
-        end
-      end
+      deprecate :word, 'Faker::Lorem::Ipsum.word', 2018, 10
+      deprecate :words, 'Faker::Lorem::Ipsum.words', 2018, 10
+      deprecate :character, 'Faker::Lorem::Ipsum.character', 2018, 10
+      deprecate :multibyte, 'Faker::Lorem::Ipsum.multibyte', 2018, 10
+      deprecate :sentence, 'Faker::Lorem::Ipsum.sentence', 2018, 10
+      deprecate :sentences, 'Faker::Lorem::Ipsum.sentences', 2018, 10
+      deprecate :paragraph, 'Faker::Lorem::Ipsum.paragraph', 2018, 10
+      deprecate :paragraphs, 'Faker::Lorem::Ipsum.paragraphs', 2018, 10
+      deprecate :paragraph_by_chars, 'Faker::Lorem::Ipsum.paragraph_by_chars', 2018, 10
+      deprecate :question, 'Faker::Lorem::Ipsum.question', 2018, 10
+      deprecate :questions, 'Faker::Lorem::Ipsum.questions', 2018, 10
     end
   end
 end

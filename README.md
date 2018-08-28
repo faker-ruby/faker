@@ -104,7 +104,7 @@ Contents
   - [Faker::LeagueOfLegends](doc/league_of_legends.md)
   - [Faker::Lebowski](doc/lebowski.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
-  - [Faker::Lorem](doc/lorem.md)
+  - [Faker::Lorem::Ipsum](doc/lorem_ipsum.md)
   - [Faker::LoremFlickr](doc/lorem_flickr.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
   - [Faker::Lovecraft](doc/lovecraft.md)
