@@ -6,13 +6,6 @@ module Faker
                            diners_club jcb switch solo dankort
                            maestro forbrugsforeningen laser].freeze
 
-    VAT_NUMBER_TYPES  = %i[AT BE BG CZ DK EE
-                           FI DE GR HU IT LV
-                           LT LU MT PL PT RU
-                           RO SK SI SE GB CL
-                           AU BY HR NO PH EC
-                           SM CH UA AR BR MX].freeze
-
     class << self
       def credit_card(*types)
         types = CREDIT_CARD_TYPES if types.empty?
@@ -36,7 +29,11 @@ module Faker
       def vat_number(country = 'BR')
         numerify(fetch("finance.vat_number.#{country}"))
       rescue I18n::MissingTranslationData
-        raise ArgumentError, "Could not find vat number #{country}"
+        raise ArgumentError, "Could not find vat number for #{country}"
+      end
+
+      def vat_number_keys
+        translate('faker.finance.vat_number').keys
       end
     end
   end
