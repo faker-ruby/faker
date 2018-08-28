@@ -9,6 +9,7 @@
 - [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
+- [PR #1347](https://github.com/stympy/faker/pull/1347) Remove launchy dependency [@vbrazo](https://github.com/vbrazo)
 - [PR #1311](https://github.com/stympy/faker/pull/1311) Target Ruby 2.3 [@tagliala](https://github.com/tagliala)
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
