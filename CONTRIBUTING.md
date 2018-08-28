@@ -14,7 +14,7 @@ Ways to run Rubocop:
 
 5. Make the test pass. Always use `sample`, `shuffle`, and `rand` from the Base class (just like the rest of the code) rather than `Array#sample`, `Array#shuffle` and `Kernel#rand` to preserve the deterministic feature.
 
-6. We care about code coverage and use `SimpleCov` to analyze the code and generate test coverage reports. It's possible to check the test coverage by running  `bundle exec rake coverage_report`. Please make sure to not decrease our `current % covered`.
+6. We care about code coverage and use `SimpleCov` to analyze the code and generate test coverage reports. It's possible to check the test coverage by running  `open coverage/index.html`. Please make sure to not decrease our `current % covered` and add appropriate test cases when necessary.
 
 7. When adding a new class, add a new yaml file to `lib/locales/en` rather than adding translations to `lib/locales/en.yml`.  For example, if you add Faker::MyThing, put your translations in `lib/locales/en/my_thing.yml`.  See [the locale README](./lib/locales/en/README.md) for more info.
 
