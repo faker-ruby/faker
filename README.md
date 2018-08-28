@@ -53,6 +53,7 @@ Contents
   - [Faker::Community](doc/community.md)
   - [Faker::Company](doc/company.md)
   - [Faker::Compass](doc/compass.md)
+  - [Faker::Construction](doc/construction.md)
   - [Faker::Cosmere](doc/cosmere.md)
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::CryptoCoin](doc/crypto_coin.md)
