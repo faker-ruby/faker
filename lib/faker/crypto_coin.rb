@@ -4,7 +4,7 @@ module Faker
   class CryptoCoin < Base
     class << self
       attr_reader :coin
-      
+
       COIN_NAME = 0
       ACRONYM = 1
       URL_LOGO = 2
