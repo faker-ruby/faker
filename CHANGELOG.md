@@ -20,6 +20,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1348](https://github.com/stympy/faker/pull/1348) Add Faker::Finance.vat_number [@vbrazo](https://github.com/vbrazo)
 - [PR #1342](https://github.com/stympy/faker/pull/1342) Added Faker::CryptoCoin scope [@jacksonpires](https://github.com/jacksonpires)
 - [PR #1338](https://github.com/stympy/faker/pull/1338) Add new translations to the en-ZA locale [@bradleymarques](https://github.com/bradleymarques)
 - [PR #1341](https://github.com/stympy/faker/pull/1341) Add Faker::Construction [@benwyrosdick](https://github.com/benwyrosdick)
