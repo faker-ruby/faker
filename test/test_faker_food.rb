@@ -37,6 +37,10 @@ class TestFakerFood < Test::Unit::TestCase
     assert @tester.spice.match(/\w+/)
   end
 
+  def test_sushi
+    assert @tester.sushi.match(/\w+/)
+  end
+
   def test_measurement
     assert @tester.measurement.split(' ').length == 2
   end
