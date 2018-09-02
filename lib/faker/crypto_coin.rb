@@ -7,24 +7,25 @@ module Faker
       ACRONYM = 1
       URL_LOGO = 2
 
-      def coin_name
+      def coin_name(coin = coin_array)
         coin[COIN_NAME]
       end
 
-      def acronym
+      def acronym(coin = coin_array)
         coin[ACRONYM]
       end
 
-      def url_logo
+      def url_logo(coin = coin_array)
         coin[URL_LOGO]
       end
 
-      def coin
-        parse('crypto_coin.coin').split(',').map(&:strip)
+      def coin_array
+        fetch('crypto_coin.coin').split(',').map(&:strip)
       end
 
       def coin_hash
-        { name: coin_name, acronym: acronym, url_logo: url_logo }
+        coin = coin_array
+        { name: coin_name(coin), acronym: acronym(coin), url_logo: url_logo(coin) }
       end
     end
   end

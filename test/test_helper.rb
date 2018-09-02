@@ -3,7 +3,7 @@
 require 'simplecov'
 SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
 SimpleCov.start do
-  add_filter ['.bundle', 'test', 'lib/extensions']
+  add_filter ['.bundle', 'lib/extensions', 'test']
 end
 
 require 'test/unit'
