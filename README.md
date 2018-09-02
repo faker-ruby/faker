@@ -132,6 +132,7 @@ Contents
   - [Faker::Pokemon](doc/pokemon.md)
   - [Faker::PrincessBride](doc/princess_bride.md)
   - [Faker::ProgrammingLanguage](doc/programming_language.md)
+  - [Faker::Relationship](doc/relationship.md)
   - [Faker::Restaurant](doc/restaurant.md)
   - [Faker::RickAndMorty](doc/rick_and_morty.md)
   - [Faker::Robin](doc/robin.md)
