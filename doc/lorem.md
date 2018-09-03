@@ -14,13 +14,13 @@ Faker::Lorem.multibyte #=> 😀
 Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omquh7br7dhqijwlawejpl765nb1716idmp3xnfo85v349pzy2o9rir23y2qhflwr71c1585fnynguiphkjm8p0vktwitcsm16lny7jzp9t4drwav3qmhz4yjq4k04x14gl6p148hulyqioo72tf8nwrxxcclfypz2lc58lsibgfe5w5p0xv95peafjjmm2frkhdc6duoky0aha"
 Faker::Lorem.characters(10) #=> "ang9cbhoa8"
 
-# Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
+# Optional arguments: word_count=4, supplemental=false, random_words_to_add=0
 # The 'random_words_to_add' argument increases the sentence's word count by a random value within (0..random_words_to_add).
 # To specify an exact word count for a sentence, set word_count to the number you want and random_words_to_add equal to 0.
-# By default, sentences will have a random number of words within the range (4..10).
-Faker::Lorem.sentence #=> "Dolore illum animi et neque accusantium."
-Faker::Lorem.sentence(3) #=> "Commodi qui minus deserunt sed vero quia."
-Faker::Lorem.sentence(3, true) #=> "Inflammatio denego necessitatibus caelestis autus illum."
+# By default, sentences will not have any random words added (and will all be exactly 4 words long)
+Faker::Lorem.sentence #=> "Quia illum libero magni."
+Faker::Lorem.sentence(3) #=> "Quaerat quam unde."
+Faker::Lorem.sentence(3, true) #=> "Vehemens velit cogo."
 Faker::Lorem.sentence(3, false, 4) #=> "Aut voluptatem illum fugit ut sit."
 Faker::Lorem.sentence(3, true, 4) #=> "Accusantium tantillus dolorem timor."
 
