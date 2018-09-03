@@ -50,4 +50,11 @@ Faker::Company.polish_taxpayer_identification_number #=> "1060000062"
 
 # Get a random Polish register of national economy number
 Faker::Company.polish_register_of_national_economy #=> "123456785"
+
+# Generate South African company registration numbers:
+Faker::Company.south_african_pty_ltd_registration_number #=> "5301/714689/07"
+Faker::Company.south_african_close_corporation_registration_number #=> "CK74/7585/23"
+Faker::Company.south_african_listed_company_registration_number #=> "7039/3135/06"
+Faker::Company.south_african_trust_registration_number #=> "IT38/6489900"
+Faker::Company.south_african_vat_number #=> "ZA79494416181"
 ```

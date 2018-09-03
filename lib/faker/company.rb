@@ -136,6 +136,22 @@ module Faker
         random_digits.join('')
       end
 
+      def south_african_pty_ltd_registration_number
+        regexify(/\d{4}\/\d{4,10}\/07/)
+      end
+
+      def south_african_close_corporation_registration_number
+        regexify(/(CK\d{2}|\d{4})\/\d{4,10}\/23/)
+      end
+
+      def south_african_listed_company_registration_number
+        regexify(/\d{4}\/\d{4,10}\/06/)
+      end
+
+      def south_african_trust_registration_number
+        regexify(/IT\d{2,4}\/\d{2,10}/)
+      end
+
       private
 
       # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb

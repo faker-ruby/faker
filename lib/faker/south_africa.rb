@@ -26,6 +26,26 @@ module Faker
           Faker::PhoneNumber.cell_phone
         end
       end
+
+      def pty_ltd_registration_number
+        Faker::Company.south_african_pty_ltd_registration_number
+      end
+
+      def close_corporation_registration_number
+        Faker::Company.south_african_close_corporation_registration_number
+      end
+
+      def listed_company_registration_number
+        Faker::Company.south_african_listed_company_registration_number
+      end
+
+      def trust_registration_number
+        Faker::Company.south_african_trust_registration_number
+      end
+
+      def vat_number
+        Faker::Finance.vat_number('ZA')
+      end
     end
   end
 end

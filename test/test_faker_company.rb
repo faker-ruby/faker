@@ -116,6 +116,34 @@ class TestFakerCompany < Test::Unit::TestCase
     assert @tester.send(:mod11, 0)
   end
 
+  def test_south_african_pty_ltd_registration_number
+    assert_match(
+      /\A\d{4}\/\d{4,10}\/07\z/,
+      @tester.south_african_pty_ltd_registration_number
+    )
+  end
+
+  def test_south_african_close_corporation_registration_number
+    assert_match(
+      /\A(CK\d{2}|\d{4})\/\d{4,10}\/23\z/,
+      @tester.south_african_close_corporation_registration_number
+    )
+  end
+
+  def test_south_african_listed_company_registration_number
+    assert_match(
+      /\A\d{4}\/\d{4,10}\/06\z/,
+      @tester.south_african_listed_company_registration_number
+    )
+  end
+
+  def test_south_african_trust_registration_number
+    assert_match(
+      /\AIT\d{2,4}\/\d{2,10}\z/,
+      @tester.south_african_trust_registration_number
+    )
+  end
+
   private
 
   def czech_o_n_checksum(org_no)
