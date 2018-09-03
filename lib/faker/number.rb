@@ -5,15 +5,17 @@ module Faker
     class << self
       def number(digits = 10)
         num = ''
+
         if digits > 1
           num = non_zero_digit
           digits -= 1
         end
+
         num + leading_zero_number(digits)
       end
 
       def leading_zero_number(digits = 10)
-        (1..digits).collect { digit }.join
+        '0' + (2..digits).collect { digit }.join
       end
 
       def decimal_part(digits = 10)
@@ -28,6 +30,7 @@ module Faker
       def decimal(l_digits = 5, r_digits = 2)
         l_d = number(l_digits)
         r_d = decimal_part(r_digits)
+
         "#{l_d}.#{r_d}"
       end
 
@@ -58,11 +61,13 @@ module Faker
 
       def positive(from = 1.00, to = 5000.00)
         random_number = between(from, to)
+
         greater_than_zero(random_number)
       end
 
       def negative(from = -5000.00, to = -1.00)
         random_number = between(from, to)
+
         less_than_zero(random_number)
       end
 
