@@ -58,7 +58,7 @@ class TestFakerSouthAfrica < Test::Unit::TestCase
 
   def test_vat_number
     stubbed_number = 'ZA1234567890'
-    Faker::Company.stub :south_african_vat_number, stubbed_number do
+    Faker::Finance.stub :vat_number, stubbed_number, with: 'ZA' do
       assert_equal stubbed_number, @tester.vat_number
     end
   end

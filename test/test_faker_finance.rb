@@ -22,4 +22,8 @@ class TestFakerFinance < Test::Unit::TestCase
       assert Faker::Finance.vat_number(country).match(/\w+/)
     end
   end
+
+  def test_south_african_vat_number
+    assert_match(/\AZA\d{10,11}\z/, Faker::Finance.vat_number('ZA'))
+  end
 end

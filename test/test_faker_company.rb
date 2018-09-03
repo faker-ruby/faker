@@ -144,10 +144,6 @@ class TestFakerCompany < Test::Unit::TestCase
     )
   end
 
-  def test_south_african_vat_number
-    assert_match(/\AZA\d{10,11}\z/, @tester.south_african_vat_number)
-  end
-
   private
 
   def czech_o_n_checksum(org_no)

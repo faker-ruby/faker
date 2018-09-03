@@ -152,10 +152,6 @@ module Faker
         regexify(/IT\d{2,4}\/\d{2,10}/)
       end
 
-      def south_african_vat_number
-        regexify(/ZA\d{10,11}/)
-      end
-
       private
 
       # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb
