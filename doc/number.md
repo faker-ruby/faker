@@ -2,17 +2,22 @@
 
 ```ruby
 # Required parameter: digits
+# Produces a number of the specified digits where the leading digit is never 0
 Faker::Number.number(10) #=> "1968353479"
 
 # Required parameter: digits
+# As above, but permits leading zeros
 Faker::Number.leading_zero_number(10) #=> "0669336915"
 
 # Required parameter: digits
-Faker::Number.decimal_part(2) #=> "0074009009"
+# Produces a 2-digit number, preserves leading 0's
+Faker::Number.decimal_part(2) #=> "09"
 
 # Required parameter: l_digits
+# Produces a number with 2 digits leading and trailing the decimal
 Faker::Number.decimal(2) #=> "11.88"
 
+# Specify different values for leading and trailing digits
 Faker::Number.decimal(2, 3) #=> "18.843"
 
 # Required parameters: mean, standard_deviation
