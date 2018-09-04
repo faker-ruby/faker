@@ -144,6 +144,21 @@ class TestFakerCompany < Test::Unit::TestCase
     )
   end
 
+  def test_luhn_algorithm
+    # Odd length base for luhn algorithm
+    odd_base = Faker::Number.number([5, 7, 9, 11, 13].sample)
+    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base)
+    odd_control = "#{odd_base}#{odd_luhn_complement}"
+
+    # Even length base for luhn algorithm
+    even_base = Faker::Number.number([4, 6, 8, 10, 12].sample)
+    even_luhn_complement = @tester.send(:luhn_algorithm, even_base)
+    even_control = "#{even_base}#{even_luhn_complement}"
+
+    assert((luhn_checksum(odd_control) % 10).zero?)
+    assert((luhn_checksum(even_control) % 10).zero?)
+  end
+
   private
 
   def czech_o_n_checksum(org_no)
@@ -162,5 +177,14 @@ class TestFakerCompany < Test::Unit::TestCase
     abn.split('').map(&:to_i).each_with_index.map do |n, i|
       (i.zero? ? n - 1 : n) * abn_weights[i]
     end.inject(:+)
+  end
+
+  def luhn_checksum(luhn)
+    luhn_split = luhn.each_char.map(&:to_i).reverse.each_with_index.map do |n, i|
+      x = i.odd? ? n * 2 : n
+      x > 9 ? x - 9 : x
+    end
+
+    luhn_split.compact.inject(0) { |sum, x| sum + x }
   end
 end
