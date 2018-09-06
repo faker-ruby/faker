@@ -230,3 +230,4 @@ Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| req
 
 require 'helpers/char'
 require 'helpers/unique_generator'
+require 'helpers/base58'
