@@ -38,5 +38,6 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Food.measurement.is_a? String
     assert Faker::Food.metric_measurement.is_a? String
     assert Faker::Food.sushi.is_a? String
+    assert Faker::Cat.breed.is_a? String
   end
 end
