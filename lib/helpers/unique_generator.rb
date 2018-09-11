@@ -10,13 +10,14 @@ module Faker
 
     def initialize(generator, max_retries)
       @generator = generator
-      self.class.marked_unique.add(self)
       @max_retries = max_retries
       @previous_results = Hash.new { |hash, key| hash[key] = Set.new }
     end
 
     # rubocop:disable Style/MethodMissingSuper
     def method_missing(name, *arguments)
+      self.class.marked_unique.add(self)
+
       @max_retries.times do
         result = @generator.public_send(name, *arguments)
 
