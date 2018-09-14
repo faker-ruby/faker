@@ -31,7 +31,7 @@ pt-BR:
         - "#{street_suffix} #{Name.first_name} #{Name.last_name}"
       secondary_address: ["Apto. ###", "Sobrado ##", "Casa #", "Lote ##", "Quadra ##"]
       # Though these are US-specific, they are here (in the default locale) for backwards compatibility
-      postcode: ["#####-###"]
+      postcode: ["88053-300", "25936-765", "24738-190", "14896-007", "14079-375", "91791-220", "14801-093", "35681-242", "41750-630", "87206-154", "24470-170", "77060-144", "91791-220", "69090-610", "37504-090", "67146-138", "44057-580", "54525-320", "89026-470", "89057-400", "25919-441", "58043-050", "32044-298", "53413-180", "24470-170", "35703-283", "38413-023", "18113-800", "79074-150", "88357-113", "55030-610", "13040-055", "76908-242", "37716-226", "16011-007", "14406-785", "14702-114", "44067-072", "79074-150", "69097-310", "24732-590", "59068-520", "85862-220", "13082-615", "41750-630", "73814-505", "23575-385", "35900-713" ]
       state: ["Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"]
       state_abbr: [AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP]
       postcode_by_state:
