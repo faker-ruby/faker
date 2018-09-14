@@ -30,6 +30,10 @@ Faker::Number.hexadecimal(3) #=> "e74"
 # Boundary numbers are inclusive
 Faker::Number.between(1, 10) #=> 7
 
+# Required parameters: a range value
+# Min and Max boundaries of range are inclusive
+Faker::Number.within(1..10) #=> 7
+
 Faker::Number.positive #=> 235.59238499107653
 
 Faker::Number.negative #=> -4480.042585669558

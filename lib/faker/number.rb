@@ -59,6 +59,10 @@ module Faker
         Faker::Base.rand_in_range(from, to)
       end
 
+      def within(range = 1.00..5000.00)
+        between(range.min, range.max)
+      end
+
       def positive(from = 1.00, to = 5000.00)
         random_number = between(from, to)
 
