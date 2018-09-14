@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestEnCaLocale < Test::Unit::TestCase
   def setup
@@ -44,5 +46,4 @@ class TestEnCaLocale < Test::Unit::TestCase
     expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
     assert_match(expected, Faker::Address.postcode)
   end
-
 end

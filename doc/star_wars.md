@@ -1,7 +1,13 @@
 # Faker::StarWars
 
+Available since version 1.6.2.
+
 ```ruby
+Faker::StarWars.call_squadron #=> "Green"
+
 Faker::StarWars.call_sign #=> "Grey 5"
+
+Faker::StarWars.call_number #=> "Leader"
 
 Faker::StarWars.character #=> "Anakin Skywalker"
 

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module Faker
   class Markdown < Base
     class << self
-
       def headers
         "#{fetch('markdown.headers')} #{Lorem.word.capitalize}"
       end
@@ -20,7 +21,7 @@ module Faker
 
         result = []
         number.times do |i|
-          result << "#{i.to_s}. #{Faker::Lorem.sentence(1)} \n"
+          result << "#{i}. #{Faker::Lorem.sentence(1)} \n"
         end
         result.join('')
       end
@@ -29,7 +30,7 @@ module Faker
         number = rand(1..10)
 
         result = []
-        number.times do |i|
+        number.times do |_i|
           result << "* #{Faker::Lorem.sentence(1)} \n"
         end
         result.join('')
@@ -56,12 +57,21 @@ module Faker
         send(available_methods[rand(0..available_methods.length - 1)])
       end
 
+      def sandwich(sentences = 3, repeat = 1)
+        text_block = []
+        text_block << headers
+        repeat.times do
+          text_block << Faker::Lorem.paragraph(sentences)
+          text_block << random
+        end
+        text_block.join("\n")
+      end
+
       private
 
       def available_methods
         Markdown.public_methods(false) - Base.methods
       end
-
     end
   end
 end

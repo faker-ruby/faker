@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class FunnyName < Base
     flexible :funny_name
@@ -33,7 +35,7 @@ module Faker
 
       def name_with_initial
         names_with_initials = fetch_all('funny_name.name').select do |name|
-          name.count('.') > 0
+          name.count('.').positive?
         end
 
         sample(names_with_initials)

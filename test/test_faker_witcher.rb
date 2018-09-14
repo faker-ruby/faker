@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerWitcher < Test::Unit::TestCase
   def setup
@@ -22,11 +24,10 @@ class TestFakerWitcher < Test::Unit::TestCase
   end
 
   def test_monster
-  	assert @witcher.monster.match(/\w+/)
+    assert @witcher.monster.match(/\w+/)
   end
 
   def test_quote
-  	assert @witcher.quote.match(/\w+/)
+    assert @witcher.quote.match(/\w+/)
   end
-
 end

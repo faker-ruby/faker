@@ -1,12 +1,15 @@
 # Faker::Stripe
 
-### Test Stripe transactions without hardcoding card numbers and tokens
-
+Test Stripe transactions without hardcoding card numbers and tokens
 
 ```ruby
 Faker::Stripe.valid_card #=> "4242424242424242"
 
 Faker::Stripe.valid_card("visa_debit") #=> "4000056655665556"
+
+Faker::Stripe.valid_token #=> "tok_visa"
+
+Faker::Stripe.valid_token("mc_debit") #=> "tok_mastercard_debit"
 
 Faker::Stripe.invalid_card #=> "4000000000000002"
 

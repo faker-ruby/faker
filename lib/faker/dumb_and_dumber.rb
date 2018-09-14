@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Faker
   class DumbAndDumber < Base
     class << self
       def actor
         fetch('dumb_and_dumber.actors')
       end
-      
+
       def character
         fetch('dumb_and_dumber.characters')
       end

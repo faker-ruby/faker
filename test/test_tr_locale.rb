@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestTRLocale < Test::Unit::TestCase
   def setup
@@ -31,6 +33,10 @@ class TestTRLocale < Test::Unit::TestCase
   def test_tr_address_fields
     assert Faker::Address.city.is_a? String
     assert Faker::Address.country.is_a? String
+  end
+
+  def test_tr_phone_number_fields
+    assert Faker::PhoneNumber.phone_number.is_a? String
   end
 
   def test_tr_book_fields

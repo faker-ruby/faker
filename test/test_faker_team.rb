@@ -1,7 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerTeam < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Team
   end
@@ -21,5 +22,4 @@ class TestFakerTeam < Test::Unit::TestCase
   def test_sport
     assert @tester.sport.match(/(\w+){1}/)
   end
-
 end

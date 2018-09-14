@@ -1,5 +1,7 @@
 # Faker::Crypto
 
+Available since version 1.6.4.
+
 ```ruby
 Faker::Crypto.md5 #=> "6b5ed240042e8a65c55ddb826c3408e6"
 

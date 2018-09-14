@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestRuLocale < Test::Unit::TestCase
   def setup
@@ -36,6 +38,7 @@ class TestRuLocale < Test::Unit::TestCase
     assert Faker::Company.prefix.is_a? String
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.name.is_a? String
+    assert Faker::Char.romanize_cyrillic('').is_a? String
   end
 
   def test_ru_default_country

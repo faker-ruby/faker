@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerMusic < Test::Unit::TestCase
   def setup
@@ -8,14 +10,14 @@ class TestFakerMusic < Test::Unit::TestCase
   def test_keys
     assert @tester.keys.size == 7
     @tester.keys.each do |key|
-       refute key.to_s.empty?
+      refute key.to_s.empty?
     end
   end
 
   def test_key_variants
     assert @tester.key_variants.size == 3
     @tester.key_variants.each do |key_variant|
-       refute key_variant.nil?
+      refute key_variant.nil?
     end
   end
 
@@ -34,7 +36,7 @@ class TestFakerMusic < Test::Unit::TestCase
   end
 
   def test_key
-    assert @tester.name.match(/([A-Z])+(b|#){0,1}+(m){0,1}/)
+    assert @tester.name.match(/([A-Z])\s*(b|#){0,1}\s*(m){0,1}/)
   end
 
   def test_instrument
@@ -42,6 +44,18 @@ class TestFakerMusic < Test::Unit::TestCase
   end
 
   def test_chord
-    assert @tester.name.match(/([A-Z])+(b|#){0,1}+([a-zA-Z0-9]{0,4})/)
+    assert @tester.name.match(/([A-Z])\s*(b|#){0,1}\s*([a-zA-Z0-9]{0,4})/)
+  end
+
+  def test_band
+    assert @tester.band.match(/\w+/)
+  end
+
+  def test_album
+    assert @tester.album.match(/\w+/)
+  end
+
+  def test_genre
+    assert @tester.genre.match(/\w+/)
   end
 end

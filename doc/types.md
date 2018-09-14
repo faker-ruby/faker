@@ -2,22 +2,26 @@
 
 ```ruby
 # Random String created from word (Faker::Lorem.word)
-Faker::Types.string #=> "foobar"
+Faker::Types.rb_string #=> "foobar"
 
 # Random Character a-z, 0-9
 Faker::Types.character #=> "n"
 
 # Random Integer
-Faker::Types.integer #=> 1
+Faker::Types.rb_integer #=> 1
 
 # Random Hash (with random keys and values)
-Faker::Types.hash #=> {name: "bob"}
+Faker::Types.rb_hash #=> {name: "bob"}
+Faker::Types.rb_hash(1) #=> {name: "bob"}
+Faker::Types.rb_hash(2) #=> {name: "bob", last: "marley"}
 
 # Random Complex Hash (values include other hashes and arrays) 
-Faker::Types.complex_hash #=> {user: {first: "bob", last: "marley"}}
+Faker::Types.complex_rb_hash #=> {user: {first: "bob", last: "marley"}}
+Faker::Types.complex_rb_hash(1) #=> {user: {first: "bob", last: "marley"}}
+Faker::Types.complex_rb_hash(2) #=> {user: {first: "bob", last: "marley"}, son: ["damien", "marley"]}
 
 # Random Array
-Faker::Types.array #=> ["a", 1, 2, "bob"]
+Faker::Types.rb_array #=> ["a", 1, 2, "bob"]
 
 # Random Type (string, or integer)
 Faker::Types.random_type #=> 1 or "a" or "bob"

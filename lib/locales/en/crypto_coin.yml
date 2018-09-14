@@ -1,0 +1,9 @@
+en:
+  faker:
+    crypto_coin:
+      coin: 
+        - "Bitcoin,   BTC,  https://i.imgur.com/psBNOBq.png"
+        - "Litecoin,  LTC,  https://i.imgur.com/EFz61Ei.png"
+        - "Dash,      DASH, https://i.imgur.com/2uX91cb.png"
+        - "Ethereum,  ETH,  https://i.imgur.com/uOPFCXj.png"
+        - "Ripple,    XRP,  https://i.imgur.com/GjAPSsL.png"

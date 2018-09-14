@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Verb < Base
     class << self
@@ -16,7 +18,7 @@ module Faker
       def simple_present
         fetch('verbs.simple_present')
       end
-      
+
       def ing_form
         fetch('verbs.ing_form')
       end

@@ -1,17 +1,17 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
 
- class TestFakerProgrammingLanguage < Test::Unit::TestCase
+require_relative 'test_helper'
 
-   def setup
-     @tester = Faker::ProgrammingLanguage
-   end
+class TestFakerProgrammingLanguage < Test::Unit::TestCase
+  def setup
+    @tester = Faker::ProgrammingLanguage
+  end
 
-   def test_name
-     assert @tester.name.match(/\w/)
-   end
+  def test_name
+    assert @tester.name.match(/\w/)
+  end
 
-   def test_creator
-     assert @tester.creator.match(/\w/)
-   end
-
- end
+  def test_creator
+    assert @tester.creator.match(/\w/)
+  end
+end

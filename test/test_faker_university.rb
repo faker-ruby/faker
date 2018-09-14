@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerUniversity < Test::Unit::TestCase
   def setup
@@ -33,7 +35,4 @@ class TestFakerUniversity < Test::Unit::TestCase
       assert @alphabet.include?(letter)
     end
   end
-
-
-
 end
