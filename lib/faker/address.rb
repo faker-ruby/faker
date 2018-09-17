@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Faker
   class Address < Base
     flexible :address
 
     class << self
-      def city
-        parse('address.city')
+      def city(options = {})
+        parse(options[:with_state] ? 'address.city_with_state' : 'address.city')
       end
 
       def street_name
@@ -16,37 +18,78 @@ module Faker
       end
 
       def secondary_address
-        numerify(fetch('address.secondary_address'))
+        bothify(fetch('address.secondary_address'))
       end
 
-      def zip_code
-        bothify(fetch('address.postcode'))
+      def building_number
+        bothify(fetch('address.building_number'))
       end
-      alias_method :zip, :zip_code
-      alias_method :postcode, :zip_code
-      
-      def street_suffix; fetch('address.street_suffix'); end
-      def city_suffix;   fetch('address.city_suffix');   end
-      def city_prefix;   fetch('address.city_prefix');   end
-      def state_abbr;    fetch('address.state_abbr');    end
-      def state;         fetch('address.state');         end
-      def country;       fetch('address.country');       end
+
+      def community
+        parse('address.community')
+      end
+
+      def zip_code(state_abbreviation = '')
+        if state_abbreviation.empty?
+          letterified_string = letterify(fetch('address.postcode'))
+          return numerify(letterified_string, leading_zero: true)
+        end
+
+        # provide a zip code that is valid for the state provided
+        # see http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf
+        bothify(fetch('address.postcode_by_state.' + state_abbreviation))
+      end
+
+      def time_zone
+        fetch('address.time_zone')
+      end
+
+      alias zip zip_code
+      alias postcode zip_code
+
+      def street_suffix
+        fetch('address.street_suffix')
+      end
+
+      def city_suffix
+        fetch('address.city_suffix')
+      end
+
+      def city_prefix
+        fetch('address.city_prefix')
+      end
+
+      def state_abbr
+        fetch('address.state_abbr')
+      end
+
+      def state
+        fetch('address.state')
+      end
+
+      def country
+        fetch('address.country')
+      end
+
+      def country_code
+        fetch('address.country_code')
+      end
+
+      def country_code_long
+        fetch('address.country_code_long')
+      end
 
       def latitude
-        ((rand * 180) - 90).to_s
+        ((rand * 180) - 90).to_f
       end
 
       def longitude
-        ((rand * 360) - 180).to_s
+        ((rand * 360) - 180).to_f
       end
 
-      # Deprecated
-      alias_method :earth_country, :country
-      alias_method :us_state, :state
-      alias_method :us_state_abbr, :state_abbr
-      alias_method :uk_postcode, :zip_code
-      def uk_county; county; end
-
+      def full_address
+        parse('address.full_address')
+      end
     end
   end
 end

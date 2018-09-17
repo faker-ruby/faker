@@ -1,26 +1,30 @@
-$:.push File.expand_path("../lib", __FILE__)
-require "faker/version"
+# frozen_string_literal: true
 
-Gem::Specification.new do |s|
-  s.name        = "faker"
-  s.version     = Faker::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Benjamin Curtis"]
-  s.email       = ["benjamin.curtis@gmail.com"]
-  s.homepage    = "http://faker.rubyforge.org"
-  s.summary     = %q{Easily generate fake data}
-  s.description = %q{Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.}
-  
-  s.rubyforge_project = "faker"
+$LOAD_PATH.push File.expand_path('lib', __dir__)
+require 'faker/version'
 
-  s.add_dependency('i18n', '~> 0.4')
-  s.add_dependency 'thor'
-  s.add_development_dependency 'cucumber'
-  s.add_development_dependency 'aruba'
+Gem::Specification.new do |spec|
+  spec.name        = 'faker'
+  spec.version     = Faker::VERSION
+  spec.platform    = Gem::Platform::RUBY
+  spec.authors     = ['Benjamin Curtis']
+  spec.email       = ['benjamin.curtis@gmail.com']
+  spec.homepage    = 'https://github.com/stympy/faker'
+  spec.summary     = 'Easily generate fake data'
+  spec.description = 'Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.'
+  spec.license     = 'MIT'
 
-  s.files         = `git ls-files -- lib/*`.split("\n") + %w(History.txt License.txt README.md)
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  spec.files         = Dir['lib/**/*'] + %w[History.md License.txt CHANGELOG.md README.md]
+  spec.require_paths = ['lib']
+  spec.required_ruby_version = '>= 2.3'
 
+  spec.add_runtime_dependency('i18n', '>= 0.7')
+  spec.add_runtime_dependency 'thor'
+
+  spec.add_development_dependency('minitest')
+  spec.add_development_dependency('rake')
+  spec.add_development_dependency('rubocop')
+  spec.add_development_dependency('simplecov')
+  spec.add_development_dependency('test-unit')
+  spec.add_development_dependency('timecop')
 end

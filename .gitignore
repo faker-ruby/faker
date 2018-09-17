@@ -1,0 +1,25 @@
+pkg/*
+
+# Ignore Bundle folder
+.bundle/*
+
+# Ignore Coveralls files
+coverage/*
+
+# Ignore Vim backup files.
+*~
+
+# Ignore Vim swap files.
+*.swp
+
+# Ignore Ctags
+/tags
+
+# Ignore Finder metadata.
+.DS_Store
+
+.idea/*
+
+# Ignore rvm and rbenv files
+.ruby-version
+.ruby-gemset

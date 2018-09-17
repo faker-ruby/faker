@@ -1,37 +1,93 @@
+# frozen_string_literal: true
+
 module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
-    def self.words(num = 3, supplemental = false)
-      (
-        translate('faker.lorem.words') + 
-        (supplemental ? translate('faker.lorem.supplemental') : [])
-      ).shuffle[0, num]
-    end
-    
-    def self.characters(char_count = 255)
-      rand(36**char_count).to_s(36)
-    end
+    CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a
 
-    def self.sentence(word_count = 4, supplemental = false)
-      words(word_count + rand(6), supplemental).join(' ').capitalize + '.'
-    end
-
-    def self.sentences(sentence_count = 3, supplemental = false)
-      [].tap do |sentences|
-        1.upto(sentence_count) do
-          sentences << sentence(3, supplemental)
-        end
+    class << self
+      def word
+        sample(translate('faker.lorem.words'))
       end
-    end
 
-    def self.paragraph(sentence_count = 3, supplemental = false)
-      sentences(sentence_count + rand(3), supplemental).join(' ')
-    end
+      def words(num = 3, supplemental = false)
+        resolved_num = resolve(num)
+        word_list = (
+          translate('faker.lorem.words') +
+          (supplemental ? translate('faker.lorem.supplemental') : [])
+        )
+        word_list *= ((resolved_num / word_list.length) + 1)
+        shuffle(word_list)[0, resolved_num]
+      end
 
-    def self.paragraphs(paragraph_count = 3, supplemental = false)
-      [].tap do |paragraphs|
-        1.upto(paragraph_count) do
-          paragraphs << paragraph(3, supplemental)
+      def character
+        sample(CHARACTERS)
+      end
+
+      def characters(char_count = 255)
+        char_count = resolve(char_count)
+        return '' if char_count.to_i < 1
+
+        Array.new(char_count) { sample(CHARACTERS) }.join
+      end
+
+      def multibyte
+        sample(translate('faker.lorem.multibyte')).pack('C*').force_encoding('utf-8')
+      end
+
+      def sentence(word_count = 4, supplemental = false, random_words_to_add = 0)
+        words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + locale_period
+      end
+
+      def sentences(sentence_count = 3, supplemental = false)
+        1.upto(resolve(sentence_count)).collect { sentence(3, supplemental) }
+      end
+
+      def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 0)
+        sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(locale_space)
+      end
+
+      def paragraphs(paragraph_count = 3, supplemental = false)
+        1.upto(resolve(paragraph_count)).collect { paragraph(3, supplemental) }
+      end
+
+      def paragraph_by_chars(chars = 256, supplemental = false)
+        paragraph = paragraph(3, supplemental)
+
+        paragraph += ' ' + paragraph(3, supplemental) while paragraph.length < chars
+
+        paragraph[0...chars - 1] + '.'
+      end
+
+      def question(word_count = 4, supplemental = false, random_words_to_add = 0)
+        words(word_count + rand(random_words_to_add), supplemental).join(' ').capitalize + locale_question_mark
+      end
+
+      def questions(question_count = 3, supplemental = false)
+        1.upto(resolve(question_count)).collect { question(3, supplemental) }
+      end
+
+      private
+
+      def locale_period
+        translate('faker.lorem.punctuation.period') || '.'
+      end
+
+      def locale_space
+        translate('faker.lorem.punctuation.space') || ' '
+      end
+
+      def locale_question_mark
+        translate('faker.lorem.punctuation.question_mark') || '?'
+      end
+
+      # If an array or range is passed, a random value will be selected.
+      # All other values are simply returned.
+      def resolve(value)
+        case value
+        when Array then sample(value)
+        when Range then rand value
+        else value
         end
       end
     end
