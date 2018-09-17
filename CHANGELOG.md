@@ -3,12 +3,14 @@
 ## HEAD Unreleased
 
 ### Bug/Fixes
+- [PR #1335](https://github.com/stympy/faker/pull/1335) Fix Company.luhn_algorithm and add missing tests [@01max](https://github.com/01max)
 - [PR #1334](https://github.com/stympy/faker/pull/1334) Faker::Number.leading_zero_number should always start with 0 [@vbrazo](https://github.com/vbrazo)
 - [PR #1317](https://github.com/stympy/faker/pull/1317) Change Faker::Lorem.multibyte logic [@ShabelnikM](https://github.com/ShabelnikM)
 - [PR #527](https://github.com/stympy/faker/pull/527) Fix time period test that could result in a flake test within 15 days [@melonhead901](https://github.com/melonhead901)
 - [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
+- [PR #1362](https://github.com/stympy/faker/pull/1362) Faker::Types minor cleanup [@stephengroat](https://github.com/stephengroat)
 - [PR #1347](https://github.com/stympy/faker/pull/1347) Remove launchy dependency [@vbrazo](https://github.com/vbrazo)
 - [PR #1311](https://github.com/stympy/faker/pull/1311) Target Ruby 2.3 [@tagliala](https://github.com/tagliala)
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
@@ -17,10 +19,16 @@
 - [PR #803](https://github.com/stympy/faker/pull/803) Modify Faker::Educator, Fix #576 [@ghbooth12](https://github.com/ghbooth12)
 
 ### Documentation
+- [PR #1364](https://github.com/stympy/faker/pull/1364) Update readme for Faker::Code to fix typo [@matt297](https://github.com/matt297)
+- [PR #1360](https://github.com/stympy/faker/pull/1360) added sushi and sorted by word [@yizknn](https://github.com/yizknn)
+- [PR #1357](https://github.com/stympy/faker/pull/1357) Fix South Africa documentation [@bradleymarques](https://github.com/bradleymarques)
+- [PR #1354](https://github.com/stympy/faker/pull/1354) Update docs for Lorem [@softwaregravy](https://github.com/softwaregravy)
 - [PR #1353](https://github.com/stympy/faker/pull/1353) Update documentation for Faker::Number [@softwaregravy](https://github.com/softwaregravy)
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1358](https://github.com/stympy/faker/pull/1358) Add cat breed for Japanese [@yizknn](https://github.com/yizknn)
+- [PR #1365](https://github.com/stympy/faker/pull/1365) Add Faker::Number.within [@QuantumWaver](https://github.com/QuantumWaver)
 - [PR #1336](https://github.com/stympy/faker/pull/1336) Implements and tests South African business registration numbers [@bradleymarques](https://github.com/bradleymarques)
 - [PR #1346](https://github.com/stympy/faker/pull/1346) Add Faker::Relationship [@QuantumWaver](https://github.com/QuantumWaver)
 - [PR #1348](https://github.com/stympy/faker/pull/1348) Add Faker::Finance.vat_number [@vbrazo](https://github.com/vbrazo)
