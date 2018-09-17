@@ -1,5 +1,7 @@
 # Faker::Tezos
 
+It might be available in the next version.
+
 ```ruby
 Faker::Tezos.account #=> "tz1eUsgK6aj752Fbxwk5sAoEFvSDnPjZ4qvk"
 
