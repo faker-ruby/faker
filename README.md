@@ -25,7 +25,7 @@ Contents
 - [Installing](#installing)
 - [Usage](#usage)
   - [Faker::Address](doc/address.md)
-  - [Faker::Alphanum](doc/alphanum.md)
+  - [Faker::Alphanumeric](doc/alphanumeric.md)
   - [Faker::Ancient](doc/ancient.md)
   - [Faker::App](doc/app.md)
   - [Faker::Appliance](doc/appliance.md)
