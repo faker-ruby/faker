@@ -21,6 +21,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1359](https://github.com/stympy/faker/pull/1359) Add Faker::Tezos [@Pierre-Michard](https://github.com/Pierre-Michard)
 - [PR #1336](https://github.com/stympy/faker/pull/1336) Implements and tests South African business registration numbers [@bradleymarques](https://github.com/bradleymarques)
 - [PR #1346](https://github.com/stympy/faker/pull/1346) Add Faker::Relationship [@QuantumWaver](https://github.com/QuantumWaver)
 - [PR #1348](https://github.com/stympy/faker/pull/1348) Add Faker::Finance.vat_number [@vbrazo](https://github.com/vbrazo)
