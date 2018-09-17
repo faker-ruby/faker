@@ -229,5 +229,4 @@ end
 
 %w[faker helpers].each do |path|
   Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
-  Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
 end
