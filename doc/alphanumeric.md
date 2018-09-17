@@ -1,4 +1,4 @@
-# Faker::Alphanum
+# Faker::Alphanumeric
 
 It might be available in the next version.
 
