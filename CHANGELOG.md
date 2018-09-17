@@ -27,6 +27,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1359](https://github.com/stympy/faker/pull/1359) Add Faker::Tezos [@Pierre-Michard](https://github.com/Pierre-Michard)
 - [PR #1366](https://github.com/stympy/faker/pull/1366) Add Faker::Seinfeld.business [@dsgraham](https://github.com/dsgraham)
 - [PR #1358](https://github.com/stympy/faker/pull/1358) Add cat breed for Japanese [@yizknn](https://github.com/yizknn)
 - [PR #1365](https://github.com/stympy/faker/pull/1365) Add Faker::Number.within [@QuantumWaver](https://github.com/QuantumWaver)
