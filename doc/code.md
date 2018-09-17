@@ -17,5 +17,5 @@ Faker::Code.imei #= "546327785982623"
 
 Faker::Code.asin #=> "B00000IGGJ"
 
-Fake::Code:sin #=> "159160274"
+Faker::Code.sin #=> "159160274"
 ```
