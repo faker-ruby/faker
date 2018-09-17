@@ -3,8 +3,6 @@
 module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
-    CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a
-
     class << self
       def word
         sample(translate('faker.lorem.words'))
@@ -21,7 +19,7 @@ module Faker
       end
 
       def character
-        sample(CHARACTERS)
+        sample(Types::CHARACTERS)
       end
 
       def characters(char_count = 255)
