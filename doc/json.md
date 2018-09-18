@@ -6,7 +6,7 @@
  returned JSON string is equal to the width_int.
 
  `options_hash = {key: Class.method, value: Class.method}` where Class is
- any class in the Faker gem.  For example if you wanted random names for keys
+ any class in the Faker gem.  For example if you want random names for keys
  and random Star Wars quotes for values you would write the options_hash as follows
  ```ruby
  options_hash = { key: 'Name.first_name', value: 'StarWars.quote' }
