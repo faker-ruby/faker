@@ -1,6 +1,6 @@
 # Faker::Cannabis
 
-Available since version 1.8.0.
+Available since version 1.9.0.
 
 ```ruby
 # Random strain
@@ -29,7 +29,4 @@ Faker::Cannabis.type #=> "hybrid"
 
 # Random buzzword
 Faker::Cannabis.buzzword #=> "blunt wrap"
-
-# Random website
-Faker::Cannabis.website #=> "https://weedmaps.com"
 ```

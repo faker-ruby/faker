@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerFunnyName < Test::Unit::TestCase
   def setup
@@ -27,6 +29,6 @@ class TestFakerFunnyName < Test::Unit::TestCase
 
   def test_name_with_initial
     res = @tester.name_with_initial
-    assert res.count('.') > 0
+    assert res.count('.').positive?
   end
 end

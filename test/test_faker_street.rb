@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerStreet < Test::Unit::TestCase
   def setup
@@ -22,8 +24,8 @@ class TestFakerStreet < Test::Unit::TestCase
       }
     }
     # rubocop:enable Lint/InterpolationCheck
-    I18n.backend.store_translations(:shire, shire)
     I18n.config.available_locales += [:shire]
+    I18n.backend.store_translations(:shire, shire)
   end
 
   def teardown

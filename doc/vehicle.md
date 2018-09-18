@@ -5,36 +5,58 @@ Available since version 1.6.4.
 ```ruby
 Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
 
-Faker::Vehicle.manufacture #=> "JAGUAR CARS LTD"
+# Random vehicle manufacturer
+Faker::Vehicle.manufacture #=> "Lamborghini"
+Faker::Vehicle.make #=> "Honda"
 
-Faker::Vehicle.mileage #=> 12463
+# Random vehicle model
+Faker::Vehicle.model #=> "A8"
+Faker::Vehicle.model('Toyota') #=> "Prius"
+Faker::Vehicle.make_and_model #=> "Dodge Charger"
 
-Faker::Vehicle.year #=> 2006
+# Random vehicle color
+Faker::Vehicle.color #=> "Red"
 
-Faker::Vehicle.make #=> "Toyota"
+# Random vehicle transmission
+Faker::Vehicle.transmission #=> "Automanual"
 
-Faker::Vehicle.model #=> "Prius"
+# Random vehicle drive type
+Faker::Vehicle.drive_type #=> "4x2/2-wheel drive"
 
-Faker::Vehicle.make_and_model #=> "Ford Focus"
+# Random vehicle fuel type
+Faker::Vehicle.fuel_type #=> "Diesel"
 
+# Random vehicle style
 Faker::Vehicle.style #=> "ESi"
 
-Faker::Vehicle.color #=> "Beige"
+# Random car type
+Faker::Vehicle.car_type #=> "Sedan"
 
-Faker::Vehicle.transmission #=> "Automatic"
+# Random car options
+Faker::Vehicle.car_options #=> ["DVD System", "MP3 (Single Disc)", "Tow Package", "CD (Multi Disc)", "Cassette Player", "Bucket Seats", "Cassette Player", "Leather Interior", "AM/FM Stereo", "Third Row Seats"]
 
-Faker::Vehicle.drive_type #=> "FWD"
+# Random standard car specs
+Faker::Vehicle.standard_specs #=> ["Full-size spare tire w/aluminum alloy wheel", "Back-up camera", "Carpeted cargo area", "Silver accent IP trim finisher -inc: silver shifter finisher", "Back-up camera", "Water-repellent windshield & front door glass", "Floor carpeting"]
 
-Faker::Vehicle.fuel_type #=> "Gasoline Hybrid"
+# Random number of doors
+Faker::Vehicle.doors #=> 1
+Faker::Vehicle.door_count #=> 3
 
-Faker::Vehicle.door_count #=> "2 Door"
+# Random engine size
+Faker::Vehicle.engine_size #=> 6
+Faker::Vehicke.engine #=> 4
 
-Faker::Vehicle.car_type #=> "Hatchback"
+# Random car year
+# Between 1 and 15 years ago
+Faker::Vehicle.year #=> 2008
 
-Faker::Vehicle.engine #=> "6 Cylinder Engine"
-Faker::Vehicle.engine_size #=> "8 Cylinder Engine"
+# Random mileage/kilometrage
+Faker::Vehicle.mileage #=> 26961
+Faker::Vehicle.mileage(50_000) #=> 81557
+Faker::Vehicle.mileage(50_000, 250_000) #=> 117503
+Faker::Vehicle.kilometrage #=> 35378
 
-Faker::Vehicle.car_options #=> ["A/C: Front", "Airbag: Driver", "AM/FM Stereo", ...]
-
-Faker::Vehicle.standard_specs #=> ["Pwr windows", "Remote fuel lid release", "Immobilizer system", ...]
+# Random vehicle license plate
+Faker::Vehicle.license_plate #=> "DEP-2483"
+Faker::Vehicle.license_plate('FL') #=> "977 UNU"
 ```

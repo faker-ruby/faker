@@ -1,9 +1,13 @@
 # Faker::WorldCup
 
-It might be available in the next version.
+Available since version 1.9.0.
 
 ```ruby
 Faker::WorldCup.team #=> "South Korea"
+
+Faker::WorldCup.stadium #=> "Ekaterinburg Arena"
+
+Faker::WorldCup.city #=> "Saint Petersburg"
 
 Faker::WorldCup.group #=> "Egypt"
 

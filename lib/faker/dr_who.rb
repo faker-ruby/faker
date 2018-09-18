@@ -10,6 +10,10 @@ module Faker
       fetch('dr_who.the_doctors')
     end
 
+    def self.actor
+      fetch('dr_who.actors')
+    end
+
     def self.catch_phrase
       fetch('dr_who.catch_phrases')
     end

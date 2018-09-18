@@ -1,5 +1,7 @@
 # Faker::SwordArtOnline
 
+Available since version 1.9.0.
+
 ```ruby
 # Random Sword Art Online real name
 Faker::SwordArtOnline.real_name #=> "Kirigaya Kazuto"

@@ -1,5 +1,7 @@
 # Faker::Football
 
+Available since version 1.9.0.
+
 ```ruby
 Faker::Football.team #=> "Manchester United"
 

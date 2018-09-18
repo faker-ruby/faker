@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 # rubocop:disable Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
   def setup
@@ -11,7 +13,9 @@ class TestDeterminism < Test::Unit::TestCase
     @all_methods.each_index do |index|
       store_result @all_methods[index]
     end
+
     @first_run.freeze
+
     Faker::Config.random = Random.new(42)
     @all_methods.each_index do |index|
       assert deterministic_random? @first_run[index], @all_methods[index]
@@ -41,7 +45,7 @@ class TestDeterminism < Test::Unit::TestCase
 
   def subclasses
     Faker.constants.delete_if do |subclass|
-      %i[Base Char Config Date Internet Time VERSION].include?(subclass)
+      %i[Base Bank Char Base58 ChileRut Config Date Internet Time VERSION].include?(subclass)
     end.sort
   end
 

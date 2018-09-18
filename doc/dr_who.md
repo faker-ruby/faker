@@ -1,9 +1,11 @@
 # Faker::DrWho
 
 ```ruby
-Faker::DrWho.character    #=> "Captain Jack Harness"
+Faker::DrWho.character    #=> "Captain Jack Harkness"
 
 Faker::DrWho.the_doctor   #=> "Ninth Doctor"
+
+Faker::DrWho.actor        #=> "Matt Smith"
 
 Faker::DrWho.catch_phrase #=> "Fantastic!"
 

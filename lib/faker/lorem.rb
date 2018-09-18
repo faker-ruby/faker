@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
@@ -28,7 +30,11 @@ module Faker
         Array.new(char_count) { sample(CHARACTERS) }.join
       end
 
-      def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
+      def multibyte
+        sample(translate('faker.lorem.multibyte')).pack('C*').force_encoding('utf-8')
+      end
+
+      def sentence(word_count = 4, supplemental = false, random_words_to_add = 0)
         words(word_count + rand(random_words_to_add.to_i), supplemental).join(' ').capitalize + locale_period
       end
 
@@ -36,7 +42,7 @@ module Faker
         1.upto(resolve(sentence_count)).collect { sentence(3, supplemental) }
       end
 
-      def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 3)
+      def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 0)
         sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental).join(locale_space)
       end
 
@@ -52,8 +58,8 @@ module Faker
         paragraph[0...chars - 1] + '.'
       end
 
-      def question(word_count = 4, supplemental = false, random_words_to_add = 6)
-        words(word_count + rand(random_words_to_add.to_i), supplemental).join(locale_space).capitalize + locale_question_mark
+      def question(word_count = 4, supplemental = false, random_words_to_add = 0)
+        words(word_count + rand(random_words_to_add), supplemental).join(' ').capitalize + locale_question_mark
       end
 
       def questions(question_count = 3, supplemental = false)

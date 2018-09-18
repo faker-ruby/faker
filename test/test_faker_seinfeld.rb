@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerSeinfeld < Test::Unit::TestCase
   def setup
@@ -10,6 +12,10 @@ class TestFakerSeinfeld < Test::Unit::TestCase
   end
 
   def test_quote
+    assert @tester.quote.match(/\w+/)
+  end
+
+  def test_business
     assert @tester.quote.match(/\w+/)
   end
 end

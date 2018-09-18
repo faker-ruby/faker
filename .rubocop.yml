@@ -1,3 +1,5 @@
+AllCops:
+  TargetRubyVersion: 2.3
 
 Lint/AmbiguousBlockAssociation:
   Enabled: false
@@ -26,6 +28,10 @@ Style/Documentation:
 Style/EvalWithLocation:
   Exclude:
     - 'lib/faker/json.rb'
+Style/For:
+  Enabled: false
+Style/RegexpLiteral:
+  Enabled: false
 
 Security/Eval:
   Exclude:

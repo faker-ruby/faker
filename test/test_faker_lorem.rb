@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerLorem < Test::Unit::TestCase
   def setup
@@ -106,8 +108,19 @@ class TestFakerLorem < Test::Unit::TestCase
     assert(array.length == 250 || array.length == 500)
   end
 
+  def test_multibyte
+    assert @tester.multibyte.is_a? String
+    assert %w[😀 ❤ 😡].include?(@tester.multibyte)
+  end
+
   def test_paragraph_char_count
     paragraph = @tester.paragraph_by_chars(256)
     assert(paragraph.length == 256)
+  end
+
+  def test_unique_with_already_set_values
+    values = ('a'..'z').to_a + ('0'..'9').to_a
+    @tester.unique.exclude(:character, [], values)
+    assert_raise(Faker::UniqueGenerator::RetryLimitExceeded) { @tester.unique.character }
   end
 end

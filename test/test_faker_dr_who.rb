@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require File.expand_path(File.dirname(__FILE__) + '/test_helper')
+require_relative 'test_helper'
 
 class TestFakerDrWho < Test::Unit::TestCase
   def setup
@@ -13,6 +13,10 @@ class TestFakerDrWho < Test::Unit::TestCase
 
   def test_the_doctor
     10.times { assert Faker::DrWho.the_doctor.match(/[\w]+/) }
+  end
+
+  def test_actor
+    10.times { assert Faker::DrWho.actor.match(/[\w]+/) }
   end
 
   def test_catch_phrase
