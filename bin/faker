@@ -1,8 +1,0 @@
-#!/usr/bin/env ruby
-# frozen_string_literal: true
-
-lib_dir = File.join(File.dirname(__FILE__), '..', 'lib')
-$LOAD_PATH.unshift lib_dir if File.directory?(lib_dir)
-
-require 'faker'
-Faker::CLI.start
