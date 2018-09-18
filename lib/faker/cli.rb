@@ -5,7 +5,7 @@ require 'thor'
 module Faker
   class CLI < Thor
     Faker.constants.sort.each do |constant|
-      desc "#{constant.downcase} [-f #{Faker::Base.module_methods(constant)}]",
+      desc "#{constant.downcase} [-f #{Faker::Base.module_methods(constant).join('|')}]",
            "Returns fake #{constant.downcase} data"
       option :faker_type, aliases: '-f', desc: 'the faker data type'
 
