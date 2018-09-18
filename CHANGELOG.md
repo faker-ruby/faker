@@ -3,6 +3,8 @@
 ## HEAD Unreleased
 
 ### Bug/Fixes
+- [PR #1368](https://github.com/stympy/faker/pull/1368) Don't force enforce_available_locales [@deivid-rodriguez](https://github.com/deivid-rodriguez)
+- [PR #1355](https://github.com/stympy/faker/pull/1355) Fix global clear of unique values for Faker::UniqueGenerator [@kolasss](https://github.com/kolasss)
 - [PR #1335](https://github.com/stympy/faker/pull/1335) Fix Company.luhn_algorithm and add missing tests [@01max](https://github.com/01max)
 - [PR #1334](https://github.com/stympy/faker/pull/1334) Faker::Number.leading_zero_number should always start with 0 [@vbrazo](https://github.com/vbrazo)
 - [PR #1317](https://github.com/stympy/faker/pull/1317) Change Faker::Lorem.multibyte logic [@ShabelnikM](https://github.com/ShabelnikM)
@@ -27,6 +29,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1156](https://github.com/stympy/faker/pull/1156) Add Faker::Json [@the-wendell](https://github.com/the-wendell)
 - [PR #1359](https://github.com/stympy/faker/pull/1359) Add Faker::Tezos [@Pierre-Michard](https://github.com/Pierre-Michard)
 - [PR #1366](https://github.com/stympy/faker/pull/1366) Add Faker::Seinfeld.business [@dsgraham](https://github.com/dsgraham)
 - [PR #1358](https://github.com/stympy/faker/pull/1358) Add cat breed for Japanese [@yizknn](https://github.com/yizknn)
