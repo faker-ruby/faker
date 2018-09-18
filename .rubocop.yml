@@ -28,6 +28,10 @@ Style/Documentation:
 Style/EvalWithLocation:
   Exclude:
     - 'lib/faker/json.rb'
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'lib/faker/json.rb'
+    - 'test/test_faker_json.rb'
 Style/For:
   Enabled: false
 Style/RegexpLiteral:
