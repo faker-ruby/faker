@@ -100,6 +100,7 @@ Contents
   - [Faker::Internet](doc/internet.md)
   - [Faker::Invoice](doc/invoice.md)
   - [Faker::Job](doc/job.md)
+  - [Faker::Json](doc/json.md)
   - [Faker::Kpop](doc/kpop.md)
   - [Faker::LeagueOfLegends](doc/league_of_legends.md)
   - [Faker::Lebowski](doc/lebowski.md)
