@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'test_helper'
-# rubocop:disable Security/Eval,Style/EvalWithLocation
+# rubocop:disable Security/Eval
 class TestDeterminism < Test::Unit::TestCase
   def setup
     @all_methods = all_methods.freeze
@@ -50,9 +50,9 @@ class TestDeterminism < Test::Unit::TestCase
   end
 
   def subclass_methods(subclass)
-    eval("Faker::#{subclass}.public_methods(false) - Faker::Base.public_methods(false)").sort.map do |method|
+    Faker::Base.module_methods(subclass).sort.map do |method|
       "Faker::#{subclass}.#{method}"
     end.sort
   end
 end
-# rubocop:enable Security/Eval,Style/EvalWithLocation
+# rubocop:enable Security/Eval

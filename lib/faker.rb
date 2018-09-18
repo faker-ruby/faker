@@ -223,6 +223,13 @@ module Faker
           0
         end
       end
+
+      # TODO: Remove this evil eval method
+      # rubocop:disable Style/EvalWithLocation, Security/Eval
+      def module_methods(subclass)
+        eval("Faker::#{subclass}.public_methods(false)") - Faker::Base.public_methods(false)
+      end
+      # rubocop:enable Style/EvalWithLocation, Security/Eval
     end
   end
 end
