@@ -13,8 +13,8 @@ module Faker
         begin
           puts Object.const_get("Faker::#{constant.capitalize}.#{options.faker_type}")
         rescue I18n::MissingTranslationData
-          puts 'Usage: `faker address -f=street_address`'
-          puts 'Run `faker help address` for a list of valid types'
+          puts "Usage: `faker #{constant.downcase} -f=#{options.faker_type}`"
+          puts "Run `faker help #{constant.downcase}` for a list of valid types"
         end
       end
     end
