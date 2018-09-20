@@ -12,7 +12,8 @@ module Faker
         edpk:   [13, 15, 37, 217],
         edsk:  [13, 15, 58, 7],
         edsig:  [9, 245, 205, 134, 18],
-        o:      [5, 116]
+        o:      [5, 116],
+        B:      [1, 52]
       }.freeze
 
       def account
@@ -25,6 +26,10 @@ module Faker
 
       def operation
         encode_tz(:o, 32)
+      end
+
+      def block
+        encode_tz(:B, 32)
       end
 
       def signature
