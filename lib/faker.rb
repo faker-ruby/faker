@@ -198,6 +198,16 @@ module Faker
         rand(from..to)
       end
 
+      # If an array or range is passed, a random value will be selected.
+      # All other values are simply returned.
+      def resolve(value)
+        case value
+        when Array then sample(value)
+        when Range then rand value
+        else value
+        end
+      end
+
       def unique(max_retries = 10_000)
         @unique ||= UniqueGenerator.new(self, max_retries)
       end

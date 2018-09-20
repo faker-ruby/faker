@@ -3,8 +3,6 @@
 module Faker
   # Based on Perl's Text::Lorem
   class Lorem < Base
-    CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a
-
     class << self
       def word
         sample(translate('faker.lorem.words'))
@@ -21,13 +19,11 @@ module Faker
       end
 
       def character
-        sample(CHARACTERS)
+        sample(Types::CHARACTERS)
       end
 
       def characters(char_count = 255)
-        char_count = resolve(char_count)
-        return '' if char_count.to_i < 1
-        Array.new(char_count) { sample(CHARACTERS) }.join
+        Alphanumeric.alphanumeric(char_count)
       end
 
       def multibyte
@@ -78,16 +74,6 @@ module Faker
 
       def locale_question_mark
         translate('faker.lorem.punctuation.question_mark') || '?'
-      end
-
-      # If an array or range is passed, a random value will be selected.
-      # All other values are simply returned.
-      def resolve(value)
-        case value
-        when Array then sample(value)
-        when Range then rand value
-        else value
-        end
       end
     end
   end

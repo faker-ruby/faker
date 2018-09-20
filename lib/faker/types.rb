@@ -74,14 +74,6 @@ module Faker
       def titleize(word)
         word.split(/(\W)/).map(&:capitalize).join
       end
-
-      def resolve(value)
-        case value
-        when Array then sample(value)
-        when Range then rand value
-        else value
-        end
-      end
     end
   end
 end

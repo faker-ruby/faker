@@ -65,18 +65,6 @@ module Faker
 
         paragraph[0...chars - 1] + '.'
       end
-
-      private
-
-      # If an array or range is passed, a random value will be selected.
-      # All other values are simply returned.
-      def resolve(value)
-        case value
-        when Array then sample(value)
-        when Range then rand value
-        else value
-        end
-      end
     end
   end
 end
