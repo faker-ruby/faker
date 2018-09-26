@@ -9,9 +9,6 @@ end
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
 
-if I18n.respond_to?(:enforce_available_locales=)
-  I18n.enforce_available_locales = true
-end
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 I18n.reload! if I18n.backend.initialized?
 
@@ -201,6 +198,16 @@ module Faker
         rand(from..to)
       end
 
+      # If an array or range is passed, a random value will be selected.
+      # All other values are simply returned.
+      def resolve(value)
+        case value
+        when Array then sample(value)
+        when Range then rand value
+        else value
+        end
+      end
+
       def unique(max_retries = 10_000)
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
@@ -232,3 +239,4 @@ require 'faker/lorem/ipsum'
 
 require 'helpers/char'
 require 'helpers/unique_generator'
+require 'helpers/base58'

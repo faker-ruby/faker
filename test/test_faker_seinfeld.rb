@@ -14,4 +14,8 @@ class TestFakerSeinfeld < Test::Unit::TestCase
   def test_quote
     assert @tester.quote.match(/\w+/)
   end
+
+  def test_business
+    assert @tester.quote.match(/\w+/)
+  end
 end

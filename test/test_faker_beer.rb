@@ -7,6 +7,10 @@ class TestFakerBeer < Test::Unit::TestCase
     @tester = Faker::Beer
   end
 
+  def test_brand
+    assert @tester.brand.match(/(\w+\.? ?){2,3}/)
+  end
+
   def test_name
     assert @tester.name.match(/(\w+\.? ?){2,3}/)
   end

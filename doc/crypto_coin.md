@@ -5,7 +5,9 @@ Faker::CryptoCoin.coin_name #=> "Bitcoin"
 
 Faker::CryptoCoin.acronym #=> "BTC"
 
-Faker::CryptoCoin.url_logo #=> "https://imgur.com/a/m1DSRCR" 
+Faker::CryptoCoin.url_logo #=> "https://i.imgur.com/EFz61Ei.png" 
 
-Faker::CryptoCoin.coin_hash #=> {:name=>"Litecoin", :acronym=>"LTC", :url_logo=>"https://imgur.com/a/MdxgyVq"} 
+Faker::CryptoCoin.coin_array #=> ["Dash", "DASH", "https://i.imgur.com/2uX91cb.png"]
+
+Faker::CryptoCoin.coin_hash {:name=>"Ethereum", :acronym=>"ETH", :url_logo=>"https://i.imgur.com/uOPFCXj.png"} 
 ```

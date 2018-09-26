@@ -18,7 +18,7 @@ module Faker
       end
 
       def characters(char_count = 255)
-        Faker::Lorem::Ipsum.characters(char_count)
+        Alphanumeric.alphanumeric(char_count)
       end
 
       def multibyte
