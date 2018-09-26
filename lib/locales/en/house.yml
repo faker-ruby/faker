@@ -1,0 +1,6 @@
+en:
+  faker:
+    house:
+      furniture: ["chair", armchair", "table", "dining table", "stool", "sofa", "couch", "bath", "bed", "cupboard", "drawers", "dresser", "floor lamp", "bedside table", "futon"]
+      appliances: ["kettle", "toaster", "microwave", "shaver", "hairdryer", "stereo", "television", "radio", "record player", "sandwich maker", "oven", "fridge", "hob", "egg timer", "electric shower"]
+      rooms: ["kitchen", "living room", "reception room", "bedroom", "master bedroom", "guest room", "drawing room", "conservatory", "porch", "hallway", "pantry", "sunroom", "bathroom", "ensuite bathroom", "cellar", "attic", "loft"]
