@@ -95,6 +95,7 @@ Contents
   - [Faker::Hipster](doc/hipster.md)
   - [Faker::HitchhikersGuideToTheGalaxy](doc/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Hobbit](doc/hobbit.md)
+  - [Faker::House](doc/house.md)
   - [Faker::HowIMetYourMother](doc/how_i_met_your_mother.md)
   - [Faker::IDNumber](doc/id_number.md)
   - [Faker::IndustrySegments](doc/industry_segments.md)
