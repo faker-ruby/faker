@@ -2,9 +2,7 @@
 
 
 ```ruby
-Faker::House.furniture #=> "chair""
-
-Faker::House.appliance #=> "toaster"
+Faker::House.furniture #=> "chair"
 
 Faker::House.room #=> "kitchen"
 ```

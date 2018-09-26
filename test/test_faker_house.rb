@@ -11,10 +11,6 @@ class TestFakerHouse < Test::Unit::TestCase
     assert @tester.furniture.match(/\w+/)
   end
 
-  def test_appliance
-    assert @tester.appliance.match(/\w+/)
-  end
-
   def test_room
     assert @tester.room.match(/\w+/)
   end
