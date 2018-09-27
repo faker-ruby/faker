@@ -1,31 +1,24 @@
 # frozen_string_literal: true
 
 module Faker
-  class LoremFlickr < Base
+  module LoremFlickr
     class << self
-      SUPPORTED_COLORIZATIONS = %w[red green blue].freeze
+      extend Gem::Deprecate
 
       def image(size = '300x300', search_terms = [], match_all = false)
-        build_url(size, nil, search_terms, match_all)
+        Faker::Lorem::Flickr.image(size, search_terms, match_all)
       end
 
       def grayscale_image(size = '300x300', search_terms = ['all'], match_all = false)
-        raise ArgumentError, 'Search terms must be specified for grayscale images' unless search_terms.any?
-
-        build_url(size, 'g', search_terms, match_all)
+        Faker::Lorem::Flickr.grayscale_image(size, search_terms, match_all)
       end
 
       def pixelated_image(size = '300x300', search_terms = ['all'], match_all = false)
-        raise ArgumentError, 'Search terms must be specified for pixelated images' unless search_terms.any?
-
-        build_url(size, 'p', search_terms, match_all)
+        Faker::Lorem::Flickr.pixelated_image(size, search_terms, match_all)
       end
 
       def colorized_image(size = '300x300', color = 'red', search_terms = ['all'], match_all = false)
-        raise ArgumentError, 'Search terms must be specified for colorized images' unless search_terms.any?
-        raise ArgumentError, "Supported colorizations are #{SUPPORTED_COLORIZATIONS.join(', ')}" unless SUPPORTED_COLORIZATIONS.include?(color)
-
-        build_url(size, color, search_terms, match_all)
+        Faker::Lorem::Flickr.colorized_image(size, color, search_terms, match_all)
       end
 
       private
@@ -40,6 +33,11 @@ module Faker
         url_parts << 'all' if match_all
         url_parts.compact.join('/')
       end
+
+      deprecate :image, 'Faker::Lorem::Flickr.image', 2018, 10
+      deprecate :grayscale_image, 'Faker::Lorem::Flickr.grayscale_image', 2018, 10
+      deprecate :pixelated_image, 'Faker::Lorem::Flickr.pixelated_image', 2018, 10
+      deprecate :colorized_image, 'Faker::Lorem::Flickr.colorized_image', 2018, 10
     end
   end
 end

@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestFakerLoremFlickr < Test::Unit::TestCase
   def setup
-    @tester = Faker::LoremFlickr
+    @tester = Faker::Lorem::Flickr
     @colorizations = %w[red green blue]
   end
 
