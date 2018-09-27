@@ -237,6 +237,7 @@ Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| req
 
 require 'faker/lorem/ipsum'
 require 'faker/lorem/flickr'
+require 'faker/lorem/pixel'
 
 require 'helpers/char'
 require 'helpers/unique_generator'

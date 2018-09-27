@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestLoremPixel < Test::Unit::TestCase
   def setup
-    @tester = Faker::LoremPixel
+    @tester = Faker::Lorem::Pixel
   end
 
   def test_lorempixel
