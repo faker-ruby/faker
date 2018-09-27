@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestFakerHipster < Test::Unit::TestCase
   def setup
-    @tester = Faker::Hipster
+    @tester = Faker::Lorem::Hipster
     @standard_wordlist = I18n.translate('faker.hipster.words')
     @complete_wordlist =
       @standard_wordlist + I18n.translate('faker.lorem.words')
