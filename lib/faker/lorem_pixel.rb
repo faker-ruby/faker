@@ -3,6 +3,8 @@
 module Faker
   module LoremPixel
     class << self
+      extend Gem::Deprecate
+
       SUPPORTED_CATEGORIES = %w[abstract
                                 animals
                                 business
@@ -22,6 +24,8 @@ module Faker
         Faker::Lorem::Pixel.image(size, is_gray, category, number, text, secure: secure)
       end
       # rubocop:enable Metrics/ParameterLists
+
+      deprecate :image, 'Faker::Lorem::Pixel.image', 2018, 10
     end
   end
 end
