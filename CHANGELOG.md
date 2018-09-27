@@ -18,7 +18,7 @@
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
 ### Deprecation
-- [PR #1349](https://github.com/stympy/faker/pull/1349) Add Namespace for Lorem - Faker::Lorem::Ipsum [@vbrazo](https://github.com/vbrazo)
+- [PR #1349](https://github.com/stympy/faker/pull/1349) Add Namespace for Lorem - Faker::Lorem::Ipsum; Faker::Lorem::Flickr; Faker::Lorem::Pixel [@vbrazo](https://github.com/vbrazo)
 - [PR #803](https://github.com/stympy/faker/pull/803) Modify Faker::Educator, Fix #576 [@ghbooth12](https://github.com/ghbooth12)
 
 ### Documentation
