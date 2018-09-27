@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Hipster < Base
+  module Hipster
     class << self
       extend Gem::Deprecate
 
@@ -10,7 +10,7 @@ module Faker
       end
 
       def words(num = 3, supplemental = false, spaces_allowed = false)
-        Faker::Lorem::Hipster.word(num, supplemental, spaces_allowed)
+        Faker::Lorem::Hipster.words(num, supplemental, spaces_allowed)
       end
 
       def sentence(word_count = 4, supplemental = false, random_words_to_add = 6)
