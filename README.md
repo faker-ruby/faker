@@ -107,7 +107,7 @@ Contents
   - [Faker::Lebowski](doc/lebowski.md)
   - [Faker::LordOfTheRings](doc/lord_of_the_rings.md)
   - [Faker::Lorem::Ipsum](doc/lorem_ipsum.md)
-  - [Faker::LoremFlickr](doc/lorem_flickr.md)
+  - [Faker::Lorem::Flickr](doc/lorem_flickr.md)
   - [Faker::LoremPixel](doc/lorem_pixel.md)
   - [Faker::Lovecraft](doc/lovecraft.md)
   - [Faker::Markdown](doc/markdown.md)
