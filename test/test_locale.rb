@@ -37,11 +37,11 @@ class TestLocale < Test::Unit::TestCase
   end
 
   def test_translation_fallback_without_en_in_available_locales
-    I18n.available_locales.delete(:en)
+    I18n.available_locales -= [:en]
     Faker::Config.locale = 'en-BORK'
     assert_nil LoadedYaml['en-BORK']['name']
     assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
-    I18n.available_locales << :en
+    I18n.available_locales += [:en]
   end
 
   def test_regex
