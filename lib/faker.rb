@@ -157,14 +157,19 @@ module Faker
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        I18n.translate(*args.push(opts))
+        disable_enforce_available_locales do
+          I18n.translate(*args.push(opts))
+        end
       end
 
       # Executes block with given locale set.
       def with_locale(tmp_locale = nil)
         current_locale = Faker::Config.own_locale
         Faker::Config.locale = tmp_locale
-        I18n.with_locale(tmp_locale) { yield }
+
+        disable_enforce_available_locales do
+          I18n.with_locale(tmp_locale) { yield }
+        end
       ensure
         Faker::Config.locale = current_locale
       end
@@ -228,6 +233,14 @@ module Faker
         else
           0
         end
+      end
+
+      def disable_enforce_available_locales
+        old_enforce_available_locales = I18n.enforce_available_locales
+        I18n.enforce_available_locales = false
+        yield
+      ensure
+        I18n.enforce_available_locales = old_enforce_available_locales
       end
     end
   end
