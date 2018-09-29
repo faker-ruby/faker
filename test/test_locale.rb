@@ -41,6 +41,7 @@ class TestLocale < Test::Unit::TestCase
     Faker::Config.locale = 'en-BORK'
     assert_nil LoadedYaml['en-BORK']['name']
     assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
+  ensure
     I18n.available_locales += [:en]
   end
 

@@ -238,9 +238,9 @@ module Faker
       def disable_enforce_available_locales
         old_enforce_available_locales = I18n.enforce_available_locales
         I18n.enforce_available_locales = false
-        result = yield
+        yield
+      ensure
         I18n.enforce_available_locales = old_enforce_available_locales
-        result
       end
     end
   end
