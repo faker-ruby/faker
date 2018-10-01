@@ -63,7 +63,7 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
       generator.test
     end
 
-    Faker::UniqueGenerator.clear
+    generator.clear
 
     assert_equal(1, generator.test)
 
@@ -74,5 +74,51 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
     generator.clear
 
     assert_equal(1, generator.test)
+  end
+
+  def test_clears_unique_values_for_all_generators
+    stubbed_generator = Object.new
+    def stubbed_generator.test
+      1
+    end
+
+    stubbed_generator2 = Object.new
+    def stubbed_generator2.test
+      2
+    end
+
+    generator1 = Faker::UniqueGenerator.new(stubbed_generator, 3)
+    generator2 = Faker::UniqueGenerator.new(stubbed_generator2, 3)
+
+    assert_equal(1, generator1.test)
+    assert_equal(2, generator2.test)
+
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator1.test
+    end
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator2.test
+    end
+
+    Faker::UniqueGenerator.clear
+
+    assert_nothing_raised Faker::UniqueGenerator::RetryLimitExceeded do
+      assert_equal(1, generator1.test)
+      assert_equal(2, generator2.test)
+    end
+
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator1.test
+    end
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator2.test
+    end
+
+    Faker::UniqueGenerator.clear
+
+    assert_nothing_raised Faker::UniqueGenerator::RetryLimitExceeded do
+      assert_equal(1, generator1.test)
+      assert_equal(2, generator2.test)
+    end
   end
 end

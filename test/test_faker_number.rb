@@ -69,6 +69,14 @@ class TestFakerNumber < Test::Unit::TestCase
     end
   end
 
+  def test_within
+    100.times do
+      random_number = @tester.within(-50..50)
+      assert random_number >= -50, "Expected >= -50, but got #{random_number}"
+      assert random_number <=  50, "Expected <= 50, but got #{random_number}"
+    end
+  end
+
   def test_positive
     100.times do
       random_number = @tester.positive(1, 100)
