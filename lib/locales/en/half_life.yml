@@ -1,0 +1,6 @@
+en:
+  faker:
+    half_life:
+      character: ["Gordon Freeman", "Barney Calhoun", "Wallace Breen", "Adrian Shephard", "G-Man", "Gina Cross", "Colette Green", "Richard Keller", "Walter Bennett", "Simmons", "Alyx Vance", "Isaac Kleiner", "Eli Vance", "Arne Magnusson", "Dog", "Judith Mossman", "Odessa Cubbage", "Father Grigori"]
+      enemy: ["Headcrab", "Zombie", "Barnacle", "Houndeye", "Bullsquid", "Alien Grunt", "Tentacle", "Ichthyosaur", "Snark", "Garg", "Alien Controller", "Gonarch", "Baby Headcrab", "Grunt", "Assassin", "Antlion", "Antlion Guard", "Fast Headcrab", "Fast Zombie", "Leech", "Poison Headcrab", "Poison Zombie", "APC", "City Scanner", "Civil Protection", "Combine Advisor", "Combine Gunship", "Crab Synth", "Hopper Mine", "Hunter-Chopper", "Manhack", "Mortar Synth", "Overwatch Elite", "Overwatch Sniper", "Overwatch Soldier", "Rollermine", "Shield Scanner", "Strider", "Snark", "Vortigaunt"]
+      location: ["Black Mesa Research Facility", "Xen", "City 17", "Black Mesa East", "Ravenholm", "Nova Prospekt", "White Forest", "St. Olga", "Citadel", "Section A-17 Prototype Labs", "Sector A Training Facility", "Sector B Coolant Reserve", "Sector C Test Labs", "Sector D Administration", "Sector E Biodome Complex", "Sector F Lambda Complex", "Sector G Hydro Electric"]
