@@ -6,7 +6,9 @@ Available since version 1.9.1.
 # Any character from the game
 Faker::HalfLife.character #=> "Gordon Freeman"
 
+# Any enemy from the game
 Faker::HalfLife.enemy #=> "Houndeye"
 
+# Any location from the game
 Faker::HalfLife.location #=> "Black Mesa Research Facility"
 ```
