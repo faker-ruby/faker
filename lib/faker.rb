@@ -248,6 +248,8 @@ end
 
 Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| require f }
 
+require 'faker/games/half_life'
+
 require 'helpers/char'
 require 'helpers/unique_generator'
 require 'helpers/base58'
