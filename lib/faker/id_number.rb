@@ -75,6 +75,13 @@ module Faker
         [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
+      def brazilian_citizen_number
+        digits = Faker::Number.leading_zero_number(9) until digits&.match(/(\d)((?!\1)\d)+/)
+        first_digit = brazilian_citizen_number_checksum_digit(digits)
+        second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
+        [digits, first_digit, second_digit].join
+      end
+
       private
 
       def south_african_id_checksum_digit(id_number)
@@ -93,6 +100,14 @@ module Faker
         total_sum = sum_of_odd_digits + sum_of_even_digits
 
         ((10 - (total_sum % 10)) % 10).to_s
+      end
+
+      def brazilian_citizen_number_checksum_digit(digits)
+        digit_sum = digits.chars.each_with_index.inject(0) do |acc, (digit, i)|
+          acc + digit.to_i * (digits.size + 1 - i)
+        end * 10
+        remainder = digit_sum % 11
+        remainder == 10 ? '0' : remainder.to_s
       end
 
       def _translate(key)

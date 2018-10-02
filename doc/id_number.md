@@ -20,4 +20,7 @@ Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
 
 # Generate an invalid South African ID Number
 Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
+
+# Generate a Brazilian citizen number (CPF)
+Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
 ```
