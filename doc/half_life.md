@@ -1,6 +1,6 @@
 # Faker::HalfLife
 
-Available since version 1.9.1.
+It might be available in the next version.
 
 ```ruby
 # Any character from the game
