@@ -44,8 +44,9 @@ class TestDeterminism < Test::Unit::TestCase
   end
 
   def subclasses
-    Faker.constants.delete_if do |subclass|
-      %i[Base Bank Char Base58 ChileRut Config Date Games GamesHalfLife Internet Time VERSION].include?(subclass)
+    subclasses = Faker.constants.select { |constant| Faker.const_get(constant).is_a? Class }
+    subclasses.delete_if do |subclass|
+      %i[Base Bank ChileRut Config Date GamesHalfLife Internet Time].include?(subclass)
     end.sort
   end
 
