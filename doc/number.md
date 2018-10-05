@@ -6,7 +6,7 @@
 Faker::Number.number(10) #=> "1968353479"
 
 # Required parameter: digits
-# As above, but permits leading zeros
+# Produces a number of the specified digits with a leading zero
 Faker::Number.leading_zero_number(10) #=> "0669336915"
 
 # Required parameter: digits
