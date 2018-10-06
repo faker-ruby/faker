@@ -55,9 +55,7 @@ module Faker
 
       def random(*args)
         method_list = available_methods
-        unless args.nil?
-          args.each { |ex| method_list.delete_if { |meth| meth == ex.to_sym } }
-        end
+        args&.each { |ex| method_list.delete_if { |meth| meth == ex.to_sym } }
         send(method_list[rand(0..method_list.length - 1)])
       end
 
