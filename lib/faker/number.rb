@@ -11,7 +11,7 @@ module Faker
           digits -= 1
         end
 
-        num + leading_zero_number(digits)
+        num + (1..digits).collect { digit }.join
       end
 
       def leading_zero_number(digits = 10)
