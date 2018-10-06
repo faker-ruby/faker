@@ -53,8 +53,10 @@ module Faker
         table.join("\n")
       end
 
-      def random
-        send(available_methods[rand(0..available_methods.length - 1)])
+      def random(*args)
+        method_list = available_methods
+        args&.each { |ex| method_list.delete_if { |meth| meth == ex.to_sym } }
+        send(method_list[rand(0..method_list.length - 1)])
       end
 
       def sandwich(sentences = 3, repeat = 1)

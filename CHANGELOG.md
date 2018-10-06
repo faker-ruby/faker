@@ -32,6 +32,8 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1382](https://github.com/stympy/faker/pull/1382) Adding Faker::IDNumber.brazilian_citizen_number [@bschettino](https://github.com/bschettino)
+- [PR #1062](https://github.com/stympy/faker/pull/1062) Markdown exclude method [@russellschmidt](https://github.com/russellschmidt)
 - [PR #1381](https://github.com/stympy/faker/pull/1381) Add Faker::Games::HalfLife [@jthomp](https://github.com/jthomp)
 - [PR #1374](https://github.com/stympy/faker/pull/1374) Add Faker::Beer.brand [@thalesap](https://github.com/thalesap)
 - [PR #1302](https://github.com/stympy/faker/pull/1302) Add Faker::Alphanumeric [@mtancoigne](https://github.com/mtancoigne)
