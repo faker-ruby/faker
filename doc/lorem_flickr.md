@@ -1,5 +1,7 @@
 # Faker::LoremFlickr
 
+Available since version 1.9.0.
+
 ```ruby
 Faker::LoremFlickr.image #=> "http://loremflickr.com/300/300"
 

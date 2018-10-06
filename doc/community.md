@@ -1,5 +1,7 @@
 # Faker::Community
 
+Available since version 1.9.0.
+
 ```ruby
 Faker::Community.characters #=> "Jeff Winger"
 

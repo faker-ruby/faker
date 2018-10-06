@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerCompany < Test::Unit::TestCase
   def setup
@@ -37,6 +39,13 @@ class TestFakerCompany < Test::Unit::TestCase
     assert [1, 2, 3, 5, 6, 7, 8, 9].include?(org_no[0].to_i)
     assert org_no[2].to_i >= 2
     assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
+  end
+
+  def test_czech_organisation_number
+    org_no = @tester.czech_organisation_number
+    assert org_no.match(/\d{8}/)
+    assert [0, 1, 2, 3, 5, 6, 7, 8, 9].include?(org_no[0].to_i)
+    assert czech_o_n_checksum(org_no) == org_no[-1].to_i
   end
 
   def test_french_siren_number
@@ -107,7 +116,60 @@ class TestFakerCompany < Test::Unit::TestCase
     assert @tester.send(:mod11, 0)
   end
 
+  def test_south_african_pty_ltd_registration_number
+    assert_match(
+      /\A\d{4}\/\d{4,10}\/07\z/,
+      @tester.south_african_pty_ltd_registration_number
+    )
+  end
+
+  def test_south_african_close_corporation_registration_number
+    assert_match(
+      /\A(CK\d{2}|\d{4})\/\d{4,10}\/23\z/,
+      @tester.south_african_close_corporation_registration_number
+    )
+  end
+
+  def test_south_african_listed_company_registration_number
+    assert_match(
+      /\A\d{4}\/\d{4,10}\/06\z/,
+      @tester.south_african_listed_company_registration_number
+    )
+  end
+
+  def test_south_african_trust_registration_number
+    assert_match(
+      /\AIT\d{2,4}\/\d{2,10}\z/,
+      @tester.south_african_trust_registration_number
+    )
+  end
+
+  def test_luhn_algorithm
+    # Odd length base for luhn algorithm
+    odd_base = Faker::Number.number([5, 7, 9, 11, 13].sample)
+    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base)
+    odd_control = "#{odd_base}#{odd_luhn_complement}"
+
+    # Even length base for luhn algorithm
+    even_base = Faker::Number.number([4, 6, 8, 10, 12].sample)
+    even_luhn_complement = @tester.send(:luhn_algorithm, even_base)
+    even_control = "#{even_base}#{even_luhn_complement}"
+
+    assert((luhn_checksum(odd_control) % 10).zero?)
+    assert((luhn_checksum(even_control) % 10).zero?)
+  end
+
   private
+
+  def czech_o_n_checksum(org_no)
+    weights = [8, 7, 6, 5, 4, 3, 2]
+    sum = 0
+    digits = org_no.split('').map(&:to_i)
+    weights.each_with_index.map do |w, i|
+      sum += (w * digits[i])
+    end
+    (11 - (sum % 11)) % 10
+  end
 
   def abn_checksum(abn)
     abn_weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
@@ -115,5 +177,14 @@ class TestFakerCompany < Test::Unit::TestCase
     abn.split('').map(&:to_i).each_with_index.map do |n, i|
       (i.zero? ? n - 1 : n) * abn_weights[i]
     end.inject(:+)
+  end
+
+  def luhn_checksum(luhn)
+    luhn_split = luhn.each_char.map(&:to_i).reverse.each_with_index.map do |n, i|
+      x = i.odd? ? n * 2 : n
+      x > 9 ? x - 9 : x
+    end
+
+    luhn_split.compact.inject(0) { |sum, x| sum + x }
   end
 end

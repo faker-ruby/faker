@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Company < Base
     flexible :company
@@ -71,6 +73,17 @@ module Faker
         base + luhn_algorithm(base).to_s
       end
 
+      def czech_organisation_number
+        sum = 0
+        base = []
+        [8, 7, 6, 5, 4, 3, 2].each do |weight|
+          base << sample((0..9).to_a)
+          sum += (weight * base.last)
+        end
+        base << (11 - (sum % 11)) % 10
+        base.join
+      end
+
       # Get a random French SIREN number. See more here https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
       def french_siren_number
         base = (1..8).map { rand(10) }.join
@@ -123,6 +136,22 @@ module Faker
         random_digits.join('')
       end
 
+      def south_african_pty_ltd_registration_number
+        regexify(/\d{4}\/\d{4,10}\/07/)
+      end
+
+      def south_african_close_corporation_registration_number
+        regexify(/(CK\d{2}|\d{4})\/\d{4,10}\/23/)
+      end
+
+      def south_african_listed_company_registration_number
+        regexify(/\d{4}\/\d{4,10}\/06/)
+      end
+
+      def south_african_trust_registration_number
+        regexify(/IT\d{2,4}\/\d{2,10}/)
+      end
+
       private
 
       # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb
@@ -149,7 +178,7 @@ module Faker
       def luhn_algorithm(number)
         multiplications = []
 
-        number.split(//).each_with_index do |digit, i|
+        number.reverse.split(//).each_with_index do |digit, i|
           multiplications << if i.even?
                                digit.to_i * 2
                              else

@@ -1,5 +1,7 @@
 # Faker::PrincessBride
 
+Available since version 1.9.0.
+
 ```ruby
 Faker::PrincessBride.character #=> "Dread Pirate Roberts"
 

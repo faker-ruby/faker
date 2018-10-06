@@ -1,9 +1,16 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 require 'minitest/mock'
 
 class TestFakerNumber < Test::Unit::TestCase
   def setup
     @tester = Faker::Number
+  end
+
+  def test_leading_zero_number
+    assert_match(/^0[0-9]{9}/, @tester.leading_zero_number)
+    assert_match(/^0[0-9]{8}/, @tester.leading_zero_number(9))
   end
 
   def test_number
@@ -16,7 +23,6 @@ class TestFakerNumber < Test::Unit::TestCase
 
     assert @tester.number(10).length == 10
     assert @tester.number(1).length == 1
-    assert @tester.number(0) == ''
   end
 
   def test_decimal
@@ -58,6 +64,14 @@ class TestFakerNumber < Test::Unit::TestCase
   def test_between
     100.times do
       random_number = @tester.between(-50, 50)
+      assert random_number >= -50, "Expected >= -50, but got #{random_number}"
+      assert random_number <=  50, "Expected <= 50, but got #{random_number}"
+    end
+  end
+
+  def test_within
+    100.times do
+      random_number = @tester.within(-50..50)
       assert random_number >= -50, "Expected >= -50, but got #{random_number}"
       assert random_number <=  50, "Expected <= 50, but got #{random_number}"
     end

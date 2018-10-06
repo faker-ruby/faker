@@ -3,6 +3,8 @@
 Available since version 1.6.2.
 
 ```ruby
+Faker::Beer.brand #=> "Heineken"
+
 Faker::Beer.name #=> "Hercules Double IPA"
 
 Faker::Beer.style #=> "Belgian Strong Ale"

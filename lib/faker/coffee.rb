@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Coffee < Base
     class << self
@@ -17,6 +19,10 @@ module Faker
 
       def notes
         parse('coffee.notes')
+      end
+
+      def intensifier
+        fetch('coffee.intensifier')
       end
 
       private

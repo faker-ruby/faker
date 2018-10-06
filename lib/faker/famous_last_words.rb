@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class FamousLastWords < Base
     flexible :famous_last_words

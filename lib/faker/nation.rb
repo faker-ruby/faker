@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Nation < Base
     flexible :nation
@@ -13,6 +15,11 @@ module Faker
       # Fetch random capital city
       def capital_city
         fetch('nation.capital_city')
+      end
+
+      # Fetch random natinal sport
+      def national_sport
+        fetch('team.sport')
       end
     end
   end

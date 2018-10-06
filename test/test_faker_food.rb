@@ -1,8 +1,16 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerFood < Test::Unit::TestCase
   def setup
     @tester = Faker::Food
+  end
+
+  def test_flexible_key
+    flexible_key = @tester.instance_variable_get('@flexible_key')
+
+    assert flexible_key == :food
   end
 
   def test_dish
@@ -27,6 +35,10 @@ class TestFakerFood < Test::Unit::TestCase
 
   def test_spice
     assert @tester.spice.match(/\w+/)
+  end
+
+  def test_sushi
+    assert @tester.sushi.match(/\w+/)
   end
 
   def test_measurement
