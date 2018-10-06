@@ -63,6 +63,8 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1386](https://github.com/stympy/faker/pull/1386) Add locale file for Arabic language and test it [@EhsanZ](https://github.com/EhsanZ)
+- [PR #1385](https://github.com/stympy/faker/pull/1385) Updated license plate by state for Brazil [@edgardmessias](https://github.com/edgardmessias)
 - [PR #1373](https://github.com/stympy/faker/pull/1373) 📝 Correct some minor spelling errors [@mermop](https://github.com/mermop)
 - [PR #1372](https://github.com/stympy/faker/pull/1372) Add space planet and galaxy for Japanese [@yizknn](https://github.com/yizknn)
 - [PR #1370](https://github.com/stympy/faker/pull/1370) Add missed comma [@7up4](https://github.com/7up4)
