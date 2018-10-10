@@ -127,6 +127,20 @@ pt-BR:
         - "#{female_first_name}"
         - "#{male_first_name}"
       last_name: ["Aguiar",  "Albuquerque",  "Almada",  "Almeida",  "Álvares",  "Alves",  "Ambrósio",  "Amoreira",  "Antena",  "Antunes",  "Aparício",  "Aragão",  "Arantes",  "Araújo",  "Aroeira",  "Arriaga",  "Assumpção",  "Banheira",  "Barata",  "Barbosa",  "Barreira",  "Barreto",  "Barros",  "Barroso",  "Batista",  "Beltrão",  "Bentes",  "Bernardes",  "Bittencourt",  "Bomdia",  "Bonfim",  "Bouças",  "Braga",  "Brites",  "Brum",  "Bulhões",  "Cabreira",  "Cachoeira",  "Caldas",  "Caldeira",  "Camacho",  "Campos",  "Cardoso",  "Carneiro",  "Carreira",  "Carvalheira",  "Carvalho",  "Caseira",  "Casqueira",  "Castanheira",  "Castanho",  "Castelo",  "Castro",  "Cavalcanti",  "Cerqueira",  "Chaves",  "Conceição",  "Coqueiro",  "Corrêa",  "Corte",  "Costa",  "Coutinho",  "Crespo",  "Cruz",  "Custódio",  "da Aldeia",  "da Bandeira",  "da Barra",  "da Barranca",  "da Conceição",  "da Costa",  "da Cruz",  "da Cunha",  "da Fonseca",  "da Fontoura",  "da Fronteira",  "da Gama",  "da Luz",  "da Madureira",  "da Maia",  "da Mata",  "da Mota",  "da Nóbrega",  "da Paz",  "da Penha",  "da Rocha",  "da Rosa",  "da Silva",  "da Silveira",  "da Terra",  "da Veiga",  "Dantas",  "das Neves",  "Datena",  "de Assunção",  "de Borba",  "de Lara",  "de Lins",  "de Oliveira",  "de Quadros",  "de Sá",  "Dias",  "Diegues",  "do Prado",  "Domingues",  "Dorneles",  "dos Reis",  "Duarte",  "Espinheira",  "Espinhosa",  "Esteves",  "Farias",  "Fernandes",  "Ferraço",  "Ferreira",  "Figueira",  "Filgueira",  "Fogaça",  "Fontes",  "Fontinhas",  "Franco",  "Freitas",  "Gabeira",  "Galego",  "Galvão",  "Garcês",  "Garcez",  "Gentil",  "Geraldes",  "Godinho",  "Godins",  "Gomes",  "Gomide",  "Gonçalves",  "Goulart",  "Grotas",  "Guedes",  "Guterres",  "Henriques",  "Hermingues",  "Hernandes",  "Jaques",  "Jesus",  "Junqueira",  "Laranjeira",  "Leiria",  "Lessa",  "Lima",  "Limeira",  "Lobos",  "Longuinho",  "Lopes",  "Louzada",  "Macedo",  "Macieira",  "Madeira",  "Mangueira",  "Marcondes",  "Marins",  "Marques",  "Martim",  "Martins",  "Matoso",  "Meira",  "Meireles",  "Melo",  "Mendanha",  "Mendes",  "Menendes",  "Modesto",  "Moniz",  "Monteira",  "Monteiro",  "Moraes",  "Morais",  "Moreira",  "Moreno",  "Moura",  "Munhoz",  "Muniz",  "Nascimento",  "Negrão",  "Neves",  "Nogueira",  "Novaes",  "Nunes",  "Oliveira",  "Ordonhes",  "Ornelas",  "Ouriques",  "Paes",  "Paiva",  "Palhares",  "Palmeira",  "Parreira",  "Passarinho",  "Pedroso",  "Peixoto",  "Pereira",  "Peres",  "Pimenta",  "Pinheira",  "Pinto",  "Pires",  "Porteira",  "Porto",  "Quaresma",  "Quarteira",  "Raia",  "Ramalho",  "Rameira",  "Ramires",  "Ramos",  "Rebouças",  "Rêgo",  "Regueira",  "Reis",  "Resende",  "Rezende",  "Ribas",  "Ribeira",  "Ribeiro",  "Rios",  "Rocha",  "Rodrigues",  "Rolim",  "Roriz",  "Roseira",  "Sá",  "Sais",  "Sales",  "Sanches",  "Santana",  "Santos",  "Saraiva",  "Silva",  "Silveira",  "Simão",  "Simões",  "Siqueira",  "Siqueiro",  "Soares",  "Soeira",  "Solimões",  "Souza",  "Tavares",  "Taveira",  "Teixeira",  "Teles",  "Vasques",  "Velasques",  "Veles",  "Veloso",  "Viana",  "Vidal",  "Videira",  "Vieira",  "Vimaranes",  "Viveiros",  "Xavier",  "Ximenes"]
+      name:
+        - "#{prefix} #{first_name} #{last_name}"
+        - "#{first_name} #{last_name} #{suffix}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name} #{suffix}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
       prefix: ["Sr.", "Sra.", "Srta.", "Dr.", "Dra."]
       suffix: ["Jr.", "Neto", "Filho"]
     color:
