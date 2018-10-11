@@ -32,8 +32,6 @@ class TestNbNoLocale < Test::Unit::TestCase
 
   def test_name_methods
     assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.feminine_name.is_a? String
-    assert Faker::Name.masculine_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.suffix.is_a? String
