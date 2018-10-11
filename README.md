@@ -27,6 +27,7 @@ Contents
   - [Faker::Address](doc/address.md)
   - [Faker::Alphanumeric](doc/alphanumeric.md)
   - [Faker::Ancient](doc/ancient.md)
+  - [Faker::Animal](doc/animal.md)
   - [Faker::App](doc/app.md)
   - [Faker::Appliance](doc/appliance.md)
   - [Faker::Artist](doc/artist.md)
