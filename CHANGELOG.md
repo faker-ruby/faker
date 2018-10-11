@@ -65,6 +65,7 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1398](https://github.com/stympy/faker/pull/1398) Fix female_first_name and male_first_name [@vbrazo](https://github.com/vbrazo)
 - [PR #1394](https://github.com/stympy/faker/pull/1394) Add name_with_middle - es locale and missing tests [@vbrazo](https://github.com/vbrazo)
 - [PR #1393](https://github.com/stympy/faker/pull/1393) Add missing pt-BR methods and locale tests [@vbrazo](https://github.com/vbrazo)
 - [PR #1392](https://github.com/stympy/faker/pull/1392) Add missing locales/methods for Faker::Name pt-BR [@heitorado](https://github.com/heitorado)
