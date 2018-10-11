@@ -1,11 +1,11 @@
-# Faker::HeroesOfTheStorm
+# Faker::Games::HeroesOfTheStorm
 
 ```ruby
-Faker::HeroesOfTheStorm.battleground #=> "Towers of Doom"
+Faker::Games::HeroesOfTheStorm.battleground #=> "Towers of Doom"
 
-Faker::HeroesOfTheStorm.class #=> "Support"
+Faker::Games::HeroesOfTheStorm.class #=> "Support"
 
-Faker::HeroesOfTheStorm.hero #=> "Illidan"
+Faker::Games::HeroesOfTheStorm.hero #=> "Illidan"
 
-Faker::HeroesOfTheStorm.quote #=> "MEAT!!!"
+Faker::Games::HeroesOfTheStorm.quote #=> "MEAT!!!"
 ```
