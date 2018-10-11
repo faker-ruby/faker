@@ -92,6 +92,7 @@ Contents
   - [Faker::GreekPhilosophers](doc/greek_philosophers.md)
   - [Faker::Hacker](doc/hacker.md)
   - [Faker::HarryPotter](doc/harry_potter.md)
+  - [Faker::Games::HeroesOfTheStorm](doc/heroes_of_the_storm.md)
   - [Faker::HeyArnold](doc/hey_arnold.md)
   - [Faker::Hipster](doc/hipster.md)
   - [Faker::HitchhikersGuideToTheGalaxy](doc/hitchhikers_guide_to_the_galaxy.md)

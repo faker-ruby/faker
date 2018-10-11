@@ -248,7 +248,7 @@ end
 
 Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| require f }
 
-require 'faker/games/half_life'
+Dir.glob(File.join(File.dirname(__FILE__), 'faker', 'games', '*.rb')).sort.each { |f| require f }
 
 require 'helpers/char'
 require 'helpers/unique_generator'
