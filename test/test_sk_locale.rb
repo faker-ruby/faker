@@ -39,14 +39,13 @@ class TestSKLocale < Test::Unit::TestCase
   end
 
   def test_name_methods
-    assert Faker::Name.man_first_name.is_a? String
-    assert Faker::Name.woman_first_name.is_a? String
-    assert Faker::Name.man_last_name.is_a? String
-    assert Faker::Name.woman_last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.suffix.is_a? String
     assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+    assert Faker::Name.male_first_name.is_a? String
+    assert Faker::Name.female_first_name.is_a? String
+    assert Faker::Name.last_name.is_a? String
   end
 end

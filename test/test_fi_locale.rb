@@ -25,11 +25,11 @@ class TestFiLocale < Test::Unit::TestCase
   end
 
   def test_name_methods
-    assert Faker::Name.first_name_women.is_a? String
-    assert Faker::Name.first_name_men.is_a? String
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+    assert Faker::Name.female_first_name.is_a? String
+    assert Faker::Name.male_first_name.is_a? String
   end
 
   def test_fi_invoice_methods
