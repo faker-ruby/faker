@@ -39,7 +39,6 @@ da-DK:
       first_name: [Peter, Jens, Lars, Michael, Henrik, Thomas, Søren, Jan, Christian, Niels, Anne, Kirsten, Hanne, Mette, Anna, Helle, Susanne, Lene, Maria, Marianne]
       last_name: [Nielsen, Jensen, Hansen, Pedersen, Andersen, Christensen, Larsen, Sørensen, Rasmussen, Jørgensen]
       prefix: ["Dr.", "Prof.", "Cand.mag.", "Cand.jur."]
-
       title:
         descriptor: [Leder, Senior, Fremtid, Produkt, National, Regional, Distrikt, Central, Global, Kunde, Investor, Dynamic, International, Legacy, Forward, Intern, HR, Direktør, Rektor]
         level: [Solutions, Program, Brand, Sikkerhed, Research, Marketing, Directives, Implementering, Integration, Funktionalitet, Respons, Paradigme, Taktik, Identitet, Markeder, Gruppe, Division, Applikationer, Optimering, Operationer, Infrastruktur, Intranet, Kommunikation, Web, Branding, Kvalitet, Kontrol, Mobilitet, Regnskab, Data, Kreativ, Konfiguration, Interaktioner, Faktorer, Anvendelighed, Metrik]
@@ -47,6 +46,12 @@ da-DK:
       name:
         - "#{first_name} #{last_name}"
         - "#{prefix} #{first_name} #{last_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
       formats:

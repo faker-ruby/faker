@@ -42,6 +42,12 @@ sv:
       first_name: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans, Jörgen, Göran, Håkan, Kåre, Maria, Anna, Margareta, Elisabeth, Eva, Birgitta, Kristina, Karin, Elisabet, Marie, Åsa, Hjördis, Ingegärd]
       last_name: [Johansson, Andersson, Karlsson, Nilsson, Eriksson, Larsson, Olsson, Persson, Svensson, Gustafsson, Åslund, Östlund, Änglund]
       prefix: [civ.ek., civ.ing., ekon.dr, ekon. mag., ekon. kand., fil.dr, fil.lic., fil.kand., fil.mag., jur. kand., jur.utr.kand., jur.lic., jur.dr, med.dr, med.lic., med.kand., odont.kand., odont.lic., odont.dr, pol.kand., pol.mag., pol.dr, tekn.dr, tekn.lic., teol.kand., teol.lic., teol.dr]
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
 
       title:
         descriptor: [Lead, Senior, Direct, Corporate, Dynamic, Future, Product, National, Regional, District, Central, Global, Customer, Investor, Dynamic, International, Legacy, Forward, Internal, Human, Chief, Principal]

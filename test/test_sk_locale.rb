@@ -26,9 +26,19 @@ class TestSKLocale < Test::Unit::TestCase
     assert Faker::Address.street.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
+    assert_equal 'Slovensko', Faker::Address.default_country
+  end
+
+  def test_company_methods
     assert Faker::Company.suffix.is_a? String
+  end
+
+  def test_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
+  end
+
+  def test_name_methods
     assert Faker::Name.man_first_name.is_a? String
     assert Faker::Name.woman_first_name.is_a? String
     assert Faker::Name.man_last_name.is_a? String
@@ -37,9 +47,6 @@ class TestSKLocale < Test::Unit::TestCase
     assert Faker::Name.suffix.is_a? String
     assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
-  end
-
-  def test_sk_default_country
-    assert_equal 'Slovensko', Faker::Address.default_country
+    assert Faker::Name.name_with_middle.is_a? String
   end
 end

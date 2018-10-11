@@ -54,6 +54,13 @@ pt:
       last_name: ["Araújo", "D'cruze", "Estéves", "Silva", "Souza", "Carvalho", "Santos", "Reis", "Xavier", "Franco", "Braga", "Macedo", "Batista", "Barros", "Moraes", "Costa", "Pereira", "Carvalho", "Melo", "Saraiva", "Nogueira", "Oliveira", "Martins", "Moreira", "Albuquerque"]
       prefix: ["Sr.", "Sra.", "Srta.", "Dr."]
       suffix: ["Jr.", "Neto", "Filho"]
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name} #{suffix}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
       formats: ["(##) ###-####", "+351 (##) ###-####", "884 ###-###"]

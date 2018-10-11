@@ -19,9 +19,18 @@ class TestNbNoLocale < Test::Unit::TestCase
     assert Faker::Address.street_suffix.is_a? String
     assert Faker::Address.common_street_suffix.is_a? String
     assert Faker::Address.state.is_a? String
+  end
+
+  def test_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.name.is_a? String
+  end
+
+  def test_internet_methods
     assert Faker::Internet.domain_suffix.is_a? String
+  end
+
+  def test_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.feminine_name.is_a? String
     assert Faker::Name.masculine_name.is_a? String
@@ -29,5 +38,6 @@ class TestNbNoLocale < Test::Unit::TestCase
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.suffix.is_a? String
     assert Faker::Name.name.is_a? String
+    assert Faker::Name.name_with_middle.is_a? String
   end
 end
