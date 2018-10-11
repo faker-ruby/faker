@@ -6,7 +6,8 @@ end
 
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
-require_relative 'helpers/i18n_backend.rb'
+
+Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
 
 I18n.backend = I18n::Backend::Chain.new(I18n.backend, Faker::I18nBackend.new)
 
@@ -244,10 +245,6 @@ module Faker
   end
 end
 
-Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| require f }
-
-Dir.glob(File.join(File.dirname(__FILE__), 'faker', 'games', '*.rb')).sort.each { |f| require f }
-
-require 'helpers/char'
-require 'helpers/unique_generator'
-require 'helpers/base58'
+%w[faker faker/games].each do |path|
+  Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
+end
