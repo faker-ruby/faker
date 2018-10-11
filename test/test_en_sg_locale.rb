@@ -12,16 +12,17 @@ class TestEnSgLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
-  def test_en_sg_methods
+  def test_address_methods
+    assert Faker::Address.streets.is_a? String
+    assert_equal('Singapore', Faker::Address.default_country)
+  end
+
+  def test_name_methods
     assert Faker::Name.male_first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.male_english_name.is_a? String
     assert Faker::Name.female_english_name.is_a? String
-    assert Faker::Address.streets.is_a? String
-  end
-
-  def test_en_sg_default_country
-    assert_equal('Singapore', Faker::Address.default_country)
+    assert Faker::Name.name_with_middle.is_a? String
   end
 end

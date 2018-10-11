@@ -54,6 +54,12 @@ it:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
-
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name} #{suffix}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
     phone_number:
       formats: ['+## ### ## ## ####', '+## ## #######', '+## ## ########', '+## ### #######', '+## ### ########', '+## #### #######', '+## #### ########', '0## ### ####', '+39 0## ### ###', '3## ### ###', '+39 3## ### ###']

@@ -2,36 +2,13 @@
 
 require_relative 'test_helper'
 
-LoadedEsYaml = %w[en es].each_with_object({}) do |locale, h|
-  h[locale] = YAML.load_file(File.expand_path(File.dirname(__FILE__) + "/../lib/locales/#{locale}.yml"))[locale]['faker']
-end
-
-class TestEsLocale < Test::Unit::TestCase
+class TestPtBrLocale < Test::Unit::TestCase
   def setup
-    Faker::Config.locale = 'es'
+    Faker::Config.locale = 'pt-BR'
   end
 
   def teardown
     Faker::Config.locale = nil
-  end
-
-  def test_locale_separate_from_i18n
-    I18n.locale = :en
-    assert Faker::Address.street_name.match(//)
-  end
-
-  def test_configured_locale_translation
-    assert_equal Faker::Base.translate('faker.address.city_prefix').first, LoadedEsYaml['es']['address']['city_prefix'].first
-  end
-
-  def test_locale_override_when_calling_translate
-    assert_equal Faker::Base.translate('faker.separator', locale: :en), LoadedEsYaml['en']['separator']
-  end
-
-  def test_translation_fallback
-    assert_nil LoadedEsYaml['es']['company']['bs']
-    assert_not_nil LoadedEsYaml['es']['address']['city_prefix']
-    assert_equal Faker::Base.translate('faker.address.city_prefix'), LoadedEsYaml['es']['address']['city_prefix']
   end
 
   def test_address_methods
@@ -45,7 +22,8 @@ class TestEsLocale < Test::Unit::TestCase
     assert Faker::Address.postcode.is_a? String
     assert Faker::Address.state.is_a? String
     assert Faker::Address.city.is_a? String
-    assert Faker::Address.default_country, 'España'
+    assert Faker::Address.street_name.is_a? String
+    assert Faker::Address.default_country, 'Brasil'
   end
 
   def test_color_methods
@@ -91,5 +69,6 @@ class TestEsLocale < Test::Unit::TestCase
 
   def test_vehicle_methods
     assert Faker::Vehicle.license_plate.is_a? String
+    assert Faker::Vehicle.license_plate('RJ').is_a? String
   end
 end

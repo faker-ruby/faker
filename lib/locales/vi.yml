@@ -48,6 +48,9 @@ vi:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name} #{last_name}"
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
+
     company:
       prefix: ["Công ty", "Cty TNHH", "Cty", "Cửa hàng", "Trung tâm", "Chi nhánh"]
       name:

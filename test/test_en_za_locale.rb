@@ -32,5 +32,6 @@ class TestEnZaLocale < Test::Unit::TestCase
   def test_en_za_name
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
+    assert Faker::Name.name_with_middle.is_a? String
   end
 end

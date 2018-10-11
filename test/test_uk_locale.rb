@@ -12,6 +12,10 @@ class TestUkLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
+  def test_name_methods
+    assert Faker::Name.name_with_middle.is_a? String
+  end
+
   def test_uk_email_at_symbol_is_not_followed_by_dot
     assert Faker::Internet.email.match(/.+@[^.].+\.\w+/)
   end
