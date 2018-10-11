@@ -54,7 +54,13 @@ fr-CH:
         - "#{prefix} #{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
         - "#{last_name} #{first_name}"
-
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        
     phone_number:
       formats: ['', '02########', '03########', '04########', '05########', '09########', '+41 1########', '+41 2########', '+41 3########', '+41 4########', '+41 5########', '+41 9########', '01 ## ## ## ##', '02 ## ## ## ##', '03 ## ## ## ##', '04 ## ## ## ##', '05 ## ## ## ##', '09 ## ## ## ##', '+41 1 ## ## ## ##', '+41 2 ## ## ## ##', '+41 3 ## ## ## ##', '+41 4 ## ## ## ##', '+41 5 ## ## ## ##', '+41 9 ## ## ## ##']
 

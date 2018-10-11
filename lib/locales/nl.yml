@@ -74,6 +74,13 @@ nl:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{tussenvoegsel} #{last_name}"
         - "#{first_name} #{tussenvoegsel} #{last_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name} #{suffix}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
       formats: ["(####) ######", "##########", "06########", "06 #### ####"]

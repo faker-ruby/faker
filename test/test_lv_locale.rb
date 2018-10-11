@@ -53,5 +53,6 @@ class TestLvLocale < Test::Unit::TestCase
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.title.is_a? String
+    assert Faker::Name.name_with_middle.is_a? String
   end
 end

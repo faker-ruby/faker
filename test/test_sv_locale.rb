@@ -11,6 +11,10 @@ class TestSVLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
+  def test_address_methods
+    assert Faker::Address.postcode.match(/^[\d]{5}$/)
+  end
+
   def test_sv_names
     assert Faker::Name.name.is_a? String
     assert Faker::Name.first_name.is_a? String
@@ -18,14 +22,11 @@ class TestSVLocale < Test::Unit::TestCase
     assert Faker::Name.first_name_women.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
+    assert Faker::Name.name_with_middle.is_a? String
   end
 
   def test_sv_phone_number
     assert Faker::PhoneNumber.cell_phone.match(/^07[036]{1}[\-\s]?\d{3}[\-\s]?\d{4}$/)
     assert Faker::PhoneNumber.phone_number.match(/^\d{4}[\s\-]?\d{4,6}$/)
-  end
-
-  def test_sv_post_code
-    assert Faker::Address.postcode.match(/^[\d]{5}$/)
   end
 end

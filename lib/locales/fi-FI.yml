@@ -27,7 +27,8 @@ fi-FI:
       last_name: [Korhonen, Virtanen, Mäkinen, Nieminen, Mäkelä, Hämäläinen, Laine, Heikkinen, Koskinen, Järvinen, Lehtonen, Lehtinen, Saarinen, Salminen, Heinonen, Niemi, Heikkilä, Kinnunen, Salonen, Turunen, Salo, Laitinen, Tuominen, Rantanen, Karjalainen, Jokinen, Mattila, Savolainen, Lahtinen, Ahonen, Ojala, Leppänen, Väisänen, Hiltunen, Kallio, Miettinen, Leinonen, Pitkänen, Aaltonen, Manninen, Hakala, Koivisto, Anttila, Laaksonen, Hirvonen, Räsänen, Lehto, Laakso, Toivonen, Mustonen]
       name:
         - "#{first_name} #{last_name}"
-
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
     phone_number:
       formats: ['##-######', '###-#######']
     cell_phone:

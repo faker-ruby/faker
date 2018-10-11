@@ -11,6 +11,12 @@ tr:
         - "#{prefix} #{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
         - "#{last_name} #{first_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
 
     internet:
       free_email: [gmail.com, hotmail.com.tr, yandex.com.tr]

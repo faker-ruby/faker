@@ -25,6 +25,8 @@ nep:
         - "#{male_first_name} #{middle_name} #{last_name}"
         - "#{female_first_name} #{last_name}"
         - "#{first_name} #{last_name}"
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
     address:
       default_time_zone: ["Asia/Kathmandu"]
       default_country_code: ["NP"]
@@ -45,5 +47,3 @@ nep:
       suffix: ['Pvt Ltd', 'Group', 'Ltd', 'Limited']
     phone_number:
       formats: ['##-#######', '+977-#-#######', '+977########']
-
-
