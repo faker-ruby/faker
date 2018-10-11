@@ -21,6 +21,7 @@ class TestBgLocale < Test::Unit::TestCase
     assert Faker::Address.city.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_title.is_a? String
+    assert_equal 'България', Faker::Address.default_country
   end
 
   def test_internet_methods
@@ -46,9 +47,5 @@ class TestBgLocale < Test::Unit::TestCase
   def test_cell_number_starts_wiht_08
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_equal '08', mobile[0] + mobile[1]
-  end
-
-  def test_ru_default_country
-    assert_equal 'България', Faker::Address.default_country
   end
 end
