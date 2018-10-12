@@ -56,6 +56,7 @@ Contents
   - [Faker::Compass](doc/compass.md)
   - [Faker::Construction](doc/construction.md)
   - [Faker::Cosmere](doc/cosmere.md)
+  - [Faker::Creature::Animal](doc/animal.md)
   - [Faker::Crypto](doc/crypto.md)
   - [Faker::CryptoCoin](doc/crypto_coin.md)
   - [Faker::Currency](doc/currency.md)
