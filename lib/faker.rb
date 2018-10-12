@@ -248,3 +248,8 @@ end
 %w[faker faker/games].each do |path|
   Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
 end
+
+%w[faker faker/creature].each do |path|
+  Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
+end
+
