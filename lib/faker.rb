@@ -245,6 +245,6 @@ module Faker
   end
 end
 
-%w[faker faker/games].each do |path|
+%w[faker faker/creature faker/games].each do |path|
   Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
 end
