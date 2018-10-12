@@ -74,4 +74,8 @@ class TestFrLocale < Test::Unit::TestCase
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_match(/^(0|33)(6|7)\d{8}$/, mobile)
   end
+
+  def test_fr_appliance_methods
+    assert Faker::Appliance.equipment.is_a? String
+  end
 end
