@@ -90,6 +90,12 @@ de:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
 
     color:
       name: [rot, grün, blau, gelb, lila, weiß, schwarz, orange, rosa, grau, braun, violett, türkis, oliv, beige, ocker, sand, mocka, bordeaux, aprikose, mint-grün, magenta, gold, silber, bronze, limette, azur, pink]

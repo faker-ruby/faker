@@ -11,16 +11,20 @@ class TestDaDkLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_da_dk_names
-    assert Faker::Name.name.is_a? String
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
+  def test_address_methods
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.city_prefix.is_a? String
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.country.is_a? String
     assert Faker::Address.state.is_a? String
+  end
+
+  def test_da_dk_names
+    assert Faker::Name.name.is_a? String
+    assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.last_name.is_a? String
+    assert Faker::Name.name_with_middle.is_a? String
   end
 
   def test_da_dk_phone_number

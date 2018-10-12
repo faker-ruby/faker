@@ -23,6 +23,10 @@ class TestPtLocale < Test::Unit::TestCase
     assert_match(/^[\d]{4}$/, Faker::Address.postcode)
   end
 
+  def test_name_methods
+    assert Faker::Name.name_with_middle.is_a? String
+  end
+
   def test_pl_secondary_address
     assert_match(/^[[:word:]]+[\.]? \d{1,3}$/, Faker::Address.secondary_address)
   end

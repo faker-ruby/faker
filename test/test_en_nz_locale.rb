@@ -11,37 +11,32 @@ class TestEnNzLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_nz_methods_with_en_nz_locale
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
+  def test_address_methods
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.city.is_a? String
+    assert Faker::Address.region.is_a? String
+    assert Faker::Address.region_abbr.is_a? String
+    assert_equal 'New Zealand', Faker::Address.default_country
   end
 
-  def test_nz_cellphones_start_with_02
+  def test_name_methods
+    assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.last_name.is_a? String
+    assert Faker::Name.name_with_middle.is_a? String
+  end
+
+  def test_phone_number_methods
     cellphone = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_equal '0', cellphone[0]
     assert_equal '2', cellphone[1]
   end
 
-  def test_nz_is_default_country
-    assert_equal 'New Zealand', Faker::Address.default_country
-  end
-
-  def test_regions_with_en_nz_locale
-    assert Faker::Address.region.is_a? String
-    assert Faker::Address.region_abbr.is_a? String
-  end
-
-  def test_team_sport_with_en_nz_locale
+  def test_team_methods
     assert Faker::Team.sport.is_a? String
-  end
-
-  def test_team_names_with_en_nz_locale
     assert Faker::Team.name.is_a? String
   end
 
-  def test_university_names_with_en_nz_locale
+  def test_university_methods
     assert Faker::University.name.is_a? String
   end
 end
