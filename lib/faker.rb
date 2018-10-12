@@ -250,6 +250,8 @@ Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| req
 
 Dir.glob(File.join(File.dirname(__FILE__), 'faker', 'games', '*.rb')).sort.each { |f| require f }
 
+Dir.glob(File.join(File.dirname(__FILE__), 'faker', 'movies', '*.rb')).sort.each { |f| require f }
+
 require 'helpers/char'
 require 'helpers/unique_generator'
 require 'helpers/base58'
