@@ -120,6 +120,7 @@ Contents
   - [Faker::Military](doc/military.md)
   - [Faker::MostInterestingManInTheWorld](doc/most_interesting_man_in_the_world.md)
   - [Faker::Movie](doc/movie.md)
+  - [Faker::Movies::Ghostbusters](doc/ghostbusters.md)
   - [Faker::Music](doc/music.md)
   - [Faker::Myst](doc/myst.md)
   - [Faker::Name](doc/name.md)
