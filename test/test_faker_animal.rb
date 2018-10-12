@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require_relative 'test_helper'
-class TestFakerAnimal < Test::Unit::TestCase
+class TestFakerCreatureAnimal < Test::Unit::TestCase
   def setup
-    @tester = Faker::Animal
+    @tester = Faker::Creature::Animal
   end
 
   def test_name

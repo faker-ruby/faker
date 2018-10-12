@@ -1,5 +1,5 @@
-# Faker::Animal
+# Faker::Creature::Animal
 
 ```ruby
-Faker::Animal.name #=> "Antelope"
+Faker::Creature::Animal.name #=> "Antelope"
 ```
