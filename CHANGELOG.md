@@ -3,6 +3,7 @@
 ## HEAD Unreleased
 
 ### Bug/Fixes
+- [PR #1389](https://github.com/stympy/faker/pull/1389) Load faker I18n using custom backend chaining [@pjohnmeyer](https://github.com/pjohnmeyer)
 - [PR #1384](https://github.com/stympy/faker/pull/1384) Quick number method bugfix [@vbrazo](https://github.com/vbrazo)
 - [PR #1377](https://github.com/stympy/faker/pull/1377) Fallback translation without available locales enforcement [@deivid-rodriguez](https://github.com/deivid-rodriguez)
 - [PR #1368](https://github.com/stympy/faker/pull/1368) Don't force enforce_available_locales [@deivid-rodriguez](https://github.com/deivid-rodriguez)
@@ -32,7 +33,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
-- [PR #1399](https://github.com/stympy/faker/pull/1399) Add Faker::HeroesOfTheStorm [@illsism](https://github.com/illsism)
+- [PR #1399](https://github.com/stympy/faker/pull/1399) Add Faker::Games::HeroesOfTheStorm [@illsism](https://github.com/illsism)
 - [PR #1382](https://github.com/stympy/faker/pull/1382) Adding Faker::IDNumber.brazilian_citizen_number [@bschettino](https://github.com/bschettino)
 - [PR #1062](https://github.com/stympy/faker/pull/1062) Markdown exclude method [@russellschmidt](https://github.com/russellschmidt)
 - [PR #1381](https://github.com/stympy/faker/pull/1381) Add Faker::Games::HalfLife [@jthomp](https://github.com/jthomp)
@@ -67,6 +68,7 @@
 
 ### Update/add locales
 - [PR #1398](https://github.com/stympy/faker/pull/1398) Fix female_first_name and male_first_name [@vbrazo](https://github.com/vbrazo)
+- [PR #1395](https://github.com/stympy/faker/pull/1395) Add middle_name to other locales [@vbrazo](https://github.com/vbrazo)
 - [PR #1394](https://github.com/stympy/faker/pull/1394) Add name_with_middle - es locale and missing tests [@vbrazo](https://github.com/vbrazo)
 - [PR #1393](https://github.com/stympy/faker/pull/1393) Add missing pt-BR methods and locale tests [@vbrazo](https://github.com/vbrazo)
 - [PR #1392](https://github.com/stympy/faker/pull/1392) Add missing locales/methods for Faker::Name pt-BR [@heitorado](https://github.com/heitorado)
