@@ -1,5 +1,7 @@
 # Faker::Ghostbusters
 
+It might be available in the next version.
+
 ```ruby
 
 Faker::Movies::Ghostbusters.actor #=> "Bill Murray"
