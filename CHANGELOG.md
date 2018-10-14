@@ -26,6 +26,7 @@
 - [PR #803](https://github.com/stympy/faker/pull/803) Modify Faker::Educator, Fix #576 [@ghbooth12](https://github.com/ghbooth12)
 
 ### Documentation
+- [PR #1408](https://github.com/stympy/faker/pull/1408) Add Verbs example to README [@matheusteixeira](https://github.com/matheusteixeira)
 - [PR #1380](https://github.com/stympy/faker/pull/1380) Update year in License.txt [@dnamsons](https://github.com/dnamsons)
 - [PR #1364](https://github.com/stympy/faker/pull/1364) Update readme for Faker::Code to fix typo [@matt297](https://github.com/matt297)
 - [PR #1360](https://github.com/stympy/faker/pull/1360) added sushi and sorted by word [@yizknn](https://github.com/yizknn)
@@ -35,6 +36,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1409](https://github.com/stympy/faker/pull/1409) Add DC Comics titles [@matheusteixeira](https://github.com/matheusteixeira)
 - [PR #1400](https://github.com/stympy/faker/pull/1400) Add Faker::Movies::Ghostbusters [@eddorre](https://github.com/eddorre)
 - [PR #1399](https://github.com/stympy/faker/pull/1399) Add Faker::Games::HeroesOfTheStorm [@illsism](https://github.com/illsism)
 - [PR #1396](https://github.com/stympy/faker/pull/1396) Add Faker::Creature::Animal [@molbrown](https://github.com/molbrown)
@@ -71,6 +73,7 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1407](https://github.com/stympy/faker/pull/1407) Add more data for Faker::Friends [@JIntrocaso](https://github.com/JIntrocaso)
 - [PR #1402](https://github.com/stympy/faker/pull/1402) Update heroes_of_the_storm.yml [@eddorre](https://github.com/eddorre)
 - [PR #1398](https://github.com/stympy/faker/pull/1398) Fix female_first_name and male_first_name [@vbrazo](https://github.com/vbrazo)
 - [PR #1395](https://github.com/stympy/faker/pull/1395) Add middle_name to other locales [@vbrazo](https://github.com/vbrazo)

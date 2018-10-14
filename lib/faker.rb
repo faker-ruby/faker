@@ -43,6 +43,7 @@ module Faker
       ## by default numerify results do not start with a zero
       def numerify(number_string, leading_zero: false)
         return number_string.gsub(/#/) { rand(10).to_s } if leading_zero
+
         number_string.sub(/#/) { rand(1..9).to_s }.gsub(/#/) { rand(10).to_s }
       end
 

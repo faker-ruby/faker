@@ -12,6 +12,7 @@ module Faker
 
       def between_except(from, to, excepted)
         raise ArgumentError, 'From date, to date and excepted date must not be the same' if from == to && to == excepted
+
         excepted = get_date_object(excepted)
 
         loop do
