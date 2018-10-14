@@ -174,6 +174,7 @@ Contents
   - [Faker::University](doc/university.md)
   - [Faker::Vehicle](doc/vehicle.md)
   - [Faker::VentureBros](doc/venture_bros.md)
+  - [Faker::Verbs](doc/verbs.md)
   - [Faker::VForVendetta](doc/v_for_vendetta.md)
   - [Faker::Witcher](doc/witcher.md)
   - [Faker::WorldCup](doc/world_cup.md)
