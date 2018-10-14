@@ -22,9 +22,11 @@ module Faker
       def username(specifier = nil, separators = %w[. _])
         with_locale(:en) do
           return shuffle(specifier.scan(/\w+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
+
           if specifier.is_a?(Integer)
             # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error
             raise ArgumentError, 'Given argument is too large' if specifier > 10**6
+
             tries = 0 # Don't try forever in case we get something like 1_000_000.
             result = nil
             loop do
