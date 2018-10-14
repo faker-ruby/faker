@@ -17,5 +17,9 @@ module Faker
     def self.name
       fetch('dc_comics.name')
     end
+
+    def self.title
+      fetch('dc_comics.title')
+    end
   end
 end
