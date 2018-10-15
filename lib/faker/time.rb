@@ -38,6 +38,7 @@ module Faker
 
       def hours(period)
         raise ArgumentError, 'invalid period' unless TIME_RANGES.key? period
+
         sample(TIME_RANGES[period].to_a)
       end
 

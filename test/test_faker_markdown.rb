@@ -5,6 +5,7 @@ require_relative 'test_helper'
 class TestFakerMarkdown < Test::Unit::TestCase
   def setup
     @tester = Faker::Markdown
+    @random_method = random_method
   end
 
   def test_headers
@@ -74,6 +75,15 @@ class TestFakerMarkdown < Test::Unit::TestCase
     assert_instance_of(String, test_trigger)
   end
 
+  def test_random_with_a_randomly_excluded_method
+    excluded_method = @random_method
+    test_trigger = @tester.random(excluded_method)
+
+    20.times do
+      refute_equal(test_trigger, @tester.send(excluded_method))
+    end
+  end
+
   def test_sandwich
     test_trigger = @tester.sandwich
 
@@ -88,5 +98,12 @@ class TestFakerMarkdown < Test::Unit::TestCase
     assert_instance_of(String, test_array[0])
     assert_instance_of(String, test_array[1])
     assert_instance_of(String, test_array[2])
+  end
+
+  private
+
+  def random_method
+    method_list = Faker::Markdown.public_methods(false) - Faker::Base.methods
+    method_list[rand(0..method_list.length - 1)]
   end
 end

@@ -32,7 +32,7 @@ For those of you with commit access, please check out Scott Chacon's blog post a
 > * When you need feedback or help, or you think the branch is ready for merging, open a pull request
 > * After someone else has reviewed and signed off on the feature, you can merge it into master
 
-If you're reviewing a PR, you should ask youserlf:
+If you're reviewing a PR, you should ask yourself:
 > * Does it work as described? A PR should have a great description.
 > * Is it understandable?
 > * Is it well implemented?

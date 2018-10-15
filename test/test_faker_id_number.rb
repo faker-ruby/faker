@@ -63,6 +63,24 @@ class TestFakerIdNumber < Test::Unit::TestCase
     end
   end
 
+  def test_brazilian_citizen_number
+    sample = @tester.brazilian_citizen_number
+    assert_match(/^\d{11}$/, sample)
+    assert_match(/(\d)((?!\1)\d)+/, sample)
+    digit_sum = sample[0..8].chars.each_with_index.inject(0) do |acc, (digit, i)|
+      acc + digit.to_i * (10 - i)
+    end * 10
+    remainder = digit_sum % 11
+    first_digit = remainder == 10 ? '0' : remainder.to_s
+    assert_equal sample[9], first_digit
+    digit_sum = sample[0..9].chars.each_with_index.inject(0) do |acc, (digit, i)|
+      acc + digit.to_i * (11 - i)
+    end * 10
+    remainder = digit_sum % 11
+    second_digit = remainder == 10 ? '0' : remainder.to_s
+    assert_equal sample[10], second_digit
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)

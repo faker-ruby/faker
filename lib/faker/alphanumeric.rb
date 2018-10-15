@@ -9,12 +9,14 @@ module Faker
       def alpha(char_count = 32)
         char_count = resolve(char_count)
         return '' if char_count.to_i < 1
+
         Array.new(char_count) { sample(ALPHABET) }.join
       end
 
       def alphanumeric(char_count = 32)
         char_count = resolve(char_count)
         return '' if char_count.to_i < 1
+
         Array.new(char_count) { sample(ALPHANUMS) }.join
       end
     end

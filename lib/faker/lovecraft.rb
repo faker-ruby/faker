@@ -34,6 +34,7 @@ module Faker
         word_list *= ((resolved_num / word_list.length) + 1)
 
         return shuffle(word_list)[0, resolved_num] if spaces_allowed
+
         words = shuffle(word_list)[0, resolved_num]
         words.each_with_index { |w, i| words[i] = word if w =~ /\s/ }
       end
