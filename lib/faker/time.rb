@@ -13,8 +13,17 @@ module Faker
     }.freeze
 
     class << self
-      def between(from, to, period = :all, format = nil)
-        time = period == :between ? rand(from..to) : date_with_random_time(super(from, to), period)
+      def between(from, to, format = nil)
+        from = get_time_object(from)
+        to = get_time_object(to)
+
+        time = Faker::Base.rand_in_range(from, to)
+        time_with_format(time, format)
+      end
+
+      def between_dates(from, to, period = :all, format = nil)
+        date = Faker::Date.between(from, to)
+        time = date_with_random_time(date, period)
         time_with_format(time, format)
       end
 
@@ -33,7 +42,7 @@ module Faker
       end
 
       def time_with_format(time, format)
-        format.nil? ? time : I18n.l(DateTime.parse(time.to_s), format: format)
+        format.nil? ? time : I18n.l(time, format: format)
       end
 
       def hours(period)
@@ -48,6 +57,12 @@ module Faker
 
       def seconds
         sample((0..59).to_a)
+      end
+
+      def get_time_object(time)
+        time = ::Time.parse(time) if time.is_a? String
+        time = time.to_time if time.respond_to?(:to_time)
+        time
       end
     end
   end
