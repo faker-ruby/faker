@@ -56,7 +56,10 @@ Faker::Vehicle.mileage(50_000) #=> 81557
 Faker::Vehicle.mileage(50_000, 250_000) #=> 117503
 Faker::Vehicle.kilometrage #=> 35378
 
-# Random vehicle license plate
+# Random vehicle license plate (USA by default)
 Faker::Vehicle.license_plate #=> "DEP-2483"
 Faker::Vehicle.license_plate('FL') #=> "977 UNU"
+
+# Random vehicle license plate for Singapore (if locale is set)
+Faker::Vehicle.singapore_license_plate #=> "SLV1854M"
 ```
