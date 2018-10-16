@@ -251,6 +251,7 @@ Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| req
 require 'faker/games/elder_scrolls'
 require 'faker/games/fallout'
 require 'faker/games/half_life'
+require 'faker/games/league_of_legends'
 require 'faker/games/myst'
 require 'faker/games/overwatch'
 require 'faker/games/pokemon'
