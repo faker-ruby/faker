@@ -128,6 +128,7 @@ module Faker
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
       def polish_register_of_national_economy(length = 9)
         raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
+
         random_digits = []
         loop do
           random_digits = Array.new(length) { rand(10) }

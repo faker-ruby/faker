@@ -26,10 +26,14 @@ module Faker
       def male_first_name
         fetch('name.male_first_name')
       end
+      alias first_name_men male_first_name
+      alias masculine_name male_first_name
 
       def female_first_name
         fetch('name.female_first_name')
       end
+      alias first_name_women female_first_name
+      alias feminine_name female_first_name
 
       def last_name
         parse('name.last_name')

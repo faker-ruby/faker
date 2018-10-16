@@ -32,22 +32,32 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Address.secondary_address.is_a? String
   end
 
+  def test_company_methods
+    assert Faker::Company.suffix.is_a? String
+    assert Faker::Company.prefix.is_a? String
+    assert Faker::Company.name.is_a? String
+  end
+
+  def test_internet_methods
+    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.domain_suffix.is_a? String
+  end
+
+  def test_name_methods
+    assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.last_name.is_a? String
+    assert Faker::Name.prefix.is_a? String
+    assert Faker::Name.name.is_a? String
+    assert Faker::Name.name_with_middle.is_a? String
+  end
+
   def test_es_mx_phone_number
     assert Faker::PhoneNumber.phone_number.is_a? String
     assert Faker::PhoneNumber.cell_phone.is_a? String
   end
 
-  def test_es_mx_methods
-    assert Faker::Company.suffix.is_a? String
-    assert Faker::Company.prefix.is_a? String
-    assert Faker::Company.name.is_a? String
-    assert Faker::Internet.free_email.is_a? String
-    assert Faker::Internet.domain_suffix.is_a? String
+  def test_university_methods
     assert Faker::University.suffix.is_a? String
     assert Faker::University.prefix.is_a? String
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.name.is_a? String
   end
 end

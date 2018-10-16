@@ -22,6 +22,7 @@ module Faker
         categories = categories(num)
 
         return merge_categories(categories) if num > 1
+
         categories[0]
       end
 

@@ -12,4 +12,6 @@ Faker::DcComics.heroine #=> "Supergirl"
 Faker::DcComics.villain #=> "The Joker"
 
 Faker::DcComics.name #=> "Clark Kent"
+
+Faker::DcComics.title #=> "Teen Titans: The Judas Contract
 ```

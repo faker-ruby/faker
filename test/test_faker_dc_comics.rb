@@ -22,4 +22,8 @@ class TestFakerDcComics < Test::Unit::TestCase
   def test_name
     assert @tester.name.match(/\w+/)
   end
+
+  def test_title
+    assert @tester.title.match(/(\w+\.? ?){2,3}/)
+  end
 end
