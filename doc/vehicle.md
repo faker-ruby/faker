@@ -44,7 +44,7 @@ Faker::Vehicle.door_count #=> 3
 
 # Random engine size
 Faker::Vehicle.engine_size #=> 6
-Faker::Vehicke.engine #=> 4
+Faker::Vehicle.engine #=> 4
 
 # Random car year
 # Between 1 and 15 years ago
