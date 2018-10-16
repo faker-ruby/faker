@@ -16,7 +16,16 @@ class TestEnNzLocale < Test::Unit::TestCase
     assert Faker::Address.city.is_a? String
     assert Faker::Address.region.is_a? String
     assert Faker::Address.region_abbr.is_a? String
+    assert Faker::Address.postcode.is_a? String
     assert_equal 'New Zealand', Faker::Address.default_country
+  end
+
+  def test_company_methods
+    assert Faker::Company.suffix.is_a? String
+  end
+
+  def test_internet_methods
+    assert Faker::Internet.domain_suffix.is_a? String
   end
 
   def test_name_methods

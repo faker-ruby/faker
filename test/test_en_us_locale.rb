@@ -11,6 +11,17 @@ class TestEnUsLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
+  def test_internet_methods
+    assert Faker::Internet.domain_suffix.is_a? String
+  end
+
+  def test_address_methods
+    assert Faker::Address.full_address.is_a? String
+    assert Faker::Address.default_country.is_a? String
+    assert Faker::Address.country_code.is_a? String
+    assert Faker::Address.full_address.is_a? String
+  end
+
   def test_us_phone_methods_return_nil_for_nil_locale
     Faker::Config.locale = nil
 

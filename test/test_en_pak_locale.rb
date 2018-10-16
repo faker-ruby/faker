@@ -15,6 +15,7 @@ class TestEnPakLocale < Test::Unit::TestCase
   def test_en_pak_methods
     assert Faker::Address.state.is_a? String
     assert Faker::Address.default_country.is_a? String
+    assert Faker::Address.postcode.is_a? String
     assert_match(/\A(Pakistan|Islamic Republic of Pakistan)\z/, Faker::Address.default_country)
   end
 

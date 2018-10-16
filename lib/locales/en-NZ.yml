@@ -34,12 +34,6 @@ en-NZ:
     university:
       name: [Auckland University of Technology, Lincoln University, Massey University, University of Auckland, University of Canterbury, University of Otago, University of Waikato, Victoria University of Wellington]
 
-    company:
-      suffix: [Ltd, Ltc, and Sons, Group, Brothers, Partners]
-
-    internet:
-      domain_suffix: [co.nz, com, net.nz, net, org.nz, org, govt.nz, iwi.nz, nz, io, co]
-
     team:
       sport: [basketball, football, rugby league, netball, rugby union, hockey, cricket, golf, boxing, rowing, motorsport, tennis, athletics, sailing, surf life saving, squash]
       name: [Tall Blacks, All Whites, Warriors, Silver Ferns, All Blacks, Black Sticks, Black Caps]

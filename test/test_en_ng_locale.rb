@@ -17,6 +17,7 @@ class TestEnNgLocale < Test::Unit::TestCase
     assert Faker::Address.state.is_a? String
     assert Faker::Address.default_country.is_a? String
     assert Faker::Address.region.is_a? String
+    assert Faker::Address.lga.is_a? String
     assert_equal 'Nigeria', Faker::Address.default_country
   end
 

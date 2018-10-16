@@ -31,6 +31,7 @@ class TestEnNepLocale < Test::Unit::TestCase
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+    assert_equal 'Nepal', Faker::Address.default_country
   end
 
   def test_internet_methods
