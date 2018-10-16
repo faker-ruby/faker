@@ -11,7 +11,7 @@ class TestDaDkLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_address_methods
+  def test_da_dk_address_methods
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.city_prefix.is_a? String
@@ -26,23 +26,23 @@ class TestDaDkLocale < Test::Unit::TestCase
     assert_equal 'Danmark', Faker::Address.default_country
   end
 
-  def test_company_methods
+  def test_da_dk_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.name.is_a? String
   end
 
-  def test_commerce_methods
+  def test_da_dk_commerce_methods
     assert Faker::Commerce.color.is_a? String
     assert Faker::Commerce.department.is_a? String
     assert Faker::Commerce.product_name.is_a? String
     assert Faker::Commerce.name.is_a? String
   end
 
-  def test_internet_methods
+  def test_da_dk_internet_methods
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_name_methods
+  def test_da_dk_name_methods
     assert Faker::Name.name.is_a? String
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
@@ -50,7 +50,7 @@ class TestDaDkLocale < Test::Unit::TestCase
     assert Faker::Name.prefix.is_a? String
   end
 
-  def test_phone_number_methods
+  def test_da_dk_phone_number_methods
     assert_match(/(20)|(30)|(40)[\d\s]+$/, Faker::PhoneNumber.cell_phone)
     assert_match(/(\d\d[\s\-]?){4}$/, Faker::PhoneNumber.phone_number)
   end

@@ -29,25 +29,25 @@ class TestPlLocale < Test::Unit::TestCase
     assert_equal @cell_prefixes, prefixes
   end
 
-  def test_address_methods
+  def test_pl_address_methods
     assert Faker::Address.country.is_a? String
     assert Faker::Address.state.is_a? String
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.city_name.is_a? String
   end
 
-  def test_company_methods
+  def test_pl_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.buzzwords.is_a? Array
     assert Faker::Company.bs.is_a? String
   end
 
-  def test_internet_methods
+  def test_pl_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_name_methods
+  def test_pl_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String

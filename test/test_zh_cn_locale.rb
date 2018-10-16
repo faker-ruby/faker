@@ -11,7 +11,7 @@ class TestZhCnLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_name_methods
+  def test_zh_cn_name_methods
     assert Faker::Name.name_with_middle.is_a? String
   end
 

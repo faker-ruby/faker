@@ -11,7 +11,7 @@ class TestEnAuOckerLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_address_methods
+  def test_en_au_address_methods
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.street_root.is_a? String
@@ -27,21 +27,21 @@ class TestEnAuOckerLocale < Test::Unit::TestCase
     assert_equal('Australia', Faker::Address.default_country)
   end
 
-  def test_company_methods
+  def test_en_au_company_methods
     assert Faker::Company.suffix.is_a? String
   end
 
-  def test_internet_methods
+  def test_en_au_internet_methods
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_name_methods
+  def test_en_au_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.ocker_first_name.is_a? String
   end
 
-  def test_cell_phone_method
+  def test_en_au_cell_phone_method
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_equal '0', mobile[0]
     assert_equal '4', mobile[1]

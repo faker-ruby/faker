@@ -11,7 +11,7 @@ class TestDeAtLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_address_methods
+  def test_de_at_address_methods
     assert Faker::Address.country.is_a? String
     assert Faker::Address.state.is_a? String
     assert Faker::Address.state_abbr.is_a? String
@@ -27,18 +27,18 @@ class TestDeAtLocale < Test::Unit::TestCase
     assert_equal('Österreich', Faker::Address.default_country)
   end
 
-  def test_company_methods
+  def test_de_at_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.name.is_a? String
     assert Faker::Company.legal_form.is_a? String
   end
 
-  def test_internet_methods
+  def test_de_at_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_name_methods
+  def test_de_at_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
@@ -47,7 +47,7 @@ class TestDeAtLocale < Test::Unit::TestCase
     assert Faker::Name.name_with_middle.is_a? String
   end
 
-  def test_phone_number_methods
+  def test_de_at_phone_number_methods
     assert_match(/(43)|(06)|(436)[\d\s]+$/, Faker::PhoneNumber.cell_phone)
   end
 end

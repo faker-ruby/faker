@@ -12,7 +12,7 @@ class TestEnSgLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
-  def test_address_methods
+  def test_en_sg_address_methods
     assert Faker::Address.postcode.is_a? String
     assert Faker::Address.building_number.is_a? String
     assert Faker::Address.street_name.is_a? String
@@ -21,7 +21,7 @@ class TestEnSgLocale < Test::Unit::TestCase
     assert_equal('Singapore', Faker::Address.default_country)
   end
 
-  def test_name_methods
+  def test_en_sg_name_methods
     assert Faker::Name.male_first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.female_first_name.is_a? String

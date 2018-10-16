@@ -11,7 +11,7 @@ class TestRuLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_ru_methods
+  def test_ru_address_methods
     assert Faker::Address.country.is_a? String
     assert Faker::Address.building_number.is_a? String
     assert Faker::Address.street_suffix.is_a? String
@@ -25,28 +25,28 @@ class TestRuLocale < Test::Unit::TestCase
     assert_equal 'Россия', Faker::Address.default_country
   end
 
-  def test_commerce_methods
+  def test_ru_commerce_methods
     assert Faker::Commerce.color.is_a? String
     assert Faker::Commerce.department.is_a? String
     assert Faker::Commerce.product_name.is_a? String
   end
 
-  def test_company_methods
+  def test_ru_company_methods
     assert Faker::Company.prefix.is_a? String
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.name.is_a? String
   end
 
-  def test_char_methods
+  def test_ru_char_methods
     assert Faker::Char.romanize_cyrillic('').is_a? String
   end
 
-  def test_internet_methods
+  def test_ru_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_name_methods
+  def test_ru_name_methods
     assert Faker::Name.male_first_name.is_a? String
     assert Faker::Name.male_middle_name.is_a? String
     assert Faker::Name.male_last_name.is_a? String
