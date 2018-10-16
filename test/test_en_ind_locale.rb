@@ -12,7 +12,7 @@ class TestEnIndLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
-  def test_en_ind_methods
+  def test_address_methods
     assert Faker::Address.state.is_a? String
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.default_country.is_a? String

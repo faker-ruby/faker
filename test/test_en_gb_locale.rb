@@ -12,10 +12,15 @@ class TestEnGbLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
-  def test_en_gb_methods
+  def test_address_methods
     assert Faker::Address.county.is_a? String
     assert Faker::Address.uk_country.is_a? String
     assert Faker::Address.default_country.is_a? String
+    assert Faker::Address.country_code.is_a? String
+    assert Faker::Address.postcode.is_a? String
+  end
+
+  def test_internet_methods
     assert Faker::Internet.domain_suffix.is_a? String
   end
 

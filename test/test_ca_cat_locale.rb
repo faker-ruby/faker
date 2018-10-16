@@ -23,6 +23,7 @@ class TestCaCatLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.default_country.is_a? String
+    assert_equal 'Catalunya', Faker::Address.default_country
   end
 
   def test_phone_numbers_start_with_9

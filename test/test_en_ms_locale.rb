@@ -27,6 +27,10 @@ class TestEnMsLocale < Test::Unit::TestCase
     assert_equal('Malaysia', Faker::Address.default_country)
   end
 
+  def test_bank_methods
+    assert Faker::Bank.name.is_a? String
+  end
+
   def test_name_methods
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.malay_male_first_name.is_a? String

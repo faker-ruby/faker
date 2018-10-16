@@ -20,7 +20,7 @@ class TestBgLocale < Test::Unit::TestCase
     assert Faker::Address.city_name.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.street_title.is_a? String
+    assert Faker::Address.street_address.is_a? String
     assert_equal 'България', Faker::Address.default_country
   end
 

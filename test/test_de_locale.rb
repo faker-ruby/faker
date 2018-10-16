@@ -22,6 +22,11 @@ class TestDeLocale < Test::Unit::TestCase
     assert Faker::Address.city.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
+    assert Faker::Address.country_code.is_a? String
+    assert Faker::Address.building_number.is_a? String
+    assert Faker::Address.postcode.is_a? String
+    assert Faker::Address.time_zone.is_a? String
+    assert_equal('Deutschland', Faker::Address.default_country)
   end
 
   def test_book_methods
@@ -30,16 +35,48 @@ class TestDeLocale < Test::Unit::TestCase
     assert Faker::Book.publisher.is_a? String
   end
 
+  def test_chuck_norris_methods
+    assert Faker::ChuckNorris.fact.is_a? String
+  end
+
+  def test_color_methods
+    assert Faker::Color.name.is_a? String
+  end
+
   def test_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.legal_form.is_a? String
     assert Faker::Company.name.is_a? String
   end
 
+  def test_compass_methods
+    assert Faker::Compass.direction.is_a? String
+    assert Faker::Compass.cardinal.is_a? String
+    assert Faker::Compass.ordinal.is_a? String
+    assert Faker::Compass.half_wind.is_a? String
+    assert Faker::Compass.quarter_wind.is_a? String
+    assert Faker::Compass.abbreviation.is_a? String
+    assert Faker::Compass.cardinal_abbreviation.is_a? String
+    assert Faker::Compass.ordinal_abbreviation.is_a? String
+    assert Faker::Compass.half_wind_abbreviation.is_a? String
+    assert Faker::Compass.quarter_wind_abbreviation.is_a? String
+    assert Faker::Compass.azimuth.is_a? String
+    assert Faker::Compass.cardinal_azimuth.is_a? String
+    assert Faker::Compass.ordinal_azimuth.is_a? String
+    assert Faker::Compass.half_wind_azimuth.is_a? String
+    assert Faker::Compass.quarter_wind_azimuth.is_a? String
+  end
+
+  def test_commerce_methods
+    assert Faker::Commerce.department.is_a? String
+    assert Faker::Commerce.product_name.is_a? String
+  end
+
   def test_food_methods
     assert Faker::Food.ingredient.is_a? String
     assert Faker::Food.spice.is_a? String
     assert Faker::Food.measurement.is_a? String
+    assert Faker::Food.measurement_sizes.is_a? String
   end
 
   def test_internet_methods
@@ -51,11 +88,16 @@ class TestDeLocale < Test::Unit::TestCase
     assert Faker::Lorem.words.is_a? Array
   end
 
+  def test_hipster_methods
+    assert Faker::Hipster.words.is_a? Array
+  end
+
   def test_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.nobility_title_prefix.is_a? String
+    assert Faker::Name.nobility_title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end
@@ -66,6 +108,10 @@ class TestDeLocale < Test::Unit::TestCase
 
   def test_pokemon_methods
     assert Faker::Pokemon.name.is_a? String
+  end
+
+  def test_simpsons_methods
+    assert Faker::Simpsons.character.is_a? String
   end
 
   def test_space_methods
