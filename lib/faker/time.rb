@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Time < Faker::Date
+  class Time < Base
     TIME_RANGES = {
       all: (0..23),
       day: (9..17),
@@ -28,11 +28,11 @@ module Faker
       end
 
       def forward(days = 365, period = :all, format = nil)
-        time_with_format(date_with_random_time(super(days), period), format)
+        time_with_format(date_with_random_time(Faker::Date.forward(days), period), format)
       end
 
       def backward(days = 365, period = :all, format = nil)
-        time_with_format(date_with_random_time(super(days), period), format)
+        time_with_format(date_with_random_time(Faker::Date.backward(days), period), format)
       end
 
       private
