@@ -1,26 +1,28 @@
 # frozen_string_literal: true
 
 module Faker
-  class Myst < Base
-    class << self
-      def game
-        fetch('myst.games')
-      end
+  module Games
+    class Myst < Base
+      class << self
+        def game
+          fetch('games.myst.games')
+        end
 
-      def creature
-        fetch('myst.creatures')
-      end
+        def creature
+          fetch('games.myst.creatures')
+        end
 
-      def age
-        fetch('myst.ages')
-      end
+        def age
+          fetch('games.myst.ages')
+        end
 
-      def character
-        fetch('myst.characters')
-      end
+        def character
+          fetch('games.myst.characters')
+        end
 
-      def quote
-        fetch('myst.quotes')
+        def quote
+          fetch('games.myst.quotes')
+        end
       end
     end
   end
