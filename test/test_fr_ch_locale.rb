@@ -42,9 +42,9 @@ class TestFrChLocale < Test::Unit::TestCase
     assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::PhoneNumber.cell_phone.is_a? String
-    assert Faker::Pokemon.name.is_a? String
-    assert Faker::Pokemon.location.is_a? String
-    assert Faker::Pokemon.move.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.move.is_a? String
     assert_match(/^\d+$/, Faker::Address.building_number)
   end
 end

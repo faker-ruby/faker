@@ -1,18 +1,20 @@
 # frozen_string_literal: true
 
 module Faker
-  class Pokemon < Base
-    class << self
-      def name
-        fetch('pokemon.names')
-      end
+  module Games
+    class Pokemon < Base
+      class << self
+        def name
+          fetch('games.pokemon.names')
+        end
 
-      def location
-        fetch('pokemon.locations')
-      end
+        def location
+          fetch('games.pokemon.locations')
+        end
 
-      def move
-        fetch('pokemon.moves')
+        def move
+          fetch('games.pokemon.moves')
+        end
       end
     end
   end

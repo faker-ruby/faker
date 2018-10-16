@@ -43,7 +43,7 @@ class TestDeLocale < Test::Unit::TestCase
 
     assert Faker::Music.instrument.is_a? String
 
-    assert Faker::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
 
     assert Faker::Space.planet.is_a? String
     assert Faker::Space.moon.is_a? String
