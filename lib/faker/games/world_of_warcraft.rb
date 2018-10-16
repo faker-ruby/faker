@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
 module Faker
-  class WorldOfWarcraft < Base
-    class << self
-      def hero
-        fetch('world_of_warcraft.hero')
-      end
+  module Games
+    class WorldOfWarcraft < Base
+      class << self
+        def hero
+          fetch('games.world_of_warcraft.hero')
+        end
 
-      def quote
-        fetch('world_of_warcraft.quotes')
+        def quote
+          fetch('games.world_of_warcraft.quotes')
+        end
       end
     end
   end

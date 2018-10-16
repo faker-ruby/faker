@@ -252,6 +252,7 @@ require 'faker/games/elder_scrolls'
 require 'faker/games/fallout'
 require 'faker/games/half_life'
 require 'faker/games/pokemon'
+require 'faker/games/world_of_warcraft'
 require 'faker/games/zelda'
 
 require 'helpers/char'
