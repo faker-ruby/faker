@@ -1,21 +1,21 @@
-# Faker::Dota
+# Faker::Games::Dota
 
 Available since version 1.9.0.
 
 ```ruby
 # Random hero
-Faker::Dota.hero #=> "Abaddon"
+Faker::Games::Dota.hero #=> "Abaddon"
 
 # Random item
-Faker::Dota.item #=> "You have called death upon yourself."
+Faker::Games::Dota.item #=> "You have called death upon yourself."
 
 # Random team
-Faker::Dota.team #=> "Evil Geniuses"
+Faker::Games::Dota.team #=> "Evil Geniuses"
 
 # Random player
-Faker::Dota.player #=> "Dendi"
+Faker::Games::Dota.player #=> "Dendi"
 
 # Random quote
-Faker::Dota.quote #=> "Easy now, this stuff is explosive!"
-Faker::Dota.quote(hero = 'alchemist') #=> "Better living through alchemy!"
+Faker::Games::Dota.quote #=> "Easy now, this stuff is explosive!"
+Faker::Games::Dota.quote(hero = 'alchemist') #=> "Better living through alchemy!"
 ```
