@@ -1,23 +1,25 @@
 # frozen_string_literal: true
 
 module Faker
-  class Zelda < Base
-    flexible :space
-    class << self
-      def game
-        fetch('zelda.games')
-      end
+  module Games
+    class Zelda < Base
+      flexible :space
+      class << self
+        def game
+          fetch('games.zelda.games')
+        end
 
-      def character
-        fetch('zelda.characters')
-      end
+        def character
+          fetch('games.zelda.characters')
+        end
 
-      def location
-        fetch('zelda.locations')
-      end
+        def location
+          fetch('games.zelda.locations')
+        end
 
-      def item
-        fetch('zelda.items')
+        def item
+          fetch('games.zelda.items')
+        end
       end
     end
   end

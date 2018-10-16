@@ -1,17 +1,17 @@
-# Faker::Zelda
+# Faker::Games::Zelda
 
 Available since version 1.7.3.
 
 ```ruby
 # Random Zelda game
-Faker::Zelda.game #=> "Ocarina of Time"
+Faker::Games::Zelda.game #=> "Ocarina of Time"
 
 # Random Zelda character
-Faker::Zelda.character #=> "Guru-Guru"
+Faker::Games::Zelda.character #=> "Guru-Guru"
 
 # Random Zelda location
-Faker::Zelda.location #=> "Tarrey Town"
+Faker::Games::Zelda.location #=> "Tarrey Town"
 
 # Random Zelda item
-Faker::Zelda.item #=> "Master Sword"
+Faker::Games::Zelda.item #=> "Master Sword"
 ```
