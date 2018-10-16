@@ -15,6 +15,7 @@
 - [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
+- [PR #1411](https://github.com/stympy/faker/pull/1411) Add several missing locales [@vbrazo](https://github.com/vbrazo)
 - [PR #1403](https://github.com/stympy/faker/pull/1403) Faker::SouthPark => Faker::Movies::SouthPark [@vbrazo](https://github.com/vbrazo)
 - [PR #1401](https://github.com/stympy/faker/pull/1401) Faker::GratefulDead => Faker::Movies::GratefulDead [@vbrazo](https://github.com/vbrazo)
 - [PR #1362](https://github.com/stympy/faker/pull/1362) Faker::Types minor cleanup [@stephengroat](https://github.com/stephengroat)

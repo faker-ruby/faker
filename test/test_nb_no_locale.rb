@@ -11,7 +11,7 @@ class TestNbNoLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_nb_no_methods
+  def test_nb_no_address_methods
     assert Faker::Address.city_root.is_a? String
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.street_prefix.is_a? String
@@ -21,16 +21,16 @@ class TestNbNoLocale < Test::Unit::TestCase
     assert Faker::Address.state.is_a? String
   end
 
-  def test_company_methods
+  def test_nb_no_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.name.is_a? String
   end
 
-  def test_internet_methods
+  def test_nb_no_internet_methods
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_name_methods
+  def test_nb_no_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String

@@ -12,21 +12,30 @@ class TestEnCaLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
-  def test_ca_phone_methods_return_nil_for_nil_locale
-    Faker::Config.locale = nil
+  def test_en_ca_address_methods
+    assert Faker::Address.postcode.is_a? String
+    assert Faker::Address.state.is_a? String
+    assert Faker::Address.state_abbr.is_a? String
+    assert Faker::Address.default_country.is_a? String
+    assert_equal 'Canada', Faker::Address.default_country
 
-    assert_nil Faker::PhoneNumber.area_code
-    assert_nil Faker::PhoneNumber.exchange_code
+    expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
+    assert_match(expected, Faker::Address.postcode)
   end
 
-  def test_subscriber_number_method
+  def test_en_ca_internet_methods
+    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.domain_suffix.is_a? String
+  end
+
+  def test_en_ca_subscriber_number_method
     assert Faker::PhoneNumber.subscriber_number.is_a? String
     assert_equal Faker::PhoneNumber.subscriber_number.length, 4
     assert_equal Faker::PhoneNumber.subscriber_number(10).length, 10
     assert_equal Faker::PhoneNumber.method(:extension), Faker::PhoneNumber.method(:subscriber_number)
   end
 
-  def test_ca_phone_methods_with_en_ca_locale
+  def test_en_ca_phone_methods
     assert Faker::PhoneNumber.area_code.is_a? String
     assert Faker::PhoneNumber.area_code.to_i.is_a? Integer
     assert_equal Faker::PhoneNumber.area_code.length, 3
@@ -42,8 +51,10 @@ class TestEnCaLocale < Test::Unit::TestCase
     assert_match(ca_number_validation_regex, Faker::PhoneNumber.phone_number)
   end
 
-  def test_ca_postcode
-    expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
-    assert_match(expected, Faker::Address.postcode)
+  def test_en_ca_phone_methods_return_nil_for_nil_locale
+    Faker::Config.locale = nil
+
+    assert_nil Faker::PhoneNumber.area_code
+    assert_nil Faker::PhoneNumber.exchange_code
   end
 end

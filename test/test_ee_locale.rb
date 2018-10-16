@@ -8,25 +8,12 @@ class TestEeLocale < Test::Unit::TestCase
                                66 67 68 69 71 72 73 74 75 76 77 78 79 88].sort
     @valid_cell_phone_prefixes = %w[5 8].sort
     @previous_locale = Faker::Config.locale
+
     Faker::Config.locale = :ee
   end
 
   def teardown
     Faker::Config.locale = @previous_locale
-  end
-
-  def test_ee_phone_number
-    1000.times do
-      phone_number_prefix = Faker::PhoneNumber.phone_number[0..1]
-      assert_include @valid_phone_prefixes, phone_number_prefix
-    end
-  end
-
-  def test_ee_cell_phone
-    1000.times do
-      cell_phone_prefix = Faker::PhoneNumber.cell_phone[0]
-      assert_include @valid_cell_phone_prefixes, cell_phone_prefix
-    end
   end
 
   def test_ee_address_methods
@@ -64,5 +51,19 @@ class TestEeLocale < Test::Unit::TestCase
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.title.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+  end
+
+  def test_ee_phone_number
+    100.times do
+      phone_number_prefix = Faker::PhoneNumber.phone_number[0..1]
+      assert_include @valid_phone_prefixes, phone_number_prefix
+    end
+  end
+
+  def test_ee_cell_phone
+    100.times do
+      cell_phone_prefix = Faker::PhoneNumber.cell_phone[0]
+      assert_include @valid_cell_phone_prefixes, cell_phone_prefix
+    end
   end
 end
