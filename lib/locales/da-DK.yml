@@ -10,7 +10,6 @@ da-DK:
       street_root: [Lærke, Birke, Vinkel, Vibe, Mølle, Ring, Skole, Skov, Ny, Ege, Sol, Industri, Kirke, Park, Strand, Eng]
       street_suffix: [vej, gade, gyde, allé]
       state: [Region Nordjylland, Region Midtjylland, Region Syddanmark, Region Hovedstaden, Region Sjælland]
-
       city:
         - "#{city_prefix}#{city_suffix}"
       street_name:
@@ -70,6 +69,5 @@ da-DK:
         adjective: [Lille, Ergonomisk, Robust, Intelligent, Sød, Utrolig, Fantastisk, Praktisk, Slank, Fed, Enorm, Enkel, Tung, Let, Multianvendelig, Udholdende]
         material: [Stål, Metal, Træ, Beton, Plastic, Bomuld, Granit, Gummi, Latex, Læder, Silke, Uld, Ruskind, Linned, Marmor, Jern, Bronze, Kobber, Messing, Aluminium, Papir]
         product: [Stol, Bil, Computer, Buks, Trøje, Bord, Hat, Tallerken, Kniv, Flaske, Jakke, Lampe, Tastatur, Taske, Bænk, Ur, Pung]
-
       name:
         - "#{Address.city} #{suffix}"

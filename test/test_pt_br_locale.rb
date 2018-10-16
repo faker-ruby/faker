@@ -11,7 +11,7 @@ class TestPtBrLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_address_methods
+  def test_pt_br_address_methods
     assert Faker::Address.city_prefix.is_a? String
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.state_abbr.is_a? String
@@ -26,16 +26,16 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Address.default_country, 'Brasil'
   end
 
-  def test_color_methods
+  def test_pt_br_color_methods
     assert Faker::Color.name.is_a? String
   end
 
-  def test_company_methods
+  def test_pt_br_company_methods
     assert Faker::Company.name.is_a? String
     assert Faker::Company.suffix.is_a? String
   end
 
-  def test_commerce_methods
+  def test_pt_br_commerce_methods
     assert Faker::Commerce.color.is_a? String
     assert Faker::Commerce.department.is_a? String
     assert Faker::Commerce.product_name.is_a? String
@@ -43,18 +43,18 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Company.name.is_a? String
   end
 
-  def test_food_methods
+  def test_pt_br_food_methods
     assert Faker::Food.ingredient.is_a? String
     assert Faker::Food.spice.is_a? String
     assert Faker::Food.measurement.is_a? String
   end
 
-  def test_internet_methods
+  def test_pt_br_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_name_methods
+  def test_pt_br_name_methods
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.suffix.is_a? String
     assert Faker::Name.last_name.is_a? String
@@ -67,7 +67,7 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Name.initials(2).match(/[A-Z]{2}/)
   end
 
-  def test_vehicle_methods
+  def test_pt_br_vehicle_methods
     assert Faker::Vehicle.license_plate.is_a? String
     assert Faker::Vehicle.license_plate('RJ').is_a? String
   end
