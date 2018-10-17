@@ -20,7 +20,9 @@ Ways to run Rubocop:
 
 8. Methods with optional arguments should use keyword rather than positional arguments. An exception to this could be a method that takes only one optional argument, and it's unlikely that that method would ever take more than one optional argument.
 
-9. Push to your fork and submit a pull request.
+9. If you want to remove a method, you have to deprecate the method before removing it. You can `extend Gem::Deprecate` and use the `deprecate` method to accomplish this task.
+
+10. Push to your fork and submit a pull request.
 
 ### Github Flow for contributors and collaborators
 
