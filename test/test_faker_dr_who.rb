@@ -8,42 +8,42 @@ class TestFakerDrWho < Test::Unit::TestCase
   end
 
   def test_character
-    10.times { assert Faker::DrWho.character.match(/[\w]+/) }
+    10.times { assert Faker::TV::DrWho.character.match(/[\w]+/) }
   end
 
   def test_the_doctor
-    10.times { assert Faker::DrWho.the_doctor.match(/[\w]+/) }
+    10.times { assert Faker::TV::DrWho.the_doctor.match(/[\w]+/) }
   end
 
   def test_actor
-    10.times { assert Faker::DrWho.actor.match(/[\w]+/) }
+    10.times { assert Faker::TV::DrWho.actor.match(/[\w]+/) }
   end
 
   def test_catch_phrase
-    10.times { assert Faker::DrWho.catch_phrase.match(/[\w]+/) }
+    10.times { assert Faker::TV::DrWho.catch_phrase.match(/[\w]+/) }
   end
 
   def test_quote
-    10.times { assert Faker::DrWho.quote.match(/[\w]+/) }
+    10.times { assert Faker::TV::DrWho.quote.match(/[\w]+/) }
   end
 
   def test_villian
-    10.times { assert Faker::DrWho.villian.match(/[\w]+/) }
+    10.times { assert Faker::TV::DrWho.villian.match(/[\w]+/) }
   end
 
   def test_specie
-    10.times { assert Faker::DrWho.specie.match(/[\w]+/) }
+    10.times { assert Faker::TV::DrWho.specie.match(/[\w]+/) }
   end
 
   def test_locales
     [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
-      assert Faker::DrWho.character   .is_a? String
-      assert Faker::DrWho.the_doctor  .is_a? String
-      assert Faker::DrWho.catch_phrase.is_a? String
-      assert Faker::DrWho.quote       .is_a? String
-      assert Faker::DrWho.villian     .is_a? String
-      assert Faker::DrWho.specie      .is_a? String
+      assert Faker::TV::DrWho.character   .is_a? String
+      assert Faker::TV::DrWho.the_doctor  .is_a? String
+      assert Faker::TV::DrWho.catch_phrase.is_a? String
+      assert Faker::TV::DrWho.quote       .is_a? String
+      assert Faker::TV::DrWho.villian     .is_a? String
+      assert Faker::TV::DrWho.specie      .is_a? String
     end
   end
 end

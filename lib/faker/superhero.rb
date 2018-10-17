@@ -1,26 +1,28 @@
 # frozen_string_literal: true
 
 module Faker
-  class Superhero < Base
-    class << self
-      def power
-        fetch('superhero.power')
-      end
+  module Comics
+    class Superhero < Base
+      class << self
+        def power
+          fetch('superhero.power')
+        end
 
-      def prefix
-        fetch('superhero.prefix')
-      end
+        def prefix
+          fetch('superhero.prefix')
+        end
 
-      def suffix
-        fetch('superhero.suffix')
-      end
+        def suffix
+          fetch('superhero.suffix')
+        end
 
-      def descriptor
-        fetch('superhero.descriptor')
-      end
+        def descriptor
+          fetch('superhero.descriptor')
+        end
 
-      def name
-        parse('superhero.name')
+        def name
+          parse('superhero.name')
+        end
       end
     end
   end
