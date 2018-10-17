@@ -7,11 +7,11 @@ module Faker
         def name
           fetch('heroes.names')
         end
-  
+
         def specialty
           fetch('heroes.specialties')
         end
-  
+
         def klass
           fetch('heroes.klasses')
         end
