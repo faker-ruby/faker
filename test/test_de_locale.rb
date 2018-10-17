@@ -63,7 +63,7 @@ class TestDeLocale < Test::Unit::TestCase
   def test_music_methods
     assert Faker::Music.instrument.is_a? String
   end
-  
+
   def test_pokemon_methods
     assert Faker::Games::Pokemon.name.is_a? String
   end
