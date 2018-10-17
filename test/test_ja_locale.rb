@@ -53,8 +53,8 @@ class TestJaLocale < Test::Unit::TestCase
   end
 
   def test_ja_pokemon_methods
-    assert Faker::Pokemon.name.is_a? String
-    assert Faker::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.location.is_a? String
   end
 
   def test_ja_university_methods
