@@ -2,9 +2,9 @@
 
 
  ```ruby
-Faker::Heroes.name #=> "Christian"
+Faker::Games::Heroes.name #=> "Christian"
 
-Faker::House.specialty #=> "Ballista"
+Faker::Games::Heroes.specialty #=> "Ballista"
 
-Faker::House.klass #=> "Knight"
+Faker::Games::Heroes.klass #=> "Knight"
 ```

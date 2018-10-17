@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestFakerHeroes < Test::Unit::TestCase
   def setup
-    @tester = Faker::Heroes
+    @tester = Faker::Games::Heroes
   end
 
   def test_name
