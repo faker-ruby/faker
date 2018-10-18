@@ -31,4 +31,8 @@ class TestEnSgLocale < Test::Unit::TestCase
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.name.is_a? String
   end
+
+  def test_singapore_license_plate
+    assert_match(/^S[A-Z]{2}\d{1,4}[A-Z]{1}$/, Faker::Vehicle.singapore_license_plate)
+  end
 end
