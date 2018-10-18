@@ -1,0 +1,285 @@
+en:
+  faker:
+    games:
+      sonic_the_hedgehog:
+        zone:
+          - Aerobase Zone
+          - Angel Island Zone
+          - Aqua Lake Zone
+          - Aqua Planet Zone
+          - Aquatic Relix Zone
+          - Aquatic Ruin Zone
+          - Atomic Destroyer Zone
+          - Azure Lake Zone
+          - Balloon Park Zone
+          - Beach Zone
+          - Blue Coast Zone
+          - Blue Marine Zone
+          - Blue Ridge Zone
+          - Blue Sky Zone
+          - Bonus Zone
+          - Boss Attack Zone
+          - Bridge Zone
+          - Carnival Night Zone
+          - Carrier Zone
+          - Casino Night Zone
+          - Casino Paradise Zone
+          - Casino Street Zone
+          - Chaotic Inferno Zone
+          - Chaotic Space Zone
+          - Chemical Plant Zone
+          - Chrome Gadget Zone
+          - Colosseum Highway Zone
+          - Cosmic Angel Zone
+          - Cosmic Casino Zone
+          - Cosmic Zone
+          - Crystal Egg Zone
+          - Crystal Mountain Zone
+          - Cyber City Zone
+          - Death Egg Zone
+          - Death Egg mk.II Zone
+          - Death Yard Zone
+          - Desert Palace Zone
+          - Diamond Dust Zone
+          - Dust Hill Zone
+          - E.G.G. Station Zone
+          - Egg Gauntlet Zone
+          - Egg Reverie Zone
+          - Egg Rocket Zone
+          - Electric Egg Zone
+          - Emerald Hill Zone
+          - Endless Mine Zone
+          - Final Zone
+          - Flying Battery Zone
+          - Forest Falls Zone
+          - Frontier Canyon Zone
+          - Gene Gadget Zone
+          - Genocide City Zone
+          - Gigalopolis Zone
+          - Gigantic Angel Zone
+          - Gimmick Mountain Zone
+          - Great Turquoise Zone
+          - Green Grove Zone
+          - Green Hill Zone
+          - Green Hills Zone
+          - Hidden Palace Zone
+          - Hill Top Zone
+          - Hydrocity Zone
+          - Ice Mountain Zone
+          - IceCap Zone
+          - Jungle Zone
+          - Labyrinth Zone
+          - Last Utopia Zone
+          - Launch Base Zone
+          - Lava Reef Zone
+          - Lost Labyrinth Zone
+          - Mad Gear Zone
+          - Marble Garden Zone
+          - Marble Zone
+          - Mecha Green Hill Zone
+          - Mechanical Zone
+          - Meta Junglira Zone
+          - Metallic Madness Zone
+          - Meteor Base Zone
+          - Metropolis Zone
+          - Mirage Saloon Zone
+          - Mountain Zone
+          - Mushroom Hill Zone
+          - Mystic Cave Zone
+          - Mystic Haunt Zone
+          - Nature Zone
+          - Neo Green Hill Zone
+          - Neo South Island Zone
+          - Neon Palace Zone
+          - Nightmare Zone
+          - Oil Desert Zone
+          - Oil Ocean Zone
+          - Panic Puppet Zone
+          - Press Garden Zone
+          - Proto Palace Zone
+          - Red Volcano Zone
+          - Robotnik Winter Zone
+          - Rusty Ruin Zone
+          - Sandopolis Zone
+          - Scrambled Egg Zone
+          - Scrap Brain Zone
+          - Seaside Hill Zone
+          - Secret Base Zone
+          - Secret Plant Zone
+          - Silver Castle Zone
+          - Sky Base Zone
+          - Sky Chase Zone
+          - Sky Fortress Zone
+          - Sky High Zone
+          - Sky Park Zone
+          - Sky Sanctuary Zone
+          - Sleeping Egg Zone
+          - Splash Hill Zone
+          - Spring Stadium Zone
+          - Spring Yard Zone
+          - Star Light Zone
+          - Stardust Speedway Zone
+          - Studiopolis Zone
+          - Sunset Forest Zone
+          - Sunset Park Zone
+          - Sylvania Castle Zone
+          - Temple Zone
+          - The Doomsday Zone
+          - The Legend of Zelda Zone
+          - The Moon Zone
+          - Tidal Plant Zone
+          - Titanic Monarch Zone
+          - Turquoise Hill Zone
+          - Under Ground Zone
+          - Volcano Valley Zone
+          - White Park Zone
+          - Wing Fortress Zone
+          - Wood Zone
+          - X-Zone
+          - Yellow Desert Zone
+          - Yoshi's Island Zone
+        character:
+          - Alf-Layla-wa-Layla
+          - Ali Baba
+          - Amy Rose
+          - Ashura
+          - Avatar
+          - Badnik
+          - Bark the Polar Bear
+          - Battle Kukku 16th
+          - Bean the Dynamite
+          - Bearenger
+          - Big the Cat
+          - Biolizard
+          - Black Doom
+          - Blacksmith
+          - Blaze the Cat
+          - Caliburn
+          - Captain Whisker
+          - Carrotia
+          - Chaos
+          - Chaos Gamma
+          - Charmy Bee
+          - Cheese the Chao
+          - Chip
+          - Chocola the Chao
+          - Cream the Rabbit
+          - Cubot
+          - Dark Gaia
+          - Dark Super Sonic
+          - Darkspine Sonic
+          - Doctor Fukurokov
+          - Doctor Zachary
+          - Don Fachio
+          - Dr. Eggman
+          - Duke of Soleanna
+          - E-10000B
+          - E-10000G
+          - E-10000R
+          - E-101 β
+          - E-101mkII
+          - E-102 γ
+          - E-103 δ
+          - E-104 ε
+          - E-105 ζ
+          - E-121 Phi
+          - E-123 Ω
+          - Edmund
+          - Eggman Nega
+          - Eggrobo
+          - Princess Elise the Third
+          - Emerl
+          - Erazor Djinn
+          - Espio the Chameleon
+          - Fang the Sniper
+          - Focke-Wulf
+          - Froggy
+          - G-merl
+          - G.U.N. Commander
+          - Gaia Colossus
+          - Gerald Robotnik
+          - Grand Battle Kukku 15th
+          - Has Bean
+          - Heavy
+          - Bomb
+          - Honey the Cat
+          - Iblis
+          - Ifrit
+          - Ifrit Golem
+          - Illumina
+          - Infinite
+          - Ix
+          - Jet the Hawk
+          - Johnny
+          - Julie-su
+          - King Arthur
+          - King Boom Boo
+          - King Shahryār
+          - Knuckles the Echidna
+          - Lily
+          - Luigi
+          - Lumina Flowlight
+          - Maria Robotnik
+          - Marine the Raccoon
+          - Mario
+          - Master Core ABIS
+          - Master Zik
+          - Mecha Knuckles
+          - Mecha Sonic
+          - Mephiles the Dark
+          - Merlin
+          - Merlina the Wizard
+          - Metal Knuckles
+          - Metal Sonic
+          - Metal Sonic 3.0
+          - Mighty the Armadillo
+          - Mii
+          - Miles "Tails" Prower
+          - Mr. Needlemouse
+          - Neo Metal Sonic
+          - NiGHTS
+          - Nimue, Lady of the Lake
+          - Omochao
+          - Orbot
+          - Pachacamac
+          - Perfect Chaos
+          - President of the United Federation
+          - Professor Pickle
+          - Ray the Flying Squirrel
+          - Rocket Metal
+          - Rouge the Bat
+          - Scourge the Hedgehog
+          - SCR-GP
+          - SCR-HD
+          - Shade
+          - Shadow Android
+          - Shadow the Hedgehog
+          - Shahra, the Genie of the Ring
+          - Shugo-hei
+          - Silver the Hedgehog
+          - Sinbad
+          - Sir Galahad
+          - Sir Gawain
+          - Sir Lamorak
+          - Sir Lancelot
+          - Sir Percival
+          - Solaris
+          - Sonic the Hedgehog
+          - Sticks the Badger
+          - Storm the Albatross
+          - Tails Doll
+          - Tiara Boobowski
+          - Tikal
+          - Vanilla the Rabbit
+          - Vector the Crocodile
+          - Wave the Swallow
+          - Wentos
+          - Witchcart
+          - Xbox Live Avatar
+          - Yacker
+          - Zavok
+          - Zazz
+          - Zeena
+          - ZERO
+          - Zomom
+          - Zor
