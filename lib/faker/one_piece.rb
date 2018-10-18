@@ -1,31 +1,40 @@
 # frozen_string_literal: true
 
 module Faker
-  class OnePiece < Base
+  module OnePiece
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('one_piece.characters')
+        Faker::JapaneseMedia::OnePiece.character
       end
 
       def sea
-        fetch('one_piece.seas')
+        Faker::JapaneseMedia::OnePiece.sea
       end
 
       def island
-        fetch('one_piece.islands')
+        Faker::JapaneseMedia::OnePiece.island
       end
 
       def location
-        fetch('one_piece.locations')
+        Faker::JapaneseMedia::OnePiece.location
       end
 
       def quote
-        fetch('one_piece.quotes')
+        Faker::JapaneseMedia::OnePiece.quote
       end
 
       def akuma_no_mi
-        fetch('one_piece.akumas_no_mi')
+        Faker::JapaneseMedia::OnePiece.akuma_no_mi
       end
+
+      deprecate :character, 'Faker::JapaneseMedia::OnePiece.character', 2018, 10
+      deprecate :sea, 'Faker::JapaneseMedia::OnePiece.sea', 2018, 10
+      deprecate :island, 'Faker::JapaneseMedia::OnePiece.island', 2018, 10
+      deprecate :location, 'Faker::JapaneseMedia::OnePiece.location', 2018, 10
+      deprecate :quote, 'Faker::JapaneseMedia::OnePiece.quote', 2018, 10
+      deprecate :akuma_no_mi, 'Faker::JapaneseMedia::OnePiece.akuma_no_mi', 2018, 10
     end
   end
 end
