@@ -1,23 +1,30 @@
 # frozen_string_literal: true
 
 module Faker
-  class SwordArtOnline < Base
+  module SwordArtOnline
     class << self
+      extend Gem::Deprecate
+
       def real_name
-        fetch('sword_art_online.real_name')
+        Faker::JapaneseMedia::SwordArtOnline.real_name
       end
 
       def game_name
-        fetch('sword_art_online.game_name')
+        Faker::JapaneseMedia::SwordArtOnline.game_name
       end
 
       def location
-        fetch('sword_art_online.location')
+        Faker::JapaneseMedia::SwordArtOnline.location
       end
 
       def item
-        fetch('sword_art_online.item')
+        Faker::JapaneseMedia::SwordArtOnline.item
       end
+
+      deprecate :real_name, 'Faker::JapaneseMedia::SwordArtOnline.real_name', 2018, 10
+      deprecate :game_name, 'Faker::JapaneseMedia::SwordArtOnline.game_name', 2018, 10
+      deprecate :location, 'Faker::JapaneseMedia::SwordArtOnline.location', 2018, 10
+      deprecate :item, 'Faker::JapaneseMedia::SwordArtOnline.item', 2018, 10
     end
   end
 end

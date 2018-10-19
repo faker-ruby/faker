@@ -1,15 +1,15 @@
-# Faker::OnePiece
+# Faker::JapaneseMedia::OnePiece
 
 ```ruby
-Faker::OnePiece.character #=> "Monkey D. Luffy"
+Faker::JapaneseMedia::OnePiece.character #=> "Monkey D. Luffy"
 
-Faker::OnePiece.sea #=> "East Blue"
+Faker::JapaneseMedia::OnePiece.sea #=> "East Blue"
 
-Faker::OnePiece.island #=> "Laftel"
+Faker::JapaneseMedia::OnePiece.island #=> "Laftel"
 
-Faker::OnePiece.location #=> "Foosha Village"
+Faker::JapaneseMedia::OnePiece.location #=> "Foosha Village"
 
-Faker::OnePiece.quote #=> "ONE PIECE IS REAL!"
+Faker::JapaneseMedia::OnePiece.quote #=> "ONE PIECE IS REAL!"
 
-Faker::OnePiece.akuma_no_mi #=> "Gomu Gomu no Mi"
+Faker::JapaneseMedia::OnePiece.akuma_no_mi #=> "Gomu Gomu no Mi"
 ```
