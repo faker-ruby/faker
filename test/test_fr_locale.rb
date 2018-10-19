@@ -29,6 +29,10 @@ class TestFrLocale < Test::Unit::TestCase
     assert_equal('France', Faker::Address.default_country)
   end
 
+  def test_fr_appliance_methods
+    assert Faker::Appliance.equipment.is_a? String
+  end
+
   def test_fr_book_methods
     assert Faker::Book.title.is_a? String
     assert Faker::Book.author.is_a? String
@@ -50,6 +54,8 @@ class TestFrLocale < Test::Unit::TestCase
 
   def test_fr_lorem_methods
     assert Faker::Lorem.word.is_a? String
+    assert Faker::Lorem.words(1000)
+    assert Faker::Lorem.words(10_000, true)
   end
 
   def test_fr_name_methods
@@ -75,7 +81,9 @@ class TestFrLocale < Test::Unit::TestCase
     assert_match(/^(0|33)(6|7)\d{8}$/, mobile)
   end
 
-  def test_fr_appliance_methods
-    assert Faker::Appliance.equipment.is_a? String
+  def test_fr_pokemon_methods
+    assert Faker::Pokemon.name.is_a? String
+    assert Faker::Pokemon.location.is_a? String
+    assert Faker::Pokemon.move.is_a? String
   end
 end
