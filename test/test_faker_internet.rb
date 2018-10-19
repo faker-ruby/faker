@@ -49,7 +49,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_username_with_utf_8_arg
-    assert @tester.username('Łucja').match('Łucja')
+    assert @tester.username('Łucja').match('łucja')
   end
 
   def test_username_with_very_large_integer_arg
