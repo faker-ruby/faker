@@ -19,6 +19,14 @@ class TestNbNoLocale < Test::Unit::TestCase
     assert Faker::Address.street_suffix.is_a? String
     assert Faker::Address.common_street_suffix.is_a? String
     assert Faker::Address.state.is_a? String
+    assert Faker::Address.building_number.is_a? String
+    assert Faker::Address.secondary_address.is_a? String
+    assert Faker::Address.postcode.is_a? String
+    assert Faker::Address.city.is_a? String
+    assert Faker::Address.street_name.is_a? String
+    assert Faker::Address.street_address.is_a? String
+    assert Faker::Address.default_country.is_a? String
+    assert_equal('Norge', Faker::Address.default_country)
   end
 
   def test_nb_no_company_methods
@@ -37,5 +45,12 @@ class TestNbNoLocale < Test::Unit::TestCase
     assert Faker::Name.suffix.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+    assert Faker::Name.male_first_name.is_a? String
+    assert Faker::Name.female_first_name.is_a? String
+  end
+
+  def test_nb_no_phone_number_methods
+    assert Faker::PhoneNumber.cell_phone.is_a? String
+    assert Faker::PhoneNumber.phone_number.is_a? String
   end
 end

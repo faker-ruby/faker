@@ -31,6 +31,9 @@ class TestSKLocale < Test::Unit::TestCase
 
   def test_sk_company_methods
     assert Faker::Company.suffix.is_a? String
+    assert Faker::Company.buzzword.is_a? String
+    assert Faker::Company.bs.is_a? String
+    assert Faker::Company.name.is_a? String
   end
 
   def test_sk_internet_methods
@@ -46,6 +49,11 @@ class TestSKLocale < Test::Unit::TestCase
     assert Faker::Name.name_with_middle.is_a? String
     assert Faker::Name.male_first_name.is_a? String
     assert Faker::Name.female_first_name.is_a? String
+    assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
+  end
+
+  def test_sk_phone_number_methods
+    assert Faker::PhoneNumber.phone_number.is_a? String
   end
 end

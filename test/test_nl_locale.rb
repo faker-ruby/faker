@@ -56,10 +56,18 @@ class TestNlLocale < Test::Unit::TestCase
     assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+    assert Faker::Name.tussenvoegsel.is_a? String
+    assert Faker::Name.prefix.is_a? String
+    assert Faker::Name.suffix.is_a? String
   end
 
-  def test_nl_phone_number
+  def test_nl_phone_number_methods
     assert Faker::PhoneNumber.phone_number.is_a? String
     assert Faker::PhoneNumber.cell_phone.is_a? String
+  end
+
+  def test_nl_university_methods
+    assert Faker::University.prefix.is_a? String
+    assert Faker::University.name.is_a? String
   end
 end

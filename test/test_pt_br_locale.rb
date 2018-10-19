@@ -67,6 +67,21 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Name.initials(2).match(/[A-Z]{2}/)
   end
 
+  def test_pt_br_team_methods
+    assert Faker::Team.main_teams.is_a? String
+    assert Faker::Team.prefix.is_a? String
+    assert Faker::Team.gentile.is_a? String
+    assert Faker::Team.name.is_a? String
+    assert Faker::Team.sport.is_a? String
+  end
+
+  def test_pt_br_university_methods
+    assert Faker::University.prefix.is_a? String
+    assert Faker::University.region.is_a? String
+    assert Faker::University.suffix.is_a? String
+    assert Faker::University.name.is_a? String
+  end
+
   def test_pt_br_vehicle_methods
     assert Faker::Vehicle.license_plate.is_a? String
     assert Faker::Vehicle.license_plate('RJ').is_a? String
