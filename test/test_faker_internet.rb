@@ -49,7 +49,11 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_username_with_utf_8_arg
-    assert @tester.username('Łucja').match('łucja')
+    if RUBY_VERSION < '2.4.0'
+      assert @tester.username('Łucja').match('Łucja')
+    else
+      assert @tester.username('Łucja').match('łucja')
+    end
   end
 
   def test_username_with_very_large_integer_arg
