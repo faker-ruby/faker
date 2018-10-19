@@ -90,6 +90,7 @@ Contents
   - [Faker::Games::HalfLife](doc/half_life.md)
   - [Faker::Games::Heroes](doc/heroes.md)
   - [Faker::Games::HeroesOfTheStorm](doc/heroes_of_the_storm.md)
+  - [Faker::Games::SonicTheHedgehog](doc/sonic_the_hedgehog.md)
   - [Faker::Gender](doc/gender.md)
   - [Faker::GreekPhilosophers](doc/greek_philosophers.md)
   - [Faker::Hacker](doc/hacker.md)
