@@ -35,4 +35,3 @@ class TestIdLocale < Test::Unit::TestCase
     assert Faker::PhoneNumber.phone_number.is_a? String
   end
 end
-

@@ -27,7 +27,7 @@ class TestSVLocale < Test::Unit::TestCase
     assert Faker::Address.secondary_address.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert_equal('Sverige', Faker::Address.default_country)
-  end  
+  end
 
   def test_sv_commerce_methods
     assert Faker::Commerce.color.is_a? String
