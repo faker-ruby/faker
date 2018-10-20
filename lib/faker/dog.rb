@@ -1,40 +1,42 @@
 # frozen_string_literal: true
 
 module Faker
-  class Dog < Base
-    flexible :dog
+  module Creature
+    class Dog < Base
+      flexible :dog
 
-    class << self
-      def name
-        fetch('dog.name')
-      end
+      class << self
+        def name
+          fetch('creature.dog.name')
+        end
 
-      def breed
-        fetch('dog.breed')
-      end
+        def breed
+          fetch('creature.dog.breed')
+        end
 
-      def sound
-        fetch('dog.sound')
-      end
+        def sound
+          fetch('creature.dog.sound')
+        end
 
-      def meme_phrase
-        fetch('dog.meme_phrase')
-      end
+        def meme_phrase
+          fetch('creature.dog.meme_phrase')
+        end
 
-      def age
-        fetch('dog.age')
-      end
+        def age
+          fetch('creature.dog.age')
+        end
 
-      def gender
-        fetch('dog.gender')
-      end
+        def gender
+          fetch('creature.dog.gender')
+        end
 
-      def coat_length
-        fetch('dog.coat_length')
-      end
+        def coat_length
+          fetch('creature.dog.coat_length')
+        end
 
-      def size
-        fetch('dog.size')
+        def size
+          fetch('creature.dog.size')
+        end
       end
     end
   end
