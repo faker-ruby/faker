@@ -11,7 +11,7 @@ class TestFiLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_address_methods
+  def test_fi_address_methods
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.city_prefix.is_a? String
     assert Faker::Address.city_suffix.is_a? String
@@ -22,9 +22,10 @@ class TestFiLocale < Test::Unit::TestCase
     assert Faker::Address.state.is_a? String
     assert_match(/^[\d]{1,3}$/, Faker::Address.building_number)
     assert_match(/^[\d]{5}$/, Faker::Address.postcode)
+    assert_equal('Suomi', Faker::Address.default_country)
   end
 
-  def test_name_methods
+  def test_fi_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String

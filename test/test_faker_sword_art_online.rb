@@ -2,9 +2,9 @@
 
 require_relative 'test_helper'
 
-class TestFakerSwordArtOnline < Test::Unit::TestCase
+class TestFakerJapaneseSwordArtOnline < Test::Unit::TestCase
   def setup
-    @tester = Faker::SwordArtOnline
+    @tester = Faker::JapaneseMedia::SwordArtOnline
   end
 
   def test_real_name

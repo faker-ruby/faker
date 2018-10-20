@@ -13,7 +13,7 @@ class TestFrChLocale < Test::Unit::TestCase
     Faker::Config.locale = @previous_locale
   end
 
-  def test_address_methods
+  def test_fr_ch_address_methods
     assert Faker::Address.building_number.is_a? String
     assert Faker::Address.street_prefix.is_a? String
     assert Faker::Address.secondary_address.is_a? String
@@ -27,32 +27,35 @@ class TestFrChLocale < Test::Unit::TestCase
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.default_country.is_a? String
     assert_match(/^\d+$/, Faker::Address.building_number)
+    assert_equal('Suisse', Faker::Address.default_country)
   end
 
-  def test_book_methods
+  def test_fr_ch_book_methods
     assert Faker::Book.title.is_a? String
     assert Faker::Book.author.is_a? String
     assert Faker::Book.publisher.is_a? String
     assert Faker::Book.quote.is_a? String
   end
 
-  def test_company_methods
+  def test_fr_ch_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.buzzword.is_a? String
     assert Faker::Company.bs.is_a? String
     assert Faker::Company.name.is_a? String
   end
 
-  def test_internet_methods
+  def test_fr_ch_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_lorem_methods
+  def test_fr_ch_lorem_methods
     assert Faker::Lorem.word.is_a? String
+    assert Faker::Lorem.words(1000)
+    assert Faker::Lorem.words(10_000, true)
   end
 
-  def test_name_methods
+  def test_fr_ch_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.title.is_a? String
@@ -60,10 +63,16 @@ class TestFrChLocale < Test::Unit::TestCase
     assert Faker::Name.name_with_middle.is_a? String
   end
 
-  def test_phone_number
+  def test_fr_ch_phone_number
     assert Faker::PhoneNumber.cell_phone.is_a? String
     assert Faker::Games::Pokemon.name.is_a? String
     assert Faker::Games::Pokemon.location.is_a? String
     assert Faker::Games::Pokemon.move.is_a? String
+  end
+
+  def test_fr_ch_pokemon_methods
+    assert Faker::Pokemon.name.is_a? String
+    assert Faker::Pokemon.location.is_a? String
+    assert Faker::Pokemon.move.is_a? String
   end
 end

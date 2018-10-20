@@ -48,6 +48,15 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_username_with_utf_8_arg
+    # RUBY_VERSION < '2.4.0' is not able to downcase or upcase non-ascii strings
+    if RUBY_VERSION < '2.4.0'
+      assert @tester.username('Łucja').match('Łucja')
+    else
+      assert @tester.username('Łucja').match('łucja')
+    end
+  end
+
   def test_username_with_very_large_integer_arg
     exception = assert_raises(ArgumentError) { @tester.username(10_000_000) }
     assert_equal('Given argument is too large', exception.message)

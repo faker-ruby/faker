@@ -44,7 +44,7 @@ Faker::Vehicle.door_count #=> 3
 
 # Random engine size
 Faker::Vehicle.engine_size #=> 6
-Faker::Vehicke.engine #=> 4
+Faker::Vehicle.engine #=> 4
 
 # Random car year
 # Between 1 and 15 years ago
@@ -56,7 +56,10 @@ Faker::Vehicle.mileage(50_000) #=> 81557
 Faker::Vehicle.mileage(50_000, 250_000) #=> 117503
 Faker::Vehicle.kilometrage #=> 35378
 
-# Random vehicle license plate
+# Random vehicle license plate (USA by default)
 Faker::Vehicle.license_plate #=> "DEP-2483"
 Faker::Vehicle.license_plate('FL') #=> "977 UNU"
+
+# Random vehicle license plate for Singapore (if locale is set)
+Faker::Vehicle.singapore_license_plate #=> "SLV1854M"
 ```

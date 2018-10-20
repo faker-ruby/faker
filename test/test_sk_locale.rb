@@ -11,7 +11,7 @@ class TestSKLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_sk_methods
+  def test_sk_address_methods
     assert Faker::Address.city_prefix.is_a? String
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.country.is_a? String
@@ -29,16 +29,19 @@ class TestSKLocale < Test::Unit::TestCase
     assert_equal 'Slovensko', Faker::Address.default_country
   end
 
-  def test_company_methods
+  def test_sk_company_methods
     assert Faker::Company.suffix.is_a? String
+    assert Faker::Company.buzzword.is_a? String
+    assert Faker::Company.bs.is_a? String
+    assert Faker::Company.name.is_a? String
   end
 
-  def test_internet_methods
+  def test_sk_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_name_methods
+  def test_sk_name_methods
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.suffix.is_a? String
     assert Faker::Name.title.is_a? String
@@ -46,6 +49,11 @@ class TestSKLocale < Test::Unit::TestCase
     assert Faker::Name.name_with_middle.is_a? String
     assert Faker::Name.male_first_name.is_a? String
     assert Faker::Name.female_first_name.is_a? String
+    assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
+  end
+
+  def test_sk_phone_number_methods
+    assert Faker::PhoneNumber.phone_number.is_a? String
   end
 end

@@ -21,7 +21,7 @@ module Faker
 
       def username(specifier = nil, separators = %w[. _])
         with_locale(:en) do
-          return shuffle(specifier.scan(/\w+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
+          return shuffle(specifier.scan(/[[:word:]]+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
 
           if specifier.is_a?(Integer)
             # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error
