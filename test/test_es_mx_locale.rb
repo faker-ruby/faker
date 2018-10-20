@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestEsMxLocale < Test::Unit::TestCase
   def setup
@@ -9,24 +11,47 @@ class TestEsMxLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_es_mx_methods
-    assert Faker::Address.city_prefix.is_a? String
+  def test_es_mx_address
     assert Faker::Address.street_prefix.is_a? String
-    assert Faker::Address.secondary_address.is_a? String
     assert Faker::Address.state.is_a? String
     assert Faker::Address.state_abbr.is_a? String
-    assert Faker::Address.city.is_a? String
     assert Faker::Address.building_number.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
+    assert Faker::Address.city_prefix.empty?
+    assert Faker::Address.city_suffix.empty?
+    assert Faker::Address.city.is_a?(String)
+    assert Faker::Address.city(with_state: true).is_a?(String)
+    assert Faker::Address.city(with_state: true).split(', ').count == 2
+    assert Faker::Address.secondary_address.is_a? String
+  end
+
+  def test_es_mx_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.prefix.is_a? String
     assert Faker::Company.name.is_a? String
+  end
+
+  def test_es_mx_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
+  end
+
+  def test_es_mx_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.name.is_a? String
+    assert Faker::Name.name_with_middle.is_a? String
+  end
+
+  def test_es_mx_phone_number
+    assert Faker::PhoneNumber.phone_number.is_a? String
+    assert Faker::PhoneNumber.cell_phone.is_a? String
+  end
+
+  def test_es_mx_university_methods
+    assert Faker::University.suffix.is_a? String
+    assert Faker::University.prefix.is_a? String
   end
 end

@@ -1,7 +1,8 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerLorem < Test::Unit::TestCase
-
   def setup
     @tester = Faker::Lorem
     @standard_wordlist = I18n.translate('faker.lorem.words')
@@ -21,6 +22,12 @@ class TestFakerLorem < Test::Unit::TestCase
     assert @tester.characters.length == 255
   end
 
+  def test_characters_negatives
+    assert_equal '', @tester.characters(-1)
+    assert_equal '', @tester.characters((-2..-1))
+    assert_equal '', @tester.characters([-1, -2])
+  end
+
   def test_characters_with_args
     100.times { assert @tester.characters(500).length == 500 }
   end
@@ -28,13 +35,13 @@ class TestFakerLorem < Test::Unit::TestCase
   # Words delivered by a standard request should be on the standard wordlist.
   def test_standard_words
     @words = @tester.words(1000)
-    @words.each {|w| assert @standard_wordlist.include?(w) }
+    @words.each { |w| assert @standard_wordlist.include?(w) }
   end
 
   # Words requested from the supplemental list should all be in that list.
   def test_supplemental_words
-    @words = @tester.words(10000, true)
-    @words.each {|w| assert @complete_wordlist.include?(w) }
+    @words = @tester.words(10_000, true)
+    @words.each { |w| assert @complete_wordlist.include?(w) }
   end
 
   # Faker::Lorem.word generates random word from standart wordlist
@@ -42,6 +49,10 @@ class TestFakerLorem < Test::Unit::TestCase
     @tester = Faker::Lorem
     @standard_wordlist = I18n.translate('faker.lorem.words')
     100.times { assert @standard_wordlist.include?(@tester.word) }
+  end
+
+  def test_exact_sentence_word_count
+    assert_equal 2, @tester.sentence(2, false, 0).split(' ').length
   end
 
   def test_exact_count_param
@@ -57,17 +68,29 @@ class TestFakerLorem < Test::Unit::TestCase
     ss = @tester.sentences(2..5)
     ps = @tester.paragraphs(2..5)
 
-    assert(2 <= cs.length && cs.length <= 5)
-    assert(2 <= ws.length && ws.length <= 5)
-    assert(2 <= ss.length && ss.length <= 5)
-    assert(2 <= ps.length && ps.length <= 5)
+    assert(cs.length >= 2 && cs.length <= 5)
+    assert(ws.length >= 2 && ws.length <= 5)
+    assert(ss.length >= 2 && ss.length <= 5)
+    assert(ps.length >= 2 && ps.length <= 5)
+  end
+
+  def test_exclusive_range_count_param
+    cs = @tester.characters(2...3)
+    ws = @tester.words(2...3)
+    ss = @tester.sentences(2...3)
+    ps = @tester.paragraphs(2...3)
+
+    assert_equal(2, cs.length)
+    assert_equal(2, ws.length)
+    assert_equal(2, ss.length)
+    assert_equal(2, ps.length)
   end
 
   def test_array_count_param
-    cs = @tester.characters([1,4])
-    ws = @tester.words([1,4])
-    ss = @tester.sentences([1,4])
-    ps = @tester.paragraphs([1,4])
+    cs = @tester.characters([1, 4])
+    ws = @tester.words([1, 4])
+    ss = @tester.sentences([1, 4])
+    ps = @tester.paragraphs([1, 4])
 
     assert(cs.length == 1 || cs.length == 4)
     assert(ws.length == 1 || ws.length == 4)
@@ -81,7 +104,23 @@ class TestFakerLorem < Test::Unit::TestCase
     array = @tester.words([250, 500])
 
     assert(exact.length == 500)
-    assert(250 <= range.length && range.length <= 500)
+    assert(range.length >= 250 && range.length <= 500)
     assert(array.length == 250 || array.length == 500)
+  end
+
+  def test_multibyte
+    assert @tester.multibyte.is_a? String
+    assert %w[😀 ❤ 😡].include?(@tester.multibyte)
+  end
+
+  def test_paragraph_char_count
+    paragraph = @tester.paragraph_by_chars(256)
+    assert(paragraph.length == 256)
+  end
+
+  def test_unique_with_already_set_values
+    values = ('a'..'z').to_a + ('0'..'9').to_a
+    @tester.unique.exclude(:character, [], values)
+    assert_raise(Faker::UniqueGenerator::RetryLimitExceeded) { @tester.unique.character }
   end
 end

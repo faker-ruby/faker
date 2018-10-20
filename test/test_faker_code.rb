@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerCode < Test::Unit::TestCase
   def setup
@@ -7,6 +9,14 @@ class TestFakerCode < Test::Unit::TestCase
 
   def test_npi_regexp
     assert @tester.npi.match(/[0-9]{10}/)
+  end
+
+  def test_deterministic_npi
+    Faker::Config.random = Random.new(42)
+    v = @tester.npi
+    Faker::Config.random = Random.new(42)
+
+    assert v == @tester.npi
   end
 
   def test_default_isbn_regexp
@@ -43,6 +53,12 @@ class TestFakerCode < Test::Unit::TestCase
 
   def test_imei_luhn_value
     assert luhn_checksum_valid(@tester.imei)
+  end
+
+  def test_sin
+    assert @tester.sin.match(/\d{9}/)
+    assert @tester.sin.length == 9
+    assert luhn_checksum_valid(@tester.sin)
   end
 
   def luhn_checksum_valid(numbers)

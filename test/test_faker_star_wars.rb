@@ -1,74 +1,90 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerStarWars < Test::Unit::TestCase
   def setup
-    @characters = Faker::StarWars.characters
-    @droids = Faker::StarWars.droids
-    @planets = Faker::StarWars.planets
-    @quotes = Faker::StarWars.quotes
-    @species = Faker::StarWars.species
-    @vehicles = Faker::StarWars.vehicles
+    @tester = Faker::StarWars
   end
 
-  def test_strings
-    assert @characters.size == 33
-    @characters.each do |character|
-       assert !character.nil?
-       assert character != ""
-    end
-
-  	assert @droids.size == 21
-    @droids.each do |droid|
-       assert !droid.nil?
-       assert droid != ""
-    end
-
-    assert @planets.size == 20
-    @planets.each do |planet|
-      assert !planet.nil?
-      assert planet != ""
-    end
-
-  	assert @quotes.size == 30
-    @quotes.each do |quote|
-       assert !quote.nil?
-       assert quote != ""
-    end
-
-  	assert @species.size == 9
-    @species.each do |specie|
-       assert !specie.nil?
-       assert specie != ""
-    end
-
-    assert @vehicles.size == 21
-    @vehicles.each do |vehicle|
-       assert !vehicle.nil?
-       assert vehicle != ""
-    end
+  def test_call_sign
+    assert @tester.call_sign.match(/\w+/)
   end
 
   def test_character
-    assert Faker::StarWars.character.match(/\w+/)
+    assert @tester.character.match(/\w+/)
   end
 
   def test_droid
-    assert Faker::StarWars.droid.match(/\w+/)
+    assert @tester.droid.match(/\w+/)
   end
 
   def test_planet
-    assert Faker::StarWars.planet.match(/\w+/)
+    assert @tester.planet.match(/\w+/)
   end
 
   def test_quote
-    assert Faker::StarWars.quote.match(/\w+/)
+    assert @tester.quote.match(/\w+/)
+  end
+
+  # test good match
+  def test_random_character_quote
+    assert @tester.quote('admiral_ackbar').match(/\w+/)
+  end
+
+  # test good alternate spelling match
+  def test_random_character_alt_spelling_quote
+    assert @tester.quote('ackbar').match(/\w+/)
+  end
+
+  # test error on no match
+  def test_invalid_quote
+    assert_raise ArgumentError do
+      @tester.quote('Leto Atreides')
+    end
   end
 
   def test_specie
-    assert Faker::StarWars.specie.match(/\w+/)
+    assert @tester.specie.match(/\w+/)
   end
 
   def test_vehicle
-    assert Faker::StarWars.vehicle.match(/\w+/)
+    assert @tester.vehicle.match(/\w+/)
+  end
+
+  def test_wookiee_sentence
+    assert @tester.wookiee_sentence.match(/\w+/)
+  end
+
+  def test_call_numbers
+    assert @tester.call_numbers.is_a?(Array)
+  end
+
+  def test_call_squadrons
+    assert @tester.call_squadrons.is_a?(Array)
+  end
+
+  def test_characters
+    assert @tester.characters.is_a?(Array)
+  end
+
+  def test_droids
+    assert @tester.droids.is_a?(Array)
+  end
+
+  def test_planets
+    assert @tester.planets.is_a?(Array)
+  end
+
+  def test_species
+    assert @tester.species.is_a?(Array)
+  end
+
+  def test_vehicles
+    assert @tester.vehicles.is_a?(Array)
+  end
+
+  def test_wookiee_words
+    assert @tester.wookiee_words.is_a?(Array)
   end
 end
