@@ -142,7 +142,6 @@ Contents
   - [Faker::NationalHealthService](doc/national_health_service.md)
   - [Faker::Number](doc/number.md)
   - [Faker::Omniauth](doc/omniauth.md)
-  - [Faker::OnePiece](doc/one_piece.md)
   - [Faker::ParksAndRec](doc/parks_and_rec.md)
   - [Faker::PhoneNumber](doc/phone_number.md)
   - [Faker::Placeholdit](doc/placeholdit.md)
