@@ -2,9 +2,9 @@
 
 require_relative 'test_helper'
 
-class TestFakerCat < Test::Unit::TestCase
+class TestDeprecateCat < Test::Unit::TestCase
   def setup
-    @tester = Faker::Creature::Cat
+    @tester = Faker::Cat
   end
 
   def test_name

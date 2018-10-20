@@ -1,14 +1,14 @@
-# Faker::Cat
+# Faker::Creature::Cat
 
 Available since version 1.6.2.
 
 ```ruby
 # Random cat name
-Faker::Cat.name #=> "Shadow"
+Faker::Creature::Cat.name #=> "Shadow"
 
 # Random cat breed
-Faker::Cat.breed #=> "British Semipi-longhair"
+Faker::Creature::Cat.breed #=> "British Semipi-longhair"
 
 # Random cat registry
-Faker::Cat.registry #=> "American Cat Fanciers Association"
+Faker::Creature::Cat.registry #=> "American Cat Fanciers Association"
 ```
