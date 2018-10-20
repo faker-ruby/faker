@@ -98,8 +98,6 @@ Contents
   - [Faker::Games::WorldOfWarcraft](doc/world_of_warcraft.md)
   - [Faker::Games::Zelda](doc/zelda.md)
   - [Faker::Gender](doc/gender.md)
-  - [Faker::GratefulDead](doc/grateful_dead.md)
-  - [Faker::Gender](doc/gender.md)
   - [Faker::GreekPhilosophers](doc/greek_philosophers.md)
   - [Faker::Hacker](doc/hacker.md)
   - [Faker::HarryPotter](doc/harry_potter.md)
