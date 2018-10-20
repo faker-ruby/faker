@@ -16,11 +16,11 @@ module Faker
       end
 
       def phone_number_with_country_code
-        country_code + '-' + phone_number
+        "#{country_code} #{phone_number}"
       end
 
       def cell_phone_with_country_code
-        country_code + '-' + cell_phone
+        "#{country_code} #{cell_phone}"
       end
 
       # US and Canada only
