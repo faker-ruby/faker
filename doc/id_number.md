@@ -23,4 +23,7 @@ Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
 
 # Generate a Brazilian citizen number (CPF)
 Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
+
+# Generate a Brazilian company number (CNPJ)
+Faker::IDNumber.brazilian_company_number #=> "18553414000618"
 ```
