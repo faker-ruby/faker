@@ -1,15 +1,15 @@
-# Faker::Buffy
+# Faker::TvShows::Buffy
 
 It might be available in the next version.
 
 ```ruby
-Faker::Buffy.character #=> "Buffy Summers"
+Faker::TvShows::Buffy.character #=> "Buffy Summers"
 
-Faker::Buffy.quote #=> "If the apocalypse comes, beep me."
+Faker::TvShows::Buffy.quote #=> "If the apocalypse comes, beep me."
 
-Faker::Buffy.celebrity #=> "John Ritter"
+Faker::TvShows::Buffy.celebrity #=> "John Ritter"
 
-Faker::Buffy.big_bad #=> "Glory"
+Faker::TvShows::Buffy.big_bad #=> "Glory"
 
-Faker::Buffy.episode #> "Once More, with Feeling"
+Faker::TvShows::Buffy.episode #> "Once More, with Feeling"
 ```
