@@ -82,21 +82,21 @@ class TestFakerIdNumber < Test::Unit::TestCase
   end
 
   def test_brazilian_company_number
-    puts sample = @tester.brazilian_company_number
+    sample = @tester.brazilian_company_number
 
     assert_match(/^\d{14}$/, sample)
 
-    digit_sum = sample[0..11].chars.each_with_index.sum do |digit, i|
+    digit_sum = sample[0..11].chars.each_with_index.inject(0) do |acc, (digit, i)|
       factor = 2 + (3 - i) % 8
-      digit.to_i * factor
+      acc + digit.to_i * factor
     end
     remainder = digit_sum % 11
     first_digit = remainder < 2 ? '0' : (11 - remainder).to_s
     assert_equal sample[12], first_digit
 
-    digit_sum = sample[0..12].chars.each_with_index.sum do |digit, i|
+    digit_sum = sample[0..12].chars.each_with_index.inject(0) do |acc, (digit, i)|
       factor = 2 + (4 - i) % 8
-      digit.to_i * factor
+      acc + digit.to_i * factor
     end
     remainder = digit_sum % 11
     second_digit = remainder < 2 ? '0' : (11 - remainder).to_s

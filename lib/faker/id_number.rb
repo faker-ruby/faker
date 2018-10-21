@@ -88,7 +88,7 @@ module Faker
         factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
 
         2.times do
-          checksum = digits.sum { |digit| digit * factors.next } % 11
+          checksum = digits.inject(0) { |acc, digit| acc + digit * factors.next } % 11
           digits << (checksum < 2 ? 0 : 11 - checksum)
         end
 
