@@ -14,4 +14,8 @@ class TestFakerGamesSonicTheHedgehog < Test::Unit::TestCase
   def test_zone
     assert @tester.zone.match(/\w+/)
   end
+
+  def test_game
+    assert @tester.game.match(/\w+/)
+  end
 end
