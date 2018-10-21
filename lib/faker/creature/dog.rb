@@ -27,7 +27,7 @@ module Faker
         end
 
         def gender
-          fetch('creature.dog.gender')
+          Faker::Gender.binary_type
         end
 
         def coat_length
