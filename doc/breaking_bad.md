@@ -1,9 +1,9 @@
-# Faker::BreakingBad
+# Faker::TvShows::BreakingBad
 
 Available since version 1.8.8.
 
 ```ruby
-Faker::BreakingBad.character #=> "Walter White"
+Faker::TvShows::BreakingBad.character #=> "Walter White"
 
-Faker::BreakingBad.episode #=> "Cancer Man"
+Faker::TvShows::BreakingBad.episode #=> "Cancer Man"
 ```

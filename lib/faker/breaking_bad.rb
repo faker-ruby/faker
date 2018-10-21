@@ -2,12 +2,19 @@
 
 module Faker
   class BreakingBad < Base
-    def self.character
-      fetch('breaking_bad.character')
-    end
+    class << self
+      extend Gem::Deprecate
 
-    def self.episode
-      fetch('breaking_bad.episode')
+      def character
+        Faker::TvShows::BreakingBad.character
+      end
+
+      def episode
+        Faker::TvShows::BreakingBad.episode
+      end
+
+      deprecate :character, 'Faker::TvShows::BreakingBad.character', 2018, 10
+      deprecate :episode, 'Faker::TvShows::BreakingBad.episode', 2018, 10
     end
   end
 end
