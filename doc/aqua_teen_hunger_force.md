@@ -1,5 +1,5 @@
-# Faker::AquaTeenHungerForce
+# Faker::TvShows::AquaTeenHungerForce
 
 ```ruby
-Faker::AquaTeenHungerForce.character #=> "Master Shake"
+Faker::TvShows::AquaTeenHungerForce.character #=> "Master Shake"
 ```
