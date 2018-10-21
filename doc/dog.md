@@ -1,27 +1,27 @@
-# Faker::Dog
+# Faker::Creature::Dog
 
 ```ruby
 # Random dog name
-Faker::Dog.name #=> "Spike"
+Faker::Creature::Dog.name #=> "Spike"
 
 # Random dog breed
-Faker::Dog.breed #=> "Yorkshire Terrier"
+Faker::Creature::Dog.breed #=> "Yorkshire Terrier"
 
 # Random dog sound
-Faker::Dog.sound #=> "woof woof"
+Faker::Creature::Dog.sound #=> "woof woof"
 
 # Random dog meme phrase
-Faker::Dog.meme_phrase #=> "smol pupperino"
+Faker::Creature::Dog.meme_phrase #=> "smol pupperino"
 
 # Random dog age
-Faker::Dog.age #=> "puppy"
+Faker::Creature::Dog.age #=> "puppy"
 
 # Random dog gender
-Faker::Dog.gender #=> "female"
+Faker::Creature::Dog.gender #=> "female"
 
 # Random dog coat length
-Faker::Dog.coat_length #=> "short"
+Faker::Creature::Dog.coat_length #=> "short"
 
 # Random dog size
-Faker::Dog.size #=> "small"
+Faker::Creature::Dog.size #=> "small"
 ```
