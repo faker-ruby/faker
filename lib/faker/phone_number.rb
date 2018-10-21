@@ -12,7 +12,7 @@ module Faker
       end
 
       def country_code
-        fetch('country_code')
+        "+#{fetch('country_code')}"
       end
 
       def phone_number_with_country_code
