@@ -11,6 +11,10 @@ module Faker
         def zone
           fetch('games.sonic_the_hedgehog.zone')
         end
+
+        def game
+          fetch('games.sonic_the_hedgehog.game')
+        end
       end
     end
   end
