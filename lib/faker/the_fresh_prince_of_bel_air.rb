@@ -3,17 +3,23 @@
 module Faker
   class TheFreshPrinceOfBelAir < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('the_fresh_prince_of_bel_air.characters')
+        Faker::TvShows::TheFreshPrinceOfBelAir.character
       end
 
       def celebrity
-        fetch('the_fresh_prince_of_bel_air.celebrities')
+        Faker::TvShows::TheFreshPrinceOfBelAir.celebrity
       end
 
       def quote
-        fetch('the_fresh_prince_of_bel_air.quotes')
+        Faker::TvShows::TheFreshPrinceOfBelAir.quote
       end
+
+      deprecate :character, 'Faker::TvShows::TheFreshPrinceOfBelAir.character', 2018, 10
+      deprecate :celebrity, 'Faker::TvShows::TheFreshPrinceOfBelAir.celebrity', 2018, 10
+      deprecate :quote, 'Faker::TvShows::TheFreshPrinceOfBelAir.quote', 2018, 10
     end
   end
 end
