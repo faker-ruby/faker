@@ -29,6 +29,10 @@ class TestDeprecateDota < Test::Unit::TestCase
     assert @tester.player.match(/\w+/)
   end
 
+  def test_quotes
+    assert @tester.quote.match(/\w+/)
+  end
+
   def test_heroes_quotes
     @heroes.each do |hero|
       assert_match(/\w+/, @tester.quote(hero))
