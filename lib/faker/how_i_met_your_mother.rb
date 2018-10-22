@@ -3,21 +3,28 @@
 module Faker
   class HowIMetYourMother < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('how_i_met_your_mother.character')
+        Faker::TvShows::HowIMetYourMother.character
       end
 
       def catch_phrase
-        fetch('how_i_met_your_mother.catch_phrase')
+        Faker::TvShows::HowIMetYourMother.catch_phrase
       end
 
       def high_five
-        fetch('how_i_met_your_mother.high_five')
+        Faker::TvShows::HowIMetYourMother.high_five
       end
 
       def quote
-        fetch('how_i_met_your_mother.quote')
+        Faker::TvShows::HowIMetYourMother.quote
       end
+
+      deprecate :character, 'Faker::TvShows::HowIMetYourMother.character', 2018, 10
+      deprecate :catch_phrase, 'Faker::TvShows::HowIMetYourMother.catch_phrase', 2018, 10
+      deprecate :high_five, 'Faker::TvShows::HowIMetYourMother.high_five', 2018, 10
+      deprecate :quote, 'Faker::TvShows::HowIMetYourMother.quote', 2018, 10
     end
   end
 end
