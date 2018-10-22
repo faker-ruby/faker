@@ -2,7 +2,7 @@
 
 require_relative 'test_helper'
 
-class TestFakerHeyArnold < Test::Unit::TestCase
+class TestDeprecateHeyArnold < Test::Unit::TestCase
   def setup
     @tester = Faker::HeyArnold
   end
