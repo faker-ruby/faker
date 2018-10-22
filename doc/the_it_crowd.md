@@ -1,11 +1,11 @@
-# Faker::TheITTvShows::rowd
+# Faker::TvShows::TheITCrowd
 
 ```ruby
-Faker::TheITvShows::Crowd.actor #=> "Chris O'Dowd"
+Faker::TvShows::TheITCrowd.actor #=> "Chris O'Dowd"
 
-Faker::ThTvShows::ITCrowd.character #=> "Roy Trenneman"
+Faker::TvShows::TheITCrowd.character #=> "Roy Trenneman"
 
-Faker::ThTvShows::ITCrowd.email #=> "roy.trenneman@reynholm.test"
+Faker::TvShows::TheITCrowd.email #=> "roy.trenneman@reynholm.test"
 
-Faker::ThTvShows::ITCrowd.quote #=> "Hello, IT. Have you tried turning it off and on again?"
+Faker::TvShows::TheITCrowd.quote #=> "Hello, IT. Have you tried turning it off and on again?"
 ```
