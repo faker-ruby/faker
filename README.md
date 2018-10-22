@@ -67,6 +67,7 @@ Contents
   - [Faker::Dessert](doc/dessert.md)
   - [Faker::Device](doc/device.md)
   - [Faker::Dota](doc/dota.md)
+  - [Faker::DrivingLicence](doc/driving_licence.md)
   - [Faker::DrWho](doc/dr_who.md)
   - [Faker::DumbAndDumber](doc/dumb_and_dumber.md)
   - [Faker::Dune](doc/dune.md)
