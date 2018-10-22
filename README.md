@@ -139,7 +139,6 @@ Contents
   - [Faker::Source](doc/source.md)
   - [Faker::SouthAfrica](doc/south_africa.md)
   - [Faker::Space](doc/space.md)
-  - [Faker::StarTrek](doc/star_trek.md)
   - [Faker::StarWars](doc/star_wars.md)
   - [Faker::StrangerThings](doc/stranger_things.md)
   - [Faker::String](doc/string.md)

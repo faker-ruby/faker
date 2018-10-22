@@ -1,14 +1,14 @@
-# Faker::StarTrek
+# Faker::TvShows::StarTrek
 
 Available since version 1.8.0.
 
 ```ruby
-Faker::StarTrek.character #=> "Spock"
+Faker::TvShows::StarTrek.character #=> "Spock"
 
-Faker::StarTrek.location #=> "Cardassia"
+Faker::TvShows::StarTrek.location #=> "Cardassia"
 
-Faker::StarTrek.specie #=> "Ferengi"
+Faker::TvShows::StarTrek.specie #=> "Ferengi"
 
-Faker::StarTrek.villain #=> "Khan Noonien Singh"
+Faker::TvShows::StarTrek.villain #=> "Khan Noonien Singh"
 
 ```
