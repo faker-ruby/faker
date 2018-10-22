@@ -2,7 +2,7 @@
 
 require_relative '../../test_helper'
 
-class Test_Faker_TvShows_Seinfeld < Test::Unit::TestCase
+class TestFakerTvShowsSeinfeld < Test::Unit::TestCase
   def setup
     @tester = Faker::TvShows::Seinfeld
   end

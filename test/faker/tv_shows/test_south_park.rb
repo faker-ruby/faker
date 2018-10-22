@@ -2,7 +2,7 @@
 
 require_relative '../../test_helper'
 
-class Test_Faker_TvShows_SouthPark < Test::Unit::TestCase
+class TestFakerTvShowsSouthPark < Test::Unit::TestCase
   def setup
     @tester = Faker::TvShows::SouthPark
   end
