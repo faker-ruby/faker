@@ -3,25 +3,33 @@
 module Faker
   class GameOfThrones < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('game_of_thrones.characters')
+        Faker::TvShows::GameOfThrones.character
       end
 
       def house
-        fetch('game_of_thrones.houses')
+        Faker::TvShows::GameOfThrones.house
       end
 
       def city
-        fetch('game_of_thrones.cities')
+        Faker::TvShows::GameOfThrones.city
       end
 
       def quote
-        fetch('game_of_thrones.quotes')
+        Faker::TvShows::GameOfThrones.quote
       end
 
       def dragon
-        fetch('game_of_thrones.dragons')
+        Faker::TvShows::GameOfThrones.dragon
       end
+
+      deprecate :character, 'Faker::TvShows::GameOfThrones.character', 2018, 10
+      deprecate :house, 'Faker::TvShows::GameOfThrones.house', 2018, 10
+      deprecate :city, 'Faker::TvShows::GameOfThrones.city', 2018, 10
+      deprecate :quote, 'Faker::TvShows::GameOfThrones.quote', 2018, 10
+      deprecate :dragon, 'Faker::TvShows::GameOfThrones.dragon', 2018, 10
     end
   end
 end
