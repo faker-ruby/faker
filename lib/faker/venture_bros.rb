@@ -3,21 +3,28 @@
 module Faker
   class VentureBros < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('venture_bros.character')
+        Faker::TvShows::VentureBros.character
       end
 
       def organization
-        fetch('venture_bros.organization')
+        Faker::TvShows::VentureBros.organization
       end
 
       def vehicle
-        fetch('venture_bros.vehicle')
+        Faker::TvShows::VentureBros.vehicle
       end
 
       def quote
-        fetch('venture_bros.quote')
+        Faker::TvShows::VentureBros.quote
       end
+
+      deprecate :character, 'Faker::TvShows::VentureBros.character', 2018, 10
+      deprecate :organization, 'Faker::TvShows::VentureBros.organization', 2018, 10
+      deprecate :vehicle, 'Faker::TvShows::VentureBros.vehicle', 2018, 10
+      deprecate :quote, 'Faker::TvShows::VentureBros.quote', 2018, 10
     end
   end
 end
