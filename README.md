@@ -171,6 +171,7 @@ Contents
   - [Faker::TvShows::DumbAndDumber](doc/dumb_and_dumber.md)
   - [Faker::TvShows::FamilyGuy](doc/family_guy.md)
   - [Faker::TwinPeaks](doc/twin_peaks.md)
+  - [Faker::TvShows::TwinPeaks](doc/twin_peaks.md)
   - [Faker::TvShows::VentureBros](doc/venture_bros.md)
   - [Faker::Twitter](doc/twitter.md)
   - [Faker::Types](doc/types.md)

@@ -3,17 +3,23 @@
 module Faker
   class TwinPeaks < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('twin_peaks.characters')
+        Faker::TvShows::TwinPeaks.character
       end
 
       def location
-        fetch('twin_peaks.locations')
+        Faker::TvShows::TwinPeaks.location
       end
 
       def quote
-        fetch('twin_peaks.quotes')
+        Faker::TvShows::TwinPeaks.quote
       end
+
+      deprecate :character, 'Faker::TvShows::TwinPeaks.character', 2018, 10
+      deprecate :location, 'Faker::TvShows::TwinPeaks.location', 2018, 10
+      deprecate :quote, 'Faker::TvShows::TwinPeaks.quote', 2018, 10
     end
   end
 end
