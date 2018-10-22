@@ -165,6 +165,7 @@ Contents
   - [Faker::TvShows::SiliconValley](doc/silicon_valley.md)
   - [Faker::TvShows::Simpsons](doc/simpsons.md)
   - [Faker::TvShows::SouthPark](doc/south_park.md)
+  - [Faker::TvShows::Stargate](doc/stargate.md)
   - [Faker::TvShows::StrangerThings](doc/stranger_things.md)
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/the_it_crowd.md)
