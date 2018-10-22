@@ -1,9 +1,9 @@
-# Faker::TheThickOfIt
+# Faker::TvShows::TheThickOfIt
 
 ```ruby
-Faker::TheThickOfIt.character #=> "Nicola Murray"
+Faker::TvShows::TheThickOfIt.character #=> "Nicola Murray"
 
-Faker::TheThickOfIt.department #=> "Shadow Cabinet"
+Faker::TvShows::TheThickOfIt.department #=> "Shadow Cabinet"
 
-Faker::TheThickOfIt.position #=> "Director of Communications"
+Faker::TvShows::TheThickOfIt.position #=> "Director of Communications"
 ```

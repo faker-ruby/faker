@@ -3,17 +3,23 @@
 module Faker
   class TheThickOfIt < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('the_thick_of_it.characters')
+        Faker::TvShows::TheThickOfIt.character
       end
 
       def department
-        fetch('the_thick_of_it.departments')
+        Faker::TvShows::TheThickOfIt.department
       end
 
       def position
-        fetch('the_thick_of_it.positions')
+        Faker::TvShows::TheThickOfIt.position
       end
+
+      deprecate :character, 'Faker::TvShows::TheThickOfIt.character', 2018, 10
+      deprecate :department, 'Faker::TvShows::TheThickOfIt.department', 2018, 10
+      deprecate :position, 'Faker::TvShows::TheThickOfIt.position', 2018, 10
     end
   end
 end
