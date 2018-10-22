@@ -3,17 +3,23 @@
 module Faker
   class DumbAndDumber < Base
     class << self
+      extend Gem::Deprecate
+
       def actor
-        fetch('dumb_and_dumber.actors')
+        Faker::TvShows::DumbAndDumber.actor
       end
 
       def character
-        fetch('dumb_and_dumber.characters')
+        Faker::TvShows::DumbAndDumber.character
       end
 
       def quote
-        fetch('dumb_and_dumber.quotes')
+        Faker::TvShows::DumbAndDumber.quote
       end
+
+      deprecate :actor, 'Faker::TvShows::DumbAndDumber.actor', 2018, 10
+      deprecate :character, 'Faker::TvShows::DumbAndDumber.character', 2018, 10
+      deprecate :quote, 'Faker::TvShows::DumbAndDumber.quote', 2018, 10
     end
   end
 end

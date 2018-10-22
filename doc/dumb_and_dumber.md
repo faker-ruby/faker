@@ -1,11 +1,11 @@
-# Faker::DumbAndDumber
+# Faker::TvShows::DumbAndDumber
 
 ```ruby
 
-Faker::DumbAndDumber.actor #=> "Jim Carrey"
+Faker::TvShows::DumbAndDumber.actor #=> "Jim Carrey"
 
-Faker::DumbAndDumber.character #=> "Harry Dunne"
+Faker::TvShows::DumbAndDumber.character #=> "Harry Dunne"
 
-Faker::DumbAndDumber.quote #=> "Why you going to the airport? Flying somewhere?"
+Faker::TvShows::DumbAndDumber.quote #=> "Why you going to the airport? Flying somewhere?"
 
 ```
