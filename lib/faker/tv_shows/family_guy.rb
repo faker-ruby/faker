@@ -3,6 +3,8 @@
 module Faker
   module TvShows
     class FamilyGuy < Base
+      flexible :family_guy
+
       class << self
         def character
           fetch('family_guy.character')
