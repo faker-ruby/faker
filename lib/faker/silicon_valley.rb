@@ -3,37 +3,48 @@
 module Faker
   class SiliconValley < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('silicon_valley.characters')
+        Faker::TvShows::SiliconValley.character
       end
 
       def company
-        fetch('silicon_valley.companies')
+        Faker::TvShows::SiliconValley.company
       end
 
       def quote
-        fetch('silicon_valley.quotes')
+        Faker::TvShows::SiliconValley.quote
       end
 
       def app
-        fetch('silicon_valley.apps')
+        Faker::TvShows::SiliconValley.app
       end
 
       def invention
-        fetch('silicon_valley.inventions')
+        Faker::TvShows::SiliconValley.invention
       end
 
       def motto
-        fetch('silicon_valley.mottos')
+        Faker::TvShows::SiliconValley.motto
       end
 
       def url
-        fetch('silicon_valley.urls')
+        Faker::TvShows::SiliconValley.url
       end
 
       def email
-        fetch('silicon_valley.email')
+        Faker::TvShows::SiliconValley.email
       end
+
+      deprecate :character, 'Faker::TvShows::SiliconValley.character', 2018, 10
+      deprecate :company, 'Faker::TvShows::SiliconValley.company', 2018, 10
+      deprecate :quote, 'Faker::TvShows::SiliconValley.quote', 2018, 10
+      deprecate :app, 'Faker::TvShows::SiliconValley.app', 2018, 10
+      deprecate :invention, 'Faker::TvShows::SiliconValley.invention', 2018, 10
+      deprecate :motto, 'Faker::TvShows::SiliconValley.motto', 2018, 10
+      deprecate :url, 'Faker::TvShows::SiliconValley.url', 2018, 10
+      deprecate :email, 'Faker::TvShows::SiliconValley.email', 2018, 10
     end
   end
 end
