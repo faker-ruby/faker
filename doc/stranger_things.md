@@ -1,9 +1,9 @@
-# Faker::StrangerThings
+# Faker::TvShows::StrangerThings
 
 Available since version 1.9.0.
 
 ```ruby
-Faker::StrangerThings.character #=> "six"
+Faker::TvShows::StrangerThings.character #=> "six"
 
-Faker::StrangerThings.quote #=> "Friends don't lie"
+Faker::TvShows::StrangerThings.quote #=> "Friends don't lie"
 ```
