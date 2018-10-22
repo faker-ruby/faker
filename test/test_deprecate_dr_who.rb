@@ -2,7 +2,7 @@
 
 require_relative 'test_helper'
 
-class TestFakerDrWho < Test::Unit::TestCase
+class TestDeprecateDrWho < Test::Unit::TestCase
   def setup
     Faker::Config.locale = nil
   end
