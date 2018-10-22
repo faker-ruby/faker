@@ -1,7 +1,7 @@
-# Faker::ParksAndRec
+# Faker::TvShows::ParksAndRec
 
 ```ruby
-Faker::ParksAndRec.character #=> "Leslie Knope"
+Faker::TvShows::ParksAndRec.character #=> "Leslie Knope"
 
-Faker::ParksAndRec.city #=> "Pawnee"
+Faker::TvShows::ParksAndRec.city #=> "Pawnee"
 ```
