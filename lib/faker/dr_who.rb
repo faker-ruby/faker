@@ -6,31 +6,31 @@ module Faker
       extend Gem::Deprecate
 
       def character
-        fetch('dr_who.character')
+        Faker::TvShows::DrWho.character
       end
 
       def the_doctor
-        fetch('dr_who.the_doctors')
+        Faker::TvShows::DrWho.the_doctor
       end
 
       def actor
-        fetch('dr_who.actors')
+        Faker::TvShows::DrWho.actor
       end
 
       def catch_phrase
-        fetch('dr_who.catch_phrases')
+        Faker::TvShows::DrWho.catch_phrase
       end
 
       def quote
-        fetch('dr_who.quotes')
+        Faker::TvShows::DrWho.quote
       end
 
       def villian
-        fetch('dr_who.villians')
+        Faker::TvShows::DrWho.villian
       end
 
       def specie
-        fetch('dr_who.species')
+        Faker::TvShows::DrWho.specie
       end
 
       deprecate :character, 'Faker::TvShows::DrWho.character', 2018, 10
