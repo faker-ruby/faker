@@ -5,12 +5,14 @@ module Faker
     class BreakingBad < Base
       flexible :breaking_bad
 
-      def self.character
-        fetch('breaking_bad.character')
-      end
+      class << self
+        def character
+          fetch('breaking_bad.character')
+        end
 
-      def self.episode
-        fetch('breaking_bad.episode')
+        def episode
+          fetch('breaking_bad.episode')
+        end
       end
     end
   end
