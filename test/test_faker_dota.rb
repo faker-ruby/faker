@@ -31,7 +31,7 @@ class TestFakerDota < Test::Unit::TestCase
 
   def test_heroes_quotes
     @heroes.each do |hero|
-      assert_match(/\w+/, @tester.quote(hero))
+      assert_match(/\w+/, @tester.quote(hero: hero))
     end
   end
 end

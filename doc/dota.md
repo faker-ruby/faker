@@ -17,5 +17,5 @@ Faker::Games::Dota.player #=> "Dendi"
 
 # Random quote
 Faker::Games::Dota.quote #=> "Easy now, this stuff is explosive!"
-Faker::Games::Dota.quote(hero = 'alchemist') #=> "Better living through alchemy!"
+Faker::Games::Dota.quote(hero: 'alchemist') #=> "Better living through alchemy!"
 ```

@@ -22,7 +22,7 @@ module Faker
       end
 
       def quote(hero = 'abaddon')
-        Faker::Games::Dota.quote(hero)
+        Faker::Games::Dota.quote(hero: hero)
       end
 
       deprecate :hero, 'Faker::Games::Dota.hero', 2018, 10
