@@ -3,17 +3,23 @@
 module Faker
   class FamilyGuy < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('family_guy.character')
+        Faker::TvShows::FamilyGuy.character
       end
 
       def location
-        fetch('family_guy.location')
+        Faker::TvShows::FamilyGuy.location
       end
 
       def quote
-        fetch('family_guy.quote')
+        Faker::TvShows::FamilyGuy.quote
       end
+
+      deprecate :character, 'Faker::TvShows::FamilyGuy.character', 2018, 10
+      deprecate :location, 'Faker::TvShows::FamilyGuy.location', 2018, 10
+      deprecate :quote, 'Faker::TvShows::FamilyGuy.quote', 2018, 10
     end
   end
 end
