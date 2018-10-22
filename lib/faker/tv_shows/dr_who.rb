@@ -3,6 +3,8 @@
 module Faker
   module TvShows
     class DrWho < Base
+      flexible :dr_who
+
       class << self
         def character
           fetch('dr_who.character')

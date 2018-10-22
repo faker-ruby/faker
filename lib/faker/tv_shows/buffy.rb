@@ -3,6 +3,8 @@
 module Faker
   module TvShows
     class Buffy < Base
+      flexible :buffy
+
       class << self
         def character
           fetch('buffy.characters')

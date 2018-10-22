@@ -3,6 +3,8 @@
 module Faker
   module TvShows
     class Community < Base
+      flexible :community
+
       class << self
         def characters
           fetch('community.characters')
