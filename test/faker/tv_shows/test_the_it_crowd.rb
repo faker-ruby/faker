@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'test_helper'
+require_relative '../../test_helper'
 
-class TestFakerTheITCrowd < Test::Unit::TestCase
+class Test_Faker_TvShows_TheItCrowd < Test::Unit::TestCase
   def setup
-    @tester = Faker::TheITCrowd
+    @tester = Faker::TvShows::TheITCrowd
   end
 
   def test_actors

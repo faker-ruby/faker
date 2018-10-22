@@ -3,21 +3,28 @@
 module Faker
   class TheITCrowd < Base
     class << self
+      extend Gem::Deprecate
+
       def actor
-        fetch('the_it_crowd.actors')
+        Faker::TvShows::TheITCrowd.actor
       end
 
       def character
-        fetch('the_it_crowd.characters')
+        Faker::TvShows::TheITCrowd.character
       end
 
       def email
-        fetch('the_it_crowd.emails')
+        Faker::TvShows::TheITCrowd.email
       end
 
       def quote
-        fetch('the_it_crowd.quotes')
+        Faker::TvShows::TheITCrowd.quote
       end
+
+      deprecate :actor, 'Faker::TvShows::TheITCrowd.actor', 2018, 10
+      deprecate :character, 'Faker::TvShows::TheITCrowd.character', 2018, 10
+      deprecate :email, 'Faker::TvShows::TheITCrowd.email', 2018, 10
+      deprecate :quote, 'Faker::TvShows::TheITCrowd.quote', 2018, 10
     end
   end
 end
