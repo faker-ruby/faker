@@ -1,11 +1,11 @@
-# Faker::Friends
+# Faker::TvShows::Friends
 
 Available since version 1.7.3.
 
 ```ruby
-Faker::Friends.character #=> "Rachel Green"
+Faker::TvShows::Friends.character #=> "Rachel Green"
 
-Faker::Friends.location #=> "Central Perk"
+Faker::TvShows::Friends.location #=> "Central Perk"
 
-Faker::Friends.quote #=> "We were on a break!"
+Faker::TvShows::Friends.quote #=> "We were on a break!"
 ```
