@@ -9,11 +9,11 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_image
-    assert @tester.image == 'http://loremflickr.com/300/300'
+    assert_match(/http:\/\/loremflickr\.com\/300\/300\/\?random=\d{1,3}/, @tester.image)
   end
 
   def test_image_with_size
-    assert @tester.image('50x60') == 'http://loremflickr.com/50/60'
+    assert_match(/http:\/\/loremflickr\.com\/50\/60\/\?random=\d{1,3}/, @tester.image('50x60'))
   end
 
   def test_image_with_incorrect_size
@@ -23,19 +23,23 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_image_with_single_search_term
-    assert @tester.image('50x60', %w[faker]) == 'http://loremflickr.com/50/60/faker'
+    assert_match(/http:\/\/loremflickr\.com\/50\/60\/faker\/\?random=\d{1,3}/, @tester.image('50x60', %w[faker]))
   end
 
   def test_image_with_multiple_search_terms
-    assert @tester.image('50x60', %w[dog cat]) == 'http://loremflickr.com/50/60/dog,cat'
+    assert_match(/http:\/\/loremflickr\.com\/50\/60\/dog,cat\/\?random=\d{1,3}/, @tester.image('50x60', %w[dog cat]))
   end
 
   def test_image_with_search_terms_and_match_all
-    assert @tester.image('50x60', %w[dog cat], true) == 'http://loremflickr.com/50/60/dog,cat/all'
+    assert_match(/http:\/\/loremflickr\.com\/50\/60\/dog,cat\/all\/\?random=\d{1,3}/, @tester.image('50x60', %w[dog cat], true))
+  end
+
+  def test_image_with_search_terms_and_match_all_and_no_random
+    assert @tester.image('50x60', %w[dog cat], true, false) == 'http://loremflickr.com/50/60/dog,cat/all'
   end
 
   def test_grayscale_image
-    @tester.grayscale_image == 'http://loremflickr.com/g/300/300/all'
+    @tester.grayscale_image == "http://loremflickr.com/g/300/300/all/?random=#{/\d{1,3}/}"
   end
 
   def test_grayscale_image_with_incorrect_size
@@ -45,23 +49,27 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_grayscale_image_without_search_terms
-    @tester.grayscale_image('50x60') == 'http://loremflickr.com/g/50/60/all'
+    assert_match(/http:\/\/loremflickr\.com\/g\/50\/60\/all\/\?random=\d{1,3}/, @tester.grayscale_image('50x60'))
   end
 
   def test_grayscale_image_with_single_search_term
-    assert @tester.grayscale_image('50x60', %w[faker]) == 'http://loremflickr.com/g/50/60/faker'
+    assert_match(/http:\/\/loremflickr\.com\/g\/50\/60\/faker\/\?random=\d{1,3}/, @tester.grayscale_image('50x60', %w[faker]))
   end
 
   def test_grayscale_image_with_multiple_search_terms
-    assert @tester.grayscale_image('50x60', %w[dog cat]) == 'http://loremflickr.com/g/50/60/dog,cat'
+    assert_match(/http:\/\/loremflickr\.com\/g\/50\/60\/dog,cat\/\?random=\d{1,3}/, @tester.grayscale_image('50x60', %w[dog cat]))
   end
 
   def test_grayscale_image_with_search_terms_and_match_all
-    assert @tester.grayscale_image('50x60', %w[dog cat], true) == 'http://loremflickr.com/g/50/60/dog,cat/all'
+    assert_match(/http:\/\/loremflickr\.com\/g\/50\/60\/dog,cat\/all\/\?random=\d{1,3}/, @tester.grayscale_image('50x60', %w[dog cat], true))
+  end
+
+  def test_grayscale_image_with_search_terms_and_match_all_and_no_random
+    assert @tester.grayscale_image('50x60', %w[dog cat], true, false) == 'http://loremflickr.com/g/50/60/dog,cat/all'
   end
 
   def test_pixelated_image
-    @tester.pixelated_image == 'http://loremflickr.com/p/300/300/all'
+    assert_match(/http:\/\/loremflickr\.com\/p\/300\/300\/all\/\?random=\d{1,3}/, @tester.pixelated_image)
   end
 
   def test_pixelated_image_with_incorrect_size
@@ -71,23 +79,23 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_pixelated_image_without_search_terms
-    @tester.pixelated_image('50x60') == 'http://loremflickr.com/p/50/60/all'
+    assert_match(/http:\/\/loremflickr\.com\/p\/50\/60\/all\/\?random=\d{1,3}/, @tester.pixelated_image('50x60'))
   end
 
   def test_pixelated_image_with_single_search_term
-    assert @tester.pixelated_image('50x60', %w[faker]) == 'http://loremflickr.com/p/50/60/faker'
+    assert_match(/http:\/\/loremflickr\.com\/p\/50\/60\/faker\/\?random=\d{1,3}/, @tester.pixelated_image('50x60', %w[faker]))
   end
 
   def test_pixelated_image_with_multiple_search_terms
-    assert @tester.pixelated_image('50x60', %w[dog cat]) == 'http://loremflickr.com/p/50/60/dog,cat'
+    assert_match(/http:\/\/loremflickr\.com\/p\/50\/60\/dog,cat\/\?random=\d{1,3}/, @tester.pixelated_image('50x60', %w[dog cat]))
   end
 
   def test_pixelated_image_with_search_terms_and_match_all
-    assert @tester.pixelated_image('50x60', %w[dog cat], true) == 'http://loremflickr.com/p/50/60/dog,cat/all'
+    assert_match(/http:\/\/loremflickr\.com\/p\/50\/60\/dog,cat\/all\/\?random=\d{1,3}/, @tester.pixelated_image('50x60', %w[dog cat], true))
   end
 
   def test_colorized_image
-    @tester.colorized_image == 'http://loremflickr.com/red/300/300/all'
+    assert_match(/http:\/\/loremflickr\.com\/red\/300\/300\/all\/\?random=\d{1,3}/, @tester.colorized_image)
   end
 
   def test_colorized_image_with_incorrect_size
@@ -97,7 +105,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_colorized_image_without_search_terms
-    @tester.colorized_image('50x60', 'red') == 'http://loremflickr.com/red/50/60/all'
+    assert_match(/http:\/\/loremflickr\.com\/red\/50\/60\/all\/\?random=\d{1,3}/, @tester.colorized_image('50x60', 'red'))
   end
 
   def test_colorized_image_with_unsupported_colorization
@@ -108,19 +116,25 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
 
   def test_colorized_image_with_single_search_term
     @colorizations.each do |colorization|
-      assert @tester.colorized_image('50x60', colorization, %w[faker]) == "http://loremflickr.com/#{colorization}/50/60/faker"
+      assert_match(/http:\/\/loremflickr\.com\/#{colorization}\/50\/60\/faker\/\?random=\d{1,3}/, @tester.colorized_image('50x60', colorization, %w[faker]))
     end
   end
 
   def test_colorized_image_with_multiple_search_terms
     @colorizations.each do |colorization|
-      assert @tester.colorized_image('50x60', colorization, %w[dog cat]) == "http://loremflickr.com/#{colorization}/50/60/dog,cat"
+      assert_match(/http:\/\/loremflickr\.com\/#{colorization}\/50\/60\/dog,cat\/\?random=\d{1,3}/, @tester.colorized_image('50x60', colorization, %w[dog cat]))
     end
   end
 
   def test_colorized_image_with_search_terms_and_match_all
     @colorizations.each do |colorization|
-      assert @tester.colorized_image('50x60', colorization, %w[dog cat], true) == "http://loremflickr.com/#{colorization}/50/60/dog,cat/all"
+      assert_match(/http:\/\/loremflickr\.com\/#{colorization}\/50\/60\/dog,cat\/all\/\?random=\d{1,3}/, @tester.colorized_image('50x60', colorization, %w[dog cat], true))
+    end
+  end
+
+  def test_colorized_image_with_search_terms_and_match_all_and_no_random
+    @colorizations.each do |colorization|
+      assert @tester.colorized_image('50x60', colorization, %w[dog cat], true, false) == "http://loremflickr.com/#{colorization}/50/60/dog,cat/all"
     end
   end
 end
