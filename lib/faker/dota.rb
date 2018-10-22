@@ -1,27 +1,35 @@
 # frozen_string_literal: true
 
 module Faker
-  class Dota < Base
+  module Dota
     class << self
+      extend Gem::Deprecate
+
       def hero
-        fetch('dota.hero')
+        Faker::Games::Dota.hero
       end
 
       def item
-        fetch('dota.item')
+        Faker::Games::Dota.item
       end
 
       def team
-        fetch('dota.team')
+        Faker::Games::Dota.team
       end
 
       def player
-        fetch('dota.player')
+        Faker::Games::Dota.player
       end
 
       def quote(hero = 'abaddon')
-        fetch("dota.#{hero}.quote")
+        Faker::Games::Dota.quote(hero)
       end
+
+      deprecate :hero, 'Faker::Games::Dota.hero', 2018, 10
+      deprecate :item, 'Faker::Games::Dota.item', 2018, 10
+      deprecate :team, 'Faker::Games::Dota.team', 2018, 10
+      deprecate :player, 'Faker::Games::Dota.player', 2018, 10
+      deprecate :quote, 'Faker::Games::Dota.quote', 2018, 10
     end
   end
 end

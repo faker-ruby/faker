@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestFakerDota < Test::Unit::TestCase
   def setup
-    @tester = Faker::Dota
+    @tester = Faker::Games::Dota
     @heroes = %w[abaddon alchemist axe beastmaster brewmaster bristleback centaur
                  chaos_knight clockwerk doom dragon_knight earth_spirit earthshaker
                  elder_titan huskar io kunkka legion_commander lifestealer lycan

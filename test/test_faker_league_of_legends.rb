@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestFakerLeagueOfLegends < Test::Unit::TestCase
   def setup
-    @tester = Faker::LeagueOfLegends
+    @tester = Faker::Games::LeagueOfLegends
   end
 
   def test_champions
