@@ -1,7 +1,7 @@
 # Faker::LoremFlickr
 
 Available since version 1.9.0.
-Since version 1.9.1 all methods have extra parameter ```randomize``` with default value true. It adds ```"?random=#{random_number}" ``` at the end of every URL preventing from displaying only one image all over the page.  
+Since version 1.9.2 all methods have extra parameter ```randomize``` with default value true. It adds ```"?random=#{random_number}" ``` at the end of every URL preventing from displaying only one image all over the page.  
 
 ```ruby
 Faker::LoremFlickr.image #=> "http://loremflickr.com/300/300/?random=#{random_number}"
