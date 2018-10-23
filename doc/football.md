@@ -10,5 +10,7 @@ Faker::Football.player #=> "Lionel Messi"
 Faker::Football.coach #=> "Jose Mourinho"
 
 Faker::Football.competition #=> "FIFA World Cup"
+
+Faker::Football.position #=> "Defensive Midfielder"
 ```
 
