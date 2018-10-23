@@ -20,7 +20,7 @@ module Faker
           fetch('games.dota.player')
         end
 
-        def quote(hero = 'abaddon')
+        def quote(hero: 'abaddon')
           fetch("games.dota.#{hero}.quote")
         end
       end

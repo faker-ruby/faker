@@ -16,6 +16,7 @@ Faker::Games::Dota.team #=> "Evil Geniuses"
 Faker::Games::Dota.player #=> "Dendi"
 
 # Random quote
+# by default if you don't pass the hero parameter, the quote method will set hero as 'abbadon'
 Faker::Games::Dota.quote #=> "Easy now, this stuff is explosive!"
-Faker::Games::Dota.quote(hero = 'alchemist') #=> "Better living through alchemy!"
+Faker::Games::Dota.quote(hero: 'alchemist') #=> "Better living through alchemy!"
 ```
