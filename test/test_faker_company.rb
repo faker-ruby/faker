@@ -145,15 +145,15 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_russian_tax_number_default
-    assert @tester.russian_tax_number.match?(/\d{10}/)
+    assert @tester.russian_tax_number.match(/\d{10}/)
   end
 
   def test_russian_tax_number_individual
-    assert @tester.russian_tax_number(type: :individual).match?(/\d{12}/)
+    assert @tester.russian_tax_number(type: :individual).match(/\d{12}/)
   end
 
   def test_russian_tax_number_region
-    assert @tester.russian_tax_number(region: '77').match?(/^77/)
+    assert @tester.russian_tax_number(region: '77').match(/^77/)
   end
 
   def test_russian_tax_number_checksum
