@@ -56,4 +56,9 @@ Faker::Company.south_african_pty_ltd_registration_number #=> "5301/714689/07"
 Faker::Company.south_african_close_corporation_registration_number #=> "CK74/7585/23"
 Faker::Company.south_african_listed_company_registration_number #=> "7039/3135/06"
 Faker::Company.south_african_trust_registration_number #=> "IT38/6489900"
+
+# Get a random Russian tax number:
+Faker::Company.russian_tax_number #=> "0965855857"
+Faker::Company.russian_tax_number(region: '77') #=> "7717152803"
+Faker::Company.russian_tax_number(type: :individual) #=> "488935903348"
 ```
