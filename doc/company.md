@@ -61,4 +61,5 @@ Faker::Company.south_african_trust_registration_number #=> "IT38/6489900"
 Faker::Company.russian_tax_number #=> "0965855857"
 Faker::Company.russian_tax_number(region: '77') #=> "7717152803"
 Faker::Company.russian_tax_number(type: :individual) #=> "488935903348"
+Faker::Company.russian_tax_number(region: '77', type: :individual) #=> "779124694601"
 ```
