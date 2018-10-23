@@ -275,4 +275,12 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.user_agent(nil).match(/Mozilla|Opera/)
     assert @tester.user_agent(1).match(/Mozilla|Opera/)
   end
+
+  def test_subscription_term
+    assert @tester.subscription_term.match(/\w+/)
+  end
+
+  def test_payment_term
+    assert @tester.payment_term.match(/\w+/)
+  end
 end

@@ -18,4 +18,6 @@ en:
           - Opera/9.80 (X11; Linux i686; Ubuntu/14.10) Presto/2.12.388 Version/12.16
         safari:
           - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A
+      subscription_term: [Monthly, Annual, Biennial, Triennial, Quinquennial, Lifetime]
+      payment_term: [Payment in advance, Monthly, Annual, Full Subscription]
 
