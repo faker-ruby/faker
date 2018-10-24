@@ -2,7 +2,7 @@
 
 require_relative 'test_helper'
 
-class TestFakerInternet < Test::Unit::TestCase
+class TestFakerSubscription < Test::Unit::TestCase
   def setup
     @tester = Faker::Subscription
   end
@@ -15,7 +15,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.status.match(/\w+/)
   end
 
-   def test_payment_method
+  def test_payment_method
     assert @tester.payment_method.match(/\w+/)
   end
 
