@@ -52,8 +52,6 @@ es:
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, es, info, com.es, org]
-      subscription_term: [Mensual, Anual, Bienal, Trienal, Quinquenal, De por vida]
-      payment_term: [Pago por adelantado, Mensual, Anual, Suscripción completa]
 
     name:
       male_first_name: [Adán, Agustín, Alberto, Alejandro, Alfonso, Alfredo, Andrés, Antonio, Armando, Arturo, Benito, Benjamín, Bernardo, Carlos, César, Claudio, Clemente, Cristian, Cristobal, Daniel, David, Diego, Eduardo, Emilio, Enrique, Ernesto, Esteban, Federico, Felipe, Fernando, Francisco, Gabriel, Gerardo, Germán, Gilberto, Gonzalo, Gregorio, Guillermo, Gustavo, Hernán, Homero, Horacio, Hugo, Ignacio, Jacobo, Jaime, Javier, Jerónimo, Jesús, Joaquín, Jorge, Jorge Luis, José, José Eduardo, José Emilio, José Luis, José María, Juan, Juan Carlos, Julio, Julio César, Lorenzo, Lucas, Luis, Luis Miguel, Manuel, Marco Antonio, Marcos, Mariano, Mario, Martín, Mateo, Miguel, Miguel Ángel, Nicolás, Octavio, Óscar, Pablo, Patricio, Pedro, Rafael, Ramiro, Ramón, Raúl, Ricardo, Roberto, Rodrigo, Rubén, Salvador, Samuel, Sancho, Santiago, Sergio, Teodoro, Timoteo, Tomás, Vicente, Víctor]
@@ -88,3 +86,9 @@ es:
       formats: ['6##-###-###', '6##.###.###', '6## ### ###', '6########']
     music:
       instruments: ['Guitarra Eléctrica', 'Guitarra Acústica', 'Flauta', 'Trompeta', 'Clarinete', 'Violonchelo', 'Arpa', 'Xilofón', 'Armónica', 'Acordión', 'Organo', 'Piano', 'Ukelele', 'Saxofón', 'Bateria', 'Violín', 'Bajo']
+    subscription:
+      plans: ["Prueba gratuita", "Basico", "Starter", "Essential", "Estudiante", Bronze", "Standard", "Silver", "Gold", "Platinum", "Profesional", "Business", "Diamond", "Premium"]
+      statuses: ["Activo", "Parado", "Bloqueado", "Pendiente"]
+      payment_methods: ["Tarjeta de credito", "Tarjeta de débito", "Paypal", "Efectivo", "Transferencia de dinero", "Bitcoins", "Cheque", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
+      subscription_terms: ["Daily", "Weekly", "Monthly", "Annual", "Biennal", "Triennal", "Quinquennal", "Lifetime"]
+      payment_term: ["Pago por adelantado", "Mensual", "Anual", "Suscripción completa"]

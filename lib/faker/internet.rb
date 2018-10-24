@@ -188,14 +188,6 @@ module Faker
         sample(agents)
       end
 
-      def subscription_term
-        fetch('internet.subscription_term')
-      end
-
-      def payment_term
-        fetch('internet.payment_term')
-      end
-
       alias user_name username
     end
   end

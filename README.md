@@ -167,6 +167,7 @@ Contents
   - [Faker::String](doc/string.md)
   - [Faker::Stripe](doc/stripe.md)
   - [Faker::Superhero](doc/superhero.md)
+  - [Faker::Subscription](doc/subscription.md)
   - [Faker::Team](doc/team.md)
   - [Faker::Tezos](doc/tezos.md)
   - [Faker::TheFreshPrinceOfBelAir](doc/the_fresh_prince_of_bel_air.md)
