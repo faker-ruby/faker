@@ -1,0 +1,4 @@
+en:
+  faker:
+    phone:
+      name: ["Iphone XS Max", "Iphone XS", "Iphone XR", "Iphone X", "Iphone 8", "Iphone 8 Plus", "Iphone 7", "Iphone 7 Plus", "Iphone 6s", "Iphone 6", "Iphone 5s", "Iphone 5", "Iphone 4s", "Iphone 4", "Iphone 3", "Iphone 2", "Iphone 1", "OnePlus 6T", "OnePlus 6", "OnePlus 5T", "OnePlus 5", "OnePlus 3T", "OnePlus 3", "OnePlus 2", "OnePlus One", "Samsung Galaxy S9", "Samsung Galaxy S8 Plus", "Samsung Galaxy S8", "Samsung Galaxy S7 Edge", "Samsung Galaxy S7", "Samsung Galaxy S6 Edge", "Samsung Galaxy S5", "Samsung Galaxy S4", "Samsung Galaxy S4 Mini",  "Samsung Galaxy S3", "Samsung Galaxy S3 Mini", "Samsung Galaxy S2", "Samsung Galaxy S1"]
