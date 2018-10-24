@@ -91,6 +91,20 @@ pt-BR:
     lorem:
       words: [alias, consequatur, aut, perferendis, sit, voluptatem, accusantium, doloremque, aperiam, eaque, ipsa, quae, ab, illo, inventore, veritatis, et, quasi, architecto, beatae, vitae, dicta, sunt, explicabo, aspernatur, aut, odit, aut, fugit, sed, quia, consequuntur, magni, dolores, eos, qui, ratione, voluptatem, sequi, nesciunt, neque, dolorem, ipsum, quia, dolor, sit, amet, consectetur, adipisci, velit, sed, quia, non, numquam, eius, modi, tempora, incidunt, ut, labore, et, dolore, magnam, aliquam, quaerat, voluptatem, ut, enim, ad, minima, veniam, quis, nostrum, exercitationem, ullam, corporis, nemo, enim, ipsam, voluptatem, quia, voluptas, sit, suscipit, laboriosam, nisi, ut, aliquid, ex, ea, commodi, consequatur, quis, autem, vel, eum, iure, reprehenderit, qui, in, ea, voluptate, velit, esse, quam, nihil, molestiae, et, iusto, odio, dignissimos, ducimus, qui, blanditiis, praesentium, laudantium, totam, rem, voluptatum, deleniti, atque, corrupti, quos, dolores, et, quas, molestias, excepturi, sint, occaecati, cupiditate, non, provident, sed, ut, perspiciatis, unde, omnis, iste, natus, error, similique, sunt, in, culpa, qui, officia, deserunt, mollitia, animi, id, est, laborum, et, dolorum, fuga, et, harum, quidem, rerum, facilis, est, et, expedita, distinctio, nam, libero, tempore, cum, soluta, nobis, est, eligendi, optio, cumque, nihil, impedit, quo, porro, quisquam, est, qui, minus, id, quod, maxime, placeat, facere, possimus, omnis, voluptas, assumenda, est, omnis, dolor, repellendus, temporibus, autem, quibusdam, et, aut, consequatur, vel, illum, qui, dolorem, eum, fugiat, quo, voluptas, nulla, pariatur, at, vero, eos, et, accusamus, officiis, debitis, aut, rerum, necessitatibus, saepe, eveniet, ut, et, voluptates, repudiandae, sint, et, molestiae, non, recusandae, itaque, earum, rerum, hic, tenetur, a, sapiente, delectus, ut, aut, reiciendis, voluptatibus, maiores, doloribus, asperiores, repellat]
 
+    job:
+      field: ["Marketing", "TI", "Contabilidade", "Administração", "Propaganda", "Bancário", "Serviços Comunitários", "Construção", "Consultoria", "Design", "Educação", "Agricultura", "Governamental", "Saúde", "Hospitalidade", "Legal", "Industrial", "Mineração", "Imobiliária", "Varejo", "Vendas", "Tecnologia"]
+      seniority: ["Lead", "Senior", "Nacional", "Regional", "Distrital", "Central", "Global", "Consumidor", "Investidor", "Dinâmico", "Internacional", "Legado", "Frente", "Interno", "Chefe", "Corporativo", "Futuro", "Humano", "Principal"]
+      position: ["Supervisor", "Associado", "Executivo", "Contato", "Oficial", "Gerente", "Engenheiro", "Especialista", "Diretor", "Coordenador", "Administrador", "Arquiteto", "Analista", "Designer", "Planejador", "Orquestrador", "Técnico", "Desenvolvedor", "Fabricante", "Consultor", "Assistente", "Facilitador", "Agente", "Representante", "Estrategista"]
+      key_skills: ["Trabalho em equipe", "Comunicação", "Resolução de problemas", "Liderança", "Organização", "Trabalhar sobre pressão", "Confiança", "Auto motivado", "Habilidades de networking", "Proatividade", "Aprendizado rápido", "Experiência com tecnologia"]
+      employment_type: ["Integral", "Meio período", "Temporário", "Contrato", "Estágio", "Comissão"]
+      education_level: ["Bacharelado", "Mestrado", "Doutorado"]
+      title:
+        - "#{position} de #{field} #{seniority}"
+        - "#{position} #{field} #{seniority}"
+        - "#{seniority} #{position} de #{field}"
+        - "#{position} de #{field}"
+        - "#{position} #{seniority}"
+
     name:
       male_first_name: ["Alessandro","Alexandre","Antônio","Arthur","Benício","Benjamin","Bernardo","Breno","Bryan",
                         "Caio","Carlos","Cauã","César","Daniel","Danilo","Davi","Deneval","Djalma","Eduardo","Elísio",
