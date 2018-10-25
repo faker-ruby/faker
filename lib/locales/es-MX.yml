@@ -99,4 +99,4 @@ es-MX:
       statuses: ["Activo", "Parado", "Bloqueado", "Pendiente"]
       payment_methods: ["Tarjeta de credito", "Tarjeta de débito", "Paypal", "Efectivo", "Transferencia de dinero", "Bitcoins", "Cheque", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
       subscription_terms: ["Diaria", "Semanal", "Mensual", "Anual", "Bienal", "Trienal", "Quinquenal", "De por vida"]
-      payment_term: ["Pago por adelantado", "Mensual", "Anual", "Suscripción completa"]
+      payment_terms: ["Pago por adelantado", "Mensual", "Anual", "Suscripción completa"]

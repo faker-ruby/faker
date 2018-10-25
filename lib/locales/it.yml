@@ -67,4 +67,4 @@ it:
       statuses: ["Attivo", "Inattivo", "Bloccato", "In sospeso"]
       payment_methods: ["Carta di credito", "Carta di debito", "Paypal", "Contanti", "Bonifico", "Bitcoins", "Assegno", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
       subscription_terms: ["Quotidiano", "Settimanale", "Mensile", "Annuale", "Biennale", "Triennale", "Quinquennale", "Abbonamento a vita"]
-      payment_term: ["Pagamento anticipato", "Mensile", "Annuale", "Abbonamento completo"]
+      payment_terms: ["Pagamento anticipato", "Mensile", "Annuale", "Abbonamento completo"]
