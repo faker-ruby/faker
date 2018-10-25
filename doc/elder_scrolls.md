@@ -1,19 +1,19 @@
-# Faker::ElderScrolls
+# Faker::Games::ElderScrolls
 
 ```ruby
-Faker::ElderScrolls.race #=> Argonian
+Faker::Games::ElderScrolls.race #=> Argonian
 
-Faker::ElderScrolls.city #=> Solitude
+Faker::Games::ElderScrolls.city #=> Solitude
 
-Faker::ElderScrolls.creature #=> Frost Troll
+Faker::Games::ElderScrolls.creature #=> Frost Troll
 
-Faker::ElderScrolls.region #=> Cyrodiil
+Faker::Games::ElderScrolls.region #=> Cyrodiil
 
-Faker::ElderScrolls.dragon #=> Blood Dragon
+Faker::Games::ElderScrolls.dragon #=> Blood Dragon
 
-Faker::ElderScrolls.first_name #=> Astrid
+Faker::Games::ElderScrolls.first_name #=> Astrid
 
-Faker::ElderScrolls.last_name #=> Mallory
+Faker::Games::ElderScrolls.last_name #=> Mallory
 
-Faker::ElderScrolls.name #=> Babette Brill
+Faker::Games::ElderScrolls.name #=> Babette Brill
 ```

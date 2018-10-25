@@ -37,4 +37,10 @@ Faker::PhoneNumber.subscriber_number #=> "3873"
 Faker::PhoneNumber.subscriber_number(2) #=> "39"
 
 Faker::PhoneNumber.extension #=> "3764"
+
+Faker::PhoneNumber.country_code #=> "+20"
+
+Faker::PhoneNumber.phone_number_with_country_code #=> "+95 1-672-173-8153" 
+
+Faker::PhoneNumber.cell_phone_with_country_code #=> "+974 (190) 987-9034" 
 ```

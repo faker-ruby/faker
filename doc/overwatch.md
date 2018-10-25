@@ -1,11 +1,11 @@
-# Faker::Overwatch
+# Faker::Games::Overwatch
 
 Available since version 1.8.0.
 
 ```ruby
-Faker::Overwatch.hero #=> "Tracer"
+Faker::Games::Overwatch.hero #=> "Tracer"
 
-Faker::Overwatch.location #=> "Numbani"
+Faker::Games::Overwatch.location #=> "Numbani"
 
-Faker::Overwatch.quote #=> "It's high noon"
+Faker::Games::Overwatch.quote #=> "It's high noon"
 ```

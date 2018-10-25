@@ -65,9 +65,9 @@ class TestFrChLocale < Test::Unit::TestCase
 
   def test_fr_ch_phone_number
     assert Faker::PhoneNumber.cell_phone.is_a? String
-    assert Faker::Pokemon.name.is_a? String
-    assert Faker::Pokemon.location.is_a? String
-    assert Faker::Pokemon.move.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.move.is_a? String
   end
 
   def test_fr_ch_pokemon_methods
