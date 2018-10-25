@@ -152,6 +152,7 @@ Contents
   - [Faker::StrangerThings](doc/unreleased/stranger_things.md)
   - [Faker::String](doc/unreleased/string.md)
   - [Faker::Stripe](doc/unreleased/stripe.md)
+  - [Faker::Subscription](doc/unreleased/subscription.md)
   - [Faker::Superhero](doc/unreleased/superhero.md)
   - [Faker::Team](doc/unreleased/team.md)
   - [Faker::Tezos](doc/unreleased/tezos.md)
