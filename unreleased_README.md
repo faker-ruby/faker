@@ -1,3 +1,11 @@
+### NOTE
+
+* Some of the objects below aren't released yet. If you want to use them, change the line in your gemfile to:
+
+```ruby
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+```
+
 Contents
 --------
 
@@ -162,3 +170,13 @@ Contents
   - [Faker::Verbs](doc/verbs.md)
   - [Faker::VForVendetta](doc/v_for_vendetta.md)
   - [Faker::WorldCup](doc/world_cup.md)
+
+## Usage
+
+```ruby
+require 'faker'
+
+Faker::Name.name      #=> "Christophe Bartell"
+
+Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+```
