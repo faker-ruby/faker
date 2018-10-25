@@ -1,11 +1,11 @@
-# Faker::Fallout
+# Faker::Games::Fallout
 
 ```ruby
-Faker::Fallout.character #=> "Dogmeat"
+Faker::Games::Fallout.character #=> "Dogmeat"
 
-Faker::Fallout.faction #=> "The Institute"
+Faker::Games::Fallout.faction #=> "The Institute"
 
-Faker::Fallout.location #=> "Capital Wasteland"
+Faker::Games::Fallout.location #=> "Capital Wasteland"
 
-Faker::Fallout.quote #=> "Democracy is non-negotiable"
+Faker::Games::Fallout.quote #=> "Democracy is non-negotiable"
 ```

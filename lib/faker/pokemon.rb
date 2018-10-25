@@ -1,19 +1,25 @@
 # frozen_string_literal: true
 
 module Faker
-  class Pokemon < Base
+  module Pokemon
     class << self
+      extend Gem::Deprecate
+
       def name
-        fetch('pokemon.names')
+        Faker::Games::Pokemon.name
       end
 
       def location
-        fetch('pokemon.locations')
+        Faker::Games::Pokemon.location
       end
 
       def move
-        fetch('pokemon.moves')
+        Faker::Games::Pokemon.move
       end
+
+      deprecate :name, 'Faker::Games::Pokemon.name', 2018, 10
+      deprecate :location, 'Faker::Games::Pokemon.location', 2018, 10
+      deprecate :move, 'Faker::Games::Pokemon.move', 2018, 10
     end
   end
 end

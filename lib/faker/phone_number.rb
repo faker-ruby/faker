@@ -11,6 +11,18 @@ module Faker
         parse('cell_phone.formats')
       end
 
+      def country_code
+        "+#{fetch('country_code')}"
+      end
+
+      def phone_number_with_country_code
+        "#{country_code} #{phone_number}"
+      end
+
+      def cell_phone_with_country_code
+        "#{country_code} #{cell_phone}"
+      end
+
       # US and Canada only
       def area_code
         fetch('phone_number.area_code')

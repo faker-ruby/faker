@@ -54,6 +54,16 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
+  def test_pt_br_job_methods
+    assert Faker::Job.field.is_a? String
+    assert Faker::Job.seniority.is_a? String
+    assert Faker::Job.position.is_a? String
+    assert Faker::Job.key_skills.is_a? String
+    assert Faker::Job.employment_type.is_a? String
+    assert Faker::Job.education_level.is_a? String
+    assert Faker::Job.title.is_a? String
+  end
+
   def test_pt_br_name_methods
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.suffix.is_a? String

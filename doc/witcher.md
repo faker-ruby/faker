@@ -1,15 +1,15 @@
-# Faker::Witcher
+# Faker::Games::Witcher
 
 ```ruby
 
-Faker::Witcher.character # => "Triss Merigold"
+Faker::Games::Witcher.character # => "Triss Merigold"
 
-Faker::Witcher.witcher # => "Geralt of Rivia"
+Faker::Games::Witcher.witcher # => "Geralt of Rivia"
 
-Faker::Witcher.location # => "Novigrad"
+Faker::Games::Witcher.location # => "Novigrad"
 
-Faker::Witcher.school # => "Wolf"
+Faker::Games::Witcher.school # => "Wolf"
 
-Faker::Witcher.quote # => "No Lollygagin'!"
+Faker::Games::Witcher.quote # => "No Lollygagin'!"
 
-Faker::Witcher.monster # => "Katakan"
+Faker::Games::Witcher.monster # => "Katakan"
