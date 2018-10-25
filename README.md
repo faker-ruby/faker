@@ -175,7 +175,7 @@ Note: if you are getting a `uninitialized constant Faker::[some_class]` error, y
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 ```
 
-* To access the full list of unreleased Faker object is [available here](unreleased_README.md).
+* To access the full list of unreleased Faker object is [available here](unreleased_CONTENT.md).
 
 ## Usage
 
