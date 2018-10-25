@@ -50,7 +50,7 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::PhoneNumber.cell_phone.is_a? String
   end
 
-  def test_es_subscription_methods
+  def test_es_mx_subscription_methods
     assert Faker::Subscription.plan.is_a? String
     assert Faker::Subscription.status.is_a? String
     assert Faker::Subscription.payment_method.is_a? String
