@@ -34,6 +34,7 @@ Contents
   - [Faker::ChuckNorris](doc/unreleased/chuck_norris.md)
   - [Faker::Code](doc/unreleased/code.md)
   - [Faker::Coffee](doc/unreleased/coffee.md)
+  - [Faker::Coin](doc/unreleased/coin.md)
   - [Faker::Color](doc/unreleased/color.md)
   - [Faker::Commerce](doc/unreleased/commerce.md)
   - [Faker::Community](doc/unreleased/community.md)
