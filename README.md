@@ -23,7 +23,7 @@ Contents
 --------
 
 - [Installing](#installing)
-- [Usage](#usage)
+- [Usage - v1.9.1](#usage)
   - [Faker::Address](doc/v1.9.1/address.md)
   - [Faker::Ancient](doc/v1.9.1/ancient.md)
   - [Faker::App](doc/v1.9.1/app.md)
