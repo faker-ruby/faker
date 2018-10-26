@@ -52,6 +52,7 @@ Contents
   - [Faker::Demographic](doc/unreleased/demographic.md)
   - [Faker::Dessert](doc/unreleased/dessert.md)
   - [Faker::Device](doc/unreleased/device.md)
+  - [Faker::DrivingLicence](doc/unreleased/driving_licence.md)
   - [Faker::DrWho](doc/unreleased/dr_who.md)
   - [Faker::DumbAndDumber](doc/unreleased/dumb_and_dumber.md)
   - [Faker::Dune](doc/unreleased/dune.md)
