@@ -92,4 +92,12 @@ class TestEsLocale < Test::Unit::TestCase
   def test_es_vehicle_methods
     assert Faker::Vehicle.license_plate.is_a? String
   end
+
+  def test_es_subscription_methods
+    assert Faker::Subscription.plan.is_a? String
+    assert Faker::Subscription.status.is_a? String
+    assert Faker::Subscription.payment_method.is_a? String
+    assert Faker::Subscription.subscription_term.is_a? String
+    assert Faker::Subscription.payment_term.is_a? String
+  end
 end
