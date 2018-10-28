@@ -1,40 +1,41 @@
 en:
   faker:
-    overwatch:
-      heroes: ["Ana", "Bastion", "D.va", "Doomfist", "Genji", "Hanzo", "Junkrat", "Lucio", "McCree", "Mei", "Mercy", "Moira", "Orisa", "Pharah", "Reaper", "Reinhardt", "Roadhog", "Soldier 76", "Sombra", "Symmetra", "Torbjorn", "Tracer", "Widowmaker", "Winston", "Wrecking Ball", "Zarya", "Zenyatta"]
-      locations: ["Adlersbrunn", "Ayutthaya", "Black Forest", "Blizzard World", "Busan", "Busan Stadium", "Castillo", "Château Guillard", "Dorado", "Ecopoint: Antarctica", "Eichenwalde", "Estádio das Rãs", "Hanamura", "Hollywood", "Horizon Lunar Colony", "Ilios", "Junkertown", "King's Row", "Lijiang Tower", "Nepal", "Numbani", "Oasis", "Petra", "Rialto", "Route 66", "Temple of Anubis", "Volskaya Industries", "Watchpoint: Gibraltar"]
-      quotes: [
-        "Activating Self Destruct Sequence.",
-        "Alla till mig!",
-        "Area denied.",
-        "Bombs away!",
-        "Clearing the area.",
-        "Die! Die! Die!",
-        "Dòng zhù! Bùxǔ zǒu!",
-        "EMP activated!",
-        "Experience tranquility.",
-        "Fire at will!",
-        "Fire in the hole!",
-        "Freeze! Don't move!",
-        "Géill do mo thoil!",
-        "Hammer DOWN!",
-        "Here ya go!",
-        "It's high noon.",
-        "Ladies and gentlemen, start your engines!",
-        "MOLTEN CORE!",
-        "Minefield deployed.",
-        "Nano Boost administered.",
-        "Nerf this!",
-        "Ogon' po gotovnosti!",
-        "Oh, let's break it down!",
-        "Pass into the Iris.",
-        "Rally to me!",
-        "Step right up.",
-        "Surrender to my will!",
-        "Time's up!",
-        "Vamos esculachar!",
-        "Wait for it...",
-        "Warīhum quwitak!",
-        "You're powered up, get in there.",
-        "¡Apagando las luces!"
-      ]
+    games:
+      overwatch:
+        heroes: ["Ana", "Bastion", "D.va", "Doomfist", "Genji", "Hanzo", "Junkrat", "Lucio", "McCree", "Mei", "Mercy", "Moira", "Orisa", "Pharah", "Reaper", "Reinhardt", "Roadhog", "Soldier 76", "Sombra", "Symmetra", "Torbjorn", "Tracer", "Widowmaker", "Winston", "Wrecking Ball", "Zarya", "Zenyatta"]
+        locations: ["Adlersbrunn", "Ayutthaya", "Black Forest", "Blizzard World", "Busan", "Busan Stadium", "Castillo", "Château Guillard", "Dorado", "Ecopoint: Antarctica", "Eichenwalde", "Estádio das Rãs", "Hanamura", "Hollywood", "Horizon Lunar Colony", "Ilios", "Junkertown", "King's Row", "Lijiang Tower", "Nepal", "Numbani", "Oasis", "Petra", "Rialto", "Route 66", "Temple of Anubis", "Volskaya Industries", "Watchpoint: Gibraltar"]
+        quotes: [
+          "Activating Self Destruct Sequence.",
+          "Alla till mig!",
+          "Area denied.",
+          "Bombs away!",
+          "Clearing the area.",
+          "Die! Die! Die!",
+          "Dòng zhù! Bùxǔ zǒu!",
+          "EMP activated!",
+          "Experience tranquility.",
+          "Fire at will!",
+          "Fire in the hole!",
+          "Freeze! Don't move!",
+          "Géill do mo thoil!",
+          "Hammer DOWN!",
+          "Here ya go!",
+          "It's high noon.",
+          "Ladies and gentlemen, start your engines!",
+          "MOLTEN CORE!",
+          "Minefield deployed.",
+          "Nano Boost administered.",
+          "Nerf this!",
+          "Ogon' po gotovnosti!",
+          "Oh, let's break it down!",
+          "Pass into the Iris.",
+          "Rally to me!",
+          "Step right up.",
+          "Surrender to my will!",
+          "Time's up!",
+          "Vamos esculachar!",
+          "Wait for it...",
+          "Warīhum quwitak!",
+          "You're powered up, get in there.",
+          "¡Apagando las luces!"
+        ]

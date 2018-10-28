@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestWorldOfWarcraft < Test::Unit::TestCase
   def setup
-    @tester = Faker::WorldOfWarcraft
+    @tester = Faker::Games::WorldOfWarcraft
   end
 
   def test_heroes

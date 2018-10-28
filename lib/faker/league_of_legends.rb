@@ -1,31 +1,40 @@
 # frozen_string_literal: true
 
 module Faker
-  class LeagueOfLegends < Base
+  module LeagueOfLegends
     class << self
+      extend Gem::Deprecate
+
       def champion
-        fetch('league_of_legends.champion')
+        Faker::Games::LeagueOfLegends.champion
       end
 
       def location
-        fetch('league_of_legends.location')
+        Faker::Games::LeagueOfLegends.location
       end
 
       def quote
-        fetch('league_of_legends.quote')
+        Faker::Games::LeagueOfLegends.quote
       end
 
       def summoner_spell
-        fetch('league_of_legends.summoner_spell')
+        Faker::Games::LeagueOfLegends.summoner_spell
       end
 
       def masteries
-        fetch('league_of_legends.masteries')
+        Faker::Games::LeagueOfLegends.masteries
       end
 
       def rank
-        fetch('league_of_legends.rank')
+        Faker::Games::LeagueOfLegends.rank
       end
+
+      deprecate :champion, 'Faker::Games::LeagueOfLegends.champion', 2018, 10
+      deprecate :location, 'Faker::Games::LeagueOfLegends.location', 2018, 10
+      deprecate :quote, 'Faker::Games::LeagueOfLegends.quote', 2018, 10
+      deprecate :summoner_spell, 'Faker::Games::LeagueOfLegends.summoner_spell', 2018, 10
+      deprecate :masteries, 'Faker::Games::LeagueOfLegends.masteries', 2018, 10
+      deprecate :rank, 'Faker::Games::LeagueOfLegends.rank', 2018, 10
     end
   end
 end

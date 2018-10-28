@@ -1,15 +1,20 @@
 # frozen_string_literal: true
 
 module Faker
-  class WorldOfWarcraft < Base
+  module WorldOfWarcraft
     class << self
+      extend Gem::Deprecate
+
       def hero
-        fetch('world_of_warcraft.hero')
+        Faker::Games::WorldOfWarcraft.hero
       end
 
       def quote
-        fetch('world_of_warcraft.quotes')
+        Faker::Games::WorldOfWarcraft.quote
       end
+
+      deprecate :hero, 'Faker::Games::WorldOfWarcraft.hero', 2018, 10
+      deprecate :quote, 'Faker::Games::WorldOfWarcraft.quote', 2018, 10
     end
   end
 end

@@ -1,39 +1,50 @@
 # frozen_string_literal: true
 
 module Faker
-  class ElderScrolls < Base
+  module ElderScrolls
     class << self
+      extend Gem::Deprecate
+
       def race
-        fetch('elder_scrolls.race')
+        Faker::Games::ElderScrolls.race
       end
 
       def city
-        fetch('elder_scrolls.city')
+        Faker::Games::ElderScrolls.city
       end
 
       def creature
-        fetch('elder_scrolls.creature')
+        Faker::Games::ElderScrolls.creature
       end
 
       def region
-        fetch('elder_scrolls.region')
+        Faker::Games::ElderScrolls.region
       end
 
       def dragon
-        fetch('elder_scrolls.dragon')
+        Faker::Games::ElderScrolls.dragon
       end
 
       def name
-        "#{fetch('elder_scrolls.first_name')} #{fetch('elder_scrolls.last_name')}"
+        Faker::Games::ElderScrolls.name
       end
 
       def first_name
-        fetch('elder_scrolls.first_name')
+        Faker::Games::ElderScrolls.first_name
       end
 
       def last_name
-        fetch('elder_scrolls.last_name')
+        Faker::Games::ElderScrolls.last_name
       end
+
+      deprecate :race, 'Faker::Games::ElderScrolls.race', 2018, 10
+      deprecate :city, 'Faker::Games::ElderScrolls.city', 2018, 10
+      deprecate :creature, 'Faker::Games::ElderScrolls.creature', 2018, 10
+      deprecate :region, 'Faker::Games::ElderScrolls.region', 2018, 10
+      deprecate :dragon, 'Faker::Games::ElderScrolls.dragon', 2018, 10
+      deprecate :name, 'Faker::Games::ElderScrolls.name', 2018, 10
+      deprecate :first_name, 'Faker::Games::ElderScrolls.first_name', 2018, 10
+      deprecate :last_name, 'Faker::Games::ElderScrolls.last_name', 2018, 10
     end
   end
 end

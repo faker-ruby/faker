@@ -1,27 +1,35 @@
 # frozen_string_literal: true
 
 module Faker
-  class Myst < Base
+  module Myst
     class << self
+      extend Gem::Deprecate
+
       def game
-        fetch('myst.games')
+        Faker::Games::Myst.game
       end
 
       def creature
-        fetch('myst.creatures')
+        Faker::Games::Myst.creature
       end
 
       def age
-        fetch('myst.ages')
+        Faker::Games::Myst.age
       end
 
       def character
-        fetch('myst.characters')
+        Faker::Games::Myst.character
       end
 
       def quote
-        fetch('myst.quotes')
+        Faker::Games::Myst.quote
       end
+
+      deprecate :game, 'Faker::Games::Myst.game', 2018, 10
+      deprecate :creature, 'Faker::Games::Myst.creature', 2018, 10
+      deprecate :age, 'Faker::Games::Myst.age', 2018, 10
+      deprecate :character, 'Faker::Games::Myst.character', 2018, 10
+      deprecate :quote, 'Faker::Games::Myst.quote', 2018, 10
     end
   end
 end
