@@ -82,19 +82,6 @@ module Faker
         [digits, first_digit, second_digit].join
       end
 
-      def brazilian_company_number
-        digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
-
-        factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
-
-        2.times do
-          checksum = digits.inject(0) { |acc, digit| acc + digit * factors.next } % 11
-          digits << (checksum < 2 ? 0 : 11 - checksum)
-        end
-
-        digits.join
-      end
-
       private
 
       def south_african_id_checksum_digit(id_number)
