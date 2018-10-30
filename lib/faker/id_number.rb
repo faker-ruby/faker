@@ -79,7 +79,7 @@ module Faker
         digits = Faker::Number.leading_zero_number(9) until digits&.match(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
-        [digits, first_digit, second_digit].join
+        "#{digits.gsub(/(\d{3})(?=\d)/, '\1.')}-#{first_digit}#{second_digit}"
       end
 
       private

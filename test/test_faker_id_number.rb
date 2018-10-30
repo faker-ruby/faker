@@ -64,7 +64,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
   end
 
   def test_brazilian_citizen_number
-    sample = @tester.brazilian_citizen_number
+    sample = @tester.brazilian_citizen_number.gsub(/\.|-/, '')
     assert_match(/^\d{11}$/, sample)
     assert_match(/(\d)((?!\1)\d)+/, sample)
     digit_sum = sample[0..8].chars.each_with_index.inject(0) do |acc, (digit, i)|
