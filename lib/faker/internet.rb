@@ -174,7 +174,7 @@ module Faker
       end
 
       def slug(words = nil, glue = nil)
-        glue ||= sample(%w[- _ .])
+        glue ||= sample(%w[- _])
         (words || Faker::Lorem.words(2).join(' ')).delete(',.').gsub(' ', glue).downcase
       end
 
