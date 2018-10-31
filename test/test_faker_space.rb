@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerSpace < Test::Unit::TestCase
   def setup
@@ -55,5 +57,9 @@ class TestFakerSpace < Test::Unit::TestCase
 
   def test_meteorite
     assert @tester.meteorite.match(/(\w+\.? ?){2,3}/)
+  end
+
+  def test_launch_vehicule
+    assert @tester.launch_vehicule.match(/(\w+\.? ?){2,3}/)
   end
 end

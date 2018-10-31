@@ -1,13 +1,13 @@
+# frozen_string_literal: true
 
- require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require_relative 'test_helper'
 
- class TestFakerMovie < Test::Unit::TestCase
+class TestFakerMovie < Test::Unit::TestCase
+  def setup
+    @tester = Faker::Movie
+  end
 
-   def setup
-     @tester = Faker::Movie
-   end
-
-   def test_quote
-     assert @tester.quote.match(/\w+/)
-   end
- end
+  def test_quote
+    assert @tester.quote.match(/\w+/)
+  end
+end

@@ -1,8 +1,10 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
 
-class TestFakerDragonBall < Test::Unit::TestCase
+require_relative 'test_helper'
+
+class TestFakerJapaneseMediaDragonBall < Test::Unit::TestCase
   def setup
-    @tester = Faker::DragonBall
+    @tester = Faker::JapaneseMedia::DragonBall
   end
 
   def test_character

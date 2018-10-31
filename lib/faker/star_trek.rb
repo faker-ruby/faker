@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class StarTrek < Base
     class << self
@@ -12,7 +14,7 @@ module Faker
       def specie
         fetch('star_trek.specie')
       end
-   
+
       def villain
         fetch('star_trek.villain')
       end

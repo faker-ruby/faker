@@ -1,20 +1,24 @@
+# frozen_string_literal: true
+
 module Faker
   class Number < Base
     class << self
-      def number(digits=10)
+      def number(digits = 10)
         num = ''
+
         if digits > 1
           num = non_zero_digit
           digits -= 1
         end
-        num + leading_zero_number(digits)
+
+        num + (1..digits).collect { digit }.join
       end
 
-      def leading_zero_number(digits=10)
-        (1..digits).collect {digit}.join
+      def leading_zero_number(digits = 10)
+        '0' + (2..digits).collect { digit }.join
       end
 
-      def decimal_part(digits=10)
+      def decimal_part(digits = 10)
         num = ''
         if digits > 1
           num = non_zero_digit
@@ -23,27 +27,28 @@ module Faker
         leading_zero_number(digits) + num
       end
 
-      def decimal(l_digits=5, r_digits=2)
-        l_d = self.number(l_digits)
-        r_d = self.decimal_part(r_digits)
+      def decimal(l_digits = 5, r_digits = 2)
+        l_d = number(l_digits)
+        r_d = decimal_part(r_digits)
+
         "#{l_d}.#{r_d}"
       end
 
       def non_zero_digit
-        (rand(9) + 1).to_s
+        rand(1..9).to_s
       end
 
       def digit
         rand(10).to_s
       end
 
-      def hexadecimal(digits=6)
-        hex = ""
+      def hexadecimal(digits = 6)
+        hex = ''
         digits.times { hex += rand(15).to_s(16) }
         hex
       end
 
-      def normal(mean=1, standard_deviation=1)
+      def normal(mean = 1, standard_deviation = 1)
         theta = 2 * Math::PI * rand
         rho = Math.sqrt(-2 * Math.log(1 - rand))
         scale = standard_deviation * rho
@@ -51,16 +56,22 @@ module Faker
       end
 
       def between(from = 1.00, to = 5000.00)
-        Faker::Base::rand_in_range(from, to)
+        Faker::Base.rand_in_range(from, to)
+      end
+
+      def within(range = 1.00..5000.00)
+        between(range.min, range.max)
       end
 
       def positive(from = 1.00, to = 5000.00)
         random_number = between(from, to)
+
         greater_than_zero(random_number)
       end
 
       def negative(from = -5000.00, to = -1.00)
         random_number = between(from, to)
+
         less_than_zero(random_number)
       end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class University < Base
     flexible :university
@@ -16,16 +18,12 @@ module Faker
       end
 
       def greek_organization
-        organization = ''
-        3.times do |e|
-          organization = organization + sample(greek_alphabet)
-        end
-        organization
+        Array.new(3) { |_| sample(greek_alphabet) }.join
       end
 
       def greek_alphabet
-        ['Α', 'B', 'Γ', 'Δ', 'E', 'Z', 'H', 'Θ', '|', 'K', 'Λ', 'M', 'N', 'Ξ',
-         'O', 'Π', 'P', 'Σ', 'T', 'Y', 'Φ', 'X', 'Ψ', 'Ω']
+        %w[Α B Γ Δ E Z H Θ I K Λ M N Ξ
+           O Π P Σ T Y Φ X Ψ Ω]
       end
     end
   end

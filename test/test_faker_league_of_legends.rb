@@ -1,8 +1,10 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestFakerLeagueOfLegends < Test::Unit::TestCase
   def setup
-    @tester = Faker::LeagueOfLegends
+    @tester = Faker::Games::LeagueOfLegends
   end
 
   def test_champions

@@ -1,5 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
+require_relative 'test_helper'
+
 class TestFakerScience < Test::Unit::TestCase
   def setup
     @tester = Faker::Science
@@ -13,4 +15,11 @@ class TestFakerScience < Test::Unit::TestCase
     assert @tester.scientist.match(/\w+/)
   end
 
+  def test_element_symbol
+    assert @tester.element.match(/\w{1,2}/)
+  end
+
+  def test_scientist
+    assert @tester.scientist.match(/\w+/)
+  end
 end

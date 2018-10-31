@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class PhoneNumber < Base
     class << self
@@ -9,36 +11,40 @@ module Faker
         parse('cell_phone.formats')
       end
 
-      # US only
+      def country_code
+        "+#{fetch('country_code')}"
+      end
+
+      def phone_number_with_country_code
+        "#{country_code} #{phone_number}"
+      end
+
+      def cell_phone_with_country_code
+        "#{country_code} #{cell_phone}"
+      end
+
+      # US and Canada only
       def area_code
-        begin
-          fetch('phone_number.area_code')
-        rescue I18n::MissingTranslationData
-          nil
-        end
+        fetch('phone_number.area_code')
+      rescue I18n::MissingTranslationData
+        nil
       end
 
-      # US only
+      # US and Canada only
       def exchange_code
-        begin
-          fetch('phone_number.exchange_code')
-        rescue I18n::MissingTranslationData
-          nil
-        end
+        fetch('phone_number.exchange_code')
+      rescue I18n::MissingTranslationData
+        nil
       end
 
-      # US only
+      # US and Canada only
       # Can be used for both extensions and last four digits of phone number.
       # Since extensions can be of variable length, this method taks a length parameter
       def subscriber_number(length = 4)
-        begin
-          rand.to_s[2..(1 + length)]
-        rescue I18n::MissingTranslationData
-          nil
-        end
+        rand.to_s[2..(1 + length)]
       end
 
-      alias_method :extension, :subscriber_number
+      alias extension subscriber_number
     end
   end
 end

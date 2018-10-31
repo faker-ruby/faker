@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class TestCaCatLocale < Test::Unit::TestCase
   def setup
@@ -9,7 +11,7 @@ class TestCaCatLocale < Test::Unit::TestCase
     Faker::Config.locale = nil
   end
 
-  def test_ca_methods
+  def test_ca_cat_address_methods
     assert Faker::Address.city.is_a? String
     assert Faker::Address.country.is_a? String
     assert Faker::Address.building_number.is_a? String
@@ -21,15 +23,16 @@ class TestCaCatLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.default_country.is_a? String
+    assert_equal 'Catalunya', Faker::Address.default_country
   end
 
-  def test_phone_numbers_start_with_9
-    mobile = Faker::PhoneNumber.phone_number.gsub(/\D/,'')
+  def test_ca_cat_phone_numbers_start_with_9
+    mobile = Faker::PhoneNumber.phone_number.gsub(/\D/, '')
     assert_equal '9', mobile[0]
   end
 
-  def test_cell_numbers_start_with_6
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/,'')
+  def test_ca_cat_cell_numbers_start_with_6
+    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
     assert_equal '6', mobile[0]
   end
 end

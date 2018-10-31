@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Faker
   class Color < Base
     class << self
       def hex_color
-        '#%06x' % (rand * 0xffffff)
+        format('#%06x', (rand * 0xffffff))
       end
 
       def color_name
@@ -14,7 +16,7 @@ module Faker
       end
 
       def rgb_color
-        3.times.collect { single_rgb_color }
+        Array.new(3) { single_rgb_color }
       end
 
       # returns [hue, saturation, lightness]
