@@ -239,10 +239,6 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_slug
     assert @tester.slug.match(/^[a-z]+(_|\-)[a-z]+$/)
-
-    10.times do
-      refute @tester.slug.match(/^[.]+$/)
-    end
   end
 
   def test_slug_with_content_arg
