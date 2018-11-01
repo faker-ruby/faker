@@ -39,6 +39,7 @@
 - [PR #803](https://github.com/stympy/faker/pull/803) Modify Faker::Educator, Fix #576 [@ghbooth12](https://github.com/ghbooth12)
 
 ### Documentation
+- [PR #1445](https://github.com/stympy/faker/pull/1445) Separate README.md: unreleased and latest version [@vbrazo](https://github.com/vbrazo)
 - [PR #1243](https://github.com/stympy/faker/pull/1243) Add image file method to placeholdit [@nicolas-brousse](https://github.com/nicolas-brousse)
 - [PR #1419](https://github.com/stympy/faker/pull/1419) Update CONTRIBUTING.md [@vbrazo](https://github.com/vbrazo)
 - [PR #1414](https://github.com/stympy/faker/pull/1414) Fixing spelling mistake in Docs for Vehicle [@snoozins](https://github.com/snoozins)
@@ -52,6 +53,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1440](https://github.com/stympy/faker/pull/1440) Add Faker::Subscription [@fabersky](https://github.com/fabersky)
 - [PR #1438](https://github.com/stympy/faker/pull/1438) Add Faker::Football.position [@fblupi](https://github.com/fblupi)
 - [PR #1426](https://github.com/stympy/faker/pull/1426) Add Faker::PhoneNumber.country_code [@AmrAdelKhalil](https://github.com/AmrAdelKhalil)
 - [PR #1427](https://github.com/stympy/faker/pull/1427) Add Faker::Games::SuperSmashBros [@boardfish](https://github.com/boardfish)
@@ -95,6 +97,7 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1446](https://github.com/stympy/faker/pull/1446) fix: Remove deplicate 'color' from ja.yml [@yizknn](https://github.com/yizknn)
 - [PR #1441](https://github.com/stympy/faker/pull/1441) Add Faker::Job pt-BR locales [@wellingtongvs](https://github.com/wellingtongvs)
 - [PR #1428](https://github.com/stympy/faker/pull/1428) Add Faker::Games::SonicTheHedgehog.game [@boardfish](https://github.com/boardfish)
 - [PR #1415](https://github.com/stympy/faker/pull/1415) Add new Overwatch items [@lucasqueiroz](https://github.com/lucasqueiroz)
