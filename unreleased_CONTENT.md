@@ -1,3 +1,12 @@
+- [NOTE](#note)
+- [Generators](#generators)
+    - [Default](#default)
+    - [Creature](#creature)
+    - [Games](#games)
+    - [Japanese Media](#japanese-media)
+    - [Movies](#movies)
+- [Usage](#usage)
+
 ### NOTE
 
 * Some of the objects below aren't released yet. If you want to use them, change the line in your gemfile to:
@@ -6,8 +15,7 @@
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 ```
 
-Contents
---------
+## Generators 
 
 ### Default
   - [Faker::Address](doc/unreleased/address.md)
