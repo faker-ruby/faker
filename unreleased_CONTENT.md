@@ -9,7 +9,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 Contents
 --------
 
-- [Usage - Unreleased](#usage)
+### Default
   - [Faker::Address](doc/unreleased/address.md)
   - [Faker::Alphanumeric](doc/unreleased/alphanumeric.md)
   - [Faker::Ancient](doc/unreleased/ancient.md)
@@ -41,9 +41,6 @@ Contents
   - [Faker::Compass](doc/unreleased/compass.md)
   - [Faker::Construction](doc/unreleased/construction.md)
   - [Faker::Cosmere](doc/unreleased/cosmere.md)
-  - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
-  - [Faker::Creature::Cat](doc/unreleased/creature/cat.md)
-  - [Faker::Creature::Dog](doc/unreleased/creature/dog.md)
   - [Faker::Crypto](doc/unreleased/crypto.md)
   - [Faker::CryptoCoin](doc/unreleased/crypto_coin.md)
   - [Faker::Currency](doc/unreleased/currency.md)
@@ -70,21 +67,6 @@ Contents
   - [Faker::Friends](doc/unreleased/friends.md)
   - [Faker::FunnyName](doc/unreleased/funny_name.md)
   - [Faker::GameOfThrones](doc/unreleased/game_of_thrones.md)
-  - [Faker::Games::Dota](doc/unreleased/games/dota.md)
-  - [Faker::Games::ElderScrolls](doc/unreleased/games/elder_scrolls.md)
-  - [Faker::Games::Fallout](doc/unreleased/games/fallout.md)
-  - [Faker::Games::HalfLife](doc/unreleased/games/half_life.md)
-  - [Faker::Games::Heroes](doc/unreleased/games/heroes.md)
-  - [Faker::Games::HeroesOfTheStorm](doc/unreleased/games/heroes_of_the_storm.md)
-  - [Faker::Games::LeagueOfLegends](doc/unreleased/games/league_of_legends.md)
-  - [Faker::Games::Myst](doc/unreleased/games/myst.md)
-  - [Faker::Games::Overwatch](doc/unreleased/games/overwatch.md)
-  - [Faker::Games::Pokemon](doc/unreleased/games/pokemon.md)
-  - [Faker::Games::SonicTheHedgehog](doc/unreleased/games/sonic_the_hedgehog.md)
-  - [Faker::Games::SuperSmashBros](doc/unreleased/games/super_smash_bros.md)
-  - [Faker::Games::Witcher](doc/unreleased/games/witcher.md)
-  - [Faker::Games::WorldOfWarcraft](doc/unreleased/games/world_of_warcraft.md)
-  - [Faker::Games::Zelda](doc/unreleased/games/zelda.md)
   - [Faker::Gender](doc/unreleased/gender.md)
   - [Faker::GreekPhilosophers](doc/unreleased/greek_philosophers.md)
   - [Faker::Hacker](doc/unreleased/hacker.md)
@@ -98,9 +80,6 @@ Contents
   - [Faker::IndustrySegments](doc/unreleased/industry_segments.md)
   - [Faker::Internet](doc/unreleased/internet.md)
   - [Faker::Invoice](doc/unreleased/invoice.md)
-  - [Faker::JapaneseMedia::DragonBall](doc/unreleased/japanese_media/dragon_ball.md)
-  - [Faker::JapaneseMedia::OnePiece](doc/unreleased/japanese_media/one_piece.md)
-  - [Faker::JapaneseMedia::SwordArtOnline](doc/unreleased/japanese_media/sword_art_online.md)
   - [Faker::Job](doc/unreleased/job.md)
   - [Faker::Json](doc/unreleased/json.md)
   - [Faker::Kpop](doc/unreleased/kpop.md)
@@ -117,8 +96,6 @@ Contents
   - [Faker::Military](doc/unreleased/military.md)
   - [Faker::MostInterestingManInTheWorld](doc/unreleased/most_interesting_man_in_the_world.md)
   - [Faker::Movie](doc/unreleased/movie.md)
-  - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
-  - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
   - [Faker::Movies::SouthPark](doc/unreleased/south_park.md)
   - [Faker::Music](doc/unreleased/music.md)
   - [Faker::Name](doc/unreleased/name.md)
@@ -172,6 +149,37 @@ Contents
   - [Faker::VForVendetta](doc/unreleased/v_for_vendetta.md)
   - [Faker::WorldCup](doc/unreleased/world_cup.md)
 
+### Creature
+  - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
+  - [Faker::Creature::Cat](doc/unreleased/creature/cat.md)
+  - [Faker::Creature::Dog](doc/unreleased/creature/dog.md)
+  
+### Games
+  - [Faker::Games::Dota](doc/unreleased/games/dota.md)
+  - [Faker::Games::ElderScrolls](doc/unreleased/games/elder_scrolls.md)
+  - [Faker::Games::Fallout](doc/unreleased/games/fallout.md)
+  - [Faker::Games::HalfLife](doc/unreleased/games/half_life.md)
+  - [Faker::Games::Heroes](doc/unreleased/games/heroes.md)
+  - [Faker::Games::HeroesOfTheStorm](doc/unreleased/games/heroes_of_the_storm.md)
+  - [Faker::Games::LeagueOfLegends](doc/unreleased/games/league_of_legends.md)
+  - [Faker::Games::Myst](doc/unreleased/games/myst.md)
+  - [Faker::Games::Overwatch](doc/unreleased/games/overwatch.md)
+  - [Faker::Games::Pokemon](doc/unreleased/games/pokemon.md)
+  - [Faker::Games::SonicTheHedgehog](doc/unreleased/games/sonic_the_hedgehog.md)
+  - [Faker::Games::SuperSmashBros](doc/unreleased/games/super_smash_bros.md)
+  - [Faker::Games::Witcher](doc/unreleased/games/witcher.md)
+  - [Faker::Games::WorldOfWarcraft](doc/unreleased/games/world_of_warcraft.md)
+  - [Faker::Games::Zelda](doc/unreleased/games/zelda.md)
+
+### Japanese Media
+  - [Faker::JapaneseMedia::DragonBall](doc/unreleased/japanese_media/dragon_ball.md)
+  - [Faker::JapaneseMedia::OnePiece](doc/unreleased/japanese_media/one_piece.md)
+  - [Faker::JapaneseMedia::SwordArtOnline](doc/unreleased/japanese_media/sword_art_online.md)
+
+### Movies
+  - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
+  - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
+  
 ## Usage
 
 ```ruby
