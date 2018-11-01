@@ -1,4 +1,3 @@
-- [NOTE](#note)
 - [Generators](#generators)
     - [Default](#default)
     - [Creature](#creature)
@@ -7,15 +6,12 @@
     - [Movies](#movies)
 - [Usage](#usage)
 
-### NOTE
-
-* Some of the objects below aren't released yet. If you want to use them, change the line in your gemfile to:
+## Generators 
+**NOTE: Some of the generators below aren't released yet. If you want to use them, change the line in your gemfile to:**
 
 ```ruby
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 ```
-
-## Generators 
 
 ### Default
   - [Faker::Address](doc/unreleased/address.md)
