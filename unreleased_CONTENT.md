@@ -1,10 +1,20 @@
+- [Usage](#usage)
 - [Generators](#generators)
     - [Default](#default)
     - [Creature](#creature)
     - [Games](#games)
     - [Japanese Media](#japanese-media)
     - [Movies](#movies)
-- [Usage](#usage)
+  
+## Usage
+
+```ruby
+require 'faker'
+
+Faker::Name.name      #=> "Christophe Bartell"
+
+Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+```
 
 ## Generators 
 **NOTE: Some of the generators below aren't released yet. If you want to use them, change the line in your gemfile to:**
@@ -183,13 +193,3 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 ### Movies
   - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
   - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
-  
-## Usage
-
-```ruby
-require 'faker'
-
-Faker::Name.name      #=> "Christophe Bartell"
-
-Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
-```
