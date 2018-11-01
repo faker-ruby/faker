@@ -2,41 +2,84 @@ AllCops:
   TargetRubyVersion: 2.3
 
 Lint/AmbiguousBlockAssociation:
+  Description: This cop checks for ambiguous block association with method when param passed without parentheses.
   Enabled: false
+
 Lint/UnifiedInteger:
+  Description: This cop checks for using Fixnum or Bignum constant.
   Enabled: false
 
 Metrics/AbcSize:
-  Enabled: false
-Metrics/BlockLength:
-  Enabled: false
-Metrics/ClassLength:
-  Enabled: false
-Metrics/CyclomaticComplexity:
-  Enabled: false
-Metrics/LineLength:
-  Enabled: false
-Metrics/MethodLength:
-  Enabled: false
-Metrics/PerceivedComplexity:
+  Description: This cop checks that the ABC size of methods is not higher than the configured maximum. 
   Enabled: false
 
+Metrics/BlockLength:
+  Description: This cop checks if the length of a block exceeds some maximum value.
+  Enabled: false
+
+Metrics/ClassLength:
+  Description: This cop checks if the length a class exceeds some maximum value. 
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Description: A complexity metric that is strongly correlated to the number of test
+    cases needed to validate a method.
+  Enabled: false
+  Max: 6
+
+Metrics/LineLength:
+  Description: This cop checks the length of lines in the source code. The maximum length is configurable. 
+  Enabled: false
+
+Metrics/MethodLength:
+  Description: This cop checks if the length of a method exceeds some maximum value. 
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Description: A complexity metric geared towards measuring complexity for a human reader.
+  Enabled: false
+  Max: 7
+
 Style/DateTime:
+  Description: This cop checks for consistent usage of the DateTime class over the Time class.
   Enabled: false
+
 Style/Documentation:
+  Description: This cop checks for missing top-level documentation of classes and modules.
   Enabled: false
+
 Style/EvalWithLocation:
+  Description: This cop checks eval method usage. eval can receive source location metadata, that are filename and line number.
   Exclude:
     - 'lib/faker/json.rb'
+
 Style/FrozenStringLiteralComment:
+  Description: Add the frozen_string_literal comment to the top of files to help transition from Ruby 2.3.0 to Ruby 3.0.
   Exclude:
     - 'lib/faker/json.rb'
     - 'test/test_faker_json.rb'
+
 Style/For:
+  Description: Checks use of for or each in multiline loops.
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#no-for-loops
   Enabled: false
+  EnforcedStyle: each
+  SupportedStyles:
+  - for
+  - each
+
 Style/RegexpLiteral:
+  Description: Use / or %r around regular expressions.
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#percent-r
   Enabled: false
+  EnforcedStyle: slashes
+  SupportedStyles:
+  - slashes
+  - percent_r
+  - mixed
+  AllowInnerSlashes: false
 
 Security/Eval:
+  Description: The use of eval represents a serious security risk.
   Exclude:
     - 'lib/faker/json.rb'

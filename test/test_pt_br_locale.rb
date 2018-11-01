@@ -12,8 +12,7 @@ class TestPtBrLocale < Test::Unit::TestCase
   end
 
   def test_pt_br_address_methods
-    assert Faker::Address.city_prefix.is_a? String
-    assert Faker::Address.city_suffix.is_a? String
+    assert Faker::Address.city.is_a? String
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.country.is_a? String
     assert Faker::Address.building_number.is_a? String
@@ -52,6 +51,16 @@ class TestPtBrLocale < Test::Unit::TestCase
   def test_pt_br_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
+  end
+
+  def test_pt_br_job_methods
+    assert Faker::Job.field.is_a? String
+    assert Faker::Job.seniority.is_a? String
+    assert Faker::Job.position.is_a? String
+    assert Faker::Job.key_skills.is_a? String
+    assert Faker::Job.employment_type.is_a? String
+    assert Faker::Job.education_level.is_a? String
+    assert Faker::Job.title.is_a? String
   end
 
   def test_pt_br_name_methods

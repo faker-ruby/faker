@@ -1,19 +1,25 @@
 # frozen_string_literal: true
 
 module Faker
-  class Overwatch < Base
+  module Overwatch
     class << self
+      extend Gem::Deprecate
+
       def hero
-        fetch('overwatch.heroes')
+        Faker::Games::Overwatch.hero
       end
 
       def location
-        fetch('overwatch.locations')
+        Faker::Games::Overwatch.location
       end
 
       def quote
-        fetch('overwatch.quotes')
+        Faker::Games::Overwatch.quote
       end
+
+      deprecate :hero, 'Faker::Games::Overwatch.hero', 2018, 10
+      deprecate :location, 'Faker::Games::Overwatch.location', 2018, 10
+      deprecate :quote, 'Faker::Games::Overwatch.quote', 2018, 10
     end
   end
 end

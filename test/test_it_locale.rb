@@ -51,4 +51,12 @@ class TestItLocale < Test::Unit::TestCase
   def test_it_phone_number_methods
     assert Faker::PhoneNumber.phone_number.is_a? String
   end
+
+  def test_it_subscription_methods
+    assert Faker::Subscription.plan.is_a? String
+    assert Faker::Subscription.status.is_a? String
+    assert Faker::Subscription.payment_method.is_a? String
+    assert Faker::Subscription.subscription_term.is_a? String
+    assert Faker::Subscription.payment_term.is_a? String
+  end
 end
