@@ -1,4 +1,4 @@
-# Faker::FamousLastWords
+# Faker::MarketingBuzzwords
 
 Available since version 1.9.0.
 
