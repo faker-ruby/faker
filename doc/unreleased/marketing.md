@@ -1,4 +1,4 @@
-# Faker::MarketingBuzzwords
+# Faker::Marketing
 
 Available since version 1.9.0.
 

@@ -2,12 +2,12 @@
 
 require_relative 'test_helper'
 
-class TestFakerMarketingBuzzwords < Test::Unit::TestCase
+class TestFakerMarketing < Test::Unit::TestCase
   def setup
-    @tester = Faker::MarketingBuzzwords
+    @tester = Faker::Marketing
   end
 
-  def test_name
+  def test_buzzwords
     assert @tester.buzzwords.match(/\w+/)
   end
 end
