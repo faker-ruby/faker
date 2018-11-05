@@ -111,6 +111,7 @@ Contents
   - [Faker::LoremPixel](doc/unreleased/lorem_pixel.md)
   - [Faker::Lovecraft](doc/unreleased/lovecraft.md)
   - [Faker::Markdown](doc/unreleased/markdown.md)
+  - [Faker::Marketing](doc/unreleased/marketing.md)
   - [Faker::Matz](doc/unreleased/matz.md)
   - [Faker::Measurement](doc/unreleased/measurement.md)
   - [Faker::MichaelScott](doc/unreleased/michael_scott.md)
