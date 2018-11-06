@@ -44,7 +44,7 @@ module Faker
       def gb_licence_year(dob, gender)
         decade = (dob.year / 10) % 10
         year = dob.year % 10
-        month = gender == :female ? dob.month + 5 : dob.month
+        month = gender == :female ? dob.month + 50 : dob.month
         # Rubocop's preferred formatting is pretty gory
         # rubocop:disable FormatString
         "#{decade}#{'%02d' % month}#{'%02d' % dob.day}#{year}"
