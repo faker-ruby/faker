@@ -56,6 +56,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1466](https://github.com/stympy/faker/pull/1466) Add Faker::Address.country_name_to_code(name: 'united_states') [@vbrazo](https://github.com/vbrazo)
 - [PR #1465](https://github.com/stympy/faker/pull/1465) Add Faker.country(country_code: nil) [@vbrazo](https://github.com/vbrazo)
 - [PR #1460](https://github.com/stympy/faker/pull/1460) Add Faker::Marketing [@susiirwin](https://github.com/susiirwin)
 - [PR #1451](https://github.com/stympy/faker/pull/1451) Add first name 'Simão' and title prefix to 'Eng.' [@jellyfunk](https://github.com/jellyfunk)
