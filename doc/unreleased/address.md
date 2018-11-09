@@ -35,6 +35,12 @@ Faker::Address.state_abbr #=> "AP"
 
 Faker::Address.country #=> "French Guiana"
 
+# Optional arguments: code
+Faker::Address.country_by_code(code: 'NL') #=> "Netherlands"
+
+# Optional arguments: name
+Faker::Address.country_name_to_code(name: 'united_states') #=> "US"
+
 Faker::Address.country_code #=> "IT"
 
 Faker::Address.country_code_long #=> "ITA"
