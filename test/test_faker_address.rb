@@ -59,6 +59,10 @@ class TestFakerAddress < Test::Unit::TestCase
     assert @tester.country.match(/\w+/)
   end
 
+  def test_country_by_code
+    assert @tester.country(code: 'NL').match('Netherlands')
+  end
+
   def test_country_code
     assert @tester.country_code.match(/[A-Z]{2}/)
   end

@@ -3,6 +3,7 @@
 ## HEAD Unreleased
 
 ### Bug/Fixes
+- [PR #1456](https://github.com/stympy/faker/pull/1456) fix: omit . from slug [@ivanoblomov](https://github.com/ivanoblomov)
 - [PR #1436](https://github.com/stympy/faker/pull/1436) Fix regex and add magic string to pass rubocop check [@jakrzus](https://github.com/jakrzus)
 - [PR #1425](https://github.com/stympy/faker/pull/1425) NHS: fix occasional bad numbers [@ChaoticBoredom](https://github.com/ChaoticBoredom)
 - [PR #1421](https://github.com/stympy/faker/pull/1421) Faker::Internet.user_name can't handle UTF-8 arguments [@ivanoblomov](https://github.com/ivanoblomov)
@@ -19,6 +20,7 @@
 - [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
+- [PR #1457](https://github.com/stympy/faker/pull/1457) Add tests for new Faker::Internet.slug glue [@vbrazo](https://github.com/vbrazo)
 - [PR #1434](https://github.com/stympy/faker/pull/1434) Add keyword argument to Faker::Games::Dota.quote [@vbrazo](https://github.com/vbrazo)
 - [PR #1420](https://github.com/stympy/faker/pull/1420) Add Faker::JapaneseMedia namespace [@boardfish](https://github.com/boardfish)
 - [PR #1411](https://github.com/stympy/faker/pull/1411) Add several missing locales [@vbrazo](https://github.com/vbrazo)
@@ -39,6 +41,7 @@
 - [PR #803](https://github.com/stympy/faker/pull/803) Modify Faker::Educator, Fix #576 [@ghbooth12](https://github.com/ghbooth12)
 
 ### Documentation
+- [PR #1462](https://github.com/stympy/faker/pull/1462) Fix documentation on Faker::Avatar [@mrstebo](https://github.com/mrstebo)
 - [PR #1445](https://github.com/stympy/faker/pull/1445) Separate README.md: unreleased and latest version [@vbrazo](https://github.com/vbrazo)
 - [PR #1243](https://github.com/stympy/faker/pull/1243) Add image file method to placeholdit [@nicolas-brousse](https://github.com/nicolas-brousse)
 - [PR #1419](https://github.com/stympy/faker/pull/1419) Update CONTRIBUTING.md [@vbrazo](https://github.com/vbrazo)
@@ -53,6 +56,10 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1465](https://github.com/stympy/faker/pull/1465) Add Faker.country(country_code: nil) [@vbrazo](https://github.com/vbrazo)
+- [PR #1460](https://github.com/stympy/faker/pull/1460) Add Faker::Marketing [@susiirwin](https://github.com/susiirwin)
+- [PR #1451](https://github.com/stympy/faker/pull/1451) Add first name 'Simão' and title prefix to 'Eng.' [@jellyfunk](https://github.com/jellyfunk)
+- [PR #1433](https://github.com/stympy/faker/pull/1433) Add Faker::DrivingLicence [@jellyfunk](https://github.com/jellyfunk)
 - [PR #1440](https://github.com/stympy/faker/pull/1440) Add Faker::Subscription [@fabersky](https://github.com/fabersky)
 - [PR #1438](https://github.com/stympy/faker/pull/1438) Add Faker::Football.position [@fblupi](https://github.com/fblupi)
 - [PR #1426](https://github.com/stympy/faker/pull/1426) Add Faker::PhoneNumber.country_code [@AmrAdelKhalil](https://github.com/AmrAdelKhalil)
@@ -97,6 +104,12 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1464](https://github.com/stympy/faker/pull/1464) Add dog breed for Japanese [@yizknn](https://github.com/yizknn)
+- [PR #1461](https://github.com/stympy/faker/pull/1461) Add Orphea to heroes of the storm locale file. [@eddorre](https://github.com/eddorre)
+- [PR #1458](https://github.com/stympy/faker/pull/1458) Update Faker::DragonBall.characters locales [@JoaoHenriqueVale](https://github.com/JoaoHenriqueVale)
+- [PR #1450](https://github.com/stympy/faker/pull/1450) Update device list and serial codes [@raresabr](https://github.com/raresabr)
+- [PR #1443](https://github.com/stympy/faker/pull/1443) Add new array of cities from brazil [@WilliamCSA04](https://github.com/WilliamCSA04)
+- [PR #1447](https://github.com/stympy/faker/pull/1447) Add Maroon 5 and Paramore to music [@Jcambass](https://github.com/Jcambass)
 - [PR #1446](https://github.com/stympy/faker/pull/1446) fix: Remove deplicate 'color' from ja.yml [@yizknn](https://github.com/yizknn)
 - [PR #1441](https://github.com/stympy/faker/pull/1441) Add Faker::Job pt-BR locales [@wellingtongvs](https://github.com/wellingtongvs)
 - [PR #1428](https://github.com/stympy/faker/pull/1428) Add Faker::Games::SonicTheHedgehog.game [@boardfish](https://github.com/boardfish)
@@ -243,6 +256,7 @@
 - [PR #719](https://github.com/stympy/faker/pull/719) Random words to add should be 0 [@swapsCAPS](https://github.com/swapsCAPS)
 
 ### Documentation
+- [PR #1453](https://github.com/stympy/faker/pull/1453) Add description to Rubocop cops [@vbrazo](https://github.com/vbrazo)
 - [PR #1121](https://github.com/stympy/faker/pull/1121) Better docs for Faker::Food.description [@jujulisan](https://github.com/jujulisan)
 - [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [@mrstebo](https://github.com/mrstebo)
 - [PR #1256](https://github.com/stympy/faker/pull/1256) Fixing documentation - Faker::Name to Faker::Zelda [@mrstebo](https://github.com/mrstebo)

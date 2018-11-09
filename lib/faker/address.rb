@@ -67,8 +67,8 @@ module Faker
         fetch('address.state')
       end
 
-      def country
-        fetch('address.country')
+      def country(code: nil)
+        code.nil? ? fetch('address.country') : fetch('address.country_by_code.' + code)
       end
 
       def country_code
