@@ -60,7 +60,11 @@ class TestFakerAddress < Test::Unit::TestCase
   end
 
   def test_country_by_code
-    assert @tester.country(code: 'NL').match('Netherlands')
+    assert @tester.country_by_code(code: 'NL').match('Netherlands')
+  end
+
+  def test_country_name_to_code
+    assert @tester.country_name_to_code(name: 'united_states').match('US')
   end
 
   def test_country_code
