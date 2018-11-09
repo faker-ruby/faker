@@ -19,6 +19,11 @@ pl:
         - "#{street_name} #{building_number}"
       default_country: [Polska]
 
+    coin:
+      flip:
+        - Orzeł
+        - Reszka
+
     company:
       suffix: [S.A., sp. z o.o., sp. j., sp.p., sp. k., S.K.A.]
       # Buzzword wordlist from http://www.1728.com/buzzword.htm
