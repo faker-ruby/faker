@@ -18,6 +18,10 @@ module Faker
       def competition
         fetch('football.competitions')
       end
+
+      def position
+        fetch('football.positions')
+      end
     end
   end
 end

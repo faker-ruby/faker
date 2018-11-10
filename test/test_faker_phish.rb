@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestFakerPhish < Test::Unit::TestCase
   def setup
-    @tester = Faker::Phish
+    @tester = Faker::Music::Phish
   end
 
   def test_song

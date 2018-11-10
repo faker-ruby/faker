@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 module Faker
-  class Phish < Base
-    class << self
-      def song
-        fetch('phish.song')
+  class Music
+    class Phish < Base
+      class << self
+        def song
+          fetch('phish.song')
+        end
       end
     end
   end

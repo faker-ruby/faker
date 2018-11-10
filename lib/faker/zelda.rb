@@ -1,24 +1,30 @@
 # frozen_string_literal: true
 
 module Faker
-  class Zelda < Base
-    flexible :space
+  module Zelda
     class << self
+      extend Gem::Deprecate
+
       def game
-        fetch('zelda.games')
+        Faker::Games::Zelda.game
       end
 
       def character
-        fetch('zelda.characters')
+        Faker::Games::Zelda.character
       end
 
       def location
-        fetch('zelda.locations')
+        Faker::Games::Zelda.location
       end
 
       def item
-        fetch('zelda.items')
+        Faker::Games::Zelda.item
       end
+
+      deprecate :game, 'Faker::Games::Zelda.game', 2018, 10
+      deprecate :character, 'Faker::Games::Zelda.character', 2018, 10
+      deprecate :location, 'Faker::Games::Zelda.location', 2018, 10
+      deprecate :item, 'Faker::Games::Zelda.item', 2018, 10
     end
   end
 end

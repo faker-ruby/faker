@@ -1,21 +1,25 @@
 # frozen_string_literal: true
 
 module Faker
-  class Cat < Base
-    flexible :cat
-
+  module Cat
     class << self
+      extend Gem::Deprecate
+
       def name
-        fetch('cat.name')
+        Faker::Creature::Cat.name
       end
 
       def breed
-        fetch('cat.breed')
+        Faker::Creature::Cat.breed
       end
 
       def registry
-        fetch('cat.registry')
+        Faker::Creature::Cat.registry
       end
+
+      deprecate :name, 'Faker::Creature::Cat.name', 2018, 10
+      deprecate :breed, 'Faker::Creature::Cat.breed', 2018, 10
+      deprecate :registry, 'Faker::Creature::Cat.registry', 2018, 10
     end
   end
 end

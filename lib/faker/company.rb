@@ -128,6 +128,7 @@ module Faker
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
       def polish_register_of_national_economy(length = 9)
         raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
+
         random_digits = []
         loop do
           random_digits = Array.new(length) { rand(10) }
@@ -150,6 +151,19 @@ module Faker
 
       def south_african_trust_registration_number
         regexify(/IT\d{2,4}\/\d{2,10}/)
+      end
+
+      def brazilian_company_number
+        digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
+
+        factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
+
+        2.times do
+          checksum = digits.inject(0) { |acc, digit| acc + digit * factors.next } % 11
+          digits << (checksum < 2 ? 0 : 11 - checksum)
+        end
+
+        digits.join
       end
 
       private

@@ -18,9 +18,11 @@ Ways to run Rubocop:
 
 7. When adding a new class, add a new yaml file to `lib/locales/en` rather than adding translations to `lib/locales/en.yml`.  For example, if you add Faker::MyThing, put your translations in `lib/locales/en/my_thing.yml`.  See [the locale README](./lib/locales/en/README.md) for more info.
 
-8. Methods with optional arguments should use keyword rather than positional arguments. An exception to this could be a method that takes only one optional argument, and it's unlikely that that method would ever take more than one optional argument.
+8. When removing a method, don't forget to deprecate it. You can `extend Gem::Deprecate` and use the `deprecate` method to accomplish this task.
 
-9. Push to your fork and submit a pull request.
+9. Methods with optional arguments should use keyword rather than positional arguments. An exception to this could be a method that takes only one optional argument, and it's unlikely that that method would ever take more than one optional argument. 
+
+10. Push to your fork and submit a pull request.
 
 ### Github Flow for contributors and collaborators
 
@@ -32,7 +34,7 @@ For those of you with commit access, please check out Scott Chacon's blog post a
 > * When you need feedback or help, or you think the branch is ready for merging, open a pull request
 > * After someone else has reviewed and signed off on the feature, you can merge it into master
 
-If you're reviewing a PR, you should ask youserlf:
+If you're reviewing a PR, you should ask yourself:
 > * Does it work as described? A PR should have a great description.
 > * Is it understandable?
 > * Is it well implemented?
