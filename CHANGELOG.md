@@ -56,6 +56,8 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1387](https://github.com/stympy/faker/pull/1387) Add Faker::Music::Phish [@nbolser](https://github.com/nbolser)
+- [PR #1430](https://github.com/stympy/faker/pull/1430) Adding Faker::Company.brazilian_company_number [@gabteles](https://github.com/gabteles)
 - [PR #1449](https://github.com/stympy/faker/pull/1449) Add Faker::Coin [@jerryskye](https://github.com/jerryskye)
 - [PR #1466](https://github.com/stympy/faker/pull/1466) Add Faker::Address.country_name_to_code(name: 'united_states') [@vbrazo](https://github.com/vbrazo)
 - [PR #1465](https://github.com/stympy/faker/pull/1465) Add Faker.country(country_code: nil) [@vbrazo](https://github.com/vbrazo)
@@ -106,6 +108,7 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1468](https://github.com/stympy/faker/pull/1468) Update "Black Pink" to "Blackpink" [@agungyuliaji](https://github.com/agungyuliaji)
 - [PR #1464](https://github.com/stympy/faker/pull/1464) Add dog breed for Japanese [@yizknn](https://github.com/yizknn)
 - [PR #1461](https://github.com/stympy/faker/pull/1461) Add Orphea to heroes of the storm locale file. [@eddorre](https://github.com/eddorre)
 - [PR #1458](https://github.com/stympy/faker/pull/1458) Update Faker::DragonBall.characters locales [@JoaoHenriqueVale](https://github.com/JoaoHenriqueVale)

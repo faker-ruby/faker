@@ -123,6 +123,7 @@ Contents
   - [Faker::Movies::GratefulDead](doc/unreleased/grateful_dead.md)
   - [Faker::Movies::SouthPark](doc/unreleased/south_park.md)
   - [Faker::Music](doc/unreleased/music.md)
+  - [Faker::Music::Phish](doc/unreleased/phish.md)
   - [Faker::Name](doc/unreleased/name.md)
   - [Faker::Nation](doc/unreleased/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/unreleased/nato_phonetic_alphabet.md)
