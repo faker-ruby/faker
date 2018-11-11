@@ -256,8 +256,8 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
 
 ### Music
-  - [Faker::Music](doc/unreleased/music.md)
-  - [Faker::Music::Phish](doc/unreleased/phish.md)
+  - [Faker::Music](doc/unreleased/music/music.md)
+  - [Faker::Music::Phish](doc/unreleased/music/phish.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/unreleased/tv_shows/aqua_teen_hunger_force.md)
