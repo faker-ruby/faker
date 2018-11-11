@@ -153,6 +153,19 @@ module Faker
         regexify(/IT\d{2,4}\/\d{2,10}/)
       end
 
+      def brazilian_company_number
+        digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
+
+        factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
+
+        2.times do
+          checksum = digits.inject(0) { |acc, digit| acc + digit * factors.next } % 11
+          digits << (checksum < 2 ? 0 : 11 - checksum)
+        end
+
+        digits.join
+      end
+
       private
 
       # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb

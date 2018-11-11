@@ -25,6 +25,10 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Cat.breed.is_a? String
   end
 
+  def test_ja_dog_methods
+    assert Faker::Dog.breed.is_a? String
+  end
+
   def test_ja_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.category.is_a? String

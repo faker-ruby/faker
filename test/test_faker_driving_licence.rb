@@ -18,8 +18,8 @@ class TestFakerDrivingLicence < Test::Unit::TestCase
     # comprising:
     # Single digit decade of birth
     assert_includes 0..9, sample[5].to_i
-    # 2 digit month of birth (add 5 if female)
-    assert_includes 1..17, sample[6..7].to_i
+    # 2 digit month of birth (add 5 to first digit if female)
+    assert_includes [1..12, 51..62].map(&:to_a).flatten, sample[6..7].to_i
     # 2 digit day of birth
     assert_includes 1..31, sample[8..9].to_i
     # and least significant digit of birth year
@@ -56,7 +56,7 @@ class TestFakerDrivingLicence < Test::Unit::TestCase
     male = @tester.british_driving_licence(date_of_birth: date_of_birth, gender: :male)
     assert_equal '702138', male[5..10]
     female = @tester.british_driving_licence(date_of_birth: date_of_birth, gender: :female)
-    assert_equal '707138', female[5..10]
+    assert_equal '752138', female[5..10]
   end
 
   def test_british_licence_correctly_builds_initials
