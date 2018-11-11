@@ -3,17 +3,23 @@
 module Faker
   class Seinfeld < Base
     class << self
+      extend Gem::Deprecate
+
       def business
-        fetch('seinfeld.business')
+        Faker::TvShows::Seinfeld.business
       end
 
       def character
-        fetch('seinfeld.character')
+        Faker::TvShows::Seinfeld.character
       end
 
       def quote
-        fetch('seinfeld.quote')
+        Faker::TvShows::Seinfeld.quote
       end
+
+      deprecate :business, 'Faker::TvShows::Seinfeld.business', 2018, 10
+      deprecate :character, 'Faker::TvShows::Seinfeld.character', 2018, 10
+      deprecate :quote, 'Faker::TvShows::Seinfeld.quote', 2018, 10
     end
   end
 end

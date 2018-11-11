@@ -3,9 +3,13 @@
 module Faker
   class AquaTeenHungerForce < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('aqua_teen_hunger_force.character')
+        Faker::TvShows::AquaTeenHungerForce.character
       end
+
+      deprecate :character, 'Faker::TvShows::AquaTeenHungerForce.character', 2018, 10
     end
   end
 end

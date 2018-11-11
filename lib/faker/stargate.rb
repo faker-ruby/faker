@@ -3,17 +3,23 @@
 module Faker
   class Stargate < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('stargate.characters')
+        Faker::TvShows::Stargate.character
       end
 
       def planet
-        fetch('stargate.planets')
+        Faker::TvShows::Stargate.planet
       end
 
       def quote
-        fetch('stargate.quotes')
+        Faker::TvShows::Stargate.quote
       end
+
+      deprecate :character, 'Faker::TvShows::Stargate.character', 2018, 10
+      deprecate :planet, 'Faker::TvShows::Stargate.planet', 2018, 10
+      deprecate :quote, 'Faker::TvShows::Stargate.quote', 2018, 10
     end
   end
 end

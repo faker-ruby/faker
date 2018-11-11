@@ -3,13 +3,18 @@
 module Faker
   class ParksAndRec < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('parks_and_rec.characters')
+        Faker::TvShows::ParksAndRec.character
       end
 
       def city
-        fetch('parks_and_rec.cities')
+        Faker::TvShows::ParksAndRec.city
       end
+
+      deprecate :character, 'Faker::TvShows::ParksAndRec.character', 2018, 10
+      deprecate :city, 'Faker::TvShows::ParksAndRec.city', 2018, 10
     end
   end
 end

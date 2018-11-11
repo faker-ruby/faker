@@ -2,32 +2,44 @@
 
 module Faker
   class DrWho < Base
-    def self.character
-      fetch('dr_who.character')
-    end
+    class << self
+      extend Gem::Deprecate
 
-    def self.the_doctor
-      fetch('dr_who.the_doctors')
-    end
+      def character
+        Faker::TvShows::DrWho.character
+      end
 
-    def self.actor
-      fetch('dr_who.actors')
-    end
+      def the_doctor
+        Faker::TvShows::DrWho.the_doctor
+      end
 
-    def self.catch_phrase
-      fetch('dr_who.catch_phrases')
-    end
+      def actor
+        Faker::TvShows::DrWho.actor
+      end
 
-    def self.quote
-      fetch('dr_who.quotes')
-    end
+      def catch_phrase
+        Faker::TvShows::DrWho.catch_phrase
+      end
 
-    def self.villian
-      fetch('dr_who.villians')
-    end
+      def quote
+        Faker::TvShows::DrWho.quote
+      end
 
-    def self.specie
-      fetch('dr_who.species')
+      def villian
+        Faker::TvShows::DrWho.villian
+      end
+
+      def specie
+        Faker::TvShows::DrWho.specie
+      end
+
+      deprecate :character, 'Faker::TvShows::DrWho.character', 2018, 10
+      deprecate :the_doctor, 'Faker::TvShows::DrWho.the_doctor', 2018, 10
+      deprecate :actor, 'Faker::TvShows::DrWho.actor', 2018, 10
+      deprecate :catch_phrase, 'Faker::TvShows::DrWho.catch_phrase', 2018, 10
+      deprecate :quote, 'Faker::TvShows::DrWho.quote', 2018, 10
+      deprecate :villian, 'Faker::TvShows::DrWho.villian', 2018, 10
+      deprecate :specie, 'Faker::TvShows::DrWho.specie', 2018, 10
     end
   end
 end

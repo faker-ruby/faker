@@ -3,17 +3,23 @@
 module Faker
   class RickAndMorty < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('rick_and_morty.characters')
+        Faker::TvShows::RickAndMorty.character
       end
 
       def location
-        fetch('rick_and_morty.locations')
+        Faker::TvShows::RickAndMorty.location
       end
 
       def quote
-        fetch('rick_and_morty.quotes')
+        Faker::TvShows::RickAndMorty.quote
       end
+
+      deprecate :character, 'Faker::TvShows::RickAndMorty.character', 2018, 10
+      deprecate :location, 'Faker::TvShows::RickAndMorty.location', 2018, 10
+      deprecate :quote, 'Faker::TvShows::RickAndMorty.quote', 2018, 10
     end
   end
 end

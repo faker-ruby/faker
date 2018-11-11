@@ -1,9 +1,9 @@
-# Faker::FamilyGuy
+# Faker::TvShows::FamilyGuy
 
 ```ruby
-Faker::FamilyGuy.character #=> "Peter Griffin"
+Faker::TvShows::FamilyGuy.character #=> "Peter Griffin"
 
-Faker::FamilyGuy.location #=> "James Woods High"
+Faker::TvShows::FamilyGuy.location #=> "James Woods High"
 
-Faker::FamilyGuy.quote #=> "It’s Peanut Butter Jelly Time."
+Faker::TvShows::FamilyGuy.quote #=> "It’s Peanut Butter Jelly Time."
 ```

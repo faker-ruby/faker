@@ -3,17 +3,23 @@
 module Faker
   class BojackHorseman < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('bojack_horseman.characters')
+        Faker::TvShows::BojackHorseman.character
       end
 
       def tongue_twister
-        fetch('bojack_horseman.tongue_twisters')
+        Faker::TvShows::BojackHorseman.tongue_twister
       end
 
       def quote
-        fetch('bojack_horseman.quotes')
+        Faker::TvShows::BojackHorseman.quote
       end
+
+      deprecate :character, 'Faker::TvShows::BojackHorseman.character', 2018, 10
+      deprecate :tongue_twister, 'Faker::TvShows::BojackHorseman.tongue_twister', 2018, 10
+      deprecate :quote, 'Faker::TvShows::BojackHorseman.quote', 2018, 10
     end
   end
 end

@@ -3,21 +3,28 @@
 module Faker
   class StarTrek < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('star_trek.character')
+        Faker::TvShows::StarTrek.character
       end
 
       def location
-        fetch('star_trek.location')
+        Faker::TvShows::StarTrek.location
       end
 
       def specie
-        fetch('star_trek.specie')
+        Faker::TvShows::StarTrek.specie
       end
 
       def villain
-        fetch('star_trek.villain')
+        Faker::TvShows::StarTrek.villain
       end
+
+      deprecate :character, 'Faker::TvShows::StarTrek.character', 2018, 10
+      deprecate :location, 'Faker::TvShows::StarTrek.location', 2018, 10
+      deprecate :specie, 'Faker::TvShows::StarTrek.specie', 2018, 10
+      deprecate :villain, 'Faker::TvShows::StarTrek.villain', 2018, 10
     end
   end
 end

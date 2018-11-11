@@ -3,13 +3,18 @@
 module Faker
   class NewGirl < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('new_girl.characters')
+        Faker::TvShows::NewGirl.character
       end
 
       def quote
-        fetch('new_girl.quotes')
+        Faker::TvShows::NewGirl.quote
       end
+
+      deprecate :character, 'Faker::TvShows::NewGirl.character', 2018, 10
+      deprecate :quote, 'Faker::TvShows::NewGirl.quote', 2018, 10
     end
   end
 end

@@ -3,25 +3,33 @@
 module Faker
   class Buffy < Base
     class << self
+      extend Gem::Deprecate
+
       def character
-        fetch('buffy.characters')
+        Faker::TvShows::Buffy.character
       end
 
       def quote
-        fetch('buffy.quotes')
+        Faker::TvShows::Buffy.quote
       end
 
       def celebrity
-        fetch('buffy.celebrities')
+        Faker::TvShows::Buffy.celebrity
       end
 
       def big_bad
-        fetch('buffy.big_bads')
+        Faker::TvShows::Buffy.big_bad
       end
 
       def episode
-        fetch('buffy.episodes')
+        Faker::TvShows::Buffy.episode
       end
+
+      deprecate :character, 'Faker::TvShows::Buffy.character', 2018, 10
+      deprecate :quote, 'Faker::TvShows::Buffy.quote', 2018, 10
+      deprecate :celebrity, 'Faker::TvShows::Buffy.celebrity', 2018, 10
+      deprecate :big_bad, 'Faker::TvShows::Buffy.big_bad', 2018, 10
+      deprecate :episode, 'Faker::TvShows::Buffy.episode', 2018, 10
     end
   end
 end

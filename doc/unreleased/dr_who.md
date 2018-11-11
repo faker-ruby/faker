@@ -1,17 +1,17 @@
-# Faker::DrWho
+# Faker::TvShows::DrWho
 
 ```ruby
-Faker::DrWho.character    #=> "Captain Jack Harkness"
+Faker::TvShows::DrWho.character    #=> "Captain Jack Harkness"
 
-Faker::DrWho.the_doctor   #=> "Ninth Doctor"
+Faker::TvShows::DrWho.the_doctor   #=> "Ninth Doctor"
 
-Faker::DrWho.actor        #=> "Matt Smith"
+Faker::TvShows::DrWho.actor        #=> "Matt Smith"
 
-Faker::DrWho.catch_phrase #=> "Fantastic!"
+Faker::TvShows::DrWho.catch_phrase #=> "Fantastic!"
 
-Faker::DrWho.quote        #=> "Lots of planets have a north!"
+Faker::TvShows::DrWho.quote        #=> "Lots of planets have a north!"
 
-Faker::DrWho.villian      #=> "The Master"
+Faker::TvShows::DrWho.villian      #=> "The Master"
 
-Faker::DrWho.specie       #=> "Dalek"
+Faker::TvShows::DrWho.specie       #=> "Dalek"
 ```
