@@ -182,7 +182,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::MichaelScott](doc/unreleased/default/michael_scott.md)
   - [Faker::Military](doc/unreleased/default/military.md)
   - [Faker::MostInterestingManInTheWorld](doc/unreleased/default/most_interesting_man_in_the_world.md)
-  - [Faker::Movie](doc/unreleased/default/movie.md)
   - [Faker::Name](doc/unreleased/default/name.md)
   - [Faker::Nation](doc/unreleased/default/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/unreleased/default/nato_phonetic_alphabet.md)
@@ -245,6 +244,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::JapaneseMedia::SwordArtOnline](doc/unreleased/japanese_media/sword_art_online.md)
 
 ### Movies
+  - [Faker::Movie](doc/unreleased/default/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/unreleased/movies/back_to_the_future.md)
   - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
   - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
