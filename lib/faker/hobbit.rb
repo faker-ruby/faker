@@ -4,20 +4,25 @@ module Faker
   class Hobbit < Base
     class << self
       def character
-        fetch('hobbit.character')
+        Faker::Movies::Hobbit.character
       end
 
       def thorins_company
-        fetch('hobbit.thorins_company')
+        Faker::Movies::Hobbit.thorins_company
       end
 
       def quote
-        fetch('hobbit.quote')
+        Faker::Movies::Hobbit.quote
       end
 
       def location
-        fetch('hobbit.location')
+        Faker::Movies::Hobbit.location
       end
+
+      deprecate :character, 'Faker::Movies::Hobbit.character', 2018, 12
+      deprecate :thorins_company, 'Faker::Movies::Hobbit.thorins_company', 2018, 12
+      deprecate :quote, 'Faker::Movies::Hobbit.quote', 2018, 12
+      deprecate :location, 'Faker::Movies::Hobbit.location', 2018, 12
     end
   end
 end
