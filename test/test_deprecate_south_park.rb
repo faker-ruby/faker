@@ -15,17 +15,3 @@ class TestDeprecateSouthPark < Test::Unit::TestCase
     assert @tester.quote.match(/\w+/)
   end
 end
-
-class TestDeprecateMoviesSouthPark < Test::Unit::TestCase
-  def setup
-    @tester = Faker::Movies::SouthPark
-  end
-
-  def test_character
-    assert @tester.character.match(/\w+/)
-  end
-
-  def test_quote
-    assert @tester.quote.match(/\w+/)
-  end
-end

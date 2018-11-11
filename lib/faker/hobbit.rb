@@ -3,6 +3,8 @@
 module Faker
   class Hobbit < Base
     class << self
+      extend Gem::Deprecate
+
       def character
         Faker::Movies::Hobbit.character
       end
