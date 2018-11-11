@@ -26,6 +26,7 @@ development.
     - [Games](#games)
     - [Japanese Media](#japanese-media)
     - [Movies](#movies)
+    - [Music](#music)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [Contact](#contact)
