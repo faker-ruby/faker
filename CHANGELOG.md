@@ -32,7 +32,10 @@
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
 ### Deprecation
-- [PR #1431](https://github.com/stympy/faker/pull/1431) Add Faker::TvShow namespace [@SpyMaster356](https://github.com/SpyMaster356)
+- [PR #1469](https://github.com/stympy/faker/pull/1469) Deprecate Faker::Hobbit and reorganize unreleased docs and tests [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::Hobbit`
+- [PR #1431](https://github.com/stympy/faker/pull/1431) Add Faker::TvShows namespace [@SpyMaster356](https://github.com/SpyMaster356)
+  - Deprecates `::AquaTeenHungerForce`, `::BojackHorseman`, `::BreakingBad`, `::Buffy`, `::Community`, `::DrWho`, `::DumbAndDumber`, `::FamilyGuy`, `::Friends`, `::GameOfThrones`, `::HeyArnold`, `::HowIMetYourMother`, `::NewGirl`, `::ParksAndRec`, `::RickAndMorty`, `::Seinfeld`, `::SiliconValley`, `::Simpsons`, `::SouthPark`, `::StarTrek`, `::Stargate`, `::StrangerThings`, `::TheFreshPrinceOfBelAir`, `::TheITCrowd`, `::TheThickOfIt`, `::TwinPeaks`, `::VentureBros`
 - [PR #1412](https://github.com/stympy/faker/pull/1412) Add Faker::Games namespace [@ChaoticBoredom](https://github.com/ChaoticBoredom)
   - Deprecates `::Dota`, `::ElderScrolls`, `::Fallout`, `::LeagueOfLegends`, `::Myst`, `::Overwatch`, `::Pokemon`, `::Witcher`, `::WorldOfWarcraft` and `::Zelda`
 - [PR #1424](https://github.com/stympy/faker/pull/1424) Add Faker::Creature namespace [@ChaoticBoredom](https://github.com/ChaoticBoredom)
