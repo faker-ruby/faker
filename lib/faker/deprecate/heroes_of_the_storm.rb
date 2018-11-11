@@ -21,10 +21,10 @@ module Faker
         Faker::Games::HeroesOfTheStorm.quote
       end
 
-      deprecate :battleground, 'Faker::Games::HeroesOfTheStorm.battleground', 2018, 10
-      deprecate :class, 'Faker::Games::HeroesOfTheStorm.class', 2018, 10
-      deprecate :hero, 'Faker::Games::HeroesOfTheStorm.hero', 2018, 10
-      deprecate :quote, 'Faker::Games::HeroesOfTheStorm.quote', 2018, 10
+      deprecate :battleground, 'Faker::Games::HeroesOfTheStorm.battleground', 2018, 12
+      deprecate :class, 'Faker::Games::HeroesOfTheStorm.class', 2018, 12
+      deprecate :hero, 'Faker::Games::HeroesOfTheStorm.hero', 2018, 12
+      deprecate :quote, 'Faker::Games::HeroesOfTheStorm.quote', 2018, 12
     end
   end
 end

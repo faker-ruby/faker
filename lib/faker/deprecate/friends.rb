@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::Friends.quote
       end
 
-      deprecate :character, 'Faker::TvShows::Friends.character', 2018, 10
-      deprecate :location, 'Faker::TvShows::Friends.location', 2018, 10
-      deprecate :quote, 'Faker::TvShows::Friends.quote', 2018, 10
+      deprecate :character, 'Faker::TvShows::Friends.character', 2018, 12
+      deprecate :location, 'Faker::TvShows::Friends.location', 2018, 12
+      deprecate :quote, 'Faker::TvShows::Friends.quote', 2018, 12
     end
   end
 end

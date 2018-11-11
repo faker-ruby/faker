@@ -17,9 +17,9 @@ module Faker
         Faker::Games::Pokemon.move
       end
 
-      deprecate :name, 'Faker::Games::Pokemon.name', 2018, 10
-      deprecate :location, 'Faker::Games::Pokemon.location', 2018, 10
-      deprecate :move, 'Faker::Games::Pokemon.move', 2018, 10
+      deprecate :name, 'Faker::Games::Pokemon.name', 2018, 12
+      deprecate :location, 'Faker::Games::Pokemon.location', 2018, 12
+      deprecate :move, 'Faker::Games::Pokemon.move', 2018, 12
     end
   end
 end

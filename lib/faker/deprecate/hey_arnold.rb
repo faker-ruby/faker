@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::HeyArnold.quote
       end
 
-      deprecate :character, 'Faker::TvShows::HeyArnold.character', 2018, 10
-      deprecate :location, 'Faker::TvShows::HeyArnold.location', 2018, 10
-      deprecate :quote, 'Faker::TvShows::HeyArnold.quote', 2018, 10
+      deprecate :character, 'Faker::TvShows::HeyArnold.character', 2018, 12
+      deprecate :location, 'Faker::TvShows::HeyArnold.location', 2018, 12
+      deprecate :quote, 'Faker::TvShows::HeyArnold.quote', 2018, 12
     end
   end
 end

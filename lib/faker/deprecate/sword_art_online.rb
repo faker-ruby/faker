@@ -21,10 +21,10 @@ module Faker
         Faker::JapaneseMedia::SwordArtOnline.item
       end
 
-      deprecate :real_name, 'Faker::JapaneseMedia::SwordArtOnline.real_name', 2018, 10
-      deprecate :game_name, 'Faker::JapaneseMedia::SwordArtOnline.game_name', 2018, 10
-      deprecate :location, 'Faker::JapaneseMedia::SwordArtOnline.location', 2018, 10
-      deprecate :item, 'Faker::JapaneseMedia::SwordArtOnline.item', 2018, 10
+      deprecate :real_name, 'Faker::JapaneseMedia::SwordArtOnline.real_name', 2018, 12
+      deprecate :game_name, 'Faker::JapaneseMedia::SwordArtOnline.game_name', 2018, 12
+      deprecate :location, 'Faker::JapaneseMedia::SwordArtOnline.location', 2018, 12
+      deprecate :item, 'Faker::JapaneseMedia::SwordArtOnline.item', 2018, 12
     end
   end
 end

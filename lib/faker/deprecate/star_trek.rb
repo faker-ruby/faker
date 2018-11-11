@@ -21,10 +21,10 @@ module Faker
         Faker::TvShows::StarTrek.villain
       end
 
-      deprecate :character, 'Faker::TvShows::StarTrek.character', 2018, 10
-      deprecate :location, 'Faker::TvShows::StarTrek.location', 2018, 10
-      deprecate :specie, 'Faker::TvShows::StarTrek.specie', 2018, 10
-      deprecate :villain, 'Faker::TvShows::StarTrek.villain', 2018, 10
+      deprecate :character, 'Faker::TvShows::StarTrek.character', 2018, 12
+      deprecate :location, 'Faker::TvShows::StarTrek.location', 2018, 12
+      deprecate :specie, 'Faker::TvShows::StarTrek.specie', 2018, 12
+      deprecate :villain, 'Faker::TvShows::StarTrek.villain', 2018, 12
     end
   end
 end

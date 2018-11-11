@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::TheThickOfIt.position
       end
 
-      deprecate :character, 'Faker::TvShows::TheThickOfIt.character', 2018, 10
-      deprecate :department, 'Faker::TvShows::TheThickOfIt.department', 2018, 10
-      deprecate :position, 'Faker::TvShows::TheThickOfIt.position', 2018, 10
+      deprecate :character, 'Faker::TvShows::TheThickOfIt.character', 2018, 12
+      deprecate :department, 'Faker::TvShows::TheThickOfIt.department', 2018, 12
+      deprecate :position, 'Faker::TvShows::TheThickOfIt.position', 2018, 12
     end
   end
 end

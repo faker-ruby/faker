@@ -25,11 +25,11 @@ module Faker
         Faker::Games::Dota.quote(hero: hero)
       end
 
-      deprecate :hero, 'Faker::Games::Dota.hero', 2018, 10
-      deprecate :item, 'Faker::Games::Dota.item', 2018, 10
-      deprecate :team, 'Faker::Games::Dota.team', 2018, 10
-      deprecate :player, 'Faker::Games::Dota.player', 2018, 10
-      deprecate :quote, 'Faker::Games::Dota.quote', 2018, 10
+      deprecate :hero, 'Faker::Games::Dota.hero', 2018, 12
+      deprecate :item, 'Faker::Games::Dota.item', 2018, 12
+      deprecate :team, 'Faker::Games::Dota.team', 2018, 12
+      deprecate :player, 'Faker::Games::Dota.player', 2018, 12
+      deprecate :quote, 'Faker::Games::Dota.quote', 2018, 12
     end
   end
 end

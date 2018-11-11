@@ -21,10 +21,10 @@ module Faker
         Faker::TvShows::HowIMetYourMother.quote
       end
 
-      deprecate :character, 'Faker::TvShows::HowIMetYourMother.character', 2018, 10
-      deprecate :catch_phrase, 'Faker::TvShows::HowIMetYourMother.catch_phrase', 2018, 10
-      deprecate :high_five, 'Faker::TvShows::HowIMetYourMother.high_five', 2018, 10
-      deprecate :quote, 'Faker::TvShows::HowIMetYourMother.quote', 2018, 10
+      deprecate :character, 'Faker::TvShows::HowIMetYourMother.character', 2018, 12
+      deprecate :catch_phrase, 'Faker::TvShows::HowIMetYourMother.catch_phrase', 2018, 12
+      deprecate :high_five, 'Faker::TvShows::HowIMetYourMother.high_five', 2018, 12
+      deprecate :quote, 'Faker::TvShows::HowIMetYourMother.quote', 2018, 12
     end
   end
 end

@@ -21,10 +21,10 @@ module Faker
         Faker::TvShows::VentureBros.quote
       end
 
-      deprecate :character, 'Faker::TvShows::VentureBros.character', 2018, 10
-      deprecate :organization, 'Faker::TvShows::VentureBros.organization', 2018, 10
-      deprecate :vehicle, 'Faker::TvShows::VentureBros.vehicle', 2018, 10
-      deprecate :quote, 'Faker::TvShows::VentureBros.quote', 2018, 10
+      deprecate :character, 'Faker::TvShows::VentureBros.character', 2018, 12
+      deprecate :organization, 'Faker::TvShows::VentureBros.organization', 2018, 12
+      deprecate :vehicle, 'Faker::TvShows::VentureBros.vehicle', 2018, 12
+      deprecate :quote, 'Faker::TvShows::VentureBros.quote', 2018, 12
     end
   end
 end

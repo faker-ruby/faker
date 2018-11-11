@@ -25,11 +25,11 @@ module Faker
         Faker::TvShows::GameOfThrones.dragon
       end
 
-      deprecate :character, 'Faker::TvShows::GameOfThrones.character', 2018, 10
-      deprecate :house, 'Faker::TvShows::GameOfThrones.house', 2018, 10
-      deprecate :city, 'Faker::TvShows::GameOfThrones.city', 2018, 10
-      deprecate :quote, 'Faker::TvShows::GameOfThrones.quote', 2018, 10
-      deprecate :dragon, 'Faker::TvShows::GameOfThrones.dragon', 2018, 10
+      deprecate :character, 'Faker::TvShows::GameOfThrones.character', 2018, 12
+      deprecate :house, 'Faker::TvShows::GameOfThrones.house', 2018, 12
+      deprecate :city, 'Faker::TvShows::GameOfThrones.city', 2018, 12
+      deprecate :quote, 'Faker::TvShows::GameOfThrones.quote', 2018, 12
+      deprecate :dragon, 'Faker::TvShows::GameOfThrones.dragon', 2018, 12
     end
   end
 end

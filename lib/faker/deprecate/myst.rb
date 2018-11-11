@@ -25,11 +25,11 @@ module Faker
         Faker::Games::Myst.quote
       end
 
-      deprecate :game, 'Faker::Games::Myst.game', 2018, 10
-      deprecate :creature, 'Faker::Games::Myst.creature', 2018, 10
-      deprecate :age, 'Faker::Games::Myst.age', 2018, 10
-      deprecate :character, 'Faker::Games::Myst.character', 2018, 10
-      deprecate :quote, 'Faker::Games::Myst.quote', 2018, 10
+      deprecate :game, 'Faker::Games::Myst.game', 2018, 12
+      deprecate :creature, 'Faker::Games::Myst.creature', 2018, 12
+      deprecate :age, 'Faker::Games::Myst.age', 2018, 12
+      deprecate :character, 'Faker::Games::Myst.character', 2018, 12
+      deprecate :quote, 'Faker::Games::Myst.quote', 2018, 12
     end
   end
 end

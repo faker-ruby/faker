@@ -9,7 +9,7 @@ module Faker
         Faker::TvShows::AquaTeenHungerForce.character
       end
 
-      deprecate :character, 'Faker::TvShows::AquaTeenHungerForce.character', 2018, 10
+      deprecate :character, 'Faker::TvShows::AquaTeenHungerForce.character', 2018, 12
     end
   end
 end
