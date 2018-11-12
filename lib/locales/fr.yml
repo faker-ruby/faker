@@ -15,6 +15,9 @@ fr:
         - "#{street_prefix} #{street_suffix}"
       street_address:
         - "#{building_number} #{street_name}"
+      full_address:
+        - "#{street_address}, #{zip_code} #{city}"
+        - "#{secondary_address}, #{street_address}, #{zip_code} #{city}"
       default_country: [France]
 
     company:
