@@ -2,9 +2,13 @@
 
 require_relative '../../test_helper'
 
-class TestFakerPrincessBride < Test::Unit::TestCase
+class TestFakerLebowski < Test::Unit::TestCase
   def setup
-    @tester = Faker::PrincessBride
+    @tester = Faker::Movies::Lebowski
+  end
+
+  def test_actor
+    assert @tester.actor.match(/\w+/)
   end
 
   def test_character

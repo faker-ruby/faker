@@ -117,7 +117,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Appliance](doc/unreleased/default/appliance.md)
   - [Faker::Artist](doc/unreleased/default/artist.md)
   - [Faker::Avatar](doc/unreleased/avatar.md)
-  - [Faker::BackToTheFuture](doc/unreleased/default/back_to_the_future.md)
   - [Faker::Bank](doc/unreleased/default/bank.md)
   - [Faker::Beer](doc/unreleased/default/beer.md)
   - [Faker::Bitcoin](doc/unreleased/default/bitcoin.md)
@@ -172,8 +171,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Job](doc/unreleased/default/job.md)
   - [Faker::Json](doc/unreleased/default/json.md)
   - [Faker::Kpop](doc/unreleased/default/kpop.md)
-  - [Faker::Lebowski](doc/unreleased/default/lebowski.md)
-  - [Faker::LordOfTheRings](doc/unreleased/default/lord_of_the_rings.md)
   - [Faker::Lorem](doc/unreleased/default/lorem.md)
   - [Faker::LoremFlickr](doc/unreleased/default/lorem_flickr.md)
   - [Faker::LoremPixel](doc/unreleased/default/lorem_pixel.md)
@@ -185,7 +182,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::MichaelScott](doc/unreleased/default/michael_scott.md)
   - [Faker::Military](doc/unreleased/default/military.md)
   - [Faker::MostInterestingManInTheWorld](doc/unreleased/default/most_interesting_man_in_the_world.md)
-  - [Faker::Movie](doc/unreleased/default/movie.md)
   - [Faker::Name](doc/unreleased/default/name.md)
   - [Faker::Nation](doc/unreleased/default/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/unreleased/default/nato_phonetic_alphabet.md)
@@ -194,7 +190,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Omniauth](doc/unreleased/default/omniauth.md)
   - [Faker::PhoneNumber](doc/unreleased/default/phone_number.md)
   - [Faker::Placeholdit](doc/unreleased/default/placeholdit.md)
-  - [Faker::PrincessBride](doc/unreleased/default/princess_bride.md)
   - [Faker::ProgrammingLanguage](doc/unreleased/default/programming_language.md)
   - [Faker::Relationship](doc/unreleased/default/relationship.md)
   - [Faker::Restaurant](doc/unreleased/default/restaurant.md)
@@ -207,7 +202,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Source](doc/unreleased/default/source.md)
   - [Faker::SouthAfrica](doc/unreleased/default/south_africa.md)
   - [Faker::Space](doc/unreleased/default/space.md)
-  - [Faker::StarWars](doc/unreleased/default/star_wars.md)
   - [Faker::String](doc/unreleased/default/string.md)
   - [Faker::Stripe](doc/unreleased/default/stripe.md)
   - [Faker::Subscription](doc/unreleased/default/subscription.md)
@@ -217,11 +211,9 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Time](doc/unreleased/default/time.md)
   - [Faker::Twitter](doc/unreleased/default/twitter.md)
   - [Faker::Types](doc/unreleased/default/types.md)
-  - [Faker::UmphreysMcgee](doc/unreleased/default/umphreys_mcgee.md)
   - [Faker::University](doc/unreleased/default/university.md)
   - [Faker::Vehicle](doc/unreleased/default/vehicle.md)
   - [Faker::Verbs](doc/unreleased/default/verbs.md)
-  - [Faker::VForVendetta](doc/unreleased/default/v_for_vendetta.md)
   - [Faker::WorldCup](doc/unreleased/default/world_cup.md)
 
 ### Creature
@@ -252,12 +244,20 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::JapaneseMedia::SwordArtOnline](doc/unreleased/japanese_media/sword_art_online.md)
 
 ### Movies
+  - [Faker::Movie](doc/unreleased/default/movie.md)
+  - [Faker::Movies::BackToTheFuture](doc/unreleased/movies/back_to_the_future.md)
   - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
   - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
+  - [Faker::Movies::Lebowski](doc/unreleased/movies/lebowski.md)
+  - [Faker::Movies::LordOfTheRings](doc/unreleased/movies/lord_of_the_rings.md)
+  - [Faker::Movies::PrincessBride](doc/unreleased/movies/princess_bride.md)
+  - [Faker::Movies::StarWars](doc/unreleased/movies/star_wars.md)
+  - [Faker::Movies::VForVendetta](doc/unreleased/movies/v_for_vendetta.md)
 
 ### Music
   - [Faker::Music](doc/unreleased/music/music.md)
   - [Faker::Music::Phish](doc/unreleased/music/phish.md)
+  - [Faker::Music::UmphreysMcgee](doc/unreleased/music/umphreys_mcgee.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/unreleased/tv_shows/aqua_teen_hunger_force.md)

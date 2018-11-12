@@ -1,18 +1,14 @@
 # frozen_string_literal: true
 
-require_relative '../../test_helper'
+require_relative '../test_helper'
 
-class TestFakerVForVendetta < Test::Unit::TestCase
+class TestDeprecatePrincessBride < Test::Unit::TestCase
   def setup
-    @tester = Faker::VForVendetta
+    @tester = Faker::PrincessBride
   end
 
   def test_character
     assert @tester.character.match(/\w+/)
-  end
-
-  def test_speech
-    assert @tester.speech.match(/\w+/)
   end
 
   def test_quote

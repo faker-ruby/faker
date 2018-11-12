@@ -4,7 +4,7 @@ require_relative '../../test_helper'
 
 class TestFakerStarWars < Test::Unit::TestCase
   def setup
-    @tester = Faker::StarWars
+    @tester = Faker::Movies::StarWars
   end
 
   def test_call_sign

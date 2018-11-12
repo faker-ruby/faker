@@ -2,17 +2,17 @@
 
 require_relative '../../test_helper'
 
-class TestFakerLordOfTheRings < Test::Unit::TestCase
+class TestFakerBackToTheFuture < Test::Unit::TestCase
   def setup
-    @tester = Faker::LordOfTheRings
+    @tester = Faker::Movies::BackToTheFuture
   end
 
   def test_character
     assert @tester.character.match(/\w+/)
   end
 
-  def test_location
-    assert @tester.location.match(/\w+/)
+  def test_date
+    assert @tester.date.match(/\w+/)
   end
 
   def test_quote
