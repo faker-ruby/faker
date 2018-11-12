@@ -24,8 +24,11 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.default_country.is_a? String
+    assert Faker::Address.full_address.is_a? String
     assert_match(/^[\d]{5}$/, Faker::Address.postcode)
     assert_match(/^\d+$/, Faker::Address.building_number)
+    full_address_regex = /(([a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s([\d]{5})\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
+    assert_match(full_address_regex, Faker::Address.full_address)
     assert_equal('France', Faker::Address.default_country)
   end
 
