@@ -43,6 +43,10 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Book.quote.is_a? String
   end
 
+  def test_fr_color_methods
+    assert Faker::Color.color_name.is_a? String
+  end
+  
   def test_fr_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.buzzword.is_a? String
