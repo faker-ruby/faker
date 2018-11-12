@@ -116,7 +116,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::App](doc/unreleased/default/app.md)
   - [Faker::Appliance](doc/unreleased/default/appliance.md)
   - [Faker::Artist](doc/unreleased/default/artist.md)
-  - [Faker::Avatar](doc/unreleased/avatar.md)
+  - [Faker::Avatar](doc/unreleased/default/avatar.md)
   - [Faker::Bank](doc/unreleased/default/bank.md)
   - [Faker::Beer](doc/unreleased/default/beer.md)
   - [Faker::Bitcoin](doc/unreleased/default/bitcoin.md)
