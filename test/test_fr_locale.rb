@@ -46,7 +46,25 @@ class TestFrLocale < Test::Unit::TestCase
   def test_fr_color_methods
     assert Faker::Color.color_name.is_a? String
   end
-  
+
+  def test_fr_compass_methods
+    direction_pattern = /^\w+(\-\w+){0,2}$/
+    cardinal_pattern = /^\w+$/
+    ordinal_pattern = /^\w+(\-\w+){1}$/
+    half_wind_patern = /^\w+(\-\w+){2}$/
+    letter_pattern = /^[NEOS]{1,3}$/
+
+    assert_match(direction_pattern, Faker::Compass.direction)
+    assert_match(cardinal_pattern, Faker::Compass.cardinal)
+    assert_match(ordinal_pattern, Faker::Compass.ordinal)
+    assert_match(half_wind_patern, Faker::Compass.half_wind)
+
+    assert_match(letter_pattern, Faker::Compass.abbreviation)
+    assert_match(letter_pattern, Faker::Compass.cardinal_abbreviation)
+    assert_match(letter_pattern, Faker::Compass.ordinal_abbreviation)
+    assert_match(letter_pattern, Faker::Compass.half_wind_abbreviation)
+  end
+
   def test_fr_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.buzzword.is_a? String

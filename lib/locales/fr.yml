@@ -23,6 +23,25 @@ fr:
     color:
       name: ["rouge", "vert", "bleu", "jaune", "violet", "vert menthe", "bleu sarcelle", "blanc", "noir", "orange", "rose", "gris", "marron", "turquoise", "brun", "bleu ciel", "saumon", "prune", "orchidée", "olive", "magenta", "vert citron", "ivoire", "indigo", "or", "fuchsia", "cyan", "azur", "lavande", "argent"]
 
+    compass:
+      cardinal:
+        word: ['nord', 'est', 'sud', 'ouest']
+        abbreviation:  ['N', 'E', 'S', 'O']
+      ordinal:
+        word:  ['nord-est', 'sud-est', 'sud-ouest', 'nord-ouest']
+        abbreviation:  ['NE', 'SE', 'SO', 'NO']
+      half-wind:
+        word:  ['nord-nord-est', 'est-nord-est', 'est-sud-est', 'sud-sud-est', 'sud-sud-ouest', 'ouest-sud-ouest', 'ouest-nord-ouest', 'nord-nord-ouest']
+        abbreviation:  ['NNE', 'ENE', 'ESE', 'SSE', 'SSO', 'OSO', 'ONO', 'NNO']
+      direction:
+        - "#{cardinal}"
+        - "#{ordinal}"
+        - "#{half_wind}"
+      abbreviation:
+        - "#{cardinal_abbreviation}"
+        - "#{ordinal_abbreviation}"
+        - "#{half_wind_abbreviation}"
+        
     company:
       suffix: [SARL, SA, EURL, SAS, SEM, SCOP, GIE, EI]
       # Buzzword wordlist from http://www.1728.com/buzzword.htm
