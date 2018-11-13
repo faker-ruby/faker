@@ -91,6 +91,19 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Lorem.words(10_000, true)
   end
 
+  def test_fr_measurement_methods
+    metric_height_pattern = /mètre/
+    metric_length_pattern = /mètre/
+    metric_volume_pattern = /litre|cube/
+    metric_weight_patern = /gramme|tonne/
+
+    assert_match(metric_height_pattern, Faker::Measurement.metric_height)
+    assert_match(metric_length_pattern, Faker::Measurement.metric_length)
+    assert_match(metric_volume_pattern, Faker::Measurement.metric_volume)
+    assert_match(metric_weight_patern, Faker::Measurement.metric_weight)
+
+  end
+
   def test_fr_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
