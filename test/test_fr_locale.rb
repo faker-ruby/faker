@@ -101,7 +101,6 @@ class TestFrLocale < Test::Unit::TestCase
     assert_match(metric_length_pattern, Faker::Measurement.metric_length)
     assert_match(metric_volume_pattern, Faker::Measurement.metric_volume)
     assert_match(metric_weight_patern, Faker::Measurement.metric_weight)
-
   end
 
   def test_fr_name_methods
