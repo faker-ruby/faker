@@ -41,7 +41,7 @@ fr:
         - "#{cardinal_abbreviation}"
         - "#{ordinal_abbreviation}"
         - "#{half_wind_abbreviation}"
-        
+
     company:
       suffix: [SARL, SA, EURL, SAS, SEM, SCOP, GIE, EI]
       # Buzzword wordlist from http://www.1728.com/buzzword.htm
@@ -58,6 +58,9 @@ fr:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name} et #{Name.last_name}"
 
+    demographic:
+      sex: ["Homme", "Femme"]
+      
     internet:
       free_email: [gmail.com, yahoo.fr, hotmail.fr]
       domain_suffix: [com, fr, eu, info, name, net, org, immo, paris, alsace, bzh]

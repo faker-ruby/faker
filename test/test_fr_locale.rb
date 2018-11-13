@@ -72,6 +72,10 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Company.name.is_a? String
   end
 
+  def test_fr_demographic_methods
+    assert %w[Homme Femme].include?(Faker::Demographic.sex)
+  end
+
   def test_fr_internet_methods
     assert Faker::Internet.free_email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
