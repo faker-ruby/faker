@@ -81,6 +81,10 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
+  def test_fr_gender_methods
+    assert %w[Masculin Féminin].include?(Faker::Gender.binary_type)
+  end
+
   def test_fr_lorem_methods
     assert Faker::Lorem.word.is_a? String
     assert Faker::Lorem.words(1000)
