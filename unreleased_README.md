@@ -1,4 +1,4 @@
-    
+
 ![logotype a happy-07](https://user-images.githubusercontent.com/36028424/40263395-4318481e-5b44-11e8-92e5-3dcc1ce169b3.png)
 
 # Faker
@@ -164,6 +164,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Hipster](doc/unreleased/default/hipster.md)
   - [Faker::HitchhikersGuideToTheGalaxy](doc/unreleased/default/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Hobbit](doc/unreleased/default/hobbit.md)
+  - [Faker::House](doc/unreleased/default/house.md)
   - [Faker::IDNumber](doc/unreleased/default/id_number.md)
   - [Faker::IndustrySegments](doc/unreleased/default/industry_segments.md)
   - [Faker::Internet](doc/unreleased/default/internet.md)

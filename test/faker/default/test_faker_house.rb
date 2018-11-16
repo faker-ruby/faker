@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'test_helper'
+require_relative '../../test_helper'
 
 class TestFakerHouse < Test::Unit::TestCase
   def setup
@@ -9,10 +9,6 @@ class TestFakerHouse < Test::Unit::TestCase
 
   def test_furniture
     assert @tester.furniture.match(/\w+/)
-  end
-
-  def test_appliance
-    assert @tester.appliance.match(/\w+/)
   end
 
   def test_room

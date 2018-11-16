@@ -7,10 +7,6 @@ module Faker
         fetch('house.furniture')
       end
 
-      def appliance
-        fetch('house.appliances')
-      end
-
       def room
         fetch('house.rooms')
       end
