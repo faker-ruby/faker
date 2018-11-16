@@ -5,8 +5,12 @@ module Faker
     flexible :bank
 
     class << self
-      def account_number(digits = 11)
-        rand.to_s[2..digits]
+      def account_number(digits = 10)
+        output = ''
+
+        output += rand.to_s[2..-1] while output.length < digits
+
+        output[0...digits]
       end
 
       def iban(country_code = 'GB')
