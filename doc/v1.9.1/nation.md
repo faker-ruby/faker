@@ -14,6 +14,3 @@ Faker::Nation.capital_city #=> "Kathmandu"
 
 # Random National Sport
 Faker::Nation.national_sport #=> "dandi biyo"
-
-# Random National Flag
-Faker::Nation.flag #=> "🇫🇮"
