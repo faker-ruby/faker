@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../../test_helper'
+require_relative '../test_helper'
 
-class TestFakerTezos < Test::Unit::TestCase
+class TestDeprecateTezos < Test::Unit::TestCase
   def test_contract
     assert Faker::Tezos.contract.match(/^KT1[1-9A-Za-z][^OIl]{20,40}/)
   end
