@@ -21,6 +21,7 @@ development.
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
 - [Generators](#generators)
+    - [Blockchain](#blockchain)
     - [Default](#default)
     - [Creature](#creature)
     - [Games](#games)
@@ -119,7 +120,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Avatar](doc/unreleased/default/avatar.md)
   - [Faker::Bank](doc/unreleased/default/bank.md)
   - [Faker::Beer](doc/unreleased/default/beer.md)
-  - [Faker::Bitcoin](doc/unreleased/default/bitcoin.md)
   - [Faker::Book](doc/unreleased/default/book.md)
   - [Faker::Boolean](doc/unreleased/default/boolean.md)
   - [Faker::BossaNova](doc/unreleased/default/bossa_nova.md)
@@ -149,7 +149,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Educator](doc/unreleased/default/educator.md)
   - [Faker::ElectricalComponents](doc/unreleased/default/electrical_components.md)
   - [Faker::Esport](doc/unreleased/default/esport.md)
-  - [Faker::Ethereum](doc/unreleased/default/ethereum.md)
   - [Faker::FamousLastWords](doc/unreleased/default/famous_last_words.md)
   - [Faker::File](doc/unreleased/default/file.md)
   - [Faker::Fillmurray](doc/unreleased/default/fillmurray.md)
@@ -208,7 +207,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Subscription](doc/unreleased/default/subscription.md)
   - [Faker::Superhero](doc/unreleased/default/superhero.md)
   - [Faker::Team](doc/unreleased/default/team.md)
-  - [Faker::Tezos](doc/unreleased/default/tezos.md)
   - [Faker::Time](doc/unreleased/default/time.md)
   - [Faker::Twitter](doc/unreleased/default/twitter.md)
   - [Faker::Types](doc/unreleased/default/types.md)
@@ -216,6 +214,11 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Vehicle](doc/unreleased/default/vehicle.md)
   - [Faker::Verbs](doc/unreleased/default/verbs.md)
   - [Faker::WorldCup](doc/unreleased/default/world_cup.md)
+
+### Blockchain
+  - [Faker::Blockchain::Bitcoin](doc/unreleased/blockchain/bitcoin.md)
+  - [Faker::Blockchain::Ethereum](doc/unreleased/blockchain/ethereum.md)
+  - [Faker::Blockchain::Tezos](doc/unreleased/blockchain/tezos.md)
 
 ### Creature
   - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
