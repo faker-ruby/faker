@@ -6,31 +6,31 @@ module Faker
       extend Gem::Deprecate
 
       def character
-        fetch('hitchhikers_guide_to_the_galaxy.characters')
+        Faker::Movies::HitchhikersGuideToTheGalaxy.character
       end
 
       def location
-        fetch('hitchhikers_guide_to_the_galaxy.locations')
+        Faker::Movies::HitchhikersGuideToTheGalaxy.location
       end
 
       def marvin_quote
-        fetch('hitchhikers_guide_to_the_galaxy.marvin_quote')
+        Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote
       end
 
       def planet
-        fetch('hitchhikers_guide_to_the_galaxy.planets')
+        Faker::Movies::HitchhikersGuideToTheGalaxy.planet
       end
 
       def quote
-        fetch('hitchhikers_guide_to_the_galaxy.quotes')
+        Faker::Movies::HitchhikersGuideToTheGalaxy.quote
       end
 
       def specie
-        fetch('hitchhikers_guide_to_the_galaxy.species')
+        Faker::Movies::HitchhikersGuideToTheGalaxy.specie
       end
 
       def starship
-        fetch('hitchhikers_guide_to_the_galaxy.starships')
+        Faker::Movies::HitchhikersGuideToTheGalaxy.starship
       end
 
       deprecate :character, 'Faker::Movies::HitchhikersGuideToTheGalaxy.character', 2018, 12
