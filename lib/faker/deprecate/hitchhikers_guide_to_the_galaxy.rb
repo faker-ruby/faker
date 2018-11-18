@@ -3,6 +3,8 @@
 module Faker
   class HitchhikersGuideToTheGalaxy < Base
     class << self
+      extend Gem::Deprecate
+
       def character
         fetch('hitchhikers_guide_to_the_galaxy.characters')
       end
@@ -30,6 +32,13 @@ module Faker
       def starship
         fetch('hitchhikers_guide_to_the_galaxy.starships')
       end
+
+      deprecate :character, 'Faker::Movies::HitchhikersGuideToTheGalaxy.character', 2018, 12
+      deprecate :location, 'Faker::Movies::HitchhikersGuideToTheGalaxy.location', 2018, 12
+      deprecate :marvin_quote, 'Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote', 2018, 12
+      deprecate :planet, 'Faker::Movies::HitchhikersGuideToTheGalaxy.planet', 2018, 12
+      deprecate :specie, 'Faker::Movies::HitchhikersGuideToTheGalaxy.specie', 2018, 12
+      deprecate :starship, 'Faker::Movies::HitchhikersGuideToTheGalaxy.starship', 2018, 12
     end
   end
 end
