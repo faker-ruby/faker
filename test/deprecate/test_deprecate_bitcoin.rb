@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../../test_helper'
+require_relative '../test_helper'
 
-class TestFakerBitcoin < Test::Unit::TestCase
+class TestDeprecateBitcoin < Test::Unit::TestCase
   def test_address
     assert Faker::Bitcoin.address.match(/^[13][1-9A-Za-z][^OIl]{20,40}/)
   end
