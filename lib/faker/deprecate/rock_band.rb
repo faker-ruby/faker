@@ -3,9 +3,13 @@
 module Faker
   class RockBand < Base
     class << self
+      extend Gem::Deprecate
+
       def name
-        fetch('rock_band.name')
+        Faker::Music::RockBand.name
       end
+
+      deprecate :name, 'Faker::Music::RockBand.name', 2018, 12
     end
   end
 end
