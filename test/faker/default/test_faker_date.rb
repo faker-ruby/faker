@@ -144,4 +144,43 @@ class TestFakerDate < Test::Unit::TestCase
       assert birthday < birthdate_max, "Expect < \"#{birthdate_max}\", but got #{birthday}"
     end
   end
+
+  def test_weekday_between
+    from = Date.parse('2020-01-01')
+    to   = Date.parse('2020-12-31')
+
+    100.times do
+      wday = Date::DAYNAMES.sample
+
+      random_date = @tester.weekday_between(wday, from: from, to: to)
+      assert_not_nil random_date
+      assert random_date.wday == Date::DAYNAMES.index(wday), "Expected == \"#{wday}\", but got #{random_date.wday}"
+    end
+  end
+
+  def test_weekday_between_with_wrong_name
+    from = Date.parse('2020-01-01')
+    to   = Date.parse('2020-12-31')
+
+    wday = 'Sundy'
+
+    assert_raise ArgumentError, 'No such weekday "Sundy"' do
+      @tester.weekday_between(wday, from: from, to: to)
+    end
+  end
+
+  def test_weekday_between_on_exluding_interval
+    from = Date.parse('2020-11-19')
+    to   = Date.parse('2020-11-22')
+
+    assert_raise ArgumentError do
+      @tester.weekday_between(:friday, from, to)
+    end
+    assert_raise ArgumentError do
+      @tester.weekday_between(:saturday, from, to)
+    end
+    assert_raise ArgumentError do
+      @tester.weekday_between(:sunday, from, to)
+    end
+  end
 end

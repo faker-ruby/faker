@@ -87,6 +87,20 @@ module Faker
         between(from: from, to: to).to_date
       end
 
+      def weekday_between(wday_name, from:, to:)
+        from = get_date_object(from)
+        to   = get_date_object(to)
+        wday = ::Date::DAYNAMES.index(wday_name.capitalize.to_s)
+
+        raise ArgumentError, "No such weekday \"#{wday_name}\"" if wday.nil?
+        raise ArgumentError, "Date interval does not contain any #{wday_name}" unless wday_present_on_interval?(wday, from, to)
+
+        loop do
+          date = Faker::Base.rand_in_range(from, to)
+          break date.to_date if wday == date.wday
+        end
+      end
+
       private
 
       def birthday_date(date, age)
@@ -106,6 +120,12 @@ module Faker
         date = ::Date.parse(date) if date.is_a?(::String)
         date = date.to_date if date.respond_to?(:to_date)
         date
+      end
+
+      def wday_present_on_interval?(wday, from, to)
+        return true if (from - to).abs >= 6
+
+        (from..to).to_a.map(&:wday).include?(wday)
       end
     end
   end
