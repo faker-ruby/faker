@@ -67,6 +67,10 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Games::Pokemon.move.is_a? String
   end
 
+  def test_ja_zelda_methods
+    assert Faker::Games::Zelda.game.is_a? String
+  end
+
   def test_ja_university_methods
     assert Faker::University.prefix.is_a? String
     assert Faker::University.suffix.is_a? String
