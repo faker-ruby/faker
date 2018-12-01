@@ -1,7 +1,6 @@
 # Faker::TvShows::SiliconValley
 
 ```ruby
-
 Faker::TvShows::SiliconValley.character # => "Jian Yang"
 
 Faker::TvShows::SiliconValley.company # => "Bachmanity"
