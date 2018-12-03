@@ -1,11 +1,11 @@
-# Faker::TheExpanse
+# Faker::TvShows::TheExpanse
 
 ```ruby
-Faker::TheExpanse.character #=> "Jim Holden"
+Faker::TvShows::TheExpanse.character #=> "Jim Holden"
 
-Faker::TheExpanse.location #=> "Ganymede"
+Faker::TvShows::TheExpanse.location #=> "Ganymede"
 
-Faker::TheExpanse.ship #=> "Nauvoo"
+Faker::TvShows::TheExpanse.ship #=> "Nauvoo"
 
-Faker::TheExpanse.quote #=> "I am that guy."
+Faker::TvShows::TheExpanse.quote #=> "I am that guy."
 ```
