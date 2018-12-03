@@ -218,7 +218,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
   - [Faker::Creature::Cat](doc/unreleased/creature/cat.md)
   - [Faker::Creature::Dog](doc/unreleased/creature/dog.md)
-  
+
 ### Games
   - [Faker::Games::Dota](doc/unreleased/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/unreleased/games/elder_scrolls.md)
@@ -235,7 +235,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Games::Witcher](doc/unreleased/games/witcher.md)
   - [Faker::Games::WorldOfWarcraft](doc/unreleased/games/world_of_warcraft.md)
   - [Faker::Games::Zelda](doc/unreleased/games/zelda.md)
-  
+
 ### Japanese Media
   - [Faker::JapaneseMedia::DragonBall](doc/unreleased/japanese_media/dragon_ball.md)
   - [Faker::JapaneseMedia::OnePiece](doc/unreleased/japanese_media/one_piece.md)
@@ -286,6 +286,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::TvShows::StarTrek](doc/unreleased/tv_shows/star_trek.md)
   - [Faker::TvShows::Stargate](doc/unreleased/tv_shows/stargate.md)
   - [Faker::TvShows::StrangerThings](doc/unreleased/tv_shows/stranger_things.md)
+  - [Faker::TvShows::TheExpanse](doc/unreleased/tv_shows/the_expanse.md)
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/unreleased/tv_shows/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/unreleased/tv_shows/the_it_crowd.md)
   - [Faker::TvShows::TheThickOfIt](doc/unreleased/tv_shows/the_thick_of_it.md)
