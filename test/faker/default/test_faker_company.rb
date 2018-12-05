@@ -181,6 +181,11 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_equal sample[13], second_digit
   end
 
+  def test_brazilian_company_number_formatted
+    sample = @tester.brazilian_company_number(formatted: true)
+    assert_match(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, sample)
+  end
+
   private
 
   def czech_o_n_checksum(org_no)

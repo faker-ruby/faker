@@ -153,7 +153,7 @@ module Faker
         regexify(/IT\d{2,4}\/\d{2,10}/)
       end
 
-      def brazilian_company_number
+      def brazilian_company_number(formatted: false)
         digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
 
         factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
@@ -163,7 +163,9 @@ module Faker
           digits << (checksum < 2 ? 0 : 11 - checksum)
         end
 
-        digits.join
+        number = digits.join
+
+        formatted ? format('%s.%s.%s/%s-%s', *number.scan(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/).flatten) : number
       end
 
       private

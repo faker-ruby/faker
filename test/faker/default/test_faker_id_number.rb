@@ -81,6 +81,11 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal sample[10], second_digit
   end
 
+  def test_brazilian_citizen_number_formatted
+    sample = @tester.brazilian_citizen_number(formatted: true)
+    assert_match(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, sample)
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)
