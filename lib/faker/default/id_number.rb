@@ -75,11 +75,12 @@ module Faker
         [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
-      def brazilian_citizen_number
+      def brazilian_citizen_number(formatted: false)
         digits = Faker::Number.leading_zero_number(9) until digits&.match(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
-        [digits, first_digit, second_digit].join
+        number = [digits, first_digit, second_digit].join
+        formatted ? format('%s.%s.%s-%s', *number.scan(/\d{2,3}/).flatten) : number
       end
 
       private

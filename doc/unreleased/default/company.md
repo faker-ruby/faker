@@ -59,4 +59,7 @@ Faker::Company.south_african_trust_registration_number #=> "IT38/6489900"
 
 # Generate a Brazilian company number (CNPJ)
 Faker::Company.brazilian_company_number #=> "18553414000618"
+
+# Generate a formatted Brazilian company number (CNPJ)
+Faker::Company.brazilian_company_number(formatted: true) #=> "00.000.000/0000-00"
 ```
