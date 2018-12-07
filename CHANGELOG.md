@@ -34,7 +34,9 @@
 
 ### Deprecation
 - [PR #1480](https://github.com/stympy/faker/pull/1480) Add Music, Movies and TvShows namespaces [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::Hobbit`, `HitchhikersGuideToTheGalaxy`, `::HarryPotter`, `::RockBand`, `::MichaelScott`, `::RuPaul`
 - [PR #1481](https://github.com/stympy/faker/pull/1481) Add Blockchain namespace [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::Bitcoin`, `::Ethereum`, `::Tezos`
 - [PR #1471](https://github.com/stympy/faker/pull/1471) Add music and movies namespace [@vbrazo](https://github.com/vbrazo)
   - Deprecates `::BackToTheFuture`, `::Lebowski`, `::LordOfTheRings`, `::PrincessBride`, `::StarWars`, `::UmphreysMcgee`, `::VForVendetta`
 - [PR #1469](https://github.com/stympy/faker/pull/1469) Deprecate Faker::Hobbit and reorganize unreleased docs and tests [@vbrazo](https://github.com/vbrazo)
