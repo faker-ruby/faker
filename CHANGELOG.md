@@ -20,6 +20,7 @@
 - [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
+- [PR #1490](https://github.com/stympy/faker/pull/1490) Add missing Faker::HeroesOfTheStorm tests [@vbrazo](https://github.com/vbrazo)
 - [PR #1457](https://github.com/stympy/faker/pull/1457) Add tests for new Faker::Internet.slug glue [@vbrazo](https://github.com/vbrazo)
 - [PR #1434](https://github.com/stympy/faker/pull/1434) Add keyword argument to Faker::Games::Dota.quote [@vbrazo](https://github.com/vbrazo)
 - [PR #1420](https://github.com/stympy/faker/pull/1420) Add Faker::JapaneseMedia namespace [@boardfish](https://github.com/boardfish)
@@ -32,6 +33,10 @@
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
 ### Deprecation
+- [PR #1480](https://github.com/stympy/faker/pull/1480) Add Music, Movies and TvShows namespaces [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::Hobbit`, `HitchhikersGuideToTheGalaxy`, `::HarryPotter`, `::RockBand`, `::MichaelScott`, `::RuPaul`
+- [PR #1481](https://github.com/stympy/faker/pull/1481) Add Blockchain namespace [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::Bitcoin`, `::Ethereum`, `::Tezos`
 - [PR #1471](https://github.com/stympy/faker/pull/1471) Add music and movies namespace [@vbrazo](https://github.com/vbrazo)
   - Deprecates `::BackToTheFuture`, `::Lebowski`, `::LordOfTheRings`, `::PrincessBride`, `::StarWars`, `::UmphreysMcgee`, `::VForVendetta`
 - [PR #1469](https://github.com/stympy/faker/pull/1469) Deprecate Faker::Hobbit and reorganize unreleased docs and tests [@vbrazo](https://github.com/vbrazo)
@@ -47,6 +52,7 @@
 - [PR #803](https://github.com/stympy/faker/pull/803) Modify Faker::Educator, Fix #576 [@ghbooth12](https://github.com/ghbooth12)
 
 ### Documentation
+- [PR #1488](https://github.com/stympy/faker/pull/1488) Fix unreleased docs [@vbrazo](https://github.com/vbrazo)
 - [PR #1462](https://github.com/stympy/faker/pull/1462) Fix documentation on Faker::Avatar [@mrstebo](https://github.com/mrstebo)
 - [PR #1445](https://github.com/stympy/faker/pull/1445) Separate README.md: unreleased and latest version [@vbrazo](https://github.com/vbrazo)
 - [PR #1243](https://github.com/stympy/faker/pull/1243) Add image file method to placeholdit [@nicolas-brousse](https://github.com/nicolas-brousse)
@@ -62,6 +68,9 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1489](https://github.com/stympy/faker/pull/1489) Format brazilian_company_number and brazilian_citizen_number [@jpkarvonen](https://github.com/jpkarvonen)
+- [PR #1487](https://github.com/stympy/faker/pull/1487) Add Faker::TvShows::TheExpanse [@jpkarvonen](https://github.com/jpkarvonen)
+- [PR #1475](https://github.com/stympy/faker/pull/1475) Adds Faker::Nation.flag [@JonathanWThom](https://github.com/JonathanWThom)
 - [PR #1387](https://github.com/stympy/faker/pull/1387) Add Faker::Music::Phish [@nbolser](https://github.com/nbolser)
 - [PR #1430](https://github.com/stympy/faker/pull/1430) Adding Faker::Company.brazilian_company_number [@gabteles](https://github.com/gabteles)
 - [PR #1449](https://github.com/stympy/faker/pull/1449) Add Faker::Coin [@jerryskye](https://github.com/jerryskye)
@@ -114,6 +123,8 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1486](https://github.com/stympy/faker/pull/1486) Added some professions in company.yml [@ReneIvanov](https://github.com/ReneIvanov)
+- [PR #1474](https://github.com/stympy/faker/pull/1474) Fr format and translation [@maxime-lenne](https://github.com/maxime-lenne) 
 - [PR #1468](https://github.com/stympy/faker/pull/1468) Update "Black Pink" to "Blackpink" [@agungyuliaji](https://github.com/agungyuliaji)
 - [PR #1464](https://github.com/stympy/faker/pull/1464) Add dog breed for Japanese [@yizknn](https://github.com/yizknn)
 - [PR #1461](https://github.com/stympy/faker/pull/1461) Add Orphea to heroes of the storm locale file. [@eddorre](https://github.com/eddorre)
@@ -151,6 +162,8 @@
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.7...v1.9.1)
 
 ### Feature Request
+
+- [PR #1476](https://github.com/stympy/faker/pull/1476) Add Faker::House [@jguthrie100](https://github.com/jguthrie100)
 - [PR #1308](https://github.com/stympy/faker/pull/1308) Add Faker::BojackHorseman [@saurabhudaniya200](https://github.com/saurabhudaniya200)
 - [PR #1292](https://github.com/stympy/faker/pull/1292) Add Faker::Bank - account_number and routing_number [@vbrazo](https://github.com/vbrazo)
 - [PR #1300](https://github.com/stympy/faker/pull/1300) Add Faker::GreekPhilosophers [@15ngburton](https://github.com/15ngburton)
@@ -267,6 +280,7 @@
 - [PR #719](https://github.com/stympy/faker/pull/719) Random words to add should be 0 [@swapsCAPS](https://github.com/swapsCAPS)
 
 ### Documentation
+- [PR #1478](https://github.com/stympy/faker/pull/1478) Fixed documentation for Faker::Internet.password [@mrstebo](https://github.com/mrstebo)
 - [PR #1453](https://github.com/stympy/faker/pull/1453) Add description to Rubocop cops [@vbrazo](https://github.com/vbrazo)
 - [PR #1121](https://github.com/stympy/faker/pull/1121) Better docs for Faker::Food.description [@jujulisan](https://github.com/jujulisan)
 - [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [@mrstebo](https://github.com/mrstebo)
