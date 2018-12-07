@@ -7,6 +7,10 @@ class TestDeprecateHeroesOfTheStorm < Test::Unit::TestCase
     @tester = Faker::HeroesOfTheStorm
   end
 
+  def test_battleground
+    assert @tester.battleground.match(/\w/)
+  end
+
   def test_class
     assert @tester.class.match(/\w/)
   end
