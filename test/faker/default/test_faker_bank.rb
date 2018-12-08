@@ -20,6 +20,10 @@ class TestFakerBank < Test::Unit::TestCase
 
   def test_account_number
     assert Faker::Bank.account_number.match(/\d{10}/)
+
+    assert Faker::Bank.account_number(12).match(/\d{12}/)
+
+    assert Faker::Bank.account_number(100).match(/\d{100}/)
   end
 
   def test_name
