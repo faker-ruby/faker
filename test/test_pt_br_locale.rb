@@ -12,8 +12,7 @@ class TestPtBrLocale < Test::Unit::TestCase
   end
 
   def test_pt_br_address_methods
-    assert Faker::Address.city_prefix.is_a? String
-    assert Faker::Address.city_suffix.is_a? String
+    assert Faker::Address.city.is_a? String
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.country.is_a? String
     assert Faker::Address.building_number.is_a? String
@@ -54,6 +53,16 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
+  def test_pt_br_job_methods
+    assert Faker::Job.field.is_a? String
+    assert Faker::Job.seniority.is_a? String
+    assert Faker::Job.position.is_a? String
+    assert Faker::Job.key_skills.is_a? String
+    assert Faker::Job.employment_type.is_a? String
+    assert Faker::Job.education_level.is_a? String
+    assert Faker::Job.title.is_a? String
+  end
+
   def test_pt_br_name_methods
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.suffix.is_a? String
@@ -65,6 +74,21 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Name.name.is_a? String
     assert Faker::Name.initials.match(/[A-Z]{3}/)
     assert Faker::Name.initials(2).match(/[A-Z]{2}/)
+  end
+
+  def test_pt_br_team_methods
+    assert Faker::Team.main_teams.is_a? String
+    assert Faker::Team.prefix.is_a? String
+    assert Faker::Team.gentile.is_a? String
+    assert Faker::Team.name.is_a? String
+    assert Faker::Team.sport.is_a? String
+  end
+
+  def test_pt_br_university_methods
+    assert Faker::University.prefix.is_a? String
+    assert Faker::University.region.is_a? String
+    assert Faker::University.suffix.is_a? String
+    assert Faker::University.name.is_a? String
   end
 
   def test_pt_br_vehicle_methods

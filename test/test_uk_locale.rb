@@ -31,12 +31,27 @@ class TestUkLocale < Test::Unit::TestCase
     assert_send([Faker::Company, :prefix])
   end
 
+  def test_uk_commerce_methods
+    assert Faker::Commerce.color.is_a? String
+    assert Faker::Commerce.product_name.is_a? String
+    assert Faker::Commerce.department.is_a? String
+  end
+
   def test_uk_internet_methods
     assert Faker::Internet.email.match(/.+@[^.].+\.\w+/)
     assert Faker::Internet.domain_word.match(/^\w+$/)
   end
 
   def test_uk_name_methods
+    assert Faker::Name.male_first_name.is_a? String
+    assert Faker::Name.male_middle_name.is_a? String
+    assert Faker::Name.male_last_name.is_a? String
+    assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+    assert Faker::Name.female_middle_name.is_a? String
+    assert Faker::Name.female_last_name.is_a? String
+    assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.last_name.is_a? String
+    assert Faker::Name.name.is_a? String
   end
 end

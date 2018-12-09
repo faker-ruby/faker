@@ -31,3 +31,5 @@ en-SG:
       default_country: [Singapore]
     phone_number:
       formats: ['+65 6### ####', '+65 9### ####', '+65 8### ####']
+    vehicle:
+      license_plate: 'S??####'

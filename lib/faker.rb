@@ -7,8 +7,10 @@ end
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
 
+# require helper files
 Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
 
+# load locales via I18n.backend
 I18n.backend = I18n::Backend::Chain.new(I18n.backend, Faker::I18nBackend.new)
 
 module Faker
@@ -246,6 +248,5 @@ module Faker
   end
 end
 
-%w[faker faker/creature faker/games faker/movies].each do |path|
-  Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
-end
+# require faker objects
+Dir.glob(File.join(File.dirname(__FILE__), 'faker', '/**/*.rb')).sort.each { |file| require file }

@@ -14,10 +14,16 @@ class TestKoLocale < Test::Unit::TestCase
   def test_ko_address_methods
     assert Faker::Address.postcode.is_a? String
     assert_equal(5, Faker::Address.postcode.length)
+    assert Faker::Address.state.is_a? String
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.city_name.is_a? String
+    assert Faker::Address.city.is_a? String
+    assert Faker::Address.street_root.is_a? String
+    assert Faker::Address.street_suffix.is_a? String
     assert Faker::Address.street_name.is_a? String
+    assert Faker::Address.default_country.is_a? String
+    assert_equal('대한민국', Faker::Address.default_country)
   end
 
   def test_ko_company_methods
@@ -40,5 +46,9 @@ class TestKoLocale < Test::Unit::TestCase
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+  end
+
+  def test_ko_phone_number_methods
+    assert Faker::PhoneNumber.phone_number.is_a? String
   end
 end

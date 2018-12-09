@@ -13,6 +13,7 @@ class TestTRLocale < Test::Unit::TestCase
 
   def test_tr_address_fields
     assert Faker::Address.city.is_a? String
+    assert Faker::Address.city_name.is_a? String
     assert Faker::Address.country.is_a? String
     assert_equal('Turkey', Faker::Address.default_country)
   end

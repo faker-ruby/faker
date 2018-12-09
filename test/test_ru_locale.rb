@@ -22,6 +22,8 @@ class TestRuLocale < Test::Unit::TestCase
     assert Faker::Address.city_name.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.street_name.is_a? String
+    assert Faker::Address.full_address.is_a? String
+    assert Faker::Address.street_address.is_a? String
     assert_equal 'Россия', Faker::Address.default_country
   end
 
@@ -53,6 +55,8 @@ class TestRuLocale < Test::Unit::TestCase
     assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.female_middle_name.is_a? String
     assert Faker::Name.name.is_a? String
+    assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.last_name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end
 end
