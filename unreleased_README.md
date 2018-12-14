@@ -138,6 +138,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Cosmere](doc/unreleased/default/cosmere.md)
   - [Faker::Crypto](doc/unreleased/default/crypto.md)
   - [Faker::CryptoCoin](doc/unreleased/default/crypto_coin.md)
+  - [Faker::CultureSeries](doc/unreleased/default/culture_series.md)
   - [Faker::Currency](doc/unreleased/default/currency.md)
   - [Faker::Date](doc/unreleased/default/date.md)
   - [Faker::DcComics](doc/unreleased/default/dc_comics.md)
