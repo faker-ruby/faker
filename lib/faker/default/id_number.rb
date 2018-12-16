@@ -13,6 +13,8 @@ module Faker
     ZA_RACE_DIGIT = '8'
     ZA_CITIZENSHIP_DIGITS = %w[0 1].freeze
     BRAZILIAN_ID_FORMAT = /(\d{1,2})(\d{3})(\d{3})([\dX])/
+    BRAZILIAN_ID_FROM = 10_000_000
+    BRAZILIAN_ID_TO = 99_999_999
 
     class << self
       def valid
@@ -87,11 +89,13 @@ module Faker
       alias brazilian_cpf brazilian_citizen_number
 
       def brazilian_id(formatted = false)
-        digits = Faker::Number.leading_zero_number(8) until digits&.match(/(\d)((?!\1)\d)+/)
+        digits = Faker::Number.between(BRAZILIAN_ID_FROM, BRAZILIAN_ID_TO).to_s
         check_digit = brazilian_id_checksum_digit(digits)
         number = [digits, check_digit].join
         formatted ? format('%s.%s.%s-%s', *number.scan(BRAZILIAN_ID_FORMAT).flatten) : number
       end
+
+      alias brazilian_rg brazilian_id
 
       private
 
