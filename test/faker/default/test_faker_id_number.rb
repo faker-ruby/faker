@@ -86,6 +86,30 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_match(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, sample)
   end
 
+  def test_brazilian_id
+    sample = @tester.brazilian_id
+    assert_match(/^\d{9}$/, sample)
+    assert_match(/(\d)((?!\1)\d)+/, sample)
+    digit_sum = sample[0..7].chars.each_with_index.inject(0) do |acc, (digit, i)|
+      acc + digit.to_i * (9 - i)
+    end * 10
+    remainder = digit_sum % 11
+    remainder = 11 - remainder
+    digit = if remainder == 10
+              'X'
+            elsif remainder == 11
+              '0'
+            else
+              remainder.to_s
+            end
+    assert_equal sample[8], digit
+  end
+
+  def test_brazilian_id_formatted
+    sample = @tester.brazilian_id(formatted: true)
+    assert_match(/^\d{1,2}.\d{3}.\d{3}-[\dX]$/, sample)
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)

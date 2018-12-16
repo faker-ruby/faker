@@ -12,6 +12,7 @@ module Faker
     ].freeze
     ZA_RACE_DIGIT = '8'
     ZA_CITIZENSHIP_DIGITS = %w[0 1].freeze
+    BRAZILIAN_ID_FORMAT = /(\d{1,2})(\d{3})(\d{3})([\dX])/
 
     class << self
       def valid
@@ -85,6 +86,13 @@ module Faker
 
       alias brazilian_cpf brazilian_citizen_number
 
+      def brazilian_id(formatted = false)
+        digits = Faker::Number.leading_zero_number(8) until digits&.match(/(\d)((?!\1)\d)+/)
+        check_digit = brazilian_id_checksum_digit(digits)
+        number = [digits, check_digit].join
+        formatted ? format('%s.%s.%s-%s', *number.scan(BRAZILIAN_ID_FORMAT).flatten) : number
+      end
+
       private
 
       def south_african_id_checksum_digit(id_number)
@@ -106,11 +114,37 @@ module Faker
       end
 
       def brazilian_citizen_number_checksum_digit(digits)
-        digit_sum = digits.chars.each_with_index.inject(0) do |acc, (digit, i)|
+        checksum = brazilian_document_checksum(digits)
+        brazilian_document_remainder(checksum)
+      end
+
+      def brazilian_id_checksum_digit(digits)
+        checksum = brazilian_document_checksum(digits)
+        brazilian_document_remainder(checksum, id: true)
+      end
+
+      def brazilian_document_checksum(digits)
+        digits.chars.each_with_index.inject(0) do |acc, (digit, i)|
           acc + digit.to_i * (digits.size + 1 - i)
         end * 10
-        remainder = digit_sum % 11
+      end
+
+      def brazilian_document_remainder(checksum, id = false)
+        remainder = checksum % 11
+        remainder = 11 - remainder.to_i if id
+        return brazilian_id_digit(remainder) if id
+
         remainder == 10 ? '0' : remainder.to_s
+      end
+
+      def brazilian_id_digit(remainder)
+        if remainder == 10
+          'X'
+        elsif remainder == 11
+          '0'
+        else
+          remainder.to_s
+        end
       end
 
       def _translate(key)
