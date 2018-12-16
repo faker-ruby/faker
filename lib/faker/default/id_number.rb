@@ -83,6 +83,8 @@ module Faker
         formatted ? format('%s.%s.%s-%s', *number.scan(/\d{2,3}/).flatten) : number
       end
 
+      alias brazilian_cpf brazilian_citizen_number
+
       private
 
       def south_african_id_checksum_digit(id_number)
