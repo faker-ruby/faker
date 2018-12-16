@@ -147,10 +147,6 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_ip_v4_address
     assert_equal 3, @tester.ip_v4_address.count('.')
-
-    100.times do
-      assert @tester.ip_v4_address.split('.').map(&:to_i).max <= 255
-    end
   end
 
   def test_private_ip_v4_address

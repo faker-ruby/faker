@@ -102,8 +102,8 @@ module Faker
       end
 
       def ip_v4_address
-        ary = (2..254).to_a
-        [sample(ary), sample(ary), sample(ary), sample(ary)].join('.')
+        [rand_in_range(0, 255), rand_in_range(0, 255),
+         rand_in_range(0, 255), rand_in_range(0, 255)].join('.')
       end
 
       def private_ip_v4_address
