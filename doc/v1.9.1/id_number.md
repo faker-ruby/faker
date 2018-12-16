@@ -12,4 +12,10 @@ Faker::IDNumber.spanish_citizen_number
 
 # Generate a Spanish foreign born citizen identifier (NIE)
 Faker::IDNumber.spanish_foreign_citizen_number
+
+# Generate a Brazilian Citizen Number (CPF)
+Faker::IDNumber.brazilian_citizen_number #=> "03522455657"
+Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "006.726.029-20"
+aker::IDNumber.brazilian_cpf #=> "03522455657"
+Faker::IDNumber.brazilian_cpf(formatted: true) #=> "006.726.029-20"
 ```
