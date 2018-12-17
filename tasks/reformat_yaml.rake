@@ -3,18 +3,27 @@
 require 'yaml'
 
 desc 'Reformat all yaml files into a common format'
-task :reformat_yaml do
-  lib_dir = File.absolute_path(File.join(__dir__, '..', 'lib'))
-  glob_str = File.join(lib_dir, '**/*.yml')
+task :reformat_yaml, [:filename] do |t, args|
+  args.with_defaults(:filename => :all)
 
-  Dir.glob(glob_str) do |filename|
-    puts "reformatting #{filename}"
+  root_dir = File.absolute_path(File.join(__dir__, '..',))
 
-    input = YAML.load_file(filename)
-    output = input.to_yaml
-
-    output.sub!(/^---\n/, '') # remove header
-
-    File.write(filename, output)
+  if args[:filename] == :all
+    glob_str = File.join(root_dir, 'lib/**/*.yml')
+    Dir.glob(glob_str) {|filename| reformat_file(filename)}
+  else
+    target_file = File.join(root_dir, args[:filename])
+    reformat_file(target_file)
   end
+end
+
+def reformat_file(filename)
+  puts "reformatting #{filename}"
+
+  input = YAML.load_file(filename)
+  output = input.to_yaml
+
+  output.sub!(/^---\n/, '') # remove header
+
+  File.write(filename, output)
 end
