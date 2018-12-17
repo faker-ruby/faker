@@ -3,14 +3,14 @@
 require 'yaml'
 
 desc 'Reformat all yaml files into a common format'
-task :reformat_yaml, [:filename] do |t, args|
-  args.with_defaults(:filename => :all)
+task :reformat_yaml, [:filename] do |_, args|
+  args.with_defaults(filename: :all)
 
-  root_dir = File.absolute_path(File.join(__dir__, '..',))
+  root_dir = File.absolute_path(File.join(__dir__, '..'))
 
   if args[:filename] == :all
     glob_str = File.join(root_dir, 'lib/**/*.yml')
-    Dir.glob(glob_str) {|filename| reformat_file(filename)}
+    Dir.glob(glob_str) { |filename| reformat_file(filename) }
   else
     target_file = File.join(root_dir, args[:filename])
     reformat_file(target_file)
