@@ -1,5 +1,15 @@
 en:
   faker:
     gender:
-      types: ["Female", "Male", "Non-binary", "Agender", "Genderfluid", "Genderqueer", "Bigender", "Polygender"]
-      binary_types: ["Female", "Male"]
+      types:
+      - Female
+      - Male
+      - Non-binary
+      - Agender
+      - Genderfluid
+      - Genderqueer
+      - Bigender
+      - Polygender
+      binary_types:
+      - Female
+      - Male
