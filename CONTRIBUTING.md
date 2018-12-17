@@ -5,10 +5,9 @@ We love pull requests. Here's a quick guide:
 2. Run the tests. We only take pull requests with passing tests, and it's great to know that you have a clean slate: `bundle && bundle exec rake`
 
 3. We are using [Rubocop](https://github.com/bbatsov/rubocop) because we love static code analyzers. 
-
-Ways to run Rubocop:
-- `bundle exec rubocop`
-- `bundle exec rake` would run the test suite and after that it runs the Ruby static code analyzer.
+    * Ways to run Rubocop:
+        - `bundle exec rubocop`
+        - `bundle exec rake` would run the test suite and after that it runs the Ruby static code analyzer.
 
 4. Please add a test for your change. Only refactoring and documentation changes require no new tests. If you are adding functionality or fixing a bug, we need a test! We use [Minitest](https://github.com/seattlerb/minitest) in this project.
 
@@ -49,7 +48,26 @@ If you're reviewing a PR, you should ask yourself:
 * Prefer `&&`, `||` over `and`, `or`.
 * `MyClass.my_method(my_arg)` not `my_method( my_arg )` or `my_method my_arg`.
 * `a = b` and not `a=b`.
-* Follow the conventions you see used in the source already.
+* use dash syntax for yaml arrays:
+```Yaml
+# this
+a_things:
+  - small_thing
+  - big_thing
+  - other_thing
+  
+# instead of these: 
+b_things: [small_thing, big_thing, other_thing]
+c_things: [
+  small_thing,
+  big_thing,
+  other_thing,
+]
+
+# If in doubt, `bundle exec rake reformat_yaml['lib/path/to/file.yml']`
+```
+* In general, follow the conventions you see used in the source already.
+* **ALL SHALL OBEY THE RUBOCOP**
 
 ### Tips
 
