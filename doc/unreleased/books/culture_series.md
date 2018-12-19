@@ -1,4 +1,4 @@
-# Faker::CultureSeries
+# Faker::Books::CultureSeries
 
 ```ruby
 Faker::Books::CultureSeries.book #=> "The Player of Games"
