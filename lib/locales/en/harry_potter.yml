@@ -7,3 +7,6 @@ en:
       books: ["Harry Potter and the Sorcerer's Stone", "Harry Potter and the Chamber of Secrets", "Harry Potter and the Prisoner of Azkaban", "Harry Potter and the Goblet of Fire", "Harry Potter and the Order of the Phoenix", "Harry Potter and the Half-Blood Prince", "Harry Potter and the Deathly Hallows"]
       houses: ["Gryffindor", "Slytherin", "Ravenclaw", "Hufflepuff", "Horned Serpent", "Wampus", "Thunderbird", "Pukwudgie"]
       spells: ["Accio", "Alohomora", "Avada Kedavra", "Crucio", "Confundo", "Expelliarmus", "Expecto Patronum", "Lumos", "Obliviate", "Reparo", "Revelio", "Riddikulus", "Stupefy", "Sectumsempra", "Wingardium Leviosa"]
+      wand_woods: ["Acacia", "Alder", "Apple", "Ash", "Aspen", "Beech", "Blackthorn", "Black Walnut", "Cedar", "Cherry", "Chestnut", "Cypress", "Dogwood", "Ebony", "Elder", "Elm", "English Oak", "Fir", "Hawthorn", "Hazel", "Holly", "Hornbeam", "Larch", "Laurel", "Maple", "Pear", "Pine", "Poplar", "Red Oak", "Redwood", "Rowan", "Silver Lime", "Spruce", "Sycamore", "Vine", "Walnut", "Willow", "Yew"]
+      wand_cores: ["Unicorn Hair", "Dragon Heartstring", "Phoenix Feather", "Veela Hair", "Kelpie Hair"]
+      
