@@ -29,11 +29,11 @@ module Faker
         end
         
         def wand_core
-          fetch('harry_potter.wand_core')
+          fetch('harry_potter.wand_cores')
         end
         
         def wand_wood
-          fetch('harry_potter.wand_wood')
+          fetch('harry_potter.wand_woods')
         end
       end
     end
