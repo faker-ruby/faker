@@ -27,6 +27,14 @@ module Faker
         def spell
           fetch('harry_potter.spells')
         end
+        
+        def wand_core
+          fetch('harry_potter.wand_core')
+        end
+        
+        def wand_wood
+          fetch('harry_potter.wand_wood')
+        end
       end
     end
   end
