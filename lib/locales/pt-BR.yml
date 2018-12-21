@@ -581,7 +581,7 @@ pt-BR:
       position: ["Supervisor", "Associado", "Executivo", "Contato", "Oficial", "Gerente", "Engenheiro", "Especialista", "Diretor", "Coordenador", "Administrador", "Arquiteto", "Analista", "Designer", "Planejador", "Orquestrador", "Técnico", "Desenvolvedor", "Fabricante", "Consultor", "Assistente", "Facilitador", "Agente", "Representante", "Estrategista"]
       key_skills: ["Trabalho em equipe", "Comunicação", "Resolução de problemas", "Liderança", "Organização", "Trabalhar sobre pressão", "Confiança", "Auto motivado", "Habilidades de networking", "Proatividade", "Aprendizado rápido", "Experiência com tecnologia"]
       employment_type: ["Integral", "Meio período", "Temporário", "Contrato", "Estágio", "Comissão"]
-      education_level: ["Bacharelado", "Mestrado", "Doutorado"]
+      education_level: ["Bacharelado", "Mestrado", "Doutorado", "Técnico", "Pós-graduação", "Pós-doutorado", "Licenciatura"]
       title:
         - "#{position} de #{field} #{seniority}"
         - "#{position} #{field} #{seniority}"
