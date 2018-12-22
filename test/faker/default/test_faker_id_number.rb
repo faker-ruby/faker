@@ -111,9 +111,9 @@ class TestFakerIdNumber < Test::Unit::TestCase
   end
 
   def test_brazilian_id_digit
-    digit10 = Faker::IDNumber.send(:brazilian_id_digit, 10)
-    digit11 = Faker::IDNumber.send(:brazilian_id_digit, 11)
-    digit_other = Faker::IDNumber.send(:brazilian_id_digit, 9)
+    digit10 = Faker::IDNumber.send(:brazilian_id_digit, 1)
+    digit11 = Faker::IDNumber.send(:brazilian_id_digit, 0)
+    digit_other = Faker::IDNumber.send(:brazilian_id_digit, 2)
     assert_equal digit10, 'X'
     assert_equal digit11, '0'
     assert_equal digit_other, '9'

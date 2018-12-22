@@ -119,12 +119,12 @@ module Faker
 
       def brazilian_citizen_number_checksum_digit(digits)
         checksum = brazilian_document_checksum(digits)
-        brazilian_document_remainder(checksum)
+        brazilian_document_digit(checksum)
       end
 
       def brazilian_id_checksum_digit(digits)
         checksum = brazilian_document_checksum(digits)
-        brazilian_document_remainder(checksum, id: true)
+        brazilian_document_digit(checksum, id: true)
       end
 
       def brazilian_document_checksum(digits)
@@ -133,17 +133,19 @@ module Faker
         end * 10
       end
 
-      def brazilian_document_remainder(checksum, id = false)
+      def brazilian_document_digit(checksum, id = false)
         remainder = checksum % 11
-        remainder = 11 - remainder.to_i if id
-        return brazilian_id_digit(remainder) if id
+        id ? brazilian_id_digit(remainder) : brazilian_citizen_number_digit(remainder)
+      end
 
+      def brazilian_citizen_number_digit(remainder)
         remainder == 10 ? '0' : remainder.to_s
       end
 
       def brazilian_id_digit(remainder)
+        subtraction = 11 - remainder.to_i
         digits = { 10 => 'X', 11 => '0' }
-        digits.include?(remainder) ? digits[remainder] : remainder.to_s
+        digits.include?(subtraction) ? digits[subtraction] : subtraction.to_s
       end
 
       def _translate(key)
