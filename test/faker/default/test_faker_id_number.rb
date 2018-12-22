@@ -105,6 +105,15 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal sample[8], digit
   end
 
+  def test_brazilian_citizen_number_checksum_digit
+    digits = '128991760'
+    checksum_digit = Faker::IDNumber.send(:brazilian_citizen_number_checksum_digit, digits)
+    assert_equal checksum_digit, '4'
+    digits = '1289917604'
+    checksum_digit = Faker::IDNumber.send(:brazilian_citizen_number_checksum_digit, digits)
+    assert_equal checksum_digit, '8'
+  end
+
   def test_brazilian_id_checksum_digit
     digits = '41987080'
     checksum_digit = Faker::IDNumber.send(:brazilian_id_checksum_digit, digits)
