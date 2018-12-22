@@ -105,6 +105,12 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal sample[8], digit
   end
 
+  def test_brazilian_document_checksum
+    digits = '123456789'
+    checksum = Faker::IDNumber.send(:brazilian_document_checksum, digits)
+    assert_equal checksum, 2100
+  end
+
   def test_brazilian_id_formatted
     sample = @tester.brazilian_id(formatted: true)
     assert_match(/^\d{1,2}.\d{3}.\d{3}-[\dX]$/, sample)
