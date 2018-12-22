@@ -67,18 +67,6 @@ class TestFakerIdNumber < Test::Unit::TestCase
     sample = @tester.brazilian_citizen_number
     assert_match(/^\d{11}$/, sample)
     assert_match(/(\d)((?!\1)\d)+/, sample)
-    digit_sum = sample[0..8].chars.each_with_index.inject(0) do |acc, (digit, i)|
-      acc + digit.to_i * (10 - i)
-    end * 10
-    remainder = digit_sum % 11
-    first_digit = remainder == 10 ? '0' : remainder.to_s
-    assert_equal sample[9], first_digit
-    digit_sum = sample[0..9].chars.each_with_index.inject(0) do |acc, (digit, i)|
-      acc + digit.to_i * (11 - i)
-    end * 10
-    remainder = digit_sum % 11
-    second_digit = remainder == 10 ? '0' : remainder.to_s
-    assert_equal sample[10], second_digit
   end
 
   def test_brazilian_citizen_number_formatted
@@ -90,19 +78,11 @@ class TestFakerIdNumber < Test::Unit::TestCase
     sample = @tester.brazilian_id
     assert_match(/^\d{9}$/, sample)
     assert_match(/(\d)((?!\1)\d)+/, sample)
-    digit_sum = sample[0..7].chars.each_with_index.inject(0) do |acc, (digit, i)|
-      acc + digit.to_i * (9 - i)
-    end * 10
-    remainder = digit_sum % 11
-    remainder = 11 - remainder
-    digit = if remainder == 10
-              'X'
-            elsif remainder == 11
-              '0'
-            else
-              remainder.to_s
-            end
-    assert_equal sample[8], digit
+  end
+
+  def test_brazilian_id_formatted
+    sample = @tester.brazilian_id(formatted: true)
+    assert_match(/^\d{1,2}.\d{3}.\d{3}-[\dX]$/, sample)
   end
 
   def test_brazilian_citizen_number_checksum_digit
@@ -124,11 +104,6 @@ class TestFakerIdNumber < Test::Unit::TestCase
     digits = '123456789'
     checksum = Faker::IDNumber.send(:brazilian_document_checksum, digits)
     assert_equal checksum, 2100
-  end
-
-  def test_brazilian_id_formatted
-    sample = @tester.brazilian_id(formatted: true)
-    assert_match(/^\d{1,2}.\d{3}.\d{3}-[\dX]$/, sample)
   end
 
   def test_brazilian_document_digit
