@@ -110,6 +110,13 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_match(/^\d{1,2}.\d{3}.\d{3}-[\dX]$/, sample)
   end
 
+  def test_brazilian_citizen_number_digit
+    digit10 = Faker::IDNumber.send(:brazilian_citizen_number_digit, 10)
+    digit_other = Faker::IDNumber.send(:brazilian_citizen_number_digit, 9)
+    assert_equal digit10, '0'
+    assert_equal digit_other, '9'
+  end
+
   def test_brazilian_id_digit
     digit10 = Faker::IDNumber.send(:brazilian_id_digit, 1)
     digit11 = Faker::IDNumber.send(:brazilian_id_digit, 0)
