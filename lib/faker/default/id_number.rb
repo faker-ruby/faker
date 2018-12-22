@@ -142,13 +142,8 @@ module Faker
       end
 
       def brazilian_id_digit(remainder)
-        if remainder == 10
-          'X'
-        elsif remainder == 11
-          '0'
-        else
-          remainder.to_s
-        end
+        digits = { 10 => 'X', 11 => '0' }
+        digits.include?(remainder) ? digits[remainder] : remainder.to_s
       end
 
       def _translate(key)
