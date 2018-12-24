@@ -2,19 +2,17 @@
 
 require 'yaml'
 
-desc 'Reformat all yaml files into a common format'
+desc 'Reformat a yaml file into a common format'
 task :reformat_yaml, [:filename] do |_, args|
-  args.with_defaults(filename: :all)
+  args.with_defaults(filename: nil)
+
+  if args[:filename].nil?
+    raise ArgumentError, "A filename is required. `bundle exec rake reformat_yaml[\"lib/path/to/fil\"]`"
+  end
 
   root_dir = File.absolute_path(File.join(__dir__, '..'))
-
-  if args[:filename] == :all
-    glob_str = File.join(root_dir, 'lib/**/*.yml')
-    Dir.glob(glob_str) { |filename| reformat_file(filename) }
-  else
-    target_file = File.join(root_dir, args[:filename])
-    reformat_file(target_file)
-  end
+  target_file = File.join(root_dir, args[:filename])
+  reformat_file(target_file)
 end
 
 def reformat_file(filename)
