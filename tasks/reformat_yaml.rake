@@ -7,7 +7,7 @@ task :reformat_yaml, [:filename] do |_, args|
   args.with_defaults(filename: nil)
 
   if args[:filename].nil?
-    raise ArgumentError, "A filename is required. `bundle exec rake reformat_yaml[\"lib/path/to/fil\"]`"
+    raise ArgumentError, 'A filename is required. `bundle exec rake reformat_yaml["lib/path/to/fil"]`'
   end
 
   root_dir = File.absolute_path(File.join(__dir__, '..'))
