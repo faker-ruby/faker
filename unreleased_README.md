@@ -23,6 +23,7 @@ development.
 - [Generators](#generators)
     - [Default](#default)
     - [Blockchain](#blockchain)
+    - [Books](#books)
     - [Creature](#creature)
     - [Games](#games)
     - [Japanese Media](#japanese-media)
@@ -146,7 +147,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Dessert](doc/unreleased/default/dessert.md)
   - [Faker::Device](doc/unreleased/default/device.md)
   - [Faker::DrivingLicence](doc/unreleased/default/driving_licence.md)
-  - [Faker::Dune](doc/unreleased/default/dune.md)
   - [Faker::Educator](doc/unreleased/default/educator.md)
   - [Faker::ElectricalComponents](doc/unreleased/default/electrical_components.md)
   - [Faker::Esport](doc/unreleased/default/esport.md)
@@ -214,6 +214,9 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Blockchain::Bitcoin](doc/unreleased/blockchain/bitcoin.md)
   - [Faker::Blockchain::Ethereum](doc/unreleased/blockchain/ethereum.md)
   - [Faker::Blockchain::Tezos](doc/unreleased/blockchain/tezos.md)
+
+### Books
+  - [Faker::Blockchain::Dune](doc/unreleased/books/dune.md)
 
 ### Creature
   - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
