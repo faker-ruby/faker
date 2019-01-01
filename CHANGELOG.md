@@ -34,7 +34,7 @@
 
 ### Deprecation
 - [PR #1503](https://github.com/stympy/faker/pull/1503) Add Quotes namespace [@vbrazo](https://github.com/vbrazo)
-  - Deprecates `::FamousLastWords`, `Fillmurray`, `::GreekPhilosophers`, `::Matz`, `::MostInterestingManInTheWorld`, `::Robin`, `::SingularSiegler`
+  - Deprecates `::FamousLastWords`, `Fillmurray`, `::GreekPhilosophers`, `::Matz`, `::MostInterestingManInTheWorld`, `::Robin`, `::SingularSiegler`, `::Yoda`
 - [PR #1480](https://github.com/stympy/faker/pull/1480) Add Music, Movies and TvShows namespaces [@vbrazo](https://github.com/vbrazo)
   - Deprecates `::Hobbit`, `HitchhikersGuideToTheGalaxy`, `::HarryPotter`, `::RockBand`, `::MichaelScott`, `::RuPaul`
 - [PR #1481](https://github.com/stympy/faker/pull/1481) Add Blockchain namespace [@vbrazo](https://github.com/vbrazo)

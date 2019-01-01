@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../../test_helper'
+require_relative '../test_helper'
 
-class TestFakerYoda < Test::Unit::TestCase
+class TestDeprecateYoda < Test::Unit::TestCase
   def setup
     @tester = Faker::Yoda
   end
