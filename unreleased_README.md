@@ -152,11 +152,13 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::ElectricalComponents](doc/unreleased/default/electrical_components.md)
   - [Faker::Esport](doc/unreleased/default/esport.md)
   - [Faker::File](doc/unreleased/default/file.md)
+  - [Faker::Fillmurray](doc/unreleased/default/fillmurray.md)
   - [Faker::Finance](doc/unreleased/default/finance.md)
   - [Faker::Food](doc/unreleased/default/food.md)
   - [Faker::Football](doc/unreleased/default/football.md)
   - [Faker::FunnyName](doc/unreleased/default/funny_name.md)
   - [Faker::Gender](doc/unreleased/default/gender.md)
+  - [Faker::GreekPhilosophers](doc/unreleased/default/greek_philosophers.md)
   - [Faker::Hacker](doc/unreleased/default/hacker.md)
   - [Faker::Hipster](doc/unreleased/default/hipster.md)
   - [Faker::House](doc/unreleased/default/house.md)
@@ -258,8 +260,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Quotes
   - [Faker::Quotes::FamousLastWords](doc/unreleased/quotes/famous_last_words.md)
-  - [Faker::Quotes::Fillmurray](doc/unreleased/quotes/fillmurray.md)
-  - [Faker::Quotes::GreekPhilosophers](doc/unreleased/quotes/greek_philosophers.md)
   - [Faker::Quotes::Matz](doc/unreleased/quotes/matz.md)
   - [Faker::Quotes::MostInterestingManInTheWorld](doc/unreleased/quotes/most_interesting_man_in_the_world.md)
   - [Faker::Quotes::Robin](doc/unreleased/quotes/robin.md)
