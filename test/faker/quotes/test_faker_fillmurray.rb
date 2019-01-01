@@ -4,7 +4,7 @@ require_relative '../../test_helper'
 
 class TestFakerFillmurray < Test::Unit::TestCase
   def setup
-    @tester = Faker::Fillmurray
+    @tester = Faker::Quotes::Fillmurray
   end
 
   def test_fillmurray

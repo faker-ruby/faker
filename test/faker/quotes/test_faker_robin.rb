@@ -2,9 +2,9 @@
 
 require_relative '../../test_helper'
 
-class TestFakerMatz < Test::Unit::TestCase
+class TestFakerRobin < Test::Unit::TestCase
   def setup
-    @tester = Faker::Matz
+    @tester = Faker::Quotes::Robin
   end
 
   def test_quote
