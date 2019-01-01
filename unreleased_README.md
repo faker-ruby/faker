@@ -28,6 +28,7 @@ development.
     - [Japanese Media](#japanese-media)
     - [Movies](#movies)
     - [Music](#music)
+    - [Quotes](#quotes)
     - [TV Shows](#tv-shows)
 - [Customization](#customization)
 - [Contributing](#contributing)
