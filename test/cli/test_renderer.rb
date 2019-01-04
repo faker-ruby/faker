@@ -73,7 +73,7 @@ describe Faker::CLI::Renderer do
       renderer = @renderer.new(hash, options, output)
       result = renderer.tree
 
-      assert_equal 2, result.nodes.size
+      assert_equal true, result.nodes.size.positive?
       assert_kind_of TTY::Tree, result
       assert_empty output.string
     end
