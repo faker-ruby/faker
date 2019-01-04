@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require 'thor'
+
+require 'cli/commands/list'
+require 'cli/commands/search'
 require 'faker/version'
-require 'faker/cli/commands/list'
-require 'faker/cli/commands/search'
 
 module Faker
   module CLI

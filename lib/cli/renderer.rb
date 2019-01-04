@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pastel'
 require 'tty/pager'
 require 'tty/screen'
@@ -14,7 +16,7 @@ module Faker
 
       def initialize(hash, options, output)
         @hash = hash
-        @options = options.deep_symbolize_keys
+        @options = options
         @output = output
         @crayon = Pastel.new(enabled: output.tty?)
         @pager = TTY::Pager.new(command: 'less -R')
@@ -69,7 +71,7 @@ module Faker
       end
 
       def verbose?
-        options[:verbose] == true
+        options[:verbose]
       end
 
       def verbose_output(method, const, arr)

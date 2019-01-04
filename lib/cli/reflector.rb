@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require 'faker'
+
 module Faker
   module CLI
     # Exposes `Faker` reflection methods
