@@ -122,7 +122,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Avatar](doc/unreleased/default/avatar.md)
   - [Faker::Bank](doc/unreleased/default/bank.md)
   - [Faker::Beer](doc/unreleased/default/beer.md)
-  - [Faker::Book](doc/unreleased/default/book.md)
   - [Faker::Boolean](doc/unreleased/default/boolean.md)
   - [Faker::BossaNova](doc/unreleased/default/bossa_nova.md)
   - [Faker::Business](doc/unreleased/default/business.md)
@@ -147,7 +146,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Dessert](doc/unreleased/default/dessert.md)
   - [Faker::Device](doc/unreleased/default/device.md)
   - [Faker::DrivingLicence](doc/unreleased/default/driving_licence.md)
-  - [Faker::Dune](doc/unreleased/default/dune.md)
   - [Faker::Educator](doc/unreleased/default/educator.md)
   - [Faker::ElectricalComponents](doc/unreleased/default/electrical_components.md)
   - [Faker::Esport](doc/unreleased/default/esport.md)
@@ -173,7 +171,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Lorem](doc/unreleased/default/lorem.md)
   - [Faker::LoremFlickr](doc/unreleased/default/lorem_flickr.md)
   - [Faker::LoremPixel](doc/unreleased/default/lorem_pixel.md)
-  - [Faker::Lovecraft](doc/unreleased/default/lovecraft.md)
   - [Faker::Markdown](doc/unreleased/default/markdown.md)
   - [Faker::Marketing](doc/unreleased/default/marketing.md)
   - [Faker::Matz](doc/unreleased/default/matz.md)
@@ -217,7 +214,10 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Blockchain::Tezos](doc/unreleased/blockchain/tezos.md)
 
 ### Books
+  - [Faker::Book](doc/unreleased/books/book.md)
   - [Faker::Books::CultureSeries](doc/unreleased/books/culture_series.md)
+  - [Faker::Books::Dune](doc/unreleased/books/dune.md)
+  - [Faker::Books::Lovecraft](doc/unreleased/books/lovecraft.md)
 
 ### Creature
   - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)

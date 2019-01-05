@@ -33,6 +33,8 @@
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
 ### Deprecation
+- [PR #1503](https://github.com/stympy/faker/pull/1503) Add Books namespace [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::Dune`, `Lovecraft`
 - [PR #1480](https://github.com/stympy/faker/pull/1480) Add Music, Movies and TvShows namespaces [@vbrazo](https://github.com/vbrazo)
   - Deprecates `::Hobbit`, `HitchhikersGuideToTheGalaxy`, `::HarryPotter`, `::RockBand`, `::MichaelScott`, `::RuPaul`
 - [PR #1481](https://github.com/stympy/faker/pull/1481) Add Blockchain namespace [@vbrazo](https://github.com/vbrazo)

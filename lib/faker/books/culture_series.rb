@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Books
+  class Books
     class CultureSeries < Base
       flexible :culture_series
       class << self
