@@ -13,6 +13,10 @@ module Faker
       def_delegators :command, :run
       attr_reader :options
 
+      def initialize(options)
+        @options = options
+      end
+
       def render(result, output)
         Renderer.call(result, options, output)
       end

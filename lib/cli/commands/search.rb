@@ -6,10 +6,6 @@ module Faker
   module CLI
     module Commands
       class Search < Faker::CLI::Command
-        def initialize(options)
-          @options = options
-        end
-
         def execute(input, output: $stdout)
           result = Faker::CLI::Reflector.find(input)
           render(result, output)
