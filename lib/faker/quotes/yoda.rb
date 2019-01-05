@@ -2,12 +2,10 @@
 
 module Faker
   class Quote
-    class Yoga < Base
-      class << self
-        # from: http://morecoolquotes.com/famous-yoda-quotes/
-        def yoga
-          fetch('quote.yoda')
-        end
+    class << self
+      # from: http://morecoolquotes.com/famous-yoda-quotes/
+      def yoda
+        fetch('quote.yoda')
       end
     end
   end

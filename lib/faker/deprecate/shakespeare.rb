@@ -6,35 +6,35 @@ module Faker
       extend Gem::Deprecate
 
       def hamlet_quote
-        sample(hamlet)
+        Faker::Quotes::Shakespeare.hamlet_quote
       end
 
       def as_you_like_it_quote
-        sample(as_you_like_it)
+        Faker::Quotes::Shakespeare.as_you_like_it_quote
       end
 
       def king_richard_iii_quote
-        sample(king_richard_iii)
+        Faker::Quotes::Shakespeare.king_richard_iii_quote
       end
 
       def romeo_and_juliet_quote
-        sample(romeo_and_juliet)
+        Faker::Quotes::Shakespeare.romeo_and_juliet_quote
       end
 
       def hamlet
-        fetch('shakespeare.hamlet')
+        Faker::Quotes::Shakespeare.hamlet
       end
 
       def as_you_like_it
-        fetch('shakespeare.as_you_like_it')
+        Faker::Quotes::Shakespeare.as_you_like_it
       end
 
       def king_richard_iii
-        fetch('shakespeare.king_richard_iii')
+        Faker::Quotes::Shakespeare.king_richard_iii
       end
 
       def romeo_and_juliet
-        fetch('shakespeare.romeo_and_juliet')
+        Faker::Quotes::Shakespeare.romeo_and_juliet
       end
 
       deprecate :hamlet_quote, 'Faker::Quotes::Shakespeare.hamlet_quote', 2018, 12

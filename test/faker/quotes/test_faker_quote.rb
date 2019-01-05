@@ -7,7 +7,7 @@ class TestFakerYoda < Test::Unit::TestCase
     @tester = Faker::Quote
   end
 
-  def test_quote
+  def test_yoda
     assert @tester.yoda.match(/\w+/)
   end
 end
