@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../../test_helper'
+require_relative '../test_helper'
 
-class TestFakerLovecraft < Test::Unit::TestCase
+class TestDeprecateLovecraft < Test::Unit::TestCase
   def setup
     @tester = Faker::Lovecraft
     @wordlist = I18n.translate('faker.lovecraft.words')
