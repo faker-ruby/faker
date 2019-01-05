@@ -13,7 +13,6 @@ module Faker
 
       desc 'version', 'Faker version'
       def version
-        require_relative 'version'
         puts "v#{Faker::VERSION}"
       end
       map %w[--version -v] => :version
