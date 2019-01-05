@@ -1,6 +1,7 @@
 # Faker::Books::Lovecraft
 
 ```ruby
+Faker::Books::Lovecraft.fhtagn #=> "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"
 Faker::Books::Lovecraft.fhtagn(3) #=> "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"
 
 Faker::Books::Lovecraft.deity #=> "Shub-Niggurath"
