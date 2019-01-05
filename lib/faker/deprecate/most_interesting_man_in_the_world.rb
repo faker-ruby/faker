@@ -6,10 +6,10 @@ module Faker
       extend Gem::Deprecate
 
       def quote
-        Faker::Quotes::MostInterestingManInTheWorld.quote
+        Faker::Quote.most_interesting_man_in_the_world
       end
 
-      deprecate :quote, 'Faker::Quotes::MostInterestingManInTheWorld.quote', 2018, 12
+      deprecate :quote, 'Faker::Quote.most_interesting_man_in_the_world', 2018, 12
     end
   end
 end

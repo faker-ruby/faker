@@ -6,10 +6,10 @@ module Faker
       extend Gem::Deprecate
 
       def quote
-        Faker::Quotes::Robin.quote
+        Faker::Quote.robin
       end
 
-      deprecate :quote, 'Faker::Quotes::Robin.quote', 2018, 12
+      deprecate :quote, 'Faker::Quote.robin', 2018, 12
     end
   end
 end

@@ -6,10 +6,10 @@ module Faker
       extend Gem::Deprecate
 
       def quote
-        Faker::Quotes::SingularSiegler.quote
+        Faker::Quote.singular_siegler
       end
 
-      deprecate :quote, 'Faker::Quotes::SingularSiegler.quote', 2018, 12
+      deprecate :quote, 'Faker::Quote.singular_siegler', 2018, 12
     end
   end
 end
