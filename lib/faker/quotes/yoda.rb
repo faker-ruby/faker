@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module Faker
-  class Quotes
-    class Yoda < Base
+  class Quote
+    class Yoga < Base
       class << self
         # from: http://morecoolquotes.com/famous-yoda-quotes/
-        def quote
-          fetch('yoda.quotes')
+        def yoga
+          fetch('quote.yoda')
         end
       end
     end
