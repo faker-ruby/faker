@@ -263,6 +263,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Quotes::Matz](doc/unreleased/quotes/matz.md)
   - [Faker::Quotes::MostInterestingManInTheWorld](doc/unreleased/quotes/most_interesting_man_in_the_world.md)
   - [Faker::Quotes::Robin](doc/unreleased/quotes/robin.md)
+  - [Faker::Quotes::Shakespeare](doc/unreleased/quotes/shakespeare.md)
   - [Faker::Quotes::SingularSiegler](doc/unreleased/quotes/singular_siegler.md)
 
 ### Tv Shows

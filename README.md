@@ -134,6 +134,7 @@ Contents
   - [Faker::RuPaul](doc/v1.9.1/rupaul.md)
   - [Faker::Science](doc/v1.9.1/science.md)
   - [Faker::Seinfeld](doc/v1.9.1/seinfeld.md)
+  - [Faker::Shakespeare](doc/v1.9.1/shakespeare.md)
   - [Faker::SiliconValley](doc/v1.9.1/silicon_valley.md)
   - [Faker::Simpsons](doc/v1.9.1/simpsons.md)
   - [Faker::SingularSiegler](doc/v1.9.1/singular_siegler.md)
