@@ -215,6 +215,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Books
   - [Faker::Book](doc/unreleased/books/book.md)
+  - [Faker::Books::CultureSeries](doc/unreleased/books/culture_series.md)
   - [Faker::Books::Dune](doc/unreleased/books/dune.md)
   - [Faker::Books::Lovecraft](doc/unreleased/books/lovecraft.md)
 
