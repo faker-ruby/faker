@@ -23,6 +23,7 @@ development.
 - [Generators](#generators)
     - [Default](#default)
     - [Blockchain](#blockchain)
+    - [Books](#books)
     - [Creature](#creature)
     - [Games](#games)
     - [Japanese Media](#japanese-media)
@@ -214,6 +215,9 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Blockchain::Bitcoin](doc/unreleased/blockchain/bitcoin.md)
   - [Faker::Blockchain::Ethereum](doc/unreleased/blockchain/ethereum.md)
   - [Faker::Blockchain::Tezos](doc/unreleased/blockchain/tezos.md)
+
+### Books
+  - [Faker::Books::CultureSeries](doc/unreleased/books/culture_series.md)
 
 ### Creature
   - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
