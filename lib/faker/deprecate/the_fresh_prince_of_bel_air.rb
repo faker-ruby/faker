@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::TheFreshPrinceOfBelAir.quote
       end
 
-      deprecate :character, 'Faker::TvShows::TheFreshPrinceOfBelAir.character', 2019, 01
-      deprecate :celebrity, 'Faker::TvShows::TheFreshPrinceOfBelAir.celebrity', 2019, 01
-      deprecate :quote, 'Faker::TvShows::TheFreshPrinceOfBelAir.quote', 2019, 01
+      deprecate :character, 'Faker::TvShows::TheFreshPrinceOfBelAir.character', 2019, 0o1
+      deprecate :celebrity, 'Faker::TvShows::TheFreshPrinceOfBelAir.celebrity', 2019, 0o1
+      deprecate :quote, 'Faker::TvShows::TheFreshPrinceOfBelAir.quote', 2019, 0o1
     end
   end
 end

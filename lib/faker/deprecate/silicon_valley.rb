@@ -37,14 +37,14 @@ module Faker
         Faker::TvShows::SiliconValley.email
       end
 
-      deprecate :character, 'Faker::TvShows::SiliconValley.character', 2019, 01
-      deprecate :company, 'Faker::TvShows::SiliconValley.company', 2019, 01
-      deprecate :quote, 'Faker::TvShows::SiliconValley.quote', 2019, 01
-      deprecate :app, 'Faker::TvShows::SiliconValley.app', 2019, 01
-      deprecate :invention, 'Faker::TvShows::SiliconValley.invention', 2019, 01
-      deprecate :motto, 'Faker::TvShows::SiliconValley.motto', 2019, 01
-      deprecate :url, 'Faker::TvShows::SiliconValley.url', 2019, 01
-      deprecate :email, 'Faker::TvShows::SiliconValley.email', 2019, 01
+      deprecate :character, 'Faker::TvShows::SiliconValley.character', 2019, 0o1
+      deprecate :company, 'Faker::TvShows::SiliconValley.company', 2019, 0o1
+      deprecate :quote, 'Faker::TvShows::SiliconValley.quote', 2019, 0o1
+      deprecate :app, 'Faker::TvShows::SiliconValley.app', 2019, 0o1
+      deprecate :invention, 'Faker::TvShows::SiliconValley.invention', 2019, 0o1
+      deprecate :motto, 'Faker::TvShows::SiliconValley.motto', 2019, 0o1
+      deprecate :url, 'Faker::TvShows::SiliconValley.url', 2019, 0o1
+      deprecate :email, 'Faker::TvShows::SiliconValley.email', 2019, 0o1
     end
   end
 end

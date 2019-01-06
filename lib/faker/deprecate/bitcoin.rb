@@ -13,8 +13,8 @@ module Faker
         Faker::Blockchain::Bitcoin.testnet_address
       end
 
-      deprecate :address, 'Faker::Blockchain::Bitcoin.address', 2019, 01
-      deprecate :testnet_address, 'Faker::Blockchain::Bitcoin.testnet_address', 2019, 01
+      deprecate :address, 'Faker::Blockchain::Bitcoin.address', 2019, 0o1
+      deprecate :testnet_address, 'Faker::Blockchain::Bitcoin.testnet_address', 2019, 0o1
     end
   end
 end
