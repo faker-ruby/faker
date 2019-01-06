@@ -48,20 +48,9 @@ module Faker
         fetch('name.suffix')
       end
 
-      def title
-        Faker::Job.title
-      end
-
       def initials(character_count = 3)
         (0...character_count).map { rand(65..90).chr }.join
       end
-
-      def job_titles
-        fetch_all('job.position')
-      end
-
-      deprecate :title, 'Faker::Job.title', 2018, 9
-      deprecate :job_titles, :none, 2018, 9
     end
   end
 end

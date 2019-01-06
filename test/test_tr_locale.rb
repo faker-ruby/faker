@@ -19,7 +19,6 @@ class TestTRLocale < Test::Unit::TestCase
   end
 
   def test_tr_book_fields
-    assert Faker::Book.title.is_a? String
     assert Faker::Book.author.is_a? String
     assert Faker::Book.publisher.is_a? String
     assert Faker::Book.quote.is_a? String
@@ -36,7 +35,6 @@ class TestTRLocale < Test::Unit::TestCase
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.title.is_a? String
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end
