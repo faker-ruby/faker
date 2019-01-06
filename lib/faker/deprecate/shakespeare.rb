@@ -37,14 +37,14 @@ module Faker
         Faker::Quotes::Shakespeare.romeo_and_juliet
       end
 
-      deprecate :hamlet_quote, 'Faker::Quotes::Shakespeare.hamlet_quote', 2018, 12
-      deprecate :as_you_like_it_quote, 'Faker::Quotes::Shakespeare.as_you_like_it_quote', 2018, 12
-      deprecate :king_richard_iii_quote, 'Faker::Quotes::Shakespeare.king_richard_iii_quote', 2018, 12
-      deprecate :romeo_and_juliet_quote, 'Faker::Quotes::Shakespeare.romeo_and_juliet_quote', 2018, 12
-      deprecate :hamlet, 'Faker::Quotes::Shakespeare.hamlet', 2018, 12
-      deprecate :as_you_like_it, 'Faker::Quotes::Shakespeare.as_you_like_it', 2018, 12
-      deprecate :king_richard_iii, 'Faker::Quotes::Shakespeare.king_richard_iii', 2018, 12
-      deprecate :romeo_and_juliet, 'Faker::Quotes::Shakespeare.romeo_and_juliet', 2018, 12
+      deprecate :hamlet_quote, 'Faker::Quotes::Shakespeare.hamlet_quote', 2019, 01
+      deprecate :as_you_like_it_quote, 'Faker::Quotes::Shakespeare.as_you_like_it_quote', 2019, 01
+      deprecate :king_richard_iii_quote, 'Faker::Quotes::Shakespeare.king_richard_iii_quote', 2019, 01
+      deprecate :romeo_and_juliet_quote, 'Faker::Quotes::Shakespeare.romeo_and_juliet_quote', 2019, 01
+      deprecate :hamlet, 'Faker::Quotes::Shakespeare.hamlet', 2019, 01
+      deprecate :as_you_like_it, 'Faker::Quotes::Shakespeare.as_you_like_it', 2019, 01
+      deprecate :king_richard_iii, 'Faker::Quotes::Shakespeare.king_richard_iii', 2019, 01
+      deprecate :romeo_and_juliet, 'Faker::Quotes::Shakespeare.romeo_and_juliet', 2019, 01
     end
   end
 end

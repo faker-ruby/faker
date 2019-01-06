@@ -37,14 +37,14 @@ module Faker
         Faker::Creature::Dog.size
       end
 
-      deprecate :name, 'Faker::Creature::Dog.name', 2018, 12
-      deprecate :breed, 'Faker::Creature::Dog.breed', 2018, 12
-      deprecate :sound, 'Faker::Creature::Dog.sound', 2018, 12
-      deprecate :meme_phrase, 'Faker::Creature::Dog.meme_phrase', 2018, 12
-      deprecate :age, 'Faker::Creature::Dog.age', 2018, 12
-      deprecate :gender, 'Faker::Creature::Dog.gender', 2018, 12
-      deprecate :coat_length, 'Faker::Creature::Dog.coat_length', 2018, 12
-      deprecate :size, 'Faker::Creature::Dog.size', 2018, 12
+      deprecate :name, 'Faker::Creature::Dog.name', 2019, 01
+      deprecate :breed, 'Faker::Creature::Dog.breed', 2019, 01
+      deprecate :sound, 'Faker::Creature::Dog.sound', 2019, 01
+      deprecate :meme_phrase, 'Faker::Creature::Dog.meme_phrase', 2019, 01
+      deprecate :age, 'Faker::Creature::Dog.age', 2019, 01
+      deprecate :gender, 'Faker::Creature::Dog.gender', 2019, 01
+      deprecate :coat_length, 'Faker::Creature::Dog.coat_length', 2019, 01
+      deprecate :size, 'Faker::Creature::Dog.size', 2019, 01
     end
   end
 end

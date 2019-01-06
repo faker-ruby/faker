@@ -9,7 +9,7 @@ module Faker
         Faker::Quote.most_interesting_man_in_the_world
       end
 
-      deprecate :quote, 'Faker::Quote.most_interesting_man_in_the_world', 2018, 12
+      deprecate :quote, 'Faker::Quote.most_interesting_man_in_the_world', 2019, 01
     end
   end
 end

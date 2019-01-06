@@ -21,10 +21,10 @@ module Faker
         Faker::Movies::Hobbit.location
       end
 
-      deprecate :character, 'Faker::Movies::Hobbit.character', 2018, 12
-      deprecate :thorins_company, 'Faker::Movies::Hobbit.thorins_company', 2018, 12
-      deprecate :quote, 'Faker::Movies::Hobbit.quote', 2018, 12
-      deprecate :location, 'Faker::Movies::Hobbit.location', 2018, 12
+      deprecate :character, 'Faker::Movies::Hobbit.character', 2019, 01
+      deprecate :thorins_company, 'Faker::Movies::Hobbit.thorins_company', 2019, 01
+      deprecate :quote, 'Faker::Movies::Hobbit.quote', 2019, 01
+      deprecate :location, 'Faker::Movies::Hobbit.location', 2019, 01
     end
   end
 end

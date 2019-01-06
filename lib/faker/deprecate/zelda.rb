@@ -21,10 +21,10 @@ module Faker
         Faker::Games::Zelda.item
       end
 
-      deprecate :game, 'Faker::Games::Zelda.game', 2018, 12
-      deprecate :character, 'Faker::Games::Zelda.character', 2018, 12
-      deprecate :location, 'Faker::Games::Zelda.location', 2018, 12
-      deprecate :item, 'Faker::Games::Zelda.item', 2018, 12
+      deprecate :game, 'Faker::Games::Zelda.game', 2019, 01
+      deprecate :character, 'Faker::Games::Zelda.character', 2019, 01
+      deprecate :location, 'Faker::Games::Zelda.location', 2019, 01
+      deprecate :item, 'Faker::Games::Zelda.item', 2019, 01
     end
   end
 end

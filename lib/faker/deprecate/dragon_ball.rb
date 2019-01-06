@@ -9,7 +9,7 @@ module Faker
         Faker::JapaneseMedia::DragonBall.character
       end
 
-      deprecate :character, 'Faker::JapaneseMedia::DragonBall.character', 2018, 12
+      deprecate :character, 'Faker::JapaneseMedia::DragonBall.character', 2019, 01
     end
   end
 end

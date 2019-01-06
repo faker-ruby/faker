@@ -13,8 +13,8 @@ module Faker
         Faker::TvShows::ParksAndRec.city
       end
 
-      deprecate :character, 'Faker::TvShows::ParksAndRec.character', 2018, 12
-      deprecate :city, 'Faker::TvShows::ParksAndRec.city', 2018, 12
+      deprecate :character, 'Faker::TvShows::ParksAndRec.character', 2019, 01
+      deprecate :city, 'Faker::TvShows::ParksAndRec.city', 2019, 01
     end
   end
 end

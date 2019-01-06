@@ -25,11 +25,11 @@ module Faker
         Faker::TvShows::Buffy.episode
       end
 
-      deprecate :character, 'Faker::TvShows::Buffy.character', 2018, 12
-      deprecate :quote, 'Faker::TvShows::Buffy.quote', 2018, 12
-      deprecate :celebrity, 'Faker::TvShows::Buffy.celebrity', 2018, 12
-      deprecate :big_bad, 'Faker::TvShows::Buffy.big_bad', 2018, 12
-      deprecate :episode, 'Faker::TvShows::Buffy.episode', 2018, 12
+      deprecate :character, 'Faker::TvShows::Buffy.character', 2019, 01
+      deprecate :quote, 'Faker::TvShows::Buffy.quote', 2019, 01
+      deprecate :celebrity, 'Faker::TvShows::Buffy.celebrity', 2019, 01
+      deprecate :big_bad, 'Faker::TvShows::Buffy.big_bad', 2019, 01
+      deprecate :episode, 'Faker::TvShows::Buffy.episode', 2019, 01
     end
   end
 end

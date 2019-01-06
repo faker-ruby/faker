@@ -9,7 +9,7 @@ module Faker
         Faker::Quote.robin
       end
 
-      deprecate :quote, 'Faker::Quote.robin', 2018, 12
+      deprecate :quote, 'Faker::Quote.robin', 2019, 01
     end
   end
 end

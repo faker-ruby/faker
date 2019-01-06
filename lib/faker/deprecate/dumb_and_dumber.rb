@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::DumbAndDumber.quote
       end
 
-      deprecate :actor, 'Faker::TvShows::DumbAndDumber.actor', 2018, 12
-      deprecate :character, 'Faker::TvShows::DumbAndDumber.character', 2018, 12
-      deprecate :quote, 'Faker::TvShows::DumbAndDumber.quote', 2018, 12
+      deprecate :actor, 'Faker::TvShows::DumbAndDumber.actor', 2019, 01
+      deprecate :character, 'Faker::TvShows::DumbAndDumber.character', 2019, 01
+      deprecate :quote, 'Faker::TvShows::DumbAndDumber.quote', 2019, 01
     end
   end
 end

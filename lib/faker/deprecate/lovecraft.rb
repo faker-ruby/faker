@@ -49,17 +49,17 @@ module Faker
         Faker::Books::Lovecraft.paragraph_by_chars(chars)
       end
 
-      deprecate :location, 'Faker::Books::Lovecraft.location', 2018, 12
-      deprecate :fhtagn, 'Faker::Books::Lovecraft.fhtagn', 2018, 12
-      deprecate :deity, 'Faker::Books::Lovecraft.deity', 2018, 12
-      deprecate :tome, 'Faker::Books::Lovecraft.tome', 2018, 12
-      deprecate :sentence, 'Faker::Books::Lovecraft.sentence', 2018, 12
-      deprecate :word, 'Faker::Books::Lovecraft.word', 2018, 12
-      deprecate :words, 'Faker::Books::Lovecraft.words', 2018, 12
-      deprecate :sentences, 'Faker::Books::Lovecraft.sentences', 2018, 12
-      deprecate :paragraph, 'Faker::Books::Lovecraft.paragraph', 2018, 12
-      deprecate :paragraphs, 'Faker::Books::Lovecraft.paragraphs', 2018, 12
-      deprecate :paragraph_by_chars, 'Faker::Books::Lovecraft.paragraph_by_chars', 2018, 12
+      deprecate :location, 'Faker::Books::Lovecraft.location', 2019, 01
+      deprecate :fhtagn, 'Faker::Books::Lovecraft.fhtagn', 2019, 01
+      deprecate :deity, 'Faker::Books::Lovecraft.deity', 2019, 01
+      deprecate :tome, 'Faker::Books::Lovecraft.tome', 2019, 01
+      deprecate :sentence, 'Faker::Books::Lovecraft.sentence', 2019, 01
+      deprecate :word, 'Faker::Books::Lovecraft.word', 2019, 01
+      deprecate :words, 'Faker::Books::Lovecraft.words', 2019, 01
+      deprecate :sentences, 'Faker::Books::Lovecraft.sentences', 2019, 01
+      deprecate :paragraph, 'Faker::Books::Lovecraft.paragraph', 2019, 01
+      deprecate :paragraphs, 'Faker::Books::Lovecraft.paragraphs', 2019, 01
+      deprecate :paragraph_by_chars, 'Faker::Books::Lovecraft.paragraph_by_chars', 2019, 01
     end
   end
 end

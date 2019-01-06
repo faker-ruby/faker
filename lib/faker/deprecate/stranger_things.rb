@@ -13,8 +13,8 @@ module Faker
         Faker::TvShows::StrangerThings.character
       end
 
-      deprecate :quote, 'Faker::TvShows::StrangerThings.quote', 2018, 12
-      deprecate :character, 'Faker::TvShows::StrangerThings.character', 2018, 12
+      deprecate :quote, 'Faker::TvShows::StrangerThings.quote', 2019, 01
+      deprecate :character, 'Faker::TvShows::StrangerThings.character', 2019, 01
     end
   end
 end

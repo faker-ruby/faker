@@ -45,16 +45,16 @@ module Faker
         Faker::Movies::StarWars.quote(character)
       end
 
-      deprecate :call_squadron, 'Faker::Movies::StarWars.call_squadron', 2018, 12
-      deprecate :call_sign, 'Faker::Movies::StarWars.call_sign', 2018, 12
-      deprecate :call_number, 'Faker::Movies::StarWars.call_number', 2018, 12
-      deprecate :character, 'Faker::Movies::StarWars.character', 2018, 12
-      deprecate :droid, 'Faker::Movies::StarWars.droid', 2018, 12
-      deprecate :planet, 'Faker::Movies::StarWars.planet', 2018, 12
-      deprecate :specie, 'Faker::Movies::StarWars.specie', 2018, 12
-      deprecate :vehicle, 'Faker::Movies::StarWars.vehicle', 2018, 12
-      deprecate :wookiee_sentence, 'Faker::Movies::StarWars.wookiee_sentence', 2018, 12
-      deprecate :quote, 'Faker::Movies::StarWars.quote', 2018, 12
+      deprecate :call_squadron, 'Faker::Movies::StarWars.call_squadron', 2019, 01
+      deprecate :call_sign, 'Faker::Movies::StarWars.call_sign', 2019, 01
+      deprecate :call_number, 'Faker::Movies::StarWars.call_number', 2019, 01
+      deprecate :character, 'Faker::Movies::StarWars.character', 2019, 01
+      deprecate :droid, 'Faker::Movies::StarWars.droid', 2019, 01
+      deprecate :planet, 'Faker::Movies::StarWars.planet', 2019, 01
+      deprecate :specie, 'Faker::Movies::StarWars.specie', 2019, 01
+      deprecate :vehicle, 'Faker::Movies::StarWars.vehicle', 2019, 01
+      deprecate :wookiee_sentence, 'Faker::Movies::StarWars.wookiee_sentence', 2019, 01
+      deprecate :quote, 'Faker::Movies::StarWars.quote', 2019, 01
 
       def call_numbers
         fetch_all('star_wars.call_numbers')

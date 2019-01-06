@@ -24,10 +24,10 @@ module Faker
         Faker::Blockchain::Tezos.signature
       end
 
-      deprecate :account, 'Faker::Blockchain::Tezos.account', 2018, 12
-      deprecate :contract, 'Faker::Blockchain::Tezos.contract', 2018, 12
-      deprecate :operation, 'Faker::Blockchain::Tezos.operation', 2018, 12
-      deprecate :signature, 'Faker::Blockchain::Tezos.signature', 2018, 12
+      deprecate :account, 'Faker::Blockchain::Tezos.account', 2019, 01
+      deprecate :contract, 'Faker::Blockchain::Tezos.contract', 2019, 01
+      deprecate :operation, 'Faker::Blockchain::Tezos.operation', 2019, 01
+      deprecate :signature, 'Faker::Blockchain::Tezos.signature', 2019, 01
     end
   end
 end

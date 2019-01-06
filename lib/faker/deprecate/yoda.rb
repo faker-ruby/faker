@@ -10,7 +10,7 @@ module Faker
         Faker::Quote.yoda
       end
 
-      deprecate :quote, 'Faker::Quote.yoda', 2018, 12
+      deprecate :quote, 'Faker::Quote.yoda', 2019, 01
     end
   end
 end

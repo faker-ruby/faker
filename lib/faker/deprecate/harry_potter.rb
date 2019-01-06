@@ -29,12 +29,12 @@ module Faker
         Faker::Movies::HarryPotter.spell
       end
 
-      deprecate :character, 'Faker::Movies::HarryPotter.character', 2018, 12
-      deprecate :location, 'Faker::Movies::HarryPotter.location', 2018, 12
-      deprecate :quote, 'Faker::Movies::HarryPotter.quote', 2018, 12
-      deprecate :book, 'Faker::Movies::HarryPotter.book', 2018, 12
-      deprecate :house, 'Faker::Movies::HarryPotter.house', 2018, 12
-      deprecate :spell, 'Faker::Movies::HarryPotter.spell', 2018, 12
+      deprecate :character, 'Faker::Movies::HarryPotter.character', 2019, 01
+      deprecate :location, 'Faker::Movies::HarryPotter.location', 2019, 01
+      deprecate :quote, 'Faker::Movies::HarryPotter.quote', 2019, 01
+      deprecate :book, 'Faker::Movies::HarryPotter.book', 2019, 01
+      deprecate :house, 'Faker::Movies::HarryPotter.house', 2019, 01
+      deprecate :spell, 'Faker::Movies::HarryPotter.spell', 2019, 01
     end
   end
 end
