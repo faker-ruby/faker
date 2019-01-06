@@ -33,6 +33,8 @@
 - [PR #372](https://github.com/stympy/faker/pull/372) Add test_password_could_achieve_max_length [@oleksii-ti](https://github.com/oleksii-ti)
 
 ### Deprecation
+- [PR #1504](https://github.com/stympy/faker/pull/1504) Add Quotes namespace [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::FamousLastWords`, `::Matz`, `::MostInterestingManInTheWorld`, `::Robin`, `::Shakespeare`, `::SingularSiegler`, `::Yoda`
 - [PR #1503](https://github.com/stympy/faker/pull/1503) Add Books namespace [@vbrazo](https://github.com/vbrazo)
   - Deprecates `::Dune`, `Lovecraft`
 - [PR #1480](https://github.com/stympy/faker/pull/1480) Add Music, Movies and TvShows namespaces [@vbrazo](https://github.com/vbrazo)

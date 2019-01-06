@@ -2,12 +2,14 @@
 
 module Faker
   class FamousLastWords < Base
-    flexible :famous_last_words
-
     class << self
+      extend Gem::Deprecate
+
       def last_words
-        fetch('famous_last_words.last_words')
+        Faker::Quote.famous_last_words
       end
+
+      deprecate :last_words, 'Faker::Quote.famous_last_words', 2018, 12
     end
   end
 end

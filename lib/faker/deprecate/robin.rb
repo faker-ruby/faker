@@ -3,9 +3,13 @@
 module Faker
   class Robin < Base
     class << self
+      extend Gem::Deprecate
+
       def quote
-        fetch('robin.quotes')
+        Faker::Quote.robin
       end
+
+      deprecate :quote, 'Faker::Quote.robin', 2018, 12
     end
   end
 end

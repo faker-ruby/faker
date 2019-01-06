@@ -29,6 +29,7 @@ development.
     - [Japanese Media](#japanese-media)
     - [Movies](#movies)
     - [Music](#music)
+    - [Quotes](#quotes)
     - [TV Shows](#tv-shows)
 - [Customization](#customization)
 - [Contributing](#contributing)
@@ -149,7 +150,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Educator](doc/unreleased/default/educator.md)
   - [Faker::ElectricalComponents](doc/unreleased/default/electrical_components.md)
   - [Faker::Esport](doc/unreleased/default/esport.md)
-  - [Faker::FamousLastWords](doc/unreleased/default/famous_last_words.md)
   - [Faker::File](doc/unreleased/default/file.md)
   - [Faker::Fillmurray](doc/unreleased/default/fillmurray.md)
   - [Faker::Finance](doc/unreleased/default/finance.md)
@@ -173,10 +173,8 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::LoremPixel](doc/unreleased/default/lorem_pixel.md)
   - [Faker::Markdown](doc/unreleased/default/markdown.md)
   - [Faker::Marketing](doc/unreleased/default/marketing.md)
-  - [Faker::Matz](doc/unreleased/default/matz.md)
   - [Faker::Measurement](doc/unreleased/default/measurement.md)
   - [Faker::Military](doc/unreleased/default/military.md)
-  - [Faker::MostInterestingManInTheWorld](doc/unreleased/default/most_interesting_man_in_the_world.md)
   - [Faker::Name](doc/unreleased/default/name.md)
   - [Faker::Nation](doc/unreleased/default/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/unreleased/default/nato_phonetic_alphabet.md)
@@ -188,9 +186,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::ProgrammingLanguage](doc/unreleased/default/programming_language.md)
   - [Faker::Relationship](doc/unreleased/default/relationship.md)
   - [Faker::Restaurant](doc/unreleased/default/restaurant.md)
-  - [Faker::Robin](doc/unreleased/default/robin.md)
   - [Faker::Science](doc/unreleased/default/science.md)
-  - [Faker::SingularSiegler](doc/unreleased/default/singular_siegler.md)
   - [Faker::SlackEmoji](doc/unreleased/default/slack_emoji.md)
   - [Faker::Source](doc/unreleased/default/source.md)
   - [Faker::SouthAfrica](doc/unreleased/default/south_africa.md)
@@ -265,6 +261,10 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Music::Phish](doc/unreleased/music/phish.md)
   - [Faker::Music::RockBand](doc/unreleased/music/rock_band.md)
   - [Faker::Music::UmphreysMcgee](doc/unreleased/music/umphreys_mcgee.md)
+
+### Quotes
+  - [Faker::Quote](doc/unreleased/quotes/quote.md)
+  - [Faker::Quotes::Shakespeare](doc/unreleased/quotes/shakespeare.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/unreleased/tv_shows/aqua_teen_hunger_force.md)
