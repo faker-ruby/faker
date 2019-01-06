@@ -10,7 +10,7 @@ module Faker
   module CLI
     class Base < Thor
       Error = Class.new(StandardError)
-      # Skip default deprecation warnings
+      # Do not print depracation warnings; the CLI will do that
       Gem::Deprecate.skip = true
 
       desc 'version', 'Faker version'

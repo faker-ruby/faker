@@ -5,9 +5,9 @@ require_relative '../command'
 module Faker
   module CLI
     module Commands
-      class Search < Faker::CLI::Command
+      class Search < Command
         def execute(input, output: $stdout)
-          result = Faker::CLI::Reflector.find(input)
+          result = Reflector.find(input)
           render(result, output)
         end
 

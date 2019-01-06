@@ -52,17 +52,17 @@ module Faker
       private
 
       def all_descendants_with_methods
-        faker_descendants.each do |faker|
-          store(faker, faker.my_singleton_methods)
+        faker_descendants.each do |descendant|
+          store(descendant, descendant.my_singleton_methods)
         end
         descendants_with_methods
       end
 
       def search_descendants_matching_query
-        faker_descendants.each do |faker|
-          methods = faker.my_singleton_methods
+        faker_descendants.each do |descendant|
+          methods = descendant.my_singleton_methods
           matching = methods.select { |m| query_matches?(m.to_s) }
-          store(faker, matching)
+          store(descendant, matching)
         end
       end
 

@@ -49,11 +49,11 @@ module Faker
       private
 
       def build_tree
-        result = hash.reduce({}) do |h, (faker, methods)|
-          h.merge! node(faker, methods&.sort)
+        results = hash.reduce({}) do |h, (const, methods)|
+          h.merge! node(const, methods&.sort)
         end
 
-        result.sort_by(&:to_s).to_h
+        results.sort_by(&:to_s).to_h
       end
 
       def node(const, methods)
