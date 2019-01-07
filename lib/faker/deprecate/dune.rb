@@ -25,11 +25,11 @@ module Faker
         Faker::Books::Dune.saying(source)
       end
 
-      deprecate :character, 'Faker::Books::Dune.character', 2019, 01
-      deprecate :title, 'Faker::Books::Dune.title', 2019, 01
-      deprecate :planet, 'Faker::Books::Dune.planet', 2019, 01
-      deprecate :quote, 'Faker::Books::Dune.quote', 2019, 01
-      deprecate :saying, 'Faker::Books::Dune.saying', 2019, 01
+      deprecate :character, 'Faker::Books::Dune.character', 2019, 0o1
+      deprecate :title, 'Faker::Books::Dune.title', 2019, 0o1
+      deprecate :planet, 'Faker::Books::Dune.planet', 2019, 0o1
+      deprecate :quote, 'Faker::Books::Dune.quote', 2019, 0o1
+      deprecate :saying, 'Faker::Books::Dune.saying', 2019, 0o1
     end
   end
 end

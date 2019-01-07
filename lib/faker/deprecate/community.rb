@@ -13,8 +13,8 @@ module Faker
         Faker::TvShows::Community.quotes
       end
 
-      deprecate :characters, 'Faker::TvShows::Community.characters', 2019, 01
-      deprecate :quotes, 'Faker::TvShows::Community.quotes', 2019, 01
+      deprecate :characters, 'Faker::TvShows::Community.characters', 2019, 0o1
+      deprecate :quotes, 'Faker::TvShows::Community.quotes', 2019, 0o1
     end
   end
 end

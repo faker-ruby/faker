@@ -17,9 +17,9 @@ module Faker
         Faker::Games::Overwatch.quote
       end
 
-      deprecate :hero, 'Faker::Games::Overwatch.hero', 2019, 01
-      deprecate :location, 'Faker::Games::Overwatch.location', 2019, 01
-      deprecate :quote, 'Faker::Games::Overwatch.quote', 2019, 01
+      deprecate :hero, 'Faker::Games::Overwatch.hero', 2019, 0o1
+      deprecate :location, 'Faker::Games::Overwatch.location', 2019, 0o1
+      deprecate :quote, 'Faker::Games::Overwatch.quote', 2019, 0o1
     end
   end
 end

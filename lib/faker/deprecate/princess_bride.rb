@@ -13,8 +13,8 @@ module Faker
         Faker::Movies::PrincessBride.quote
       end
 
-      deprecate :character, 'Faker::Movies::PrincessBride.character', 2019, 01
-      deprecate :quote, 'Faker::Movies::PrincessBride.quote', 2019, 01
+      deprecate :character, 'Faker::Movies::PrincessBride.character', 2019, 0o1
+      deprecate :quote, 'Faker::Movies::PrincessBride.quote', 2019, 0o1
     end
   end
 end

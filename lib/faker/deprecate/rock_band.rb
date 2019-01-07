@@ -9,7 +9,7 @@ module Faker
         Faker::Music::RockBand.name
       end
 
-      deprecate :name, 'Faker::Music::RockBand.name', 2019, 01
+      deprecate :name, 'Faker::Music::RockBand.name', 2019, 0o1
     end
   end
 end

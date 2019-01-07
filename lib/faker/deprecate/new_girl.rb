@@ -13,8 +13,8 @@ module Faker
         Faker::TvShows::NewGirl.quote
       end
 
-      deprecate :character, 'Faker::TvShows::NewGirl.character', 2019, 01
-      deprecate :quote, 'Faker::TvShows::NewGirl.quote', 2019, 01
+      deprecate :character, 'Faker::TvShows::NewGirl.character', 2019, 0o1
+      deprecate :quote, 'Faker::TvShows::NewGirl.quote', 2019, 0o1
     end
   end
 end

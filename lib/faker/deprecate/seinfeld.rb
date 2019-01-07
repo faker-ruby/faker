@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::Seinfeld.quote
       end
 
-      deprecate :business, 'Faker::TvShows::Seinfeld.business', 2019, 01
-      deprecate :character, 'Faker::TvShows::Seinfeld.character', 2019, 01
-      deprecate :quote, 'Faker::TvShows::Seinfeld.quote', 2019, 01
+      deprecate :business, 'Faker::TvShows::Seinfeld.business', 2019, 0o1
+      deprecate :character, 'Faker::TvShows::Seinfeld.character', 2019, 0o1
+      deprecate :quote, 'Faker::TvShows::Seinfeld.quote', 2019, 0o1
     end
   end
 end

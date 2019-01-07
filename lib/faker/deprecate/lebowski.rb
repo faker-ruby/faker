@@ -17,9 +17,9 @@ module Faker
         Faker::Movies::Lebowski.quote
       end
 
-      deprecate :actor, 'Faker::Movies::Lebowski.actor', 2019, 01
-      deprecate :character, 'Faker::Movies::Lebowski.character', 2019, 01
-      deprecate :quote, 'Faker::Movies::Lebowski.quote', 2019, 01
+      deprecate :actor, 'Faker::Movies::Lebowski.actor', 2019, 0o1
+      deprecate :character, 'Faker::Movies::Lebowski.character', 2019, 0o1
+      deprecate :quote, 'Faker::Movies::Lebowski.quote', 2019, 0o1
     end
   end
 end

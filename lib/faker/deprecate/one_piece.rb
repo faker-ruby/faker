@@ -29,12 +29,12 @@ module Faker
         Faker::JapaneseMedia::OnePiece.akuma_no_mi
       end
 
-      deprecate :character, 'Faker::JapaneseMedia::OnePiece.character', 2019, 01
-      deprecate :sea, 'Faker::JapaneseMedia::OnePiece.sea', 2019, 01
-      deprecate :island, 'Faker::JapaneseMedia::OnePiece.island', 2019, 01
-      deprecate :location, 'Faker::JapaneseMedia::OnePiece.location', 2019, 01
-      deprecate :quote, 'Faker::JapaneseMedia::OnePiece.quote', 2019, 01
-      deprecate :akuma_no_mi, 'Faker::JapaneseMedia::OnePiece.akuma_no_mi', 2019, 01
+      deprecate :character, 'Faker::JapaneseMedia::OnePiece.character', 2019, 0o1
+      deprecate :sea, 'Faker::JapaneseMedia::OnePiece.sea', 2019, 0o1
+      deprecate :island, 'Faker::JapaneseMedia::OnePiece.island', 2019, 0o1
+      deprecate :location, 'Faker::JapaneseMedia::OnePiece.location', 2019, 0o1
+      deprecate :quote, 'Faker::JapaneseMedia::OnePiece.quote', 2019, 0o1
+      deprecate :akuma_no_mi, 'Faker::JapaneseMedia::OnePiece.akuma_no_mi', 2019, 0o1
     end
   end
 end

@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::Simpsons.quote
       end
 
-      deprecate :character, 'Faker::TvShows::Simpsons.character', 2019, 01
-      deprecate :location, 'Faker::TvShows::Simpsons.location', 2019, 01
-      deprecate :quote, 'Faker::TvShows::Simpsons.quote', 2019, 01
+      deprecate :character, 'Faker::TvShows::Simpsons.character', 2019, 0o1
+      deprecate :location, 'Faker::TvShows::Simpsons.location', 2019, 0o1
+      deprecate :quote, 'Faker::TvShows::Simpsons.quote', 2019, 0o1
     end
   end
 end
