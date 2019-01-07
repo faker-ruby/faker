@@ -13,8 +13,8 @@ module Faker
         Faker::TvShows::BreakingBad.episode
       end
 
-      deprecate :character, 'Faker::TvShows::BreakingBad.character', 2019, 0o1
-      deprecate :episode, 'Faker::TvShows::BreakingBad.episode', 2019, 0o1
+      deprecate :character, 'Faker::TvShows::BreakingBad.character', 2019, 01
+      deprecate :episode, 'Faker::TvShows::BreakingBad.episode', 2019, 01
     end
   end
 end

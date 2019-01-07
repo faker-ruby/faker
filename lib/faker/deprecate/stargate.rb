@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::Stargate.quote
       end
 
-      deprecate :character, 'Faker::TvShows::Stargate.character', 2019, 0o1
-      deprecate :planet, 'Faker::TvShows::Stargate.planet', 2019, 0o1
-      deprecate :quote, 'Faker::TvShows::Stargate.quote', 2019, 0o1
+      deprecate :character, 'Faker::TvShows::Stargate.character', 2019, 01
+      deprecate :planet, 'Faker::TvShows::Stargate.planet', 2019, 01
+      deprecate :quote, 'Faker::TvShows::Stargate.quote', 2019, 01
     end
   end
 end

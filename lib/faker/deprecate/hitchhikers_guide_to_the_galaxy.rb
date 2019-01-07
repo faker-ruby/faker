@@ -33,12 +33,12 @@ module Faker
         Faker::Movies::HitchhikersGuideToTheGalaxy.starship
       end
 
-      deprecate :character, 'Faker::Movies::HitchhikersGuideToTheGalaxy.character', 2019, 0o1
-      deprecate :location, 'Faker::Movies::HitchhikersGuideToTheGalaxy.location', 2019, 0o1
-      deprecate :marvin_quote, 'Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote', 2019, 0o1
-      deprecate :planet, 'Faker::Movies::HitchhikersGuideToTheGalaxy.planet', 2019, 0o1
-      deprecate :specie, 'Faker::Movies::HitchhikersGuideToTheGalaxy.specie', 2019, 0o1
-      deprecate :starship, 'Faker::Movies::HitchhikersGuideToTheGalaxy.starship', 2019, 0o1
+      deprecate :character, 'Faker::Movies::HitchhikersGuideToTheGalaxy.character', 2019, 01
+      deprecate :location, 'Faker::Movies::HitchhikersGuideToTheGalaxy.location', 2019, 01
+      deprecate :marvin_quote, 'Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote', 2019, 01
+      deprecate :planet, 'Faker::Movies::HitchhikersGuideToTheGalaxy.planet', 2019, 01
+      deprecate :specie, 'Faker::Movies::HitchhikersGuideToTheGalaxy.specie', 2019, 01
+      deprecate :starship, 'Faker::Movies::HitchhikersGuideToTheGalaxy.starship', 2019, 01
     end
   end
 end

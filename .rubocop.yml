@@ -74,6 +74,9 @@ Style/For:
   - for
   - each
 
+Style/NumericLiteralPrefix:
+  Enabled: false
+
 Style/RegexpLiteral:
   Description: Use / or %r around regular expressions.
   StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#percent-r
