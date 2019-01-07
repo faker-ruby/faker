@@ -9,7 +9,7 @@ module Faker
         Faker::Music::UmphreysMcgee.song
       end
 
-      deprecate :song, 'Faker::Music::UmphreysMcgee.song', 2019, 0o1
+      deprecate :song, 'Faker::Music::UmphreysMcgee.song', 2019, 01
     end
   end
 end

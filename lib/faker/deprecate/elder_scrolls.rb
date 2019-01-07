@@ -37,14 +37,14 @@ module Faker
         Faker::Games::ElderScrolls.last_name
       end
 
-      deprecate :race, 'Faker::Games::ElderScrolls.race', 2019, 0o1
-      deprecate :city, 'Faker::Games::ElderScrolls.city', 2019, 0o1
-      deprecate :creature, 'Faker::Games::ElderScrolls.creature', 2019, 0o1
-      deprecate :region, 'Faker::Games::ElderScrolls.region', 2019, 0o1
-      deprecate :dragon, 'Faker::Games::ElderScrolls.dragon', 2019, 0o1
-      deprecate :name, 'Faker::Games::ElderScrolls.name', 2019, 0o1
-      deprecate :first_name, 'Faker::Games::ElderScrolls.first_name', 2019, 0o1
-      deprecate :last_name, 'Faker::Games::ElderScrolls.last_name', 2019, 0o1
+      deprecate :race, 'Faker::Games::ElderScrolls.race', 2019, 01
+      deprecate :city, 'Faker::Games::ElderScrolls.city', 2019, 01
+      deprecate :creature, 'Faker::Games::ElderScrolls.creature', 2019, 01
+      deprecate :region, 'Faker::Games::ElderScrolls.region', 2019, 01
+      deprecate :dragon, 'Faker::Games::ElderScrolls.dragon', 2019, 01
+      deprecate :name, 'Faker::Games::ElderScrolls.name', 2019, 01
+      deprecate :first_name, 'Faker::Games::ElderScrolls.first_name', 2019, 01
+      deprecate :last_name, 'Faker::Games::ElderScrolls.last_name', 2019, 01
     end
   end
 end

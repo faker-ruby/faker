@@ -9,7 +9,7 @@ module Faker
         Faker::Quote.matz
       end
 
-      deprecate :quote, 'Faker::Quote.matz', 2019, 0o1
+      deprecate :quote, 'Faker::Quote.matz', 2019, 01
     end
   end
 end

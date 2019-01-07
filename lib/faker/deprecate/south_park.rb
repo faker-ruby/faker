@@ -13,8 +13,8 @@ module Faker
         Faker::TvShows::SouthPark.quote
       end
 
-      deprecate :character, 'Faker::TvShows::SouthPark.character', 2019, 0o1
-      deprecate :quote, 'Faker::TvShows::SouthPark.quote', 2019, 0o1
+      deprecate :character, 'Faker::TvShows::SouthPark.character', 2019, 01
+      deprecate :quote, 'Faker::TvShows::SouthPark.quote', 2019, 01
     end
   end
 end

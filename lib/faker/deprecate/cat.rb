@@ -17,9 +17,9 @@ module Faker
         Faker::Creature::Cat.registry
       end
 
-      deprecate :name, 'Faker::Creature::Cat.name', 2019, 0o1
-      deprecate :breed, 'Faker::Creature::Cat.breed', 2019, 0o1
-      deprecate :registry, 'Faker::Creature::Cat.registry', 2019, 0o1
+      deprecate :name, 'Faker::Creature::Cat.name', 2019, 01
+      deprecate :breed, 'Faker::Creature::Cat.breed', 2019, 01
+      deprecate :registry, 'Faker::Creature::Cat.registry', 2019, 01
     end
   end
 end

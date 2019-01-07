@@ -17,9 +17,9 @@ module Faker
         Faker::Movies::LordOfTheRings.quote
       end
 
-      deprecate :character, 'Faker::Movies::LordOfTheRings.character', 2019, 0o1
-      deprecate :location, 'Faker::Movies::LordOfTheRings.location', 2019, 0o1
-      deprecate :quote, 'Faker::Movies::LordOfTheRings.quote', 2019, 0o1
+      deprecate :character, 'Faker::Movies::LordOfTheRings.character', 2019, 01
+      deprecate :location, 'Faker::Movies::LordOfTheRings.location', 2019, 01
+      deprecate :quote, 'Faker::Movies::LordOfTheRings.quote', 2019, 01
     end
   end
 end
