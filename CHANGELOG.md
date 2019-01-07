@@ -3,6 +3,7 @@
 ## HEAD Unreleased
 
 ### Bug/Fixes
+- [PR #1477](https://github.com/stympy/faker/pull/1477) Fixed bank account length [@jguthrie100](https://github.com/jguthrie100)
 - [PR #1494](https://github.com/stympy/faker/pull/1494) Fix Faker::Internet.ip_v4_address to include all IP ranges [@lucasqueiroz](https://github.com/lucasqueiroz)
 - [PR #1456](https://github.com/stympy/faker/pull/1456) fix: omit . from slug [@ivanoblomov](https://github.com/ivanoblomov)
 - [PR #1436](https://github.com/stympy/faker/pull/1436) Fix regex and add magic string to pass rubocop check [@jakrzus](https://github.com/jakrzus)
