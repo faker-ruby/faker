@@ -33,13 +33,13 @@ module Faker
         Faker::TvShows::DrWho.specie
       end
 
-      deprecate :character, 'Faker::TvShows::DrWho.character', 2018, 12
-      deprecate :the_doctor, 'Faker::TvShows::DrWho.the_doctor', 2018, 12
-      deprecate :actor, 'Faker::TvShows::DrWho.actor', 2018, 12
-      deprecate :catch_phrase, 'Faker::TvShows::DrWho.catch_phrase', 2018, 12
-      deprecate :quote, 'Faker::TvShows::DrWho.quote', 2018, 12
-      deprecate :villian, 'Faker::TvShows::DrWho.villian', 2018, 12
-      deprecate :specie, 'Faker::TvShows::DrWho.specie', 2018, 12
+      deprecate :character, 'Faker::TvShows::DrWho.character', 2019, 01
+      deprecate :the_doctor, 'Faker::TvShows::DrWho.the_doctor', 2019, 01
+      deprecate :actor, 'Faker::TvShows::DrWho.actor', 2019, 01
+      deprecate :catch_phrase, 'Faker::TvShows::DrWho.catch_phrase', 2019, 01
+      deprecate :quote, 'Faker::TvShows::DrWho.quote', 2019, 01
+      deprecate :villian, 'Faker::TvShows::DrWho.villian', 2019, 01
+      deprecate :specie, 'Faker::TvShows::DrWho.specie', 2019, 01
     end
   end
 end

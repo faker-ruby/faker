@@ -21,10 +21,10 @@ module Faker
         Faker::TvShows::TheITCrowd.quote
       end
 
-      deprecate :actor, 'Faker::TvShows::TheITCrowd.actor', 2018, 12
-      deprecate :character, 'Faker::TvShows::TheITCrowd.character', 2018, 12
-      deprecate :email, 'Faker::TvShows::TheITCrowd.email', 2018, 12
-      deprecate :quote, 'Faker::TvShows::TheITCrowd.quote', 2018, 12
+      deprecate :actor, 'Faker::TvShows::TheITCrowd.actor', 2019, 01
+      deprecate :character, 'Faker::TvShows::TheITCrowd.character', 2019, 01
+      deprecate :email, 'Faker::TvShows::TheITCrowd.email', 2019, 01
+      deprecate :quote, 'Faker::TvShows::TheITCrowd.quote', 2019, 01
     end
   end
 end

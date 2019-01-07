@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::RickAndMorty.quote
       end
 
-      deprecate :character, 'Faker::TvShows::RickAndMorty.character', 2018, 12
-      deprecate :location, 'Faker::TvShows::RickAndMorty.location', 2018, 12
-      deprecate :quote, 'Faker::TvShows::RickAndMorty.quote', 2018, 12
+      deprecate :character, 'Faker::TvShows::RickAndMorty.character', 2019, 01
+      deprecate :location, 'Faker::TvShows::RickAndMorty.location', 2019, 01
+      deprecate :quote, 'Faker::TvShows::RickAndMorty.quote', 2019, 01
     end
   end
 end

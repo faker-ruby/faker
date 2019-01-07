@@ -9,7 +9,7 @@ module Faker
         Faker::TvShows::MichaelScott.quote
       end
 
-      deprecate :quote, 'Faker::TvShows::MichaelScott.quote', 2018, 12
+      deprecate :quote, 'Faker::TvShows::MichaelScott.quote', 2019, 01
     end
   end
 end

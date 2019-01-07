@@ -9,7 +9,7 @@ module Faker
         Faker::Quote.famous_last_words
       end
 
-      deprecate :last_words, 'Faker::Quote.famous_last_words', 2018, 12
+      deprecate :last_words, 'Faker::Quote.famous_last_words', 2019, 01
     end
   end
 end

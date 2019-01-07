@@ -13,8 +13,8 @@ module Faker
         Faker::Games::WorldOfWarcraft.quote
       end
 
-      deprecate :hero, 'Faker::Games::WorldOfWarcraft.hero', 2018, 12
-      deprecate :quote, 'Faker::Games::WorldOfWarcraft.quote', 2018, 12
+      deprecate :hero, 'Faker::Games::WorldOfWarcraft.hero', 2019, 01
+      deprecate :quote, 'Faker::Games::WorldOfWarcraft.quote', 2019, 01
     end
   end
 end

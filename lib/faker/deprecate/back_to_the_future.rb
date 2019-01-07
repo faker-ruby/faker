@@ -17,9 +17,9 @@ module Faker
         Faker::Movies::BackToTheFuture.quote
       end
 
-      deprecate :character, 'Faker::Movies::BackToTheFuture.character', 2018, 12
-      deprecate :date, 'Faker::Movies::BackToTheFuture.date', 2018, 12
-      deprecate :quote, 'Faker::Movies::BackToTheFuture.quote', 2018, 12
+      deprecate :character, 'Faker::Movies::BackToTheFuture.character', 2019, 01
+      deprecate :date, 'Faker::Movies::BackToTheFuture.date', 2019, 01
+      deprecate :quote, 'Faker::Movies::BackToTheFuture.quote', 2019, 01
     end
   end
 end

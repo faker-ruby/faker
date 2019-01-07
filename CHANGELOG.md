@@ -3,6 +3,7 @@
 ## HEAD Unreleased
 
 ### Bug/Fixes
+- [PR #1494](https://github.com/stympy/faker/pull/1494) Fix Faker::Internet.ip_v4_address to include all IP ranges [@lucasqueiroz](https://github.com/lucasqueiroz)
 - [PR #1456](https://github.com/stympy/faker/pull/1456) fix: omit . from slug [@ivanoblomov](https://github.com/ivanoblomov)
 - [PR #1436](https://github.com/stympy/faker/pull/1436) Fix regex and add magic string to pass rubocop check [@jakrzus](https://github.com/jakrzus)
 - [PR #1425](https://github.com/stympy/faker/pull/1425) NHS: fix occasional bad numbers [@ChaoticBoredom](https://github.com/ChaoticBoredom)
@@ -20,6 +21,8 @@
 - [PR #1310](https://github.com/stympy/faker/pull/1310) Add alias for middle_name and remove locale [@vbrazo](https://github.com/vbrazo)
 
 ### Chores
+- [PR #1496](https://github.com/stympy/faker/pull/1496) Update yaml format in docs [@SpyMaster356](https://github.com/SpyMaster356)
+- [PR #1508](https://github.com/stympy/faker/pull/1508) Changes before release [@vbrazo](https://github.com/vbrazo)
 - [PR #1490](https://github.com/stympy/faker/pull/1490) Add missing Faker::HeroesOfTheStorm tests [@vbrazo](https://github.com/vbrazo)
 - [PR #1457](https://github.com/stympy/faker/pull/1457) Add tests for new Faker::Internet.slug glue [@vbrazo](https://github.com/vbrazo)
 - [PR #1434](https://github.com/stympy/faker/pull/1434) Add keyword argument to Faker::Games::Dota.quote [@vbrazo](https://github.com/vbrazo)
@@ -56,6 +59,7 @@
 - [PR #803](https://github.com/stympy/faker/pull/803) Modify Faker::Educator, Fix #576 [@ghbooth12](https://github.com/ghbooth12)
 
 ### Documentation
+- [PR #1497](https://github.com/stympy/faker/pull/1497) add TV Shows to table of contents [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #1488](https://github.com/stympy/faker/pull/1488) Fix unreleased docs [@vbrazo](https://github.com/vbrazo)
 - [PR #1462](https://github.com/stympy/faker/pull/1462) Fix documentation on Faker::Avatar [@mrstebo](https://github.com/mrstebo)
 - [PR #1445](https://github.com/stympy/faker/pull/1445) Separate README.md: unreleased and latest version [@vbrazo](https://github.com/vbrazo)
@@ -72,6 +76,7 @@
 - [PR #1329](https://github.com/stympy/faker/pull/1329) Update docs on behavior of price [@softwaregravy](https://github.com/softwaregravy)
 
 ### Feature Request
+- [PR #1493](https://github.com/stympy/faker/pull/1493) Add Faker::Books::CultureSeries [@richardbulger](https://github.com/richardbulger)
 - [PR #1489](https://github.com/stympy/faker/pull/1489) Format brazilian_company_number and brazilian_citizen_number [@jpkarvonen](https://github.com/jpkarvonen)
 - [PR #1487](https://github.com/stympy/faker/pull/1487) Add Faker::TvShows::TheExpanse [@jpkarvonen](https://github.com/jpkarvonen)
 - [PR #1475](https://github.com/stympy/faker/pull/1475) Adds Faker::Nation.flag [@JonathanWThom](https://github.com/JonathanWThom)
@@ -127,6 +132,10 @@
 - [PR #1246](https://github.com/stympy/faker/pull/1246) Store list of generators with enabled uniqueness for faster clear [@MarcPer](https://github.com/MarcPer)
 
 ### Update/add locales
+- [PR #1492](https://github.com/stympy/faker/pull/1492) Fix abbreviation for Osten [@sonOfRa](https://github.com/sonOfRa)
+- [PR #1499](https://github.com/stympy/faker/pull/1499) Adds some items on pt-BR locales seniority and education levels. And removes duplicated items from cities list. [@ramonlg](https://github.com/ramonlg)
+- [PR #1501](https://github.com/stympy/faker/pull/1501) fix asajj_ventress alternate name [@ethan-dowler](https://github.com/ethan-dowler)
+- [PR #1502](https://github.com/stympy/faker/pull/1502) Add support for Armenian language [@hovikman](https://github.com/hovikman)
 - [PR #1486](https://github.com/stympy/faker/pull/1486) Added some professions in company.yml [@ReneIvanov](https://github.com/ReneIvanov)
 - [PR #1474](https://github.com/stympy/faker/pull/1474) Fr format and translation [@maxime-lenne](https://github.com/maxime-lenne) 
 - [PR #1468](https://github.com/stympy/faker/pull/1468) Update "Black Pink" to "Blackpink" [@agungyuliaji](https://github.com/agungyuliaji)
