@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class MostInterestingManInTheWorld < Base
+  class MostInterestingManInTheWorld
     class << self
       extend Gem::Deprecate
 

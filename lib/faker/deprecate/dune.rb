@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Dune < Base
+  class Dune
     class << self
       extend Gem::Deprecate
 

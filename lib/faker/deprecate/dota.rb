@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Dota
+  class Dota
     class << self
       extend Gem::Deprecate
 

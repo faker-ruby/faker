@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module OnePiece
+  class OnePiece
     class << self
       extend Gem::Deprecate
 

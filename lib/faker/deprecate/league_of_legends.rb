@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module LeagueOfLegends
+  class LeagueOfLegends
     class << self
       extend Gem::Deprecate
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Witcher
+  class Witcher
     class << self
       extend Gem::Deprecate
 

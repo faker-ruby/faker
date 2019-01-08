@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Lebowski < Base
+  class Lebowski
     class << self
       extend Gem::Deprecate
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class NewGirl < Base
+  class NewGirl
     class << self
       extend Gem::Deprecate
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Myst
+  class Myst
     class << self
       extend Gem::Deprecate
 

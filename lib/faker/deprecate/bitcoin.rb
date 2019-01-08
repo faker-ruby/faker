@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Bitcoin < Base
+  class Bitcoin
     class << self
       extend Gem::Deprecate
 

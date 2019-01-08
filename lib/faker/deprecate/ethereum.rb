@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Ethereum < Base
+  class Ethereum
     class << self
       extend Gem::Deprecate
 

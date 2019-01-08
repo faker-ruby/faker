@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Fallout
+  class Fallout
     class << self
       extend Gem::Deprecate
 

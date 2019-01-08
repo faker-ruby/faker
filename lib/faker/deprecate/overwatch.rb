@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Overwatch
+  class Overwatch
     class << self
       extend Gem::Deprecate
 

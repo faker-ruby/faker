@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class RockBand < Base
+  class RockBand
     class << self
       extend Gem::Deprecate
 

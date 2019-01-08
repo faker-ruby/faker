@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class StarWars < Base
+  class StarWars
     class << self
       extend Gem::Deprecate
 
@@ -57,35 +57,35 @@ module Faker
       deprecate :quote, 'Faker::Movies::StarWars.quote', 2019, 01
 
       def call_numbers
-        fetch_all('star_wars.call_numbers')
+        Faker::Movies::StarWars.call_numbers
       end
 
       def call_squadrons
-        fetch_all('star_wars.call_squadrons')
+        Faker::Movies::StarWars.call_squadrons
       end
 
       def characters
-        fetch_all('star_wars.characters')
+        Faker::Movies::StarWars.characters
       end
 
       def droids
-        fetch_all('star_wars.droids')
+        Faker::Movies::StarWars.droids
       end
 
       def planets
-        fetch_all('star_wars.planets')
+        Faker::Movies::StarWars.planets
       end
 
       def species
-        fetch_all('star_wars.species')
+        Faker::Movies::StarWars.species
       end
 
       def vehicles
-        fetch_all('star_wars.vehicles')
+        Faker::Movies::StarWars.vehicles
       end
 
       def wookiee_words
-        fetch_all('star_wars.wookiee_words')
+        Faker::Movies::StarWars.wookiee_words
       end
 
       alias wookie_sentence wookiee_sentence

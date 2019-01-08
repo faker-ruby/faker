@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class AquaTeenHungerForce < Base
+  class AquaTeenHungerForce
     class << self
       extend Gem::Deprecate
 

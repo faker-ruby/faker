@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class HowIMetYourMother < Base
+  class HowIMetYourMother
     class << self
       extend Gem::Deprecate
 

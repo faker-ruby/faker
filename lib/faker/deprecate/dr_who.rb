@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class DrWho < Base
+  class DrWho
     class << self
       extend Gem::Deprecate
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class TheThickOfIt < Base
+  class TheThickOfIt
     class << self
       extend Gem::Deprecate
 

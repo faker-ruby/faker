@@ -4,7 +4,7 @@ require 'digest'
 require 'securerandom'
 
 module Faker
-  class Tezos < Base
+  class Tezos
     class << self
       extend Gem::Deprecate
 

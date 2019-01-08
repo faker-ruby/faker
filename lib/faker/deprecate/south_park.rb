@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class SouthPark < Base
+  class SouthPark
     class << self
       extend Gem::Deprecate
 

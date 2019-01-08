@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Seinfeld < Base
+  class Seinfeld
     class << self
       extend Gem::Deprecate
 

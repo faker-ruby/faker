@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module SwordArtOnline
+  class SwordArtOnline
     class << self
       extend Gem::Deprecate
 

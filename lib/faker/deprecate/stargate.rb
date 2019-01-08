@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Stargate < Base
+  class Stargate
     class << self
       extend Gem::Deprecate
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Lovecraft < Base
+  class Lovecraft
     class << self
       extend Gem::Deprecate
 

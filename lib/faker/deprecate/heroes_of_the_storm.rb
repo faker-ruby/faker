@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module HeroesOfTheStorm
+  class HeroesOfTheStorm
     class << self
       extend Gem::Deprecate
 

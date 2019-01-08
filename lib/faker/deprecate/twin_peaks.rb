@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class TwinPeaks < Base
+  class TwinPeaks
     class << self
       extend Gem::Deprecate
 

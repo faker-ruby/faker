@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Pokemon
+  class Pokemon
     class << self
       extend Gem::Deprecate
 

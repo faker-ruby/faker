@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class HitchhikersGuideToTheGalaxy < Base
+  class HitchhikersGuideToTheGalaxy
     class << self
       extend Gem::Deprecate
 

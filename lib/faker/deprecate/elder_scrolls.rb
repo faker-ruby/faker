@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module ElderScrolls
+  class ElderScrolls
     class << self
       extend Gem::Deprecate
 

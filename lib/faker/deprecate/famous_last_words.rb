@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class FamousLastWords < Base
+  class FamousLastWords
     class << self
       extend Gem::Deprecate
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module WorldOfWarcraft
+  class WorldOfWarcraft
     class << self
       extend Gem::Deprecate
 

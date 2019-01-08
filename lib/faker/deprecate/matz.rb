@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Matz < Base
+  class Matz
     class << self
       extend Gem::Deprecate
 

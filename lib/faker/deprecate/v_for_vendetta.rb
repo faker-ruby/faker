@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class VForVendetta < Base
+  class VForVendetta
     class << self
       extend Gem::Deprecate
 
