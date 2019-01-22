@@ -23,14 +23,14 @@ describe Faker::CLI::Commands::Search do
   end
 
   describe 'when query object does not exist' do
-    it 'returns nil' do
+    it 'returns a not found message' do
       output = StringIO.new
       options = {}
 
       command = @search.new(options)
       command.execute('foobar', output: output)
 
-      assert_empty output.string
+      assert_match(/Sorry, we couldn't find a match/, output.string)
     end
   end
 end

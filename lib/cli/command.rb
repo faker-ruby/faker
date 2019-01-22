@@ -2,7 +2,6 @@
 
 require 'forwardable'
 
-require_relative 'reflector'
 require_relative 'renderer'
 
 module Faker
