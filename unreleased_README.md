@@ -27,6 +27,7 @@ development.
     - [Creature](#creature)
     - [Games](#games)
     - [Japanese Media](#japanese-media)
+    - [Lorem](#lorem)
     - [Movies](#movies)
     - [Music](#music)
     - [Quotes](#quotes)
@@ -241,6 +242,12 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::JapaneseMedia::DragonBall](doc/unreleased/japanese_media/dragon_ball.md)
   - [Faker::JapaneseMedia::OnePiece](doc/unreleased/japanese_media/one_piece.md)
   - [Faker::JapaneseMedia::SwordArtOnline](doc/unreleased/japanese_media/sword_art_online.md)
+
+### Lorem
+  - [Faker::Lorem::Flickr](doc/v2.0/lorem/flickr.md)
+  - [Faker::Lorem::Hipster](doc/v2.0/lorem/hipster.md)
+  - [Faker::Lorem::Ipsum](doc/v2.0/lorem/ipsum.md)
+  - [Faker::Lorem::Pixel](doc/v2.0/lorem/pixel.md)
 
 ### Movies
   - [Faker::Movie](doc/unreleased/movies/movie.md)
