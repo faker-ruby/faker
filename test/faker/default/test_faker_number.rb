@@ -8,31 +8,29 @@ class TestFakerNumber < Test::Unit::TestCase
     @tester = Faker::Number
   end
 
-  def test_leading_zero_number
-    assert_match(/^0[0-9]{9}/, @tester.leading_zero_number)
-    assert_match(/^0[0-9]{8}/, @tester.leading_zero_number(9))
-  end
-
   def test_number
-    assert @tester.number(10).match(/[0-9]{10}/)
+    assert @tester.number(10).to_s.match(/[0-9]{10}/)
 
     10.times do |digits|
       digits += 1
-      assert @tester.number(digits).match(/^[0-9]{#{digits}}$/)
+      assert @tester.number(digits).to_s.match(/^[0-9]{#{digits}}$/)
     end
 
-    assert @tester.number(10).length == 10
-    assert @tester.number(1).length == 1
+    assert @tester.number(10).to_s.length == 10
+    assert @tester.number(1).to_s.length == 1
+    assert @tester.number(0).nil?
   end
 
   def test_decimal
-    assert @tester.decimal(2).match(/[0-9]{2}\.[0-9]{2}/)
-    assert @tester.decimal(4, 5).match(/[0-9]{4}\.[0-9]{5}/)
+    100.times do
+      assert @tester.decimal(2).to_s.match(/[1-9][0-9]\.[0-9][1-9]/)
+      assert @tester.decimal(4, 5).to_s.match(/[1-9][0-9]{3}\.[0-9]{4}[1-9]/)
+    end
   end
 
   def test_digit
-    assert @tester.digit.match(/[0-9]{1}/)
-    assert((1..1000).collect { |_i| @tester.digit == '9' }.include?(true))
+    assert @tester.digit.to_s.match(/[0-9]{1}/)
+    assert((1..1000).collect { |_i| @tester.digit == 9 }.include?(true))
   end
 
   def test_even_distribution
@@ -118,14 +116,14 @@ class TestFakerNumber < Test::Unit::TestCase
 
   def test_insignificant_zero
     @tester.stub :digit, 0 do
-      assert_equal '0', @tester.number(1)
+      assert_equal 0, @tester.number(1)
       100.times do
-        assert_match(/^[1-9]0/, @tester.number(2))
+        assert_match(/^[1-9]0/, @tester.number(2).to_s)
       end
 
-      assert_equal '0.0', @tester.decimal(1, 1)
+      assert_equal 0.0, @tester.decimal(1, 1)
       100.times do
-        assert_match(/^0\.0[1-9]/, @tester.decimal(1, 2))
+        assert_match(/^0\.[0-9]/, @tester.decimal(1, 2).to_s)
       end
     end
   end

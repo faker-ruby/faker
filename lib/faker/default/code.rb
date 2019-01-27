@@ -23,7 +23,7 @@ module Faker
       end
 
       def rut
-        value = Number.number(8)
+        value = Number.number(8).to_s
         vd = rut_verificator_digit(value)
         value << "-#{vd}"
       end
