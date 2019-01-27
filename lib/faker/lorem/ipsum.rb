@@ -27,6 +27,7 @@ module Faker
         def characters(char_count = 255)
           char_count = resolve(char_count)
           return '' if char_count.to_i < 1
+
           Array.new(char_count) { sample(CHARACTERS) }.join
         end
 
