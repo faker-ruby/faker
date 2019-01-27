@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Simpsons < Base
+  class Simpsons
     class << self
       extend Gem::Deprecate
 
@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::Simpsons.quote
       end
 
-      deprecate :character, 'Faker::TvShows::Simpsons.character', 2018, 12
-      deprecate :location, 'Faker::TvShows::Simpsons.location', 2018, 12
-      deprecate :quote, 'Faker::TvShows::Simpsons.quote', 2018, 12
+      deprecate :character, 'Faker::TvShows::Simpsons.character', 2019, 01
+      deprecate :location, 'Faker::TvShows::Simpsons.location', 2019, 01
+      deprecate :quote, 'Faker::TvShows::Simpsons.quote', 2019, 01
     end
   end
 end

@@ -134,6 +134,7 @@ Contents
   - [Faker::RuPaul](doc/v1.9.1/rupaul.md)
   - [Faker::Science](doc/v1.9.1/science.md)
   - [Faker::Seinfeld](doc/v1.9.1/seinfeld.md)
+  - [Faker::Shakespeare](doc/v1.9.1/shakespeare.md)
   - [Faker::SiliconValley](doc/v1.9.1/silicon_valley.md)
   - [Faker::Simpsons](doc/v1.9.1/simpsons.md)
   - [Faker::SingularSiegler](doc/v1.9.1/singular_siegler.md)
@@ -252,17 +253,32 @@ and you can then override or add elements to suit your needs. See more about how
 use locales [here](lib/locales/README.md)
 
 ```yaml
-
 en-au-ocker:
   faker:
     name:
       # Existing faker field, new data
-      first_name: [Charlotte, Ava, Chloe, Emily]
+      first_name: 
+        - Charlotte
+        - Ava
+        - Chloe
+        - Emily
 
       # New faker fields
-      ocker_first_name: [Bazza, Bluey, Davo, Johno, Shano, Shazza]
-      region: [South East Queensland, Wide Bay Burnett, Margaret River, Port Pirie, Gippsland, Elizabeth, Barossa]
-
+      ocker_first_name: 
+        - Bazza 
+        - Bluey
+        - Davo
+        - Johno
+        - Shano
+        - Shazza
+      region:
+        - South East Queensland
+        - Wide Bay Burnett
+        - Margaret River
+        - Port Pirie
+        - Gippsland
+        - Elizabeth
+        - Barossa
 ```
 
 ## Contributing

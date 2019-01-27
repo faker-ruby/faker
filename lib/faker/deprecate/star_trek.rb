@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class StarTrek < Base
+  class StarTrek
     class << self
       extend Gem::Deprecate
 
@@ -21,10 +21,10 @@ module Faker
         Faker::TvShows::StarTrek.villain
       end
 
-      deprecate :character, 'Faker::TvShows::StarTrek.character', 2018, 12
-      deprecate :location, 'Faker::TvShows::StarTrek.location', 2018, 12
-      deprecate :specie, 'Faker::TvShows::StarTrek.specie', 2018, 12
-      deprecate :villain, 'Faker::TvShows::StarTrek.villain', 2018, 12
+      deprecate :character, 'Faker::TvShows::StarTrek.character', 2019, 01
+      deprecate :location, 'Faker::TvShows::StarTrek.location', 2019, 01
+      deprecate :specie, 'Faker::TvShows::StarTrek.specie', 2019, 01
+      deprecate :villain, 'Faker::TvShows::StarTrek.villain', 2019, 01
     end
   end
 end

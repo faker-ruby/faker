@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class StarWars < Base
+  class StarWars
     class << self
       extend Gem::Deprecate
 
@@ -45,47 +45,47 @@ module Faker
         Faker::Movies::StarWars.quote(character)
       end
 
-      deprecate :call_squadron, 'Faker::Movies::StarWars.call_squadron', 2018, 12
-      deprecate :call_sign, 'Faker::Movies::StarWars.call_sign', 2018, 12
-      deprecate :call_number, 'Faker::Movies::StarWars.call_number', 2018, 12
-      deprecate :character, 'Faker::Movies::StarWars.character', 2018, 12
-      deprecate :droid, 'Faker::Movies::StarWars.droid', 2018, 12
-      deprecate :planet, 'Faker::Movies::StarWars.planet', 2018, 12
-      deprecate :specie, 'Faker::Movies::StarWars.specie', 2018, 12
-      deprecate :vehicle, 'Faker::Movies::StarWars.vehicle', 2018, 12
-      deprecate :wookiee_sentence, 'Faker::Movies::StarWars.wookiee_sentence', 2018, 12
-      deprecate :quote, 'Faker::Movies::StarWars.quote', 2018, 12
+      deprecate :call_squadron, 'Faker::Movies::StarWars.call_squadron', 2019, 01
+      deprecate :call_sign, 'Faker::Movies::StarWars.call_sign', 2019, 01
+      deprecate :call_number, 'Faker::Movies::StarWars.call_number', 2019, 01
+      deprecate :character, 'Faker::Movies::StarWars.character', 2019, 01
+      deprecate :droid, 'Faker::Movies::StarWars.droid', 2019, 01
+      deprecate :planet, 'Faker::Movies::StarWars.planet', 2019, 01
+      deprecate :specie, 'Faker::Movies::StarWars.specie', 2019, 01
+      deprecate :vehicle, 'Faker::Movies::StarWars.vehicle', 2019, 01
+      deprecate :wookiee_sentence, 'Faker::Movies::StarWars.wookiee_sentence', 2019, 01
+      deprecate :quote, 'Faker::Movies::StarWars.quote', 2019, 01
 
       def call_numbers
-        fetch_all('star_wars.call_numbers')
+        Faker::Movies::StarWars.call_numbers
       end
 
       def call_squadrons
-        fetch_all('star_wars.call_squadrons')
+        Faker::Movies::StarWars.call_squadrons
       end
 
       def characters
-        fetch_all('star_wars.characters')
+        Faker::Movies::StarWars.characters
       end
 
       def droids
-        fetch_all('star_wars.droids')
+        Faker::Movies::StarWars.droids
       end
 
       def planets
-        fetch_all('star_wars.planets')
+        Faker::Movies::StarWars.planets
       end
 
       def species
-        fetch_all('star_wars.species')
+        Faker::Movies::StarWars.species
       end
 
       def vehicles
-        fetch_all('star_wars.vehicles')
+        Faker::Movies::StarWars.vehicles
       end
 
       def wookiee_words
-        fetch_all('star_wars.wookiee_words')
+        Faker::Movies::StarWars.wookiee_words
       end
 
       alias wookie_sentence wookiee_sentence

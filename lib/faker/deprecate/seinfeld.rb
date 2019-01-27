@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Seinfeld < Base
+  class Seinfeld
     class << self
       extend Gem::Deprecate
 
@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::Seinfeld.quote
       end
 
-      deprecate :business, 'Faker::TvShows::Seinfeld.business', 2018, 12
-      deprecate :character, 'Faker::TvShows::Seinfeld.character', 2018, 12
-      deprecate :quote, 'Faker::TvShows::Seinfeld.quote', 2018, 12
+      deprecate :business, 'Faker::TvShows::Seinfeld.business', 2019, 01
+      deprecate :character, 'Faker::TvShows::Seinfeld.character', 2019, 01
+      deprecate :quote, 'Faker::TvShows::Seinfeld.quote', 2019, 01
     end
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Lebowski < Base
+  class Lebowski
     class << self
       extend Gem::Deprecate
 
@@ -17,9 +17,9 @@ module Faker
         Faker::Movies::Lebowski.quote
       end
 
-      deprecate :actor, 'Faker::Movies::Lebowski.actor', 2018, 12
-      deprecate :character, 'Faker::Movies::Lebowski.character', 2018, 12
-      deprecate :quote, 'Faker::Movies::Lebowski.quote', 2018, 12
+      deprecate :actor, 'Faker::Movies::Lebowski.actor', 2019, 01
+      deprecate :character, 'Faker::Movies::Lebowski.character', 2019, 01
+      deprecate :quote, 'Faker::Movies::Lebowski.quote', 2019, 01
     end
   end
 end

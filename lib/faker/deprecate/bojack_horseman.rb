@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class BojackHorseman < Base
+  class BojackHorseman
     class << self
       extend Gem::Deprecate
 
@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::BojackHorseman.quote
       end
 
-      deprecate :character, 'Faker::TvShows::BojackHorseman.character', 2018, 12
-      deprecate :tongue_twister, 'Faker::TvShows::BojackHorseman.tongue_twister', 2018, 12
-      deprecate :quote, 'Faker::TvShows::BojackHorseman.quote', 2018, 12
+      deprecate :character, 'Faker::TvShows::BojackHorseman.character', 2019, 01
+      deprecate :tongue_twister, 'Faker::TvShows::BojackHorseman.tongue_twister', 2019, 01
+      deprecate :quote, 'Faker::TvShows::BojackHorseman.quote', 2019, 01
     end
   end
 end

@@ -35,7 +35,7 @@ de:
     compass:
       cardinal:
         word: ['Norden', 'Osten', 'Süden', 'Westen']
-        abbreviation:  ['N', 'E', 'S', 'W']
+        abbreviation:  ['N', 'O', 'S', 'W']
         azimuth:  ['0', '90', '180', '270']
       ordinal:
         word:  ['Nordosten', 'Südosten', 'Südwesten', 'Nordwesten']

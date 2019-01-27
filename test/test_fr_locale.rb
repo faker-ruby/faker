@@ -106,7 +106,6 @@ class TestFrLocale < Test::Unit::TestCase
   def test_fr_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end

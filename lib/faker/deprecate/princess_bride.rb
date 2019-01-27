@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class PrincessBride < Base
+  class PrincessBride
     class << self
       extend Gem::Deprecate
 
@@ -13,8 +13,8 @@ module Faker
         Faker::Movies::PrincessBride.quote
       end
 
-      deprecate :character, 'Faker::Movies::PrincessBride.character', 2018, 12
-      deprecate :quote, 'Faker::Movies::PrincessBride.quote', 2018, 12
+      deprecate :character, 'Faker::Movies::PrincessBride.character', 2019, 01
+      deprecate :quote, 'Faker::Movies::PrincessBride.quote', 2019, 01
     end
   end
 end
