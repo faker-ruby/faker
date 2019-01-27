@@ -36,6 +36,32 @@ class TestLocale < Test::Unit::TestCase
     assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
   end
 
+  def test_translation_fallback_without_en_in_available_locales
+    I18n.available_locales -= [:en]
+    Faker::Config.locale = 'en-BORK'
+    assert_nil LoadedYaml['en-BORK']['name']
+    assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
+  ensure
+    I18n.available_locales += [:en]
+  end
+
+  def test_with_locale_does_not_fail_without_the_locale_in_available_locales
+    I18n.available_locales -= [:en]
+    Faker::Base.with_locale(:en) do
+      assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
+    end
+  ensure
+    I18n.available_locales += [:en]
+  end
+
+  def test_with_locale_changes_locale_temporarily
+    Faker::Config.locale = 'en-BORK'
+    I18n.with_locale(:en) do
+      assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
+    end
+    assert_equal 'en-BORK', Faker::Config.locale
+  end
+
   def test_regex
     Faker::Config.locale = 'en-GB'
     re = /[A-PR-UWYZ]([A-HK-Y][0-9][ABEHMNPRVWXY0-9]?|[0-9][ABCDEFGHJKPSTUW0-9]?) [0-9][ABD-HJLNP-UW-Z]{2}/
