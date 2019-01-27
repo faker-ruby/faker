@@ -16,6 +16,8 @@ en-SG:
         - "#{male_english_name} #{last_name} #{male_first_name}"
         - "#{last_name} #{female_first_name}"
         - "#{female_english_name} #{last_name} #{female_first_name}"
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
     address:
       postcode: ['######']
       building_number: ['#', '##', '###']
@@ -29,3 +31,5 @@ en-SG:
       default_country: [Singapore]
     phone_number:
       formats: ['+65 6### ####', '+65 9### ####', '+65 8### ####']
+    vehicle:
+      license_plate: 'S??####'
