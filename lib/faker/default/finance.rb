@@ -5,7 +5,8 @@ module Faker
     CREDIT_CARD_TYPES = %i[visa mastercard discover american_express
                            diners_club jcb switch solo dankort
                            maestro forbrugsforeningen laser].freeze
-
+    MARKET_LIST = %i[nyse nasdaq amex].freeze
+    require 'csv'
     class << self
       def credit_card(*types)
         types = CREDIT_CARD_TYPES if types.empty?
@@ -34,6 +35,16 @@ module Faker
 
       def vat_number_keys
         translate('faker.finance.vat_number').keys
+      end
+
+      def ticker(*markets)
+        # Updated CSVs can be downloaded here: https://www.nasdaq.com/screening/company-list.aspx
+        markets = MARKET_LIST if markets.empty?
+        market = sample(markets)
+        csv_file_path = fetch("finance.ticker.#{market}")
+        sample(CSV.read(csv_file_path)).first
+      rescue I18n::MissingTranslationData
+        raise ArgumentError, "Could not find market named #{market}"
       end
     end
   end

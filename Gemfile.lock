@@ -8,38 +8,38 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.0)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.4)
     docile (1.3.1)
-    i18n (1.1.1)
+    i18n (1.5.3)
       concurrent-ruby (~> 1.0)
-    jaro_winkler (1.5.1)
+    jaro_winkler (1.5.2)
     json (2.1.0)
     minitest (5.11.3)
-    parallel (1.12.1)
-    parser (2.5.1.2)
+    parallel (1.13.0)
+    parser (2.6.0.0)
       ast (~> 2.4.0)
     power_assert (1.1.3)
     powerpack (0.1.2)
     rainbow (3.0.0)
-    rake (12.3.1)
-    rubocop (0.59.2)
+    rake (12.3.2)
+    rubocop (0.63.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
       powerpack (~> 0.1)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.0, >= 1.0.1)
+      unicode-display_width (~> 1.4.0)
     ruby-progressbar (1.10.0)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    test-unit (3.2.8)
+    test-unit (3.3.0)
       power_assert
     timecop (0.9.1)
-    unicode-display_width (1.4.0)
+    unicode-display_width (1.4.1)
 
 PLATFORMS
   ruby
@@ -54,4 +54,4 @@ DEPENDENCIES
   timecop
 
 BUNDLED WITH
-   1.16.4
+   2.0.1

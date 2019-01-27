@@ -111,3 +111,7 @@ en:
         ZA:
         - "ZA##########"
         - "ZA###########"
+      ticker:
+        nasdaq: "lib/assets/finance/nasdaq.csv"
+        nyse: "lib/assets/finance/nyse.csv"
+        amex: "lib/assets/finance/amex.csv"
