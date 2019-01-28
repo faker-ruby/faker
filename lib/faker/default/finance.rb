@@ -41,8 +41,7 @@ module Faker
         # Updated CSVs can be downloaded here: https://www.nasdaq.com/screening/company-list.aspx
         markets = MARKET_LIST if markets.empty?
         market = sample(markets)
-        csv_file_path = fetch("finance.ticker.#{market}")
-        sample(CSV.read(csv_file_path)).first
+        fetch("finance.ticker.#{market}")
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find market named #{market}"
       end

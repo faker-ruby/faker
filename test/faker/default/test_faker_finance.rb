@@ -39,6 +39,6 @@ class TestFakerFinance < Test::Unit::TestCase
 
   def test_ticker_with_valid_params
     ticker_return = Faker::Finance.ticker('nyse')
-    assert CSV.read('lib/assets/finance/nyse.csv').join(', ').include?(ticker_return)
+    assert Faker::Base.fetch_all("finance.ticker.nyse").join(', ').include?(ticker_return)
   end
 end
