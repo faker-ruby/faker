@@ -15,7 +15,7 @@ module Faker
           default_profile_image: Faker::Boolean.boolean(0.1),
           default_profile: Faker::Boolean.boolean(0.1),
           description: Faker::Lorem.sentence,
-          entities:  user_entities,
+          entities: user_entities,
           favourites_count: Faker::Number.between(1, 100_000),
           follow_request_sent: false,
           followers_count: Faker::Number.between(1, 10_000_000),
@@ -62,7 +62,7 @@ module Faker
           contributors: nil,
           coordinates: nil,
           created_at: created_at,
-          entities:  status_entities(include_photo: include_photo),
+          entities: status_entities(include_photo: include_photo),
           favorite_count: Faker::Number.between(1, 10_000),
           favorited: false,
           geo: nil,
@@ -76,7 +76,7 @@ module Faker
           place: nil,
           possibly_sensitive: Faker::Boolean.boolean(0.1),
           retweet_count: Faker::Number.between(1, 10_000),
-          retweeted_status:  nil,
+          retweeted_status: nil,
           retweeted: false,
           source: "<a href=\"#{Faker::Internet.url('example.com')}\" rel=\"nofollow\">#{Faker::Company.name}</a>",
           text: Faker::Lorem.sentence,
@@ -107,10 +107,10 @@ module Faker
 
       def user_entities
         {
-          url:  {
+          url: {
             urls: []
           },
-          description:  {
+          description: {
             urls: []
           }
         }
@@ -118,10 +118,10 @@ module Faker
 
       def status_entities(include_photo: false)
         entities = {
-          hashtags:  [],
-          symbols:  [],
-          user_mentions:  [],
-          urls:  []
+          hashtags: [],
+          symbols: [],
+          user_mentions: [],
+          urls: []
         }
         entities[:media] = [photo_entity] if include_photo
         entities
@@ -135,7 +135,7 @@ module Faker
         {
           id: media_id,
           id_str: media_id.to_s,
-          indices:  [
+          indices: [
             103,
             126
           ],
@@ -145,23 +145,23 @@ module Faker
           display_url: 'example.com',
           expanded_url: Faker::Internet.url('example.com'),
           type: 'photo',
-          sizes:  {
-            medium:  {
+          sizes: {
+            medium: {
               w: 1064,
               h: 600,
               resize: 'fit'
             },
-            large:  {
+            large: {
               w: 1064,
               h: 600,
               resize: 'fit'
             },
-            small:  {
+            small: {
               w: 680,
               h: 383,
               resize: 'fit'
             },
-            thumb:  {
+            thumb: {
               w: 150,
               h: 150,
               resize: 'crop'

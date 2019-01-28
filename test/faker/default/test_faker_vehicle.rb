@@ -3,7 +3,7 @@
 require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
-  WORD_MATCH = /\w+\.?/
+  WORD_MATCH = /\w+\.?/.freeze
 
   def setup
     @tester = Faker::Vehicle
