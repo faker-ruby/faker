@@ -194,7 +194,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::String](doc/unreleased/default/string.md)
   - [Faker::Stripe](doc/unreleased/default/stripe.md)
   - [Faker::Subscription](doc/unreleased/default/subscription.md)
-
   - [Faker::Team](doc/unreleased/default/team.md)
   - [Faker::Time](doc/unreleased/default/time.md)
   - [Faker::Twitter](doc/unreleased/default/twitter.md)
