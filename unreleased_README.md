@@ -194,7 +194,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::String](doc/unreleased/default/string.md)
   - [Faker::Stripe](doc/unreleased/default/stripe.md)
   - [Faker::Subscription](doc/unreleased/default/subscription.md)
-  - [Faker::Superhero](doc/unreleased/default/superhero.md)
+
   - [Faker::Team](doc/unreleased/default/team.md)
   - [Faker::Time](doc/unreleased/default/time.md)
   - [Faker::Twitter](doc/unreleased/default/twitter.md)
@@ -287,6 +287,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::TvShows::Seinfeld](doc/unreleased/tv_shows/seinfeld.md)
   - [Faker::TvShows::SiliconValley](doc/unreleased/tv_shows/silicon_valley.md)
   - [Faker::TvShows::Simpsons](doc/unreleased/tv_shows/simpsons.md)
+  - [Faker::TvShows::Superhero](doc/unreleased/tv_shows/superhero.md)
   - [Faker::TvShows::SouthPark](doc/unreleased/tv_shows/south_park.md)
   - [Faker::TvShows::StarTrek](doc/unreleased/tv_shows/star_trek.md)
   - [Faker::TvShows::Stargate](doc/unreleased/tv_shows/stargate.md)
