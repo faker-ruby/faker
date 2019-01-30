@@ -220,6 +220,9 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Creature::Cat](doc/unreleased/creature/cat.md)
   - [Faker::Creature::Dog](doc/unreleased/creature/dog.md)
 
+### Comics
+  - [Faker::Comics::Superhero](doc/unreleased/comics/superhero.md)
+
 ### Games
   - [Faker::Games::Dota](doc/unreleased/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/unreleased/games/elder_scrolls.md)
@@ -287,7 +290,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::TvShows::Seinfeld](doc/unreleased/tv_shows/seinfeld.md)
   - [Faker::TvShows::SiliconValley](doc/unreleased/tv_shows/silicon_valley.md)
   - [Faker::TvShows::Simpsons](doc/unreleased/tv_shows/simpsons.md)
-  - [Faker::TvShows::Superhero](doc/unreleased/tv_shows/superhero.md)
   - [Faker::TvShows::SouthPark](doc/unreleased/tv_shows/south_park.md)
   - [Faker::TvShows::StarTrek](doc/unreleased/tv_shows/star_trek.md)
   - [Faker::TvShows::Stargate](doc/unreleased/tv_shows/stargate.md)

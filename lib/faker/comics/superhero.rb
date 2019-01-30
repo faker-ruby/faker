@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module TvShows
+  module Comics
     class Superhero < Base
       flexible :super_hero
 
