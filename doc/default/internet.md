@@ -42,6 +42,7 @@ Faker::Internet.password(10, 20, true) #=> "3k5qS15aNmG"
 
 Faker::Internet.password(10, 20, true, true) #=> "*%NkOnJsH4"
 
+# Optional arguments: subdomain=true
 Faker::Internet.domain_name #=> "effertz.info"
 
 Faker::Internet.domain_word #=> "haleyziemann"

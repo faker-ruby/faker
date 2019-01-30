@@ -79,8 +79,12 @@ module Faker
         temp
       end
 
-      def domain_name
-        with_locale(:en) { [Char.prepare(domain_word), domain_suffix].join('.') }
+      def domain_name(subdomain = false)
+        with_locale(:en) do
+          domain_elements = [Char.prepare(domain_word), domain_suffix]
+          domain_elements.unshift(Char.prepare(domain_word)) if subdomain
+          domain_elements.join('.')
+        end
       end
 
       def fix_umlauts(string = '')

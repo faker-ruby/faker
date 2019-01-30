@@ -133,8 +133,12 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.password(8, 12, true).match(/[^!@#\$%\^&\*]+/)
   end
 
-  def test_domain_name
+  def test_domain_name_without_subdomain
     assert @tester.domain_name.match(/\w+\.\w+/)
+  end
+
+  def test_domain_name_with_subdomain
+    assert @tester.domain_name(true).match(/\w+\.\w+\.\w+/)
   end
 
   def test_domain_word
