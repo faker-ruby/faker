@@ -3,5 +3,5 @@
 Available since version 1.9.0.
 
 ```ruby
-Faker::Blockchain::Ethereum.address #=> "c38bbc8e93c09f6ed3fe39b5135da91ad1a99d397ef16948606cdcbd14929f9d"
+Faker::Blockchain::Ethereum.address #=> "0xd392b0c0500700d02d27ab30805ec80ddd3320ff"
 ```
