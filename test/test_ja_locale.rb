@@ -43,6 +43,10 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Food.sushi.is_a? String
   end
 
+  def test_ja_gender_methods
+    assert Faker::Gender.binary_type.is_a? String
+  end
+
   def test_ja_lorem_methods
     assert Faker::Lorem.words.is_a? Array
     assert Faker::Lorem.words(1000)
