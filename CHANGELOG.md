@@ -2,6 +2,22 @@
 
 ## HEAD Unreleased
 
+### Bug/Fixes
+
+### Chores
+
+### Deprecation
+
+### Documentation
+
+### Feature Request
+
+### Suggestion
+
+### Update/add locales
+
+------------------------------------------------------------------------------
+
 ## [v1.9.2](https://github.com/stympy/faker/tree/v1.9.2) (2019-02-11)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.9.1...v1.9.2)
 
