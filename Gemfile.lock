@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    faker (1.9.1)
+    faker (1.9.2)
       i18n (>= 0.7)
 
 GEM
@@ -54,4 +54,4 @@ DEPENDENCIES
   timecop
 
 BUNDLED WITH
-   1.16.4
+   1.17.1
