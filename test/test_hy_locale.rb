@@ -2,16 +2,16 @@
 
 require_relative 'test_helper'
 
-class TestArmLocale < Test::Unit::TestCase
+class TestHyLocale < Test::Unit::TestCase
   def setup
-    Faker::Config.locale = 'arm'
+    Faker::Config.locale = 'hy'
   end
 
   def teardown
     Faker::Config.locale = nil
   end
 
-  def test_arm_address_methods
+  def test_hy_address_methods
     assert_kind_of String, Faker::Address.country
     assert_equal 'Ամերիկայի Միացյալ Նահանգներ', Faker::Address.country_by_code(code: 'US')
     assert_equal 'Հայաստան', Faker::Address.default_country
@@ -42,11 +42,11 @@ class TestArmLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Address.full_address
   end
 
-  def test_arm_color_methods
+  def test_hy_color_methods
     assert_kind_of String, Faker::Color.color_name
   end
 
-  def test_arm_commerce_methods
+  def test_hy_commerce_methods
     assert_kind_of String, Faker::Commerce.color
     assert_kind_of String, Faker::Commerce.department
     assert_kind_of String, Faker::Commerce.material
@@ -54,7 +54,7 @@ class TestArmLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Commerce.promotion_code
   end
 
-  def test_arm_company_methods
+  def test_hy_company_methods
     assert_kind_of String, Faker::Company.suffix
     assert_kind_of String, Faker::Company.buzzword
     assert_kind_of String, Faker::Company.bs
@@ -65,7 +65,7 @@ class TestArmLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Company.type
   end
 
-  def test_arm_compass_methods
+  def test_hy_compass_methods
     assert_kind_of String, Faker::Compass.abbreviation
     assert_kind_of String, Faker::Compass.cardinal
     assert_kind_of String, Faker::Compass.cardinal_abbreviation
@@ -76,11 +76,11 @@ class TestArmLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Compass.ordinal_abbreviation
   end
 
-  def test_arm_currency_methods
+  def test_hy_currency_methods
     assert_kind_of String, Faker::Currency.name
   end
 
-  def test_arm_internet_methods
+  def test_hy_internet_methods
     assert_kind_of String, Faker::Internet.email
     assert_kind_of String, Faker::Internet.free_email
     assert_kind_of String, Faker::Internet.safe_email
@@ -89,7 +89,7 @@ class TestArmLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Internet.domain_word
   end
 
-  def test_arm_job_methods
+  def test_hy_job_methods
     assert_kind_of String, Faker::Job.field
     assert_kind_of String, Faker::Job.seniority
     assert_kind_of String, Faker::Job.position
@@ -99,7 +99,7 @@ class TestArmLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Job.title
   end
 
-  def test_arm_name_methods
+  def test_hy_name_methods
     assert_kind_of String, Faker::Name.male_first_name
     assert_kind_of String, Faker::Name.female_first_name
     assert_kind_of String, Faker::Name.first_name
@@ -108,13 +108,13 @@ class TestArmLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Name.name_with_middle
   end
 
-  def test_arm_nation_methods
+  def test_hy_nation_methods
     assert_kind_of String, Faker::Nation.nationality
     assert_kind_of String, Faker::Nation.language
     assert_kind_of String, Faker::Nation.capital_city
   end
 
-  def test_arm_phone_number_methods
+  def test_hy_phone_number_methods
     assert_kind_of String, Faker::PhoneNumber.cell_phone
     assert_kind_of String, Faker::PhoneNumber.phone_number
     assert_includes ['+1-374', '+374'], Faker::PhoneNumber.country_code
