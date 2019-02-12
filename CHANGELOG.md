@@ -18,6 +18,16 @@
 
 ------------------------------------------------------------------------------
 
+## [v1.9.3](https://github.com/stympy/faker/tree/v1.9.2) (2019-02-12)
+
+[Full Changelog](https://github.com/stympy/faker/compare/v1.9.2...v1.9.3)
+
+### Bug/Fixes
+
+- [PR #1535](https://github.com/stympy/faker/pull/1535) Fix I18n bug [@vbrazo](https://github.com/vbrazo)
+
+------------------------------------------------------------------------------
+
 ## [v1.9.2](https://github.com/stympy/faker/tree/v1.9.2) (2019-02-11)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.9.1...v1.9.2)
 
