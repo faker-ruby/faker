@@ -25,4 +25,8 @@ Gem::Specification.new do |s|
 
   s.files         = Dir['lib/**/*'] + %w[History.md License.txt CHANGELOG.md README.md]
   s.require_paths = ['lib']
+
+  s.metadata['changelog_uri'] = 'https://github.com/stympy/faker/blob/master/CHANGELOG.md'
+  s.metadata['source_code_uri'] = 'https://github.com/stympy/faker'
+  s.metadata['bug_tracker_uri'] = 'https://github.com/stympy/faker/issues'
 end
