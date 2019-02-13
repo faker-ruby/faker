@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    faker (1.9.1)
+    faker (1.9.3)
       i18n (>= 0.7)
       pastel (~> 0.7.2)
       thor (~> 0.20.0)
@@ -85,4 +85,4 @@ DEPENDENCIES
   timecop (= 0.9.1)
 
 BUNDLED WITH
-   1.16.4
+   1.17.1

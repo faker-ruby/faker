@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class AquaTeenHungerForce < Base
+  class AquaTeenHungerForce
     class << self
       extend Gem::Deprecate
 
@@ -9,7 +9,7 @@ module Faker
         Faker::TvShows::AquaTeenHungerForce.character
       end
 
-      deprecate :character, 'Faker::TvShows::AquaTeenHungerForce.character', 2018, 12
+      deprecate :character, 'Faker::TvShows::AquaTeenHungerForce.character', 2019, 01
     end
   end
 end

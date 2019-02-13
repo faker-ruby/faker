@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module OnePiece
+  class OnePiece
     class << self
       extend Gem::Deprecate
 
@@ -29,12 +29,12 @@ module Faker
         Faker::JapaneseMedia::OnePiece.akuma_no_mi
       end
 
-      deprecate :character, 'Faker::JapaneseMedia::OnePiece.character', 2018, 12
-      deprecate :sea, 'Faker::JapaneseMedia::OnePiece.sea', 2018, 12
-      deprecate :island, 'Faker::JapaneseMedia::OnePiece.island', 2018, 12
-      deprecate :location, 'Faker::JapaneseMedia::OnePiece.location', 2018, 12
-      deprecate :quote, 'Faker::JapaneseMedia::OnePiece.quote', 2018, 12
-      deprecate :akuma_no_mi, 'Faker::JapaneseMedia::OnePiece.akuma_no_mi', 2018, 12
+      deprecate :character, 'Faker::JapaneseMedia::OnePiece.character', 2019, 01
+      deprecate :sea, 'Faker::JapaneseMedia::OnePiece.sea', 2019, 01
+      deprecate :island, 'Faker::JapaneseMedia::OnePiece.island', 2019, 01
+      deprecate :location, 'Faker::JapaneseMedia::OnePiece.location', 2019, 01
+      deprecate :quote, 'Faker::JapaneseMedia::OnePiece.quote', 2019, 01
+      deprecate :akuma_no_mi, 'Faker::JapaneseMedia::OnePiece.akuma_no_mi', 2019, 01
     end
   end
 end

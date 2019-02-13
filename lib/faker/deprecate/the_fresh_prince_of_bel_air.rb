@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class TheFreshPrinceOfBelAir < Base
+  class TheFreshPrinceOfBelAir
     class << self
       extend Gem::Deprecate
 
@@ -17,9 +17,9 @@ module Faker
         Faker::TvShows::TheFreshPrinceOfBelAir.quote
       end
 
-      deprecate :character, 'Faker::TvShows::TheFreshPrinceOfBelAir.character', 2018, 12
-      deprecate :celebrity, 'Faker::TvShows::TheFreshPrinceOfBelAir.celebrity', 2018, 12
-      deprecate :quote, 'Faker::TvShows::TheFreshPrinceOfBelAir.quote', 2018, 12
+      deprecate :character, 'Faker::TvShows::TheFreshPrinceOfBelAir.character', 2019, 01
+      deprecate :celebrity, 'Faker::TvShows::TheFreshPrinceOfBelAir.celebrity', 2019, 01
+      deprecate :quote, 'Faker::TvShows::TheFreshPrinceOfBelAir.quote', 2019, 01
     end
   end
 end

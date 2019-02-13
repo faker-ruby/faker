@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class RockBand < Base
+  class RockBand
     class << self
       extend Gem::Deprecate
 
@@ -9,7 +9,7 @@ module Faker
         Faker::Music::RockBand.name
       end
 
-      deprecate :name, 'Faker::Music::RockBand.name', 2018, 12
+      deprecate :name, 'Faker::Music::RockBand.name', 2019, 01
     end
   end
 end

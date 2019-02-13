@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Cat
+  class Cat
     class << self
       extend Gem::Deprecate
 
@@ -17,9 +17,9 @@ module Faker
         Faker::Creature::Cat.registry
       end
 
-      deprecate :name, 'Faker::Creature::Cat.name', 2018, 12
-      deprecate :breed, 'Faker::Creature::Cat.breed', 2018, 12
-      deprecate :registry, 'Faker::Creature::Cat.registry', 2018, 12
+      deprecate :name, 'Faker::Creature::Cat.name', 2019, 01
+      deprecate :breed, 'Faker::Creature::Cat.breed', 2019, 01
+      deprecate :registry, 'Faker::Creature::Cat.registry', 2019, 01
     end
   end
 end

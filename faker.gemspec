@@ -21,6 +21,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.required_ruby_version = '>= 2.3'
 
+  spec.metadata['changelog_uri'] = 'https://github.com/stympy/faker/blob/master/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/stympy/faker'
+  spec.metadata['bug_tracker_uri'] = 'https://github.com/stympy/faker/issues'
+
   spec.add_dependency('i18n', '>= 0.7')
   spec.add_dependency('pastel', '~> 0.7.2')
   spec.add_dependency('thor', '~> 0.20.0')

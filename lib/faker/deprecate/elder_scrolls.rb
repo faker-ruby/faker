@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module ElderScrolls
+  class ElderScrolls
     class << self
       extend Gem::Deprecate
 
@@ -37,14 +37,14 @@ module Faker
         Faker::Games::ElderScrolls.last_name
       end
 
-      deprecate :race, 'Faker::Games::ElderScrolls.race', 2018, 12
-      deprecate :city, 'Faker::Games::ElderScrolls.city', 2018, 12
-      deprecate :creature, 'Faker::Games::ElderScrolls.creature', 2018, 12
-      deprecate :region, 'Faker::Games::ElderScrolls.region', 2018, 12
-      deprecate :dragon, 'Faker::Games::ElderScrolls.dragon', 2018, 12
-      deprecate :name, 'Faker::Games::ElderScrolls.name', 2018, 12
-      deprecate :first_name, 'Faker::Games::ElderScrolls.first_name', 2018, 12
-      deprecate :last_name, 'Faker::Games::ElderScrolls.last_name', 2018, 12
+      deprecate :race, 'Faker::Games::ElderScrolls.race', 2019, 01
+      deprecate :city, 'Faker::Games::ElderScrolls.city', 2019, 01
+      deprecate :creature, 'Faker::Games::ElderScrolls.creature', 2019, 01
+      deprecate :region, 'Faker::Games::ElderScrolls.region', 2019, 01
+      deprecate :dragon, 'Faker::Games::ElderScrolls.dragon', 2019, 01
+      deprecate :name, 'Faker::Games::ElderScrolls.name', 2019, 01
+      deprecate :first_name, 'Faker::Games::ElderScrolls.first_name', 2019, 01
+      deprecate :last_name, 'Faker::Games::ElderScrolls.last_name', 2019, 01
     end
   end
 end
