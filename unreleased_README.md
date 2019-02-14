@@ -269,6 +269,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Sports
   - [Faker::Sports::Basketball](doc/unreleased/sports/basketball.md)
+  - [Faker::Sports::Football](doc/unreleased/sports/football.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/unreleased/tv_shows/aqua_teen_hunger_force.md)
