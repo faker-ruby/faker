@@ -8,15 +8,29 @@
 
 ### Deprecation
 
+- [PR #1538](https://github.com/stympy/faker/pull/1538) Add Sports namespace [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::Football`
+
 ### Documentation
 
 ### Feature Request
 
+- [PR #1537](https://github.com/stympy/faker/pull/1537) Adds the Faker::Sports::Basketball generator [@ecbrodie](https://github.com/ecbrodie)
 - [PR #1520](https://github.com/stympy/faker/pull/1520) Allow subdomains for Internet.domain_name [@cianooooo](https://github.com/cianooooo)
 
 ### Suggestion
 
 ### Update/add locales
+
+------------------------------------------------------------------------------
+
+## [v1.9.3](https://github.com/stympy/faker/tree/v1.9.2) (2019-02-12)
+
+[Full Changelog](https://github.com/stympy/faker/compare/v1.9.2...v1.9.3)
+
+### Bug/Fixes
+
+- [PR #1535](https://github.com/stympy/faker/pull/1535) Fix I18n bug [@vbrazo](https://github.com/vbrazo)
 
 ------------------------------------------------------------------------------
 
