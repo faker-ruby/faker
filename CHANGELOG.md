@@ -9,6 +9,7 @@
 ### Deprecation
 
 - [PR #1538](https://github.com/stympy/faker/pull/1538) Add Sports namespace [@vbrazo](https://github.com/vbrazo)
+  - Deprecates `::Football`
 
 ### Documentation
 
