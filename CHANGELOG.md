@@ -16,6 +16,7 @@
 ### Feature Request
 
 - [PR #1537](https://github.com/stympy/faker/pull/1537) Adds the Faker::Sports::Basketball generator [@ecbrodie](https://github.com/ecbrodie)
+- [PR #1520](https://github.com/stympy/faker/pull/1520) Allow subdomains for Internet.domain_name [@cianooooo](https://github.com/cianooooo)
 
 ### Suggestion
 
