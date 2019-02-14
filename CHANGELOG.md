@@ -12,6 +12,8 @@
 
 ### Feature Request
 
+- [PR #1520](https://github.com/stympy/faker/pull/1520) Allow subdomains for Internet.domain_name [@cianooooo](https://github.com/cianooooo)
+
 ### Suggestion
 
 ### Update/add locales
