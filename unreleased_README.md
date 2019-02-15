@@ -30,6 +30,7 @@ development.
     - [Movies](#movies)
     - [Music](#music)
     - [Quotes](#quotes)
+    - [Sports](#sports)
     - [TV Shows](#tv-shows)
 - [Customization](#customization)
 - [Contributing](#contributing)
@@ -265,6 +266,10 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 ### Quotes
   - [Faker::Quote](doc/unreleased/quotes/quote.md)
   - [Faker::Quotes::Shakespeare](doc/unreleased/quotes/shakespeare.md)
+
+### Sports
+  - [Faker::Sports::Basketball](doc/unreleased/sports/basketball.md)
+  - [Faker::Sports::Football](doc/unreleased/sports/football.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/unreleased/tv_shows/aqua_teen_hunger_force.md)
