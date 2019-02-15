@@ -15,29 +15,39 @@ module Faker
         }.freeze
 
         ##
-        # @return [string] A Bitcoin wallet address
+        # Produces a Bitcoin wallet address
         #
-        # @example
+        # @return [String]
+        #
+        # @example Faker::Blockchain::Bitcoin.address
         #   "147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
-        #   "1PmjxnDM2oGusc8R776s8hNxdtAsNTnWrv"
-        #   "1CJ8rPhaTbTAP16kzdiHoayEPg6UFMjXhT"
+        #
+        # @faker.version 1.9.2
         def address
           address_for(:main)
         end
 
         ##
-        # @return [string] A Bitcoin testnet address
+        # Produces a Bitcoin testnet address
         #
-        # @example
+        # @return [String]
+        #
+        # @example Faker::Blockchain::Bitcoin.testnet_address
         #   "n4YjRyYD6V6zREpk6opqESDqD3KYnMdVEB"
-        #   "miVEG5z3yoTe8p3Bjh9kh8MBQMb4QZ7d2w"
-        #   "n4PTm5skAEnieUve9wmDxtaLZ9UhCXVDzT"
+        #
+        # @faker.version 1.9.2
         def testnet_address
           address_for(:testnet)
         end
 
         protected
 
+        ##
+        # @protected
+        # Generates a random Bitcoin address for the given network
+        #
+        # @param network [Symbol] The name of network protocol to generate an address for
+        # @return [string] A Bitcoin address
         def address_for(network)
           version = PROTOCOL_VERSIONS.fetch(network)
           packed = version.chr + Faker::Config.random.bytes(20)

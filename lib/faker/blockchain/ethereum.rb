@@ -6,6 +6,8 @@ module Faker
     class Ethereum < Base
       class << self
         ##
+        # Produces a random Ethereum wallet address
+        #
         # @return [string]
         #
         # @example
