@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Faker::Base
+  
+    &mdash; Documentation by YARD 0.9.18
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Faker::Base";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (B)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span>
+     &raquo; 
+    <span class="title">Base</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Faker::Base
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Faker::Base</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/faker.rb</dd>
+  </dl>
+  
+</div>
+
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Address.html" title="Faker::Address (class)">Address</a></span>, <span class='object_link'><a href="Alphanumeric.html" title="Faker::Alphanumeric (class)">Alphanumeric</a></span>, <span class='object_link'><a href="Ancient.html" title="Faker::Ancient (class)">Ancient</a></span>, <span class='object_link'><a href="App.html" title="Faker::App (class)">App</a></span>, <span class='object_link'><a href="Appliance.html" title="Faker::Appliance (class)">Appliance</a></span>, <span class='object_link'><a href="Artist.html" title="Faker::Artist (class)">Artist</a></span>, <span class='object_link'><a href="Avatar.html" title="Faker::Avatar (class)">Avatar</a></span>, <span class='object_link'><a href="Bank.html" title="Faker::Bank (class)">Bank</a></span>, <span class='object_link'><a href="Beer.html" title="Faker::Beer (class)">Beer</a></span>, <span class='object_link'><a href="Blockchain/Bitcoin.html" title="Faker::Blockchain::Bitcoin (class)">Faker::Blockchain::Bitcoin</a></span>, <span class='object_link'><a href="Blockchain/Ethereum.html" title="Faker::Blockchain::Ethereum (class)">Faker::Blockchain::Ethereum</a></span>, <span class='object_link'><a href="Blockchain/Tezos.html" title="Faker::Blockchain::Tezos (class)">Faker::Blockchain::Tezos</a></span>, <span class='object_link'><a href="Book.html" title="Faker::Book (class)">Book</a></span>, <span class='object_link'><a href="Books/CultureSeries.html" title="Faker::Books::CultureSeries (class)">Faker::Books::CultureSeries</a></span>, <span class='object_link'><a href="Books/Dune.html" title="Faker::Books::Dune (class)">Faker::Books::Dune</a></span>, <span class='object_link'><a href="Books/Lovecraft.html" title="Faker::Books::Lovecraft (class)">Faker::Books::Lovecraft</a></span>, <span class='object_link'><a href="Boolean.html" title="Faker::Boolean (class)">Boolean</a></span>, <span class='object_link'><a href="BossaNova.html" title="Faker::BossaNova (class)">BossaNova</a></span>, <span class='object_link'><a href="Business.html" title="Faker::Business (class)">Business</a></span>, <span class='object_link'><a href="Cannabis.html" title="Faker::Cannabis (class)">Cannabis</a></span>, <span class='object_link'><a href="ChileRut.html" title="Faker::ChileRut (class)">ChileRut</a></span>, <span class='object_link'><a href="ChuckNorris.html" title="Faker::ChuckNorris (class)">ChuckNorris</a></span>, <span class='object_link'><a href="Code.html" title="Faker::Code (class)">Code</a></span>, <span class='object_link'><a href="Coffee.html" title="Faker::Coffee (class)">Coffee</a></span>, <span class='object_link'><a href="Coin.html" title="Faker::Coin (class)">Coin</a></span>, <span class='object_link'><a href="Color.html" title="Faker::Color (class)">Color</a></span>, <span class='object_link'><a href="Commerce.html" title="Faker::Commerce (class)">Commerce</a></span>, <span class='object_link'><a href="Company.html" title="Faker::Company (class)">Company</a></span>, <span class='object_link'><a href="Compass.html" title="Faker::Compass (class)">Compass</a></span>, <span class='object_link'><a href="Construction.html" title="Faker::Construction (class)">Construction</a></span>, <span class='object_link'><a href="Cosmere.html" title="Faker::Cosmere (class)">Cosmere</a></span>, <span class='object_link'><a href="Creature/Animal.html" title="Faker::Creature::Animal (class)">Creature::Animal</a></span>, <span class='object_link'><a href="Creature/Cat.html" title="Faker::Creature::Cat (class)">Creature::Cat</a></span>, <span class='object_link'><a href="Creature/Dog.html" title="Faker::Creature::Dog (class)">Creature::Dog</a></span>, <span class='object_link'><a href="Crypto.html" title="Faker::Crypto (class)">Crypto</a></span>, <span class='object_link'><a href="CryptoCoin.html" title="Faker::CryptoCoin (class)">CryptoCoin</a></span>, <span class='object_link'><a href="Currency.html" title="Faker::Currency (class)">Currency</a></span>, <span class='object_link'><a href="Date.html" title="Faker::Date (class)">Date</a></span>, <span class='object_link'><a href="DcComics.html" title="Faker::DcComics (class)">DcComics</a></span>, <span class='object_link'><a href="Demographic.html" title="Faker::Demographic (class)">Demographic</a></span>, <span class='object_link'><a href="Dessert.html" title="Faker::Dessert (class)">Dessert</a></span>, <span class='object_link'><a href="Device.html" title="Faker::Device (class)">Device</a></span>, <span class='object_link'><a href="DrivingLicence.html" title="Faker::DrivingLicence (class)">DrivingLicence</a></span>, <span class='object_link'><a href="Educator.html" title="Faker::Educator (class)">Educator</a></span>, <span class='object_link'><a href="ElectricalComponents.html" title="Faker::ElectricalComponents (class)">ElectricalComponents</a></span>, <span class='object_link'><a href="Esport.html" title="Faker::Esport (class)">Esport</a></span>, <span class='object_link'><a href="File.html" title="Faker::File (class)">File</a></span>, <span class='object_link'><a href="Fillmurray.html" title="Faker::Fillmurray (class)">Fillmurray</a></span>, <span class='object_link'><a href="Finance.html" title="Faker::Finance (class)">Finance</a></span>, <span class='object_link'><a href="Food.html" title="Faker::Food (class)">Food</a></span>, <span class='object_link'><a href="FunnyName.html" title="Faker::FunnyName (class)">FunnyName</a></span>, <span class='object_link'><a href="Games/Dota.html" title="Faker::Games::Dota (class)">Games::Dota</a></span>, <span class='object_link'><a href="Games/ElderScrolls.html" title="Faker::Games::ElderScrolls (class)">Games::ElderScrolls</a></span>, <span class='object_link'><a href="Games/Fallout.html" title="Faker::Games::Fallout (class)">Games::Fallout</a></span>, <span class='object_link'><a href="Games/HalfLife.html" title="Faker::Games::HalfLife (class)">Games::HalfLife</a></span>, <span class='object_link'><a href="Games/Heroes.html" title="Faker::Games::Heroes (class)">Games::Heroes</a></span>, <span class='object_link'><a href="Games/HeroesOfTheStorm.html" title="Faker::Games::HeroesOfTheStorm (class)">Games::HeroesOfTheStorm</a></span>, <span class='object_link'><a href="Games/LeagueOfLegends.html" title="Faker::Games::LeagueOfLegends (class)">Games::LeagueOfLegends</a></span>, <span class='object_link'><a href="Games/Myst.html" title="Faker::Games::Myst (class)">Games::Myst</a></span>, <span class='object_link'><a href="Games/Overwatch.html" title="Faker::Games::Overwatch (class)">Games::Overwatch</a></span>, <span class='object_link'><a href="Games/Pokemon.html" title="Faker::Games::Pokemon (class)">Games::Pokemon</a></span>, <span class='object_link'><a href="Games/SonicTheHedgehog.html" title="Faker::Games::SonicTheHedgehog (class)">Games::SonicTheHedgehog</a></span>, <span class='object_link'><a href="Games/SuperSmashBros.html" title="Faker::Games::SuperSmashBros (class)">Games::SuperSmashBros</a></span>, <span class='object_link'><a href="Games/Witcher.html" title="Faker::Games::Witcher (class)">Games::Witcher</a></span>, <span class='object_link'><a href="Games/WorldOfWarcraft.html" title="Faker::Games::WorldOfWarcraft (class)">Games::WorldOfWarcraft</a></span>, <span class='object_link'><a href="Games/Zelda.html" title="Faker::Games::Zelda (class)">Games::Zelda</a></span>, <span class='object_link'><a href="Gender.html" title="Faker::Gender (class)">Gender</a></span>, <span class='object_link'><a href="GreekPhilosophers.html" title="Faker::GreekPhilosophers (class)">GreekPhilosophers</a></span>, <span class='object_link'><a href="Hacker.html" title="Faker::Hacker (class)">Hacker</a></span>, <span class='object_link'><a href="Hipster.html" title="Faker::Hipster (class)">Hipster</a></span>, <span class='object_link'><a href="House.html" title="Faker::House (class)">House</a></span>, <span class='object_link'><a href="IDNumber.html" title="Faker::IDNumber (class)">IDNumber</a></span>, <span class='object_link'><a href="IndustrySegments.html" title="Faker::IndustrySegments (class)">IndustrySegments</a></span>, <span class='object_link'><a href="Internet.html" title="Faker::Internet (class)">Internet</a></span>, <span class='object_link'><a href="Invoice.html" title="Faker::Invoice (class)">Invoice</a></span>, <span class='object_link'><a href="JapaneseMedia/DragonBall.html" title="Faker::JapaneseMedia::DragonBall (class)">JapaneseMedia::DragonBall</a></span>, <span class='object_link'><a href="JapaneseMedia/OnePiece.html" title="Faker::JapaneseMedia::OnePiece (class)">JapaneseMedia::OnePiece</a></span>, <span class='object_link'><a href="JapaneseMedia/SwordArtOnline.html" title="Faker::JapaneseMedia::SwordArtOnline (class)">JapaneseMedia::SwordArtOnline</a></span>, <span class='object_link'><a href="Job.html" title="Faker::Job (class)">Job</a></span>, <span class='object_link'><a href="Json.html" title="Faker::Json (class)">Json</a></span>, <span class='object_link'><a href="Kpop.html" title="Faker::Kpop (class)">Kpop</a></span>, <span class='object_link'><a href="Lorem.html" title="Faker::Lorem (class)">Lorem</a></span>, <span class='object_link'><a href="LoremFlickr.html" title="Faker::LoremFlickr (class)">LoremFlickr</a></span>, <span class='object_link'><a href="LoremPixel.html" title="Faker::LoremPixel (class)">LoremPixel</a></span>, <span class='object_link'><a href="Markdown.html" title="Faker::Markdown (class)">Markdown</a></span>, <span class='object_link'><a href="Marketing.html" title="Faker::Marketing (class)">Marketing</a></span>, <span class='object_link'><a href="Measurement.html" title="Faker::Measurement (class)">Measurement</a></span>, <span class='object_link'><a href="Military.html" title="Faker::Military (class)">Military</a></span>, <span class='object_link'><a href="Movie.html" title="Faker::Movie (class)">Movie</a></span>, <span class='object_link'><a href="Movies/BackToTheFuture.html" title="Faker::Movies::BackToTheFuture (class)">Movies::BackToTheFuture</a></span>, <span class='object_link'><a href="Movies/Ghostbusters.html" title="Faker::Movies::Ghostbusters (class)">Movies::Ghostbusters</a></span>, <span class='object_link'><a href="Movies/GratefulDead.html" title="Faker::Movies::GratefulDead (class)">Movies::GratefulDead</a></span>, <span class='object_link'><a href="Movies/HarryPotter.html" title="Faker::Movies::HarryPotter (class)">Movies::HarryPotter</a></span>, <span class='object_link'><a href="Movies/HitchhikersGuideToTheGalaxy.html" title="Faker::Movies::HitchhikersGuideToTheGalaxy (class)">Movies::HitchhikersGuideToTheGalaxy</a></span>, <span class='object_link'><a href="Movies/Hobbit.html" title="Faker::Movies::Hobbit (class)">Movies::Hobbit</a></span>, <span class='object_link'><a href="Movies/Lebowski.html" title="Faker::Movies::Lebowski (class)">Movies::Lebowski</a></span>, <span class='object_link'><a href="Movies/LordOfTheRings.html" title="Faker::Movies::LordOfTheRings (class)">Movies::LordOfTheRings</a></span>, <span class='object_link'><a href="Movies/PrincessBride.html" title="Faker::Movies::PrincessBride (class)">Movies::PrincessBride</a></span>, <span class='object_link'><a href="Movies/StarWars.html" title="Faker::Movies::StarWars (class)">Movies::StarWars</a></span>, <span class='object_link'><a href="Movies/VForVendetta.html" title="Faker::Movies::VForVendetta (class)">Movies::VForVendetta</a></span>, <span class='object_link'><a href="Music.html" title="Faker::Music (class)">Music</a></span>, <span class='object_link'><a href="Music/Phish.html" title="Faker::Music::Phish (class)">Music::Phish</a></span>, <span class='object_link'><a href="Music/RockBand.html" title="Faker::Music::RockBand (class)">Music::RockBand</a></span>, <span class='object_link'><a href="Music/UmphreysMcgee.html" title="Faker::Music::UmphreysMcgee (class)">Music::UmphreysMcgee</a></span>, <span class='object_link'><a href="Name.html" title="Faker::Name (class)">Name</a></span>, <span class='object_link'><a href="Nation.html" title="Faker::Nation (class)">Nation</a></span>, <span class='object_link'><a href="NationalHealthService.html" title="Faker::NationalHealthService (class)">NationalHealthService</a></span>, <span class='object_link'><a href="NatoPhoneticAlphabet.html" title="Faker::NatoPhoneticAlphabet (class)">NatoPhoneticAlphabet</a></span>, <span class='object_link'><a href="Number.html" title="Faker::Number (class)">Number</a></span>, <span class='object_link'><a href="Omniauth.html" title="Faker::Omniauth (class)">Omniauth</a></span>, <span class='object_link'><a href="PhoneNumber.html" title="Faker::PhoneNumber (class)">PhoneNumber</a></span>, <span class='object_link'><a href="Placeholdit.html" title="Faker::Placeholdit (class)">Placeholdit</a></span>, <span class='object_link'><a href="ProgrammingLanguage.html" title="Faker::ProgrammingLanguage (class)">ProgrammingLanguage</a></span>, <span class='object_link'><a href="Quote.html" title="Faker::Quote (class)">Quote</a></span>, <span class='object_link'><a href="Quotes/Shakespeare.html" title="Faker::Quotes::Shakespeare (class)">Quotes::Shakespeare</a></span>, <span class='object_link'><a href="Relationship.html" title="Faker::Relationship (class)">Relationship</a></span>, <span class='object_link'><a href="Restaurant.html" title="Faker::Restaurant (class)">Restaurant</a></span>, <span class='object_link'><a href="Science.html" title="Faker::Science (class)">Science</a></span>, <span class='object_link'><a href="SlackEmoji.html" title="Faker::SlackEmoji (class)">SlackEmoji</a></span>, <span class='object_link'><a href="Source.html" title="Faker::Source (class)">Source</a></span>, <span class='object_link'><a href="SouthAfrica.html" title="Faker::SouthAfrica (class)">SouthAfrica</a></span>, <span class='object_link'><a href="Space.html" title="Faker::Space (class)">Space</a></span>, <span class='object_link'><a href="Sports/Basketball.html" title="Faker::Sports::Basketball (class)">Sports::Basketball</a></span>, <span class='object_link'><a href="Sports/Football.html" title="Faker::Sports::Football (class)">Sports::Football</a></span>, <span class='object_link'><a href="String.html" title="Faker::String (class)">String</a></span>, <span class='object_link'><a href="Stripe.html" title="Faker::Stripe (class)">Stripe</a></span>, <span class='object_link'><a href="Subscription.html" title="Faker::Subscription (class)">Subscription</a></span>, <span class='object_link'><a href="Superhero.html" title="Faker::Superhero (class)">Superhero</a></span>, <span class='object_link'><a href="Team.html" title="Faker::Team (class)">Team</a></span>, <span class='object_link'><a href="TvShows/AquaTeenHungerForce.html" title="Faker::TvShows::AquaTeenHungerForce (class)">TvShows::AquaTeenHungerForce</a></span>, <span class='object_link'><a href="TvShows/BojackHorseman.html" title="Faker::TvShows::BojackHorseman (class)">TvShows::BojackHorseman</a></span>, <span class='object_link'><a href="TvShows/BreakingBad.html" title="Faker::TvShows::BreakingBad (class)">TvShows::BreakingBad</a></span>, <span class='object_link'><a href="TvShows/Buffy.html" title="Faker::TvShows::Buffy (class)">TvShows::Buffy</a></span>, <span class='object_link'><a href="TvShows/Community.html" title="Faker::TvShows::Community (class)">TvShows::Community</a></span>, <span class='object_link'><a href="TvShows/DrWho.html" title="Faker::TvShows::DrWho (class)">TvShows::DrWho</a></span>, <span class='object_link'><a href="TvShows/DumbAndDumber.html" title="Faker::TvShows::DumbAndDumber (class)">TvShows::DumbAndDumber</a></span>, <span class='object_link'><a href="TvShows/FamilyGuy.html" title="Faker::TvShows::FamilyGuy (class)">TvShows::FamilyGuy</a></span>, <span class='object_link'><a href="TvShows/Friends.html" title="Faker::TvShows::Friends (class)">TvShows::Friends</a></span>, <span class='object_link'><a href="TvShows/GameOfThrones.html" title="Faker::TvShows::GameOfThrones (class)">TvShows::GameOfThrones</a></span>, <span class='object_link'><a href="TvShows/HeyArnold.html" title="Faker::TvShows::HeyArnold (class)">TvShows::HeyArnold</a></span>, <span class='object_link'><a href="TvShows/HowIMetYourMother.html" title="Faker::TvShows::HowIMetYourMother (class)">TvShows::HowIMetYourMother</a></span>, <span class='object_link'><a href="TvShows/MichaelScott.html" title="Faker::TvShows::MichaelScott (class)">TvShows::MichaelScott</a></span>, <span class='object_link'><a href="TvShows/NewGirl.html" title="Faker::TvShows::NewGirl (class)">TvShows::NewGirl</a></span>, <span class='object_link'><a href="TvShows/ParksAndRec.html" title="Faker::TvShows::ParksAndRec (class)">TvShows::ParksAndRec</a></span>, <span class='object_link'><a href="TvShows/RickAndMorty.html" title="Faker::TvShows::RickAndMorty (class)">TvShows::RickAndMorty</a></span>, <span class='object_link'><a href="TvShows/RuPaul.html" title="Faker::TvShows::RuPaul (class)">TvShows::RuPaul</a></span>, <span class='object_link'><a href="TvShows/Seinfeld.html" title="Faker::TvShows::Seinfeld (class)">TvShows::Seinfeld</a></span>, <span class='object_link'><a href="TvShows/SiliconValley.html" title="Faker::TvShows::SiliconValley (class)">TvShows::SiliconValley</a></span>, <span class='object_link'><a href="TvShows/Simpsons.html" title="Faker::TvShows::Simpsons (class)">TvShows::Simpsons</a></span>, <span class='object_link'><a href="TvShows/SouthPark.html" title="Faker::TvShows::SouthPark (class)">TvShows::SouthPark</a></span>, <span class='object_link'><a href="TvShows/StarTrek.html" title="Faker::TvShows::StarTrek (class)">TvShows::StarTrek</a></span>, <span class='object_link'><a href="TvShows/Stargate.html" title="Faker::TvShows::Stargate (class)">TvShows::Stargate</a></span>, <span class='object_link'><a href="TvShows/StrangerThings.html" title="Faker::TvShows::StrangerThings (class)">TvShows::StrangerThings</a></span>, <span class='object_link'><a href="TvShows/TheExpanse.html" title="Faker::TvShows::TheExpanse (class)">TvShows::TheExpanse</a></span>, <span class='object_link'><a href="TvShows/TheFreshPrinceOfBelAir.html" title="Faker::TvShows::TheFreshPrinceOfBelAir (class)">TvShows::TheFreshPrinceOfBelAir</a></span>, <span class='object_link'><a href="TvShows/TheITCrowd.html" title="Faker::TvShows::TheITCrowd (class)">TvShows::TheITCrowd</a></span>, <span class='object_link'><a href="TvShows/TheThickOfIt.html" title="Faker::TvShows::TheThickOfIt (class)">TvShows::TheThickOfIt</a></span>, <span class='object_link'><a href="TvShows/TwinPeaks.html" title="Faker::TvShows::TwinPeaks (class)">TvShows::TwinPeaks</a></span>, <span class='object_link'><a href="TvShows/VentureBros.html" title="Faker::TvShows::VentureBros (class)">TvShows::VentureBros</a></span>, <span class='object_link'><a href="Twitter.html" title="Faker::Twitter (class)">Twitter</a></span>, <span class='object_link'><a href="Types.html" title="Faker::Types (class)">Types</a></span>, <span class='object_link'><a href="University.html" title="Faker::University (class)">University</a></span>, <span class='object_link'><a href="Vehicle.html" title="Faker::Vehicle (class)">Vehicle</a></span>, <span class='object_link'><a href="Verb.html" title="Faker::Verb (class)">Verb</a></span>, <span class='object_link'><a href="WorldCup.html" title="Faker::WorldCup (class)">WorldCup</a></span></p>
+</div>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="Numbers-constant" class="">Numbers =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Array</span><span class='lparen'>(</span><span class='int'>0</span><span class='op'>..</span><span class='int'>9</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="ULetters-constant" class="">ULetters =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Array</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A</span><span class='tstring_end'>&#39;</span></span><span class='op'>..</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Z</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="Letters-constant" class="">Letters =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="#ULetters-constant" title="Faker::Base::ULetters (constant)">ULetters</a></span></span> <span class='op'>+</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>a</span><span class='tstring_end'>&#39;</span></span><span class='op'>..</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>z</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bothify-class_method" title="bothify (class method)">.<strong>bothify</strong>(string)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#disable_enforce_available_locales-class_method" title="disable_enforce_available_locales (class method)">.<strong>disable_enforce_available_locales</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fetch-class_method" title="fetch (class method)">.<strong>fetch</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Helper for the common approach of grabbing a translation with an array of values and selecting one of them.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fetch_all-class_method" title="fetch_all (class method)">.<strong>fetch_all</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Helper for the common approach of grabbing a translation with an array of values and returning all of them.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flexible-class_method" title="flexible (class method)">.<strong>flexible</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#letterify-class_method" title="letterify (class method)">.<strong>letterify</strong>(letter_string)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method_missing-class_method" title="method_missing (class method)">.<strong>method_missing</strong>(mth, *args, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>You can add whatever you want to the locale file, and it will get caught here.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#numerify-class_method" title="numerify (class method)">.<strong>numerify</strong>(number_string, leading_zero: false)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>by default numerify results do not start with a zero.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse-class_method" title="parse (class method)">.<strong>parse</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Load formatted strings from the locale, “parsing” them into method calls that can be used to generate a formatted translation: e.g., “#first_name #last_name”.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rand-class_method" title="rand (class method)">.<strong>rand</strong>(max = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rand_in_range-class_method" title="rand_in_range (class method)">.<strong>rand_in_range</strong>(from, to)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates a random value between the interval.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#regexify-class_method" title="regexify (class method)">.<strong>regexify</strong>(reg)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Given a regular expression, attempt to generate a string that would match it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resolve-class_method" title="resolve (class method)">.<strong>resolve</strong>(value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If an array or range is passed, a random value will be selected.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_to_missing%3F-class_method" title="respond_to_missing? (class method)">.<strong>respond_to_missing?</strong>(method_name, include_private = false)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sample-class_method" title="sample (class method)">.<strong>sample</strong>(list)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shuffle-class_method" title="shuffle (class method)">.<strong>shuffle</strong>(list)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#translate-class_method" title="translate (class method)">.<strong>translate</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Call I18n.translate with our configured locale if no locale is specified.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unique-class_method" title="unique (class method)">.<strong>unique</strong>(max_retries = 10_000)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#with_locale-class_method" title="with_locale (class method)">.<strong>with_locale</strong>(tmp_locale = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Executes block with given locale set.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="bothify-class_method">
+  
+    .<strong>bothify</strong>(string)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_bothify'>bothify</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_letterify'>letterify</span><span class='lparen'>(</span><span class='id identifier rubyid_numerify'>numerify</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="disable_enforce_available_locales-class_method">
+  
+    .<strong>disable_enforce_available_locales</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+241
+242
+243
+244
+245
+246
+247</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 241</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_disable_enforce_available_locales'>disable_enforce_available_locales</span>
+  <span class='id identifier rubyid_old_enforce_available_locales'>old_enforce_available_locales</span> <span class='op'>=</span> <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_enforce_available_locales'>enforce_available_locales</span>
+  <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_enforce_available_locales'>enforce_available_locales</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='kw'>yield</span>
+<span class='kw'>ensure</span>
+  <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_enforce_available_locales'>enforce_available_locales</span> <span class='op'>=</span> <span class='id identifier rubyid_old_enforce_available_locales'>old_enforce_available_locales</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch-class_method">
+  
+    .<strong>fetch</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Helper for the common approach of grabbing a translation with an array of values and selecting one of them.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99
+100
+101
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 97</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fetched'>fetched</span> <span class='op'>=</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='id identifier rubyid_translate'>translate</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>faker.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_fetched'>fetched</span><span class='op'>&amp;.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>^\/</span><span class='regexp_end'>}</span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_fetched'>fetched</span><span class='op'>&amp;.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>\/$</span><span class='regexp_end'>}</span></span><span class='rparen'>)</span> <span class='comment'># A regex
+</span>    <span class='id identifier rubyid_regexify'>regexify</span><span class='lparen'>(</span><span class='id identifier rubyid_fetched'>fetched</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_fetched'>fetched</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch_all-class_method">
+  
+    .<strong>fetch_all</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Helper for the common approach of grabbing a translation with an array of values and returning all of them.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+108
+109
+110
+111
+112
+113
+114
+115
+116</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 108</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fetch_all'>fetch_all</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fetched'>fetched</span> <span class='op'>=</span> <span class='id identifier rubyid_translate'>translate</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>faker.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fetched'>fetched</span> <span class='op'>=</span> <span class='id identifier rubyid_fetched'>fetched</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span> <span class='kw'>if</span> <span class='id identifier rubyid_fetched'>fetched</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&lt;=</span> <span class='int'>1</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_fetched'>fetched</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:sample</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_fetched'>fetched</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>^\/</span><span class='regexp_end'>}</span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_fetched'>fetched</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>\/$</span><span class='regexp_end'>}</span></span><span class='rparen'>)</span> <span class='comment'># A regex
+</span>    <span class='id identifier rubyid_regexify'>regexify</span><span class='lparen'>(</span><span class='id identifier rubyid_fetched'>fetched</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_fetched'>fetched</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flexible-class_method">
+  
+    .<strong>flexible</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+180
+181
+182</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 180</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_flexible'>flexible</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='ivar'>@flexible_key</span> <span class='op'>=</span> <span class='id identifier rubyid_key'>key</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="letterify-class_method">
+  
+    .<strong>letterify</strong>(letter_string)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_letterify'>letterify</span><span class='lparen'>(</span><span class='id identifier rubyid_letter_string'>letter_string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_letter_string'>letter_string</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\?</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ULetters-constant" title="Faker::Base::ULetters (constant)">ULetters</a></span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="method_missing-class_method">
+  
+    .<strong>method_missing</strong>(mth, *args, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>You can add whatever you want to the locale file, and it will get caught here. E.g., in your locale file, create a</p>
+
+<pre class="code ruby"><code class="ruby">name:
+  girls_name: [&quot;Alice&quot;, &quot;Cheryl&quot;, &quot;Tatiana&quot;]
+</code></pre>
+
+<p>Then you can call Faker::Name.girls_name and it will act like #first_name</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+189
+190
+191
+192
+193
+194
+195
+196
+197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 189</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_mth'>mth</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>super</span> <span class='kw'>unless</span> <span class='ivar'>@flexible_key</span>
+
+  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_translation'>translation</span> <span class='op'>=</span> <span class='id identifier rubyid_translate'>translate</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>faker.</span><span class='embexpr_beg'>#{</span><span class='ivar'>@flexible_key</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_mth'>mth</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='id identifier rubyid_translation'>translation</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='kw'>super</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="numerify-class_method">
+  
+    .<strong>numerify</strong>(number_string, leading_zero: false)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>by default numerify results do not start with a zero</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_numerify'>numerify</span><span class='lparen'>(</span><span class='id identifier rubyid_number_string'>number_string</span><span class='comma'>,</span> <span class='label'>leading_zero:</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_number_string'>number_string</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>#</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_leading_zero'>leading_zero</span>
+
+  <span class='id identifier rubyid_number_string'>number_string</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>#</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='int'>9</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>#</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse-class_method">
+  
+    .<strong>parse</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Load formatted strings from the locale, “parsing” them into method calls that can be used to generate a formatted translation: e.g., “#first_name #last_name”.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 121</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fetched'>fetched</span> <span class='op'>=</span> <span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_parts'>parts</span> <span class='op'>=</span> <span class='id identifier rubyid_fetched'>fetched</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(\(?)#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_prefix'>prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_kls'>kls</span><span class='comma'>,</span> <span class='id identifier rubyid_meth'>meth</span><span class='comma'>,</span> <span class='id identifier rubyid_etc'>etc</span><span class='op'>|</span>
+    <span class='comment'># If the token had a class Prefix (e.g., Name.first_name)
+</span>    <span class='comment'># grab the constant, otherwise use self
+</span>    <span class='id identifier rubyid_cls'>cls</span> <span class='op'>=</span> <span class='id identifier rubyid_kls'>kls</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_kls'>kls</span><span class='period'>.</span><span class='id identifier rubyid_chop'>chop</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>self</span>
+
+    <span class='comment'># If an optional leading parentheses is not present, prefix.should == &quot;&quot;, otherwise prefix.should == &quot;(&quot;
+</span>    <span class='comment'># In either case the information will be retained for reconstruction of the string.
+</span>    <span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='id identifier rubyid_prefix'>prefix</span>
+
+    <span class='comment'># If the class has the method, call it, otherwise fetch the transation
+</span>    <span class='comment'># (e.g., faker.phone_number.area_code)
+</span>    <span class='id identifier rubyid_text'>text</span> <span class='op'>+=</span> <span class='kw'>if</span> <span class='id identifier rubyid_cls'>cls</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='rparen'>)</span>
+              <span class='id identifier rubyid_cls'>cls</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='rparen'>)</span>
+            <span class='kw'>else</span>
+              <span class='comment'># Do just enough snake casing to convert PhoneNumber to phone_number
+</span>              <span class='id identifier rubyid_key_path'>key_path</span> <span class='op'>=</span> <span class='id identifier rubyid_cls'>cls</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>::</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([a-z\d])([A-Z])</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>\1_\2</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+              <span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key_path'>key_path</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+            <span class='kw'>end</span>
+
+    <span class='comment'># And tack on spaces, commas, etc. left over in the string
+</span>    <span class='id identifier rubyid_text'>text</span> <span class='op'>+</span> <span class='id identifier rubyid_etc'>etc</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>end</span>
+  <span class='comment'># If the fetched key couldn&#39;t be parsed, then fallback to numerify
+</span>  <span class='id identifier rubyid_parts'>parts</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='op'>?</span> <span class='id identifier rubyid_parts'>parts</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='op'>:</span> <span class='id identifier rubyid_numerify'>numerify</span><span class='lparen'>(</span><span class='id identifier rubyid_fetched'>fetched</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rand-class_method">
+  
+    .<strong>rand</strong>(max = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+231
+232
+233
+234
+235
+236
+237
+238
+239</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 231</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_max'>max</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_random'><span class='object_link'><a href="Config.html#random-class_method" title="Faker::Config.random (method)">random</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rand'>rand</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_max'>max</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Range</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_max'>max</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='period'>.</span><span class='id identifier rubyid_positive?'>positive?</span>
+    <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_random'><span class='object_link'><a href="Config.html#random-class_method" title="Faker::Config.random (method)">random</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='id identifier rubyid_max'>max</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='int'>0</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rand_in_range-class_method">
+  
+    .<strong>rand_in_range</strong>(from, to)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generates a random value between the interval</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206
+207</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 204</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rand_in_range'>rand_in_range</span><span class='lparen'>(</span><span class='id identifier rubyid_from'>from</span><span class='comma'>,</span> <span class='id identifier rubyid_to'>to</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_from'>from</span><span class='comma'>,</span> <span class='id identifier rubyid_to'>to</span> <span class='op'>=</span> <span class='id identifier rubyid_to'>to</span><span class='comma'>,</span> <span class='id identifier rubyid_from'>from</span> <span class='kw'>if</span> <span class='id identifier rubyid_to'>to</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_from'>from</span>
+  <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='id identifier rubyid_from'>from</span><span class='op'>..</span><span class='id identifier rubyid_to'>to</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="regexify-class_method">
+  
+    .<strong>regexify</strong>(reg)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Given a regular expression, attempt to generate a string that would match it.  This is a rather simple implementation, so don&#39;t be shocked if it blows up on you in a spectacular fashion.</p>
+
+<p>It does not handle ., *, unbounded ranges such as 1,, extensions such as (?=), character classes, some abbreviations for character classes, and nested parentheses.</p>
+
+<p>I told you it was simple. :) It&#39;s also probably dog-slow, so you shouldn&#39;t use it.</p>
+
+<p>It will take a regex like this:</p>
+
+<p>/^[<a href="A-HK-Y0-9">A-PR-UWYZ0-9]</a>[<a href="ABEHMNPRVWXY0-9">AEHMNPRTVXY0-9]?</a>? <a href="0-9">1,2</a>[ABD-HJLN-UW-Z]2$/</p>
+
+<p>and generate a string like this:</p>
+
+<p>“U3V  3TP”</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 80</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_regexify'>regexify</span><span class='lparen'>(</span><span class='id identifier rubyid_reg'>reg</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_reg'>reg</span> <span class='op'>=</span> <span class='id identifier rubyid_reg'>reg</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span> <span class='kw'>if</span> <span class='id identifier rubyid_reg'>reg</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:source</span><span class='rparen'>)</span> <span class='comment'># Handle either a Regexp or a String that looks like a Regexp
+</span>  <span class='id identifier rubyid_reg'>reg</span>
+    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>^\/?\^?</span><span class='regexp_end'>}</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>\$?\/?$</span><span class='regexp_end'>}</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># Ditch the anchors
+</span>    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\{(\d+)\}</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>{\1,\1}</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\?</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>{0,1}</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># All {2} become {2,2} and ? become {0,1}
+</span>    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(\[[^\]]+\])\{(\d+),(\d+)\}</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid__match'>_match</span><span class='op'>|</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='const'>Array</span><span class='lparen'>(</span><span class='const'>Range</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span>                <span class='comment'># [12]{1,2} becomes [12] or [12][12]
+</span>    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(\([^\)]+\))\{(\d+),(\d+)\}</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid__match'>_match</span><span class='op'>|</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='const'>Array</span><span class='lparen'>(</span><span class='const'>Range</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span>                <span class='comment'># (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+</span>    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(\\?.)\{(\d+),(\d+)\}</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid__match'>_match</span><span class='op'>|</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='const'>Array</span><span class='lparen'>(</span><span class='const'>Range</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span>                      <span class='comment'># A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+</span>    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\((.*?)\)</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_match'>match</span><span class='op'>|</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='id identifier rubyid_match'>match</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[\(\)]</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>|</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span> <span class='comment'># (this|that) becomes &#39;this&#39; or &#39;that&#39;
+</span>    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\[([^\]]+)\]</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_match'>match</span><span class='op'>|</span> <span class='id identifier rubyid_match'>match</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(\w\-\w)</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_range'>range</span><span class='op'>|</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='const'>Array</span><span class='lparen'>(</span><span class='const'>Range</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_range'>range</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span> <span class='comment'># All A-Z inside of [] become C (or X, or whatever)
+</span>    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\[([^\]]+)\]</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid__match'>_match</span><span class='op'>|</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span> <span class='comment'># All [ABC] become B (or A or C)
+</span>    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>\d</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid__match'>_match</span><span class='op'>|</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#Numbers-constant" title="Faker::Base::Numbers (constant)">Numbers</a></span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+    <span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>\w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid__match'>_match</span><span class='op'>|</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#Letters-constant" title="Faker::Base::Letters (constant)">Letters</a></span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resolve-class_method">
+  
+    .<strong>resolve</strong>(value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>If an array or range is passed, a random value will be selected. All other values are simply returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+211
+212
+213
+214
+215
+216
+217</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 211</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_resolve'>resolve</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_value'>value</span>
+  <span class='kw'>when</span> <span class='const'>Array</span> <span class='kw'>then</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'>Range</span> <span class='kw'>then</span> <span class='id identifier rubyid_rand'>rand</span> <span class='id identifier rubyid_value'>value</span>
+  <span class='kw'>else</span> <span class='id identifier rubyid_value'>value</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_to_missing?-class_method">
+  
+    .<strong>respond_to_missing?</strong>(method_name, include_private = false)  &#x21d2; <tt><span class='object_link'><a href="Boolean.html" title="Faker::Boolean (class)">Boolean</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Boolean.html" title="Faker::Boolean (class)">Boolean</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+199
+200
+201</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 199</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_to_missing?'>respond_to_missing?</span><span class='lparen'>(</span><span class='id identifier rubyid_method_name'>method_name</span><span class='comma'>,</span> <span class='id identifier rubyid_include_private'>include_private</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='kw'>super</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sample-class_method">
+  
+    .<strong>sample</strong>(list)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+223
+224
+225</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 223</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='id identifier rubyid_list'>list</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_list'>list</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:sample</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_list'>list</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span><span class='lparen'>(</span><span class='label'>random:</span> <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_random'><span class='object_link'><a href="Config.html#random-class_method" title="Faker::Config.random (method)">random</a></span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_list'>list</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shuffle-class_method">
+  
+    .<strong>shuffle</strong>(list)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+227
+228
+229</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 227</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_shuffle'>shuffle</span><span class='lparen'>(</span><span class='id identifier rubyid_list'>list</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_list'>list</span><span class='period'>.</span><span class='id identifier rubyid_shuffle'>shuffle</span><span class='lparen'>(</span><span class='label'>random:</span> <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_random'><span class='object_link'><a href="Config.html#random-class_method" title="Faker::Config.random (method)">random</a></span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="translate-class_method">
+  
+    .<strong>translate</strong>(*args)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Call I18n.translate with our configured locale if no locale is specified</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 151</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_translate'>translate</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span> <span class='op'>:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:locale</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_locale'><span class='object_link'><a href="Config.html#locale-class_method" title="Faker::Config.locale (method)">locale</a></span></span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:raise</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_translate'>translate</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>I18n</span><span class='op'>::</span><span class='const'>MissingTranslationData</span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span> <span class='op'>:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:locale</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='symbol'>:en</span>
+
+  <span class='comment'># Super-simple fallback -- fallback to en if the
+</span>  <span class='comment'># translation was missing.  If the translation isn&#39;t
+</span>  <span class='comment'># in en either, then it will raise again.
+</span>  <span class='id identifier rubyid_disable_enforce_available_locales'>disable_enforce_available_locales</span> <span class='kw'>do</span>
+    <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_translate'>translate</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unique-class_method">
+  
+    .<strong>unique</strong>(max_retries = 10_000)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+219
+220
+221</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 219</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unique'>unique</span><span class='lparen'>(</span><span class='id identifier rubyid_max_retries'>max_retries</span> <span class='op'>=</span> <span class='int'>10_000</span><span class='rparen'>)</span>
+  <span class='ivar'>@unique</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="UniqueGenerator.html" title="Faker::UniqueGenerator (class)">UniqueGenerator</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UniqueGenerator.html#initialize-instance_method" title="Faker::UniqueGenerator#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_max_retries'>max_retries</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="with_locale-class_method">
+  
+    .<strong>with_locale</strong>(tmp_locale = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Executes block with given locale set.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/faker.rb', line 169</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_with_locale'>with_locale</span><span class='lparen'>(</span><span class='id identifier rubyid_tmp_locale'>tmp_locale</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_current_locale'>current_locale</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_own_locale'><span class='object_link'><a href="Config.html#own_locale-class_method" title="Faker::Config.own_locale (method)">own_locale</a></span></span>
+  <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_locale'><span class='object_link'><a href="Config.html#locale-class_method" title="Faker::Config.locale (method)">locale</a></span></span> <span class='op'>=</span> <span class='id identifier rubyid_tmp_locale'>tmp_locale</span>
+
+  <span class='id identifier rubyid_disable_enforce_available_locales'>disable_enforce_available_locales</span> <span class='kw'>do</span>
+    <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_with_locale'>with_locale</span><span class='lparen'>(</span><span class='id identifier rubyid_tmp_locale'>tmp_locale</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='kw'>yield</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>ensure</span>
+  <span class='const'><span class='object_link'><a href="../Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_locale'><span class='object_link'><a href="Config.html#locale-class_method" title="Faker::Config.locale (method)">locale</a></span></span> <span class='op'>=</span> <span class='id identifier rubyid_current_locale'>current_locale</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Feb 14 19:39:52 2019 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.18 (ruby-2.6.1).
+</div>
+
+    </div>
+  </body>
+</html>

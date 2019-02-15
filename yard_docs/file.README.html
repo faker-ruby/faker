@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.18
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<p><img src="https://user-images.githubusercontent.com/36028424/40263395-4318481e-5b44-11e8-92e5-3dcc1ce169b3.png"></p>
+
+<h1 id="label-Faker">Faker</h1>
+
+<p><a href="https://travis-ci.org/stympy/faker"><img src="https://travis-ci.org/stympy/faker.svg?branch=master"></a> <a href="https://badge.fury.io/rb/faker"><img src="https://badge.fury.io/rb/faker.svg"></a> <a href="http://inch-ci.org/github/stympy/faker"><img src="http://inch-ci.org/github/stympy/faker.svg?branch=master"></a> <a href="https://codeclimate.com/github/stympy/faker/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage"></a> <a href="https://codeclimate.com/github/stympy/faker/maintainability"><img src="https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability"></a></p>
+
+<p>This gem is a port of <a href="https://metacpan.org/pod/Data::Faker">Perl’s Data::Faker library</a> that generates fake data.</p>
+
+<p>It comes in very handy for taking screenshots (taking screenshots for my project, <a href="http://catchthebest.com/">Catch the Best</a> was the original impetus for the creation of this gem), having real-looking test data, and having your database populated with more than one or two records while you&#39;re doing development.</p>
+<ul><li>
+<p><a href="#installing">Installing</a></p>
+</li><li>
+<p><a href="#usage">Usage</a></p>
+<ul><li>
+<p><a href="#ensuring-unique-values">Ensuring unique values</a></p>
+</li><li>
+<p><a href="#deterministic-random">Deterministic Random</a></p>
+</li></ul>
+</li><li>
+<p><a href="#generators">Generators</a></p>
+<ul><li>
+<p><a href="#default">Default</a></p>
+</li><li>
+<p><a href="#blockchain">Blockchain</a></p>
+</li><li>
+<p><a href="#books">Books</a></p>
+</li><li>
+<p><a href="#creature">Creature</a></p>
+</li><li>
+<p><a href="#games">Games</a></p>
+</li><li>
+<p><a href="#japanese-media">Japanese Media</a></p>
+</li><li>
+<p><a href="#movies">Movies</a></p>
+</li><li>
+<p><a href="#music">Music</a></p>
+</li><li>
+<p><a href="#quotes">Quotes</a></p>
+</li><li>
+<p><a href="#tv-shows">TV Shows</a></p>
+</li></ul>
+</li><li>
+<p><a href="#customization">Customization</a></p>
+</li><li>
+<p><a href="#contributing">Contributing</a></p>
+</li><li>
+<p><a href="#contact">Contact</a></p>
+</li><li>
+<p><a href="#license">License</a></p>
+</li></ul>
+
+<h3 id="label-NOTE">NOTE</h3>
+<ul><li>
+<p>While Faker generates data at random, returned values are not guaranteed to be unique by default.  You must explicity specify when you require unique values, see <a href="#ensuring-unique-values">details</a>.  Values also can be deterministic if you use the deterministic feature, see <a href="#deterministic-random">details</a></p>
+</li><li>
+<p>This is the <code>master</code> branch of Faker and may contain changes that are not yet released.  Please refer the README of your version for the available methods.  List of all versions is <a href="https://github.com/stympy/faker/releases">available here</a>.</p>
+</li></ul>
+
+<h2 id="label-Installing">Installing</h2>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_faker'>faker</span>
+</code></pre>
+
+<p>Note: if you are getting a <code>uninitialized constant Faker::[some_class]</code> error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your gemfile to:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>faker</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:git</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://github.com/stympy/faker.git</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:branch</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>master</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<h2 id="label-Usage">Usage</h2>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>faker</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Name.html" title="Faker::Name (class)">Name</a></span></span><span class='period'>.</span><span class='id identifier rubyid_name'><span class='object_link'><a href="Faker/Name.html#name-class_method" title="Faker::Name.name (method)">name</a></span></span>      <span class='comment'>#=&gt; &quot;Christophe Bartell&quot;
+</span>
+<span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Internet.html" title="Faker::Internet (class)">Internet</a></span></span><span class='period'>.</span><span class='id identifier rubyid_email'><span class='object_link'><a href="Faker/Internet.html#email-class_method" title="Faker::Internet.email (method)">email</a></span></span> <span class='comment'>#=&gt; &quot;kirsten.greenholt@corkeryfisher.info&quot;
+</span></code></pre>
+
+<h3 id="label-Ensuring+unique+values">Ensuring unique values</h3>
+
+<p>Prefix your method call with <code>unique</code>. For example: <code>ruby Faker::Name.unique.name # This will return a unique name every time it is called </code></p>
+
+<p>If too many unique values are requested from a generator that has a limited number of potential values, a <code>Faker::UniqueGenerator::RetryLimitExceeded</code> exception may be raised. It is possible to clear the record of unique values that have been returned, for example between tests. <code>ruby Faker::Name.unique.clear # Clears used values for Faker::Name Faker::UniqueGenerator.clear # Clears used values for all generators </code></p>
+
+<p>You also can give some already used values to the unique generator if you have collisions with the generated data (i.e: using FactoryBot with random and manually set values).</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Usage:
+</span><span class='comment'># Faker::&lt;generator&gt;.unique.exclude(method, arguments, list)
+</span>
+<span class='comment'># Add &#39;azerty&#39; and &#39;wxcvbn&#39; to the string generator with 6 char length
+</span><span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Lorem.html" title="Faker::Lorem (class)">Lorem</a></span></span><span class='period'>.</span><span class='id identifier rubyid_unique'><span class='object_link'><a href="Faker/Base.html#unique-class_method" title="Faker::Base.unique (method)">unique</a></span></span><span class='period'>.</span><span class='id identifier rubyid_exclude'>exclude</span> <span class='symbol'>:string</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>6</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>azerty</span><span class='words_sep'> </span><span class='tstring_content'>wxcvbn</span><span class='tstring_end'>]</span></span>
+</code></pre>
+
+<h3 id="label-Deterministic+Random">Deterministic Random</h3>
+
+<p>Faker supports seeding of its pseudo-random number generator (PRNG) to provide deterministic output of repeated method calls.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_random'><span class='object_link'><a href="Faker/Config.html#random-class_method" title="Faker::Config.random (method)">random</a></span></span> <span class='op'>=</span> <span class='const'>Random</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Company.html" title="Faker::Company (class)">Company</a></span></span><span class='period'>.</span><span class='id identifier rubyid_bs'><span class='object_link'><a href="Faker/Company.html#bs-class_method" title="Faker::Company.bs (method)">bs</a></span></span> <span class='comment'>#=&gt; &quot;seize collaborative mindshare&quot;
+</span><span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Company.html" title="Faker::Company (class)">Company</a></span></span><span class='period'>.</span><span class='id identifier rubyid_bs'><span class='object_link'><a href="Faker/Company.html#bs-class_method" title="Faker::Company.bs (method)">bs</a></span></span> <span class='comment'>#=&gt; &quot;engage strategic platforms&quot;
+</span><span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_random'><span class='object_link'><a href="Faker/Config.html#random-class_method" title="Faker::Config.random (method)">random</a></span></span> <span class='op'>=</span> <span class='const'>Random</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>42</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Company.html" title="Faker::Company (class)">Company</a></span></span><span class='period'>.</span><span class='id identifier rubyid_bs'><span class='object_link'><a href="Faker/Company.html#bs-class_method" title="Faker::Company.bs (method)">bs</a></span></span> <span class='comment'>#=&gt; &quot;seize collaborative mindshare&quot;
+</span><span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Company.html" title="Faker::Company (class)">Company</a></span></span><span class='period'>.</span><span class='id identifier rubyid_bs'><span class='object_link'><a href="Faker/Company.html#bs-class_method" title="Faker::Company.bs (method)">bs</a></span></span> <span class='comment'>#=&gt; &quot;engage strategic platforms&quot;
+</span>
+<span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_random'><span class='object_link'><a href="Faker/Config.html#random-class_method" title="Faker::Config.random (method)">random</a></span></span> <span class='op'>=</span> <span class='kw'>nil</span> <span class='comment'># seeds the PRNG using default entropy sources
+</span><span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Config.html" title="Faker::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_random'><span class='object_link'><a href="Faker/Config.html#random-class_method" title="Faker::Config.random (method)">random</a></span></span><span class='period'>.</span><span class='id identifier rubyid_seed'>seed</span> <span class='comment'>#=&gt; 185180369676275068918401850258677722187
+</span><span class='const'><span class='object_link'><a href="Faker.html" title="Faker (module)">Faker</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Faker/Company.html" title="Faker::Company (class)">Company</a></span></span><span class='period'>.</span><span class='id identifier rubyid_bs'><span class='object_link'><a href="Faker/Company.html#bs-class_method" title="Faker::Company.bs (method)">bs</a></span></span> <span class='comment'>#=&gt; &quot;cultivate viral synergies&quot;
+</span></code></pre>
+
+<h2 id="label-Generators">Generators</h2>
+
+<p><strong>NOTE: Some of the generators below aren&#39;t released yet. If you want to use them, change the line in your gemfile to:</strong></p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>faker</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:git</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://github.com/stympy/faker.git</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:branch</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>master</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<h3 id="label-Default">Default</h3>
+<ul><li>
+<p><a href="doc/default/address.md">Faker::Address</a></p>
+</li><li>
+<p><a href="doc/default/alphanumeric.md">Faker::Alphanumeric</a></p>
+</li><li>
+<p><a href="doc/default/ancient.md">Faker::Ancient</a></p>
+</li><li>
+<p><a href="doc/default/app.md">Faker::App</a></p>
+</li><li>
+<p><a href="doc/default/appliance.md">Faker::Appliance</a></p>
+</li><li>
+<p><a href="doc/default/artist.md">Faker::Artist</a></p>
+</li><li>
+<p><a href="doc/default/avatar.md">Faker::Avatar</a></p>
+</li><li>
+<p><a href="doc/default/bank.md">Faker::Bank</a></p>
+</li><li>
+<p><a href="doc/default/beer.md">Faker::Beer</a></p>
+</li><li>
+<p><a href="doc/default/boolean.md">Faker::Boolean</a></p>
+</li><li>
+<p><a href="doc/default/bossa_nova.md">Faker::BossaNova</a></p>
+</li><li>
+<p><a href="doc/default/business.md">Faker::Business</a></p>
+</li><li>
+<p><a href="doc/default/cannabis.md">Faker::Cannabis</a></p>
+</li><li>
+<p><a href="doc/default/chile_rut.md">Faker::ChileRut</a></p>
+</li><li>
+<p><a href="doc/default/chuck_norris.md">Faker::ChuckNorris</a></p>
+</li><li>
+<p><a href="doc/default/code.md">Faker::Code</a></p>
+</li><li>
+<p><a href="doc/default/coffee.md">Faker::Coffee</a></p>
+</li><li>
+<p><a href="doc/default/coin.md">Faker::Coin</a></p>
+</li><li>
+<p><a href="doc/default/color.md">Faker::Color</a></p>
+</li><li>
+<p><a href="doc/default/commerce.md">Faker::Commerce</a></p>
+</li><li>
+<p><a href="doc/default/company.md">Faker::Company</a></p>
+</li><li>
+<p><a href="doc/default/compass.md">Faker::Compass</a></p>
+</li><li>
+<p><a href="doc/default/construction.md">Faker::Construction</a></p>
+</li><li>
+<p><a href="doc/default/cosmere.md">Faker::Cosmere</a></p>
+</li><li>
+<p><a href="doc/default/crypto.md">Faker::Crypto</a></p>
+</li><li>
+<p><a href="doc/default/crypto_coin.md">Faker::CryptoCoin</a></p>
+</li><li>
+<p><a href="doc/default/currency.md">Faker::Currency</a></p>
+</li><li>
+<p><a href="doc/default/date.md">Faker::Date</a></p>
+</li><li>
+<p><a href="doc/default/dc_comics.md">Faker::DcComics</a></p>
+</li><li>
+<p><a href="doc/default/demographic.md">Faker::Demographic</a></p>
+</li><li>
+<p><a href="doc/default/dessert.md">Faker::Dessert</a></p>
+</li><li>
+<p><a href="doc/default/device.md">Faker::Device</a></p>
+</li><li>
+<p><a href="doc/default/driving_licence.md">Faker::DrivingLicence</a></p>
+</li><li>
+<p><a href="doc/default/educator.md">Faker::Educator</a></p>
+</li><li>
+<p><a href="doc/default/electrical_components.md">Faker::ElectricalComponents</a></p>
+</li><li>
+<p><a href="doc/default/esport.md">Faker::Esport</a></p>
+</li><li>
+<p><a href="doc/default/file.md">Faker::File</a></p>
+</li><li>
+<p><a href="doc/default/fillmurray.md">Faker::Fillmurray</a></p>
+</li><li>
+<p><a href="doc/default/finance.md">Faker::Finance</a></p>
+</li><li>
+<p><a href="doc/default/food.md">Faker::Food</a></p>
+</li><li>
+<p><a href="doc/default/football.md">Faker::Football</a></p>
+</li><li>
+<p><a href="doc/default/funny_name.md">Faker::FunnyName</a></p>
+</li><li>
+<p><a href="doc/default/gender.md">Faker::Gender</a></p>
+</li><li>
+<p><a href="doc/default/greek_philosophers.md">Faker::GreekPhilosophers</a></p>
+</li><li>
+<p><a href="doc/default/hacker.md">Faker::Hacker</a></p>
+</li><li>
+<p><a href="doc/default/hipster.md">Faker::Hipster</a></p>
+</li><li>
+<p><a href="doc/default/house.md">Faker::House</a></p>
+</li><li>
+<p><a href="doc/default/id_number.md">Faker::IDNumber</a></p>
+</li><li>
+<p><a href="doc/default/industry_segments.md">Faker::IndustrySegments</a></p>
+</li><li>
+<p><a href="doc/default/internet.md">Faker::Internet</a></p>
+</li><li>
+<p><a href="doc/default/invoice.md">Faker::Invoice</a></p>
+</li><li>
+<p><a href="doc/default/job.md">Faker::Job</a></p>
+</li><li>
+<p><a href="doc/default/json.md">Faker::Json</a></p>
+</li><li>
+<p><a href="doc/default/kpop.md">Faker::Kpop</a></p>
+</li><li>
+<p><a href="doc/default/lorem.md">Faker::Lorem</a></p>
+</li><li>
+<p><a href="doc/default/lorem_flickr.md">Faker::LoremFlickr</a></p>
+</li><li>
+<p><a href="doc/default/lorem_pixel.md">Faker::LoremPixel</a></p>
+</li><li>
+<p><a href="doc/default/markdown.md">Faker::Markdown</a></p>
+</li><li>
+<p><a href="doc/default/marketing.md">Faker::Marketing</a></p>
+</li><li>
+<p><a href="doc/default/measurement.md">Faker::Measurement</a></p>
+</li><li>
+<p><a href="doc/default/military.md">Faker::Military</a></p>
+</li><li>
+<p><a href="doc/default/name.md">Faker::Name</a></p>
+</li><li>
+<p><a href="doc/default/nation.md">Faker::Nation</a></p>
+</li><li>
+<p><a href="doc/default/nato_phonetic_alphabet.md">Faker::NatoPhoneticAlphabet</a></p>
+</li><li>
+<p><a href="doc/default/national_health_service.md">Faker::NationalHealthService</a></p>
+</li><li>
+<p><a href="doc/default/number.md">Faker::Number</a></p>
+</li><li>
+<p><a href="doc/default/omniauth.md">Faker::Omniauth</a></p>
+</li><li>
+<p><a href="doc/default/phone_number.md">Faker::PhoneNumber</a></p>
+</li><li>
+<p><a href="doc/default/placeholdit.md">Faker::Placeholdit</a></p>
+</li><li>
+<p><a href="doc/default/programming_language.md">Faker::ProgrammingLanguage</a></p>
+</li><li>
+<p><a href="doc/default/relationship.md">Faker::Relationship</a></p>
+</li><li>
+<p><a href="doc/default/restaurant.md">Faker::Restaurant</a></p>
+</li><li>
+<p><a href="doc/default/science.md">Faker::Science</a></p>
+</li><li>
+<p><a href="doc/default/slack_emoji.md">Faker::SlackEmoji</a></p>
+</li><li>
+<p><a href="doc/default/source.md">Faker::Source</a></p>
+</li><li>
+<p><a href="doc/default/south_africa.md">Faker::SouthAfrica</a></p>
+</li><li>
+<p><a href="doc/default/space.md">Faker::Space</a></p>
+</li><li>
+<p><a href="doc/default/string.md">Faker::String</a></p>
+</li><li>
+<p><a href="doc/default/stripe.md">Faker::Stripe</a></p>
+</li><li>
+<p><a href="doc/default/subscription.md">Faker::Subscription</a></p>
+</li><li>
+<p><a href="doc/default/superhero.md">Faker::Superhero</a></p>
+</li><li>
+<p><a href="doc/default/team.md">Faker::Team</a></p>
+</li><li>
+<p><a href="doc/default/time.md">Faker::Time</a></p>
+</li><li>
+<p><a href="doc/default/twitter.md">Faker::Twitter</a></p>
+</li><li>
+<p><a href="doc/default/types.md">Faker::Types</a></p>
+</li><li>
+<p><a href="doc/default/university.md">Faker::University</a></p>
+</li><li>
+<p><a href="doc/default/vehicle.md">Faker::Vehicle</a></p>
+</li><li>
+<p><a href="doc/default/verbs.md">Faker::Verbs</a></p>
+</li><li>
+<p><a href="doc/default/world_cup.md">Faker::WorldCup</a></p>
+</li></ul>
+
+<h3 id="label-Blockchain">Blockchain</h3>
+<ul><li>
+<p><a href="doc/blockchain/bitcoin.md">Faker::Blockchain::Bitcoin</a></p>
+</li><li>
+<p><a href="doc/blockchain/ethereum.md">Faker::Blockchain::Ethereum</a></p>
+</li><li>
+<p><a href="doc/blockchain/tezos.md">Faker::Blockchain::Tezos</a></p>
+</li></ul>
+
+<h3 id="label-Books">Books</h3>
+<ul><li>
+<p><a href="doc/books/book.md">Faker::Book</a></p>
+</li><li>
+<p><a href="doc/books/culture_series.md">Faker::Books::CultureSeries</a></p>
+</li><li>
+<p><a href="doc/books/dune.md">Faker::Books::Dune</a></p>
+</li><li>
+<p><a href="doc/books/lovecraft.md">Faker::Books::Lovecraft</a></p>
+</li></ul>
+
+<h3 id="label-Creature">Creature</h3>
+<ul><li>
+<p><a href="doc/creature/animal.md">Faker::Creature::Animal</a></p>
+</li><li>
+<p><a href="doc/creature/cat.md">Faker::Creature::Cat</a></p>
+</li><li>
+<p><a href="doc/creature/dog.md">Faker::Creature::Dog</a></p>
+</li></ul>
+
+<h3 id="label-Games">Games</h3>
+<ul><li>
+<p><a href="doc/games/dota.md">Faker::Games::Dota</a></p>
+</li><li>
+<p><a href="doc/games/elder_scrolls.md">Faker::Games::ElderScrolls</a></p>
+</li><li>
+<p><a href="doc/games/fallout.md">Faker::Games::Fallout</a></p>
+</li><li>
+<p><a href="doc/games/half_life.md">Faker::Games::HalfLife</a></p>
+</li><li>
+<p><a href="doc/games/heroes.md">Faker::Games::Heroes</a></p>
+</li><li>
+<p><a href="doc/games/heroes_of_the_storm.md">Faker::Games::HeroesOfTheStorm</a></p>
+</li><li>
+<p><a href="doc/games/league_of_legends.md">Faker::Games::LeagueOfLegends</a></p>
+</li><li>
+<p><a href="doc/games/myst.md">Faker::Games::Myst</a></p>
+</li><li>
+<p><a href="doc/games/overwatch.md">Faker::Games::Overwatch</a></p>
+</li><li>
+<p><a href="doc/games/pokemon.md">Faker::Games::Pokemon</a></p>
+</li><li>
+<p><a href="doc/games/sonic_the_hedgehog.md">Faker::Games::SonicTheHedgehog</a></p>
+</li><li>
+<p><a href="doc/games/super_smash_bros.md">Faker::Games::SuperSmashBros</a></p>
+</li><li>
+<p><a href="doc/games/witcher.md">Faker::Games::Witcher</a></p>
+</li><li>
+<p><a href="doc/games/world_of_warcraft.md">Faker::Games::WorldOfWarcraft</a></p>
+</li><li>
+<p><a href="doc/games/zelda.md">Faker::Games::Zelda</a></p>
+</li></ul>
+
+<h3 id="label-Japanese+Media">Japanese Media</h3>
+<ul><li>
+<p><a href="doc/japanese_media/dragon_ball.md">Faker::JapaneseMedia::DragonBall</a></p>
+</li><li>
+<p><a href="doc/japanese_media/one_piece.md">Faker::JapaneseMedia::OnePiece</a></p>
+</li><li>
+<p><a href="doc/japanese_media/sword_art_online.md">Faker::JapaneseMedia::SwordArtOnline</a></p>
+</li></ul>
+
+<h3 id="label-Movies">Movies</h3>
+<ul><li>
+<p><a href="doc/movies/movie.md">Faker::Movie</a></p>
+</li><li>
+<p><a href="doc/movies/back_to_the_future.md">Faker::Movies::BackToTheFuture</a></p>
+</li><li>
+<p><a href="doc/movies/ghostbusters.md">Faker::Movies::Ghostbusters</a></p>
+</li><li>
+<p><a href="doc/movies/grateful_dead.md">Faker::Movies::GratefulDead</a></p>
+</li><li>
+<p><a href="doc/movies/harry_potter.md">Faker::Movies::HarryPotter</a></p>
+</li><li>
+<p><a href="doc/movies/hitchhikers_guide_to_the_galaxy.md">Faker::Movies::HitchhikersGuideToTheGalaxy</a></p>
+</li><li>
+<p><a href="doc/movies/hobbit.md">Faker::Movies::Hobbit</a></p>
+</li><li>
+<p><a href="doc/movies/lebowski.md">Faker::Movies::Lebowski</a></p>
+</li><li>
+<p><a href="doc/movies/lord_of_the_rings.md">Faker::Movies::LordOfTheRings</a></p>
+</li><li>
+<p><a href="doc/movies/princess_bride.md">Faker::Movies::PrincessBride</a></p>
+</li><li>
+<p><a href="doc/movies/star_wars.md">Faker::Movies::StarWars</a></p>
+</li><li>
+<p><a href="doc/movies/v_for_vendetta.md">Faker::Movies::VForVendetta</a></p>
+</li></ul>
+
+<h3 id="label-Music">Music</h3>
+<ul><li>
+<p><a href="doc/music/music.md">Faker::Music</a></p>
+</li><li>
+<p><a href="doc/music/phish.md">Faker::Music::Phish</a></p>
+</li><li>
+<p><a href="doc/music/rock_band.md">Faker::Music::RockBand</a></p>
+</li><li>
+<p><a href="doc/music/umphreys_mcgee.md">Faker::Music::UmphreysMcgee</a></p>
+</li></ul>
+
+<h3 id="label-Quotes">Quotes</h3>
+<ul><li>
+<p><a href="doc/quotes/quote.md">Faker::Quote</a></p>
+</li><li>
+<p><a href="doc/quotes/shakespeare.md">Faker::Quotes::Shakespeare</a></p>
+</li></ul>
+
+<h3 id="label-Tv+Shows">Tv Shows</h3>
+<ul><li>
+<p><a href="doc/tv_shows/aqua_teen_hunger_force.md">Faker::TvShows::AquaTeenHungerForce</a></p>
+</li><li>
+<p><a href="doc/tv_shows/bojack_horseman.md">Faker::TvShows::BojackHorseman</a></p>
+</li><li>
+<p><a href="doc/tv_shows/breaking_bad.md">Faker::TvShows::BreakingBad</a></p>
+</li><li>
+<p><a href="doc/tv_shows/buffy.md">Faker::TvShows::Buffy</a></p>
+</li><li>
+<p><a href="doc/tv_shows/community.md">Faker::TvShows::Community</a></p>
+</li><li>
+<p><a href="doc/tv_shows/dr_who.md">Faker::TvShows::DrWho</a></p>
+</li><li>
+<p><a href="doc/tv_shows/dumb_and_dumber.md">Faker::TvShows::DumbAndDumber</a></p>
+</li><li>
+<p><a href="doc/tv_shows/family_guy.md">Faker::TvShows::FamilyGuy</a></p>
+</li><li>
+<p><a href="doc/tv_shows/friends.md">Faker::TvShows::Friends</a></p>
+</li><li>
+<p><a href="doc/tv_shows/game_of_thrones.md">Faker::TvShows::GameOfThrones</a></p>
+</li><li>
+<p><a href="doc/tv_shows/hey_arnold.md">Faker::TvShows::HeyArnold</a></p>
+</li><li>
+<p><a href="doc/tv_shows/how_i_met_your_mother.md">Faker::TvShows::HowIMetYourMother</a></p>
+</li><li>
+<p><a href="doc/tv_shows/michael_scott.md">Faker::TvShows::MichaelScott</a></p>
+</li><li>
+<p><a href="doc/tv_shows/new_girl.md">Faker::TvShows::NewGirl</a></p>
+</li><li>
+<p><a href="doc/tv_shows/parks_and_rec.md">Faker::TvShows::ParksAndRec</a></p>
+</li><li>
+<p><a href="doc/tv_shows/rick_and_morty.md">Faker::TvShows::RickAndMorty</a></p>
+</li><li>
+<p><a href="doc/tv_shows/rupaul.md">Faker::TvShows::RuPaul</a></p>
+</li><li>
+<p><a href="doc/tv_shows/seinfeld.md">Faker::TvShows::Seinfeld</a></p>
+</li><li>
+<p><a href="doc/tv_shows/silicon_valley.md">Faker::TvShows::SiliconValley</a></p>
+</li><li>
+<p><a href="doc/tv_shows/simpsons.md">Faker::TvShows::Simpsons</a></p>
+</li><li>
+<p><a href="doc/tv_shows/south_park.md">Faker::TvShows::SouthPark</a></p>
+</li><li>
+<p><a href="doc/tv_shows/star_trek.md">Faker::TvShows::StarTrek</a></p>
+</li><li>
+<p><a href="doc/tv_shows/stargate.md">Faker::TvShows::Stargate</a></p>
+</li><li>
+<p><a href="doc/tv_shows/stranger_things.md">Faker::TvShows::StrangerThings</a></p>
+</li><li>
+<p><a href="doc/tv_shows/the_expanse.md">Faker::TvShows::TheExpanse</a></p>
+</li><li>
+<p><a href="doc/tv_shows/the_fresh_prince_of_bel_air.md">Faker::TvShows::TheFreshPrinceOfBelAir</a></p>
+</li><li>
+<p><a href="doc/tv_shows/the_it_crowd.md">Faker::TvShows::TheITCrowd</a></p>
+</li><li>
+<p><a href="doc/tv_shows/the_thick_of_it.md">Faker::TvShows::TheThickOfIt</a></p>
+</li><li>
+<p><a href="doc/tv_shows/twin_peaks.md">Faker::TvShows::TwinPeaks</a></p>
+</li><li>
+<p><a href="doc/tv_shows/venture_bros.md">Faker::TvShows::VentureBros</a></p>
+</li></ul>
+
+<h2 id="label-Customization">Customization</h2>
+
+<p>Since you may want to make addresses and other types of data look different depending on where in the world you are (US postal codes vs. UK postal codes, for example), Faker uses the I18n gem to store strings (like state names) and formats (US postal codes are NNNNN while UK postal codes are AAN NAA), allowing you to get different formats by switching locales. Just set Faker::Config.locale to the locale you want, and Faker will take care of the rest.</p>
+
+<p>If your locale doesn&#39;t already exist, create it in the <code>lib/locales</code> directory and you can then override or add elements to suit your needs. See more about how to use locales <a href="lib/locales/README.md">here</a></p>
+
+<pre class="code ruby"><code class="ruby">en-au-ocker:
+  faker:
+    name:
+      # Existing faker field, new data
+      first_name:
+        - Charlotte
+        - Ava
+        - Chloe
+        - Emily
+
+      # New faker fields
+      ocker_first_name:
+        - Bazza
+        - Bluey
+        - Davo
+        - Johno
+        - Shano
+        - Shazza
+      region:
+        - South East Queensland
+        - Wide Bay Burnett
+        - Margaret River
+        - Port Pirie
+        - Gippsland
+        - Elizabeth
+        - Barossa
+</code></pre>
+
+<h2 id="label-Contributing">Contributing</h2>
+
+<p>See <a href="https://github.com/stympy/faker/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+
+<h2 id="label-Contact">Contact</h2>
+
+<p>Comments and feedback are welcome. Send an email to Benjamin Curtis via the <a href="http://groups.google.com/group/ruby-faker">google group</a>.</p>
+
+<h2 id="label-License">License</h2>
+
+<p>This code is free to use under the terms of the MIT license.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Thu Feb 14 19:39:52 2019 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.18 (ruby-2.6.1).
+</div>
+
+    </div>
+  </body>
+</html>
