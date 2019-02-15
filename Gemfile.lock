@@ -74,7 +74,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (= 1.16.4)
   faker!
   minitest (= 5.11.3)
   pry (= 0.12.2)
@@ -85,4 +84,4 @@ DEPENDENCIES
   timecop (= 0.9.1)
 
 BUNDLED WITH
-   1.17.1
+   1.17.3

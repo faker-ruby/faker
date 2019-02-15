@@ -32,7 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency('tty-screen', '~> 0.6.5')
   spec.add_dependency('tty-tree', '~> 0.2.0')
 
-  spec.add_development_dependency('bundler', '1.16.4')
   spec.add_development_dependency('minitest', '5.11.3')
   spec.add_development_dependency('pry', '0.12.2')
   spec.add_development_dependency('rake', '12.3.1')
