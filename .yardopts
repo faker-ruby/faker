@@ -1,3 +1,4 @@
 --no-private
 -o yard_docs
+--tag faker.version:"Available since"
 lib/**/*.rb

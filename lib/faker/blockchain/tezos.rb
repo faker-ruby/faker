@@ -7,6 +7,7 @@ module Faker
   class Blockchain
     class Tezos < Base
       class << self
+        # @private
         PREFIXES = {
           tz1: [6, 161, 159],
           KT1: [2, 90, 121],
@@ -17,14 +18,35 @@ module Faker
           o: [5, 116]
         }.freeze
 
+        ##
+        # @return [string]
+        #
+        # @example
+        #   "tz1eUsgK6aj752Fbxwk5sAoEFvSDnPjZ4qvk"
+        #
+        # @faker.version 1.9.2
         def account
           encode_tz(:tz1, 20)
         end
 
+        ##
+        # @return [string]
+        #
+        # @example
+        #   "KT1MroqeP15nnitB4CnNfkqHYa2NErhPPLWF"
+        #
+        # @faker.version 1.9.2
         def contract
           encode_tz(:KT1, 20)
         end
 
+        ##
+        # @return [string]
+        #
+        # @example
+        #   "onygWYXJX3xNstFLv9PcCrhQdCkENC795xwSinmTEc1jsDN4VDa"
+        #
+        # @faker.version 1.9.2
         def operation
           encode_tz(:o, 32)
         end
@@ -33,6 +55,13 @@ module Faker
           encode_tz(:B, 32)
         end
 
+        ##
+        # @return [string]
+        #
+        # @example
+        #   "edsigu165B7VFf3Dpw2QABVzEtCxJY2gsNBNcE3Ti7rRxtDUjqTFRpg67EdAQmY6YWPE5tKJDMnSTJDFu65gic8uLjbW2YwGvAZ"
+        #
+        # @faker.version 1.9.2
         def signature
           encode_tz(:edsig, 64)
         end

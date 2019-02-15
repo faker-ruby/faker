@@ -7,13 +7,14 @@ module Faker
   class Blockchain
     class Bitcoin < Base
       class << self
+        # @private
         PROTOCOL_VERSIONS = {
           main: 0,
           testnet: 111
         }.freeze
 
         ##
-        # @return [String] A Bitcoin wallet address
+        # @return [string] A Bitcoin wallet address
         #
         # @example
         #   "147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
@@ -24,7 +25,7 @@ module Faker
         end
 
         ##
-        # @return [String] A Bitcoin testnet address
+        # @return [string] A Bitcoin testnet address
         #
         # @example
         #   "n4YjRyYD6V6zREpk6opqESDqD3KYnMdVEB"
