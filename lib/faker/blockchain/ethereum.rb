@@ -2,6 +2,7 @@
 
 module Faker
   class Blockchain
+    # @faker.version 1.9.2
     class Ethereum < Base
       class << self
         ##
