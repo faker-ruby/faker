@@ -42,6 +42,17 @@ class TestHyLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Address.full_address
   end
 
+  def test_hy_artist_methods
+    assert_kind_of String, Faker::Artist.name
+  end
+
+  def test_hy_book_methods
+    assert_kind_of String, Faker::Book.title
+    assert_kind_of String, Faker::Book.author
+    assert_kind_of String, Faker::Book.publisher
+    assert_kind_of String, Faker::Book.genre
+  end
+
   def test_hy_color_methods
     assert_kind_of String, Faker::Color.color_name
   end
@@ -80,6 +91,17 @@ class TestHyLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Currency.name
   end
 
+  def test_hy_food_methods
+    assert_kind_of String, Faker::Food.dish
+    assert_kind_of String, Faker::Food.descriptions
+    assert_kind_of String, Faker::Food.ingredients
+    assert_kind_of String, Faker::Food.fruits
+    assert_kind_of String, Faker::Food.vegetables
+    assert_kind_of String, Faker::Food.spices
+    assert_kind_of String, Faker::Food.measurements
+    assert_kind_of String, Faker::Food.metric_measurements
+  end
+
   def test_hy_internet_methods
     assert_kind_of String, Faker::Internet.email
     assert_kind_of String, Faker::Internet.free_email
@@ -97,6 +119,10 @@ class TestHyLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Job.employment_type
     assert_kind_of String, Faker::Job.education_level
     assert_kind_of String, Faker::Job.title
+  end
+
+  def test_hy_military_methods
+    assert_kind_of String, Faker::Military.army_rank
   end
 
   def test_hy_name_methods
@@ -118,5 +144,21 @@ class TestHyLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::PhoneNumber.cell_phone
     assert_kind_of String, Faker::PhoneNumber.phone_number
     assert_includes ['+1-374', '+374'], Faker::PhoneNumber.country_code
+  end
+
+  def test_hy_science_methods
+    assert_kind_of String, Faker::Science.element
+    assert_kind_of String, Faker::Science.scientist
+  end
+
+  def test_hy_space_methods
+    assert_kind_of String, Faker::Space.planet
+    assert_kind_of String, Faker::Space.moon
+    assert_kind_of String, Faker::Space.galaxy
+    assert_kind_of String, Faker::Space.nebula
+    assert_kind_of String, Faker::Space.constellation
+    assert_kind_of String, Faker::Space.star
+    assert_kind_of String, Faker::Space.distance_measurement
+    assert_kind_of String, Faker::Space.meteorite
   end
 end
