@@ -27,7 +27,7 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Address.full_address.is_a? String
     assert_match(/^[\d]{5}$/, Faker::Address.postcode)
     assert_match(/^\d+$/, Faker::Address.building_number)
-    full_address_regex = /(([a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s([\d]{5})\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
+    full_address_regex = /(([-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s([\d]{5})\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
     assert_match(full_address_regex, Faker::Address.full_address)
     assert_equal('France', Faker::Address.default_country)
   end
