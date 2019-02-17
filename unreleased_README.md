@@ -64,6 +64,14 @@ Faker::Name.name      #=> "Christophe Bartell"
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ```
 
+### CLI
+
+Usage Instructions [available here](https://github.com/stympy/faker/blob/master/lib/cli/README.md)
+
+```bash
+$ faker
+```
+
 ### Ensuring unique values
 Prefix your method call with `unique`. For example:
 ```ruby
@@ -321,15 +329,15 @@ en-au-ocker:
   faker:
     name:
       # Existing faker field, new data
-      first_name: 
+      first_name:
         - Charlotte
         - Ava
         - Chloe
         - Emily
 
       # New faker fields
-      ocker_first_name: 
-        - Bazza 
+      ocker_first_name:
+        - Bazza
         - Bluey
         - Davo
         - Johno
