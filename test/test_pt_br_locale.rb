@@ -95,4 +95,11 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Vehicle.license_plate.is_a? String
     assert Faker::Vehicle.license_plate('RJ').is_a? String
   end
+
+  def test_pt_br_gender_methods
+    assert Faker::Gender.type.is_a? String
+    assert_includes(['Feminino', 'Masculino', 'Não Binário', 'Agênero', 'Gênero Fluido', 'Gênero queer', 'Bigênero', 'Poligênero'], Faker::Gender.type)
+    assert Faker::Gender.binary_type.is_a? String
+    assert_includes(%w[Feminino Masculino], Faker::Gender.binary_type)
+  end
 end
