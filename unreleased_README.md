@@ -49,7 +49,7 @@ development.
 ```bash
 gem install faker
 ```
-Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your gemfile to:
+Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your Gemfile to:
 
 ```ruby
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
@@ -67,7 +67,7 @@ Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ### Ensuring unique values
 Prefix your method call with `unique`. For example:
 ```ruby
-Faker::Name.unique.name # This will return a unique name every time it is called
+Faker::Name.unique.name #=> This will return a unique name every time it is called
 ```
 
 If too many unique values are requested from a generator that has a limited
@@ -75,8 +75,8 @@ number of potential values, a `Faker::UniqueGenerator::RetryLimitExceeded`
 exception may be raised. It is possible to clear the record of unique values
 that have been returned, for example between tests.
 ```ruby
-Faker::Name.unique.clear # Clears used values for Faker::Name
-Faker::UniqueGenerator.clear # Clears used values for all generators
+Faker::Name.unique.clear #=> Clears used values for Faker::Name
+Faker::UniqueGenerator.clear #=> Clears used values for all generators
 ```
 
 You also can give some already used values to the unique generator if you have
