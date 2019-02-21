@@ -37,7 +37,30 @@ class TestPtBrLocale < Test::Unit::TestCase
   end
 
   def test_pt_br_color_methods
-    assert Faker::Color.name.is_a? String
+    assert Faker::Color.hex_color.is_a? String
+    assert_match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, Faker::Color.hex_color)
+
+    assert Faker::Color.color_name.is_a? String
+
+    assert Faker::Color.rgb_color.is_a? Array
+    Faker::Color.rgb_color.each do |value|
+      assert value >= 0 && value <= 255
+    end
+
+    assert Faker::Color.hsl_color.is_a? Array
+    hue = Faker::Color.hsl_color[0]
+    assert hue >= 0 && hue <= 360
+    Faker::Color.hsl_color[1..2].each do |value|
+      assert value >= 0 && value <= 1
+    end
+
+    assert Faker::Color.hsla_color.is_a? Array
+    assert Faker::Color.hsl_color.is_a? Array
+    hue = Faker::Color.hsl_color[0]
+    assert hue >= 0 && hue <= 360
+    Faker::Color.hsl_color[1..3].each do |value|
+      assert value >= 0 && value <= 1
+    end
   end
 
   def test_pt_br_company_methods
