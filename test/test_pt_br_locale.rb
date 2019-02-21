@@ -13,12 +13,23 @@ class TestPtBrLocale < Test::Unit::TestCase
 
   def test_pt_br_address_methods
     assert Faker::Address.city.is_a? String
+
     assert Faker::Address.state_abbr.is_a? String
+    assert_match(/^[A-Z]{2}$/, Faker::Address.state_abbr)
+
     assert Faker::Address.country.is_a? String
+
     assert Faker::Address.building_number.is_a? String
+    assert_match(/^([0-9]+)|(s\/n)$/, Faker::Address.building_number)
+
     assert Faker::Address.street_suffix.is_a? String
+
     assert Faker::Address.secondary_address.is_a? String
+    assert_match(/^[a-zA-Z\.]+\s[0-9]+$/, Faker::Address.secondary_address)
+
     assert Faker::Address.postcode.is_a? String
+    assert_match(/^[0-9]{5}\-[0-9]{3}$/, Faker::Address.postcode)
+
     assert Faker::Address.state.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.street_name.is_a? String
