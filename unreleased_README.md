@@ -247,7 +247,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Movie](doc/unreleased/movies/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/unreleased/movies/back_to_the_future.md)
   - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
-  - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
   - [Faker::Movies::HarryPotter](doc/unreleased/movies/harry_potter.md)
   - [Faker::Movies::HitchhikersGuideToTheGalaxy](doc/unreleased/movies/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Movies::Hobbit](doc/unreleased/movies/hobbit.md)
@@ -259,6 +258,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Music
   - [Faker::Music](doc/unreleased/music/music.md)
+  - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
   - [Faker::Music::Phish](doc/unreleased/music/phish.md)
   - [Faker::Music::RockBand](doc/unreleased/music/rock_band.md)
   - [Faker::Music::UmphreysMcgee](doc/unreleased/music/umphreys_mcgee.md)
