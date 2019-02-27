@@ -240,6 +240,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Japanese Media
   - [Faker::JapaneseMedia::DragonBall](doc/unreleased/japanese_media/dragon_ball.md)
+  - [Faker::JapaneseMedia::JojosBizarreAdventure](doc/japanese_media/jojos_bizarre_adventure.md)
   - [Faker::JapaneseMedia::OnePiece](doc/unreleased/japanese_media/one_piece.md)
   - [Faker::JapaneseMedia::SwordArtOnline](doc/unreleased/japanese_media/sword_art_online.md)
 
@@ -321,15 +322,15 @@ en-au-ocker:
   faker:
     name:
       # Existing faker field, new data
-      first_name: 
+      first_name:
         - Charlotte
         - Ava
         - Chloe
         - Emily
 
       # New faker fields
-      ocker_first_name: 
-        - Bazza 
+      ocker_first_name:
+        - Bazza
         - Bluey
         - Davo
         - Johno
