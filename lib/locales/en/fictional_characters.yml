@@ -1,0 +1,50 @@
+---
+:en:
+  :faker:
+    :fictional_characters:
+    - dune.characters
+    - games.fallout.characters
+    - games.half_life.character
+    - games.myst.characters
+    - games.sonic_the_hedgehog.character
+    - games.witcher.characters
+    - games.zelda.characters
+    - dragon_ball.characters
+    - one_piece.characters
+    - back_to_the_future.characters
+    - ghostbusters.characters
+    - harry_potter.characters
+    - hitchhikers_guide_to_the_galaxy.characters
+    - hobbit.character
+    - lebowski.characters
+    - lord_of_the_rings.characters
+    - princess_bride.characters
+    - v_for_vendetta.characters
+    - aqua_teen_hunger_force.character
+    - bojack_horseman.characters
+    - breaking_bad.character
+    - buffy.characters
+    - community.characters
+    - dr_who.character
+    - dumb_and_dumber.characters
+    - family_guy.character
+    - friends.characters
+    - game_of_thrones.characters
+    - hey_arnold.characters
+    - how_i_met_your_mother.character
+    - new_girl.characters
+    - parks_and_rec.characters
+    - rick_and_morty.characters
+    - seinfeld.character
+    - silicon_valley.characters
+    - simpsons.characters
+    - south_park.characters
+    - stargate.characters
+    - star_trek.character
+    - stranger_things.character
+    - the_expanse.characters
+    - the_fresh_prince_of_bel_air.characters
+    - the_it_crowd.characters
+    - the_thick_of_it.characters
+    - twin_peaks.characters
+    - venture_bros.character
