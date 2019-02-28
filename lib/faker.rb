@@ -223,6 +223,10 @@ module Faker
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
 
+      def limit(min = 0, max = 100, max_retries = 10_000)
+        @limit ||= LimitGenerator.new(self, min, max, max_retries)
+      end
+
       def sample(list)
         list.respond_to?(:sample) ? list.sample(random: Faker::Config.random) : list
       end
