@@ -12,6 +12,6 @@ task :extract_character_generators do
       generators << match[1] if match
     end
   end
-  y = { en: { faker: { fictional_characters: generators } } }
-  File.write('lib/locales/en/fictional_characters.yml', y.to_yaml)
+  y = { 'en' => { 'faker' => { 'fictional_characters' => generators } } }
+  File.write('lib/locales/en/fictional_characters.yml', y.to_yaml.sub!(/^---\n/, ''))
 end

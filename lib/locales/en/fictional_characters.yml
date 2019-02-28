@@ -1,7 +1,6 @@
----
-:en:
-  :faker:
-    :fictional_characters:
+en:
+  faker:
+    fictional_characters:
     - dune.characters
     - games.fallout.characters
     - games.half_life.character
