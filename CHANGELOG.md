@@ -6,8 +6,14 @@
 
 ### Chores
 
+- [PR #1559](https://github.com/stympy/faker/pull/1559) Fix name_with_middle field for en-AU [@psibi](https://github.com/psibi)
+- [PR #1548](https://github.com/stympy/faker/pull/1548) Chore/improve pt-BR specs [@paulodiovani](https://github.com/paulodiovani)
+- [PR #1542](https://github.com/stympy/faker/pull/1542) Fixed typos to the unreleased_README.md [@gkunwar](https://github.com/gkunwar)
+- [PR #1541](https://github.com/stympy/faker/pull/1541) Add new categories to armenian [@hovikman](https://github.com/hovikman)
+
 ### Deprecation
 
+- [PR #1549](https://github.com/stympy/faker/pull/1549) Faker::Movies::GratefulDead => Faker::Music::GratefulDead [@bcharna](https://github.com/bcharna)
 - [PR #1538](https://github.com/stympy/faker/pull/1538) Add Sports namespace [@vbrazo](https://github.com/vbrazo)
   - Deprecates `::Football`
 
@@ -15,12 +21,22 @@
 
 ### Feature Request
 
+- [PR #1507](https://github.com/stympy/faker/pull/1507) Add CLI - Integrate fakerbot 🤖 [@akabiru](https://github.com/akabiru)
+- [PR #1540](https://github.com/stympy/faker/pull/1540) Add sic_code to company #355 [@bruno-b-martins](https://github.com/bruno-b-martins)
 - [PR #1537](https://github.com/stympy/faker/pull/1537) Adds the Faker::Sports::Basketball generator [@ecbrodie](https://github.com/ecbrodie)
 - [PR #1520](https://github.com/stympy/faker/pull/1520) Allow subdomains for Internet.domain_name [@cianooooo](https://github.com/cianooooo)
 
 ### Suggestion
 
 ### Update/add locales
+
+- [PR #1558](https://github.com/stympy/faker/pull/1558) remove misspelling of Japanese [@michebble](https://github.com/michebble)
+- [PR #1554](https://github.com/stympy/faker/pull/1554) Extend list of cryptocurrencies [@kamilbielawski](https://github.com/kamilbielawski)
+- [PR #1552](https://github.com/stympy/faker/pull/1552) Fix subscription: Fix missing double quotes [@psibi](https://github.com/psibi)
+- [PR #1551](https://github.com/stympy/faker/pull/1551) Yaml syntax for stargate.yml: Fix missing double quote [@psibi](https://github.com/psibi)
+- [PR #1550](https://github.com/stympy/faker/pull/1550) Fix kpop - yaml syntax issue. Double quote is missing [@psibi](https://github.com/psibi)
+- [PR #1545](https://github.com/stympy/faker/pull/1545) Remove trailing space from "kangaroo " & "gnu " translation in animals [@spikeheap](https://github.com/spikeheap)
+- [PR #1543](https://github.com/stympy/faker/pull/1543) Add pt-BR genders [@fladson](https://github.com/fladson)
 
 ------------------------------------------------------------------------------
 
