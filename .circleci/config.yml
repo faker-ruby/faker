@@ -1,0 +1,55 @@
+default_job: &default_job
+  steps:
+    - checkout
+
+    - run:
+        name: Configure Bundler
+        command: |
+          echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+          source $BASH_ENV
+          gem install bundler
+
+
+    - type: cache-restore
+      name: Restore bundle cache
+      key: faker-{{ checksum "Gemfile.lock" }}
+
+    - run: bundle install --path vendor/bundle
+
+    - type: cache-save
+      name: Store bundle cache
+      key: faker-{{ checksum "Gemfile.lock" }}
+      paths:
+        - vendor/bundle
+
+    - run: bundle exec rake
+
+jobs:
+  ruby-2.3:
+    <<: *default_job
+    docker:
+      - image: circleci/ruby:2.3
+
+  ruby-2.4:
+    <<: *default_job
+    docker:
+      - image: circleci/ruby:2.4
+
+  ruby-2.5:
+    <<: *default_job
+    docker:
+      - image: circleci/ruby:2.5
+
+  ruby-2.6:
+    <<: *default_job
+    docker:
+      - image: circleci/ruby:2.6
+
+workflows:
+  version: 2
+  multiple-rubies:
+    jobs:
+      - ruby-2.6
+      - ruby-2.5
+      - ruby-2.4
+      - ruby-2.3
