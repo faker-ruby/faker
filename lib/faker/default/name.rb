@@ -51,6 +51,11 @@ module Faker
       def initials(character_count = 3)
         (0...character_count).map { rand(65..90).chr }.join
       end
+
+      def fictional_character_name
+        fetch(fetch('fictional_characters'))
+      end
+      alias fictional fictional_character_name
     end
   end
 end

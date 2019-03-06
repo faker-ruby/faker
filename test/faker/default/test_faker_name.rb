@@ -47,4 +47,8 @@ class TestFakerName < Test::Unit::TestCase
     assert @tester.initials.match(/[A-Z]{3}/)
     assert @tester.initials(2).match(/[A-Z]{2}/)
   end
+
+  def test_fictional_character_name
+  assert @tester.fictional_character_name.match(/\w+/)
+  end
 end
