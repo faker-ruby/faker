@@ -14,7 +14,7 @@ module Faker
       end
 
       def iban(country_code = 'GB')
-        # Each country has it's own format for bank accounts
+        # Each country has its own format for bank accounts
         # Many of them use letters in certain parts of the account
         # Using regex patterns we can create virtually any type of bank account
         begin
