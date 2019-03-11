@@ -1,11 +1,16 @@
 # New Zealand formatted data types
-# Using Top 20 New Zealand maori baby boys names of 2015
+# Using Top 20 New Zealand Māori baby boys names of 2015
 # Using Top 20 New Zealand baby boys names of 2015
-# Using Top 20 New Zealand  maori baby girls names of 2015
+# Using Top 20 New Zealand Māori baby girls names of 2015
 # Using Top 20 New Zealand baby girls names of 2015
+# Top 50 boys and girls names from 1973, 1989, and 1999
+# plus some common names with accents, macrons, and apostrophes
 # Using commonly used domain suffixes in New Zealand
 # Using surnames familiar to New Zealand population
 # Using popular New Zealand Sport & National Team Names
+
+# Addresses:
+# https://www.nzpost.co.nz/tools/address-postcode-finder/help/examples
 
 en-NZ:
   faker:
@@ -104,8 +109,7 @@ en-NZ:
         The, New, Old, Main
       ]
       community:
-        - "#{place_names}ton"
-        - "#{Name.surname}ton"
+        - "#{Name.surname}#{community_suffix}"
         - "#{place_names}#{community_suffix}"
         - "#{place_names} #{landscape_elements}"
         - "#{community_prefix} #{place_names}"
@@ -130,9 +134,17 @@ en-NZ:
         Invercargill, Whanganui, Gisborne, Ngāruawahia, Manukau, Kāpiti, Kaikōura, Ōamaru, Rānui, Waiharakeke,
         Greymouth, Hokitika, Franz Josef, Fox Glacier, Winton, Kaitaia,
       ]
+      mail_box:
+        - "PO Box ##"
+        - "PO Box #####"
+        - "CMB ##"
+        - "CMB C#"
       full_address:
         - "#{street_address}, #{city} #{postcode}"
         - "#{street_address}, #{community}, #{city} #{postcode}"
+        - "#{street_address}, #{community}, #{city} #{postcode}"
+        - "#{mail_box} #{community} #{postcode}"
+        - "#{mail_box}, #{community}, #{city} #{postcode}"
     phone_number:
       formats: ['0# ### ####', '+64 # ### ####']
     cell_phone:

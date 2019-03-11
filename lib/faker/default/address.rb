@@ -29,6 +29,10 @@ module Faker
         parse('address.community')
       end
 
+      def mail_box
+        bothify(fetch('address.mail_box'))
+      end
+
       def zip_code(state_abbreviation = '')
         if state_abbreviation.empty?
           letterified_string = letterify(fetch('address.postcode'))
