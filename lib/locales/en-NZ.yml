@@ -73,6 +73,7 @@ en-NZ:
       name_with_middle:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{first_name} #{last_name}"
+      suffix: [Jr., Sr., I, II, III, IV, V, ONZM, OBE, GNZM, KNZM, CNZM, MNZM]
     company:
       suffix: [Ltd, Ltc, and Sons, Group, Brothers, Partners]
     internet:
@@ -81,8 +82,8 @@ en-NZ:
       region_abbr: [NTL, AUK, WKO, BOP, GIS, HKB, TKI, MWT, WGN, TAS, NSN, MBH, WTC, CAN, OTA, STL]
       region: [Northland, Auckland, Waikato, Bay of Plenty, Gisborne, Hawkes Bay, Taranaki, Manawatu, Wellington, Tasman, Nelson, Marlborough, West Coast, Canterbury, Otago, Southland]
       postcode: ['0###', '2###', '3###', '4###', '5###', '6###', '7###', '8###', '9###']
-      building_number: ['####', '###', '##', '#/##', '#/#', '#?', '?/##']
-      secondary_address: ['RD #', 'Apt #', 'Unit #']
+      building_number: ['####', '###', '##', '#/##', '#/#', '#?', '?/##', '?/##?']
+      secondary_address: ['RD #', 'Apt #', 'Unit #', 'Level #']
       place_names: [
         Kauri, Tōtara, Kowhai, Rata, Pohutakawa, Tawa, Pine, Koromiko, Redwood, Hinau, Manuka, Kanuka, Kawakawa, Ngaio, Karo, Puriri, Rewarewa, Karamu, Ti Kouka,
         Hospital, School, College, Tip, Landfill, Railway, Station, Wharf, Aerodrome,
@@ -103,7 +104,7 @@ en-NZ:
         ton, toun, town
       ]
       colonialism: [
-        Queen, Victoria, London, Dominion, Albert, Tudor, Windsor, Shakespeare, Oxford, Cambridge, Trafalgar
+        Queen, Queens, Victoria, London, Dominion, Albert, Tudor, Windsor, Shakespeare, Oxford, Cambridge, Trafalgar
       ]
       the: [
         The, New, Old, Main
@@ -119,6 +120,7 @@ en-NZ:
         - "#{Name.last_name} #{street_suffix}"
         - "#{the} #{street_suffix}"
         - "#{colonialism} #{street_suffix}"
+        - "#{colonialism} #{landscape_elements} #{street_suffix}"
         - "#{landscape_elements} #{street_suffix}"
         - "#{the} #{landscape_elements} #{street_suffix}"
         - "#{the} #{place_names}"
@@ -141,6 +143,7 @@ en-NZ:
         - "CMB C#"
       full_address:
         - "#{street_address}, #{city} #{postcode}"
+        - "#{street_address}, #{secondary_address}, #{city} #{postcode}"
         - "#{street_address}, #{community}, #{city} #{postcode}"
         - "#{street_address}, #{community}, #{city} #{postcode}"
         - "#{mail_box} #{community} #{postcode}"
