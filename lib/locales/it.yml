@@ -62,3 +62,9 @@ it:
         - "#{first_name} #{last_name} #{last_name}"
     phone_number:
       formats: ['+## ### ## ## ####', '+## ## #######', '+## ## ########', '+## ### #######', '+## ### ########', '+## #### #######', '+## #### ########', '0## ### ####', '+39 0## ### ###', '3## ### ###', '+39 3## ### ###']
+    subscription:
+      plans: ["Prova gratuita", "Basico", "Starter", "Essential", "Studente", Bronze", "Standard", "Silver", "Gold", "Platinum", "Profesional", "Business", "Diamond", "Premium"]
+      statuses: ["Attivo", "Inattivo", "Bloccato", "In sospeso"]
+      payment_methods: ["Carta di credito", "Carta di debito", "Paypal", "Contanti", "Bonifico", "Bitcoins", "Assegno", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
+      subscription_terms: ["Quotidiano", "Settimanale", "Mensile", "Annuale", "Biennale", "Triennale", "Quinquennale", "Abbonamento a vita"]
+      payment_terms: ["Pagamento anticipato", "Mensile", "Annuale", "Abbonamento completo"]

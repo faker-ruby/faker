@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+mydir = __dir__
+
 begin
   require 'psych'
 end
@@ -9,7 +11,8 @@ require 'set' # Fixes a bug in i18n 0.6.11
 
 Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
 
-I18n.backend = I18n::Backend::Chain.new(I18n.backend, Faker::I18nBackend.new)
+I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
+I18n.reload! if I18n.backend.initialized?
 
 module Faker
   class Config
@@ -246,6 +249,5 @@ module Faker
   end
 end
 
-%w[faker faker/creature faker/games faker/movies faker/japanese_media].each do |path|
-  Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
-end
+# require faker objects
+Dir.glob(File.join(File.dirname(__FILE__), 'faker', '/**/*.rb')).sort.each { |file| require file }
