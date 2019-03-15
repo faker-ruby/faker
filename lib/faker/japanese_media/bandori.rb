@@ -7,6 +7,10 @@ module Faker
         def character
           fetch('bandori.characters')
         end
+
+        def bands
+          fetch('bandori.bands')
+        end
       end
     end
   end
