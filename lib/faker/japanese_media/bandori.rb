@@ -2,7 +2,7 @@
 
 module Faker
   module JapaneseMedia
-    class DragonBall < Base
+    class Bandori < Base
       class << self
         def character
           fetch('bandori.characters')
