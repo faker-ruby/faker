@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Create a report that the API isn't working as it should
+about: Create a bug report
 title: "Issue title goes here"
 labels: needs-triage
 assignees: ''
