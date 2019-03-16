@@ -309,6 +309,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/unreleased/tv_shows/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/unreleased/tv_shows/the_it_crowd.md)
   - [Faker::TvShows::TheThickOfIt](doc/unreleased/tv_shows/the_thick_of_it.md)
+  - [Faker::TvShows::ThirtyRock](doc/unreleased/tv_shows/thirty_rock.md)
   - [Faker::TvShows::TwinPeaks](doc/unreleased/tv_shows/twin_peaks.md)
   - [Faker::TvShows::VentureBros](doc/unreleased/tv_shows/venture_bros.md)
 
