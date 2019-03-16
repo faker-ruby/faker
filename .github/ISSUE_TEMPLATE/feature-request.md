@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a new endpoint or feature
+about: Suggest a new feature
 title: "Title goes here"
 labels: enhancement
 assignees: ''
