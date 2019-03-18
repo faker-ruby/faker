@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Community
+  class Community < Base
     class << self
       extend Gem::Deprecate
 
