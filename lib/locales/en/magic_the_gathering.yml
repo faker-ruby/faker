@@ -1,0 +1,531 @@
+en:
+  faker:
+    games:
+      magic_the_gathering:
+        names:
+          - Acidic Soil
+          - Aegis Automaton
+          - Aerial Guide
+          - Aesthetic Consultation
+          - Aethersnatch
+          - Agoraphobia
+          - Ahn-Crop Crasher
+          - Ajani Vengeant
+          - Akroma, Angel of Wrath Avatar
+          - Alabaster Mage
+          - Ancient Runes
+          - Angel of Invention
+          - Angelic Destiny
+          - Anurid Swarmsnapper
+          - Anvilwrought Raptor
+          - Apocalypse Hydra
+          - Aquatic Incursion
+          - Arc Lightning
+          - Archdemon of Unx
+          - Archon of the Triumvirate
+          - Armored Skaab
+          - Ashenmoor Gouger
+          - Astrolabe
+          - Attendant of Vraska
+          - Aura Gnarlid
+          - Austere Command
+          - Aven Archer
+          - Aven Soulgazer
+          - Azorius Keyrune
+          - Azorius Ploy
+          - Ball Lightning
+          - Basilica Guards
+          - Bastion Inventor
+          - Battering Wurm
+          - Battery
+          - Beacon Bolt
+          - Beetleback Chief
+          - Biovisionary
+          - Bitterbow Sharpshooters
+          - Blade Juggler
+          - Blue Elemental Blast
+          - Bog Humbugs
+          - Boggart Sprite-Chaser
+          - Bomat Bazaar Barge
+          - Bonus Round
+          - Booby Trap
+          - Boros Recruit
+          - Bottomless Pit
+          - Braid of Fire
+          - Branded Howler
+          - Brushstroke Paintermage
+          - Bubbling Muck
+          - Canopy Crawler
+          - Carrion Call
+          - Carrion Wall
+          - Cat Burglar
+          - Catacomb Crocodile
+          - Cavern Lampad
+          - Centaur Glade
+          - Cephalid Looter
+          - Chakram Retriever
+          - Chandra, Gremlin Wrangler
+          - Chandra, Roaring Flame
+          - Change of Heart
+          - Chaotic Strike
+          - Char-Rumbler
+          - Cho-Manno's Blessing
+          - Choked Estuary
+          - Chronomaton
+          - Civilized Scholar
+          - Clairvoyance
+          - Clam Session
+          - Close Quarters
+          - Cloudcrown Oak
+          - Coalition Victory
+          - Conclave Naturalists
+          - Confirm Suspicions
+          - Convalescent Care
+          - Coretapper
+          - Coursers' Accord
+          - Court Archers
+          - Cowl Prowler
+          - Crackling Triton
+          - Cramped Bunker
+          - Cranial Extraction
+          - Crater Hellion
+          - Creakwood Liege
+          - Crossbow Infantry
+          - Crovax the Cursed
+          - Crude Rampart
+          - Cryptolith Rite
+          - Crystal Quarry
+          - Cursed Totem
+          - Cutthroat Maneuver
+          - Cyclical Evolution
+          - Darigaaz Reincarnated
+          - Darigaaz, the Igniter
+          - Daring Saboteur
+          - Dark Temper
+          - Dauthi Mercenary
+          - Dauthi Slayer
+          - Deadshot
+          - Deathspore Thallid
+          - Deception
+          - Decorated Griffin
+          - Decree of Savagery
+          - Dega Disciple
+          - Desert Cerodon
+          - Despoiler of Souls
+          - Destructive Revelry
+          - Diamond Mare
+          - Die Young
+          - Dig Through Time
+          - Dirgur Nemesis
+          - Disciple of Tevesh Szat
+          - Discordant Dirge
+          - Dismantling Blow
+          - Disrupting Shoal
+          - Dovescape
+          - Dowsing Dagger
+          - Dragon Broodmother
+          - Dragon's Claw
+          - Dragonlord Dromoka
+          - Dream's Grip
+          - Earthlink
+          - Earthshaker
+          - Eiganjo Free-Riders
+          - Elder Deep-Fiend
+          - Elvish Fury
+          - Elvish Scout
+          - Elvish Scrapper
+          - Embalmed Brawler
+          - Embersmith
+          - Emberstrike Duo
+          - Encroach
+          - Entering
+          - Entrails Feaster
+          - Ephara, God of the Polis
+          - Equal Treatment
+          - Essence Leak
+          - Essence Sliver
+          - Etherium Sculptor
+          - Everbark Shaman
+          - Executioner's Capsule
+          - Fable of Wolf and Owl
+          - Fathom Fleet Cutthroat
+          - Feral Lightning
+          - Fibrous Entangler
+          - Field Surgeon
+          - Field of Ruin
+          - Firemind's Research
+          - Flameblast Dragon
+          - Flesh-Eater Imp
+          - Floating Shield
+          - Floating-Dream Zubera
+          - Flowstone Thopter
+          - Flurry of Horns
+          - Font of Return
+          - Foreshadow
+          - Forgotten Cave
+          - Fusion Elemental
+          - Galvanic Key
+          - Gather Courage
+          - Genesis Storm
+          - Ghirapur Aether Grid
+          - Ghoultree
+          - Gideon, Ally of Zendikar
+          - Gilt-Leaf Palace
+          - Glacial Wall
+          - Glasses of Urza
+          - Glint-Sleeve Siphoner
+          - Gloom Surgeon
+          - Goblin Commando
+          - Goblin Gardener
+          - Goblin Kaboomist
+          - Goblin Mime
+          - Goblin S.W.A.T. Team
+          - Goblin Wardriver
+          - Godo's Irregulars
+          - Gorehorn Minotaurs
+          - Graphic Violence
+          - Grave Betrayal
+          - Greener Pastures
+          - Greenside Watcher
+          - Griffin Rider
+          - Grifter's Blade
+          - Grim Lavamancer
+          - Grisly Transformation
+          - Ground Rift
+          - Groundskeeper
+          - Growth Spiral
+          - Gruesome Fate
+          - Gustcloak Savior
+          - Gutwrencher Oni
+          - Half-Kitten, Half-
+          - Hammer Dropper
+          - Hatching Plans
+          - Healing Grace
+          - Heed the Mists
+          - Hell Swarm
+          - Hellion Eruption
+          - Helm of the Ghastlord
+          - Hematite Talisman
+          - Hero's Resolve
+          - Highland Game
+          - Hold the Perimeter
+          - Horned Turtle
+          - Horseshoe Crab
+          - Hour of Need
+          - Hunting Kavu
+          - Ice Storm
+          - Ill-Tempered Cyclops
+          - Illusion
+          - Immolating Glare
+          - Impetuous Protege
+          - Inaction Injunction
+          - Indebted Samurai
+          - Inferno
+          - Inheritance
+          - Ink-Treader Nephilim
+          - Insubordination
+          - Ishai, Ojutai Dragonspeaker
+          - Ixidron
+          - Jade Statue
+          - Jeskai Charm
+          - Jolt
+          - Jwari Shapeshifter
+          - Kalemne, Disciple of Iroas
+          - Kashi-Tribe Warriors
+          - Keldon Overseer
+          - Kessig Prowler
+          - Kiln Walker
+          - Kithkin Healer
+          - Kjeldoran Frostbeast
+          - Knight of the Kitchen Sink (d)
+          - Kor Chant
+          - Kor Skyfisher
+          - Kragma Warcaller
+          - Krark's Other Thumb
+          - Kraul Raider
+          - Krosa
+          - Krovikan Mist
+          - Krovikan Rot
+          - Krovikan Whispers
+          - Kuro's Taken
+          - Laccolith Whelp
+          - Lady Zhurong, Warrior Queen
+          - Last Rites
+          - Lazav, Dimir Mastermind
+          - Ledev Champion
+          - Leeching Licid
+          - Leyline of the Void
+          - Lifelace
+          - Lightning-Rig Crew
+          - Lim-Dûl's Hex
+          - Loathsome Catoblepas
+          - Lone Wolf
+          - Lord of the Unreal
+          - Lost Vale
+          - Lys Alana Huntmaster
+          - Madblind Mountain
+          - Mage's Guile
+          - Magus of the Moon
+          - Majestic Heliopterus
+          - Mana Cylix
+          - Mana Geyser
+          - Mantis Engine
+          - March from the Tomb
+          - Mardu Scout
+          - Mask of Law and Grace
+          - Maulfist Revolutionary
+          - Mausoleum Harpy
+          - May Civilization Collapse
+          - Merfolk Mistbinder
+          - Mesa Enchantress
+          - Mighty Leap
+          - Minamo Sightbender
+          - Mindslicer
+          - Mine, Mine, Mine!
+          - Mob Mentality
+          - Mogg Fanatic
+          - Momentum
+          - Moonbow Illusionist
+          - Moorland Haunt
+          - Mortis Dogs
+          - Mouth of Ronom
+          - Mox Lotus
+          - Mtenda Griffin
+          - Munda's Vanguard
+          - Murder
+          - Muzzle
+          - Myr Adapter
+          - Narnam Renegade
+          - Nath's Buffoon
+          - Nath's Elite
+          - Naya Battlemage
+          - Nettle Drone
+          - Nicol Bolas, Planeswalker
+          - Nightguard Patrol
+          - Nightshade Seer
+          - Nihil Spellbomb
+          - Nim Grotesque
+          - Nimbus Swimmer
+          - Nip Gwyllion
+          - Noble Benefactor
+          - Noggle Bridgebreaker
+          - Nourish
+          - Old-Fashioned Vampire
+          - Ominous Sphinx
+          - One-Eyed Scarecrow
+          - Orim's Touch
+          - Orzhov Cluestone
+          - Overgrowth
+          - Path of Bravery
+          - Pearled Unicorn
+          - Phyrexian Boon
+          - Phyrexian Metamorph
+          - Phyrexian Rager
+          - Pilgrim's Eye
+          - Plague Dogs
+          - Plague Myr
+          - Planar Guide
+          - Political Trickery
+          - Polluted Bonds
+          - Prahv
+          - Preacher
+          - Precognition
+          - Predator, Flagship
+          - Primal Order
+          - Profit
+          - Promised Kannushi
+          - Propaganda
+          - Puncture Bolt
+          - Pygmy Pyrosaur
+          - Pyrostatic Pillar
+          - Qal Sisma Behemoth
+          - Quick Sliver
+          - Quirion Explorer
+          - Raging Bull
+          - Ravaging Blaze
+          - Razor Barrier
+          - Read the Bones
+          - Reaver Drone
+          - Recumbent Bliss
+          - Regna's Sanction
+          - Reito Lantern
+          - Release the Gremlins
+          - Repentant Blacksmith
+          - Rest in Peace
+          - Resupply
+          - Revenant Patriarch
+          - Righteous Cause
+          - Ring of Evos Isle
+          - Rites of Initiation
+          - Rolling Temblor
+          - Rubblebelt Boar
+          - Rule of Law
+          - Safehold Duo
+          - Sagu Archer
+          - Salt Road Patrol
+          - Sanctum of the Sun
+          - Sarkhan's Triumph
+          - Saruli Caretaker
+          - Savage Twister
+          - Scion of Ugin
+          - Scorching Winds
+          - Scoured Barrens
+          - Screeching Griffin
+          - Seal of Fire
+          - Seashell Cameo
+          - Season's Beatings
+          - Seek the Wilds
+          - Seeker of Insight
+          - Seismic Shudder
+          - Sek'Kuar, Deathkeeper
+          - Sekki, Seasons' Guide
+          - Selfless Exorcist
+          - Selvala's Enforcer
+          - Sengir Bats
+          - Sentinel Dispatch
+          - Sequestered Stash
+          - Seraph
+          - Seraph of the Scales
+          - Shadowborn Apostle
+          - Shadowstorm Vizier
+          - Shared Discovery
+          - Shidako, Broodmistress
+          - Shrivel
+          - Shu Foot Soldiers
+          - Siege Dragon
+          - Silence
+          - Silent Specter
+          - Silhana Starfletcher
+          - Silverglade Elemental
+          - Skeletal Vampire
+          - Skirsdag High Priest
+          - Skirsdag Supplicant
+          - Skithiryx, the Blight Dragon
+          - Sky-Eel School
+          - Skyward Eye Prophets
+          - Slippery Karst
+          - Sly Spy (e)
+          - Smash
+          - Smokestack
+          - Smoldering Crater
+          - Soldevi Simulacrum
+          - Soothing Balm
+          - Soratami Rainshaper
+          - Soul Snare
+          - Soul Spike
+          - Soul Warden
+          - Soul of Innistrad
+          - Soultether Golem
+          - Specter's Wail
+          - Spell Burst
+          - Spell Counter
+          - Spell Rupture
+          - Spiderwig Boggart
+          - Splintering Wind
+          - Sprout
+          - Squirrel Dealer
+          - Steam Blast
+          - Steel Hellkite
+          - Stoneforge Mystic
+          - Storm Seeker
+          - Stormfront Riders
+          - Stronghold Confessor
+          - Stunted Growth
+          - Sturdy Hatchling
+          - Sulam Djinn
+          - Supreme Phantom
+          - Surveyor's Scope
+          - Suspension Field
+          - Sydri, Galvanic Genius
+          - Sylvan Tutor
+          - Symbiosis
+          - Taigam's Scheming
+          - Take into Custody
+          - Talara's Bane
+          - Tarpan
+          - Tattermunge Witch
+          - Tears of Valakut
+          - Teferi's Imp
+          - Temple of Silence
+          - Terrarion
+          - Terrifying Presence
+          - Tezzeret's Simulacrum
+          - The Cheese Stands Alone
+          - The Warrior
+          - Tidespout Tyrant
+          - Tilonalli's Summoner
+          - Timberland Ruins
+          - Time Machine (b)
+          - Timebender
+          - Top-Secret Tunnel
+          - Torsten Von Ursus
+          - Touch of the Eternal
+          - Trail of Evidence
+          - Tranquil Expanse
+          - Traveling Plague
+          - Treacherous Vampire
+          - Treasure Hunt
+          - Treetop Bracers
+          - Triangle of War
+          - Trigon of Corruption
+          - Twinflame
+          - Tyrant's Machine
+          - Ugin's Insight
+          - Ulvenwald Mystics
+          - Unchecked Growth
+          - Underhanded Designs
+          - Unlikely Alliance
+          - Unscythe, Killer of Kings
+          - Unyaro Griffin
+          - Uproot
+          - Urborg Stalker
+          - Veldt
+          - Voidmage Husher
+          - Vow of Lightning
+          - Wall of Air
+          - Wall of Diffusion
+          - War Horn
+          - War-Wing Siren
+          - Warcry Phoenix
+          - Watchful Naga
+          - Water Wurm
+          - Waterveil Cavern
+          - Weave Fate
+          - Wicked Pact
+          - Wild Defiance
+          - Wild Nacatl
+          - Wily Goblin
+          - Wingbeat Warrior
+          - Wirewood Pride
+          - Woebringer Demon
+          - Workhorse
+          - Worms of the Earth
+          - Wrangle
+          - Wring Flesh
+          - Zodiac Dragon
+        rarities:
+          - Basic
+          - Common
+          - Uncommon
+          - Rare
+          - Mythic
+        colors:
+          - White
+          - Blue
+          - Black
+          - Red
+          - Green
+        types:
+          - Artifact
+          - Conspiracy
+          - Creature
+          - Enchantment
+          - Instant
+          - Land
+          - Phenomenon
+          - Plane
+          - Planeswalker
+          - Scheme
+          - Sorcery
+          - Tribal
+          - Vanguard
