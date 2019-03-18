@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class RickAndMorty
+  class RickAndMorty < Base
     class << self
       extend Gem::Deprecate
 
