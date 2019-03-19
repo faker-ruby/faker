@@ -16,7 +16,6 @@ module Faker
 
         def render(result, output)
           return not_found(output) if result.empty?
-
           super(result, output)
         end
 

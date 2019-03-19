@@ -25,8 +25,6 @@ module Faker
           show_methods ? all_descendants_with_methods : faker_descendants
         end
 
-        private
-
         def all_descendants_with_methods
           faker_descendants.each do |descendant|
             store(descendant, descendant.my_singleton_methods)

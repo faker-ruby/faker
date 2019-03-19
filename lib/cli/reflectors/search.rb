@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../reflector'
+require_relative 'list'
 
 module Faker
   module CLI
@@ -12,6 +13,7 @@ module Faker
         attr_reader :query
 
         def self.call(query)
+
           new(query).call
         end
 
@@ -30,9 +32,12 @@ module Faker
 
         def search_descendants_matching_query
           faker_descendants.each do |descendant|
-            methods = descendant.my_singleton_methods
-            matching = methods.select { |method| query_matches?(method.to_s) }
-            store(descendant, matching)
+            methods_and_namespaces = descendant.my_singleton_methods
+            matching = methods_and_namespaces.select { |method| query_matches?(method.to_s) }
+            # only call store if matching has something or if descendant matches the query
+            if matching != nil || descendant.match(/query/i) != nil
+              store(descendant, matching)
+            end
           end
         end
 

@@ -35,7 +35,8 @@ module Faker
       protected
 
       def store(descendant, methods)
-        return if methods.empty?
+        # store even if there aren't methods
+        # return if methods.empty?
 
         descendants_with_methods[descendant].concat(methods)
       end
