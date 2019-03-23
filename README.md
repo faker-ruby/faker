@@ -240,6 +240,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::JapaneseMedia::DragonBall](doc/japanese_media/dragon_ball.md)
   - [Faker::JapaneseMedia::OnePiece](doc/japanese_media/one_piece.md)
   - [Faker::JapaneseMedia::SwordArtOnline](doc/japanese_media/sword_art_online.md)
+  - [Faker::JapaneseMedia::Bandori](doc/japanese_media/bandori.md)
 
 ### Movies
   - [Faker::Movie](doc/movies/movie.md)
