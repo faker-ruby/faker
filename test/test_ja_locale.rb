@@ -79,6 +79,11 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Games::Zelda.game.is_a? String
   end
 
+  def test_ja_restaurant_methods
+    assert Faker::Restaurant.name.is_a? String
+    assert Faker::Restaurant.type.is_a? String
+  end
+
   def test_ja_space_methods
     assert Faker::Space.planet.is_a? String
     assert Faker::Space.galaxy.is_a? String
