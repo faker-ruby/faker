@@ -7,6 +7,6 @@ Available since version 1.9.0.
 Faker::JapaneseMedia::Bandori.character #=> "Hanazono Tae"
 
 # Random Bandori band name
-Faker::JapaneseMedia::SwordArtOnline.band #=> "Roselia"
+Faker::JapaneseMedia::Bandori.band #=> "Roselia"
 
 ```
