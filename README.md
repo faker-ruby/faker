@@ -259,6 +259,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Music](doc/music/music.md)
   - [Faker::Music::Phish](doc/music/phish.md)
   - [Faker::Music::RockBand](doc/music/rock_band.md)
+  - [Faker::Music::TheBeatles](doc/music/the_beatles.md)
   - [Faker::Music::UmphreysMcgee](doc/music/umphreys_mcgee.md)
 
 ### Quotes
