@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'test_helper'
 # rubocop:disable Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
@@ -43,7 +45,7 @@ class TestDeterminism < Test::Unit::TestCase
 
   def subclasses
     Faker.constants.delete_if do |subclass|
-      %i[Base Bank Char Config Date Internet Time VERSION].include?(subclass)
+      %i[Base Bank Books Cat Char Base58 ChileRut CLI Config Creature Date Dog DragonBall Dota ElderScrolls Fallout Games GamesHalfLife HeroesOfTheStorm Internet JapaneseMedia LeagueOfLegends Movies Myst Overwatch OnePiece Pokemon Sports SwordArtOnline TvShows Time VERSION Witcher WorldOfWarcraft Zelda].include?(subclass)
     end.sort
   end
 
