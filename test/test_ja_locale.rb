@@ -21,6 +21,10 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
   end
 
+  def test_ja_ancient_methods
+    assert Faker::Ancient.god.is_a? String
+  end
+
   def test_ja_cat_methods
     assert Faker::Cat.breed.is_a? String
   end
