@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Faker
   module Char
     def self.prepare(string)

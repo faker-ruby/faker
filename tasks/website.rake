@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 desc 'Generate website files'
 task :website_generate do
   (Dir['website/**/*.txt'] - Dir['website/version*.txt']).each do |txt|
