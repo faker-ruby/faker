@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
 require 'rubygems'
 begin
@@ -21,7 +20,6 @@ class Fixnum
   def ordinal
     # teens
     return 'th' if (10..19).cover?(self % 100)
-
     # others
     case self % 10
     when 1

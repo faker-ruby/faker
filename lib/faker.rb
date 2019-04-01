@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 mydir = __dir__
 
 begin
@@ -9,8 +7,9 @@ end
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
 
-Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
-
+if I18n.respond_to?(:enforce_available_locales=)
+  I18n.enforce_available_locales = true
+end
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 I18n.reload! if I18n.backend.initialized?
 
@@ -46,7 +45,6 @@ module Faker
       ## by default numerify results do not start with a zero
       def numerify(number_string, leading_zero: false)
         return number_string.gsub(/#/) { rand(10).to_s } if leading_zero
-
         number_string.sub(/#/) { rand(1..9).to_s }.gsub(/#/) { rand(10).to_s }
       end
 
@@ -96,7 +94,7 @@ module Faker
       # with an array of values and selecting one of them.
       def fetch(key)
         fetched = sample(translate("faker.#{key}"))
-        if fetched&.match(%r{^\/}) && fetched&.match(%r{\/$}) # A regex
+        if fetched && fetched.match(%r{^\/}) && fetched.match(%r{\/$}) # A regex
           regexify(fetched)
         else
           fetched
@@ -129,15 +127,9 @@ module Faker
           # In either case the information will be retained for reconstruction of the string.
           text = prefix
 
-          # If the class has the method, call it, otherwise fetch the transation
-          # (e.g., faker.phone_number.area_code)
-          text += if cls.respond_to?(meth)
-                    cls.send(meth)
-                  else
-                    # Do just enough snake casing to convert PhoneNumber to phone_number
-                    key_path = cls.to_s.split('::').last.gsub(/([a-z\d])([A-Z])/, '\1_\2').downcase
-                    fetch("#{key_path}.#{meth.downcase}")
-                  end
+          # If the class has the method, call it, otherwise
+          # fetch the transation (i.e., faker.name.first_name)
+          text += cls.respond_to?(meth) ? cls.send(meth) : fetch("#{(kls || self).to_s.split('::').last.downcase}.#{meth.downcase}")
 
           # And tack on spaces, commas, etc. left over in the string
           text + etc.to_s
@@ -160,19 +152,14 @@ module Faker
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
-        disable_enforce_available_locales do
-          I18n.translate(*args.push(opts))
-        end
+        I18n.translate(*args.push(opts))
       end
 
       # Executes block with given locale set.
       def with_locale(tmp_locale = nil)
         current_locale = Faker::Config.own_locale
         Faker::Config.locale = tmp_locale
-
-        disable_enforce_available_locales do
-          I18n.with_locale(tmp_locale) { yield }
-        end
+        I18n.with_locale(tmp_locale) { yield }
       ensure
         Faker::Config.locale = current_locale
       end
@@ -206,16 +193,6 @@ module Faker
         rand(from..to)
       end
 
-      # If an array or range is passed, a random value will be selected.
-      # All other values are simply returned.
-      def resolve(value)
-        case value
-        when Array then sample(value)
-        when Range then rand value
-        else value
-        end
-      end
-
       def unique(max_retries = 10_000)
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
@@ -231,23 +208,20 @@ module Faker
       def rand(max = nil)
         if max.nil?
           Faker::Config.random.rand
-        elsif max.is_a?(Range) || max.to_i.positive?
+        elsif max.is_a?(Range) || max.to_i > 0
           Faker::Config.random.rand(max)
         else
           0
         end
       end
-
-      def disable_enforce_available_locales
-        old_enforce_available_locales = I18n.enforce_available_locales
-        I18n.enforce_available_locales = false
-        yield
-      ensure
-        I18n.enforce_available_locales = old_enforce_available_locales
-      end
     end
   end
 end
 
-# require faker objects
-Dir.glob(File.join(File.dirname(__FILE__), 'faker', '/**/*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(File.dirname(__FILE__), 'faker', '*.rb')).sort.each { |f| require f }
+
+require 'extensions/array'
+require 'extensions/symbol'
+
+require 'helpers/char'
+require 'helpers/unique_generator'
