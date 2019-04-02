@@ -33,6 +33,10 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Color.name.is_a? String
   end
 
+  def test_ja_coffee_methods
+    assert Faker::Coffee.country.is_a? String
+  end
+
   def test_ja_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.category.is_a? String
