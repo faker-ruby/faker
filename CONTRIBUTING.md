@@ -47,6 +47,7 @@ If you're reviewing a PR, you should ask yourself:
 Include [YARD] style docs for all methods that includes:
 - A short description of what the method generates
 - Descriptions for all params
+- The return type
 - At least one example of the output
 - The version that the method was added
   - leave as `next` for new methods
@@ -56,9 +57,11 @@ Include [YARD] style docs for all methods that includes:
 # Produces a random string of alphabetic characters, (no digits)
 # 
 # @param char_count {Number} The length of the string to generate
+#
+# @return {String}
 # 
 # @example Faker:Alphanumeric.alpha(10)
-#   "3yfq2phxtb"
+#   "zlvubkrwga"
 #
 # @faker.version next
 def alpha(char_count = 32)
