@@ -49,7 +49,7 @@ development.
 ```bash
 gem install faker
 ```
-Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your gemfile to:
+Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your Gemfile to:
 
 ```ruby
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
@@ -62,6 +62,14 @@ require 'faker'
 Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+```
+
+### CLI
+
+Usage Instructions [available here](https://github.com/stympy/faker/blob/master/lib/cli/README.md)
+
+```bash
+$ faker
 ```
 
 ### Ensuring unique values
@@ -220,6 +228,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
   - [Faker::Creature::Cat](doc/unreleased/creature/cat.md)
   - [Faker::Creature::Dog](doc/unreleased/creature/dog.md)
+  - [Faker::Creature::Horse](doc/unreleased/creature/horse.md)
 
 ### Games
   - [Faker::Games::Dota](doc/unreleased/games/dota.md)
@@ -247,7 +256,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Movie](doc/unreleased/movies/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/unreleased/movies/back_to_the_future.md)
   - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
-  - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
   - [Faker::Movies::HarryPotter](doc/unreleased/movies/harry_potter.md)
   - [Faker::Movies::HitchhikersGuideToTheGalaxy](doc/unreleased/movies/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Movies::Hobbit](doc/unreleased/movies/hobbit.md)
@@ -259,6 +267,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Music
   - [Faker::Music](doc/unreleased/music/music.md)
+  - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
   - [Faker::Music::Phish](doc/unreleased/music/phish.md)
   - [Faker::Music::RockBand](doc/unreleased/music/rock_band.md)
   - [Faker::Music::UmphreysMcgee](doc/unreleased/music/umphreys_mcgee.md)
@@ -321,15 +330,15 @@ en-au-ocker:
   faker:
     name:
       # Existing faker field, new data
-      first_name: 
+      first_name:
         - Charlotte
         - Ava
         - Chloe
         - Emily
 
       # New faker fields
-      ocker_first_name: 
-        - Bazza 
+      ocker_first_name:
+        - Bazza
         - Bluey
         - Davo
         - Johno

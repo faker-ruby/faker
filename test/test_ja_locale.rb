@@ -21,12 +21,20 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
   end
 
+  def test_ja_ancient_methods
+    assert Faker::Ancient.god.is_a? String
+  end
+
   def test_ja_cat_methods
     assert Faker::Cat.breed.is_a? String
   end
 
   def test_ja_color_methods
     assert Faker::Color.name.is_a? String
+  end
+
+  def test_ja_coffee_methods
+    assert Faker::Coffee.country.is_a? String
   end
 
   def test_ja_company_methods
@@ -77,6 +85,11 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_zelda_methods
     assert Faker::Games::Zelda.game.is_a? String
+  end
+
+  def test_ja_restaurant_methods
+    assert Faker::Restaurant.name.is_a? String
+    assert Faker::Restaurant.type.is_a? String
   end
 
   def test_ja_space_methods

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require_relative 'music'
+
 module Faker
-  module Movies
+  class Music
     class GratefulDead < Base
       class << self
         def player
