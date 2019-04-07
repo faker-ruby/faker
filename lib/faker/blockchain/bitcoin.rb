@@ -5,7 +5,6 @@ require 'securerandom'
 
 module Faker
   class Blockchain
-    # @faker.version 1.9.2
     class Bitcoin < Base
       class << self
         # @private
@@ -19,7 +18,7 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Blockchain::Bitcoin.address
+        # @example
         #   "147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
         #
         # @faker.version 1.9.2
@@ -43,7 +42,6 @@ module Faker
         protected
 
         ##
-        # @protected
         # Generates a random Bitcoin address for the given network
         #
         # @param network [Symbol] The name of network protocol to generate an address for
