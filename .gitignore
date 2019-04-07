@@ -24,4 +24,4 @@ coverage/*
 .ruby-version
 .ruby-gemset
 
-\.yardoc/
+.yardoc/

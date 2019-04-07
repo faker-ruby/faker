@@ -43,20 +43,43 @@ If you're reviewing a PR, you should ask yourself:
 
 ### Syntax/Good practices:
 
+#### Documentation
+Include [YARD] style docs for all methods that includes:
+- A short description of what the method generates
+- Descriptions for all params
+- At least one example of the output
+- The version that the method was added
+  - leave as `next` for new methods
+
+```ruby
+##
+# Produces a random string of alphabetic characters, (no digits)
+# 
+# @param char_count {Number} The length of the string to generate
+# 
+# @example Faker:Alphanumeric.alpha(10)
+#   "3yfq2phxtb"
+#
+# @faker.version next
+def alpha(char_count = 32)
+    # ...
+end
+```
+
+#### Code Styles
+Please follow these guidelines when adding new code:
 * Two spaces, no tabs.
 * No trailing whitespace. Blank lines should not have any space.
 * Prefer `&&`, `||` over `and`, `or`.
 * `MyClass.my_method(my_arg)` not `my_method( my_arg )` or `my_method my_arg`.
 * `a = b` and not `a=b`.
-* use dash syntax for yaml arrays:
-```Yaml
-# this
-a_things:
-  - small_thing
-  - big_thing
-  - other_thing
-  
-# instead of these: 
+* In general, follow the conventions you see used in the source already.
+* **ALL SHALL OBEY THE RUBOCOP**
+
+#### YAML
+Please use dash syntax for yaml arrays:
+```Yaml  
+# instead of these
 b_things: [small_thing, big_thing, other_thing]
 c_things: [
   small_thing,
@@ -64,11 +87,17 @@ c_things: [
   other_thing,
 ]
 
-# If in doubt, `bundle exec rake reformat_yaml['lib/path/to/file.yml']`
+# this is preferred
+a_things:
+  - small_thing
+  - big_thing
+  - other_thing
 ```
-* In general, follow the conventions you see used in the source already.
-* **ALL SHALL OBEY THE RUBOCOP**
+- If in doubt, `bundle exec rake reformat_yaml['lib/path/to/file.yml']`
 
 ### Tips
 
 * Use the `rake console` task to start a session with Faker loaded.
+* Use `bundle exec yard server -r` to launch the YARD Doc server 
+
+[YARD]: (https://www.rubydoc.info/gems/yard/file/README.md)
