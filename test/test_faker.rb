@@ -123,4 +123,13 @@ class TestFaker < Test::Unit::TestCase
 
     assert_equal(unique_numbers.uniq, unique_numbers)
   end
+
+  def test_limit
+    10.times do
+      assert_operator Faker::Name.limit.name.length, :<=, 10
+      assert_operator Faker::Name.limit.name.length, :>=, 0
+      assert_operator Faker::Name.limit(10, 20).name.length, :<=, 20
+      assert_operator Faker::Name.limit(10, 20).name.length, :>=, 10
+    end
+  end
 end
