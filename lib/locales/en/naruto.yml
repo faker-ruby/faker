@@ -1,4 +1,1254 @@
 en:
   faker:
     naruto:
-      characters: ['A (First Raikage)', 'A (Fourth Raikage)', 'A (Second Raikage)', 'A (Third Raikage)', 'Abiru', 'Agara', 'Agari', 'Agari Kaisen', 'Ageha', 'Agira Ryūdōin', 'Ahiko', 'Aho Bird', 'Aino', 'Ajisai', 'Akaboshi', 'Akahoshi', 'Akamaru', 'Akane', 'Akane (Kunoichi)', "Akane's Father", 'Akari Tatsushiro', 'Akatsuchi', 'Akemaru', 'Akino', 'Akio', 'Akita Inuzuka', 'Akkun', 'Amachi', 'Amado', 'Amagi', 'Amai', 'Amaru', 'Amayo', 'Ameno', 'Ameyuki', 'Ameyuri Ringo', 'Ami', 'Amino', 'Amuda', 'Anbu Commander', 'Aniki', 'Anko Mitarashi', 'Ao', 'Aoba Yamashiro', 'Aoda', 'Aoi (game)', 'Aoi Rokushō', 'Aoneko', 'Arashi', 'Arashi Umeya', 'Araya', 'Armadiko', 'Ashimaru', 'Ashina', 'Ashina Uzumaki', 'Ashitaba', 'Asuma Sarutobi', 'Asura Path (character)', 'Asura Ōtsutsuki', 'Atsui', 'Ayame', 'Azami', 'Azure Fang', 'Baiu', 'Baji', 'Baki', 'Baku', 'Baku (Anbu)', 'Bakuto', 'Bando', 'Bandō', 'Banna', 'Bansai', 'Baraki', 'Baru Uchiha', 'Beekeeper', 'Bekkō', 'Benten', 'Bird-Masked Anbu Member', 'Bisuke', 'Biwako Sarutobi', 'Black Shadow', 'Black Zetsu', 'Blue B', 'Boar-Masked Anbu Member', 'Boruto Uzumaki', 'Boxing Kangaroos', 'Bull', 'Buna', 'Bunpuku', 'Buntan Kurosuki', 'Bunzō', 'Burami', 'Buriko Nekoka', 'Butsuma Senju', 'Byakuren', 'C', 'Captain of the Ghost Ship', 'Chamaru', 'Chamū', 'Chen', 'Chibi', 'Chichiatsu', 'Chikara', 'Chino', 'Chiriku', 'Chishima', 'Chiyo', 'Chiyo (princess)', 'Chiyomatsu', 'Chōbee Akimichi', 'Chōchō Akimichi', 'Chōhan', 'Chōji Akimichi', "Chōji's Mother", 'Chōjūrō', 'Chōmei', 'Chōseki', 'Chōza Akimichi', 'Chūji', 'Chūkaku', 'Chūkichi', 'Chūshin', 'Claw Daimyō', 'Conch King', 'Condor', 'Crimson Fist', 'Curse Jutsu Master', 'Cursed Warrior', 'Daen Nara', 'Daibutsu', 'Daichi', 'Daikoku Funeno', 'Daimaru', 'Dajimu', 'Dan Katō', 'Dango Mitsuki', 'Dangō', 'Danzō Shimura', 'Daore Dōtonbori', 'Darui', 'Datsuji', 'Deidara', 'Delta', 'Demonic Statue of the Outer Path', 'Dengaku', 'Denka', 'Denki Kaminarimon', "Denki's Father", 'Disonasu', 'Dodai', 'Dokan', 'Doki', 'Dokku', 'Don', 'Dosu Kinuta', 'Dotō Kazahana', 'Dread Lion', 'Dōshin', 'Dōshu Goetsu', 'Dōtō Akimichi', 'Eagle-Masked Anbu Member', 'Earth Daimyō', 'Earth Prison Golem', 'Ebisu', 'Ebizō', 'Emi', 'Emina', 'Emiru', 'En no Gyōja', 'En Oyashiro', 'Enchū Nara', 'Enko Onikuma', 'Ensui Nara', 'Enzo Tenrō', 'Erimaki Sharo', 'Etoro Konjiki', 'Evil Minister of the Tea Daimyō', 'F', 'Fang Daimyō', 'Faz', 'Fire Daimyō (Part I-II)', 'First Animal Path (character)', 'First Hoshikage', 'Former Leader of Nadeshiko Village', 'Fox-Masked Anbu Member', 'Frost Daimyō', 'Fubuki Kakuyoku', 'Fudō', 'Fuen', 'Fugai', 'Fugaku Uchiha', 'Fugi', 'Fuguki Suikazan', 'Fukasaku', 'Fuki', 'Fuki (Land of Sound)', 'Fuku', 'Fukuemon', 'Fukurokumaru', 'Fukusuke Hikyakuya', 'Fukuyokana', 'Funari', 'Furofuki', 'Furui', 'Fusō', 'Futaba', 'Futami', 'Futsu', 'Fuyō', 'Fū', 'Fū Yamanaka', 'Fūjin', 'Fūka', 'Fūta Kagetsu', 'Gaara', 'Gaku Inuzuka', 'Gama', 'Gamabunta', 'Gamaden', 'Gamagorō', 'Gamahiro', 'Gamaken', 'Gamakichi', 'Gamamaru', 'Gamariki', 'Gamatama', 'Gamatatsu', 'Gameru', 'Gandō', 'Ganryū', 'Gantetsu', 'Gantetsu (Iwagakure)', 'Garaga', 'Gari', 'Garuda', 'Garyō', 'Garō', 'Gataro', 'Gatekeeper', 'Gatsu', 'Gatō', 'Gazeru', 'Gekkō', 'Gekomatsu', 'Gen Katsugi', "Gen'yūmaru", 'Genba', 'Genbu', 'Genbu (minister)', 'Gengetsu Hōzuki', 'Gengo', 'Genie', 'Genji', 'Genma Shiranui', 'Genmai', 'Gennai', 'Gennō', "Gennō's Son", 'Genshō Ryūdōin', 'Gensui Amagiri', 'Genzō', 'Gerotora', 'Giant Anteater', 'Giant Bee', 'Giant Centipede', 'Giant Clam', 'Giant Corpse Crab', 'Giant Crustacean', 'Giant Drill-Beaked Bird', 'Giant Eagle', 'Giant Insect', 'Giant Marlin', 'Giant Multi-Headed Dog', 'Giant Ox', 'Giant Panda', 'Giant Rhino', 'Giant Snake-Tailed Chameleon', 'Giant Squid', 'Giichi', 'Ginji', 'Ginkaku', 'Gitai', 'Goji', 'Gonbee', 'Gongorō Kamakura', 'Goshiki', 'Gosunkugi', 'Gotta', 'Gozu', 'Gozu (Root)', 'Guren', 'Guren (prisoner)', 'Guruko', 'Gyokurō Chabashira', 'Gyūki', 'Gōshō', 'Gōza', 'Gōzu', 'Hachidai', 'Hagiri', 'Hagoromo Ōtsutsuki', 'Haguruma', 'Haido', 'Hainosuke', 'Hakkaku', 'Hako Kuroi', 'Haku', "Haku's Father", "Haku's Mother", 'Hakuhyō', 'Hakui', 'Hakui (medic)', 'Hakuto', 'Hamaki Mimura', 'Hamura Ōtsutsuki', 'Hamura Ōtsutsuki Golem', 'Han', 'Hana', 'Hana Inuzuka', 'Hanabi Hyūga', 'Hanare', 'Hanuma', 'Hanzaki', 'Hanzō', 'Haori', 'Harine', 'Haruna', 'Harusame', 'Hashirama Senju', 'Hassaku Onomichi', 'Hayama Shirakumo', 'Hayase', 'Hayate Gekkō', 'Hazuki Uchiha', 'Head Ninja of Kumogakure', "Headman's Granddaughter", 'Hebihime', 'Hebiichigo', 'Heiji', 'Heki', 'Hiashi Hyūga', 'Hibachi', 'Hibari', 'Hidan', 'Hidari', 'Hidero', 'Hikaku Uchiha', 'Hikaru', 'Hikaru Tsuki', 'Himatsu', 'Himawari Uzumaki', 'Himeno', 'Himuka Suzukaze', 'Himushi', 'Hina', "Hinata and Hanabi's Mother", 'Hinata Hyūga', 'Hinoe', 'Hinoki', 'Hinoko', 'Hinoto', 'Hippo Boss', 'Hiruko (missing-nin)', 'Hiruko (shinobi)', 'Hiruzen Sarutobi', 'Hisame', 'Hisen', 'Hishaku', 'Hitode', 'Hizashi Hyūga', 'Hoheto Hyūga', 'Hohozuki', 'Hokushin', 'Hokuto', 'Homura Mitokado', 'Honoka', 'Hot Water Daimyō', 'Hotaru', 'Hotarubi', 'Human Path (character)', 'Hyō', 'Hyūga Elder', 'Hāto', 'Hōichi', 'Hōki (Takigakure)', 'Hōki (Takumi)', 'Hōki (Watari)', 'Hōki Taketori', 'Hōsei', 'Hōshō', 'Ibara', 'Ibiki Morino', 'Ibuse', 'Ibushi', 'Ichi', 'Ichigen', 'Ichikishimahime', 'Ichirōta Oniyuzu', 'Idate Morino', 'Iggy', 'Ikanago', 'Ikkaku Umino', 'Ikkyū Madoka', 'Inabi Uchiha', 'Inaho', 'Inari', 'Indra Ōtsutsuki', 'Ino Yamanaka', "Ino's Mother", 'Inoichi Yamanaka', 'Inojin Yamanaka', 'Inomatsu', 'Iori', 'Iroha (Genin)', 'Iroha Hyūga', 'Iruka Umino', 'Isago', 'Isaribi', 'Ise', 'Ishidate', 'Ishikawa', 'Isobu', 'Isono', 'Itachi Uchiha', "Itachi's Crow", 'Itama Senju', 'Ittan', 'Ittetsu', 'Iwa Kunoichi', 'Iwabee Yuino', 'Iwaji', 'Iwakyō', 'Iwana (Otogakure)', 'Iwana Akame', 'Iwashi Tatami', 'Iwazō', 'Iyashi', 'Izumi Uchiha', 'Izumo Kamizuki', 'Izuna Uchiha', 'Iō', 'Iō (Bamboo Village)', 'Iō (medical-nin)', 'J', 'Jako', 'Jakō Ryūdōin', 'Jantō', 'Jibachi', 'Jiga', 'Jigen', 'Jigumo', 'Jimei', 'Jin Kaminari', 'Jinin Akebino', 'Jinpachi Munashi', 'Jiraiya', 'Jiryū Sendō', 'Jirō', 'Jirōbō', 'Jirōchō Wasabi', 'JJ', 'Junsai', 'Jōmae Village Head', 'Jōseki', 'Jūgo', 'Jūzō Biwa', 'K', 'Kabure Tokisuki', 'Kabuto Yakushi', "Kabuto's Sensei", 'Kaede', 'Kaede Yoshino', 'Kagami Uchiha', 'Kagari', 'Kage (Anbu)', 'Kageki', 'Kagen Uchiha', 'Kagerō', 'Kagura (game)', 'Kagura Karatachi', 'Kaguya Clan Patriarch', 'Kaguya Ōtsutsuki', 'Kahiko', 'Kahyō', 'Kaiza', 'Kaji', 'Kajika', 'Kajūra', 'Kakashi Hatake', 'Kakeru Tsuki', 'Kakkō', 'Kakoi', 'Kakuzu', "Kakuzu's Partner", 'Kakō', 'Kamakiri Ikeno', 'Kamatari', 'Kamikiri', 'Kamira', 'Kanabun', 'Kandachi', 'Kankurō', 'Kanna', 'Kanna (carpenter)', 'Kanoe', 'Kanoto', 'Kanpu', 'Kanpō', 'Kanyū', 'Kaori', 'Karai', 'Karashi', 'Karenbana', 'Karin', 'Karin Kagura', "Karin's Mother", 'Karui', 'Karura', 'Karyū', 'Kashike', 'Kasuga Nara', 'Kasumi', 'Kasumi (Castle Dusk)', 'Katasuke Tōno', 'Katazu', 'Katsura', 'Katsuyu', 'Kawaki', 'Kawarama Senju', 'Kaya', 'Kayo', 'Kayui', 'Kazabune', 'Kazami', 'Kazan', 'Kazuma', 'Kegon', 'Keiri', 'Kiba Inuzuka', 'Kido Tsumiki', 'Kidōmaru', 'Kie', 'Kigiri', 'Kihō', 'Kiiro', 'Kiji', 'Kiki', 'Kikunojō', 'Killer B', 'Kimimaro', 'Kin (actor)', 'Kin Tsuchi', 'Kina Kodon', 'King', 'King of Hell', 'Kinkaku', 'Kinoto', 'Kinshiki Ōtsutsuki', 'Kintoki', 'Kirara', 'Kiri (ninja)', 'Kiri (villager)', 'Kirisame', 'Kiruru', 'Kisame Hoshigaki', 'Kisuke Maboroshi', "Kisuke's Wife", 'Kitane', 'Kitsuchi', 'Kitō', 'Kiyoi Yotsuki', 'Kiyomu Fukuda', 'Kiyoyasu Kagetsu', 'Kizashi Haruno', 'Kobushi Saiki', 'Kodaka', 'Kohada', 'Kohari Umino', 'Koharu Utatane', 'Koji Kashin', 'Kokage Yanagikage', 'Kokuyō', 'Kokuyō (puppeteer)', 'Kokuō', 'Komachi', 'Komame', 'Komaza', 'Komichi', 'Komitsu', 'Komori', 'Komugi', 'Komushi', 'Konan', 'Konenmaru', 'Kongō', 'Konoha Astronomer', 'Konohamaru Sarutobi', 'Kontsuchi', 'Korega', 'Korobi', 'Koshō', 'Kosuke', 'Kosuke Maruboshi', 'Kotetsu Hagane', 'Kotohime', 'Koyuki Kazahana', 'Kozuchi', 'Kujaku', 'Kumade Toriichi', 'Kumadori', 'Kunihisa', 'Kunijirō', 'Kunugi Mokume', 'Kurama', 'Kurenai Yūhi', 'Kurobachi', 'Kuroma Tatsushiro', 'Kuromaru', 'Kurotsuchi', 'Kurozuka', 'Kusabi', 'Kushimaru Kuriarare', 'Kushina Uzumaki', 'Kussaku', 'Kusuma', 'Kusuna', 'Kusune', 'Kusushi', 'Kuwa Yokohori', 'Kyodaigumo', 'Kyohō Fuefuki', 'Kyōya', 'Kyūroku Wagarashi', 'Kyūsuke', 'Kō (Anbu)', 'Kō Hyūga', 'Kōji', 'Kōji (Suna)', 'Kōmei', 'Kōsuke', 'Kōsuke (Scientist)', 'Kōta', 'Kōtarō Fūma', 'Kōza Kubisaki', 'Kū', 'Kūi Dōtonbori', 'Lando', 'Lars Alexandersson', 'Leo', 'Lightning Daimyō', 'Lily Himeno', 'Lion-Turtle', 'Log', 'Mabo', 'Mabui', 'Madam Shijimi', 'Madara Uchiha', 'Maen Nara', 'Magire', 'Magire Kakuremino', 'Mahiru', 'Mai Kagetsu', 'Makaro Akimichi', 'Maki', 'Makinami Senka', 'Makino', 'Malice', 'Mamushi', 'Manabu Akado', 'Manda', 'Manda II', 'Mangetsu Hōzuki', 'Maroi', 'Maruten Akimichi', 'Masako', 'Mashō', 'Master Puppet', 'Matatabi', 'Matsu', 'Matsuba', 'Matsuri', 'Matsuri (Konoha)', 'Mawashi Dokuraku', 'Mebuki Haruno', 'Mecha-Kurama', 'Mecha-Naruto', 'Mei Terumī', 'Meizu', 'Menma (anime)', 'Menma Namikaze', 'Menma Uzumaki', 'Menō', 'Messenger Lizard', 'Metal Lee', 'Metoro Konjiki', 'Mezu', 'Mibuna', 'Michiru Tsuki', 'Michizō Manaka', 'Michy', 'Midare', 'Midnight Blade', 'Midori', 'Midori (game)', 'Mifune', 'Migaki', 'Might Duy', 'Might Guy', 'Miina', 'Mijin', 'Mikoshi', 'Mikoto Uchiha', 'Minato Namikaze', 'Minoichi', 'Minoji', 'Mirai Sarutobi', 'Miroku', 'Miru', 'Misumi Tsurugi', 'Misuno', 'Mitate', 'Mito Uzumaki', 'Mitoku', 'Mitsuki', 'Mitsuo', 'Mizore Fuyukuma', 'Mizuki', 'Mizunoe', 'Mizunoto', 'Mizura', 'Mo', 'Moegi Kazamatsuri', 'Moguranmaru', 'Mogusa', 'Momiji', 'Momiji (Tanzaku)', 'Momo', 'Momo (ninneko)', 'Momoshiki Ōtsutsuki', 'Mondai', 'Monga', 'Monju', 'Monkey King: Enma', 'Monzaemon Chikamatsu', 'Morio', 'Moroi', 'Motoi', 'Mozuku', 'Mozuku (criminal)', 'Mubi', 'Mugino', 'Mui', 'Mujin', 'Mukade', 'Mukade (movie)', 'Mukai Kohinata', 'Muku', 'Murakumo Kurama', 'Murasame', 'Musai', 'Muta Aburame', 'Muyami', 'Mōryō', 'Mū', 'Nadare Rōga', 'Nae', 'Nagare', 'Nagato', 'Naho', 'Naka Uchiha', 'Namida Suzumeno', 'Nan', 'Nanafushi', 'Nangō', 'Naori Uchiha', 'Naraka Path (character)', 'Naruto Musasabi', 'Naruto Uzumaki', 'Natori', 'Natsu', 'Natsu Hyūga', 'Natsuhi', 'Nauma', 'Nawaki', 'Nazuna', 'Neji Hyūga', 'Nejiri', 'Nekobaa', 'Nekomata', 'Nemui', 'Nerugui', 'Ni', "Ni's Dogs", 'Nigai', 'Nine-Tailed Naruto Clone', 'Ningame', 'Nishi', 'Nitora Take', 'Nobori', 'Noji', 'Nonota', 'Nonō Yakushi', 'Nowaki', 'Nue', 'Nurari', 'Nurui', 'Obito Uchiha', "Obito's Grandmother", 'Oboro', 'Okami', 'Okisuke', 'Oko', 'Okyō', 'Omoi', 'Onbu', 'Orochimaru', 'Osoi', 'Otoha', 'Otokaze', 'Oyone', 'Pakkun', 'Pakura', 'Pochi', 'Ponta', 'Poochie', 'Potcha', 'Preta Path (character)', 'Rahyō', 'Rai Uchiha', 'Raidō Namiashi', 'Raiga Kurosuki', 'Raijin', 'Raimei', 'Rainenmaru', 'Ran', 'Ran (kunoichi)', 'Ranka', 'Ranke', 'Ranmaru', 'Rasa', 'Rashii', 'Reishi Kodon', 'Reki', 'Renga', 'Renga Kokubō', 'Renge Momoashi', 'Reto', 'Riichi', 'Riichi (ninja)', 'Rikumaru', 'Rin Nohara', 'Rinji', 'Rock Lee', 'Rokkaku Ryūdōin', 'Rokusuke', 'Ruiga', 'Ruka', 'Ryuka Tenrō', 'Ryōgi', 'Ryōkan', 'Ryūgan', 'Ryūki', 'Ryūrimaru', 'Ryūsa', 'Ryūsui', 'Ryūzetsu', 'Rō', 'Rōen', 'Rōshi', 'Sabiru', 'Sabu', 'Sada', 'Sadai', 'Sadoru', 'Sagan', 'Sagi', 'Sagiri', 'Sai', 'Saiken', 'Saisu Kamano', 'Sajin', 'Sajin (Genin)', 'Sajō', 'Sakon and Ukon', 'Sakumo Hatake', 'Sakura Haruno', 'Samidare', 'Samui', 'San', "San's Bird", 'Sana', 'Sandayū Asama', 'Sangorō', 'Sansho', 'Sanshō', 'Santa Yamanaka', 'Sarada Uchiha', 'Sarai', 'Sari', 'Sasame', 'Sasami', 'Sasori', "Sasori's Father", "Sasori's Mother", 'Sasuke Sarutobi', 'Sasuke Uchiha', 'Satetsu', 'Satori', 'Satō', 'Saya', 'Sayū Jōge', 'Sazanami', 'Sazanami Senka', 'Saō', 'Scarlet Blaze', 'Seimei', 'Seito', 'Sekiei', 'Sekiei (spectator)', "Sekiei's Partner", 'Sekka', 'Sekki', 'Sen', 'Senji', 'Senta', 'Sentoki', 'Setsuna', 'Setsuna Uchiha', 'Shabadaba', 'Shamon', 'Shiba', 'Shiba (Kusagakure)', 'Shibi Aburame', 'Shibire', 'Shibito Azuma', 'Shibuki', 'Shigezane', 'Shigure', 'Shiho', 'Shiin', 'Shijima', 'Shikadai Nara', 'Shikaku Nara', 'Shikamaru Nara', 'Shikazo', 'Shikuro Aburame', 'Shima', 'Shimeji', 'Shimon Hijiri', 'Shin', 'Shin Uchiha', "Shin'emon", 'Shinayakana', 'Shinga', 'Shinigami', 'Shinki', 'Shinko Inari', 'Shinku Yūhi', 'Shinnō', 'Shino Aburame', 'Shinobu Mibu', 'Shinta', 'Shio', 'Shion', 'Shiore', 'Shira', 'Shiranami', 'Shiro', 'Shiro (Land of Ancestors)', 'Shiromari', 'Shiseru', 'Shishio', 'Shisui Uchiha', 'Shisō', 'Shitō Akimichi', 'Shizuka', 'Shizuku', 'Shizuku (Taki)', 'Shizuma Hoshigaki', 'Shizune', 'Shojoji', 'Shukaku', 'Shun', 'Shura', 'Shōseki', 'Shū', 'Shū (lord)', 'Sky Ninja Captain', 'Son Gokū', 'Sora', 'Sora (orphan)', 'Sound Daimyō', 'Spirit Beast', 'Stone Carver', "Stone Carver's Assistant", 'Storm Dancer', 'Suguro', 'Suien', 'Suigetsu Hōzuki', 'Suika', 'Suika Kannonji', 'Suiko', 'Suiren', 'Suiren (Kiri)', 'Suiu', 'Sukeza', 'Sukima', 'Sukui', 'Sukune', 'Sumaru', 'Sumashi', 'Sumire (citizen)', 'Sumire Kakei', 'Suna Assassin Captain', 'Suname', 'Susuki', 'Susuki (Land of Demons)', 'Suzaku (minister)', 'Suzaku Nara', 'Suzume', 'Suzumebachi', 'Suzuran', 'Sāra', "Sāra's Daughter", 'Sēramu', 'Sōsetsu Kazahana', 'Sōta', 'Sōzu', 'Tadaichi', 'Tagitsuhime', 'Tagorihime', 'Taiko Uchiha', 'Taisa Amagiri', 'Taiseki', 'Taizō', 'Taji', 'Tajiki', 'Tajima Uchiha', 'Takajō Torikai', 'Takamaru', 'Takanami Senka', 'Takishi', 'Taku', 'Tamae', 'Tamaki', 'Tamao', 'Tami', 'Tango', 'Tanishi', 'Tanuki Shigaraki', 'Tanzō', 'Taruho', 'Tarui', 'Tarō', 'Tatewaki', 'Tatsuji', 'Tatsuma Aburame', 'Tatsumi', 'Tayori Kuroyagi', 'Tayuya', 'Tazuna', 'Tea Daimyō', 'Teguse', 'Tekka Uchiha', 'Tekuno Kanden', 'Temari', 'Temui', 'Temujin', 'Ten-Tails', 'Tenga', 'Tenji', 'Tenma Izumo', 'Tenma Kodon', 'Tenten', 'Tentō Madoka', 'Tenzen', 'Tenzen Daikoku', "Tenzen's Bodyguard", 'Tenzō (Iburi Clan)', 'Tera', 'Terai', 'Terubō', 'Tessa', 'Tessen Togeito', 'Tetsu', 'Tetsuru', 'Teuchi', 'Teyaki Uchiha', 'Tezuna', 'Tezutsu Mikawa', 'Third Hoshikage', 'Third Kazekage', 'Third Mizukage', 'This Daimyō', 'Three Giant Snakes', 'Three Haimaru Brothers', 'Three-Headed Guardian Beast', 'Tiger-Masked Anbu Member', 'Tobi (Zetsu)', 'Tobimaru', 'Tobio', 'Tobirama Senju', 'Todoroki', 'Tofu', 'Tokara', 'Toki', 'Toki (Shinobazu)', 'Tokiwa', 'Tokuma Hyūga', 'Tomari', 'Tomaru', 'Tomaru Minakura', 'Tonbee', 'Tonbo Tobitake', 'Toneri Ōtsutsuki', 'Tonika Village Head', 'Tonton', 'Tora', 'Tora (Anbu)', 'Torifu Akimichi', 'Toroi', 'Toroi (Genin)', 'Torune Aburame', 'Tosaka', 'Toshi', 'Towa', 'Tsubaki (anime)', 'Tsubaki (game)', 'Tsubaki (parent)', 'Tsubusa', 'Tsubute Futaba', 'Tsuchigumo Chief', 'Tsuchino', 'Tsuchinoe', 'Tsuchinoto', 'Tsukado', 'Tsukiko Kagetsu', 'Tsukino', "Tsukino's Father", 'Tsukune', 'Tsukushi', 'Tsume Inuzuka', 'Tsunade', 'Tsunami', 'Tsuru Itoi', 'Tsurugi', 'Tsurushi Hachiya', 'Tsuyu', 'Tsuzumi', 'Tsuzumi Sarugaku', 'Tōbei Kagetsu', 'Tōfu', 'Tōjūrō', 'Tōka Senju', 'Tōu', 'Ubau', 'Udon Ise', 'Ugai', 'Ugatsu', 'Ultimate Summoning Beast', 'Umibōzu', 'Unagi', 'Unkai Kurama', 'Unmo Samidare', 'Urakaku', 'Urashiki Ōtsutsuki', 'Uroko Kurama', 'Uruchi Uchiha', 'Urushi', 'Urushi (summon)', 'Ushi', 'Utakata', 'Uō', 'Village Headman', 'Waraji', 'Wasabi Izuno', 'Watase', 'Water Daimyō', 'White Snake Sage', 'White Zetsu', 'Wind Daimyō (Part I)', 'Wind Daimyō (Part II)', 'Ya', 'Yagura (anime)', 'Yagura Karatachi', 'Yahiko', 'Yajirobee', 'Yakku', 'Yakumi Uchiha', 'Yakumo Kurama', 'Yamame', 'Yamaoka', 'Yamato', 'Yaoki', 'Yashamaru', 'Yashiro Uchiha', 'Yatogo Ryūgen', 'Yodo', 'Yokaze', 'Yokozuna', 'Yome', 'Yomi', 'Yomito Hirasaka', 'Yone', 'Yoroi Akadō', 'Yoshino Nara', 'Yoshiteru', 'Yota', 'Yotaka', 'Yugito Nii', 'Yui', 'Yukai', 'Yukata', 'Yuki (Academy student)', 'Yukimi', 'Yurika', 'Yurinojō', 'Yurito', 'Yurui', 'Yurui (anime)', 'Yōji Aburame', 'Yōrō', 'Yūdachi', 'Yūgao Uzuki', 'Yūki Minazuki', 'Yūkimaru', "Yūkimaru's Mother", 'Yūra', 'Yūsuke', "Yūsuke's Father", 'Yūto', 'Zabuza Momochi', 'Zaji', 'Zaji (gambler)', 'Zaku Abumi', 'Zangei', 'Zenza', 'Zero-Tails', 'Zetsu', 'Zō', 'Zōri', 'Zōsui', 'Ōkei', 'Ōmitsu', 'Ōnoki', 'Ōtora', 'Ōtsutsuki Clan Patriarch', 'Ōwashi', 'Ūhei']
+      characters:
+      - A (First Raikage)
+      - A (Fourth Raikage)
+      - A (Second Raikage)
+      - A (Third Raikage)
+      - Abiru
+      - Agara
+      - Agari
+      - Agari Kaisen
+      - Ageha
+      - Agira Ryūdōin
+      - Ahiko
+      - Aho Bird
+      - Aino
+      - Ajisai
+      - Akaboshi
+      - Akahoshi
+      - Akamaru
+      - Akane
+      - Akane (Kunoichi)
+      - Akane's Father
+      - Akari Tatsushiro
+      - Akatsuchi
+      - Akemaru
+      - Akino
+      - Akio
+      - Akita Inuzuka
+      - Akkun
+      - Amachi
+      - Amado
+      - Amagi
+      - Amai
+      - Amaru
+      - Amayo
+      - Ameno
+      - Ameyuki
+      - Ameyuri Ringo
+      - Ami
+      - Amino
+      - Amuda
+      - Anbu Commander
+      - Aniki
+      - Anko Mitarashi
+      - Ao
+      - Aoba Yamashiro
+      - Aoda
+      - Aoi (game)
+      - Aoi Rokushō
+      - Aoneko
+      - Arashi
+      - Arashi Umeya
+      - Araya
+      - Armadiko
+      - Ashimaru
+      - Ashina
+      - Ashina Uzumaki
+      - Ashitaba
+      - Asuma Sarutobi
+      - Asura Path (character)
+      - Asura Ōtsutsuki
+      - Atsui
+      - Ayame
+      - Azami
+      - Azure Fang
+      - Baiu
+      - Baji
+      - Baki
+      - Baku
+      - Baku (Anbu)
+      - Bakuto
+      - Bando
+      - Bandō
+      - Banna
+      - Bansai
+      - Baraki
+      - Baru Uchiha
+      - Beekeeper
+      - Bekkō
+      - Benten
+      - Bird-Masked Anbu Member
+      - Bisuke
+      - Biwako Sarutobi
+      - Black Shadow
+      - Black Zetsu
+      - Blue B
+      - Boar-Masked Anbu Member
+      - Boruto Uzumaki
+      - Boxing Kangaroos
+      - Bull
+      - Buna
+      - Bunpuku
+      - Buntan Kurosuki
+      - Bunzō
+      - Burami
+      - Buriko Nekoka
+      - Butsuma Senju
+      - Byakuren
+      - C
+      - Captain of the Ghost Ship
+      - Chamaru
+      - Chamū
+      - Chen
+      - Chibi
+      - Chichiatsu
+      - Chikara
+      - Chino
+      - Chiriku
+      - Chishima
+      - Chiyo
+      - Chiyo (princess)
+      - Chiyomatsu
+      - Chōbee Akimichi
+      - Chōchō Akimichi
+      - Chōhan
+      - Chōji Akimichi
+      - Chōji's Mother
+      - Chōjūrō
+      - Chōmei
+      - Chōseki
+      - Chōza Akimichi
+      - Chūji
+      - Chūkaku
+      - Chūkichi
+      - Chūshin
+      - Claw Daimyō
+      - Conch King
+      - Condor
+      - Crimson Fist
+      - Curse Jutsu Master
+      - Cursed Warrior
+      - Daen Nara
+      - Daibutsu
+      - Daichi
+      - Daikoku Funeno
+      - Daimaru
+      - Dajimu
+      - Dan Katō
+      - Dango Mitsuki
+      - Dangō
+      - Danzō Shimura
+      - Daore Dōtonbori
+      - Darui
+      - Datsuji
+      - Deidara
+      - Delta
+      - Demonic Statue of the Outer Path
+      - Dengaku
+      - Denka
+      - Denki Kaminarimon
+      - Denki's Father
+      - Disonasu
+      - Dodai
+      - Dokan
+      - Doki
+      - Dokku
+      - Don
+      - Dosu Kinuta
+      - Dotō Kazahana
+      - Dread Lion
+      - Dōshin
+      - Dōshu Goetsu
+      - Dōtō Akimichi
+      - Eagle-Masked Anbu Member
+      - Earth Daimyō
+      - Earth Prison Golem
+      - Ebisu
+      - Ebizō
+      - Emi
+      - Emina
+      - Emiru
+      - En no Gyōja
+      - En Oyashiro
+      - Enchū Nara
+      - Enko Onikuma
+      - Ensui Nara
+      - Enzo Tenrō
+      - Erimaki Sharo
+      - Etoro Konjiki
+      - Evil Minister of the Tea Daimyō
+      - F
+      - Fang Daimyō
+      - Faz
+      - Fire Daimyō (Part I-II)
+      - First Animal Path (character)
+      - First Hoshikage
+      - Former Leader of Nadeshiko Village
+      - Fox-Masked Anbu Member
+      - Frost Daimyō
+      - Fubuki Kakuyoku
+      - Fudō
+      - Fuen
+      - Fugai
+      - Fugaku Uchiha
+      - Fugi
+      - Fuguki Suikazan
+      - Fukasaku
+      - Fuki
+      - Fuki (Land of Sound)
+      - Fuku
+      - Fukuemon
+      - Fukurokumaru
+      - Fukusuke Hikyakuya
+      - Fukuyokana
+      - Funari
+      - Furofuki
+      - Furui
+      - Fusō
+      - Futaba
+      - Futami
+      - Futsu
+      - Fuyō
+      - Fū
+      - Fū Yamanaka
+      - Fūjin
+      - Fūka
+      - Fūta Kagetsu
+      - Gaara
+      - Gaku Inuzuka
+      - Gama
+      - Gamabunta
+      - Gamaden
+      - Gamagorō
+      - Gamahiro
+      - Gamaken
+      - Gamakichi
+      - Gamamaru
+      - Gamariki
+      - Gamatama
+      - Gamatatsu
+      - Gameru
+      - Gandō
+      - Ganryū
+      - Gantetsu
+      - Gantetsu (Iwagakure)
+      - Garaga
+      - Gari
+      - Garuda
+      - Garyō
+      - Garō
+      - Gataro
+      - Gatekeeper
+      - Gatsu
+      - Gatō
+      - Gazeru
+      - Gekkō
+      - Gekomatsu
+      - Gen Katsugi
+      - Gen'yūmaru
+      - Genba
+      - Genbu
+      - Genbu (minister)
+      - Gengetsu Hōzuki
+      - Gengo
+      - Genie
+      - Genji
+      - Genma Shiranui
+      - Genmai
+      - Gennai
+      - Gennō
+      - Gennō's Son
+      - Genshō Ryūdōin
+      - Gensui Amagiri
+      - Genzō
+      - Gerotora
+      - Giant Anteater
+      - Giant Bee
+      - Giant Centipede
+      - Giant Clam
+      - Giant Corpse Crab
+      - Giant Crustacean
+      - Giant Drill-Beaked Bird
+      - Giant Eagle
+      - Giant Insect
+      - Giant Marlin
+      - Giant Multi-Headed Dog
+      - Giant Ox
+      - Giant Panda
+      - Giant Rhino
+      - Giant Snake-Tailed Chameleon
+      - Giant Squid
+      - Giichi
+      - Ginji
+      - Ginkaku
+      - Gitai
+      - Goji
+      - Gonbee
+      - Gongorō Kamakura
+      - Goshiki
+      - Gosunkugi
+      - Gotta
+      - Gozu
+      - Gozu (Root)
+      - Guren
+      - Guren (prisoner)
+      - Guruko
+      - Gyokurō Chabashira
+      - Gyūki
+      - Gōshō
+      - Gōza
+      - Gōzu
+      - Hachidai
+      - Hagiri
+      - Hagoromo Ōtsutsuki
+      - Haguruma
+      - Haido
+      - Hainosuke
+      - Hakkaku
+      - Hako Kuroi
+      - Haku
+      - Haku's Father
+      - Haku's Mother
+      - Hakuhyō
+      - Hakui
+      - Hakui (medic)
+      - Hakuto
+      - Hamaki Mimura
+      - Hamura Ōtsutsuki
+      - Hamura Ōtsutsuki Golem
+      - Han
+      - Hana
+      - Hana Inuzuka
+      - Hanabi Hyūga
+      - Hanare
+      - Hanuma
+      - Hanzaki
+      - Hanzō
+      - Haori
+      - Harine
+      - Haruna
+      - Harusame
+      - Hashirama Senju
+      - Hassaku Onomichi
+      - Hayama Shirakumo
+      - Hayase
+      - Hayate Gekkō
+      - Hazuki Uchiha
+      - Head Ninja of Kumogakure
+      - Headman's Granddaughter
+      - Hebihime
+      - Hebiichigo
+      - Heiji
+      - Heki
+      - Hiashi Hyūga
+      - Hibachi
+      - Hibari
+      - Hidan
+      - Hidari
+      - Hidero
+      - Hikaku Uchiha
+      - Hikaru
+      - Hikaru Tsuki
+      - Himatsu
+      - Himawari Uzumaki
+      - Himeno
+      - Himuka Suzukaze
+      - Himushi
+      - Hina
+      - Hinata and Hanabi's Mother
+      - Hinata Hyūga
+      - Hinoe
+      - Hinoki
+      - Hinoko
+      - Hinoto
+      - Hippo Boss
+      - Hiruko (missing-nin)
+      - Hiruko (shinobi)
+      - Hiruzen Sarutobi
+      - Hisame
+      - Hisen
+      - Hishaku
+      - Hitode
+      - Hizashi Hyūga
+      - Hoheto Hyūga
+      - Hohozuki
+      - Hokushin
+      - Hokuto
+      - Homura Mitokado
+      - Honoka
+      - Hot Water Daimyō
+      - Hotaru
+      - Hotarubi
+      - Human Path (character)
+      - Hyō
+      - Hyūga Elder
+      - Hāto
+      - Hōichi
+      - Hōki (Takigakure)
+      - Hōki (Takumi)
+      - Hōki (Watari)
+      - Hōki Taketori
+      - Hōsei
+      - Hōshō
+      - Ibara
+      - Ibiki Morino
+      - Ibuse
+      - Ibushi
+      - Ichi
+      - Ichigen
+      - Ichikishimahime
+      - Ichirōta Oniyuzu
+      - Idate Morino
+      - Iggy
+      - Ikanago
+      - Ikkaku Umino
+      - Ikkyū Madoka
+      - Inabi Uchiha
+      - Inaho
+      - Inari
+      - Indra Ōtsutsuki
+      - Ino Yamanaka
+      - Ino's Mother
+      - Inoichi Yamanaka
+      - Inojin Yamanaka
+      - Inomatsu
+      - Iori
+      - Iroha (Genin)
+      - Iroha Hyūga
+      - Iruka Umino
+      - Isago
+      - Isaribi
+      - Ise
+      - Ishidate
+      - Ishikawa
+      - Isobu
+      - Isono
+      - Itachi Uchiha
+      - Itachi's Crow
+      - Itama Senju
+      - Ittan
+      - Ittetsu
+      - Iwa Kunoichi
+      - Iwabee Yuino
+      - Iwaji
+      - Iwakyō
+      - Iwana (Otogakure)
+      - Iwana Akame
+      - Iwashi Tatami
+      - Iwazō
+      - Iyashi
+      - Izumi Uchiha
+      - Izumo Kamizuki
+      - Izuna Uchiha
+      - Iō
+      - Iō (Bamboo Village)
+      - Iō (medical-nin)
+      - J
+      - Jako
+      - Jakō Ryūdōin
+      - Jantō
+      - Jibachi
+      - Jiga
+      - Jigen
+      - Jigumo
+      - Jimei
+      - Jin Kaminari
+      - Jinin Akebino
+      - Jinpachi Munashi
+      - Jiraiya
+      - Jiryū Sendō
+      - Jirō
+      - Jirōbō
+      - Jirōchō Wasabi
+      - JJ
+      - Junsai
+      - Jōmae Village Head
+      - Jōseki
+      - Jūgo
+      - Jūzō Biwa
+      - K
+      - Kabure Tokisuki
+      - Kabuto Yakushi
+      - Kabuto's Sensei
+      - Kaede
+      - Kaede Yoshino
+      - Kagami Uchiha
+      - Kagari
+      - Kage (Anbu)
+      - Kageki
+      - Kagen Uchiha
+      - Kagerō
+      - Kagura (game)
+      - Kagura Karatachi
+      - Kaguya Clan Patriarch
+      - Kaguya Ōtsutsuki
+      - Kahiko
+      - Kahyō
+      - Kaiza
+      - Kaji
+      - Kajika
+      - Kajūra
+      - Kakashi Hatake
+      - Kakeru Tsuki
+      - Kakkō
+      - Kakoi
+      - Kakuzu
+      - Kakuzu's Partner
+      - Kakō
+      - Kamakiri Ikeno
+      - Kamatari
+      - Kamikiri
+      - Kamira
+      - Kanabun
+      - Kandachi
+      - Kankurō
+      - Kanna
+      - Kanna (carpenter)
+      - Kanoe
+      - Kanoto
+      - Kanpu
+      - Kanpō
+      - Kanyū
+      - Kaori
+      - Karai
+      - Karashi
+      - Karenbana
+      - Karin
+      - Karin Kagura
+      - Karin's Mother
+      - Karui
+      - Karura
+      - Karyū
+      - Kashike
+      - Kasuga Nara
+      - Kasumi
+      - Kasumi (Castle Dusk)
+      - Katasuke Tōno
+      - Katazu
+      - Katsura
+      - Katsuyu
+      - Kawaki
+      - Kawarama Senju
+      - Kaya
+      - Kayo
+      - Kayui
+      - Kazabune
+      - Kazami
+      - Kazan
+      - Kazuma
+      - Kegon
+      - Keiri
+      - Kiba Inuzuka
+      - Kido Tsumiki
+      - Kidōmaru
+      - Kie
+      - Kigiri
+      - Kihō
+      - Kiiro
+      - Kiji
+      - Kiki
+      - Kikunojō
+      - Killer B
+      - Kimimaro
+      - Kin (actor)
+      - Kin Tsuchi
+      - Kina Kodon
+      - King
+      - King of Hell
+      - Kinkaku
+      - Kinoto
+      - Kinshiki Ōtsutsuki
+      - Kintoki
+      - Kirara
+      - Kiri (ninja)
+      - Kiri (villager)
+      - Kirisame
+      - Kiruru
+      - Kisame Hoshigaki
+      - Kisuke Maboroshi
+      - Kisuke's Wife
+      - Kitane
+      - Kitsuchi
+      - Kitō
+      - Kiyoi Yotsuki
+      - Kiyomu Fukuda
+      - Kiyoyasu Kagetsu
+      - Kizashi Haruno
+      - Kobushi Saiki
+      - Kodaka
+      - Kohada
+      - Kohari Umino
+      - Koharu Utatane
+      - Koji Kashin
+      - Kokage Yanagikage
+      - Kokuyō
+      - Kokuyō (puppeteer)
+      - Kokuō
+      - Komachi
+      - Komame
+      - Komaza
+      - Komichi
+      - Komitsu
+      - Komori
+      - Komugi
+      - Komushi
+      - Konan
+      - Konenmaru
+      - Kongō
+      - Konoha Astronomer
+      - Konohamaru Sarutobi
+      - Kontsuchi
+      - Korega
+      - Korobi
+      - Koshō
+      - Kosuke
+      - Kosuke Maruboshi
+      - Kotetsu Hagane
+      - Kotohime
+      - Koyuki Kazahana
+      - Kozuchi
+      - Kujaku
+      - Kumade Toriichi
+      - Kumadori
+      - Kunihisa
+      - Kunijirō
+      - Kunugi Mokume
+      - Kurama
+      - Kurenai Yūhi
+      - Kurobachi
+      - Kuroma Tatsushiro
+      - Kuromaru
+      - Kurotsuchi
+      - Kurozuka
+      - Kusabi
+      - Kushimaru Kuriarare
+      - Kushina Uzumaki
+      - Kussaku
+      - Kusuma
+      - Kusuna
+      - Kusune
+      - Kusushi
+      - Kuwa Yokohori
+      - Kyodaigumo
+      - Kyohō Fuefuki
+      - Kyōya
+      - Kyūroku Wagarashi
+      - Kyūsuke
+      - Kō (Anbu)
+      - Kō Hyūga
+      - Kōji
+      - Kōji (Suna)
+      - Kōmei
+      - Kōsuke
+      - Kōsuke (Scientist)
+      - Kōta
+      - Kōtarō Fūma
+      - Kōza Kubisaki
+      - Kū
+      - Kūi Dōtonbori
+      - Lando
+      - Lars Alexandersson
+      - Leo
+      - Lightning Daimyō
+      - Lily Himeno
+      - Lion-Turtle
+      - Log
+      - Mabo
+      - Mabui
+      - Madam Shijimi
+      - Madara Uchiha
+      - Maen Nara
+      - Magire
+      - Magire Kakuremino
+      - Mahiru
+      - Mai Kagetsu
+      - Makaro Akimichi
+      - Maki
+      - Makinami Senka
+      - Makino
+      - Malice
+      - Mamushi
+      - Manabu Akado
+      - Manda
+      - Manda II
+      - Mangetsu Hōzuki
+      - Maroi
+      - Maruten Akimichi
+      - Masako
+      - Mashō
+      - Master Puppet
+      - Matatabi
+      - Matsu
+      - Matsuba
+      - Matsuri
+      - Matsuri (Konoha)
+      - Mawashi Dokuraku
+      - Mebuki Haruno
+      - Mecha-Kurama
+      - Mecha-Naruto
+      - Mei Terumī
+      - Meizu
+      - Menma (anime)
+      - Menma Namikaze
+      - Menma Uzumaki
+      - Menō
+      - Messenger Lizard
+      - Metal Lee
+      - Metoro Konjiki
+      - Mezu
+      - Mibuna
+      - Michiru Tsuki
+      - Michizō Manaka
+      - Michy
+      - Midare
+      - Midnight Blade
+      - Midori
+      - Midori (game)
+      - Mifune
+      - Migaki
+      - Might Duy
+      - Might Guy
+      - Miina
+      - Mijin
+      - Mikoshi
+      - Mikoto Uchiha
+      - Minato Namikaze
+      - Minoichi
+      - Minoji
+      - Mirai Sarutobi
+      - Miroku
+      - Miru
+      - Misumi Tsurugi
+      - Misuno
+      - Mitate
+      - Mito Uzumaki
+      - Mitoku
+      - Mitsuki
+      - Mitsuo
+      - Mizore Fuyukuma
+      - Mizuki
+      - Mizunoe
+      - Mizunoto
+      - Mizura
+      - Mo
+      - Moegi Kazamatsuri
+      - Moguranmaru
+      - Mogusa
+      - Momiji
+      - Momiji (Tanzaku)
+      - Momo
+      - Momo (ninneko)
+      - Momoshiki Ōtsutsuki
+      - Mondai
+      - Monga
+      - Monju
+      - 'Monkey King: Enma'
+      - Monzaemon Chikamatsu
+      - Morio
+      - Moroi
+      - Motoi
+      - Mozuku
+      - Mozuku (criminal)
+      - Mubi
+      - Mugino
+      - Mui
+      - Mujin
+      - Mukade
+      - Mukade (movie)
+      - Mukai Kohinata
+      - Muku
+      - Murakumo Kurama
+      - Murasame
+      - Musai
+      - Muta Aburame
+      - Muyami
+      - Mōryō
+      - Mū
+      - Nadare Rōga
+      - Nae
+      - Nagare
+      - Nagato
+      - Naho
+      - Naka Uchiha
+      - Namida Suzumeno
+      - Nan
+      - Nanafushi
+      - Nangō
+      - Naori Uchiha
+      - Naraka Path (character)
+      - Naruto Musasabi
+      - Naruto Uzumaki
+      - Natori
+      - Natsu
+      - Natsu Hyūga
+      - Natsuhi
+      - Nauma
+      - Nawaki
+      - Nazuna
+      - Neji Hyūga
+      - Nejiri
+      - Nekobaa
+      - Nekomata
+      - Nemui
+      - Nerugui
+      - Ni
+      - Ni's Dogs
+      - Nigai
+      - Nine-Tailed Naruto Clone
+      - Ningame
+      - Nishi
+      - Nitora Take
+      - Nobori
+      - Noji
+      - Nonota
+      - Nonō Yakushi
+      - Nowaki
+      - Nue
+      - Nurari
+      - Nurui
+      - Obito Uchiha
+      - Obito's Grandmother
+      - Oboro
+      - Okami
+      - Okisuke
+      - Oko
+      - Okyō
+      - Omoi
+      - Onbu
+      - Orochimaru
+      - Osoi
+      - Otoha
+      - Otokaze
+      - Oyone
+      - Pakkun
+      - Pakura
+      - Pochi
+      - Ponta
+      - Poochie
+      - Potcha
+      - Preta Path (character)
+      - Rahyō
+      - Rai Uchiha
+      - Raidō Namiashi
+      - Raiga Kurosuki
+      - Raijin
+      - Raimei
+      - Rainenmaru
+      - Ran
+      - Ran (kunoichi)
+      - Ranka
+      - Ranke
+      - Ranmaru
+      - Rasa
+      - Rashii
+      - Reishi Kodon
+      - Reki
+      - Renga
+      - Renga Kokubō
+      - Renge Momoashi
+      - Reto
+      - Riichi
+      - Riichi (ninja)
+      - Rikumaru
+      - Rin Nohara
+      - Rinji
+      - Rock Lee
+      - Rokkaku Ryūdōin
+      - Rokusuke
+      - Ruiga
+      - Ruka
+      - Ryuka Tenrō
+      - Ryōgi
+      - Ryōkan
+      - Ryūgan
+      - Ryūki
+      - Ryūrimaru
+      - Ryūsa
+      - Ryūsui
+      - Ryūzetsu
+      - Rō
+      - Rōen
+      - Rōshi
+      - Sabiru
+      - Sabu
+      - Sada
+      - Sadai
+      - Sadoru
+      - Sagan
+      - Sagi
+      - Sagiri
+      - Sai
+      - Saiken
+      - Saisu Kamano
+      - Sajin
+      - Sajin (Genin)
+      - Sajō
+      - Sakon and Ukon
+      - Sakumo Hatake
+      - Sakura Haruno
+      - Samidare
+      - Samui
+      - San
+      - San's Bird
+      - Sana
+      - Sandayū Asama
+      - Sangorō
+      - Sansho
+      - Sanshō
+      - Santa Yamanaka
+      - Sarada Uchiha
+      - Sarai
+      - Sari
+      - Sasame
+      - Sasami
+      - Sasori
+      - Sasori's Father
+      - Sasori's Mother
+      - Sasuke Sarutobi
+      - Sasuke Uchiha
+      - Satetsu
+      - Satori
+      - Satō
+      - Saya
+      - Sayū Jōge
+      - Sazanami
+      - Sazanami Senka
+      - Saō
+      - Scarlet Blaze
+      - Seimei
+      - Seito
+      - Sekiei
+      - Sekiei (spectator)
+      - Sekiei's Partner
+      - Sekka
+      - Sekki
+      - Sen
+      - Senji
+      - Senta
+      - Sentoki
+      - Setsuna
+      - Setsuna Uchiha
+      - Shabadaba
+      - Shamon
+      - Shiba
+      - Shiba (Kusagakure)
+      - Shibi Aburame
+      - Shibire
+      - Shibito Azuma
+      - Shibuki
+      - Shigezane
+      - Shigure
+      - Shiho
+      - Shiin
+      - Shijima
+      - Shikadai Nara
+      - Shikaku Nara
+      - Shikamaru Nara
+      - Shikazo
+      - Shikuro Aburame
+      - Shima
+      - Shimeji
+      - Shimon Hijiri
+      - Shin
+      - Shin Uchiha
+      - Shin'emon
+      - Shinayakana
+      - Shinga
+      - Shinigami
+      - Shinki
+      - Shinko Inari
+      - Shinku Yūhi
+      - Shinnō
+      - Shino Aburame
+      - Shinobu Mibu
+      - Shinta
+      - Shio
+      - Shion
+      - Shiore
+      - Shira
+      - Shiranami
+      - Shiro
+      - Shiro (Land of Ancestors)
+      - Shiromari
+      - Shiseru
+      - Shishio
+      - Shisui Uchiha
+      - Shisō
+      - Shitō Akimichi
+      - Shizuka
+      - Shizuku
+      - Shizuku (Taki)
+      - Shizuma Hoshigaki
+      - Shizune
+      - Shojoji
+      - Shukaku
+      - Shun
+      - Shura
+      - Shōseki
+      - Shū
+      - Shū (lord)
+      - Sky Ninja Captain
+      - Son Gokū
+      - Sora
+      - Sora (orphan)
+      - Sound Daimyō
+      - Spirit Beast
+      - Stone Carver
+      - Stone Carver's Assistant
+      - Storm Dancer
+      - Suguro
+      - Suien
+      - Suigetsu Hōzuki
+      - Suika
+      - Suika Kannonji
+      - Suiko
+      - Suiren
+      - Suiren (Kiri)
+      - Suiu
+      - Sukeza
+      - Sukima
+      - Sukui
+      - Sukune
+      - Sumaru
+      - Sumashi
+      - Sumire (citizen)
+      - Sumire Kakei
+      - Suna Assassin Captain
+      - Suname
+      - Susuki
+      - Susuki (Land of Demons)
+      - Suzaku (minister)
+      - Suzaku Nara
+      - Suzume
+      - Suzumebachi
+      - Suzuran
+      - Sāra
+      - Sāra's Daughter
+      - Sēramu
+      - Sōsetsu Kazahana
+      - Sōta
+      - Sōzu
+      - Tadaichi
+      - Tagitsuhime
+      - Tagorihime
+      - Taiko Uchiha
+      - Taisa Amagiri
+      - Taiseki
+      - Taizō
+      - Taji
+      - Tajiki
+      - Tajima Uchiha
+      - Takajō Torikai
+      - Takamaru
+      - Takanami Senka
+      - Takishi
+      - Taku
+      - Tamae
+      - Tamaki
+      - Tamao
+      - Tami
+      - Tango
+      - Tanishi
+      - Tanuki Shigaraki
+      - Tanzō
+      - Taruho
+      - Tarui
+      - Tarō
+      - Tatewaki
+      - Tatsuji
+      - Tatsuma Aburame
+      - Tatsumi
+      - Tayori Kuroyagi
+      - Tayuya
+      - Tazuna
+      - Tea Daimyō
+      - Teguse
+      - Tekka Uchiha
+      - Tekuno Kanden
+      - Temari
+      - Temui
+      - Temujin
+      - Ten-Tails
+      - Tenga
+      - Tenji
+      - Tenma Izumo
+      - Tenma Kodon
+      - Tenten
+      - Tentō Madoka
+      - Tenzen
+      - Tenzen Daikoku
+      - Tenzen's Bodyguard
+      - Tenzō (Iburi Clan)
+      - Tera
+      - Terai
+      - Terubō
+      - Tessa
+      - Tessen Togeito
+      - Tetsu
+      - Tetsuru
+      - Teuchi
+      - Teyaki Uchiha
+      - Tezuna
+      - Tezutsu Mikawa
+      - Third Hoshikage
+      - Third Kazekage
+      - Third Mizukage
+      - This Daimyō
+      - Three Giant Snakes
+      - Three Haimaru Brothers
+      - Three-Headed Guardian Beast
+      - Tiger-Masked Anbu Member
+      - Tobi (Zetsu)
+      - Tobimaru
+      - Tobio
+      - Tobirama Senju
+      - Todoroki
+      - Tofu
+      - Tokara
+      - Toki
+      - Toki (Shinobazu)
+      - Tokiwa
+      - Tokuma Hyūga
+      - Tomari
+      - Tomaru
+      - Tomaru Minakura
+      - Tonbee
+      - Tonbo Tobitake
+      - Toneri Ōtsutsuki
+      - Tonika Village Head
+      - Tonton
+      - Tora
+      - Tora (Anbu)
+      - Torifu Akimichi
+      - Toroi
+      - Toroi (Genin)
+      - Torune Aburame
+      - Tosaka
+      - Toshi
+      - Towa
+      - Tsubaki (anime)
+      - Tsubaki (game)
+      - Tsubaki (parent)
+      - Tsubusa
+      - Tsubute Futaba
+      - Tsuchigumo Chief
+      - Tsuchino
+      - Tsuchinoe
+      - Tsuchinoto
+      - Tsukado
+      - Tsukiko Kagetsu
+      - Tsukino
+      - Tsukino's Father
+      - Tsukune
+      - Tsukushi
+      - Tsume Inuzuka
+      - Tsunade
+      - Tsunami
+      - Tsuru Itoi
+      - Tsurugi
+      - Tsurushi Hachiya
+      - Tsuyu
+      - Tsuzumi
+      - Tsuzumi Sarugaku
+      - Tōbei Kagetsu
+      - Tōfu
+      - Tōjūrō
+      - Tōka Senju
+      - Tōu
+      - Ubau
+      - Udon Ise
+      - Ugai
+      - Ugatsu
+      - Ultimate Summoning Beast
+      - Umibōzu
+      - Unagi
+      - Unkai Kurama
+      - Unmo Samidare
+      - Urakaku
+      - Urashiki Ōtsutsuki
+      - Uroko Kurama
+      - Uruchi Uchiha
+      - Urushi
+      - Urushi (summon)
+      - Ushi
+      - Utakata
+      - Uō
+      - Village Headman
+      - Waraji
+      - Wasabi Izuno
+      - Watase
+      - Water Daimyō
+      - White Snake Sage
+      - White Zetsu
+      - Wind Daimyō (Part I)
+      - Wind Daimyō (Part II)
+      - Ya
+      - Yagura (anime)
+      - Yagura Karatachi
+      - Yahiko
+      - Yajirobee
+      - Yakku
+      - Yakumi Uchiha
+      - Yakumo Kurama
+      - Yamame
+      - Yamaoka
+      - Yamato
+      - Yaoki
+      - Yashamaru
+      - Yashiro Uchiha
+      - Yatogo Ryūgen
+      - Yodo
+      - Yokaze
+      - Yokozuna
+      - Yome
+      - Yomi
+      - Yomito Hirasaka
+      - Yone
+      - Yoroi Akadō
+      - Yoshino Nara
+      - Yoshiteru
+      - Yota
+      - Yotaka
+      - Yugito Nii
+      - Yui
+      - Yukai
+      - Yukata
+      - Yuki (Academy student)
+      - Yukimi
+      - Yurika
+      - Yurinojō
+      - Yurito
+      - Yurui
+      - Yurui (anime)
+      - Yōji Aburame
+      - Yōrō
+      - Yūdachi
+      - Yūgao Uzuki
+      - Yūki Minazuki
+      - Yūkimaru
+      - Yūkimaru's Mother
+      - Yūra
+      - Yūsuke
+      - Yūsuke's Father
+      - Yūto
+      - Zabuza Momochi
+      - Zaji
+      - Zaji (gambler)
+      - Zaku Abumi
+      - Zangei
+      - Zenza
+      - Zero-Tails
+      - Zetsu
+      - Zō
+      - Zōri
+      - Zōsui
+      - Ōkei
+      - Ōmitsu
+      - Ōnoki
+      - Ōtora
+      - Ōtsutsuki Clan Patriarch
+      - Ōwashi
+      - Ūhei
