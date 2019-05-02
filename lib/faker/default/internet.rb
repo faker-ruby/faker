@@ -192,6 +192,10 @@ module Faker
         sample(agents)
       end
 
+      def uuid
+        Faker::Config.random.bytes(16).unpack('H8H4H4H4H12').join('-')
+      end
+
       alias user_name username
     end
   end
