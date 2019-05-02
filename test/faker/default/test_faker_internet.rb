@@ -282,6 +282,8 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_uuid
-    assert @tester.uuid.match(/\h{8}-\h{4}-\h{4}-\h{4}-\h{12}/)
+    uuid = @tester.uuid
+    assert_equal(36, uuid.size)
+    assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, uuid)
   end
 end
