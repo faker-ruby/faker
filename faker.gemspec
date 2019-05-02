@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.name        = 'faker'
   spec.version     = Faker::VERSION
   spec.platform    = Gem::Platform::RUBY
-  spec.authors     = ['Benjamin Curtis']
-  spec.email       = ['benjamin.curtis@gmail.com']
+  spec.authors     = ['Benjamin Curtis', 'Vitor Oliveira']
+  spec.email       = ['benjamin.curtis@gmail.com', 'vbrazo@gmail.com']
 
   spec.summary     = 'Easily generate fake data'
   spec.description = 'Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.'
