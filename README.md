@@ -220,6 +220,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Book](doc/books/book.md)
   - [Faker::Books::CultureSeries](doc/books/culture_series.md)
   - [Faker::Books::Dune](doc/books/dune.md)
+  - [Faker::Books::KingkillerChronicle](doc/books/kingkiller_chronicle.md)
   - [Faker::Books::Lovecraft](doc/books/lovecraft.md)
 
 ### Creature
