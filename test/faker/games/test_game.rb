@@ -14,4 +14,8 @@ class TestFakerGame < Test::Unit::TestCase
   def test_genre
     assert @tester.genre.match(/(\w+\.? ?){2,3}/)
   end
+
+  def test_platform
+    assert @tester.platform.match(/(\w+\.? ?){2,3}/)
+  end
 end
