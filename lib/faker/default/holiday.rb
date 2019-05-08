@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Holiday < Base
     class << self
@@ -5,16 +7,16 @@ module Faker
         option = rand(2)
         case option
         when 0
-          fetch("holiday.holy") % Name.first_name.capitalize
+          fetch('holiday.holy') % Name.first_name.capitalize
         when 1
-          fetch("holiday.nature") % Creature::Animal.name.capitalize
+          fetch('holiday.nature') % Creature::Animal.name.capitalize
         else
-          fetch("holiday.disaster")
+          fetch('holiday.disaster')
         end
       end
 
       def date
-        Date.forward()
+        Date.forward
       end
     end
   end
