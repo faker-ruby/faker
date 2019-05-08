@@ -1,0 +1,6 @@
+en:
+  faker:
+    holiday:
+      holy: ["St. %s's Day", "%smas"]
+      nature: ["International %s Day"]
+      disaster: ["Unholy Exception Day", "Doomsday", "Day of the Tentacle"]

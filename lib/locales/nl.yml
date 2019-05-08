@@ -51,6 +51,15 @@ nl:
     company:
       suffix: [BV, V.O.F., Group, en Zonen]
 
+    creature:
+      animal:
+        name: ["aap", "adelaar", "alligator", "alpaca", "antilope", "ara", "baviaan", "beer", "bever", "bij", "bosmarmot", "bruinvis", "buffel", "cavia", "cheeta", "chimpansee", "chinchilla", "cicade", "das", "dinosaurus", "dolfijn", "eekhoorn", "eend", "egel", "eland", "ezel", "forel", "fret", "gans", "geit", "gerbil", "giraffe", "gnu", "gordeldier", "gorilla", "goudvis", "haai", "haas", "hagedis", "hamster", "haring", "hert", "hond", "horzel", "hyena", "impala", "jachthond", "jakhals", "kabeljauw", "kakkerlak", "kameel", "kangoeroe", "kariboe", "kat", "kever", "kikker", "koala", "konijn", "kraai", "krab", "krekel", "krokodil", "kwallen", "lama", "lamantijn", "landschildpad ", "leeuw", "luipaard", "luis", "mammoet", "marter", "mensaap", "mier", "mol", "mopshond", "mossel", "mug", "mug", "muilezel", "muis", "muskusrat", "nerts", "neushoorn", "nijlpaard", "oester", "olifant", "os", "otter", "paard", "pad", "paling", "panda", "prairiehond", "prairiewolf", "raaf", "rat", "rendier", "sardine", "schaap", "schorpioen", "servaal", "slak", "slang", "spin", "sprinkhaan", "stekelvarken", "stinkdier", "termiet", "tijger", "treksprinkhaan", "varken", "vee", "vis", "vleermuis", "vlieg", "vlinder", "vogelbekdier", "voorn", "vos", "wallaby", "walrus", "walvis", "wapiti", "wasbeer", "waterbuffel", "wesp", "wezel", "wilde eend", "wildebeest", "wolf", "wombat", "worm", "yak", "zalm", "zebra", "zeehond", "zeeleeuw", "zeeschildpad", "zwaan"]
+
+    holiday:
+      holy: ["Sint-%ssfeest", "%smis"]
+      nature: ["Internationale %sdag"]
+      disaster: ["Onheilige Uitzonderingsdag", "Doemdag", "Sint-Juttemis"]
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.nl, live.nl, outlook.com, kpnmail.nl]
       domain_suffix: [nl, com, net, org]
