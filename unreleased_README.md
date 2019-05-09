@@ -231,6 +231,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Creature::Horse](doc/unreleased/creature/horse.md)
 
 ### Games
+  - [Faker::Game](doc/games/game.md)
   - [Faker::Games::Dota](doc/unreleased/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/unreleased/games/elder_scrolls.md)
   - [Faker::Games::Fallout](doc/unreleased/games/fallout.md)
