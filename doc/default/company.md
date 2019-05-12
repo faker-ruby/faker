@@ -75,4 +75,7 @@ Faker::Company.brazilian_company_number(formatted: true) #=> "00.000.000/0000-00
 
 # Get a random USA Standard Industrial Classification code (SIC)
 Faker::Company.sic_code #=> "0851"
+
+# Get a random Latvian organisation number
+Faker::Company.latvian_organisation_number #=> "41926566892"
 ```

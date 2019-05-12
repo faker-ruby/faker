@@ -191,6 +191,21 @@ class TestFakerCompany < Test::Unit::TestCase
     assert @tester.sic_code.match(/\d\d\d\d/)
   end
 
+  def test_latvian_organisation_number
+    org_no = @tester.latvian_organisation_number
+    assert org_no.match(/[4-9]\d{10}/)
+
+    sum = 0
+    [9, 1, 4, 8, 3, 10, 2, 5, 7, 6].each.with_index do |factor, index|
+      sum += factor * org_no[index].to_i
+    end
+    check = 3 - sum % 11
+    refute_equal check, -1
+
+    check_digit = check > -1 ? check : check + 11
+    assert_equal check_digit, org_no[10].to_i
+  end
+
   private
 
   def czech_o_n_checksum(org_no)

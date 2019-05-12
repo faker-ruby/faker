@@ -172,6 +172,25 @@ module Faker
         fetch('company.sic_code')
       end
 
+      def latvian_organisation_number
+        digits = []
+        check = -1
+        factors = [9, 1, 4, 8, 3, 10, 2, 5, 7, 6]
+
+        while check == -1
+          sum, digits = factors.each_with_object([0, []]) do |factor, memo|
+            digit = memo[1].empty? ? rand(4..9) : rand(10)
+            memo[0] += factor * digit
+            memo[1] << digit
+          end
+
+          check = 3 - sum % 11
+          digits << (check > -1 ? check : check + 11)
+        end
+
+        digits.join('')
+      end
+
       private
 
       # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb
