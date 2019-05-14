@@ -1,0 +1,9 @@
+/.bundle/
+/coverage/
+/Gemfile.local
+/Gemfile.lock
+/GPATH
+/GRTAGS
+/GTAGS
+/pkg/
+/vendor/

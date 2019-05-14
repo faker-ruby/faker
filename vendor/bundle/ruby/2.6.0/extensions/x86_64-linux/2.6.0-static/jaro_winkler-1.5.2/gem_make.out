@@ -1,0 +1,83 @@
+current directory: /home/simge/faker/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.2/ext/jaro_winkler
+/home/simge/.rbenv/versions/2.6.1/bin/ruby -I /home/simge/.rbenv/versions/2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20190515-13864-10kfo8k.rb extconf.rb
+creating Makefile
+
+current directory: /home/simge/faker/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.2/ext/jaro_winkler
+make "DESTDIR=" clean
+
+current directory: /home/simge/faker/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.2/ext/jaro_winkler
+make "DESTDIR="
+compiling adj_matrix.c
+In file included from /home/simge/.rbenv/versions/2.6.1/include/ruby-2.6.0/ruby/ruby.h:2111,
+                 from /home/simge/.rbenv/versions/2.6.1/include/ruby-2.6.0/ruby.h:33,
+                 from codepoints.h:2,
+                 from adj_matrix.c:2:
+/home/simge/.rbenv/versions/2.6.1/include/ruby-2.6.0/ruby/intern.h:928:29: warning: ‘struct timespec’ declared inside parameter list will not be visible outside of this definition or declaration
+ void rb_timespec_now(struct timespec *);
+                             ^~~~~~~~
+/home/simge/.rbenv/versions/2.6.1/include/ruby-2.6.0/ruby/intern.h:931:41: warning: ‘struct timespec’ declared inside parameter list will not be visible outside of this definition or declaration
+ VALUE rb_time_timespec_new(const struct timespec *, int);
+                                         ^~~~~~~~
+adj_matrix.c: In function ‘adj_matrix_default’:
+adj_matrix.c:87:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+     size_t length = sizeof(DEFAULT_ADJ_TABLE) / sizeof(char *);
+     ^~~~~~
+adj_matrix.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+compiling codepoints.c
+compiling jaro.c
+In file included from /home/simge/.rbenv/versions/2.6.1/include/ruby-2.6.0/ruby/ruby.h:2111,
+                 from /home/simge/.rbenv/versions/2.6.1/include/ruby-2.6.0/ruby.h:33,
+                 from codepoints.h:2,
+                 from jaro.c:3:
+/home/simge/.rbenv/versions/2.6.1/include/ruby-2.6.0/ruby/intern.h:928:29: warning: ‘struct timespec’ declared inside parameter list will not be visible outside of this definition or declaration
+ void rb_timespec_now(struct timespec *);
+                             ^~~~~~~~
+/home/simge/.rbenv/versions/2.6.1/include/ruby-2.6.0/ruby/intern.h:931:41: warning: ‘struct timespec’ declared inside parameter list will not be visible outside of this definition or declaration
+ VALUE rb_time_timespec_new(const struct timespec *, int);
+                                         ^~~~~~~~
+jaro.c: In function ‘jaro_distance_from_codes’:
+jaro.c:41:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   int32_t window_size = (int32_t)len2 / 2 - 1;
+   ^~~~~~~
+jaro.c:45:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   char short_codes_flag[len1];
+   ^~~~
+jaro.c:51:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   size_t match_count = 0;
+   ^~~~~~
+jaro.c:71:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   size_t transposition_count = 0, j = 0, k = 0;
+   ^~~~~~
+jaro.c:86:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   size_t similar_count = 0;
+   ^~~~~~
+jaro.c:98:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   double m = (double)match_count;
+   ^~~~~~
+jaro.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+compiling jaro_winkler.c
+jaro_winkler.c: In function ‘distance’:
+jaro_winkler.c:35:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   Options c_opt = DEFAULT_OPTIONS;
+   ^~~~~~~
+jaro_winkler.c:56:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   CodePoints cp1, cp2;
+   ^~~~~~~~~~
+jaro_winkler.c:59:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE ret = rb_float_new(
+   ^~~~~
+jaro_winkler.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+linking shared-object jaro_winkler/jaro_winkler_ext.so
+
+current directory: /home/simge/faker/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.2/ext/jaro_winkler
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 jaro_winkler_ext.so ./.gem.20190515-13864-zd67qb/jaro_winkler

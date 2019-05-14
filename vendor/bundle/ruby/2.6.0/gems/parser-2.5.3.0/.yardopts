@@ -1,0 +1,21 @@
+./lib/parser/**/*.rb ./lib/parser.rb
+-m markdown
+-M kramdown
+-o ./yardoc
+-r ./README.md
+--asset ./doc/css/common.css:css/common.css
+--verbose
+--api public
+--exclude lib/parser/lexer.rb
+--exclude lib/parser/ruby18.rb
+--exclude lib/parser/ruby19.rb
+--exclude lib/parser/ruby20.rb
+--exclude lib/parser/ruby21.rb
+--exclude lib/parser/ruby22.rb
+--exclude lib/parser/ruby23.rb
+--exclude lib/parser/ruby24.rb
+--exclude lib/parser/macruby.rb
+--exclude lib/parser/rubymotion.rb
+-
+./doc/*.md
+LICENSE.txt

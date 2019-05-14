@@ -1,0 +1,40 @@
+---
+
+version: "{build}"
+
+install:
+  - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+  - bundle config --local path vendor/bundle
+  - bundle install --jobs 3 --retry 3 --without guard development 
+
+build: off
+
+cache:
+  - vendor/bundle
+
+init:
+  - git config --global core.autocrlf true
+
+before_test:
+  - ruby -v
+  - gem -v
+  - bundle -v
+
+test_script:
+  - bundle exec rake
+
+environment:
+  matrix:
+    - RUBY_VERSION: 21
+    - RUBY_VERSION: 21-x64
+    - RUBY_VERSION: 22
+    - RUBY_VERSION: 22-x64
+    - RUBY_VERSION: 23
+    - RUBY_VERSION: 23-x64
+
+matrix:
+  fast_finish: true
+
+branches:
+  only:
+    - master

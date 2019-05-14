@@ -1,0 +1,21 @@
+dist: trusty
+language: ruby
+rvm:
+ - 2.0.0
+ - 2.2.9
+ - 2.3.6
+ - 2.4.3
+ - 2.5.0
+ - ruby-head
+ - jruby-9.1.15.0
+ - rbx-2
+matrix:
+ allow_failures:
+  - rvm: ruby-head
+  - rvm: rbx-2
+before_install:
+ - gem install bundler
+ - bundle --version
+ - gem --version
+script:
+ - bundle exec rake test_cov

@@ -1,0 +1,24 @@
+language: ruby
+cache:
+  bundler: true
+
+before_install:
+  - gem install bundler
+
+bundler_args: --without guard development
+
+matrix:
+  include:
+    - rvm: 2.1.10
+    - rvm: 2.2.7
+    - rvm: 2.3.4
+    - rvm: 2.4.1
+    - rvm: jruby-9.1.14.0
+      jdk: oraclejdk8
+    - rvm: 2.2.7
+      install: true # This skips 'bundle install'
+      script: gem build rainbow && gem install *.gem
+
+env:
+  global:
+    - JRUBY_OPTS=--debug

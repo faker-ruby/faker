@@ -1,0 +1,1884 @@
+# This is the default configuration file. Enabling and disabling is configured
+# in separate files. This file adds all other parameters apart from Enabled.
+
+inherit_from:
+  - enabled.yml
+  - disabled.yml
+
+# Common configuration.
+AllCops:
+  RubyInterpreters:
+    - ruby
+    - macruby
+    - rake
+    - jruby
+    - rbx
+  # Include common Ruby source files.
+  Include:
+    - '**/*.rb'
+    - '**/*.arb'
+    - '**/*.axlsx'
+    - '**/*.builder'
+    - '**/*.fcgi'
+    - '**/*.gemfile'
+    - '**/*.gemspec'
+    - '**/*.god'
+    - '**/*.jb'
+    - '**/*.jbuilder'
+    - '**/*.mspec'
+    - '**/*.opal'
+    - '**/*.pluginspec'
+    - '**/*.podspec'
+    - '**/*.rabl'
+    - '**/*.rake'
+    - '**/*.rbuild'
+    - '**/*.rbw'
+    - '**/*.rbx'
+    - '**/*.ru'
+    - '**/*.ruby'
+    - '**/*.spec'
+    - '**/*.thor'
+    - '**/*.watchr'
+    - '**/.irbrc'
+    - '**/.pryrc'
+    - '**/buildfile'
+    - '**/Appraisals'
+    - '**/Berksfile'
+    - '**/Brewfile'
+    - '**/Buildfile'
+    - '**/Capfile'
+    - '**/Cheffile'
+    - '**/Dangerfile'
+    - '**/Deliverfile'
+    - '**/Fastfile'
+    - '**/*Fastfile'
+    - '**/Gemfile'
+    - '**/Guardfile'
+    - '**/Jarfile'
+    - '**/Mavenfile'
+    - '**/Podfile'
+    - '**/Puppetfile'
+    - '**/Rakefile'
+    - '**/Snapfile'
+    - '**/Thorfile'
+    - '**/Vagabondfile'
+    - '**/Vagrantfile'
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+  # Default formatter will be used if no `-f/--format` option is given.
+  DefaultFormatter: progress
+  # Cop names are displayed in offense messages by default. Change behavior
+  # by overriding DisplayCopNames, or by giving the `--no-display-cop-names`
+  # option.
+  DisplayCopNames: true
+  # Style guide URLs are not displayed in offense messages by default. Change
+  # behavior by overriding `DisplayStyleGuide`, or by giving the
+  # `-S/--display-style-guide` option.
+  DisplayStyleGuide: false
+  # When specifying style guide URLs, any paths and/or fragments will be
+  # evaluated relative to the base URL.
+  StyleGuideBaseURL: https://github.com/rubocop-hq/ruby-style-guide
+  # Extra details are not displayed in offense messages by default. Change
+  # behavior by overriding ExtraDetails, or by giving the
+  # `-E/--extra-details` option.
+  ExtraDetails: false
+  # Additional cops that do not reference a style guide rule may be enabled by
+  # default. Change behavior by overriding `StyleGuideCopsOnly`, or by giving
+  # the `--only-guide-cops` option.
+  StyleGuideCopsOnly: false
+  # All cops except the ones in disabled.yml are enabled by default. Change
+  # this behavior by overriding either `DisabledByDefault` or `EnabledByDefault`.
+  # When `DisabledByDefault` is `true`, all cops in the default configuration
+  # are disabled, and only cops in user configuration are enabled. This makes
+  # cops opt-in instead of opt-out. Note that when `DisabledByDefault` is `true`,
+  # cops in user configuration will be enabled even if they don't set the
+  # Enabled parameter.
+  # When `EnabledByDefault` is `true`, all cops, even those in disabled.yml,
+  # are enabled by default. Cops can still be disabled in user configuration.
+  # Note that it is invalid to set both EnabledByDefault and DisabledByDefault
+  # to true in the same configuration.
+  EnabledByDefault: false
+  DisabledByDefault: false
+  # Enables the result cache if `true`. Can be overridden by the `--cache` command
+  # line option.
+  UseCache: true
+  # Threshold for how many files can be stored in the result cache before some
+  # of the files are automatically removed.
+  MaxFilesInCache: 20000
+  # The cache will be stored in "rubocop_cache" under this directory. If
+  # CacheRootDirectory is ~ (nil), which it is by default, the root will be
+  # taken from the environment variable `$XDG_CACHE_HOME` if it is set, or if
+  # `$XDG_CACHE_HOME` is not set, it will be `$HOME/.cache/`.
+  CacheRootDirectory: ~
+  # It is possible for a malicious user to know the location of RuboCop's cache
+  # directory by looking at CacheRootDirectory, and create a symlink in its
+  # place that could cause RuboCop to overwrite unintended files, or read
+  # malicious input. If you are certain that your cache location is secure from
+  # this kind of attack, and wish to use a symlinked cache location, set this
+  # value to "true".
+  AllowSymlinksInCacheRootDirectory: false
+  # What MRI version of the Ruby interpreter is the inspected code intended to
+  # run on? (If there is more than one, set this to the lowest version.)
+  # If a value is specified for TargetRubyVersion then it is used. Acceptable
+  # values are specificed as a float (i.e. 2.5); the teeny version of Ruby
+  # should not be included. If the project specifies a Ruby version in the
+  # .ruby-version file, Gemfile or gems.rb file, RuboCop will try to determine
+  # the desired version of Ruby by inspecting the .ruby-version file first,
+  # followed by the Gemfile.lock or gems.locked file. (Although the Ruby version
+  # is specified in the Gemfile or gems.rb file, RuboCop reads the final value
+  # from the lock file.) If the Ruby version is still unresolved, RuboCop will
+  # use the oldest officially supported Ruby version (currently Ruby 2.2).
+  TargetRubyVersion: ~
+  # What version of Rails is the inspected code using?  If a value is specified
+  # for TargetRailsVersion then it is used. Acceptable values are specificed
+  # as a float (i.e. 5.1); the patch version of Rails should not be included.
+  # If TargetRailsVersion is not set, RuboCop will parse the Gemfile.lock or
+  # gems.locked file to find the version of Rails that has been bound to the
+  # application. If neither of those files exist, RuboCop will use Rails 5.0
+  # as the default.
+  TargetRailsVersion: ~
+
+#################### Layout ###########################
+
+# Indent private/protected/public as deep as method definitions
+Layout/AccessModifierIndentation:
+  EnforcedStyle: indent
+  SupportedStyles:
+    - outdent
+    - indent
+  # By default, the indentation width from Layout/IndentationWidth is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+# Align the elements of a hash literal if they span more than one line.
+Layout/AlignHash:
+  # Alignment of entries using hash rocket as separator. Valid values are:
+  #
+  # key - left alignment of keys
+  #   'a' => 2
+  #   'bb' => 3
+  # separator - alignment of hash rockets, keys are right aligned
+  #    'a' => 2
+  #   'bb' => 3
+  # table - left alignment of keys, hash rockets, and values
+  #   'a'  => 2
+  #   'bb' => 3
+  EnforcedHashRocketStyle: key
+  SupportedHashRocketStyles:
+    - key
+    - separator
+    - table
+  # Alignment of entries using colon as separator. Valid values are:
+  #
+  # key - left alignment of keys
+  #   a: 0
+  #   bb: 1
+  # separator - alignment of colons, keys are right aligned
+  #    a: 0
+  #   bb: 1
+  # table - left alignment of keys and values
+  #   a:  0
+  #   bb: 1
+  EnforcedColonStyle: key
+  SupportedColonStyles:
+    - key
+    - separator
+    - table
+  # Select whether hashes that are the last argument in a method call should be
+  # inspected? Valid values are:
+  #
+  # always_inspect - Inspect both implicit and explicit hashes.
+  #   Registers an offense for:
+  #     function(a: 1,
+  #       b: 2)
+  #   Registers an offense for:
+  #     function({a: 1,
+  #       b: 2})
+  # always_ignore - Ignore both implicit and explicit hashes.
+  #   Accepts:
+  #     function(a: 1,
+  #       b: 2)
+  #   Accepts:
+  #     function({a: 1,
+  #       b: 2})
+  # ignore_implicit - Ignore only implicit hashes.
+  #   Accepts:
+  #     function(a: 1,
+  #       b: 2)
+  #   Registers an offense for:
+  #     function({a: 1,
+  #       b: 2})
+  # ignore_explicit - Ignore only explicit hashes.
+  #   Accepts:
+  #     function({a: 1,
+  #       b: 2})
+  #   Registers an offense for:
+  #     function(a: 1,
+  #       b: 2)
+  EnforcedLastArgumentHashStyle: always_inspect
+  SupportedLastArgumentHashStyles:
+    - always_inspect
+    - always_ignore
+    - ignore_implicit
+    - ignore_explicit
+
+Layout/AlignParameters:
+  # Alignment of parameters in multi-line method calls.
+  #
+  # The `with_first_parameter` style aligns the following lines along the same
+  # column as the first parameter.
+  #
+  #     method_call(a,
+  #                 b)
+  #
+  # The `with_fixed_indentation` style aligns the following lines with one
+  # level of indentation relative to the start of the line with the method call.
+  #
+  #     method_call(a,
+  #       b)
+  EnforcedStyle: with_first_parameter
+  SupportedStyles:
+    - with_first_parameter
+    - with_fixed_indentation
+  # By default, the indentation width from Layout/IndentationWidth is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+# checks whether the end keywords are aligned properly for `do` `end` blocks.
+Layout/BlockAlignment:
+  # The value `start_of_block` means that the `end` should be aligned with line
+  # where the `do` keyword appears.
+  # The value `start_of_line` means it should be aligned with the whole
+  # expression's starting line.
+  # The value `either` means both are allowed.
+  EnforcedStyleAlignWith: either
+  SupportedStylesAlignWith:
+    - either
+    - start_of_block
+    - start_of_line
+
+# Indentation of `when`.
+Layout/CaseIndentation:
+  EnforcedStyle: case
+  SupportedStyles:
+    - case
+    - end
+  IndentOneStep: false
+  # By default, the indentation width from `Layout/IndentationWidth` is used.
+  # But it can be overridden by setting this parameter.
+  # This only matters if `IndentOneStep` is `true`
+  IndentationWidth: ~
+
+Layout/DefEndAlignment:
+  # The value `def` means that `end` should be aligned with the def keyword.
+  # The value `start_of_line` means that `end` should be aligned with method
+  # calls like `private`, `public`, etc, if present in front of the `def`
+  # keyword on the same line.
+  EnforcedStyleAlignWith: start_of_line
+  SupportedStylesAlignWith:
+    - start_of_line
+    - def
+  AutoCorrect: false
+  Severity: warning
+
+# Multi-line method chaining should be done with leading dots.
+Layout/DotPosition:
+  EnforcedStyle: leading
+  SupportedStyles:
+    - leading
+    - trailing
+
+Layout/EmptyComment:
+  AllowBorderComment: true
+  AllowMarginComment: true
+
+# Use empty lines between defs.
+Layout/EmptyLineBetweenDefs:
+  # If `true`, this parameter means that single line method definitions don't
+  # need an empty line between them.
+  AllowAdjacentOneLineDefs: false
+  # Can be array to specify minimum and maximum number of empty lines, e.g. [1, 2]
+  NumberOfEmptyLines: 1
+
+Layout/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - no_empty_lines
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - empty_lines_except_namespace
+    - empty_lines_special
+    - no_empty_lines
+    - beginning_only
+    - ending_only
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - empty_lines_except_namespace
+    - empty_lines_special
+    - no_empty_lines
+
+# Align ends correctly.
+Layout/EndAlignment:
+  # The value `keyword` means that `end` should be aligned with the matching
+  # keyword (`if`, `while`, etc.).
+  # The value `variable` means that in assignments, `end` should be aligned
+  # with the start of the variable on the left hand side of `=`. In all other
+  # situations, `end` should still be aligned with the keyword.
+  # The value `start_of_line` means that `end` should be aligned with the start
+  # of the line which the matching keyword appears on.
+  EnforcedStyleAlignWith: keyword
+  SupportedStylesAlignWith:
+    - keyword
+    - variable
+    - start_of_line
+  AutoCorrect: false
+  Severity: warning
+
+Layout/EndOfLine:
+  # The `native` style means that CR+LF (Carriage Return + Line Feed) is
+  # enforced on Windows, and LF is enforced on other platforms. The other styles
+  # mean LF and CR+LF, respectively.
+  EnforcedStyle: native
+  SupportedStyles:
+    - native
+    - lf
+    - crlf
+
+Layout/ExtraSpacing:
+  # When true, allows most uses of extra spacing if the intent is to align
+  # things with the previous or next line, not counting empty lines or comment
+  # lines.
+  AllowForAlignment: true
+  # When true, forces the alignment of `=` in assignments on consecutive lines.
+  ForceEqualSignAlignment: false
+
+Layout/FirstParameterIndentation:
+  EnforcedStyle: special_for_inner_method_call_in_parentheses
+  SupportedStyles:
+    # The first parameter should always be indented one step more than the
+    # preceding line.
+    - consistent
+    # The first parameter should always be indented one level relative to the
+    # parent that is receiving the parameter
+    - consistent_relative_to_receiver
+    # The first parameter should normally be indented one step more than the
+    # preceding line, but if it's a parameter for a method call that is itself
+    # a parameter in a method call, then the inner parameter should be indented
+    # relative to the inner method.
+    - special_for_inner_method_call
+    # Same as `special_for_inner_method_call` except that the special rule only
+    # applies if the outer method call encloses its arguments in parentheses.
+    - special_for_inner_method_call_in_parentheses
+  # By default, the indentation width from `Layout/IndentationWidth` is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+Layout/IndentationConsistency:
+  # The difference between `rails` and `normal` is that the `rails` style
+  # prescribes that in classes and modules the `protected` and `private`
+  # modifier keywords shall be indented the same as public methods and that
+  # protected and private members shall be indented one step more than the
+  # modifiers. Other than that, both styles mean that entities on the same
+  # logical depth shall have the same indentation.
+  EnforcedStyle: normal
+  SupportedStyles:
+    - normal
+    - rails
+
+Layout/IndentationWidth:
+  # Number of spaces for each indentation level.
+  Width: 2
+  IgnoredPatterns: []
+
+# Checks the indentation of the first element in an array literal.
+Layout/IndentArray:
+  # The value `special_inside_parentheses` means that array literals with
+  # brackets that have their opening bracket on the same line as a surrounding
+  # opening round parenthesis, shall have their first element indented relative
+  # to the first position inside the parenthesis.
+  #
+  # The value `consistent` means that the indentation of the first element shall
+  # always be relative to the first position of the line where the opening
+  # bracket is.
+  #
+  # The value `align_brackets` means that the indentation of the first element
+  # shall always be relative to the position of the opening bracket.
+  EnforcedStyle: special_inside_parentheses
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+    - align_brackets
+  # By default, the indentation width from `Layout/IndentationWidth` is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+# Checks the indentation of assignment RHS, when on a different line from LHS
+Layout/IndentAssignment:
+  # By default, the indentation width from `Layout/IndentationWidth` is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+# Checks the indentation of the first key in a hash literal.
+Layout/IndentHash:
+  # The value `special_inside_parentheses` means that hash literals with braces
+  # that have their opening brace on the same line as a surrounding opening
+  # round parenthesis, shall have their first key indented relative to the
+  # first position inside the parenthesis.
+  #
+  # The value `consistent` means that the indentation of the first key shall
+  # always be relative to the first position of the line where the opening
+  # brace is.
+  #
+  # The value `align_braces` means that the indentation of the first key shall
+  # always be relative to the position of the opening brace.
+  EnforcedStyle: special_inside_parentheses
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+    - align_braces
+  # By default, the indentation width from `Layout/IndentationWidth` is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+Layout/IndentHeredoc:
+  EnforcedStyle: auto_detection
+  SupportedStyles:
+    - auto_detection
+    - squiggly
+    - active_support
+    - powerpack
+    - unindent
+
+Layout/SpaceInLambdaLiteral:
+  EnforcedStyle: require_no_space
+  SupportedStyles:
+    - require_no_space
+    - require_space
+
+Layout/MultilineArrayBraceLayout:
+  EnforcedStyle: symmetrical
+  SupportedStyles:
+    # symmetrical: closing brace is positioned in same way as opening brace
+    # new_line: closing brace is always on a new line
+    # same_line: closing brace is always on the same line as last element
+    - symmetrical
+    - new_line
+    - same_line
+
+Layout/MultilineAssignmentLayout:
+  # The types of assignments which are subject to this rule.
+  SupportedTypes:
+    - block
+    - case
+    - class
+    - if
+    - kwbegin
+    - module
+  EnforcedStyle: new_line
+  SupportedStyles:
+    # Ensures that the assignment operator and the rhs are on the same line for
+    # the set of supported types.
+    - same_line
+    # Ensures that the assignment operator and the rhs are on separate lines
+    # for the set of supported types.
+    - new_line
+
+Layout/MultilineHashBraceLayout:
+  EnforcedStyle: symmetrical
+  SupportedStyles:
+    # symmetrical: closing brace is positioned in same way as opening brace
+    # new_line: closing brace is always on a new line
+    # same_line: closing brace is always on same line as last element
+    - symmetrical
+    - new_line
+    - same_line
+
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: symmetrical
+  SupportedStyles:
+    # symmetrical: closing brace is positioned in same way as opening brace
+    # new_line: closing brace is always on a new line
+    # same_line: closing brace is always on the same line as last argument
+    - symmetrical
+    - new_line
+    - same_line
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: aligned
+  SupportedStyles:
+    - aligned
+    - indented
+    - indented_relative_to_receiver
+  # By default, the indentation width from Layout/IndentationWidth is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+Layout/MultilineMethodDefinitionBraceLayout:
+  EnforcedStyle: symmetrical
+  SupportedStyles:
+    # symmetrical: closing brace is positioned in same way as opening brace
+    # new_line: closing brace is always on a new line
+    # same_line: closing brace is always on the same line as last parameter
+    - symmetrical
+    - new_line
+    - same_line
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: aligned
+  SupportedStyles:
+    - aligned
+    - indented
+  # By default, the indentation width from `Layout/IndentationWidth` is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+Layout/SpaceAroundBlockParameters:
+  EnforcedStyleInsidePipes: no_space
+  SupportedStylesInsidePipes:
+    - space
+    - no_space
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+  SupportedStyles:
+    - space
+    - no_space
+
+Layout/SpaceAroundOperators:
+  # When `true`, allows most uses of extra spacing if the intent is to align
+  # with an operator on the previous or next line, not counting empty lines
+  # or comment lines.
+  AllowForAlignment: true
+
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+  SupportedStyles:
+    - space
+    - no_space
+  EnforcedStyleForEmptyBraces: space
+  SupportedStylesForEmptyBraces:
+    - space
+    - no_space
+
+Layout/SpaceBeforeFirstArg:
+  # When `true`, allows most uses of extra spacing if the intent is to align
+  # things with the previous or next line, not counting empty lines or comment
+  # lines.
+  AllowForAlignment: true
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  EnforcedStyle: no_space
+  SupportedStyles:
+    - space
+    - no_space
+    # 'compact' normally requires a space inside the brackets, with the exception
+    # that successive left brackets or right brackets are collapsed together
+    - compact
+  EnforcedStyleForEmptyBrackets: no_space
+  SupportedStylesForEmptyBrackets:
+    - space
+    - no_space
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  SupportedStyles:
+    - space
+    - no_space
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStylesForEmptyBraces:
+    - space
+    - no_space
+  # Space between `{` and `|`. Overrides `EnforcedStyle` if there is a conflict.
+  SpaceBeforeBlockParameters: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+  SupportedStyles:
+    - space
+    - no_space
+    # 'compact' normally requires a space inside hash braces, with the exception
+    # that successive left braces or right braces are collapsed together
+    - compact
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStylesForEmptyBraces:
+    - space
+    - no_space
+
+Layout/SpaceInsideParens:
+  EnforcedStyle: no_space
+  SupportedStyles:
+    - space
+    - no_space
+
+Layout/SpaceInsideReferenceBrackets:
+  EnforcedStyle: no_space
+  SupportedStyles:
+    - space
+    - no_space
+  EnforcedStyleForEmptyBrackets: no_space
+  SupportedStylesForEmptyBrackets:
+    - space
+    - no_space
+
+Layout/SpaceInsideStringInterpolation:
+  EnforcedStyle: no_space
+  SupportedStyles:
+    - space
+    - no_space
+
+Layout/ClassStructure:
+  Categories:
+    module_inclusion:
+      - include
+      - prepend
+      - extend
+  ExpectedOrder:
+      - module_inclusion
+      - constants
+      - public_class_methods
+      - initializer
+      - public_methods
+      - protected_methods
+      - private_methods
+
+Layout/Tab:
+  # By default, the indentation width from Layout/IndentationWidth is used
+  # But it can be overridden by setting this parameter
+  # It is used during auto-correction to determine how many spaces should
+  # replace each tab.
+  IndentationWidth: ~
+
+Layout/TrailingBlankLines:
+  EnforcedStyle: final_newline
+  SupportedStyles:
+    - final_newline
+    - final_blank_line
+
+Layout/TrailingWhitespace:
+  AllowInHeredoc: false
+
+#################### Naming ##########################
+
+Naming/FileName:
+  # Camel case file names listed in `AllCops:Include` and all file names listed
+  # in `AllCops:Exclude` are excluded by default. Add extra excludes here.
+  Exclude: []
+  # When `true`, requires that each source file should define a class or module
+  # with a name which matches the file name (converted to ... case).
+  # It further expects it to be nested inside modules which match the names
+  # of subdirectories in its path.
+  ExpectMatchingDefinition: false
+  # If non-`nil`, expect all source file names to match the following regex.
+  # Only the file name itself is matched, not the entire file path.
+  # Use anchors as necessary if you want to match the entire name rather than
+  # just a part of it.
+  Regex: ~
+  # With `IgnoreExecutableScripts` set to `true`, this cop does not
+  # report offending filenames for executable scripts (i.e. source
+  # files with a shebang in the first line).
+  IgnoreExecutableScripts: true
+  AllowedAcronyms:
+    - CLI
+    - DSL
+    - ACL
+    - API
+    - ASCII
+    - CPU
+    - CSS
+    - DNS
+    - EOF
+    - GUID
+    - HTML
+    - HTTP
+    - HTTPS
+    - ID
+    - IP
+    - JSON
+    - LHS
+    - QPS
+    - RAM
+    - RHS
+    - RPC
+    - SLA
+    - SMTP
+    - SQL
+    - SSH
+    - TCP
+    - TLS
+    - TTL
+    - UDP
+    - UI
+    - UID
+    - UUID
+    - URI
+    - URL
+    - UTF8
+    - VM
+    - XML
+    - XMPP
+    - XSRF
+    - XSS
+
+Naming/HeredocDelimiterNaming:
+  Blacklist:
+    - !ruby/regexp '/(^|\s)(EO[A-Z]{1}|END)(\s|$)/'
+
+Naming/HeredocDelimiterCase:
+  EnforcedStyle: uppercase
+  SupportedStyles:
+    - lowercase
+    - uppercase
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: disallowed
+  SupportedStylesForLeadingUnderscores:
+    - disallowed
+    - required
+    - optional
+
+Naming/MethodName:
+  EnforcedStyle: snake_case
+  SupportedStyles:
+    - snake_case
+    - camelCase
+
+Naming/PredicateName:
+  # Predicate name prefixes.
+  NamePrefix:
+    - is_
+    - has_
+    - have_
+  # Predicate name prefixes that should be removed.
+  NamePrefixBlacklist:
+    - is_
+    - has_
+    - have_
+  # Predicate names which, despite having a blacklisted prefix, or no `?`,
+  # should still be accepted
+  NameWhitelist:
+    - is_a?
+  # Method definition macros for dynamically generated methods.
+  MethodDefinitionMacros:
+    - define_method
+    - define_singleton_method
+  # Exclude Rspec specs because there is a strong convention to write spec
+  # helpers in the form of `have_something` or `be_something`.
+  Exclude:
+    - 'spec/**/*'
+
+Naming/UncommunicativeBlockParamName:
+  # Parameter names may be equal to or greater than this value
+  MinNameLength: 1
+  AllowNamesEndingInNumbers: true
+  # Whitelisted names that will not register an offense
+  AllowedNames: []
+  # Blacklisted names that will register an offense
+  ForbiddenNames: []
+
+Naming/UncommunicativeMethodParamName:
+  # Parameter names may be equal to or greater than this value
+  MinNameLength: 3
+  AllowNamesEndingInNumbers: true
+  # Whitelisted names that will not register an offense
+  AllowedNames:
+    - io
+    - id
+    - to
+    - by
+    - 'on'
+    - in
+    - at
+    - ip
+    - db
+  # Blacklisted names that will register an offense
+  ForbiddenNames: []
+
+Naming/VariableName:
+  EnforcedStyle: snake_case
+  SupportedStyles:
+    - snake_case
+    - camelCase
+
+Naming/VariableNumber:
+  EnforcedStyle: normalcase
+  SupportedStyles:
+    - snake_case
+    - normalcase
+    - non_integer
+
+#################### Style ###########################
+
+Style/AccessModifierDeclarations:
+  EnforcedStyle: group
+  SupportedStyles:
+    - inline
+    - group
+
+Style/Alias:
+  EnforcedStyle: prefer_alias
+  SupportedStyles:
+    - prefer_alias
+    - prefer_alias_method
+
+Style/AndOr:
+  # Whether `and` and `or` are banned only in conditionals (conditionals)
+  # or completely (always).
+  EnforcedStyle: always
+  SupportedStyles:
+    - always
+    - conditionals
+
+Style/AsciiComments:
+  AllowedChars: []
+
+# Checks if usage of `%()` or `%Q()` matches configuration.
+Style/BarePercentLiterals:
+  EnforcedStyle: bare_percent
+  SupportedStyles:
+    - percent_q
+    - bare_percent
+
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+  SupportedStyles:
+    # The `line_count_based` style enforces braces around single line blocks and
+    # do..end around multi-line blocks.
+    - line_count_based
+    # The `semantic` style enforces braces around functional blocks, where the
+    # primary purpose of the block is to return a value and do..end for
+    # procedural blocks, where the primary purpose of the block is its
+    # side-effects.
+    #
+    # This looks at the usage of a block's method to determine its type (e.g. is
+    # the result of a `map` assigned to a variable or passed to another
+    # method) but exceptions are permitted in the `ProceduralMethods`,
+    # `FunctionalMethods` and `IgnoredMethods` sections below.
+    - semantic
+    # The `braces_for_chaining` style enforces braces around single line blocks
+    # and do..end around multi-line blocks, except for multi-line blocks whose
+    # return value is being chained with another method (in which case braces
+    # are enforced).
+    - braces_for_chaining
+  ProceduralMethods:
+    # Methods that are known to be procedural in nature but look functional from
+    # their usage, e.g.
+    #
+    #   time = Benchmark.realtime do
+    #     foo.bar
+    #   end
+    #
+    # Here, the return value of the block is discarded but the return value of
+    # `Benchmark.realtime` is used.
+    - benchmark
+    - bm
+    - bmbm
+    - create
+    - each_with_object
+    - measure
+    - new
+    - realtime
+    - tap
+    - with_object
+  FunctionalMethods:
+    # Methods that are known to be functional in nature but look procedural from
+    # their usage, e.g.
+    #
+    #   let(:foo) { Foo.new }
+    #
+    # Here, the return value of `Foo.new` is used to define a `foo` helper but
+    # doesn't appear to be used from the return value of `let`.
+    - let
+    - let!
+    - subject
+    - watch
+  IgnoredMethods:
+    # Methods that can be either procedural or functional and cannot be
+    # categorised from their usage alone, e.g.
+    #
+    #   foo = lambda do |x|
+    #     puts "Hello, #{x}"
+    #   end
+    #
+    #   foo = lambda do |x|
+    #     x * 100
+    #   end
+    #
+    # Here, it is impossible to tell from the return value of `lambda` whether
+    # the inner block's return value is significant.
+    - lambda
+    - proc
+    - it
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: no_braces
+  SupportedStyles:
+    # The `braces` style enforces braces around all method parameters that are
+    # hashes.
+    - braces
+    # The `no_braces` style checks that the last parameter doesn't have braces
+    # around it.
+    - no_braces
+    # The `context_dependent` style checks that the last parameter doesn't have
+    # braces around it, but requires braces if the second to last parameter is
+    # also a hash literal.
+    - context_dependent
+
+Style/ClassAndModuleChildren:
+  # Checks the style of children definitions at classes and modules.
+  #
+  # Basically there are two different styles:
+  #
+  # `nested` - have each child on a separate line
+  #   class Foo
+  #     class Bar
+  #     end
+  #   end
+  #
+  # `compact` - combine definitions as much as possible
+  #   class Foo::Bar
+  #   end
+  #
+  # The compact style is only forced, for classes or modules with one child.
+  EnforcedStyle: nested
+  SupportedStyles:
+    - nested
+    - compact
+
+Style/ClassCheck:
+  EnforcedStyle: is_a?
+  SupportedStyles:
+    - is_a?
+    - kind_of?
+
+# Align with the style guide.
+Style/CollectionMethods:
+  # Mapping from undesired method to desired_method
+  # e.g. to use `detect` over `find`:
+  #
+  # CollectionMethods:
+  #   PreferredMethods:
+  #     find: detect
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'find'
+    find_all: 'select'
+
+# Use '`' or '%x' around command literals.
+Style/CommandLiteral:
+  EnforcedStyle: backticks
+  # backticks: Always use backticks.
+  # percent_x: Always use `%x`.
+  # mixed: Use backticks on single-line commands, and `%x` on multi-line commands.
+  SupportedStyles:
+    - backticks
+    - percent_x
+    - mixed
+  # If `false`, the cop will always recommend using `%x` if one or more backticks
+  # are found in the command string.
+  AllowInnerBackticks: false
+
+# Checks formatting of special comments
+Style/CommentAnnotation:
+  Keywords:
+    - TODO
+    - FIXME
+    - OPTIMIZE
+    - HACK
+    - REVIEW
+
+Style/ConditionalAssignment:
+  EnforcedStyle: assign_to_condition
+  SupportedStyles:
+    - assign_to_condition
+    - assign_inside_condition
+  # When configured to `assign_to_condition`, `SingleLineConditionsOnly`
+  # will only register an offense when all branches of a condition are
+  # a single line.
+  # When configured to `assign_inside_condition`, `SingleLineConditionsOnly`
+  # will only register an offense for assignment to a condition that has
+  # at least one multiline branch.
+  SingleLineConditionsOnly: true
+  IncludeTernaryExpressions: true
+
+# Checks that you have put a copyright in a comment before any code.
+#
+# You can override the default Notice in your .rubocop.yml file.
+#
+# In order to use autocorrect, you must supply a value for the
+# `AutocorrectNotice` key that matches the regexp Notice. A blank
+# `AutocorrectNotice` will cause an error during autocorrect.
+#
+# Autocorrect will add a copyright notice in a comment at the top
+# of the file immediately after any shebang or encoding comments.
+#
+# Example rubocop.yml:
+#
+# Style/Copyright:
+#   Enabled: true
+#   Notice: 'Copyright (\(c\) )?2015 Yahoo! Inc'
+#   AutocorrectNotice: '# Copyright (c) 2015 Yahoo! Inc.'
+#
+Style/Copyright:
+  Notice: '^Copyright (\(c\) )?2[0-9]{3} .+'
+  AutocorrectNotice: ''
+
+Style/DocumentationMethod:
+  RequireForNonPublicMethods: false
+
+# Warn on empty else statements
+# empty - warn only on empty `else`
+# nil - warn on `else` with nil in it
+# both - warn on empty `else` and `else` with `nil` in it
+Style/EmptyElse:
+  EnforcedStyle: both
+  SupportedStyles:
+    - empty
+    - nil
+    - both
+
+Style/EmptyMethod:
+  EnforcedStyle: compact
+  SupportedStyles:
+    - compact
+    - expanded
+
+# Checks use of for or each in multiline loops.
+Style/For:
+  EnforcedStyle: each
+  SupportedStyles:
+    - each
+    - for
+
+# Enforce the method used for string formatting.
+Style/FormatString:
+  EnforcedStyle: format
+  SupportedStyles:
+    - format
+    - sprintf
+    - percent
+
+# Enforce using either `%<token>s` or `%{token}`
+Style/FormatStringToken:
+  EnforcedStyle: annotated
+  SupportedStyles:
+    # Prefer tokens which contain a sprintf like type annotation like
+    # `%<name>s`, `%<age>d`, `%<score>f`
+    - annotated
+    # Prefer simple looking "template" style tokens like `%{name}`, `%{age}`
+    - template
+    - unannotated
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: when_needed
+  SupportedStyles:
+    # `when_needed` will add the frozen string literal comment to files
+    # only when the `TargetRubyVersion` is set to 2.3+.
+    - when_needed
+    # `always` will always add the frozen string literal comment to a file
+    # regardless of the Ruby version or if `freeze` or `<<` are called on a
+    # string literal. If you run code against multiple versions of Ruby, it is
+    # possible that this will create errors in Ruby 2.3.0+.
+    - always
+    # `never` will enforce that the frozen string literal comment does not
+    # exist in a file.
+    - never
+
+# Built-in global variables are allowed by default.
+Style/GlobalVars:
+  AllowedVariables: []
+
+# `MinBodyLength` defines the number of lines of the a body of an `if` or `unless`
+# needs to have to trigger this cop
+Style/GuardClause:
+  MinBodyLength: 1
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19
+  SupportedStyles:
+    # checks for 1.9 syntax (e.g. {a: 1}) for all symbol keys
+    - ruby19
+    # checks for hash rocket syntax for all hashes
+    - hash_rockets
+    # forbids mixed key syntaxes (e.g. {a: 1, :b => 2})
+    - no_mixed_keys
+    # enforces both ruby19 and no_mixed_keys styles
+    - ruby19_no_mixed_keys
+  # Force hashes that have a symbol value to use hash rockets
+  UseHashRocketsWithSymbolValues: false
+  # Do not suggest { a?: 1 } over { :a? => 1 } in ruby19 style
+  PreferHashRocketsForNonAlnumEndingSymbols: false
+
+Style/InverseMethods:
+  # `InverseMethods` are methods that can be inverted by a not (`not` or `!`)
+  # The relationship of inverse methods only needs to be defined in one direction.
+  # Keys and values both need to be defined as symbols.
+  InverseMethods:
+    :any?: :none?
+    :even?: :odd?
+    :==: :!=
+    :=~: :!~
+    :<: :>=
+    :>: :<=
+    # `ActiveSupport` defines some common inverse methods. They are listed below,
+    # and not enabled by default.
+    #:present?: :blank?,
+    #:include?: :exclude?
+  # `InverseBlocks` are methods that are inverted by inverting the return
+  # of the block that is passed to the method
+  InverseBlocks:
+    :select: :reject
+    :select!: :reject!
+
+Style/IpAddresses:
+  # Allow strings to be whitelisted
+  Whitelist:
+    - "::"
+    # :: is a valid IPv6 address, but could potentially be legitimately in code
+
+Style/Lambda:
+  EnforcedStyle: line_count_dependent
+  SupportedStyles:
+    - line_count_dependent
+    - lambda
+    - literal
+
+Style/LambdaCall:
+  EnforcedStyle: call
+  SupportedStyles:
+    - call
+    - braces
+
+Style/MethodCallWithArgsParentheses:
+  IgnoreMacros: true
+  IgnoredMethods: []
+
+Style/MethodCallWithoutArgsParentheses:
+  IgnoredMethods: []
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_parentheses
+  SupportedStyles:
+    - require_parentheses
+    - require_no_parentheses
+    - require_no_parentheses_except_multiline
+
+Style/MissingElse:
+  EnforcedStyle: both
+  SupportedStyles:
+    # if - warn when an if expression is missing an else branch
+    # case - warn when a case expression is missing an else branch
+    # both - warn when an if or case expression is missing an else branch
+    - if
+    - case
+    - both
+
+# Checks the grouping of mixins (`include`, `extend`, `prepend`) in `class` and
+# `module` bodies.
+Style/MixinGrouping:
+  EnforcedStyle: separated
+  SupportedStyles:
+    # separated: each mixed in module goes in a separate statement.
+    # grouped: mixed in modules are grouped into a single statement.
+    - separated
+    - grouped
+
+Style/ModuleFunction:
+  EnforcedStyle: module_function
+  SupportedStyles:
+    - module_function
+    - extend_self
+
+Style/MultilineMemoization:
+  EnforcedStyle: keyword
+  SupportedStyles:
+    - keyword
+    - braces
+
+Style/NegatedIf:
+  EnforcedStyle: both
+  SupportedStyles:
+    # both: prefix and postfix negated `if` should both use `unless`
+    # prefix: only use `unless` for negated `if` statements positioned before the body of the statement
+    # postfix: only use `unless` for negated `if` statements positioned after the body of the statement
+    - both
+    - prefix
+    - postfix
+
+Style/NestedParenthesizedCalls:
+  Whitelist:
+    - be
+    - be_a
+    - be_an
+    - be_between
+    - be_falsey
+    - be_kind_of
+    - be_instance_of
+    - be_truthy
+    - be_within
+    - eq
+    - eql
+    - end_with
+    - include
+    - match
+    - raise_error
+    - respond_to
+    - start_with
+
+Style/Next:
+  # With `always` all conditions at the end of an iteration needs to be
+  # replaced by next - with `skip_modifier_ifs` the modifier if like this one
+  # are ignored: [1, 2].each { |a| return 'yes' if a == 1 }
+  EnforcedStyle: skip_modifier_ifs
+  # `MinBodyLength` defines the number of lines of the a body of an `if` or `unless`
+  # needs to have to trigger this cop
+  MinBodyLength: 3
+  SupportedStyles:
+    - skip_modifier_ifs
+    - always
+
+Style/NilComparison:
+  EnforcedStyle: predicate
+  SupportedStyles:
+    - predicate
+    - comparison
+
+Style/NonNilCheck:
+  # With `IncludeSemanticChanges` set to `true`, this cop reports offenses for
+  # `!x.nil?` and autocorrects that and `x != nil` to solely `x`, which is
+  # **usually** OK, but might change behavior.
+  #
+  # With `IncludeSemanticChanges` set to `false`, this cop does not report
+  # offenses for `!x.nil?` and does no changes that might change behavior.
+  IncludeSemanticChanges: false
+
+Style/NumericLiterals:
+  MinDigits: 5
+  Strict: false
+
+Style/NumericLiteralPrefix:
+  EnforcedOctalStyle: zero_with_o
+  SupportedOctalStyles:
+    - zero_with_o
+    - zero_only
+
+Style/NumericPredicate:
+  EnforcedStyle: predicate
+  SupportedStyles:
+    - predicate
+    - comparison
+  IgnoredMethods: []
+  # Exclude RSpec specs because assertions like `expect(1).to be > 0` cause
+  # false positives.
+  Exclude:
+    - 'spec/**/*'
+
+Style/OptionHash:
+  # A list of parameter names that will be flagged by this cop.
+  SuspiciousParamNames:
+    - options
+    - opts
+    - args
+    - params
+    - parameters
+
+# Allow safe assignment in conditions.
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: true
+  AllowInMultilineConditions: false
+
+Style/PercentLiteralDelimiters:
+  # Specify the default preferred delimiter for all types with the 'default' key
+  # Override individual delimiters (even with default specified) by specifying
+  # an individual key
+  PreferredDelimiters:
+    default: ()
+    '%i': '[]'
+    '%I': '[]'
+    '%r': '{}'
+    '%w': '[]'
+    '%W': '[]'
+
+Style/PercentQLiterals:
+  EnforcedStyle: lower_case_q
+  SupportedStyles:
+    - lower_case_q # Use `%q` when possible, `%Q` when necessary
+    - upper_case_q # Always use `%Q`
+
+Style/PreferredHashMethods:
+  EnforcedStyle: short
+  SupportedStyles:
+    - short
+    - verbose
+
+Style/RaiseArgs:
+  EnforcedStyle: exploded
+  SupportedStyles:
+    - compact # raise Exception.new(msg)
+    - exploded # raise Exception, msg
+
+Style/RedundantReturn:
+  # When `true` allows code like `return x, y`.
+  AllowMultipleReturnValues: false
+
+# Use `/` or `%r` around regular expressions.
+Style/RegexpLiteral:
+  EnforcedStyle: slashes
+  # slashes: Always use slashes.
+  # percent_r: Always use `%r`.
+  # mixed: Use slashes on single-line regexes, and `%r` on multi-line regexes.
+  SupportedStyles:
+    - slashes
+    - percent_r
+    - mixed
+  # If `false`, the cop will always recommend using `%r` if one or more slashes
+  # are found in the regexp string.
+  AllowInnerSlashes: false
+
+Style/RescueStandardError:
+  EnforcedStyle: explicit
+  # implicit: Do not include the error class, `rescue`
+  # explicit: Require an error class `rescue StandardError`
+  SupportedStyles:
+    - implicit
+    - explicit
+
+Style/ReturnNil:
+  EnforcedStyle: return
+  SupportedStyles:
+    - return
+    - return_nil
+
+Style/SafeNavigation:
+  # Safe navigation may cause a statement to start returning `nil` in addition
+  # to whatever it used to return.
+  ConvertCodeThatCanStartToReturnNil: false
+  Whitelist:
+    - present?
+    - blank?
+    - presence
+    - try
+    - try!
+
+Style/Semicolon:
+  # Allow `;` to separate several expressions on the same line.
+  AllowAsExpressionSeparator: false
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+  SupportedStyles:
+    - only_raise
+    - only_fail
+    - semantic
+
+Style/SingleLineBlockParams:
+  Methods:
+    - reduce:
+        - acc
+        - elem
+    - inject:
+        - acc
+        - elem
+
+Style/SingleLineMethods:
+  AllowIfMethodIsEmpty: true
+
+Style/SpecialGlobalVars:
+  EnforcedStyle: use_english_names
+  SupportedStyles:
+    - use_perl_names
+    - use_english_names
+
+Style/StabbyLambdaParentheses:
+  EnforcedStyle: require_parentheses
+  SupportedStyles:
+    - require_parentheses
+    - require_no_parentheses
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+  # If `true`, strings which span multiple lines using `\` for continuation must
+  # use the same type of quotes on each line.
+  ConsistentQuotesInMultiline: false
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Style/StringMethods:
+  # Mapping from undesired method to desired_method
+  # e.g. to use `to_sym` over `intern`:
+  #
+  # StringMethods:
+  #   PreferredMethods:
+  #     intern: to_sym
+  PreferredMethods:
+    intern: to_sym
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+  MinSize: 2
+  SupportedStyles:
+    - percent
+    - brackets
+
+Style/SymbolProc:
+  # A list of method names to be ignored by the check.
+  # The names should be fairly unique, otherwise you'll end up ignoring lots of code.
+  IgnoredMethods:
+    - respond_to
+    - define_method
+
+Style/TernaryParentheses:
+  EnforcedStyle: require_no_parentheses
+  SupportedStyles:
+    - require_parentheses
+    - require_no_parentheses
+    - require_parentheses_when_complex
+  AllowSafeAssignment: true
+
+Style/TrailingCommaInArguments:
+  # If `comma`, the cop requires a comma after the last argument, but only for
+  # parenthesized method calls where each argument is on its own line.
+  # If `consistent_comma`, the cop requires a comma after the last argument,
+  # for all parenthesized method calls with arguments.
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+
+Style/TrailingCommaInArrayLiteral:
+  # If `comma`, the cop requires a comma after the last item in an array,
+  # but only when each item is on its own line.
+  # If `consistent_comma`, the cop requires a comma after the last item of all
+  # non-empty array literals.
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+
+Style/TrailingCommaInHashLiteral:
+  # If `comma`, the cop requires a comma after the last item in a hash,
+  # but only when each item is on its own line.
+  # If `consistent_comma`, the cop requires a comma after the last item of all
+  # non-empty hash literals.
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+
+# `TrivialAccessors` requires exact name matches and doesn't allow
+# predicated methods by default.
+Style/TrivialAccessors:
+  # When set to `false` the cop will suggest the use of accessor methods
+  # in situations like:
+  #
+  # def name
+  #   @other_name
+  # end
+  #
+  # This way you can uncover "hidden" attributes in your code.
+  ExactNameMatch: true
+  AllowPredicates: true
+  # Allows trivial writers that don't end in an equal sign. e.g.
+  #
+  # def on_exception(action)
+  #   @on_exception=action
+  # end
+  # on_exception :restart
+  #
+  # Commonly used in DSLs
+  AllowDSLWriters: false
+  IgnoreClassMethods: false
+  Whitelist:
+    - to_ary
+    - to_a
+    - to_c
+    - to_enum
+    - to_h
+    - to_hash
+    - to_i
+    - to_int
+    - to_io
+    - to_open
+    - to_path
+    - to_proc
+    - to_r
+    - to_regexp
+    - to_str
+    - to_s
+    - to_sym
+
+# `WordArray` enforces how array literals of word-like strings should be expressed.
+Style/WordArray:
+  EnforcedStyle: percent
+  SupportedStyles:
+    # percent style: %w(word1 word2)
+    - percent
+    # bracket style: ['word1', 'word2']
+    - brackets
+  # The `MinSize` option causes the `WordArray` rule to be ignored for arrays
+  # smaller than a certain size. The rule is only applied to arrays
+  # whose element count is greater than or equal to `MinSize`.
+  MinSize: 2
+  # The regular expression `WordRegex` decides what is considered a word.
+  WordRegex: !ruby/regexp '/\A[\p{Word}\n\t]+\z/'
+
+Style/YodaCondition:
+  EnforcedStyle: all_comparison_operators
+  SupportedStyles:
+    # check all comparison operators
+    - all_comparison_operators
+    # check only equality operators: `!=` and `==`
+    - equality_operators_only
+
+#################### Metrics ###############################
+
+Metrics/AbcSize:
+  # The ABC size is a calculated magnitude, so this number can be an Integer or
+  # a Float.
+  Max: 15
+
+Metrics/BlockLength:
+  CountComments: false  # count full line comments?
+  Max: 25
+  ExcludedMethods:
+    # By default, exclude the `#refine` method, as it tends to have larger
+    # associated blocks.
+    - refine
+
+Metrics/BlockNesting:
+  CountBlocks: false
+  Max: 3
+
+Metrics/ClassLength:
+  CountComments: false  # count full line comments?
+  Max: 100
+
+# Avoid complex methods.
+Metrics/CyclomaticComplexity:
+  Max: 6
+
+Metrics/LineLength:
+  Max: 80
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
+  # directives like '# rubocop: enable ...' when calculating a line's length.
+  IgnoreCopDirectives: false
+  # The IgnoredPatterns option is a list of !ruby/regexp and/or string
+  # elements. Strings will be converted to Regexp objects. A line that matches
+  # any regular expression listed in this option will be ignored by LineLength.
+  IgnoredPatterns: []
+
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 10
+
+Metrics/ModuleLength:
+  CountComments: false  # count full line comments?
+  Max: 100
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
+
+Metrics/PerceivedComplexity:
+  Max: 7
+
+#################### Lint ##################################
+
+# Allow safe assignment in conditions.
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+Lint/InheritException:
+  # The default base class in favour of `Exception`.
+  EnforcedStyle: runtime_error
+  SupportedStyles:
+    - runtime_error
+    - standard_error
+
+Lint/MissingCopEnableDirective:
+  # Maximum number of consecutive lines the cop can be disabled for.
+  # 0 allows only single-line disables
+  # 1 would mean the maximum allowed is the following:
+  #   # rubocop:disable SomeCop
+  #   a = 1
+  #   # rubocop:enable SomeCop
+  # .inf for any size
+  MaximumRangeSize: .inf
+
+Lint/SafeNavigationChain:
+  Whitelist:
+    - present?
+    - blank?
+    - presence
+    - try
+    - try!
+
+Lint/SafeNavigationConsistency:
+  Whitelist:
+    - present?
+    - blank?
+    - presence
+    - try
+    - try!
+
+# Checks for shadowed arguments
+Lint/ShadowedArgument:
+  IgnoreImplicitReferences: false
+
+# Checks for unused block arguments
+Lint/UnusedBlockArgument:
+  IgnoreEmptyBlocks: true
+  AllowUnusedKeywordArguments: false
+
+# Checks for unused method arguments.
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: false
+  IgnoreEmptyMethods: true
+
+Lint/UselessAccessModifier:
+  ContextCreatingMethods: []
+  MethodCreatingMethods: []
+
+Lint/Void:
+  CheckForMethodsWithNoSideEffects: false
+
+#################### Performance ###########################
+
+Performance/DoubleStartEndWith:
+  # Used to check for `starts_with?` and `ends_with?`.
+  # These methods are defined by `ActiveSupport`.
+  IncludeActiveSupportAliases: false
+
+Performance/RedundantMerge:
+  # Max number of key-value pairs to consider an offense
+  MaxKeyValuePairs: 2
+
+#################### Rails #################################
+
+Rails/ActionFilter:
+  EnforcedStyle: action
+  SupportedStyles:
+    - action
+    - filter
+  Include:
+    - app/controllers/**/*.rb
+
+Rails/AssertNot:
+  Include:
+    - '**/test/**/*'
+
+Rails/Blank:
+  # Convert usages of `nil? || empty?` to `blank?`
+  NilOrEmpty: true
+  # Convert usages of `!present?` to `blank?`
+  NotPresent: true
+  # Convert usages of `unless present?` to `if blank?`
+  UnlessPresent: true
+
+Rails/BulkChangeTable:
+  Database: null
+  SupportedDatabases:
+    - mysql
+    - postgresql
+  Include:
+    - db/migrate/*.rb
+
+Rails/CreateTableWithTimestamps:
+  Include:
+    - db/migrate/*.rb
+
+Rails/Date:
+  # The value `strict` disallows usage of `Date.today`, `Date.current`,
+  # `Date#to_time` etc.
+  # The value `flexible` allows usage of `Date.current`, `Date.yesterday`, etc
+  # (but not `Date.today`) which are overridden by ActiveSupport to handle current
+  # time zone.
+  EnforcedStyle: flexible
+  SupportedStyles:
+    - strict
+    - flexible
+
+Rails/Delegate:
+  # When set to true, using the target object as a prefix of the
+  # method name without using the `delegate` method will be a
+  # violation. When set to false, this case is legal.
+  EnforceForPrefixed: true
+
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_sql
+
+Rails/EnumUniqueness:
+  Include:
+    - app/models/**/*.rb
+
+Rails/Exit:
+  Include:
+    - app/**/*.rb
+    - config/**/*.rb
+    - lib/**/*.rb
+  Exclude:
+    - lib/**/*.rake
+
+Rails/FilePath:
+  EnforcedStyle: arguments
+  SupportedStyles:
+    - slashes
+    - arguments
+
+Rails/FindBy:
+  Include:
+    - app/models/**/*.rb
+
+Rails/FindEach:
+  Include:
+    - app/models/**/*.rb
+
+Rails/HasAndBelongsToMany:
+  Include:
+    - app/models/**/*.rb
+
+Rails/HasManyOrHasOneDependent:
+  Include:
+    - app/models/**/*.rb
+
+Rails/HttpStatus:
+  EnforcedStyle: symbolic
+  SupportedStyles:
+    - numeric
+    - symbolic
+
+Rails/InverseOf:
+  Include:
+    - app/models/**/*.rb
+
+Rails/LexicallyScopedActionFilter:
+  Include:
+    - app/controllers/**/*.rb
+
+Rails/NotNullColumn:
+  Include:
+    - db/migrate/*.rb
+
+Rails/Output:
+  Include:
+    - app/**/*.rb
+    - config/**/*.rb
+    - db/**/*.rb
+    - lib/**/*.rb
+
+Rails/Present:
+  # Convert usages of `!nil? && !empty?` to `present?`
+  NotNilAndNotEmpty: true
+  # Convert usages of `!blank?` to `present?`
+  NotBlank: true
+  # Convert usages of `unless blank?` to `if present?`
+  UnlessBlank: true
+
+Rails/ReadWriteAttribute:
+  Include:
+    - app/models/**/*.rb
+
+Rails/RefuteMethods:
+  Include:
+    - '**/test/**/*'
+
+Rails/RelativeDateConstant:
+  AutoCorrect: false
+
+Rails/RequestReferer:
+  EnforcedStyle: referer
+  SupportedStyles:
+    - referer
+    - referrer
+
+Rails/ReversibleMigration:
+  Include:
+    - db/migrate/*.rb
+
+Rails/SafeNavigation:
+  # This will convert usages of `try` to use safe navigation as well as `try!`.
+  # `try` and `try!` work slightly differently. `try!` and safe navigation will
+  # both raise a `NoMethodError` if the receiver of the method call does not
+  # implement the intended method. `try` will not raise an exception for this.
+  ConvertTry: false
+
+Rails/SaveBang:
+  AllowImplicitReturn: true
+  AllowedReceivers: []
+
+Rails/ScopeArgs:
+  Include:
+    - app/models/**/*.rb
+
+Rails/TimeZone:
+  # The value `strict` means that `Time` should be used with `zone`.
+  # The value `flexible` allows usage of `in_time_zone` instead of `zone`.
+  EnforcedStyle: flexible
+  SupportedStyles:
+    - strict
+    - flexible
+
+Rails/UniqBeforePluck:
+  EnforcedStyle: conservative
+  SupportedStyles:
+    - conservative
+    - aggressive
+  AutoCorrect: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - production
+
+Rails/SkipsModelValidations:
+  Blacklist:
+    - decrement!
+    - decrement_counter
+    - increment!
+    - increment_counter
+    - toggle!
+    - touch
+    - update_all
+    - update_attribute
+    - update_column
+    - update_columns
+    - update_counters
+
+Rails/Validation:
+  Include:
+    - app/models/**/*.rb
+
+Bundler/OrderedGems:
+  TreatCommentsAsGroupSeparators: true
+
+Gemspec/OrderedDependencies:
+  TreatCommentsAsGroupSeparators: true
