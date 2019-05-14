@@ -1,0 +1,36 @@
+en:
+  faker:
+    imagine_dragons:
+      members: [
+        "Dan Reynolds",
+        "Wayne Sermon", 
+        "Daniel Platzman",
+        "Ben Mckee"
+      ]
+      albums: [
+        "Night Visions",
+        "Smooke Mirrors",
+        "Evolve",
+        "Origins"
+      ]
+      songs: [
+        "Radioactive",
+        "Believer",
+        "Thunder",
+        "Natural",
+        "Bad Liar",
+        "Release",
+        "Stuck",
+        "Love",
+        "Real Life",
+        "Only",
+        "Yesterday",
+        "Start Over",
+        "Not Today",
+        "Dream",
+        "Birds",
+        "Machine",
+        "Cool Out",
+        "Roots",
+        "Monster"
+      ]
