@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
-class TestFakerOpera< Test::Unit::TestCase
+class TestFakerOpera < Test::Unit::TestCase
   def setup
     @tester = Faker::Opera
   end

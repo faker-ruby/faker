@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Faker
+  # A generator of titles of operas by Verdi, Rossini, Donizetti and Bellini
   class Opera < Base
     class << self
       def verdi
