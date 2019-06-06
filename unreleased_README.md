@@ -16,11 +16,14 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-- [Installing](#installing)
-- [Usage](#usage)
+- [Faker](#faker)
+    - [NOTE](#note)
+  - [Installing](#installing)
+  - [Usage](#usage)
+    - [CLI](#cli)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
-- [Generators](#generators)
+  - [Generators](#generators)
     - [Default](#default)
     - [Blockchain](#blockchain)
     - [Books](#books)
@@ -31,11 +34,11 @@ development.
     - [Music](#music)
     - [Quotes](#quotes)
     - [Sports](#sports)
-    - [TV Shows](#tv-shows)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [Contact](#contact)
-- [License](#license)
+    - [Tv Shows](#tv-shows)
+  - [Customization](#customization)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+  - [License](#license)
 
 ### NOTE
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
@@ -269,6 +272,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 ### Music
   - [Faker::Music](doc/unreleased/music/music.md)
   - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
+  - [Faker::Music::Opera](doc/music/opera.md)
   - [Faker::Music::Phish](doc/unreleased/music/phish.md)
   - [Faker::Music::RockBand](doc/unreleased/music/rock_band.md)
   - [Faker::Music::UmphreysMcgee](doc/unreleased/music/umphreys_mcgee.md)
