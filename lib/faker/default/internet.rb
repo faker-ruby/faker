@@ -3,11 +3,11 @@
 module Faker
   class Internet < Base
     class << self
-      def email(name = nil, *separators)
+      def email(name = nil, *separators, domain: domain_name)
         if separators
-          [username(name, separators), domain_name].join('@')
+          [username(name, separators), domain].join('@')
         else
-          [username(name), domain_name].join('@')
+          [username(name), domain].join('@')
         end
       end
 

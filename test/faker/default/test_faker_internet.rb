@@ -15,6 +15,14 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.email('jane doe', '+').match(/.+\+.+@.+\.\w+/)
   end
 
+  def test_email_with_domain
+    assert @tester.email(domain: 'example.com').match(/.+@example\.com/)
+  end
+
+  def test_email_with_separator_and_domain
+    assert @tester.email('jane doe', '+', domain: 'example.com').match(/.+\+.+@example\.com/)
+  end
+
   def test_free_email
     assert @tester.free_email.match(/.+@(gmail|hotmail|yahoo)\.com/)
   end
