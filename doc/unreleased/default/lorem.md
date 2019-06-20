@@ -29,13 +29,13 @@ Faker::Lorem.sentences #=> ["Vero earum commodi soluta.", "Quaerat fuga cumque e
 Faker::Lorem.sentences(1) #=> ["Ut perspiciatis explicabo possimus doloribus enim quia."]
 Faker::Lorem.sentences(1, true) #=> ["Quis capillus curo ager veritatis voro et ipsum."]
 
-# Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
+# Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=0
 # The 'random_sentences_to_add' argument increases the paragraph's sentence count by a random value within (0..random_sentences_to_add).
 # To specify an exact sentence count for a paragraph, set sentence_count to the number you want and random_sentences_to_add equal to 0.
 # By default, sentences will have a random number of words within the range (3..6).
-Faker::Lorem.paragraph #=> "Neque dicta enim quasi. Qui corrupti est quisquam. Facere animi quod aut. Qui nulla consequuntur consectetur sapiente."
-Faker::Lorem.paragraph(2) #=> "Illo qui voluptas. Id sit quaerat enim aut cupiditate voluptates dolorum. Porro necessitatibus numquam dolor quia earum."
-Faker::Lorem.paragraph(2, true) #=> "Cedo vero adipisci. Theatrum crustulum coaegresco tonsor crastinus stabilis. Aliqua crur consequatur amor una tolero sum."
+Faker::Lorem.paragraph #=> "Recusandae minima consequatur. Expedita sequi blanditiis. Ut fuga et."
+Faker::Lorem.paragraph(2) #=> "Ducimus mollitia deserunt. Dicta et corporis."
+Faker::Lorem.paragraph(2, true) #=> "Strues amplitudo dignissimos. Ver trucido charisma."
 Faker::Lorem.paragraph(2, false, 4) #=> "Neque aut et nemo aut incidunt voluptates. Dolore cum est sint est. Vitae assumenda porro odio dolores fugiat. Est voluptatum quia rerum."
 Faker::Lorem.paragraph(2, true, 4) #=> "Vomito unde uxor annus. Et patior utilis sursum."
 
@@ -44,9 +44,11 @@ Faker::Lorem.paragraphs #=> ["Dolores quis quia ad quo voluptates. Maxime delect
 Faker::Lorem.paragraphs(1) #=> ["Labore voluptas sequi. Ratione nulla eaque quia molestiae fugit. At quam laboriosam aut ut dignissimos."]
 Faker::Lorem.paragraphs(1, true) #=> ["Depulso animi cunctatio amicitia adficio. Vester viduo qui despirmatio voluptas. Validus laudantium adopto ut agnitio venustas. Aer arcus odio esse."]
 
-# Optional arguments: question_count = 3, supplemental = false
-Faker::Lorem.question #=> "Aliquid culpa aut ipsam unde ullam labore?"
-Faker::Lorem.questions(3) #=> ["Necessitatibus deserunt animi?", "At hic dolores autem consequatur ut?", "Aliquam velit ex adipisci voluptatem placeat?"]
+# Optional arguments: word_count=4, supplemental=false, random_words_to_add=0
+Faker::Lorem.question #=> "Vero eum dolore qui?"
+
+# Optional arguments: question_count=3, supplemental=false
+Faker::Lorem.questions(3) #=> ["Ratione eaque doloremque?", "Qui aliquid fuga?", "Est cum ipsum?"]
 
 # Optional arguments: chars=3, supplemental=false
 Faker::Lorem.paragraph_by_chars #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
