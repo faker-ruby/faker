@@ -3,6 +3,17 @@
 ## HEAD Unreleased
 
 ### Bug/Fixes
+### Chores
+### Deprecation
+### Documentation
+### Feature Request
+### Update/add locales
+
+------------------------------------------------------------------------------
+
+## [v1.9.4](https://github.com/stympy/faker/tree/v1.9.4) (2019-06-19)
+
+### Bug/Fixes
 
 - [PR #1605](https://github.com/stympy/faker/pull/1605) fix shallow_json for frozen_string_literal [@causztic](https://github.com/causztic)
 - [PR #1597](https://github.com/stympy/faker/pull/1597) Fix broken test [@vbrazo](https://github.com/vbrazo)
@@ -23,7 +34,7 @@
   - Deprecates `::Football`
 
 ### Documentation
- 
+
 - [PR #1636](https://github.com/stympy/faker/pull/1636) Fix default values for arguments in Lorem doc [@mikong](https://github.com/mikong)
 - [PR #1617](https://github.com/stympy/faker/pull/1617) Fix Dota README [@TheSmartnik](https://github.com/TheSmartnik)
 - [PR #1612](https://github.com/stympy/faker/pull/1612) Update returned example player [@ncallaway](https://github.com/ncallaway)
@@ -41,8 +52,6 @@
 - [PR #1540](https://github.com/stympy/faker/pull/1540) Add sic_code to company #355 [@bruno-b-martins](https://github.com/bruno-b-martins)
 - [PR #1537](https://github.com/stympy/faker/pull/1537) Adds the Faker::Sports::Basketball generator [@ecbrodie](https://github.com/ecbrodie)
 - [PR #1520](https://github.com/stympy/faker/pull/1520) Allow subdomains for Internet.domain_name [@cianooooo](https://github.com/cianooooo)
-
-### Suggestion
 
 ### Update/add locales
 
