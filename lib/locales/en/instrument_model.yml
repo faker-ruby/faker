@@ -1,0 +1,5 @@
+en:
+  faker:
+    instrumental_model:
+      name: ["Fender Stratocaster", "Fender Telecaster", "Gibson Les Paul", "Ibanez GRG370DX", "ESP RS", "Fender Jaguar", "Premium F5 Ac - Bk", "Cort G-100", "SYNYSTER GATES CUSTOM-S", "Tama Silverstar Jazz Kit", "Mapex TND5294 Tornado Standard", "Yamaha PSR-F51"]
+      company: ["Fender", "Gibson", "Yamaha", "Epiphone", "ESP", "Ibanez", "Roland", "Korg", "Essex", "Kohler & Campbell", "Boston", "Taylor", "Cort"]
