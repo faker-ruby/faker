@@ -7,7 +7,7 @@ require 'cli'
 describe '`faker version` command' do
   it 'executes `faker version` command successfully' do
     output = `faker version`
-    expected_output = 'v1.9.3'
+    expected_output = 'v1.9.4'
 
     assert_match(expected_output, output)
   end

@@ -7,7 +7,7 @@ Available since version 1.9.0.
 Faker::Games::Dota.hero #=> "Abaddon"
 
 # Random item
-Faker::Games::Dota.item #=> "Armlet of Mordiggian"
+Faker::Games::Dota.item #=> "You have called death upon yourself."
 
 # Random team
 Faker::Games::Dota.team #=> "Evil Geniuses"
@@ -17,6 +17,6 @@ Faker::Games::Dota.player #=> "Dendi"
 
 # Random quote
 # by default if you don't pass the hero parameter, the quote method will set hero as 'abbadon'
-Faker::Games::Dota.quote #=> "You have called death upon yourself."
+Faker::Games::Dota.quote #=> "Easy now, this stuff is explosive!"
 Faker::Games::Dota.quote(hero: 'alchemist') #=> "Better living through alchemy!"
 ```
