@@ -4,8 +4,13 @@
 
 ### Bug/Fixes
 
+- [PR #1605](https://github.com/stympy/faker/pull/1605) fix shallow_json for frozen_string_literal [@causztic](https://github.com/causztic)
+- [PR #1597](https://github.com/stympy/faker/pull/1597) Fix broken test [@vbrazo](https://github.com/vbrazo)
+- [PR #1578](https://github.com/stympy/faker/pull/1578) Namespaces should inherit Base [@vbrazo](https://github.com/vbrazo)
+
 ### Chores
 
+- [PR #1626](https://github.com/stympy/faker/pull/1626) Update tty tree [@Zeragamba](https://github.com/Zeragamba)
 - [PR #1559](https://github.com/stympy/faker/pull/1559) Fix name_with_middle field for en-AU [@psibi](https://github.com/psibi)
 - [PR #1548](https://github.com/stympy/faker/pull/1548) Chore/improve pt-BR specs [@paulodiovani](https://github.com/paulodiovani)
 - [PR #1542](https://github.com/stympy/faker/pull/1542) Fixed typos to the unreleased_README.md [@gkunwar](https://github.com/gkunwar)
@@ -18,9 +23,20 @@
   - Deprecates `::Football`
 
 ### Documentation
+ 
+- [PR #1636](https://github.com/stympy/faker/pull/1636) Fix default values for arguments in Lorem doc [@mikong](https://github.com/mikong)
+- [PR #1617](https://github.com/stympy/faker/pull/1617) Fix Dota README [@TheSmartnik](https://github.com/TheSmartnik)
+- [PR #1612](https://github.com/stympy/faker/pull/1612) Update returned example player [@ncallaway](https://github.com/ncallaway)
+- [PR #1611](https://github.com/stympy/faker/pull/1611) Documentation error fix [@tomlockwood](https://github.com/tomlockwood)
+- [PR #1575](https://github.com/stympy/faker/pull/1575) Add issues templates [@vbrazo](https://github.com/vbrazo)
 
 ### Feature Request
 
+- [PR #1631](https://github.com/stympy/faker/pull/1631) Faker::Tezos: add block faker [@akettal](https://github.com/akettal)
+- [PR #1619](https://github.com/stympy/faker/pull/1619) Add Faker::Music::Opera [@Adsidera](https://github.com/Adsidera)
+- [PR #1607](https://github.com/stympy/faker/pull/1607) Add Faker::Game with title, genre, and platform generators. [@connorshea](https://github.com/connorshea)
+- [PR #1603](https://github.com/stympy/faker/pull/1603) Add Faker::Internet.uuid [@ianks](https://github.com/ianks)
+- [PR #1560](https://github.com/stympy/faker/pull/1560) Add Faker::Creature::Horse [@wndxlori](https://github.com/wndxlori)
 - [PR #1507](https://github.com/stympy/faker/pull/1507) Add CLI - Integrate fakerbot 🤖 [@akabiru](https://github.com/akabiru)
 - [PR #1540](https://github.com/stympy/faker/pull/1540) Add sic_code to company #355 [@bruno-b-martins](https://github.com/bruno-b-martins)
 - [PR #1537](https://github.com/stympy/faker/pull/1537) Adds the Faker::Sports::Basketball generator [@ecbrodie](https://github.com/ecbrodie)
@@ -30,6 +46,24 @@
 
 ### Update/add locales
 
+- [PR #1629](https://github.com/stympy/faker/pull/1629) Fix sintax error on game.yml file [@ricardobsilva](https://github.com/ricardobsilva)
+- [PR #1627](https://github.com/stympy/faker/pull/1627) add more data for Faker::Games [@BlazingRockStorm](https://github.com/BlazingRockStorm)
+- [PR #1620](https://github.com/stympy/faker/pull/1620) Added Yuumi as a Champion [@eddorre](https://github.com/eddorre)
+- [PR #1621](https://github.com/stympy/faker/pull/1621) Updated classes to match the changes that Blizzard rolled out late last year. Updated hero pool to add the latest two heroes added to the game. [@eddorre](https://github.com/eddorre)
+- [PR #1602](https://github.com/stympy/faker/pull/1602) Remove white space, fix minor typos [@darylf](https://github.com/darylf)
+- [PR #1595](https://github.com/stympy/faker/pull/1595) Fix accented French surnames [@Samy-Amar](https://github.com/Samy-Amar)
+- [PR #1585](https://github.com/stympy/faker/pull/1585) Add Meepo to Dota heroes and quotes [@justinoue](https://github.com/justinoue)
+- [PR #1594](https://github.com/stympy/faker/pull/1594) Changed Startrek to Stargate :) [@Defoncesko](https://github.com/Defoncesko)
+- [PR #1591](https://github.com/stympy/faker/pull/1591) fix-chinese-city [@locez](https://github.com/locez)
+- [PR #1592](https://github.com/stympy/faker/pull/1592) Add coffee country for Japanese [@schmurfy](https://github.com/schmurfy)
+- [PR #1593](https://github.com/stympy/faker/pull/1593) removes duplicates in fr-CA and fr-CH [@schmurfy](https://github.com/schmurfy)
+- [PR #1587](https://github.com/stympy/faker/pull/1587) Add ancient god for Japanese [@yizknn](https://github.com/yizknn)
+- [PR #1582](https://github.com/stympy/faker/pull/1582) Add fighters and DLC to Faker::Games::SuperSmashBros [@boardfish](https://github.com/boardfish)
+- [PR #1583](https://github.com/stympy/faker/pull/1583) updates to RuPaul [@notactuallypagemcconnell](https://github.com/notactuallypagemcconnell)
+- [PR #1581](https://github.com/stympy/faker/pull/1581) add latest list of phish tunes from phish.net/song that are by the band and not covers  [@notactuallypagemcconnell](https://github.com/notactuallypagemcconnell)
+- [PR #1573](https://github.com/stympy/faker/pull/1573) Fix data of music albums [@sankichi92](https://github.com/sankichi92)
+- [PR #1567](https://github.com/stympy/faker/pull/1567) Fix name_with_middle in Chinese locales [@rockymeza](https://github.com/rockymeza)
+- [PR #1564](https://github.com/stympy/faker/pull/1564) Update League of legends content [@michebble](https://github.com/michebble)
 - [PR #1558](https://github.com/stympy/faker/pull/1558) remove misspelling of Japanese [@michebble](https://github.com/michebble)
 - [PR #1554](https://github.com/stympy/faker/pull/1554) Extend list of cryptocurrencies [@kamilbielawski](https://github.com/kamilbielawski)
 - [PR #1552](https://github.com/stympy/faker/pull/1552) Fix subscription: Fix missing double quotes [@psibi](https://github.com/psibi)
