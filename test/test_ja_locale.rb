@@ -26,7 +26,7 @@ class TestJaLocale < Test::Unit::TestCase
   end
 
   def test_ja_cat_methods
-    assert Faker::Cat.breed.is_a? String
+    assert Faker::Creature::Cat.breed.is_a? String
   end
 
   def test_ja_color_methods
@@ -44,7 +44,7 @@ class TestJaLocale < Test::Unit::TestCase
   end
 
   def test_ja_dog_methods
-    assert Faker::Dog.breed.is_a? String
+    assert Faker::Creature::Dog.breed.is_a? String
   end
 
   def test_ja_food_methods
