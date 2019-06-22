@@ -3,6 +3,7 @@
 module Faker
   class Number < Base
     class << self
+<<<<<<< HEAD
       ##
       # Produce a random number.
       #
@@ -18,6 +19,11 @@ module Faker
           keywords << :digits if legacy_digits != NOT_GIVEN
         end
 
+=======
+      extend Gem::Deprecate
+
+      def number(digits = 10)
+>>>>>>> Deprecate Faker::Number.decimal_part and Faker::Number.leading_zero_number (#1516)
         return if digits < 1
         return rand(0..9).round if digits == 1
 
@@ -269,6 +275,9 @@ module Faker
           number * -1
         end
       end
+
+      deprecate :decimal_part, nil, 2019, 06
+      deprecate :leading_zero_number, nil, 2019, 06
     end
   end
 end
