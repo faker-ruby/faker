@@ -9,7 +9,7 @@ module Faker
         Faker::Space.launch_vehicule
       end
 
-      deprecate :launch_vehicule, 'Faker::Space.launch_vehicule', 2019, 06
+      deprecate :launch_vehicule, 'Faker::Space.launch_vehicle', 2019, 06
     end
   end
 end

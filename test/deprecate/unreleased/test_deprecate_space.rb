@@ -8,6 +8,6 @@ class TestDeprecateSpace < Test::Unit::TestCase
   end
 
   def launch_vehicule
-    assert @tester.character.match(/\w+/)
+    @tester.launch_vehicule.match
   end
 end
