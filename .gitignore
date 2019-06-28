@@ -15,6 +15,9 @@ coverage/*
 # Ignore Ctags
 /tags
 
+# Ignore vendor folder
+vendor/*
+
 # Ignore Finder metadata.
 .DS_Store
 
