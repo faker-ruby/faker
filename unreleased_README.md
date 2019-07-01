@@ -286,6 +286,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Sports::Football](doc/unreleased/sports/football.md)
 
 ### Tv Shows
+  - [Faker::TvShows::Archer](doc/unreleased/tv_shows/archer.md)
   - [Faker::TvShows::AquaTeenHungerForce](doc/unreleased/tv_shows/aqua_teen_hunger_force.md)
   - [Faker::TvShows::BojackHorseman](doc/unreleased/tv_shows/bojack_horseman.md)
   - [Faker::TvShows::BreakingBad](doc/unreleased/tv_shows/breaking_bad.md)
