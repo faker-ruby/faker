@@ -11,6 +11,30 @@
 
 ------------------------------------------------------------------------------
 
+## [v1.9.5](https://github.com/stympy/faker/tree/v1.9.5) (2019-07-04)
+
+### Bug
+
+- [PR #1644](https://github.com/stympy/faker/pull/1644) Revert fakerbot and move to own repository inside new organization [@vbrazo](https://github.com/vbrazo)
+
+### Deprecate
+
+- [PR #1516](https://github.com/stympy/faker/pull/1516) Deprecate Faker::Number.decimal_part and Faker::Number.leading_zero_number [@vbrazo](https://github.com/vbrazo)
+
+### Documentation
+
+- [PR #1640](https://github.com/stympy/faker/pull/1640) Add pull_request_template.md [@vbrazo](https://github.com/vbrazo)
+
+### Feature Request
+
+- [PR #1361](https://github.com/stympy/faker/pull/1361) Add Faker::File.dir [@tylerhunt](https://github.com/tylerhunt)
+
+### Update Locales
+
+- [PR #1643](https://github.com/stympy/faker/pull/1643) Add 558 Verb ing_forms from Verb base [@lightyrs](https://github.com/lightyrs)
+
+------------------------------------------------------------------------------
+
 ## [v1.9.4](https://github.com/stympy/faker/tree/v1.9.4) (2019-06-19)
 
 ### Bug/Fixes
