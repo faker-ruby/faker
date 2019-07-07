@@ -4,16 +4,16 @@ module Faker
 
     class << self
       def shallow_json(width = 3, options = { key: 'Name.first_name', value: 'Name.first_name' })
-        options[:key] = options[:key].prepend('Faker::')
-        options[:value] = options[:value].prepend('Faker::')
+        options[:key] = 'Faker::' + options[:key]
+        options[:value] = 'Faker::' + options[:value]
 
         hash = build_shallow_hash(width, options)
         JSON.generate(hash)
       end
 
       def add_depth_to_json(json = shallow_json, width = 3, options = { key: 'Name.first_name', value: 'Name.first_name' })
-        options[:key] = options[:key].prepend('Faker::')
-        options[:value] = options[:value].prepend('Faker::')
+        options[:key] = 'Faker::' + options[:key]
+        options[:value] = 'Faker::' + options[:value]
 
         hash = JSON.parse(json)
         hash.each do |key, _|

@@ -3,6 +3,8 @@
 module Faker
   class Number < Base
     class << self
+      extend Gem::Deprecate
+
       def number(digits = 10)
         return if digits < 1
         return 0 if digits == 1
@@ -87,6 +89,9 @@ module Faker
           number * -1
         end
       end
+
+      deprecate :decimal_part, nil, 2019, 06
+      deprecate :leading_zero_number, nil, 2019, 06
     end
   end
 end

@@ -133,8 +133,12 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.password(8, 12, true).match(/[^!@#\$%\^&\*]+/)
   end
 
-  def test_domain_name
+  def test_domain_name_without_subdomain
     assert @tester.domain_name.match(/\w+\.\w+/)
+  end
+
+  def test_domain_name_with_subdomain
+    assert @tester.domain_name(true).match(/\w+\.\w+\.\w+/)
   end
 
   def test_domain_word
@@ -275,5 +279,11 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.user_agent(:ie).match(/Mozilla|Opera/)
     assert @tester.user_agent(nil).match(/Mozilla|Opera/)
     assert @tester.user_agent(1).match(/Mozilla|Opera/)
+  end
+
+  def test_uuid
+    uuid = @tester.uuid
+    assert_equal(36, uuid.size)
+    assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, uuid)
   end
 end

@@ -6,6 +6,7 @@ SimpleCov.start do
   add_filter ['.bundle', 'lib/extensions', 'test']
 end
 
+require 'minitest/autorun'
 require 'test/unit'
 require 'rubygems'
 require 'timecop'
