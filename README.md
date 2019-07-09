@@ -68,7 +68,6 @@ Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ```
 
 ### CLI
-
 Instructions [available here](https://github.com/faker-ruby/faker-bot)
 
 ### Ensuring unique values
