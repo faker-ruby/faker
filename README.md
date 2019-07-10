@@ -20,6 +20,7 @@ development.
     - [NOTE](#note)
   - [Installing](#installing)
   - [Usage](#usage)
+    - [CLI](#cli)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
   - [Generators](#generators)
@@ -65,6 +66,9 @@ Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ```
+
+### CLI
+Instructions are available in the [faker-bot README](https://github.com/faker-ruby/faker-bot).
 
 ### Ensuring unique values
 Prefix your method call with `unique`. For example:
