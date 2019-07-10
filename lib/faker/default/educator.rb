@@ -5,6 +5,7 @@ module Faker
     flexible :educator
 
     class << self
+<<<<<<< HEAD
       ##
       # Produces a university name.
       #
@@ -14,6 +15,8 @@ module Faker
       #   Faker::Educator.university #=> "Mallowtown Technical College"
       #
       # @faker.version 1.6.4
+=======
+>>>>>>> Deprecate warnings should be removed in v2
       def university
         parse('educator.university')
       end
