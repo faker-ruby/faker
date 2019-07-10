@@ -11,11 +11,11 @@
 
 ------------------------------------------------------------------------------
 
-## [v1.9.6](https://github.com/stympy/faker/tree/v1.9.5) (2019-07-05)
+## [v1.9.6](https://github.com/stympy/faker/tree/1.9.6) (2019-07-05)
 
 Fix lib/faker/version.rb
 
-## [v1.9.5](https://github.com/stympy/faker/tree/v1.9.5) (2019-07-04)
+## [v1.9.5](https://github.com/stympy/faker/tree/v.1.9.5) (2019-07-04)
 
 ### Bug
 
@@ -39,7 +39,7 @@ Fix lib/faker/version.rb
 
 ------------------------------------------------------------------------------
 
-## [v1.9.4](https://github.com/stympy/faker/tree/v1.9.4) (2019-06-19)
+## [v1.9.4](https://github.com/stympy/faker/tree/1.9.4) (2019-06-19)
 
 ### Bug/Fixes
 
@@ -111,7 +111,7 @@ Fix lib/faker/version.rb
 
 ------------------------------------------------------------------------------
 
-## [v1.9.3](https://github.com/stympy/faker/tree/v1.9.2) (2019-02-12)
+## [v1.9.3](https://github.com/stympy/faker/tree/v1.9.3) (2019-02-12)
 
 [Full Changelog](https://github.com/stympy/faker/compare/v1.9.2...v1.9.3)
 
