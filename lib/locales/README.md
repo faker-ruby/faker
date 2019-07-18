@@ -4,9 +4,8 @@ The default locale is English. You can see how it is implemented in the "transla
 
 Here's how to set it:
 
-```
+```ruby
 # Sets the locale to "Simplified Chinese":
-
 Faker::Config.locale = 'zh-CN'
 ```
 
@@ -14,21 +13,21 @@ It works so that once the Faker locale is set to a different location, the trans
 
 Using Chinese as an example, when the locale is set to Chinese and you attempt to call for hipster ipsem (which doesn't exist at the time of this writing), you will get English back. It checks the "zh-CH.yml" file, does not find "hipster" and then checks the "en.yml" file and returns a word from that array.
 
-```
+```ruby
 Faker::Config.locale = 'zh-CN'
-
 Faker::Hipster.word #=> "kogi"
 ```
 
 In order to update a locale with more translation features, simply add a new field to the .yml file that corresponds to an existing piece of functionality in the "en.yml" file. In this example, that would mean providing Chinese hipster words.
 
-```
+```yaml
 # /lib/locales/zh-CN.yml
+hipster:
+    - "屌丝"
+```
 
-hipster: ["屌丝"]
-
+```ruby
 # Now this should work:
-
 Faker::Hipster.word #=> "屌丝"
 ```
 
@@ -36,6 +35,6 @@ After you've done that, find or create a test file for the locale you've updated
 
 In our hypothetical example here, one would add something like this to the "test-zh-locale.rb" file in the "test_ch_methods" method:
 
-```
+```ruby
 assert Faker::Hipster.word.is_a? String
 ```

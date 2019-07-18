@@ -186,6 +186,10 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_match(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, sample)
   end
 
+  def test_sic_code
+    assert @tester.sic_code.match(/\d\d\d\d/)
+  end
+
   private
 
   def czech_o_n_checksum(org_no)
