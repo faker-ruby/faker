@@ -16,23 +16,28 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-- [Installing](#installing)
-- [Usage](#usage)
+- [Faker](#faker)
+    - [NOTE](#note)
+  - [Installing](#installing)
+  - [Usage](#usage)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
-- [Generators](#generators)
+  - [Generators](#generators)
     - [Default](#default)
     - [Blockchain](#blockchain)
+    - [Books](#books)
     - [Creature](#creature)
     - [Games](#games)
     - [Japanese Media](#japanese-media)
     - [Movies](#movies)
     - [Music](#music)
-    - [TV Shows](#tv-shows)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [Contact](#contact)
-- [License](#license)
+    - [Quotes](#quotes)
+    - [Sports](#sports)
+    - [Tv Shows](#tv-shows)
+  - [Customization](#customization)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+  - [License](#license)
 
 ### NOTE
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
@@ -46,7 +51,7 @@ development.
 ```bash
 gem install faker
 ```
-Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your gemfile to:
+Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your Gemfile to:
 
 ```ruby
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
@@ -121,7 +126,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Avatar](doc/unreleased/default/avatar.md)
   - [Faker::Bank](doc/unreleased/default/bank.md)
   - [Faker::Beer](doc/unreleased/default/beer.md)
-  - [Faker::Book](doc/unreleased/default/book.md)
   - [Faker::Boolean](doc/unreleased/default/boolean.md)
   - [Faker::BossaNova](doc/unreleased/default/bossa_nova.md)
   - [Faker::Business](doc/unreleased/default/business.md)
@@ -146,11 +150,9 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Dessert](doc/unreleased/default/dessert.md)
   - [Faker::Device](doc/unreleased/default/device.md)
   - [Faker::DrivingLicence](doc/unreleased/default/driving_licence.md)
-  - [Faker::Dune](doc/unreleased/default/dune.md)
   - [Faker::Educator](doc/unreleased/default/educator.md)
   - [Faker::ElectricalComponents](doc/unreleased/default/electrical_components.md)
   - [Faker::Esport](doc/unreleased/default/esport.md)
-  - [Faker::FamousLastWords](doc/unreleased/default/famous_last_words.md)
   - [Faker::File](doc/unreleased/default/file.md)
   - [Faker::Fillmurray](doc/unreleased/default/fillmurray.md)
   - [Faker::Finance](doc/unreleased/default/finance.md)
@@ -172,13 +174,10 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Lorem](doc/unreleased/default/lorem.md)
   - [Faker::LoremFlickr](doc/unreleased/default/lorem_flickr.md)
   - [Faker::LoremPixel](doc/unreleased/default/lorem_pixel.md)
-  - [Faker::Lovecraft](doc/unreleased/default/lovecraft.md)
   - [Faker::Markdown](doc/unreleased/default/markdown.md)
   - [Faker::Marketing](doc/unreleased/default/marketing.md)
-  - [Faker::Matz](doc/unreleased/default/matz.md)
   - [Faker::Measurement](doc/unreleased/default/measurement.md)
   - [Faker::Military](doc/unreleased/default/military.md)
-  - [Faker::MostInterestingManInTheWorld](doc/unreleased/default/most_interesting_man_in_the_world.md)
   - [Faker::Name](doc/unreleased/default/name.md)
   - [Faker::Nation](doc/unreleased/default/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/unreleased/default/nato_phonetic_alphabet.md)
@@ -190,9 +189,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::ProgrammingLanguage](doc/unreleased/default/programming_language.md)
   - [Faker::Relationship](doc/unreleased/default/relationship.md)
   - [Faker::Restaurant](doc/unreleased/default/restaurant.md)
-  - [Faker::Robin](doc/unreleased/default/robin.md)
   - [Faker::Science](doc/unreleased/default/science.md)
-  - [Faker::SingularSiegler](doc/unreleased/default/singular_siegler.md)
   - [Faker::SlackEmoji](doc/unreleased/default/slack_emoji.md)
   - [Faker::Source](doc/unreleased/default/source.md)
   - [Faker::SouthAfrica](doc/unreleased/default/south_africa.md)
@@ -215,12 +212,20 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Blockchain::Ethereum](doc/unreleased/blockchain/ethereum.md)
   - [Faker::Blockchain::Tezos](doc/unreleased/blockchain/tezos.md)
 
+### Books
+  - [Faker::Book](doc/unreleased/books/book.md)
+  - [Faker::Books::CultureSeries](doc/unreleased/books/culture_series.md)
+  - [Faker::Books::Dune](doc/unreleased/books/dune.md)
+  - [Faker::Books::Lovecraft](doc/unreleased/books/lovecraft.md)
+
 ### Creature
   - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
   - [Faker::Creature::Cat](doc/unreleased/creature/cat.md)
   - [Faker::Creature::Dog](doc/unreleased/creature/dog.md)
+  - [Faker::Creature::Horse](doc/unreleased/creature/horse.md)
 
 ### Games
+  - [Faker::Game](doc/games/game.md)
   - [Faker::Games::Dota](doc/unreleased/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/unreleased/games/elder_scrolls.md)
   - [Faker::Games::Fallout](doc/unreleased/games/fallout.md)
@@ -246,7 +251,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Movie](doc/unreleased/movies/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/unreleased/movies/back_to_the_future.md)
   - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
-  - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
   - [Faker::Movies::HarryPotter](doc/unreleased/movies/harry_potter.md)
   - [Faker::Movies::HitchhikersGuideToTheGalaxy](doc/unreleased/movies/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Movies::Hobbit](doc/unreleased/movies/hobbit.md)
@@ -258,9 +262,19 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Music
   - [Faker::Music](doc/unreleased/music/music.md)
+  - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
+  - [Faker::Music::Opera](doc/music/opera.md)
   - [Faker::Music::Phish](doc/unreleased/music/phish.md)
   - [Faker::Music::RockBand](doc/unreleased/music/rock_band.md)
   - [Faker::Music::UmphreysMcgee](doc/unreleased/music/umphreys_mcgee.md)
+
+### Quotes
+  - [Faker::Quote](doc/unreleased/quotes/quote.md)
+  - [Faker::Quotes::Shakespeare](doc/unreleased/quotes/shakespeare.md)
+
+### Sports
+  - [Faker::Sports::Basketball](doc/unreleased/sports/basketball.md)
+  - [Faker::Sports::Football](doc/unreleased/sports/football.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/unreleased/tv_shows/aqua_teen_hunger_force.md)
@@ -308,17 +322,32 @@ and you can then override or add elements to suit your needs. See more about how
 use locales [here](lib/locales/README.md)
 
 ```yaml
-
 en-au-ocker:
   faker:
     name:
       # Existing faker field, new data
-      first_name: [Charlotte, Ava, Chloe, Emily]
+      first_name:
+        - Charlotte
+        - Ava
+        - Chloe
+        - Emily
 
       # New faker fields
-      ocker_first_name: [Bazza, Bluey, Davo, Johno, Shano, Shazza]
-      region: [South East Queensland, Wide Bay Burnett, Margaret River, Port Pirie, Gippsland, Elizabeth, Barossa]
-
+      ocker_first_name:
+        - Bazza
+        - Bluey
+        - Davo
+        - Johno
+        - Shano
+        - Shazza
+      region:
+        - South East Queensland
+        - Wide Bay Burnett
+        - Margaret River
+        - Port Pirie
+        - Gippsland
+        - Elizabeth
+        - Barossa
 ```
 
 ## Contributing

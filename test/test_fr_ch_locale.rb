@@ -58,7 +58,6 @@ class TestFrChLocale < Test::Unit::TestCase
   def test_fr_ch_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end
@@ -71,8 +70,8 @@ class TestFrChLocale < Test::Unit::TestCase
   end
 
   def test_fr_ch_pokemon_methods
-    assert Faker::Pokemon.name.is_a? String
-    assert Faker::Pokemon.location.is_a? String
-    assert Faker::Pokemon.move.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.move.is_a? String
   end
 end
