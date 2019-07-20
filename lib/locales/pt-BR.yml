@@ -695,3 +695,5 @@ pt-BR:
     gender:
       types: ["Feminino", "Masculino", "Não Binário", "Agênero", "Gênero Fluido", "Gênero queer", "Bigênero", "Poligênero"]
       binary_types: ["Feminino", "Masculino"]
+    aircraft:
+      prefix: "P[P-U]-[A-Z][A-Z][A-Z]"
