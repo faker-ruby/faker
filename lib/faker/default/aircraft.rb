@@ -4,7 +4,12 @@ module Faker
   class Aircraft < Base
     class << self
       def manufacturer
-        parse('aircraft.manufacturer')
+        fetch('aircraft.manufacturer')
+      end
+
+      def model(manufacturer_of_model = '')
+        manufacturer_of_model = manufacturer if manufacturer_of_model.empty?
+        fetch("aircraft.model_by_manufacturer.#{manufacturer_of_model}")
       end
     end
   end
