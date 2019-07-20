@@ -1,0 +1,4 @@
+en:
+  faker:
+    aircraft:
+      manufacturer: [Airbus, Boeing, Embraer, Lockheed Martin, Learjet, Bombardier, McDonnell Douglas]
