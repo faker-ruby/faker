@@ -10,4 +10,7 @@ Faker::Aircraft.model(manufacturer_of_model = "Boeing") #=> "787"
 
 # Generate random aircraft prefix
 Faker::Aircraft.prefix #=> N12345AZ
+
+# Generate a random airline
+Faker::Aircraft.airline #=> "Sunrise Airways"
 ```

@@ -15,6 +15,10 @@ module Faker
       def prefix
         regexify(bothify(fetch('aircraft.prefix')))
       end
+
+      def airline
+        fetch('aircraft.airline')
+      end
     end
   end
 end

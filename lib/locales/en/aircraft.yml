@@ -11,3 +11,195 @@ en:
         Bombardier: [CRJ 200, CRJ 700, CRJ 900, CRJ 1000, CS300, CS100, Q200, Q300, Q400]
         McDonnell Douglas: [DC-8, DC-10, MD-95, MD-90, MD-80, MD-11]
       prefix: ["N[0-9]", "N[1-9][0-9][0-9][0-9][0-9]", "N[0-9][A-Z]", "N[1-9][0-9][0-9][0-9][0-9][A-Z]", "N[0-9][A-Z][A-Z]", "N[1-9][0-9][0-9][0-9][0-9][A-Z][A-Z]"]
+      airline:
+        - Air Algérie
+        - Tassili Airlines
+        - Angola Air Charter
+        - SonAir
+        - TAAG Angola Airlines
+        - Air Botswana
+        - Air Burkina
+        - Faso Airways
+        - Camair-co
+        - Cabo Verde Airlines
+        - Karinou Airlines
+        - Toumaï Air Tchad
+        - Tchadia Airlines
+        - Int'Air Îles
+        - Air Katanga
+        - Compagnie Africaine d'Aviation
+        - Mango Airlines
+        - Services Air
+        - Canadian Airways Congo
+        - Trans Air Congo
+        - Air Djibouti
+        - Daallo Airlines
+        - Air Arabia Egypt
+        - Air Cairo
+        - Air Leisure
+        - Air Sinai
+        - Alexandria Airlines
+        - AlMasria Universal Airlines
+        - AMC Airlines
+        - Cairo Aviation
+        - EgyptAir
+        - Nesma Airlines
+        - Nile Air
+        - CEIBA Intercontinental
+        - Eritrean Airlines
+        - Ethiopian Airlines
+        - Mahfooz Aviation
+        - Airlift International
+        - Air Côte d'Ivoire
+        - African Express Airways
+        - Jambojet
+        - Kenya Airways
+        - Afriqiyah Airways
+        - Air Libya
+        - Buraq Air
+        - Ghadames Air Transport
+        - Libyan Airlines
+        - Air Madagascar
+        - Malawian Airlines
+        - Air Mali
+        - Mauritania Airlines International
+        - Air Mauritius
+        - Air Arabia Maroc
+        - Royal Air Maroc
+        - LAM Mozambique Airlines
+        - Air Namibia
+        - Niger Airlines
+        - Air Peace
+        - Allied Air
+        - Arik Air
+        - Aero Contractors
+        - Azman Air
+        - Dana Air
+        - First Nation Airways
+        - Hak Air
+        - Kabo Air
+        - Max Air
+        - Med-View Airline
+        - TAT Nigeria
+        - Overland Airways
+        - STP Airways
+        - Air Senegal
+        - Air Seychelles
+        - Dalloo Airlines
+        - Jubba Airways
+        - Comair
+        - FlySafair
+        - Kulula.com
+        - Phoebus Apollo Aviation
+        - Safair	
+        - Solenta Aviation
+        - South African Airways
+        - South African Express
+        - Golden Wings Aviation
+        - Ababeel Aviation
+        - Air West
+        - Alfa Airlines SD
+        - Badr Airlines
+        - Mid Airlines
+        - Nova Airline
+        - Sudan Airways
+        - Tarco Airlines
+        - Air Tanzania
+        - Fastjet Tanzania
+        - Precision Air
+        - ASKY Airlines
+        - Nouvelair
+        - Tunisair
+        - Air Zimbabwe
+        - Fastjet Zimbabwe
+        - Global Africa Aviation
+        - Aerolíneas Argentinas
+        - Andes Líneas Aéreas
+        - Austral Líneas Aéreas
+        - Flybondi
+        - LATAM Argentina
+        - Norwegian Air Argentina
+        - Aruba Airlines
+        - Comlux Aruba
+        - Orex Aviation
+        - Bahamasair
+        - SkyBahamas
+        - Línea Aérea Amaszonas
+        - Boliviana de Aviación
+        - Azul Brazilian Airlines
+        - GOL Linhas Aéreas Inteligentes
+        - MAP Linhas Aéreas
+        - Passaredo Linhas Aéreas
+        - Sideral
+        - LATAM Airlines
+        - Total Linhas Aéreas
+        - Air Canada Rouge
+        - Air Canada
+        - Air Inuit
+        - Air North
+        - Air Transat
+        - Canadian North
+        - Flair Airlines
+        - Jazz Air
+        - Sunwing Airlines
+        - Swoop
+        - WestJet
+        - Cayman Airways
+        - LATAM Chile
+        - One Airlines
+        - SKY Airline
+        - Aerosucre
+        - Avianca
+        - Copa Airlines Colombia
+        - LATAM Colombia
+        - Viva Air Colombia
+        - Wingo
+        - Volaris Costa Rica
+        - Cubana
+        - Flycana
+        - Avianca Ecuador
+        - LATAM Ecuador
+        - TAME
+        - Air Greenland
+        - Air Antilles
+        - Air Caraïbes
+        - Aviateca
+        - Sunrise Airways
+        - Avianca Honduras
+        - EasySky
+        - Aeromar
+        - Aeroméxico
+        - AeroUnion
+        - Estafeta Carga Aérea
+        - Interjet
+        - Magnicharters
+        - VivaAerobús
+        - Volaris
+        - Copa Airlines
+        - Panavia
+        - Aerosur Paraguay
+        - Amaszonas Paraguay
+        - Lineas Aéreas Paraguayas
+        - Sol del Paraguay
+        - LATAM Paraguay
+        - LATAM Perú
+        - Peruvian Airlines
+        - Wayraperú
+        - Fly All Ways
+        - Surinam Airways
+        - Caribbean Airlines
+        - Alaska Airlines
+        - Allegiant Air
+        - American Airlines
+        - Delta Air Lines
+        - Frontier Airlines
+        - Hawaiian Airlines
+        - JetBlue Airways
+        - Southwest Airlines
+        - Spirit Airlines
+        - Sun Country Airlines
+        - United Airlines
+        - Avior Airlines
+        - Estelar Latinoamerica
+        - LASER Airlines
+        - Venezolana

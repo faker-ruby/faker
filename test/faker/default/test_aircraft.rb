@@ -19,4 +19,8 @@ class TestAircraft < Test::Unit::TestCase
   def test_prefix
     assert @tester.prefix.match(/^N[0-9]([0-9][0-9][0-9][0-9])?(([A-Z])?[A-Z])?$/)
   end
+
+  def test_airline
+    assert @tester.airline.match(/\w+/)
+  end
 end
