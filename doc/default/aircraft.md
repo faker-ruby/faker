@@ -5,6 +5,9 @@
 Faker::Aircraft.manufacturer #=> "Airbus"
 
 # Generate random aircraft models by manufacturer
+#
+# @param [String] manufacturer_of_model The specific manufacturer
+# Uses a random manufacturer if not provided
 Faker::Aircraft.model #=> "A380"
 Faker::Aircraft.model(manufacturer_of_model = "Boeing") #=> "787"
 
