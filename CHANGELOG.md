@@ -6,8 +6,17 @@
 ### Chores
 ### Deprecation
 ### Documentation
+
+- [PR #1653](https://github.com/stympy/faker/pull/1653) Add /faker-ruby/faker-bot to README [@vbrazo](https://github.com/vbrazo)
+
 ### Feature Request
+
+- [PR #1664](https://github.com/stympy/faker/pull/1664) Replace positional arguments with keyword arguments [@vbrazo](https://github.com/vbrazo)
+
 ### Update/add locales
+
+- [PR #1658](https://github.com/stympy/faker/pull/1658) Update Faker::Games::SuperSmashBros entries [@boardfish](https://github.com/boardfish)
+- [PR #1649](https://github.com/stympy/faker/pull/1649) Remove mexicoMX [@vbrazo](https://github.com/vbrazo)
 
 ------------------------------------------------------------------------------
 
