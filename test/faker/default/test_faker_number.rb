@@ -14,25 +14,25 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_number
-    assert @tester.number(digits: 10).match(/[0-9]{10}/)
+    assert @tester.number(digits: 10).to_s.match(/[0-9]{10}/)
 
     10.times do |digits|
       digits += 1
-      assert @tester.number(digits: digits).match(/^[0-9]{#{digits}}$/)
+      assert @tester.number(digits: digits).to_s.match(/^[0-9]{#{digits}}$/)
     end
 
-    assert @tester.number(digits: 10).length == 10
-    assert @tester.number(digits: 1).length == 1
+    assert @tester.number(digits: 10).to_s.length == 10
+    assert @tester.number(digits: 1).to_s.length == 1
   end
 
   def test_decimal
-    assert @tester.decimal(l_digits: 2).match(/[0-9]{2}\.[0-9]{2}/)
-    assert @tester.decimal(l_digits: 4, r_digits: 5).match(/[0-9]{4}\.[0-9]{5}/)
+    assert @tester.decimal(l_digits: 2).to_s.match(/[0-9]{2}\.[0-9]{2}/)
+    assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match(/[0-9]{4}\.[0-9]{5}/)
   end
 
   def test_digit
-    assert @tester.digit.match(/[0-9]{1}/)
-    assert((1..1000).collect { |_i| @tester.digit == '9' }.include?(true))
+    assert @tester.digit.to_s.match(/[0-9]{1}/)
+    assert((1..1000).collect { |_i| @tester.digit == 9 }.include?(true))
   end
 
   def test_even_distribution
@@ -118,14 +118,14 @@ class TestFakerNumber < Test::Unit::TestCase
 
   def test_insignificant_zero
     @tester.stub :digit, 0 do
-      assert_equal '0', @tester.number(digits: 1)
+      assert_equal '0', @tester.number(digits: 1).to_s
       100.times do
-        assert_match(/^[1-9]0/, @tester.number(digits: 2))
+        assert_match(/^[1-9]0/, @tester.number(digits: 2).to_s)
       end
 
-      assert_equal '0.0', @tester.decimal(l_digits: 1, r_digits: 1)
+      assert_equal 0.0, @tester.decimal(l_digits: 1, r_digits: 1)
       100.times do
-        assert_match(/^0\.0[1-9]/, @tester.decimal(l_digits: 1, r_digits: 2))
+        assert_match(/^0\.0[1-9]/, @tester.decimal(l_digits: 1, r_digits: 2).to_s)
       end
     end
   end

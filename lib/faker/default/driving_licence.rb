@@ -19,7 +19,7 @@ module Faker
       end
 
       def northern_irish_driving_licence
-        Faker::Number.number(digits: 8)
+        Faker::Number.number(digits: 8).to_s
       end
 
       def uk_driving_licence(*args)

@@ -5,8 +5,6 @@ module Faker
     flexible :name
 
     class << self
-      extend Gem::Deprecate
-
       def name
         parse('name.name')
       end
