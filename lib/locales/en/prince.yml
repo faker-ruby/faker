@@ -1,0 +1,22 @@
+en:
+  faker:
+    prince:
+      lyric:
+        - 'Paint a perfect picture.'
+        - 'Housequake!'
+        - 'Only want to see you laughing in the purple rain.'
+      song:
+        - 'Little Red Corvette'
+        - 'Kiss'
+        - 'Graffiti Bridge'
+        - 'Eye Know'
+        - 'Endorphinmachine'
+      album:
+        - 'For You'
+        - 'Prince'
+        - 'Controversy'
+        - 'Dirty Mind'
+        - '1999'
+        - 'Purple Rain'
+        - 'Around the World in a Day'
+        - 'LoveSexy'
