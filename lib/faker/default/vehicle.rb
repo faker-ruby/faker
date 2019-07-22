@@ -85,7 +85,7 @@ module Faker
         Faker::Time.backward(days: rand_in_range(365, 5475), period: :all, format: '%Y').to_i
       end
 
-      def mileage(min = MILEAGE_MIN, max = MILEAGE_MAX)
+      def mileage(min: MILEAGE_MIN, max: MILEAGE_MAX)
         rand_in_range(min, max)
       end
 
