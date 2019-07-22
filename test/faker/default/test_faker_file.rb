@@ -27,7 +27,7 @@ class TestFakerFile < Test::Unit::TestCase
 
   def test_dir_with_args
     assert @tester
-      .dir(2, '\\root\\', '\\')
+      .dir(segment_count: 2, root: '\\root\\', directory_separator: '\\')
       .match(%r{^\\root(\\([a-z\-_.]+)){2}$})
   end
 end

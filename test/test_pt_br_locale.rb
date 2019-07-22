@@ -109,7 +109,7 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.initials.match(/[A-Z]{3}/)
-    assert Faker::Name.initials(2).match(/[A-Z]{2}/)
+    assert Faker::Name.initials(character_count: 2).match(/[A-Z]{2}/)
   end
 
   def test_pt_br_team_methods
@@ -131,8 +131,8 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Vehicle.license_plate.is_a? String
     assert Faker::Vehicle.license_plate.match(/^[A-Z]{3}\-[0-9]{4}/)
 
-    assert Faker::Vehicle.license_plate('RJ').is_a? String
-    assert Faker::Vehicle.license_plate('RJ').match(/^[A-Z]{3}\-[0-9]{4}/)
+    assert Faker::Vehicle.license_plate(state_abreviation: 'RJ').is_a? String
+    assert Faker::Vehicle.license_plate(state_abreviation: 'RJ').match(/^[A-Z]{3}\-[0-9]{4}/)
   end
 
   def test_pt_br_gender_methods

@@ -3,7 +3,7 @@ module Faker
     require 'json'
 
     class << self
-      def shallow_json(width = 3, options = { key: 'Name.first_name', value: 'Name.first_name' })
+      def shallow_json(width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
         options[:key] = 'Faker::' + options[:key]
         options[:value] = 'Faker::' + options[:value]
 
@@ -11,7 +11,7 @@ module Faker
         JSON.generate(hash)
       end
 
-      def add_depth_to_json(json = shallow_json, width = 3, options = { key: 'Name.first_name', value: 'Name.first_name' })
+      def add_depth_to_json(json: shallow_json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
         options[:key] = 'Faker::' + options[:key]
         options[:value] = 'Faker::' + options[:value]
 

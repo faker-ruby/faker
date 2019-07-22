@@ -26,7 +26,7 @@ module Faker
         template.gsub('L', luhn_digit.to_s)
       end
 
-      def vat_number(country = 'BR')
+      def vat_number(country: 'BR')
         numerify(fetch("finance.vat_number.#{country}"))
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find vat number for #{country}"

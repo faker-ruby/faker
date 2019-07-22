@@ -4,7 +4,7 @@ module Faker
   class Device < Base
     class << self
       def build_number
-        Faker::Number.between(1, 500)
+        Faker::Number.between(from: 1, to: 500)
       end
 
       def manufacturer
@@ -24,7 +24,7 @@ module Faker
       end
 
       def version
-        Faker::Number.between(1, 1000)
+        Faker::Number.between(from: 1, to: 1000)
       end
     end
   end

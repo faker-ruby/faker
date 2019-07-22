@@ -21,8 +21,8 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Address.city_prefix.empty?
     assert Faker::Address.city_suffix.empty?
     assert Faker::Address.city.is_a?(String)
-    assert Faker::Address.city(with_state: true).is_a?(String)
-    assert Faker::Address.city(with_state: true).split(', ').count == 2
+    assert Faker::Address.city(options: { with_state: true }).is_a?(String)
+    assert Faker::Address.city(options: { with_state: true }).split(', ').count == 2
     assert Faker::Address.secondary_address.is_a? String
   end
 

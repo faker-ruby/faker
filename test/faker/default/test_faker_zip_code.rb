@@ -58,7 +58,7 @@ class TestFakerZipCode < Test::Unit::TestCase
     I18n.with_locale(:xz) do
       zip_codes = @zip_codes_with_state
       100.times do
-        zip_code = @tester.zip_code('NY')
+        zip_code = @tester.zip_code(state_abbreviation: 'NY')
         assert zip_codes.include?(zip_code), "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
       end
     end

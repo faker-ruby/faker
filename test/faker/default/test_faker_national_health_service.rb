@@ -18,10 +18,10 @@ class TestFakerNationalHealthService < Test::Unit::TestCase
   end
 
   def test_nhs_check_digit
-    assert_equal 6, @tester.check_digit(400_012_114)
+    assert_equal 6, @tester.check_digit(number: 400_012_114)
   end
 
   def test_nhs_check_digit_11
-    assert_equal 0, @tester.check_digit(418_513_625)
+    assert_equal 0, @tester.check_digit(number: 418_513_625)
   end
 end

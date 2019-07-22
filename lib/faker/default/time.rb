@@ -13,17 +13,17 @@ module Faker
     }.freeze
 
     class << self
-      def between(from, to, period = :all, format = nil)
+      def between(from, to, period: :all, format: nil)
         time = period == :between ? rand(from..to) : date_with_random_time(super(from, to), period)
         time_with_format(time, format)
       end
 
-      def forward(days = 365, period = :all, format = nil)
-        time_with_format(date_with_random_time(super(days), period), format)
+      def forward(days: 365, period: :all, format: nil)
+        time_with_format(date_with_random_time(super(days: days), period), format)
       end
 
-      def backward(days = 365, period = :all, format = nil)
-        time_with_format(date_with_random_time(super(days), period), format)
+      def backward(days: 365, period: :all, format: nil)
+        time_with_format(date_with_random_time(super(days: days), period), format)
       end
 
       private

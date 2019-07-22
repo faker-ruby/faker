@@ -3,7 +3,7 @@
 module Faker
   class File < Base
     class << self
-      def dir(segment_count = 3, root = nil, directory_separator = '/')
+      def dir(segment_count: 3, root: nil, directory_separator: '/')
         Array
           .new(segment_count) { Faker::Internet.slug }
           .unshift(root)
@@ -20,8 +20,8 @@ module Faker
         fetch('file.mime_type')
       end
 
-      def file_name(dir = nil, name = nil, ext = nil, directory_separator = '/')
-        dir ||= dir(1)
+      def file_name(dir: nil, name: nil, ext: nil, directory_separator: '/')
+        dir ||= dir(segment_count: 1)
         name ||= Faker::Lorem.word.downcase
         ext ||= extension
 
