@@ -147,12 +147,12 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_luhn_algorithm
     # Odd length base for luhn algorithm
     odd_base = Faker::Number.number([5, 7, 9, 11, 13].sample)
-    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base)
+    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base).to_s
     odd_control = "#{odd_base}#{odd_luhn_complement}"
 
     # Even length base for luhn algorithm
     even_base = Faker::Number.number([4, 6, 8, 10, 12].sample)
-    even_luhn_complement = @tester.send(:luhn_algorithm, even_base)
+    even_luhn_complement = @tester.send(:luhn_algorithm, even_base).to_s
     even_control = "#{even_base}#{even_luhn_complement}"
 
     assert((luhn_checksum(odd_control) % 10).zero?)

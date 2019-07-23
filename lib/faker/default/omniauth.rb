@@ -15,7 +15,7 @@ module Faker
     end
 
     class << self
-      def google(name: nil, email: nil, uid: Number.number(9))
+      def google(name: nil, email: nil, uid: Number.number(9).to_s)
         auth = Omniauth.new(name: name, email: email)
         {
           provider: 'google_oauth2',
@@ -64,7 +64,8 @@ module Faker
         }
       end
 
-      def facebook(name: nil, email: nil, username: nil, uid: Number.number(7))
+      def facebook(name: nil, email: nil, username: nil,
+                   uid: Number.number(7).to_s)
         auth = Omniauth.new(name: name, email: email)
         username ||= "#{auth.first_name.downcase[0]}#{auth.last_name.downcase}"
         {
@@ -92,7 +93,7 @@ module Faker
               link: "http://www.facebook.com/#{username}",
               username: username,
               location: {
-                id: Number.number(9),
+                id: Number.number(9).to_s,
                 name: city_state
               },
               gender: gender,
@@ -106,7 +107,7 @@ module Faker
         }
       end
 
-      def twitter(name: nil, nickname: nil, uid: Number.number(6))
+      def twitter(name: nil, nickname: nil, uid: Number.number(6).to_s)
         auth = Omniauth.new(name: name)
         nickname ||= auth.name.downcase.delete(' ')
         location = city_state
@@ -179,7 +180,7 @@ module Faker
         }
       end
 
-      def linkedin(name: nil, email: nil, uid: Number.number(6))
+      def linkedin(name: nil, email: nil, uid: Number.number(6).to_s)
         auth = Omniauth.new(name: name, email: email)
         first_name = auth.first_name.downcase
         last_name = auth.last_name.downcase
@@ -242,7 +243,7 @@ module Faker
         }
       end
 
-      def github(name: nil, email: nil, uid: Number.number(8))
+      def github(name: nil, email: nil, uid: Number.number(8).to_s)
         auth = Omniauth.new(name: name, email: email)
         login = auth.name.downcase.tr(' ', '-')
         html_url = "https://github.com/#{login}"

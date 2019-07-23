@@ -76,7 +76,7 @@ module Faker
       end
 
       def brazilian_citizen_number(formatted: false)
-        digits = Faker::Number.leading_zero_number(9) until digits&.match(/(\d)((?!\1)\d)+/)
+        digits = Faker::Number.number(9).to_s until digits&.match(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
         number = [digits, first_digit, second_digit].join
