@@ -13,6 +13,9 @@ module Faker
         def album
           fetch('prince.album')
         end
+        def band
+          fetch('prince.band')
+        end
       end
     end
   end

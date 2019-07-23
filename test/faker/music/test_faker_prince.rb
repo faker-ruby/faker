@@ -18,4 +18,8 @@ class TestFakerPRince < Test::Unit::TestCase
   def test_album
     assert @tester.album.match(/\w+/)
   end
+
+  def test_band
+    assert @tester.band.match(/\w+/)
+  end
 end
