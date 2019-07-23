@@ -280,4 +280,10 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.user_agent(nil).match(/Mozilla|Opera/)
     assert @tester.user_agent(1).match(/Mozilla|Opera/)
   end
+
+  def test_uuid
+    uuid = @tester.uuid
+    assert_equal(36, uuid.size)
+    assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, uuid)
+  end
 end
