@@ -1,0 +1,172 @@
+en:
+  faker:
+    opera:
+      italian:
+        by_giuseppe_verdi:
+          - Oberto Conte di San Bonifacio
+          - Un Giorno di Regno
+          - Nabucco
+          - Lombardi alla Prima Crociata
+          - Ernani
+          - I due Foscari
+          - Giovanna d'Arco
+          - Alzira
+          - Attila
+          - Macbeth
+          - I Masnadieri
+          - Jérusalem
+          - Il Corsaro
+          - La Battaglia di Legnano
+          - Luisa Miller
+          - Stiffelio
+          - Rigoletto
+          - Il Trovatore
+          - Simon Boccanegra
+          - Aroldo
+          - Un Ballo in Maschera
+          - La Forza del Destino
+          - Don Carlos
+          - Aida
+          - Otello
+          - Falstaff
+          - I Vespri Siciliani
+          - La Traviat
+        by_gioacchino_rossini:
+          - Demetrio e Polibio
+          - La cambiale di matrimonio
+          - L'equivoco stravagante
+          - L'inganno felice
+          - Ciro in Babilonia ossia La caduta di Baldassare
+          - La scala di seta
+          - La pietra del paragone
+          - L'occasione fa il ladro  ossia Il cambio della valigia
+          - Il signor Bruschino   ossia Il figlio per azzardo
+          - Tancredi
+          - L'italiana in Algeri
+          - Aureliano in Palmira
+          - Il turco in Italia
+          - Sigismondo
+          - Elisabetta   regina d'Inghilterra
+          - Torvaldo e Dorliska
+          - Il barbiere di Siviglia   ossia L'inutile precauzione
+          - La gazzetta   ossia Il matrimonio per concorso
+          - Otello   ossia Il Moro di Venezia
+          - La Cenerentola   ossia La bontà in trionfo
+          - La gazza ladra
+          - Armida
+          - Adelaide di Borgogna ossia Ottone re d'Italia
+          - Mosè in Egitto
+          - Adina ossia Il califfo di Bagdad
+          - Ricciardo e Zoraide
+          - Ermione
+          - Eduardo e Cristina
+          - La donna del lago
+          - Bianca e Falliero ossia Il consiglio dei tre
+          - Maometto II
+          - Matilde di Shabran
+          - Zelmira
+          - Semiramide
+          - Ugo   re d'Italia
+          - Il viaggio a Reims   ossia L'albergo del Giglio d'Oro
+          - Le siège de Corinthe
+          - Moïse et Pharaon ou Le passage de la mer rouge
+          - Le comte Ory
+          - Guillaume Tell
+        by_gaetano_donizetti:
+          - Olimpiade
+          - L'ira di Achille
+          - Enrico di Borgogna
+          - Una follia
+          - I piccioli virtuosi ambulanti
+          - Il falegname di Livonia o Pietro il grande czar delle Russie
+          - Le nozze in villa
+          - Zoraida di Granata
+          - La zingara
+          - La lettera anonima
+          - Chiara e Serafina o Il pirata
+          - Alfredo il grande
+          - Il fortunato inganno
+          - L'ajo nell'imbarazzo
+          - Emilia di Liverpool or L'eremitaggio di Liverpool
+          - Alahor in Granata
+          - Don Gregorio
+          - Elvida
+          - Gabriella di Vergy
+          - Olivo e Pasquale
+          - Otto mesi in due ore ossia Gli esiliati in Siberia
+          - Il borgomastro di Saardam
+          - Le convenienze teatrali
+          - L'esule di Roma ossia Il proscritto
+          - L'eremitaggio di Liverpool
+          - Alina regina di Golconda
+          - Gianni di Calais
+          - Il paria
+          - Il giovedì grasso o Il nuovo Pourceaugnac
+          - Elisabetta al castello di Kenilworth
+          - Alina regina di Golconda[rev]
+          - I pazzi per progetto
+          - Il diluvio universale
+          - Imelda de' Lambertazzi
+          - Anna Bolena
+          - Gianni di Parigi
+          - Le convenienze ed inconvenienze teatrali
+          - Francesca di Foix
+          - La romanziera e l'uomo nero
+          - Fausta
+          - Ugo conte di Parigi
+          - L'elisir d'amore
+          - Sancia di Castiglia
+          - Il furioso all'isola di San Domingo
+          - Otto mesi in due ore
+          - Parisina
+          - Torquato Tasso
+          - Lucrezia Borgia
+          - Il diluvio universale
+          - Rosmonda d'Inghilterra
+          - Maria Stuarda
+          - Buondelmonte
+          - Gemma di Vergy
+          - Marino Faliero
+          - Lucia di Lammermoor
+          - Belisario
+          - Il campanello di notte
+          - Betly o La capanna svizzera
+          - L'assedio di Calais
+          - Pia de' Tolomei
+          - Pia de' Tolomei
+          - Betly
+          - Roberto Devereux
+          - Maria de Rudenz
+          - Gabriella di Vergy
+          - Poliuto
+          - Pia de' Tolomei
+          - Lucie de Lammermoor
+          - Le duc d'Albe
+          - L'ange de Nisida
+          - Lucrezia Borgia
+          - Les Martyrs
+          - La fille du régiment
+          - Lucrezia Borgia
+          - La favorite
+          - Adelia
+          - Rita
+          - Maria Padilla
+          - Linda di Chamounix
+          - Caterina Cornaro
+          - Don Pasquale
+          - Maria di Rohan
+          - Dom Sébastien roi de Portugal
+          - Dom Sebastian von Portugal
+          - Il duca d'Alba
+        by_vincenzo_bellini:
+          - Adelson e Salvini
+          - Bianca e Gernando
+          - Il pirata
+          - Bianca e Fernando
+          - La straniera
+          - Zaira
+          - I Capuleti e i Montecchi
+          - La sonnambula
+          - Norma
+          - Beatrice di Tenda
+          - I puritani

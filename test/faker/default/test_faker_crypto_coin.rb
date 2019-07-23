@@ -7,7 +7,7 @@ class TestFakerCryptoCoin < Test::Unit::TestCase
   ACRONYM = 1
   URL_LOGO = 2
 
-  REGEX_COIN_NAME = /\w+{4,}/
+  REGEX_COIN_NAME = /[a-zA-Z \.]{3,}/
   REGEX_ACRONYM = /\w+{3,}/
   REGEX_URL_LOGO = /^https:\/\/i.imgur.com\/.......\./
 

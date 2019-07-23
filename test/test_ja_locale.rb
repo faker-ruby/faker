@@ -21,12 +21,20 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
   end
 
-  def test_ja_cat_methods
-    assert Faker::Cat.breed.is_a? String
+  def test_ja_ancient_methods
+    assert Faker::Ancient.god.is_a? String
   end
 
-  def test_ja_dog_methods
-    assert Faker::Dog.breed.is_a? String
+  def test_ja_cat_methods
+    assert Faker::Creature::Cat.breed.is_a? String
+  end
+
+  def test_ja_color_methods
+    assert Faker::Color.name.is_a? String
+  end
+
+  def test_ja_coffee_methods
+    assert Faker::Coffee.country.is_a? String
   end
 
   def test_ja_company_methods
@@ -35,8 +43,16 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Company.name.is_a? String
   end
 
+  def test_ja_dog_methods
+    assert Faker::Creature::Dog.breed.is_a? String
+  end
+
   def test_ja_food_methods
     assert Faker::Food.sushi.is_a? String
+  end
+
+  def test_ja_gender_methods
+    assert Faker::Gender.binary_type.is_a? String
   end
 
   def test_ja_lorem_methods
@@ -71,14 +87,19 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Games::Zelda.game.is_a? String
   end
 
-  def test_ja_university_methods
-    assert Faker::University.prefix.is_a? String
-    assert Faker::University.suffix.is_a? String
-    assert Faker::University.name.is_a? String
+  def test_ja_restaurant_methods
+    assert Faker::Restaurant.name.is_a? String
+    assert Faker::Restaurant.type.is_a? String
   end
 
   def test_ja_space_methods
     assert Faker::Space.planet.is_a? String
     assert Faker::Space.galaxy.is_a? String
+  end
+
+  def test_ja_university_methods
+    assert Faker::University.prefix.is_a? String
+    assert Faker::University.suffix.is_a? String
+    assert Faker::University.name.is_a? String
   end
 end

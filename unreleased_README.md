@@ -16,11 +16,13 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-- [Installing](#installing)
-- [Usage](#usage)
+- [Faker](#faker)
+    - [NOTE](#note)
+  - [Installing](#installing)
+  - [Usage](#usage)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
-- [Generators](#generators)
+  - [Generators](#generators)
     - [Default](#default)
     - [Blockchain](#blockchain)
     - [Books](#books)
@@ -30,11 +32,12 @@ development.
     - [Movies](#movies)
     - [Music](#music)
     - [Quotes](#quotes)
-    - [TV Shows](#tv-shows)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [Contact](#contact)
-- [License](#license)
+    - [Sports](#sports)
+    - [Tv Shows](#tv-shows)
+  - [Customization](#customization)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+  - [License](#license)
 
 ### NOTE
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
@@ -48,7 +51,7 @@ development.
 ```bash
 gem install faker
 ```
-Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your gemfile to:
+Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your Gemfile to:
 
 ```ruby
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
@@ -219,8 +222,10 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Creature::Animal](doc/unreleased/creature/animal.md)
   - [Faker::Creature::Cat](doc/unreleased/creature/cat.md)
   - [Faker::Creature::Dog](doc/unreleased/creature/dog.md)
+  - [Faker::Creature::Horse](doc/unreleased/creature/horse.md)
 
 ### Games
+  - [Faker::Game](doc/games/game.md)
   - [Faker::Games::Dota](doc/unreleased/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/unreleased/games/elder_scrolls.md)
   - [Faker::Games::Fallout](doc/unreleased/games/fallout.md)
@@ -246,7 +251,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Movie](doc/unreleased/movies/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/unreleased/movies/back_to_the_future.md)
   - [Faker::Movies::Ghostbusters](doc/unreleased/movies/ghostbusters.md)
-  - [Faker::Movies::GratefulDead](doc/unreleased/movies/grateful_dead.md)
   - [Faker::Movies::HarryPotter](doc/unreleased/movies/harry_potter.md)
   - [Faker::Movies::HitchhikersGuideToTheGalaxy](doc/unreleased/movies/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Movies::Hobbit](doc/unreleased/movies/hobbit.md)
@@ -258,6 +262,8 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Music
   - [Faker::Music](doc/unreleased/music/music.md)
+  - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
+  - [Faker::Music::Opera](doc/music/opera.md)
   - [Faker::Music::Phish](doc/unreleased/music/phish.md)
   - [Faker::Music::RockBand](doc/unreleased/music/rock_band.md)
   - [Faker::Music::UmphreysMcgee](doc/unreleased/music/umphreys_mcgee.md)
@@ -265,6 +271,10 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 ### Quotes
   - [Faker::Quote](doc/unreleased/quotes/quote.md)
   - [Faker::Quotes::Shakespeare](doc/unreleased/quotes/shakespeare.md)
+
+### Sports
+  - [Faker::Sports::Basketball](doc/unreleased/sports/basketball.md)
+  - [Faker::Sports::Football](doc/unreleased/sports/football.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/unreleased/tv_shows/aqua_teen_hunger_force.md)
@@ -316,15 +326,15 @@ en-au-ocker:
   faker:
     name:
       # Existing faker field, new data
-      first_name: 
+      first_name:
         - Charlotte
         - Ava
         - Chloe
         - Emily
 
       # New faker fields
-      ocker_first_name: 
-        - Bazza 
+      ocker_first_name:
+        - Bazza
         - Bluey
         - Davo
         - Johno

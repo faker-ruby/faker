@@ -11,6 +11,19 @@ module Faker
         ([non_zero_digit] + generate(digits - 1)).join.to_i
       end
 
+      def leading_zero_number(digits = 10)
+        '0' + (2..digits).collect { digit }.join
+      end
+
+      def decimal_part(digits = 10)
+        num = ''
+        if digits > 1
+          num = non_zero_digit
+          digits -= 1
+        end
+        leading_zero_number(digits) + num
+      end
+
       def decimal(l_digits = 5, r_digits = 2)
         l_d = number(l_digits).to_s
         r_d = if r_digits == 1

@@ -73,8 +73,8 @@ class TestFrCaLocale < Test::Unit::TestCase
   end
 
   def test_fr_ca_pokemon_methods
-    assert Faker::Pokemon.name.is_a? String
-    assert Faker::Pokemon.location.is_a? String
-    assert Faker::Pokemon.move.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.move.is_a? String
   end
 end
