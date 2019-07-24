@@ -8,8 +8,8 @@ class TestChileRut < Test::Unit::TestCase
   end
 
   def test_full_rut
-    assert @tester.full_rut(6, true) == '6-k'
-    assert @tester.full_rut(30_686_957, true) == '30686957-4'
+    assert @tester.full_rut(min_rut: 6, fixed: true) == '6-k'
+    assert @tester.full_rut(min_rut: 30_686_957, fixed: true) == '30686957-4'
   end
 
   def test_rut_length
@@ -21,7 +21,7 @@ class TestChileRut < Test::Unit::TestCase
   # since the whole idea of the method revolves around calculating
   # the check digit for that specific rut.
   def test_check_digit
-    assert @tester.rut(30_686_957, true) == 30_686_957
+    assert @tester.rut(min_rut: 30_686_957, fixed: true) == 30_686_957
     assert @tester.dv == '4'
   end
 end

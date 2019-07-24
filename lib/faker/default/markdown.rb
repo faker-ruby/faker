@@ -8,7 +8,7 @@ module Faker
       end
 
       def emphasis
-        paragraph = Faker::Lorem.paragraph(3)
+        paragraph = Faker::Lorem.paragraph(sentence_count: 3)
         words = paragraph.split(' ')
         position = rand(0..words.length - 1)
         formatting = fetch('markdown.emphasis')
@@ -21,7 +21,7 @@ module Faker
 
         result = []
         number.times do |i|
-          result << "#{i}. #{Faker::Lorem.sentence(1)} \n"
+          result << "#{i}. #{Faker::Lorem.sentence(word_count: 1)} \n"
         end
         result.join('')
       end
@@ -31,17 +31,17 @@ module Faker
 
         result = []
         number.times do |_i|
-          result << "* #{Faker::Lorem.sentence(1)} \n"
+          result << "* #{Faker::Lorem.sentence(word_count: 1)} \n"
         end
         result.join('')
       end
 
       def inline_code
-        "`#{Faker::Lorem.sentence(1)}`"
+        "`#{Faker::Lorem.sentence(word_count: 1)}`"
       end
 
       def block_code
-        "```ruby\n#{Lorem.sentence(1)}\n```"
+        "```ruby\n#{Lorem.sentence(word_count: 1)}\n```"
       end
 
       def table
@@ -59,11 +59,11 @@ module Faker
         send(method_list[rand(0..method_list.length - 1)])
       end
 
-      def sandwich(sentences = 3, repeat = 1)
+      def sandwich(sentences: 3, repeat: 1)
         text_block = []
         text_block << headers
         repeat.times do
-          text_block << Faker::Lorem.paragraph(sentences)
+          text_block << Faker::Lorem.paragraph(sentence_count: sentences)
           text_block << random
         end
         text_block.join("\n")

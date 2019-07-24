@@ -5,49 +5,49 @@ module Faker
     class << self
       def user(include_status: true, include_email: false)
         user_id = id
-        background_image_url = Faker::LoremPixel.image('600x400') # TODO: Make the dimensions change
-        profile_image_url = Faker::Avatar.image(user_id, '48x48')
+        background_image_url = Faker::LoremPixel.image(size: '600x400') # TODO: Make the dimensions change
+        profile_image_url = Faker::Avatar.image(slug: user_id, size: '48x48')
         user = {
           id: user_id,
           id_str: user_id.to_s,
-          contributors_enabled: Faker::Boolean.boolean(0.1),
+          contributors_enabled: Faker::Boolean.boolean(true_ratio: 0.1),
           created_at: created_at,
-          default_profile_image: Faker::Boolean.boolean(0.1),
-          default_profile: Faker::Boolean.boolean(0.1),
+          default_profile_image: Faker::Boolean.boolean(true_ratio: 0.1),
+          default_profile: Faker::Boolean.boolean(true_ratio: 0.1),
           description: Faker::Lorem.sentence,
           entities:  user_entities,
-          favourites_count: Faker::Number.between(1, 100_000),
+          favourites_count: Faker::Number.between(to: 1, from: 100_000),
           follow_request_sent: false,
-          followers_count: Faker::Number.between(1, 10_000_000),
+          followers_count: Faker::Number.between(to: 1, from: 10_000_000),
           following: false,
-          friends_count: Faker::Number.between(1, 100_000),
-          geo_enabled: Faker::Boolean.boolean(0.1),
-          is_translation_enabled: Faker::Boolean.boolean(0.1),
-          is_translator: Faker::Boolean.boolean(0.1),
+          friends_count: Faker::Number.between(to: 1, from: 100_000),
+          geo_enabled: Faker::Boolean.boolean(true_ratio: 0.1),
+          is_translation_enabled: Faker::Boolean.boolean(true_ratio: 0.1),
+          is_translator: Faker::Boolean.boolean(true_ratio: 0.1),
           lang: Faker::Address.country_code,
-          listed_count: Faker::Number.between(1, 1000),
+          listed_count: Faker::Number.between(to: 1, from: 1000),
           location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}, #{Faker::Address.country_code}",
           name: Faker::Name.name,
           notifications: false,
           profile_background_color: Faker::Color.hex_color,
           profile_background_image_url_https: background_image_url,
           profile_background_image_url: background_image_url.sub('https://', 'http://'),
-          profile_background_tile: Faker::Boolean.boolean(0.1),
-          profile_banner_url: Faker::LoremPixel.image('1500x500'),
+          profile_background_tile: Faker::Boolean.boolean(true_ratio: 0.1),
+          profile_banner_url: Faker::LoremPixel.image(size: '1500x500'),
           profile_image_url_https: profile_image_url,
           profile_image_url: profile_image_url.sub('https://', 'http://'),
           profile_link_color: Faker::Color.hex_color,
           profile_sidebar_border_color: Faker::Color.hex_color,
           profile_sidebar_fill_color: Faker::Color.hex_color,
           profile_text_color: Faker::Color.hex_color,
-          profile_use_background_image: Faker::Boolean.boolean(0.4),
-          protected: Faker::Boolean.boolean(0.1),
+          profile_use_background_image: Faker::Boolean.boolean(true_ratio: 0.4),
+          protected: Faker::Boolean.boolean(true_ratio: 0.1),
           screen_name: screen_name,
-          statuses_count: Faker::Number.between(1, 100_000),
+          statuses_count: Faker::Number.between(to: 1, from: 100_000),
           time_zone: Faker::Address.time_zone,
-          url: Faker::Internet.url('example.com'),
+          url: Faker::Internet.url(host: 'example.com'),
           utc_offset: utc_offset,
-          verified: Faker::Boolean.boolean(0.1)
+          verified: Faker::Boolean.boolean(true_ratio: 0.1)
         }
         user[:status] = Faker::Twitter.status(include_user: false) if include_status
         user[:email] = Faker::Internet.safe_email if include_email
@@ -63,7 +63,7 @@ module Faker
           coordinates: nil,
           created_at: created_at,
           entities:  status_entities(include_photo: include_photo),
-          favorite_count: Faker::Number.between(1, 10_000),
+          favorite_count: Faker::Number.between(to: 1, from: 10_000),
           favorited: false,
           geo: nil,
           in_reply_to_screen_name: nil,
@@ -74,11 +74,11 @@ module Faker
           lang: Faker::Address.country_code,
           nil: nil,
           place: nil,
-          possibly_sensitive: Faker::Boolean.boolean(0.1),
-          retweet_count: Faker::Number.between(1, 10_000),
+          possibly_sensitive: Faker::Boolean.boolean(true_ratio: 0.1),
+          retweet_count: Faker::Number.between(to: 1, from: 10_000),
           retweeted_status:  nil,
           retweeted: false,
-          source: "<a href=\"#{Faker::Internet.url('example.com')}\" rel=\"nofollow\">#{Faker::Company.name}</a>",
+          source: "<a href=\"#{Faker::Internet.url(host: 'example.com')}\" rel=\"nofollow\">#{Faker::Company.name}</a>",
           text: Faker::Lorem.sentence,
           truncated: false
         }
@@ -88,13 +88,13 @@ module Faker
       end
 
       def screen_name
-        Faker::Internet.username(nil, ['_'])[0...20]
+        Faker::Internet.username(specifier: nil, separators: ['_'])[0...20]
       end
 
       private
 
       def id
-        Faker::Number.between(1, 9_223_372_036_854_775_807)
+        Faker::Number.between(from: 1, to: 9_223_372_036_854_775_807)
       end
 
       def created_at
@@ -102,7 +102,7 @@ module Faker
       end
 
       def utc_offset
-        Faker::Number.between(-43_200, 50_400)
+        Faker::Number.between(to: -43_200, from: 50_400)
       end
 
       def user_entities
@@ -130,7 +130,7 @@ module Faker
       def photo_entity
         # TODO: Dynamic image sizes
         # TODO: Return accurate indices
-        media_url = Faker::LoremPixel.image('1064x600')
+        media_url = Faker::LoremPixel.image(size: '1064x600')
         media_id = id
         {
           id: media_id,
@@ -141,9 +141,9 @@ module Faker
           ],
           media_url: media_url.sub('https://', 'http://'),
           media_url_https: media_url,
-          url: Faker::Internet.url('example.com'),
+          url: Faker::Internet.url(host: 'example.com'),
           display_url: 'example.com',
-          expanded_url: Faker::Internet.url('example.com'),
+          expanded_url: Faker::Internet.url(host: 'example.com'),
           type: 'photo',
           sizes:  {
             medium:  {

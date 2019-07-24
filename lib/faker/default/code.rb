@@ -12,26 +12,26 @@ module Faker
 
       # By default generates 10 sign isbn code in format 123456789-X
       # You can pass 13 to generate new 13 sign code
-      def isbn(base = 10)
+      def isbn(base: 10)
         base == 13 ? generate_base13_isbn : generate_base10_isbn
       end
 
       # By default generates 13 sign ean code in format 1234567890123
       # You can pass 8 to generate ean8 code
-      def ean(base = 13)
+      def ean(base: 13)
         base == 8 ? generate_base8_ean : generate_base13_ean
       end
 
       def rut
-        value = Number.number(8).to_s
+        value = Number.number(digits: 8).to_s
         vd = rut_verificator_digit(value)
         value << "-#{vd}"
       end
 
       # By default generates a Singaporean NRIC ID for someone
       # who is born between the age of 18 and 65.
-      def nric(min_age = 18, max_age = 65)
-        birthyear = Date.birthday(min_age, max_age).year
+      def nric(min_age: 18, max_age: 65)
+        birthyear = Date.birthday(min_age: min_age, max_age: max_age).year
         prefix = birthyear < 2000 ? 'S' : 'T'
         values = birthyear.to_s[-2..-1]
         values << regexify(/\d{5}/)

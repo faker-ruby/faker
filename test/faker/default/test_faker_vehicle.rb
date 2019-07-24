@@ -56,7 +56,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_mileage
-    mileage = @tester.mileage(5, 10)
+    mileage = @tester.mileage(min: 5, max: 10)
 
     assert mileage >= 5 && mileage <= 10
   end
@@ -66,7 +66,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_license_plate_with_params
-    assert_match WORD_MATCH, @tester.license_plate('CA')
+    assert_match WORD_MATCH, @tester.license_plate(state_abreviation: 'CA')
   end
 
   def test_make
@@ -78,7 +78,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_model_with_make
-    assert_match WORD_MATCH, @tester.model('Toyota')
+    assert_match WORD_MATCH, @tester.model(make_of_model: 'Toyota')
   end
 
   def test_make_and_model

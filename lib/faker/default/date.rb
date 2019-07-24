@@ -21,21 +21,21 @@ module Faker
         end
       end
 
-      def forward(days = 365)
+      def forward(days: 365)
         from = ::Date.today + 1
         to   = ::Date.today + days
 
         between(from, to).to_date
       end
 
-      def backward(days = 365)
+      def backward(days: 365)
         from = ::Date.today - days
         to   = ::Date.today - 1
 
         between(from, to).to_date
       end
 
-      def birthday(min_age = 18, max_age = 65)
+      def birthday(min_age: 18, max_age: 65)
         t = ::Date.today
 
         from = birthday_date(t, max_age)

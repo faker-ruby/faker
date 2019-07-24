@@ -12,13 +12,13 @@ Faker::Types.rb_integer #=> 1
 
 # Random Hash (with random keys and values)
 Faker::Types.rb_hash #=> {name: "bob"}
-Faker::Types.rb_hash(1) #=> {name: "bob"}
-Faker::Types.rb_hash(2) #=> {name: "bob", last: "marley"}
+Faker::Types.rb_hash(key_count: 1) #=> {name: "bob"}
+Faker::Types.rb_hash(key_count: 2) #=> {name: "bob", last: "marley"}
 
-# Random Complex Hash (values include other hashes and arrays) 
+# Random Complex Hash (values include other hashes and arrays)
 Faker::Types.complex_rb_hash #=> {user: {first: "bob", last: "marley"}}
-Faker::Types.complex_rb_hash(1) #=> {user: {first: "bob", last: "marley"}}
-Faker::Types.complex_rb_hash(2) #=> {user: {first: "bob", last: "marley"}, son: ["damien", "marley"]}
+Faker::Types.complex_rb_hash(key_count: 1) #=> {user: {first: "bob", last: "marley"}}
+Faker::Types.complex_rb_hash(key_count: 2) #=> {user: {first: "bob", last: "marley"}, son: ["damien", "marley"]}
 
 # Random Array
 Faker::Types.rb_array #=> ["a", 1, 2, "bob"]

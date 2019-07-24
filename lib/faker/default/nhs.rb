@@ -7,15 +7,15 @@ module Faker
         base_number = rand(400_000_001...499_999_999)
         # If the check digit is equivalent to 10, the number is invalid.
         # See https://en.wikipedia.org/wiki/NHS_number
-        base_number -= 1 if check_digit(base_number) == 10
-        "#{base_number}#{check_digit(base_number)}".to_s
-                                                   .chars
-                                                   .insert(3, ' ')
-                                                   .insert(7, ' ')
-                                                   .join('')
+        base_number -= 1 if check_digit(number: base_number) == 10
+        "#{base_number}#{check_digit(number: base_number)}".to_s
+                                                           .chars
+                                                           .insert(3, ' ')
+                                                           .insert(7, ' ')
+                                                           .join('')
       end
 
-      def check_digit(number = 0)
+      def check_digit(number: 0)
         sum = 0
         number.to_s.chars.each_with_index do |digit, idx|
           position = idx + 1

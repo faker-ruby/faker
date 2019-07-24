@@ -16,7 +16,7 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_promotion_code_should_have_specified_number_of_digits
-    assert @tester.promotion_code(3).match(/[A-Z][a-z]+[A-Z][a-z]+\d{3}/)
+    assert @tester.promotion_code(digits: 3).match(/[A-Z][a-z]+[A-Z][a-z]+\d{3}/)
   end
 
   def test_department
@@ -24,11 +24,11 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_single_department_should_not_contain_separators
-    assert_match(/\A[A-Za-z]+\z/, @tester.department(1))
+    assert_match(/\A[A-Za-z]+\z/, @tester.department(max: 1))
   end
 
   def test_department_should_have_ampersand_as_default_separator
-    assert_match ' & ', @tester.department(2, true)
+    assert_match ' & ', @tester.department(max: 2, fixed_amount: true)
   end
 
   def test_department_should_accept_localized_separator
@@ -45,23 +45,23 @@ class TestFakerCommerce < Test::Unit::TestCase
     I18n.config.available_locales += [:xy]
     I18n.backend.store_translations(:xy, data)
     I18n.with_locale(:xy) do
-      assert_match ' + ', @tester.department(2, true)
+      assert_match ' + ', @tester.department(max: 2, fixed_amount: true)
     end
     I18n.config.available_locales = @old_locales
   end
 
   def test_department_should_have_exact_number_of_categories_when_fixed_amount
-    assert_match(/\A([A-Za-z]+, ){8}[A-Za-z]+ & [A-Za-z]+\z/, @tester.department(10, true))
+    assert_match(/\A([A-Za-z]+, ){8}[A-Za-z]+ & [A-Za-z]+\z/, @tester.department(max: 10, fixed_amount: true))
   end
 
   def test_department_should_never_exceed_the_max_number_of_categories_when_random_amount
     100.times do
-      assert_match(/\A([A-Za-z]+(, | & )){0,5}[A-Za-z]+\z/, @tester.department(6))
+      assert_match(/\A([A-Za-z]+(, | & )){0,5}[A-Za-z]+\z/, @tester.department(max: 6))
     end
   end
 
   def test_department_should_have_no_duplicate_categories
-    department = @tester.department(10, true)
+    department = @tester.department(max: 10, fixed_amount: true)
 
     departments = department.split(/[,& ]+/)
     assert_equal departments, departments.uniq

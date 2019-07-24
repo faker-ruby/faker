@@ -44,7 +44,7 @@ module Faker
           sentence + sample(['.', '?', '!'])
         end
 
-        def quote(character = nil)
+        def quote(character: nil)
           quoted_characters = translate('faker.star_wars.quotes')
 
           if character.nil?

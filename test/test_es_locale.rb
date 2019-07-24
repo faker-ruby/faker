@@ -86,7 +86,7 @@ class TestEsLocale < Test::Unit::TestCase
     assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.initials.match(/[A-Z]{3}/)
-    assert Faker::Name.initials(2).match(/[A-Z]{2}/)
+    assert Faker::Name.initials(character_count: 2).match(/[A-Z]{2}/)
   end
 
   def test_es_vehicle_methods

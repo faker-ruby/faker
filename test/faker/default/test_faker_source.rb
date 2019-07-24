@@ -36,6 +36,6 @@ class TestFakerSource < Test::Unit::TestCase
   end
 
   def test_print_1_to_10_javascript
-    assert_match 'console.log(i);', @tester.print_1_to_10(:javascript)
+    assert_match 'console.log(i);', @tester.print_1_to_10(lang: :javascript)
   end
 end

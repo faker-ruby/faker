@@ -9,7 +9,7 @@ module Faker
       def british_driving_licence(last_name: Faker::Name.last_name,
                                   initials: Faker::Name.initials,
                                   gender: random_gender,
-                                  date_of_birth: Faker::Date.birthday(18, 65))
+                                  date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65))
         [
           gb_licence_padding(last_name, 5),
           gb_licence_year(date_of_birth, gender),
@@ -19,7 +19,7 @@ module Faker
       end
 
       def northern_irish_driving_licence
-        Faker::Number.number(8).to_s
+        Faker::Number.number(digits: 8).to_s
       end
 
       def uk_driving_licence(*args)
