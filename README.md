@@ -68,12 +68,7 @@ Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ```
 
 ### CLI
-
-Usage Instructions [available here](https://github.com/stympy/faker/blob/master/lib/cli/README.md)
-
-```bash
-$ faker
-```
+Instructions are available in the [faker-bot README](https://github.com/faker-ruby/faker-bot).
 
 ### Ensuring unique values
 Prefix your method call with `unique`. For example:

@@ -29,4 +29,7 @@ Faker::Cannabis.type #=> "hybrid"
 
 # Random buzzword
 Faker::Cannabis.buzzword #=> "blunt wrap"
+
+# Random brand
+Faker::Cannabis.brand #=> "Chong's Choice"
 ```
