@@ -8,7 +8,7 @@ module Faker
         raise ArgumentError, 'Height should be a number' unless height.to_s =~ /^\d+$/
         raise ArgumentError, 'Grayscale should be a boolean' unless [true, false].include?(grayscale)
 
-        grayscale == true ? "https://fillmurray.com/g/#{width}/#{height}" : "https://fillmurray.com/#{width}/#{height}"
+        "https://www.fillmurray.com#{'/g' if grayscale == true}/#{width}/#{height}"
       end
     end
   end
