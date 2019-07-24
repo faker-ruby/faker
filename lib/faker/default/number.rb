@@ -21,7 +21,7 @@ module Faker
           num = non_zero_digit
           digits -= 1
         end
-        leading_zero_number(digits) + num
+        leading_zero_number(digits) + num.to_s
       end
 
       def decimal(l_digits = 5, r_digits = 2)
