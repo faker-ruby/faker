@@ -7,12 +7,15 @@ module Faker
         def song
           fetch('prince.song')
         end
+
         def lyric
           fetch('prince.lyric')
         end
+
         def album
           fetch('prince.album')
         end
+
         def band
           fetch('prince.band')
         end
