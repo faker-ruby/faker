@@ -8,8 +8,8 @@ module Faker
         sample(translate('faker.lorem.words'))
       end
 
-      def words(characters: 3, supplemental: false)
-        resolved_num = resolve(characters)
+      def words(number: 3, supplemental: false)
+        resolved_num = resolve(number)
         word_list = (
           translate('faker.lorem.words') +
           (supplemental ? translate('faker.lorem.supplemental') : [])
@@ -31,7 +31,7 @@ module Faker
       end
 
       def sentence(word_count: 4, supplemental: false, random_words_to_add: 0)
-        words(characters: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(' ').capitalize + locale_period
+        words(number: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(' ').capitalize + locale_period
       end
 
       def sentences(sentence_count: 3, supplemental: false)
@@ -55,7 +55,7 @@ module Faker
       end
 
       def question(word_count: 4, supplemental: false, random_words_to_add: 0)
-        words(characters: word_count + rand(random_words_to_add), supplemental: supplemental).join(' ').capitalize + locale_question_mark
+        words(number: word_count + rand(random_words_to_add), supplemental: supplemental).join(' ').capitalize + locale_question_mark
       end
 
       def questions(question_count: 3, supplemental: false)

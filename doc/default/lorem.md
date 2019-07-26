@@ -5,8 +5,8 @@ Faker::Lorem.word #=> "repellendus"
 
 # Optional arguments: num=3, supplemental=false (words from a supplementary list of Lorem-like words)
 Faker::Lorem.words #=> ["dolores", "adipisci", "nesciunt"]
-Faker::Lorem.words(characters: 4) #=> ["culpa", "recusandae", "aut", "omnis"]
-Faker::Lorem.words(characters: 4, supplemental: true) #=> ["colloco", "qui", "vergo", "deporto"]
+Faker::Lorem.words(number: 4) #=> ["culpa", "recusandae", "aut", "omnis"]
+Faker::Lorem.words(number: 4, supplemental: true) #=> ["colloco", "qui", "vergo", "deporto"]
 
 Faker::Lorem.multibyte #=> 😀
 

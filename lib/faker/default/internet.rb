@@ -180,7 +180,7 @@ module Faker
 
       def slug(words: nil, glue: nil)
         glue ||= sample(%w[- _])
-        (words || Faker::Lorem.words(characters: 2).join(' ')).delete(',.').gsub(' ', glue).downcase
+        (words || Faker::Lorem.words(number: 2).join(' ')).delete(',.').gsub(' ', glue).downcase
       end
 
       def device_token

@@ -8,8 +8,8 @@ module Faker
         random_word =~ /\s/ ? word : random_word
       end
 
-      def words(characters: 3, supplemental: false, spaces_allowed: false)
-        resolved_num = resolve(characters)
+      def words(number: 3, supplemental: false, spaces_allowed: false)
+        resolved_num = resolve(number)
         word_list = (
           translate('faker.hipster.words') +
           (supplemental ? translate('faker.lorem.words') : [])
@@ -23,7 +23,7 @@ module Faker
       end
 
       def sentence(word_count: 4, supplemental: false, random_words_to_add: 6)
-        words(characters: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: true).join(' ').capitalize + '.'
+        words(number: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: true).join(' ').capitalize + '.'
       end
 
       def sentences(sentence_count: 3, supplemental: false)

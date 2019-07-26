@@ -7,9 +7,9 @@ Faker::Hipster.word #=> "irony"
 
 # Optional arguments: num=3, supplemental=false, spaces_allowed = false
 Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
-Faker::Hipster.words(characters: 4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
-Faker::Hipster.words(characters: 4, supplemental: true) #=> ["iste", "seitan", "normcore", "provident"]
-Faker::Hipster.words(characters: 4, supplemental: true, spaces_allowed: true) #=> ["qui", "magni", "craft beer", "est"]
+Faker::Hipster.words(number: 4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
+Faker::Hipster.words(number: 4, supplemental: true) #=> ["iste", "seitan", "normcore", "provident"]
+Faker::Hipster.words(number: 4, supplemental: true, spaces_allowed: true) #=> ["qui", "magni", "craft beer", "est"]
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
 Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
