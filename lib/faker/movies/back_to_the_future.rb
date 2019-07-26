@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Movies
+  class Movies
     class BackToTheFuture < Base
       class << self
         def character

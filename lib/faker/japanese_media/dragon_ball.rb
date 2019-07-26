@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module JapaneseMedia
+  class JapaneseMedia
     class DragonBall < Base
       class << self
         def character

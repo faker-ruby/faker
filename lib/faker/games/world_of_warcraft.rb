@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Games
+  class Games
     class WorldOfWarcraft < Base
       class << self
         def hero
