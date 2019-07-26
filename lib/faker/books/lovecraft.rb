@@ -21,7 +21,7 @@ module Faker
         end
 
         def sentence(word_count: 4, random_words_to_add: 6)
-          words(num: word_count + rand(random_words_to_add.to_i).to_i, spaces_allowed: true).join(' ').capitalize + '.'
+          words(characters: word_count + rand(random_words_to_add.to_i).to_i, spaces_allowed: true).join(' ').capitalize + '.'
         end
 
         def word
@@ -29,8 +29,8 @@ module Faker
           random_word =~ /\s/ ? word : random_word
         end
 
-        def words(num: 3, spaces_allowed: false)
-          resolved_num = resolve(num)
+        def words(characters: 3, spaces_allowed: false)
+          resolved_num = resolve(characters)
           word_list = translate('faker.lovecraft.words')
           word_list *= ((resolved_num / word_list.length) + 1)
 

@@ -8,8 +8,8 @@ module Faker
         sample(translate('faker.lorem.words'))
       end
 
-      def words(num: 3, supplemental: false)
-        resolved_num = resolve(num)
+      def words(characters: 3, supplemental: false)
+        resolved_num = resolve(characters)
         word_list = (
           translate('faker.lorem.words') +
           (supplemental ? translate('faker.lorem.supplemental') : [])
@@ -22,8 +22,8 @@ module Faker
         sample(Types::CHARACTERS)
       end
 
-      def characters(char_count: 255)
-        Alphanumeric.alphanumeric(char_count: char_count)
+      def characters(characters: 255)
+        Alphanumeric.alphanumeric(characters: characters)
       end
 
       def multibyte
@@ -31,7 +31,7 @@ module Faker
       end
 
       def sentence(word_count: 4, supplemental: false, random_words_to_add: 0)
-        words(num: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(' ').capitalize + locale_period
+        words(characters: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(' ').capitalize + locale_period
       end
 
       def sentences(sentence_count: 3, supplemental: false)
@@ -46,16 +46,16 @@ module Faker
         1.upto(resolve(paragraph_count)).collect { paragraph(sentence_count: 3, supplemental: supplemental) }
       end
 
-      def paragraph_by_chars(chars: 256, supplemental: false)
+      def paragraph_by_chars(characters: 256, supplemental: false)
         paragraph = paragraph(sentence_count: 3, supplemental: supplemental)
 
-        paragraph += ' ' + paragraph(sentence_count: 3, supplemental: supplemental) while paragraph.length < chars
+        paragraph += ' ' + paragraph(sentence_count: 3, supplemental: supplemental) while paragraph.length < characters
 
-        paragraph[0...chars - 1] + '.'
+        paragraph[0...characters - 1] + '.'
       end
 
       def question(word_count: 4, supplemental: false, random_words_to_add: 0)
-        words(num: word_count + rand(random_words_to_add), supplemental: supplemental).join(' ').capitalize + locale_question_mark
+        words(characters: word_count + rand(random_words_to_add), supplemental: supplemental).join(' ').capitalize + locale_question_mark
       end
 
       def questions(question_count: 3, supplemental: false)

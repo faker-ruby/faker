@@ -46,8 +46,8 @@ module Faker
         fetch('name.suffix')
       end
 
-      def initials(character_count: 3)
-        (0...character_count).map { rand(65..90).chr }.join
+      def initials(characters: 3)
+        (0...characters).map { rand(65..90).chr }.join
       end
     end
   end

@@ -98,7 +98,7 @@ module Faker
       end
 
       def created_at
-        Faker::Date.between('2006-03-21', ::Date.today).strftime('%a %b %d %H:%M:%S %z %Y')
+        Faker::Date.between(from: '2006-03-21', to: ::Date.today).strftime('%a %b %d %H:%M:%S %z %Y')
       end
 
       def utc_offset

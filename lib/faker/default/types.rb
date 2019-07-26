@@ -26,7 +26,7 @@ module Faker
 
       def rb_hash(key_count: 1, type: random_type)
         {}.tap do |hsh|
-          Lorem.words(num: key_count * 2).uniq.first(key_count).each do |s|
+          Lorem.words(characters: key_count * 2).uniq.first(key_count).each do |s|
             hsh.merge!(s.to_sym => type)
           end
         end

@@ -20,5 +20,5 @@ Faker::Name.prefix           #=> "Mr."
 Faker::Name.suffix           #=> "IV"
 
 Faker::Name.initials         #=> "NJM"
-Faker::Name.initials(character_count: 2)  #=> "NM"
+Faker::Name.initials(characters: 2)  #=> "NM"
 ```

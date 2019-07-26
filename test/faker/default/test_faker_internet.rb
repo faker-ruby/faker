@@ -126,7 +126,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_password_with_special_chars
-    assert @tester.password(min_length: 8, max_length: 12, mix_case: true, special_chars: true).match(/[!@#\$%\^&\*]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: true, special_characters: true).match(/[!@#\$%\^&\*]+/)
   end
 
   def test_password_without_special_chars

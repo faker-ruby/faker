@@ -77,9 +77,9 @@ class TestFakerCommerce < Test::Unit::TestCase
 
   def test_price
     assert_includes 0..100, @tester.price
-    assert_instance_of Float, @tester.price(5..6)
-    assert_includes 5..6, @tester.price(5..6)
-    assert_includes 990...1000, @tester.price(990...1000)
+    assert_instance_of Float, @tester.price(range: 5..6)
+    assert_includes 5..6, @tester.price(range: 5..6)
+    assert_includes 990...1000, @tester.price(range: 990...1000)
   end
 
   def test_price_with_srand
@@ -92,7 +92,7 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_when_as_string_is_true
-    assert @tester.price(0..100.0, true).is_a?(String)
-    assert @tester.price(100..500.0, true).include?('.')
+    assert @tester.price(range: 0..100.0, as_string: true).is_a?(String)
+    assert @tester.price(range: 100..500.0, as_string: true).include?('.')
   end
 end

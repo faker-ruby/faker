@@ -5,14 +5,14 @@ Faker::Lorem.word #=> "repellendus"
 
 # Optional arguments: num=3, supplemental=false (words from a supplementary list of Lorem-like words)
 Faker::Lorem.words #=> ["dolores", "adipisci", "nesciunt"]
-Faker::Lorem.words(num: 4) #=> ["culpa", "recusandae", "aut", "omnis"]
-Faker::Lorem.words(num: 4, supplemental: true) #=> ["colloco", "qui", "vergo", "deporto"]
+Faker::Lorem.words(characters: 4) #=> ["culpa", "recusandae", "aut", "omnis"]
+Faker::Lorem.words(characters: 4, supplemental: true) #=> ["colloco", "qui", "vergo", "deporto"]
 
 Faker::Lorem.multibyte #=> 😀
 
 # Optional arguments: char_count=255
 Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omquh7br7dhqijwlawejpl765nb1716idmp3xnfo85v349pzy2o9rir23y2qhflwr71c1585fnynguiphkjm8p0vktwitcsm16lny7jzp9t4drwav3qmhz4yjq4k04x14gl6p148hulyqioo72tf8nwrxxcclfypz2lc58lsibgfe5w5p0xv95peafjjmm2frkhdc6duoky0aha"
-Faker::Lorem.characters(char_count: 10) #=> "ang9cbhoa8"
+Faker::Lorem.characters(characters: 10) #=> "ang9cbhoa8"
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=0
 # The 'random_words_to_add' argument increases the sentence's word count by a random value within (0..random_words_to_add).
@@ -52,5 +52,5 @@ Faker::Lorem.questions(question_count: 3) #=> ["Ratione eaque doloremque?", "Qui
 
 # Optional arguments: chars=3, supplemental=false
 Faker::Lorem.paragraph_by_chars #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
-Faker::Lorem.paragraph_by_chars(chars: 256, supplemental: false) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
+Faker::Lorem.paragraph_by_chars(characters: 256, supplemental: false) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
 ```

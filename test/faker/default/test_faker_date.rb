@@ -12,7 +12,7 @@ class TestFakerDate < Test::Unit::TestCase
     to   = Date.parse('2013-01-01')
 
     100.times do
-      random_date = @tester.between(from, to)
+      random_date = @tester.between(from: from, to: to)
       assert random_date >= from, "Expected >= \"#{from}\", but got #{random_date}"
       assert random_date <= to, "Expected <= \"#{to}\", but got #{random_date}"
     end
@@ -24,7 +24,7 @@ class TestFakerDate < Test::Unit::TestCase
     excepted = Date.parse('2012-01-03')
 
     100.times do
-      random_date = @tester.between_except(from, to, excepted)
+      random_date = @tester.between_except(from: from, to: to, excepted: excepted)
       assert_not_nil random_date
       assert random_date != excepted, "Expected != \"#{excepted}\", but got #{random_date}"
     end
@@ -38,7 +38,7 @@ class TestFakerDate < Test::Unit::TestCase
     excepted_date = Date.parse(excepted)
 
     100.times do
-      random_date = @tester.between_except(from, to, excepted)
+      random_date = @tester.between_except(from: from, to: to, excepted: excepted)
       assert_not_nil random_date
       assert random_date != excepted_date, "Expected != \"#{excepted}\", but got #{random_date}"
     end
@@ -71,7 +71,7 @@ class TestFakerDate < Test::Unit::TestCase
   def test_return_type
     random_forward  = @tester.forward(days: 5)
     random_backward = @tester.backward(days: 5)
-    random_between  = @tester.between(Date.today, Date.today + 5)
+    random_between  = @tester.between(from: Date.today, to: Date.today + 5)
 
     [random_forward, random_backward, random_between].each do |result|
       assert result.is_a?(Date), "Expected a Date object, but got #{result.class}"

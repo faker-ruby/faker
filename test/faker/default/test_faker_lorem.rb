@@ -23,24 +23,24 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_characters_negatives
-    assert_equal '', @tester.characters(char_count: -1)
-    assert_equal '', @tester.characters(char_count: (-2..-1))
-    assert_equal '', @tester.characters(char_count: [-1, -2])
+    assert_equal '', @tester.characters(characters: -1)
+    assert_equal '', @tester.characters(characters: (-2..-1))
+    assert_equal '', @tester.characters(characters: [-1, -2])
   end
 
   def test_characters_with_args
-    100.times { assert @tester.characters(char_count: 500).length == 500 }
+    100.times { assert @tester.characters(characters: 500).length == 500 }
   end
 
   # Words delivered by a standard request should be on the standard wordlist.
   def test_standard_words
-    @words = @tester.words(num: 1000)
+    @words = @tester.words(characters: 1000)
     @words.each { |w| assert @standard_wordlist.include?(w) }
   end
 
   # Words requested from the supplemental list should all be in that list.
   def test_supplemental_words
-    @words = @tester.words(num: 10_000, supplemental: true)
+    @words = @tester.words(characters: 10_000, supplemental: true)
     @words.each { |w| assert @complete_wordlist.include?(w) }
   end
 
@@ -56,15 +56,15 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_exact_count_param
-    assert(@tester.characters(char_count: 2).length == 2)
-    assert(@tester.words(num: 2).length == 2)
+    assert(@tester.characters(characters: 2).length == 2)
+    assert(@tester.words(characters: 2).length == 2)
     assert(@tester.sentences(sentence_count: 2).length == 2)
     assert(@tester.paragraphs(paragraph_count: 2).length == 2)
   end
 
   def test_range_count_param
-    cs = @tester.characters(char_count: 2..5)
-    ws = @tester.words(num: 2..5)
+    cs = @tester.characters(characters: 2..5)
+    ws = @tester.words(characters: 2..5)
     ss = @tester.sentences(sentence_count: 2..5)
     ps = @tester.paragraphs(paragraph_count: 2..5)
 
@@ -75,8 +75,8 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_exclusive_range_count_param
-    cs = @tester.characters(char_count: 2...3)
-    ws = @tester.words(num: 2...3)
+    cs = @tester.characters(characters: 2...3)
+    ws = @tester.words(characters: 2...3)
     ss = @tester.sentences(sentence_count: 2...3)
     ps = @tester.paragraphs(paragraph_count: 2...3)
 
@@ -87,8 +87,8 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_array_count_param
-    cs = @tester.characters(char_count: [1, 4])
-    ws = @tester.words(num: [1, 4])
+    cs = @tester.characters(characters: [1, 4])
+    ws = @tester.words(characters: [1, 4])
     ss = @tester.sentences(sentence_count: [1, 4])
     ps = @tester.paragraphs(paragraph_count: [1, 4])
 
@@ -99,9 +99,9 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_words_with_large_count_params
-    exact = @tester.words(num: 500)
-    range = @tester.words(num: 250..500)
-    array = @tester.words(num: [250, 500])
+    exact = @tester.words(characters: 500)
+    range = @tester.words(characters: 250..500)
+    array = @tester.words(characters: [250, 500])
 
     assert(exact.length == 500)
     assert(range.length >= 250 && range.length <= 500)
@@ -114,7 +114,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_paragraph_char_count
-    paragraph = @tester.paragraph_by_chars(chars: 256)
+    paragraph = @tester.paragraph_by_chars(characters: 256)
     assert(paragraph.length == 256)
   end
 

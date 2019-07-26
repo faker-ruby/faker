@@ -12,19 +12,19 @@ class TestFakerHipster < Test::Unit::TestCase
 
   # Words delivered by a standard request should be on the standard wordlist.
   def test_words
-    @words = @tester.words(num: 1000)
+    @words = @tester.words(characters: 1000)
     @words.each { |w| assert @standard_wordlist.include?(w) }
   end
 
   # Words should not return any word with spaces
   def test_words_without_spaces
-    @words = @tester.words(num: 1000)
+    @words = @tester.words(characters: 1000)
     @words.each { |w| assert !w.match(/\s/) }
   end
 
   # Words requested from the supplemental list should all be in that list.
   def test_supplemental_words
-    @words = @tester.words(num: 10_000, supplemental: true)
+    @words = @tester.words(characters: 10_000, supplemental: true)
     @words.each { |w| assert @complete_wordlist.include?(w) }
   end
 
@@ -42,13 +42,13 @@ class TestFakerHipster < Test::Unit::TestCase
   end
 
   def test_exact_count_param
-    assert(@tester.words(num: 2).length == 2)
+    assert(@tester.words(characters: 2).length == 2)
     assert(@tester.sentences(sentence_count: 2).length == 2)
     assert(@tester.paragraphs(paragraph_count: 2).length == 2)
   end
 
   def test_range_count_param
-    ws = @tester.words(num: 2..5)
+    ws = @tester.words(characters: 2..5)
     ss = @tester.sentences(sentence_count: 2..5)
     ps = @tester.paragraphs(paragraph_count: 2..5)
 
@@ -58,7 +58,7 @@ class TestFakerHipster < Test::Unit::TestCase
   end
 
   def test_array_count_param
-    ws = @tester.words(num: [1, 4])
+    ws = @tester.words(characters: [1, 4])
     ss = @tester.sentences(sentence_count: [1, 4])
     ps = @tester.paragraphs(paragraph_count: [1, 4])
 
@@ -68,9 +68,9 @@ class TestFakerHipster < Test::Unit::TestCase
   end
 
   def test_words_with_large_count_params
-    exact = @tester.words(num: 500)
-    range = @tester.words(num: 250..500)
-    array = @tester.words(num: [250, 500])
+    exact = @tester.words(characters: 500)
+    range = @tester.words(characters: 250..500)
+    array = @tester.words(characters: [250, 500])
 
     assert(exact.length == 500)
     assert(range.length >= 250 && range.length <= 500)
@@ -78,7 +78,7 @@ class TestFakerHipster < Test::Unit::TestCase
   end
 
   def test_paragraph_char_count
-    paragraph = @tester.paragraph_by_chars(chars: 256)
+    paragraph = @tester.paragraph_by_chars(characters: 256)
     assert(paragraph.length == 256)
   end
 end

@@ -34,7 +34,7 @@ module Faker
         fetch('commerce.product_name.material')
       end
 
-      def price(range = 0..100.0, as_string = false)
+      def price(range: 0..100.0, as_string: false)
         price = (rand(range) * 100).floor / 100.0
         if as_string
           price_parts = price.to_s.split('.')

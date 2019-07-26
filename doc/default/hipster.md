@@ -7,9 +7,9 @@ Faker::Hipster.word #=> "irony"
 
 # Optional arguments: num=3, supplemental=false, spaces_allowed = false
 Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
-Faker::Hipster.words(num: 4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
-Faker::Hipster.words(num: 4, supplemental: true) #=> ["iste", "seitan", "normcore", "provident"]
-Faker::Hipster.words(num: 4, supplemental: true, spaces_allowed: true) #=> ["qui", "magni", "craft beer", "est"]
+Faker::Hipster.words(characters: 4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
+Faker::Hipster.words(characters: 4, supplemental: true) #=> ["iste", "seitan", "normcore", "provident"]
+Faker::Hipster.words(characters: 4, supplemental: true, spaces_allowed: true) #=> ["qui", "magni", "craft beer", "est"]
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
 Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
@@ -37,5 +37,5 @@ Faker::Hipster.paragraphs(paragraph_count: 1, supplemental: true) #=> ["Quae dir
 
 # Optional arguments: chars=3, supplemental=false
 Faker::Hipster.paragraph_by_chars #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
-Faker::Hipster.paragraph_by_chars(chars: 256, supplemental: false) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
+Faker::Hipster.paragraph_by_chars(characters: 256, supplemental: false) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
 ```

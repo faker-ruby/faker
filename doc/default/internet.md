@@ -11,7 +11,7 @@ Faker::Internet.email('Janelle Santiago', '+') #=> janelle+santiago@becker.com"
 # Optional argument name=nil
 Faker::Internet.free_email #=> "freddy@gmail.com"
 
-Faker::Internet.free_email(: 'Nancy') #=> "nancy@yahoo.com"
+Faker::Internet.free_email(name: 'Nancy') #=> "nancy@yahoo.com"
 
 # Optional argument name=nil
 Faker::Internet.safe_email #=> "christelle@example.org"
