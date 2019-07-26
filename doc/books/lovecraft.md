@@ -19,8 +19,8 @@ Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1) #=> "Amo
 
 # Optional arguments: num=3, spaces_allowed = false
 Faker::Books::Lovecraft.words #=> ["manuscript", "abnormal", "singular"]
-Faker::Books::Lovecraft.words(num: 2) #=> ["daemoniac", "cat"]
-Faker::Books::Lovecraft.words(num: 2, spaces_allowed: true) #=> ["lurk", "charnel"]
+Faker::Books::Lovecraft.words(number: 2) #=> ["daemoniac", "cat"]
+Faker::Books::Lovecraft.words(number: 2, spaces_allowed: true) #=> ["lurk", "charnel"]
 
 # Optional arguments: sentence_count=3
 Faker::Books::Lovecraft.sentences #=> ["Nameless loathsome decadent gambrel.", "Ululate swarthy immemorial cat madness gibbous unmentionable unnamable.", "Decadent antediluvian non-euclidean tentacles amorphous tenebrous."]
@@ -37,5 +37,5 @@ Faker::Books::Lovecraft.paragraphs(paragraph_count: 2) #=> ["Hideous amorphous m
 
 # Optional arguments: chars=3, supplemental=false
 Faker::Books::Lovecraft.paragraph_by_chars #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
-Faker::Books::Lovecraft.paragraph_by_chars(chars: 256) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
+Faker::Books::Lovecraft.paragraph_by_chars(characters: 256) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
 ```

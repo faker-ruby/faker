@@ -8,8 +8,8 @@ module Faker
           fetch('lovecraft.location')
         end
 
-        def fhtagn(number_of: 1)
-          Array.new(number_of) { fetch('lovecraft.fhtagn') }.join('. ')
+        def fhtagn(number: 1)
+          Array.new(number) { fetch('lovecraft.fhtagn') }.join('. ')
         end
 
         def deity
@@ -60,12 +60,12 @@ module Faker
           end
         end
 
-        def paragraph_by_chars(chars: 256)
+        def paragraph_by_chars(characters: 256)
           paragraph = paragraph(sentence_count: 3)
 
-          paragraph += ' ' + paragraph(sentence_count: 3) while paragraph.length < chars
+          paragraph += ' ' + paragraph(sentence_count: 3) while paragraph.length < characters
 
-          paragraph[0...chars - 1] + '.'
+          paragraph[0...characters - 1] + '.'
         end
       end
     end
