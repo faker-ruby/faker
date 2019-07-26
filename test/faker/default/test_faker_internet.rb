@@ -12,7 +12,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_email_with_separators
-    assert @tester.email('jane doe', '+').match(/.+\+.+@.+\.\w+/)
+    assert @tester.email(name: 'jane doe', separators: '+').match(/.+\+.+@.+\.\w+/)
   end
 
   def test_free_email
