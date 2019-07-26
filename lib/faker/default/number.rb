@@ -27,7 +27,7 @@ module Faker
       def decimal(l_digits: 5, r_digits: 2)
         l_d = number(digits: l_digits)
         r_d = if r_digits == 1
-                0
+                r_digits
               else
                 # Ensure the last digit is not zero
                 # so it does not get truncated on converting to float

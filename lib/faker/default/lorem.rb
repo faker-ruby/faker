@@ -34,16 +34,16 @@ module Faker
         words(number: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(' ').capitalize + locale_period
       end
 
-      def sentences(sentence_count: 3, supplemental: false)
-        1.upto(resolve(sentence_count)).collect { sentence(word_count: 3, supplemental: supplemental) }
+      def sentences(number: 3, supplemental: false)
+        1.upto(resolve(number)).collect { sentence(word_count: 3, supplemental: supplemental) }
       end
 
       def paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 0)
-        sentences(sentence_count: resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental: supplemental).join(locale_space)
+        sentences(number: resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental: supplemental).join(locale_space)
       end
 
-      def paragraphs(paragraph_count: 3, supplemental: false)
-        1.upto(resolve(paragraph_count)).collect { paragraph(sentence_count: 3, supplemental: supplemental) }
+      def paragraphs(number: 3, supplemental: false)
+        1.upto(resolve(number)).collect { paragraph(sentence_count: 3, supplemental: supplemental) }
       end
 
       def paragraph_by_chars(characters: 256, supplemental: false)

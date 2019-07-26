@@ -40,21 +40,21 @@ module Faker
           words.each_with_index { |w, i| words[i] = word if w =~ /\s/ }
         end
 
-        def sentences(sentence_count: 3)
+        def sentences(number: 3)
           [].tap do |sentences|
-            1.upto(resolve(sentence_count)) do
+            1.upto(resolve(number)) do
               sentences << sentence(word_count: 3)
             end
           end
         end
 
         def paragraph(sentence_count: 3, random_sentences_to_add: 3)
-          sentences(sentence_count: resolve(sentence_count) + rand(random_sentences_to_add.to_i).to_i).join(' ')
+          sentences(number: resolve(sentence_count) + rand(random_sentences_to_add.to_i).to_i).join(' ')
         end
 
-        def paragraphs(paragraph_count: 3)
+        def paragraphs(number: 3)
           [].tap do |paragraphs|
-            1.upto(resolve(paragraph_count)) do
+            1.upto(resolve(number)) do
               paragraphs << paragraph(sentence_count: 3)
             end
           end

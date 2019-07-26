@@ -26,8 +26,8 @@ Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
 
 # Optional arguments: sentence_count=3, supplemental=false
 Faker::Lorem.sentences #=> ["Vero earum commodi soluta.", "Quaerat fuga cumque et vero eveniet omnis ut.", "Cumque sit dolor ut est consequuntur."]
-Faker::Lorem.sentences(sentence_count: 1) #=> ["Ut perspiciatis explicabo possimus doloribus enim quia."]
-Faker::Lorem.sentences(sentence_count: 1, supplemental: true) #=> ["Quis capillus curo ager veritatis voro et ipsum."]
+Faker::Lorem.sentences(number: 1) #=> ["Ut perspiciatis explicabo possimus doloribus enim quia."]
+Faker::Lorem.sentences(number: 1, supplemental: true) #=> ["Quis capillus curo ager veritatis voro et ipsum."]
 
 # Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=0
 # The 'random_sentences_to_add' argument increases the paragraph's sentence count by a random value within (0..random_sentences_to_add).
@@ -41,8 +41,8 @@ Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, 4) #=> "Vomito und
 
 # Optional arguments: paragraph_count=3, supplemental=false
 Faker::Lorem.paragraphs #=> ["Dolores quis quia ad quo voluptates. Maxime delectus totam numquam. Necessitatibus vel atque qui dolore.", "Id neque nemo. Dolores iusto facere est ad. Accusamus ipsa dolor ut.", "Et officiis ut hic. Sunt asperiores minus distinctio debitis ipsa dolor. Minima eos deleniti."]
-Faker::Lorem.paragraphs(paragraph_count: 1) #=> ["Labore voluptas sequi. Ratione nulla eaque quia molestiae fugit. At quam laboriosam aut ut dignissimos."]
-Faker::Lorem.paragraphs(paragraph_count: 1, supplemental: true) #=> ["Depulso animi cunctatio amicitia adficio. Vester viduo qui despirmatio voluptas. Validus laudantium adopto ut agnitio venustas. Aer arcus odio esse."]
+Faker::Lorem.paragraphs(number: 1) #=> ["Labore voluptas sequi. Ratione nulla eaque quia molestiae fugit. At quam laboriosam aut ut dignissimos."]
+Faker::Lorem.paragraphs(number: 1, supplemental: true) #=> ["Depulso animi cunctatio amicitia adficio. Vester viduo qui despirmatio voluptas. Validus laudantium adopto ut agnitio venustas. Aer arcus odio esse."]
 
 # Optional arguments: word_count=4, supplemental=false, random_words_to_add=0
 Faker::Lorem.question #=> "Vero eum dolore qui?"

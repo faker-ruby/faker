@@ -20,8 +20,8 @@ Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 
 
 # Optional arguments: sentence_count=3, supplemental=false
 Faker::Hipster.sentences #=> ["Godard pitchfork vinegar chillwave everyday 90's whatever.", "Pour-over artisan distillery street waistcoat.", "Salvia yr leggings franzen blue bottle."]
-Faker::Hipster.sentences(sentence_count: 1) #=> ["Before they sold out pinterest venmo umami try-hard ugh hoodie artisan."]
-Faker::Hipster.sentences(sentence_count: 1, supplemental: true) #=> ["Et sustainable optio aesthetic et."]
+Faker::Hipster.sentences(number: 1) #=> ["Before they sold out pinterest venmo umami try-hard ugh hoodie artisan."]
+Faker::Hipster.sentences(number: 1, supplemental: true) #=> ["Et sustainable optio aesthetic et."]
 
 # Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
 Faker::Hipster.paragraph #=> "Migas fingerstache pbr&b tofu. Polaroid distillery typewriter echo tofu actually. Slow-carb fanny pack pickled direct trade scenester mlkshk plaid. Banjo venmo chambray cold-pressed typewriter. Fap skateboard intelligentsia."
@@ -32,8 +32,8 @@ Faker::Hipster.paragraph(sentence_count: 2, supplemental: true, random_sentences
 
 # Optional arguments: paragraph_count=3, supplemental=false
 Faker::Hipster.paragraphs #=> ["Tilde microdosing blog cliche meggings. Intelligentsia five dollar toast forage yuccie. Master kitsch knausgaard. Try-hard everyday trust fund mumblecore.", "Normcore viral pickled. Listicle humblebrag swag tote bag. Taxidermy street hammock neutra butcher cred kale chips. Blog portland humblebrag trust fund irony.", "Single-origin coffee fixie cleanse tofu xoxo. Post-ironic tote bag ramps gluten-free locavore mumblecore hammock. Umami loko twee. Ugh kitsch before they sold out."]
-Faker::Hipster.paragraphs(paragraph_count: 1) #=> ["Skateboard cronut synth +1 fashion axe. Pop-up polaroid skateboard asymmetrical. Ennui fingerstache shoreditch before they sold out. Tattooed pitchfork ramps. Photo booth yr messenger bag raw denim bespoke locavore lomo synth."]
-Faker::Hipster.paragraphs(paragraph_count: 1, supplemental: true) #=> ["Quae direct trade pbr&b quo taxidermy autem loko. Umami quas ratione migas cardigan sriracha minima. Tenetur perspiciatis pickled sed eum doloribus truffaut. Excepturi dreamcatcher meditation."]
+Faker::Hipster.paragraphs(number: 1) #=> ["Skateboard cronut synth +1 fashion axe. Pop-up polaroid skateboard asymmetrical. Ennui fingerstache shoreditch before they sold out. Tattooed pitchfork ramps. Photo booth yr messenger bag raw denim bespoke locavore lomo synth."]
+Faker::Hipster.paragraphs(number: 1, supplemental: true) #=> ["Quae direct trade pbr&b quo taxidermy autem loko. Umami quas ratione migas cardigan sriracha minima. Tenetur perspiciatis pickled sed eum doloribus truffaut. Excepturi dreamcatcher meditation."]
 
 # Optional arguments: chars=3, supplemental=false
 Faker::Hipster.paragraph_by_chars #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."

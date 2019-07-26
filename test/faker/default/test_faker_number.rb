@@ -123,7 +123,7 @@ class TestFakerNumber < Test::Unit::TestCase
         assert_match(/^[1-9]0/, @tester.number(digits: 2).to_s)
       end
 
-      assert_equal 0.0, @tester.decimal(l_digits: 1, r_digits: 1)
+      assert_equal 0.1, @tester.decimal(l_digits: 1, r_digits: 1)
       100.times do
         assert_match(/^0\.0[1-9]/, @tester.decimal(l_digits: 1, r_digits: 2).to_s)
       end

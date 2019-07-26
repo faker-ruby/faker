@@ -26,21 +26,21 @@ module Faker
         words(number: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: true).join(' ').capitalize + '.'
       end
 
-      def sentences(sentence_count: 3, supplemental: false)
+      def sentences(number: 3, supplemental: false)
         [].tap do |sentences|
-          1.upto(resolve(sentence_count)) do
+          1.upto(resolve(number)) do
             sentences << sentence(word_count: 3, supplemental: supplemental)
           end
         end
       end
 
       def paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 3)
-        sentences(sentence_count: resolve(sentence_count) + rand(random_sentences_to_add.to_i).to_i, supplemental: supplemental).join(' ')
+        sentences(number: resolve(sentence_count) + rand(random_sentences_to_add.to_i).to_i, supplemental: supplemental).join(' ')
       end
 
-      def paragraphs(paragraph_count: 3, supplemental: false)
+      def paragraphs(number: 3, supplemental: false)
         [].tap do |paragraphs|
-          1.upto(resolve(paragraph_count)) do
+          1.upto(resolve(number)) do
             paragraphs << paragraph(sentence_count: 3, supplemental: supplemental)
           end
         end

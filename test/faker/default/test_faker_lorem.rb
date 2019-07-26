@@ -58,15 +58,15 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_exact_count_param
     assert(@tester.characters(characters: 2).length == 2)
     assert(@tester.words(number: 2).length == 2)
-    assert(@tester.sentences(sentence_count: 2).length == 2)
-    assert(@tester.paragraphs(paragraph_count: 2).length == 2)
+    assert(@tester.sentences(number: 2).length == 2)
+    assert(@tester.paragraphs(number: 2).length == 2)
   end
 
   def test_range_count_param
     cs = @tester.characters(characters: 2..5)
     ws = @tester.words(number: 2..5)
-    ss = @tester.sentences(sentence_count: 2..5)
-    ps = @tester.paragraphs(paragraph_count: 2..5)
+    ss = @tester.sentences(number: 2..5)
+    ps = @tester.paragraphs(number: 2..5)
 
     assert(cs.length >= 2 && cs.length <= 5)
     assert(ws.length >= 2 && ws.length <= 5)
@@ -77,8 +77,8 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_exclusive_range_count_param
     cs = @tester.characters(characters: 2...3)
     ws = @tester.words(number: 2...3)
-    ss = @tester.sentences(sentence_count: 2...3)
-    ps = @tester.paragraphs(paragraph_count: 2...3)
+    ss = @tester.sentences(number: 2...3)
+    ps = @tester.paragraphs(number: 2...3)
 
     assert_equal(2, cs.length)
     assert_equal(2, ws.length)
@@ -89,8 +89,8 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_array_count_param
     cs = @tester.characters(characters: [1, 4])
     ws = @tester.words(number: [1, 4])
-    ss = @tester.sentences(sentence_count: [1, 4])
-    ps = @tester.paragraphs(paragraph_count: [1, 4])
+    ss = @tester.sentences(number: [1, 4])
+    ps = @tester.paragraphs(number: [1, 4])
 
     assert(cs.length == 1 || cs.length == 4)
     assert(ws.length == 1 || ws.length == 4)

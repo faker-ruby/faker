@@ -32,14 +32,14 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
 
   def test_exact_count_param
     assert(@tester.words(number: 2).length == 2)
-    assert(@tester.sentences(sentence_count: 2).length == 2)
-    assert(@tester.paragraphs(paragraph_count: 2).length == 2)
+    assert(@tester.sentences(number: 2).length == 2)
+    assert(@tester.paragraphs(number: 2).length == 2)
   end
 
   def test_range_count_param
     ws = @tester.words(number: 2..5)
-    ss = @tester.sentences(sentence_count: 2..5)
-    ps = @tester.paragraphs(paragraph_count: 2..5)
+    ss = @tester.sentences(number: 2..5)
+    ps = @tester.paragraphs(number: 2..5)
 
     assert(ws.length >= 2 && ws.length <= 5)
     assert(ss.length >= 2 && ss.length <= 5)
@@ -48,8 +48,8 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
 
   def test_array_count_param
     ws = @tester.words(number: [1, 4])
-    ss = @tester.sentences(sentence_count: [1, 4])
-    ps = @tester.paragraphs(paragraph_count: [1, 4])
+    ss = @tester.sentences(number: [1, 4])
+    ps = @tester.paragraphs(number: [1, 4])
 
     assert(ws.length == 1 || ws.length == 4)
     assert(ss.length == 1 || ss.length == 4)
