@@ -31,7 +31,7 @@ class TestEnCaLocale < Test::Unit::TestCase
   def test_en_ca_subscriber_number_method
     assert Faker::PhoneNumber.subscriber_number.is_a? String
     assert_equal Faker::PhoneNumber.subscriber_number.length, 4
-    assert_equal Faker::PhoneNumber.subscriber_number(10).length, 10
+    assert_equal Faker::PhoneNumber.subscriber_number(length: 10).length, 10
     assert_equal Faker::PhoneNumber.method(:extension), Faker::PhoneNumber.method(:subscriber_number)
   end
 

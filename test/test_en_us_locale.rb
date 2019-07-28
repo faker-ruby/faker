@@ -32,7 +32,7 @@ class TestEnUsLocale < Test::Unit::TestCase
   def test_en_us_subscriber_number_method
     assert Faker::PhoneNumber.subscriber_number.is_a? String
     assert_equal Faker::PhoneNumber.subscriber_number.length, 4
-    assert_equal Faker::PhoneNumber.subscriber_number(10).length, 10
+    assert_equal Faker::PhoneNumber.subscriber_number(length: 10).length, 10
     assert_equal Faker::PhoneNumber.method(:extension), Faker::PhoneNumber.method(:subscriber_number)
   end
 
@@ -53,34 +53,34 @@ class TestEnUsLocale < Test::Unit::TestCase
   end
 
   def test_en_us_invalid_state_raises_exception
-    assert_raise(I18n::MissingTranslationData) { Faker::Address.zip_code('NA') }
+    assert_raise(I18n::MissingTranslationData) { Faker::Address.zip_code(state_abbreviation: 'NA') }
   end
 
   def test_en_us_zip_codes_match_state
     state_abbr = 'AZ'
     expected = /^850\d\d$/
-    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    assert_match(expected, Faker::Address.zip_code(state_abbreviation: state_abbr))
 
     # disjointed ranges for these states
     # http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf
     state_abbr = 'AR'
     expected = /^717\d\d$/
-    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    assert_match(expected, Faker::Address.zip_code(state_abbreviation: state_abbr))
     state_abbr = 'GA'
     expected = /^301\d\d$/
-    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    assert_match(expected, Faker::Address.zip_code(state_abbreviation: state_abbr))
     state_abbr = 'MA'
     expected = /^026\d\d$/
-    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    assert_match(expected, Faker::Address.zip_code(state_abbreviation: state_abbr))
     state_abbr = 'NY'
     expected = /^122\d\d$/
-    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    assert_match(expected, Faker::Address.zip_code(state_abbreviation: state_abbr))
     state_abbr = 'TX'
     expected = /^798\d\d$/
-    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    assert_match(expected, Faker::Address.zip_code(state_abbreviation: state_abbr))
     state_abbr = 'VA'
     expected = /^222\d\d$/
-    assert_match(expected, Faker::Address.zip_code(state_abbr))
+    assert_match(expected, Faker::Address.zip_code(state_abbreviation: state_abbr))
   end
 
   def test_en_us_valid_id_number

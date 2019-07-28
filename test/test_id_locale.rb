@@ -17,6 +17,11 @@ class TestIdLocale < Test::Unit::TestCase
     assert Faker::Address.province.is_a? String
     assert Faker::Address.postcode.is_a? String
     assert Faker::Address.street_address.is_a? String
+    assert Faker::Address.building_number.is_a? String
+    assert Faker::Address.city_name.is_a? String
+    assert Faker::Address.street_prefix.is_a? String
+    assert Faker::Address.street_title.is_a? String
+    assert Faker::Address.street_name.is_a? String
   end
 
   def test_id_name_methods

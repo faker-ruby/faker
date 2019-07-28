@@ -34,12 +34,27 @@ class TestPlLocale < Test::Unit::TestCase
     assert Faker::Address.state.is_a? String
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.city_name.is_a? String
+    assert Faker::Address.country_code.is_a? String
+    assert Faker::Address.building_number.is_a? String
+    assert Faker::Address.street_prefix.is_a? String
+    assert Faker::Address.secondary_address.is_a? String
+    assert Faker::Address.postcode.is_a? String
+    assert Faker::Address.city.is_a? String
+    assert Faker::Address.street_name.is_a? String
+    assert Faker::Address.street_address.is_a? String
+    assert Faker::Address.default_country.is_a? String
+    assert_equal('Polska', Faker::Address.default_country)
+  end
+
+  def test_pl_coin_methods
+    assert Faker::Coin.flip.is_a? String
   end
 
   def test_pl_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.buzzwords.is_a? Array
     assert Faker::Company.bs.is_a? String
+    assert Faker::Company.name.is_a? String
   end
 
   def test_pl_internet_methods
@@ -51,7 +66,6 @@ class TestPlLocale < Test::Unit::TestCase
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.title.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end
 end

@@ -21,8 +21,8 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Address.city_prefix.empty?
     assert Faker::Address.city_suffix.empty?
     assert Faker::Address.city.is_a?(String)
-    assert Faker::Address.city(with_state: true).is_a?(String)
-    assert Faker::Address.city(with_state: true).split(', ').count == 2
+    assert Faker::Address.city(options: { with_state: true }).is_a?(String)
+    assert Faker::Address.city(options: { with_state: true }).split(', ').count == 2
     assert Faker::Address.secondary_address.is_a? String
   end
 
@@ -48,6 +48,14 @@ class TestEsMxLocale < Test::Unit::TestCase
   def test_es_mx_phone_number
     assert Faker::PhoneNumber.phone_number.is_a? String
     assert Faker::PhoneNumber.cell_phone.is_a? String
+  end
+
+  def test_es_mx_subscription_methods
+    assert Faker::Subscription.plan.is_a? String
+    assert Faker::Subscription.status.is_a? String
+    assert Faker::Subscription.payment_method.is_a? String
+    assert Faker::Subscription.subscription_term.is_a? String
+    assert Faker::Subscription.payment_term.is_a? String
   end
 
   def test_es_mx_university_methods

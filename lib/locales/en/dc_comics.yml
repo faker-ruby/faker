@@ -5,7 +5,7 @@ en:
       "Batman", "Superman", "Red Arrow", "Green Lantern", "Robin",
       "Nightwing", "The Flash", "Aquaman", "Green Arrow", "Captain Marvel",
       "Shazam", "Martain Manhunter", "Cyborg", "Hawkman", "Speedy", "Arsenal",
-      "Red Tornado","Booster Gold", "Doctor Fate", "Beast Boy", "Plastic Man",
+      "Red Tornado", "Booster Gold", "Doctor Fate", "Beast Boy", "Plastic Man",
       "Captain Atom", "Tempest", "Spectre", "Midnighter", "The Atom", "Kilowog",
       "Firestorm", "Blue Beetle", "Animal Man", "Mr. Miracle", "Wildcat",
       "Rorschach", "Dr. Manhattan", "Nite Owl", "The Comedian", "Azrael",
@@ -21,7 +21,7 @@ en:
       villain: [
       "The Joker", "Lex Luthor", "Darkseid", "Sinestro", "Brainiac", "Black Adam",
       "Ras al Ghul", "Deathstroke", "Two-Face", "Doomsday", "Catwoman", "Mongul",
-      "Bizaroo", "Riddler", "Captain Cold", "Bane", "Harley Quinn", "Scarecrow",
+      "Bizarro", "Riddler", "Captain Cold", "Bane", "Harley Quinn", "Scarecrow",
       "Paralax", "Gorilla Grodd", "General Zod", "Black Manta", "Mr. Freeze",
       "Cheetah", "Amanda Waller", "Penguin", "Poison Ivy", "Solomon Grundy",
       "Parasite", "Krona", "Deadshot", "Metallo", "Lobo", "Eclipso", "Ares",
@@ -39,14 +39,14 @@ en:
       ]
       title: [
       "The Sinestro Corps War", "The Coyote Gospel", "Green Arrow: The Longbow Hunters",
-      "Jla: Earth 2 ", "Identity Crisis", "Jla: Tower Of Babel", "Superman For All Seasons",
+      "JLA: Earth 2", "Identity Crisis", "JLA: Tower Of Babel", "Superman For All Seasons",
       "Superman: Red Son", "Batman: The Long Halloween", "Swamp Thing: The Anatomy Lesson",
-      "For The Man Who Has Everything", "Jack Kirby'S New Gods",
+      "For The Man Who Has Everything", "Jack Kirby's New Gods",
       "Arkham Asylum: A Serious House On Serious Earth", "Snowbirds Don't Fly",
       "Whatever Happened To The Man Of Tomorrow?", "The Killing Joke",
       "Teen Titans: The Judas Contract", "The New Frontier",
       "Kingdom Come", "Crisis On Infinite Earths",
       "Batman: Year One", "All Star Superman", "The Dark Knight Returns",
-      "Multiversity", "Gotham Central", "Grant Morrison'S Animal Man",
+      "Multiversity", "Gotham Central", "Grant Morrison's Animal Man",
       "Doom Patrol", "Action Comics", "Detective Comics"
       ]

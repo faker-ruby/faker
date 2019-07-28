@@ -23,6 +23,7 @@ class TestItLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.default_country.is_a? String
+    assert Faker::Address.building_number.is_a? String
     assert_equal('Italia', Faker::Address.default_country)
   end
 
@@ -39,9 +40,23 @@ class TestItLocale < Test::Unit::TestCase
   end
 
   def test_it_name_methods
+    assert Faker::Name.name.is_a? String
+    assert Faker::Name.prefix.is_a? String
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
     assert_equal('.', Faker::Name.prefix[-1, 1])
+  end
+
+  def test_it_phone_number_methods
+    assert Faker::PhoneNumber.phone_number.is_a? String
+  end
+
+  def test_it_subscription_methods
+    assert Faker::Subscription.plan.is_a? String
+    assert Faker::Subscription.status.is_a? String
+    assert Faker::Subscription.payment_method.is_a? String
+    assert Faker::Subscription.subscription_term.is_a? String
+    assert Faker::Subscription.payment_term.is_a? String
   end
 end

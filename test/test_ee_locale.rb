@@ -42,14 +42,13 @@ class TestEeLocale < Test::Unit::TestCase
   def test_ee_invoice_methods
     assert Faker::Invoice.creditor_reference.is_a? String
     assert Faker::Invoice.reference.is_a? String
-    assert Faker::Invoice.reference('4106453482608858924').is_a? String
+    assert Faker::Invoice.reference(ref: '4106453482608858924').is_a? String
   end
 
   def test_ee_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.title.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end
 

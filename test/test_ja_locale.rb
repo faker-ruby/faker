@@ -21,28 +21,44 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
   end
 
+  def test_ja_ancient_methods
+    assert Faker::Ancient.god.is_a? String
+  end
+
   def test_ja_cat_methods
-    assert Faker::Cat.breed.is_a? String
+    assert Faker::Creature::Cat.breed.is_a? String
+  end
+
+  def test_ja_color_methods
+    assert Faker::Color.name.is_a? String
+  end
+
+  def test_ja_coffee_methods
+    assert Faker::Coffee.country.is_a? String
   end
 
   def test_ja_company_methods
     assert Faker::Company.suffix.is_a? String
+    assert Faker::Company.category.is_a? String
     assert Faker::Company.name.is_a? String
   end
 
+  def test_ja_dog_methods
+    assert Faker::Creature::Dog.breed.is_a? String
+  end
+
   def test_ja_food_methods
-    assert Faker::Food.dish.is_a? String
-    assert Faker::Food.description.is_a? String
-    assert Faker::Food.ingredient.is_a? String
-    assert Faker::Food.fruits.is_a? String
-    assert Faker::Food.vegetables.is_a? String
-    assert Faker::Food.measurement.is_a? String
-    assert Faker::Food.metric_measurement.is_a? String
     assert Faker::Food.sushi.is_a? String
+  end
+
+  def test_ja_gender_methods
+    assert Faker::Gender.binary_type.is_a? String
   end
 
   def test_ja_lorem_methods
     assert Faker::Lorem.words.is_a? Array
+    assert Faker::Lorem.words(number: 1000)
+    assert Faker::Lorem.words(number: 10_000, supplemental: true)
   end
 
   def test_ja_name_methods
@@ -50,21 +66,40 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+    assert Faker::Name.female_first_name.is_a? String
+    assert Faker::Name.male_first_name.is_a? String
+    assert Faker::Name.suffix.is_a? String
+    assert Faker::Name.prefix.is_a? String
+  end
+
+  def test_ja_phone_number_methods
+    assert Faker::PhoneNumber.cell_phone.is_a? String
+    assert Faker::PhoneNumber.phone_number.is_a? String
   end
 
   def test_ja_pokemon_methods
-    assert Faker::Pokemon.name.is_a? String
-    assert Faker::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.move.is_a? String
+  end
+
+  def test_ja_zelda_methods
+    assert Faker::Games::Zelda.game.is_a? String
+  end
+
+  def test_ja_restaurant_methods
+    assert Faker::Restaurant.name.is_a? String
+    assert Faker::Restaurant.type.is_a? String
+  end
+
+  def test_ja_space_methods
+    assert Faker::Space.planet.is_a? String
+    assert Faker::Space.galaxy.is_a? String
   end
 
   def test_ja_university_methods
     assert Faker::University.prefix.is_a? String
     assert Faker::University.suffix.is_a? String
     assert Faker::University.name.is_a? String
-  end
-
-  def test_ja_space_methods
-    assert Faker::Space.planet.is_a? String
-    assert Faker::Space.galaxy.is_a? String
   end
 end

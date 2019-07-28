@@ -22,6 +22,7 @@ class TestFiLocale < Test::Unit::TestCase
     assert Faker::Address.state.is_a? String
     assert_match(/^[\d]{1,3}$/, Faker::Address.building_number)
     assert_match(/^[\d]{5}$/, Faker::Address.postcode)
+    assert_equal('Suomi', Faker::Address.default_country)
   end
 
   def test_fi_name_methods
@@ -35,8 +36,8 @@ class TestFiLocale < Test::Unit::TestCase
   def test_fi_invoice_methods
     assert Faker::Invoice.creditor_reference.is_a? String
     assert Faker::Invoice.reference.is_a? String
-    assert Faker::Invoice.reference('515141803475128').is_a? String
-    assert Faker::Invoice.reference('515141803475128#') == '5151418034751285'
+    assert Faker::Invoice.reference(ref: '515141803475128').is_a? String
+    assert Faker::Invoice.reference(ref: '515141803475128#') == '5151418034751285'
   end
 
   def test_fi_phone_number
