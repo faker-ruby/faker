@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module JapaneseMedia
+  class JapaneseMedia
     class SwordArtOnline < Base
       class << self
         def real_name

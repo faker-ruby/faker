@@ -26,7 +26,7 @@ module Faker
         fetch('vehicle.makes')
       end
 
-      def model(make_of_model = '')
+      def model(make_of_model: '')
         return fetch("vehicle.models_by_make.#{make}") if make_of_model.empty?
 
         fetch("vehicle.models_by_make.#{make_of_model}")
@@ -35,7 +35,7 @@ module Faker
       def make_and_model
         m = make
 
-        "#{m} #{model(m)}"
+        "#{m} #{model(make_of_model: m)}"
       end
 
       def style
@@ -82,16 +82,16 @@ module Faker
       alias door_count doors
 
       def year
-        Faker::Time.backward(rand_in_range(365, 5475), :all, '%Y').to_i
+        Faker::Time.backward(days: rand_in_range(365, 5475), period: :all, format: '%Y').to_i
       end
 
-      def mileage(min = MILEAGE_MIN, max = MILEAGE_MAX)
+      def mileage(min: MILEAGE_MIN, max: MILEAGE_MAX)
         rand_in_range(min, max)
       end
 
       alias kilometrage mileage
 
-      def license_plate(state_abreviation = '')
+      def license_plate(state_abreviation: '')
         return regexify(bothify(fetch('vehicle.license_plate'))) if state_abreviation.empty?
 
         key = 'vehicle.license_plate_by_state.' + state_abreviation

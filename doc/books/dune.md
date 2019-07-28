@@ -11,9 +11,9 @@ Faker::Books::Dune.planet #=> "Caladan"
 
 Faker::Books::Dune.quote #=> "A dead man, surely, no longer requires that water."
 
-Faker::Books::Dune.quote("baron_harkonnen") #=> "He who controls the spice, controls the universe!"
+Faker::Books::Dune.quote(character: "baron_harkonnen") #=> "He who controls the spice, controls the universe!"
 
 Faker::Books::Dune.saying #=> "You do not beg the sun for mercy."
 
-Faker::Books::Dune.saying("fremen") #=> "May thy knife chip and shatter."
+Faker::Books::Dune.saying(source: "fremen") #=> "May thy knife chip and shatter."
 ```

@@ -6,9 +6,9 @@ It might be available in the next version.
 ```ruby
 Faker::Relationship.familial #=> "Mother" or "Grandmother"
 
-Faker::Relationship.familial('direct') #=> "Mother" or "Brother"
+Faker::Relationship.familial(connection: 'direct') #=> "Mother" or "Brother"
 
-Faker::Relationship.familial('extended') #=> "Grandmother" or "Niece" or "Aunt"
+Faker::Relationship.familial(connection: 'extended') #=> "Grandmother" or "Niece" or "Aunt"
 
 Faker::Relationship.spouse #=> "Husband" or "Wife"
 

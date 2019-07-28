@@ -2,7 +2,7 @@
 
 ```ruby
 # Random player
-Faker::Esport.player #=> "Faker"
+Faker::Esport.player #=> "Crimsix"
 
 # Random team
 Faker::Esport.team #=> "CLG"

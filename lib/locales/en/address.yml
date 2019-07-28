@@ -257,7 +257,7 @@ en:
         YE: "Yemen"
         ZM: "Zambia"
         ZW: "Zimbabwe"
-      country_by_name: 
+      country_by_name:
         afghanistan: "AF"
         albania: "AB"
         algeria: "DZ"
@@ -397,7 +397,6 @@ en:
         mauritania: "MR"
         mauritius: "MU"
         mayotte: "YT"
-        mexicoMX: ""
         micronesia_federated_states_of: "FM"
         moldova_republic_of: "MD"
         monaco: "MC"
@@ -580,5 +579,3 @@ en:
         - "#{street_address}, #{city}, #{state_abbr} #{zip_code}"
         - "#{secondary_address} #{street_address}, #{city}, #{state_abbr} #{zip_code}"
       default_country: [United States of America]
-
-

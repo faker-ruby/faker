@@ -11,7 +11,7 @@ Faker::Code.rut #=> "91389184-8"
 
 Faker::Code.nric #=> "S5589083H"
 
-Faker::Code.nric(27, 34) #=> S8505970Z
+Faker::Code.nric(min_age: 27, max_age: 34) #=> S8505970Z
 
 Faker::Code.imei #= "546327785982623"
 

@@ -23,7 +23,7 @@ module Faker
         fetch('demographic.sex')
       end
 
-      def height(unit = :metric)
+      def height(unit: :metric)
         case unit
         when :imperial
           inches = rand_in_range(57, 86)

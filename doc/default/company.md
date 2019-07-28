@@ -62,4 +62,7 @@ Faker::Company.brazilian_company_number #=> "18553414000618"
 
 # Generate a formatted Brazilian company number (CNPJ)
 Faker::Company.brazilian_company_number(formatted: true) #=> "00.000.000/0000-00"
+
+# Generate a USA Standard Industrial Classification code (SIC)
+Faker::Company.sic_code #=> "0851"
 ```

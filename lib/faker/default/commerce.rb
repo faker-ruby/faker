@@ -7,15 +7,15 @@ module Faker
         fetch('color.name')
       end
 
-      def promotion_code(digits = 6)
+      def promotion_code(digits: 6)
         [
           fetch('commerce.promotion_code.adjective'),
           fetch('commerce.promotion_code.noun'),
-          Faker::Number.number(digits)
+          Faker::Number.number(digits: digits)
         ].join
       end
 
-      def department(max = 3, fixed_amount = false)
+      def department(max: 3, fixed_amount: false)
         num = max if fixed_amount
         num ||= 1 + rand(max)
 
@@ -34,7 +34,7 @@ module Faker
         fetch('commerce.product_name.material')
       end
 
-      def price(range = 0..100.0, as_string = false)
+      def price(range: 0..100.0, as_string: false)
         price = (rand(range) * 100).floor / 100.0
         if as_string
           price_parts = price.to_s.split('.')

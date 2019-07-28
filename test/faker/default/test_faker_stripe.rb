@@ -18,7 +18,7 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_specific_valid_card
-    assert @tester.valid_card('visa').match(/\A\d{16}\z/)
+    assert @tester.valid_card(card_type: 'visa').match(/\A\d{16}\z/)
   end
 
   def test_valid_token
@@ -26,7 +26,7 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_specific_valid_token
-    assert @tester.valid_token('visa').match(/\Atok_visa\z/)
+    assert @tester.valid_token(card_type: 'visa').match(/\Atok_visa\z/)
   end
 
   def test_invalid_card
@@ -40,7 +40,7 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_specific_error_invalid_card
-    assert @tester.invalid_card('zipFail').match(/\w+/)
+    assert @tester.invalid_card(card_error: 'zipFail').match(/\w+/)
   end
 
   def test_valid_exp_mo
@@ -56,6 +56,6 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_valid_amex_ccv
-    assert @tester.ccv('amex').match(/\A\d{4}\z/)
+    assert @tester.ccv(card_type: 'amex').match(/\A\d{4}\z/)
   end
 end

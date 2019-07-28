@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module TvShows
+  class TvShows
     class TwinPeaks < Base
       flexible :twin_peaks
 

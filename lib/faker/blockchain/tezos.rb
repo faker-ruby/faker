@@ -8,12 +8,13 @@ module Faker
     class Tezos < Base
       class << self
         PREFIXES = {
-          tz1:    [6, 161, 159],
-          KT1:    [2, 90, 121],
-          edpk:   [13, 15, 37, 217],
+          tz1:   [6, 161, 159],
+          KT1:   [2, 90, 121],
+          edpk:  [13, 15, 37, 217],
           edsk:  [13, 15, 58, 7],
-          edsig:  [9, 245, 205, 134, 18],
-          o:      [5, 116]
+          edsig: [9, 245, 205, 134, 18],
+          B:     [1, 52],
+          o:     [5, 116]
         }.freeze
 
         def account
@@ -26,6 +27,10 @@ module Faker
 
         def operation
           encode_tz(:o, 32)
+        end
+
+        def block
+          encode_tz(:B, 32)
         end
 
         def signature
