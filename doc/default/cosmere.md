@@ -1,7 +1,5 @@
 # Faker::Cosmere
 
-It might be available in the next version.
-
 ```ruby
 Faker::Cosmere.aon                    #=> "Rao"
 

@@ -1,7 +1,5 @@
 # Faker::ChileRut
 
-It might be available in the next version.
-
 ```ruby
 Faker::ChileRut.full_rut #=> "30686957-4"
 

@@ -1,7 +1,5 @@
 # Faker::Alphanumeric
 
-It might be available in the next version.
-
 ```ruby
 Faker::Alphanumeric.alpha(characters: 10) #=> "zlvubkrwga"
 

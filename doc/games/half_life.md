@@ -1,7 +1,5 @@
 # Faker::Games::HalfLife
 
-It might be available in the next version.
-
 ```ruby
 # Any character from the game
 Faker::Games::HalfLife.character #=> "Gordon Freeman"

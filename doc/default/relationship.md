@@ -1,8 +1,6 @@
 # Faker::Relationship
 ### A Faker module for familial relationships.
 
-It might be available in the next version.
-
 ```ruby
 Faker::Relationship.familial #=> "Mother" or "Grandmother"
 
