@@ -1,16 +1,25 @@
 # Change Log
 
+##
 ## HEAD Unreleased
+##
+
+------------------------------------------------------------------------------
+
+## [v2.0.0](https://github.com/stympy/faker/tree/2.0.0) (2019-28-07)
 
 ### Bug/Fixes
-### Chores
-### Deprecation
+
+- [PR #1660](https://github.com/stympy/faker/pull/1660) Update FillMurray Links To Include www [@RaymondFallon](https://github.com/RaymondFallon)
+
 ### Documentation
 
 - [PR #1653](https://github.com/stympy/faker/pull/1653) Add /faker-ruby/faker-bot to README [@vbrazo](https://github.com/vbrazo)
 
 ### Feature Request
 
+- [PR #510](https://github.com/stympy/faker/pull/510) Make Faker::Number return integers and floats instead of strings [@tejasbubane](https://github.com/tejasbubane)
+- [PR #1651](https://github.com/stympy/faker/pull/1651) Preparing for v2 arguments [@vbrazo](https://github.com/vbrazo)
 - [PR #1664](https://github.com/stympy/faker/pull/1664) Replace positional arguments with keyword arguments [@vbrazo](https://github.com/vbrazo)
 
 ### Update/add locales
