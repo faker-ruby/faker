@@ -12,12 +12,17 @@
 
 - [PR #1660](https://github.com/stympy/faker/pull/1660) Update FillMurray Links To Include www [@RaymondFallon](https://github.com/RaymondFallon)
 
+### Deprecation
+
+- [PR #1634](https://github.com/stympy/faker/pull/1634) Corrected other occurrences of spelling vehicle spelling error, deprecated Space launch_vehicule [@Siyanda](https://github.com/Siyanda)
+
 ### Documentation
 
 - [PR #1653](https://github.com/stympy/faker/pull/1653) Add /faker-ruby/faker-bot to README [@vbrazo](https://github.com/vbrazo)
 
 ### Feature Request
 
+- [PR #1417](https://github.com/stympy/faker/pull/1417) Rework Faker::Time::between [@pjohnmeyer](https://github.com/pjohnmeyer)
 - [PR #510](https://github.com/stympy/faker/pull/510) Make Faker::Number return integers and floats instead of strings [@tejasbubane](https://github.com/tejasbubane)
 - [PR #1651](https://github.com/stympy/faker/pull/1651) Preparing for v2 arguments [@vbrazo](https://github.com/vbrazo)
 - [PR #1664](https://github.com/stympy/faker/pull/1664) Replace positional arguments with keyword arguments [@vbrazo](https://github.com/vbrazo)
