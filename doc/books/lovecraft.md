@@ -17,12 +17,12 @@ Faker::Books::Lovecraft.sentence #=> "Furtive antiquarian squamous dank cat loat
 Faker::Books::Lovecraft.sentence(word_count: 3) #=> "Daemoniac antediluvian fainted squamous comprehension gambrel nameless singular."
 Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1) #=> "Amorphous indescribable tenebrous."
 
-# Optional arguments: num=3, spaces_allowed = false
+# Optional arguments: number=3, spaces_allowed = false
 Faker::Books::Lovecraft.words #=> ["manuscript", "abnormal", "singular"]
 Faker::Books::Lovecraft.words(number: 2) #=> ["daemoniac", "cat"]
 Faker::Books::Lovecraft.words(number: 2, spaces_allowed: true) #=> ["lurk", "charnel"]
 
-# Optional arguments: sentence_count=3
+# Optional arguments: number=3
 Faker::Books::Lovecraft.sentences #=> ["Nameless loathsome decadent gambrel.", "Ululate swarthy immemorial cat madness gibbous unmentionable unnamable.", "Decadent antediluvian non-euclidean tentacles amorphous tenebrous."]
 Faker::Books::Lovecraft.sentences(number: 2) #=> ["Antediluvian amorphous unmentionable singular accursed squamous immemorial.", "Gambrel daemoniac gibbous stygian shunned ululate iridescence abnormal."]
 

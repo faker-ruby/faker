@@ -42,7 +42,7 @@ module Faker
       end
 
       def time_with_format(time, format)
-        format.nil? ? time : I18n.l(time, format: format)
+        format.nil? ? time : I18n.localize(time, format: format)
       end
 
       def hours(period)
