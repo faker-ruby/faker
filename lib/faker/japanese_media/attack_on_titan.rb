@@ -5,7 +5,7 @@ module Faker
     class AttackOnTitan < Base
       class << self
         def character
-          fetch('attack_on_titan.characters')
+          fetch('japanese_media.attack_on_titan.characters')
         end
       end
     end
