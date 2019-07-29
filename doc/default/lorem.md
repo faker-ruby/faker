@@ -36,8 +36,8 @@ Faker::Lorem.sentences(number: 1, supplemental: true) #=> ["Quis capillus curo a
 Faker::Lorem.paragraph #=> "Recusandae minima consequatur. Expedita sequi blanditiis. Ut fuga et."
 Faker::Lorem.paragraph(sentence_count: 2) #=> "Ducimus mollitia deserunt. Dicta et corporis."
 Faker::Lorem.paragraph(sentence_count: 2, supplemental: true) #=> "Strues amplitudo dignissimos. Ver trucido charisma."
-Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, 4) #=> "Neque aut et nemo aut incidunt voluptates. Dolore cum est sint est. Vitae assumenda porro odio dolores fugiat. Est voluptatum quia rerum."
-Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, 4) #=> "Vomito unde uxor annus. Et patior utilis sursum."
+Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4) #=> "Neque aut et nemo aut incidunt voluptates. Dolore cum est sint est. Vitae assumenda porro odio dolores fugiat. Est voluptatum quia rerum."
+Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4) #=> "Vomito unde uxor annus. Et patior utilis sursum."
 
 # Keyword arguments: number: 3, supplemental: false
 Faker::Lorem.paragraphs #=> ["Dolores quis quia ad quo voluptates. Maxime delectus totam numquam. Necessitatibus vel atque qui dolore.", "Id neque nemo. Dolores iusto facere est ad. Accusamus ipsa dolor ut.", "Et officiis ut hic. Sunt asperiores minus distinctio debitis ipsa dolor. Minima eos deleniti."]
