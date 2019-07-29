@@ -1,37 +1,37 @@
 # Faker::Internet
 
 ```ruby
-# Optional arguments name=nil, *separators
+# Keyword arguments name: nil, separators: nil
 Faker::Internet.email #=> "eliza@mann.net"
 
 Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.biz"
 
 Faker::Internet.email(name: 'Janelle Santiago', separators: '+') #=> janelle+santiago@becker.com"
 
-# Optional argument name=nil
+# Keyword argument name: nil
 Faker::Internet.free_email #=> "freddy@gmail.com"
 
 Faker::Internet.free_email(name: 'Nancy') #=> "nancy@yahoo.com"
 
-# Optional argument name=nil
+# Keyword argument name: nil
 Faker::Internet.safe_email #=> "christelle@example.org"
 
 Faker::Internet.safe_email(name: 'Nancy') #=> "nancy@example.net"
 
-# Optional arguments specifier=nil, separators=%w(. _)
+# Keyword arguments specifier: nil, separators: %w(. _)
 Faker::Internet.username #=> "alexie"
 
 Faker::Internet.username(specifier: 'Nancy') #=> "nancy"
 
 Faker::Internet.username(specifier: 'Nancy Johnson', separators: %w(. _ -)) #=> "johnson-nancy"
 
-# Optional arguments: min_length=5, max_length=8
+# Keyword arguments: min_length: 5, max_length: 8
 Faker::Internet.username(specifier: 5..8)
 
-# Optional argument min_length=8
+# Keyword argument min_length: 8
 Faker::Internet.username(specifier: 8)
 
-# Optional arguments: min_length=8, max_length=16
+# Keyword arguments: min_length: 8, max_length: 16
 Faker::Internet.password #=> "Vg5mSvY1UeRg7"
 
 Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
@@ -62,21 +62,21 @@ Faker::Internet.ip_v6_address #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
 
 Faker::Internet.ip_v6_cidr #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df/78"
 
-# Optional argument prefix=''
+# Keyword argument prefix: ''
 Faker::Internet.mac_address #=> "e6:0d:00:11:ed:4f"
 Faker::Internet.mac_address(prefix: '55:44:33') #=> "55:44:33:02:1d:9b"
 
-# Optional arguments: host=domain_name, path="/#{username}", scheme=scheme
+# Keyword arguments: host: domain_name, path: "/#{username}", scheme: scheme
 Faker::Internet.url #=> "http://thiel.com/chauncey_simonis"
 Faker::Internet.url(host: 'example.com') #=> "http://example.com/clotilde.swift"
 Faker::Internet.url(host: 'example.com', path: '/foobar.html') #=> "http://example.com/foobar.html"
 
-# Optional arguments: words=nil, glue=nil
+# Keyword arguments: words: nil, glue: nil
 Faker::Internet.slug #=> "pariatur_laudantium"
 Faker::Internet.slug(words: 'foo bar') #=> "foo.bar"
 Faker::Internet.slug(words: 'foo bar', glue: '-') #=> "foo-bar"
 
-# Optional argument: vendor=nil
+# Keyword argument: vendor: nil
 Faker::Internet.user_agent #=> "Mozilla/5.0 (compatible; MSIE 9.0; AOL 9.7; AOLBuild 4343.19; Windows NT 6.1; WOW64; Trident/5.0; FunWebProducts)"
 Faker::Internet.user_agent(vendor: :firefox) #=> "Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0"
 

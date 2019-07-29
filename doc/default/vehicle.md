@@ -7,11 +7,14 @@ Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
 
 # Random vehicle manufacturer
 Faker::Vehicle.manufacture #=> "Lamborghini"
+
 Faker::Vehicle.make #=> "Honda"
 
 # Random vehicle model
 Faker::Vehicle.model #=> "A8"
 Faker::Vehicle.model(make_of_model: 'Toyota') #=> "Prius"
+
+# Random vehicle make and model
 Faker::Vehicle.make_and_model #=> "Dodge Charger"
 
 # Random vehicle color

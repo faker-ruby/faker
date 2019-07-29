@@ -1,6 +1,6 @@
 # Faker::Games::House
 
- ```ruby
+```ruby
 Faker::Games::Heroes.name #=> "Christian"
 
 Faker::Games::Heroes.specialty #=> "Ballista"

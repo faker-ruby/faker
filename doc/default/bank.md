@@ -7,7 +7,7 @@ Faker::Bank.account_number(digits: 13) #=> 673858237902
 
 Faker::Bank.iban #=> "GB76DZJM33188515981979"
 
-# Optional argument bank_country_code
+# Keyword argument: country_code
 # All countries should be supported
 Faker::Bank.iban(country_code: "be") #=> "BE6375388567752043"
 
