@@ -31,9 +31,8 @@ Faker::PhoneNumber.area_code #=> "201"
 # US only
 Faker::PhoneNumber.exchange_code #=> "208"
 
-# Keyword parameter: length: 4
+# Keyword arguments: length
 Faker::PhoneNumber.subscriber_number #=> "3873"
-
 Faker::PhoneNumber.subscriber_number(length: 2) #=> "39"
 
 Faker::PhoneNumber.extension #=> "3764"

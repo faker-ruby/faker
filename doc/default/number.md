@@ -1,37 +1,38 @@
 # Faker::Number
 
 ```ruby
-# Required parameter: digits
 # Produces a number of the specified digits where the leading digit is never 0
+# Keyword arguments: digits
 Faker::Number.number(digits: 10) #=> 1968353479
 
-# Required parameter: digits
 # Produces a number of the specified digits with a leading zero
+# Keyword arguments: digits
 Faker::Number.leading_zero_number(digits: 10) #=> "0669336915"
 
-# Required parameter: digits
 # Produces a 2-digit number, preserves leading 0's
+# Keyword arguments: digits
 Faker::Number.decimal_part(digits: 2) #=> "09"
 
-# Required parameter: l_digits
 # Produces a number with 2 digits leading and trailing the decimal
+# Keyword arguments: l_digits
 Faker::Number.decimal(l_digits: 2) #=> 11.88
 
 # Specify different values for leading and trailing digits
+# Keyword arguments: l_digits, r_digits
 Faker::Number.decimal(l_digits: 3, r_digits: 3) #=> 181.843
 
-# Required parameters: mean, standard_deviation
+# Keyword arguments: mean, standard_deviation
 Faker::Number.normal(mean: 50, standard_deviation: 3.5) #=> 47.14669604069156
 
-# Required parameter: digits
+# Keyword arguments: digits
 Faker::Number.hexadecimal(digits: 3) #=> "e74"
 
-# Required parameters: minimum value, maximum value
 # Boundary numbers are inclusive
+# Keyword arguments: from, to
 Faker::Number.between(from: 1, to: 10) #=> 7
 
-# Required parameters: a range value
 # Min and Max boundaries of range are inclusive
+# Keyword arguments: range
 Faker::Number.within(range: 1..10) #=> 7
 
 Faker::Number.positive #=> 235.59238499107653

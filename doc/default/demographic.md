@@ -15,5 +15,6 @@ Faker::Demographic.sex #=> "Female"
 
 Faker::Demographic.height #=> "1.61"
 
+# Keyword arguments: unit
 Faker::Demographic.height(unit: :imperial) #=> "6 ft, 2 in"
 ```

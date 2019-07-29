@@ -70,6 +70,7 @@ Faker::Company.south_african_trust_registration_number #=> "IT38/6489900"
 Faker::Company.brazilian_company_number #=> "18553414000618"
 
 # Get a random formatted Brazilian company number (CNPJ)
+# Keyword arguments: formatted
 Faker::Company.brazilian_company_number(formatted: true) #=> "00.000.000/0000-00"
 
 # Get a random USA Standard Industrial Classification code (SIC)

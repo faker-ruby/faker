@@ -11,11 +11,13 @@ Faker::Types.character #=> "n"
 Faker::Types.rb_integer #=> 1
 
 # Random Hash (with random keys and values)
+# Keyword arguments: characters
 Faker::Types.rb_hash #=> {name: "bob"}
 Faker::Types.rb_hash(characters: 1) #=> {name: "bob"}
 Faker::Types.rb_hash(characters: 2) #=> {name: "bob", last: "marley"}
 
 # Random Complex Hash (values include other hashes and arrays)
+# Keyword arguments: characters
 Faker::Types.complex_rb_hash #=> {user: {first: "bob", last: "marley"}}
 Faker::Types.complex_rb_hash(characters: 1) #=> {user: {first: "bob", last: "marley"}}
 Faker::Types.complex_rb_hash(characters: 2) #=> {user: {first: "bob", last: "marley"}, son: ["damien", "marley"]}
