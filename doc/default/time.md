@@ -10,9 +10,6 @@ Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short) #=
 Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long) #=> "October 15, 2018 10:48 AM"
 
 # Random Time between two dates, within specified part of the day
-# You can install the as-duration gem to facilitate time manipulation like 45.minutes + 2.hours
-# (not needed if you already have ActiveSupport, which is included with Rails)
-require 'as-duration'
 Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all) #=> "2014-09-19 07:03:30 -0700"
 Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :day) #=> "2014-09-18 16:28:13 -0700"
 Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :night) #=> "2014-09-20 19:39:38 -0700"
