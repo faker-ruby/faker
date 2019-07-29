@@ -11,7 +11,7 @@ Faker::Source.print #=> "print 'some string'"
 Faker::Source.print(str: 'cake') #=> "print 'cake'"
 Faker::Source.print(str: 'cake', lang: :javascript) #=> "console.log('cake');"
 
-# Keyword argument: lang=:ruby
+# Keyword argument: lang: :ruby
 Faker::Source.print_1_to_10 <<-DOC=> "
   10.times do |i|
     print i
