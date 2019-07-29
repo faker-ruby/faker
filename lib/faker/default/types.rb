@@ -24,16 +24,16 @@ module Faker
         rand(from..to).to_i
       end
 
-      def rb_hash(key_count: 1, type: random_type)
+      def rb_hash(number: 1, type: random_type)
         {}.tap do |hsh|
-          Lorem.words(number: key_count * 2).uniq.first(key_count).each do |s|
+          Lorem.words(number: number * 2).uniq.first(number).each do |s|
             hsh.merge!(s.to_sym => type)
           end
         end
       end
 
-      def complex_rb_hash(key_count: 1)
-        rb_hash(key_count: key_count, type: random_complex_type)
+      def complex_rb_hash(number: 1)
+        rb_hash(number: number, type: random_complex_type)
       end
 
       def rb_array(len: 1)

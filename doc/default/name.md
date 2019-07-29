@@ -19,7 +19,7 @@ Faker::Name.prefix           #=> "Mr."
 
 Faker::Name.suffix           #=> "IV"
 
-# Keyword arguments: characters
-Faker::Name.initials                 #=> "NJM"
-Faker::Name.initials(characters: 2)  #=> "NM"
+# Keyword arguments: number
+Faker::Name.initials            #=> "NJM"
+Faker::Name.initials(number: 2) #=> "NM"
 ```

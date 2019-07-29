@@ -22,8 +22,8 @@ module Faker
         sample(Types::CHARACTERS)
       end
 
-      def characters(characters: 255)
-        Alphanumeric.alphanumeric(characters: characters)
+      def characters(number: 255)
+        Alphanumeric.alphanumeric(number: number)
       end
 
       def multibyte
@@ -46,20 +46,20 @@ module Faker
         1.upto(resolve(number)).collect { paragraph(sentence_count: 3, supplemental: supplemental) }
       end
 
-      def paragraph_by_chars(characters: 256, supplemental: false)
+      def paragraph_by_chars(number: 256, supplemental: false)
         paragraph = paragraph(sentence_count: 3, supplemental: supplemental)
 
-        paragraph += ' ' + paragraph(sentence_count: 3, supplemental: supplemental) while paragraph.length < characters
+        paragraph += ' ' + paragraph(sentence_count: 3, supplemental: supplemental) while paragraph.length < number
 
-        paragraph[0...characters - 1] + '.'
+        paragraph[0...number - 1] + '.'
       end
 
       def question(word_count: 4, supplemental: false, random_words_to_add: 0)
         words(number: word_count + rand(random_words_to_add), supplemental: supplemental).join(' ').capitalize + locale_question_mark
       end
 
-      def questions(question_count: 3, supplemental: false)
-        1.upto(resolve(question_count)).collect { question(word_count: 3, supplemental: supplemental) }
+      def questions(number: 3, supplemental: false)
+        1.upto(resolve(number)).collect { question(word_count: 3, supplemental: supplemental) }
       end
 
       private

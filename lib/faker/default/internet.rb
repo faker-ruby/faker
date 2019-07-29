@@ -56,12 +56,12 @@ module Faker
       end
 
       def password(min_length: 8, max_length: 16, mix_case: true, special_characters: false)
-        temp = Lorem.characters(characters: min_length)
+        temp = Lorem.characters(number: min_length)
         diff_length = max_length - min_length
 
         if diff_length.positive?
           diff_rand = rand(diff_length + 1)
-          temp += Lorem.characters(characters: diff_rand)
+          temp += Lorem.characters(number: diff_rand)
         end
 
         if mix_case

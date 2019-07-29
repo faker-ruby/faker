@@ -10,9 +10,9 @@ Faker::Lorem.words(number: 4, supplemental: true) #=> ["colloco", "qui", "vergo"
 
 Faker::Lorem.multibyte #=> 😀
 
-# Keyword arguments: characters
+# Keyword arguments: number
 Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omquh7br7dhqijwlawejpl765nb1716idmp3xnfo85v349pzy2o9rir23y2qhflwr71c1585fnynguiphkjm8p0vktwitcsm16lny7jzp9t4drwav3qmhz4yjq4k04x14gl6p148hulyqioo72tf8nwrxxcclfypz2lc58lsibgfe5w5p0xv95peafjjmm2frkhdc6duoky0aha"
-Faker::Lorem.characters(characters: 10) #=> "ang9cbhoa8"
+Faker::Lorem.characters(number: 10) #=> "ang9cbhoa8"
 
 # Keyword arguments: word_count, supplemental, random_words_to_add
 # The 'random_words_to_add' argument increases the sentence's word count by a random value within (0..random_words_to_add).
@@ -50,11 +50,11 @@ Faker::Lorem.question(word_count: 4) #=> "Eos temporibus necessitatibus labore?"
 Faker::Lorem.question(word_count: 4, supplemental: false) #=> "Eum ut repellendus neque?"
 Faker::Lorem.question(word_count: 4, supplemental: false, random_words_to_add: 0) #=> "Expedita quia labore voluptatem?"
 
-# Keyword arguments: question_count: 3, supplemental: false
-Faker::Lorem.questions(question_count: 3) #=> ["Ratione eaque doloremque?", "Qui aliquid fuga?", "Est cum ipsum?"]
-Faker::Lorem.questions(question_count: 3, supplemental: false) #=> ["Iusto ipsa magnam?", "Quibusdam eaque amet?", "Officia delectus laboriosam?"]
+# Keyword arguments: number, supplemental
+Faker::Lorem.questions(number: 3) #=> ["Ratione eaque doloremque?", "Qui aliquid fuga?", "Est cum ipsum?"]
+Faker::Lorem.questions(number: 3, supplemental: false) #=> ["Iusto ipsa magnam?", "Quibusdam eaque amet?", "Officia delectus laboriosam?"]
 
-# Keyword arguments: characters, supplemental
+# Keyword arguments: number, supplemental
 Faker::Lorem.paragraph_by_chars #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
-Faker::Lorem.paragraph_by_chars(characters: 256, supplemental: false) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
+Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
 ```

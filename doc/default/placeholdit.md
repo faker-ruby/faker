@@ -8,7 +8,6 @@ Faker::Placeholdit.image(size: '50x50', format: 'jpg') #=> "https://placehold.it
 Faker::Placeholdit.image(size: '50x50', format: 'gif', background_color: 'ffffff') #=> "https://placehold.it/50x50.gif/ffffff"
 Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: :random) #=> "https://placehold.it/50x50.jpeg/39eba7"
 Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: 'ffffff', text_color: '000') #=> "https://placehold.it/50x50.jpeg/ffffff/000"
-Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: :random, :random) #=> "https://placehold.it/50x50.jpeg/d39e44/888ba7"
 Faker::Placeholdit.image(size: '50x50', format: 'jpg', background_color: 'ffffff', text_color: '000', text: 'Some Custom Text') #=> "https://placehold.it/50x50.jpg/ffffff/000?text=Some Custom Text"
 ```
 

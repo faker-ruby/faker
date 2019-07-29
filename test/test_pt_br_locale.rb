@@ -109,7 +109,7 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.initials.match(/[A-Z]{3}/)
-    assert Faker::Name.initials(characters: 2).match(/[A-Z]{2}/)
+    assert Faker::Name.initials(number: 2).match(/[A-Z]{2}/)
   end
 
   def test_pt_br_team_methods

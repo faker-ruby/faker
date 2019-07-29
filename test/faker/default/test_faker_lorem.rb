@@ -23,13 +23,13 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_characters_negatives
-    assert_equal '', @tester.characters(characters: -1)
-    assert_equal '', @tester.characters(characters: (-2..-1))
-    assert_equal '', @tester.characters(characters: [-1, -2])
+    assert_equal '', @tester.characters(number: -1)
+    assert_equal '', @tester.characters(number: (-2..-1))
+    assert_equal '', @tester.characters(number: [-1, -2])
   end
 
   def test_characters_with_args
-    100.times { assert @tester.characters(characters: 500).length == 500 }
+    100.times { assert @tester.characters(number: 500).length == 500 }
   end
 
   # Words delivered by a standard request should be on the standard wordlist.
@@ -56,14 +56,14 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_exact_count_param
-    assert(@tester.characters(characters: 2).length == 2)
+    assert(@tester.characters(number: 2).length == 2)
     assert(@tester.words(number: 2).length == 2)
     assert(@tester.sentences(number: 2).length == 2)
     assert(@tester.paragraphs(number: 2).length == 2)
   end
 
   def test_range_count_param
-    cs = @tester.characters(characters: 2..5)
+    cs = @tester.characters(number: 2..5)
     ws = @tester.words(number: 2..5)
     ss = @tester.sentences(number: 2..5)
     ps = @tester.paragraphs(number: 2..5)
@@ -75,7 +75,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_exclusive_range_count_param
-    cs = @tester.characters(characters: 2...3)
+    cs = @tester.characters(number: 2...3)
     ws = @tester.words(number: 2...3)
     ss = @tester.sentences(number: 2...3)
     ps = @tester.paragraphs(number: 2...3)
@@ -87,7 +87,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_array_count_param
-    cs = @tester.characters(characters: [1, 4])
+    cs = @tester.characters(number: [1, 4])
     ws = @tester.words(number: [1, 4])
     ss = @tester.sentences(number: [1, 4])
     ps = @tester.paragraphs(number: [1, 4])
@@ -114,7 +114,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_paragraph_char_count
-    paragraph = @tester.paragraph_by_chars(characters: 256)
+    paragraph = @tester.paragraph_by_chars(number: 256)
     assert(paragraph.length == 256)
   end
 
