@@ -5,7 +5,7 @@
 ## Bug/Fixes
 - [PR #1675](https://github.com/stympy/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
 
-This change required a quick release. It's a breaking issue because every place where I18n.l() was used began to display the wrong date, causing test suites to fail.
+This change required a quick release because it's a breaking issue. Every place where I18n.l() was used began to display the wrong date, causing test suite to fail.
 
 ------------------------------------------------------------------------------
 
