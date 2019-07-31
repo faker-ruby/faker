@@ -147,7 +147,7 @@ Version 2 has several `breaking changes`. We replaced positional arguments with 
 
 - [PR #1417](https://github.com/stympy/faker/pull/1417) Rework Faker::Time::between [@pjohnmeyer](https://github.com/pjohnmeyer)
 - [PR #510](https://github.com/stympy/faker/pull/510) Make Faker::Number return integers and floats instead of strings [@tejasbubane](https://github.com/tejasbubane)
-- [PR #1651](https://github.com/stympy/faker/pull/1651) Preparing for v2 arguments [@vbrazo](https://github.com/vbrazo)
+- [PR #1651](https://github.com/stympy/faker/pull/1651) Preparing for v2 [@vbrazo](https://github.com/vbrazo)
 - [PR #1664](https://github.com/stympy/faker/pull/1664) Replace positional arguments with keyword arguments [@vbrazo](https://github.com/vbrazo)
 
 ### Update/add locales
