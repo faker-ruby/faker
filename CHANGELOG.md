@@ -1,6 +1,6 @@
 # Change Log
 
-## [v2.0](https://github.com/stympy/faker/tree/2.0.0) (2019-31-07)
+## [v2.0](https://github.com/stympy/faker/tree/2.0) (2019-31-07)
 
 ## Important Note:
 
