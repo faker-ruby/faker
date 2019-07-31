@@ -1,12 +1,6 @@
 # Change Log
 
-##
-## HEAD Unreleased
-##
-
-------------------------------------------------------------------------------
-
-## [v2.0.0](https://github.com/stympy/faker/tree/2.0.0) (2019-01-08)
+## [v2.0.0](https://github.com/stympy/faker/tree/2.0.0) (2019-31-07)
 
 ## Important Note:
 
