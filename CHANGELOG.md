@@ -1,5 +1,14 @@
 # Change Log
 
+## [v2.1.0](https://github.com/stympy/faker/tree/2.1.0) (2019-31-07)
+
+## Bug/Fixes
+- [PR #1675](https://github.com/stympy/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
+
+This change required a quick release. It's a breaking issue because every place where I18n.l() was used began to display the wrong date, causing test suites to fail.
+
+------------------------------------------------------------------------------
+
 ## [v2.0](https://github.com/stympy/faker/tree/2.0) (2019-31-07)
 
 ## Important Note:
