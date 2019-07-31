@@ -57,8 +57,8 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_lorem_methods
     assert Faker::Lorem.words.is_a? Array
-    assert Faker::Lorem.words(1000)
-    assert Faker::Lorem.words(10_000, true)
+    assert Faker::Lorem.words(number: 1000)
+    assert Faker::Lorem.words(number: 10_000, supplemental: true)
   end
 
   def test_ja_name_methods

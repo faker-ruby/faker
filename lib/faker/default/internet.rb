@@ -3,23 +3,23 @@
 module Faker
   class Internet < Base
     class << self
-      def email(name = nil, *separators)
+      def email(name: nil, separators: nil)
         if separators
-          [username(name, separators), domain_name].join('@')
+          [username(specifier: name, separators: separators), domain_name].join('@')
         else
-          [username(name), domain_name].join('@')
+          [username(specifier: name), domain_name].join('@')
         end
       end
 
-      def free_email(name = nil)
-        [username(name), fetch('internet.free_email')].join('@')
+      def free_email(name: nil)
+        [username(specifier: name), fetch('internet.free_email')].join('@')
       end
 
-      def safe_email(name = nil)
-        [username(name), 'example.' + sample(%w[org com net])].join('@')
+      def safe_email(name: nil)
+        [username(specifier: name), 'example.' + sample(%w[org com net])].join('@')
       end
 
-      def username(specifier = nil, separators = %w[. _])
+      def username(specifier: nil, separators: %w[. _])
         with_locale(:en) do
           return shuffle(specifier.scan(/[[:word:]]+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
 
@@ -30,7 +30,7 @@ module Faker
             tries = 0 # Don't try forever in case we get something like 1_000_000.
             result = nil
             loop do
-              result = username(nil, separators)
+              result = username(specifier: nil, separators: separators)
               tries += 1
               break unless result.length < specifier && tries < 7
             end
@@ -39,7 +39,7 @@ module Faker
             tries = 0
             result = nil
             loop do
-              result = username(specifier.min, separators)
+              result = username(specifier: specifier.min, separators: separators)
               tries += 1
               break unless !specifier.include?(result.length) && tries < 7
             end
@@ -55,12 +55,13 @@ module Faker
         end
       end
 
-      def password(min_length = 8, max_length = 16, mix_case = true, special_chars = false)
-        temp = Lorem.characters(min_length)
+      def password(min_length: 8, max_length: 16, mix_case: true, special_characters: false)
+        temp = Lorem.characters(number: min_length)
         diff_length = max_length - min_length
+
         if diff_length.positive?
           diff_rand = rand(diff_length + 1)
-          temp += Lorem.characters(diff_rand)
+          temp += Lorem.characters(number: diff_rand)
         end
 
         if mix_case
@@ -69,7 +70,7 @@ module Faker
           end
         end
 
-        if special_chars
+        if special_characters
           chars = %w[! @ # $ % ^ & *]
           rand(1..min_length).times do |i|
             temp[i] = chars[rand(chars.length)]
@@ -79,7 +80,7 @@ module Faker
         temp
       end
 
-      def domain_name(subdomain = false)
+      def domain_name(subdomain: false)
         with_locale(:en) do
           domain_elements = [Char.prepare(domain_word), domain_suffix]
           domain_elements.unshift(Char.prepare(domain_word)) if subdomain
@@ -87,7 +88,7 @@ module Faker
         end
       end
 
-      def fix_umlauts(string = '')
+      def fix_umlauts(string: '')
         Char.fix_umlauts(string)
       end
 
@@ -99,7 +100,7 @@ module Faker
         fetch('internet.domain_suffix')
       end
 
-      def mac_address(prefix = '')
+      def mac_address(prefix: '')
         prefix_digits = prefix.split(':').map { |d| d.to_i(16) }
         address_digits = Array.new((6 - prefix_digits.size)) { rand(256) }
         (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
@@ -173,20 +174,20 @@ module Faker
         "#{ip_v6_address}/#{rand(1..127)}"
       end
 
-      def url(host = domain_name, path = "/#{username}", scheme = 'http')
+      def url(host: domain_name, path: "/#{username}", scheme: 'http')
         "#{scheme}://#{host}#{path}"
       end
 
-      def slug(words = nil, glue = nil)
+      def slug(words: nil, glue: nil)
         glue ||= sample(%w[- _])
-        (words || Faker::Lorem.words(2).join(' ')).delete(',.').gsub(' ', glue).downcase
+        (words || Faker::Lorem.words(number: 2).join(' ')).delete(',.').gsub(' ', glue).downcase
       end
 
       def device_token
         shuffle(rand(16**64).to_s(16).rjust(64, '0').chars.to_a).join
       end
 
-      def user_agent(vendor = nil)
+      def user_agent(vendor: nil)
         agent_hash = translate('faker.internet.user_agent')
         agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
         sample(agents)

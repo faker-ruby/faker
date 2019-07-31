@@ -15,7 +15,7 @@ class TestFakerTime < Test::Unit::TestCase
     to   = Time.at(2_145_945_600)
 
     100.times do
-      random_time = @tester.between(from, to)
+      random_time = @tester.between(from: from, to: to)
       assert random_time >= from, "Expected >= \"#{from}\", but got #{random_time}"
       assert random_time <= to, "Expected <= \"#{to}\", but got #{random_time}"
     end
@@ -26,7 +26,7 @@ class TestFakerTime < Test::Unit::TestCase
     to   = Time.at(2_145_945_600).to_date
 
     100.times do
-      random_time = @tester.between(from, to)
+      random_time = @tester.between(from: from, to: to)
       assert random_time.to_date >= from, "Expected >= \"#{from}\", but got #{random_time}"
       assert random_time.to_date <= to, "Expected <= \"#{to}\", but got #{random_time}"
     end
@@ -36,7 +36,7 @@ class TestFakerTime < Test::Unit::TestCase
     today = Date.today
 
     100.times do
-      random_time = @tester.forward(10)
+      random_time = @tester.forward(days: 10)
       assert random_time > today.to_time, "Expected > \"#{today}\", but got #{random_time}"
     end
   end
@@ -45,7 +45,7 @@ class TestFakerTime < Test::Unit::TestCase
     tomorrow = Date.today + 1
 
     100.times do
-      random_time = @tester.backward(10)
+      random_time = @tester.backward(days: 10)
       assert random_time < tomorrow.to_time, "Expected < \"#{tomorrow}\", but got #{random_time}"
     end
   end
@@ -55,20 +55,22 @@ class TestFakerTime < Test::Unit::TestCase
     to   = Date.today + 15
 
     assert_raise ArgumentError do
-      @tester.between(from, to, :invalid_period)
+      @tester.between_dates(from, to, :invalid_period)
     end
   end
 
-  def test_return_type
-    random_backward = @tester.backward(5)
-    random_between_dates = @tester.between(Date.today, Date.today + 5)
-    random_between_times = @tester.between(Time.now, Time.now + TEN_HOURS)
-    random_forward = @tester.forward(5)
+  def test_return_types_are_time_objects
+    random_backward = @tester.backward(days: 5)
+    random_between_dates = @tester.between_dates(from: Date.today, to: Date.today + 5)
+    random_between_with_date_args = @tester.between(from: Date.today, to: Date.today + 5)
+    random_between_with_time_args = @tester.between(from: Time.now, to: Time.now + TEN_HOURS)
+    random_forward = @tester.forward(days: 5)
 
     [
       random_backward,
       random_between_dates,
-      random_between_times,
+      random_between_with_date_args,
+      random_between_with_time_args,
       random_forward
     ].each do |result|
       assert result.is_a?(Time), "Expected a Time object, but got #{result.class}"
@@ -82,10 +84,12 @@ class TestFakerTime < Test::Unit::TestCase
     100.times do
       period = @time_ranges.keys.to_a.sample
 
-      random_backward = @tester.backward(30, period, format)
-      random_between  = @tester.between(from, to, period, format)
-      random_forward  = @tester.forward(30, period, format)
-      [random_backward, random_between, random_forward].each do |result|
+      random_between_dates = @tester.between_dates(from: from, to: to, period: period, format: format)
+      random_backward = @tester.backward(days: 30, period: period, format: format)
+      random_between  = @tester.between(from: from, to: to, format: format)
+      random_forward  = @tester.forward(days: 30, period: period, format: format)
+
+      [random_backward, random_between, random_between_dates, random_forward].each do |result|
         assert result.is_a?(String), "Expected a String, but got #{result.class}"
         assert_nothing_raised 'Not a valid date string' do
           date_format = '%m/%d/%Y %I:%M %p'
@@ -104,21 +108,25 @@ class TestFakerTime < Test::Unit::TestCase
       period          = @time_ranges.keys.to_a.sample
       period_range    = @time_ranges[period]
 
-      random_backward = @tester.backward(30, period)
-      random_between  = @tester.between(from, to, period)
-      random_forward  = @tester.forward(30, period)
+      random_backward = @tester.backward(days: 30, period: period)
+      random_between  = @tester.between_dates(from: from, to: to, period: period)
+      random_forward  = @tester.forward(days: 30, period: period)
 
       [random_backward, random_between, random_forward].each_with_index do |result, index|
         assert period_range.include?(result.hour.to_i), "#{%i[random_backward random_between random_forward][index]}: \"#{result}\" expected to be included in Faker::Time::TIME_RANGES[:#{period}] range"
       end
     end
+  end
 
-    from = Time.now
-    to   = Time.now + 100
+  def test_between_in_short_window
+    # This test intentionally specifies a small window, because previous versions of between's
+    # default behavior would only constrain the date range, while allowing the time range to
+    # wander.
+    from = Time.utc(2018, 'jun', 12, 16, 14, 44)
+    to   = Time.utc(2018, 'jun', 12, 16, 19, 52)
 
     100.times do
-      period          = :between
-      random_between  = @tester.between(from, to, period)
+      random_between = @tester.between(from: from, to: to)
       assert random_between >= from, "Expected >= \"#{from}\", but got #{random_between}"
       assert random_between <= to, "Expected <= \"#{to}\", but got #{random_between}"
     end

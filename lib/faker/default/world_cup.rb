@@ -15,11 +15,11 @@ module Faker
         fetch('world_cup.stadiums')
       end
 
-      def group(group = 'group_A')
+      def group(group: 'group_A')
         fetch("world_cup.groups.#{group}")
       end
 
-      def roster(country = 'Egypt', type = 'coach')
+      def roster(country: 'Egypt', type: 'coach')
         fetch("world_cup.rosters.#{country}.#{type}")
       end
     end

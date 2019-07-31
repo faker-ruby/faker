@@ -1,6 +1,5 @@
 # Faker::TvShows::BojackHorseman
 
-
 ```ruby
 Faker::TvShows::BojackHorseman.character #=> "BoJack Horseman""
 

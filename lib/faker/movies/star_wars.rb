@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Movies
+  class Movies
     class StarWars < Base
       class << self
         def call_squadron
@@ -44,7 +44,7 @@ module Faker
           sentence + sample(['.', '?', '!'])
         end
 
-        def quote(character = nil)
+        def quote(character: nil)
           quoted_characters = translate('faker.star_wars.quotes')
 
           if character.nil?

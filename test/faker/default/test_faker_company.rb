@@ -92,7 +92,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_polish_register_of_national_economy
     # 8 length should fail
     assert_raise ArgumentError do
-      @tester.polish_register_of_national_economy(8)
+      @tester.polish_register_of_national_economy(length: 8)
     end
     # 9 length
     number = @tester.polish_register_of_national_economy
@@ -103,7 +103,7 @@ class TestFakerCompany < Test::Unit::TestCase
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
     assert control_number == number[8].to_i
     # 14 length
-    number = @tester.polish_register_of_national_economy(14)
+    number = @tester.polish_register_of_national_economy(length: 14)
     control_sum = 0
     [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8].each_with_index do |control, index|
       control_sum += control * number[index].to_i
@@ -146,13 +146,14 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def test_luhn_algorithm
     # Odd length base for luhn algorithm
-    odd_base = Faker::Number.number([5, 7, 9, 11, 13].sample)
-    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base)
+    odd_base = Faker::Number.number(digits: [5, 7, 9, 11, 13].sample)
+    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base).to_s
     odd_control = "#{odd_base}#{odd_luhn_complement}"
 
     # Even length base for luhn algorithm
-    even_base = Faker::Number.number([4, 6, 8, 10, 12].sample)
-    even_luhn_complement = @tester.send(:luhn_algorithm, even_base)
+    even_base = Faker::Number.number(digits: [4, 6, 8, 10, 12].sample)
+    even_luhn_complement = @tester.send(:luhn_algorithm, even_base).to_s
+
     even_control = "#{even_base}#{even_luhn_complement}"
 
     assert((luhn_checksum(odd_control) % 10).zero?)

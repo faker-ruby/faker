@@ -3,7 +3,7 @@
 module Faker
   class String < Base
     class << self
-      def random(length = 32)
+      def random(length: 32)
         utf8string select_a length
       end
 

@@ -19,7 +19,7 @@ module Faker
           fetch('dune.planets')
         end
 
-        def quote(character = nil)
+        def quote(character: nil)
           quoted_characters = translate('faker.dune.quotes').keys
 
           if character.nil?
@@ -36,7 +36,7 @@ module Faker
           fetch('dune.quotes.' + character)
         end
 
-        def saying(source = nil)
+        def saying(source: nil)
           sourced_sayings = translate('faker.dune.sayings').keys
 
           if source.nil?

@@ -5,8 +5,6 @@ module Faker
     flexible :name
 
     class << self
-      extend Gem::Deprecate
-
       def name
         parse('name.name')
       end
@@ -48,8 +46,8 @@ module Faker
         fetch('name.suffix')
       end
 
-      def initials(character_count = 3)
-        (0...character_count).map { rand(65..90).chr }.join
+      def initials(number: 3)
+        (0...number).map { rand(65..90).chr }.join
       end
     end
   end

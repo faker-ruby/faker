@@ -5,7 +5,7 @@ module Faker
     flexible :bank
 
     class << self
-      def account_number(digits = 10)
+      def account_number(digits: 10)
         output = ''
 
         output += rand.to_s[2..-1] while output.length < digits
@@ -13,7 +13,7 @@ module Faker
         output[0...digits]
       end
 
-      def iban(country_code = 'GB')
+      def iban(country_code: 'GB')
         # Each country has it's own format for bank accounts
         # Many of them use letters in certain parts of the account
         # Using regex patterns we can create virtually any type of bank account

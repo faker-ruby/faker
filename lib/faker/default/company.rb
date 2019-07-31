@@ -126,7 +126,7 @@ module Faker
       end
 
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
-      def polish_register_of_national_economy(length = 9)
+      def polish_register_of_national_economy(length: 9)
         raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
 
         random_digits = []
@@ -198,7 +198,7 @@ module Faker
       def luhn_algorithm(number)
         multiplications = []
 
-        number.reverse.split(//).each_with_index do |digit, i|
+        number.to_s.reverse.split(//).each_with_index do |digit, i|
           multiplications << if i.even?
                                digit.to_i * 2
                              else

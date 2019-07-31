@@ -51,8 +51,8 @@ class TestFrChLocale < Test::Unit::TestCase
 
   def test_fr_ch_lorem_methods
     assert Faker::Lorem.word.is_a? String
-    assert Faker::Lorem.words(1000)
-    assert Faker::Lorem.words(10_000, true)
+    assert Faker::Lorem.words(number: 1000)
+    assert Faker::Lorem.words(number: 10_000, supplemental: true)
   end
 
   def test_fr_ch_name_methods

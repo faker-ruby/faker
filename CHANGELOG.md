@@ -1,13 +1,165 @@
 # Change Log
 
+##
 ## HEAD Unreleased
+##
+
+------------------------------------------------------------------------------
+
+## [v2.0.0](https://github.com/stympy/faker/tree/2.0.0) (2019-01-08)
+
+## Important Note:
+
+Version 2 has several `breaking changes`. We replaced positional arguments with keyword arguments and the list below contains all the changed methods:
+- `Faker::Books::Dune.quote(character = nil)` becomes `Faker::Books::Dune.quote(character: nil)`
+- `Faker::Books::Dune.saying(source = nil)` becomes `Faker::Books::Dune.saying(source: nil)`
+- `Faker::Books::Lovecraft.fhtagn(number_of = nil)` becomes `Faker::Books::Lovecraft.fhtagn(number: nil)`
+- `Faker::Books::Lovecraft.paragraph(sentence_count = nil, random_sentences_to_add = nil)` becomes `Faker::Books::Lovecraft.paragraph(sentence_count: nil, random_sentences_to_add: nil)`
+- `Faker::Books::Lovecraft.paragraph_by_chars(chars = nil)` becomes `Faker::Books::Lovecraft.paragraph_by_chars(characters: nil)`
+- `Faker::Books::Lovecraft.paragraphs(paragraph_count = nil)` becomes `Faker::Books::Lovecraft.paragraphs(number: nil)`
+- `Faker::Books::Lovecraft.sentence(word_count = nil, random_words_to_add = nil)` becomes `Faker::Books::Lovecraft.sentence(word_count: nil, random_words_to_add: nil)`
+- `Faker::Books::Lovecraft.sentences(sentence_count = nil)` becomes `Faker::Books::Lovecraft.sentences(number: nil)`
+- `Faker::Books::Lovecraft.words(num = nil, spaces_allowed = nil)` becomes `Faker::Books::Lovecraft.words(number: nil, spaces_allowed: nil)`
+- `Faker::Address.city(options = nil)` becomes `Faker::Address.city(options: nil)`
+- `Faker::Address.postcode(state_abbreviation = nil)` becomes `Faker::Address.postcode(state_abbreviation: nil)`
+- `Faker::Address.street_address(include_secondary = nil)` becomes `Faker::Address.street_address(include_secondary: nil)`
+- `Faker::Address.zip(state_abbreviation = nil)` becomes `Faker::Address.zip(state_abbreviation: nil)`
+- `Faker::Address.zip_code(state_abbreviation = nil)` becomes `Faker::Address.zip_code(state_abbreviation: nil)`
+- `Faker::Alphanumeric.alpha(char_count = nil)` becomes `Faker::Alphanumeric.alpha(number: nil)`
+- `Faker::Alphanumeric.alphanumeric(char_count = nil)` becomes `Faker::Alphanumeric.alphanumeric(number: nil)`
+- `Faker::Avatar.image(slug = nil, size = nil, format = nil, set = nil, bgset = nil)` becomes `Faker::Avatar.image(slug: nil, size: nil, format: nil, set: nil, bgset: nil)`
+- `Faker::Bank.account_number(digits = nil)` becomes `Faker::Bank.account_number(digits: nil)`
+- `Faker::Bank.iban(country_code = nil)` becomes `Faker::Bank.iban(country_code: nil)`
+- `Faker::ChileRut.full_rut(min_rut = nil, fixed = nil)` becomes `Faker::ChileRut.full_rut(min_rut: nil, fixed: nil)`
+- `Faker::ChileRut.rut(min_rut = nil, fixed = nil)` becomes `Faker::ChileRut.rut(min_rut: nil, fixed: nil)`
+- `Faker::Code.ean(base = nil)` becomes `Faker::Code.ean(base: nil)`
+- `Faker::Code.isbn(base = nil)` becomes `Faker::Code.isbn(base: nil)`
+- `Faker::Code.nric(min_age = nil, max_age = nil)` becomes `Faker::Code.nric(min_age: nil, max_age: nil)`
+- `Faker::Commerce.department(max = nil, fixed_amount = nil)` becomes `Faker::Commerce.department(max: nil, fixed_amount: nil)`
+- `Faker::Commerce.price(range = nil, as_string = nil)` becomes `Faker::Commerce.price(range: nil, as_string: nil)`
+- `Faker::Commerce.promotion_code(digits = nil)` becomes `Faker::Commerce.promotion_code(digits: nil)`
+- `Faker::Company.polish_register_of_national_economy(length = nil)` becomes `Faker::Company.polish_register_of_national_economy(length: nil)`
+- `Faker::CryptoCoin.acronym(coin = nil)` becomes `Faker::CryptoCoin.acronym(coin: nil)`
+- `Faker::CryptoCoin.coin_name(coin = nil)` becomes `Faker::CryptoCoin.coin_name(coin: nil)`
+- `Faker::CryptoCoin.url_logo(coin = nil)` becomes `Faker::CryptoCoin.url_logo(coin: nil)`
+- `Faker::Date.backward(days = nil)` becomes `Faker::Date.backward(days: nil)`
+- `Faker::Date.between(from, to)` becomes `Faker::Date.between(from:, to:)`
+- `Faker::Date.between_except(from, to, excepted)` becomes `Faker::Date.between_except(from:, to:, excepted:)`
+- `Faker::Date.birthday(min_age = nil, max_age = nil)` becomes `Faker::Date.birthday(min_age: nil, max_age: nil)`
+- `Faker::Date.forward(days = nil)` becomes `Faker::Date.forward(days: nil)`
+- `Faker::Demographic.height(unit = nil)` becomes `Faker::Demographic.height(unit: nil)`
+- `Faker::File.dir(segment_count = nil, root = nil, directory_separator = nil)` becomes `Faker::File.dir(segment_count: nil, root: nil, directory_separator: nil)`
+- `Faker::File.file_name(dir = nil, name = nil, ext = nil, directory_separator = nil)` becomes `Faker::File.file_name(dir: nil, name: nil, ext: nil, directory_separator: nil)`
+- `Faker::Fillmurray.image(grayscale = nil, width = nil, height = nil)` becomes `Faker::Fillmurray.image(grayscale: nil, width: nil, height: nil)`
+- `Faker::Finance.vat_number(country = nil)` becomes `Faker::Finance.vat_number(country: nil)`
+- `Faker::Hipster.paragraph(sentence_count = nil, supplemental = nil, random_sentences_to_add = nil)` becomes `Faker::Hipster.paragraph(sentence_count: nil, supplemental: nil, random_sentences_to_add: nil)`
+- `Faker::Hipster.paragraph_by_chars(chars = nil, supplemental = nil)` becomes `Faker::Hipster.paragraph_by_chars(characters: nil, supplemental: nil)`
+- `Faker::Hipster.paragraphs(paragraph_count = nil, supplemental = nil)` becomes `Faker::Hipster.paragraphs(number: nil, supplemental: nil)`
+- `Faker::Hipster.sentence(word_count = nil, supplemental = nil, random_words_to_add = nil)` becomes `Faker::Hipster.sentence(word_count: nil, supplemental: nil, random_words_to_add: nil)`
+- `Faker::Hipster.sentences(sentence_count = nil, supplemental = nil)` becomes `Faker::Hipster.sentences(number: nil, supplemental: nil)`
+- `Faker::Hipster.words(num = nil, supplemental = nil, spaces_allowed = nil)` becomes `Faker::Hipster.words(number: nil, supplemental: nil, spaces_allowed: nil)`
+- `Faker::Internet.domain_name(subdomain = nil)` becomes `Faker::Internet.domain_name(subdomain: nil)`
+- `Faker::Internet.email(name = nil, *separators)` becomes `Faker::Internet.email(name: nil, separators: nil)`
+- `Faker::Internet.fix_umlauts(string = nil)` becomes `Faker::Internet.fix_umlauts(string: nil)`
+- `Faker::Internet.free_email(name = nil)` becomes `Faker::Internet.free_email(name: nil)`
+- `Faker::Internet.mac_address(prefix = nil)` becomes `Faker::Internet.mac_address(prefix: nil)`
+- `Faker::Internet.password(min_length = nil, max_length = nil, mix_case = nil, special_chars = nil)` becomes `Faker::Internet.password(min_length: nil, max_length: nil, mix_case: nil, special_characters: nil)`
+- `Faker::Internet.safe_email(name = nil)` becomes `Faker::Internet.safe_email(name: nil)`
+- `Faker::Internet.slug(words = nil, glue = nil)` becomes `Faker::Internet.slug(words: nil, glue: nil)`
+- `Faker::Internet.url(host = nil, path = nil, scheme = nil)` becomes `Faker::Internet.url(host: nil, path: nil, scheme: nil)`
+- `Faker::Internet.user_agent(vendor = nil)` becomes `Faker::Internet.user_agent(vendor: nil)`
+- `Faker::Internet.user_name(specifier = nil, separators = nil)` becomes `Faker::Internet.user_name(specifier: nil, separators: nil)`
+- `Faker::Internet.username(specifier = nil, separators = nil)` becomes `Faker::Internet.username(specifier: nil, separators: nil)`
+- `Faker::Invoice.amount_between(from = nil, to = nil)` becomes `Faker::Invoice.amount_between(from: nil, to: nil)`
+- `Faker::Invoice.creditor_reference(ref = nil)` becomes `Faker::Invoice.creditor_reference(ref: nil)`
+- `Faker::Invoice.reference(ref = nil)` becomes `Faker::Invoice.reference(ref: nil)`
+- `Faker::Json.add_depth_to_json(json = nil, width = nil, options = nil)` becomes `Faker::Json.add_depth_to_json(json: nil, width: nil, options: nil)`
+- `Faker::Json.shallow_json(width = nil, options = nil)` becomes `Faker::Json.shallow_json(width: nil, options: nil)`
+- `Faker::Lorem.characters(char_count = nil)` becomes `Faker::Lorem.characters(number: nil)`
+- `Faker::Lorem.paragraph(sentence_count = nil, supplemental = nil, random_sentences_to_add = nil)` becomes `Faker::Lorem.paragraph(sentence_count: nil, supplemental: nil, random_sentences_to_add: nil)`
+- `Faker::Lorem.paragraph_by_chars(chars = nil, supplemental = nil)` becomes `Faker::Lorem.paragraph_by_chars(number: nil, supplemental: nil)`
+- `Faker::Lorem.paragraphs(paragraph_count = nil, supplemental = nil)` becomes `Faker::Lorem.paragraphs(number: nil, supplemental: nil)`
+- `Faker::Lorem.question(word_count = nil, supplemental = nil, random_words_to_add = nil)` becomes `Faker::Lorem.question(word_count: nil, supplemental: nil, random_words_to_add: nil)`
+- `Faker::Lorem.questions(question_count = nil, supplemental = nil)` becomes `Faker::Lorem.questions(number: nil, supplemental: nil)`
+- `Faker::Lorem.sentence(word_count = nil, supplemental = nil, random_words_to_add = nil)` becomes `Faker::Lorem.sentence(word_count: nil, supplemental: nil, random_words_to_add: nil)`
+- `Faker::Lorem.sentences(sentence_count = nil, supplemental = nil)` becomes `Faker::Lorem.sentences(number: nil, supplemental: nil)`
+- `Faker::Lorem.words(num = nil, supplemental = nil)` becomes `Faker::Lorem.words(number: nil, supplemental: nil)`
+- `Faker::LoremFlickr.colorized_image(size = nil, color = nil, search_terms = nil, match_all = nil)` becomes `Faker::LoremFlickr.colorized_image(size: nil, color: nil, search_terms: nil, match_all: nil)`
+- `Faker::LoremFlickr.grayscale_image(size = nil, search_terms = nil, match_all = nil)` becomes `Faker::LoremFlickr.grayscale_image(size: nil, search_terms: nil, match_all: nil)`
+- `Faker::LoremFlickr.image(size = nil, search_terms = nil, match_all = nil)` becomes `Faker::LoremFlickr.image(size: nil, search_terms: nil, match_all: nil)`
+- `Faker::LoremFlickr.pixelated_image(size = nil, search_terms = nil, match_all = nil)` becomes `Faker::LoremFlickr.pixelated_image(size: nil, search_terms: nil, match_all: nil)`
+- `Faker::LoremPixel.image(size = nil, is_gray = nil, category = nil, number = nil, text = nil, secure: nil)` becomes `Faker::LoremPixel.image(size: nil, is_gray: nil, category: nil, number: nil, text: nil, secure: nil)`
+- `Faker::Markdown.sandwich(sentences = nil, repeat = nil)` becomes `Faker::Markdown.sandwich(sentences: nil, repeat: nil)`
+- `Faker::Measurement.height(amount = nil)` becomes `Faker::Measurement.height(amount: nil)`
+- `Faker::Measurement.length(amount = nil)` becomes `Faker::Measurement.length(amount: nil)`
+- `Faker::Measurement.metric_height(amount = nil)` becomes `Faker::Measurement.metric_height(amount: nil)`
+- `Faker::Measurement.metric_length(amount = nil)` becomes `Faker::Measurement.metric_length(amount: nil)`
+- `Faker::Measurement.metric_volume(amount = nil)` becomes `Faker::Measurement.metric_volume(amount: nil)`
+- `Faker::Measurement.metric_weight(amount = nil)` becomes `Faker::Measurement.metric_weight(amount: nil)`
+- `Faker::Measurement.volume(amount = nil)` becomes `Faker::Measurement.volume(amount: nil)`
+- `Faker::Measurement.weight(amount = nil)` becomes `Faker::Measurement.weight(amount: nil)`
+- `Faker::Name.initials(character_count = nil)` becomes `Faker::Name.initials(number: nil)`
+- `Faker::NationalHealthService.check_digit(number = nil)` becomes `Faker::NationalHealthService.check_digit(number: nil)`
+- `Faker::Number.between(from = nil, to = nil)` becomes `Faker::Number.between(from: nil, to: nil)`
+- `Faker::Number.decimal(l_digits = nil, r_digits = nil)` becomes `Faker::Number.decimal(l_digits: nil, r_digits: nil)`
+- `Faker::Number.decimal_part(*args, &block)` becomes `Faker::Number.decimal_part(digits: nil)`
+- `Faker::Number.hexadecimal(digits = nil)` becomes `Faker::Number.hexadecimal(digits: nil)`
+- `Faker::Number.leading_zero_number(*args, &block)` becomes `Faker::Number.leading_zero_number(digits: nil)`
+- `Faker::Number.negative(from = nil, to = nil)` becomes `Faker::Number.negative(from: nil, to: nil)`
+- `Faker::Number.normal(mean = nil, standard_deviation = nil)` becomes `Faker::Number.normal(mean: nil, standard_deviation: nil)`
+- `Faker::Number.number(digits = nil)` becomes `Faker::Number.number(digits: nil)`
+- `Faker::Number.positive(from = nil, to = nil)` becomes `Faker::Number.positive(from: nil, to: nil)`
+- `Faker::Number.within(range = nil)` becomes `Faker::Number.within(range: nil)`
+- `Faker::PhoneNumber.extension(length = nil)` becomes `Faker::PhoneNumber.extension(length: nil)`
+- `Faker::PhoneNumber.subscriber_number(length = nil)` becomes `Faker::PhoneNumber.subscriber_number(length: nil)`
+- `Faker::Placeholdit.image(size = nil, format = nil, background_color = nil, text_color = nil, text = nil)` becomes `Faker::Placeholdit.image(size: nil, format: nil, background_color: nil, text_color: nil, text: nil)`
+- `Faker::Relationship.familial(connection = nil)` becomes `Faker::Relationship.familial(connection: nil)`
+- `Faker::Source.hello_world(lang = nil)` becomes `Faker::Source.hello_world(lang: nil)`
+- `Faker::Source.print_1_to_10(lang = nil)` becomes `Faker::Source.print_1_to_10(lang: nil)`
+- `Faker::String.random(length = nil)` becomes `Faker::String.random(length: nil)`
+- `Faker::Stripe.ccv(card_type = nil)` becomes `Faker::Stripe.ccv(card_type: nil)`
+- `Faker::Stripe.invalid_card(card_error = nil)` becomes `Faker::Stripe.invalid_card(card_error: nil)`
+- `Faker::Stripe.valid_card(card_type = nil)` becomes `Faker::Stripe.valid_card(card_type: nil)`
+- `Faker::Stripe.valid_token(card_type = nil)` becomes `Faker::Stripe.valid_token(card_type: nil)`
+- `Faker::Time.backward(days = nil, period = nil, format = nil)` becomes `Faker::Time.backward(days: nil, period: nil, format: nil)`
+- `Faker::Time.between(from, to, period = nil, format = nil)` becomes `Faker::Time.between(from:, to:, format: nil)`
+- `Faker::Time.forward(days = nil, period = nil, format = nil)` becomes `Faker::Time.forward(days: nil, period: nil, format: nil)`
+- `Faker::Types.complex_rb_hash(key_count = nil)` becomes `Faker::Types.complex_rb_hash(number: nil)`
+- `Faker::Types.rb_array(len = nil)` becomes `Faker::Types.rb_array(len: nil)`
+- `Faker::Types.rb_hash(key_count = nil, type = nil)` becomes `Faker::Types.rb_hash(number: nil, type: nil)`
+- `Faker::Types.rb_integer(from = nil, to = nil)` becomes `Faker::Types.rb_integer(from: nil, to: nil)`
+- `Faker::Types.rb_string(words = nil)` becomes `Faker::Types.rb_string(words: nil)`
+- `Faker::Vehicle.kilometrage(min = nil, max = nil)` becomes `Faker::Vehicle.kilometrage(min: nil, max: nil)`
+- `Faker::Vehicle.license_plate(state_abreviation = nil)` becomes `Faker::Vehicle.license_plate(state_abreviation: nil)`
+- `Faker::Vehicle.mileage(min = nil, max = nil)` becomes `Faker::Vehicle.mileage(min: nil, max: nil)`
+- `Faker::Vehicle.model(make_of_model = nil)` becomes `Faker::Vehicle.model(make_of_model: nil)`
+- `Faker::WorldCup.group(group = nil)` becomes `Faker::WorldCup.group(group: nil)`
+- `Faker::WorldCup.roster(country = nil, type = nil)` becomes `Faker::WorldCup.roster(country: nil, type: nil)`
+- `Faker::Movies::StarWars.quote(character = nil)` becomes `Faker::Movies::StarWars.quote(character: nil)`
 
 ### Bug/Fixes
-### Chores
+
+- [PR #1660](https://github.com/stympy/faker/pull/1660) Update FillMurray Links To Include www [@RaymondFallon](https://github.com/RaymondFallon)
+
 ### Deprecation
+
+- [PR #1634](https://github.com/stympy/faker/pull/1634) Corrected other occurrences of spelling vehicle spelling error, deprecated Space launch_vehicule [@Siyanda](https://github.com/Siyanda)
+
 ### Documentation
+
+- [PR #1653](https://github.com/stympy/faker/pull/1653) Add /faker-ruby/faker-bot to README [@vbrazo](https://github.com/vbrazo)
+
 ### Feature Request
+
+- [PR #1417](https://github.com/stympy/faker/pull/1417) Rework Faker::Time::between [@pjohnmeyer](https://github.com/pjohnmeyer)
+- [PR #510](https://github.com/stympy/faker/pull/510) Make Faker::Number return integers and floats instead of strings [@tejasbubane](https://github.com/tejasbubane)
+- [PR #1651](https://github.com/stympy/faker/pull/1651) Preparing for v2 arguments [@vbrazo](https://github.com/vbrazo)
+- [PR #1664](https://github.com/stympy/faker/pull/1664) Replace positional arguments with keyword arguments [@vbrazo](https://github.com/vbrazo)
+
 ### Update/add locales
+
+- [PR #1658](https://github.com/stympy/faker/pull/1658) Update Faker::Games::SuperSmashBros entries [@boardfish](https://github.com/boardfish)
+- [PR #1649](https://github.com/stympy/faker/pull/1649) Remove mexicoMX [@vbrazo](https://github.com/vbrazo)
 
 ------------------------------------------------------------------------------
 

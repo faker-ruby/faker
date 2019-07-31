@@ -12,17 +12,17 @@ class TestFakerRelationship < Test::Unit::TestCase
   end
 
   def test_familial_direct
-    assert @tester.familial('direct').match(/\w+/)
+    assert @tester.familial(connection: 'direct').match(/\w+/)
   end
 
   def test_familial_extended
-    assert @tester.familial('extended').match(/\w+/)
+    assert @tester.familial(connection: 'extended').match(/\w+/)
   end
 
   # test error on no match
   def test_invalid_familial_connection
     assert_raise ArgumentError do
-      @tester.familial('Not Correct')
+      @tester.familial(connection: 'Not Correct')
     end
   end
 

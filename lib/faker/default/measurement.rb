@@ -6,35 +6,35 @@ module Faker
       ALL = 'all'
       NONE = 'none'
 
-      def height(amount = rand(10))
+      def height(amount: rand(10))
         define_measurement_locale(amount, 'height')
       end
 
-      def length(amount = rand(10))
+      def length(amount: rand(10))
         define_measurement_locale(amount, 'length')
       end
 
-      def volume(amount = rand(10))
+      def volume(amount: rand(10))
         define_measurement_locale(amount, 'volume')
       end
 
-      def weight(amount = rand(10))
+      def weight(amount: rand(10))
         define_measurement_locale(amount, 'weight')
       end
 
-      def metric_height(amount = rand(10))
+      def metric_height(amount: rand(10))
         define_measurement_locale(amount, 'metric_height')
       end
 
-      def metric_length(amount = rand(10))
+      def metric_length(amount: rand(10))
         define_measurement_locale(amount, 'metric_length')
       end
 
-      def metric_volume(amount = rand(10))
+      def metric_volume(amount: rand(10))
         define_measurement_locale(amount, 'metric_volume')
       end
 
-      def metric_weight(amount = rand(10))
+      def metric_weight(amount: rand(10))
         define_measurement_locale(amount, 'metric_weight')
       end
 

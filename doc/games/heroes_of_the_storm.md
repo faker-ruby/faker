@@ -1,7 +1,5 @@
 # Faker::Games::HeroesOfTheStorm
 
-It might be available in the next version.
-
 ```ruby
 Faker::Games::HeroesOfTheStorm.battleground #=> "Towers of Doom"
 

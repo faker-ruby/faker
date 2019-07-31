@@ -1,9 +1,9 @@
 # Faker::Alphanumeric
 
-It might be available in the next version.
-
 ```ruby
-Faker::Alphanumeric.alpha 10 #=> "zlvubkrwga"
+# Keyword arguments: number
+Faker::Alphanumeric.alpha(number: 10) #=> "zlvubkrwga"
 
-Faker::Alphanumeric.alphanumeric 10 #=> "3yfq2phxtb"
+# Keyword arguments: number
+Faker::Alphanumeric.alphanumeric(number: 10) #=> "3yfq2phxtb"
 ```

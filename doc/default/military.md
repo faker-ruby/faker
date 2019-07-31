@@ -1,7 +1,5 @@
 # Faker::Military
 
-It might be available in the next version.
-
 ```ruby
 Faker::Military.army_rank #=> "Staff Sergeant"
 
