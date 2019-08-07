@@ -25,12 +25,12 @@ Faker::Internet.username(specifier: 5..8)
 # Keyword arguments: min_length
 Faker::Internet.username(specifier: 8)
 
-# Keyword arguments: min_length, max_length, mix_case, special_chars
+# Keyword arguments: min_length, max_length, mix_case, special_characters
 Faker::Internet.password #=> "Vg5mSvY1UeRg7"
 Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
 Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
 Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
-Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_chars: true) #=> "*%NkOnJsH4"
+Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
 
 Faker::Internet.domain_name #=> "effertz.info"
 
