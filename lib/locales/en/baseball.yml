@@ -1,0 +1,120 @@
+en:
+  faker:
+    baseball:
+      teams:
+        - Arizona Diamondbacks
+        - Atlanta Braves
+        - Baltimore Orioles
+        - Boston Red Sox
+        - Chicago White Sox
+        - Chicago Cubs
+        - Cincinnati Reds
+        - Cleveland Indians
+        - Colorado Rockies
+        - Detroit Tigers
+        - Houston Astros
+        - Kansas City Royals
+        - Los Angeles Angels
+        - Los Angeles Dodgers
+        - Miami Marlins
+        - Milwaukee Brewers
+        - Minnesota Twins
+        - New York Yankees
+        - New York Mets
+        - Oakland Athletics
+        - Philadelphia Phillies
+        - Pittsburgh Pirates
+        - San Diego Padres
+        - San Francisco Giants
+        - Seattle Mariners
+        - St. Louis Cardinals
+        - Tampa Bay Rays
+        - Texas Rangers
+        - Toronto Blue Jays
+        - Washington Nationals
+      players:
+        - Gary Sánchez
+        - Carlos Santana
+        - DJ LeMahieu
+        - Alex Bregman
+        - Jorge Polanco
+        - Mike Trout
+        - George Springer
+        - Michael Brantley
+        - Hunter Pence
+        - James McCann
+        - José Abreu
+        - Daniel Vogelbach
+        - Tommy La Stella
+        - Brandon Lowe
+        - Gleyber Torres
+        - Matt Chapman
+        - Xander Bogaerts
+        - Francisco Lindor
+        - Mookie Betts
+        - Joey Gallo
+        - Austin Meadows
+        - Whit Merrifield
+        - J.D. Martinez
+        - José Berríos
+        - Shane Bieber
+        - Aroldis Chapman
+        - Gerrit Cole
+        - Lucas Giolito
+        - Shane Greene
+        - Brad Hand
+        - Liam Hendriks
+        - John Means
+        - Mike Minor
+        - Charlie Morton
+        - Jake Odorizzi
+        - Ryan Pressly
+        - Marcus Stroman
+        - Masahiro Tanaka
+        - Justin Verlander
+        - Willson Contreras
+        - Freddie Freeman
+        - Ketel Marte
+        - Nolan Arenado
+        - Javier Báez
+        - Christian Yelich
+        - Cody Bellinger
+        - Ronald Acuña Jr.
+        - Yasmani Grandal
+        - J.T. Realmuto
+        - Pete Alonso
+        - Josh Bell
+        - Max Muncy
+        - Mike Moustakas
+        - Kris Bryant
+        - Anthony Rendon
+        - Paul DeJong
+        - Trevor Story
+        - Charlie Blackmon
+        - David Dahl
+        - Jeff McNeil
+        - Sandy Alcantara
+        - Walker Buehler
+        - Luis Castillo
+        - Jacob deGrom
+        - Sonny Gray
+        - Zack Greinke
+        - Josh Hader
+        - Clayton Kershaw
+        - Hyun-Jin Ryu
+        - Max Scherzer
+        - Will Smith
+        - Mike Soroka
+        - Felipe Vázquez
+        - Brandon Woodruff
+        - Kirby Yates
+      positions:
+        - Pitcher
+        - Catcher
+        - First Baseman
+        - Second Baseman
+        - Third Baseman
+        - Shortstop
+        - Left Fielder
+        - Center Fielder
+        - Right Fielder
