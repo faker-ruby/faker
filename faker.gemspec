@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://github.com/stympy/faker'
   spec.metadata['bug_tracker_uri'] = 'https://github.com/stympy/faker/issues'
 
-  spec.add_dependency('i18n', '>= 0.7')
+  spec.add_dependency('i18n', '>= 0.8')
 
   spec.add_development_dependency('minitest', '5.11.3')
   spec.add_development_dependency('pry', '0.12.2')
