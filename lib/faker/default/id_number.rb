@@ -78,7 +78,7 @@ module Faker
         [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
-      def brazilian_citizen_number(formatted = false)
+      def brazilian_citizen_number(formatted: false)
         digits = Faker::Number.leading_zero_number(9) until digits&.match(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
@@ -88,7 +88,7 @@ module Faker
 
       alias brazilian_cpf brazilian_citizen_number
 
-      def brazilian_id(formatted = false)
+      def brazilian_id(formatted: false)
         digits = Faker::Number.between(BRAZILIAN_ID_FROM, BRAZILIAN_ID_TO).to_s
         check_digit = brazilian_id_checksum_digit(digits)
         number = [digits, check_digit].join
