@@ -1,5 +1,23 @@
 # Change Log
 
+## [v2.1.1](https://github.com/stympy/faker/tree/2.1.1) (2019-10-08)
+
+## Bug/Fixes
+
+- [PR #1685](https://github.com/stympy/faker/pull/1685) Upgrade i18n [@EduardoGHdez](https://github.com/EduardoGHdez)
+
+`bundler-audit` has identified that i18 has fix a security vulnerability, that has been fixed in the 0.8 version.
+
+- [PR #1683](https://github.com/stympy/faker/pull/1683) Rollback Faker::Time changes [@vbrazo](https://github.com/vbrazo)
+
+Rollback Faker::Time changes because we should expect the date format from activesupport's en.yml.
+
+## Documentation
+
+- [PR #1677](https://github.com/stympy/faker/pull/1677) Fix docs for Internet#password generator [@ur5us](https://github.com/ur5us)
+
+------------------------------------------------------------------------------
+
 ## [v2.1.0](https://github.com/stympy/faker/tree/2.1.0) (2019-31-07)
 
 ## Bug/Fixes
