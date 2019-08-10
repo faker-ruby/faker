@@ -4,9 +4,18 @@
 # Random Time between two times
 # Keyword arguments: from, to, format
 Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) #=> "2014-09-18 12:30:59 -0700"
+
+# Random Stringified time between two times, formatted to the specified I18n format
+# (Examples are from a Rails console with rails-i18n 5.1.1 defaults loaded)
+I18n.locale = 'en-US'
 Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) #=> "Tue, 16 Oct 2018 10:48:27 AM -05:00"
 Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short) #=> "15 Oct 10:48 AM"
 Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long) #=> "October 15, 2018 10:48 AM"
+
+I18n.locale = 'ja'
+Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) #=> "2018/10/15 10:48:27"
+Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short) #=> "18/10/15 10:48"
+Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long) #=> "2018年10月16日(火) 10時48分27秒 -0500"
 
 # Random Time between two dates, within specified part of the day
 # Keyword arguments: from, to, period
