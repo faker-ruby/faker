@@ -4,7 +4,7 @@
 # Generate a licence number in GB format, as issued in England, Scotland and Wales
 # The DVSA does not publish their checksum algorithm, so the last 3 characters
 # are random
-# Optional arguments: last_name, initials, date_of_birth, gender
+# Keyword arguments: last_name, initials, date_of_birth, gender
 Faker::DrivingLicence.british_driving_licence        #=> "MCDER712081VF7EK"
 Faker::DrivingLicence.british_driving_licence(last_name: "O'Carroll",
                                               initials: "J",
@@ -16,6 +16,6 @@ Faker::DrivingLicence.northern_irish_driving_licence #=> "70702548"
 
 # Generate a UK driving licence number in either GB or NI format, at a rate
 # consistent with their relative populations
-# Optional arguments: last_name, initials, date_of_birth, gender
+# Keyword arguments: last_name, initials, date_of_birth, gender
 Faker::DrivingLicence.uk_driving_licence             #=> "OCARR815246J91HT"
 Faker::DrivingLicence.uk_driving_licence             #=> "70702548"

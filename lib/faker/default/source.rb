@@ -3,7 +3,7 @@
 module Faker
   class Source < Base
     class << self
-      def hello_world(lang = :ruby)
+      def hello_world(lang: :ruby)
         fetch("source.hello_world.#{lang}")
       end
 
@@ -12,7 +12,7 @@ module Faker
         code.gsub('faker_string_to_print', str)
       end
 
-      def print_1_to_10(lang = :ruby)
+      def print_1_to_10(lang: :ruby)
         fetch("source.print_1_to_10.#{lang}")
       end
     end

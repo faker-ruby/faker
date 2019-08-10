@@ -18,7 +18,7 @@ module Faker
                                 transport].freeze
 
       # rubocop:disable Metrics/ParameterLists
-      def image(size = '300x300', is_gray = false, category = nil, number = nil, text = nil, secure: true)
+      def image(size: '300x300', is_gray: false, category: nil, number: nil, text: nil, secure: true)
         raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
         raise ArgumentError, "Supported categories are #{SUPPORTED_CATEGORIES.join(', ')}" unless category.nil? || SUPPORTED_CATEGORIES.include?(category)
         raise ArgumentError, 'Category required when number is passed' if !number.nil? && category.nil?

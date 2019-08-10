@@ -3,6 +3,7 @@ en:
     games:
       super_smash_bros:
         fighter:
+          - Banjo-Kazooie
           - Bayonetta
           - Bowser
           - Bowser Jr.
@@ -22,6 +23,7 @@ en:
           - Fox
           - Ganondorf
           - Greninja
+          - Hero
           - Ice Climbers
           - Ike
           - Incineroar
@@ -137,6 +139,7 @@ en:
           - Mario Bros.
           - Mario Circuit
           - Mario Galaxy
+          - Mementos
           - Midgar
           - Miiverse
           - Moray Towers
@@ -178,6 +181,7 @@ en:
           - Skyworld
           - Smashville
           - Spear Pillar
+          - Spiral Mountain
           - Spirit Train
           - Summit
           - Super Happy Tree

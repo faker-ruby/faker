@@ -5,7 +5,7 @@ module Faker
     flexible :relationship
 
     class << self
-      def familial(connection = nil)
+      def familial(connection: nil)
         familial_connections = translate('faker.relationship.familial').keys
 
         if connection.nil?

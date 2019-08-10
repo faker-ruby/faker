@@ -1,7 +1,5 @@
 # Faker::TvShows::Buffy
 
-It might be available in the next version.
-
 ```ruby
 Faker::TvShows::Buffy.character #=> "Buffy Summers"
 

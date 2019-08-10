@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module TvShows
+  class TvShows
     class SiliconValley < Base
       flexible :silicon_valley
 

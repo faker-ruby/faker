@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module TvShows
+  class TvShows
     class HowIMetYourMother < Base
       flexible :how_i_met_your_mother
 

@@ -5,7 +5,7 @@ module Faker
     class << self
       SUPPORTED_FORMATS = %w[png jpg gif jpeg].freeze
 
-      def image(size = '300x300', format = 'png', background_color = nil, text_color = nil, text = nil)
+      def image(size: '300x300', format: 'png', background_color: nil, text_color: nil, text: nil)
         background_color = generate_color if background_color == :random
         text_color = generate_color if text_color == :random
 

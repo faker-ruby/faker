@@ -5,7 +5,7 @@ module Faker
     flexible :address
 
     class << self
-      def city(options = {})
+      def city(options: {})
         parse(options[:with_state] ? 'address.city_with_state' : 'address.city')
       end
 
@@ -13,7 +13,7 @@ module Faker
         parse('address.street_name')
       end
 
-      def street_address(include_secondary = false)
+      def street_address(include_secondary: false)
         numerify(parse('address.street_address') + (include_secondary ? ' ' + secondary_address : ''))
       end
 
@@ -29,7 +29,7 @@ module Faker
         parse('address.community')
       end
 
-      def zip_code(state_abbreviation = '')
+      def zip_code(state_abbreviation: '')
         if state_abbreviation.empty?
           letterified_string = letterify(fetch('address.postcode'))
           return numerify(letterified_string, leading_zero: true)

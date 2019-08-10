@@ -1,6 +1,5 @@
 # Faker::House
 
-
 ```ruby
 Faker::House.furniture #=> "chair"
 

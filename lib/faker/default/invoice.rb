@@ -6,13 +6,13 @@ module Faker
 
     class << self
       # Generate random amount between values with 2 decimals
-      def amount_between(from = 0, to = 0)
+      def amount_between(from: 0, to: 0)
         Faker::Base.rand_in_range(from, to).round(2)
       end
 
       # International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
       # ref is optional so that we can create unit tests
-      def creditor_reference(ref = '')
+      def creditor_reference(ref: '')
         ref = reference if ref.empty?
 
         'RF' + iban_checksum('RF', ref) + ref
@@ -20,7 +20,7 @@ module Faker
 
       # Payment references have some rules in certain countries
       # ref is optional so that we can create unit tests
-      def reference(ref = '')
+      def reference(ref: '')
         pattern = fetch('invoice.reference.pattern')
 
         ref = Base.regexify(/#{pattern}/) if ref.empty?
