@@ -89,7 +89,7 @@ module Faker
       alias brazilian_cpf brazilian_citizen_number
 
       def brazilian_id(formatted: false)
-        digits = Faker::Number.between(BRAZILIAN_ID_FROM, BRAZILIAN_ID_TO).to_s
+        digits = Faker::Number.between(to: BRAZILIAN_ID_FROM, from: BRAZILIAN_ID_TO).to_s
         check_digit = brazilian_id_checksum_digit(digits)
         number = [digits, check_digit].join
         formatted ? format('%s.%s.%s-%s', *number.scan(BRAZILIAN_ID_FORMAT).flatten) : number
