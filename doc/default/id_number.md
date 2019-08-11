@@ -22,9 +22,12 @@ Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
 Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
 
 # Generate a Brazilian citizen number (CPF)
-Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
-
-# Generate a formatted Brazilian CPF
 # Keyword arguments: formatted
+Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
 Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> 000.000.000-00
+
+# Generate a Brazilian ID Number (RG)
+# Keyword arguments: formatted
+Faker::IDNumber.brazilian_id #=> 1212312312
+Faker::IDNumber.brazilian_id(formatted: true) #=> 12.123.123-12
 ```

@@ -12,6 +12,9 @@ module Faker
     ].freeze
     ZA_RACE_DIGIT = '8'
     ZA_CITIZENSHIP_DIGITS = %w[0 1].freeze
+    BRAZILIAN_ID_FORMAT = /(\d{1,2})(\d{3})(\d{3})([\dX])/
+    BRAZILIAN_ID_FROM = 10_000_000
+    BRAZILIAN_ID_TO = 99_999_999
 
     class << self
       def valid
@@ -83,6 +86,17 @@ module Faker
         formatted ? format('%s.%s.%s-%s', *number.scan(/\d{2,3}/).flatten) : number
       end
 
+      alias brazilian_cpf brazilian_citizen_number
+
+      def brazilian_id(formatted: false)
+        digits = Faker::Number.between(to: BRAZILIAN_ID_FROM, from: BRAZILIAN_ID_TO).to_s
+        check_digit = brazilian_id_checksum_digit(digits)
+        number = [digits, check_digit].join
+        formatted ? format('%s.%s.%s-%s', *number.scan(BRAZILIAN_ID_FORMAT).flatten) : number
+      end
+
+      alias brazilian_rg brazilian_id
+
       private
 
       def south_african_id_checksum_digit(id_number)
@@ -104,11 +118,34 @@ module Faker
       end
 
       def brazilian_citizen_number_checksum_digit(digits)
-        digit_sum = digits.chars.each_with_index.inject(0) do |acc, (digit, i)|
+        checksum = brazilian_document_checksum(digits)
+        brazilian_document_digit(checksum)
+      end
+
+      def brazilian_id_checksum_digit(digits)
+        checksum = brazilian_document_checksum(digits)
+        brazilian_document_digit(checksum, id: true)
+      end
+
+      def brazilian_document_checksum(digits)
+        digits.chars.each_with_index.inject(0) do |acc, (digit, i)|
           acc + digit.to_i * (digits.size + 1 - i)
         end * 10
-        remainder = digit_sum % 11
+      end
+
+      def brazilian_document_digit(checksum, id = false)
+        remainder = checksum % 11
+        id ? brazilian_id_digit(remainder) : brazilian_citizen_number_digit(remainder)
+      end
+
+      def brazilian_citizen_number_digit(remainder)
         remainder == 10 ? '0' : remainder.to_s
+      end
+
+      def brazilian_id_digit(remainder)
+        subtraction = 11 - remainder.to_i
+        digits = { 10 => 'X', 11 => '0' }
+        digits.include?(subtraction) ? digits[subtraction] : subtraction.to_s
       end
 
       def _translate(key)
