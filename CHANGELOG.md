@@ -1,5 +1,15 @@
 # Change Log
 
+## [v2.1.2](https://github.com/stympy/faker-ruby/faker/tree/2.1.2) (2019-10-08)
+
+## Enhancements
+
+- [PR #1495](https://github.com/stympy/faker/pull/1495) Add Brazilian documents generation and documentation [@lucasqueiroz](https://github.com/lucasqueiroz)
+
+## Issues
+
+We had to use `bundled with 1.7.3` to avoid some issues.
+
 ## [v2.1.1](https://github.com/stympy/faker/tree/2.1.1) (2019-10-08)
 
 ## Bug/Fixes
