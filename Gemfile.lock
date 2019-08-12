@@ -20,7 +20,7 @@ GEM
     parallel (1.17.0)
     parser (2.6.3.0)
       ast (~> 2.4.0)
-    power_assert (1.1.4)
+    power_assert (1.1.5)
     powerpack (0.1.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -41,7 +41,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    test-unit (3.2.8)
+    test-unit (3.3.3)
       power_assert
     timecop (0.9.1)
     unicode-display_width (1.6.0)
@@ -56,7 +56,7 @@ DEPENDENCIES
   rake (= 12.3.1)
   rubocop (= 0.59.1)
   simplecov (= 0.16.1)
-  test-unit (= 3.2.8)
+  test-unit (= 3.3.3)
   timecop (= 0.9.1)
 
 BUNDLED WITH
