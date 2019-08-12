@@ -7,7 +7,7 @@ module Faker
         ##
         # Produces the name of a location
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Lovecraft.location
         #   "Kingsport"
@@ -18,8 +18,8 @@ module Faker
         end
 
         ##
-        # @param number {Integer} The number of times to repeat the chant
-        # @return {String}
+        # @param number [Integer] The number of times to repeat the chant
+        # @return [String]
         #
         # @example Faker::Books::Lovecraft.fhtagn
         #   "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"
@@ -38,7 +38,7 @@ module Faker
         ##
         # Produces the name of a deity
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Lovecraft.deity
         #   "Shub-Niggurath"
@@ -51,7 +51,7 @@ module Faker
         ##
         # Produces the name of a tome
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Lovecraft.tome
         #   "Book of Eibon"
@@ -64,10 +64,10 @@ module Faker
         ##
         # Produces a random sentence
         #
-        # @param word_count {Integer} The number of words to have in the sentence
-        # @param random_words_to_add {Integer}
+        # @param word_count [Integer] The number of words to have in the sentence
+        # @param random_words_to_add [Integer]
         #
-        # @return {String}
+        # @return [String]
         #
         # @example
         #   Faker::Books::Lovecraft.sentence #=> "Furtive antiquarian squamous dank cat loathsome amorphous lurk."
@@ -87,7 +87,7 @@ module Faker
         ##
         # Produces a random word
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Lovecraft.word
         #   "furtive"
@@ -104,7 +104,7 @@ module Faker
         # @param number [Integer] Number of words to generate
         # @param spaces_allowed [Boolean] If true, generated words can contain spaces
         #
-        # @return {Array<String>}
+        # @return [Array<String>]
         #
         # @example Faker::Books::Lovecraft.words
         #   [
@@ -143,9 +143,9 @@ module Faker
         ##
         # Produces a array of random sentences
         #
-        # @param number {Integer} Number of sentences to generate
+        # @param number [Integer] Number of sentences to generate
         #
-        # @return {Array<String>}
+        # @return [Array<String>]
         #
         # @example Faker::Books::Lovecraft.sentences
         #   [
@@ -175,10 +175,10 @@ module Faker
         ##
         # Produces a random paragraph
         #
-        # @param sentence_count {Integer} Number of sentences to generate
-        # @param random_sentences_to_add {Integer}
+        # @param sentence_count [Integer] Number of sentences to generate
+        # @param random_sentences_to_add [Integer]
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Lovecraft.paragraph
         #   "Squamous nameless daemoniac fungus ululate. Cyclopean stygian decadent loathsome manuscript tenebrous. Foetid abnormal stench. Dank non-euclidean comprehension eldritch. Charnel singular shunned lurk effulgence fungus."
@@ -200,9 +200,9 @@ module Faker
         ##
         # Produces a array of random paragraphs
         #
-        # @param number {Integer} Number of paragraphs to generate
+        # @param number [Integer] Number of paragraphs to generate
         #
-        # @return {Array<String>}
+        # @return [Array<String>]
         #
         # @example Faker::Books::Lovecraft.paragraphs
         #   [
@@ -230,9 +230,9 @@ module Faker
         end
 
         ##
-        # @param characters {Integer} Number of characters to generate in the paragraph
+        # @param characters [Integer] Number of characters to generate in the paragraph
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Lovecraft.paragraph_by_chars
         #   "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."

@@ -16,7 +16,7 @@ module Faker
         ##
         # Produces a Bitcoin wallet address
         #
-        # @return {String}
+        # @return [String]
         #
         # @example
         #   "147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
@@ -29,7 +29,7 @@ module Faker
         ##
         # Produces a Bitcoin testnet address
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Blockchain::Bitcoin.testnet_address
         #   "n4YjRyYD6V6zREpk6opqESDqD3KYnMdVEB"
@@ -44,8 +44,8 @@ module Faker
         ##
         # Generates a random Bitcoin address for the given network
         #
-        # @param network {Symbol} The name of network protocol to generate an address for
-        # @return {string} A Bitcoin address
+        # @param network [Symbol] The name of network protocol to generate an address for
+        # @return [String] A Bitcoin address
         def address_for(network)
           version = PROTOCOL_VERSIONS.fetch(network)
           packed = version.chr + Faker::Config.random.bytes(20)

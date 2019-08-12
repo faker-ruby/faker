@@ -56,15 +56,17 @@ Include [YARD] style docs for all methods that includes:
 ##
 # Produces a random string of alphabetic characters, (no digits)
 # 
-# @param char_count {Number} The length of the string to generate
+# @param char_count [Integer] The length of the string to generate
 #
-# @return {String}
+# @return [String]
 # 
-# @example Faker:Alphanumeric.alpha(10)
+# @example Faker:Alphanumeric.alpha
+#   "kgdpxlgwjirlqhwhrebvuomdcjjpeqlq" 
+# @example Faker:Alphanumeric.alpha(number: 10)
 #   "zlvubkrwga"
 #
 # @faker.version next
-def alpha(char_count = 32)
+def alpha(number: 32)
     # ...
 end
 ```

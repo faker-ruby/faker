@@ -7,7 +7,7 @@ module Faker
 
       class << self
         ##
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::CultureSeries.book
         #   "The Player of Games"
@@ -18,7 +18,7 @@ module Faker
         end
 
         ##
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::CultureSeries.culture_ship
         #   "Fate Amenable To Change"
@@ -29,7 +29,7 @@ module Faker
         end
 
         ##
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::CultureSeries.culture_ship_class
         #   "General Systems Vehicle"
@@ -40,7 +40,7 @@ module Faker
         end
 
         ##
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::CultureSeries.culture_ship_class_abv
         #   "The Odd Sister"
@@ -51,7 +51,7 @@ module Faker
         end
 
         ##
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::CultureSeries.civ
         #   "Culture"
@@ -62,7 +62,7 @@ module Faker
         end
 
         ##
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::CultureSeries.planet
         #   "Xinth"

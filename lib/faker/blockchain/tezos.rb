@@ -21,7 +21,7 @@ module Faker
         ##
         # Produces a random Tezos account address
         #
-        # @return {String}
+        # @return [String]
         #
         # @example
         #   "tz1eUsgK6aj752Fbxwk5sAoEFvSDnPjZ4qvk"
@@ -34,7 +34,7 @@ module Faker
         ##
         # Produces a random Tezos contract
         #
-        # @return {String}
+        # @return [String]
         #
         # @example
         #   "KT1MroqeP15nnitB4CnNfkqHYa2NErhPPLWF"
@@ -47,7 +47,7 @@ module Faker
         ##
         # Produces a random Tezos operation
         #
-        # @return {String}
+        # @return [String]
         #
         # @example
         #   "onygWYXJX3xNstFLv9PcCrhQdCkENC795xwSinmTEc1jsDN4VDa"
@@ -60,7 +60,7 @@ module Faker
         ##
         # Produces a random Tezos block
         #
-        # @return {String}
+        # @return [String]
         #
         # @example
         #   "BMbhs2rkY1dvAkAyRytvPsjFQ2RiPrBhYkxvWpY65dzkdSuw58a"
@@ -73,7 +73,7 @@ module Faker
         ##
         # Produces a random Tezos signature
         #
-        # @return {String}
+        # @return [String]
         #
         # @example
         #   "edsigu165B7VFf3Dpw2QABVzEtCxJY2gsNBNcE3Ti7rRxtDUjqTFRpg67EdAQmY6YWPE5tKJDMnSTJDFu65gic8uLjbW2YwGvAZ"
@@ -86,10 +86,10 @@ module Faker
         protected
 
         ##
-        # @param prefix {Symbol}
-        # @param payload_size {Integer} The size of the payload
+        # @param prefix [Symbol]
+        # @param payload_size [Integer] The size of the payload
         #
-        # @return {String}
+        # @return [String]
         def encode_tz(prefix, payload_size)
           prefix = PREFIXES.fetch(prefix)
           packed = prefix.map(&:chr).join('') + Faker::Config.random.bytes(payload_size)

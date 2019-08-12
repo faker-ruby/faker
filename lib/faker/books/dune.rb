@@ -9,7 +9,7 @@ module Faker
         ##
         # Produces the name of a character from Dune
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Dune.character
         #   "Leto Atreides"
@@ -20,7 +20,7 @@ module Faker
         end
 
         ##
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Dune.title
         #   "Duke"
@@ -33,7 +33,7 @@ module Faker
         ##
         # Produces the name of a planet from Dune
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Dune.planet
         #   "Caladan"
@@ -46,9 +46,9 @@ module Faker
         ##
         # Produces a quote from Dune
         #
-        # @param character {String} The name of the character that the quote should be from
+        # @param character [String] The name of the character that the quote should be from
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Dune.quote
         #   "A dead man, surely, no longer requires that water."
@@ -80,9 +80,9 @@ module Faker
         ##
         # Produces a saying from Dune
         #
-        # @param source {String}
+        # @param source [String]
         #
-        # @return {String}
+        # @return [String]
         #
         # @example Faker::Books::Dune.saying
         #   "You do not beg the sun for mercy."

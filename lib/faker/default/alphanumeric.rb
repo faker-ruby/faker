@@ -14,7 +14,7 @@ module Faker
       #
       # @param number [Integer] The length of the string to generate
       #
-      # @return {String}
+      # @return [String]
       #
       # @example
       #   Faker::Alphanumeric.alpha(10) #=> "zlvubkrwga"

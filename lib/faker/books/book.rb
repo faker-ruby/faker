@@ -8,7 +8,7 @@ module Faker
       ##
       # Produces a random book title
       #
-      # @return {String}
+      # @return [String]
       #
       # @example Faker::Book.title
       #   "The Odd Sister"
@@ -21,7 +21,7 @@ module Faker
       ##
       # Produces a random book author
       #
-      # @return {String}
+      # @return [String]
       #
       # @example Faker::Book.author
       #   "Alysha Olsen"
@@ -34,7 +34,7 @@ module Faker
       ##
       # Produces a random book publisher
       #
-      # @return {String}
+      # @return [String]
       #
       # @example Faker::Book.publisher
       #   "Opus Reader"
@@ -47,7 +47,7 @@ module Faker
       ##
       # Produces a random genre
       #
-      # @return {String}
+      # @return [String]
       #
       # @example Faker::Book.genre
       #   "Mystery"
