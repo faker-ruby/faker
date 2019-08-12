@@ -52,7 +52,7 @@ module Faker
         #
         # @example Faker::Books::Dune.quote
         #   "A dead man, surely, no longer requires that water."
-        # @example Faker::Books::Dune.quote("baron_harkonnen")
+        # @example Faker::Books::Dune.quote(character: "baron_harkonnen")
         #   "He who controls the spice, controls the universe!"
         #
         # @faker.version 1.9.3
@@ -86,7 +86,7 @@ module Faker
         #
         # @example Faker::Books::Dune.saying
         #   "You do not beg the sun for mercy."
-        # @example Faker::Books::Dune.saying("fremen")
+        # @example Faker::Books::Dune.saying(source: "fremen")
         #   "May thy knife chip and shatter."
         #
         # @faker.version 1.9.3

@@ -18,12 +18,12 @@ module Faker
         end
 
         ##
-        # @param number_of {Integer} The number of times to repeat the chant
+        # @param number {Integer} The number of times to repeat the chant
         # @return {String}
         #
         # @example Faker::Books::Lovecraft.fhtagn
         #   "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"
-        # @example Faker::Books::Lovecraft.fhtagn(3)
+        # @example Faker::Books::Lovecraft.fhtagn(number: 3)
         #   "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"
         #
         # @faker.version 1.9.3
@@ -69,12 +69,10 @@ module Faker
         #
         # @return {String}
         #
-        # @example Faker::Books::Lovecraft.sentence
-        #   "Furtive antiquarian squamous dank cat loathsome amorphous lurk."
-        # @example Faker::Books::Lovecraft.sentence(3)
-        #   "Daemoniac antediluvian fainted squamous comprehension gambrel nameless singular."
-        # @example Faker::Books::Lovecraft.sentence(3, 1)
-        #   "Amorphous indescribable tenebrous."
+        # @example
+        #   Faker::Books::Lovecraft.sentence #=> "Furtive antiquarian squamous dank cat loathsome amorphous lurk."
+        #   Faker::Books::Lovecraft.sentence(word_count: 3) #=> "Daemoniac antediluvian fainted squamous comprehension gambrel nameless singular."
+        #   Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1) #=> "Amorphous indescribable tenebrous."
         #
         # @faker.version 1.9.3
         def sentence(legacy_word_count = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, random_words_to_add: 6)
@@ -103,8 +101,8 @@ module Faker
         ##
         # Produces a array of random words
         #
-        # @param num {Integer} Number of words to generate
-        # @param spaces_allowed {Boolean} If true, generated words can contain spaces
+        # @param number [Integer] Number of words to generate
+        # @param spaces_allowed [Boolean] If true, generated words can contain spaces
         #
         # @return {Array<String>}
         #
@@ -114,12 +112,12 @@ module Faker
         #     "abnormal",
         #     "singular",
         #   ]
-        # @example Faker::Books::Lovecraft.words(2)
+        # @example Faker::Books::Lovecraft.words(number: 2)
         #   [
         #     "daemoniac",
         #     "cat",
         #   ]
-        # @example Faker::Books::Lovecraft.words(2, 1)
+        # @example Faker::Books::Lovecraft.words(number: 2, spaces_allowed: 1)
         #   [
         #     "lurk",
         #     "charnel",
@@ -145,7 +143,7 @@ module Faker
         ##
         # Produces a array of random sentences
         #
-        # @param sentence_count {Integer} Number of sentences to generate
+        # @param number {Integer} Number of sentences to generate
         #
         # @return {Array<String>}
         #
@@ -155,7 +153,7 @@ module Faker
         #     "Ululate swarthy immemorial cat madness gibbous unmentionable unnamable.",
         #     "Decadent antediluvian non-euclidean tentacles amorphous tenebrous.",
         #   ]
-        # @example Faker::Books::Lovecraft.sentences(2)
+        # @example Faker::Books::Lovecraft.sentences(number: 2)
         #   [
         #     "Antediluvian amorphous unmentionable singular accursed squamous immemorial.",
         #     "Gambrel daemoniac gibbous stygian shunned ululate iridescence abnormal.",
@@ -184,9 +182,9 @@ module Faker
         #
         # @example Faker::Books::Lovecraft.paragraph
         #   "Squamous nameless daemoniac fungus ululate. Cyclopean stygian decadent loathsome manuscript tenebrous. Foetid abnormal stench. Dank non-euclidean comprehension eldritch. Charnel singular shunned lurk effulgence fungus."
-        # @example Faker::Books::Lovecraft.paragraph(2)
+        # @example Faker::Books::Lovecraft.paragraph(sentence_count: 2)
         #   "Decadent lurk tenebrous loathsome furtive spectral amorphous gibbous. Gambrel eldritch daemoniac cat madness comprehension stygian effulgence."
-        # @example Faker::Books::Lovecraft.paragraph(2, 1)
+        # @example Faker::Books::Lovecraft.paragraph(sentence_count: 1, random_sentences_to_add: 1)
         #   "Stench cyclopean fainted antiquarian nameless. Antiquarian ululate tenebrous non-euclidean effulgence."
         #
         # @faker.version 1.9.3
@@ -202,7 +200,7 @@ module Faker
         ##
         # Produces a array of random paragraphs
         #
-        # @param paragraph_count {Integer} Number of paragraphs to generate
+        # @param number {Integer} Number of paragraphs to generate
         #
         # @return {Array<String>}
         #
@@ -212,7 +210,7 @@ module Faker
         #     "Non-euclidean immemorial indescribable accursed furtive. Dank unnamable cyclopean tenebrous stench immemorial. Eldritch abnormal gibbering tenebrous. Singular accursed lurk.",
         #     "Charnel antediluvian unnamable cat blasphemous comprehension tenebrous. Nameless accursed amorphous unnamable stench. Squamous unnamable mortal accursed manuscript spectral gambrel amorphous. Shunned stygian charnel unutterable. Tenebrous ululate lurk amorphous unnamable.",
         #   ]
-        # @example Faker::Books::Lovecraft.paragraphs(2)
+        # @example Faker::Books::Lovecraft.paragraphs(number: 2)
         #   [
         #     "Hideous amorphous manuscript antediluvian non-euclidean cat eldritch foetid. Stench squamous manuscript amorphous gibbering fainted gibbous. Accursed loathsome blasphemous iridescence antediluvian abnormal ululate manuscript. Singular manuscript gibbering decadent accursed indescribable.",
         #     "Tenebrous unnamable comprehension antediluvian lurk. Lurk spectral noisome gibbering. Furtive manuscript madness tenebrous daemoniac.",
@@ -232,13 +230,13 @@ module Faker
         end
 
         ##
-        # @param chars {Integer}
+        # @param characters {Integer} Number of characters to generate in the paragraph
         #
         # @return {String}
         #
         # @example Faker::Books::Lovecraft.paragraph_by_chars
         #   "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
-        # @example Faker::Books::Lovecraft.paragraph_by_chars(128)
+        # @example Faker::Books::Lovecraft.paragraph_by_chars(characters: 128)
         #   "Effulgence madness noisome. Fungus stygian mortal madness amorphous dank. Decadent noisome hideous effulgence. Tentacles charne."
         #
         # @faker.version 1.9.3
