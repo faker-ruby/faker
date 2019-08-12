@@ -57,6 +57,15 @@ module Faker
           encode_tz(:o, 32)
         end
 
+        ##
+        # Produces a random Tezos block
+        #
+        # @return {String}
+        #
+        # @example
+        #   "BMbhs2rkY1dvAkAyRytvPsjFQ2RiPrBhYkxvWpY65dzkdSuw58a"
+        #
+        # @faker.version 1.9.4
         def block
           encode_tz(:B, 32)
         end
