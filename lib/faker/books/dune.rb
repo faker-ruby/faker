@@ -11,8 +11,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Books::Dune.character
-        #   "Leto Atreides"
+        # @example
+        #   Faker::Books::Dune.character #=> "Leto Atreides"
         #
         # @faker.version 1.9.3
         def character
@@ -22,8 +22,8 @@ module Faker
         ##
         # @return [String]
         #
-        # @example Faker::Books::Dune.title
-        #   "Duke"
+        # @example
+        #   Faker::Books::Dune.title #=> "Duke"
         #
         # @faker.version 1.9.3
         def title
@@ -35,8 +35,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Books::Dune.planet
-        #   "Caladan"
+        # @example
+        #   Faker::Books::Dune.planet #=> "Caladan"
         #
         # @faker.version 1.9.3
         def planet
@@ -50,10 +50,12 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Books::Dune.quote
-        #   "A dead man, surely, no longer requires that water."
-        # @example Faker::Books::Dune.quote(character: "baron_harkonnen")
-        #   "He who controls the spice, controls the universe!"
+        # @example
+        #   Faker::Books::Dune.quote
+        #     #=> "A dead man, surely, no longer requires that water."
+        # @example
+        #   Faker::Books::Dune.quote(character: "baron_harkonnen")
+        #     #=> "He who controls the spice, controls the universe!"
         #
         # @faker.version 1.9.3
         def quote(legacy_character = NOT_GIVEN, character: nil)
@@ -84,10 +86,11 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Books::Dune.saying
-        #   "You do not beg the sun for mercy."
-        # @example Faker::Books::Dune.saying(source: "fremen")
-        #   "May thy knife chip and shatter."
+        # @example
+        #   Faker::Books::Dune.saying #=> "You do not beg the sun for mercy."
+        # @example
+        #   Faker::Books::Dune.saying(source: "fremen")
+        #     #=> "May thy knife chip and shatter."
         #
         # @faker.version 1.9.3
         def saying(legacy_source = NOT_GIVEN, source: nil)
