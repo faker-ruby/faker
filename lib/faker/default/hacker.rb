@@ -23,7 +23,7 @@ module Faker
       end
 
       ##
-      # Produces something smart.
+      # Short technical abbreviations.
       #
       # @return [String]
       #
