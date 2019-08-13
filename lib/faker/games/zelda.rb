@@ -12,6 +12,8 @@ module Faker
         #
         # @example
         #   Faker::Games::Zelda.game #=> "Breath of the Wild"
+        #
+        # @faker.version 1.7.3
         def game
           fetch('games.zelda.games')
         end
@@ -23,6 +25,8 @@ module Faker
         #
         # @example
         #   Faker::Games::Zelda.character #=> "Link"
+        #
+        # @faker.version 1.7.3
         def character
           fetch('games.zelda.characters')
         end
@@ -34,6 +38,8 @@ module Faker
         #
         # @example
         #   Faker::Games::Zelda.location #=> "Hyrule Castle"
+        #
+        # @faker.version 1.7.3
         def location
           fetch('games.zelda.locations')
         end
@@ -45,6 +51,8 @@ module Faker
         #
         # @example
         #   Faker::Games::Zelda.item #=> "Boomerang"
+        #
+        # @faker.version 1.7.3
         def item
           fetch('games.zelda.items')
         end
