@@ -10,8 +10,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Book.title
-      #   "The Odd Sister"
+      # @example
+      #   Faker::Book.title #=> "The Odd Sister"
       #
       # @faker.version 1.9.3
       def title
@@ -23,8 +23,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Book.author
-      #   "Alysha Olsen"
+      # @example
+      #   Faker::Book.author #=> "Alysha Olsen"
       #
       # @faker.version 1.9.3
       def author
@@ -36,8 +36,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Book.publisher
-      #   "Opus Reader"
+      # @example
+      #   Faker::Book.publisher #=> "Opus Reader"
       #
       # @faker.version 1.9.3
       def publisher
@@ -49,8 +49,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Book.genre
-      #   "Mystery"
+      # @example
+      #   Faker::Book.genre #=> "Mystery"
       #
       # @faker.version 1.9.3
       def genre

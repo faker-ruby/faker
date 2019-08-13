@@ -9,8 +9,9 @@ module Faker
         ##
         # @return [String]
         #
-        # @example Faker::Books::CultureSeries.book
-        #   "The Player of Games"
+        # @example
+        #   Faker::Books::CultureSeries.book
+        #     #=> "The Player of Games"
         #
         # @faker.version 1.9.3
         def book
@@ -20,8 +21,9 @@ module Faker
         ##
         # @return [String]
         #
-        # @example Faker::Books::CultureSeries.culture_ship
-        #   "Fate Amenable To Change"
+        # @example
+        #   Faker::Books::CultureSeries.culture_ship
+        #     #=> "Fate Amenable To Change"
         #
         # @faker.version 1.9.3
         def culture_ship
@@ -31,8 +33,9 @@ module Faker
         ##
         # @return [String]
         #
-        # @example Faker::Books::CultureSeries.culture_ship_class
-        #   "General Systems Vehicle"
+        # @example
+        #   Faker::Books::CultureSeries.culture_ship_class
+        #     #=> "General Systems Vehicle"
         #
         # @faker.version 1.9.3
         def culture_ship_class
@@ -42,8 +45,9 @@ module Faker
         ##
         # @return [String]
         #
-        # @example Faker::Books::CultureSeries.culture_ship_class_abv
-        #   "The Odd Sister"
+        # @example
+        #   Faker::Books::CultureSeries.culture_ship_class_abv
+        #     #=> "The Odd Sister"
         #
         # @faker.version 1.9.3
         def culture_ship_class_abv
@@ -53,8 +57,9 @@ module Faker
         ##
         # @return [String]
         #
-        # @example Faker::Books::CultureSeries.civ
-        #   "Culture"
+        # @example
+        #   Faker::Books::CultureSeries.civ
+        #     #=> "Culture"
         #
         # @faker.version 1.9.3
         def civ
@@ -64,8 +69,9 @@ module Faker
         ##
         # @return [String]
         #
-        # @example Faker::Books::CultureSeries.planet
-        #   "Xinth"
+        # @example
+        #   Faker::Books::CultureSeries.planet
+        #     #=> "Xinth"
         #
         # @faker.version 1.9.3
         def planet

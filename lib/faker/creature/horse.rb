@@ -11,8 +11,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Horse.name
-        #   "Noir"
+        # @example
+        #   Faker::Creature::Horse.name #=> "Noir"
         #
         # @faker.version 1.9.2
         def name
@@ -24,8 +24,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Horse.breed
-        #   "Spanish Barb see Barb Horse"
+        # @example
+        #   Faker::Creature::Horse.breed #=> "Spanish Barb see Barb Horse"
         #
         # @faker.version 1.9.2
         def breed

@@ -9,8 +9,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Animal.name
-        #   "fly"
+        # @example
+        #   Faker::Creature::Animal.name #=> "fly"
         #
         # @faker.version 1.9.2
         def name

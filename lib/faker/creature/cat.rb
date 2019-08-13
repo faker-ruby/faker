@@ -11,8 +11,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Cat.name
-        #   "Felix"
+        # @example
+        #   Faker::Creature::Cat.name #=> "Felix"
         #
         # @faker.version 1.9.2
         def name
@@ -24,8 +24,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Cat.breed
-        #   "Scottish Fold"
+        # @example
+        #   Faker::Creature::Cat.breed #=> "Scottish Fold"
         #
         # @faker.version 1.9.2
         def breed
@@ -37,8 +37,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Cat.registry
-        #   "Fancy Southern Africa Cat Council"
+        # @example
+        #   Faker::Creature::Cat.registry #=> "Fancy Southern Africa Cat Council"
         #
         # @faker.version 1.9.2
         def registry

@@ -10,7 +10,8 @@ module Faker
         # @return [String]
         #
         # @example
-        #   "0xd392b0c0500700d02d27ab30805ec80ddd3320ff"
+        #   Faker::Blockchain::Ethereum.address
+        #     #=> "0xd392b0c0500700d02d27ab30805ec80ddd3320ff"
         #
         # @faker.version 1.9.1
         def address

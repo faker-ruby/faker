@@ -24,7 +24,8 @@ module Faker
         # @return [String]
         #
         # @example
-        #   "tz1eUsgK6aj752Fbxwk5sAoEFvSDnPjZ4qvk"
+        #   Faker::Blockchain::Tezos.account
+        #     #=> "tz1eUsgK6aj752Fbxwk5sAoEFvSDnPjZ4qvk"
         #
         # @faker.version 1.9.2
         def account
@@ -37,7 +38,8 @@ module Faker
         # @return [String]
         #
         # @example
-        #   "KT1MroqeP15nnitB4CnNfkqHYa2NErhPPLWF"
+        #   Faker::Blockchain::Tezos.contract
+        #     #=> "KT1MroqeP15nnitB4CnNfkqHYa2NErhPPLWF"
         #
         # @faker.version 1.9.2
         def contract
@@ -50,7 +52,8 @@ module Faker
         # @return [String]
         #
         # @example
-        #   "onygWYXJX3xNstFLv9PcCrhQdCkENC795xwSinmTEc1jsDN4VDa"
+        #   Faker::Blockchain::Tezos.operation
+        #     #=> "onygWYXJX3xNstFLv9PcCrhQdCkENC795xwSinmTEc1jsDN4VDa"
         #
         # @faker.version 1.9.2
         def operation
@@ -63,7 +66,8 @@ module Faker
         # @return [String]
         #
         # @example
-        #   "BMbhs2rkY1dvAkAyRytvPsjFQ2RiPrBhYkxvWpY65dzkdSuw58a"
+        #   Faker::Blockchain::Tezos.block
+        #     #=> "BMbhs2rkY1dvAkAyRytvPsjFQ2RiPrBhYkxvWpY65dzkdSuw58a"
         #
         # @faker.version 1.9.4
         def block
@@ -76,7 +80,8 @@ module Faker
         # @return [String]
         #
         # @example
-        #   "edsigu165B7VFf3Dpw2QABVzEtCxJY2gsNBNcE3Ti7rRxtDUjqTFRpg67EdAQmY6YWPE5tKJDMnSTJDFu65gic8uLjbW2YwGvAZ"
+        #   Faker::Blockchain::Tezos.signature
+        #     #=> "edsigu165B7VFf3Dpw2QABVzEtCxJY2gsNBNcE3Ti7rRxtDUjqTFRpg67EdAQmY6YWPE5tKJDMnSTJDFu65gic8uLjbW2YwGvAZ"
         #
         # @faker.version 1.9.2
         def signature

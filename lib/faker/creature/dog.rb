@@ -11,8 +11,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Dog.name
-        #   "Spike"
+        # @example
+        #   Faker::Creature::Dog.name #=> "Spike"
         #
         # @faker.version 1.9.2
         def name
@@ -24,8 +24,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Dog.breed
-        #   "Yorkshire Terrier"
+        # @example
+        #   Faker::Creature::Dog.breed #=> "Yorkshire Terrier"
         #
         # @faker.version 1.9.2
         def breed
@@ -37,8 +37,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Dog.sound
-        #   "woof woof"
+        # @example
+        #   Faker::Creature::Dog.sound #=> "woof woof"
         #
         # @faker.version 1.9.2
         def sound
@@ -50,8 +50,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Dog.meme_phrase
-        #   "smol pupperino"
+        # @example
+        #   Faker::Creature::Dog.meme_phrase #=> "smol pupperino"
         #
         # @faker.version 1.9.2
         def meme_phrase
@@ -63,8 +63,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Dog.age
-        #   "puppy"
+        # @example
+        #   Faker::Creature::Dog.age #=> "puppy"
         #
         # @faker.version 1.9.2
         def age
@@ -76,8 +76,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Dog.gender
-        #   "Female"
+        # @example
+        #   Faker::Creature::Dog.gender #=> "Female"
         #
         # @faker.version 1.9.2
         def gender
@@ -89,8 +89,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Dog.coat_length
-        #   "short"
+        # @example
+        #   Faker::Creature::Dog.coat_length #=> "short"
         #
         # @faker.version 1.9.2
         def coat_length
@@ -102,8 +102,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Creature::Dog.size
-        #   "small"
+        # @example
+        #   Faker::Creature::Dog.size #=> "small"
         #
         # @faker.version 1.9.2
         def size

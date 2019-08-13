@@ -19,7 +19,8 @@ module Faker
         # @return [String]
         #
         # @example
-        #   "147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
+        #   Faker::Blockchain::Bitcoin.address
+        #     #=> "147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
         #
         # @faker.version 1.9.2
         def address
@@ -31,8 +32,9 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Blockchain::Bitcoin.testnet_address
-        #   "n4YjRyYD6V6zREpk6opqESDqD3KYnMdVEB"
+        # @example
+        #   Faker::Blockchain::Bitcoin.testnet_address
+        #     #=> "n4YjRyYD6V6zREpk6opqESDqD3KYnMdVEB"
         #
         # @faker.version 1.9.2
         def testnet_address
