@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Games::ElderScrolls.race #=> "Argonian"
         #
-        # @faker.version 1.8.3
+        # @faker.version 1.9.2
         def race
           fetch('games.elder_scrolls.race')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::ElderScrolls.city #=> "Whiterun"
         #
-        # @faker.version 1.9.0
+        # @faker.version 1.9.2
         def city
           fetch('games.elder_scrolls.city')
         end
@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Games::ElderScrolls.creature #=> "Frost Troll"
         #
-        # @faker.version 1.8.3
+        # @faker.version 1.9.2
         def creature
           fetch('games.elder_scrolls.creature')
         end
@@ -51,7 +51,7 @@ module Faker
         # @example
         #   Faker::Games::ElderScrolls.region #=> "Cyrodiil"
         #
-        # @faker.version 1.8.3
+        # @faker.version 1.9.2
         def region
           fetch('games.elder_scrolls.region')
         end
@@ -64,7 +64,7 @@ module Faker
         # @example
         #   Faker::Games::ElderScrolls.dragon #=> "Blood Dragon"
         #
-        # @faker.version 1.8.3
+        # @faker.version 1.9.2
         def dragon
           fetch('games.elder_scrolls.dragon')
         end
@@ -77,7 +77,7 @@ module Faker
         # @example
         #   Faker::Games::ElderScrolls.name #=> "Balgruuf The Old"
         #
-        # @faker.version 1.9.0
+        # @faker.version 1.9.2
         def name
           "#{fetch('games.elder_scrolls.first_name')} #{fetch('games.elder_scrolls.last_name')}"
         end
@@ -90,7 +90,7 @@ module Faker
         # @example
         #   Faker::Games::ElderScrolls.first_name #=> "Balgruuf"
         #
-        # @faker.version 1.9.0
+        # @faker.version 1.9.2
         def first_name
           fetch('games.elder_scrolls.first_name')
         end
@@ -103,7 +103,7 @@ module Faker
         # @example
         #   Faker::Games::ElderScrolls.last_name #=> "The Old"
         #
-        # @faker.version 1.9.0
+        # @faker.version 1.9.2
         def last_name
           fetch('games.elder_scrolls.last_name')
         end
