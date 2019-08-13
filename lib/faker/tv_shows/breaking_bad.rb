@@ -13,6 +13,8 @@ module Faker
         #
         # @example
         #   Faker::TvShows::BreakingBad.character #=> "Walter White"
+        #
+        # @faker.version 1.8.8
         def character
           fetch('breaking_bad.character')
         end
@@ -24,6 +26,8 @@ module Faker
         #
         # @example
         #   Faker::TvShows::BreakingBad.episode #=> "Fly"
+        #
+        # @faker.version 1.8.8
         def episode
           fetch('breaking_bad.episode')
         end
