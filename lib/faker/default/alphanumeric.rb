@@ -17,7 +17,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Alphanumeric.alpha(10) #=> "zlvubkrwga"
+      #   Faker::Alphanumeric.alpha(number: 10) #=> "zlvubkrwga"
       #
       # @faker.version 1.9.2
       def alpha(legacy_number = NOT_GIVEN, number: 32)
