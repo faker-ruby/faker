@@ -77,7 +77,7 @@ module Faker
         # @return [String]
         #
         # @example Faker::Creature::Dog.gender
-        #   "female"
+        #   "Female"
         #
         # @faker.version 1.9.2
         def gender
