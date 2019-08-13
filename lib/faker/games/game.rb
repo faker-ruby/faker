@@ -10,8 +10,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Game.title
-      #   "Half-Life 2"
+      # @example
+      #   Faker::Game.title #=> "Half-Life 2"
       #
       # @faker.version 1.9.4
       def title
@@ -23,8 +23,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Game.genre
-      #   "Real-time strategy"
+      # @example
+      #   Faker::Game.genre #=> "Real-time strategy"
       #
       # @faker.version 1.9.4
       def genre
@@ -36,8 +36,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Game.platform
-      #   "Nintendo Switch"
+      # @example
+      #   Faker::Game.platform #=> "Nintendo Switch"
       #
       # @faker.version 1.9.4
       def platform

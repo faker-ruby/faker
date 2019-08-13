@@ -9,8 +9,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::SuperSmashBros.fighter
-        #   "Mario"
+        # @example
+        #   Faker::Games::SuperSmashBros.fighter #=> "Mario"
         #
         # @faker.version 1.9.2
         def fighter
@@ -22,8 +22,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::SuperSmashBros.stage
-        #   "Final Destination"
+        # @example
+        #   Faker::Games::SuperSmashBros.stage #=> "Final Destination"
         #
         # @faker.version 1.9.2
         def stage

@@ -8,8 +8,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::ProgrammingLanguage.name
-      #   "Ruby"
+      # @example
+      #   Faker::ProgrammingLanguage.name #=> "Ruby"
       #
       # @faker.version 1.8.5
       def name
@@ -21,8 +21,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::ProgrammingLanguage.creator
-      #   "Yukihiro Matsumoto"
+      # @example
+      #   Faker::ProgrammingLanguage.creator #=> "Yukihiro Matsumoto"
       #
       # @faker.version 1.8.5
       def creator

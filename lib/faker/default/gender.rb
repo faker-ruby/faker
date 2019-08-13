@@ -8,8 +8,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Gender.type
-      #   "Non-binary"
+      # @example
+      #   Faker::Gender.type #=> "Non-binary"
       #
       # @faker.version 1.9.0
       def type
@@ -21,8 +21,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::Gender.binary_type
-      #   "Female"
+      # @example
+      #   Faker::Gender.binary_type #=> "Female"
       #
       # @faker.version 1.9.0
       def binary_type

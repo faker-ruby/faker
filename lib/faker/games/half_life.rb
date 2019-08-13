@@ -9,8 +9,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::HalfLife.character
-        #   "Gordon Freeman"
+        # @example
+        #   Faker::Games::HalfLife.character #=> "Gordon Freeman"
         #
         # @faker.version 1.9.2
         def character
@@ -22,8 +22,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::HalfLife.enemy
-        #   "Headcrab"
+        # @example
+        #   Faker::Games::HalfLife.enemy #=> "Headcrab"
         #
         # @faker.version 1.9.2
         def enemy
@@ -35,8 +35,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::HalfLife.location
-        #   "Black Mesa Research Facility"
+        # @example
+        #   Faker::Games::HalfLife.location #=> "Black Mesa Research Facility"
         #
         # @faker.version 1.9.2
         def location

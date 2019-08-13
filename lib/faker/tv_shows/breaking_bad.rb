@@ -11,8 +11,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::TvShows::BreakingBad.character
-        #   "Walter White"
+        # @example
+        #   Faker::TvShows::BreakingBad.character #=> "Walter White"
         def character
           fetch('breaking_bad.character')
         end
@@ -22,8 +22,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::TvShows::BreakingBad.episode
-        #   "Fly"
+        # @example
+        #   Faker::TvShows::BreakingBad.episode #=> "Fly"
         def episode
           fetch('breaking_bad.episode')
         end

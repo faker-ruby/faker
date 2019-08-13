@@ -9,8 +9,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::ElderScrolls.race
-        #   "Argonian"
+        # @example
+        #   Faker::Games::ElderScrolls.race #=> "Argonian"
         def race
           fetch('games.elder_scrolls.race')
         end
@@ -20,8 +20,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::ElderScrolls.city
-        #   "Whiterun"
+        # @example
+        #   Faker::Games::ElderScrolls.city #=> "Whiterun"
         def city
           fetch('games.elder_scrolls.city')
         end
@@ -31,8 +31,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::ElderScrolls.creature
-        #   "Frost Troll"
+        # @example
+        #   Faker::Games::ElderScrolls.creature #=> "Frost Troll"
         def creature
           fetch('games.elder_scrolls.creature')
         end
@@ -42,8 +42,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::ElderScrolls.region
-        #   "Cyrodiil"
+        # @example
+        #   Faker::Games::ElderScrolls.region #=> "Cyrodiil"
         def region
           fetch('games.elder_scrolls.region')
         end
@@ -53,8 +53,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::ElderScrolls.dragon
-        #   "Blood Dragon"
+        # @example
+        #   Faker::Games::ElderScrolls.dragon #=> "Blood Dragon"
         def dragon
           fetch('games.elder_scrolls.dragon')
         end
@@ -64,8 +64,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::ElderScrolls.name
-        #   "Balgruuf The Old"
+        # @example
+        #   Faker::Games::ElderScrolls.name #=> "Balgruuf The Old"
         def name
           "#{fetch('games.elder_scrolls.first_name')} #{fetch('games.elder_scrolls.last_name')}"
         end
@@ -75,8 +75,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::ElderScrolls.first_name
-        #   "Balgruuf"
+        # @example
+        #   Faker::Games::ElderScrolls.first_name #=> "Balgruuf"
         def first_name
           fetch('games.elder_scrolls.first_name')
         end
@@ -86,8 +86,8 @@ module Faker
         #
         # @return [String]
         #
-        # @example Faker::Games::ElderScrolls.last_name
-        #   "The Old"
+        # @example
+        #   Faker::Games::ElderScrolls.last_name #=> "The Old"
         def last_name
           fetch('games.elder_scrolls.last_name')
         end

@@ -8,8 +8,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::House.furniture
-      #   "chair"
+      # @example
+      #   Faker::House.furniture #=> "chair"
       #
       # @faker.version 1.9.2
       def furniture
@@ -21,8 +21,8 @@ module Faker
       #
       # @return [String]
       #
-      # @example Faker::House.room
-      #   "kitchen"
+      # @example
+      #   Faker::House.room #=> "kitchen"
       #
       # @faker.version 1.9.2
       def room
