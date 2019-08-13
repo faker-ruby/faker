@@ -11,6 +11,8 @@ module Faker
         #
         # @example
         #   Faker::Games::Fallout.character #=> "Liberty Prime"
+        #
+        # @faker.version 1.8.5
         def character
           fetch('games.fallout.characters')
         end
@@ -22,6 +24,8 @@ module Faker
         #
         # @example
         #   Faker::Games::Fallout.faction #=> "Brotherhood of Steel"
+        #
+        # @faker.version 1.8.5
         def faction
           fetch('games.fallout.factions')
         end
@@ -33,6 +37,8 @@ module Faker
         #
         # @example
         #   Faker::Games::Fallout.location #=> "New Vegas"
+        #
+        # @faker.version 1.8.5
         def location
           fetch('games.fallout.locations')
         end
@@ -45,6 +51,8 @@ module Faker
         # @example
         #   Faker::Games::Fallout.quote
         #     #=> "Democracy is non-negotiable"
+        #
+        # @faker.version 1.8.5
         def quote
           fetch('games.fallout.quotes')
         end
