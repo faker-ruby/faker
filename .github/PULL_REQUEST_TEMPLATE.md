@@ -3,7 +3,7 @@ Issue#
 
 Example:
 
-https://github.com/stympy/faker/issues/XXX
+https://github.com/faker-ruby/faker/issues/XXX
 
 OR
 
