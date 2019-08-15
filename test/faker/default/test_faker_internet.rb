@@ -98,14 +98,14 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_integer_arg
     (1..32).each do |min_length|
-      assert @tester.password(min_length: min_length).length >= min_length
+      assert @tester.password(min_length: min_length, mix_case: false).length >= min_length
     end
   end
 
   def test_password_max_with_integer_arg
     (1..32).each do |min_length|
       max_length = min_length + 4
-      assert @tester.password(min_length: min_length, max_length: max_length).length <= max_length
+      assert @tester.password(min_length: min_length, max_length: max_length, mix_case: false).length <= max_length
     end
   end
 
@@ -118,7 +118,16 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_password_with_mixed_case
-    assert @tester.password.match(/[A-Z]+/)
+    password = @tester.password
+    upcase_count = 0
+    downcase_count = 0
+    password.chars.each do |char|
+      if char =~ /[[:alpha:]]/
+        char.capitalize == char ? upcase_count += 1 : downcase_count += 1
+      end
+    end
+    assert upcase_count >= 1
+    assert downcase_count >= 1
   end
 
   def test_password_without_mixed_case

@@ -83,9 +83,25 @@ module Faker
         end
       end
 
+      ##
+      # Produces a randomized string of characters
+      #
+      # @param [Integer] min_length
+      # @param [Integer] max_length
+      # @param [Boolean] mix_case
+      # @param [Boolean] special_characters
+      #
+      # @return [String]
+      #
+      # @example Faker::Internet.password #=> "Vg5mSvY1UeRg7"
+      # @example Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
+      # @example Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
+      # @example Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
+      # @example Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
+      #
+      # @faker.version 2.1.3
       # rubocop:disable Metrics/ParameterLists
       def password(legacy_min_length = NOT_GIVEN, legacy_max_length = NOT_GIVEN, legacy_mix_case = NOT_GIVEN, legacy_special_characters = NOT_GIVEN, min_length: 8, max_length: 16, mix_case: true, special_characters: false)
-        # rubocop:enable Metrics/ParameterLists
         if legacy_min_length != NOT_GIVEN
           warn_with_uplevel 'Passing `min_length` with the 1st argument of `Internet.password` is deprecated. Use keyword argument like `Internet.password(min_length: ...)` instead.', uplevel: 1
           min_length = legacy_min_length
@@ -103,7 +119,8 @@ module Faker
           special_characters = legacy_special_characters
         end
 
-        temp = Lorem.characters(number: min_length)
+        min_alpha = mix_case ? 2 : 0
+        temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
         diff_length = max_length - min_length
 
         if diff_length.positive?
@@ -112,8 +129,12 @@ module Faker
         end
 
         if mix_case
+          alpha_count = 0
           temp.chars.each_with_index do |char, index|
-            temp[index] = char.upcase if index.even?
+            if char =~ /[[:alpha:]]/
+              temp[index] = char.upcase if alpha_count.even?
+              alpha_count += 1
+            end
           end
         end
 
@@ -236,7 +257,6 @@ module Faker
         "#{ip_v6_address}/#{rand(1..127)}"
       end
 
-      # rubocop:disable Metrics/ParameterLists
       def url(legacy_host = NOT_GIVEN, legacy_path = NOT_GIVEN, legacy_scheme = NOT_GIVEN, host: domain_name, path: "/#{username}", scheme: 'http')
         # rubocop:enable Metrics/ParameterLists
         if legacy_host != NOT_GIVEN

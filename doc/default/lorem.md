@@ -10,9 +10,11 @@ Faker::Lorem.words(number: 4, supplemental: true) #=> ["colloco", "qui", "vergo"
 
 Faker::Lorem.multibyte #=> 😀
 
-# Keyword arguments: number
+# Keyword arguments: number, min_alpha, min_numeric
 Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omquh7br7dhqijwlawejpl765nb1716idmp3xnfo85v349pzy2o9rir23y2qhflwr71c1585fnynguiphkjm8p0vktwitcsm16lny7jzp9t4drwav3qmhz4yjq4k04x14gl6p148hulyqioo72tf8nwrxxcclfypz2lc58lsibgfe5w5p0xv95peafjjmm2frkhdc6duoky0aha"
 Faker::Lorem.characters(number: 10) #=> "ang9cbhoa8"
+Faker::Lorem.characters(number: 10, min_alpha: 4) #=> "ang9cbhoa8"
+Faker::Lorem.characters(number: 10, min_alpha: 4, min_numeric: 1) #=> "ang9cbhoa8"
 
 # Keyword arguments: word_count, supplemental, random_words_to_add
 # The 'random_words_to_add' argument increases the sentence's word count by a random value within (0..random_words_to_add).

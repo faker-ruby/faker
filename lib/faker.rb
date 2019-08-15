@@ -40,7 +40,8 @@ module Faker
   class Base
     Numbers = Array(0..9)
     ULetters = Array('A'..'Z')
-    Letters = ULetters + Array('a'..'z')
+    LLetters = Array('a'..'z')
+    Letters = ULetters + LLetters
 
     class << self
       NOT_GIVEN = Object.new
