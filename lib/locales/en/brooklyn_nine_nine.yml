@@ -1,0 +1,353 @@
+en:
+  faker:
+    brooklyn_nine_nine:
+      character:
+        - Agent Kendrick
+        - Agent Nathan Clarke
+        - Agneta Carlsson
+        - Alexei Bisko
+        - Angela Stojanovski
+        - Ann Hoert
+        - Arnie Miller
+        - Bob Anderson
+        - Becca Boyle
+        - Charles Boyle
+        - Christina Boyle
+        - Lynn Boyle
+        - Milton Boyle
+        - Nikolaj Boyle
+        - Grammy Nona Boyle
+        - Sam Boyle
+        - Steve Boyle
+        - Tommy Boyle
+        - Brenda Hix
+        - Brett Booth
+        - Brian Applebaum
+        - Brian Hip
+        - Caleb John Gosche
+        - Captain McGintley
+        - Captain Orleans
+        - Cindy Russo
+        - Cindy Shatz
+        - Corey Park
+        - Kevin Cozner
+        - Dan McCreary
+        - Daniel Valdano
+        - Dario Moretti
+        - Darlene Linetti
+        - Dave Majors
+        - David Santiago
+        - Davis Garmin
+        - DC Parlov
+        - Dean Holland
+        - Deputy Commissioner Podolski
+        - Devon Mound
+        - Julia Diaz
+        - Oscar Diaz
+        - Rosa Diaz
+        - Disco Strangler
+        - Dmitri Kuzkho
+        - Doug Judy
+        - Dr. Oliver Cox
+        - Dr. Porp
+        - Dr. Rossi
+        - Duncan Traub
+        - Dustin Whitman
+        - Eddie Fung
+        - Eleanor Horstweil
+        - Emily Goldfinch
+        - Ernest Zumowski
+        - Ethel Musterberg
+        - Fat Terry
+        - Frank Patterson
+        - Fred Gorman
+        - Gary Jennings
+        - Gary Shaw
+        - Genevieve Mirren-Carter
+        - Geoffrey Hoytsman
+        - George Judy
+        - Gintars Irbe
+        - Gordon Lundt
+        - Greg Gerg
+        - Helen Sterrino
+        - Henry Coles
+        - Henry Morgenthau
+        - Hercules Thikalonos
+        - Michael Hitchcock
+        - Laverne Holt
+        - Raymond Holt
+        - Jack Danger
+        - Jason Stentley
+        - Jeff Romero
+        - Ava Jeffords
+        - Cagney Jeffords
+        - Lacey Jeffords
+        - Sharon Jeffords
+        - Terry Jeffords
+        - Jenny Gildenhorn
+        - Jerry Grundhaven
+        - Jimmy Brogan
+        - Jimmy Figgis
+        - Jocelyn Pryce
+        - John Kelly
+        - John William Weichselbraun
+        - Jordan Carfton
+        - Judd Sterrino
+        - Karen Haas
+        - Kyle Murphy
+        - Landon Lawson
+        - Matthew Langdon
+        - Leo Ianucci
+        - Leo Mirren-Carter
+        - Leo Sporm
+        - Lieutenant Singh
+        - Gina Linetti
+        - Lou Vargas
+        - Lucas Wint
+        - Luke Mueller
+        - Marcas Cole
+        - Margaret Dozerman
+        - Marge Bronigan
+        - Mark Devereaux
+        - Martin Cozner
+        - Marvin Miller
+        - Maura Figgis
+        - Max Prescott
+        - Melanie Hawkins
+        - Melvin Stermley
+        - Michael Augustine
+        - Mike Halbrook
+        - Mike Joseph
+        - Mrs. Patterson
+        - Mrs. Stratton
+        - Ms. Miriam
+        - Nancy Sussman
+        - Nick Lingeman
+        - Norman Lee
+        - Officer Chiccub
+        - Olivia Crawford
+        - Oolong Slayer
+        - Pam Boyle
+        - Keith Pembroke
+        - Jake Peralta
+        - Karen Peralta
+        - Kate Peralta
+        - Roger Peralta
+        - Philip Davidson
+        - Adrian Pimento
+        - Rebecca Lubbock
+        - Reggie Bludsoe
+        - Richard and Dan
+        - Ronald Yee
+        - Sam Jepsen
+        - Sam Malone
+        - Amy Santiago
+        - Camila Santiago
+        - Mason Santiago
+        - Matthew Santiago
+        - Norm Scully
+        - Seamus Murphy
+        - Sergeant Peanut Butter
+        - Seth Dozerman
+        - Sheriff Grant Knox
+        - Sheriff Reynolds
+        - Sidney Brown
+        - Sister Steve
+        - Sophia Perez
+        - Soren Knausgaard
+        - Stevie Schillens
+        - Super Dan
+        - Susan Boyle
+        - Susan Grapecoat
+        - Trevor Podolski
+        - Trudy Judy
+        - Uncle Bob
+        - Veronica Hopkins
+        - Victor Santiago
+        - Vivian Ludley
+        - Wayne Tercell
+        - Teddy Wells
+        - Wesley Allister
+        - William Tate
+        - Madeline Wuntch
+        - Zerb Gudanya
+      episode:
+        - Pilot
+        - The Tagger
+        - The Slump
+        - M.E. Time
+        - The Vulture
+        - Halloween
+        - 48 Hours
+        - Old School
+        - Sal's Pizza
+        - Thanksgiving
+        - Christmas
+        - Pontiac Bandit
+        - The Bet
+        - The Ebony Falcon
+        - "Operation: Broken Feather"
+        - The Party
+        - Full Boyle
+        - The Apartment
+        - Tactical Village
+        - Fancy Brudgom
+        - Unsolvable
+        - Charges and Specs
+        - Undercover
+        - Chocolate Milk
+        - The Jimmy Jab Games
+        - Halloween II
+        - The Mole
+        - Jake and Sophia
+        - Lockdown
+        - USPIS
+        - The Road Trip
+        - The Pontiac Bandit Returns
+        - Stakeout
+        - Beach House
+        - Payback
+        - The Defense Rests
+        - Windbreaker City
+        - The Wednesday Incident
+        - Boyle-Linetti Wedding
+        - Captain Peralta
+        - Sabotage
+        - AC/DC
+        - Det. Dave Majors
+        - The Chopper
+        - Johnny and Dora
+        - New Captain
+        - The Funeral
+        - Boyle's Hunch
+        - The Oolong Slayer
+        - Halloween III
+        - Into the Woods
+        - The Mattress
+        - Ava
+        - The Swedes
+        - Yippie Kayak
+        - Hostage Situation
+        - 9 Days
+        - The Cruise
+        - Karen Peralta
+        - The 9-8
+        - House Mouses
+        - Adrian Pimento
+        - Cheddar
+        - Terry Kitties
+        - Paranoia
+        - Maximum Security
+        - Bureau
+        - Greg and Larry
+        - "Coral Palms: Part 1"
+        - "Coral Palms: Part 2"
+        - "Coral Palms: Part 3"
+        - The Night Shift
+        - Halloween IV
+        - Monster in the Closet
+        - Mr. Santiago
+        - Skyfire Cycle
+        - The Overmining
+        - Captain Latvia
+        - The Fugitive
+        - The Audit
+        - Serve & Protect
+        - The Last Ride
+        - Moo Moo
+        - Cop-Con
+        - Chasing Amy
+        - Your Honor
+        - The Slaughterhouse
+        - The Bank Job
+        - Crime and Punishment
+        - "The Big House: Part 1"
+        - "The Big House: Part 2"
+        - Kicks
+        - HalloVeen
+        - Bad Beat
+        - The Venue
+        - Two Turkeys
+        - Return to Skyfire
+        - 99
+        - Game Night
+        - The Favor
+        - Safe House
+        - The Negotiation
+        - The Box
+        - The Puzzle Master
+        - NutriBoom
+        - DFW
+        - Gray Star Mutual
+        - Bachelor/ette Party
+        - Show Me Going
+        - White Whale
+        - Jake & Amy
+        - Honeymoon
+        - Hitchcock & Scully
+        - The Tattler
+        - Four Movements
+        - A Tale of Two Bandits
+        - The Crime Scene
+        - The Honeypot
+        - He Said, She Said
+        - The Golden Child
+        - Gintars
+        - The Therapist
+        - Casecation
+        - The Bimbo
+        - Ticking Clocks
+        - Return of the King
+        - Cinco de Mayo
+        - Sicko
+        - Suicide Squad
+      quote: 
+        - All right, there's the robot I fell in love with.
+        - Are those gummy bears wrapped in a fruit roll-up?
+        - Boston? But it's so close to Salem. You do know what they do to witches up there, don't you?
+        - But if you're here, who's guarding Hades?
+        - Can you magically make everyone kind, sober, and fully dressed
+        - Charles, given your daily life experiences, you're gonna have to be more specific.
+        - Cool, cool, cool, cool, cool. No doubt, no doubt, no doubt.
+        - Every time someone steps up and says who they are, the world becomes a better, more interesting place. So thank you.
+        - Fine. But in protest, I'm walking over there extremely slowly!
+        - Hello, Raymond. How do you like my new office? Twentieth floor.
+        - I asked them if they wanted to embarrass you, and they instantly said yes.
+        - I bet it's really fancy. Like Beauty and the Beast fancy.
+        - I can't wait to see the inside of Raymond's house. I'm gonna learn everything there is to know about him.
+        - I don't want to hang out with some stupid baby who's never met Jake.
+        - I even managed to eat some plain toast this morning.
+        - I have zero interest in food. If it were feasible, my diet would consist entirely of flavorless beige smoothies containing all the nutrients required by the human animal.
+        - I only have one dream a year, always on Tax Day. In it, I must file an extension. So, yes, it is best not to have dreams.
+        - I wanna build a spaceship!
+        - I was raised on disco.
+        - I'm considering it. I'm interested. I agree to participate.
+        - I'm in a state of total euphoria.
+        - If anything, love has made me smarter. Remember last week, when I boiled that egg?
+        - If we're away from our desks for too long, they'll update our computers and we'll lose Minesweeper.
+        - If we're going by what I'm most passionate about, I'm a woodworker.
+        - It's the most fun day of the year. Something you wouldn't understand because you're not programmed to feel joy.
+        - Look, this screw has three pointy sides, and nowhere to screw it in!
+        - My mother cried the day I was born, because she knew she would never be better than me.
+        - No, it's probably just an empty, white cube with a USB port in it for him to plug his finger in when he's on sleep mode.
+        - Oh my God, she's totally gonna flunk us. I haven't gotten an F since I failed recess in second grade.
+        - Oh, I love being Scary Terry. He says what regular Terry's thinking.
+        - Oh, I really am. I'm really into rented clothes. I love how many butts have been in them.
+        - Oh, I've caused a problem. I think I am getting a text message. Bloop. Ah, there it is.
+        - Peralta, are you eating an Italian sub for breakfast?
+        - Santiago, I know that you hate Halloween, but stick with me, and I promise you, you will love it.
+        - That is never what people mean by that.
+        - The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating Emoji into my speech to better express myself. Winky face.
+        - There's a typo in this crossword puzzle.
+        - This isn't the championship cummerbund. This is some common cummerbund.
+        - We're gonna take the fight to them. Like some waddling ducks!
+        - We've narrowed it down to two choices. Petey or Paulie.
+        - Well, someone said it to me last night. Oh, must have been my wife.
+        - What is this glutinous monstrosity before me?
+        - Why am I not astride my noble steed, clad in armor?
+        - With all due respect, that Pigeon is clearly a Ray-Jay.
+        - Yes, I never thought I'd see you this high without a broom under you.
+        - Yes, but my software is due for an exuberance upgrade.
+        - You guys, this is gonna be fine. I mean Terry's our boss and he comes with us every year.
+        - You're not Cheddar; you're just some common *****!
+        - Your butt is the bomb. There will be no survivors.
