@@ -7,7 +7,12 @@ module Faker
         fetch('color.name')
       end
 
-      def promotion_code(digits: 6)
+      def promotion_code(legacy_digits = NOT_GIVEN, digits: 6)
+        if legacy_digits != NOT_GIVEN
+          warn_with_uplevel 'Passing `digits` with the 1st argument of `Commerce.promotion_code` is deprecated. Use keyword argument like `Commerce.promotion_code(digits: ...)` instead.', uplevel: 1
+          digits = legacy_digits
+        end
+
         [
           fetch('commerce.promotion_code.adjective'),
           fetch('commerce.promotion_code.noun'),
@@ -15,7 +20,16 @@ module Faker
         ].join
       end
 
-      def department(max: 3, fixed_amount: false)
+      def department(legacy_max = NOT_GIVEN, legacy_fixed_amount = NOT_GIVEN, max: 3, fixed_amount: false)
+        if legacy_max != NOT_GIVEN
+          warn_with_uplevel 'Passing `max` with the 1st argument of `Commerce.department` is deprecated. Use keyword argument like `Commerce.department(max: ...)` instead.', uplevel: 1
+          max = legacy_max
+        end
+        if legacy_fixed_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `fixed_amount` with the 2nd argument of `Commerce.department` is deprecated. Use keyword argument like `Commerce.department(fixed_amount: ...)` instead.', uplevel: 1
+          fixed_amount = legacy_fixed_amount
+        end
+
         num = max if fixed_amount
         num ||= 1 + rand(max)
 
@@ -34,7 +48,16 @@ module Faker
         fetch('commerce.product_name.material')
       end
 
-      def price(range: 0..100.0, as_string: false)
+      def price(legacy_range = NOT_GIVEN, legacy_as_string = NOT_GIVEN, range: 0..100.0, as_string: false)
+        if legacy_range != NOT_GIVEN
+          warn_with_uplevel 'Passing `range` with the 1st argument of `Commerce.price` is deprecated. Use keyword argument like `Commerce.price(range: ...)` instead.', uplevel: 1
+          range = legacy_range
+        end
+        if legacy_as_string != NOT_GIVEN
+          warn_with_uplevel 'Passing `as_string` with the 2nd argument of `Commerce.price` is deprecated. Use keyword argument like `Commerce.price(as_string: ...)` instead.', uplevel: 1
+          as_string = legacy_as_string
+        end
+
         price = (rand(range) * 100).floor / 100.0
         if as_string
           price_parts = price.to_s.split('.')

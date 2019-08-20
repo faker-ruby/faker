@@ -6,7 +6,16 @@ module Faker
       @last_rut = nil
 
       # Fixed param added for testing a specific RUT and check digit combination.
-      def rut(min_rut: 1, fixed: false)
+      def rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 1, fixed: false)
+        if legacy_min_rut != NOT_GIVEN
+          warn_with_uplevel 'Passing `min_rut` with the 1st argument of `ChileRut.rut` is deprecated. Use keyword argument like `ChileRut.rut(min_rut: ...)` instead.', uplevel: 1
+          min_rut = legacy_min_rut
+        end
+        if legacy_fixed != NOT_GIVEN
+          warn_with_uplevel 'Passing `fixed` with the 2nd argument of `ChileRut.rut` is deprecated. Use keyword argument like `ChileRut.rut(fixed: ...)` instead.', uplevel: 1
+          fixed = legacy_fixed
+        end
+
         @last_rut = fixed ? min_rut : rand_in_range(min_rut, 99_999_999)
       end
 
@@ -34,7 +43,16 @@ module Faker
         dv
       end
 
-      def full_rut(min_rut: 0, fixed: false)
+      def full_rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 0, fixed: false)
+        if legacy_min_rut != NOT_GIVEN
+          warn_with_uplevel 'Passing `min_rut` with the 1st argument of `ChileRut.full_rut` is deprecated. Use keyword argument like `ChileRut.full_rut(min_rut: ...)` instead.', uplevel: 1
+          min_rut = legacy_min_rut
+        end
+        if legacy_fixed != NOT_GIVEN
+          warn_with_uplevel 'Passing `fixed` with the 2nd argument of `ChileRut.full_rut` is deprecated. Use keyword argument like `ChileRut.full_rut(fixed: ...)` instead.', uplevel: 1
+          fixed = legacy_fixed
+        end
+
         "#{rut(min_rut: min_rut, fixed: fixed)}-#{dv}"
       end
 

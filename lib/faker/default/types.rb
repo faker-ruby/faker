@@ -7,7 +7,12 @@ module Faker
     COMPLEX_TYPES = %i[hash array].freeze
 
     class << self
-      def rb_string(words: 1)
+      def rb_string(legacy_words = NOT_GIVEN, words: 1)
+        if legacy_words != NOT_GIVEN
+          warn_with_uplevel 'Passing `words` with the 1st argument of `Types.rb_string` is deprecated. Use keyword argument like `Types.rb_string(words: ...)` instead.', uplevel: 1
+          words = legacy_words
+        end
+
         resolved_num = resolve(words)
         word_list =
           translate('faker.lorem.words')
@@ -20,11 +25,29 @@ module Faker
         sample(CHARACTERS)
       end
 
-      def rb_integer(from: 0, to: 100)
+      def rb_integer(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 0, to: 100)
+        if legacy_from != NOT_GIVEN
+          warn_with_uplevel 'Passing `from` with the 1st argument of `Types.rb_integer` is deprecated. Use keyword argument like `Types.rb_integer(from: ...)` instead.', uplevel: 1
+          from = legacy_from
+        end
+        if legacy_to != NOT_GIVEN
+          warn_with_uplevel 'Passing `to` with the 2nd argument of `Types.rb_integer` is deprecated. Use keyword argument like `Types.rb_integer(to: ...)` instead.', uplevel: 1
+          to = legacy_to
+        end
+
         rand(from..to).to_i
       end
 
-      def rb_hash(number: 1, type: random_type)
+      def rb_hash(legacy_number = NOT_GIVEN, legacy_type = NOT_GIVEN, number: 1, type: random_type)
+        if legacy_number != NOT_GIVEN
+          warn_with_uplevel 'Passing `number` with the 1st argument of `Types.rb_hash` is deprecated. Use keyword argument like `Types.rb_hash(number: ...)` instead.', uplevel: 1
+          number = legacy_number
+        end
+        if legacy_type != NOT_GIVEN
+          warn_with_uplevel 'Passing `type` with the 2nd argument of `Types.rb_hash` is deprecated. Use keyword argument like `Types.rb_hash(type: ...)` instead.', uplevel: 1
+          type = legacy_type
+        end
+
         {}.tap do |hsh|
           Lorem.words(number: number * 2).uniq.first(number).each do |s|
             hsh.merge!(s.to_sym => type)
@@ -32,11 +55,21 @@ module Faker
         end
       end
 
-      def complex_rb_hash(number: 1)
+      def complex_rb_hash(legacy_number = NOT_GIVEN, number: 1)
+        if legacy_number != NOT_GIVEN
+          warn_with_uplevel 'Passing `number` with the 1st argument of `Types.complex_rb_hash` is deprecated. Use keyword argument like `Types.complex_rb_hash(number: ...)` instead.', uplevel: 1
+          number = legacy_number
+        end
+
         rb_hash(number: number, type: random_complex_type)
       end
 
-      def rb_array(len: 1)
+      def rb_array(legacy_len = NOT_GIVEN, len: 1)
+        if legacy_len != NOT_GIVEN
+          warn_with_uplevel 'Passing `len` with the 1st argument of `Types.rb_array` is deprecated. Use keyword argument like `Types.rb_array(len: ...)` instead.', uplevel: 1
+          len = legacy_len
+        end
+
         [].tap do |ar|
           len.times do
             ar.push random_type

@@ -6,35 +6,75 @@ module Faker
       ALL = 'all'
       NONE = 'none'
 
-      def height(amount: rand(10))
+      def height(legacy_amount = NOT_GIVEN, amount: rand(10))
+        if legacy_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `amount` with the 1st argument of `Measurement.height` is deprecated. Use keyword argument like `Measurement.height(amount: ...)` instead.', uplevel: 1
+          amount = legacy_amount
+        end
+
         define_measurement_locale(amount, 'height')
       end
 
-      def length(amount: rand(10))
+      def length(legacy_amount = NOT_GIVEN, amount: rand(10))
+        if legacy_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `amount` with the 1st argument of `Measurement.length` is deprecated. Use keyword argument like `Measurement.length(amount: ...)` instead.', uplevel: 1
+          amount = legacy_amount
+        end
+
         define_measurement_locale(amount, 'length')
       end
 
-      def volume(amount: rand(10))
+      def volume(legacy_amount = NOT_GIVEN, amount: rand(10))
+        if legacy_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `amount` with the 1st argument of `Measurement.volume` is deprecated. Use keyword argument like `Measurement.volume(amount: ...)` instead.', uplevel: 1
+          amount = legacy_amount
+        end
+
         define_measurement_locale(amount, 'volume')
       end
 
-      def weight(amount: rand(10))
+      def weight(legacy_amount = NOT_GIVEN, amount: rand(10))
+        if legacy_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `amount` with the 1st argument of `Measurement.weight` is deprecated. Use keyword argument like `Measurement.weight(amount: ...)` instead.', uplevel: 1
+          amount = legacy_amount
+        end
+
         define_measurement_locale(amount, 'weight')
       end
 
-      def metric_height(amount: rand(10))
+      def metric_height(legacy_amount = NOT_GIVEN, amount: rand(10))
+        if legacy_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `amount` with the 1st argument of `Measurement.metric_height` is deprecated. Use keyword argument like `Measurement.metric_height(amount: ...)` instead.', uplevel: 1
+          amount = legacy_amount
+        end
+
         define_measurement_locale(amount, 'metric_height')
       end
 
-      def metric_length(amount: rand(10))
+      def metric_length(legacy_amount = NOT_GIVEN, amount: rand(10))
+        if legacy_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `amount` with the 1st argument of `Measurement.metric_length` is deprecated. Use keyword argument like `Measurement.metric_length(amount: ...)` instead.', uplevel: 1
+          amount = legacy_amount
+        end
+
         define_measurement_locale(amount, 'metric_length')
       end
 
-      def metric_volume(amount: rand(10))
+      def metric_volume(legacy_amount = NOT_GIVEN, amount: rand(10))
+        if legacy_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `amount` with the 1st argument of `Measurement.metric_volume` is deprecated. Use keyword argument like `Measurement.metric_volume(amount: ...)` instead.', uplevel: 1
+          amount = legacy_amount
+        end
+
         define_measurement_locale(amount, 'metric_volume')
       end
 
-      def metric_weight(amount: rand(10))
+      def metric_weight(legacy_amount = NOT_GIVEN, amount: rand(10))
+        if legacy_amount != NOT_GIVEN
+          warn_with_uplevel 'Passing `amount` with the 1st argument of `Measurement.metric_weight` is deprecated. Use keyword argument like `Measurement.metric_weight(amount: ...)` instead.', uplevel: 1
+          amount = legacy_amount
+        end
+
         define_measurement_locale(amount, 'metric_weight')
       end
 

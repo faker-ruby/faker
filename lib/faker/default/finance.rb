@@ -26,7 +26,12 @@ module Faker
         template.gsub('L', luhn_digit.to_s)
       end
 
-      def vat_number(country: 'BR')
+      def vat_number(legacy_country = NOT_GIVEN, country: 'BR')
+        if legacy_country != NOT_GIVEN
+          warn_with_uplevel 'Passing `country` with the 1st argument of `Finance.vat_number` is deprecated. Use keyword argument like `Finance.vat_number(country: ...)` instead.', uplevel: 1
+          country = legacy_country
+        end
+
         numerify(fetch("finance.vat_number.#{country}"))
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find vat number for #{country}"

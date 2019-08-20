@@ -78,7 +78,12 @@ module Faker
         [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
-      def brazilian_citizen_number(formatted: false)
+      def brazilian_citizen_number(legacy_formatted = NOT_GIVEN, formatted: false)
+        if legacy_formatted != NOT_GIVEN
+          warn_with_uplevel 'Passing `formatted` with the 1st argument of `IDNumber.brazilian_citizen_number` is deprecated. Use keyword argument like `IDNumber.brazilian_citizen_number(formatted: ...)` instead.', uplevel: 1
+          formatted = legacy_formatted
+        end
+
         digits = Faker::Number.leading_zero_number(digits: 9) until digits&.match(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
@@ -88,7 +93,12 @@ module Faker
 
       alias brazilian_cpf brazilian_citizen_number
 
-      def brazilian_id(formatted: false)
+      def brazilian_id(legacy_formatted = NOT_GIVEN, formatted: false)
+        if legacy_formatted != NOT_GIVEN
+          warn_with_uplevel 'Passing `formatted` with the 1st argument of `IDNumber.brazilian_id` is deprecated. Use keyword argument like `IDNumber.brazilian_id(formatted: ...)` instead.', uplevel: 1
+          formatted = legacy_formatted
+        end
+
         digits = Faker::Number.between(to: BRAZILIAN_ID_FROM, from: BRAZILIAN_ID_TO).to_s
         check_digit = brazilian_id_checksum_digit(digits)
         number = [digits, check_digit].join
