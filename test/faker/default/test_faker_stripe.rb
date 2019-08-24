@@ -12,9 +12,11 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_valid_card_error
-    assert_raise ArgumentError do
-      assert @tester.valid_card(Faker::Lorem.word)
+    e = assert_raise ArgumentError do
+      assert @tester.valid_card(card_type: Faker::Lorem.word)
     end
+
+    assert_match(/\AValid credit cards argument can be left blank or include/, e.message)
   end
 
   def test_specific_valid_card
@@ -34,9 +36,11 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_invalid_card_error
-    assert_raise ArgumentError do
-      assert @tester.invalid_card(Faker::Lorem.word)
+    e = assert_raise ArgumentError do
+      assert @tester.invalid_card(card_error: Faker::Lorem.word)
     end
+
+    assert_match(/\AInvalid credit cards argument can be left blank or include/, e.message)
   end
 
   def test_specific_error_invalid_card
