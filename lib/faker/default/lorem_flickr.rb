@@ -33,7 +33,7 @@ module Faker
       def build_url(size, format, search_terms, match_all)
         raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
 
-        url_parts = ['http://loremflickr.com']
+        url_parts = ['https://loremflickr.com']
         url_parts << format
         url_parts += size.split('x')
         url_parts << search_terms.compact.join(',') if search_terms.any?
