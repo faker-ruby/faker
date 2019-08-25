@@ -20,6 +20,7 @@ Add deprecation warning for positional arguments to notify users that are coming
 
 ## Bug/Fixes
 - [PR #1702](https://github.com/stympy/faker/pull/1702) Fix an argument for test_faker_stripe.rb [@koic](https://github.com/koic)
+- [PR #1694](https://github.com/faker-ruby/faker/pull/1694) Ensure mix_case returns at least one lower and one upper case letter [@bpleslie](https://github.com/bpleslie)
 
 ------------------------------------------------------------------------------
 
