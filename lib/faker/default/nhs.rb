@@ -15,7 +15,12 @@ module Faker
                                                            .join('')
       end
 
-      def check_digit(number: 0)
+      def check_digit(legacy_number = NOT_GIVEN, number: 0)
+        if legacy_number != NOT_GIVEN
+          warn_with_uplevel 'Passing `number` with the 1st argument of `NationalHealthService.check_digit` is deprecated. Use keyword argument like `NationalHealthService.check_digit(number: ...)` instead.', uplevel: 1
+          number = legacy_number
+        end
+
         sum = 0
         number.to_s.chars.each_with_index do |digit, idx|
           position = idx + 1

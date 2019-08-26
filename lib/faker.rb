@@ -43,6 +43,8 @@ module Faker
     Letters = ULetters + Array('a'..'z')
 
     class << self
+      NOT_GIVEN = Object.new
+
       ## by default numerify results do not start with a zero
       def numerify(number_string, leading_zero: false)
         return number_string.gsub(/#/) { rand(10).to_s } if leading_zero
@@ -244,6 +246,24 @@ module Faker
         yield
       ensure
         I18n.enforce_available_locales = old_enforce_available_locales
+      end
+
+      private
+
+      # Workaround for emulating `warn '...', uplevel: 1` in Ruby 2.4 or lower.
+      def warn_with_uplevel(message, uplevel: 1)
+        at = parse_caller(caller[uplevel]).join(':')
+        warn "#{at}: #{message}"
+      end
+
+      def parse_caller(at)
+        # rubocop:disable Style/GuardClause
+        if /^(.+?):(\d+)(?::in `.*')?/ =~ at
+          file = Regexp.last_match(1)
+          line = Regexp.last_match(2).to_i
+          [file, line]
+        end
+        # rubocop:enable Style/GuardClause
       end
     end
   end

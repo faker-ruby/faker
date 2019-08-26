@@ -5,7 +5,12 @@ module Faker
     flexible :relationship
 
     class << self
-      def familial(connection: nil)
+      def familial(legacy_connection = NOT_GIVEN, connection: nil)
+        if legacy_connection != NOT_GIVEN
+          warn_with_uplevel 'Passing `connection` with the 1st argument of `Relationship.familial` is deprecated. Use keyword argument like `Relationship.familial(connection: ...)` instead.', uplevel: 1
+          connection = legacy_connection
+        end
+
         familial_connections = translate('faker.relationship.familial').keys
 
         if connection.nil?

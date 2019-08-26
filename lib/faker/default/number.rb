@@ -3,7 +3,12 @@
 module Faker
   class Number < Base
     class << self
-      def number(digits: 10)
+      def number(legacy_digits = NOT_GIVEN, digits: 10)
+        if legacy_digits != NOT_GIVEN
+          warn_with_uplevel 'Passing `digits` with the 1st argument of `Number.number` is deprecated. Use keyword argument like `Number.number(digits: ...)` instead.', uplevel: 1
+          digits = legacy_digits
+        end
+
         return if digits < 1
         return 0 if digits == 1
 
@@ -11,11 +16,21 @@ module Faker
         ([non_zero_digit] + generate(digits - 1)).join.to_i
       end
 
-      def leading_zero_number(digits: 10)
+      def leading_zero_number(legacy_digits = NOT_GIVEN, digits: 10)
+        if legacy_digits != NOT_GIVEN
+          warn_with_uplevel 'Passing `digits` with the 1st argument of `Number.leading_zero_number` is deprecated. Use keyword argument like `Number.leading_zero_number(digits: ...)` instead.', uplevel: 1
+          digits = legacy_digits
+        end
+
         '0' + (2..digits).collect { digit }.join
       end
 
-      def decimal_part(digits: 10)
+      def decimal_part(legacy_digits = NOT_GIVEN, digits: 10)
+        if legacy_digits != NOT_GIVEN
+          warn_with_uplevel 'Passing `digits` with the 1st argument of `Number.decimal_part` is deprecated. Use keyword argument like `Number.decimal_part(digits: ...)` instead.', uplevel: 1
+          digits = legacy_digits
+        end
+
         num = ''
         if digits > 1
           num = non_zero_digit
@@ -24,7 +39,16 @@ module Faker
         leading_zero_number(digits: digits) + num.to_s
       end
 
-      def decimal(l_digits: 5, r_digits: 2)
+      def decimal(legacy_l_digits = NOT_GIVEN, legacy_r_digits = NOT_GIVEN, l_digits: 5, r_digits: 2)
+        if legacy_l_digits != NOT_GIVEN
+          warn_with_uplevel 'Passing `l_digits` with the 1st argument of `Number.decimal` is deprecated. Use keyword argument like `Number.decimal(l_digits: ...)` instead.', uplevel: 1
+          l_digits = legacy_l_digits
+        end
+        if legacy_r_digits != NOT_GIVEN
+          warn_with_uplevel 'Passing `r_digits` with the 2nd argument of `Number.decimal` is deprecated. Use keyword argument like `Number.decimal(r_digits: ...)` instead.', uplevel: 1
+          r_digits = legacy_r_digits
+        end
+
         l_d = number(digits: l_digits)
         r_d = if r_digits == 1
                 generate(r_digits)
@@ -44,34 +68,80 @@ module Faker
         rand(10)
       end
 
-      def hexadecimal(digits: 6)
+      def hexadecimal(legacy_digits = NOT_GIVEN, digits: 6)
+        if legacy_digits != NOT_GIVEN
+          warn_with_uplevel 'Passing `digits` with the 1st argument of `Number.hexadecimal` is deprecated. Use keyword argument like `Number.hexadecimal(digits: ...)` instead.', uplevel: 1
+          digits = legacy_digits
+        end
+
         hex = ''
         digits.times { hex += rand(15).to_s(16) }
         hex
       end
 
-      def normal(mean: 1, standard_deviation: 1)
+      def normal(legacy_mean = NOT_GIVEN, legacy_standard_deviation = NOT_GIVEN, mean: 1, standard_deviation: 1)
+        if legacy_mean != NOT_GIVEN
+          warn_with_uplevel 'Passing `mean` with the 1st argument of `Number.normal` is deprecated. Use keyword argument like `Number.normal(mean: ...)` instead.', uplevel: 1
+          mean = legacy_mean
+        end
+        if legacy_standard_deviation != NOT_GIVEN
+          warn_with_uplevel 'Passing `standard_deviation` with the 2nd argument of `Number.normal` is deprecated. Use keyword argument like `Number.normal(standard_deviation: ...)` instead.', uplevel: 1
+          standard_deviation = legacy_standard_deviation
+        end
+
         theta = 2 * Math::PI * rand
         rho = Math.sqrt(-2 * Math.log(1 - rand))
         scale = standard_deviation * rho
         mean + scale * Math.cos(theta)
       end
 
-      def between(from: 1.00, to: 5000.00)
+      def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
+        if legacy_from != NOT_GIVEN
+          warn_with_uplevel 'Passing `from` with the 1st argument of `Number.between` is deprecated. Use keyword argument like `Number.between(from: ...)` instead.', uplevel: 1
+          from = legacy_from
+        end
+        if legacy_to != NOT_GIVEN
+          warn_with_uplevel 'Passing `to` with the 2nd argument of `Number.between` is deprecated. Use keyword argument like `Number.between(to: ...)` instead.', uplevel: 1
+          to = legacy_to
+        end
+
         Faker::Base.rand_in_range(from, to)
       end
 
-      def within(range: 1.00..5000.00)
+      def within(legacy_range = NOT_GIVEN, range: 1.00..5000.00)
+        if legacy_range != NOT_GIVEN
+          warn_with_uplevel 'Passing `range` with the 1st argument of `Number.within` is deprecated. Use keyword argument like `Number.within(range: ...)` instead.', uplevel: 1
+          range = legacy_range
+        end
+
         between(from: range.min, to: range.max)
       end
 
-      def positive(from: 1.00, to: 5000.00)
+      def positive(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
+        if legacy_from != NOT_GIVEN
+          warn_with_uplevel 'Passing `from` with the 1st argument of `Number.positive` is deprecated. Use keyword argument like `Number.positive(from: ...)` instead.', uplevel: 1
+          from = legacy_from
+        end
+        if legacy_to != NOT_GIVEN
+          warn_with_uplevel 'Passing `to` with the 2nd argument of `Number.positive` is deprecated. Use keyword argument like `Number.positive(to: ...)` instead.', uplevel: 1
+          to = legacy_to
+        end
+
         random_number = between(from: from, to: to)
 
         greater_than_zero(random_number)
       end
 
-      def negative(from: -5000.00, to: -1.00)
+      def negative(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: -5000.00, to: -1.00)
+        if legacy_from != NOT_GIVEN
+          warn_with_uplevel 'Passing `from` with the 1st argument of `Number.negative` is deprecated. Use keyword argument like `Number.negative(from: ...)` instead.', uplevel: 1
+          from = legacy_from
+        end
+        if legacy_to != NOT_GIVEN
+          warn_with_uplevel 'Passing `to` with the 2nd argument of `Number.negative` is deprecated. Use keyword argument like `Number.negative(to: ...)` instead.', uplevel: 1
+          to = legacy_to
+        end
+
         random_number = between(from: from, to: to)
 
         less_than_zero(random_number)

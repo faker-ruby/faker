@@ -3,7 +3,12 @@
 module Faker
   class Stripe < Base
     class << self
-      def valid_card(card_type: nil)
+      def valid_card(legacy_card_type = NOT_GIVEN, card_type: nil)
+        if legacy_card_type != NOT_GIVEN
+          warn_with_uplevel 'Passing `card_type` with the 1st argument of `Stripe.valid_card` is deprecated. Use keyword argument like `Stripe.valid_card(card_type: ...)` instead.', uplevel: 1
+          card_type = legacy_card_type
+        end
+
         valid_cards = translate('faker.stripe.valid_cards').keys
 
         if card_type.nil?
@@ -18,7 +23,12 @@ module Faker
         fetch('stripe.valid_cards.' + card_type)
       end
 
-      def valid_token(card_type: nil)
+      def valid_token(legacy_card_type = NOT_GIVEN, card_type: nil)
+        if legacy_card_type != NOT_GIVEN
+          warn_with_uplevel 'Passing `card_type` with the 1st argument of `Stripe.valid_token` is deprecated. Use keyword argument like `Stripe.valid_token(card_type: ...)` instead.', uplevel: 1
+          card_type = legacy_card_type
+        end
+
         valid_tokens = translate('faker.stripe.valid_tokens').keys
 
         if card_type.nil?
@@ -33,7 +43,12 @@ module Faker
         fetch('stripe.valid_tokens.' + card_type)
       end
 
-      def invalid_card(card_error: nil)
+      def invalid_card(legacy_card_error = NOT_GIVEN, card_error: nil)
+        if legacy_card_error != NOT_GIVEN
+          warn_with_uplevel 'Passing `card_error` with the 1st argument of `Stripe.invalid_card` is deprecated. Use keyword argument like `Stripe.invalid_card(card_error: ...)` instead.', uplevel: 1
+          card_error = legacy_card_error
+        end
+
         invalid_cards = translate('faker.stripe.invalid_cards').keys
 
         if card_error.nil?
@@ -57,7 +72,12 @@ module Faker
         rand_in_range(start_year, start_year + 5).to_s
       end
 
-      def ccv(card_type: nil)
+      def ccv(legacy_card_type = NOT_GIVEN, card_type: nil)
+        if legacy_card_type != NOT_GIVEN
+          warn_with_uplevel 'Passing `card_type` with the 1st argument of `Stripe.ccv` is deprecated. Use keyword argument like `Stripe.ccv(card_type: ...)` instead.', uplevel: 1
+          card_type = legacy_card_type
+        end
+
         (card_type.to_s == 'amex' ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s
       end
     end
