@@ -267,6 +267,32 @@ module Faker
       end
     end
   end
+
+  class << self
+    def method_missing(mth, *args, &block)
+      klass = faker_module(mth)
+      klass ? klass : super
+    end
+
+    def respond_to_missing?(method_name, include_private = false)
+      faker_module(method_name) ? true : false
+    end
+
+    def name
+      Faker::Name
+    end
+
+    private
+
+    def faker_module(name)
+      class_name = name.to_s.gsub(/^\w|_\w/, &:upcase).delete('_')
+      begin
+        Faker.const_get(class_name)
+      rescue NameError
+        nil
+      end
+    end
+  end
 end
 
 # require faker objects
