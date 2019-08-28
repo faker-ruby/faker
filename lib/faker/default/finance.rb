@@ -32,13 +32,44 @@ module Faker
           country = legacy_country
         end
 
-        numerify(fetch("finance.vat_number.#{country}"))
+        # Some contries have specific rules regarding vat number generation
+        # e.g. some control/checksum digit (Portugal, Poland, etc.)
+        # those cases are handled using a method implemented below with the following format
+        meth = "#{country.downcase}_vat_number"
+        # if we find any of those methods we call it,
+        # otherwise we just fill the template retrieved from the locale file
+        if Faker::Finance.respond_to?(meth, true)
+          Faker::Finance.send(meth)
+        else
+          numerify(fetch("finance.vat_number.#{country}"))
+        end
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find vat number for #{country}"
       end
 
       def vat_number_keys
         translate('faker.finance.vat_number').keys
+      end
+
+      private
+
+      # ref: #see: http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
+      def pt_vat_number
+        base_number = "#{Faker::Number.between(from: 1, to: 2)}#{Faker::Number.leading_zero_number(digits: 7)}"
+        control_number = pt_vat_number_checksum_digit(base_number)
+        "#{base_number}#{control_number}"
+      end
+
+      def pt_vat_number_checksum_digit(number)
+        multiplier = 1
+        result = String(number).delete(' ').split('').map(&:to_i).reverse.map do |digit|
+          digit * (multiplier += 1)
+        end.reduce(:+) || 0
+
+        # cover for the digit collision flaw
+        return 0 if (control_number = 11 - result % 11) > 9
+
+        control_number
       end
     end
   end
