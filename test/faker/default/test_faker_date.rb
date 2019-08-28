@@ -169,7 +169,7 @@ class TestFakerDate < Test::Unit::TestCase
     end
   end
 
-  def test_weekday_between_on_exluding_interval
+  def test_weekday_between_on_excluding_interval
     from = Date.parse('2020-11-19')
     to   = Date.parse('2020-11-22')
 
