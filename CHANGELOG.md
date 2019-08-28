@@ -1,5 +1,29 @@
 # Change Log
 
+## [v2.2.0](https://github.com/stympy/faker-ruby/faker/tree/2.2.0) (2019-25-08)
+
+## Deprecate
+
+- [PR #1698](https://github.com/stympy/faker/pull/1698) Add warn for positional arguments when using Faker 2.0 [@koic](https://github.com/koic)
+
+Add deprecation warning for positional arguments to notify users that are coming from Faker version < 2.0. Its main goal is to make upgrades easier.
+
+## Documentation
+
+- [PR #1688](https://github.com/stympy/faker/pull/1688) Update README install instructions [@EduardoGHdez](https://github.com/EduardoGHdez)
+- [PR #1689](https://github.com/stympy/faker/pull/1689) Update README.md [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1690](https://github.com/stympy/faker/pull/1690) Update issue url in PULL_REQUEST_TEMPLATE [@bugtender](https://github.com/bugtender)
+- [PR #1703](https://github.com/stympy/faker/pull/1703) Return HTTPS URLs from Lorem Flickr [@connorshea](https://github.com/connorshea)
+
+## Feature Request
+- [PR #1686](https://github.com/stympy/faker/pull/1686) Update test-unit gem to 3.3.3 [@connorshea](https://github.com/connorshea)
+
+## Bug/Fixes
+- [PR #1702](https://github.com/stympy/faker/pull/1702) Fix an argument for test_faker_stripe.rb [@koic](https://github.com/koic)
+- [PR #1694](https://github.com/faker-ruby/faker/pull/1694) Ensure mix_case returns at least one lower and one upper case letter [@bpleslie](https://github.com/bpleslie)
+
+------------------------------------------------------------------------------
+
 ## [v2.1.2](https://github.com/stympy/faker-ruby/faker/tree/2.1.2) (2019-10-08)
 
 ## Enhancements
