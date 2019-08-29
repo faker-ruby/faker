@@ -66,7 +66,8 @@ Faker::Vehicle.kilometrage #=> 35378
 Faker::Vehicle.license_plate #=> "DEP-2483"
 Faker::Vehicle.license_plate(state_abreviation: 'FL') #=> "977 UNU"
 
-# Random vehicle license plate for Brazil (if locale is set)
+# Random vehicle license plate for Brazil (if locale is set). Raises an exception with other locales
+# Keyword arguments: state_abreviation
 Faker::Vehicle.mercosur_license_plate #=> "LTN8E82"
 Faker::Vehicle.mercosur_license_plate(state_abreviation: 'RJ') #=> "LTN8E82"
 
