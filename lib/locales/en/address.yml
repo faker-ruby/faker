@@ -581,5 +581,5 @@ en:
       mail_box:
         - "PO Box ##"
         - "PO Box ###"
-        - "POB ###"
+        - "PO Box ####"
       default_country: [United States of America]
