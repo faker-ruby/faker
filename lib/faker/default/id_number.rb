@@ -12,6 +12,9 @@ module Faker
     ].freeze
     ZA_RACE_DIGIT = '8'
     ZA_CITIZENSHIP_DIGITS = %w[0 1].freeze
+    BRAZILIAN_ID_FORMAT = /(\d{1,2})(\d{3})(\d{3})([\dX])/
+    BRAZILIAN_ID_FROM = 10_000_000
+    BRAZILIAN_ID_TO = 99_999_999
 
     class << self
       def valid
@@ -29,7 +32,7 @@ module Faker
       end
 
       def spanish_citizen_number
-        num = Faker::Number.number(8)
+        num = Faker::Number.number(digits: 8)
         mod = num.to_i % 23
         check = CHECKS[mod]
         "#{num}-#{check}"
@@ -37,7 +40,7 @@ module Faker
 
       def spanish_foreign_citizen_number
         code = 'XYZ'
-        digits = Faker::Number.number(7)
+        digits = Faker::Number.number(digits: 7)
         prefix = code[rand(code.length)]
         prefix_val = 'XYZ'.index(prefix).to_s
         mod = "#{prefix_val}#{digits}".to_i % 23
@@ -48,7 +51,7 @@ module Faker
       def valid_south_african_id_number
         id_number = [
           Faker::Date.birthday.strftime('%y%m%d'),
-          Faker::Number.number(4),
+          Faker::Number.number(digits: 4),
           ZA_CITIZENSHIP_DIGITS.sample(random: Faker::Config.random),
           ZA_RACE_DIGIT
         ].join
@@ -60,14 +63,14 @@ module Faker
 
       def invalid_south_african_id_number
         invalid_date_of_birth = [
-          Faker::Number.number(2),
-          Faker::Number.between(13, 99),
-          Faker::Number.between(32, 99)
+          Faker::Number.number(digits: 2),
+          Faker::Number.between(from: 13, to: 99),
+          Faker::Number.between(from: 32, to: 99)
         ].map(&:to_s).join
 
         id_number = [
           invalid_date_of_birth,
-          Faker::Number.number(4),
+          Faker::Number.number(digits: 4),
           ZA_CITIZENSHIP_DIGITS.sample(random: Faker::Config.random),
           ZA_RACE_DIGIT
         ].join
@@ -75,13 +78,34 @@ module Faker
         [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
-      def brazilian_citizen_number(formatted: false)
-        digits = Faker::Number.leading_zero_number(9) until digits&.match(/(\d)((?!\1)\d)+/)
+      def brazilian_citizen_number(legacy_formatted = NOT_GIVEN, formatted: false)
+        if legacy_formatted != NOT_GIVEN
+          warn_with_uplevel 'Passing `formatted` with the 1st argument of `IDNumber.brazilian_citizen_number` is deprecated. Use keyword argument like `IDNumber.brazilian_citizen_number(formatted: ...)` instead.', uplevel: 1
+          formatted = legacy_formatted
+        end
+
+        digits = Faker::Number.leading_zero_number(digits: 9) until digits&.match(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
         number = [digits, first_digit, second_digit].join
         formatted ? format('%s.%s.%s-%s', *number.scan(/\d{2,3}/).flatten) : number
       end
+
+      alias brazilian_cpf brazilian_citizen_number
+
+      def brazilian_id(legacy_formatted = NOT_GIVEN, formatted: false)
+        if legacy_formatted != NOT_GIVEN
+          warn_with_uplevel 'Passing `formatted` with the 1st argument of `IDNumber.brazilian_id` is deprecated. Use keyword argument like `IDNumber.brazilian_id(formatted: ...)` instead.', uplevel: 1
+          formatted = legacy_formatted
+        end
+
+        digits = Faker::Number.between(to: BRAZILIAN_ID_FROM, from: BRAZILIAN_ID_TO).to_s
+        check_digit = brazilian_id_checksum_digit(digits)
+        number = [digits, check_digit].join
+        formatted ? format('%s.%s.%s-%s', *number.scan(BRAZILIAN_ID_FORMAT).flatten) : number
+      end
+
+      alias brazilian_rg brazilian_id
 
       private
 
@@ -104,11 +128,34 @@ module Faker
       end
 
       def brazilian_citizen_number_checksum_digit(digits)
-        digit_sum = digits.chars.each_with_index.inject(0) do |acc, (digit, i)|
+        checksum = brazilian_document_checksum(digits)
+        brazilian_document_digit(checksum)
+      end
+
+      def brazilian_id_checksum_digit(digits)
+        checksum = brazilian_document_checksum(digits)
+        brazilian_document_digit(checksum, id: true)
+      end
+
+      def brazilian_document_checksum(digits)
+        digits.chars.each_with_index.inject(0) do |acc, (digit, i)|
           acc + digit.to_i * (digits.size + 1 - i)
         end * 10
-        remainder = digit_sum % 11
+      end
+
+      def brazilian_document_digit(checksum, id = false)
+        remainder = checksum % 11
+        id ? brazilian_id_digit(remainder) : brazilian_citizen_number_digit(remainder)
+      end
+
+      def brazilian_citizen_number_digit(remainder)
         remainder == 10 ? '0' : remainder.to_s
+      end
+
+      def brazilian_id_digit(remainder)
+        subtraction = 11 - remainder.to_i
+        digits = { 10 => 'X', 11 => '0' }
+        digits.include?(subtraction) ? digits[subtraction] : subtraction.to_s
       end
 
       def _translate(key)

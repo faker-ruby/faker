@@ -37,5 +37,9 @@ module Faker
     def self.buzzword
       fetch('cannabis.buzzwords')
     end
+
+    def self.brand
+      fetch('cannabis.brands')
+    end
   end
 end

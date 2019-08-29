@@ -30,6 +30,7 @@ class TestZhCnLocale < Test::Unit::TestCase
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
+    assert_no_match(/\s/, Faker::Name.name_with_middle)
   end
 
   def test_phone_number_methods

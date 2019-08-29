@@ -7,11 +7,15 @@ Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
 
 # Random vehicle manufacturer
 Faker::Vehicle.manufacture #=> "Lamborghini"
+
 Faker::Vehicle.make #=> "Honda"
 
 # Random vehicle model
+# Keyword arguments: make_of_model
 Faker::Vehicle.model #=> "A8"
-Faker::Vehicle.model('Toyota') #=> "Prius"
+Faker::Vehicle.model(make_of_model: 'Toyota') #=> "Prius"
+
+# Random vehicle make and model
 Faker::Vehicle.make_and_model #=> "Dodge Charger"
 
 # Random vehicle color
@@ -51,14 +55,16 @@ Faker::Vehicle.engine #=> 4
 Faker::Vehicle.year #=> 2008
 
 # Random mileage/kilometrage
+# Keyword arguments: min, max
 Faker::Vehicle.mileage #=> 26961
-Faker::Vehicle.mileage(50_000) #=> 81557
-Faker::Vehicle.mileage(50_000, 250_000) #=> 117503
+Faker::Vehicle.mileage(min: 50_000) #=> 81557
+Faker::Vehicle.mileage(min: 50_000, max: 250_000) #=> 117503
 Faker::Vehicle.kilometrage #=> 35378
 
 # Random vehicle license plate (USA by default)
+# Keyword arguments: state_abreviation
 Faker::Vehicle.license_plate #=> "DEP-2483"
-Faker::Vehicle.license_plate('FL') #=> "977 UNU"
+Faker::Vehicle.license_plate(state_abreviation: 'FL') #=> "977 UNU"
 
 # Random vehicle license plate for Singapore (if locale is set)
 Faker::Vehicle.singapore_license_plate #=> "SLV1854M"

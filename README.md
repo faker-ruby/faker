@@ -1,7 +1,8 @@
+
 ![logotype a happy-07](https://user-images.githubusercontent.com/36028424/40263395-4318481e-5b44-11e8-92e5-3dcc1ce169b3.png)
 
 # Faker
-[![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker)
+[![Build Status](https://travis-ci.org/faker-ruby/faker.svg?branch=master)](https://travis-ci.org/faker-ruby/faker)
 [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
 [![Inline docs](http://inch-ci.org/github/stympy/faker.svg?branch=master)](http://inch-ci.org/github/stympy/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
@@ -15,11 +16,14 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-- [Installing](#installing)
-- [Usage](#usage)
+- [Faker](#faker)
+    - [NOTE](#note)
+  - [Installing](#installing)
+  - [Usage](#usage)
+    - [CLI](#cli)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
-- [Generators](#generators)
+  - [Generators](#generators)
     - [Default](#default)
     - [Blockchain](#blockchain)
     - [Books](#books)
@@ -29,11 +33,12 @@ development.
     - [Movies](#movies)
     - [Music](#music)
     - [Quotes](#quotes)
-    - [TV Shows](#tv-shows)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [Contact](#contact)
-- [License](#license)
+    - [Sports](#sports)
+    - [Tv Shows](#tv-shows)
+  - [Customization](#customization)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+  - [License](#license)
 
 ### NOTE
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
@@ -50,7 +55,7 @@ gem install faker
 Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your Gemfile to:
 
 ```ruby
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 ```
 
 ## Usage
@@ -61,6 +66,9 @@ Faker::Name.name      #=> "Christophe Bartell"
 
 Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 ```
+
+### CLI
+Instructions are available in the [faker-bot README](https://github.com/faker-ruby/faker-bot).
 
 ### Ensuring unique values
 Prefix your method call with `unique`. For example:
@@ -109,7 +117,7 @@ Faker::Company.bs #=> "cultivate viral synergies"
 **NOTE: Some of the generators below aren't released yet. If you want to use them, change the line in your gemfile to:**
 
 ```ruby
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 ```
 
 ### Default
@@ -218,8 +226,10 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Creature::Animal](doc/creature/animal.md)
   - [Faker::Creature::Cat](doc/creature/cat.md)
   - [Faker::Creature::Dog](doc/creature/dog.md)
+  - [Faker::Creature::Horse](doc/creature/horse.md)
 
 ### Games
+  - [Faker::Game](doc/games/game.md)
   - [Faker::Games::Dota](doc/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/games/elder_scrolls.md)
   - [Faker::Games::Fallout](doc/games/fallout.md)
@@ -245,7 +255,6 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   - [Faker::Movie](doc/movies/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/movies/back_to_the_future.md)
   - [Faker::Movies::Ghostbusters](doc/movies/ghostbusters.md)
-  - [Faker::Movies::GratefulDead](doc/movies/grateful_dead.md)
   - [Faker::Movies::HarryPotter](doc/movies/harry_potter.md)
   - [Faker::Movies::HitchhikersGuideToTheGalaxy](doc/movies/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Movies::Hobbit](doc/movies/hobbit.md)
@@ -257,6 +266,8 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 ### Music
   - [Faker::Music](doc/music/music.md)
+  - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
+  - [Faker::Music::Opera](doc/music/opera.md)
   - [Faker::Music::Phish](doc/music/phish.md)
   - [Faker::Music::RockBand](doc/music/rock_band.md)
   - [Faker::Music::UmphreysMcgee](doc/music/umphreys_mcgee.md)
@@ -264,6 +275,10 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 ### Quotes
   - [Faker::Quote](doc/quotes/quote.md)
   - [Faker::Quotes::Shakespeare](doc/quotes/shakespeare.md)
+
+### Sports
+  - [Faker::Sports::Basketball](doc/sports/basketball.md)
+  - [Faker::Sports::Football](doc/sports/football.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/tv_shows/aqua_teen_hunger_force.md)

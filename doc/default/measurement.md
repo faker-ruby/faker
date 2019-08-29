@@ -5,13 +5,11 @@
 ### If you pass in "all", it returns the plural version of the measurement unit, without a number.
 
 ```ruby
+# Keyword arguments: amount
 Faker::Measurement.height #=> "6 inches"
-
-Faker::Measurement.height(1.4) #=> "1.4 inches"
-
-Faker::Measurement.height("none") #=> "inch"
-
-Faker::Measurement.height("all") #=> "inches"
+Faker::Measurement.height(amount: 1.4) #=> "1.4 inches"
+Faker::Measurement.height(amount: "none") #=> "inch"
+Faker::Measurement.height(amount: "all") #=> "inches"
 
 Faker::Measurement.length #=> "1 yard"
 

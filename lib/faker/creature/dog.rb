@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Creature
+  class Creature
     class Dog < Base
       flexible :dog
 

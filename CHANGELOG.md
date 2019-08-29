@@ -1,11 +1,262 @@
 # Change Log
 
-## HEAD Unreleased
+## [v2.2.0](https://github.com/stympy/faker-ruby/faker/tree/2.2.0) (2019-25-08)
+
+## Deprecate
+
+- [PR #1698](https://github.com/stympy/faker/pull/1698) Add warn for positional arguments when using Faker 2.0 [@koic](https://github.com/koic)
+
+Add deprecation warning for positional arguments to notify users that are coming from Faker version < 2.0. Its main goal is to make upgrades easier.
+
+## Documentation
+
+- [PR #1688](https://github.com/stympy/faker/pull/1688) Update README install instructions [@EduardoGHdez](https://github.com/EduardoGHdez)
+- [PR #1689](https://github.com/stympy/faker/pull/1689) Update README.md [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1690](https://github.com/stympy/faker/pull/1690) Update issue url in PULL_REQUEST_TEMPLATE [@bugtender](https://github.com/bugtender)
+- [PR #1703](https://github.com/stympy/faker/pull/1703) Return HTTPS URLs from Lorem Flickr [@connorshea](https://github.com/connorshea)
+
+## Feature Request
+- [PR #1686](https://github.com/stympy/faker/pull/1686) Update test-unit gem to 3.3.3 [@connorshea](https://github.com/connorshea)
+
+## Bug/Fixes
+- [PR #1702](https://github.com/stympy/faker/pull/1702) Fix an argument for test_faker_stripe.rb [@koic](https://github.com/koic)
+- [PR #1694](https://github.com/faker-ruby/faker/pull/1694) Ensure mix_case returns at least one lower and one upper case letter [@bpleslie](https://github.com/bpleslie)
+
+------------------------------------------------------------------------------
+
+## [v2.1.2](https://github.com/stympy/faker-ruby/faker/tree/2.1.2) (2019-10-08)
+
+## Enhancements
+
+- [PR #1495](https://github.com/stympy/faker/pull/1495) Add Brazilian documents generation and documentation [@lucasqueiroz](https://github.com/lucasqueiroz)
+
+## Issues
+
+We had to use `bundled with 1.7.3` to avoid some issues.
+
+## [v2.1.1](https://github.com/stympy/faker/tree/2.1.1) (2019-10-08)
+
+## Bug/Fixes
+
+- [PR #1685](https://github.com/stympy/faker/pull/1685) Upgrade i18n [@EduardoGHdez](https://github.com/EduardoGHdez)
+
+`bundler-audit` has identified that i18 has fix a security vulnerability, that has been fixed in the 0.8 version.
+
+- [PR #1683](https://github.com/stympy/faker/pull/1683) Rollback Faker::Time changes [@vbrazo](https://github.com/vbrazo)
+
+Rollback Faker::Time changes because we should expect the date format from activesupport's en.yml.
+
+## Documentation
+
+- [PR #1677](https://github.com/stympy/faker/pull/1677) Fix docs for Internet#password generator [@ur5us](https://github.com/ur5us)
+
+------------------------------------------------------------------------------
+
+## [v2.1.0](https://github.com/stympy/faker/tree/2.1.0) (2019-31-07)
+
+## Bug/Fixes
+- [PR #1675](https://github.com/stympy/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
+
+This change required a quick release because it's a breaking issue. Every place where I18n.l() was used began to display the wrong date, causing test suite to fail.
+
+------------------------------------------------------------------------------
+
+## [v2.0](https://github.com/stympy/faker/tree/2.0) (2019-31-07)
+
+## Important Note:
+
+Version 2 has several `breaking changes`. We replaced positional arguments with keyword arguments and the list below contains all the changed methods:
+- `Faker::Books::Dune.quote(character = nil)` becomes `Faker::Books::Dune.quote(character: nil)`
+- `Faker::Books::Dune.saying(source = nil)` becomes `Faker::Books::Dune.saying(source: nil)`
+- `Faker::Books::Lovecraft.fhtagn(number_of = nil)` becomes `Faker::Books::Lovecraft.fhtagn(number: nil)`
+- `Faker::Books::Lovecraft.paragraph(sentence_count = nil, random_sentences_to_add = nil)` becomes `Faker::Books::Lovecraft.paragraph(sentence_count: nil, random_sentences_to_add: nil)`
+- `Faker::Books::Lovecraft.paragraph_by_chars(chars = nil)` becomes `Faker::Books::Lovecraft.paragraph_by_chars(characters: nil)`
+- `Faker::Books::Lovecraft.paragraphs(paragraph_count = nil)` becomes `Faker::Books::Lovecraft.paragraphs(number: nil)`
+- `Faker::Books::Lovecraft.sentence(word_count = nil, random_words_to_add = nil)` becomes `Faker::Books::Lovecraft.sentence(word_count: nil, random_words_to_add: nil)`
+- `Faker::Books::Lovecraft.sentences(sentence_count = nil)` becomes `Faker::Books::Lovecraft.sentences(number: nil)`
+- `Faker::Books::Lovecraft.words(num = nil, spaces_allowed = nil)` becomes `Faker::Books::Lovecraft.words(number: nil, spaces_allowed: nil)`
+- `Faker::Address.city(options = nil)` becomes `Faker::Address.city(options: nil)`
+- `Faker::Address.postcode(state_abbreviation = nil)` becomes `Faker::Address.postcode(state_abbreviation: nil)`
+- `Faker::Address.street_address(include_secondary = nil)` becomes `Faker::Address.street_address(include_secondary: nil)`
+- `Faker::Address.zip(state_abbreviation = nil)` becomes `Faker::Address.zip(state_abbreviation: nil)`
+- `Faker::Address.zip_code(state_abbreviation = nil)` becomes `Faker::Address.zip_code(state_abbreviation: nil)`
+- `Faker::Alphanumeric.alpha(char_count = nil)` becomes `Faker::Alphanumeric.alpha(number: nil)`
+- `Faker::Alphanumeric.alphanumeric(char_count = nil)` becomes `Faker::Alphanumeric.alphanumeric(number: nil)`
+- `Faker::Avatar.image(slug = nil, size = nil, format = nil, set = nil, bgset = nil)` becomes `Faker::Avatar.image(slug: nil, size: nil, format: nil, set: nil, bgset: nil)`
+- `Faker::Bank.account_number(digits = nil)` becomes `Faker::Bank.account_number(digits: nil)`
+- `Faker::Bank.iban(country_code = nil)` becomes `Faker::Bank.iban(country_code: nil)`
+- `Faker::ChileRut.full_rut(min_rut = nil, fixed = nil)` becomes `Faker::ChileRut.full_rut(min_rut: nil, fixed: nil)`
+- `Faker::ChileRut.rut(min_rut = nil, fixed = nil)` becomes `Faker::ChileRut.rut(min_rut: nil, fixed: nil)`
+- `Faker::Code.ean(base = nil)` becomes `Faker::Code.ean(base: nil)`
+- `Faker::Code.isbn(base = nil)` becomes `Faker::Code.isbn(base: nil)`
+- `Faker::Code.nric(min_age = nil, max_age = nil)` becomes `Faker::Code.nric(min_age: nil, max_age: nil)`
+- `Faker::Commerce.department(max = nil, fixed_amount = nil)` becomes `Faker::Commerce.department(max: nil, fixed_amount: nil)`
+- `Faker::Commerce.price(range = nil, as_string = nil)` becomes `Faker::Commerce.price(range: nil, as_string: nil)`
+- `Faker::Commerce.promotion_code(digits = nil)` becomes `Faker::Commerce.promotion_code(digits: nil)`
+- `Faker::Company.polish_register_of_national_economy(length = nil)` becomes `Faker::Company.polish_register_of_national_economy(length: nil)`
+- `Faker::CryptoCoin.acronym(coin = nil)` becomes `Faker::CryptoCoin.acronym(coin: nil)`
+- `Faker::CryptoCoin.coin_name(coin = nil)` becomes `Faker::CryptoCoin.coin_name(coin: nil)`
+- `Faker::CryptoCoin.url_logo(coin = nil)` becomes `Faker::CryptoCoin.url_logo(coin: nil)`
+- `Faker::Date.backward(days = nil)` becomes `Faker::Date.backward(days: nil)`
+- `Faker::Date.between(from, to)` becomes `Faker::Date.between(from:, to:)`
+- `Faker::Date.between_except(from, to, excepted)` becomes `Faker::Date.between_except(from:, to:, excepted:)`
+- `Faker::Date.birthday(min_age = nil, max_age = nil)` becomes `Faker::Date.birthday(min_age: nil, max_age: nil)`
+- `Faker::Date.forward(days = nil)` becomes `Faker::Date.forward(days: nil)`
+- `Faker::Demographic.height(unit = nil)` becomes `Faker::Demographic.height(unit: nil)`
+- `Faker::File.dir(segment_count = nil, root = nil, directory_separator = nil)` becomes `Faker::File.dir(segment_count: nil, root: nil, directory_separator: nil)`
+- `Faker::File.file_name(dir = nil, name = nil, ext = nil, directory_separator = nil)` becomes `Faker::File.file_name(dir: nil, name: nil, ext: nil, directory_separator: nil)`
+- `Faker::Fillmurray.image(grayscale = nil, width = nil, height = nil)` becomes `Faker::Fillmurray.image(grayscale: nil, width: nil, height: nil)`
+- `Faker::Finance.vat_number(country = nil)` becomes `Faker::Finance.vat_number(country: nil)`
+- `Faker::Hipster.paragraph(sentence_count = nil, supplemental = nil, random_sentences_to_add = nil)` becomes `Faker::Hipster.paragraph(sentence_count: nil, supplemental: nil, random_sentences_to_add: nil)`
+- `Faker::Hipster.paragraph_by_chars(chars = nil, supplemental = nil)` becomes `Faker::Hipster.paragraph_by_chars(characters: nil, supplemental: nil)`
+- `Faker::Hipster.paragraphs(paragraph_count = nil, supplemental = nil)` becomes `Faker::Hipster.paragraphs(number: nil, supplemental: nil)`
+- `Faker::Hipster.sentence(word_count = nil, supplemental = nil, random_words_to_add = nil)` becomes `Faker::Hipster.sentence(word_count: nil, supplemental: nil, random_words_to_add: nil)`
+- `Faker::Hipster.sentences(sentence_count = nil, supplemental = nil)` becomes `Faker::Hipster.sentences(number: nil, supplemental: nil)`
+- `Faker::Hipster.words(num = nil, supplemental = nil, spaces_allowed = nil)` becomes `Faker::Hipster.words(number: nil, supplemental: nil, spaces_allowed: nil)`
+- `Faker::Internet.domain_name(subdomain = nil)` becomes `Faker::Internet.domain_name(subdomain: nil)`
+- `Faker::Internet.email(name = nil, *separators)` becomes `Faker::Internet.email(name: nil, separators: nil)`
+- `Faker::Internet.fix_umlauts(string = nil)` becomes `Faker::Internet.fix_umlauts(string: nil)`
+- `Faker::Internet.free_email(name = nil)` becomes `Faker::Internet.free_email(name: nil)`
+- `Faker::Internet.mac_address(prefix = nil)` becomes `Faker::Internet.mac_address(prefix: nil)`
+- `Faker::Internet.password(min_length = nil, max_length = nil, mix_case = nil, special_chars = nil)` becomes `Faker::Internet.password(min_length: nil, max_length: nil, mix_case: nil, special_characters: nil)`
+- `Faker::Internet.safe_email(name = nil)` becomes `Faker::Internet.safe_email(name: nil)`
+- `Faker::Internet.slug(words = nil, glue = nil)` becomes `Faker::Internet.slug(words: nil, glue: nil)`
+- `Faker::Internet.url(host = nil, path = nil, scheme = nil)` becomes `Faker::Internet.url(host: nil, path: nil, scheme: nil)`
+- `Faker::Internet.user_agent(vendor = nil)` becomes `Faker::Internet.user_agent(vendor: nil)`
+- `Faker::Internet.user_name(specifier = nil, separators = nil)` becomes `Faker::Internet.user_name(specifier: nil, separators: nil)`
+- `Faker::Internet.username(specifier = nil, separators = nil)` becomes `Faker::Internet.username(specifier: nil, separators: nil)`
+- `Faker::Invoice.amount_between(from = nil, to = nil)` becomes `Faker::Invoice.amount_between(from: nil, to: nil)`
+- `Faker::Invoice.creditor_reference(ref = nil)` becomes `Faker::Invoice.creditor_reference(ref: nil)`
+- `Faker::Invoice.reference(ref = nil)` becomes `Faker::Invoice.reference(ref: nil)`
+- `Faker::Json.add_depth_to_json(json = nil, width = nil, options = nil)` becomes `Faker::Json.add_depth_to_json(json: nil, width: nil, options: nil)`
+- `Faker::Json.shallow_json(width = nil, options = nil)` becomes `Faker::Json.shallow_json(width: nil, options: nil)`
+- `Faker::Lorem.characters(char_count = nil)` becomes `Faker::Lorem.characters(number: nil)`
+- `Faker::Lorem.paragraph(sentence_count = nil, supplemental = nil, random_sentences_to_add = nil)` becomes `Faker::Lorem.paragraph(sentence_count: nil, supplemental: nil, random_sentences_to_add: nil)`
+- `Faker::Lorem.paragraph_by_chars(chars = nil, supplemental = nil)` becomes `Faker::Lorem.paragraph_by_chars(number: nil, supplemental: nil)`
+- `Faker::Lorem.paragraphs(paragraph_count = nil, supplemental = nil)` becomes `Faker::Lorem.paragraphs(number: nil, supplemental: nil)`
+- `Faker::Lorem.question(word_count = nil, supplemental = nil, random_words_to_add = nil)` becomes `Faker::Lorem.question(word_count: nil, supplemental: nil, random_words_to_add: nil)`
+- `Faker::Lorem.questions(question_count = nil, supplemental = nil)` becomes `Faker::Lorem.questions(number: nil, supplemental: nil)`
+- `Faker::Lorem.sentence(word_count = nil, supplemental = nil, random_words_to_add = nil)` becomes `Faker::Lorem.sentence(word_count: nil, supplemental: nil, random_words_to_add: nil)`
+- `Faker::Lorem.sentences(sentence_count = nil, supplemental = nil)` becomes `Faker::Lorem.sentences(number: nil, supplemental: nil)`
+- `Faker::Lorem.words(num = nil, supplemental = nil)` becomes `Faker::Lorem.words(number: nil, supplemental: nil)`
+- `Faker::LoremFlickr.colorized_image(size = nil, color = nil, search_terms = nil, match_all = nil)` becomes `Faker::LoremFlickr.colorized_image(size: nil, color: nil, search_terms: nil, match_all: nil)`
+- `Faker::LoremFlickr.grayscale_image(size = nil, search_terms = nil, match_all = nil)` becomes `Faker::LoremFlickr.grayscale_image(size: nil, search_terms: nil, match_all: nil)`
+- `Faker::LoremFlickr.image(size = nil, search_terms = nil, match_all = nil)` becomes `Faker::LoremFlickr.image(size: nil, search_terms: nil, match_all: nil)`
+- `Faker::LoremFlickr.pixelated_image(size = nil, search_terms = nil, match_all = nil)` becomes `Faker::LoremFlickr.pixelated_image(size: nil, search_terms: nil, match_all: nil)`
+- `Faker::LoremPixel.image(size = nil, is_gray = nil, category = nil, number = nil, text = nil, secure: nil)` becomes `Faker::LoremPixel.image(size: nil, is_gray: nil, category: nil, number: nil, text: nil, secure: nil)`
+- `Faker::Markdown.sandwich(sentences = nil, repeat = nil)` becomes `Faker::Markdown.sandwich(sentences: nil, repeat: nil)`
+- `Faker::Measurement.height(amount = nil)` becomes `Faker::Measurement.height(amount: nil)`
+- `Faker::Measurement.length(amount = nil)` becomes `Faker::Measurement.length(amount: nil)`
+- `Faker::Measurement.metric_height(amount = nil)` becomes `Faker::Measurement.metric_height(amount: nil)`
+- `Faker::Measurement.metric_length(amount = nil)` becomes `Faker::Measurement.metric_length(amount: nil)`
+- `Faker::Measurement.metric_volume(amount = nil)` becomes `Faker::Measurement.metric_volume(amount: nil)`
+- `Faker::Measurement.metric_weight(amount = nil)` becomes `Faker::Measurement.metric_weight(amount: nil)`
+- `Faker::Measurement.volume(amount = nil)` becomes `Faker::Measurement.volume(amount: nil)`
+- `Faker::Measurement.weight(amount = nil)` becomes `Faker::Measurement.weight(amount: nil)`
+- `Faker::Name.initials(character_count = nil)` becomes `Faker::Name.initials(number: nil)`
+- `Faker::NationalHealthService.check_digit(number = nil)` becomes `Faker::NationalHealthService.check_digit(number: nil)`
+- `Faker::Number.between(from = nil, to = nil)` becomes `Faker::Number.between(from: nil, to: nil)`
+- `Faker::Number.decimal(l_digits = nil, r_digits = nil)` becomes `Faker::Number.decimal(l_digits: nil, r_digits: nil)`
+- `Faker::Number.decimal_part(*args, &block)` becomes `Faker::Number.decimal_part(digits: nil)`
+- `Faker::Number.hexadecimal(digits = nil)` becomes `Faker::Number.hexadecimal(digits: nil)`
+- `Faker::Number.leading_zero_number(*args, &block)` becomes `Faker::Number.leading_zero_number(digits: nil)`
+- `Faker::Number.negative(from = nil, to = nil)` becomes `Faker::Number.negative(from: nil, to: nil)`
+- `Faker::Number.normal(mean = nil, standard_deviation = nil)` becomes `Faker::Number.normal(mean: nil, standard_deviation: nil)`
+- `Faker::Number.number(digits = nil)` becomes `Faker::Number.number(digits: nil)`
+- `Faker::Number.positive(from = nil, to = nil)` becomes `Faker::Number.positive(from: nil, to: nil)`
+- `Faker::Number.within(range = nil)` becomes `Faker::Number.within(range: nil)`
+- `Faker::PhoneNumber.extension(length = nil)` becomes `Faker::PhoneNumber.extension(length: nil)`
+- `Faker::PhoneNumber.subscriber_number(length = nil)` becomes `Faker::PhoneNumber.subscriber_number(length: nil)`
+- `Faker::Placeholdit.image(size = nil, format = nil, background_color = nil, text_color = nil, text = nil)` becomes `Faker::Placeholdit.image(size: nil, format: nil, background_color: nil, text_color: nil, text: nil)`
+- `Faker::Relationship.familial(connection = nil)` becomes `Faker::Relationship.familial(connection: nil)`
+- `Faker::Source.hello_world(lang = nil)` becomes `Faker::Source.hello_world(lang: nil)`
+- `Faker::Source.print_1_to_10(lang = nil)` becomes `Faker::Source.print_1_to_10(lang: nil)`
+- `Faker::String.random(length = nil)` becomes `Faker::String.random(length: nil)`
+- `Faker::Stripe.ccv(card_type = nil)` becomes `Faker::Stripe.ccv(card_type: nil)`
+- `Faker::Stripe.invalid_card(card_error = nil)` becomes `Faker::Stripe.invalid_card(card_error: nil)`
+- `Faker::Stripe.valid_card(card_type = nil)` becomes `Faker::Stripe.valid_card(card_type: nil)`
+- `Faker::Stripe.valid_token(card_type = nil)` becomes `Faker::Stripe.valid_token(card_type: nil)`
+- `Faker::Time.backward(days = nil, period = nil, format = nil)` becomes `Faker::Time.backward(days: nil, period: nil, format: nil)`
+- `Faker::Time.between(from, to, period = nil, format = nil)` becomes `Faker::Time.between(from:, to:, format: nil)`
+- `Faker::Time.forward(days = nil, period = nil, format = nil)` becomes `Faker::Time.forward(days: nil, period: nil, format: nil)`
+- `Faker::Types.complex_rb_hash(key_count = nil)` becomes `Faker::Types.complex_rb_hash(number: nil)`
+- `Faker::Types.rb_array(len = nil)` becomes `Faker::Types.rb_array(len: nil)`
+- `Faker::Types.rb_hash(key_count = nil, type = nil)` becomes `Faker::Types.rb_hash(number: nil, type: nil)`
+- `Faker::Types.rb_integer(from = nil, to = nil)` becomes `Faker::Types.rb_integer(from: nil, to: nil)`
+- `Faker::Types.rb_string(words = nil)` becomes `Faker::Types.rb_string(words: nil)`
+- `Faker::Vehicle.kilometrage(min = nil, max = nil)` becomes `Faker::Vehicle.kilometrage(min: nil, max: nil)`
+- `Faker::Vehicle.license_plate(state_abreviation = nil)` becomes `Faker::Vehicle.license_plate(state_abreviation: nil)`
+- `Faker::Vehicle.mileage(min = nil, max = nil)` becomes `Faker::Vehicle.mileage(min: nil, max: nil)`
+- `Faker::Vehicle.model(make_of_model = nil)` becomes `Faker::Vehicle.model(make_of_model: nil)`
+- `Faker::WorldCup.group(group = nil)` becomes `Faker::WorldCup.group(group: nil)`
+- `Faker::WorldCup.roster(country = nil, type = nil)` becomes `Faker::WorldCup.roster(country: nil, type: nil)`
+- `Faker::Movies::StarWars.quote(character = nil)` becomes `Faker::Movies::StarWars.quote(character: nil)`
 
 ### Bug/Fixes
 
+- [PR #1660](https://github.com/stympy/faker/pull/1660) Update FillMurray Links To Include www [@RaymondFallon](https://github.com/RaymondFallon)
+
+### Deprecation
+
+- [PR #1634](https://github.com/stympy/faker/pull/1634) Corrected other occurrences of spelling vehicle spelling error, deprecated Space launch_vehicule [@Siyanda](https://github.com/Siyanda)
+
+### Documentation
+
+- [PR #1653](https://github.com/stympy/faker/pull/1653) Add /faker-ruby/faker-bot to README [@vbrazo](https://github.com/vbrazo)
+
+### Feature Request
+
+- [PR #1417](https://github.com/stympy/faker/pull/1417) Rework Faker::Time::between [@pjohnmeyer](https://github.com/pjohnmeyer)
+- [PR #510](https://github.com/stympy/faker/pull/510) Make Faker::Number return integers and floats instead of strings [@tejasbubane](https://github.com/tejasbubane)
+- [PR #1651](https://github.com/stympy/faker/pull/1651) Preparing for v2 [@vbrazo](https://github.com/vbrazo)
+- [PR #1664](https://github.com/stympy/faker/pull/1664) Replace positional arguments with keyword arguments [@vbrazo](https://github.com/vbrazo)
+
+### Update/add locales
+
+- [PR #1658](https://github.com/stympy/faker/pull/1658) Update Faker::Games::SuperSmashBros entries [@boardfish](https://github.com/boardfish)
+- [PR #1649](https://github.com/stympy/faker/pull/1649) Remove mexicoMX [@vbrazo](https://github.com/vbrazo)
+
+------------------------------------------------------------------------------
+
+## [v1.9.6](https://github.com/stympy/faker/tree/1.9.6) (2019-07-05)
+
+Fix lib/faker/version.rb
+
+## [v1.9.5](https://github.com/stympy/faker/tree/v.1.9.5) (2019-07-04)
+
+### Bug
+
+- [PR #1644](https://github.com/stympy/faker/pull/1644) Revert fakerbot and move to own repository inside new organization [@vbrazo](https://github.com/vbrazo)
+
+### Deprecate
+
+- [PR #1516](https://github.com/stympy/faker/pull/1516) Deprecate Faker::Number.decimal_part and Faker::Number.leading_zero_number [@vbrazo](https://github.com/vbrazo)
+
+### Documentation
+
+- [PR #1640](https://github.com/stympy/faker/pull/1640) Add pull_request_template.md [@vbrazo](https://github.com/vbrazo)
+
+### Feature Request
+
+- [PR #1361](https://github.com/stympy/faker/pull/1361) Add Faker::File.dir [@tylerhunt](https://github.com/tylerhunt)
+
+### Update Locales
+
+- [PR #1643](https://github.com/stympy/faker/pull/1643) Add 558 Verb ing_forms from Verb base [@lightyrs](https://github.com/lightyrs)
+
+------------------------------------------------------------------------------
+
+## [v1.9.4](https://github.com/stympy/faker/tree/1.9.4) (2019-06-19)
+
+### Bug/Fixes
+
+- [PR #1605](https://github.com/stympy/faker/pull/1605) fix shallow_json for frozen_string_literal [@causztic](https://github.com/causztic)
+- [PR #1597](https://github.com/stympy/faker/pull/1597) Fix broken test [@vbrazo](https://github.com/vbrazo)
+- [PR #1578](https://github.com/stympy/faker/pull/1578) Namespaces should inherit Base [@vbrazo](https://github.com/vbrazo)
+
 ### Chores
 
+- [PR #1626](https://github.com/stympy/faker/pull/1626) Update tty tree [@Zeragamba](https://github.com/Zeragamba)
 - [PR #1559](https://github.com/stympy/faker/pull/1559) Fix name_with_middle field for en-AU [@psibi](https://github.com/psibi)
 - [PR #1548](https://github.com/stympy/faker/pull/1548) Chore/improve pt-BR specs [@paulodiovani](https://github.com/paulodiovani)
 - [PR #1542](https://github.com/stympy/faker/pull/1542) Fixed typos to the unreleased_README.md [@gkunwar](https://github.com/gkunwar)
@@ -19,17 +270,44 @@
 
 ### Documentation
 
+- [PR #1636](https://github.com/stympy/faker/pull/1636) Fix default values for arguments in Lorem doc [@mikong](https://github.com/mikong)
+- [PR #1617](https://github.com/stympy/faker/pull/1617) Fix Dota README [@TheSmartnik](https://github.com/TheSmartnik)
+- [PR #1612](https://github.com/stympy/faker/pull/1612) Update returned example player [@ncallaway](https://github.com/ncallaway)
+- [PR #1611](https://github.com/stympy/faker/pull/1611) Documentation error fix [@tomlockwood](https://github.com/tomlockwood)
+- [PR #1575](https://github.com/stympy/faker/pull/1575) Add issues templates [@vbrazo](https://github.com/vbrazo)
+
 ### Feature Request
 
+- [PR #1631](https://github.com/stympy/faker/pull/1631) Faker::Tezos: add block faker [@akettal](https://github.com/akettal)
+- [PR #1619](https://github.com/stympy/faker/pull/1619) Add Faker::Music::Opera [@Adsidera](https://github.com/Adsidera)
+- [PR #1607](https://github.com/stympy/faker/pull/1607) Add Faker::Game with title, genre, and platform generators. [@connorshea](https://github.com/connorshea)
+- [PR #1603](https://github.com/stympy/faker/pull/1603) Add Faker::Internet.uuid [@ianks](https://github.com/ianks)
+- [PR #1560](https://github.com/stympy/faker/pull/1560) Add Faker::Creature::Horse [@wndxlori](https://github.com/wndxlori)
 - [PR #1507](https://github.com/stympy/faker/pull/1507) Add CLI - Integrate fakerbot 🤖 [@akabiru](https://github.com/akabiru)
 - [PR #1540](https://github.com/stympy/faker/pull/1540) Add sic_code to company #355 [@bruno-b-martins](https://github.com/bruno-b-martins)
 - [PR #1537](https://github.com/stympy/faker/pull/1537) Adds the Faker::Sports::Basketball generator [@ecbrodie](https://github.com/ecbrodie)
 - [PR #1520](https://github.com/stympy/faker/pull/1520) Allow subdomains for Internet.domain_name [@cianooooo](https://github.com/cianooooo)
 
-### Suggestion
-
 ### Update/add locales
 
+- [PR #1629](https://github.com/stympy/faker/pull/1629) Fix sintax error on game.yml file [@ricardobsilva](https://github.com/ricardobsilva)
+- [PR #1627](https://github.com/stympy/faker/pull/1627) add more data for Faker::Games [@BlazingRockStorm](https://github.com/BlazingRockStorm)
+- [PR #1620](https://github.com/stympy/faker/pull/1620) Added Yuumi as a Champion [@eddorre](https://github.com/eddorre)
+- [PR #1621](https://github.com/stympy/faker/pull/1621) Updated classes to match the changes that Blizzard rolled out late last year. Updated hero pool to add the latest two heroes added to the game. [@eddorre](https://github.com/eddorre)
+- [PR #1602](https://github.com/stympy/faker/pull/1602) Remove white space, fix minor typos [@darylf](https://github.com/darylf)
+- [PR #1595](https://github.com/stympy/faker/pull/1595) Fix accented French surnames [@Samy-Amar](https://github.com/Samy-Amar)
+- [PR #1585](https://github.com/stympy/faker/pull/1585) Add Meepo to Dota heroes and quotes [@justinoue](https://github.com/justinoue)
+- [PR #1594](https://github.com/stympy/faker/pull/1594) Changed Startrek to Stargate :) [@Defoncesko](https://github.com/Defoncesko)
+- [PR #1591](https://github.com/stympy/faker/pull/1591) fix-chinese-city [@locez](https://github.com/locez)
+- [PR #1592](https://github.com/stympy/faker/pull/1592) Add coffee country for Japanese [@schmurfy](https://github.com/schmurfy)
+- [PR #1593](https://github.com/stympy/faker/pull/1593) removes duplicates in fr-CA and fr-CH [@schmurfy](https://github.com/schmurfy)
+- [PR #1587](https://github.com/stympy/faker/pull/1587) Add ancient god for Japanese [@yizknn](https://github.com/yizknn)
+- [PR #1582](https://github.com/stympy/faker/pull/1582) Add fighters and DLC to Faker::Games::SuperSmashBros [@boardfish](https://github.com/boardfish)
+- [PR #1583](https://github.com/stympy/faker/pull/1583) updates to RuPaul [@notactuallypagemcconnell](https://github.com/notactuallypagemcconnell)
+- [PR #1581](https://github.com/stympy/faker/pull/1581) add latest list of phish tunes from phish.net/song that are by the band and not covers  [@notactuallypagemcconnell](https://github.com/notactuallypagemcconnell)
+- [PR #1573](https://github.com/stympy/faker/pull/1573) Fix data of music albums [@sankichi92](https://github.com/sankichi92)
+- [PR #1567](https://github.com/stympy/faker/pull/1567) Fix name_with_middle in Chinese locales [@rockymeza](https://github.com/rockymeza)
+- [PR #1564](https://github.com/stympy/faker/pull/1564) Update League of legends content [@michebble](https://github.com/michebble)
 - [PR #1558](https://github.com/stympy/faker/pull/1558) remove misspelling of Japanese [@michebble](https://github.com/michebble)
 - [PR #1554](https://github.com/stympy/faker/pull/1554) Extend list of cryptocurrencies [@kamilbielawski](https://github.com/kamilbielawski)
 - [PR #1552](https://github.com/stympy/faker/pull/1552) Fix subscription: Fix missing double quotes [@psibi](https://github.com/psibi)
@@ -40,7 +318,7 @@
 
 ------------------------------------------------------------------------------
 
-## [v1.9.3](https://github.com/stympy/faker/tree/v1.9.2) (2019-02-12)
+## [v1.9.3](https://github.com/stympy/faker/tree/v1.9.3) (2019-02-12)
 
 [Full Changelog](https://github.com/stympy/faker/compare/v1.9.2...v1.9.3)
 

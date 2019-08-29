@@ -7,15 +7,20 @@ module Faker
         base_number = rand(400_000_001...499_999_999)
         # If the check digit is equivalent to 10, the number is invalid.
         # See https://en.wikipedia.org/wiki/NHS_number
-        base_number -= 1 if check_digit(base_number) == 10
-        "#{base_number}#{check_digit(base_number)}".to_s
-                                                   .chars
-                                                   .insert(3, ' ')
-                                                   .insert(7, ' ')
-                                                   .join('')
+        base_number -= 1 if check_digit(number: base_number) == 10
+        "#{base_number}#{check_digit(number: base_number)}".to_s
+                                                           .chars
+                                                           .insert(3, ' ')
+                                                           .insert(7, ' ')
+                                                           .join('')
       end
 
-      def check_digit(number = 0)
+      def check_digit(legacy_number = NOT_GIVEN, number: 0)
+        if legacy_number != NOT_GIVEN
+          warn_with_uplevel 'Passing `number` with the 1st argument of `NationalHealthService.check_digit` is deprecated. Use keyword argument like `NationalHealthService.check_digit(number: ...)` instead.', uplevel: 1
+          number = legacy_number
+        end
+
         sum = 0
         number.to_s.chars.each_with_index do |digit, idx|
           position = idx + 1

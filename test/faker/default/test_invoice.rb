@@ -12,7 +12,7 @@ class TestFakerInvoice < Test::Unit::TestCase
     to   = 1000.0
 
     100.times do
-      random_amount = @tester.amount_between(from, to)
+      random_amount = @tester.amount_between(from: from, to: to)
       assert random_amount >= from, "Expected >= \"#{from}\", but got #{random_amount}"
       assert random_amount <= to, "Expected <= \"#{to}\", but got #{random_amount}"
     end
@@ -31,7 +31,7 @@ class TestFakerInvoice < Test::Unit::TestCase
   end
 
   def test_reference_checksum
-    reference = @tester.reference('515141803475128#')
+    reference = @tester.reference(ref: '515141803475128#')
 
     assert reference == '5151418034751285'
   end

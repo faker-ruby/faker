@@ -17,7 +17,7 @@ class TestFakerString < Test::Unit::TestCase
 
   def test_has_valid_encoding
     assert @tester.random.valid_encoding?
-    128.times { assert @tester.random(1..128).valid_encoding? }
+    128.times { assert @tester.random(length: 1..128).valid_encoding? }
   end
 
   def test_is_utf8
@@ -29,35 +29,35 @@ class TestFakerString < Test::Unit::TestCase
   end
 
   def test_nil_is_zero
-    2.times { assert @tester.random(nil).empty? }
+    2.times { assert @tester.random(length: nil).empty? }
   end
 
   def test_int_length
     [0, -1, 1, rand(500), rand(-2048..2047)].each do |len|
-      8.times { assert @tester.random(len).length == [0, len].max }
+      8.times { assert @tester.random(length: len).length == [0, len].max }
     end
   end
 
   def test_range_length
     range = (-5..30)
-    16.times { assert range.include? @tester.random(range).length }
+    16.times { assert range.include? @tester.random(length: range).length }
 
     range = (42..42)
-    assert @tester.random(range).length == 42
+    assert @tester.random(length: range).length == 42
   end
 
   def test_array_length
     array = [0, -1, 1, 1024, rand(2048)]
-    8.times { assert array.include? @tester.random(array).length }
+    8.times { assert array.include? @tester.random(length: array).length }
 
     num = rand(-2048..2047)
     array = [num, num, num]
-    8.times { assert @tester.random(array).length == [0, num].max }
+    8.times { assert @tester.random(length: array).length == [0, num].max }
   end
 
   def test_nested_lengths
     test = lambda do
-      @tester.random([1, (2..5), [3, (-7...6)], nil])
+      @tester.random(length: [1, (2..5), [3, (-7...6)], nil])
     end
     16.times { assert(((0..5).cover? test.call.length)) }
   end
