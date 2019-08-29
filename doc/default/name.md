@@ -19,6 +19,10 @@ Faker::Name.prefix           #=> "Mr."
 
 Faker::Name.suffix           #=> "IV"
 
+# Selects a name from a random available locale
+Faker::Name.international_name #=> "Горбунова Евгения Анатольевна"
+Faker::Name.international_name(from_locales: ['en-AU', 'en-US']) #=> "James Smith"
+
 # Keyword arguments: number
 Faker::Name.initials            #=> "NJM"
 Faker::Name.initials(number: 2) #=> "NM"

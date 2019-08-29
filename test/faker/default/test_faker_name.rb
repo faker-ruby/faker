@@ -47,4 +47,9 @@ class TestFakerName < Test::Unit::TestCase
     assert @tester.initials.match(/[A-Z]{3}/)
     assert @tester.initials(number: 2).match(/[A-Z]{2}/)
   end
+
+  def test_international_name
+    assert @tester.international_name.is_a? String
+    assert @tester.international_name(from_locales: ['en-US', 'en-CA']).match(/(\w+\.? ?){2,3}/)
+  end
 end

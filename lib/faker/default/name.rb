@@ -46,6 +46,13 @@ module Faker
         fetch('name.suffix')
       end
 
+      def international_name(from_locales: I18n.config.available_locales)
+        locale = from_locales.sample(random: Faker::Config.random)
+        with_locale(locale) do
+          name
+        end
+      end
+
       def initials(legacy_number = NOT_GIVEN, number: 3)
         if legacy_number != NOT_GIVEN
           warn_with_uplevel 'Passing `number` with the 1st argument of `Name.initials` is deprecated. Use keyword argument like `Name.initials(number: ...)` instead.', uplevel: 1
