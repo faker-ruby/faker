@@ -69,6 +69,14 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert_match WORD_MATCH, @tester.license_plate(state_abbreviation: 'CA')
   end
 
+  def test_mercosur_license_plate
+    assert_match WORD_MATCH, @tester.mercosur_license_plate
+  end
+
+  def test_mercosur_license_plate_with_params
+    assert_match WORD_MATCH, @tester.mercosur_license_plate(state_abreviation: 'RJ')
+  end
+
   def test_make
     assert_match WORD_MATCH, @tester.make
   end

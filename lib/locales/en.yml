@@ -9,3 +9,6 @@ en:
     pm: "PM"
   faker:
     separator: ' & '
+    vehicle:
+      mercosur_license_plate: ['???#?##', '?? ### ??', '???? ###', '??? ####']
+  
