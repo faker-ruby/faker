@@ -117,13 +117,8 @@ module Faker
         regexify(bothify(fetch(key)))
       end
 
-      def mercosur_license_plate(legacy_state_abreviation = NOT_GIVEN, state_abreviation: '')
+      def mercosur_license_plate(state_abreviation: '')
         key = 'vehicle.mercosur_license_plate'
-        if legacy_state_abreviation != NOT_GIVEN
-          warn_with_uplevel "Passing `state_abreviation` with the 1st argument of `Vehicle.mercosur_license_plate` is deprecated. Use keyword argument like `Vehicle.mercosur_license_plate(state_abreviation: ...)` instead.", uplevel: 1
-          state_abreviation = legacy_state_abreviation
-        end
-        
         return regexify(bothify(fetch(key))) if state_abreviation.empty?
 
         key = key + '.by_state.' + state_abreviation
