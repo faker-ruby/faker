@@ -1,6 +1,6 @@
 # Change Log
 
-## [v2.2.0](https://github.com/faker-ruby/faker/tree/2.2.0) (2019-25-08)
+## [v2.2.0](https://github.com/faker-ruby/faker/tree/v2.2.0) (2019-25-08)
 
 ## Deprecate
 
