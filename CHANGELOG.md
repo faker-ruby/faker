@@ -24,7 +24,7 @@ Add deprecation warning for positional arguments to notify users that are coming
 
 ------------------------------------------------------------------------------
 
-## [v2.1.2](https://github.com/faker-ruby/faker/tree/2.1.2) (2019-10-08)
+## [v2.1.2](https://github.com/faker-ruby/faker/tree/v2.1.2) (2019-10-08)
 
 ## Enhancements
 
