@@ -10,7 +10,7 @@ module Faker
         end
 
         return if digits < 1
-        return 0 if digits == 1
+        return rand(0..9).round if digits == 1
 
         # Ensure the first digit is not zero
         ([non_zero_digit] + generate(digits - 1)).join.to_i

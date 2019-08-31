@@ -25,7 +25,20 @@ class TestFakerNumber < Test::Unit::TestCase
     assert @tester.number(digits: 1).to_s.length == 1
   end
 
+  def test_number_with_one_digit
+    random_number = 4
+    in_range = lambda { |range|
+      assert_equal(0..9, range)
+      random_number
+    }
+
+    Faker::Base.stub(:rand, in_range) do
+      assert_equal(random_number, @tester.number(digits: 1))
+    end
+  end
+
   def test_decimal
+    assert @tester.decimal(l_digits: 1, r_digits: 1).to_s.match(/[0-9]{1}\.[0-9]{1}/)
     assert @tester.decimal(l_digits: 2).to_s.match(/[0-9]{2}\.[0-9]{2}/)
     assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match(/[0-9]{4}\.[0-9]{5}/)
   end
@@ -114,19 +127,5 @@ class TestFakerNumber < Test::Unit::TestCase
   def test_hexadecimal
     assert @tester.hexadecimal(digits: 4).match(/[0-9a-f]{4}/)
     assert @tester.hexadecimal(digits: 7).match(/[0-9a-f]{7}/)
-  end
-
-  def test_insignificant_zero
-    @tester.stub :digit, 0 do
-      assert_equal '0', @tester.number(digits: 1).to_s
-      100.times do
-        assert_match(/^[1-9]0/, @tester.number(digits: 2).to_s)
-      end
-
-      assert_equal 0.0, @tester.decimal(l_digits: 1, r_digits: 1)
-      100.times do
-        assert_match(/^0\.0[1-9]/, @tester.decimal(l_digits: 1, r_digits: 2).to_s)
-      end
-    end
   end
 end
