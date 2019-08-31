@@ -52,7 +52,7 @@ Rollback Faker::Time changes because we should expect the date format from activ
 
 ------------------------------------------------------------------------------
 
-## [v2.1.0](https://github.com/faker-ruby/faker/tree/2.1.0) (2019-31-07)
+## [v2.1.0](https://github.com/faker-ruby/faker/tree/v2.1.0) (2019-31-07)
 
 ## Bug/Fixes
 - [PR #1675](https://github.com/faker-ruby/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
