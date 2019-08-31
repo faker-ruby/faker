@@ -1,5 +1,15 @@
 # Change Log
 
+## [v2.2.1](https://github.com/faker-ruby/faker/tree/v2.2.1) (2019-30-08)
+
+## Bug/Fixes
+
+- [PR #1712](https://github.com/faker-ruby/faker/pull/1712) Fix number(digits: 1) always returns 0 [@ianlet](https://github.com/ianlet)
+
+`Faker::Number.number(digits: 1)` was always returning `0`.
+
+Fixing number with one digit caused the test_insignificant_zero to fail. As it seemed that the behavior tested by test_insignificant_zero was already covered by test_number and test_decimal, we removed it to prevent duplication.
+
 ## [v2.2.0](https://github.com/faker-ruby/faker/tree/v2.2.0) (2019-25-08)
 
 ## Deprecate
