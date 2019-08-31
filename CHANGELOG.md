@@ -1,40 +1,40 @@
 # Change Log
 
-## [v2.2.0](https://github.com/stympy/faker-ruby/faker/tree/2.2.0) (2019-25-08)
+## [v2.2.0](https://github.com/faker-ruby/faker/tree/v2.2.0) (2019-25-08)
 
 ## Deprecate
 
-- [PR #1698](https://github.com/stympy/faker/pull/1698) Add warn for positional arguments when using Faker 2.0 [@koic](https://github.com/koic)
+- [PR #1698](https://github.com/faker-ruby/faker/pull/1698) Add warn for positional arguments when using Faker 2.0 [@koic](https://github.com/koic)
 
 Add deprecation warning for positional arguments to notify users that are coming from Faker version < 2.0. Its main goal is to make upgrades easier.
 
 ## Documentation
 
-- [PR #1688](https://github.com/stympy/faker/pull/1688) Update README install instructions [@EduardoGHdez](https://github.com/EduardoGHdez)
-- [PR #1689](https://github.com/stympy/faker/pull/1689) Update README.md [@Zeragamba](https://github.com/Zeragamba)
-- [PR #1690](https://github.com/stympy/faker/pull/1690) Update issue url in PULL_REQUEST_TEMPLATE [@bugtender](https://github.com/bugtender)
-- [PR #1703](https://github.com/stympy/faker/pull/1703) Return HTTPS URLs from Lorem Flickr [@connorshea](https://github.com/connorshea)
+- [PR #1688](https://github.com/faker-ruby/faker/pull/1688) Update README install instructions [@EduardoGHdez](https://github.com/EduardoGHdez)
+- [PR #1689](https://github.com/faker-ruby/faker/pull/1689) Update README.md [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1690](https://github.com/faker-ruby/faker/pull/1690) Update issue url in PULL_REQUEST_TEMPLATE [@bugtender](https://github.com/bugtender)
+- [PR #1703](https://github.com/faker-ruby/faker/pull/1703) Return HTTPS URLs from Lorem Flickr [@connorshea](https://github.com/connorshea)
 
 ## Feature Request
-- [PR #1686](https://github.com/stympy/faker/pull/1686) Update test-unit gem to 3.3.3 [@connorshea](https://github.com/connorshea)
+- [PR #1686](https://github.com/faker-ruby/faker/pull/1686) Update test-unit gem to 3.3.3 [@connorshea](https://github.com/connorshea)
 
 ## Bug/Fixes
-- [PR #1702](https://github.com/stympy/faker/pull/1702) Fix an argument for test_faker_stripe.rb [@koic](https://github.com/koic)
+- [PR #1702](https://github.com/faker-ruby/faker/pull/1702) Fix an argument for test_faker_stripe.rb [@koic](https://github.com/koic)
 - [PR #1694](https://github.com/faker-ruby/faker/pull/1694) Ensure mix_case returns at least one lower and one upper case letter [@bpleslie](https://github.com/bpleslie)
 
 ------------------------------------------------------------------------------
 
-## [v2.1.2](https://github.com/stympy/faker-ruby/faker/tree/2.1.2) (2019-10-08)
+## [v2.1.2](https://github.com/faker-ruby/faker/tree/v2.1.2) (2019-10-08)
 
 ## Enhancements
 
-- [PR #1495](https://github.com/stympy/faker/pull/1495) Add Brazilian documents generation and documentation [@lucasqueiroz](https://github.com/lucasqueiroz)
+- [PR #1495](https://github.com/faker-ruby/faker/pull/1495) Add Brazilian documents generation and documentation [@lucasqueiroz](https://github.com/lucasqueiroz)
 
 ## Issues
 
 We had to use `bundled with 1.7.3` to avoid some issues.
 
-## [v2.1.1](https://github.com/stympy/faker/tree/2.1.1) (2019-10-08)
+## [v2.1.1](https://github.com/faker-ruby/faker/tree/2.1.1) (2019-10-08)
 
 ## Bug/Fixes
 
@@ -48,20 +48,20 @@ Rollback Faker::Time changes because we should expect the date format from activ
 
 ## Documentation
 
-- [PR #1677](https://github.com/stympy/faker/pull/1677) Fix docs for Internet#password generator [@ur5us](https://github.com/ur5us)
+- [PR #1677](https://github.com/faker-ruby/faker/pull/1677) Fix docs for Internet#password generator [@ur5us](https://github.com/ur5us)
 
 ------------------------------------------------------------------------------
 
-## [v2.1.0](https://github.com/stympy/faker/tree/2.1.0) (2019-31-07)
+## [v2.1.0](https://github.com/faker-ruby/faker/tree/v2.1.0) (2019-31-07)
 
 ## Bug/Fixes
-- [PR #1675](https://github.com/stympy/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
+- [PR #1675](https://github.com/faker-ruby/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
 
 This change required a quick release because it's a breaking issue. Every place where I18n.l() was used began to display the wrong date, causing test suite to fail.
 
 ------------------------------------------------------------------------------
 
-## [v2.0](https://github.com/stympy/faker/tree/2.0) (2019-31-07)
+## [v2.0](https://github.com/faker-ruby/faker/tree/v2.0) (2019-31-07)
 
 ## Important Note:
 
