@@ -10,7 +10,7 @@
 
 Fixing number with one digit caused the test_insignificant_zero to fail. As it seemed that the behavior tested by test_insignificant_zero was already covered by test_number and test_decimal, we removed it to prevent duplication.
 
-## [v2.2.0](https://github.com/faker-ruby/faker/tree/2.2.0) (2019-25-08)
+## [v2.2.0](https://github.com/faker-ruby/faker/tree/v2.2.0) (2019-25-08)
 
 ## Deprecate
 
@@ -34,7 +34,7 @@ Add deprecation warning for positional arguments to notify users that are coming
 
 ------------------------------------------------------------------------------
 
-## [v2.1.2](https://github.com/faker-ruby/faker/tree/2.1.2) (2019-10-08)
+## [v2.1.2](https://github.com/faker-ruby/faker/tree/v2.1.2) (2019-10-08)
 
 ## Enhancements
 
@@ -62,7 +62,7 @@ Rollback Faker::Time changes because we should expect the date format from activ
 
 ------------------------------------------------------------------------------
 
-## [v2.1.0](https://github.com/faker-ruby/faker/tree/2.1.0) (2019-31-07)
+## [v2.1.0](https://github.com/faker-ruby/faker/tree/v2.1.0) (2019-31-07)
 
 ## Bug/Fixes
 - [PR #1675](https://github.com/faker-ruby/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
@@ -71,7 +71,7 @@ This change required a quick release because it's a breaking issue. Every place 
 
 ------------------------------------------------------------------------------
 
-## [v2.0](https://github.com/faker-ruby/faker/tree/2.0) (2019-31-07)
+## [v2.0](https://github.com/faker-ruby/faker/tree/v2.0) (2019-31-07)
 
 ## Important Note:
 
