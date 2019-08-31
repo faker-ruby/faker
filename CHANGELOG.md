@@ -61,7 +61,7 @@ This change required a quick release because it's a breaking issue. Every place 
 
 ------------------------------------------------------------------------------
 
-## [v2.0](https://github.com/faker-ruby/faker/tree/2.0) (2019-31-07)
+## [v2.0](https://github.com/faker-ruby/faker/tree/v2.0) (2019-31-07)
 
 ## Important Note:
 
