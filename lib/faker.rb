@@ -271,10 +271,10 @@ module Faker
   class << self
     def method_missing(mth, *args, &block)
       klass = faker_module(mth)
-      klass ? klass : super
+      klass || super
     end
 
-    def respond_to_missing?(method_name, include_private = false)
+    def respond_to_missing?(method_name)
       faker_module(method_name) ? true : false
     end
 
