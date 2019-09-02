@@ -25,7 +25,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     rainbow (3.0.0)
-    rake (12.3.1)
+    rake (12.3.3)
     rubocop (0.74.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -34,7 +34,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.1)
-    simplecov (0.16.1)
+    simplecov (0.17.0)
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
@@ -51,11 +51,11 @@ DEPENDENCIES
   faker!
   minitest (= 5.11.3)
   pry (= 0.12.2)
-  rake (= 12.3.1)
+  rake (= 12.3.3)
   rubocop (= 0.74.0)
-  simplecov (= 0.16.1)
+  simplecov (= 0.17.0)
   test-unit (= 3.3.3)
   timecop (= 0.9.1)
 
 BUNDLED WITH
-   1.17.3
+   2.0.2
