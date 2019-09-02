@@ -42,7 +42,7 @@ module Faker
             email: auth.email,
             image: image
           },
-          credentials:  {
+          credentials: {
             token: Crypto.md5,
             refresh_token: Crypto.md5,
             expires_at: Time.forward.to_i,
@@ -50,7 +50,7 @@ module Faker
           },
           extra: {
             raw_info: {
-              sub:  uid,
+              sub: uid,
               email: auth.email,
               email_verified: random_boolean.to_s,
               name: auth.name,
@@ -340,7 +340,7 @@ module Faker
           },
           credentials: {
             token: Crypto.md5,
-            expires:  false
+            expires: false
           },
           extra: {
             raw_info: {
@@ -360,7 +360,7 @@ module Faker
               events_url: "#{api_url}/events{/privacy}",
               received_events_url: "#{api_url}/received_events",
               type: 'User',
-              site_admin:  random_boolean,
+              site_admin: random_boolean,
               name: auth.name,
               company: nil,
               blog: nil,

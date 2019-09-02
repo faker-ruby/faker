@@ -12,7 +12,7 @@ module Faker
     ].freeze
     ZA_RACE_DIGIT = '8'
     ZA_CITIZENSHIP_DIGITS = %w[0 1].freeze
-    BRAZILIAN_ID_FORMAT = /(\d{1,2})(\d{3})(\d{3})([\dX])/
+    BRAZILIAN_ID_FORMAT = /(\d{1,2})(\d{3})(\d{3})([\dX])/.freeze
     BRAZILIAN_ID_FROM = 10_000_000
     BRAZILIAN_ID_TO = 99_999_999
 
