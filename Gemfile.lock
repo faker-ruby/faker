@@ -36,7 +36,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.10.1)
-    simplecov (0.16.1)
+    simplecov (0.17.0)
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
@@ -55,7 +55,7 @@ DEPENDENCIES
   pry (= 0.12.2)
   rake (= 12.3.3)
   rubocop (= 0.59.1)
-  simplecov (= 0.16.1)
+  simplecov (= 0.17.0)
   test-unit (= 3.3.3)
   timecop (= 0.9.1)
 
