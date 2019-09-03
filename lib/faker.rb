@@ -188,10 +188,10 @@ module Faker
       #   name:
       #     girls_name: ["Alice", "Cheryl", "Tatiana"]
       # Then you can call Faker::Name.girls_name and it will act like #first_name
-      def method_missing(mth, *args, &block)
+      def method_missing(method_name, *args, &block)
         super unless @flexible_key
 
-        if (translation = translate("faker.#{@flexible_key}.#{mth}"))
+        if (translation = translate("faker.#{@flexible_key}.#{method_name}"))
           sample(translation)
         else
           super
@@ -269,8 +269,8 @@ module Faker
   end
 
   class << self
-    def method_missing(mth, *args, &block)
-      klass = faker_module(mth)
+    def method_missing(method_name, *args, &block)
+      klass = faker_module(method_name)
       klass || super
     end
 
