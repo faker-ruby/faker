@@ -123,4 +123,8 @@ class TestFaker < Test::Unit::TestCase
 
     assert_equal(unique_numbers.uniq, unique_numbers)
   end
+
+  def test_submodule_resolution
+    assert_equal(Faker.test_fake, Faker::TestFake)
+  end
 end
