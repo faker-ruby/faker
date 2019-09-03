@@ -40,13 +40,9 @@ module Faker
         raise ArgumentError, 'min_alpha must be greater than or equal to 0' if min_alpha&.negative?
         raise ArgumentError, 'min_numeric must be greater than or equal to 0' if min_numeric&.negative?
 
-        if min_alpha.zero? && min_numeric.zero?
-          return Array.new(char_count) { sample(ALPHANUMS) }.join
-        end
+        return Array.new(char_count) { sample(ALPHANUMS) }.join if min_alpha.zero? && min_numeric.zero?
 
-        if min_alpha + min_numeric > char_count
-          raise ArgumentError, 'min_alpha + min_numeric must be <= number'
-        end
+        raise ArgumentError, 'min_alpha + min_numeric must be <= number' if min_alpha + min_numeric > char_count
 
         random_count = char_count - min_alpha - min_numeric
 

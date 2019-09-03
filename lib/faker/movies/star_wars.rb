@@ -62,9 +62,7 @@ module Faker
               character = k.to_s if v.include?(character)
             end
 
-            unless quoted_characters.key?(character.to_sym)
-              raise ArgumentError, "Character for quotes can be left blank or #{quoted_characters.keys.join(', ')}"
-            end
+            raise ArgumentError, "Character for quotes can be left blank or #{quoted_characters.keys.join(', ')}" unless quoted_characters.key?(character.to_sym)
           end
 
           fetch('star_wars.quotes.' + character)

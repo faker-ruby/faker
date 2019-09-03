@@ -33,8 +33,8 @@ class TestDeterminism < Test::Unit::TestCase
 
   def store_result(method_name)
     @first_run << eval(method_name)
-  rescue StandardError => exception
-    raise %(#{method_name} raised "#{exception}")
+  rescue StandardError => e
+    raise %(#{method_name} raised "#{e}")
   end
 
   def all_methods
