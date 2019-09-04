@@ -16,17 +16,10 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_format = NOT_GIVEN, from:, to:, format: nil)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Time.between` is deprecated. Use keyword argument like `Time.between(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Time.between` is deprecated. Use keyword argument like `Time.between(to: ...)` instead.', uplevel: 1
-          to = legacy_to
-        end
-        if legacy_format != NOT_GIVEN
-          warn_with_uplevel 'Passing `format` with the 3rd argument of `Time.between` is deprecated. Use keyword argument like `Time.between(format: ...)` instead.', uplevel: 1
-          format = legacy_format
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
+          keywords << :format if legacy_format != NOT_GIVEN
         end
 
         from = get_time_object(from)
@@ -39,21 +32,11 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def between_dates(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_period = NOT_GIVEN, legacy_format = NOT_GIVEN, from:, to:, period: :all, format: nil)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Time.between_dates` is deprecated. Use keyword argument like `Time.between_dates(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Time.between_dates` is deprecated. Use keyword argument like `Time.between_dates(to: ...)` instead.', uplevel: 1
-          to = legacy_to
-        end
-        if legacy_period != NOT_GIVEN
-          warn_with_uplevel 'Passing `period` with the 3rd argument of `Time.between_dates` is deprecated. Use keyword argument like `Time.between_dates(period: ...)` instead.', uplevel: 1
-          period = legacy_period
-        end
-        if legacy_format != NOT_GIVEN
-          warn_with_uplevel 'Passing `format` with the 4th argument of `Time.between_dates` is deprecated. Use keyword argument like `Time.between_dates(format: ...)` instead.', uplevel: 1
-          format = legacy_format
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
+          keywords << :period if legacy_period != NOT_GIVEN
+          keywords << :format if legacy_format != NOT_GIVEN
         end
 
         date = Faker::Date.between(from: from, to: to)
@@ -64,17 +47,10 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def forward(legacy_days = NOT_GIVEN, legacy_period = NOT_GIVEN, legacy_format = NOT_GIVEN, days: 365, period: :all, format: nil)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_days != NOT_GIVEN
-          warn_with_uplevel 'Passing `days` with the 1st argument of `Time.forward` is deprecated. Use keyword argument like `Time.forward(days: ...)` instead.', uplevel: 1
-          days = legacy_days
-        end
-        if legacy_period != NOT_GIVEN
-          warn_with_uplevel 'Passing `period` with the 2nd argument of `Time.forward` is deprecated. Use keyword argument like `Time.forward(period: ...)` instead.', uplevel: 1
-          period = legacy_period
-        end
-        if legacy_format != NOT_GIVEN
-          warn_with_uplevel 'Passing `format` with the 3rd argument of `Time.forward` is deprecated. Use keyword argument like `Time.forward(format: ...)` instead.', uplevel: 1
-          format = legacy_format
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :days if legacy_days != NOT_GIVEN
+          keywords << :period if legacy_period != NOT_GIVEN
+          keywords << :format if legacy_format != NOT_GIVEN
         end
 
         time_with_format(date_with_random_time(Faker::Date.forward(days: days), period), format)
@@ -83,17 +59,10 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def backward(legacy_days = NOT_GIVEN, legacy_period = NOT_GIVEN, legacy_format = NOT_GIVEN, days: 365, period: :all, format: nil)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_days != NOT_GIVEN
-          warn_with_uplevel 'Passing `days` with the 1st argument of `Time.backward` is deprecated. Use keyword argument like `Time.backward(days: ...)` instead.', uplevel: 1
-          days = legacy_days
-        end
-        if legacy_period != NOT_GIVEN
-          warn_with_uplevel 'Passing `period` with the 2nd argument of `Time.backward` is deprecated. Use keyword argument like `Time.backward(period: ...)` instead.', uplevel: 1
-          period = legacy_period
-        end
-        if legacy_format != NOT_GIVEN
-          warn_with_uplevel 'Passing `format` with the 3rd argument of `Time.backward` is deprecated. Use keyword argument like `Time.backward(format: ...)` instead.', uplevel: 1
-          format = legacy_format
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :days if legacy_days != NOT_GIVEN
+          keywords << :period if legacy_period != NOT_GIVEN
+          keywords << :format if legacy_format != NOT_GIVEN
         end
 
         time_with_format(date_with_random_time(Faker::Date.backward(days: days), period), format)

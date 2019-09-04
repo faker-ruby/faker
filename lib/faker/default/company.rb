@@ -127,9 +127,8 @@ module Faker
 
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
       def polish_register_of_national_economy(legacy_length = NOT_GIVEN, length: 9)
-        if legacy_length != NOT_GIVEN
-          warn_with_uplevel 'Passing `length` with the 1st argument of `Company.polish_register_of_national_economy` is deprecated. Use keyword argument like `Company.polish_register_of_national_economy(length: ...)` instead.', uplevel: 1
-          length = legacy_length
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :length if legacy_length != NOT_GIVEN
         end
 
         raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
@@ -159,9 +158,8 @@ module Faker
       end
 
       def brazilian_company_number(legacy_formatted = NOT_GIVEN, formatted: false)
-        if legacy_formatted != NOT_GIVEN
-          warn_with_uplevel 'Passing `formatted` with the 1st argument of `Company.brazilian_company_number` is deprecated. Use keyword argument like `Company.brazilian_company_number(formatted: ...)` instead.', uplevel: 1
-          formatted = legacy_formatted
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :formatted if legacy_formatted != NOT_GIVEN
         end
 
         digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]

@@ -24,9 +24,8 @@ module Faker
       end
 
       def height(legacy_unit = NOT_GIVEN, unit: :metric)
-        if legacy_unit != NOT_GIVEN
-          warn_with_uplevel 'Passing `unit` with the 1st argument of `Demographic.height` is deprecated. Use keyword argument like `Demographic.height(unit: ...)` instead.', uplevel: 1
-          unit = legacy_unit
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :unit if legacy_unit != NOT_GIVEN
         end
 
         case unit

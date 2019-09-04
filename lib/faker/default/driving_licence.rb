@@ -9,21 +9,11 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def british_driving_licence(legacy_last_name = NOT_GIVEN, legacy_initials = NOT_GIVEN, legacy_gender = NOT_GIVEN, legacy_date_of_birth = NOT_GIVEN, last_name: Faker::Name.last_name, initials: Faker::Name.initials, gender: random_gender, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65))
         # rubocop:enable Metrics/ParameterLists
-        if legacy_last_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `last_name` with the 1st argument of `DrivingLicence.british_driving_licence` is deprecated. Use keyword argument like `DrivingLicence.british_driving_licence(last_name: ...)` instead.', uplevel: 1
-          last_name = legacy_last_name
-        end
-        if legacy_initials != NOT_GIVEN
-          warn_with_uplevel 'Passing `initials` with the 2nd argument of `DrivingLicence.british_driving_licence` is deprecated. Use keyword argument like `DrivingLicence.british_driving_licence(initials: ...)` instead.', uplevel: 1
-          initials = legacy_initials
-        end
-        if legacy_gender != NOT_GIVEN
-          warn_with_uplevel 'Passing `gender` with the 3rd argument of `DrivingLicence.british_driving_licence` is deprecated. Use keyword argument like `DrivingLicence.british_driving_licence(gender: ...)` instead.', uplevel: 1
-          gender = legacy_gender
-        end
-        if legacy_date_of_birth != NOT_GIVEN
-          warn_with_uplevel 'Passing `date_of_birth` with the 4th argument of `DrivingLicence.british_driving_licence` is deprecated. Use keyword argument like `DrivingLicence.british_driving_licence(date_of_birth: ...)` instead.', uplevel: 1
-          date_of_birth = legacy_date_of_birth
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :last_name if legacy_last_name != NOT_GIVEN
+          keywords << :initials if legacy_initials != NOT_GIVEN
+          keywords << :gender if legacy_gender != NOT_GIVEN
+          keywords << :date_of_birth if legacy_date_of_birth != NOT_GIVEN
         end
 
         [
