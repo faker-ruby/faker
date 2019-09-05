@@ -170,13 +170,9 @@ module Faker
       end
 
       def user(*args)
+        args = %w[name email] if args.empty?
         user_obj = {}
-        if args.empty?
-          user_obj = { user: 'John', password: 'Ad3M9dL7e7' }
-        end
-        args.each do |arg|
-          user_obj[arg] = send(arg)
-        end
+        args.each { |arg| user_obj[arg] = send(arg) }
         user_obj
       end
     end
