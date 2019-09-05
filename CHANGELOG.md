@@ -202,6 +202,10 @@ Version 2 has several `breaking changes`. We replaced positional arguments with 
 - `Faker::WorldCup.roster(country = nil, type = nil)` becomes `Faker::WorldCup.roster(country: nil, type: nil)`
 - `Faker::Movies::StarWars.quote(character = nil)` becomes `Faker::Movies::StarWars.quote(character: nil)`
 
+Additionally the following methods changed return values:
+
+- `Faker::Number.number` now returns `Numeric` instead of `String` (see [PR #510](https://github.com/faker-ruby/faker/pull/510))
+
 ### Bug/Fixes
 
 - [PR #1660](https://github.com/stympy/faker/pull/1660) Update FillMurray Links To Include www [@RaymondFallon](https://github.com/RaymondFallon)
