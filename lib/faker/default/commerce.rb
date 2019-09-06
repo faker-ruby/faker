@@ -57,6 +57,14 @@ module Faker
         price
       end
 
+      def brand
+        fetch('commerce.brand')
+      end
+
+      def vendor
+        fetch('commerce.vendor')
+      end
+
       private
 
       def categories(num)

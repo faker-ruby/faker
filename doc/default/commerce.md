@@ -23,4 +23,10 @@ Faker::Commerce.promotion_code #=> "AmazingDeal829102"
 Faker::Commerce.promotion_code(digits: 2) #=> "AmazingPrice57"
 
 Faker::Commerce.material #=> "Plastic"
+
+# Generate a random brand
+Faker::Commerce.brand #=> "Apple"
+
+# Generate a random vendor
+Faker::Commerce.vendor #=> "Walmart"
 ```
