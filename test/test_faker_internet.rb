@@ -236,4 +236,10 @@ class TestFakerInternet < Test::Unit::TestCase
     assert user['name'].match(/[a-z]+((_|\.)[a-z]+)?/)
     assert user['email'].match(/.+@.+\.\w+/)
   end
+
+  def test_user_with_invalid_args
+    assert_raises NoMethodError do
+      @tester.user('xyz')
+    end
+  end
 end
