@@ -1,5 +1,29 @@
 # Change Log
 
+## [v2.2.2](https://github.com/faker-ruby/faker/tree/v2.2.2) (2019-05-09)
+
+## Bug/Fixes
+
+- [PR #1717](https://github.com/faker-ruby/faker/pull/1717) Fix ambiguity in element_symbol field [@psibi](https://github.com/psibi)
+
+## Chores
+
+- [PR #1724](https://github.com/faker-ruby/faker/pull/1724) Include rubocop-faker autocorrect in deprecation [@koic](https://github.com/koic)
+
+## Documentation
+
+- [PR #1726](https://github.com/faker-ruby/faker/pull/1726) Include 2.x breaking return value change in changelog [@zorab47](https://github.com/zorab47)
+- [PR #1722](https://github.com/faker-ruby/faker/pull/1722) Fix examples in the Dota docs [@bzf](https://github.com/bzf)
+
+## Update local dependencies
+
+The following development dependencies were updated:
+- rake requirement from = 12.3.1 to = 12.3.3 (#1719)
+- rubocop requirement from = 0.59.1 to = 0.74.0 (#1721)
+- simplecov requirement from = 0.16.1 to = 0.17.0 (#1718)
+
+------------------------------------------------------------------------------
+
 ## [v2.2.1](https://github.com/faker-ruby/faker/tree/v2.2.1) (2019-30-08)
 
 ## Bug/Fixes
