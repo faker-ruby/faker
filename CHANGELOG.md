@@ -8,6 +8,7 @@
 
 ## Documentation
 
+- [PR #1726](https://github.com/faker-ruby/faker/pull/1726) Include 2.x breaking return value change in changelog [@zorab47](https://github.com/zorab47)
 - [PR #1722](https://github.com/faker-ruby/faker/pull/1722) Fix examples in the Dota docs [@bzf](https://github.com/bzf)
 
 ## Feature Request
