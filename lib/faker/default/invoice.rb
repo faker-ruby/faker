@@ -7,13 +7,9 @@ module Faker
     class << self
       # Generate random amount between values with 2 decimals
       def amount_between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 0, to: 0)
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Invoice.amount_between` is deprecated. Use keyword argument like `Invoice.amount_between(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Invoice.amount_between` is deprecated. Use keyword argument like `Invoice.amount_between(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
         end
 
         Faker::Base.rand_in_range(from, to).round(2)
@@ -22,9 +18,8 @@ module Faker
       # International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
       # ref is optional so that we can create unit tests
       def creditor_reference(legacy_ref = NOT_GIVEN, ref: '')
-        if legacy_ref != NOT_GIVEN
-          warn_with_uplevel 'Passing `ref` with the 1st argument of `Invoice.creditor_reference` is deprecated. Use keyword argument like `Invoice.creditor_reference(ref: ...)` instead.', uplevel: 1
-          ref = legacy_ref
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :ref if legacy_ref != NOT_GIVEN
         end
 
         ref = reference if ref.empty?
@@ -35,9 +30,8 @@ module Faker
       # Payment references have some rules in certain countries
       # ref is optional so that we can create unit tests
       def reference(legacy_ref = NOT_GIVEN, ref: '')
-        if legacy_ref != NOT_GIVEN
-          warn_with_uplevel 'Passing `ref` with the 1st argument of `Invoice.reference` is deprecated. Use keyword argument like `Invoice.reference(ref: ...)` instead.', uplevel: 1
-          ref = legacy_ref
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :ref if legacy_ref != NOT_GIVEN
         end
 
         pattern = fetch('invoice.reference.pattern')

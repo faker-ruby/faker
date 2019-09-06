@@ -45,9 +45,8 @@ module Faker
         end
 
         def quote(legacy_character = NOT_GIVEN, character: nil)
-          if legacy_character != NOT_GIVEN
-            warn_with_uplevel 'Passing `character` with the 1st argument of `StarWars.quote` is deprecated. Use keyword argument like `StarWars.quote(character: ...)` instead.', uplevel: 1
-            character = legacy_character
+          warn_for_deprecated_arguments do |keywords|
+            keywords << :character if legacy_character != NOT_GIVEN
           end
 
           quoted_characters = translate('faker.star_wars.quotes')

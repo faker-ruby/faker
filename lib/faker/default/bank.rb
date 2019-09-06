@@ -6,9 +6,8 @@ module Faker
 
     class << self
       def account_number(legacy_digits = NOT_GIVEN, digits: 10)
-        if legacy_digits != NOT_GIVEN
-          warn_with_uplevel 'Passing `digits` with the 1st argument of `Bank.account_number` is deprecated. Use keyword argument like `Bank.account_number(digits: ...)` instead.', uplevel: 1
-          digits = legacy_digits
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :digits if legacy_digits != NOT_GIVEN
         end
 
         output = ''
@@ -22,9 +21,8 @@ module Faker
         # Each country has it's own format for bank accounts
         # Many of them use letters in certain parts of the account
         # Using regex patterns we can create virtually any type of bank account
-        if legacy_country_code != NOT_GIVEN
-          warn_with_uplevel 'Passing `country_code` with the 1st argument of `Bank.iban` is deprecated. Use keyword argument like `Bank.iban(country_code: ...)` instead.', uplevel: 1
-          country_code = legacy_country_code
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :country_code if legacy_country_code != NOT_GIVEN
         end
 
         begin

@@ -8,9 +8,8 @@ module Faker
 
     class << self
       def rb_string(legacy_words = NOT_GIVEN, words: 1)
-        if legacy_words != NOT_GIVEN
-          warn_with_uplevel 'Passing `words` with the 1st argument of `Types.rb_string` is deprecated. Use keyword argument like `Types.rb_string(words: ...)` instead.', uplevel: 1
-          words = legacy_words
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :words if legacy_words != NOT_GIVEN
         end
 
         resolved_num = resolve(words)
@@ -26,26 +25,18 @@ module Faker
       end
 
       def rb_integer(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 0, to: 100)
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Types.rb_integer` is deprecated. Use keyword argument like `Types.rb_integer(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Types.rb_integer` is deprecated. Use keyword argument like `Types.rb_integer(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
         end
 
         rand(from..to).to_i
       end
 
       def rb_hash(legacy_number = NOT_GIVEN, legacy_type = NOT_GIVEN, number: 1, type: random_type)
-        if legacy_number != NOT_GIVEN
-          warn_with_uplevel 'Passing `number` with the 1st argument of `Types.rb_hash` is deprecated. Use keyword argument like `Types.rb_hash(number: ...)` instead.', uplevel: 1
-          number = legacy_number
-        end
-        if legacy_type != NOT_GIVEN
-          warn_with_uplevel 'Passing `type` with the 2nd argument of `Types.rb_hash` is deprecated. Use keyword argument like `Types.rb_hash(type: ...)` instead.', uplevel: 1
-          type = legacy_type
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :number if legacy_number != NOT_GIVEN
+          keywords << :type if legacy_type != NOT_GIVEN
         end
 
         {}.tap do |hsh|
@@ -56,18 +47,16 @@ module Faker
       end
 
       def complex_rb_hash(legacy_number = NOT_GIVEN, number: 1)
-        if legacy_number != NOT_GIVEN
-          warn_with_uplevel 'Passing `number` with the 1st argument of `Types.complex_rb_hash` is deprecated. Use keyword argument like `Types.complex_rb_hash(number: ...)` instead.', uplevel: 1
-          number = legacy_number
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :number if legacy_number != NOT_GIVEN
         end
 
         rb_hash(number: number, type: random_complex_type)
       end
 
       def rb_array(legacy_len = NOT_GIVEN, len: 1)
-        if legacy_len != NOT_GIVEN
-          warn_with_uplevel 'Passing `len` with the 1st argument of `Types.rb_array` is deprecated. Use keyword argument like `Types.rb_array(len: ...)` instead.', uplevel: 1
-          len = legacy_len
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :len if legacy_len != NOT_GIVEN
         end
 
         [].tap do |ar|

@@ -27,9 +27,8 @@ module Faker
       end
 
       def model(legacy_make_of_model = NOT_GIVEN, make_of_model: '')
-        if legacy_make_of_model != NOT_GIVEN
-          warn_with_uplevel 'Passing `make_of_model` with the 1st argument of `Vehicle.model` is deprecated. Use keyword argument like `Vehicle.model(make_of_model: ...)` instead.', uplevel: 1
-          make_of_model = legacy_make_of_model
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :make_of_model if legacy_make_of_model != NOT_GIVEN
         end
 
         return fetch("vehicle.models_by_make.#{make}") if make_of_model.empty?
@@ -91,13 +90,9 @@ module Faker
       end
 
       def mileage(legacy_min = NOT_GIVEN, legacy_max = NOT_GIVEN, min: MILEAGE_MIN, max: MILEAGE_MAX)
-        if legacy_min != NOT_GIVEN
-          warn_with_uplevel 'Passing `min` with the 1st argument of `Vehicle.mileage` is deprecated. Use keyword argument like `Vehicle.mileage(min: ...)` instead.', uplevel: 1
-          min = legacy_min
-        end
-        if legacy_max != NOT_GIVEN
-          warn_with_uplevel 'Passing `max` with the 2nd argument of `Vehicle.mileage` is deprecated. Use keyword argument like `Vehicle.mileage(max: ...)` instead.', uplevel: 1
-          max = legacy_max
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min if legacy_min != NOT_GIVEN
+          keywords << :max if legacy_max != NOT_GIVEN
         end
 
         rand_in_range(min, max)
@@ -106,9 +101,8 @@ module Faker
       alias kilometrage mileage
 
       def license_plate(legacy_state_abreviation = NOT_GIVEN, state_abreviation: '')
-        if legacy_state_abreviation != NOT_GIVEN
-          warn_with_uplevel 'Passing `state_abreviation` with the 1st argument of `Vehicle.license_plate` is deprecated. Use keyword argument like `Vehicle.license_plate(state_abreviation: ...)` instead.', uplevel: 1
-          state_abreviation = legacy_state_abreviation
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :state_abreviation if legacy_state_abreviation != NOT_GIVEN
         end
 
         return regexify(bothify(fetch('vehicle.license_plate'))) if state_abreviation.empty?

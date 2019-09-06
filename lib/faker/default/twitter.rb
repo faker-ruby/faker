@@ -4,13 +4,9 @@ module Faker
   class Twitter < Base
     class << self
       def user(legacy_include_status = NOT_GIVEN, legacy_include_email = NOT_GIVEN, include_status: true, include_email: false)
-        if legacy_include_status != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_status` with the 1st argument of `Twitter.user` is deprecated. Use keyword argument like `Twitter.user(include_status: ...)` instead.', uplevel: 1
-          include_status = legacy_include_status
-        end
-        if legacy_include_email != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_email` with the 2nd argument of `Twitter.user` is deprecated. Use keyword argument like `Twitter.user(include_email: ...)` instead.', uplevel: 1
-          include_email = legacy_include_email
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_status if legacy_include_status != NOT_GIVEN
+          keywords << :include_email if legacy_include_email != NOT_GIVEN
         end
 
         user_id = id
@@ -64,13 +60,9 @@ module Faker
       end
 
       def status(legacy_include_user = NOT_GIVEN, legacy_include_photo = NOT_GIVEN, include_user: true, include_photo: false)
-        if legacy_include_user != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_user` with the 1st argument of `Twitter.status` is deprecated. Use keyword argument like `Twitter.status(include_user: ...)` instead.', uplevel: 1
-          include_user = legacy_include_user
-        end
-        if legacy_include_photo != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_photo` with the 2nd argument of `Twitter.status` is deprecated. Use keyword argument like `Twitter.status(include_photo: ...)` instead.', uplevel: 1
-          include_photo = legacy_include_photo
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_user if legacy_include_user != NOT_GIVEN
+          keywords << :include_photo if legacy_include_photo != NOT_GIVEN
         end
 
         status_id = id
@@ -135,9 +127,8 @@ module Faker
       end
 
       def status_entities(legacy_include_photo = NOT_GIVEN, include_photo: false)
-        if legacy_include_photo != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_photo` with the 1st argument of `Twitter.status_entities` is deprecated. Use keyword argument like `Twitter.status_entities(include_photo: ...)` instead.', uplevel: 1
-          include_photo = legacy_include_photo
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_photo if legacy_include_photo != NOT_GIVEN
         end
 
         entities = {

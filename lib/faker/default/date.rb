@@ -4,13 +4,9 @@ module Faker
   class Date < Base
     class << self
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from:, to:)
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Date.between` is deprecated. Use keyword argument like `Date.between(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Date.between` is deprecated. Use keyword argument like `Date.between(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
         end
 
         from = get_date_object(from)
@@ -22,17 +18,14 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def between_except(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_excepted = NOT_GIVEN, from:, to:, excepted:)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Date.between_except` is deprecated. Use keyword argument like `Date.between_except(from: ...)` instead.', uplevel: 1
-          from = legacy_from
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
         end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Date.between_except` is deprecated. Use keyword argument like `Date.between_except(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :to if legacy_to != NOT_GIVEN
         end
-        if legacy_excepted != NOT_GIVEN
-          warn_with_uplevel 'Passing `excepted` with the 3rd argument of `Date.between_except` is deprecated. Use keyword argument like `Date.between_except(excepted: ...)` instead.', uplevel: 1
-          excepted = legacy_excepted
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :excepted if legacy_excepted != NOT_GIVEN
         end
 
         raise ArgumentError, 'From date, to date and excepted date must not be the same' if from == to && to == excepted
@@ -46,9 +39,8 @@ module Faker
       end
 
       def forward(legacy_days = NOT_GIVEN, days: 365)
-        if legacy_days != NOT_GIVEN
-          warn_with_uplevel 'Passing `days` with the 1st argument of `Date.forward` is deprecated. Use keyword argument like `Date.forward(days: ...)` instead.', uplevel: 1
-          days = legacy_days
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :days if legacy_days != NOT_GIVEN
         end
 
         from = ::Date.today + 1
@@ -58,9 +50,8 @@ module Faker
       end
 
       def backward(legacy_days = NOT_GIVEN, days: 365)
-        if legacy_days != NOT_GIVEN
-          warn_with_uplevel 'Passing `days` with the 1st argument of `Date.backward` is deprecated. Use keyword argument like `Date.backward(days: ...)` instead.', uplevel: 1
-          days = legacy_days
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :days if legacy_days != NOT_GIVEN
         end
 
         from = ::Date.today - days
@@ -70,13 +61,11 @@ module Faker
       end
 
       def birthday(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
-        if legacy_min_age != NOT_GIVEN
-          warn_with_uplevel 'Passing `min_age` with the 1st argument of `Date.birthday` is deprecated. Use keyword argument like `Date.birthday(min_age: ...)` instead.', uplevel: 1
-          min_age = legacy_min_age
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min_age if legacy_min_age != NOT_GIVEN
         end
-        if legacy_max_age != NOT_GIVEN
-          warn_with_uplevel 'Passing `max_age` with the 2nd argument of `Date.birthday` is deprecated. Use keyword argument like `Date.birthday(max_age: ...)` instead.', uplevel: 1
-          max_age = legacy_max_age
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :max_age if legacy_max_age != NOT_GIVEN
         end
 
         t = ::Date.today

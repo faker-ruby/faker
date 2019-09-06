@@ -6,9 +6,8 @@ module Faker
 
     class << self
       def familial(legacy_connection = NOT_GIVEN, connection: nil)
-        if legacy_connection != NOT_GIVEN
-          warn_with_uplevel 'Passing `connection` with the 1st argument of `Relationship.familial` is deprecated. Use keyword argument like `Relationship.familial(connection: ...)` instead.', uplevel: 1
-          connection = legacy_connection
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :connection if legacy_connection != NOT_GIVEN
         end
 
         familial_connections = translate('faker.relationship.familial').keys

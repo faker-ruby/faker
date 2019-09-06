@@ -16,22 +16,17 @@ module Faker
       end
 
       def group(legacy_group = NOT_GIVEN, group: 'group_A')
-        if legacy_group != NOT_GIVEN
-          warn_with_uplevel 'Passing `group` with the 1st argument of `WorldCup.group` is deprecated. Use keyword argument like `WorldCup.group(group: ...)` instead.', uplevel: 1
-          group = legacy_group
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :group if legacy_group != NOT_GIVEN
         end
 
         fetch("world_cup.groups.#{group}")
       end
 
       def roster(legacy_country = NOT_GIVEN, legacy_type = NOT_GIVEN, country: 'Egypt', type: 'coach')
-        if legacy_country != NOT_GIVEN
-          warn_with_uplevel 'Passing `country` with the 1st argument of `WorldCup.roster` is deprecated. Use keyword argument like `WorldCup.roster(country: ...)` instead.', uplevel: 1
-          country = legacy_country
-        end
-        if legacy_type != NOT_GIVEN
-          warn_with_uplevel 'Passing `type` with the 2nd argument of `WorldCup.roster` is deprecated. Use keyword argument like `WorldCup.roster(type: ...)` instead.', uplevel: 1
-          type = legacy_type
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :country if legacy_country != NOT_GIVEN
+          keywords << :type if legacy_type != NOT_GIVEN
         end
 
         fetch("world_cup.rosters.#{country}.#{type}")

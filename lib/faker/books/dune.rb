@@ -20,9 +20,8 @@ module Faker
         end
 
         def quote(legacy_character = NOT_GIVEN, character: nil)
-          if legacy_character != NOT_GIVEN
-            warn_with_uplevel 'Passing `character` with the 1st argument of `Dune.quote` is deprecated. Use keyword argument like `Dune.quote(character: ...)` instead.', uplevel: 1
-            character = legacy_character
+          warn_for_deprecated_arguments do |keywords|
+            keywords << :character if legacy_character != NOT_GIVEN
           end
 
           quoted_characters = translate('faker.dune.quotes').keys
@@ -42,9 +41,8 @@ module Faker
         end
 
         def saying(legacy_source = NOT_GIVEN, source: nil)
-          if legacy_source != NOT_GIVEN
-            warn_with_uplevel 'Passing `source` with the 1st argument of `Dune.saying` is deprecated. Use keyword argument like `Dune.saying(source: ...)` instead.', uplevel: 1
-            source = legacy_source
+          warn_for_deprecated_arguments do |keywords|
+            keywords << :source if legacy_source != NOT_GIVEN
           end
 
           sourced_sayings = translate('faker.dune.sayings').keys

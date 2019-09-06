@@ -4,13 +4,9 @@ module Faker
 
     class << self
       def shallow_json(legacy_width = NOT_GIVEN, legacy_options = NOT_GIVEN, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
-        if legacy_width != NOT_GIVEN
-          warn_with_uplevel 'Passing `width` with the 1st argument of `Json.shallow_json` is deprecated. Use keyword argument like `Json.shallow_json(width: ...)` instead.', uplevel: 1
-          width = legacy_width
-        end
-        if legacy_options != NOT_GIVEN
-          warn_with_uplevel 'Passing `options` with the 2nd argument of `Json.shallow_json` is deprecated. Use keyword argument like `Json.shallow_json(options: ...)` instead.', uplevel: 1
-          options = legacy_options
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :width if legacy_width != NOT_GIVEN
+          keywords << :options if legacy_options != NOT_GIVEN
         end
 
         options[:key] = 'Faker::' + options[:key]
@@ -23,17 +19,14 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def add_depth_to_json(legacy_json = NOT_GIVEN, legacy_width = NOT_GIVEN, legacy_options = NOT_GIVEN, json: shallow_json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
         # rubocop:enable Metrics/ParameterLists
-        if legacy_json != NOT_GIVEN
-          warn_with_uplevel 'Passing `json` with the 1st argument of `Json.add_depth_to_json` is deprecated. Use keyword argument like `Json.add_depth_to_json(json: ...)` instead.', uplevel: 1
-          json = legacy_json
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :json if legacy_json != NOT_GIVEN
         end
-        if legacy_width != NOT_GIVEN
-          warn_with_uplevel 'Passing `width` with the 2nd argument of `Json.add_depth_to_json` is deprecated. Use keyword argument like `Json.add_depth_to_json(width: ...)` instead.', uplevel: 1
-          width = legacy_width
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :width if legacy_width != NOT_GIVEN
         end
-        if legacy_options != NOT_GIVEN
-          warn_with_uplevel 'Passing `options` with the 3rd argument of `Json.add_depth_to_json` is deprecated. Use keyword argument like `Json.add_depth_to_json(options: ...)` instead.', uplevel: 1
-          options = legacy_options
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :options if legacy_options != NOT_GIVEN
         end
 
         options[:key] = 'Faker::' + options[:key]

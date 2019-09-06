@@ -79,9 +79,8 @@ module Faker
       end
 
       def brazilian_citizen_number(legacy_formatted = NOT_GIVEN, formatted: false)
-        if legacy_formatted != NOT_GIVEN
-          warn_with_uplevel 'Passing `formatted` with the 1st argument of `IDNumber.brazilian_citizen_number` is deprecated. Use keyword argument like `IDNumber.brazilian_citizen_number(formatted: ...)` instead.', uplevel: 1
-          formatted = legacy_formatted
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :formatted if legacy_formatted != NOT_GIVEN
         end
 
         digits = Faker::Number.leading_zero_number(digits: 9) until digits&.match(/(\d)((?!\1)\d)+/)
@@ -94,9 +93,8 @@ module Faker
       alias brazilian_cpf brazilian_citizen_number
 
       def brazilian_id(legacy_formatted = NOT_GIVEN, formatted: false)
-        if legacy_formatted != NOT_GIVEN
-          warn_with_uplevel 'Passing `formatted` with the 1st argument of `IDNumber.brazilian_id` is deprecated. Use keyword argument like `IDNumber.brazilian_id(formatted: ...)` instead.', uplevel: 1
-          formatted = legacy_formatted
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :formatted if legacy_formatted != NOT_GIVEN
         end
 
         digits = Faker::Number.between(to: BRAZILIAN_ID_FROM, from: BRAZILIAN_ID_TO).to_s
