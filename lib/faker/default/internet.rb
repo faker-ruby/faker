@@ -282,6 +282,13 @@ module Faker
         '%08x-%04x-%04x-%04x-%04x%08x' % ary # rubocop:disable Style/FormatString
       end
 
+      def user(*args)
+        user_hash = {}
+        args = %w[username email] if args.empty?
+        args.each { |arg| user_hash[:"#{arg}"] = send(arg) }
+        user_hash
+      end
+
       alias user_name username
     end
   end

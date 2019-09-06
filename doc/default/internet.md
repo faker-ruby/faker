@@ -1,6 +1,10 @@
 # Faker::Internet
 
 ```ruby
+# Keyword arguments: name, username, email, password, domain_name, user_agent, uuid etc... 
+Faker::Internet.user #=> { username: 'alexie', email: 'alexie@example.net' }
+Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'alexie@example.net', password: 'DtEf9P8wS31iMyC' }
+
 # Keyword arguments: name, separators
 Faker::Internet.email #=> "eliza@mann.net"
 Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.biz"
