@@ -1,6 +1,6 @@
 # Change Log
 
-## [v2.2.3](https://github.com/faker-ruby/faker/tree/v2.2.3) (2019-05-09)
+## [v2.2.2](https://github.com/faker-ruby/faker/tree/v2.2.2) (2019-05-09)
 
 ## Bug/Fixes
 
