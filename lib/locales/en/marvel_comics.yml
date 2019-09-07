@@ -1,7 +1,78 @@
 en:
   faker:
     marvel_comics:
-      hero: ["Captain America", "Ironman", "The Hulk", "Thor", "Mr. Fantastic", "Dr. Strange", "Spiderman", "Black Panther", "Deadpool", "Antman", "Luke Cage", "Wolverine", "Groot", "Ghost Rider" ]
-      heroine: ["Black Widow", "Captain Marvel", "Jessica Jones", "She Hulk", "Invisible Woman", "Scarlett Witch", "Spiderwoman", "The Wasp", "Spider-Gwen", "Gamora", "Ms.Marvel", "Storm", "Shuri", "Jean Grey"]
-      villain: ["Red Skull", "Thanos", "Loki", "Galactus", "Ultron", "Dr.Doom", "Venom", "Doc Ock", "Kingpin", "Dormammu", "Magneto", "Juggernaut", "Lady Deathstrike", "MODOK", "Mephisto", "Carnage", "Mysterio", "Hela"]
-      name: ["Steve Rogers", "Tony Stark", "Bruce Banner", "Thor", "Reed Richards", "Steven Strange", "Peter Parker", "T'Challa", "Wade Wilson", "Hank Pym", "Luke Cage", "James Howlett", "Groot", "Carol Danvers", "Natasha Romanoff", "Jennifer Walters", "Jessica Jones", "Susan Storm", "Wanda Maximoff","Jessica Drew", "Janet Van Dyne", "Gwen Stacy", "Ororo Monroe", "Kamala Khan", "Jean Grey" ]
+      hero:
+      - Captain America
+      - Ironman
+      - The Hulk
+      - Thor
+      - Mr. Fantastic
+      - Dr. Strange
+      - Spiderman
+      - Black Panther
+      - Deadpool
+      - Antman
+      - Luke Cage
+      - Wolverine
+      - Groot
+      - Ghost Rider
+      heroine:
+      - Black Widow
+      - Captain Marvel
+      - Jessica Jones
+      - She Hulk
+      - Invisible Woman
+      - Scarlett Witch
+      - Spiderwoman
+      - The Wasp
+      - Spider-Gwen
+      - Gamora
+      - Ms.Marvel
+      - Storm
+      - Shuri
+      - Jean Grey
+      villain:
+      - Red Skull
+      - Thanos
+      - Loki
+      - Galactus
+      - Ultron
+      - Dr.Doom
+      - Venom
+      - Doc Ock
+      - Kingpin
+      - Dormammu
+      - Magneto
+      - Juggernaut
+      - Lady Deathstrike
+      - MODOK
+      - Mephisto
+      - Carnage
+      - Mysterio
+      - Hela
+      name:
+      - Steve Rogers
+      - Tony Stark
+      - Bruce Banner
+      - Thor
+      - Reed Richards
+      - Steven Strange
+      - Peter Parker
+      - T'Challa
+      - Wade Wilson
+      - Hank Pym
+      - Luke Cage
+      - James Howlett
+      - Groot
+      - Carol Danvers
+      - Natasha Romanoff
+      - Jennifer Walters
+      - Jessica Jones
+      - Susan Storm
+      - Wanda Maximoff
+      - essica Drew
+      - Janet Van Dyne
+      - Gwen Stacy
+      - Ororo Monroe
+      - Kamala Khan
+      - Jean Grey

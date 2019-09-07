@@ -2,6 +2,7 @@
 
 module Faker
   class MarvelComics < Base
+    flexible :MarvelComics
     class << self
     def self.hero
       fetch('marvel_comics.hero')
@@ -18,5 +19,6 @@ module Faker
     def self.name
       fetch('marvel_comics.name')
     end
+  end
   end
 end
