@@ -206,7 +206,14 @@ module Faker
       # Generates a random value between the interval
       def rand_in_range(from, to)
         from, to = to, from if to < from
-        (from..to).to_a.shuffle(random: Faker::Config.random)
+        if from.is_a?(Float)
+          # original behavior -- TypeError: can't iterate from Float
+          (from..to).to_a.shuffle(random: Faker::Config.random)
+        else
+          values = (from..to).to_a
+          index = values.size.times.to_a.shuffle(random: Faker::Config.random).first
+          values[index]
+        end
       end
 
       # If an array or range is passed, a random value will be selected.
