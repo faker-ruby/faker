@@ -10,4 +10,15 @@ class TestFakerMovie < Test::Unit::TestCase
   def test_quote
     assert @tester.quote.match(/\w+/)
   end
+
+  def test_title
+    assert @tester.title.match(/\w+/)
+  end
+
+  def test_name_with_seed
+    Faker::Config.random = Random.new(42)
+    assert @tester.title == 'Scarface'
+    Faker::Config.random = Random.new(24)
+    assert @tester.title == 'The Killing'
+  end
 end

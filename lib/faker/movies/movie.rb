@@ -15,6 +15,10 @@ module Faker
       def quote
         fetch('movie.quote')
       end
+
+      def title
+        fetch('movie.title')
+      end
     end
   end
 end
