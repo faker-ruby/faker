@@ -5,7 +5,7 @@ require_relative '../../test_helper'
 class TestFakerMarvelComics < Test::Unit::TestCase
   def setup
     @tester = Faker::MarvelComics
-    Faker::Config.locale = nil 
+    Faker::Config.locale = nil
   end
 
   def test_hero

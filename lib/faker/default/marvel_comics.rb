@@ -4,21 +4,21 @@ module Faker
   class MarvelComics < Base
     flexible :MarvelComics
     class << self
-    def self.hero
-      fetch('marvel_comics.hero')
-    end
+      def hero
+        fetch('marvel_comics.hero')
+      end
 
-    def self.heroine
-      fetch('marvel_comics.heroine')
-    end
+      def heroine
+        fetch('marvel_comics.heroine')
+      end
 
-    def self.villain
-      fetch('marvel_comics.villain')
-    end
+      def villain
+        fetch('marvel_comics.villain')
+      end
 
-    def self.name
-      fetch('marvel_comics.name')
+      def name
+        fetch('marvel_comics.name')
+      end
     end
-  end
   end
 end
