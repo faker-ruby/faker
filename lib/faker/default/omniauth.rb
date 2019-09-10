@@ -341,6 +341,14 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response from Apple
+      #
+      # @param name [String] A specific name to return in the response
+      # @param email [String] A specific email to return in the response
+      # @param uid [String] A specific UID to return in the response
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-apple
       def apple(name: nil, email: nil, uid: nil)
         uid ||= "#{Number.number(digits: 6)}.#{Number.hexadecimal(digits: 32)}.#{Number.number(digits: 4)}"
         auth = Omniauth.new(name: name, email: email)
