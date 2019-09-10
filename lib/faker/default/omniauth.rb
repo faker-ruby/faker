@@ -341,6 +341,48 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response from Apple
+      #
+      # @param name [String] A specific name to return in the response
+      # @param email [String] A specific email to return in the response
+      # @param uid [String] A specific UID to return in the response
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-apple
+      def apple(name: nil, email: nil, uid: nil)
+        uid ||= "#{Number.number(digits: 6)}.#{Number.hexadecimal(digits: 32)}.#{Number.number(digits: 4)}"
+        auth = Omniauth.new(name: name, email: email)
+        {
+          provider: 'apple',
+          uid: uid,
+          info: {
+            sub: uid,
+            email: auth.email,
+            first_name: auth.first_name,
+            last_name: auth.last_name
+          },
+          credentials: {
+            token: Crypto.md5,
+            refresh_token: Crypto.md5,
+            expires_at: Time.forward.to_i,
+            expires: true
+          },
+          extra: {
+            raw_info: {
+              iss: 'https://appleid.apple.com',
+              aud: 'CLIENT_ID',
+              exp: Time.forward.to_i,
+              iat: Time.forward.to_i,
+              sub: uid,
+              at_hash: Crypto.md5,
+              auth_time: Time.forward.to_i,
+              email: auth.email,
+              email_verified: true
+            }
+          }
+        }
+      end
+
       private
 
       def gender

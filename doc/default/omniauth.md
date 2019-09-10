@@ -259,4 +259,35 @@ Faker::Omniauth.github #=>
     }
   }
 }
+
+Faker::Omniauth.apple #=>
+{
+  :provider => "apple",
+  :uid => "529731.75429b71301caccc750a77b9369d2bc5.7027",
+  :info => {
+    :sub => "529731.75429b71301caccc750a77b9369d2bc5.7027",
+    :email => "robert.kirlin@example.net",
+    :first_name => "Robert",
+    :last_name => "Kirlin"
+  },
+  :credentials => {
+    :token => "ba6089c326c800190b88746f8a2e13f7",
+    :refresh_token => "ebcdb693d801c5055fe62ff37b48c3b6",
+    :expires_at => 1579805533,
+    :expires => true
+  },
+  :extra => {
+    :raw_info => {
+      :iss => "https://appleid.apple.com",
+      :aud => "CLIENT_ID",
+      :exp => 1591575417,
+      :iat => 1571433587,
+      :sub => "529731.75429b71301caccc750a77b9369d2bc5.7027",
+      :at_hash => "d8bc8da580222598bba9da1470ad7b94",
+      :auth_time => 1583778038,
+      :email => "robert.kirlin@example.net",
+      :email_verified => true
+    }
+  }
+}
 ```
