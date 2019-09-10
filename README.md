@@ -161,7 +161,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Fillmurray](doc/default/fillmurray.md)
   - [Faker::Finance](doc/default/finance.md)
   - [Faker::Food](doc/default/food.md)
-  - [Faker::Football](doc/default/football.md)
   - [Faker::FunnyName](doc/default/funny_name.md)
   - [Faker::Gender](doc/default/gender.md)
   - [Faker::GreekPhilosophers](doc/default/greek_philosophers.md)
