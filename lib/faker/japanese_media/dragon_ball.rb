@@ -5,7 +5,7 @@ module Faker
     class DragonBall < Base
       class << self
         ##
-        # Produces the name of a chracter from Dragon Ball.
+        # Produces the name of a character from Dragon Ball.
         #
         # @return [String]
         #
