@@ -2,7 +2,6 @@
 
 module Faker
   class Alphanumeric < Base
-
     ##
     # List of characters allowed for alphanumeric strings
     # @private
