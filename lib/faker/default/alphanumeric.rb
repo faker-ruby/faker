@@ -33,15 +33,17 @@ module Faker
       ##
       # Produces a random string of alphanumeric characters
       #
-      # @param [Integer] number
-      # @param [Integer] min_alpha
-      # @param [Integer] min_numeric
+      # @param number [Integer] The number of characters to generate
+      # @param min_alpha [Integer] The minimum number of alphabetic to add to the string
+      # @param min_numeric [Integer] The minimum number of numbers to add to the string
       #
       # @return [String]
       #
       # @example
       #   Faker::Alphanumeric.alphanumeric(number: 10) #=> "3yfq2phxtb"
+      # @example
       #   Faker::Alphanumeric.alphanumeric(number: 10, min_alpha: 3) #=> "3yfq2phxtb"
+      # @example
       #   Faker::Alphanumeric.alphanumeric(number: 10, min_alpha: 3, min_numeric: 3) #=> "3yfq2phx8b"
       #
       # @faker.version 2.1.3

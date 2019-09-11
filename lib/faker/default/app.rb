@@ -52,8 +52,11 @@ module Faker
       #
       # @example
       #   Faker::App.semantic_version #=> "3.2.5"
+      # @example
       #   Faker::App.semantic_version(major: 42) #=> "42.5.2"
+      # @example
       #   Faker::App.semantic_version(minor: 100..101) #=> "42.100.4"
+      # @example
       #   Faker::App.semantic_version(patch: 5..6) #=> "7.2.6"
       #
       # @faker.version 1.4.3

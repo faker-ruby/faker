@@ -26,7 +26,7 @@ module Faker
         #     #=> "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"
         # @example
         #   Faker::Books::Lovecraft.fhtagn(number: 3)
-        #     #=> "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"
+        #     #=> "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fht...
         #
         # @faker.version 1.9.3
         def fhtagn(legacy_number = NOT_GIVEN, number: 1)
@@ -72,9 +72,14 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Books::Lovecraft.sentence #=> "Furtive antiquarian squamous dank cat loathsome amorphous lurk."
-        #   Faker::Books::Lovecraft.sentence(word_count: 3) #=> "Daemoniac antediluvian fainted squamous comprehension gambrel nameless singular."
-        #   Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1) #=> "Amorphous indescribable tenebrous."
+        #   Faker::Books::Lovecraft.sentence
+        #     #=> "Furtive antiquarian squamous dank cat loathsome amorphous lurk."
+        # @example
+        #   Faker::Books::Lovecraft.sentence(word_count: 3)
+        #     #=> "Daemoniac antediluvian fainted squamous comprehension gambrel nameless singular."
+        # @example
+        #   Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1)
+        #     #=> "Amorphous indescribable tenebrous."
         #
         # @faker.version 1.9.3
         def sentence(legacy_word_count = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, random_words_to_add: 6)
@@ -217,15 +222,15 @@ module Faker
         # @example
         #   Faker::Books::Lovecraft.paragraphs
         #   #=> [
-        #   #     "Noisome daemoniac gibbous abnormal antediluvian. Unutterable fungus accursed stench noisome lurk madness indescribable. Antiquarian fungus gibbering lurk dank fainted. Hideous loathsome manuscript daemoniac lurk charnel foetid.",
-        #   #     "Non-euclidean immemorial indescribable accursed furtive. Dank unnamable cyclopean tenebrous stench immemorial. Eldritch abnormal gibbering tenebrous. Singular accursed lurk.",
-        #   #     "Charnel antediluvian unnamable cat blasphemous comprehension tenebrous. Nameless accursed amorphous unnamable stench. Squamous unnamable mortal accursed manuscript spectral gambrel amorphous. Shunned stygian charnel unutterable. Tenebrous ululate lurk amorphous unnamable.",
+        #   #     "Noisome daemoniac gibbous abnormal antediluvian. Unutterable fung...
+        #   #     "Non-euclidean immemorial indescribable accursed furtive. Dank unn...
+        #   #     "Charnel antediluvian unnamable cat blasphemous comprehension tene...
         #   #   ]
         # @example
         #   Faker::Books::Lovecraft.paragraphs(number: 2)
         #   #=> [
-        #   #     "Hideous amorphous manuscript antediluvian non-euclidean cat eldritch foetid. Stench squamous manuscript amorphous gibbering fainted gibbous. Accursed loathsome blasphemous iridescence antediluvian abnormal ululate manuscript. Singular manuscript gibbering decadent accursed indescribable.",
-        #   #     "Tenebrous unnamable comprehension antediluvian lurk. Lurk spectral noisome gibbering. Furtive manuscript madness tenebrous daemoniac.",
+        #   #     "Hideous amorphous manuscript antediluvian non-euclidean cat eldri...
+        #   #     "Tenebrous unnamable comprehension antediluvian lurk. Lurk spectra...
         #   #   ]
         #
         # @faker.version 1.9.3

@@ -34,7 +34,6 @@ module Faker
       #
       # @example
       #   Faker::Source.print #=> "puts 'faker_string_to_print'"
-      #
       # @example
       #   Faker::Source.print(str: 'foo bar', lang: :javascript)
       #     #=> "console.log('foo bar');"
@@ -59,7 +58,6 @@ module Faker
       #
       # @example
       #   Faker::Source.print_1_to_10 #=> "(1..10).each { |i| puts i }"
-      #
       # @example
       #   Faker::Source.print_1_to_10(lang: :javascript)
       #   # => "for (let i=0; i<10; i++) {

@@ -46,11 +46,11 @@ If you're reviewing a PR, you should ask yourself:
 #### Documentation
 Include [YARD] style docs for all methods that includes:
 - A short description of what the method generates
-- Descriptions for all params
-- The return type
-- At least one example of the output
-- The version that the method was added
-  - leave as `next` for new methods
+- Descriptions for all params (`@param`)
+- The return type (`@return`)
+- At least one example of the output (`@example`)
+- The version that the method was added (`@faker.version`)
+  - Set as `next` for new methods
 
 ```ruby
 ##
@@ -60,10 +60,12 @@ Include [YARD] style docs for all methods that includes:
 #
 # @return [String]
 # 
-# @example Faker:Alphanumeric.alpha
-#   "kgdpxlgwjirlqhwhrebvuomdcjjpeqlq" 
-# @example Faker:Alphanumeric.alpha(number: 10)
-#   "zlvubkrwga"
+# @example
+#   Faker:Alphanumeric.alpha
+#     #=> "kgdpxlgwjirlqhwhrebvuomdcjjpeqlq" 
+# @example 
+#   Faker:Alphanumeric.alpha(number: 10)
+#     #=> "zlvubkrwga"
 #
 # @faker.version next
 def alpha(number: 32)

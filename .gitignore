@@ -25,3 +25,4 @@ coverage/*
 .ruby-gemset
 
 .yardoc/
+doc/
