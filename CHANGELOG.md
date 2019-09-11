@@ -4,6 +4,7 @@
 
 ## Documentation
 
+- [PR #1553](https://github.com/faker-ruby/faker/pull/1553) Yard powered docs [@Zeragamba](https://github.com/Zeragamba)
 - [PR #1727](https://github.com/faker-ruby/faker/pull/1727) Remove Football documentation from wrong category [@lucasqueiroz](https://github.com/lucasqueiroz)
 
 ## Feature Request
