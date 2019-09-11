@@ -74,20 +74,25 @@ module Faker
       end
 
       ##
-      # Produces a randomized string of characters
+      # Produces a randomized string of characters suitable for passwords
       #
-      # @param [Integer] min_length
-      # @param [Integer] max_length
-      # @param [Boolean] mix_case
-      # @param [Boolean] special_characters
+      # @param min_length [Integer] The minimum length of the password
+      # @param max_length [Integer] The maximum length of the password
+      # @param mix_case [Boolean] Toggles if uppercased letters are allowed. If true, at least one will be added.
+      # @param special_characters [Boolean] Toggles if special characters are allowed. If true, at least one will be added.
       #
       # @return [String]
       #
-      # @example Faker::Internet.password #=> "Vg5mSvY1UeRg7"
-      # @example Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
-      # @example Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
-      # @example Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
-      # @example Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
+      # @example
+      #   Faker::Internet.password #=> "Vg5mSvY1UeRg7"
+      # @example
+      #   Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
+      # @example
+      #   Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
+      # @example
+      #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
+      # @example
+      #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
       #
       # @faker.version 2.1.3
       # rubocop:disable Metrics/ParameterLists

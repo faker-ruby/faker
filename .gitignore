@@ -23,3 +23,6 @@ coverage/*
 # Ignore rvm and rbenv files
 .ruby-version
 .ruby-gemset
+
+.yardoc/
+doc/

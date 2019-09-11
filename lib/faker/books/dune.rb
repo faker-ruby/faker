@@ -2,23 +2,62 @@
 
 module Faker
   class Books
+    ##
+    # A Faker module beyond your dreams, test data beyond your imagination.
     class Dune < Base
       class << self
-        # QUOTED_CHARACTERS = fetch("dune.quotes")
-        # SAYING_SOURCES = %w(translate("faker.dune.sources"))
-
+        ##
+        # Produces the name of a character from Dune
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Books::Dune.character #=> "Leto Atreides"
+        #
+        # @faker.version 1.9.3
         def character
           fetch('dune.characters')
         end
 
+        ##
+        # @return [String]
+        #
+        # @example
+        #   Faker::Books::Dune.title #=> "Duke"
+        #
+        # @faker.version 1.9.3
         def title
           fetch('dune.titles')
         end
 
+        ##
+        # Produces the name of a planet from Dune
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Books::Dune.planet #=> "Caladan"
+        #
+        # @faker.version 1.9.3
         def planet
           fetch('dune.planets')
         end
 
+        ##
+        # Produces a quote from Dune
+        #
+        # @param character [String] The name of the character that the quote should be from
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Books::Dune.quote
+        #     #=> "A dead man, surely, no longer requires that water."
+        # @example
+        #   Faker::Books::Dune.quote(character: "baron_harkonnen")
+        #     #=> "He who controls the spice, controls the universe!"
+        #
+        # @faker.version 1.9.3
         def quote(legacy_character = NOT_GIVEN, character: nil)
           warn_for_deprecated_arguments do |keywords|
             keywords << :character if legacy_character != NOT_GIVEN
@@ -40,6 +79,20 @@ module Faker
           fetch('dune.quotes.' + character)
         end
 
+        ##
+        # Produces a saying from Dune
+        #
+        # @param source [String]
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Books::Dune.saying #=> "You do not beg the sun for mercy."
+        # @example
+        #   Faker::Books::Dune.saying(source: "fremen")
+        #     #=> "May thy knife chip and shatter."
+        #
+        # @faker.version 1.9.3
         def saying(legacy_source = NOT_GIVEN, source: nil)
           warn_for_deprecated_arguments do |keywords|
             keywords << :source if legacy_source != NOT_GIVEN

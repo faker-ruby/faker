@@ -30,16 +30,17 @@ module Faker
       ##
       # Produces a random string of alphanumeric characters
       #
-      # @param [Integer] number
-      # @param [Integer] min_alpha
-      # @param [Integer] min_numeric
+      # @param number [Integer] The number of characters to generate
+      # @param min_alpha [Integer] The minimum number of alphabetic to add to the string
+      # @param min_numeric [Integer] The minimum number of numbers to add to the string
       #
       # @return [String]
       #
-      # @example Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omquh7br7dhqijwlawejpl765nb1716idmp3xnfo85v349pzy2o9rir23y2qhflwr71c1585fnynguiphkjm8p0vktwitcsm16lny7jzp9t4drwav3qmhz4yjq4k04x14gl6p148hulyqioo72tf8nwrxxcclfypz2lc58lsibgfe5w5p0xv95peafjjmm2frkhdc6duoky0aha"
-      # @example Faker::Lorem.characters(number: 10) #=> "ang9cbhoa8"
-      # @example Faker::Lorem.characters(number: 10, min_alpha: 4) #=> "ang9cbhoa8"
-      # @example Faker::Lorem.characters(number: 10, min_alpha: 4, min_numeric: 1) #=> "ang9cbhoa8"
+      # @example
+      #   Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5w..."
+      #   Faker::Lorem.characters(number: 10) #=> "ang9cbhoa8"
+      #   Faker::Lorem.characters(number: 10, min_alpha: 4) #=> "ang9cbhoa8"
+      #   Faker::Lorem.characters(number: 10, min_alpha: 4, min_numeric: 1) #=> "ang9cbhoa8"
       #
       # @faker.version 2.1.3
       def characters(legacy_number = NOT_GIVEN, number: 255, min_alpha: 0, min_numeric: 0)
