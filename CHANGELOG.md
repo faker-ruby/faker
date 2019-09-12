@@ -4,6 +4,7 @@
 
 ## Documentation
 
+- [PR #1741](https://github.com/faker-ruby/faker/pull/1741) Fix the .gitignore for YARD. [@connorshea](https://github.com/connorshea)
 - [PR #1553](https://github.com/faker-ruby/faker/pull/1553) Yard powered docs [@Zeragamba](https://github.com/Zeragamba) [@connorshea](https://github.com/connorshea)
 - [PR #1727](https://github.com/faker-ruby/faker/pull/1727) Remove Football documentation from wrong category [@lucasqueiroz](https://github.com/lucasqueiroz)
 
