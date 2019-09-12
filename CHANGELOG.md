@@ -1,5 +1,24 @@
 # Change Log
 
+## [v2.3.0](https://github.com/faker-ruby/faker/tree/v2.3.0) (2019-12-09)
+
+## Documentation
+
+- [PR #1741](https://github.com/faker-ruby/faker/pull/1741) Fix the .gitignore for YARD. [@connorshea](https://github.com/connorshea)
+- [PR #1553](https://github.com/faker-ruby/faker/pull/1553) Yard powered docs [@Zeragamba](https://github.com/Zeragamba) [@connorshea](https://github.com/connorshea)
+- [PR #1727](https://github.com/faker-ruby/faker/pull/1727) Remove Football documentation from wrong category [@lucasqueiroz](https://github.com/lucasqueiroz)
+
+## Feature Request
+
+- [PR #1738](https://github.com/faker-ruby/faker/pull/1738) Add mock data for Apple OAuth [@dzunk](https://github.com/dzunk)
+
+## Update locales
+
+- [PR #1732](https://github.com/faker-ruby/faker/pull/1732) Add pokemon name in Johto area [@mathieujobin](https://github.com/mathieujobin)
+- [PR #1723](https://github.com/faker-ruby/faker/pull/1723) Quebec province postal codes starts by [GHJ], adding missing two [@Ryutooooo](https://github.com/Ryutooooo)
+
+------------------------------------------------------------------------------
+
 ## [v2.2.2](https://github.com/faker-ruby/faker/tree/v2.2.2) (2019-05-09)
 
 ## Bug/Fixes
