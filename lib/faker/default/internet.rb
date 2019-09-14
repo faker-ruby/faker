@@ -282,11 +282,37 @@ module Faker
         '%08x-%04x-%04x-%04x-%04x%08x' % ary # rubocop:disable Style/FormatString
       end
 
-      # email => name, separators
-      # free_email => name
-      # safe_email => name
-      # username => specifier, separators, min_length, max_length
-      # password => min_length, max_length, mix_case, special_characters
+      ##
+      # Produces a hash of personal account attributes
+      #
+      # @param attributes [Array] array of required fields
+      # @option attributes [Symbol or String] :username include username to the result
+      # @option attributes [Symbol or String] :password include password to the result
+      # @option attributes [Symbol or String] :free_email include free_email to the result
+      # @option attributes [Symbol or String] :safe_email include safe_email to the result
+      # @option attributes [Symbol or String] :email include email to the result
+      #
+      # @param options [Hash] apply specific constraints on the data returned
+      #
+      #
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::Internet.personal_account #=> {:username=>"sabina", :password=>"Yh3Oz73Na4LaFx", :free_email=>"viola.block@hotmail.com", :safe_email=>"shanti@example.org", :email=>"nella@schaefer.co"}
+      # @example
+      #   Faker::Internet.personal_account(:username) #=> {:username=>"wilber"}
+      #
+      # @example
+      #   Faker::Internet.personal_account({username: {specifier: 'Nancy'}}) #=> {:username=>"nancy", :password=>"UaGbCf5OdLxV", :free_email=>"antonia@yahoo.com", :safe_email=>"lavern_crooks@example.net", :email=>"lila_gottlieb@haley.biz"}
+      # @example
+      #   Faker::Internet.personal_account(:username, 'password') #=> {:username=>"brant", :password=>"Hr85Wf4L1uQpHl"}
+      # @example
+      #   Faker::Internet.personal_account(:username, :safe_email, :free_email, :email, :password, {username: {specifier: 8}, safe_email: {name: 'Nancy'}, free_email: {name: 'Nancy'}, email: {name: 'Janelle Santiago', separators: '+'}, password: {min_length: 10, max_length: 20, mix_case: true, special_characters: true}}) #=> {:username=>"willettewillette", :safe_email=>"nancy@example.net", :free_email=>"nancy@hotmail.com", :email=>"santiago+janelle@thiel.com", :password=>"!!&*$%Rt74261I41z"}
+      #
+      #
+      # @note This method will return all the options available for *attributes parameter as a default.
+      #
+      # @faker.version 2.3.0
       def personal_account(*attributes, **options)
         attributes = %i[username password free_email safe_email email] if attributes.length.zero?
         attributes = attributes.map &:to_sym
