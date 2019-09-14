@@ -282,6 +282,22 @@ module Faker
         '%08x-%04x-%04x-%04x-%04x%08x' % ary # rubocop:disable Style/FormatString
       end
 
+      # email => name, separators
+      # free_email => name
+      # safe_email => name
+      # username => specifier, separators, min_length, max_length
+      # password => min_length, max_length, mix_case, special_characters
+      def personal_account(*attributes, **options)
+        attributes = %i[username password free_email safe_email email] if attributes.length.zero?
+        attributes = attributes.map &:to_sym
+        options = options.inject({}) do |symbolized_options,(attr, attr_options)|
+          attr_options = attr_options.inject({}) {|new_options, (key, value)| new_options[key.to_sym] = value; new_options}
+          symbolized_options[attr.to_sym] = attr_options
+          symbolized_options
+        end
+        Hash[attributes.map{ |attribute| [attribute, send(attribute.to_sym, **(options[attribute.to_sym] || {}))] }]
+      end
+
       alias user_name username
     end
   end
