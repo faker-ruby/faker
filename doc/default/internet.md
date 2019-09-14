@@ -71,4 +71,18 @@ Faker::Internet.user_agent #=> "Mozilla/5.0 (compatible; MSIE 9.0; AOL 9.7; AOLB
 Faker::Internet.user_agent(vendor: :firefox) #=> "Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0"
 
 Faker::Internet.uuid #=> "929ef6ef-b11f-38c9-111b-accd67a258b2"
+
+Faker::Internet.personal_account #=> {:username=>"sabina", :password=>"Yh3Oz73Na4LaFx", :free_email=>"viola.block@hotmail.com", :safe_email=>"shanti@example.org", :email=>"nella@schaefer.co"}
+
+# Keyword arguments: options
+Faker::Internet.personal_account({username: {specifier: 'Nancy'}}) #=> {:username=>"nancy", :password=>"UaGbCf5OdLxV", :free_email=>"antonia@yahoo.com", :safe_email=>"lavern_crooks@example.net", :email=>"lila_gottlieb@haley.biz"}
+
+# Keyword arguments: attributes
+Faker::Internet.personal_account(:username, 'password') #=> {:username=>"brant", :password=>"Hr85Wf4L1uQpHl"} 
+
+# Keyword arguments: attributes, options
+Faker::Internet.personal_account(:username, :safe_email, :free_email, :email, :password, {username: {specifier: 8}, safe_email: {name: 'Nancy'}, free_email: {name: 'Nancy'}, email: {name: 'Janelle Santiago', separators: '+'}, password: {min_length: 10, max_length: 20, mix_case: true, special_characters: true}}) #=> {:username=>"willettewillette", :safe_email=>"nancy@example.net", :free_email=>"nancy@hotmail.com", :email=>"santiago+janelle@thiel.com", :password=>"!!&*$%Rt74261I41z"}
+
+  
+
 ```
