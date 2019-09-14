@@ -297,9 +297,9 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_user_with_args
-    user = @tester.personal_account(:username, 'email', 'password', :free_email, :safe_email, {password: {min_length: 3, max_length: 5}})
+    user = @tester.personal_account(:username, 'email', 'password', :free_email, :safe_email, password: { min_length: 3, max_length: 5 })
     assert user[:email].match(/.+@.+\.\w+/)
-    assert (3..5).include?(user[:password].length)
+    assert user[:password].length.between?(3, 5)
     assert user[:username]
     assert user[:free_email]
     assert user[:safe_email]

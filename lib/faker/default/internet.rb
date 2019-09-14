@@ -307,7 +307,7 @@ module Faker
       # @example
       #   Faker::Internet.personal_account(:username, 'password') #=> {:username=>"brant", :password=>"Hr85Wf4L1uQpHl"}
       # @example
-      #   Faker::Internet.personal_account(:username, :safe_email, :free_email, :email, :password, {username: {specifier: 8}, safe_email: {name: 'Nancy'}, free_email: {name: 'Nancy'}, email: {name: 'Janelle Santiago', separators: '+'}, password: {min_length: 10, max_length: 20, mix_case: true, special_characters: true}}) #=> {:username=>"willettewillette", :safe_email=>"nancy@example.net", :free_email=>"nancy@hotmail.com", :email=>"santiago+janelle@thiel.com", :password=>"!!&*$%Rt74261I41z"}
+      #   Faker::Internet.personal_account(:username, :safe_email, :free_email, :email, :password, {username: {specifier: 8}, safe_email: {name: 'Nancy'}, free_email: {name: 'Nancy'}, email: {name: 'Janelle Santiago', separators: '+'}, password: { min_length: 10, max_length: 20, mix_case: true, special_characters: true }}) #=> {:username=>"willettewillette", :safe_email=>"nancy@example.net", :free_email=>"nancy@hotmail.com", :email=>"santiago+janelle@thiel.com", :password=>"!!&*$%Rt74261I41z"}
       #
       #
       # @note This method will return all the options available for *attributes parameter as a default.
@@ -315,13 +315,16 @@ module Faker
       # @faker.version 2.3.0
       def personal_account(*attributes, **options)
         attributes = %i[username password free_email safe_email email] if attributes.length.zero?
-        attributes = attributes.map &:to_sym
-        options = options.inject({}) do |symbolized_options,(attr, attr_options)|
-          attr_options = attr_options.inject({}) {|new_options, (key, value)| new_options[key.to_sym] = value; new_options}
+        attributes = attributes.map(&:to_sym)
+        options = options.each_with_object({}) do |(attr, attr_options), symbolized_options|
+          attr_options = attr_options.each_with_object({}) do |(key, value), new_options|
+            new_options[key.to_sym] = value
+            new_options
+          end
           symbolized_options[attr.to_sym] = attr_options
           symbolized_options
         end
-        Hash[attributes.map{ |attribute| [attribute, send(attribute.to_sym, **(options[attribute.to_sym] || {}))] }]
+        Hash[attributes.map { |attribute| [attribute, send(attribute.to_sym, **(options[attribute.to_sym] || {}))] }]
       end
 
       alias user_name username
