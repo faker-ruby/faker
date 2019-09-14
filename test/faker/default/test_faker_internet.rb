@@ -295,4 +295,24 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_equal(36, uuid.size)
     assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, uuid)
   end
+
+  def test_user_with_args
+    user = @tester.personal_account(:username, 'email', 'password', :free_email, :safe_email, {password: {min_length: 3, max_length: 5}})
+    assert user[:email].match(/.+@.+\.\w+/)
+    assert (3..5).include?(user[:password].length)
+    assert user[:username]
+    assert user[:free_email]
+    assert user[:safe_email]
+  end
+
+  def test_user_without_args
+    user = @tester.personal_account
+    assert user[:email].match(/.+@.+\.\w+/)
+  end
+
+  def test_user_with_invalid_args
+    assert_raises NoMethodError do
+      @tester.personal_account('xyz')
+    end
+  end
 end
