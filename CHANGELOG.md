@@ -14,8 +14,8 @@
 
 ## Update locales
 
-- [PR #1732](https://github.com/faker-ruby/faker/pull/1732) Add pokemon name in Johto area [@mathieujobin](https://github.com/mathieujobin)
-- [PR #1723](https://github.com/faker-ruby/faker/pull/1723) Quebec province postal codes starts by [GHJ], adding missing two [@Ryutooooo](https://github.com/Ryutooooo)
+- [PR #1723](https://github.com/faker-ruby/faker/pull/1723) Add pokemon name in Johto area [@mathieujobin](https://github.com/mathieujobin)
+- [PR #1732](https://github.com/faker-ruby/faker/pull/1732) Quebec province postal codes starts by [GHJ], adding missing two [@Ryutooooo](https://github.com/Ryutooooo)
 
 ------------------------------------------------------------------------------
 
