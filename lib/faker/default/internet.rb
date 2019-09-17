@@ -286,11 +286,6 @@ module Faker
       # Produces a hash of personal account attributes
       #
       # @param attributes [Array] array of required fields
-      # @option attributes [Symbol or String] :username include username to the result
-      # @option attributes [Symbol or String] :password include password to the result
-      # @option attributes [Symbol or String] :free_email include free_email to the result
-      # @option attributes [Symbol or String] :safe_email include safe_email to the result
-      # @option attributes [Symbol or String] :email include email to the result
       #
       # @param options [Hash] apply specific constraints on the data returned
       #
