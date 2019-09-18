@@ -24,7 +24,7 @@ class TestNlLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.default_country.is_a? String
-    assert_match(/\d{4} [A-Z]{2}(?<!SA|SS|SD)/, Faker::Address.postcode)
+    assert_match(/\A[1-9][0-9]{3} [A-Z]{2}(?<!SA|SS|SD)\z/, Faker::Address.postcode)
     assert_equal('Nederland', Faker::Address.default_country)
   end
 
@@ -53,7 +53,6 @@ class TestNlLocale < Test::Unit::TestCase
   def test_nl_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
     assert Faker::Name.tussenvoegsel.is_a? String

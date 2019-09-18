@@ -54,14 +54,13 @@ class TestFrCaLocale < Test::Unit::TestCase
 
   def test_fr_ca_lorem_methods
     assert Faker::Lorem.word.is_a? String
-    assert Faker::Lorem.words(1000)
-    assert Faker::Lorem.words(10_000, true)
+    assert Faker::Lorem.words(number: 1000)
+    assert Faker::Lorem.words(number: 10_000, supplemental: true)
   end
 
   def test_fr_ca_name_methods
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end
@@ -74,8 +73,8 @@ class TestFrCaLocale < Test::Unit::TestCase
   end
 
   def test_fr_ca_pokemon_methods
-    assert Faker::Pokemon.name.is_a? String
-    assert Faker::Pokemon.location.is_a? String
-    assert Faker::Pokemon.move.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.move.is_a? String
   end
 end

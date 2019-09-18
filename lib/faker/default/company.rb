@@ -126,7 +126,11 @@ module Faker
       end
 
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
-      def polish_register_of_national_economy(length = 9)
+      def polish_register_of_national_economy(legacy_length = NOT_GIVEN, length: 9)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :length if legacy_length != NOT_GIVEN
+        end
+
         raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
 
         random_digits = []
@@ -153,9 +157,32 @@ module Faker
         regexify(/IT\d{2,4}\/\d{2,10}/)
       end
 
+      def brazilian_company_number(legacy_formatted = NOT_GIVEN, formatted: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :formatted if legacy_formatted != NOT_GIVEN
+        end
+
+        digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
+
+        factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
+
+        2.times do
+          checksum = digits.inject(0) { |acc, digit| acc + digit * factors.next } % 11
+          digits << (checksum < 2 ? 0 : 11 - checksum)
+        end
+
+        number = digits.join
+
+        formatted ? format('%s.%s.%s/%s-%s', *number.scan(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/).flatten) : number
+      end
+      
       # Get a random Russian tax number.
       def russian_tax_number(region: nil, type: :legal)
         inn_number(region, type)
+      end
+
+      def sic_code
+        fetch('company.sic_code')
       end
 
       private
@@ -184,7 +211,7 @@ module Faker
       def luhn_algorithm(number)
         multiplications = []
 
-        number.reverse.split(//).each_with_index do |digit, i|
+        number.to_s.reverse.split(//).each_with_index do |digit, i|
           multiplications << if i.even?
                                digit.to_i * 2
                              else

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'test_helper'
+require_relative '../../test_helper'
 
 class TestFakerCompany < Test::Unit::TestCase
   def setup
@@ -92,7 +92,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_polish_register_of_national_economy
     # 8 length should fail
     assert_raise ArgumentError do
-      @tester.polish_register_of_national_economy(8)
+      @tester.polish_register_of_national_economy(length: 8)
     end
     # 9 length
     number = @tester.polish_register_of_national_economy
@@ -103,7 +103,7 @@ class TestFakerCompany < Test::Unit::TestCase
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
     assert control_number == number[8].to_i
     # 14 length
-    number = @tester.polish_register_of_national_economy(14)
+    number = @tester.polish_register_of_national_economy(length: 14)
     control_sum = 0
     [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8].each_with_index do |control, index|
       control_sum += control * number[index].to_i
@@ -144,6 +144,49 @@ class TestFakerCompany < Test::Unit::TestCase
     )
   end
 
+  def test_luhn_algorithm
+    # Odd length base for luhn algorithm
+    odd_base = Faker::Number.number(digits: [5, 7, 9, 11, 13].sample)
+    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base).to_s
+    odd_control = "#{odd_base}#{odd_luhn_complement}"
+
+    # Even length base for luhn algorithm
+    even_base = Faker::Number.number(digits: [4, 6, 8, 10, 12].sample)
+    even_luhn_complement = @tester.send(:luhn_algorithm, even_base).to_s
+
+    even_control = "#{even_base}#{even_luhn_complement}"
+
+    assert((luhn_checksum(odd_control) % 10).zero?)
+    assert((luhn_checksum(even_control) % 10).zero?)
+  end
+
+  def test_brazilian_company_number
+    sample = @tester.brazilian_company_number
+
+    assert_match(/^\d{14}$/, sample)
+
+    digit_sum = sample[0..11].chars.each_with_index.inject(0) do |acc, (digit, i)|
+      factor = 2 + (3 - i) % 8
+      acc + digit.to_i * factor
+    end
+    remainder = digit_sum % 11
+    first_digit = remainder < 2 ? '0' : (11 - remainder).to_s
+    assert_equal sample[12], first_digit
+
+    digit_sum = sample[0..12].chars.each_with_index.inject(0) do |acc, (digit, i)|
+      factor = 2 + (4 - i) % 8
+      acc + digit.to_i * factor
+    end
+    remainder = digit_sum % 11
+    second_digit = remainder < 2 ? '0' : (11 - remainder).to_s
+    assert_equal sample[13], second_digit
+  end
+
+  def test_brazilian_company_number_formatted
+    sample = @tester.brazilian_company_number(formatted: true)
+    assert_match(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, sample)
+  end
+  
   def test_russian_tax_number_default
     assert @tester.russian_tax_number.match(/\d{10}/)
   end
@@ -164,19 +207,8 @@ class TestFakerCompany < Test::Unit::TestCase
     assert((inn_checksum(number) - checksum).zero?)
   end
 
-  def test_luhn_algorithm
-    # Odd length base for luhn algorithm
-    odd_base = Faker::Number.number([5, 7, 9, 11, 13].sample)
-    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base)
-    odd_control = "#{odd_base}#{odd_luhn_complement}"
-
-    # Even length base for luhn algorithm
-    even_base = Faker::Number.number([4, 6, 8, 10, 12].sample)
-    even_luhn_complement = @tester.send(:luhn_algorithm, even_base)
-    even_control = "#{even_base}#{even_luhn_complement}"
-
-    assert((luhn_checksum(odd_control) % 10).zero?)
-    assert((luhn_checksum(even_control) % 10).zero?)
+  def test_sic_code
+    assert @tester.sic_code.match(/\d\d\d\d/)
   end
 
   private

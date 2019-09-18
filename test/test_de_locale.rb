@@ -107,11 +107,11 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_pokemon_methods
-    assert Faker::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
   end
 
   def test_de_simpsons_methods
-    assert Faker::Simpsons.character.is_a? String
+    assert Faker::TvShows::Simpsons.character.is_a? String
   end
 
   def test_de_space_methods

@@ -44,7 +44,6 @@ class TestSKLocale < Test::Unit::TestCase
   def test_sk_name_methods
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.suffix.is_a? String
-    assert Faker::Name.title.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
     assert Faker::Name.male_first_name.is_a? String

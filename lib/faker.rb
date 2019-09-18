@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+mydir = __dir__
+
 begin
   require 'psych'
 end
@@ -9,7 +11,8 @@ require 'set' # Fixes a bug in i18n 0.6.11
 
 Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
 
-I18n.backend = I18n::Backend::Chain.new(I18n.backend, Faker::I18nBackend.new)
+I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
+I18n.reload! if I18n.backend.initialized?
 
 module Faker
   class Config
@@ -37,9 +40,12 @@ module Faker
   class Base
     Numbers = Array(0..9)
     ULetters = Array('A'..'Z')
-    Letters = ULetters + Array('a'..'z')
+    LLetters = Array('a'..'z')
+    Letters = ULetters + LLetters
 
     class << self
+      NOT_GIVEN = Object.new
+
       ## by default numerify results do not start with a zero
       def numerify(number_string, leading_zero: false)
         return number_string.gsub(/#/) { rand(10).to_s } if leading_zero
@@ -242,10 +248,61 @@ module Faker
       ensure
         I18n.enforce_available_locales = old_enforce_available_locales
       end
+
+      private
+
+      def warn_for_deprecated_arguments
+        keywords = []
+        yield(keywords)
+
+        return if keywords.empty?
+
+        method_name = caller.first.match(/`(?<method_name>.*)'/)[:method_name]
+
+        keywords.each.with_index(1) do |keyword, index|
+          i = case index
+              when 1 then '1st'
+              when 2 then '2nd'
+              when 3 then '3rd'
+              else "#{index}th"
+              end
+
+          warn_with_uplevel(<<~MSG, uplevel: 5)
+            Passing `#{keyword}` with the #{i} argument of `#{method_name}` is deprecated. Use keyword argument like `#{method_name}(#{keyword}: ...)` instead.
+          MSG
+        end
+
+        warn(<<~MSG)
+
+          To automatically update from positional arguments to keyword arguments,
+          install rubocop-faker and run:
+
+          rubocop \\
+            --require rubocop-faker \\
+            --only Faker/DeprecatedArguments \\
+            --auto-correct
+
+        MSG
+      end
+
+      # Workaround for emulating `warn '...', uplevel: 1` in Ruby 2.4 or lower.
+      def warn_with_uplevel(message, uplevel: 1)
+        at = parse_caller(caller[uplevel]).join(':')
+        warn "#{at}: #{message}"
+      end
+
+      def parse_caller(at)
+        # rubocop:disable Style/GuardClause
+        if /^(.+?):(\d+)(?::in `.*')?/ =~ at
+          file = Regexp.last_match(1)
+          line = Regexp.last_match(2).to_i
+          [file, line]
+        end
+        # rubocop:enable Style/GuardClause
+      end
     end
   end
 end
 
-%w[faker faker/creature faker/games faker/movies faker/japanese_media].each do |path|
-  Dir.glob(File.join(File.dirname(__FILE__), path, '*.rb')).sort.each { |file| require file }
-end
+# require faker objects
+Dir.glob(File.join(File.dirname(__FILE__), 'faker', '/**/*.rb')).sort.each { |file| require file }

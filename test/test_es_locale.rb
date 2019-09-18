@@ -86,10 +86,18 @@ class TestEsLocale < Test::Unit::TestCase
     assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.name.is_a? String
     assert Faker::Name.initials.match(/[A-Z]{3}/)
-    assert Faker::Name.initials(2).match(/[A-Z]{2}/)
+    assert Faker::Name.initials(number: 2).match(/[A-Z]{2}/)
   end
 
   def test_es_vehicle_methods
     assert Faker::Vehicle.license_plate.is_a? String
+  end
+
+  def test_es_subscription_methods
+    assert Faker::Subscription.plan.is_a? String
+    assert Faker::Subscription.status.is_a? String
+    assert Faker::Subscription.payment_method.is_a? String
+    assert Faker::Subscription.subscription_term.is_a? String
+    assert Faker::Subscription.payment_term.is_a? String
   end
 end
