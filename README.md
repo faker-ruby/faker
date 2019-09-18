@@ -4,7 +4,7 @@
 # Faker
 [![Build Status](https://travis-ci.org/faker-ruby/faker.svg?branch=master)](https://travis-ci.org/faker-ruby/faker)
 [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
-[![Inline docs](http://inch-ci.org/github/stympy/faker.svg?branch=master)](http://inch-ci.org/github/stympy/faker)
+[![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=master)](https://inch-ci.org/github/faker-ruby/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
 
