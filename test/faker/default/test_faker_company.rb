@@ -186,7 +186,7 @@ class TestFakerCompany < Test::Unit::TestCase
     sample = @tester.brazilian_company_number(formatted: true)
     assert_match(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, sample)
   end
-  
+
   def test_russian_tax_number_default
     assert @tester.russian_tax_number.match(/\d{10}/)
   end

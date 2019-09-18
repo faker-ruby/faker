@@ -175,7 +175,7 @@ module Faker
 
         formatted ? format('%s.%s.%s/%s-%s', *number.scan(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/).flatten) : number
       end
-      
+
       # Get a random Russian tax number.
       def russian_tax_number(region: nil, type: :legal)
         inn_number(region, type)
