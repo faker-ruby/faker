@@ -6,7 +6,7 @@
 
 - [PR #1750](https://github.com/faker-ruby/faker/pull/1750) add only japanese word spec [@4geru](https://github.com/4geru)
 - [PR #1740](https://github.com/faker-ruby/faker/pull/1740) Add more YARD docs [@connorshea](https://github.com/connorshea)
-- [PR #1747](https://github.com/faker-ruby/faker/pull/1747) Fix PR linkss [@geniou](https://github.com/geniou)
+- [PR #1747](https://github.com/faker-ruby/faker/pull/1747) Fix PR links [@geniou](https://github.com/geniou)
 
 ## Feature Request
 
