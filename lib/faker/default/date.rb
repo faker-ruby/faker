@@ -76,6 +76,13 @@ module Faker
         between(from: from, to: to).to_date
       end
 
+      def in_date_period(month: nil, year: ::Date.today.year)
+        from = ::Date.new(year, month || 1, 1)
+        to = ::Date.new(year, month || 12, ::Date.civil(year, month || 12, -1).day)
+
+        between(from: from, to: to).to_date
+      end
+
       private
 
       def birthday_date(date, age)
