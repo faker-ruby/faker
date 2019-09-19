@@ -57,10 +57,30 @@ module Faker
         price
       end
 
+      ##
+      # Produces a randomized string of a brand name
+      # @example
+      #   Faker::Commerce.brand #=> 'Apple'
+      #
+      # @return [string]
+      #
+      # @faker.version next
+      #
+      ##
       def brand
         fetch('commerce.brand')
       end
 
+      ##
+      # Produces a randomized string of a vendor name
+      # @example
+      #   Faker::Commerce.vendor #=> 'Dollar General'
+      #
+      # @return [string]
+      #
+      # @faker.version next
+      #
+      ##
       def vendor
         fetch('commerce.vendor')
       end
