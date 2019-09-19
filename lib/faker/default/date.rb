@@ -13,6 +13,8 @@ module Faker
       # @example
       #   Faker::Date.between(from: 2.days.ago, to: Date.today)
       #     #=> "Wed, 24 Sep 2014"
+      #
+      # @faker.version 1.0.0
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from:, to:)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN
@@ -32,7 +34,7 @@ module Faker
       #
       # @param from [Date] The start of the usable date range.
       # @param to [Date] The end of the usable date range.
-      # @param excepted [Date] A date not to exclude.
+      # @param excepted [Date] A date to exclude.
       # @return [Date]
       #
       # @example
@@ -70,6 +72,8 @@ module Faker
       #
       # @example
       #   Faker::Date.forward(days: 23) # => "Fri, 03 Oct 2014"
+      #
+      # @faker.version 1.0.0
       def forward(legacy_days = NOT_GIVEN, days: 365)
         warn_for_deprecated_arguments do |keywords|
           keywords << :days if legacy_days != NOT_GIVEN
@@ -89,6 +93,8 @@ module Faker
       #
       # @example
       #   Faker::Date.backward(days: 14) #=> "Fri, 19 Sep 2014"
+      #
+      # @faker.version 1.0.0
       def backward(legacy_days = NOT_GIVEN, days: 365)
         warn_for_deprecated_arguments do |keywords|
           keywords << :days if legacy_days != NOT_GIVEN

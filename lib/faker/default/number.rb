@@ -11,6 +11,8 @@ module Faker
       #
       # @example
       #   Faker::Number.number(digits: 10) #=> 1968353479
+      #
+      # @faker.version 1.0.0
       def number(legacy_digits = NOT_GIVEN, digits: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -31,6 +33,8 @@ module Faker
       #
       # @example
       #   Faker::Number.leading_zero_number(digits: 10) #=> "0669336915"
+      #
+      # @faker.version 1.0.0
       def leading_zero_number(legacy_digits = NOT_GIVEN, digits: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -47,6 +51,8 @@ module Faker
       #
       # @example
       #   Faker::Number.decimal_part(digits: 2) #=> "09"
+      #
+      # @faker.version 1.0.0
       def decimal_part(legacy_digits = NOT_GIVEN, digits: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -70,6 +76,8 @@ module Faker
       # @example
       #   Faker::Number.decimal(l_digits: 2) #=> 11.88
       #   Faker::Number.decimal(l_digits: 3, r_digits: 3) #=> 181.843
+      #
+      # @faker.version 1.0.0
       def decimal(legacy_l_digits = NOT_GIVEN, legacy_r_digits = NOT_GIVEN, l_digits: 5, r_digits: 2)
         warn_for_deprecated_arguments do |keywords|
           keywords << :l_digits if legacy_l_digits != NOT_GIVEN
@@ -94,6 +102,8 @@ module Faker
       #
       # @example
       #   Faker::Number.non_zero_digit #=> 8
+      #
+      # @faker.version 1.0.0
       def non_zero_digit
         rand(1..9)
       end
@@ -105,6 +115,8 @@ module Faker
       #
       # @example
       #   Faker::Number.digit #=> 1
+      #
+      # @faker.version 1.0.0
       def digit
         rand(10)
       end
@@ -117,6 +129,8 @@ module Faker
       #
       # @example
       #   Faker::Number.hexadecimal(digits: 3) #=> "e74"
+      #
+      # @faker.version 1.0.0
       def hexadecimal(legacy_digits = NOT_GIVEN, digits: 6)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -136,6 +150,8 @@ module Faker
       #
       # @example
       #   Faker::Number.normal(mean: 50, standard_deviation: 3.5) #=> 47.14669604069156
+      #
+      # @faker.version 1.0.0
       def normal(legacy_mean = NOT_GIVEN, legacy_standard_deviation = NOT_GIVEN, mean: 1, standard_deviation: 1)
         warn_for_deprecated_arguments do |keywords|
           keywords << :mean if legacy_mean != NOT_GIVEN
@@ -157,6 +173,8 @@ module Faker
       #
       # @example
       #   Faker::Number.between(from: 1, to: 10) #=> 7
+      #
+      # @faker.version 1.0.0
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN
@@ -174,6 +192,8 @@ module Faker
       #
       # @example
       #   Faker::Number.within(range: 1..10) #=> 7
+      #
+      # @faker.version 1.0.0
       def within(legacy_range = NOT_GIVEN, range: 1.00..5000.00)
         warn_for_deprecated_arguments do |keywords|
           keywords << :range if legacy_range != NOT_GIVEN
@@ -191,6 +211,8 @@ module Faker
       #
       # @example
       #   Faker::Number.positive #=> 235.59238499107653
+      #
+      # @faker.version 1.0.0
       def positive(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN
@@ -211,6 +233,8 @@ module Faker
       #
       # @example
       #   Faker::Number.negative #=> -4480.042585669558
+      #
+      # @faker.version 1.0.0
       def negative(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: -5000.00, to: -1.00)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN

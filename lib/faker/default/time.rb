@@ -14,6 +14,7 @@ module Faker
 
     class << self
       # rubocop:disable Metrics/ParameterLists
+      # rubocop:disable Style/AsciiComments
 
       ##
       # Produce a random time between two times.
@@ -50,13 +51,14 @@ module Faker
         time = Faker::Base.rand_in_range(from, to)
         time_with_format(time, format)
       end
+      # rubocop:enable Style/AsciiComments
 
       ##
       # Produce a random time between two dates.
       #
       # @param from [Date] The start of the usable time range.
       # @param to [Date] The end of the usable time range.
-      # @param period [Symbol] The time of day, if any.
+      # @param period [Symbol] The time of day, if any. See {TIME_RANGES}.
       # @param format [Symbol] The name of a DateTime format to use.
       # @return [Time]
       #
@@ -77,6 +79,8 @@ module Faker
       #     #=> "2014-09-20 00:40:14 -0700"
       #   Faker::Time.between_dates(from: Date.today - 5, to: Date.today + 5, period: :afternoon, format: :default)
       #     #=> "Fri, 19 Oct 2018 15:17:46 -0500"
+      #
+      # @faker.version 1.0.0
       def between_dates(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_period = NOT_GIVEN, legacy_format = NOT_GIVEN, from:, to:, period: :all, format: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN
@@ -94,7 +98,7 @@ module Faker
       # Produce a random time in the future (up to N days).
       #
       # @param days [Integer] The maximum number of days to go into the future.
-      # @param period [Symbol] The time of day, if any.
+      # @param period [Symbol] The time of day, if any. See {TIME_RANGES}.
       # @param format [Symbol] The name of a DateTime format to use.
       # @return [Time]
       #
@@ -119,7 +123,7 @@ module Faker
       # Produce a random time in the past (up to N days).
       #
       # @param days [Integer] The maximum number of days to go into the past.
-      # @param period [Symbol] The time of day, if any.
+      # @param period [Symbol] The time of day, if any. See {TIME_RANGES}.
       # @param format [Symbol] The name of a DateTime format to use.
       # @return [Time]
       #
