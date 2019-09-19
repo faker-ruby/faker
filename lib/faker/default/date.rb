@@ -77,7 +77,7 @@ module Faker
       end
 
       ##
-      # Produces a date from in range of year and/or month specified.
+      # Produces a date in the year and/or month specified.
       #
       # @param month [Integer] represents the month of the date
       #
