@@ -21,7 +21,7 @@ Faker::Date.backward(days: 14) #=> "Fri, 19 Sep 2014"
 # Keyword arguments: min_age, max_age
 Faker::Date.birthday(min_age: 18, max_age: 65) #=> "Mar, 28 Mar 1986"
 
-# Random date for range of this year
+# Random date in current year
 Faker::Internet.in_date_period #=> #<Date: 2019-09-01>
 
 # Random date for range of year 2018 and month 2
