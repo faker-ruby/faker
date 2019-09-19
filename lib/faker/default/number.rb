@@ -3,6 +3,14 @@
 module Faker
   class Number < Base
     class << self
+      ##
+      # Produce a random number.
+      #
+      # @param digits [Integer] Number of digits that the generated number should have.
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.number(digits: 10) #=> 1968353479
       def number(legacy_digits = NOT_GIVEN, digits: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -15,6 +23,14 @@ module Faker
         ([non_zero_digit] + generate(digits - 1)).join.to_i
       end
 
+      ##
+      # Produce a random number with a leading zero.
+      #
+      # @param digits [Integer] Number of digits that the generated number should have.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Number.leading_zero_number(digits: 10) #=> "0669336915"
       def leading_zero_number(legacy_digits = NOT_GIVEN, digits: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -23,6 +39,14 @@ module Faker
         '0' + (2..digits).collect { digit }.join
       end
 
+      ##
+      # Produce a number with a number of digits, preserves leading zeroes.
+      #
+      # @param digits [Integer] Number of digits that the generated number should have.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Number.decimal_part(digits: 2) #=> "09"
       def decimal_part(legacy_digits = NOT_GIVEN, digits: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -36,6 +60,16 @@ module Faker
         leading_zero_number(digits: digits) + num.to_s
       end
 
+      ##
+      # Produces a float.
+      #
+      # @param l_digits [Integer] Number of digits that the generated decimal should have to the left of the decimal point.
+      # @param r_digits [Integer] Number of digits that the generated decimal should have to the right of the decimal point.
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.decimal(l_digits: 2) #=> 11.88
+      #   Faker::Number.decimal(l_digits: 3, r_digits: 3) #=> 181.843
       def decimal(legacy_l_digits = NOT_GIVEN, legacy_r_digits = NOT_GIVEN, l_digits: 5, r_digits: 2)
         warn_for_deprecated_arguments do |keywords|
           keywords << :l_digits if legacy_l_digits != NOT_GIVEN
@@ -53,14 +87,36 @@ module Faker
         "#{l_d}.#{r_d}".to_f
       end
 
+      ##
+      # Produces a non-zero single-digit integer.
+      #
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.non_zero_digit #=> 8
       def non_zero_digit
         rand(1..9)
       end
 
+      ##
+      # Produces a single-digit integer.
+      #
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.digit #=> 1
       def digit
         rand(10)
       end
 
+      ##
+      # Produces a number in hexadecimal format.
+      #
+      # @param digits [Integer] Number of digits in the he
+      # @return [String]
+      #
+      # @example
+      #   Faker::Number.hexadecimal(digits: 3) #=> "e74"
       def hexadecimal(legacy_digits = NOT_GIVEN, digits: 6)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -71,6 +127,15 @@ module Faker
         hex
       end
 
+      ##
+      # Produces a float given a mean and standard deviation.
+      #
+      # @param mean [Integer]
+      # @param standard_deviation [Integer, Float]
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.normal(mean: 50, standard_deviation: 3.5) #=> 47.14669604069156
       def normal(legacy_mean = NOT_GIVEN, legacy_standard_deviation = NOT_GIVEN, mean: 1, standard_deviation: 1)
         warn_for_deprecated_arguments do |keywords|
           keywords << :mean if legacy_mean != NOT_GIVEN
@@ -83,6 +148,15 @@ module Faker
         mean + scale * Math.cos(theta)
       end
 
+      ##
+      # Produces a number between two provided values. Boundaries are inclusive.
+      #
+      # @param from [Integer] The lowest number to include.
+      # @param to [Integer] The highest number to include.
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.between(from: 1, to: 10) #=> 7
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN
@@ -92,6 +166,14 @@ module Faker
         Faker::Base.rand_in_range(from, to)
       end
 
+      ##
+      # Produces a number within two provided values. Boundaries are inclusive or exclusive depending on the range passed.
+      #
+      # @param range [Range] The range from which to generate a number.
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.within(range: 1..10) #=> 7
       def within(legacy_range = NOT_GIVEN, range: 1.00..5000.00)
         warn_for_deprecated_arguments do |keywords|
           keywords << :range if legacy_range != NOT_GIVEN
@@ -100,6 +182,15 @@ module Faker
         between(from: range.min, to: range.max)
       end
 
+      ##
+      # Produces a positive float.
+      #
+      # @param from [Integer] The lower boundary.
+      # @param to [Integer] The higher boundary.
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.positive #=> 235.59238499107653
       def positive(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN
@@ -111,6 +202,15 @@ module Faker
         greater_than_zero(random_number)
       end
 
+      ##
+      # Produces a negative float.
+      #
+      # @param from [Integer] The lower boundary.
+      # @param to [Integer] The higher boundary.
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.negative #=> -4480.042585669558
       def negative(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: -5000.00, to: -1.00)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN
