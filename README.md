@@ -211,6 +211,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::WorldCup](doc/default/world_cup.md)
 
 ### Blockchain
+  - [Faker::Blockchain::Aeternity](doc/blockchain/aeternity.md)
   - [Faker::Blockchain::Bitcoin](doc/blockchain/bitcoin.md)
   - [Faker::Blockchain::Ethereum](doc/blockchain/ethereum.md)
   - [Faker::Blockchain::Tezos](doc/blockchain/tezos.md)
