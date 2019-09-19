@@ -8,6 +8,7 @@ module Faker
       #
       # @param from [Date] The start of the usable date range.
       # @param to [Date] The end of the usable date range.
+      # @return [Date]
       #
       # @example
       #   Faker::Date.between(from: 2.days.ago, to: Date.today)
@@ -32,6 +33,7 @@ module Faker
       # @param from [Date] The start of the usable date range.
       # @param to [Date] The end of the usable date range.
       # @param excepted [Date] A date not to exclude.
+      # @return [Date]
       #
       # @example
       #   Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today)
@@ -64,6 +66,7 @@ module Faker
       # Produce a random date in the future (up to N days).
       #
       # @param days [Integer] The maximum number of days to go into the future.
+      # @return [Date]
       #
       # @example
       #   Faker::Date.forward(days: 23) # => "Fri, 03 Oct 2014"
@@ -82,6 +85,7 @@ module Faker
       # Produce a random date in the past (up to N days).
       #
       # @param days [Integer] The maximum number of days to go into the past.
+      # @return [Date]
       #
       # @example
       #   Faker::Date.backward(days: 14) #=> "Fri, 19 Sep 2014"
@@ -101,6 +105,7 @@ module Faker
       #
       # @param min_age [Integer] The minimum age that the birthday would imply.
       # @param max_age [Integer] The maximum age that the birthday would imply.
+      # @return [Date]
       #
       # @example
       #   Faker::Date.birthday(min_age: 18, max_age: 65) #=> "28 Mar 1986"

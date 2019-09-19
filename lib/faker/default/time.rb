@@ -21,6 +21,7 @@ module Faker
       # @param from [Time, Date, DateTime] The start of the usable time range.
       # @param to [Time, Date, DateTime] The end of the usable time range.
       # @param format [Symbol] The name of a DateTime format to use.
+      # @return [Time]
       #
       # @example
       #   # Random Stringified time between two times, formatted to the specified I18n format
@@ -57,6 +58,7 @@ module Faker
       # @param to [Date] The end of the usable time range.
       # @param period [Symbol] The time of day, if any.
       # @param format [Symbol] The name of a DateTime format to use.
+      # @return [Time]
       #
       # @example
       #   Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)
@@ -94,6 +96,7 @@ module Faker
       # @param days [Integer] The maximum number of days to go into the future.
       # @param period [Symbol] The time of day, if any.
       # @param format [Symbol] The name of a DateTime format to use.
+      # @return [Time]
       #
       # @example
       #   Faker::Time.forward(days: 23, period: :morning)
@@ -118,6 +121,7 @@ module Faker
       # @param days [Integer] The maximum number of days to go into the past.
       # @param period [Symbol] The time of day, if any.
       # @param format [Symbol] The name of a DateTime format to use.
+      # @return [Time]
       #
       # @example
       #   Faker::Time.backward(days: 14, period: :evening)
@@ -132,7 +136,7 @@ module Faker
           keywords << :period if legacy_period != NOT_GIVEN
           keywords << :format if legacy_format != NOT_GIVEN
         end
-        
+
         time_with_format(date_with_random_time(Faker::Date.backward(days: days), period), format)
       end
       # rubocop:enable Metrics/ParameterLists
