@@ -12,8 +12,8 @@ ja:
         - "#{city_prefix}#{Name.last_name}#{city_suffix}"
         - "#{Name.last_name}#{city_suffix}"
       street_name:
-        - "#{Name.first_name}#{street_suffix}"
-        - "#{Name.last_name}#{street_suffix}"
+        - "#{Name.first_name}"
+        - "#{Name.last_name}"
       default_country: [日本]
     creature:
       cat:
