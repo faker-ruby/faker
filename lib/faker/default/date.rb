@@ -96,7 +96,7 @@ module Faker
       #   Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
       #
       #
-      # @faker.version 2.3.0
+      # @faker.version next
       def in_date_period(month: nil, year: ::Date.today.year)
         from = ::Date.new(year, month || 1, 1)
         to = ::Date.new(year, month || 12, ::Date.civil(year, month || 12, -1).day)
