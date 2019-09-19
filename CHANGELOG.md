@@ -1,5 +1,30 @@
 # Change Log
 
+## [v2.4.0](https://github.com/faker-ruby/faker/tree/v2.4.0) (2019-19-09)
+
+## Documentation
+
+- [PR #1750](https://github.com/faker-ruby/faker/pull/1750) add only japanese word spec [@4geru](https://github.com/4geru)
+- [PR #1740](https://github.com/faker-ruby/faker/pull/1740) Add more YARD docs [@connorshea](https://github.com/connorshea)
+- [PR #1747](https://github.com/faker-ruby/faker/pull/1747) Fix PR links [@geniou](https://github.com/geniou)
+
+## Feature Request
+
+- [PR #1742](https://github.com/faker-ruby/faker/pull/1742) Add Faker::Blockchain::Aeternity [@2pd](https://github.com/2pd)
+
+## Update locales
+
+- [PR #1743](https://github.com/faker-ruby/faker/pull/1743) Fix another ambiguity in element_symbol field [@psibi](https://github.com/psibi)
+- [PR #1748](https://github.com/faker-ruby/faker/pull/1748) fix typo from bread to breed [@4geru](https://github.com/4geru)
+- [PR #1752](https://github.com/faker-ruby/faker/pull/1752) fix creature i18n path in japanese [@4geru](https://github.com/4geru)
+
+## Update local dependencies
+
+The following development dependencies were updated:
+- Update simplecov requirement from = 0.17.0 to = 0.17.1 (#1749)
+
+------------------------------------------------------------------------------
+
 ## [v2.3.0](https://github.com/faker-ruby/faker/tree/v2.3.0) (2019-12-09)
 
 ## Documentation
