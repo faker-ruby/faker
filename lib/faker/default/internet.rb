@@ -282,6 +282,19 @@ module Faker
         '%08x-%04x-%04x-%04x-%04x%08x' % ary # rubocop:disable Style/FormatString
       end
 
+      ##
+      # Produces a randomized hash of internet user details
+      # @example
+      #   Faker::Internet.user #=> { username: 'alexie', email: 'alexie@example.net' }
+      #
+      # @example
+      #   Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'alexie@example.net', password: 'DtEf9P8wS31iMyC' }
+      #
+      # @return [hash]
+      #
+      # @faker.version next
+      #
+      ##
       def user(*args)
         user_hash = {}
         args = %w[username email] if args.empty?
