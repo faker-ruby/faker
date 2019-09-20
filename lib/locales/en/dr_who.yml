@@ -7,7 +7,11 @@ en:
         "Adelaide Brooke", "Wilfred Mott", "Amy Pond" ]
       the_doctors: [
         "First Doctor", "Second Doctor", "Third Doctor", "Fourth Doctor", "Fifth Doctor", "Sixth Doctor", "Seventh Doctor",
-        "Eighth Doctor", "Ninth Doctor", "Tenth Doctor", "Eleventh Doctor", "Twelfth Doctor"
+        "Eighth Doctor", "Ninth Doctor", "Tenth Doctor", "Eleventh Doctor", "Twelfth Doctor", "Thirteenth Doctor"
+      ]
+      actors: [
+        "William Hartnell", "Patrick Troughton", "Jon Pertwee", "Tom Baker", "Peter Davison", "Colin Baker", "Sylvester McCoy",
+        "Paul McGann", "Christopher Eccleston", "David Tennant", "Matt Smith", "Peter Capaldi", "Jodie Whittaker"
       ]
       catch_phrases: [
         "Fantastic!", "I’m sorry. I’m so sorry.", "Bow ties are cool.", "Mmm I wonder ... Aha!",

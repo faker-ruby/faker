@@ -1,8 +1,8 @@
 pl:
   faker:
-    name:
     address:
       country: [Afganistan, Albania, Algieria, Andora, Angola, Antigua i Barbuda, Arabia Saudyjska, Argentyna, Armenia, Australia, Austria, Azerbejdżan, Bahamy, Bahrajn, Bangladesz, Barbados, Belgia, Belize, Benin, Bhutan, Białoruś, Birma, Boliwia, Sucre, Bośnia i Hercegowina, Botswana, Brazylia, Brunei, Bułgaria, Burkina Faso, Burundi, Chile, Chiny, Chorwacja, Cypr, Czad, Czarnogóra, Czechy, Dania, Demokratyczna Republika Konga, Dominika, Dominikana, Dżibuti, Egipt, Ekwador, Erytrea, Estonia, Etiopia, Fidżi, Filipiny, Finlandia, Francja, Gabon, Gambia, Ghana, Grecja, Grenada, Gruzja, Gujana, Gwatemala, Gwinea, Gwinea Bissau, Gwinea Równikowa, Haiti, Hiszpania, Holandia, Haga, Honduras, Indie, Indonezja, Irak, Iran, Irlandia, Islandia, Izrael, Jamajka, Japonia, Jemen, Jordania, Kambodża, Kamerun, Kanada, Katar, Kazachstan, Kenia, Kirgistan, Kiribati, Kolumbia, Komory, Kongo, Korea Południowa, Korea Północna, Kostaryka, Kuba, Kuwejt, Laos, Lesotho, Liban, Liberia, Libia, Liechtenstein, Litwa, Luksemburg, Łotwa, Macedonia, Madagaskar, Malawi, Malediwy, Malezja, Mali, Malta, Maroko, Mauretania, Mauritius, Meksyk, Mikronezja, Mołdawia, Monako, Mongolia, Mozambik, Namibia, Nauru, Nepal, Niemcy, Niger, Nigeria, Nikaragua, Norwegia, Nowa Zelandia, Oman, Pakistan, Palau, Panama, Papua-Nowa Gwinea, Paragwaj, Peru, Polska, Portugalia, Republika Południowej Afryki, Republika Środkowoafrykańska, Republika Zielonego Przylądka, Rosja, Rumunia, Rwanda, Saint Kitts i Nevis, Saint Lucia, Saint Vincent i Grenadyny, Salwador, Samoa, San Marino, Senegal, Serbia, Seszele, Sierra Leone, Singapur, Słowacja, Słowenia, Somalia, Sri Lanka, Stany Zjednoczone, Suazi, Sudan, Sudan Południowy, Surinam, Syria, Szwajcaria, Szwecja, Tadżykistan, Tajlandia, Tanzania, Timor Wschodni, Togo, Tonga, Trynidad i Tobago, Tunezja, Turcja, Turkmenistan, Tuvalu, Funafuti, Uganda, Ukraina, Urugwaj, Uzbekistan, Vanuatu, Watykan, Wenezuela, Węgry, Wielka Brytania, Wietnam, Włochy, Wybrzeże Kości Słoniowej, Wyspy Marshalla, Wyspy Salomona, Wyspy Świętego Tomasza i Książęca, Zambia, Zimbabwe, Zjednoczone Emiraty Arabskie]
+      country_code: ['PL']
       building_number: ['#####', '####', '###']
       street_prefix: ['ul.', 'al.']
       secondary_address: ['Apt. ###', 'Suite ###']
@@ -18,6 +18,11 @@ pl:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Polska]
+
+    coin:
+      flip:
+        - Orzeł
+        - Reszka
 
     company:
       suffix: [S.A., sp. z o.o., sp. j., sp.p., sp. k., S.K.A.]
@@ -59,6 +64,12 @@ pl:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
       formats: ['12-###-##-##', '13-###-##-##', '14-###-##-##', '15-###-##-##', '16-###-##-##', '17-###-##-##', '18-###-##-##', '22-###-##-##', '23-###-##-##', '24-###-##-##', '25-###-##-##', '29-###-##-##', '32-###-##-##', '33-###-##-##', '34-###-##-##', '41-###-##-##', '42-###-##-##', '43-###-##-##', '44-###-##-##', '46-###-##-##', '48-###-##-##', '52-###-##-##', '54-###-##-##', '55-###-##-##', '56-###-##-##', '58-###-##-##', '59-###-##-##', '61-###-##-##', '62-###-##-##', '63-###-##-##', '65-###-##-##', '67-###-##-##', '68-###-##-##', '71-###-##-##', '74-###-##-##', '75-###-##-##', '76-###-##-##', '77-###-##-##', '81-###-##-##', '82-###-##-##', '83-###-##-##', '84-###-##-##', '85-###-##-##', '86-###-##-##', '87-###-##-##', '89-###-##-##', '91-###-##-##', '94-###-##-##', '95-###-##-##']

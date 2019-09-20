@@ -1,10 +1,19 @@
 pkg/*
 
+# Ignore Bundle folder
+.bundle/*
+
+# Ignore Coveralls files
+coverage/*
+
 # Ignore Vim backup files.
 *~
 
 # Ignore Vim swap files.
 *.swp
+
+# Ignore Ctags
+/tags
 
 # Ignore Finder metadata.
 .DS_Store
@@ -14,3 +23,7 @@ pkg/*
 # Ignore rvm and rbenv files
 .ruby-version
 .ruby-gemset
+
+# Ignore YARD metadata and documentation.
+.yardoc/
+yard_docs/

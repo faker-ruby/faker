@@ -9,7 +9,7 @@ ca-CAT:
       secondary_address: ['Esc. ###', 'Porta ###']
       postcode: ['#####']
       province: [Barcelona, Girona, Lleida, Tarragona]
-      state: [l''Alt Camp, l''Alt Empordà, l''Alt Penedès, l''Alt Urgell, l''Alta Ribagorça, l''Anoia, el Bages, el Baix Camp, el Baix Ebre, el Baix Empordà, el Baix Llobregat, el Baix Penedès, el Barcelonès, el Berguedà, la Cerdanya, la Conca de Barberà, el Garraf, les Garrigues, la Garrotxa, el Gironès, el Maresme, el Moianès, el Montsià, la Noguera, Osona, el Pallars Jussà, el Pallars Sobirà, el Pla d''Urgell, el Pla de l''Estany, el Priorat, la Ribera d''Ebre, el Ripollès, la Segarra, el Segrià, la Selva, el Solsonès, el Tarragonès, la Terra Alta, l''Urgell, la Val d''Aran, el Vallès Occidental, el Vallès Oriental]
+      state: [l''Alt Camp, l''Alt Empordà, l''Alt Penedès, l''Alt Urgell, l''Alta Ribagorça, l''Anoia, el Bages, el Baix Camp, el Baix Ebre, el Baix Empordà, el Baix Llobregat, el Baix Penedès, el Barcelonès, el Berguedà, la Cerdanya, la Conca de Barberà, el Garraf, les Garrigues, la Garrotxa, el Gironès, el Maresme, el Moianès, el Montsià, la Noguera, Osona, el Pallars Jussà, el Pallars Sobirà, el Pla d''Urgell, el Pla de l''Estany, el Priorat, la Ribera d''Ebre, el Ripollès, la Segarra, el Segrià, la Selva, el Solsonès, el Tarragonès, la Terra Alta, l''Urgell, la Val d''Aran, el Vallès Occidental, el Vallès Oriental]
       street_name:
         - "#{street_suffix} #{Name.first_name}"
         - "#{street_suffix} #{Name.first_name} #{Name.last_name}"

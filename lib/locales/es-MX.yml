@@ -48,7 +48,7 @@ es-MX:
 
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com, prodigy.net.mx]
-      domain_suffix: [com, com.mx, mx, info, me, org, org.mx,]
+      domain_suffix: [com, com.mx, mx, info, me, org, org.mx]
 
     name:
       first_name: [José Luis, Juan, Francisco, José, Antonio, Jesús, Miguel Ángel, Pedro, Alejandro, Manuel, Juan Carlos, Roberto, Jorge, Carlos, Fernando, Ricardo, Miguel, Javier, Martín, Rafael, Raúl, Arturo, Daniel, Eduardo, Enrique, Mario, José Antonio, Sergio, Gerardo, Salvador, Marco Antonio, Alfredo, David, Armando, Alberto, Luis, Óscar, Ramón, Guillermo, Rubén, Jaime, Felipe, Julio César, Andrés, Pablo, Ángel, Gabriel, Héctor, Alfonso, José Guadalupe, Agustín, Ignacio, Víctor, Rogelio, Gustavo, Ernesto, Rodolfo, Luis Alberto, Gilberto, Vicente, Juan Antonio, Tomás, Israel, César, Adrián, Ismael, Santiago, Humberto, Gregorio, Joel, Esteban, José Alfredo, Nicolás, Omar, Moisés, Félix, Lorenzo, Samuel, Carlos Alberto, José Angel, Ramiro, Abel, Jorge Luis, Marcos, Mario Alberto, Rodrigo, Edgar, Isidro, José Alberto, Leonardo, Benjamín, Jorge Alberto, Julio, Raymundo, Víctor Hugo, Saúl, Benito, José Juan, Rigoberto, Hugo,  Guadalupe, María, Margarita, Verónica, María Elena, Josefina, Leticia, Teresa, Patricia, Rosa, Martha, Rosa María, Alicia, Yolanda, Francisca, Silvia, Elizabeth, Gloria, Ana María, Gabriela, Alejandra, María Luisa, María de Lourdes, Adriana, Araceli, Antonia, Lucía, Carmen, Irma, Claudia, Beatriz, Isabel, Laura, Maribel, Graciela, Virginia, Catalina, Esperanza, Angélica, Maricela, Cecilia, Susana, Cristina, Julia, Concepción, Victoria, Ofelia, Rocío, Carolina, Raquel, Petra, Lorena, Reyna, Sandra, Paula, Guillermina, Sara, Elvira, Manuela, Marisol, Mónica, Erika, Celia, Luz María, Irene, Magdalena, Estela, Ángela, Rosario, Esther, Eva, Norma, Aurora, Socorro, Consuelo, Lidia, Bertha, Sofía, Dolores, Elena, Rosalba, Liliana, Andrea, Adela, Mariana, Fabiola, Karina, Martina, Marcela, Miriam, Mercedes, Marina, Amalia, Olivia, Angelina, Sonia, Agustina, Edith, Lilia, Micaela]
@@ -61,6 +61,13 @@ es-MX:
         job: [Soluciones, Programa, Marca, Seguridad, Investigación, Marketing, Normas, Implementación, Integración, Funcionalidad, Respuesta, Paradigma, Tácticas, Identidad, Mercados, Grupo, División, Aplicaciones, Optimización, Operaciones, Infraestructura, Tecnologías de Información, Comunicaciones, Web, Calidad, Seguro, Mobilidad, Cuentas, Datos, Creativo, Configuración, Contabilidad, Interacciones, Factores, Usabilidad, Métricas, Departamento, Región, Supervisión, Planeación]
       name:
         - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name} #{suffix}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
@@ -87,3 +94,9 @@ es-MX:
         - "044 (#{PhoneNumber.lada_tres}) ### ####"
         - "044 #{PhoneNumber.lada_dos}-####-####"
         - "044 #{PhoneNumber.lada_tres}-###-####"
+    subscription:
+      plans: ["Prueba gratuita", "Basico", "Starter", "Essential", "Estudiante", Bronze", "Standard", "Silver", "Gold", "Platinum", "Profesional", "Business", "Diamond", "Premium"]
+      statuses: ["Activo", "Parado", "Bloqueado", "Pendiente"]
+      payment_methods: ["Tarjeta de credito", "Tarjeta de débito", "Paypal", "Efectivo", "Transferencia de dinero", "Bitcoins", "Cheque", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
+      subscription_terms: ["Diaria", "Semanal", "Mensual", "Anual", "Bienal", "Trienal", "Quinquenal", "De por vida"]
+      payment_terms: ["Pago por adelantado", "Mensual", "Anual", "Suscripción completa"]

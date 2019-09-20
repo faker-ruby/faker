@@ -1,20 +1,40 @@
-$:.push File.expand_path("../lib", __FILE__)
-require "faker/version"
+# frozen_string_literal: true
 
-Gem::Specification.new do |s|
-  s.name        = "faker"
-  s.version     = Faker::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Benjamin Curtis"]
-  s.email       = ["benjamin.curtis@gmail.com"]
-  s.homepage    = "https://github.com/stympy/faker"
-  s.summary     = %q{Easily generate fake data}
-  s.description = %q{Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.}
-  s.license     = 'MIT'
+$LOAD_PATH.push File.expand_path('lib', __dir__)
+require 'faker/version'
 
-  s.add_runtime_dependency('i18n', '>= 0.7')
-  s.required_ruby_version = '>= 2.1'
+Gem::Specification.new do |spec|
+  spec.name        = 'faker'
+  spec.version     = Faker::VERSION
+  spec.platform    = Gem::Platform::RUBY
+  spec.authors     = ['Benjamin Curtis', 'Vitor Oliveira']
+  spec.email       = ['benjamin.curtis@gmail.com', 'vbrazo@gmail.com']
 
-  s.files         = Dir['lib/**/*'] + %w(History.md License.txt CHANGELOG.md README.md)
-  s.require_paths = ["lib"]
+  spec.summary     = 'Easily generate fake data'
+  spec.description = 'Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.'
+  spec.homepage    = 'https://github.com/faker-ruby/faker'
+  spec.license     = 'MIT'
+
+  spec.files         = Dir['lib/**/*'] + %w[History.md License.txt CHANGELOG.md README.md]
+  spec.bindir        = 'bin'
+  spec.executables   = ['faker']
+  spec.require_paths = ['lib']
+  spec.required_ruby_version = '>= 2.3'
+
+  spec.metadata['changelog_uri'] = 'https://github.com/faker-ruby/faker/blob/master/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/faker-ruby/faker'
+  spec.metadata['bug_tracker_uri'] = 'https://github.com/faker-ruby/faker/issues'
+  spec.metadata['documentation_uri'] = 'https://rubydoc.info/github/faker-ruby/faker/master'
+  spec.metadata['yard.run'] = 'yri'
+
+  spec.add_dependency('i18n', '~> 1.6.0')
+
+  spec.add_development_dependency('minitest', '5.11.3')
+  spec.add_development_dependency('pry', '0.12.2')
+  spec.add_development_dependency('rake', '12.3.3')
+  spec.add_development_dependency('rubocop', '0.74.0')
+  spec.add_development_dependency('simplecov', '0.17.1')
+  spec.add_development_dependency('test-unit', '3.3.3')
+  spec.add_development_dependency('timecop', '0.9.1')
+  spec.add_development_dependency('yard', '0.9.20')
 end

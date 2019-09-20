@@ -2,7 +2,7 @@ en:
   faker:
     stargate:
       characters: ["Jack O'Neill", "Teal'c", "Daniel Jackson", "Samantha Carter", "Janet Frasier", "George Hammond", "Jonas Quinn", "Cameron Mitchell", "Vala Mal Doran", "Kawalsky", "Jacob Carter", "Kasuf", "Sha're", "Skaara", "Thor", "Anubis", "Apophis", "Ba'al", "Cronus", "Hathor", "Heru-ur", "Klorel", "Ra", "Amonet", "Osiris", "Sokar", "Bra'tac", "Lantash", "Selmak", "Jolinar", "Martouf", "Cassandra", "Harlan"]
-      planets: ["Abydos", "Altair", Asuras", "Athos", "Celestis", "Chulak", "Dakara", "Earth", "Langara", "Lantea", "Orilla", "P3X-888", "Sateda", "Tollana", "Vorash"]
+      planets: ["Abydos", "Altair", "Asuras", "Athos", "Celestis", "Chulak", "Dakara", "Earth", "Langara", "Lantea", "Orilla", "P3X-888", "Sateda", "Tollana", "Vorash"]
       quotes: [
         "What is an Oprah?",
         "Teal'c, look scary and take point.",
@@ -19,4 +19,3 @@ en:
         "Indeed.",
         "You ended that sentence with a preposition. Bastard!"
         ]
-
