@@ -12,7 +12,7 @@ module Faker
       #
       # @example
       #   Faker::Date.between(from: 2.days.ago, to: Date.today)
-      #     #=> "Wed, 24 Sep 2014"
+      #     #=> #<Date: 2014-09-24>
       #
       # @faker.version 1.0.0
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from:, to:)
@@ -39,7 +39,7 @@ module Faker
       #
       # @example
       #   Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today)
-      #     #=> "Wed, 24 Sep 2014"
+      #     #=> #<Date: 2014-10-03>
       #
       # @faker.version 1.6.2
       def between_except(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_excepted = NOT_GIVEN, from:, to:, excepted:)
@@ -71,7 +71,7 @@ module Faker
       # @return [Date]
       #
       # @example
-      #   Faker::Date.forward(days: 23) # => "Fri, 03 Oct 2014"
+      #   Faker::Date.forward(days: 23) #=> #<Date: 2014-10-03>
       #
       # @faker.version 1.0.0
       def forward(legacy_days = NOT_GIVEN, days: 365)
@@ -92,7 +92,7 @@ module Faker
       # @return [Date]
       #
       # @example
-      #   Faker::Date.backward(days: 14) #=> "Fri, 19 Sep 2014"
+      #   Faker::Date.backward(days: 14) #=> #<Date: 2019-09-12>
       #
       # @faker.version 1.0.0
       def backward(legacy_days = NOT_GIVEN, days: 365)
@@ -114,7 +114,7 @@ module Faker
       # @return [Date]
       #
       # @example
-      #   Faker::Date.birthday(min_age: 18, max_age: 65) #=> "28 Mar 1986"
+      #   Faker::Date.birthday(min_age: 18, max_age: 65) #=> #<Date: 1986-03-28>
       #
       # @faker.version 1.4.3
       def birthday(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
