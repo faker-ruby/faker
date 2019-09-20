@@ -50,6 +50,7 @@ module Faker
       def country;            fetch('address.country');           end
       def country_code;       fetch('address.country_code');      end
       def country_code_long;  fetch('address.country_code_long'); end
+      def union_territory;    fetch('address.union_territory');   end
 
       def latitude
         ((rand * 180) - 90).to_s
