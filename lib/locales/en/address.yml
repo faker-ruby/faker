@@ -89,5 +89,3 @@ en:
         - "#{secondary_address} #{street_address}, #{city}, #{state_abbr} #{zip_code}"
       default_country: [United States of America]
       union_territory: [Andaman and Nicobar Islands, Chandigarh, Dadra and Nagar Haveli, Daman and Diu, Delhi, Jammu and Kashmir, Ladakh, Lakshadweep, Pondicherry]
-
-
