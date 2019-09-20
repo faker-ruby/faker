@@ -4,6 +4,7 @@ module Faker
   class Movies
     class LordOfTheRings < Base
       class << self
+        ##
         # Produces a character from Lord of the Rings.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('lord_of_the_rings.characters')
         end
 
+        ##
         # Produces a location from Lord of the Rings.
         #
         # @return [String]
@@ -28,6 +30,7 @@ module Faker
           fetch('lord_of_the_rings.locations')
         end
 
+        ##
         # Produces a quote from Lord of the Rings.
         #
         # @return [String]

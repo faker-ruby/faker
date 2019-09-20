@@ -4,6 +4,7 @@ module Faker
   class Movies
     class HarryPotter < Base
       class << self
+        ##
         # Produces a character from Harry Potter.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('harry_potter.characters')
         end
 
+        ##
         # Produces a location from Harry Potter.
         #
         # @return [String]
@@ -28,6 +30,7 @@ module Faker
           fetch('harry_potter.locations')
         end
 
+        ##
         # Produces a quote from Harry Potter.
         #
         # @return [String]
@@ -40,6 +43,7 @@ module Faker
           fetch('harry_potter.quotes')
         end
 
+        ##
         # Produces a book from Harry Potter.
         #
         # @return [String]
@@ -52,6 +56,7 @@ module Faker
           fetch('harry_potter.books')
         end
 
+        ##
         # Produces a house from Harry Potter.
         #
         # @return [String]
@@ -64,6 +69,7 @@ module Faker
           fetch('harry_potter.houses')
         end
 
+        ##
         # Produces a spell from Harry Potter.
         #
         # @return [String]

@@ -4,6 +4,7 @@ module Faker
   class Movies
     class HitchhikersGuideToTheGalaxy < Base
       class << self
+        ##
         # Produces a character from The Hitchhiker's Guide to the Galaxy.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('hitchhikers_guide_to_the_galaxy.characters')
         end
 
+        ##
         # Produces a location from The Hitchhiker's Guide to the Galaxy.
         #
         # @return [String]
@@ -29,6 +31,7 @@ module Faker
           fetch('hitchhikers_guide_to_the_galaxy.locations')
         end
 
+        ##
         # Produces a Marvin quote from The Hitchhiker's Guide to the Galaxy.
         #
         # @return [String]
@@ -42,6 +45,7 @@ module Faker
           fetch('hitchhikers_guide_to_the_galaxy.marvin_quote')
         end
 
+        ##
         # Produces a planet from The Hitchhiker's Guide to the Galaxy.
         #
         # @return [String]
@@ -55,6 +59,7 @@ module Faker
           fetch('hitchhikers_guide_to_the_galaxy.planets')
         end
 
+        ##
         # Produces a quote from The Hitchhiker's Guide to the Galaxy.
         #
         # @return [String]
@@ -68,6 +73,7 @@ module Faker
           fetch('hitchhikers_guide_to_the_galaxy.quotes')
         end
 
+        ##
         # Produces a species from The Hitchhiker's Guide to the Galaxy.
         #
         # @return [String]
@@ -81,6 +87,7 @@ module Faker
           fetch('hitchhikers_guide_to_the_galaxy.species')
         end
 
+        ##
         # Produces a starship from The Hitchhiker's Guide to the Galaxy.
         #
         # @return [String]

@@ -4,6 +4,7 @@ module Faker
   class Movies
     class PrincessBride < Base
       class << self
+        ##
         # Produces a character from The Princess Bride.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('princess_bride.characters')
         end
 
+        ##
         # Produces a quote from The Princess Bride.
         #
         # @return [String]

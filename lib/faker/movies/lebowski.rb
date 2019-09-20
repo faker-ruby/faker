@@ -4,6 +4,7 @@ module Faker
   class Movies
     class Lebowski < Base
       class << self
+        ##
         # Produces an actor from The Big Lebowski.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('lebowski.actors')
         end
 
+        ##
         # Produces a character from The Big Lebowski.
         #
         # @return [String]
@@ -28,6 +30,7 @@ module Faker
           fetch('lebowski.characters')
         end
 
+        ##
         # Produces a quote from The Big Lebowski.
         #
         # @return [String]

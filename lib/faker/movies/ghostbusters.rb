@@ -4,6 +4,7 @@ module Faker
   class Movies
     class Ghostbusters < Base
       class << self
+        ##
         # Produces an actor from Ghostbusters.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('ghostbusters.actors')
         end
 
+        ##
         # Produces a character from Ghostbusters.
         #
         # @return [String]
@@ -28,6 +30,7 @@ module Faker
           fetch('ghostbusters.characters')
         end
 
+        ##
         # Produces a quote from Ghostbusters.
         #
         # @return [String]

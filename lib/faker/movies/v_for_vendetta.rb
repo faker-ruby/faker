@@ -4,6 +4,7 @@ module Faker
   class Movies
     class VForVendetta < Base
       class << self
+        ##
         # Produces a character from V For Vendetta.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('v_for_vendetta.characters')
         end
 
+        ##
         # Produces a speech from V For Vendetta.
         #
         # @return [String]
@@ -29,6 +31,7 @@ module Faker
           fetch('v_for_vendetta.speeches')
         end
 
+        ##
         # Produces a quote from V For Vendetta.
         #
         # @return [String]

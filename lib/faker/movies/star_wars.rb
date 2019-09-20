@@ -4,6 +4,7 @@ module Faker
   class Movies
     class StarWars < Base
       class << self
+        ##
         # Produces a call squadron from Star Wars.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           sample(call_squadrons)
         end
 
+        ##
         # Produces a call sign from Star Wars.
         #
         # @return [String]
@@ -28,6 +30,7 @@ module Faker
           numerify(parse('star_wars.call_sign'))
         end
 
+        ##
         # Produces a call number from Star Wars.
         #
         # @return [String]
@@ -40,6 +43,7 @@ module Faker
           sample(call_numbers)
         end
 
+        ##
         # Produces a character from Star Wars.
         #
         # @return [String]
@@ -52,6 +56,7 @@ module Faker
           sample(characters)
         end
 
+        ##
         # Produces a droid from Star Wars.
         #
         # @return [String]
@@ -64,6 +69,7 @@ module Faker
           sample(droids)
         end
 
+        ##
         # Produces a planet from Star Wars.
         #
         # @return [String]
@@ -76,6 +82,7 @@ module Faker
           sample(planets)
         end
 
+        ##
         # Produces a species from Star Wars.
         #
         # @return [String]
@@ -88,6 +95,7 @@ module Faker
           sample(species)
         end
 
+        ##
         # Produces a vehicle from Star Wars.
         #
         # @return [String]
@@ -116,6 +124,7 @@ module Faker
           sentence + sample(['.', '?', '!'])
         end
 
+        ##
         # Produces a quote from Star Wars.
         #
         # @param character [String] The name of a character to derive a quote from.

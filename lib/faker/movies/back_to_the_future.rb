@@ -4,6 +4,7 @@ module Faker
   class Movies
     class BackToTheFuture < Base
       class << self
+        ##
         # Produces a character from Back to the Future.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('back_to_the_future.characters')
         end
 
+        ##
         # Produces a date from Back to the Future.
         #
         # @return [String]
@@ -28,6 +30,7 @@ module Faker
           fetch('back_to_the_future.dates')
         end
 
+        ##
         # Produces a quote from Back to the Future.
         #
         # @return [String]
