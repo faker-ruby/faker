@@ -4,6 +4,7 @@ module Faker
   class JapaneseMedia
     class OnePiece < Base
       class << self
+        ##
         # Produces a character from One Piece.
         #
         # @return [String]
@@ -16,6 +17,7 @@ module Faker
           fetch('one_piece.characters')
         end
 
+        ##
         # Produces a sea from One Piece.
         #
         # @return [String]
@@ -28,6 +30,7 @@ module Faker
           fetch('one_piece.seas')
         end
 
+        ##
         # Produces an island from One Piece.
         #
         # @return [String]
@@ -40,6 +43,7 @@ module Faker
           fetch('one_piece.islands')
         end
 
+        ##
         # Produces a location from One Piece.
         #
         # @return [String]
@@ -52,6 +56,7 @@ module Faker
           fetch('one_piece.locations')
         end
 
+        ##
         # Produces a quote from One Piece.
         #
         # @return [String]
@@ -64,6 +69,7 @@ module Faker
           fetch('one_piece.quotes')
         end
 
+        ##
         # Produces an akuma no mi from One Piece.
         #
         # @return [String]
