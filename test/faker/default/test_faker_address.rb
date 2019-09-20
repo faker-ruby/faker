@@ -82,4 +82,8 @@ class TestFakerAddress < Test::Unit::TestCase
   def test_full_address
     assert @tester.full_address.match(/\w*\.?\s?\d*\s?\d+\s\w+\s\w+,\s\w+\s?\w*,\s[A-Z]{2}\s\d+/)
   end
+
+  def test_union_territory
+    assert @tester.union_territory.match(/\w+/)
+  end
 end
