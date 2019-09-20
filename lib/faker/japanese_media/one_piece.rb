@@ -59,7 +59,7 @@ module Faker
         # @example
         #   Faker::JapaneseMedia::OnePiece.quote #=> "ONE PIECE IS REAL!"
         #
-        # @faker.version 1.8.5  
+        # @faker.version 1.8.5
         def quote
           fetch('one_piece.quotes')
         end

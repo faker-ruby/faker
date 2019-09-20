@@ -126,7 +126,7 @@ module Faker
         #
         # @example
         #   Faker::Movies::StarWars.quote(character: "leia_organa")
-        #     #=> "Aren’t you a little short for a Stormtrooper?"
+        #     #=> "Aren't you a little short for a Stormtrooper?"
         #
         # @faker.version 1.6.2
         def quote(legacy_character = NOT_GIVEN, character: nil)
