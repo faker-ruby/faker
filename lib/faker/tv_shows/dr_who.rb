@@ -77,12 +77,10 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::TvShows::DrWho.villian #=> "The Master"
+        #   Faker::TvShows::DrWho.villain #=> "The Master"
         #
-        # @deprecated Use the correctly-spelled `villain` method instead.
-        #
-        # @faker.version 1.8.0
-        def villian
+        # @faker.version next
+        def villain
           fetch('dr_who.villains')
         end
 
@@ -92,10 +90,12 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::TvShows::DrWho.villain #=> "The Master"
+        #   Faker::TvShows::DrWho.villian #=> "The Master"
         #
-        # @faker.version next
-        alias villain villian
+        # @deprecated Use the correctly-spelled `villain` method instead.
+        #
+        # @faker.version 1.8.0
+        alias villian villain
 
         ##
         # Produces a species from Doctor Who.
