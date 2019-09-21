@@ -28,8 +28,13 @@ class TestFakerTvShowsDrWho < Test::Unit::TestCase
     10.times { assert @tester.quote.match(/[\w]+/) }
   end
 
+  # deprecated
   def test_villian
     10.times { assert @tester.villian.match(/[\w]+/) }
+  end
+
+  def test_villain
+    10.times { assert @tester.villain.match(/[\w]+/) }
   end
 
   def test_specie
@@ -43,7 +48,8 @@ class TestFakerTvShowsDrWho < Test::Unit::TestCase
       assert @tester.the_doctor  .is_a? String
       assert @tester.catch_phrase.is_a? String
       assert @tester.quote       .is_a? String
-      assert @tester.villian     .is_a? String
+      assert @tester.villian     .is_a? String # deprecated
+      assert @tester.villain     .is_a? String
       assert @tester.specie      .is_a? String
     end
   end
