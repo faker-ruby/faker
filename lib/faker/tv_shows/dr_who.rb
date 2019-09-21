@@ -83,7 +83,7 @@ module Faker
         #
         # @faker.version 1.8.0
         def villian
-          fetch('dr_who.villians')
+          fetch('dr_who.villains')
         end
 
         ##
