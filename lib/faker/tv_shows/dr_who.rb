@@ -95,7 +95,7 @@ module Faker
         #   Faker::TvShows::DrWho.villain #=> "The Master"
         #
         # @faker.version next
-        alias_method :villain, :villian
+        alias :villain, :villian
 
         ##
         # Produces a species from Doctor Who.
