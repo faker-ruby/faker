@@ -33,7 +33,7 @@ module Faker
         end
 
         ##
-        # Produces a specie from Star Trek.
+        # Produces a species from Star Trek.
         #
         # @return [String]
         #
