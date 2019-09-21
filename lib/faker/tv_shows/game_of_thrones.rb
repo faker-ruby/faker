@@ -45,7 +45,6 @@ module Faker
           fetch('game_of_thrones.cities')
         end
 
-
         ##
         # Produces a quote from Game of Thrones.
         #

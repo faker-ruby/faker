@@ -52,7 +52,7 @@ module Faker
         #
         # @example
         #   Faker::TvShows::HowIMetYourMother.quote
-        #     #=> "Whenever I’m sad, I stop being sad and be awesome instead."
+        #     #=> "Whenever I'm sad, I stop being sad and be awesome instead."
         #
         # @faker.version 1.8.0
         def quote
