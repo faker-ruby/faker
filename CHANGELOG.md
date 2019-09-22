@@ -1,5 +1,16 @@
 # Change Log
 
+## Unreleased
+
+## Documentation
+
+- [PR #1761](https://github.com/faker-ruby/faker/pull/1761) Add YARD docs for the Basketball and Football fakers. [@connorshea](https://github.com/connorshea)
+- [PR #1758](https://github.com/faker-ruby/faker/pull/1758) Add YARD docs for Doctor Who and fix a method name. [@connorshea](https://github.com/connorshea)
+- [PR #1756](https://github.com/faker-ruby/faker/pull/1756) Add more miscellaneous YARD docs [@connorshea](https://github.com/connorshea)
+- [PR #1753](https://github.com/faker-ruby/faker/pull/1753) Add YARD docs for Date, Time, and Number [@connorshea](https://github.com/connorshea)
+
+------------------------------------------------------------------------------
+
 ## [v2.4.0](https://github.com/faker-ruby/faker/tree/v2.4.0) (2019-19-09)
 
 ## Documentation
