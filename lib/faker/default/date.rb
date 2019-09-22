@@ -80,10 +80,7 @@ module Faker
       # Produces a date in the year and/or month specified.
       #
       # @param month [Integer] represents the month of the date
-      #
       # @param year [Integer] represents the year of the date
-      #
-      #
       # @return [Date]
       #
       # @example
@@ -94,7 +91,6 @@ module Faker
       #
       # @example
       #   Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
-      #
       #
       # @faker.version next
       def in_date_period(month: nil, year: ::Date.today.year)
