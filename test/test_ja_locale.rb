@@ -39,7 +39,7 @@ class TestJaLocale < Test::Unit::TestCase
   end
 
   def test_ja_color_methods
-    assert Faker::Color.name.is_a? String
+    assert Faker::Color.color_name.is_a? String
   end
 
   def test_ja_coffee_methods
