@@ -2,7 +2,7 @@
 
 module Faker
   class ChuckNorris < Base
-    flexible :name
+    flexible :chuck_norris
 
     class << self
       # from: https://github.com/jenkinsci/chucknorris-plugin/blob/master/src/main/java/hudson/plugins/chucknorris/FactGenerator.java

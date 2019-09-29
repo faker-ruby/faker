@@ -3,7 +3,7 @@
 module Faker
   class Games
     class Zelda < Base
-      flexible :space
+      flexible :zelda
       class << self
         ##
         # Produces the name of a Legend of Zelda game.
