@@ -6,29 +6,29 @@ module Faker
 
     class << self
       def university
-        "#{parse('educator.name')} #{fetch('educator.tertiary.type')}"
+        parse('educator.university')
       end
 
       def degree
-        "#{fetch('educator.tertiary.degree.type')} #{fetch('educator.tertiary.degree.subject')}"
+        parse('educator.degree')
       end
 
       alias course degree
 
       def subject
-        fetch('educator.tertiary.degree.subject')
+        fetch('educator.subject')
       end
 
       def course_name
-        "#{fetch('educator.tertiary.degree.subject')} #{numerify(fetch('educator.tertiary.degree.course_number'))}"
+        numerify(parse('educator.course_name'))
       end
 
       def secondary_school
-        "#{parse('educator.name')} #{fetch('educator.secondary')}"
+        parse('educator.secondary_school')
       end
 
       def campus
-        "#{parse('educator.name')} Campus"
+        parse('educator.campus')
       end
     end
   end
