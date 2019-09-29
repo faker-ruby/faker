@@ -58,9 +58,9 @@ en:
       tertiary:
         university_type:
           - College
-          - University
-          - Technical College
           - TAFE
+          - Technical College
+          - University
         degree:
           type:
             - Associate Degree in
