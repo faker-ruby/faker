@@ -6,6 +6,8 @@ module Faker
       # @private
       SUPPORTED_FORMATS = %w[png jpg bmp].freeze
 
+      # rubocop:disable Metrics/ParameterLists
+
       ##
       # Produces a URL for an avatar from robohash.org
       #
@@ -36,7 +38,6 @@ module Faker
       #     #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
       #
       # @faker.version 1.4.3
-      # rubocop:disable Metrics/ParameterLists
       def image(legacy_slug = NOT_GIVEN, legacy_size = NOT_GIVEN, legacy_format = NOT_GIVEN, legacy_set = NOT_GIVEN, legacy_bgset = NOT_GIVEN, slug: nil, size: '300x300', format: 'png', set: 'set1', bgset: nil)
         # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
