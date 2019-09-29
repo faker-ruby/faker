@@ -29,9 +29,9 @@ en:
       campus:
         - "#{name} Campus"
       subject:
-        - Arts
         - Applied Science (Psychology)
         - Architectural Technology
+        - Arts
         - Biological Science
         - Biomedical Science
         - Business
