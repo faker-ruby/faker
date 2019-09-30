@@ -1,6 +1,12 @@
 # Change Log
 
-## Unreleased
+## [v2.5.0](https://github.com/faker-ruby/faker/tree/v2.5.0) (2019-30-09)
+
+This version introduces locales for Thai language - the mother language in Thailand. Besides that, we've also added more YARD documentation for faker interfaces.
+
+## Feature Request
+
+- [PR #1773](https://github.com/faker-ruby/faker/pull/1773) Two new locales added: th and en-th [@kodram](https://github.com/kodram)
 
 ## Documentation
 
