@@ -1,5 +1,16 @@
 # Change Log
 
+## Unreleased
+
+## Update local dependencies
+
+The following development dependencies were updated:
+- Update rake requirement from = 12.3.3 to = 13.0.0 (#1776)
+- Update minitest requirement from = 5.12.0 to = 5.12.2 (#1775)
+- Update test-unit requirement from = 3.3.3 to = 3.3.4 (#1774)
+
+------------------------------------------------------------------------------
+
 ## [v2.5.0](https://github.com/faker-ruby/faker/tree/v2.5.0) (2019-30-09)
 
 This version introduces:
