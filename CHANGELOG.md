@@ -1,13 +1,36 @@
 # Change Log
 
-## Unreleased
+## [v2.5.0](https://github.com/faker-ruby/faker/tree/v2.5.0) (2019-30-09)
+
+This version introduces:
+- locales for Thai language - the mother language in Thailand
+- YARD documentation for faker interfaces
+- locales updates or fixes
+
+## Feature Request
+
+- [PR #1773](https://github.com/faker-ruby/faker/pull/1773) Two new locales added: th and en-th [@kodram](https://github.com/kodram)
 
 ## Documentation
 
+- [PR #1771](https://github.com/faker-ruby/faker/pull/1771) Fix some rubocop comments that were showing up in YARD docs. [@connorshea](https://github.com/connorshea)
+- [PR #1767](https://github.com/faker-ruby/faker/pull/1767) Fix two incorrect flexible method calls. [@connorshea](https://github.com/connorshea)
 - [PR #1761](https://github.com/faker-ruby/faker/pull/1761) Add YARD docs for the Basketball and Football fakers. [@connorshea](https://github.com/connorshea)
+- [PR #1768](https://github.com/faker-ruby/faker/pull/1768) Add YARD docs for Faker::Restaurant. [@connorshea](https://github.com/connorshea)
+- [PR #1759](https://github.com/faker-ruby/faker/pull/1759) Add YARD docs for all remaining TV Shows [@connorshea](https://github.com/connorshea)
 - [PR #1758](https://github.com/faker-ruby/faker/pull/1758) Add YARD docs for Doctor Who and fix a method name. [@connorshea](https://github.com/connorshea)
 - [PR #1756](https://github.com/faker-ruby/faker/pull/1756) Add more miscellaneous YARD docs [@connorshea](https://github.com/connorshea)
 - [PR #1753](https://github.com/faker-ruby/faker/pull/1753) Add YARD docs for Date, Time, and Number [@connorshea](https://github.com/connorshea)
+
+## Update locales
+
+- [PR #1764](https://github.com/faker-ruby/faker/pull/1764) Remove "mint green" from color [@ro-savage](https://github.com/ro-savage)
+- [PR #1751](https://github.com/faker-ruby/faker/pull/1751) fix from Color.name to Color.color_name [@4geru](https://github.com/4geru)
+
+## Update local dependencies
+
+The following development dependencies were updated:
+- Update minitest requirement from = 5.11.3 to = 5.12.0 (#1763)
 
 ------------------------------------------------------------------------------
 
