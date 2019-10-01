@@ -10,7 +10,11 @@ module Faker
           keywords << :options if legacy_options != NOT_GIVEN
         end
 
-        parse(options[:with_state] ? 'address.city_with_state' : 'address.city')
+        if options[:with_state]
+          "#{parse('address.city')}, #{fetch('address.state')}"
+        else
+          parse('address.city')
+        end
       end
 
       def street_name
