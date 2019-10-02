@@ -250,6 +250,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::JapaneseMedia::DragonBall](doc/japanese_media/dragon_ball.md)
   - [Faker::JapaneseMedia::OnePiece](doc/japanese_media/one_piece.md)
   - [Faker::JapaneseMedia::SwordArtOnline](doc/japanese_media/sword_art_online.md)
+  - [Faker::JapaneseMedia::DemonSlayer](doc/japanese_media/demon_slayer.md)
 
 ### Movies
   - [Faker::Movie](doc/movies/movie.md)
