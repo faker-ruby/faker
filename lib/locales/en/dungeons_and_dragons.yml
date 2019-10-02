@@ -1,0 +1,602 @@
+en:
+  faker:
+    games:
+      dungeons_and_dragons:
+        armor:
+          - Padded Armor
+          - Leather Armor
+          - Studded Leather Armor
+          - Hide Armor
+          - Chain Shirt
+          - Scale Mail
+          - Breastplate
+          - Half Plate Armor
+          - Ring Mail
+          - Chain Mail
+          - Splint Armor
+          - Plate Armor
+          - Shield
+        player_class:
+          - Barbarian
+          - Bard
+          - Cleric
+          - Druid
+          - Fighter
+          - Monk
+          - Paladin
+          - Ranger
+          - Rogue
+          - Sorcerer
+          - Warlock
+          - Wizard
+        monster:
+          - Aboleth
+          - Deva
+          - Planetar
+          - Solar
+          - Animated Armor
+          - Flying Sword
+          - Rug of Smothering
+          - Ankheg
+          - Azer
+          - Basilisk
+          - Behir
+          - Bugbear
+          - Bulette
+          - Centaur
+          - Chimera
+          - Chuul
+          - Cloaker
+          - Cockatrice
+          - Couatl
+          - Darkmantle
+          - Balor
+          - Dretch
+          - Glabrezu
+          - Hezrou
+          - Marilith
+          - Nalfeshnee
+          - Quasit
+          - Vrock
+          - Barbed Devil
+          - Bearded Devil
+          - Bone Devil
+          - Chain Devil
+          - Erinyes
+          - Horned Devil
+          - Ice Devil
+          - Imp
+          - Lemure
+          - Pit Fiend
+          - Plesiosaurus
+          - Triceratops
+          - Tyrannosaurus rex
+          - Doppelganger
+          - Ancient Black Dragon
+          - Adult Black Dragon
+          - Young Black Dragon
+          - Black Dragon Wyrmling
+          - Ancient Blue Dragon
+          - Adult Blue Dragon
+          - Young Blue Dragon
+          - Blue Dragon Wyrmling
+          - Ancient Green Dragon
+          - Adult Green Dragon
+          - Young Green Dragon
+          - Green Dragon Wyrmling
+          - Ancient Red Dragon
+          - Adult Red Dragon
+          - Young Red Dragon
+          - Red Dragon Wyrmling
+          - Ancient White Dragon
+          - Adult White Dragon
+          - Young White Dragon
+          - White Dragon Wyrmling
+          - Ancient Brass Dragon
+          - Adult Brass Dragon
+          - Young Brass Dragon
+          - Brass Dragon Wyrmling
+          - Ancient Bronze Dragon
+          - Adult Bronze Dragon
+          - Young Bronze Dragon
+          - Bronze Dragon Wyrmling
+          - Ancient Copper Dragon
+          - Adult Copper Dragon
+          - Young Copper Dragon
+          - Copper Dragon Wyrmling
+          - Ancient Gold Dragon
+          - Adult Gold Dragon
+          - Young Gold Dragon
+          - Gold Dragon Wyrmling
+          - Ancient Silver Dragon
+          - Adult Silver Dragon
+          - Young Silver Dragon
+          - Silver Dragon Wyrmling
+          - Dragon Turtle
+          - Drider
+          - Dryad
+          - Duergar
+          - Air Elemental
+          - Earth Elemental
+          - Fire Elemental
+          - Water Elemental
+          - Drow
+          - Ettercap
+          - Ettin
+          - Shrieker
+          - Violet Fungus
+          - Gargoyle
+          - Djinni
+          - Efreeti
+          - Ghost
+          - Ghast
+          - Ghoul
+          - Cloud Giant
+          - Fire Giant
+          - Frost Giant
+          - Hill Giant
+          - Stone Giant
+          - Storm Giant
+          - Gibbering Mouther
+          - Gnoll
+          - Deep Gnome (Svirfneblin)
+          - Goblin
+          - Clay Golem
+          - Flesh Golem
+          - Iron Golem
+          - Stone Golem
+          - Gorgon
+          - Grick
+          - Griffon
+          - Grimlock
+          - Green Hag
+          - Night Hag
+          - Sea Hag
+          - Half-Red Dragon Veteran
+          - Harpy
+          - Hell hound
+          - Hippogriff
+          - Hobgoblin
+          - Homunculus
+          - Hydra
+          - Invisible Stalker
+          - Kobold
+          - Kraken
+          - Lamia
+          - Lich
+          - Lizardfolk
+          - Werebear
+          - Wereboar
+          - Wererat
+          - Weretiger
+          - Werewolf
+          - Magmin
+          - Manticore
+          - Medusa
+          - Dust Mephit
+          - Ice Mephit
+          - Magma Mephit
+          - Steam Mephit
+          - Merfolk
+          - Merrow
+          - Mimic
+          - Minotaur
+          - Mummy
+          - Mummy lord
+          - Guardian Naga
+          - Spirit Naga
+          - Nightmare
+          - Ogre
+          - Oni
+          - Black Pudding
+          - Gelatinous Cube
+          - Gray Ooze
+          - Ochre Jelly
+          - Orc
+          - Otyugh
+          - Owlbear
+          - Pegasus
+          - Pseudodragon
+          - Purple Worm
+          - Rakshasa
+          - Remorhaz
+          - Roc
+          - Roper
+          - Rust Monster
+          - Sahuagin
+          - Salamander
+          - Satyr
+          - Shadow
+          - Shambling Mound
+          - Shield Guardian
+          - Skeleton
+          - Minotaur Skeleton
+          - Warhorse Skeleton
+          - Specter
+          - Androsphinx
+          - Gynosphinx
+          - Sprite
+          - Stirge
+          - Succubus
+          - Incubus
+          - Tarrasque
+          - Treant
+          - Troll
+          - Unicorn
+          - Vampire
+          - Vampire spawn
+          - Wight
+          - Will-o'-Wisp
+          - Wraith
+          - Wyvern
+          - Xorn
+          - Zombie
+          - Ogre Zombie
+        race:
+          - Dwarf
+          - Elf
+          - Halfling
+          - Human
+          - Dragonborn
+          - Gnome
+          - Half-Elf
+          - Half-Orc
+          - Tiefling
+        spell:
+          - Melf's Acid Arrow
+          - Acid Splash
+          - Aid
+          - Alarm
+          - Alter Self
+          - Animal Friendship
+          - Animal Messenger
+          - Animal Shapes
+          - Animate Dead
+          - Animate Objects
+          - Antilife Shell
+          - Antimagic Field
+          - Antipathy/Sympathy
+          - Arcane Eye
+          - Arcane Hand
+          - Arcane Lock
+          - Arcane Sword
+          - Nystul's Magic Aura
+          - Astral Projection
+          - Augury
+          - Awaken
+          - Bane
+          - Banishment
+          - Barkskin
+          - Beacon of Hope
+          - Bestow Curse
+          - Evard's Black Tentacles
+          - Blade Barrier
+          - Bless
+          - Blight
+          - Blindness/Deafness
+          - Blink
+          - Blur
+          - Branding Smite
+          - Burning Hands
+          - Call Lightning
+          - Calm Emotions
+          - Chain Lightning
+          - Charm Person
+          - Chill Touch
+          - Circle of Death
+          - Clairvoyance
+          - Clone
+          - Cloudkill
+          - Color Spray
+          - Command
+          - Commune
+          - Commune with Nature
+          - Comprehend Languages
+          - Compulsion
+          - Cone of Cold
+          - Confusion
+          - Conjure Animals
+          - Conjure Celestial
+          - Conjure Elemental
+          - Conjure Fey
+          - Conjure Minor Elementals
+          - Conjure Woodland Beings
+          - Contact Other Plane
+          - Contagion
+          - Contingency
+          - Continual Flame
+          - Control Water
+          - Control Weather
+          - Counterspell
+          - Create Food And Water
+          - Create or Destroy Water
+          - Create Undead
+          - Creation
+          - Cure Wounds
+          - Dancing Lights
+          - Darkness
+          - Darkvision
+          - Daylight
+          - Death Ward
+          - Delayed Blast Fireball
+          - Demiplane
+          - Detect Evil and Good
+          - Detect Magic
+          - Detect Poison and Disease
+          - Detect Thoughts
+          - Dimension Door
+          - Disguise Self
+          - Disintegrate
+          - Dispel Evil and Good
+          - Dispel Magic
+          - Divination
+          - Divine Favor
+          - Divine Word
+          - Dominate Beast
+          - Dominate Monster
+          - Dominate Person
+          - Dream
+          - Druidcraft
+          - Earthquake
+          - Eldritch Blast
+          - Enhance Ability
+          - Enlarge/Reduce
+          - Entangle
+          - Enthrall
+          - Etherealness
+          - Expeditious Retreat
+          - Eyebite
+          - Fabricate
+          - Faerie Fire
+          - Mordenkainen's Faithful Hound
+          - False Life
+          - Fear
+          - Feather Fall
+          - Feeblemind
+          - Find Familiar
+          - Find Steed
+          - Find the Path
+          - Find Traps
+          - Finger of Death
+          - Fireball
+          - Fire Bolt
+          - Fire Shield
+          - Fire Storm
+          - Flame Blade
+          - Flame Strike
+          - Flaming Sphere
+          - Flesh to Stone
+          - Tenser's Floating Disk
+          - Fly
+          - Fog Cloud
+          - Forbiddance
+          - Forcecage
+          - Foresight
+          - Freedom of Movement
+          - Otiluke's Freezing Sphere
+          - Gaseous Form
+          - Gate
+          - Geas
+          - Gentle Repose
+          - Giant Insect
+          - Glibness
+          - Globe of Invulnerability
+          - Glyph of Warding
+          - Goodberry
+          - Grease
+          - Greater Invisibility
+          - Greater Restoration
+          - Guardian of Faith
+          - Guards and Wards
+          - Guidance
+          - Guiding Bolt
+          - Gust of Wind
+          - Hallow
+          - Hallucinatory Terrain
+          - Harm
+          - Haste
+          - Heal
+          - Healing Word
+          - Heat Metal
+          - Hellish Rebuke
+          - Heroes' Feast
+          - Heroism
+          - Tasha's Hideous Laughter
+          - Hold Monster
+          - Hold Person
+          - Holy Aura
+          - Hunter's Mark
+          - Hypnotic Pattern
+          - Ice Storm
+          - Identify
+          - Illusory Script
+          - Imprisonment
+          - Incendiary Cloud
+          - Inflict Wounds
+          - Insect Plague
+          - Drawmij's Instant Summons
+          - Invisibility
+          - Otto's Irresistible Dance
+          - Jump
+          - Knock
+          - Legend Lore
+          - Lesser Restoration
+          - Levitate
+          - Light
+          - Lightning Bolt
+          - Locate Animals or Plants
+          - Locate Creature
+          - Locate Object
+          - Longstrider
+          - Mage Armor
+          - Mage Hand
+          - Magic Circle
+          - Magic Jar
+          - Magic Missile
+          - Magic Mouth
+          - Magic Weapon
+          - Mordenkainen's Magnificent Mansion
+          - Major Image
+          - Mass Cure Wounds
+          - Mass Heal
+          - Mass Healing Word
+          - Mass Suggestion
+          - Maze
+          - Meld into Stone
+          - Mending
+          - Message
+          - Meteor Swarm
+          - Mind Blank
+          - Minor Illusion
+          - Mirage Arcane
+          - Mirror Image
+          - Mislead
+          - Misty Step
+          - Modify Memory
+          - Moonbeam
+          - Move Earth
+          - Nondetection
+          - Pass Without Trace
+          - Passwall
+          - Phantasmal Killer
+          - Phantom Steed
+          - Planar Ally
+          - Planar Binding
+          - Plane Shift
+          - Plant Growth
+          - Poison Spray
+          - Polymorph
+          - Power Word Kill
+          - Power Word Stun
+          - Prayer of Healing
+          - Prestidigitation
+          - Prismatic Spray
+          - Prismatic Wall
+          - Mordenkainen's Private Sanctum
+          - Produce Flame
+          - Programmed Illusion
+          - Project Image
+          - Protection From Energy
+          - Protection From Evil And Good
+          - Protection From Poison
+          - Purify Food And Drink
+          - Raise Dead
+          - Ray of Enfeeblement
+          - Ray of Frost
+          - Regenerate
+          - Reincarnate
+          - Remove Curse
+          - Otiluke's Resilient Sphere
+          - Resistance
+          - Resurrection
+          - Reverse Gravity
+          - Revivify
+          - Rope Trick
+          - Sacred Flame
+          - Sanctuary
+          - Scorching Ray
+          - Scrying
+          - Leomund's Secret Chest
+          - See Invisibility
+          - Seeming
+          - Sending
+          - Sequester
+          - Shapechange
+          - Shatter
+          - Shield
+          - Shield of Faith
+          - Shillelagh
+          - Shocking Grasp
+          - Silence
+          - Silent Image
+          - Simulacrum
+          - Sleep
+          - Sleet Storm
+          - Slow
+          - Spare the Dying
+          - Speak with Animals
+          - Speak with Dead
+          - Speak with Plants
+          - Spider Climb
+          - Spike Growth
+          - Spirit Guardians
+          - Spiritual Weapon
+          - Stinking Cloud
+          - Stone Shape
+          - Stoneskin
+          - Storm of Vengeance
+          - Suggestion
+          - Sunbeam
+          - Sunburst
+          - Symbol
+          - Telekinesis
+          - Rary's Telepathic Bond
+          - Teleport
+          - Teleportation Circle
+          - Thaumaturgy
+          - Thunderwave
+          - Time Stop
+          - Leomund's Tiny Hut
+          - Tongues
+          - Transport Via Plants
+          - Tree Stride
+          - True Polymorph
+          - True Resurrection
+          - True Seeing
+          - True Strike
+          - Unseen Servant
+          - Vampiric Touch
+          - Vicious Mockery
+          - Wall of Fire
+          - Wall of Force
+          - Wall of Ice
+          - Wall of Stone
+          - Wall of Thorns
+          - Warding Bond
+          - Water Breathing
+          - Water Walk
+          - Web
+          - Weird
+          - Wind Walk
+          - Wind Wall
+          - Wish
+          - Word of Recall
+          - Zone of Truth
+        weapon:
+          - Club
+          - Dagger
+          - Greatclub
+          - Handaxe
+          - Javelin
+          - Light Hammer
+          - Mace
+          - Quarterstaff
+          - Sickle
+          - Spear
+          - Light Crossbow
+          - Dart
+          - Shortbow
+          - Sling
+          - Battleaxe
+          - Flail
+          - Glaive
+          - Greataxe
+          - Greatsword
+          - Halberd
+          - Lance
+          - Longsword
+          - Maul
+          - Morningstar
+          - Pike
+          - Rapier
+          - Scimitar
+          - Shortsword
+          - Trident
+          - War Pick
+          - Warhammer
+          - Whip
+          - Blowgun
+          - Hand Crossbow
+          - Heavy Crossbow
+          - Longbow
+          - Net
