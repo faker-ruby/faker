@@ -33,7 +33,7 @@ module Faker
         #
         # @example
         #   Faker::Sports::Hockey.division #=> "Metropolitan"
-        def coach
+        def division
           fetch('hockey.divisions')
         end
 
