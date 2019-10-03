@@ -2,6 +2,16 @@ en:
   faker:
     games:
       dungeons_and_dragons:
+        alignment:
+          - lawful good
+          - neutral good
+          - chaotic good
+          - lawful neutral
+          - neutral
+          - chaotic neutral
+          - lawful evil
+          - neutral evil
+          - chaotic evil
         armor:
           - Padded Armor
           - Leather Armor
@@ -267,6 +277,13 @@ en:
           - Half-Elf
           - Half-Orc
           - Tiefling
+        size:
+          - Tiny
+          - Small
+          - Medium
+          - Large
+          - Huge
+          - Gargantuan
         spell:
           - Melf's Acid Arrow
           - Acid Splash

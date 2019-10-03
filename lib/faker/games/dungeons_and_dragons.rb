@@ -5,6 +5,19 @@ module Faker
     class DungeonsAndDragons < Base
       class << self
         ##
+        # Produces the name of an alignment from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.alignment #=> "chaotic good"
+        #
+        # @faker.version next
+        def alignment
+          fetch('games.dungeons_and_dragons.alignment')
+        end
+
+        ##
         # Produces the name of a set or piece of armor from Dungeons and Dragons.
         #
         # @return [String]
@@ -85,6 +98,19 @@ module Faker
         # @faker.version next
         def race
           fetch('games.dungeons_and_dragons.race')
+        end
+
+        ##
+        # Produces the size of a creature from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.size #=> "Large"
+        #
+        # @faker.version next
+        def size
+          fetch('games.dungeons_and_dragons.size')
         end
 
         ##

@@ -7,6 +7,10 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
     @tester = Faker::Games::DungeonsAndDragons
   end
 
+  def test_alignment
+    assert @tester.alignment.match(/\w+/)
+  end
+
   def test_armor
     assert @tester.armor.match(/\w+/)
   end
@@ -39,6 +43,10 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
 
   def test_race
     assert @tester.race.match(/\w+/)
+  end
+
+  def test_size
+    assert @tester.size.match(/\w+/)
   end
 
   def test_spell
