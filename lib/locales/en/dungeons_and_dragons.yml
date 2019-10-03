@@ -294,6 +294,26 @@ en:
           - Half-Elf
           - Half-Orc
           - Tiefling
+        subrace:
+          dwarf:
+            - Hill Dwarf
+          elf:
+            - High Elf
+          halfling:
+            - lightfoot
+          dragonborn:
+            - Black
+            - Blue
+            - Brass
+            - Bronze
+            - Copper
+            - Gold
+            - Green
+            - Red
+            - Silver
+            - White
+          gnome:
+            - Rock Gnome
         size:
           - Tiny
           - Small

@@ -68,7 +68,7 @@ module Faker
             player_class = sample(classes.keys).to_s
           else
             player_class = player_class.to_s.downcase
-            raise ArgumentError, "Character for quotes can be left blank or #{classes.keys.join(', ')}" unless classes.key?(player_class.to_sym)
+            raise ArgumentError, "Class can be left blank or #{classes.keys.join(', ')}" unless classes.key?(player_class.to_sym)
           end
 
           fetch('games.dungeons_and_dragons.subclass.' + player_class)
@@ -111,6 +111,37 @@ module Faker
         # @faker.version next
         def race
           fetch('games.dungeons_and_dragons.race')
+        end
+
+        ##
+        # Produces the name of a subrace from Dungeons and Dragons.
+        #
+        # @param race [String] The name of a race to derive a subrace from.
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.subrace #=> "High Elf"
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.subrace(race: "dwarf")
+        #     #=> "Hill Dwarf"
+        #
+        # @faker.version next
+        def subrace(legacy_race = NOT_GIVEN, race: nil)
+          warn_for_deprecated_arguments do |keywords|
+            keywords << :race if legacy_race != NOT_GIVEN
+          end
+
+          races = translate('faker.games.dungeons_and_dragons.subrace')
+
+          if race.nil?
+            race = sample(races.keys).to_s
+          else
+            race = race.to_s.downcase
+            raise ArgumentError, "Race can be left blank or #{races.keys.join(', ')}" unless races.key?(race.to_sym)
+          end
+
+          fetch('games.dungeons_and_dragons.subrace.' + race)
         end
 
         ##

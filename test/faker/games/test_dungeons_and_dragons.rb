@@ -49,6 +49,22 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
     assert @tester.race.match(/\w+/)
   end
 
+  def test_specific_subrace
+    assert @tester.subrace(race: 'dwarf').match('Hill Dwarf')
+    assert @tester.subrace(race: 'elf').match('High Elf')
+    assert @tester.subrace(race: 'gnome').match('Rock Gnome')
+  end
+
+  def test_random_subrace
+    assert @tester.subrace.match(/\w+/)
+  end
+
+  def test_invalid_subrace
+    assert_raise ArgumentError do
+      @tester.subrace(race: 'goliath')
+    end
+  end
+
   def test_size
     assert @tester.size.match(/\w+/)
   end
