@@ -587,6 +587,15 @@ en:
           - Wish
           - Word of Recall
           - Zone of Truth
+        magic_school:
+          - Abjuration
+          - Conjuration
+          - Divination
+          - Enchantment
+          - Evocation
+          - Illusion
+          - Necromancy
+          - Transmutation
         weapon:
           - Club
           - Dagger

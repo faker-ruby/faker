@@ -101,6 +101,19 @@ module Faker
         end
 
         ##
+        # Produces the name of a school of magic from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.magic_school #=> "Illusion"
+        #
+        # @faker.version next
+        def magic_school
+          fetch('games.dungeons_and_dragons.magic_school')
+        end
+
+        ##
         # Produces the name of a weapon from Dungeons and Dragons.
         #
         # @return [String]

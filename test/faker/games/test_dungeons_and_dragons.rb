@@ -45,6 +45,10 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
     assert @tester.spell.match(/\w+/)
   end
 
+  def test_magic_school
+    assert @tester.magic_school.match(/\w+/)
+  end
+
   def test_weapon
     assert @tester.weapon.match(/\w+/)
   end
