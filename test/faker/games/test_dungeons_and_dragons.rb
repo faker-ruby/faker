@@ -37,6 +37,10 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
     end
   end
 
+  def test_language
+    assert @tester.language.match(/\w+/)
+  end
+
   def test_monster
     assert @tester.monster.match(/\w+/)
   end

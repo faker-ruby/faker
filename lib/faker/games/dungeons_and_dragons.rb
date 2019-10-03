@@ -75,6 +75,19 @@ module Faker
         end
 
         ##
+        # Produces the name of a language from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.language #=> "Elvish"
+        #
+        # @faker.version next
+        def language
+          fetch('games.dungeons_and_dragons.language')
+        end
+
+        ##
         # Produces the name of a monster from Dungeons and Dragons.
         #
         # @return [String]
