@@ -33,7 +33,7 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
 
   def test_invalid_subclass
     assert_raise ArgumentError do
-      @tester.subclass(player_class: 'artificer')
+      @tester.subclass(player_class: 'jedi')
     end
   end
 
@@ -61,7 +61,7 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
 
   def test_invalid_subrace
     assert_raise ArgumentError do
-      @tester.subrace(race: 'goliath')
+      @tester.subrace(race: 'wookiee')
     end
   end
 
