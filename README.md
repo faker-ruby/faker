@@ -279,6 +279,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 ### Sports
   - [Faker::Sports::Basketball](doc/sports/basketball.md)
   - [Faker::Sports::Football](doc/sports/football.md)
+  - [Faker::Sports::FormulaOne](doc/sports/formula_one.md)
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/tv_shows/aqua_teen_hunger_force.md)

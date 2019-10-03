@@ -1,0 +1,57 @@
+en:
+  faker:
+    formula_one:
+      teams:
+        - Mercedes AMG
+        - Scuderia Ferrari
+        - Red Bull Racing Team
+        - McLaren
+        - Renault F1 Team
+        - Scuderia Toro Rosso
+        - Racing Point
+        - Alfa Romeo Racing
+        - Haas F1 Team
+        - Williams Racing
+      drivers:
+        - Lewis Hamilton
+        - Valtteri Bottas
+        - Sebastian Vettel
+        - Charles Leclerc
+        - Max Verstappen
+        - Alex Albon
+        - Carlos Sainz
+        - Lando Norris
+        - Daniel Ricciardo
+        - Nico Hulkenberg
+        - Pierre Gasly
+        - Daniil Kvyat
+        - Sergio Pérez
+        - Lance Stroll
+        - Kimi Raikkonen
+        - Antonio Giovinazzi
+        - Kevin Magnussen
+        - Romain Grosjean
+        - Robert Kubica
+        - George Russell
+      circuits:
+        - Silverstone
+        - Monza
+        - Paul Ricard
+        - Hermanos Rodríguez
+        - José Carlos Pace
+        - Bahrain
+        - Baku City
+        - Barcelona-Catalunya
+        - Monaco
+        - Spa-Francorchamps
+        - Gilles Villeneuve
+        - Americas
+        - Hockenheimring
+        - Hungaroring
+        - Marina Bay Stret
+        - Melbourne Grand Prix
+        - Red Bull Ring
+        - Shanghai
+        - Sochi
+        - Suzuka
+        - Yas Marina
