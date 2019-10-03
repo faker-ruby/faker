@@ -30,6 +30,18 @@ module Faker
           fetch('games.world_of_warcraft.class_names')
         end
 
+        # Produces the name of a race from World of Warcraft.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::WorldOfWarcraft.race #=> "Druid"
+        #
+        # @faker.version 1.9.2
+        def race
+          fetch('games.world_of_warcraft.races')
+        end
+
         ##
         # Produces a quote from World of Warcraft.
         #

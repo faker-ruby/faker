@@ -7,6 +7,9 @@ Faker::Games::WorldOfWarcraft.hero #=> "Uther the Lightbringer"
 # Generate random class name from the World of Warcraft
 Faker::Games::WorldOfWarcraft.class_name #=> "Druid"
 
+# Generate random class name from the World of Warcraft
+Faker::Games::WorldOfWarcraft.race #=> "Night elf"
+
 # Generate random quote from the World of Warcraft
 Faker::Games::WorldOfWarcraft.quote #=> "These are dark times indeed."
 ```

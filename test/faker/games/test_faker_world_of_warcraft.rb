@@ -15,6 +15,10 @@ class TestWorldOfWarcraft < Test::Unit::TestCase
     assert @tester.class_name.match(/\w+/)
   end
 
+  def test_races
+    assert @tester.race.match(/\w+/)
+  end
+
   def test_quotes
     assert @tester.quote.match(/\w+/)
   end
