@@ -2,6 +2,13 @@ en:
   faker:
     games:
       dungeons_and_dragons:
+        ability:
+          - Strength
+          - Dexterity
+          - Constitution
+          - Intelligence
+          - Wisdom
+          - Charisma
         alignment:
           - lawful good
           - neutral good

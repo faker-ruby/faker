@@ -5,6 +5,19 @@ module Faker
     class DungeonsAndDragons < Base
       class << self
         ##
+        # Produces the name of an ability from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.ability #=> "Dexterity"
+        #
+        # @faker.version next
+        def ability
+          fetch('games.dungeons_and_dragons.ability')
+        end
+
+        ##
         # Produces the name of an alignment from Dungeons and Dragons.
         #
         # @return [String]

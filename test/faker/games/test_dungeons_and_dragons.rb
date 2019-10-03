@@ -7,6 +7,10 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
     @tester = Faker::Games::DungeonsAndDragons
   end
 
+  def test_ability
+    assert @tester.ability.match(/\w+/)
+  end
+
   def test_alignment
     assert @tester.alignment.match(/\w+/)
   end
