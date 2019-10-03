@@ -29,6 +29,31 @@ en:
           - Sorcerer
           - Warlock
           - Wizard
+        subclass:
+          barbarian:
+            - Path of the Berserker
+          bard:
+            - College of Lore
+          cleric:
+            - Life Domain
+          druid:
+            - Circle of the Land
+          fighter:
+            - Champion
+          monk:
+            - Way of the Open Hand
+          paladin:
+            - Oath of Devotion
+          ranger:
+            - Hunter
+          rogue:
+            - Thief
+          sorcerer:
+            - Draconic Bloodline
+          warlock:
+            - The Fiend
+          wizard:
+            - School of Evocation
         monster:
           - Aboleth
           - Deva

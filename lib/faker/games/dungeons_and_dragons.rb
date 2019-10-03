@@ -31,6 +31,37 @@ module Faker
         end
 
         ##
+        # Produces the name of a character subclass from Dungeons and Dragons.
+        #
+        # @param player_class [String] The name of a class to derive a subclass from.
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.subclass #=> "Champion"
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.subclass(player_class: "rogue")
+        #     #=> "Thief"
+        #
+        # @faker.version next
+        def subclass(legacy_class = NOT_GIVEN, player_class: nil)
+          warn_for_deprecated_arguments do |keywords|
+            keywords << :player_class if legacy_class != NOT_GIVEN
+          end
+
+          classes = translate('faker.games.dungeons_and_dragons.subclass')
+
+          if player_class.nil?
+            player_class = sample(classes.keys).to_s
+          else
+            player_class = player_class.to_s.downcase
+            raise ArgumentError, "Character for quotes can be left blank or #{classes.keys.join(', ')}" unless classes.key?(player_class.to_sym)
+          end
+
+          fetch('games.dungeons_and_dragons.subclass.' + player_class)
+        end
+
+        ##
         # Produces the name of a monster from Dungeons and Dragons.
         #
         # @return [String]

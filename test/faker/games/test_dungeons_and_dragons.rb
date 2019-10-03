@@ -15,6 +15,24 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
     assert @tester.player_class.match(/\w+/)
   end
 
+  # test match for a specific subclass
+  def test_specific_subclass
+    assert @tester.subclass(player_class: 'rogue').match('Thief')
+    assert @tester.subclass(player_class: 'cleric').match('Life Domain')
+    assert @tester.subclass(player_class: 'wizard').match('School of Evocation')
+  end
+
+  # test match for a random subclass
+  def test_random_subclass
+    assert @tester.subclass.match(/\w+/)
+  end
+
+  def test_invalid_subclass
+    assert_raise ArgumentError do
+      @tester.subclass(player_class: 'artificer')
+    end
+  end
+
   def test_monster
     assert @tester.monster.match(/\w+/)
   end
