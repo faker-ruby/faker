@@ -11,6 +11,10 @@ class TestFakerAddress < Test::Unit::TestCase
     assert @tester.city.match(/\w+/)
   end
 
+  def test_city_with_state
+    assert @tester.city(options: { with_state: true }).match(/\w+,\s\w+/)
+  end
+
   def test_street_name
     assert @tester.street_name.match(/\w+\s\w+/)
   end
