@@ -9,6 +9,30 @@ en:
           - Intelligence
           - Wisdom
           - Charisma
+        skill:
+          strength:
+            - Athletics
+          dexterity:
+            - Acrobatics
+            - Sleight of Hand
+            - Stealth
+          intelligence:
+            - Arcana
+            - History
+            - Investigation
+            - Nature
+            - Religion
+          wisdom:
+            - Animal Handling
+            - Insight
+            - Medicine
+            - Perception
+            - Survival
+          charisma:
+            - Deception
+            - Intimidation
+            - Performance
+            - Persuation
         alignment:
           - lawful good
           - neutral good

@@ -18,6 +18,37 @@ module Faker
         end
 
         ##
+        # Produces the name of a skill from Dungeons and Dragons.
+        #
+        # @param ability [String] The name of an ability to derive a skill from.
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.skill #=> "History"
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.subclass(ability: "wisdom")
+        #     #=> "Perception"
+        #
+        # @faker.version next
+        def skill(legacy_ability = NOT_GIVEN, ability: nil)
+          warn_for_deprecated_arguments do |keywords|
+            keywords << :ability if legacy_ability != NOT_GIVEN
+          end
+
+          abilities = translate('faker.games.dungeons_and_dragons.skill')
+
+          if ability.nil?
+            ability = sample(abilities.keys).to_s
+          else
+            ability = ability.to_s.downcase
+            raise ArgumentError, "Ability can be left blank or #{abilities.keys.join(', ')}" unless abilities.key?(ability.to_sym)
+          end
+
+          fetch('games.dungeons_and_dragons.skill.' + ability)
+        end
+
+        ##
         # Produces the name of an alignment from Dungeons and Dragons.
         #
         # @return [String]

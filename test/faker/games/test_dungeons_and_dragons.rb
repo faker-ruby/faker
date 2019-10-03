@@ -11,6 +11,22 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
     assert @tester.ability.match(/\w+/)
   end
 
+  # test match for a specific skill
+  def test_specific_skill
+    assert @tester.skill(ability: 'strength').match('Athletics')
+  end
+
+  # test match for a random skill
+  def test_random_skill
+    assert @tester.skill.match(/\w+/)
+  end
+
+  def test_invalid_skill
+    assert_raise ArgumentError do
+      @tester.skill(ability: 'someinvalidability')
+    end
+  end
+
   def test_alignment
     assert @tester.alignment.match(/\w+/)
   end
