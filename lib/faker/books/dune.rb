@@ -31,6 +31,19 @@ module Faker
         end
 
         ##
+        # Produces the name of a city from Dune
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Books::Dune.city #=> "Arrakeen"
+        #
+        # @faker.version 1.9.3
+        def city
+          fetch('dune.cities')
+        end
+
+        ##
         # Produces the name of a planet from Dune
         #
         # @return [String]
