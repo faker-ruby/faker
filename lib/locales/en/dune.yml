@@ -3,7 +3,7 @@ en:
     dune:
       characters: [ "Paul \"Muad'Dib\" \"Usul\" Atreides", "Jessica Atreides", "Alia Atreides", "Leto Atreides", "Leto II Atreides", "Duncan Idaho", "Shaddam Corrino IV", "Liet-Kynes", "Vladimir Harkonnen", "Irulan", "Feyd-Rautha Rabban", "Gaius Helen Mohiam", "Thufir Hawat", "Chani", "Shadout Mapes", "Ramallo", "Otheym", "Jamis", "Harrah", "Gurney Halleck", "Glossu \"Beast\" Rabban", "Piter De Vries", "Miles Teg", "Hasimir Fenring", "Margot Fenring", "Murbella", "Siona Atreides", "Scytale", "Stilgar", "Wellington Yueh", "Edric", "Ilban Richese", "Dominic Vernius", "Cammar Pilru", "Hwi Noree", "Nayla" ]
       titles: [ "Master of Assassins", "Judge of the Change", "Duke", "Lady", "Reverend Mother", "Sayyadina", "Padishah Emperor", "Earl", "Princess", "Prince", "Premier", "Baron", "Mentat", "Count", "Countess", "Viscount", "Master", "Doctor", "Imperial Planetologist", "Elder", "Face Dancer", "Envoy", "Guild Navigator", "Ambassador", "Fedaykin Commando", "Naib", "Fish Speaker", "Grand Patriarch" ]
-      planets: [ "Arrakis", "Caladan", "Dune", "Geidi Prime", "Ix", "Selusa Secundus", "Kaitain", "Richesse", "Ecaz" ]
+      planets: [ "Arrakis", "Caladan", "Dune", "Geidi Prime", "Ix", "Selusa Secundus", "Kaitain", "Ecaz", "III Delta Kaising", "IV Anbus", "Al Dhanab", "Bela Tegeuse", "Buzzell", "Chapterhouse", "Chusuk", "Corrin", "Gamont", "Gansireed", "Gangishree", "Ginaz", "Grumman", "Hagal", "Harmonthep", "Ipyr", "Junction", "Kolhar", "Lampadas", "Lankiveil", "Lernaeus", "Muritan", "Naraj", "Palma", "Parmentier", "Poritrin",  "Romo", "Rossak", "Sikun", "Synchrony", "Tleilax", "Tupile" ]
       quotes:
         guild_navigator:
           - "The spice must flow"
