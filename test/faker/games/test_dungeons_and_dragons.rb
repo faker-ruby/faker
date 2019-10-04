@@ -69,9 +69,8 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
   end
 
   def test_specific_subrace
-    assert @tester.subrace(race: 'dwarf').match('Hill Dwarf')
-    assert @tester.subrace(race: 'elf').match('High Elf')
-    assert @tester.subrace(race: 'gnome').match('Rock Gnome')
+    assert @tester.subrace(race: 'aasimar').match(/\w+ Aasimar/)
+    assert @tester.subrace(race: 'gnome').match(/\w+ Gnome/)
   end
 
   def test_random_subrace

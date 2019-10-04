@@ -669,12 +669,10 @@ en:
           - Triton
           - Yuan-ti Pureblood
         subrace:
-          dwarf:
-            - Hill Dwarf
-          elf:
-            - High Elf
-          halfling:
-            - lightfoot
+          aasimar:
+            - Protector Aasimar
+            - Scourge Aasimar
+            - Fallen Aasimar
           dragonborn:
             - Black
             - Blue
@@ -686,8 +684,38 @@ en:
             - Red
             - Silver
             - White
+
+          dwarf:
+            - Duergar
+            - Hill Dwarf
+            - Mountain Dwarf
+          elf:
+            - Drow
+            - Eladrin
+            - High Elf
+            - Sea Elf
+            - Shadar-kai
+            - Wood Elf
+          gith:
+            - Githyanki
+            - Githzerai
           gnome:
+            - Deep Gnome
+            - Forest Gnome
             - Rock Gnome
+          halfling:
+            - Lightfoot
+            - Stout
+          tiefling:
+            - Asmodeus
+            - Baalzebul
+            - Dispater
+            - Fierna
+            - Glasya
+            - Levistus
+            - Mammon
+            - Mephistopheles
+            - Zariel
         size:
           - Tiny
           - Small
