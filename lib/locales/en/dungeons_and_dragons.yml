@@ -645,15 +645,29 @@ en:
           - Animated Object (Small)
           - Animated Object (Tiny)
         race:
+          - Aasimar
+          - Bugbear
+          - Dragonborn
           - Dwarf
           - Elf
-          - Halfling
-          - Human
-          - Dragonborn
+          - Firbolg
+          - Gith
           - Gnome
+          - Goblin
+          - Goliath
+          - Halfling
           - Half-Elf
           - Half-Orc
+          - Hobgoblin
+          - Human
+          - Kenku
+          - Kobold
+          - Lizardfolk
+          - Orc
+          - Tabaxi
           - Tiefling
+          - Triton
+          - Yuan-ti Pureblood
         subrace:
           dwarf:
             - Hill Dwarf
