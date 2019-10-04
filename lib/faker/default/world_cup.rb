@@ -3,7 +3,6 @@
 module Faker
   class WorldCup < Base
     class << self
-
       ##
       # Produces a national team name.
       #
@@ -68,7 +67,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::WorldCup.roster #=> "Héctor Cúper"
+      #   Faker::WorldCup.roster #=> "Hector Cuper"
       #
       # @example
       #   Faker::WorldCup.roster(country: 'Spain', type: 'forwards') #=> "Diego Costa"
