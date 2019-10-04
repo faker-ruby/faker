@@ -72,29 +72,97 @@ en:
           - Wizard
         subclass:
           barbarian:
+            - Path of the Ancestral Guardian
+            - Path of the Battlerager
             - Path of the Berserker
+            - Path of the Storm Herald
+            - Path of the Totem Warrior
+            - Path of the Zealot
           bard:
+            - College of Glamour
             - College of Lore
+            - College of Swords
+            - College of Valor
+            - College of Whispers
           cleric:
+            - Arcana Domain
+            - Death Domain
+            - Forge Domain
+            - Grave Domain
+            - Knowledge Domain
             - Life Domain
+            - Light Domain
+            - Nature Domain
+            - Tempest Domain
+            - Trickery Domain
+            - War Domain
           druid:
+            - Circle of Dreams
             - Circle of the Land
+            - Circle of the Moon
+            - Circle of the Shepherd
           fighter:
+            - Arcane Archer
+            - Battlemaster
+            - Cavalier
             - Champion
+            - Eldritch Knight
+            - Purple Dragon Knight
+            - Samurai
           monk:
+            - Way of the Drunken Master
+            - Way of the Four Elements
+            - Way of the Kensei
+            - Way of the Long Death
             - Way of the Open Hand
+            - Way of Shadow
+            - Way of the Sun Soul
           paladin:
+            - Oath of the Ancients
+            - Oath of Conquest
+            - Oath of the Crown
             - Oath of Devotion
+            - Oath of Redemption
+            - Oath of Vengeance
+            - Oathbreaker
           ranger:
+            - Beast Master
+            - Gloom Stalker
+            - Horizon Walker
             - Hunter
+            - Monster Slayer
           rogue:
+            - Arcane Trickster
+            - Assassin
+            - Inquisitive
+            - Mastermind
+            - Scout
+            - Swashbuckler
             - Thief
           sorcerer:
+            - Divine Soul
             - Draconic Bloodline
+            - Shadow Magic
+            - Storm Sorcery
+            - Wild Magic
           warlock:
+            - The Archfey
+            - The Celestial
             - The Fiend
+            - The Great Old One
+            - The Hexblade
+            - The Undying
           wizard:
+            - Bladesinging
+            - School of Abjuration
+            - School of Conjuration
+            - School of Divination
+            - School of Enchantment
             - School of Evocation
+            - School of Illusion
+            - School of Necromancy
+            - School of Transmutation
+            - War Magic
         language:
           - Common
           - Dwarvish

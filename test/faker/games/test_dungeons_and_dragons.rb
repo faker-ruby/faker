@@ -41,9 +41,8 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
 
   # test match for a specific subclass
   def test_specific_subclass
-    assert @tester.subclass(player_class: 'rogue').match('Thief')
-    assert @tester.subclass(player_class: 'cleric').match('Life Domain')
-    assert @tester.subclass(player_class: 'wizard').match('School of Evocation')
+    assert @tester.subclass(player_class: 'bard').match(/College of \w+/)
+    assert @tester.subclass(player_class: 'barbarian').match(/Path of the \w+/)
   end
 
   # test match for a random subclass
