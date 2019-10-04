@@ -181,208 +181,469 @@ en:
           - Sylvan
           - Undercommon
         monster:
+          - Avatar of Death
+          - Giant Fly
+          - Larva
+          - Aarakocra
           - Aboleth
-          - Deva
-          - Planetar
-          - Solar
+          - Abominable Yeti
+          - Acererak Demilich
+          - Acolyte
+          - Adult Black Dragon
+          - Adult Blue Dracolich
+          - Adult Blue Dragon
+          - Adult Brass Dragon
+          - Adult Bronze Dragon
+          - Adult Copper Dragon
+          - Adult Gold Dragon
+          - Adult Green Dragon
+          - Adult Red Dragon
+          - Adult Silver Dragon
+          - Adult White Dragon
+          - Air Elemental
+          - Allosaurus
+          - Ancient Black Dragon
+          - Ancient Blue Dragon
+          - Ancient Brass Dragon
+          - Ancient Bronze Dragon
+          - Ancient Copper Dragon
+          - Ancient Gold Dragon
+          - Ancient Green Dragon
+          - Ancient Red Dragon
+          - Ancient Silver Dragon
+          - Ancient White Dragon
+          - Androsphinx
           - Animated Armor
-          - Flying Sword
-          - Rug of Smothering
           - Ankheg
+          - Ankylosaurus
+          - Ape
+          - Arcanaloth
+          - Archmage
+          - Assassin
+          - Awakened Shrub
+          - Awakened Tree
+          - Axe Beak
           - Azer
+          - Baboon
+          - Badger
+          - Balor
+          - Bandit
+          - Bandit Captain
+          - Banshee
+          - Barbed Devil
+          - Barlgura
           - Basilisk
+          - Bat
+          - Bearded Devil
           - Behir
+          - Beholder
+          - Beholder Zombie
+          - Berserker
+          - Black Bear
+          - Black Dragon Wyrmling
+          - Black Pudding
+          - Blink Dog
+          - Blood Hawk
+          - Blue Dragon Wyrmling
+          - Blue Slaad
+          - Boar
+          - Bone Devil
+          - Bone Naga (Guardian)
+          - Bone Naga (Spirit)
+          - Brass Dragon Wyrmling
+          - Bronze Dragon Wyrmling
+          - Brown Bear
           - Bugbear
+          - Bugbear Chief
           - Bulette
+          - Bullywug
+          - Cambion
+          - Camel
+          - Carrion Crawler
+          - Cat
+          - Cave Bear
           - Centaur
+          - Chain Devil
+          - Chasme
           - Chimera
           - Chuul
+          - Clay Golem
           - Cloaker
+          - Cloud Giant
           - Cockatrice
-          - Couatl
-          - Darkmantle
-          - Balor
-          - Dretch
-          - Glabrezu
-          - Hezrou
-          - Marilith
-          - Nalfeshnee
-          - Quasit
-          - Vrock
-          - Barbed Devil
-          - Bearded Devil
-          - Bone Devil
-          - Chain Devil
-          - Erinyes
-          - Horned Devil
-          - Ice Devil
-          - Imp
-          - Lemure
-          - Pit Fiend
-          - Plesiosaurus
-          - Triceratops
-          - Tyrannosaurus rex
-          - Doppelganger
-          - Ancient Black Dragon
-          - Adult Black Dragon
-          - Young Black Dragon
-          - Black Dragon Wyrmling
-          - Ancient Blue Dragon
-          - Adult Blue Dragon
-          - Young Blue Dragon
-          - Blue Dragon Wyrmling
-          - Ancient Green Dragon
-          - Adult Green Dragon
-          - Young Green Dragon
-          - Green Dragon Wyrmling
-          - Ancient Red Dragon
-          - Adult Red Dragon
-          - Young Red Dragon
-          - Red Dragon Wyrmling
-          - Ancient White Dragon
-          - Adult White Dragon
-          - Young White Dragon
-          - White Dragon Wyrmling
-          - Ancient Brass Dragon
-          - Adult Brass Dragon
-          - Young Brass Dragon
-          - Brass Dragon Wyrmling
-          - Ancient Bronze Dragon
-          - Adult Bronze Dragon
-          - Young Bronze Dragon
-          - Bronze Dragon Wyrmling
-          - Ancient Copper Dragon
-          - Adult Copper Dragon
-          - Young Copper Dragon
+          - Commoner
+          - Constrictor Snake
           - Copper Dragon Wyrmling
-          - Ancient Gold Dragon
-          - Adult Gold Dragon
-          - Young Gold Dragon
-          - Gold Dragon Wyrmling
-          - Ancient Silver Dragon
-          - Adult Silver Dragon
-          - Young Silver Dragon
-          - Silver Dragon Wyrmling
+          - Couatl
+          - Crab
+          - Crawling Claw
+          - Crocodile
+          - Cult Fanatic
+          - Cultist
+          - Cyclops
+          - Dao
+          - Darkmantle
+          - Death Dog
+          - Death Knight
+          - Death Slaad
+          - Death Tyrant
+          - Deep Gnome (Svirfneblin)
+          - Deer
+          - Demilich
+          - Deva
+          - Dire Wolf
+          - Displacer Beast
+          - Djinni
+          - Doppelganger
+          - Draft Horse
           - Dragon Turtle
+          - Dretch
           - Drider
+          - Drow
+          - Drow Elite Warrior
+          - Drow Mage
+          - Drow Priestess of Lolth
+          - Druid
           - Dryad
           - Duergar
-          - Air Elemental
+          - Duodrone
+          - Dust Mephit
+          - Eagle
           - Earth Elemental
-          - Fire Elemental
-          - Water Elemental
-          - Drow
+          - Efreeti
+          - Elephant
+          - Elk
+          - Empyrean
+          - Erinyes
           - Ettercap
           - Ettin
-          - Shrieker
-          - Violet Fungus
-          - Gargoyle
-          - Djinni
-          - Efreeti
-          - Ghost
-          - Ghast
-          - Ghoul
-          - Cloud Giant
+          - Faerie Dragon (Blue)
+          - Faerie Dragon (Green)
+          - Faerie Dragon (Indigo)
+          - Faerie Dragon (Orange)
+          - Faerie Dragon (Red)
+          - Faerie Dragon (Violet)
+          - Faerie Dragon (Yellow)
+          - Fire Elemental
           - Fire Giant
-          - Frost Giant
-          - Hill Giant
-          - Stone Giant
-          - Storm Giant
-          - Gibbering Mouther
-          - Gnoll
-          - Deep Gnome (Svirfneblin)
-          - Goblin
-          - Clay Golem
+          - Fire Snake
+          - Flameskull
           - Flesh Golem
-          - Iron Golem
-          - Stone Golem
+          - Flumph
+          - Flying Snake
+          - Flying Sword
+          - Fomorian
+          - Frog
+          - Frost Giant
+          - Galeb Duhr
+          - Gargoyle
+          - Gas Spore
+          - Gelatinous Cube
+          - Ghast
+          - Ghost
+          - Ghoul
+          - Giant Ape
+          - Giant Badger
+          - Giant Bat
+          - Giant Boar
+          - Giant Centipede
+          - Giant Constrictor Snake
+          - Giant Crab
+          - Giant Crocodile
+          - Giant Eagle
+          - Giant Elk
+          - Giant Fire Beetle
+          - Giant Frog
+          - Giant Goat
+          - Giant Hyena
+          - Giant Lizard
+          - Giant Octopus
+          - Giant Owl
+          - Giant Poisonous Snake
+          - Giant Rat
+          - Giant Rat (Diseased)
+          - Giant Scorpion
+          - Giant Sea Horse
+          - Giant Shark
+          - Giant Spider
+          - Giant Toad
+          - Giant Vulture
+          - Giant Wasp
+          - Giant Weasel
+          - Giant Wolf Spider
+          - Gibbering Mouther
+          - Githyanki Knight
+          - Githyanki Warrior
+          - Githzerai Monk
+          - Githzerai Zerth
+          - Glabrezu
+          - Gladiator
+          - Gnoll
+          - Gnoll Fang of Yeenoghu
+          - Gnoll Pack Lord
+          - Goat
+          - Goblin
+          - Goblin Boss
+          - Gold Dragon Wyrmling
           - Gorgon
+          - Goristro
+          - Gray Ooze
+          - Gray Ooze (Psychic)
+          - Gray Slaad
+          - Green Dragon Wyrmling
+          - Green Hag
+          - Green Slaad
+          - Grell
           - Grick
+          - Grick Alpha
           - Griffon
           - Grimlock
-          - Green Hag
-          - Night Hag
-          - Sea Hag
+          - Guard
+          - Guardian Naga
+          - Gynosphinx
+          - Half-Ogre (Ogrillon)
           - Half-Red Dragon Veteran
           - Harpy
-          - Hell hound
+          - Hawk
+          - Hell Hound
+          - Helmed Horror
+          - Hezrou
+          - Hill Giant
           - Hippogriff
           - Hobgoblin
+          - Hobgoblin Captain
+          - Hobgoblin Warlord
           - Homunculus
+          - Hook Horror
+          - Horned Devil
+          - Hunter Shark
           - Hydra
+          - Hyena
+          - Ice Devil
+          - Ice Devil Spear
+          - Ice Mephit
+          - Imp
+          - Incubus
+          - Intellect Devourer
           - Invisible Stalker
+          - Iron Golem
+          - Jackal
+          - Jackalwere
+          - Kenku
+          - Killer Whale
+          - Knight
           - Kobold
           - Kraken
+          - Kuo-toa
+          - Kuo-toa Archpriest
+          - Kuo-toa Monitor
+          - Kuo-toa Whip
           - Lamia
+          - Lemure
           - Lich
+          - Lion
+          - Lizard
+          - Lizard King
+          - Lizard Queen
           - Lizardfolk
+          - Lizardfolk Shaman
+          - Mage
+          - Magma Mephit
+          - Magmin
+          - Mammoth
+          - Manes
+          - Manticore
+          - Marid
+          - Marilith
+          - Mastiff
+          - Medusa
+          - Merfolk
+          - Merrow
+          - Mezzoloth
+          - Mimic
+          - Mind Flayer
+          - Mind Flayer Arcanist
+          - Minotaur
+          - Minotaur Skeleton
+          - Monodrone
+          - Mud Mephit
+          - Mule
+          - Mummy
+          - Mummy Lord
+          - Myconid Adult
+          - Myconid Sovereign
+          - Myconid Sprout
+          - Nalfeshnee
+          - Needle Blight
+          - Night Hag
+          - Nightmare
+          - Noble
+          - Nothic
+          - Nycaloth
+          - Ochre Jelly
+          - Octopus
+          - Ogre
+          - Ogre Zombie
+          - Oni
+          - Orc
+          - Orc Eye of Gruumsh
+          - Orc War Chief
+          - Orog
+          - Otyugh
+          - Owl
+          - Owlbear
+          - Panther
+          - Pegasus
+          - Pentadrone
+          - Peryton
+          - Phase Spider
+          - Piercer
+          - Pit Fiend
+          - Pixie
+          - Planetar
+          - Plesiosaurus
+          - Poisonous Snake
+          - Polar Bear
+          - Poltergeist
+          - Pony
+          - Priest
+          - Pseudodragon
+          - Pteranodon
+          - Purple Worm
+          - Quadrone
+          - Quaggoth
+          - Quaggoth Spore Servant
+          - Quaggoth Thonot
+          - Quasit
+          - Quipper
+          - Rakshasa
+          - Rat
+          - Raven
+          - Red Dragon Wyrmling
+          - Red Slaad
+          - Reef Shark
+          - Remorhaz
+          - Revenant
+          - Rhinoceros
+          - Riding Horse
+          - Roc
+          - Roper
+          - Rug of Smothering
+          - Rust Monster
+          - Saber-Toothed Tiger
+          - Sahuagin
+          - Sahuagin Baron
+          - Sahuagin Priestess
+          - Salamander
+          - Satyr
+          - Scarecrow
+          - Scorpion
+          - Scout
+          - Sea Hag
+          - Sea Horse
+          - Shadow
+          - Shadow Demon
+          - Shambling Mound
+          - Shield Guardian
+          - Shrieker
+          - Silver Dragon Wyrmling
+          - Skeleton
+          - Slaad Tadpole
+          - Smoke Mephit
+          - Solar
+          - Spectator
+          - Specter
+          - Spider
+          - Spined Devil
+          - Spirit Naga
+          - Sprite
+          - Spy
+          - Steam Mephit
+          - Stirge
+          - Stone Giant
+          - Stone Golem
+          - Storm Giant
+          - Succubus
+          - Swarm of Bats
+          - Swarm of Beetles
+          - Swarm of Centipedes
+          - Swarm of Insects
+          - Swarm of Poisonous Snakes
+          - Swarm of Quippers
+          - Swarm of Rats
+          - Swarm of Ravens
+          - Swarm of Spiders
+          - Swarm of Wasps
+          - Tarrasque
+          - Thri-kreen
+          - Thri-kreen (Psionic)
+          - Thug
+          - Tiger
+          - Treant
+          - Tribal Warrior
+          - Triceratops
+          - Tridrone
+          - Troglodyte
+          - Troll
+          - Twig Blight
+          - Tyrannosaurus Rex
+          - Ultroloth
+          - Umber Hulk
+          - Unicorn
+          - Vampire
+          - Vampire Spawn
+          - Vampire Spellcaster
+          - Vampire Warrior
+          - Veteran
+          - Vine Blight
+          - Violet Fungus
+          - Vrock
+          - Vulture
+          - Warhorse
+          - Warhorse Skeleton
+          - Water Elemental
+          - Water Weird
+          - Weasel
           - Werebear
           - Wereboar
           - Wererat
           - Weretiger
           - Werewolf
-          - Magmin
-          - Manticore
-          - Medusa
-          - Dust Mephit
-          - Ice Mephit
-          - Magma Mephit
-          - Steam Mephit
-          - Merfolk
-          - Merrow
-          - Mimic
-          - Minotaur
-          - Mummy
-          - Mummy lord
-          - Guardian Naga
-          - Spirit Naga
-          - Nightmare
-          - Ogre
-          - Oni
-          - Black Pudding
-          - Gelatinous Cube
-          - Gray Ooze
-          - Ochre Jelly
-          - Orc
-          - Otyugh
-          - Owlbear
-          - Pegasus
-          - Pseudodragon
-          - Purple Worm
-          - Rakshasa
-          - Remorhaz
-          - Roc
-          - Roper
-          - Rust Monster
-          - Sahuagin
-          - Salamander
-          - Satyr
-          - Shadow
-          - Shambling Mound
-          - Shield Guardian
-          - Skeleton
-          - Minotaur Skeleton
-          - Warhorse Skeleton
-          - Specter
-          - Androsphinx
-          - Gynosphinx
-          - Sprite
-          - Stirge
-          - Succubus
-          - Incubus
-          - Tarrasque
-          - Treant
-          - Troll
-          - Unicorn
-          - Vampire
-          - Vampire spawn
+          - White Dragon Wyrmling
           - Wight
           - Will-o'-Wisp
+          - Winged Kobold
+          - Winter Wolf
+          - Wolf
+          - Worg
           - Wraith
           - Wyvern
           - Xorn
+          - Yeti
+          - Yochlol
+          - Young Black Dragon
+          - Young Blue Dragon
+          - Young Brass Dragon
+          - Young Bronze Dragon
+          - Young Copper Dragon
+          - Young Gold Dragon
+          - Young Green Dragon
+          - Young Red Dragon
+          - Young Red Shadow Dragon
+          - Young Remorhaz
+          - Young Silver Dragon
+          - Young White Dragon
+          - Yuan-ti Abomination
+          - Yuan-ti Malison (Type 1)
+          - Yuan-ti Malison (Type 2)
+          - Yuan-ti Malison (Type 3)
+          - Yuan-ti Pureblood
           - Zombie
-          - Ogre Zombie
+          - Animated Object (Huge)
+          - Animated Object (Large)
+          - Animated Object (Medium)
+          - Animated Object (Small)
+          - Animated Object (Tiny)
         race:
           - Dwarf
           - Elf
