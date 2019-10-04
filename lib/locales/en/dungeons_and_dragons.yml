@@ -724,7 +724,6 @@ en:
           - Huge
           - Gargantuan
         spell:
-          - Melf's Acid Arrow
           - Acid Splash
           - Aid
           - Alarm
@@ -738,22 +737,29 @@ en:
           - Antimagic Field
           - Antipathy/Sympathy
           - Arcane Eye
-          - Arcane Hand
+          - Arcane Gate
           - Arcane Lock
-          - Arcane Sword
-          - Nystul's Magic Aura
+          - Armor of Agathys
+          - Arms of Hadar
           - Astral Projection
           - Augury
+          - Aura of Life
+          - Aura of Purity
+          - Aura of Vitality
           - Awaken
           - Bane
+          - Banishing Smite
           - Banishment
           - Barkskin
           - Beacon of Hope
+          - Beast Sense
           - Bestow Curse
-          - Evard's Black Tentacles
+          - Bigby's Hand
           - Blade Barrier
+          - Blade Ward
           - Bless
           - Blight
+          - Blinding Smite
           - Blindness/Deafness
           - Blink
           - Blur
@@ -764,23 +770,29 @@ en:
           - Chain Lightning
           - Charm Person
           - Chill Touch
+          - Chromatic Orb
           - Circle of Death
+          - Circle of Power
           - Clairvoyance
           - Clone
+          - Cloud of Daggers
           - Cloudkill
           - Color Spray
           - Command
           - Commune
           - Commune with Nature
+          - Compelled Duel
           - Comprehend Languages
           - Compulsion
           - Cone of Cold
           - Confusion
           - Conjure Animals
+          - Conjure Barrage
           - Conjure Celestial
           - Conjure Elemental
           - Conjure Fey
           - Conjure Minor Elementals
+          - Conjure Volley
           - Conjure Woodland Beings
           - Contact Other Plane
           - Contagion
@@ -788,11 +800,14 @@ en:
           - Continual Flame
           - Control Water
           - Control Weather
+          - Cordon of Arrows
           - Counterspell
-          - Create Food And Water
-          - Create or Destroy Water
+          - Create Food and Water
           - Create Undead
+          - Create or Destroy Water
           - Creation
+          - Crown of Madness
+          - Crusader's Mantle
           - Cure Wounds
           - Dancing Lights
           - Darkness
@@ -801,6 +816,7 @@ en:
           - Death Ward
           - Delayed Blast Fireball
           - Demiplane
+          - Destructive Wave
           - Detect Evil and Good
           - Detect Magic
           - Detect Poison and Disease
@@ -810,51 +826,55 @@ en:
           - Disintegrate
           - Dispel Evil and Good
           - Dispel Magic
+          - Dissonant Whispers
           - Divination
           - Divine Favor
           - Divine Word
           - Dominate Beast
           - Dominate Monster
           - Dominate Person
+          - Drawmij's Instant Summons
           - Dream
           - Druidcraft
           - Earthquake
           - Eldritch Blast
+          - Elemental Weapon
           - Enhance Ability
           - Enlarge/Reduce
+          - Ensnaring Strike
           - Entangle
           - Enthrall
           - Etherealness
+          - Evard's Black Tentacles
           - Expeditious Retreat
           - Eyebite
           - Fabricate
           - Faerie Fire
-          - Mordenkainen's Faithful Hound
           - False Life
           - Fear
           - Feather Fall
           - Feeblemind
+          - Feign Death
           - Find Familiar
           - Find Steed
-          - Find the Path
           - Find Traps
+          - Find the Path
           - Finger of Death
-          - Fireball
           - Fire Bolt
           - Fire Shield
           - Fire Storm
+          - Fireball
           - Flame Blade
           - Flame Strike
           - Flaming Sphere
           - Flesh to Stone
-          - Tenser's Floating Disk
           - Fly
           - Fog Cloud
           - Forbiddance
           - Forcecage
           - Foresight
           - Freedom of Movement
-          - Otiluke's Freezing Sphere
+          - Friends
           - Gaseous Form
           - Gate
           - Geas
@@ -864,6 +884,7 @@ en:
           - Globe of Invulnerability
           - Glyph of Warding
           - Goodberry
+          - Grasping Vine
           - Grease
           - Greater Invisibility
           - Greater Restoration
@@ -872,6 +893,7 @@ en:
           - Guidance
           - Guiding Bolt
           - Gust of Wind
+          - Hail of Thorns
           - Hallow
           - Hallucinatory Terrain
           - Harm
@@ -882,10 +904,11 @@ en:
           - Hellish Rebuke
           - Heroes' Feast
           - Heroism
-          - Tasha's Hideous Laughter
+          - Hex
           - Hold Monster
           - Hold Person
           - Holy Aura
+          - Hunger of Hadar
           - Hunter's Mark
           - Hypnotic Pattern
           - Ice Storm
@@ -895,15 +918,16 @@ en:
           - Incendiary Cloud
           - Inflict Wounds
           - Insect Plague
-          - Drawmij's Instant Summons
           - Invisibility
-          - Otto's Irresistible Dance
           - Jump
           - Knock
           - Legend Lore
+          - Leomund's Secret Chest
+          - Leomund's Tiny Hut
           - Lesser Restoration
           - Levitate
           - Light
+          - Lightning Arrow
           - Lightning Bolt
           - Locate Animals or Plants
           - Locate Creature
@@ -916,7 +940,6 @@ en:
           - Magic Missile
           - Magic Mouth
           - Magic Weapon
-          - Mordenkainen's Magnificent Mansion
           - Major Image
           - Mass Cure Wounds
           - Mass Heal
@@ -924,6 +947,7 @@ en:
           - Mass Suggestion
           - Maze
           - Meld into Stone
+          - Melf's Acid Arrow
           - Mending
           - Message
           - Meteor Swarm
@@ -935,10 +959,19 @@ en:
           - Misty Step
           - Modify Memory
           - Moonbeam
+          - Mordenkainen's Faithful Hound
+          - Mordenkainen's Magnificent Mansion
+          - Mordenkainen's Private Sanctum
+          - Mordenkainen's Sword
           - Move Earth
           - Nondetection
-          - Pass Without Trace
+          - Nystul's Magic Aura
+          - Otiluke's Freezing Sphere
+          - Otiluke's Resilient Sphere
+          - Otto's Irresistible Dance
+          - Pass without Trace
           - Passwall
+          - Phantasmal Force
           - Phantasmal Killer
           - Phantom Steed
           - Planar Ally
@@ -947,27 +980,28 @@ en:
           - Plant Growth
           - Poison Spray
           - Polymorph
+          - Power Word Heal
           - Power Word Kill
           - Power Word Stun
           - Prayer of Healing
           - Prestidigitation
           - Prismatic Spray
           - Prismatic Wall
-          - Mordenkainen's Private Sanctum
           - Produce Flame
           - Programmed Illusion
           - Project Image
-          - Protection From Energy
-          - Protection From Evil And Good
-          - Protection From Poison
-          - Purify Food And Drink
+          - Protection from Energy
+          - Protection from Evil and Good
+          - Protection from Poison
+          - Purify Food and Drink
           - Raise Dead
+          - Rary's Telepathic Bond
           - Ray of Enfeeblement
           - Ray of Frost
+          - Ray of Sickness
           - Regenerate
           - Reincarnate
           - Remove Curse
-          - Otiluke's Resilient Sphere
           - Resistance
           - Resurrection
           - Reverse Gravity
@@ -977,7 +1011,7 @@ en:
           - Sanctuary
           - Scorching Ray
           - Scrying
-          - Leomund's Secret Chest
+          - Searing Smite
           - See Invisibility
           - Seeming
           - Sending
@@ -1002,6 +1036,7 @@ en:
           - Spike Growth
           - Spirit Guardians
           - Spiritual Weapon
+          - Staggering Smite
           - Stinking Cloud
           - Stone Shape
           - Stoneskin
@@ -1009,22 +1044,27 @@ en:
           - Suggestion
           - Sunbeam
           - Sunburst
+          - Swift Quiver
           - Symbol
+          - Tasha's Hideous Laughter
           - Telekinesis
-          - Rary's Telepathic Bond
+          - Telepathy
           - Teleport
           - Teleportation Circle
+          - Tenser's Floating Disk
           - Thaumaturgy
+          - Thorn Whip
+          - Thunderous Smite
           - Thunderwave
           - Time Stop
-          - Leomund's Tiny Hut
           - Tongues
-          - Transport Via Plants
+          - Transport via Plants
           - Tree Stride
           - True Polymorph
           - True Resurrection
           - True Seeing
           - True Strike
+          - Tsunami
           - Unseen Servant
           - Vampiric Touch
           - Vicious Mockery
@@ -1041,7 +1081,9 @@ en:
           - Wind Walk
           - Wind Wall
           - Wish
+          - Witch Bolt
           - Word of Recall
+          - Wrathful Smite
           - Zone of Truth
         magic_school:
           - Abjuration
