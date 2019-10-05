@@ -713,13 +713,6 @@ en:
             - Mammon
             - Mephistopheles
             - Zariel
-        size:
-          - Tiny
-          - Small
-          - Medium
-          - Large
-          - Huge
-          - Gargantuan
         spell:
           - Acid Splash
           - Aid
