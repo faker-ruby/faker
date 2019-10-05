@@ -30,7 +30,7 @@ module Faker
       end
 
       ##
-      # Produces a stadium name hosting the world cup match.
+      # Produces the name of a stadium that has hosted a World Cup match.
       #
       # @return [String]
       #
