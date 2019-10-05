@@ -98,4 +98,8 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
   def test_weapon
     assert @tester.weapon.match(/\w+/)
   end
+
+  def test_magic_item
+    assert @tester.magic_item.match(/\w+/)
+  end
 end

@@ -239,6 +239,19 @@ module Faker
         def weapon
           fetch('games.dungeons_and_dragons.weapon')
         end
+
+        ##
+        # Produces the name of a magic item from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DungeonsAndDragons.magic_item #=> "Deck of Many Things"
+        #
+        # @faker.version next
+        def magic_item
+          fetch('games.dungeons_and_dragons.magic_item')
+        end
       end
     end
   end
