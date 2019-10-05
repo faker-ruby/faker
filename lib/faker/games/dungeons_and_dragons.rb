@@ -27,7 +27,7 @@ module Faker
         #   Faker::Games::DungeonsAndDragons.skill #=> "History"
         #
         # @example
-        #   Faker::Games::DungeonsAndDragons.subclass(ability: "wisdom")
+        #   Faker::Games::DungeonsAndDragons.skill(ability: "wisdom")
         #     #=> "Perception"
         #
         # @faker.version next
