@@ -11,7 +11,7 @@ module Faker
       # @example
       #   Faker::WorldCup.team #=> "Iran"
       #
-      # @faker.version next
+      # @faker.version 1.9.0
       def team
         fetch('world_cup.teams')
       end
