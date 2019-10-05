@@ -86,7 +86,6 @@ en:
             - College of Whispers
           cleric:
             - Arcana Domain
-            - Death Domain
             - Forge Domain
             - Grave Domain
             - Knowledge Domain
@@ -124,7 +123,6 @@ en:
             - Oath of Devotion
             - Oath of Redemption
             - Oath of Vengeance
-            - Oathbreaker
           ranger:
             - Beast Master
             - Gloom Stalker
@@ -684,7 +682,6 @@ en:
             - Red
             - Silver
             - White
-
           dwarf:
             - Duergar
             - Hill Dwarf
