@@ -189,19 +189,6 @@ module Faker
         end
 
         ##
-        # Produces the size of a creature from Dungeons and Dragons.
-        #
-        # @return [String]
-        #
-        # @example
-        #   Faker::Games::DungeonsAndDragons.size #=> "Large"
-        #
-        # @faker.version next
-        def size
-          fetch('games.dungeons_and_dragons.size')
-        end
-
-        ##
         # Produces the name of a spell from Dungeons and Dragons.
         #
         # @return [String]

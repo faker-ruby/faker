@@ -83,10 +83,6 @@ class TestFakerDungeonsAndDragons < Test::Unit::TestCase
     end
   end
 
-  def test_size
-    assert @tester.size.match(/\w+/)
-  end
-
   def test_spell
     assert @tester.spell.match(/\w+/)
   end
