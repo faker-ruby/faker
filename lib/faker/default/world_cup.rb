@@ -17,7 +17,7 @@ module Faker
       end
 
       ##
-      # Produces a city name hosting the world cup match.
+      # Produces a city name hosting the World Cup match.
       #
       # @return [String]
       #
