@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.metadata['documentation_uri'] = 'https://rubydoc.info/github/faker-ruby/faker/master'
   spec.metadata['yard.run'] = 'yri'
 
-  spec.add_dependency('i18n', '~> 1.6.0')
+  spec.add_dependency('i18n', '>= 1.6', '< 1.8')
 
   spec.add_development_dependency('minitest', '5.12.2')
   spec.add_development_dependency('pry', '0.12.2')
