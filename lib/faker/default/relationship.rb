@@ -43,7 +43,7 @@ module Faker
       # @example
       #   Faker::Relationship.in_law #=> "Brother-in-law"
       #
-      # @faker.version next
+      # @faker.version 1.9.2
       def in_law
         fetch('relationship.in_law')
       end
@@ -56,7 +56,7 @@ module Faker
       # @example
       #   Faker::Relationship.spouse #=> "Husband"
       #
-      # @faker.version next
+      # @faker.version 1.9.2
       def spouse
         fetch('relationship.spouse')
       end
@@ -69,7 +69,7 @@ module Faker
       # @example
       #   Faker::Relationship.parent #=> "Father"
       #
-      # @faker.version next
+      # @faker.version 1.9.2
       def parent
         fetch('relationship.parent')
       end
@@ -82,7 +82,7 @@ module Faker
       # @example
       #   Faker::Relationship.sibling #=> "Sister"
       #
-      # @faker.version next
+      # @faker.version 1.9.2
       def sibling
         fetch('relationship.sibling')
       end
