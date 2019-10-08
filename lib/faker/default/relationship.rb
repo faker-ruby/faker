@@ -36,7 +36,7 @@ module Faker
       end
 
       ##
-      # Produces a random in-law relationship .
+      # Produces a random in-law relationship.
       #
       # @return [String]
       #
