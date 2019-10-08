@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Relationship.familial #=> "Grandfather"
       #
-      # @faker.version next
+      # @faker.version 1.9.2
       def familial(legacy_connection = NOT_GIVEN, connection: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :connection if legacy_connection != NOT_GIVEN
