@@ -133,6 +133,30 @@ module Faker
         between(from: from, to: to).to_date
       end
 
+      ##
+      # Produces a date in the year and/or month specified.
+      #
+      # @param month [Integer] represents the month of the date
+      # @param year [Integer] represents the year of the date
+      # @return [Date]
+      #
+      # @example
+      #   Faker::Date.in_date_period #=> #<Date: 2019-09-01>
+      #
+      # @example
+      #   Faker::Date.in_date_period(year: 2018, month: 2) #=> #<Date: 2018-02-26>
+      #
+      # @example
+      #   Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
+      #
+      # @faker.version next
+      def in_date_period(month: nil, year: ::Date.today.year)
+        from = ::Date.new(year, month || 1, 1)
+        to = ::Date.new(year, month || 12, ::Date.civil(year, month || 12, -1).day)
+
+        between(from: from, to: to).to_date
+      end
+
       private
 
       def birthday_date(date, age)
