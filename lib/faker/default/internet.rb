@@ -107,6 +107,7 @@ module Faker
         end
 
         min_alpha = mix_case ? 2 : 0
+        min_alpha = mix_case ? [min_length, 2].min : 0
         temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
         diff_length = max_length - min_length
 
