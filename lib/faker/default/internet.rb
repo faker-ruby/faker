@@ -108,7 +108,6 @@ module Faker
           keywords << :special_characters if legacy_special_characters != NOT_GIVEN
         end
 
-        min_length = max_length if max_length < min_length
         min_alpha = mix_case ? [min_length, 2].min : 0
         temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
         diff_length = max_length - min_length
