@@ -90,6 +90,8 @@ module Faker
       # @example
       #   Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
       # @example
+      #   Faker::Internet.password(max_length: 3) #=> "aB2"
+      # @example
       #   Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
       # @example
       #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
