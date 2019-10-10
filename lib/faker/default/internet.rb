@@ -65,11 +65,11 @@ module Faker
           end
 
           sample([
-            Char.prepare(Name.first_name),
-            [Name.first_name, Name.last_name].map do |name|
-              Char.prepare(name)
-            end.join(sample(separators))
-          ])
+                   Char.prepare(Name.first_name),
+                   [Name.first_name, Name.last_name].map do |name|
+                     Char.prepare(name)
+                   end.join(sample(separators))
+                 ])
         end
       end
 
