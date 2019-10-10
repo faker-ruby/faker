@@ -26,7 +26,11 @@ module Faker
         template.gsub('L', luhn_digit.to_s)
       end
 
-      def vat_number(country = 'BR')
+      def vat_number(legacy_country = NOT_GIVEN, country: 'BR')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :country if legacy_country != NOT_GIVEN
+        end
+
         numerify(fetch("finance.vat_number.#{country}"))
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find vat number for #{country}"

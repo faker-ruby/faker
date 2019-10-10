@@ -44,7 +44,7 @@ module Faker
       end
 
       def vat_number
-        Faker::Finance.vat_number('ZA')
+        Faker::Finance.vat_number(country: 'ZA')
       end
     end
   end

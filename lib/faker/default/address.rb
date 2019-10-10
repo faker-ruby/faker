@@ -5,7 +5,11 @@ module Faker
     flexible :address
 
     class << self
-      def city(options = {})
+      def city(legacy_options = NOT_GIVEN, options: {})
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :options if legacy_options != NOT_GIVEN
+        end
+
         parse(options[:with_state] ? 'address.city_with_state' : 'address.city')
       end
 
@@ -13,7 +17,11 @@ module Faker
         parse('address.street_name')
       end
 
-      def street_address(include_secondary = false)
+      def street_address(legacy_include_secondary = NOT_GIVEN, include_secondary: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_secondary if legacy_include_secondary != NOT_GIVEN
+        end
+
         numerify(parse('address.street_address') + (include_secondary ? ' ' + secondary_address : ''))
       end
 
@@ -29,7 +37,11 @@ module Faker
         parse('address.community')
       end
 
-      def zip_code(state_abbreviation = '')
+      def zip_code(legacy_state_abbreviation = NOT_GIVEN, state_abbreviation: '')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :state_abbreviation if legacy_state_abbreviation != NOT_GIVEN
+        end
+
         if state_abbreviation.empty?
           letterified_string = letterify(fetch('address.postcode'))
           return numerify(letterified_string, leading_zero: true)
@@ -71,11 +83,19 @@ module Faker
         fetch('address.country')
       end
 
-      def country_by_code(code: 'US')
+      def country_by_code(legacy_code = NOT_GIVEN, code: 'US')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :code if legacy_code != NOT_GIVEN
+        end
+
         fetch('address.country_by_code.' + code)
       end
 
-      def country_name_to_code(name: 'united_states')
+      def country_name_to_code(legacy_name = NOT_GIVEN, name: 'united_states')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+        end
+
         fetch('address.country_by_name.' + name)
       end
 

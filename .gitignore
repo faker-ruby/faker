@@ -23,3 +23,7 @@ coverage/*
 # Ignore rvm and rbenv files
 .ruby-version
 .ruby-gemset
+
+# Ignore YARD metadata and documentation.
+.yardoc/
+yard_docs/

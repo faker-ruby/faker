@@ -549,6 +549,45 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal custom_uid, extra_raw_info[:id]
   end
 
+  def test_omniauth_apple
+    auth            = @tester.apple
+    info            = auth[:info]
+    credentials     = auth[:credentials]
+    extra           = auth[:extra]
+    raw_info        = extra[:raw_info]
+    first_name      = info[:first_name].downcase
+    last_name       = info[:last_name].downcase
+
+    assert_equal 'apple', auth[:provider]
+    assert_instance_of String, auth[:uid]
+    assert_equal 44, auth[:uid].length
+    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert_equal auth[:uid], info[:sub]
+    assert_instance_of String, info[:first_name]
+    assert_instance_of String, info[:last_name]
+    assert_instance_of String, credentials[:token]
+    assert_instance_of String, credentials[:refresh_token]
+
+    if RUBY_VERSION < '2.4.0'
+      assert_instance_of Fixnum, credentials[:expires_at]
+      assert_instance_of Fixnum, raw_info[:exp]
+      assert_instance_of Fixnum, raw_info[:iat]
+      assert_instance_of Fixnum, raw_info[:auth_time]
+    else
+      assert_instance_of Integer, credentials[:expires_at]
+      assert_instance_of Integer, raw_info[:exp]
+      assert_instance_of Integer, raw_info[:iat]
+      assert_instance_of Integer, raw_info[:auth_time]
+    end
+
+    assert_equal 'https://appleid.apple.com', raw_info[:iss]
+    assert_instance_of String, raw_info[:aud]
+    assert_equal auth[:uid], raw_info[:sub]
+    assert_instance_of String, raw_info[:at_hash]
+    assert_equal info[:email], raw_info[:email]
+    assert raw_info[:email_verified]
+  end
+
   def word_count(string)
     string.split(' ').length
   end

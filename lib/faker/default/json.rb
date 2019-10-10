@@ -3,17 +3,34 @@ module Faker
     require 'json'
 
     class << self
-      def shallow_json(width = 3, options = { key: 'Name.first_name', value: 'Name.first_name' })
-        options[:key] = options[:key].prepend('Faker::')
-        options[:value] = options[:value].prepend('Faker::')
+      def shallow_json(legacy_width = NOT_GIVEN, legacy_options = NOT_GIVEN, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :width if legacy_width != NOT_GIVEN
+          keywords << :options if legacy_options != NOT_GIVEN
+        end
+
+        options[:key] = 'Faker::' + options[:key]
+        options[:value] = 'Faker::' + options[:value]
 
         hash = build_shallow_hash(width, options)
         JSON.generate(hash)
       end
 
-      def add_depth_to_json(json = shallow_json, width = 3, options = { key: 'Name.first_name', value: 'Name.first_name' })
-        options[:key] = options[:key].prepend('Faker::')
-        options[:value] = options[:value].prepend('Faker::')
+      # rubocop:disable Metrics/ParameterLists
+      def add_depth_to_json(legacy_json = NOT_GIVEN, legacy_width = NOT_GIVEN, legacy_options = NOT_GIVEN, json: shallow_json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
+        # rubocop:enable Metrics/ParameterLists
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :json if legacy_json != NOT_GIVEN
+        end
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :width if legacy_width != NOT_GIVEN
+        end
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :options if legacy_options != NOT_GIVEN
+        end
+
+        options[:key] = 'Faker::' + options[:key]
+        options[:value] = 'Faker::' + options[:value]
 
         hash = JSON.parse(json)
         hash.each do |key, _|

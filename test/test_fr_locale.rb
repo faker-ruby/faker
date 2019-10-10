@@ -27,7 +27,7 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Address.full_address.is_a? String
     assert_match(/^[\d]{5}$/, Faker::Address.postcode)
     assert_match(/^\d+$/, Faker::Address.building_number)
-    full_address_regex = /(([a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s([\d]{5})\s[a-zA-Z-éÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
+    full_address_regex = /(([-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s([\d]{5})\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
     assert_match(full_address_regex, Faker::Address.full_address)
     assert_equal('France', Faker::Address.default_country)
   end
@@ -87,8 +87,8 @@ class TestFrLocale < Test::Unit::TestCase
 
   def test_fr_lorem_methods
     assert Faker::Lorem.word.is_a? String
-    assert Faker::Lorem.words(1000)
-    assert Faker::Lorem.words(10_000, true)
+    assert Faker::Lorem.words(number: 1000)
+    assert Faker::Lorem.words(number: 10_000, supplemental: true)
   end
 
   def test_fr_measurement_methods
@@ -126,8 +126,8 @@ class TestFrLocale < Test::Unit::TestCase
   end
 
   def test_fr_pokemon_methods
-    assert Faker::Pokemon.name.is_a? String
-    assert Faker::Pokemon.location.is_a? String
-    assert Faker::Pokemon.move.is_a? String
+    assert Faker::Games::Pokemon.name.is_a? String
+    assert Faker::Games::Pokemon.location.is_a? String
+    assert Faker::Games::Pokemon.move.is_a? String
   end
 end

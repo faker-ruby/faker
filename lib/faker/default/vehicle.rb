@@ -9,7 +9,7 @@ module Faker
     VIN_LETTERS = 'ABCDEFGHJKLMNPRSTUVWXYZ'
     VIN_MAP = '0123456789X'
     VIN_WEIGHTS = '8765432X098765432'
-    VIN_REGEX = /^[A-Z0-9]{3}[A-Z0-9]{5}[A-Z0-9]{1}[A-Z0-9]{1}[A-Z0-0]{1}[A-Z0-9]{1}\d{5}$/
+    VIN_REGEX = /^[A-Z0-9]{3}[A-Z0-9]{5}[A-Z0-9]{1}[A-Z0-9]{1}[A-Z0-0]{1}[A-Z0-9]{1}\d{5}$/.freeze
     SG_CHECKSUM_WEIGHTS = [3, 14, 2, 12, 2, 11, 1].freeze
     SG_CHECKSUM_CHARS = 'AYUSPLJGDBZXTRMKHEC'
 
@@ -26,7 +26,11 @@ module Faker
         fetch('vehicle.makes')
       end
 
-      def model(make_of_model = '')
+      def model(legacy_make_of_model = NOT_GIVEN, make_of_model: '')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :make_of_model if legacy_make_of_model != NOT_GIVEN
+        end
+
         return fetch("vehicle.models_by_make.#{make}") if make_of_model.empty?
 
         fetch("vehicle.models_by_make.#{make_of_model}")
@@ -35,7 +39,7 @@ module Faker
       def make_and_model
         m = make
 
-        "#{m} #{model(m)}"
+        "#{m} #{model(make_of_model: m)}"
       end
 
       def style
@@ -82,16 +86,25 @@ module Faker
       alias door_count doors
 
       def year
-        Faker::Time.backward(rand_in_range(365, 5475), :all, '%Y').to_i
+        Faker::Time.backward(days: rand_in_range(365, 5475), period: :all, format: '%Y').to_i
       end
 
-      def mileage(min = MILEAGE_MIN, max = MILEAGE_MAX)
+      def mileage(legacy_min = NOT_GIVEN, legacy_max = NOT_GIVEN, min: MILEAGE_MIN, max: MILEAGE_MAX)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min if legacy_min != NOT_GIVEN
+          keywords << :max if legacy_max != NOT_GIVEN
+        end
+
         rand_in_range(min, max)
       end
 
       alias kilometrage mileage
 
-      def license_plate(state_abreviation = '')
+      def license_plate(legacy_state_abreviation = NOT_GIVEN, state_abreviation: '')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :state_abreviation if legacy_state_abreviation != NOT_GIVEN
+        end
+
         return regexify(bothify(fetch('vehicle.license_plate'))) if state_abreviation.empty?
 
         key = 'vehicle.license_plate_by_state.' + state_abreviation

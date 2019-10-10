@@ -5,7 +5,11 @@ module Faker
     flexible :relationship
 
     class << self
-      def familial(connection = nil)
+      def familial(legacy_connection = NOT_GIVEN, connection: nil)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :connection if legacy_connection != NOT_GIVEN
+        end
+
         familial_connections = translate('faker.relationship.familial').keys
 
         if connection.nil?

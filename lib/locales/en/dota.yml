@@ -2,7 +2,7 @@ en:
   faker:
     games:
       dota:
-        hero: ["Abaddon", "Alchemist", "Axe", "Beastmaster", "Brewmaster", "Bristleback", "Centaur Warrunner", "Chaos Knight", "Clockwerk"]
+        hero: ["Abaddon", "Alchemist", "Axe", "Beastmaster", "Brewmaster", "Bristleback", "Centaur Warrunner", "Chaos Knight", "Clockwerk", "Meepo"]
         abaddon:
           quote: ["You have called death upon yourself.", "From House Avernus, I set forth.", "The mist chose me, it is not mine to command.", "To die at a noble hand is no guarantee of a noble death."]
         alchemist:
@@ -45,6 +45,8 @@ en:
           quote: ["A wolf in man's clothing.", "Who fears the wolf should fear the forest.", "A peaceful man is but a patient wolf."]
         magnus:
           quote: ["Under my hoof you will find your fate.", "My horn is sharp, my pike is sharper still.", "Compared to my horn, all precious items are cheap."]
+        meepo:
+          quote: ["Got dirt between my toes.", "One paw in front of the other!", "What's up Meepo?", "Have shovel, will bury. You.", "They should call you Ain't-Mage.", "You punched out all of my blood!", "Try that again, tough guy!"]
         night_stalker:
           quote: ["Day walker, night stalker.", "Devil by day, demon by night.", "Flesh sustains, gold remains.", "I feed the darkness and the darkness feeds me."]
         omniknight:

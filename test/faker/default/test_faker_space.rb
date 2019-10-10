@@ -59,7 +59,7 @@ class TestFakerSpace < Test::Unit::TestCase
     assert @tester.meteorite.match(/(\w+\.? ?){2,3}/)
   end
 
-  def test_launch_vehicule
-    assert @tester.launch_vehicule.match(/(\w+\.? ?){2,3}/)
+  def test_launch_vehicle
+    assert @tester.launch_vehicle.match(/(\w+\.? ?){2,3}/)
   end
 end

@@ -28,7 +28,7 @@ class TestFakerDemographic < Test::Unit::TestCase
   end
 
   def test_height_imperial
-    assert @tester.height(:imperial).match(/\w+/)
+    assert @tester.height(unit: :imperial).match(/\w+/)
   end
 
   def test_height_metric

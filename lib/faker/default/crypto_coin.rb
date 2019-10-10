@@ -7,15 +7,27 @@ module Faker
       ACRONYM = 1
       URL_LOGO = 2
 
-      def coin_name(coin = coin_array)
+      def coin_name(legacy_coin = NOT_GIVEN, coin: coin_array)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :coin if legacy_coin != NOT_GIVEN
+        end
+
         coin[COIN_NAME]
       end
 
-      def acronym(coin = coin_array)
+      def acronym(legacy_coin = NOT_GIVEN, coin: coin_array)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :coin if legacy_coin != NOT_GIVEN
+        end
+
         coin[ACRONYM]
       end
 
-      def url_logo(coin = coin_array)
+      def url_logo(legacy_coin = NOT_GIVEN, coin: coin_array)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :coin if legacy_coin != NOT_GIVEN
+        end
+
         coin[URL_LOGO]
       end
 
@@ -25,7 +37,12 @@ module Faker
 
       def coin_hash
         coin = coin_array
-        { name: coin_name(coin), acronym: acronym(coin), url_logo: url_logo(coin) }
+
+        {
+          name: coin_name(coin: coin),
+          acronym: acronym(coin: coin),
+          url_logo: url_logo(coin: coin)
+        }
       end
     end
   end

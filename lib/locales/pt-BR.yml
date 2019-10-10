@@ -692,3 +692,6 @@ pt-BR:
         SP: ["B[F-Z]?-####", "[C-F]??-####", "G[A-J]?-####", "GK[A-I]-####", "SAV-####"]
         SE: ["HZ[B-Z]-####", "IA[A-P]-####", "NV[G-N]-####", "OE[J-S]-####", "OZB-####", "QK[N-Z]-####", "QM[A-P]-####"]
         TO: ["MV[L-Z]-####", "MW?-####", "MX[A-G]-####", "OL[H-N]-####", "OY[A-C]-####", "QK[A-M]-####"]
+    gender:
+      types: ["Feminino", "Masculino", "Não Binário", "Agênero", "Gênero Fluido", "Gênero queer", "Bigênero", "Poligênero"]
+      binary_types: ["Feminino", "Masculino"]

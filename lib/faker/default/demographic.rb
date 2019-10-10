@@ -23,7 +23,11 @@ module Faker
         fetch('demographic.sex')
       end
 
-      def height(unit = :metric)
+      def height(legacy_unit = NOT_GIVEN, unit: :metric)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :unit if legacy_unit != NOT_GIVEN
+        end
+
         case unit
         when :imperial
           inches = rand_in_range(57, 86)

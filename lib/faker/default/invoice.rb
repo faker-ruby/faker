@@ -6,13 +6,22 @@ module Faker
 
     class << self
       # Generate random amount between values with 2 decimals
-      def amount_between(from = 0, to = 0)
+      def amount_between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 0, to: 0)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
+        end
+
         Faker::Base.rand_in_range(from, to).round(2)
       end
 
       # International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
       # ref is optional so that we can create unit tests
-      def creditor_reference(ref = '')
+      def creditor_reference(legacy_ref = NOT_GIVEN, ref: '')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :ref if legacy_ref != NOT_GIVEN
+        end
+
         ref = reference if ref.empty?
 
         'RF' + iban_checksum('RF', ref) + ref
@@ -20,7 +29,11 @@ module Faker
 
       # Payment references have some rules in certain countries
       # ref is optional so that we can create unit tests
-      def reference(ref = '')
+      def reference(legacy_ref = NOT_GIVEN, ref: '')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :ref if legacy_ref != NOT_GIVEN
+        end
+
         pattern = fetch('invoice.reference.pattern')
 
         ref = Base.regexify(/#{pattern}/) if ref.empty?

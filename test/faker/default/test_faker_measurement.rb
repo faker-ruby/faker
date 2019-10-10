@@ -53,7 +53,7 @@ class TestFakerMeasurement < Test::Unit::TestCase
     amount = 'hello world!'
 
     assert_raise ArgumentError do
-      @tester.volume(amount)
+      @tester.volume(amount: amount)
     end
   end
 end

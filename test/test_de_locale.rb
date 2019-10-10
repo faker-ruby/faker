@@ -40,7 +40,7 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_color_methods
-    assert Faker::Color.name.is_a? String
+    assert Faker::Color.color_name.is_a? String
   end
 
   def test_de_company_methods
@@ -111,7 +111,7 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_simpsons_methods
-    assert Faker::Simpsons.character.is_a? String
+    assert Faker::TvShows::Simpsons.character.is_a? String
   end
 
   def test_de_space_methods

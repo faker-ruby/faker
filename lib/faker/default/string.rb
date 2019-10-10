@@ -3,7 +3,11 @@
 module Faker
   class String < Base
     class << self
-      def random(length = 32)
+      def random(legacy_length = NOT_GIVEN, length: 32)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :length if legacy_length != NOT_GIVEN
+        end
+
         utf8string select_a length
       end
 

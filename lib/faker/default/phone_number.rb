@@ -40,7 +40,11 @@ module Faker
       # US and Canada only
       # Can be used for both extensions and last four digits of phone number.
       # Since extensions can be of variable length, this method taks a length parameter
-      def subscriber_number(length = 4)
+      def subscriber_number(legacy_length = NOT_GIVEN, length: 4)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :length if legacy_length != NOT_GIVEN
+        end
+
         rand.to_s[2..(1 + length)]
       end
 

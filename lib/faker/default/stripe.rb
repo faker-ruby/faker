@@ -3,7 +3,11 @@
 module Faker
   class Stripe < Base
     class << self
-      def valid_card(card_type = nil)
+      def valid_card(legacy_card_type = NOT_GIVEN, card_type: nil)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :card_type if legacy_card_type != NOT_GIVEN
+        end
+
         valid_cards = translate('faker.stripe.valid_cards').keys
 
         if card_type.nil?
@@ -18,7 +22,11 @@ module Faker
         fetch('stripe.valid_cards.' + card_type)
       end
 
-      def valid_token(card_type = nil)
+      def valid_token(legacy_card_type = NOT_GIVEN, card_type: nil)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :card_type if legacy_card_type != NOT_GIVEN
+        end
+
         valid_tokens = translate('faker.stripe.valid_tokens').keys
 
         if card_type.nil?
@@ -33,7 +41,11 @@ module Faker
         fetch('stripe.valid_tokens.' + card_type)
       end
 
-      def invalid_card(card_error = nil)
+      def invalid_card(legacy_card_error = NOT_GIVEN, card_error: nil)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :card_error if legacy_card_error != NOT_GIVEN
+        end
+
         invalid_cards = translate('faker.stripe.invalid_cards').keys
 
         if card_error.nil?
@@ -57,7 +69,11 @@ module Faker
         rand_in_range(start_year, start_year + 5).to_s
       end
 
-      def ccv(card_type = nil)
+      def ccv(legacy_card_type = NOT_GIVEN, card_type: nil)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :card_type if legacy_card_type != NOT_GIVEN
+        end
+
         (card_type.to_s == 'amex' ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s
       end
     end

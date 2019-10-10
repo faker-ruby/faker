@@ -6,7 +6,12 @@ module Faker
       @last_rut = nil
 
       # Fixed param added for testing a specific RUT and check digit combination.
-      def rut(min_rut = 1, fixed = false)
+      def rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 1, fixed: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min_rut if legacy_min_rut != NOT_GIVEN
+          keywords << :fixed if legacy_fixed != NOT_GIVEN
+        end
+
         @last_rut = fixed ? min_rut : rand_in_range(min_rut, 99_999_999)
       end
 
@@ -34,8 +39,13 @@ module Faker
         dv
       end
 
-      def full_rut(min_rut = 0, fixed = false)
-        "#{rut(min_rut, fixed)}-#{dv}"
+      def full_rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 0, fixed: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min_rut if legacy_min_rut != NOT_GIVEN
+          keywords << :fixed if legacy_fixed != NOT_GIVEN
+        end
+
+        "#{rut(min_rut: min_rut, fixed: fixed)}-#{dv}"
       end
 
       attr_reader :last_rut

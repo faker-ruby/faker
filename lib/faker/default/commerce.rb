@@ -7,15 +7,24 @@ module Faker
         fetch('color.name')
       end
 
-      def promotion_code(digits = 6)
+      def promotion_code(legacy_digits = NOT_GIVEN, digits: 6)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :digits if legacy_digits != NOT_GIVEN
+        end
+
         [
           fetch('commerce.promotion_code.adjective'),
           fetch('commerce.promotion_code.noun'),
-          Faker::Number.number(digits)
+          Faker::Number.number(digits: digits)
         ].join
       end
 
-      def department(max = 3, fixed_amount = false)
+      def department(legacy_max = NOT_GIVEN, legacy_fixed_amount = NOT_GIVEN, max: 3, fixed_amount: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :max if legacy_max != NOT_GIVEN
+          keywords << :fixed_amount if legacy_fixed_amount != NOT_GIVEN
+        end
+
         num = max if fixed_amount
         num ||= 1 + rand(max)
 
@@ -34,7 +43,12 @@ module Faker
         fetch('commerce.product_name.material')
       end
 
-      def price(range = 0..100.0, as_string = false)
+      def price(legacy_range = NOT_GIVEN, legacy_as_string = NOT_GIVEN, range: 0..100.0, as_string: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :range if legacy_range != NOT_GIVEN
+          keywords << :as_string if legacy_as_string != NOT_GIVEN
+        end
+
         price = (rand(range) * 100).floor / 100.0
         if as_string
           price_parts = price.to_s.split('.')

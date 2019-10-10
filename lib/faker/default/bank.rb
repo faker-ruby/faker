@@ -5,7 +5,11 @@ module Faker
     flexible :bank
 
     class << self
-      def account_number(digits = 10)
+      def account_number(legacy_digits = NOT_GIVEN, digits: 10)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :digits if legacy_digits != NOT_GIVEN
+        end
+
         output = ''
 
         output += rand.to_s[2..-1] while output.length < digits
@@ -13,10 +17,14 @@ module Faker
         output[0...digits]
       end
 
-      def iban(country_code = 'GB')
+      def iban(legacy_country_code = NOT_GIVEN, country_code: 'GB')
         # Each country has it's own format for bank accounts
         # Many of them use letters in certain parts of the account
         # Using regex patterns we can create virtually any type of bank account
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :country_code if legacy_country_code != NOT_GIVEN
+        end
+
         begin
           pattern = fetch("bank.iban_details.#{country_code.downcase}.bban_pattern")
         rescue I18n::MissingTranslationData

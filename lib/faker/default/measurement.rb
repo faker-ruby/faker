@@ -6,35 +6,67 @@ module Faker
       ALL = 'all'
       NONE = 'none'
 
-      def height(amount = rand(10))
+      def height(legacy_amount = NOT_GIVEN, amount: rand(10))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :amount if legacy_amount != NOT_GIVEN
+        end
+
         define_measurement_locale(amount, 'height')
       end
 
-      def length(amount = rand(10))
+      def length(legacy_amount = NOT_GIVEN, amount: rand(10))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :amount if legacy_amount != NOT_GIVEN
+        end
+
         define_measurement_locale(amount, 'length')
       end
 
-      def volume(amount = rand(10))
+      def volume(legacy_amount = NOT_GIVEN, amount: rand(10))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :amount if legacy_amount != NOT_GIVEN
+        end
+
         define_measurement_locale(amount, 'volume')
       end
 
-      def weight(amount = rand(10))
+      def weight(legacy_amount = NOT_GIVEN, amount: rand(10))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :amount if legacy_amount != NOT_GIVEN
+        end
+
         define_measurement_locale(amount, 'weight')
       end
 
-      def metric_height(amount = rand(10))
+      def metric_height(legacy_amount = NOT_GIVEN, amount: rand(10))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :amount if legacy_amount != NOT_GIVEN
+        end
+
         define_measurement_locale(amount, 'metric_height')
       end
 
-      def metric_length(amount = rand(10))
+      def metric_length(legacy_amount = NOT_GIVEN, amount: rand(10))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :amount if legacy_amount != NOT_GIVEN
+        end
+
         define_measurement_locale(amount, 'metric_length')
       end
 
-      def metric_volume(amount = rand(10))
+      def metric_volume(legacy_amount = NOT_GIVEN, amount: rand(10))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :amount if legacy_amount != NOT_GIVEN
+        end
+
         define_measurement_locale(amount, 'metric_volume')
       end
 
-      def metric_weight(amount = rand(10))
+      def metric_weight(legacy_amount = NOT_GIVEN, amount: rand(10))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :amount if legacy_amount != NOT_GIVEN
+        end
+
         define_measurement_locale(amount, 'metric_weight')
       end
 

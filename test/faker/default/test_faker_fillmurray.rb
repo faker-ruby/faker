@@ -8,28 +8,28 @@ class TestFakerFillmurray < Test::Unit::TestCase
   end
 
   def test_fillmurray
-    assert !@tester.image(false, '300', '300').match(%r{https:\/\/fillmurray\.com\/(\d+)\/(\d+)}).nil?
+    assert !@tester.image(grayscale: false, width: '300', height: '300').match(%r{https:\/\/www\.fillmurray\.com\/(\d+)\/(\d+)}).nil?
   end
 
   def test_fillmurray_with_grayscale
-    assert @tester.image(true, '300', '300').match(%r{https:\/\/fillmurray\.com\/(g?\/?)(\d+)\/(\d+)})[1] == 'g/'
+    assert @tester.image(grayscale: true, width: '300', height: '300').match(%r{https:\/\/www\.fillmurray\.com\/(g?\/?)(\d+)\/(\d+)})[1] == 'g/'
   end
 
   def test_fillmurray_with_incorrect_height_format
     assert_raise ArgumentError do
-      @tester.image(false, '300', 'nine-thousand')
+      @tester.image(grayscale: false, width: '300', height: 'nine-thousand')
     end
   end
 
   def test_fillmurray_with_incorrect_width_format
     assert_raise ArgumentError do
-      @tester.image(false, 'three-hundred')
+      @tester.image(grayscale: false, width: 'three-hundred')
     end
   end
 
   def test_fillmurray_with_incorrect_grayscale
     assert_raise ArgumentError do
-      @tester.image('gray', '300', '400')
+      @tester.image(grayscale: 'gray', width: '300', height: '400')
     end
   end
 end
