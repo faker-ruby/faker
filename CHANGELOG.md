@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## Documentation
+
+- [PR #1789](https://github.com/faker-ruby/faker/pull/1789) Faker::WorldCup YARD docs [@ashishra0](https://github.com/ashishra0)
+
 ## Update local dependencies
 
 The following development dependencies were updated:
