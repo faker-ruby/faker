@@ -5,42 +5,106 @@ module Faker
     flexible :food
 
     class << self
-      # Retrieves a typical dish from each country
+      ##
+      # Retrieves a typical dish from each country.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.dish #=> "Feijoada"
+      #
+      # @faker.version 2.6.0
       def dish
         fetch('food.dish')
       end
 
+      ##
       # Retrieves a description about some dish
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.descriptions #=> "Breaded fried chicken with waffles. Served with maple syrup."
+      #
+      # @faker.version 2.6.0
       def description
         fetch('food.descriptions')
       end
 
+      ##
       # Retrieves an ingredient
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.ingredients #=> "Olives"
+      #
+      # @faker.version 2.6.0
       def ingredient
         fetch('food.ingredients')
       end
 
+      ##
       # Retrieves a fruit
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.fruits #=> "Papaya"
+      #
+      # @faker.version 2.6.0
       def fruits
         fetch('food.fruits')
       end
 
+      ##
       # Retrieves a vegetable
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.vegetables #=> "Broccolini"
+      #
+      # @faker.version 2.6.0
       def vegetables
         fetch('food.vegetables')
       end
 
+      ##
       # Retrieves some random spice
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.spices #=> "Garlic Chips"
+      #
+      # @faker.version 2.6.0
       def spice
         fetch('food.spices')
       end
 
+      ##
       # Retrieves cooking measures
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.measurement_sizes #=> "1/3"
+      #
+      # @faker.version 2.6.0
       def measurement
         fetch('food.measurement_sizes') + ' ' + fetch('food.measurements')
       end
 
+      ##
       # Retrieves metric mesurements
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.metric_measurements #=> "centiliter"
+      #
+      # @faker.version 2.6.0
       def metric_measurement
         fetch('food.metric_measurements')
       end
