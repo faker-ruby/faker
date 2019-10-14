@@ -11,10 +11,18 @@ require 'set' # Fixes a bug in i18n 0.6.11
 
 Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
 
-I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
-I18n.reload! if I18n.backend.initialized?
-
 module Faker
+  module I18nBackend
+    def store_translations(locale, data, options = I18n::EMPTY_HASH)
+      old_enforce_available_locales = I18n.enforce_available_locales
+      I18n.enforce_available_locales = false if data.keys.include?('faker')
+
+      super
+    ensure
+      I18n.enforce_available_locales = old_enforce_available_locales
+    end
+  end
+
   class Config
     @locale = nil
     @random = nil
@@ -303,6 +311,10 @@ module Faker
     end
   end
 end
+
+I18n::Backend::Simple.include(Faker::I18nBackend)
+I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
+I18n.reload! if I18n.backend.initialized?
 
 # require faker objects
 Dir.glob(File.join(File.dirname(__FILE__), 'faker', '/**/*.rb')).sort.each { |file| require file }

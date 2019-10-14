@@ -38,7 +38,7 @@ class TestDeterminism < Test::Unit::TestCase
   end
 
   def all_methods
-    subclasses.map do |subclass|
+    subclasses.reject { |subclass| subclass == :I18nBackend }.map do |subclass|
       subclass_methods(subclass).flatten
     end.flatten.sort
   end
