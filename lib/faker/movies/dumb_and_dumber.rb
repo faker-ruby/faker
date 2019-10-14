@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class TvShows
+  class Movies
     class DumbAndDumber < Base
       flexible :dumb_and_dumber
 
@@ -12,7 +12,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::TvShows::DumbAndDumber.actor #=> "Jim Carrey"
+        #   Faker::Movies::DumbAndDumber.actor #=> "Jim Carrey"
         #
         # @faker.version 1.8.5
         def actor
@@ -25,7 +25,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::TvShows::DumbAndDumber.character #=> "Harry Dunne"
+        #   Faker::Movies::DumbAndDumber.character #=> "Harry Dunne"
         #
         # @faker.version 1.8.5
         def character
@@ -38,7 +38,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::TvShows::DumbAndDumber.quote
+        #   Faker::Movies::DumbAndDumber.quote
         #     #=> "Why you going to the airport? Flying somewhere?"
         #
         # @faker.version 1.8.5

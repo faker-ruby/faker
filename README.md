@@ -254,6 +254,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 ### Movies
   - [Faker::Movie](doc/movies/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/movies/back_to_the_future.md)
+  - [Faker::Movies::DumbAndDumber](doc/movies/dumb_and_dumber.md)
   - [Faker::Movies::Ghostbusters](doc/movies/ghostbusters.md)
   - [Faker::Movies::HarryPotter](doc/movies/harry_potter.md)
   - [Faker::Movies::HitchhikersGuideToTheGalaxy](doc/movies/hitchhikers_guide_to_the_galaxy.md)
@@ -287,7 +288,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::Buffy](doc/tv_shows/buffy.md)
   - [Faker::TvShows::Community](doc/tv_shows/community.md)
   - [Faker::TvShows::DrWho](doc/tv_shows/dr_who.md)
-  - [Faker::TvShows::DumbAndDumber](doc/tv_shows/dumb_and_dumber.md)
   - [Faker::TvShows::FamilyGuy](doc/tv_shows/family_guy.md)
   - [Faker::TvShows::Friends](doc/tv_shows/friends.md)
   - [Faker::TvShows::GameOfThrones](doc/tv_shows/game_of_thrones.md)
