@@ -141,9 +141,9 @@ module Faker
         end
 
         with_locale(:en) do
-          _domain_word = domain || domain_word
-          domain_elements = [Char.prepare(_domain_word), domain_suffix]
-          domain_elements.unshift(Char.prepare(_domain_word)) if subdomain
+          given_domain_word = domain || domain_word
+          domain_elements = [Char.prepare(given_domain_word), domain_suffix]
+          domain_elements.unshift(Char.prepare(given_domain_word)) if subdomain
           domain_elements.join('.')
         end
       end
