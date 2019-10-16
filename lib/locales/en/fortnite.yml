@@ -1,0 +1,238 @@
+en:
+  faker:
+    games:
+      fortnite:
+        emotes:
+          - "#{emotes_battlepass}"
+          - "#{emotes_epic}"
+          - "#{emotes_rare}"
+          - "#{emotes_uncommon}"
+        emotes_battlepass:
+          - "#{emotes_battlepass_season_10}"
+          - "#{emotes_battlepass_season_9}"
+          - "#{emotes_battlepass_season_8}"
+          - "#{emotes_battlepass_season_7}"
+          - "#{emotes_battlepass_season_6}"
+          - "#{emotes_battlepass_season_5}"
+          - "#{emotes_battlepass_season_4}"
+          - "#{emotes_battlepass_season_3}"
+          - "#{emotes_battlepass_season_2}"
+        emotes_battlepass_season_10: [
+          "Breakneck",
+          "Blowing Bubbles",
+          "Dabstand",
+          "Featherweight",
+          "Jaywalking",
+          "Stride",
+          "Tra La La"
+        ]
+        emotes_battlepass_season_9: [
+          "Cluck Strut",
+          "Deep End",
+          "Jump Jets",
+          "Laid Back Shuffle",
+          "Peace Out",
+          "Sad Trombone",
+          "Sign Spinner",
+          "Yay!"
+        ]
+        emotes_battlepass_season_8: [
+          "Boobytrapped",
+          "Conga",
+          "Dragon Stance",
+          "Fierce",
+          "Hello Friend",
+          "Hoop Master",
+          "Nana Nana",
+          "Snoozefest"
+        ]
+        emotes_battlepass_season_7: [
+          "Cat Flip",
+          "Free Flow",
+          "Get Funky",
+          "Golf Clap",
+          "Mic Drop",
+          "Point It Out",
+          "Shimmer"
+        ]
+        emotes_battlepass_season_6: [
+          "Flamenco",
+          "Its Go Time",
+          "Regal Wave",
+          "Running Man",
+          "Slitherin"
+        ]
+        emotes_battlepass_season_5:  [
+          "Breakdown",
+          "Calculated",
+          "Gentleman’s Dab",
+          "Swipe It",
+          "You’re Awesome"
+        ]
+        emotes_battlepass_season_4: [
+          "Groove Jam",
+          "Hype",
+          "Orange Justice",
+          "Popcorn",
+          "Respect"
+        ]
+        emotes_battlepass_season_3: [
+          "Best Mates",
+          "Salute",
+          "Take The L",
+          "The Robot"
+        ]
+        emotes_battlepass_season_2: [
+          "Floss",
+          "Ride the Pony",
+          "The Worm",
+          "Wave"
+        ]
+        emotes_epic: [
+          "Breakin'",
+          "Cheer Up",
+          "Crackdown",
+          "Dance Therapy",
+          "Daydream",
+          "Disco Fever",
+          "Drop The Bass",
+          "Electro Shuffle",
+          "Fire Spinner",
+          "Fresh",
+          "Glowsticks",
+          "Hula",
+          "Intensity",
+          "Llama Bell",
+          "Llamacadabra",
+          "Phone It In",
+          "Pop Lock",
+          "Reanimated",
+          "Rock Out",
+          "Rocket Rodeo",
+          "Shake It Up",
+          "Smooth Moves",
+          "Squat Kick",
+          "Star Power",
+          "True Heart",
+          "Vivacious"
+        ]
+        emotes_marvel: [
+          "Dance Off",
+          "Widow's Pirouette"
+        ]
+        emotes_rare: [
+          "Backstroke",
+          "Baller",
+          "Bombastic",
+          "Boneless",
+          "Busy",
+          "Accolades",
+          "Capoeira",
+          "Chicken",
+          "Clean Groove",
+          "Confused",
+          "Crabby",
+          "Crazy Feet",
+          "Criss Cross",
+          "Dab",
+          "Dream Feet",
+          "Eagle",
+          "Electro Swing",
+          "Fancy Feet",
+          "Fandangle",
+          "Flapper",
+          "Flippin' Incredible",
+          "Flippin' Sexy",
+          "Flux",
+          "Hand Signals",
+          "Headbanger",
+          "Hitchhiker",
+          "Hootenanny",
+          "Hot Marat",
+          "Infinite Dab",
+          "Jamboree",
+          "Jugglin'",
+          "Kick Ups",
+          "Kiss Kiss",
+          "Knee Slapper",
+          "Laugh It Up",
+          "Lazy Shuffle",
+          "Living Large",
+          "Make it Rain",
+          "Marsh Walk",
+          "Mime Time",
+          "No Sweat",
+          "On the Hook",
+          "Overdrive",
+          "Praise The Tomato",
+          "Pumpernickel",
+          "Pure Salt",
+          "Rambunctious",
+          "Rawr",
+          "Rocket Spinner",
+          "Showstopper",
+          "Slick",
+          "Something Stinks",
+          "Spike It",
+          "Sprinkler",
+          "Step it Up",
+          "Taco Time",
+          "Tai Chi",
+          "Tidy",
+          "Twist",
+          "Wiggle",
+          "Work It Out",
+          "Zany",
+        ]
+        emotes_dc: [
+          "Bat Signal",
+          "Whipcrack"
+        ]
+        emotes_uncommon: [
+          "Air Horn",
+          "Battle Call",
+          "Behold!",
+          "Breaking Point",
+          "Breezy",
+          "Bring It",
+          "Brush Your Shoulders",
+          "Click",
+          "Denied",
+          "Dip",
+          "Face Palm",
+          "Finger Guns",
+          "Finger Wag",
+          "Fist Pump",
+          "Go! Go! Go!",
+          "Go Home!",
+          "Ground Pound",
+          "Gun Show",
+          "Hot Stuff",
+          "Howl",
+          "Job Well Done",
+          "Jubilation",
+          "Mind Blown",
+          "My Idol!",
+          "Pizza Party",
+          "Prickly Pose",
+          "Red Card",
+          "Rock Paper Scissors",
+          "Scorecard",
+          "Shaolin Sit-up",
+          "Slow Clap",
+          "Snap",
+          "Sparkler",
+          "Statuesque",
+          "T-Pose",
+          "Take 14",
+          "Team Burger",
+          "Team Mech",
+          "Team Tomato",
+          "Thumbs Down",
+          "Thumbs Up",
+          "Time Out",
+          "True Love",
+          "Unwrapped",
+          "Waterworks",
+          "Welcome!"
+        ]
