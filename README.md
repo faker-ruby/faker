@@ -360,5 +360,7 @@ See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/master/CONTRIBUTING.m
 ## Contact
 Comments and feedback are welcome. Send an email to Benjamin Curtis via the [google group](http://groups.google.com/group/ruby-faker).
 
+You can also join our [discord channel](https://discord.gg/RMumTwB) to discuss anything regarding improvements or feature requests.
+
 ## License
 This code is free to use under the terms of the MIT license.
