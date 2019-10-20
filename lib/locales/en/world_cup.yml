@@ -2,6 +2,8 @@ en:
   faker:
     world_cup:
       teams:  ["Egypt", "Russia", "Saudi Arabia", "Uruguay", "Iran", "Morocco", "Portugal", "Spain", "Australia", "Denmark", "France", "Peru", "Argentina", "Croatia", "Iceland", "Nigeria", "Brazil", "Costa Rica", "Serbia", "Switzerland", "Germany", "Mexico", "South Korea", "Sweden", "Belgium", "England", "Panama", "Tunisia", "Columbia", "Japan","Poland", "Senegal" ]
+      stadiums: ["Ekaterinburg Arena", "Kaliningrad Stadium", "Kasan Arena", "Spartak Stadium", "Nizhny Novgorod Stadium", "Luzhniki Stadium", "Rostov Arena", "Saint Petersburg Stadium", "Samara Arena", "Mordovia Arena", "Fisht Stadium", "Volgograd Arena"]
+      cities: ["Saint Petersburg", "Kaliningrad", "Rostov-on-Don", "Volgograd", "Moscow", "Sochi", "Kazan", "Nizhny Novgorod", "Saransk", "Samara", "Ekaterinburg"]
       groups:
         group_A: ["Egypt", "Russia", "Saudi Arabia", "Uruguay"]
         group_B: ["Iran", "Morocco", "Portugal", "Spain"]
@@ -68,9 +70,9 @@ en:
           midfielders: ["Adrien Silva", "Bruno Fernandes", "Joao Mario", "Joao Moutinho", "Manuel Fernandes", "William Carvalho"]
           forwards: ["Andre Silva", "Bernardo Silva", "Cristiano Ronaldo", "Gelson Martins", "Goncalo Guedes", "Ricardo Quaresma"]
 
-        #Spain named its 23-man squad on 21 May 2018.
+        #Spain named its 23-man squad on 21 May 2018. On Jun 13 2018, it replaced coach Julen Lopetegui with Fernando Hierro.
         Spain:
-          coach: ["Julen Lopetegui"]
+          coach: ["Fernando Hierro"]
           goalkeepers: ["Kepa Arrizabalaga", "David de Gea", "Pepe Reina"]
           defenders: ["Jordi Alba", "Cesar Azpiliqueta", "Dani Carvajal", "Nacho Fernandez", "Nacho Monreal", "Alvaro Odriozola", "Gerard Pique", "Sergio Ramos"]
           midfielders: ["Thiago Alcantara", "Sergio Busquets", "Andres Iniesta", "Isco", "Koke", "Saul Niguez", "David Silva"]

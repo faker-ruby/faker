@@ -1,4 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 # rubocop:disable Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
   def setup
@@ -31,8 +33,8 @@ class TestDeterminism < Test::Unit::TestCase
 
   def store_result(method_name)
     @first_run << eval(method_name)
-  rescue StandardError => exception
-    raise %(#{method_name} raised "#{exception}")
+  rescue StandardError => e
+    raise %(#{method_name} raised "#{e}")
   end
 
   def all_methods
@@ -43,7 +45,7 @@ class TestDeterminism < Test::Unit::TestCase
 
   def subclasses
     Faker.constants.delete_if do |subclass|
-      %i[Base Char Config Date Internet Time VERSION].include?(subclass)
+      %i[Base Bank Books Cat Char Base58 ChileRut CLI Config Creature Date Dog DragonBall Dota ElderScrolls Fallout Games GamesHalfLife HeroesOfTheStorm Internet JapaneseMedia LeagueOfLegends Movies Myst Overwatch OnePiece Pokemon Sports SwordArtOnline TvShows Time VERSION Witcher WorldOfWarcraft Zelda].include?(subclass)
     end.sort
   end
 

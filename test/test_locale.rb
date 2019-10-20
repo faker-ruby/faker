@@ -1,6 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+# frozen_string_literal: true
 
-LoadedYaml = ['en', 'en-BORK'].each_with_object({}) do |locale, h|
+require_relative 'test_helper'
+
+LoadedYaml = %w[en en-BORK].each_with_object({}) do |locale, h|
   h[locale] = YAML.load_file(File.expand_path(File.dirname(__FILE__) + "/../lib/locales/#{locale}.yml"))[locale]['faker']
 end
 
@@ -32,6 +34,32 @@ class TestLocale < Test::Unit::TestCase
     Faker::Config.locale = 'en-BORK'
     assert_nil LoadedYaml['en-BORK']['name']
     assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
+  end
+
+  def test_translation_fallback_without_en_in_available_locales
+    I18n.available_locales -= [:en]
+    Faker::Config.locale = 'en-BORK'
+    assert_nil LoadedYaml['en-BORK']['name']
+    assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
+  ensure
+    I18n.available_locales += [:en]
+  end
+
+  def test_with_locale_does_not_fail_without_the_locale_in_available_locales
+    I18n.available_locales -= [:en]
+    Faker::Base.with_locale(:en) do
+      assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
+    end
+  ensure
+    I18n.available_locales += [:en]
+  end
+
+  def test_with_locale_changes_locale_temporarily
+    Faker::Config.locale = 'en-BORK'
+    I18n.with_locale(:en) do
+      assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
+    end
+    assert_equal 'en-BORK', Faker::Config.locale
   end
 
   def test_regex

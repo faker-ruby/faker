@@ -14,12 +14,12 @@ en:
       quotes:
         admiral_ackbar:
           - "It's a trap!"
-          - "The Shield is down! Commence attack on the Death star's main reactor. "
+          - "The Shield is down! Commence attack on the Death star's main reactor."
           - "We have no choice, General Calrissian! Our cruisers can't repel firepower of that magnitude!"
         ahsoka_tano:
           - "Suicide is not the Jedi way, master."
           - "Let's just say my master will always do what needs to be done. I'm not even sure how peacetime will agree with him."
-          - "Sorry to interrupt your playtime, Grumpy, but wouldn't you prefer a challenge? "
+          - "Sorry to interrupt your playtime, Grumpy, but wouldn't you prefer a challenge?"
         anakin_skywalker:
           - "I've got a bad feeling about this."
           - "Just for once, let me look on you with my own eyes."
@@ -226,7 +226,7 @@ en:
         admiral_ackbar: ['akbar', 'ackbar', 'admiral ackbar', 'admiral akbar', 'admiral_ackbar']
         ahsoka_tano: ['ahsoka', 'tano', 'ahsoka tano', 'ahsoka_tano']
         anakin_skywalker: ['anakin', 'anakin skywalker', 'ani', 'ani skywalker', 'anakin_skywalker']
-        asajj_ventress: ['asajj', 'ventress', 'asajj ventress', 'anakin_skywalker']
+        asajj_ventress: ['asajj', 'ventress', 'asajj ventress', 'asajj_ventress']
         bendu: ['the bendu', 'bendu']
         boba_fett: ['boba fett', 'bobafett', 'boba_fett']
         c_3po: ['c 3po', 'c3po', 'c3p0', 'c_3po']

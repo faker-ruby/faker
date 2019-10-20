@@ -1,8 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-# Remove Rubygems deprecation warnings
-Deprecate.skip = true if defined?(Deprecate.skip)
-Gem::Deprecate.skip = true if defined?(Gem::Deprecate.skip)
+source 'https://rubygems.org'
 
 # Specify your gem's dependencies in faker.gemspec
 gemspec

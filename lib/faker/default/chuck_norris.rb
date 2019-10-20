@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+
+module Faker
+  class ChuckNorris < Base
+    flexible :chuck_norris
+
+    class << self
+      # from: https://github.com/jenkinsci/chucknorris-plugin/blob/master/src/main/java/hudson/plugins/chucknorris/FactGenerator.java
+      def fact
+        fetch('chuck_norris.fact')
+      end
+    end
+  end
+end

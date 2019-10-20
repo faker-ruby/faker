@@ -49,6 +49,8 @@ uk:
         - "#{female_last_name} #{female_first_name}"
         - "#{female_first_name} #{female_middle_name} #{female_last_name}"
         - "#{female_last_name} #{female_first_name} #{female_middle_name}"
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
       formats: ['(044) ###-##-##', '(050) ###-##-##', '(063) ###-##-##', '(066) ###-##-##', '(073) ###-##-##', '(091) ###-##-##', '(092) ###-##-##', '(093) ###-##-##', '(094) ###-##-##', '(095) ###-##-##', '(096) ###-##-##', '(097) ###-##-##', '(098) ###-##-##', '(099) ###-##-##']

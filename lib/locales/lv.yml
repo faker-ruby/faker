@@ -46,6 +46,8 @@ lv:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
       formats: ["5# ### ###", "6# ### ###", "7# ### ###"]
