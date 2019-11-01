@@ -13,15 +13,15 @@ module Faker
         server_error: [500, 501, 502, 503, 504, 505, 506, 507, 508, 510, 511]
       }.freeze
 
-      class << self
-        def status_code
-          STATUS_CODES[STATUS_CODES.keys.sample].sample
-        end
+      STATUS_CODES_GROUPS = STATUS_CODES.keys.freeze
 
-        %i[information successful redirect client_error server_error].each do |status_code_group|
-          define_method("#{status_code_group}_status_code") do
-            STATUS_CODES[status_code_group].sample
-          end
+      class << self
+        def status_code(group: nil)
+          return STATUS_CODES[STATUS_CODES_GROUPS.sample].sample unless group
+
+          raise ArgumentError, 'Invalid HTTP status code group' unless STATUS_CODES_GROUPS.include?(group)
+
+          STATUS_CODES[group].sample if group
         end
       end
     end
