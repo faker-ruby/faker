@@ -1,5 +1,38 @@
 # Change Log
 
+## [v2.7.0](https://github.com/faker-ruby/faker/tree/v2.7.0) (2019-11-01)
+
+This version:
+- adds `Faker::IDNumber.chilean_id`
+- updates some translations/locales
+- updates local dependencies
+- adds SemVer badge
+
+## Documentation
+
+Add SemVer compatibility badge to README (#1289)
+Add Discord link (#1814)
+
+## Feature Request
+
+Adding chilean_id in Faker::IDNumber (#1819)
+
+## Update locales
+
+Add Terry Bogard to Super Smash Bros. options (#1806)
+Added Canadian Country Code (#1824)
+Translate Canadian provinces for fr-CA (#1813)
+Add Japanese animal names (#1817)
+Add Japanese bank names (#1816)
+
+## Update local dependencies
+
+Update rubocop requirement from = 0.75.0 to = 0.75.1 (#1811)
+Update rubocop requirement from = 0.75.1 to = 0.76.0 (#1822)
+Update minitest requirement from = 5.12.2 to = 5.13.0 (#1823)
+
+------------------------------------------------------------------------------
+
 ## [v2.6.0](https://github.com/faker-ruby/faker/tree/v2.6.0) (2019-10-10)
 
 This version:
