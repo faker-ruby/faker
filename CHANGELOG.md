@@ -27,9 +27,9 @@ This version:
 
 ## Update local dependencies
 
-Update rubocop requirement from = 0.75.0 to = 0.75.1 (#1811)
-Update rubocop requirement from = 0.75.1 to = 0.76.0 (#1822)
-Update minitest requirement from = 5.12.2 to = 5.13.0 (#1823)
+- Update rubocop requirement from = 0.75.0 to = 0.75.1 (#1811)
+- Update rubocop requirement from = 0.75.1 to = 0.76.0 (#1822)
+- Update minitest requirement from = 5.12.2 to = 5.13.0 (#1823)
 
 ------------------------------------------------------------------------------
 
