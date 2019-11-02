@@ -16,6 +16,26 @@ module Faker
       STATUS_CODES_GROUPS = STATUS_CODES.keys.freeze
 
       class << self
+
+        ##
+        # Produces an HTTP status code
+        #
+        # @return [Integer]
+        #
+        # @example
+        #   Faker::Internet::HTTP.status_code #=> 418
+        # @example
+        #   Faker::Internet::HTTP.status_code(group: :information) #=> 102
+        # @example
+        #   Faker::Internet::HTTP.status_code(group: :successful) #=> 200
+        # @example
+        #   Faker::Internet::HTTP.status_code(group: :redirect) #=> 306
+        # @example
+        #   Faker::Internet::HTTP.status_code(group: :client_error) #=> 451
+        # @example
+        #   Faker::Internet::HTTP.status_code(group: :server_error) #=> 502
+        #
+        # @faker.version 2.7.0
         def status_code(group: nil)
           return STATUS_CODES[STATUS_CODES_GROUPS.sample].sample unless group
 
