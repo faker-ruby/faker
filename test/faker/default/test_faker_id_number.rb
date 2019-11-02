@@ -135,6 +135,23 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal digit_other, '9'
   end
 
+  def test_chilean_id
+    sample = @tester.chilean_id
+    assert_match(/^\d{8}-[K\d]$/, sample)
+  end
+
+  def test_chilean_verification_code_k
+    verification_code = Faker::IDNumber.send(:chilean_verification_code, 20_680_873)
+
+    assert_equal verification_code, 'K'
+  end
+
+  def test_chilean_verification_code_0
+    verification_code = Faker::IDNumber.send(:chilean_verification_code, 13_196_022)
+
+    assert_equal verification_code, 0
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)
