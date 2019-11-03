@@ -10,4 +10,8 @@ class TestFakerTennis < Test::Unit::TestCase
   def test_grand_slam
     assert @tester.grand_slam.match(/\w+/)
   end
+
+  def test_player
+    assert @tester.player.match(/\w+/)
+  end
 end

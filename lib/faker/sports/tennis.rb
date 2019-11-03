@@ -16,6 +16,19 @@ module Faker
         def grand_slam
           fetch('tennis.grand_slams')
         end
+
+        ##
+        # Produces the name of a significant tennis player.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Sports::Tennis.player #=> "Roger Federer"
+        #
+        # @faker.version 2.6.0
+        def player
+          fetch('tennis.players')
+        end
       end
     end
   end
