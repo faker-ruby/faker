@@ -1,0 +1,8 @@
+en:
+  faker:
+    tennis:
+      grand_slams:
+        - Australian Open
+        - US Open
+        - Roland-Garros
+        - Wimbledon
