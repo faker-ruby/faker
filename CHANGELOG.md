@@ -1,5 +1,38 @@
 # Change Log
 
+## [v2.7.0](https://github.com/faker-ruby/faker/tree/v2.7.0) (2019-11-01)
+
+This version:
+- adds `Faker::IDNumber.chilean_id`
+- updates some translations/locales
+- updates local dependencies
+- adds SemVer badge
+
+## Documentation
+
+- [PR #1814](https://github.com/faker-ruby/faker/pull/1814) Add Discord link [@vbrazo](https://github.com/vbrazo)
+- [PR #1289](https://github.com/faker-ruby/faker/pull/1289) Add SemVer compatibility badge to README [@greysteil](https://github.com/greysteil)
+
+## Feature Request
+
+- [PR #1819](https://github.com/faker-ruby/faker/pull/1819) Adding chilean_id in Faker::IDNumber [@cristofer](https://github.com/cristofer)
+
+## Update locales
+
+- [PR #1824](https://github.com/faker-ruby/faker/pull/1824) Added Canadian Country Code [@clinch](https://github.com/clinch)
+- [PR #1817](https://github.com/faker-ruby/faker/pull/1817) Add Japanese animal names [@shouichi](https://github.com/shouichi)
+- [PR #1816](https://github.com/faker-ruby/faker/pull/1816) Add Japanese bank names [@shouichi](https://github.com/shouichi)
+- [PR #1813](https://github.com/faker-ruby/faker/pull/1813) Translate Canadian provinces for fr-CA [@Bhacaz](https://github.com/Bhacaz)
+- [PR #1806](https://github.com/faker-ruby/faker/pull/1806) Add Terry Bogard to Super Smash Bros. options [@clinch](https://github.com/clinch)
+
+## Update local dependencies
+
+- Update rubocop requirement from = 0.75.0 to = 0.75.1 (#1811)
+- Update rubocop requirement from = 0.75.1 to = 0.76.0 (#1822)
+- Update minitest requirement from = 5.12.2 to = 5.13.0 (#1823)
+
+------------------------------------------------------------------------------
+
 ## [v2.6.0](https://github.com/faker-ruby/faker/tree/v2.6.0) (2019-10-10)
 
 This version:
