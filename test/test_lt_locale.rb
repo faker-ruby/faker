@@ -8,7 +8,7 @@ class TestLtLocale < Test::Unit::TestCase
                          68 69 71 72 73 74 75 76 77 78 79].sort
     @cell_prefixes  = %w[21 22 23 24 25 26 27 28 29].sort
     @previous_locale = Faker::Config.locale
-    Faker::Config.locale = :lt
+    Faker::Config.locale = 'lt'
   end
 
   def teardown
@@ -39,6 +39,11 @@ class TestLtLocale < Test::Unit::TestCase
     assert Faker::Address.city.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
+    assert_equal 'Lithuania', Faker::Address.default_country
+    assert_equal 'LT', Faker::Address.country_code
+
+    expected = /LT-\d{5}/
+    assert_match(expected, Faker::Address.postcode)
   end
 
   def test_lt_company_methods
@@ -54,9 +59,13 @@ class TestLtLocale < Test::Unit::TestCase
   end
 
   def test_lt_name_methods
+    assert Faker::Name.male_first_name.is_a? String
+    assert Faker::Name.male_last_name.is_a? String
+    assert Faker::Name.female_first_name.is_a? String
+    assert Faker::Name.female_last_name.is_a? String
+    assert Faker::Name.name.is_a? String
     assert Faker::Name.first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.prefix.is_a? String
     assert Faker::Name.name_with_middle.is_a? String
   end
 end

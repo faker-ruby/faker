@@ -14,8 +14,8 @@ lt-LT:
         - "#{city_name}"
       full_address:
         - "#{street_address}, #{city} #{zip_code}"
-      default_country: [Lithuania]
-      country_code: [LT]
+      default_country: ['Lithuania']
+      country_code: ['LT']
       default_time_zone: ["Europe/Lithuania"]
       country_by_code:
         AB: "Abchazija"
