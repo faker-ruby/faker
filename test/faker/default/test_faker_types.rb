@@ -69,6 +69,23 @@ class TestFakerTypes < Test::Unit::TestCase
     assert @tester.rb_array.length == 1
   end
 
+  def test_rb_integer_array_has_the_right_array
+    assert @tester.rb_integer_array.length == 1
+    assert @tester.rb_integer_array(len: 3).length == 3
+    assert @tester.rb_integer_array(len: 0).empty?
+
+    if RUBY_VERSION < '2.4.0'
+      assert @tester.rb_integer_array.first.class == Fixnum
+    else
+      assert @tester.rb_integer_array.first.class == Integer
+    end
+  end
+
+  def test_rb_integer_array_has_the_right_range
+    assert @tester.rb_integer_array(len: 3, range: (0..1)).length == 2
+    assert @tester.rb_integer_array(len: 3, range: (1..1)) == [1]
+  end
+
   def test_titleize
     val = 'foobar'
     expected = 'Foobar'

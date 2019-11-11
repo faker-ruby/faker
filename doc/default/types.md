@@ -25,6 +25,9 @@ Faker::Types.complex_rb_hash(number: 2) #=> {user: {first: "bob", last: "marley"
 # Random Array
 Faker::Types.rb_array #=> ["a", 1, 2, "bob"]
 
+# Random Integer Array
+Faker::Types.rb_integer_array(len: 2, range:(0..2)) #=> [0, 2]
+
 # Random Type (string, or integer)
 Faker::Types.random_type #=> 1 or "a" or "bob"
 

@@ -66,6 +66,15 @@ module Faker
         end
       end
 
+      def rb_integer_array(legacy_len = NOT_GIVEN, legacy_range = NOT_GIVEN, len: 1, range: (0..100))
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :len if legacy_len != NOT_GIVEN
+          keywords << :range if legacy_range != NOT_GIVEN
+        end
+
+        range.to_a.sample(len, random: Faker::Config.random)
+      end
+
       def random_type
         type_to_use = SIMPLE_TYPES[rand(0..SIMPLE_TYPES.length - 1)]
         case type_to_use
