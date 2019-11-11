@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Coffee.blend_name #=> "Major Java"
       #
-      # @faker.version next
+      # @faker.version 1.9.0
       def blend_name
         parse('coffee.blend_name')
       end
@@ -26,7 +26,7 @@ module Faker
       # @example
       #   Faker::Coffee.origin #=> "Oaxaca, Mexico"
       #
-      # @faker.version next
+      # @faker.version 1.9.0
       def origin
         country = fetch('coffee.country')
         region = fetch("coffee.regions.#{search_format(country)}")
@@ -41,7 +41,7 @@ module Faker
       # @example
       #   Faker::Coffee.variety #=> "Red Bourbon"
       #
-      # @faker.version next
+      # @faker.version 1.9.0
       def variety
         fetch('coffee.variety')
       end
@@ -54,7 +54,7 @@ module Faker
       # @example
       #   Faker::Coffee.notes #=> "dull, tea-like, cantaloupe, soy sauce, marshmallow"
       #
-      # @faker.version next
+      # @faker.version 1.9.0
       def notes
         parse('coffee.notes')
       end
@@ -67,7 +67,7 @@ module Faker
       # @example
       #   Faker::Coffee.intensifier #=> "mild"
       #
-      # @faker.version next
+      # @faker.version 1.9.0
       def intensifier
         fetch('coffee.intensifier')
       end
