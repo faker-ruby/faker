@@ -24,7 +24,7 @@ module Faker
       # @example
       #   Faker::Coin.flip #=> "Heads"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.9.2
       def flip
         fetch('coin.flip')
       end
