@@ -24,7 +24,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Food.descriptions #=> "Breaded fried chicken with waffles. Served with maple syrup."
+      #   Faker::Food.description #=> "Breaded fried chicken with waffles. Served with maple syrup."
       #
       # @faker.version 2.6.0
       def description
@@ -37,7 +37,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Food.ingredients #=> "Olives"
+      #   Faker::Food.ingredient #=> "Olives"
       #
       # @faker.version 2.6.0
       def ingredient
