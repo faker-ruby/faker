@@ -202,9 +202,7 @@ module Faker
 
       def generate_uk_national_insurance_number
         prefix = uk_national_insurance_number_prefix
-
         prefix = uk_national_insurance_number_prefix while UK_NI_BARRED_PREFIXES.any? { |s| s.include?(prefix) }
-
         numbers = Faker::Number.number(digits: 6)
         suffix = UK_NI_SUFFIXES.sample(random: Faker::Config.random)
         prefix + numbers.to_s + suffix
