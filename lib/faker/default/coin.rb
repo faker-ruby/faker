@@ -11,7 +11,7 @@ module Faker
       # @example
       #   Faker::Coin.name #=> "Brazilian Real"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.9.2
       def name
         fetch('currency.name')
       end
