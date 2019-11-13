@@ -76,7 +76,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Food.spices #=> "Garlic Chips"
+      #   Faker::Food.spice #=> "Garlic Chips"
       #
       # @faker.version 2.6.0
       def spice
@@ -89,7 +89,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Food.measurement_sizes #=> "1/3"
+      #   Faker::Food.measurement #=> "1/3"
       #
       # @faker.version 2.6.0
       def measurement
@@ -102,7 +102,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Food.metric_measurements #=> "centiliter"
+      #   Faker::Food.metric_measurement #=> "centiliter"
       #
       # @faker.version 2.6.0
       def metric_measurement
