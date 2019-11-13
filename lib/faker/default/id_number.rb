@@ -16,10 +16,10 @@ module Faker
     BRAZILIAN_ID_FROM = 10_000_000
     BRAZILIAN_ID_TO = 99_999_999
 
-    UK_NI_FIRST_LETTERS = %w[A B C E G H J K L M N O P R S T W X Y Z]
-    UK_NI_SECOND_LETTERS = %w[A B C D E F G H I J K L M N P Q R S T U W X Y Z]
-    UK_NI_BARRED_PREFIXES = %w[BG GB KN NK NT TN ZZ OO FY NC PP PZ TN]
-    UK_NI_SUFFIXES = %w[A B C D]
+    UK_NI_FIRST_LETTERS = %w[A B C E G H J K L M N O P R S T W X Y Z].freeze
+    UK_NI_SECOND_LETTERS = %w[A B C D E F G H I J K L M N P Q R S T U W X Y Z].freeze
+    UK_NI_BARRED_PREFIXES = %w[BG GB KN NK NT TN ZZ OO FY NC PP PZ TN].freeze
+    UK_NI_SUFFIXES = %w[A B C D].freeze
 
     CHILEAN_MODULO = 11
 
@@ -201,12 +201,9 @@ module Faker
       end
 
       def generate_uk_national_insurance_number
-
         prefix = uk_national_insurance_number_prefix
 
-        while UK_NI_BARRED_PREFIXES.any? { |s| s.include?(prefix)}
-          prefix = uk_national_insurance_number_prefix
-        end
+        prefix = uk_national_insurance_number_prefix while UK_NI_BARRED_PREFIXES.any? { |s| s.include?(prefix) }
 
         numbers = Faker::Number.number(digits: 6)
         suffix = UK_NI_SUFFIXES.sample(random: Faker::Config.random)
