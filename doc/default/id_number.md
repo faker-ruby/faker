@@ -34,4 +34,8 @@ Faker::IDNumber.brazilian_id(formatted: true) #=> 12.123.123-12
 # Generate a Chilean ID (Rut with 8 digits)
 # For more advanced cases, please refer to Faker::ChileRut
 Faker::IDNumber.chilean_id #=> "15620613-K"
+
+# Generate a UK National Insurance number ID
+Faker::IDNumber.uk_national_insurance_number #=> "XY123456A"
+
 ```

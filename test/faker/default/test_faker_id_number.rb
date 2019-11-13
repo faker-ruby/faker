@@ -152,6 +152,13 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal verification_code, 0
   end
 
+  def test_uk_national_insurance_number
+    ni_number = @tester.uk_national_insurance_number
+    assert_equal 9, ni_number.length
+    assert_match(/^[A-Z]{2}[0-9]{6}[A-Z]/, ni_number)
+    assert_false Faker::IDNumber::UK_NI_BARRED_PREFIXES.any? { |s| s.include?(ni_number[0..1]) }
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)
