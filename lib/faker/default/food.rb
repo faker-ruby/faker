@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Food.dish #=> "Feijoada"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.8.0
       def dish
         fetch('food.dish')
       end
@@ -26,7 +26,7 @@ module Faker
       # @example
       #   Faker::Food.description #=> "Breaded fried chicken with waffles. Served with maple syrup."
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.9.0
       def description
         fetch('food.descriptions')
       end
@@ -39,7 +39,7 @@ module Faker
       # @example
       #   Faker::Food.ingredient #=> "Olives"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.7.0
       def ingredient
         fetch('food.ingredients')
       end
@@ -52,7 +52,7 @@ module Faker
       # @example
       #   Faker::Food.fruits #=> "Papaya"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.9.0
       def fruits
         fetch('food.fruits')
       end
@@ -65,7 +65,7 @@ module Faker
       # @example
       #   Faker::Food.vegetables #=> "Broccolini"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.9.0
       def vegetables
         fetch('food.vegetables')
       end
@@ -78,7 +78,7 @@ module Faker
       # @example
       #   Faker::Food.spice #=> "Garlic Chips"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.7.0
       def spice
         fetch('food.spices')
       end
@@ -91,7 +91,7 @@ module Faker
       # @example
       #   Faker::Food.measurement #=> "1/3"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.7.0
       def measurement
         fetch('food.measurement_sizes') + ' ' + fetch('food.measurements')
       end
@@ -104,7 +104,7 @@ module Faker
       # @example
       #   Faker::Food.metric_measurement #=> "centiliter"
       #
-      # @faker.version 2.6.0
+      # @faker.version 1.8.3
       def metric_measurement
         fetch('food.metric_measurements')
       end
