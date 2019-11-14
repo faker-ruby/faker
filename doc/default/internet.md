@@ -10,6 +10,7 @@ Faker::Internet.email(name: 'Janelle Santiago', separators: '+') #=> janelle+san
 Faker::Internet.free_email #=> "freddy@gmail.com"
 Faker::Internet.free_email(name: 'Nancy') #=> "nancy@yahoo.com"
 
+# Generates an RFC 2606 compliant fake email, which means it will never deliver successfully
 # Keyword arguments: name
 Faker::Internet.safe_email #=> "christelle@example.org"
 Faker::Internet.safe_email(name: 'Nancy') #=> "nancy@example.net"
