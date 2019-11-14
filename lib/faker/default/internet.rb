@@ -3,16 +3,16 @@
 module Faker
   class Internet < Base
     class << self
-      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil)
+      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :name if legacy_name != NOT_GIVEN
           keywords << :separators if legacy_separators != NOT_GIVEN
         end
 
         if separators
-          [username(specifier: name, separators: separators), domain_name].join('@')
+          [username(specifier: name, separators: separators), domain_name(domain: domain)].join('@')
         else
-          [username(specifier: name), domain_name].join('@')
+          [username(specifier: name), domain_name(domain: domain)].join('@')
         end
       end
 
@@ -135,14 +135,15 @@ module Faker
         temp
       end
 
-      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false)
+      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :subdomain if legacy_subdomain != NOT_GIVEN
         end
 
         with_locale(:en) do
-          domain_elements = [Char.prepare(domain_word), domain_suffix]
-          domain_elements.unshift(Char.prepare(domain_word)) if subdomain
+          given_domain_word = domain || domain_word
+          domain_elements = [Char.prepare(given_domain_word), domain_suffix]
+          domain_elements.unshift(Char.prepare(given_domain_word)) if subdomain
           domain_elements.join('.')
         end
       end
