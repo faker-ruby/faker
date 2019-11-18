@@ -23,6 +23,7 @@ development.
   - [Usage](#usage)
     - [CLI](#cli)
     - [Ensuring unique values](#ensuring-unique-values)
+    - [Filtering generated values](#filtering-generated-values)
     - [Deterministic Random](#deterministic-random)
   - [Generators](#generators)
     - [Default](#default)
@@ -97,6 +98,34 @@ manually set values).
 # Add 'azerty' and 'wxcvbn' to the string generator with 6 char length
 Faker::Lorem.unique.exclude :string, [6], %w[azerty wxcvbn]
 ```
+
+### Filtering Generated Values
+
+You can constrain generated values using `select` and `reject` methods.
+
+These accept both accept a block, with `select` only permitting values for which
+this block evaluates to `true` and `reject` only permitting values for which it
+evaluates to `false`.
+
+For example:
+
+```ruby
+Faker::Number.select(&:even?).number
+# and
+Faker::Number.reject(&:odd?).number 
+```
+
+both generate even integers.
+
+You can also chain these methods together with the `unique` method.
+
+For example:
+
+```ruby
+Faker::Number.unique.reject(&:odd?).select(&:nonzero?).digit
+```
+
+generates unique, even, nonzero digit 
 
 ### Deterministic Random
 Faker supports seeding of its pseudo-random number generator (PRNG) to provide deterministic output of repeated method calls.
