@@ -38,6 +38,8 @@ module Faker
   end
 
   class Base
+    extend Filtering
+
     Numbers = Array(0..9)
     ULetters = Array('A'..'Z')
     LLetters = Array('a'..'z')

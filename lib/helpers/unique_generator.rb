@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+require_relative 'filtering'
+
 module Faker
   class UniqueGenerator
+    include Filtering
+
     @marked_unique = Set.new # Holds names of generators with unique values
 
     class << self

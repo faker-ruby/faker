@@ -13,6 +13,10 @@ end
 class TestFaker < Test::Unit::TestCase
   def setup; end
 
+  def teardown
+    Faker::UniqueGenerator.clear
+  end
+
   def test_numerify
     100.times do
       assert Faker::Base.numerify('###').match(/[1-9]\d{2}/)
@@ -122,5 +126,42 @@ class TestFaker < Test::Unit::TestCase
     end
 
     assert_equal(unique_numbers.uniq, unique_numbers)
+  end
+
+  def test_select
+    filter = proc { |letter| letter =~ /[AEIOU]/ }
+    selected_letters = Array.new(8) do
+      Faker::Base.select(&filter).letterify('?')
+    end
+
+    assert selected_letters.all?(&filter)
+  end
+
+  def test_reject
+    filter = proc { |letter| letter =~ /[ABCDEFGHIJ]/ }
+    selected_letters = Array.new(8) do
+      Faker::Base.reject(&filter).letterify('?')
+    end
+
+    assert selected_letters.none?(&filter)
+  end
+
+  def test_unique_and_select
+    filter = proc { |letter| letter =~ /[AEIOU]/ }
+    selected_letters = Array.new(5) do
+      Faker::Base.unique.select(&filter).letterify('?')
+    end
+
+    assert_equal(%w[A E I O U], selected_letters.sort)
+  end
+
+  def test_select_and_reject
+    selection_filter = proc { |letter| letter =~ /[AEIOU]/ }
+    rejection_filter = proc { |letter| letter =~ /[EIOU]/ }
+    selected_letters = Array.new(5) do
+      Faker::Base.select(&selection_filter).reject(&rejection_filter).letterify('?')
+    end
+
+    assert selected_letters.all? { |letter| letter == 'A' }
   end
 end

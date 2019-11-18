@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+require_relative 'filtering'
+
 module Faker
   class Filter
+    include Filtering
+
     def initialize(generator, max_retries, &filter)
       @generator = generator
       @max_retries = max_retries
