@@ -5,7 +5,7 @@
 Faker::Internet.email #=> "eliza@mann.net"
 Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.biz"
 Faker::Internet.email(name: 'Janelle Santiago', separators: '+') #=> janelle+santiago@becker.com"
-Faker::Internet.email(domain: 'example.com') #=> alice@example.com"
+Faker::Internet.email(domain: 'example') #=> alice@example.name"
 
 # Keyword arguments: name
 Faker::Internet.free_email #=> "freddy@gmail.com"
@@ -36,8 +36,8 @@ Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special
 
 # Keyword arguments: subdomain, domain
 Faker::Internet.domain_name #=> "effertz.info"
-Faker::Internet.domain_name(domain: "example.com") #=> "example.com"
-Faker::Internet.domain_name(subdomain: true, domain: "example.com") #=> "horse.example.com"
+Faker::Internet.domain_name(domain: "example") #=> "example.net"
+Faker::Internet.domain_name(subdomain: true, domain: "example") #=> "horse.example.org"
 
 Faker::Internet.domain_word #=> "haleyziemann"
 
