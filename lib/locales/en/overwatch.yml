@@ -5,7 +5,7 @@ en:
         heroes: ["Ana", "Ashe", "Baptiste", "Bastion", "Brigitte", "D.va", "Doomfist", "Genji", "Hanzo", "Junkrat", "Lucio", "McCree", "Mei", "Mercy", "Moira", "Orisa", "Pharah", "Reaper", "Reinhardt", "Roadhog", "Sigma", "Soldier 76", "Sombra", "Symmetra", "Torbjorn", "Tracer", "Widowmaker", "Winston", "Wrecking Ball", "Zarya", "Zenyatta"]
         locations: ["Adlersbrunn", "Ayutthaya", "Black Forest", "Blizzard World", "Busan", "Busan Stadium", "Castillo", "Château Guillard", "Dorado", "Ecopoint: Antarctica", "Eichenwalde", "Hanamura", "Estádio das Rãs", "Hanamura", "Havana", "Hollywood", "Horizon Lunar Colony", "Ilios", "Junkertown", "King's Row", "Lijiang Tower", "Necropolis", "Nepal", "Numbani", "Oasis", "Paris", "Petra", "Rialto", "Route 66", "Temple of Anubis", "Volskaya Industries", "Watchpoint: Gibraltar"]
         quotes: [
-          #--------------------------Ana's Quotes--------------------------
+          #--------------------------Ana's quotes--------------------------
           "Get back in the fight"
           "I have you covered"
           "I have your back"
@@ -124,7 +124,7 @@ en:
           "Gerard was a fool to love someone like you"
           "It feels good to be home"
           "Captain Amari, reporting for duty"
-          #--------------------------Ashe's Quotes--------------------------
+          #--------------------------Ashe's quotes--------------------------
           "Fire in the hole!"
           "Here it comes!"
           "Take a step back!"
@@ -208,7 +208,7 @@ en:
           "On the dartboard"
           "What did you do with it Jesse"
           "Too competent"
-          #--------------------------Baptiste's Quotes--------------------------
+          #--------------------------Baptiste's quotes--------------------------
           "Ultimate - Light Em Up"
           "Ultimate - Vide Bal Sou Yo"
           "No wasted effort"
@@ -220,7 +220,7 @@ en:
           "Was you or me, brother"
           "Was you or me, sister"
           "Felt good when I woke up in the morning"
-          #--------------------------Bastion's Quotes--------------------------
+          #--------------------------Bastion's quotes--------------------------
           "Ultimate - Woo Woo Woo Whee Woo Whee"
           "15227"
           "4543"
@@ -239,9 +239,9 @@ en:
           "Sh-sh-sh dwee!"
           "Zwee"
           "Dwee wee woh"
-          #--------------------------Brigitte's Quotes--------------------------
+          #--------------------------Brigitte's quotes--------------------------
           "Family Vacation"
-          #--------------------------D.Va's Quotes--------------------------
+          #--------------------------D.Va's quotes--------------------------
           "APM jom ollyo bolkka"
           "Defense Matrix activated"
           "Get through this"
@@ -362,7 +362,7 @@ en:
           "All systems buzzing!"
           "Bzzzzzz!"
           "I am not the Easter Bunny"
-          #--------------------------Doomfist's Quotes--------------------------
+          #--------------------------Doomfist's quotes--------------------------
           "Rising Uppercut"
           "Rising fist"
           "Meteor Strike!"
@@ -449,7 +449,7 @@ en:
           "This city is a powder keg that could ignite the world. And Talon is the flame"
           "I think your flight is delayed"
           "The world changed after the crisis. It is due for another test"
-          #--------------------------Genji's Quotes--------------------------
+          #--------------------------Genji's quotes--------------------------
           "I am ready"
           "Try Me"
           "Hajime"
@@ -546,7 +546,7 @@ en:
           "You are only human"
           "I was hoping for a challenge"
           "My halloween costume, cyborg ninja"
-          "Happy Halloween.oga">https://overwatch.gamepedia.com/File:Happy Halloween.oga</a"
+          "Happy Halloween.oga""
           "Merry Christmas"
           "To know yourself, is to be at peace"
           "Kaedama"
@@ -580,8 +580,8 @@ en:
           "Akemashite Omedetou Gozaimasu"
           "The winds of death are strong"
           "I still have much to learn"
-          #--------------------------HAL-Fred_Glitchbot's Quotes--------------------------
-          #--------------------------Hanzo's Quotes--------------------------
+          #--------------------------HAL-Fred_Glitchbot's quotes--------------------------
+          #--------------------------Hanzo's quotes--------------------------
           "Marked"
           "Marked by the dragon"
           "See that which is unseen"
@@ -731,8 +731,8 @@ en:
           "The art of deception"
           "My arrow finds its mark"
           "My aim is true"
-          #--------------------------Junker_Queen's Quotes--------------------------
-          #--------------------------Junkrat's Quotes--------------------------
+          #--------------------------Junker_Queen's quotes--------------------------
+          #--------------------------Junkrat's quotes--------------------------
           "Perfect"
           "Surprise!"
           "Here we go"
@@ -848,7 +848,7 @@ en:
           "finders keepers"
           "God save the king"
           "Be an Atheist"
-          #--------------------------McCree's Quotes--------------------------
+          #--------------------------McCree's quotes--------------------------
           "Pardon me"
           "Easy"
           "Hold up now"
@@ -909,7 +909,7 @@ en:
           "Hair of the dog"
           "How do you like me now"
           "D.Va, just tell me one thing whered"
-          #--------------------------Mei's Quotes--------------------------
+          #--------------------------Mei's quotes--------------------------
           "Ice wall, coming up"
           "This will stop them"
           "Haha, watch this"
@@ -1012,15 +1012,15 @@ en:
           "Home sweet home"
           "Do you think"
           "Ouch that stings"
-          #--------------------------Mercy's Quotes--------------------------
-          #--------------------------Moira's Quotes--------------------------
+          #--------------------------Mercy's quotes--------------------------
+          #--------------------------Moira's quotes--------------------------
           "The Struggle for martial superiority"
           "When faced with a setback, we must challenge our assumptions."
-          "We must all make sacrifices in the name of science.flac">https://overwatch.gamepedia.com/File:We must all make sacrifices in the name of science.flac</a"
+          "We must all make sacrifices in the name of science.flac""
           "My power is overwhelming!"
           "Slowly they realize that failure is all that awaits them"
           "Our enemies believe that they can take our objective. They are mistaken"
-          "The payload moves towards our desired outcome.flac">https://overwatch.gamepedia.com/File:The payload moves towards our desired outcome.flac</a"
+          "The payload moves towards our desired outcome.flac""
           "That we should fail in stopping the payload has no reasonable explanation"
           "We must keep our enemies from further progress towards their goal"
           "Situational awareness could save your life-- I recommend it"
@@ -1035,9 +1035,9 @@ en:
           "A dreamer"
           "We are all in the gutter, but some of us are looking at the stars"
           "The government here has such a medieval view towards omnics"
-          "If only the world could see the wonders that science has built.flac">https://overwatch.gamepedia.com/File:If only the world could see the wonders that science has built.flac</a"
-          "This is now my home... as much as any other.flac">https://overwatch.gamepedia.com/File:This is now my home... as much as any other.flac</a"
-          #--------------------------Orisa's Quotes--------------------------
+          "If only the world could see the wonders that science has built.flac""
+          "This is now my home... as much as any other.flac""
+          #--------------------------Orisa's quotes--------------------------
           "Fortifying defenses"
           "Standing ground"
           "Holding position"
@@ -1250,7 +1250,7 @@ en:
           "Systems compromised"
           "On a scale"
           "I consider Reinhardt"
-          #--------------------------Pharah's Quotes--------------------------
+          #--------------------------Pharah's quotes--------------------------
           "Clearing The Area"
           "Get Back!"
           "Move back"
@@ -1354,7 +1354,7 @@ en:
           "I lost many good soldiers here"
           "I Always Dreamed Of Being Stationed Here"
           "Thunderbird systems online"
-          #--------------------------Reaper's Quotes--------------------------
+          #--------------------------Reaper's quotes--------------------------
           "Death comes"
           "Die die die"
           "clearing the area"
@@ -1393,7 +1393,7 @@ en:
           "I need to pay visit to a friend"
           "This is where I picked up the ingrate"
           "my mistake"
-          #--------------------------Reinhardt's Quotes--------------------------
+          #--------------------------Reinhardt's quotes--------------------------
           "Come out and face me"
           "Is That The Best You Can Do"
           "Get Behind Me"
@@ -1524,8 +1524,8 @@ en:
           "I am purified"
           "Fall back"
           "Is my hero"
-          #--------------------------Retribution's Quotes--------------------------
-          #--------------------------Roadhog's Quotes--------------------------
+          #--------------------------Retribution's quotes--------------------------
+          #--------------------------Roadhog's quotes--------------------------
           "Come here"
           "get down"
           "Grounded"
@@ -1613,7 +1613,7 @@ en:
           "shiny"
           "No job too big, no score too small"
           "so much drama"
-          #--------------------------Sigma's Quotes--------------------------
+          #--------------------------Sigma's quotes--------------------------
           "Activating the barrier!"
           "Barrier in place!"
           "Observe the barrier!"
@@ -1759,8 +1759,8 @@ en:
           "By looking far out into space we are also looking far back into time, back toward the horizon of the universe"
           "This is all Greek to me"
           "Tempus fugit"
-          #--------------------------Soldier:_76's Quotes--------------------------
-          #--------------------------Sombra's Quotes--------------------------
+          #--------------------------Soldier:_76's quotes--------------------------
+          #--------------------------Sombra's quotes--------------------------
           "Initiating the hack"
           "Iniciando el hackeo"
           "Here I am"
@@ -1798,7 +1798,7 @@ en:
           "Sombra online"
           "Sniper! Ten cuidado"
           "Enemies on my radar"
-          "El enemigo esta aqui.flac">https://overwatch.gamepedia.com/File:El enemigo esta aqui.flac</a"
+          "El enemigo esta aqui.flac""
           "Enemigo detectado"
           "Enemy turret here"
           "Find the teleporter"
@@ -1820,7 +1820,7 @@ en:
           "Buenas noches"
           "Taradita"
           "Sorry Gabe"
-          "Huy! Que Miedo!.flac">https://overwatch.gamepedia.com/File:Huy! Que Miedo!.flac</a"
+          "Huy! Que Miedo!.flac""
           "Amateur hour"
           "Te pasas de lanza."
           "Que triste"
@@ -1829,7 +1829,7 @@ en:
           "Down for the count!"
           "Back off!"
           "I know Kung Fu"
-          "I knew you were good for something.flac">https://overwatch.gamepedia.com/File:I knew you were good for something.flac</a"
+          "I knew you were good for something.flac""
           "Must be some reason I keep you around"
           "Buen Tiro!"
           "Hey"
@@ -1875,7 +1875,7 @@ en:
           "Too close for comfort"
           "Cinco cuatro tres dos uno"
           "Five, four, three, two, one"
-          #--------------------------Symmetra's Quotes--------------------------
+          #--------------------------Symmetra's quotes--------------------------
           "From light into being"
           "Turret deployed"
           "Turret online"
@@ -2049,7 +2049,7 @@ en:
           "My teleporter is offline. The way is closed"
           "My shield generator has been destroyed"
           "My shield generator is offline"
-          #--------------------------Tracer's Quotes--------------------------
+          #--------------------------Tracer's quotes--------------------------
           "Blink laugh"
           "Whee!"
           "Whoa"
@@ -2186,9 +2186,9 @@ en:
           "youre going on my nice list"
           "Get out of there"
           "Ive got you covered"
-          #--------------------------Training_bot's Quotes--------------------------
-          #--------------------------Uprising's Quotes--------------------------
-          #--------------------------Widowmaker's Quotes--------------------------
+          #--------------------------Training_bot's quotes--------------------------
+          #--------------------------Uprising's quotes--------------------------
+          #--------------------------Widowmaker's quotes--------------------------
           "Dans ma ligne de mire"
           "I see you, do you see me"
           "Allez, montre-toi"
@@ -2250,7 +2250,7 @@ en:
           "i dont even feel the cold"
           "no one can hide from the huntress"
           "the huntress gets her prey"
-          #--------------------------Winston's Quotes--------------------------
+          #--------------------------Winston's quotes--------------------------
           "Coming through"
           "Pardon me"
           "Excuse me for dropping in"
@@ -2366,8 +2366,8 @@ en:
           "In five, four, three, two, one"
           "Always liked working with you too"
           "I like to leave the heavy lifting"
-          #--------------------------Wrecking_Ball's Quotes--------------------------
-          #--------------------------Zarya's Quotes--------------------------
+          #--------------------------Wrecking_Ball's quotes--------------------------
+          #--------------------------Zarya's quotes--------------------------
           "Barrier activated"
           "Bring it"
           "Give me your best shot"
@@ -2449,7 +2449,7 @@ en:
           "I will not let the fate that befell this place happen to my country!"
           "The humans who live here are fools to trust the omnics"
           "Katya is a hero to my people. We must protect what she has built"
-          #--------------------------Zenyatta's Quotes--------------------------
+          #--------------------------Zenyatta's quotes--------------------------
           "Be one with the Universe"
           "Be reborn"
           "Embrace tranquility"
