@@ -76,7 +76,7 @@ en:
       - Leader
       - "#"
       call_sign:
-      - "#{call_squadron} #{call_number}"
+      - "#{call_squadrons} #{call_numbers}"
       droids:
       - 2-1B
       - 4-LOM
