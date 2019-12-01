@@ -1,5 +1,45 @@
 # Change Log
 
+## [v2.8.0](https://github.com/faker-ruby/faker/tree/v2.8.0) (2019-12-01)
+
+## Bugfixes
+
+- [PR #1563](https://github.com/faker-ruby/faker/pull/1563) 
+Fix generating routing number [@psienko](https://github.com/psienko)
+
+## Chores
+
+- [PR #1835](https://github.com/faker-ruby/faker/pull/1835) 
+Remove duplicate method description [@pacso](https://github.com/pacso)
+
+## Documentation
+
+- [PR #1837](https://github.com/faker-ruby/faker/pull/1837) 
+docs: Internet #email, #domain do not control TLD [@olleolleolle](https://github.com/olleolleolle)
+- [PR #1833](https://github.com/faker-ruby/faker/pull/1833) Explain safe_email method [@swrobel](https://github.com/swrobel)
+- [PR #1810](https://github.com/faker-ruby/faker/pull/1810) Add yard docs for Faker::Coffee methods [@LuanGB](https://github.com/LuanGB)
+- [PR #1803](https://github.com/faker-ruby/faker/pull/1803) 
+add YARD doc for Faker::Coin [@sap1enza](https://github.com/sap1enza) [@connorshea](https://github.com/connorshea)
+- [PR #1799](https://github.com/faker-ruby/faker/pull/1799) Remove 'See below examples' for consistency [@DevUsmanGhani](https://github.com/DevUsmanGhani)
+- [PR #1793](https://github.com/faker-ruby/faker/pull/1793) add Faker::Relationship YARD docs [@DevUsmanGhani](https://github.com/DevUsmanGhani)
+
+## Feature Request
+
+- [PR #1808](https://github.com/faker-ruby/faker/pull/1808) Adds domain option for Internet email and domain_name methods [@tiagofsilva](https://github.com/tiagofsilva)
+
+## Update locales
+
+- [PR #1841](https://github.com/faker-ruby/faker/pull/1841) 
+Fix strange result from `Lorem.word` in ja locale [@yujideveloper](https://github.com/yujideveloper)
+- [PR #1839](https://github.com/faker-ruby/faker/pull/1839) 
+added new heroes, new maps and almost all of the quotes [@TCsTheMechanic](https://github.com/TCsTheMechanic)
+
+## Update local dependencies
+
+- [PR #1831](https://github.com/faker-ruby/faker/pull/1831) Update rake requirement from = 13.0.0 to = 13.0.1 [@DevUsmanGhani](https://github.com/DevUsmanGhani) 
+
+------------------------------------------------------------------------------
+
 ## [v2.7.0](https://github.com/faker-ruby/faker/tree/v2.7.0) (2019-11-01)
 
 This version:
