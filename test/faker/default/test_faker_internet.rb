@@ -19,6 +19,10 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.email(name: 'jane doe', domain: 'customdomain').match(/.+@customdomain\.\w+/)
   end
 
+  def test_email_with_domain_option_given_with_domain_suffix
+    assert @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix').match(/.+@customdomain\.customdomainsuffix/)
+  end
+
   def test_free_email
     assert @tester.free_email.match(/.+@(gmail|hotmail|yahoo)\.com/)
   end
@@ -156,6 +160,10 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_domain_name_with_subdomain_and_with_domain_option_given
     assert @tester.domain_name(subdomain: true, domain: 'customdomain').match(/customdomain\.\w+/)
+  end
+
+  def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffixc
+    assert @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix').match(/customdomain\.customdomainsuffix/)
   end
 
   def test_domain_word
