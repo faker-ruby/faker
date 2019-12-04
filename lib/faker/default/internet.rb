@@ -142,7 +142,9 @@ module Faker
 
         with_locale(:en) do
           if domain
-            domain.split('.').map { |domain_part| Char.prepare(domain_part) }
+            domain
+              .split('.')
+              .map { |domain_part| Char.prepare(domain_part) }
               .tap do |domain_elements|
                 domain_elements << domain_suffix if domain_elements.length < 2
                 domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
