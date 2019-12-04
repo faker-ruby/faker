@@ -141,21 +141,17 @@ module Faker
         end
 
         with_locale(:en) do
-          domain_elements = []
-
           if domain
-            domain.split('.').each do |domain_part|
-              domain_elements << Char.prepare(domain_part)
-            end
-            domain_elements << domain_suffix if domain_elements.length < 2
-            domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
+            domain.split('.').map { |domain_part| Char.prepare(domain_part) }.
+              tap { |domain_elements|
+                domain_elements << domain_suffix if domain_elements.length < 2
+                domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
+              }.join('.')
           else
-            domain_elements << domain_word
-            domain_elements << domain_suffix
-            domain_elements.unshift(Char.prepare(domain_word)) if subdomain
+            [domain_word, domain_suffix].tap { |domain_elements|
+              domain_elements.unshift(Char.prepare(domain_word)) if subdomain  
+            }.join('.')
           end
-
-          domain_elements.join('.')
         end
       end
 

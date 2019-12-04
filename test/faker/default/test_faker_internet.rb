@@ -162,7 +162,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.domain_name(subdomain: true, domain: 'customdomain').match(/customdomain\.\w+/)
   end
 
-  def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffixc
+  def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffix
     assert @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix').match(/customdomain\.customdomainsuffix/)
   end
 
