@@ -15,14 +15,6 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.email(name: 'jane doe', separators: '+').match(/.+\+.+@.+\.\w+/)
   end
 
-  def test_email_with_domain_option_given
-    assert @tester.email(name: 'jane doe', domain: 'customdomain').match(/.+@customdomain\.\w+/)
-  end
-
-  def test_email_with_domain_option_given_with_domain_suffix
-    assert @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix').match(/.+@customdomain\.customdomainsuffix/)
-  end
-
   def test_free_email
     assert @tester.free_email.match(/.+@(gmail|hotmail|yahoo)\.com/)
   end
@@ -158,12 +150,40 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.domain_name(subdomain: true).match(/\w+\.\w+\.\w+/)
   end
 
-  def test_domain_name_with_subdomain_and_with_domain_option_given
-    assert @tester.domain_name(subdomain: true, domain: 'customdomain').match(/customdomain\.\w+/)
+  def test_domain_name_with_domain_suffix
+    assert @tester.domain_name(domain_suffix: 'domain_suffix').match(/\w+\.domain_suffix/)
   end
 
-  def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffixc
-    assert @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix').match(/customdomain\.customdomainsuffix/)
+  def test_domain_name_with_subdomain_with_domain_suffix
+    assert @tester.domain_name(subdomain: true, domain_suffix: 'domain_suffix').match(/\w+\.\w+\.domain_suffix/)
+  end
+
+  def test_domain_name_with_subdomain_with_complex_domain_suffix
+    assert @tester.domain_name(subdomain: true, domain_suffix: 'my.domain.suffix').match(/\w+\.\w+\.my.domain.suffix/)
+  end
+
+  def test_email_with_domain_option_given
+    assert @tester.email(domain: 'custom_domain').match(/.+@custom_domain\.\w+/)
+  end
+
+  def test_email_with_domain_suffix_option_given
+    assert @tester.email(domain_suffix: 'custom_domain_suffix').match(/.+custom_domain_suffix/)
+  end
+
+  def test_email_with_domain_and_domain_suffix_option_given
+    assert @tester.email(domain: 'custom_domain', domain_suffix: 'custom_domain_suffix').match(/.+@custom_domain\.custom_domain_suffix+/)
+  end
+
+  def test_email_with_subdomain_and_domain_suffix_option_given
+    assert @tester.email(subdomain: true, domain_suffix: 'custom_domain_suffix').match(/.+@\w+\.\w+\.custom_domain_suffix/)
+  end
+
+  def test_email_with_subdomain_and_domain_and_domain_suffix_option_given
+    assert @tester.email(subdomain: true, domain: 'custom_domain', domain_suffix: 'custom_domain_suffix').match(/.+@\w+\.custom_domain\.custom_domain_suffix/)
+  end
+
+  def test_email_with_custom_subdomain_and_custom_suffix_option_given
+    assert @tester.email(domain: 'custom_subdomain.custom_domain', domain_suffix: 'custom.domain.suffix').match(/.+@custom_subdomain\.custom_domain\.custom\.domain\.suffix/)
   end
 
   def test_domain_word

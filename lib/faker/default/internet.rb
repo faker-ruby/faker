@@ -3,17 +3,20 @@
 module Faker
   class Internet < Base
     class << self
-      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil)
+      # rubocop:disable Metrics/ParameterLists
+      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil, domain_suffix: nil, subdomain: false)
+        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :name if legacy_name != NOT_GIVEN
           keywords << :separators if legacy_separators != NOT_GIVEN
         end
 
-        if separators
-          [username(specifier: name, separators: separators), domain_name(domain: domain)].join('@')
-        else
-          [username(specifier: name), domain_name(domain: domain)].join('@')
-        end
+        given_username = if separators
+                           username(specifier: name, separators: separators)
+                         else
+                           username(specifier: name)
+                         end
+        [given_username, domain_name(domain: domain, domain_suffix: domain_suffix, subdomain: subdomain)].join('@')
       end
 
       def free_email(legacy_name = NOT_GIVEN, name: nil)
@@ -135,26 +138,19 @@ module Faker
         temp
       end
 
-      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil)
+      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil, domain_suffix: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :subdomain if legacy_subdomain != NOT_GIVEN
         end
 
         with_locale(:en) do
+          given_domain = domain || domain_word
+          given_suffix = domain_suffix || self.domain_suffix
+
           domain_elements = []
-
-          if domain
-            domain.split('.').each do |domain_part|
-              domain_elements << Char.prepare(domain_part)
-            end
-            domain_elements << domain_suffix if domain_elements.length < 2
-            domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
-          else
-            domain_elements << domain_word
-            domain_elements << domain_suffix
-            domain_elements.unshift(Char.prepare(domain_word)) if subdomain
-          end
-
+          domain_elements << Char.prepare(domain_word) if subdomain
+          domain_elements << perpare_domain_part(given_domain)
+          domain_elements << perpare_domain_part(given_suffix)
           domain_elements.join('.')
         end
       end
@@ -173,6 +169,12 @@ module Faker
 
       def domain_suffix
         fetch('internet.domain_suffix')
+      end
+
+      def perpare_domain_part(domain_part)
+        domain_part.split('.')
+                   .map { |word| Char.prepare(word) }
+                   .join('.')
       end
 
       def mac_address(legacy_prefix = NOT_GIVEN, prefix: '')
