@@ -3,17 +3,20 @@
 module Faker
   class Internet < Base
     class << self
-      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil)
+      # rubocop:disable Metrics/ParameterLists
+      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil, domain_suffix: nil, subdomain: false)
+        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :name if legacy_name != NOT_GIVEN
           keywords << :separators if legacy_separators != NOT_GIVEN
         end
 
-        if separators
-          [username(specifier: name, separators: separators), domain_name(domain: domain)].join('@')
-        else
-          [username(specifier: name), domain_name(domain: domain)].join('@')
-        end
+        given_username = if separators
+                           username(specifier: name, separators: separators)
+                         else
+                           username(specifier: name)
+                         end
+        [given_username, domain_name(domain: domain, domain_suffix: domain_suffix, subdomain: subdomain)].join('@')
       end
 
       def free_email(legacy_name = NOT_GIVEN, name: nil)
@@ -135,25 +138,21 @@ module Faker
         temp
       end
 
-      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil)
+      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil, domain_suffix: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :subdomain if legacy_subdomain != NOT_GIVEN
         end
 
         with_locale(:en) do
-          if domain
-            domain
-              .split('.')
-              .map { |domain_part| Char.prepare(domain_part) }
-              .tap do |domain_elements|
-                domain_elements << domain_suffix if domain_elements.length < 2
-                domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
-              end.join('.')
-          else
-            [domain_word, domain_suffix].tap do |domain_elements|
-              domain_elements.unshift(Char.prepare(domain_word)) if subdomain
-            end.join('.')
-          end
+          given_domain    = domain || domain_word
+          given_suffix    = domain_suffix || self.domain_suffix
+          subdomain_word  = domain_word if subdomain
+
+          [subdomain_word, given_domain, given_suffix].compact.map do |domain_elements|
+            domain_elements.split('.')
+                           .map { |word| Char.prepare(word) }
+                           .join('.')
+          end.join('.')
         end
       end
 
