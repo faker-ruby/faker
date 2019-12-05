@@ -1,11 +1,15 @@
 # Faker::Internet
 
 ```ruby
-# Keyword arguments: name, separators, domain
+# Keyword arguments: name, separators, subdomain, domain, domain_suffix
 Faker::Internet.email #=> "eliza@mann.net"
 Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.biz"
 Faker::Internet.email(name: 'Janelle Santiago', separators: '+') #=> janelle+santiago@becker.com"
 Faker::Internet.email(domain: 'example') #=> alice@example.name"
+Faker::Internet.email(subdomain: true) #=> alice@keebler.sons.name"
+Faker::Internet.email(domain_suffix: 'xyz') #=> alice@terry.xyz"
+Faker::Internet.email(domain: 'company.example', domain_suffix: 'xyz') #=> alice@company.example.xyz"
+Faker::Internet.email(subdomain: true, domain: 'company.example', domain_suffix: 'xyz') #=> alice@keebler.company.example.xyz"
 
 # Keyword arguments: name
 Faker::Internet.free_email #=> "freddy@gmail.com"
@@ -34,10 +38,12 @@ Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw
 Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
 Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
 
-# Keyword arguments: subdomain, domain
+# Keyword arguments: subdomain, domain, domain_suffix
 Faker::Internet.domain_name #=> "effertz.info"
 Faker::Internet.domain_name(domain: "example") #=> "example.net"
 Faker::Internet.domain_name(subdomain: true, domain: "example") #=> "horse.example.org"
+Faker::Internet.domain_name(domain: "company.example", domain_suffix: "xyz") #=> "company.example.xyz"
+Faker::Internet.domain_name(subdomain: true, domain: "company.example", domain_suffix: "xyz") #=> "hello.company.example.xyz"
 
 Faker::Internet.domain_word #=> "haleyziemann"
 
