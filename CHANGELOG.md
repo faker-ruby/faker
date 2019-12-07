@@ -1,5 +1,20 @@
 # Change Log
 
+## [v2.9.0](https://github.com/faker-ruby/faker/tree/v2.9.0) (2019-12-06)
+
+- [PR #1852](https://github.com/faker-ruby/faker/pull/1852) Add YARD docs for Faker::Business. [@connorshea](https://github.com/connorshea)
+- [PR #1851](https://github.com/faker-ruby/faker/pull/1851) Add YARD docs for Faker::Crypto. [@connorshea](https://github.com/connorshea)
+- [PR #1850](https://github.com/faker-ruby/faker/pull/1850) Add YARD docs for Faker::Kpop. [@connorshea](https://github.com/connorshea)
+- [PR #1849](https://github.com/faker-ruby/faker/pull/1849) Add YARD docs for Faker::BossaNova. [@connorshea](https://github.com/connorshea)
+- [PR #1848](https://github.com/faker-ruby/faker/pull/1848) Add YARD Docs for Faker::Demographic. [@connorshea](https://github.com/connorshea)
+- [PR #1846](https://github.com/faker-ruby/faker/pull/1846) FIX internet custom domain with suffix [@ngouy](https://github.com/ngouy)
+- [PR #1844](https://github.com/faker-ruby/faker/pull/1844) fix yard doc in contribution [@vikas95prasad](https://github.com/vikas95prasad)
+- [PR #1802](https://github.com/faker-ruby/faker/pull/1802) add YARD doc for Faker::Food [@sap1enza](https://github.com/sap1enza)
+- [PR #1772](https://github.com/faker-ruby/faker/pull/1848) Refactor Faker::Educator and add docs [@connorshea](https://github.com/connorshea)
+- [PR #1766](https://github.com/faker-ruby/faker/pull/1766) Add YARD docs for Faker::Address [@connorshea](https://github.com/connorshea)
+
+- Update rubocop requirement from = 0.76.0 to = 0.77.0 (#1843)
+
 ## [v2.8.0](https://github.com/faker-ruby/faker/tree/v2.8.0) (2019-12-01)
 
 ## Bugfixes
