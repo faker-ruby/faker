@@ -712,6 +712,7 @@ pt-BR:
       distance_measurement: ["anos-luz", "AU", "parsecs", "kiloparsecs", "megaparsecs"]
 
     electrical_components:
-      active: ["Diodo", "LED", "Retificador", "Transistor", "JFET", "MOSFET", "Circuito Integrado", "LCD", "Tubo de raios catódicos", "Tubo de vácuo", "Bateria", "Célula de combustível", "Fonte de alimentação"]
+      active: ["Diodo", "LED", "Retificador", "Transistor", "JFET", "MOSFET", "
+      to Integrado", "LCD", "Tubo de raios catódicos", "Tubo de vácuo", "Bateria", "Célula de combustível", "Fonte de alimentação"]
       passive: ["Resistor", "Potenciômetro", "TrimPot", "Varistor", "Capacitor", "Diodo Varicap", "Indutor", "Transformador", "Gerador", "Motor", "Solenóide", "Amplificador magnético", "Alto-falante", "Sensor de movimento", "Acelerômetro", "Termopar", "Antena", "Oscilador", "Placa de ensaio"]
-      electromechanical: ["Dispositivo piezoelétrico", "Cristal", "Motor ultrassônico", "Terminal", "Soquete", "Cabo de alimentação", "Chave de alternação", "Chave deslizante", "Chave DIP", "Pedal", "Teclado", "Circuit Breaker", "Fusível", "Placa de circuito impresso"]
+      electromechanical: ["Dispositivo piezoelétrico", "Cristal", "Motor ultrassônico", "Terminal", "Soquete", "Cabo de alimentação", "Chave de alternação", "Chave deslizante", "Chave DIP", "Pedal", "Teclado", "Disjuntor", "Fusível", "Placa de circuito impresso"]
