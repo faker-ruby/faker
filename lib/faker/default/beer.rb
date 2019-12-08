@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Beer.name #=> "Pliny The Elder"
       #
-      # @faker.version next
+      # @faker.version 1.6.2
       def name
         fetch('beer.name')
       end
@@ -26,7 +26,7 @@ module Faker
       # @example
       #   Faker::Beer.style #=> "Wood-aged Beer"
       #
-      # @faker.version next
+      # @faker.version 1.6.2
       def style
         fetch('beer.style')
       end
@@ -39,7 +39,7 @@ module Faker
       # @example
       #   Faker::Beer.hop #=> "Sterling"
       #
-      # @faker.version next
+      # @faker.version 1.6.2
       def hop
         fetch('beer.hop')
       end
@@ -52,7 +52,7 @@ module Faker
       # @example
       #   Faker::Beer.yeast #=> "5335 - Lactobacillus"
       #
-      # @faker.version next
+      # @faker.version 1.6.2
       def yeast
         fetch('beer.yeast')
       end
@@ -65,7 +65,7 @@ module Faker
       # @example
       #   Faker::Beer.malts #=> "Munich"
       #
-      # @faker.version next
+      # @faker.version 1.6.2
       def malts
         fetch('beer.malt')
       end
@@ -78,7 +78,7 @@ module Faker
       # @example
       #   Faker::Beer.ibu #=> "87 IBU"
       #
-      # @faker.version next
+      # @faker.version 1.6.2
       def ibu
         rand(10..100).to_s + ' IBU'
       end
@@ -91,7 +91,7 @@ module Faker
       # @example
       #   Faker::Beer.alcohol #=> "5.4%"
       #
-      # @faker.version next
+      # @faker.version 1.6.2
       def alcohol
         rand(2.0..10.0).round(1).to_s + '%'
       end
@@ -104,7 +104,7 @@ module Faker
       # @example
       #   Faker::Beer.blg #=> "5.1Blg"
       #
-      # @faker.version next
+      # @faker.version 1.6.2
       def blg
         rand(5.0..20.0).round(1).to_s + '°Blg'
       end
