@@ -32,7 +32,7 @@ module Faker
       end
 
       ##
-      # Produces a random beer hops .
+      # Produces a random beer hops.
       #
       # @return [String]
       #
@@ -58,7 +58,7 @@ module Faker
       end
 
       ##
-      # Produces a random beer malts.
+      # Produces a random beer malt.
       #
       # @return [String]
       #
@@ -71,7 +71,7 @@ module Faker
       end
 
       ##
-      # Produces a random beer ibu.
+      # Produces a random beer IBU.
       #
       # @return [String]
       #
