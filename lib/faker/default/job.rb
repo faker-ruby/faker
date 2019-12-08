@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Job.title #=> "Construction Manager"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.7.0
       def title
         parse('job.title')
       end
@@ -26,7 +26,7 @@ module Faker
       # @example
       #   Faker::Job.position #=> "Strategist"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.8.7
       def position
         fetch('job.position')
       end
@@ -39,7 +39,7 @@ module Faker
       # @example
       #   Faker::Job.field #=> "Banking"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.7.0
       def field
         fetch('job.field')
       end
@@ -52,7 +52,7 @@ module Faker
       # @example
       #   Faker::Job.key_skill #=> "Leadership"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.7.0
       def key_skill
         fetch('job.key_skills')
       end
