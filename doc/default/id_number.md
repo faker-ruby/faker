@@ -30,4 +30,8 @@ Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> 000.000.000-00
 # Keyword arguments: formatted
 Faker::IDNumber.brazilian_id #=> 1212312312
 Faker::IDNumber.brazilian_id(formatted: true) #=> 12.123.123-12
+
+# Generate a Chilean ID (Rut with 8 digits)
+# For more advanced cases, please refer to Faker::ChileRut
+Faker::IDNumber.chilean_id #=> "15620613-K"
 ```

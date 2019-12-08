@@ -7,6 +7,7 @@
 [![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=master)](https://inch-ci.org/github/faker-ruby/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
+[![SemVer compatibility](https://api.dependabot.com/badges/compatibility_score?dependency-name=faker&package-manager=bundler&version-scheme=semver)](https://dependabot.com/compatibility-score.html?dependency-name=faker&package-manager=bundler&version-scheme=semver)
 
 This gem is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker) that generates fake data.
 
@@ -359,6 +360,8 @@ See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/master/CONTRIBUTING.m
 
 ## Contact
 Comments and feedback are welcome. Send an email to Benjamin Curtis via the [google group](http://groups.google.com/group/ruby-faker).
+
+You can also join our [discord channel](https://discord.gg/RMumTwB) to discuss anything regarding improvements or feature requests.
 
 ## License
 This code is free to use under the terms of the MIT license.

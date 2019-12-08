@@ -10,7 +10,15 @@ class TestFakerBank < Test::Unit::TestCase
   end
 
   def test_routing_number
-    assert Faker::Bank.routing_number.match(/\d{9}/)
+    routing_number = Faker::Bank.routing_number
+    checksum = (
+      7 * (routing_number[0].to_i + routing_number[3].to_i + routing_number[6].to_i) +
+        3 * (routing_number[1].to_i + routing_number[4].to_i + routing_number[7].to_i) +
+        9 * (routing_number[2].to_i + routing_number[5].to_i + routing_number[8].to_i)
+    ) % 10
+
+    assert routing_number.match(/\d{9}/)
+    assert_equal(checksum, 0)
   end
 
   def test_routing_number_with_format

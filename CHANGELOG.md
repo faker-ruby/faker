@@ -1,5 +1,106 @@
 # Change Log
 
+## [v2.8.1](https://github.com/faker-ruby/faker/tree/v2.8.1) (2019-12-06)
+
+## Bug/Fixes
+
+- [PR #1846](https://github.com/faker-ruby/faker/pull/1846) Fix internet custom domain with suffix [@ngouy](https://github.com/ngouy)
+
+## Documentation
+
+- [PR #1852](https://github.com/faker-ruby/faker/pull/1852) Add YARD docs for Faker::Business. [@connorshea](https://github.com/connorshea)
+- [PR #1851](https://github.com/faker-ruby/faker/pull/1851) Add YARD docs for Faker::Crypto. [@connorshea](https://github.com/connorshea)
+- [PR #1850](https://github.com/faker-ruby/faker/pull/1850) Add YARD docs for Faker::Kpop. [@connorshea](https://github.com/connorshea)
+- [PR #1849](https://github.com/faker-ruby/faker/pull/1849) Add YARD docs for Faker::BossaNova. [@connorshea](https://github.com/connorshea)
+- [PR #1848](https://github.com/faker-ruby/faker/pull/1848) Add YARD Docs for Faker::Demographic. [@connorshea](https://github.com/connorshea)
+- [PR #1844](https://github.com/faker-ruby/faker/pull/1844) Fix yard doc in contribution [@vikas95prasad](https://github.com/vikas95prasad)
+- [PR #1802](https://github.com/faker-ruby/faker/pull/1802) Add YARD doc for Faker::Food [@sap1enza](https://github.com/sap1enza)
+- [PR #1766](https://github.com/faker-ruby/faker/pull/1766) Add YARD docs for Faker::Address [@connorshea](https://github.com/connorshea)
+
+## Refactoring
+
+- [PR #1847](https://github.com/faker-ruby/faker/pull/1847) Makes minor refactors on Internet.domain_name method [@tiagofsilva](https://github.com/tiagofsilva)
+- [PR #1772](https://github.com/faker-ruby/faker/pull/1848) Refactor Faker::Educator and add docs [@connorshea](https://github.com/connorshea)
+
+## Update local dependencies
+
+- Update rubocop requirement from = 0.76.0 to = 0.77.0 (#1843)
+
+------------------------------------------------------------------------------
+
+## [v2.8.0](https://github.com/faker-ruby/faker/tree/v2.8.0) (2019-12-01)
+
+## Bug/Fixes
+
+- [PR #1563](https://github.com/faker-ruby/faker/pull/1563) 
+Fix generating routing number [@psienko](https://github.com/psienko)
+
+## Chores
+
+- [PR #1835](https://github.com/faker-ruby/faker/pull/1835) 
+Remove duplicate method description [@pacso](https://github.com/pacso)
+
+## Documentation
+
+- [PR #1837](https://github.com/faker-ruby/faker/pull/1837) 
+docs: Internet #email, #domain do not control TLD [@olleolleolle](https://github.com/olleolleolle)
+- [PR #1833](https://github.com/faker-ruby/faker/pull/1833) Explain safe_email method [@swrobel](https://github.com/swrobel)
+- [PR #1810](https://github.com/faker-ruby/faker/pull/1810) Add yard docs for Faker::Coffee methods [@LuanGB](https://github.com/LuanGB)
+- [PR #1803](https://github.com/faker-ruby/faker/pull/1803) 
+add YARD doc for Faker::Coin [@sap1enza](https://github.com/sap1enza) [@connorshea](https://github.com/connorshea)
+- [PR #1799](https://github.com/faker-ruby/faker/pull/1799) Remove 'See below examples' for consistency [@DevUsmanGhani](https://github.com/DevUsmanGhani)
+- [PR #1793](https://github.com/faker-ruby/faker/pull/1793) add Faker::Relationship YARD docs [@DevUsmanGhani](https://github.com/DevUsmanGhani)
+
+## Feature Request
+
+- [PR #1808](https://github.com/faker-ruby/faker/pull/1808) Adds domain option for Internet email and domain_name methods [@tiagofsilva](https://github.com/tiagofsilva)
+
+## Update locales
+
+- [PR #1841](https://github.com/faker-ruby/faker/pull/1841) 
+Fix strange result from `Lorem.word` in ja locale [@yujideveloper](https://github.com/yujideveloper)
+- [PR #1839](https://github.com/faker-ruby/faker/pull/1839) 
+added new heroes, new maps and almost all of the quotes [@TCsTheMechanic](https://github.com/TCsTheMechanic)
+
+## Update local dependencies
+
+- [PR #1831](https://github.com/faker-ruby/faker/pull/1831) Update rake requirement from = 13.0.0 to = 13.0.1 [@DevUsmanGhani](https://github.com/DevUsmanGhani) 
+
+------------------------------------------------------------------------------
+
+## [v2.7.0](https://github.com/faker-ruby/faker/tree/v2.7.0) (2019-11-01)
+
+This version:
+- adds `Faker::IDNumber.chilean_id`
+- updates some translations/locales
+- updates local dependencies
+- adds SemVer badge
+
+## Documentation
+
+- [PR #1814](https://github.com/faker-ruby/faker/pull/1814) Add Discord link [@vbrazo](https://github.com/vbrazo)
+- [PR #1289](https://github.com/faker-ruby/faker/pull/1289) Add SemVer compatibility badge to README [@greysteil](https://github.com/greysteil)
+
+## Feature Request
+
+- [PR #1819](https://github.com/faker-ruby/faker/pull/1819) Adding chilean_id in Faker::IDNumber [@cristofer](https://github.com/cristofer)
+
+## Update locales
+
+- [PR #1824](https://github.com/faker-ruby/faker/pull/1824) Added Canadian Country Code [@clinch](https://github.com/clinch)
+- [PR #1817](https://github.com/faker-ruby/faker/pull/1817) Add Japanese animal names [@shouichi](https://github.com/shouichi)
+- [PR #1816](https://github.com/faker-ruby/faker/pull/1816) Add Japanese bank names [@shouichi](https://github.com/shouichi)
+- [PR #1813](https://github.com/faker-ruby/faker/pull/1813) Translate Canadian provinces for fr-CA [@Bhacaz](https://github.com/Bhacaz)
+- [PR #1806](https://github.com/faker-ruby/faker/pull/1806) Add Terry Bogard to Super Smash Bros. options [@clinch](https://github.com/clinch)
+
+## Update local dependencies
+
+- Update rubocop requirement from = 0.75.0 to = 0.75.1 (#1811)
+- Update rubocop requirement from = 0.75.1 to = 0.76.0 (#1822)
+- Update minitest requirement from = 5.12.2 to = 5.13.0 (#1823)
+
+------------------------------------------------------------------------------
+
 ## [v2.6.0](https://github.com/faker-ruby/faker/tree/v2.6.0) (2019-10-10)
 
 This version:

@@ -1,11 +1,74 @@
 en:
   faker:
     educator:
-      name: ['Marblewald', 'Mallowtown', 'Brookville', 'Flowerlake', 'Falconholt', 'Ostbarrow', 'Lakeacre', 'Clearcourt', 'Ironston', 'Mallowpond', 'Iceborough', 'Icelyn', 'Brighthurst', 'Bluemeadow', 'Vertapple', 'Ironbarrow']
-      secondary: ['High School', 'Secondary College', 'High']
+      name:
+        - Bluemeadow
+        - Brighthurst
+        - Brookville
+        - Clearcourt
+        - Falconholt
+        - Flowerlake
+        - Iceborough
+        - Icelyn
+        - Ironbarrow
+        - Ironston
+        - Lakeacre
+        - Mallowpond
+        - Mallowtown
+        - Marblewald
+        - Ostbarrow
+        - Vertapple
+      secondary:
+        - High
+        - High School
+        - Secondary College
+      university:
+        - "#{name} #{Educator.tertiary.university_type}"
+      secondary_school:
+        - "#{name} #{secondary}"
+      campus:
+        - "#{name} Campus"
+      subject:
+        - Applied Science (Psychology)
+        - Architectural Technology
+        - Arts
+        - Biological Science
+        - Biomedical Science
+        - Business
+        - Commerce
+        - Communications
+        - Computer Science
+        - Creative Arts
+        - Criminology
+        - Design
+        - Education
+        - Engineering
+        - Forensic Science
+        - Health Science
+        - Information Systems
+        - Law
+        - Medicine
+        - Nursing
+        - Psychology
+        - Teaching
+      degree:
+        - "#{Educator.tertiary.degree.type} #{subject}"
+      course_name:
+        - "#{subject} #{Educator.tertiary.degree.course_number}"
       tertiary:
-        type: ['College', 'University', 'Technical College', 'TAFE']
+        university_type:
+          - College
+          - TAFE
+          - Technical College
+          - University
         degree:
-          subject: ['Arts', 'Business', 'Education', 'Applied Science (Psychology)', 'Architectural Technology', 'Biological Science', 'Biomedical Science', 'Commerce', 'Communications', 'Creative Arts', 'Criminology', 'Design', 'Engineering', 'Forensic Science', 'Health Science', 'Information Systems', 'Computer Science', 'Law', 'Nursing', 'Medicine', 'Psychology', 'Teaching']
-          type: ['Associate Degree in', 'Bachelor of', 'Master of']
-          course_number: ['1##', '2##', '3##', '4##', '5##']
+          type:
+            - Associate Degree in
+            - Bachelor of
+            - Master of
+          course_number:
+            - 1##
+            - 2##
+            - 3##
+            - 4##
+            - 5##

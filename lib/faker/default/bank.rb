@@ -58,8 +58,11 @@ module Faker
 
       def checksum(num_string)
         num_array = num_string.split('').map(&:to_i)
-        digit = (7 * (num_array[0] + num_array[3] + num_array[6]) + 3 * (num_array[1] + num_array[4] + num_array[7]) + 9 * (num_array[2] + num_array[5])) % 10
-        digit == num_array[8]
+        (
+          7 * (num_array[0] + num_array[3] + num_array[6]) +
+            3 * (num_array[1] + num_array[4] + num_array[7]) +
+            9 * (num_array[2] + num_array[5])
+        ) % 10
       end
 
       def compile_routing_number
@@ -85,12 +88,15 @@ module Faker
       end
 
       def valid_routing_number
-        for _ in 0..50
-          micr = compile_routing_number
+        routing_number = compile_routing_number
+        checksum = checksum(routing_number)
+        return routing_number if valid_checksum?(routing_number, checksum)
 
-          break if checksum(micr)
-        end
-        micr
+        routing_number[0..7] + checksum.to_s
+      end
+
+      def valid_checksum?(routing_number, checksum)
+        routing_number[8].to_i == checksum
       end
 
       def compile_fraction(routing_num)
