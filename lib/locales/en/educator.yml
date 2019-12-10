@@ -1,7 +1,7 @@
 en:
   faker:
     educator:
-      name:
+      school_name:
         - Bluemeadow
         - Brighthurst
         - Brookville
@@ -23,11 +23,11 @@ en:
         - High School
         - Secondary College
       university:
-        - "#{name} #{Educator.tertiary.university_type}"
+        - "#{Educator.school_name} #{Educator.tertiary.university_type}"
       secondary_school:
-        - "#{name} #{secondary}"
+        - "#{Educator.school_name} #{secondary}"
       campus:
-        - "#{name} Campus"
+        - "#{Educator.school_name} Campus"
       subject:
         - Applied Science (Psychology)
         - Architectural Technology
