@@ -1,5 +1,33 @@
 # Change Log
 
+## [v2.9.0](https://github.com/faker-ruby/faker/tree/v2.9.0) (2019-12-16)
+
+This version:
+- adds `Faker::Gender.short_binary_type`
+- adds a few YARD docs
+- fix Faker::Educator issues
+- update locales
+
+## Bug/Fixes
+
+- [PR #1860](https://github.com/faker-ruby/faker/pull/1860) Fix Educator methods returning bad data. [@connorshea](https://github.com/connorshea)
+
+## Documentation
+
+- [PR #1859](https://github.com/faker-ruby/faker/pull/1859) YYYY-MM-DD in CHANGELOG [@jas14](https://github.com/jas14)
+- [PR #1797](https://github.com/faker-ruby/faker/pull/1797) add YARD doc for Faker::Job [@ashishra0](https://github.com/ashishra0)
+- [PR #1790](https://github.com/faker-ruby/faker/pull/1790) add Faker::Beer YARD docs [@ashishra0](https://github.com/ashishra0)
+
+## Feature Request
+
+- [PR #1863](https://github.com/faker-ruby/faker/pull/1863) Add Faker::Gender.short_binary_type [@bruno-b-martins](https://github.com/bruno-b-martins)
+
+## Update locales
+
+- [PR #1864](https://github.com/faker-ruby/faker/pull/1864) adding `male` & `female` first names for persian [@alphamarket](https://github.com/alphamarket)
+
+------------------------------------------------------------------------------
+
 ## [v2.8.1](https://github.com/faker-ruby/faker/tree/v2.8.1) (2019-12-06)
 
 ## Bug/Fixes
@@ -32,21 +60,21 @@
 
 ## Bug/Fixes
 
-- [PR #1563](https://github.com/faker-ruby/faker/pull/1563) 
+- [PR #1563](https://github.com/faker-ruby/faker/pull/1563)
 Fix generating routing number [@psienko](https://github.com/psienko)
 
 ## Chores
 
-- [PR #1835](https://github.com/faker-ruby/faker/pull/1835) 
+- [PR #1835](https://github.com/faker-ruby/faker/pull/1835)
 Remove duplicate method description [@pacso](https://github.com/pacso)
 
 ## Documentation
 
-- [PR #1837](https://github.com/faker-ruby/faker/pull/1837) 
+- [PR #1837](https://github.com/faker-ruby/faker/pull/1837)
 docs: Internet #email, #domain do not control TLD [@olleolleolle](https://github.com/olleolleolle)
 - [PR #1833](https://github.com/faker-ruby/faker/pull/1833) Explain safe_email method [@swrobel](https://github.com/swrobel)
 - [PR #1810](https://github.com/faker-ruby/faker/pull/1810) Add yard docs for Faker::Coffee methods [@LuanGB](https://github.com/LuanGB)
-- [PR #1803](https://github.com/faker-ruby/faker/pull/1803) 
+- [PR #1803](https://github.com/faker-ruby/faker/pull/1803)
 add YARD doc for Faker::Coin [@sap1enza](https://github.com/sap1enza) [@connorshea](https://github.com/connorshea)
 - [PR #1799](https://github.com/faker-ruby/faker/pull/1799) Remove 'See below examples' for consistency [@DevUsmanGhani](https://github.com/DevUsmanGhani)
 - [PR #1793](https://github.com/faker-ruby/faker/pull/1793) add Faker::Relationship YARD docs [@DevUsmanGhani](https://github.com/DevUsmanGhani)
@@ -57,14 +85,14 @@ add YARD doc for Faker::Coin [@sap1enza](https://github.com/sap1enza) [@connorsh
 
 ## Update locales
 
-- [PR #1841](https://github.com/faker-ruby/faker/pull/1841) 
+- [PR #1841](https://github.com/faker-ruby/faker/pull/1841)
 Fix strange result from `Lorem.word` in ja locale [@yujideveloper](https://github.com/yujideveloper)
-- [PR #1839](https://github.com/faker-ruby/faker/pull/1839) 
+- [PR #1839](https://github.com/faker-ruby/faker/pull/1839)
 added new heroes, new maps and almost all of the quotes [@TCsTheMechanic](https://github.com/TCsTheMechanic)
 
 ## Update local dependencies
 
-- [PR #1831](https://github.com/faker-ruby/faker/pull/1831) Update rake requirement from = 13.0.0 to = 13.0.1 [@DevUsmanGhani](https://github.com/DevUsmanGhani) 
+- [PR #1831](https://github.com/faker-ruby/faker/pull/1831) Update rake requirement from = 13.0.0 to = 13.0.1 [@DevUsmanGhani](https://github.com/DevUsmanGhani)
 
 ------------------------------------------------------------------------------
 
