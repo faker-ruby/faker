@@ -97,6 +97,19 @@ module Faker
       end
 
       ##
+      #
+      # Produces a mail box number.
+      # @return [String]
+      #
+      # @example
+      # Faker::Address.mail_box #=> "PO Box 123"
+      #
+      # @faker.version 2.9.1
+      def mail_box
+        bothify(fetch('address.mail_box'))
+      end
+
+      ##
       # Produces a Zip Code.
       #
       # @param state_abbreviation [String] an abbreviation for a state where the zip code should be located.

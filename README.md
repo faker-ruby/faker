@@ -43,7 +43,7 @@ development.
 
 ### NOTE
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
-  You must explicity specify when you require unique values, see [details](#ensuring-unique-values).
+  You must explicitly specify when you require unique values, see [details](#ensuring-unique-values).
   Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
