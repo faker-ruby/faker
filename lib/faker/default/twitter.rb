@@ -4,13 +4,9 @@ module Faker
   class Twitter < Base
     class << self
       def user(legacy_include_status = NOT_GIVEN, legacy_include_email = NOT_GIVEN, include_status: true, include_email: false)
-        if legacy_include_status != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_status` with the 1st argument of `Twitter.user` is deprecated. Use keyword argument like `Twitter.user(include_status: ...)` instead.', uplevel: 1
-          include_status = legacy_include_status
-        end
-        if legacy_include_email != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_email` with the 2nd argument of `Twitter.user` is deprecated. Use keyword argument like `Twitter.user(include_email: ...)` instead.', uplevel: 1
-          include_email = legacy_include_email
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_status if legacy_include_status != NOT_GIVEN
+          keywords << :include_email if legacy_include_email != NOT_GIVEN
         end
 
         user_id = id
@@ -24,7 +20,7 @@ module Faker
           default_profile_image: Faker::Boolean.boolean(true_ratio: 0.1),
           default_profile: Faker::Boolean.boolean(true_ratio: 0.1),
           description: Faker::Lorem.sentence,
-          entities:  user_entities,
+          entities: user_entities,
           favourites_count: Faker::Number.between(to: 1, from: 100_000),
           follow_request_sent: false,
           followers_count: Faker::Number.between(to: 1, from: 10_000_000),
@@ -64,13 +60,9 @@ module Faker
       end
 
       def status(legacy_include_user = NOT_GIVEN, legacy_include_photo = NOT_GIVEN, include_user: true, include_photo: false)
-        if legacy_include_user != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_user` with the 1st argument of `Twitter.status` is deprecated. Use keyword argument like `Twitter.status(include_user: ...)` instead.', uplevel: 1
-          include_user = legacy_include_user
-        end
-        if legacy_include_photo != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_photo` with the 2nd argument of `Twitter.status` is deprecated. Use keyword argument like `Twitter.status(include_photo: ...)` instead.', uplevel: 1
-          include_photo = legacy_include_photo
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_user if legacy_include_user != NOT_GIVEN
+          keywords << :include_photo if legacy_include_photo != NOT_GIVEN
         end
 
         status_id = id
@@ -80,7 +72,7 @@ module Faker
           contributors: nil,
           coordinates: nil,
           created_at: created_at,
-          entities:  status_entities(include_photo: include_photo),
+          entities: status_entities(include_photo: include_photo),
           favorite_count: Faker::Number.between(to: 1, from: 10_000),
           favorited: false,
           geo: nil,
@@ -94,7 +86,7 @@ module Faker
           place: nil,
           possibly_sensitive: Faker::Boolean.boolean(true_ratio: 0.1),
           retweet_count: Faker::Number.between(to: 1, from: 10_000),
-          retweeted_status:  nil,
+          retweeted_status: nil,
           retweeted: false,
           source: "<a href=\"#{Faker::Internet.url(host: 'example.com')}\" rel=\"nofollow\">#{Faker::Company.name}</a>",
           text: Faker::Lorem.sentence,
@@ -125,26 +117,25 @@ module Faker
 
       def user_entities
         {
-          url:  {
+          url: {
             urls: []
           },
-          description:  {
+          description: {
             urls: []
           }
         }
       end
 
       def status_entities(legacy_include_photo = NOT_GIVEN, include_photo: false)
-        if legacy_include_photo != NOT_GIVEN
-          warn_with_uplevel 'Passing `include_photo` with the 1st argument of `Twitter.status_entities` is deprecated. Use keyword argument like `Twitter.status_entities(include_photo: ...)` instead.', uplevel: 1
-          include_photo = legacy_include_photo
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_photo if legacy_include_photo != NOT_GIVEN
         end
 
         entities = {
-          hashtags:  [],
-          symbols:  [],
-          user_mentions:  [],
-          urls:  []
+          hashtags: [],
+          symbols: [],
+          user_mentions: [],
+          urls: []
         }
         entities[:media] = [photo_entity] if include_photo
         entities
@@ -158,7 +149,7 @@ module Faker
         {
           id: media_id,
           id_str: media_id.to_s,
-          indices:  [
+          indices: [
             103,
             126
           ],
@@ -168,23 +159,23 @@ module Faker
           display_url: 'example.com',
           expanded_url: Faker::Internet.url(host: 'example.com'),
           type: 'photo',
-          sizes:  {
-            medium:  {
+          sizes: {
+            medium: {
               w: 1064,
               h: 600,
               resize: 'fit'
             },
-            large:  {
+            large: {
               w: 1064,
               h: 600,
               resize: 'fit'
             },
-            small:  {
+            small: {
               w: 680,
               h: 383,
               resize: 'fit'
             },
-            thumb:  {
+            thumb: {
               w: 150,
               h: 150,
               resize: 'crop'

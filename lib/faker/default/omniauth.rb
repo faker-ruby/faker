@@ -18,17 +18,10 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def google(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 9).to_s)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `name` with the 1st argument of `Omniauth.google` is deprecated. Use keyword argument like `Omniauth.google(name: ...)` instead.', uplevel: 1
-          name = legacy_name
-        end
-        if legacy_email != NOT_GIVEN
-          warn_with_uplevel 'Passing `email` with the 2nd argument of `Omniauth.google` is deprecated. Use keyword argument like `Omniauth.google(email: ...)` instead.', uplevel: 1
-          email = legacy_email
-        end
-        if legacy_uid != NOT_GIVEN
-          warn_with_uplevel 'Passing `uid` with the 3rd argument of `Omniauth.google` is deprecated. Use keyword argument like `Omniauth.google(uid: ...)` instead.', uplevel: 1
-          uid = legacy_uid
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :email if legacy_email != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
         end
 
         auth = Omniauth.new(name: name, email: email)
@@ -42,7 +35,7 @@ module Faker
             email: auth.email,
             image: image
           },
-          credentials:  {
+          credentials: {
             token: Crypto.md5,
             refresh_token: Crypto.md5,
             expires_at: Time.forward.to_i,
@@ -50,7 +43,7 @@ module Faker
           },
           extra: {
             raw_info: {
-              sub:  uid,
+              sub: uid,
               email: auth.email,
               email_verified: random_boolean.to_s,
               name: auth.name,
@@ -82,21 +75,11 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def facebook(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_username = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `name` with the 1st argument of `Omniauth.facebook` is deprecated. Use keyword argument like `Omniauth.facebook(name: ...)` instead.', uplevel: 1
-          name = legacy_name
-        end
-        if legacy_email != NOT_GIVEN
-          warn_with_uplevel 'Passing `email` with the 2nd argument of `Omniauth.facebook` is deprecated. Use keyword argument like `Omniauth.facebook(email: ...)` instead.', uplevel: 1
-          email = legacy_email
-        end
-        if legacy_username != NOT_GIVEN
-          warn_with_uplevel 'Passing `username` with the 3rd argument of `Omniauth.facebook` is deprecated. Use keyword argument like `Omniauth.facebook(username: ...)` instead.', uplevel: 1
-          username = legacy_username
-        end
-        if legacy_uid != NOT_GIVEN
-          warn_with_uplevel 'Passing `uid` with the 4th argument of `Omniauth.facebook` is deprecated. Use keyword argument like `Omniauth.facebook(uid: ...)` instead.', uplevel: 1
-          uid = legacy_uid
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :email if legacy_email != NOT_GIVEN
+          keywords << :username if legacy_username != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
         end
 
         auth = Omniauth.new(name: name, email: email)
@@ -143,17 +126,10 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def twitter(legacy_name = NOT_GIVEN, legacy_nickname = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, nickname: nil, uid: Number.number(digits: 6).to_s)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `name` with the 1st argument of `Omniauth.twitter` is deprecated. Use keyword argument like `Omniauth.twitter(name: ...)` instead.', uplevel: 1
-          name = legacy_name
-        end
-        if legacy_nickname != NOT_GIVEN
-          warn_with_uplevel 'Passing `nickname` with the 2nd argument of `Omniauth.twitter` is deprecated. Use keyword argument like `Omniauth.twitter(nickname: ...)` instead.', uplevel: 1
-          nickname = legacy_nickname
-        end
-        if legacy_uid != NOT_GIVEN
-          warn_with_uplevel 'Passing `uid` with the 3rd argument of `Omniauth.twitter` is deprecated. Use keyword argument like `Omniauth.twitter(uid: ...)` instead.', uplevel: 1
-          uid = legacy_uid
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :nickname if legacy_nickname != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
         end
 
         auth = Omniauth.new(name: name)
@@ -231,17 +207,10 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def linkedin(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 6).to_s)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `name` with the 1st argument of `Omniauth.linkedin` is deprecated. Use keyword argument like `Omniauth.linkedin(name: ...)` instead.', uplevel: 1
-          name = legacy_name
-        end
-        if legacy_email != NOT_GIVEN
-          warn_with_uplevel 'Passing `email` with the 2nd argument of `Omniauth.linkedin` is deprecated. Use keyword argument like `Omniauth.linkedin(email: ...)` instead.', uplevel: 1
-          email = legacy_email
-        end
-        if legacy_uid != NOT_GIVEN
-          warn_with_uplevel 'Passing `uid` with the 3rd argument of `Omniauth.linkedin` is deprecated. Use keyword argument like `Omniauth.linkedin(uid: ...)` instead.', uplevel: 1
-          uid = legacy_uid
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :email if legacy_email != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
         end
 
         auth = Omniauth.new(name: name, email: email)
@@ -309,17 +278,10 @@ module Faker
       # rubocop:disable Metrics/ParameterLists
       def github(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 8).to_s)
         # rubocop:enable Metrics/ParameterLists
-        if legacy_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `name` with the 1st argument of `Omniauth.github` is deprecated. Use keyword argument like `Omniauth.github(name: ...)` instead.', uplevel: 1
-          name = legacy_name
-        end
-        if legacy_email != NOT_GIVEN
-          warn_with_uplevel 'Passing `email` with the 2nd argument of `Omniauth.github` is deprecated. Use keyword argument like `Omniauth.github(email: ...)` instead.', uplevel: 1
-          email = legacy_email
-        end
-        if legacy_uid != NOT_GIVEN
-          warn_with_uplevel 'Passing `uid` with the 3rd argument of `Omniauth.github` is deprecated. Use keyword argument like `Omniauth.github(uid: ...)` instead.', uplevel: 1
-          uid = legacy_uid
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :email if legacy_email != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
         end
 
         auth = Omniauth.new(name: name, email: email)
@@ -340,7 +302,7 @@ module Faker
           },
           credentials: {
             token: Crypto.md5,
-            expires:  false
+            expires: false
           },
           extra: {
             raw_info: {
@@ -360,7 +322,7 @@ module Faker
               events_url: "#{api_url}/events{/privacy}",
               received_events_url: "#{api_url}/received_events",
               type: 'User',
-              site_admin:  random_boolean,
+              site_admin: random_boolean,
               name: auth.name,
               company: nil,
               blog: nil,
@@ -374,6 +336,48 @@ module Faker
               following: random_number_from_range(1..1000),
               created_at: Time.backward(days: 36_400).iso8601,
               updated_at: Time.backward(days: 2).iso8601
+            }
+          }
+        }
+      end
+
+      ##
+      # Generate a mock Omniauth response from Apple
+      #
+      # @param name [String] A specific name to return in the response
+      # @param email [String] A specific email to return in the response
+      # @param uid [String] A specific UID to return in the response
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-apple
+      def apple(name: nil, email: nil, uid: nil)
+        uid ||= "#{Number.number(digits: 6)}.#{Number.hexadecimal(digits: 32)}.#{Number.number(digits: 4)}"
+        auth = Omniauth.new(name: name, email: email)
+        {
+          provider: 'apple',
+          uid: uid,
+          info: {
+            sub: uid,
+            email: auth.email,
+            first_name: auth.first_name,
+            last_name: auth.last_name
+          },
+          credentials: {
+            token: Crypto.md5,
+            refresh_token: Crypto.md5,
+            expires_at: Time.forward.to_i,
+            expires: true
+          },
+          extra: {
+            raw_info: {
+              iss: 'https://appleid.apple.com',
+              aud: 'CLIENT_ID',
+              exp: Time.forward.to_i,
+              iat: Time.forward.to_i,
+              sub: uid,
+              at_hash: Crypto.md5,
+              auth_time: Time.forward.to_i,
+              email: auth.email,
+              email_verified: true
             }
           }
         }

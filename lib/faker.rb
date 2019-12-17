@@ -251,6 +251,40 @@ module Faker
 
       private
 
+      def warn_for_deprecated_arguments
+        keywords = []
+        yield(keywords)
+
+        return if keywords.empty?
+
+        method_name = caller.first.match(/`(?<method_name>.*)'/)[:method_name]
+
+        keywords.each.with_index(1) do |keyword, index|
+          i = case index
+              when 1 then '1st'
+              when 2 then '2nd'
+              when 3 then '3rd'
+              else "#{index}th"
+              end
+
+          warn_with_uplevel(<<~MSG, uplevel: 5)
+            Passing `#{keyword}` with the #{i} argument of `#{method_name}` is deprecated. Use keyword argument like `#{method_name}(#{keyword}: ...)` instead.
+          MSG
+        end
+
+        warn(<<~MSG)
+
+          To automatically update from positional arguments to keyword arguments,
+          install rubocop-faker and run:
+
+          rubocop \\
+            --require rubocop-faker \\
+            --only Faker/DeprecatedArguments \\
+            --auto-correct
+
+        MSG
+      end
+
       # Workaround for emulating `warn '...', uplevel: 1` in Ruby 2.4 or lower.
       def warn_with_uplevel(message, uplevel: 1)
         at = parse_caller(caller[uplevel]).join(':')

@@ -12,9 +12,11 @@ module Faker
     ].freeze
     ZA_RACE_DIGIT = '8'
     ZA_CITIZENSHIP_DIGITS = %w[0 1].freeze
-    BRAZILIAN_ID_FORMAT = /(\d{1,2})(\d{3})(\d{3})([\dX])/
+    BRAZILIAN_ID_FORMAT = /(\d{1,2})(\d{3})(\d{3})([\dX])/.freeze
     BRAZILIAN_ID_FROM = 10_000_000
     BRAZILIAN_ID_TO = 99_999_999
+
+    CHILEAN_MODULO = 11
 
     class << self
       def valid
@@ -79,9 +81,8 @@ module Faker
       end
 
       def brazilian_citizen_number(legacy_formatted = NOT_GIVEN, formatted: false)
-        if legacy_formatted != NOT_GIVEN
-          warn_with_uplevel 'Passing `formatted` with the 1st argument of `IDNumber.brazilian_citizen_number` is deprecated. Use keyword argument like `IDNumber.brazilian_citizen_number(formatted: ...)` instead.', uplevel: 1
-          formatted = legacy_formatted
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :formatted if legacy_formatted != NOT_GIVEN
         end
 
         digits = Faker::Number.leading_zero_number(digits: 9) until digits&.match(/(\d)((?!\1)\d)+/)
@@ -94,9 +95,8 @@ module Faker
       alias brazilian_cpf brazilian_citizen_number
 
       def brazilian_id(legacy_formatted = NOT_GIVEN, formatted: false)
-        if legacy_formatted != NOT_GIVEN
-          warn_with_uplevel 'Passing `formatted` with the 1st argument of `IDNumber.brazilian_id` is deprecated. Use keyword argument like `IDNumber.brazilian_id(formatted: ...)` instead.', uplevel: 1
-          formatted = legacy_formatted
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :formatted if legacy_formatted != NOT_GIVEN
         end
 
         digits = Faker::Number.between(to: BRAZILIAN_ID_FROM, from: BRAZILIAN_ID_TO).to_s
@@ -107,7 +107,34 @@ module Faker
 
       alias brazilian_rg brazilian_id
 
+      def chilean_id
+        digits = Faker::Number.number(digits: 8)
+        verification_code = chilean_verification_code(digits)
+
+        digits.to_s + '-' + verification_code.to_s
+      end
+
       private
+
+      def chilean_verification_code(digits)
+        # First digit is multiplied by 3, second by 2, and so on
+        multiplication_rule = [3, 2, 7, 6, 5, 4, 3, 2]
+        digits_splitted = digits.to_s.chars.map(&:to_i)
+
+        sum = digits_splitted.map.with_index { |digit, index| digit * multiplication_rule[index] }.reduce(:+)
+
+        modulo = sum.modulo(CHILEAN_MODULO)
+        difference = CHILEAN_MODULO - modulo
+
+        case difference
+        when 0..9
+          difference
+        when 10
+          'K'
+        when 11
+          0
+        end
+      end
 
       def south_african_id_checksum_digit(id_number)
         value_parts = id_number.chars

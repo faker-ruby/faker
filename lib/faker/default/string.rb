@@ -4,9 +4,8 @@ module Faker
   class String < Base
     class << self
       def random(legacy_length = NOT_GIVEN, length: 32)
-        if legacy_length != NOT_GIVEN
-          warn_with_uplevel 'Passing `length` with the 1st argument of `String.random` is deprecated. Use keyword argument like `String.random(length: ...)` instead.', uplevel: 1
-          length = legacy_length
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :length if legacy_length != NOT_GIVEN
         end
 
         utf8string select_a length

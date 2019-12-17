@@ -4,9 +4,8 @@ module Faker
   class Stripe < Base
     class << self
       def valid_card(legacy_card_type = NOT_GIVEN, card_type: nil)
-        if legacy_card_type != NOT_GIVEN
-          warn_with_uplevel 'Passing `card_type` with the 1st argument of `Stripe.valid_card` is deprecated. Use keyword argument like `Stripe.valid_card(card_type: ...)` instead.', uplevel: 1
-          card_type = legacy_card_type
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :card_type if legacy_card_type != NOT_GIVEN
         end
 
         valid_cards = translate('faker.stripe.valid_cards').keys
@@ -24,9 +23,8 @@ module Faker
       end
 
       def valid_token(legacy_card_type = NOT_GIVEN, card_type: nil)
-        if legacy_card_type != NOT_GIVEN
-          warn_with_uplevel 'Passing `card_type` with the 1st argument of `Stripe.valid_token` is deprecated. Use keyword argument like `Stripe.valid_token(card_type: ...)` instead.', uplevel: 1
-          card_type = legacy_card_type
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :card_type if legacy_card_type != NOT_GIVEN
         end
 
         valid_tokens = translate('faker.stripe.valid_tokens').keys
@@ -44,9 +42,8 @@ module Faker
       end
 
       def invalid_card(legacy_card_error = NOT_GIVEN, card_error: nil)
-        if legacy_card_error != NOT_GIVEN
-          warn_with_uplevel 'Passing `card_error` with the 1st argument of `Stripe.invalid_card` is deprecated. Use keyword argument like `Stripe.invalid_card(card_error: ...)` instead.', uplevel: 1
-          card_error = legacy_card_error
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :card_error if legacy_card_error != NOT_GIVEN
         end
 
         invalid_cards = translate('faker.stripe.invalid_cards').keys
@@ -73,9 +70,8 @@ module Faker
       end
 
       def ccv(legacy_card_type = NOT_GIVEN, card_type: nil)
-        if legacy_card_type != NOT_GIVEN
-          warn_with_uplevel 'Passing `card_type` with the 1st argument of `Stripe.ccv` is deprecated. Use keyword argument like `Stripe.ccv(card_type: ...)` instead.', uplevel: 1
-          card_type = legacy_card_type
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :card_type if legacy_card_type != NOT_GIVEN
         end
 
         (card_type.to_s == 'amex' ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s

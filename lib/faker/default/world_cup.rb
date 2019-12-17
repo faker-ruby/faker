@@ -3,35 +3,80 @@
 module Faker
   class WorldCup < Base
     class << self
+      ##
+      # Produces a national team name.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::WorldCup.team #=> "Iran"
+      #
+      # @faker.version 1.9.0
       def team
         fetch('world_cup.teams')
       end
 
+      ##
+      # Produces a city name hosting the World Cup match.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::WorldCup.city #=> "Moscow"
+      #
+      # @faker.version next
       def city
         fetch('world_cup.cities')
       end
 
+      ##
+      # Produces the name of a stadium that has hosted a World Cup match.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::WorldCup.stadium #=> "Rostov Arena"
+      #
+      # @faker.version next
       def stadium
         fetch('world_cup.stadiums')
       end
 
+      ##
+      # Produces a random national team name from a group.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::WorldCup.group(group: 'group_B') #=> "Spain"
+      # @example
+      #   Faker::WorldCup.group #=> "Russia"
+      #
+      # @faker.version next
       def group(legacy_group = NOT_GIVEN, group: 'group_A')
-        if legacy_group != NOT_GIVEN
-          warn_with_uplevel 'Passing `group` with the 1st argument of `WorldCup.group` is deprecated. Use keyword argument like `WorldCup.group(group: ...)` instead.', uplevel: 1
-          group = legacy_group
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :group if legacy_group != NOT_GIVEN
         end
 
         fetch("world_cup.groups.#{group}")
       end
 
+      ##
+      # Produces a random name from national team roster.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::WorldCup.roster #=> "Hector Cuper"
+      #
+      # @example
+      #   Faker::WorldCup.roster(country: 'Spain', type: 'forwards') #=> "Diego Costa"
+      #
+      # @faker.version next
       def roster(legacy_country = NOT_GIVEN, legacy_type = NOT_GIVEN, country: 'Egypt', type: 'coach')
-        if legacy_country != NOT_GIVEN
-          warn_with_uplevel 'Passing `country` with the 1st argument of `WorldCup.roster` is deprecated. Use keyword argument like `WorldCup.roster(country: ...)` instead.', uplevel: 1
-          country = legacy_country
-        end
-        if legacy_type != NOT_GIVEN
-          warn_with_uplevel 'Passing `type` with the 2nd argument of `WorldCup.roster` is deprecated. Use keyword argument like `WorldCup.roster(type: ...)` instead.', uplevel: 1
-          type = legacy_type
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :country if legacy_country != NOT_GIVEN
+          keywords << :type if legacy_type != NOT_GIVEN
         end
 
         fetch("world_cup.rosters.#{country}.#{type}")

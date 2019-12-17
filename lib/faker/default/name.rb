@@ -47,9 +47,8 @@ module Faker
       end
 
       def initials(legacy_number = NOT_GIVEN, number: 3)
-        if legacy_number != NOT_GIVEN
-          warn_with_uplevel 'Passing `number` with the 1st argument of `Name.initials` is deprecated. Use keyword argument like `Name.initials(number: ...)` instead.', uplevel: 1
-          number = legacy_number
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :number if legacy_number != NOT_GIVEN
         end
 
         (0...number).map { rand(65..90).chr }.join

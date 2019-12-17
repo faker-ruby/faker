@@ -13,9 +13,8 @@ module Faker
       # By default generates 10 sign isbn code in format 123456789-X
       # You can pass 13 to generate new 13 sign code
       def isbn(legacy_base = NOT_GIVEN, base: 10)
-        if legacy_base != NOT_GIVEN
-          warn_with_uplevel 'Passing `base` with the 1st argument of `Code.isbn` is deprecated. Use keyword argument like `Code.isbn(base: ...)` instead.', uplevel: 1
-          base = legacy_base
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :base if legacy_base != NOT_GIVEN
         end
 
         base == 13 ? generate_base13_isbn : generate_base10_isbn
@@ -24,9 +23,8 @@ module Faker
       # By default generates 13 sign ean code in format 1234567890123
       # You can pass 8 to generate ean8 code
       def ean(legacy_base = NOT_GIVEN, base: 13)
-        if legacy_base != NOT_GIVEN
-          warn_with_uplevel 'Passing `base` with the 1st argument of `Code.ean` is deprecated. Use keyword argument like `Code.ean(base: ...)` instead.', uplevel: 1
-          base = legacy_base
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :base if legacy_base != NOT_GIVEN
         end
 
         base == 8 ? generate_base8_ean : generate_base13_ean
@@ -41,13 +39,9 @@ module Faker
       # By default generates a Singaporean NRIC ID for someone
       # who is born between the age of 18 and 65.
       def nric(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
-        if legacy_min_age != NOT_GIVEN
-          warn_with_uplevel 'Passing `min_age` with the 1st argument of `Code.nric` is deprecated. Use keyword argument like `Code.nric(min_age: ...)` instead.', uplevel: 1
-          min_age = legacy_min_age
-        end
-        if legacy_max_age != NOT_GIVEN
-          warn_with_uplevel 'Passing `max_age` with the 2nd argument of `Code.nric` is deprecated. Use keyword argument like `Code.nric(max_age: ...)` instead.', uplevel: 1
-          max_age = legacy_max_age
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min_age if legacy_min_age != NOT_GIVEN
+          keywords << :max_age if legacy_max_age != NOT_GIVEN
         end
 
         birthyear = Date.birthday(min_age: min_age, max_age: max_age).year

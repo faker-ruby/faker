@@ -60,13 +60,9 @@ module Faker
       end
 
       def sandwich(legacy_sentences = NOT_GIVEN, legacy_repeat = NOT_GIVEN, sentences: 3, repeat: 1)
-        if legacy_sentences != NOT_GIVEN
-          warn_with_uplevel 'Passing `sentences` with the 1st argument of `Markdown.sandwich` is deprecated. Use keyword argument like `Markdown.sandwich(sentences: ...)` instead.', uplevel: 1
-          sentences = legacy_sentences
-        end
-        if legacy_repeat != NOT_GIVEN
-          warn_with_uplevel 'Passing `repeat` with the 2nd argument of `Markdown.sandwich` is deprecated. Use keyword argument like `Markdown.sandwich(repeat: ...)` instead.', uplevel: 1
-          repeat = legacy_repeat
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :sentences if legacy_sentences != NOT_GIVEN
+          keywords << :repeat if legacy_repeat != NOT_GIVEN
         end
 
         text_block = []

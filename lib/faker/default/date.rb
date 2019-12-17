@@ -3,14 +3,22 @@
 module Faker
   class Date < Base
     class << self
+      ##
+      # Produce a random date between two dates.
+      #
+      # @param from [Date] The start of the usable date range.
+      # @param to [Date] The end of the usable date range.
+      # @return [Date]
+      #
+      # @example
+      #   Faker::Date.between(from: 2.days.ago, to: Date.today)
+      #     #=> #<Date: 2014-09-24>
+      #
+      # @faker.version 1.0.0
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from:, to:)
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Date.between` is deprecated. Use keyword argument like `Date.between(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Date.between` is deprecated. Use keyword argument like `Date.between(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
         end
 
         from = get_date_object(from)
@@ -20,19 +28,29 @@ module Faker
       end
 
       # rubocop:disable Metrics/ParameterLists
+
+      ##
+      # Produce a random date between two dates.
+      #
+      # @param from [Date] The start of the usable date range.
+      # @param to [Date] The end of the usable date range.
+      # @param excepted [Date] A date to exclude.
+      # @return [Date]
+      #
+      # @example
+      #   Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today)
+      #     #=> #<Date: 2014-10-03>
+      #
+      # @faker.version 1.6.2
       def between_except(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_excepted = NOT_GIVEN, from:, to:, excepted:)
-        # rubocop:enable Metrics/ParameterLists
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Date.between_except` is deprecated. Use keyword argument like `Date.between_except(from: ...)` instead.', uplevel: 1
-          from = legacy_from
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
         end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Date.between_except` is deprecated. Use keyword argument like `Date.between_except(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :to if legacy_to != NOT_GIVEN
         end
-        if legacy_excepted != NOT_GIVEN
-          warn_with_uplevel 'Passing `excepted` with the 3rd argument of `Date.between_except` is deprecated. Use keyword argument like `Date.between_except(excepted: ...)` instead.', uplevel: 1
-          excepted = legacy_excepted
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :excepted if legacy_excepted != NOT_GIVEN
         end
 
         raise ArgumentError, 'From date, to date and excepted date must not be the same' if from == to && to == excepted
@@ -44,11 +62,21 @@ module Faker
           break date.to_date if date != excepted
         end
       end
+      # rubocop:enable Metrics/ParameterLists
 
+      ##
+      # Produce a random date in the future (up to N days).
+      #
+      # @param days [Integer] The maximum number of days to go into the future.
+      # @return [Date]
+      #
+      # @example
+      #   Faker::Date.forward(days: 23) #=> #<Date: 2014-10-03>
+      #
+      # @faker.version 1.0.0
       def forward(legacy_days = NOT_GIVEN, days: 365)
-        if legacy_days != NOT_GIVEN
-          warn_with_uplevel 'Passing `days` with the 1st argument of `Date.forward` is deprecated. Use keyword argument like `Date.forward(days: ...)` instead.', uplevel: 1
-          days = legacy_days
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :days if legacy_days != NOT_GIVEN
         end
 
         from = ::Date.today + 1
@@ -57,10 +85,19 @@ module Faker
         between(from: from, to: to).to_date
       end
 
+      ##
+      # Produce a random date in the past (up to N days).
+      #
+      # @param days [Integer] The maximum number of days to go into the past.
+      # @return [Date]
+      #
+      # @example
+      #   Faker::Date.backward(days: 14) #=> #<Date: 2019-09-12>
+      #
+      # @faker.version 1.0.0
       def backward(legacy_days = NOT_GIVEN, days: 365)
-        if legacy_days != NOT_GIVEN
-          warn_with_uplevel 'Passing `days` with the 1st argument of `Date.backward` is deprecated. Use keyword argument like `Date.backward(days: ...)` instead.', uplevel: 1
-          days = legacy_days
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :days if legacy_days != NOT_GIVEN
         end
 
         from = ::Date.today - days
@@ -69,20 +106,53 @@ module Faker
         between(from: from, to: to).to_date
       end
 
+      ##
+      # Produce a random date in the past (up to N days).
+      #
+      # @param min_age [Integer] The minimum age that the birthday would imply.
+      # @param max_age [Integer] The maximum age that the birthday would imply.
+      # @return [Date]
+      #
+      # @example
+      #   Faker::Date.birthday(min_age: 18, max_age: 65) #=> #<Date: 1986-03-28>
+      #
+      # @faker.version 1.4.3
       def birthday(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
-        if legacy_min_age != NOT_GIVEN
-          warn_with_uplevel 'Passing `min_age` with the 1st argument of `Date.birthday` is deprecated. Use keyword argument like `Date.birthday(min_age: ...)` instead.', uplevel: 1
-          min_age = legacy_min_age
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min_age if legacy_min_age != NOT_GIVEN
         end
-        if legacy_max_age != NOT_GIVEN
-          warn_with_uplevel 'Passing `max_age` with the 2nd argument of `Date.birthday` is deprecated. Use keyword argument like `Date.birthday(max_age: ...)` instead.', uplevel: 1
-          max_age = legacy_max_age
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :max_age if legacy_max_age != NOT_GIVEN
         end
 
         t = ::Date.today
 
         from = birthday_date(t, max_age)
         to   = birthday_date(t, min_age)
+
+        between(from: from, to: to).to_date
+      end
+
+      ##
+      # Produces a date in the year and/or month specified.
+      #
+      # @param month [Integer] represents the month of the date
+      # @param year [Integer] represents the year of the date
+      # @return [Date]
+      #
+      # @example
+      #   Faker::Date.in_date_period #=> #<Date: 2019-09-01>
+      #
+      # @example
+      #   Faker::Date.in_date_period(year: 2018, month: 2) #=> #<Date: 2018-02-26>
+      #
+      # @example
+      #   Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
+      #
+      # @faker.version next
+      def in_date_period(month: nil, year: ::Date.today.year)
+        from = ::Date.new(year, month || 1, 1)
+        to = ::Date.new(year, month || 12, ::Date.civil(year, month || 12, -1).day)
 
         between(from: from, to: to).to_date
       end

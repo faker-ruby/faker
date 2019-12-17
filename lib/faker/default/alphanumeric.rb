@@ -2,13 +2,26 @@
 
 module Faker
   class Alphanumeric < Base
+    ##
+    # List of characters allowed for alphanumeric strings
+    # @private
     ALPHANUMS = LLetters + Numbers
 
     class << self
+      ##
+      # Produces a random string of alphabetic characters (no digits)
+      #
+      # @param number [Integer] The length of the string to generate
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Alphanumeric.alpha(number: 10) #=> "zlvubkrwga"
+      #
+      # @faker.version 1.9.2
       def alpha(legacy_number = NOT_GIVEN, number: 32)
-        if legacy_number != NOT_GIVEN
-          warn_with_uplevel 'Passing `number` with the 1st argument of `Alphanumeric.alpha` is deprecated. Use keyword argument like `Alphanumeric.alpha(number: ...)` instead.', uplevel: 1
-          number = legacy_number
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :number if legacy_number != NOT_GIVEN
         end
         char_count = resolve(number)
         return '' if char_count.to_i < 1
@@ -19,34 +32,32 @@ module Faker
       ##
       # Produces a random string of alphanumeric characters
       #
-      # @param [Integer] number
-      # @param [Integer] min_alpha
-      # @param [Integer] min_numeric
+      # @param number [Integer] The number of characters to generate
+      # @param min_alpha [Integer] The minimum number of alphabetic to add to the string
+      # @param min_numeric [Integer] The minimum number of numbers to add to the string
       #
       # @return [String]
       #
-      # @example Faker::Alphanumeric.alphanumeric(number: 10) #=> "3yfq2phxtb"
-      # @example Faker::Alphanumeric.alphanumeric(number: 10, min_alpha: 3) #=> "3yfq2phxtb"
-      # @example Faker::Alphanumeric.alphanumeric(number: 10, min_alpha: 3, min_numeric: 3) #=> "3yfq2phx8b"
+      # @example
+      #   Faker::Alphanumeric.alphanumeric(number: 10) #=> "3yfq2phxtb"
+      # @example
+      #   Faker::Alphanumeric.alphanumeric(number: 10, min_alpha: 3) #=> "3yfq2phxtb"
+      # @example
+      #   Faker::Alphanumeric.alphanumeric(number: 10, min_alpha: 3, min_numeric: 3) #=> "3yfq2phx8b"
       #
       # @faker.version 2.1.3
       def alphanumeric(legacy_number = NOT_GIVEN, number: 32, min_alpha: 0, min_numeric: 0)
-        if legacy_number != NOT_GIVEN
-          warn_with_uplevel 'Passing `number` with the 1st argument of `Alphanumeric.alphanumeric` is deprecated. Use keyword argument like `Alphanumeric.alphanumeric(number: ...)` instead.', uplevel: 1
-          number = legacy_number
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :number if legacy_number != NOT_GIVEN
         end
         char_count = resolve(number)
         return '' if char_count.to_i < 1
         raise ArgumentError, 'min_alpha must be greater than or equal to 0' if min_alpha&.negative?
         raise ArgumentError, 'min_numeric must be greater than or equal to 0' if min_numeric&.negative?
 
-        if min_alpha.zero? && min_numeric.zero?
-          return Array.new(char_count) { sample(ALPHANUMS) }.join
-        end
+        return Array.new(char_count) { sample(ALPHANUMS) }.join if min_alpha.zero? && min_numeric.zero?
 
-        if min_alpha + min_numeric > char_count
-          raise ArgumentError, 'min_alpha + min_numeric must be <= number'
-        end
+        raise ArgumentError, 'min_alpha + min_numeric must be <= number' if min_alpha + min_numeric > char_count
 
         random_count = char_count - min_alpha - min_numeric
 

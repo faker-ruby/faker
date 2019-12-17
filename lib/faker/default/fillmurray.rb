@@ -4,19 +4,33 @@ module Faker
   class Fillmurray < Base
     class << self
       # rubocop:disable Metrics/ParameterLists
+
+      ##
+      # Produces the URL of an image from Fill Murray, a site which hosts
+      # exclusively photographs of actor Bill Murray.
+      #
+      # @param grayscale [Boolean] Whether to return a grayscale image.
+      # @param width [Integer] The iamage width.
+      # @param height [Integer] The image height.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Fillmurray.image #=> "https://www.fillmurray.com/300/300"
+      #
+      # @example
+      #   Faker::Fillmurray.image(grayscale: true)
+      #     #=> "https://fillmurray.com/g/300/300"
+      #
+      # @example
+      #   Faker::Fillmurray.image(grayscale: false, width: 200, height: 400)
+      #     #=> "https://fillmurray.com/200/400"
+      #
+      # @faker.version 1.7.1
       def image(legacy_grayscale = NOT_GIVEN, legacy_width = NOT_GIVEN, legacy_height = NOT_GIVEN, grayscale: false, width: 200, height: 200)
-        # rubocop:enable Metrics/ParameterLists
-        if legacy_grayscale != NOT_GIVEN
-          warn_with_uplevel 'Passing `grayscale` with the 1st argument of `Fillmurray.image` is deprecated. Use keyword argument like `Fillmurray.image(grayscale: ...)` instead.', uplevel: 1
-          grayscale = legacy_grayscale
-        end
-        if legacy_width != NOT_GIVEN
-          warn_with_uplevel 'Passing `width` with the 2nd argument of `Fillmurray.image` is deprecated. Use keyword argument like `Fillmurray.image(width: ...)` instead.', uplevel: 1
-          width = legacy_width
-        end
-        if legacy_height != NOT_GIVEN
-          warn_with_uplevel 'Passing `height` with the 3rd argument of `Fillmurray.image` is deprecated. Use keyword argument like `Fillmurray.image(height: ...)` instead.', uplevel: 1
-          height = legacy_height
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :grayscale if legacy_grayscale != NOT_GIVEN
+          keywords << :width if legacy_width != NOT_GIVEN
+          keywords << :height if legacy_height != NOT_GIVEN
         end
 
         raise ArgumentError, 'Width should be a number' unless width.to_s =~ /^\d+$/
@@ -25,6 +39,7 @@ module Faker
 
         "https://www.fillmurray.com#{'/g' if grayscale == true}/#{width}/#{height}"
       end
+      # rubocop:enable Metrics/ParameterLists
     end
   end
 end

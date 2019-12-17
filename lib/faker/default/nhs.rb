@@ -16,9 +16,8 @@ module Faker
       end
 
       def check_digit(legacy_number = NOT_GIVEN, number: 0)
-        if legacy_number != NOT_GIVEN
-          warn_with_uplevel 'Passing `number` with the 1st argument of `NationalHealthService.check_digit` is deprecated. Use keyword argument like `NationalHealthService.check_digit(number: ...)` instead.', uplevel: 1
-          number = legacy_number
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :number if legacy_number != NOT_GIVEN
         end
 
         sum = 0

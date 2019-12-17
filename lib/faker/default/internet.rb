@@ -3,49 +3,39 @@
 module Faker
   class Internet < Base
     class << self
-      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil)
-        if legacy_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `name` with the 1st argument of `Internet.email` is deprecated. Use keyword argument like `Internet.email(name: ...)` instead.', uplevel: 1
-          name = legacy_name
-        end
-        if legacy_separators != NOT_GIVEN
-          warn_with_uplevel 'Passing `separators` with the 2nd argument of `Internet.email` is deprecated. Use keyword argument like `Internet.email(separators: ...)` instead.', uplevel: 1
-          separators = legacy_separators
+      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :separators if legacy_separators != NOT_GIVEN
         end
 
         if separators
-          [username(specifier: name, separators: separators), domain_name].join('@')
+          [username(specifier: name, separators: separators), domain_name(domain: domain)].join('@')
         else
-          [username(specifier: name), domain_name].join('@')
+          [username(specifier: name), domain_name(domain: domain)].join('@')
         end
       end
 
       def free_email(legacy_name = NOT_GIVEN, name: nil)
-        if legacy_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `name` with the 1st argument of `Internet.free_email` is deprecated. Use keyword argument like `Internet.free_email(name: ...)` instead.', uplevel: 1
-          name = legacy_name
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
         end
 
         [username(specifier: name), fetch('internet.free_email')].join('@')
       end
 
       def safe_email(legacy_name = NOT_GIVEN, name: nil)
-        if legacy_name != NOT_GIVEN
-          warn_with_uplevel 'Passing `name` with the 1st argument of `Internet.safe_email` is deprecated. Use keyword argument like `Internet.safe_email(name: ...)` instead.', uplevel: 1
-          name = legacy_name
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
         end
 
         [username(specifier: name), 'example.' + sample(%w[org com net])].join('@')
       end
 
       def username(legacy_specifier = NOT_GIVEN, legacy_separators = NOT_GIVEN, specifier: nil, separators: %w[. _])
-        if legacy_specifier != NOT_GIVEN
-          warn_with_uplevel 'Passing `specifier` with the 1st argument of `Internet.username` is deprecated. Use keyword argument like `Internet.username(specifier: ...)` instead.', uplevel: 1
-          specifier = legacy_specifier
-        end
-        if legacy_separators != NOT_GIVEN
-          warn_with_uplevel 'Passing `separators` with the 2nd argument of `Internet.username` is deprecated. Use keyword argument like `Internet.username(separators: ...)` instead.', uplevel: 1
-          separators = legacy_separators
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :specifier if legacy_specifier != NOT_GIVEN
+          keywords << :separators if legacy_separators != NOT_GIVEN
         end
 
         with_locale(:en) do
@@ -83,40 +73,37 @@ module Faker
         end
       end
 
+      # rubocop:disable Metrics/ParameterLists
+
       ##
-      # Produces a randomized string of characters
+      # Produces a randomized string of characters suitable for passwords
       #
-      # @param [Integer] min_length
-      # @param [Integer] max_length
-      # @param [Boolean] mix_case
-      # @param [Boolean] special_characters
+      # @param min_length [Integer] The minimum length of the password
+      # @param max_length [Integer] The maximum length of the password
+      # @param mix_case [Boolean] Toggles if uppercased letters are allowed. If true, at least one will be added.
+      # @param special_characters [Boolean] Toggles if special characters are allowed. If true, at least one will be added.
       #
       # @return [String]
       #
-      # @example Faker::Internet.password #=> "Vg5mSvY1UeRg7"
-      # @example Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
-      # @example Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
-      # @example Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
-      # @example Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
+      # @example
+      #   Faker::Internet.password #=> "Vg5mSvY1UeRg7"
+      # @example
+      #   Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
+      # @example
+      #   Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
+      # @example
+      #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
+      # @example
+      #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
       #
       # @faker.version 2.1.3
-      # rubocop:disable Metrics/ParameterLists
       def password(legacy_min_length = NOT_GIVEN, legacy_max_length = NOT_GIVEN, legacy_mix_case = NOT_GIVEN, legacy_special_characters = NOT_GIVEN, min_length: 8, max_length: 16, mix_case: true, special_characters: false)
-        if legacy_min_length != NOT_GIVEN
-          warn_with_uplevel 'Passing `min_length` with the 1st argument of `Internet.password` is deprecated. Use keyword argument like `Internet.password(min_length: ...)` instead.', uplevel: 1
-          min_length = legacy_min_length
-        end
-        if legacy_max_length != NOT_GIVEN
-          warn_with_uplevel 'Passing `max_length` with the 2nd argument of `Internet.password` is deprecated. Use keyword argument like `Internet.password(max_length: ...)` instead.', uplevel: 1
-          max_length = legacy_max_length
-        end
-        if legacy_mix_case != NOT_GIVEN
-          warn_with_uplevel 'Passing `mix_case` with the 3rd argument of `Internet.password` is deprecated. Use keyword argument like `Internet.password(mix_case: ...)` instead.', uplevel: 1
-          mix_case = legacy_mix_case
-        end
-        if legacy_special_characters != NOT_GIVEN
-          warn_with_uplevel 'Passing `special_characters` with the 4th argument of `Internet.password` is deprecated. Use keyword argument like `Internet.password(special_characters: ...)` instead.', uplevel: 1
-          special_characters = legacy_special_characters
+        # rubocop:enable Metrics/ParameterLists
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min_length if legacy_min_length != NOT_GIVEN
+          keywords << :max_length if legacy_max_length != NOT_GIVEN
+          keywords << :mix_case if legacy_mix_case != NOT_GIVEN
+          keywords << :special_characters if legacy_special_characters != NOT_GIVEN
         end
 
         min_alpha = mix_case ? 2 : 0
@@ -148,23 +135,31 @@ module Faker
         temp
       end
 
-      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false)
-        if legacy_subdomain != NOT_GIVEN
-          warn_with_uplevel 'Passing `subdomain` with the 1st argument of `Internet.domain_name` is deprecated. Use keyword argument like `Internet.domain_name(subdomain: ...)` instead.', uplevel: 1
-          subdomain = legacy_subdomain
+      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :subdomain if legacy_subdomain != NOT_GIVEN
         end
 
         with_locale(:en) do
-          domain_elements = [Char.prepare(domain_word), domain_suffix]
-          domain_elements.unshift(Char.prepare(domain_word)) if subdomain
-          domain_elements.join('.')
+          if domain
+            domain
+              .split('.')
+              .map { |domain_part| Char.prepare(domain_part) }
+              .tap do |domain_elements|
+                domain_elements << domain_suffix if domain_elements.length < 2
+                domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
+              end.join('.')
+          else
+            [domain_word, domain_suffix].tap do |domain_elements|
+              domain_elements.unshift(Char.prepare(domain_word)) if subdomain
+            end.join('.')
+          end
         end
       end
 
       def fix_umlauts(legacy_string = NOT_GIVEN, string: '')
-        if legacy_string != NOT_GIVEN
-          warn_with_uplevel 'Passing `string` with the 1st argument of `Internet.fix_umlauts` is deprecated. Use keyword argument like `Internet.fix_umlauts(string: ...)` instead.', uplevel: 1
-          string = legacy_string
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :string if legacy_string != NOT_GIVEN
         end
 
         Char.fix_umlauts(string)
@@ -179,9 +174,8 @@ module Faker
       end
 
       def mac_address(legacy_prefix = NOT_GIVEN, prefix: '')
-        if legacy_prefix != NOT_GIVEN
-          warn_with_uplevel 'Passing `prefix` with the 1st argument of `Internet.mac_address` is deprecated. Use keyword argument like `Internet.mac_address(prefix: ...)` instead.', uplevel: 1
-          prefix = legacy_prefix
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :prefix if legacy_prefix != NOT_GIVEN
         end
 
         prefix_digits = prefix.split(':').map { |d| d.to_i(16) }
@@ -257,32 +251,22 @@ module Faker
         "#{ip_v6_address}/#{rand(1..127)}"
       end
 
+      # rubocop:disable Metrics/ParameterLists
       def url(legacy_host = NOT_GIVEN, legacy_path = NOT_GIVEN, legacy_scheme = NOT_GIVEN, host: domain_name, path: "/#{username}", scheme: 'http')
         # rubocop:enable Metrics/ParameterLists
-        if legacy_host != NOT_GIVEN
-          warn_with_uplevel 'Passing `host` with the 1st argument of `Internet.url` is deprecated. Use keyword argument like `Internet.url(host: ...)` instead.', uplevel: 1
-          host = legacy_host
-        end
-        if legacy_path != NOT_GIVEN
-          warn_with_uplevel 'Passing `path` with the 2nd argument of `Internet.url` is deprecated. Use keyword argument like `Internet.url(path: ...)` instead.', uplevel: 1
-          path = legacy_path
-        end
-        if legacy_scheme != NOT_GIVEN
-          warn_with_uplevel 'Passing `scheme` with the 3rd argument of `Internet.url` is deprecated. Use keyword argument like `Internet.url(scheme: ...)` instead.', uplevel: 1
-          scheme = legacy_scheme
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :host if legacy_host != NOT_GIVEN
+          keywords << :path if legacy_path != NOT_GIVEN
+          keywords << :scheme if legacy_scheme != NOT_GIVEN
         end
 
         "#{scheme}://#{host}#{path}"
       end
 
       def slug(legacy_words = NOT_GIVEN, legacy_glue = NOT_GIVEN, words: nil, glue: nil)
-        if legacy_words != NOT_GIVEN
-          warn_with_uplevel 'Passing `words` with the 1st argument of `Internet.slug` is deprecated. Use keyword argument like `Internet.slug(words: ...)` instead.', uplevel: 1
-          words = legacy_words
-        end
-        if legacy_glue != NOT_GIVEN
-          warn_with_uplevel 'Passing `glue` with the 2nd argument of `Internet.slug` is deprecated. Use keyword argument like `Internet.slug(glue: ...)` instead.', uplevel: 1
-          glue = legacy_glue
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :words if legacy_words != NOT_GIVEN
+          keywords << :glue if legacy_glue != NOT_GIVEN
         end
 
         glue ||= sample(%w[- _])
@@ -294,9 +278,8 @@ module Faker
       end
 
       def user_agent(legacy_vendor = NOT_GIVEN, vendor: nil)
-        if legacy_vendor != NOT_GIVEN
-          warn_with_uplevel 'Passing `vendor` with the 1st argument of `Internet.user_agent` is deprecated. Use keyword argument like `Internet.user_agent(vendor: ...)` instead.', uplevel: 1
-          vendor = legacy_vendor
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :vendor if legacy_vendor != NOT_GIVEN
         end
 
         agent_hash = translate('faker.internet.user_agent')

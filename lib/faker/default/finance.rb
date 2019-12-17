@@ -27,9 +27,8 @@ module Faker
       end
 
       def vat_number(legacy_country = NOT_GIVEN, country: 'BR')
-        if legacy_country != NOT_GIVEN
-          warn_with_uplevel 'Passing `country` with the 1st argument of `Finance.vat_number` is deprecated. Use keyword argument like `Finance.vat_number(country: ...)` instead.', uplevel: 1
-          country = legacy_country
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :country if legacy_country != NOT_GIVEN
         end
 
         numerify(fetch("finance.vat_number.#{country}"))

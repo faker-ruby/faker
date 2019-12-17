@@ -3,32 +3,59 @@
 module Faker
   class Number < Base
     class << self
+      ##
+      # Produce a random number.
+      #
+      # @param digits [Integer] Number of digits that the generated number should have.
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.number(digits: 10) #=> 1968353479
+      #
+      # @faker.version 1.0.0
       def number(legacy_digits = NOT_GIVEN, digits: 10)
-        if legacy_digits != NOT_GIVEN
-          warn_with_uplevel 'Passing `digits` with the 1st argument of `Number.number` is deprecated. Use keyword argument like `Number.number(digits: ...)` instead.', uplevel: 1
-          digits = legacy_digits
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :digits if legacy_digits != NOT_GIVEN
         end
 
         return if digits < 1
-        return 0 if digits == 1
+        return rand(0..9).round if digits == 1
 
         # Ensure the first digit is not zero
         ([non_zero_digit] + generate(digits - 1)).join.to_i
       end
 
+      ##
+      # Produce a random number with a leading zero.
+      #
+      # @param digits [Integer] Number of digits that the generated number should have.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Number.leading_zero_number(digits: 10) #=> "0669336915"
+      #
+      # @faker.version 1.0.0
       def leading_zero_number(legacy_digits = NOT_GIVEN, digits: 10)
-        if legacy_digits != NOT_GIVEN
-          warn_with_uplevel 'Passing `digits` with the 1st argument of `Number.leading_zero_number` is deprecated. Use keyword argument like `Number.leading_zero_number(digits: ...)` instead.', uplevel: 1
-          digits = legacy_digits
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :digits if legacy_digits != NOT_GIVEN
         end
 
         '0' + (2..digits).collect { digit }.join
       end
 
+      ##
+      # Produce a number with a number of digits, preserves leading zeroes.
+      #
+      # @param digits [Integer] Number of digits that the generated number should have.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Number.decimal_part(digits: 2) #=> "09"
+      #
+      # @faker.version 1.0.0
       def decimal_part(legacy_digits = NOT_GIVEN, digits: 10)
-        if legacy_digits != NOT_GIVEN
-          warn_with_uplevel 'Passing `digits` with the 1st argument of `Number.decimal_part` is deprecated. Use keyword argument like `Number.decimal_part(digits: ...)` instead.', uplevel: 1
-          digits = legacy_digits
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :digits if legacy_digits != NOT_GIVEN
         end
 
         num = ''
@@ -39,14 +66,22 @@ module Faker
         leading_zero_number(digits: digits) + num.to_s
       end
 
+      ##
+      # Produces a float.
+      #
+      # @param l_digits [Integer] Number of digits that the generated decimal should have to the left of the decimal point.
+      # @param r_digits [Integer] Number of digits that the generated decimal should have to the right of the decimal point.
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.decimal(l_digits: 2) #=> 11.88
+      #   Faker::Number.decimal(l_digits: 3, r_digits: 3) #=> 181.843
+      #
+      # @faker.version 1.0.0
       def decimal(legacy_l_digits = NOT_GIVEN, legacy_r_digits = NOT_GIVEN, l_digits: 5, r_digits: 2)
-        if legacy_l_digits != NOT_GIVEN
-          warn_with_uplevel 'Passing `l_digits` with the 1st argument of `Number.decimal` is deprecated. Use keyword argument like `Number.decimal(l_digits: ...)` instead.', uplevel: 1
-          l_digits = legacy_l_digits
-        end
-        if legacy_r_digits != NOT_GIVEN
-          warn_with_uplevel 'Passing `r_digits` with the 2nd argument of `Number.decimal` is deprecated. Use keyword argument like `Number.decimal(r_digits: ...)` instead.', uplevel: 1
-          r_digits = legacy_r_digits
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :l_digits if legacy_l_digits != NOT_GIVEN
+          keywords << :r_digits if legacy_r_digits != NOT_GIVEN
         end
 
         l_d = number(digits: l_digits)
@@ -60,18 +95,45 @@ module Faker
         "#{l_d}.#{r_d}".to_f
       end
 
+      ##
+      # Produces a non-zero single-digit integer.
+      #
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.non_zero_digit #=> 8
+      #
+      # @faker.version 1.0.0
       def non_zero_digit
         rand(1..9)
       end
 
+      ##
+      # Produces a single-digit integer.
+      #
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.digit #=> 1
+      #
+      # @faker.version 1.0.0
       def digit
         rand(10)
       end
 
+      ##
+      # Produces a number in hexadecimal format.
+      #
+      # @param digits [Integer] Number of digits in the he
+      # @return [String]
+      #
+      # @example
+      #   Faker::Number.hexadecimal(digits: 3) #=> "e74"
+      #
+      # @faker.version 1.0.0
       def hexadecimal(legacy_digits = NOT_GIVEN, digits: 6)
-        if legacy_digits != NOT_GIVEN
-          warn_with_uplevel 'Passing `digits` with the 1st argument of `Number.hexadecimal` is deprecated. Use keyword argument like `Number.hexadecimal(digits: ...)` instead.', uplevel: 1
-          digits = legacy_digits
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :digits if legacy_digits != NOT_GIVEN
         end
 
         hex = ''
@@ -79,14 +141,21 @@ module Faker
         hex
       end
 
+      ##
+      # Produces a float given a mean and standard deviation.
+      #
+      # @param mean [Integer]
+      # @param standard_deviation [Integer, Float]
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.normal(mean: 50, standard_deviation: 3.5) #=> 47.14669604069156
+      #
+      # @faker.version 1.0.0
       def normal(legacy_mean = NOT_GIVEN, legacy_standard_deviation = NOT_GIVEN, mean: 1, standard_deviation: 1)
-        if legacy_mean != NOT_GIVEN
-          warn_with_uplevel 'Passing `mean` with the 1st argument of `Number.normal` is deprecated. Use keyword argument like `Number.normal(mean: ...)` instead.', uplevel: 1
-          mean = legacy_mean
-        end
-        if legacy_standard_deviation != NOT_GIVEN
-          warn_with_uplevel 'Passing `standard_deviation` with the 2nd argument of `Number.normal` is deprecated. Use keyword argument like `Number.normal(standard_deviation: ...)` instead.', uplevel: 1
-          standard_deviation = legacy_standard_deviation
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :mean if legacy_mean != NOT_GIVEN
+          keywords << :standard_deviation if legacy_standard_deviation != NOT_GIVEN
         end
 
         theta = 2 * Math::PI * rand
@@ -95,36 +164,59 @@ module Faker
         mean + scale * Math.cos(theta)
       end
 
+      ##
+      # Produces a number between two provided values. Boundaries are inclusive.
+      #
+      # @param from [Integer] The lowest number to include.
+      # @param to [Integer] The highest number to include.
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.between(from: 1, to: 10) #=> 7
+      #
+      # @faker.version 1.0.0
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Number.between` is deprecated. Use keyword argument like `Number.between(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Number.between` is deprecated. Use keyword argument like `Number.between(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
         end
 
         Faker::Base.rand_in_range(from, to)
       end
 
+      ##
+      # Produces a number within two provided values. Boundaries are inclusive or exclusive depending on the range passed.
+      #
+      # @param range [Range] The range from which to generate a number.
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Number.within(range: 1..10) #=> 7
+      #
+      # @faker.version 1.0.0
       def within(legacy_range = NOT_GIVEN, range: 1.00..5000.00)
-        if legacy_range != NOT_GIVEN
-          warn_with_uplevel 'Passing `range` with the 1st argument of `Number.within` is deprecated. Use keyword argument like `Number.within(range: ...)` instead.', uplevel: 1
-          range = legacy_range
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :range if legacy_range != NOT_GIVEN
         end
 
         between(from: range.min, to: range.max)
       end
 
+      ##
+      # Produces a positive float.
+      #
+      # @param from [Integer] The lower boundary.
+      # @param to [Integer] The higher boundary.
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.positive #=> 235.59238499107653
+      #
+      # @faker.version 1.0.0
       def positive(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Number.positive` is deprecated. Use keyword argument like `Number.positive(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Number.positive` is deprecated. Use keyword argument like `Number.positive(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
         end
 
         random_number = between(from: from, to: to)
@@ -132,14 +224,21 @@ module Faker
         greater_than_zero(random_number)
       end
 
+      ##
+      # Produces a negative float.
+      #
+      # @param from [Integer] The lower boundary.
+      # @param to [Integer] The higher boundary.
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.negative #=> -4480.042585669558
+      #
+      # @faker.version 1.0.0
       def negative(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: -5000.00, to: -1.00)
-        if legacy_from != NOT_GIVEN
-          warn_with_uplevel 'Passing `from` with the 1st argument of `Number.negative` is deprecated. Use keyword argument like `Number.negative(from: ...)` instead.', uplevel: 1
-          from = legacy_from
-        end
-        if legacy_to != NOT_GIVEN
-          warn_with_uplevel 'Passing `to` with the 2nd argument of `Number.negative` is deprecated. Use keyword argument like `Number.negative(to: ...)` instead.', uplevel: 1
-          to = legacy_to
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :from if legacy_from != NOT_GIVEN
+          keywords << :to if legacy_to != NOT_GIVEN
         end
 
         random_number = between(from: from, to: to)
