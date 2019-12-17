@@ -100,10 +100,10 @@ module Faker
       #
       # Produces a mail box number.
       # @return [String]
-      # 
+      #
       # @example
       # Faker::Address.mail_box #=> "PO Box 123"
-      # 
+      #
       # @faker.version 2.9.1
       def mail_box
         bothify(fetch('address.mail_box'))
