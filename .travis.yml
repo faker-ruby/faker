@@ -10,7 +10,8 @@ rvm:
   - 2.6.1
   - ruby-head
 before_install:
-  - gem install bundler
+  - yes | gem update --system=3.1.1 --force
+  - gem install bundler:2.1.1
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
