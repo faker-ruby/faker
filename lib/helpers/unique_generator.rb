@@ -15,11 +15,11 @@ module Faker
     end
 
     # rubocop:disable Style/MethodMissingSuper
-    def method_missing(name, *arguments)
+    def method_missing(name, *arguments, **kwargs)
       self.class.marked_unique.add(self)
 
       @max_retries.times do
-        result = @generator.public_send(name, *arguments, **{})
+        result = @generator.public_send(name, *arguments, **kwargs)
 
         next if @previous_results[[name, arguments]].include?(result)
 
