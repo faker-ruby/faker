@@ -3,6 +3,11 @@
 module Faker
   class Music < Base
     class << self
+      NOTE_LETTERS = %w[C D E F G A B].freeze
+      ACCIDENTAL_SIGNS = ['b', '#', ''].freeze
+      KEY_TYPES = ['', 'm'].freeze
+      CHORD_TYPES = ['', 'maj', '6', 'maj7', 'm', 'm7', '-7', '7', 'dom7', 'dim', 'dim7', 'm7b5'].freeze
+
       ##
       # Produces the name of a key/note, using letter notation.
       #
@@ -49,7 +54,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def keys
-        %w[C D E F G A B]
+        NOTE_LETTERS
       end
 
       ##
@@ -59,7 +64,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def key_variants
-        ['b', '#', '']
+        ACCIDENTAL_SIGNS
       end
 
       ##
@@ -72,7 +77,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def key_types
-        ['', 'm']
+        KEY_TYPES
       end
 
       ##
@@ -82,7 +87,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def chord_types
-        ['', 'maj', '6', 'maj7', 'm', 'm7', '-7', '7', 'dom7', 'dim', 'dim7', 'm7b5']
+        CHORD_TYPES
       end
 
       ##
