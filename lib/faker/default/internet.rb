@@ -3,16 +3,16 @@
 module Faker
   class Internet < Base
     class << self
-      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil)
+      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :name if legacy_name != NOT_GIVEN
           keywords << :separators if legacy_separators != NOT_GIVEN
         end
 
         if separators
-          [username(specifier: name, separators: separators), domain_name].join('@')
+          [username(specifier: name, separators: separators), domain_name(domain: domain)].join('@')
         else
-          [username(specifier: name), domain_name].join('@')
+          [username(specifier: name), domain_name(domain: domain)].join('@')
         end
       end
 
@@ -73,6 +73,8 @@ module Faker
         end
       end
 
+      # rubocop:disable Metrics/ParameterLists
+
       ##
       # Produces a randomized string of characters suitable for passwords
       #
@@ -95,8 +97,8 @@ module Faker
       #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
       #
       # @faker.version 2.1.3
-      # rubocop:disable Metrics/ParameterLists
       def password(legacy_min_length = NOT_GIVEN, legacy_max_length = NOT_GIVEN, legacy_mix_case = NOT_GIVEN, legacy_special_characters = NOT_GIVEN, min_length: 8, max_length: 16, mix_case: true, special_characters: false)
+        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :min_length if legacy_min_length != NOT_GIVEN
           keywords << :max_length if legacy_max_length != NOT_GIVEN
@@ -133,15 +135,25 @@ module Faker
         temp
       end
 
-      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false)
+      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :subdomain if legacy_subdomain != NOT_GIVEN
         end
 
         with_locale(:en) do
-          domain_elements = [Char.prepare(domain_word), domain_suffix]
-          domain_elements.unshift(Char.prepare(domain_word)) if subdomain
-          domain_elements.join('.')
+          if domain
+            domain
+              .split('.')
+              .map { |domain_part| Char.prepare(domain_part) }
+              .tap do |domain_elements|
+                domain_elements << domain_suffix if domain_elements.length < 2
+                domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
+              end.join('.')
+          else
+            [domain_word, domain_suffix].tap do |domain_elements|
+              domain_elements.unshift(Char.prepare(domain_word)) if subdomain
+            end.join('.')
+          end
         end
       end
 
@@ -239,6 +251,7 @@ module Faker
         "#{ip_v6_address}/#{rand(1..127)}"
       end
 
+      # rubocop:disable Metrics/ParameterLists
       def url(legacy_host = NOT_GIVEN, legacy_path = NOT_GIVEN, legacy_scheme = NOT_GIVEN, host: domain_name, path: "/#{username}", scheme: 'http')
         # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|

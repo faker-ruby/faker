@@ -27,6 +27,10 @@ class TestFakerAddress < Test::Unit::TestCase
     assert @tester.building_number.match(/\d+/)
   end
 
+  def test_mail_box
+    assert @tester.mail_box.match(/[\w ]+\d+/)
+  end
+
   def test_zip_code
     assert @tester.zip_code.match(/^\d+-?\d*$/)
   end

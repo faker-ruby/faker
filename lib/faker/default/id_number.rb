@@ -16,6 +16,8 @@ module Faker
     BRAZILIAN_ID_FROM = 10_000_000
     BRAZILIAN_ID_TO = 99_999_999
 
+    CHILEAN_MODULO = 11
+
     class << self
       def valid
         _translate('valid')
@@ -105,7 +107,34 @@ module Faker
 
       alias brazilian_rg brazilian_id
 
+      def chilean_id
+        digits = Faker::Number.number(digits: 8)
+        verification_code = chilean_verification_code(digits)
+
+        digits.to_s + '-' + verification_code.to_s
+      end
+
       private
+
+      def chilean_verification_code(digits)
+        # First digit is multiplied by 3, second by 2, and so on
+        multiplication_rule = [3, 2, 7, 6, 5, 4, 3, 2]
+        digits_splitted = digits.to_s.chars.map(&:to_i)
+
+        sum = digits_splitted.map.with_index { |digit, index| digit * multiplication_rule[index] }.reduce(:+)
+
+        modulo = sum.modulo(CHILEAN_MODULO)
+        difference = CHILEAN_MODULO - modulo
+
+        case difference
+        when 0..9
+          difference
+        when 10
+          'K'
+        when 11
+          0
+        end
+      end
 
       def south_african_id_checksum_digit(id_number)
         value_parts = id_number.chars

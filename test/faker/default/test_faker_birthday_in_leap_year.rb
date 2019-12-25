@@ -20,12 +20,23 @@ class TestFakerBirthdayInLeapYear < Test::Unit::TestCase
       @tester.birthday
     end
 
-    assert_raise ArgumentError do
-      ::Date.new(@today.year - @min, @today.month, @today.day)
-    end
+    # The error raised here is changed in Ruby 2.7.
+    if RUBY_VERSION < '2.7'
+      assert_raise ArgumentError do
+        ::Date.new(@today.year - @min, @today.month, @today.day)
+      end
 
-    assert_raise ArgumentError do
-      ::Date.new(@today.year - @max, @today.month, @today.day)
+      assert_raise ArgumentError do
+        ::Date.new(@today.year - @max, @today.month, @today.day)
+      end
+    elsif RUBY_VERSION >= '2.7'
+      assert_raise Date::Error do
+        ::Date.new(@today.year - @min, @today.month, @today.day)
+      end
+
+      assert_raise Date::Error do
+        ::Date.new(@today.year - @max, @today.month, @today.day)
+      end
     end
   end
 end

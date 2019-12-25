@@ -55,9 +55,7 @@ Style/EvalWithLocation:
 
 Style/FormatStringToken:
   Description: This cop checks for a consistent style for named format string tokens.
-  Exclude:
-    - 'lib/faker/default/company.rb'
-    - 'lib/faker/default/id_number.rb'
+  Enabled: false
 
 Style/FrozenStringLiteralComment:
   Description: Add the frozen_string_literal comment to the top of files to help transition from Ruby 2.3.0 to Ruby 3.0.

@@ -7,6 +7,7 @@
 [![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=master)](https://inch-ci.org/github/faker-ruby/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
+[![SemVer compatibility](https://api.dependabot.com/badges/compatibility_score?dependency-name=faker&package-manager=bundler&version-scheme=semver)](https://dependabot.com/compatibility-score.html?dependency-name=faker&package-manager=bundler&version-scheme=semver)
 
 This gem is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker) that generates fake data.
 
@@ -42,7 +43,7 @@ development.
 
 ### NOTE
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
-  You must explicity specify when you require unique values, see [details](#ensuring-unique-values).
+  You must explicitly specify when you require unique values, see [details](#ensuring-unique-values).
   Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
@@ -211,6 +212,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::WorldCup](doc/default/world_cup.md)
 
 ### Blockchain
+  - [Faker::Blockchain::Aeternity](doc/blockchain/aeternity.md)
   - [Faker::Blockchain::Bitcoin](doc/blockchain/bitcoin.md)
   - [Faker::Blockchain::Ethereum](doc/blockchain/ethereum.md)
   - [Faker::Blockchain::Tezos](doc/blockchain/tezos.md)
@@ -358,6 +360,8 @@ See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/master/CONTRIBUTING.m
 
 ## Contact
 Comments and feedback are welcome. Send an email to Benjamin Curtis via the [google group](http://groups.google.com/group/ruby-faker).
+
+You can also join our [discord channel](https://discord.gg/RMumTwB) to discuss anything regarding improvements or feature requests.
 
 ## License
 This code is free to use under the terms of the MIT license.
