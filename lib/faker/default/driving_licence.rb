@@ -52,9 +52,9 @@ module Faker
         year = dob.year % 10
         month = gender == :female ? dob.month + 50 : dob.month
         # Rubocop's preferred formatting is pretty gory
-        # rubocop:disable FormatString
+        # rubocop:disable Style/FormatString
         "#{decade}#{'%02d' % month}#{'%02d' % dob.day}#{year}"
-        # rubocop:enable FormatString
+        # rubocop:enable Style/FormatString
       end
 
       def gb_licence_checksum

@@ -1,21 +1,35 @@
-# Faker::PhoneNumber
+# `Faker::PhoneNumber`
 
-Phone numbers may be in any of the following formats:
+### `.phone_number`
+
+This formatter will return one of the following formats:
 
   * 333-333-3333
   * (333) 333-3333
   * 1-333-333-3333
   * 333.333.3333
-  * 333-333-3333
   * 333-333-3333 x3333
   * (333) 333-3333 x3333
   * 1-333-333-3333 x3333
   * 333.333.3333 x3333
 
-(Don't let the example output below fool you - any format can be returned at random.)
+Note: For formats with extensions, the extension can be inclusively between 3 and 5 digits long.
+
+### `.cell_phone`
+
+This formatter will return one of the following formats:
+
+  * 333-333-3333
+  * (333) 333-3333
+  * 1-333-333-3333
+  * 333.333.3333
+
+## Usage
+
+Don't let the example output below fool you -- any format can be returned at random.
 
 ```ruby
-Faker::PhoneNumber.phone_number #=> "397.693.1309"
+Faker::PhoneNumber.phone_number #=> "397.693.1309 x4321"
 
 Faker::PhoneNumber.cell_phone #=> "(186)285-7925"
 

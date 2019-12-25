@@ -2,7 +2,7 @@ fr-CA:
   faker:
     address:
       postcode: /[A-CEJ-NPR-TVXY][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
-      state: [Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Nova Scotia, Northwest Territories, Nunavut, Ontario, Prince Edward Island, Quebec, Saskatchewan, Yukon]
+      state: ["Alberta", "Colombie-Britannique", "Île-du-Prince-Édouard", "Manitoba", "Nouveau-Brunswick", "Nouvelle-Écosse", "Nunavut", "Ontario", "Terre-Neuve-et-Labrador", "Territoires du Nord-Ouest", "Québec", "Saskatchewan", "Yukon"]
       state_abbr: ["AB", "BC", "MB", "NB", "NL", "NS", "NU", "NT", "ON", "PE", "QC", "SK", "YT"]
       country_code: ['CA']
       building_number: ['####', '###', '##', '#']

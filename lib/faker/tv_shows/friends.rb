@@ -6,14 +6,41 @@ module Faker
       flexible :friends
 
       class << self
+        ##
+        # Produces a character from Friends.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::TvShows::Friends.character #=> "Rachel Green"
+        #
+        # @faker.version 1.7.3
         def character
           fetch('friends.characters')
         end
 
+        ##
+        # Produces a location from Friends.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::TvShows::Friends.location #=> "Central Perk"
+        #
+        # @faker.version 1.7.3
         def location
           fetch('friends.locations')
         end
 
+        ##
+        # Produces a quote from Friends.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::TvShows::Friends.quote #=> "We were on a break!"
+        #
+        # @faker.version 1.7.3
         def quote
           fetch('friends.quotes')
         end

@@ -578,4 +578,8 @@ en:
       full_address:
         - "#{street_address}, #{city}, #{state_abbr} #{zip_code}"
         - "#{secondary_address} #{street_address}, #{city}, #{state_abbr} #{zip_code}"
+      mail_box:
+        - "PO Box ##"
+        - "PO Box ###"
+        - "PO Box ####"
       default_country: [United States of America]

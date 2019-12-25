@@ -8,7 +8,7 @@ Faker::Commerce.department #=> "Grocery, Health & Beauty"
 Faker::Commerce.department(max: 5) #=> "Grocery, Books, Health & Beauty"
 Faker::Commerce.department(max: 2, fixed_amount: true) #=> "Books & Tools"
 
-Faker::Commerce.material #=> "Steel"
+Faker::Commerce.material #=> "Plastic"
 
 Faker::Commerce.product_name #=> "Practical Granite Shirt"
 
