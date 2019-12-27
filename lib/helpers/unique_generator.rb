@@ -15,11 +15,11 @@ module Faker
     end
 
     # rubocop:disable Style/MethodMissingSuper
-    def method_missing(name, *arguments, **kwargs)
+    def method_missing(name, *arguments)
       self.class.marked_unique.add(self)
 
       @max_retries.times do
-        result = @generator.public_send(name, *arguments, **kwargs)
+        result = @generator.public_send(name, *arguments)
 
         next if @previous_results[[name, arguments]].include?(result)
 
@@ -29,6 +29,10 @@ module Faker
 
       raise RetryLimitExceeded, "Retry limit exceeded for #{name}"
     end
+    # Have method_missing use ruby 2.x keywords if the method exists.
+    # This is necessary because the syntax for passing arguments (`...`)
+    # is invalid on versions before Ruby 2.7, so it can't be used.
+    ruby2_keywords(:method_missing) if respond_to?(:ruby2_keywords, true)
     # rubocop:enable Style/MethodMissingSuper
 
     def respond_to_missing?(method_name, include_private = false)
