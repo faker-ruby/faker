@@ -8,6 +8,7 @@ rvm:
   - 2.4.5
   - 2.5.3
   - 2.6.1
+  - 2.7.0
   - ruby-head
 before_install:
   - yes | gem update --system=3.1.1 --force
