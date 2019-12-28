@@ -1,6 +1,10 @@
 AllCops:
   TargetRubyVersion: 2.3
 
+Layout/LineLength:
+  Description: This cop checks the length of lines in the source code. The maximum length is configurable.
+  Enabled: false
+
 Lint/AmbiguousBlockAssociation:
   Description: This cop checks for ambiguous block association with method when param passed without parentheses.
   Enabled: false
@@ -26,10 +30,6 @@ Metrics/CyclomaticComplexity:
     cases needed to validate a method.
   Enabled: false
   Max: 6
-
-Metrics/LineLength:
-  Description: This cop checks the length of lines in the source code. The maximum length is configurable.
-  Enabled: false
 
 Metrics/MethodLength:
   Description: This cop checks if the length of a method exceeds some maximum value.
