@@ -10,26 +10,26 @@ This version:
 
 ## Bug/Fixes
 
-Fix Ruby 2.7 deprecation warnings for the translate method. (#1876) @connorshea
-Fix tests failing on Ruby 2.7 (#1867) @connorshea
+- [PR #1876](https://github.com/faker-ruby/faker/pull/1876) Fix Ruby 2.7 deprecation warnings for the translate method. [@connorshea](https://github.com/connorshea)
+- [PR #1867](https://github.com/faker-ruby/faker/pull/1867) Fix tests failing on Ruby 2.7 [@connorshea](https://github.com/connorshea)
 
 ## Chores
 
-Upgrade the Gemfile.lock to Bundler 2. (#1866) @connorshea
+- [PR #1866](https://github.com/faker-ruby/faker/pull/1866) Upgrade the Gemfile.lock to Bundler 2. [@connorshea](https://github.com/connorshea)
 
 ## Documentation
 
-Add YARD docs for `Faker::Music{,::Opera}` (#1873) @jas14
-Update phone number documentation (#1862) @aVigorousDev
+- [PR #1873](https://github.com/faker-ruby/faker/pull/1873) Add YARD docs for `Faker::Music{,::Opera}` [@jas14](https://github.com/jas14)
+- [PR #1862](https://github.com/faker-ruby/faker/pull/1862) Update phone number documentation [@aVigorousDev](https://github.com/aVigorousDev)
 
 ## Feature Request
 
-Add Ruby 2.7 to the CI test matrix. (#1875) @connorshea
-Add `Faker::Address.mail_box` and some NZ locale updates (#1568) @mermop
+- [PR #1875](https://github.com/faker-ruby/faker/pull/1875) Add Ruby 2.7 to the CI test matrix. [@connorshea](https://github.com/connorshea)
+- [PR #1568](https://github.com/faker-ruby/faker/pull/1568) Add `Faker::Address.mail_box` and some NZ locale updates [@mermop](https://github.com/mermop)
 
 ## Refactoring
 
-Extract constants in `Faker::Music` (#1874) @jas14
+- [PR #1874](https://github.com/faker-ruby/faker/pull/1874) Extract constants in `Faker::Music` [@jas14](https://github.com/jas14)
 
 ## Update local dependencies
 
