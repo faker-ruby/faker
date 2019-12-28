@@ -1,5 +1,42 @@
 # Change Log
 
+## [v2.10.0](https://github.com/faker-ruby/faker/tree/v2.10.0) (2019-12-28)
+
+This version:
+- adds `Faker::Address.mail_box`
+- adds YARD docs
+- fix Ruby 2.7 warnings
+- adds other minor changes
+
+## Bug/Fixes
+
+Fix Ruby 2.7 deprecation warnings for the translate method. (#1876) @connorshea
+Fix tests failing on Ruby 2.7 (#1867) @connorshea
+
+## Chores
+
+Upgrade the Gemfile.lock to Bundler 2. (#1866) @connorshea
+
+## Documentation
+
+Add YARD docs for `Faker::Music{,::Opera}` (#1873) @jas14
+Update phone number documentation (#1862) @aVigorousDev
+
+## Feature Request
+
+Add Ruby 2.7 to the CI test matrix. (#1875) @connorshea
+Add `Faker::Address.mail_box` and some NZ locale updates (#1568) @mermop
+
+## Refactoring
+
+Extract constants in `Faker::Music` (#1874) @jas14
+
+## Update local dependencies
+
+Update rubocop requirement from = 0.77.0 to = 0.78.0 (#1869)
+
+------------------------------------------------------------------------------
+
 ## [v2.9.0](https://github.com/faker-ruby/faker/tree/v2.9.0) (2019-12-16)
 
 This version:
