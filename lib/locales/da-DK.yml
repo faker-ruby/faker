@@ -62,12 +62,12 @@ da-DK:
         - '30 ## ## ##'
         - '40 ## ## ##'
 
+    color:
+      name: [hvid, sølv, grå, sort, rød, grøn, blå, gul, lilla, guld, brun, rosa]
+
     commerce:
-      color: [hvid, sølv, grå, sort, rød, grøn, blå, gul, lilla, guld, brun, rosa]
       department: ["Bøger", "Film", "Musik", "Spil", "Elektronik", "Computere", "Hus", "Have", "Værktøj", "Fødevarer", "Helse", "Skønhed", "Legetøj", "Tøj", "Sko", "Smykker", "Sport"]
       product_name:
         adjective: [Lille, Ergonomisk, Robust, Intelligent, Sød, Utrolig, Fantastisk, Praktisk, Slank, Fed, Enorm, Enkel, Tung, Let, Multianvendelig, Udholdende]
         material: [Stål, Metal, Træ, Beton, Plastic, Bomuld, Granit, Gummi, Latex, Læder, Silke, Uld, Ruskind, Linned, Marmor, Jern, Bronze, Kobber, Messing, Aluminium, Papir]
         product: [Stol, Bil, Computer, Buks, Trøje, Bord, Hat, Tallerken, Kniv, Flaske, Jakke, Lampe, Tastatur, Taske, Bænk, Ur, Pung]
-      name:
-        - "#{Address.city} #{suffix}"
