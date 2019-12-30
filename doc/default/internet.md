@@ -43,19 +43,33 @@ Faker::Internet.domain_word #=> "haleyziemann"
 
 Faker::Internet.domain_suffix #=> "info"
 
+# IP V4 adress
 Faker::Internet.ip_v4_address #=> "24.29.18.175"
-
-# Private IP range according to RFC 1918 and 127.0.0.0/8 and 169.254.0.0/16.
+Faker::Internet.link_local_ip_v4_address #=> "169.254.0.1"
+Faker::Internet.loopback_ip_v4_address #=> "127.0.0.1"
 Faker::Internet.private_ip_v4_address #=> "10.0.0.1"
-
-# Guaranteed not to be in the ip range from the private_ip_v4_address method.
 Faker::Internet.public_ip_v4_address #=> "24.29.18.175"
 
+# IP V4 CIDR
 Faker::Internet.ip_v4_cidr #=> "24.29.18.175/21"
+Faker::Internet.link_local_ip_v4_cidr #=> "169.254.0.0/16" (immutable)
+Faker::Internet.loopback_ip_v4_cidr #=> "127.0.0.0/8" (immutable)
+Faker::Internet.private_ip_v4_uidr #=> "192.168.0.0/16"
+Faker::Internet.public_ip_v4_cidr #=> "192.172.0.0/14"
 
+# IP V6 adress
 Faker::Internet.ip_v6_address #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
+Faker::Internet.link_local_ip_v6_address #=> "fea9:9148:9719:27cf:075e:f437:c22f:4496"
+Faker::Internet.loopback_ip_v6_address #=> "0000:0000:0000:0000:0000:0000:0000:0001"
+Faker::Internet.private_ip_v6_address #=> "fc85:ca65:e1f4:a6ed:2751:b25e:09c6:c716"
+Faker::Internet.public_ip_v6_address #=> "0064:ff9b:0000:0000:0000:0000:95e3:bad2"
 
+# IP V6 CIDR
 Faker::Internet.ip_v6_cidr #=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df/78"
+Faker::Internet.link_local_ip_v6_cidr #=> "fe80::/10" (immutable)
+Faker::Internet.loopback_ip_v6_cidr #=> "fe80::/10" (immutable)
+Faker::Internet.private_ip_v6_cidr #=> "fc00::/7"
+Faker::Internet.public_ip_v6_cidr #=> "64:ff9b::/96"
 
 # Keyword arguments: prefix
 Faker::Internet.mac_address #=> "e6:0d:00:11:ed:4f"

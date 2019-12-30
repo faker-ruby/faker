@@ -227,8 +227,40 @@ module Faker
         send(method)
       end
 
+      def public_ip_v4_cidr
+        public_ipv4_subnets.sample
+      end
+
+      def loopback_ip_v4_cidr
+        link_local_ipv4_subnets[0]
+      end
+
+      def link_local_ip_v4_cidr
+        link_local_ipv4_subnets[0]
+      end
+
+      def private_ip_v4_cidr
+        private_ipv4_subnets.sample
+      end
+
       def ip_v4_cidr
         (loopback_ipv4_subnets + link_local_ipv4_subnets + public_ipv4_subnets + private_ipv4_subnets).sample
+      end
+
+      def public_ip_v6_cidr
+        public_ipv6_subnets.sample
+      end
+
+      def loopback_ip_v6_cidr
+        link_local_ipv6_subnets[0]
+      end
+
+      def link_local_ip_v6_cidr
+        link_local_ipv6_subnets[0]
+      end
+
+      def private_ip_v6_cidr
+        private_ipv6_subnets.sample
       end
 
       def ip_v6_cidr
