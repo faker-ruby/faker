@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'socket'
+
 module Faker
   class Internet < Base
     class << self
@@ -183,72 +185,54 @@ module Faker
         (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
       end
 
-      def ip_v4_address
-        [rand_in_range(0, 255), rand_in_range(0, 255),
-         rand_in_range(0, 255), rand_in_range(0, 255)].join('.')
+      def public_ip_v4_address
+        ip_from_subnets(public_ipv4_subnets, Socket::AF_INET)
+      end
+
+      def public_ip_v6_address
+        ip_from_subnets(public_ipv6_subnets, Socket::AF_INET6)
       end
 
       def private_ip_v4_address
-        addr = nil
-        loop do
-          addr = ip_v4_address
-          break if private_net_checker[addr]
-        end
-        addr
+        ip_from_subnets(private_ipv4_subnets, Socket::AF_INET)
       end
 
-      def public_ip_v4_address
-        addr = nil
-        loop do
-          addr = ip_v4_address
-          break unless reserved_net_checker[addr]
-        end
-        addr
+      def private_ip_v6_address
+        ip_from_subnets(private_ipv6_subnets, Socket::AF_INET6)
       end
 
-      def private_nets_regex
-        [
-          /^10\./,                                       # 10.0.0.0    - 10.255.255.255
-          /^100\.(6[4-9]|[7-9]\d|1[0-1]\d|12[0-7])\./,   # 100.64.0.0  - 100.127.255.255
-          /^127\./,                                      # 127.0.0.0   - 127.255.255.255
-          /^169\.254\./,                                 # 169.254.0.0 - 169.254.255.255
-          /^172\.(1[6-9]|2\d|3[0-1])\./,                 # 172.16.0.0  - 172.31.255.255
-          /^192\.0\.0\./,                                # 192.0.0.0   - 192.0.0.255
-          /^192\.168\./,                                 # 192.168.0.0 - 192.168.255.255
-          /^198\.(1[8-9])\./                             # 198.18.0.0  - 198.19.255.255
-        ]
+      def link_local_ip_v4_address
+        ip_from_subnets(link_local_ipv4_subnets, Socket::AF_INET)
       end
 
-      def private_net_checker
-        ->(addr) { private_nets_regex.any? { |net| net =~ addr } }
+      def link_local_ip_v6_address
+        ip_from_subnets(link_local_ipv6_subnets, Socket::AF_INET6)
       end
 
-      def reserved_nets_regex
-        [
-          /^0\./,                 # 0.0.0.0      - 0.255.255.255
-          /^192\.0\.2\./,         # 192.0.2.0    - 192.0.2.255
-          /^192\.88\.99\./,       # 192.88.99.0  - 192.88.99.255
-          /^198\.51\.100\./,      # 198.51.100.0 - 198.51.100.255
-          /^203\.0\.113\./,       # 203.0.113.0  - 203.0.113.255
-          /^(22[4-9]|23\d)\./,    # 224.0.0.0    - 239.255.255.255
-          /^(24\d|25[0-5])\./     # 240.0.0.0    - 255.255.255.254  and  255.255.255.255
-        ]
+      def loopback_ip_v4_address
+        ip_from_subnets(loopback_ipv4_subnets, Socket::AF_INET)
       end
 
-      def reserved_net_checker
-        ->(addr) { (private_nets_regex + reserved_nets_regex).any? { |net| net =~ addr } }
+      def loopback_ip_v6_address
+        ip_from_subnets(loopback_ipv6_subnets, Socket::AF_INET6)
       end
 
-      def ip_v4_cidr
-        "#{ip_v4_address}/#{rand(1..31)}"
+      def ip_v4_address
+        method = %i[loopback_ip_v4_address link_local_ip_v4_address private_ip_v4_address public_ip_v4_address].sample
+        send(method)
       end
 
       def ip_v6_address
-        (1..8).map { rand(65_536).to_s(16) }.join(':')
+        method = %i[loopback_ip_v6_address link_local_ip_v6_address private_ip_v6_address public_ip_v6_address].sample
+        send(method)
+      end
+
+      def ip_v4_cidr
+        "#{ip_v4_address}/#{rand(1..32)}"
       end
 
       def ip_v6_cidr
-        "#{ip_v6_address}/#{rand(1..127)}"
+        "#{ip_v6_address}/#{rand(1..128)}"
       end
 
       # rubocop:disable Metrics/ParameterLists
@@ -296,6 +280,86 @@ module Faker
       end
 
       alias user_name username
+
+      private
+
+      def ip_from_subnets(subnets_array, family)
+        ip_range = IPAddr.new(subnets_array.sample).to_range
+        IPAddr.new(rand(ip_range.first.to_i..ip_range.last.to_i), family).to_string
+      end
+
+      def loopback_ipv4_subnets
+        ['127.0.0.0/8']
+      end
+
+      def loopback_ipv6_subnets
+        ['::1/128']
+      end
+
+      def link_local_ipv6_subnets
+        ['fe80::/10']
+      end
+
+      def link_local_ipv4_subnets
+        ['169.254.0.0/16']
+      end
+
+      def public_ipv6_subnets
+        %w[
+          64:ff9b::/96
+          2001::/32
+          2002::/16
+        ]
+      end
+
+      def public_ipv4_subnets
+        %w[
+          0.0.0.0/5
+          8.0.0.0/7
+          11.0.0.0/8
+          12.0.0.0/6
+          16.0.0.0/4
+          32.0.0.0/3
+          64.0.0.0/2
+          128.0.0.0/3
+          160.0.0.0/5
+          168.0.0.0/6
+          172.0.0.0/12
+          172.32.0.0/11
+          172.64.0.0/10
+          172.128.0.0/9
+          173.0.0.0/8
+          174.0.0.0/7
+          176.0.0.0/4
+          192.0.0.0/9
+          192.128.0.0/11
+          192.160.0.0/13
+          192.169.0.0/16
+          192.170.0.0/15
+          192.172.0.0/14
+          192.176.0.0/12
+          192.192.0.0/10
+          193.0.0.0/8
+          194.0.0.0/7
+          196.0.0.0/6
+          200.0.0.0/5
+          208.0.0.0/4
+        ]
+      end
+
+      def private_ipv6_subnets
+        [
+          'fc00::/7'
+        ]
+      end
+
+      def private_ipv4_subnets
+        %w[
+          192.168.0.0/16
+          10.0.0.0/8
+          172.16.0.0/12
+        ]
+      end
     end
   end
 end
