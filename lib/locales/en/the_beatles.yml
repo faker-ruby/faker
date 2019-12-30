@@ -1,6 +1,234 @@
 en:
   faker:
     the_beatles:
-      members: ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"]
-      albums: ["Please Please Me", "With the Beatles", "A Hard Day's Night", "Beatles for Sale", "Help!", "Rubber Soul", "Revolver", "Sgt. Pepper's Lonely Hearts Club Band", "Magical Mystery Tour", "The Beatles", "Yellow Submarine", "Abbey Road", "Let It Be"]
-      songs: ["Across the Universe", "Act Naturally", "All I've Got to Do", "All My Loving", "All Together Now", "All You Need Is Love", "And I Love Her", "And Your Bird Can Sing", "Anna (Go to Him)", "Another Girl", "Any Time at All", "Ask Me Why", "Baby It's You", "Baby, You're a Rich Man", "Baby's in Black", "Back in the U.S.S.R.", "Bad Boy", "The Ballad of John and Yoko", "Because", "Being for the Benefit of Mr. Kite!", "Birthday", "Blackbird", "Blue Jay Way", "Boys", "Can't Buy Me Love", "Carry That Weight", "Chains", "Come Together", "The Continuing Story of Bungalow Bill", "Cry Baby Cry", "Day Tripper", "Dear Prudence", "Devil in Her Heart", "Dig a Pony", "Dig It", "Dizzy, Miss Lizzy", "Do You Want to Know a Secret", "Doctor Robert", "Don't Bother Me", "Don't Let Me Down", "Don't Pass Me By", "Drive My Car", "Eight Days a Week", "Eleanor Rigby", "The End", "Every Little Thing", "Everybody's Got Something to Hide Except Me and My Monkey", "Everybody's Trying to Be My Baby", "Fixing a Hole", "Flying", "For No One", "For You Blue", "From Me to You", "Get Back", "Getting Better", "Girl", "Glass Onion", "Golden Slumbers", "Good Day Sunshine", "Good Morning Good Morning", "Good Night", "Got to Get You into My Life", "Happiness Is a Warm Gun", "Hello, Goodbye", "Help!", "Helter Skelter", "Her Majesty", "Here Comes the Sun", "Here, There and Everywhere", "Hey Bulldog", "Hey Jude", "Hold Me Tight", "Honey Don't", "Honey Pie", "I Am the Walrus", "I Call Your Name", "I Don't Want to Spoil the Party", "I Feel Fine", "I Me Mine", "I Need You", "I Saw Her Standing There", "I Should Have Known Better", "I Wanna Be Your Man", "I Want to Hold Your Hand", "I Want to Tell You", "I Want You (She's So Heavy)", "I Will", "I'll Be Back", "I'll Cry Instead", "I'll Follow the Sun", "I'll Get You", "I'm a Loser", "I'm Down", "I'm Happy Just to Dance with You", "I'm Looking Through You", "I'm Only Sleeping", "I'm So Tired", "I've Got a Feeling", "I've Just Seen a Face", "If I Fell", "If I Needed Someone", "In My Life", "The Inner Light", "It Won't Be Long", "It's All Too Much", "It's Only Love", "Julia", "Kansas City/Hey-Hey-Hey-Hey!", "Lady Madonna", "Let It Be", "Little Child", "The Long and Winding Road", "Long Tall Sally", "Long, Long, Long", "Love Me Do", "Love You To", "Lovely Rita", "Lucy in the Sky with Diamonds", "Maggie Mae", "Magical Mystery Tour", "Martha My Dear", "Matchbox", "Maxwell's Silver Hammer", "Mean Mr. Mustard", "Michelle", "Misery", "Money (That's What I Want)", "Mother Nature's Son", "Mr. Moonlight", "No Reply", "Norwegian Wood (This Bird Has Flown)", "Not a Second Time", "Nowhere Man", "Ob-La-Di, Ob-La-Da", "Octopus's Garden", "Oh! Darling", "Old Brown Shoe", "One After 909", "Only a Northern Song", "P.S. I Love You", "Paperback Writer", "Penny Lane", "Piggies", "Please Mr. Postman", "Please Please Me", "Polythene Pam", "Rain", "Revolution 1", "Revolution 9", "Revolution", "Rock and Roll Music", "Rocky Raccoon", "Roll Over Beethoven", "Run for Your Life", "Savoy Truffle", "Sexy Sadie", "Sgt. Pepper's Lonely Hearts Club Band (Reprise)", "Sgt. Pepper's Lonely Hearts Club Band", "She Came In Through the Bathroom Window", "She Loves You", "She Said She Said", "She's a Woman", "She's Leaving Home", "Slow Down", "Something", "Strawberry Fields Forever", "Sun King", "A Taste of Honey", "Taxman", "Tell Me What You See", "Tell Me Why", "Thank You Girl", "There's a Place", "Things We Said Today", "Think for Yourself", "This Boy", "Ticket to Ride", "Till There Was You", "Tomorrow Never Knows", "Twist and Shout", "Two of Us", "Wait", "We Can Work It Out", "What Goes On", "What You're Doing", "When I Get Home", "When I'm Sixty-Four", "While My Guitar Gently Weeps", "Why Don't We Do It in the Road?", "Wild Honey Pie", "With a Little Help from My Friends", "Within You Without You", "Words of Love", "The Word", "Yellow Submarine", "Yer Blues", "Yes It Is", "Yesterday", "You Can't Do That", "You Know My Name (Look Up the Number)", "You Like Me Too Much", "You Never Give Me Your Money", "You Won't See Me", "You're Going to Lose That Girl", "You've Got to Hide Your Love Away", "You've Really Got a Hold on Me", "Your Mother Should Know", "A Day in the Life", "The Fool on the Hill", "A Hard Day's Night", "The Night Before"]
+      members:
+      - John Lennon
+      - Paul McCartney
+      - George Harrison
+      - Ringo Starr
+      albums:
+      - Please Please Me
+      - With the Beatles
+      - A Hard Day's Night
+      - Beatles for Sale
+      - Help!
+      - Rubber Soul
+      - Revolver
+      - Sgt. Pepper's Lonely Hearts Club Band
+      - Magical Mystery Tour
+      - The Beatles
+      - Yellow Submarin"
+      - Abbey Road
+      - Let It Be
+      songs:
+      - Across the Universe
+      - Act Naturally
+      - All I've Got to Do
+      - All My Loving
+      - All Together Now
+      - All You Need Is Love
+      - And I Love Her
+      - And Your Bird Can Sing
+      - Anna (Go to Him)
+      - Another Girl
+      - Any Time at All
+      - Ask Me Why
+      - Baby It's You
+      - Baby, You're a Rich Man
+      - Baby's in Black
+      - Back in the U.S.S.R.
+      - Bad Boy
+      - The Ballad of John and Yoko
+      - Because
+      - Being for the Benefit of Mr. Kite!
+      - Birthday
+      - Blackbird
+      - Blue Jay Way
+      - Boys
+      - Can't Buy Me Love
+      - Carry That Weight
+      - Chains
+      - Come Together
+      - The Continuing Story of Bungalow Bill
+      - Cry Baby Cry
+      - Day Tripper
+      - Dear Prudence
+      - Devil in Her Heart
+      - Dig a Pony
+      - Dig It
+      - Dizzy, Miss Lizzy
+      - Do You Want to Know a Secret
+      - Doctor Robert
+      - Don't Bother Me
+      - Don't Let Me Down
+      - Don't Pass Me By
+      - Drive My Car
+      - Eight Days a Week
+      - Eleanor Rigby
+      - The End
+      - Every Little Thing
+      - Everybody's Got Something to Hide Except Me and My Monkey
+      - Everybody's Trying to Be My Baby
+      - Fixing a Hole
+      - Flying
+      - For No One
+      - For You Blue
+      - From Me to You
+      - Get Back
+      - Getting Better
+      - Girl
+      - Glass Onion
+      - Golden Slumbers
+      - Good Day Sunshine
+      - Good Morning Good Morning
+      - Good Night
+      - Got to Get You into My Life
+      - Happiness Is a Warm Gun
+      - Hello, Goodbye
+      - Help!
+      - Helter Skelter
+      - Her Majesty
+      - Here Comes the Sun
+      - Here, There and Everywhere
+      - Hey Bulldog
+      - Hey Jude
+      - Hold Me Tight
+      - Honey Don't
+      - Honey Pie
+      - I Am the Walrus
+      - I Call Your Name
+      - I Don't Want to Spoil the Party
+      - I Feel Fine
+      - I Me Mine
+      - I Need You
+      - I Saw Her Standing There
+      - I Should Have Known Better
+      - I Wanna Be Your Man
+      - I Want to Hold Your Hand
+      - I Want to Tell You
+      - I Want You (She's So Heavy)
+      - I Will
+      - I'll Be Back
+      - I'll Cry Instead
+      - I'll Follow the Sun
+      - I'll Get You
+      - I'm a Loser
+      - I'm Down
+      - I'm Happy Just to Dance with You
+      - I'm Looking Through You
+      - I'm Only Sleeping
+      - I'm So Tired
+      - I've Got a Feeling
+      - I've Just Seen a Face
+      - If I Fell
+      - If I Needed Someone
+      - In My Life
+      - The Inner Light
+      - It Won't Be Long
+      - It's All Too Much
+      - It's Only Love
+      - Julia
+      - Kansas City/Hey-Hey-Hey-Hey!
+      - Lady Madonna
+      - Let It Be
+      - Little Child
+      - The Long and Winding Road
+      - Long Tall Sally
+      - Long, Long, Long
+      - Love Me Do
+      - Love You To
+      - Lovely Rita
+      - Lucy in the Sky with Diamonds
+      - Maggie Mae
+      - Magical Mystery Tour
+      - Martha My Dear
+      - Matchbox
+      - Maxwell's Silver Hammer
+      - Mean Mr. Mustard
+      - Michelle
+      - Misery
+      - Money (That's What I Want)
+      - Mother Nature's Son
+      - Mr. Moonlight
+      - No Reply
+      - Norwegian Wood (This Bird Has Flown)
+      - Not a Second Time
+      - Nowhere Man
+      - Ob-La-Di, Ob-La-Da
+      - Octopus's Garden
+      - Oh! Darling
+      - Old Brown Shoe
+      - One After 909
+      - Only a Northern Song
+      - P.S. I Love You
+      - Paperback Writer
+      - Penny Lane
+      - Piggies
+      - Please Mr. Postman
+      - Please Please Me
+      - Polythene Pam
+      - Rain
+      - Revolution 1
+      - Revolution 9
+      - Revolution
+      - Rock and Roll Music
+      - Rocky Raccoon
+      - Roll Over Beethoven
+      - Run for Your Life
+      - Savoy Truffle
+      - Sexy Sadie
+      - Sgt. Pepper's Lonely Hearts Club Band (Reprise)
+      - Sgt. Pepper's Lonely Hearts Club Band
+      - She Came In Through the Bathroom Window
+      - She Loves You
+      - She Said She Said
+      - She's a Woman
+      - She's Leaving Home
+      - Slow Down
+      - Something
+      - Strawberry Fields Forever
+      - Sun King
+      - A Taste of Honey
+      - Taxman
+      - Tell Me What You See
+      - Tell Me Why
+      - Thank You Girl
+      - There's a Place
+      - Things We Said Today
+      - Think for Yourself
+      - This Boy
+      - Ticket to Ride
+      - Till There Was You
+      - Tomorrow Never Knows
+      - Twist and Shout
+      - Two of Us
+      - Wait
+      - We Can Work It Out
+      - What Goes On
+      - What You're Doing
+      - When I Get Home
+      - When I'm Sixty-Four
+      - While My Guitar Gently Weeps
+      - Why Don't We Do It in the Road?
+      - Wild Honey Pie
+      - With a Little Help from My Friends
+      - Within You Without You
+      - Words of Love
+      - The Word
+      - Yellow Submarine
+      - Yer Blues
+      - Yes It Is
+      - Yesterday
+      - You Can't Do That
+      - You Know My Name (Look Up the Number)
+      - You Like Me Too Much
+      - You Never Give Me Your Money
+      - You Won't See Me
+      - You're Going to Lose That Girl
+      - You've Got to Hide Your Love Away
+      - You've Really Got a Hold on Me
+      - Your Mother Should Know
+      - A Day in the Life
+      - The Fool on the Hill
+      - A Hard Day's Night
+      - The Night Before
