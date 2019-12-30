@@ -228,11 +228,11 @@ module Faker
       end
 
       def ip_v4_cidr
-        "#{ip_v4_address}/#{rand(1..32)}"
+        (loopback_ipv4_subnets + link_local_ipv4_subnets + public_ipv4_subnets + private_ipv4_subnets).sample
       end
 
       def ip_v6_cidr
-        "#{ip_v6_address}/#{rand(1..128)}"
+        (loopback_ipv6_subnets + link_local_ipv6_subnets + public_ipv6_subnets + private_ipv6_subnets).sample
       end
 
       # rubocop:disable Metrics/ParameterLists
