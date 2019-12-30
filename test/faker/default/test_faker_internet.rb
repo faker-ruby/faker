@@ -184,50 +184,18 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_private_ip_v4_address
-    regexps = [
-      /^10\./,                                       # 10.0.0.0    - 10.255.255.255
-      /^100\.(6[4-9]|[7-9]\d|1[0-1]\d|12[0-7])\./,   # 100.64.0.0  - 100.127.255.255
-      /^127\./,                                      # 127.0.0.0   - 127.255.255.255
-      /^169\.254\./,                                 # 169.254.0.0 - 169.254.255.255
-      /^172\.(1[6-9]|2\d|3[0-1])\./,                 # 172.16.0.0  - 172.31.255.255
-      /^192\.0\.0\./,                                # 192.0.0.0   - 192.0.0.255
-      /^192\.168\./,                                 # 192.168.0.0 - 192.168.255.255
-      /^198\.(1[8-9])\./                             # 198.18.0.0  - 198.19.255.255
-    ]
-    expected = Regexp.new regexps.collect { |reg| "(#{reg})" }.join('|')
-
     1000.times do
       address = @tester.private_ip_v4_address
-      assert_match expected, address
+      assert IPAddr.new(address, Socket::AF_INET).private?
     end
   end
 
   def test_public_ip_v4_address
-    private = [
-      /^10\./,                                       # 10.0.0.0    - 10.255.255.255
-      /^100\.(6[4-9]|[7-9]\d|1[0-1]\d|12[0-7])\./,   # 100.64.0.0  - 100.127.255.255
-      /^127\./,                                      # 127.0.0.0   - 127.255.255.255
-      /^169\.254\./,                                 # 169.254.0.0 - 169.254.255.255
-      /^172\.(1[6-9]|2\d|3[0-1])\./,                 # 172.16.0.0  - 172.31.255.255
-      /^192\.0\.0\./,                                # 192.0.0.0   - 192.0.0.255
-      /^192\.168\./,                                 # 192.168.0.0 - 192.168.255.255
-      /^198\.(1[8-9])\./                             # 198.18.0.0  - 198.19.255.255
-    ]
-
-    reserved = [
-      /^0\./,                 # 0.0.0.0      - 0.255.255.255
-      /^192\.0\.2\./,         # 192.0.2.0    - 192.0.2.255
-      /^192\.88\.99\./,       # 192.88.99.0  - 192.88.99.255
-      /^198\.51\.100\./,      # 198.51.100.0 - 198.51.100.255
-      /^203\.0\.113\./,       # 203.0.113.0  - 203.0.113.255
-      /^(22[4-9]|23\d)\./,    # 224.0.0.0    - 239.255.255.255
-      /^(24\d|25[0-5])\./     # 240.0.0.0    - 255.255.255.254  and  255.255.255.255
-    ]
-
-    1000.times do
-      address = @tester.public_ip_v4_address
-      private.each { |reg| assert_not_match reg, address }
-      reserved.each { |reg| assert_not_match reg, address }
+    100.times do
+      assert_nothing_raised IPAddr::Error, IPAddr::AddressFamilyError, IPAddr::InvalidAddressError, StandardError do
+        address = IPAddr.new(@tester.ip_v4_address, Socket::AF_INET)
+        raise StandardError, "Invalid IP V4 #{address}" unless address.ipv4?
+      end
     end
   end
 
@@ -252,10 +220,11 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_ip_v6_address
-    assert_equal 7, @tester.ip_v6_address.count(':')
-
     100.times do
-      assert @tester.ip_v6_address.split('.').map { |h| "0x#{h}".hex }.max <= 65_535
+      assert_nothing_raised IPAddr::Error, IPAddr::AddressFamilyError, IPAddr::InvalidAddressError, StandardError do
+        address = IPAddr.new(@tester.ip_v6_address, ::Socket::AF_INET6)
+        raise StandardError, "Invalid IP V6 #{address}" unless address.ipv6?
+      end
     end
   end
 
