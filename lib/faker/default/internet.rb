@@ -228,43 +228,43 @@ module Faker
       end
 
       def public_ip_v4_cidr
-        public_ipv4_subnets.sample
+        random_netmask(public_ipv4_subnets.sample, 32)
       end
 
       def loopback_ip_v4_cidr
-        link_local_ipv4_subnets[0]
+        random_netmask(loopback_ipv4_subnets[0], 32)
       end
 
       def link_local_ip_v4_cidr
-        link_local_ipv4_subnets[0]
+        random_netmask(link_local_ipv4_subnets[0], 32)
       end
 
       def private_ip_v4_cidr
-        private_ipv4_subnets.sample
+        random_netmask(private_ipv4_subnets.sample, 32)
       end
 
       def ip_v4_cidr
-        (loopback_ipv4_subnets + link_local_ipv4_subnets + public_ipv4_subnets + private_ipv4_subnets).sample
+        random_netmask((loopback_ipv4_subnets + link_local_ipv4_subnets + public_ipv4_subnets + private_ipv4_subnets).sample, 32)
       end
 
       def public_ip_v6_cidr
-        public_ipv6_subnets.sample
+        random_netmask(public_ipv6_subnets.sample, 128)
       end
 
       def loopback_ip_v6_cidr
-        link_local_ipv6_subnets[0]
+        random_netmask(loopback_ipv6_subnets[0], 128)
       end
 
       def link_local_ip_v6_cidr
-        link_local_ipv6_subnets[0]
+        random_netmask(link_local_ipv6_subnets[0], 128)
       end
 
       def private_ip_v6_cidr
-        private_ipv6_subnets.sample
+        random_netmask(private_ipv6_subnets.sample, 128)
       end
 
       def ip_v6_cidr
-        (loopback_ipv6_subnets + link_local_ipv6_subnets + public_ipv6_subnets + private_ipv6_subnets).sample
+        random_netmask((loopback_ipv6_subnets + link_local_ipv6_subnets + public_ipv6_subnets + private_ipv6_subnets).sample, 128)
       end
 
       # rubocop:disable Metrics/ParameterLists
@@ -314,6 +314,11 @@ module Faker
       alias user_name username
 
       private
+
+      def random_netmask(cidr, max_value)
+        address, mask = cidr.split('/')
+        "#{address}/#{rand(mask.to_i..max_value)}"
+      end
 
       def ip_from_subnets(subnets_array, family)
         ip_range = IPAddr.new(subnets_array.sample).to_range

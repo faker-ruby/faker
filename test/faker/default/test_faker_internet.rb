@@ -175,26 +175,55 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_ip_v4_address
-    assert_equal 3, @tester.ip_v4_address.count('.')
-
     100.times do
-      assert @tester.ip_v4_address.split('.').map(&:to_i).min >= 0
-      assert @tester.ip_v4_address.split('.').map(&:to_i).max <= 255
+      assert_nothing_raised IPAddr::Error, IPAddr::AddressFamilyError, IPAddr::InvalidAddressError, StandardError do
+        address = IPAddr.new(@tester.ip_v4_address, Socket::AF_INET)
+        raise StandardError, "Invalid IP V4 #{address}" unless address.ipv4?
+      end
     end
   end
 
   def test_private_ip_v4_address
     1000.times do
       address = @tester.private_ip_v4_address
-      assert IPAddr.new(address, Socket::AF_INET).private?
+      if RUBY_VERSION >= '2.5.0'
+        assert IPAddr.new(address, Socket::AF_INET).private?
+      else
+        assert Faker::Internet.send(:private_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+      end
     end
   end
 
   def test_public_ip_v4_address
-    100.times do
-      assert_nothing_raised IPAddr::Error, IPAddr::AddressFamilyError, IPAddr::InvalidAddressError, StandardError do
-        address = IPAddr.new(@tester.ip_v4_address, Socket::AF_INET)
-        raise StandardError, "Invalid IP V4 #{address}" unless address.ipv4?
+    1000.times do
+      address = @tester.public_ip_v4_address
+      if RUBY_VERSION >= '2.5.0'
+        ip_address = IPAddr.new(address, Socket::AF_INET) # may throw in case of invalid address, but the  case is handled above
+        assert !(ip_address.private? || ip_address.loopback? || ip_address.link_local?)
+      else
+        assert Faker::Internet.send(:public_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+      end
+    end
+  end
+
+  def test_link_local_ip_v4_address
+    1000.times do
+      address = @tester.link_local_ip_v4_address
+      if RUBY_VERSION >= '2.5.0'
+        assert IPAddr.new(address, Socket::AF_INET).link_local?
+      else
+        assert Faker::Internet.send(:link_local_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+      end
+    end
+  end
+
+  def test_loopback_ip_v4_address
+    1000.times do
+      address = @tester.loopback_ip_v4_address
+      if RUBY_VERSION >= '2.5.0'
+        assert IPAddr.new(address, Socket::AF_INET).loopback?
+      else
+        assert Faker::Internet.send(:loopback_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
       end
     end
   end
@@ -205,6 +234,26 @@ class TestFakerInternet < Test::Unit::TestCase
     1000.times do
       assert((1..32).cover?(@tester.ip_v4_cidr.split('/').last.to_i))
     end
+  end
+
+  def test_public_ip_v4_cidr
+    address = @tester.public_ip_v4_cidr
+    assert Faker::Internet.send(:public_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+  end
+
+  def test_private_ip_v4_cidr
+    address = @tester.private_ip_v4_cidr
+    assert Faker::Internet.send(:private_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+  end
+
+  def test_loopback_ip_v4_cidr
+    address = @tester.loopback_ip_v4_cidr
+    assert Faker::Internet.send(:loopback_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+  end
+
+  def test_link_local_ip_v4_cidr
+    address = @tester.link_local_ip_v4_cidr
+    assert Faker::Internet.send(:link_local_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
   end
 
   def test_mac_address
@@ -228,12 +277,77 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_link_local_ip_v6_address
+    1000.times do
+      address = @tester.link_local_ip_v6_address
+      if RUBY_VERSION >= '2.5.0'
+        assert IPAddr.new(address, Socket::AF_INET6).link_local?
+      else
+        assert Faker::Internet.send(:link_local_ipv6_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+      end
+    end
+  end
+
+  def test_loopback_ip_v6_address
+    1000.times do
+      address = @tester.loopback_ip_v6_address
+      if RUBY_VERSION >= '2.5.0'
+        assert IPAddr.new(address, Socket::AF_INET6).loopback?
+      else
+        assert Faker::Internet.send(:loopback_ipv6_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+      end
+    end
+  end
+
+  def test_private_ip_v6_address
+    1000.times do
+      address = @tester.private_ip_v6_address
+      if RUBY_VERSION >= '2.5.0'
+        assert IPAddr.new(address, Socket::AF_INET6).private?
+      else
+        assert Faker::Internet.send(:private_ipv6_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+      end
+    end
+  end
+
+  def test_public_ip_v6_address
+    1000.times do
+      address = @tester.public_ip_v6_address
+      if RUBY_VERSION >= '2.5.0'
+        ip_address = IPAddr.new(address, Socket::AF_INET6) # may throw in case of invalid address, but the  case is handled above
+        assert !(ip_address.private? || ip_address.loopback? || ip_address.link_local?)
+      else
+        assert Faker::Internet.send(:public_ipv6_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+      end
+    end
+  end
+
   def test_ip_v6_cidr
     assert @tester.ip_v6_cidr.match(%r{\/\d{1,3}$})
 
     1000.times do
       assert((1..128).cover?(@tester.ip_v6_cidr.split('/').last.to_i))
     end
+  end
+
+  def test_public_ip_v6_cidr
+    address = @tester.public_ip_v6_cidr
+    assert Faker::Internet.send(:public_ipv6_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+  end
+
+  def test_private_ip_v6_cidr
+    address = @tester.private_ip_v6_cidr
+    assert Faker::Internet.send(:private_ipv6_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+  end
+
+  def test_loopback_ip_v6_cidr
+    address = @tester.loopback_ip_v6_cidr
+    assert Faker::Internet.send(:loopback_ipv6_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
+  end
+
+  def test_link_local_ip_v6_cidr
+    address = @tester.link_local_ip_v6_cidr
+    assert Faker::Internet.send(:link_local_ipv6_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
   end
 
   def test_slug
