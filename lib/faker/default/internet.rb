@@ -321,7 +321,9 @@ module Faker
       end
 
       def ip_from_subnets(subnets_array, family)
-        ip_range = IPAddr.new(subnets_array.sample).to_range
+        subnet = subnets_array.sample
+        puts subnet
+        ip_range = IPAddr.new(subnet).to_range
         IPAddr.new(rand(ip_range.first.to_i..ip_range.last.to_i), family).to_string
       end
 
@@ -350,6 +352,15 @@ module Faker
       end
 
       def public_ipv4_subnets
+        # 64.0.0.0/2 is public but reserved (and huge)
+        # it include 127.0.0.0/8
+        # so it is converted below into:
+        # 64.0.0.0/3
+        # 96.0.0.0/4
+        # 112.0.0.0/5
+        # 120.0.0.0/6
+        # 124.0.0.0/7
+        # 126.0.0.0/8
         %w[
           0.0.0.0/5
           8.0.0.0/7
@@ -357,7 +368,12 @@ module Faker
           12.0.0.0/6
           16.0.0.0/4
           32.0.0.0/3
-          64.0.0.0/2
+          64.0.0.0/3
+          96.0.0.0/4
+          112.0.0.0/5
+          120.0.0.0/6
+          124.0.0.0/7
+          126.0.0.0/8
           128.0.0.0/3
           160.0.0.0/5
           168.0.0.0/6

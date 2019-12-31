@@ -199,6 +199,9 @@ class TestFakerInternet < Test::Unit::TestCase
       address = @tester.public_ip_v4_address
       if RUBY_VERSION >= '2.5.0'
         ip_address = IPAddr.new(address, Socket::AF_INET) # may throw in case of invalid address, but the  case is handled above
+        puts "#{ip_address} link_local ? #{ip_address.link_local?}"
+        puts "#{ip_address} private ? #{ip_address.private?}"
+        puts "#{ip_address} loopback? #{ip_address.loopback?}"
         assert !(ip_address.private? || ip_address.loopback? || ip_address.link_local?)
       else
         assert Faker::Internet.send(:public_ipv4_subnets).detect(false) { |i| IPAddr.new(i).include?(address) }
