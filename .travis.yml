@@ -4,8 +4,7 @@ env:
 language: ruby
 cache: bundler
 rvm:
-  - 2.3.8
-  - 2.4.5
+  - 2.4.9
   - 2.5.3
   - 2.6.1
   - 2.7.0
@@ -21,5 +20,5 @@ script: bundle exec rake
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 matrix:
- allow_failures:
-   - rvm: ruby-head
+  allow_failures:
+    - rvm: ruby-head
