@@ -295,6 +295,18 @@ module Faker
         '%08x-%04x-%04x-%04x-%04x%08x' % ary # rubocop:disable Style/FormatString
       end
 
+      def base64(length: 16, padding: false, urlsafe: true)
+        char_range = [
+          Array('0'..'9'),
+          Array('A'..'Z'),
+          Array('a'..'z'),
+          urlsafe ? %w[- _] : %w[+ /]
+        ].flatten
+        s = Array.new(length) { sample(char_range) }.join
+        s += '=' if padding
+        s
+      end
+
       alias user_name username
     end
   end
