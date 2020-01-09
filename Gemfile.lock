@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     faker (2.10.0)
-      i18n (>= 1.6, < 1.9)
+      i18n (>= 1.6, < 2)
 
 GEM
   remote: https://rubygems.org/
