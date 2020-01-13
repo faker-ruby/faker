@@ -1,5 +1,37 @@
 # Change Log
 
+## [v2.10.1](https://github.com/faker-ruby/faker/tree/v2.10.1) (2020-01-13)
+
+This version:
+- fixes locales
+- updates local dependencies
+- fixes warnings
+
+## Bug/Fixes
+
+- [PR #1868](https://github.com/faker-ruby/faker/pull/1868) Fix a deprecation warning in unique_generator.rb related to the kwarg [@connorshea](https://github.com/connorshea)
+
+## Update Locales
+
+- [PR #1800](https://github.com/faker-ruby/faker/pull/1800) Update diners_club and jcb test cards since they were updated in String [@santib](https://github.com/santib)
+- [PR #1879](https://github.com/faker-ruby/faker/pull/1879) Field changes in da-DK locale [@psibi](https://github.com/psibi)
+- [PR #1878](https://github.com/faker-ruby/faker/pull/1878) Fix name related files in ca locale [@psibi](https://github.com/psibi)
+- [PR #1877](https://github.com/faker-ruby/faker/pull/1877) Fix the path names for bg.yml [@psibi](https://github.com/psibi)
+
+## Update local dependencies
+
+Allow all versions of i18n from 1.6 up to 2 (#1894) [@orien](https://github.com/orien)
+Update minitest requirement from = 5.13.0 to = 5.14.0 (#1904)
+Bump i18n from 1.8.1 to 1.8.2 (#1905)
+Bump i18n from 1.8.0 to 1.8.1 (#1895)
+Update i18n requirement from >= 1.6, < 1.8 to >= 1.6, < 1.9 (#1893)
+Update yard requirement from = 0.9.23 to = 0.9.24 (#1892)
+Update rubocop requirement from = 0.78.0 to = 0.79.0 (#1890)
+Update yard requirement from = 0.9.22 to = 0.9.23 (#1889)
+Update yard requirement from = 0.9.20 to = 0.9.22 (#1882)
+
+------------------------------------------------------------------------------
+
 ## [v2.10.0](https://github.com/faker-ruby/faker/tree/v2.10.0) (2019-12-28)
 
 This version:
