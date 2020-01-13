@@ -20,15 +20,15 @@ This version:
 
 ## Update local dependencies
 
-Allow all versions of i18n from 1.6 up to 2 (#1894) [@orien](https://github.com/orien)
-Update minitest requirement from = 5.13.0 to = 5.14.0 (#1904)
-Bump i18n from 1.8.1 to 1.8.2 (#1905)
-Bump i18n from 1.8.0 to 1.8.1 (#1895)
-Update i18n requirement from >= 1.6, < 1.8 to >= 1.6, < 1.9 (#1893)
-Update yard requirement from = 0.9.23 to = 0.9.24 (#1892)
-Update rubocop requirement from = 0.78.0 to = 0.79.0 (#1890)
-Update yard requirement from = 0.9.22 to = 0.9.23 (#1889)
-Update yard requirement from = 0.9.20 to = 0.9.22 (#1882)
+- Allow all versions of i18n from 1.6 up to 2 (#1894) [@orien](https://github.com/orien)
+- Update minitest requirement from = 5.13.0 to = 5.14.0 (#1904)
+- Bump i18n from 1.8.1 to 1.8.2 (#1905)
+- Bump i18n from 1.8.0 to 1.8.1 (#1895)
+- Update i18n requirement from >= 1.6, < 1.8 to >= 1.6, < 1.9 (#1893)
+- Update yard requirement from = 0.9.23 to = 0.9.24 (#1892)
+- Update rubocop requirement from = 0.78.0 to = 0.79.0 (#1890)
+- Update yard requirement from = 0.9.22 to = 0.9.23 (#1889)
+- Update yard requirement from = 0.9.20 to = 0.9.22 (#1882)
 
 ------------------------------------------------------------------------------
 
