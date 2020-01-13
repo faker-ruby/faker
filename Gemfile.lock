@@ -16,7 +16,7 @@ GEM
     jaro_winkler (1.5.4)
     json (2.3.0)
     method_source (0.9.2)
-    minitest (5.13.0)
+    minitest (5.14.0)
     parallel (1.19.1)
     parser (2.7.0.1)
       ast (~> 2.4.0)
@@ -50,7 +50,7 @@ PLATFORMS
 
 DEPENDENCIES
   faker!
-  minitest (= 5.13.0)
+  minitest (= 5.14.0)
   pry (= 0.12.2)
   rake (= 13.0.1)
   rubocop (= 0.79.0)
