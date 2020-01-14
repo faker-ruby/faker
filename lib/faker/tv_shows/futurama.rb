@@ -45,6 +45,20 @@ module Faker
         def quote
           fetch('futurama.quotes')
         end
+
+        ##
+        # Produces a catchphrase from Hermes Conrad.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::TvShows::Futurama.hermes_catchphrase
+        #     #=> "Great foo of bar!"
+        #
+        # @faker.version next
+        def hermes_catchphrase
+          fetch('futurama.hermes_catchphrases')
+        end
       end
     end
   end

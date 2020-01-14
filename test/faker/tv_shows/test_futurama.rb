@@ -18,4 +18,8 @@ class TestFakerTvShowsFuturama < Test::Unit::TestCase
   def test_quote
     10.times { assert @tester.quote.match(/[\w]+/) }
   end
+
+  def test_hermes_catchphrases
+    10.times { assert @tester.hermes_catchphrase.match(/[\w]+/) }
+  end
 end
