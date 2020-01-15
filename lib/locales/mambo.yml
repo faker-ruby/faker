@@ -1,0 +1,13 @@
+en: 
+  faker:
+    mambo:
+      name: 
+        - "Angela"
+        - "Pamela"
+        - "Sandra"
+        - "Rita"
+        - "Monica"
+        - "Erica"
+        - "Tina"
+        - "Mary"
+        - "Jessica"
