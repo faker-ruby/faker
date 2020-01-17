@@ -55,12 +55,12 @@ module Faker
     end
 
     ##
-    # Produces a comic title from DC comics
+    # Produces a comic book title from DC comics
     #
     # @return [String]
     #
     # @example
-    #   Faker::DcComics.title #=> "Teen Titans: The Judas Contract
+    #   Faker::DcComics.title #=> "Batman: The Long Halloween"
     #
     # @faker.version 1.9.2
     def self.title
