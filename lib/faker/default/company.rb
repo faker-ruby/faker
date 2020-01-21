@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Company.name #=> "Roberts Inc"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.0
       def name
         parse('company.name')
       end
@@ -26,7 +26,7 @@ module Faker
       # @example
       #   Faker::Company.suffix #=> "LLC"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.0
       def suffix
         fetch('company.suffix')
       end
@@ -39,7 +39,7 @@ module Faker
       # @example
       #   Faker::Company.industry #=> "Food & Beverages"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.0
       def industry
         fetch('company.industry')
       end
@@ -52,7 +52,7 @@ module Faker
       # @example
       #   Faker::Company.catch_phrase #=> "Grass-roots grid-enabled portal"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.0
       def catch_phrase
         translate('faker.company.buzzwords').collect { |list| sample(list) }.join(' ')
       end
@@ -65,7 +65,7 @@ module Faker
       # @example
       #   Faker::Company.buzzword #=> "flexibility"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.8.7
       def buzzword
         sample(translate('faker.company.buzzwords').flatten)
       end
@@ -78,7 +78,7 @@ module Faker
       # @example
       #   Faker::Company.bs #=> "empower customized functionalities"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.0
       # When a straight answer won't do, BS to the rescue!
       def bs
         translate('faker.company.bs').collect { |list| sample(list) }.join(' ')
@@ -92,7 +92,7 @@ module Faker
       # @example
       #   Faker::Company.ein #=> "07-4009024"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.0
       def ein
         format('%09d', rand(10**9)).gsub(/(\d{2})(\d{7})/, '\\1-\\2')
       end
@@ -105,7 +105,7 @@ module Faker
       # @example
       #   Faker::Company.duns_number #=> "70-655-5105"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.0
       def duns_number
         format('%09d', rand(10**9)).gsub(/(\d{2})(\d{3})(\d{4})/, '\\1-\\2-\\3')
       end
@@ -118,7 +118,7 @@ module Faker
       # @example
       #   Faker::Company.logo #=> "https://pigment.github.io/fake-logos/logos/medium/color/12.png"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.8.7
       # Get a random company logo url in PNG format.
       def logo
         rand_num = rand(1..13)
@@ -133,7 +133,7 @@ module Faker
       # @example
       #   Faker::Company.type #=> "Partnership"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.8.7
       def type
         fetch('company.type')
       end
@@ -146,7 +146,7 @@ module Faker
       # @example
       #   Faker::Company.profession #=> "factory worker"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.0
       def profession
         fetch('company.profession')
       end
@@ -159,7 +159,7 @@ module Faker
       # @example
       #   Faker::Company.spanish_organisation_number #=> "D6819358"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.8.5
       # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
       def spanish_organisation_number
         # Valid leading character: A, B, C, D, E, F, G, H, J, N, P, Q, R, S, U, V, W
@@ -177,7 +177,7 @@ module Faker
       # @example
       #   Faker::Company.swedish_organisation_number #=> "3866029808"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.7.0
       # Get a random Swedish organization number. See more here https://sv.wikipedia.org/wiki/Organisationsnummer
       def swedish_organisation_number
         # Valid leading digit: 1, 2, 3, 5, 6, 7, 8, 9
@@ -195,7 +195,7 @@ module Faker
       # @example
       #   Faker::Company.czech_organisation_number #=> "90642741"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.9.1
       def czech_organisation_number
         sum = 0
         base = []
@@ -215,7 +215,7 @@ module Faker
       # @example
       #   Faker::Company.french_siren_number #=> "163417827"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.8.5
       # Get a random French SIREN number. See more here https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
       def french_siren_number
         base = (1..8).map { rand(10) }.join
@@ -230,7 +230,7 @@ module Faker
       # @example
       #   Faker::Company.french_siret_number #=> "76430067900496"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.8.5
       def french_siret_number
         location = rand(100).to_s.rjust(4, '0')
         org_no = french_siren_number + location
@@ -245,7 +245,7 @@ module Faker
       # @example
       #   Faker::Company.norwegian_organisation_number #=> "842457173"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.8.0
       # Get a random Norwegian organization number. Info: https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/
       def norwegian_organisation_number
         # Valid leading digit: 8, 9
@@ -265,7 +265,7 @@ module Faker
       # @example
       #   Faker::Company.australian_business_number #=> "93579396170"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.6.4
       def australian_business_number
         base = format('%09d', rand(10**9))
         abn = "00#{base}"
@@ -281,7 +281,7 @@ module Faker
       # @example
       #   Faker::Company.polish_taxpayer_identification_number #=> "2767549463"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.9.1
       # Get a random Polish taxpayer identification number More info https://pl.wikipedia.org/wiki/NIP
       def polish_taxpayer_identification_number
         result = []
@@ -301,7 +301,7 @@ module Faker
       # @example
       #   Faker::Company.polish_register_of_national_economy #=> "788435970"
       #
-      # @faker.version 1.9.2
+      # @faker.version 1.9.1
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
       def polish_register_of_national_economy(legacy_length = NOT_GIVEN, length: 9)
         warn_for_deprecated_arguments do |keywords|
