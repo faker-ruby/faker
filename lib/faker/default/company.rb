@@ -79,7 +79,7 @@ module Faker
       #   Faker::Company.bs #=> "empower customized functionalities"
       #
       # @faker.version 1.9.2
-      # When a straight answer won't do, BS to the rescue!   
+      # When a straight answer won't do, BS to the rescue!
       def bs
         translate('faker.company.bs').collect { |list| sample(list) }.join(' ')
       end
@@ -151,9 +151,6 @@ module Faker
         fetch('company.profession')
       end
 
-      # rubocop:disable Style/AsciiComments
-      # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/Número_de_identificación_fiscal
-      # rubocop:enable Style/AsciiComments
       ##
       # Produces a company spanish_organisation_number.
       #
@@ -163,6 +160,7 @@ module Faker
       #   Faker::Company.spanish_organisation_number #=> "D6819358"
       #
       # @faker.version 1.9.2
+      # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
       def spanish_organisation_number
         # Valid leading character: A, B, C, D, E, F, G, H, J, N, P, Q, R, S, U, V, W
         # 7 digit numbers
@@ -406,7 +404,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Company.sic_code #=> "7383" 
+      #   Faker::Company.sic_code #=> "7383"
       #
       # @faker.version 2.0.0
       def sic_code
