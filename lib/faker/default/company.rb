@@ -406,7 +406,7 @@ module Faker
       # @example
       #   Faker::Company.sic_code #=> "7383"
       #
-      # @faker.version 2.0.0
+      # @faker.version 1.9.4
       def sic_code
         fetch('company.sic_code')
       end
