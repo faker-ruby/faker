@@ -1,0 +1,7 @@
+en:
+  faker:
+    games:
+      warhammer_fantasy:
+        hero: ["Karl Franz", "Grimgor Ironhide", "Gotrek Gurnisson", "Felix Jaeger"]
+
+        quotes: [""]
