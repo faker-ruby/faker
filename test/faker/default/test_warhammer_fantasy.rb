@@ -22,4 +22,8 @@ class TestWarhammerFantasy < Test::Unit::TestCase
   def test_factions
     assert @tester.faction.match(/\w+/)
   end
+
+  def test_creatures
+    assert @tester.faction.match(/\w+/)
+  end
 end

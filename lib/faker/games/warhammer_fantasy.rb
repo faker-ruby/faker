@@ -15,9 +15,13 @@ module Faker
         def faction
           fetch('games.warhammer_fantasy.factions')
         end
-        # creature
+
         def location
           fetch('games.warhammer_fantasy.locations')
+        end
+
+        def creature
+          fetch('games.warhammer_fantasy.creatures')
         end
       end
     end
