@@ -11,7 +11,10 @@ module Faker
         def quote
           fetch('games.warhammer_fantasy.quotes')
         end
-        # race
+
+        def faction
+          fetch('games.warhammer_fantasy.factions')
+        end
         # creature
         def location
           fetch('games.warhammer_fantasy.locations')

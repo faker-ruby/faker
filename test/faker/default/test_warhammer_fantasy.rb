@@ -16,6 +16,10 @@ class TestWarhammerFantasy < Test::Unit::TestCase
   end
 
   def test_locations
-    assert @test.location.match(/\w+/)
+    assert @tester.location.match(/\w+/)
+  end
+
+  def test_factions
+    assert @tester.faction.match(/\w+/)
   end
 end
