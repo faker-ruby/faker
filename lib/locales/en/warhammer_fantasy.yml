@@ -2,6 +2,8 @@ en:
   faker:
     games:
       warhammer_fantasy:
-        hero: ["Karl Franz", "Grimgor Ironhide", "Gotrek Gurnisson", "Felix Jaeger"]
+        hero: ["Karl Franz", "Grimgor Ironhide", "Gotrek Gurnisson", "Felix Jaeger", "Morglum Necksnapper"]
 
-        quotes: [""]
+        quotes: ["If the battlements are carried, throw all your strength there. Such an advantage is allways darely won.", "Walls can't dodge!", "The softest part of a castle is the belly of the man inside.", "The gods have seen fit to populate the Old World with all manner of foul monsters. They've also seen fit to grant me with a keen eye and a strong bow to hunt them with.", "Grimgor iz da best!", "The only good stunty is a dead stunty, and the only thing better than a dead stunty is a dyin' stunty who tells yer where to find 'is mates."]
+
+        locations: ["Averland", "Hochland", "Middenland", "Nordland", "Ostermark", "Ostland", "Reikland", "Stirland"]
