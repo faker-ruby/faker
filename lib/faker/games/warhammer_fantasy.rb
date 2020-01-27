@@ -16,6 +16,7 @@ module Faker
         def hero
           fetch('games.warhammer_fantasy.heros')
         end
+
         ##
         # Produces a quote from the Warhammer Fantasy setting.
         #
@@ -28,37 +29,40 @@ module Faker
         def quote
           fetch('games.warhammer_fantasy.quotes')
         end
+
         ##
         # Produces a location from the Warhammer Fantasy setting.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Games::WarhammerFantasy.location #=> "Lustria" 
+        #   Faker::Games::WarhammerFantasy.location #=> "Lustria"
         #
         # @faker.version 2.10.0
         def location
           fetch('games.warhammer_fantasy.locations')
         end
+
         ##
         # Produces a faction from the Warhammer Fantasy setting.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Games::WarhammerFantasy.faction #=> "Bretonnia" 
+        #   Faker::Games::WarhammerFantasy.faction #=> "Bretonnia"
         #
         # @faker.version 2.10.0
         def faction
           fetch('games.warhammer_fantasy.factions')
         end
+
         ##
         # Produces a creature from the Warhammer Fantasy setting.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Games::WarhammerFantasy.creature #=> "Hydra" 
+        #   Faker::Games::WarhammerFantasy.creature #=> "Hydra"
         #
         # @faker.version 2.10.0
         def creature
