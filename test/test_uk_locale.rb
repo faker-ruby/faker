@@ -18,9 +18,9 @@ class TestUkLocale < Test::Unit::TestCase
   end
 
   def test_uk_address_absent
-    assert_equal('', Faker::Address.city_prefix)
-    assert_equal('', Faker::Address.city_suffix)
-    assert_equal('', Faker::Address.state_abbr)
+    assert_equal(nil, Faker::Address.city_prefix)
+    assert_equal(nil, Faker::Address.city_suffix)
+    assert_equal(nil, Faker::Address.state_abbr)
   end
 
   def test_uk_romanize_cyrillic
