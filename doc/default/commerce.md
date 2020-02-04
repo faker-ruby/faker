@@ -8,7 +8,7 @@ Faker::Commerce.department #=> "Grocery, Health & Beauty"
 Faker::Commerce.department(max: 5) #=> "Grocery, Books, Health & Beauty"
 Faker::Commerce.department(max: 2, fixed_amount: true) #=> "Books & Tools"
 
-Faker::Commerce.material #=> "Steel"
+Faker::Commerce.material #=> "Plastic"
 
 Faker::Commerce.product_name #=> "Practical Granite Shirt"
 
@@ -21,6 +21,4 @@ Faker::Commerce.price(range: 0..10.0, as_string: true) #=> "2.18"
 # Keyword arguments: digits
 Faker::Commerce.promotion_code #=> "AmazingDeal829102"
 Faker::Commerce.promotion_code(digits: 2) #=> "AmazingPrice57"
-
-Faker::Commerce.material #=> "Plastic"
 ```

@@ -13,9 +13,9 @@ en:
         amex_2:        "371449635398431"
         discover:      "6011111111111117"
         discover_2:    "6011000990139424"
-        diners_club:   "30569309025904"
-        diners_club_2: "38520000023237"
-        jcb:           "3530111333300000"
+        diners_club:   "3056930009020004"
+        diners_club_2: "36227206271667"
+        jcb:           "3566002020360505"
       valid_tokens:
         visa:          "tok_visa"
         visa_debit:    "tok_visa_debit"

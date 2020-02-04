@@ -27,14 +27,14 @@ Gem::Specification.new do |spec|
   spec.metadata['documentation_uri'] = 'https://rubydoc.info/github/faker-ruby/faker/master'
   spec.metadata['yard.run'] = 'yri'
 
-  spec.add_dependency('i18n', '>= 1.6', '< 1.8')
+  spec.add_dependency('i18n', '>= 1.6', '< 2')
 
-  spec.add_development_dependency('minitest', '5.12.2')
+  spec.add_development_dependency('minitest', '5.14.0')
   spec.add_development_dependency('pry', '0.12.2')
-  spec.add_development_dependency('rake', '13.0.0')
-  spec.add_development_dependency('rubocop', '0.75.0')
+  spec.add_development_dependency('rake', '13.0.1')
+  spec.add_development_dependency('rubocop', '0.79.0')
   spec.add_development_dependency('simplecov', '0.17.1')
-  spec.add_development_dependency('test-unit', '3.3.4')
+  spec.add_development_dependency('test-unit', '3.3.5')
   spec.add_development_dependency('timecop', '0.9.1')
-  spec.add_development_dependency('yard', '0.9.20')
+  spec.add_development_dependency('yard', '0.9.24')
 end

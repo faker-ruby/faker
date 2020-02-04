@@ -14,18 +14,10 @@ ca:
         - "#{female_prefix} #{female_first_name} #{last_name} #{last_name}"
         - "#{female_first_name} #{last_name} i #{last_name}"
         - "#{female_first_name} #{last_name} #{last_name}"
-        - "#{female_first_name} #{last_name} #{last_name}"
-        - "#{female_first_name} #{last_name} #{last_name}"
         - "#{male_prefix} #{male_first_name} #{last_name} #{last_name}"
         - "#{male_first_name} #{last_name} i #{last_name}"
         - "#{male_first_name} #{last_name} #{last_name}"
-        - "#{male_first_name} #{last_name} #{last_name}"
-        - "#{male_first_name} #{last_name} #{last_name}"
       name_with_middle:
-        - "#{prefix} #{first_name} #{last_name} #{last_name}"
-        - "#{first_name} #{last_name} #{last_name}"
-        - "#{first_name} #{last_name} #{last_name}"
-        - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
     color:
       name: [aiguamarina, albercoc, amarant, ambre, ametista, atzur, beix, bistre, blanc, blat, blau, blau cel, blau fosc, blau marí, blau reial, blauet, bronze, camussa, canyella, caqui, cardenal, carmesí, carmí, carnació, castany rogenc, celadont, ceruli, chartreuse, cian, cirera, corall, coure, crema, escarlata, granat, gris, gris fosc, groc, lavanda, lila, llima, magenta, malva, marró, morat, ocre, or, orquídia, panotxa, plata, porpra, préssec, pruna, verd, verd maragda, verd oliva, verd veronès, vermell, vermell fosc, vermelló, vinca, violat, vori]

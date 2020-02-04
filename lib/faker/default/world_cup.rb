@@ -43,7 +43,7 @@ module Faker
       end
 
       ##
-      # Produces a random national team name from a group. See below examples
+      # Produces a random national team name from a group.
       #
       # @return [String]
       #
@@ -62,7 +62,7 @@ module Faker
       end
 
       ##
-      # Produces a random name from national team roster. See below examples.
+      # Produces a random name from national team roster.
       #
       # @return [String]
       #
