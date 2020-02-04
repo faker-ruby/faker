@@ -5,6 +5,7 @@ en-CA:
       state: [Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Nova Scotia, Northwest Territories, Nunavut, Ontario, Prince Edward Island, Quebec, Saskatchewan, Yukon]
       state_abbr: ["AB", "BC", "MB", "NB", "NL", "NS", "NU", "NT", "ON", "PE", "QC", "SK", "YT"]
       default_country: [Canada]
+      country_code: [CA]
 
     internet:
       free_email: [gmail.com, yahoo.ca, hotmail.com]

@@ -20,8 +20,6 @@ class TestPtLocale < Test::Unit::TestCase
     assert Faker::Address.street_suffix.is_a? String
     assert Faker::Address.state.is_a? String
     assert Faker::Address.city_name.is_a? String
-    assert Faker::Address.city_prefix.is_a? String
-    assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.country.is_a? String
     assert_equal('Portugal', Faker::Address.default_country)
