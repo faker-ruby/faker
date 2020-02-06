@@ -51,7 +51,7 @@ module Faker
         # @example
         #   Faker::Games::WarhammerFantasy.faction #=> "Bretonnia"
         #
-        # @faker.version 2.10.0
+        # @faker.version next
         def faction
           fetch('games.warhammer_fantasy.factions')
         end
