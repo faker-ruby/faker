@@ -5,21 +5,27 @@ module Faker
     class Hiphop < Base
       class << self
         ##
-        # Produces Name of HipHop Artist
+        # Produces the name of a Hip Hop Artist
         #
         # @return [String]
         #
         # @example
-        #   Faker::Music::Hiphop.group #=> "OVO"
+        #   Faker::Music::Hiphop.artist #=> "Lil Wayne"
         #
-        # @faker.version 1.9.2
+        # @faker.version next
         def artist
           fetch('hiphop.artist')
         end
 
-        # @example
-        #   Faker::Music::Hiphop.artist #=> "Lil Wayne"
+        ##
+        # Produces the name of a Hip Hop Group
         #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Music::Hiphop.groups #=> "OVO"
+        #
+        # @faker.version next
 
         def groups
           fetch('hiphop.groups')
