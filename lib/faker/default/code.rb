@@ -7,7 +7,19 @@ module Faker
       # Generates a 10 digit NPI (National Provider Identifier
       # issued to health care providers in the United States)
       def npi
-        rand(10**10).to_s.rjust(10, '0')
+        base_npi = rand(10**9).to_s.rjust(9, '0')
+
+        summed_digits = base_npi
+                        .chars
+                        .each_with_index
+                        .map { |n, i| (i.even? ? n.to_i * 2 : n).to_s }
+                        .join
+                        .chars
+                        .inject(0) { |sum, digit| sum + digit.to_i }
+
+        npi_checksum = (10 - (24 + summed_digits) % 10).to_s.chars.last
+
+        base_npi + npi_checksum
       end
 
       # By default generates 10 sign isbn code in format 123456789-X
