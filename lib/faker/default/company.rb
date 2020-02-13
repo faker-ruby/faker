@@ -99,7 +99,7 @@ module Faker
       end
 
       ##
-      # Produces a company duns_number.
+      # Produces a company duns number.
       #
       # @return [String]
       #
@@ -173,7 +173,7 @@ module Faker
       end
 
       ##
-      # Produces a company swedish_organisation_number.
+      # Produces a company swedish organisation number.
       #
       # @return [String]
       #
@@ -192,7 +192,7 @@ module Faker
       end
 
       ##
-      # Produces a company swedish_organisation_number.
+      # Produces a company czech organisation number.
       #
       # @return [String]
       #
@@ -212,7 +212,7 @@ module Faker
       end
 
       ##
-      # Produces a company french_siren_number.
+      # Produces a company french siren number.
       #
       # @return [String]
       #
@@ -228,7 +228,7 @@ module Faker
       end
 
       ##
-      # Produces a company french_siret_number.
+      # Produces a company french siret number.
       #
       # @return [String]
       #
@@ -243,7 +243,7 @@ module Faker
       end
 
       ##
-      # Produces a company norwegian_organisation_number.
+      # Produces a company norwegian organisation number.
       #
       # @return [String]
       #
@@ -264,7 +264,7 @@ module Faker
       end
 
       ##
-      # Produces a company australian_business_number.
+      # Produces a company australian business number.
       #
       # @return [String]
       #
@@ -280,7 +280,7 @@ module Faker
       end
 
       ##
-      # Produces a company polish_taxpayer_identification_number.
+      # Produces a company polish taxpayer identification_number.
       #
       # @return [String]
       #
@@ -301,7 +301,7 @@ module Faker
       end
 
       ##
-      # Produces a company polish_register_of_national_economy.
+      # Produces a company polish register of national economy.
       #
       # @return [String]
       #
@@ -327,7 +327,7 @@ module Faker
       end
 
       ##
-      # Produces a company south_african_pty_ltd_registration_number.
+      # Produces a company south african pty ltd registration number.
       #
       # @return [String]
       #
@@ -340,7 +340,7 @@ module Faker
       end
 
       ##
-      # Produces a company south_african_close_corporation_registration_number.
+      # Produces a company south african close corporation registration number.
       #
       # @return [String]
       #
@@ -353,7 +353,7 @@ module Faker
       end
 
       ##
-      # Produces a company south_african_listed_company_registration_number.
+      # Produces a company south african listed company registration number.
       #
       # @return [String]
       #
@@ -366,7 +366,7 @@ module Faker
       end
 
       ##
-      # Produces a company south_african_trust_registration_number.
+      # Produces a company south african trust registration number.
       #
       # @return [String]
       #
@@ -379,7 +379,7 @@ module Faker
       end
 
       ##
-      # Produces a company brazilian_company_number.
+      # Produces a company brazilian company number.
       #
       # @return [String]
       #
@@ -407,7 +407,7 @@ module Faker
       end
 
       ##
-      # Produces a company sic_code.
+      # Produces a company sic code.
       #
       # @return [String]
       #
