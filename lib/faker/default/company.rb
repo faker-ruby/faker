@@ -79,6 +79,7 @@ module Faker
       #   Faker::Company.bs #=> "empower customized functionalities"
       #
       # @faker.version 1.6.0
+      #
       # When a straight answer won't do, BS to the rescue!
       def bs
         translate('faker.company.bs').collect { |list| sample(list) }.join(' ')
@@ -119,6 +120,7 @@ module Faker
       #   Faker::Company.logo #=> "https://pigment.github.io/fake-logos/logos/medium/color/12.png"
       #
       # @faker.version 1.8.7
+      #
       # Get a random company logo url in PNG format.
       def logo
         rand_num = rand(1..13)
@@ -160,6 +162,7 @@ module Faker
       #   Faker::Company.spanish_organisation_number #=> "D6819358"
       #
       # @faker.version 1.8.5
+      #
       # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
       def spanish_organisation_number
         # Valid leading character: A, B, C, D, E, F, G, H, J, N, P, Q, R, S, U, V, W
@@ -178,6 +181,7 @@ module Faker
       #   Faker::Company.swedish_organisation_number #=> "3866029808"
       #
       # @faker.version 1.7.0
+      #
       # Get a random Swedish organization number. See more here https://sv.wikipedia.org/wiki/Organisationsnummer
       def swedish_organisation_number
         # Valid leading digit: 1, 2, 3, 5, 6, 7, 8, 9
@@ -216,6 +220,7 @@ module Faker
       #   Faker::Company.french_siren_number #=> "163417827"
       #
       # @faker.version 1.8.5
+      #
       # Get a random French SIREN number. See more here https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
       def french_siren_number
         base = (1..8).map { rand(10) }.join
@@ -246,6 +251,7 @@ module Faker
       #   Faker::Company.norwegian_organisation_number #=> "842457173"
       #
       # @faker.version 1.8.0
+      #
       # Get a random Norwegian organization number. Info: https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/
       def norwegian_organisation_number
         # Valid leading digit: 8, 9
@@ -282,6 +288,7 @@ module Faker
       #   Faker::Company.polish_taxpayer_identification_number #=> "2767549463"
       #
       # @faker.version 1.9.1
+      #
       # Get a random Polish taxpayer identification number More info https://pl.wikipedia.org/wiki/NIP
       def polish_taxpayer_identification_number
         result = []
@@ -302,6 +309,7 @@ module Faker
       #   Faker::Company.polish_register_of_national_economy #=> "788435970"
       #
       # @faker.version 1.9.1
+      #
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
       def polish_register_of_national_economy(legacy_length = NOT_GIVEN, length: 9)
         warn_for_deprecated_arguments do |keywords|
