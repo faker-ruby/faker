@@ -71,7 +71,7 @@ module Faker
       end
 
       ##
-      # Produces a company bs.
+      # Produces some company BS.
       #
       # @return [String]
       #
