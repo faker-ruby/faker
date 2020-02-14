@@ -152,7 +152,7 @@ module Faker
       end
 
       ##
-      # Produces a company spanish_organisation_number.
+      # Produces a company spanish organisation number.
       #
       # @return [String]
       #
