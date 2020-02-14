@@ -20,7 +20,7 @@ module Faker
         end
 
         ##
-        # Produces the name of a album by Rush
+        # Produces the name of an album by Rush
         #
         # @return [String]
         #
