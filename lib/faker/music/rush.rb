@@ -25,7 +25,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Music::Rush.albums #=> "Hold Your Fire"
+        #   Faker::Music::Rush.album #=> "Hold Your Fire"
         #
         # @faker.version next
         def album
