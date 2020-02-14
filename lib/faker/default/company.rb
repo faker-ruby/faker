@@ -71,7 +71,7 @@ module Faker
       end
 
       ##
-      # Produces a company bs.
+      # Produces some company BS.
       #
       # @return [String]
       #
@@ -86,7 +86,7 @@ module Faker
       end
 
       ##
-      # Produces a company ein.
+      # Produces a company EIN (Employer Identification Number).
       #
       # @return [String]
       #
