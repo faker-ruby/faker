@@ -141,6 +141,8 @@ en-NZ:
         - "PO Box #####"
         - "CMB ##"
         - "CMB C#"
+      street_address:
+        - "#{building_number} #{street_name}"
       full_address:
         - "#{street_address}, #{city} #{postcode}"
         - "#{street_address}, #{secondary_address}, #{city} #{postcode}"
