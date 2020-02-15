@@ -16,7 +16,7 @@ module Faker
     end
 
     ##
-    # Produces a heroine name from DC comics
+    # Produces a heroine name from DC Comics
     #
     # @return [String]
     #
