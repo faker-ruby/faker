@@ -9,7 +9,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Verbs.base #=> "shape"
+      #   Faker::Verb.base #=> "shape"
       #
       # @faker.version 1.9.0
       def base
