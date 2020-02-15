@@ -1,5 +1,47 @@
 # Change Log
 
+## [v2.10.2](https://github.com/faker-ruby/faker/tree/v2.10.2) (2020-02-15)
+
+This version:
+- adds a few YARD docs
+- fixes locales
+- updates local dependencies
+
+## Chores
+
+- [PR #1924](https://github.com/faker-ruby/faker/pull/1924) Use ruby's `File::Separator` rather than '/' as a default for direct [@swiknaba](https://github.com/swiknaba)
+
+## Documentation
+
+- [PR #1913](https://github.com/faker-ruby/faker/pull/1913) Add YARD docs for Faker::DcComics [@ash-elangovan](https://github.com/ash-elangovan)
+
+## Update locales
+
+- [PR #1934](https://github.com/faker-ruby/faker/pull/1934) Add street_address for en-nz locale [@psibi](https://github.com/psibi)
+- [PR #1933](https://github.com/faker-ruby/faker/pull/1933) Make id locale consistent. [@psibi](https://github.com/psibi)
+- [PR #1930](https://github.com/faker-ruby/faker/pull/1930) Remove spaces before apostrophes [@jrmhaig](https://github.com/jrmhaig)
+- [PR #1927](https://github.com/faker-ruby/faker/pull/1927) zh-TW locale fix: Avoid double de-reference for name_with_middle [@psibi](https://github.com/psibi)
+- [PR #1922](https://github.com/faker-ruby/faker/pull/1922) zh-CN locale fix: Directly refer to the expected values [@psibi](https://github.com/psibi)
+- [PR #1921](https://github.com/faker-ruby/faker/pull/1921) uk locale fix: Make empty fields consistent [@psibi](https://github.com/psibi)
+- [PR #1920](https://github.com/faker-ruby/faker/pull/1920) pt locale fix: Make city fields consistent with other [@psibi](https://github.com/psibi)
+- [PR #1918](https://github.com/faker-ruby/faker/pull/1918) Make Japanese Lorem sentences look more natural [@rastamhadi](https://github.com/rastamhadi)
+- [PR #1915](https://github.com/faker-ruby/faker/pull/1915) Add yard docs for Faker::Company [@kos31de](https://github.com/kos31de)
+- [PR #1914](https://github.com/faker-ruby/faker/pull/1914) Data source fix for ha locale [@psibi](https://github.com/psibi)
+- [PR #1911](https://github.com/faker-ruby/faker/pull/1911) Removed duplicate value [@ash-elangovan](https://github.com/ash-elangovan)
+- [PR #1908](https://github.com/faker-ruby/faker/pull/1908) Add more colors [@tomcol](https://github.com/tomcol)
+- [PR #1903](https://github.com/faker-ruby/faker/pull/1903) fr locale: pokemon's root key should be games [@connorshea](https://github.com/connorshea)
+- [PR #1902](https://github.com/faker-ruby/faker/pull/1902) Remove empty string in phone_number formats [@psibi](https://github.com/psibi)
+- [PR #1901](https://github.com/faker-ruby/faker/pull/1901) fr-CA locale fix: pokemon's root key should be games [@psibi](https://github.com/psibi)
+- [PR #1900](https://github.com/faker-ruby/faker/pull/1900) Use postcode for en-ZA [@psibi](https://github.com/psibi)
+- [PR #1899](https://github.com/faker-ruby/faker/pull/1899) Locale root name should be en-NEP [@psibi](https://github.com/psibi)
+- [PR #1812](https://github.com/faker-ruby/faker/pull/1812) Add vat number rule for es-MX [@arandilopez](https://github.com/arandilopez)
+
+## Update local dependencies
+
+- Update test-unit requirement from = 3.3.4 to = 3.3.5 (#1896)
+
+------------------------------------------------------------------------------
+
 ## [v2.10.1](https://github.com/faker-ruby/faker/tree/v2.10.1) (2020-01-13)
 
 This version:
