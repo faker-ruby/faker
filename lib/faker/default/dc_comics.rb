@@ -3,7 +3,7 @@
 module Faker
   class DcComics < Base
     ##
-    # Produces a hero name from DC comics
+    # Produces a hero name from DC Comics
     #
     # @return [String]
     #
