@@ -18,6 +18,19 @@ module Faker
         def character
           fetch('aqua_teen_hunger_force.character')
         end
+
+        ##
+        # Produces a perl of great AHTF wisdom
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::TvShows::AquaTeenHungerForce.quote #=> "Friendship ain't about trust. Friendship's about nunchucks."
+        #
+        # @faker.version 1.8.5
+        def quote
+          fetch('aqua_teen_hunger_force.quote')
+        end
       end
     end
   end
