@@ -42,7 +42,7 @@ module Faker
     end
 
     ##
-    # Produces a character name from DC comics
+    # Produces a character name from DC Comics
     #
     # @return [String]
     #
