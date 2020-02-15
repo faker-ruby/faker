@@ -55,7 +55,7 @@ module Faker
     end
 
     ##
-    # Produces a comic book title from DC comics
+    # Produces a comic book title from DC Comics
     #
     # @return [String]
     #
