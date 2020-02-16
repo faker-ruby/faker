@@ -105,7 +105,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Bank.routing_number #=> "675861739"
+      #   Faker::Bank.swift_bic #=> "AAOGGB21"
       #
       # @faker.version next
       def swift_bic
