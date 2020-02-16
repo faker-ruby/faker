@@ -217,6 +217,10 @@ module Faker
         end
       end
 
+      # Return unique values from the generator every time.
+      #
+      # @param max_retries [Integer] The max number of retries that should be done before giving up.
+      # @return [self]
       def unique(max_retries = 10_000)
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
