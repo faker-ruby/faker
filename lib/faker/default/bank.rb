@@ -87,7 +87,7 @@ module Faker
       end
 
       ##
-      # Produces a random formated routing number in the format XX-XXXX/XXXXX.
+      # Produces a random formatted routing number in the format XX-XXXX/XXXXX.
       #
       # @return [String]
       #
