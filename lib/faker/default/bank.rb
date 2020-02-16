@@ -92,7 +92,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Bank.routing_number #=> "675861739"
+      #   Faker::Bank.routing_number_with_format #=> "27-4266/31644"
       #
       # @faker.version next
       def routing_number_with_format
