@@ -1,0 +1,67 @@
+en:
+  faker:
+    computer:
+      platform: 
+        - Linux
+        - OS X
+        - Windows
+      type: 
+        - server
+        - workstation 
+      os: 
+        - RHEL 6.10
+        - RHEL 7.7
+        - CENTOS 5.6
+        - Catalina (10.15)
+        - Mojave (10.14)
+        - High Sierra (10.13)
+        - Windows 10
+        - Windows 8.1
+        - Windows 7
+        - Windows Server 2019
+        - Windows Server 2016
+        - Windows Server 2012 R2 
+      linux:
+        server:
+          os: 
+            - RHEL 6.10
+            - RHEL 7.7
+            - CentOS 8
+            - CentOS 7
+            - CentOS 6
+            - Debian 10.10.3
+            - Debian 9.9.10
+            - Ubuntu Server 18.04
+            - Ubuntu Server 19.10
+        workstation:
+          os:
+            - ArchLinux 2020.02.01
+            - openSUSE Leap 15.1
+            - Ubuntu Desktop 18.04
+            - Ubuntu Desktop 19.10
+      osx:
+        server:
+          os:
+            - Catalina (10.15)
+            - Mojave (10.14)
+            - High Sierra (10.13)
+        workstation:
+          os:
+            - Catalina (10.15)
+            - Mojave (10.14)
+            - High Sierra (10.13)
+      windows:
+        workstation:
+          os: 
+            - Windows 10
+            - Windows 8.1
+            - Windows 7
+        server:
+          os: 
+            - Windows Server 2019
+            - Windows Server 2016
+            - Windows Server 2012 R2
+    stack:
+      - #{platform}
+      - #{type}
+      - #{os}
