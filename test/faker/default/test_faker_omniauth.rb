@@ -39,14 +39,14 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, extra_raw_info[:birthday]
     assert_equal 'en', extra_raw_info[:local]
     assert_instance_of String, extra_raw_info[:hd]
-    assert_equal 'accounts.google.com', id_info['iss']
-    assert_instance_of String, id_info['at_hash']
-    assert [true, false].include? id_info['email_verified']
-    assert_equal 28, id_info['sub'].length
-    assert_equal 'APP_ID', id_info['azp']
-    assert_equal info[:email], id_info['email']
-    assert_equal 'APP_ID', id_info['aud']
-    assert_equal openid_id, id_info['openid_id']
+    assert_equal 'accounts.google.com', id_info[:iss]
+    assert_instance_of String, id_info[:at_hash]
+    assert [true, false].include? id_info[:email_verified]
+    assert_equal 28, id_info[:sub].length
+    assert_equal 'APP_ID', id_info[:azp]
+    assert_equal info[:email], id_info[:email]
+    assert_equal 'APP_ID', id_info[:aud]
+    assert_equal openid_id, id_info[:openid_id]
 
     if RUBY_VERSION < '2.4.0'
       assert_instance_of Fixnum, credentials[:expires_at]
@@ -55,15 +55,15 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     end
 
     if RUBY_VERSION < '2.4.0'
-      assert_instance_of Fixnum, id_info['iat']
+      assert_instance_of Fixnum, id_info[:iat]
     else
-      assert_instance_of Integer, id_info['iat']
+      assert_instance_of Integer, id_info[:iat]
     end
 
     if RUBY_VERSION < '2.4.0'
-      assert_instance_of Fixnum, id_info['exp']
+      assert_instance_of Fixnum, id_info[:exp]
     else
-      assert_instance_of Integer, id_info['exp']
+      assert_instance_of Integer, id_info[:exp]
     end
   end
 
@@ -95,7 +95,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info[:email]
     assert_equal custom_email, info[:email]
     assert_equal custom_email, extra_raw_info[:email]
-    assert_equal custom_email, id_info['email']
+    assert_equal custom_email, id_info[:email]
   end
 
   def test_omniauth_google_with_uid

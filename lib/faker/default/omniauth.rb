@@ -57,16 +57,16 @@ module Faker
               hd: "#{Company.name.downcase}.com"
             },
             id_info: {
-              'iss' => 'accounts.google.com',
-              'at_hash' => Crypto.md5,
-              'email_verified' => true,
-              'sub' => Number.number(digits: 28).to_s,
-              'azp' => 'APP_ID',
-              'email' => auth.email,
-              'aud' => 'APP_ID',
-              'iat' => Time.forward.to_i,
-              'exp' => Time.forward.to_i,
-              'openid_id' => "https://www.google.com/accounts/o8/id?id=#{uid}"
+              iss: 'accounts.google.com',
+              at_hash: Crypto.md5,
+              email_verified: true,
+              sub: Number.number(digits: 28).to_s,
+              azp: 'APP_ID',
+              email: auth.email,
+              aud: 'APP_ID',
+              iat: Time.forward.to_i,
+              exp: Time.forward.to_i,
+              openid_id: "https://www.google.com/accounts/o8/id?id=#{uid}"
             }
           }
         }
