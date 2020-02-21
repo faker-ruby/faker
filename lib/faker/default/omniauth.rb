@@ -57,16 +57,16 @@ module Faker
               hd: "#{Company.name.downcase}.com"
             },
             id_info: {
-              'iss' => 'accounts.google.com',
-              'at_hash' => Crypto.md5,
-              'email_verified' => true,
-              'sub' => Number.number(digits: 28).to_s,
-              'azp' => 'APP_ID',
-              'email' => auth.email,
-              'aud' => 'APP_ID',
-              'iat' => Time.forward.to_i,
-              'exp' => Time.forward.to_i,
-              'openid_id' => "https://www.google.com/accounts/o8/id?id=#{uid}"
+              iss: 'accounts.google.com',
+              at_hash: Crypto.md5,
+              email_verified: true,
+              sub: Number.number(digits: 28).to_s,
+              azp: 'APP_ID',
+              email: auth.email,
+              aud: 'APP_ID',
+              iat: Time.forward.to_i,
+              exp: Time.forward.to_i,
+              openid_id: "https://www.google.com/accounts/o8/id?id=#{uid}"
             }
           }
         }
@@ -223,53 +223,53 @@ module Faker
         industry = Commerce.department
         url = "http://www.linkedin.com/in/#{first_name}#{last_name}"
         {
-          'provider' => 'linkedin',
-          'uid' => uid,
-          'info' => {
-            'name' => auth.name,
-            'email' => auth.email,
-            'nickname' => auth.name,
-            'first_name' => auth.first_name,
-            'last_name' => auth.last_name,
-            'location' => location,
-            'description' => description,
-            'image' => image,
-            'phone' => PhoneNumber.phone_number,
-            'headline' => description,
-            'industry' => industry,
-            'urls' => {
-              'public_profile' => url
+          provider: 'linkedin',
+          uid: uid,
+          info: {
+            name: auth.name,
+            email: auth.email,
+            nickname: auth.name,
+            first_name: auth.first_name,
+            last_name: auth.last_name,
+            location: location,
+            description: description,
+            image: image,
+            phone: PhoneNumber.phone_number,
+            headline: description,
+            industry: industry,
+            urls: {
+              public_profile: url
             }
           },
-          'credentials' => {
-            'token' => token,
-            'secret' => secret
+          credentials: {
+            token: token,
+            secret: secret
           },
-          'extra' => {
-            'access_token' => {
-              'token' => token,
-              'secret' => secret,
-              'consumer' => nil,
-              'params' => {
+          extra: {
+            access_token: {
+              token: token,
+              secret: secret,
+              consumer: nil,
+              params: {
                 oauth_token: token,
                 oauth_token_secret: secret,
                 oauth_expires_in: Time.forward.to_i,
                 oauth_authorization_expires_in: Time.forward.to_i
               },
-              'response' => nil
+              response: nil
             },
-            'raw_info' => {
-              'firstName' => auth.first_name,
-              'headline' => description,
-              'id' => uid,
-              'industry' => industry,
-              'lastName' => auth.last_name,
-              'location' => {
-                'country' => { 'code' => Address.country_code.downcase },
-                'name' => city_state.split(', ').first
+            raw_info: {
+              firstName: auth.first_name,
+              headline: description,
+              id: uid,
+              industry: industry,
+              lastName: auth.last_name,
+              location: {
+                country: { code: Address.country_code.downcase },
+                name: city_state.split(', ').first
               },
-              'pictureUrl' => image,
-              'publicProfileUrl' => url
+              pictureUrl: image,
+              publicProfileUrl: url
             }
           }
         }
