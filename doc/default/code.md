@@ -1,7 +1,10 @@
 # Faker::Code
 
 ```ruby
-Faker::Code.npi #=> "0000126252"
+Faker::Code.npi #=> "1234567893"
+
+# legacy defaults to true.
+Faker::Code.npi(legacy: false) #=> "5234567894"
 
 Faker::Code.isbn #=> "759021701-8"
 

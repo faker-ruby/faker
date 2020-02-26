@@ -7,8 +7,14 @@ class TestFakerCode < Test::Unit::TestCase
     @tester = Faker::Code
   end
 
-  def test_npi_regexp
-    assert @tester.npi.match(/(1|2)[0-9]{9}/)
+  def test_npi_legacy_regexp
+    assert @tester.npi(legacy: true).match(/(1|2)[0-9]{9}/)
+  end
+
+  def test_npi
+    Faker::Config.random.stub(:rand, 523_456_789) do
+      assert @tester.npi == '5234567894'
+    end
   end
 
   def test_deterministic_npi
