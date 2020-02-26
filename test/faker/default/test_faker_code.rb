@@ -8,7 +8,7 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_npi_regexp
-    assert @tester.npi.match(/[0-9]{10}/)
+    assert @tester.npi.match(/(1|2)[0-9]{9}/)
   end
 
   def test_deterministic_npi

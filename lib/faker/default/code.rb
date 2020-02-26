@@ -7,7 +7,7 @@ module Faker
       # Generates a 10 digit NPI (National Provider Identifier
       # issued to health care providers in the United States)
       def npi
-        base_npi = rand(10**9).to_s.rjust(9, '0')
+        base_npi = rand(100_000_000..299_999_999).to_s
 
         summed_digits = base_npi
                         .chars
