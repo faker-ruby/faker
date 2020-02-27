@@ -5,6 +5,15 @@ module Faker
     flexible :funny_name
 
     class << self
+      ##
+      # Retrieves a funny name.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::FunnyName.name #=> "Sam Pull"
+      #
+      # @faker.version 1.8.0
       def name
         fetch('funny_name.name')
       end
