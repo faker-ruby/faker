@@ -10,7 +10,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Quotes::Chiquito.expression # => "¡Ereh un torpedo!"
+        #   Faker::Quotes::Chiquito.expression # => "Ereh un torpedo!"
         #
         # @faker.version next
         def expression
@@ -36,8 +36,8 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Quotes::Chiquito.joke # => "- Papár papár llévame al circo!
-        #                                     - Noorl! El que quiera verte que venga a la casa"
+        #   Faker::Quotes::Chiquito.joke # => "- Papar papar llevame al circo!
+        #                                      - Noorl! El que quiera verte que venga a la casa"
         #
         # @faker.version next
         def joke
