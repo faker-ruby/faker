@@ -39,14 +39,14 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, extra_raw_info[:birthday]
     assert_equal 'en', extra_raw_info[:local]
     assert_instance_of String, extra_raw_info[:hd]
-    assert_equal 'accounts.google.com', id_info['iss']
-    assert_instance_of String, id_info['at_hash']
-    assert [true, false].include? id_info['email_verified']
-    assert_equal 28, id_info['sub'].length
-    assert_equal 'APP_ID', id_info['azp']
-    assert_equal info[:email], id_info['email']
-    assert_equal 'APP_ID', id_info['aud']
-    assert_equal openid_id, id_info['openid_id']
+    assert_equal 'accounts.google.com', id_info[:iss]
+    assert_instance_of String, id_info[:at_hash]
+    assert [true, false].include? id_info[:email_verified]
+    assert_equal 28, id_info[:sub].length
+    assert_equal 'APP_ID', id_info[:azp]
+    assert_equal info[:email], id_info[:email]
+    assert_equal 'APP_ID', id_info[:aud]
+    assert_equal openid_id, id_info[:openid_id]
 
     if RUBY_VERSION < '2.4.0'
       assert_instance_of Fixnum, credentials[:expires_at]
@@ -55,15 +55,15 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     end
 
     if RUBY_VERSION < '2.4.0'
-      assert_instance_of Fixnum, id_info['iat']
+      assert_instance_of Fixnum, id_info[:iat]
     else
-      assert_instance_of Integer, id_info['iat']
+      assert_instance_of Integer, id_info[:iat]
     end
 
     if RUBY_VERSION < '2.4.0'
-      assert_instance_of Fixnum, id_info['exp']
+      assert_instance_of Fixnum, id_info[:exp]
     else
-      assert_instance_of Integer, id_info['exp']
+      assert_instance_of Integer, id_info[:exp]
     end
   end
 
@@ -95,7 +95,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info[:email]
     assert_equal custom_email, info[:email]
     assert_equal custom_email, extra_raw_info[:email]
-    assert_equal custom_email, id_info['email']
+    assert_equal custom_email, id_info[:email]
   end
 
   def test_omniauth_google_with_uid
@@ -358,37 +358,37 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
 
   def test_omniauth_linkedin
     auth            = @tester.linkedin
-    info            = auth['info']
-    credentials     = auth['credentials']
-    extra           = auth['extra']
-    access_token    = extra['access_token']
-    params          = access_token['params']
-    raw_info        = extra['raw_info']
-    first_name      = info['first_name'].downcase
-    last_name       = info['last_name'].downcase
+    info            = auth[:info]
+    credentials     = auth[:credentials]
+    extra           = auth[:extra]
+    access_token    = extra[:access_token]
+    params          = access_token[:params]
+    raw_info        = extra[:raw_info]
+    first_name      = info[:first_name].downcase
+    last_name       = info[:last_name].downcase
     url             = "http://www.linkedin.com/in/#{first_name}#{last_name}"
 
-    assert_equal 'linkedin', auth['provider']
-    assert_equal 6, auth['uid'].length
-    assert_equal 2, word_count(info['name'])
-    assert info['email'].match safe_email_regex(first_name, last_name)
-    assert_equal info['name'], info['nickname']
-    assert_instance_of String, info['first_name']
-    assert_instance_of String, info['last_name']
-    assert_equal 2, info['location'].split(', ').count
-    assert_instance_of String, info['description']
-    assert_instance_of String, info['image']
-    assert_instance_of String, info['phone']
-    assert_instance_of String, info['headline']
-    assert_instance_of String, info['industry']
-    assert_equal url, info['urls']['public_profile']
-    assert_instance_of String, credentials['token']
-    assert_instance_of String, credentials['secret']
-    assert_equal credentials['token'], access_token['token']
-    assert_equal credentials['secret'], access_token['secret']
-    refute access_token['consumer']
-    assert_equal credentials['token'], params[:oauth_token]
-    assert_equal credentials['secret'], params[:oauth_token_secret]
+    assert_equal 'linkedin', auth[:provider]
+    assert_equal 6, auth[:uid].length
+    assert_equal 2, word_count(info[:name])
+    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert_equal info[:name], info[:nickname]
+    assert_instance_of String, info[:first_name]
+    assert_instance_of String, info[:last_name]
+    assert_equal 2, info[:location].split(', ').count
+    assert_instance_of String, info[:description]
+    assert_instance_of String, info[:image]
+    assert_instance_of String, info[:phone]
+    assert_instance_of String, info[:headline]
+    assert_instance_of String, info[:industry]
+    assert_equal url, info[:urls][:public_profile]
+    assert_instance_of String, credentials[:token]
+    assert_instance_of String, credentials[:secret]
+    assert_equal credentials[:token], access_token[:token]
+    assert_equal credentials[:secret], access_token[:secret]
+    refute access_token[:consumer]
+    assert_equal credentials[:token], params[:oauth_token]
+    assert_equal credentials[:secret], params[:oauth_token_secret]
 
     if RUBY_VERSION < '2.4.0'
       assert_instance_of Fixnum, params[:oauth_expires_in]
@@ -398,49 +398,49 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
       assert_instance_of Integer, params[:oauth_authorization_expires_in]
     end
 
-    refute access_token['response']
-    assert_equal info['first_name'], raw_info['firstName']
-    assert_equal info['headline'], raw_info['headline']
-    assert_equal auth['uid'], raw_info['id']
-    assert_equal info['industry'], raw_info['industry']
-    assert_equal info['last_name'], raw_info['lastName']
-    assert_instance_of String, raw_info['location']['country']['code']
-    assert_instance_of String, raw_info['location']['name']
-    assert_instance_of String, raw_info['pictureUrl']
-    assert_equal info['urls']['public_profile'], raw_info['publicProfileUrl']
+    refute access_token[:response]
+    assert_equal info[:first_name], raw_info[:firstName]
+    assert_equal info[:headline], raw_info[:headline]
+    assert_equal auth[:uid], raw_info[:id]
+    assert_equal info[:industry], raw_info[:industry]
+    assert_equal info[:last_name], raw_info[:lastName]
+    assert_instance_of String, raw_info[:location][:country][:code]
+    assert_instance_of String, raw_info[:location][:name]
+    assert_instance_of String, raw_info[:pictureUrl]
+    assert_equal info[:urls][:public_profile], raw_info[:publicProfileUrl]
   end
 
   def test_omniauth_linkedin_with_name
     custom_name           = 'Happy Gilmore'
     first_name, last_name = custom_name.split
     auth                  = @tester.linkedin(name: custom_name)
-    info                  = auth['info']
+    info                  = auth[:info]
 
-    assert_equal 2, word_count(info['name'])
-    assert_instance_of String, info['name']
-    assert_equal custom_name, info['name']
-    assert info['email'].match safe_email_regex(first_name, last_name)
-    assert_equal custom_name, info['nickname']
-    assert_equal first_name, info['first_name']
-    assert_equal last_name, info['last_name']
+    assert_equal 2, word_count(info[:name])
+    assert_instance_of String, info[:name]
+    assert_equal custom_name, info[:name]
+    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert_equal custom_name, info[:nickname]
+    assert_equal first_name, info[:first_name]
+    assert_equal last_name, info[:last_name]
   end
 
   def test_omniauth_linkedin_with_email
     custom_email    = 'gilmore@happy.com'
     auth            = @tester.linkedin(email: custom_email)
-    info            = auth['info']
+    info            = auth[:info]
 
-    assert_equal custom_email, info['email']
+    assert_equal custom_email, info[:email]
   end
 
   def test_omniauth_linkedin_with_uid
     custom_uid = '12345'
     auth       = @tester.linkedin(uid: custom_uid)
-    extra_raw_info = auth['extra']['raw_info']
+    extra_raw_info = auth[:extra][:raw_info]
 
-    assert_instance_of String, auth['uid']
-    assert_equal custom_uid, auth['uid']
-    assert_equal custom_uid, extra_raw_info['id']
+    assert_instance_of String, auth[:uid]
+    assert_equal custom_uid, auth[:uid]
+    assert_equal custom_uid, extra_raw_info[:id]
   end
 
   def test_omniauth_github
