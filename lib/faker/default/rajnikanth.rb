@@ -6,13 +6,13 @@ module Faker
 
     class << self
       # Produces a Rajnikanth.
-      # Original list of facts:
+      # Original list of jokes:
       # http://www.rajinikanthjokes.com/
       #
       # @return [String]
       #
       # @example
-      #   Faker::Rajnikanth.fact
+      #   Faker::Rajnikanth.joke
       #     #=> "Rajinikanth is so fast that he always comes yesterday."
       #
       # @faker.version 2.10.3
