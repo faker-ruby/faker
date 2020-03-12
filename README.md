@@ -191,6 +191,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::PhoneNumber](doc/default/phone_number.md)
   - [Faker::Placeholdit](doc/default/placeholdit.md)
   - [Faker::ProgrammingLanguage](doc/default/programming_language.md)
+  - [Faker::Rajnikanth](doc/default/rajnikanth.md)
   - [Faker::Relationship](doc/default/relationship.md)
   - [Faker::Restaurant](doc/default/restaurant.md)
   - [Faker::Science](doc/default/science.md)
