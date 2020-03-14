@@ -275,8 +275,10 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 ### Quotes
   - [Faker::Quote](doc/quotes/quote.md)
+  - [Faker::Quotes::Rajnikanth](doc/quotes/rajnikanth.md)
   - [Faker::Quotes::Shakespeare](doc/quotes/shakespeare.md)
   - [Faker::Quotes::Chiquito](doc/quotes/chiquito.md)
+
 
 ### Sports
   - [Faker::Sports::Basketball](doc/sports/basketball.md)
