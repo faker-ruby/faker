@@ -19,16 +19,15 @@ class TestFakerComputer < Test::Unit::TestCase
   def test_stack
     # puts @tester.stack
     assert stack = @tester.stack
-                         .match(/\A(?<platform>([[:alnum:]]+\s?){1,5}), (?<os>([[:alnum:]]+-?.?\)?\(?\s?){1,5})\z/)
+                          .match(/\A(?<platform>([[:alnum:]]+\s?){1,5}), (?<os>([[:alnum:]]+-?.?\)?\(?\s?){1,5})\z/)
 
     platform = stack[:platform]
     search_format_platform = platform.split.length > 1 ? platform.downcase.split.join('_') : platform.downcase
     os = stack[:os]
-    
+
     oses = Faker::Base.fetch_all("computer.os.#{search_format_platform}")
 
     assert @platforms.include?(platform)
     assert oses.include?(os)
-    
   end
 end

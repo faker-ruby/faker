@@ -38,27 +38,23 @@ module Faker
       #   Faker::Computer.os #=> "RHEL 6.10"
       #
       # @faker.version next
-      def os(p = platform)
-        unless fetch_all('computer.platform').include?(p)
-          p = platform
-        end
-        p = search_format(p)
-        fetch("computer.#{p}.os")
+      def os(plat = platform)
+        plat = platform unless fetch_all('computer.platform').include?(plat)
+        plat = search_format(plat)
+        fetch("computer.#{plat}.os")
       end
 
       def stack
-        p = self.platform
-        os = fetch("computer.os.#{search_format(p)}")
-        "#{p}, #{os}"
+        plat = platform
+        os = fetch("computer.os.#{search_format(plat)}")
+        "#{plat}, #{os}"
       end
-
 
       private
 
       def search_format(key)
         key.split.length > 1 ? key.split.join('_').downcase : key.downcase
       end
-
     end
   end
 end
