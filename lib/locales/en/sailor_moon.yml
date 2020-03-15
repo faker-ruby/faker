@@ -1,0 +1,197 @@
+en:
+  faker:
+    sailor_moon:
+      character:
+        - Sailor Moon
+        - Sailor Mercury
+        - Sailor Mars
+        - Sailor Venus
+        - Sailor Jupiter
+        - Sailor Chibimoon
+        - Sailor Uranus
+        - Sailor Neptune
+        - Sailor Pluto
+        - Sailor Saturn
+        - Sailor Chibi Chibi Moon
+        - Sailor Iron Mouse
+        - Sailor Lead Crow
+        - Sailor Aluminum Siren
+        - Sailor Tin Nyanko
+        - Sailor Heavy Metal Papillon
+        - Sailor Galaxia
+        - Sailor Cosmos
+        - Sailor Star Fighter
+        - Sailor Star Healer
+        - Sailor Star Maker
+        - Tuxedo Kamen
+        - Prince Endymion
+        - King Endymion
+        - Queen Serenity
+        - Princess Serenity
+        - Neo Queen Serenity
+        - Princess Small Lady
+        - Helios
+        - Pegasus
+        - Luna
+        - Artemis
+        - Diana
+        - Ikuko Tsukino
+        - Kenji Tsukino
+        - Shingo Tsukino
+        - Naru Osaka
+        - Gurio Umino
+        - Usagi Tsukino
+        - Ami Mizuno
+        - Rei Hino
+        - Minako Aino
+        - Makoto Kino
+        - Chibi-Usa Tsukino
+        - Haruka Tenou
+        - Michiru Kaiou
+        - Setsuna Meiou
+        - Hotaru Tomoe
+        - Mamoru Chiba
+        - Seiya Kou
+        - Yaten Kou
+        - Taiki Kou
+        - Queen Beryl
+        - Queen Metalia
+        - Zoisite
+        - Jadeite
+        - Nephrite
+        - Kunzite
+        - Wiseman
+        - Prince Demande
+        - Saphir
+        - Emeraude
+        - Rubeus
+        - Koan
+        - Berthier
+        - Calaveras
+        - Petz
+        - Black Lady
+        - Mistress 9
+        - Pharaoh 90
+        - Kaolinite
+        - Eudial
+        - Mimete
+        - Tellu
+        - Viluy
+        - Cyprine
+        - Ptilol
+        - Queen Nehellenia
+        - Zirconia
+        - CereCere
+        - VesVes
+        - JunJun
+        - PallaPalla
+        - Tiger's Eye
+        - Hawk's Eye
+        - Fisheye
+      transformation:
+        - Moon Prism Power, Make Up!
+        - Moon Crystal Power, Make Up!
+        - Moon Cosmic Power, Make Up!
+        - Moon Crisis, Make Up!
+        - Moon Eternal, Make Up!
+        - Mercury Star Power, Make Up!
+        - Mercury Crystal Power, Make Up!
+        - Mercury Planet Power, Make Up!
+        - Mars Star Power, Make Up!
+        - Mars Crystal Power, Make Up!
+        - Mars Planet Power, Make Up!
+        - Venus Star Power, Make Up!
+        - Venus Crystal Power, Make Up!
+        - Venus Planet Power, Make Up!
+        - Jupiter Star Power, Make Up!
+        - Jupiter Crystal Power, Make Up!
+        - Jupiter Planet Power, Make Up!
+        - Uranus Planet Power, Make Up!
+        - Neptune Planet Power, Make Up!
+        - Pluto Planet Power, Make Up!
+        - Saturn Planet Power, Make Up!
+        - Fighter Star Power, Make Up!
+        - Healer Star Power, Make Up!
+        - Maker Star Power, Make Up!
+      attack:
+        - Moon Tiara Action
+        - Moon Healing Escalation
+        - Moon Princess Halation
+        - Moon Spiral Heart Attack
+        - Rainbow Moon Heartache
+        - Moon Gorgeous Meditation
+        - Starlight Honeymoon Therapy Kiss
+        - Pink Sugar Heart Attack
+        - Twinkle Yell
+        - Mercury Bubble Blast
+        - Mercury Aqua Illusion
+        - Mercury Aqua Rhapsody
+        - Mercury Aqua Mirage
+        - Mars Fire Soul
+        - Mars Burning Mandala
+        - Mars Flame Sniper
+        - Venus Love-Me Chain
+        - Venus Crescent Beam
+        - Venus Love and Beauty Shock
+        - Jupiter Supreme Thunder
+        - Jupiter Sparkling Wide Pressure
+        - Jupiter Oak Evolution
+        - World Shaking
+        - Space Sword Blaster
+        - Deep Submerge
+        - Submarine Reflection
+        - Dead Scream
+        - Silence Wall
+        - Silence Glaive Surprise
+        - Star Serious Laser
+        - Star Sensitive Inferno
+        - Star Gentle Uterus
+      item:
+        - Crystal Star Compact
+        - Cosmic Heart Compact
+        - Crisis Moon Compact
+        - Prism Heart Compact
+        - Star Power Stick
+        - Crystal Change Rod
+        - Lip Rod
+        - Eternal Moon Article
+        - Cutie Moon Rod
+        - Spiral Heart Moon Rod
+        - Kaleido Moon Scope
+        - Eternal Tiare
+        - Holy Chalice
+        - Pink Moon Stick
+        - Crystal Carillon
+        - Stallion Reve
+        - Mercury Harp
+        - Mars Arrow
+        - Venus Chain Belt
+        - Jupiter Lightning Antenna
+        - Deep Aqua Mirror
+        - Space Sword
+        - Garnet Rod
+        - Garnet Orb
+        - Silence Glaive
+        - Silver Crystal
+        - Golden Crystal
+        - Heart Crystal
+        - Dream Mirror
+        - Star Seed
+        - Disguise Pen
+        - Luna-P
+      location:
+        - Moon Kingdom
+        - Crystal Tokyo
+        - Elysion
+        - Azabu Juuban
+        - Azabu Hikawa Shrine
+        - Mugen Academy
+        - Game Center Crown
+        - Fruits Parlor Crown
+        - Karaoke Crown
+        - Osa-P Jewellers
+        - Star Light Tower
+        - Dead Moon Circus
+        - Ginga TV
+        - Star Garden
+        - Galaxy Cauldron
