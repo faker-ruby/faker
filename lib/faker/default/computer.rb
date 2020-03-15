@@ -46,6 +46,12 @@ module Faker
         fetch("computer.#{p}.os")
       end
 
+      def stack
+        p = self.platform
+        os = fetch("computer.os.#{search_format(p)}")
+        "#{p}, #{os}"
+      end
+
 
       private
 
