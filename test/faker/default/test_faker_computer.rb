@@ -16,10 +16,6 @@ class TestFakerComputer < Test::Unit::TestCase
     assert @tester.platform.match(/(\w+ ?){1,3}/)
   end
 
-  def test_os_windows
-    assert @tester.os(platform: 'windows').match(/(\w+ ?){1,3}/)
-  end
-
   def test_stack
     # puts @tester.stack
     assert stack = @tester.stack
