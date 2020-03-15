@@ -55,6 +55,19 @@ module Faker
         def item
           fetch('sailor_moon.item')
         end
+
+        ##
+        # Produces the name of a location from Sailor Moon.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::JapaneseMedia::SailorMoon.location #=> "Game Center Crown"
+        #
+        # @faker.version 1.8.0
+        def location
+          fetch('sailor_moon.location')
+        end
       end
     end
   end

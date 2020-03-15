@@ -22,4 +22,8 @@ class TestFakerSailorMoon < Test::Unit::TestCase
   def test_item
     assert @tester.item.match(/\w+/)
   end
+
+  def test_location
+    assert @tester.location.match(/\w+/)
+  end
 end

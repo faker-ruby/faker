@@ -1,16 +1,7 @@
 # Faker::JapaneseMedia::SailorMoon
 
 ```ruby
-Faker::JapaneseMedia::SailorMoon.senshi # => "Sailor Chibimoon"
-
-
-Faker::JapaneseMedia::SailorMoon.secret_identity # => "Hotaru Tomoe"
-
-
-Faker::JapaneseMedia::SailorMoon.villain # => "Queen Nehellenia"
-
-
-Faker::JapaneseMedia::SailorMoon.character # => "Helios"
+Faker::JapaneseMedia::SailorMoon.character # => "Sailor Chibimoon"
 
 
 Faker::JapaneseMedia::SailorMoon.transformation # => "Neptune Planet Power, Make Up!"
