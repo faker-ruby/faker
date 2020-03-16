@@ -87,6 +87,13 @@ module Faker
         Array.new(rand(5...10)) { fetch('vehicle.standard_specs') }
       end
 
+      def license_plate(state_abreviation: '')
+        return regexify(bothify(fetch('vehicle.license_plate'))) if state_abreviation.empty?
+
+        key = 'vehicle.license_plate_by_state.' + state_abreviation
+        regexify(bothify(fetch(key)))
+      end
+
       private
 
       def calculate_vin_weight(character, idx)
@@ -95,13 +102,6 @@ module Faker
 
       def vin_checksum(vehicle_identification_number)
         VIN_MAP[vehicle_identification_number.each_with_index.map(&method(:calculate_vin_weight)).inject(:+) % 11]
-      end
-
-      def license_plate(state_abreviation: '')
-        return regexify(bothify(fetch('vehicle.license_plate'))) if state_abreviation.empty?
-
-        key = 'vehicle.license_plate_by_state.' + state_abreviation
-        regexify(bothify(fetch(key)))
       end
     end
   end
