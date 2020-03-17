@@ -43,7 +43,7 @@ module Faker
     # @return [String]
     #
     # @example
-    #   Faker::Cannabis.terpene #=> "∆ 3 Carene"
+    #   Faker::Cannabis.terpene #=> "Terpinene"
     #
     # @faker.version 1.9.0
     def self.terpene
