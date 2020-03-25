@@ -105,7 +105,7 @@ module Faker
     # @example
     #   Faker::Cannabis.buzzword #=> "high"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.buzzword
       fetch('cannabis.buzzwords')
     end
