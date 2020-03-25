@@ -17,6 +17,7 @@ module Faker
       def name
         fetch('funny_name.name')
       end
+
       ##
       # Retrieves a funny two word name.
       #
@@ -33,6 +34,7 @@ module Faker
 
         sample(two_word_names)
       end
+
       ##
       # Retrieves a funny three word name.
       #
@@ -49,6 +51,7 @@ module Faker
 
         sample(three_word_names)
       end
+
       ##
       # Retrieves a funny four word name.
       #
@@ -65,6 +68,7 @@ module Faker
 
         sample(four_word_names)
       end
+
       ##
       # Retrieves a funny name with an initial.
       #
