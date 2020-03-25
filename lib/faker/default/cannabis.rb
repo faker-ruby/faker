@@ -117,7 +117,7 @@ module Faker
     # @example
     #   Faker::Cannabis.brand #=> "Cannavore Confections"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.brand
       fetch('cannabis.brands')
     end
