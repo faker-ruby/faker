@@ -69,7 +69,7 @@ module Faker
     # @example
     #   Faker::Cannabis.health_benefit #=> "prevents infection"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.health_benefit
       fetch('cannabis.health_benefits')
     end
