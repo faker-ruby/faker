@@ -9,7 +9,7 @@ module Faker
     # @example
     #   Faker::Cannabis.strain #=> "Super Glue"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.strain
       fetch('cannabis.strains')
     end
