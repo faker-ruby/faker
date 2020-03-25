@@ -21,7 +21,7 @@ module Faker
     # @example
     #   Faker::Cannabis.cannabinoid_abbreviation #=> "CBGa"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.cannabinoid_abbreviation
       fetch('cannabis.cannabinoid_abbreviations')
     end
