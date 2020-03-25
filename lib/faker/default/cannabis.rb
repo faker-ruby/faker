@@ -81,7 +81,7 @@ module Faker
     # @example
     #   Faker::Cannabis.category #=> "crystalline"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.category
       fetch('cannabis.categories')
     end
