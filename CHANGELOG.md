@@ -20,7 +20,6 @@
 
 ## Update locales
 
-- Remove female first name 'Miss'
 - [PR #1945](https://github.com/faker-ruby/faker/pull/1945) Remove female first name 'Miss' [@ags](https://github.com/ags)
 - [PR #1929](https://github.com/faker-ruby/faker/pull/1929) Fixed mobile prefixes for en-GB locale [@SamHart91](https://github.com/SamHart91)
 
