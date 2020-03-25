@@ -45,7 +45,7 @@ module Faker
     # @example
     #   Faker::Cannabis.terpene #=> "Terpinene"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.terpene
       fetch('cannabis.terpenes')
     end
