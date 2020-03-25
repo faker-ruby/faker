@@ -33,7 +33,7 @@ module Faker
     # @example
     #   Faker::Cannabis.cannabinoid #=> "Cannabinolic Acid"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.cannabinoid
       fetch('cannabis.cannabinoids')
     end
