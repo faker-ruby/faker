@@ -11,7 +11,7 @@ Faker::TvShows::DrWho.catch_phrase #=> "Fantastic!"
 
 Faker::TvShows::DrWho.quote        #=> "Lots of planets have a north!"
 
-Faker::TvShows::DrWho.villian      #=> "The Master"
+Faker::TvShows::DrWho.villain      #=> "The Master"
 
 Faker::TvShows::DrWho.specie       #=> "Dalek"
 ```

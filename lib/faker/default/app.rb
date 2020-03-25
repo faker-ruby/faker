@@ -42,6 +42,8 @@ module Faker
         parse('app.author')
       end
 
+      # rubocop:disable Metrics/ParameterLists
+
       ##
       # Produces a String representing a semantic version identifier.
       #
@@ -60,7 +62,6 @@ module Faker
       #   Faker::App.semantic_version(patch: 5..6) #=> "7.2.6"
       #
       # @faker.version 1.4.3
-      # rubocop:disable Metrics/ParameterLists
       def semantic_version(legacy_major = NOT_GIVEN, legacy_minor = NOT_GIVEN, legacy_patch = NOT_GIVEN, major: 0..9, minor: 0..9, patch: 1..9)
         # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|

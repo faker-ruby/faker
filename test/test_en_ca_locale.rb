@@ -18,6 +18,7 @@ class TestEnCaLocale < Test::Unit::TestCase
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.default_country.is_a? String
     assert_equal 'Canada', Faker::Address.default_country
+    assert_equal 'CA', Faker::Address.country_code
 
     expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
     assert_match(expected, Faker::Address.postcode)

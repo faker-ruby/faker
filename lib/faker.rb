@@ -151,20 +151,18 @@ module Faker
 
       # Call I18n.translate with our configured locale if no
       # locale is specified
-      def translate(*args)
-        opts = args.last.is_a?(Hash) ? args.pop : {}
+      def translate(*args, **opts)
         opts[:locale] ||= Faker::Config.locale
         opts[:raise] = true
-        I18n.translate(*args.push(opts))
+        I18n.translate(*args, **opts)
       rescue I18n::MissingTranslationData
-        opts = args.last.is_a?(Hash) ? args.pop : {}
         opts[:locale] = :en
 
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
         disable_enforce_available_locales do
-          I18n.translate(*args.push(opts))
+          I18n.translate(*args, **opts)
         end
       end
 
@@ -219,6 +217,10 @@ module Faker
         end
       end
 
+      # Return unique values from the generator every time.
+      #
+      # @param max_retries [Integer] The max number of retries that should be done before giving up.
+      # @return [self]
       def unique(max_retries = 10_000)
         @unique ||= UniqueGenerator.new(self, max_retries)
       end

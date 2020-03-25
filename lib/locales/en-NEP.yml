@@ -1,7 +1,7 @@
 # Country => Nepal
 # This file is formatted for Nepal.
 
-nep:
+en-NEP:
   faker:
     name:
       male_first_name: ["Kamal", "Gopal", "Hari", "Himal", "Baburam", "Prachanda", "Ganesh"]
