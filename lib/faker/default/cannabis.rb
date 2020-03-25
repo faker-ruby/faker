@@ -93,7 +93,7 @@ module Faker
     # @example
     #   Faker::Cannabis.type #=> "indica"
     #
-    # @faker.version 1.9.0
+    # @faker.version 1.9.1
     def self.type
       fetch('cannabis.types')
     end
