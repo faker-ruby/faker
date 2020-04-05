@@ -16,7 +16,7 @@ module Faker
         #   Faker::Rajnikanth.joke
         #     #=> "Rajinikanth is so fast that he always comes yesterday."
         #
-        # @faker.version 2.10.3
+        # @faker.version 2.11.0
         def joke
           fetch('rajnikanth.joke')
         end

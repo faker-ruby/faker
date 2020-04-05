@@ -399,6 +399,11 @@ module Faker
         formatted ? format('%s.%s.%s/%s-%s', *number.scan(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/).flatten) : number
       end
 
+      # Get a random Russian tax number.
+      def russian_tax_number(region: nil, type: :legal)
+        inn_number(region, type)
+      end
+
       ##
       # Produces a company sic code.
       #
@@ -490,6 +495,40 @@ module Faker
           sum += (array[index] * weights[index])
         end
         sum
+      end
+
+      # rubocop:disable Style/AsciiComments
+      #
+      # For more on Russian tax number algorithm here:
+      # https://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика#Вычисление_контрольных_цифр
+      #
+      # Range of regions:
+      # https://ru.wikipedia.org/wiki/Коды_субъектов_Российской_Федерации
+      #
+      # rubocop:enable Style/AsciiComments
+      def inn_number(region, type)
+        n10 = [2, 4, 10, 3, 5, 9, 4, 6, 8]
+        n11 = [7, 2, 4, 10, 3, 5, 9, 4, 6, 8]
+        n12 = [3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8]
+
+        region = format('%.2d', rand(0o1..92)) if region.nil?
+        checksum = if type == :legal
+                     number = region.to_s + rand(1_000_000..9_999_999).to_s
+                     inn_checksum(n10, number)
+                   else
+                     number = region.to_s + rand(10_000_000..99_999_999).to_s
+                     inn_checksum(n11, number) + inn_checksum(n12, number + inn_checksum(n11, number))
+                   end
+
+        number + checksum
+      end
+
+      def inn_checksum(factor, number)
+        (
+          factor.map.with_index.reduce(0) do |v, i|
+            v + i[0] * number[i[1]].to_i
+          end % 11 % 10
+        ).to_s
       end
     end
   end

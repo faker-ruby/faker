@@ -1,5 +1,36 @@
 # Change Log
 
+## [v2.11.0](https://github.com/faker-ruby/faker/tree/v2.11.0) (2020-03-24)
+
+## Bug/Fixes
+
+- [PR #1938](https://github.com/faker-ruby/faker/pull/1938) Fix omniauth consistency [@DouglasLutz](https://github.com/DouglasLutz)
+
+## Documentation
+
+- [PR #1949](https://github.com/faker-ruby/faker/pull/1949) Add YARD doc for Faker::Cannabis [@mashuDuek](https://github.com/mashuDuek)
+- [PR #1944](https://github.com/faker-ruby/faker/pull/1944) Add YARD docs for Faker::FunnyName [@curriecode](https://github.com/curriecode)
+- [PR #1935](https://github.com/faker-ruby/faker/pull/1935) Add YARD docs for the unique method [@connorshea](https://github.com/connorshea)
+
+## Feature Request
+
+- [PR #1946](https://github.com/faker-ruby/faker/pull/1946) Add Faker::Rajnikanth [@wolwire](https://github.com/wolwire)
+- [PR #1940](https://github.com/faker-ruby/faker/pull/1940) Add Faker::Quotes::Chiquito [@jantequera](https://github.com/jantequera)
+- [PR #1883](https://github.com/faker-ruby/faker/pull/1883) add Internet#base64 [@cyrilchampier](https://github.com/cyrilchampier)
+
+## Update locales
+
+- [PR #1945](https://github.com/faker-ruby/faker/pull/1945) Remove female first name 'Miss' [@ags](https://github.com/ags)
+- [PR #1929](https://github.com/faker-ruby/faker/pull/1929) Fixed mobile prefixes for en-GB locale [@SamHart91](https://github.com/SamHart91)
+
+## Update local dependencies
+
+- Update pry requirement from = 0.12.2 to = 0.13.0 (#1951)
+- Update rubocop requirement from = 0.80.0 to = 0.80.1 (#1941)
+- Update rubocop requirement from = 0.79.0 to = 0.80.0 (#1937)
+
+------------------------------------------------------------------------------
+
 ## [v2.10.2](https://github.com/faker-ruby/faker/tree/v2.10.2) (2020-02-15)
 
 This version:

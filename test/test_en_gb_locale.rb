@@ -34,6 +34,13 @@ class TestEnGbLocale < Test::Unit::TestCase
     assert_equal '0', mobile[0]
   end
 
+  def test_en_gb_cell_phone_is_valid
+    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+    assert_match(/07[13456789]\d{8}/, mobile)
+    # Pager numbers begin with 070 and 076xx. 07624 is used for mobiles on the Isle of Man
+    refute_equal(/076(?!24)\d{8}|070\d{8}/, mobile)
+  end
+
   def test_en_gb_postcode_has_outcode_and_incode
     postcode = Faker::Address.postcode
     assert_equal 2, postcode.split(' ').length
