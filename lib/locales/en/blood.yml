@@ -1,0 +1,12 @@
+en:
+  faker:
+    blood:
+      group:
+        - O+
+        - O-
+        - A+
+        - A-
+        - B+
+        - B-
+        - AB+
+        - AB-
