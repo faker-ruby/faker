@@ -6,7 +6,7 @@ en:
         - workstation
       platform: 
         - Linux
-        - OS X
+        - macOS
         - Windows
       os:
         linux:
