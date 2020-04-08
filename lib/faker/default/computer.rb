@@ -32,33 +32,47 @@ module Faker
       ##
       # Produces the name of a computer os.
       #
+      # @param platform [String] optionally specify the platform
       # @return [String]
       #
       # @example
       #   Faker::Computer.os #=> "RHEL 6.10"
       #
       # @faker.version next
-      def os(p = platform)
-        unless fetch_all('computer.platform').include?(p)
-          p = platform
-        end
-        p = search_format(p)
-        fetch("computer.#{p}.os")
+      def os(platform:)
+        platform = self.platform unless fetch_all('computer.platform').include?(platform)
+        platform = search_format(platform)
+        fetch("computer.#{platform}.os")
       end
 
+      ##
+      # Produces a string with computer platform and os
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Computer.stack #=> "Linux, RHEL 6.10"
+      #
+      # @faker.version next
       def stack
-        p = self.platform
-        os = fetch("computer.os.#{search_format(p)}")
-        "#{p}, #{os}"
+        platform = self.platform
+        os = fetch("computer.os.#{search_format(platform)}")
+        "#{platform}, #{os}"
       end
-
 
       private
-
+      # Produces a string compatible with key format from a platform
+      #
+      # @!visibility private
+      # @return [String]
+      #
+      # @example
+      #   search_format(OS X) #=> "os_x"
+      #
+      # @faker.version next
       def search_format(key)
         key.split.length > 1 ? key.split.join('_').downcase : key.downcase
       end
-
     end
   end
 end

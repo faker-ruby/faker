@@ -187,6 +187,26 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_match(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, sample)
   end
 
+  def test_russian_tax_number_default
+    assert @tester.russian_tax_number.match(/\d{10}/)
+  end
+
+  def test_russian_tax_number_individual
+    assert @tester.russian_tax_number(type: :individual).match(/\d{12}/)
+  end
+
+  def test_russian_tax_number_region
+    assert @tester.russian_tax_number(region: '77').match(/^77/)
+  end
+
+  def test_russian_tax_number_checksum
+    base_number = @tester.russian_tax_number
+    number = base_number[0..-2]
+    checksum = base_number.split('').last.to_i
+
+    assert((inn_checksum(number) - checksum).zero?)
+  end
+
   def test_sic_code
     assert @tester.sic_code.match(/\d\d\d\d/)
   end
@@ -218,5 +238,11 @@ class TestFakerCompany < Test::Unit::TestCase
     end
 
     luhn_split.compact.inject(0) { |sum, x| sum + x }
+  end
+
+  def inn_checksum(number)
+    [2, 4, 10, 3, 5, 9, 4, 6, 8].map.with_index.reduce(0) do |v, i|
+      v + i[0] * number[i[1]].to_i
+    end % 11 % 10
   end
 end

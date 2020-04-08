@@ -23,6 +23,10 @@ module Faker
         "#{country_code} #{cell_phone}"
       end
 
+      def cell_phone_in_e164
+        cell_phone_with_country_code.delete('^+0-9')
+      end
+
       # US and Canada only
       def area_code
         fetch('phone_number.area_code')

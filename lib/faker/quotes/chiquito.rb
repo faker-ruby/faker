@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Quotes::Chiquito.expression # => "Ereh un torpedo!"
         #
-        # @faker.version next
+        # @faker.version 2.11.0
         def expression
           sample(expressions)
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Quotes::Chiquito.term # => "Fistro"
         #
-        # @faker.version next
+        # @faker.version 2.11.0
         def term
           sample(terms)
         end
@@ -39,7 +39,7 @@ module Faker
         #   Faker::Quotes::Chiquito.joke # => "- Papar papar llevame al circo!
         #                                      - Noorl! El que quiera verte que venga a la casa"
         #
-        # @faker.version next
+        # @faker.version 2.11.0
         def joke
           sample(jokes)
         end
@@ -52,7 +52,7 @@ module Faker
         # @example
         #   Faker::Quotes::Chiquito.sentence # => "Te llamo trigo por no llamarte Rodrigo"
         #
-        # @faker.version next
+        # @faker.version 2.11.0
         def sentence
           sample(sentences)
         end
