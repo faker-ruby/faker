@@ -62,6 +62,7 @@ module Faker
 
       private
       # Produces a string compatible with key format from a platform
+      # Replacing ' ' with '_' not currently needed since 'OS X' changed to 'macOS'
       #
       # @!visibility private
       # @return [String]

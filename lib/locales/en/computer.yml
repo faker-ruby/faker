@@ -23,7 +23,7 @@ en:
           - openSUSE Leap 15.1
           - Ubuntu Desktop 18.04
           - Ubuntu Desktop 19.10
-        os_x:
+        macos:
           - Catalina (10.15)
           - Mojave (10.14)
           - High Sierra (10.13)
