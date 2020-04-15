@@ -56,23 +56,8 @@ module Faker
       # @faker.version next
       def stack
         platform = self.platform
-        os = fetch("computer.os.#{search_format(platform)}")
+        os = fetch("computer.os.#{platform.downcase}")
         "#{platform}, #{os}"
-      end
-
-      private
-      # Produces a string compatible with key format from a platform
-      # Replacing ' ' with '_' not currently needed since 'OS X' changed to 'macOS'
-      #
-      # @!visibility private
-      # @return [String]
-      #
-      # @example
-      #   search_format(OS X) #=> "os_x"
-      #
-      # @faker.version next
-      def search_format(key)
-        key.split.length > 1 ? key.split.join('_').downcase : key.downcase
       end
     end
   end

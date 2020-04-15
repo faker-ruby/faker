@@ -22,7 +22,7 @@ class TestFakerComputer < Test::Unit::TestCase
                           .match(/\A(?<platform>([[:alnum:]]+\s?){1,5}), (?<os>([[:alnum:]]+-?.?\)?\(?\s?){1,5})\z/)
 
     platform = stack[:platform]
-    search_format_platform = platform.split.length > 1 ? platform.downcase.split.join('_') : platform.downcase
+    search_format_platform = platform.downcase
     os = stack[:os]
 
     oses = Faker::Base.fetch_all("computer.os.#{search_format_platform}")
