@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Games::DnD.race #=> "Dwarf"
         #
-        # @faker.version 2.11.0
+        # @faker.version next
         def species
           fetch('dnd.species')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::DnD.klass #=> "Warlock"
         #
-        # @faker.version 2.11.0
+        # @faker.version next
         def klass
           fetch('dnd.klasses')
         end
@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Games::DnD.background #=> "Urchin"
         #
-        # @faker.version 2.11.0
+        # @faker.version next
         def background
           fetch('dnd.backgrounds')
         end
@@ -51,7 +51,7 @@ module Faker
         # @example
         #   Faker::Games::DnD.alignment #=> "Lawful Neutral"
         #
-        # @faker.version 2.11.0
+        # @faker.version next
         def alignment
           fetch('dnd.alignments')
         end
