@@ -3,16 +3,16 @@
 module Faker
   class PhoneNumber < Base
     class << self
-      def phone_number(type='local')
+      def phone_number(type = 'local')
         parse("contact_number.phone_number.formats.#{type}")
       end
 
-      def cell_phone(type='local')
+      def cell_phone(type = 'local')
         parse("contact_number.cell_phone.formats.#{type}")
       end
 
       def country_code
-        "#{fetch('contact_number.country_code')}"
+        fetch('contact_number.country_code')
       end
 
       def phone_number_with_country_code
