@@ -82,8 +82,28 @@ nl:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
-    phone_number:
-      formats: ["(####) ######", "##########", "06########", "06 #### ####"]
+    contact_number:
+      country_code: ['+31']
+      phone_number:
+        formats:
+          local:
+            - "(####) ######"
+            - "##########"
+            - "06########"
+            - "06 #### ####"
+          intl:
+            - " (####) ######"
+            - "##########"
+            - "6########"
+            - " 6 #### ####"
+      cell_phone:
+        formats:
+          local:
+            - "0## #######"
+            - "########"
+          intl:
+            - " ## #######"
+            - "########"
 
     university:
       prefix: [Universiteit, Hogeschool]

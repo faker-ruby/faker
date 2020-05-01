@@ -59,13 +59,26 @@ sv:
         - "#{first_name} #{last_name}"
         - "#{prefix} #{first_name} #{last_name}"
 
-    phone_number:
-      formats: ['####-#####', '####-######']
-    cell_phone:
-      formats:
-        - '070-###-####'
-        - '076-###-####'
-        - '073-###-####'
+    contact_number:
+      country_code: ['+46']
+      phone_number:
+        formats:
+          local:
+            - '####-#####'
+            - '####-######'
+          intl:
+            - '-####-#####'
+            - ' ####-######'
+      cell_phone:
+        formats:
+          local:
+            - '070-###-####'
+            - '076-###-####'
+            - '073-###-####'
+          intl:
+            - '70-###-####'
+            - ' 76-###-####'
+            - ' 73-###-####'
 
     commerce:
       color: [vit, silver, grå, svart, röd, grön, blå, gul, lila, indigo, guld, brun, rosa, purpur, korall]

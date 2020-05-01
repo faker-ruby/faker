@@ -127,7 +127,7 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_cell_phone_countrycode
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+    mobile = Faker::PhoneNumber.cell_phone_with_country_code.gsub(/\D/, '')
     assert_equal '4', mobile[0]
     assert_equal '9', mobile[1]
   end

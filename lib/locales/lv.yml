@@ -49,7 +49,21 @@ lv:
       name_with_middle:
         - "#{first_name} #{last_name} #{last_name}"
 
-    phone_number:
-      formats: ["5# ### ###", "6# ### ###", "7# ### ###"]
-    cell_phone:
-      formats: ["2## ### ###"]
+    contact_number:
+      country_code: ['+371']
+      phone_number:
+        formats:
+          local:
+            - "5# ### ###"
+            - "6# ### ###"
+            - "7# ### ###"
+          intl:
+            - "5# ### ###"
+            - " 6# ### ###"
+            - " 7# ### ###"
+      cell_phone:
+        formats:
+          local:
+            - "2## ### ###"
+          intl:
+            - " 2## ### ###"

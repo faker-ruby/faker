@@ -40,5 +40,23 @@ bg:
         - "#{female_first_name} #{female_middle_name} #{female_last_name}"
         - "#{female_last_name} #{female_first_name} #{female_middle_name}"
 
-    cell_phone:
-      formats: ['088#######', '087#######', '089#######']
+    contact_number:
+      country_code: ['+359']
+      phone_number:
+        formats:
+          local:
+            - '02### ####'
+            - '02-###-####'
+            - '02#######'
+          intl:
+            - " 2 ### ####"
+            - "-2-###-####"
+      cell_phone:
+        formats:
+          local:
+            - '088#######'
+            - '087#######'
+            - '089#######'
+          intl:
+            - " 88#######"
+            - "-89#######"

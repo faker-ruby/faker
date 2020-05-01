@@ -62,5 +62,19 @@ pt:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
-    phone_number:
-      formats: ["(##) ###-####", "+351 (##) ###-####", "884 ###-###"]
+    contact_number:
+      country_code: ['+351']
+      phone_number:
+        formats:
+          local:
+            - "(##) ###-####"
+            - "884 ###-###"
+          intl:
+            - " (##) ###-####"
+            - " 884 ###-###"
+      cell_phone:
+        formats:
+          local:
+            - '9## ### ###'
+          intl:
+            - ' 9## ### ###'

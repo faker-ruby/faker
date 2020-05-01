@@ -29,7 +29,29 @@ en-SG:
       street_address:
         - "#{building_number} #{street_name}"
       default_country: [Singapore]
-    phone_number:
-      formats: ['+65 6### ####', '+65 9### ####', '+65 8### ####']
+
+    contact_number:
+      country_code: ['+65']
+      phone_number:
+        formats:
+          local:
+            - '6### ####'
+            - '9### ####'
+            - '8### ####'
+          intl:
+            - ' 6### ####'
+            - ' 9### ####'
+            - ' 8### ####'
+      cell_phone:
+        formats:
+          local:
+            - '6### ####'
+            - '9### ####'
+            - '8### ####'
+          intl:
+            - ' 6### ####'
+            - ' 9### ####'
+            - ' 8### ####'
+
     vehicle:
       license_plate: 'S??####'

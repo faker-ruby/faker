@@ -25,5 +25,27 @@ zh-TW:
       name_with_middle: # Chinese names don't have middle names or spaces
         - "#{last_name}#{first_name}"
 
-    phone_number:
-      formats: ['###-########', '####-########', '###########']
+    contact_number:
+      country_code: ['+886']
+      phone_number:
+        formats:
+          local:
+            - '###-########'
+            - '####-########'
+            - '###########'
+          intl:
+            - '###-########'
+            - ' ###-########'
+            - '####-########'
+            - '###########'
+      cell_phone:
+        formats:
+          local:
+            - '###-########'
+            - '####-########'
+            - '###########'
+          intl:
+            - '###-########'
+            - ' ###-########'
+            - '####-########'
+            - '###########'

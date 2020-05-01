@@ -60,8 +60,39 @@ it:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
-    phone_number:
-      formats: ['+## ### ## ## ####', '+## ## #######', '+## ## ########', '+## ### #######', '+## ### ########', '+## #### #######', '+## #### ########', '0## ### ####', '+39 0## ### ###', '3## ### ###', '+39 3## ### ###']
+
+    contact_number:
+      country_code: ['+39']
+      phone_number:
+        formats:
+          local:
+            - '### ## ## ####'
+            - '## #######'
+            - '## ########'
+            - '### #######'
+            - '### ########'
+            - '#### #######'
+            - '#### ########'
+            - '0## ### ####'
+            - '0## ### ###'
+            - '3## ### ###'
+          intl:
+            - ' ### ## ## ####'
+            - ' ## #######'
+            - ' ## ########'
+            - ' ### #######'
+            - ' ### ########'
+            - ' #### #######'
+            - ' #### ########'
+            - ' ## ### ####'
+            - ' ## ### ###'
+      cell_phone:
+        formats:
+          local:
+            - '3## #######'
+          intl:
+            - ' 3## #######'
+
     subscription:
       plans: ["Prova gratuita", "Basico", "Starter", "Essential", "Studente", Bronze", "Standard", "Silver", "Gold", "Platinum", "Profesional", "Business", "Diamond", "Premium"]
       statuses: ["Attivo", "Inattivo", "Bloccato", "In sospeso"]

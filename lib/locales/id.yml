@@ -20,5 +20,20 @@ id:
         - "#{street_prefix} #{street_title}"
       street_address:
         - "#{street_name} No. #{building_number}"
-    phone_number:
-      formats: ['08##########', '08##-####-####', '+628#########']
+
+    contact_number:
+      country_code: ['+62']
+      phone_number:
+        formats:
+          local:
+            - '08##########'
+            - '08##-####-####'
+          intl:
+            - '8##########'
+            - ' 8##-####-####'
+      cell_phone:
+        formats:
+          local:
+            - '## ####-####'
+          intl:
+            - ' ## ####-####'

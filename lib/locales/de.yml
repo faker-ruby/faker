@@ -107,11 +107,26 @@ de:
         material: [Stahl, Holz, Beton, Plastik, Baumwoll, Granit, Gummi, Leder, Seiden, Wolle, Leinen, Marmor, Eisen, Bronze, Kupfer, Aluminium, Papier]
         product: [Stuhl, Auto, Computer, Handschuh, Hose, Hemd, Tisch, Schuh, Hut, Teller, Messer, Flasche, Mantel, Lampe, Tastatur, Tasche, Bank, Uhr, Armbanduhr, Geldbörse]
 
-    phone_number:
-      formats: ['(0###) #########', '(0####) #######', '+49-###-#######', '+49-####-########']
+    contact_number:
+      country_code: ['+49']
+      phone_number:
+        formats:
+          local:
+            - '(0###) #########'
+            - '(0####) #######'
+          intl:
+            - '-###-#######'
+            - '-####-########'
+      cell_phone:
+        formats:
+          local:
+            - '015#-#######'
+            - '016#-#######'
+            - '017#-#######'
+          intl:
+            - '-15#-#######'
+            - ' 16# #######'
 
-    cell_phone:
-      formats: ['+49-15##-#######', '+49-16#-#######', '+49-17#-#######']
 
     book:
       title: ['Also sprach Zarathustra', 'Andorra', 'Ansichten Eines Clowns', 'Atemschaukel', 'Aus dem Leben eines Taugenichts', 'Bekenntnisse des Hochstaplers Felix Krull', 'Berlin Alexanderplatz', 'Biedermann und die Brandstifter', 'Billiard um halbzehn', 'Catharina von Georgien', 'Cleopatra', 'Damals war es Friedrich', 'Dantons Tod', 'Das Boot', 'Das Marmorbild', 'Das Parfum', 'Das Schiff Esperanza', 'Das Versprechen', 'Das kalte Herz', 'Das steinerne Herz', 'Der (kleine) Schatz im Kugelbauch', 'Der Augenblick der Liebe', 'Der Ausflug der toten Mädchen', 'Der Besuch der alten Dame', 'Der Brief des Lord Chandos', 'Der Goldene Topf', 'Der Hauptmann von Köpenick', 'Der Mann ohne Eigenschaften', 'Der Prozess', 'Der Richter und sein Henker', 'Der Sandmann', 'Der Schimmelreiter', 'Der Spaziergang', 'Der Stechlin', 'Der Stellvertreter', 'Der Steppenwolf', 'Der Tod in Venedig und andere Erzählungen', 'Der Tor und der Tod', 'Der Untertan', 'Der Verdacht', 'Der Vorleser', 'Der Vulkan', 'Der Zauberberg', 'Der abenteuerliche Simplicissimus', 'Der arme Spielmann', 'Der eiserne Gustav', 'Der geteilte Himmel', 'Der grüne Heinrich', 'Der gute Mensch von Sezuan', 'Der veruntreute Himmel', 'Der zerbrochene Krug', 'Des Teufels General', 'Deutschland. Ein Wintermärchen', 'Die Aufzeichnungen des Malte Laurids Brigge', 'Die Blechtrommel', 'Die Box', 'Die Buddenbrooks', 'Die Dreigroschenoper', 'Die Erschiessung des Landesverräters Ernst S.', 'Die Lehre der Sainte-Victoire', 'Die Leiden des jungen Werther', 'Die Leute von Seldwyla', 'Die Marquise von O...', 'Die Panne', 'Die Physiker', 'Die Rote', 'Die Räuber', 'Die Verwandlung/Erstes Leid', 'Die Waffen nieder!', 'Die Welt als Wille & Wahn', 'Die neuen Leiden des jungen Werthers', 'Die unendliche Geschichte', 'Die verlorene Ehre der Katharina Blum', 'Die zärtlichen Schwestern', 'Don Karlos', 'Effi Briest', 'Ehen in Philippsburg', 'Eiche und Angora', 'Ein fliehendes Pferd', 'Ende einer Dienstfahrt', 'Es geschah im Nachbarhaus', 'Fabian', 'Faserland', 'Faust, Part I', 'Franziska Linkerhand', 'Frühlings Erwachen', 'Ganz unten', 'Gehirne', 'Die Weber', 'Götz von Berlichingen', 'Haus ohne Hüter', 'Heidi', 'Heinrich von Ofterdingen', 'Helden wie wir', 'Homo faber', 'Hyperion oder der Eremit in Griechenland', 'Im Krebsgang', 'Im Westen nichts Neues', 'Iphigenie auf Tauris', 'Italienische Reise', 'Jahrestage', 'Jakob der Lügner', 'Jedermann', 'Kabale und Liebe', 'Katz und Maus', 'Leben des Galilei', 'Lenz', 'Lerne lachen ohne zu weinen', 'Emilia Galotti', 'Lieutenant Gustl', 'Maria Magdalene', 'Maria Stuart', 'Mario und der Zauberer', 'Mephisto', 'Minna von Barnhelm', 'Miss Sara Sampson', 'Mutter Courage und ihre Kinder', 'Narziss und Goldmund', 'Narziß und Goldmund', 'Nathan der Weise', 'Paare, Passanten', 'Panter, Tiger & Co.', 'Reigen', 'Romeo und Julia auf dem Dorfe', 'Romulus der Große', 'Sansibar oder der letzte Grund', 'Schachnovelle', 'Siddhartha', 'Sterbender Cato', 'Stolz und Vorurteil', 'Tauben im Gras', 'Till Eulenspiegel', 'Traumnovelle/Die Braut', 'Tödliche Versprechen/Das Imperium der Wölfe', 'Unterhaltungen deutscher Ausgewanderten', 'Unterm Rad', 'Vor Sonnenaufgang', 'Wer einmal aus dem Blechnapf frisst', 'Wilhelm Meisters Wanderjahre oder die Entsagenden', 'Wilhelm Tell', 'Winnetou', 'Winnetou II', 'Woyzeck', 'Über das Studium der griechischen Poesie']

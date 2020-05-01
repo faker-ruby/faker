@@ -29,7 +29,20 @@ fi-FI:
         - "#{first_name} #{last_name}"
       name_with_middle:
         - "#{first_name} #{last_name} #{last_name}"
-    phone_number:
-      formats: ['##-######', '###-#######']
-    cell_phone:
-      formats: ['0##-#######']
+
+    contact_number:
+      country_code: ['+358']
+      phone_number:
+        formats:
+          local:
+            - '##-######'
+            - '###-#######'
+          intl:
+            - '-##-######'
+            - '-###-#######'
+      cell_phone:
+        formats:
+          local:
+            - '0##-#######'
+          intl:
+            - '-##-#######'

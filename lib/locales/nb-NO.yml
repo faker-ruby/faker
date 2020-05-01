@@ -55,8 +55,25 @@ nb-NO:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
-    phone_number:
-      formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]
-
-    cell_phone:
-      formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]
+    contact_number:
+      country_code: ['+47']
+      phone_number:
+        formats:
+          local:
+            - "########"
+            - "## ## ## ##"
+            - "### ## ###"
+          intl:
+            - "########"
+            - " ### ## ###"
+            - " ## ## ## ##"
+      cell_phone:
+        formats:
+          local:
+            - "########"
+            - "## ## ## ##"
+            - "### ## ###"
+          intl:
+            - "########"
+            - " ### ## ###"
+            - " ## ## ## ##"

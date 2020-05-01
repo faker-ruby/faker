@@ -74,5 +74,23 @@ sk:
         - "#{male_first_name}"
         - "#{female_first_name}"
         
-    phone_number:
-      formats: ['09## ### ###', '0## #### ####', '0# #### ####', '+421 ### ### ###']
+    contact_number:
+      country_code: ['+421']
+      phone_number:
+        formats:
+          local:
+            - '09## ### ###'
+            - '0## #### ####'
+            - '0# #### ####'
+          intl:
+            - '9## ### ###'
+            - '## #### ####'
+            - '# #### ####'
+            - ' ### ### ###'
+      cell_phone:
+        formats:
+          local:
+            - '09## ### ###'
+          intl:
+            - '9## ### ###'
+            - ' 9## ### ###'

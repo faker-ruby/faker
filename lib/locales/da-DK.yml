@@ -52,15 +52,27 @@ da-DK:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
-    phone_number:
-      formats:
-        - '## ## ## ##'
-        - '##-##-##-##'
-    cell_phone:
-      formats:
-        - '20 ## ## ##'
-        - '30 ## ## ##'
-        - '40 ## ## ##'
+    contact_number:
+      country_code: ['+45']
+      phone_number:
+        formats:
+          local:
+            - '## ## ## ##'
+            - '##-##-##-##'
+          intl:
+            - ' ## ## ## ##'
+            - '-##-##-##-##'
+      cell_phone:
+        formats:
+          local:
+            - '20 ## ## ##'
+            - '30 ## ## ##'
+            - '40 ## ## ##'
+          intl:
+            - ' 20 ## ## ##'
+            - ' 30 ## ## ##'
+            - ' 40 ## ## ##'
+
 
     color:
       name: [hvid, sølv, grå, sort, rød, grøn, blå, gul, lilla, guld, brun, rosa]
