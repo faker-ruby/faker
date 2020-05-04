@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'pry'
 
 module Faker
   class Number < Base
@@ -83,7 +84,6 @@ module Faker
           keywords << :l_digits if legacy_l_digits != NOT_GIVEN
           keywords << :r_digits if legacy_r_digits != NOT_GIVEN
         end
-
         l_d = number(digits: l_digits)
         r_d = if r_digits == 1
                 generate(r_digits)
@@ -92,6 +92,24 @@ module Faker
                 # so it does not get truncated on converting to float
                 generate(r_digits - 1).join + non_zero_digit.to_s
               end
+        "#{l_d}.#{r_d}".to_f
+      end
+
+      def decimal_within(
+        legacy_l_digits = NOT_GIVEN,
+        legacy_r_digits = NOT_GIVEN,
+        legacy_range = NOT_GIVEN,
+        l_digits: 5, r_digits: 2, range: 1.00..5000.00
+      )
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :l_digits if legacy_l_digits != NOT_GIVEN
+          keywords << :r_digits if legacy_r_digits != NOT_GIVEN
+          keywords << :range if legacy_range != NOT_GIVEN
+        end
+
+        return if l_digits < 1 || r_digits < 1
+        r_d = rand(range.min..range.max).round
+        l_d = rand(range.min..range.max).round
         "#{l_d}.#{r_d}".to_f
       end
 
