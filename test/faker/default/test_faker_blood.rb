@@ -7,6 +7,14 @@ class TestFakerBlood < Test::Unit::TestCase
     @tester = Faker::Blood
   end
 
+  def test_type
+    assert @tester.group.match(/[ABO]{1,2}/i)
+  end
+
+  def test_rh_factor
+    assert @tester.group.match(/[+-]/i)
+  end
+
   def test_group
     assert @tester.group.match(/[ABO]{1,2}[+-]/i)
   end

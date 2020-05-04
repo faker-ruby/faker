@@ -6,6 +6,32 @@ module Faker
 
     class << self
       ##
+      # Produces a random blood type.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Blood.type #=> "AB"
+      #
+      # @faker.version next
+      def type
+        fetch('blood.type')
+      end
+
+      ##
+      # Produces a random blood RH-Factor.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Blood.rh_factor #=> "-"
+      #
+      # @faker.version next
+      def rh_factor
+        fetch('blood.rh_factor')
+      end
+
+      ##
       # Produces a random blood group name.
       #
       # @return [String]
@@ -15,7 +41,7 @@ module Faker
       #
       # @faker.version next
       def group
-        fetch('blood.group')
+        parse('blood.group')
       end
     end
   end
