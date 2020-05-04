@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'pry'
 
 module Faker
   class Number < Base
@@ -84,6 +83,7 @@ module Faker
           keywords << :l_digits if legacy_l_digits != NOT_GIVEN
           keywords << :r_digits if legacy_r_digits != NOT_GIVEN
         end
+
         l_d = number(digits: l_digits)
         r_d = if r_digits == 1
                 generate(r_digits)
@@ -94,6 +94,19 @@ module Faker
               end
         "#{l_d}.#{r_d}".to_f
       end
+
+      ##
+      # Produces a number between two provided values. Boundaries are inclusive.
+      #
+      # @param l_digits [Integer] Number of digits that the generated decimal should have to the left of the decimal point.
+      # @param r_digits [Integer] Number of digits that the generated decimal should have to the right of the decimal point.
+      # @param range [Range] The range from which to generate a number.
+      # @return [Float]
+      #
+      # @example
+      #   Faker::Number.decimal_within(l_digits: 1, r_digits: 1, range: 1..10) #=> 4.0
+      #
+      # @faker.version 1.0.0
 
       def decimal_within(
         legacy_l_digits = NOT_GIVEN,
