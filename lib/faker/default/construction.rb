@@ -10,7 +10,7 @@ module Faker
     # @example
     #   Faker::Construction.material #=> "Wood"
     #
-    # @faker.version 1.8.0
+    # @faker.version 1.9.2
     def self.material
       fetch('construction.materials')
     end
@@ -23,7 +23,7 @@ module Faker
     # @example
     #   Faker::Construction.subcontract_category #=> "Curb & Gutter"
     #
-    # @faker.version 1.8.0
+    # @faker.version 1.9.2
     def self.heavy_equipment
       fetch('construction.heavy_equipment')
     end
@@ -36,7 +36,7 @@ module Faker
     # @example
     #   Faker::Construction.heavy_equipment #=> "Excavator"
     #
-    # @faker.version 1.8.0
+    # @faker.version 1.9.2
     def self.trade
       fetch('construction.trades')
     end
@@ -49,7 +49,7 @@ module Faker
     # @example
     #   Faker::Construction.trade #=> "Carpenter"
     #
-    # @faker.version 1.8.0
+    # @faker.version 1.9.2
     def self.subcontract_category
       fetch('construction.subcontract_categories')
     end
@@ -62,7 +62,7 @@ module Faker
     # @example
     #   Faker::Construction.standard_cost_code #=> "1-000 - Purpose"
     #
-    # @faker.version 1.8.0
+    # @faker.version 1.9.2
     def self.standard_cost_code
       fetch('construction.standard_cost_codes')
     end
@@ -75,7 +75,7 @@ module Faker
     # @example
     #   Faker::Construction.role #=> "Engineer"
     #
-    # @faker.version 1.8.0
+    # @faker.version 1.9.2
     def self.role
       fetch('construction.roles')
     end
