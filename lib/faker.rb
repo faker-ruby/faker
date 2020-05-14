@@ -9,7 +9,7 @@ end
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
 
-Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
 
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 I18n.reload! if I18n.backend.initialized?
@@ -315,4 +315,4 @@ module Faker
 end
 
 # require faker objects
-Dir.glob(File.join(File.dirname(__FILE__), 'faker', '/**/*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).sort.each { |file| require file }
