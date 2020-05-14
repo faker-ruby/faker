@@ -30,9 +30,15 @@ module Faker
 
         categories = categories(num)
 
-        return merge_categories(categories) if num > 1
-
-        categories[0]
+        if categories.is_a?(Array)
+          if categories.length > 1
+            merge_categories(categories)
+          else
+            categories[0]
+          end
+        else
+          categories
+        end
       end
 
       def product_name
@@ -60,13 +66,7 @@ module Faker
       private
 
       def categories(num)
-        categories = []
-        while categories.length < num
-          category = fetch('commerce.department')
-          categories << category unless categories.include?(category)
-        end
-
-        categories
+        sample(fetch_all('commerce.department'), num)
       end
 
       def merge_categories(categories)

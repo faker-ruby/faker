@@ -225,8 +225,16 @@ module Faker
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
 
-      def sample(list)
-        list.respond_to?(:sample) ? list.sample(random: Faker::Config.random) : list
+      def sample(list, num = nil)
+        if list.respond_to?(:sample)
+          if num
+            list.sample(num, random: Faker::Config.random)
+          else
+            list.sample(random: Faker::Config.random)
+          end
+        else
+          list
+        end
       end
 
       def shuffle(list)
