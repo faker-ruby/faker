@@ -12,7 +12,7 @@ module Faker
       # @example
       #   Faker::Stripe.valid_card #=> "4242424242424242"
       #   Faker::Stripe.valid_card(card_type: "visa_debit") #=> "4000056655665556"
-      # #
+      #
       # @faker.version 1.9.0
       def valid_card(legacy_card_type = NOT_GIVEN, card_type: nil)
         warn_for_deprecated_arguments do |keywords|
