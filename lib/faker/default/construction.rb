@@ -16,19 +16,6 @@ module Faker
     end
 
     ##
-    # Produces a random subcontract category.
-    #
-    # @return [String]
-    #
-    # @example
-    #   Faker::Construction.subcontract_category #=> "Curb & Gutter"
-    #
-    # @faker.version 1.9.2
-    def self.heavy_equipment
-      fetch('construction.heavy_equipment')
-    end
-
-    ##
     # Produces a random heavy_equipment.
     #
     # @return [String]
@@ -37,8 +24,8 @@ module Faker
     #   Faker::Construction.heavy_equipment #=> "Excavator"
     #
     # @faker.version 1.9.2
-    def self.trade
-      fetch('construction.trades')
+    def self.heavy_equipment
+      fetch('construction.heavy_equipment')
     end
 
     ##
@@ -48,6 +35,19 @@ module Faker
     #
     # @example
     #   Faker::Construction.trade #=> "Carpenter"
+    #
+    # @faker.version 1.9.2
+    def self.trade
+      fetch('construction.trades')
+    end
+
+    ##
+    # Produces a random subcontract category.
+    #
+    # @return [String]
+    #
+    # @example
+    #   Faker::Construction.subcontract_category #=> "Curb & Gutter"
     #
     # @faker.version 1.9.2
     def self.subcontract_category
