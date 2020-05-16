@@ -108,7 +108,7 @@ module Faker
       ##
       # Produces a random year that is always in the future.
       #
-      # @return [Date]
+      # @return [String]
       #
       # @example
       #   Faker::Stripe.year #=> "2018" # This will always be a year in the future
