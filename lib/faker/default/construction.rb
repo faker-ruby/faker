@@ -16,7 +16,7 @@ module Faker
     end
 
     ##
-    # Produces a random heavy_equipment.
+    # Produces a random heavy equipment.
     #
     # @return [String]
     #
