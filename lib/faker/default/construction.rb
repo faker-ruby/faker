@@ -55,7 +55,7 @@ module Faker
     end
 
     ##
-    # Produces a random standard_cost_code.
+    # Produces a random standard cost code.
     #
     # @return [String]
     #
