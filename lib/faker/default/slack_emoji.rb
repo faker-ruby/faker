@@ -4,7 +4,7 @@ module Faker
   class SlackEmoji < Base
     class << self
       ##
-      # Produces a random slack emoji from people category
+      # Produces a random slack emoji from people category.
       #
       # @return [String]
       #
