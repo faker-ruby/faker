@@ -6,7 +6,7 @@ SimpleCov.start do
   add_filter ['.bundle', 'lib/extensions', 'test']
 end
 
-require 'test/support/assert_not_english'
+require_relative 'support/assert_not_english'
 require 'minitest/autorun'
 require 'test/unit'
 require 'rubygems'
