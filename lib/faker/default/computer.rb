@@ -32,17 +32,16 @@ module Faker
       ##
       # Produces the name of a computer os.
       #
-      # @param platform [String] optionally specify the platform
+      # @param platform [String] optionally specify the platform `linux`, `macos`, or `windows`.
       # @return [String]
       #
       # @example
       #   Faker::Computer.os #=> "RHEL 6.10"
       #
       # @faker.version next
-      def os(platform:)
+      def os(platform: self.platform)
         platform = self.platform unless fetch_all('computer.platform').include?(platform)
-        platform = search_format(platform)
-        fetch("computer.#{platform}.os")
+        fetch("computer.os.#{platform.downcase}")
       end
 
       ##
