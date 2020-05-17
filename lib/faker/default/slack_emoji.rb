@@ -17,7 +17,7 @@ module Faker
       end
 
       ##
-      # Produces a random slack emoji from nature category
+      # Produces a random slack emoji from nature category.
       #
       # @return [String]
       #
@@ -30,7 +30,7 @@ module Faker
       end
 
       ##
-      # Produces a random slack emoji from food and drink category
+      # Produces a random slack emoji from food and drink category.
       #
       # @return [String]
       #
@@ -43,7 +43,7 @@ module Faker
       end
 
       ##
-      # Produces a random slack emoji from celebration category
+      # Produces a random slack emoji from celebration category.
       #
       # @return [String]
       #
@@ -56,7 +56,7 @@ module Faker
       end
 
       ##
-      # Produces a random slack emoji from activity category
+      # Produces a random slack emoji from activity category.
       #
       # @return [String]
       #
@@ -69,7 +69,7 @@ module Faker
       end
 
       ##
-      # Produces a random slack emoji from travel and places category
+      # Produces a random slack emoji from travel and places category.
       #
       # @return [String]
       #
@@ -82,7 +82,7 @@ module Faker
       end
 
       ##
-      # Produces a random slack emoji from objects and symbols category
+      # Produces a random slack emoji from objects and symbols category.
       #
       # @return [String]
       #
@@ -95,7 +95,7 @@ module Faker
       end
 
       ##
-      # Produces a random slack emoji from custom category
+      # Produces a random slack emoji from custom category.
       #
       # @return [String]
       #
@@ -108,7 +108,7 @@ module Faker
       end
 
       ##
-      # Produces a random slack emoji from any category
+      # Produces a random slack emoji from any category.
       #
       # @return [String]
       #
