@@ -6,7 +6,7 @@ module Faker
 
     class << self
       ##
-      # Produces a random university name
+      # Produces a random university name.
       #
       # @return [String]
       #
@@ -19,7 +19,7 @@ module Faker
       end
 
       ##
-      # Produces a random university prefix
+      # Produces a random university prefix.
       #
       # @return [String]
       #
@@ -32,7 +32,7 @@ module Faker
       end
 
       ##
-      # Produces a random university suffix
+      # Produces a random university suffix.
       #
       # @return [String]
       #
@@ -45,7 +45,7 @@ module Faker
       end
 
       ##
-      # Produces a random greek organization
+      # Produces a random greek organization.
       #
       # @return [String]
       #
@@ -58,7 +58,7 @@ module Faker
       end
 
       ##
-      # Produces a greek alphabet
+      # Produces a greek alphabet.
       #
       # @return [Array]
       #
