@@ -34,7 +34,7 @@ module Faker
           default_profile: Faker::Boolean.boolean(true_ratio: 0.1),
           description: Faker::Lorem.sentence,
           entities: user_entities,
-          favourites_count: Faker::Nuvaluember.between(to: 1, from: 100_000),
+          favourites_count: Faker::Number.between(to: 1, from: 100_000),
           follow_request_sent: false,
           followers_count: Faker::Number.between(to: 1, from: 10_000_000),
           following: false,
