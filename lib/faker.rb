@@ -2,10 +2,7 @@
 
 mydir = __dir__
 
-begin
-  require 'psych'
-end
-
+require 'psych'
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
 
