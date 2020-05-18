@@ -5,6 +5,17 @@ module Faker
     flexible :bank
 
     class << self
+      ##
+      # Produces a bank account number.
+      #
+      # @param digits [Integer] Number of digits that the generated account number should have.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Bank.account_number #=> 6738582379
+      #   Faker::Bank.account_number(digits: 13) #=> 673858237902
+      #
+      # @faker.version 1.9.1
       def account_number(legacy_digits = NOT_GIVEN, digits: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :digits if legacy_digits != NOT_GIVEN
@@ -17,6 +28,17 @@ module Faker
         output[0...digits]
       end
 
+      ##
+      # Produces a bank iban number.
+      #
+      # @param country_code [String] Specifies what country prefix is used to generate the iban code.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Bank.iban #=> "GB76DZJM33188515981979"
+      #   Faker::Bank.iban(country_code: "be") #=> "BE6375388567752043"
+      #
+      # @faker.version 1.7.0
       def iban(legacy_country_code = NOT_GIVEN, country_code: 'GB')
         # Each country has its own format for bank accounts
         # Many of them use letters in certain parts of the account
@@ -38,18 +60,54 @@ module Faker
         country_code.upcase + iban_checksum(country_code, account) + account
       end
 
+      ##
+      # Produces a bank name.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Bank.name #=> "ABN AMRO CORPORATE FINANCE LIMITED"
+      #
+      # @faker.version 1.7.0
       def name
         fetch('bank.name')
       end
 
+      ##
+      # Produces a routing number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Bank.routing_number #=> "729343831"
+      #
+      # @faker.version 1.9.1
       def routing_number
         valid_routing_number
       end
 
+      ##
+      # Produces a valid routing number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Bank.routing_number #=> "729343831"
+      #
+      # @faker.version 1.9.1
       def routing_number_with_format
         compile_fraction(valid_routing_number)
       end
 
+      ##
+      # Produces a swift / bic number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Bank.swift_bic #=> "AAFMGB21"
+      #
+      # @faker.version 1.7.0
       def swift_bic
         fetch('bank.swift_bic')
       end
