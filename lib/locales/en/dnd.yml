@@ -1,0 +1,54 @@
+en:
+  faker:
+    dnd:
+      species:
+        - Dragonborn
+        - Dwarf
+        - Elf
+        - Gnome
+        - Half-Elf
+        - Halfling
+        - Half-Orc
+        - Human
+        - Tielfing
+      klasses:
+        - Barbarian
+        - Bard
+        - Cleric
+        - Druid
+        - Fighter
+        - Monk
+        - Paladin
+        - Ranger
+        - Rogue
+        - Sorcerer
+        - Warlock
+        - Wizard
+      backgrounds:
+        - Acolyte
+        - Charlatan
+        - Criminal
+        - Entertainer
+        - Folk Hero
+        - Gladiator
+        - Guild Artisan
+        - Guild Merchant
+        - Hermit
+        - Noble
+        - Outlander
+        - Pirate
+        - Sage
+        - Sailor
+        - Soldier
+        - Spy
+        - Urchin
+      alignments:
+        - Lawful Good
+        - Neutral Good
+        - Chaotic Good
+        - Lafwul Neutral
+        - Neutral
+        - Chaotic Neutral
+        - Lawful Evil
+        - Neutral Evil
+        - Chaotic Evil
