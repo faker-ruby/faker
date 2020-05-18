@@ -7,10 +7,10 @@ module Faker
       # Produces the name of a musical for an older audience
       #
       # @return [String]
-      # 
+      #
       # @example
       #   Faker::Alphanumeric.alpha
-      #     #=> "West Side Story" 
+      #     #=> "West Side Story"
       #
       # @faker.version next
       def adult_musical
@@ -18,27 +18,27 @@ module Faker
       end
 
       ##
-      # Produces the name of a musical for a younger audience 
+      # Produces the name of a musical for a younger audience
       #
       # @return [String]
-      # 
+      #
       # @example
       #   Faker::Alphanumeric.alpha
-      #     #=> "Into the Woods JR." 
+      #     #=> "Into the Woods JR."
       #
       # @faker.version next
       def kids_musical
         fetch('show.kids_musical')
       end
-      
+
       ##
       # Produces the name of a play
       #
       # @return [String]
-      # 
+      #
       # @example
       #   Faker::Alphanumeric.alpha
-      #     #=> "Death of a Salesman" 
+      #     #=> "Death of a Salesman"
       #
       # @faker.version next
       def play
