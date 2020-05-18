@@ -123,4 +123,10 @@ class TestFakerLorem < Test::Unit::TestCase
     @tester.unique.exclude(:character, [], values)
     assert_raise(Faker::UniqueGenerator::RetryLimitExceeded) { @tester.unique.character }
   end
+
+  def test_unique_with_already_set_values_and_parameter
+    values = ('a'..'z').to_a + ('0'..'9').to_a
+    @tester.unique.exclude(:characters, [number: 1], values)
+    assert_raise(Faker::UniqueGenerator::RetryLimitExceeded) { @tester.unique.characters(number: 1) }
+  end
 end

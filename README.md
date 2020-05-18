@@ -95,7 +95,7 @@ manually set values).
 # Faker::<generator>.unique.exclude(method, arguments, list)
 
 # Add 'azerty' and 'wxcvbn' to the string generator with 6 char length
-Faker::Lorem.unique.exclude :string, [6], %w[azerty wxcvbn]
+Faker::Lorem.unique.exclude :string, [number: 6], %w[azerty wxcvbn]
 ```
 
 ### Deterministic Random
