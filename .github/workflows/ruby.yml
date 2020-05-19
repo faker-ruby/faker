@@ -14,9 +14,11 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
+  test: 
+    name: Tests (Ruby ${{ matrix.ruby }})
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false # don't fail all matrix builds if one fails
       matrix:
         ruby:
           - '2.3.8' 
