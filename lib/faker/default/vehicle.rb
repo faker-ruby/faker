@@ -31,7 +31,6 @@ module Faker
       # @return [String]
       #
       # @example
-      # Random vehicle manufacturer
       #   Faker::Vehicle.manufacture #=> "Lamborghini"
       #
       # @faker.version 1.6.4
