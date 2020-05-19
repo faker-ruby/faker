@@ -346,7 +346,7 @@ module Faker
       #                                       country_name_to_code: {name: 'united_states'})
       #     #=> {:longitude=>-101.74428917174603, :latitude=>-37.40056749089944, :country_name_to_code=>"US"}
       #
-      # @faker.version 2.11.0
+      # @faker.version next
       def full_address_as_hash(*attrs, **attrs_params)
         attrs.map!(&:to_sym)
         attrs_params.transform_keys!(&:to_sym)
