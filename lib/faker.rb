@@ -129,7 +129,7 @@ module Faker
           # In either case the information will be retained for reconstruction of the string.
           text = prefix
 
-          # If the class has the method, call it, otherwise fetch the transation
+          # If the class has the method, call it, otherwise fetch the translation
           # (e.g., faker.phone_number.area_code)
           text += if cls.respond_to?(meth)
                     cls.send(meth)
