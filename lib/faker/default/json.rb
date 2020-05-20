@@ -45,13 +45,13 @@ module Faker
       #   json = Faker::Json.shallow_json(width: 3, options: { key: 'Name.first_name', value: 'Name.last_name' })
       #   puts json # =>
       #     {"Alisha":"Olson","Everardo":"DuBuque","Bridgette":"Turner"}
-
+      #
       #   json2 = Faker::Json.add_depth_to_json(json: json, width: 2, options: { key: 'Name.first_name', value: 'Name.last_name' })
       #   puts json2 # =>
       #     {"Alisha":{"Daisy":"Trantow","Oda":"Haag"},
       #      "Everardo":{"Javier":"Marvin","Eliseo":"Schuppe"},
       #      "Bridgette":{"Jorge":"Kertzmann","Lelah":"MacGyver"}}
-
+      #
       #    json3 = Faker::Json.add_depth_to_json(json: json2, width: 4, options: { key: 'Name.first_name', value: 'Name.last_name' })
       #      puts json3 # =>
       #        {"Alisha":
