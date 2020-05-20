@@ -6,6 +6,23 @@ module Faker
     NI_CHANCE = 0.03 # NI Pop is about 3% of total UK population
 
     class << self
+      ##
+      # Produces a random British driving licence number.
+      #
+      # @param last_name [String] The last name of the driving licence's owner.
+      # @param initials [String] The initials of the driving licence's owner.
+      # @param gender [String] The gender of the driving licence's owner.
+      # @param date_of_birth [String] The date of birth of the driving licence's owner.
+      # @return [String]
+      #
+      # @example
+      #   Faker::DrivingLicence.british_driving_licence        #=> "MCDER712081VF7EK"
+      #   Faker::DrivingLicence.british_driving_licence(last_name: "O'Carroll",
+      #                                                 initials: "J",
+      #                                                 gender: :female,
+      #                                                 date_of_birth: Date.parse("1986-10-24")) #=> "OCARR815246J91HT"
+      #
+      # @faker.version 1.9.2
       # rubocop:disable Metrics/ParameterLists
       def british_driving_licence(legacy_last_name = NOT_GIVEN, legacy_initials = NOT_GIVEN, legacy_gender = NOT_GIVEN, legacy_date_of_birth = NOT_GIVEN, last_name: Faker::Name.last_name, initials: Faker::Name.initials, gender: random_gender, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65))
         # rubocop:enable Metrics/ParameterLists
@@ -24,10 +41,33 @@ module Faker
         ].join
       end
 
+      ##
+      # Produces a random Northern Irish licence number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::DrivingLicence.northern_irish_driving_licence #=> "70702548"
+      #
+      # @faker.version 1.9.2
       def northern_irish_driving_licence
         Faker::Number.number(digits: 8).to_s
       end
 
+      ##
+      # Produces a random UK driving licence number in either GB or NI format, at a rate consistent with their relative populations
+      #
+      # @param last_name [String] The last name of the driving licence's owner.
+      # @param initials [String] The initials of the driving licence's owner.
+      # @param gender [String] The gender of the driving licence's owner.
+      # @param date_of_birth [String] The date of birth of the driving licence's owner.
+      # @return [String]
+      #
+      # @example
+      #   Faker::DrivingLicence.uk_driving_licence             #=> "OCARR815246J91HT"
+      #   Faker::DrivingLicence.uk_driving_licence             #=> "70702548"
+      #
+      # @faker.version 1.9.2
       def uk_driving_licence(*args)
         if Faker::Config.random.rand < NI_CHANCE
           northern_irish_driving_licence
