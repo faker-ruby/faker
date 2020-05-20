@@ -16,7 +16,7 @@ GEM
     jaro_winkler (1.5.4)
     json (2.3.0)
     method_source (1.0.0)
-    minitest (5.14.0)
+    minitest (5.14.1)
     parallel (1.19.1)
     parser (2.7.0.5)
       ast (~> 2.4.0)
@@ -45,21 +45,21 @@ GEM
       power_assert
     timecop (0.9.1)
     unicode-display_width (1.7.0)
-    yard (0.9.24)
+    yard (0.9.25)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   faker!
-  minitest (= 5.14.0)
+  minitest (= 5.14.1)
   pry (= 0.13.1)
   rake (= 13.0.1)
   rubocop (= 0.81.0)
   simplecov (= 0.17.1)
   test-unit (= 3.3.5)
   timecop (= 0.9.1)
-  yard (= 0.9.24)
+  yard (= 0.9.25)
 
 BUNDLED WITH
    2.1.0

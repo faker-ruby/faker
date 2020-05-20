@@ -61,11 +61,8 @@ Include [YARD] style docs for all methods that includes:
 # @return [String]
 # 
 # @example
-#   Faker::Alphanumeric.alpha
-#     #=> "kgdpxlgwjirlqhwhrebvuomdcjjpeqlq" 
-# @example 
-#   Faker::Alphanumeric.alpha(number: 10)
-#     #=> "zlvubkrwga"
+#   Faker::Alphanumeric.alpha #=> "kgdpxlgwjirlqhwhrebvuomdcjjpeqlq" 
+#   Faker::Alphanumeric.alpha(number: 10) #=> "zlvubkrwga"
 #
 # @faker.version next
 def alpha(number: 32)
