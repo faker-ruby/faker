@@ -112,6 +112,20 @@ module Faker
         fetch('bank.swift_bic')
       end
 
+      ##
+      # Produces an Australian BSB (Bank-State-Branch) number
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Bank.bsb_number
+      #     #=> "036616"
+      #
+      # @faker.version next
+      def bsb_number
+        compile_bsb_number
+      end
+
       private
 
       def checksum(num_string)
@@ -128,6 +142,13 @@ module Faker
         ((21..32).to_a + (61..72).to_a + [80]).each { |x| digit_one_two << x.to_s }
         routing_num = digit_one_two.sample + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring
         routing_num
+      end
+
+      def compile_bsb_number
+        digit_one_two = %w[01 03 06 08 11 12 73 76 78 30]
+        state = (2..7).to_a.map(&:to_s).sample
+        bsb_num = digit_one_two.sample + state + rand_numstring + rand_numstring + rand_numstring
+        bsb_num
       end
 
       # Calculates the mandatory checksum in 3rd and 4th characters in IBAN format

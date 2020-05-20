@@ -26,6 +26,10 @@ class TestFakerBank < Test::Unit::TestCase
     assert fraction.match(/\d{1,2}[-]\d{1,4}[\/]\d{1,4}/)
   end
 
+  def test_bsb_number
+    assert Faker::Bank.bsb_number.match(/\d{6}/)
+  end
+
   def test_account_number
     assert Faker::Bank.account_number.match(/\d{10}/)
 
