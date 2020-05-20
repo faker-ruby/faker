@@ -108,10 +108,12 @@ module Faker
       ##
       # Produces a random array.
       #
+      # @param len [Integer] Specifies the number of elements in the array.
       # @return [Array]
       #
       # @example
-      #   Faker::Types.rb_array #=> ["a", 1, 2, "bob"]
+      #   Faker::Types.rb_array #=> ["a"]
+      #   Faker::Types.rb_array(len: 4) #=> ["a", 1, 2, "bob"]
       #
       # @faker.version 1.8.6
       def rb_array(legacy_len = NOT_GIVEN, len: 1)
