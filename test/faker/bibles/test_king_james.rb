@@ -9,7 +9,12 @@ class TestFakerBiblesKingJames < Test::Unit::TestCase
 
   def test_book
     assert @tester::BOOKS.include? @tester.book
-    # assert @tester.books.match(/\w+/)
+  end
+
+  def test_books_in_locale
+    @tester::BOOKS.each do |book|
+      assert @tester.fetch("king_james.#{book}").match(/\w+/)
+    end
   end
 
   def test_verse_with_no_arguments

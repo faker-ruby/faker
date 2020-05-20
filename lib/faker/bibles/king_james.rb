@@ -4,7 +4,8 @@ module Faker
   class Bibles
     class KingJames < Base
       BOOKS = %w[genesis exodus leviticus numbers deuteronomy joshua judges ruth one_samuel two_samuel one_kings two_kings one_chronicles two_chronicles ezra nehemiah esther job psalms proverbs ecclesiastes song_of_solomon isaiah jeremiah lamentations ezekiel daniel hosea joel amos obadiah jonah micah nahum habakkuk zephaniah haggai zechariah malachi matthew mark luke john acts romans one_corinthians two_corinthians galatians ephesians philippians colossians one_thessalonians two_thessalonians one_timothy two_timothy titus philemon hebrews james one_peter two_peter one_john two_john three_john jude revelation].freeze
-      PREFIX_PATTERN = /^[[:alnum:] ]+?\d+?:\d+? /
+      PREFIX_PATTERN = /^[[:alnum:] ]+?\d+?:\d+? /.freeze
+
       flexible :king_james
 
       class << self
