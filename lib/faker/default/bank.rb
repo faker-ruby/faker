@@ -111,7 +111,7 @@ module Faker
       def swift_bic
         fetch('bank.swift_bic')
       end
-        
+
       ##
       # Produces an Australian BSB (Bank-State-Branch) number
       #
@@ -125,7 +125,7 @@ module Faker
       def bsb_number
         compile_bsb_number
       end
-        
+
       private
 
       def checksum(num_string)
