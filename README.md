@@ -26,6 +26,7 @@ development.
     - [Deterministic Random](#deterministic-random)
   - [Generators](#generators)
     - [Default](#default)
+    - [Bibles](#king-james)
     - [Blockchain](#blockchain)
     - [Books](#books)
     - [Creature](#creature)
