@@ -3,14 +3,17 @@
 module Faker
   class Fillmurray < Base
     class << self
+      extend Gem::Deprecate
       # rubocop:disable Metrics/ParameterLists
 
       ##
       # Produces the URL of an image from Fill Murray, a site which hosts
       # exclusively photographs of actor Bill Murray.
       #
+      # @deprecated Replaced by Faker::Image.fill_murray.
+      #
       # @param grayscale [Boolean] Whether to return a grayscale image.
-      # @param width [Integer] The iamage width.
+      # @param width [Integer] The image width.
       # @param height [Integer] The image height.
       # @return [String]
       #
@@ -33,13 +36,10 @@ module Faker
           keywords << :height if legacy_height != NOT_GIVEN
         end
 
-        raise ArgumentError, 'Width should be a number' unless width.to_s =~ /^\d+$/
-        raise ArgumentError, 'Height should be a number' unless height.to_s =~ /^\d+$/
-        raise ArgumentError, 'Grayscale should be a boolean' unless [true, false].include?(grayscale)
-
-        "https://www.fillmurray.com#{'/g' if grayscale == true}/#{width}/#{height}"
+        Faker::Image.fill_murray(grayscale: grayscale, width: width, height: height)
       end
       # rubocop:enable Metrics/ParameterLists
+      deprecate :image, nil, 2020, 05
     end
   end
 end

@@ -3,6 +3,8 @@
 module Faker
   class Avatar < Base
     class << self
+      extend Gem::Deprecate
+
       # @private
       SUPPORTED_FORMATS = %w[png jpg bmp].freeze
 
@@ -10,6 +12,8 @@ module Faker
 
       ##
       # Produces a URL for an avatar from robohash.org
+      #
+      # @deprecated Replaced by Faker::Image.robohash.
       #
       # @param slug [String, nil]
       # @param size [String] image size in pixels, in the format of 'AxB'
@@ -48,13 +52,10 @@ module Faker
           keywords << :bgset if legacy_bgset != NOT_GIVEN
         end
 
-        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
-        raise ArgumentError, "Supported formats are #{SUPPORTED_FORMATS.join(', ')}" unless SUPPORTED_FORMATS.include?(format)
-
-        slug ||= Faker::Lorem.words.join
-        bgset_query = "&bgset=#{bgset}" if bgset
-        "https://robohash.org/#{slug}.#{format}?size=#{size}&set=#{set}#{bgset_query}"
+        Faker::Image.robohash(slug: slug, size: size, format: format, set: set, bgset: bgset)
       end
+
+      deprecate :image, nil, 2020, 05
     end
   end
 end
