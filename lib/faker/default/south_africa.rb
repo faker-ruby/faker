@@ -4,7 +4,7 @@ module Faker
   class SouthAfrica < Base
     class << self
       ##
-      # Produces a South African id number.
+      # Produces a South African ID number.
       #
       # @return [String]
       #
@@ -17,7 +17,7 @@ module Faker
       end
 
       ##
-      # Produces a valid South African id number
+      # Produces a valid South African ID number
       #
       # @return [String]
       #
@@ -30,7 +30,7 @@ module Faker
       end
 
       ##
-      # Produces an invalid South African id number
+      # Produces an invalid South African ID number
       #
       # @return [String]
       #
@@ -125,7 +125,7 @@ module Faker
       end
 
       ##
-      # Produces a South African vat number.
+      # Produces a South African VAT number.
       #
       # @return [String]
       #
