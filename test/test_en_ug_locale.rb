@@ -36,7 +36,7 @@ class TestEnUgLocale < Test::Unit::TestCase
   end
 
   def test_validity_of_cell_phone
-    validation_regex = /^((70)|(71)|(72)|(74)|(75)|(77)|(78)|(79))\d{7}$/
+    validation_regex = /^((0)|(256)|(\+256))((70)|(71)|(72)|(74)|(75)|(77)|(78)|(79))\d{7}$/
     assert_match(validation_regex, Faker::PhoneNumber.cell_phone.delete(' '))
   end
 end

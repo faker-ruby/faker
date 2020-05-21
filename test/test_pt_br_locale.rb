@@ -131,8 +131,8 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Vehicle.license_plate.is_a? String
     assert Faker::Vehicle.license_plate.match(/^[A-Z]{3}\-[0-9]{4}/)
 
-    assert Faker::Vehicle.license_plate(state_abreviation: 'RJ').is_a? String
-    assert Faker::Vehicle.license_plate(state_abreviation: 'RJ').match(/^[A-Z]{3}\-[0-9]{4}/)
+    assert Faker::Vehicle.license_plate(state_abbreviation: 'RJ').is_a? String
+    assert Faker::Vehicle.license_plate(state_abbreviation: 'RJ').match(/^[A-Z]{3}\-[0-9]{4}/)
   end
 
   def test_pt_br_gender_methods

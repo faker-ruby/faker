@@ -3,6 +3,19 @@
 module Faker
   class Twitter < Base
     class << self
+      ##
+      # Produces a random Twitter user.
+      #
+      # @param include_status [Boolean] Include or exclude user status details
+      # @param include_email [Boolean] Include or exclude user email details
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::Twitter.user #=>  {:id=>8821452687517076614, :name=>"Lincoln Paucek", :screen_name=>"cody"...
+      #   Faker::Twitter.user(include_status: false) # Just get a user object with no embed status
+      #   Faker::Twitter.user(include_email: true) # Simulate an authenticated user with the email permission
+      #
+      # @faker.version 1.7.3
       def user(legacy_include_status = NOT_GIVEN, legacy_include_email = NOT_GIVEN, include_status: true, include_email: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :include_status if legacy_include_status != NOT_GIVEN
@@ -59,6 +72,19 @@ module Faker
         user
       end
 
+      ##
+      # Produces a random Twitter user.
+      #
+      # @param include_status [Boolean] Include or exclude user status details
+      # @param include_email [Boolean] Include or exclude user email details
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::Twitter.status #=> {:id=>8821452687517076614, :text=>"Ea et laboriosam vel non."...
+      #   Faker::Twitter.status(include_user: false) # Just get a status object with no embed user
+      #   Faker::Twitter.status(include_photo: true) # Includes entities for an attached image
+      #
+      # @faker.version 1.7.3
       def status(legacy_include_user = NOT_GIVEN, legacy_include_photo = NOT_GIVEN, include_user: true, include_photo: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :include_user if legacy_include_user != NOT_GIVEN
@@ -97,6 +123,15 @@ module Faker
         status
       end
 
+      ##
+      # Produces a random screen name.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Twitter.screen_name #=> "audreanne_hackett"
+      #
+      # @faker.version 1.7.3
       def screen_name
         Faker::Internet.username(specifier: nil, separators: ['_'])[0...20]
       end

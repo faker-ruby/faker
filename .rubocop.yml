@@ -40,6 +40,11 @@ Metrics/PerceivedComplexity:
   Enabled: false
   Max: 7
 
+Style/AsciiComments:
+  Description: This cop checks for non-ascii (non-English) characters in comments.
+  Exclude:
+    - 'lib/faker/default/university.rb'
+
 Style/DateTime:
   Description: This cop checks for consistent usage of the DateTime class over the Time class.
   Enabled: false
