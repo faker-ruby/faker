@@ -20,7 +20,7 @@ module Faker
       end
       # rubocop:enable Metrics/ParameterLists
 
-      deprecate :image, nil, 2020, 05
+      deprecate :image, "Faker::Image.lorem_pixel", 2020, 05
     end
   end
 end

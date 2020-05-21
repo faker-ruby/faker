@@ -39,7 +39,7 @@ module Faker
         Faker::Image.fill_murray(grayscale: grayscale, width: width, height: height)
       end
       # rubocop:enable Metrics/ParameterLists
-      deprecate :image, nil, 2020, 05
+      deprecate :image, "Faker::Image.fill_murray", 2020, 05
     end
   end
 end

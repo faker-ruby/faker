@@ -20,7 +20,7 @@ module Faker
         Faker::Image.placeholdit(size: size, format: format, background_color: background_color, text_color: text_color, text: text)
       end
 
-      deprecate :image, nil, 2020, 05
+      deprecate :image, "Faker::Image.placeholdit", 2020, 05
     end
   end
 end

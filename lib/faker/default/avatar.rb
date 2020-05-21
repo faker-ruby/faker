@@ -55,7 +55,7 @@ module Faker
         Faker::Image.robohash(slug: slug, size: size, format: format, set: set, bgset: bgset)
       end
 
-      deprecate :image, nil, 2020, 05
+      deprecate :image, "Faker::Image.robohash", 2020, 05
     end
   end
 end
