@@ -27,7 +27,7 @@ jobs:
           - '2.6' 
           - '2.7'
           - 'head'
-    continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
+    continue-on-error: ${{ matrix.ruby == 'head' }}
     steps:
     - uses: actions/checkout@v2
     - uses: ruby/setup-ruby@v1
