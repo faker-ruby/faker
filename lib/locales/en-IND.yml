@@ -21,7 +21,6 @@ en-IND:
       domain_suffix: [in, com, biz, info, name, net, org, co.in]
     company:
       suffix: [Pvt Ltd, Limited, Ltd, and Sons, Corp, Group, Brothers]
-    
     contact_number:
       country_code: ['+91']
       phone_number:

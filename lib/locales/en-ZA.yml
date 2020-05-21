@@ -23,7 +23,6 @@ en-ZA:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
       type: [Pty Ltd, Close Corporation, Sole Proprietor, Trust, Non Profit Organisation, Listed Company]
-
     contact_number:
       country_code: ['+27']
       phone_number:

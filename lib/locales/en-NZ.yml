@@ -150,7 +150,6 @@ en-NZ:
         - "#{street_address}, #{community}, #{city} #{postcode}"
         - "#{mail_box} #{community} #{postcode}"
         - "#{mail_box}, #{community}, #{city} #{postcode}"
-
     contact_number:
       country_code: ['+64']
       phone_number:
@@ -172,7 +171,6 @@ en-NZ:
             - ' 2## ### ###'
             - ' 2# ### ###'
             - '2#-###-####'
-
     university:
       name: [Auckland University of Technology, Lincoln University, Massey University, University of Auckland, University of Canterbury, University of Otago, University of Waikato, Victoria University of Wellington]
 

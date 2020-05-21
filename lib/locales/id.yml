@@ -20,7 +20,6 @@ id:
         - "#{street_prefix} #{street_title}"
       street_address:
         - "#{street_name} No. #{building_number}"
-
     contact_number:
       country_code: ['+62']
       phone_number:

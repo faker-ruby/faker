@@ -106,7 +106,6 @@ es-MX:
             - "(#{PhoneNumber.exchange_code}) #{PhoneNumber.exchange_code} #{PhoneNumber.subscriber_number}"
             - "-#{PhoneNumber.area_code}-#{PhoneNumber.subscriber_number}-#{PhoneNumber.subscriber_number}"
             - "-#{PhoneNumber.exchange_code}-#{PhoneNumber.exchange_code}-#{PhoneNumber.subscriber_number}"
-            
     subscription:
       plans: ["Prueba gratuita", "Basico", "Starter", "Essential", "Estudiante", Bronze", "Standard", "Silver", "Gold", "Platinum", "Profesional", "Business", "Diamond", "Premium"]
       statuses: ["Activo", "Parado", "Bloqueado", "Pendiente"]

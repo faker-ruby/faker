@@ -68,7 +68,6 @@ en-UG:
         - "#{district_names}"
       region:
         - "#{regions}"
-
     contact_number:
       country_code: ['+256','256']
       phone_number:

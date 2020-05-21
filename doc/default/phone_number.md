@@ -1,21 +1,36 @@
 # `Faker::PhoneNumber`
 
-### `.phone_number`
+### Constants
+
+Primary use of these constants is to pass them as parameters to `.phone_number(type = LOCAL)` or `.cell_phone(type = INTL)` so that numbers with country code and numbers without country code are generated.
+
+  * LOCAL = 'local'
+  * INTL = 'intl'
+
+### `.phone_number(type = LOCAL)`
 
 This formatter will return one of the following formats:
 
   * 333-333-3333
   * (333) 333-3333
-  * 1-333-333-3333
   * 333.333.3333
   * 333-333-3333 x3333
   * (333) 333-3333 x3333
-  * 1-333-333-3333 x3333
   * 333.333.3333 x3333
 
 Note: For formats with extensions, the extension can be inclusively between 3 and 5 digits long.
 
-### `.cell_phone`
+### `.phone_number(type = INTL)`
+
+This formatter will return one of the following formats:
+
+  * +1-333-333-3333
+  * +91-9999999999
+  * +1 (333) 333-3333 x3333
+
+Note: For formats with extensions, the extension can be inclusively between 3 and 5 digits long.
+
+### `.cell_phone(type = LOCAL)`
 
 This formatter will return one of the following formats:
 
@@ -23,6 +38,14 @@ This formatter will return one of the following formats:
   * (333) 333-3333
   * 1-333-333-3333
   * 333.333.3333
+
+### `.cell_phone(type = INTL)`
+
+This formatter will return one of the following formats:
+
+  * +1-333-333-3333
+  * +1 (333) 333-3333
+  * +91-9999999999
 
 ### `.cell_phone_in_e164`
 

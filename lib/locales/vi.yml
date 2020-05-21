@@ -26,7 +26,6 @@ vi:
       default_country: ["Việt Nam"]
     internet:
       domain_suffix: [com, net, info, vn, com.vn]
-
     contact_number:
       country_code: ['+84']
       phone_number:
@@ -101,7 +100,6 @@ vi:
             - '869 ### ###'
             - '88# ### ###'
             - '9## ### ###'
-
     name:
       first_name: ["Phạm", "Nguyễn", "Trần", "Lê", "Lý", "Hoàng", "Phan", "Vũ", "Tăng",
                    "Đặng", "Bùi", "Đỗ", "Hồ", "Ngô", "Dương", "Đào", "Đoàn", "Vương",

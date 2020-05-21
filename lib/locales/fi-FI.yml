@@ -29,7 +29,6 @@ fi-FI:
         - "#{first_name} #{last_name}"
       name_with_middle:
         - "#{first_name} #{last_name} #{last_name}"
-
     contact_number:
       country_code: ['+358']
       phone_number:

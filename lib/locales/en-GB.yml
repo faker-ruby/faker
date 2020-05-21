@@ -8,7 +8,6 @@ en-GB:
       default_country: [England, Scotland, Wales, Northern Ireland]
     internet:
       domain_suffix: [co.uk, com, biz, info, name]
-      
     contact_number:
       country_code: ['+44']
       phone_number:

@@ -18,7 +18,6 @@ ca-CAT:
         - "#{street_name}#{building_number}"
         - "#{street_name}#{building_number} #{secondary_address}"
       default_country: [Catalunya]
-    
     contact_number:
       country_code: ['+34']
       phone_number:
