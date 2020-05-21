@@ -51,6 +51,7 @@ module Faker
         "https://www.fillmurray.com#{'/g' if grayscale == true}/#{width}/#{height}"
       end
 
+      ##
       # Produces a URL for an image from lorempixel.com.
       #
       # @param size [String] Image size in pixels, in the format of 'AxB'
@@ -102,6 +103,7 @@ module Faker
         url_parts.join('/')
       end
 
+      ##
       # Produces a URL for an image from placehold.it.
       #
       # @param size [String] Image size in pixels, in the format of 'AxB'
@@ -187,6 +189,31 @@ module Faker
         slug ||= Faker::Lorem.words.join
         bgset_query = "&bgset=#{bgset}" if bgset
         "https://robohash.org/#{slug}.#{format}?size=#{size}&set=#{set}#{bgset_query}"
+      end
+
+      ##
+      # Produces a URL for an image from unsplash.com.
+      #
+      # @param category [String, nil] The category to get images from.
+      # @param width [Integer] Image width.
+      # @param height [Integer] Image height.
+      # @param keyword [String, nil] A keyword to search by.
+      # @return [String] An unsplash.com URL.
+      #
+      # @example
+      #   Faker::Image.unsplash
+      #     #=> https://source.unsplash.com/400x400
+      # @example
+      #   Faker::Image.unsplash(width: 900, height: 900)
+      #     #=> https://source.unsplash.com/900x900
+      #
+      # @faker.version next
+      def unsplash(category: nil, width: 400, height: 400, keyword: nil)
+        url = 'https://source.unsplash.com'
+        url += "/category/#{category}" unless category.nil?
+        url += "/#{width}x#{height}"
+        url += "?#{keyword}" unless keyword.nil?
+        url
       end
 
       private
