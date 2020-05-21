@@ -88,7 +88,9 @@ module Faker
       #     #=> "http://lorempixel.com/300/300"
       #
       # @faker.version next
+      # rubocop:disable Metrics/ParameterLists
       def lorem_pixel(size: '300x300', is_gray: false, category: nil, number: nil, text: nil, secure: true)
+        # rubocop:enable Metrics/ParameterLists
         raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
         raise ArgumentError, "Supported categories are #{SUPPORTED_CATEGORIES_LOREM_PIXEL.join(', ')}" unless category.nil? || SUPPORTED_CATEGORIES_LOREM_PIXEL.include?(category)
         raise ArgumentError, 'Category required when number is passed' if !number.nil? && category.nil?
