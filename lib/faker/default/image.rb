@@ -19,6 +19,8 @@ module Faker
                                             transport].freeze
       # @private
       SUPPORTED_FORMATS_ROBOHASH = %w[png jpg bmp].freeze
+      # @private
+      SUPPORTED_FORMATS_PLACEHOLDIT = %w[png jpg gif jpeg].freeze
 
       ##
       # Produces the URL of an image from Fill Murray, a site which hosts
@@ -100,6 +102,54 @@ module Faker
         url_parts.join('/')
       end
 
+      # Produces a URL for an image from placehold.it.
+      #
+      # @param size [String] Image size in pixels, in the format of 'AxB'
+      # @param format [String] An image format, one of png, jpg, gif, or jpeg.
+      # @param background_color [String, Symbol, nil] The background color. Can be a hex value like 'ffffff', :random for a random value, or nil.
+      # @param text_color [String, Symbol, nil] The text color. Can be a hex value like 'ffffff', :random for a random value, or nil.
+      # @param text [String, nil] Text to populate the placeholder image with.
+      # @return [String] A placehold.it URL.
+      #
+      # @example
+      #   Faker::Image.placeholdit
+      #     #=> "https://placehold.it/300x300.png"
+      # @example
+      #   Faker::Image.placeholdit(size: '50x50')
+      #     #=> "https://placehold.it/50x50.png"
+      # @example
+      #   Faker::Image.placeholdit(size: '50x50', format: 'jpg')
+      #     #=> "https://placehold.it/50x50.jpg"
+      # @example
+      #   Faker::Image.placeholdit(size: '50x50', format: 'gif', background_color: 'ffffff')
+      #     #=> "https://placehold.it/50x50.gif/ffffff"
+      # @example
+      #   Faker::Image.placeholdit(size: '50x50', format: 'jpeg', background_color: :random)
+      #     #=> "https://placehold.it/50x50.jpeg/39eba7"
+      # @example
+      #   Faker::Image.placeholdit(size: '50x50', format: 'jpeg', background_color: 'ffffff', text_color: '000')
+      #     #=> "https://placehold.it/50x50.jpeg/ffffff/000"
+      # @example
+      #   Faker::Image.placeholdit(size: '50x50', format: 'jpg', background_color: 'ffffff', text_color: '000', text: 'Some Custom Text')
+      #     #=> "https://placehold.it/50x50.jpg/ffffff/000?text=Some Custom Text"
+      #
+      # @faker.added next
+      def placeholdit(size: '300x300', format: 'png', background_color: nil, text_color: nil, text: nil)
+        background_color = generate_placeholdit_color if background_color == :random
+        text_color = generate_placeholdit_color if text_color == :random
+
+        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
+        raise ArgumentError, "Supported formats are #{SUPPORTED_FORMATS_PLACEHOLDIT.join(', ')}" unless SUPPORTED_FORMATS_PLACEHOLDIT.include?(format)
+        raise ArgumentError, "background_color must be a hex value without '#'" unless background_color.nil? || background_color =~ /((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/
+        raise ArgumentError, "text_color must be a hex value without '#'" unless text_color.nil? || text_color =~ /((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/
+
+        image_url = "https://placehold.it/#{size}.#{format}"
+        image_url += "/#{background_color}" if background_color
+        image_url += "/#{text_color}" if text_color
+        image_url += "?text=#{text}" if text
+        image_url
+      end
+
       ##
       # Produces a URL for an avatar from robohash.org.
       #
@@ -137,6 +187,12 @@ module Faker
         slug ||= Faker::Lorem.words.join
         bgset_query = "&bgset=#{bgset}" if bgset
         "https://robohash.org/#{slug}.#{format}?size=#{size}&set=#{set}#{bgset_query}"
+      end
+
+      private
+
+      def generate_placeholdit_color
+        format('%06x', (rand * 0xffffff))
       end
     end
   end
