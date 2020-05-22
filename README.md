@@ -131,6 +131,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Avatar](doc/default/avatar.md)
   - [Faker::Bank](doc/default/bank.md)
   - [Faker::Beer](doc/default/beer.md)
+  - [Faker::Blood](doc/default/blood.md)
   - [Faker::Boolean](doc/default/boolean.md)
   - [Faker::BossaNova](doc/default/bossa_nova.md)
   - [Faker::Business](doc/default/business.md)
@@ -144,6 +145,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Commerce](doc/default/commerce.md)
   - [Faker::Company](doc/default/company.md)
   - [Faker::Compass](doc/default/compass.md)
+  - [Faker::Computer](doc/default/computer.md)
   - [Faker::Construction](doc/default/construction.md)
   - [Faker::Cosmere](doc/default/cosmere.md)
   - [Faker::Crypto](doc/default/crypto.md)
@@ -231,6 +233,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 ### Games
   - [Faker::Game](doc/games/game.md)
+  - [Faker::Games::DnD](doc/games/dnd.md)
   - [Faker::Games::Dota](doc/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/games/elder_scrolls.md)
   - [Faker::Games::Fallout](doc/games/fallout.md)
@@ -243,6 +246,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Games::Pokemon](doc/games/pokemon.md)
   - [Faker::Games::SonicTheHedgehog](doc/games/sonic_the_hedgehog.md)
   - [Faker::Games::SuperSmashBros](doc/games/super_smash_bros.md)
+  - [Faker::Games::WarhammerFantasy](doc/games/warhammer_fantasy.md)
   - [Faker::Games::Witcher](doc/games/witcher.md)
   - [Faker::Games::WorldOfWarcraft](doc/games/world_of_warcraft.md)
   - [Faker::Games::Zelda](doc/games/zelda.md)
