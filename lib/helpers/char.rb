@@ -15,6 +15,7 @@ module Faker
         when 'ö' then 'oe'
         when 'ü' then 'ue'
         when 'ß' then 'ss'
+        else match.downcase
         end
       end
     end
