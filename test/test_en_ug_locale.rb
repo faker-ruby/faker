@@ -31,7 +31,7 @@ class TestEnUgLocale < Test::Unit::TestCase
   end
 
   def test_validity_of_phone_number
-    validation_regex = /^((0)|(39)|(41))\d{7}$/
+    validation_regex = /^((0)|(39)|(41))\d{7}$|\d{9}$/
     assert_match(validation_regex, Faker::PhoneNumber.phone_number.delete(' '))
   end
 
