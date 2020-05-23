@@ -584,6 +584,4 @@ en:
         - "PO Box ##"
         - "PO Box ###"
         - "PO Box ####"
-        - "#{street_address}, #{city}, #{state_abbr} #{zip_code}"
-        - "#{secondary_address} #{street_address}, #{city}, #{state_abbr} #{zip_code}"
       default_country: [United States of America]
