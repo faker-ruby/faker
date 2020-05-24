@@ -9,7 +9,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Quote.famous_last_words #=> "My vocabulary did this to me. Your love will let you go on…"
+      #   Faker::Quote.famous_last_words #=> "My vocabulary did this to me. Your love will let you go on..."
       #
       # @faker.version 1.9.0
       def famous_last_words
@@ -35,7 +35,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Quote.most_interesting_man_in_the_world #=> "He can speak Russian… in French"
+      #   Faker::Quote.most_interesting_man_in_the_world #=> "He can speak Russian... in French"
       #
       # @faker.version 1.9.0
       def most_interesting_man_in_the_world
