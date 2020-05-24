@@ -56,6 +56,8 @@ module Faker
           sample(romeo_and_juliet)
         end
 
+        private
+
         def hamlet
           fetch('shakespeare.hamlet')
         end
