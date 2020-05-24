@@ -75,8 +75,8 @@ module Faker
       ##
       # Produces a random Twitter user.
       #
-      # @param include_status [Boolean] Include or exclude user status details
-      # @param include_email [Boolean] Include or exclude user email details
+      # @param include_user [Boolean] Include or exclude user details
+      # @param include_photo [Boolean] Include or exclude user photo
       # @return [Hash]
       #
       # @example
