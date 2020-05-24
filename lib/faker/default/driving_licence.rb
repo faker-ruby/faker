@@ -57,10 +57,12 @@ module Faker
       ##
       # Produces a random UK driving licence number in either GB or NI format, at a rate consistent with their relative populations
       #
-      # @param last_name [String] The last name of the driving licence's owner.
-      # @param initials [String] The initials of the driving licence's owner.
-      # @param gender [String] The gender of the driving licence's owner.
-      # @param date_of_birth [String] The date of birth of the driving licence's owner.
+      # @overload uk_driving_licence(last_name, initials, gender, date_of_birth)
+      #   @param last_name [String] The last name of the driving licence's owner.
+      #   @param initials [String] The initials of the driving licence's owner.
+      #   @param gender [String] The gender of the driving licence's owner.
+      #   @param date_of_birth [String] The date of birth of the driving licence's owner.
+      # @overload uk_driving_licence()
       # @return [String]
       #
       # @example
