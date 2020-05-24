@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Quotes::Shakespeare.hamlet_quote # => "To be, or not to be: that is the question."
         #
-        # @faker.version 1.9.0
+        # @faker.version 1.9.2
         def hamlet_quote
           sample(hamlet)
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Quotes::Shakespeare.as_you_like_it_quote # => "Can one desire too much of a good thing?."
         #
-        # @faker.version 1.9.0
+        # @faker.version 1.9.2
         def as_you_like_it_quote
           sample(as_you_like_it)
         end
@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Quotes::Shakespeare.king_richard_iii_quote # => "Now is the winter of our discontent."
         #
-        # @faker.version 1.9.0
+        # @faker.version 1.9.2
         def king_richard_iii_quote
           sample(king_richard_iii)
         end
@@ -51,7 +51,7 @@ module Faker
         # @example
         #   Faker::Quotes::Shakespeare.romeo_and_juliet_quote # => "O Romeo, Romeo! wherefore art thou Romeo?."
         #
-        # @faker.version 1.9.0
+        # @faker.version 1.9.2
         def romeo_and_juliet_quote
           sample(romeo_and_juliet)
         end
