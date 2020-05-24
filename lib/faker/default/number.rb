@@ -106,7 +106,7 @@ module Faker
       # @example
       #   Faker::Number.decimal_within(l_digits: 1, r_digits: 1, range: 1..10) #=> 4.0
       #
-      # @faker.version 1.0.0
+      # @faker.version next
       def decimal_within(
         legacy_l_digits = NOT_GIVEN,
         legacy_r_digits = NOT_GIVEN,
