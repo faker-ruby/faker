@@ -121,7 +121,7 @@ module Faker
       ##
       # Produces random initials.
       #
-      # @param digits [Integer] Number of digits that the generated initials should have.
+      # @param number [Integer] Number of digits that the generated initials should have.
       # @return [String]
       #
       # @example

@@ -66,7 +66,7 @@ module Faker
       #
       # @param dir [String] Specifies the path used for the generated file.
       # @param name [String] Specifies the filename used for the generated file.
-      # @param extension [String] Specifies the extension used the generated file.
+      # @param ext [String] Specifies the extension used the generated file.
       # @param directory_separator [String] Specifies the separator between the directory and name elements.
       # @return [String]
       #
