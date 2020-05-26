@@ -10,7 +10,7 @@ module Faker
       ##
       # Produces a random credit card number.
       #
-      # @param card_type [String] Specific credit card type.
+      # @param types [String] Specific credit card type.
       # @return [String]
       #
       # @example
