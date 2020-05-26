@@ -151,11 +151,11 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_domain_name_without_subdomain
-    assert @tester.domain_name.match(/\w+\.\w+/)
+    assert @tester.domain_name.match(/[\w-]+\.\w+/)
   end
 
   def test_domain_name_with_subdomain
-    assert @tester.domain_name(subdomain: true).match(/\w+\.\w+\.\w+/)
+    assert @tester.domain_name(subdomain: true).match(/[\w-]+\.[\w-]+\.\w+/)
   end
 
   def test_domain_name_with_subdomain_and_with_domain_option_given
@@ -167,7 +167,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_domain_word
-    assert @tester.domain_word.match(/^\w+$/)
+    assert @tester.domain_word.match(/^[\w-]+$/)
   end
 
   def test_domain_suffix

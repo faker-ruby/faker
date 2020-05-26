@@ -39,7 +39,7 @@ class TestUkLocale < Test::Unit::TestCase
 
   def test_uk_internet_methods
     assert Faker::Internet.email.match(/.+@[^.].+\.\w+/)
-    assert Faker::Internet.domain_word.match(/^\w+$/)
+    assert Faker::Internet.domain_word.match(/^[\w-]+$/)
   end
 
   def test_uk_name_methods
