@@ -16,7 +16,7 @@ module Faker
       #   Faker::PhoneNumber.phone_number(type = LOCAL) #=> "333-333-3333"
       #   Faker::PhoneNumber.phone_number(type = INTL) #=> "+1-333-333-3333"
       #
-      # @faker.version 2.11.0
+      # @faker.version next
       def phone_number(type = LOCAL)
         parse("contact_number.phone_number.formats.#{type}")
       end
@@ -31,7 +31,7 @@ module Faker
       #   Faker::PhoneNumber.cell_phone(type = LOCAL) #=> "333-333-3333"
       #   Faker::PhoneNumber.cell_phone(type = INTL) #=> "+1-333-333-3333"
       #
-      # @faker.version 2.11.0
+      # @faker.version next
       def cell_phone(type = LOCAL)
         parse("contact_number.cell_phone.formats.#{type}")
       end

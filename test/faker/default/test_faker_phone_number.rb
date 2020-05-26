@@ -6,6 +6,7 @@ class TestFakerPhone < Test::Unit::TestCase
   def setup
     @tester = Faker::PhoneNumber
     @phone_with_country_code_regex = /\A\+(\s|\d|\-|\(|\)|x|\.)*\z/
+    @phone_without_country_code_regex = /\A(\s|\d|\-|\(|\)|x|\.)*\z/
   end
 
   def test_country_code
@@ -22,5 +23,13 @@ class TestFakerPhone < Test::Unit::TestCase
 
   def test_cell_phone_in_e164
     assert @tester.cell_phone_in_e164.match(@phone_with_country_code_regex)
+  end
+
+  def test_phone_number
+    assert @tester.phone_number.match(@phone_without_country_code_regex)
+  end
+
+  def test_cell_phone
+    assert @tester.cell_phone.match(@phone_without_country_code_regex)
   end
 end
