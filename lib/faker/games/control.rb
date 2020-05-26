@@ -62,7 +62,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Games::Control.altered_item #=> "Rubber Duck"
+        #   Faker::Games::Control.altered_world_event #=> "Ordinary, Wisconsin"
         #
         # @faker.version next
         def altered_world_event
