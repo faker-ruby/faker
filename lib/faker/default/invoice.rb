@@ -5,7 +5,18 @@ module Faker
     flexible :invoice
 
     class << self
-      # Generate random amount between values with 2 decimals
+      ##
+      # Produces a random amount between values with 2 decimals
+      #
+      # @param from [Integer] Specifies lower limit.
+      # @param to [Integer] Specifies upper limit.
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Finance.amount_between #=> 0
+      #   Faker::Finance.amount_between(0, 10) #=> 4.33
+      #
+      # @faker.version 1.9.0
       def amount_between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 0, to: 0)
         warn_for_deprecated_arguments do |keywords|
           keywords << :from if legacy_from != NOT_GIVEN
@@ -15,8 +26,16 @@ module Faker
         Faker::Base.rand_in_range(from, to).round(2)
       end
 
-      # International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
-      # ref is optional so that we can create unit tests
+      ##
+      # Produces a random valid reference accoring to the International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
+      #
+      # @param ref [String] Specifies reference base.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Invoice.creditor_reference #=> "RF34118592570724925498"
+      #
+      # @faker.version 1.9.0
       def creditor_reference(legacy_ref = NOT_GIVEN, ref: '')
         warn_for_deprecated_arguments do |keywords|
           keywords << :ref if legacy_ref != NOT_GIVEN
@@ -27,8 +46,16 @@ module Faker
         'RF' + iban_checksum('RF', ref) + ref
       end
 
-      # Payment references have some rules in certain countries
-      # ref is optional so that we can create unit tests
+      ##
+      # Produces a random valid reference.
+      #
+      # @param ref [String] Specifies reference base.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Invoice.reference #=> "45656646957845"
+      #
+      # @faker.version 1.9.0
       def reference(legacy_ref = NOT_GIVEN, ref: '')
         warn_for_deprecated_arguments do |keywords|
           keywords << :ref if legacy_ref != NOT_GIVEN
