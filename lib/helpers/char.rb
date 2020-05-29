@@ -5,7 +5,7 @@ module Faker
     def self.prepare(string)
       result = romanize_cyrillic string
       result = fix_umlauts result
-      result.gsub(/\W/, '').downcase
+      result.gsub(/[^\w-]/, '').downcase
     end
 
     def self.fix_umlauts(string)
