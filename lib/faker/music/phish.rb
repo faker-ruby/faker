@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Music::Phish.album #=> "Fuego"
         #
-        # @faker.version 1.9.2
+        # @faker.version next
         def album
           fetch('phish.albums')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Music::Phish.musician #=> "Trey Anastasio"
         #
-        # @faker.version 1.9.2
+        # @faker.version next
         def musician
           fetch('phish.musicians')
         end
