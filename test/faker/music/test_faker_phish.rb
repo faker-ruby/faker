@@ -7,6 +7,14 @@ class TestFakerPhish < Test::Unit::TestCase
     @tester = Faker::Music::Phish
   end
 
+  def test_album
+    assert @tester.album.match(/\w+/)
+  end
+
+  def test_player
+    assert @tester.player.match(/\w+/)
+  end
+
   def test_song
     assert @tester.song.match(/\w+/)
   end
