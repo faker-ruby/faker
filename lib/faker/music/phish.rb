@@ -23,7 +23,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Music::Phish.player #=> "Trey Anastasio"
+        #   Faker::Music::Phish.musician #=> "Trey Anastasio"
         #
         # @faker.version 1.9.2
         def musician
