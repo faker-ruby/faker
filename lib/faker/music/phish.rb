@@ -14,7 +14,7 @@ module Faker
         #
         # @faker.version 1.9.2
         def album
-          fetch('phish.song')
+          fetch('phish.album')
         end
 
         ##
@@ -26,7 +26,7 @@ module Faker
         #   Faker::Music::Phish.player #=> "Trey Anastasio"
         #
         # @faker.version 1.9.2
-        def album
+        def player
           fetch('phish.player')
         end
 
