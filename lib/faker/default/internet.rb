@@ -9,11 +9,14 @@ module Faker
           keywords << :separators if legacy_separators != NOT_GIVEN
         end
 
-        if separators
-          [username(specifier: name, separators: separators), domain_name(domain: domain)].join('@')
-        else
-          [username(specifier: name), domain_name(domain: domain)].join('@')
-        end
+        local_part = if separators
+                       username(specifier: name, separators: separators)
+                     else
+                       username(specifier: name)
+                     end
+
+        sanitized_local_part = sanitize_email_local_part(local_part)
+        construct_email(sanitized_local_part, domain_name(domain: domain))
       end
 
       def free_email(legacy_name = NOT_GIVEN, name: nil)
@@ -21,7 +24,10 @@ module Faker
           keywords << :name if legacy_name != NOT_GIVEN
         end
 
-        [username(specifier: name), fetch('internet.free_email')].join('@')
+        construct_email(
+          sanitize_email_local_part(username(specifier: name)),
+          fetch('internet.free_email')
+        )
       end
 
       def safe_email(legacy_name = NOT_GIVEN, name: nil)
@@ -29,7 +35,10 @@ module Faker
           keywords << :name if legacy_name != NOT_GIVEN
         end
 
-        [username(specifier: name), 'example.' + sample(%w[org com net])].join('@')
+        construct_email(
+          sanitize_email_local_part(username(specifier: name)),
+          'example.' + sample(%w[org com net])
+        )
       end
 
       def username(legacy_specifier = NOT_GIVEN, legacy_separators = NOT_GIVEN, specifier: nil, separators: %w[. _])
@@ -325,6 +334,25 @@ module Faker
       end
 
       alias user_name username
+
+      private
+
+      def sanitize_email_local_part(local_part)
+        char_range = [
+          Array('0'..'9'),
+          Array('A'..'Z'),
+          Array('a'..'z'),
+          "!#$%&'*+-/=?^_`{|}~.".split(//)
+        ].flatten
+
+        local_part.split(//).map do |char|
+          char_range.include?(char) ? char : '#'
+        end.join
+      end
+
+      def construct_email(local_part, domain_name)
+        [local_part, domain_name].join('@')
+      end
     end
   end
 end

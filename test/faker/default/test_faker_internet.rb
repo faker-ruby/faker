@@ -11,6 +11,10 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.email.match(/.+@.+\.\w+/)
   end
 
+  def test_email_with_non_permitted_characters
+    assert @tester.email(name: 'martín').match(/mart#n@.+\.\w+/)
+  end
+
   def test_email_with_separators
     assert @tester.email(name: 'jane doe', separators: '+').match(/.+\+.+@.+\.\w+/)
   end
@@ -27,8 +31,16 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.free_email.match(/.+@(gmail|hotmail|yahoo)\.com/)
   end
 
+  def test_free_email_with_non_permitted_characters
+    assert @tester.free_email(name: 'martín').match(/mart#n@.+\.\w+/)
+  end
+
   def test_safe_email
     assert @tester.safe_email.match(/.+@example.(com|net|org)/)
+  end
+
+  def test_safe_email_with_non_permitted_characters
+    assert @tester.safe_email(name: 'martín').match(/mart#n@.+\.\w+/)
   end
 
   def test_username
