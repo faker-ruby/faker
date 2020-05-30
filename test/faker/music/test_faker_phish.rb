@@ -11,8 +11,8 @@ class TestFakerPhish < Test::Unit::TestCase
     assert @tester.album.match(/\w+/)
   end
 
-  def test_player
-    assert @tester.player.match(/\w+/)
+  def test_musician
+    assert @tester.musician.match(/\w+/)
   end
 
   def test_song

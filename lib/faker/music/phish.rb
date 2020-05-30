@@ -14,11 +14,11 @@ module Faker
         #
         # @faker.version 1.9.2
         def album
-          fetch('phish.album')
+          fetch('phish.albums')
         end
 
         ##
-        # Produces the name of a band member of Phish.
+        # Produces the name of a musician in Phish.
         #
         # @return [String]
         #
@@ -26,8 +26,8 @@ module Faker
         #   Faker::Music::Phish.player #=> "Trey Anastasio"
         #
         # @faker.version 1.9.2
-        def player
-          fetch('phish.player')
+        def musician
+          fetch('phish.musicians')
         end
 
         ##
@@ -40,7 +40,7 @@ module Faker
         #
         # @faker.version 1.9.2
         def song
-          fetch('phish.song')
+          fetch('phish.songs')
         end
       end
     end
