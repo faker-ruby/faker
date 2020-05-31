@@ -12,73 +12,73 @@ This version:
 
 ## Bug/Fixes
 
-- Update 'prepare' regexp to allow hyphen (#2019) [@jbergenson]
-- Add else condition to prevent false positive (#2012) [@jbergenson]
-- Fix an error for `Faker::Computer.os` (#1985) [@koic]
-- Fixing the CI failure by fixing the infinite loop in Commerce (#1971) [@amatsuda]
+- Update 'prepare' regexp to allow hyphen (#2019) [@jbergenson](https://github.com/jbergenson)
+- Add else condition to prevent false positive (#2012) [@jbergenson](https://github.com/jbergenson)
+- Fix an error for `Faker::Computer.os` (#1985) [@koic](https://github.com/koic)
+- Fixing the CI failure by fixing the infinite loop in Commerce (#1971) [@amatsuda](https://github.com/amatsuda)
 
 ## Chores
 
-- Removing meaningless begin and end (#1988) [@amatsuda]
-- Reuse the `lvar` instead of calling `File.dirname(__FILE__)` again and again (#1979) [@amatsuda]
+- Removing meaningless begin and end (#1988) [@amatsuda](https://github.com/amatsuda)
+- Reuse the `lvar` instead of calling `File.dirname(__FILE__)` again and again (#1979) [@amatsuda](https://github.com/amatsuda)
 
 ## Documentation
 
-- Add YARD docs to `Faker::Invoice` (#2022) [@danielTiringer]
-- Add YARD docs to `Faker::Hipster` (#2021) [@danielTiringer]
-- Add YARD docs to `Faker::Measurement` (#2020) [@danielTiringer]
-- Fix docs for `Faker::Games::Control.altered_world_event` (#2017) [@Zeragamba]
-- Fix yard documentation issues (#2016) [@danielTiringer]
-- Add YARD docs to `Faker::Quotes` (#2015) [@danielTiringer]
-- Update `star_wars.yml` (#2011) [@garrettmichaelgeorge]
-- Add missing links in README.md (#2010) [@Naokimi]
-- Add YARD docs to `Faker::Placeholdit` (#2009) [@danielTiringer]
-- Add YARD docs to `Faker::Verb` (#2008) [@danielTiringer]
-- Add YARD docs to `Faker::Phone_Number` (#2007) [@danielTiringer]
-- Add YARD docs to `Faker::String` (#2004) [@danielTiringer]
-- Add YARD docs to `Faker::South_Africa` (#2001) [@danielTiringer]
-- Add YARD docs to `Faker::JSON` (#2000) [@danielTiringer]
-- Add YARD docs to `Faker::Types` (#1999) [@danielTiringer]
-- Add YARD docs to `Faker::Finance` (#1998) [@danielTiringer]
-- Add YARD docs to `Faker::Driving_Licence` (#1997) [@danielTiringer]
-- Add YARD docs to `Crypto Coin` (#1996) [@danielTiringer]
-- Add YARD docs to `Faker::Commerce` (#1995) [@danielTiringer]
-- Add YARD docs to `Faker::Vehicle` (#1993) [@danielTiringer]
-- Add YARD docs to `Faker::File` (#1990) [@danielTiringer]
-- Add YARD docs to `Faker::Bank` (#1989) [@danielTiringer]
-- Minor documentation fix for `Faker::University` (#1984) [@Zeragamba]
-- Add YARD docs to `Faker::Twitter` (#1983) [@danielTiringer]
-- Add YARD docs to `Faker::Cosmere` (#1982) [@danielTiringer]
-- Add YARD docs to `Faker::Stripe` (#1981) [@danielTiringer]
-- Add YARD docs to `Faker::Construction` (#1980) [@danielTiringer]
-- Add YARD docs to `Faker::Name` (#1976) [@danielTiringer]
-- Add YARD docs to `Faker::Compass` (#1975) [@danielTiringer]
-- Add YARD docs to `Faker::University` (#1959) [@danielTiringer]
-- Add YARD docs to `Faker::SlackEmoji` (#1956) [@rutger-t]
-- Update documentation for unique.exclude (#1943) [@mtancoigne]
-- AdD `Faker::Game::WarhammerFantasy` (#1925) [@sotek222]
+- Add YARD docs to `Faker::Invoice` (#2022) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Hipster` (#2021) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Measurement` (#2020) [@danielTiringer](https://github.com/danielTiringer)
+- Fix docs for `Faker::Games::Control.altered_world_event` (#2017) [@Zeragamba](https://github.com/Zeragamba)
+- Fix yard documentation issues (#2016) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Quotes` (#2015) [@danielTiringer](https://github.com/danielTiringer)
+- Update `star_wars.yml` (#2011) [@garrettmichaelgeorge](https://github.com/garrettmichaelgeorge)
+- Add missing links in README.md (#2010) [@Naokimi](https://github.com/Naokimi)
+- Add YARD docs to `Faker::Placeholdit` (#2009) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Verb` (#2008) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Phone_Number` (#2007) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::String` (#2004) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::South_Africa` (#2001) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::JSON` (#2000) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Types` (#1999) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Finance` (#1998) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Driving_Licence` (#1997) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Crypto Coin` (#1996) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Commerce` (#1995) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Vehicle` (#1993) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::File` (#1990) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Bank` (#1989) [@danielTiringer](https://github.com/danielTiringer)
+- Minor documentation fix for `Faker::University` (#1984) [@Zeragamba](https://github.com/Zeragamba)
+- Add YARD docs to `Faker::Twitter` (#1983) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Cosmere` (#1982) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Stripe` (#1981) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Construction` (#1980) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Name` (#1976) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::Compass` (#1975) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::University` (#1959) [@danielTiringer](https://github.com/danielTiringer)
+- Add YARD docs to `Faker::SlackEmoji` (#1956) [@rutger-t](https://github.com/rutger-t)
+- Update documentation for unique.exclude (#1943) [@mtancoigne](https://github.com/mtancoigne)
+- AdD `Faker::Game::WarhammerFantasy` (#1925) [@sotek222](https://github.com/sotek222)
 
 ## Feature Request
 
-- Added Phish Albums and Musicians (#2024) [@zfine416]
-- Add `Faker::TvShows::Suits` (#2025) [@ash-elangovan]
-- Add `Faker::Games::Control` (#2013) [@Zeragamba]
-- Enable Ruby testing github workflow (#1994) [@Zeragamba]
-- Add `Faker::Games:DnD` (#1966) [@Naokimi]
-- Adding Pearl Jam to the Music module (#1962) [@briri]
-- Added `Faker::Blood` (#1960) [@suraj32]
-- Add `Faker::Movies::Departed` Class (#1931) [@jaebradley]
-- Add Bibles class with King James subclass (#1696) [@jbergenson]
-- Plays and musicals (#1485) [@armandofox]
+- Added Phish Albums and Musicians (#2024) [@zfine416](https://github.com/zfine416)
+- Add `Faker::TvShows::Suits` (#2025) [@ash-elangovan](https://github.com/ash-elangovan)
+- Add `Faker::Games::Control` (#2013) [@Zeragamba](https://github.com/Zeragamba)
+- Enable Ruby testing github workflow (#1994) [@Zeragamba](https://github.com/Zeragamba)
+- Add `Faker::Games:DnD` (#1966) [@Naokimi](https://github.com/Naokimi)
+- Adding Pearl Jam to the Music module (#1962) [@briri](https://github.com/briri)
+- Added `Faker::Blood` (#1960) [@suraj32](https://github.com/suraj32)
+- Add `Faker::Movies::Departed` Class (#1931) [@jaebradley](https://github.com/jaebradley)
+- Add Bibles class with King James subclass (#1696) [@jbergenson](https://github.com/jbergenson)
+- Plays and musicals (#1485) [@armandofox](https://github.com/armandofox)
 
 ## Update locales
 
-- Make locale self-contained (#2014) [@psibi]
-- Added quotations to Shirahoshi (#1986) [@iavivai]
-- Fix mis-quotations (#1973) [@kayhide]
-- ko locale updates (#1967) [@jae57]
-- en-AU locale updates (#1964) [@mattman]
-- Add `Faker::Computer` (#1948) [@cmcramer]
+- Make locale self-contained (#2014) [@psibi](https://github.com/psibi)
+- Added quotations to Shirahoshi (#1986) [@iavivai](https://github.com/iavivai)
+- Fix mis-quotations (#1973) [@kayhide](https://github.com/kayhide)
+- ko locale updates (#1967) [@jae57](https://github.com/jae57)
+- en-AU locale updates (#1964) [@mattman](https://github.com/mattman)
+- Add `Faker::Computer` (#1948) [@cmcramer](https://github.com/cmcramer)
 
 ## Update local dependencies
 
