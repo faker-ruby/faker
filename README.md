@@ -314,6 +314,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::StarTrek](doc/tv_shows/star_trek.md)
   - [Faker::TvShows::Stargate](doc/tv_shows/stargate.md)
   - [Faker::TvShows::StrangerThings](doc/tv_shows/stranger_things.md)
+  - [Faker::TvShows::Suits](doc/tv_shows/suits.md)
   - [Faker::TvShows::TheExpanse](doc/tv_shows/the_expanse.md)
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/tv_shows/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/tv_shows/the_it_crowd.md)
