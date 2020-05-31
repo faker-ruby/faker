@@ -4,10 +4,10 @@
 
 This version:
 - adds several YARD docs
-- fixes some locales issues
+- fixes some locale issues
 - fixes a few bugs in Faker generators
 - improves code quality
-- adds a few generators regarding Movies, Music and Tv Shows
+- adds a few generators for Movies, Music and TV Shows
 - updates local dependencies
 
 ## Bug/Fixes
