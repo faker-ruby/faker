@@ -4,6 +4,19 @@ module Faker
   class Movie < Base
     class << self
       ##
+      # Produces a title from a movie.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Movie.title #=> "The Lord of the Rings: The Two Towers"
+      #
+      # @faker.version next
+      def title
+        fetch('movie.title')
+      end
+
+      ##
       # Produces a quote from a movie.
       #
       # @return [String]
