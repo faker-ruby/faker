@@ -1,5 +1,85 @@
 # Change Log
 
+## [v2.12.0](https://github.com/faker-ruby/faker/tree/v2.12.0) (2020-05-31)
+
+## Bug/Fixes
+
+Update 'prepare' regexp to allow hyphen #2019
+Add else condition to prevent false positive #2012
+Fix an error for `Faker::Computer.os` #1985
+Fixing the CI failure by fixing the infinite loop in Commerce (#1971)
+
+## Chores
+
+Removing meaningless begin and end #1988
+Reuse the lvar instead of calling File.dirname(__FILE__) again and again #1979
+
+## Documentation
+
+Add YARD docs to Faker::Measurement (#2020)
+Add YARD docs to Faker::Hipster (#2021)
+Add YARD docs to Faker::Invoice (#2022)
+Add YARD docs to Faker::Quotes (#2015)
+Fix docs for `Faker::Games::Control.altered_world_event` (#2017)
+Fix yard documentation issues (#2016)
+Add YARD docs to Faker::String (#2004)
+Update star_wars.yml (#2011)
+add missing links in README.md (#2010)
+Add YARD docs to Faker::Phone_Number (#2007)
+Add YARD docs to Faker::Placeholdit (#2009)
+Add YARD docs to Faker::Verb (#2008)
+Add YARD docs to Faker::South_Africa (#2001)
+Add YARD docs to Faker::JSON (#2000)
+Add YARD docs to Faker::Types (#1999)
+Add YARD docs to Faker::Finance (#1998)
+Add YARD docs to Faker::Driving_Licence (#1997)
+Add YARD docs to Crypto Coin (#1996)
+Add YARD docs to Faker::Commerce (#1995)
+Add YARD docs for Faker::Vehicle #1993
+Add YARD docs to Faker::File #1990
+Add YARD docs to Faker::Bank #1989
+Minor documentation fix for Faker::University #1984
+Add YARD docs to Faker::Twitter #1983
+Add YARD docs to Faker::Cosmere #1982
+Add YARD docs to Faker::Stripe #1981
+Add YARD docs for Faker::Construction #1980
+Add YARD docs for Faker::Name (#1976)
+Add YARD docks for Faker::Compass (#1975)
+add YARD docs to Faker::University #1959
+Minor documentation fix for Faker::University #1984
+add YARD docs to Faker::SlackEmoji #1956
+Update documentation for unique.exclude #1943
+ADD Faker::Game::WarhammerFantasy #1925
+
+## Feature Request
+
+Added Phish Albums and Musicians (#2024)
+Add Faker::TvShows::Suits (#2025)
+< Add/Include Faker::Games::Control > (#2013)
+Enable Ruby testing github workflow #1994
+ADD Faker::Games:DnD #1966
+adding Pearl Jam to the Music module (#1962)
+Added Faker::Blood #1960
+Add Faker::Movies::Departed Class (#1931)
+Add Bibles class with King James subclass #1696
+Plays and musicals #1485
+
+## Update locales
+
+Make locale self-contained (#2014)
+Added quotations to Shirahoshi #1986
+Fix mis-quotations (#1973)
+ko locale updates #1967
+en-AU locale updates #1964
+Add Faker::Computer #1948
+
+## Update local dependencies
+
+Update minitest requirement from = 5.14.0 to = 5.14.1 #1987
+Update rubocop requirement from = 0.80.1 to = 0.81.0 (#1955)
+Update pry requirement from = 0.13.0 to = 0.13.1 (#1963)
+Update yard requirement from = 0.9.24 to = 0.9.25 (#1970)
+
 ## [v2.11.0](https://github.com/faker-ruby/faker/tree/v2.11.0) (2020-03-24)
 
 ## Bug/Fixes
