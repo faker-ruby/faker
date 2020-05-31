@@ -5,6 +5,32 @@ module Faker
     class Phish < Base
       class << self
         ##
+        # Produces the name of a album by Phish.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Music::Phish.album #=> "Fuego"
+        #
+        # @faker.version next
+        def album
+          fetch('phish.albums')
+        end
+
+        ##
+        # Produces the name of a musician in Phish.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Music::Phish.musician #=> "Trey Anastasio"
+        #
+        # @faker.version next
+        def musician
+          fetch('phish.musicians')
+        end
+
+        ##
         # Produces the name of a song by Phish.
         #
         # @return [String]
@@ -14,7 +40,7 @@ module Faker
         #
         # @faker.version 1.9.2
         def song
-          fetch('phish.song')
+          fetch('phish.songs')
         end
       end
     end
