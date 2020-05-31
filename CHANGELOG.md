@@ -1,5 +1,94 @@
 # Change Log
 
+## [v2.12.0](https://github.com/faker-ruby/faker/tree/v2.12.0) (2020-05-31)
+
+This version:
+- adds several YARD docs
+- fixes some locale issues
+- fixes a few bugs in Faker generators
+- improves code quality
+- adds a few generators for Movies, Music and TV Shows
+- updates local dependencies
+
+## Bug/Fixes
+
+- [PR #2019](https://github.com/faker-ruby/faker/pull/2019) Update 'prepare' regexp to allow hyphen [@jbergenson](https://github.com/jbergenson)
+- [PR #2012](https://github.com/faker-ruby/faker/pull/2012) Add else condition to prevent false positive [@jbergenson](https://github.com/jbergenson)
+- [PR #1985](https://github.com/faker-ruby/faker/pull/1985) Fix an error for `Faker::Computer.os` [@koic](https://github.com/koic)
+- [PR #1971](https://github.com/faker-ruby/faker/pull/1971) Fixing the CI failure by fixing the infinite loop in Commerce [@amatsuda](https://github.com/amatsuda)
+
+## Chores
+
+- [PR #1988](https://github.com/faker-ruby/faker/pull/1988) Removing meaningless begin and end [@amatsuda](https://github.com/amatsuda)
+- [PR #1979](https://github.com/faker-ruby/faker/pull/1979) Reuse the `lvar` instead of calling `File.dirname(__FILE__)` again and again [@amatsuda](https://github.com/amatsuda)
+
+## Documentation
+
+- [PR #2022](https://github.com/faker-ruby/faker/pull/2022) Add YARD docs to `Faker::Invoice` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2021](https://github.com/faker-ruby/faker/pull/2021) Add YARD docs to `Faker::Hipster` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2020](https://github.com/faker-ruby/faker/pull/2020) Add YARD docs to `Faker::Measurement` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2017](https://github.com/faker-ruby/faker/pull/2017) Fix docs for `Faker::Games::Control.altered_world_event` [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2016](https://github.com/faker-ruby/faker/pull/2016) Fix yard documentation issues [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2015](https://github.com/faker-ruby/faker/pull/2015) Add YARD docs to `Faker::Quotes` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2011](https://github.com/faker-ruby/faker/pull/2011) Update `star_wars.yml` [@garrettmichaelgeorge](https://github.com/garrettmichaelgeorge)
+- [PR #2010](https://github.com/faker-ruby/faker/pull/2010) Add missing links in README.md [@Naokimi](https://github.com/Naokimi)
+- [PR #2009](https://github.com/faker-ruby/faker/pull/2009) Add YARD docs to `Faker::Placeholdit` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2008](https://github.com/faker-ruby/faker/pull/2008) Add YARD docs to `Faker::Verb` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2007](https://github.com/faker-ruby/faker/pull/2007) Add YARD docs to `Faker::Phone_Number` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2004](https://github.com/faker-ruby/faker/pull/2004) Add YARD docs to `Faker::String` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2001](https://github.com/faker-ruby/faker/pull/2001) Add YARD docs to `Faker::South_Africa` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2000](https://github.com/faker-ruby/faker/pull/2000) Add YARD docs to `Faker::JSON` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1999](https://github.com/faker-ruby/faker/pull/1999) Add YARD docs to `Faker::Types` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1998](https://github.com/faker-ruby/faker/pull/1998) Add YARD docs to `Faker::Finance` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1997](https://github.com/faker-ruby/faker/pull/1997) Add YARD docs to `Faker::Driving_Licence` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1996](https://github.com/faker-ruby/faker/pull/1996) Add YARD docs to `Crypto Coin` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1995](https://github.com/faker-ruby/faker/pull/1995) Add YARD docs to `Faker::Commerce` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1993](https://github.com/faker-ruby/faker/pull/1993) Add YARD docs to `Faker::Vehicle` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1990](https://github.com/faker-ruby/faker/pull/1990) Add YARD docs to `Faker::File` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1989](https://github.com/faker-ruby/faker/pull/1989) Add YARD docs to `Faker::Bank` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1984](https://github.com/faker-ruby/faker/pull/1984) Minor documentation fix for `Faker::University` [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1983](https://github.com/faker-ruby/faker/pull/1983) Add YARD docs to `Faker::Twitter` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1982](https://github.com/faker-ruby/faker/pull/1982) Add YARD docs to `Faker::Cosmere` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1981](https://github.com/faker-ruby/faker/pull/1981) Add YARD docs to `Faker::Stripe` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1980](https://github.com/faker-ruby/faker/pull/1980) Add YARD docs to `Faker::Construction` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1976](https://github.com/faker-ruby/faker/pull/1976) Add YARD docs to `Faker::Name` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1975](https://github.com/faker-ruby/faker/pull/1975) Add YARD docs to `Faker::Compass` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1959](https://github.com/faker-ruby/faker/pull/1959) Add YARD docs to `Faker::University` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1956](https://github.com/faker-ruby/faker/pull/1956) Add YARD docs to `Faker::SlackEmoji` [@rutger-t](https://github.com/rutger-t)
+- [PR #1943](https://github.com/faker-ruby/faker/pull/1943) Update documentation for unique.exclude [@mtancoigne](https://github.com/mtancoigne)
+- [PR #1925](https://github.com/faker-ruby/faker/pull/1925) AdD `Faker::Game::WarhammerFantasy` [@sotek222](https://github.com/sotek222)
+
+## Feature Request
+
+- [PR #2025](https://github.com/faker-ruby/faker/pull/2025) Add `Faker::TvShows::Suits` [@ash-elangovan](https://github.com/ash-elangovan)
+- [PR #2024](https://github.com/faker-ruby/faker/pull/2024) Added Phish Albums and Musicians [@zfine416](https://github.com/zfine416)
+- [PR #2013](https://github.com/faker-ruby/faker/pull/2013) Add `Faker::Games::Control` [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1994](https://github.com/faker-ruby/faker/pull/1994) Enable Ruby testing github workflow [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1966](https://github.com/faker-ruby/faker/pull/1966) Add `Faker::Games:DnD` [@Naokimi](https://github.com/Naokimi)
+- [PR #1962](https://github.com/faker-ruby/faker/pull/1962) Adding Pearl Jam to the Music module [@briri](https://github.com/briri)
+- [PR #1960](https://github.com/faker-ruby/faker/pull/1960) Added `Faker::Blood` [@suraj32](https://github.com/suraj32)
+- [PR #1931](https://github.com/faker-ruby/faker/pull/1931) Add `Faker::Movies::Departed` Class [@jaebradley](https://github.com/jaebradley)
+- [PR #1696](https://github.com/faker-ruby/faker/pull/1696) Add Bibles class with King James subclass [@jbergenson](https://github.com/jbergenson)
+- [PR #1485](https://github.com/faker-ruby/faker/pull/1485) Plays and musicals [@armandofox](https://github.com/armandofox)
+
+## Update locales
+
+- [PR #2014](https://github.com/faker-ruby/faker/pull/2014) Make locale self-contained [@psibi](https://github.com/psibi)
+- [PR #1986](https://github.com/faker-ruby/faker/pull/1986) Added quotations to Shirahoshi [@iavivai](https://github.com/iavivai)
+- [PR #1973](https://github.com/faker-ruby/faker/pull/1973) Fix mis-quotations [@kayhide](https://github.com/kayhide)
+- [PR #1967](https://github.com/faker-ruby/faker/pull/1967) ko locale updates [@jae57](https://github.com/jae57)
+- [PR #1964](https://github.com/faker-ruby/faker/pull/1964) en-AU locale updates [@mattman](https://github.com/mattman)
+- [PR #1948](https://github.com/faker-ruby/faker/pull/1948) Add `Faker::Computer` [@cmcramer](https://github.com/cmcramer)
+
+## Update local dependencies
+
+- Update minitest requirement from = 5.14.0 to = 5.14.1 (#1987)
+- Update rubocop requirement from = 0.80.1 to = 0.81.0 (#1955)
+- Update pry requirement from = 0.13.0 to = 0.13.1 (#1963)
+- Update yard requirement from = 0.9.24 to = 0.9.25 (#1970)
+
+------------------------------------------------------------------------------
+
 ## [v2.11.0](https://github.com/faker-ruby/faker/tree/v2.11.0) (2020-03-24)
 
 ## Bug/Fixes
