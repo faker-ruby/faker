@@ -22,5 +22,10 @@ task :sord do
   faker_rbi.gsub!('T::Array[String]', 'T::Array[::String]')
   faker_rbi.gsub!(': String', ': ::String')
 
+  faker_rbi.gsub!('returns(Date)', 'returns(::Date)')
+  faker_rbi.gsub!('T.nilable(Date)', 'T.nilable(::Date)')
+  faker_rbi.gsub!('T::Array[Date]', 'T::Array[::Date]')
+  faker_rbi.gsub!(': Date', ': ::Date')
+
   File.write('rbi/faker.rbi', faker_rbi)
 end

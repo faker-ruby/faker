@@ -1891,16 +1891,16 @@ module Faker
     # _@param_ `to` — The end of the usable date range.
     # 
     # ```ruby
-    # Faker::Date.between(from: 2.days.ago, to: Date.today)
+    # Faker::Date.between(from: 2.days.ago, to: ::Date.today)
     #   #=> #<Date: 2014-09-24>
     # ```
     sig do
       params(
         legacy_from: T.untyped,
         legacy_to: T.untyped,
-        from: Date,
-        to: Date
-      ).returns(Date)
+        from: ::Date,
+        to: ::Date
+      ).returns(::Date)
     end
     def self.between(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), from:, to:); end
 
@@ -1913,7 +1913,7 @@ module Faker
     # _@param_ `excepted` — A date to exclude.
     # 
     # ```ruby
-    # Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today)
+    # Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: ::Date.today)
     #   #=> #<Date: 2014-10-03>
     # ```
     sig do
@@ -1921,10 +1921,10 @@ module Faker
         legacy_from: T.untyped,
         legacy_to: T.untyped,
         legacy_excepted: T.untyped,
-        from: Date,
-        to: Date,
-        excepted: Date
-      ).returns(Date)
+        from: ::Date,
+        to: ::Date,
+        excepted: ::Date
+      ).returns(::Date)
     end
     def self.between_except(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), legacy_excepted = T.unsafe(nil), from:, to:, excepted:); end
 
@@ -1935,7 +1935,7 @@ module Faker
     # ```ruby
     # Faker::Date.forward(days: 23) #=> #<Date: 2014-10-03>
     # ```
-    sig { params(legacy_days: T.untyped, days: Integer).returns(Date) }
+    sig { params(legacy_days: T.untyped, days: Integer).returns(::Date) }
     def self.forward(legacy_days = T.unsafe(nil), days: 365); end
 
     # Produce a random date in the past (up to N days).
@@ -1945,7 +1945,7 @@ module Faker
     # ```ruby
     # Faker::Date.backward(days: 14) #=> #<Date: 2019-09-12>
     # ```
-    sig { params(legacy_days: T.untyped, days: Integer).returns(Date) }
+    sig { params(legacy_days: T.untyped, days: Integer).returns(::Date) }
     def self.backward(legacy_days = T.unsafe(nil), days: 365); end
 
     # Produce a random date in the past (up to N days).
@@ -1963,7 +1963,7 @@ module Faker
         legacy_max_age: T.untyped,
         min_age: Integer,
         max_age: Integer
-      ).returns(Date)
+      ).returns(::Date)
     end
     def self.birthday(legacy_min_age = T.unsafe(nil), legacy_max_age = T.unsafe(nil), min_age: 18, max_age: 65); end
 
@@ -1984,7 +1984,7 @@ module Faker
     # ```ruby
     # Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
     # ```
-    sig { params(month: T.nilable(Integer), year: Integer).returns(Date) }
+    sig { params(month: T.nilable(Integer), year: Integer).returns(::Date) }
     def self.in_date_period(month: nil, year: ::Date.today.year); end
 
     sig { params(date: T.untyped, age: T.untyped).returns(T.untyped) }
@@ -2424,14 +2424,14 @@ module Faker
     # # Random Stringified time between two times, formatted to the specified I18n format
     # # (Examples are from a Rails console with rails-i18n 5.1.1 defaults loaded)
     # I18n.locale = 'en-US'
-    # Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) #=> "Tue, 16 Oct 2018 10:48:27 AM -05:00"
-    # Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short) #=> "15 Oct 10:48 AM"
-    # Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long) #=> "October 15, 2018 10:48 AM"
+    # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :default) #=> "Tue, 16 Oct 2018 10:48:27 AM -05:00"
+    # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :short) #=> "15 Oct 10:48 AM"
+    # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :long) #=> "October 15, 2018 10:48 AM"
     # 
     # I18n.locale = 'ja'
-    # Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) #=> "2018/10/15 10:48:27"
-    # Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short) #=> "18/10/15 10:48"
-    # Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long) #=> "2018年10月16日(火) 10時48分27秒 -0500"
+    # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :default) #=> "2018/10/15 10:48:27"
+    # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :short) #=> "18/10/15 10:48"
+    # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :long) #=> "2018年10月16日(火) 10時48分27秒 -0500"
     # ```
     sig do
       params(
@@ -2456,21 +2456,21 @@ module Faker
     # _@param_ `format` — The name of a DateTime format to use.
     # 
     # ```ruby
-    # Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)
+    # Faker::Time.between_dates(from: ::Date.today - 1, to: ::Date.today, period: :all)
     #   #=> "2014-09-19 07:03:30 -0700"
-    # Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :day)
+    # Faker::Time.between_dates(from: ::Date.today - 1, to: ::Date.today, period: :day)
     #   #=> "2014-09-18 16:28:13 -0700"
-    # Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :night)
+    # Faker::Time.between_dates(from: ::Date.today - 1, to: ::Date.today, period: :night)
     #   #=> "2014-09-20 19:39:38 -0700"
-    # Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :morning)
+    # Faker::Time.between_dates(from: ::Date.today - 1, to: ::Date.today, period: :morning)
     #   #=> "2014-09-19 08:07:52 -0700"
-    # Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :afternoon)
+    # Faker::Time.between_dates(from: ::Date.today - 1, to: ::Date.today, period: :afternoon)
     #   #=> "2014-09-18 12:10:34 -0700"
-    # Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :evening)
+    # Faker::Time.between_dates(from: ::Date.today - 1, to: ::Date.today, period: :evening)
     #   #=> "2014-09-19 20:21:03 -0700"
-    # Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :midnight)
+    # Faker::Time.between_dates(from: ::Date.today - 1, to: ::Date.today, period: :midnight)
     #   #=> "2014-09-20 00:40:14 -0700"
-    # Faker::Time.between_dates(from: Date.today - 5, to: Date.today + 5, period: :afternoon, format: :default)
+    # Faker::Time.between_dates(from: ::Date.today - 5, to: ::Date.today + 5, period: :afternoon, format: :default)
     #   #=> "Fri, 19 Oct 2018 15:17:46 -0500"
     # ```
     sig do
@@ -8574,7 +8574,7 @@ module Faker
     # Faker::DrivingLicence.british_driving_licence(last_name: "O'Carroll",
     #                                               initials: "J",
     #                                               gender: :female,
-    #                                               date_of_birth: Date.parse("1986-10-24")) #=> "OCARR815246J91HT"
+    #                                               date_of_birth: ::Date.parse("1986-10-24")) #=> "OCARR815246J91HT"
     # ```
     sig do
       params(
