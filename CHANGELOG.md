@@ -2,6 +2,14 @@
 
 ## [v2.12.0](https://github.com/faker-ruby/faker/tree/v2.12.0) (2020-05-31)
 
+This version:
+- adds several YARD docs
+- fixes some locales issues
+- fixes a few bugs in Faker generators
+- improves code quality
+- adds a few generators regarding Movies, Music and Tv Shows
+- updates local dependencies
+
 ## Bug/Fixes
 
 - Update 'prepare' regexp to allow hyphen (#2019) [@jbergenson]
