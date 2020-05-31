@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    faker (2.11.0)
+    faker (2.12.0)
       i18n (>= 1.6, < 2)
 
 GEM
@@ -62,4 +62,4 @@ DEPENDENCIES
   yard (= 0.9.25)
 
 BUNDLED WITH
-   2.1.0
+   2.1.2
