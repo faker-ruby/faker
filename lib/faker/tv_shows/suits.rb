@@ -7,7 +7,7 @@ module Faker
 
       class << self
         ##
-        # Produces a character from Suits
+        # Produces a character from Suits.
         #
         # @return [String]
         #
@@ -20,7 +20,7 @@ module Faker
         end
 
         ##
-        # Produces a quote from Suits
+        # Produces a quote from Suits.
         #
         # @return [String]
         #
