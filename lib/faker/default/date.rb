@@ -6,8 +6,8 @@ module Faker
       ##
       # Produce a random date between two dates.
       #
-      # @param from [Date] The start of the usable date range.
-      # @param to [Date] The end of the usable date range.
+      # @param from [Date, String] The start of the usable date range.
+      # @param to [Date, String] The end of the usable date range.
       # @return [Date]
       #
       # @example
@@ -32,9 +32,9 @@ module Faker
       ##
       # Produce a random date between two dates.
       #
-      # @param from [Date] The start of the usable date range.
-      # @param to [Date] The end of the usable date range.
-      # @param excepted [Date] A date to exclude.
+      # @param from [Date, String] The start of the usable date range.
+      # @param to [Date, String] The end of the usable date range.
+      # @param excepted [Date, String] A date to exclude.
       # @return [Date]
       #
       # @example
