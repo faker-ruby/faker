@@ -7,5 +7,5 @@ Faker::Blood.type #=> "AB"
 
 Faker::Blood.rh_factor #=> "-"
 
-Faker::Blood.group #=> "AB+"
+Faker::Blood.group #=> "AB-"
 ```
