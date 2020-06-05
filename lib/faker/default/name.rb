@@ -86,7 +86,7 @@ module Faker
       # @example
       #   Faker::Name.neutral_first_name #=> "Casey"
       #
-      # @faker.version 1.9.1
+      # @faker.version next
       def neutral_first_name
         fetch('name.neutral_first_name')
       end
