@@ -30,7 +30,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_spanish_organisation_number
     org_no = @tester.spanish_organisation_number
     assert org_no.match(/\D\d{7}/)
-    assert %w[A B C D E F G H J N P Q R S U V W].include?(org_no[0].to_s)
+    assert Faker::Base::ULetters.include?(org_no[0].to_s)
   end
 
   def test_swedish_organisation_number
