@@ -165,9 +165,7 @@ module Faker
       def spanish_organisation_number
         # Valid leading character: A, B, C, D, E, F, G, H, J, N, P, Q, R, S, U, V, W
         # 7 digit numbers
-        letters = %w[A B C D E F G H J N P Q R S U V W]
-        base = [sample(letters), format('%07d', rand(10**7))].join
-        base
+        [sample(self::ULetters), format('%07d', rand(10**7))].join
       end
 
       ##
