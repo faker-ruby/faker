@@ -9,10 +9,50 @@ module Faker
       flexible :king_james
 
       class << self
+
+        ##
+        # Produces the name of a random book from the bible
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Bibles::KingJames.book #=> "genesis"
+        #
+        # @faker.version next
         def book
           BOOKS.sample
         end
 
+        ##
+        # Produces a random verse from the bible.
+        #
+        #
+        # @param prefix [Boolean] If true, append the book and verse to the quote
+        # @param emphasis [Boolean] If true, include "*" around emphasized words
+        # @param books [String | Symbol | Array<String | Symbol>]
+        #   A book, or list of books to generate a verse from.
+        #   If you want a verse from a particular book, you can call `Faker::Bibles::KingJames.{book}` as well.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Bibles::KingJames.verse
+        #   Faker::Bibles::KingJames.genesis
+        #     #=> "Genesis 6:22 Thus did Noah; according to all that God commanded him, so did he."
+        #
+        #   Faker::Bibles::KingJames.verse(prefix: false)
+        #   Faker::Bibles::KingJames.acts(prefix: false)
+        #     #=> "But Solomon built him an house."
+        #
+        #   Faker::Bibles::KingJames.verse(emphasis: false)
+        #   Faker::Bibles::KingJames.obadiah(emphasis: false)
+        #     #=> "Obadiah 1:6 How are the things of Esau searched out! how are his hidden things sought up!"
+        #
+        #   Faker::Bibles::KingJames.verse(emphasis: true)
+        #   Faker::Bibles::KingJames.obadiah(emphasis: true)
+        #     #=> "Obadiah 1:6 How are *the things* of Esau searched out! *how* are his hidden things sought up!"
+        #
+        # @faker.version next
         def verse(prefix: true, emphasis: false, books: BOOKS)
           books = [books] unless books.is_a? Array
           validate_book_names(books)
