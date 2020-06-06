@@ -7,7 +7,7 @@ module Faker
       base = alphabet.size
 
       lv = 0
-      str.split('').reverse.each_with_index { |v, i| lv += v.unpack('C')[0] * 256**i }
+      str.split('').reverse.each_with_index { |v, i| lv += v.unpack('C') * 256**i }
 
       ret = +''
       while lv.positive?

@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
   spec.executables   = ['faker']
   spec.require_paths = ['lib']
-  spec.required_ruby_version = '>= 2.3'
+  spec.required_ruby_version = '>= 2.5'
 
   spec.metadata['changelog_uri'] = 'https://github.com/faker-ruby/faker/blob/master/CHANGELOG.md'
   spec.metadata['source_code_uri'] = 'https://github.com/faker-ruby/faker'
