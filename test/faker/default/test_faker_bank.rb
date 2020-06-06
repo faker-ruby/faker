@@ -46,6 +46,15 @@ class TestFakerBank < Test::Unit::TestCase
     assert @tester.swift_bic.match(/(\w+\.? ?){2,3}/)
   end
 
+  # This test makes sure there are no collissions in BIC number pool
+  def test_swift_bic_collission
+    10.times do
+      samplebic1 = @tester.swift_bic
+      samplebic2 = @tester.swift_bic
+      refute_equal samplebic1, samplebic2
+    end
+  end
+
   def test_iban_default
     assert @tester.iban.match(/[A-Z]{4}\d{14}/)
   end
