@@ -9,7 +9,6 @@ module Faker
       flexible :king_james
 
       class << self
-
         ##
         # Produces the name of a random book from the bible
         #
