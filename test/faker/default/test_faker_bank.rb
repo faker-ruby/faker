@@ -48,9 +48,9 @@ class TestFakerBank < Test::Unit::TestCase
 
   # This test makes sure there are no collissions in BIC number pool
   def test_swift_bic_collission
-    50.times do
-      sample_bic_1 = Faker::Bank.swift_bic
-      sample_bic_2 = Faker::Bank.swift_bic
+    25.times do
+      sample_bic_1 = @tester.swift_bic
+      sample_bic_2 = @tester.swift_bic
       refute_equal sample_bic_1, sample_bic_2
     end
   end
