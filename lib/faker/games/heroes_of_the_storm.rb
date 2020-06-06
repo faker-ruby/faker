@@ -18,16 +18,27 @@ module Faker
         end
 
         ##
-        # Produces a class from Heroes of the Storm.
+        # This method is deprecated. The implementation will be removed in a near future release.
+        # Use `HeroesOfTheStorm.class_name` instead.
+        #
+        # @deprecated Use {#class_name} instead.
+        def class
+          warn '`HeroesOfTheStorm.class` is deprecated. Use `HeroesOfTheStorm.class_name` instead.'
+
+          super
+        end
+
+        ##
+        # Produces a class name from Heroes of the Storm.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Games::HeroesOfTheStorm.class #=> "Support"
+        #   Faker::Games::HeroesOfTheStorm.class_name #=> "Support"
         #
-        # @faker.version 1.9.2
-        def class
-          fetch('heroes_of_the_storm.classes')
+        # @faker.version next
+        def class_name
+          fetch('heroes_of_the_storm.class_names')
         end
 
         ##
