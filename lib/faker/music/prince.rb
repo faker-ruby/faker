@@ -4,6 +4,15 @@ module Faker
   class Music
     class Prince < Base
       class << self
+        ##
+        # Produces a random Prince song.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Music::Prince.song #=> "Computer Blue"
+        #
+        # @faker.version next
         def song
           fetch('prince.song')
         end
