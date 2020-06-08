@@ -79,6 +79,21 @@ module Faker
       alias feminine_name female_first_name
 
       ##
+      # Produces a random gender neutral first name.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Name.neutral_first_name #=> "Casey"
+      #
+      # @faker.version next
+      def neutral_first_name
+        fetch('name.neutral_first_name')
+      end
+      alias first_name_neutral neutral_first_name
+      alias gender_neutral_first_name neutral_first_name
+
+      ##
       # Produces a random last name.
       #
       # @return [String]
