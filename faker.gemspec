@@ -33,7 +33,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('pry', '0.14.0')
   spec.add_development_dependency('rake', '13.0.3')
   spec.add_development_dependency('rubocop', '1.11.0')
-  spec.add_development_dependency('simplecov', '0.17.1')
+  # Workaround for cc-test-reporter with SimpleCov 0.18.
+  # Stop upgrading SimpleCov until the following issue will be resolved.
+  # https://github.com/codeclimate/test-reporter/issues/418
+  spec.add_development_dependency('simplecov', '0.17.1', '< 0.18')
   spec.add_development_dependency('test-unit', '3.4.0')
   spec.add_development_dependency('timecop', '0.9.4')
   spec.add_development_dependency('yard', '0.9.26')

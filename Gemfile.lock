@@ -59,7 +59,7 @@ DEPENDENCIES
   pry (= 0.14.0)
   rake (= 13.0.3)
   rubocop (= 1.11.0)
-  simplecov (= 0.17.1)
+  simplecov (= 0.17.1, < 0.18)
   test-unit (= 3.4.0)
   timecop (= 0.9.4)
   yard (= 0.9.26)
