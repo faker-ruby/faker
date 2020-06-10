@@ -277,6 +277,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Music::Phish](doc/music/phish.md)
   - [Faker::Music::Prince](doc/music/prince.md)
   - [Faker::Music::RockBand](doc/music/rock_band.md)
+  - [Faker::Music::Rush](doc/music/rush.md)
   - [Faker::Music::UmphreysMcgee](doc/music/umphreys_mcgee.md)
 
 ### Quotes
