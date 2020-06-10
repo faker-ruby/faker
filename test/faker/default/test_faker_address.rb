@@ -90,4 +90,12 @@ class TestFakerAddress < Test::Unit::TestCase
   def test_full_address
     assert @tester.full_address.match(/\w*\.?\s?\d*\s?\d+\s\w+\s\w+,\s\w+\s?\w*,\s[A-Z]{2}\s\d+/)
   end
+
+  def test_full_address_as_hash
+    assert_instance_of Hash, @tester.full_address_as_hash
+  end
+
+  def test_full_address_as_hash_by_longitude
+    assert_instance_of Float, @tester.full_address_as_hash(:longitude)[:longitude]
+  end
 end

@@ -333,6 +333,36 @@ module Faker
       def full_address
         parse('address.full_address')
       end
+
+      ##
+      # Produces Address hash of required fields
+      #
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::Address.full_address_as_hash(:longitude,
+      #                                       :latitude,
+      #                                       :country_name_to_code,
+      #                                       country_name_to_code: {name: 'united_states'})
+      #     #=> {:longitude=>-101.74428917174603, :latitude=>-37.40056749089944, :country_name_to_code=>"US"}
+      #
+      #  Faker::Address.full_address_as_hash(:full_address)
+      #     #=> {:full_address=>"87635 Rice Street, Lake Brentonton, OR 61896-5968"}
+      #
+      #  Faker::Address.full_address_as_hash(:city, :time_zone)
+      #     #=> {:city=>"East Faustina", :time_zone=>"America/Mexico_City"}
+      #
+      #  Faker::Address.full_address_as_hash(:street_address, street_address: {include_secondary: true})
+      #     #=> {:street_address=>"29423 Kenneth Causeway Suite 563"}
+      #
+      # @faker.version next
+      def full_address_as_hash(*attrs, **attrs_params)
+        attrs.map!(&:to_sym)
+        attrs_params.transform_keys!(&:to_sym)
+        attrs.map do |attr|
+          { "#{attr}": attrs_params[attr] ? send(attr, **attrs_params[attr]) : send(attr) }
+        end.reduce({}, :merge)
+      end
     end
   end
 end
