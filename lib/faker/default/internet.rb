@@ -306,8 +306,6 @@ module Faker
       # @return [hash]
       #
       # @faker.version next
-      #
-      ##
       def user(*args)
         user_hash = {}
         args = %w[username email] if args.empty?
