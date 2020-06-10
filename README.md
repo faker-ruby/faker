@@ -292,6 +292,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/tv_shows/aqua_teen_hunger_force.md)
+  - [Faker::TvShows::BigBangTheory](doc/tv_shows/big_bang_theory.md)
   - [Faker::TvShows::BojackHorseman](doc/tv_shows/bojack_horseman.md)
   - [Faker::TvShows::BreakingBad](doc/tv_shows/breaking_bad.md)
   - [Faker::TvShows::Buffy](doc/tv_shows/buffy.md)
