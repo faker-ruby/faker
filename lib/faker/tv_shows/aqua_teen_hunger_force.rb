@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::TvShows::AquaTeenHungerForce.character #=> "Master Shake"
         #
-        # @faker.version next
+        # @faker.version 1.8.5
         def character
           fetch('aqua_teen_hunger_force.character')
         end
