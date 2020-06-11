@@ -45,6 +45,20 @@ module Faker
         def quote
           fetch('simpsons.quotes')
         end
+
+        ##
+        # Produces an episode title from The Simpsons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::TvShows::Simpsons.episode_title
+        #     #=> "Two Cars in Every Garage and Three Eyes on Every Fish"
+        #
+        # @faker.version next
+        def episode_title
+          fetch('simpsons.episode_titles')
+        end
       end
     end
   end
