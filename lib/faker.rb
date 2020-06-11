@@ -21,7 +21,8 @@ module Faker
       attr_writer :random
 
       def locale
-        @locale || I18n.locale
+        # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
+        @locale || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
       end
 
       def own_locale
