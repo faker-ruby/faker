@@ -20,7 +20,7 @@ module Faker
         end
 
         ##
-        # Produces a perl of great AHTF wisdom
+        # Produces a perl of great ATHF wisdom
         #
         # @return [String]
         #
