@@ -56,7 +56,7 @@ module Faker
       end
 
       ##
-      # Produces a random RUT (Rol Único Nacional) code.
+      # Produces a random RUT (Rol Unico Nacional) code.
       #
       # @return [String]
       #
