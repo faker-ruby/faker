@@ -9,7 +9,7 @@ Generates markdown formatting with Lorem Ipsum text
 Faker::Markdown.headers #=> "##### Autem"
 
 # Emphasis - generates random emphasis formatting on a random word in two sentences
-Faker::Markdown.emphasis #=> "Incidunt atque quis repellat id impedit.  Quas numquam quod incidunt dicta non. Blanditiis delectus laudantium atque reiciendis qui."
+Faker::Markdown.emphasis #=> "_Incidunt atque quis repellat id impedit.  Quas numquam quod incidunt dicta non. Blanditiis delectus laudantium atque reiciendis qui._"
 
 # Ordered List - generates an ordered list of items between 1 and 10 randomly
 Faker::Markdown.ordered_list #=> "1. Qui reiciendis non consequatur atque.\n2. Quo doloremque veritatis tempora aut.\n3. Aspernatur.\n4. Ea ab.\n5. Qui.\n6. Sit pariatur nemo eveniet.\n7. Molestiae aut.\n8. Nihil molestias iure placeat.\n9. Dolore autem quisquam."
