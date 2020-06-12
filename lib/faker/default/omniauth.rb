@@ -393,13 +393,13 @@ module Faker
       end
 
       ##
-      # Generate a mock Omniauth response from Apple
+      # Generate a mock Omniauth response from Apple.
       #
-      # @param name [String] A specific name to return in the response
-      # @param email [String] A specific email to return in the response
-      # @param uid [String] A specific UID to return in the response
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
       #
-      # @return [Hash] An auth hash in the format provided by omniauth-apple
+      # @return [Hash] An auth hash in the format provided by omniauth-apple.
       #
       # @faker.version 2.3.0
       def apple(name: nil, email: nil, uid: nil)
