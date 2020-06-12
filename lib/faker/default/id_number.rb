@@ -143,7 +143,7 @@ module Faker
       #
       # @example
       #   Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
-      #   Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> 000.000.000-00
+      #   Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
       #
       # @faker.version 1.9.2
       def brazilian_citizen_number(legacy_formatted = NOT_GIVEN, formatted: false)
