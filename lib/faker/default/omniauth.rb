@@ -15,6 +15,16 @@ module Faker
     end
 
     class << self
+      ##
+      # Generate a mock Omniauth response from Google.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-google.
+      #
+      # @faker.version 1.8.0
       # rubocop:disable Metrics/ParameterLists
       def google(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 9).to_s)
         # rubocop:enable Metrics/ParameterLists
@@ -72,6 +82,17 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response from Facebook.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param username [String] A specific username to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-facebook.
+      #
+      # @faker.version 1.8.0
       # rubocop:disable Metrics/ParameterLists
       def facebook(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_username = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s)
         # rubocop:enable Metrics/ParameterLists
@@ -123,6 +144,16 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response from Twitter.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param nickname [String] A specific nickname to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-twitter.
+      #
+      # @faker.version 1.8.0
       # rubocop:disable Metrics/ParameterLists
       def twitter(legacy_name = NOT_GIVEN, legacy_nickname = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, nickname: nil, uid: Number.number(digits: 6).to_s)
         # rubocop:enable Metrics/ParameterLists
@@ -204,6 +235,16 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response from LinkedIn.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-linkedin.
+      #
+      # @faker.version 1.8.0
       # rubocop:disable Metrics/ParameterLists
       def linkedin(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 6).to_s)
         # rubocop:enable Metrics/ParameterLists
@@ -275,6 +316,16 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response from Github.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-github.
+      #
+      # @faker.version 1.8.0
       # rubocop:disable Metrics/ParameterLists
       def github(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 8).to_s)
         # rubocop:enable Metrics/ParameterLists
@@ -342,13 +393,15 @@ module Faker
       end
 
       ##
-      # Generate a mock Omniauth response from Apple
+      # Generate a mock Omniauth response from Apple.
       #
-      # @param name [String] A specific name to return in the response
-      # @param email [String] A specific email to return in the response
-      # @param uid [String] A specific UID to return in the response
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
       #
-      # @return [Hash] An auth hash in the format provided by omniauth-apple
+      # @return [Hash] An auth hash in the format provided by omniauth-apple.
+      #
+      # @faker.version 2.3.0
       def apple(name: nil, email: nil, uid: nil)
         uid ||= "#{Number.number(digits: 6)}.#{Number.hexadecimal(digits: 32)}.#{Number.number(digits: 4)}"
         auth = Omniauth.new(name: name, email: email)
