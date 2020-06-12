@@ -6,7 +6,7 @@ module Faker
       @last_rut = nil
 
       ##
-      # Produces a random Chilean RUT (Rol Único Tributario, ID with 8 digits).
+      # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits).
       #
       # @param min_rut [Integer] Specifies the minimum value of the rut.
       # @param fixed [Boolean] Determines if the rut is fixed (returns the min_rut value).
@@ -70,7 +70,7 @@ module Faker
       end
 
       ##
-      # Produces a random Chilean RUT (Rol Único Tributario, ID with 8 digits) with a dv (digito verificador, check-digit).
+      # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits) with a dv (digito verificador, check-digit).
       #
       # @param min_rut [Integer] Specifies the minimum value of the rut.
       # @param fixed [Boolean] Determines if the rut is fixed (returns the min_rut value).
