@@ -22,7 +22,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Markdown.emphasis #=> "Incidunt atque quis repellat id impedit.  Quas numquam quod incidunt dicta non. Blanditiis delectus laudantium atque reiciendis qui."
+      #   Faker::Markdown.emphasis #=> "_Incidunt atque quis repellat id impedit.  Quas numquam quod incidunt dicta non. Blanditiis delectus laudantium atque reiciendis qui._"
       #
       # @faker.version 1.8.0
       def emphasis
