@@ -3,6 +3,15 @@
 module Faker
   class NationalHealthService < Base
     class << self
+      ##
+      # Produces a random British NHS number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::NationalHealthService.british_number #=> "403 958 5577"
+      #
+      # @faker.version 1.9.2
       def british_number
         base_number = rand(400_000_001...499_999_999)
         # If the check digit is equivalent to 10, the number is invalid.
@@ -15,6 +24,16 @@ module Faker
                                                            .join('')
       end
 
+      ##
+      # Produces a random British NHS number's check digit.
+      #
+      # @param number [Integer] Specifies the NHS number the check digit belongs to.
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::NationalHealthService.check_digit(number: 400_012_114) #=> 6
+      #
+      # @faker.version 1.9.2
       def check_digit(legacy_number = NOT_GIVEN, number: 0)
         warn_for_deprecated_arguments do |keywords|
           keywords << :number if legacy_number != NOT_GIVEN
