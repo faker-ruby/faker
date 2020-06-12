@@ -167,8 +167,8 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.brazilian_id #=> 1212312312
-      #   Faker::IDNumber.brazilian_id(formatted: true) #=> 12.123.123-12
+      #   Faker::IDNumber.brazilian_id #=> "493054029"
+      #   Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
       #
       # @faker.version 2.1.2
       def brazilian_id(legacy_formatted = NOT_GIVEN, formatted: false)
