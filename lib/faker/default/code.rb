@@ -12,7 +12,7 @@ module Faker
       # @exmaple
       #   Faker::Code.npi #=> "9804062802"
       #
-      # @faker.version next
+      # @faker.version 1.9.4
       def npi
         rand(10**10).to_s.rjust(10, '0')
       end
@@ -27,7 +27,7 @@ module Faker
       # @exmaple
       #   Faker::Code.isbn #=> "170366802-2"
       #
-      # @faker.version next
+      # @faker.version 2.2.0
       def isbn(legacy_base = NOT_GIVEN, base: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :base if legacy_base != NOT_GIVEN
@@ -46,7 +46,7 @@ module Faker
       # @exmaple
       #   Faker::Code.ean #=> "9941880131907"
       #
-      # @faker.version next
+      # @faker.version 2.2.0
       def ean(legacy_base = NOT_GIVEN, base: 13)
         warn_for_deprecated_arguments do |keywords|
           keywords << :base if legacy_base != NOT_GIVEN
@@ -63,7 +63,7 @@ module Faker
       # @example
       #   Faker::Code.rut #=> "91611842-2"
       #
-      # @faker.version next
+      # @faker.version 1.9.4
       def rut
         value = Number.number(digits: 8).to_s
         vd = rut_verificator_digit(value)
@@ -86,7 +86,7 @@ module Faker
       # @example
       #   Faker::Code.nric #=> "S6372958B"
       #
-      # @faker.version next
+      # @faker.version 2.2.0
       def nric(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
         warn_for_deprecated_arguments do |keywords|
           keywords << :min_age if legacy_min_age != NOT_GIVEN
@@ -109,7 +109,7 @@ module Faker
       # @example
       #   Faker::Code.imei #=> "492033129092256"
       #
-      # @faker.version next
+      # @faker.version 1.9.4
       def imei
         generate_imei
       end
@@ -122,7 +122,7 @@ module Faker
       # @example
       #   Faker::Code.asin #=> "B000MZW1GE"
       #
-      # @faker.version next
+      # @faker.version 1.9.4
       def asin
         fetch('code.asin')
       end
@@ -135,7 +135,7 @@ module Faker
       # @example
       #   Faker::Code.sin #=> "996586962"
       #
-      # @faker.version next
+      # @faker.version 1.9.4
       def sin
         # 1   - province or temporary resident
         # 2-8 - random numbers
