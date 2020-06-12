@@ -19,10 +19,28 @@ module Faker
     CHILEAN_MODULO = 11
 
     class << self
+      ##
+      # Produces a random valid US Social Security number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.valid #=> "552-56-3593"
+      #
+      # @faker.version 1.6.0
       def valid
         _translate('valid')
       end
 
+      ##
+      # Produces a random invalid US Social Security number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.invalid #=> "311-72-0000"
+      #
+      # @faker.version 1.6.0
       def invalid
         _translate('invalid')
       end
@@ -33,6 +51,15 @@ module Faker
         INVALID_SSN.any? { |regex| regex =~ ssn } ? ssn_valid : ssn
       end
 
+      ##
+      # Produces a random Spanish citizen identifier (DNI).
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.spanish_citizen_number #=> "53290236-H"
+      #
+      # @faker.version 1.9.0
       def spanish_citizen_number
         num = Faker::Number.number(digits: 8)
         mod = num.to_i % 23
@@ -40,6 +67,15 @@ module Faker
         "#{num}-#{check}"
       end
 
+      ##
+      # Produces a random Spanish foreign born citizen identifier (NIE).
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.spanish_foreign_citizen_number #=> "Z-1600870-Y"
+      #
+      # @faker.version 1.9.0
       def spanish_foreign_citizen_number
         code = 'XYZ'
         digits = Faker::Number.number(digits: 7)
@@ -50,6 +86,16 @@ module Faker
         "#{prefix}-#{digits}-#{check}"
       end
 
+      ##
+      # Produces a random valid South African ID Number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.south_african_id_number #=> "8105128870184"
+      #   Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
+      #
+      # @faker.version 1.9.2
       def valid_south_african_id_number
         id_number = [
           Faker::Date.birthday.strftime('%y%m%d'),
@@ -63,6 +109,15 @@ module Faker
 
       alias south_african_id_number valid_south_african_id_number
 
+      ##
+      # Produces a random invalid South African ID Number.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
+      #
+      # @faker.version 1.9.2
       def invalid_south_african_id_number
         invalid_date_of_birth = [
           Faker::Number.number(digits: 2),
@@ -80,6 +135,17 @@ module Faker
         [id_number, south_african_id_checksum_digit(id_number)].join
       end
 
+      ##
+      # Produces a random Brazilian Citizen Number (CPF).
+      #
+      # @param formatted [Boolean] Specifies if the number is formatted with dividers.
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
+      #   Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
+      #
+      # @faker.version 1.9.2
       def brazilian_citizen_number(legacy_formatted = NOT_GIVEN, formatted: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :formatted if legacy_formatted != NOT_GIVEN
@@ -94,6 +160,17 @@ module Faker
 
       alias brazilian_cpf brazilian_citizen_number
 
+      ##
+      # Produces a random Brazilian ID Number (RG).
+      #
+      # @param formatted [Boolean] Specifies if the number is formatted with dividers.
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.brazilian_id #=> "493054029"
+      #   Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
+      #
+      # @faker.version 2.1.2
       def brazilian_id(legacy_formatted = NOT_GIVEN, formatted: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :formatted if legacy_formatted != NOT_GIVEN
@@ -107,6 +184,15 @@ module Faker
 
       alias brazilian_rg brazilian_id
 
+      ##
+      # Produces a random Chilean ID (Rut with 8 digits).
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.chilean_id #=> "15620613-K"
+      #
+      # @faker.version 2.1.2
       def chilean_id
         digits = Faker::Number.number(digits: 8)
         verification_code = chilean_verification_code(digits)
