@@ -7,10 +7,12 @@ class TestFakerStripe < Test::Unit::TestCase
     @tester = Faker::Stripe
   end
 
+  # deprecated
   def test_valid_card
     assert @tester.valid_card.match(/\A\d{14,16}\z/)
   end
 
+  # deprecated
   def test_valid_card_error
     e = assert_raise ArgumentError do
       assert @tester.valid_card(card_type: Faker::Lorem.word)
@@ -19,6 +21,7 @@ class TestFakerStripe < Test::Unit::TestCase
     assert_match(/\AValid credit cards argument can be left blank or include/, e.message)
   end
 
+  # deprecated
   def test_specific_valid_card
     assert @tester.valid_card(card_type: 'visa').match(/\A\d{16}\z/)
   end
@@ -31,10 +34,12 @@ class TestFakerStripe < Test::Unit::TestCase
     assert @tester.valid_token(card_type: 'visa').match(/\Atok_visa\z/)
   end
 
+  # deprecated
   def test_invalid_card
     assert @tester.invalid_card.match(/\A\d{16}\z/)
   end
 
+  # deprecated
   def test_invalid_card_error
     e = assert_raise ArgumentError do
       assert @tester.invalid_card(card_error: Faker::Lorem.word)
@@ -43,22 +48,27 @@ class TestFakerStripe < Test::Unit::TestCase
     assert_match(/\AInvalid credit cards argument can be left blank or include/, e.message)
   end
 
+  # deprecated
   def test_specific_error_invalid_card
     assert @tester.invalid_card(card_error: 'zipFail').match(/\w+/)
   end
 
+  # deprecated
   def test_valid_exp_mo
     assert @tester.month.match(/\A\d{2}\z/)
   end
 
+  # deprecated
   def test_valid_exp_yr
     assert @tester.year.match(/\A\d{4}\z/)
   end
 
+  # deprecated
   def test_valid_ccv
     assert @tester.ccv.match(/\A\d{3}\z/)
   end
 
+  # deprecated
   def test_valid_amex_ccv
     assert @tester.ccv(card_type: 'amex').match(/\A\d{4}\z/)
   end

@@ -3,6 +3,8 @@
 module Faker
   class Stripe < Base
     class << self
+      extend Gem::Deprecate
+
       ##
       # Produces a random valid card number.
       #
@@ -13,25 +15,13 @@ module Faker
       #   Faker::Stripe.valid_card #=> "4242424242424242"
       #   Faker::Stripe.valid_card(card_type: "visa_debit") #=> "4000056655665556"
       #
+      # @deprecated Use the Faker::Business.valid_card_number method instead.
+      #
       # @faker.version 1.9.0
       def valid_card(legacy_card_type = NOT_GIVEN, card_type: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :card_type if legacy_card_type != NOT_GIVEN
-        end
-
-        valid_cards = translate('faker.stripe.valid_cards').keys
-
-        if card_type.nil?
-          card_type = sample(valid_cards).to_s
-        else
-          unless valid_cards.include?(card_type.to_sym)
-            raise ArgumentError,
-                  "Valid credit cards argument can be left blank or include #{valid_cards.join(', ')}"
-          end
-        end
-
-        fetch('stripe.valid_cards.' + card_type)
+        Faker::Business.valid_card_number(legacy_card_type, card_type: card_type)
       end
+      deprecate :valid_card, 'Faker::Business.valid_card_number', 2020, 6
 
       ##
       # Produces a random valid Stripe token.
@@ -72,25 +62,13 @@ module Faker
       #   Faker::Stripe.invalid_card #=> "4000000000000002"
       #   Faker::Stripe.invalid_card(card_error: "addressZipFail") #=> "4000000000000010"
       #
+      # @deprecated Use the Faker::Business.invalid_card_number method instead.
+      #
       # @faker.version 1.9.0
       def invalid_card(legacy_card_error = NOT_GIVEN, card_error: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :card_error if legacy_card_error != NOT_GIVEN
-        end
-
-        invalid_cards = translate('faker.stripe.invalid_cards').keys
-
-        if card_error.nil?
-          card_error = sample(invalid_cards).to_s
-        else
-          unless invalid_cards.include?(card_error.to_sym)
-            raise ArgumentError,
-                  "Invalid credit cards argument can be left blank or include #{invalid_cards.join(', ')}"
-          end
-        end
-
-        fetch('stripe.invalid_cards.' + card_error)
+        Faker::Business.invalid_card_number(legacy_card_error, card_error: card_error)
       end
+      deprecate :invalid_card, 'Faker::Business.invalid_card_number', 2020, 6
 
       ##
       # Produces a random month in two digits format.
@@ -100,10 +78,13 @@ module Faker
       # @example
       #   Faker::Stripe.month #=> "10"
       #
+      # @deprecated Use the Faker::Business.card_expiry_month method instead.
+      #
       # @faker.version 1.9.0
       def month
-        format('%02d', rand_in_range(1, 12))
+        Faker::Business.card_expiry_month
       end
+      deprecate :month, 'Faker::Business.card_expiry_month', 2020, 6
 
       ##
       # Produces a random year that is always in the future.
@@ -111,13 +92,15 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Stripe.year #=> "2018" # This will always be a year in the future
+      #   Faker::Stripe.year #=> "2023" # This will always be a year in the future
+      #
+      # @deprecated Use the Faker::Business.card_expiry_year method instead.
       #
       # @faker.version 1.9.0
       def year
-        start_year = ::Time.new.year + 1
-        rand_in_range(start_year, start_year + 5).to_s
+        Faker::Business.card_expiry_year
       end
+      deprecate :year, 'Faker::Business.card_expiry_year', 2020, 6
 
       ##
       # Produces a random ccv number.
@@ -129,14 +112,13 @@ module Faker
       #   Faker::Stripe.ccv #=> "123"
       #   Faker::Stripe.ccv(card_type: "amex") #=> "1234"
       #
+      # @deprecated Use the Faker::Business.ccv method instead.
+      #
       # @faker.version 1.9.0
       def ccv(legacy_card_type = NOT_GIVEN, card_type: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :card_type if legacy_card_type != NOT_GIVEN
-        end
-
-        (card_type.to_s == 'amex' ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s
+        Faker::Business.ccv(legacy_card_type, card_type: card_type)
       end
+      deprecate :ccv, 'Faker::Business.ccv', 2020, 6
     end
   end
 end
