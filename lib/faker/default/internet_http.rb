@@ -16,7 +16,6 @@ module Faker
       STATUS_CODES_GROUPS = STATUS_CODES.keys.freeze
 
       class << self
-
         ##
         # Produces an HTTP status code
         #
