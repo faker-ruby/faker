@@ -35,7 +35,7 @@ module Faker
         # @example
         #   Faker::Internet::HTTP.status_code(group: :server_error) #=> 502
         #
-        # @faker.version 2.7.0
+        # @faker.version next
         def status_code(group: nil)
           return STATUS_CODES[STATUS_CODES_GROUPS.sample].sample unless group
 
