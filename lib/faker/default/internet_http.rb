@@ -40,7 +40,7 @@ module Faker
 
           raise ArgumentError, 'Invalid HTTP status code group' unless STATUS_CODES_GROUPS.include?(group)
 
-          STATUS_CODES[group].sample if group
+          STATUS_CODES[group].sample
         end
       end
     end
