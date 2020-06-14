@@ -1,6 +1,6 @@
 # Faker::Internet::HTTP
 
-Available since version 2.7.0.
+Available since version next.
 
 # Keyword arguments: group
 Faker::Internet::HTTP.status_code #=> 418
