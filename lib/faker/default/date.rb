@@ -10,9 +10,11 @@ module Faker
       # @param to [Date, String] The end of the usable date range.
       # @return [Date]
       #
-      # @example
-      #   Faker::Date.between(from: 2.days.ago, to: Date.today)
-      #     #=> #<Date: 2014-09-24>
+      # @example if used with or without Rails (Active Support)
+      #   Faker::Date.between(from: '2014-09-23', to: '2014-09-25') #=> #<Date: 2014-09-24>
+      #
+      # @example if used with Rails (Active Support)
+      #   Faker::Date.between(from: 2.days.ago, to: Date.today) #=> #<Date: 2014-09-24>
       #
       # @faker.version 1.0.0
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from:, to:)
@@ -37,9 +39,11 @@ module Faker
       # @param excepted [Date, String] A date to exclude.
       # @return [Date]
       #
-      # @example
-      #   Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today)
-      #     #=> #<Date: 2014-10-03>
+      # @example if used with or without Rails (Active Support)
+      #   Faker::Date.between_except(from: '2014-09-23', to: '2015-09-25', excepted: '2015-01-24') #=> #<Date: 2014-10-03>
+      #
+      # @example if used with Rails (Active Support)
+      #   Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today) #=> #<Date: 2014-10-03>
       #
       # @faker.version 1.6.2
       def between_except(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_excepted = NOT_GIVEN, from:, to:, excepted:)
