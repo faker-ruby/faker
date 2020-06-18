@@ -16,22 +16,22 @@ class TestFakerCryptoCoin < Test::Unit::TestCase
   end
 
   def test_coin_name
-    assert @tester.coin_name.match(REGEX_COIN_NAME)
+    assert @tester.coin_name.match?(REGEX_COIN_NAME)
   end
 
   def test_acronym
-    assert @tester.acronym.match(REGEX_ACRONYM)
+    assert @tester.acronym.match?(REGEX_ACRONYM)
   end
 
   def test_url_logo
-    assert @tester.url_logo.match(REGEX_URL_LOGO)
+    assert @tester.url_logo.match?(REGEX_URL_LOGO)
   end
 
   def test_coin_array
     assert_kind_of Array, @tester.coin_array
-    assert @tester.coin_array[COIN_NAME].match(REGEX_COIN_NAME)
-    assert @tester.coin_array[ACRONYM].match(REGEX_ACRONYM)
-    assert @tester.coin_array[URL_LOGO].match(REGEX_URL_LOGO)
+    assert @tester.coin_array[COIN_NAME].match?(REGEX_COIN_NAME)
+    assert @tester.coin_array[ACRONYM].match?(REGEX_ACRONYM)
+    assert @tester.coin_array[URL_LOGO].match?(REGEX_URL_LOGO)
   end
 
   def test_coin_hash

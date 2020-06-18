@@ -8,14 +8,14 @@ class TestFakerScience < Test::Unit::TestCase
   end
 
   def test_element
-    assert @tester.element.match(/\w+/)
+    assert @tester.element.match?(/\w+/)
   end
 
   def test_element_symbol
-    assert @tester.element.match(/\w{1,2}/)
+    assert @tester.element.match?(/\w{1,2}/)
   end
 
   def test_scientist
-    assert @tester.scientist.match(/\w+/)
+    assert @tester.scientist.match?(/\w+/)
   end
 end

@@ -31,7 +31,7 @@ end
 #
 # @example
 #   deterministically_verify ->{ @tester.username('bo peep') } do |subject|
-#     assert subject.match(/(bo(_|\.)peep|peep(_|\.)bo)/)
+#     assert subject.match?(/(bo(_|\.)peep|peep(_|\.)bo)/)
 #   end
 #
 def deterministically_verify(subject_proc, depth: 2, random: nil)

@@ -13,6 +13,6 @@ class TestFakerJobLocale < Test::Unit::TestCase
   end
 
   def test_locale_without_jobs_defaults_to_en
-    assert @tester.position.match(/(\w+\.? ?)/)
+    assert @tester.position.match?(/(\w+\.? ?)/)
   end
 end

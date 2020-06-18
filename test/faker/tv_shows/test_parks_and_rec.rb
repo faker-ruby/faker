@@ -8,10 +8,10 @@ class TestFakerTvShowsParksAndRec < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert @tester.character.match?(/\w+/)
   end
 
   def test_city
-    assert @tester.city.match(/\w+/)
+    assert @tester.city.match?(/\w+/)
   end
 end

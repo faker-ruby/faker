@@ -8,10 +8,10 @@ class TestFakerGreekPhilosophers < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w+/)
+    assert @tester.name.match?(/\w+/)
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert @tester.quote.match?(/\w+/)
   end
 end

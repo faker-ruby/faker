@@ -48,7 +48,7 @@ module Faker
       def ssn_valid
         ssn = regexify(/[0-8]\d{2}-\d{2}-\d{4}/)
         # We could still have all 0s in one segment or another
-        INVALID_SSN.any? { |regex| regex =~ ssn } ? ssn_valid : ssn
+        INVALID_SSN.any? { |regex| regex.match?(ssn) } ? ssn_valid : ssn
       end
 
       ##
@@ -151,7 +151,7 @@ module Faker
           keywords << :formatted if legacy_formatted != NOT_GIVEN
         end
 
-        digits = Faker::Number.leading_zero_number(digits: 9) until digits&.match(/(\d)((?!\1)\d)+/)
+        digits = Faker::Number.leading_zero_number(digits: 9) until digits&.match?(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
         number = [digits, first_digit, second_digit].join

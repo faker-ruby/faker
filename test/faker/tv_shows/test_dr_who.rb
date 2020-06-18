@@ -9,36 +9,36 @@ class TestFakerTvShowsDrWho < Test::Unit::TestCase
   end
 
   def test_character
-    10.times { assert @tester.character.match(/[\w]+/) }
+    10.times { assert @tester.character.match?(/[\w]+/) }
   end
 
   def test_the_doctor
-    10.times { assert @tester.the_doctor.match(/[\w]+/) }
+    10.times { assert @tester.the_doctor.match?(/[\w]+/) }
   end
 
   def test_actor
-    10.times { assert @tester.actor.match(/[\w]+/) }
+    10.times { assert @tester.actor.match?(/[\w]+/) }
   end
 
   def test_catch_phrase
-    10.times { assert @tester.catch_phrase.match(/[\w]+/) }
+    10.times { assert @tester.catch_phrase.match?(/[\w]+/) }
   end
 
   def test_quote
-    10.times { assert @tester.quote.match(/[\w]+/) }
+    10.times { assert @tester.quote.match?(/[\w]+/) }
   end
 
   # deprecated
   def test_villian
-    10.times { assert @tester.villian.match(/[\w]+/) }
+    10.times { assert @tester.villian.match?(/[\w]+/) }
   end
 
   def test_villain
-    10.times { assert @tester.villain.match(/[\w]+/) }
+    10.times { assert @tester.villain.match?(/[\w]+/) }
   end
 
   def test_specie
-    10.times { assert @tester.specie.match(/[\w]+/) }
+    10.times { assert @tester.specie.match?(/[\w]+/) }
   end
 
   def test_locales

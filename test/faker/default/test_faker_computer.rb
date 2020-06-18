@@ -9,11 +9,11 @@ class TestFakerComputer < Test::Unit::TestCase
   end
 
   def test_type
-    assert @tester.type.match(/\w+/)
+    assert @tester.type.match?(/\w+/)
   end
 
   def test_platform
-    assert @tester.platform.match(/(\w+ ?){1,3}/)
+    assert @tester.platform.match?(/(\w+ ?){1,3}/)
   end
 
   def test_stack

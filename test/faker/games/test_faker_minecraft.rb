@@ -8,14 +8,14 @@ class TestFakerMinecraft < Test::Unit::TestCase
   end
 
   def test_block
-    assert @minecraft.block.match(/\w+/)
+    assert @minecraft.block.match?(/\w+/)
   end
 
   def test_item
-    assert @minecraft.item.match(/\w+/)
+    assert @minecraft.item.match?(/\w+/)
   end
 
   def test_mob
-    assert @minecraft.mob.match(/\w+/)
+    assert @minecraft.mob.match?(/\w+/)
   end
 end

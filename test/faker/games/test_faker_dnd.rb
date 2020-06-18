@@ -8,18 +8,18 @@ class TestFakerDnD < Test::Unit::TestCase
   end
 
   def test_species
-    assert @tester.species.match(/\w+/)
+    assert @tester.species.match?(/\w+/)
   end
 
   def test_klass
-    assert @tester.klass.match(/\w+/)
+    assert @tester.klass.match?(/\w+/)
   end
 
   def test_background
-    assert @tester.background.match(/\w+/)
+    assert @tester.background.match?(/\w+/)
   end
 
   def test_alignment
-    assert @tester.alignment.match(/\w+/)
+    assert @tester.alignment.match?(/\w+/)
   end
 end

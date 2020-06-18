@@ -17,7 +17,7 @@ class TestEsLocale < Test::Unit::TestCase
 
   def test_locale_separate_from_i18n
     I18n.locale = :en
-    assert Faker::Address.street_name.match(//)
+    assert Faker::Address.street_name.match?(//)
   end
 
   def test_configured_locale_translation
@@ -85,8 +85,8 @@ class TestEsLocale < Test::Unit::TestCase
     assert Faker::Name.male_first_name.is_a? String
     assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.name.is_a? String
-    assert Faker::Name.initials.match(/[A-Z]{3}/)
-    assert Faker::Name.initials(number: 2).match(/[A-Z]{2}/)
+    assert Faker::Name.initials.match?(/[A-Z]{3}/)
+    assert Faker::Name.initials(number: 2).match?(/[A-Z]{2}/)
   end
 
   def test_es_vehicle_methods

@@ -8,18 +8,18 @@ class TestFakerOpera < Test::Unit::TestCase
   end
 
   def verdi
-    assert @tester.verdi.match(/\w+/i)
+    assert @tester.verdi.match?(/\w+/i)
   end
 
   def rossini
-    assert @tester.rossini.match(/\w+/i)
+    assert @tester.rossini.match?(/\w+/i)
   end
 
   def donizetti
-    assert @tester.donizetti.match(/\w+/i)
+    assert @tester.donizetti.match?(/\w+/i)
   end
 
   def bellini
-    assert @tester.bellini.match(/\w+/i)
+    assert @tester.bellini.match?(/\w+/i)
   end
 end

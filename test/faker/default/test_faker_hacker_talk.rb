@@ -16,22 +16,22 @@ class TestFakerHacker < Test::Unit::TestCase
   end
 
   def test_noun
-    assert @hacker.noun.match(/\w+/)
+    assert @hacker.noun.match?(/\w+/)
   end
 
   def test_abbreviation
-    assert @hacker.abbreviation.match(/\w+/)
+    assert @hacker.abbreviation.match?(/\w+/)
   end
 
   def test_adjective
-    assert @hacker.adjective.match(/\w+/)
+    assert @hacker.adjective.match?(/\w+/)
   end
 
   def test_verb
-    assert @hacker.verb.match(/\w+/)
+    assert @hacker.verb.match?(/\w+/)
   end
 
   def test_ingverb
-    assert @hacker.ingverb.match(/\w+/)
+    assert @hacker.ingverb.match?(/\w+/)
   end
 end

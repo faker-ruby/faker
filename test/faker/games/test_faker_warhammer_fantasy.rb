@@ -8,22 +8,22 @@ class TestWarhammerFantasy < Test::Unit::TestCase
   end
 
   def test_heroes
-    assert @tester.hero.match(/\w+/)
+    assert @tester.hero.match?(/\w+/)
   end
 
   def test_quotes
-    assert @tester.quote.match(/\w+/)
+    assert @tester.quote.match?(/\w+/)
   end
 
   def test_locations
-    assert @tester.location.match(/\w+/)
+    assert @tester.location.match?(/\w+/)
   end
 
   def test_factions
-    assert @tester.faction.match(/\w+/)
+    assert @tester.faction.match?(/\w+/)
   end
 
   def test_creatures
-    assert @tester.creature.match(/\w+/)
+    assert @tester.creature.match?(/\w+/)
   end
 end

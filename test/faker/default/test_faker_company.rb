@@ -8,34 +8,34 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_ein
-    assert @tester.ein.match(/\d\d-\d\d\d\d\d\d\d/)
+    assert @tester.ein.match?(/\d\d-\d\d\d\d\d\d\d/)
   end
 
   def test_duns_number
-    assert @tester.duns_number.match(/\d\d-\d\d\d-\d\d\d\d/)
+    assert @tester.duns_number.match?(/\d\d-\d\d\d-\d\d\d\d/)
   end
 
   def test_logo
-    assert @tester.logo.match(%r{https://pigment.github.io/fake-logos/logos/medium/color/\d+\.png})
+    assert @tester.logo.match?(%r{https://pigment.github.io/fake-logos/logos/medium/color/\d+\.png})
   end
 
   def test_buzzword
-    assert @tester.buzzword.match(/\w+\.?/)
+    assert @tester.buzzword.match?(/\w+\.?/)
   end
 
   def test_type
-    assert @tester.type.match(/\w+/)
+    assert @tester.type.match?(/\w+/)
   end
 
   def test_spanish_organisation_number
     org_no = @tester.spanish_organisation_number
-    assert org_no.match(/\D\d{7}/)
+    assert org_no.match?(/\D\d{7}/)
     assert Faker::Base::ULetters.include?(org_no[0].to_s)
   end
 
   def test_swedish_organisation_number
     org_no = @tester.swedish_organisation_number
-    assert org_no.match(/\d{10}/)
+    assert org_no.match?(/\d{10}/)
     assert [1, 2, 3, 5, 6, 7, 8, 9].include?(org_no[0].to_i)
     assert org_no[2].to_i >= 2
     assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
@@ -43,27 +43,27 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def test_czech_organisation_number
     org_no = @tester.czech_organisation_number
-    assert org_no.match(/\d{8}/)
+    assert org_no.match?(/\d{8}/)
     assert [0, 1, 2, 3, 5, 6, 7, 8, 9].include?(org_no[0].to_i)
     assert czech_o_n_checksum(org_no) == org_no[-1].to_i
   end
 
   def test_french_siren_number
     siren = @tester.french_siren_number
-    assert siren.match(/\A\d{9}\z/)
+    assert siren.match?(/\A\d{9}\z/)
     assert siren[8] == @tester.send(:luhn_algorithm, siren[0..-2]).to_s
   end
 
   def test_french_siret_number
     siret = @tester.french_siret_number
-    assert siret.match(/\A\d{14}\z/)
+    assert siret.match?(/\A\d{14}\z/)
     assert siret[8] == @tester.send(:luhn_algorithm, siret[0..7]).to_s
     assert siret[13] == @tester.send(:luhn_algorithm, siret[0..-2]).to_s
   end
 
   def test_norwegian_organisation_number
     org_no = @tester.norwegian_organisation_number
-    assert org_no.match(/\d{9}/)
+    assert org_no.match?(/\d{9}/)
     assert [8, 9].include?(org_no[0].to_i)
     assert org_no[8] == @tester.send(:mod11, org_no[0..7]).to_s
   end
@@ -72,12 +72,12 @@ class TestFakerCompany < Test::Unit::TestCase
     abn = @tester.australian_business_number
     checksum = abn_checksum(abn)
 
-    assert abn.match(/\d{11}/)
+    assert abn.match?(/\d{11}/)
     assert((checksum % 89).zero?)
   end
 
   def test_profession
-    assert @tester.profession.match(/[a-z ]+\.?/)
+    assert @tester.profession.match?(/[a-z ]+\.?/)
   end
 
   def test_polish_taxpayer_identification_number
@@ -188,15 +188,15 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_russian_tax_number_default
-    assert @tester.russian_tax_number.match(/\d{10}/)
+    assert @tester.russian_tax_number.match?(/\d{10}/)
   end
 
   def test_russian_tax_number_individual
-    assert @tester.russian_tax_number(type: :individual).match(/\d{12}/)
+    assert @tester.russian_tax_number(type: :individual).match?(/\d{12}/)
   end
 
   def test_russian_tax_number_region
-    assert @tester.russian_tax_number(region: '77').match(/^77/)
+    assert @tester.russian_tax_number(region: '77').match?(/^77/)
   end
 
   def test_russian_tax_number_checksum
@@ -208,7 +208,7 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_sic_code
-    assert @tester.sic_code.match(/\d\d\d\d/)
+    assert @tester.sic_code.match?(/\d\d\d\d/)
   end
 
   private

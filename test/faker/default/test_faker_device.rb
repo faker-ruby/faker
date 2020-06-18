@@ -8,11 +8,11 @@ class TestFakerDevice < Test::Unit::TestCase
   end
 
   def test_model_name
-    assert @tester.model_name.match(/\w+/)
+    assert @tester.model_name.match?(/\w+/)
   end
 
   def test_platform
-    assert @tester.platform.match(/\w+/)
+    assert @tester.platform.match?(/\w+/)
   end
 
   def test_version
@@ -26,10 +26,10 @@ class TestFakerDevice < Test::Unit::TestCase
   end
 
   def test_manufacturer
-    assert @tester.manufacturer.match(/\w+/)
+    assert @tester.manufacturer.match?(/\w+/)
   end
 
   def test_serial
-    assert @tester.serial.match(/\w+/)
+    assert @tester.serial.match?(/\w+/)
   end
 end

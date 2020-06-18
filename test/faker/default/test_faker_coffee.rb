@@ -40,7 +40,7 @@ class TestFakerCoffee < Test::Unit::TestCase
   end
 
   def test_variety
-    assert @tester.variety.match(/\w+\.?/)
+    assert @tester.variety.match?(/\w+\.?/)
 
     assert @varieties.include?(@tester.variety)
   end

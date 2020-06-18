@@ -8,22 +8,22 @@ class TestFakerMyst < Test::Unit::TestCase
   end
 
   def test_game
-    assert @tester.game.match(/\w+/)
+    assert @tester.game.match?(/\w+/)
   end
 
   def test_creature
-    assert @tester.creature.match(/\w+/)
+    assert @tester.creature.match?(/\w+/)
   end
 
   def test_age
-    assert @tester.age.match(/\w+/)
+    assert @tester.age.match?(/\w+/)
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert @tester.character.match?(/\w+/)
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert @tester.quote.match?(/\w+/)
   end
 end

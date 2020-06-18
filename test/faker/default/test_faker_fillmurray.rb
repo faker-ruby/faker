@@ -8,7 +8,7 @@ class TestFakerFillmurray < Test::Unit::TestCase
   end
 
   def test_fillmurray
-    assert !@tester.image(grayscale: false, width: '300', height: '300').match(%r{https:\/\/www\.fillmurray\.com\/(\d+)\/(\d+)}).nil?
+    assert @tester.image(grayscale: false, width: '300', height: '300').match?(%r{https:\/\/www\.fillmurray\.com\/(\d+)\/(\d+)})
   end
 
   def test_fillmurray_with_grayscale

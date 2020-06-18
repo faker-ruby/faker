@@ -8,19 +8,19 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_color
-    assert @tester.color.match(/[a-z]+\.?/)
+    assert @tester.color.match?(/[a-z]+\.?/)
   end
 
   def test_promotion_code
-    assert @tester.promotion_code.match(/[A-Z][a-z]+[A-Z][a-z]+\d{6}/)
+    assert @tester.promotion_code.match?(/[A-Z][a-z]+[A-Z][a-z]+\d{6}/)
   end
 
   def test_promotion_code_should_have_specified_number_of_digits
-    assert @tester.promotion_code(digits: 3).match(/[A-Z][a-z]+[A-Z][a-z]+\d{3}/)
+    assert @tester.promotion_code(digits: 3).match?(/[A-Z][a-z]+[A-Z][a-z]+\d{3}/)
   end
 
   def test_department
-    assert @tester.department.match(/[A-Z][a-z]+\.?/)
+    assert @tester.department.match?(/[A-Z][a-z]+\.?/)
   end
 
   def test_single_department_should_not_contain_separators
@@ -68,11 +68,11 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_product_name
-    assert @tester.product_name.match(/[A-Z][a-z]+\.?/)
+    assert @tester.product_name.match?(/[A-Z][a-z]+\.?/)
   end
 
   def test_material
-    assert @tester.material.match(/[A-Z][a-z]+\.?/)
+    assert @tester.material.match?(/[A-Z][a-z]+\.?/)
   end
 
   def test_price

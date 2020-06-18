@@ -9,15 +9,15 @@ class TestFakerUniversity < Test::Unit::TestCase
   end
 
   def test_prefix
-    assert @tester.prefix.match(/\w+\.?/)
+    assert @tester.prefix.match?(/\w+\.?/)
   end
 
   def test_suffix
-    assert @tester.suffix.match(/\w+\.?/)
+    assert @tester.suffix.match?(/\w+\.?/)
   end
 
   def test_name
-    assert @tester.name.match(/\w+\.?/)
+    assert @tester.name.match?(/\w+\.?/)
   end
 
   def test_greek_alphabet_has_24_characters
@@ -25,7 +25,7 @@ class TestFakerUniversity < Test::Unit::TestCase
   end
 
   def test_greek_organization
-    assert @tester.greek_organization.match(/\p{Greek}|\w+/)
+    assert @tester.greek_organization.match?(/\p{Greek}|\w+/)
     assert @tester.greek_organization.length == 3
   end
 

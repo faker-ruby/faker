@@ -8,18 +8,18 @@ class TestFakerShakespeare < Test::Unit::TestCase
   end
 
   def test_as_you_like_it_quote
-    assert @tester.as_you_like_it_quote.match(/\w+/)
+    assert @tester.as_you_like_it_quote.match?(/\w+/)
   end
 
   def test_king_richard_iii_quote
-    assert @tester.king_richard_iii_quote.match(/\w+/)
+    assert @tester.king_richard_iii_quote.match?(/\w+/)
   end
 
   def test_romeo_and_juliet_quote
-    assert @tester.romeo_and_juliet_quote.match(/\w+/)
+    assert @tester.romeo_and_juliet_quote.match?(/\w+/)
   end
 
   def test_hamlet_quote
-    assert @tester.hamlet_quote.match(/\w+/)
+    assert @tester.hamlet_quote.match?(/\w+/)
   end
 end

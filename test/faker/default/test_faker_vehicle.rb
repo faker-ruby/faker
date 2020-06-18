@@ -52,7 +52,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_engine
-    assert @tester.engine.match(/\d Cylinder Engine/)
+    assert @tester.engine.match?(/\d Cylinder Engine/)
   end
 
   def test_mileage

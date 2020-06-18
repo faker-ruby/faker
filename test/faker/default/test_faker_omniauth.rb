@@ -20,7 +20,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 'google_oauth2', provider
     assert_equal 9, auth[:uid].length
     assert_equal 2, word_count(info[:name])
-    assert info[:email].match safe_email_regex(info[:first_name], info[:last_name])
+    assert info[:email].match? safe_email_regex(info[:first_name], info[:last_name])
     assert_equal info[:name].split(' ').first, info[:first_name]
     assert_equal info[:name].split(' ').last, info[:last_name]
     assert_instance_of String, info[:image]
@@ -62,7 +62,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, info[:name]
     assert_equal 2, word_count(info[:name])
     assert_equal custom_name, info[:name]
-    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert info[:email].match? safe_email_regex(first_name, last_name)
     assert_equal first_name, info[:first_name]
     assert_equal last_name, info[:last_name]
     assert_equal custom_name, extra_raw_info[:name]
@@ -108,7 +108,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
 
     assert_equal 'facebook', provider
     assert_equal 7, uid.length
-    assert info[:email].match safe_email_regex(info[:first_name], info[:last_name])
+    assert info[:email].match? safe_email_regex(info[:first_name], info[:last_name])
     assert_equal 2, word_count(info[:name])
     assert_instance_of String, info[:first_name]
     assert_instance_of String, info[:last_name]
@@ -154,7 +154,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal last_name, info[:last_name]
     assert_equal last_name, extra_raw_info[:last_name]
 
-    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert info[:email].match? safe_email_regex(first_name, last_name)
 
     assert_equal url, extra_raw_info[:link]
     assert_equal username, extra_raw_info[:username]
@@ -308,7 +308,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 'linkedin', auth[:provider]
     assert_equal 6, auth[:uid].length
     assert_equal 2, word_count(info[:name])
-    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert info[:email].match? safe_email_regex(first_name, last_name)
     assert_equal info[:name], info[:nickname]
     assert_instance_of String, info[:first_name]
     assert_instance_of String, info[:last_name]
@@ -349,7 +349,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 2, word_count(info[:name])
     assert_instance_of String, info[:name]
     assert_equal custom_name, info[:name]
-    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert info[:email].match? safe_email_regex(first_name, last_name)
     assert_equal custom_name, info[:nickname]
     assert_equal first_name, info[:first_name]
     assert_equal last_name, info[:last_name]
@@ -388,7 +388,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 'github', provider
     assert_equal 8, uid.length
     assert_equal uid, extra_raw_info[:id]
-    assert info[:email].match safe_email_regex(info[:first_name], info[:last_name])
+    assert info[:email].match? safe_email_regex(info[:first_name], info[:last_name])
     assert_equal info[:email], extra_raw_info[:email]
     assert_equal 2, word_count(name)
     assert_instance_of String, name
@@ -444,8 +444,8 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 2, word_count(info[:name])
     assert_instance_of String, info[:name]
     assert_equal custom_name, extra_raw_info[:name]
-    assert info[:email].match safe_email_re
-    assert extra_raw_info[:email].match safe_email_re
+    assert info[:email].match? safe_email_re
+    assert extra_raw_info[:email].match? safe_email_re
     assert_equal login, info[:nickname]
   end
 
@@ -482,7 +482,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 'apple', auth[:provider]
     assert_instance_of String, auth[:uid]
     assert_equal 44, auth[:uid].length
-    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert info[:email].match? safe_email_regex(first_name, last_name)
     assert_equal auth[:uid], info[:sub]
     assert_instance_of String, info[:first_name]
     assert_instance_of String, info[:last_name]

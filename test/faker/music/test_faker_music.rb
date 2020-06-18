@@ -36,26 +36,26 @@ class TestFakerMusic < Test::Unit::TestCase
   end
 
   def test_key
-    assert @tester.name.match(/([A-Z])\s*(b|#){0,1}\s*(m){0,1}/)
+    assert @tester.name.match?(/([A-Z])\s*(b|#){0,1}\s*(m){0,1}/)
   end
 
   def test_instrument
-    assert @tester.instrument.match(/\w+/)
+    assert @tester.instrument.match?(/\w+/)
   end
 
   def test_chord
-    assert @tester.name.match(/([A-Z])\s*(b|#){0,1}\s*([a-zA-Z0-9]{0,4})/)
+    assert @tester.name.match?(/([A-Z])\s*(b|#){0,1}\s*([a-zA-Z0-9]{0,4})/)
   end
 
   def test_band
-    assert @tester.band.match(/\w+/)
+    assert @tester.band.match?(/\w+/)
   end
 
   def test_album
-    assert @tester.album.match(/\w+/)
+    assert @tester.album.match?(/\w+/)
   end
 
   def test_genre
-    assert @tester.genre.match(/\w+/)
+    assert @tester.genre.match?(/\w+/)
   end
 end

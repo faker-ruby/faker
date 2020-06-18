@@ -8,14 +8,14 @@ class TestFakerTvShowsBojackHorseman < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert @tester.character.match?(/\w+/)
   end
 
   def test_tongue_twister
-    assert @tester.tongue_twister.match(/\w+/)
+    assert @tester.tongue_twister.match?(/\w+/)
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert @tester.quote.match?(/\w+/)
   end
 end

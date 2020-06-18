@@ -8,18 +8,18 @@ class TestFakerTvShowsTheItCrowd < Test::Unit::TestCase
   end
 
   def test_actors
-    assert @tester.actor.match(/\w+/)
+    assert @tester.actor.match?(/\w+/)
   end
 
   def test_characters
-    assert @tester.character.match(/\w+/)
+    assert @tester.character.match?(/\w+/)
   end
 
   def test_emails
-    assert @tester.email.match(/\w+/)
+    assert @tester.email.match?(/\w+/)
   end
 
   def test_quotes
-    assert @tester.quote.match(/\w+/)
+    assert @tester.quote.match?(/\w+/)
   end
 end

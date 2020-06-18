@@ -156,7 +156,7 @@ module Faker
       def iban_checksum(country_code, account)
         # Converts letters to numbers according the iban rules, A=10..Z=35
         account_to_number = "#{account}#{country_code}00".upcase.chars.map do |d|
-          d =~ /[A-Z]/ ? (d.ord - 55).to_s : d
+          /[A-Z]/.match?(d) ? (d.ord - 55).to_s : d
         end.join.to_i
 
         # This is answer to (iban_to_num + checksum) % 97 == 1

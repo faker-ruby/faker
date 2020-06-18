@@ -8,10 +8,10 @@ class TestFakerTvShowsCommunity < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.characters.match(/\w/)
+    assert @tester.characters.match?(/\w/)
   end
 
   def test_quote
-    assert @tester.quotes.match(/\w/)
+    assert @tester.quotes.match?(/\w/)
   end
 end

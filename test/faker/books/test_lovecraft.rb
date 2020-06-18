@@ -17,7 +17,7 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
   # Words should not return any word with spaces
   def test_words_without_spaces
     @words = @tester.words(number: 1000)
-    @words.each { |w| assert !w.match(/\s/) }
+    @words.each { |w| assert !w.match?(/\s/) }
   end
 
   # Faker::Lovecraft.word generates random word from wordlist
@@ -27,7 +27,7 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
 
   # Word should not return any word with spaces
   def test_word_without_spaces
-    1000.times { assert !@tester.word.match(/\s/) }
+    1000.times { assert !@tester.word.match?(/\s/) }
   end
 
   def test_exact_count_param
@@ -72,18 +72,18 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
   end
 
   def test_tome
-    assert @tester.tome.match(/\w/)
+    assert @tester.tome.match?(/\w/)
   end
 
   def test_location
-    assert @tester.location.match(/\w/)
+    assert @tester.location.match?(/\w/)
   end
 
   def test_deity
-    assert @tester.deity.match(/\w/)
+    assert @tester.deity.match?(/\w/)
   end
 
   def test_fhtagn
-    assert @tester.fhtagn.match(/\w/)
+    assert @tester.fhtagn.match?(/\w/)
   end
 end

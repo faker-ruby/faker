@@ -8,14 +8,14 @@ class TestFakerGamesSonicTheHedgehog < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert @tester.character.match?(/\w+/)
   end
 
   def test_zone
-    assert @tester.zone.match(/\w+/)
+    assert @tester.zone.match?(/\w+/)
   end
 
   def test_game
-    assert @tester.game.match(/\w+/)
+    assert @tester.game.match?(/\w+/)
   end
 end

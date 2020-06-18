@@ -127,7 +127,7 @@ module Faker
         if mix_case
           alpha_count = 0
           temp.chars.each_with_index do |char, index|
-            if char =~ /[[:alpha:]]/
+            if /[[:alpha:]]/.match?(char)
               temp[index] = char.upcase if alpha_count.even?
               alpha_count += 1
             end
@@ -229,7 +229,7 @@ module Faker
       end
 
       def private_net_checker
-        ->(addr) { private_nets_regex.any? { |net| net =~ addr } }
+        ->(addr) { private_nets_regex.any? { |net| net.match?(addr) } }
       end
 
       def reserved_nets_regex
@@ -245,7 +245,7 @@ module Faker
       end
 
       def reserved_net_checker
-        ->(addr) { (private_nets_regex + reserved_nets_regex).any? { |net| net =~ addr } }
+        ->(addr) { (private_nets_regex + reserved_nets_regex).any? { |net| net.match?(addr) } }
       end
 
       def ip_v4_cidr

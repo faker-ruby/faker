@@ -8,22 +8,22 @@ class TestFakerMilitary < Test::Unit::TestCase
   end
 
   def test_army_rank
-    assert @tester.army_rank.match(/\w/)
+    assert @tester.army_rank.match?(/\w/)
   end
 
   def test_marines_rank
-    assert @tester.marines_rank.match(/\w/)
+    assert @tester.marines_rank.match?(/\w/)
   end
 
   def test_navy_rank
-    assert @tester.navy_rank.match(/\w/)
+    assert @tester.navy_rank.match?(/\w/)
   end
 
   def test_air_force_rank
-    assert @tester.air_force_rank.match(/\w/)
+    assert @tester.air_force_rank.match?(/\w/)
   end
 
   def test_dod_paygrade
-    assert @tester.dod_paygrade.match(/\w/)
+    assert @tester.dod_paygrade.match?(/\w/)
   end
 end

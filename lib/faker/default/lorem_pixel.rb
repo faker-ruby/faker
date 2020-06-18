@@ -50,7 +50,7 @@ module Faker
           keywords << :secure if legacy_secure != NOT_GIVEN
         end
 
-        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
+        raise ArgumentError, 'Size should be specified in format 300x300' unless /^[0-9]+x[0-9]+$/.match?(size)
         raise ArgumentError, "Supported categories are #{SUPPORTED_CATEGORIES.join(', ')}" unless category.nil? || SUPPORTED_CATEGORIES.include?(category)
         raise ArgumentError, 'Category required when number is passed' if !number.nil? && category.nil?
         raise ArgumentError, 'Number must be between 1 and 10' unless number.nil? || (1..10).cover?(number)

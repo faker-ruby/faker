@@ -8,10 +8,10 @@ class TestFakerAppliance < Test::Unit::TestCase
   end
 
   def test_brand
-    assert @tester.brand.match(/\w/)
+    assert @tester.brand.match?(/\w/)
   end
 
   def test_equipment
-    assert @tester.equipment.match(/\w/)
+    assert @tester.equipment.match?(/\w/)
   end
 end

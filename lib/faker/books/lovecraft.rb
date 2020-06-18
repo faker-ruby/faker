@@ -102,7 +102,7 @@ module Faker
         # @faker.version 1.9.3
         def word
           random_word = sample(translate('faker.lovecraft.words'))
-          random_word =~ /\s/ ? word : random_word
+          /\s/.match?(random_word) ? word : random_word
         end
 
         ##
@@ -147,7 +147,7 @@ module Faker
           return shuffle(word_list)[0, resolved_num] if spaces_allowed
 
           words = shuffle(word_list)[0, resolved_num]
-          words.each_with_index { |w, i| words[i] = word if w =~ /\s/ }
+          words.each_with_index { |w, i| words[i] = word if /\s/.match?(w) }
         end
 
         ##

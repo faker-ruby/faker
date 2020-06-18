@@ -8,19 +8,19 @@ class TestFakerDemographic < Test::Unit::TestCase
   end
 
   def test_race
-    assert @tester.race.match(/\w+/)
+    assert @tester.race.match?(/\w+/)
   end
 
   def test_educational_attainment
-    assert @tester.educational_attainment.match(/\w+/)
+    assert @tester.educational_attainment.match?(/\w+/)
   end
 
   def test_marital_status
-    assert @tester.marital_status.match(/\w+/)
+    assert @tester.marital_status.match?(/\w+/)
   end
 
   def test_demonym
-    assert @tester.demonym.match(/\w+/)
+    assert @tester.demonym.match?(/\w+/)
   end
 
   def test_sex
@@ -28,10 +28,10 @@ class TestFakerDemographic < Test::Unit::TestCase
   end
 
   def test_height_imperial
-    assert @tester.height(unit: :imperial).match(/\w+/)
+    assert @tester.height(unit: :imperial).match?(/\w+/)
   end
 
   def test_height_metric
-    assert @tester.height.match(/\w+/)
+    assert @tester.height.match?(/\w+/)
   end
 end

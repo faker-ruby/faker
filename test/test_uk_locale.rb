@@ -13,7 +13,7 @@ class TestUkLocale < Test::Unit::TestCase
   end
 
   def test_uk_zipcode_length
-    assert Faker::Address.zip_code.match(/^\d{5}$/)
+    assert Faker::Address.zip_code.match?(/^\d{5}$/)
     assert_send([Faker::Address, :street_prefix])
   end
 
@@ -38,8 +38,8 @@ class TestUkLocale < Test::Unit::TestCase
   end
 
   def test_uk_internet_methods
-    assert Faker::Internet.email.match(/.+@[^.].+\.\w+/)
-    assert Faker::Internet.domain_word.match(/^[\w-]+$/)
+    assert Faker::Internet.email.match?(/.+@[^.].+\.\w+/)
+    assert Faker::Internet.domain_word.match?(/^[\w-]+$/)
   end
 
   def test_uk_name_methods

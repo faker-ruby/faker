@@ -4,7 +4,7 @@ require_relative '../../test_helper'
 
 class TestFakerBitcoin < Test::Unit::TestCase
   def test_address
-    assert Faker::Blockchain::Bitcoin.address.match(/^[13][1-9A-Za-z][^OIl]{20,40}/)
+    assert Faker::Blockchain::Bitcoin.address.match?(/^[13][1-9A-Za-z][^OIl]{20,40}/)
   end
 
   def test_deterministic_address

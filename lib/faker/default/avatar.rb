@@ -48,7 +48,7 @@ module Faker
           keywords << :bgset if legacy_bgset != NOT_GIVEN
         end
 
-        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
+        raise ArgumentError, 'Size should be specified in format 300x300' unless /^[0-9]+x[0-9]+$/.match?(size)
         raise ArgumentError, "Supported formats are #{SUPPORTED_FORMATS.join(', ')}" unless SUPPORTED_FORMATS.include?(format)
 
         slug ||= Faker::Lorem.words.join

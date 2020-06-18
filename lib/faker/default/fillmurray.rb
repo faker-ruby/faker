@@ -33,8 +33,8 @@ module Faker
           keywords << :height if legacy_height != NOT_GIVEN
         end
 
-        raise ArgumentError, 'Width should be a number' unless width.to_s =~ /^\d+$/
-        raise ArgumentError, 'Height should be a number' unless height.to_s =~ /^\d+$/
+        raise ArgumentError, 'Width should be a number' unless /^\d+$/.match?(width.to_s)
+        raise ArgumentError, 'Height should be a number' unless /^\d+$/.match?(height.to_s)
         raise ArgumentError, 'Grayscale should be a boolean' unless [true, false].include?(grayscale)
 
         "https://www.fillmurray.com#{'/g' if grayscale == true}/#{width}/#{height}"

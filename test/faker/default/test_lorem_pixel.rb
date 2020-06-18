@@ -26,7 +26,7 @@ class TestLoremPixel < Test::Unit::TestCase
   end
 
   def test_image_gray
-    assert @tester.image(size: '300x300', is_gray: true).match(%r{https:\/\/lorempixel\.com\/g\/\d+\/\d+})
+    assert @tester.image(size: '300x300', is_gray: true).match?(%r{https:\/\/lorempixel\.com\/g\/\d+\/\d+})
   end
 
   def test_image_with_supported_category

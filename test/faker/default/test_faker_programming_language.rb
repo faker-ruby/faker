@@ -8,10 +8,10 @@ class TestFakerProgrammingLanguage < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w/)
+    assert @tester.name.match?(/\w/)
   end
 
   def test_creator
-    assert @tester.creator.match(/\w/)
+    assert @tester.creator.match?(/\w/)
   end
 end

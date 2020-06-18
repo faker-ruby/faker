@@ -97,7 +97,7 @@ module Faker
       # with an array of values and selecting one of them.
       def fetch(key)
         fetched = sample(translate("faker.#{key}"))
-        if fetched&.match(%r{^\/}) && fetched&.match(%r{\/$}) # A regex
+        if fetched&.match?(%r{^\/}) && fetched&.match?(%r{\/$}) # A regex
           regexify(fetched)
         else
           fetched
@@ -109,7 +109,7 @@ module Faker
       def fetch_all(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.last if fetched.size <= 1
-        if !fetched.respond_to?(:sample) && fetched.match(%r{^\/}) && fetched.match(%r{\/$}) # A regex
+        if !fetched.respond_to?(:sample) && fetched.match?(%r{^\/}) && fetched.match?(%r{\/$}) # A regex
           regexify(fetched)
         else
           fetched

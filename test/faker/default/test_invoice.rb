@@ -21,13 +21,13 @@ class TestFakerInvoice < Test::Unit::TestCase
   def test_creditor_reference
     reference = @tester.creditor_reference
 
-    assert reference.match(/RF\d{2}\d{4,20}/)
+    assert reference.match?(/RF\d{2}\d{4,20}/)
   end
 
   def test_reference
     reference = @tester.reference
 
-    assert reference.match(/\d{4,20}/)
+    assert reference.match?(/\d{4,20}/)
   end
 
   def test_reference_checksum

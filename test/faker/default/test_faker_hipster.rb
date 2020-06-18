@@ -19,7 +19,7 @@ class TestFakerHipster < Test::Unit::TestCase
   # Words should not return any word with spaces
   def test_words_without_spaces
     @words = @tester.words(number: 1000)
-    @words.each { |w| assert !w.match(/\s/) }
+    @words.each { |w| assert !w.match?(/\s/) }
   end
 
   # Words requested from the supplemental list should all be in that list.
@@ -38,7 +38,7 @@ class TestFakerHipster < Test::Unit::TestCase
   # Word should not return any word with spaces
   def test_word_without_spaces
     @tester = Faker::Hipster
-    1000.times { assert !@tester.word.match(/\s/) }
+    1000.times { assert !@tester.word.match?(/\s/) }
   end
 
   def test_exact_count_param

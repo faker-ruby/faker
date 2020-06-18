@@ -12,7 +12,7 @@ class TestSVLocale < Test::Unit::TestCase
   end
 
   def test_address_methods
-    assert Faker::Address.postcode.match(/^[\d]{5}$/)
+    assert Faker::Address.postcode.match?(/^[\d]{5}$/)
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.city_prefix.is_a? String
     assert Faker::Address.country.is_a? String
@@ -55,8 +55,8 @@ class TestSVLocale < Test::Unit::TestCase
   end
 
   def test_sv_phone_number_methods
-    assert Faker::PhoneNumber.cell_phone.match(/^07[036]{1}[\-\s]?\d{3}[\-\s]?\d{4}$/)
-    assert Faker::PhoneNumber.phone_number.match(/^\d{4}[\s\-]?\d{4,6}$/)
+    assert Faker::PhoneNumber.cell_phone.match?(/^07[036]{1}[\-\s]?\d{3}[\-\s]?\d{4}$/)
+    assert Faker::PhoneNumber.phone_number.match?(/^\d{4}[\s\-]?\d{4,6}$/)
   end
 
   def test_sv_team_methods

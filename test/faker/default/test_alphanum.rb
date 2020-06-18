@@ -8,11 +8,11 @@ class TestFakerAlphanum < Test::Unit::TestCase
   end
 
   def alpha
-    assert @tester.alpha(number: 5).match(/[a-z]{5}/)
+    assert @tester.alpha(number: 5).match?(/[a-z]{5}/)
   end
 
   def alphanum
-    assert @tester.alphanumeric(number: 5).match(/[a-z0-9]{5}/)
+    assert @tester.alphanumeric(number: 5).match?(/[a-z0-9]{5}/)
   end
 
   def test_alphanumeric_invalid_min_alpha

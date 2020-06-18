@@ -8,18 +8,18 @@ class TestFakerFallout < Test::Unit::TestCase
   end
 
   def test_hero
-    assert @tester.character.match(/\w+/)
+    assert @tester.character.match?(/\w+/)
   end
 
   def test_faction
-    assert @tester.faction.match(/\w+/)
+    assert @tester.faction.match?(/\w+/)
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert @tester.location.match?(/\w+/)
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert @tester.quote.match?(/\w+/)
   end
 end

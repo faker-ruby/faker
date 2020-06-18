@@ -8,6 +8,6 @@ class TestFakerRajnikanth < Test::Unit::TestCase
   end
 
   def test_jokes
-    assert @tester.joke.match(/\w+/)
+    assert @tester.joke.match?(/\w+/)
   end
 end

@@ -8,10 +8,10 @@ class TestFakerHorse < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w+\.?/)
+    assert @tester.name.match?(/\w+\.?/)
   end
 
   def test_breed
-    assert @tester.breed.match(/\w+\.?/)
+    assert @tester.breed.match?(/\w+\.?/)
   end
 end

@@ -14,11 +14,11 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_number
-    assert @tester.number(digits: 10).to_s.match(/[0-9]{10}/)
+    assert @tester.number(digits: 10).to_s.match?(/[0-9]{10}/)
 
     10.times do |digits|
       digits += 1
-      assert @tester.number(digits: digits).to_s.match(/^[0-9]{#{digits}}$/)
+      assert @tester.number(digits: digits).to_s.match?(/^[0-9]{#{digits}}$/)
     end
 
     assert @tester.number(digits: 10).to_s.length == 10
@@ -38,13 +38,13 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_decimal
-    assert @tester.decimal(l_digits: 1, r_digits: 1).to_s.match(/[0-9]{1}\.[1-9]{1}/)
-    assert @tester.decimal(l_digits: 2).to_s.match(/[0-9]{2}\.[0-9]{1}[1-9]{1}/)
-    assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match(/[0-9]{4}\.[0-9]{4}[1-9]{1}/)
+    assert @tester.decimal(l_digits: 1, r_digits: 1).to_s.match?(/[0-9]{1}\.[1-9]{1}/)
+    assert @tester.decimal(l_digits: 2).to_s.match?(/[0-9]{2}\.[0-9]{1}[1-9]{1}/)
+    assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match?(/[0-9]{4}\.[0-9]{4}[1-9]{1}/)
   end
 
   def test_digit
-    assert @tester.digit.to_s.match(/[0-9]{1}/)
+    assert @tester.digit.to_s.match?(/[0-9]{1}/)
     assert((1..1000).collect { |_i| @tester.digit == 9 }.include?(true))
   end
 
@@ -125,7 +125,7 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_hexadecimal
-    assert @tester.hexadecimal(digits: 4).match(/[0-9a-f]{4}/)
-    assert @tester.hexadecimal(digits: 7).match(/[0-9a-f]{7}/)
+    assert @tester.hexadecimal(digits: 4).match?(/[0-9a-f]{4}/)
+    assert @tester.hexadecimal(digits: 7).match?(/[0-9a-f]{7}/)
   end
 end

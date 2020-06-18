@@ -8,38 +8,38 @@ class TestFakerCosmere < Test::Unit::TestCase
   end
 
   def test_aon
-    assert @tester.aon.match(/\w+\.?/)
+    assert @tester.aon.match?(/\w+\.?/)
   end
 
   def test_shard_world
-    assert @tester.shard_world.match(/\w+\.?/)
+    assert @tester.shard_world.match?(/\w+\.?/)
   end
 
   def test_shard
-    assert @tester.shard.match(/\w+\.?/)
+    assert @tester.shard.match?(/\w+\.?/)
   end
 
   def test_surge
-    assert @tester.surge.match(/\w+\.?/)
+    assert @tester.surge.match?(/\w+\.?/)
   end
 
   def test_knight_radiant
-    assert @tester.knight_radiant.match(/\w+\.?/)
+    assert @tester.knight_radiant.match?(/\w+\.?/)
   end
 
   def test_metal
-    assert @tester.metal.match(/\w+\.?/)
+    assert @tester.metal.match?(/\w+\.?/)
   end
 
   def test_allomancer
-    assert @tester.allomancer.match(/\w+\.?/)
+    assert @tester.allomancer.match?(/\w+\.?/)
   end
 
   def test_herald
-    assert @tester.herald.match(/\w+\.?/)
+    assert @tester.herald.match?(/\w+\.?/)
   end
 
   def test_spren
-    assert @tester.spren.match(/\w+\.?/)
+    assert @tester.spren.match?(/\w+\.?/)
   end
 end

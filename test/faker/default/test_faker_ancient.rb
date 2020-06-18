@@ -8,18 +8,18 @@ class TestFakerAncient < Test::Unit::TestCase
   end
 
   def test_god
-    assert @tester.god.match(/\w+/)
+    assert @tester.god.match?(/\w+/)
   end
 
   def test_primordial
-    assert @tester.primordial.match(/\w+/)
+    assert @tester.primordial.match?(/\w+/)
   end
 
   def test_titan
-    assert @tester.titan.match(/\w+/)
+    assert @tester.titan.match?(/\w+/)
   end
 
   def test_hero
-    assert @tester.hero.match(/\w+/)
+    assert @tester.hero.match?(/\w+/)
   end
 end

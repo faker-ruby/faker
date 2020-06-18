@@ -40,10 +40,10 @@ module Faker
         background_color = generate_color if background_color == :random
         text_color = generate_color if text_color == :random
 
-        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
+        raise ArgumentError, 'Size should be specified in format 300x300' unless /^[0-9]+x[0-9]+$/.match?(size)
         raise ArgumentError, "Supported formats are #{SUPPORTED_FORMATS.join(', ')}" unless SUPPORTED_FORMATS.include?(format)
-        raise ArgumentError, "background_color must be a hex value without '#'" unless background_color.nil? || background_color =~ /((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/
-        raise ArgumentError, "text_color must be a hex value without '#'" unless text_color.nil? || text_color =~ /((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/
+        raise ArgumentError, "background_color must be a hex value without '#'" unless background_color.nil? || /((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/.match?(background_color)
+        raise ArgumentError, "text_color must be a hex value without '#'" unless text_color.nil? || /((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/.match?(text_color)
 
         image_url = "https://placehold.it/#{size}.#{format}"
         image_url += "/#{background_color}" if background_color

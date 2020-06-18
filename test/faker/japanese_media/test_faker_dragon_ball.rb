@@ -8,6 +8,6 @@ class TestFakerJapaneseMediaDragonBall < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert @tester.character.match?(/\w+/)
   end
 end
