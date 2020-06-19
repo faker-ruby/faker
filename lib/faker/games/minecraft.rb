@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Games::Minecraft.block #=> "Stone"
         #
-        # @faker.version 2.12.0
+        # @faker.version next
         def block
           fetch('games.minecraft.blocks')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::Minecraft.item #=> "Iron Shovel"
         #
-        # @faker.version 2.12.0
+        # @faker.version next
         def item
           fetch('games.minecraft.items')
         end
@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Games::Minecraft.item #=> "Sheep"
         #
-        # @faker.version 2.12.0
+        # @faker.version next
         def mob
           fetch('games.minecraft.mobs')
         end
