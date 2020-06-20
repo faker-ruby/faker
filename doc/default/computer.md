@@ -1,6 +1,6 @@
 # Faker::Computer
 
-Available since version 2.11.0.
+Available since version 2.12.0.
 
 ```ruby
 # A random computer platform
