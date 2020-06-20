@@ -11,7 +11,7 @@ module Faker
       # @example
       #   Faker::Computer.platform #=> "Linux"
       #
-      # @faker.version next
+      # @faker.version 2.12.0
       def platform
         fetch('computer.platform')
       end
@@ -24,7 +24,7 @@ module Faker
       # @example
       #   Faker::Computer.type #=> "server"
       #
-      # @faker.version next
+      # @faker.version 2.12.0
       def type
         fetch('computer.type')
       end
@@ -38,7 +38,7 @@ module Faker
       # @example
       #   Faker::Computer.os #=> "RHEL 6.10"
       #
-      # @faker.version next
+      # @faker.version 2.12.0
       def os(platform: self.platform)
         platform = self.platform unless fetch_all('computer.platform').include?(platform)
         fetch("computer.os.#{platform.downcase}")
@@ -52,7 +52,7 @@ module Faker
       # @example
       #   Faker::Computer.stack #=> "Linux, RHEL 6.10"
       #
-      # @faker.version next
+      # @faker.version 2.12.0
       def stack
         platform = self.platform
         os = fetch("computer.os.#{platform.downcase}")
