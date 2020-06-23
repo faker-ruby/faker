@@ -282,6 +282,17 @@ module Faker
         regexify(bothify(fetch(key)))
       end
 
+      ##
+      # Produces a random Mercosur license plate number.
+      #
+      # @param state_abbreviation [String] Two letter state abbreviation for license plate generation.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Vehicle.mercosur_license_plate #=> "QTP5F71"
+      #   Faker::Vehicle.mercosur_license_plate(state_abbreviation: 'RN') #=> "MXH3B71"
+      #
+      # @faker.version next
       def mercosur_license_plate(state_abreviation: '')
         is_pt_br = Faker::Config.locale == 'pt-BR'
         key = 'vehicle.mercosur_license_plate'
