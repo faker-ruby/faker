@@ -293,7 +293,7 @@ module Faker
       #   Faker::Vehicle.mercosur_license_plate(state_abbreviation: 'RN') #=> "MXH3B71"
       #
       # @faker.version next
-      def mercosur_license_plate(state_abreviation: '')
+      def mercosur_license_plate(state_abbreviation: '')
         is_pt_br = Faker::Config.locale == 'pt-BR'
         key = 'vehicle.mercosur_license_plate'
         return regexify(bothify(fetch(key))) if state_abreviation.empty?
