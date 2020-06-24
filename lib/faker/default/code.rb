@@ -34,7 +34,11 @@ module Faker
           keywords << :base if legacy_base != NOT_GIVEN
         end
 
-        base == 13 ? generate_base13_isbn : generate_base10_isbn
+        case base
+        when 10 then generate_base10_isbn
+        when 13 then generate_base13_isbn
+        else raise ArgumentError, 'base must be 10, or 13'
+        end
       end
 
       ##
@@ -54,7 +58,11 @@ module Faker
           keywords << :base if legacy_base != NOT_GIVEN
         end
 
-        base == 8 ? generate_base8_ean : generate_base13_ean
+        case base
+        when 8 then generate_base8_ean
+        when 13 then generate_base13_ean
+        else raise ArgumentError, 'base must be 3, or 13'
+        end
       end
 
       ##
@@ -165,8 +173,6 @@ module Faker
       def generate_imei
         str = Array.new(15, 0)
         sum = 0
-        t = 0
-        len_offset = 0
         len = 15
 
         # Fill in the first two values of the string based with the specified prefix.
