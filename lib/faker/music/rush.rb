@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::Music::Rush.player #=> "Geddy Lee"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def player
           fetch('rush.players')
         end
@@ -27,7 +27,7 @@ module Faker
         # @example
         #   Faker::Music::Rush.album #=> "Hold Your Fire"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def album
           fetch('rush.albums')
         end

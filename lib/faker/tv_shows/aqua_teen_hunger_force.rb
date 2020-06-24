@@ -27,7 +27,7 @@ module Faker
         # @example
         #   Faker::TvShows::AquaTeenHungerForce.quote #=> "Friendship ain't about trust. Friendship's about nunchucks."
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def quote
           fetch('aqua_teen_hunger_force.quote')
         end

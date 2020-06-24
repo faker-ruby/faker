@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Blood.type #=> "AB"
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def type
         fetch('blood.type')
       end
@@ -26,7 +26,7 @@ module Faker
       # @example
       #   Faker::Blood.rh_factor #=> "-"
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def rh_factor
         fetch('blood.rh_factor')
       end
@@ -39,7 +39,7 @@ module Faker
       # @example
       #   Faker::Blood.group #=> "AB-"
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def group
         parse('blood.group')
       end

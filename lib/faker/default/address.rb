@@ -355,7 +355,7 @@ module Faker
       #  Faker::Address.full_address_as_hash(:street_address, street_address: {include_secondary: true})
       #     #=> {:street_address=>"29423 Kenneth Causeway Suite 563"}
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def full_address_as_hash(*attrs, **attrs_params)
         attrs.map!(&:to_sym)
         attrs_params.transform_keys!(&:to_sym)

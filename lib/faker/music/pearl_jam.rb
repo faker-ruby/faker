@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::Music::PearlJam.musician #=> "Eddie Vedder"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def musician
           fetch('pearl_jam.musicians')
         end
@@ -27,7 +27,7 @@ module Faker
         # @example
         #   Faker::Music::PearlJam.album #=> "Ten"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def album
           fetch('pearl_jam.albums')
         end
@@ -40,7 +40,7 @@ module Faker
         # @example
         #   Faker::Music::PearlJam.song #=> "Even Flow"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def song
           fetch('pearl_jam.songs')
         end

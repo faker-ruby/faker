@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::TvShows::BigBangTheory.character #=> "Sheldon Cooper"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def character
           fetch('big_bang_theory.characters')
         end
@@ -27,7 +27,7 @@ module Faker
         # @example
         # Faker::TvShows::BigBangTheory.quote #=> "I'm not crazy. My mother had me tested."
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def quote
           fetch('big_bang_theory.quotes')
         end
