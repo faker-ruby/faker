@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::TvShows::Suits.character #=> "Harvey Specter"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def character
           fetch('suits.characters')
         end
@@ -27,7 +27,7 @@ module Faker
         # @example
         # Faker::TvShows::Suits.quote #=> "Don't play the odds, play the man."
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def quote
           fetch('suits.quotes')
         end

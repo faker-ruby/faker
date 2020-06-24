@@ -11,7 +11,7 @@ module Faker
       # @example
       #   Faker::Movie.title #=> "The Lord of the Rings: The Two Towers"
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def title
         fetch('movie.title')
       end

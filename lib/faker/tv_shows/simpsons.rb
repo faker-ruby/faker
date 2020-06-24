@@ -55,7 +55,7 @@ module Faker
         #   Faker::TvShows::Simpsons.episode_title
         #     #=> "Two Cars in Every Garage and Three Eyes on Every Fish"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def episode_title
           fetch('simpsons.episode_titles')
         end

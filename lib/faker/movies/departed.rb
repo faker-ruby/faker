@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Movies::Departed.actor #=> "Matt Damon"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def actor
           fetch('departed.actors')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Movies::Departed.character #=> "Frank Costello"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def character
           fetch('departed.characters')
         end
@@ -39,7 +39,7 @@ module Faker
         #   Faker::Movies::Departed.quote
         #     #=> "I'm the guy who does his job. You must be the other guy"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def quote
           fetch('departed.quotes')
         end

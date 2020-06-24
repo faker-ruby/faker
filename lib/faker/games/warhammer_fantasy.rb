@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Games::WarhammerFantasy.hero #=> "Sigmar Heldenhammer"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def hero
           fetch('games.warhammer_fantasy.heros')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::WarhammerFantasy.quote #=> "The softest part of a castle is the belly of the man inside."
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def quote
           fetch('games.warhammer_fantasy.quotes')
         end
@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Games::WarhammerFantasy.location #=> "Lustria"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def location
           fetch('games.warhammer_fantasy.locations')
         end
@@ -51,7 +51,7 @@ module Faker
         # @example
         #   Faker::Games::WarhammerFantasy.faction #=> "Bretonnia"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def faction
           fetch('games.warhammer_fantasy.factions')
         end
@@ -64,7 +64,7 @@ module Faker
         # @example
         #   Faker::Games::WarhammerFantasy.creature #=> "Hydra"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def creature
           fetch('games.warhammer_fantasy.creatures')
         end

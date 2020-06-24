@@ -12,7 +12,7 @@ module Faker
       #   Faker::Alphanumeric.alpha
       #     #=> "West Side Story"
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def adult_musical
         fetch('show.adult_musical')
       end
@@ -26,7 +26,7 @@ module Faker
       #   Faker::Alphanumeric.alpha
       #     #=> "Into the Woods JR."
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def kids_musical
         fetch('show.kids_musical')
       end
@@ -40,7 +40,7 @@ module Faker
       #   Faker::Alphanumeric.alpha
       #     #=> "Death of a Salesman"
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def play
         fetch('show.play')
       end

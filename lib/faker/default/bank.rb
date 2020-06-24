@@ -121,7 +121,7 @@ module Faker
       #   Faker::Bank.bsb_number
       #     #=> "036616"
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def bsb_number
         compile_bsb_number
       end

@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::TvShows::Futurama.character #=> "Amy Wong"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def character
           fetch('futurama.characters')
         end
@@ -27,7 +27,7 @@ module Faker
         # @example
         #   Faker::TvShows::Futurama.location #=> "Wormulon"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def location
           fetch('futurama.locations')
         end
@@ -41,7 +41,7 @@ module Faker
         #   Faker::TvShows::Futurama.quote
         #     #=> "Ugh, it's like a party in my mouth & everyone's throwing up."
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def quote
           fetch('futurama.quotes')
         end
@@ -55,7 +55,7 @@ module Faker
         #   Faker::TvShows::Futurama.hermes_catchphrase
         #     #=> "Great foo of bar!"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def hermes_catchphrase
           fetch('futurama.hermes_catchphrases')
         end

@@ -1,5 +1,76 @@
 # Change Log
 
+## [v2.13.0](https://github.com/faker-ruby/faker/tree/v2.13.0) (2020-06-24)
+
+This version:
+- adds YARD docs for several interface methods
+- fixes bugs
+- adds improvements to the code base
+- updates dependencies
+
+## Bug/Fixes
+
+- [PR #2050](https://github.com/faker-ruby/faker/pull/2050) Fix random error in music tests [@martinjaimem](https://github.com/martinjaimem)
+- [PR #2037](https://github.com/faker-ruby/faker/pull/2037) Bug Fix: BIC Collission (Issue 1907) [@Newman101](https://github.com/Newman101)
+- [PR #2026](https://github.com/faker-ruby/faker/pull/2026) Sanitize email when name has special characters [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1785](https://github.com/faker-ruby/faker/pull/1785) Adds a fix for when :en is not one of the available locales [@jaimerodas](https://github.com/jaimerodas)
+
+## Chores
+
+- [PR #2041](https://github.com/faker-ruby/faker/pull/2041) Reduce Lines in char.rb [@Newman101](https://github.com/Newman101)
+- [PR #2039](https://github.com/faker-ruby/faker/pull/2039) restore Kylo Ren quotes [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2038](https://github.com/faker-ruby/faker/pull/2038) Drop EOL Rubies from CI tests [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2033](https://github.com/faker-ruby/faker/pull/2033) Use `Faker::Base::ULetters` constant instead [@vbrazo](https://github.com/vbrazo)
+- [PR #2028](https://github.com/faker-ruby/faker/pull/2028) Reorganize some tests [@connorshea](https://github.com/connorshea)
+- [PR #1853](https://github.com/faker-ruby/faker/pull/1853) Exclude string.rb from consideration by YARD. [@connorshea](https://github.com/connorshea)
+
+## Deprecation
+
+- [PR #2031](https://github.com/faker-ruby/faker/pull/2031) Deprecate `HeroesOfTheStorm.class` [@koic](https://github.com/koic)
+
+## Documentation
+
+- [PR #2065](https://github.com/faker-ruby/faker/pull/2065) Add missing documentation to `Faker::Computer` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2064](https://github.com/faker-ruby/faker/pull/2064) Add minecraft generators [@Ri1a](https://github.com/Ri1a)
+- [PR #2061](https://github.com/faker-ruby/faker/pull/2061) Update docs for `Faker::Date` with separate examples [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2057](https://github.com/faker-ruby/faker/pull/2057) Add missing quotes to `Faker::Internet` [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2055](https://github.com/faker-ruby/faker/pull/2055) Add YARD docs to `Faker::NHS` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2054](https://github.com/faker-ruby/faker/pull/2054) Add YARD docs to `Faker::Chile_Rut` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2053](https://github.com/faker-ruby/faker/pull/2053) Add YARD docs to `Faker::Lorem_Flickr` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2052](https://github.com/faker-ruby/faker/pull/2052) Add YARD docs to `Faker::Lorem_Pixel` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2051](https://github.com/faker-ruby/faker/pull/2051) Add YARD docs to `Faker::Omniauth` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2036](https://github.com/faker-ruby/faker/pull/2036) Add YARD docs to `Faker::Markdown` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2035](https://github.com/faker-ruby/faker/pull/2035) Add YARD docs to `Faker::ID_Number` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2030](https://github.com/faker-ruby/faker/pull/2030) Add general documentation for `Faker::Blood` [@jbergenson](https://github.com/jbergenson)
+- [PR #2029](https://github.com/faker-ruby/faker/pull/2029) Allow passing a string to specific `Faker::Date` methods. [@connorshea](https://github.com/connorshea)
+
+## Feature Request
+
+- [PR #2040](https://github.com/faker-ruby/faker/pull/2040) Split lint and test Github actions [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2032](https://github.com/faker-ruby/faker/pull/2032) Add `gender-neutral` first names to `Faker::Name` [@cmunozgar](https://github.com/cmunozgar)
+- [PR #1965](https://github.com/faker-ruby/faker/pull/1965) Add new `full_address_as_hash` method which return the required address [@AmrAdelKhalil](https://github.com/AmrAdelKhalil)
+- [PR #1952](https://github.com/faker-ruby/faker/pull/1952) Add `Faker::Movie.title` [@gizipp](https://github.com/gizipp)
+- [PR #1932](https://github.com/faker-ruby/faker/pull/1932) Added AHTF Wisdom [@brotherjack](https://github.com/brotherjack)
+- [PR #1912](https://github.com/faker-ruby/faker/pull/1912) Add `Faker::Music::Rush` [@willianveiga](https://github.com/willianveiga)
+- [PR #1865](https://github.com/faker-ruby/faker/pull/1865) Add Big Bang Theory [@pathaknv](https://github.com/pathaknv)
+- [PR #1858](https://github.com/faker-ruby/faker/pull/1858) Add `Faker::TvShows::Futurama` [@JoeNyland](https://github.com/JoeNyland)
+- [PR #1821](https://github.com/faker-ruby/faker/pull/1821) Add HTTP status codes generator [@willianveiga](https://github.com/willianveiga)
+- [PR #1804](https://github.com/faker-ruby/faker/pull/1804) Add `Faker::TvShows::Simpsons.episode_title` [@martinbjeldbak](https://github.com/martinbjeldbak)
+- [PR #1670](https://github.com/faker-ruby/faker/pull/1670) Adds `Faker::Music::Prince` [@jessecalton](https://github.com/jessecalton)
+
+## Update locales
+
+- [PR #1792](https://github.com/faker-ruby/faker/pull/1792) Add more prefixes and suffixes to Name [@mathisto](https://github.com/mathisto)
+
+## Update local dependencies
+
+- Update rubocop requirement from = 0.81.0 to = 0.85.1
+- Update rubocop requirement from = 0.85.1 to = 0.86.0 (#2066)
+- Update test-unit requirement from = 3.3.5 to = 3.3.6 (#2046)
+- Bump i18n from 1.8.2 to 1.8.3 (#2034)
+
+------------------------------------------------------------------------------
+
 ## [v2.12.0](https://github.com/faker-ruby/faker/tree/v2.12.0) (2020-05-31)
 
 This version:

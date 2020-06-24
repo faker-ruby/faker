@@ -79,7 +79,7 @@ module Faker
         # @example
         #   Faker::TvShows::DrWho.villain #=> "The Master"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def villain
           fetch('dr_who.villains')
         end

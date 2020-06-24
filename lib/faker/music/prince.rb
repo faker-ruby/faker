@@ -13,7 +13,7 @@ module Faker
         #   Faker::Music::Prince.song #=> "Raspberry Beret"
         #   Faker::Music::Prince.song #=> "Starfish And Coffee"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def song
           fetch('prince.song')
         end
@@ -27,7 +27,7 @@ module Faker
         #   Faker::Music::Prince.lyric #=> "Dearly beloved, we are gathered here today to get through this thing called life."
         #   Faker::Music::Prince.lyric #=> "You were so hard to find, the beautiful ones, they hurt you every time."
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def lyric
           fetch('prince.lyric')
         end
@@ -41,7 +41,7 @@ module Faker
         #   Faker::Music::Prince.album #=> "The Gold Experience"
         #   Faker::Music::Prince.album #=> "Purple Rain"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def album
           fetch('prince.album')
         end
@@ -54,7 +54,7 @@ module Faker
         # @example
         #   Faker::Music::Prince.band #=> "The New Power Generation"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def band
           fetch('prince.band')
         end

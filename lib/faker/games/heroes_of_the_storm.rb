@@ -36,7 +36,7 @@ module Faker
         # @example
         #   Faker::Games::HeroesOfTheStorm.class_name #=> "Support"
         #
-        # @faker.version next
+        # @faker.version 2.13.0
         def class_name
           fetch('heroes_of_the_storm.class_names')
         end
