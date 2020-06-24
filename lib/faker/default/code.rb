@@ -9,7 +9,7 @@ module Faker
       #
       # @return [String]
       #
-      # @exmaple
+      # @example
       #   Faker::Code.npi #=> "9804062802"
       #
       # @faker.version 1.9.4
@@ -20,11 +20,12 @@ module Faker
       ##
       # Produces a random ISBN (International Standard Book Number) code.
       #
+      # @param base [Number] the length of the code to generate (either 10 or 13)
       # @return [String]
       #
       # @example
       #   Faker::Code.isbn(base: 13) #=> "896579606969-8"
-      # @exmaple
+      # @example
       #   Faker::Code.isbn #=> "170366802-2"
       #
       # @faker.version 2.2.0
@@ -39,11 +40,12 @@ module Faker
       ##
       # Produces a random EAN (European Article Number) code.
       #
+      # @param base [Number] the length of the code to generate (either 8 or 13)
       # @return [String]
       #
       # @example
       #   Faker::Code.ean(base: 8) #=> "36941070"
-      # @exmaple
+      # @example
       #   Faker::Code.ean #=> "9941880131907"
       #
       # @faker.version 2.2.0
@@ -75,6 +77,8 @@ module Faker
       ##
       # Produces a random NRIC (National Registry Identity Card) code.
       #
+      # @param min_age [Number] the min age of the person in years
+      # @param max_age [Number] the max age of the person in years
       # @return [String]
       #
       # @example
@@ -115,7 +119,7 @@ module Faker
       end
 
       ##
-      # Retrieves a real Amazon ASIN code from https://archive.org/details/asin_listing.
+      # Retrieves a real Amazon ASIN code from https://archive.org/details/asin_listing
       #
       # @return [String]
       #
