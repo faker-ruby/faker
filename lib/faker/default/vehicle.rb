@@ -296,9 +296,9 @@ module Faker
       def mercosur_license_plate(state_abbreviation: '')
         is_pt_br = Faker::Config.locale == 'pt-BR'
         key = 'vehicle.mercosur_license_plate'
-        return regexify(bothify(fetch(key))) if state_abreviation.empty?
+        return regexify(bothify(fetch(key))) if state_abbreviation.empty?
 
-        key = key + '.by_state.' + state_abreviation if is_pt_br
+        key = key + '.by_state.' + state_abbreviation if is_pt_br
         regexify(bothify(fetch(key)))
       end
 
