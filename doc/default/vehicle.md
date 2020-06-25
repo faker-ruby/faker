@@ -62,15 +62,15 @@ Faker::Vehicle.mileage(min: 50_000, max: 250_000) #=> 117503
 Faker::Vehicle.kilometrage #=> 35378
 
 # Random vehicle license plate (USA by default)
-# Keyword arguments: state_abreviation
+# Keyword arguments: state_abbreviation
 Faker::Vehicle.license_plate #=> "DEP-2483"
-Faker::Vehicle.license_plate(state_abreviation: 'FL') #=> "977 UNU"
+Faker::Vehicle.license_plate(state_abbreviation: 'FL') #=> "977 UNU"
 
 # Random vehicle license plate for Brazil (if locale is set)
 # If locale is 'EN' returns random plate for Brazil, Argentina, Paraguay or Uruguay
-# Keyword arguments: state_abreviation
+# Keyword arguments: state_abbreviation
 Faker::Vehicle.mercosur_license_plate #=> "LTN8E82"
-Faker::Vehicle.mercosur_license_plate(state_abreviation: 'RJ') #=> "LTN8E82"
+Faker::Vehicle.mercosur_license_plate(state_abbreviation: 'RJ') #=> "LTN8E82"
 
 # Random vehicle license plate for Singapore (if locale is set)
 Faker::Vehicle.singapore_license_plate #=> "SLV1854M"
