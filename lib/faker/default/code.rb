@@ -37,7 +37,7 @@ module Faker
         case base
         when 10 then generate_base10_isbn
         when 13 then generate_base13_isbn
-        else raise ArgumentError, 'base must be 10, or 13'
+        else raise ArgumentError, 'base must be 10 or 13'
         end
       end
 
@@ -61,7 +61,7 @@ module Faker
         case base
         when 8 then generate_base8_ean
         when 13 then generate_base13_ean
-        else raise ArgumentError, 'base must be 3, or 13'
+        else raise ArgumentError, 'base must be 3 or 13'
         end
       end
 
@@ -82,7 +82,7 @@ module Faker
 
       # By default generates a Singaporean NRIC ID for someone
       # who is born between the age of 18 and 65.
-      ##
+      #
       # Produces a random NRIC (National Registry Identity Card) code.
       #
       # @param min_age [Number] the min age of the person in years
