@@ -16,7 +16,7 @@ class TestFakerTezos < Test::Unit::TestCase
   end
 
   def test_block
-    assert Faker::Tezos.block.match(/^B[1-9A-Za-z][^OIl]{20,40}/)
+    assert Faker::Blockchain::Tezos.block.match(/^B[1-9A-Za-z][^OIl]{20,40}/)
   end
 
   def test_signature
