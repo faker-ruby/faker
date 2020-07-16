@@ -44,7 +44,7 @@ module Faker
       ##
       # Produces a random EAN (European Article Number) code.
       #
-      # @param base [Number] the length of the code to generate (either 8 or 13)
+      # @param base [Integer] the length of the code to generate (either 8 or 13)
       # @return [String]
       #
       # @example
