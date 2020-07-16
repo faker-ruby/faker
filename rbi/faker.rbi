@@ -534,6 +534,32 @@ module Faker
       def self.location; end
     end
 
+    class Minecraft < Faker::Base
+      # Produces the name of a block from Minecraft.
+      # 
+      # ```ruby
+      # Faker::Games::Minecraft.block #=> "Stone"
+      # ```
+      sig { returns(::String) }
+      def self.block; end
+
+      # Produces the name of an item from Minecraft.
+      # 
+      # ```ruby
+      # Faker::Games::Minecraft.item #=> "Iron Shovel"
+      # ```
+      sig { returns(::String) }
+      def self.item; end
+
+      # Produces the name of a mob from Minecraft.
+      # 
+      # ```ruby
+      # Faker::Games::Minecraft.item #=> "Sheep"
+      # ```
+      sig { returns(::String) }
+      def self.mob; end
+    end
+
     class Overwatch < Faker::Base
       # Produces the name of a hero from Overwatch.
       # 
@@ -789,13 +815,20 @@ module Faker
       sig { returns(::String) }
       def self.battleground; end
 
-      # Produces a class from Heroes of the Storm.
+      # This method is deprecated. The implementation will be removed in a near future release.
+      # Use `HeroesOfTheStorm.class_name` instead.
+      # 
+      # _@deprecated_ — Use {#class_name} instead.
+      sig { returns(T.untyped) }
+      def self.class; end
+
+      # Produces a class name from Heroes of the Storm.
       # 
       # ```ruby
-      # Faker::Games::HeroesOfTheStorm.class #=> "Support"
+      # Faker::Games::HeroesOfTheStorm.class_name #=> "Support"
       # ```
       sig { returns(::String) }
-      def self.class; end
+      def self.class_name; end
 
       # Produces a hero from Heroes of the Storm.
       # 
@@ -1186,6 +1219,256 @@ module Faker
     def self.platform; end
   end
 
+  # A generator of titles of operas by Verdi, Rossini, Donizetti and Bellini
+  class Music < Faker::Base
+    # Produces the name of a key/note, using letter notation.
+    # 
+    # ```ruby
+    # Faker::Music.key #=> "A#"
+    # ```
+    sig { returns(::String) }
+    def self.key; end
+
+    # Produces the name of a chord, using letter notation.
+    # 
+    # ```ruby
+    # Faker::Music.chord #=> "Adim7"
+    # ```
+    sig { returns(::String) }
+    def self.chord; end
+
+    # Produces the name of an instrument.
+    # 
+    # ```ruby
+    # Faker::Music.instrument #=> "Acoustic Guitar"
+    # ```
+    sig { returns(::String) }
+    def self.instrument; end
+
+    # Produces an array of the letter names of musical notes, without accidentals.
+    sig { returns(T::Array[::String]) }
+    def self.keys; end
+
+    # Produces an array of accidentals (with "natural" denoted as an empty string).
+    sig { returns(T::Array[::String]) }
+    def self.key_variants; end
+
+    # Produces an array of key types (with "major" denoted as an empty string).
+    # 
+    # ```ruby
+    # Faker::Music.key_types #=> ['', 'm']
+    # ```
+    sig { returns(T::Array[::String]) }
+    def self.key_types; end
+
+    # Produces an array of types of chords.
+    sig { returns(T::Array[::String]) }
+    def self.chord_types; end
+
+    # Produces the name of a band.
+    # 
+    # ```ruby
+    # Faker::Music.band #=> "The Beatles"
+    # ```
+    sig { returns(::String) }
+    def self.band; end
+
+    # Produces the name of an album.
+    # 
+    # ```ruby
+    # Faker::Music.album #=> "Sgt. Pepper's Lonely Hearts Club"
+    # ```
+    sig { returns(::String) }
+    def self.album; end
+
+    # Produces the name of a musical genre.
+    # 
+    # ```ruby
+    # Faker::Music.genre #=> "Rock"
+    # ```
+    sig { returns(::String) }
+    def self.genre; end
+
+    class Rush < Faker::Base
+      # Produces the name of a member of Rush
+      # 
+      # ```ruby
+      # Faker::Music::Rush.player #=> "Geddy Lee"
+      # ```
+      sig { returns(::String) }
+      def self.player; end
+
+      # Produces the name of an album by Rush
+      # 
+      # ```ruby
+      # Faker::Music::Rush.album #=> "Hold Your Fire"
+      # ```
+      sig { returns(::String) }
+      def self.album; end
+    end
+
+    class Opera < Faker::Base
+      # Produces the title of an opera by Giuseppe Verdi.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.verdi #=> "Il Trovatore"
+      # ```
+      sig { returns(::String) }
+      def self.verdi; end
+
+      # Produces the title of an opera by Gioacchino Rossini.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.rossini #=> "Il Barbiere di Siviglia"
+      # ```
+      sig { returns(::String) }
+      def self.rossini; end
+
+      # Produces the title of an opera by Gaetano Donizetti.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.donizetti #=> "Lucia di Lammermoor"
+      # ```
+      sig { returns(::String) }
+      def self.donizetti; end
+
+      # Produces the title of an opera by Vincenzo Bellini.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.bellini #=> "Norma"
+      # ```
+      sig { returns(::String) }
+      def self.bellini; end
+    end
+
+    class Phish < Faker::Base
+      # Produces the name of a album by Phish.
+      # 
+      # ```ruby
+      # Faker::Music::Phish.album #=> "Fuego"
+      # ```
+      sig { returns(::String) }
+      def self.album; end
+
+      # Produces the name of a musician in Phish.
+      # 
+      # ```ruby
+      # Faker::Music::Phish.musician #=> "Trey Anastasio"
+      # ```
+      sig { returns(::String) }
+      def self.musician; end
+
+      # Produces the name of a song by Phish.
+      # 
+      # ```ruby
+      # Faker::Music::Phish.song #=> "Tweezer"
+      # ```
+      sig { returns(::String) }
+      def self.song; end
+    end
+
+    class Prince < Faker::Base
+      # Produces a random Prince song.
+      # 
+      # ```ruby
+      # Faker::Music::Prince.song #=> "Raspberry Beret"
+      # Faker::Music::Prince.song #=> "Starfish And Coffee"
+      # ```
+      sig { returns(::String) }
+      def self.song; end
+
+      # Produces a random Prince song lyric.
+      # 
+      # ```ruby
+      # Faker::Music::Prince.lyric #=> "Dearly beloved, we are gathered here today to get through this thing called life."
+      # Faker::Music::Prince.lyric #=> "You were so hard to find, the beautiful ones, they hurt you every time."
+      # ```
+      sig { returns(::String) }
+      def self.lyric; end
+
+      # Produces a random Prince album.
+      # 
+      # ```ruby
+      # Faker::Music::Prince.album #=> "The Gold Experience"
+      # Faker::Music::Prince.album #=> "Purple Rain"
+      # ```
+      sig { returns(::String) }
+      def self.album; end
+
+      # Produces a random Prince-associated band.
+      # 
+      # ```ruby
+      # Faker::Music::Prince.band #=> "The New Power Generation"
+      # ```
+      sig { returns(::String) }
+      def self.band; end
+    end
+
+    class PearlJam < Faker::Base
+      # Produces the name of a member of Pearl Jam (current and former)
+      # 
+      # ```ruby
+      # Faker::Music::PearlJam.musician #=> "Eddie Vedder"
+      # ```
+      sig { returns(::String) }
+      def self.musician; end
+
+      # Produces the name of an album by Pearl Jam.
+      # 
+      # ```ruby
+      # Faker::Music::PearlJam.album #=> "Ten"
+      # ```
+      sig { returns(::String) }
+      def self.album; end
+
+      # Produces the name of a song by Pearl Jam.
+      # 
+      # ```ruby
+      # Faker::Music::PearlJam.song #=> "Even Flow"
+      # ```
+      sig { returns(::String) }
+      def self.song; end
+    end
+
+    class RockBand < Faker::Base
+      # Produces the name of a rock band.
+      # 
+      # ```ruby
+      # Faker::Music::RockBand.name #=> "Led Zeppelin"
+      # ```
+      sig { returns(::String) }
+      def self.name; end
+    end
+
+    class GratefulDead < Faker::Base
+      # Produces the name of a member of The Grateful Dead.
+      # 
+      # ```ruby
+      # Faker::Music::GratefulDead.player #=> "Jerry Garcia"
+      # ```
+      sig { returns(::String) }
+      def self.player; end
+
+      # Produces the name of a song by The Grateful Dead.
+      # 
+      # ```ruby
+      # Faker::Music::GratefulDead.song #=> "Cassidy"
+      # ```
+      sig { returns(::String) }
+      def self.song; end
+    end
+
+    class UmphreysMcgee < Faker::Base
+      # Produces the name of a song by Umphrey's McGee.
+      # 
+      # ```ruby
+      # Faker::Music::UmphreysMcgee.song #=> "Dump City"
+      # ```
+      sig { returns(::String) }
+      def self.song; end
+    end
+  end
+
   class Show < Faker::Base
     # Produces the name of a musical for an older audience
     # 
@@ -1311,206 +1594,23 @@ module Faker
   end
 
   class NationalHealthService < Faker::Base
-    sig { returns(T.untyped) }
+    # Produces a random British NHS number.
+    # 
+    # ```ruby
+    # Faker::NationalHealthService.british_number #=> "403 958 5577"
+    # ```
+    sig { returns(::String) }
     def self.british_number; end
 
-    sig { params(legacy_number: T.untyped, number: T.untyped).returns(T.untyped) }
+    # Produces a random British NHS number's check digit.
+    # 
+    # _@param_ `number` — Specifies the NHS number the check digit belongs to.
+    # 
+    # ```ruby
+    # Faker::NationalHealthService.check_digit(number: 400_012_114) #=> 6
+    # ```
+    sig { params(legacy_number: T.untyped, number: Integer).returns(Integer) }
     def self.check_digit(legacy_number = T.unsafe(nil), number: 0); end
-  end
-
-  # A generator of titles of operas by Verdi, Rossini, Donizetti and Bellini
-  class Music < Faker::Base
-    # Produces the name of a key/note, using letter notation.
-    # 
-    # ```ruby
-    # Faker::Music.key #=> "A#"
-    # ```
-    sig { returns(::String) }
-    def self.key; end
-
-    # Produces the name of a chord, using letter notation.
-    # 
-    # ```ruby
-    # Faker::Music.chord #=> "Adim7"
-    # ```
-    sig { returns(::String) }
-    def self.chord; end
-
-    # Produces the name of an instrument.
-    # 
-    # ```ruby
-    # Faker::Music.instrument #=> "Acoustic Guitar"
-    # ```
-    sig { returns(::String) }
-    def self.instrument; end
-
-    # Produces an array of the letter names of musical notes, without accidentals.
-    sig { returns(T::Array[::String]) }
-    def self.keys; end
-
-    # Produces an array of accidentals (with "natural" denoted as an empty string).
-    sig { returns(T::Array[::String]) }
-    def self.key_variants; end
-
-    # Produces an array of key types (with "major" denoted as an empty string).
-    # 
-    # ```ruby
-    # Faker::Music.key_types #=> ['', 'm']
-    # ```
-    sig { returns(T::Array[::String]) }
-    def self.key_types; end
-
-    # Produces an array of types of chords.
-    sig { returns(T::Array[::String]) }
-    def self.chord_types; end
-
-    # Produces the name of a band.
-    # 
-    # ```ruby
-    # Faker::Music.band #=> "The Beatles"
-    # ```
-    sig { returns(::String) }
-    def self.band; end
-
-    # Produces the name of an album.
-    # 
-    # ```ruby
-    # Faker::Music.album #=> "Sgt. Pepper's Lonely Hearts Club"
-    # ```
-    sig { returns(::String) }
-    def self.album; end
-
-    # Produces the name of a musical genre.
-    # 
-    # ```ruby
-    # Faker::Music.genre #=> "Rock"
-    # ```
-    sig { returns(::String) }
-    def self.genre; end
-
-    class Opera < Faker::Base
-      # Produces the title of an opera by Giuseppe Verdi.
-      # 
-      # ```ruby
-      # Faker::Music::Opera.verdi #=> "Il Trovatore"
-      # ```
-      sig { returns(::String) }
-      def self.verdi; end
-
-      # Produces the title of an opera by Gioacchino Rossini.
-      # 
-      # ```ruby
-      # Faker::Music::Opera.rossini #=> "Il Barbiere di Siviglia"
-      # ```
-      sig { returns(::String) }
-      def self.rossini; end
-
-      # Produces the title of an opera by Gaetano Donizetti.
-      # 
-      # ```ruby
-      # Faker::Music::Opera.donizetti #=> "Lucia di Lammermoor"
-      # ```
-      sig { returns(::String) }
-      def self.donizetti; end
-
-      # Produces the title of an opera by Vincenzo Bellini.
-      # 
-      # ```ruby
-      # Faker::Music::Opera.bellini #=> "Norma"
-      # ```
-      sig { returns(::String) }
-      def self.bellini; end
-    end
-
-    class Phish < Faker::Base
-      # Produces the name of a album by Phish.
-      # 
-      # ```ruby
-      # Faker::Music::Phish.album #=> "Fuego"
-      # ```
-      sig { returns(::String) }
-      def self.album; end
-
-      # Produces the name of a musician in Phish.
-      # 
-      # ```ruby
-      # Faker::Music::Phish.musician #=> "Trey Anastasio"
-      # ```
-      sig { returns(::String) }
-      def self.musician; end
-
-      # Produces the name of a song by Phish.
-      # 
-      # ```ruby
-      # Faker::Music::Phish.song #=> "Tweezer"
-      # ```
-      sig { returns(::String) }
-      def self.song; end
-    end
-
-    class PearlJam < Faker::Base
-      # Produces the name of a member of Pearl Jam (current and former)
-      # 
-      # ```ruby
-      # Faker::Music::PearlJam.musician #=> "Eddie Vedder"
-      # ```
-      sig { returns(::String) }
-      def self.musician; end
-
-      # Produces the name of an album by Pearl Jam.
-      # 
-      # ```ruby
-      # Faker::Music::PearlJam.album #=> "Ten"
-      # ```
-      sig { returns(::String) }
-      def self.album; end
-
-      # Produces the name of a song by Pearl Jam.
-      # 
-      # ```ruby
-      # Faker::Music::PearlJam.song #=> "Even Flow"
-      # ```
-      sig { returns(::String) }
-      def self.song; end
-    end
-
-    class RockBand < Faker::Base
-      # Produces the name of a rock band.
-      # 
-      # ```ruby
-      # Faker::Music::RockBand.name #=> "Led Zeppelin"
-      # ```
-      sig { returns(::String) }
-      def self.name; end
-    end
-
-    class GratefulDead < Faker::Base
-      # Produces the name of a member of The Grateful Dead.
-      # 
-      # ```ruby
-      # Faker::Music::GratefulDead.player #=> "Jerry Garcia"
-      # ```
-      sig { returns(::String) }
-      def self.player; end
-
-      # Produces the name of a song by The Grateful Dead.
-      # 
-      # ```ruby
-      # Faker::Music::GratefulDead.song #=> "Cassidy"
-      # ```
-      sig { returns(::String) }
-      def self.song; end
-    end
-
-    class UmphreysMcgee < Faker::Base
-      # Produces the name of a song by Umphrey's McGee.
-      # 
-      # ```ruby
-      # Faker::Music::UmphreysMcgee.song #=> "Dump City"
-      # ```
-      sig { returns(::String) }
-      def self.song; end
-    end
   end
 
   class Creature
@@ -1890,16 +1990,21 @@ module Faker
     # 
     # _@param_ `to` — The end of the usable date range.
     # 
+    # if used with or without Rails (Active Support)
     # ```ruby
-    # Faker::Date.between(from: 2.days.ago, to: ::Date.today)
-    #   #=> #<Date: 2014-09-24>
+    # Faker::Date.between(from: '2014-09-23', to: '2014-09-25') #=> #<Date: 2014-09-24>
+    # ```
+    # 
+    # if used with Rails (Active Support)
+    # ```ruby
+    # Faker::Date.between(from: 2.days.ago, to: ::Date.today) #=> #<Date: 2014-09-24>
     # ```
     sig do
       params(
         legacy_from: T.untyped,
         legacy_to: T.untyped,
-        from: ::Date,
-        to: ::Date
+        from: T.any(::Date, ::String),
+        to: T.any(::Date, ::String)
       ).returns(::Date)
     end
     def self.between(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), from:, to:); end
@@ -1912,18 +2017,23 @@ module Faker
     # 
     # _@param_ `excepted` — A date to exclude.
     # 
+    # if used with or without Rails (Active Support)
     # ```ruby
-    # Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: ::Date.today)
-    #   #=> #<Date: 2014-10-03>
+    # Faker::Date.between_except(from: '2014-09-23', to: '2015-09-25', excepted: '2015-01-24') #=> #<Date: 2014-10-03>
+    # ```
+    # 
+    # if used with Rails (Active Support)
+    # ```ruby
+    # Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: ::Date.today) #=> #<Date: 2014-10-03>
     # ```
     sig do
       params(
         legacy_from: T.untyped,
         legacy_to: T.untyped,
         legacy_excepted: T.untyped,
-        from: ::Date,
-        to: ::Date,
-        excepted: ::Date
+        from: T.any(::Date, ::String),
+        to: T.any(::Date, ::String),
+        excepted: T.any(::Date, ::String)
       ).returns(::Date)
     end
     def self.between_except(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), legacy_excepted = T.unsafe(nil), from:, to:, excepted:); end
@@ -2333,6 +2443,14 @@ module Faker
     sig { returns(::String) }
     def self.female_first_name; end
 
+    # Produces a random gender neutral first name.
+    # 
+    # ```ruby
+    # Faker::Name.neutral_first_name #=> "Casey"
+    # ```
+    sig { returns(::String) }
+    def self.neutral_first_name; end
+
     # Produces a random last name.
     # 
     # ```ruby
@@ -2601,6 +2719,14 @@ module Faker
   end
 
   class Movie < Faker::Base
+    # Produces a title from a movie.
+    # 
+    # ```ruby
+    # Faker::Movie.title #=> "The Lord of the Rings: The Two Towers"
+    # ```
+    sig { returns(::String) }
+    def self.title; end
+
     # Produces a quote from a movie.
     # 
     # ```ruby
@@ -4352,6 +4478,42 @@ module Faker
       def self.queen; end
     end
 
+    class Futurama < Faker::Base
+      # Produces a character from Futurama.
+      # 
+      # ```ruby
+      # Faker::TvShows::Futurama.character #=> "Amy Wong"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a location from Futurama.
+      # 
+      # ```ruby
+      # Faker::TvShows::Futurama.location #=> "Wormulon"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+
+      # Produces a quote from Futurama.
+      # 
+      # ```ruby
+      # Faker::TvShows::Futurama.quote
+      #   #=> "Ugh, it's like a party in my mouth & everyone's throwing up."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+
+      # Produces a catchphrase from Hermes Conrad.
+      # 
+      # ```ruby
+      # Faker::TvShows::Futurama.hermes_catchphrase
+      #   #=> "Great foo of bar!"
+      # ```
+      sig { returns(::String) }
+      def self.hermes_catchphrase; end
+    end
+
     class NewGirl < Faker::Base
       # Produces a character from New Girl.
       # 
@@ -4423,6 +4585,15 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.quote; end
+
+      # Produces an episode title from The Simpsons.
+      # 
+      # ```ruby
+      # Faker::TvShows::Simpsons.episode_title
+      #   #=> "Two Cars in Every Garage and Three Eyes on Every Fish"
+      # ```
+      sig { returns(::String) }
+      def self.episode_title; end
     end
 
     class Stargate < Faker::Base
@@ -4852,6 +5023,22 @@ module Faker
       def self.email; end
     end
 
+    class BigBangTheory < Faker::Base
+      # Produces a character from Big Bang Theory
+      # 
+      # ```ruby
+      # Faker::TvShows::BigBangTheory.character #=> "Sheldon Cooper"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a quote from Bing Bang Theory
+      # 
+      # Faker::TvShows::BigBangTheory.quote #=> "I'm not crazy. My mother had me tested."
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
     class BojackHorseman < Faker::Base
       # Produces a character from BoJack Horseman.
       # 
@@ -5038,6 +5225,14 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.character; end
+
+      # Produces a perl of great ATHF wisdom
+      # 
+      # ```ruby
+      # Faker::TvShows::AquaTeenHungerForce.quote #=> "Friendship ain't about trust. Friendship's about nunchucks."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
     end
 
     class TheFreshPrinceOfBelAir < Faker::Base
@@ -5261,6 +5456,27 @@ module Faker
     # ```
     sig { returns(::String) }
     def self.full_address; end
+
+    # Produces Address hash of required fields
+    # 
+    #  Faker::Address.full_address_as_hash(:full_address)
+    #     #=> {:full_address=>"87635 Rice Street, Lake Brentonton, OR 61896-5968"}
+    # 
+    #  Faker::Address.full_address_as_hash(:city, :time_zone)
+    #     #=> {:city=>"East Faustina", :time_zone=>"America/Mexico_City"}
+    # 
+    #  Faker::Address.full_address_as_hash(:street_address, street_address: {include_secondary: true})
+    #     #=> {:street_address=>"29423 Kenneth Causeway Suite 563"}
+    # 
+    # ```ruby
+    # Faker::Address.full_address_as_hash(:longitude,
+    #                                     :latitude,
+    #                                     :country_name_to_code,
+    #                                     country_name_to_code: {name: 'united_states'})
+    #   #=> {:longitude=>-101.74428917174603, :latitude=>-37.40056749089944, :country_name_to_code=>"US"}
+    # ```
+    sig { params(attrs: T.untyped, attrs_params: T.untyped).returns(T::Hash[T.untyped, T.untyped]) }
+    def self.full_address_as_hash(*attrs, **attrs_params); end
   end
 
   class Ancient < Faker::Base
@@ -7136,40 +7352,133 @@ module Faker
     # ```
     sig { params(length: Integer, padding: T::Boolean, urlsafe: T::Boolean).returns(::String) }
     def self.base64(length: 16, padding: false, urlsafe: true); end
+
+    sig { params(local_part: T.untyped).returns(T.untyped) }
+    def self.sanitize_email_local_part(local_part); end
+
+    sig { params(local_part: T.untyped, domain_name: T.untyped).returns(T.untyped) }
+    def self.construct_email(local_part, domain_name); end
+
+    class HTTP < Faker::Base
+      # Produces an HTTP status code
+      # 
+      # ```ruby
+      # Faker::Internet::HTTP.status_code #=> 418
+      # ```
+      # 
+      # ```ruby
+      # Faker::Internet::HTTP.status_code(group: :information) #=> 102
+      # ```
+      # 
+      # ```ruby
+      # Faker::Internet::HTTP.status_code(group: :successful) #=> 200
+      # ```
+      # 
+      # ```ruby
+      # Faker::Internet::HTTP.status_code(group: :redirect) #=> 306
+      # ```
+      # 
+      # ```ruby
+      # Faker::Internet::HTTP.status_code(group: :client_error) #=> 451
+      # ```
+      # 
+      # ```ruby
+      # Faker::Internet::HTTP.status_code(group: :server_error) #=> 502
+      # ```
+      sig { params(group: T.untyped).returns(Integer) }
+      def self.status_code(group: nil); end
+    end
   end
 
   class Markdown < Faker::Base
-    sig { returns(T.untyped) }
+    # Produces a random header format.
+    # 
+    # ```ruby
+    # Faker::Markdown.headers #=> "##### Autem"
+    # ```
+    sig { returns(::String) }
     def self.headers; end
 
-    sig { returns(T.untyped) }
+    # Produces a random emphasis formatting on a random word in two sentences.
+    # 
+    # ```ruby
+    # Faker::Markdown.emphasis #=> "_Incidunt atque quis repellat id impedit.  Quas numquam quod incidunt dicta non. Blanditiis delectus laudantium atque reiciendis qui._"
+    # ```
+    sig { returns(::String) }
     def self.emphasis; end
 
-    sig { returns(T.untyped) }
+    # Produces a random ordered list of items between 1 and 10 randomly.
+    # 
+    # ```ruby
+    # Faker::Markdown.ordered_list #=> "1. Qui reiciendis non consequatur atque.\n2. Quo doloremque veritatis tempora aut.\n3. Aspernatur.\n4. Ea ab.\n5. Qui.\n6. Sit pariatur nemo eveniet.\n7. Molestiae aut.\n8. Nihil molestias iure placeat.\n9. Dolore autem quisquam."
+    # ```
+    sig { returns(::String) }
     def self.ordered_list; end
 
-    sig { returns(T.untyped) }
+    # Produces a random unordered list of items between 1 and 10 randomly.
+    # 
+    # ```ruby
+    # Faker::Markdown.unordered_list #=> "* Voluptatum aliquid tempora molestiae facilis non sed.\n* Nostrum omnis iste impedit voluptatum dolor.\n* Esse quidem et facere."
+    # ```
+    sig { returns(::String) }
     def self.unordered_list; end
 
-    sig { returns(T.untyped) }
+    # Produces a random inline code snippet between two sentences.
+    # 
+    # ```ruby
+    # Faker::Markdown.inline_code #=> "Aut eos quis suscipit. `Dignissimos voluptatem expedita qui.` Quo doloremque veritatis tempora aut."
+    # ```
+    sig { returns(::String) }
     def self.inline_code; end
 
-    sig { returns(T.untyped) }
+    # Produces a random code block formatted in Ruby.
+    # 
+    # ```ruby
+    # Faker::Markdown.block_code #=> "```ruby\nEos quasi qui.\n```"
+    # ```
+    sig { returns(::String) }
     def self.block_code; end
 
-    sig { returns(T.untyped) }
+    # Produces a random 3x4 table with a row of headings, a row of hyphens and two rows of data
+    # 
+    # ```ruby
+    # Faker::Markdown.table #=> "ad | similique | voluptatem\n---- | ---- | ----\ncorrupti | est | rerum\nmolestiae | quidem | et"
+    # ```
+    sig { returns(::String) }
     def self.table; end
 
-    sig { params(args: T.untyped).returns(T.untyped) }
+    # Produces a random method from the methods above or the methods listed in the arguments.
+    # 
+    # _@param_ `methods` — Specify which methods to use.
+    # 
+    # ```ruby
+    # Faker::Markdown.random #=> returns output from a single method outlined above
+    # Faker::Markdown.random("table") #=> returns output from any single method outlined above except for "table"
+    # Faker::Markdown.random("ordered_list", "unordered_list") #=> returns output from any single method outlined above except for either ordered_list and unordered_list
+    # ```
+    sig { params(args: Symbol).returns(T.any(String, T::Array[::String])) }
     def self.random(*args); end
 
+    # Produces a simulated blog-esque text-heavy block in markdown
+    # 
+    # Keyword arguments: sentences, repeat
+    # 
+    # _@param_ `sentences` — Specifies how many sentences make a text block.
+    # 
+    # _@param_ `repeat` — Specifies how many times the text block repeats.
+    # 
+    # ```ruby
+    # Faker::Markdown.sandwich #=> returns newline separated content of 1 header, 1 default lorem paragraph, and 1 random markdown element
+    # Faker::Markdown.sandwich(sentences: 5) #=> returns newline separated content of 1 header, 1 5-sentence lorem paragraph, and 1 random markdown element
+    # Faker::Markdown.sandwich(sentences: 6, repeat: 3) #=> returns newline separated content of 1 header, and then 3 sections consisting of, here, 1 6-sentence lorem paragraph and 1 random markdown element. The random markdown element is chosen at random in each iteration of the paragraph-markdown pairing.
+    # ```
     sig do
       params(
         legacy_sentences: T.untyped,
         legacy_repeat: T.untyped,
-        sentences: T.untyped,
-        repeat: T.untyped
-      ).returns(T.untyped)
+        sentences: Integer,
+        repeat: Integer
+      ).returns(::String)
     end
     def self.sandwich(legacy_sentences = T.unsafe(nil), legacy_repeat = T.unsafe(nil), sentences: 3, repeat: 1); end
 
@@ -7239,82 +7548,134 @@ module Faker
     sig { params(name: T.untyped, email: T.untyped).returns(Omniauth) }
     def initialize(name: nil, email: nil); end
 
+    # Generate a mock Omniauth response from Google.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `name` — A specific name to return in the response.
+    # 
+    # _@param_ `email` — A specific email to return in the response.
+    # 
+    # _@param_ `uid` — A specific UID to return in the response.
+    # 
+    # _@return_ — An auth hash in the format provided by omniauth-google.
     sig do
       params(
         legacy_name: T.untyped,
         legacy_email: T.untyped,
         legacy_uid: T.untyped,
-        name: T.untyped,
-        email: T.untyped,
-        uid: T.untyped
-      ).returns(T.untyped)
+        name: T.nilable(::String),
+        email: T.nilable(::String),
+        uid: ::String
+      ).returns(T::Hash[T.untyped, T.untyped])
     end
     def self.google(legacy_name = T.unsafe(nil), legacy_email = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, email: nil, uid: Number.number(digits: 9).to_s); end
 
+    # Generate a mock Omniauth response from Facebook.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `name` — A specific name to return in the response.
+    # 
+    # _@param_ `email` — A specific email to return in the response.
+    # 
+    # _@param_ `username` — A specific username to return in the response.
+    # 
+    # _@param_ `uid` — A specific UID to return in the response.
+    # 
+    # _@return_ — An auth hash in the format provided by omniauth-facebook.
     sig do
       params(
         legacy_name: T.untyped,
         legacy_email: T.untyped,
         legacy_username: T.untyped,
         legacy_uid: T.untyped,
-        name: T.untyped,
-        email: T.untyped,
-        username: T.untyped,
-        uid: T.untyped
-      ).returns(T.untyped)
+        name: T.nilable(::String),
+        email: T.nilable(::String),
+        username: T.nilable(::String),
+        uid: ::String
+      ).returns(T::Hash[T.untyped, T.untyped])
     end
     def self.facebook(legacy_name = T.unsafe(nil), legacy_email = T.unsafe(nil), legacy_username = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s); end
 
+    # Generate a mock Omniauth response from Twitter.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `name` — A specific name to return in the response.
+    # 
+    # _@param_ `nickname` — A specific nickname to return in the response.
+    # 
+    # _@param_ `uid` — A specific UID to return in the response.
+    # 
+    # _@return_ — An auth hash in the format provided by omniauth-twitter.
     sig do
       params(
         legacy_name: T.untyped,
         legacy_nickname: T.untyped,
         legacy_uid: T.untyped,
-        name: T.untyped,
-        nickname: T.untyped,
-        uid: T.untyped
-      ).returns(T.untyped)
+        name: T.nilable(::String),
+        nickname: T.nilable(::String),
+        uid: ::String
+      ).returns(T::Hash[T.untyped, T.untyped])
     end
     def self.twitter(legacy_name = T.unsafe(nil), legacy_nickname = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, nickname: nil, uid: Number.number(digits: 6).to_s); end
 
+    # Generate a mock Omniauth response from LinkedIn.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `name` — A specific name to return in the response.
+    # 
+    # _@param_ `email` — A specific email to return in the response.
+    # 
+    # _@param_ `uid` — A specific UID to return in the response.
+    # 
+    # _@return_ — An auth hash in the format provided by omniauth-linkedin.
     sig do
       params(
         legacy_name: T.untyped,
         legacy_email: T.untyped,
         legacy_uid: T.untyped,
-        name: T.untyped,
-        email: T.untyped,
-        uid: T.untyped
-      ).returns(T.untyped)
+        name: T.nilable(::String),
+        email: T.nilable(::String),
+        uid: ::String
+      ).returns(T::Hash[T.untyped, T.untyped])
     end
     def self.linkedin(legacy_name = T.unsafe(nil), legacy_email = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, email: nil, uid: Number.number(digits: 6).to_s); end
 
+    # Generate a mock Omniauth response from Github.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `name` — A specific name to return in the response.
+    # 
+    # _@param_ `email` — A specific email to return in the response.
+    # 
+    # _@param_ `uid` — A specific UID to return in the response.
+    # 
+    # _@return_ — An auth hash in the format provided by omniauth-github.
     sig do
       params(
         legacy_name: T.untyped,
         legacy_email: T.untyped,
         legacy_uid: T.untyped,
-        name: T.untyped,
-        email: T.untyped,
-        uid: T.untyped
-      ).returns(T.untyped)
+        name: T.nilable(::String),
+        email: T.nilable(::String),
+        uid: ::String
+      ).returns(T::Hash[T.untyped, T.untyped])
     end
     def self.github(legacy_name = T.unsafe(nil), legacy_email = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, email: nil, uid: Number.number(digits: 8).to_s); end
 
-    # Generate a mock Omniauth response from Apple
+    # Generate a mock Omniauth response from Apple.
     # 
-    # _@param_ `name` — A specific name to return in the response
+    # _@param_ `name` — A specific name to return in the response.
     # 
-    # _@param_ `email` — A specific email to return in the response
+    # _@param_ `email` — A specific email to return in the response.
     # 
-    # _@param_ `uid` — A specific UID to return in the response
+    # _@param_ `uid` — A specific UID to return in the response.
     # 
-    # _@return_ — An auth hash in the format provided by omniauth-apple
+    # _@return_ — An auth hash in the format provided by omniauth-apple.
     sig { params(name: T.nilable(::String), email: T.nilable(::String), uid: T.nilable(::String)).returns(T::Hash[T.untyped, T.untyped]) }
     def self.apple(name: nil, email: nil, uid: nil); end
 
@@ -7356,31 +7717,62 @@ module Faker
   end
 
   class ChileRut < Faker::Base
-    # Fixed param added for testing a specific RUT and check digit combination.
+    # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits).
+    # 
+    # _@param_ `min_rut` — Specifies the minimum value of the rut.
+    # 
+    # _@param_ `fixed` — Determines if the rut is fixed (returns the min_rut value).
+    # 
+    # ```ruby
+    # Faker::ChileRut.rut #=> 11235813
+    # Faker::ChileRut.rut(min_rut: 20890156) #=> 31853211
+    # Faker::ChileRut.rut(min_rut: 20890156, fixed: true) #=> 20890156
+    # ```
     sig do
       params(
         legacy_min_rut: T.untyped,
         legacy_fixed: T.untyped,
-        min_rut: T.untyped,
-        fixed: T.untyped
-      ).returns(T.untyped)
+        min_rut: Integer,
+        fixed: T::Boolean
+      ).returns(Number)
     end
     def self.rut(legacy_min_rut = T.unsafe(nil), legacy_fixed = T.unsafe(nil), min_rut: 1, fixed: false); end
 
-    sig { returns(T.untyped) }
+    # Produces a random Chilean digito verificador (check-digit).
+    # 
+    # ```ruby
+    # Faker::ChileRut.dv #=> "k"
+    # ```
+    sig { returns(::String) }
     def self.dv; end
 
+    # Produces a random Chilean digito verificador (check-digit).
     # Alias for english speaking devs.
-    sig { returns(T.untyped) }
+    # 
+    # ```ruby
+    # Faker::ChileRut.check_digit #=> "5"
+    # ```
+    sig { returns(::String) }
     def self.check_digit; end
 
+    # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits) with a dv (digito verificador, check-digit).
+    # 
+    # _@param_ `min_rut` — Specifies the minimum value of the rut.
+    # 
+    # _@param_ `fixed` — Determines if the rut is fixed (returns the min_rut value).
+    # 
+    # ```ruby
+    # Faker::ChileRut.full_rut #=> "30686957-4"
+    # Faker::ChileRut.full_rut(min_rut: 20890156) #=> "30686957-4"
+    # Faker::ChileRut.full_rut(min_rut: 30686957, fixed: true) #=> "30686957-4"
+    # ```
     sig do
       params(
         legacy_min_rut: T.untyped,
         legacy_fixed: T.untyped,
-        min_rut: T.untyped,
-        fixed: T.untyped
-      ).returns(T.untyped)
+        min_rut: Integer,
+        fixed: T::Boolean
+      ).returns(::String)
     end
     def self.full_rut(legacy_min_rut = T.unsafe(nil), legacy_fixed = T.unsafe(nil), min_rut: 0, fixed: false); end
 
@@ -7432,34 +7824,86 @@ module Faker
   end
 
   class IDNumber < Faker::Base
-    sig { returns(T.untyped) }
+    # Produces a random valid US Social Security number.
+    # 
+    # ```ruby
+    # Faker::IDNumber.valid #=> "552-56-3593"
+    # ```
+    sig { returns(::String) }
     def self.valid; end
 
-    sig { returns(T.untyped) }
+    # Produces a random invalid US Social Security number.
+    # 
+    # ```ruby
+    # Faker::IDNumber.invalid #=> "311-72-0000"
+    # ```
+    sig { returns(::String) }
     def self.invalid; end
 
     sig { returns(T.untyped) }
     def self.ssn_valid; end
 
-    sig { returns(T.untyped) }
+    # Produces a random Spanish citizen identifier (DNI).
+    # 
+    # ```ruby
+    # Faker::IDNumber.spanish_citizen_number #=> "53290236-H"
+    # ```
+    sig { returns(::String) }
     def self.spanish_citizen_number; end
 
-    sig { returns(T.untyped) }
+    # Produces a random Spanish foreign born citizen identifier (NIE).
+    # 
+    # ```ruby
+    # Faker::IDNumber.spanish_foreign_citizen_number #=> "Z-1600870-Y"
+    # ```
+    sig { returns(::String) }
     def self.spanish_foreign_citizen_number; end
 
-    sig { returns(T.untyped) }
+    # Produces a random valid South African ID Number.
+    # 
+    # ```ruby
+    # Faker::IDNumber.south_african_id_number #=> "8105128870184"
+    # Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
+    # ```
+    sig { returns(::String) }
     def self.valid_south_african_id_number; end
 
-    sig { returns(T.untyped) }
+    # Produces a random invalid South African ID Number.
+    # 
+    # ```ruby
+    # Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
+    # ```
+    sig { returns(::String) }
     def self.invalid_south_african_id_number; end
 
-    sig { params(legacy_formatted: T.untyped, formatted: T.untyped).returns(T.untyped) }
+    # Produces a random Brazilian Citizen Number (CPF).
+    # 
+    # _@param_ `formatted` — Specifies if the number is formatted with dividers.
+    # 
+    # ```ruby
+    # Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
+    # Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
+    # ```
+    sig { params(legacy_formatted: T.untyped, formatted: T::Boolean).returns(::String) }
     def self.brazilian_citizen_number(legacy_formatted = T.unsafe(nil), formatted: false); end
 
-    sig { params(legacy_formatted: T.untyped, formatted: T.untyped).returns(T.untyped) }
+    # Produces a random Brazilian ID Number (RG).
+    # 
+    # _@param_ `formatted` — Specifies if the number is formatted with dividers.
+    # 
+    # ```ruby
+    # Faker::IDNumber.brazilian_id #=> "493054029"
+    # Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
+    # ```
+    sig { params(legacy_formatted: T.untyped, formatted: T::Boolean).returns(::String) }
     def self.brazilian_id(legacy_formatted = T.unsafe(nil), formatted: false); end
 
-    sig { returns(T.untyped) }
+    # Produces a random Chilean ID (Rut with 8 digits).
+    # 
+    # ```ruby
+    # Faker::IDNumber.chilean_id #=> "15620613-K"
+    # ```
+    sig { returns(::String) }
     def self.chilean_id; end
 
     sig { params(digits: T.untyped).returns(T.untyped) }
@@ -7898,7 +8342,32 @@ module Faker
   end
 
   class LoremPixel < Faker::Base
+    # Produces a random image URL from lorempixel.com.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `size` — Specifies the size of image to generate.
+    # 
+    # _@param_ `is_gray` — Determines if the image is gray.
+    # 
+    # _@param_ `category` — Adds the category of the generated image to the URL.
+    # 
+    # _@param_ `number` — Adds a number as part of the URL.
+    # 
+    # _@param_ `text` — Adds dummy text as part of the URL.
+    # 
+    # _@param_ `secure` — Changes the image URL between http and https.
+    # 
+    # ```ruby
+    # Faker::LoremPixel.image #=> "https://lorempixel.com/300/300"
+    # Faker::LoremPixel.image(size: "50x60") #=> "https://lorempixel.com/50/60"
+    # Faker::LoremPixel.image(size: "50x60", is_gray: true) #=> "https://lorempixel.com/g/50/60"
+    # Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'sports') #=> "https://lorempixel.com/50/60/sports"
+    # Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'sports', number: 3) #=> "https://lorempixel.com/50/60/sports/3"
+    # Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'sports', number: 3, text: 'Dummy-text') #=> "https://lorempixel.com/50/60/sports/3/Dummy-text"
+    # Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'sports', number: nil, text: 'Dummy-text') #=> "https://lorempixel.com/50/60/sports/Dummy-text"
+    # Faker::LoremPixel.image(secure: false) #=> "http://lorempixel.com/300/300"
+    # ```
     sig do
       params(
         legacy_size: T.untyped,
@@ -7907,13 +8376,13 @@ module Faker
         legacy_number: T.untyped,
         legacy_text: T.untyped,
         legacy_secure: T.untyped,
-        size: T.untyped,
-        is_gray: T.untyped,
-        category: T.untyped,
-        number: T.untyped,
-        text: T.untyped,
-        secure: T.untyped
-      ).returns(T.untyped)
+        size: ::String,
+        is_gray: T::Boolean,
+        category: T.nilable(Symbol),
+        number: T.nilable(Integer),
+        text: T.nilable(Integer),
+        secure: T::Boolean
+      ).returns(::String)
     end
     def self.image(legacy_size = T.unsafe(nil), legacy_is_gray = T.unsafe(nil), legacy_category = T.unsafe(nil), legacy_number = T.unsafe(nil), legacy_text = T.unsafe(nil), legacy_secure = T.unsafe(nil), size: '300x300', is_gray: false, category: nil, number: nil, text: nil, secure: true); end
   end
@@ -8247,57 +8716,123 @@ module Faker
   end
 
   class LoremFlickr < Faker::Base
+    # Produces a random image URL from loremflickr.com.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `size` — Specifies the size of image to generate.
+    # 
+    # _@param_ `search_terms` — Adds search terms to the image URL.
+    # 
+    # _@param_ `match_all` — Add "all" as part of the URL.
+    # 
+    # ```ruby
+    # Faker::LoremFlickr.image #=> "https://loremflickr.com/300/300"
+    # Faker::LoremFlickr.image(size: "50x60") #=> "https://loremflickr.com/50/60"
+    # Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/50/60/sports"
+    # Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/50/60/sports,fitness"
+    # Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/50/60/sports,fitness/all"
+    # ```
     sig do
       params(
         legacy_size: T.untyped,
         legacy_search_terms: T.untyped,
         legacy_match_all: T.untyped,
-        size: T.untyped,
-        search_terms: T.untyped,
-        match_all: T.untyped
-      ).returns(T.untyped)
+        size: ::String,
+        search_terms: T::Array[::String],
+        match_all: T::Boolean
+      ).returns(::String)
     end
     def self.image(legacy_size = T.unsafe(nil), legacy_search_terms = T.unsafe(nil), legacy_match_all = T.unsafe(nil), size: '300x300', search_terms: [], match_all: false); end
 
+    # Produces a random grayscale image URL from loremflickr.com.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `size` — Specifies the size of image to generate.
+    # 
+    # _@param_ `search_terms` — Adds search terms to the image URL.
+    # 
+    # _@param_ `match_all` — Add "all" as part of the URL.
+    # 
+    # ```ruby
+    # Faker::LoremFlickr.grayscale_image #=> "https://loremflickr.com/g/300/300/all"
+    # Faker::LoremFlickr.grayscale_image(size: "50x60") #=> "https://loremflickr.com/g/50/60/all"
+    # Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/g/50/60/sports"
+    # Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/50/60/g/sports,fitness"
+    # Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/g/50/60/sports,fitness/all"
+    # ```
     sig do
       params(
         legacy_size: T.untyped,
         legacy_search_terms: T.untyped,
         legacy_match_all: T.untyped,
-        size: T.untyped,
-        search_terms: T.untyped,
-        match_all: T.untyped
-      ).returns(T.untyped)
+        size: ::String,
+        search_terms: T::Array[::String],
+        match_all: T::Boolean
+      ).returns(::String)
     end
     def self.grayscale_image(legacy_size = T.unsafe(nil), legacy_search_terms = T.unsafe(nil), legacy_match_all = T.unsafe(nil), size: '300x300', search_terms: ['all'], match_all: false); end
 
+    # Produces a random pixelated image URL from loremflickr.com.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `size` — Specifies the size of image to generate.
+    # 
+    # _@param_ `search_terms` — Adds search terms to the image URL.
+    # 
+    # _@param_ `match_all` — Add "all" as part of the URL.
+    # 
+    # ```ruby
+    # Faker::LoremFlickr.pixelated_image #=> "https://loremflickr.com/p/300/300/all"
+    # Faker::LoremFlickr.pixelated_image(size: "50x60") #=> "https://loremflickr.com/p/50/60/all"
+    # Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/p/50/60/sports"
+    # Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/p/50/60/sports,fitness"
+    # Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/p/50/60/sports,fitness/all"
+    # ```
     sig do
       params(
         legacy_size: T.untyped,
         legacy_search_terms: T.untyped,
         legacy_match_all: T.untyped,
-        size: T.untyped,
-        search_terms: T.untyped,
-        match_all: T.untyped
-      ).returns(T.untyped)
+        size: ::String,
+        search_terms: T::Array[::String],
+        match_all: T::Boolean
+      ).returns(::String)
     end
     def self.pixelated_image(legacy_size = T.unsafe(nil), legacy_search_terms = T.unsafe(nil), legacy_match_all = T.unsafe(nil), size: '300x300', search_terms: ['all'], match_all: false); end
 
+    # Produces a random colorized image URL from loremflickr.com.
+    # 
     # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `size` — Specifies the size of image to generate.
+    # 
+    # _@param_ `color` — Specifies the color of image to generate.
+    # 
+    # _@param_ `search_terms` — Adds search terms to the image URL.
+    # 
+    # _@param_ `match_all` — Add "all" as part of the URL.
+    # 
+    # ```ruby
+    # Faker::LoremFlickr.image #=> "https://loremflickr.com/red/300/300/all"
+    # Faker::LoremFlickr.image(size: "50x60", color: 'blue') #=> "https://loremflickr.com/blue/50/60/all"
+    # Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports']) #=> "https://loremflickr.com/blue/50/60/sports"
+    # Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/blue/50/60/sports,fitness"
+    # Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/blue/50/60/sports,fitness/all"
+    # ```
     sig do
       params(
         legacy_size: T.untyped,
         legacy_color: T.untyped,
         legacy_search_terms: T.untyped,
         legacy_match_all: T.untyped,
-        size: T.untyped,
-        color: T.untyped,
-        search_terms: T.untyped,
-        match_all: T.untyped
-      ).returns(T.untyped)
+        size: ::String,
+        color: ::String,
+        search_terms: T::Array[::String],
+        match_all: T::Boolean
+      ).returns(::String)
     end
     def self.colorized_image(legacy_size = T.unsafe(nil), legacy_color = T.unsafe(nil), legacy_search_terms = T.unsafe(nil), legacy_match_all = T.unsafe(nil), size: '300x300', color: 'red', search_terms: ['all'], match_all: false); end
 
