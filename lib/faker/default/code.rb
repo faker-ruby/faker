@@ -20,7 +20,7 @@ module Faker
       ##
       # Produces a random ISBN (International Standard Book Number) code.
       #
-      # @param base [Number] the length of the code to generate (either 10 or 13)
+      # @param base [Integer] the length of the code to generate (either 10 or 13)
       # @return [String]
       #
       # @example
