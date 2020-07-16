@@ -85,7 +85,7 @@ module Faker
       #
       # Produces a random NRIC (National Registry Identity Card) code.
       #
-      # @param min_age [Number] the min age of the person in years
+      # @param min_age [Integer] the min age of the person in years
       # @param max_age [Number] the max age of the person in years
       # @return [String]
       #
