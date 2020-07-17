@@ -69,12 +69,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_username_with_utf_8_arg
-    # RUBY_VERSION < '2.4.0' is not able to downcase or upcase non-ascii strings
-    if RUBY_VERSION < '2.4.0'
-      assert @tester.username(specifier: 'Łucja').match('Łucja')
-    else
-      assert @tester.username(specifier: 'Łucja').match('łucja')
-    end
+    assert @tester.username(specifier: 'Łucja').match('łucja')
   end
 
   def test_username_with_very_large_integer_arg
