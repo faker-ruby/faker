@@ -9,10 +9,6 @@ Lint/AmbiguousBlockAssociation:
   Description: This cop checks for ambiguous block association with method when param passed without parentheses.
   Enabled: false
 
-Lint/UnifiedInteger:
-  Description: This cop checks for using Fixnum or Bignum constant.
-  Enabled: false
-
 Metrics/AbcSize:
   Description: This cop checks that the ABC size of methods is not higher than the configured maximum.
   Enabled: false
