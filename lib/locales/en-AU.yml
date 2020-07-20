@@ -41,7 +41,13 @@ en-AU:
     phone_number:
       area_code: ['02', '03', '07', '08']
       subscriber_number: ['####']
-      formats: ["#{area_code} 7010 #{subscriber_number}", '7010 ####', "(#{area_code}) 7010 #{subscriber_number}", '5550 ####', "#{area_code} 5550 #{subscriber_number}", "(#{area_code}) 5550 #{subscriber_number}", "+#{country_code} #{area_code} 7010 #{subscriber_number}", "+#{country_code} #{area_code} 5550 #{subscriber_number}"]
+      formats:
+        - '7010 ####'
+        - '5550 ####'
+        - "#{area_code} 7010 #{subscriber_number}"
+        - "#{area_code} 5550 #{subscriber_number}"
+        - "(#{area_code}) 7010 #{subscriber_number}"
+        - "(#{area_code}) 5550 #{subscriber_number}"
     cell_phone:
       formats: ['0491 570 006', '0491 570 156', '(04) 91570157', '0491 570 158', '0491 570 159', '0491570110', '0491 57 03 13', '0491 570 737', '0491 571 266', '0491 57 14 91', '0491 571 804', '0491 572 549', '0491 5726 65', '0491572983', '0491 573 770', '0491 573 087', '0491 574 118', '0491574632', '(04) 9157 5254', '0491 575 789', '0491 576 398', '0491576801', '0491 577 426', '0491577644', '0491 578 957', '0491 578 148', '0491 578 888', '0491 5792 12', '0491 579 760', '(04) 9157 9455']
     team:
