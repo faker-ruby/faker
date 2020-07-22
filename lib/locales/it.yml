@@ -60,6 +60,7 @@ it:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
+    country_code: ['39']
     phone_number:
       formats: ['### ## ## ####', '## #######', '## ########', '### #######', '### ########', '#### #######', '#### ########', '0## ### ####', '0## ### ###', '3## ### ###', '3## ### ###']
     subscription:

@@ -49,6 +49,8 @@ de-AT:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
+    country_code: ['43']
+
     phone_number:
       formats: ['01 #######', '01#######', '1-#######', '1#######', '0#### ####', '0#########', '####-####', '########']
 

@@ -51,6 +51,8 @@ ru:
       name_with_middle:
         - "#{first_name} #{last_name} #{last_name}"
 
+    country_code: ['7']
+
     phone_number:
       formats: ['(9##)###-##-##']
 

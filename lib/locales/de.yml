@@ -107,6 +107,8 @@ de:
         material: [Stahl, Holz, Beton, Plastik, Baumwoll, Granit, Gummi, Leder, Seiden, Wolle, Leinen, Marmor, Eisen, Bronze, Kupfer, Aluminium, Papier]
         product: [Stuhl, Auto, Computer, Handschuh, Hose, Hemd, Tisch, Schuh, Hut, Teller, Messer, Flasche, Mantel, Lampe, Tastatur, Tasche, Bank, Uhr, Armbanduhr, Geldbörse]
 
+    country_code: ['49']
+
     phone_number:
       formats: ['(0###) #########', '(0####) #######', '###-#######', '####-########']
 

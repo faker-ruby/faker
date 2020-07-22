@@ -48,6 +48,6 @@ class TestDeAtLocale < Test::Unit::TestCase
   end
 
   def test_de_at_phone_number_methods
-    assert_match(/(43)|(06)|(436)[\d\s]+$/, Faker::PhoneNumber.cell_phone)
+    assert_match(/(43)|(06)|(436)[\d\s]+$/, Faker::PhoneNumber.cell_phone_with_country_code)
   end
 end
