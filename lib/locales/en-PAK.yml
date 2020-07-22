@@ -15,4 +15,4 @@ en-PAK:
     company:
       suffix: [Pvt Ltd, Limited, Ltd, and Sons, Corp, Group, Brothers, CO]
     phone_number:
-      formats: ['+92##########', '+92 ### #######', '03##-#######']
+      formats: ['##########', '### #######', '03##-#######']

@@ -151,7 +151,7 @@ en-NZ:
         - "#{mail_box} #{community} #{postcode}"
         - "#{mail_box}, #{community}, #{city} #{postcode}"
     phone_number:
-      formats: ['0# ### ####', '+64 # ### ####']
+      formats: ['0# ### ####', '# ### ####']
     cell_phone:
       formats: ['02##-###-###', '02## ### ###', '02# ### ###', '02#-###-####']
 

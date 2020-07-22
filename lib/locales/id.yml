@@ -21,4 +21,4 @@ id:
       street_address:
         - "#{street_name} No. #{building_number}"
     phone_number:
-      formats: ['08##########', '08##-####-####', '+628#########']
+      formats: ['08##########', '08##-####-####', '8#########']

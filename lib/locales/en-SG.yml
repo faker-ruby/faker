@@ -30,6 +30,6 @@ en-SG:
         - "#{building_number} #{street_name}"
       default_country: [Singapore]
     phone_number:
-      formats: ['+65 6### ####', '+65 9### ####', '+65 8### ####']
+      formats: ['6### ####', '9### ####', '8### ####']
     vehicle:
       license_plate: 'S??####'
