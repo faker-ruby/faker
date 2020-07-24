@@ -80,6 +80,8 @@ module Faker
 
       def usa_driving_licence(state = 'CA')
         bothify(fetch("driving_licence.usa_state_formats.#{state.upcase}"))
+      rescue I18n::MissingTranslationData => e
+        raise InvalidStatePassed, "Invalid state code passed for USA, '#{state}'"
       end
 
       private
@@ -106,6 +108,12 @@ module Faker
       def gb_licence_checksum
         regexify(/[0-9][A-Z][A-Z]/)
       end
+    end
+  end
+
+  class InvalidStatePassed < StandardError
+    def initialize(msg='Invalid state code passed')
+      super
     end
   end
 end

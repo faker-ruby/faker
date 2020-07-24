@@ -81,4 +81,10 @@ class TestFakerDrivingLicence < Test::Unit::TestCase
     licence_number = @tester.usa_driving_licence('AK')
     assert_match %r{[0-9]{6,7}}, licence_number
   end
+
+  def test_usa_driving_licence_with_faker_code
+    assert_raises(Faker::InvalidStatePassed) do
+      @tester.usa_driving_licence('123')
+    end
+  end
 end
