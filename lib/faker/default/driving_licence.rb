@@ -78,7 +78,7 @@ module Faker
         end
       end
 
-      def us_driving_licence(state = 'CA')
+      def usa_driving_licence(state = 'CA')
         bothify(fetch("driving_licence.usa_state_formats.#{state.upcase}"))
       end
 

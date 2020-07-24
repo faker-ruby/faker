@@ -19,3 +19,10 @@ Faker::DrivingLicence.northern_irish_driving_licence #=> "70702548"
 # Keyword arguments: last_name, initials, date_of_birth, gender
 Faker::DrivingLicence.uk_driving_licence             #=> "OCARR815246J91HT"
 Faker::DrivingLicence.uk_driving_licence             #=> "70702548"
+
+# Generate a USA driving licence number
+# Default state for driving licence is California
+# Keyword arguments: state
+Faker::DrivingLicence.usa_driving_licence             #=> "E124590"
+# USA driving licence for Massachusetts state
+Faker::DrivingLicence.usa_driving_licence('MA')       #=> "987429086"

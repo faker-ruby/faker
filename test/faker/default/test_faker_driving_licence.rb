@@ -66,19 +66,19 @@ class TestFakerDrivingLicence < Test::Unit::TestCase
     assert_equal 'NL', truncated[11..12]
   end
 
-  def test_us_driving_licence
+  def test_usa_driving_licence
     # When state is not passed to method it returns CA licence format by default
-    licence_number = @tester.us_driving_licence
+    licence_number = @tester.usa_driving_licence
     assert_match %r{[A-Z][0-9]{7}}, licence_number
   end
 
-  def test_us_driving_licence_for_different_states
+  def test_usa_driving_licence_for_different_states
     # When state Washington is passed
-    licence_number = @tester.us_driving_licence('WA')
+    licence_number = @tester.usa_driving_licence('WA')
     assert_match %r{[A-Z]{7,12}[0-9]{0,5}\**}, licence_number
 
     # When state Alaska is passed
-    licence_number = @tester.us_driving_licence('AK')
+    licence_number = @tester.usa_driving_licence('AK')
     assert_match %r{[0-9]{6,7}}, licence_number
   end
 end
