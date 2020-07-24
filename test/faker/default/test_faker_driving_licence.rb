@@ -84,7 +84,11 @@ class TestFakerDrivingLicence < Test::Unit::TestCase
 
   def test_usa_driving_licence_with_faker_code
     assert_raises(Faker::InvalidStatePassed) do
-      @tester.usa_driving_licence('123')
+      @tester.usa_driving_licence('abc')
+    end
+
+    assert_raises(Faker::InvalidStatePassed) do
+      @tester.usa_driving_licence(123)
     end
   end
 end
