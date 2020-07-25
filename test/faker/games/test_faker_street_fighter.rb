@@ -10,4 +10,16 @@ class TestFakerStreetFighter < Test::Unit::TestCase
   def test_character
     assert @tester.character.match(/\w+/)
   end
+
+  def test_stage
+    assert @tester.stage.match(/\w+/)
+  end
+
+  def test_quote
+    assert @tester.quote.match(/\w+/)
+  end
+
+  def test_move
+    assert @tester.move.match(/\w+/)
+  end
 end
