@@ -45,5 +45,8 @@ en-NEP:
       domain_suffix: ['np', 'com', 'info', 'net', 'org']
     company:
       suffix: ['Pvt Ltd', 'Group', 'Ltd', 'Limited']
+
+    country_code: ['977']
+
     phone_number:
-      formats: ['##-#######', '+977-#-#######', '+977########']
+      formats: ['##-#######', '#-#######', '########']

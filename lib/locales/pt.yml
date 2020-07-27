@@ -62,5 +62,7 @@ pt:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
+    country_code: ['351']
+
     phone_number:
-      formats: ["(##) ###-####", "+351 (##) ###-####", "884 ###-###"]
+      formats: ["(##) ###-####", "(##) ###-####", "884 ###-###"]

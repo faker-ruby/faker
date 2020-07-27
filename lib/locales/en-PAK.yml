@@ -14,5 +14,6 @@ en-PAK:
       domain_suffix: [pk, com, com.pk, name, net, org, html, edu]
     company:
       suffix: [Pvt Ltd, Limited, Ltd, and Sons, Corp, Group, Brothers, CO]
+    country_code: ['92']
     phone_number:
-      formats: ['+92##########', '+92 ### #######', '03##-#######']
+      formats: ['##########', '### #######', '03##-#######']
