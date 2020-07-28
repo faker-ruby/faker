@@ -1,7 +1,7 @@
 # Faker::Games::DnD
 
 ```ruby
-Faker::Games::DnD.race #=> "Dwarf"
+Faker::Games::DnD.species #=> "Dwarf"
 
 Faker::Games::DnD.klass #=> "Warlock"
 
