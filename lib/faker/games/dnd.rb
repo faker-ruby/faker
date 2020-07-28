@@ -10,7 +10,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Games::DnD.race #=> "Dwarf"
+        #   Faker::Games::DnD.species #=> "Dwarf"
         #
         # @faker.version 2.13.0
         def species
