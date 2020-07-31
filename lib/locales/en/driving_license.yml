@@ -2,211 +2,164 @@ en:
   faker:
     driving_licence:
       usa_state_formats:
-        # Alabama
-        AL:
+        alabama:
           - '######'
           - '#######'
           - '########'
-        # Alaska
-        AK:
+        alaska:
           - '#######'
           - '######'
-        # Arizona
-        AZ:
+        arizona:
           - '?########'
           - '#########'
-        # Arkansas
-        AR:
+        arkansas:
           - '########'
           - '#########'
-        # California
-        CA:
+        california:
           - '?#######'
-        # Colorado
-        CO:
+        colorado:
           - '#########'
           - '?######'
           - '??#####'
-        # Connecticut
-        CT:
-        - '#########'
-        # Delaware
-        DE:
+        connecticut:
+          - '#########'
+        delaware:
           - '######'
           - '#######'
-        # District of Columbia
-        DC:
+        district_of_columbia:
           - '#######'
           - '#########'
-        # Florida
-        FL:
+        florida:
           - '?############'
-        # Georgia
-        GA:
+        georgia:
           - '#######'
           - '########'
           - '#########'
-        # Hawaii
-        HI:
+        hawaii:
           - '?########'
           - '#########'
-        # Idaho
-        ID:
+        idaho:
           - '??######'
           - '?#########'
-        # Illinois
-        IL:
+        illinois:
           - '?###########'
           - '?############'
-        # Indiana
-        IN:
+        indiana:
           - '?#########'
           - '#########'
           - '##########'
-        # Iowa
-        IA:
+        iowa:
           - '#########'
           - '###??####'
-        # Kansas
-        KS:
+        kansas:
           - '?#?#?'
           - '?########'
           - '#########'
-        # Kentucky
-        KY:
+        kentucky:
           - '?########'
           - '?#########'
           - '#########'
-        # Louisiana
-        LA:
+        louisiana:
           - '########'
           - '#########'
-        # Maine
-        ME:
+        maine:
           - '#######'
           - '#######?'
           - '########'
-        # Maryland
-        MD:
+        maryland:
           - '?############'
-        # Massachusetts
-        MA:
+        massachusetts:
           - '?########'
           - '#########'
-        # Michigan
-        MI:
+        michigan:
           - '?##########'
           - '?############'
-        # Minnesota
-        MN:
+        minnesota:
           - '?############'
-        # Mississippi
-        MS:
+        mississippi:
           - '#########'
-        # Missouri
-        MO:
+        missouri:
           - '?#########'
           - '?######R'
           - '########??'
           - '#########?'
           - '#########'
-        # Montana
-        MT:
+        montana:
           - '?########'
           - '#########'
           - '#############'
           - '##############'
-        # Nebraska
-        NE:
+        nebraska:
           - '?######'
           - '?#######'
           - '?########'
-        # Nevada
-        NV:
+        nevada:
           - '#########'
           - '##########'
           - '############'
           - 'X########'
-        # New Hampshire
-        NH:
+        new_hampshire:
           - '##???#####'
-        # New Jersey
-        NJ:
+        new_jersey:
           - '?##############'
-        # New Mexico
-        NM:
+        new_mexico:
           - '########'
           - '#########'
-        # New York
-        NY:
+        new_york:
           - '?#######'
           - '?##################'
           - '########'
           - '##########'
           - '################'
           - '????????'
-        # North Carolina
-        NC:
+        north_carolina:
           - '##########'
           - '############'
-        # Ohia
-        OH:
+        ohio:
           - '?########'
           - '??#######'
           - '########'
-        # Oklahoma
-        OK:
+        oklahoma:
           - '?#########'
           - '#########'
-        # Oregon
-        OR:
+        oregon:
           - '########'
           - '#########'
-        # Pennsylvania
-        PA:
+        pennsylvania:
           - '########'
-        # Rhode Island
-        RI:
+        rhode_island:
           - '#######'
           - '?######'
-        # South Carolina
-        SC:
+        south_carolina:
           - '########'
           - '#########'
           - '##########'
           - '###########'
-        # South Dakota
-        SD:
+        south_dakota:
           - '########'
           - '#########'
           - '##########'
           - '############'
-        # Tennessee
-        TN:
+        tennessee:
           - '#######'
           - '########'
           - '#########'
-        # Texas
-        TX:
+        texas:
           - '#######'
           - '########'
-        # Utah
-        UT:
+        utah:
           - '#########'
           - '##########'
-        # Vermont
-        VT:
+        vermont:
           - '########'
           - '#######A'
-        # Virginia
-        VA:
+        virginia:
           - '?########'
           - '?#########'
           - '?##########'
           - '?###########'
           - '#########'
-        # Washington
-        WA:
+        washington:
           - '???????#####'
           - '????????####'
           - '?????????###'
@@ -214,15 +167,12 @@ en:
           - '???????????#'
           - '????????????'
           - '???????####*'
-        # West Virginia
-        WV:
+        west_virginia:
           - '#######'
           - '?######'
           - '??#####'
-        # Wisconsin
-        WI:
+        wisconsin:
           - '?#############'
-        # Wyoming
-        WY:
+        wyoming:
           - '#########'
           - '##########'

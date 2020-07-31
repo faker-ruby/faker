@@ -74,11 +74,11 @@ class TestFakerDrivingLicence < Test::Unit::TestCase
 
   def test_usa_driving_licence_for_different_states
     # When state Washington is passed
-    licence_number = @tester.usa_driving_licence('WA')
+    licence_number = @tester.usa_driving_licence('Washington')
     assert_match %r{[A-Z]{7,12}[0-9]{0,5}\**}, licence_number
 
     # When state Alaska is passed
-    licence_number = @tester.usa_driving_licence('AK')
+    licence_number = @tester.usa_driving_licence('alaska')
     assert_match %r{[0-9]{6,7}}, licence_number
   end
 

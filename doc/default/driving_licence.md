@@ -25,4 +25,6 @@ Faker::DrivingLicence.uk_driving_licence             #=> "70702548"
 # Keyword arguments: state
 Faker::DrivingLicence.usa_driving_licence             #=> "E124590"
 # USA driving licence for Massachusetts state
-Faker::DrivingLicence.usa_driving_licence('MA')       #=> "987429086"
+Faker::DrivingLicence.usa_driving_licence('new mexico')       #=> "RGXWPIFE"
+Faker::DrivingLicence.usa_driving_licence('New Mexico')       #=> "EPOGJTKX"
+Faker::DrivingLicence.usa_driving_licence('NEW MEXICO')       #=> "POSGITLC"
