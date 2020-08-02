@@ -31,6 +31,19 @@ module Faker
         end
 
         ##
+        # Produces the name of a city from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.city #=> "Earthfast"
+        #
+        # @faker.version next
+        def city
+          fetch('dnd.cities')
+        end
+
+        ##
         # Produces the name of a class from Dungeons and Dragons (PHB).
         #
         # @return [String]
@@ -41,6 +54,45 @@ module Faker
         # @faker.version 2.13.0
         def klass
           fetch('dnd.klasses')
+        end
+
+        ##
+        # Produces the name of a language from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.language #=> "Gnomish"
+        #
+        # @faker.version next
+        def language
+          fetch('dnd.languages')
+        end
+
+        ##
+        # Produces the name of a melee weapon from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.melee_weapon #=> "Handaxe"
+        #
+        # @faker.version next
+        def melee_weapon
+          fetch('dnd.melee_weapons')
+        end
+
+        ##
+        # Produces the name of a monster from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.monster #=> "Manticore"
+        #
+        # @faker.version next
+        def monster
+          fetch('dnd.monsters')
         end
 
         ##
@@ -57,6 +109,18 @@ module Faker
         end
 
         ##
+        # Produces the name of a ranged weapon from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.ranged_weapon #=> "Shortbow"
+        #
+        # @faker.version next
+        def ranged_weapon
+          fetch('dnd.ranged_weapons')
+        end
+
         # This method is deprecated. The implementation will be removed in a near future release.
         # Use `DnD.race` instead.
         #
