@@ -299,7 +299,7 @@ module Faker
         #
         # @faker.version next
         def weapon
-          if rand().round == 0
+          if rand.round.zero?
             fetch('dnd.melee_weapons')
           else
             fetch('dnd.ranged_weapons')
