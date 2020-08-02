@@ -24,6 +24,9 @@ coverage/*
 .ruby-version
 .ruby-gemset
 
+# Ignore asdf files.
+.tool-versions
+
 # Ignore YARD metadata and documentation.
 .yardoc/
 yard_docs/

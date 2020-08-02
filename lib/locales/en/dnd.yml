@@ -1,6 +1,37 @@
 en:
   faker:
     dnd:
+      ability:
+        - Strength
+        - Dexterity
+        - Constitution
+        - Intelligence
+        - Wisdom
+        - Charisma
+      skill:
+        strength:
+          - Athletics
+        dexterity:
+          - Acrobatics
+          - Sleight of Hand
+          - Stealth
+        intelligence:
+          - Arcana
+          - History
+          - Investigation
+          - Nature
+          - Religion
+        wisdom:
+          - Animal Handling
+          - Insight
+          - Medicine
+          - Perception
+          - Survival
+        charisma:
+          - Deception
+          - Intimidation
+          - Performance
+          - Persuation
       alignments:
         - Chaotic Evil
         - Chaotic Good
@@ -11,6 +42,20 @@ en:
         - Neutral Evil
         - Neutral Good
         - True Neutral
+      armor:
+        - Padded Armor
+        - Leather Armor
+        - Studded Leather Armor
+        - Hide Armor
+        - Chain Shirt
+        - Scale Mail
+        - Breastplate
+        - Half Plate Armor
+        - Ring Mail
+        - Chain Mail
+        - Splint Armor
+        - Plate Armor
+        - Shield
       backgrounds:
         - Acolyte
         - Anthropologist
@@ -140,6 +185,97 @@ en:
         - Sorcerer
         - Warlock
         - Wizard
+      subclass:
+        barbarian:
+          - Path of the Ancestral Guardian
+          - Path of the Battlerager
+          - Path of the Berserker
+          - Path of the Storm Herald
+          - Path of the Totem Warrior
+          - Path of the Zealot
+        bard:
+          - College of Glamour
+          - College of Lore
+          - College of Swords
+          - College of Valor
+          - College of Whispers
+        cleric:
+          - Arcana Domain
+          - Forge Domain
+          - Grave Domain
+          - Knowledge Domain
+          - Life Domain
+          - Light Domain
+          - Nature Domain
+          - Tempest Domain
+          - Trickery Domain
+          - War Domain
+        druid:
+          - Circle of Dreams
+          - Circle of the Land
+          - Circle of the Moon
+          - Circle of the Shepherd
+        fighter:
+          - Arcane Archer
+          - Battlemaster
+          - Cavalier
+          - Champion
+          - Eldritch Knight
+          - Purple Dragon Knight
+          - Samurai
+        monk:
+          - Way of the Drunken Master
+          - Way of the Four Elements
+          - Way of the Kensei
+          - Way of the Long Death
+          - Way of the Open Hand
+          - Way of Shadow
+          - Way of the Sun Soul
+        paladin:
+          - Oath of the Ancients
+          - Oath of Conquest
+          - Oath of the Crown
+          - Oath of Devotion
+          - Oath of Redemption
+          - Oath of Vengeance
+        ranger:
+          - Beast Master
+          - Gloom Stalker
+          - Horizon Walker
+          - Hunter
+          - Monster Slayer
+        rogue:
+          - Arcane Trickster
+          - Assassin
+          - Inquisitive
+          - Mastermind
+          - Scout
+          - Swashbuckler
+          - Thief
+        sorcerer:
+          - Divine Soul
+          - Draconic Bloodline
+          - Shadow Magic
+          - Storm Sorcery
+          - Wild Magic
+        warlock:
+          - The Archfey
+          - The Celestial
+          - The Fiend
+          - The Great Old One
+          - The Hexblade
+          - The Undying
+        wizard:
+          - Bladesinging
+          - School of Abjuration
+          - School of Conjuration
+          - School of Divination
+          - School of Enchantment
+          - School of Evocation
+          - School of Illusion
+          - School of Necromancy
+          - School of Transmutation
+          - War Magic
       languages:
         - Abyssal
         - Celestial
@@ -440,6 +576,53 @@ en:
         - Verdan
         - Warforged
         - Yuan-Ti
+      subrace:
+        aasimar:
+          - Protector Aasimar
+          - Scourge Aasimar
+          - Fallen Aasimar
+        dragonborn:
+          - Black
+          - Blue
+          - Brass
+          - Bronze
+          - Copper
+          - Gold
+          - Green
+          - Red
+          - Silver
+          - White
+        dwarf:
+          - Duergar
+          - Hill Dwarf
+          - Mountain Dwarf
+        elf:
+          - Drow
+          - Eladrin
+          - High Elf
+          - Sea Elf
+          - Shadar-kai
+          - Wood Elf
+        gith:
+          - Githyanki
+          - Githzerai
+        gnome:
+          - Deep Gnome
+          - Forest Gnome
+          - Rock Gnome
+        halfling:
+          - Lightfoot
+          - Stout
+        tiefling:
+          - Asmodeus
+          - Baalzebul
+          - Dispater
+          - Fierna
+          - Glasya
+          - Levistus
+          - Mammon
+          - Mephistopheles
+          - Zariel
       ranged_weapons:
         - Blowgun
         - Boomerang
@@ -449,3 +632,795 @@ en:
         - Net
         - Shortbow
         - Sling
+      spell:
+        - Acid Splash
+        - Aid
+        - Alarm
+        - Alter Self
+        - Animal Friendship
+        - Animal Messenger
+        - Animal Shapes
+        - Animate Dead
+        - Animate Objects
+        - Antilife Shell
+        - Antimagic Field
+        - Antipathy/Sympathy
+        - Arcane Eye
+        - Arcane Gate
+        - Arcane Lock
+        - Armor of Agathys
+        - Arms of Hadar
+        - Astral Projection
+        - Augury
+        - Aura of Life
+        - Aura of Purity
+        - Aura of Vitality
+        - Awaken
+        - Bane
+        - Banishing Smite
+        - Banishment
+        - Barkskin
+        - Beacon of Hope
+        - Beast Sense
+        - Bestow Curse
+        - Bigby's Hand
+        - Blade Barrier
+        - Blade Ward
+        - Bless
+        - Blight
+        - Blinding Smite
+        - Blindness/Deafness
+        - Blink
+        - Blur
+        - Branding Smite
+        - Burning Hands
+        - Call Lightning
+        - Calm Emotions
+        - Chain Lightning
+        - Charm Person
+        - Chill Touch
+        - Chromatic Orb
+        - Circle of Death
+        - Circle of Power
+        - Clairvoyance
+        - Clone
+        - Cloud of Daggers
+        - Cloudkill
+        - Color Spray
+        - Command
+        - Commune
+        - Commune with Nature
+        - Compelled Duel
+        - Comprehend Languages
+        - Compulsion
+        - Cone of Cold
+        - Confusion
+        - Conjure Animals
+        - Conjure Barrage
+        - Conjure Celestial
+        - Conjure Elemental
+        - Conjure Fey
+        - Conjure Minor Elementals
+        - Conjure Volley
+        - Conjure Woodland Beings
+        - Contact Other Plane
+        - Contagion
+        - Contingency
+        - Continual Flame
+        - Control Water
+        - Control Weather
+        - Cordon of Arrows
+        - Counterspell
+        - Create Food and Water
+        - Create Undead
+        - Create or Destroy Water
+        - Creation
+        - Crown of Madness
+        - Crusader's Mantle
+        - Cure Wounds
+        - Dancing Lights
+        - Darkness
+        - Darkvision
+        - Daylight
+        - Death Ward
+        - Delayed Blast Fireball
+        - Demiplane
+        - Destructive Wave
+        - Detect Evil and Good
+        - Detect Magic
+        - Detect Poison and Disease
+        - Detect Thoughts
+        - Dimension Door
+        - Disguise Self
+        - Disintegrate
+        - Dispel Evil and Good
+        - Dispel Magic
+        - Dissonant Whispers
+        - Divination
+        - Divine Favor
+        - Divine Word
+        - Dominate Beast
+        - Dominate Monster
+        - Dominate Person
+        - Drawmij's Instant Summons
+        - Dream
+        - Druidcraft
+        - Earthquake
+        - Eldritch Blast
+        - Elemental Weapon
+        - Enhance Ability
+        - Enlarge/Reduce
+        - Ensnaring Strike
+        - Entangle
+        - Enthrall
+        - Etherealness
+        - Evard's Black Tentacles
+        - Expeditious Retreat
+        - Eyebite
+        - Fabricate
+        - Faerie Fire
+        - False Life
+        - Fear
+        - Feather Fall
+        - Feeblemind
+        - Feign Death
+        - Find Familiar
+        - Find Steed
+        - Find Traps
+        - Find the Path
+        - Finger of Death
+        - Fire Bolt
+        - Fire Shield
+        - Fire Storm
+        - Fireball
+        - Flame Blade
+        - Flame Strike
+        - Flaming Sphere
+        - Flesh to Stone
+        - Fly
+        - Fog Cloud
+        - Forbiddance
+        - Forcecage
+        - Foresight
+        - Freedom of Movement
+        - Friends
+        - Gaseous Form
+        - Gate
+        - Geas
+        - Gentle Repose
+        - Giant Insect
+        - Glibness
+        - Globe of Invulnerability
+        - Glyph of Warding
+        - Goodberry
+        - Grasping Vine
+        - Grease
+        - Greater Invisibility
+        - Greater Restoration
+        - Guardian of Faith
+        - Guards and Wards
+        - Guidance
+        - Guiding Bolt
+        - Gust of Wind
+        - Hail of Thorns
+        - Hallow
+        - Hallucinatory Terrain
+        - Harm
+        - Haste
+        - Heal
+        - Healing Word
+        - Heat Metal
+        - Hellish Rebuke
+        - Heroes' Feast
+        - Heroism
+        - Hex
+        - Hold Monster
+        - Hold Person
+        - Holy Aura
+        - Hunger of Hadar
+        - Hunter's Mark
+        - Hypnotic Pattern
+        - Ice Storm
+        - Identify
+        - Illusory Script
+        - Imprisonment
+        - Incendiary Cloud
+        - Inflict Wounds
+        - Insect Plague
+        - Invisibility
+        - Jump
+        - Knock
+        - Legend Lore
+        - Leomund's Secret Chest
+        - Leomund's Tiny Hut
+        - Lesser Restoration
+        - Levitate
+        - Light
+        - Lightning Arrow
+        - Lightning Bolt
+        - Locate Animals or Plants
+        - Locate Creature
+        - Locate Object
+        - Longstrider
+        - Mage Armor
+        - Mage Hand
+        - Magic Circle
+        - Magic Jar
+        - Magic Missile
+        - Magic Mouth
+        - Magic Weapon
+        - Major Image
+        - Mass Cure Wounds
+        - Mass Heal
+        - Mass Healing Word
+        - Mass Suggestion
+        - Maze
+        - Meld into Stone
+        - Melf's Acid Arrow
+        - Mending
+        - Message
+        - Meteor Swarm
+        - Mind Blank
+        - Minor Illusion
+        - Mirage Arcane
+        - Mirror Image
+        - Mislead
+        - Misty Step
+        - Modify Memory
+        - Moonbeam
+        - Mordenkainen's Faithful Hound
+        - Mordenkainen's Magnificent Mansion
+        - Mordenkainen's Private Sanctum
+        - Mordenkainen's Sword
+        - Move Earth
+        - Nondetection
+        - Nystul's Magic Aura
+        - Otiluke's Freezing Sphere
+        - Otiluke's Resilient Sphere
+        - Otto's Irresistible Dance
+        - Pass without Trace
+        - Passwall
+        - Phantasmal Force
+        - Phantasmal Killer
+        - Phantom Steed
+        - Planar Ally
+        - Planar Binding
+        - Plane Shift
+        - Plant Growth
+        - Poison Spray
+        - Polymorph
+        - Power Word Heal
+        - Power Word Kill
+        - Power Word Stun
+        - Prayer of Healing
+        - Prestidigitation
+        - Prismatic Spray
+        - Prismatic Wall
+        - Produce Flame
+        - Programmed Illusion
+        - Project Image
+        - Protection from Energy
+        - Protection from Evil and Good
+        - Protection from Poison
+        - Purify Food and Drink
+        - Raise Dead
+        - Rary's Telepathic Bond
+        - Ray of Enfeeblement
+        - Ray of Frost
+        - Ray of Sickness
+        - Regenerate
+        - Reincarnate
+        - Remove Curse
+        - Resistance
+        - Resurrection
+        - Reverse Gravity
+        - Revivify
+        - Rope Trick
+        - Sacred Flame
+        - Sanctuary
+        - Scorching Ray
+        - Scrying
+        - Searing Smite
+        - See Invisibility
+        - Seeming
+        - Sending
+        - Sequester
+        - Shapechange
+        - Shatter
+        - Shield
+        - Shield of Faith
+        - Shillelagh
+        - Shocking Grasp
+        - Silence
+        - Silent Image
+        - Simulacrum
+        - Sleep
+        - Sleet Storm
+        - Slow
+        - Spare the Dying
+        - Speak with Animals
+        - Speak with Dead
+        - Speak with Plants
+        - Spider Climb
+        - Spike Growth
+        - Spirit Guardians
+        - Spiritual Weapon
+        - Staggering Smite
+        - Stinking Cloud
+        - Stone Shape
+        - Stoneskin
+        - Storm of Vengeance
+        - Suggestion
+        - Sunbeam
+        - Sunburst
+        - Swift Quiver
+        - Symbol
+        - Tasha's Hideous Laughter
+        - Telekinesis
+        - Telepathy
+        - Teleport
+        - Teleportation Circle
+        - Tenser's Floating Disk
+        - Thaumaturgy
+        - Thorn Whip
+        - Thunderous Smite
+        - Thunderwave
+        - Time Stop
+        - Tongues
+        - Transport via Plants
+        - Tree Stride
+        - True Polymorph
+        - True Resurrection
+        - True Seeing
+        - True Strike
+        - Tsunami
+        - Unseen Servant
+        - Vampiric Touch
+        - Vicious Mockery
+        - Wall of Fire
+        - Wall of Force
+        - Wall of Ice
+        - Wall of Stone
+        - Wall of Thorns
+        - Warding Bond
+        - Water Breathing
+        - Water Walk
+        - Web
+        - Weird
+        - Wind Walk
+        - Wind Wall
+        - Wish
+        - Witch Bolt
+        - Word of Recall
+        - Wrathful Smite
+        - Zone of Truth
+      magic_school:
+        - Abjuration
+        - Conjuration
+        - Divination
+        - Enchantment
+        - Evocation
+        - Illusion
+        - Necromancy
+        - Transmutation
+      magic_item:
+        - Alchemy Jug
+        - Amulet of Health
+        - Amulet of Proof against Detection and Location
+        - Amulet of the Planes
+        - Animated Shield
+        - Apparatus of Kwalish
+        - Armor of Invulnerability
+        - Armor of Vulnerability (Bludgeoning)
+        - Armor of Vulnerability (Piercing)
+        - Armor of Vulnerability (Slashing)
+        - Arrow-Catching Shield
+        - Axe of the Dwarvish Lords
+        - Bag of Beans
+        - Bag of Devouring
+        - Bag of Holding
+        - Bag of Tricks, Gray
+        - Bag of Tricks, Rust
+        - Bag of Tricks, Tan
+        - Bead of Force
+        - Bead of Nourishment
+        - Bead of Refreshment
+        - Belt of Cloud Giant Strength
+        - Belt of Dwarvenkind
+        - Belt of Fire Giant Strength
+        - Belt of Frost Giant Strength
+        - Belt of Hill Giant Strength
+        - Belt of Stone Giant Strength
+        - Belt of Storm Giant Strength
+        - Black Dragon Scale Mail
+        - Blackrazor
+        - Blue Dragon Scale Mail
+        - Book of Exalted Deeds
+        - Book of Vile Darkness
+        - Boots of Elvenkind
+        - Boots of False Tracks
+        - Boots of Levitation
+        - Boots of Speed
+        - Boots of Striding and Springing
+        - Boots of the Winterlands
+        - Bowl of Commanding Water Elementals
+        - Bracers of Archery
+        - Bracers of Defense
+        - Brass Dragon Scale Mail
+        - Brazier of Commanding Fire Elementals
+        - Bronze Dragon Scale Mail
+        - Brooch of Shielding
+        - Broom of Flying
+        - Candle of Invocation
+        - Candle of the Deep
+        - Cap of Water Breathing
+        - Cape of the Mountebank
+        - Carpet of Flying, 3 ft. × 5 ft.
+        - Carpet of Flying, 4 ft. × 6 ft.
+        - Carpet of Flying, 5 ft. × 7 ft.
+        - Carpet of Flying, 6 ft. × 9 ft.
+        - Censer of Controlling Air Elementals
+        - Charlatan's Die
+        - Chime of Opening
+        - Circlet of Blasting
+        - Cloak of Arachnida
+        - Cloak of Billowing
+        - Cloak of Displacement
+        - Cloak of Elvenkind
+        - Cloak of Invisibility
+        - Cloak of Many Fashions
+        - Cloak of Protection
+        - Cloak of the Bat
+        - Cloak of the Manta Ray
+        - Clockwork Amulet
+        - Clothes of Mending
+        - Copper Dragon Scale Mail
+        - Crystal Ball
+        - Crystal Ball of Mind Reading
+        - Crystal Ball of Telepathy
+        - Crystal Ball of True Seeing
+        - Cube of Force
+        - Cubic Gate
+        - Daern's Instant Fortress
+        - Dagger of Venom
+        - Dark Shard Amulet
+        - Decanter of Endless Water
+        - Deck of Illusions
+        - Deck of Many Things
+        - Demon Armor
+        - Dimensional Shackles
+        - Dread Helm
+        - Driftglobe
+        - Dust of Disappearance
+        - Dust of Dryness
+        - Dust of Sneezing and Choking
+        - Dwarven Plate
+        - Dwarven Thrower
+        - Ear Horn of Hearing
+        - Efreeti Bottle
+        - Efreeti Chain
+        - Elemental Gem, Blue Sapphire
+        - Elemental Gem, Emerald
+        - Elemental Gem, Red Corundum
+        - Elemental Gem, Yellow Diamond
+        - Elixir of Health
+        - Elven Chain
+        - Enduring Spellbook
+        - Ersatz Eye
+        - Eversmoking Bottle
+        - Eye of Vecna
+        - Eyes of Charming
+        - Eyes of Minute Seeing
+        - Eyes of the Eagle
+        - Figurine of Wondrous Power, Bronze Griffon
+        - Figurine of Wondrous Power, Ebony Fly
+        - Figurine of Wondrous Power, Golden Lions
+        - Figurine of Wondrous Power, Ivory Goats
+        - Figurine of Wondrous Power, Marble Elephant
+        - Figurine of Wondrous Power, Obsidian Steed
+        - Figurine of Wondrous Power, Onyx Dog
+        - Figurine of Wondrous Power, Serpentine Owl
+        - Figurine of Wondrous Power, Silver Raven
+        - Folding Boat
+        - Gauntlets of Ogre Power
+        - Gem of Brightness
+        - Gem of Seeing
+        - Glamoured Studded Leather
+        - Gloves of Missile Snaring
+        - Gloves of Swimming and Climbing
+        - Gloves of Thievery
+        - Goggles of Night
+        - Gold Dragon Scale Mail
+        - Greater Silver Sword
+        - Green Dragon Scale Mail
+        - Hammer of Thunderbolts
+        - Hand of Vecna
+        - Hat of Disguise
+        - Hat of Vermin
+        - Hat of Wizardry
+        - Headband of Intellect
+        - Helm of Brilliance
+        - Helm of Comprehending Languages
+        - Helm of Telepathy
+        - Helm of Teleportation
+        - Heward's Handy Haversack
+        - Heward's Handy Spice Pouch
+        - Horn of Blasting
+        - Horn of Silent Alarm
+        - Horn of Valhalla, Brass
+        - Horn of Valhalla, Bronze
+        - Horn of Valhalla, Iron
+        - Horn of Valhalla, Silver
+        - Horseshoes of a Zephyr
+        - Horseshoes of Speed
+        - Immovable Rod
+        - Infernal Tack
+        - Instrument of Illusions
+        - Instrument of Scribing
+        - Instrument of the Bards, Anstruth Harp
+        - Instrument of the Bards, Canaith Mandolin
+        - Instrument of the Bards, Cli Lyre
+        - Instrument of the Bards, Doss Lute
+        - Instrument of the Bards, Fochlucan Bandore
+        - Instrument of the Bards, Mac-Fuirmidh Cittern
+        - Instrument of the Bards, Ollamh Harp
+        - Ioun Stone, Absorption
+        - Ioun Stone, Agility
+        - Ioun Stone, Awareness
+        - Ioun Stone, Fortitude
+        - Ioun Stone, Greater Absorption
+        - Ioun Stone, Insight
+        - Ioun Stone, Intellect
+        - Ioun Stone, Leadership
+        - Ioun Stone, Mastery
+        - Ioun Stone, Protection
+        - Ioun Stone, Regeneration
+        - Ioun Stone, Reserve
+        - Ioun Stone, Strength
+        - Ioun Stone, Sustenance
+        - Iron Bands of Bilarro
+        - Iron Flask
+        - Javelin of Lightning
+        - Keoghtom's Ointment
+        - Lantern of Revealing
+        - Lock of Trickery
+        - Mace of Disruption
+        - Mace of Smiting
+        - Mace of Terror
+        - Mantle of Spell Resistance
+        - Manual of Bodily Health
+        - Manual of Clay Golems
+        - Manual of Flesh Golems
+        - Manual of Gainful Exercise
+        - Manual of Iron Golems
+        - Manual of Quickness of Action
+        - Manual of Stone Golems
+        - Medallion of Thoughts
+        - Mind Lash
+        - Mirror of Life Trapping
+        - Moonblade
+        - Mystery Key
+        - Necklace of Adaptation
+        - Necklace of Fireballs
+        - Necklace of Prayer Beads
+        - Nolzur's Marvelous Pigments
+        - Oathbow
+        - Oil of Etherealness
+        - Oil of Sharpness
+        - Oil of Slipperiness
+        - Orb of Direction
+        - Orb of Dragonkind
+        - Orb of Time
+        - Pearl of Power
+        - Perfume of Bewitching
+        - Periapt of Health
+        - Periapt of Proof Against Poison
+        - Periapt of Wound Closure
+        - Philter of Love
+        - Pipe of Smoke Monsters
+        - Pipes of Haunting
+        - Pipes of the Sewers
+        - Plate Armor of Etherealness
+        - Pole of Angling
+        - Pole of Collapsing
+        - Portable Hole
+        - Pot of Awakening
+        - Potion of Acid Resistance
+        - Potion of Animal Friendship
+        - Potion of Clairvoyance
+        - Potion of Climbing
+        - Potion of Cloud Giant Strength
+        - Potion of Cold Resistance
+        - Potion of Diminution
+        - Potion of Fire Breath
+        - Potion of Fire Giant Strength
+        - Potion of Fire Resistance
+        - Potion of Flying
+        - Potion of Force Resistance
+        - Potion of Frost Giant Strength
+        - Potion of Gaseous Form
+        - Potion of Greater Healing
+        - Potion of Growth
+        - Potion of Healing
+        - Potion of Heroism
+        - Potion of Hill Giant Strength
+        - Potion of Invisibility
+        - Potion of Invulnerability
+        - Potion of Lightning Resistance
+        - Potion of Longevity
+        - Potion of Mind Reading
+        - Potion of Necrotic Resistance
+        - Potion of Poison
+        - Potion of Poison Resistance
+        - Potion of Psychic Resistance
+        - Potion of Radiant Resistance
+        - Potion of Speed
+        - Potion of Stone Giant Strength
+        - Potion of Storm Giant Strength
+        - Potion of Superior Healing
+        - Potion of Supreme Healing
+        - Potion of Thunder Resistance
+        - Potion of Vitality
+        - Potion of Water Breathing
+        - Quaal's Feather Token, Anchor
+        - Quaal's Feather Token, Bird
+        - Quaal's Feather Token, Fan
+        - Quaal's Feather Token, Swan Boat
+        - Quaal's Feather Token, Tree
+        - Quaal's Feather Token, Whip
+        - Quiver of Ehlonna
+        - Red Dragon Scale Mail
+        - Ring of Acid Resistance
+        - Ring of Air Elemental Command
+        - Ring of Animal Influence
+        - Ring of Cold Resistance
+        - Ring of Djinni Summoning
+        - Ring of Earth Elemental Command
+        - Ring of Evasion
+        - Ring of Feather Falling
+        - Ring of Fire Elemental Command
+        - Ring of Fire Resistance
+        - Ring of Force Resistance
+        - Ring of Free Action
+        - Ring of Invisibility
+        - Ring of Jumping
+        - Ring of Lightning Resistance
+        - Ring of Mind Shielding
+        - Ring of Necrotic Resistance
+        - Ring of Poison Resistance
+        - Ring of Protection
+        - Ring of Psychic Resistance
+        - Ring of Radiant Resistance
+        - Ring of Regeneration
+        - Ring of Shooting Stars
+        - Ring of Spell Storing
+        - Ring of Spell Turning
+        - Ring of Swimming
+        - Ring of Telekinesis
+        - Ring of the Ram
+        - Ring of Three Wishes
+        - Ring of Thunder Resistance
+        - Ring of Warmth
+        - Ring of Water Elemental Command
+        - Ring of Water Walking
+        - Ring of X-ray Vision
+        - Robe of Eyes
+        - Robe of Scintillating Colors
+        - Robe of Stars
+        - Robe of the Archmagi
+        - Robe of Useful Items
+        - Rod of Absorption
+        - Rod of Alertness
+        - Rod of Lordly Might
+        - Rod of Resurrection
+        - Rod of Rulership
+        - Rod of Security
+        - Rod of the Pact Keeper, +1
+        - Rod of the Pact Keeper, +2
+        - Rod of the Pact Keeper, +3
+        - Rope of Climbing
+        - Rope of Entanglement
+        - Rope of Mending
+        - Ruby of the War Mage
+        - Saddle of the Cavalier
+        - Scarab of Protection
+        - Scimitar of Speed
+        - Scroll of Protection from Aberrations
+        - Scroll of Protection from Beasts
+        - Scroll of Protection from Celestials
+        - Scroll of Protection from Elementals
+        - Scroll of Protection from Fey
+        - Scroll of Protection from Fiends
+        - Scroll of Protection from Plants
+        - Scroll of Protection from Undead
+        - Sending Stones
+        - Sentinel Shield
+        - Shield of Expression
+        - Shield of Far Sight
+        - Shield of Missile Attraction
+        - Silver Dragon Scale Mail
+        - Slippers of Spider Climbing
+        - Sovereign Glue
+        - Spell Scroll (1st Level)
+        - Spell Scroll (2nd Level)
+        - Spell Scroll (3rd Level)
+        - Spell Scroll (4th Level)
+        - Spell Scroll (5th Level)
+        - Spell Scroll (6th Level)
+        - Spell Scroll (7th Level)
+        - Spell Scroll (8th Level)
+        - Spell Scroll (9th Level)
+        - Spell Scroll (Cantrip)
+        - Spellguard Shield
+        - Sphere of Annihilation
+        - Staff of Adornment
+        - Staff of Birdcalls
+        - Staff of Charming
+        - Staff of Fire
+        - Staff of Flowers
+        - Staff of Frost
+        - Staff of Healing
+        - Staff of Power
+        - Staff of Striking
+        - Staff of Swarming Insects
+        - Staff of the Adder
+        - Staff of the Magi
+        - Staff of the Python
+        - Staff of the Woodlands
+        - Staff of Thunder and Lightning
+        - Staff of Withering
+        - Stone of Controlling Earth Elementals
+        - Stone of Good Luck
+        - Sun Blade
+        - Survival Mantle
+        - Sword of Answering (Answerer)
+        - Sword of Answering (Back Talker)
+        - Sword of Answering (Concluder)
+        - Sword of Answering (Last Quip)
+        - Sword of Answering (Rebutter)
+        - Sword of Answering (Replier)
+        - Sword of Answering (Retorter)
+        - Sword of Answering (Scather)
+        - Sword of Answering (Squelcher)
+        - Sword of Kas
+        - Talisman of Pure Good
+        - Talisman of the Sphere
+        - Talisman of Ultimate Evil
+        - Talking Doll
+        - Tankard of Sobriety
+        - Tentacle Rod
+        - Tome of Clear Thought
+        - Tome of Leadership and Influence
+        - Tome of the Stilled Tongue
+        - Tome of Understanding
+        - Trident of Fish Command
+        - Unbreakable Arrow
+        - Universal Solvent
+        - Veteran's Cane
+        - Wand of Binding
+        - Wand of Conducting
+        - Wand of Enemy Detection
+        - Wand of Fear
+        - Wand of Fireballs
+        - Wand of Lightning Bolts
+        - Wand of Magic Detection
+        - Wand of Magic Missiles
+        - Wand of Orcus
+        - Wand of Paralysis
+        - Wand of Polymorph
+        - Wand of Pyrotechnics
+        - Wand of Scowls
+        - Wand of Secrets
+        - Wand of Smiles
+        - Wand of the War Mage, +1
+        - Wand of the War Mage, +2
+        - Wand of the War Mage, +3
+        - Wand of Web
+        - Wand of Wonder
+        - Wave
+        - Well of Many Worlds
+        - Whelm
+        - White Dragon Scale Mail
+        - Wind Fan
+        - Winged Boots
+        - Wings of Flying
