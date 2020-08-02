@@ -7,6 +7,10 @@ class TestFakerMovie < Test::Unit::TestCase
     @tester = Faker::Movie
   end
 
+  def test_title
+    assert @tester.title.match(/\w+/)
+  end
+
   def test_quote
     assert @tester.quote.match(/\w+/)
   end

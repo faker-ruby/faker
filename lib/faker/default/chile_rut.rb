@@ -5,7 +5,19 @@ module Faker
     class << self
       @last_rut = nil
 
-      # Fixed param added for testing a specific RUT and check digit combination.
+      ##
+      # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits).
+      #
+      # @param min_rut [Integer] Specifies the minimum value of the rut.
+      # @param fixed [Boolean] Determines if the rut is fixed (returns the min_rut value).
+      # @return [Number]
+      #
+      # @example
+      #   Faker::ChileRut.rut #=> 11235813
+      #   Faker::ChileRut.rut(min_rut: 20890156) #=> 31853211
+      #   Faker::ChileRut.rut(min_rut: 20890156, fixed: true) #=> 20890156
+      #
+      # @faker.version 1.9.2
       def rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 1, fixed: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :min_rut if legacy_min_rut != NOT_GIVEN
@@ -15,6 +27,15 @@ module Faker
         @last_rut = fixed ? min_rut : rand_in_range(min_rut, 99_999_999)
       end
 
+      ##
+      # Produces a random Chilean digito verificador (check-digit).
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::ChileRut.dv #=> "k"
+      #
+      # @faker.version 1.9.2
       def dv
         split_reversed_rut = @last_rut.to_s.reverse.split('')
         seq = [2, 3, 4, 5, 6, 7]
@@ -34,11 +55,33 @@ module Faker
         end
       end
 
+      ##
+      # Produces a random Chilean digito verificador (check-digit).
       # Alias for english speaking devs.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::ChileRut.check_digit #=> "5"
+      #
+      # @faker.version 1.9.2
       def check_digit
         dv
       end
 
+      ##
+      # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits) with a dv (digito verificador, check-digit).
+      #
+      # @param min_rut [Integer] Specifies the minimum value of the rut.
+      # @param fixed [Boolean] Determines if the rut is fixed (returns the min_rut value).
+      # @return [String]
+      #
+      # @example
+      #   Faker::ChileRut.full_rut #=> "30686957-4"
+      #   Faker::ChileRut.full_rut(min_rut: 20890156) #=> "30686957-4"
+      #   Faker::ChileRut.full_rut(min_rut: 30686957, fixed: true) #=> "30686957-4"
+      #
+      # @faker.version 1.9.2
       def full_rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 0, fixed: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :min_rut if legacy_min_rut != NOT_GIVEN

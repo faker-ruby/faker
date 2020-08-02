@@ -100,3 +100,6 @@ es-MX:
       payment_methods: ["Tarjeta de credito", "Tarjeta de débito", "Paypal", "Efectivo", "Transferencia de dinero", "Bitcoins", "Cheque", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
       subscription_terms: ["Diaria", "Semanal", "Mensual", "Anual", "Bienal", "Trienal", "Quinquenal", "De por vida"]
       payment_terms: ["Pago por adelantado", "Mensual", "Anual", "Suscripción completa"]
+    finance:
+      vat_number:
+        MX: /^([A-ZÑ]{3,4})([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[A-Z0-9]{3}$/

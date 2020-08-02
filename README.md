@@ -2,11 +2,12 @@
 ![logotype a happy-07](https://user-images.githubusercontent.com/36028424/40263395-4318481e-5b44-11e8-92e5-3dcc1ce169b3.png)
 
 # Faker
-[![Build Status](https://travis-ci.org/faker-ruby/faker.svg?branch=master)](https://travis-ci.org/faker-ruby/faker)
+[![Tests](https://github.com/faker-ruby/faker/workflows/Tests/badge.svg)](https://github.com/faker-ruby/faker/actions?query=workflow%3ATests)
 [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
 [![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=master)](https://inch-ci.org/github/faker-ruby/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
+[![SemVer compatibility](https://api.dependabot.com/badges/compatibility_score?dependency-name=faker&package-manager=bundler&version-scheme=semver)](https://dependabot.com/compatibility-score.html?dependency-name=faker&package-manager=bundler&version-scheme=semver)
 
 This gem is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker) that generates fake data.
 
@@ -42,7 +43,7 @@ development.
 
 ### NOTE
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
-  You must explicity specify when you require unique values, see [details](#ensuring-unique-values).
+  You must explicitly specify when you require unique values, see [details](#ensuring-unique-values).
   Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
@@ -94,7 +95,7 @@ manually set values).
 # Faker::<generator>.unique.exclude(method, arguments, list)
 
 # Add 'azerty' and 'wxcvbn' to the string generator with 6 char length
-Faker::Lorem.unique.exclude :string, [6], %w[azerty wxcvbn]
+Faker::Lorem.unique.exclude :string, [number: 6], %w[azerty wxcvbn]
 ```
 
 ### Deterministic Random
@@ -130,6 +131,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Avatar](doc/default/avatar.md)
   - [Faker::Bank](doc/default/bank.md)
   - [Faker::Beer](doc/default/beer.md)
+  - [Faker::Blood](doc/default/blood.md)
   - [Faker::Boolean](doc/default/boolean.md)
   - [Faker::BossaNova](doc/default/bossa_nova.md)
   - [Faker::Business](doc/default/business.md)
@@ -143,6 +145,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Commerce](doc/default/commerce.md)
   - [Faker::Company](doc/default/company.md)
   - [Faker::Compass](doc/default/compass.md)
+  - [Faker::Computer](doc/default/computer.md)
   - [Faker::Construction](doc/default/construction.md)
   - [Faker::Cosmere](doc/default/cosmere.md)
   - [Faker::Crypto](doc/default/crypto.md)
@@ -230,6 +233,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 ### Games
   - [Faker::Game](doc/games/game.md)
+  - [Faker::Games::DnD](doc/games/dnd.md)
   - [Faker::Games::Dota](doc/games/dota.md)
   - [Faker::Games::DungeonsAndDragons](doc/games/dungeons_and_dragons.md)
   - [Faker::Games::ElderScrolls](doc/games/elder_scrolls.md)
@@ -242,7 +246,9 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Games::Overwatch](doc/games/overwatch.md)
   - [Faker::Games::Pokemon](doc/games/pokemon.md)
   - [Faker::Games::SonicTheHedgehog](doc/games/sonic_the_hedgehog.md)
+  - [Faker::Games::StreetFighter](doc/games/street_fighter.md)
   - [Faker::Games::SuperSmashBros](doc/games/super_smash_bros.md)
+  - [Faker::Games::WarhammerFantasy](doc/games/warhammer_fantasy.md)
   - [Faker::Games::Witcher](doc/games/witcher.md)
   - [Faker::Games::WorldOfWarcraft](doc/games/world_of_warcraft.md)
   - [Faker::Games::Zelda](doc/games/zelda.md)
@@ -255,6 +261,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 ### Movies
   - [Faker::Movie](doc/movies/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/movies/back_to_the_future.md)
+  - [Faker::Movies::Departed](doc/movies/departed.md)
   - [Faker::Movies::Ghostbusters](doc/movies/ghostbusters.md)
   - [Faker::Movies::HarryPotter](doc/movies/harry_potter.md)
   - [Faker::Movies::HitchhikersGuideToTheGalaxy](doc/movies/hitchhikers_guide_to_the_galaxy.md)
@@ -269,13 +276,19 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Music](doc/music/music.md)
   - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
   - [Faker::Music::Opera](doc/music/opera.md)
+  - [Faker::Music::PearlJam](doc/music/pearl_jam.md)
   - [Faker::Music::Phish](doc/music/phish.md)
+  - [Faker::Music::Prince](doc/music/prince.md)
   - [Faker::Music::RockBand](doc/music/rock_band.md)
+  - [Faker::Music::Rush](doc/music/rush.md)
   - [Faker::Music::UmphreysMcgee](doc/music/umphreys_mcgee.md)
 
 ### Quotes
   - [Faker::Quote](doc/quotes/quote.md)
+  - [Faker::Quotes::Chiquito](doc/quotes/chiquito.md)
+  - [Faker::Quotes::Rajnikanth](doc/quotes/rajnikanth.md)
   - [Faker::Quotes::Shakespeare](doc/quotes/shakespeare.md)
+
 
 ### Sports
   - [Faker::Sports::Basketball](doc/sports/basketball.md)
@@ -283,6 +296,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/tv_shows/aqua_teen_hunger_force.md)
+  - [Faker::TvShows::BigBangTheory](doc/tv_shows/big_bang_theory.md)
   - [Faker::TvShows::BojackHorseman](doc/tv_shows/bojack_horseman.md)
   - [Faker::TvShows::BreakingBad](doc/tv_shows/breaking_bad.md)
   - [Faker::TvShows::Buffy](doc/tv_shows/buffy.md)
@@ -306,6 +320,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::StarTrek](doc/tv_shows/star_trek.md)
   - [Faker::TvShows::Stargate](doc/tv_shows/stargate.md)
   - [Faker::TvShows::StrangerThings](doc/tv_shows/stranger_things.md)
+  - [Faker::TvShows::Suits](doc/tv_shows/suits.md)
   - [Faker::TvShows::TheExpanse](doc/tv_shows/the_expanse.md)
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/tv_shows/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/tv_shows/the_it_crowd.md)
@@ -360,6 +375,8 @@ See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/master/CONTRIBUTING.m
 
 ## Contact
 Comments and feedback are welcome. Send an email to Benjamin Curtis via the [google group](http://groups.google.com/group/ruby-faker).
+
+You can also join our [discord channel](https://discord.gg/RMumTwB) to discuss anything regarding improvements or feature requests.
 
 ## License
 This code is free to use under the terms of the MIT license.

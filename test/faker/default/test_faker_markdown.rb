@@ -25,11 +25,7 @@ class TestFakerMarkdown < Test::Unit::TestCase
     test_trigger = @tester.ordered_list.split("\n")
 
     test_trigger.each do |line|
-      if RUBY_VERSION < '2.4.0'
-        assert_instance_of(Fixnum, line[0].to_i)
-      else
-        assert_instance_of(Integer, line[0].to_i)
-      end
+      assert_instance_of(Integer, line[0].to_i)
     end
   end
 

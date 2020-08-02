@@ -54,6 +54,13 @@ class TestLocale < Test::Unit::TestCase
     I18n.available_locales += [:en]
   end
 
+  def test_no_en_in_available_locales
+    I18n.available_locales -= [:en]
+    assert_kind_of String, Faker::Address.country
+  ensure
+    I18n.available_locales += [:en]
+  end
+
   def test_with_locale_changes_locale_temporarily
     Faker::Config.locale = 'en-BORK'
     I18n.with_locale(:en) do

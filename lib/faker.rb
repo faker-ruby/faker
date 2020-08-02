@@ -2,14 +2,11 @@
 
 mydir = __dir__
 
-begin
-  require 'psych'
-end
-
+require 'psych'
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
 
-Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
 
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 I18n.reload! if I18n.backend.initialized?
@@ -24,7 +21,8 @@ module Faker
       attr_writer :random
 
       def locale
-        @locale || I18n.locale
+        # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
+        @locale || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
       end
 
       def own_locale
@@ -132,7 +130,7 @@ module Faker
           # In either case the information will be retained for reconstruction of the string.
           text = prefix
 
-          # If the class has the method, call it, otherwise fetch the transation
+          # If the class has the method, call it, otherwise fetch the translation
           # (e.g., faker.phone_number.area_code)
           text += if cls.respond_to?(meth)
                     cls.send(meth)
@@ -151,20 +149,18 @@ module Faker
 
       # Call I18n.translate with our configured locale if no
       # locale is specified
-      def translate(*args)
-        opts = args.last.is_a?(Hash) ? args.pop : {}
+      def translate(*args, **opts)
         opts[:locale] ||= Faker::Config.locale
         opts[:raise] = true
-        I18n.translate(*args.push(opts))
+        I18n.translate(*args, **opts)
       rescue I18n::MissingTranslationData
-        opts = args.last.is_a?(Hash) ? args.pop : {}
         opts[:locale] = :en
 
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
         disable_enforce_available_locales do
-          I18n.translate(*args.push(opts))
+          I18n.translate(*args, **opts)
         end
       end
 
@@ -219,12 +215,24 @@ module Faker
         end
       end
 
+      # Return unique values from the generator every time.
+      #
+      # @param max_retries [Integer] The max number of retries that should be done before giving up.
+      # @return [self]
       def unique(max_retries = 10_000)
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
 
-      def sample(list)
-        list.respond_to?(:sample) ? list.sample(random: Faker::Config.random) : list
+      def sample(list, num = nil)
+        if list.respond_to?(:sample)
+          if num
+            list.sample(num, random: Faker::Config.random)
+          else
+            list.sample(random: Faker::Config.random)
+          end
+        else
+          list
+        end
       end
 
       def shuffle(list)
@@ -305,4 +313,4 @@ module Faker
 end
 
 # require faker objects
-Dir.glob(File.join(File.dirname(__FILE__), 'faker', '/**/*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).sort.each { |file| require file }

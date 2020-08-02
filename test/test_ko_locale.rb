@@ -51,4 +51,11 @@ class TestKoLocale < Test::Unit::TestCase
   def test_ko_phone_number_methods
     assert Faker::PhoneNumber.phone_number.is_a? String
   end
+
+  def test_ko_commerce_methods
+    assert Faker::Commerce.department.is_a? String
+    assert Faker::Commerce.product_name.is_a? String
+    assert Faker::Commerce.promotion_code.is_a? String
+    assert Faker::Commerce.material.is_a? String
+  end
 end

@@ -75,6 +75,7 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Lorem.words.is_a? Array
     assert Faker::Lorem.words(number: 1000)
     assert Faker::Lorem.words(number: 10_000, supplemental: true)
+    assert_not_match(/ /, Faker::Lorem.paragraph)
   end
 
   def test_ja_name_methods
