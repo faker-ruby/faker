@@ -13,25 +13,65 @@ en:
         - True Neutral
       backgrounds:
         - Acolyte
+        - Anthropologist
+        - Archaeologist
+        - Black Fist Double Agent
+        - Caravan Specialist
         - Charlatan
+        - City Watch
+        - Clan Crafter
+        - Cloistered Scholar
+        - Cormanthor Refugee
+        - Courtier
         - Criminal
+        - Dragon Casualty
+        - Earthspur Miner
         - Entertainer
+        - Faction Agent
+        - Far Traveler
         - Folk Hero
+        - Gate Urchin
         - Gladiator
         - Guild Artisan
         - Guild Merchant
+        - Harborfolk
+        - Haunted One
+        - Heretic
         - Hermit
+        - Hillsfar Merchant
+        - Hillsfar Smuggler
+        - Initiate
+        - Inquisitor
+        - Investigator
+        - Iron Route Bandit
+        - Knight
+        - Knight of the Order
+        - Mercenary Veteran
+        - Mulmaster Aristocrat
         - Noble
         - Outlander
+        - Phlan Insurgent
+        - Phlan Refugee
         - Pirate
         - Sage
         - Sailor
+        - Secret Identity
+        - Shade Fanatic
         - Soldier
         - Spy
+        - Stojanow Prisoner
+        - Ticklebelly Nomad
+        - Trade Sheriff
+        - Urban Bounty Hunter
         - Urchin
+        - Uthgardt Tribe Member
+        - Vizier
+        - Waterdhavian Noble
       klasses:
+        - Artificer
         - Barbarian
         - Bard
+        - Blood Hunter
         - Cleric
         - Druid
         - Fighter
@@ -43,12 +83,41 @@ en:
         - Warlock
         - Wizard
       races:
+        - Aarakocra
+        - Aasimar
+        - Bugbear
+        - Centaur
+        - Changeling
         - Dragonborn
         - Dwarf
         - Elf
+        - Firbolg
+        - Genasi
+        - Gith
         - Gnome
+        - Goblin
+        - Goliath
+        - Grung
         - Half-Elf
-        - Halfling
         - Half-Orc
+        - Halfling
+        - Hobgoblin
         - Human
-        - Tielfing
+        - Kalashtar
+        - Kenku
+        - Kobold
+        - Lizardfolk
+        - Locathah
+        - Loxodon
+        - Minotaur
+        - Orc
+        - Shifter
+        - Simic Hybrid
+        - Tabaxi
+        - Tiefling
+        - Tortle
+        - Triton
+        - Vedalken
+        - Verdan
+        - Warforged
+        - Yuan-Ti
