@@ -235,7 +235,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Game](doc/games/game.md)
   - [Faker::Games::DnD](doc/games/dnd.md)
   - [Faker::Games::Dota](doc/games/dota.md)
-  - [Faker::Games::DungeonsAndDragons](doc/games/dungeons_and_dragons.md)
   - [Faker::Games::ElderScrolls](doc/games/elder_scrolls.md)
   - [Faker::Games::Fallout](doc/games/fallout.md)
   - [Faker::Games::HalfLife](doc/games/half_life.md)
