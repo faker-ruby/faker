@@ -13,7 +13,7 @@ module Faker
       #
       # @faker.version 2.13.0
       def ean(length = 8)
-        generate_barcode("barcode.ean_#{Integer(length).to_s}")
+        generate_barcode("barcode.ean_#{Integer(length)}")
       end
 
       ## Returns a EAN 8 or 13 digit format barcode number with composite string attached with check digit
@@ -110,7 +110,7 @@ module Faker
 
       def generate_barcode(key)
         barcode = parse(key)
-        check_digit = generate_check_digit *sum_even_odd(barcode)
+        check_digit = generate_check_digit(*sum_even_odd(barcode))
         "#{barcode}#{check_digit}"
       end
 
@@ -127,14 +127,14 @@ module Faker
         number = fake_num.to_i
         sum_even, sum_odd = 0, 0, index = 1
 
-        while number != 0 do
-          index % 2 ==  0 ? sum_even += number % 10 : sum_odd += number % 10
+        while number != 0
+          index.even? ? sum_even += number % 10 : sum_odd += number % 10
 
           number /= 10
           index += 1
         end
 
-        return sum_odd, sum_even
+        [sum_odd, sum_even]
       end
 
       ## Generates the check digits from sum passed
