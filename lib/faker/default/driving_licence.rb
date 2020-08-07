@@ -78,6 +78,17 @@ module Faker
         end
       end
 
+      ##
+      # Produces a random USA driving licence number by state code passed.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::DrivingLicence.usa_driving_licence                 #=> "V5598249"
+      #   Faker::DrivingLicence.usa_driving_licence('new mexico')   #=> "270692028"
+      #   Faker::DrivingLicence.usa_driving_licence('New Mexico')   #=> "68178637"
+      #
+      # @faker.version next
       def usa_driving_licence(state = 'California')
         bothify(fetch("driving_licence.usa_state_formats.#{state.to_s.strip.downcase.gsub(' ', '_')}"))
       rescue I18n::MissingTranslationData => _e
