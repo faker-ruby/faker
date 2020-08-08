@@ -22,7 +22,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.weight #=> "570g"
+      #   Faker::Drone.weight #=> "570 g"
       #
       # @faker.version next
       def weight
@@ -35,7 +35,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.max_ascent_speed #=> "4m/s"
+      #   Faker::Drone.max_ascent_speed #=> "4 m/s"
       #
       # @faker.version next
       def max_ascent_speed
@@ -48,7 +48,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.max_descent_speed #=> "4m/s"
+      #   Faker::Drone.max_descent_speed #=> "4 m/s"
       #
       # @faker.version next
       def max_descent_speed
@@ -61,7 +61,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.flight_time #=> "34Mins"
+      #   Faker::Drone.flight_time #=> "34 min"
       #
       # @faker.version next
       def flight_time
@@ -74,7 +74,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.max_altitude #=> "5000m"
+      #   Faker::Drone.max_altitude #=> "5000 m"
       #
       # @faker.version next
       def max_altitude
@@ -87,7 +87,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.max_flight_distance #=> "18500m"
+      #   Faker::Drone.max_flight_distance #=> "18500 m"
       #
       # @faker.version next
       def max_flight_distance
@@ -100,7 +100,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.max_speed #=> "19m/s"
+      #   Faker::Drone.max_speed #=> "19 m/s"
       #
       # @faker.version next
       def max_speed
@@ -113,7 +113,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.max_wind_resistance #=> "10.5m/s"
+      #   Faker::Drone.max_wind_resistance #=> "10.5 m/s"
       #
       # @faker.version next
       def max_wind_resistance
@@ -165,7 +165,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.battery_capacity #=> "3500mAh"
+      #   Faker::Drone.battery_capacity #=> "3500 mAh"
       #
       # @faker.version next
       def battery_capacity
@@ -204,7 +204,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Drone.battery_weight #=> "198g"
+      #   Faker::Drone.battery_weight #=> "198 g"
       #
       # @faker.version next
       def battery_weight
@@ -299,7 +299,7 @@ module Faker
       #
       # @faker.version next
       def shutter_speed_range
-        "#{fetch('drone.max_shutter_speed')}-#{fetch('drone.min_shutter_speed')}s"
+        "#{fetch('drone.max_shutter_speed')}-#{fetch('drone.min_shutter_speed')}#{fetch('drone.shutter_speed_units')}"
       end
 
       ##
@@ -312,7 +312,7 @@ module Faker
       #
       # @faker.version next
       def max_shutter_speed
-        "#{fetch('drone.max_shutter_speed')}s"
+        "#{fetch('drone.max_shutter_speed')}#{fetch('drone.shutter_speed_units')}"
       end
 
       ##
@@ -325,7 +325,7 @@ module Faker
       #
       # @faker.version next
       def min_shutter_speed
-        "#{fetch('drone.min_shutter_speed')}s"
+        "#{fetch('drone.min_shutter_speed')}#{fetch('drone.shutter_speed_units')}"
       end
     end
   end

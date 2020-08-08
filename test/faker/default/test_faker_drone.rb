@@ -12,35 +12,35 @@ class TestFakerDrone < Test::Unit::TestCase
   end
 
   def test_weight
-    assert @tester.weight.match(/[0-9]{3}g/)
+    assert @tester.weight.match(/[0-9]{3}\sg/)
   end
 
   def test_max_ascent_speed
-    assert @tester.max_ascent_speed.match(/[0-9]m\/s/)
+    assert @tester.max_ascent_speed.match(/[0-9]\sm\/s/)
   end
 
   def test_max_descent_speed
-    assert @tester.max_descent_speed.match(/[0-9]m\/s/)
+    assert @tester.max_descent_speed.match(/[0-9]\sm\/s/)
   end
 
   def test_max_flight_time
-    assert @tester.flight_time.match(/[0-9]{2}Mins/)
+    assert @tester.flight_time.match(/[0-9]{2} min/)
   end
 
   def test_max_altitude
-    assert @tester.max_altitude.match(/[0-9]{4}m/)
+    assert @tester.max_altitude.match(/[0-9]{4}\sm/)
   end
 
   def test_max_flight_distance
-    assert @tester.max_flight_distance.match(/[0-9]{4}m/)
+    assert @tester.max_flight_distance.match(/[0-9]{4}\sm/)
   end
 
   def test_max_speed
-    assert @tester.max_speed.match(/[0-9]{2}m\/s/)
+    assert @tester.max_speed.match(/[0-9]{2}\sm\/s/)
   end
 
   def test_max_wind_resistance
-    assert @tester.max_wind_resistance.match(/[0-9]{2}\.[0-9]m\/s/)
+    assert @tester.max_wind_resistance.match(/[0-9]{2}\.[0-9]\sm\/s/)
   end
 
   def test_max_anngular_velocity
@@ -64,7 +64,7 @@ class TestFakerDrone < Test::Unit::TestCase
   end
 
   def test_battery_weight
-    assert @tester.battery_weight.match(/[0-9]{3}g/)
+    assert @tester.battery_weight.match(/[0-9]{3}\sg/)
   end
 
   def test_battery_voltage
