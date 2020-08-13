@@ -130,6 +130,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Artist](doc/default/artist.md)
   - [Faker::Avatar](doc/default/avatar.md)
   - [Faker::Bank](doc/default/bank.md)
+  - [Faker::Barcode](doc/default/barcode.md)
   - [Faker::Beer](doc/default/beer.md)
   - [Faker::Blood](doc/default/blood.md)
   - [Faker::Boolean](doc/default/boolean.md)
