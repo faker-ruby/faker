@@ -158,6 +158,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Dessert](doc/default/dessert.md)
   - [Faker::Device](doc/default/device.md)
   - [Faker::DrivingLicence](doc/default/driving_licence.md)
+  - [Faker::Drone](doc/drone/drone.md)
   - [Faker::Educator](doc/default/educator.md)
   - [Faker::ElectricalComponents](doc/default/electrical_components.md)
   - [Faker::Esport](doc/default/esport.md)
