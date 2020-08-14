@@ -1,7 +1,7 @@
 en:
   faker:
     driving_licence:
-      usa_state_formats:
+      usa:
         alabama:
           - '######'
           - '#######'

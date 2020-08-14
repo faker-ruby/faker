@@ -90,7 +90,7 @@ module Faker
       #
       # @faker.version next
       def usa_driving_licence(state = 'California')
-        bothify(fetch("driving_licence.usa_state_formats.#{state.to_s.strip.downcase.gsub(' ', '_')}"))
+        bothify(fetch("driving_licence.usa.#{state.to_s.strip.downcase.gsub(' ', '_')}"))
       rescue I18n::MissingTranslationData => _e
         raise InvalidStatePassed, "Invalid state code passed for USA, '#{state}'"
       end
