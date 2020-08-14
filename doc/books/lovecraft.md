@@ -12,10 +12,11 @@ Faker::Books::Lovecraft.location #=> "Kingsport"
 
 Faker::Books::Lovecraft.word #=> "furtive"
 
-# Keyword arguments: word_count, random_words_to_add
+# Keyword arguments: word_count, random_words_to_add, open_compounds_allowed
 Faker::Books::Lovecraft.sentence #=> "Furtive antiquarian squamous dank cat loathsome amorphous lurk."
 Faker::Books::Lovecraft.sentence(word_count: 3) #=> "Daemoniac antediluvian fainted squamous comprehension gambrel nameless singular."
 Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1) #=> "Amorphous indescribable tenebrous."
+Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 0, open_compounds_allowed: true) #=> "Effulgence unmentionable gambrel." 
 
 # Keyword arguments: number, spaces_allowed
 Faker::Books::Lovecraft.words #=> ["manuscript", "abnormal", "singular"]
