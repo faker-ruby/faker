@@ -79,7 +79,11 @@ module Faker
           keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
         end
 
-        words(number: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: true).join(' ').capitalize + '.'
+        words(
+          number: word_count + rand(random_words_to_add.to_i).to_i,
+          supplemental: supplemental,
+          spaces_allowed: true
+        ).map { |w| w.delete(' ') }.join(' ').capitalize + '.'
       end
 
       ##
@@ -101,11 +105,7 @@ module Faker
           keywords << :supplemental if legacy_supplemental != NOT_GIVEN
         end
 
-        [].tap do |sentences|
-          1.upto(resolve(number)) do
-            sentences << sentence(word_count: 3, supplemental: supplemental)
-          end
-        end
+        1.upto(resolve(number)).map { sentence(word_count: 3, supplemental: supplemental) }
       end
 
       ##

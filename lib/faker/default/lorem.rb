@@ -64,7 +64,10 @@ module Faker
           keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
         end
 
-        words(number: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(locale_space).capitalize + locale_period
+        words(
+          number: word_count + rand(random_words_to_add.to_i),
+          supplemental: supplemental
+        ).map { |w| w.delete(locale_space) }.join(locale_space).capitalize + locale_period
       end
 
       def sentences(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
@@ -73,7 +76,7 @@ module Faker
           keywords << :supplemental if legacy_supplemental != NOT_GIVEN
         end
 
-        1.upto(resolve(number)).collect { sentence(word_count: 3, supplemental: supplemental) }
+        1.upto(resolve(number)).map { sentence(word_count: 3, supplemental: supplemental) }
       end
 
       # rubocop:disable Metrics/ParameterLists
