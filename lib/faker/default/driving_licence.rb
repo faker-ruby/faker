@@ -78,6 +78,23 @@ module Faker
         end
       end
 
+      ##
+      # Produces a random USA driving licence number by state code passed.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::DrivingLicence.usa_driving_licence                 #=> "V5598249"
+      #   Faker::DrivingLicence.usa_driving_licence('new mexico')   #=> "270692028"
+      #   Faker::DrivingLicence.usa_driving_licence('New Mexico')   #=> "68178637"
+      #
+      # @faker.version next
+      def usa_driving_licence(state = 'California')
+        bothify(fetch("driving_licence.usa.#{state.to_s.strip.downcase.gsub(' ', '_')}"))
+      rescue I18n::MissingTranslationData => _e
+        raise InvalidStatePassed, "Invalid state code passed for USA, '#{state}'"
+      end
+
       private
 
       def random_gender
@@ -102,6 +119,12 @@ module Faker
       def gb_licence_checksum
         regexify(/[0-9][A-Z][A-Z]/)
       end
+    end
+  end
+
+  class InvalidStatePassed < StandardError
+    def initialize(msg = 'Invalid state code passed')
+      super
     end
   end
 end
