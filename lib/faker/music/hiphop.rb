@@ -26,9 +26,21 @@ module Faker
         #   Faker::Music::Hiphop.groups #=> "OVO"
         #
         # @faker.version next
-
         def groups
           fetch('hiphop.groups')
+        end
+
+        ##
+        # Produces the name of a Hip Hop Group
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Music::Hiphop.subgeneres #=> "Alternative"
+        #
+        # @faker.version next
+        def subgenres
+          fetch('hiphop.subgenres')
         end
       end
     end

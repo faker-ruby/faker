@@ -14,4 +14,8 @@ class TestFakerHiphop < Test::Unit::TestCase
   def test_groups
     assert @tester.groups.match(/\w+/)
   end
+
+  def test_subgenres
+    assert @tester.subgenres.match(/\w+/)
+  end
 end
