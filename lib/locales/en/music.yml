@@ -30,8 +30,7 @@ en:
       "Flashdance: Original Soundtrack from the Motion Picture", "Whitney", "Confessions", "X&Y", "High School Musical", "High School Musical 2", "Viva la Vida or Death and All His Friends",
       "I Dreamed a Dream", "Recovery", "Midnight Memories", "Frozen", "Lemonade", "Brand New Eyes", "All We Know Is Falling", "Riot!", "Songs About Jane", "Hands All Over"]
       genres: ["Rock", "Pop", "Electronic", "Folk", "World", "Country", "Jazz", "Funk", "Soul", "Hip Hop", "Classical", "Latin", "Reggae", "Stage And Screen", "Blues", "Non Music", "Rap"]
-    hiphop: 
-      subgenres: ["Low Fi","Grime","Drill","Alternative","Country","Undeground","West Coast","East Coast","Conscious","Christian","Gangsta","Old School","Southern","Mid West","Trap","Boom Bap","Melodic"]
+    hiphop: subgenres: ["Low Fi","Grime","Drill","Alternative","Country","Undeground","West Coast","East Coast","Conscious","Christian","Gangsta","Old School","Southern","Mid West","Trap","Boom Bap","Melodic"]
       groups: ["Outcast","Griselda","Wu-Tang Clan","YMCMB","Maybach Music","Bad Boyz","Rock Nation","Jack Boys","OVO","Tribe Call Quest","Cypress Hill","Digital Undeground","Naughty By Nature","EPMD","Run D.M.C",
       "N.W.A","Salt & Pepa","TLC","G Unit","Bone Thugs & Harmony","Destiny's Child","Public Enemy","Mobb Deep","Eric B. & Rakim","Fugees",
       "The Sugarhill Gang","D12","Three 6 Mafia","Migos","Clipse","Odd Future","2 Live Crew","The Lox","Dipset" ]

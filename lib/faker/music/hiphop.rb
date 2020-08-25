@@ -31,7 +31,7 @@ module Faker
         end
 
         ##
-        # Produces the name of a Hip Hop Group
+        # Produces the name of a Hip Hop Subgenre
         #
         # @return [String]
         #
