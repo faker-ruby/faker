@@ -500,6 +500,38 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert raw_info[:email_verified]
   end
 
+  def test_omniauth_auth0
+    auth            = @tester.auth0
+    info            = auth[:info]
+    credentials     = auth[:credentials]
+    extra           = auth[:extra]
+    raw_info        = extra[:raw_info]
+    name            = info[:name].downcase
+    first_name      = name.split(' ').first
+    last_name       = name.split(' ').last
+
+    assert_equal 'auth0', auth[:provider]
+    assert_instance_of String, auth[:uid]
+    assert_equal 30, auth[:uid].length
+    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert_equal auth[:uid], raw_info[:sub]
+    assert_instance_of String, info[:name]
+    assert_instance_of String, info[:nickname]
+    assert_instance_of String, info[:image]
+    assert_instance_of String, credentials[:token]
+    assert boolean?(credentials[:expires])
+    assert_instance_of String, credentials[:id_token]
+    assert_instance_of Integer, credentials[:expires_at]
+    assert_instance_of String, credentials[:token_type]
+    assert_equal auth[:uid], raw_info[:sub]
+    assert_equal info[:name], raw_info[:name]
+    assert_equal info[:email], raw_info[:email]
+    assert_equal info[:image], raw_info[:picture]
+    assert_equal info[:nickname], raw_info[:nickname]
+    assert_instance_of Integer, raw_info[:updated_at]
+    assert boolean?(raw_info[:email_verified])
+  end
+
   def word_count(string)
     string.split(' ').length
   end

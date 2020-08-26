@@ -290,4 +290,35 @@ Faker::Omniauth.apple #=>
     }
   }
 }
+
+Faker::Omniauth.auth0 #=>
+{
+  :provider => "auth0",
+  :uid => "auth0|b9b4a8bb75287b82a4037d7d",
+  :info => {
+    :name => "Delena Armstrong",
+    :nickname => "delenaarmstrong",
+    :email => "delena.armstrong@example.net",
+    :image => "https://placehold.it/300x300.png"
+  },
+  :credentials => {
+    :token => "eB1Ok9qME4hlurQcA7WnN_XykOmt8B4U",
+    :expires => true,
+    :id_token => "Zq2E5uizos32ffqN5BKTLiervGvJcm...",
+    :expires_at => 1629461739,
+    :token_type => "Bearer",
+    :refresh_token => nil
+  },
+  :extra => {
+    :raw_info => {
+      :sub => "auth0|b9b4a8bb75287b82a4037d7d",
+      :name => "Delena Armstrong",
+      :email => "delena.armstrong@example.net",
+      :picture => "https://placehold.it/300x300.png",
+      :nickname => "delenaarmstrong",
+      :updated_at => 1587650223,
+      :email_verified => true
+    }
+  }
+}
 ```
