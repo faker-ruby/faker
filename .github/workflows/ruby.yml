@@ -35,6 +35,9 @@ jobs:
       fail-fast: false # don't fail all matrix builds if one fails
       matrix:
         ruby:
+          - '2.5' 
+          - '2.6' 
+          - '2.7'
           - truffleruby-head
     continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
     steps:
