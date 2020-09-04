@@ -89,7 +89,7 @@ module Faker
       # @example
       #   Faker::Quote.fortune_cookie #=> "This cookie senses that you are superstitious; it is an inclination that is bad for your mental health."
       #
-      # @faker.version 2.13.0
+      # @faker.version next
       def fortune_cookie
         fetch('quote.fortune_cookie')
       end
