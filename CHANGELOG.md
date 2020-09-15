@@ -15,6 +15,13 @@ This version:
 - [PR #2081](https://github.com/faker-ruby/faker/pull/2081) Remove redundant condition branch for Ruby 2.4
 - [PR #2077](https://github.com/faker-ruby/faker/pull/2077) Rename tests according to the `test*.rb` pattern so that they run
 
+## Documentation
+
+- [PR #2095](https://github.com/faker-ruby/faker/pull/2095) Fix a typo for `Games::DnD.species`
+- [PR #2094](https://github.com/faker-ruby/faker/pull/2094) Correct method name from race to species in DnD doc
+- [PR #2079](https://github.com/faker-ruby/faker/pull/2079) Add `Music::PearlJam` to Readme
+- [PR #2058](https://github.com/faker-ruby/faker/pull/2058) Add YARD doc for Faker::Code
+
 ## Feature Request
 
 - [PR #2117](https://github.com/faker-ruby/faker/pull/2117) Add Truffleruby head to CI
@@ -24,13 +31,6 @@ This version:
 - [PR #2096](https://github.com/faker-ruby/faker/pull/2096) 2091 faker drones
 - [PR #2092](https://github.com/faker-ruby/faker/pull/2092) Add a street fighter generator
 - [PR #2082](https://github.com/faker-ruby/faker/pull/2082) Enable `Lint/UnifiedInteger` cop
-
-## Documentation
-
-- [PR #2095](https://github.com/faker-ruby/faker/pull/2095) Fix a typo for `Games::DnD.species`
-- [PR #2094](https://github.com/faker-ruby/faker/pull/2094) Correct method name from race to species in DnD doc
-- [PR #2079](https://github.com/faker-ruby/faker/pull/2079) Add `Music::PearlJam` to Readme
-- [PR #2058](https://github.com/faker-ruby/faker/pull/2058) Add YARD doc for Faker::Code
 
 ## Update locales
 
