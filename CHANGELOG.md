@@ -2,9 +2,6 @@
 
 ## [v2.14.0](https://github.com/faker-ruby/faker/tree/v2.14.0) (2020-09-15)
 
-This version:
--
-
 ## Bug/Fixes
 
 - [PR #2119](https://github.com/faker-ruby/faker/pull/2119) Fixed failing spec for phone number
