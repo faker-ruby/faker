@@ -55,8 +55,10 @@ nb-NO:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
+    country_code: ['47']
+
     phone_number:
-      formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]
+      formats: ["########", "## ## ## ##", "### ## ###", "## ## ## ##"]
 
     cell_phone:
-      formats: ["########", "## ## ## ##", "### ## ###", "+47 ## ## ## ##"]
+      formats: ["########", "## ## ## ##", "### ## ###", "## ## ## ##"]

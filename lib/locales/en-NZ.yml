@@ -150,8 +150,10 @@ en-NZ:
         - "#{street_address}, #{community}, #{city} #{postcode}"
         - "#{mail_box} #{community} #{postcode}"
         - "#{mail_box}, #{community}, #{city} #{postcode}"
+
+    country_code: ['64']
     phone_number:
-      formats: ['0# ### ####', '+64 # ### ####']
+      formats: ['0# ### ####', '# ### ####']
     cell_phone:
       formats: ['02##-###-###', '02## ### ###', '02# ### ###', '02#-###-####']
 

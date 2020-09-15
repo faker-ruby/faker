@@ -39,6 +39,7 @@ jobs:
           - '2.6' 
           - '2.7'
           - 'head'
+          - truffleruby-head
     continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
     steps:
     - uses: actions/checkout@v2
