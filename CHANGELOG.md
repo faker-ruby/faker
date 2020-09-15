@@ -20,7 +20,7 @@ This version:
 - [PR #2095](https://github.com/faker-ruby/faker/pull/2095) Fix a typo for `Games::DnD.species`
 - [PR #2094](https://github.com/faker-ruby/faker/pull/2094) Correct method name from race to species in DnD doc
 - [PR #2079](https://github.com/faker-ruby/faker/pull/2079) Add `Music::PearlJam` to Readme
-- [PR #2058](https://github.com/faker-ruby/faker/pull/2058) Add YARD doc for Faker::Code
+- [PR #2058](https://github.com/faker-ruby/faker/pull/2058) Add YARD doc for `Faker::Code`
 
 ## Feature Request
 
@@ -36,7 +36,7 @@ This version:
 
 - [PR #2100](https://github.com/faker-ruby/faker/pull/2100) Remove Gaylord
 - [PR #2087](https://github.com/faker-ruby/faker/pull/2087) Fix/remove country code from phone numbers
-- [PR #2086](https://github.com/faker-ruby/faker/pull/2086) removing country code from phone numbers to fr-CH
+- [PR #2086](https://github.com/faker-ruby/faker/pull/2086) removing country code from phone numbers to `fr-CH`
 - [PR #2084](https://github.com/faker-ruby/faker/pull/2084) removed extra + sign from country codes
 - [PR #2078](https://github.com/faker-ruby/faker/pull/2078) Removed 07624 from UK mobile numbers
 - [PR #2073](https://github.com/faker-ruby/faker/pull/2073) Add missing azimuth field for fr locale
