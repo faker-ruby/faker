@@ -1,5 +1,54 @@
 # Change Log
 
+## [v2.14.0](https://github.com/faker-ruby/faker/tree/v2.14.0) (2020-09-15)
+
+## Bug/Fixes
+
+- [PR #2119](https://github.com/faker-ruby/faker/pull/2119) Fixed failing spec for phone number
+
+## Chores
+
+- [PR #2088](https://github.com/faker-ruby/faker/pull/2088) Remove the space in the word "turtle" in the Creature::Animals faker
+- [PR #2081](https://github.com/faker-ruby/faker/pull/2081) Remove redundant condition branch for Ruby 2.4
+- [PR #2077](https://github.com/faker-ruby/faker/pull/2077) Rename tests according to the `test*.rb` pattern so that they run
+
+## Documentation
+
+- [PR #2095](https://github.com/faker-ruby/faker/pull/2095) Fix a typo for `Games::DnD.species`
+- [PR #2094](https://github.com/faker-ruby/faker/pull/2094) Correct method name from race to species in DnD doc
+- [PR #2079](https://github.com/faker-ruby/faker/pull/2079) Add `Music::PearlJam` to Readme
+- [PR #2058](https://github.com/faker-ruby/faker/pull/2058) Add YARD doc for `Faker::Code`
+
+## Feature Request
+
+- [PR #2117](https://github.com/faker-ruby/faker/pull/2117) Add Truffleruby head to CI
+- [PR #2104](https://github.com/faker-ruby/faker/pull/2104) 2097 Added barcodes
+- [PR #2090](https://github.com/faker-ruby/faker/pull/2090) 1693 USA driving license
+- [PR #2098](https://github.com/faker-ruby/faker/pull/2098) Update DnD generator
+- [PR #2096](https://github.com/faker-ruby/faker/pull/2096) 2091 faker drones
+- [PR #2092](https://github.com/faker-ruby/faker/pull/2092) Add a street fighter generator
+- [PR #2082](https://github.com/faker-ruby/faker/pull/2082) Enable `Lint/UnifiedInteger` cop
+
+## Update locales
+
+- [PR #2100](https://github.com/faker-ruby/faker/pull/2100) Remove Gaylord
+- [PR #2087](https://github.com/faker-ruby/faker/pull/2087) Fix/remove country code from phone numbers
+- [PR #2086](https://github.com/faker-ruby/faker/pull/2086) removing country code from phone numbers to `fr-CH`
+- [PR #2084](https://github.com/faker-ruby/faker/pull/2084) removed extra + sign from country codes
+- [PR #2078](https://github.com/faker-ruby/faker/pull/2078) Removed 07624 from UK mobile numbers
+- [PR #2073](https://github.com/faker-ruby/faker/pull/2073) Add missing azimuth field for fr locale
+- [PR #2072](https://github.com/faker-ruby/faker/pull/2072) Remove time formats from file
+
+Update local dependencies
+
+- Update rubocop requirement from = 0.87.1 to = 0.88.0 (#2080)
+- Update rubocop requirement from = 0.87.0 to = 0.87.1 (#2075)
+- Update rubocop requirement from = 0.86.0 to = 0.87.0 (#2074)
+- Bumps i18n from 1.8.4 to 1.8.5 (#2089)
+- Bumps i18n from 1.8.3 to 1.8.4 (#2083)
+
+------------------------------------------------------------------------------
+
 ## [v2.13.0](https://github.com/faker-ruby/faker/tree/v2.13.0) (2020-06-24)
 
 This version:
