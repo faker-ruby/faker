@@ -42,6 +42,19 @@ module Faker
         def klass
           fetch('heroes.klasses')
         end
+
+        ##
+        # Produces the name of an artifact from Heroes 3.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::Heroes.artifact #=> "Armageddon's Blade"
+        #
+        # @faker.version next
+        def artifact
+          fetch('heroes.artifacts')
+        end
       end
     end
   end
