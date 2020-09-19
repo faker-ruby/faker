@@ -11,7 +11,7 @@ module Faker
       # @example
       #   Faker::Drone.name #=> "DJI Mavic Air 2"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def name
         fetch('drone.name')
       end
@@ -24,7 +24,7 @@ module Faker
       # @example
       #   Faker::Drone.weight #=> "570 g"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def weight
         parse('drone.weight')
       end
@@ -37,7 +37,7 @@ module Faker
       # @example
       #   Faker::Drone.max_ascent_speed #=> "4 m/s"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_ascent_speed
         parse('drone.max_ascent_speed')
       end
@@ -50,7 +50,7 @@ module Faker
       # @example
       #   Faker::Drone.max_descent_speed #=> "4 m/s"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_descent_speed
         parse('drone.max_descent_speed')
       end
@@ -63,7 +63,7 @@ module Faker
       # @example
       #   Faker::Drone.flight_time #=> "34 min"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def flight_time
         parse('drone.flight_time')
       end
@@ -76,7 +76,7 @@ module Faker
       # @example
       #   Faker::Drone.max_altitude #=> "5000 m"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_altitude
         parse('drone.max_altitude')
       end
@@ -89,7 +89,7 @@ module Faker
       # @example
       #   Faker::Drone.max_flight_distance #=> "18500 m"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_flight_distance
         parse('drone.max_flight_distance')
       end
@@ -102,7 +102,7 @@ module Faker
       # @example
       #   Faker::Drone.max_speed #=> "19 m/s"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_speed
         parse('drone.max_speed')
       end
@@ -115,7 +115,7 @@ module Faker
       # @example
       #   Faker::Drone.max_wind_resistance #=> "10.5 m/s"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_wind_resistance
         parse('drone.max_wind_resistance')
       end
@@ -128,7 +128,7 @@ module Faker
       # @example
       #   Faker::Drone.max_angular_velocity #=> "250 degree/s"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_angular_velocity
         parse('drone.max_angular_velocity')
       end
@@ -141,7 +141,7 @@ module Faker
       # @example
       #   Faker::Drone.max_tilt_angle #=> "35 degrees"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_tilt_angle
         parse('drone.max_tilt_angle')
       end
@@ -154,7 +154,7 @@ module Faker
       # @example
       #   Faker::Drone.operating_temperature #=> "14-104F"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def operating_temperature
         parse('drone.operating_temperature')
       end
@@ -167,7 +167,7 @@ module Faker
       # @example
       #   Faker::Drone.battery_capacity #=> "3500 mAh"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def battery_capacity
         parse('drone.battery_capacity')
       end
@@ -180,7 +180,7 @@ module Faker
       # @example
       #   Faker::Drone.battery_voltage #=> "13.2V"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def battery_voltage
         parse('drone.battery_voltage')
       end
@@ -193,7 +193,7 @@ module Faker
       # @example
       #   Faker::Drone.battery_type #=> "LiPo 4S"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def battery_type
         parse('drone.battery_type')
       end
@@ -206,7 +206,7 @@ module Faker
       # @example
       #   Faker::Drone.battery_weight #=> "198 g"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def battery_weight
         parse('drone.battery_weight')
       end
@@ -219,7 +219,7 @@ module Faker
       # @example
       #   Faker::Drone.charging_temperature #=> "41-104F"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def charging_temperature
         parse('drone.charging_temperature')
       end
@@ -232,7 +232,7 @@ module Faker
       # @example
       #   Faker::Drone.max_charging_power #=> "38W"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_charging_power
         parse('drone.max_charging_power')
       end
@@ -245,7 +245,7 @@ module Faker
       # @example
       #   Faker::Drone.iso #=> "100-3200"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def iso
         parse('drone.iso')
       end
@@ -258,7 +258,7 @@ module Faker
       # @example
       #   Faker::Drone.max_resolution #=> "48MP"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_resolution
         parse('drone.max_resolution')
       end
@@ -271,7 +271,7 @@ module Faker
       # @example
       #   Faker::Drone.photo_format #=> "JPEG"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def photo_format
         parse('drone.photo_format')
       end
@@ -284,7 +284,7 @@ module Faker
       # @example
       #   Faker::Drone.video_format #=> "MP4"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def video_format
         parse('drone.video_format')
       end
@@ -297,7 +297,7 @@ module Faker
       # @example
       #   Faker::Drone.shutter_speed_range #=> "8-1/8000s"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def shutter_speed_range
         "#{fetch('drone.max_shutter_speed')}-#{fetch('drone.min_shutter_speed')}#{fetch('drone.shutter_speed_units')}"
       end
@@ -310,7 +310,7 @@ module Faker
       # @example
       #   Faker::Drone.max_shutter_speed #=> "60s"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def max_shutter_speed
         "#{fetch('drone.max_shutter_speed')}#{fetch('drone.shutter_speed_units')}"
       end
@@ -323,7 +323,7 @@ module Faker
       # @example
       #   Faker::Drone.min_shutter_speed #=> "1/8000s"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def min_shutter_speed
         "#{fetch('drone.min_shutter_speed')}#{fetch('drone.shutter_speed_units')}"
       end

@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Games::StreetFighter.character #=> "Ryu"
         #
-        # @faker.version next
+        # @faker.version 2.14.0
         def character
           fetch('games.street_fighter.characters')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::StreetFighter.stage #=> "Volcanic Rim"
         #
-        # @faker.version next
+        # @faker.version 2.14.0
         def stage
           fetch('games.street_fighter.stages')
         end
@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Games::StreetFighter.quote #=> "Go home and be a family man."
         #
-        # @faker.version next
+        # @faker.version 2.14.0
         def quote
           fetch('games.street_fighter.quotes')
         end
@@ -51,7 +51,7 @@ module Faker
         # @example
         #   Faker::Games::StreetFighter.move #=> "Shoryuken"
         #
-        # @faker.version next
+        # @faker.version 2.14.0
         def move
           fetch('games.street_fighter.moves')
         end

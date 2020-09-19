@@ -88,7 +88,7 @@ module Faker
       #   Faker::DrivingLicence.usa_driving_licence('new mexico')   #=> "270692028"
       #   Faker::DrivingLicence.usa_driving_licence('New Mexico')   #=> "68178637"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def usa_driving_licence(state = 'California')
         bothify(fetch("driving_licence.usa.#{state.to_s.strip.downcase.gsub(' ', '_')}"))
       rescue I18n::MissingTranslationData => _e
