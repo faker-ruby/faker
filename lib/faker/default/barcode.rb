@@ -11,7 +11,7 @@ module Faker
       #     Faker::Barcode.ean(8)   => "30152700"
       #     Faker::Barcode.ean(13)  => "2115190480285"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def ean(length = 8)
         generate_barcode("barcode.ean_#{Integer(length)}")
       end
@@ -24,7 +24,7 @@ module Faker
       #     Faker::Barcode.ean_with_composite_sumbology(8)   => "38357961|XUYJ3266"
       #     Faker::Barcode.ean_with_composite_sumbology(13)  => "9530722443911|CKHWQHID"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def ean_with_composite_symbology(length = 8)
         "#{ean(length)}|#{bothify(parse('barcode.composite_symbol'))}"
       end
@@ -35,7 +35,7 @@ module Faker
       #  @example
       #     Faker::Barcode.upc_a      => "766807541831"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def upc_a
         generate_barcode('barcode.upc_a')
       end
@@ -46,7 +46,7 @@ module Faker
       #  @example
       #     Faker::Barcode.upc_e      => "03746820"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def upc_e
         generate_barcode('barcode.upc_e')
       end
@@ -57,7 +57,7 @@ module Faker
       #  @example
       #     Faker::Barcode.upc_a_with_composite_symbology      => "790670155765|JOVG6208"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def upc_a_with_composite_symbology
         "#{upc_a}|#{bothify(parse('barcode.composite_symbol'))}"
       end
@@ -68,7 +68,7 @@ module Faker
       #  @example
       #     Faker::Barcode.upc_e_with_composite_symbology      => "05149247|BKZX9722"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def upc_e_with_composite_symbology
         "#{upc_e}|#{bothify(parse('barcode.composite_symbol'))}"
       end
@@ -79,7 +79,7 @@ module Faker
       #  @example
       #     Faker::Barcode.isbn      => "9798363807732"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def isbn
         generate_barcode('barcode.isbn')
       end
@@ -90,7 +90,7 @@ module Faker
       #  @example
       #     Faker::Barcode.ismn      => "9790527672897"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def ismn
         generate_barcode('barcode.ismn')
       end
@@ -101,7 +101,7 @@ module Faker
       #  @example
       #     Faker::Barcode.issn      => "9775541703338"
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def issn
         generate_barcode('barcode.issn')
       end
@@ -122,7 +122,7 @@ module Faker
       #   Faker::Barcode.send(:sum_even_odd, 12345)   => [9, 5]
       #   Faker::Barcode.send(:sum_even_odd, 87465)   => [17, 13]
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def sum_even_odd(fake_num)
         number = fake_num.to_i
         sum_even, sum_odd = 0, 0, index = 1
@@ -145,7 +145,7 @@ module Faker
       #   Faker::Barcode.send(:generate_check_digit, 12, 4)   => 0
       #   Faker::Barcode.send(:generate_check_digit, 23, 5)   => 6
       #
-      # @faker.version next
+      # @faker.version 2.14.0
       def generate_check_digit(odd_sum, even_sum)
         (10 - (odd_sum * 3 + even_sum) % 10) % 10
       end
