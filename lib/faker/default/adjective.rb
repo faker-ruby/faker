@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Adjective.nice #=> "Kind"
       #
-      # @faker.version x.x.x
+      # @faker.version 1.6.5
       def nice
         fetch('adjective.nice')
       end
@@ -26,7 +26,7 @@ module Faker
       # @example
       #   Faker::Adjective.bad #=> "Creepy"
       #
-      # @faker.version x.x.x
+      # @faker.version 1.6.5
       def bad
         fetch('adjective.bad')
       end
