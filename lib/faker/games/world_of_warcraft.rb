@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::WorldOfWarcraft.class_name #=> "Druid"
         #
-        # @faker.version 1.9.2
+        # @faker.version next
         def class_name
           fetch('games.world_of_warcraft.class_names')
         end
@@ -50,7 +50,7 @@ module Faker
         # @example
         #   Faker::Games::WorldOfWarcraft.quote #=> "These are dark times indeed."
         #
-        # @faker.version next
+        # @faker.version 1.9.2
         def quote
           fetch('games.world_of_warcraft.quotes')
         end
