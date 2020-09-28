@@ -20,6 +20,10 @@ class TestFakerTvShowsSimpsons < Test::Unit::TestCase
     10.times { assert @tester.quote.match(/[\w]+/) }
   end
 
+  def test_episode_titles
+    10.times { assert @tester.episode_title.match(/[\w]+/) }
+  end
+
   def test_locales
     [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'

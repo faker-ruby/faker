@@ -17,7 +17,7 @@ require File.dirname(__FILE__) + '/../lib/faker/version.rb'
 version  = Faker::VERSION
 download = 'http://rubyforge.org/projects/faker'
 
-class Fixnum
+class Integer
   def ordinal
     # teens
     return 'th' if (10..19).cover?(self % 100)

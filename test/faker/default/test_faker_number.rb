@@ -38,9 +38,9 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_decimal
-    assert @tester.decimal(l_digits: 1, r_digits: 1).to_s.match(/[0-9]{1}\.[0-9]{1}/)
-    assert @tester.decimal(l_digits: 2).to_s.match(/[0-9]{2}\.[0-9]{2}/)
-    assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match(/[0-9]{4}\.[0-9]{5}/)
+    assert @tester.decimal(l_digits: 1, r_digits: 1).to_s.match(/[0-9]{1}\.[1-9]{1}/)
+    assert @tester.decimal(l_digits: 2).to_s.match(/[0-9]{2}\.[0-9]{1}[1-9]{1}/)
+    assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match(/[0-9]{4}\.[0-9]{4}[1-9]{1}/)
   end
 
   def test_digit
