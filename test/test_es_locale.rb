@@ -91,6 +91,8 @@ class TestEsLocale < Test::Unit::TestCase
 
   def test_es_vehicle_methods
     assert Faker::Vehicle.license_plate.is_a? String
+    assert Faker::Vehicle.license_plate.match(/\d{4}[A-Z]{3}/)
+    assert Faker::Vehicle.license_plate(state_abbreviation: 'GR').match(/GR\d{4}[A-Z]{1,2}/)
   end
 
   def test_es_subscription_methods

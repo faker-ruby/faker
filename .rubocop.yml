@@ -1,12 +1,12 @@
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
+
+Layout/LineLength:
+  Description: This cop checks the length of lines in the source code. The maximum length is configurable.
+  Enabled: false
 
 Lint/AmbiguousBlockAssociation:
   Description: This cop checks for ambiguous block association with method when param passed without parentheses.
-  Enabled: false
-
-Lint/UnifiedInteger:
-  Description: This cop checks for using Fixnum or Bignum constant.
   Enabled: false
 
 Metrics/AbcSize:
@@ -27,10 +27,6 @@ Metrics/CyclomaticComplexity:
   Enabled: false
   Max: 6
 
-Metrics/LineLength:
-  Description: This cop checks the length of lines in the source code. The maximum length is configurable.
-  Enabled: false
-
 Metrics/MethodLength:
   Description: This cop checks if the length of a method exceeds some maximum value.
   Enabled: false
@@ -39,6 +35,11 @@ Metrics/PerceivedComplexity:
   Description: A complexity metric geared towards measuring complexity for a human reader.
   Enabled: false
   Max: 7
+
+Style/AsciiComments:
+  Description: This cop checks for non-ascii (non-English) characters in comments.
+  Exclude:
+    - 'lib/faker/default/university.rb'
 
 Style/DateTime:
   Description: This cop checks for consistent usage of the DateTime class over the Time class.

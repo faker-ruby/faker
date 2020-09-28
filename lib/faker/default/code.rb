@@ -4,32 +4,76 @@ module Faker
   class Code < Base
     flexible :code
     class << self
-      # Generates a 10 digit NPI (National Provider Identifier
-      # issued to health care providers in the United States)
+      ##
+      # Produces a random NPI (National Provider Identifer) code.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Code.npi #=> "9804062802"
+      #
+      # @faker.version 1.9.4
       def npi
         rand(10**10).to_s.rjust(10, '0')
       end
 
-      # By default generates 10 sign isbn code in format 123456789-X
-      # You can pass 13 to generate new 13 sign code
+      ##
+      # Produces a random ISBN (International Standard Book Number) code.
+      #
+      # @param base [Integer] the length of the code to generate (either 10 or 13)
+      # @return [String]
+      #
+      # @example
+      #   Faker::Code.isbn(base: 13) #=> "896579606969-8"
+      # @example
+      #   Faker::Code.isbn #=> "170366802-2"
+      #
+      # @faker.version 2.2.0
       def isbn(legacy_base = NOT_GIVEN, base: 10)
         warn_for_deprecated_arguments do |keywords|
           keywords << :base if legacy_base != NOT_GIVEN
         end
 
-        base == 13 ? generate_base13_isbn : generate_base10_isbn
+        case base
+        when 10 then generate_base10_isbn
+        when 13 then generate_base13_isbn
+        else raise ArgumentError, 'base must be 10 or 13'
+        end
       end
 
-      # By default generates 13 sign ean code in format 1234567890123
-      # You can pass 8 to generate ean8 code
+      ##
+      # Produces a random EAN (European Article Number) code.
+      #
+      # @param base [Integer] the length of the code to generate (either 8 or 13)
+      # @return [String]
+      #
+      # @example
+      #   Faker::Code.ean(base: 8) #=> "36941070"
+      # @example
+      #   Faker::Code.ean #=> "9941880131907"
+      #
+      # @faker.version 2.2.0
       def ean(legacy_base = NOT_GIVEN, base: 13)
         warn_for_deprecated_arguments do |keywords|
           keywords << :base if legacy_base != NOT_GIVEN
         end
 
-        base == 8 ? generate_base8_ean : generate_base13_ean
+        case base
+        when 8 then generate_base8_ean
+        when 13 then generate_base13_ean
+        else raise ArgumentError, 'base must be 3 or 13'
+        end
       end
 
+      ##
+      # Produces a random RUT (Rol Unico Nacional) code.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Code.rut #=> "91611842-2"
+      #
+      # @faker.version 1.9.4
       def rut
         value = Number.number(digits: 8).to_s
         vd = rut_verificator_digit(value)
@@ -38,6 +82,23 @@ module Faker
 
       # By default generates a Singaporean NRIC ID for someone
       # who is born between the age of 18 and 65.
+      #
+      # Produces a random NRIC (National Registry Identity Card) code.
+      #
+      # @param min_age [Integer] the min age of the person in years
+      # @param max_age [Integer] the max age of the person in years
+      # @return [String]
+      #
+      # @example
+      #   Faker::Code.nric(min_age: 25, max_age: 50) #=> "S9347283G"
+      # @example
+      #   Faker::Code.nric(max_age: 55) #=> "S7876903C"
+      # @example
+      #   Faker::Code.nric(min_age: 25) #=> "S6281697Z"
+      # @example
+      #   Faker::Code.nric #=> "S6372958B"
+      #
+      # @faker.version 2.2.0
       def nric(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
         warn_for_deprecated_arguments do |keywords|
           keywords << :min_age if legacy_min_age != NOT_GIVEN
@@ -52,19 +113,41 @@ module Faker
         "#{prefix}#{values}#{check_alpha}"
       end
 
-      # Generate GSM modem, device or mobile phone 15 digit IMEI number.
+      ##
+      # Produces a random IMEI (International Mobile Equipment Number) code.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Code.imei #=> "492033129092256"
+      #
+      # @faker.version 1.9.4
       def imei
         generate_imei
       end
 
-      # Retrieves a real Amazon ASIN code list taken from
-      # https://archive.org/details/asin_listing
+      ##
+      # Retrieves a real Amazon ASIN code from https://archive.org/details/asin_listing
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Code.asin #=> "B000MZW1GE"
+      #
+      # @faker.version 1.9.4
       def asin
         fetch('code.asin')
       end
 
-      # Generates Social Insurance Number issued in Canada
-      # https://en.wikipedia.org/wiki/Social_Insurance_Number
+      ##
+      # Produces a random SIN (Social Insurance Number for Canada) code.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Code.sin #=> "996586962"
+      #
+      # @faker.version 1.9.4
       def sin
         # 1   - province or temporary resident
         # 2-8 - random numbers
@@ -90,8 +173,6 @@ module Faker
       def generate_imei
         str = Array.new(15, 0)
         sum = 0
-        t = 0
-        len_offset = 0
         len = 15
 
         # Fill in the first two values of the string based with the specified prefix.

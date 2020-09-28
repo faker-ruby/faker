@@ -23,7 +23,7 @@ zh-TW:
       name:
         - "#{last_name}#{first_name}"
       name_with_middle: # Chinese names don't have middle names or spaces
-        - "#{name}"
+        - "#{last_name}#{first_name}"
 
     phone_number:
       formats: ['###-########', '####-########', '###########']

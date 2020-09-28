@@ -2,7 +2,7 @@
 
 require_relative '../../test_helper'
 
-class TestFakerGamesHeroesOfTheStorm < Test::Unit::TestCase
+class TestFakerHeroesOfTheStorm < Test::Unit::TestCase
   def setup
     @tester = Faker::Games::HeroesOfTheStorm
   end
@@ -11,8 +11,8 @@ class TestFakerGamesHeroesOfTheStorm < Test::Unit::TestCase
     assert @tester.battleground.match(/\w+/)
   end
 
-  def test_class
-    assert @tester.class.match(/\w+/)
+  def test_class_name
+    assert @tester.class_name.match(/\w+/)
   end
 
   def test_hero

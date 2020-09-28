@@ -5,6 +5,22 @@ module Faker
     class << self
       SUPPORTED_COLORIZATIONS = %w[red green blue].freeze
 
+      ##
+      # Produces a random image URL from loremflickr.com.
+      #
+      # @param size [String] Specifies the size of image to generate.
+      # @param search_terms [Array<String>] Adds search terms to the image URL.
+      # @param match_all [Boolean] Add "all" as part of the URL.
+      # @return [String]
+      #
+      # @example
+      #   Faker::LoremFlickr.image #=> "https://loremflickr.com/300/300"
+      #   Faker::LoremFlickr.image(size: "50x60") #=> "https://loremflickr.com/50/60"
+      #   Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/50/60/sports"
+      #   Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/50/60/sports,fitness"
+      #   Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/50/60/sports,fitness/all"
+      #
+      # @faker.version 1.9.0
       # rubocop:disable Metrics/ParameterLists
       def image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: [], match_all: false)
         # rubocop:enable Metrics/ParameterLists
@@ -17,6 +33,22 @@ module Faker
         build_url(size, nil, search_terms, match_all)
       end
 
+      ##
+      # Produces a random grayscale image URL from loremflickr.com.
+      #
+      # @param size [String] Specifies the size of image to generate.
+      # @param search_terms [Array<String>] Adds search terms to the image URL.
+      # @param match_all [Boolean] Add "all" as part of the URL.
+      # @return [String]
+      #
+      # @example
+      #   Faker::LoremFlickr.grayscale_image #=> "https://loremflickr.com/g/300/300/all"
+      #   Faker::LoremFlickr.grayscale_image(size: "50x60") #=> "https://loremflickr.com/g/50/60/all"
+      #   Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/g/50/60/sports"
+      #   Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/50/60/g/sports,fitness"
+      #   Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/g/50/60/sports,fitness/all"
+      #
+      # @faker.version 1.9.0
       # rubocop:disable Metrics/ParameterLists
       def grayscale_image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false)
         # rubocop:enable Metrics/ParameterLists
@@ -31,6 +63,22 @@ module Faker
         build_url(size, 'g', search_terms, match_all)
       end
 
+      ##
+      # Produces a random pixelated image URL from loremflickr.com.
+      #
+      # @param size [String] Specifies the size of image to generate.
+      # @param search_terms [Array<String>] Adds search terms to the image URL.
+      # @param match_all [Boolean] Add "all" as part of the URL.
+      # @return [String]
+      #
+      # @example
+      #   Faker::LoremFlickr.pixelated_image #=> "https://loremflickr.com/p/300/300/all"
+      #   Faker::LoremFlickr.pixelated_image(size: "50x60") #=> "https://loremflickr.com/p/50/60/all"
+      #   Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/p/50/60/sports"
+      #   Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/p/50/60/sports,fitness"
+      #   Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/p/50/60/sports,fitness/all"
+      #
+      # @faker.version 1.9.0
       # rubocop:disable Metrics/ParameterLists
       def pixelated_image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false)
         # rubocop:enable Metrics/ParameterLists
@@ -45,6 +93,23 @@ module Faker
         build_url(size, 'p', search_terms, match_all)
       end
 
+      ##
+      # Produces a random colorized image URL from loremflickr.com.
+      #
+      # @param size [String] Specifies the size of image to generate.
+      # @param color [String] Specifies the color of image to generate.
+      # @param search_terms [Array<String>] Adds search terms to the image URL.
+      # @param match_all [Boolean] Add "all" as part of the URL.
+      # @return [String]
+      #
+      # @example
+      #   Faker::LoremFlickr.image #=> "https://loremflickr.com/red/300/300/all"
+      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue') #=> "https://loremflickr.com/blue/50/60/all"
+      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports']) #=> "https://loremflickr.com/blue/50/60/sports"
+      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/blue/50/60/sports,fitness"
+      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/blue/50/60/sports,fitness/all"
+      #
+      # @faker.version 1.9.0
       # rubocop:disable Metrics/ParameterLists
       def colorized_image(legacy_size = NOT_GIVEN, legacy_color = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', color: 'red', search_terms: ['all'], match_all: false)
         # rubocop:enable Metrics/ParameterLists

@@ -28,6 +28,19 @@ module Faker
       def binary_type
         fetch('gender.binary_types')
       end
+
+      ##
+      # Produces either 'f' or 'm'.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Gender.short_binary_type #=> "f"
+      #
+      # @faker.version 2.13.0
+      def short_binary_type
+        fetch('gender.short_binary_types')
+      end
     end
   end
 end
