@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Games::WorldOfWarcraft.hero #=> "Uther the Lightbringer"
         #
-        # @faker.version next
+        # @faker.version 1.9.2
         def hero
           fetch('games.world_of_warcraft.heros')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::WorldOfWarcraft.class_name #=> "Druid"
         #
-        # @faker.version next
+        # @faker.version 1.9.2
         def class_name
           fetch('games.world_of_warcraft.class_names')
         end
