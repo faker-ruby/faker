@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::DragonBall.race #=> "Saiyan"
         #
-        # @faker.version 1.8.0
+        # @faker.version next
         def race
           fetch('dragon_ball.races')
         end
@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Games::DragonBall.planet #=> "Namek"
         #
-        # @faker.version 1.8.0
+        # @faker.version next
         def planet
           fetch('dragon_ball.planets')
         end
