@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Books::Dune.city #=> "Arrakeen"
         #
-        # @faker.version 1.9.3
+        # @faker.version next
         def city
           fetch('dune.cities')
         end
