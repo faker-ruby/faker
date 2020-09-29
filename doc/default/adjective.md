@@ -1,9 +1,9 @@
 # Faker::Adjective
 
 ```ruby
-# Random Nice Adjective
-Faker::Adjective.nice #=> "Kind"
+# Random Positive Adjective
+Faker::Adjective.positive #=> "Kind"
 
-# Random Bad Adjective
-Faker::Adjective.bad #=> "Creepy"
+# Random Negative Adjective
+Faker::Adjective.negative #=> "Creepy"
 ```

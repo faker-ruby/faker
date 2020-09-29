@@ -6,29 +6,29 @@ module Faker
 
     class << self
       ##
-      # Produces a nice adjective.
+      # Produces a positive adjective.
       #
       # @return [String]
       #
       # @example
-      #   Faker::Adjective.nice #=> "Kind"
+      #   Faker::Adjective.positive #=> "Kind"
       #
-      # @faker.version 1.6.5
-      def nice
-        fetch('adjective.nice')
+      # @faker.version next
+      def positive
+        fetch('adjective.positive')
       end
 
       ##
-      # Produces a bad adjective.
+      # Produces a negative adjective.
       #
       # @return [String]
       #
       # @example
-      #   Faker::Adjective.bad #=> "Creepy"
+      #   Faker::Adjective.negative #=> "Creepy"
       #
-      # @faker.version 1.6.5
-      def bad
-        fetch('adjective.bad')
+      # @faker.version next
+      def negative
+        fetch('adjective.negative')
       end
     end
   end

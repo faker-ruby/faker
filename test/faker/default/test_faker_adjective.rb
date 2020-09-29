@@ -7,11 +7,11 @@ class TestFakerAdjective < Test::Unit::TestCase
     @tester = Faker::Adjective
   end
 
-  def test_nice
-    assert @tester.nice.match(/\w+/)
+  def test_positive
+    assert @tester.positive.match(/\w+/)
   end
 
-  def test_bad
-    assert @tester.bad.match(/\w+/)
+  def test_negative
+    assert @tester.negative.match(/\w+/)
   end
 end
