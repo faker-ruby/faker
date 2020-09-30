@@ -6,7 +6,7 @@ class TestFakerRoom < Test::Unit::TestCase
   def setup
     @tester = Faker::Movies::Room
   end
-  
+
   def test_actor
     assert @tester.actor.match(/\w+/)
   end
