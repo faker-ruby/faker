@@ -271,6 +271,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Movies::Lebowski](doc/movies/lebowski.md)
   - [Faker::Movies::LordOfTheRings](doc/movies/lord_of_the_rings.md)
   - [Faker::Movies::PrincessBride](doc/movies/princess_bride.md)
+  - [Faker::Movies::Room](doc/movies/room.md)
   - [Faker::Movies::StarWars](doc/movies/star_wars.md)
   - [Faker::Movies::VForVendetta](doc/movies/v_for_vendetta.md)
 
