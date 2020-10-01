@@ -2,7 +2,7 @@ en:
   faker:
     the_fresh_prince_of_bel_air:
       characters: ['Will Smith', 'Philip Banks', 'Carlton Banks', 'Ashley Banks', 'Hilary Banks', 'Vivian Banks', 'Nicky Banks', 'Geoffrey Butler', 'Jazz', 'Vy Smith', 'Hattie Banks', 'Lisa Wilkes', 'Jackie Ames', 'Henry Furth', 'Trevor', 'Tyriq', 'Ice Tray', 'Dee Dee', 'Kellogg Lieberbaum', 'Coach Smiley', 'Judge Carl Robertson']
-      celebrities: ['Quincy Jones', 'Jay Leno', 'Ronald Reagan', 'Dick Clark', 'Evander Holyfield', 'Isaiah Thomas', 'Heavy D', 'Don Cornelius', 'Kadeem Hardison', 'Hugh M. Hefner', 'Kareem Abdul-Jabbar', 'Bo Jackson', 'Ken Griffey Jr.', 'Al B. Sure!', 'John Ridley', 'Doctor Dré', 'Regis Philbin', 'William Shatner', 'B. B. King', 'Kim Fields', 'Arthel Neville', 'Oprah Winfrey', 'Donal J. Trump', 'Leeza Gibbons', 'Susan Powter', 'Tempestt Bledsoe', 'Kathie Lee Gifford', 'Garcelle Beauvais', 'Bree Walker']
+      actors: ['Quincy Jones', 'Jay Leno', 'Ronald Reagan', 'Dick Clark', 'Evander Holyfield', 'Isaiah Thomas', 'Heavy D', 'Don Cornelius', 'Kadeem Hardison', 'Hugh M. Hefner', 'Kareem Abdul-Jabbar', 'Bo Jackson', 'Ken Griffey Jr.', 'Al B. Sure!', 'John Ridley', 'Doctor Dré', 'Regis Philbin', 'William Shatner', 'B. B. King', 'Kim Fields', 'Arthel Neville', 'Oprah Winfrey', 'Donal J. Trump', 'Leeza Gibbons', 'Susan Powter', 'Tempestt Bledsoe', 'Kathie Lee Gifford', 'Garcelle Beauvais', 'Bree Walker']
       quotes: [
         "Girl, you look so good, I would marry your brother just to get in your family.",
         "In west Philadelphia born and raised, on the playground was where I spent most of my days.",
