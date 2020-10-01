@@ -248,6 +248,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Games::Pokemon](doc/games/pokemon.md)
   - [Faker::Games::SonicTheHedgehog](doc/games/sonic_the_hedgehog.md)
   - [Faker::Games::StreetFighter](doc/games/street_fighter.md)
+  - [Faker::Games::SuperMario](doc/games/super_mario.md)
   - [Faker::Games::SuperSmashBros](doc/games/super_smash_bros.md)
   - [Faker::Games::WarhammerFantasy](doc/games/warhammer_fantasy.md)
   - [Faker::Games::Witcher](doc/games/witcher.md)
