@@ -10,7 +10,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Movies::Room.actor #=> “Tommy Wiseau"
+        #   Faker::Movies::Room.actor #=> "Tommy Wiseau"
         #
         # @faker.version next
         def actor
@@ -23,7 +23,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Movies::Room.character #=> “Johnny"
+        #   Faker::Movies::Room.character #=> "Johnny"
         #
         # @faker.version next
         def character
@@ -36,7 +36,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Movies::Room.location #=> “Johnny’s Apartment"
+        #   Faker::Movies::Room.location #=> "Johnny's Apartment"
         #
         # @faker.version next
         def location
@@ -51,7 +51,7 @@ module Faker
         #
         # @example
         #   Faker::Movies::Room.quote
-        #     #=> "You’re lying, I never hit you. You are tearing me apart, Lisa!"
+        #     #=> "You're lying, I never hit you. You are tearing me apart, Lisa!"
         #
         # @faker.version next
         def quote
