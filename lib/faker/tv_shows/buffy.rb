@@ -40,7 +40,7 @@ module Faker
         # @example
         #   Faker::TvShows::Buffy.actor #=> "John Ritter"
         #
-        # @faker.version 2.14.1
+        # @faker.version next
         def actor
           fetch('buffy.actors')
         end
