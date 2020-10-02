@@ -11,8 +11,12 @@ class TestFakerJapaneseMediaDoraemon < Test::Unit::TestCase
     assert @tester.character.match(/\w+/)
   end
 
-  def test_sea
+  def test_gadget
     assert @tester.gadget.match(/\w+/)
+  end
+
+  def test_location
+    assert @tester.location.match(/\w+/)
   end
 
 end

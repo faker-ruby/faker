@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::JapaneseMedia::Doraemon.character #=> "Nobita"
         #
-        # @faker.version 1.8.5
+        # @faker.version next
         def character
           fetch('doraemon.characters')
         end
@@ -25,9 +25,22 @@ module Faker
         # @example
         #   Faker::JapaneseMedia::Doraemon.gadget #=> "Anywhere Door"
         #
-        # @faker.version 1.8.5
+        # @faker.version next
         def character
-          fetch('one_piece.gadgets')
+          fetch('doraemon.gadgets')
+        end
+
+        ##
+        # Produces a location from Doraemon.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::JapaneseMedia::Doraemon.location #=> "Tokyo"
+        #
+        # @faker.version next
+        def character
+          fetch('doraemon.locations')
         end
         
       end
