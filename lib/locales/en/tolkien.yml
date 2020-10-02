@@ -1,288 +1,849 @@
 en:
   faker:
-    hobbit:
+    tolkien_legendarium:
       character:
-      - Bilbo Baggins
-      - Bungo Baggins
-      - Belladonna Took
-      - Bullroarer Took
-      - Gandalf The Grey
-      - Radagast
-      - Dain
-      - Thorin Oakenshield
-      - Fili
-      - Kili
-      - Balin
-      - Dwalin
-      - Oin
-      - Gloin
-      - Dori
-      - Nori
-      - Ori
-      - Bifur
-      - Bofur
-      - Bombur
-      - Elrond
-      - Galion
-      - Bard the Bowman
-      - Beorn
-      - Tom
-      - Bert
-      - William (Bill Huggins)
-      - Gollum
-      - The Necromancer
-      - Smaug
-      - Carc
-      - Roac
-      - The Lord of the Eagles
-      - The Great Goblin
-      - Bolg
-      - Golfimbul
-      thorins_company:
-      - Thorin Oakenshield
-      - Fili
-      - Kili
-      - Balin
-      - Dwalin
-      - Oin
-      - Gloin
-      - Dori
-      - Nori
-      - Ori
-      - Bifur
-      - Bofur
-      - Bombur
-      - Gandalf
-      - Bilbo Baggins
-      quote:
-      - Do you wish me a good morning, or mean that it is a good morning whether I
-        want it or not; or that you feel good this morning; or that it is a morning
-        to be good on?
-      - There is nothing like looking, if you want to find something. You certainly
-        usually find something, if you look, but it is not always quite the something
-        you were after.
-      - In a hole in the ground there lived a hobbit.
-      - It does not do to leave a live dragon out of your calculations, if you live
-        near him.
-      - May the wind under your wings bear you where the sun sails and the moon walks.
-      - Where there's life there's hope.
-      - So comes snow after fire, and even dragons have their endings.
-      - Where did you go to, if I may ask?' said Thorin to Gandalf as they rode along.  To
-        look ahead,' said he.  And what brought you back in the nick of time?' Looking
-        behind,' said he.
-      - "'You have nice manners for a thief and a liar,' said the dragon."
-      - May the hair on your toes never fall out!
-      - The road goes ever on and on
-      - Never laugh at live dragons, Bilbo you fool!
-      location:
-      - Bree
-      - The Shire
-      - Rivendell
-      - The Misty Mountains
-      - Beorn's Hall
-      - Mirkwood
-      - Esgaroth
-      - Erebor
-      - Bag-End
-      - Under-Hill
-      - Mount Gram
-      - Green Fields
-      - Last Desert
-      - Lonely Mountain
-      - Withered Heath
-      - Country Round
-      - Long Lake
-      - River Running
-      - Mines of Moria
-      - Green Dragon Inn
-      - Bywater
-      - The Great Mill
-      - Wilderland
-      - Gondolin
-      - Land Beyond
-      - Goblin Gate
-      - Carrock
-      - High Pass
-      - Great River
-      - Grey Mountains
-      - Land of the Necromancer
-      - Long Marshes
-      - Forest River
-      - Lake Town
-      - Dorwinion
-      - Ravenhill
-      - Iron Hills
-      - Mount Gundabad
-    lord_of_the_rings:
-      characters:
-      - Frodo Baggins
-      - Gandalf the Grey
-      - Samwise Gamgee
-      - Meriadoc Brandybuck
-      - Peregrin Took
-      - Aragorn
-      - Legolas
-      - Gimli
-      - Boromir
-      - Sauron
-      - Gollum
-      - Bilbo Baggins
-      - Tom Bombadil
-      - Glorfindel
-      - Elrond
-      - Arwen Evenstar
-      - Galadriel
-      - Saruman the White
-      - Éomer
-      - Théoden
-      - Éowyn
-      - Grìma Wormtongue
-      - Shadowfax
-      - Treebeard
-      - Quickbeam
-      - Shelob
-      - Faramir
-      - Denethor
-      - Beregond
-      - Barliman Butterbur
-      locations:
-      - Aglarond
-      - Aldburg
-      - Andustar
-      - Angband
-      - Argonath
-      - Bag End
-      - Barad-dûr
-      - Black Gate
-      - Bridge of Khazad-dûm
-      - Carchost
-      - Cirith Ungol
-      - Coldfells
-      - Crack of Doom
-      - Dark Land
-      - Dol Guldur
-      - Dome of Stars
-      - Doors of Durin
-      - Doriath
-      - East Beleriand
-      - Eastfarthing
-      - East Road
-      - Eithel Sirion
-      - Elostirion
-      - Enchanted Isles
-      - Endless Stair
-      - Eä
-      - Falls of Rauros
-      - Fens of Serech
-      - Field of Celebrant
-      - Fords of Isen
-      - The Forsaken Inn
-      - Gap of Rohan
-      - Gladden Fields
-      - Gorgoroth
-      - Greenway
-      - Haudh-en-Nirnaeth
-      - Haven of the Eldar
-      - Helm's Deep
-      - Henneth Annûn
-      - Hobbit-hole
-      - Houses of Healing
-      - Hyarnustar
-      - Ilmen
-      - Inn of the Prancing Pony
-      - Isengard
-      - Isenmouthe
-      - Isle of Balar
-      - Land of the Sun
-      - Losgar
-      - Luthany
-      - Lothlorièn
-      - Maglor's Gap
-      - Marish
-      - Meduseld
-      - Minas Tirith
-      - Minhiriath
-      - Máhanaxar
-      - Narchost
-      - Nargothrond
-      - Núath
-      - Old Ford
-      - Old Forest
-      - Old Forest Road
-      - Orthanc
-      - Parth Galen
-      - Paths of the Dead
-      - Pelennor Fields
-      - Rath Dínen
-      - Regions of the Shire
-      - Rivendell
-      - The Rivers and Beacon-Hills of Gondor
-      - Sarn Ford
-      - Taur-en-Faroth
-      - Taur-im-Duinath
-      - Timeless Halls
-      - Tol Brandir
-      - Tol Galen
-      - Tol Morwen
-      - Tol-in-Gaurhoth
-      - Tumladen
-      - Utumno
-      - Vaiya
-      - Vista
-      - The Void
-      - Warning beacons of Gondor
-      quotes:
-      - Often does hatred hurt itself!
-      - Go now, and die in what way seems best to you.
-      - Memory is not what the heart desires. That is only a mirror....
-      - Dwarves’ tongues run on when speaking of their handiwork, they say.
-      - But all’s well as ends well
-      - Sing, all ye children of the West
-      - "...and all the stars flowered in the sky."
-      - Clothes are but little loss, if you escape from drowning.
-      - The wolf that one hears is worse than the orc that one fears. - Boromir
-      - I don't keep water in my pockets.
-      - 'For he gave it up in the end of his own accord: an important point. No,'
-      - I could not 'make' you--except by force, which would break your mind.
-      - Their faces were as a rule good-natured rather than beautiful.
-      - The Lord of the Ringwraiths had met his doom.
-      - Many that live deserve death. And some that die deserve life
-      - Short cuts make delays, but inns make longer ones.
-      - But where the warg howls, there also the orc prowls. - Aragorn
-      - In winter here no heart could mourn for summer or for spring.
-      - his old life lay behind in the mists, dark adventure lay in front.
-      - I sang of leaves, of leaves of gold, and leaves of gold there grew
-      - Someone else always has to carry on the story.
-      - It's the job that's never started as takes longest to finish.
-      - Moonlight drowns out all but the brightest stars.
-      - Fear nothing! Have peace until the morning! Heed no nightly noises!
-      - I’ll get there, if I leave everything but my bones behind,
-      - NO ADMITTANCE EXCEPT ON PARTY BUSINESS.
-      - Real names tell you the story of the things they belong to
-      - Deeds will not be less valiant because they are unpraised.
-      - Even the smallest person can change the course of the future.
-      - Who knows? Have patience. Go where you must go, and hope!
-      - Yet dawn is ever the hope of men,’ said Aragorn.
-      - You will soon be well, if I do not talk you to death.
-      - Memory is not what the heart desires. That is only a mirror,
-      - You have shown your usual cunning in getting up just in time for a meal.
-      - The great storm is coming, but the tide has turned.
-      - "...as young and as ancient as Spring...."
-      - Why couldn’t he stop talking and let them drink his health?
-      - Not all those who wander are lost
-      - 'But in this at least thou shalt not defy my will: to rule my own end.'
-      - I look foul and feel fair.
-      - It's the job that's never started as takes longest to finish.
-      - Moonlight drowns out all but the brightest stars.
-      - I didn't think it would end this way.
-      - Home is behind, the world ahead
-      - All's well that ends better.
-      - I want to be a healer, and love all things that grow and are not barren.
-      - Where there's life there's hope, and need of vittles.
-      - A hunted man sometimes wearies of distrust and longs for friendship.
-      - The leaves were long, the grass was green
-      - Begone, foul dwimmerlaik, lord of carrion! Leave the dead in peace!
-      - The world is indeed full of peril and in it there are many dark places.
-      - To the sea, to the sea! The white gulls are crying
-      - Do not scorn pity that is the gift of a gentle heart, Éowyn!
-      - I wish the Ring had never come to me. I wish none of this had happened.
+        - Adalbert Bolger
+        - Adaldrida Bolger
+        - Adalgar Bolger
+        - Adalgrim Took
+        - Adam Hornblower
+        - Adamanta Chubb
+        - Adanel
+        - Adelard Took
+        - Adrahil
+        - Aegnor
+        - Aerin
+        - Agathor
+        - Aghan
+        - Aglahad
+        - Ailinel
+        - Aldamir
+        - Aldor
+        - Alfrida of the Yale
+        - Algund
+        - Almarian
+        - Almáriel
+        - Almiel
+        - Alphros
+        - Amandil
+        - Amaranth Brandybuck
+        - Amarië
+        - Amdír
+        - Amethyst Hornblower
+        - Amlach
+        - Amlaith
+        - Amras
+        - Amrod
+        - Amroth
+        - Amrothos
+        - Anairë
+        - Anardil
+        - Anborn
+        - Ancalagon
+        - Andreth
+        - Andróg
+        - Andvír
+        - Andwise Roper
+        - Angamaitë
+        - Angbor
+        - Angelica Baggins
+        - Angelimir
+        - Angrim
+        - Angrod
+        - Annael
+        - Anson Roper
+        - Ar-Adûnakhôr
+        - Ar-Gimilzôr
+        - Ar-Pharazôn
+        - Ar-Sakalthôr
+        - Ar-Zimrathôn
+        - Arachon
+        - Arador
+        - Araglas
+        - Aragorn
+        - Aragost
+        - Arahad
+        - Arahael
+        - Aranarth
+        - Arantar
+        - Aranuir
+        - Aranwë
+        - Araphant
+        - Araphor
+        - Arassuil
+        - Aratan
+        - Arathorn
+        - Araval
+        - Aravir
+        - Aravorn
+        - Arciryas
+        - Ardamir
+        - Aredhel
+        - Argeleb
+        - Argon
+        - Argonui
+        - Arminas
+        - Artamir
+        - Arthad
+        - Arvedui
+        - Arvegil
+        - Arveleg
+        - Arwen
+        - Asgon
+        - Asphodel Brandybuck
+        - Atanalcar
+        - Atanatar
+        - Aulendil
+        - Avranc
+        - Axantur
+        - Azaghâl
+        - Azog
+        - Bain
+        - Balbo Baggins
+        - Baldor
+        - Balin
+        - Ban
+        - Bandobras Took
+        - Barach
+        - Baragund
+        - Barahir
+        - Baran
+        - Baranor
+        - Bard
+        - Barliman Butterbur
+        - Basso Boffin
+        - Beechbone
+        - Belba Baggins
+        - Beldir
+        - Beldis
+        - Belecthor
+        - Beleg
+        - Belegor
+        - Belegorn
+        - Belegund
+        - Belemir
+        - Belen
+        - Beleth
+        - Bell Goodchild
+        - Belladonna Took
+        - Bëor
+        - Beorn
+        - Bereg
+        - Beregar
+        - Beregond
+        - Berelach
+        - Beren
+        - Bergil
+        - Beril
+        - Berilac Brandybuck
+        - Bert
+        - Berúthiel
+        - Berylla Boffin
+        - Bifur
+        - Bilbo Baggins
+        - Bilbo Gardner
+        - Bill Butcher
+        - Bill Ferny
+        - Bingo Baggins
+        - Blanco Bracegirdle
+        - Blodren
+        - Boar of Everholt
+        - Bodo Proudfoot
+        - Bodruith
+        - Bofur
+        - Bolg
+        - Bombur
+        - Bór
+        - Borin
+        - Borlach
+        - Borlad
+        - Borlas
+        - Boromir
+        - Boron
+        - Borondir
+        - Borthand
+        - Bosco Boffin
+        - Bowman Cotton
+        - Brand
+        - Brandir
+        - Bregil
+        - Brego
+        - Bregolas
+        - Bregor
+        - Briffo Boffin
+        - Brodda
+        - Bruno Bracegirdle
+        - Brytta
+        - Bucca of the Marish
+        - Buffo Boffin
+        - Buldar
+        - Bungo Baggins
+        - Calimehtar
+        - Calimmacil
+        - Caliondo
+        - Calmacil
+        - Camellia Sackville
+        - Caranthir
+        - Carc
+        - Carcharoth
+        - Carl Cotton
+        - Castamir
+        - Celeborn
+        - Celebrían
+        - Celebrimbor
+        - Celebrindor
+        - Celegorm
+        - Celepharn
+        - Cemendur
+        - Ceorl
+        - Chica Chubb
+        - Círdan
+        - Cirion
+        - Ciryandil
+        - Ciryatur
+        - Ciryon
+        - Cora Goodbody
+        - Cotman
+        - Cottar
+        - Curufin
+        - Daddy Twofoot
+        - Daeron
+        - Dagnir
+        - Dáin
+        - Dáin Ironfoot
+        - Dairuin
+        - Daisy Baggins
+        - Daisy Gamgee
+        - Daisy Gardner
+        - Damrod
+        - Denethor
+        - Déor
+        - Déorwine
+        - Dernhelm
+        - Derufin
+        - Dervorin
+        - Diamond of Long Cleeve
+        - Dina Diggle
+        - Dinodas Brandybuck
+        - Dior
+        - Dírhael
+        - Dírhaval
+        - Dís
+        - Doderic Brandybuck
+        - Dodinas Brandybuck
+        - Donnamira Took
+        - Dora Baggins
+        - Dori
+        - Dorlas
+        - Draugluin
+        - Drogo Baggins
+        - Druda Burrows
+        - Dudo Baggins
+        - Duilin
+        - Duinhir
+        - Dúnhere
+        - Durin
+        - Durin's Bane
+        - Dwalin
+        - Eärendil
+        - Eärendur
+        - Eärnil
+        - Eärnur
+        - Eärwen
+        - Ebor
+        - Ecthelion
+        - Edrahil
+        - Egalmoth
+        - Eglantine Banks
+        - Eilinel
+        - Elanor Gardner
+        - Elatan
+        - Elboron
+        - Eldacar
+        - Eldalótë
+        - Eldarion
+        - Elemmakil
+        - Elemmírë
+        - Elendil
+        - Elendur
+        - Elentir
+        - Elenwë
+        - Elfhelm
+        - Elfhild
+        - Elfstan Fairbairn
+        - Elfwine
+        - Elladan
+        - Elmar
+        - Elmo
+        - Elphir
+        - Elrohir
+        - Elrond
+        - Elros
+        - Elulindo
+        - Eluréd
+        - Elurín
+        - Elwing
+        - Emeldir
+        - Enel
+        - Enelyë
+        - Enerdhil
+        - Enthor
+        - Eofor
+        - Eöl
+        - Éomer
+        - Éomund
+        - Eorl
+        - Éothain
+        - Éothéod
+        - Éowyn
+        - Eradan
+        - Erchirion
+        - Erendis
+        - Erestor
+        - Erien
+        - Erkenbrand
+        - Erling
+        - Esmeralda Took
+        - Estella Bolger
+        - Estelmo
+        - Everard Took
+        - Falco Chubb-Baggins
+        - Faniel
+        - Faramir
+        - Faramir Took
+        - Farin
+        - Farmer Cotton
+        - Farmer Maggot
+        - Fastolph Bolger
+        - Fastred
+        - Fastred of Greenholm
+        - Fëanor
+        - Fengel
+        - Ferdibrand Took
+        - Ferdinand Took
+        - Ferumbras Took
+        - Fíli
+        - Filibert Bolger
+        - Fimbrethil
+        - Finarfin
+        - Finbor
+        - Findegil
+        - Findis
+        - Finduilas
+        - Fingolfin
+        - Fingon
+        - Finrod
+        - Finwë
+        - Fíriel
+        - Fíriel Fairbairn
+        - Flambard Took
+        - Flói
+        - Folca
+        - Folco Boffin
+        - Folco Burrowes
+        - Folcred
+        - Folcwine
+        - Forhend
+        - Forlong
+        - Forthwini
+        - Fortinbras Took
+        - Forweg
+        - Fosco Baggins
+        - Fram
+        - Frár
+        - Fréa
+        - Fréaláf
+        - Fréawine
+        - Freca
+        - Fredegar Bolger
+        - Frerin
+        - Frodo Baggins
+        - Frodo Gardner
+        - Frór
+        - Frumgar
+        - Fundin
+        - Gaffer Gamgee
+        - Galadhon
+        - Galador
+        - Galadriel
+        - Galathil
+        - Galdor
+        - Galdor of the Havens
+        - Galion
+        - Gálmód
+        - Gamil Zirak
+        - Gamling
+        - Gandalf
+        - Gárulf
+        - Gelmir
+        - Gerda Boffin
+        - Gerontius Took
+        - Gethron
+        - Ghân-buri-Ghân
+        - Gil-galad
+        - Gilbarad
+        - Gildis
+        - Gildor
+        - Gilly Brownlock
+        - Gilmith
+        - Gilraen
+        - Gilwen
+        - Gimilkhâd
+        - Gimilzagar
+        - Gimli
+        - Girion
+        - Glaurung
+        - Gléowine
+        - Glirhuin
+        - Glóin
+        - Glóredhel
+        - Glorfindel
+        - Golasgil
+        - Goldberry
+        - Goldilocks Gardner
+        - Goldwine
+        - Golfimbul
+        - Gollum
+        - Gorbadoc Brandybuck
+        - Gorbulas Brandybuck
+        - Gorgol
+        - Gorhendad Oldbuck
+        - Gorlim
+        - Gormadoc Brandybuck
+        - Gothmog
+        - Gram
+        - Great Eagle
+        - Great Goblin
+        - Griffo Boffin
+        - Grim
+        - Gríma
+        - Grimbeorn
+        - Grimbold
+        - Grishnákh
+        - Grithnir
+        - Gróin
+        - Grór
+        - Gruffo Boffin
+        - Guilin
+        - Gundabald Bolger
+        - Gundahad Bolger
+        - Gundahar Bolger
+        - Gundolpho Bolger
+        - Gundor
+        - Guthláf
+        - Gwaihir
+        - Gwindor
+        - Hador
+        - Halbarad
+        - Haldad
+        - Haldan
+        - Haldar
+        - Haldir
+        - Haleth
+        - Halfast Gamgee
+        - Halfred Gamgee
+        - Halfred Greenhand
+        - Halfred of Overhill
+        - Hallacar
+        - Hallas
+        - Hallatan
+        - Halmir
+        - Háma
+        - Hamfast Gardner
+        - Hamfast of Gamwich
+        - Hamson Gamgee
+        - Handir
+        - Hanna Goldworthy
+        - Hannar
+        - Hardang
+        - Harding
+        - Harding of the Hill
+        - Hareth
+        - Harry Goatleaf
+        - Hathaldir
+        - Hathol
+        - Hatholdir
+        - Hazad
+        - Helm
+        - Henderch
+        - Hending
+        - Herefara
+        - Herendil
+        - Heribald Bolger
+        - Herion
+        - Herubrand
+        - Herugar Bolger
+        - Herumor
+        - Hild
+        - Hilda Bracegirdle
+        - Hildibrand Took
+        - Hildifons Took
+        - Hildigard Took
+        - Hildigrim Took
+        - Hirgon
+        - Hiril
+        - Hirluin
+        - Hirwen
+        - Hob Gammidge
+        - Hob Hayward
+        - Hobson
+        - Holdwine
+        - Holfast Gardner
+        - Holman Cotton
+        - Horn
+        - Huan
+        - Hugo Boffin
+        - Hugo Bracegirdle
+        - Hundad
+        - Hundar
+        - Hunleth
+        - Hunthor
+        - Huor
+        - Húrin
+        - Hyarmendacil
+        - Iago Grubb
+        - Îbal
+        - Ibun
+        - Idis
+        - Idril
+        - Ilberic Brandybuck
+        - Imin
+        - Iminyë
+        - Imlach
+        - Imrahil
+        - Imrazôr
+        - Indis
+        - Indor
+        - Ingold
+        - Ingwë
+        - Ingwion
+        - Inziladûn
+        - Inzilbêth
+        - Ioreth
+        - Iorlas
+        - Írildë
+        - Írimë
+        - Írimon
+        - Irolas
+        - Isembard Took
+        - Isembold Took
+        - Isengar Took
+        - Isengrim
+        - Isildur
+        - Isilmë
+        - Isilmo
+        - Isumbras
+        - Ithilbor
+        - Ivorwen
+        - Ivriniel
+        - Ivy Goodenough
+        - Jago Boffin
+        - Jessamine Boffin
+        - Khamûl
+        - Khîm
+        - Kíli
+        - King of the Dead
+        - Lagduf
+        - Lalaith
+        - Landroval
+        - Largo Baggins
+        - Larnach
+        - Laura Grubb
+        - Lavender Grubb
+        - Leaflock
+        - Legolas
+        - Lenwë
+        - Léod
+        - Lily Baggins
+        - Lily Brown
+        - Linda Baggins
+        - Lindir
+        - Lindissë
+        - Lindórië
+        - Lobelia Sackville-Baggins
+        - Lofar
+        - Lonely Troll
+        - Longo Baggins
+        - Lóni
+        - Lorgan
+        - Lothíriel
+        - Lotho Sackville-Baggins
+        - Lugdush
+        - Lúthien
+        - Mablung
+        - Madoc Brandybuck
+        - Madril
+        - Maedhros
+        - Maeglin
+        - Maglor
+        - Magor
+        - Mahtan
+        - Mairen
+        - Malach
+        - Malantur
+        - Malbeth
+        - Mallor
+        - Malva Headstrong
+        - Malvegil
+        - Manthor
+        - Manwendil
+        - Marach
+        - Marcho
+        - Mardil
+        - Marhari
+        - Marhwini
+        - Marigold Gamgee
+        - Marmadas Brandybuck
+        - Marmadoc Brandybuck
+        - Marroc Brandybuck
+        - Mat Heathertoes
+        - Mauhúr
+        - May Gamgee
+        - Meleth
+        - Melian
+        - Melilot Brandybuck
+        - Menegilda Goold
+        - Meneldil
+        - Meneldor
+        - Mentha Brandybuck
+        - Meriadoc Brandybuck
+        - Merimac Brandybuck
+        - Merimas Brandybuck
+        - Merry Gardner
+        - Milo Burrows
+        - Mîm
+        - Mimosa Bunce
+        - Minardil
+        - Minastan
+        - Minohtar
+        - Minto Burrows
+        - Mirabella Took
+        - Míriel
+        - Mithrellas
+        - Mogru
+        - Moro Burrows
+        - Morwë
+        - Morwen
+        - Morwen Steelsheen
+        - Mosco Burrows
+        - Mouth of Sauron
+        - Mrs. Bunce
+        - Mrs. Maggot
+        - Mungo Baggins
+        - Muzgash
+        - Myrtle Burrows
+        - Náin
+        - Náli
+        - Nar
+        - Nár
+        - Narmacil
+        - Narvi
+        - Nazgûl
+        - Nellas
+        - Nerdanel
+        - Nessanië
+        - Nienor
+        - Nimloth of Doriath
+        - Nimrodel
+        - Nina Lightfoot
+        - Nob
+        - Nolondil
+        - Nora Bolger
+        - Nori
+        - Númendil
+        - Núneth
+        - Nurwë
+        - Odo Proudfoot
+        - Odovacar Bolger
+        - Ohtar
+        - Óin
+        - Old Noakes
+        - Olo Proudfoot
+        - Olwë
+        - Ondoher
+        - Orchaldor
+        - Orgulas Brandybuck
+        - Ori
+        - Orleg
+        - Ornendil
+        - Ornil
+        - Orodreth
+        - Oromendil
+        - Orontor
+        - Oropher
+        - Orophin
+        - Ostoher
+        - Otho Sackville-Baggins
+        - Othrondir
+        - Otto Boffin
+        - Paladin Took
+        - Pansy Baggins
+        - Peeping Jack
+        - Pelendur
+        - Pengolodh
+        - Peony Baggins
+        - Peregrin Took
+        - Pervinca Took
+        - Pimpernel Took
+        - Pippin Gardner
+        - Poldor
+        - Polo Baggins
+        - Ponto Baggins
+        - Poppy Chubb-Baggins
+        - Porto Baggins
+        - Posco Baggins
+        - Pott the Mayor
+        - Primrose Boffin
+        - Primrose Gardner
+        - Primula Brandybuck
+        - Prisca Baggins
+        - Quennar
+        - Quickbeam
+        - Radagast
+        - Radbug
+        - Radhruin
+        - Ragnir
+        - Ragnor
+        - Reginard Took
+        - Rían
+        - Roäc
+        - Robin Gardner
+        - Robin Smallburrow
+        - Rollo Boffin
+        - Rómendacil
+        - Rorimac Brandybuck
+        - Rosa Baggins
+        - Rosamunda Took
+        - Rose Cotton
+        - Rose Gardner
+        - Rowan
+        - Rowlie Appledore
+        - Ruby Bolger
+        - Ruby Gardner
+        - Rudibert Bolger
+        - Rudigar Bolger
+        - Rudolph Bolger
+        - Rufus Burrows
+        - Rúmil
+        - Sador
+        - Saelon
+        - Saeros
+        - Sagroth
+        - Salvia Brandybuck
+        - Samwise Gamgee
+        - Sancho Proudfoot
+        - Sangahyando
+        - Sapphira Brockhouse
+        - Saradas Brandybuck
+        - Saradoc Brandybuck
+        - Saruman
+        - Sauron
+        - Scatha
+        - Seredic Brandybuck
+        - Shagram
+        - Shelob
+        - Sigismond Took
+        - Silmariën
+        - Siriondil
+        - Skinbark
+        - Smaug
+        - Snaga
+        - Soronto
+        - Tal-Elmar
+        - Tanta Hornblower
+        - Tar-Alcarin
+        - Tar-Aldarion
+        - Tar-Amandil
+        - Tar-Anárion
+        - Tar-Ancalimë
+        - Tar-Ancalimon
+        - Tar-Anducal
+        - Tar-Ardamin
+        - Tar-Atanamir
+        - Tar-Calmacil
+        - Tar-Ciryatan
+        - Tar-Elendil
+        - Tar-Meneldur
+        - Tar-Minastir
+        - Tar-Míriel
+        - Tar-Palantir
+        - Tar-Súrion
+        - Tar-Telemmaitë
+        - Tar-Telperiën
+        - Tar-Vanimeldë
+        - Tarannon Falastur
+        - Tarcil
+        - Tarciryan
+        - Targon
+        - Tarondor
+        - Tata
+        - Tatië
+        - Ted Sandyman
+        - Telchar
+        - Telemnar
+        - Telumehtar Umbardacil
+        - Thengel
+        - Theobald Bolger
+        - Théoden
+        - Théodred
+        - Théodwyn
+        - Thingol
+        - Thorin
+        - Thorin Stonehelm
+        - Thorondir
+        - Thorondor
+        - Thráin
+        - Thranduil
+        - Thrór
+        - Tindómiel
+        - Tobold Hornblower
+        - Togo Goodbody
+        - Tolman Cotton Junior
+        - Tolman Gardner
+        - Tom Bombadil
+        - Tom Pickthorn
+        - Torhir Ifant
+        - Tosto Boffin
+        - Treebeard
+        - Tuor
+        - Turambar
+        - Turgon
+        - Túrin
+        - Uffo Boffin
+        - Ufthak
+        - Ulbar
+        - Uldor
+        - Ulfang
+        - Ulfast
+        - Ulrad
+        - Ulwarth
+        - Ungoliant
+        - Urthel
+        - Valacar
+        - Valandil
+        - Valandur
+        - Vardamir
+        - Vardilmë
+        - Vëantur
+        - Vidugavia
+        - Vidumavi
+        - Vigo Boffin
+        - Vinitharya
+        - Vorondil
+        - Voronwë
+        - Walda
+        - Watcher in the Water
+        - Wídfara
+        - Wilcome
+        - Wilibald Bolger
+        - Wilimar Bolger
+        - Will Whitfoot
+        - William
+        - Willie Banks
+        - Wiseman Gamwich
+        - Witch-king
+        - Wulf
+        - Yávien
+        - Zamîn
+        - Zimrahin
+        - Zimraphel
