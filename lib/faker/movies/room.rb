@@ -2,7 +2,7 @@
 
 module Faker
   class Movies
-    class Room < Base
+    class TheRoom < Base
       class << self
         ##
         # Produces an actor from The Room (2003).
