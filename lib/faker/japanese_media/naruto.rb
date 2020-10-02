@@ -4,7 +4,6 @@ module Faker
   class JapaneseMedia
     class Naruto < Base
       class << self
-
         ##
         # Produces a character from Naruto.
         #
@@ -56,7 +55,6 @@ module Faker
         def demon
           fetch('naruto.demons')
         end
-
       end
     end
   end

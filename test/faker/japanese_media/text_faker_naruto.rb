@@ -22,5 +22,4 @@ class TestFakerJapaneseNaruto < Test::Unit::TestCase
   def test_demon
     assert @tester.demon.match(/\w+/)
   end
-
 end
