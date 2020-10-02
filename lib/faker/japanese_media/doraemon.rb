@@ -26,7 +26,7 @@ module Faker
         #   Faker::JapaneseMedia::Doraemon.gadget #=> "Anywhere Door"
         #
         # @faker.version next
-        def character
+        def gadget
           fetch('doraemon.gadgets')
         end
 
@@ -39,10 +39,9 @@ module Faker
         #   Faker::JapaneseMedia::Doraemon.location #=> "Tokyo"
         #
         # @faker.version next
-        def character
+        def location
           fetch('doraemon.locations')
         end
-        
       end
     end
   end

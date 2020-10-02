@@ -18,5 +18,4 @@ class TestFakerJapaneseMediaDoraemon < Test::Unit::TestCase
   def test_location
     assert @tester.location.match(/\w+/)
   end
-
 end
