@@ -14,4 +14,8 @@ class TestFakerSuperMario < Test::Unit::TestCase
   def test_game
     assert @tester.game.match(/\w+/)
   end
+
+  def test_location
+    assert @tester.location.match(/\w+/)
+  end
 end

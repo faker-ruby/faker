@@ -29,6 +29,19 @@ module Faker
         def game
           fetch('games.super_mario.games')
         end
+
+        ##
+        # Produces the name of a Super Mario location.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::SuperMario.location #=> "Kong City"
+        #
+        # @faker.version next
+        def location
+          fetch('games.super_mario.locations')
+        end
       end
     end
   end
