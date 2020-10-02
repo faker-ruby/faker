@@ -10,11 +10,11 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Movies::LordOfTheRings.character #=> "Legolas"
+      #   Faker::TolkienLegendarium.character #=> "Húrin"
       #
-      # @faker.version 1.7.0
+      # @faker.version next
       def character
-        fetch('tolkien.lord_of_the_rings.characters')
+        fetch('tolkien.characters')
       end
 
       ##
@@ -23,11 +23,11 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Movies::LordOfTheRings.location #=> "Helm's Deep"
+      #   Faker::TolkienLegendarium.location #=> "Helm's Deep"
       #
-      # @faker.version 1.7.0
+      # @faker.version next
       def location
-        fetch('tolkien.lord_of_the_rings.locations')
+        fetch('tolkien.locations')
       end
 
       ##
@@ -36,12 +36,12 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Movies::LordOfTheRings.quote
+      #   Faker::TolkienLegendarium.quote
       #     #=> "I wish the Ring had never come to me. I wish none of this had happened."
       #
-      # @faker.version 1.9.0
+      # @faker.version next
       def quote
-        fetch('tolkien.lord_of_the_rings.quotes')
+        fetch('tolkien.quotes')
       end
     end
   end
