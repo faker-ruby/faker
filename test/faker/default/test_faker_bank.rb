@@ -47,6 +47,7 @@ class TestFakerBank < Test::Unit::TestCase
   end
 
   # This test makes sure there are no collissions in BIC number pool
+  # https://github.com/faker-ruby/faker/pull/2130#issuecomment-703213837
   # def test_swift_bic_collission
   #   10.times do
   #     samplebic1 = @tester.swift_bic
