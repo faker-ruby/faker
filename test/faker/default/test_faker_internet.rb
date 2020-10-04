@@ -145,6 +145,20 @@ class TestFakerInternet < Test::Unit::TestCase
     assert downcase_count >= 1
   end
 
+  def test_password_with_min_length_eq_1
+    min_length = 1
+    password = @tester.password(min_length: min_length)
+    assert password.match(/\w+/)
+  end
+
+  def test_password_with_min_length_and_max_length
+    min_length = 2
+    max_length = 5
+    password = @tester.password(min_length: min_length, max_length: max_length)
+    assert password.match(/\w+/)
+    assert (min_length..max_length).include?(password.size), 'Password size is incorrect'
+  end
+
   def test_password_without_mixed_case
     assert @tester.password(min_length: 8, max_length: 12, mix_case: false).match(/[^A-Z]+/)
   end
