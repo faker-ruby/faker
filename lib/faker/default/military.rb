@@ -74,7 +74,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Military.caost_guard_rank #=> "Master Chief Petty Officer of the Coast Guard"
+      #   Faker::Military.coast_guard_rank #=> "Master Chief Petty Officer of the Coast Guard"
       #
       # @faker.version next
       def coast_guard_rank
