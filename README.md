@@ -309,6 +309,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::DrWho](doc/tv_shows/dr_who.md)
   - [Faker::TvShows::DumbAndDumber](doc/tv_shows/dumb_and_dumber.md)
   - [Faker::TvShows::FamilyGuy](doc/tv_shows/family_guy.md)
+  - [Faker::TvShows::FinalSpace](doc/tv_shows/final_space.md)
   - [Faker::TvShows::Friends](doc/tv_shows/friends.md)
   - [Faker::TvShows::GameOfThrones](doc/tv_shows/game_of_thrones.md)
   - [Faker::TvShows::HeyArnold](doc/tv_shows/hey_arnold.md)
