@@ -6,6 +6,9 @@ module Faker
                            diners_club jcb switch solo dankort
                            maestro forbrugsforeningen laser].freeze
 
+    MARKET_LIST = %i[nyse nasdaq].freeze
+    require 'csv'
+
     class << self
       ##
       # Produces a random credit card number.
@@ -62,6 +65,26 @@ module Faker
 
       def vat_number_keys
         translate('faker.finance.vat_number').keys
+      end
+
+      ##
+      # Returns a randomly-selected stock ticker from a specified market.
+      #
+      # @param markets [String] The name of the market to choose the ticker from (e.g. NYSE, NASDAQ)
+      # @return [String]
+      #
+      # @example
+      #   Faker::Finance.ticker #=> 'AMZN'
+      #   Faker::Finance.vat_number('NASDAQ') #=> 'GOOG'
+
+      # @faker.version next
+      def ticker(*markets)
+        # Updated CSVs can be downloaded here: https://www.nasdaq.com/screening/company-list.aspx
+        markets = MARKET_LIST if markets.empty?
+        market = sample(markets)
+        fetch("finance.ticker.#{market}")
+      rescue I18n::MissingTranslationData
+        raise ArgumentError, "Could not find market named #{market}"
       end
     end
   end
