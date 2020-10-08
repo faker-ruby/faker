@@ -670,7 +670,7 @@ pt-BR:
       measurement_sizes: ["Pitada", "1/4", "1/3", "1/2", "1", "2", "3"]
 
     vehicle:
-      license_plate: '???-####'
+      license_plate: ['???-####', '???#?##', '???##?#']
       license_plate_by_state:
         AC: ["MZ[N-Z]-####", "NA[A-G]-####", "NX[R-T]-####", "OVG-####", "OXP-####", "QL[U-Z]-####"]
         AL: ["MU?-####", "MV[A-K]-####", "NL[V-Z]-####", "NM[A-O]-####", "OH[B-K]-####", "OR[D-M]-####", "OXN-####", "QL[A-M]-####"]
