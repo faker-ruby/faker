@@ -4,11 +4,6 @@ module Faker
   class TolkienLegendarium < Base
     flexible :tolkien
 
-    class LordOfTheRings; end
-    LordOfTheRings = Movies::LordOfTheRings
-    class Hobbit; end
-    Hobbit = Movies::Hobbit
-
     class << self
       ##
       # Produces a character from Tolkien's legendarium
@@ -16,7 +11,8 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::TolkienLegendarium.character #=> "Hurin"
+      #   Faker::TolkienLegendarium.character
+      #    #=> "Goldberry"
       #
       # @faker.version next
       def character
@@ -29,7 +25,8 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::TolkienLegendarium.location #=> "Helm's Deep"
+      #   Faker::TolkienLegendarium.location
+      #    #=> "Helm's Deep"
       #
       # @faker.version next
       def location
@@ -37,17 +34,31 @@ module Faker
       end
 
       ##
-      # Produces a quote from Tolkien's legendarium
+      # Produces a race from Tolkien's legendarium
       #
       # @return [String]
       #
       # @example
-      #   Faker::TolkienLegendarium.quote
-      #     #=> "I wish the Ring had never come to me. I wish none of this had happened."
+      #   Faker::TolkienLegendarium.race
+      #     #=> "Uruk-hai"
       #
       # @faker.version next
-      def quote
-        fetch('tolkien_legendarium.quotes')
+      def race
+        fetch('tolkien_legendarium.races')
+      end
+
+      ##
+      # Produces the name of a poem from Tolkien's legendarium
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::TolkienLegendarium.poem
+      #     #=> "Chip the glasses and crack the plates"
+      #
+      # @faker.version next
+      def poem
+        fetch('tolkien_legendarium.poems')
       end
     end
   end
