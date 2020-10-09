@@ -26,7 +26,7 @@ en:
         - Hey dol! merry dol! ring a dong dillo!
         - Hop along, my little friends, up the Withywindle!
         - O slender as a willow-wand!
-        - "I Had An Errand There: Gathering Water-Lilies"
+        - 'I Had An Errand There: Gathering Water-Lilies'
         - Ho! Tom Bombadil, Tom Bombadillo!
         - Cold Be Hand and Heart and Bone
         - Get Out! You old Wight! Vanish in the Sunlight!
@@ -2297,7 +2297,7 @@ en:
         - Dwarves’ tongues run on when speaking of their handiwork, they say.
         - But all’s well as ends well
         - Sing, all ye children of the West
-        - "...and all the stars flowered in the sky."
+        - '...and all the stars flowered in the sky.'
         - Clothes are but little loss, if you escape from drowning.
         - The wolf that one hears is worse than the orc that one fears. - Boromir
         - I don't keep water in my pockets.
@@ -2326,7 +2326,7 @@ en:
         - Memory is not what the heart desires. That is only a mirror,
         - You have shown your usual cunning in getting up just in time for a meal.
         - The great storm is coming, but the tide has turned.
-        - "...as young and as ancient as Spring...."
+        - '...as young and as ancient as Spring....'
         - Why couldn’t he stop talking and let them drink his health?
         - Not all those who wander are lost
         - 'But in this at least thou shalt not defy my will: to rule my own end.'
@@ -2400,24 +2400,17 @@ en:
         - Gandalf
         - Bilbo Baggins
       quote:
-        - Do you wish me a good morning, or mean that it is a good morning whether I
-          want it or not; or that you feel good this morning; or that it is a morning
-          to be good on?
-        - There is nothing like looking, if you want to find something. You certainly
-          usually find something, if you look, but it is not always quite the something
-          you were after.
+        - Do you wish me a good morning, or mean that it is a good morning whether I want it or not; or that you feel good this morning; or that it is a morning to be good on?
+        - There is nothing like looking, if you want to find something. You certainly usually find something, if you look, but it is not always quite the something you were after.
         - In a hole in the ground there lived a hobbit.
-        - It does not do to leave a live dragon out of your calculations, if you live
-          near him.
+        - It does not do to leave a live dragon out of your calculations, if you live near him.
         - May the wind under your wings bear you where the sun sails and the moon walks.
         - Where there's life there's hope.
         - So comes snow after fire, and even dragons have their endings.
-        - Where did you go to, if I may ask?' said Thorin to Gandalf as they rode along.  To
-          look ahead,' said he.  And what brought you back in the nick of time?' Looking
-          behind,' said he.
-        - "'You have nice manners for a thief and a liar,' said the dragon."
+        - '"Where did you go to, if I may ask?" said Thorin to Gandalf as they rode along. "To look ahead" said he. "And what brought you back in the nick of time?" "Looking behind" said he.'
+        - '"You have nice manners for a thief and a liar", said the dragon.'
         - May the hair on your toes never fall out!
-        - The road goes ever on and on
+        - The road goes ever on and on...
         - Never laugh at live dragons, Bilbo you fool!
       location:
         - Bree
