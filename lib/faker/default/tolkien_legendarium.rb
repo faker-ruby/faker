@@ -3,6 +3,12 @@
 module Faker
   class TolkienLegendarium < Base
     flexible :tolkien
+
+    class LordOfTheRings; end
+    LordOfTheRings = Movies::LordOfTheRings
+    class Hobbit; end
+    Hobbit = Movies::Hobbit
+
     class << self
       ##
       # Produces a character from Tolkien's legendarium
@@ -10,11 +16,11 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::TolkienLegendarium.character #=> "Húrin"
+      #   Faker::TolkienLegendarium.character #=> "Hurin"
       #
       # @faker.version next
       def character
-        fetch('tolkien.characters')
+        fetch('tolkien_legendarium.characters')
       end
 
       ##
@@ -27,7 +33,7 @@ module Faker
       #
       # @faker.version next
       def location
-        fetch('tolkien.locations')
+        fetch('tolkien_legendarium.locations')
       end
 
       ##
@@ -41,7 +47,7 @@ module Faker
       #
       # @faker.version next
       def quote
-        fetch('tolkien.quotes')
+        fetch('tolkien_legendarium.quotes')
       end
     end
   end
