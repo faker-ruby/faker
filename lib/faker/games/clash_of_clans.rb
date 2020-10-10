@@ -5,7 +5,7 @@ module Faker
     class ClashOfClans < Base
       class << self
         ##
-        # Produces the name of a Troops  from Clash Of Clans.
+        # Produces the name of a troop from Clash of Clans.
         #
         # @return [String]
         #
@@ -18,7 +18,7 @@ module Faker
         end
 
         ##
-        # Produces the name of a Ranks from Clash Of Clans.
+        # Produces the name of a rank from Clash Of Clans.
         #
         # @return [String]
         #
@@ -31,7 +31,7 @@ module Faker
         end
 
         ##
-        # Produces the name of a Defensive Buidings from Clash Of Clans.
+        # Produces the name of a defensive buiding from Clash Of Clans.
         #
         # @return [String]
         #
