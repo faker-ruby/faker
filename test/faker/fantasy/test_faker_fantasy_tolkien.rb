@@ -2,9 +2,9 @@
 
 require_relative '../../test_helper'
 
-class TestFakerTolkienLegendarium < Test::Unit::TestCase
+class TestFakerFantasyTolkien < Test::Unit::TestCase
   def setup
-    @tester = Faker::TolkienLegendarium
+    @tester = Faker::Fantasy::Tolkien
   end
 
   def test_character
