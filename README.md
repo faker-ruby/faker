@@ -254,6 +254,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Games::Witcher](doc/games/witcher.md)
   - [Faker::Games::WorldOfWarcraft](doc/games/world_of_warcraft.md)
   - [Faker::Games::Zelda](doc/games/zelda.md)
+  - [Faker::Games::ClashOfClans](doc/games/clash_of_clans.md)
 
 ### Japanese Media
   - [Faker::JapaneseMedia::DragonBall](doc/japanese_media/dragon_ball.md)
