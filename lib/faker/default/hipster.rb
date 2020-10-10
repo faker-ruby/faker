@@ -59,7 +59,8 @@ module Faker
       #
       # @param word_count [Integer] Specifies the number of words in the sentence
       # @param supplemental [Boolean] Specifies if the words are supplemental
-      # @param random_words_to_add [Boolean] Specifies the number of random words to add
+      # @param random_words_to_add [Integer] Specifies the number of random words to add
+      # @param open_compounds_allowed [Boolean] Specifies if the generated sentence can contain words having additional spaces
       # @return [String]
       #
       # @example
@@ -68,10 +69,12 @@ module Faker
       #   Faker::Hipster.sentence(word_count: 3, supplemental: true) #=> "Beard laboriosam sequi celiac."
       #   Faker::Hipster.sentence(word_count: 3, supplemental: false, random_words_to_add: 4) #=> "Bitters retro mustache aesthetic biodiesel 8-bit."
       #   Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 4) #=> "Occaecati deleniti messenger bag meh crucifix autem."
+      #   Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: true) #=> "Kale chips nihil eos."
+      #   Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false) #=> "Dreamcatcher umami fixie."
       #
       # @faker.version 1.6.0
       # rubocop:disable Metrics/ParameterLists
-      def sentence(legacy_word_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 6)
+      def sentence(legacy_word_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 6, open_compounds_allowed: true)
         # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :word_count if legacy_word_count != NOT_GIVEN
@@ -79,7 +82,7 @@ module Faker
           keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
         end
 
-        words(number: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: true).join(' ').capitalize + '.'
+        words(number: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: open_compounds_allowed).join(' ').capitalize + '.'
       end
 
       ##
