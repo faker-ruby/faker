@@ -17,6 +17,19 @@ module Faker
       end
 
       ##
+      # Produces a quote from Deep Thoughts by Jack Handey.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Quote.deep_thoughts # => "I hope life isn't a big joke, because I don't get it."
+      #
+      # @faker.version next
+      def deep_thoughts
+        fetch('quote.deep_thoughts')
+      end
+
+      ##
       # Produces a quote from Matz.
       #
       # @return [String]
