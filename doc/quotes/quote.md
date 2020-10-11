@@ -5,7 +5,7 @@ Available since version 1.9.0.
 ```ruby
 Faker::Quote.famous_last_words #=> "My vocabulary did this to me. Your love will let you go on…"
 
-Faker::Quote.deep_thoughts #=> "I hope life isn't a big joke, because I don't get it."
+Faker::Quote.jack_handey #=> "I hope life isn't a big joke, because I don't get it."
 
 Faker::Quote.matz #=> "You want to enjoy life, don't you? If you get your job done quickly and your job is fun, that's good isn't it? That's the purpose of life, partly. Your life is better."
 

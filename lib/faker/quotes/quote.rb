@@ -22,11 +22,11 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Quote.deep_thoughts # => "I hope life isn't a big joke, because I don't get it."
+      #   Faker::Quote.jack_handey # => "I hope life isn't a big joke, because I don't get it."
       #
       # @faker.version next
-      def deep_thoughts
-        fetch('quote.deep_thoughts')
+      def jack_handey
+        fetch('quote.jack_handey')
       end
 
       ##
