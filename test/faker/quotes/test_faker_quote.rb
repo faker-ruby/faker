@@ -11,6 +11,10 @@ class TestFakerYoda < Test::Unit::TestCase
     assert @tester.famous_last_words.match(/\w+/)
   end
 
+  def test_jack_handey
+    assert @tester.jack_handey.match(/\w+/)
+  end
+
   def test_matz
     assert @tester.matz.match(/\w+/)
   end
