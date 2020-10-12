@@ -7,7 +7,6 @@ module Faker
                            maestro forbrugsforeningen laser].freeze
 
     MARKET_LIST = %i[nyse nasdaq].freeze
-    require 'csv'
 
     class << self
       ##
@@ -76,10 +75,9 @@ module Faker
       # @example
       #   Faker::Finance.ticker #=> 'AMZN'
       #   Faker::Finance.vat_number('NASDAQ') #=> 'GOOG'
-
+      #
       # @faker.version next
       def ticker(*markets)
-        # Updated CSVs can be downloaded here: https://www.nasdaq.com/screening/company-list.aspx
         markets = MARKET_LIST if markets.empty?
         market = sample(markets)
         fetch("finance.ticker.#{market}")

@@ -14,6 +14,6 @@ Faker::Finance.vat_number(country: 'ZA') #=> "ZA79494416181"
 
 # Random ticker
 Faker::Finance.ticker #=> "AMZN"
-## Supported: NASDAQ, NYSE, AMEX
+## Supported: NASDAQ, NYSE
 Faker::Finance.ticker('NASDAQ') #=> "GOOG"
 ```
