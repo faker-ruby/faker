@@ -3,42 +3,224 @@ en:
     games:
       fallout:
         characters:
+          - Abel
           - Ada
+          - Agatha
+          - Alan
+          - Alex
+          - Alya
+          - Amber
+          - Andrew
           - Angela Bishop
+          - Anthony
+          - Aradesh
+          - Barry
+          - Beth
+          - Billy
           - Boone
-          - Cait
-          - Christine Royce
-          - Codsworth
-          - Curie
-          - Daecon
-          - DiMA
-          - Dogmeat
-          - Elder Maxon
-          - Harold
-          - John Hancock
-          - Joshua Graham
-          - Legate Lanius
-          - Leslie Ann Bishop
-          - Liberty Prime
-          - Lucas Simms
-          - Madison Lee
-          - Miria
-          - Myron
-          - Nick Valentine
-          - Old Longfellow
+          - Brenden
+          - Butch Harris
+          - Cabbot
           - Caesar
+          - Cait
+          - Calder
+          - Caleb
+          - Children of the Cathedral member
+          - Christine
+          - Christine Royce
+          - Chuck
+          - Cindy
+          - Cleo
+          - Codsworth
+          - Cougar
+          - Curie
+          - Curtis
+          - Daecon
+          - Dan
+          - Dane
+          - Daren Hightower
+          - Darrel
+          - Decker
+          - Demetre Romara
+          - Diana
+          - DiMA
+          - Doc Morbid
+          - Dog
+          - Dogmeat
+          - Dominic Moore
+          - Dr. Wu
+          - Dugan
+          - Ed
+          - Elder
+          - Elder Maxon
+          - Flash
+          - Flip
+          - Francis
+          - Gabriel
+          - Garl Death-Hand
+          - Garret
+          - Gary
+          - George
+          - Ghoul leader
+          - Ghoul prisoner
+          - Gizmo
+          - Greg
+          - Gretch
+          - Guido
+          - Gunther
+          - Gustofer
+          - Gwen
+          - Harold
+          - Harry
+          - Heather
+          - Henry
+          - Herion
+          - Hernandez
+          - Ian
+          - Iguana Bob Frazier
+          - Irwin
+          - Ismarc
+          - Izo
+          - Jacoren
+          - Jain
+          - Jake
+          - Jarvis
+          - Jasmine
+          - Jason Zimmerman
+          - Jelissa
+          - Jennifer
+          - Jeremiah
+          - Jerry
+          - Jessica
+          - John
+          - John Hancock
+          - John Maxson
+          - Jon Zimmerman
+          - Joshua Graham
+          - Justin Greene
+          - Kalnor
+          - Kane
+          - Katja
+          - Katrina
+          - Kenji
+          - Kenny
+          - Keri Lee
+          - Killian Darkwater
+          - Krupper
+          - Kyle
+          - Larry
+          - Lars
+          - Lasher
+          - Laura
+          - Legate Lanius
+          - Lemmy
+          - Lenny
+          - Leon
+          - Leone
+          - Leslie Ann Bishop
+          - Lex
+          - Liberty Prime
+          - Lieutenant
+          - Lorenzo Giovanni
+          - Lorraine
+          - Lorri
+          - Lox
+          - Loxley
+          - Lucas Simms
+          - Lucy
+          - Luke
+          - Lyle
+          - Lynda
+          - MacRae
+          - Madison Lee
+          - Marcelles
+          - Martha Rastello
+          - Master
+          - Mat
+          - Mathia
+          - Michael
+          - Miles
+          - Miria
+          - Mitch
+          - Mohandki
+          - Morpheus
+          - Myron
+          - Nancy
+          - Neal
+          - Nick Valentine
+          - Nicole
+          - Old Longfellow
           - Paladin Danse
+          - Patrick the Celt
+          - Paul
+          - Percy
+          - Petrox
+          - Phil
+          - Phillips
           - Piper Wright
           - Porter Gage
           - Preston Garvey
+          - Rayze
+          - Razlo
+          - Razor
+          - Rhombus
+          - Rick
           - Robert Joseph Mac Cready
+          - Rock
           - Rose of Sharon Cassidy
+          - Rutger
+          - Sally
+          - Sammael
+          - Sarah
+          - Sasha
+          - Saul
+          - Savil
+          - Set
+          - Seth
+          - Shannon
+          - Shark
+          - Sherry
+          - Shopkeeper
+          - Sid
+          - Sinthia
+          - Skizzer
+          - Slappy
+          - Slummer
+          - Smitty
+          - Sophia
+          - Stapleton
           - Strong
           - Sulik
+          - Talius
+          - Talus
+          - Tandi
+          - Terry
           - The Master
+          - Theresa
+          - Thomas
+          - Thorndyke
           - Three Dog
+          - Tine Taylor
+          - Tolya
+          - Ton Barracus
+          - Tony Fry
+          - Trish
+          - Tycho
+          - Unit 462
+          - Van Hagan
+          - Vance
+          - Victor
+          - Vincent
+          - Vinnie
+          - Viola
+          - Vree
+          - Wiggum
           - X6-88
           - Yes Man
+          - Zack
+          - Zack Barstow
+          - Zark
+          - ZAX 1.2
         factions:
           - Boomers
           - Brotherhood of Steel
