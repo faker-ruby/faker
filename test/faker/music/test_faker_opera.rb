@@ -22,4 +22,8 @@ class TestFakerOpera < Test::Unit::TestCase
   def bellini
     assert @tester.bellini.match(/\w+/i)
   end
+
+  def mozart
+    assert @tester.mozart.match(/\w+/i)
+  end
 end
