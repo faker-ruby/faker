@@ -235,6 +235,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 ### Games
   - [Faker::Game](doc/games/game.md)
+  - [Faker::Games::ClashOfClans](doc/games/clash_of_clans.md)
   - [Faker::Games::DnD](doc/games/dnd.md)
   - [Faker::Games::Dota](doc/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/games/elder_scrolls.md)
@@ -243,6 +244,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Games::Heroes](doc/games/heroes.md)
   - [Faker::Games::HeroesOfTheStorm](doc/games/heroes_of_the_storm.md)
   - [Faker::Games::LeagueOfLegends](doc/games/league_of_legends.md)
+  - [Faker::Games::Minecraft](doc/games/minecraft.md)
   - [Faker::Games::Myst](doc/games/myst.md)
   - [Faker::Games::Overwatch](doc/games/overwatch.md)
   - [Faker::Games::Pokemon](doc/games/pokemon.md)
@@ -254,7 +256,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Games::Witcher](doc/games/witcher.md)
   - [Faker::Games::WorldOfWarcraft](doc/games/world_of_warcraft.md)
   - [Faker::Games::Zelda](doc/games/zelda.md)
-  - [Faker::Games::ClashOfClans](doc/games/clash_of_clans.md)
 
 ### Japanese Media
   - [Faker::JapaneseMedia::DragonBall](doc/japanese_media/dragon_ball.md)
