@@ -2,6 +2,198 @@ en:
   faker:
     games:
       minecraft:
+        achievement:
+          - Acquire Hardware
+          - Adventuring Time
+          - Ahoy!
+          - Alternative Fuel
+          - Archer
+          - Artificial Selection
+          - Atlantis?
+          - Bake Bread
+          - Beam Me Up
+          - Bee our guest
+          - Benchmaking
+          - Body Guard
+          - Bullseye
+          - Buy Low, Sell High
+          - Camouflage
+          - Castaway
+          - Cheating Death
+          - Chestful of Cobblestone
+          - Cover me in debris
+          - Cow Tipper
+          - Delicious Fish
+          - Diamonds to you!
+          - DIAMONDS!
+          - Disenchanted
+          - Dispense With This
+          - Do a Barrel Roll!
+          - Dry Spell
+          - Echolocation
+          - Enchanter
+          - Feeling Ill
+          - Free Diver
+          - Freight Station
+          - Fruit on the Loom
+          - Getting an Upgrade
+          - Getting Wood
+          - Great View From Up Here
+          - Have a Shearful Day
+          - Hot Topic
+          - Hot tourist destination
+          - I am a Marine Biologist
+          - I've got a bad feeling about this
+          - Inception
+          - Into Fire
+          - Into the Nether
+          - Iron Belly
+          - Iron Man
+          - It's a Sign!
+          - Kill the Beast!
+          - Leader Of The Pack
+          - Let it Go!
+          - Librarian
+          - Lion Hunter
+          - Local Brewery
+          - Map Room
+          - Master Trader
+          - Me Gold!
+          - MOAR Tools
+          - Monster Hunter
+          - Moskstraumen
+          - On A Rail
+          - One Pickle, Two Pickle, Sea Pickle, Four
+          - Oooh, shiny!
+          - Organizational Wizard
+          - Overkill
+          - Overpowered
+          - Passing the Time
+          - Plethora of Cats
+          - Pork Chop
+          - Pot Planter
+          - Rabbit Season
+          - Rainbow Collection
+          - Renewable Energy
+          - Repopulation
+          - Return to Sender
+          - Saddle Up
+          - Sail the 7 Seas
+          - Sleep with the Fishes
+          - Smelt Everything!
+          - Sniper Duel
+          - So I Got That Going for Me
+          - Sound the Alarm!
+          - Stayin' Frosty
+          - Sticky Situation
+          - Super Fuel
+          - Super Sonic
+          - Taking Inventory
+          - Taste of Your Own Medicine
+          - The Beaconator
+          - The Beginning?
+          - The Beginning.
+          - The Deep End
+          - The End?
+          - The End.
+          - The End... Again...
+          - The Haggler
+          - The Lie
+          - Tie Dye Outfit
+          - Time for Stew
+          - Time to Farm!
+          - Time to Mine!
+          - Time to Strike!
+          - Top of the World
+          - Total Beelocation
+          - Trampoline
+          - Treasure Hunter
+          - We're being attacked!
+          - When Pigs Fly
+          - Where Have You Been?
+          - You Need a Mint
+          - Zombie Doctor
+          - Zoologist
+        biome:
+          - Badlands
+          - Badlands Plateau
+          - Bamboo Jungle
+          - Bamboo Jungle Hills
+          - Basalt Deltas
+          - Beach
+          - Birch Forest
+          - Birch Forest Hills
+          - Cold Ocean
+          - Crimson Forest
+          - Dark Forest
+          - Dark Forest Hills
+          - Deep Cold Ocean
+          - Deep Frozen Ocean
+          - Deep Lukewarm Ocean
+          - Deep Ocean
+          - Deep Warm Ocean
+          - Desert
+          - Desert Hills
+          - Desert Lakes
+          - End Barrens
+          - End Highlands
+          - End Midlands
+          - Eroded Badlands
+          - Flower Forest
+          - Forest
+          - Frozen Ocean
+          - Frozen River
+          - Giant Spruce Taiga
+          - Giant Spruce Taiga Hills
+          - Giant Tree Taiga
+          - Giant Tree Taiga Hills
+          - Gravelly Mountains
+          - Gravelly Mountains+
+          - Ice Spikes
+          - Jungle
+          - Jungle Edge
+          - Jungle Hills
+          - Lukewarm Ocean
+          - Modified Badlands Plateau
+          - Modified Jungle
+          - Modified Jungle Edge
+          - Modified Wooded Badlands Plateau
+          - Mountain Edge
+          - Mountains
+          - Mushroom Field Shore
+          - Mushroom Fields
+          - Nether Wastes
+          - Ocean
+          - Plains
+          - River
+          - Savanna
+          - Savanna Plateau
+          - Shattered Savanna
+          - Shattered Savanna Plateau
+          - Small End Islands
+          - Snowy Beach
+          - Snowy Mountains
+          - Snowy Taiga
+          - Snowy Taiga Hills
+          - Snowy Taiga Mountains
+          - Snowy Tundra
+          - Soul Sand Valley
+          - Stone Shore
+          - Sunflower Plains
+          - Swamp
+          - Swamp Hills
+          - Taiga
+          - Taiga Hills
+          - Taiga Mountains
+          - Tall Birch Forest
+          - Tall Birch Hills
+          - The End
+          - The Voi
+          - Warm Ocean
+          - Warped Forest
+          - Wooded Badlands Plateau
+          - Wooded Hills
+          - Wooded Mountains
         blocks:
           - Stone
           - Granite
@@ -203,6 +395,53 @@ en:
           - Lily Pad
           - Nether Brick
           - Nether Brick Fence
+        enchantment:
+          - Aqua Affinity
+          - Bane of Arthropods
+          - Blast Protection
+          - Channeling
+          - Cleaving
+          - Curse of Binding
+          - Curse of Vanishing
+          - Depth Strider
+          - Efficiency
+          - Feather Falling
+          - Fire Aspect
+          - Fire Protection
+          - Flame
+          - Fortune
+          - Frost Walker
+          - Impaling
+          - Infinity
+          - Knockback
+          - Looting
+          - Loyalty
+          - Luck of the Sea
+          - Lure
+          - Mending
+          - Multishot
+          - Piercing
+          - Power
+          - Projectile Protection
+          - Protection
+          - Punch
+          - Quick Charge
+          - Respiration
+          - Riptide
+          - Sharpness
+          - Silk Touch
+          - Smite
+          - Soul Speed
+          - Sweeping Edge
+          - Thorns
+          - Unbreaking
+        game_mode:
+          - Adventure
+          - Creative
+          - Demo
+          - Hardcore
+          - Spectator
+          - Survival
         items:
           - Iron Shovel
           - Iron Pickaxe
@@ -388,3 +627,37 @@ en:
           - Witch
           - Hoglin
           - Piglin
+        status_effect:
+          - Absorption
+          - Bad Luck ‌
+          - Bad Omen
+          - Blindness
+          - Conduit Power
+          - Dolphin's Grace‌
+          - Fatal Poison‌
+          - Fire Resistance
+          - Glowing‌
+          - Haste
+          - Health Boost
+          - Hero of the Village
+          - Hunger
+          - Instant Damage
+          - Instant Health
+          - Invisibility
+          - Jump Boost
+          - Levitation
+          - Luck
+          - Mining Fatigue
+          - Nausea
+          - Night Vision
+          - Poison
+          - Regeneration
+          - Resistance
+          - Saturation
+          - Slow Falling
+          - Slowness
+          - Speed
+          - Strength
+          - Water Breathing
+          - Weakness
+          - Wither
