@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Games::Minecraft.achievement #=> "Time to Mine!"
         #
-        # @faker.version new
+        # @faker.version next
         def achievement
           fetch('games.minecraft.achievement')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Games::Minecraft.biome #=> "Jungle"
         #
-        # @faker.version new
+        # @faker.version next
         def biome
           fetch('games.minecraft.biome')
         end
@@ -51,7 +51,7 @@ module Faker
         # @example
         #   Faker::Games::Minecraft.enchantment #=> "Fire Protection"
         #
-        # @faker.version new
+        # @faker.version next
         def enchantment
           fetch('games.minecraft.enchantment')
         end
@@ -64,7 +64,7 @@ module Faker
         # @example
         #   Faker::Games::Minecraft.game_mode #=> "Survival"
         #
-        # @faker.version new
+        # @faker.version next
         def game_mode
           fetch('games.minecraft.game_mode')
         end
@@ -103,7 +103,7 @@ module Faker
         # @example
         #   Faker::Games::Minecraft.status_effect #=> "Weakness"
         #
-        # @faker.version new
+        # @faker.version next
         def status_effect
           fetch('games.minecraft.status_effect')
         end
