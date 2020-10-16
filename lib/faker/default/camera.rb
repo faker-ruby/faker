@@ -11,7 +11,7 @@ module Faker
       # @example
       #   Faker::Camera.brand #=> "Canon"
       #
-      # @faker.version new
+      # @faker.version next
       def brand
         fetch('camera.brand')
       end
@@ -24,7 +24,7 @@ module Faker
       # @example
       #   Faker::Camera.model #=> "450D"
       #
-      # @faker.version new
+      # @faker.version next
       def model
         fetch('camera.model')
       end
@@ -37,7 +37,7 @@ module Faker
       # @example
       #   Faker::Camera.brand_with_model #=> "Canon 450D"
       #
-      # @faker.version new
+      # @faker.version next
       def brand_with_model
         fetch('camera.brand_with_model')
       end
