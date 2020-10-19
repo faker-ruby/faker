@@ -29,7 +29,7 @@ module Faker
     end
   end
 
-  class Config
+  module Config
     @locale = nil
     @random = nil
 
