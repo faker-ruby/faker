@@ -38,4 +38,8 @@ class TestFakerElderScrolls < Test::Unit::TestCase
   def test_last_name
     assert @tester.last_name.match(/\w+/)
   end
+
+  def test_weapon
+    assert @tester.weapon.match(/\w+/)
+  end
 end
