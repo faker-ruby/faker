@@ -8,10 +8,19 @@ require 'set' # Fixes a bug in i18n 0.6.11
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
 
-I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
-I18n.reload! if I18n.backend.initialized?
-
 module Faker
+  @i18n_loaded = nil
+
+  class << self
+    def load_i18n
+      unless @i18n_loaded
+        I18n.load_path += ::Dir[::File.join(__dir__, 'locales', '**/*.yml')]
+        I18n.reload! if I18n.backend.initialized?
+        @i18n_loaded = true
+      end
+    end
+  end
+
   class Config
     @locale = nil
     @random = nil
@@ -21,6 +30,8 @@ module Faker
       attr_writer :random
 
       def locale
+        Faker.load_i18n
+
         # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
         @locale || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
       end
@@ -150,6 +161,8 @@ module Faker
       # Call I18n.translate with our configured locale if no
       # locale is specified
       def translate(*args, **opts)
+        Faker.load_i18n
+
         opts[:locale] ||= Faker::Config.locale
         opts[:raise] = true
         I18n.translate(*args, **opts)
@@ -166,6 +179,8 @@ module Faker
 
       # Executes block with given locale set.
       def with_locale(tmp_locale = nil)
+        Faker.load_i18n
+
         current_locale = Faker::Config.own_locale
         Faker::Config.locale = tmp_locale
 
