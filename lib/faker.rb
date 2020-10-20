@@ -13,11 +13,19 @@ module Faker
 
   class << self
     def load_i18n
-      unless @i18n_loaded
+      return if @i18n_loaded
+
+      if I18n.available_locales&.any?
+        # We expect all locale .yml files to have the locale name in its filename
+        I18n.load_path += ::Dir[::File.join(__dir__, 'locales', "{#{I18n.available_locales.join(',')}}.yml")]
+        # Or to be located in a directory with the locale name
+        I18n.load_path += ::Dir[::File.join(__dir__, 'locales', "{#{I18n.available_locales.join(',')}}/*.yml")]
+      else
         I18n.load_path += ::Dir[::File.join(__dir__, 'locales', '**/*.yml')]
-        I18n.reload! if I18n.backend.initialized?
-        @i18n_loaded = true
       end
+
+      I18n.reload! if I18n.backend.initialized?
+      @i18n_loaded = true
     end
   end
 

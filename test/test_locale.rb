@@ -78,4 +78,19 @@ class TestLocale < Test::Unit::TestCase
   def test_available_locales
     assert I18n.locale_available?('en-GB')
   end
+
+  def test_load_i18n
+    Faker.instance_variable_set :@i18n_loaded, nil
+    available_locales_was = I18n.available_locales
+
+    I18n.available_locales = %i[en ja id]
+    Faker.load_i18n
+    I18n.eager_load!
+
+    assert Faker.instance_variable_get(:@i18n_loaded)
+    assert_equal %i[en id ja], I18n.backend.translations.keys.sort
+  ensure
+    I18n.available_locales = available_locales_was
+    Faker.instance_variable_set :@i18n_loaded, nil
+  end
 end
