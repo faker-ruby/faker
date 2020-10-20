@@ -107,6 +107,19 @@ module Faker
         def last_name
           fetch('games.elder_scrolls.last_name')
         end
+
+        ##
+        # Produces a weapon from the Elder Scrolls universe.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::ElderScrolls.weapon #=> "Elven Bow"
+        #
+        # @faker.version next
+        def weapon
+          fetch('games.elder_scrolls.weapon')
+        end
       end
     end
   end
