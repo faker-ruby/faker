@@ -16,12 +16,6 @@ require 'yaml'
 YAML::ENGINE.yamler = 'psych' if defined? YAML::ENGINE
 require File.expand_path(File.dirname(__FILE__) + '/../lib/faker')
 
-# configure I18n
-locales_path = File.expand_path(File.dirname(__FILE__) + '../lib/locales')
-I18n.available_locales = Dir[locales_path + '/*'].map do |file|
-  file.split('.').first
-end
-
 # deterministically_verify executes the test provided in the block successive
 #   times with the same deterministic_random seed.
 # @param subject_proc [Proc] a proc object that returns the subject under test
