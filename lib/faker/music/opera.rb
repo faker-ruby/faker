@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  # A generator of titles of operas by Verdi, Rossini, Donizetti and Bellini
+  # A generator of titles of operas by various composers
   class Music
     class Opera < Base
       class << self
@@ -57,21 +57,21 @@ module Faker
           fetch('opera.italian.by_vincenzo_bellini')
         end
 
-         ##
+        ##
         # Produces the title of an opera by Wolfgang Amadeus Mozart.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Music::Opera.mozart #=> "Die Zauberflöte"
+        #   Faker::Music::Opera.mozart #=> "Die Zauberfloete"
         #
         # @faker.version next
         def mozart
           fetch('opera.italian.by_wolfgang_amadeus_mozart') +
-            ('opera.german.by_wolfgang_amadeus_mozart')
+            fetch('opera.german.by_wolfgang_amadeus_mozart')
         end
 
-         ##
+        ##
         # Produces the title of an Italian opera by Wolfgang Amadeus Mozart.
         #
         # @return [String]
@@ -80,24 +80,24 @@ module Faker
         #   Faker::Music::Opera.mozart_it #=> "Cosi fan tutte"
         #
         # @faker.version next
-        def mozart_it
+        def mozart_italian
           fetch('opera.italian.by_wolfgang_amadeus_mozart')
         end
 
-         ##
+        ##
         # Produces the title of a German opera by Wolfgang Amadeus Mozart.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Music::Opera.mozart_ger #=> "Die Zauberflöte"
+        #   Faker::Music::Opera.mozart_ger #=> "Die Zauberfloete"
         #
         # @faker.version next
-        def mozart_ger
+        def mozart_german
           fetch('opera.german.by_wolfgang_amadeus_mozart')
         end
 
-         ##
+        ##
         # Produces the title of an opera by Christoph Willibald Gluck.
         #
         # @return [String]
@@ -108,10 +108,10 @@ module Faker
         # @faker.version next
         def gluck
           fetch('opera.italian.by_christoph_willibald_gluck') +
-            ('opera.french.by_christoph_willibald_gluck')
+            fetch('opera.french.by_christoph_willibald_gluck')
         end
 
-         ##
+        ##
         # Produces the title of an Italian opera by Christoph Willibald Gluck.
         #
         # @return [String]
@@ -120,7 +120,7 @@ module Faker
         #   Faker::Music::Opera.gluck_it #=> "Orfeo ed Euridice"
         #
         # @faker.version next
-        def gluck
+        def gluck_italian
           fetch('opera.italian.by_christoph_willibald_gluck')
         end
 
@@ -130,10 +130,10 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Music::Opera.gluck_fr #=> "Orphée et Euridice"
+        #   Faker::Music::Opera.gluck_fr #=> "Orphee et Euridice"
         #
         # @faker.version next
-        def gluck
+        def gluck_french
           fetch('opera.french.by_christoph_willibald_gluck')
         end
 
@@ -156,7 +156,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Music::Opera.weber #=> "Der Freischütz"
+        #   Faker::Music::Opera.weber #=> "Der Freischuetz"
         #
         # @faker.version next
         def weber
@@ -234,7 +234,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Music::Opera.ravel #=> "L'enfant et les sortilèges"
+        #   Faker::Music::Opera.ravel #=> "L'enfant et les sortileges"
         #
         # @faker.version next
         def ravel
@@ -281,7 +281,7 @@ module Faker
         end
 
         ##
-        # Produces the title of an opera by Camille Saint-Saëns.
+        # Produces the title of an opera by Camille Saint-Saens.
         #
         # @return [String]
         #
