@@ -42,4 +42,8 @@ class TestFakerElderScrolls < Test::Unit::TestCase
   def test_weapon
     assert @tester.weapon.match(/\w+/)
   end
+
+  def jewelry
+    assert @tester.jewelry.match(/\w+/)
+  end
 end
