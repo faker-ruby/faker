@@ -30,6 +30,32 @@ module Faker
       end
 
       ##
+      # Produces the state of an element.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Science.element_state #=> "Liquid"
+      #
+      # @faker.version next
+      def element_state
+        fetch('science.element_state')
+      end
+
+      ##
+      # Produces the subcategory of an element.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Science.element_subcategory #=> "Reactive nonmetal"
+      #
+      # @faker.version next
+      def element_subcategory
+        fetch('science.element_subcategory')
+      end
+
+      ##
       # Produces the name of a scientist.
       #
       # @return [String]
