@@ -239,6 +239,21 @@ en:
       - Lv
       - Ts
       - Og
+      element_state:
+      - Gas
+      - Liquid
+      - Solid
+      - Unknown
+      element_subcategory:
+      - Alkali metal
+      - Alkaline earth metal
+      - Lan­thanide	Actinide
+      - Metalloid
+      - Noble gas
+      - Post-​transition metal
+      - Reactive nonmetal
+      - Transition metal
+      - Unknown chemical properties
       scientist: 
       - Albert Einstein
       - Albrecht von Haller
