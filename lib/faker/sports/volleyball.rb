@@ -57,7 +57,7 @@ module Faker
         end
 
         ##
-        # Produces a position in volleyball.
+        # Produces a formation in volleyball.
         #
         # @return [String]
         #
