@@ -120,6 +120,19 @@ module Faker
         def weapon
           fetch('games.elder_scrolls.weapon')
         end
+
+        ##
+        # Produces a weapon from the Elder Scrolls universe.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::ElderScrolls.jewelry #=> "Silver Ruby Ring"
+        #
+        # @faker.version next
+        def jewelry
+          fetch('games.elder_scrolls.jewelry')
+        end
       end
     end
   end
