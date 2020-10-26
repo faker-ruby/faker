@@ -34,8 +34,7 @@ module Faker
     @random = nil
 
     class << self
-      attr_writer :locale
-      attr_writer :random
+      attr_writer :locale, :random
 
       def locale
         Faker.load_i18n
