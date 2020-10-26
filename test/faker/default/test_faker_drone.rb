@@ -52,7 +52,7 @@ class TestFakerDrone < Test::Unit::TestCase
   end
 
   def test_operating_temperature
-    assert @tester.operating_temperature.match(/[0-9]{2}\W\-[0-9]{3}\WF/)
+    assert @tester.operating_temperature.match(/[0-9]{2}\W-[0-9]{3}\WF/)
   end
 
   def test_battery_capacity
@@ -72,7 +72,7 @@ class TestFakerDrone < Test::Unit::TestCase
   end
 
   def test_charging_temperature
-    assert @tester.charging_temperature.match(/[0-9]{2}\W\-[0-9]{3}\WF/)
+    assert @tester.charging_temperature.match(/[0-9]{2}\W-[0-9]{3}\WF/)
   end
 
   def test_max_charging_power
@@ -96,7 +96,7 @@ class TestFakerDrone < Test::Unit::TestCase
   end
 
   def test_max_shutter_speed_range
-    assert @tester.shutter_speed_range.match(/[0-9]{1,2}\-1\/[0-9]{1,4}s/)
+    assert @tester.shutter_speed_range.match(/[0-9]{1,2}-1\/[0-9]{1,4}s/)
   end
 
   def test_max_shutter_speed

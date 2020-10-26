@@ -48,10 +48,10 @@ class TestFrLocale < Test::Unit::TestCase
   end
 
   def test_fr_compass_methods
-    direction_pattern = /^\w+(\-\w+){0,2}$/
+    direction_pattern = /^\w+(-\w+){0,2}$/
     cardinal_pattern = /^\w+$/
-    ordinal_pattern = /^\w+(\-\w+){1}$/
-    half_wind_patern = /^\w+(\-\w+){2}$/
+    ordinal_pattern = /^\w+(-\w+){1}$/
+    half_wind_patern = /^\w+(-\w+){2}$/
     letter_pattern = /^[NEOS]{1,3}$/
 
     assert_match(direction_pattern, Faker::Compass.direction)

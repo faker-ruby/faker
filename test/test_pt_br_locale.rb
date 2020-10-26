@@ -25,10 +25,10 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Address.street_suffix.is_a? String
 
     assert Faker::Address.secondary_address.is_a? String
-    assert Faker::Address.secondary_address.match(/^[a-zA-Z\.]+\s[0-9]+$/)
+    assert Faker::Address.secondary_address.match(/^[a-zA-Z.]+\s[0-9]+$/)
 
     assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.postcode.match(/^[0-9]{5}\-[0-9]{3}$/)
+    assert Faker::Address.postcode.match(/^[0-9]{5}-[0-9]{3}$/)
 
     assert Faker::Address.state.is_a? String
     assert Faker::Address.city.is_a? String
@@ -129,10 +129,10 @@ class TestPtBrLocale < Test::Unit::TestCase
 
   def test_pt_br_vehicle_methods
     assert Faker::Vehicle.license_plate.is_a? String
-    assert Faker::Vehicle.license_plate.match(/(^[A-Z]{3}\-[0-9]{4})|([A-Z]{3}[0-9]{1}[A-Z][0-9]{2})|([A-Z]{3}[0-9]{2}[A-Z][0-9])/)
+    assert Faker::Vehicle.license_plate.match(/(^[A-Z]{3}-[0-9]{4})|([A-Z]{3}[0-9]{1}[A-Z][0-9]{2})|([A-Z]{3}[0-9]{2}[A-Z][0-9])/)
 
     assert Faker::Vehicle.license_plate(state_abbreviation: 'RJ').is_a? String
-    assert Faker::Vehicle.license_plate(state_abbreviation: 'RJ').match(/^[A-Z]{3}\-[0-9]{4}/)
+    assert Faker::Vehicle.license_plate(state_abbreviation: 'RJ').match(/^[A-Z]{3}-[0-9]{4}/)
   end
 
   def test_pt_br_gender_methods
