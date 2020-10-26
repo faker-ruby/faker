@@ -18,4 +18,8 @@ class TestFakerHeroes < Test::Unit::TestCase
   def test_klass
     assert @tester.klass.match(/\w+/)
   end
+
+  def test_artifact
+    assert @tester.artifact.match(/\w+/)
+  end
 end
