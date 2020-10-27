@@ -468,7 +468,7 @@ module Faker
                           0
         else
                           (sum / 10 + 1) * 10 - sum
-                        end
+        end
 
         
       end
