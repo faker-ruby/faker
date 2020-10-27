@@ -13,8 +13,8 @@ class TestPtLocale < Test::Unit::TestCase
 
   def test_pt_address_methods
     assert_match(/^[[:word:]]+[.]? \d{1,3}$/, Faker::Address.secondary_address)
-    assert_match(/^[\d]{3,5}$/, Faker::Address.building_number)
-    assert_match(/^[\d]{4}$/, Faker::Address.postcode)
+    assert_match(/^\d{3,5}$/, Faker::Address.building_number)
+    assert_match(/^\d{4}$/, Faker::Address.postcode)
 
     assert Faker::Address.country_code.is_a? String
     assert Faker::Address.street_suffix.is_a? String

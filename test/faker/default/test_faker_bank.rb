@@ -23,7 +23,7 @@ class TestFakerBank < Test::Unit::TestCase
 
   def test_routing_number_with_format
     fraction = Faker::Bank.routing_number_with_format
-    assert fraction.match(/\d{1,2}[-]\d{1,4}[\/]\d{1,4}/)
+    assert fraction.match(/\d{1,2}-\d{1,4}\/\d{1,4}/)
   end
 
   def test_bsb_number
