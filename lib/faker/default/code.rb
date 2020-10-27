@@ -218,7 +218,7 @@ module Faker
       def generate_base13_isbn
         values = regexify(/\d{12}/)
         remainder = sum(values) { |value, index| index.even? ? value.to_i : value.to_i * 3 } % 10
-        values << "-#{((10 - remainder) % 10)}"
+        values << "-#{(10 - remainder) % 10}"
       end
 
       def sum(values)
