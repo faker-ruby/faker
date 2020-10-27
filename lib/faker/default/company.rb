@@ -465,9 +465,9 @@ module Faker
         end
 
         if (sum % 10).zero?
-                          0
+          0
         else
-                          (sum / 10 + 1) * 10 - sum
+          (sum / 10 + 1) * 10 - sum
         end
       end
 
