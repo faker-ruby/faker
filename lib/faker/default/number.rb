@@ -40,7 +40,7 @@ module Faker
           keywords << :digits if legacy_digits != NOT_GIVEN
         end
 
-        '0' + (2..digits).collect { digit }.join
+        "0#{(2..digits).collect { digit }.join}"
       end
 
       ##
