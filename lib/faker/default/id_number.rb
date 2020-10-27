@@ -197,7 +197,7 @@ module Faker
         digits = Faker::Number.number(digits: 8)
         verification_code = chilean_verification_code(digits)
 
-        digits.to_s + '-' + verification_code.to_s
+        "#{digits.to_s}-#{verification_code.to_s}"
       end
 
       private

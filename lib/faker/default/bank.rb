@@ -182,7 +182,7 @@ module Faker
         prefix = (1..50).to_a.map(&:to_s).sample
         numerator = routing_num.split('')[5..8].join.to_i.to_s
         denominator = routing_num.split('')[0..4].join.to_i.to_s
-        prefix + '-' + numerator + '/' + denominator
+        "#{prefix}-#{numerator}/#{denominator}"
       end
 
       def rand_numstring

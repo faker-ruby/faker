@@ -14,7 +14,7 @@ require 'timecop'
 require 'yaml'
 
 YAML::ENGINE.yamler = 'psych' if defined? YAML::ENGINE
-require File.expand_path(File.dirname(__FILE__) + '/../lib/faker')
+require File.expand_path("#{File.dirname(__FILE__)}/../lib/faker")
 
 # deterministically_verify executes the test provided in the block successive
 #   times with the same deterministic_random seed.

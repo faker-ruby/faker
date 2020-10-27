@@ -107,9 +107,9 @@ module Faker
 
         paragraph = paragraph(sentence_count: 3, supplemental: supplemental)
 
-        paragraph += ' ' + paragraph(sentence_count: 3, supplemental: supplemental) while paragraph.length < number
+        paragraph += " #{paragraph(sentence_count: 3, supplemental: supplemental)}" while paragraph.length < number
 
-        paragraph[0...number - 1] + '.'
+        "#{paragraph[0...number - 1]}."
       end
 
       # rubocop:disable Metrics/ParameterLists

@@ -82,7 +82,7 @@ module Faker
           keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
         end
 
-        words(number: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: open_compounds_allowed).join(' ').capitalize + '.'
+        "#{words(number: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: open_compounds_allowed).join(' ').capitalize}."
       end
 
       ##
@@ -185,9 +185,9 @@ module Faker
 
         paragraph = paragraph(sentence_count: 3, supplemental: supplemental)
 
-        paragraph += ' ' + paragraph(sentence_count: 3, supplemental: supplemental) while paragraph.length < characters
+        paragraph += " #{paragraph(sentence_count: 3, supplemental: supplemental)}" while paragraph.length < characters
 
-        paragraph[0...characters - 1] + '.'
+        "#{paragraph[0...characters - 1]}."
       end
     end
   end

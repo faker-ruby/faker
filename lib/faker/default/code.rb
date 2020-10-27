@@ -160,7 +160,7 @@ module Faker
         partial = Array.new(7) { Faker::Config.random.rand(0..9) }.join
 
         # Generate 9th digit
-        check_digit = generate_sin_check_digit(registry + partial + '0').to_s
+        check_digit = generate_sin_check_digit("#{registry}#{partial}0").to_s
 
         registry + partial + check_digit
       end

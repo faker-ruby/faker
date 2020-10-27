@@ -26,8 +26,8 @@ module Faker
           keywords << :options if legacy_options != NOT_GIVEN
         end
 
-        options[:key] = 'Faker::' + options[:key]
-        options[:value] = 'Faker::' + options[:value]
+        options[:key] = "Faker::#{options[:key]}"
+        options[:value] = "Faker::#{options[:value]}"
 
         hash = build_shallow_hash(width, options)
         JSON.generate(hash)
@@ -84,8 +84,8 @@ module Faker
           keywords << :options if legacy_options != NOT_GIVEN
         end
 
-        options[:key] = 'Faker::' + options[:key]
-        options[:value] = 'Faker::' + options[:value]
+        options[:key] = "Faker::#{options[:key]}"
+        options[:value] = "Faker::#{options[:value]}"
 
         hash = JSON.parse(json)
         hash.each do |key, _|

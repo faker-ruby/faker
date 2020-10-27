@@ -278,7 +278,7 @@ module Faker
 
         return regexify(bothify(fetch('vehicle.license_plate'))) if state_abbreviation.empty?
 
-        key = 'vehicle.license_plate_by_state.' + state_abbreviation
+        key = "vehicle.license_plate_by_state.#{state_abbreviation}"
         regexify(bothify(fetch(key)))
       end
 

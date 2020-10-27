@@ -32,7 +32,7 @@ module Faker
           end
         end
 
-        fetch('relationship.familial.' + connection)
+        fetch("relationship.familial.#{connection}")
       end
 
       ##

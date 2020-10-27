@@ -37,7 +37,7 @@ module Faker
 
         construct_email(
           sanitize_email_local_part(username(specifier: name)),
-          'example.' + sample(%w[org com net])
+          "example.#{sample(%w[org com net])}"
         )
       end
 

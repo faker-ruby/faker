@@ -54,7 +54,7 @@ module Faker
           keywords << :include_secondary if legacy_include_secondary != NOT_GIVEN
         end
 
-        numerify(parse('address.street_address') + (include_secondary ? ' ' + secondary_address : ''))
+        numerify(parse('address.street_address') + (include_secondary ? " #{secondary_address}" : ''))
       end
 
       ##
@@ -133,7 +133,7 @@ module Faker
 
         # provide a zip code that is valid for the state provided
         # see http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf
-        bothify(fetch('address.postcode_by_state.' + state_abbreviation))
+        bothify(fetch("address.postcode_by_state.#{state_abbreviation}"))
       end
 
       ##
@@ -247,7 +247,7 @@ module Faker
           keywords << :code if legacy_code != NOT_GIVEN
         end
 
-        fetch('address.country_by_code.' + code)
+        fetch("address.country_by_code.#{code}")
       end
 
       ##
@@ -265,7 +265,7 @@ module Faker
           keywords << :name if legacy_name != NOT_GIVEN
         end
 
-        fetch('address.country_by_name.' + name)
+        fetch("address.country_by_name.#{name}")
       end
 
       ##
