@@ -464,13 +464,13 @@ module Faker
           end
         end
 
-        control_digit = if (sum % 10).zero?
+        if (sum % 10).zero?
                           0
                         else
                           (sum / 10 + 1) * 10 - sum
                         end
 
-        control_digit
+        
       end
 
       def abn_checksum(abn)
