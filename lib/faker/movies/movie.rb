@@ -30,12 +30,12 @@ module Faker
       end
 
       ##
-      # Produces a qirector from a movie.
+      # Produces a director for a movie.
       #
       # @return [String]
       #
       # @example
-      #   Faker::Movie.qirector #=> "Quentin Tarantino"
+      #   Faker::Movie.director #=> "Quentin Tarantino"
       #
       # @faker.version next
       def director
