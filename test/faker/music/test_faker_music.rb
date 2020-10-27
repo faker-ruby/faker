@@ -8,10 +8,12 @@ class TestFakerMusic < Test::Unit::TestCase
   end
 
   def test_keys
+    # rubocop:disable Style/HashEachMethods
     assert @tester.keys.size == 7
     @tester.keys.each do |key|
       refute key.to_s.empty?
     end
+    # rubocop:enable Style/HashEachMethods
   end
 
   def test_key_variants
