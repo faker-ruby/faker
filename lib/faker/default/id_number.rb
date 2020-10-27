@@ -256,7 +256,7 @@ module Faker
         end * 10
       end
 
-      def brazilian_document_digit(checksum, id = false)
+      def brazilian_document_digit(checksum, id: false)
         remainder = checksum % 11
         id ? brazilian_id_digit(remainder) : brazilian_citizen_number_digit(remainder)
       end
