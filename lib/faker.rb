@@ -185,14 +185,14 @@ module Faker
       end
 
       # Executes block with given locale set.
-      def with_locale(tmp_locale = nil)
+      def with_locale(tmp_locale = nil, &block)
         Faker.load_i18n
 
         current_locale = Faker::Config.own_locale
         Faker::Config.locale = tmp_locale
 
         disable_enforce_available_locales do
-          I18n.with_locale(tmp_locale) { yield }
+          I18n.with_locale(tmp_locale, &block)
         end
       ensure
         Faker::Config.locale = current_locale
