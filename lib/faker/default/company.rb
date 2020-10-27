@@ -470,7 +470,7 @@ module Faker
                           (sum / 10 + 1) * 10 - sum
         end
 
-        
+
       end
 
       def abn_checksum(abn)
