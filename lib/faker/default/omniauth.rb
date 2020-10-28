@@ -9,6 +9,8 @@ module Faker
                 :email
 
     def initialize(name: nil, email: nil)
+      super()
+
       @name = name || "#{Name.first_name} #{Name.last_name}"
       @email = email || Internet.safe_email(name: self.name)
       @first_name, @last_name = self.name.split

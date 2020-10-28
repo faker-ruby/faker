@@ -30,7 +30,7 @@ module Faker
           end
         end
 
-        fetch('stripe.valid_cards.' + card_type)
+        fetch("stripe.valid_cards.#{card_type}")
       end
 
       ##
@@ -60,7 +60,7 @@ module Faker
           end
         end
 
-        fetch('stripe.valid_tokens.' + card_type)
+        fetch("stripe.valid_tokens.#{card_type}")
       end
 
       ##
@@ -89,7 +89,7 @@ module Faker
           end
         end
 
-        fetch('stripe.invalid_cards.' + card_error)
+        fetch("stripe.invalid_cards.#{card_error}")
       end
 
       ##

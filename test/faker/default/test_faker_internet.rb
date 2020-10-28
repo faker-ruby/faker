@@ -164,11 +164,11 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_password_with_special_chars
-    assert @tester.password(min_length: 8, max_length: 12, mix_case: true, special_characters: true).match(/[!@#\$%\^&\*]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: true, special_characters: true).match(/[!@#$%\^&*]+/)
   end
 
   def test_password_without_special_chars
-    assert @tester.password(min_length: 8, max_length: 12, mix_case: true).match(/[^!@#\$%\^&\*]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: true).match(/[^!@#$%\^&*]+/)
   end
 
   def test_domain_name_without_subdomain
@@ -253,7 +253,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_ip_v4_cidr
-    assert @tester.ip_v4_cidr.match(%r(\/\d{1,2}$))
+    assert @tester.ip_v4_cidr.match(%r(/\d{1,2}$))
 
     1000.times do
       assert((1..32).cover?(@tester.ip_v4_cidr.split('/').last.to_i))
@@ -281,7 +281,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_ip_v6_cidr
-    assert @tester.ip_v6_cidr.match(%r{\/\d{1,3}$})
+    assert @tester.ip_v6_cidr.match(%r{/\d{1,3}$})
 
     1000.times do
       assert((1..128).cover?(@tester.ip_v6_cidr.split('/').last.to_i))
@@ -289,15 +289,15 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_slug
-    assert @tester.slug.match(/^[a-z]+(_|\-)[a-z]+$/)
+    assert @tester.slug.match(/^[a-z]+(_|-)[a-z]+$/)
   end
 
   def test_slug_with_content_arg
-    assert @tester.slug(words: 'Foo bAr baZ').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
+    assert @tester.slug(words: 'Foo bAr baZ').match(/^foo(_|\.|-)bar(_|\.|-)baz$/)
   end
 
   def test_slug_with_unwanted_content_arg
-    assert @tester.slug(words: 'Foo.. bAr., baZ,,').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
+    assert @tester.slug(words: 'Foo.. bAr., baZ,,').match(/^foo(_|\.|-)bar(_|\.|-)baz$/)
   end
 
   def test_slug_with_glue_arg
@@ -305,7 +305,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_url
-    assert @tester.url(host: 'domain.com', path: '/username', scheme: 'https').match(%r{^https:\/\/domain\.com\/username$})
+    assert @tester.url(host: 'domain.com', path: '/username', scheme: 'https').match(%r{^https://domain\.com/username$})
   end
 
   def test_device_token
@@ -334,9 +334,9 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_base64
-    assert_match(/[[[:alnum:]]\-\_]{16}/, @tester.base64)
-    assert_match(/[[[:alnum:]]\-\_]{4}/, @tester.base64(length: 4))
-    assert_match(/[[[:alnum:]]\-\_]{16}=/, @tester.base64(padding: true))
-    assert_match(/[[[:alnum:]]\+\/]{16}/, @tester.base64(urlsafe: false))
+    assert_match(/[[[:alnum:]]\-_]{16}/, @tester.base64)
+    assert_match(/[[[:alnum:]]\-_]{4}/, @tester.base64(length: 4))
+    assert_match(/[[[:alnum:]]\-_]{16}=/, @tester.base64(padding: true))
+    assert_match(/[[[:alnum:]]+\/]{16}/, @tester.base64(urlsafe: false))
   end
 end

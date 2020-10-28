@@ -89,7 +89,7 @@ module Faker
             end
           end
 
-          fetch('dune.quotes.' + character)
+          fetch("dune.quotes.#{character}")
         end
 
         ##
@@ -124,7 +124,7 @@ module Faker
             end
           end
 
-          fetch('dune.sayings.' + source)
+          fetch("dune.sayings.#{source}")
         end
       end
     end

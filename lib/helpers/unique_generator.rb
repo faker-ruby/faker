@@ -14,6 +14,7 @@ module Faker
       @previous_results = Hash.new { |hash, key| hash[key] = Set.new }
     end
 
+    # rubocop:disable Lint/MissingSuper
     def method_missing(name, *arguments)
       self.class.marked_unique.add(self)
 
@@ -28,6 +29,8 @@ module Faker
 
       raise RetryLimitExceeded, "Retry limit exceeded for #{name}"
     end
+    # rubocop:enable Lint/MissingSuper
+
     # Have method_missing use ruby 2.x keywords if the method exists.
     # This is necessary because the syntax for passing arguments (`...`)
     # is invalid on versions before Ruby 2.7, so it can't be used.

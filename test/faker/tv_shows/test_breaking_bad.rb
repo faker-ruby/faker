@@ -8,10 +8,10 @@ class TestFakerTvShowsBreakingBad < Test::Unit::TestCase
   end
 
   def test_character
-    10.times { assert @tester.character.match(/[\w]+/) }
+    10.times { assert @tester.character.match(/\w+/) }
   end
 
   def test_episode
-    10.times { assert @tester.episode.match(/[\w]+/) }
+    10.times { assert @tester.episode.match(/\w+/) }
   end
 end

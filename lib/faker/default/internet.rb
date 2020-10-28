@@ -37,7 +37,7 @@ module Faker
 
         construct_email(
           sanitize_email_local_part(username(specifier: name)),
-          'example.' + sample(%w[org com net])
+          "example.#{sample(%w[org com net])}"
         )
       end
 
@@ -50,7 +50,8 @@ module Faker
         with_locale(:en) do
           return shuffle(specifier.scan(/[[:word:]]+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
 
-          if specifier.is_a?(Integer)
+          case specifier
+          when Integer
             # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error
             raise ArgumentError, 'Given argument is too large' if specifier > 10**6
 
@@ -62,7 +63,7 @@ module Faker
               break unless result.length < specifier && tries < 7
             end
             return result * (specifier / result.length + 1) if specifier.positive?
-          elsif specifier.is_a?(Range)
+          when Range
             tries = 0
             result = nil
             loop do

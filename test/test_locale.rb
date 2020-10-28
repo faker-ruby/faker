@@ -17,7 +17,7 @@ class TestLocale < Test::Unit::TestCase
     assert Faker::PhoneNumber.phone_number.match(/\(0\d+\) \d+|\d+-\d+/)
     assert Faker::Address.street_name.match(//)
     Faker::Config.locale = :ru
-    assert Faker::Internet.domain_name.match(/([\da-z\.-]+)\.([a-z\.]{2,6})/)
+    assert Faker::Internet.domain_name.match(/([\da-z.-]+)\.([a-z.]{2,6})/)
   end
 
   def test_configured_locale_translation

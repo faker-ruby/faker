@@ -140,15 +140,13 @@ module Faker
       def compile_routing_number
         digit_one_two = %w[00 01 02 03 04 05 06 07 08 09 10 11 12]
         ((21..32).to_a + (61..72).to_a + [80]).each { |x| digit_one_two << x.to_s }
-        routing_num = digit_one_two.sample + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring
-        routing_num
+        digit_one_two.sample + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring + rand_numstring
       end
 
       def compile_bsb_number
         digit_one_two = %w[01 03 06 08 11 12 73 76 78 30]
         state = (2..7).to_a.map(&:to_s).sample
-        bsb_num = digit_one_two.sample + state + rand_numstring + rand_numstring + rand_numstring
-        bsb_num
+        digit_one_two.sample + state + rand_numstring + rand_numstring + rand_numstring
       end
 
       # Calculates the mandatory checksum in 3rd and 4th characters in IBAN format
@@ -182,7 +180,7 @@ module Faker
         prefix = (1..50).to_a.map(&:to_s).sample
         numerator = routing_num.split('')[5..8].join.to_i.to_s
         denominator = routing_num.split('')[0..4].join.to_i.to_s
-        prefix + '-' + numerator + '/' + denominator
+        "#{prefix}-#{numerator}/#{denominator}"
       end
 
       def rand_numstring

@@ -197,7 +197,7 @@ module Faker
         digits = Faker::Number.number(digits: 8)
         verification_code = chilean_verification_code(digits)
 
-        digits.to_s + '-' + verification_code.to_s
+        "#{digits}-#{verification_code}"
       end
 
       private
@@ -256,7 +256,7 @@ module Faker
         end * 10
       end
 
-      def brazilian_document_digit(checksum, id = false)
+      def brazilian_document_digit(checksum, id: false)
         remainder = checksum % 11
         id ? brazilian_id_digit(remainder) : brazilian_citizen_number_digit(remainder)
       end
