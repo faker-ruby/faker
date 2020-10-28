@@ -242,6 +242,7 @@ en:
       element_state:
       - Gas
       - Liquid
+      - Plasma
       - Solid
       - Unknown
       element_subcategory:
