@@ -1,6 +1,6 @@
 en:
   faker:
-    musical_instruments:
+    instruments:
       common:
         guitars:
           - Acoustic Guitar

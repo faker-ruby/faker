@@ -35,6 +35,33 @@ module Faker
       end
 
       ##
+      # Produces the name of an instrument.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Music.instrument #=> "Acoustic Guitar"
+      #
+      # @faker.version 1.6.4
+      def instrument
+        fetch('instruments.common.guitars') +
+          fetch('instruments.common.woodwinds') +
+          fetch('instruments.common.brass') +
+          fetch('instruments.common.unpitched_percussion') +
+          fetch('instruments.common.pitched_percussion') +
+          fetch('instruments.common.keyboards') +
+          fetch('instruments.common.strings') +
+          fetch('instruments.common.singers') +
+          fetch('instruments.uncommon_and_world.woodwinds') +
+          fetch('instruments.uncommon_and_world.brass') +
+          fetch('instruments.uncommon_and_world.unpitched_percussion') +
+          fetch('instruments.uncommon_and_world.pitched_percussion') +
+          fetch('instruments.uncommon_and_world.keyboards') +
+          fetch('instruments.uncommon_and_world.strings') +
+          fetch('instruments.uncommon_and_world.singers')
+      end
+
+      ##
       # Produces an array of the letter names of musical notes, without accidentals.
       #
       # @return [Array<String>]
