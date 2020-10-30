@@ -128,6 +128,31 @@ module Faker
       def genre
         fetch('music.genres')
       end
+
+      ##
+      # Produces the name of a musical sub-genre (satirical).
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Music.sub_genre #=> "Neo Industrial Jazz Wave"
+      #
+      # @faker.version 1.9.1
+      def sub_genre
+        # fetch('music.sub_genres')
+
+        prefix= %w[kraut new neo nu post]
+        adjective= %w[progressive cyber industrial electronic intelligent underground minimalist speed dub]
+        base= %w[rock jazz blues metal classical punk djent]
+        postfix= %w[wave core gaze beat tronica style]
+        subby_mcgenre = [].tap do |array|
+          array << (rand < 0.5 ? prefix.sample : nil)
+          [1,2].sample.times {array << adjective.sample}
+          array << base.sample + (rand < 0.33 ? postfix.sample : '')
+        end.compact.join(" ")
+        p subby_mcgenre
+      end
+
     end
   end
 end
