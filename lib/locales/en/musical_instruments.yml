@@ -1,0 +1,285 @@
+en:
+  faker:
+    musical_instruments:
+      common:
+        guitars:
+          - Acoustic Guitar
+          - Electric Guitar
+          - Bass Guitar
+          - Steel Guitar
+          - Twelve String Guitar
+          - Five String Bass Guitar
+          - Six String Bass Guitar
+          - Fretless Electric Bass
+          - Classical Guitar
+        woodwinds:
+          - Piccolo
+          - Flute
+          - Alto Flute
+          - Bass Flute
+          - Oboe
+          - English Horn
+          - Clarinet in B-flat
+          - Clarinet in A
+          - Clarinet in E-flat
+          - Bass Clarinet in B-flat
+          - Soprano Saxophone
+          - Alto Saxophone
+          - Tenor Saxophone
+          - Baritone Saxophone
+          - Bass Saxophone
+          - Bassoon
+          - Contrabassoon
+          - Harmonica
+        brass:
+          - Horn in F
+          - Mellophone in F
+          - Trumpet in C
+          - Trumpet in B-flat
+          - Cornet in B-flat
+          - Flugelhorn
+          - Trombone
+          - Bass Trombone
+          - Baritone
+          - Euphonium
+          - Tuba
+          - Sousaphone
+        unpitched_percussion:
+          - Drum Set
+          - Snare Drum
+          - Tenor Drum
+          - Bass Drum
+          - Tom-toms
+          - Roto-toms
+          - Octobans
+          - Temple Blocks
+          - Triangle
+          - Gong
+          - Suspended Cymbal
+          - Crash Cymbal
+          - Clash Cymbal
+          - Ride Cymbal
+          - Splash Cymbal
+          - China Cymbal
+          - Hi-hat
+          - Perforated Cymbal
+          - Tambourine
+          - Chimes
+          - Sleigh Bells
+        pitched_percussion:
+          - Handbells
+          - Tubular Bells
+          - Glockenspiel
+          - Xylophone
+          - Xylorimba
+          - Marimba
+          - Vibraphone
+        keyboards:
+          - Upright Piano
+          - Grand Piano
+          - Electric Piano
+          - Celesta
+          - Harpsichord
+          - Electric Keyboard
+          - Keytar
+          - Accordion
+          - Melodica
+          - Pipe Organ
+          - Electric Organ
+          - Rock Organ
+          - Jazz Organ
+          - Synthesizer
+        strings:
+          - Violin
+          - Viola
+          - Cello
+          - String Bass
+          - Double Bass
+          - Harp
+        singers:
+          - Soprano
+          - Coloratura Soprano
+          - Lyric Soprano
+          - Dramatic Soprano
+          - Mezzo-Soprano
+          - Lyric Mezzo-Soprano
+          - Coloratura Mezzo-Soprano
+          - Dramatic Mezzo-Soprano
+          - Alto
+          - Tenor
+          - Lyric Tenor
+          - Dramatic Tenor
+          - Baritone
+          - Lyric Baritone
+          - Dramatic Baritone
+          - Bel canto Baritone
+          - Bass
+          - Bel canto Bass
+          - Dramatic Bass
+      uncommon_and_world:
+        woodwinds:
+          - Military Piccolo in D-flat
+          - G Flute
+          - E-flat Flute
+          - Contra-alto Flute
+          - Contrabass Flute
+          - Irish Flute
+          - Fife
+          - Bansuri
+          - Koudi
+          - Nohkan
+          - Daegeum
+          - Shakuhachi
+          - Danso
+          - Hocchiku
+          - Panflute
+          - Xiao
+          - Didgeridoo
+          - Flageolet
+          - Gemshorn
+          - Ocarina
+          - Recorder
+          - Tin Whistle
+          - Hornpipe
+          - Soprillo Saxophone
+          - Sopranino Saxophone
+          - Contrabass Saxophone
+          - Subcontrabass Saxophone
+          - Contralto Clarinet
+          - Contrabass Clarinet
+          - Octocontrabass Clarinet
+          - Soprano Bassoon
+          - Bombardeers
+          - Cromorne
+          - Duduk
+          - Oboe d'Amore
+          - Bass Oboe
+          - Bagpipes
+          - Heckelphone
+          - Sarrusophone
+        brass:
+          - Wagner Tuba
+          - Fluba
+          - Alto Trombone
+          - Contrabass Trombone
+          - Ophicleide
+          - Serpent
+          - Cimbasso
+          - Alp-Horn
+          - Alto Horn
+          - Mellophonium
+          - Soprano Bugle
+          - Mellophone Bugle
+          - Baritone Bugle
+          - Valve Bugle
+          - Saxtromba
+          - Saxtuba
+          - Bimbonifono
+        unpitched_percussion:
+          - Anvil
+          - Brake Drum
+          - Whistle
+          - Typewriter
+          - Whip
+          - Ratchet
+          - Castanets
+          - Guiro
+          - Vibraslap
+          - Maracas
+          - Tabla
+          - Agogo
+          - Taiko Drum
+          - Bell Tree
+          - Bongos
+          - Cabasa
+          - Cajon
+          - Claves
+          - Conga
+          - Cowbell
+          - Djembe
+          - Egg Shaker
+          - Flexatone
+          - Jam Block
+          - Rainstick
+          - Siren
+          - Slit Drum
+          - Timbales
+          - Washboard
+          - Zill
+        pitched_percussion:
+          - Crotales
+          - Hammered Dulcimer
+          - Zither
+          - Cimbalom
+          - Steel Drums
+          - Lithophone
+          - Glass Harmonica
+          - Glass Harp
+          - Gamelan Kengong
+          - Gamelan Slentam
+          - Angklung
+          - Calung
+          - Kenong
+          - Timpani
+          - Bianzhong
+          - Binzasara
+          - Boomwhacker
+          - Carillon
+          - Chime Bars
+          - Cimbalom
+          - Crystallophone
+          - Metallophone
+          - Pixiphone
+          - Lujon
+          - Mbira
+          - Yangqin
+          - Kalimba
+        keyboards:
+          - Melodeon
+          - Bandoneon
+          - Harmonium
+          - Clavichord
+          - Reed Organ
+          - Hammond Organ
+          - Ondes Martenot
+          - Seaboard
+        strings:
+          - Ukelele
+          - Banjo
+          - Tenor Banjo
+          - 10-string Hawaiian Guitar
+          - Resonator Guitar
+          - Lever Harp
+          - Cavaquinho
+          - Mandolin
+          - Lute
+          - Viola da Gamba
+          - Bajo
+          - Bandola
+          - Bandolon
+          - Dulcimer
+          - Sitar
+          - Tambura
+          - Oud
+          - Kora
+          - Qanoon
+          - Santoor
+          - Shamisen
+          - Balalaika
+          - Hurdy-Gurdy
+          - Semi-Acoustic Guitar
+          - Semi-Acoustic Bass
+          - Gambusi
+          - Nyckelharpa
+          - Vielle
+        singers:
+          - Contralto
+          - Countertenor
+          - Castrato
+          - Baritenor
+          - Bass-baritone
+          - Basso Profondo
+          - Loituma
+          - Tuvan Throat Singer
+          - Konnakol
+          - Yodeler

@@ -39,10 +39,6 @@ class TestFakerMusic < Test::Unit::TestCase
     assert @tester.name.match(/([A-Z])\s*(b|#){0,1}\s*(m){0,1}/)
   end
 
-  def test_instrument
-    assert @tester.instrument.match(/\w+/)
-  end
-
   def test_chord
     assert @tester.name.match(/([A-Z])\s*(b|#){0,1}\s*([a-zA-Z0-9]{0,4})/)
   end

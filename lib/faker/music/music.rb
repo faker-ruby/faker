@@ -35,19 +35,6 @@ module Faker
       end
 
       ##
-      # Produces the name of an instrument.
-      #
-      # @return [String]
-      #
-      # @example
-      #   Faker::Music.instrument #=> "Acoustic Guitar"
-      #
-      # @faker.version 1.6.4
-      def instrument
-        fetch('music.instruments')
-      end
-
-      ##
       # Produces an array of the letter names of musical notes, without accidentals.
       #
       # @return [Array<String>]
