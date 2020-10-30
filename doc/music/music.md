@@ -14,4 +14,12 @@ Faker::Music.band #=> "The Beatles"
 Faker::Music.album #=> "Sgt. Pepper's Lonely Hearts Club"
 
 Faker::Music.genre #=> "Rock"
+
+Faker::Music.subgenre #=> "Post Progressive Minimalist Folkwave"
+
+Faker::Music.subgenre_prefix #=> "Post"
+
+Faker::Music.subgenre_adjective #=> "Progressive"
+
+Faker::Music.subgenre_postfix #=> "Wave"
 ```

@@ -130,27 +130,61 @@ module Faker
       end
 
       ##
+      # Produces the prefix of a musical sub-genre.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Music.subgenre_prefix #=> "Post"
+      #
+      # @faker.version next
+      def subgenre_prefix
+        fetch('music.subgenres.prefixes')
+      end
+
+      ##
+      ##
+      # Produces an adjective describing a musical sub-genre.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Music.subgenre_adjective #=> "Progressive"
+      #
+      # @faker.version next
+      def subgenre_adjective
+        fetch('music.subgenres.adjectives')
+      end
+
+      # Produces the postfix of a musical sub-genre.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Music.subgenre_postfix #=> "Wave"
+      #
+      # @faker.version next
+      def subgenre_postfix
+        fetch('music.subgenres.postfixes')
+      end
+
+      ##
       # Produces the name of a musical sub-genre (satirical).
       #
       # @return [String]
       #
       # @example
-      #   Faker::Music.sub_genre #=> "Neo Industrial Jazz Wave"
+      #   Faker::Music.subgenre #=> "Post Progressive Minimalist Folkwave"
       #
-      # @faker.version 1.9.1
-      def sub_genre
-        # fetch('music.sub_genres')
-
-        prefix= %w[kraut new neo nu post]
-        adjective= %w[progressive cyber industrial electronic intelligent underground minimalist speed dub]
-        base= %w[rock jazz blues metal classical punk djent]
-        postfix= %w[wave core gaze beat tronica style]
-        subby_mcgenre = [].tap do |array|
-          array << (rand < 0.5 ? prefix.sample : nil)
-          [1,2].sample.times {array << adjective.sample}
-          array << base.sample + (rand < 0.33 ? postfix.sample : '')
-        end.compact.join(" ")
-        p subby_mcgenre
+      # @faker.version next
+      def subgenre
+        subg = [].tap do |array|
+          array << (rand < 0.4 ? "#{subgenre_prefix}" : nil)
+          [1,2].sample.times {array << "#{subgenre_adjective}"}
+          array << (rand < 0.1 ? "#{instrument} and #{instrument}" : nil)
+          array << (rand < 0.1 ? "#{Faker::Verb.base.capitalize}" : nil)
+          array << "#{genre}" + (rand < 0.4 ? "#{subgenre_postfix.downcase}" : '')
+        end.uniq.compact.join(" ")
       end
 
     end

@@ -306,10 +306,37 @@ en:
       - Classical
       - Latin
       - Reggae
-      - Stage And Screen
+      - Stage and Screen
       - Blues
       - Non Music
       - Rap
+      - Metal
+      - Opera
+      subgenres:
+        prefixes:
+        - German
+        - New
+        - Neo
+        - Nu
+        - Post
+        - Swedish
+        adjectives:
+        - Progressive 
+        - Cyber
+        - Industrial
+        - Electronic
+        - Intelligent
+        - Underground
+        - Minimalist
+        - Speed
+        - Dub
+        postfixes:
+        - Wave
+        - Core
+        - Gaze
+        - Beat
+        - Tronica
+        - Style
     hiphop:
       subgenres:
       - Low Fi
