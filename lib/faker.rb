@@ -244,6 +244,7 @@ module Faker
       def unique(max_retries = 10_000)
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
+      alias_method :uniq, :unique
 
       def sample(list, num = nil)
         if list.respond_to?(:sample)
