@@ -293,50 +293,80 @@ en:
       - Songs About Jane
       - Hands All Over
       genres:
-      - Rock
-      - Pop
+      - Blues
+      - Classical
+      - Country
       - Electronic
       - Folk
-      - World
-      - Country
-      - Jazz
       - Funk
-      - Soul
       - Hip Hop
-      - Classical
+      - Jazz
       - Latin
-      - Reggae
-      - Stage and Screen
-      - Blues
-      - Non Music
-      - Rap
       - Metal
+      - Non Music
       - Opera
+      - Pop
+      - Rap
+      - Reggae
+      - Rock
+      - Soul
+      - Stage and Screen
+      - World
       subgenres:
         prefixes:
-        - German
-        - New
+        - Anti
         - Neo
+        - New
         - Nu
         - Post
-        - Swedish
         adjectives:
-        - Progressive 
+        - Acid
+        - Acoustic
+        - Alternative
+        - Art
+        - Bubblegum
         - Cyber
-        - Industrial
-        - Electronic
-        - Intelligent
-        - Underground
-        - Minimalist
-        - Speed
+        - Dance
+        - Death
+        - Doom
         - Dub
+        - Electronic
+        - Experimental
+        - Future
+        - Glam
+        - Groove
+        - Hardcore
+        - Indie
+        - Industrial
+        - Instrumental
+        - Intelligent
+        - Math
+        - Melodic
+        - Minimalist
+        - Modern
+        - Power
+        - Progressive
+        - Psychedelic
+        - Roots
+        - Smooth
+        - Soft
+        - Space
+        - Speed
+        - Surf
+        - Swing
+        - Thrash
+        - Traditional
+        - Underground
         postfixes:
-        - Wave
+        - Beat
+        - Billy
         - Core
         - Gaze
-        - Beat
-        - Tronica
+        - Punk
+        - Step
         - Style
+        - Tronica
+        - Wave
     hiphop:
       subgenres:
       - Low Fi

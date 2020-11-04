@@ -178,13 +178,32 @@ module Faker
       #
       # @faker.version next
       def subgenre
-        subg = [].tap do |array|
-          array << (rand < 0.4 ? "#{subgenre_prefix}" : nil)
+        [].tap do |array|
+          array << randomize(0.2, subgenre_prefix)
           [1,2].sample.times {array << "#{subgenre_adjective}"}
-          array << (rand < 0.1 ? "#{instrument} and #{instrument}" : nil)
-          array << (rand < 0.1 ? "#{Faker::Verb.base.capitalize}" : nil)
-          array << "#{genre}" + (rand < 0.4 ? "#{subgenre_postfix.downcase}" : '')
-        end.uniq.compact.join(" ")
+          array << randomize(0.1, demonym)
+          array << randomize(0.1, "#{instrument} and #{instrument}")
+          array << randomize(0.1, fetch('verbs.base').capitalize)
+          array << randomize(0.05, genre)
+          array << genre.to_s + randomize(0.4, subgenre_postfix.downcase, '')
+        end.uniq.compact.join(' ')
+      end
+
+      private
+
+      def titleize(sentence)
+        sentence.split.each { |word| word.capitalize! }.join(' ')
+      end
+
+      def randomize(chance, true_return, false_return=nil)
+          (rand < chance ? true_return : false_return)
+      end
+
+      def demonym
+        [].tap do |array|
+          array << randomize(0.2, fetch('compass.cardinal.word').capitalize)
+          array << fetch('demographic.demonym').split
+        end.uniq.compact.join(' ')
       end
 
     end
