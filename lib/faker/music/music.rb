@@ -180,7 +180,7 @@ module Faker
       def subgenre
         [].tap do |array|
           array << randomize(0.2, subgenre_prefix)
-          [1, 2].sample.times { array << subgenre_adjective.to_s }
+          randomize(0.5, 1, 2).times { array << subgenre_adjective.to_s }
           array << randomize(0.1, demonym)
           array << randomize(0.1, "#{instrument} and #{instrument}")
           array << randomize(0.1, fetch('verbs.base').capitalize)
@@ -192,13 +192,16 @@ module Faker
       private
 
       def randomize(chance, true_return, false_return = nil)
-        (rand < chance ? true_return : false_return)
+        (Faker::Config.random.rand < chance ? true_return : false_return)
       end
 
       def demonym
         [].tap do |array|
-          array << randomize(0.2, fetch('compass.cardinal.word').capitalize)
-          array << fetch('demographic.demonym').split
+          cardinal = randomize(0.4, fetch('compass.cardinal.word').capitalize)
+          coast = randomize(0.6, 'Coast') if cardinal
+          array << cardinal
+          array << coast
+          array << fetch('demographic.demonym').split unless coast
         end.uniq.compact.join(' ')
       end
     end
