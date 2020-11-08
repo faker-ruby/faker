@@ -445,7 +445,7 @@ module Faker
       #
       # @return [Hash] An auth hash in the format provided by omniauth-auth0.
       #
-      # @faker.version 2.13.0
+      # @faker.version next
       def auth0(name: nil, nickname: nil, email: nil, uid: nil)
         uid ||= "auth0|#{Number.hexadecimal(digits: 24)}"
         auth = Omniauth.new(name: name, email: email)
