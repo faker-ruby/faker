@@ -2,6 +2,7 @@ en:
   faker:
     game:
       title:
+        - 'Age of Empires 2'
         - 'Half-Life'
         - 'Half-Life: Opposing Force'
         - 'Half-Life: Blue Shift'
