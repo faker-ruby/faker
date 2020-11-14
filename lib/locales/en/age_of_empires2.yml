@@ -1,0 +1,26 @@
+en:
+  faker:
+    games:
+      age_of_empires2:
+        civilization:
+          - Britons
+          - Byzantines
+          - Celts
+          - Chinese
+          - Franks
+          - Goths
+          - Japanese
+          - Mongols
+          - Persians
+          - Saracens
+          - Teutons
+          - Turks
+          - Vikings
+        infantry:
+          - Militia
+          - Man-at-Arms
+          - Long Swordsman
+          - Two-Handed Swordsman
+          - Champion
+          - Spearman
+          - Pikeman
