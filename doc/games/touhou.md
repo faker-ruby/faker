@@ -14,5 +14,5 @@ Faker::Games::Touhou.location #=> "Moriya Shrine"
 Faker::Games::Touhou.spell_card #=> 'Esoterica "Gray Thaumaturgy"'
 
 # Random Touhou song
-Faker::Games::Zelda.song #=> "Faith Is for the Transient People"
+Faker::Games::Touhou.song #=> "Faith Is for the Transient People"
 ```
