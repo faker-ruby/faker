@@ -9,7 +9,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Mountain.name #=> "Everest"
+      #   Faker::Mountain.name #=> "Mount Everest"
       #
       def name
         fetch('mountain.name')
