@@ -11,6 +11,7 @@ module Faker
       # @example
       #   Faker::Mountain.name #=> "Mount Everest"
       #
+      #  @faker.version next
       def name
         fetch('mountain.name')
       end
