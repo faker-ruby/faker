@@ -1,5 +1,91 @@
 # Change Log
 
+## [v2.15.0](https://github.com/faker-ruby/faker/tree/v2.15.0) (2020-11-24)
+
+## Bug/Fixes
+
+- Rubocop 1.0 fixes (#2182) @amatsuda
+- Get rid of broken I18n locales configuration for the tests (#2168) @amatsuda
+- Fixes a bug when generating a password with min_length eq 1 (#2138) @adrian-rivera @Zeragamba
+- Improve Faker::Company.spanish_organisation_number (#2106)
+
+## Chores
+
+- Reformat demographic yaml (#2189) @fiteclub
+- An attempt to load only necessary locales on the fly (#2169) @amatsuda
+- Faker::Config can be a Module rather than a Class (#2167) @amatsuda
+- Cleanup games (#2155) @mathisto
+
+## Deprecate
+
+- Deprecate `celebrity` methods in favor of `actor` (#2133) @vraravam
+
+## Documentation
+
+- Fix class name in volleyball.md (#2198) @connorshea
+- Fix typo in doc/games/heroes.md (#2145) @Crysicia
+- fix typo (#2141) @Zeragamba
+- Updated versions in doc for methods. (#2123) @sudeeptarlekar
+
+## Feature Request
+
+- Add `Faker::Mountain` (#2196) @bipashant
+- Add Faker::Volleyball (#2178) @RubyHuntsman
+- Add artifact generator to Faker::Game::Heroes (#2177) @droznyk
+- Add generator to Faker::Games:ElderScrolls (#2171) @RubyHuntsman
+- Augment opera (#2170) @Gaitorius
+- Add generator to Faker::Games::ElderScrolls (#2165) @RubyHuntsman
+- Add more generators to Faker::Minecraft (#2162) @RubyHuntsman
+- I added more programming languages to the source (#2161) @JoaoHenriqueVale
+- Add Faker:Camera (#2159) @RubyHuntsman
+- Add how to train your dragon (#2158) @archbloom
+- Add Faker::Fantasy::Tolkien (#2152) @mathisto
+- Feature: Add north dakota driving licence (#2149) @martinjaimem
+- Add Final Space to TvShows category (#2147)
+- Add finance/stock generators (#2146) @johnpitchko
+- Add Clash Of Clans to the Game category (#2143) @jamesmai0512
+- Add Conan to the JapaneseMedia category (#2142) @jamesmai0512
+- Add Naruto to the JapaneseMedia category (#2139) @jamesmai0512
+- Add Doraemon to the JapaneseMedia category (#2137) @jamesmai0512
+- Add space force and coast guard to military (#2136) @mathisto
+- Add Super Mario (#2135) @fblupi
+- Add The Room (2003) to Movies (#2134) @fiteclub
+- Faker adjectives (#2130) @loicboset
+- Add Studio Ghibli to the JapaneseMedia category (#2124) @Kadaaran
+- Created New Method Faker::Quote.fortune_cookie (#2112) @catonmat
+- Allow disabling the usage of open compounds in sentences (#2109) @tjozwik
+- Add faker for hiphop artist (#1923) @Josiassejod1
+- Add races and class names to WorldOfWarcraft (#1787) @mathisto
+- Add planets and races to DragonBall (#1786) @mathisto
+- Add planets, cities, and quotes to Dune (#1784) @mathisto
+
+## Update locales
+
+- add japanese gender first name (#2191) @issei126
+- Add full_address to Ukrainian locale (#2176) @Ptico
+- Fixed some spelling issues in company.yml (#2173) @coreymaher
+- Update Faker::Games::SuperSmashBros (#2164) @boardfish
+- Add more quotes to Faker::Games::Witcher (#2163) @RubyHuntsman
+- Add Jack Handey's Deep Thoughts to quotes (#2150) @fiteclub
+- add brazil license plate from mercosul rules (#2144) @gabrielbaldao
+- Add additional quotes to Studio Ghibli (#2132) @lambda2
+- Change 'Nyota Uhuru' to 'Nyota Uhura' (#2121) @TrevorA-TrevorA
+- Add spanish license plates (#2103)
+
+## Update local dependencies
+
+- Update rubocop requirement from = 1.0.0 to = 1.1.0 (#2185)
+- Update rubocop requirement from = 0.93.1 to = 1.0.0 (#2172)
+- Update rubocop requirement from = 0.93.0 to = 0.93.1 (#2156)
+- Update rubocop requirement from = 0.92.0 to = 0.93.0 (#2151)
+- Update rubocop requirement from = 0.91.1 to = 0.92.0 (#2129)
+- Update rubocop requirement from = 0.91.0 to = 0.91.1 (#2126)
+- Update rubocop requirement from = 0.90.0 to = 0.91.0 (#2122)
+- Update test-unit requirement from = 3.3.6 to = 3.3.7 (#2195)
+- Update timecop requirement from = 0.9.1 to = 0.9.2 (#2160)
+
+------------------------------------------------------------------------------
+
 ## [v2.14.0](https://github.com/faker-ruby/faker/tree/v2.14.0) (2020-09-15)
 
 ## Bug/Fixes
