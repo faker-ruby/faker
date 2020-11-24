@@ -15,9 +15,6 @@
 - An attempt to load only necessary locales on the fly [#2169](https://github.com/faker-ruby/faker/pull/2169) @amatsuda
 - Faker::Config can be a Module rather than a Class [#2167](https://github.com/faker-ruby/faker/pull/2167) @amatsuda
 - Cleanup games [#2155](https://github.com/faker-ruby/faker/pull/2155) @mathisto
-
-## Deprecate
-
 - Deprecate `celebrity` methods in favor of `actor` [#2133](https://github.com/faker-ruby/faker/pull/2133) @vraravam
 
 ## Documentation
