@@ -1,4 +1,4 @@
-# Faker::Sports::Basketball
+# Faker::Sports::Volleyball
 
 ```ruby
 Faker::Sports::Volleyball.team #=> "Leo Shoes Modena"
