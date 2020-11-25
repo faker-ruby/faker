@@ -1,5 +1,11 @@
 # Change Log
 
+## [v2.15.1](https://github.com/faker-ruby/faker/tree/v2.15.1) (2020-11-24)
+
+- Rollback PR #2169 and bump 2.15.1 [#2203](https://github.com/faker-ruby/faker/pull/2203) @vbrazo
+
+------------------------------------------------------------------------------
+
 ## [v2.15.0](https://github.com/faker-ruby/faker/tree/v2.15.0) (2020-11-24)
 
 ## Bug/Fixes
