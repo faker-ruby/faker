@@ -20,3 +20,10 @@ Faker::Games::Dota.player #=> "Dendi"
 Faker::Games::Dota.quote #=> "You have called death upon yourself."
 Faker::Games::Dota.quote(hero: 'alchemist') #=> "Better living through alchemy!"
 ```
+
+Available since version next
+
+```ruby
+# Random neutral item
+Faker::Games::Dota.neutral_item #=> "Royal Jelly"
+```
