@@ -186,6 +186,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Marketing](doc/default/marketing.md)
   - [Faker::Measurement](doc/default/measurement.md)
   - [Faker::Military](doc/default/military.md)
+  - [Faker::Mountain](doc/default/mountain.md)
   - [Faker::Name](doc/default/name.md)
   - [Faker::Nation](doc/default/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/default/nato_phonetic_alphabet.md)
