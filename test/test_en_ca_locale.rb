@@ -18,6 +18,7 @@ class TestEnCaLocale < Test::Unit::TestCase
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.default_country.is_a? String
     assert_equal 'Canada', Faker::Address.default_country
+    assert_equal 'CA', Faker::Address.country_code
 
     expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
     assert_match(expected, Faker::Address.postcode)
@@ -31,7 +32,7 @@ class TestEnCaLocale < Test::Unit::TestCase
   def test_en_ca_subscriber_number_method
     assert Faker::PhoneNumber.subscriber_number.is_a? String
     assert_equal Faker::PhoneNumber.subscriber_number.length, 4
-    assert_equal Faker::PhoneNumber.subscriber_number(10).length, 10
+    assert_equal Faker::PhoneNumber.subscriber_number(length: 10).length, 10
     assert_equal Faker::PhoneNumber.method(:extension), Faker::PhoneNumber.method(:subscriber_number)
   end
 

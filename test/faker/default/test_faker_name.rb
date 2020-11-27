@@ -27,6 +27,10 @@ class TestFakerName < Test::Unit::TestCase
     assert @tester.female_first_name.is_a? String
   end
 
+  def test_neutral_first_name
+    assert @tester.neutral_first_name.is_a? String
+  end
+
   def test_middle_name
     assert @tester.middle_name.match(/(\w+\.? ?){3,4}/)
   end
@@ -45,6 +49,6 @@ class TestFakerName < Test::Unit::TestCase
 
   def test_initials
     assert @tester.initials.match(/[A-Z]{3}/)
-    assert @tester.initials(2).match(/[A-Z]{2}/)
+    assert @tester.initials(number: 2).match(/[A-Z]{2}/)
   end
 end

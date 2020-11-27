@@ -12,10 +12,22 @@ class TestFakerFile < Test::Unit::TestCase
   end
 
   def test_mime_type_format
-    assert @tester.mime_type.match(%r{(.*)\/(.*)+})
+    assert @tester.mime_type.match(%r{(.*)/(.*)+})
   end
 
   def test_file_name
-    assert @tester.file_name.match(%r{([a-z\-_]+)(\\|\/)([a-z\-_]+)\.([a-z]+)})
+    assert @tester
+      .file_name
+      .match(%r{^([a-z\-_.]+)(\\|/)([a-z\-_]+)\.([a-z]+)$})
+  end
+
+  def test_dir
+    assert @tester.dir.match(%r{^(([a-z\-_.]+)(\\|/)){2}([a-z\-_.]+)$})
+  end
+
+  def test_dir_with_args
+    assert @tester
+      .dir(segment_count: 2, root: '\\root\\', directory_separator: '\\')
+      .match(%r{^\\root(\\([a-z\-_.]+)){2}$})
   end
 end

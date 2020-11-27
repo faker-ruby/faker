@@ -1,14 +1,11 @@
 # Faker::Relationship
 ### A Faker module for familial relationships.
 
-It might be available in the next version.
-
 ```ruby
+# Keyword arguments: connection
 Faker::Relationship.familial #=> "Mother" or "Grandmother"
-
-Faker::Relationship.familial('direct') #=> "Mother" or "Brother"
-
-Faker::Relationship.familial('extended') #=> "Grandmother" or "Niece" or "Aunt"
+Faker::Relationship.familial(connection: 'direct') #=> "Mother" or "Brother"
+Faker::Relationship.familial(connection: 'extended') #=> "Grandmother" or "Niece" or "Aunt"
 
 Faker::Relationship.spouse #=> "Husband" or "Wife"
 

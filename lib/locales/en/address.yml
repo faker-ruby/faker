@@ -257,7 +257,7 @@ en:
         YE: "Yemen"
         ZM: "Zambia"
         ZW: "Zimbabwe"
-      country_by_name: 
+      country_by_name:
         afghanistan: "AF"
         albania: "AB"
         algeria: "DZ"
@@ -397,7 +397,6 @@ en:
         mauritania: "MR"
         mauritius: "MU"
         mayotte: "YT"
-        mexicoMX: ""
         micronesia_federated_states_of: "FM"
         moldova_republic_of: "MD"
         monaco: "MC"
@@ -571,6 +570,8 @@ en:
         - "#{city_prefix} #{Name.first_name}"
         - "#{Name.first_name}#{city_suffix}"
         - "#{Name.last_name}#{city_suffix}"
+      city_with_state:
+        - "#{city}, #{state}"
       street_name:
         - "#{Name.first_name} #{street_suffix}"
         - "#{Name.last_name} #{street_suffix}"
@@ -579,6 +580,8 @@ en:
       full_address:
         - "#{street_address}, #{city}, #{state_abbr} #{zip_code}"
         - "#{secondary_address} #{street_address}, #{city}, #{state_abbr} #{zip_code}"
+      mail_box:
+        - "PO Box ##"
+        - "PO Box ###"
+        - "PO Box ####"
       default_country: [United States of America]
-
-

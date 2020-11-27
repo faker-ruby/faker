@@ -22,8 +22,16 @@ Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
 Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
 
 # Generate a Brazilian citizen number (CPF)
+# Keyword arguments: formatted
 Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
+Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
 
-# Generate a formatted Brazilian CPF
-Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> 000.000.000-00
+# Generate a Brazilian ID Number (RG)
+# Keyword arguments: formatted
+Faker::IDNumber.brazilian_id #=> "493054029"
+Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
+
+# Generate a Chilean ID (Rut with 8 digits)
+# For more advanced cases, please refer to Faker::ChileRut
+Faker::IDNumber.chilean_id #=> "15620613-K"
 ```

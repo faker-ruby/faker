@@ -11,20 +11,40 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.email.match(/.+@.+\.\w+/)
   end
 
+  def test_email_with_non_permitted_characters
+    assert @tester.email(name: 'martín').match(/mart#n@.+\.\w+/)
+  end
+
   def test_email_with_separators
-    assert @tester.email('jane doe', '+').match(/.+\+.+@.+\.\w+/)
+    assert @tester.email(name: 'jane doe', separators: '+').match(/.+\+.+@.+\.\w+/)
+  end
+
+  def test_email_with_domain_option_given
+    assert @tester.email(name: 'jane doe', domain: 'customdomain').match(/.+@customdomain\.\w+/)
+  end
+
+  def test_email_with_domain_option_given_with_domain_suffix
+    assert @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix').match(/.+@customdomain\.customdomainsuffix/)
   end
 
   def test_free_email
     assert @tester.free_email.match(/.+@(gmail|hotmail|yahoo)\.com/)
   end
 
+  def test_free_email_with_non_permitted_characters
+    assert @tester.free_email(name: 'martín').match(/mart#n@.+\.\w+/)
+  end
+
   def test_safe_email
     assert @tester.safe_email.match(/.+@example.(com|net|org)/)
   end
 
+  def test_safe_email_with_non_permitted_characters
+    assert @tester.safe_email(name: 'martín').match(/mart#n@.+\.\w+/)
+  end
+
   def test_username
-    assert @tester.username(0..3).match(/[a-z]+((_|\.)[a-z]+)?/)
+    assert @tester.username(specifier: 0..3).match(/[a-z]+((_|\.)[a-z]+)?/)
     assert @tester.username.match(/[a-z]+((_|\.)[a-z]+)?/)
   end
 
@@ -33,39 +53,34 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_username_with_string_arg
-    assert @tester.username('bo peep').match(/(bo(_|\.)peep|peep(_|\.)bo)/)
+    assert @tester.username(specifier: 'bo peep').match(/(bo(_|\.)peep|peep(_|\.)bo)/)
   end
 
   def test_username_with_string_arg_determinism
-    deterministically_verify -> { @tester.username('bo peep') }, depth: 4 do |subject|
+    deterministically_verify -> { @tester.username(specifier: 'bo peep') }, depth: 4 do |subject|
       assert subject.match(/(bo(_|\.)peep|peep(_|\.)bo)/)
     end
   end
 
   def test_username_with_integer_arg
     (1..32).each do |min_length|
-      assert @tester.username(min_length).length >= min_length
+      assert @tester.username(specifier: min_length).length >= min_length
     end
   end
 
   def test_username_with_utf_8_arg
-    # RUBY_VERSION < '2.4.0' is not able to downcase or upcase non-ascii strings
-    if RUBY_VERSION < '2.4.0'
-      assert @tester.username('Łucja').match('Łucja')
-    else
-      assert @tester.username('Łucja').match('łucja')
-    end
+    assert @tester.username(specifier: 'Łucja').match('łucja')
   end
 
   def test_username_with_very_large_integer_arg
-    exception = assert_raises(ArgumentError) { @tester.username(10_000_000) }
+    exception = assert_raises(ArgumentError) { @tester.username(specifier: 10_000_000) }
     assert_equal('Given argument is too large', exception.message)
   end
 
   def test_username_with_closed_range_arg
     (1..32).each do |min_length|
       (min_length..32).each do |max_length|
-        l = @tester.username((min_length..max_length)).length
+        l = @tester.username(specifier: (min_length..max_length)).length
         assert l >= min_length
         assert l <= max_length
       end
@@ -75,7 +90,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_username_with_open_range_arg
     (1..32).each do |min_length|
       (min_length + 1..33).each do |max_length|
-        l = @tester.username((min_length...max_length)).length
+        l = @tester.username(specifier: (min_length...max_length)).length
         assert l >= min_length
         assert l <= max_length - 1
       end
@@ -85,7 +100,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_username_with_range_and_separators
     (1..32).each do |min_length|
       (min_length + 1..33).each do |max_length|
-        u = @tester.username((min_length...max_length), %w[=])
+        u = @tester.username(specifier: (min_length...max_length), separators: %w[=])
         assert u.length.between? min_length, max_length - 1
         assert u.match(/\A[a-z]+((=)?[a-z]*)*\z/)
       end
@@ -98,51 +113,82 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_integer_arg
     (1..32).each do |min_length|
-      assert @tester.password(min_length).length >= min_length
+      assert @tester.password(min_length: min_length, mix_case: false).length >= min_length
     end
   end
 
   def test_password_max_with_integer_arg
     (1..32).each do |min_length|
       max_length = min_length + 4
-      assert @tester.password(min_length, max_length).length <= max_length
+      assert @tester.password(min_length: min_length, max_length: max_length, mix_case: false).length <= max_length
     end
   end
 
   def test_password_could_achieve_max_length
     passwords = []
     64.times do
-      passwords << @tester.password(14, 16)
+      passwords << @tester.password(min_length: 14, max_length: 16)
     end
     assert passwords.select { |item| item.length == 16 }.size >= 1
   end
 
   def test_password_with_mixed_case
-    assert @tester.password.match(/[A-Z]+/)
+    password = @tester.password
+    upcase_count = 0
+    downcase_count = 0
+    password.chars.each do |char|
+      if char =~ /[[:alpha:]]/
+        char.capitalize == char ? upcase_count += 1 : downcase_count += 1
+      end
+    end
+    assert upcase_count >= 1
+    assert downcase_count >= 1
+  end
+
+  def test_password_with_min_length_eq_1
+    min_length = 1
+    password = @tester.password(min_length: min_length)
+    assert password.match(/\w+/)
+  end
+
+  def test_password_with_min_length_and_max_length
+    min_length = 2
+    max_length = 5
+    password = @tester.password(min_length: min_length, max_length: max_length)
+    assert password.match(/\w+/)
+    assert (min_length..max_length).include?(password.size), 'Password size is incorrect'
   end
 
   def test_password_without_mixed_case
-    assert @tester.password(8, 12, false).match(/[^A-Z]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: false).match(/[^A-Z]+/)
   end
 
   def test_password_with_special_chars
-    assert @tester.password(8, 12, true, true).match(/[!@#\$%\^&\*]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: true, special_characters: true).match(/[!@#$%\^&*]+/)
   end
 
   def test_password_without_special_chars
-    assert @tester.password(8, 12, true).match(/[^!@#\$%\^&\*]+/)
+    assert @tester.password(min_length: 8, max_length: 12, mix_case: true).match(/[^!@#$%\^&*]+/)
   end
 
   def test_domain_name_without_subdomain
-    assert @tester.domain_name.match(/\w+\.\w+/)
+    assert @tester.domain_name.match(/[\w-]+\.\w+/)
   end
 
   def test_domain_name_with_subdomain
-    assert @tester.domain_name(true).match(/\w+\.\w+\.\w+/)
+    assert @tester.domain_name(subdomain: true).match(/[\w-]+\.[\w-]+\.\w+/)
+  end
+
+  def test_domain_name_with_subdomain_and_with_domain_option_given
+    assert @tester.domain_name(subdomain: true, domain: 'customdomain').match(/customdomain\.\w+/)
+  end
+
+  def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffix
+    assert @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix').match(/customdomain\.customdomainsuffix/)
   end
 
   def test_domain_word
-    assert @tester.domain_word.match(/^\w+$/)
+    assert @tester.domain_word.match(/^[\w-]+$/)
   end
 
   def test_domain_suffix
@@ -207,7 +253,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_ip_v4_cidr
-    assert @tester.ip_v4_cidr.match(%r(\/\d{1,2}$))
+    assert @tester.ip_v4_cidr.match(%r(/\d{1,2}$))
 
     1000.times do
       assert((1..32).cover?(@tester.ip_v4_cidr.split('/').last.to_i))
@@ -216,14 +262,14 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_mac_address
     assert_equal 5, @tester.mac_address.count(':')
-    assert_equal 5, @tester.mac_address('').count(':')
+    assert_equal 5, @tester.mac_address(prefix: '').count(':')
 
     100.times do
       assert @tester.mac_address.split(':').map { |d| d.to_i(16) }.max <= 255
     end
 
-    assert @tester.mac_address('fa:fa:fa').start_with?('fa:fa:fa')
-    assert @tester.mac_address('01:02').start_with?('01:02')
+    assert @tester.mac_address(prefix: 'fa:fa:fa').start_with?('fa:fa:fa')
+    assert @tester.mac_address(prefix: '01:02').start_with?('01:02')
   end
 
   def test_ip_v6_address
@@ -235,7 +281,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_ip_v6_cidr
-    assert @tester.ip_v6_cidr.match(%r{\/\d{1,3}$})
+    assert @tester.ip_v6_cidr.match(%r{/\d{1,3}$})
 
     1000.times do
       assert((1..128).cover?(@tester.ip_v6_cidr.split('/').last.to_i))
@@ -243,23 +289,23 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_slug
-    assert @tester.slug.match(/^[a-z]+(_|\-)[a-z]+$/)
+    assert @tester.slug.match(/^[a-z]+(_|-)[a-z]+$/)
   end
 
   def test_slug_with_content_arg
-    assert @tester.slug('Foo bAr baZ').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
+    assert @tester.slug(words: 'Foo bAr baZ').match(/^foo(_|\.|-)bar(_|\.|-)baz$/)
   end
 
   def test_slug_with_unwanted_content_arg
-    assert @tester.slug('Foo.. bAr., baZ,,').match(/^foo(_|\.|\-)bar(_|\.|\-)baz$/)
+    assert @tester.slug(words: 'Foo.. bAr., baZ,,').match(/^foo(_|\.|-)bar(_|\.|-)baz$/)
   end
 
   def test_slug_with_glue_arg
-    assert @tester.slug(nil, '+').match(/^[a-z]+\+[a-z]+$/)
+    assert @tester.slug(words: nil, glue: '+').match(/^[a-z]+\+[a-z]+$/)
   end
 
   def test_url
-    assert @tester.url('domain.com', '/username', 'https').match(%r{^https:\/\/domain\.com\/username$})
+    assert @tester.url(host: 'domain.com', path: '/username', scheme: 'https').match(%r{^https://domain\.com/username$})
   end
 
   def test_device_token
@@ -271,19 +317,26 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_user_agent_with_valid_argument
-    assert @tester.user_agent(:opera).match(/Opera/)
-    assert @tester.user_agent('opera').match(/Opera/)
+    assert @tester.user_agent(vendor: :opera).match(/Opera/)
+    assert @tester.user_agent(vendor: 'opera').match(/Opera/)
   end
 
   def test_user_agent_with_invalid_argument
-    assert @tester.user_agent(:ie).match(/Mozilla|Opera/)
-    assert @tester.user_agent(nil).match(/Mozilla|Opera/)
-    assert @tester.user_agent(1).match(/Mozilla|Opera/)
+    assert @tester.user_agent(vendor: :ie).match(/Mozilla|Opera/)
+    assert @tester.user_agent(vendor: nil).match(/Mozilla|Opera/)
+    assert @tester.user_agent(vendor: 1).match(/Mozilla|Opera/)
   end
 
   def test_uuid
     uuid = @tester.uuid
     assert_equal(36, uuid.size)
     assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, uuid)
+  end
+
+  def test_base64
+    assert_match(/[[[:alnum:]]\-_]{16}/, @tester.base64)
+    assert_match(/[[[:alnum:]]\-_]{4}/, @tester.base64(length: 4))
+    assert_match(/[[[:alnum:]]\-_]{16}=/, @tester.base64(padding: true))
+    assert_match(/[[[:alnum:]]+\/]{16}/, @tester.base64(urlsafe: false))
   end
 end

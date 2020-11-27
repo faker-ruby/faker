@@ -1,7 +1,5 @@
 # Faker::IndustrySegments
 
-It might be available in the next version.
-
 ```ruby
 Faker::IndustrySegments.industry #=> "Basic Materials"
 

@@ -20,20 +20,20 @@ class TestHyLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Address.community
     assert_kind_of String, Faker::Address.city
     assert_equal 'ք.', Faker::Address.city_prefix
-    assert_empty Faker::Address.city_suffix
     assert_kind_of String, Faker::Address.village
     assert_equal 'գ.', Faker::Address.village_prefix
+    assert_includes %w[1-374 374], Faker::Address.country_code
     assert Faker::Address.zip_code.start_with?('0', '1', '2', '3', '4')
-    assert Faker::Address.zip('ԱԳ').start_with?('02', '03', '04', '05')
-    assert Faker::Address.zip('ԱՐ').start_with?('06', '07', '08')
-    assert Faker::Address.zip('ԱՄ').start_with?('09', '10', '11')
-    assert Faker::Address.zip('ԳՂ').start_with?('12', '13', '14', '15', '16')
-    assert Faker::Address.zip('ԼՌ').start_with?('17', '18', '19', '20', '21')
-    assert Faker::Address.zip('ԿՏ').start_with?('22', '23', '24', '25')
-    assert Faker::Address.zip('ՇԿ').start_with?('26', '27', '28', '29', '30', '31')
-    assert Faker::Address.zip('ՍՅ').start_with?('32', '33', '34', '35')
-    assert Faker::Address.zip('ՎՁ').start_with?('36', '37', '38')
-    assert Faker::Address.zip('ՏՎ').start_with?('39', '40', '41', '42')
+    assert Faker::Address.zip(state_abbreviation: 'ԱԳ').start_with?('02', '03', '04', '05')
+    assert Faker::Address.zip(state_abbreviation: 'ԱՐ').start_with?('06', '07', '08')
+    assert Faker::Address.zip(state_abbreviation: 'ԱՄ').start_with?('09', '10', '11')
+    assert Faker::Address.zip(state_abbreviation: 'ԳՂ').start_with?('12', '13', '14', '15', '16')
+    assert Faker::Address.zip(state_abbreviation: 'ԼՌ').start_with?('17', '18', '19', '20', '21')
+    assert Faker::Address.zip(state_abbreviation: 'ԿՏ').start_with?('22', '23', '24', '25')
+    assert Faker::Address.zip(state_abbreviation: 'ՇԿ').start_with?('26', '27', '28', '29', '30', '31')
+    assert Faker::Address.zip(state_abbreviation: 'ՍՅ').start_with?('32', '33', '34', '35')
+    assert Faker::Address.zip(state_abbreviation: 'ՎՁ').start_with?('36', '37', '38')
+    assert Faker::Address.zip(state_abbreviation: 'ՏՎ').start_with?('39', '40', '41', '42')
     assert_kind_of String, Faker::Address.street_name
     assert_kind_of String, Faker::Address.street_address
     assert_includes %w[փողոց պողոտա], Faker::Address.street_suffix
@@ -143,7 +143,6 @@ class TestHyLocale < Test::Unit::TestCase
   def test_hy_phone_number_methods
     assert_kind_of String, Faker::PhoneNumber.cell_phone
     assert_kind_of String, Faker::PhoneNumber.phone_number
-    assert_includes ['+1-374', '+374'], Faker::PhoneNumber.country_code
   end
 
   def test_hy_science_methods

@@ -2,29 +2,26 @@
 
 mydir = __dir__
 
-begin
-  require 'psych'
-end
-
+require 'psych'
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
 
-Dir.glob(File.join(File.dirname(__FILE__), 'helpers', '*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
 
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 I18n.reload! if I18n.backend.initialized?
 
 module Faker
-  class Config
+  module Config
     @locale = nil
     @random = nil
 
     class << self
-      attr_writer :locale
-      attr_writer :random
+      attr_writer :locale, :random
 
       def locale
-        @locale || I18n.locale
+        # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
+        @locale || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
       end
 
       def own_locale
@@ -40,9 +37,12 @@ module Faker
   class Base
     Numbers = Array(0..9)
     ULetters = Array('A'..'Z')
-    Letters = ULetters + Array('a'..'z')
+    LLetters = Array('a'..'z')
+    Letters = ULetters + LLetters
 
     class << self
+      NOT_GIVEN = Object.new
+
       ## by default numerify results do not start with a zero
       def numerify(number_string, leading_zero: false)
         return number_string.gsub(/#/) { rand(10).to_s } if leading_zero
@@ -80,13 +80,13 @@ module Faker
       def regexify(reg)
         reg = reg.source if reg.respond_to?(:source) # Handle either a Regexp or a String that looks like a Regexp
         reg
-          .gsub(%r{^\/?\^?}, '').gsub(%r{\$?\/?$}, '') # Ditch the anchors
+          .gsub(%r{^/?\^?}, '').gsub(%r{\$?/?$}, '') # Ditch the anchors
           .gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}') # All {2} become {2,2} and ? become {0,1}
           .gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # [12]{1,2} becomes [12] or [12][12]
-          .gsub(/(\([^\)]+\))\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+          .gsub(/(\([^)]+\))\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                 # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
           .gsub(/(\\?.)\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
-          .gsub(/\((.*?)\)/) { |match| sample(match.gsub(/[\(\)]/, '').split('|')) } # (this|that) becomes 'this' or 'that'
-          .gsub(/\[([^\]]+)\]/) { |match| match.gsub(/(\w\-\w)/) { |range| sample(Array(Range.new(*range.split('-')))) } } # All A-Z inside of [] become C (or X, or whatever)
+          .gsub(/\((.*?)\)/) { |match| sample(match.gsub(/[()]/, '').split('|')) } # (this|that) becomes 'this' or 'that'
+          .gsub(/\[([^\]]+)\]/) { |match| match.gsub(/(\w-\w)/) { |range| sample(Array(Range.new(*range.split('-')))) } } # All A-Z inside of [] become C (or X, or whatever)
           .gsub(/\[([^\]]+)\]/) { |_match| sample(Regexp.last_match(1).split('')) } # All [ABC] become B (or A or C)
           .gsub('\d') { |_match| sample(Numbers) }
           .gsub('\w') { |_match| sample(Letters) }
@@ -96,7 +96,7 @@ module Faker
       # with an array of values and selecting one of them.
       def fetch(key)
         fetched = sample(translate("faker.#{key}"))
-        if fetched&.match(%r{^\/}) && fetched&.match(%r{\/$}) # A regex
+        if fetched&.match(%r{^/}) && fetched&.match(%r{/$}) # A regex
           regexify(fetched)
         else
           fetched
@@ -108,7 +108,7 @@ module Faker
       def fetch_all(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.last if fetched.size <= 1
-        if !fetched.respond_to?(:sample) && fetched.match(%r{^\/}) && fetched.match(%r{\/$}) # A regex
+        if !fetched.respond_to?(:sample) && fetched.match(%r{^/}) && fetched.match(%r{/$}) # A regex
           regexify(fetched)
         else
           fetched
@@ -120,7 +120,7 @@ module Faker
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
         fetched = fetch(key)
-        parts = fetched.scan(/(\(?)#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map do |prefix, kls, meth, etc|
+        parts = fetched.scan(/(\(?)#\{([A-Za-z]+\.)?([^}]+)\}([^#]+)?/).map do |prefix, kls, meth, etc|
           # If the token had a class Prefix (e.g., Name.first_name)
           # grab the constant, otherwise use self
           cls = kls ? Faker.const_get(kls.chop) : self
@@ -129,7 +129,7 @@ module Faker
           # In either case the information will be retained for reconstruction of the string.
           text = prefix
 
-          # If the class has the method, call it, otherwise fetch the transation
+          # If the class has the method, call it, otherwise fetch the translation
           # (e.g., faker.phone_number.area_code)
           text += if cls.respond_to?(meth)
                     cls.send(meth)
@@ -148,30 +148,28 @@ module Faker
 
       # Call I18n.translate with our configured locale if no
       # locale is specified
-      def translate(*args)
-        opts = args.last.is_a?(Hash) ? args.pop : {}
+      def translate(*args, **opts)
         opts[:locale] ||= Faker::Config.locale
         opts[:raise] = true
-        I18n.translate(*args.push(opts))
+        I18n.translate(*args, **opts)
       rescue I18n::MissingTranslationData
-        opts = args.last.is_a?(Hash) ? args.pop : {}
         opts[:locale] = :en
 
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
         # in en either, then it will raise again.
         disable_enforce_available_locales do
-          I18n.translate(*args.push(opts))
+          I18n.translate(*args, **opts)
         end
       end
 
       # Executes block with given locale set.
-      def with_locale(tmp_locale = nil)
+      def with_locale(tmp_locale = nil, &block)
         current_locale = Faker::Config.own_locale
         Faker::Config.locale = tmp_locale
 
         disable_enforce_available_locales do
-          I18n.with_locale(tmp_locale) { yield }
+          I18n.with_locale(tmp_locale, &block)
         end
       ensure
         Faker::Config.locale = current_locale
@@ -216,12 +214,24 @@ module Faker
         end
       end
 
+      # Return unique values from the generator every time.
+      #
+      # @param max_retries [Integer] The max number of retries that should be done before giving up.
+      # @return [self]
       def unique(max_retries = 10_000)
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
 
-      def sample(list)
-        list.respond_to?(:sample) ? list.sample(random: Faker::Config.random) : list
+      def sample(list, num = nil)
+        if list.respond_to?(:sample)
+          if num
+            list.sample(num, random: Faker::Config.random)
+          else
+            list.sample(random: Faker::Config.random)
+          end
+        else
+          list
+        end
       end
 
       def shuffle(list)
@@ -245,9 +255,61 @@ module Faker
       ensure
         I18n.enforce_available_locales = old_enforce_available_locales
       end
+
+      private
+
+      def warn_for_deprecated_arguments
+        keywords = []
+        yield(keywords)
+
+        return if keywords.empty?
+
+        method_name = caller.first.match(/`(?<method_name>.*)'/)[:method_name]
+
+        keywords.each.with_index(1) do |keyword, index|
+          i = case index
+              when 1 then '1st'
+              when 2 then '2nd'
+              when 3 then '3rd'
+              else "#{index}th"
+              end
+
+          warn_with_uplevel(<<~MSG, uplevel: 5)
+            Passing `#{keyword}` with the #{i} argument of `#{method_name}` is deprecated. Use keyword argument like `#{method_name}(#{keyword}: ...)` instead.
+          MSG
+        end
+
+        warn(<<~MSG)
+
+          To automatically update from positional arguments to keyword arguments,
+          install rubocop-faker and run:
+
+          rubocop \\
+            --require rubocop-faker \\
+            --only Faker/DeprecatedArguments \\
+            --auto-correct
+
+        MSG
+      end
+
+      # Workaround for emulating `warn '...', uplevel: 1` in Ruby 2.4 or lower.
+      def warn_with_uplevel(message, uplevel: 1)
+        at = parse_caller(caller[uplevel]).join(':')
+        warn "#{at}: #{message}"
+      end
+
+      def parse_caller(at)
+        # rubocop:disable Style/GuardClause
+        if /^(.+?):(\d+)(?::in `.*')?/ =~ at
+          file = Regexp.last_match(1)
+          line = Regexp.last_match(2).to_i
+          [file, line]
+        end
+        # rubocop:enable Style/GuardClause
+      end
     end
   end
 end
 
 # require faker objects
-Dir.glob(File.join(File.dirname(__FILE__), 'faker', '/**/*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).sort.each { |file| require file }

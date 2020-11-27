@@ -21,8 +21,8 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Address.city_prefix.empty?
     assert Faker::Address.city_suffix.empty?
     assert Faker::Address.city.is_a?(String)
-    assert Faker::Address.city(with_state: true).is_a?(String)
-    assert Faker::Address.city(with_state: true).split(', ').count == 2
+    assert Faker::Address.city(options: { with_state: true }).is_a?(String)
+    assert Faker::Address.city(options: { with_state: true }).split(', ').count == 2
     assert Faker::Address.secondary_address.is_a? String
   end
 
@@ -61,5 +61,11 @@ class TestEsMxLocale < Test::Unit::TestCase
   def test_es_mx_university_methods
     assert Faker::University.suffix.is_a? String
     assert Faker::University.prefix.is_a? String
+  end
+
+  def test_es_mx_finance_vat_number
+    vat = Faker::Finance.vat_number(country: 'MX')
+    assert vat.is_a? String
+    assert_match(/([A-ZÑ]){3,4}(\d){6}([A-Z0-9]){3}/, vat)
   end
 end

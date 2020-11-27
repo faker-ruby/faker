@@ -24,7 +24,7 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_default_isbn13_regexp
-    assert @tester.isbn(13).match(/^\d{12}-\d$/)
+    assert @tester.isbn(base: 13).match(/^\d{12}-\d$/)
   end
 
   def test_default_ean_regexp
@@ -32,7 +32,7 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_default_ean8_regexp
-    assert @tester.ean(8).match(/^\d{8}$/)
+    assert @tester.ean(base: 8).match(/^\d{8}$/)
   end
 
   def test_rut
@@ -48,7 +48,7 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_imei_regexp
-    assert @tester.imei.match(/\A[\d\.\:\-\s]+\z/i)
+    assert @tester.imei.match(/\A[\d.:\-\s]+\z/i)
   end
 
   def test_imei_luhn_value

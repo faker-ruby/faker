@@ -14,5 +14,4 @@ Faker::JapaneseMedia::SwordArtOnline.location #=> "Ruby Palace"
 
 # Random Sword Art Online item
 Faker::JapaneseMedia::SwordArtOnline.item #=> "Blackwyrm Coat"
-
 ```

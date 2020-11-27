@@ -13,6 +13,8 @@ Faker::Address.secondary_address #=> "Apt. 672"
 
 Faker::Address.building_number #=> "7304"
 
+Faker::Address.mail_box #=> "PO Box 123"
+
 Faker::Address.community #=> "University Crossing"
 
 Faker::Address.zip_code #=> "58517" or "23285-4905"
@@ -35,10 +37,10 @@ Faker::Address.state_abbr #=> "AP"
 
 Faker::Address.country #=> "French Guiana"
 
-# Optional arguments: code
+# Keyword arguments: code
 Faker::Address.country_by_code(code: 'NL') #=> "Netherlands"
 
-# Optional arguments: name
+# Keyword arguments: name
 Faker::Address.country_name_to_code(name: 'united_states') #=> "US"
 
 Faker::Address.country_code #=> "IT"
@@ -50,5 +52,4 @@ Faker::Address.latitude #=> "-58.17256227443719"
 Faker::Address.longitude #=> "-156.65548382095133"
 
 Faker::Address.full_address #=> "282 Kevin Brook, Imogeneborough, CA 58517"
-
 ```

@@ -2,8 +2,6 @@
 Module for creating valid invoice references.
 https://en.wikipedia.org/wiki/Creditor_Reference
 
-It might be available in the next version.
-
 ```ruby
 Faker::Invoice.reference #=> "45656646957845"
 

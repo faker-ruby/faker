@@ -16,7 +16,7 @@ class TestFakerCoffee < Test::Unit::TestCase
   end
 
   def test_origin
-    assert origin = @tester.origin.match(/\A(?<region>([[:alnum:]]+'?-?.?,?\s?){1,5}), (?<country>([[:alnum:]]+\s?){1,5})\z/)
+    assert origin = @tester.origin.match(/\A(?<region>(?:[[:alnum:]]+'?-?.?,?\s?){1,5}), (?<country>(?:[[:alnum:]]+\s?){1,5})\z/)
 
     region = origin[:region]
     country = origin[:country]

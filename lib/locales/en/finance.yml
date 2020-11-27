@@ -111,3 +111,56 @@ en:
         ZA:
         - "ZA##########"
         - "ZA###########"
+      ticker:
+        nasdaq:
+          - MSFT
+          - AAPL
+          - AMZN
+          - GOOG
+          - FB
+          - INTC
+          - CSCO
+          - CMCSA
+          - PEP
+          - ADBE
+          - NVDA
+          - NFLX
+          - PYPL
+          - COST
+          - AMGN
+          - AVGO
+          - TXN
+          - CHTR
+          - SBUX
+          - QCOM
+          - GILD
+          - MDLZ
+          - FISV
+          - BKNG
+          - INTU
+        nyse:
+          - XOM
+          - WFC
+          - JNJ
+          - GE
+          - NVX
+          - WMT
+          - JPM
+          - PG
+          - TM
+          - PFE
+          - CVX
+          - BABA
+          - VZ
+          - BUD
+          - ORCL
+          - DIS
+          - KO
+          - HSBC
+          - T
+          - BAC
+          - C
+          - MRK
+          - V
+          - BRK.B
+          - MA

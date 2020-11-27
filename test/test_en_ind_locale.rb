@@ -16,7 +16,7 @@ class TestEnIndLocale < Test::Unit::TestCase
     assert Faker::Address.state.is_a? String
     assert Faker::Address.state_abbr.is_a? String
     assert Faker::Address.default_country.is_a? String
-    assert_match(/[\d]{6}$/, Faker::Address.postcode)
+    assert_match(/\d{6}$/, Faker::Address.postcode)
     assert_match(/(\w+\.? ?){2,3}/, Faker::Address.city)
   end
 

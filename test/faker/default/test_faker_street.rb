@@ -52,7 +52,7 @@ class TestFakerStreet < Test::Unit::TestCase
 
   def test_street_address_optionally_provides_secondary_address
     I18n.with_locale(:shire) do
-      assert_match(/Wide Cheerful Path \d \(Green Door\)/, @tester.street_address(:include_secondary))
+      assert_match(/Wide Cheerful Path \d \(Green Door\)/, @tester.street_address(include_secondary: true))
     end
   end
 
@@ -70,7 +70,7 @@ class TestFakerStreet < Test::Unit::TestCase
 
   def test_full_address
     I18n.with_locale('en') do
-      assert_match(/^(.+\s)?\d+ [\w'\s]+\, [\w'\s]+\, [\w']+ \d+/, @tester.full_address)
+      assert_match(/^(.+\s)?\d+ [\w'\s]+, [\w'\s]+, [\w']+ \d+/, @tester.full_address)
     end
   end
 end

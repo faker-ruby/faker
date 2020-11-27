@@ -28,9 +28,8 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_spanish_organisation_number
-    org_no = @tester.spanish_organisation_number
-    assert org_no.match(/\D\d{7}/)
-    assert %w[A B C D E F G H J N P Q R S U V W].include?(org_no[0].to_s)
+    cif = @tester.spanish_organisation_number(organization_type: 'A')
+    assert @tester.send(:spanish_cif_control_digit, 'A', cif[1..7]) == cif[-1].to_i
   end
 
   def test_swedish_organisation_number
@@ -92,7 +91,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_polish_register_of_national_economy
     # 8 length should fail
     assert_raise ArgumentError do
-      @tester.polish_register_of_national_economy(8)
+      @tester.polish_register_of_national_economy(length: 8)
     end
     # 9 length
     number = @tester.polish_register_of_national_economy
@@ -103,7 +102,7 @@ class TestFakerCompany < Test::Unit::TestCase
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
     assert control_number == number[8].to_i
     # 14 length
-    number = @tester.polish_register_of_national_economy(14)
+    number = @tester.polish_register_of_national_economy(length: 14)
     control_sum = 0
     [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8].each_with_index do |control, index|
       control_sum += control * number[index].to_i
@@ -146,13 +145,14 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def test_luhn_algorithm
     # Odd length base for luhn algorithm
-    odd_base = Faker::Number.number([5, 7, 9, 11, 13].sample)
-    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base)
+    odd_base = Faker::Number.number(digits: [5, 7, 9, 11, 13].sample)
+    odd_luhn_complement = @tester.send(:luhn_algorithm, odd_base).to_s
     odd_control = "#{odd_base}#{odd_luhn_complement}"
 
     # Even length base for luhn algorithm
-    even_base = Faker::Number.number([4, 6, 8, 10, 12].sample)
-    even_luhn_complement = @tester.send(:luhn_algorithm, even_base)
+    even_base = Faker::Number.number(digits: [4, 6, 8, 10, 12].sample)
+    even_luhn_complement = @tester.send(:luhn_algorithm, even_base).to_s
+
     even_control = "#{even_base}#{even_luhn_complement}"
 
     assert((luhn_checksum(odd_control) % 10).zero?)
@@ -186,8 +186,53 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_match(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, sample)
   end
 
+  def test_russian_tax_number_default
+    assert @tester.russian_tax_number.match(/\d{10}/)
+  end
+
+  def test_russian_tax_number_individual
+    assert @tester.russian_tax_number(type: :individual).match(/\d{12}/)
+  end
+
+  def test_russian_tax_number_region
+    assert @tester.russian_tax_number(region: '77').match(/^77/)
+  end
+
+  def test_russian_tax_number_checksum
+    base_number = @tester.russian_tax_number
+    number = base_number[0..-2]
+    checksum = base_number.split('').last.to_i
+
+    assert((inn_checksum(number) - checksum).zero?)
+  end
+
   def test_sic_code
     assert @tester.sic_code.match(/\d\d\d\d/)
+  end
+
+  def test_spanish_cif_control_digit
+    assert @tester.send(:spanish_cif_control_digit, 'A', '2217680') == 4
+    assert @tester.send(:spanish_cif_control_digit, 'B', '4031315') == 7
+    assert @tester.send(:spanish_cif_control_digit, 'C', '7191088') == 9
+    assert @tester.send(:spanish_cif_control_digit, 'D', '3178686') == 6
+    assert @tester.send(:spanish_cif_control_digit, 'E', '4484441') == 3
+    assert @tester.send(:spanish_cif_control_digit, 'F', '4830511') == 4
+    assert @tester.send(:spanish_cif_control_digit, 'G', '7676903') == 3
+    assert @tester.send(:spanish_cif_control_digit, 'H', '8888075') == 2
+    assert @tester.send(:spanish_cif_control_digit, 'J', '6840041') == 5
+    assert @tester.send(:spanish_cif_control_digit, 'N', '5350867') == 'G'
+    assert @tester.send(:spanish_cif_control_digit, 'P', '5669582') == 'H'
+    assert @tester.send(:spanish_cif_control_digit, 'Q', '5182823') == 'D'
+    assert @tester.send(:spanish_cif_control_digit, 'R', '1099088') == 'E'
+    assert @tester.send(:spanish_cif_control_digit, 'S', '2210399') == 'H'
+    assert @tester.send(:spanish_cif_control_digit, 'U', '3957325') == 8
+    assert @tester.send(:spanish_cif_control_digit, 'V', '7536342') == 4
+    assert @tester.send(:spanish_cif_control_digit, 'W', '6793772') == 'B'
+  end
+
+  def test_spanish_b_algorithm
+    assert @tester.send(:spanish_b_algorithm, 2) == 4
+    assert @tester.send(:spanish_b_algorithm, 6) == 3
   end
 
   private
@@ -217,5 +262,11 @@ class TestFakerCompany < Test::Unit::TestCase
     end
 
     luhn_split.compact.inject(0) { |sum, x| sum + x }
+  end
+
+  def inn_checksum(number)
+    [2, 4, 10, 3, 5, 9, 4, 6, 8].map.with_index.reduce(0) do |v, i|
+      v + i[0] * number[i[1]].to_i
+    end % 11 % 10
   end
 end

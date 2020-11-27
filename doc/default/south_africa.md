@@ -1,7 +1,5 @@
 # Faker::SouthAfrica
 
-It might be available in the next version.
-
 Generate South African ID Numbers, phone numbers and company registration
 numbers. Delegates as needed to `Faker::IdNumber`, `Faker::PhoneNumber` and
 `Faker::Company`

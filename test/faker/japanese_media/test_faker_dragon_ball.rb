@@ -10,4 +10,12 @@ class TestFakerJapaneseMediaDragonBall < Test::Unit::TestCase
   def test_character
     assert @tester.character.match(/\w+/)
   end
+
+  def test_race
+    assert @tester.race.match(/\w+/)
+  end
+
+  def test_planet
+    assert @tester.planet.match(/\w+/)
+  end
 end

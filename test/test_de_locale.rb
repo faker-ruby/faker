@@ -40,7 +40,7 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_color_methods
-    assert Faker::Color.name.is_a? String
+    assert Faker::Color.color_name.is_a? String
   end
 
   def test_de_company_methods
@@ -111,7 +111,7 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_simpsons_methods
-    assert Faker::Simpsons.character.is_a? String
+    assert Faker::TvShows::Simpsons.character.is_a? String
   end
 
   def test_de_space_methods
@@ -127,8 +127,8 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_cell_phone_countrycode
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
-    assert_equal '4', mobile[0]
-    assert_equal '9', mobile[1]
+    mobile = Faker::PhoneNumber.cell_phone_with_country_code.gsub(/\D/, '')
+
+    assert_match(/^(0|49)/, mobile)
   end
 end

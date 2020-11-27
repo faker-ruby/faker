@@ -3,17 +3,3 @@
 
 lib_path = File.expand_path('../lib', __dir__)
 $LOAD_PATH.unshift(lib_path) unless $LOAD_PATH.include?(lib_path)
-
-require 'cli'
-
-Signal.trap('INT') do
-  warn("\n#{caller.join("\n")}: interrupted")
-  exit(1)
-end
-
-begin
-  Faker::CLI::Base.start
-rescue Faker::CLI::Base::Error => err
-  puts "ERROR: #{err.message}"
-  exit 1
-end

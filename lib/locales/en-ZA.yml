@@ -5,7 +5,7 @@ en-ZA:
     address:
       country_code: ['ZA']
       default_country: [South Africa, The Replublic of South Africa, SA, Afrique du Sud, Zuid-Afrika]
-      post_code: ['####', '#####']
+      postcode: ['####', '#####']
       provinces: [Limpopo, Gauteng, Free State, North West, Northern Cape, Western Cape, KwaZulu-Natal, Mpumalanga, Eastern Cape]
       province:
         - "#{provinces}"

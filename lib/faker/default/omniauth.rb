@@ -9,13 +9,33 @@ module Faker
                 :email
 
     def initialize(name: nil, email: nil)
+      super()
+
       @name = name || "#{Name.first_name} #{Name.last_name}"
-      @email = email || Internet.safe_email(self.name)
+      @email = email || Internet.safe_email(name: self.name)
       @first_name, @last_name = self.name.split
     end
 
     class << self
-      def google(name: nil, email: nil, uid: Number.number(9))
+      ##
+      # Generate a mock Omniauth response from Google.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-google.
+      #
+      # @faker.version 1.8.0
+      # rubocop:disable Metrics/ParameterLists
+      def google(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 9).to_s)
+        # rubocop:enable Metrics/ParameterLists
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :email if legacy_email != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
+        end
+
         auth = Omniauth.new(name: name, email: email)
         {
           provider: 'google_oauth2',
@@ -27,7 +47,7 @@ module Faker
             email: auth.email,
             image: image
           },
-          credentials:  {
+          credentials: {
             token: Crypto.md5,
             refresh_token: Crypto.md5,
             expires_at: Time.forward.to_i,
@@ -35,7 +55,7 @@ module Faker
           },
           extra: {
             raw_info: {
-              sub:  uid,
+              sub: uid,
               email: auth.email,
               email_verified: random_boolean.to_s,
               name: auth.name,
@@ -44,27 +64,47 @@ module Faker
               profile: "https://plus.google.com/#{uid}",
               picture: image,
               gender: gender,
-              birthday: Date.backward(36_400).strftime('%Y-%m-%d'),
+              birthday: Date.backward(days: 36_400).strftime('%Y-%m-%d'),
               local: 'en',
               hd: "#{Company.name.downcase}.com"
             },
             id_info: {
-              'iss' => 'accounts.google.com',
-              'at_hash' => Crypto.md5,
-              'email_verified' => true,
-              'sub' => Number.number(28).to_s,
-              'azp' => 'APP_ID',
-              'email' => auth.email,
-              'aud' => 'APP_ID',
-              'iat' => Time.forward.to_i,
-              'exp' => Time.forward.to_i,
-              'openid_id' => "https://www.google.com/accounts/o8/id?id=#{uid}"
+              iss: 'accounts.google.com',
+              at_hash: Crypto.md5,
+              email_verified: true,
+              sub: Number.number(digits: 28).to_s,
+              azp: 'APP_ID',
+              email: auth.email,
+              aud: 'APP_ID',
+              iat: Time.forward.to_i,
+              exp: Time.forward.to_i,
+              openid_id: "https://www.google.com/accounts/o8/id?id=#{uid}"
             }
           }
         }
       end
 
-      def facebook(name: nil, email: nil, username: nil, uid: Number.number(7))
+      ##
+      # Generate a mock Omniauth response from Facebook.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param username [String] A specific username to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-facebook.
+      #
+      # @faker.version 1.8.0
+      # rubocop:disable Metrics/ParameterLists
+      def facebook(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_username = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s)
+        # rubocop:enable Metrics/ParameterLists
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :email if legacy_email != NOT_GIVEN
+          keywords << :username if legacy_username != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
+        end
+
         auth = Omniauth.new(name: name, email: email)
         username ||= "#{auth.first_name.downcase[0]}#{auth.last_name.downcase}"
         {
@@ -92,7 +132,7 @@ module Faker
               link: "http://www.facebook.com/#{username}",
               username: username,
               location: {
-                id: Number.number(9),
+                id: Number.number(digits: 9).to_s,
                 name: city_state
               },
               gender: gender,
@@ -106,7 +146,25 @@ module Faker
         }
       end
 
-      def twitter(name: nil, nickname: nil, uid: Number.number(6))
+      ##
+      # Generate a mock Omniauth response from Twitter.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param nickname [String] A specific nickname to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-twitter.
+      #
+      # @faker.version 1.8.0
+      # rubocop:disable Metrics/ParameterLists
+      def twitter(legacy_name = NOT_GIVEN, legacy_nickname = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, nickname: nil, uid: Number.number(digits: 6).to_s)
+        # rubocop:enable Metrics/ParameterLists
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :nickname if legacy_nickname != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
+        end
+
         auth = Omniauth.new(name: name)
         nickname ||= auth.name.downcase.delete(' ')
         location = city_state
@@ -179,7 +237,25 @@ module Faker
         }
       end
 
-      def linkedin(name: nil, email: nil, uid: Number.number(6))
+      ##
+      # Generate a mock Omniauth response from LinkedIn.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-linkedin.
+      #
+      # @faker.version 1.8.0
+      # rubocop:disable Metrics/ParameterLists
+      def linkedin(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 6).to_s)
+        # rubocop:enable Metrics/ParameterLists
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :email if legacy_email != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
+        end
+
         auth = Omniauth.new(name: name, email: email)
         first_name = auth.first_name.downcase
         last_name = auth.last_name.downcase
@@ -190,59 +266,77 @@ module Faker
         industry = Commerce.department
         url = "http://www.linkedin.com/in/#{first_name}#{last_name}"
         {
-          'provider' => 'linkedin',
-          'uid' => uid,
-          'info' => {
-            'name' => auth.name,
-            'email' => auth.email,
-            'nickname' => auth.name,
-            'first_name' => auth.first_name,
-            'last_name' => auth.last_name,
-            'location' => location,
-            'description' => description,
-            'image' => image,
-            'phone' => PhoneNumber.phone_number,
-            'headline' => description,
-            'industry' => industry,
-            'urls' => {
-              'public_profile' => url
+          provider: 'linkedin',
+          uid: uid,
+          info: {
+            name: auth.name,
+            email: auth.email,
+            nickname: auth.name,
+            first_name: auth.first_name,
+            last_name: auth.last_name,
+            location: location,
+            description: description,
+            image: image,
+            phone: PhoneNumber.phone_number,
+            headline: description,
+            industry: industry,
+            urls: {
+              public_profile: url
             }
           },
-          'credentials' => {
-            'token' => token,
-            'secret' => secret
+          credentials: {
+            token: token,
+            secret: secret
           },
-          'extra' => {
-            'access_token' => {
-              'token' => token,
-              'secret' => secret,
-              'consumer' => nil,
-              'params' => {
+          extra: {
+            access_token: {
+              token: token,
+              secret: secret,
+              consumer: nil,
+              params: {
                 oauth_token: token,
                 oauth_token_secret: secret,
                 oauth_expires_in: Time.forward.to_i,
                 oauth_authorization_expires_in: Time.forward.to_i
               },
-              'response' => nil
+              response: nil
             },
-            'raw_info' => {
-              'firstName' => auth.first_name,
-              'headline' => description,
-              'id' => uid,
-              'industry' => industry,
-              'lastName' => auth.last_name,
-              'location' => {
-                'country' => { 'code' => Address.country_code.downcase },
-                'name' => city_state.split(', ').first
+            raw_info: {
+              firstName: auth.first_name,
+              headline: description,
+              id: uid,
+              industry: industry,
+              lastName: auth.last_name,
+              location: {
+                country: { code: Address.country_code.downcase },
+                name: city_state.split(', ').first
               },
-              'pictureUrl' => image,
-              'publicProfileUrl' => url
+              pictureUrl: image,
+              publicProfileUrl: url
             }
           }
         }
       end
 
-      def github(name: nil, email: nil, uid: Number.number(8))
+      ##
+      # Generate a mock Omniauth response from Github.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-github.
+      #
+      # @faker.version 1.8.0
+      # rubocop:disable Metrics/ParameterLists
+      def github(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 8).to_s)
+        # rubocop:enable Metrics/ParameterLists
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :name if legacy_name != NOT_GIVEN
+          keywords << :email if legacy_email != NOT_GIVEN
+          keywords << :uid if legacy_uid != NOT_GIVEN
+        end
+
         auth = Omniauth.new(name: name, email: email)
         login = auth.name.downcase.tr(' ', '-')
         html_url = "https://github.com/#{login}"
@@ -261,7 +355,7 @@ module Faker
           },
           credentials: {
             token: Crypto.md5,
-            expires:  false
+            expires: false
           },
           extra: {
             raw_info: {
@@ -281,7 +375,7 @@ module Faker
               events_url: "#{api_url}/events{/privacy}",
               received_events_url: "#{api_url}/received_events",
               type: 'User',
-              site_admin:  random_boolean,
+              site_admin: random_boolean,
               name: auth.name,
               company: nil,
               blog: nil,
@@ -293,8 +387,52 @@ module Faker
               public_gists: random_number_from_range(1..1000),
               followers: random_number_from_range(1..1000),
               following: random_number_from_range(1..1000),
-              created_at: Time.backward(36_400).iso8601,
-              updated_at: Time.backward(2).iso8601
+              created_at: Time.backward(days: 36_400).iso8601,
+              updated_at: Time.backward(days: 2).iso8601
+            }
+          }
+        }
+      end
+
+      ##
+      # Generate a mock Omniauth response from Apple.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-apple.
+      #
+      # @faker.version 2.3.0
+      def apple(name: nil, email: nil, uid: nil)
+        uid ||= "#{Number.number(digits: 6)}.#{Number.hexadecimal(digits: 32)}.#{Number.number(digits: 4)}"
+        auth = Omniauth.new(name: name, email: email)
+        {
+          provider: 'apple',
+          uid: uid,
+          info: {
+            sub: uid,
+            email: auth.email,
+            first_name: auth.first_name,
+            last_name: auth.last_name
+          },
+          credentials: {
+            token: Crypto.md5,
+            refresh_token: Crypto.md5,
+            expires_at: Time.forward.to_i,
+            expires: true
+          },
+          extra: {
+            raw_info: {
+              iss: 'https://appleid.apple.com',
+              aud: 'CLIENT_ID',
+              exp: Time.forward.to_i,
+              iat: Time.forward.to_i,
+              sub: uid,
+              at_hash: Crypto.md5,
+              auth_time: Time.forward.to_i,
+              email: auth.email,
+              email_verified: true
             }
           }
         }
