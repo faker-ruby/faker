@@ -16,6 +16,7 @@ module Faker
         def name
           fetch('rock_band.name')
         end
+
         # Produces a rock song.
         #
         # @return [String]
@@ -27,7 +28,6 @@ module Faker
         def song
           fetch('rock_band.song')
         end
-        
       end
     end
   end
