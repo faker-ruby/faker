@@ -317,6 +317,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::FamilyGuy](doc/tv_shows/family_guy.md)
   - [Faker::TvShows::FinalSpace](doc/tv_shows/final_space.md)
   - [Faker::TvShows::Friends](doc/tv_shows/friends.md)
+  - [Faker::TvShows::FrTed](doc/tv_shows/fr_ted.md)
   - [Faker::TvShows::GameOfThrones](doc/tv_shows/game_of_thrones.md)
   - [Faker::TvShows::HeyArnold](doc/tv_shows/hey_arnold.md)
   - [Faker::TvShows::HowIMetYourMother](doc/tv_shows/how_i_met_your_mother.md)
