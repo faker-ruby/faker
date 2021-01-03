@@ -2,9 +2,9 @@
 
 A sanitised collection of quotes and characters from Fr Ted.
 
-*Quotes:* Up to 255 characters
-*Short Quotes:* Max 30 characters.
-*Long Quotes:* Min 256 characters
+* Quotes: Up to 255 characters
+* Short Quotes: Max 30 characters.
+* Long Quotes: Min 256 characters
 
 ```ruby
 Faker::TvShows::FrTed.character # => "Henry Sellers"
