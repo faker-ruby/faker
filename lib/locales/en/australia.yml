@@ -1,0 +1,56 @@
+en:
+  faker:
+    australia:
+      locations:
+        - Sydney
+        - Brisbane
+        - Sydney
+        - Melbour
+        - Brisbane
+        - Perth
+        - Adelaide
+        - Gold Coast
+        - Newcastle
+        - Canberra
+        - Central Coast
+        - Sunshine Coast
+        - Wollongong
+        - Geelong
+        - Hobart
+        - Townsville
+        - Cairns
+        - Toowoomba
+        - Darwin	  
+        - Ballara
+        - Bendigo
+        - Albury
+        - Launceston	 
+        - Mackay
+        - Rockhampton
+        - Bunbury
+        - Coffs Harbour
+        - Bundaberg
+        - Melton	             
+        - Wagga	Wagga	              
+        - Hervey Bay	              
+        - Mildura – Wentworth
+        - Shepparton – Mooroopna	              
+        - Port Macquarie
+        - Gladstone – Tannum Sands
+        - Tamworth	              
+        - Traralgon – Morwell	               
+        - Orange       
+        - Bowral – Mittagong	              
+        - Busselton	               
+        - Geraldton
+        - Dubbo
+        - Nowra – Bomaderry
+        - Warragul – Drouin
+        - Bathurst
+        - Warrnambool	              
+        - Albany
+        - Kalgoorlie – Boulder	  
+        - Devonport
+        - Mount Gambier
+        - Lismore
+        - Nelson Bay
