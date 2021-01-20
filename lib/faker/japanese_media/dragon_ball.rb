@@ -16,6 +16,32 @@ module Faker
         def character
           fetch('dragon_ball.characters')
         end
+
+        ##
+        # Produces the name of a race from Dragon Ball.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DragonBall.race #=> "Saiyan"
+        #
+        # @faker.version next
+        def race
+          fetch('dragon_ball.races')
+        end
+
+        ##
+        # Produces the name of a planet from Dragon Ball.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DragonBall.planet #=> "Namek"
+        #
+        # @faker.version next
+        def planet
+          fetch('dragon_ball.planets')
+        end
       end
     end
   end

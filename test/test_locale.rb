@@ -14,10 +14,10 @@ class TestLocale < Test::Unit::TestCase
   def test_locale_separate_from_i18n
     I18n.locale = :en
     Faker::Config.locale = :de
-    assert Faker::PhoneNumber.phone_number.match(/\(0\d+\) \d+|\+49-\d+-\d+/)
+    assert Faker::PhoneNumber.phone_number.match(/\(0\d+\) \d+|\d+-\d+/)
     assert Faker::Address.street_name.match(//)
     Faker::Config.locale = :ru
-    assert Faker::Internet.domain_name.match(/([\da-z\.-]+)\.([a-z\.]{2,6})/)
+    assert Faker::Internet.domain_name.match(/([\da-z.-]+)\.([a-z.]{2,6})/)
   end
 
   def test_configured_locale_translation
@@ -50,6 +50,13 @@ class TestLocale < Test::Unit::TestCase
     Faker::Base.with_locale(:en) do
       assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
     end
+  ensure
+    I18n.available_locales += [:en]
+  end
+
+  def test_no_en_in_available_locales
+    I18n.available_locales -= [:en]
+    assert_kind_of String, Faker::Address.country
   ensure
     I18n.available_locales += [:en]
   end

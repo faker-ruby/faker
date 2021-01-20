@@ -21,8 +21,8 @@ class TestDaDkLocale < Test::Unit::TestCase
     assert Faker::Address.state.is_a? String
     assert Faker::Address.secondary_address.is_a? String
     assert Faker::Address.street_address.is_a? String
-    assert_match(/[\d]{4}$/, Faker::Address.postcode)
-    assert_match(/[\d]{1,3}$/, Faker::Address.building_number)
+    assert_match(/\d{4}$/, Faker::Address.postcode)
+    assert_match(/\d{1,3}$/, Faker::Address.building_number)
     assert_equal 'Danmark', Faker::Address.default_country
   end
 

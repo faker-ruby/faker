@@ -40,7 +40,7 @@ module Faker
           keywords << :digits if legacy_digits != NOT_GIVEN
         end
 
-        '0' + (2..digits).collect { digit }.join
+        "0#{(2..digits).collect { digit }.join}"
       end
 
       ##
@@ -85,13 +85,11 @@ module Faker
         end
 
         l_d = number(digits: l_digits)
-        r_d = if r_digits == 1
-                generate(r_digits)
-              else
-                # Ensure the last digit is not zero
-                # so it does not get truncated on converting to float
-                generate(r_digits - 1).join + non_zero_digit.to_s
-              end
+
+        # Ensure the last digit is not zero
+        # so it does not get truncated on converting to float
+        r_d = generate(r_digits - 1).join + non_zero_digit.to_s
+
         "#{l_d}.#{r_d}".to_f
       end
 

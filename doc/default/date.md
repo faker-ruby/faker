@@ -3,11 +3,15 @@
 ```ruby
 # Random date between dates
 # Keyword arguments: from, to
-Faker::Date.between(from: 2.days.ago, to: Date.today) #=> "Wed, 24 Sep 2014"
+Faker::Date.between(from: '2014-09-23', to: '2014-09-25') #=> #<Date: 2014-09-24>
+# If used with Rails (the Active Support gem), additional options are available:
+Faker::Date.between(from: 2.days.ago, to: Date.today) #=> #<Date: 2014-09-24>
 
 # Random date between dates except for certain date
 # Keyword arguments: from, to, excepted
-Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today) #=> "Wed, 24 Sep 2014"
+Faker::Date.between_except(from: '2014-09-23', to: '2015-09-25', excepted: '2015-01-24') #=> #<Date: 2014-10-03>
+# If used with Rails (the Active Support gem), additional options are available:
+Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today) #=> #<Date: 2014-10-03>
 
 # Random date in the future (up to maximum of N days)
 # Keyword arguments: days

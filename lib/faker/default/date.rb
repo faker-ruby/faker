@@ -6,13 +6,15 @@ module Faker
       ##
       # Produce a random date between two dates.
       #
-      # @param from [Date] The start of the usable date range.
-      # @param to [Date] The end of the usable date range.
+      # @param from [Date, String] The start of the usable date range.
+      # @param to [Date, String] The end of the usable date range.
       # @return [Date]
       #
-      # @example
-      #   Faker::Date.between(from: 2.days.ago, to: Date.today)
-      #     #=> #<Date: 2014-09-24>
+      # @example if used with or without Rails (Active Support)
+      #   Faker::Date.between(from: '2014-09-23', to: '2014-09-25') #=> #<Date: 2014-09-24>
+      #
+      # @example if used with Rails (Active Support)
+      #   Faker::Date.between(from: 2.days.ago, to: Date.today) #=> #<Date: 2014-09-24>
       #
       # @faker.version 1.0.0
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from:, to:)
@@ -32,14 +34,16 @@ module Faker
       ##
       # Produce a random date between two dates.
       #
-      # @param from [Date] The start of the usable date range.
-      # @param to [Date] The end of the usable date range.
-      # @param excepted [Date] A date to exclude.
+      # @param from [Date, String] The start of the usable date range.
+      # @param to [Date, String] The end of the usable date range.
+      # @param excepted [Date, String] A date to exclude.
       # @return [Date]
       #
-      # @example
-      #   Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today)
-      #     #=> #<Date: 2014-10-03>
+      # @example if used with or without Rails (Active Support)
+      #   Faker::Date.between_except(from: '2014-09-23', to: '2015-09-25', excepted: '2015-01-24') #=> #<Date: 2014-10-03>
+      #
+      # @example if used with Rails (Active Support)
+      #   Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today) #=> #<Date: 2014-10-03>
       #
       # @faker.version 1.6.2
       def between_except(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_excepted = NOT_GIVEN, from:, to:, excepted:)
@@ -149,7 +153,7 @@ module Faker
       # @example
       #   Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def in_date_period(month: nil, year: ::Date.today.year)
         from = ::Date.new(year, month || 1, 1)
         to = ::Date.new(year, month || 12, ::Date.civil(year, month || 12, -1).day)

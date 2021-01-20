@@ -64,7 +64,7 @@ module Faker
           keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
         end
 
-        words(number: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(' ').capitalize + locale_period
+        words(number: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(locale_space).capitalize + locale_period
       end
 
       def sentences(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
@@ -107,9 +107,9 @@ module Faker
 
         paragraph = paragraph(sentence_count: 3, supplemental: supplemental)
 
-        paragraph += ' ' + paragraph(sentence_count: 3, supplemental: supplemental) while paragraph.length < number
+        paragraph += " #{paragraph(sentence_count: 3, supplemental: supplemental)}" while paragraph.length < number
 
-        paragraph[0...number - 1] + '.'
+        "#{paragraph[0...number - 1]}."
       end
 
       # rubocop:disable Metrics/ParameterLists

@@ -3,17 +3,20 @@
 module Faker
   class Internet < Base
     class << self
-      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil)
+      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :name if legacy_name != NOT_GIVEN
           keywords << :separators if legacy_separators != NOT_GIVEN
         end
 
-        if separators
-          [username(specifier: name, separators: separators), domain_name].join('@')
-        else
-          [username(specifier: name), domain_name].join('@')
-        end
+        local_part = if separators
+                       username(specifier: name, separators: separators)
+                     else
+                       username(specifier: name)
+                     end
+
+        sanitized_local_part = sanitize_email_local_part(local_part)
+        construct_email(sanitized_local_part, domain_name(domain: domain))
       end
 
       def free_email(legacy_name = NOT_GIVEN, name: nil)
@@ -21,7 +24,10 @@ module Faker
           keywords << :name if legacy_name != NOT_GIVEN
         end
 
-        [username(specifier: name), fetch('internet.free_email')].join('@')
+        construct_email(
+          sanitize_email_local_part(username(specifier: name)),
+          fetch('internet.free_email')
+        )
       end
 
       def safe_email(legacy_name = NOT_GIVEN, name: nil)
@@ -29,7 +35,10 @@ module Faker
           keywords << :name if legacy_name != NOT_GIVEN
         end
 
-        [username(specifier: name), 'example.' + sample(%w[org com net])].join('@')
+        construct_email(
+          sanitize_email_local_part(username(specifier: name)),
+          "example.#{sample(%w[org com net])}"
+        )
       end
 
       def username(legacy_specifier = NOT_GIVEN, legacy_separators = NOT_GIVEN, specifier: nil, separators: %w[. _])
@@ -41,7 +50,8 @@ module Faker
         with_locale(:en) do
           return shuffle(specifier.scan(/[[:word:]]+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
 
-          if specifier.is_a?(Integer)
+          case specifier
+          when Integer
             # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error
             raise ArgumentError, 'Given argument is too large' if specifier > 10**6
 
@@ -53,7 +63,7 @@ module Faker
               break unless result.length < specifier && tries < 7
             end
             return result * (specifier / result.length + 1) if specifier.positive?
-          elsif specifier.is_a?(Range)
+          when Range
             tries = 0
             result = nil
             loop do
@@ -106,7 +116,7 @@ module Faker
           keywords << :special_characters if legacy_special_characters != NOT_GIVEN
         end
 
-        min_alpha = mix_case ? 2 : 0
+        min_alpha = mix_case && min_length > 1 ? 2 : 0
         temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
         diff_length = max_length - min_length
 
@@ -135,15 +145,25 @@ module Faker
         temp
       end
 
-      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false)
+      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :subdomain if legacy_subdomain != NOT_GIVEN
         end
 
         with_locale(:en) do
-          domain_elements = [Char.prepare(domain_word), domain_suffix]
-          domain_elements.unshift(Char.prepare(domain_word)) if subdomain
-          domain_elements.join('.')
+          if domain
+            domain
+              .split('.')
+              .map { |domain_part| Char.prepare(domain_part) }
+              .tap do |domain_elements|
+                domain_elements << domain_suffix if domain_elements.length < 2
+                domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
+              end.join('.')
+          else
+            [domain_word, domain_suffix].tap do |domain_elements|
+              domain_elements.unshift(Char.prepare(domain_word)) if subdomain
+            end.join('.')
+          end
         end
       end
 
@@ -285,7 +305,55 @@ module Faker
         '%08x-%04x-%04x-%04x-%04x%08x' % ary # rubocop:disable Style/FormatString
       end
 
+      ##
+      # Produces a random string of alphabetic characters, (no digits)
+      #
+      # @param length [Integer] The length of the string to generate
+      # @param padding [Boolean] Toggles if a final equal '=' will be added.
+      # @param urlsafe [Boolean] Toggles charset to '-' and '_' instead of '+' and '/'.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Internet.base64
+      #     #=> "r_hbZ2DSD-ZACzZT"
+      # @example
+      #   Faker::Internet.base64(length: 4, padding: true, urlsafe: false)
+      #     #=> "x1/R="
+      #
+      # @faker.version 2.11.0
+      def base64(length: 16, padding: false, urlsafe: true)
+        char_range = [
+          Array('0'..'9'),
+          Array('A'..'Z'),
+          Array('a'..'z'),
+          urlsafe ? %w[- _] : %w[+ /]
+        ].flatten
+        s = Array.new(length) { sample(char_range) }.join
+        s += '=' if padding
+        s
+      end
+
       alias user_name username
+
+      private
+
+      def sanitize_email_local_part(local_part)
+        char_range = [
+          Array('0'..'9'),
+          Array('A'..'Z'),
+          Array('a'..'z'),
+          "!#$%&'*+-/=?^_`{|}~.".split(//)
+        ].flatten
+
+        local_part.split(//).map do |char|
+          char_range.include?(char) ? char : '#'
+        end.join
+      end
+
+      def construct_email(local_part, domain_name)
+        [local_part, domain_name].join('@')
+      end
     end
   end
 end

@@ -12,7 +12,7 @@ class TestSVLocale < Test::Unit::TestCase
   end
 
   def test_address_methods
-    assert Faker::Address.postcode.match(/^[\d]{5}$/)
+    assert Faker::Address.postcode.match(/^\d{5}$/)
     assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.city_prefix.is_a? String
     assert Faker::Address.country.is_a? String

@@ -88,6 +88,34 @@ module Faker
           encode_tz(:edsig, 64)
         end
 
+        ##
+        # Produces a random Tezos public key
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Blockchain::Tezos.public_key
+        #     #=> "edpkuib9x8QXRc5nWwHUg7U1dXsVmaUrUNU5sX9pVEEvwbMVdfMCeq"
+        #
+        # @faker.version 2.15.2
+        def public_key
+          encode_tz(:edpk, 32)
+        end
+
+        ##
+        # Produces a random Tezos public key
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Blockchain::Tezos.secret_key
+        #     #=> "edsk3HZCAGEGpzQPnQUwQeFY4ESanFhQCgLpKriQw8GHyhKCrjHawv"
+        #
+        # @faker.version 2.15.2
+        def secret_key
+          encode_tz(:edsk, 32)
+        end
+
         protected
 
         ##

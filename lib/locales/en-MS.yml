@@ -41,7 +41,8 @@ en-MS:
       street_address:
         - "No. #{building_number}, #{street_name}"
       default_country: [Malaysia]
+    country_code: ['603-56', '603-80']
     phone_number:
-      formats: ['03#######', '+601########']
+      formats: ['03#######', '01########']
     bank:
       name: [Affin Bank Berhad, Agro Bank Berhad, Alliance Bank Malaysia Berhad, AmBank Berhad, Bank Islam Berhad, Bank Muamalat Berhad, Bank Rakyat Berhad, Bank Simpanan Nasional, CIMB Bank Berhad, Hong Leong Bank Berhad, Malayan Banking Berhad, Public Bank Berhad, RHB Bank Berhad, Tabung Haji]

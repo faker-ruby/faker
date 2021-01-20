@@ -14,7 +14,7 @@ class TestEnZaLocale < Test::Unit::TestCase
   def test_en_za_address_methods
     assert Faker::Address.country_code.is_a? String
     assert Faker::Address.default_country.is_a? String
-    assert Faker::Address.post_code.is_a? String
+    assert Faker::Address.postcode.is_a? String
     assert Faker::Address.province.is_a? String
     assert Faker::Address.state.is_a? String
     assert Faker::Address.city.is_a? String

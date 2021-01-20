@@ -3,10 +3,12 @@ en:
     games:
       super_smash_bros:
         fighter:
-          - Banjo-Kazooie
+          - Alex
+          - Banjo & Kazooie
           - Bayonetta
           - Bowser
           - Bowser Jr.
+          - Byleth
           - Captain Falcon
           - Charizard
           - Chrom
@@ -19,6 +21,7 @@ en:
           - Donkey Kong
           - Dr. Mario
           - Duck Hunt Duo
+          - Enderman
           - Falco
           - Fox
           - Ganondorf
@@ -50,6 +53,7 @@ en:
           - Mii Fighter
           - Mii Gunner
           - Mii Sword Fighter
+          - Min Min
           - Mr. Game & Watch
           - Ness
           - Olimar
@@ -69,12 +73,15 @@ en:
           - Roy
           - Ryu
           - Samus
+          - Sephiroth
           - Sheik
           - Shulk
           - Simon Belmont
           - Snake
           - Sonic
           - Squirtle
+          - Steve
+          - Terry
           - Toon Link
           - Villager
           - Wario
@@ -84,6 +91,7 @@ en:
           - Young Link
           - Zelda
           - Zero Suit Samus
+          - Zombie
         stage:
           - 3D Land
           - 75m
@@ -115,6 +123,7 @@ en:
           - Frigate Orpheon
           - Gamer
           - Garden of Hope
+          - Garreg Mach Monastery
           - Gaur Plain
           - Gerudo Valley
           - Golden Plains
@@ -130,6 +139,7 @@ en:
           - Jungle Hijinxs
           - Jungle Japes
           - Kalos Pokémon League
+          - King of Fighters Stadium
           - Kongo Falls
           - Kongo Jungle
           - Living Room
@@ -142,8 +152,9 @@ en:
           - Mementos
           - Midgar
           - Miiverse
+          - Minecraft World
           - Moray Towers
-          - Mushroom Kingdom 
+          - Mushroom Kingdom
           - Mushroom Kingdom II
           - Mushroomy Kingdom
           - Mushroom Kingdom U
@@ -151,6 +162,7 @@ en:
           - New Donk City Hall
           - New Pork City
           - Norfair
+          - Northern Cave
           - Onett
           - Orbital Gate Assault
           - Pac-Land
@@ -179,10 +191,12 @@ en:
           - Shadow Moses Island
           - Skyloft
           - Skyworld
+          - Small Battlefield
           - Smashville
           - Spear Pillar
           - Spiral Mountain
           - Spirit Train
+          - Spring Stadium
           - Summit
           - Super Happy Tree
           - Super Mario Maker
@@ -197,9 +211,10 @@ en:
           - WarioWare, Inc.
           - Wii Fit Studio
           - Wily Castle
-          - Windy Hill Zone 	
+          - Windy Hill Zone
           - Woolly World
           - Wrecking Crew
           - Wuhu Island
           - Yoshi's Island
           - Yoshi's Story
+          - Yggdrasil's Altar

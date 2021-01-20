@@ -58,8 +58,16 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_invalid_south_african_id_number
     sample = @tester.invalid_south_african_id_number
-    assert_raises ArgumentError do
-      Date.parse(south_african_id_number_to_date_of_birth_string(sample))
+
+    # The error raised here is changed in Ruby 2.7.
+    if RUBY_VERSION < '2.7'
+      assert_raises ArgumentError do
+        Date.parse(south_african_id_number_to_date_of_birth_string(sample))
+      end
+    elsif RUBY_VERSION >= '2.7'
+      assert_raises Date::Error do
+        Date.parse(south_african_id_number_to_date_of_birth_string(sample))
+      end
     end
   end
 
@@ -109,9 +117,9 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_brazilian_document_digit
     citizen_number_digit10 = Faker::IDNumber.send(:brazilian_document_digit, 10)
     citizen_number_digit_other = Faker::IDNumber.send(:brazilian_document_digit, 9)
-    id_digit10 = Faker::IDNumber.send(:brazilian_document_digit, 1, true)
-    id_digit11 = Faker::IDNumber.send(:brazilian_document_digit, 0, true)
-    id_digit_other = Faker::IDNumber.send(:brazilian_document_digit, 2, true)
+    id_digit10 = Faker::IDNumber.send(:brazilian_document_digit, 1, id: true)
+    id_digit11 = Faker::IDNumber.send(:brazilian_document_digit, 0, id: true)
+    id_digit_other = Faker::IDNumber.send(:brazilian_document_digit, 2, id: true)
     assert_equal citizen_number_digit10, '0'
     assert_equal citizen_number_digit_other, '9'
     assert_equal id_digit10, 'X'
@@ -133,6 +141,23 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal digit10, 'X'
     assert_equal digit11, '0'
     assert_equal digit_other, '9'
+  end
+
+  def test_chilean_id
+    sample = @tester.chilean_id
+    assert_match(/^\d{8}-[K\d]$/, sample)
+  end
+
+  def test_chilean_verification_code_k
+    verification_code = Faker::IDNumber.send(:chilean_verification_code, 20_680_873)
+
+    assert_equal verification_code, 'K'
+  end
+
+  def test_chilean_verification_code_0
+    verification_code = Faker::IDNumber.send(:chilean_verification_code, 13_196_022)
+
+    assert_equal verification_code, 0
   end
 
   private

@@ -42,6 +42,17 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Color.color_name.is_a? String
   end
 
+  def test_ja_book_methods
+    assert Faker::Book.title.is_a? String
+    assert_not_english(Faker::Book.title)
+    assert Faker::Book.author.is_a? String
+    assert_not_english(Faker::Book.author)
+    assert Faker::Book.publisher.is_a? String
+    assert_not_english(Faker::Book.publisher)
+    assert Faker::Book.genre.is_a? String
+    assert_not_english(Faker::Book.genre)
+  end
+
   def test_ja_coffee_methods
     assert Faker::Coffee.country.is_a? String
     assert_not_english(Faker::Coffee.country)
@@ -75,6 +86,7 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Lorem.words.is_a? Array
     assert Faker::Lorem.words(number: 1000)
     assert Faker::Lorem.words(number: 10_000, supplemental: true)
+    assert_not_match(/ /, Faker::Lorem.paragraph)
   end
 
   def test_ja_name_methods

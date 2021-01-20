@@ -73,6 +73,8 @@ sk:
       first_name:
         - "#{male_first_name}"
         - "#{female_first_name}"
-        
+
+    country_code: ['421']
+
     phone_number:
-      formats: ['09## ### ###', '0## #### ####', '0# #### ####', '+421 ### ### ###']
+      formats: ['09## ### ###', '0## #### ####', '0# #### ####', '### ### ###']
