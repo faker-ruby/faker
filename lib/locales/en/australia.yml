@@ -98,3 +98,12 @@ en:
         - Frilled Neck Lizard
         - Saltwater Crocodile
         - Eastern Brown Snake
+      states:
+        - New South wales
+        - Queensland
+        - Western Australia
+        - Northern Territory
+        - South Australia
+        - Australian Capital Territory
+        - Visctoria
+        - Tasmania

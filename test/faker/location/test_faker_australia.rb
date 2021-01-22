@@ -14,4 +14,8 @@ class TestFakerAustralia < Test::Unit::TestCase
   def test_animal
     assert @tester.animal.match(/\w+/)
   end
+
+  def test_state
+    assert @tester.state.match(/\w+/)
+  end
 end
