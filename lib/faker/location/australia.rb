@@ -9,12 +9,21 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Fantasy::Australia.location
+      #   Faker::Australia.location
       #    #=> "Sydney"
-      #
-      # @faker.version next
       def location
         fetch('australia.locations')
+      end
+      # Produces an Australian animal
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Australia.animal
+      #    #=> "Dingo"
+
+      def animal
+        fetch('australia.animals')
       end
     end
   end
