@@ -1,27 +1,17 @@
 # typed: strong
 # :nodoc:
 module Faker
-  class Config
-    # Sets the attribute locale
-    # 
-    # _@param_ `value` — the value to set the attribute locale to.
-    sig { params(value: T.untyped).returns(T.untyped) }
-    def self.locale=(value); end
+  module Config
+    class << self
+      sig { returns(T.untyped) }
+      attr_accessor :locale
 
-    # Sets the attribute random
-    # 
-    # _@param_ `value` — the value to set the attribute random to.
-    sig { params(value: T.untyped).returns(T.untyped) }
-    def self.random=(value); end
-
-    sig { returns(T.untyped) }
-    def self.locale; end
+      sig { returns(T.untyped) }
+      attr_accessor :random
+    end
 
     sig { returns(T.untyped) }
     def self.own_locale; end
-
-    sig { returns(T.untyped) }
-    def self.random; end
   end
 
   class Base
@@ -78,8 +68,8 @@ module Faker
     def self.translate(*args, **opts); end
 
     # Executes block with given locale set.
-    sig { params(tmp_locale: T.untyped).returns(T.untyped) }
-    def self.with_locale(tmp_locale = nil); end
+    sig { params(tmp_locale: T.untyped, block: T.untyped).returns(T.untyped) }
+    def self.with_locale(tmp_locale = nil, &block); end
 
     sig { params(key: T.untyped).returns(T.untyped) }
     def self.flexible(key); end
@@ -151,21 +141,13 @@ module Faker
 
   class Games
     class DnD < Faker::Base
-      # Produces the name of a race from Dungeons and Dragons (PHB).
+      # Produces the name of an alignment from Dungeons and Dragons.
       # 
       # ```ruby
-      # Faker::Games::DnD.race #=> "Dwarf"
+      # Faker::Games::DnD.alignment #=> "Lawful Neutral"
       # ```
       sig { returns(::String) }
-      def self.species; end
-
-      # Produces the name of a class from Dungeons and Dragons (PHB).
-      # 
-      # ```ruby
-      # Faker::Games::DnD.klass #=> "Warlock"
-      # ```
-      sig { returns(::String) }
-      def self.klass; end
+      def self.alignment; end
 
       # Produces the name of a background from Dungeons and Dragons (PHB).
       # 
@@ -175,13 +157,68 @@ module Faker
       sig { returns(::String) }
       def self.background; end
 
-      # Produces the name of an alignment from Dungeons and Dragons.
+      # Produces the name of a city from Dungeons and Dragons.
       # 
       # ```ruby
-      # Faker::Games::DnD.alignment #=> "Lawful Neutral"
+      # Faker::Games::DnD.city #=> "Earthfast"
       # ```
       sig { returns(::String) }
-      def self.alignment; end
+      def self.city; end
+
+      # Produces the name of a class from Dungeons and Dragons (PHB).
+      # 
+      # ```ruby
+      # Faker::Games::DnD.klass #=> "Warlock"
+      # ```
+      sig { returns(::String) }
+      def self.klass; end
+
+      # Produces the name of a language from Dungeons and Dragons.
+      # 
+      # ```ruby
+      # Faker::Games::DnD.language #=> "Gnomish"
+      # ```
+      sig { returns(::String) }
+      def self.language; end
+
+      # Produces the name of a melee weapon from Dungeons and Dragons.
+      # 
+      # ```ruby
+      # Faker::Games::DnD.melee_weapon #=> "Handaxe"
+      # ```
+      sig { returns(::String) }
+      def self.melee_weapon; end
+
+      # Produces the name of a monster from Dungeons and Dragons.
+      # 
+      # ```ruby
+      # Faker::Games::DnD.monster #=> "Manticore"
+      # ```
+      sig { returns(::String) }
+      def self.monster; end
+
+      # Produces the name of a race from Dungeons and Dragons (PHB).
+      # 
+      # ```ruby
+      # Faker::Games::DnD.races #=> "Dwarf"
+      # ```
+      sig { returns(::String) }
+      def self.race; end
+
+      # Produces the name of a ranged weapon from Dungeons and Dragons.
+      # 
+      # ```ruby
+      # Faker::Games::DnD.ranged_weapon #=> "Shortbow"
+      # ```
+      sig { returns(::String) }
+      def self.ranged_weapon; end
+
+      # This method is deprecated. The implementation will be removed in a near future release.
+      # Use `DnD.race` instead.
+      # 
+      # _@deprecated_ — Use {#race} instead.
+      sig { returns(T.untyped) }
+      def self.species; end
     end
 
     class Dota < Faker::Base
@@ -329,6 +366,56 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.klass; end
+
+      # Produces the name of an artifact from Heroes 3.
+      # 
+      # ```ruby
+      # Faker::Games::Heroes.artifact #=> "Armageddon's Blade"
+      # ```
+      sig { returns(::String) }
+      def self.artifact; end
+    end
+
+    class Touhou < Faker::Base
+      # Produces the name of a Touhou game.
+      # 
+      # ```ruby
+      # Faker::Games::Touhou.game #=> "Mountain of Faith"
+      # ```
+      sig { returns(::String) }
+      def self.game; end
+
+      # Produces the name of a character from the Touhou games.
+      # 
+      # ```ruby
+      # Faker::Games::Touhou.character #=> "Sanae Kochiya"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces the name of a location from the Touhou games.
+      # 
+      # ```ruby
+      # Faker::Games::Touhou.location #=> "Moriya Shrine"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+
+      # Produces the name of a spell card from the Touhou games.
+      # 
+      # ```ruby
+      # Faker::Games::Touhou.spell_card #=> 'Esoterica "Gray Thaumaturgy"'
+      # ```
+      sig { returns(::String) }
+      def self.spell_card; end
+
+      # Produces the name of a song from the Touhou games.
+      # 
+      # ```ruby
+      # Faker::Games::Touhou.song #=> "Faith Is for the Transient People"
+      # ```
+      sig { returns(::String) }
+      def self.song; end
     end
 
     class Control < Faker::Base
@@ -343,7 +430,7 @@ module Faker
       # Produces the name of a location from Control.
       # 
       # ```ruby
-      # Faker::Games::Control.character #=> "Dimensional Research"
+      # Faker::Games::Control.location #=> "Dimensional Research"
       # ```
       sig { returns(::String) }
       def self.location; end
@@ -535,6 +622,22 @@ module Faker
     end
 
     class Minecraft < Faker::Base
+      # Produces the name of an achievement from Minecraft.
+      # 
+      # ```ruby
+      # Faker::Games::Minecraft.achievement #=> "Time to Mine!"
+      # ```
+      sig { returns(::String) }
+      def self.achievement; end
+
+      # Produces the name of a biome from Minecraft.
+      # 
+      # ```ruby
+      # Faker::Games::Minecraft.biome #=> "Jungle"
+      # ```
+      sig { returns(::String) }
+      def self.biome; end
+
       # Produces the name of a block from Minecraft.
       # 
       # ```ruby
@@ -542,6 +645,22 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.block; end
+
+      # Produces the name of a enchantment from Minecraft.
+      # 
+      # ```ruby
+      # Faker::Games::Minecraft.enchantment #=> "Fire Protection"
+      # ```
+      sig { returns(::String) }
+      def self.enchantment; end
+
+      # Produces the name of a game mode from Minecraft.
+      # 
+      # ```ruby
+      # Faker::Games::Minecraft.game_mode #=> "Survival"
+      # ```
+      sig { returns(::String) }
+      def self.game_mode; end
 
       # Produces the name of an item from Minecraft.
       # 
@@ -558,6 +677,14 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.mob; end
+
+      # Produces the name of a status effect from Minecraft.
+      # 
+      # ```ruby
+      # Faker::Games::Minecraft.status_effect #=> "Weakness"
+      # ```
+      sig { returns(::String) }
+      def self.status_effect; end
     end
 
     class Overwatch < Faker::Base
@@ -584,6 +711,32 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.quote; end
+    end
+
+    class SuperMario < Faker::Base
+      # Produces the name of a Super Mario character.
+      # 
+      # ```ruby
+      # Faker::Games::SuperMario.character #=> "Luigi"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces the name of a Super Mario game.
+      # 
+      # ```ruby
+      # Faker::Games::SuperMario.game #=> "Super Mario Odyssey"
+      # ```
+      sig { returns(::String) }
+      def self.game; end
+
+      # Produces the name of a Super Mario location.
+      # 
+      # ```ruby
+      # Faker::Games::SuperMario.location #=> "Kong City"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
     end
 
     class ElderScrolls < Faker::Base
@@ -650,6 +803,82 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.last_name; end
+
+      # Produces a weapon from the Elder Scrolls universe.
+      # 
+      # ```ruby
+      # Faker::Games::ElderScrolls.weapon #=> "Elven Bow"
+      # ```
+      sig { returns(::String) }
+      def self.weapon; end
+
+      # Produces a weapon from the Elder Scrolls universe.
+      # 
+      # ```ruby
+      # Faker::Games::ElderScrolls.jewelry #=> "Silver Ruby Ring"
+      # ```
+      sig { returns(::String) }
+      def self.jewelry; end
+    end
+
+    class ClashOfClans < Faker::Base
+      # Produces the name of a troop from Clash of Clans.
+      # 
+      # ```ruby
+      # Faker::Games::ClashOfClans.troop #=> "Barbarian"
+      # ```
+      sig { returns(::String) }
+      def self.troop; end
+
+      # Produces the name of a rank from Clash Of Clans.
+      # 
+      # ```ruby
+      # Faker::Games::ClashOfClans.rank #=> "Legend"
+      # ```
+      sig { returns(::String) }
+      def self.rank; end
+
+      # Produces the name of a defensive buiding from Clash Of Clans.
+      # 
+      # ```ruby
+      # Faker::Games::ClashOfClans.defensive_building #=> "Cannon"
+      # ```
+      sig { returns(::String) }
+      def self.defensive_building; end
+    end
+
+    class StreetFighter < Faker::Base
+      # Produces the name of a playable character from Street Fighter.
+      # 
+      # ```ruby
+      # Faker::Games::StreetFighter.character #=> "Ryu"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces the name of a stage from Street Fighter.
+      # 
+      # ```ruby
+      # Faker::Games::StreetFighter.stage #=> "Volcanic Rim"
+      # ```
+      sig { returns(::String) }
+      def self.stage; end
+
+      # Produces a quote from Street Fighter.
+      # 
+      # ```ruby
+      # Faker::Games::StreetFighter.quote #=> "Go home and be a family man."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+
+      # Produces the name of a move from Street Fighter.
+      # 
+      # ```ruby
+      # Faker::Games::StreetFighter.move #=> "Shoryuken"
+      # ```
+      sig { returns(::String) }
+      def self.move; end
     end
 
     class SuperSmashBros < Faker::Base
@@ -770,6 +999,22 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.hero; end
+
+      # Produces a class name from World of Warcraft.
+      # 
+      # ```ruby
+      # Faker::Games::WorldOfWarcraft.class_name #=> "Druid"
+      # ```
+      sig { returns(::String) }
+      def self.class_name; end
+
+      # Produces the name of a race from World of Warcraft.
+      # 
+      # ```ruby
+      # Faker::Games::WorldOfWarcraft.race #=> "Druid"
+      # ```
+      sig { returns(::String) }
+      def self.race; end
 
       # Produces a quote from World of Warcraft.
       # 
@@ -900,6 +1145,14 @@ module Faker
       sig { returns(::String) }
       def self.title; end
 
+      # Produces the name of a city from Dune
+      # 
+      # ```ruby
+      # Faker::Books::Dune.city #=> "Arrakeen"
+      # ```
+      sig { returns(::String) }
+      def self.city; end
+
       # Produces the name of a planet from Dune
       # 
       # ```ruby
@@ -985,6 +1238,8 @@ module Faker
       # 
       # _@param_ `random_words_to_add`
       # 
+      # _@param_ `open_compounds_allowed` — If true, generated sentence can contain words having additional spaces
+      # 
       # ```ruby
       # Faker::Books::Lovecraft.sentence
       #   #=> "Furtive antiquarian squamous dank cat loathsome amorphous lurk."
@@ -999,15 +1254,21 @@ module Faker
       # Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1)
       #   #=> "Amorphous indescribable tenebrous."
       # ```
+      # 
+      # ```ruby
+      # Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 0, open_compounds_allowed: true)
+      #   #=> "Effulgence unmentionable gambrel."
+      # ```
       sig do
         params(
           legacy_word_count: T.untyped,
           legacy_random_words_to_add: T.untyped,
           word_count: Integer,
-          random_words_to_add: Integer
+          random_words_to_add: Integer,
+          open_compounds_allowed: T::Boolean
         ).returns(::String)
       end
-      def self.sentence(legacy_word_count = T.unsafe(nil), legacy_random_words_to_add = T.unsafe(nil), word_count: 4, random_words_to_add: 6); end
+      def self.sentence(legacy_word_count = T.unsafe(nil), legacy_random_words_to_add = T.unsafe(nil), word_count: 4, random_words_to_add: 6, open_compounds_allowed: true); end
 
       # Produces a random word
       # 
@@ -1219,7 +1480,7 @@ module Faker
     def self.platform; end
   end
 
-  # A generator of titles of operas by Verdi, Rossini, Donizetti and Bellini
+  # A generator of titles of operas by various composers
   class Music < Faker::Base
     # Produces the name of a key/note, using letter notation.
     # 
@@ -1339,6 +1600,150 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.bellini; end
+
+      # Produces the title of an opera by Wolfgang Amadeus Mozart.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.mozart #=> "Die Zauberfloete"
+      # ```
+      sig { returns(::String) }
+      def self.mozart; end
+
+      # Produces the title of an Italian opera by Wolfgang Amadeus Mozart.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.mozart_it #=> "Cosi fan tutte"
+      # ```
+      sig { returns(::String) }
+      def self.mozart_italian; end
+
+      # Produces the title of a German opera by Wolfgang Amadeus Mozart.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.mozart_ger #=> "Die Zauberfloete"
+      # ```
+      sig { returns(::String) }
+      def self.mozart_german; end
+
+      # Produces the title of an opera by Christoph Willibald Gluck.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.gluck #=> "Orfeo ed Euridice"
+      # ```
+      sig { returns(::String) }
+      def self.gluck; end
+
+      # Produces the title of an Italian opera by Christoph Willibald Gluck.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.gluck_it #=> "Orfeo ed Euridice"
+      # ```
+      sig { returns(::String) }
+      def self.gluck_italian; end
+
+      # Produces the title of a French opera by Christoph Willibald Gluck.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.gluck_fr #=> "Orphee et Euridice"
+      # ```
+      sig { returns(::String) }
+      def self.gluck_french; end
+
+      # Produces the title of an opera by Ludwig van Beethoven.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.beethoven #=> "Fidelio"
+      # ```
+      sig { returns(::String) }
+      def self.beethoven; end
+
+      # Produces the title of an opera by Carl Maria von Weber.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.weber #=> "Der Freischuetz"
+      # ```
+      sig { returns(::String) }
+      def self.weber; end
+
+      # Produces the title of an opera by Richard Strauss.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.strauss #=> "Elektra"
+      # ```
+      sig { returns(::String) }
+      def self.strauss; end
+
+      # Produces the title of an opera by Richard Wagner.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.wagner #=> "Tristan und Isolde"
+      # ```
+      sig { returns(::String) }
+      def self.wagner; end
+
+      # Produces the title of an opera by Robert Schumann.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.schumann #=> "Genoveva"
+      # ```
+      sig { returns(::String) }
+      def self.schumann; end
+
+      # Produces the title of an opera by Franz Schubert.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.schubert #=> "Alfonso und Estrella"
+      # ```
+      sig { returns(::String) }
+      def self.schubert; end
+
+      # Produces the title of an opera by Alban Berg.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.berg #=> "Wozzeck"
+      # ```
+      sig { returns(::String) }
+      def self.berg; end
+
+      # Produces the title of an opera by Maurice Ravel.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.ravel #=> "L'enfant et les sortileges"
+      # ```
+      sig { returns(::String) }
+      def self.ravel; end
+
+      # Produces the title of an opera by Hector Berlioz.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.berlioz #=> "Les Troyens"
+      # ```
+      sig { returns(::String) }
+      def self.berlioz; end
+
+      # Produces the title of an opera by Georges Bizet.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.bizet #=> "Carmen"
+      # ```
+      sig { returns(::String) }
+      def self.bizet; end
+
+      # Produces the title of an opera by Charles Gounod.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.gounod #=> "Faust"
+      # ```
+      sig { returns(::String) }
+      def self.gounod; end
+
+      # Produces the title of an opera by Camille Saint-Saens.
+      # 
+      # ```ruby
+      # Faker::Music::Opera.saint_saens #=> "Samson and Delilah"
+      # ```
+      sig { returns(::String) }
+      def self.saint_saens; end
     end
 
     class Phish < Faker::Base
@@ -1365,6 +1770,32 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.song; end
+    end
+
+    class Hiphop < Faker::Base
+      # Produces the name of a Hip Hop Artist
+      # 
+      # ```ruby
+      # Faker::Music::Hiphop.artist #=> "Lil Wayne"
+      # ```
+      sig { returns(::String) }
+      def self.artist; end
+
+      # Produces the name of a Hip Hop Group
+      # 
+      # ```ruby
+      # Faker::Music::Hiphop.groups #=> "OVO"
+      # ```
+      sig { returns(::String) }
+      def self.groups; end
+
+      # Produces the name of a Hip Hop Subgenre
+      # 
+      # ```ruby
+      # Faker::Music::Hiphop.subgeneres #=> "Alternative"
+      # ```
+      sig { returns(::String) }
+      def self.subgenres; end
     end
 
     class Prince < Faker::Base
@@ -1438,6 +1869,14 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.name; end
+
+      # Produces a rock song.
+      # 
+      # ```ruby
+      # Faker::Music::RockBand.song #=> "Dani California"
+      # ```
+      sig { returns(::String) }
+      def self.song; end
     end
 
     class GratefulDead < Faker::Base
@@ -1611,6 +2050,512 @@ module Faker
     # ```
     sig { params(legacy_number: T.untyped, number: Integer).returns(Integer) }
     def self.check_digit(legacy_number = T.unsafe(nil), number: 0); end
+  end
+
+  class Movies
+    class TheRoom < Faker::Base
+      # Produces an actor from The Room (2003).
+      # 
+      # ```ruby
+      # Faker::Movies::Room.actor #=> "Tommy Wiseau"
+      # ```
+      sig { returns(::String) }
+      def self.actor; end
+
+      # Produces a character from The Room (2003).
+      # 
+      # ```ruby
+      # Faker::Movies::Room.character #=> "Johnny"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a location from The Room (2003).
+      # 
+      # ```ruby
+      # Faker::Movies::Room.location #=> "Johnny's Apartment"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+
+      # Produces a quote from The Room (2003).
+      # 
+      # ```ruby
+      # Faker::Movies::Room.quote
+      #   #=> "You're lying, I never hit you. You are tearing me apart, Lisa!"
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
+    class Hobbit < Faker::Base
+      # Produces the name of a character from The Hobbit.
+      # 
+      # ```ruby
+      # Faker::Movies::Hobbit.character #=> "Gandalf the Grey"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces the name of one of the 13 dwarves from the Company, or Gandalf or Bilbo.
+      # 
+      # ```ruby
+      # Faker::Movies::Hobbit.thorins_company #=> "Thorin Oakenshield"
+      # ```
+      sig { returns(::String) }
+      def self.thorins_company; end
+
+      # Produces a quote from The Hobbit.
+      # 
+      # ```ruby
+      # Faker::Movies::Hobbit.quote
+      #   #=> "Never laugh at live dragons, Bilbo you fool!"
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+
+      # Produces the name of a location from The Hobbit.
+      # 
+      # ```ruby
+      # Faker::Movies::Hobbit.location #=> "The Shire"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+    end
+
+    class Departed < Faker::Base
+      # Produces an actor from The Departed.
+      # 
+      # ```ruby
+      # Faker::Movies::Departed.actor #=> "Matt Damon"
+      # ```
+      sig { returns(::String) }
+      def self.actor; end
+
+      # Produces a character from The Departed.
+      # 
+      # ```ruby
+      # Faker::Movies::Departed.character #=> "Frank Costello"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a quote from The Departed.
+      # 
+      # ```ruby
+      # Faker::Movies::Departed.quote
+      #   #=> "I'm the guy who does his job. You must be the other guy"
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
+    class Lebowski < Faker::Base
+      # Produces an actor from The Big Lebowski.
+      # 
+      # ```ruby
+      # Faker::Movies::Lebowski.actor #=> "John Goodman"
+      # ```
+      sig { returns(::String) }
+      def self.actor; end
+
+      # Produces a character from The Big Lebowski.
+      # 
+      # ```ruby
+      # Faker::Movies::Lebowski.character #=> "Jackie Treehorn"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a quote from The Big Lebowski.
+      # 
+      # ```ruby
+      # Faker::Movies::Lebowski.quote #=> "Forget it, Donny, you're out of your element!"
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
+    class StarWars < Faker::Base
+      # Produces a call squadron from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.call_squadron #=> "Green"
+      # ```
+      sig { returns(::String) }
+      def self.call_squadron; end
+
+      # Produces a call sign from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.call_sign #=> "Grey 5"
+      # ```
+      sig { returns(::String) }
+      def self.call_sign; end
+
+      # Produces a call number from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.call_number #=> "Leader"
+      # ```
+      sig { returns(::String) }
+      def self.call_number; end
+
+      # Produces a character from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.character #=> "Anakin Skywalker"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a droid from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.droid #=> "C-3PO"
+      # ```
+      sig { returns(::String) }
+      def self.droid; end
+
+      # Produces a planet from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.planet #=> "Tatooine"
+      # ```
+      sig { returns(::String) }
+      def self.planet; end
+
+      # Produces a species from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.specie #=> "Gungan"
+      # ```
+      sig { returns(::String) }
+      def self.specie; end
+
+      # Produces a vehicle from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.vehicle #=> "Sandcrawler"
+      # ```
+      sig { returns(::String) }
+      def self.vehicle; end
+
+      # Produces a wookiee sentence from Star Wars.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.wookiee_sentence #=> "Yrroonn ru ooma roo ahuma ur roooarrgh hnn-rowr."
+      # ```
+      sig { returns(::String) }
+      def self.wookiee_sentence; end
+
+      # Produces a quote from Star Wars.
+      # 
+      # _@param_ `character` — The name of a character to derive a quote from.
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.quote #=> "Aren't you a little short for a Stormtrooper?"
+      # ```
+      # 
+      # ```ruby
+      # Faker::Movies::StarWars.quote(character: "leia_organa")
+      #   #=> "Aren't you a little short for a Stormtrooper?"
+      # ```
+      sig { params(legacy_character: T.untyped, character: T.nilable(::String)).returns(::String) }
+      def self.quote(legacy_character = T.unsafe(nil), character: nil); end
+
+      sig { returns(T.untyped) }
+      def self.call_numbers; end
+
+      sig { returns(T.untyped) }
+      def self.call_squadrons; end
+
+      sig { returns(T.untyped) }
+      def self.characters; end
+
+      sig { returns(T.untyped) }
+      def self.droids; end
+
+      sig { returns(T.untyped) }
+      def self.planets; end
+
+      sig { returns(T.untyped) }
+      def self.species; end
+
+      sig { returns(T.untyped) }
+      def self.vehicles; end
+
+      sig { returns(T.untyped) }
+      def self.wookiee_words; end
+    end
+
+    class Ghostbusters < Faker::Base
+      # Produces an actor from Ghostbusters.
+      # 
+      # ```ruby
+      # Faker::Movies::Ghostbusters.actor #=> "Bill Murray"
+      # ```
+      sig { returns(::String) }
+      def self.actor; end
+
+      # Produces a character from Ghostbusters.
+      # 
+      # ```ruby
+      # Faker::Movies::Ghostbusters.character #=> "Dr. Egon Spengler"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a quote from Ghostbusters.
+      # 
+      # ```ruby
+      # Faker::Movies::Ghostbusters.quote
+      #   #=> "I tried to think of the most harmless thing. Something I loved from my childhood. Something that could never ever possibly destroy us. Mr. Stay Puft!"
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
+    class HarryPotter < Faker::Base
+      # Produces a character from Harry Potter.
+      # 
+      # ```ruby
+      # Faker::Movies::HarryPotter.character #=> "Harry Potter"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a location from Harry Potter.
+      # 
+      # ```ruby
+      # Faker::Movies::HarryPotter.location #=> "Hogwarts"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+
+      # Produces a quote from Harry Potter.
+      # 
+      # ```ruby
+      # Faker::Movies::HarryPotter.quote #=> "I solemnly swear that I am up to good."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+
+      # Produces a book from Harry Potter.
+      # 
+      # ```ruby
+      # Faker::Movies::HarryPotter.book #=> "Harry Potter and the Chamber of Secrets"
+      # ```
+      sig { returns(::String) }
+      def self.book; end
+
+      # Produces a house from Harry Potter.
+      # 
+      # ```ruby
+      # Faker::Movies::HarryPotter.house #=> "Gryffindor"
+      # ```
+      sig { returns(::String) }
+      def self.house; end
+
+      # Produces a spell from Harry Potter.
+      # 
+      # ```ruby
+      # Faker::Movies::HarryPotter.spell #=> "Reparo"
+      # ```
+      sig { returns(::String) }
+      def self.spell; end
+    end
+
+    class PrincessBride < Faker::Base
+      # Produces a character from The Princess Bride.
+      # 
+      # ```ruby
+      # Faker::Movies::PrincessBride.character #=> "Dread Pirate Roberts"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a quote from The Princess Bride.
+      # 
+      # ```ruby
+      # Faker::Movies::PrincessBride.quote
+      #   #=> "Hello. My name is Inigo Montoya. You killed my father. Prepare to die!"
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
+    class VForVendetta < Faker::Base
+      # Produces a character from V For Vendetta.
+      # 
+      # ```ruby
+      # Faker::Movies::VForVendetta.character #=> "V"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a speech from V For Vendetta.
+      # 
+      # ```ruby
+      # Faker::Movies::VForVendetta.speech
+      #   #=> "Remember, remember, the Fifth of November, the Gunpowder Treason and Plot. I know of no reason why the Gunpowder Treason should ever be forgot..."
+      # ```
+      sig { returns(::String) }
+      def self.speech; end
+
+      # Produces a quote from V For Vendetta.
+      # 
+      # ```ruby
+      # Faker::Movies::VForVendetta.quote
+      #   #=> "People should not be afraid of their governments. Governments should be afraid of their people."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
+    class LordOfTheRings < Faker::Base
+      # Produces a character from Lord of the Rings.
+      # 
+      # ```ruby
+      # Faker::Movies::LordOfTheRings.character #=> "Legolas"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a location from Lord of the Rings.
+      # 
+      # ```ruby
+      # Faker::Movies::LordOfTheRings.location #=> "Helm's Deep"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+
+      # Produces a quote from Lord of the Rings.
+      # 
+      # ```ruby
+      # Faker::Movies::LordOfTheRings.quote
+      #   #=> "I wish the Ring had never come to me. I wish none of this had happened."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
+    class BackToTheFuture < Faker::Base
+      # Produces a character from Back to the Future.
+      # 
+      # ```ruby
+      # Faker::Movies::BackToTheFuture.character #=> "Marty McFly"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a date from Back to the Future.
+      # 
+      # ```ruby
+      # Faker::Movies::BackToTheFuture.date #=> "November 5, 1955"
+      # ```
+      sig { returns(::String) }
+      def self.date; end
+
+      # Produces a quote from Back to the Future.
+      # 
+      # ```ruby
+      # Faker::Movies::BackToTheFuture.quote
+      #   #=> "Roads? Where we're going, we don't need roads."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
+    class HowToTrainYourDragon < Faker::Base
+      # Produces a character from How To Train Your Dragon.
+      # 
+      # ```ruby
+      # Faker::Movies::HowToTrainYourDragon.character #=> "Hiccup"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a location from How To Train Your Dragon.
+      # 
+      # ```ruby
+      # Faker::Movies::HowToTrainYourDragon.location #=> "Berk"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+
+      # Produces a dragon from How To Train Your Dragon.
+      # 
+      # ```ruby
+      # Faker::Movies::HowToTrainYourDragon.dragons #=> "Toothless"
+      # ```
+      sig { returns(::String) }
+      def self.dragon; end
+    end
+
+    class HitchhikersGuideToTheGalaxy < Faker::Base
+      # Produces a character from The Hitchhiker's Guide to the Galaxy.
+      # 
+      # ```ruby
+      # Faker::Movies::HitchhikersGuideToTheGalaxy.character #=> "Marvin"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a location from The Hitchhiker's Guide to the Galaxy.
+      # 
+      # ```ruby
+      # Faker::Movies::HitchhikersGuideToTheGalaxy.location
+      #   #=> "Arthur Dent's house"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+
+      # Produces a Marvin quote from The Hitchhiker's Guide to the Galaxy.
+      # 
+      # ```ruby
+      # Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote
+      #   #=> "Life? Don't talk to me about life."
+      # ```
+      sig { returns(::String) }
+      def self.marvin_quote; end
+
+      # Produces a planet from The Hitchhiker's Guide to the Galaxy.
+      # 
+      # ```ruby
+      # Faker::Movies::HitchhikersGuideToTheGalaxy.planet
+      #   #=> "Magrathea"
+      # ```
+      sig { returns(::String) }
+      def self.planet; end
+
+      # Produces a quote from The Hitchhiker's Guide to the Galaxy.
+      # 
+      # ```ruby
+      # Faker::Movies::HitchhikersGuideToTheGalaxy.quote
+      #   #=> "In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+
+      # Produces a species from The Hitchhiker's Guide to the Galaxy.
+      # 
+      # ```ruby
+      # Faker::Movies::HitchhikersGuideToTheGalaxy.specie
+      #   #=> "Perfectly Normal Beast"
+      # ```
+      sig { returns(::String) }
+      def self.specie; end
+
+      # Produces a starship from The Hitchhiker's Guide to the Galaxy.
+      # 
+      # ```ruby
+      # Faker::Movies::HitchhikersGuideToTheGalaxy.starship
+      #   #=> "Vogon Constructor Fleet"
+      # ```
+      sig { returns(::String) }
+      def self.starship; end
+    end
   end
 
   class Creature
@@ -1893,48 +2838,106 @@ module Faker
   end
 
   class Code < Faker::Base
-    # Generates a 10 digit NPI (National Provider Identifier
-    # issued to health care providers in the United States)
-    sig { returns(T.untyped) }
+    # Produces a random NPI (National Provider Identifer) code.
+    # 
+    # ```ruby
+    # Faker::Code.npi #=> "9804062802"
+    # ```
+    sig { returns(::String) }
     def self.npi; end
 
-    # By default generates 10 sign isbn code in format 123456789-X
-    # You can pass 13 to generate new 13 sign code
-    sig { params(legacy_base: T.untyped, base: T.untyped).returns(T.untyped) }
+    # Produces a random ISBN (International Standard Book Number) code.
+    # 
+    # _@param_ `base` — the length of the code to generate (either 10 or 13)
+    # 
+    # ```ruby
+    # Faker::Code.isbn(base: 13) #=> "896579606969-8"
+    # ```
+    # 
+    # ```ruby
+    # Faker::Code.isbn #=> "170366802-2"
+    # ```
+    sig { params(legacy_base: T.untyped, base: Integer).returns(::String) }
     def self.isbn(legacy_base = T.unsafe(nil), base: 10); end
 
-    # By default generates 13 sign ean code in format 1234567890123
-    # You can pass 8 to generate ean8 code
-    sig { params(legacy_base: T.untyped, base: T.untyped).returns(T.untyped) }
+    # Produces a random EAN (European Article Number) code.
+    # 
+    # _@param_ `base` — the length of the code to generate (either 8 or 13)
+    # 
+    # ```ruby
+    # Faker::Code.ean(base: 8) #=> "36941070"
+    # ```
+    # 
+    # ```ruby
+    # Faker::Code.ean #=> "9941880131907"
+    # ```
+    sig { params(legacy_base: T.untyped, base: Integer).returns(::String) }
     def self.ean(legacy_base = T.unsafe(nil), base: 13); end
 
-    sig { returns(T.untyped) }
+    # Produces a random RUT (Rol Unico Nacional) code.
+    # 
+    # ```ruby
+    # Faker::Code.rut #=> "91611842-2"
+    # ```
+    sig { returns(::String) }
     def self.rut; end
 
     # By default generates a Singaporean NRIC ID for someone
     # who is born between the age of 18 and 65.
+    # 
+    # Produces a random NRIC (National Registry Identity Card) code.
+    # 
+    # _@param_ `min_age` — the min age of the person in years
+    # 
+    # _@param_ `max_age` — the max age of the person in years
+    # 
+    # ```ruby
+    # Faker::Code.nric(min_age: 25, max_age: 50) #=> "S9347283G"
+    # ```
+    # 
+    # ```ruby
+    # Faker::Code.nric(max_age: 55) #=> "S7876903C"
+    # ```
+    # 
+    # ```ruby
+    # Faker::Code.nric(min_age: 25) #=> "S6281697Z"
+    # ```
+    # 
+    # ```ruby
+    # Faker::Code.nric #=> "S6372958B"
+    # ```
     sig do
       params(
         legacy_min_age: T.untyped,
         legacy_max_age: T.untyped,
-        min_age: T.untyped,
-        max_age: T.untyped
-      ).returns(T.untyped)
+        min_age: Integer,
+        max_age: Integer
+      ).returns(::String)
     end
     def self.nric(legacy_min_age = T.unsafe(nil), legacy_max_age = T.unsafe(nil), min_age: 18, max_age: 65); end
 
-    # Generate GSM modem, device or mobile phone 15 digit IMEI number.
-    sig { returns(T.untyped) }
+    # Produces a random IMEI (International Mobile Equipment Number) code.
+    # 
+    # ```ruby
+    # Faker::Code.imei #=> "492033129092256"
+    # ```
+    sig { returns(::String) }
     def self.imei; end
 
-    # Retrieves a real Amazon ASIN code list taken from
-    # https://archive.org/details/asin_listing
-    sig { returns(T.untyped) }
+    # Retrieves a real Amazon ASIN code from https://archive.org/details/asin_listing
+    # 
+    # ```ruby
+    # Faker::Code.asin #=> "B000MZW1GE"
+    # ```
+    sig { returns(::String) }
     def self.asin; end
 
-    # Generates Social Insurance Number issued in Canada
-    # https://en.wikipedia.org/wiki/Social_Insurance_Number
-    sig { returns(T.untyped) }
+    # Produces a random SIN (Social Insurance Number for Canada) code.
+    # 
+    # ```ruby
+    # Faker::Code.sin #=> "996586962"
+    # ```
+    sig { returns(::String) }
     def self.sin; end
 
     sig { returns(T.untyped) }
@@ -2745,6 +3748,14 @@ module Faker
     sig { returns(::String) }
     def self.famous_last_words; end
 
+    # Produces a quote from Deep Thoughts by Jack Handey.
+    # 
+    # ```ruby
+    # Faker::Quote.jack_handey # => "I hope life isn't a big joke, because I don't get it."
+    # ```
+    sig { returns(::String) }
+    def self.jack_handey; end
+
     # Produces a quote from Matz.
     # 
     # ```ruby
@@ -2784,6 +3795,14 @@ module Faker
     # ```
     sig { returns(::String) }
     def self.yoda; end
+
+    # Produces a quote from a fortune cookie.
+    # 
+    # ```ruby
+    # Faker::Quote.fortune_cookie #=> "This cookie senses that you are superstitious; it is an inclination that is bad for your mental health."
+    # ```
+    sig { returns(::String) }
+    def self.fortune_cookie; end
   end
 
   class Blood < Faker::Base
@@ -2857,6 +3876,208 @@ module Faker
     # ```
     sig { returns([Float, Float, Float, Float]) }
     def self.hsla_color; end
+  end
+
+  class Drone < Faker::Base
+    # Returns random drone name with company
+    # 
+    # ```ruby
+    # Faker::Drone.name #=> "DJI Mavic Air 2"
+    # ```
+    sig { returns(T.untyped) }
+    def self.name; end
+
+    # Returns total drone weight in grams
+    # 
+    # ```ruby
+    # Faker::Drone.weight #=> "570 g"
+    # ```
+    sig { returns(::String) }
+    def self.weight; end
+
+    # Returns maximum ascent speed for drone in m/s
+    # 
+    # ```ruby
+    # Faker::Drone.max_ascent_speed #=> "4 m/s"
+    # ```
+    sig { returns(::String) }
+    def self.max_ascent_speed; end
+
+    # Returns maximum descent speed for drone in m/s
+    # 
+    # ```ruby
+    # Faker::Drone.max_descent_speed #=> "4 m/s"
+    # ```
+    sig { returns(::String) }
+    def self.max_descent_speed; end
+
+    # Returns max flight time for drone in optimal conditions
+    # 
+    # ```ruby
+    # Faker::Drone.flight_time #=> "34 min"
+    # ```
+    sig { returns(::String) }
+    def self.flight_time; end
+
+    # Returns max altitude drone can go above sea level in meters
+    # 
+    # ```ruby
+    # Faker::Drone.max_altitude #=> "5000 m"
+    # ```
+    sig { returns(::String) }
+    def self.max_altitude; end
+
+    # Returns how far drone can go in optimal condition when full charged in meters
+    # 
+    # ```ruby
+    # Faker::Drone.max_flight_distance #=> "18500 m"
+    # ```
+    sig { returns(::String) }
+    def self.max_flight_distance; end
+
+    # Returns max horizontal speed by drone in m/s
+    # 
+    # ```ruby
+    # Faker::Drone.max_speed #=> "19 m/s"
+    # ```
+    sig { returns(::String) }
+    def self.max_speed; end
+
+    # Returns max wind resistance by drone in m/s
+    # 
+    # ```ruby
+    # Faker::Drone.max_wind_resistance #=> "10.5 m/s"
+    # ```
+    sig { returns(::String) }
+    def self.max_wind_resistance; end
+
+    # Returns max angular velocity of drone in degrees/s
+    # 
+    # ```ruby
+    # Faker::Drone.max_angular_velocity #=> "250 degree/s"
+    # ```
+    sig { returns(::String) }
+    def self.max_angular_velocity; end
+
+    # Returns max tilt angle drone can go in degrees
+    # 
+    # ```ruby
+    # Faker::Drone.max_tilt_angle #=> "35 degrees"
+    # ```
+    sig { returns(::String) }
+    def self.max_tilt_angle; end
+
+    # Returns operating temprature for drone in Fahrenheit
+    # 
+    # ```ruby
+    # Faker::Drone.operating_temperature #=> "14-104F"
+    # ```
+    sig { returns(::String) }
+    def self.operating_temperature; end
+
+    # Returns the drone battery capacity
+    # 
+    # ```ruby
+    # Faker::Drone.battery_capacity #=> "3500 mAh"
+    # ```
+    sig { returns(::String) }
+    def self.battery_capacity; end
+
+    # Returns battery voltage
+    # 
+    # ```ruby
+    # Faker::Drone.battery_voltage #=> "13.2V"
+    # ```
+    sig { returns(::String) }
+    def self.battery_voltage; end
+
+    # Returns the battery type
+    # 
+    # ```ruby
+    # Faker::Drone.battery_type #=> "LiPo 4S"
+    # ```
+    sig { returns(::String) }
+    def self.battery_type; end
+
+    # Returns total battery weight in grams
+    # 
+    # ```ruby
+    # Faker::Drone.battery_weight #=> "198 g"
+    # ```
+    sig { returns(::String) }
+    def self.battery_weight; end
+
+    # Returns charging temperature for battery in Fahrenheit
+    # 
+    # ```ruby
+    # Faker::Drone.charging_temperature #=> "41-104F"
+    # ```
+    sig { returns(::String) }
+    def self.charging_temperature; end
+
+    # Returns max chargin power required for battery
+    # 
+    # ```ruby
+    # Faker::Drone.max_charging_power #=> "38W"
+    # ```
+    sig { returns(::String) }
+    def self.max_charging_power; end
+
+    # Returns camera ISO range for drone
+    # 
+    # ```ruby
+    # Faker::Drone.iso #=> "100-3200"
+    # ```
+    sig { returns(::String) }
+    def self.iso; end
+
+    # Returns max camera resolution in MP"
+    # 
+    # ```ruby
+    # Faker::Drone.max_resolution #=> "48MP"
+    # ```
+    sig { returns(::String) }
+    def self.max_resolution; end
+
+    # Returns photo format for drone
+    # 
+    # ```ruby
+    # Faker::Drone.photo_format #=> "JPEG"
+    # ```
+    sig { returns(::String) }
+    def self.photo_format; end
+
+    # Returns video format
+    # 
+    # ```ruby
+    # Faker::Drone.video_format #=> "MP4"
+    # ```
+    sig { returns(::String) }
+    def self.video_format; end
+
+    # Returns max and min shutter speed for camera
+    # 
+    # ```ruby
+    # Faker::Drone.shutter_speed_range #=> "8-1/8000s"
+    # ```
+    sig { returns(::String) }
+    def self.shutter_speed_range; end
+
+    # Returns max shutter speed for camera
+    # 
+    # ```ruby
+    # Faker::Drone.max_shutter_speed #=> "60s"
+    # ```
+    sig { returns(::String) }
+    def self.max_shutter_speed; end
+
+    # Returns min shutter speed for camera
+    # 
+    # ```ruby
+    # Faker::Drone.min_shutter_speed #=> "1/8000s"
+    # ```
+    sig { returns(::String) }
+    def self.min_shutter_speed; end
   end
 
   class House < Faker::Base
@@ -3219,451 +4440,6 @@ module Faker
     def self.titleize(word); end
   end
 
-  class Movies
-    class Hobbit < Faker::Base
-      # Produces the name of a character from The Hobbit.
-      # 
-      # ```ruby
-      # Faker::Movies::Hobbit.character #=> "Gandalf the Grey"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces the name of one of the 13 dwarves from the Company, or Gandalf or Bilbo.
-      # 
-      # ```ruby
-      # Faker::Movies::Hobbit.thorins_company #=> "Thorin Oakenshield"
-      # ```
-      sig { returns(::String) }
-      def self.thorins_company; end
-
-      # Produces a quote from The Hobbit.
-      # 
-      # ```ruby
-      # Faker::Movies::Hobbit.quote
-      #   #=> "Never laugh at live dragons, Bilbo you fool!"
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-
-      # Produces the name of a location from The Hobbit.
-      # 
-      # ```ruby
-      # Faker::Movies::Hobbit.location #=> "The Shire"
-      # ```
-      sig { returns(::String) }
-      def self.location; end
-    end
-
-    class Departed < Faker::Base
-      # Produces an actor from The Departed.
-      # 
-      # ```ruby
-      # Faker::Movies::Departed.actor #=> "Matt Damon"
-      # ```
-      sig { returns(::String) }
-      def self.actor; end
-
-      # Produces a character from The Departed.
-      # 
-      # ```ruby
-      # Faker::Movies::Departed.character #=> "Frank Costello"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a quote from The Departed.
-      # 
-      # ```ruby
-      # Faker::Movies::Departed.quote
-      #   #=> "I'm the guy who does his job. You must be the other guy"
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-    end
-
-    class Lebowski < Faker::Base
-      # Produces an actor from The Big Lebowski.
-      # 
-      # ```ruby
-      # Faker::Movies::Lebowski.actor #=> "John Goodman"
-      # ```
-      sig { returns(::String) }
-      def self.actor; end
-
-      # Produces a character from The Big Lebowski.
-      # 
-      # ```ruby
-      # Faker::Movies::Lebowski.character #=> "Jackie Treehorn"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a quote from The Big Lebowski.
-      # 
-      # ```ruby
-      # Faker::Movies::Lebowski.quote #=> "Forget it, Donny, you're out of your element!"
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-    end
-
-    class StarWars < Faker::Base
-      # Produces a call squadron from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.call_squadron #=> "Green"
-      # ```
-      sig { returns(::String) }
-      def self.call_squadron; end
-
-      # Produces a call sign from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.call_sign #=> "Grey 5"
-      # ```
-      sig { returns(::String) }
-      def self.call_sign; end
-
-      # Produces a call number from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.call_number #=> "Leader"
-      # ```
-      sig { returns(::String) }
-      def self.call_number; end
-
-      # Produces a character from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.character #=> "Anakin Skywalker"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a droid from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.droid #=> "C-3PO"
-      # ```
-      sig { returns(::String) }
-      def self.droid; end
-
-      # Produces a planet from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.planet #=> "Tatooine"
-      # ```
-      sig { returns(::String) }
-      def self.planet; end
-
-      # Produces a species from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.specie #=> "Gungan"
-      # ```
-      sig { returns(::String) }
-      def self.specie; end
-
-      # Produces a vehicle from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.vehicle #=> "Sandcrawler"
-      # ```
-      sig { returns(::String) }
-      def self.vehicle; end
-
-      # Produces a wookiee sentence from Star Wars.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.wookiee_sentence #=> "Yrroonn ru ooma roo ahuma ur roooarrgh hnn-rowr."
-      # ```
-      sig { returns(::String) }
-      def self.wookiee_sentence; end
-
-      # Produces a quote from Star Wars.
-      # 
-      # _@param_ `character` — The name of a character to derive a quote from.
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.quote #=> "Aren't you a little short for a Stormtrooper?"
-      # ```
-      # 
-      # ```ruby
-      # Faker::Movies::StarWars.quote(character: "leia_organa")
-      #   #=> "Aren't you a little short for a Stormtrooper?"
-      # ```
-      sig { params(legacy_character: T.untyped, character: T.nilable(::String)).returns(::String) }
-      def self.quote(legacy_character = T.unsafe(nil), character: nil); end
-
-      sig { returns(T.untyped) }
-      def self.call_numbers; end
-
-      sig { returns(T.untyped) }
-      def self.call_squadrons; end
-
-      sig { returns(T.untyped) }
-      def self.characters; end
-
-      sig { returns(T.untyped) }
-      def self.droids; end
-
-      sig { returns(T.untyped) }
-      def self.planets; end
-
-      sig { returns(T.untyped) }
-      def self.species; end
-
-      sig { returns(T.untyped) }
-      def self.vehicles; end
-
-      sig { returns(T.untyped) }
-      def self.wookiee_words; end
-    end
-
-    class Ghostbusters < Faker::Base
-      # Produces an actor from Ghostbusters.
-      # 
-      # ```ruby
-      # Faker::Movies::Ghostbusters.actor #=> "Bill Murray"
-      # ```
-      sig { returns(::String) }
-      def self.actor; end
-
-      # Produces a character from Ghostbusters.
-      # 
-      # ```ruby
-      # Faker::Movies::Ghostbusters.character #=> "Dr. Egon Spengler"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a quote from Ghostbusters.
-      # 
-      # ```ruby
-      # Faker::Movies::Ghostbusters.quote
-      #   #=> "I tried to think of the most harmless thing. Something I loved from my childhood. Something that could never ever possibly destroy us. Mr. Stay Puft!"
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-    end
-
-    class HarryPotter < Faker::Base
-      # Produces a character from Harry Potter.
-      # 
-      # ```ruby
-      # Faker::Movies::HarryPotter.character #=> "Harry Potter"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a location from Harry Potter.
-      # 
-      # ```ruby
-      # Faker::Movies::HarryPotter.location #=> "Hogwarts"
-      # ```
-      sig { returns(::String) }
-      def self.location; end
-
-      # Produces a quote from Harry Potter.
-      # 
-      # ```ruby
-      # Faker::Movies::HarryPotter.quote #=> "I solemnly swear that I am up to good."
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-
-      # Produces a book from Harry Potter.
-      # 
-      # ```ruby
-      # Faker::Movies::HarryPotter.book #=> "Harry Potter and the Chamber of Secrets"
-      # ```
-      sig { returns(::String) }
-      def self.book; end
-
-      # Produces a house from Harry Potter.
-      # 
-      # ```ruby
-      # Faker::Movies::HarryPotter.house #=> "Gryffindor"
-      # ```
-      sig { returns(::String) }
-      def self.house; end
-
-      # Produces a spell from Harry Potter.
-      # 
-      # ```ruby
-      # Faker::Movies::HarryPotter.spell #=> "Reparo"
-      # ```
-      sig { returns(::String) }
-      def self.spell; end
-    end
-
-    class PrincessBride < Faker::Base
-      # Produces a character from The Princess Bride.
-      # 
-      # ```ruby
-      # Faker::Movies::PrincessBride.character #=> "Dread Pirate Roberts"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a quote from The Princess Bride.
-      # 
-      # ```ruby
-      # Faker::Movies::PrincessBride.quote
-      #   #=> "Hello. My name is Inigo Montoya. You killed my father. Prepare to die!"
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-    end
-
-    class VForVendetta < Faker::Base
-      # Produces a character from V For Vendetta.
-      # 
-      # ```ruby
-      # Faker::Movies::VForVendetta.character #=> "V"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a speech from V For Vendetta.
-      # 
-      # ```ruby
-      # Faker::Movies::VForVendetta.speech
-      #   #=> "Remember, remember, the Fifth of November, the Gunpowder Treason and Plot. I know of no reason why the Gunpowder Treason should ever be forgot..."
-      # ```
-      sig { returns(::String) }
-      def self.speech; end
-
-      # Produces a quote from V For Vendetta.
-      # 
-      # ```ruby
-      # Faker::Movies::VForVendetta.quote
-      #   #=> "People should not be afraid of their governments. Governments should be afraid of their people."
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-    end
-
-    class LordOfTheRings < Faker::Base
-      # Produces a character from Lord of the Rings.
-      # 
-      # ```ruby
-      # Faker::Movies::LordOfTheRings.character #=> "Legolas"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a location from Lord of the Rings.
-      # 
-      # ```ruby
-      # Faker::Movies::LordOfTheRings.location #=> "Helm's Deep"
-      # ```
-      sig { returns(::String) }
-      def self.location; end
-
-      # Produces a quote from Lord of the Rings.
-      # 
-      # ```ruby
-      # Faker::Movies::LordOfTheRings.quote
-      #   #=> "I wish the Ring had never come to me. I wish none of this had happened."
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-    end
-
-    class BackToTheFuture < Faker::Base
-      # Produces a character from Back to the Future.
-      # 
-      # ```ruby
-      # Faker::Movies::BackToTheFuture.character #=> "Marty McFly"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a date from Back to the Future.
-      # 
-      # ```ruby
-      # Faker::Movies::BackToTheFuture.date #=> "November 5, 1955"
-      # ```
-      sig { returns(::String) }
-      def self.date; end
-
-      # Produces a quote from Back to the Future.
-      # 
-      # ```ruby
-      # Faker::Movies::BackToTheFuture.quote
-      #   #=> "Roads? Where we're going, we don't need roads."
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-    end
-
-    class HitchhikersGuideToTheGalaxy < Faker::Base
-      # Produces a character from The Hitchhiker's Guide to the Galaxy.
-      # 
-      # ```ruby
-      # Faker::Movies::HitchhikersGuideToTheGalaxy.character #=> "Marvin"
-      # ```
-      sig { returns(::String) }
-      def self.character; end
-
-      # Produces a location from The Hitchhiker's Guide to the Galaxy.
-      # 
-      # ```ruby
-      # Faker::Movies::HitchhikersGuideToTheGalaxy.location
-      #   #=> "Arthur Dent's house"
-      # ```
-      sig { returns(::String) }
-      def self.location; end
-
-      # Produces a Marvin quote from The Hitchhiker's Guide to the Galaxy.
-      # 
-      # ```ruby
-      # Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote
-      #   #=> "Life? Don't talk to me about life."
-      # ```
-      sig { returns(::String) }
-      def self.marvin_quote; end
-
-      # Produces a planet from The Hitchhiker's Guide to the Galaxy.
-      # 
-      # ```ruby
-      # Faker::Movies::HitchhikersGuideToTheGalaxy.planet
-      #   #=> "Magrathea"
-      # ```
-      sig { returns(::String) }
-      def self.planet; end
-
-      # Produces a quote from The Hitchhiker's Guide to the Galaxy.
-      # 
-      # ```ruby
-      # Faker::Movies::HitchhikersGuideToTheGalaxy.quote
-      #   #=> "In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move."
-      # ```
-      sig { returns(::String) }
-      def self.quote; end
-
-      # Produces a species from The Hitchhiker's Guide to the Galaxy.
-      # 
-      # ```ruby
-      # Faker::Movies::HitchhikersGuideToTheGalaxy.specie
-      #   #=> "Perfectly Normal Beast"
-      # ```
-      sig { returns(::String) }
-      def self.specie; end
-
-      # Produces a starship from The Hitchhiker's Guide to the Galaxy.
-      # 
-      # ```ruby
-      # Faker::Movies::HitchhikersGuideToTheGalaxy.starship
-      #   #=> "Vogon Constructor Fleet"
-      # ```
-      sig { returns(::String) }
-      def self.starship; end
-    end
-  end
-
   class Artist < Faker::Base
     # Produces the name of an artist.
     # 
@@ -3733,6 +4509,32 @@ module Faker
       ).returns(::String)
     end
     def self.image(legacy_slug = T.unsafe(nil), legacy_size = T.unsafe(nil), legacy_format = T.unsafe(nil), legacy_set = T.unsafe(nil), legacy_bgset = T.unsafe(nil), slug: nil, size: '300x300', format: 'png', set: 'set1', bgset: nil); end
+  end
+
+  class Camera < Faker::Base
+    # Produces a brand of a camera
+    # 
+    # ```ruby
+    # Faker::Camera.brand #=> "Canon"
+    # ```
+    sig { returns(::String) }
+    def self.brand; end
+
+    # Produces a model of camera
+    # 
+    # ```ruby
+    # Faker::Camera.model #=> "450D"
+    # ```
+    sig { returns(::String) }
+    def self.model; end
+
+    # Produces a brand with model
+    # 
+    # ```ruby
+    # Faker::Camera.brand_with_model #=> "Canon 450D"
+    # ```
+    sig { returns(::String) }
+    def self.brand_with_model; end
   end
 
   class Coffee < Faker::Base
@@ -4335,13 +5137,13 @@ module Faker
       sig { returns(::String) }
       def self.quote; end
 
-      # Produces a celebrity from Buffy the Vampire Slayer.
+      # Produces a actor from Buffy the Vampire Slayer.
       # 
       # ```ruby
-      # Faker::TvShows::Buffy.celebrity #=> "John Ritter"
+      # Faker::TvShows::Buffy.actor #=> "John Ritter"
       # ```
       sig { returns(::String) }
-      def self.celebrity; end
+      def self.actor; end
 
       # Produces a big bad from Buffy the Vampire Slayer.
       # 
@@ -4371,7 +5173,9 @@ module Faker
 
       # Produces a quote from Suits.
       # 
+      # ```ruby
       # Faker::TvShows::Suits.quote #=> "Don't play the odds, play the man."
+      # ```
       sig { returns(::String) }
       def self.quote; end
     end
@@ -4775,6 +5579,33 @@ module Faker
       def self.quote; end
     end
 
+    class FinalSpace < Faker::Base
+      # Produces a character from Final Space.
+      # 
+      # ```ruby
+      # Faker::TvShows::FinalSpace.character #=> "Gary Goodspeed"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a vehicle from Final Space.
+      # 
+      # ```ruby
+      # Faker::TvShows::FinalSpace.vehicle #=> "Imperium Cruiser"
+      # ```
+      sig { returns(::String) }
+      def self.vehicle; end
+
+      # Produces a quote from Final Space.
+      # 
+      # ```ruby
+      # Faker::TvShows::FinalSpace.quote
+      #   #=> "It's an alien on my face! It's an alien on my...It's a space alien!"
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+    end
+
     class TheExpanse < Faker::Base
       # Produces a character from The Expanse.
       # 
@@ -5034,7 +5865,9 @@ module Faker
 
       # Produces a quote from Bing Bang Theory
       # 
+      # ```ruby
       # Faker::TvShows::BigBangTheory.quote #=> "I'm not crazy. My mother had me tested."
+      # ```
       sig { returns(::String) }
       def self.quote; end
     end
@@ -5244,13 +6077,13 @@ module Faker
       sig { returns(::String) }
       def self.character; end
 
-      # Produces a celebrity from The Fresh Prince of Bel-Air.
+      # Produces a actor from The Fresh Prince of Bel-Air.
       # 
       # ```ruby
-      # Faker::TvShows::TheFreshPrinceOfBelAir.celebrity #=> "Quincy Jones"
+      # Faker::TvShows::TheFreshPrinceOfBelAir.actor #=> "Quincy Jones"
       # ```
       sig { returns(::String) }
-      def self.celebrity; end
+      def self.actor; end
 
       # Produces a quote from The Fresh Prince of Bel-Air.
       # 
@@ -5513,6 +6346,105 @@ module Faker
     def self.hero; end
   end
 
+  class Barcode < Faker::Base
+    # Returns a EAN 8 or 13 digit format barcode number with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.ean      => "85657526"
+    #     Faker::Barcode.ean(8)   => "30152700"
+    #     Faker::Barcode.ean(13)  => "2115190480285"
+    sig { params(length: T.untyped).returns(T.untyped) }
+    def self.ean(length = 8); end
+
+    # Returns a EAN 8 or 13 digit format barcode number with composite string attached with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.ean_with_composite_sumbology      => "41007624|JHOC6649"
+    #     Faker::Barcode.ean_with_composite_sumbology(8)   => "38357961|XUYJ3266"
+    #     Faker::Barcode.ean_with_composite_sumbology(13)  => "9530722443911|CKHWQHID"
+    sig { params(length: T.untyped).returns(T.untyped) }
+    def self.ean_with_composite_symbology(length = 8); end
+
+    # Returns a UPC_A format barcode number with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.upc_a      => "766807541831"
+    sig { returns(T.untyped) }
+    def self.upc_a; end
+
+    # Returns a UPC_E format barcode number with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.upc_e      => "03746820"
+    sig { returns(T.untyped) }
+    def self.upc_e; end
+
+    # Returns a UPC_A format barcode number with composite string attached with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.upc_a_with_composite_symbology      => "790670155765|JOVG6208"
+    sig { returns(T.untyped) }
+    def self.upc_a_with_composite_symbology; end
+
+    # Returns a UPC_E format barcode number with composite string attached with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.upc_e_with_composite_symbology      => "05149247|BKZX9722"
+    sig { returns(T.untyped) }
+    def self.upc_e_with_composite_symbology; end
+
+    # Returns a ISBN format barcode number with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.isbn      => "9798363807732"
+    sig { returns(T.untyped) }
+    def self.isbn; end
+
+    # Returns a ISMN format barcode number with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.ismn      => "9790527672897"
+    sig { returns(T.untyped) }
+    def self.ismn; end
+
+    # Returns a ISSN format barcode number with check digit
+    #  @return [String]
+    # 
+    #  @example
+    #     Faker::Barcode.issn      => "9775541703338"
+    sig { returns(T.untyped) }
+    def self.issn; end
+
+    sig { params(key: T.untyped).returns(T.untyped) }
+    def self.generate_barcode(key); end
+
+    # Returns the sum of even and odd numbers from value passed
+    # 
+    # ```ruby
+    # Faker::Barcode.send(:sum_even_odd, 12345)   => [9, 5]
+    # Faker::Barcode.send(:sum_even_odd, 87465)   => [17, 13]
+    # ```
+    sig { params(fake_num: T.untyped).returns(T::Array[T.untyped]) }
+    def self.sum_even_odd(fake_num); end
+
+    # Generates the check digits from sum passed
+    # 
+    # ```ruby
+    # Faker::Barcode.send(:generate_check_digit, 12, 4)   => 0
+    # Faker::Barcode.send(:generate_check_digit, 23, 5)   => 6
+    # ```
+    sig { params(odd_sum: T.untyped, even_sum: T.untyped).returns(Integer) }
+    def self.generate_check_digit(odd_sum, even_sum); end
+  end
+
   class Boolean < Faker::Base
     # Produces a boolean
     # 
@@ -5629,8 +6561,8 @@ module Faker
     # ```ruby
     # Faker::Company.spanish_organisation_number #=> "D6819358"
     # ```
-    sig { returns(::String) }
-    def self.spanish_organisation_number; end
+    sig { params(organization_type: T.untyped).returns(::String) }
+    def self.spanish_organisation_number(organization_type: nil); end
 
     # Produces a company swedish organisation number.
     # 
@@ -5788,6 +6720,12 @@ module Faker
 
     sig { params(factor: T.untyped, number: T.untyped).returns(T.untyped) }
     def self.inn_checksum(factor, number); end
+
+    sig { params(organization_type: T.untyped, code: T.untyped).returns(T.untyped) }
+    def self.spanish_cif_control_digit(organization_type, code); end
+
+    sig { params(value: T.untyped).returns(T.untyped) }
+    def self.spanish_b_algorithm(value); end
   end
 
   class Compass < Faker::Base
@@ -6047,6 +6985,17 @@ module Faker
 
     sig { returns(T.untyped) }
     def self.vat_number_keys; end
+
+    # Returns a randomly-selected stock ticker from a specified market.
+    # 
+    # _@param_ `markets` — The name of the market to choose the ticker from (e.g. NYSE, NASDAQ)
+    # 
+    # ```ruby
+    # Faker::Finance.ticker #=> 'AMZN'
+    # Faker::Finance.vat_number('NASDAQ') #=> 'GOOG'
+    # ```
+    sig { params(markets: ::String).returns(::String) }
+    def self.ticker(*markets); end
   end
 
   class Hipster < Faker::Base
@@ -6096,12 +7045,16 @@ module Faker
     # 
     # _@param_ `random_words_to_add` — Specifies the number of random words to add
     # 
+    # _@param_ `open_compounds_allowed` — Specifies if the generated sentence can contain words having additional spaces
+    # 
     # ```ruby
     # Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
     # Faker::Hipster.sentence(word_count: 3) #=> "Pour-over swag godard."
     # Faker::Hipster.sentence(word_count: 3, supplemental: true) #=> "Beard laboriosam sequi celiac."
     # Faker::Hipster.sentence(word_count: 3, supplemental: false, random_words_to_add: 4) #=> "Bitters retro mustache aesthetic biodiesel 8-bit."
     # Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 4) #=> "Occaecati deleniti messenger bag meh crucifix autem."
+    # Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: true) #=> "Kale chips nihil eos."
+    # Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false) #=> "Dreamcatcher umami fixie."
     # ```
     sig do
       params(
@@ -6110,10 +7063,11 @@ module Faker
         legacy_random_words_to_add: T.untyped,
         word_count: Integer,
         supplemental: T::Boolean,
-        random_words_to_add: T::Boolean
+        random_words_to_add: Integer,
+        open_compounds_allowed: T::Boolean
       ).returns(::String)
     end
-    def self.sentence(legacy_word_count = T.unsafe(nil), legacy_supplemental = T.unsafe(nil), legacy_random_words_to_add = T.unsafe(nil), word_count: 4, supplemental: false, random_words_to_add: 6); end
+    def self.sentence(legacy_word_count = T.unsafe(nil), legacy_supplemental = T.unsafe(nil), legacy_random_words_to_add = T.unsafe(nil), word_count: 4, supplemental: false, random_words_to_add: 6, open_compounds_allowed: true); end
 
     # Produces random hipster sentences.
     # 
@@ -6560,6 +7514,46 @@ module Faker
     def self.singapore_checksum(plate_number); end
   end
 
+  class Fantasy
+    class Tolkien < Faker::Base
+      # Produces a character from Tolkien's legendarium
+      # 
+      # ```ruby
+      # Faker::Fantasy::Tolkien.character
+      #  #=> "Goldberry"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a location from Tolkien's legendarium
+      # 
+      # ```ruby
+      # Faker::Fantasy::Tolkien.location
+      #  #=> "Helm's Deep"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+
+      # Produces a race from Tolkien's legendarium
+      # 
+      # ```ruby
+      # Faker::Fantasy::Tolkien.race
+      #   #=> "Uruk-hai"
+      # ```
+      sig { returns(::String) }
+      def self.race; end
+
+      # Produces the name of a poem from Tolkien's legendarium
+      # 
+      # ```ruby
+      # Faker::Fantasy::Tolkien.poem
+      #   #=> "Chip the glasses and crack the plates"
+      # ```
+      sig { returns(::String) }
+      def self.poem; end
+    end
+  end
+
   class Quotes
     class Chiquito < Faker::Base
       # Produces an Expression from Chiquito
@@ -6744,6 +7738,48 @@ module Faker
       sig { returns(::String) }
       def self.position; end
     end
+
+    class Volleyball < Faker::Base
+      # Produces the name of a volleyball team.
+      # 
+      # ```ruby
+      # Faker::Sports::Volleyball.team #=> "Leo Shoes Modena"
+      # ```
+      sig { returns(::String) }
+      def self.team; end
+
+      # Produces the name of a volleyball player.
+      # 
+      # ```ruby
+      # Faker::Sports::Volleyball.player #=> "Saeid Marouf"
+      # ```
+      sig { returns(::String) }
+      def self.player; end
+
+      # Produces the name of a volleyball coach.
+      # 
+      # ```ruby
+      # Faker::Sports::Volleyball.coach #=> "Russ Rose"
+      # ```
+      sig { returns(::String) }
+      def self.coach; end
+
+      # Produces a position in volleyball.
+      # 
+      # ```ruby
+      # Faker::Sports::Volleyball.position #=> "Middle blocker"
+      # ```
+      sig { returns(::String) }
+      def self.position; end
+
+      # Produces a formation in volleyball.
+      # 
+      # ```ruby
+      # Faker::Sports::Volleyball.formation #=> "4-2"
+      # ```
+      sig { returns(::String) }
+      def self.formation; end
+    end
   end
 
   class Blockchain
@@ -6792,6 +7828,24 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.signature; end
+
+      # Produces a random Tezos public key
+      # 
+      # ```ruby
+      # Faker::Blockchain::Tezos.public_key
+      #   #=> "edpkuib9x8QXRc5nWwHUg7U1dXsVmaUrUNU5sX9pVEEvwbMVdfMCeq"
+      # ```
+      sig { returns(::String) }
+      def self.public_key; end
+
+      # Produces a random Tezos public key
+      # 
+      # ```ruby
+      # Faker::Blockchain::Tezos.secret_key
+      #   #=> "edsk3HZCAGEGpzQPnQUwQeFY4ESanFhQCgLpKriQw8GHyhKCrjHawv"
+      # ```
+      sig { returns(::String) }
+      def self.secret_key; end
 
       # _@param_ `prefix`
       # 
@@ -7447,16 +8501,14 @@ module Faker
     sig { returns(::String) }
     def self.table; end
 
-    # Produces a random method from the methods above or the methods listed in the arguments.
-    # 
-    # _@param_ `methods` — Specify which methods to use.
+    # Produces a random method from the methods above, excluding the methods listed in the arguments.
     # 
     # ```ruby
     # Faker::Markdown.random #=> returns output from a single method outlined above
     # Faker::Markdown.random("table") #=> returns output from any single method outlined above except for "table"
     # Faker::Markdown.random("ordered_list", "unordered_list") #=> returns output from any single method outlined above except for either ordered_list and unordered_list
     # ```
-    sig { params(args: Symbol).returns(T.any(String, T::Array[::String])) }
+    sig { params(args: T.untyped).returns(T.any(String, T::Array[::String])) }
     def self.random(*args); end
 
     # Produces a simulated blog-esque text-heavy block in markdown
@@ -7519,6 +8571,22 @@ module Faker
     sig { returns(::String) }
     def self.air_force_rank; end
 
+    # Produces a rank in the U.S. Space Force.
+    # 
+    # ```ruby
+    # Faker::Military.space_force_rank #=> "Senior Enlisted Advisor of the Space Force"
+    # ```
+    sig { returns(::String) }
+    def self.space_force_rank; end
+
+    # Produces a rank in the U.S. Coast Guard
+    # 
+    # ```ruby
+    # Faker::Military.coast_guard_rank #=> "Master Chief Petty Officer of the Coast Guard"
+    # ```
+    sig { returns(::String) }
+    def self.coast_guard_rank; end
+
     # Produces a U.S. Department of Defense Paygrade.
     # 
     # ```ruby
@@ -7528,24 +8596,28 @@ module Faker
     def self.dod_paygrade; end
   end
 
+  class Mountain < Faker::Base
+    # Produces a name of a mountain
+    # 
+    #  @faker.version next
+    # 
+    # ```ruby
+    # Faker::Mountain.name #=> "Mount Everest"
+    # ```
+    sig { returns(::String) }
+    def self.name; end
+
+    # Produces a name of a range
+    # 
+    # ```ruby
+    # Faker::Mountain.range #=> "Dhaulagiri Himalaya"
+    # ```
+    sig { returns(::String) }
+    def self.range; end
+  end
+
   class Omniauth < Faker::Base
-    # Returns the value of attribute name.
-    sig { returns(T.untyped) }
-    def name; end
-
-    # Returns the value of attribute first_name.
-    sig { returns(T.untyped) }
-    def first_name; end
-
-    # Returns the value of attribute last_name.
-    sig { returns(T.untyped) }
-    def last_name; end
-
-    # Returns the value of attribute email.
-    sig { returns(T.untyped) }
-    def email; end
-
-    sig { params(name: T.untyped, email: T.untyped).returns(Omniauth) }
+    sig { params(name: T.untyped, email: T.untyped).void }
     def initialize(name: nil, email: nil); end
 
     # Generate a mock Omniauth response from Google.
@@ -7696,6 +8768,22 @@ module Faker
 
     sig { returns(T.untyped) }
     def self.random_boolean; end
+
+    # Returns the value of attribute name.
+    sig { returns(T.untyped) }
+    attr_reader :name
+
+    # Returns the value of attribute first_name.
+    sig { returns(T.untyped) }
+    attr_reader :first_name
+
+    # Returns the value of attribute last_name.
+    sig { returns(T.untyped) }
+    attr_reader :last_name
+
+    # Returns the value of attribute email.
+    sig { returns(T.untyped) }
+    attr_reader :email
   end
 
   class Appliance < Faker::Base
@@ -7717,6 +8805,12 @@ module Faker
   end
 
   class ChileRut < Faker::Base
+    class << self
+      # Returns the value of attribute last_rut.
+      sig { returns(T.untyped) }
+      attr_reader :last_rut
+    end
+
     # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits).
     # 
     # _@param_ `min_rut` — Specifies the minimum value of the rut.
@@ -7775,10 +8869,6 @@ module Faker
       ).returns(::String)
     end
     def self.full_rut(legacy_min_rut = T.unsafe(nil), legacy_fixed = T.unsafe(nil), min_rut: 0, fixed: false); end
-
-    # Returns the value of attribute last_rut.
-    sig { returns(T.untyped) }
-    def self.last_rut; end
   end
 
   class DcComics < Faker::Base
@@ -7922,7 +9012,7 @@ module Faker
     def self.brazilian_document_checksum(digits); end
 
     sig { params(checksum: T.untyped, id: T.untyped).returns(T.untyped) }
-    def self.brazilian_document_digit(checksum, id = false); end
+    def self.brazilian_document_digit(checksum, id: false); end
 
     sig { params(remainder: T.untyped).returns(T.untyped) }
     def self.brazilian_citizen_number_digit(remainder); end
@@ -8218,18 +9308,19 @@ module Faker
   end
 
   class UniqueGenerator
-    # Returns the value of attribute marked_unique.
-    sig { returns(T.untyped) }
-    def self.marked_unique; end
+    class << self
+      # Returns the value of attribute marked_unique.
+      sig { returns(T.untyped) }
+      attr_reader :marked_unique
+    end
 
-    sig { params(generator: T.untyped, max_retries: T.untyped).returns(UniqueGenerator) }
+    sig { params(generator: T.untyped, max_retries: T.untyped).void }
     def initialize(generator, max_retries); end
 
-    # rubocop:disable Style/MethodMissingSuper
+    # rubocop:disable Lint/MissingSuper
     sig { params(name: T.untyped, arguments: T.untyped).returns(T.untyped) }
     def method_missing(name, *arguments); end
 
-    # rubocop:enable Style/MethodMissingSuper
     sig { params(method_name: T.untyped, include_private: T.untyped).returns(T::Boolean) }
     def respond_to_missing?(method_name, include_private = false); end
 
@@ -9091,71 +10182,93 @@ module Faker
     def self.payment_term; end
   end
 
-  class DrivingLicence < Faker::Base
-    # Produces a random British driving licence number.
-    # 
-    # rubocop:disable Metrics/ParameterLists
-    # 
-    # _@param_ `last_name` — The last name of the driving licence's owner.
-    # 
-    # _@param_ `initials` — The initials of the driving licence's owner.
-    # 
-    # _@param_ `gender` — The gender of the driving licence's owner.
-    # 
-    # _@param_ `date_of_birth` — The date of birth of the driving licence's owner.
-    # 
-    # ```ruby
-    # Faker::DrivingLicence.british_driving_licence        #=> "MCDER712081VF7EK"
-    # Faker::DrivingLicence.british_driving_licence(last_name: "O'Carroll",
-    #                                               initials: "J",
-    #                                               gender: :female,
-    #                                               date_of_birth: ::Date.parse("1986-10-24")) #=> "OCARR815246J91HT"
-    # ```
-    sig do
-      params(
-        legacy_last_name: T.untyped,
-        legacy_initials: T.untyped,
-        legacy_gender: T.untyped,
-        legacy_date_of_birth: T.untyped,
-        last_name: ::String,
-        initials: ::String,
-        gender: ::String,
-        date_of_birth: ::String
-      ).returns(::String)
-    end
-    def self.british_driving_licence(legacy_last_name = T.unsafe(nil), legacy_initials = T.unsafe(nil), legacy_gender = T.unsafe(nil), legacy_date_of_birth = T.unsafe(nil), last_name: Faker::Name.last_name, initials: Faker::Name.initials, gender: random_gender, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65)); end
-
-    # Produces a random Northern Irish licence number.
-    # 
-    # ```ruby
-    # Faker::DrivingLicence.northern_irish_driving_licence #=> "70702548"
-    # ```
-    sig { returns(::String) }
-    def self.northern_irish_driving_licence; end
-
-    # Produces a random UK driving licence number in either GB or NI format, at a rate consistent with their relative populations
-    # 
-    # ```ruby
-    # Faker::DrivingLicence.uk_driving_licence             #=> "OCARR815246J91HT"
-    # Faker::DrivingLicence.uk_driving_licence             #=> "70702548"
-    # ```
-    sig { params(args: T.untyped).returns(::String) }
-    def self.uk_driving_licence(*args); end
-
-    sig { returns(T.untyped) }
-    def self.random_gender; end
-
-    sig { params(str: T.untyped, num_chars: T.untyped).returns(T.untyped) }
-    def self.gb_licence_padding(str, num_chars); end
-
-    sig { params(dob: T.untyped, gender: T.untyped).returns(T.untyped) }
-    def self.gb_licence_year(dob, gender); end
-
-    sig { returns(T.untyped) }
-    def self.gb_licence_checksum; end
-  end
-
   class JapaneseMedia
+    class Conan < Faker::Base
+      # Produces a character from Conan.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Conan.character #=> "Conan Edogawa"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a gadget from Conan.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Conan.gadget #=> "Voice-Changing Bowtie"
+      # ```
+      sig { returns(::String) }
+      def self.gadget; end
+
+      # Produces a vehicle from Conan.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Conan.vehicle #=> "Agasa's Volkswagen Beetle"
+      # ```
+      sig { returns(::String) }
+      def self.vehicle; end
+    end
+
+    class Naruto < Faker::Base
+      # Produces a character from Naruto.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Naruto.character #=> "Naruto Uzumaki"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a village from Naruto.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Naruto.village #=> "Konohagakure (Leaf Village)"
+      # ```
+      sig { returns(::String) }
+      def self.village; end
+
+      # Produces a eye from Naruto.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Naruto.eye #=> "Konohagakure (Byakugan)"
+      # ```
+      sig { returns(::String) }
+      def self.eye; end
+
+      # Produces a demon from Naruto.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Naruto.demon #=> "Nine-Tails (Kurama)"
+      # ```
+      sig { returns(::String) }
+      def self.demon; end
+    end
+
+    class Doraemon < Faker::Base
+      # Produces a character from Doraemon.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Doraemon.character #=> "Nobita"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a gadget from Doraemon.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Doraemon.gadget #=> "Anywhere Door"
+      # ```
+      sig { returns(::String) }
+      def self.gadget; end
+
+      # Produces a location from Doraemon.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::Doraemon.location #=> "Tokyo"
+      # ```
+      sig { returns(::String) }
+      def self.location; end
+    end
+
     class OnePiece < Faker::Base
       # Produces a character from One Piece.
       # 
@@ -9214,6 +10327,48 @@ module Faker
       # ```
       sig { returns(::String) }
       def self.character; end
+
+      # Produces the name of a race from Dragon Ball.
+      # 
+      # ```ruby
+      # Faker::Games::DragonBall.race #=> "Saiyan"
+      # ```
+      sig { returns(::String) }
+      def self.race; end
+
+      # Produces the name of a planet from Dragon Ball.
+      # 
+      # ```ruby
+      # Faker::Games::DragonBall.planet #=> "Namek"
+      # ```
+      sig { returns(::String) }
+      def self.planet; end
+    end
+
+    class StudioGhibli < Faker::Base
+      # Produces a character from the Studio Ghibli.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::StudioGhibli.character #=> "Chihiro"
+      # ```
+      sig { returns(::String) }
+      def self.character; end
+
+      # Produces a quote from Studio Ghibli's movies.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::StudioGhibli.quote #=> "One thing you can always count on is that hearts change."
+      # ```
+      sig { returns(::String) }
+      def self.quote; end
+
+      # Produces a movie from Studio Ghibli.
+      # 
+      # ```ruby
+      # Faker::JapaneseMedia::StudioGhibli.movie #=> "Kiki's Delivery Service"
+      # ```
+      sig { returns(::String) }
+      def self.movie; end
     end
 
     class SwordArtOnline < Faker::Base
@@ -9249,6 +10404,103 @@ module Faker
       sig { returns(::String) }
       def self.item; end
     end
+  end
+
+  class DrivingLicence < Faker::Base
+    # Produces a random British driving licence number.
+    # 
+    # rubocop:disable Metrics/ParameterLists
+    # 
+    # _@param_ `last_name` — The last name of the driving licence's owner.
+    # 
+    # _@param_ `initials` — The initials of the driving licence's owner.
+    # 
+    # _@param_ `gender` — The gender of the driving licence's owner.
+    # 
+    # _@param_ `date_of_birth` — The date of birth of the driving licence's owner.
+    # 
+    # ```ruby
+    # Faker::DrivingLicence.british_driving_licence        #=> "MCDER712081VF7EK"
+    # Faker::DrivingLicence.british_driving_licence(last_name: "O'Carroll",
+    #                                               initials: "J",
+    #                                               gender: :female,
+    #                                               date_of_birth: ::Date.parse("1986-10-24")) #=> "OCARR815246J91HT"
+    # ```
+    sig do
+      params(
+        legacy_last_name: T.untyped,
+        legacy_initials: T.untyped,
+        legacy_gender: T.untyped,
+        legacy_date_of_birth: T.untyped,
+        last_name: ::String,
+        initials: ::String,
+        gender: ::String,
+        date_of_birth: ::String
+      ).returns(::String)
+    end
+    def self.british_driving_licence(legacy_last_name = T.unsafe(nil), legacy_initials = T.unsafe(nil), legacy_gender = T.unsafe(nil), legacy_date_of_birth = T.unsafe(nil), last_name: Faker::Name.last_name, initials: Faker::Name.initials, gender: random_gender, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65)); end
+
+    # Produces a random Northern Irish licence number.
+    # 
+    # ```ruby
+    # Faker::DrivingLicence.northern_irish_driving_licence #=> "70702548"
+    # ```
+    sig { returns(::String) }
+    def self.northern_irish_driving_licence; end
+
+    # Produces a random UK driving licence number in either GB or NI format, at a rate consistent with their relative populations
+    # 
+    # ```ruby
+    # Faker::DrivingLicence.uk_driving_licence             #=> "OCARR815246J91HT"
+    # Faker::DrivingLicence.uk_driving_licence             #=> "70702548"
+    # ```
+    sig { params(args: T.untyped).returns(::String) }
+    def self.uk_driving_licence(*args); end
+
+    # Produces a random USA driving licence number by state code passed.
+    # 
+    # ```ruby
+    # Faker::DrivingLicence.usa_driving_licence                 #=> "V5598249"
+    # Faker::DrivingLicence.usa_driving_licence('new mexico')   #=> "270692028"
+    # Faker::DrivingLicence.usa_driving_licence('New Mexico')   #=> "68178637"
+    # ```
+    sig { params(state: T.untyped).returns(::String) }
+    def self.usa_driving_licence(state = 'California'); end
+
+    sig { returns(T.untyped) }
+    def self.random_gender; end
+
+    sig { params(str: T.untyped, num_chars: T.untyped).returns(T.untyped) }
+    def self.gb_licence_padding(str, num_chars); end
+
+    sig { params(dob: T.untyped, gender: T.untyped).returns(T.untyped) }
+    def self.gb_licence_year(dob, gender); end
+
+    sig { returns(T.untyped) }
+    def self.gb_licence_checksum; end
+  end
+
+  class InvalidStatePassed < StandardError
+    sig { params(msg: T.untyped).void }
+    def initialize(msg = 'Invalid state code passed'); end
+  end
+
+  class Adjective < Faker::Base
+    # Produces a positive adjective.
+    # 
+    # ```ruby
+    # Faker::Adjective.positive #=> "Kind"
+    # ```
+    sig { returns(::String) }
+    def self.positive; end
+
+    # Produces a negative adjective.
+    # 
+    # ```ruby
+    # Faker::Adjective.negative #=> "Creepy"
+    # ```
+    sig { returns(::String) }
+    def self.negative; end
   end
 
   class IndustrySegments < Faker::Base

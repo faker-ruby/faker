@@ -20,7 +20,7 @@ GEM
     method_source (1.0.0)
     minitest (5.14.3)
     parallel (1.19.2)
-    parlour (2.1.0)
+    parlour (5.0.0)
       commander (~> 4.5)
       parser
       rainbow (~> 3.0)
@@ -53,9 +53,9 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
     sorbet-runtime (0.5.6229)
-    sord (1.0.0)
+    sord (3.0.1)
       commander (~> 4.5)
-      parlour (~> 2.0)
+      parlour (~> 5.0)
       sorbet-runtime
       yard
     test-unit (3.3.8)
@@ -74,7 +74,7 @@ DEPENDENCIES
   rake (= 13.0.3)
   rubocop (= 1.1.0)
   simplecov (= 0.17.1)
-  sord (= 1.0.0)
+  sord (= 3.0.1)
   test-unit (= 3.3.8)
   timecop (= 0.9.2)
   yard (= 0.9.25)
