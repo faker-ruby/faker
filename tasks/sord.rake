@@ -28,5 +28,10 @@ task :sord do
   faker_rbi.gsub!(': Date', ': ::Date')
   faker_rbi.gsub!('T.any(Date, String)', 'T.any(::Date, ::String)')
 
+  # The constant doesn't get output in the RBI, which means that its usage as
+  # the default parameter value is invalid. This replaces it with
+  # `T.unsafe(nil)` so that Sorbet won't freak out.
+  faker_rbi.gsub!(/MILEAGE_MIN|MILEAGE_MAX/, 'T.unsafe(nil)')
+
   File.write('rbi/faker.rbi', faker_rbi)
 end

@@ -7480,7 +7480,7 @@ module Faker
         max: Integer
       ).returns(Integer)
     end
-    def self.mileage(legacy_min = T.unsafe(nil), legacy_max = T.unsafe(nil), min: MILEAGE_MIN, max: MILEAGE_MAX); end
+    def self.mileage(legacy_min = T.unsafe(nil), legacy_max = T.unsafe(nil), min: T.unsafe(nil), max: T.unsafe(nil)); end
 
     # Produces a random license plate number.
     # 
