@@ -57,7 +57,6 @@ module Faker
 
       # rubocop:disable Metrics/ParameterLists
       def sentence(legacy_word_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 0)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :word_count if legacy_word_count != NOT_GIVEN
           keywords << :supplemental if legacy_supplemental != NOT_GIVEN
@@ -66,6 +65,7 @@ module Faker
 
         words(number: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(locale_space).capitalize + locale_period
       end
+      # rubocop:enable Metrics/ParameterLists
 
       def sentences(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
         warn_for_deprecated_arguments do |keywords|
@@ -78,7 +78,6 @@ module Faker
 
       # rubocop:disable Metrics/ParameterLists
       def paragraph(legacy_sentence_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_sentences_to_add = NOT_GIVEN, sentence_count: 3, supplemental: false, random_sentences_to_add: 0)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :sentence_count if legacy_sentence_count != NOT_GIVEN
           keywords << :supplemental if legacy_supplemental != NOT_GIVEN
@@ -87,6 +86,7 @@ module Faker
 
         sentences(number: resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental: supplemental).join(locale_space)
       end
+      # rubocop:enable Metrics/ParameterLists
 
       def paragraphs(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
         warn_for_deprecated_arguments do |keywords|
@@ -114,7 +114,6 @@ module Faker
 
       # rubocop:disable Metrics/ParameterLists
       def question(legacy_word_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 0)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :word_count if legacy_word_count != NOT_GIVEN
           keywords << :supplemental if legacy_supplemental != NOT_GIVEN
@@ -123,6 +122,7 @@ module Faker
 
         words(number: word_count + rand(random_words_to_add), supplemental: supplemental).join(' ').capitalize + locale_question_mark
       end
+      # rubocop:enable Metrics/ParameterLists
 
       def questions(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
         warn_for_deprecated_arguments do |keywords|

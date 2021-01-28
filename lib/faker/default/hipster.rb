@@ -17,6 +17,8 @@ module Faker
         random_word =~ /\s/ ? word : random_word
       end
 
+      # rubocop:disable Metrics/ParameterLists
+
       ##
       # Produces a random hipster word.
       #
@@ -32,9 +34,7 @@ module Faker
       #   Faker::Hipster.words(number: 4, supplemental: true, spaces_allowed: true) #=> ["qui", "magni", "craft beer", "est"]
       #
       # @faker.version 1.6.0
-      # rubocop:disable Metrics/ParameterLists
       def words(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_spaces_allowed = NOT_GIVEN, number: 3, supplemental: false, spaces_allowed: false)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :number if legacy_number != NOT_GIVEN
           keywords << :supplemental if legacy_supplemental != NOT_GIVEN
@@ -73,9 +73,7 @@ module Faker
       #   Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false) #=> "Dreamcatcher umami fixie."
       #
       # @faker.version 1.6.0
-      # rubocop:disable Metrics/ParameterLists
       def sentence(legacy_word_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 6, open_compounds_allowed: true)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :word_count if legacy_word_count != NOT_GIVEN
           keywords << :supplemental if legacy_supplemental != NOT_GIVEN
@@ -84,6 +82,7 @@ module Faker
 
         "#{words(number: word_count + rand(random_words_to_add.to_i).to_i, supplemental: supplemental, spaces_allowed: open_compounds_allowed).join(' ').capitalize}."
       end
+      # rubocop:enable Metrics/ParameterLists
 
       ##
       # Produces random hipster sentences.
@@ -111,6 +110,8 @@ module Faker
         end
       end
 
+      # rubocop:disable Metrics/ParameterLists
+
       ##
       # Produces a random hipster paragraph.
       #
@@ -127,9 +128,7 @@ module Faker
       #   Faker::Hipster.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4) #=> "Deep v gluten-free unde waistcoat aperiam migas voluptas dolorum. Aut drinking illo sustainable sapiente. Direct trade fanny pack kale chips ennui semiotics."
       #
       # @faker.version 1.6.0
-      # rubocop:disable Metrics/ParameterLists
       def paragraph(legacy_sentence_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_sentences_to_add = NOT_GIVEN, sentence_count: 3, supplemental: false, random_sentences_to_add: 3)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :sentence_count if legacy_sentence_count != NOT_GIVEN
           keywords << :supplemental if legacy_supplemental != NOT_GIVEN
@@ -138,6 +137,7 @@ module Faker
 
         sentences(number: resolve(sentence_count) + rand(random_sentences_to_add.to_i).to_i, supplemental: supplemental).join(' ')
       end
+      # rubocop:enable Metrics/ParameterLists
 
       ##
       # Produces random hipster paragraphs.

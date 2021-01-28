@@ -75,7 +75,8 @@ module Faker
         )
       end
 
-      ## Returns the username
+      ##
+      # Returns the username
       #
       # @return [String]
       #
@@ -154,7 +155,6 @@ module Faker
       #
       # @faker.version 2.1.3
       def password(legacy_min_length = NOT_GIVEN, legacy_max_length = NOT_GIVEN, legacy_mix_case = NOT_GIVEN, legacy_special_characters = NOT_GIVEN, min_length: 8, max_length: 16, mix_case: true, special_characters: false)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :min_length if legacy_min_length != NOT_GIVEN
           keywords << :max_length if legacy_max_length != NOT_GIVEN
@@ -190,8 +190,10 @@ module Faker
 
         temp
       end
+      # rubocop:enable Metrics/ParameterLists
 
-      ## Returns the domain name
+      ##
+      # Returns the domain name
       #
       # @return [String]
       #
@@ -227,7 +229,8 @@ module Faker
 
       # rubocop:disable Style/AsciiComments
 
-      ## Fixes ä, ö, ü, ß characters in string passed with ae, oe, ue, ss resp.
+      ##
+      # Fixes ä, ö, ü, ß characters in string passed with ae, oe, ue, ss resp.
       #
       # @return [String]
       #
@@ -246,7 +249,8 @@ module Faker
       end
       # rubocop:enable Style/AsciiComments
 
-      ## Returns the domain word for internet
+      ##
+      # Returns the domain word for internet
       #
       # @return [String]
       #
@@ -267,7 +271,8 @@ module Faker
         fetch('internet.domain_suffix')
       end
 
-      ## Returns the MAC address
+      ##
+      # Returns the MAC address
       #
       # @return [String]
       #
@@ -286,7 +291,8 @@ module Faker
         (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
       end
 
-      ## Returns the IPv4 address
+      ##
+      # Returns the IPv4 address
       #
       # @return [String]
       #
@@ -297,7 +303,8 @@ module Faker
          rand_in_range(0, 255), rand_in_range(0, 255)].join('.')
       end
 
-      ## Returns the private IPv4 address
+      ##
+      # Returns the private IPv4 address
       #
       # @return [String]
       #
@@ -312,7 +319,8 @@ module Faker
         addr
       end
 
-      ## Returns the public IPv4 address
+      ##
+      # Returns the public IPv4 address
       #
       # @return [String]
       #
@@ -327,7 +335,8 @@ module Faker
         addr
       end
 
-      ## Returns the private network regular expressions
+      ##
+      # Returns the private network regular expressions
       #
       # @return [Array]
       #
@@ -346,7 +355,8 @@ module Faker
         ]
       end
 
-      ## Returns lambda to check if address passed is private or not
+      ##
+      # Returns lambda to check if address passed is private or not
       #
       # @return [Lambda]
       #
@@ -357,7 +367,8 @@ module Faker
         ->(addr) { private_nets_regex.any? { |net| net =~ addr } }
       end
 
-      ## Returns the reserved network regular expressions
+      ##
+      # Returns the reserved network regular expressions
       #
       # @return [Array]
       #
@@ -375,7 +386,8 @@ module Faker
         ]
       end
 
-      ## Returns lambda function to check address passed is reserverd or not
+      ##
+      # Returns lambda function to check address passed is reserverd or not
       #
       # @return [Lambda]
       #
@@ -386,7 +398,8 @@ module Faker
         ->(addr) { (private_nets_regex + reserved_nets_regex).any? { |net| net =~ addr } }
       end
 
-      ## Returns Ipv4 address with CIDR, range from 1 to 31
+      ##
+      # Returns Ipv4 address with CIDR, range from 1 to 31
       #
       # @return [String]
       #
@@ -397,7 +410,8 @@ module Faker
         "#{ip_v4_address}/#{rand(1..31)}"
       end
 
-      ## Returns Ipv6 address
+      ##
+      # Returns Ipv6 address
       #
       # @return [String]
       #
@@ -407,7 +421,8 @@ module Faker
         (1..8).map { rand(65_536).to_s(16) }.join(':')
       end
 
-      ## Returns Ipv6 address with CIDR, range between 1 to 127
+      ##
+      # Returns Ipv6 address with CIDR, range between 1 to 127
       #
       # @return [String]
       #
@@ -419,7 +434,8 @@ module Faker
 
       # rubocop:disable Metrics/ParameterLists
 
-      ## Returns URL
+      ##
+      # Returns URL
       #
       # @return [String]
       #
@@ -433,7 +449,6 @@ module Faker
       #   Faker::Internet.url(host: 'faker', path: '/fake_test_path')                   #=> "http://faker/fake_test_path"
       #   Faker::Internet.url(host: 'faker', path: '/fake_test_path', scheme: 'https')  #=> "https://faker/fake_test_path"
       def url(legacy_host = NOT_GIVEN, legacy_path = NOT_GIVEN, legacy_scheme = NOT_GIVEN, host: domain_name, path: "/#{username}", scheme: 'http')
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :host if legacy_host != NOT_GIVEN
           keywords << :path if legacy_path != NOT_GIVEN
@@ -442,8 +457,10 @@ module Faker
 
         "#{scheme}://#{host}#{path}"
       end
+      # rubocop:enable Metrics/ParameterLists
 
-      ## Returns unique string in URL
+      ##
+      # Returns unique string in URL
       #
       # @return [String]
       #
@@ -465,7 +482,8 @@ module Faker
         (words || Faker::Lorem.words(number: 2).join(' ')).delete(',.').gsub(' ', glue).downcase
       end
 
-      ## Generates random token
+      ##
+      # Generates random token
       #
       # @return[String]
       #
@@ -475,7 +493,8 @@ module Faker
         shuffle(rand(16**64).to_s(16).rjust(64, '0').chars.to_a).join
       end
 
-      ## Generates the random browser identifier
+      ##
+      # Generates the random browser identifier
       #
       # @return [String]
       #
@@ -496,7 +515,8 @@ module Faker
         sample(agents)
       end
 
-      ## Generated universally unique identifier
+      ##
+      # Generated universally unique identifier
       #
       # @return [String]
       #

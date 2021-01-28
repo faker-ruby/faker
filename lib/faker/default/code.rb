@@ -80,10 +80,10 @@ module Faker
         value << "-#{vd}"
       end
 
+      ##
+      # Produces a random NRIC (National Registry Identity Card) code.
       # By default generates a Singaporean NRIC ID for someone
       # who is born between the age of 18 and 65.
-      #
-      # Produces a random NRIC (National Registry Identity Card) code.
       #
       # @param min_age [Integer] the min age of the person in years
       # @param max_age [Integer] the max age of the person in years
