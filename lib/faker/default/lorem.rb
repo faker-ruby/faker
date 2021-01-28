@@ -82,6 +82,8 @@ module Faker
         Alphanumeric.alphanumeric(number: number, min_alpha: min_alpha, min_numeric: min_numeric)
       end
 
+      # rubocop:disable Style/AsciiComments
+
       ##
       # Generates the emoji
       #
@@ -95,6 +97,7 @@ module Faker
       def multibyte
         sample(translate('faker.lorem.multibyte')).pack('C*').force_encoding('utf-8')
       end
+      # rubocop:enable Style/AsciiComments
 
       # rubocop:disable Metrics/ParameterLists
 
@@ -206,7 +209,7 @@ module Faker
         1.upto(resolve(number)).collect { paragraph(sentence_count: 3, supplemental: supplemental) }
       end
 
-      ## 
+      ##
       # Generates paragraph with 256 characters
       #
       # @param number [Integer]
@@ -216,7 +219,7 @@ module Faker
       #
       # @example
       #   Faker::Lorem.paragraph_by_chars
-      #   Faker::Lorem.paragraph_by_chars(number: 20)                       #=> "Sit modi alias. Imp." 
+      #   Faker::Lorem.paragraph_by_chars(number: 20)                       #=> "Sit modi alias. Imp."
       #   Faker::Lorem.paragraph_by_chars(number: 20, supplemental: true)   #=> "Certus aveho admove."
       #
       # @faker.version 2.1.3
@@ -238,7 +241,7 @@ module Faker
       ##
       # Returns the question with 4 words
       #
-      # @param word_count [Integer] 
+      # @param word_count [Integer]
       # @param supplemental [Boolean]
       # @param random_words_to_add [Integer]
       #
