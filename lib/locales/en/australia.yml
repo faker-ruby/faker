@@ -2,10 +2,9 @@ en:
   faker:
     australia:
       locations:
-        - Sydney
         - Brisbane
         - Sydney
-        - Melbour
+        - Melbourn
         - Brisbane
         - Perth
         - Adelaide
@@ -21,7 +20,7 @@ en:
         - Cairns
         - Toowoomba
         - Darwin	  
-        - Ballara
+        - Ballarat
         - Bendigo
         - Albury
         - Launceston	 
