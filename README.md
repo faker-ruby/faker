@@ -282,6 +282,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Movies::PrincessBride](doc/movies/princess_bride.md)
   - [Faker::Movies::StarWars](doc/movies/star_wars.md)
   - [Faker::Movies::VForVendetta](doc/movies/v_for_vendetta.md)
+  - [Faker::Movies::Disney](doc/movies/disney.md)
 
 ### Music
   - [Faker::Music](doc/music/music.md)

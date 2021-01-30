@@ -1,0 +1,5 @@
+en:
+  faker:
+    disney:
+      princess: ["Snow White", "Cinderella", "Aurora", "Ariel", "Belle", "Jasmine", "Pocahontas", "Mulan", "Tiana", "Rapunzel", "Merida", "Moana", "Anna", "Elsa" ]
+        
