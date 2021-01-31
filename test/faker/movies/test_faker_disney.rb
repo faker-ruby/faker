@@ -10,4 +10,8 @@ class TestFakerDisney < Test::Unit::TestCase
   def test_princess
     assert @tester.princess.match(/\w+/)
   end
+
+  def test_film
+    assert @tester.film.match(/\w+/)
+  end
 end

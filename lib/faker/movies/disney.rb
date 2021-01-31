@@ -16,6 +16,19 @@ module Faker
         def princess
           fetch('disney.princess')
         end
+
+        ##
+        # Produces an animated film from Disney.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Movies::Disney.film #=> "Lion King"
+        #
+        # @faker.version next
+        def film
+          fetch('disney.film')
+        end
       end
     end
   end
