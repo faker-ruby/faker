@@ -1,0 +1,691 @@
+# encoding: utf-8
+es-AR:
+    faker:
+        name:
+            male_first_name:
+                - Aaron
+                - Adalberto
+                - Adolfo
+                - Adrián
+                - Agustín
+                - Alan
+                - Alberto
+                - Alejandro
+                - Alejo
+                - Alfredo
+                - Álvaro
+                - Amadeo
+                - Andrés
+                - Ángel
+                - Antonio
+                - Ariel
+                - Armando
+                - Arnaldo
+                - Arturo
+                - Augusto
+                - Baltazar
+                - Bastian
+                - Bautista
+                - Benicio
+                - Benjamín
+                - Bernardo
+                - Brian
+                - Bruno
+                - Camilo
+                - Carlos
+                - César
+                - Ciro
+                - Cristian
+                - Damián
+                - Daniel
+                - Dante
+                - Darío
+                - David
+                - Diego
+                - Diego Armando
+                - Domingo
+                - Donato
+                - Dylan
+                - Eduardo
+                - Elías
+                - Eliseo
+                - Emanuel
+                - Emiliano
+                - Emilio
+                - Enrique
+                - Enzo
+                - Eric
+                - Ernesto
+                - Esteban
+                - Ezequiel
+                - Fabián
+                - Facundo
+                - Fausto
+                - Federico
+                - Felipe
+                - Félix
+                - Fermín
+                - Fernando
+                - Francisco
+                - Franco
+                - Gabriel
+                - Gael
+                - Gaspar
+                - Gastón
+                - Genaro
+                - Gerardo
+                - Germán
+                - Gerónimo
+                - Gianluca
+                - Gino
+                - Giovanni
+                - Gonzalo
+                - Gregorio
+                - Guido
+                - Guillermo
+                - Gustavo
+                - Héctor
+                - Hernán
+                - Hugo
+                - Humberto
+                - Ian
+                - Ignacio
+                - Iñaki
+                - Iván
+                - Javier
+                - Jeremías
+                - Joaquín
+                - Jonathan
+                - Jorge
+                - Jorge Luis
+                - José
+                - José Antonio
+                - José Ignacio
+                - José Luis
+                - José María
+                - José Oscar
+                - Juan
+                - Juan Alberto
+                - Juan Antonio
+                - Juan Bautista
+                - Juan Carlos
+                - Juan Cruz
+                - Juan David
+                - Juan de Dios
+                - Juan Domingo
+                - Juan Francisco
+                - Juan Franco
+                - Juan Gabriel
+                - Juan Ignacio
+                - Juan José
+                - Juan Manuel
+                - Juan Martín
+                - Juan Pablo
+                - Juan Román
+                - Julián
+                - Julio
+                - Julio Argentino
+                - Julio César
+                - Kevin
+                - Laureano
+                - Lautaro
+                - Leandro
+                - León
+                - Leonardo
+                - Leonel
+                - Lionel
+                - Lorenzo
+                - Luca
+                - Lucas
+                - Luciano
+                - Lucio
+                - Luis
+                - Luis Alberto
+                - Luis Miguel
+                - Manuel
+                - Marcelo
+                - Marco Antonio
+                - Marcos
+                - Mariano
+                - Mario
+                - Martín
+                - Mateo
+                - Matías
+                - Mauricio
+                - Maximiliano
+                - Máximo
+                - Miguel
+                - Miguel Ángel
+                - Mirko
+                - Nahuel
+                - Nazareno
+                - Néstor
+                - Nicolás
+                - Omar
+                - Oscar
+                - Osvaldo
+                - Pablo
+                - Patricio
+                - Pedro
+                - Rafael
+                - Ramiro
+                - Ramón
+                - Raúl
+                - Reinaldo
+                - Renato
+                - René
+                - Renzo
+                - Ricardo
+                - Roberto
+                - Rodolfo
+                - Rodrigo
+                - Rolando
+                - Román
+                - Rubén
+                - Salvador
+                - Santiago
+                - Santino
+                - Sebastián
+                - Sergio
+                - Simón
+                - Sixto
+                - Stéfano
+                - Tahiel
+                - Teodoro
+                - Theo
+                - Thiago
+                - Tiziano
+                - Tobías
+                - Tomás
+                - Ulises
+                - Uriel
+                - Valentín
+                - Valentino
+                - Vicente
+                - Víctor
+                - Víctor Hugo
+                - Víctor Manuel
+                - Walter
+            female_first_name:
+                - Abigail
+                - Abril
+                - Adela
+                - Adriana
+                - Agostina
+                - Agustina
+                - Alejandra
+                - Alfonsina
+                - Alicia
+                - Alma
+                - Amalia
+                - Amanda
+                - Ana
+                - Ana María
+                - Analía
+                - Andrea
+                - Angélica
+                - Antonella
+                - Ayelén
+                - Azul
+                - Bárbara
+                - Beatríz
+                - Belén
+                - Bianca
+                - Briana
+                - Brisa
+                - Camila
+                - Candela
+                - Carmela
+                - Carmen
+                - Carolina
+                - Catalina
+                - Cecilia
+                - Celeste
+                - Chiara
+                - Clara
+                - Claudia
+                - Clotilde
+                - Constanza
+                - Daiana
+                - Daniela
+                - Delfina
+                - Dolores
+                - Dora
+                - Elizabeth
+                - Elsa
+                - Elvira
+                - Emma
+                - Ernestina
+                - Estefanía
+                - Estela
+                - Esther
+                - Eva
+                - Fabiana
+                - Faustina
+                - Felicitas
+                - Fernanda
+                - Fiorella
+                - Flora
+                - Florencia
+                - Francesca
+                - Gabriela
+                - Gisela
+                - Giselle
+                - Giuliana
+                - Gladys
+                - Gloria
+                - Graciela
+                - Guadalupe
+                - Guillermina
+                - Haydée
+                - Helena
+                - Inés
+                - Irene
+                - Isabel
+                - Isabella
+                - Jazmín
+                - Jimena
+                - Josefina
+                - Juana
+                - Julia
+                - Julieta
+                - Justina
+                - Karen
+                - Karina
+                - Lara
+                - Laura
+                - Liliana
+                - Lorena
+                - Lourdes
+                - Luana
+                - Lucía
+                - Luciana
+                - Lucrecia
+                - Ludmila
+                - Luisina
+                - Luján
+                - Macarena
+                - Magalí
+                - Magdalena
+                - Maia
+                - Maite
+                - Maitena
+                - Malena
+                - Marcela
+                - Margarita
+                - María
+                - María Belén
+                - María Cristina
+                - María de los Ángeles
+                - María del Carmen
+                - María del Rosario
+                - María Dolores
+                - María Elena
+                - María Elisa
+                - María Emilia
+                - María Eugenia
+                - María Fabiana
+                - María Fernanda
+                - María Inés
+                - María Isabel
+                - María José
+                - María Laura
+                - María Luisa
+                - María Luz
+                - María Magdalena
+                - María Marta
+                - María Mercedes
+                - María Paula
+                - María Paz
+                - María Pilar
+                - María Rosa
+                - María Sol
+                - María Victoria
+                - María Yolanda
+                - Mariana
+                - Marianela
+                - Marina
+                - Marta
+                - Martina
+                - Matilde
+                - Mayra
+                - Melina
+                - Mercedes
+                - Mia
+                - Micaela
+                - Milagros
+                - Mirta
+                - Mónica
+                - Morena
+                - Nadia
+                - Nahiara
+                - Natalia
+                - Nazarena
+                - Nélida
+                - Nelly
+                - Nicole
+                - Noelia
+                - Noemí
+                - Norma
+                - Olivia
+                - Oriana
+                - Paloma
+                - Pamela
+                - Paola
+                - Patricia
+                - Paula
+                - Paulina
+                - Pia
+                - Pilar
+                - Priscila
+                - Raquel
+                - Regina
+                - Renata
+                - Rita
+                - Rocío
+                - Romina
+                - Rosa
+                - Sabrina
+                - Sandra
+                - Sara
+                - Silvia
+                - Simona
+                - Sofía
+                - Soledad
+                - Stella Maris
+                - Susana
+                - Teresa
+                - Trinidad
+                - Uma
+                - Valentina
+                - Valeria
+                - Vanesa
+                - Verónica
+                - Victoria
+                - Vilma
+                - Violeta
+                - Virginia
+                - Ximena
+                - Xiomara
+                - Yamila
+                - Yanina
+                - Zoe
+            first_name:
+                - "#{female_first_name}"
+                - "#{male_first_name}"
+            last_name:
+                - Acevedo
+                - Acosta
+                - Acuña
+                - Agüero
+                - Aguilar
+                - Aguilera
+                - Aguirre
+                - Alarcón
+                - Albornoz
+                - Alegre
+                - Almirón
+                - Alonso
+                - Altamirano
+                - Álvarez
+                - Andrada
+                - Aquino
+                - Aranda
+                - Arce
+                - Arias
+                - Avalos
+                - Ávila
+                - Ayala
+                - Báez
+                - Barbieri
+                - Barrera
+                - Barrionuevo
+                - Barrios
+                - Bazán
+                - Benítez
+                - Bianchi
+                - Bianco
+                - Blanco
+                - Bravo
+                - Brizuela
+                - Bruno
+                - Burgos
+                - Bustamante
+                - Bustos
+                - Caballero
+                - Cabral
+                - Cabrera
+                - Cáceres
+                - Calderón
+                - Campos
+                - Carabajal
+                - Cardozo
+                - Carrizo
+                - Caruso
+                - Castillo
+                - Castro
+                - Cattaneo
+                - Ceballos
+                - Cejas
+                - Chávez
+                - Colombo
+                - Conti
+                - Contreras
+                - Coppola
+                - Córdoba
+                - Coria
+                - Coronel
+                - Correa
+                - Cortéz
+                - Costa
+                - Cruz
+                - Cuello
+                - D'Angelo
+                - Dalla
+                - Delgado
+                - Díaz
+                - Domínguez
+                - Duarte
+                - Escobar
+                - Espíndola
+                - Esposito
+                - Fabbri
+                - Farías
+                - Fernández
+                - Ferrara
+                - Ferrari
+                - Ferraro
+                - Ferreyra
+                - Ferri
+                - Figueroa
+                - Flores
+                - Fontana
+                - Franco
+                - Frías
+                - Fuentes
+                - Funes
+                - Galarza
+                - Gallardo
+                - Galli
+                - Gallo
+                - Galván
+                - Garay
+                - García
+                - Gatti
+                - Gauna
+                - Gentile
+                - Gil
+                - Giménez
+                - Giordano
+                - Godoy
+                - Gómez
+                - González
+                - Grasso
+                - Greco
+                - Guerrero
+                - Gutiérrez
+                - Guzmán
+                - Heredia
+                - Hernández
+                - Herrera
+                - Ibáñez
+                - Ibarra
+                - Jara
+                - Jiménez
+                - Juárez
+                - Ledesma
+                - Leguizamón
+                - Leiva
+                - Leone
+                - Lescano
+                - Lezcano
+                - Lombardi
+                - Lombardo
+                - Longo
+                - López
+                - Lucero
+                - Luna
+                - Maciel
+                - Maidana
+                - Maldonado
+                - Mamani
+                - Mancini
+                - Mansilla
+                - Marchetti
+                - Mariani
+                - Marini
+                - Marino
+                - Márquez
+                - Martín
+                - Martinelli
+                - Martínez
+                - Martini
+                - Medina
+                - Méndez
+                - Mendoza
+                - Mercado
+                - Messina
+                - Meza
+                - Miño
+                - Miranda
+                - Molina
+                - Montenegro
+                - Monti
+                - Monzón
+                - Morales
+                - Moreno
+                - Moretti
+                - Moyano
+                - Muñoz
+                - Navarro
+                - Nieto
+                - Nieva
+                - Núñez
+                - Ocampo
+                - Ojeda
+                - Oliva
+                - Olivera
+                - Orellana
+                - Ortega
+                - Ortiz
+                - Oviedo
+                - Pacheco
+                - Páez
+                - Palacios
+                - Palavecino
+                - Paredes
+                - Paz
+                - Pellegrini
+                - Peralta
+                - Pereira
+                - Pereyra
+                - Pérez
+                - Ponce
+                - Quintana
+                - Quinteros
+                - Quiroga
+                - Ramírez
+                - Ramos
+                - Reyes
+                - Reynoso
+                - Ricci
+                - Rinaldi
+                - Ríos
+                - Rivas
+                - Rivero
+                - Rizzo
+                - Robledo
+                - Robles
+                - Rodríguez
+                - Rojas
+                - Roldán
+                - Romano
+                - Romero
+                - Rosales
+                - Rossi
+                - Ruiz
+                - Russo
+                - Sala
+                - Salas
+                - Salinas
+                - Sánchez
+                - Sandoval
+                - Santillán
+                - Santoro
+                - Segovia
+                - Serra
+                - Silva
+                - Soria
+                - Sosa
+                - Sotelo
+                - Soto
+                - Suárez
+                - Tapia
+                - Testa
+                - Toledo
+                - Torres
+                - Valdéz
+                - Valenzuela
+                - Vallejos
+                - Varela
+                - Vargas
+                - Vázquez
+                - Vega
+                - Velázquez
+                - Vera
+                - Vergara
+                - Verón
+                - Villa
+                - Villalba
+                - Villarreal
+                - Villegas
+                - Vitale
+                - Zalazar
+                - Zapata
+                - Zárate
+            prefix:
+                - Sr.
+                - Sra.
+                - Dr.
+                - Dra.
+                - Ing.
+            male_suffix:
+                - padre
+                - hijo
+                - segundo
+            female_suffix:
+                - madre
+                - hija
+                - segunda
+            suffix:
+                - Jr.
+                - I
+                - II
+                - III
+                - IV
+                - V
+            name:
+                - "#{first_name} #{last_name}"
+            name_with_middle:
+                - "#{female_first_name} #{female_first_name} #{last_name}"
+                - "#{male_first_name} #{male_first_name} #{last_name}"
