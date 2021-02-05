@@ -41,7 +41,7 @@
 
 ## Bug/Fixes
 
-- Rubocop 1.0 fixes [#2182](https://github.com/faker-ruby/faker/pull/2182) @amatsuda
+- RuboCop 1.0 fixes [#2182](https://github.com/faker-ruby/faker/pull/2182) @amatsuda
 - Get rid of broken I18n locales configuration for the tests [#2168](https://github.com/faker-ruby/faker/pull/2168) @amatsuda
 - Fixes a bug when generating a password with min_length eq 1 [#2138](https://github.com/faker-ruby/faker/pull/2138) @adrian-rivera @Zeragamba
 - Improve Faker::Company.spanish_organisation_number [#2106](https://github.com/faker-ruby/faker/pull/2106)
@@ -108,13 +108,13 @@
 
 ## Update local dependencies
 
-- Update rubocop requirement from = 1.0.0 to = 1.1.0 [#2185](https://github.com/faker-ruby/faker/pull/2185)
-- Update rubocop requirement from = 0.93.1 to = 1.0.0 [#2172](https://github.com/faker-ruby/faker/pull/2172)
-- Update rubocop requirement from = 0.93.0 to = 0.93.1 [#2156](https://github.com/faker-ruby/faker/pull/2156)
-- Update rubocop requirement from = 0.92.0 to = 0.93.0 [#2151](https://github.com/faker-ruby/faker/pull/2151)
-- Update rubocop requirement from = 0.91.1 to = 0.92.0 [#2129](https://github.com/faker-ruby/faker/pull/2129)
-- Update rubocop requirement from = 0.91.0 to = 0.91.1 [#2126](https://github.com/faker-ruby/faker/pull/2126)
-- Update rubocop requirement from = 0.90.0 to = 0.91.0 [#2122](https://github.com/faker-ruby/faker/pull/2122)
+- Update RuboCop requirement from = 1.0.0 to = 1.1.0 [#2185](https://github.com/faker-ruby/faker/pull/2185)
+- Update RuboCop requirement from = 0.93.1 to = 1.0.0 [#2172](https://github.com/faker-ruby/faker/pull/2172)
+- Update RuboCop requirement from = 0.93.0 to = 0.93.1 [#2156](https://github.com/faker-ruby/faker/pull/2156)
+- Update RuboCop requirement from = 0.92.0 to = 0.93.0 [#2151](https://github.com/faker-ruby/faker/pull/2151)
+- Update RuboCop requirement from = 0.91.1 to = 0.92.0 [#2129](https://github.com/faker-ruby/faker/pull/2129)
+- Update RuboCop requirement from = 0.91.0 to = 0.91.1 [#2126](https://github.com/faker-ruby/faker/pull/2126)
+- Update RuboCop requirement from = 0.90.0 to = 0.91.0 [#2122](https://github.com/faker-ruby/faker/pull/2122)
 - Update test-unit requirement from = 3.3.6 to = 3.3.7 [#2195](https://github.com/faker-ruby/faker/pull/2195)
 - Update timecop requirement from = 0.9.1 to = 0.9.2 [#2160](https://github.com/faker-ruby/faker/pull/2160)
 
@@ -161,9 +161,9 @@
 
 Update local dependencies
 
-- Update rubocop requirement from = 0.87.1 to = 0.88.0 (#2080)
-- Update rubocop requirement from = 0.87.0 to = 0.87.1 (#2075)
-- Update rubocop requirement from = 0.86.0 to = 0.87.0 (#2074)
+- Update RuboCop requirement from = 0.87.1 to = 0.88.0 (#2080)
+- Update RuboCop requirement from = 0.87.0 to = 0.87.1 (#2075)
+- Update RuboCop requirement from = 0.86.0 to = 0.87.0 (#2074)
 - Bumps i18n from 1.8.4 to 1.8.5 (#2089)
 - Bumps i18n from 1.8.3 to 1.8.4 (#2083)
 
@@ -233,8 +233,8 @@ This version:
 
 ## Update local dependencies
 
-- Update rubocop requirement from = 0.81.0 to = 0.85.1
-- Update rubocop requirement from = 0.85.1 to = 0.86.0 (#2066)
+- Update RuboCop requirement from = 0.81.0 to = 0.85.1
+- Update RuboCop requirement from = 0.85.1 to = 0.86.0 (#2066)
 - Update test-unit requirement from = 3.3.5 to = 3.3.6 (#2046)
 - Bump i18n from 1.8.2 to 1.8.3 (#2034)
 
@@ -323,7 +323,7 @@ This version:
 ## Update local dependencies
 
 - Update minitest requirement from = 5.14.0 to = 5.14.1 (#1987)
-- Update rubocop requirement from = 0.80.1 to = 0.81.0 (#1955)
+- Update RuboCop requirement from = 0.80.1 to = 0.81.0 (#1955)
 - Update pry requirement from = 0.13.0 to = 0.13.1 (#1963)
 - Update yard requirement from = 0.9.24 to = 0.9.25 (#1970)
 
@@ -355,8 +355,8 @@ This version:
 ## Update local dependencies
 
 - Update pry requirement from = 0.12.2 to = 0.13.0 (#1951)
-- Update rubocop requirement from = 0.80.0 to = 0.80.1 (#1941)
-- Update rubocop requirement from = 0.79.0 to = 0.80.0 (#1937)
+- Update RuboCop requirement from = 0.80.0 to = 0.80.1 (#1941)
+- Update RuboCop requirement from = 0.79.0 to = 0.80.0 (#1937)
 
 ------------------------------------------------------------------------------
 
@@ -428,7 +428,7 @@ This version:
 - Bump i18n from 1.8.0 to 1.8.1 (#1895)
 - Update i18n requirement from >= 1.6, < 1.8 to >= 1.6, < 1.9 (#1893)
 - Update yard requirement from = 0.9.23 to = 0.9.24 (#1892)
-- Update rubocop requirement from = 0.78.0 to = 0.79.0 (#1890)
+- Update RuboCop requirement from = 0.78.0 to = 0.79.0 (#1890)
 - Update yard requirement from = 0.9.22 to = 0.9.23 (#1889)
 - Update yard requirement from = 0.9.20 to = 0.9.22 (#1882)
 
@@ -467,7 +467,7 @@ This version:
 
 ## Update local dependencies
 
-Update rubocop requirement from = 0.77.0 to = 0.78.0 (#1869)
+Update RuboCop requirement from = 0.77.0 to = 0.78.0 (#1869)
 
 ------------------------------------------------------------------------------
 
@@ -523,7 +523,7 @@ This version:
 
 ## Update local dependencies
 
-- Update rubocop requirement from = 0.76.0 to = 0.77.0 (#1843)
+- Update RuboCop requirement from = 0.76.0 to = 0.77.0 (#1843)
 
 ------------------------------------------------------------------------------
 
@@ -594,8 +594,8 @@ This version:
 
 ## Update local dependencies
 
-- Update rubocop requirement from = 0.75.0 to = 0.75.1 (#1811)
-- Update rubocop requirement from = 0.75.1 to = 0.76.0 (#1822)
+- Update RuboCop requirement from = 0.75.0 to = 0.75.1 (#1811)
+- Update RuboCop requirement from = 0.75.1 to = 0.76.0 (#1822)
 - Update minitest requirement from = 5.12.2 to = 5.13.0 (#1823)
 
 ------------------------------------------------------------------------------
@@ -637,7 +637,7 @@ This version introduces:
 
 ## Documentation
 
-- [PR #1771](https://github.com/faker-ruby/faker/pull/1771) Fix some rubocop comments that were showing up in YARD docs. [@connorshea](https://github.com/connorshea)
+- [PR #1771](https://github.com/faker-ruby/faker/pull/1771) Fix some RuboCop comments that were showing up in YARD docs. [@connorshea](https://github.com/connorshea)
 - [PR #1767](https://github.com/faker-ruby/faker/pull/1767) Fix two incorrect flexible method calls. [@connorshea](https://github.com/connorshea)
 - [PR #1761](https://github.com/faker-ruby/faker/pull/1761) Add YARD docs for the Basketball and Football fakers. [@connorshea](https://github.com/connorshea)
 - [PR #1768](https://github.com/faker-ruby/faker/pull/1768) Add YARD docs for Faker::Restaurant. [@connorshea](https://github.com/connorshea)
@@ -710,7 +710,7 @@ The following development dependencies were updated:
 
 ## Chores
 
-- [PR #1724](https://github.com/faker-ruby/faker/pull/1724) Include rubocop-faker autocorrect in deprecation [@koic](https://github.com/koic)
+- [PR #1724](https://github.com/faker-ruby/faker/pull/1724) Include RuboCop-faker autocorrect in deprecation [@koic](https://github.com/koic)
 
 ## Documentation
 
@@ -721,7 +721,7 @@ The following development dependencies were updated:
 
 The following development dependencies were updated:
 - rake requirement from = 12.3.1 to = 12.3.3 (#1719)
-- rubocop requirement from = 0.59.1 to = 0.74.0 (#1721)
+- RuboCop requirement from = 0.59.1 to = 0.74.0 (#1721)
 - simplecov requirement from = 0.16.1 to = 0.17.0 (#1718)
 
 ------------------------------------------------------------------------------
@@ -1076,7 +1076,7 @@ Fix lib/faker/version.rb
 - [PR #1477](https://github.com/stympy/faker/pull/1477) Fixed bank account length [@jguthrie100](https://github.com/jguthrie100)
 - [PR #1494](https://github.com/stympy/faker/pull/1494) Fix Faker::Internet.ip_v4_address to include all IP ranges [@lucasqueiroz](https://github.com/lucasqueiroz)
 - [PR #1456](https://github.com/stympy/faker/pull/1456) fix: omit . from slug [@ivanoblomov](https://github.com/ivanoblomov)
-- [PR #1436](https://github.com/stympy/faker/pull/1436) Fix regex and add magic string to pass rubocop check [@jakrzus](https://github.com/jakrzus)
+- [PR #1436](https://github.com/stympy/faker/pull/1436) Fix regex and add magic string to pass RuboCop check [@jakrzus](https://github.com/jakrzus)
 - [PR #1425](https://github.com/stympy/faker/pull/1425) NHS: fix occasional bad numbers [@ChaoticBoredom](https://github.com/ChaoticBoredom)
 - [PR #1421](https://github.com/stympy/faker/pull/1421) Faker::Internet.user_name can't handle UTF-8 arguments [@ivanoblomov](https://github.com/ivanoblomov)
 - [PR #1423](https://github.com/stympy/faker/pull/1423) Add missing locale tests - Part II [@vbrazo](https://github.com/vbrazo)
@@ -1304,7 +1304,7 @@ Fix lib/faker/version.rb
 - [PR #1179](https://github.com/stympy/faker/pull/1179) Random color with Placeholdit [@nicolas-brousse](https://github.com/nicolas-brousse)
 - [PR #1190](https://github.com/stympy/faker/pull/1190) Add Nation object, its specs and docs [@gkunwar](https://github.com/gkunwar)
 - [PR #1210](https://github.com/stympy/faker/pull/1210) Add coveralls [@vbrazo](https://github.com/vbrazo)
-- [PR #924](https://github.com/stympy/faker/pull/924) Rubocop + fixes [@stephengroat](https://github.com/stephengroat)
+- [PR #924](https://github.com/stympy/faker/pull/924) RuboCop + fixes [@stephengroat](https://github.com/stephengroat)
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 
 ### Update/add locales
@@ -1368,7 +1368,7 @@ Fix lib/faker/version.rb
 
 ### Documentation
 - [PR #1478](https://github.com/stympy/faker/pull/1478) Fixed documentation for Faker::Internet.password [@mrstebo](https://github.com/mrstebo)
-- [PR #1453](https://github.com/stympy/faker/pull/1453) Add description to Rubocop cops [@vbrazo](https://github.com/vbrazo)
+- [PR #1453](https://github.com/stympy/faker/pull/1453) Add description to RuboCop cops [@vbrazo](https://github.com/vbrazo)
 - [PR #1121](https://github.com/stympy/faker/pull/1121) Better docs for Faker::Food.description [@jujulisan](https://github.com/jujulisan)
 - [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [@mrstebo](https://github.com/mrstebo)
 - [PR #1256](https://github.com/stympy/faker/pull/1256) Fixing documentation - Faker::Name to Faker::Zelda [@mrstebo](https://github.com/mrstebo)

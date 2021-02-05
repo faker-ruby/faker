@@ -4,8 +4,8 @@ We love pull requests. Here's a quick guide:
 
 2. Run the tests. We only take pull requests with passing tests, and it's great to know that you have a clean slate: `bundle && bundle exec rake`
 
-3. We are using [Rubocop](https://github.com/bbatsov/rubocop) because we love static code analyzers.
-    * Ways to run Rubocop:
+3. We are using [RuboCop](https://github.com/bbatsov/rubocop) because we love static code analyzers.
+    * Ways to run RuboCop:
         - `bundle exec rubocop`
         - `bundle exec rake` would run the test suite and after that it runs the Ruby static code analyzer.
 
