@@ -27,6 +27,10 @@ class TestFakerEducator < Test::Unit::TestCase
     assert @tester.secondary_school.match(/(\w+\.? ?){2,3}/)
   end
 
+  def test_primary_school
+    assert @tester.primary_school.match(/(\w+\.? ?){2,3}/)
+  end
+
   def test_campus
     assert @tester.campus.match(/(\w+\.? ?){1,2}/)
   end
