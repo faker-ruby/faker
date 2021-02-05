@@ -4,7 +4,7 @@ module Faker
   class Barcode < Base
     class << self
       ## Returns a EAN 8 or 13 digit format barcode number with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.ean      => "85657526"
@@ -17,7 +17,7 @@ module Faker
       end
 
       ## Returns a EAN 8 or 13 digit format barcode number with composite string attached with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.ean_with_composite_sumbology      => "41007624|JHOC6649"
@@ -30,7 +30,7 @@ module Faker
       end
 
       ## Returns a UPC_A format barcode number with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.upc_a      => "766807541831"
@@ -41,7 +41,7 @@ module Faker
       end
 
       ## Returns a UPC_E format barcode number with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.upc_e      => "03746820"
@@ -52,7 +52,7 @@ module Faker
       end
 
       ## Returns a UPC_A format barcode number with composite string attached with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.upc_a_with_composite_symbology      => "790670155765|JOVG6208"
@@ -63,7 +63,7 @@ module Faker
       end
 
       ## Returns a UPC_E format barcode number with composite string attached with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.upc_e_with_composite_symbology      => "05149247|BKZX9722"
@@ -74,7 +74,7 @@ module Faker
       end
 
       ## Returns a ISBN format barcode number with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.isbn      => "9798363807732"
@@ -85,7 +85,7 @@ module Faker
       end
 
       ## Returns a ISMN format barcode number with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.ismn      => "9790527672897"
@@ -96,7 +96,7 @@ module Faker
       end
 
       ## Returns a ISSN format barcode number with check digit
-      #  @returns [String]
+      #  @return [String]
       #
       #  @example
       #     Faker::Barcode.issn      => "9775541703338"
@@ -116,7 +116,7 @@ module Faker
 
       ## Returns the sum of even and odd numbers from value passed
       #
-      # @returns [Array]
+      # @return [Array]
       #
       # @example
       #   Faker::Barcode.send(:sum_even_odd, 12345)   => [9, 5]
@@ -139,7 +139,7 @@ module Faker
 
       ## Generates the check digits from sum passed
       #
-      # @returns [Integer]
+      # @return [Integer]
       #
       # @example
       #   Faker::Barcode.send(:generate_check_digit, 12, 4)   => 0

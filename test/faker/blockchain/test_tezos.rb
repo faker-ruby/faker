@@ -23,6 +23,14 @@ class TestFakerTezos < Test::Unit::TestCase
     assert Faker::Blockchain::Tezos.signature.match(/^edsig[1-9A-Za-z][^OIl]{20,40}/)
   end
 
+  def test_public_key
+    assert Faker::Blockchain::Tezos.public_key.match(/^edpk[1-9A-Za-z][^OIl]{20,40}/)
+  end
+
+  def test_secret_key
+    assert Faker::Blockchain::Tezos.secret_key.match(/^edsk[1-9A-Za-z][^OIl]{20,40}/)
+  end
+
   def test_deterministic_contract
     Faker::Config.random = Random.new(42)
     v = Faker::Blockchain::Tezos.contract

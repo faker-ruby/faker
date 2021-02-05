@@ -25,7 +25,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::TvShows::BigBangTheory.quote #=> "I'm not crazy. My mother had me tested."
+        #  Faker::TvShows::BigBangTheory.quote #=> "I'm not crazy. My mother had me tested."
         #
         # @faker.version 2.13.0
         def quote

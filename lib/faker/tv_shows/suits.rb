@@ -25,7 +25,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::TvShows::Suits.quote #=> "Don't play the odds, play the man."
+        #  Faker::TvShows::Suits.quote #=> "Don't play the odds, play the man."
         #
         # @faker.version 2.13.0
         def quote
