@@ -2480,3 +2480,519 @@ es-AR:
                 zambia: ZM
                 zimbabwe: ZW
             default_country: [Argentina]
+
+        football:
+            teams:
+                - Acassuso
+                - Agropecuario de Carlos Casares
+                - Aldosivi
+                - All Boys
+                - Almagro
+                - Almirante Brown
+                - Alvarado
+                - Argentino de Quilmes
+                - Argentinos
+                - Arsenal
+                - Atlanta
+                - Atlético Rafaela
+                - Atlético Tucumán
+                - Banfield
+                - Barracas Central
+                - Belgrano de Córdoba
+                - Boca Juniors
+                - Boca Unidos
+                - Brown de Adrogué
+                - Brown de Puerto Madryn
+                - Central Córdoba de Santiago del Estero
+                - Central Norte
+                - Chacarita
+                - Chaco For Ever
+                - Colegiales
+                - Colón de Santa Fe
+                - Comunicaciones
+                - Defensa y Justicia
+                - Defensores de Belgrano
+                - Defensores Unidos
+                - Deportivo Morón
+                - Deportivo Armenio
+                - Desamparados de San Juan
+                - Douglas Haig de Pergamino
+                - Estudiantes de Buenos Aires
+                - Estudiantes de La Plata
+                - Estudiantes de Río Cuarto
+                - Estudiantes de San Luis
+                - Fénix
+                - Ferro
+                - Flandria
+                - Gimnasia de Jujuy
+                - Gimnasia de La Plata
+                - Gimnasia de Mendoza
+                - Godoy Cruz
+                - Huracán
+                - Independiente
+                - Independiente Rivadavia
+                - Instituto de Córdoba
+                - JJ. Urquiza
+                - Lanús
+                - Los Andes
+                - Mitre de Santiago del Estero
+                - Newell's Old Boys
+                - Nueva Chicago
+                - Olimpo
+                - Patronato
+                - Platense
+                - Quilmes
+                - Racing Club
+                - Riestra
+                - River Plate
+                - Rosario Central
+                - Sacachispas
+                - San Lorenzo
+                - San Martín de San Juan
+                - San Martín de Tucumán
+                - San Miguel
+                - San Telmo
+                - Santamarina de Tandil
+                - Sarmiento de Junín
+                - Sarmiento de Resistencia
+                - Sportivo Belgrano
+                - Sportivo Las Parejas
+                - Talleres de Córdoba
+                - Talleres de Remedios de Escalada
+                - Temperley
+                - Tigre
+                - Tristán Suarez
+                - UAI Urquiza
+                - Unión de Santa Fe
+                - Unión de Sunchales
+                - Vélez
+                - Villa Dálmine
+                - Villa Mitre
+                - Villa San Carlos
+            players:
+                - "'Anguila' Gutiérrez"
+                - "'Cachete' Oberman"
+                - "'El Chino' Luna"
+                - "'Discoteca' Núñez"
+                - "'El Mugre' Corvalán"
+                - "Fernando 'El Rifle' Pandolfi"
+                - "'La Chancha' Rinaldi"
+                - "Gastón 'La Gata' Fernández"
+                - "Reinaldo 'Mostaza' Merlo"
+                - "'El Payaso' Lugüercio"
+                - "'El Picante' Pereyra"
+                - "'Poroto' Cubero"
+                - "'El Sapito' Encina"
+                - "'Terremoto' Cejas"
+                - "'El Trinche' Carlovich"
+                - "'Uvita' Fernández"
+                - Abel Balbo
+                - Agustín Orión
+                - "Alberto 'Beto' Márcico"
+                - Alberto Tarantini
+                - Aldo Pedro Poy
+                - Aldo Visconti
+                - Alejandro Mancuso
+                - "Alfio 'Coco' Basile"
+                - Alfredo Rojas
+                - "Américo 'Tolo' Gallego"
+                - Ángel Bargas
+                - Ángel David Comizzo
+                - "Ángel 'Fideo' Di María"
+                - Antonio Rattín
+                - Antonio Roma
+                - "Ariel 'El Chino' Garcé"
+                - "Ariel 'El Burrito' Ortega"
+                - Augusto Fernández
+                - Carlos Alfaro Moreno
+                - Carlos Babington
+                - Carlos Bianchi
+                - Carlos Daniel Tapia
+                - "Carlos 'Lechuga' Roa"
+                - Carlos Squeo
+                - Carlos Tévez
+                - "Carmelo 'Cholo' Simeone"
+                - "Claudio 'Bichi' Borghi"
+                - Claudio Caniggia
+                - "Claudio 'Turco' Husaín"
+                - "Claudio 'Piojo' López"
+                - Clemente Rodríguez
+                - "Cristian 'El Kily' González"
+                - Cristian Pavón
+                - Daniel Bertoni
+                - Daniel Carnevali
+                - Daniel Killer
+                - Daniel Passarella
+                - Darío Benedetto
+                - Diego Armando Maradona
+                - Diego Milito
+                - Diego Placente
+                - Diego Pozo
+                - "Diego 'Cholo' Simeone"
+                - "Edgardo 'Patón' Bauza"
+                - "Eduardo 'Toto' Salvio"
+                - Enrique Chazarreta
+                - "Enrique 'Quique' Wolff"
+                - Enzo Pérez
+                - Ermindo Onega
+                - "Esteban 'Cuchu' Cambiasso"
+                - Éver Banega
+                - Ezequiel Garay
+                - Ezequiel Lavezzi
+                - Fabián Cancelarich
+                - Fabricio Coloccini
+                - Fernando Belluschi
+                - "Fernando 'El Negro' Cáceres"
+                - Fernando Gago
+                - Fernando Redondo
+                - "Francisco 'Pancho' Sa"
+                - Franco Armani
+                - Gabriel Batistuta
+                - Gabriel Calderon
+                - Gabriel Heinze
+                - Gabriel Mercado
+                - Gabriel Milito
+                - "Germán 'El Mono' Burgos"
+                - Giovani Lo Celso
+                - "Gonzalo 'Pipita' Higuaín"
+                - "Gonzalo 'Pity' Martínez"
+                - Guillermo Barros Schelotto
+                - Guillermo Stábile
+                - "Héctor 'El Negro' Enrique"
+                - Héctor Yazalde
+                - Hernán Crespo
+                - Hernán Díaz
+                - Hugo Orlando Gatti
+                - Hugo Pérez
+                - Javier Mascherano
+                - Javier Pastore
+                - Javier Saviola
+                - Javier Zanetti
+                - "Jonás 'El Galgo' Gutiérrez"
+                - Jorge Borelli
+                - Jorge Burruchaga
+                - Jorge Carrascosa
+                - Jorge Mario Olguín
+                - Jorge Solari
+                - Jorge Valdano
+                - José Basualdo
+                - José Chamot
+                - "José 'Pepe' Chatruc"
+                - José Daniel Valencia
+                - "José Luis 'Tata' Brown"
+                - José Luis Cuciuffo
+                - José Omar Pastoriza
+                - José Serrizuela
+                - "Juan 'Pichi' Mercier"
+                - Juan Pablo Sorín
+                - Juan Román Riquelme
+                - Juan Sebastián Verón
+                - Juan Simón
+                - "Julio 'El Vasco' Olarticoechea"
+                - "Julio Ricardo 'El Jardinero' Cruz"
+                - Leandro Cufré
+                - Leonardo Franco
+                - Leonardo Astrada
+                - Leonardo Rodríguez
+                - Leopoldo Jacinto Luque
+                - Lionel Messi
+                - Lionel Scaloni
+                - Lisandro López
+                - Lucas Biglia
+                - "'Lucho' González"
+                - Luis Artime
+                - Luis Islas
+                - "Marcelo 'El Chelo' Delgado"
+                - Marcelo Gallardo
+                - Marcelo Trobbiani
+                - Marco Ruben
+                - Marcos Acuña
+                - Marcos Rojo
+                - Mariano Andújar
+                - Mario Alberto Kempes
+                - Martín Demichelis
+                - Martín Palermo
+                - Matías Almeyda
+                - Mauricio Pochettino
+                - Mauro Laspada
+                - Maxi Rodríguez
+                - Miguel Ángel Brindisi
+                - "Miguel 'Pepé' Santoro"
+                - Nelson Vivas
+                - Nereo Fernández
+                - Nery Pumpido
+                - Néstor Clausen
+                - "Néstor 'La Tota' Fabbri"
+                - Néstor Ortigoza
+                - Nicolás Burdisso
+                - Nicolás Otamendi
+                - Nicolás Tagliafico
+                - "Norberto 'Beto' Alonso"
+                - "Norberto 'El Gringo' Scoponi"
+                - Omar Larrosa
+                - Oscar Garré
+                - Oscar Ruggeri
+                - Osvaldo Ardiles
+                - Pablo Aimar
+                - Pablo Cavallero
+                - Pablo Zabaleta
+                - Paulo Dybala
+                - Pedro Damián Monzón
+                - Pedro Pasculli
+                - Pedro Troglio
+                - Ramón Heredia
+                - Ramón Medina Bello
+                - René Houseman
+                - Ricardo Álvarez
+                - Ricardo Bochini
+                - Ricardo Giusti
+                - Ricardo Villa
+                - "Roberto 'Pato' Abbondanzieri"
+                - Roberto Ayala
+                - Roberto Bonano
+                - Roberto Perfumo
+                - Roberto Sensini
+                - Rodrigo Palacio
+                - Rolando Hugo Irusta
+                - Rolando Schiavi
+                - "Sergio 'Kun' Agüero"
+                - Sergio Almirón
+                - "Sergio 'Checho' Batista"
+                - "Sergio 'La Bruja' Berti"
+                - Sergio Goycochea
+                - Sergio Romero
+                - Silvio Marzolini
+                - Ubaldo Fillol
+                - Walter Samuel
+            coaches:
+                - Adolfo Pedernera
+                - Alberto Pascutti
+                - Alejandro Sabella
+                - "Alfio 'Coco' Basile"
+                - Alfredo Berti
+                - Alfredo Di Stéfano
+                - Alfredo Grelak
+                - "Américo 'Tolo' Gallego"
+                - Ángel Cappa
+                - Ángel Tulio Zof
+                - Ariel Cuffaro Russo
+                - Ariel Holan
+                - Blas Giunta
+                - Carlos Babington
+                - Carlos Bianchi
+                - Carlos 'Cai' Aimar
+                - Carlos Leeb
+                - Carlos Ischia
+                - Carlos Pachamé
+                - Carlos Ramacciotti
+                - Carlos Salvador Bilardo
+                - Carlos Timoteo Griguol
+                - Carlos Trullet
+                - César Luis Menotti
+                - "'El Chocho' Llop"
+                - "Claudio 'Bichi' Borghi"
+                - "Daniel 'El Indio' Bazán Vera"
+                - Daniel Bertoni
+                - Daniel Oldrá
+                - Daniel Passarella
+                - Darío Franco
+                - Diego Armando Maradona
+                - Diego Cagna
+                - Diego Cocca
+                - Diego Dabove
+                - Diego Monarriz
+                - Diego Osella
+                - Diego Simeone
+                - "Edgardo 'Patón' Bauza"
+                - "Eduardo 'Toto' Berizzo"
+                - "Eduardo 'Chacho' Coudet"
+                - Eduardo Domínguez
+                - Eduardo Luján Manera
+                - Facundo Sava
+                - Fernando Gamboa
+                - "Fernando 'Teté' Quiroz"
+                - "Francisco 'Pancho' Ferraro"
+                - Frank Darío Kudelka
+                - Gabriel Heinze
+                - Gabriel Milito
+                - Gabriel Schürrer
+                - "Gerardo 'Tata' Martino"
+                - Guillermo Barros Schelotto
+                - Guillermo Stábile
+                - Gustavo Alfaro
+                - Gustavo Álvarez
+                - Gustavo Costas
+                - Gustavo 'El Sapito' Coleoni
+                - Gustavo Quinteros
+                - Héctor Cúper
+                - "Héctor 'El Chulo' Rivoira"
+                - "Héctor 'El Bambino' Veira"
+                - Helenio Herrera
+                - Hernán Crespo
+                - "Hernán Darío 'El Indio' Ortiz"
+                - Hugo Tocalli
+                - Humberto Maschio
+                - Jaime Sarlanga
+                - Jorge Almirón
+                - Jorge Burruchaga
+                - Jorge Sampaoli
+                - Jorge Solari
+                - Jorge Valdano
+                - "Jorge 'El Flaco' Vivaldo"
+                - José D'Amico
+                - José María 'El Chaucha' Bianco
+                - José María Minella
+                - José Néstor Pékerman
+                - José Yudica
+                - Juan Amador Sánchez
+                - Juan Antonio Pizzi
+                - Juan Carlos Kopriva
+                - Juan Carlos 'El Toto' Lorenzo
+                - Juan José Pizzuti
+                - Juan José Serrizuela
+                - Juan Pablo Pumpido
+                - Juan Pablo Vojvoda
+                - Julio César Falcioni
+                - Leonardo Astrada
+                - Leonardo Madelón
+                - Lionel Scaloni
+                - Lucas Bernardi
+                - Lucas Pusineri
+                - Luis Islas
+                - Luis Ventura
+                - Luis Zubeldía
+                - Marcelo Bielsa
+                - Marcelo Gallardo
+                - Mariano Soso
+                - Mario Gómez
+                - Mario Sciacqua
+                - Mario Zanabria
+                - Martín Palermo
+                - Matías Almeyda
+                - Mauricio Pellegrino
+                - Mauricio Pochettino
+                - Miguel Ángel Russo
+                - Miguel Brindisi
+                - Nelson Vivas
+                - Nery Pumpido
+                - Néstor Apuzzo
+                - Néstor Craviotto
+                - "Néstor 'Pipo' Gorosito"
+                - Omar De Felippe
+                - Omar Labruna
+                - Omar Sívori
+                - Oscar Malbernat
+                - Oscar Ruggeri
+                - Osvaldo Piazza
+                - "Osvaldo 'Chiche' Sosa"
+                - Osvaldo Zubeldía
+                - Pablo Guede
+                - Pablo Marini
+                - Patricio Hernández
+                - Pedro Marchetta
+                - Pedro Monzón
+                - Pedro Troglio
+                - Ramón Cabrero
+                - Ramón Díaz
+                - "Reinaldo 'Mostaza' Merlo"
+                - Renato Cesarini
+                - Ricardo Caruso Lombardi
+                - Ricardo Gareca
+                - Ricardo La Volpe
+                - Ricardo Rezza
+                - Ricardo Zielinski
+                - Roberto Marcos Saporiti
+                - Roberto Perfumo
+                - Roberto Pompei
+                - Rodolfo de Paoli
+                - Rodolfo Motta
+                - Rodolfo 'El Vasco' Arruabarrena
+                - Rubén Darío Insúa
+                - Rubén Forestello
+                - Salvador Pasini
+                - Sebastián Beccacece
+                - "Sebastián 'El Gallego' Méndez"
+                - Sergio Batista
+                - "Sergio 'El Huevo' Rondina"
+                - Silvio Marzolini
+                - Vladislao Cap
+                - Walter Lemma
+                - Walter Otta
+                - Wálter Perazzo
+            competitions:
+                - "Copa Mundial de Fútbol"
+                - "Copa América"
+                - "Sudamericano Sub-20"
+                - "Copa Libertadores"
+                - "Copa Sudamericana"
+                - "Mundial de Clubes"
+                - "Copa Suruga Bank"
+                - "Copa África"
+                - "Copa de Oro de la Concacaf"
+                - "Copa Asiática"
+                - "Eurocopa"
+                - "Liga de Campeones de África"
+                - "Liga de Campeones de Asia"
+                - "Liga de Campeones de la Concacaf"
+                - "UEFA Champions League"
+                - "UEFA Europa League"
+                - "Supercopa de Europa"
+                - "Recopa Sudamericana"
+                - "Superliga Argentina"
+                - "Copa Diego Armando Maradona"
+                - "Torneo Apertura"
+                - "Torneo Clausura"
+                - "Primera División Argentina"
+                - "Primera Nacional"
+                - "Primera B Metropolitana"
+                - "Primera C"
+                - "Primera D"
+                - "Federal A"
+                - "Federal B"
+                - "Copa Argentina"
+                - "Supercopa Argentina"
+                - "Copa de la Liga Profesional"
+                - "Copa del Bicentenario"
+                - "Copa de la Superliga"
+                - "Trofeo de Campeones de la Superliga"
+            positions:
+                - Arquero
+                - Defensor
+                - Mediocampista
+                - Delantero
+                - Lateral
+                - Central
+                - "4"
+                - "2"
+                - "6"
+                - "3"
+                - "5"
+                - Doble 5
+                - "8"
+                - Lateral Izquierdo
+                - Lateral Derecho
+                - Central por la Izquierda
+                - Central por la Derecha
+                - Líbero
+                - 5 de Marca
+                - 5 de Quite
+                - 5 de Juego
+                - 5 Habilidoso
+                - "7"
+                - Volante por la Derecha
+                - Volante por la Izquierda
+                - "10"
+                - "9"
+                - "11"
+                - Delantero Salidor
+                - Delantero Centro
+                - Enganche
+                - Wing
+                - Centrohalf
+                - Centroforward
+                - Volante con Llegada
+                - Armador
+                - Wing Izquierdo
+                - Wing Derecho
+                - Doble 9
+                - 9 retrasado

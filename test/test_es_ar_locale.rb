@@ -62,4 +62,12 @@ class TestEsArLocale < Test::Unit::TestCase
     assert Faker::Address.country_name_to_code(name: 'estados_unidos').match('US')
     assert Faker::Address.default_country, 'Argentina'
   end
+
+  def test_es_ar_football
+      assert Faker::Sports::Football.team.is_a? String
+      assert Faker::Sports::Football.player.is_a? String
+      assert Faker::Sports::Football.coach.is_a? String
+      assert Faker::Sports::Football.competition.is_a? String
+      assert Faker::Sports::Football.position.is_a? String
+  end
 end
