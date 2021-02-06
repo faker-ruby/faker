@@ -261,4 +261,31 @@ class TestEsArLocale < Test::Unit::TestCase
   def test_es_ar_quarter_wind_azimuth 
     assert Faker::Compass.quarter_wind_azimuth.match(@compass_number_pattern)
   end
+
+  # -- PHONE NUMBERS
+
+  def test_es_ar_phone_number
+    assert Faker::PhoneNumber.phone_number.match(/^\((?:011|0(?:2|3)\d{2,3}|)\) (?:4|5|6)(?:\d{3} \d{4}|\d{2}-\d{4}|\d{5})$/u)
+  end
+
+  def test_es_ar_cell_phone
+    assert Faker::PhoneNumber.cell_phone.match(/^(?:11|(?:2|3)\d{2,3})(?:\-| )(?:4|5|6|7)(?:\d{3}(?:-| )\d{4}|\d{2}(?:-| )\d{4}|\d{5})$/u)
+  end
+
+  def test_es_ar_country_code
+    assert Faker::PhoneNumber.country_code.match(/\+54/u)
+  end
+
+  def test_es_ar_phone_number_with_country_code
+    assert Faker::PhoneNumber.phone_number_with_country_code.match(/^\+54 \((?:011|0(?:2|3)\d{2,3}|)\) (?:4|5|6)(?:\d{3} \d{4}|\d{2}-\d{4}|\d{5})$/u)
+  end
+
+  def test_es_ar_cell_phone_with_country_code
+    assert Faker::PhoneNumber.cell_phone_with_country_code.match(/^\+54 (?:11|(?:2|3)\d{2,3})(?:\-| )(?:4|5|6|7)(?:\d{3}(?:-| )\d{4}|\d{2}(?:-| )\d{4}|\d{5})$/u)
+  end
+
+  def test_es_ar_cell_phone_in_e164
+    assert Faker::PhoneNumber.cell_phone_in_e164.match(/^\+54(?:11|(?:2|3)\d{2,3})(?:4|5|6|7)(?:\d{3}\d{4}|\d{2}\d{4}|\d{5})$/u)
+  end
+
 end
