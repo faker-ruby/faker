@@ -64,10 +64,17 @@ class TestEsArLocale < Test::Unit::TestCase
   end
 
   def test_es_ar_football
-      assert Faker::Sports::Football.team.is_a? String
-      assert Faker::Sports::Football.player.is_a? String
-      assert Faker::Sports::Football.coach.is_a? String
-      assert Faker::Sports::Football.competition.is_a? String
-      assert Faker::Sports::Football.position.is_a? String
+    assert Faker::Sports::Football.team.is_a? String
+    assert Faker::Sports::Football.player.is_a? String
+    assert Faker::Sports::Football.coach.is_a? String
+    assert Faker::Sports::Football.competition.is_a? String
+    assert Faker::Sports::Football.position.is_a? String
+  end
+
+  def test_es_ar_basketball
+    assert Faker::Sports::Basketball.team.is_a? String
+    assert Faker::Sports::Basketball.player.is_a? String
+    assert Faker::Sports::Basketball.coach.is_a? String
+    assert Faker::Sports::Basketball.position.is_a? String
   end
 end
