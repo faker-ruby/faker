@@ -410,6 +410,7 @@ es-AR:
                 - Yamila
                 - Yanina
                 - Zoe
+            neutral_first_name: ""
             first_name:
                 - "#{female_first_name}"
                 - "#{male_first_name}"
@@ -686,6 +687,9 @@ es-AR:
                 - V
             name:
                 - "#{first_name} #{last_name}"
+                - "#{first_name} #{last_name}"
+                - "#{first_name} #{last_name}"
+                - "#{first_name} #{last_name} #{last_name}"
             name_with_middle:
                 - "#{female_first_name} #{female_first_name} #{last_name}"
                 - "#{male_first_name} #{male_first_name} #{last_name}"
@@ -2570,22 +2574,22 @@ es-AR:
                 - Villa Mitre
                 - Villa San Carlos
             players:
-                - "'Anguila' Gutiérrez"
-                - "'Cachete' Oberman"
-                - "'El Chino' Luna"
-                - "'Discoteca' Núñez"
-                - "'El Mugre' Corvalán"
+                - "Marcos 'Anguila' Gutiérrez"
+                - "Gustavo 'Cachete' Oberman"
+                - "Carlos 'El Chino' Luna"
+                - "Carlos 'Discoteca' Núñez"
+                - "Claudio 'El Mugre' Corvalán"
                 - "Fernando 'El Rifle' Pandolfi"
-                - "'La Chancha' Rinaldi"
+                - "Jorge 'La Chancha' Rinaldi"
                 - "Gastón 'La Gata' Fernández"
                 - "Reinaldo 'Mostaza' Merlo"
-                - "'El Payaso' Lugüercio"
-                - "'El Picante' Pereyra"
-                - "'Poroto' Cubero"
-                - "'El Sapito' Encina"
-                - "'Terremoto' Cejas"
-                - "'El Trinche' Carlovich"
-                - "'Uvita' Fernández"
+                - "Pablo 'El Payaso' Lugüercio"
+                - "César 'El Picante' Pereyra"
+                - "Fabián 'Poroto' Cubero"
+                - "Hernán 'El Sapito' Encina"
+                - "Sebastián 'Terremoto' Cejas"
+                - "Tomás 'El Trinche' Carlovich"
+                - "Nicolás 'Uvita' Fernández"
                 - Abel Balbo
                 - Agustín Orión
                 - "Alberto 'Beto' Márcico"
@@ -3228,6 +3232,7 @@ es-AR:
                 - Voluntario de Primera
                 - Voluntario de Segunda
             space_force_rank: ""
+
         compass:
             cardinal:
                 word:
