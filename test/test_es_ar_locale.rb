@@ -86,4 +86,22 @@ class TestEsArLocale < Test::Unit::TestCase
     assert Faker::Military.air_force_rank.is_a? String
     assert Faker::Military.space_force_rank.is_a? String
   end
+
+  def test_es_ar_compass
+    assert Faker::Compass.cardinal.is_a? String
+    assert Faker::Compass.ordinal.is_a? String
+    assert Faker::Compass.half_wind.is_a? String
+    assert Faker::Compass.quarter_wind.is_a? String
+    assert Faker::Compass.direction.is_a? String
+    assert Faker::Compass.abbreviation.is_a? String
+    assert Faker::Compass.azimuth.is_a? String
+    assert Faker::Compass.cardinal_abbreviation.is_a? String
+    assert Faker::Compass.ordinal_abbreviation.is_a? String
+    assert Faker::Compass.half_wind_abbreviation.is_a? String
+    assert Faker::Compass.quarter_wind_abbreviation.is_a? String
+    assert Faker::Compass.cardinal_azimuth.is_a? String
+    assert Faker::Compass.ordinal_azimuth.is_a? String
+    assert Faker::Compass.half_wind_azimuth.is_a? String
+    assert Faker::Compass.quarter_wind_azimuth.is_a? String
+  end
 end

@@ -3228,3 +3228,80 @@ es-AR:
                 - Voluntario de Primera
                 - Voluntario de Segunda
             space_force_rank: ""
+        compass:
+            cardinal:
+                word:
+                    - norte
+                    - este
+                    - sur
+                    - oeste
+                abbreviation:
+                    - "N"
+                    - E
+                    - S
+                    - O
+            ordinal:
+                word:
+                    - noreste
+                    - sureste
+                    - suroeste
+                    - noroeste
+                abbreviation:
+                    - NE
+                    - SE
+                    - SO
+                    - "NO"
+            half-wind:
+                word:
+                    - nornoreste
+                    - estenoreste
+                    - estesureste
+                    - sursureste
+                    - sursuroeste
+                    - oestesuroeste
+                    - oesenoroeste
+                    - nornoroeste
+                abbreviation:
+                    - NNE
+                    - ENE
+                    - ESE
+                    - SSE
+                    - SSO
+                    - OSO
+                    - ONO
+                    - NNO
+            quarter-wind:
+                word:
+                    - norte por el noreste
+                    - noreste por el norte
+                    - noreste por el este
+                    - este por el noreste
+                    - este por el sureste
+                    - sureste por el este
+                    - sureste por el sur
+                    - sur por el sureste
+                    - sur por el suroeste
+                    - suoreste por el sur
+                    - suroeste por el oeste
+                    - oeste por el suroeste
+                    - oeste por el noroeste
+                    - noroeste por el oeste
+                    - noroeste por el norte
+                    - norte por el noroeste
+                abbreviation:
+                    - NpNE
+                    - NEpN
+                    - NEpE
+                    - EpNE
+                    - EpSE
+                    - SEpE
+                    - SEpS
+                    - SpSE
+                    - SpSO
+                    - SOpS
+                    - SOpO
+                    - OpSO
+                    - OpNO
+                    - NOpO
+                    - NOpN
+                    - NpNO
