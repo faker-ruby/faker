@@ -77,4 +77,13 @@ class TestEsArLocale < Test::Unit::TestCase
     assert Faker::Sports::Basketball.coach.is_a? String
     assert Faker::Sports::Basketball.position.is_a? String
   end
+  
+  def test_es_ar_military
+    assert Faker::Military.army_rank.is_a? String
+    assert Faker::Military.marines_rank.is_a? String
+    assert Faker::Military.navy_rank.is_a? String
+    assert Faker::Military.coast_guard_rank.is_a? String
+    assert Faker::Military.air_force_rank.is_a? String
+    assert Faker::Military.space_force_rank.is_a? String
+  end
 end

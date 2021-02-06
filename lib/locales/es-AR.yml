@@ -3141,3 +3141,90 @@ es-AR:
                 - Alero
                 - Ala-Pivot
                 - Pivot
+
+        military:
+            army_rank:
+                - Teniente General
+                - General de División
+                - General de Brigada
+                - Coronel Mayor
+                - Coronel
+                - Teniente Coronel
+                - Mayor
+                - Capitán
+                - Teniente Primero
+                - Teniente
+                - Subteniente
+                - Suboficial Mayor
+                - Suboficial Principal
+                - Sargento Ayudante
+                - Sargento Primero
+                - Sargento
+                - Cabo Primero
+                - Cabo
+                - Voluntario de Primera
+                - Voluntario de Segunda
+                - Voluntario de Segunda Comisión
+            marines_rank: ""
+            navy_rank:
+                - Almirante
+                - Vicealmirante
+                - Contraalmirante
+                - Comodoro de Marina
+                - Capitán de Navío
+                - Capitán de Fragata
+                - Capitán de Corbeta
+                - Teniente de Navío
+                - Teniente de Fragata
+                - Teniente de Corbeta
+                - Guardiamarina
+                - Suboficial Mayor
+                - Suboficial Principal
+                - Suboficial Primero
+                - Suboficial Segundo
+                - Cabo Principal
+                - Cabo Primero
+                - Cabo Segundo
+                - Marinero de Primera
+                - Marinero de Segunda
+            coast_guard_rank:
+                - Prefecto General - Prefecto Nacional Naval
+                - Prefecto General - Subprefecto Nacional Naval
+                - Prefecto General
+                - Prefecto Mayor
+                - Prefecto Principal
+                - Prefecto
+                - Subprefecto
+                - Oficial Principal
+                - Oficial Auxiliar
+                - Oficial Ayudante
+                - Ayudante Mayor
+                - Ayudante Principal
+                - Ayudante de Primera
+                - Ayudante de Segunda
+                - Ayudante de Tercera
+                - Cabo Primero
+                - Cabo Segundo
+                - Marinero
+            air_force_rank:
+                - Brigadier General
+                - Brigadier Mayor
+                - Brigadier
+                - Comodoro Mayor
+                - Comodoro
+                - Vicecomodoro
+                - Mayor
+                - Capitán
+                - Primer Teniente
+                - Teniente
+                - Alferez
+                - Suboficial Mayor
+                - Suboficial Principal
+                - Suboficial Ayudante
+                - Suboficial Auxiliar
+                - Cabo Principal
+                - Cabo Primero
+                - Cabo
+                - Voluntario de Primera
+                - Voluntario de Segunda
+            space_force_rank: ""
