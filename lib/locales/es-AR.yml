@@ -3668,3 +3668,529 @@ es-AR:
                 - Yen japonés
                 - Yuan chino
                 - Złoty polaco
+
+        nation:
+            # This list is taken from https://es.wikipedia.org/wiki/Anexo:Gentilicios
+            nationality:
+                - afgano
+                - albanés
+                - alemán
+                - andorrano
+                - angoleño
+                - anguilense
+                - antiguano
+                - saudí
+                - argelino
+                - argentino
+                - armenio
+                - arubeño
+                - australiano
+                - austriaco
+                - azerbaiyano
+                - bahameño
+                - bangladesí
+                - barbadense
+                - bareiní
+                - belga
+                - beliceño
+                - beninés
+                - bermudeño
+                - bielorruso
+                - birmano
+                - boliviano
+                - bosnio
+                - botsuano
+                - brasileño
+                - bruneano
+                - búlgaro
+                - burkinés
+                - burundés
+                - butanés
+                - caboverdiano
+                - camboyano
+                - camerunés
+                - canadiense
+                - catarí
+                - chadiano
+                - chileno
+                - chino
+                - chipriota
+                - vaticano
+                - colombiano
+                - comorense
+                - norcoreano
+                - surcoreano
+                - marfileño
+                - costarricense
+                - croata
+                - cubano
+                - curazoleño
+                - danés
+                - dominiqués
+                - ecuatoriano
+                - egipcio
+                - salvadoreño
+                - emiratí
+                - eritreo
+                - eslovaco
+                - esloveno
+                - español
+                - micronesio
+                - estadounidense
+                - estonio
+                - etíope
+                - filipino
+                - finlandés
+                - fiyiano
+                - francés
+                - gabonés
+                - gambiano
+                - georgiano
+                - ghanés
+                - gibraltareño
+                - granadino
+                - griego
+                - groenlandés
+                - guameño
+                - guatemalteco
+                - guerneseyés
+                - guineano
+                - guineano
+                - guineano
+                - guyanés
+                - haitiano
+                - hondureño
+                - hongkonés
+                - húngaro
+                - indio
+                - indonesio
+                - iraquí
+                - iraní
+                - irlandés
+                - manés
+                - navideño
+                - norfolkense
+                - islandés
+                - caimanés
+                - cocano
+                - cookiano
+                - feroés
+                - malvinense
+                - chamorro
+                - marshalés
+                - pitcairnés
+                - salomonense
+                - turcocaiqueño
+                - virgenense británico
+                - virgenense estadounidense
+                - israelí
+                - italiano
+                - jamaicano
+                - japonés
+                - jerseyés
+                - jordano
+                - kazajo
+                - keniano
+                - kirguís
+                - kiribatiano
+                - kosovar
+                - kuwaití
+                - laosiano
+                - lesotense
+                - letón
+                - libanés
+                - liberiano
+                - libio
+                - liechtensteiniano
+                - lituano
+                - luxemburgués
+                - macaense
+                - macedonio
+                - malgache
+                - malasio
+                - malauí
+                - maldivo
+                - maliense
+                - maltés
+                - marroquí
+                - mauriciano
+                - mauritano
+                - mexicano
+                - moldavo
+                - monegasco
+                - mongol
+                - montenegrino
+                - monserratino
+                - mozambiqueño
+                - namibio
+                - nauruano
+                - nepalés
+                - nicaragüense
+                - nigerino
+                - nigeriano
+                - niueño
+                - noruego
+                - neocaledonio
+                - neocelandés
+                - omaní
+                - surosetio
+                - holandés
+                - pakistaní
+                - palauano
+                - palestino
+                - panameño
+                - papuano
+                - paraguayo
+                - peruano
+                - francopolinesio
+                - polaco
+                - portugués
+                - puertorriqueño
+                - británico
+                - centroafricano
+                - checo
+                - taiwanés
+                - congoleño
+                - congoleño
+                - dominicano
+                - ruandés
+                - rumano
+                - ruso
+                - saharaui
+                - samoano
+                - samoamericano
+                - sanbartolomeano
+                - sancristobaleño
+                - sanmarinense
+                - sanmartitense
+                - sanpedrino
+                - sanvicentino
+                - santaheleno
+                - santalucense
+                - santotomense
+                - senegalés
+                - serbio
+                - seychellense
+                - sierraleonés
+                - singapurense
+                - sirio
+                - somalí
+                - somalilandés
+                - ceilanés
+                - suazi
+                - sudafricano
+                - sudanés
+                - sursudanés
+                - sueco
+                - suizo
+                - surinamés
+                - svalbarense
+                - tailandés
+                - tanzano
+                - tayiko
+                - timorense
+                - togolés
+                - tokelauense
+                - tongano
+                - transnistrio
+                - trinitense
+                - tunecino
+                - turcomano
+                - turco
+                - tuvaluano
+                - ucraniano
+                - ugandés
+                - uruguayo
+                - uzbeko
+                - vanuatuense
+                - venezolano
+                - vietnamita
+                - walisiano
+                - yemení
+                - yibutiano
+                - zambiano
+                - zimbabuense
+            # This list is taken from https://es.wikipedia.org/wiki/Anexo:Gentilicios
+            capital_city:
+                - Abiyán
+                - Abu Dabi
+                - Abuya
+                - Acra
+                - Adamstown
+                - Adís Abeba
+                - Agaña
+                - Alofi
+                - Amán
+                - Ámsterdam
+                - Andorra la Vieja
+                - Ankara
+                - Antananarivo
+                - Apia
+                - Argel
+                - Asjabad
+                - Asmara
+                - Asunción
+                - Atafu
+                - Atenas
+                - Avarua
+                - Bagdad
+                - Bakú
+                - Bamako
+                - Bandar Seri Begawan
+                - Bangkok
+                - Bangui
+                - Banjul
+                - Basseterre
+                - Beirut
+                - Belgrado
+                - Belmopán
+                - Berlín
+                - Berna
+                - Bisau
+                - Biskek
+                - Bogotá
+                - Brades
+                - Brasilia
+                - Bratislava
+                - Brazzaville
+                - Bridgetown
+                - Bruselas
+                - Bucarest
+                - Budapest
+                - Buenos Aires
+                - Buyumbura
+                - Canberra
+                - Caracas
+                - Castries
+                - Charlotte Amalie
+                - Chisinau
+                - Ciudad de Guatemala
+                - Ciudad de Kuwait
+                - Ciudad de México
+                - Ciudad de San Marino
+                - Ciudad del Vaticano
+                - Cockburn Town
+                - Colombo
+                - Conakri
+                - Copenhague
+                - Daca
+                - Dakar
+                - Damasco
+                - Dili
+                - Dodoma
+                - Doha
+                - Donetsk
+                - Douglas
+                - Dublín
+                - Dusambé
+                - El Aaiún
+                - El Cairo
+                - El Valle
+                - Ereván
+                - Estocolmo
+                - Flying Fish Cove
+                - Freetown
+                - Funafuti
+                - Gaborone
+                - Gaza
+                - George Town
+                - Georgetown
+                - Gibraltar
+                - Gustavia
+                - Hamilton
+                - Hanói
+                - Harare
+                - Hargeisa
+                - Helsinki
+                - Hong Kong
+                - Honiara
+                - Islamabad
+                - Jamestown
+                - Jartum
+                - Jerusalén
+                - Kabul
+                - Kampala
+                - Katmandú
+                - Kiev
+                - Kigali
+                - Kingston
+                - Kingstown
+                - Kinsasa
+                - Kuala Lumpur
+                - La Habana
+                - La Paz
+                - La Valeta
+                - Libreville
+                - Lilongüe
+                - Lima
+                - Lisboa
+                - Liubliana
+                - Lobamba
+                - Lomé
+                - Londres
+                - Longyearbyen
+                - Luanda
+                - Lusaka
+                - Luxemburgo
+                - Macao
+                - Madrid
+                - Majuro
+                - Malabo
+                - Malé
+                - Managua
+                - Manama
+                - Manila
+                - Maputo
+                - Marigot
+                - Mascate
+                - Maseru
+                - Mata-Utu
+                - Melekeok
+                - Minsk
+                - Mogadiscio
+                - Mónaco
+                - Monrovia
+                - Montevideo
+                - Moroni
+                - Moscú
+                - Naipyidó
+                - Nairobi
+                - Nasáu
+                - Niamey
+                - Nicosia
+                - Nom Pen
+                - Nuakchot
+                - Nueva Delhi
+                - Nukualofa
+                - Numea
+                - Nur-Sultán
+                - Nuuk
+                - Oranjestad
+                - Oslo
+                - Ottawa
+                - Pago Pago
+                - Palikir
+                - Panamá
+                - Papeete
+                - Paramaribo
+                - París
+                - Pekín
+                - Pionyang
+                - Podgorica
+                - Port Louis
+                - Port Moresby
+                - Port Vila
+                - Porto Novo
+                - Praga
+                - Praia
+                - Pretoria
+                - Pristina
+                - Puerto Argentino
+                - Puerto España
+                - Puerto Príncipe
+                - Quito
+                - Rabat
+                - Reikiavik
+                - Riad
+                - Riga
+                - Road Town
+                - Roma
+                - Roseau
+                - Saint George's
+                - Saint Helier
+                - Saint John
+                - Saint Peter Port
+                - Saipán
+                - San José
+                - San Juan
+                - San Pedro
+                - San Salvador
+                - Saná
+                - Santiago de Chile
+                - Santo Domingo
+                - Santo Tomé
+                - Sarajevo
+                - Seúl
+                - Singapur
+                - Skopie
+                - Sofía
+                - Suva
+                - Taipéi
+                - Tallin
+                - Tarawa
+                - Taskent
+                - Tegucigalpa
+                - Teherán
+                - Tiflis
+                - Timbu
+                - Tirana
+                - Tiráspol
+                - Tokio
+                - Tórshavn
+                - Trípoli
+                - Tsjinval
+                - Túnez
+                - Uagadugú
+                - Ulán Bator
+                - Vaduz
+                - Varsovia
+                - Victoria
+                - Viena
+                - Vientián
+                - Vilna
+                - Washington DC.
+                - Wellington
+                - West Island
+                - Willemstad
+                - Windhoek
+                - Yakarta
+                - Yamena
+                - Yaren
+                - Yaundé
+                - Yibuti
+                - Yuba
+                - Zagreb
+            # This list is taken from https://es.wikipedia.org/wiki/Anexo:Idiomas_por_el_total_de_hablantes
+            # Spanish languages added to that list
+            language:
+                - Alemán​
+                - Amárico​
+                - Árabe
+                - Árabe egipcio​
+                - Aragonés
+                - Asturleonés
+                - Bengalí
+                - Bhoshpuri​
+                - Canarés​
+                - Catalán
+                - Chino cantonés​
+                - Chino mandarín
+                - Chino Mǐn Nán​
+                - Chino Wu​
+                - Coreano​
+                - Castellano
+                - Euskera/Vasco
+                - Francés
+                - Gallego
+                - Guyarati​
+                - Hausa​
+                - Hindi
+                - Indonesio​
+                - Inglés
+                - Italiano​
+                - Japonés​
+                - Javanés​
+                - Maratí​
+                - Occitano-Aranés
+                - Panyabí occidental​
+                - Persa iraní​
+                - Portugués
+                - Ruso
+                - Suajili​
+                - Tailandés​
+                - Tamil​
+                - Telugú​
+                - Turco​
+                - Urdu​
+                - Valenciano
+                - Vietnamita​

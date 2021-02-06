@@ -315,5 +315,23 @@ class TestEsArLocale < Test::Unit::TestCase
   def test_es_ar_currency_names
     assert Faker::Currency.name.match(@one_or_more_words_pattern)
   end
+  
+  # -- NATIONS
+  
+  def test_es_ar_nation_nationalities
+    assert Faker::Nation.nationality.match(@one_or_more_words_pattern)
+  end
+  
+  def test_es_ar_nation_languages
+    assert Faker::Nation.language.match(@one_or_more_words_pattern)
+  end
+  
+  def test_es_ar_nation_capital_city
+    assert Faker::Nation.capital_city.match(@one_or_more_words_pattern)
+  end
+
+  def test_es_ar_national_sport
+    assert Faker::Nation.national_sport.match(@one_or_more_words_pattern)
+  end
 
 end
