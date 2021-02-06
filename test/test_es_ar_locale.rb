@@ -288,4 +288,10 @@ class TestEsArLocale < Test::Unit::TestCase
     assert Faker::PhoneNumber.cell_phone_in_e164.match(/^\+54(?:11|(?:2|3)\d{2,3})(?:4|5|6|7)(?:\d{3}\d{4}|\d{2}\d{4}|\d{5})$/u)
   end
 
+  # -- BANK
+
+  def test_es_ar_bank_names
+    assert Faker::Bank.name.match(@one_or_more_words_pattern)
+  end
+
 end

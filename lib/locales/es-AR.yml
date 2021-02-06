@@ -3343,3 +3343,49 @@ es-AR:
                 - "3### 6#####"
                 - "11-7###-####"
         country_code: "54"
+
+        bank:
+            name:
+                - Banco Galicia
+                - Banco Nación
+                - Banco de la Provincia de Buenos Aires
+                - ICBC
+                - Citibank
+                - BBVA Argentina
+                - BanCor
+                - Banco Supervielle
+                - Banco Ciudad
+                - Banco Patagonia
+                - Banco Hipotecario
+                - Banco de San Juan
+                - Banco Municipal de Rosario
+                - Banco Santander Río
+                - Banco del Chubut
+                - Banco de Santa Cruz
+                - Banco de La PAmpa
+                - Banco de Corrientes
+                - Banco Provincia del Neuquén
+                - Brubank
+                - Banco Interfinanzas
+                - HSBC
+                - Banco Credicoop
+                - Banco Itaú
+                - BNP Paribas
+                - Banco de la Provincia de Tierra del Fuego
+                - Banco de la República Oriental del Uruguay
+                - Banco Macro
+                - Banco Comafi
+                - BICE
+                - Banco Piano
+                - Banco Rioja
+                - Banco del Sol
+                - Nuevo Banco del Chaco
+                - Banco Voii
+                - Banco de Formosa
+                - Banco de Santiago del Estero
+                - Banco Industrial
+                - Nuevo Banco de Santa Fe
+                - Banco Bradesco
+                - Wilobank
+                - Nuevo Banco de Entre Ríos
+                - Banco Columbia
