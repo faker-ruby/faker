@@ -299,5 +299,11 @@ class TestEsArLocale < Test::Unit::TestCase
   def test_es_ar_color_names
     assert Faker::Color.color_name.match(@one_or_more_words_pattern)
   end
+  
+  # -- CURRENCIES
+  
+  def test_es_ar_currency_names
+    assert Faker::Currency.name.match(@one_or_more_words_pattern)
+  end
 
 end
