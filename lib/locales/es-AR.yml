@@ -4194,3 +4194,410 @@ es-AR:
                 - Urdu​
                 - Valenciano
                 - Vietnamita​
+
+        company:
+            prefix:
+                - Grupo
+                - Comercializadora
+            suffix:
+                - SA
+                - e Hijos
+                - SRL
+                - Group
+            bs:
+                - [
+                      "implementar",
+                      "utilizar",
+                      "integrar",
+                      "aerodinamizar",
+                      "optimizar",
+                      "evolucionar",
+                      "transformar",
+                      "adoptar",
+                      "habilitar",
+                      "orquestrar",
+                      "apalancar",
+                      "reinventar",
+                      "sumar",
+                      "arquitectar",
+                      "realzar",
+                      "incentivar",
+                      "mutar",
+                      "empoderar",
+                      "visualizar",
+                      "monetizar",
+                      "aprovechar",
+                      "facilitar",
+                      "sujetar",
+                      "desintermediar",
+                      "sinergizar",
+                      "estrategizar",
+                      "desplegar",
+                      "marcar",
+                      "crecer",
+                      "apuntar",
+                      "vender",
+                      "sintetizar",
+                      "entregar",
+                      "interconectar",
+                      "incubar",
+                      "involucrar",
+                      "maximizar",
+                      "comparar",
+                      "expedir",
+                      "reintermediar",
+                      "diagramar",
+                      "visualizar",
+                      "reconvertir",
+                      "innovar",
+                      "escalar",
+                      "desatar",
+                      "impulsar",
+                      "extender",
+                      "construir",
+                      "revolucionar",
+                      "generar",
+                      "explotar",
+                      "transicionar",
+                      "habilitar digitalmente",
+                      "iterar",
+                      "cultivar",
+                      "conglomerar",
+                      "productizar",
+                      "redefinir",
+                      "recontextualizar",
+                  ]
+                - [
+                      "la fisicalidad",
+                      "el valor agregado",
+                      "la verticalidad",
+                      "la proactividad",
+                      "la robustez",
+                      "la revolucionaridad",
+                      "la escalabilidad",
+                      "la modernidad",
+                      "la innovación",
+                      "la intuitividad",
+                      "la estrategicidad",
+                      "el desarrollo comercial web",
+                      "la cualidad crítica de las misiones",
+                      "la adherencia",
+                      "la individualidad",
+                      "la disponibilidad 24/7",
+                      "la disponibilidad punta a punta",
+                      "la globalidad",
+                      "la conexión negocio a negocios",
+                      "la conexión negocio a cliente",
+                      "la granularidad",
+                      "la falta de fricción",
+                      "la virtualidad",
+                      "la viralidad",
+                      "el dinamismo",
+                      "la disponibilidad 24/365",
+                      "la ejemplaridad",
+                      "la superioridad",
+                      "el magnetismo",
+                      "el atractivo",
+                      "la performance en el back-end",
+                      "la simultaneidad",
+                      "la eficiecia",
+                      "la performance en el front-end",
+                      "la distributividad",
+                      "la continuidad",
+                      "la extensibilidad",
+                      "la preconfiguración",
+                      "la clase mundial",
+                      "la apertura",
+                      "la interoperabilidad",
+                      "la disponibilidad mediática",
+                      "la originalidad",
+                      "la cualidad empresarial",
+                      "la integración",
+                      "el impacto",
+                      "la libertad",
+                      "la transparencia",
+                      "la cualidad de avanzada",
+                      "la tecnología de punta",
+                      "la experiencia centrada en el usuario",
+                      "la visión",
+                      "la adaptabilidad",
+                      "la presencia contínua",
+                      "la rápidez",
+                      "la colaboratividad",
+                      "la persuasión",
+                      "la integralidad",
+                      "la riqueza",
+                  ]
+                - [
+                      "de las sinergias",
+                      "de la disposición web",
+                      "de los paradigmas",
+                      "de los mercados",
+                      "de las sociedades",
+                      "de las infraestructuras",
+                      "de las plataformas",
+                      "de las iniciativas",
+                      "de los canales",
+                      "de las visiones",
+                      "de las comunidades",
+                      "de los retornos",
+                      "de las soluciones",
+                      "de las ventas digiales",
+                      "de los servicios digitales",
+                      "de los puntos de acción",
+                      "de los portales",
+                      "de los nichos",
+                      "de las tecnologías",
+                      "de los contenidos",
+                      "de los portales virtuales",
+                      "de las cadenas de abastecimiento",
+                      "de la convergencia",
+                      "de las relaciones",
+                      "de las arquitecturas",
+                      "de las interfaces",
+                      "de los mercados digitales",
+                      "de el comercio digital",
+                      "de los sistemas",
+                      "de el ancho de banda",
+                      "de los intermediarios",
+                      "de los modelos",
+                      "de el mindshare",
+                      "de las entregas",
+                      "de los usuarios",
+                      "de los esquemas",
+                      "de las redes",
+                      "de las aplicaciones",
+                      "de las métricas",
+                      "de los negocios digitales",
+                      "de las funcionalidades",
+                      "de las experiencias",
+                      "de los servicios web",
+                      "de las metodologías",
+                  ]
+            name:
+                - "#{prefix} #{Name.last_name}"
+                - "#{Name.last_name} #{suffix}"
+                - "#{Name.last_name}-#{Name.last_name}"
+                - "#{Name.last_name}, #{Name.last_name} y asociados"
+                - "#{Name.last_name} y #{Name.last_name} #{suffix}"
+            industry:
+                - Defensa y Aeroespacial
+                - Hardware
+                - Desarrollo de Software
+                - Internet
+                - Semiconductores
+                - Telecomunicaciones
+                - Servicios legales
+                - Consultoría
+                - Biotecnología
+                - Medicina
+                - Cuidado de la Salud
+                - Farmacéutica
+                - Veterinaria
+                - Dispositivos Médicos
+                - Cosméticos
+                - Moda
+                - Productos deportivos
+                - Tabaco
+                - Supermercado
+                - Alimenticio
+                - Electrónica
+                - Mueblería
+                - Retail
+                - Entretenimiento
+                - Apuestas y Casinos
+                - Turismo
+                - Hospitalidad
+                - Restaurants
+                - Deportes
+                - Comida y Bebida
+                - Audiovisual
+                - Medios de Comunicación
+                - Museos e Instituciones
+                - Artes plásticas
+                - Actuación
+                - Servicios e instalaciones de Recreación
+                - Bancos
+                - Seguros
+                - Servicios Financieros
+                - Real Estate
+                - Banca de Inversión
+                - Administración de Inversiones
+                - Contabilidad
+                - Construcción
+                - Materiales de Construcción
+                - Arquitectura y Planeamiento
+                - Ingeniería Civil
+                - Aviación
+                - Automotriz
+                - Química
+                - Maquinaria
+                - Minería
+                - Petróleo y Energía
+                - Astilleros
+                - Textiles
+                - Productos Forestales y de Papel
+                - Manufactura Ferroviaria
+                - Agricultura
+                - Ganadería
+                - Lácteos
+                - Pesca
+                - Educación Primaria / Secundaria
+                - Education Universitaria
+                - Investigación
+                - Militar
+                - Poder Legislativo
+                - Poder Judicial
+                - Relaciones Internacionales
+                - Administración y Gobierno
+                - Poder Ejecutivo
+                - Fuerzas de Seguridad
+                - Políticas Públicas
+                - Marketing y Publicidad
+                - Periódicos
+                - Imprentas
+                - Servicios de Información
+                - Librerías
+                - Servicios del Medio Ambiente
+                - Logística
+                - Servicios Individuales y Familiares
+                - Instituciones Religiosas
+                - Organizaciones Cívicas y Sociales
+                - Servicios al Consumidor
+                - Almacenamiento
+                - Servicios Marítimos
+                - Tecnologías y Servicios de la Información
+                - Investigación de Mercados
+                - Relaciones Públicas y Comunicaciones
+                - Diseño
+                - ONGs
+                - Editorial
+                - Recursos Humanos
+                - Entrenamiento Profesional y Coaching
+                - Capital de Riesgo
+                - Organización Política
+                - Traducción
+                - Juegos Electrónicos
+                - Eventos
+                - Artesanías
+                - Manufactura Eléctrica y Electrónica
+                - Medios en línea
+                - Nanotecnología
+                - Música
+                - Plásticos
+                - Seguridad Digital
+                - Resolución de Disputas
+                - Investigaciones y Seguridad
+                - Servicios de Instalaciones
+                - Servicios Tercerizados
+                - Gimnasios
+                - Medicina Alternativa
+                - Producción de Medios
+                - Animación
+                - Inmuebles Comerciales
+                - Mercados de Capitales
+                - Think Tanks
+                - Filantropía
+                - Aprendizaje en línea
+                - Mayorista
+                - Comercio Exterior
+                - Ingeniería Mecánica o Industrial
+                - Fotografía
+                - Equipamiento Industrial
+                - Salud Mental
+                - Diseño Gráfico
+                - Bebidas Alcohólicas
+                - Joyería y Bienes de Lujo
+                - Energías Renovables
+                - Vidrio y Cerámica
+                - Empaques y Contenedores
+                - Automatización Industrial
+            profession:
+                - maestro
+                - actor
+                - músico
+                - filósofo
+                - escritor
+                - doctor
+                - contador
+                - agricultor
+                - arquitecto
+                - economista
+                - ingeniero
+                - intérprete
+                - abogado
+                - libreri
+                - estadístico
+                - responsable de recursos humanos
+                - bombero
+                - juez
+                - policía
+                - astrónomo
+                - biólogo
+                - químico
+                - físico
+                - programador
+                - desarrollador web
+                - diseñador
+                - actriz
+                - controlador de tráfico aéreo
+                - artista
+                - banquero
+                - bartender
+                - peluquero
+                - administrador
+                - constructor
+                - empresario
+                - carnicero
+                - carpintero
+                - cajero
+                - chef
+                - coach
+                - dentista
+                - desarrollador
+                - nutricionista
+                - editor
+                - electricista
+                - operario
+                - granjero
+                - pescador
+                - jardinero
+                - estilista
+                - periodista
+                - legislador
+                - profesor
+                - guardavidas
+                - mecánico
+                - modelo
+                - presentador de noticias
+                - enfermero
+                - óptico
+                - pintor
+                - farmacista
+                - fotógrafo
+                - piloto
+                - plomero
+                - político
+                - cartero
+                - recepcionista
+                - científico
+                - secretario
+                - vendedor
+                - soldado
+                - sastre
+                - tachero
+                - traductor
+                - zorro
+                - agente de turismo
+                - veterinario
+                - mozo
+                - limpiador de ventanas
+            type:
+                - Compañía Pública
+                - Institución Educativa
+                - Autónomo
+                - Monotributista
+                - Empleado en negro
+                - Agencia de Gobierno
+                - ONG
+                - Sociedad

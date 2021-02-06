@@ -333,5 +333,30 @@ class TestEsArLocale < Test::Unit::TestCase
   def test_es_ar_national_sport
     assert Faker::Nation.national_sport.match(@one_or_more_words_pattern)
   end
+  
+  # -- COMPANY
 
+  def test_es_ar_company_name
+    assert Faker::Company.name.match(@one_or_more_words_pattern)
+  end
+
+  def test_es_ar_company_suffix
+    assert Faker::Company.suffix.match(@one_or_more_words_pattern)
+  end
+
+  def test_es_ar_company_industry
+    assert Faker::Company.industry.match(@one_or_more_words_pattern)
+  end
+
+  def test_es_ar_company_bs
+    assert Faker::Company.bs.match(@one_or_more_words_pattern)
+  end
+
+  def test_es_ar_company_type
+    assert Faker::Company.type.match(@one_or_more_words_pattern)
+  end
+
+  def test_es_ar_company_profession
+    assert Faker::Company.profession.match(@one_or_more_words_pattern)
+  end
 end
