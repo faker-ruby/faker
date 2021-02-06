@@ -3000,6 +3000,7 @@ es-AR:
                 - Wing Derecho
                 - Doble 9
                 - 9 retrasado
+
         basketball:
             teams:
                 - 9 de Julio de Río Tercero
@@ -3145,6 +3146,60 @@ es-AR:
                 - Alero
                 - Ala-Pivot
                 - Pivot
+
+        team:
+            sport:
+                - fútbol
+                - basquet
+                - vóley
+                - handball
+                - ténis
+                - paddle
+                - rugby
+                - ping-pong
+                - waterpolo
+                - hockey
+                - truco
+            team_prefix:
+                - 25 de Mayo de
+                - 9 de Julio de
+                - A.A.
+                - Argentino de
+                - Asociación Atlética
+                - Atenas de
+                - Atlético
+                - Belgrano de
+                - C.A.
+                - Club Atlético
+                - Comunicaciones
+                - Defensores de
+                - Deportivo
+                - Estudiantes de
+                - Gimnasia de
+                - Gimnasia y Esgrima de
+                - Independiente de
+                - Libertad de
+                - Luz y Fuerza de
+                - Mitre de
+                - Olímpico de
+                - Peñarol de
+                - Quilmes de
+                - Rivadavia de
+                - San Martín
+                - San Martín de
+                - Sportivo
+                - Unión de
+            team_suffix:
+                - FC.
+                - Fútbol Club
+                - Athletic Club
+                - A.C.
+                - Tennis Club
+                - Rugby Club
+                - Basket
+            name:
+                - "#{team_prefix} #{Address.city}"
+                - "#{Address.city} #{team_suffix}"
 
         military:
             army_rank:

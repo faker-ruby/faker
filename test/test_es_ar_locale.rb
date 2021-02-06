@@ -58,7 +58,7 @@ class TestEsArLocale < Test::Unit::TestCase
   
   # -- ADDRESS
 
-  # ---- CITY
+  # -- -- CITY
 
   def test_es_ar_city_prefix
     assert Faker::Address.city_prefix.match(@one_or_more_words_pattern)
@@ -72,7 +72,7 @@ class TestEsArLocale < Test::Unit::TestCase
     assert Faker::Address.city.match(@one_or_more_words_pattern)
   end
 
-  # ----- STATE
+  # -- -- STATE
   
   def test_es_ar_state
     assert Faker::Address.state.match(@one_or_more_words_pattern)
@@ -82,7 +82,7 @@ class TestEsArLocale < Test::Unit::TestCase
     assert Faker::Address.state_abbr.match(/(\w+\.*)/u)
   end
 
-  # ----- ADDRESS
+  # -- -- ADDRESS
 
   def test_es_ar_building_number
     assert Faker::Address.building_number.match(/(S\/N|\d{2,5})/u)
@@ -116,7 +116,7 @@ class TestEsArLocale < Test::Unit::TestCase
     assert Faker::Address.full_address.is_a? String
   end
 
-  # ---- COUNTRY
+  # -- -- COUNTRY
 
   def test_es_ar_country
     assert Faker::Address.country.match(@one_or_more_words_pattern)
@@ -172,6 +172,16 @@ class TestEsArLocale < Test::Unit::TestCase
 
   def test_es_ar_basketball_position
     assert Faker::Sports::Basketball.position.match(@one_or_more_words_pattern)
+  end
+  
+  # -- TEAMS  
+
+  def test_es_ar_team_name
+    assert Faker::Team.name.match(@many_words_pattern)
+  end
+
+  def test_es_ar_team_sport
+    assert Faker::Team.sport.match(@one_or_more_words_pattern)
   end
 
   # -- MILITARY
