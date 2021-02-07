@@ -404,7 +404,18 @@ module Faker
         formatted ? format('%s.%s.%s/%s-%s', *number.scan(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/).flatten) : number
       end
 
+      ##
       # Get a random Russian tax number.
+      # @param region [String] Any region string
+      # @param type [Symbol] Legeal or not, defaults to :legal
+      #
+      # @return [String]
+      # @example
+      #   Faker::Company.russian_tax_number                             #=> "0415584064"
+      #   Faker::Company.russian_tax_number(region: 'AZ')               #=> "AZ50124562"
+      #   Faker::Company.russian_tax_number(region: 'AZ', type: false)  #=> "AZ8802315465"
+      #
+      # @faker.version 1.9.4
       def russian_tax_number(region: nil, type: :legal)
         inn_number(region, type)
       end
@@ -507,7 +518,14 @@ module Faker
       #
       # Range of regions:
       # https://ru.wikipedia.org/wiki/Коды_субъектов_Российской_Федерации
+      # region [String] Any region string
+      # @param type [Symbol] Legeal or not, defaults to :legal
       #
+      # @return [String]
+      # @example
+      #   Faker::Comnpany.russian_tax_number
+      #   Faker::Comnpany.russian_tax_number(region: 'AZ')
+      #   Faker::Comnpany.russian_tax_number(region: 'AZ', type: false)
       # rubocop:enable Style/AsciiComments
       def inn_number(region, type)
         n10 = [2, 4, 10, 3, 5, 9, 4, 6, 8]
