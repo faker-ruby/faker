@@ -29,11 +29,11 @@ Faker::Date.birthday(min_age: 18, max_age: 65) #=> "Mar, 28 Mar 1986"
 Faker::Date.in_date_period #=> #<Date: 2019-09-01>
 
 # Random date for range of year 2018 and month 2
-# Keyword arguments: year, month 
+# Keyword arguments: year, month
 Faker::Date.in_date_period(year: 2018, month: 2) #=> #<Date: 2018-02-26>
 
 # Random date for range of current year and month 2
-# Keyword arguments: month 
+# Keyword arguments: month
 Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
 
 ```
