@@ -6,6 +6,7 @@ module Faker
       flexible :rajnikanth
 
       class << self
+        ##
         # Produces a Rajnikanth.
         # Original list of jokes:
         # http://www.rajinikanthjokes.com/

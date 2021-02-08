@@ -4,7 +4,7 @@ We love pull requests. Here's a quick guide:
 
 2. Run the tests. We only take pull requests with passing tests, and it's great to know that you have a clean slate: `bundle && bundle exec rake`
 
-3. We are using [Rubocop](https://github.com/bbatsov/rubocop) because we love static code analyzers. 
+3. We are using [Rubocop](https://github.com/bbatsov/rubocop) because we love static code analyzers.
     * Ways to run Rubocop:
         - `bundle exec rubocop`
         - `bundle exec rake` would run the test suite and after that it runs the Ruby static code analyzer.
@@ -19,7 +19,7 @@ We love pull requests. Here's a quick guide:
 
 8. When removing a method, don't forget to deprecate it. You can `extend Gem::Deprecate` and use the `deprecate` method to accomplish this task.
 
-9. Methods with optional arguments should use keyword rather than positional arguments. An exception to this could be a method that takes only one optional argument, and it's unlikely that that method would ever take more than one optional argument. 
+9. Methods with optional arguments should use keyword rather than positional arguments. An exception to this could be a method that takes only one optional argument, and it's unlikely that that method would ever take more than one optional argument.
 
 10. Push to your fork and submit a pull request.
 
@@ -55,13 +55,13 @@ Include [YARD] style docs for all methods that includes:
 ```ruby
 ##
 # Produces a random string of alphabetic characters, (no digits)
-# 
+#
 # @param char_count [Integer] The length of the string to generate
 #
 # @return [String]
-# 
+#
 # @example
-#   Faker::Alphanumeric.alpha #=> "kgdpxlgwjirlqhwhrebvuomdcjjpeqlq" 
+#   Faker::Alphanumeric.alpha #=> "kgdpxlgwjirlqhwhrebvuomdcjjpeqlq"
 #   Faker::Alphanumeric.alpha(number: 10) #=> "zlvubkrwga"
 #
 # @faker.version next
@@ -82,7 +82,7 @@ Please follow these guidelines when adding new code:
 
 #### YAML
 Please use dash syntax for yaml arrays:
-```Yaml  
+```Yaml
 # instead of these
 b_things: [small_thing, big_thing, other_thing]
 c_things: [
@@ -102,6 +102,6 @@ a_things:
 ### Tips
 
 * Use the `rake console` task to start a session with Faker loaded.
-* Use `bundle exec yard server -r` to launch the YARD Doc server 
+* Use `bundle exec yard server -r` to launch the YARD Doc server
 
 [YARD]: (https://www.rubydoc.info/gems/yard/file/README.md)
