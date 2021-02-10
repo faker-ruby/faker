@@ -19,7 +19,7 @@
 
 - [PR #2221](https://github.com/faker-ruby/faker/pull/2221) Added rock band song generator [@jsca-kwok](https://github.com/jsca-kwok)
 - [PR #2197](https://github.com/faker-ruby/faker/pull/2197) Add `Faker::Games::Touhou` [@dysnomian](https://github.com/dysnomian)
-- [PR #2208](https://github.com/faker-ruby/faker/pull/2208) [@Pierre-Michard](https://github.com/Pierre-Michard) Feat/add blockchain Tezos keys [@akettal](https://github.com/akettal)
+- [PR #2208](https://github.com/faker-ruby/faker/pull/2208) Feat/add blockchain Tezos keys [@akettal](https://github.com/akettal) [@Pierre-Michard](https://github.com/Pierre-Michard)
 
 ## Update locales
 
