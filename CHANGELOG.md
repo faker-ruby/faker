@@ -11,23 +11,23 @@
 
 ## Documentation
 
+- [PR #2247](https://github.com/faker-ruby/faker/pull/2247) 2243 yard doc [@sudeeptarlekar](https://github.com/sudeeptarlekar)
 - [PR #2240](https://github.com/faker-ruby/faker/pull/2240) Updated `rock_band.md` to include example for using song generator [@jsca-kwok](https://github.com/jsca-kwok)
 - [PR #2205](https://github.com/faker-ruby/faker/pull/2205) `Faker::Mountain` doc [@bipashant](https://github.com/bipashant)
-- [PR #2247](https://github.com/faker-ruby/faker/pull/2247) 2243 yard doc [@sudeeptarlekar](https://github.com/sudeeptarlekar)
 
 ## Feature Request
 
 - [PR #2221](https://github.com/faker-ruby/faker/pull/2221) Added rock band song generator [@jsca-kwok](https://github.com/jsca-kwok)
-- [PR #2197](https://github.com/faker-ruby/faker/pull/2197) Add `Faker::Games::Touhou` [@dysnomian](https://github.com/dysnomian)
 - [PR #2208](https://github.com/faker-ruby/faker/pull/2208) Feat/add blockchain Tezos keys [@akettal](https://github.com/akettal) [@Pierre-Michard](https://github.com/Pierre-Michard)
+- [PR #2197](https://github.com/faker-ruby/faker/pull/2197) Add `Faker::Games::Touhou` [@dysnomian](https://github.com/dysnomian)
 
 ## Update locales
 
 - [PR #2238](https://github.com/faker-ruby/faker/pull/2238) added some data in `fr.yml` and `football.yml` [@MathGL92](https://github.com/MathGL92)
 - [PR #2222](https://github.com/faker-ruby/faker/pull/2222) Add Japanese for `Faker::Book` [@zoshigayan](https://github.com/zoshigayan)
+- [PR #2217](https://github.com/faker-ruby/faker/pull/2217) Add Sephiroth and Northern Cave to `Faker::Games::SuperSmashBros` [@boardfish](https://github.com/boardfish)
 - [PR #2201](https://github.com/faker-ruby/faker/pull/2201) Typo in Lebowski Quote [@rgraff](https://github.com/rgraff)
 - [PR #2197](https://github.com/faker-ruby/faker/pull/2197) Add `Faker::Games::Touhou` [@dysnomian](https://github.com/dysnomian)
-- [PR #2217](https://github.com/faker-ruby/faker/pull/2217) Add Sephiroth and Northern Cave to `Faker::Games::SuperSmashBros` [@boardfish](https://github.com/boardfish)
 
 ------------------------------------------------------------------------------
 
