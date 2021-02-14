@@ -3,7 +3,8 @@
 module Faker
   class Barcode < Base
     class << self
-      ## Returns a EAN 8 or 13 digit format barcode number with check digit
+      ##
+      # Returns a EAN 8 or 13 digit format barcode number with check digit
       #  @return [String]
       #
       #  @example
@@ -16,7 +17,8 @@ module Faker
         generate_barcode("barcode.ean_#{Integer(length)}")
       end
 
-      ## Returns a EAN 8 or 13 digit format barcode number with composite string attached with check digit
+      ##
+      # Returns a EAN 8 or 13 digit format barcode number with composite string attached with check digit
       #  @return [String]
       #
       #  @example
@@ -29,7 +31,8 @@ module Faker
         "#{ean(length)}|#{bothify(parse('barcode.composite_symbol'))}"
       end
 
-      ## Returns a UPC_A format barcode number with check digit
+      ##
+      # Returns a UPC_A format barcode number with check digit
       #  @return [String]
       #
       #  @example
@@ -40,7 +43,8 @@ module Faker
         generate_barcode('barcode.upc_a')
       end
 
-      ## Returns a UPC_E format barcode number with check digit
+      ##
+      # Returns a UPC_E format barcode number with check digit
       #  @return [String]
       #
       #  @example
@@ -51,7 +55,8 @@ module Faker
         generate_barcode('barcode.upc_e')
       end
 
-      ## Returns a UPC_A format barcode number with composite string attached with check digit
+      ##
+      # Returns a UPC_A format barcode number with composite string attached with check digit
       #  @return [String]
       #
       #  @example
@@ -62,7 +67,8 @@ module Faker
         "#{upc_a}|#{bothify(parse('barcode.composite_symbol'))}"
       end
 
-      ## Returns a UPC_E format barcode number with composite string attached with check digit
+      ##
+      # Returns a UPC_E format barcode number with composite string attached with check digit
       #  @return [String]
       #
       #  @example
@@ -73,7 +79,8 @@ module Faker
         "#{upc_e}|#{bothify(parse('barcode.composite_symbol'))}"
       end
 
-      ## Returns a ISBN format barcode number with check digit
+      ##
+      # Returns a ISBN format barcode number with check digit
       #  @return [String]
       #
       #  @example
@@ -84,7 +91,8 @@ module Faker
         generate_barcode('barcode.isbn')
       end
 
-      ## Returns a ISMN format barcode number with check digit
+      ##
+      # Returns a ISMN format barcode number with check digit
       #  @return [String]
       #
       #  @example
@@ -95,7 +103,8 @@ module Faker
         generate_barcode('barcode.ismn')
       end
 
-      ## Returns a ISSN format barcode number with check digit
+      ##
+      # Returns a ISSN format barcode number with check digit
       #  @return [String]
       #
       #  @example
@@ -114,7 +123,8 @@ module Faker
         "#{barcode}#{check_digit}"
       end
 
-      ## Returns the sum of even and odd numbers from value passed
+      ##
+      # Returns the sum of even and odd numbers from value passed
       #
       # @return [Array]
       #
@@ -137,7 +147,8 @@ module Faker
         [sum_odd, sum_even]
       end
 
-      ## Generates the check digits from sum passed
+      ##
+      # Generates the check digits from sum passed
       #
       # @return [Integer]
       #

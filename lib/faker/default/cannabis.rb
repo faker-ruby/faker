@@ -2,6 +2,7 @@
 
 module Faker
   class Cannabis < Base
+    ##
     # Produces a random strain.
     #
     # @return [String]
@@ -14,6 +15,7 @@ module Faker
       fetch('cannabis.strains')
     end
 
+    ##
     # Produces a random abbreviation.
     #
     # @return [String]
@@ -26,6 +28,7 @@ module Faker
       fetch('cannabis.cannabinoid_abbreviations')
     end
 
+    ##
     # Produces a random cannabinoid type.
     #
     # @return [String]
@@ -38,6 +41,7 @@ module Faker
       fetch('cannabis.cannabinoids')
     end
 
+    ##
     # Produces a random terpene type.
     #
     # @return [String]
@@ -50,6 +54,7 @@ module Faker
       fetch('cannabis.terpenes')
     end
 
+    ##
     # Produces a random kind of medical use.
     #
     # @return [String]
@@ -62,6 +67,7 @@ module Faker
       fetch('cannabis.medical_uses')
     end
 
+    ##
     # Produces a random health benefit.
     #
     # @return [String]
@@ -74,6 +80,7 @@ module Faker
       fetch('cannabis.health_benefits')
     end
 
+    ##
     # Produces a random category.
     #
     # @return [String]
@@ -86,6 +93,7 @@ module Faker
       fetch('cannabis.categories')
     end
 
+    ##
     # Produces a random type.
     #
     # @return [String]
@@ -98,6 +106,7 @@ module Faker
       fetch('cannabis.types')
     end
 
+    ##
     # Produces a random buzzword.
     #
     # @return [String]
@@ -110,6 +119,7 @@ module Faker
       fetch('cannabis.buzzwords')
     end
 
+    ##
     # Produces a random brand.
     #
     # @return [String]

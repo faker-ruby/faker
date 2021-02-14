@@ -28,18 +28,20 @@ jobs:
 
       - name: Run Rubocop
         run: bundle exec rake rubocop
-  test: 
+  test:
     name: Ruby ${{ matrix.ruby }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # don't fail all matrix builds if one fails
       matrix:
         ruby:
-          - '2.5' 
-          - '2.6' 
+          - '2.5'
+          - '2.6'
           - '2.7'
           - '3.0'
-          - 'head'
+          # FIXME: Workaround for https://github.com/faker-ruby/faker/issues/2260
+          # Resume ruby-head CI when https://github.com/travisjeffery/timecop/pull/279 will be resolved.
+          # - 'head'
           - truffleruby-head
     continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
     steps:
@@ -50,13 +52,13 @@ jobs:
 
     - name: Install dependencies
       run: bundle install
-    
+
     - name: Setup Code Climate test-reporter
       run: |
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         chmod +x ./cc-test-reporter
         ./cc-test-reporter before-build
-    
+
     - name: Run tests
       run: bundle exec rake test
 

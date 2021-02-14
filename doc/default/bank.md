@@ -16,5 +16,5 @@ Faker::Bank.name #=> "ABN AMRO CORPORATE FINANCE LIMITED"
 
 Faker::Bank.routing_number #=> "729343831"
 
-Faker::Bank.swift_bic #=> "AAFMGB21"    
+Faker::Bank.swift_bic #=> "AAFMGB21"
 ```

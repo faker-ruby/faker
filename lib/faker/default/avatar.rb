@@ -39,7 +39,6 @@ module Faker
       #
       # @faker.version 1.4.3
       def image(legacy_slug = NOT_GIVEN, legacy_size = NOT_GIVEN, legacy_format = NOT_GIVEN, legacy_set = NOT_GIVEN, legacy_bgset = NOT_GIVEN, slug: nil, size: '300x300', format: 'png', set: 'set1', bgset: nil)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :slug if legacy_slug != NOT_GIVEN
           keywords << :size if legacy_size != NOT_GIVEN
@@ -55,6 +54,7 @@ module Faker
         bgset_query = "&bgset=#{bgset}" if bgset
         "https://robohash.org/#{slug}.#{format}?size=#{size}&set=#{set}#{bgset_query}"
       end
+      # rubocop:enable Metrics/ParameterLists
     end
   end
 end
