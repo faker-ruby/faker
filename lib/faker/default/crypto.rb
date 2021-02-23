@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'digest'
+require 'openssl'
 
 module Faker
   class Crypto < Base
@@ -15,7 +15,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def md5
-        Digest::MD5.hexdigest(Lorem.characters)
+        OpenSSL::Digest::MD5.hexdigest(Lorem.characters)
       end
 
       ##
@@ -28,7 +28,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def sha1
-        Digest::SHA1.hexdigest(Lorem.characters)
+        OpenSSL::Digest::SHA1.hexdigest(Lorem.characters)
       end
 
       ##
@@ -41,7 +41,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def sha256
-        Digest::SHA256.hexdigest(Lorem.characters)
+        OpenSSL::Digest::SHA256.hexdigest(Lorem.characters)
       end
     end
   end
