@@ -116,6 +116,15 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::Games::Pokemon.move)
   end
 
+  def test_ja_supermario_methods
+    assert Faker::Games::SuperMario.character.is_a? String
+    assert_not_english(Faker::Games::SuperMario.character)
+    assert Faker::Games::SuperMario.game.is_a? String
+    assert_not_english(Faker::Games::SuperMario.game)
+    assert Faker::Games::SuperMario.location.is_a? String
+    assert_not_english(Faker::Games::SuperMario.location)
+  end
+
   def test_ja_zelda_methods
     assert Faker::Games::Zelda.game.is_a? String
     assert_not_english(Faker::Games::Zelda.game)
