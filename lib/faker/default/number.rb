@@ -143,7 +143,7 @@ module Faker
       # Produces a float given a mean and standard deviation.
       #
       # @param mean [Integer]
-      # @param standard_deviation [Integer, Float]
+      # @param standard_deviation [Numeric]
       # @return [Float]
       #
       # @example
@@ -165,12 +165,13 @@ module Faker
       ##
       # Produces a number between two provided values. Boundaries are inclusive.
       #
-      # @param from [Integer] The lowest number to include.
-      # @param to [Integer] The highest number to include.
-      # @return [Integer]
+      # @param from [Numeric] The lowest number to include.
+      # @param to [Numeric] The highest number to include.
+      # @return [Numeric]
       #
       # @example
       #   Faker::Number.between(from: 1, to: 10) #=> 7
+      #   Faker::Number.between(from: 0.0, to: 1.0) #=> 0.7844640543957383
       #
       # @faker.version 1.0.0
       def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 1.00, to: 5000.00)
@@ -186,10 +187,11 @@ module Faker
       # Produces a number within two provided values. Boundaries are inclusive or exclusive depending on the range passed.
       #
       # @param range [Range] The range from which to generate a number.
-      # @return [Integer]
+      # @return [Numeric]
       #
       # @example
       #   Faker::Number.within(range: 1..10) #=> 7
+      #   Faker::Number.within(range: 0.0..1.0) #=> 0.7844640543957383
       #
       # @faker.version 1.0.0
       def within(legacy_range = NOT_GIVEN, range: 1.00..5000.00)
