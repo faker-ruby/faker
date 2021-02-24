@@ -15,7 +15,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.3.0)
     method_source (1.0.0)
-    minitest (5.14.3)
+    minitest (5.14.4)
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
@@ -55,7 +55,7 @@ PLATFORMS
 
 DEPENDENCIES
   faker!
-  minitest (= 5.14.3)
+  minitest (= 5.14.4)
   pry (= 0.14.0)
   rake (= 13.0.3)
   rubocop (= 1.10.0)
