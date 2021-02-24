@@ -46,7 +46,7 @@ class TestFakerBank < Test::Unit::TestCase
     assert @tester.swift_bic.match(/(\w+\.? ?){2,3}/)
   end
 
-  # This test makes sure there are no collissions in BIC number pool
+  # This test makes sure there are no collisions in BIC number pool
   # https://github.com/faker-ruby/faker/pull/2130#issuecomment-703213837
   # def test_swift_bic_collission
   #   10.times do
@@ -56,8 +56,16 @@ class TestFakerBank < Test::Unit::TestCase
   #   end
   # end
 
+  def test_iban_country_code
+    assert_match(/^[A-Z]{2}$/, @tester.iban_country_code)
+  end
+
   def test_iban_default
-    assert @tester.iban.match(/[A-Z]{4}\d{14}/)
+    assert_match(/^GB\d{2}[A-Z]{4}\d{14}$/, @tester.iban)
+  end
+
+  def test_iban_rand_country
+    assert_match(/^[A-Z]{2}\d{2}[A-Z\d]{10,30}$/, @tester.iban(country_code: nil))
   end
 
   # Andorra
