@@ -73,6 +73,19 @@ module Faker
       end
 
       ##
+      # Produces a primary school.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Educator.primary_school #=> "Brighthurst Elementary School"
+      #
+      # @faker.version next
+      def primary_school
+        parse('educator.primary_school')
+      end
+
+      ##
       # Produces a campus name.
       #
       # @return [String]
