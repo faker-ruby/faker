@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('rake', '13.0.3')
   spec.add_development_dependency('rubocop', '1.10.0')
   spec.add_development_dependency('simplecov', '0.17.1')
-  spec.add_development_dependency('test-unit', '3.3.8')
+  spec.add_development_dependency('test-unit', '3.4.0')
   spec.add_development_dependency('timecop', '0.9.4')
   spec.add_development_dependency('yard', '0.9.26')
 end
