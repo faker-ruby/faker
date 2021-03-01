@@ -15,7 +15,7 @@ on:
 
 jobs:
   lint:
-    name: Rubocop
+    name: RuboCop
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
-      - name: Run Rubocop
+      - name: Run RuboCop
         run: bundle exec rake rubocop
   test:
     name: Ruby ${{ matrix.ruby }}

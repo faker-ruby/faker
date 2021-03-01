@@ -22,10 +22,16 @@ en:
         - High
         - High School
         - Secondary College
+      primary:
+        - Elementary School
+        - Grade School
+        - Primary School
       university:
         - "#{Educator.school_name} #{Educator.tertiary.university_type}"
       secondary_school:
         - "#{Educator.school_name} #{secondary}"
+      primary_school:
+        - "#{school_name} #{primary}"
       campus:
         - "#{Educator.school_name} Campus"
       subject:

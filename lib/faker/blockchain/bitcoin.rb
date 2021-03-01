@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'digest'
+require 'openssl'
 require 'securerandom'
 
 module Faker
@@ -51,7 +51,7 @@ module Faker
         def address_for(network)
           version = PROTOCOL_VERSIONS.fetch(network)
           packed = version.chr + Faker::Config.random.bytes(20)
-          checksum = Digest::SHA2.digest(Digest::SHA2.digest(packed))[0..3]
+          checksum = OpenSSL::Digest::SHA256.digest(OpenSSL::Digest::SHA256.digest(packed))[0..3]
           Faker::Base58.encode(packed + checksum)
         end
       end
