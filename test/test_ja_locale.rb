@@ -107,6 +107,11 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::PhoneNumber.phone_number)
   end
 
+  def test_ja_overwatch_methods
+    assert Faker::Games::Overwatch.hero.is_a? String
+    assert_not_english(Faker::Games::Overwatch.hero)
+  end
+
   def test_ja_pokemon_methods
     assert Faker::Games::Pokemon.name.is_a? String
     assert_not_english(Faker::Games::Pokemon.name)
