@@ -24,7 +24,7 @@
 ## Update locales
 
 - [PR #2275](https://github.com/faker-ruby/faker/pull/2275) Add Japanese for Faker::Games::Orverwatch [@may-solty](https://github.com/may-solty)
-- [PR #2268](https://github.com/faker-ruby/faker/pull/2272) Add Japanese for Faker::Games::SuperMario [@k-maekawa](https://github.com/k-maekawa)
+- [PR #2268](https://github.com/faker-ruby/faker/pull/2268) Add Japanese for Faker::Games::SuperMario [@k-maekawa](https://github.com/k-maekawa)
 - [PR #2258](https://github.com/faker-ruby/faker/pull/2258) Add es-AR locale [@fcolacilli](https://github.com/fcolacilli)
 - [PR #2215](https://github.com/faker-ruby/faker/pull/2215) Unify model names to not contain manufacturer name [@berkos](https://github.com/berkos)
 
