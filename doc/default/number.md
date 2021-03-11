@@ -27,6 +27,9 @@ Faker::Number.normal(mean: 50, standard_deviation: 3.5) #=> 47.14669604069156
 # Keyword arguments: digits
 Faker::Number.hexadecimal(digits: 3) #=> "e74"
 
+# Keyword arguments: digits
+Faker::Number.binary(digits: 4) #=> "1010"
+
 # Boundary numbers are inclusive
 # Keyword arguments: from, to
 Faker::Number.between(from: 1, to: 10) #=> 7
