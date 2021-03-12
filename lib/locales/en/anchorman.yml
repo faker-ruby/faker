@@ -1,0 +1,5 @@
+en:
+  faker:
+    anchorman:
+      characters: ["Ron Burgundy", "Champ Kind","Brian Fantana", "Wes Matooth","Brick Tamland","Baxer","Veronica Corningstone"]
+      quote: ["You stay classy, San Diego. I'm Ron Burgundy?","I love, lamp.","I'm gonna punch you in the ovary, that's what I'm gonna do. A straight shot. Right to the baby maker.", "I'm very important. I have many leather-bound books and my apartment smells of rich mahogany.","I love scotch. Scotchy scotch scotch. Here it goes down, down into my belly.","Great Odin's raven!","By the beard of Zeus!"]
