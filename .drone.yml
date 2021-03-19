@@ -4,11 +4,22 @@ type: docker
 name: default
 
 steps:
-- name: greeting
+- name: install
   image: ruby:2.7
+  volumes:
+  - name: bundle
+    path: /usr/local/bundle
   commands:
-  - bundle install
+  - bundle install --jobs=3 --retry=3
+
+- name: test
+  image: ruby:2.7
+  volumes:
+  - name: bundle
+    path: /usr/local/bundle
+  commands:
   - rake test
-  when:
-    branch:
-    - drone
+
+volumes:
+- name: bundle
+  temp: {}
