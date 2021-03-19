@@ -9,3 +9,6 @@ steps:
   commands:
   - bundle install
   - rake test
+  when:
+    branch:
+    - drone
