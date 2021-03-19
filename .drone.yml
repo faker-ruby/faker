@@ -1,0 +1,11 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: greeting
+  image: ruby:2.7
+  commands:
+  - bundle install
+  - rake test
