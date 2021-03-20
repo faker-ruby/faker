@@ -11,6 +11,8 @@ module Faker
         #
         # @example
         #   Faker::Sports::Hockey.team #=> "Philadelphia Flyers"
+        #
+        # @faker.version next
         def team
           fetch('hockey.teams')
         end
@@ -22,6 +24,8 @@ module Faker
         #
         # @example
         #   Faker::Sports::Hockey.player #=> "Claude Giroux"
+        #
+        # @faker.version next
         def player
           fetch('hockey.players')
         end
@@ -33,6 +37,8 @@ module Faker
         #
         # @example
         #   Faker::Sports::Hockey.division #=> "Metropolitan"
+        #
+        # @faker.version next
         def division
           fetch('hockey.divisions')
         end
@@ -44,6 +50,8 @@ module Faker
         #
         # @example
         #   Faker::Sports::Hockey.penalty #=> "Roughing"
+        #
+        # @faker.version next
         def penalty
           fetch('hockey.penalties')
         end
