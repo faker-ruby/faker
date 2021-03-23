@@ -34,6 +34,10 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.image(size: '50x60', search_terms: %w[dog cat], match_all: true) == 'https://loremflickr.com/50/60/dog,cat/all'
   end
 
+  def test_image_with_search_terms_match_all_and_randomize
+    assert @tester.image(size: '50x60', search_terms: %w[dog cat], match_all: true, randomize: true) =~ /https:\/\/loremflickr\.com\/50\/60\/dog,cat\/all\/\?random=\d{1,3}/
+  end
+
   def test_grayscale_image
     @tester.grayscale_image == 'https://loremflickr.com/g/300/300/all'
   end
@@ -60,6 +64,10 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
     assert @tester.grayscale_image(size: '50x60', search_terms: %w[dog cat], match_all: true) == 'https://loremflickr.com/g/50/60/dog,cat/all'
   end
 
+  def test_grayscale_image_with_search_terms_match_all_and_randomize
+    assert @tester.grayscale_image(size: '50x60', search_terms: %w[dog cat], match_all: true, randomize: true) =~ /https:\/\/loremflickr\.com\/g\/50\/60\/dog,cat\/all\/\?random=\d{1,3}/
+  end
+
   def test_pixelated_image
     @tester.pixelated_image == 'https://loremflickr.com/p/300/300/all'
   end
@@ -84,6 +92,10 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
 
   def test_pixelated_image_with_search_terms_and_match_all
     assert @tester.pixelated_image(size: '50x60', search_terms: %w[dog cat], match_all: true) == 'https://loremflickr.com/p/50/60/dog,cat/all'
+  end
+
+  def test_pixelated_image_with_search_terms_match_all_and_randomize
+    assert @tester.pixelated_image(size: '50x60', search_terms: %w[dog cat], match_all: true, randomize: true) =~ /https:\/\/loremflickr\.com\/p\/50\/60\/dog,cat\/all\/\?random=\d{1,3}/
   end
 
   def test_colorized_image
@@ -121,6 +133,12 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   def test_colorized_image_with_search_terms_and_match_all
     @colorizations.each do |colorization|
       assert @tester.colorized_image(size: '50x60', color: colorization, search_terms: %w[dog cat], match_all: true) == "https://loremflickr.com/#{colorization}/50/60/dog,cat/all"
+    end
+  end
+
+  def test_colorized_image_with_search_terms_match_all_and_randomize
+    @colorizations.each do |colorization|
+      assert @tester.colorized_image(size: '50x60', color: colorization, search_terms: %w[dog cat], match_all: true, randomize: true) =~ /https:\/\/loremflickr\.com\/#{colorization}\/50\/60\/dog,cat\/all\/\?random=\d{1,3}/
     end
   end
 end

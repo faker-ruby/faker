@@ -13,6 +13,8 @@ module Faker
       # @param size [String] Specifies the size of image to generate.
       # @param search_terms [Array<String>] Adds search terms to the image URL.
       # @param match_all [Boolean] Add "all" as part of the URL.
+      # @param randomize [Boolean] Adds "?random=xx" at the end of the URL(where xx is a random number). It makes every image unique.
+      #
       # @return [String]
       #
       # @example
@@ -21,16 +23,17 @@ module Faker
       #   Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/50/60/sports"
       #   Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/50/60/sports,fitness"
       #   Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/50/60/sports,fitness/all"
+      #   Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true, randomize: true) #=> "https://loremflickr.com/50/60/sports,fitness/all?random=77"
       #
       # @faker.version 1.9.0
-      def image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: [], match_all: false)
+      def image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: [], match_all: false, randomize: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :size if legacy_size != NOT_GIVEN
           keywords << :search_terms if legacy_search_terms != NOT_GIVEN
           keywords << :match_all if legacy_match_all != NOT_GIVEN
         end
 
-        build_url(size, nil, search_terms, match_all)
+        build_url(size, nil, search_terms, match_all, randomize)
       end
 
       ##
@@ -39,6 +42,8 @@ module Faker
       # @param size [String] Specifies the size of image to generate.
       # @param search_terms [Array<String>] Adds search terms to the image URL.
       # @param match_all [Boolean] Add "all" as part of the URL.
+      # @param randomize [Boolean] Adds "?random=xx" at the end of the URL(where xx is a random number). It makes every image unique.
+      #
       # @return [String]
       #
       # @example
@@ -47,9 +52,10 @@ module Faker
       #   Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/g/50/60/sports"
       #   Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/50/60/g/sports,fitness"
       #   Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/g/50/60/sports,fitness/all"
+      #   Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true, randomize: true) #=> "https://loremflickr.com/g/50/60/sports,fitness/all?random=77"
       #
       # @faker.version 1.9.0
-      def grayscale_image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false)
+      def grayscale_image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false, randomize: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :size if legacy_size != NOT_GIVEN
           keywords << :search_terms if legacy_search_terms != NOT_GIVEN
@@ -58,7 +64,7 @@ module Faker
 
         raise ArgumentError, 'Search terms must be specified for grayscale images' unless search_terms.any?
 
-        build_url(size, 'g', search_terms, match_all)
+        build_url(size, 'g', search_terms, match_all, randomize)
       end
 
       ##
@@ -67,6 +73,8 @@ module Faker
       # @param size [String] Specifies the size of image to generate.
       # @param search_terms [Array<String>] Adds search terms to the image URL.
       # @param match_all [Boolean] Add "all" as part of the URL.
+      # @param randomize [Boolean] Adds "?random=xx" at the end of the URL(where xx is a random number). It makes every image unique.
+      #
       # @return [String]
       #
       # @example
@@ -75,9 +83,10 @@ module Faker
       #   Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports']) #=> "https://loremflickr.com/p/50/60/sports"
       #   Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/p/50/60/sports,fitness"
       #   Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/p/50/60/sports,fitness/all"
+      #   Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true, randomize: true) #=> "https://loremflickr.com/p/50/60/sports,fitness/all?random=77"
       #
       # @faker.version 1.9.0
-      def pixelated_image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false)
+      def pixelated_image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false, randomize: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :size if legacy_size != NOT_GIVEN
           keywords << :search_terms if legacy_search_terms != NOT_GIVEN
@@ -86,7 +95,7 @@ module Faker
 
         raise ArgumentError, 'Search terms must be specified for pixelated images' unless search_terms.any?
 
-        build_url(size, 'p', search_terms, match_all)
+        build_url(size, 'p', search_terms, match_all, randomize)
       end
 
       ##
@@ -96,6 +105,8 @@ module Faker
       # @param color [String] Specifies the color of image to generate.
       # @param search_terms [Array<String>] Adds search terms to the image URL.
       # @param match_all [Boolean] Add "all" as part of the URL.
+      # @param randomize [Boolean] Adds "?random=xx" at the end of the URL(where xx is a random number). It makes every image unique.
+      #
       # @return [String]
       #
       # @example
@@ -104,9 +115,10 @@ module Faker
       #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports']) #=> "https://loremflickr.com/blue/50/60/sports"
       #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/blue/50/60/sports,fitness"
       #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/blue/50/60/sports,fitness/all"
+      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness'], match_all: true, randomize: true) #=> "https://loremflickr.com/blue/50/60/sports,fitness/all?random=77"
       #
       # @faker.version 1.9.0
-      def colorized_image(legacy_size = NOT_GIVEN, legacy_color = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', color: 'red', search_terms: ['all'], match_all: false)
+      def colorized_image(legacy_size = NOT_GIVEN, legacy_color = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', color: 'red', search_terms: ['all'], match_all: false, randomize: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :size if legacy_size != NOT_GIVEN
           keywords << :color if legacy_color != NOT_GIVEN
@@ -117,20 +129,22 @@ module Faker
         raise ArgumentError, 'Search terms must be specified for colorized images' unless search_terms.any?
         raise ArgumentError, "Supported colorizations are #{SUPPORTED_COLORIZATIONS.join(', ')}" unless SUPPORTED_COLORIZATIONS.include?(color)
 
-        build_url(size, color, search_terms, match_all)
+        build_url(size, color, search_terms, match_all, randomize)
       end
       # rubocop:enable Metrics/ParameterLists
 
       private
 
-      def build_url(size, format, search_terms, match_all)
+      def build_url(size, format, search_terms, match_all, randomize)
         raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
 
+        random_number = rand(1..100)
         url_parts = ['https://loremflickr.com']
         url_parts << format
         url_parts += size.split('x')
         url_parts << search_terms.compact.join(',') if search_terms.any?
         url_parts << 'all' if match_all
+        url_parts << "?random=#{random_number}" if randomize
         url_parts.compact.join('/')
       end
     end
