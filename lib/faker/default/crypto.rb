@@ -43,6 +43,19 @@ module Faker
       def sha256
         OpenSSL::Digest::SHA256.hexdigest(Lorem.characters)
       end
+
+      ##
+      # Produces a SHA512 hash.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Crypto.sha512 #=> "7b9fc82a6642874833d01b74a7b4fae3d15373193b55cfba47327f8f0afdc8d0ea155b58639a03a887009ef997dab8dd8d36767620d430f6e787e5996e26da80"
+      #
+      # @faker.version next
+      def sha512
+        OpenSSL::Digest::SHA512.hexdigest(Lorem.characters)
+      end
     end
   end
 end
