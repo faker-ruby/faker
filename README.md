@@ -229,7 +229,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Books::Lovecraft](doc/books/lovecraft.md)
 
 ### Fantasy
-  - [Faker::Fantasy::Tokien](doc/fantasy/tolkien.md)
+  - [Faker::Fantasy::Tolkien](doc/fantasy/tolkien.md)
 
 ### Creature
   - [Faker::Creature::Animal](doc/creature/animal.md)
