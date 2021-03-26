@@ -1,0 +1,4 @@
+fr:
+  faker:
+    gender:
+      binary_types: ["Masculin", "Féminin"]
