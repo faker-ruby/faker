@@ -58,6 +58,15 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::Coffee.country)
   end
 
+  def test_ja_commerce_methods
+    assert Faker::Commerce.department.is_a? String
+    assert_not_english(Faker::Commerce.department)
+    assert Faker::Commerce.product_name.is_a? String
+    assert_not_english(Faker::Commerce.product_name)
+    assert Faker::Commerce.promotion_code.is_a? String
+    assert_not_english(Faker::Commerce.promotion_code)
+  end
+
   def test_ja_company_methods
     assert Faker::Company.suffix.is_a? String
     assert_not_english(Faker::Company.suffix)
