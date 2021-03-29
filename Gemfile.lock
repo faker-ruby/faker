@@ -52,6 +52,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-19
 
 DEPENDENCIES
   faker!
@@ -65,4 +66,4 @@ DEPENDENCIES
   yard (= 0.9.26)
 
 BUNDLED WITH
-   2.1.2
+   2.2.2

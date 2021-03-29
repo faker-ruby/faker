@@ -1,0 +1,1683 @@
+en:
+  faker:
+    wine:
+      varietal:
+        - Arbane
+        - Chardonnay
+        - Meunier
+        - Petit Meslier
+        - Pinot Blanc
+        - Pinot Gris
+        - Pinot Noir
+        - Moscato
+        - Riesling
+        - Barbera
+        - Blaufrankisch
+        - Cabernet Franc
+        - Cabernet Sauvignon
+        - Carignan
+        - Cinsaut
+        - Gamay Noir
+        - Grenache
+        - Malbec
+        - Merlot
+        - Mourvèdre
+        - Muscadel
+        - Nebbiolo
+        - Petit Verdot
+        - Petite Sirah
+        - Pinot Noir
+        - Pinotage
+        - Sangiovese
+        - Shiraz
+        - Souzào
+        - Syrah
+        - Tempranillo
+        - Tinta Barocca
+        - Touriga Nacional
+        - Zinfandel
+        - Bukettraube
+        - Chenin Blanc
+        - Clairette Blanche
+        - Colombard
+        - Crouchen Blanc
+        - Fumé Blanc
+        - Gewurztraminer
+        - Grenache Blanc
+        - Malvasia Bianca
+        - Marsanne
+        - Muscat
+        - Muscat d'Alexandrie
+        - Nouvelle
+        - Palomino
+        - Pinot Blanc
+        - Pinot Grigio
+        - Pinot Gris
+        - Roussanne
+        - Sauvignon Blanc
+        - Semillon
+        - Ugni Blanc
+        - Verdelho
+        - Vermentino
+        - Viognier
+      appellations:
+        - Hunter Valley
+        - Mudgee
+        - New England
+        - Orange
+        - Riverina
+        - Shoalhaven Coast
+        - Southern Highlands
+        - Adelaide Hills
+        - Barossa Valley
+        - Clare Valley
+        - Coonawarra
+        - Eden Valley
+        - Langhorne Creek
+        - McLaren Vale
+        - Padthaway
+        - Riverland
+        - Southern Fleurieu
+        - Wrattonbully
+        - Coal River
+        - Derwent Valley
+        - East Coast
+        - Huon Valley
+        - Pipers River
+        - Tamar Valley
+        - Alpine Valleys
+        - Beechworth
+        - Goulburn Valley
+        - Grampians
+        - Heathcote
+        - Henty
+        - King Valley
+        - Mornington Peninsula
+        - Pyrenees
+        - Rutherglen
+        - Strathbogie
+        - Yarra Valley
+        - Albany
+        - Blackwood Valley
+        - Denmark
+        - Frankland River
+        - Georgraphe
+        - Manjimup
+        - Margaret River
+        - Mount Barker
+        - Peel
+        - Pemberton
+        - Perth Hills
+        - Porongurup
+        - Swan Valley
+        - Fraser Valley
+        - Golden Mile Bench
+        - Gulf Islands
+        - Kootenays
+        - Lillooet
+        - Naramata Bench
+        - Okanagan
+        - Okanagan Falls
+        - Okanagan Valley
+        - Shuswap
+        - Similkameen Valley
+        - Skaha Bench
+        - Thompson Valley
+        - Vancouver Island
+        - Lake Erie North Shore
+        - Niagara Peninsula
+        - Prince Edward County
+        - Callelarga
+        - Catemu
+        - Huuelas
+        - Llaillay
+        - Panquehue
+        - Quillota
+        - San Esteban
+        - Sanfelpe
+        - Santa Maria
+        - Mulchen
+        - Yumbel
+        - Casablanca Valley
+        - Cautin Valley
+        - Illapel
+        - Salammanca
+        - Copiapo Valley
+        - Molina
+        - Rauco
+        - Romeral
+        - Sagrada Familia
+        - Ucanten
+        - Vichuquen
+        - La Serena
+        - Paiguano
+        - Vicuna
+        - Huasco Valley
+        - Chillan
+        - Coelemu
+        - Portezuelo
+        - Quillon
+        - Monte Pa Tria
+        - Ovalle
+        - Punitaqui
+        - Rio Hurtado
+        - Alhue
+        - Buin
+        - Calera De Tango
+        - Colina
+        - Isla De Maipo
+        - Lampa
+        - Maria Pinto
+        - Melipilla
+        - Pirque
+        - Puente Alto
+        - Santiago
+        - Talagante
+        - Til Til
+        - Traiguen
+        - Cauquenes
+        - Colbun
+        - Curepto
+        - Empedrado
+        - Linares
+        - Longavi
+        - Parral
+        - Pencahue
+        - Retiro
+        - San Clemente
+        - San Javier
+        - San Rafael
+        - Talca
+        - Villa Alegre
+        - Osorno Valley
+        - Apalta
+        - Chimbarongo
+        - Coltauco
+        - La Estrella
+        - Litueche
+        - Lolol
+        - Los Lingues
+        - Machali
+        - Marchigue
+        - Nancagua
+        - Palmilla
+        - Paredones
+        - Peralillo
+        - Peumo
+        - Pumanque
+        - Rancagua
+        - Rengo
+        - Requinoa
+        - San Fernando
+        - Santa Cruz
+        - Algarrobo
+        - Cartagena
+        - Lo Abarca
+        - San Juan
+        - Santo Domingo
+        - Alsace
+        - Alsace Grand Cru
+        - Crémant d’Alsace
+        - Beaujolais
+        - Beaujolais-Villages
+        - Brouilly
+        - Chénas
+        - Chiroubles
+        - Côte de Brouilly
+        - Fleurie
+        - Juliénas
+        - Morgon
+        - Moulin a vent
+        - Régnié
+        - Saint-Amour
+        - Barsac
+        - Blaye
+        - Bordeaux
+        - Bordeaux clairet
+        - Bordeaux Côtes de Francs
+        - Bordeaux Haut-Benauge
+        - Bordeaux moelleux
+        - Bordeaux rosé
+        - Bordeaux sec
+        - Bordeaux supérieur
+        - Cadillac
+        - Canon Fronsac
+        - Cérons
+        - Côtes de Blaye
+        - Côtes de Bordeaux Saint-Macaire
+        - Côtes de Bourg
+        - Côtes de Castillon
+        - Crémant de Bordeaux
+        - Entre-Deux-Mers
+        - Entre-Deux-Mers-Haut-Benauge
+        - Fronsac
+        - Graves
+        - Graves de Vayres
+        - Graves Supérieures
+        - Haut-Médoc
+        - Lalande-de-Pomerol
+        - Listrac-Médoc
+        - Loupiac
+        - Lussac-Saint-Émilion
+        - Margaux
+        - Médoc
+        - Montagne Saint-Émilion
+        - Moulis/Moulis-en-Médoc
+        - Néac
+        - Pauillac
+        - Pessac-Léognan
+        - Pomerol
+        - Premieres Côtes de Blaye
+        - Premieres Côtes de Bordeaux
+        - Puisseguin Saint-Émilion
+        - Saint-Émilion
+        - Saint-Émilion Grand Cru
+        - Saint-Estephe
+        - Saint-Georges Saint-Émilion
+        - Saint-Julien
+        - Sainte-Croix-du-Mont
+        - Sainte-Foy-Bordeaux
+        - Sauternes
+        - Bugey
+        - Roussette du Bugey
+        - Aloxe-Corton
+        - Auxey-Duresses
+        - Bâtard-Montrachet
+        - Beaune
+        - Bienvenues-Bâtard-Montrachet
+        - Blagny
+        - Bonnes-Mares
+        - Bourgogne
+        - Bourgogne aligoté
+        - Bourgogne clairet
+        - Bourgogne clairet Côte chalonnaise
+        - Bourgogne Côte Saint-Jacques
+        - Bourgogne Côtes d’Auxerre
+        - Bourgogne Côtes du Couchois
+        - Bourgogne Coulanges-la-Vineuse
+        - Bourgogne Epineuil
+        - Bourgogne grand ordinaire
+        - Bourgogne Hautes-côtes de Beaune
+        - Bourgogne Hautes-côtes de Nuits
+        - Bourgogne La Chapelle Notre-Dame
+        - Bourgogne le Chapitre
+        - Bourgogne Montrecul
+        - Bourgogne mousseux
+        - Bourgogne ordinaire
+        - Bourgogne Passe-tout-grains
+        - Bourgogne rosé
+        - Bourgogne Vézelay
+        - Bouzeron
+        - Chablis
+        - Chablis Grand Cru
+        - Chablis Premier Cru
+        - Chambertin
+        - Chambertin-Clos-de-Beze
+        - Chambolle-Musigny
+        - Chapelle-Chambertin
+        - Charlemagne
+        - Charmes-Chambertin
+        - Chassagne-Montrachet
+        - Chevalier-Montrachet
+        - Chorey-les-Beaune
+        - Clos de la Roche
+        - Clos de Tart
+        - Clos de Vougeot
+        - Clos des Lambrays
+        - Clos Saint-Denis
+        - Corton
+        - Corton-Charlemagne
+        - Côte de Beaune
+        - Côte de Beaune-Villages
+        - Côte de Nuits-villages
+        - Crémant de Bourgogne
+        - Criots-Bâtard-Montrachet
+        - Échezeaux
+        - Fixin
+        - Gevrey-Chambertin
+        - Givry
+        - Grands Échezeaux
+        - Griotte-Chambertin
+        - Irancy
+        - La Grande Rue
+        - La Romanée
+        - La Tâche
+        - Ladoix
+        - Latricieres-Chambertin
+        - Mâcon
+        - Mâcon supérieur
+        - Mâcon-villages
+        - Maranges
+        - Marsannay
+        - Mazis-Chambertin
+        - Mazoyeres-Chambertin
+        - Mercurey
+        - Meursault
+        - Montagny
+        - Monthelie
+        - Montrachet
+        - Morey-Saint-Denis
+        - Musigny
+        - Nuits-Saint-Georges
+        - Pernand-Vergelesses
+        - Petit Chablis
+        - Pommard
+        - Pouilly-Fuissé
+        - Pouilly-Loché
+        - Pouilly-Vinzelles
+        - Puligny-Montrachet
+        - Richebourg
+        - Romanée-Conti
+        - Romanée-Saint-Vivant
+        - Ruchottes-Chambertin
+        - Rully
+        - Saint-Aubin
+        - Saint-Bris
+        - Saint-Romain
+        - Saint-Véran
+        - Santenay
+        - Savigny-les-Beaune
+        - Tonnerre
+        - Vins Fins de la Côte de Nuits
+        - Viré-Clessé
+        - Volnay
+        - Volnay Santenots
+        - Vosne-Romanée
+        - Vougeot
+        - Champagne
+        - Coteaux Champenois
+        - Rosé des Riceys
+        - Ajaccio
+        - Corse/Vin de Corse
+        - Patrimonio
+        - Côtes de Toul
+        - Arbois
+        - Château-Chalon
+        - Côtes du Jura
+        - Crémant du Jura
+        - L’Étoile
+        - Blanquette méthode ancestrale
+        - Côtes de la Malepere
+        - Banyuls
+        - Banyuls Grand Cru
+        - Blanquette de Limoux
+        - Cabardes
+        - Clairette de Bellegarde
+        - Clairette du Languedoc
+        - Collioure
+        - Corbieres
+        - Coteaux du Languedoc
+        - Côtes du Roussillon
+        - Côtes du Roussillon Villages
+        - Crémant de Limoux
+        - Faugeres
+        - Fitou
+        - Frontignan
+        - Grand Roussillon
+        - Limoux
+        - Maury
+        - Minervois
+        - Minervois-La Liviniere
+        - Muscat de Frontignan
+        - Muscat de Lunel
+        - Muscat de Mireval
+        - Muscat de Rivesaltes
+        - Muscat de Saint-Jean de Minervois
+        - Rivesaltes
+        - Saint-Chinian
+        - Anjou
+        - Anjou mousseux
+        - Anjou Villages
+        - Anjou Villages Brissac
+        - Anjou-Coteaux de la Loire
+        - Anjou-Gamay
+        - Bonnezeaux
+        - Bourgueil
+        - Cabernet d’Anjou
+        - Cabernet de Saumur
+        - Chaume
+        - Cheverny
+        - Chinon
+        - Côte Roannaise
+        - Coteaux de l’Aubance
+        - Coteaux de Saumur
+        - Coteaux du Giennois
+        - Coteaux du Layon
+        - Coteaux du Loir
+        - Coteaux du Vendômois
+        - Côtes du Forez
+        - Cour-Cheverny
+        - Crémant de Loire
+        - Haut-Poitou
+        - Jasnieres
+        - Menetou-Salon
+        - Montlouis
+        - Muscadet
+        - Muscadet-Coteaux de la Loire
+        - Muscadet-Côtes de Grandlieu
+        - Muscadet-Sevre et Maine
+        - Orléans
+        - Orléans-Cléry
+        - Pouilly-Fumé
+        - Pouilly-sur-Loire
+        - Quarts de Chaume
+        - Quincy
+        - Reuilly
+        - Rosé d’Anjou
+        - Rosé de Loire
+        - Saint-Nicolas-de-Bourgueil
+        - Saint-Pourçain
+        - Sancerre
+        - Saumur
+        - Saumur mousseux
+        - Saumur-Champigny
+        - Savennières
+        - Savennières-Coulée-de-Serrant
+        - Savennières-Roche-aux-Moines
+        - Touraine
+        - Touraine Noble Joué
+        - Touraine-Amboise
+        - Touraine-Azay-le-Rideau
+        - Touraine-Mesland
+        - Valençay
+        - Vouvray
+        - Coteaux du Lyonnais
+        - Bandol
+        - Bellet
+        - Cassis
+        - Coteaux d’Aix-en-Provence
+        - Coteaux de Pierrevert
+        - Coteaux Varois
+        - Côtes de Provence
+        - Les Baux-de-Provence
+        - Palette
+        - Beaumes de Venise
+        - Château-Grillet
+        - Châteauneuf-du-Pape
+        - Châtillon-en-Diois
+        - Clairette de Die
+        - Condrieu
+        - Cornas
+        - Costières de Nîmes
+        - Côte-Rôtie
+        - Coteaux de Die
+        - Coteaux du Tricastin
+        - Côtes du Luberon
+        - Côtes du Rhône
+        - Côtes du Rhône Villages
+        - Côtes du Ventoux
+        - Côtes du Vivarais
+        - Crémant de Die
+        - Crozes-Hermitage
+        - Gigondas
+        - Hermitage
+        - Lirac
+        - Muscat de Beaumes-de-Venise
+        - Saint-Joseph
+        - Saint-Péray
+        - Tavel
+        - Vacqueyras
+        - Vinsobres
+        - Crépy
+        - Roussette de Savoie
+        - Seyssel
+        - Vin de Savoie
+        - Béarn
+        - Bergerac
+        - Bergerac rosé
+        - Bergerac sec
+        - Buzet
+        - Cahors
+        - Coteaux du Quercy
+        - Côtes de Bergerac
+        - Côtes de Bergerac Blanc
+        - Côtes de Duras
+        - Côtes de Millau
+        - Côtes de Montravel
+        - Côtes du Marmandais
+        - Fronton
+        - Gaillac
+        - Gaillac Premieres Côtess
+        - Haut-Montravel
+        - Irouléguy
+        - Jurançon
+        - Madiran
+        - Marcillac
+        - Monbazillac
+        - Montravel
+        - Pacherenc du Vic-Bilh
+        - Pacherenc du Vic-Bilh Sec
+        - Pécharmant
+        - Rosette
+        - Saint-Mont
+        - Saint-Sardos
+        - Saussignac
+        - Tursan
+        - Vins d’Entraygues et du Fel
+        - Vins d’Estaing
+        - Abruzzo
+        - Cerasuolo d’Abruzzo
+        - Colline Teramane Montepulciano d’Abruzzo
+        - Controguerra
+        - Montepulciano d’Abruzzo
+        - Ortona
+        - Terre Tollesi/Tullum
+        - Trebbiano d’Abruzzo
+        - Villamagna
+        - Aglianico del Vulture
+        - Aglianico del Vulture Superiore
+        - Grottino di Roccanova
+        - Matera
+        - Terre dell’Alta Val d’Agri
+        - Bivongi
+        - Cirò
+        - Greco di Bianco
+        - Lamezia
+        - Melissa
+        - S. Anna di Isola Capo Rizzuto
+        - Savuto
+        - Scavigna
+        - Terre di Cosenza
+        - Aglianico del Taburno
+        - Aversa
+        - Campi Flegrei
+        - Capri
+        - Casavecchia di Pontelatone
+        - Castel San Lorenzo
+        - Cilento
+        - Costa d’Amalfi
+        - Falanghina del Sannio
+        - Falerno del Massico
+        - Fiano di Avellino
+        - Galluccio
+        - Greco di Tufo
+        - Irpinia
+        - Ischia
+        - Penisola Sorrentina
+        - Sannio
+        - Taurasi
+        - Vesuvio
+        - Bosco Eliceo
+        - Colli Bolognesi
+        - Colli Bolognesi Pignoletto
+        - Colli d’Imola
+        - Colli di Faenza
+        - Colli di Parma
+        - Colli di Rimini
+        - Colli di Scandiano e di Canossa
+        - Colli Piacentini
+        - Colli Romagna Centrale
+        - Gutturnio
+        - Lambrusco di Sorbara
+        - Lambrusco Grasparossa di Castelvetro
+        - Lambrusco Salamino di Santa Croce
+        - Modena
+        - Ortrugo
+        - Pignoletto
+        - Reggiano
+        - Reno
+        - Romagna
+        - Romagna Albana
+        - Carso/Carso-Kras
+        - Colli Orientali del Friuli Picolit
+        - Collio Goriziano/Collio
+        - Delle Venezie
+        - Friuli Annia
+        - Friuli Aquileia
+        - Friuli Colli Orientali
+        - Friuli Grave
+        - Friuli Isonzo/Isonzo del Friuli
+        - Friuli Latisana
+        - Friuli/Friuli Venezia Giulia
+        - Lison
+        - Lison-Pramaggiore
+        - Prosecco
+        - Ramandolo
+        - Rosazzo
+        - Aleatico di Gradoli
+        - Aprilia
+        - Atina
+        - Bianco Capena
+        - Cannellino di Frascati
+        - Castelli Romani
+        - Cerveteri
+        - Cesanese del Piglio/Piglio
+        - Cesanese di Affile/Affile
+        - Cesanese di Olevano Romano/Olevano Romano
+        - Circeo
+        - Colli Albani
+        - Colli della Sabina
+        - Colli Etruschi Viterbesi/Tuscia
+        - Colli Lanuvini
+        - Cori
+        - Est! Est!! Est!!! di Montefiascone
+        - Frascati
+        - Frascati Superiore
+        - Genazzano
+        - Marino
+        - Montecompatri-Colonna/Montecompatri/Colonna
+        - Nettuno
+        - Orvieto
+        - Roma
+        - Tarquinia
+        - Terracina/Moscato di Terracina
+        - Velletri
+        - Vignanello
+        - Zagarolo
+        - Cinque Terre/Cinque Terre Sciacchetrà
+        - Colli di Luni
+        - Colline di Levanto
+        - Golfo del Tigullio–Portofino/Portofino
+        - Pornassio/Ormeasco di Pornassio
+        - Riviera Ligure di Ponente
+        - Rossese di Dolceacqua/Dolceacqua
+        - Val Polcèvera
+        - Bonarda dell’Oltrepò Pavese
+        - Botticino
+        - Buttafuoco dell’Oltrepò Pavese/Buttafuoco
+        - Capriano del Colle
+        - Casteggio
+        - Cellatica
+        - Curtefranca
+        - Franciacorta
+        - Garda
+        - Garda Colli Mantovani
+        - Lambrusco Mantovano
+        - Lugana
+        - Oltrepò Pavese
+        - Oltrepò Pavese Metodo Classico
+        - Oltrepò Pavese Pinot Grigio
+        - Pinot Nero dell’Oltrepò Pavese
+        - Riviera del Garda Classico
+        - San Colombano al Lambro/San Colombano
+        - San Martino della Battaglia
+        - Sangue di Giuda dell’Oltrepò Pavese/Sangue di Giuda
+        - Scanzo/Moscato di Scanzo
+        - Sforzato di Valtellina/Sfursat di Valtellina
+        - Terre di Colleoni/Colleoni
+        - Valcalepio
+        - Valtellina Rosso/Rosso di Valtellina
+        - Valtellina Superiore
+        - Bianchello del Metauro
+        - Castelli di Jesi Verdicchio Riserva
+        - Colli Maceratesi
+        - Colli Pesaresi
+        - Cònero
+        - Esino
+        - Falerio
+        - I Terreni di Sanseverino
+        - Lacrima di Morro/Lacrima di Morro d’Alba
+        - Offida
+        - Pergola
+        - Rosso Cònero
+        - Rosso Piceno/Piceno
+        - San Ginesio
+        - Serrapetrona
+        - Terre di Offida
+        - Verdicchio dei Castelli di Jesi
+        - Verdicchio di Matelica
+        - Verdicchio di Matelica Riserva
+        - Vernaccia di Serrapetrona
+        - Biferno
+        - Molise
+        - Pentro di Isernia/Pentro
+        - Tintilia del Molise
+        - Alba
+        - Albugnano
+        - Alta Langa
+        - Asti
+        - Barbaresco
+        - Barbera d’Alba
+        - Barbera d’Asti
+        - Barbera del Monferrato
+        - Barbera del Monferrato Superiore
+        - Barolo
+        - Boca
+        - Brachetto d’Acqui/Acqui
+        - Bramaterra
+        - Calosso
+        - Canavese
+        - Carema
+        - Cisterna d’Asti
+        - Colli Tortonesi
+        - Collina Torinese
+        - Colline Novaresi
+        - Colline Saluzzesi
+        - Cortese dell’Alto Monferrato
+        - Coste della Sesia
+        - Dogliani
+        - Dolcetto d’Acqui
+        - Dolcetto d’Alba
+        - Dolcetto d’Asti
+        - Dolcetto di Diano d’Alba/Diano d’Alba
+        - Dolcetto di Ovada
+        - Dolcetto di Ovada Superiore/Ovada
+        - Erbaluce di Caluso/Caluso
+        - Fara
+        - Freisa d’Asti
+        - Freisa di Chieri
+        - Gabiano
+        - Gattinara
+        - Gavi/Cortese di Gavi
+        - Ghemme
+        - Grignolino d’Asti
+        - Grignolino del Monferrato Casalese
+        - Langhe
+        - Lessona
+        - Loazzolo
+        - Malvasia di Casorzo d’Asti /Malvasia di Casorzo/Casorzo
+        - Malvasia di Castelnuovo Don Bosco
+        - Monferrato
+        - Nebbiolo d’Alba
+        - Nizza
+        - Piemonte
+        - Pinerolese
+        - Roero
+        - Rubino di Cantavenna
+        - Ruchè di Castagnole Monferrato
+        - Sizzano
+        - Strevi
+        - Terre Alfieri
+        - Valli Ossolane
+        - Valsusa
+        - Verduno Pelaverga/Verduno
+        - Aleatico di Puglia
+        - Alezio
+        - Barletta
+        - Brindisi
+        - Cacc’è Mmitte di Lucera
+        - Castel del Monte
+        - Castel del Monte Bombino Nero
+        - Castel del Monte Nero di Troia Riserva
+        - Castel del Monte Rosso Riserva
+        - Colline Joniche Tarantine
+        - Copertino
+        - Galatina
+        - Gioia del Colle
+        - Gravina
+        - Leverano
+        - Lizzano
+        - Locorotondo
+        - Martina/Martina Franca
+        - Matino
+        - Moscato di Trani
+        - Nardò
+        - Negramaro di Terra d’Otranto
+        - Orta Nova
+        - Ostuni
+        - Primitivo di Manduria
+        - Primitivo di Manduria Dolce Naturale
+        - Rosso di Cerignola
+        - Salice Salentino
+        - San Severo
+        - Squinzano
+        - Tavoliere delle Puglie/Tavoliere
+        - Terra d’Otranto
+        - Alghero
+        - Arborea
+        - Cagliari
+        - Campidano di Terralba/Terralba
+        - Cannonau di Sardegna
+        - Carignano del Sulcis
+        - Girò di Cagliari
+        - Malvasia di Bosa
+        - Mandrolisai
+        - Monica di Sardegna
+        - Moscato di Sardegna
+        - Moscato di Sorso-Sennori/Moscato di Sorso/Moscato di Sennori
+        - Nasco di Cagliari
+        - Nuragus di Cagliari
+        - Sardegna Semidano
+        - Vermentino di Gallura
+        - Vermentino di Sardegna
+        - Vernaccia di Oristano
+        - Alcamo
+        - Cerasuolo di Vittoria
+        - Contea di Sclafani
+        - Contessa Entellina
+        - Delia Nivolelli
+        - Eloro
+        - Erice
+        - Etna
+        - Faro
+        - Malvasia delle Lipari
+        - Mamertino di Milazzo/Mamertino
+        - Marsala
+        - Menfi
+        - Monreale
+        - Noto
+        - Pantelleria
+        - Riesi
+        - Salaparuta
+        - Sambuca di Sicilia
+        - Santa Margherita di Belice
+        - Sciacca
+        - Sicilia
+        - Siracusa
+        - Vittoria
+        - Ansonica Costa dell’Argentario
+        - Barco Reale di Carmignano
+        - Bianco dell’Empolese
+        - Bianco di Pitigliano
+        - Bolgheri
+        - Bolgheri Sassicaia
+        - Brunello di Montalcino
+        - Candia dei Colli Apuani
+        - Capalbio
+        - Carmignano
+        - Chianti
+        - Chianti Classico
+        - Colli dell’Etruria Centrale
+        - Colli di Luni
+        - Colline Lucchesi
+        - Cortona
+        - Elba
+        - Elba Aleatico Passito/Aleatico Passito dell’Elba
+        - Grance Senesi
+        - Maremma Toscana
+        - Montecarlo
+        - Montecucco
+        - Montecucco Sangiovese
+        - Monteregio di Massa Marittima
+        - Montescudaio
+        - Morellino di Scansano
+        - Moscadello di Montalcino
+        - Orcia
+        - Parrina
+        - Pomino
+        - Rosso della Val di Cornia/Val di Cornia Rosso
+        - Rosso di Montalcino
+        - Rosso di Montepulciano
+        - San Gimignano
+        - San Torpè
+        - Sant’Antimo
+        - Sovana
+        - Suvereto
+        - Terratico di Bibbona
+        - Terre di Casole
+        - Terre di Pisa
+        - Val d’Arbia
+        - Val d’Arno di Sopra/Valdarno di Sopra
+        - Val di Cornia
+        - Valdichiana Toscana
+        - Valdinievole
+        - Vernaccia di San Gimignano
+        - Vin Santo del Chianti
+        - Vin Santo del Chianti Classico
+        - Vin Santo di Carmignano
+        - Vin Santo di Montepulciano
+        - Vino Nobile di Montepulciano
+        - Alto Adige/Südtirol
+        - Casteller
+        - Delle Venezie
+        - Lago di Caldaro/Caldaro/Kalterersee/Kalterer
+        - Teroldego Rotaliano
+        - Trentino
+        - Trento
+        - Valdadige Terradeiforti/Terradeiforti
+        - Valdadige/Etschtaler
+        - Amelia
+        - Assisi
+        - Colli Altotiberini
+        - Colli del Trasimeno/Trasimeno
+        - Colli Martani
+        - Colli Perugini
+        - Lago di Corbara
+        - Montefalco
+        - Montefalco Sagrantino
+        - Orvieto
+        - Rosso Orvietano/Orvietano Rosso
+        - Spoleto
+        - Todi
+        - Torgiano
+        - Torgiano Rosso Riserva
+        - Valle d’Aosta/Vallée d’Aoste
+        - Amarone della Valpolicella
+        - Arcole
+        - Asolo Prosecco
+        - Bagnoli di Sopra/Bagnoli
+        - Bagnoli Friularo/Friularo di Bagnoli
+        - Bardolino
+        - Bardolino Superiore
+        - Bianco di Custoza/Custoza
+        - Breganze
+        - Colli Berici
+        - Colli di Conegliano
+        - Colli Euganei
+        - Colli Euganei Fior d’Arancio/Fior d’Arancio Colli Euganei
+        - Conegliano Valdobbiadene Prosecco
+        - Corti Benedettine del Padovano
+        - Delle Venezie
+        - Gambellara
+        - Garda
+        - Lessini Durello/Durello Lessini
+        - Lison
+        - Lison-Pramaggiore
+        - Lugana
+        - Merlara
+        - Montello Rosso/Montello
+        - Montello–Colli Asolani
+        - Monti Lessini
+        - Piave
+        - Piave Malanotte/Malanotte del Piave
+        - Prosecco
+        - Recioto della Valpolicella
+        - Recioto di Gambellara
+        - Recioto di Soave
+        - Riviera del Brenta
+        - San Martino della Battaglia
+        - Soave
+        - Soave Superiore
+        - Valdadige Terradeiforti/Terradeiforti
+        - Valdadige/Etschtaler
+        - Valpolicella
+        - Valpolicella Ripasso
+        - Venezia
+        - Vicenza
+        - Vigneti della Serenissima/Serenissima
+        - Matakana
+        - Waiheke Island
+        - West Auckland
+        - Bay of Plenty
+        - Canterbury Plains North Canterbury
+        - Waipara Valley North Canterbury
+        - Waitaki Valley
+        - Alexandra
+        - Bannockburn
+        - Bendigo
+        - Cromwell/Lowburn/Pisa
+        - Gibbston
+        - Wanaka
+        - Manutuke
+        - Ormond
+        - Patutahi
+        - Alluvial Plains
+        - Coastal Areas
+        - Hillsides
+        - Awatere Valley
+        - Southern Valleys
+        - Wairau Valley
+        - Moutere Hills
+        - Waimea Plains
+        - Northland
+        - Waikato
+        - Gladstone
+        - Martinborough
+        - Masterton
+        - Waitaki Valley North Otago
+        - Sonoita
+        - Willcox
+        - Altus
+        - Arkansas Mountain
+        - Ozark Mountain
+        - Adelaida District
+        - Alexander Valley
+        - Alta Mesa
+        - Anderson Valley
+        - Antelope Valley of the California High Desert
+        - Arroyo Grande Valley
+        - Arroyo Seco
+        - Atlas Peak
+        - Ballard Canyon
+        - Ben Lomond Mountain
+        - Benmore Valley
+        - Bennett Valley
+        - Big Valley District–Lake County
+        - Borden Ranch
+        - California Shenandoah Valley
+        - Calistoga
+        - Capay Valley
+        - Carmel Valley
+        - Carneros
+        - Central Coast
+        - Chalk Hill
+        - Chalone
+        - Chiles Valley
+        - Cienega Valley
+        - Clarksburg
+        - Clear Lake
+        - Clements Hills
+        - Cole Ranch
+        - Coombsville
+        - Cosumnes River
+        - Covelo
+        - Creston District
+        - Cucamonga Valley
+        - Diablo Grande
+        - Diamond Mountain District
+        - Dos Rios
+        - Dry Creek Valley
+        - Dunnigan Hills
+        - Eagle Peak Mendocino County
+        - Edna Valley
+        - El Dorado
+        - El Pomar District
+        - Fair Play
+        - Fiddletown
+        - Fort Ross-Seaview
+        - Fountaingrove District
+        - Green Valley of Russian River Valley
+        - Guenoc Valley
+        - Hames Valley
+        - Happy Canyon of Santa Barbara
+        - High Valley
+        - Howell Mountain
+        - Inwood Valley
+        - Jahant
+        - Kelsey Bench–Lake County
+        - Knights Valley
+        - Lamorinda
+        - Leona Valley
+        - Lime Kiln Valley
+        - Livermore Valley
+        - Lodi
+        - Los Carneros
+        - Los Olivos District
+        - Madera
+        - Malibu Coast
+        - Malibu-Newton Canyon
+        - Manton Valley
+        - McDowell Valley
+        - Mendocino
+        - Mendocino Ridge
+        - Merritt Island
+        - Mokelumne River
+        - Monterey
+        - Moon Mountain District Sonoma County
+        - Mt. Harlan
+        - Mt. Veeder
+        - Napa Valley
+        - North Coast
+        - North Yuba
+        - Northern Sonoma
+        - Oak Knoll District of Napa Valley
+        - Oakville
+        - Pacheco Pass
+        - Paicines
+        - Paso Robles
+        - Paso Robles Estrella District
+        - Paso Robles Geneseo District
+        - Paso Robles Highlands District
+        - Paso Robles Willow Creek District
+        - Petaluma Gap
+        - Pine Mountain-Cloverdale Peak
+        - Potter Valley
+        - Ramona Valley
+        - Red Hills Lake County
+        - Redwood Valley
+        - River Junction
+        - Rockpile
+        - Russian River Valley
+        - Rutherford
+        - Saddle Rock-Malibu
+        - Salado Creek
+        - San Antonio Valley
+        - San Benito
+        - San Bernabe
+        - San Francisco Bay
+        - San Juan Creek
+        - San Lucas
+        - San Miguel District
+        - San Pasqual Valley
+        - San Ysidro District
+        - Santa Clara Valley
+        - Santa Cruz Mountains
+        - Santa Lucia Highlands
+        - Santa Margarita Ranch
+        - Santa Maria Valley
+        - Santa Ynez Valley
+        - Seiad Valley
+        - Sierra Foothills
+        - Sierra Pelona Valley
+        - Sloughhouse
+        - Solano County Green Valley
+        - Sonoma Coast
+        - Sonoma County
+        - Sonoma Mountain
+        - Sonoma Valley
+        - South Coast
+        - Spring Mountain District
+        - Squaw Valley–Miramonte
+        - St. Helena
+        - Sta. Rita Hills
+        - Stags Leap District
+        - Suisun Valley
+        - Temecula Valley
+        - Templeton Gap District
+        - Tracy Hills
+        - Trinity Lakes
+        - Wild Horse Valley
+        - Willow Creek
+        - York Mountain
+        - Yorkville Highlands
+        - Yountville
+        - Grand Valley
+        - West Elks
+        - Southeastern New England
+        - Western Connecticut Highlands
+        - Upper Hiwassee Highlands
+        - Eagle Foothills
+        - Lewis–Clark Valley
+        - Snake River Valley
+        - Shawnee Hills
+        - Upper Mississippi River Valley
+        - Indiana Uplands
+        - Ohio River Valley
+        - Loess Hills District
+        - Upper Mississippi River Valley
+        - Ohio River Valley
+        - Mississippi Delta
+        - Catoctin
+        - Cumberland Valley
+        - Linganore
+        - Martha’s Vineyard
+        - Southeastern New England
+        - Fennville
+        - Lake Michigan Shore
+        - Leelanau Peninsula
+        - Old Mission Peninsula
+        - Tip of the Mitt
+        - Alexandria Lakes
+        - Upper Mississippi River Valley
+        - Mississippi Delta
+        - Augusta
+        - Hermann
+        - Loess Hills District
+        - Ozark Highlands
+        - Ozark Mountain
+        - Central Delaware Valley
+        - Outer Coastal Plain
+        - Warren Hills
+        - Mesilla Valley
+        - Middle Rio Grande Valley
+        - Mimbres Valley
+        - Cayuga Lake
+        - Champlain Valley of New York
+        - Finger Lakes
+        - Hudson River Region
+        - Lake Erie
+        - Long Island
+        - Niagara Escarpment
+        - North Fork of Long Island
+        - Seneca Lake
+        - The Hamptons
+        - Long Island
+        - Appalachian High Country
+        - Haw River Valley
+        - Swan Creek
+        - Upper Hiwassee Highlands
+        - Yadkin Valley
+        - Grand River Valley
+        - Isle St. George
+        - Lake Erie
+        - Loramie Creek
+        - Ohio River Valley
+        - Ozark Mountain
+        - Applegate Valley
+        - Chehalem Mountains
+        - Columbia Gorge
+        - Columbia Valley
+        - Dundee Hills
+        - Elkton Oregon
+        - Eola -Amity Hills
+        - McMinnville
+        - Red Hill Douglas County Oregon
+        - Ribbon Ridge
+        - Rogue Valley
+        - Snake River Valley
+        - Southern Oregon
+        - The Rocks District of Milton–Freewater
+        - Umpqua Valley
+        - Walla Walla Valley
+        - Willamette Valley
+        - Yamhill-Carlton
+        - Central Delaware Valley
+        - Cumberland Valley
+        - Lake Erie
+        - Lancaster Valley
+        - Lehigh Valley
+        - Southeastern New England
+        - Appalachian High Country
+        - Mississippi Delta
+        - Bell Mountain
+        - Escondido Valley
+        - Fredericksburg in the Texas Hill Country
+        - Mesilla Valley
+        - Texas Davis Mountains
+        - Texas High Plains
+        - Texas Hill Country
+        - Texoma
+        - Appalachian High Country
+        - Middleburg Virginia
+        - Monticello
+        - North Fork of Roanoke
+        - Northern Neck George Washington Birthplace
+        - Rocky Knob
+        - Shenandoah Valley
+        - Virginia’s Eastern Shore
+        - Ancient Lakes of Columbia Valley
+        - Columbia Gorge
+        - Columbia Valley
+        - Horse Heaven Hills
+        - Lake Chelan
+        - Lewis–Clark Valley
+        - Naches Heights
+        - Puget Sound
+        - Rattlesnake Hills
+        - Red Mountain
+        - Snipes Mountain
+        - Wahluke Slope
+        - Walla Walla Valley
+        - Yakima Valley
+        - Kanawha River Valley
+        - Ohio River Valley
+        - Shenandoah Valley
+        - Lake Wisconsin
+        - Upper Mississippi River Valley
+        - Wisconsin Ledge
+        - Breedekloof
+        - Robertson
+        - Worcester
+        - Cape Agulahas
+        - Elgin
+        - Lower Duivenhoks River
+        - Overberg
+        - Plettenberg Bay
+        - Swellendam
+        - Walker Bay
+        - Central Drakensberg
+        - Lions River
+        - Douglas
+        - Sutherland-Karoo
+        - Breedekloof
+        - Calitzdorp
+        - Cape Agulhas
+        - Cape Town
+        - Ceres Plateau
+        - Citrusdal
+        - Darling
+        - Elgin
+        - Franschhoek
+        - Langeberg-Garcia
+        - Lutzville Valley
+        - Overberg
+        - Paarl
+        - Plettenberg Bay
+        - Robertson
+        - Stellenbosch
+        - Swartland
+        - Swellendam
+        - Tulbagh
+        - Walker Bay
+        - Wellington
+        - Worcester
+      types:
+        - red
+        - white
+        - rosé
+        - sparkling
+        - dessert
+      wset:
+        visual:
+          condition:
+            - clear
+            - pale
+            - medium
+            - deep
+          color:
+            white:
+              - yellow
+              - straw
+              - lemon-green
+              - gold
+              - amber
+              - brown
+            rose:
+              - pink
+              - salmon
+              - orange
+            red:
+              - purple
+              - ruby
+              - garnet
+              - tawny
+        smell:
+          condition:
+            - light
+            - medium
+            - pronounced
+          bad_condition:
+            - rancid
+            - musty
+            - medicinal
+            - off-putting
+        taste:
+          condition:
+            - dry
+            - dry
+            - dry
+            - dry
+            - dry
+            - dry
+            - off-dry
+            - medium-dry
+            - medium-sweet
+            - sweet
+            - luscious
+          bad_condition:
+            - overly bitter
+            - sour
+            - dull
+            - overly sweet
+            - uninteresting
+        fruit:
+          condition:
+            - ripe
+            - over-ripe
+            - under-ripe
+            - cooked
+            - stewed
+            - jammy
+            - juicy
+          bad_condition:
+            - over-ripe
+            - rancid
+            - cooked
+            - rotten
+            - bruised
+          white:
+            - green apple
+            - red apple
+            - gooseberry
+            - pear
+            - grape
+            - sultana
+            - grapefruit
+            - lemon
+            - lime
+            - peach
+            - apricot
+            - nectarine
+            - banana
+            - lychee
+            - mango
+            - melon
+            - passion fruit
+            - pineapple
+          rose:
+            - strawberry
+            - red cherry
+            - plum
+            - cranberry
+          red:
+            - red currant
+            - cranberry
+            - raspberry
+            - strawberry
+            - red cherry
+            - plum
+            - black currant
+            - blackberry
+            - bramble
+            - blueberry
+            - black cherry
+            - fig
+            - prune
+            - kirsch
+        spice:
+          - black pepper
+          - white pepper
+          - cinnamon
+          - liquorice
+          - fennel
+          - dill
+          - juniper
+          - ginger
+          - nutmeg
+          - vanilla
+          - mint
+          - eucalyptus
+          - lavender
+        vegetable:
+          - grass
+          - asparagus
+          - cabbage
+          - black olive
+          - green olive
+          - green bell pepper
+          - forest floor
+          - fresh earth
+          - mushroom
+        oak:
+          white:
+            - yeast
+            - biscuit
+            - butter
+            - vanilla
+            - cream
+            - coconut
+          red:
+            - char
+            - cedar
+            - smoke
+            - resinous
+            - chocolate
+            - coffee
+        balance:
+          - refreshing
+          - delicate
+          - well balanced
+          - good structure
+          - harmonious
+          - elegant
+          - fruit-driven
+          - neutral
+          - well-integrated
+          - mouth-filling
+          - tingly
+          - soft
+          - austere
+          - tannic
+          - heavy
+        bad_balance:
+          - alcoholic
+          - thin
+          - sour
+          - harsh
+          - acidic
+          - bitter
+          - flabby
+      corporations:
+        - Constellation Brands
+        - Kendall Jackson
+        - Pernod Ricard
+        - Gallo
+        - LVMH
+        - Treasury Wine Estates
+        - Foley Partners
+        - Vintage Wine Estates
+        - The Wine Group
+        - Vina Concha Y Toro
+        - Castel Freres
+        - Accolade Wines
+        - Grupo Penaflor
+        - Fecovita Co-op
+        - Bronco Wine Company
+      flaws:
+        - cork taint
+        - oxidation
+        - TCA
+        - sulphur
+        - madeirization
+        - lightstrike
+        - bacterial
+        - Brettanomyces
+      real_brands:
+        - Marchesi Antinori
+        - Louis Roederer
+        - Harlan Estate
+        - Penfolds
+        - Beringer
+        - Barefoot
+        - Caymus
+        - Duckhorn
+        - Robert Mondavi
+        - Moet Chandon
+        - Tattinger
+        - Chateau Margaux
+        - Chateau Haut Brion
+        - Petrus
+        - Chateau Lafitte
+        - Franzia
+        - Lindemans
+        - Marques de Caceres
+        - Louis Jadot
+        - Kendall-Jackson
+        - Domaine Drouhin
+        - Siduri
+        - Louis Martini
+        - Dow's
+        - Joseph Phelps
+        - Rodney Strong
+        - Brancaia
+        - Bollinger
+        - Ponzi
+        - Benton Lane
+        - Leeuwin Estate
+        - Graham's
+        - Gerard Bertrand
+        - Concha y Toro
+        - Schramsberg
+        - Dry Creek Vineyard
+        - Chateau St. Jean
+        - Far Niente
+        - Grgich Hills
+        - Mumm
+        - Tablas Creek
+        - Bodegas Torres
+        - Catena Zapata
+        - Matua
+        - Cloudy Bay
+        - Kim Crawford
+        - Peter Lehmann
+        - Jacob's Creek
+      fake_brands:
+        suffix:
+          - Cellars
+          - Estates
+          - Brands
+          - Family
+          - Family Estates
+          - Family Vineyards
+          - Wines
+          - Family Wines
+          - Partners
+          - Group
+        descriptor:
+          - Single Vineyard
+          - Estate Vineyard
+          - Estate
+          - Reserve
+          - Special Reserve
+          - Select
+          - Family Select
+          - Small Lot
+      accolades:
+        company:
+          - Wine Spectator
+          - Wine Enthusiast
+          - Wine Advocate
+          - Wine & Spirits
+          - Connisseur's Guide
+        person:
+          - Robert Parker
+          - Antonio Galloni
+          - Jancis Robinson
+          - Tim Fish
+          - James Laube
+          - James Suckling
+          - Stephen Tanzer
+          - Jeannie Cho Lee
+          - Monica Larner
+          - Tim Atkin
+          - Allen Meadows
+        good_intro:
+          - is well-made and
+          - is delightful and
+          - 
+          - is superb and
+          - is incredible and
+          - is enjoyable and
+          - is pleasant and
+          - is breath-taking attempt that
+          - is a pleasure to drink that 
+          - is one you'll enjoy that
+        bad_intro:
+          - is a disappointing attempt that
+          - unfortunately disappoints and
+          - doesn't excel and unfortunately
+          - ', despite its pedigree,'
+          - fails to meet expectations. Starting with the fact it
+          - starts off promising, but
+          - ',despite its fanfare,'
+        good_smell:
+          - has hints of
+          - has odors of
+          - delights the nose with
+          - has just a sniff of
+          - tickles the nose with
+          - has just a whiff of
+          - overwhelms the nose with
+          - welcomes the nose with
+          - pleases the nose with
+          - starts off with
+        bad_smell:
+          - has a sniff of
+          - has an overwhelming odor of
+          - has a whiff of
+          - has an offensive odor of
+          - offends the nose with
+          - has the stench of
+        good_palette:
+          - fills your mouth with
+          - dazzles the cheeks with
+          - has a lingering flavor of
+          - tastes very much like
+          - has a pronounced flavor of
+          - has a delightful touch of
+          - dazzles with
+          - does not disappoint with
+          - delights with
+          - continues on with
+          - has soft, delicate tannins with
+          - has acid that tingles with a flavor of
+        bad_palette:
+          - only gets worse with
+          - continues on with
+          - does no better with
+          - has the unfortunate flavor of
+          - unfortunately continues with
+          - offends the palette with
+          - has a taste of
+          - has harsh tannins with the flavor of
+          - is overly acidic with a harsh tinge of
+        good_finish:
+          - ends with a lovely long finish
+          - lingers on for what seems like forever
+          - satisfies
+          - makes you yearn for the next sip
+          - leaves you satisfied
+          - welcomes any meal
+          - pleases any crowd
+          - welcomes the senses
+          - lacking nothing
+        bad_finish:
+          - mercifully finishes quickly
+          - painfully lingers on
+          - lacks depth and character
+          - offends the senses
+          - has no redeeming quality
+          - kills all hope of enjoyment
+          - is totally out of character
+
+      
