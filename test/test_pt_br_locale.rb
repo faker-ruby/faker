@@ -35,7 +35,7 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.default_country, 'Brasil'
   end
-  
+
   def test_pt_br_phone_methods
     asset_equal Faker::PhoneNumber.country_code, '+55'
   end
