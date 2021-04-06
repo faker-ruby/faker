@@ -30,4 +30,16 @@ class TestFakerWitcher < Test::Unit::TestCase
   def test_quote
     assert @witcher.quote.match(/\w+/)
   end
+
+  def test_sign
+    assert @witcher.sign.match(/\w+/)
+  end
+
+  def test_potion
+    assert @witcher.potion.match(/\w+/)
+  end
+
+  def test_book
+    assert @witcher.book.match(/\w+/)
+  end
 end
