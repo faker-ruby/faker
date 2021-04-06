@@ -147,14 +147,14 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_min_length_eq_1
     min_length = 1
-    password = @tester.password(min_length: min_length)
+    password = @tester.password(min_length: min_length, digits: false)
     assert password.match(/\w+/)
   end
 
   def test_password_with_min_length_and_max_length
     min_length = 2
     max_length = 5
-    password = @tester.password(min_length: min_length, max_length: max_length)
+    password = @tester.password(min_length: min_length, max_length: max_length, digits: false)
     assert password.match(/\w+/)
     assert (min_length..max_length).include?(password.size), 'Password size is incorrect'
   end
@@ -169,6 +169,15 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_without_special_chars
     assert @tester.password(min_length: 8, max_length: 12, mix_case: true).match(/[^!@#$%\^&*]+/)
+  end
+
+  def test_password_without_digit
+    assert @tester.password(min_length: 8, max_length: 12, digits: false).match(/[^0-9]+/)
+  end
+
+  def test_password_with_digit_mix_case_and_min_length_eq_2
+    exception = assert_raises(ArgumentError) { @tester.password(min_length: 2, mix_case: true) }
+    assert_equal('min_length must be greater than 2 when mix_case and digits are true', exception.message)
   end
 
   def test_domain_name_without_subdomain

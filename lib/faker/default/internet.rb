@@ -139,6 +139,7 @@ module Faker
       # @param max_length [Integer] The maximum length of the password
       # @param mix_case [Boolean] Toggles if uppercased letters are allowed. If true, at least one will be added.
       # @param special_characters [Boolean] Toggles if special characters are allowed. If true, at least one will be added.
+      # @param digits [Boolean] Toggles if digits are allowed. If true, at least one will be added.
       #
       # @return [String]
       #
@@ -147,6 +148,8 @@ module Faker
       # @example
       #   Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
       # @example
+      #   Faker::Internet.password(min_length: 8, digits: false) #=> "PUkPIkxhazDqSZ"
+      # @example
       #   Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
       # @example
       #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
@@ -154,7 +157,7 @@ module Faker
       #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
       #
       # @faker.version 2.1.3
-      def password(legacy_min_length = NOT_GIVEN, legacy_max_length = NOT_GIVEN, legacy_mix_case = NOT_GIVEN, legacy_special_characters = NOT_GIVEN, min_length: 8, max_length: 16, mix_case: true, special_characters: false)
+      def password(legacy_min_length = NOT_GIVEN, legacy_max_length = NOT_GIVEN, legacy_mix_case = NOT_GIVEN, legacy_special_characters = NOT_GIVEN, min_length: 8, max_length: 16, mix_case: true, special_characters: false, digits: true)
         warn_for_deprecated_arguments do |keywords|
           keywords << :min_length if legacy_min_length != NOT_GIVEN
           keywords << :max_length if legacy_max_length != NOT_GIVEN
@@ -162,8 +165,11 @@ module Faker
           keywords << :special_characters if legacy_special_characters != NOT_GIVEN
         end
 
+        raise ArgumentError, 'min_length must be greater than 2 when mix_case and digits are true' if min_length <= 2 && mix_case && digits
+
         min_alpha = mix_case && min_length > 1 ? 2 : 0
-        temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
+        min_numeric = digits ? 1 : 0
+        temp = Lorem.characters(number: min_length, min_alpha: min_alpha, min_numeric: min_numeric)
         diff_length = max_length - min_length
 
         if diff_length.positive?
