@@ -5,6 +5,7 @@ module Faker
     flexible :chuck_norris
 
     class << self
+      ##
       # Produces a Chuck Norris Fact.
       # Original list of facts:
       # https://github.com/jenkinsci/chucknorris-plugin/blob/master/src/main/java/hudson/plugins/chucknorris/FactGenerator.java

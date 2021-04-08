@@ -26,7 +26,7 @@ module Faker
       # @return [Date]
       #
       # @example
-      #   Faker::Business.credit_card_number #=> <Date: 2015-11-11 ((2457338j,0s,0n),+0s,2299161j)>
+      #   Faker::Business.credit_card_expiry_date #=> <Date: 2015-11-11 ((2457338j,0s,0n),+0s,2299161j)>
       #
       # @faker.version 1.2.0
       def credit_card_expiry_date

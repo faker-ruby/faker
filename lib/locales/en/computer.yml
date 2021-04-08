@@ -1,0 +1,36 @@
+en:
+  faker:
+    computer:
+      type:
+        - server
+        - workstation
+      platform: 
+        - Linux
+        - macOS
+        - Windows
+      os:
+        linux:
+          - RHEL 6.10
+          - RHEL 7.7
+          - CentOS 8
+          - CentOS 7
+          - CentOS 6
+          - Debian 10.10.3
+          - Debian 9.9.10
+          - Ubuntu Server 18.04
+          - Ubuntu Server 19.10
+          - ArchLinux 2020.02.01
+          - openSUSE Leap 15.1
+          - Ubuntu Desktop 18.04
+          - Ubuntu Desktop 19.10
+        macos:
+          - Catalina (10.15)
+          - Mojave (10.14)
+          - High Sierra (10.13)
+        windows:
+          - Windows 10
+          - Windows 8.1
+          - Windows 7
+          - Windows Server 2019
+          - Windows Server 2016
+          - Windows Server 2012 R2

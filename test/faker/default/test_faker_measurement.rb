@@ -22,10 +22,10 @@ class TestFakerMeasurement < Test::Unit::TestCase
     custom_amount_integer = @tester.volume(276)
 
     assert singular_unit.match(/\A\D+[^s]\z/)
-    assert plural_unit.match(/\A\D+[s]\z/)
+    assert plural_unit.match(/\A\D+s\z/)
     assert @tester.volume.match(/\d\s[a-z]/)
-    assert custom_amount_float.match(/\d\s[a-z]+[s]\z/)
-    assert custom_amount_integer.match(/\d\s[a-z]+[s]\z/)
+    assert custom_amount_float.match(/\d\s[a-z]+s\z/)
+    assert custom_amount_integer.match(/\d\s[a-z]+s\z/)
   end
 
   def weight

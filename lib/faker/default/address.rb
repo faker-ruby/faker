@@ -54,7 +54,7 @@ module Faker
           keywords << :include_secondary if legacy_include_secondary != NOT_GIVEN
         end
 
-        numerify(parse('address.street_address') + (include_secondary ? ' ' + secondary_address : ''))
+        numerify(parse('address.street_address') + (include_secondary ? " #{secondary_address}" : ''))
       end
 
       ##
@@ -102,7 +102,7 @@ module Faker
       # @return [String]
       #
       # @example
-      # Faker::Address.mail_box #=> "PO Box 123"
+      #   Faker::Address.mail_box #=> "PO Box 123"
       #
       # @faker.version 2.9.1
       def mail_box
@@ -133,7 +133,7 @@ module Faker
 
         # provide a zip code that is valid for the state provided
         # see http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf
-        bothify(fetch('address.postcode_by_state.' + state_abbreviation))
+        bothify(fetch("address.postcode_by_state.#{state_abbreviation}"))
       end
 
       ##
@@ -247,7 +247,7 @@ module Faker
           keywords << :code if legacy_code != NOT_GIVEN
         end
 
-        fetch('address.country_by_code.' + code)
+        fetch("address.country_by_code.#{code}")
       end
 
       ##
@@ -265,7 +265,7 @@ module Faker
           keywords << :name if legacy_name != NOT_GIVEN
         end
 
-        fetch('address.country_by_name.' + name)
+        fetch("address.country_by_name.#{name}")
       end
 
       ##
@@ -332,6 +332,36 @@ module Faker
       # @faker.version 0.3.0
       def full_address
         parse('address.full_address')
+      end
+
+      ##
+      # Produces Address hash of required fields
+      #
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::Address.full_address_as_hash(:longitude,
+      #                                       :latitude,
+      #                                       :country_name_to_code,
+      #                                       country_name_to_code: {name: 'united_states'})
+      #     #=> {:longitude=>-101.74428917174603, :latitude=>-37.40056749089944, :country_name_to_code=>"US"}
+      #
+      #  Faker::Address.full_address_as_hash(:full_address)
+      #     #=> {:full_address=>"87635 Rice Street, Lake Brentonton, OR 61896-5968"}
+      #
+      #  Faker::Address.full_address_as_hash(:city, :time_zone)
+      #     #=> {:city=>"East Faustina", :time_zone=>"America/Mexico_City"}
+      #
+      #  Faker::Address.full_address_as_hash(:street_address, street_address: {include_secondary: true})
+      #     #=> {:street_address=>"29423 Kenneth Causeway Suite 563"}
+      #
+      # @faker.version 2.13.0
+      def full_address_as_hash(*attrs, **attrs_params)
+        attrs.map!(&:to_sym)
+        attrs_params.transform_keys!(&:to_sym)
+        attrs.map do |attr|
+          { "#{attr}": attrs_params[attr] ? send(attr, **attrs_params[attr]) : send(attr) }
+        end.reduce({}, :merge)
       end
     end
   end

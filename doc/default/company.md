@@ -75,4 +75,10 @@ Faker::Company.brazilian_company_number(formatted: true) #=> "00.000.000/0000-00
 
 # Get a random USA Standard Industrial Classification code (SIC)
 Faker::Company.sic_code #=> "0851"
+
+# Get a random Russian tax number:
+Faker::Company.russian_tax_number #=> "0965855857"
+Faker::Company.russian_tax_number(region: '77') #=> "7717152803"
+Faker::Company.russian_tax_number(type: :individual) #=> "488935903348"
+Faker::Company.russian_tax_number(region: '77', type: :individual) #=> "779124694601"
 ```

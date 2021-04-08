@@ -1,5 +1,6 @@
 --no-private
 --tag faker.version:"Available since"
 --exclude lib/faker/deprecate/
+--exclude lib/faker/default/string.rb
 --output-dir yard_docs
 lib/**/*.rb

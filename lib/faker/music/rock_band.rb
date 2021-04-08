@@ -16,6 +16,18 @@ module Faker
         def name
           fetch('rock_band.name')
         end
+
+        # Produces a rock song.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Music::RockBand.song #=> "Dani California"
+        #
+        # @faker.version next
+        def song
+          fetch('rock_band.song')
+        end
       end
     end
   end

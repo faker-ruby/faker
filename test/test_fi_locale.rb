@@ -20,8 +20,8 @@ class TestFiLocale < Test::Unit::TestCase
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.state.is_a? String
-    assert_match(/^[\d]{1,3}$/, Faker::Address.building_number)
-    assert_match(/^[\d]{5}$/, Faker::Address.postcode)
+    assert_match(/^\d{1,3}$/, Faker::Address.building_number)
+    assert_match(/^\d{5}$/, Faker::Address.postcode)
     assert_equal('Suomi', Faker::Address.default_country)
   end
 

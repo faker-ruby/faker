@@ -11,4 +11,9 @@ Faker::Finance.credit_card(:mastercard, :visa) #=> "4448-8934-1277-7195"
 Faker::Finance.vat_number #=> "BR38.395.329/2471-83"
 Faker::Finance.vat_number(country: 'DE') #=> "DE593306671"
 Faker::Finance.vat_number(country: 'ZA') #=> "ZA79494416181"
+
+# Random ticker
+Faker::Finance.ticker #=> "AMZN"
+## Supported: NASDAQ, NYSE
+Faker::Finance.ticker('NASDAQ') #=> "GOOG"
 ```

@@ -2,47 +2,103 @@ en:
   faker:
     games:
       myst:
-        games: [ "Myst", "Riven: The Sequel to Myst", "Myst III: Exile", "Myst IV: Revelation", "Uru: Ages Beyond Myst", "Myst V: End of Ages" ]
-        creatures: [ "squee", "sunner", "wahrks", "ytrams", "scarab beetles", "bahro", "karnaks", "Mangree", "Zeftyr" ]
-        characters: [ "The Stranger", "Atrus", "Sirrus", "Achenar", "Gehn", "Catherine", "Saavedro", "Yeesha", "Esher", "Atrius", "Ti'ana" ]
-        ages: [
+        games:
+          - 'Myst III: Exile'
+          - 'Myst IV: Revelation'
+          - 'Myst V: End of Ages'
+          - 'Riven: The Sequel to Myst'
+          - 'Uru: Ages Beyond Myst'
+          - Myst
+        creatures:
+          - bahro
+          - karnaks
+          - Mangree
+          - scarab beetles
+          - squee
+          - sunner
+          - wahrks
+          - ytrams
+          - Zeftyr
+        characters:
+          - Achenar
+          - Atrius
+          - Atrus
+          - Catherine
+          - Esher
+          - Gehn
+          - Saavedro
+          - Sirrus
+          - The Stranger
+          - Ti'ana
+          - Yeesha
+        ages:
           # Myst
-          "Myst", "Stoneship", "Mechanical", "Channelwood", "Selenitic", "Earth", "Rime",
+          - Channelwood
+          - Earth
+          - Mechanical
+          - Myst Stoneship
+          - Rime
+          - Selenitic
           # Riven
-          "Riven", "Tay", "Age 233",
+          - Age 233
+          - Riven
+          - Tay
           # Exile
-          "J'nanin", "Edanna", "Voltanic", "Amateria", "Narayan",
+          - Amateria
+          - Edanna
+          - J'nanin
+          - Narayan
+          - Voltanic
           # Revelation
-          "Spire", "Haven", "Serenia",
+          - Haven
+          - Serenia
+          - Spire
           # Uru (all versions)
-          "Relto", "Teledahn", "Gahreesen", "Kadish Tolesa", "Eder Gira", "Eder Kemo", "Nexus", "Er'cana", "Ahnonay", "Eder Delin", "Eder Tsogal", "Pod Age", "Minkata", "Jalak Dador",
+          - Ahnonay
+          - Eder Delin
+          - Eder Gira
+          - Eder Kemo
+          - Eder Tsogal
+          - Er'cana
+          - Gahreesen
+          - Jalak Dador
+          - Kadish Tolesa
+          - Minkata
+          - Nexus
+          - Pod Age
+          - Relto
+          - Teledahn
           # End of Ages
-          "Direbo", "Tahgira", "Todelmer", "Laki'ahn", "Noloben",
+          - Direbo
+          - Laki'ahn
+          - Noloben
+          - Tahgira
+          - Todelmer
           # Books
-          "Ko'ah", "Gemedet", "Age 37", "Inception", "Torus Age", "Averone", "Chroma'agana", "Terahnee",
-        ]
-        quotes: [
+          - Age 37
+          - Averone
+          - Chroma'agana
+          - Gemedet
+          - Inception
+          - Ko'ah
+          - Terahnee
+          - Torus Age
+        quotes:
           # Atrus
-          "The ending has not yet been written.",
-          "I realized, the moment I fell into the fissure, that the Book would not be destroyed as I had planned.",
-          "Try moving the slider.",
-          "Remember the tower rotation.",
-
+          - The ending has not yet been written.
+          - I realized, the moment I fell into the fissure, that the Book would not be destroyed as I had planned.
+          - Try moving the slider.
+          - Remember the tower rotation.
           # Gehn
-          "Who the devil are you?",
-          "One thing I know about linking books is that the doors they open don't close behind you.",
-
+          - Who the devil are you?
+          - One thing I know about linking books is that the doors they open don't close behind you.
           # Achenar
-          "Find the blue pages.",
-          "Bring me blue pages.",
-
+          - Find the blue pages.
+          - Bring me blue pages.
           # Sirrus
-          "Find the red pages.",
-          "Bring me the red pages.",
-
+          - Find the red pages.
+          - Bring me the red pages.
           # Saavedro
-          "Atrus? Is that you? Come to rescue your Book so soon? Not yet, old friend... not yet.",
-
+          - Atrus? Is that you? Come to rescue your Book so soon? Not yet, old friend... not yet.
           # Ti'ana
-          "Atrus... what do you see?",
-        ]
+          - Atrus... what do you see?

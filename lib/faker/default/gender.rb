@@ -37,7 +37,7 @@ module Faker
       # @example
       #   Faker::Gender.short_binary_type #=> "f"
       #
-      # @faker.version next
+      # @faker.version 2.13.0
       def short_binary_type
         fetch('gender.short_binary_types')
       end

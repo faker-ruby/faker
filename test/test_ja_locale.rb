@@ -42,9 +42,29 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Color.color_name.is_a? String
   end
 
+  def test_ja_book_methods
+    assert Faker::Book.title.is_a? String
+    assert_not_english(Faker::Book.title)
+    assert Faker::Book.author.is_a? String
+    assert_not_english(Faker::Book.author)
+    assert Faker::Book.publisher.is_a? String
+    assert_not_english(Faker::Book.publisher)
+    assert Faker::Book.genre.is_a? String
+    assert_not_english(Faker::Book.genre)
+  end
+
   def test_ja_coffee_methods
     assert Faker::Coffee.country.is_a? String
     assert_not_english(Faker::Coffee.country)
+  end
+
+  def test_ja_commerce_methods
+    assert Faker::Commerce.department.is_a? String
+    assert_not_english(Faker::Commerce.department)
+    assert Faker::Commerce.product_name.is_a? String
+    assert_not_english(Faker::Commerce.product_name)
+    assert Faker::Commerce.promotion_code.is_a? String
+    assert_not_english(Faker::Commerce.promotion_code)
   end
 
   def test_ja_company_methods
@@ -75,6 +95,7 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Lorem.words.is_a? Array
     assert Faker::Lorem.words(number: 1000)
     assert Faker::Lorem.words(number: 10_000, supplemental: true)
+    assert_not_match(/ /, Faker::Lorem.paragraph)
   end
 
   def test_ja_name_methods
@@ -95,6 +116,11 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::PhoneNumber.phone_number)
   end
 
+  def test_ja_overwatch_methods
+    assert Faker::Games::Overwatch.hero.is_a? String
+    assert_not_english(Faker::Games::Overwatch.hero)
+  end
+
   def test_ja_pokemon_methods
     assert Faker::Games::Pokemon.name.is_a? String
     assert_not_english(Faker::Games::Pokemon.name)
@@ -102,6 +128,15 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::Games::Pokemon.location)
     assert Faker::Games::Pokemon.move.is_a? String
     assert_not_english(Faker::Games::Pokemon.move)
+  end
+
+  def test_ja_supermario_methods
+    assert Faker::Games::SuperMario.character.is_a? String
+    assert_not_english(Faker::Games::SuperMario.character)
+    assert Faker::Games::SuperMario.game.is_a? String
+    assert_not_english(Faker::Games::SuperMario.game)
+    assert Faker::Games::SuperMario.location.is_a? String
+    assert_not_english(Faker::Games::SuperMario.location)
   end
 
   def test_ja_zelda_methods
