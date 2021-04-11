@@ -136,7 +136,7 @@ module Faker
       #
       # @example
       #   Faker::Music.mambo #=> "Monica"
-      # @faker.version 2.17.0
+      # @faker.version next
       def mambo_no_5
         fetch('music.mambo_no_5')
       end
