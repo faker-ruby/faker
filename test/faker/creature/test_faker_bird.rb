@@ -7,23 +7,23 @@ class TestFakerCreatureBird < Test::Unit::TestCase
     @tester = Faker::Creature::Bird
   end
 
-  def test_order
+  def test_orders
     assert @tester.order.match(/[A-Z]\w+formes/)
   end
 
-  def test_anatomy
+  def test_anatomies
     assert @tester.anatomy.match(/[a-z]+/)
   end
 
-  def test_anatomy_past_tense
+  def test_anatomy_past_tenses
     assert @tester.anatomy_past_tense.match(/[a-z]+ed$/)
   end
 
-  def test_geo
+  def test_geos
     assert @tester.geo.match(/[A-Za-z][a-z ]/)
   end
 
-  def test_color
+  def test_colors
     assert @tester.color.match(/[a-z]+/)
   end
 
@@ -31,11 +31,31 @@ class TestFakerCreatureBird < Test::Unit::TestCase
     assert @tester.emotional_adjective.match(/[a-z]+/) && @tester.silly_adjective.match(/[a-z]+/)
   end
 
-  def test_adjective
+  def test_adjectives
     assert @tester.adjective.match(/[a-z]+/)
   end
 
-  def test_common_name
-    assert @tester.common_name.match(/[A-Z][a-z]+/)
+  def test_common_names
+    assert @tester.common_name.match(/[a-z]+/)
+  end
+
+  def test_plausible_common_names
+    patterns = [
+      /[A-Z][a-z]+\'s [a-z]+/,
+      /[A-Z][a-z]+ [a-z]+ [a-z]+/,
+      /[A-Z][a-z]+-[a-z]+ed [a-z]+/
+    ]
+    name = @tester.plausible_common_name
+    assert patterns.collect { |pattern| pattern.match? name }.any?
+  end
+
+  def test_implausable_common_names
+    patterns = [
+      /[A-Z][a-z]+\'s [a-z]+ [a-z]+/,
+      /[A-Z][a-z]+ [a-z]+ [a-z]+/,
+      /[A-Z][a-z]+-[a-z]+ed [a-z]+ [a-z]+/
+    ]
+    name = @tester.implausible_common_name
+    assert patterns.collect { |pattern| pattern.match? name }.any?
   end
 end
