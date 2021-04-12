@@ -131,11 +131,37 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Creature::Bird.common_name #=> 'Wren'
+        #   Faker::Creature::Bird.common_name #=> 'wren'
         #
         # @faker.version 2.16.0
         def common_name
-          fetch('creature.bird.common_names')
+          fetch('creature.bird.common_names').downcase
+        end
+
+        ##
+        # Produces a random and plausible common name for a bird
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Creature::Bird.plausible_common_name #=> 'Hellinger's Wren'
+        #
+        # @faker.version 2.16.0
+        def plausible_common_name
+          parse('creature.bird.plausible_common_names').capitalize
+        end
+
+        ##
+        # Produces a random and IMplausible common name for a bird
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Creature::Bird.plausible_common_name #=> 'Hellinger's Cantankerous Chickadee'
+        #
+        # @faker.version 2.16.0
+        def implausible_common_name
+          parse('creature.bird.implausible_common_names').capitalize
         end
       end
     end

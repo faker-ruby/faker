@@ -206,6 +206,23 @@ en:
         - rough
         - smooth
         - spotted
+        plausible_common_names:
+        - "#{Name.last_name}'s #{common_name}"
+        - "#{adjective} #{anatomy} #{common_name}"
+        - "#{adjective}-#{anatomy_past_tense} #{common_name}"
+        - "#{color}-#{anatomy_past_tense} #{common_name}"
+        - "#{adjective} #{common_name}"
+        - "#{geo} #{common_name}"
+        - "#{geo} #{color} #{common_name}"
+        implausible_common_names:
+        - "#{Name.last_name}'s #{emotional_adjective} #{common_name}"
+        - "#{Name.last_name}'s #{silly_adjective} #{common_name}"
+        - "#{adjective} #{silly_adjective} #{common_name}"
+        - "#{adjective} #{emotional_adjective} #{common_name}"
+        - "#{geo} #{silly_adjective} #{common_name}"
+        - "#{geo} #{emotional_adjective} #{common_name}"
+        - "#{color}-#{anatomy_past_tense} #{silly_adjective} #{common_name}"
+        - "#{color}-#{anatomy_past_tense} #{emotional_adjective} #{common_name}"
         common_names:
         - Accentor
         - Adjutant
