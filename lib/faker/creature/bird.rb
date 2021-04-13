@@ -157,7 +157,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Creature::Bird.plausible_common_name #=> 'Hellinger's Cantankerous Chickadee'
+        #   Faker::Creature::Bird.implausible_common_name #=> 'Hellinger's Cantankerous Chickadee'
         #
         # @faker.version 2.16.0
         def implausible_common_name
