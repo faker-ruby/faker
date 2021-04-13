@@ -20,7 +20,7 @@ GEM
     parser (3.0.0.0)
       ast (~> 2.4.1)
     power_assert (2.0.0)
-    pry (0.14.0)
+    pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
     rainbow (3.0.0)
@@ -56,7 +56,7 @@ PLATFORMS
 DEPENDENCIES
   faker!
   minitest (= 5.14.4)
-  pry (= 0.14.0)
+  pry (= 0.14.1)
   rake (= 13.0.3)
   rubocop (= 1.12.1)
   simplecov (= 0.17.1, < 0.18)
