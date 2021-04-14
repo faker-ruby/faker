@@ -41,21 +41,23 @@ class TestFakerCreatureBird < Test::Unit::TestCase
 
   def test_plausible_common_names
     patterns = [
-      /[A-Z][a-z]+\'s [a-z]+/,
+      /[A-Z][a-z]+'s [a-z]+/,
       /[A-Z][a-z]+ [a-z]+ [a-z]+/,
       /[A-Z][a-z]+-[a-z]+ed [a-z]+/
     ]
     name = @tester.plausible_common_name
-    assert patterns.collect { |pattern| pattern.match? name }.any?
+    assert patterns.collect { |pattern| pattern.match? name }.any?,
+           "Faker::Creature::Bird#plausible_common_name failed on '#{name}'"
   end
 
   def test_implausable_common_names
     patterns = [
-      /[A-Z][a-z]+\'s [a-z]+ [a-z]+/,
+      /[A-Z][a-z]+'s [a-z]+ [a-z]+/,
       /[A-Z][a-z]+ [a-z]+ [a-z]+/,
       /[A-Z][a-z]+-[a-z]+ed [a-z]+ [a-z]+/
     ]
     name = @tester.implausible_common_name
-    assert patterns.collect { |pattern| pattern.match? name }.any?
+    assert patterns.collect { |pattern| pattern.match? name }.any?,
+           "Faker::Creature::Bird#implausible_common_name failed on '#{name}'"
   end
 end
