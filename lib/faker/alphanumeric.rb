@@ -23,7 +23,7 @@ module Faker
         char_count = resolve(number)
         return '' if char_count.to_i < 1
 
-        Array.new(char_count) { sample(self::LLetters) }.join
+        Array.new(char_count) { sample(self::Letters) }.join
       end
 
       ##
@@ -55,7 +55,7 @@ module Faker
 
         random_count = char_count - min_alpha - min_numeric
 
-        alphas = Array.new(min_alpha) { sample(self::LLetters) }
+        alphas = Array.new(min_alpha) { sample(self::Letters) }
         numbers = Array.new(min_numeric) { sample(self::Numbers) }
         randoms = Array.new(random_count) { sample(ALPHANUMS) }
 
