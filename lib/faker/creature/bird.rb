@@ -7,14 +7,14 @@ module Faker
 
       class << self
         ##
-        # Produces a random common family name of a bird
+        # Produces a random common family name of a bird.
         #
         # @return [String]
         #
         # @example
         #   Faker::Creature::Bird.common_family_name #=> "Owls"
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def common_family_name
           fetch('creature.bird.common_family_name')
         end
