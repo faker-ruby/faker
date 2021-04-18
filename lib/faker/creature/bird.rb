@@ -29,7 +29,8 @@ module Faker
         #
         # @faker.version 2.16.0
         def order
-          fetch('creature.bird.order')
+          orders = I18n.translate('faker.creature.bird.order_common_map').keys
+          sample(orders).to_s
         end
 
         ##
@@ -135,7 +136,7 @@ module Faker
         #
         # @faker.version 2.16.0
         def common_name
-          fetch('creature.bird.common_names').downcase
+          sample(translate('faker.creature.bird.order_common_map').values.flatten).downcase
         end
 
         ##
@@ -162,6 +163,25 @@ module Faker
         # @faker.version 2.16.0
         def implausible_common_name
           parse('creature.bird.implausible_common_names').capitalize
+        end
+
+        ##
+        # Produces a hash entry with a random order and a random common name
+        # that is of that order
+        #
+        # @return [Hash<order,common_name>]
+        #
+        # @example
+        #  Faker::Creature::Bird.order_with_common_name #=> {
+        #    order: ''Accipitriformes',
+        #    common_name: 'Osprey'
+        # }
+        #
+        # @faker.version 2.16.0
+        def order_with_common_name
+          map = I18n.translate('faker.creature.bird.order_common_map')
+          o = order
+          { order: o, common_name: sample(map[o.to_sym]) }
         end
       end
     end
