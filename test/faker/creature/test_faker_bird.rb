@@ -43,7 +43,17 @@ class TestFakerCreatureBird < Test::Unit::TestCase
   def test_common_names_with_specific_order
     specific_order = @tester.order
     name = @tester.common_name specific_order
-    assert_includes @common_order_map[specific_order.to_sym], name
+    assert_includes @common_order_map[specific_order.to_sym].map(&:downcase), name
+  end
+
+  def test_common_names_with_specific_but_imaginary_order
+    not_real_order = :Somethingaformes
+    assert_raises(ArgumentError) { @tester.common_name not_real_order}
+  end
+
+  def test_common_name_with_bad_parameter
+    stupid_param = 9
+    assert_raises(TypeError) { @tester.common_name stupid_param }
   end
 
   def test_order_with_common_names
