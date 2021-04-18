@@ -39,6 +39,13 @@ class TestFakerCreatureBird < Test::Unit::TestCase
     assert @tester.common_name.match(/[a-z]+/)
   end
 
+  def test_order_with_common_names
+    map = I18n.translate('faker.creature.bird.order_common_map')
+    entry = @tester.order_with_common_name
+    assert_includes(map.keys, entry[:order].to_sym) && \
+      assert_includes(map[entry[:order]], entry[:common_name])
+  end
+
   def test_plausible_common_names
     patterns = [
       /[A-Z][a-z]+'s [a-z]+/,
