@@ -5,6 +5,7 @@ require_relative '../../test_helper'
 class TestFakerCreatureBird < Test::Unit::TestCase
   def setup
     @tester = Faker::Creature::Bird
+    @common_order_map = I18n.translate('faker.creature.bird.order_common_map')
   end
 
   def test_orders
@@ -39,11 +40,22 @@ class TestFakerCreatureBird < Test::Unit::TestCase
     assert @tester.common_name.match(/[a-z]+/)
   end
 
+  def test_common_names_with_specific_order
+    specific_order = @tester.order
+    name = @tester.common_name specific_order
+    assert_includes @common_order_map[specific_order.to_sym], name
+  end
+
   def test_order_with_common_names
-    map = I18n.translate('faker.creature.bird.order_common_map')
     entry = @tester.order_with_common_name
-    assert_includes(map.keys, entry[:order].to_sym) && \
-      assert_includes(map[entry[:order]], entry[:common_name])
+    assert_includes(@common_order_map.keys, entry[:order].to_sym) && \
+      assert_includes(@common_order_map[entry[:order]], entry[:common_name])
+  end
+
+  def test_specific_order_with_common_names
+    specific_order = @tester.order
+    entry = @tester.order_with_common_name specific_order
+    assert_includes(@common_order_map[specific_order.to_sym], entry[:common_name])
   end
 
   def test_plausible_common_names
