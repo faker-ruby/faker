@@ -129,14 +129,27 @@ module Faker
         ##
         # Produces a random common name for a bird
         #
+        # @param [String | Symbol | nil] tax_order Tax
         # @return [String]
+        # @raises TypeError If `tax_order` cannot be converted into a Symbol
+        # @raises ArgumentError If `tax_order` is not a valid taxonomic order
         #
         # @example
         #   Faker::Creature::Bird.common_name #=> 'wren'
         #
         # @faker.version 2.16.0
-        def common_name
-          sample(translate('faker.creature.bird.order_common_map').values.flatten).downcase
+        def common_name(tax_order = nil)
+          map = translate('faker.creature.bird.order_common_map')
+          if tax_order.nil?
+            sample(map.values.flatten).downcase
+          else
+            raise TypeError, 'tax_order parameter must be symbolizable' \
+              unless tax_order.respond_to?(:to_sym)
+            raise ArgumentError, "#{tax_order.to_s} is not a valid taxonomic order" \
+                                 unless map.keys.include?(tax_order.to_sym) 
+            the_order = translate('faker.creature.bird.order_common_map')[tax_order.to_sym]
+            sample(the_order).downcase
+          end
         end
 
         ##
@@ -178,9 +191,9 @@ module Faker
         # }
         #
         # @faker.version 2.16.0
-        def order_with_common_name
+        def order_with_common_name(tax_order = nil)
           map = I18n.translate('faker.creature.bird.order_common_map')
-          o = order
+          o = tax_order.nil? ? order : tax_order
           { order: o, common_name: sample(map[o.to_sym]) }
         end
       end
