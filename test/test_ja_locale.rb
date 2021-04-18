@@ -13,6 +13,8 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_address_methods
     assert Faker::Address.postcode.is_a? String
+    # Added Actual Japanese Zipcodes in lib/locals/ja.yml
+    assert_equal Faker::Address.postcode.size, 7
     assert_not_english(Faker::Address.postcode)
     assert Faker::Address.state.is_a? String
     assert_not_english(Faker::Address.state)
@@ -56,6 +58,15 @@ class TestJaLocale < Test::Unit::TestCase
   def test_ja_coffee_methods
     assert Faker::Coffee.country.is_a? String
     assert_not_english(Faker::Coffee.country)
+  end
+
+  def test_ja_commerce_methods
+    assert Faker::Commerce.department.is_a? String
+    assert_not_english(Faker::Commerce.department)
+    assert Faker::Commerce.product_name.is_a? String
+    assert_not_english(Faker::Commerce.product_name)
+    assert Faker::Commerce.promotion_code.is_a? String
+    assert_not_english(Faker::Commerce.promotion_code)
   end
 
   def test_ja_company_methods
@@ -105,6 +116,11 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::PhoneNumber.cell_phone)
     assert Faker::PhoneNumber.phone_number.is_a? String
     assert_not_english(Faker::PhoneNumber.phone_number)
+  end
+
+  def test_ja_overwatch_methods
+    assert Faker::Games::Overwatch.hero.is_a? String
+    assert_not_english(Faker::Games::Overwatch.hero)
   end
 
   def test_ja_pokemon_methods

@@ -60,4 +60,8 @@ class TestFakerMusic < Test::Unit::TestCase
   def test_genre
     assert @tester.genre.match(/\w+/)
   end
+
+  def test_mambo_no_5
+    assert @tester.mambo_no_5.match(/\w+/)
+  end
 end

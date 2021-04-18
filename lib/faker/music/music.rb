@@ -128,6 +128,18 @@ module Faker
       def genre
         fetch('music.genres')
       end
+
+      ##
+      # Produces a name from Lou Bega's Mambo #5
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Music.mambo #=> "Monica"
+      # @faker.version next
+      def mambo_no_5
+        fetch('music.mambo_no_5')
+      end
     end
   end
 end

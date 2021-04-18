@@ -1,5 +1,35 @@
 # Change Log
 
+## [v2.17.0](https://github.com/faker-ruby/faker/tree/v2.17.0) (2020-03-10)
+
+## Chores
+
+- [PR #2272](https://github.com/faker-ruby/faker/pull/2272) Bump RuboCop to 1.10.0 [@koic](https://github.com/koic)
+- [PR #2270](https://github.com/faker-ruby/faker/pull/2270) Generate different values when generating a hash [@DaniTheLion](https://github.com/DaniTheLion)
+- [PR #2236](https://github.com/faker-ruby/faker/pull/2236) Move Digest classes to OpenSSL [@dbussink](https://github.com/dbussink)
+
+## Documentation
+
+- [PR #2277](https://github.com/faker-ruby/faker/pull/2277) add Hip Hop To Path [@Josiassejod1](https://github.com/Josiassejod1)
+- [PR #2276](https://github.com/faker-ruby/faker/pull/2276) Fix syntax highlighting and missing version [@ghiculescu](https://github.com/ghiculescu)
+- [PR #2255](https://github.com/faker-ruby/faker/pull/2255) Correct capitalization of RuboCop in text [@jdufresne](https://github.com/jdufresne)
+- [PR #2204](https://github.com/faker-ruby/faker/pull/2204) update documentation to include Float type [@BigBigDoudou](https://github.com/BigBigDoudou)
+
+## Feature Request
+
+- [PR #2256](https://github.com/faker-ruby/faker/pull/2256) Add Faker::Educator.primary_school [@jdufresne](https://github.com/jdufresne)
+- [PR #2248](https://github.com/faker-ruby/faker/pull/2248) Add Bank.iban_country_code [@mastermatt](https://github.com/mastermatt)
+- [PR #2166](https://github.com/faker-ruby/faker/pull/2166) add binary number faker [@gabrielbaldao](https://github.com/gabrielbaldao)
+
+## Update locales
+
+- [PR #2275](https://github.com/faker-ruby/faker/pull/2275) Add Japanese for Faker::Games::Orverwatch [@may-solty](https://github.com/may-solty)
+- [PR #2268](https://github.com/faker-ruby/faker/pull/2268) Add Japanese for Faker::Games::SuperMario [@k-maekawa](https://github.com/k-maekawa)
+- [PR #2258](https://github.com/faker-ruby/faker/pull/2258) Add es-AR locale [@fcolacilli](https://github.com/fcolacilli)
+- [PR #2215](https://github.com/faker-ruby/faker/pull/2215) Unify model names to not contain manufacturer name [@berkos](https://github.com/berkos)
+
+------------------------------------------------------------------------------
+
 ## [v2.16.0](https://github.com/faker-ruby/faker/tree/v2.16.0) (2020-02-09)
 
 ## Chores

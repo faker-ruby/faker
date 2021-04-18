@@ -27,6 +27,7 @@ development.
     - [Default](#default)
     - [Blockchain](#blockchain)
     - [Books](#books)
+    - [Fantasy](#fantasy)
     - [Creature](#creature)
     - [Games](#games)
     - [Japanese Media](#japanese-media)
@@ -227,6 +228,9 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Books::Dune](doc/books/dune.md)
   - [Faker::Books::Lovecraft](doc/books/lovecraft.md)
 
+### Fantasy
+  - [Faker::Fantasy::Tolkien](doc/fantasy/tolkien.md)
+
 ### Creature
   - [Faker::Creature::Animal](doc/creature/animal.md)
   - [Faker::Creature::Cat](doc/creature/cat.md)
@@ -285,6 +289,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 ### Music
   - [Faker::Music](doc/music/music.md)
   - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
+  - [Faker::Music::Hiphop](doc/music/hiphop.md)
   - [Faker::Music::Opera](doc/music/opera.md)
   - [Faker::Music::PearlJam](doc/music/pearl_jam.md)
   - [Faker::Music::Phish](doc/music/phish.md)

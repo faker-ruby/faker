@@ -61,7 +61,7 @@ module Faker
         case base
         when 8 then generate_base8_ean
         when 13 then generate_base13_ean
-        else raise ArgumentError, 'base must be 3 or 13'
+        else raise ArgumentError, 'base must be 8 or 13'
         end
       end
 
