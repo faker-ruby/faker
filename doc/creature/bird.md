@@ -36,4 +36,7 @@ Faker::Creature::Bird.plausible_common_name #=> 'Hellinger's Wren'
 
 # Random implausible common name for a bird
 Faker::Creature::Bird.implausible_common_name #=> 'Hellinger's Cantankerous Chickadee'
+
+# Returns a random pair order / common name pair
+Faker::Creature::Bird.order_with_common_name #=> {:order=>"Coliiformes", :common_name=>"Mousebird"}
 ```
