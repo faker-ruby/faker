@@ -27,7 +27,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.order #=> "Passeriformes"
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def order
           orders = I18n.translate('faker.creature.bird.order_common_map').keys
           sample(orders).to_s
@@ -41,7 +41,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.anatomy #=> "rump"
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def anatomy
           fetch('creature.bird.anatomy')
         end
@@ -54,7 +54,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.anatomy #=> "breasted"
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def anatomy_past_tense
           fetch('creature.bird.anatomy_past_tense')
         end
@@ -67,7 +67,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.geo #=> "Eurasian"
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def geo
           fetch('creature.bird.geo')
         end
@@ -80,7 +80,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.color #=> "ferruginous"
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def color
           fetch('creature.bird.colors')
         end
@@ -93,7 +93,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.adjective #=> 'common'
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def adjective
           fetch('creature.bird.adjectives')
         end
@@ -107,7 +107,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.emotional_adjective #=> 'cantankerous'
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def emotional_adjective
           fetch('creature.bird.emotional_adjectives')
         end
@@ -121,7 +121,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.silly_adjective #=> 'drunk'
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def silly_adjective
           fetch('creature.bird.silly_adjectives')
         end
@@ -137,7 +137,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.common_name #=> 'wren'
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def common_name(tax_order = nil)
           map = translate('faker.creature.bird.order_common_map')
           if tax_order.nil?
@@ -160,7 +160,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.plausible_common_name #=> 'Hellinger's Wren'
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def plausible_common_name
           parse('creature.bird.plausible_common_names').capitalize
         end
@@ -173,7 +173,7 @@ module Faker
         # @example
         #   Faker::Creature::Bird.implausible_common_name #=> 'Hellinger's Cantankerous Chickadee'
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def implausible_common_name
           parse('creature.bird.implausible_common_names').capitalize
         end
@@ -190,7 +190,7 @@ module Faker
         #    common_name: 'Osprey'
         # }
         #
-        # @faker.version 2.16.0
+        # @faker.version next
         def order_with_common_name(tax_order = nil)
           map = I18n.translate('faker.creature.bird.order_common_map')
           o = tax_order.nil? ? order : tax_order
