@@ -145,8 +145,9 @@ module Faker
           else
             raise TypeError, 'tax_order parameter must be symbolizable' \
               unless tax_order.respond_to?(:to_sym)
-            raise ArgumentError, "#{tax_order.to_s} is not a valid taxonomic order" \
-                                 unless map.keys.include?(tax_order.to_sym) 
+            raise ArgumentError, "#{tax_order} is not a valid taxonomic order" \
+                                 unless map.keys.include?(tax_order.to_sym)
+
             the_order = translate('faker.creature.bird.order_common_map')[tax_order.to_sym]
             sample(the_order).downcase
           end

@@ -48,7 +48,7 @@ class TestFakerCreatureBird < Test::Unit::TestCase
 
   def test_common_names_with_specific_but_imaginary_order
     not_real_order = :Somethingaformes
-    assert_raises(ArgumentError) { @tester.common_name not_real_order}
+    assert_raises(ArgumentError) { @tester.common_name not_real_order }
   end
 
   def test_common_name_with_bad_parameter
