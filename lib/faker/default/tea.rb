@@ -30,7 +30,7 @@ module Faker
       # @return [String] a type of tea
       #
       # @example
-      #   Faker::Tea.blend
+      #   Faker::Tea.type
       #     #=> "Green"
       # @faker.version next
       def type
