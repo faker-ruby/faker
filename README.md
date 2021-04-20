@@ -207,6 +207,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Stripe](doc/default/stripe.md)
   - [Faker::Subscription](doc/default/subscription.md)
   - [Faker::Superhero](doc/default/superhero.md)
+  - [Faker::Tea](doc/default/tea.md)
   - [Faker::Team](doc/default/team.md)
   - [Faker::Time](doc/default/time.md)
   - [Faker::Twitter](doc/default/twitter.md)
