@@ -11,7 +11,7 @@ Faker::Creature::Bird.order #=> "Passeriformes" # Fun fact, 60% of birds are Pas
 Faker::Creature::Bird.anatomy #=> "rump"
 
 # Random bird anatomy word, in the past tense
-Faker::Creature::Bird.anatomy #=> "breasted"
+Faker::Creature::Bird.anatomy_past_tense #=> "breasted"
 
 # Random bird geography word
 Faker::Creature::Bird.geo #=> "Eurasian"
