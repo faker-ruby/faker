@@ -234,6 +234,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 ### Creature
   - [Faker::Creature::Animal](doc/creature/animal.md)
+  - [Faker::Creature::Bird](doc/creature/bird.md)
   - [Faker::Creature::Cat](doc/creature/cat.md)
   - [Faker::Creature::Dog](doc/creature/dog.md)
   - [Faker::Creature::Horse](doc/creature/horse.md)
