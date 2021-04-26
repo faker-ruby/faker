@@ -171,6 +171,36 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.password(min_length: 8, max_length: 12, mix_case: true).match(/[^!@#$%\^&*]+/)
   end
 
+  def test_password_with_special_chars_and_mixed_case
+    32.times do
+      password = @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true)
+      assert password.match(/[!@#$%\^&*]+/)
+      assert password.match(/[A-z]+/)
+    end
+  end
+
+  def test_password_with_special_chars_and_mixed_case_on_2chars_password
+    16.times do
+      password = @tester.password(min_length: 2, max_length: 6, mix_case: true, special_characters: true)
+      assert password.match(/[!@#$%\^&*]+/)
+      assert password.match(/[A-z]+/)
+    end
+  end
+
+  def test_password_with_incompatible_min_length_and_requirements
+    assert_raise ArgumentError do
+      @tester.password(min_length: 1, mix_case: true, special_characters: true)
+    end
+  end
+
+  def test_password_with_compatible_min_length_and_requirements
+    assert_nothing_raised do
+      [false, true].each do |value|
+        @tester.password(min_length: 1, mix_case: value, special_characters: !value)
+      end
+    end
+  end
+
   def test_domain_name_without_subdomain
     assert @tester.domain_name.match(/[\w-]+\.\w+/)
   end
