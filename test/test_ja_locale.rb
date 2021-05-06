@@ -159,6 +159,19 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Space.galaxy.is_a? String
   end
 
+  def test_it_subscription_methods
+    assert Faker::Subscription.plan.is_a? String
+    assert_not_english(Faker::Subscription.plan)
+    assert Faker::Subscription.status.is_a? String
+    assert_not_english(Faker::Subscription.status)
+    assert Faker::Subscription.payment_method.is_a? String
+    assert Array.new(10) { Faker::Subscription.payment_method }.any? { |word| !word.match?(/[a-zA-Z]/) }
+    assert Faker::Subscription.subscription_term.is_a? String
+    assert_not_english(Faker::Subscription.subscription_term)
+    assert Faker::Subscription.payment_term.is_a? String
+    assert_not_english(Faker::Subscription.payment_term)
+  end
+
   def test_ja_university_methods
     assert Faker::University.prefix.is_a? String
     assert_not_english(Faker::University.prefix)
