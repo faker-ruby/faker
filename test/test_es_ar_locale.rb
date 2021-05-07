@@ -11,7 +11,7 @@ class TestEsArLocale < Test::Unit::TestCase
     @one_or_more_words_pattern = /(?u:(?:\w+\ )*\w+)/
     @many_words_pattern = /(?u:(?:\w+\ )+\w+)/
 
-    @name_with_nickname_pattern = /(?u:(?:\'*\w+\'*\ )+(?:\'*\w+\'*))/
+    @name_with_nickname_pattern = /(?u:(?:'*\w+'*\ )+(?:'*\w+'*))/
 
     @compass_letter_pattern = /^[NEOS]{1,2}(?:p?[NEOS]{1,2})?$/
     @compass_number_pattern = /^\d+(?:.\d\d?)?$/
