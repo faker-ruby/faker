@@ -159,7 +159,7 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Space.galaxy.is_a? String
   end
 
-  def test_it_subscription_methods
+  def test_ja_subscription_methods
     assert Faker::Subscription.plan.is_a? String
     assert_not_english(Faker::Subscription.plan)
     assert Faker::Subscription.status.is_a? String
