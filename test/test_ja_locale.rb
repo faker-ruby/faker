@@ -42,6 +42,7 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_color_methods
     assert Faker::Color.color_name.is_a? String
+    assert_not_english(Faker::Color.color_name)
   end
 
   def test_ja_book_methods
