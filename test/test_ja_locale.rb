@@ -14,7 +14,7 @@ class TestJaLocale < Test::Unit::TestCase
   def test_ja_address_methods
     assert Faker::Address.postcode.is_a? String
     # Added Actual Japanese Zipcodes in lib/locals/ja.yml
-    assert_equal Faker::Address.postcode.size, 7
+    assert_match(/\A\d{3}-\d{4}\z/, Faker::Address.postcode)
     assert_not_english(Faker::Address.postcode)
     assert Faker::Address.state.is_a? String
     assert_not_english(Faker::Address.state)
