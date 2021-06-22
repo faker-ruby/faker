@@ -160,6 +160,15 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Space.galaxy.is_a? String
   end
 
+  def test_ja_studio_ghibli_methods
+    assert Faker::JapaneseMedia::StudioGhibli.character.is_a? String
+    assert_not_english(Faker::JapaneseMedia::StudioGhibli.character)
+    assert Faker::JapaneseMedia::StudioGhibli.quote.is_a? String
+    assert_not_english(Faker::JapaneseMedia::StudioGhibli.quote)
+    assert Faker::JapaneseMedia::StudioGhibli.movie.is_a? String
+    assert_not_english(Faker::JapaneseMedia::StudioGhibli.movie)
+  end
+
   def test_ja_subscription_methods
     assert Faker::Subscription.plan.is_a? String
     assert_not_english(Faker::Subscription.plan)
