@@ -13,6 +13,10 @@ class TestFakerDota < Test::Unit::TestCase
                  underlord undying wraith_king]
   end
 
+  def test_building
+    assert @tester.building.match(/\w+/)
+  end
+
   def test_hero
     assert @tester.hero.match(/\w+/)
   end

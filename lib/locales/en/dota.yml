@@ -2,6 +2,13 @@ en:
   faker:
     games:
       dota:
+        building:
+          - Tower
+          - Barrack
+          - Ancient
+          - Fountain
+          - Effigy
+          - Outpost
         hero:
           - Abaddon
           - Alchemist
