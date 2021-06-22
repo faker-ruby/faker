@@ -161,6 +161,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Drone](doc/drone/drone.md)
   - [Faker::Educator](doc/default/educator.md)
   - [Faker::ElectricalComponents](doc/default/electrical_components.md)
+  - [Faker::Emotion](doc/default/emotion.md)
   - [Faker::Esport](doc/default/esport.md)
   - [Faker::File](doc/default/file.md)
   - [Faker::Fillmurray](doc/default/fillmurray.md)
