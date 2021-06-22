@@ -87,6 +87,19 @@ module Faker
 
           fetch("games.dota.#{hero}.quote")
         end
+
+        ##
+        # Produces the name of a neutral item from Dota.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::Dota.neutral_item #=> "Mango Tree"
+        #
+        # @faker.version next
+        def neutral_item
+          fetch('games.dota.neutral_item')
+        end
       end
     end
   end

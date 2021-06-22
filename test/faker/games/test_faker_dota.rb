@@ -38,4 +38,8 @@ class TestFakerDota < Test::Unit::TestCase
       assert_match(/\w+/, @tester.quote(hero: hero))
     end
   end
+
+  def test_neutral_item
+    assert @tester.neutral_item.match(/\w+/)
+  end
 end
