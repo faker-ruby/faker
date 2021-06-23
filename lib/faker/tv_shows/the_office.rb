@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::TvShows::TheOffice.character #=> "Michael Scott"
         #
-        # @faker.version 1.8.5
+        # @faker.version next
         def character
           fetch('the_office.characters')
         end
@@ -25,10 +25,9 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::TvShows::TheOffice.quote
-        #     #=> "Identity theft is not a joke, Jim! Millions of families suffer every year."
+        #   Faker::TvShows::TheOffice.quote #=> "Identity theft is not a joke, Jim! Millions of families suffer every year."
         #
-        # @faker.version 1.8.5
+        # @faker.version next
         def quote
           fetch('the_office.quotes')
         end
