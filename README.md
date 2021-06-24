@@ -343,6 +343,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::TheExpanse](doc/tv_shows/the_expanse.md)
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/tv_shows/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/tv_shows/the_it_crowd.md)
+  - [Faker::TvShows::TheOffice](doc/tv_shows/the_office.md)
+  - [Faker::TvShows::TheOfficeOriginal](doc/tv_shows/the_office_original.md)
   - [Faker::TvShows::TheThickOfIt](doc/tv_shows/the_thick_of_it.md)
   - [Faker::TvShows::TwinPeaks](doc/tv_shows/twin_peaks.md)
   - [Faker::TvShows::VentureBros](doc/tv_shows/venture_bros.md)
