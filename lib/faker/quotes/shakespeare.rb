@@ -56,18 +56,52 @@ module Faker
           sample(romeo_and_juliet)
         end
 
+        ##
+        # Generates quote from Hamlet
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Quotes::Shakespeare.hamlet   #=> "A little more than kin, and less than kind."
+        #
+        # @faker.version 1.9.2
         def hamlet
           fetch('shakespeare.hamlet')
         end
 
+        ##
+        # Generates quote from 'As you like it!'
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Quotes::Shakespeare.as_you_like_it   #=> "How bitter a thing it is to look into happiness through another man's eyes!"
+        #
+        # @faker.version 1.9.2
         def as_you_like_it
           fetch('shakespeare.as_you_like_it')
         end
 
+        ##
+        # Returns quote from 'King Rechard III'
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Quotes::Shakespeare  #=> "The king's name is a tower of strength."
         def king_richard_iii
           fetch('shakespeare.king_richard_iii')
         end
 
+        ##
+        # Quote from 'Romeo and Juliet'
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Quotes::Shakespeare.romeo_and_juliet  #=> "Wisely and slow; they stumble that run fast."
+        #
+        # @faker.version 1.9.2
         def romeo_and_juliet
           fetch('shakespeare.romeo_and_juliet')
         end

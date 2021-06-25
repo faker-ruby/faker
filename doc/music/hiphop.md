@@ -1,10 +1,10 @@
-# Faker::Music::HipHop
+# Faker::Music::Hiphop
 
 ```ruby
-Faker::Music::HipHop.artist #=> "Lil Wayne"
+Faker::Music::Hiphop.artist #=> "Lil Wayne"
 
-Faker::Music::HipHop.groups #=> "G-Unit"
+Faker::Music::Hiphop.groups #=> "G-Unit"
 
-Faker::Music::HipHop.subgenres #=> "Alternative"
+Faker::Music::Hiphop.subgenres #=> "Alternative"
 
 ```

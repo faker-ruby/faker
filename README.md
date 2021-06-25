@@ -1,4 +1,3 @@
-
 ![logotype a happy-07](https://user-images.githubusercontent.com/36028424/40263395-4318481e-5b44-11e8-92e5-3dcc1ce169b3.png)
 
 # Faker
@@ -28,6 +27,7 @@ development.
     - [Default](#default)
     - [Blockchain](#blockchain)
     - [Books](#books)
+    - [Fantasy](#fantasy)
     - [Creature](#creature)
     - [Games](#games)
     - [Japanese Media](#japanese-media)
@@ -161,6 +161,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Drone](doc/drone/drone.md)
   - [Faker::Educator](doc/default/educator.md)
   - [Faker::ElectricalComponents](doc/default/electrical_components.md)
+  - [Faker::Emotion](doc/default/emotion.md)
   - [Faker::Esport](doc/default/esport.md)
   - [Faker::File](doc/default/file.md)
   - [Faker::Fillmurray](doc/default/fillmurray.md)
@@ -207,6 +208,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Stripe](doc/default/stripe.md)
   - [Faker::Subscription](doc/default/subscription.md)
   - [Faker::Superhero](doc/default/superhero.md)
+  - [Faker::Tea](doc/default/tea.md)
   - [Faker::Team](doc/default/team.md)
   - [Faker::Time](doc/default/time.md)
   - [Faker::Twitter](doc/default/twitter.md)
@@ -228,8 +230,12 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Books::Dune](doc/books/dune.md)
   - [Faker::Books::Lovecraft](doc/books/lovecraft.md)
 
+### Fantasy
+  - [Faker::Fantasy::Tolkien](doc/fantasy/tolkien.md)
+
 ### Creature
   - [Faker::Creature::Animal](doc/creature/animal.md)
+  - [Faker::Creature::Bird](doc/creature/bird.md)
   - [Faker::Creature::Cat](doc/creature/cat.md)
   - [Faker::Creature::Dog](doc/creature/dog.md)
   - [Faker::Creature::Horse](doc/creature/horse.md)
@@ -286,6 +292,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 ### Music
   - [Faker::Music](doc/music/music.md)
   - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
+  - [Faker::Music::Hiphop](doc/music/hiphop.md)
   - [Faker::Music::Opera](doc/music/opera.md)
   - [Faker::Music::PearlJam](doc/music/pearl_jam.md)
   - [Faker::Music::Phish](doc/music/phish.md)

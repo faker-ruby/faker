@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'digest'
+require 'openssl'
 require 'securerandom'
 
 module Faker
@@ -126,7 +126,7 @@ module Faker
         def encode_tz(prefix, payload_size)
           prefix = PREFIXES.fetch(prefix)
           packed = prefix.map(&:chr).join('') + Faker::Config.random.bytes(payload_size)
-          checksum = Digest::SHA2.digest(Digest::SHA2.digest(packed))[0..3]
+          checksum = OpenSSL::Digest::SHA256.digest(OpenSSL::Digest::SHA256.digest(packed))[0..3]
           Faker::Base58.encode(packed + checksum)
         end
       end
