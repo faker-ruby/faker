@@ -15,6 +15,14 @@ class TestFakerScience < Test::Unit::TestCase
     assert @tester.element.match(/\w{1,2}/)
   end
 
+  def test_element_state
+    assert @tester.element_state.match(/\w+/)
+  end
+
+  def test_element_subcategory
+    assert @tester.element_subcategory.match(/\w+/)
+  end
+
   def test_scientist
     assert @tester.scientist.match(/\w+/)
   end

@@ -3,7 +3,7 @@
 require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
-  WORD_MATCH = /\w+\.?/
+  WORD_MATCH = /\w+\.?/.freeze
 
   def setup
     @tester = Faker::Vehicle
@@ -66,7 +66,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_license_plate_with_params
-    assert_match WORD_MATCH, @tester.license_plate(state_abreviation: 'CA')
+    assert_match WORD_MATCH, @tester.license_plate(state_abbreviation: 'CA')
   end
 
   def test_make

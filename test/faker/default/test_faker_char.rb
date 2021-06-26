@@ -12,5 +12,7 @@ class TestFakerChar < Test::Unit::TestCase
     assert @tester.fix_umlauts('ö') == 'oe'
     assert @tester.fix_umlauts('ü') == 'ue'
     assert @tester.fix_umlauts('ß') == 'ss'
+    # tests false positive
+    assert @tester.fix_umlauts('ss') == 'ss'
   end
 end

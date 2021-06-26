@@ -10,12 +10,24 @@ class TestFakerBank < Test::Unit::TestCase
   end
 
   def test_routing_number
-    assert Faker::Bank.routing_number.match(/\d{9}/)
+    routing_number = Faker::Bank.routing_number
+    checksum = (
+      7 * (routing_number[0].to_i + routing_number[3].to_i + routing_number[6].to_i) +
+        3 * (routing_number[1].to_i + routing_number[4].to_i + routing_number[7].to_i) +
+        9 * (routing_number[2].to_i + routing_number[5].to_i + routing_number[8].to_i)
+    ) % 10
+
+    assert routing_number.match(/\d{9}/)
+    assert_equal(checksum, 0)
   end
 
   def test_routing_number_with_format
     fraction = Faker::Bank.routing_number_with_format
-    assert fraction.match(/\d{1,2}[-]\d{1,4}[\/]\d{1,4}/)
+    assert fraction.match(/\d{1,2}-\d{1,4}\/\d{1,4}/)
+  end
+
+  def test_bsb_number
+    assert Faker::Bank.bsb_number.match(/\d{6}/)
   end
 
   def test_account_number
@@ -34,8 +46,26 @@ class TestFakerBank < Test::Unit::TestCase
     assert @tester.swift_bic.match(/(\w+\.? ?){2,3}/)
   end
 
+  # This test makes sure there are no collisions in BIC number pool
+  # https://github.com/faker-ruby/faker/pull/2130#issuecomment-703213837
+  # def test_swift_bic_collission
+  #   10.times do
+  #     samplebic1 = @tester.swift_bic
+  #     samplebic2 = @tester.swift_bic
+  #     refute_equal samplebic1, samplebic2
+  #   end
+  # end
+
+  def test_iban_country_code
+    assert_match(/^[A-Z]{2}$/, @tester.iban_country_code)
+  end
+
   def test_iban_default
-    assert @tester.iban.match(/[A-Z]{4}\d{14}/)
+    assert_match(/^GB\d{2}[A-Z]{4}\d{14}$/, @tester.iban)
+  end
+
+  def test_iban_rand_country
+    assert_match(/^[A-Z]{2}\d{2}[A-Z\d]{10,30}$/, @tester.iban(country_code: nil))
   end
 
   # Andorra

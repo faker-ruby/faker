@@ -12,16 +12,14 @@ class TestPtLocale < Test::Unit::TestCase
   end
 
   def test_pt_address_methods
-    assert_match(/^[[:word:]]+[\.]? \d{1,3}$/, Faker::Address.secondary_address)
-    assert_match(/^[\d]{3,5}$/, Faker::Address.building_number)
-    assert_match(/^[\d]{4}$/, Faker::Address.postcode)
+    assert_match(/^[[:word:]]+[.]? \d{1,3}$/, Faker::Address.secondary_address)
+    assert_match(/^\d{3,5}$/, Faker::Address.building_number)
+    assert_match(/^\d{4}$/, Faker::Address.postcode)
 
     assert Faker::Address.country_code.is_a? String
     assert Faker::Address.street_suffix.is_a? String
     assert Faker::Address.state.is_a? String
     assert Faker::Address.city_name.is_a? String
-    assert Faker::Address.city_prefix.is_a? String
-    assert Faker::Address.city_suffix.is_a? String
     assert Faker::Address.city.is_a? String
     assert Faker::Address.country.is_a? String
     assert_equal('Portugal', Faker::Address.default_country)
@@ -41,6 +39,6 @@ class TestPtLocale < Test::Unit::TestCase
   end
 
   def test_pt_phone_number
-    assert_match(/^(\+351)?[\(\)\d\s\-]+$/, Faker::PhoneNumber.phone_number)
+    assert_match(/^(\+351)?[()\d\s\-]+$/, Faker::PhoneNumber.phone_number)
   end
 end

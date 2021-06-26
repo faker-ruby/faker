@@ -6,7 +6,21 @@ module Faker
                            diners_club jcb switch solo dankort
                            maestro forbrugsforeningen laser].freeze
 
+    MARKET_LIST = %i[nyse nasdaq].freeze
+
     class << self
+      ##
+      # Produces a random credit card number.
+      #
+      # @param types [String] Specific credit card type.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Finance.credit_card #=> "3018-348979-1853"
+      #   Faker::Finance.credit_card(:mastercard) #=> "6771-8921-2291-6236"
+      #   Faker::Finance.credit_card(:mastercard, :visa) #=> "4448-8934-1277-7195"
+      #
+      # @faker.version 1.2.0
       def credit_card(*types)
         types = CREDIT_CARD_TYPES if types.empty?
         type = sample(types)
@@ -26,7 +40,23 @@ module Faker
         template.gsub('L', luhn_digit.to_s)
       end
 
-      def vat_number(country: 'BR')
+      ##
+      # Produces a random vat number.
+      #
+      # @param country [String] Two capital letter country code to use for the vat number.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Finance.vat_number #=> "BR38.395.329/2471-83"
+      #   Faker::Finance.vat_number('DE') #=> "DE593306671"
+      #   Faker::Finance.vat_number('ZA') #=> "ZA79494416181"
+      #
+      # @faker.version 1.9.2
+      def vat_number(legacy_country = NOT_GIVEN, country: 'BR')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :country if legacy_country != NOT_GIVEN
+        end
+
         numerify(fetch("finance.vat_number.#{country}"))
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find vat number for #{country}"
@@ -34,6 +64,25 @@ module Faker
 
       def vat_number_keys
         translate('faker.finance.vat_number').keys
+      end
+
+      ##
+      # Returns a randomly-selected stock ticker from a specified market.
+      #
+      # @param markets [String] The name of the market to choose the ticker from (e.g. NYSE, NASDAQ)
+      # @return [String]
+      #
+      # @example
+      #   Faker::Finance.ticker #=> 'AMZN'
+      #   Faker::Finance.vat_number('NASDAQ') #=> 'GOOG'
+      #
+      # @faker.version next
+      def ticker(*markets)
+        markets = MARKET_LIST if markets.empty?
+        market = sample(markets)
+        fetch("finance.ticker.#{market}")
+      rescue I18n::MissingTranslationData
+        raise ArgumentError, "Could not find market named #{market}"
       end
     end
   end

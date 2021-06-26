@@ -48,7 +48,7 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_imei_regexp
-    assert @tester.imei.match(/\A[\d\.\:\-\s]+\z/i)
+    assert @tester.imei.match(/\A[\d.:\-\s]+\z/i)
   end
 
   def test_imei_luhn_value

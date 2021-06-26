@@ -1,15 +1,882 @@
 # Change Log
 
-## [v2.1.0](https://github.com/stympy/faker/tree/2.1.0) (2019-31-07)
+## [v2.18.0](https://github.com/faker-ruby/faker/tree/v2.18.0) (2021-05-15)
 
 ## Bug/Fixes
-- [PR #1675](https://github.com/stympy/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
+
+- [PR #2300](https://github.com/faker-ruby/faker/pull/2300) Fix space.company by adding missing quote [@koic](https://github.com/koic)
+- [PR #2044](https://github.com/faker-ruby/faker/pull/2044) Workaround for cc-test-reporter with SimpleCov 0.18 [@koic](https://github.com/koic)
+
+## Chores
+
+- [PR #2316](https://github.com/faker-ruby/faker/pull/2316) Fix typo in test method [@yujideveloper](https://github.com/yujideveloper)
+
+## Documentation
+
+- [PR #2290](https://github.com/faker-ruby/faker/pull/2290) Fix typo [@d-holbach](https://github.com/d-holbach)
+- [PR #2282](https://github.com/faker-ruby/faker/pull/2282) fixed small typo [@koic](https://github.com/koic)
+
+## Feature Request
+
+- [PR #2301](https://github.com/faker-ruby/faker/pull/2301) Add Faker::IDNumber.croatian_id method [@lovro-bikic](https://github.com/lovro-bikic)
+- [PR #2299](https://github.com/faker-ruby/faker/pull/2299) Add birds [@brotherjack](https://github.com/brotherjack)
+- [PR #2295](https://github.com/faker-ruby/faker/pull/2295) Add more methods to the Witcher class [@marcelobarreto](https://github.com/marcelobarreto)
+- [PR #2289](https://github.com/faker-ruby/faker/pull/2289) Increase french entropy [@meuble](https://github.com/meuble)
+- [PR #2287](https://github.com/faker-ruby/faker/pull/2287) Add Crypto.sha512 [@crondaemon](https://github.com/crondaemon)
+- [PR #2190](https://github.com/faker-ruby/faker/pull/2190) Add Faker::Tea [@snood1205](https://github.com/snood1205)
+- [PR #2175](https://github.com/faker-ruby/faker/pull/2175) Add two generators to Faker::Science [@RubyHuntsman](https://github.com/RubyHuntsman)
+- [PR #1910](https://github.com/faker-ruby/faker/pull/1910) Add Faker::Music#mambo_no_5, a Generator for Random First Names that Appear in Lou Bega's Mambo No. 5 [@NickyEXE](https://github.com/NickyEXE)
+
+## Update locales
+
+- [PR #2321](https://github.com/faker-ruby/faker/pull/2321) Canadian area code 226 included in array of US area codes [@jgarber623](https://github.com/jgarber623)
+- [PR #2317](https://github.com/faker-ruby/faker/pull/2317) Fix ci for es-AR [@yujideveloper](https://github.com/yujideveloper)
+- [PR #2315](https://github.com/faker-ruby/faker/pull/2315) Split JA translation file into one file per class [@yujideveloper](https://github.com/yujideveloper)
+- [PR #2313](https://github.com/faker-ruby/faker/pull/2313) Add Japanese translation for Faker::Subscription [@yujideveloper](https://github.com/yujideveloper)
+- [PR #2311](https://github.com/faker-ruby/faker/pull/2311) add yoda quotes to russian locale [@aka-nez](https://github.com/aka-nez)
+- [PR #2297](https://github.com/faker-ruby/faker/pull/2297) add Japanese actual zipcodes in locals/ja.yml [@POPPIN-FUMI](https://github.com/POPPIN-FUMI)
+- [PR #2291](https://github.com/faker-ruby/faker/pull/2291) Add Commerce for Japanese [@ima1zumi](https://github.com/ima1zumi)
+- [PR #2285](https://github.com/faker-ruby/faker/pull/2285) Fix update Brazilian phone country code [@ricardopacheco](https://github.com/ricardopacheco)
+- [PR #2154](https://github.com/faker-ruby/faker/pull/2154) Cleanup books. Add Fantasy::Tolkien to README. [@mathisto](https://github.com/mathisto)
+
+## Update local dependencies
+
+- Update rubocop requirement from = 1.13.0 to = 1.14.0 (#2314)
+- Upgrade to GitHub-native Dependabot (#2310)
+- Update rubocop requirement from = 1.12.1 to = 1.13.0 (#2305)
+- Update test-unit requirement from = 3.4.0 to = 3.4.1 (#2303)
+- Update pry requirement from = 0.14.0 to = 0.14.1 (#2298)
+- Update rubocop requirement from = 1.12.0 to = 1.12.1 (#2294)
+- Update rubocop requirement from = 1.11.0 to = 1.12.0 (#2288)
+
+## [v2.17.0](https://github.com/faker-ruby/faker/tree/v2.17.0) (2021-03-10)
+
+## Chores
+
+- [PR #2272](https://github.com/faker-ruby/faker/pull/2272) Bump RuboCop to 1.10.0 [@koic](https://github.com/koic)
+- [PR #2270](https://github.com/faker-ruby/faker/pull/2270) Generate different values when generating a hash [@DaniTheLion](https://github.com/DaniTheLion)
+- [PR #2236](https://github.com/faker-ruby/faker/pull/2236) Move Digest classes to OpenSSL [@dbussink](https://github.com/dbussink)
+
+## Documentation
+
+- [PR #2277](https://github.com/faker-ruby/faker/pull/2277) add Hip Hop To Path [@Josiassejod1](https://github.com/Josiassejod1)
+- [PR #2276](https://github.com/faker-ruby/faker/pull/2276) Fix syntax highlighting and missing version [@ghiculescu](https://github.com/ghiculescu)
+- [PR #2255](https://github.com/faker-ruby/faker/pull/2255) Correct capitalization of RuboCop in text [@jdufresne](https://github.com/jdufresne)
+- [PR #2204](https://github.com/faker-ruby/faker/pull/2204) update documentation to include Float type [@BigBigDoudou](https://github.com/BigBigDoudou)
+
+## Feature Request
+
+- [PR #2256](https://github.com/faker-ruby/faker/pull/2256) Add Faker::Educator.primary_school [@jdufresne](https://github.com/jdufresne)
+- [PR #2248](https://github.com/faker-ruby/faker/pull/2248) Add Bank.iban_country_code [@mastermatt](https://github.com/mastermatt)
+- [PR #2166](https://github.com/faker-ruby/faker/pull/2166) add binary number faker [@gabrielbaldao](https://github.com/gabrielbaldao)
+
+## Update locales
+
+- [PR #2275](https://github.com/faker-ruby/faker/pull/2275) Add Japanese for Faker::Games::Orverwatch [@may-solty](https://github.com/may-solty)
+- [PR #2268](https://github.com/faker-ruby/faker/pull/2268) Add Japanese for Faker::Games::SuperMario [@k-maekawa](https://github.com/k-maekawa)
+- [PR #2258](https://github.com/faker-ruby/faker/pull/2258) Add es-AR locale [@fcolacilli](https://github.com/fcolacilli)
+- [PR #2215](https://github.com/faker-ruby/faker/pull/2215) Unify model names to not contain manufacturer name [@berkos](https://github.com/berkos)
+
+------------------------------------------------------------------------------
+
+## [v2.16.0](https://github.com/faker-ruby/faker/tree/v2.16.0) (2021-02-09)
+
+## Chores
+
+- [PR #2262](https://github.com/faker-ruby/faker/pull/2262) Workaround build error for ruby-head [@koic](https://github.com/koic)
+- [PR #2257](https://github.com/faker-ruby/faker/pull/2257) Trim trailing white space throughout the project [@koic](https://github.com/koic)
+- [PR #2229](https://github.com/faker-ruby/faker/pull/2229) Use Random.new instead of `Random::DEFAULT` [@connorshea](https://github.com/connorshea)
+- [PR #2226](https://github.com/faker-ruby/faker/pull/2226) Add Ruby 3.0 to CI matrix [@connorshea](https://github.com/connorshea)
+
+## Documentation
+
+- [PR #2247](https://github.com/faker-ruby/faker/pull/2247) 2243 yard doc [@sudeeptarlekar](https://github.com/sudeeptarlekar)
+- [PR #2240](https://github.com/faker-ruby/faker/pull/2240) Updated `rock_band.md` to include example for using song generator [@jsca-kwok](https://github.com/jsca-kwok)
+- [PR #2205](https://github.com/faker-ruby/faker/pull/2205) `Faker::Mountain` doc [@bipashant](https://github.com/bipashant)
+
+## Feature Request
+
+- [PR #2221](https://github.com/faker-ruby/faker/pull/2221) Added rock band song generator [@jsca-kwok](https://github.com/jsca-kwok)
+- [PR #2208](https://github.com/faker-ruby/faker/pull/2208) Feat/add blockchain Tezos keys [@akettal](https://github.com/akettal) [@Pierre-Michard](https://github.com/Pierre-Michard)
+- [PR #2197](https://github.com/faker-ruby/faker/pull/2197) Add `Faker::Games::Touhou` [@dysnomian](https://github.com/dysnomian)
+
+## Update locales
+
+- [PR #2238](https://github.com/faker-ruby/faker/pull/2238) added some data in `fr.yml` and `football.yml` [@MathGL92](https://github.com/MathGL92)
+- [PR #2222](https://github.com/faker-ruby/faker/pull/2222) Add Japanese for `Faker::Book` [@zoshigayan](https://github.com/zoshigayan)
+- [PR #2217](https://github.com/faker-ruby/faker/pull/2217) Add Sephiroth and Northern Cave to `Faker::Games::SuperSmashBros` [@boardfish](https://github.com/boardfish)
+- [PR #2201](https://github.com/faker-ruby/faker/pull/2201) Typo in Lebowski Quote [@rgraff](https://github.com/rgraff)
+- [PR #2197](https://github.com/faker-ruby/faker/pull/2197) Add `Faker::Games::Touhou` [@dysnomian](https://github.com/dysnomian)
+
+------------------------------------------------------------------------------
+
+## [v2.15.1](https://github.com/faker-ruby/faker/tree/v2.15.1) (2020-11-24)
+
+- Rollback PR #2169 and bump 2.15.1 [#2203](https://github.com/faker-ruby/faker/pull/2203) @vbrazo
+
+------------------------------------------------------------------------------
+
+## [v2.15.0](https://github.com/faker-ruby/faker/tree/v2.15.0) (2020-11-24)
+
+## Bug/Fixes
+
+- RuboCop 1.0 fixes [#2182](https://github.com/faker-ruby/faker/pull/2182) @amatsuda
+- Get rid of broken I18n locales configuration for the tests [#2168](https://github.com/faker-ruby/faker/pull/2168) @amatsuda
+- Fixes a bug when generating a password with min_length eq 1 [#2138](https://github.com/faker-ruby/faker/pull/2138) @adrian-rivera @Zeragamba
+- Improve Faker::Company.spanish_organisation_number [#2106](https://github.com/faker-ruby/faker/pull/2106)
+
+## Chores
+
+- Reformat demographic yaml [#2189](https://github.com/faker-ruby/faker/pull/2189) @fiteclub
+- An attempt to load only necessary locales on the fly [#2169](https://github.com/faker-ruby/faker/pull/2169) @amatsuda
+- Faker::Config can be a Module rather than a Class [#2167](https://github.com/faker-ruby/faker/pull/2167) @amatsuda
+- Cleanup games [#2155](https://github.com/faker-ruby/faker/pull/2155) @mathisto
+- Deprecate `celebrity` methods in favor of `actor` [#2133](https://github.com/faker-ruby/faker/pull/2133) @vraravam
+
+## Documentation
+
+- Fix class name in volleyball.md [#2198](https://github.com/faker-ruby/faker/pull/2198) @connorshea
+- Fix typo in doc/games/heroes.md [#2145](https://github.com/faker-ruby/faker/pull/2145) @Crysicia
+- fix typo [#2141](https://github.com/faker-ruby/faker/pull/2141) @Zeragamba
+- Updated versions in doc for methods. [#2123](https://github.com/faker-ruby/faker/pull/2123) @sudeeptarlekar
+
+## Feature Request
+
+- Add `Faker::Mountain` [#2196](https://github.com/faker-ruby/faker/pull/2196) @bipashant
+- Add Faker::Volleyball [#2178](https://github.com/faker-ruby/faker/pull/2178) @RubyHuntsman
+- Add artifact generator to Faker::Game::Heroes [#2177](https://github.com/faker-ruby/faker/pull/2177) @droznyk
+- Add generator to Faker::Games:ElderScrolls [#2171](https://github.com/faker-ruby/faker/pull/2171) @RubyHuntsman
+- Augment opera [#2170](https://github.com/faker-ruby/faker/pull/2170) @Gaitorius
+- Add generator to Faker::Games::ElderScrolls [#2164](https://github.com/faker-ruby/faker/pull/2164) @RubyHuntsman
+- Add more generators to Faker::Minecraft [#2162](https://github.com/faker-ruby/faker/pull/2162) @RubyHuntsman
+- I added more programming languages to the source [#2161](https://github.com/faker-ruby/faker/pull/2161) @JoaoHenriqueVale
+- Add Faker:Camera [#2159](https://github.com/faker-ruby/faker/pull/2159) @RubyHuntsman
+- Add how to train your dragon [#2158](https://github.com/faker-ruby/faker/pull/2158) @archbloom
+- Add Faker::Fantasy::Tolkien [#2152](https://github.com/faker-ruby/faker/pull/2152) @mathisto
+- Feature: Add north dakota driving licence [#2149](https://github.com/faker-ruby/faker/pull/2149) @martinjaimem
+- Add Final Space to TvShows category [#2147](https://github.com/faker-ruby/faker/pull/2147)
+- Add finance/stock generators [#2146](https://github.com/faker-ruby/faker/pull/2146) @johnpitchko
+- Add Clash Of Clans to the Game category [#2143](https://github.com/faker-ruby/faker/pull/2143) @jamesmai0512
+- Add Conan to the JapaneseMedia category [#2142](https://github.com/faker-ruby/faker/pull/2142) @jamesmai0512
+- Add Naruto to the JapaneseMedia category [#2139](https://github.com/faker-ruby/faker/pull/2139) @jamesmai0512
+- Add Doraemon to the JapaneseMedia category [#2137](https://github.com/faker-ruby/faker/pull/2137) @jamesmai0512
+- Add space force and coast guard to military [#2136](https://github.com/faker-ruby/faker/pull/2136) @mathisto
+- Add Super Mario [#2135](https://github.com/faker-ruby/faker/pull/2135) @fblupi
+- Add The Room (2003) to Movies [#2134](https://github.com/faker-ruby/faker/pull/2134) @fiteclub
+- Faker adjectives [#2130](https://github.com/faker-ruby/faker/pull/2130) @loicboset
+- Add Studio Ghibli to the JapaneseMedia category [#2124](https://github.com/faker-ruby/faker/pull/2124) @Kadaaran
+- Created New Method Faker::Quote.fortune_cookie [#2112](https://github.com/faker-ruby/faker/pull/2112) @catonmat
+- Allow disabling the usage of open compounds in sentences [#2109](https://github.com/faker-ruby/faker/pull/2109) @tjozwik
+- Add faker for hiphop artist [#1923](https://github.com/faker-ruby/faker/pull/1923) @Josiassejod1
+- Add races and class names to WorldOfWarcraft [#1787](https://github.com/faker-ruby/faker/pull/1787) @mathisto
+- Add planets and races to DragonBall [#1786](https://github.com/faker-ruby/faker/pull/1786) @mathisto
+- Add planets, cities, and quotes to Dune [#1784](https://github.com/faker-ruby/faker/pull/1784) @mathisto
+
+## Update locales
+
+- add japanese gender first name [#2191](https://github.com/faker-ruby/faker/pull/2191) @issei126
+- Add full_address to Ukrainian locale [#2176](https://github.com/faker-ruby/faker/pull/2176) @Ptico
+- Fixed some spelling issues in company.yml [#2173](https://github.com/faker-ruby/faker/pull/2173) @coreymaher
+- Update Faker::Games::SuperSmashBros [#2164](https://github.com/faker-ruby/faker/pull/2164) @boardfish
+- Add more quotes to Faker::Games::Witcher [#2163](https://github.com/faker-ruby/faker/pull/2163) @RubyHuntsman
+- Add Jack Handey's Deep Thoughts to quotes [#2150](https://github.com/faker-ruby/faker/pull/2150) @fiteclub
+- add brazil license plate from mercosul rules [#2144](https://github.com/faker-ruby/faker/pull/2144) @gabrielbaldao
+- Add additional quotes to Studio Ghibli [#2132](https://github.com/faker-ruby/faker/pull/2132) @lambda2
+- Change 'Nyota Uhuru' to 'Nyota Uhura' [#2121](https://github.com/faker-ruby/faker/pull/2121) @TrevorA-TrevorA
+- Add spanish license plates [#2103](https://github.com/faker-ruby/faker/pull/2103)
+
+## Update local dependencies
+
+- Update RuboCop requirement from = 1.0.0 to = 1.1.0 [#2185](https://github.com/faker-ruby/faker/pull/2185)
+- Update RuboCop requirement from = 0.93.1 to = 1.0.0 [#2172](https://github.com/faker-ruby/faker/pull/2172)
+- Update RuboCop requirement from = 0.93.0 to = 0.93.1 [#2156](https://github.com/faker-ruby/faker/pull/2156)
+- Update RuboCop requirement from = 0.92.0 to = 0.93.0 [#2151](https://github.com/faker-ruby/faker/pull/2151)
+- Update RuboCop requirement from = 0.91.1 to = 0.92.0 [#2129](https://github.com/faker-ruby/faker/pull/2129)
+- Update RuboCop requirement from = 0.91.0 to = 0.91.1 [#2126](https://github.com/faker-ruby/faker/pull/2126)
+- Update RuboCop requirement from = 0.90.0 to = 0.91.0 [#2122](https://github.com/faker-ruby/faker/pull/2122)
+- Update test-unit requirement from = 3.3.6 to = 3.3.7 [#2195](https://github.com/faker-ruby/faker/pull/2195)
+- Update timecop requirement from = 0.9.1 to = 0.9.2 [#2160](https://github.com/faker-ruby/faker/pull/2160)
+
+------------------------------------------------------------------------------
+
+## [v2.14.0](https://github.com/faker-ruby/faker/tree/v2.14.0) (2020-09-15)
+
+## Bug/Fixes
+
+- [PR #2119](https://github.com/faker-ruby/faker/pull/2119) Fixed failing spec for phone number
+
+## Chores
+
+- [PR #2088](https://github.com/faker-ruby/faker/pull/2088) Remove the space in the word "turtle" in the Creature::Animals faker
+- [PR #2081](https://github.com/faker-ruby/faker/pull/2081) Remove redundant condition branch for Ruby 2.4
+- [PR #2077](https://github.com/faker-ruby/faker/pull/2077) Rename tests according to the `test*.rb` pattern so that they run
+
+## Documentation
+
+- [PR #2095](https://github.com/faker-ruby/faker/pull/2095) Fix a typo for `Games::DnD.species`
+- [PR #2094](https://github.com/faker-ruby/faker/pull/2094) Correct method name from race to species in DnD doc
+- [PR #2079](https://github.com/faker-ruby/faker/pull/2079) Add `Music::PearlJam` to Readme
+- [PR #2058](https://github.com/faker-ruby/faker/pull/2058) Add YARD doc for `Faker::Code`
+
+## Feature Request
+
+- [PR #2117](https://github.com/faker-ruby/faker/pull/2117) Add Truffleruby head to CI
+- [PR #2104](https://github.com/faker-ruby/faker/pull/2104) 2097 Added barcodes
+- [PR #2090](https://github.com/faker-ruby/faker/pull/2090) 1693 USA driving license
+- [PR #2098](https://github.com/faker-ruby/faker/pull/2098) Update DnD generator
+- [PR #2096](https://github.com/faker-ruby/faker/pull/2096) 2091 faker drones
+- [PR #2092](https://github.com/faker-ruby/faker/pull/2092) Add a street fighter generator
+- [PR #2082](https://github.com/faker-ruby/faker/pull/2082) Enable `Lint/UnifiedInteger` cop
+
+## Update locales
+
+- [PR #2100](https://github.com/faker-ruby/faker/pull/2100) Remove Gaylord
+- [PR #2087](https://github.com/faker-ruby/faker/pull/2087) Fix/remove country code from phone numbers
+- [PR #2086](https://github.com/faker-ruby/faker/pull/2086) removing country code from phone numbers to `fr-CH`
+- [PR #2084](https://github.com/faker-ruby/faker/pull/2084) removed extra + sign from country codes
+- [PR #2078](https://github.com/faker-ruby/faker/pull/2078) Removed 07624 from UK mobile numbers
+- [PR #2073](https://github.com/faker-ruby/faker/pull/2073) Add missing azimuth field for fr locale
+- [PR #2072](https://github.com/faker-ruby/faker/pull/2072) Remove time formats from file
+
+Update local dependencies
+
+- Update RuboCop requirement from = 0.87.1 to = 0.88.0 (#2080)
+- Update RuboCop requirement from = 0.87.0 to = 0.87.1 (#2075)
+- Update RuboCop requirement from = 0.86.0 to = 0.87.0 (#2074)
+- Bumps i18n from 1.8.4 to 1.8.5 (#2089)
+- Bumps i18n from 1.8.3 to 1.8.4 (#2083)
+
+------------------------------------------------------------------------------
+
+## [v2.13.0](https://github.com/faker-ruby/faker/tree/v2.13.0) (2020-06-24)
+
+This version:
+- adds YARD docs for several interface methods
+- fixes bugs
+- adds improvements to the code base
+- updates dependencies
+
+## Bug/Fixes
+
+- [PR #2050](https://github.com/faker-ruby/faker/pull/2050) Fix random error in music tests [@martinjaimem](https://github.com/martinjaimem)
+- [PR #2037](https://github.com/faker-ruby/faker/pull/2037) Bug Fix: BIC Collission (Issue 1907) [@Newman101](https://github.com/Newman101)
+- [PR #2026](https://github.com/faker-ruby/faker/pull/2026) Sanitize email when name has special characters [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1785](https://github.com/faker-ruby/faker/pull/1785) Adds a fix for when :en is not one of the available locales [@jaimerodas](https://github.com/jaimerodas)
+
+## Chores
+
+- [PR #2041](https://github.com/faker-ruby/faker/pull/2041) Reduce Lines in char.rb [@Newman101](https://github.com/Newman101)
+- [PR #2039](https://github.com/faker-ruby/faker/pull/2039) restore Kylo Ren quotes [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2038](https://github.com/faker-ruby/faker/pull/2038) Drop EOL Rubies from CI tests [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2033](https://github.com/faker-ruby/faker/pull/2033) Use `Faker::Base::ULetters` constant instead [@vbrazo](https://github.com/vbrazo)
+- [PR #2028](https://github.com/faker-ruby/faker/pull/2028) Reorganize some tests [@connorshea](https://github.com/connorshea)
+- [PR #1853](https://github.com/faker-ruby/faker/pull/1853) Exclude string.rb from consideration by YARD. [@connorshea](https://github.com/connorshea)
+
+## Deprecation
+
+- [PR #2031](https://github.com/faker-ruby/faker/pull/2031) Deprecate `HeroesOfTheStorm.class` [@koic](https://github.com/koic)
+
+## Documentation
+
+- [PR #2065](https://github.com/faker-ruby/faker/pull/2065) Add missing documentation to `Faker::Computer` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2064](https://github.com/faker-ruby/faker/pull/2064) Add minecraft generators [@Ri1a](https://github.com/Ri1a)
+- [PR #2061](https://github.com/faker-ruby/faker/pull/2061) Update docs for `Faker::Date` with separate examples [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2057](https://github.com/faker-ruby/faker/pull/2057) Add missing quotes to `Faker::Internet` [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2055](https://github.com/faker-ruby/faker/pull/2055) Add YARD docs to `Faker::NHS` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2054](https://github.com/faker-ruby/faker/pull/2054) Add YARD docs to `Faker::Chile_Rut` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2053](https://github.com/faker-ruby/faker/pull/2053) Add YARD docs to `Faker::Lorem_Flickr` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2052](https://github.com/faker-ruby/faker/pull/2052) Add YARD docs to `Faker::Lorem_Pixel` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2051](https://github.com/faker-ruby/faker/pull/2051) Add YARD docs to `Faker::Omniauth` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2036](https://github.com/faker-ruby/faker/pull/2036) Add YARD docs to `Faker::Markdown` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2035](https://github.com/faker-ruby/faker/pull/2035) Add YARD docs to `Faker::ID_Number` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2030](https://github.com/faker-ruby/faker/pull/2030) Add general documentation for `Faker::Blood` [@jbergenson](https://github.com/jbergenson)
+- [PR #2029](https://github.com/faker-ruby/faker/pull/2029) Allow passing a string to specific `Faker::Date` methods. [@connorshea](https://github.com/connorshea)
+
+## Feature Request
+
+- [PR #2040](https://github.com/faker-ruby/faker/pull/2040) Split lint and test Github actions [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2032](https://github.com/faker-ruby/faker/pull/2032) Add `gender-neutral` first names to `Faker::Name` [@cmunozgar](https://github.com/cmunozgar)
+- [PR #1965](https://github.com/faker-ruby/faker/pull/1965) Add new `full_address_as_hash` method which return the required address [@AmrAdelKhalil](https://github.com/AmrAdelKhalil)
+- [PR #1952](https://github.com/faker-ruby/faker/pull/1952) Add `Faker::Movie.title` [@gizipp](https://github.com/gizipp)
+- [PR #1932](https://github.com/faker-ruby/faker/pull/1932) Added AHTF Wisdom [@brotherjack](https://github.com/brotherjack)
+- [PR #1912](https://github.com/faker-ruby/faker/pull/1912) Add `Faker::Music::Rush` [@willianveiga](https://github.com/willianveiga)
+- [PR #1865](https://github.com/faker-ruby/faker/pull/1865) Add Big Bang Theory [@pathaknv](https://github.com/pathaknv)
+- [PR #1858](https://github.com/faker-ruby/faker/pull/1858) Add `Faker::TvShows::Futurama` [@JoeNyland](https://github.com/JoeNyland)
+- [PR #1821](https://github.com/faker-ruby/faker/pull/1821) Add HTTP status codes generator [@willianveiga](https://github.com/willianveiga)
+- [PR #1804](https://github.com/faker-ruby/faker/pull/1804) Add `Faker::TvShows::Simpsons.episode_title` [@martinbjeldbak](https://github.com/martinbjeldbak)
+- [PR #1670](https://github.com/faker-ruby/faker/pull/1670) Adds `Faker::Music::Prince` [@jessecalton](https://github.com/jessecalton)
+
+## Update locales
+
+- [PR #1792](https://github.com/faker-ruby/faker/pull/1792) Add more prefixes and suffixes to Name [@mathisto](https://github.com/mathisto)
+
+## Update local dependencies
+
+- Update RuboCop requirement from = 0.81.0 to = 0.85.1
+- Update RuboCop requirement from = 0.85.1 to = 0.86.0 (#2066)
+- Update test-unit requirement from = 3.3.5 to = 3.3.6 (#2046)
+- Bump i18n from 1.8.2 to 1.8.3 (#2034)
+
+------------------------------------------------------------------------------
+
+## [v2.12.0](https://github.com/faker-ruby/faker/tree/v2.12.0) (2020-05-31)
+
+This version:
+- adds several YARD docs
+- fixes some locale issues
+- fixes a few bugs in Faker generators
+- improves code quality
+- adds a few generators for Movies, Music and TV Shows
+- updates local dependencies
+
+## Bug/Fixes
+
+- [PR #2019](https://github.com/faker-ruby/faker/pull/2019) Update 'prepare' regexp to allow hyphen [@jbergenson](https://github.com/jbergenson)
+- [PR #2012](https://github.com/faker-ruby/faker/pull/2012) Add else condition to prevent false positive [@jbergenson](https://github.com/jbergenson)
+- [PR #1985](https://github.com/faker-ruby/faker/pull/1985) Fix an error for `Faker::Computer.os` [@koic](https://github.com/koic)
+- [PR #1971](https://github.com/faker-ruby/faker/pull/1971) Fixing the CI failure by fixing the infinite loop in Commerce [@amatsuda](https://github.com/amatsuda)
+
+## Chores
+
+- [PR #1988](https://github.com/faker-ruby/faker/pull/1988) Removing meaningless begin and end [@amatsuda](https://github.com/amatsuda)
+- [PR #1979](https://github.com/faker-ruby/faker/pull/1979) Reuse the `lvar` instead of calling `File.dirname(__FILE__)` again and again [@amatsuda](https://github.com/amatsuda)
+
+## Documentation
+
+- [PR #2022](https://github.com/faker-ruby/faker/pull/2022) Add YARD docs to `Faker::Invoice` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2021](https://github.com/faker-ruby/faker/pull/2021) Add YARD docs to `Faker::Hipster` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2020](https://github.com/faker-ruby/faker/pull/2020) Add YARD docs to `Faker::Measurement` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2017](https://github.com/faker-ruby/faker/pull/2017) Fix docs for `Faker::Games::Control.altered_world_event` [@Zeragamba](https://github.com/Zeragamba)
+- [PR #2016](https://github.com/faker-ruby/faker/pull/2016) Fix yard documentation issues [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2015](https://github.com/faker-ruby/faker/pull/2015) Add YARD docs to `Faker::Quotes` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2011](https://github.com/faker-ruby/faker/pull/2011) Update `star_wars.yml` [@garrettmichaelgeorge](https://github.com/garrettmichaelgeorge)
+- [PR #2010](https://github.com/faker-ruby/faker/pull/2010) Add missing links in README.md [@Naokimi](https://github.com/Naokimi)
+- [PR #2009](https://github.com/faker-ruby/faker/pull/2009) Add YARD docs to `Faker::Placeholdit` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2008](https://github.com/faker-ruby/faker/pull/2008) Add YARD docs to `Faker::Verb` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2007](https://github.com/faker-ruby/faker/pull/2007) Add YARD docs to `Faker::Phone_Number` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2004](https://github.com/faker-ruby/faker/pull/2004) Add YARD docs to `Faker::String` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2001](https://github.com/faker-ruby/faker/pull/2001) Add YARD docs to `Faker::South_Africa` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #2000](https://github.com/faker-ruby/faker/pull/2000) Add YARD docs to `Faker::JSON` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1999](https://github.com/faker-ruby/faker/pull/1999) Add YARD docs to `Faker::Types` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1998](https://github.com/faker-ruby/faker/pull/1998) Add YARD docs to `Faker::Finance` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1997](https://github.com/faker-ruby/faker/pull/1997) Add YARD docs to `Faker::Driving_Licence` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1996](https://github.com/faker-ruby/faker/pull/1996) Add YARD docs to `Crypto Coin` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1995](https://github.com/faker-ruby/faker/pull/1995) Add YARD docs to `Faker::Commerce` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1993](https://github.com/faker-ruby/faker/pull/1993) Add YARD docs to `Faker::Vehicle` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1990](https://github.com/faker-ruby/faker/pull/1990) Add YARD docs to `Faker::File` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1989](https://github.com/faker-ruby/faker/pull/1989) Add YARD docs to `Faker::Bank` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1984](https://github.com/faker-ruby/faker/pull/1984) Minor documentation fix for `Faker::University` [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1983](https://github.com/faker-ruby/faker/pull/1983) Add YARD docs to `Faker::Twitter` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1982](https://github.com/faker-ruby/faker/pull/1982) Add YARD docs to `Faker::Cosmere` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1981](https://github.com/faker-ruby/faker/pull/1981) Add YARD docs to `Faker::Stripe` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1980](https://github.com/faker-ruby/faker/pull/1980) Add YARD docs to `Faker::Construction` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1976](https://github.com/faker-ruby/faker/pull/1976) Add YARD docs to `Faker::Name` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1975](https://github.com/faker-ruby/faker/pull/1975) Add YARD docs to `Faker::Compass` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1959](https://github.com/faker-ruby/faker/pull/1959) Add YARD docs to `Faker::University` [@danielTiringer](https://github.com/danielTiringer)
+- [PR #1956](https://github.com/faker-ruby/faker/pull/1956) Add YARD docs to `Faker::SlackEmoji` [@rutger-t](https://github.com/rutger-t)
+- [PR #1943](https://github.com/faker-ruby/faker/pull/1943) Update documentation for unique.exclude [@mtancoigne](https://github.com/mtancoigne)
+- [PR #1925](https://github.com/faker-ruby/faker/pull/1925) AdD `Faker::Game::WarhammerFantasy` [@sotek222](https://github.com/sotek222)
+
+## Feature Request
+
+- [PR #2025](https://github.com/faker-ruby/faker/pull/2025) Add `Faker::TvShows::Suits` [@ash-elangovan](https://github.com/ash-elangovan)
+- [PR #2024](https://github.com/faker-ruby/faker/pull/2024) Added Phish Albums and Musicians [@zfine416](https://github.com/zfine416)
+- [PR #2013](https://github.com/faker-ruby/faker/pull/2013) Add `Faker::Games::Control` [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1994](https://github.com/faker-ruby/faker/pull/1994) Enable Ruby testing github workflow [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1966](https://github.com/faker-ruby/faker/pull/1966) Add `Faker::Games:DnD` [@Naokimi](https://github.com/Naokimi)
+- [PR #1962](https://github.com/faker-ruby/faker/pull/1962) Adding Pearl Jam to the Music module [@briri](https://github.com/briri)
+- [PR #1960](https://github.com/faker-ruby/faker/pull/1960) Added `Faker::Blood` [@suraj32](https://github.com/suraj32)
+- [PR #1931](https://github.com/faker-ruby/faker/pull/1931) Add `Faker::Movies::Departed` Class [@jaebradley](https://github.com/jaebradley)
+- [PR #1696](https://github.com/faker-ruby/faker/pull/1696) Add Bibles class with King James subclass [@jbergenson](https://github.com/jbergenson)
+- [PR #1485](https://github.com/faker-ruby/faker/pull/1485) Plays and musicals [@armandofox](https://github.com/armandofox)
+
+## Update locales
+
+- [PR #2014](https://github.com/faker-ruby/faker/pull/2014) Make locale self-contained [@psibi](https://github.com/psibi)
+- [PR #1986](https://github.com/faker-ruby/faker/pull/1986) Added quotations to Shirahoshi [@iavivai](https://github.com/iavivai)
+- [PR #1973](https://github.com/faker-ruby/faker/pull/1973) Fix mis-quotations [@kayhide](https://github.com/kayhide)
+- [PR #1967](https://github.com/faker-ruby/faker/pull/1967) ko locale updates [@jae57](https://github.com/jae57)
+- [PR #1964](https://github.com/faker-ruby/faker/pull/1964) en-AU locale updates [@mattman](https://github.com/mattman)
+- [PR #1948](https://github.com/faker-ruby/faker/pull/1948) Add `Faker::Computer` [@cmcramer](https://github.com/cmcramer)
+
+## Update local dependencies
+
+- Update minitest requirement from = 5.14.0 to = 5.14.1 (#1987)
+- Update RuboCop requirement from = 0.80.1 to = 0.81.0 (#1955)
+- Update pry requirement from = 0.13.0 to = 0.13.1 (#1963)
+- Update yard requirement from = 0.9.24 to = 0.9.25 (#1970)
+
+------------------------------------------------------------------------------
+
+## [v2.11.0](https://github.com/faker-ruby/faker/tree/v2.11.0) (2020-03-24)
+
+## Bug/Fixes
+
+- [PR #1938](https://github.com/faker-ruby/faker/pull/1938) Fix omniauth consistency [@DouglasLutz](https://github.com/DouglasLutz)
+
+## Documentation
+
+- [PR #1949](https://github.com/faker-ruby/faker/pull/1949) Add YARD doc for Faker::Cannabis [@mashuDuek](https://github.com/mashuDuek)
+- [PR #1944](https://github.com/faker-ruby/faker/pull/1944) Add YARD docs for Faker::FunnyName [@curriecode](https://github.com/curriecode)
+- [PR #1935](https://github.com/faker-ruby/faker/pull/1935) Add YARD docs for the unique method [@connorshea](https://github.com/connorshea)
+
+## Feature Request
+
+- [PR #1946](https://github.com/faker-ruby/faker/pull/1946) Add Faker::Rajnikanth [@wolwire](https://github.com/wolwire)
+- [PR #1940](https://github.com/faker-ruby/faker/pull/1940) Add Faker::Quotes::Chiquito [@jantequera](https://github.com/jantequera)
+- [PR #1883](https://github.com/faker-ruby/faker/pull/1883) add Internet#base64 [@cyrilchampier](https://github.com/cyrilchampier)
+
+## Update locales
+
+- [PR #1945](https://github.com/faker-ruby/faker/pull/1945) Remove female first name 'Miss' [@ags](https://github.com/ags)
+- [PR #1929](https://github.com/faker-ruby/faker/pull/1929) Fixed mobile prefixes for en-GB locale [@SamHart91](https://github.com/SamHart91)
+
+## Update local dependencies
+
+- Update pry requirement from = 0.12.2 to = 0.13.0 (#1951)
+- Update RuboCop requirement from = 0.80.0 to = 0.80.1 (#1941)
+- Update RuboCop requirement from = 0.79.0 to = 0.80.0 (#1937)
+
+------------------------------------------------------------------------------
+
+## [v2.10.2](https://github.com/faker-ruby/faker/tree/v2.10.2) (2020-02-15)
+
+This version:
+- adds a few YARD docs
+- fixes locales
+- updates local dependencies
+
+## Chores
+
+- [PR #1924](https://github.com/faker-ruby/faker/pull/1924) Use ruby's `File::Separator` rather than '/' as a default for direct [@swiknaba](https://github.com/swiknaba)
+
+## Documentation
+
+- [PR #1913](https://github.com/faker-ruby/faker/pull/1913) Add YARD docs for Faker::DcComics [@ash-elangovan](https://github.com/ash-elangovan)
+
+## Update locales
+
+- [PR #1934](https://github.com/faker-ruby/faker/pull/1934) Add street_address for en-nz locale [@psibi](https://github.com/psibi)
+- [PR #1933](https://github.com/faker-ruby/faker/pull/1933) Make id locale consistent. [@psibi](https://github.com/psibi)
+- [PR #1930](https://github.com/faker-ruby/faker/pull/1930) Remove spaces before apostrophes [@jrmhaig](https://github.com/jrmhaig)
+- [PR #1927](https://github.com/faker-ruby/faker/pull/1927) zh-TW locale fix: Avoid double de-reference for name_with_middle [@psibi](https://github.com/psibi)
+- [PR #1922](https://github.com/faker-ruby/faker/pull/1922) zh-CN locale fix: Directly refer to the expected values [@psibi](https://github.com/psibi)
+- [PR #1921](https://github.com/faker-ruby/faker/pull/1921) uk locale fix: Make empty fields consistent [@psibi](https://github.com/psibi)
+- [PR #1920](https://github.com/faker-ruby/faker/pull/1920) pt locale fix: Make city fields consistent with other [@psibi](https://github.com/psibi)
+- [PR #1918](https://github.com/faker-ruby/faker/pull/1918) Make Japanese Lorem sentences look more natural [@rastamhadi](https://github.com/rastamhadi)
+- [PR #1915](https://github.com/faker-ruby/faker/pull/1915) Add yard docs for Faker::Company [@kos31de](https://github.com/kos31de)
+- [PR #1914](https://github.com/faker-ruby/faker/pull/1914) Data source fix for ha locale [@psibi](https://github.com/psibi)
+- [PR #1911](https://github.com/faker-ruby/faker/pull/1911) Removed duplicate value [@ash-elangovan](https://github.com/ash-elangovan)
+- [PR #1908](https://github.com/faker-ruby/faker/pull/1908) Add more colors [@tomcol](https://github.com/tomcol)
+- [PR #1903](https://github.com/faker-ruby/faker/pull/1903) fr locale: pokemon's root key should be games [@connorshea](https://github.com/connorshea)
+- [PR #1902](https://github.com/faker-ruby/faker/pull/1902) Remove empty string in phone_number formats [@psibi](https://github.com/psibi)
+- [PR #1901](https://github.com/faker-ruby/faker/pull/1901) fr-CA locale fix: pokemon's root key should be games [@psibi](https://github.com/psibi)
+- [PR #1900](https://github.com/faker-ruby/faker/pull/1900) Use postcode for en-ZA [@psibi](https://github.com/psibi)
+- [PR #1899](https://github.com/faker-ruby/faker/pull/1899) Locale root name should be en-NEP [@psibi](https://github.com/psibi)
+- [PR #1812](https://github.com/faker-ruby/faker/pull/1812) Add vat number rule for es-MX [@arandilopez](https://github.com/arandilopez)
+
+## Update local dependencies
+
+- Update test-unit requirement from = 3.3.4 to = 3.3.5 (#1896)
+
+------------------------------------------------------------------------------
+
+## [v2.10.1](https://github.com/faker-ruby/faker/tree/v2.10.1) (2020-01-13)
+
+This version:
+- fixes locales
+- updates local dependencies
+- fixes warnings
+
+## Bug/Fixes
+
+- [PR #1868](https://github.com/faker-ruby/faker/pull/1868) Fix a deprecation warning in unique_generator.rb related to the kwarg [@connorshea](https://github.com/connorshea)
+
+## Update Locales
+
+- [PR #1800](https://github.com/faker-ruby/faker/pull/1800) Update diners_club and jcb test cards since they were updated in String [@santib](https://github.com/santib)
+- [PR #1879](https://github.com/faker-ruby/faker/pull/1879) Field changes in da-DK locale [@psibi](https://github.com/psibi)
+- [PR #1878](https://github.com/faker-ruby/faker/pull/1878) Fix name related files in ca locale [@psibi](https://github.com/psibi)
+- [PR #1877](https://github.com/faker-ruby/faker/pull/1877) Fix the path names for bg.yml [@psibi](https://github.com/psibi)
+
+## Update local dependencies
+
+- Allow all versions of i18n from 1.6 up to 2 (#1894) [@orien](https://github.com/orien)
+- Update minitest requirement from = 5.13.0 to = 5.14.0 (#1904)
+- Bump i18n from 1.8.1 to 1.8.2 (#1905)
+- Bump i18n from 1.8.0 to 1.8.1 (#1895)
+- Update i18n requirement from >= 1.6, < 1.8 to >= 1.6, < 1.9 (#1893)
+- Update yard requirement from = 0.9.23 to = 0.9.24 (#1892)
+- Update RuboCop requirement from = 0.78.0 to = 0.79.0 (#1890)
+- Update yard requirement from = 0.9.22 to = 0.9.23 (#1889)
+- Update yard requirement from = 0.9.20 to = 0.9.22 (#1882)
+
+------------------------------------------------------------------------------
+
+## [v2.10.0](https://github.com/faker-ruby/faker/tree/v2.10.0) (2019-12-28)
+
+This version:
+- adds `Faker::Address.mail_box`
+- adds YARD docs
+- fix Ruby 2.7 warnings
+- adds other minor changes
+
+## Bug/Fixes
+
+- [PR #1876](https://github.com/faker-ruby/faker/pull/1876) Fix Ruby 2.7 deprecation warnings for the translate method. [@connorshea](https://github.com/connorshea)
+- [PR #1867](https://github.com/faker-ruby/faker/pull/1867) Fix tests failing on Ruby 2.7 [@connorshea](https://github.com/connorshea)
+
+## Chores
+
+- [PR #1866](https://github.com/faker-ruby/faker/pull/1866) Upgrade the Gemfile.lock to Bundler 2. [@connorshea](https://github.com/connorshea)
+
+## Documentation
+
+- [PR #1873](https://github.com/faker-ruby/faker/pull/1873) Add YARD docs for `Faker::Music{,::Opera}` [@jas14](https://github.com/jas14)
+- [PR #1862](https://github.com/faker-ruby/faker/pull/1862) Update phone number documentation [@aVigorousDev](https://github.com/aVigorousDev)
+
+## Feature Request
+
+- [PR #1875](https://github.com/faker-ruby/faker/pull/1875) Add Ruby 2.7 to the CI test matrix. [@connorshea](https://github.com/connorshea)
+- [PR #1568](https://github.com/faker-ruby/faker/pull/1568) Add `Faker::Address.mail_box` and some NZ locale updates [@mermop](https://github.com/mermop)
+
+## Refactoring
+
+- [PR #1874](https://github.com/faker-ruby/faker/pull/1874) Extract constants in `Faker::Music` [@jas14](https://github.com/jas14)
+
+## Update local dependencies
+
+Update RuboCop requirement from = 0.77.0 to = 0.78.0 (#1869)
+
+------------------------------------------------------------------------------
+
+## [v2.9.0](https://github.com/faker-ruby/faker/tree/v2.9.0) (2019-12-16)
+
+This version:
+- adds `Faker::Gender.short_binary_type`
+- adds a few YARD docs
+- fix Faker::Educator issues
+- update locales
+
+## Bug/Fixes
+
+- [PR #1860](https://github.com/faker-ruby/faker/pull/1860) Fix Educator methods returning bad data. [@connorshea](https://github.com/connorshea)
+
+## Documentation
+
+- [PR #1859](https://github.com/faker-ruby/faker/pull/1859) YYYY-MM-DD in CHANGELOG [@jas14](https://github.com/jas14)
+- [PR #1797](https://github.com/faker-ruby/faker/pull/1797) add YARD doc for Faker::Job [@ashishra0](https://github.com/ashishra0)
+- [PR #1790](https://github.com/faker-ruby/faker/pull/1790) add Faker::Beer YARD docs [@ashishra0](https://github.com/ashishra0)
+
+## Feature Request
+
+- [PR #1863](https://github.com/faker-ruby/faker/pull/1863) Add Faker::Gender.short_binary_type [@bruno-b-martins](https://github.com/bruno-b-martins)
+
+## Update locales
+
+- [PR #1864](https://github.com/faker-ruby/faker/pull/1864) adding `male` & `female` first names for persian [@alphamarket](https://github.com/alphamarket)
+
+------------------------------------------------------------------------------
+
+## [v2.8.1](https://github.com/faker-ruby/faker/tree/v2.8.1) (2019-12-06)
+
+## Bug/Fixes
+
+- [PR #1846](https://github.com/faker-ruby/faker/pull/1846) Fix internet custom domain with suffix [@ngouy](https://github.com/ngouy)
+
+## Documentation
+
+- [PR #1852](https://github.com/faker-ruby/faker/pull/1852) Add YARD docs for Faker::Business. [@connorshea](https://github.com/connorshea)
+- [PR #1851](https://github.com/faker-ruby/faker/pull/1851) Add YARD docs for Faker::Crypto. [@connorshea](https://github.com/connorshea)
+- [PR #1850](https://github.com/faker-ruby/faker/pull/1850) Add YARD docs for Faker::Kpop. [@connorshea](https://github.com/connorshea)
+- [PR #1849](https://github.com/faker-ruby/faker/pull/1849) Add YARD docs for Faker::BossaNova. [@connorshea](https://github.com/connorshea)
+- [PR #1848](https://github.com/faker-ruby/faker/pull/1848) Add YARD Docs for Faker::Demographic. [@connorshea](https://github.com/connorshea)
+- [PR #1844](https://github.com/faker-ruby/faker/pull/1844) Fix yard doc in contribution [@vikas95prasad](https://github.com/vikas95prasad)
+- [PR #1802](https://github.com/faker-ruby/faker/pull/1802) Add YARD doc for Faker::Food [@sap1enza](https://github.com/sap1enza)
+- [PR #1766](https://github.com/faker-ruby/faker/pull/1766) Add YARD docs for Faker::Address [@connorshea](https://github.com/connorshea)
+
+## Refactoring
+
+- [PR #1847](https://github.com/faker-ruby/faker/pull/1847) Makes minor refactors on Internet.domain_name method [@tiagofsilva](https://github.com/tiagofsilva)
+- [PR #1772](https://github.com/faker-ruby/faker/pull/1848) Refactor Faker::Educator and add docs [@connorshea](https://github.com/connorshea)
+
+## Update local dependencies
+
+- Update RuboCop requirement from = 0.76.0 to = 0.77.0 (#1843)
+
+------------------------------------------------------------------------------
+
+## [v2.8.0](https://github.com/faker-ruby/faker/tree/v2.8.0) (2019-12-01)
+
+## Bug/Fixes
+
+- [PR #1563](https://github.com/faker-ruby/faker/pull/1563)
+Fix generating routing number [@psienko](https://github.com/psienko)
+
+## Chores
+
+- [PR #1835](https://github.com/faker-ruby/faker/pull/1835)
+Remove duplicate method description [@pacso](https://github.com/pacso)
+
+## Documentation
+
+- [PR #1837](https://github.com/faker-ruby/faker/pull/1837)
+docs: Internet #email, #domain do not control TLD [@olleolleolle](https://github.com/olleolleolle)
+- [PR #1833](https://github.com/faker-ruby/faker/pull/1833) Explain safe_email method [@swrobel](https://github.com/swrobel)
+- [PR #1810](https://github.com/faker-ruby/faker/pull/1810) Add yard docs for Faker::Coffee methods [@LuanGB](https://github.com/LuanGB)
+- [PR #1803](https://github.com/faker-ruby/faker/pull/1803)
+add YARD doc for Faker::Coin [@sap1enza](https://github.com/sap1enza) [@connorshea](https://github.com/connorshea)
+- [PR #1799](https://github.com/faker-ruby/faker/pull/1799) Remove 'See below examples' for consistency [@DevUsmanGhani](https://github.com/DevUsmanGhani)
+- [PR #1793](https://github.com/faker-ruby/faker/pull/1793) add Faker::Relationship YARD docs [@DevUsmanGhani](https://github.com/DevUsmanGhani)
+
+## Feature Request
+
+- [PR #1808](https://github.com/faker-ruby/faker/pull/1808) Adds domain option for Internet email and domain_name methods [@tiagofsilva](https://github.com/tiagofsilva)
+
+## Update locales
+
+- [PR #1841](https://github.com/faker-ruby/faker/pull/1841)
+Fix strange result from `Lorem.word` in ja locale [@yujideveloper](https://github.com/yujideveloper)
+- [PR #1839](https://github.com/faker-ruby/faker/pull/1839)
+added new heroes, new maps and almost all of the quotes [@TCsTheMechanic](https://github.com/TCsTheMechanic)
+
+## Update local dependencies
+
+- [PR #1831](https://github.com/faker-ruby/faker/pull/1831) Update rake requirement from = 13.0.0 to = 13.0.1 [@DevUsmanGhani](https://github.com/DevUsmanGhani)
+
+------------------------------------------------------------------------------
+
+## [v2.7.0](https://github.com/faker-ruby/faker/tree/v2.7.0) (2019-11-01)
+
+This version:
+- adds `Faker::IDNumber.chilean_id`
+- updates some translations/locales
+- updates local dependencies
+- adds SemVer badge
+
+## Documentation
+
+- [PR #1814](https://github.com/faker-ruby/faker/pull/1814) Add Discord link [@vbrazo](https://github.com/vbrazo)
+- [PR #1289](https://github.com/faker-ruby/faker/pull/1289) Add SemVer compatibility badge to README [@greysteil](https://github.com/greysteil)
+
+## Feature Request
+
+- [PR #1819](https://github.com/faker-ruby/faker/pull/1819) Adding chilean_id in Faker::IDNumber [@cristofer](https://github.com/cristofer)
+
+## Update locales
+
+- [PR #1824](https://github.com/faker-ruby/faker/pull/1824) Added Canadian Country Code [@clinch](https://github.com/clinch)
+- [PR #1817](https://github.com/faker-ruby/faker/pull/1817) Add Japanese animal names [@shouichi](https://github.com/shouichi)
+- [PR #1816](https://github.com/faker-ruby/faker/pull/1816) Add Japanese bank names [@shouichi](https://github.com/shouichi)
+- [PR #1813](https://github.com/faker-ruby/faker/pull/1813) Translate Canadian provinces for fr-CA [@Bhacaz](https://github.com/Bhacaz)
+- [PR #1806](https://github.com/faker-ruby/faker/pull/1806) Add Terry Bogard to Super Smash Bros. options [@clinch](https://github.com/clinch)
+
+## Update local dependencies
+
+- Update RuboCop requirement from = 0.75.0 to = 0.75.1 (#1811)
+- Update RuboCop requirement from = 0.75.1 to = 0.76.0 (#1822)
+- Update minitest requirement from = 5.12.2 to = 5.13.0 (#1823)
+
+------------------------------------------------------------------------------
+
+## [v2.6.0](https://github.com/faker-ruby/faker/tree/v2.6.0) (2019-10-10)
+
+This version:
+- adds `Faker::Date.in_date_period`
+- adds `Faker::WorldCup` YARD docs
+- updates local dependencies
+
+## Documentation
+
+- [PR #1789](https://github.com/faker-ruby/faker/pull/1789) Faker::WorldCup YARD docs [@ashishra0](https://github.com/ashishra0)
+
+## Feature Request
+
+- [PR #1755](https://github.com/faker-ruby/faker/pull/1755) Add Faker::Date.in_date_period [@AmrAdelKhalil](https://github.com/AmrAdelKhalil)
+
+## Update local dependencies
+
+The following development dependencies were updated:
+- Update rake requirement from = 12.3.3 to = 13.0.0 (#1776)
+- Update minitest requirement from = 5.12.0 to = 5.12.2 (#1775)
+- Update test-unit requirement from = 3.3.3 to = 3.3.4 (#1774)
+
+------------------------------------------------------------------------------
+
+## [v2.5.0](https://github.com/faker-ruby/faker/tree/v2.5.0) (2019-09-30)
+
+This version introduces:
+- locales for Thai language - the mother language in Thailand
+- YARD documentation for faker interfaces
+- locales updates or fixes
+
+## Feature Request
+
+- [PR #1773](https://github.com/faker-ruby/faker/pull/1773) Two new locales added: th and en-th [@kodram](https://github.com/kodram)
+
+## Documentation
+
+- [PR #1771](https://github.com/faker-ruby/faker/pull/1771) Fix some RuboCop comments that were showing up in YARD docs. [@connorshea](https://github.com/connorshea)
+- [PR #1767](https://github.com/faker-ruby/faker/pull/1767) Fix two incorrect flexible method calls. [@connorshea](https://github.com/connorshea)
+- [PR #1761](https://github.com/faker-ruby/faker/pull/1761) Add YARD docs for the Basketball and Football fakers. [@connorshea](https://github.com/connorshea)
+- [PR #1768](https://github.com/faker-ruby/faker/pull/1768) Add YARD docs for Faker::Restaurant. [@connorshea](https://github.com/connorshea)
+- [PR #1759](https://github.com/faker-ruby/faker/pull/1759) Add YARD docs for all remaining TV Shows [@connorshea](https://github.com/connorshea)
+- [PR #1758](https://github.com/faker-ruby/faker/pull/1758) Add YARD docs for Doctor Who and fix a method name. [@connorshea](https://github.com/connorshea)
+- [PR #1756](https://github.com/faker-ruby/faker/pull/1756) Add more miscellaneous YARD docs [@connorshea](https://github.com/connorshea)
+- [PR #1753](https://github.com/faker-ruby/faker/pull/1753) Add YARD docs for Date, Time, and Number [@connorshea](https://github.com/connorshea)
+
+## Update locales
+
+- [PR #1764](https://github.com/faker-ruby/faker/pull/1764) Remove "mint green" from color [@ro-savage](https://github.com/ro-savage)
+- [PR #1751](https://github.com/faker-ruby/faker/pull/1751) fix from Color.name to Color.color_name [@4geru](https://github.com/4geru)
+
+## Update local dependencies
+
+The following development dependencies were updated:
+- Update minitest requirement from = 5.11.3 to = 5.12.0 (#1763)
+
+------------------------------------------------------------------------------
+
+## [v2.4.0](https://github.com/faker-ruby/faker/tree/v2.4.0) (2019-09-19)
+
+## Documentation
+
+- [PR #1750](https://github.com/faker-ruby/faker/pull/1750) add only japanese word spec [@4geru](https://github.com/4geru)
+- [PR #1740](https://github.com/faker-ruby/faker/pull/1740) Add more YARD docs [@connorshea](https://github.com/connorshea)
+- [PR #1747](https://github.com/faker-ruby/faker/pull/1747) Fix PR links [@geniou](https://github.com/geniou)
+
+## Feature Request
+
+- [PR #1742](https://github.com/faker-ruby/faker/pull/1742) Add Faker::Blockchain::Aeternity [@2pd](https://github.com/2pd)
+
+## Update locales
+
+- [PR #1743](https://github.com/faker-ruby/faker/pull/1743) Fix another ambiguity in element_symbol field [@psibi](https://github.com/psibi)
+- [PR #1748](https://github.com/faker-ruby/faker/pull/1748) fix typo from bread to breed [@4geru](https://github.com/4geru)
+- [PR #1752](https://github.com/faker-ruby/faker/pull/1752) fix creature i18n path in japanese [@4geru](https://github.com/4geru)
+
+## Update local dependencies
+
+The following development dependencies were updated:
+- Update simplecov requirement from = 0.17.0 to = 0.17.1 (#1749)
+
+------------------------------------------------------------------------------
+
+## [v2.3.0](https://github.com/faker-ruby/faker/tree/v2.3.0) (2019-09-12)
+
+## Documentation
+
+- [PR #1741](https://github.com/faker-ruby/faker/pull/1741) Fix the .gitignore for YARD. [@connorshea](https://github.com/connorshea)
+- [PR #1553](https://github.com/faker-ruby/faker/pull/1553) Yard powered docs [@Zeragamba](https://github.com/Zeragamba) [@connorshea](https://github.com/connorshea)
+- [PR #1727](https://github.com/faker-ruby/faker/pull/1727) Remove Football documentation from wrong category [@lucasqueiroz](https://github.com/lucasqueiroz)
+
+## Feature Request
+
+- [PR #1738](https://github.com/faker-ruby/faker/pull/1738) Add mock data for Apple OAuth [@dzunk](https://github.com/dzunk)
+
+## Update locales
+
+- [PR #1723](https://github.com/faker-ruby/faker/pull/1723) Add pokemon name in Johto area [@mathieujobin](https://github.com/mathieujobin)
+- [PR #1732](https://github.com/faker-ruby/faker/pull/1732) Quebec province postal codes starts by [GHJ], adding missing two [@Ryutooooo](https://github.com/Ryutooooo)
+
+------------------------------------------------------------------------------
+
+## [v2.2.2](https://github.com/faker-ruby/faker/tree/v2.2.2) (2019-09-05)
+
+## Bug/Fixes
+
+- [PR #1717](https://github.com/faker-ruby/faker/pull/1717) Fix ambiguity in element_symbol field [@psibi](https://github.com/psibi)
+
+## Chores
+
+- [PR #1724](https://github.com/faker-ruby/faker/pull/1724) Include RuboCop-faker autocorrect in deprecation [@koic](https://github.com/koic)
+
+## Documentation
+
+- [PR #1726](https://github.com/faker-ruby/faker/pull/1726) Include 2.x breaking return value change in changelog [@zorab47](https://github.com/zorab47)
+- [PR #1722](https://github.com/faker-ruby/faker/pull/1722) Fix examples in the Dota docs [@bzf](https://github.com/bzf)
+
+## Update local dependencies
+
+The following development dependencies were updated:
+- rake requirement from = 12.3.1 to = 12.3.3 (#1719)
+- RuboCop requirement from = 0.59.1 to = 0.74.0 (#1721)
+- simplecov requirement from = 0.16.1 to = 0.17.0 (#1718)
+
+------------------------------------------------------------------------------
+
+## [v2.2.1](https://github.com/faker-ruby/faker/tree/v2.2.1) (2019-08-30)
+
+## Bug/Fixes
+
+- [PR #1712](https://github.com/faker-ruby/faker/pull/1712) Fix number(digits: 1) always returns 0 [@ianlet](https://github.com/ianlet)
+
+`Faker::Number.number(digits: 1)` was always returning `0`.
+
+Fixing number with one digit caused the test_insignificant_zero to fail. As it seemed that the behavior tested by test_insignificant_zero was already covered by test_number and test_decimal, we removed it to prevent duplication.
+
+## [v2.2.0](https://github.com/faker-ruby/faker/tree/v2.2.0) (2019-08-25)
+
+## Deprecate
+
+- [PR #1698](https://github.com/faker-ruby/faker/pull/1698) Add warn for positional arguments when using Faker 2.0 [@koic](https://github.com/koic)
+
+Add deprecation warning for positional arguments to notify users that are coming from Faker version < 2.0. Its main goal is to make upgrades easier.
+
+## Documentation
+
+- [PR #1688](https://github.com/faker-ruby/faker/pull/1688) Update README install instructions [@EduardoGHdez](https://github.com/EduardoGHdez)
+- [PR #1689](https://github.com/faker-ruby/faker/pull/1689) Update README.md [@Zeragamba](https://github.com/Zeragamba)
+- [PR #1690](https://github.com/faker-ruby/faker/pull/1690) Update issue url in PULL_REQUEST_TEMPLATE [@bugtender](https://github.com/bugtender)
+- [PR #1703](https://github.com/faker-ruby/faker/pull/1703) Return HTTPS URLs from Lorem Flickr [@connorshea](https://github.com/connorshea)
+
+## Feature Request
+- [PR #1686](https://github.com/faker-ruby/faker/pull/1686) Update test-unit gem to 3.3.3 [@connorshea](https://github.com/connorshea)
+
+## Bug/Fixes
+- [PR #1702](https://github.com/faker-ruby/faker/pull/1702) Fix an argument for test_faker_stripe.rb [@koic](https://github.com/koic)
+- [PR #1694](https://github.com/faker-ruby/faker/pull/1694) Ensure mix_case returns at least one lower and one upper case letter [@bpleslie](https://github.com/bpleslie)
+
+------------------------------------------------------------------------------
+
+## [v2.1.2](https://github.com/faker-ruby/faker/tree/v2.1.2) (2019-08-10)
+
+## Enhancements
+
+- [PR #1495](https://github.com/faker-ruby/faker/pull/1495) Add Brazilian documents generation and documentation [@lucasqueiroz](https://github.com/lucasqueiroz)
+
+## Issues
+
+We had to use `bundled with 1.7.3` to avoid some issues.
+
+## [v2.1.1](https://github.com/faker-ruby/faker/tree/2.1.1) (2019-08-10)
+
+## Bug/Fixes
+
+- [PR #1685](https://github.com/stympy/faker/pull/1685) Upgrade i18n [@EduardoGHdez](https://github.com/EduardoGHdez)
+
+`bundler-audit` has identified that i18 has fix a security vulnerability, that has been fixed in the 0.8 version.
+
+- [PR #1683](https://github.com/stympy/faker/pull/1683) Rollback Faker::Time changes [@vbrazo](https://github.com/vbrazo)
+
+Rollback Faker::Time changes because we should expect the date format from activesupport's en.yml.
+
+## Documentation
+
+- [PR #1677](https://github.com/faker-ruby/faker/pull/1677) Fix docs for Internet#password generator [@ur5us](https://github.com/ur5us)
+
+------------------------------------------------------------------------------
+
+## [v2.1.0](https://github.com/faker-ruby/faker/tree/v2.1.0) (2019-07-31)
+
+## Bug/Fixes
+- [PR #1675](https://github.com/faker-ruby/faker/pull/1675) Fix off-by-one error when formatting month names [@jutonz](https://github.com/jutonz)
 
 This change required a quick release because it's a breaking issue. Every place where I18n.l() was used began to display the wrong date, causing test suite to fail.
 
 ------------------------------------------------------------------------------
 
-## [v2.0](https://github.com/stympy/faker/tree/2.0) (2019-31-07)
+## [v2.0](https://github.com/faker-ruby/faker/tree/v2.0) (2019-07-31)
 
 ## Important Note:
 
@@ -139,6 +1006,10 @@ Version 2 has several `breaking changes`. We replaced positional arguments with 
 - `Faker::WorldCup.group(group = nil)` becomes `Faker::WorldCup.group(group: nil)`
 - `Faker::WorldCup.roster(country = nil, type = nil)` becomes `Faker::WorldCup.roster(country: nil, type: nil)`
 - `Faker::Movies::StarWars.quote(character = nil)` becomes `Faker::Movies::StarWars.quote(character: nil)`
+
+Additionally the following methods changed return values:
+
+- `Faker::Number.number` now returns `Numeric` instead of `String` (see [PR #510](https://github.com/faker-ruby/faker/pull/510))
 
 ### Bug/Fixes
 
@@ -284,7 +1155,7 @@ Fix lib/faker/version.rb
 - [PR #1477](https://github.com/stympy/faker/pull/1477) Fixed bank account length [@jguthrie100](https://github.com/jguthrie100)
 - [PR #1494](https://github.com/stympy/faker/pull/1494) Fix Faker::Internet.ip_v4_address to include all IP ranges [@lucasqueiroz](https://github.com/lucasqueiroz)
 - [PR #1456](https://github.com/stympy/faker/pull/1456) fix: omit . from slug [@ivanoblomov](https://github.com/ivanoblomov)
-- [PR #1436](https://github.com/stympy/faker/pull/1436) Fix regex and add magic string to pass rubocop check [@jakrzus](https://github.com/jakrzus)
+- [PR #1436](https://github.com/stympy/faker/pull/1436) Fix regex and add magic string to pass RuboCop check [@jakrzus](https://github.com/jakrzus)
 - [PR #1425](https://github.com/stympy/faker/pull/1425) NHS: fix occasional bad numbers [@ChaoticBoredom](https://github.com/ChaoticBoredom)
 - [PR #1421](https://github.com/stympy/faker/pull/1421) Faker::Internet.user_name can't handle UTF-8 arguments [@ivanoblomov](https://github.com/ivanoblomov)
 - [PR #1423](https://github.com/stympy/faker/pull/1423) Add missing locale tests - Part II [@vbrazo](https://github.com/vbrazo)
@@ -512,7 +1383,7 @@ Fix lib/faker/version.rb
 - [PR #1179](https://github.com/stympy/faker/pull/1179) Random color with Placeholdit [@nicolas-brousse](https://github.com/nicolas-brousse)
 - [PR #1190](https://github.com/stympy/faker/pull/1190) Add Nation object, its specs and docs [@gkunwar](https://github.com/gkunwar)
 - [PR #1210](https://github.com/stympy/faker/pull/1210) Add coveralls [@vbrazo](https://github.com/vbrazo)
-- [PR #924](https://github.com/stympy/faker/pull/924) Rubocop + fixes [@stephengroat](https://github.com/stephengroat)
+- [PR #924](https://github.com/stympy/faker/pull/924) RuboCop + fixes [@stephengroat](https://github.com/stephengroat)
 - [PR #900](https://github.com/stympy/faker/pull/900) Add Japanese lorem words to locale [@vietqhoang](https://github.com/vietqhoang)
 
 ### Update/add locales
@@ -576,7 +1447,7 @@ Fix lib/faker/version.rb
 
 ### Documentation
 - [PR #1478](https://github.com/stympy/faker/pull/1478) Fixed documentation for Faker::Internet.password [@mrstebo](https://github.com/mrstebo)
-- [PR #1453](https://github.com/stympy/faker/pull/1453) Add description to Rubocop cops [@vbrazo](https://github.com/vbrazo)
+- [PR #1453](https://github.com/stympy/faker/pull/1453) Add description to RuboCop cops [@vbrazo](https://github.com/vbrazo)
 - [PR #1121](https://github.com/stympy/faker/pull/1121) Better docs for Faker::Food.description [@jujulisan](https://github.com/jujulisan)
 - [PR #1257](https://github.com/stympy/faker/pull/1257) Fix method name in Faker::SingularSiegler [@mrstebo](https://github.com/mrstebo)
 - [PR #1256](https://github.com/stympy/faker/pull/1256) Fixing documentation - Faker::Name to Faker::Zelda [@mrstebo](https://github.com/mrstebo)

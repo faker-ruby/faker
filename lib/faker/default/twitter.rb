@@ -3,7 +3,25 @@
 module Faker
   class Twitter < Base
     class << self
-      def user(include_status: true, include_email: false)
+      ##
+      # Produces a random Twitter user.
+      #
+      # @param include_status [Boolean] Include or exclude user status details
+      # @param include_email [Boolean] Include or exclude user email details
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::Twitter.user #=>  {:id=>8821452687517076614, :name=>"Lincoln Paucek", :screen_name=>"cody"...
+      #   Faker::Twitter.user(include_status: false) # Just get a user object with no embed status
+      #   Faker::Twitter.user(include_email: true) # Simulate an authenticated user with the email permission
+      #
+      # @faker.version 1.7.3
+      def user(legacy_include_status = NOT_GIVEN, legacy_include_email = NOT_GIVEN, include_status: true, include_email: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_status if legacy_include_status != NOT_GIVEN
+          keywords << :include_email if legacy_include_email != NOT_GIVEN
+        end
+
         user_id = id
         background_image_url = Faker::LoremPixel.image(size: '600x400') # TODO: Make the dimensions change
         profile_image_url = Faker::Avatar.image(slug: user_id, size: '48x48')
@@ -15,7 +33,7 @@ module Faker
           default_profile_image: Faker::Boolean.boolean(true_ratio: 0.1),
           default_profile: Faker::Boolean.boolean(true_ratio: 0.1),
           description: Faker::Lorem.sentence,
-          entities:  user_entities,
+          entities: user_entities,
           favourites_count: Faker::Number.between(to: 1, from: 100_000),
           follow_request_sent: false,
           followers_count: Faker::Number.between(to: 1, from: 10_000_000),
@@ -54,7 +72,25 @@ module Faker
         user
       end
 
-      def status(include_user: true, include_photo: false)
+      ##
+      # Produces a random Twitter user.
+      #
+      # @param include_user [Boolean] Include or exclude user details
+      # @param include_photo [Boolean] Include or exclude user photo
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::Twitter.status #=> {:id=>8821452687517076614, :text=>"Ea et laboriosam vel non."...
+      #   Faker::Twitter.status(include_user: false) # Just get a status object with no embed user
+      #   Faker::Twitter.status(include_photo: true) # Includes entities for an attached image
+      #
+      # @faker.version 1.7.3
+      def status(legacy_include_user = NOT_GIVEN, legacy_include_photo = NOT_GIVEN, include_user: true, include_photo: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_user if legacy_include_user != NOT_GIVEN
+          keywords << :include_photo if legacy_include_photo != NOT_GIVEN
+        end
+
         status_id = id
         status = {
           id: status_id,
@@ -62,7 +98,7 @@ module Faker
           contributors: nil,
           coordinates: nil,
           created_at: created_at,
-          entities:  status_entities(include_photo: include_photo),
+          entities: status_entities(include_photo: include_photo),
           favorite_count: Faker::Number.between(to: 1, from: 10_000),
           favorited: false,
           geo: nil,
@@ -76,7 +112,7 @@ module Faker
           place: nil,
           possibly_sensitive: Faker::Boolean.boolean(true_ratio: 0.1),
           retweet_count: Faker::Number.between(to: 1, from: 10_000),
-          retweeted_status:  nil,
+          retweeted_status: nil,
           retweeted: false,
           source: "<a href=\"#{Faker::Internet.url(host: 'example.com')}\" rel=\"nofollow\">#{Faker::Company.name}</a>",
           text: Faker::Lorem.sentence,
@@ -87,6 +123,15 @@ module Faker
         status
       end
 
+      ##
+      # Produces a random screen name.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Twitter.screen_name #=> "audreanne_hackett"
+      #
+      # @faker.version 1.7.3
       def screen_name
         Faker::Internet.username(specifier: nil, separators: ['_'])[0...20]
       end
@@ -107,21 +152,25 @@ module Faker
 
       def user_entities
         {
-          url:  {
+          url: {
             urls: []
           },
-          description:  {
+          description: {
             urls: []
           }
         }
       end
 
-      def status_entities(include_photo: false)
+      def status_entities(legacy_include_photo = NOT_GIVEN, include_photo: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :include_photo if legacy_include_photo != NOT_GIVEN
+        end
+
         entities = {
-          hashtags:  [],
-          symbols:  [],
-          user_mentions:  [],
-          urls:  []
+          hashtags: [],
+          symbols: [],
+          user_mentions: [],
+          urls: []
         }
         entities[:media] = [photo_entity] if include_photo
         entities
@@ -135,7 +184,7 @@ module Faker
         {
           id: media_id,
           id_str: media_id.to_s,
-          indices:  [
+          indices: [
             103,
             126
           ],
@@ -145,23 +194,23 @@ module Faker
           display_url: 'example.com',
           expanded_url: Faker::Internet.url(host: 'example.com'),
           type: 'photo',
-          sizes:  {
-            medium:  {
+          sizes: {
+            medium: {
               w: 1064,
               h: 600,
               resize: 'fit'
             },
-            large:  {
+            large: {
               w: 1064,
               h: 600,
               resize: 'fit'
             },
-            small:  {
+            small: {
               w: 680,
               h: 383,
               resize: 'fit'
             },
-            thumb:  {
+            thumb: {
               w: 150,
               h: 150,
               resize: 'crop'

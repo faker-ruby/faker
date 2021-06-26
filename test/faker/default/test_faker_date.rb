@@ -144,4 +144,40 @@ class TestFakerDate < Test::Unit::TestCase
       assert birthday < birthdate_max, "Expect < \"#{birthdate_max}\", but got #{birthday}"
     end
   end
+
+  def test_default_in_date_period
+    current_year = Date.today.year
+    10.times do
+      date = @tester.in_date_period
+      assert date.year == current_year
+    end
+  end
+
+  def test_in_date_period_with_year
+    year = 2015
+    10.times do
+      date = @tester.in_date_period(year: year)
+      assert date.year == year
+    end
+  end
+
+  def test_in_date_period_with_month
+    month = 2
+    current_year = Date.today.year
+    10.times do
+      date = @tester.in_date_period(month: month)
+      assert date.month == month
+      assert date.year == current_year
+    end
+  end
+
+  def test_in_date_period_date
+    year = 2008
+    month = 3
+    10.times do
+      date = @tester.in_date_period(year: year, month: month)
+      assert date.month == month
+      assert date.year == year
+    end
+  end
 end

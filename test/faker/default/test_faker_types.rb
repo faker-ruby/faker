@@ -11,7 +11,7 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_rb_string_is_or_correct_type
-    assert @tester.rb_string.class == String
+    assert @tester.rb_string.instance_of?(String)
   end
 
   def test_string_returns_correct_number_of_words
@@ -25,11 +25,7 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_integer
-    if RUBY_VERSION < '2.4.0'
-      assert @tester.rb_integer.class == Fixnum
-    else
-      assert @tester.rb_integer.class == Integer
-    end
+    assert @tester.rb_integer.instance_of?(Integer)
   end
 
   def test_rb_integer_between
@@ -40,27 +36,29 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_rb_hash_returns_a_hash
-    assert @tester.rb_hash.class == Hash
+    assert @tester.rb_hash.instance_of?(Hash)
   end
 
   def test_hash_returns_the_correct_number_of_keys
     assert @tester.rb_hash(number: 3).keys.length == 3
+    assert @tester.rb_hash(number: 3).values.uniq.length > 1
     assert @tester.rb_hash(number: 0).keys.empty?
     assert @tester.rb_hash.keys.length == 1
   end
 
   def test_complex_rb_hash_returns_a_hash
-    assert @tester.complex_rb_hash.class == Hash
+    assert @tester.complex_rb_hash.instance_of?(Hash)
   end
 
   def test_complex_hash_returns_the_correct_number_of_keys
     assert @tester.complex_rb_hash(number: 3).keys.length == 3
+    assert @tester.complex_rb_hash(number: 3).values.uniq.length > 1
     assert @tester.complex_rb_hash(number: 0).keys.empty?
     assert @tester.complex_rb_hash.keys.length == 1
   end
 
   def test_rb_array_returns_array
-    assert @tester.rb_array.class == Array
+    assert @tester.rb_array.instance_of?(Array)
   end
 
   def test_array_has_the_right_array

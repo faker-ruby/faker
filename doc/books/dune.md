@@ -9,6 +9,8 @@ Faker::Books::Dune.title #=> "Duke"
 
 Faker::Books::Dune.planet #=> "Caladan"
 
+Faker::Books::Dune.city #=> "Arrakeenn"
+
 Faker::Books::Dune.quote #=> "A dead man, surely, no longer requires that water."
 
 # Keyword arguments: character
