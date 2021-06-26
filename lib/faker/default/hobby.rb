@@ -13,7 +13,7 @@ module Faker
       # @example
       #   Faker::Hobby.activity #=> "Cooking"
       #
-      # @faker.version 2.18.0
+      # @faker.version next
       def activity
         fetch('hobby.activity')
       end
