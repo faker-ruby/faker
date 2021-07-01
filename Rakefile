@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 $LOAD_PATH.unshift File.dirname(__FILE__)
 
 Dir['tasks/**/*.rake'].each { |rake| load rake }
@@ -15,13 +17,10 @@ task :console do
   IRB.start
 end
 
-task :coverage_report do
-  require 'launchy'
-
-  Launchy.open('coverage/index.html')
-end
-
 require 'rubocop/rake_task'
 RuboCop::RakeTask.new
+
+require 'yard'
+YARD::Rake::YardocTask.new
 
 task default: %w[test rubocop]

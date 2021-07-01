@@ -1,0 +1,4 @@
+fr:
+  faker:
+    vehicle:
+      license_plate: '??-####-??'

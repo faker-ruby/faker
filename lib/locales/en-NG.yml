@@ -29,6 +29,8 @@ en-NG:
                     Gbadamosi, Saheed, Opeyemi, Jimoh, Jamiu, Babatunde, Motalo, Omobolanle, Sarah, Okunola, Oluwashina, Olasunkanmi-fasayo, Wasiu, Ayobami, Busari,
                     Segunmaru, Aderonke, Hanifat, Balogun, Sulaimon, Oladimeji, Oluwakemi
                   ]
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
     internet:
       domain_suffix: [com.ng, com, ng, net, edu.ng, org, gov.ng, org.ng, biz, co]
     address:

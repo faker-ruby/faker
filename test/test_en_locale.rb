@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'test_helper'
 
 class TestEnLocale < Test::Unit::TestCase
@@ -15,7 +17,7 @@ class TestEnLocale < Test::Unit::TestCase
   end
 
   def test_us_zip_codes
-    expected = /\d{5}(\-\d{4})?/
+    expected = /\d{5}(-\d{4})?/
     assert_match(expected, Faker::Address.zip_code)
   end
 

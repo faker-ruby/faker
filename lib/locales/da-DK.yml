@@ -10,7 +10,6 @@ da-DK:
       street_root: [Lærke, Birke, Vinkel, Vibe, Mølle, Ring, Skole, Skov, Ny, Ege, Sol, Industri, Kirke, Park, Strand, Eng]
       street_suffix: [vej, gade, gyde, allé]
       state: [Region Nordjylland, Region Midtjylland, Region Syddanmark, Region Hovedstaden, Region Sjælland]
-
       city:
         - "#{city_prefix}#{city_suffix}"
       street_name:
@@ -39,7 +38,6 @@ da-DK:
       first_name: [Peter, Jens, Lars, Michael, Henrik, Thomas, Søren, Jan, Christian, Niels, Anne, Kirsten, Hanne, Mette, Anna, Helle, Susanne, Lene, Maria, Marianne]
       last_name: [Nielsen, Jensen, Hansen, Pedersen, Andersen, Christensen, Larsen, Sørensen, Rasmussen, Jørgensen]
       prefix: ["Dr.", "Prof.", "Cand.mag.", "Cand.jur."]
-
       title:
         descriptor: [Leder, Senior, Fremtid, Produkt, National, Regional, Distrikt, Central, Global, Kunde, Investor, Dynamic, International, Legacy, Forward, Intern, HR, Direktør, Rektor]
         level: [Solutions, Program, Brand, Sikkerhed, Research, Marketing, Directives, Implementering, Integration, Funktionalitet, Respons, Paradigme, Taktik, Identitet, Markeder, Gruppe, Division, Applikationer, Optimering, Operationer, Infrastruktur, Intranet, Kommunikation, Web, Branding, Kvalitet, Kontrol, Mobilitet, Regnskab, Data, Kreativ, Konfiguration, Interaktioner, Faktorer, Anvendelighed, Metrik]
@@ -47,6 +45,12 @@ da-DK:
       name:
         - "#{first_name} #{last_name}"
         - "#{prefix} #{first_name} #{last_name}"
+      name_with_middle:
+        - "#{prefix} #{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
       formats:
@@ -58,13 +62,12 @@ da-DK:
         - '30 ## ## ##'
         - '40 ## ## ##'
 
+    color:
+      name: [hvid, sølv, grå, sort, rød, grøn, blå, gul, lilla, guld, brun, rosa]
+
     commerce:
-      color: [hvid, sølv, grå, sort, rød, grøn, blå, gul, lilla, guld, brun, rosa]
       department: ["Bøger", "Film", "Musik", "Spil", "Elektronik", "Computere", "Hus", "Have", "Værktøj", "Fødevarer", "Helse", "Skønhed", "Legetøj", "Tøj", "Sko", "Smykker", "Sport"]
       product_name:
         adjective: [Lille, Ergonomisk, Robust, Intelligent, Sød, Utrolig, Fantastisk, Praktisk, Slank, Fed, Enorm, Enkel, Tung, Let, Multianvendelig, Udholdende]
         material: [Stål, Metal, Træ, Beton, Plastic, Bomuld, Granit, Gummi, Latex, Læder, Silke, Uld, Ruskind, Linned, Marmor, Jern, Bronze, Kobber, Messing, Aluminium, Papir]
         product: [Stol, Bil, Computer, Buks, Trøje, Bord, Hat, Tallerken, Kniv, Flaske, Jakke, Lampe, Tastatur, Taske, Bænk, Ur, Pung]
-
-      name:
-        - "#{Address.city} #{suffix}"

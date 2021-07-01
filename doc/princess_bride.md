@@ -1,9 +1,0 @@
-# Faker::PrincessBride
-
-It might be available in the next version.
-
-```ruby
-Faker::PrincessBride.character #=> "Dread Pirate Roberts"
-
-Faker::PrincessBride.quote #=> "Hello. My name is Inigo Montoya. You killed my father. Prepare to die!"
-```

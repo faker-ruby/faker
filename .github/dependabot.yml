@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: test-unit
+    versions:
+    - 3.3.9
+    - 3.4.1
+  - dependency-name: i18n
+    versions:
+    - 1.8.10
+    - 1.8.7
+    - 1.8.8
+  - dependency-name: simplecov
+    versions:
+    - 0.21.2
+  - dependency-name: rubocop
+    versions:
+    - 1.10.0
+    - 1.8.1
+    - 1.9.0
+    - 1.9.1
+  - dependency-name: timecop
+    versions:
+    - 0.9.3

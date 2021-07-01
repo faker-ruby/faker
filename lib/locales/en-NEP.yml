@@ -1,7 +1,7 @@
 # Country => Nepal
 # This file is formatted for Nepal.
 
-nep:
+en-NEP:
   faker:
     name:
       male_first_name: ["Kamal", "Gopal", "Hari", "Himal", "Baburam", "Prachanda", "Ganesh"]
@@ -25,6 +25,8 @@ nep:
         - "#{male_first_name} #{middle_name} #{last_name}"
         - "#{female_first_name} #{last_name}"
         - "#{first_name} #{last_name}"
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
     address:
       default_time_zone: ["Asia/Kathmandu"]
       default_country_code: ["NP"]
@@ -43,7 +45,8 @@ nep:
       domain_suffix: ['np', 'com', 'info', 'net', 'org']
     company:
       suffix: ['Pvt Ltd', 'Group', 'Ltd', 'Limited']
+
+    country_code: ['977']
+
     phone_number:
-      formats: ['##-#######', '+977-#-#######', '+977########']
-
-
+      formats: ['##-#######', '#-#######', '########']

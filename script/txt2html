@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'rubygems'
 begin
@@ -11,15 +12,16 @@ end
 require 'redcloth'
 require 'syntax/convertors/html'
 require 'erb'
-require File.dirname(__FILE__) + '/../lib/faker/version.rb'
+require "#{File.dirname(__FILE__)}/../lib/faker/version.rb"
 
 version  = Faker::VERSION
 download = 'http://rubyforge.org/projects/faker'
 
-class Fixnum
+class Integer
   def ordinal
     # teens
     return 'th' if (10..19).cover?(self % 100)
+
     # others
     case self % 10
     when 1
