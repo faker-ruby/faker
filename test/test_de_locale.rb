@@ -94,6 +94,8 @@ class TestDeLocale < Test::Unit::TestCase
 
   def test_de_name_methods
     assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.male_first_name.is_a? String
+    assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.nobility_title_prefix.is_a? String
