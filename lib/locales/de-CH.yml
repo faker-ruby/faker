@@ -1714,6 +1714,11 @@ de-CH:
 
     internet:
       domain_suffix: [com, net, biz, ch, de, li, at, ch, ch]
+    
+    gender:
+      types: ["Frau", "Mann", "Nicht-Binär", "Agender", "Genderfluid", "Genderqueer", "Bigender", "Polygender"]
+      binary_types: ["Frau", "Mann"]
+      short_binary_types: ["w", "m"]
 
     country_code: ['41']
 

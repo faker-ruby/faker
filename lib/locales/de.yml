@@ -71,6 +71,11 @@ de:
         - "#{half_wind_azimuth}"
         - "#{quarter_wind_azimuth}"
 
+    gender:
+      types: ["Frau", "Mann", "Nicht-Binär", "Agender", "Genderfluid", "Genderqueer", "Bigender", "Polygender"]
+      binary_types: ["Frau", "Mann"]
+      short_binary_types: ["w", "m"]
+
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com, gmx.de, web.de, mail.de, freenet.de]
       domain_suffix: [com, info, name, net, org, de, ch]
