@@ -14,7 +14,7 @@ class TestJaLocale < Test::Unit::TestCase
   def test_ja_address_methods
     assert Faker::Address.postcode.is_a? String
     # Added Actual Japanese Zipcodes in lib/locals/ja.yml
-    assert_equal Faker::Address.postcode.size, 7
+    assert_match(/\A\d{3}-\d{4}\z/, Faker::Address.postcode)
     assert_not_english(Faker::Address.postcode)
     assert Faker::Address.state.is_a? String
     assert_not_english(Faker::Address.state)
@@ -158,6 +158,15 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::Space.planet.is_a? String
     assert_not_english(Faker::Space.planet)
     assert Faker::Space.galaxy.is_a? String
+  end
+
+  def test_ja_studio_ghibli_methods
+    assert Faker::JapaneseMedia::StudioGhibli.character.is_a? String
+    assert_not_english(Faker::JapaneseMedia::StudioGhibli.character)
+    assert Faker::JapaneseMedia::StudioGhibli.quote.is_a? String
+    assert_not_english(Faker::JapaneseMedia::StudioGhibli.quote)
+    assert Faker::JapaneseMedia::StudioGhibli.movie.is_a? String
+    assert_not_english(Faker::JapaneseMedia::StudioGhibli.movie)
   end
 
   def test_ja_subscription_methods

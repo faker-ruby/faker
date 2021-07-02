@@ -5,6 +5,19 @@ module Faker
     class Dota < Base
       class << self
         ##
+        # Produces the name of a building from Dota.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::Dota.building #=> "Tower"
+        #
+        # @faker.version 1.9.0
+        def building
+          fetch('games.dota.building')
+        end
+
+        ##
         # Produces the name of a hero from Dota.
         #
         # @return [String]

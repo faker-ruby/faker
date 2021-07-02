@@ -14,7 +14,7 @@ module Faker
         #
         # @faker.version next
         def artist
-          fetch('hiphop.artist')
+          fetch('music.hiphop.artist')
         end
 
         ##
@@ -27,7 +27,7 @@ module Faker
         #
         # @faker.version next
         def groups
-          fetch('hiphop.groups')
+          fetch('music.hiphop.groups')
         end
 
         ##
@@ -40,7 +40,7 @@ module Faker
         #
         # @faker.version next
         def subgenres
-          fetch('hiphop.subgenres')
+          fetch('music.hiphop.subgenres')
         end
       end
     end
