@@ -17,7 +17,7 @@ module Faker
     @random = nil
 
     class << self
-      attr_writer :locale, :random
+      attr_writer :locale
 
       def locale
         # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
@@ -30,6 +30,11 @@ module Faker
 
       def random
         @random || Random.new
+      end
+
+      def random=(random)
+        Faker::UniqueGenerator.clear
+        @random = random
       end
     end
   end

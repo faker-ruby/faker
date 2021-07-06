@@ -75,6 +75,14 @@ class TestFaker < Test::Unit::TestCase
     assert v == Faker::Base.rand_in_range(0, 1000)
   end
 
+  def test_deterministic_unique
+    Faker::Config.random = Random.new(42)
+    v = Faker::Name.unique.name
+    
+    Faker::Config.random = Random.new(42)
+    assert v == Faker::Name.unique.name
+  end
+
   def test_parse
     data = {
       faker: {
