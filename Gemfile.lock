@@ -24,7 +24,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     rainbow (3.0.0)
-    rake (13.0.3)
+    rake (13.0.6)
     regexp_parser (2.1.1)
     rexml (3.2.5)
     rubocop (1.18.1)
@@ -57,7 +57,7 @@ DEPENDENCIES
   faker!
   minitest (= 5.14.4)
   pry (= 0.14.1)
-  rake (= 13.0.3)
+  rake (= 13.0.6)
   rubocop (= 1.18.1)
   simplecov (= 0.17.1, < 0.18)
   test-unit (= 3.4.4)
