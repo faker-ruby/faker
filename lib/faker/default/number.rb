@@ -261,6 +261,26 @@ module Faker
         less_than_zero(random_number)
       end
 
+      ##
+      # Produces a random number with affixes
+      #
+      # @param digits [Integer] Number of digits that the generated number should have.
+      # @param prefix [String] The leading text of the number.
+      # @param suffix [String] The ending text of the number.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Number.with_affixes(prefix: 'ABC', digits: 10) #=> "ABC9593623"
+      #   Faker::Number.with_affixes(suffix: 'XYZ', digits: 10) #=> "5424372XYZ"
+      #   Faker::Number.with_affixes(prefix: 'ABC', suffix: 'XYZ', digits: 10) #=> "ABC7432XYZ"
+      #
+      # @faker.version next
+      def with_affixes(prefix: '', suffix: '', digits: 10)
+        number_length = digits - prefix.length - suffix.length
+
+        [prefix, number(digits: number_length), suffix].join[0...digits]
+      end
+
       private
 
       def generate(count)

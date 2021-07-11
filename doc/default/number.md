@@ -40,6 +40,12 @@ Faker::Number.between(from: 0.0, to: 1.0) #=> 0.7844640543957383
 Faker::Number.within(range: 1..10) #=> 7
 Faker::Number.within(range: 0.0..1.0) #=> 0.7844640543957383
 
+# Produces a random number with affixes
+# Keyword arguments: prefix, suffix, digits
+Faker::Number.with_affixes(prefix: 'ABC', digits: 10) #=> "ABC9593623"
+Faker::Number.with_affixes(suffix: 'XYZ', digits: 10) #=> "5424372XYZ"
+Faker::Number.with_affixes(prefix: 'ABC', suffix: 'XYZ', digits: 10) #=> "ABC7432XYZ"
+
 Faker::Number.positive #=> 235.59238499107653
 
 Faker::Number.negative #=> -4480.042585669558

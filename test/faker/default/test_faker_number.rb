@@ -134,4 +134,14 @@ class TestFakerNumber < Test::Unit::TestCase
     assert @tester.binary(digits: 8).match(/^[0-1]{8}$/)
     assert @tester.binary.match(/^[0-1]{4}$/)
   end
+
+  def test_with_affixes
+    assert @tester.with_affixes(prefix: 'ABC').match(/^ABC[0-9]{7}/)
+    assert @tester.with_affixes(suffix: 'XYZ').match(/^[0-9]{7}XYZ/)
+    assert @tester.with_affixes(prefix: 'ABC', digits: 20).match(/^ABC[0-9]{17}/)
+    assert @tester.with_affixes(suffix: 'ZXC', digits: 20).match(/^[0-9]{17}ZXC/)
+    assert @tester.with_affixes(prefix: 'ABC', suffix: 'ZXC').match(/^ABC[0-9]{4}ZXC/)
+    assert @tester.with_affixes(prefix: 'ABC', suffix: 'ZXC', digits: 20).match(/^ABC[0-9]{14}ZXC/)
+    assert_equal @tester.with_affixes(prefix: 'ABC', digits: 1), 'A'
+  end
 end
