@@ -41,4 +41,8 @@ class TestFakerFinance < Test::Unit::TestCase
     ticker_return = Faker::Finance.ticker('nyse')
     assert Faker::Base.fetch_all('finance.ticker.nyse').join(', ').include?(ticker_return)
   end
+
+  def test_stock_market
+    assert Faker::Finance.stock_market.match(/\w+/)
+  end
 end
