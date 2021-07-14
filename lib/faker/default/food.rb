@@ -117,7 +117,7 @@ module Faker
       # @example
       #   Faker::Food.ethnic_category #=> "Indian cuisine"
       #
-      # @faker.version 2.18.0
+      # @faker.version next
       def ethnic_category
         fetch('food.ethnic_category')
       end
