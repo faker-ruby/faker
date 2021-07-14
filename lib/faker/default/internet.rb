@@ -559,6 +559,30 @@ module Faker
         s
       end
 
+      ##
+      # Returns a random hash of user information
+      #
+      # @param methods [Symbol] Specify which Faker::Internet methods to include.
+      #
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::Internet.user #=> {:username=>"kiyoko", :email=>"rudy_wilkinson@stroman.io"}
+      # @example
+      #   Faker::Internet.user(:username, :safe_email, :password, :uuid, :user_agent)
+      #   #=> {:username=>"dennis", :safe_email=>"clemente.jakubowski@example.org", :password=>"D6uPdDlO4cBb",
+      #        :uuid=>"bf853523-241b-484e-8bab-c9649cc622ed",
+      #        :user_agent=>"Mozilla/5.0 (compatible; MSIE 9.0; AOL 9.7; AOLBuild 4343.19; Windows NT 6.1; WOW64; Trident/5.0; FunWebProducts)"}
+      #
+      # @faker.version next
+      def user(*attrs)
+        attrs = %w[username email] if attrs.empty?
+        attrs.map!(&:to_sym)
+        attrs.map do |attr|
+          { "#{attr}": send(attr) }
+        end.reduce({}, :merge)
+      end
+
       alias user_name username
 
       private
