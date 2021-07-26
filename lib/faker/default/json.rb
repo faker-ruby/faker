@@ -117,8 +117,8 @@ module Faker
           end
         else
           add_hash(key_array, hash, width, options)
-          key_array.pop
         end
+        key_array.pop
       end
 
       def add_hash(key_array, hash, width, options)
