@@ -15,7 +15,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_character_type
-    assert @tester.character.class == String
+    assert @tester.character.instance_of?(String)
   end
 
   def test_characters

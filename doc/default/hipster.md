@@ -11,12 +11,14 @@ Faker::Hipster.words(number: 4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
 Faker::Hipster.words(number: 4, supplemental: true) #=> ["iste", "seitan", "normcore", "provident"]
 Faker::Hipster.words(number: 4, supplemental: true, spaces_allowed: true) #=> ["qui", "magni", "craft beer", "est"]
 
-# Keyword arguments: word_count, supplemental, random_words_to_add
+# Keyword arguments: word_count, supplemental, random_words_to_add, open_compounds_allowed
 Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
 Faker::Hipster.sentence(word_count: 3) #=> "Pour-over swag godard."
 Faker::Hipster.sentence(word_count: 3, supplemental: true) #=> "Beard laboriosam sequi celiac."
 Faker::Hipster.sentence(word_count: 3, supplemental: false, random_words_to_add: 4) #=> "Bitters retro mustache aesthetic biodiesel 8-bit."
 Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 4) #=> "Occaecati deleniti messenger bag meh crucifix autem."
+Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: true) #=> "Kale chips nihil eos."
+Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false) #=> "Dreamcatcher umami fixie."
 
 # Keyword arguments: number, supplemental
 Faker::Hipster.sentences #=> ["Godard pitchfork vinegar chillwave everyday 90's whatever.", "Pour-over artisan distillery street waistcoat.", "Salvia yr leggings franzen blue bottle."]

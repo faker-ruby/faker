@@ -117,9 +117,11 @@ module Faker
       end
 
       ##
-      # Produces a random method from the methods above or the methods listed in the arguments.
+      # Produces a random method from the methods above, excluding the methods listed in the arguments.
       #
-      # @param methods [Symbol] Specify which methods to use.
+      # @overload random(methods)
+      #   @param methods [Symbol] Specify which methods to exclude.
+      #
       # @return [String, Array<String>]
       #
       # @example

@@ -26,10 +26,26 @@ class TestKoLocale < Test::Unit::TestCase
     assert_equal('대한민국', Faker::Address.default_country)
   end
 
+  def test_ko_color_methods
+    assert Faker::Color.color_name.is_a? String
+  end
+
+  def test_ko_commerce_methods
+    assert Faker::Commerce.department.is_a? String
+    assert Faker::Commerce.product_name.is_a? String
+    assert Faker::Commerce.promotion_code.is_a? String
+    assert Faker::Commerce.material.is_a? String
+  end
+
   def test_ko_company_methods
     assert Faker::Company.suffix.is_a? String
     assert Faker::Company.prefix.is_a? String
     assert Faker::Company.name.is_a? String
+  end
+
+  def test_ko_gender_methods
+    assert Faker::Gender.binary_type.is_a? String
+    assert_not_english(Faker::Gender.binary_type)
   end
 
   def test_ko_internet_methods
@@ -52,10 +68,8 @@ class TestKoLocale < Test::Unit::TestCase
     assert Faker::PhoneNumber.phone_number.is_a? String
   end
 
-  def test_ko_commerce_methods
-    assert Faker::Commerce.department.is_a? String
-    assert Faker::Commerce.product_name.is_a? String
-    assert Faker::Commerce.promotion_code.is_a? String
-    assert Faker::Commerce.material.is_a? String
+  def test_ko_space_methods
+    assert Faker::Space.planet.is_a? String
+    assert Faker::Space.galaxy.is_a? String
   end
 end

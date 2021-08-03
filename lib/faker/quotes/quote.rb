@@ -17,6 +17,19 @@ module Faker
       end
 
       ##
+      # Produces a quote from Deep Thoughts by Jack Handey.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Quote.jack_handey # => "I hope life isn't a big joke, because I don't get it."
+      #
+      # @faker.version next
+      def jack_handey
+        fetch('quote.jack_handey')
+      end
+
+      ##
       # Produces a quote from Matz.
       #
       # @return [String]
@@ -79,6 +92,19 @@ module Faker
       # @faker.version 1.9.0
       def yoda
         fetch('quote.yoda')
+      end
+
+      ##
+      # Produces a quote from a fortune cookie.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Quote.fortune_cookie #=> "This cookie senses that you are superstitious; it is an inclination that is bad for your mental health."
+      #
+      # @faker.version next
+      def fortune_cookie
+        fetch('quote.fortune_cookie')
       end
     end
   end

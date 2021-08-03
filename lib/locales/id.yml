@@ -20,6 +20,7 @@ id:
         - "#{street_prefix} #{street_title}"
       street_address:
         - "#{street_name} No. #{building_number}"
+      state_abbr: [AC, BA, BT, BE, GO, JK, JA, JW, JB, JT, JI, KA, KB, KS, KT, KI, KU, BB, KR, LA, ML, MA, MU, NU, NB, NT, PP, PA, PB, RI, SL, SR, SN, ST, SG, SA, SM, SB, SS, SU, YO]
     country_code: ['62']
     phone_number:
       formats: ['08##########', '08##-####-####', '8#########']

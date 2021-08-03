@@ -162,10 +162,17 @@ module Faker
       # @faker.version 1.8.5
       #
       # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
-      def spanish_organisation_number
+      def spanish_organisation_number(organization_type: nil)
         # Valid leading character: A, B, C, D, E, F, G, H, J, N, P, Q, R, S, U, V, W
-        # 7 digit numbers
-        [sample(self::ULetters), format('%07d', rand(10**7))].join
+        # format: 1 digit letter (organization type) + 7 digit numbers + 1 digit control (letter or number based on
+        # organization type)
+        letters = %w[A B C D E F G H J N P Q R S U V W]
+
+        organization_type = sample(letters) unless letters.include?(organization_type)
+        code = format('%07d', rand(10**7))
+        control = spanish_cif_control_digit(organization_type, code)
+
+        [organization_type, code, control].join
       end
 
       ##
@@ -397,7 +404,18 @@ module Faker
         formatted ? format('%s.%s.%s/%s-%s', *number.scan(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/).flatten) : number
       end
 
+      ##
       # Get a random Russian tax number.
+      # @param region [String] Any region string
+      # @param type [Symbol] Legeal or not, defaults to :legal
+      #
+      # @return [String]
+      # @example
+      #   Faker::Company.russian_tax_number                             #=> "0415584064"
+      #   Faker::Company.russian_tax_number(region: 'AZ')               #=> "AZ50124562"
+      #   Faker::Company.russian_tax_number(region: 'AZ', type: false)  #=> "AZ8802315465"
+      #
+      # @faker.version 1.9.4
       def russian_tax_number(region: nil, type: :legal)
         inn_number(region, type)
       end
@@ -457,13 +475,11 @@ module Faker
           end
         end
 
-        control_digit = if (sum % 10).zero?
-                          0
-                        else
-                          (sum / 10 + 1) * 10 - sum
-                        end
-
-        control_digit
+        if (sum % 10).zero?
+          0
+        else
+          (sum / 10 + 1) * 10 - sum
+        end
       end
 
       def abn_checksum(abn)
@@ -502,7 +518,14 @@ module Faker
       #
       # Range of regions:
       # https://ru.wikipedia.org/wiki/Коды_субъектов_Российской_Федерации
+      # region [String] Any region string
+      # @param type [Symbol] Legeal or not, defaults to :legal
       #
+      # @return [String]
+      # @example
+      #   Faker::Comnpany.russian_tax_number
+      #   Faker::Comnpany.russian_tax_number(region: 'AZ')
+      #   Faker::Comnpany.russian_tax_number(region: 'AZ', type: false)
       # rubocop:enable Style/AsciiComments
       def inn_number(region, type)
         n10 = [2, 4, 10, 3, 5, 9, 4, 6, 8]
@@ -527,6 +550,31 @@ module Faker
             v + i[0] * number[i[1]].to_i
           end % 11 % 10
         ).to_s
+      end
+
+      def spanish_cif_control_digit(organization_type, code)
+        letters = %w[J A B C D E F G H]
+
+        control = code.split('').each_with_index.inject(0) do |sum, (value, index)|
+          if (index + 1).even?
+            sum + value.to_i
+          else
+            sum + spanish_b_algorithm(value.to_i)
+          end
+        end
+
+        control = control.to_s[-1].to_i
+        control = control.zero? ? control : 10 - control
+
+        %w[A B C D E F G H J U V].include?(organization_type) ? control : letters[control]
+      end
+
+      def spanish_b_algorithm(value)
+        result = value.to_i * 2
+
+        return result if result < 10
+
+        result.to_s[0].to_i + result.to_s[1].to_i
       end
     end
   end

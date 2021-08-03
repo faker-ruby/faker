@@ -80,6 +80,10 @@ class TestFakerDrivingLicence < Test::Unit::TestCase
     # When state Alaska is passed
     licence_number = @tester.usa_driving_licence('alaska')
     assert_match %r{[0-9]{6,7}}, licence_number
+
+    # When state North Dakota is passed
+    licence_number = @tester.usa_driving_licence('North Dakota')
+    assert_match %r{([A-Z]{3}[0-9]{6})|([0-9]{9})}, licence_number
   end
 
   def test_usa_driving_licence_with_faker_code

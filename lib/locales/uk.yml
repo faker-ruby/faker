@@ -25,6 +25,8 @@ uk:
         - "#{masculine_street_prefix} #{masculine_street_title}"
       street_address:
         - "#{street_name}, #{building_number}"
+      full_address:
+        - "#{street_address}, #{city}, #{state}, #{postcode}"
       default_country: [Україна]
 
     internet:

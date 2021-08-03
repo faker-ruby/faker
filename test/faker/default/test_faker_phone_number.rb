@@ -5,7 +5,7 @@ require_relative '../../test_helper'
 class TestFakerPhone < Test::Unit::TestCase
   def setup
     @tester = Faker::PhoneNumber
-    @phone_with_country_code_regex = /\A\+(\s|\d|\-|\(|\)|x|\.)*\z/
+    @phone_with_country_code_regex = /\A\+(\s|\d|-|\(|\)|x|\.)*\z/
   end
 
   def test_country_code

@@ -43,7 +43,7 @@ module Faker
 
         ref = reference if ref.empty?
 
-        'RF' + iban_checksum('RF', ref) + ref
+        "RF#{iban_checksum('RF', ref)}#{ref}"
       end
 
       ##

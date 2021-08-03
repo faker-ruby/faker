@@ -31,6 +31,19 @@ module Faker
         end
 
         ##
+        # Produces the name of a city from Dune
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Books::Dune.city #=> "Arrakeen"
+        #
+        # @faker.version next
+        def city
+          fetch('dune.cities')
+        end
+
+        ##
         # Produces the name of a planet from Dune
         #
         # @return [String]
@@ -76,7 +89,7 @@ module Faker
             end
           end
 
-          fetch('dune.quotes.' + character)
+          fetch("dune.quotes.#{character}")
         end
 
         ##
@@ -111,7 +124,7 @@ module Faker
             end
           end
 
-          fetch('dune.sayings.' + source)
+          fetch("dune.sayings.#{source}")
         end
       end
     end

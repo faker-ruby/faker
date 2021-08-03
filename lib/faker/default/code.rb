@@ -61,7 +61,7 @@ module Faker
         case base
         when 8 then generate_base8_ean
         when 13 then generate_base13_ean
-        else raise ArgumentError, 'base must be 3 or 13'
+        else raise ArgumentError, 'base must be 8 or 13'
         end
       end
 
@@ -80,10 +80,10 @@ module Faker
         value << "-#{vd}"
       end
 
+      ##
+      # Produces a random NRIC (National Registry Identity Card) code.
       # By default generates a Singaporean NRIC ID for someone
       # who is born between the age of 18 and 65.
-      #
-      # Produces a random NRIC (National Registry Identity Card) code.
       #
       # @param min_age [Integer] the min age of the person in years
       # @param max_age [Integer] the max age of the person in years
@@ -160,7 +160,7 @@ module Faker
         partial = Array.new(7) { Faker::Config.random.rand(0..9) }.join
 
         # Generate 9th digit
-        check_digit = generate_sin_check_digit(registry + partial + '0').to_s
+        check_digit = generate_sin_check_digit("#{registry}#{partial}0").to_s
 
         registry + partial + check_digit
       end
@@ -218,7 +218,7 @@ module Faker
       def generate_base13_isbn
         values = regexify(/\d{12}/)
         remainder = sum(values) { |value, index| index.even? ? value.to_i : value.to_i * 3 } % 10
-        values << "-#{((10 - remainder) % 10)}"
+        values << "-#{(10 - remainder) % 10}"
       end
 
       def sum(values)

@@ -172,9 +172,10 @@ module Faker
 
       def define_measurement_locale(amount, locale)
         ensure_valid_amount(amount)
-        if amount == ALL
+        case amount
+        when ALL
           make_plural(fetch("measurement.#{locale}"))
-        elsif amount == NONE
+        when NONE
           fetch("measurement.#{locale}")
         else
           locale = check_for_plural(fetch("measurement.#{locale}"), amount)

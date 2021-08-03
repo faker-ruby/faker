@@ -26,12 +26,14 @@ module Faker
           keywords << :options if legacy_options != NOT_GIVEN
         end
 
-        options[:key] = 'Faker::' + options[:key]
-        options[:value] = 'Faker::' + options[:value]
+        options[:key] = "Faker::#{options[:key]}"
+        options[:value] = "Faker::#{options[:value]}"
 
         hash = build_shallow_hash(width, options)
         JSON.generate(hash)
       end
+
+      # rubocop:disable Metrics/ParameterLists
 
       ##
       # Produces a random nested JSON formatted string that can take JSON as an additional argument.
@@ -71,9 +73,7 @@ module Faker
       #             {"Rick":"Wiza","Bonita":"Bayer","Gardner":"Auer","Felicity":"Abbott"}}}
       #
       # @faker.version 1.9.2
-      # rubocop:disable Metrics/ParameterLists
       def add_depth_to_json(legacy_json = NOT_GIVEN, legacy_width = NOT_GIVEN, legacy_options = NOT_GIVEN, json: shallow_json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :json if legacy_json != NOT_GIVEN
         end
@@ -84,8 +84,8 @@ module Faker
           keywords << :options if legacy_options != NOT_GIVEN
         end
 
-        options[:key] = 'Faker::' + options[:key]
-        options[:value] = 'Faker::' + options[:value]
+        options[:key] = "Faker::#{options[:key]}"
+        options[:value] = "Faker::#{options[:value]}"
 
         hash = JSON.parse(json)
         hash.each do |key, _|
@@ -93,6 +93,7 @@ module Faker
         end
         JSON.generate(hash)
       end
+      # rubocop:enable Metrics/ParameterLists
 
       private
 

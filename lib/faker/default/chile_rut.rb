@@ -46,9 +46,10 @@ module Faker
           partial_result
         end
         partial_check_digit = 11 - (digit_sum % 11)
-        if partial_check_digit == 11
+        case partial_check_digit
+        when 11
           '0'
-        elsif partial_check_digit == 10
+        when 10
           'k'
         else
           partial_check_digit.to_s

@@ -72,7 +72,7 @@ module Faker
       #   Faker::Types.rb_hash(number: 2) #=> {name: "bob", last: "marley"}
       #
       # @faker.version 1.8.6
-      def rb_hash(legacy_number = NOT_GIVEN, legacy_type = NOT_GIVEN, number: 1, type: random_type)
+      def rb_hash(legacy_number = NOT_GIVEN, legacy_type = NOT_GIVEN, number: 1, type: -> { random_type })
         warn_for_deprecated_arguments do |keywords|
           keywords << :number if legacy_number != NOT_GIVEN
           keywords << :type if legacy_type != NOT_GIVEN
@@ -80,7 +80,8 @@ module Faker
 
         {}.tap do |hsh|
           Lorem.words(number: number * 2).uniq.first(number).each do |s|
-            hsh.merge!(s.to_sym => type)
+            value = type.is_a?(Proc) ? type.call : type
+            hsh.merge!(s.to_sym => value)
           end
         end
       end
@@ -102,7 +103,7 @@ module Faker
           keywords << :number if legacy_number != NOT_GIVEN
         end
 
-        rb_hash(number: number, type: random_complex_type)
+        rb_hash(number: number, type: -> { random_complex_type })
       end
 
       ##

@@ -56,6 +56,32 @@ module Faker
       end
 
       ##
+      # Produces a rank in the U.S. Space Force.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Military.space_force_rank #=> "Senior Enlisted Advisor of the Space Force"
+      #
+      # @faker.version next
+      def space_force_rank
+        fetch('military.space_force_rank')
+      end
+
+      ##
+      # Produces a rank in the U.S. Coast Guard
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Military.coast_guard_rank #=> "Master Chief Petty Officer of the Coast Guard"
+      #
+      # @faker.version next
+      def coast_guard_rank
+        fetch('military.coast_guard_rank')
+      end
+
+      ##
       # Produces a U.S. Department of Defense Paygrade.
       #
       # @return [String]

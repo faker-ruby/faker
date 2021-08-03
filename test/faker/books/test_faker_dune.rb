@@ -15,6 +15,10 @@ class TestFakerDune < Test::Unit::TestCase
     assert @tester.title.match(/\w+/)
   end
 
+  def test_city
+    assert @tester.city.match(/\w+/)
+  end
+
   def test_planet
     assert @tester.planet.match(/\w+/)
   end

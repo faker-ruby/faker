@@ -8,7 +8,7 @@ class TestFakerCompass < Test::Unit::TestCase
     @word_pattern = /\w+/
     @multiword_pattern = /^\w+ by \w+$/
     @combined_pattern = /^(?:\w+|\w+ by \w+|[\w\-]+)$/
-    @number_pattern = /^[\d]+(?:.\d\d?)?$/
+    @number_pattern = /^\d+(?:.\d\d?)?$/
     @letter_pattern = /^[NEWS]?[NEWS](?:b?[NEWS])?$/
   end
 

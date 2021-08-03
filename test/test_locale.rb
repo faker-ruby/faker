@@ -14,10 +14,10 @@ class TestLocale < Test::Unit::TestCase
   def test_locale_separate_from_i18n
     I18n.locale = :en
     Faker::Config.locale = :de
-    assert Faker::PhoneNumber.phone_number.match(/\(0\d+\) \d+|\+49-\d+-\d+/)
+    assert Faker::PhoneNumber.phone_number.match(/\(0\d+\) \d+|\d+-\d+/)
     assert Faker::Address.street_name.match(//)
     Faker::Config.locale = :ru
-    assert Faker::Internet.domain_name.match(/([\da-z\.-]+)\.([a-z\.]{2,6})/)
+    assert Faker::Internet.domain_name.match(/([\da-z.-]+)\.([a-z.]{2,6})/)
   end
 
   def test_configured_locale_translation

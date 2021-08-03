@@ -14,7 +14,7 @@ module Faker
         #     #=> "ak_zvU8YQLagjcfng7Tg8yCdiZ1rpiWNp1PBn3vtUs44utSvbJVR"
         #
         def address
-          'ak_' + rand_strings
+          "ak_#{rand_strings}"
         end
 
         ##
@@ -27,7 +27,7 @@ module Faker
         #     #=> "th_147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
         #
         def transaction
-          'th_' + rand_strings(51)
+          "th_#{rand_strings(51)}"
         end
 
         ##
@@ -40,7 +40,7 @@ module Faker
         #     #=> "ct_Hk2JsNeWGEYQEHHQCfcBeGrwbhtYSwFTPdDhW2SvjFYVojyhW"
         #
         def contract
-          'ct_' + rand_strings
+          "ct_#{rand_strings}"
         end
 
         ##
@@ -53,7 +53,7 @@ module Faker
         #     #=> "ok_28QDg7fkF5qiKueSdUvUBtCYPJdmMEoS73CztzXCRAwMGKHKZh"
         #
         def oracle
-          'ok_' + rand_strings(51)
+          "ok_#{rand_strings(51)}"
         end
 
         protected
