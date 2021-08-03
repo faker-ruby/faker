@@ -513,23 +513,95 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 'auth0', auth[:provider]
     assert_instance_of String, auth[:uid]
     assert_equal 30, auth[:uid].length
-    assert info[:email].match safe_email_regex(first_name, last_name)
     assert_equal auth[:uid], raw_info[:sub]
+    assert_instance_of String, info[:email]
+    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert_equal info[:email], raw_info[:email]
+    assert boolean?(raw_info[:email_verified])
+    assert_instance_of String, credentials[:id_token]
+    assert_instance_of String, credentials[:token_type]
+    assert_instance_of String, credentials[:token]
+    assert_instance_of Integer, credentials[:expires_at]
+    assert_instance_of Integer, raw_info[:updated_at]
+    assert boolean?(credentials[:expires])
+    assert_instance_of String, info[:image]
     assert_instance_of String, info[:name]
     assert_instance_of String, info[:nickname]
-    assert_instance_of String, info[:image]
-    assert_instance_of String, credentials[:token]
-    assert boolean?(credentials[:expires])
-    assert_instance_of String, credentials[:id_token]
-    assert_instance_of Integer, credentials[:expires_at]
-    assert_instance_of String, credentials[:token_type]
-    assert_equal auth[:uid], raw_info[:sub]
-    assert_equal info[:name], raw_info[:name]
-    assert_equal info[:email], raw_info[:email]
     assert_equal info[:image], raw_info[:picture]
+    assert_equal info[:name], raw_info[:name]
     assert_equal info[:nickname], raw_info[:nickname]
-    assert_instance_of Integer, raw_info[:updated_at]
-    assert boolean?(raw_info[:email_verified])
+  end
+
+  def test_omniauth_auth0_with_name
+    custom_name     = 'Happy Gilmore'
+    auth            = @tester.auth0(name: custom_name)
+    info            = auth[:info]
+    raw_info        = auth.dig(:extra, :raw_info)
+    first_name      = custom_name.downcase.split(' ').first
+    last_name       = custom_name.downcase.split(' ').last
+    nickname        = custom_name.downcase.delete(' ')
+
+    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert raw_info[:email].match safe_email_regex(first_name, last_name)
+    assert_instance_of String, info[:name]
+    assert_instance_of String, raw_info[:name]
+    assert_instance_of String, info[:nickname]
+    assert_equal custom_name, info[:name]
+    assert_equal custom_name, raw_info[:name]
+    assert_equal nickname, info[:nickname]
+    assert_equal nickname, raw_info[:nickname]
+  end
+
+  def test_omniauth_auth0_with_nickname
+    custom_nickname = 'happygilmore'
+    auth            = @tester.auth0(nickname: custom_nickname)
+    info            = auth[:info]
+    raw_info        = auth.dig(:extra, :raw_info)
+
+    assert_equal custom_nickname, info[:nickname]
+    assert_equal custom_nickname, raw_info[:nickname]
+  end
+
+  def test_omniauth_auth0_with_email
+    custom_email    = 'happy.gilmore@example.com'
+    auth            = @tester.auth0(email: custom_email)
+    info            = auth[:info]
+    raw_info        = auth.dig(:extra, :raw_info)
+
+    assert_equal custom_email, info[:email]
+    assert_equal custom_email, raw_info[:email]
+  end
+
+  def test_omniauth_auth0_with_uid
+    custom_uid = 'auth0|624311b64acdf9ba7bb35b88'
+    auth       = @tester.auth0(uid: custom_uid)
+    raw_info   = auth.dig(:extra, :raw_info)
+
+    assert_equal custom_uid, auth[:uid]
+    assert_equal custom_uid, raw_info[:sub]
+  end
+
+  # Ensure no parameter overrides other parameters
+  def test_omniauth_auth0_with_all_parameters
+    custom_name     = 'Happy Gilmore'
+    custom_nickname = 'happygilmore96'
+    custom_email    = 'happygilmore4hockey@example.com'
+    custom_uid      = 'auth0|624311b64acdf9ba7bb35b88'
+    auth            = @tester.auth0(name: custom_name, nickname: custom_nickname, email: custom_email, uid: custom_uid)
+    info            = auth[:info]
+    raw_info        = auth.dig(:extra, :raw_info)
+
+    assert_equal custom_uid, auth[:uid]
+    assert_equal custom_uid, raw_info[:sub]
+    assert_equal custom_email, info[:email]
+    assert_equal custom_email, raw_info[:email]
+    assert_instance_of String, info[:name]
+    assert_instance_of String, raw_info[:name]
+    assert_instance_of String, info[:nickname]
+    assert_equal custom_name, info[:name]
+    assert_equal custom_name, raw_info[:name]
+    assert_equal custom_nickname, info[:nickname]
+    assert_equal custom_nickname, raw_info[:nickname]
   end
 
   def word_count(string)

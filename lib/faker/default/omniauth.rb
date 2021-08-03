@@ -436,6 +436,7 @@ module Faker
       #
       # @param name [String] A specific name to return in the response.
       # @param email [String] A specific email to return in the response.
+      # @param nickname [String] A specific nickname to return in the response.
       # @param uid [String] A specific UID to return in the response.
       #
       # @return [Hash] An auth hash in the format provided by omniauth-auth0.
