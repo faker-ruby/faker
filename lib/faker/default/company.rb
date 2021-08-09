@@ -553,7 +553,7 @@ module Faker
       end
 
       def spanish_cif_control_digit(organization_type, code)
-        letters = %w[J A B C D E F G H]
+        letters = %w[J A B C D E F G H I]
 
         control = code.split('').each_with_index.inject(0) do |sum, (value, index)|
           if (index + 1).even?

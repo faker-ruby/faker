@@ -164,3 +164,24 @@ en:
           - V
           - BRK.B
           - MA
+      stock_market:
+        - NYSE
+        - NASDAQ
+        - SSE
+        - HKEX
+        - JPX
+        - SZSE
+        - LSE
+        - TSX
+        - NSE-INDIA
+        - FSX
+        - TADAWUL
+        - OMXC-COPENHAGEN
+        - KRX
+        - BSE-BOMBAY
+        - SIX
+        - EURONEXT-PARIS
+        - TWSE
+        - ASX
+        - JSE
+        - BOVESPA
