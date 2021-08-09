@@ -28,6 +28,9 @@ jobs:
 
       - name: Run RuboCop
         run: bundle exec rake rubocop
+
+      - name: Lint YAML
+        run: bundle exec rake lint_yaml
   test:
     name: Ruby ${{ matrix.ruby }}
     runs-on: ubuntu-latest
