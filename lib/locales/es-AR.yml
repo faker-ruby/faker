@@ -4262,7 +4262,7 @@ es-AR:
                       "conglomerar",
                       "productizar",
                       "redefinir",
-                      "recontextualizar",
+                      "recontextualizar"
                   ]
                 - [
                       "la fisicalidad",
@@ -4323,7 +4323,7 @@ es-AR:
                       "la colaboratividad",
                       "la persuasión",
                       "la integralidad",
-                      "la riqueza",
+                      "la riqueza"
                   ]
                 - [
                       "de las sinergias",
@@ -4369,7 +4369,7 @@ es-AR:
                       "de las funcionalidades",
                       "de las experiencias",
                       "de los servicios web",
-                      "de las metodologías",
+                      "de las metodologías"
                   ]
             name:
                 - "#{prefix} #{Name.last_name}"

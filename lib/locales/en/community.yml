@@ -1,7 +1,7 @@
 en:
   faker:
     community:
-      characters: ["Jeff Winger", "Britta Perry", "Señor Ben Chang", "Abed Nadir", "Annie Edison", "Dean Craig Pelton", "Pierce Hawthorne", "Troy Barnes", "Shirley Bennett", "Ian Duncan", "Michelle Slater", "Buzz Hickey", "Star Burns", "Magnitude","Leonard Rodriguez", "Garrett Lambert", "Annie’s Boobs", "Inspector Spacetime", "Constable Reggie", "Kickpuncher", "Sean Garrig", "Vaughn Miller", "Rich Stephenson", "Neil", "Todd Jacobson", "Annie Kim"]
+      characters: ["Jeff Winger", "Britta Perry", "Señor Ben Chang", "Abed Nadir", "Annie Edison", "Dean Craig Pelton", "Pierce Hawthorne", "Troy Barnes", "Shirley Bennett", "Ian Duncan", "Michelle Slater", "Buzz Hickey", "Star Burns", "Magnitude", "Leonard Rodriguez", "Garrett Lambert", "Annie’s Boobs", "Inspector Spacetime", "Constable Reggie", "Kickpuncher", "Sean Garrig", "Vaughn Miller", "Rich Stephenson", "Neil", "Todd Jacobson", "Annie Kim"]
       quotes: [
         "Harrison Ford is irradiating our testicles with microwave satellite transmissions!",
         "Doing more than the minimum amount of work is my definition of failing.",

@@ -6,7 +6,7 @@ tr:
       last_name: [Davut, Sağdıç, Özdemir, Özkanlı, Ekkaldır, Zengel, Eren]
       prefix: [Sn., Av., Dr.]
       title:
-        job: ['Müdür','Şef','Koordinatör', 'Ajan','Hacı','Başkan','Reyiz']
+        job: ['Müdür', 'Şef', 'Koordinatör', 'Ajan', 'Hacı', 'Başkan', 'Reyiz']
       name:
         - "#{prefix} #{first_name} #{last_name}"
         - "#{first_name} #{last_name}"

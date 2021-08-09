@@ -20,7 +20,7 @@ en:
         burundi: ["Kayanza"]
         panama: ["Boquete", "Chiriqui", "Volcan"]
         yemen: ["Mattari", "San'ani", "Hirazi", "Raimi"]
-        india: ["Chikmagalur", "Coorg","Biligiris", "Bababudangiris", "Manjarabad", "Nilgiris", "Travancore", "Manjarabad", "Brahmaputra", "Pulneys", "Sheveroys"]
+        india: ["Chikmagalur", "Coorg", "Biligiris", "Bababudangiris", "Manjarabad", "Nilgiris", "Travancore", "Manjarabad", "Brahmaputra", "Pulneys", "Sheveroys"]
       variety: ["Liberica", "S288", "S795", "Kent", "Java", "Dilla", "Sumatara", "Catuai", "Pacamara", "Mundo Novo", "Red Bourbon", "Bourbon", "Yellow Bourbon", "Pacas", "Caturra", "Pink Bourbon", "Colombia", "Obata", "Catimors", "Sarchimor", "Mokka", "Kaffa", "Gimma", "Tafari-Kela", "S.4", "Agaro", "Dega", "Barbuk Sudan", "Ennarea", "Geisha", "Gesha", "Blue Mountain", "Kona", "San Ramon", "SL28", "SL34", "Villa Sarchi", "Villalobos", "Typica", "Ethiopian Heirloom"]
       intensifier: ["muted", "dull", "mild", "structured", "balanced", "rounded", "soft", "faint", "delicate", "dry", "astringent", "quick", "clean", "crisp", "bright", "vibrant", "tart", "wild", "unbalanced", "sharp", "pointed", "dense", "deep", "complex", "juicy", "lingering", "dirty"]
       body: ["watery", "tea-like", "silky", "slick", "juicy", "smooth", "syrupy", "round", "creamy", "full", "velvety", "big", "chewy", "coating"]

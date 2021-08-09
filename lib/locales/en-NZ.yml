@@ -64,7 +64,7 @@ en-NZ:
         Spencer, Stanton, Stark, Stokes, Swift, Tillman, Towne, Tremblay, Tromp, Turcotte, Turner, Walsh, Walter, Ward, Waters, Weber, Welch, West, Wilderman, Wilkinson,
         Williamson, Windler, Wolf, Henare, Ngata, Parata, Turei, Taumata, Te Whiti, Ka'ai, Ruakere, Te Kanawa, Tamahori, Curtis, Arahanga, Waititi,
         Vainu'upo, Feu'u, Tagaloa, Laga'aia, Iosefo, Lotu-Iiga, Taule'alo, Singh, Wang, Montgomery, Zhang, Kumar, Liu, Chen, Huang, Wu, Yang, Wong, Xu, Kim,
-        Zhou,
+        Zhou
       ]
       last_name:
         - "#{surname}"
@@ -134,7 +134,7 @@ en-NZ:
         Auckland, Wellington, Christchurch, Hamilton, Tauranga, Napier, Hastings, Dunedin,
         Palmerston North, Nelson, Rotorua, Whangarei, New Plymouth,
         Invercargill, Whanganui, Gisborne, Ngāruawahia, Manukau, Kāpiti, Kaikōura, Ōamaru, Rānui, Waiharakeke,
-        Greymouth, Hokitika, Franz Josef, Fox Glacier, Winton, Kaitaia,
+        Greymouth, Hokitika, Franz Josef, Fox Glacier, Winton, Kaitaia
       ]
       mail_box:
         - "PO Box ##"

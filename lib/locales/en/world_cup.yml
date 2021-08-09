@@ -1,7 +1,7 @@
 en:
   faker:
     world_cup:
-      teams:  ["Egypt", "Russia", "Saudi Arabia", "Uruguay", "Iran", "Morocco", "Portugal", "Spain", "Australia", "Denmark", "France", "Peru", "Argentina", "Croatia", "Iceland", "Nigeria", "Brazil", "Costa Rica", "Serbia", "Switzerland", "Germany", "Mexico", "South Korea", "Sweden", "Belgium", "England", "Panama", "Tunisia", "Columbia", "Japan","Poland", "Senegal" ]
+      teams:  ["Egypt", "Russia", "Saudi Arabia", "Uruguay", "Iran", "Morocco", "Portugal", "Spain", "Australia", "Denmark", "France", "Peru", "Argentina", "Croatia", "Iceland", "Nigeria", "Brazil", "Costa Rica", "Serbia", "Switzerland", "Germany", "Mexico", "South Korea", "Sweden", "Belgium", "England", "Panama", "Tunisia", "Columbia", "Japan", "Poland", "Senegal" ]
       stadiums: ["Ekaterinburg Arena", "Kaliningrad Stadium", "Kasan Arena", "Spartak Stadium", "Nizhny Novgorod Stadium", "Luzhniki Stadium", "Rostov Arena", "Saint Petersburg Stadium", "Samara Arena", "Mordovia Arena", "Fisht Stadium", "Volgograd Arena"]
       cities: ["Saint Petersburg", "Kaliningrad", "Rostov-on-Don", "Volgograd", "Moscow", "Sochi", "Kazan", "Nizhny Novgorod", "Saransk", "Samara", "Ekaterinburg"]
       groups:
@@ -129,7 +129,7 @@ en:
         #Iceland announced a final squad on 11 May 2018.
         Iceland:
           coach: ["Heimir Hallgrímsson"]
-          goalkeepers: ["Hannes Thor Halldorsson"," Runar Alex Runarsson", "Frederik Schram"]
+          goalkeepers: ["Hannes Thor Halldorsson", " Runar Alex Runarsson", "Frederik Schram"]
           defenders: ["Birkir Mar Saevarsson", "Ragnar Sigurdsson", "Kari Arnason", "Ari Freyr Skulason", "Sverrir Ingi Ingason", "Hordur Bjorgvin Magnusson", "Samuel Kari Fridridsson", "Holmar Orn Eyjolfsson"]
           midfielders: ["Aaron Einar Gunnarsson", "Gylfi Sigurdsson", "Emil Hallfredsson", "Birkir Bjarnason", "Johann Berg Gudmundsson", "Olafur Ingi Skulason", "Arnor Ingvi Traustason", "Rurik Gislason"]
           forwards: ["Alfred Finnbogason", "Jon Dadi Bodvarsson", "Bjorn Bergmann Sigurdarson", "Albert Gudmundsson"]
