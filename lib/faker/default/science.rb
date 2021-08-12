@@ -3,6 +3,47 @@
 module Faker
   class Science < Base
     class << self
+      BRANCHES = {
+        empirical: %i[empirical_natural_basic empirical_natural_applied empirical_social_basic empirical_social_applied],
+        formal: %i[formal_basic formal_applied],
+        natural: %i[empirical_natural_basic empirical_natural_applied],
+        social: %i[empirical_social_basic empirical_social_applied],
+        basic: %i[empirical_natural_basic empirical_social_basic formal_basic],
+        applied: %i[empirical_natural_applied empirical_social_applied formal_applied]
+      }.freeze
+
+      ##
+      # Produces a name of a science
+      # You can optionally filter by specifying one or more of the following:
+      # `:empirical, :formal, :natural, :social, :basic, :applied`
+      # @see https://en.wikipedia.org/wiki/Science#Branches_of_science
+      # @see Faker::Educator.subject
+      #
+      # @param branches [Array<Symbol>]
+      # @return [String]
+      #
+      # @example
+      #   Faker::Science.science #=> "Space science"
+      #   Faker::Science.science(:natural, :applied) #=> "Engineering"
+      #   Faker::Science.science(:formal, :applied) #=> "Computer Science"
+      #
+      # @faker.version 2.18.1
+      def science(*branches)
+        selected = BRANCHES.values.flatten.uniq
+        branches.each do |branch|
+          selected &= BRANCHES[branch] if BRANCHES.key? branch
+        end
+
+        raise ArgumentError, 'Filters do not match any sciences' if selected.empty?
+
+        sciences = []
+        selected.each do |branch|
+          sciences += translate("faker.science.branch.#{branch}")
+        end
+
+        sample(sciences)
+      end
+
       ##
       # Produces the name of a element.
       #
@@ -66,6 +107,47 @@ module Faker
       # @faker.version 1.8.5
       def scientist
         fetch('science.scientist')
+      end
+
+      ##
+      # Produces a scientifically sounding word
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Science.modifier #=> "Quantum"
+      #   Faker::Science.modifier #=> "Superconductive"
+      #
+      # @faker.version 2.18.1
+      def modifier
+        fetch('science.modifier')
+      end
+
+      ##
+      # Produces the name of a scientific tool.
+      # Optionally it can generate tools with a science word modifier that sound more fancy.
+      #
+      # @param simple [Boolean] Whether to generate fancy non-realistic tool names, using the Q-word for example.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Science.tool #=> "Superconductive Microcentrifuge"
+      #   Faker::Science.tool #=> "Portable Cryostat"
+      #   Faker::Science.tool #=> "Quantum Spectrophotometer"
+      #   Faker::Science.tool(simple: true) #=> "Microcentrifuge"
+      #
+      # @faker.version 2.18.1
+      def tool(simple: false)
+        tool = fetch('science.tool')
+        return tool if simple
+
+        # Makes sure the modifier are different
+        loop do
+          modifier = self.modifier
+          break unless tool.start_with?(modifier)
+        end
+
+        "#{modifier} #{tool}"
       end
     end
   end
