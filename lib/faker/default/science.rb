@@ -125,9 +125,9 @@ module Faker
 
       ##
       # Produces the name of a scientific tool.
-      # Optionally it can generate tools with a science word modifier that sound more fancy.
+      # By default it uses a science word modifier to generate more diverse data, which can be disabled.
       #
-      # @param simple [Boolean] Whether to generate fancy non-realistic tool names, using the Q-word for example.
+      # @param simple [Boolean] Whether to generate simple realistic tool names, (no Q-word).
       # @return [String]
       #
       # @example
