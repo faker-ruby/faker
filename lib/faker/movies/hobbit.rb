@@ -14,7 +14,7 @@ module Faker
         #
         # @faker.version 1.8.0
         def character
-          fetch('hobbit.character')
+          fetch('tolkien.hobbit.character')
         end
 
         ##
@@ -27,7 +27,7 @@ module Faker
         #
         # @faker.version 1.8.0
         def thorins_company
-          fetch('hobbit.thorins_company')
+          fetch('tolkien.hobbit.thorins_company')
         end
 
         ##
@@ -41,7 +41,7 @@ module Faker
         #
         # @faker.version 1.8.0
         def quote
-          fetch('hobbit.quote')
+          fetch('tolkien.hobbit.quote')
         end
 
         ##
@@ -54,7 +54,7 @@ module Faker
         #
         # @faker.version 1.8.0
         def location
-          fetch('hobbit.location')
+          fetch('tolkien.hobbit.location')
         end
       end
     end

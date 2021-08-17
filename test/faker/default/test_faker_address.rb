@@ -11,6 +11,10 @@ class TestFakerAddress < Test::Unit::TestCase
     assert @tester.city.match(/\w+/)
   end
 
+  def test_city_with_state
+    assert @tester.city(options: { with_state: true }).match(/\w+,\s\w+/)
+  end
+
   def test_street_name
     assert @tester.street_name.match(/\w+\s\w+/)
   end
@@ -36,7 +40,7 @@ class TestFakerAddress < Test::Unit::TestCase
   end
 
   def test_time_zone
-    assert @tester.time_zone.match(%r{\w+\/\w+})
+    assert @tester.time_zone.match(%r{\w+/\w+})
   end
 
   def test_street_suffix
@@ -85,5 +89,13 @@ class TestFakerAddress < Test::Unit::TestCase
 
   def test_full_address
     assert @tester.full_address.match(/\w*\.?\s?\d*\s?\d+\s\w+\s\w+,\s\w+\s?\w*,\s[A-Z]{2}\s\d+/)
+  end
+
+  def test_full_address_as_hash
+    assert_instance_of Hash, @tester.full_address_as_hash
+  end
+
+  def test_full_address_as_hash_by_longitude
+    assert_instance_of Float, @tester.full_address_as_hash(:longitude)[:longitude]
   end
 end

@@ -1,8 +1,7 @@
-
 ![logotype a happy-07](https://user-images.githubusercontent.com/36028424/40263395-4318481e-5b44-11e8-92e5-3dcc1ce169b3.png)
 
 # Faker
-[![Build Status](https://travis-ci.org/faker-ruby/faker.svg?branch=master)](https://travis-ci.org/faker-ruby/faker)
+[![Tests](https://github.com/faker-ruby/faker/workflows/Tests/badge.svg)](https://github.com/faker-ruby/faker/actions?query=workflow%3ATests)
 [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
 [![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=master)](https://inch-ci.org/github/faker-ruby/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
@@ -28,6 +27,7 @@ development.
     - [Default](#default)
     - [Blockchain](#blockchain)
     - [Books](#books)
+    - [Fantasy](#fantasy)
     - [Creature](#creature)
     - [Games](#games)
     - [Japanese Media](#japanese-media)
@@ -95,7 +95,7 @@ manually set values).
 # Faker::<generator>.unique.exclude(method, arguments, list)
 
 # Add 'azerty' and 'wxcvbn' to the string generator with 6 char length
-Faker::Lorem.unique.exclude :string, [6], %w[azerty wxcvbn]
+Faker::Lorem.unique.exclude :string, [number: 6], %w[azerty wxcvbn]
 ```
 
 ### Deterministic Random
@@ -130,7 +130,9 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Artist](doc/default/artist.md)
   - [Faker::Avatar](doc/default/avatar.md)
   - [Faker::Bank](doc/default/bank.md)
+  - [Faker::Barcode](doc/default/barcode.md)
   - [Faker::Beer](doc/default/beer.md)
+  - [Faker::Blood](doc/default/blood.md)
   - [Faker::Boolean](doc/default/boolean.md)
   - [Faker::BossaNova](doc/default/bossa_nova.md)
   - [Faker::Business](doc/default/business.md)
@@ -144,6 +146,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Commerce](doc/default/commerce.md)
   - [Faker::Company](doc/default/company.md)
   - [Faker::Compass](doc/default/compass.md)
+  - [Faker::Computer](doc/default/computer.md)
   - [Faker::Construction](doc/default/construction.md)
   - [Faker::Cosmere](doc/default/cosmere.md)
   - [Faker::Crypto](doc/default/crypto.md)
@@ -155,8 +158,10 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Dessert](doc/default/dessert.md)
   - [Faker::Device](doc/default/device.md)
   - [Faker::DrivingLicence](doc/default/driving_licence.md)
+  - [Faker::Drone](doc/drone/drone.md)
   - [Faker::Educator](doc/default/educator.md)
   - [Faker::ElectricalComponents](doc/default/electrical_components.md)
+  - [Faker::Emotion](doc/default/emotion.md)
   - [Faker::Esport](doc/default/esport.md)
   - [Faker::File](doc/default/file.md)
   - [Faker::Fillmurray](doc/default/fillmurray.md)
@@ -167,6 +172,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::GreekPhilosophers](doc/default/greek_philosophers.md)
   - [Faker::Hacker](doc/default/hacker.md)
   - [Faker::Hipster](doc/default/hipster.md)
+  - [Faker::Hobby](doc/default/hobby.md)
   - [Faker::House](doc/default/house.md)
   - [Faker::IDNumber](doc/default/id_number.md)
   - [Faker::IndustrySegments](doc/default/industry_segments.md)
@@ -182,6 +188,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Marketing](doc/default/marketing.md)
   - [Faker::Measurement](doc/default/measurement.md)
   - [Faker::Military](doc/default/military.md)
+  - [Faker::Mountain](doc/default/mountain.md)
   - [Faker::Name](doc/default/name.md)
   - [Faker::Nation](doc/default/nation.md)
   - [Faker::NatoPhoneticAlphabet](doc/default/nato_phonetic_alphabet.md)
@@ -202,6 +209,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Stripe](doc/default/stripe.md)
   - [Faker::Subscription](doc/default/subscription.md)
   - [Faker::Superhero](doc/default/superhero.md)
+  - [Faker::Tea](doc/default/tea.md)
   - [Faker::Team](doc/default/team.md)
   - [Faker::Time](doc/default/time.md)
   - [Faker::Twitter](doc/default/twitter.md)
@@ -223,14 +231,20 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Books::Dune](doc/books/dune.md)
   - [Faker::Books::Lovecraft](doc/books/lovecraft.md)
 
+### Fantasy
+  - [Faker::Fantasy::Tolkien](doc/fantasy/tolkien.md)
+
 ### Creature
   - [Faker::Creature::Animal](doc/creature/animal.md)
+  - [Faker::Creature::Bird](doc/creature/bird.md)
   - [Faker::Creature::Cat](doc/creature/cat.md)
   - [Faker::Creature::Dog](doc/creature/dog.md)
   - [Faker::Creature::Horse](doc/creature/horse.md)
 
 ### Games
   - [Faker::Game](doc/games/game.md)
+  - [Faker::Games::ClashOfClans](doc/games/clash_of_clans.md)
+  - [Faker::Games::DnD](doc/games/dnd.md)
   - [Faker::Games::Dota](doc/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/games/elder_scrolls.md)
   - [Faker::Games::Fallout](doc/games/fallout.md)
@@ -238,11 +252,16 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Games::Heroes](doc/games/heroes.md)
   - [Faker::Games::HeroesOfTheStorm](doc/games/heroes_of_the_storm.md)
   - [Faker::Games::LeagueOfLegends](doc/games/league_of_legends.md)
+  - [Faker::Games::Minecraft](doc/games/minecraft.md)
   - [Faker::Games::Myst](doc/games/myst.md)
   - [Faker::Games::Overwatch](doc/games/overwatch.md)
   - [Faker::Games::Pokemon](doc/games/pokemon.md)
   - [Faker::Games::SonicTheHedgehog](doc/games/sonic_the_hedgehog.md)
+  - [Faker::Games::StreetFighter](doc/games/street_fighter.md)
+  - [Faker::Games::SuperMario](doc/games/super_mario.md)
   - [Faker::Games::SuperSmashBros](doc/games/super_smash_bros.md)
+  - [Faker::Games::Touhou](doc/games/touhou.md)
+  - [Faker::Games::WarhammerFantasy](doc/games/warhammer_fantasy.md)
   - [Faker::Games::Witcher](doc/games/witcher.md)
   - [Faker::Games::WorldOfWarcraft](doc/games/world_of_warcraft.md)
   - [Faker::Games::Zelda](doc/games/zelda.md)
@@ -250,15 +269,21 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 ### Japanese Media
   - [Faker::JapaneseMedia::DragonBall](doc/japanese_media/dragon_ball.md)
   - [Faker::JapaneseMedia::OnePiece](doc/japanese_media/one_piece.md)
+  - [Faker::JapaneseMedia::StudioGhibli](doc/japanese_media/studio_ghibli.md)
   - [Faker::JapaneseMedia::SwordArtOnline](doc/japanese_media/sword_art_online.md)
+  - [Faker::JapaneseMedia::Naruto](doc/japanese_media/naruto.md)
+  - [Faker::JapaneseMedia::Doraemon](doc/japanese_media/doraemon.md)
+  - [Faker::JapaneseMedia::Conan](doc/japanese_media/conan.md)
 
 ### Movies
   - [Faker::Movie](doc/movies/movie.md)
   - [Faker::Movies::BackToTheFuture](doc/movies/back_to_the_future.md)
+  - [Faker::Movies::Departed](doc/movies/departed.md)
   - [Faker::Movies::Ghostbusters](doc/movies/ghostbusters.md)
   - [Faker::Movies::HarryPotter](doc/movies/harry_potter.md)
   - [Faker::Movies::HitchhikersGuideToTheGalaxy](doc/movies/hitchhikers_guide_to_the_galaxy.md)
   - [Faker::Movies::Hobbit](doc/movies/hobbit.md)
+  - [Faker::Movies::HowToTrainYourDragon](doc/movies/how_to_train_your_dragon.md)
   - [Faker::Movies::Lebowski](doc/movies/lebowski.md)
   - [Faker::Movies::LordOfTheRings](doc/movies/lord_of_the_rings.md)
   - [Faker::Movies::PrincessBride](doc/movies/princess_bride.md)
@@ -268,14 +293,21 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 ### Music
   - [Faker::Music](doc/music/music.md)
   - [Faker::Music::GratefulDead](doc/music/grateful_dead.md)
+  - [Faker::Music::Hiphop](doc/music/hiphop.md)
   - [Faker::Music::Opera](doc/music/opera.md)
+  - [Faker::Music::PearlJam](doc/music/pearl_jam.md)
   - [Faker::Music::Phish](doc/music/phish.md)
+  - [Faker::Music::Prince](doc/music/prince.md)
   - [Faker::Music::RockBand](doc/music/rock_band.md)
+  - [Faker::Music::Rush](doc/music/rush.md)
   - [Faker::Music::UmphreysMcgee](doc/music/umphreys_mcgee.md)
 
 ### Quotes
   - [Faker::Quote](doc/quotes/quote.md)
+  - [Faker::Quotes::Chiquito](doc/quotes/chiquito.md)
+  - [Faker::Quotes::Rajnikanth](doc/quotes/rajnikanth.md)
   - [Faker::Quotes::Shakespeare](doc/quotes/shakespeare.md)
+
 
 ### Sports
   - [Faker::Sports::Basketball](doc/sports/basketball.md)
@@ -283,6 +315,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 ### Tv Shows
   - [Faker::TvShows::AquaTeenHungerForce](doc/tv_shows/aqua_teen_hunger_force.md)
+  - [Faker::TvShows::BigBangTheory](doc/tv_shows/big_bang_theory.md)
   - [Faker::TvShows::BojackHorseman](doc/tv_shows/bojack_horseman.md)
   - [Faker::TvShows::BreakingBad](doc/tv_shows/breaking_bad.md)
   - [Faker::TvShows::Buffy](doc/tv_shows/buffy.md)
@@ -290,6 +323,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::DrWho](doc/tv_shows/dr_who.md)
   - [Faker::TvShows::DumbAndDumber](doc/tv_shows/dumb_and_dumber.md)
   - [Faker::TvShows::FamilyGuy](doc/tv_shows/family_guy.md)
+  - [Faker::TvShows::FinalSpace](doc/tv_shows/final_space.md)
   - [Faker::TvShows::Friends](doc/tv_shows/friends.md)
   - [Faker::TvShows::GameOfThrones](doc/tv_shows/game_of_thrones.md)
   - [Faker::TvShows::HeyArnold](doc/tv_shows/hey_arnold.md)
@@ -306,6 +340,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::StarTrek](doc/tv_shows/star_trek.md)
   - [Faker::TvShows::Stargate](doc/tv_shows/stargate.md)
   - [Faker::TvShows::StrangerThings](doc/tv_shows/stranger_things.md)
+  - [Faker::TvShows::Suits](doc/tv_shows/suits.md)
   - [Faker::TvShows::TheExpanse](doc/tv_shows/the_expanse.md)
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/tv_shows/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/tv_shows/the_it_crowd.md)

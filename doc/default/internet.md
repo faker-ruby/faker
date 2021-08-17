@@ -8,8 +8,8 @@ Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', 
 # Keyword arguments: name, separators
 Faker::Internet.email #=> "eliza@mann.net"
 Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.biz"
-Faker::Internet.email(name: 'Janelle Santiago', separators: '+') #=> janelle+santiago@becker.com"
-Faker::Internet.email(domain: 'example') #=> alice@example.name"
+Faker::Internet.email(name: 'Janelle Santiago', separators: '+') #=> "janelle+santiago@becker.com"
+Faker::Internet.email(domain: 'example') #=> "alice@example.name"
 
 # Keyword arguments: name
 Faker::Internet.free_email #=> "freddy@gmail.com"

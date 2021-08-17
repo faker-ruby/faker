@@ -8,10 +8,12 @@ class TestFakerMusic < Test::Unit::TestCase
   end
 
   def test_keys
+    # rubocop:disable Style/HashEachMethods
     assert @tester.keys.size == 7
     @tester.keys.each do |key|
       refute key.to_s.empty?
     end
+    # rubocop:enable Style/HashEachMethods
   end
 
   def test_key_variants
@@ -57,5 +59,9 @@ class TestFakerMusic < Test::Unit::TestCase
 
   def test_genre
     assert @tester.genre.match(/\w+/)
+  end
+
+  def test_mambo_no_5
+    assert @tester.mambo_no_5.match(/\w+/)
   end
 end

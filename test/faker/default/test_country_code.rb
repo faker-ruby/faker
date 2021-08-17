@@ -23,11 +23,9 @@ class TestCountryCode < Test::Unit::TestCase
   def test_all_country_code_have_country
     codes = Faker::Base.fetch_all('address.country_code')
     lonely_codes = codes.reject do |code|
-      begin
-        Faker::Address.country_by_code(code: code)
-      rescue I18n::MissingTranslationData
-        nil
-      end
+      Faker::Address.country_by_code(code: code)
+    rescue I18n::MissingTranslationData
+      nil
     end
 
     assert_equal([], lonely_codes)

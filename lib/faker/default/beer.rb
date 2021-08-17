@@ -80,7 +80,7 @@ module Faker
       #
       # @faker.version 1.6.2
       def ibu
-        rand(10..100).to_s + ' IBU'
+        "#{rand(10..100)} IBU"
       end
 
       ##
@@ -93,7 +93,7 @@ module Faker
       #
       # @faker.version 1.6.2
       def alcohol
-        rand(2.0..10.0).round(1).to_s + '%'
+        "#{rand(2.0..10.0).round(1)}%"
       end
 
       ##
@@ -106,7 +106,7 @@ module Faker
       #
       # @faker.version 1.6.2
       def blg
-        rand(5.0..20.0).round(1).to_s + '°Blg'
+        "#{rand(5.0..20.0).round(1)}°Blg"
       end
     end
   end

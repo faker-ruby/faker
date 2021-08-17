@@ -117,9 +117,9 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_brazilian_document_digit
     citizen_number_digit10 = Faker::IDNumber.send(:brazilian_document_digit, 10)
     citizen_number_digit_other = Faker::IDNumber.send(:brazilian_document_digit, 9)
-    id_digit10 = Faker::IDNumber.send(:brazilian_document_digit, 1, true)
-    id_digit11 = Faker::IDNumber.send(:brazilian_document_digit, 0, true)
-    id_digit_other = Faker::IDNumber.send(:brazilian_document_digit, 2, true)
+    id_digit10 = Faker::IDNumber.send(:brazilian_document_digit, 1, id: true)
+    id_digit11 = Faker::IDNumber.send(:brazilian_document_digit, 0, id: true)
+    id_digit_other = Faker::IDNumber.send(:brazilian_document_digit, 2, id: true)
     assert_equal citizen_number_digit10, '0'
     assert_equal citizen_number_digit_other, '9'
     assert_equal id_digit10, 'X'
@@ -158,6 +158,22 @@ class TestFakerIdNumber < Test::Unit::TestCase
     verification_code = Faker::IDNumber.send(:chilean_verification_code, 13_196_022)
 
     assert_equal verification_code, 0
+  end
+
+  def test_croatian_id
+    sample = @tester.croatian_id
+    assert_match(/^\d{11}$/, sample)
+  end
+
+  def test_croatian_id_international
+    sample = @tester.croatian_id(international: true)
+    assert_match(/^HR\d{11}$/, sample)
+  end
+
+  def test_croatian_id_checksum_digit
+    digits = '8764670153'
+    checksum_digit = Faker::IDNumber.send(:croatian_id_checksum_digit, digits)
+    assert_equal checksum_digit, 5
   end
 
   private

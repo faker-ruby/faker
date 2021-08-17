@@ -158,7 +158,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def distance_measurement
-        rand(10..100).to_s + ' ' + fetch('space.distance_measurement')
+        "#{rand(10..100)} #{fetch('space.distance_measurement')}"
       end
 
       ##

@@ -24,6 +24,13 @@ This formatter will return one of the following formats:
   * 1-333-333-3333
   * 333.333.3333
 
+### `.cell_phone_in_e164`
+
+This formatter will return one of the following formats:
+
+  * +33333333333333
+  * +3333333333333
+
 ## Usage
 
 Don't let the example output below fool you -- any format can be returned at random.
@@ -32,6 +39,8 @@ Don't let the example output below fool you -- any format can be returned at ran
 Faker::PhoneNumber.phone_number #=> "397.693.1309 x4321"
 
 Faker::PhoneNumber.cell_phone #=> "(186)285-7925"
+
+Faker::PhoneNumber.cell_phone_in_e164 #=> "+944937040625"
 
 # NOTE NOTE NOTE NOTE
 # For the 'US only' methods below, first you must do the following:

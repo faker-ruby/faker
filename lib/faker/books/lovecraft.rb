@@ -68,6 +68,7 @@ module Faker
         #
         # @param word_count [Integer] The number of words to have in the sentence
         # @param random_words_to_add [Integer]
+        # @param open_compounds_allowed [Boolean] If true, generated sentence can contain words having additional spaces
         #
         # @return [String]
         #
@@ -80,15 +81,18 @@ module Faker
         # @example
         #   Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1)
         #     #=> "Amorphous indescribable tenebrous."
+        # @example
+        #   Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 0, open_compounds_allowed: true)
+        #     #=> "Effulgence unmentionable gambrel."
         #
         # @faker.version 1.9.3
-        def sentence(legacy_word_count = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, random_words_to_add: 6)
+        def sentence(legacy_word_count = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, random_words_to_add: 6, open_compounds_allowed: true)
           warn_for_deprecated_arguments do |keywords|
             keywords << :word_count if legacy_word_count != NOT_GIVEN
             keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
           end
 
-          words(number: word_count + rand(random_words_to_add.to_i).to_i, spaces_allowed: true).join(' ').capitalize + '.'
+          "#{words(number: word_count + rand(random_words_to_add.to_i).to_i, spaces_allowed: open_compounds_allowed).join(' ').capitalize}."
         end
 
         ##
@@ -266,9 +270,9 @@ module Faker
 
           paragraph = paragraph(sentence_count: 3)
 
-          paragraph += ' ' + paragraph(sentence_count: 3) while paragraph.length < characters
+          paragraph += " #{paragraph(sentence_count: 3)}" while paragraph.length < characters
 
-          paragraph[0...characters - 1] + '.'
+          "#{paragraph[0...characters - 1]}."
         end
       end
     end

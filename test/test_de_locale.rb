@@ -94,6 +94,8 @@ class TestDeLocale < Test::Unit::TestCase
 
   def test_de_name_methods
     assert Faker::Name.first_name.is_a? String
+    assert Faker::Name.male_first_name.is_a? String
+    assert Faker::Name.female_first_name.is_a? String
     assert Faker::Name.last_name.is_a? String
     assert Faker::Name.prefix.is_a? String
     assert Faker::Name.nobility_title_prefix.is_a? String
@@ -127,8 +129,8 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_cell_phone_countrycode
-    mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
-    assert_equal '4', mobile[0]
-    assert_equal '9', mobile[1]
+    mobile = Faker::PhoneNumber.cell_phone_with_country_code.gsub(/\D/, '')
+
+    assert_match(/^(0|49)/, mobile)
   end
 end

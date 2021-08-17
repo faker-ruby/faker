@@ -38,9 +38,9 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_decimal
-    assert @tester.decimal(l_digits: 1, r_digits: 1).to_s.match(/[0-9]{1}\.[0-9]{1}/)
-    assert @tester.decimal(l_digits: 2).to_s.match(/[0-9]{2}\.[0-9]{2}/)
-    assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match(/[0-9]{4}\.[0-9]{5}/)
+    assert @tester.decimal(l_digits: 1, r_digits: 1).to_s.match(/[0-9]{1}\.[1-9]{1}/)
+    assert @tester.decimal(l_digits: 2).to_s.match(/[0-9]{2}\.[0-9]{1}[1-9]{1}/)
+    assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match(/[0-9]{4}\.[0-9]{4}[1-9]{1}/)
   end
 
   def test_digit
@@ -127,5 +127,11 @@ class TestFakerNumber < Test::Unit::TestCase
   def test_hexadecimal
     assert @tester.hexadecimal(digits: 4).match(/[0-9a-f]{4}/)
     assert @tester.hexadecimal(digits: 7).match(/[0-9a-f]{7}/)
+  end
+
+  def test_binary
+    assert @tester.binary(digits: 4).match(/^[0-1]{4}$/)
+    assert @tester.binary(digits: 8).match(/^[0-1]{8}$/)
+    assert @tester.binary.match(/^[0-1]{4}$/)
   end
 end

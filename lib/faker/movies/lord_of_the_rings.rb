@@ -14,7 +14,7 @@ module Faker
         #
         # @faker.version 1.7.0
         def character
-          fetch('lord_of_the_rings.characters')
+          fetch('tolkien.lord_of_the_rings.characters')
         end
 
         ##
@@ -27,7 +27,7 @@ module Faker
         #
         # @faker.version 1.7.0
         def location
-          fetch('lord_of_the_rings.locations')
+          fetch('tolkien.lord_of_the_rings.locations')
         end
 
         ##
@@ -41,7 +41,7 @@ module Faker
         #
         # @faker.version 1.9.0
         def quote
-          fetch('lord_of_the_rings.quotes')
+          fetch('tolkien.lord_of_the_rings.quotes')
         end
       end
     end

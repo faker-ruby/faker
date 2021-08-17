@@ -25,9 +25,9 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.default_country.is_a? String
     assert Faker::Address.full_address.is_a? String
-    assert_match(/^[\d]{5}$/, Faker::Address.postcode)
+    assert_match(/^\d{5}$/, Faker::Address.postcode)
     assert_match(/^\d+$/, Faker::Address.building_number)
-    full_address_regex = /(([-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s([\d]{5})\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
+    full_address_regex = /(([-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s(\d{5})\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
     assert_match(full_address_regex, Faker::Address.full_address)
     assert_equal('France', Faker::Address.default_country)
   end
@@ -48,10 +48,10 @@ class TestFrLocale < Test::Unit::TestCase
   end
 
   def test_fr_compass_methods
-    direction_pattern = /^\w+(\-\w+){0,2}$/
+    direction_pattern = /^\w+(-\w+){0,2}$/
     cardinal_pattern = /^\w+$/
-    ordinal_pattern = /^\w+(\-\w+){1}$/
-    half_wind_patern = /^\w+(\-\w+){2}$/
+    ordinal_pattern = /^\w+(-\w+){1}$/
+    half_wind_patern = /^\w+(-\w+){2}$/
     letter_pattern = /^[NEOS]{1,3}$/
 
     assert_match(direction_pattern, Faker::Compass.direction)
@@ -116,13 +116,17 @@ class TestFrLocale < Test::Unit::TestCase
   end
 
   def test_fr_phone_format
-    phone = Faker::PhoneNumber.phone_number.gsub(/\D/, '')
-    assert_match(/^(0|33)([1-5]|[8-9])\d{8}$/, phone)
+    phone = Faker::PhoneNumber.phone_number_with_country_code.gsub(/\D/, '')
+    assert_match(/^(0|33)\d{8,10}$/, phone)
   end
 
   def test_fr_cell_phone_format
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
-    assert_match(/^(0|33)(6|7)\d{8}$/, mobile)
+    assert_match(/^0?(6|7)\d{8}$/, mobile)
+  end
+
+  def test_fr_creature_methods
+    assert Faker::Creature::Animal.name.is_a? String
   end
 
   def test_fr_pokemon_methods

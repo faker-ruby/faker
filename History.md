@@ -33,7 +33,7 @@
 ## v1.6.0 (2015-11-23)
 * Lots of bug fixes -- most notably, a fix for email addresses and domains in non-en locales
 * Updated locales: de, en-AU, en-NZ, en-SG, en-US, en-au-ocker, en, es, fr, he, it, ja, nb-NO, pl, pt-BR, sk, and zh-CN
-* Updated classes: Address, Avatar, Book, Code, Commerce, Company, Hipster, IDNumber, Internet, Number, Placeholdit, Shakespeare, and Time 
+* Updated classes: Address, Avatar, Book, Code, Commerce, Company, Hipster, IDNumber, Internet, Number, Placeholdit, Shakespeare, and Time
 
 ## v1.5.0 (2015-08-17)
 * Added logos
@@ -83,7 +83,7 @@
 * 1 major change:
     * Removed deprecated methods from Address: earth_country, us_state, us_state_abbr, uk_postcode, uk_county
 * Many minor changes (please see github pull requests for credits)
-    * Added many localizations 
+    * Added many localizations
     * Added range and array support for Lorem
 
 ## v1.0.1 (2011-09-27)
@@ -117,7 +117,7 @@
     * Added Canadian translation [igbanam]
     * Added Norwegian translation [kytrinyx]
     * Lots of translation-related cleanup [kytrinyx]
-  
+
 
 ## v0.9.5 (2011-01-27)
 * 1 minor bug fix:
@@ -159,7 +159,7 @@
 * 3 major enhancements:
     * Added Lorem to generate fake Latin
     * Added secondary_address to Address, and made inclusion of
-    secondary address in street_address optional (false by 
+    secondary address in street_address optional (false by
     default).
     * Added UK address methods [Caius Durling]
 

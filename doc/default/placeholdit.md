@@ -2,13 +2,13 @@
 
 ```ruby
 # Keyword arguments: size, format, background_color, text_color, text
-Faker::Placeholdit.image #=> "https://placehold.it/300x300.png"
-Faker::Placeholdit.image(size: '50x50') #=> "https://placehold.it/50x50.png"
-Faker::Placeholdit.image(size: '50x50', format: 'jpg') #=> "https://placehold.it/50x50.jpg"
-Faker::Placeholdit.image(size: '50x50', format: 'gif', background_color: 'ffffff') #=> "https://placehold.it/50x50.gif/ffffff"
-Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: :random) #=> "https://placehold.it/50x50.jpeg/39eba7"
-Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: 'ffffff', text_color: '000') #=> "https://placehold.it/50x50.jpeg/ffffff/000"
-Faker::Placeholdit.image(size: '50x50', format: 'jpg', background_color: 'ffffff', text_color: '000', text: 'Some Custom Text') #=> "https://placehold.it/50x50.jpg/ffffff/000?text=Some Custom Text"
+Faker::Placeholdit.image #=> "https://via.placeholder.com/300x300.png"
+Faker::Placeholdit.image(size: '50x50') #=> "https://via.placeholder.com/50x50.png"
+Faker::Placeholdit.image(size: '50x50', format: 'jpg') #=> "https://via.placeholder.com/50x50.jpg"
+Faker::Placeholdit.image(size: '50x50', format: 'gif', background_color: 'ffffff') #=> "https://via.placeholder.com/50x50.gif/ffffff"
+Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: :random) #=> "https://via.placeholder.com/50x50.jpeg/39eba7"
+Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: 'ffffff', text_color: '000') #=> "https://via.placeholder.com/50x50.jpeg/ffffff/000"
+Faker::Placeholdit.image(size: '50x50', format: 'jpg', background_color: 'ffffff', text_color: '000', text: 'Some Custom Text') #=> "https://via.placeholder.com/50x50.jpg/ffffff/000?text=Some Custom Text"
 ```
 
 ## Tips
