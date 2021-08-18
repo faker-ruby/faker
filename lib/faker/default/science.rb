@@ -27,7 +27,7 @@ module Faker
       #   Faker::Science.science(:natural, :applied) #=> "Engineering"
       #   Faker::Science.science(:formal, :applied) #=> "Computer Science"
       #
-      # @faker.version 2.18.1
+      # @faker.version next
       def science(*branches)
         selected = BRANCHES.values.flatten.uniq
         branches.each do |branch|
@@ -118,7 +118,7 @@ module Faker
       #   Faker::Science.modifier #=> "Quantum"
       #   Faker::Science.modifier #=> "Superconductive"
       #
-      # @faker.version 2.18.1
+      # @faker.version next
       def modifier
         fetch('science.modifier')
       end
@@ -136,7 +136,7 @@ module Faker
       #   Faker::Science.tool #=> "Quantum Spectrophotometer"
       #   Faker::Science.tool(simple: true) #=> "Microcentrifuge"
       #
-      # @faker.version 2.18.1
+      # @faker.version next
       def tool(simple: false)
         tool = fetch('science.tool')
         return tool if simple
