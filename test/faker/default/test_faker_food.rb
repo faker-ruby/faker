@@ -48,4 +48,8 @@ class TestFakerFood < Test::Unit::TestCase
   def test_metric_measurement
     assert @tester.metric_measurement.match(/\w+/)
   end
+
+  def test_ethnic_category
+    assert @tester.ethnic_category.match(/\w+/)
+  end
 end
