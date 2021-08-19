@@ -95,4 +95,12 @@ class TestFakerCommerce < Test::Unit::TestCase
     assert @tester.price(range: 0..100.0, as_string: true).is_a?(String)
     assert @tester.price(range: 100..500.0, as_string: true).include?('.')
   end
+
+  def test_brand
+    assert @tester.brand.match(/[A-Z][a-z]+\.?/)
+  end
+
+  def test_vendor
+    assert @tester.vendor.match(/[A-Z][a-z]+\.?/)
+  end
 end
