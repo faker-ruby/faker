@@ -1,5 +1,10 @@
 # Change Log
 
+## [v2.18.1](https://github.com/faker-ruby/faker/tree/v2.18.1) (2021-08-17)
+
+## Feature Request
+ - [PR #2369](https://github.com/faker-ruby/faker/pull/2369) Added more Science examples - science branches, modifiers and tools [@itay-grudev](https://github.com/itay-grudev)
+
 ## [v2.18.0](https://github.com/faker-ruby/faker/tree/v2.18.0) (2021-05-15)
 
 ## Bug/Fixes
