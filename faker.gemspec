@@ -29,12 +29,15 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency('i18n', '>= 1.6', '< 2')
 
-  spec.add_development_dependency('minitest', '5.14.3')
-  spec.add_development_dependency('pry', '0.13.1')
+  spec.add_development_dependency('minitest', '5.14.4')
+  spec.add_development_dependency('pry', '0.14.1')
   spec.add_development_dependency('rake', '13.0.3')
-  spec.add_development_dependency('rubocop', '1.1.0')
-  spec.add_development_dependency('simplecov', '0.17.1')
-  spec.add_development_dependency('test-unit', '3.3.8')
-  spec.add_development_dependency('timecop', '0.9.2')
-  spec.add_development_dependency('yard', '0.9.25')
+  spec.add_development_dependency('rubocop', '1.16.0')
+  # Workaround for cc-test-reporter with SimpleCov 0.18.
+  # Stop upgrading SimpleCov until the following issue will be resolved.
+  # https://github.com/codeclimate/test-reporter/issues/418
+  spec.add_development_dependency('simplecov', '0.17.1', '< 0.18')
+  spec.add_development_dependency('test-unit', '3.4.4')
+  spec.add_development_dependency('timecop', '0.9.4')
+  spec.add_development_dependency('yard', '0.9.26')
 end

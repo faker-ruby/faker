@@ -161,34 +161,106 @@ module Faker
           fetch("star_wars.quotes.#{character}")
         end
 
+        ##
+        # Generates numbers array
+        #
+        # @return [Array]
+        #
+        # @example
+        #   Faker::Movies::StarWars.call_numbers  #=> ["Leader", "#"]
+        #
+        # @faker.version 1.6.2
         def call_numbers
           fetch_all('star_wars.call_numbers')
         end
 
+        ##
+        # Returns squadrons array
+        #
+        # @return [Array]
+        #
+        # @example
+        #   Faker::Movies::StarWars.call_squadrons  #=> ["Rogue", "Red", "Gray", "Green", "Blue", "Gold", "Black", "Yellow", "Phoenix"]
+        #
+        # @faker.version 1.6.2
         def call_squadrons
           fetch_all('star_wars.call_squadrons')
         end
 
+        ##
+        # Returns all character names in movie
+        #
+        # @return [Array]
+        #
+        # @example
+        #   Faker::Movies::StarWars.characters
+        #
+        # @faker.version 1.6.2
         def characters
           fetch_all('star_wars.characters')
         end
 
+        ##
+        # Returns droid list
+        #
+        # @return [Array]
+        #
+        # @example
+        #   Faker::Movies::StarWars.droids
+        #
+        # @faker.versionn 1.6.2
         def droids
           fetch_all('star_wars.droids')
         end
 
+        ##
+        # Lists out all planet names
+        #
+        # @return [Array]
+        #
+        # @example
+        #   Faker::Movies::StarWars.planets
+        #
+        # @faker.version 1.6.2
         def planets
           fetch_all('star_wars.planets')
         end
 
+        ##
+        # Returns name of all species
+        #
+        # @return [Array]
+        #
+        # @example
+        #   Faker::Movies::StarWars.species
+        #
+        # @faker.version 1.6.2
         def species
           fetch_all('star_wars.species')
         end
 
+        ##
+        # Lists out all vehicles
+        #
+        # @return [Array]
+        #
+        # @example
+        #   Faker::Movies::StarWars.vehicles
+        #
+        # @faker.version 1.6.2
         def vehicles
           fetch_all('star_wars.vehicles')
         end
 
+        ##
+        # All wookiee words
+        #
+        # @return [Array]
+        #
+        # @example
+        #   Faker::Movies::StarWars.wookiee_words
+        #
+        # @faker.version 1.6.2
         def wookiee_words
           fetch_all('star_wars.wookiee_words')
         end

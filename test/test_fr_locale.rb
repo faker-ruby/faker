@@ -125,6 +125,10 @@ class TestFrLocale < Test::Unit::TestCase
     assert_match(/^0?(6|7)\d{8}$/, mobile)
   end
 
+  def test_fr_creature_methods
+    assert Faker::Creature::Animal.name.is_a? String
+  end
+
   def test_fr_pokemon_methods
     assert Faker::Games::Pokemon.name.is_a? String
     assert Faker::Games::Pokemon.location.is_a? String

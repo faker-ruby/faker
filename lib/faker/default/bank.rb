@@ -31,12 +31,13 @@ module Faker
       ##
       # Produces a bank iban number.
       #
-      # @param country_code [String] Specifies what country prefix is used to generate the iban code.
+      # @param country_code [String, nil] Specifies what country prefix is used to generate the iban code. Providing `nil` will use a random country.
       # @return [String]
       #
       # @example
       #   Faker::Bank.iban #=> "GB76DZJM33188515981979"
       #   Faker::Bank.iban(country_code: "be") #=> "BE6375388567752043"
+      #   Faker::Bank.iban(country_code: nil) #=> "DE45186738071857270067"
       #
       # @faker.version 1.7.0
       def iban(legacy_country_code = NOT_GIVEN, country_code: 'GB')
@@ -46,6 +47,8 @@ module Faker
         warn_for_deprecated_arguments do |keywords|
           keywords << :country_code if legacy_country_code != NOT_GIVEN
         end
+
+        country_code ||= iban_country_code
 
         begin
           pattern = fetch("bank.iban_details.#{country_code.downcase}.bban_pattern")
@@ -58,6 +61,19 @@ module Faker
 
         # Add country code and checksum to the generated account to form valid IBAN
         country_code.upcase + iban_checksum(country_code, account) + account
+      end
+
+      ##
+      # Produces the ISO 3166 code of a country that uses the IBAN system.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Bank.iban_country_code #=> "CH"
+      #
+      # @faker.version next
+      def iban_country_code
+        sample(translate('faker.bank.iban_details').keys).to_s.upcase
       end
 
       ##

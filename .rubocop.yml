@@ -36,6 +36,10 @@ Metrics/PerceivedComplexity:
   Enabled: false
   Max: 7
 
+Naming/VariableNumber:
+  Description: Use the configured style when numbering symbols, methods and variables.
+  Enabled: false
+
 Style/AsciiComments:
   Description: This cop checks for non-ascii (non-English) characters in comments.
   Exclude:

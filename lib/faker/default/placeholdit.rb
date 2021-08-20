@@ -5,6 +5,8 @@ module Faker
     class << self
       SUPPORTED_FORMATS = %w[png jpg gif jpeg].freeze
 
+      # rubocop:disable Metrics/ParameterLists
+
       ##
       # Produces a random placeholder image from https://placehold.it.
       #
@@ -26,9 +28,7 @@ module Faker
       #   Faker::Placeholdit.image(size: '50x50', format: 'jpg', background_color: 'ffffff', text_color: '000', text: 'Some Custom Text') #=> "https://placehold.it/50x50.jpg/ffffff/000?text=Some Custom Text"
       #
       # @faker.version 1.6.0
-      # rubocop:disable Metrics/ParameterLists
       def image(legacy_size = NOT_GIVEN, legacy_format = NOT_GIVEN, legacy_background_color = NOT_GIVEN, legacy_text_color = NOT_GIVEN, legacy_text = NOT_GIVEN, size: '300x300', format: 'png', background_color: nil, text_color: nil, text: nil)
-        # rubocop:enable Metrics/ParameterLists
         warn_for_deprecated_arguments do |keywords|
           keywords << :size if legacy_size != NOT_GIVEN
           keywords << :format if legacy_format != NOT_GIVEN
@@ -51,6 +51,7 @@ module Faker
         image_url += "?text=#{text}" if text
         image_url
       end
+      # rubocop:enable Metrics/ParameterLists
 
       private
 

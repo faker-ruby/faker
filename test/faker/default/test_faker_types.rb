@@ -41,6 +41,7 @@ class TestFakerTypes < Test::Unit::TestCase
 
   def test_hash_returns_the_correct_number_of_keys
     assert @tester.rb_hash(number: 3).keys.length == 3
+    assert @tester.rb_hash(number: 3).values.uniq.length > 1
     assert @tester.rb_hash(number: 0).keys.empty?
     assert @tester.rb_hash.keys.length == 1
   end
@@ -51,6 +52,7 @@ class TestFakerTypes < Test::Unit::TestCase
 
   def test_complex_hash_returns_the_correct_number_of_keys
     assert @tester.complex_rb_hash(number: 3).keys.length == 3
+    assert @tester.complex_rb_hash(number: 3).values.uniq.length > 1
     assert @tester.complex_rb_hash(number: 0).keys.empty?
     assert @tester.complex_rb_hash.keys.length == 1
   end

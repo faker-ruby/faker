@@ -9,9 +9,9 @@ Faker::Device.manufacturer #=> "Apple"
 
 Faker::Device.model_name #=> "iPhone 4"
 
-Faker::Device.platform #=> "webOS"    
+Faker::Device.platform #=> "webOS"
 
-Faker::Device.serial #=> "ejfjnRNInxh0363JC2WM"    
+Faker::Device.serial #=> "ejfjnRNInxh0363JC2WM"
 
 Faker::Device.version #=> "4"
 ```

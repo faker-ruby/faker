@@ -81,6 +81,45 @@ module Faker
         def monster
           fetch('games.witcher.monsters')
         end
+
+        ##
+        # Produces the name of a sign from The Witcher.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::Witcher.sign #=> "Igni"
+        #
+        # @faker.version 2.18.0
+        def sign
+          fetch('games.witcher.signs')
+        end
+
+        ##
+        # Produces the name of a potion from The Witcher.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::Witcher.potion #=> "Gadwall"
+        #
+        # @faker.version 2.18.0
+        def potion
+          fetch('games.witcher.potions')
+        end
+
+        ##
+        # Produces the name of a book from The Witcher.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::Witcher.book #=> "Sword of Destiny"
+        #
+        # @faker.version 2.18.0
+        def book
+          fetch('games.witcher.books')
+        end
       end
     end
   end

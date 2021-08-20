@@ -14,4 +14,6 @@ Faker::Music.band #=> "The Beatles"
 Faker::Music.album #=> "Sgt. Pepper's Lonely Hearts Club"
 
 Faker::Music.genre #=> "Rock"
+
+Faker::Music.mambo_no_5 #=> "Monica"
 ```

@@ -17,6 +17,8 @@ module Faker
                                 technics
                                 transport].freeze
 
+      # rubocop:disable Metrics/ParameterLists
+
       ##
       # Produces a random image URL from lorempixel.com.
       #
@@ -39,7 +41,6 @@ module Faker
       #   Faker::LoremPixel.image(secure: false) #=> "http://lorempixel.com/300/300"
       #
       # @faker.version 1.7.0
-      # rubocop:disable Metrics/ParameterLists
       def image(legacy_size = NOT_GIVEN, legacy_is_gray = NOT_GIVEN, legacy_category = NOT_GIVEN, legacy_number = NOT_GIVEN, legacy_text = NOT_GIVEN, legacy_secure = NOT_GIVEN, size: '300x300', is_gray: false, category: nil, number: nil, text: nil, secure: true)
         warn_for_deprecated_arguments do |keywords|
           keywords << :size if legacy_size != NOT_GIVEN
