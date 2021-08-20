@@ -11,6 +11,8 @@ module Faker
       # @example
       #   Faker::Australia.location
       #    #=> "Sydney"
+      #
+      # @faker.version next
       def location
         fetch('australia.locations')
       end
@@ -22,6 +24,8 @@ module Faker
       # @example
       #   Faker::Australia.animal
       #    #=> "Dingo"
+      #
+      # @faker.version next
       def animal
         fetch('australia.animals')
       end
@@ -33,6 +37,8 @@ module Faker
       # @example
       #   Faker::Australia.state
       #    #=> "New South Wales"
+      #
+      # @faker.version next
       def state
         fetch('australia.states')
       end
