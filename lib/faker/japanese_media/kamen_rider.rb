@@ -57,7 +57,7 @@ module Faker
         end
 
         def series_from_eras(*input_eras)
-          selected_eras = (eras & input_eras).yield_self do |selected|
+          selected_eras = (ERAS & input_eras).yield_self do |selected|
             selected.empty? ? eras : selected
           end
           selected_eras.map do |era|
