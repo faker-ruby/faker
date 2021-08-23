@@ -194,9 +194,9 @@ en:
         - name: Kamen Rider Den-O
           riders:
             - kamen_rider: Kamen Rider Den-O
-              user: Ryotaro Nogami/Momotaros
+              user: Ryotaro Nogami
             - kamen_rider: Kamen Rider Zeronos
-              user: Yuto Sakurai/Deneb
+              user: Yuto Sakurai
             - kamen_rider: Kamen Rider Gaoh
               user: Gaoh
             - kamen_rider: Kamen Rider Nega Den-O
@@ -206,7 +206,7 @@ en:
             - kamen_rider: Kamen Rider New Den-O
               user: Kotaro Nogami
             - kamen_rider: Kamen Rider G Den-O
-              user: Reiji Kurosaki/Eve
+              user: Reiji Kurosaki
         - name: Kamen Rider Kiva
           riders:
             - kamen_rider: Kamen Rider Kiva
@@ -312,7 +312,7 @@ en:
             - kamen_rider: Kamen Rider Kamuro
               user: Lapis
             - kamen_rider: Kamen Rider Jam
-              user: Unnamed girl/Kohgane
+              user: Kohgane
             - kamen_rider: Kamen Rider Idunn
               user: Touka Akatsuki
             - kamen_rider: Kamen Rider Tyrant
