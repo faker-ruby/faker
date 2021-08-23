@@ -1,0 +1,538 @@
+en:
+  faker:
+    kamen_rider:
+      showa:
+        - name: Kamen Rider
+          riders:
+            - kamen_rider: Kamen Rider 1
+              user: Takeshi Hongo
+            - kamen_rider: Kamen Rider 2
+              user: Hayato Ichimonji
+        - name: Kamen Rider V3
+          riders:
+            - kamen_rider: Kamen Rider V3
+              user: Shiro Kazami
+            - kamen_rider: Riderman
+              user: Joji Yuki
+        - name: Kamen Rider X
+          riders:
+            - kamen_rider: Kamen Rider X
+              user: Keisuke Jin
+        - name: Kamen Rider Amazon
+          riders:
+            - kamen_rider: Kamen Rider Amazon
+              user: Daisuke Yamamoto
+        - name: Kamen Rider Stronger
+          riders:
+            - kamen_rider: Kamen Rider Stronger
+              user: Shigeru Jo
+        - name: Kamen Rider (Skyrider)
+          riders:
+            - kamen_rider: Skyrider
+              user: Hiroshi Tsukuba
+        - name: Kamen Rider Super-1
+          riders:
+            - kamen_rider: Kamen Rider Super-1
+              user: Kazuya Oki
+        - name: Kamen Rider ZX
+          riders:
+            - kamen_rider: Kamen Rider ZX
+              user: Ryo Murasame
+        - name: Kamen Rider Black
+          riders:
+            - kamen_rider: Kamen Rider Black
+              user: Kohtaro Minami
+        - name: Kamen Rider Black RX
+          riders:
+            - kamen_rider: Kamen Rider Black RX
+              user: Kohtaro Minami
+        - name: "Shin Kamen Rider: Prologue"
+          riders:
+            - kamen_rider: Kamen Rider Shin
+              user: Shin Kazamatsuri
+        - name: Kamen Rider ZO
+          riders:
+            - kamen_rider: Kamen Rider ZO
+              user: Masaru Aso
+        - name: Kamen Rider J
+          riders:
+            - kamen_rider: Kamen Rider J
+              user: Kouji Segawa
+      heisei:
+        - name: Kamen Rider Kuuga
+          riders:
+            - kamen_rider: Kamen Rider Kuuga
+              user: Yusuke Godai
+        - name: Kamen Rider Agito
+          riders:
+            - kamen_rider: Kamen Rider Agito
+              user: Shoichi Tsugami
+            - kamen_rider: Kamen Rider G3
+              user: Makoto Hikawa
+            - kamen_rider: Kamen Rider Gills
+              user: Ryo Ashihara
+            - kamen_rider: Kamen Rider G4
+              user: Shiro Mizuki
+            - kamen_rider: Another Agito
+              user: Kaoru Kino
+        - name: Kamen Rider Ryuki
+          riders:
+            - kamen_rider: Kamen Rider Ryuki
+              user: Shinji Kido
+            - kamen_rider: Kamen Rider Knight
+              user: Ren Akiyama
+            - kamen_rider: Kamen Rider Scissors
+              user: Masashi Sudo
+            - kamen_rider: Kamen Rider Zolda
+              user: Shuichi Kitaoka
+            - kamen_rider: Kamen Rider Raia
+              user: Miyuki Tezuka
+            - kamen_rider: Kamen Rider Gai
+              user: Jun Shibaura
+            - kamen_rider: Kamen Rider Ouja
+              user: Takeshi Asakura
+            - kamen_rider: Kamen Rider Odin
+              user: Kamen Rider Odin
+            - kamen_rider: Kamen Rider Femme
+              user: Miho Kirishima
+            - kamen_rider: Kamen Rider Ryuga
+              user: Dark Shinji
+            - kamen_rider: Kamen Rider Tiger
+              user: Satoru Tojo
+            - kamen_rider: Kamen Rider Verde
+              user: Itsuro Takamizawa
+            - kamen_rider: Kamen Rider Imperer
+              user: Mitsuru Sano
+        - name: Kamen Rider 555
+          riders:
+            - kamen_rider: Kamen Rider Faiz
+              user: Takumi Inui
+            - kamen_rider: Kamen Rider Kaixa
+              user: Masato Kusaka
+            - kamen_rider: Kamen Rider Delta
+              user: Syuji Mihara
+            - kamen_rider: Kamen Rider Psyga
+              user: Leo
+            - kamen_rider: Kamen Rider Orga
+              user: Yuji Kiba
+        - name: Kamen Rider Blade
+          riders:
+            - kamen_rider: Kamen Rider Blade
+              user: Kazuma Kenzaki
+            - kamen_rider: Kamen Rider Garren
+              user: Sakuya Tachibana
+            - kamen_rider: Kamen Rider Chalice
+              user: Hajime Aikawa
+            - kamen_rider: Kamen Rider Leangle
+              user: Mutsuki Kamijo
+            - kamen_rider: Kamen Rider Glaive
+              user: Junichi Shimura
+            - kamen_rider: Kamen Rider Lance
+              user: Shin Magaki
+            - kamen_rider: Kamen Rider Larc
+              user: Natsumi Miwa
+        - name: Kamen Rider Hibiki
+          riders:
+            - kamen_rider: Kamen Rider Hibiki
+              user: Hitoshi Hidaka
+            - kamen_rider: Kamen Rider Ibuki
+              user: Iori Izumi
+            - kamen_rider: Kamen Rider Danki
+              user: Daisuke Danda
+            - kamen_rider: Kamen Rider Sabaki
+              user: Sakae Saeki
+            - kamen_rider: Kamen Rider Todoroki
+              user: Tomizo Todayama
+            - kamen_rider: Kamen Rider Zanki
+              user: Zaomaru Zaitsuhara
+            - kamen_rider: Kamen Rider Eiki
+              user: Eiki
+            - kamen_rider: Kamen Rider Kabuki
+              user: Kabuki
+            - kamen_rider: Kamen Rider Touki
+              user: Touki
+            - kamen_rider: Kamen Rider Kirameki
+              user: Kirameki
+            - kamen_rider: Kamen Rider Nishiki
+              user: Nishiki
+            - kamen_rider: Kamen Rider Habataki
+              user: Habataki
+            - kamen_rider: Kamen Rider Shouki
+              user: Shouki
+            - kamen_rider: Kamen Rider Gouki
+              user: Gouki
+            - kamen_rider: Kamen Rider Toki
+              user: Toki
+            - kamen_rider: Kamen Rider Banki
+              user: Banki
+            - kamen_rider: Kamen Rider Shuki
+              user: Shiori Shinagawa
+        - name: Kamen Rider Kabuto
+          riders:
+            - kamen_rider: Kamen Rider Kabuto
+              user: Soji Tendo
+            - kamen_rider: Kamen Rider TheBee
+              user: Shun Kageyama
+            - kamen_rider: Kamen Rider Drake
+              user: Daisuke Kazama
+            - kamen_rider: Kamen Rider Sasword
+              user: Tsurugi Kamishiro
+            - kamen_rider: Kamen Rider Gatack
+              user: Arata Kagami
+            - kamen_rider: Kamen Rider Hercus
+              user: Hidenari Oda
+            - kamen_rider: Kamen Rider Ketaros
+              user: Tetsuki Yamato
+            - kamen_rider: Kamen Rider Caucasus
+              user: Issei Kurosaki
+            - kamen_rider: Kamen Rider KickHopper
+              user: So Yaguruma
+            - kamen_rider: Kamen Rider PunchHopper
+              user: Shun Kageyama
+            - kamen_rider: Kamen Rider Dark Kabuto
+              user: Soji Kusakabe
+        - name: Kamen Rider Den-O
+          riders:
+            - kamen_rider: Kamen Rider Den-O
+              user: Ryotaro Nogami/Momotaros
+            - kamen_rider: Kamen Rider Zeronos
+              user: Yuto Sakurai/Deneb
+            - kamen_rider: Kamen Rider Gaoh
+              user: Gaoh
+            - kamen_rider: Kamen Rider Nega Den-O
+              user: Negataros
+            - kamen_rider: Kamen Rider Yuuki
+              user: Shiro
+            - kamen_rider: Kamen Rider New Den-O
+              user: Kotaro Nogami
+            - kamen_rider: Kamen Rider G Den-O
+              user: Reiji Kurosaki/Eve
+        - name: Kamen Rider Kiva
+          riders:
+            - kamen_rider: Kamen Rider Kiva
+              user: Wataru Kurenai
+            - kamen_rider: Kamen Rider Ixa
+              user: Keisuke Nago
+            - kamen_rider: Kamen Rider Rey
+              user: Takato Shiramine
+            - kamen_rider: Kamen Rider Arc
+              user: Takashi Sugimura
+            - kamen_rider: Kamen Rider Saga
+              user: Taiga Nobori
+            - kamen_rider: Kamen Rider Dark Kiva
+              user: King
+        - name: Kamen Rider Decade
+          riders:
+            - kamen_rider: Kamen Rider Decade
+              user: Tsukasa Kadoya
+            - kamen_rider: Kamen Rider Abyss
+              user: Kamata
+            - kamen_rider: Kamen Rider Diend
+              user: Daiki Kaito
+            - kamen_rider: Kamen Rider Amaki
+              user: Akira
+            - kamen_rider: Kamen Rider Kiva-la
+              user: Natsumi Hikari
+        - name: Kamen Rider W
+          riders:
+            - kamen_rider: Kamen Rider Double
+              user: Shotaro Hidari & Philip
+            - kamen_rider: Kamen Rider Skull
+              user: Sokichi Narumi
+            - kamen_rider: Kamen Rider Accel
+              user: Ryu Terui
+            - kamen_rider: Kamen Rider Eternal
+              user: Katsumi Daido
+            - kamen_rider: Kamen Rider Joker
+              user: Shotaro Hidari
+        - name: Kamen Rider OOO
+          riders:
+            - kamen_rider: Kamen Rider OOO
+              user: Eiji Hino
+            - kamen_rider: Kamen Rider Birth
+              user: Shintaro Goto
+            - kamen_rider: Kamen Rider Core
+              user: Kamen Rider Core
+            - kamen_rider: Kamen Rider Birth·Proto Type
+              user: Akira Date
+            - kamen_rider: Kamen Rider Poseidon
+              user: Poseidon
+            - kamen_rider: Kamen Rider Aqua
+              user: Michal Minato
+        - name: Kamen Rider Fourze
+          riders:
+            - kamen_rider: Kamen Rider Fourze
+              user: Gentaro Kisaragi
+            - kamen_rider: Kamen Rider Nadeshiko
+              user: Nadeshiko Misaki
+            - kamen_rider: Kamen Rider Meteor
+              user: Ryusei Sakuta
+        - name: Kamen Rider Wizard
+          riders:
+            - kamen_rider: Kamen Rider Wizard
+              user: Haruto Soma
+            - kamen_rider: Kamen Rider Wiseman
+              user: Sou Fueki
+            - kamen_rider: Kamen Rider Beast
+              user: Kosuke Nitoh
+            - kamen_rider: Kamen Rider Mage
+              user: Mayu Inamori
+            - kamen_rider: Kamen Rider Sorcerer
+              user: Ogma
+        - name: Kamen Rider Gaim
+          riders:
+            - kamen_rider: Kamen Rider Gaim
+              user: Kouta Kazuraba
+            - kamen_rider: Kamen Rider Zangetsu
+              user: Takatora Kureshima
+            - kamen_rider: Kamen Rider Baron
+              user: Kaito Kumon
+            - kamen_rider: Kamen Rider Ryugen
+              user: Mitsuzane Kureshima
+            - kamen_rider: Kamen Rider Gridon
+              user: Hideyasu Jonouchi
+            - kamen_rider: Kamen Rider Kurokage
+              user: Ryoji Hase
+            - kamen_rider: Kamen Rider Bravo
+              user: Oren Pierre Alfonzo
+            - kamen_rider: Kamen Rider Bujin Gaim
+              user: Bujin Gaim
+            - kamen_rider: Kamen Rider Duke
+              user: Ryoma Sengoku
+            - kamen_rider: Kamen Rider Marika
+              user: Yoko Minato
+            - kamen_rider: Kamen Rider Sigurd
+              user: Lock Dealer Sid
+            - kamen_rider: Kamen Rider Knuckle
+              user: Zack
+            - kamen_rider: Kamen Rider Fifteen
+              user: Ren Aoi
+            - kamen_rider: Kamen Rider Mars
+              user: Kohgane
+            - kamen_rider: Kamen Rider Kamuro
+              user: Lapis
+            - kamen_rider: Kamen Rider Jam
+              user: Unnamed girl/Kohgane
+            - kamen_rider: Kamen Rider Idunn
+              user: Touka Akatsuki
+            - kamen_rider: Kamen Rider Tyrant
+              user: Alfred
+            - kamen_rider: Kamen Rider Saver
+              user: Kugai Kudo
+            - kamen_rider: Kamen Rider Black Baron
+              user: Shura
+            - kamen_rider: Kamen Rider Sylphi
+              user: Masako Suzuka
+        - name: Kamen Rider Drive
+          riders:
+            - kamen_rider: Kamen Rider Protodrive
+              user: Chase
+            - kamen_rider: Kamen Rider Drive
+              user: Shinnosuke Tomari
+            - kamen_rider: Kamen Rider Lupin
+              user: Zoruku Tojo
+            - kamen_rider: Kamen Rider Mach
+              user: Gou Shijima
+            - kamen_rider: Kamen Rider 3
+              user: Kyoichiro Kuroi
+            - kamen_rider: Kamen Rider 4
+              user: Kamen Rider 4
+            - kamen_rider: Kamen Rider Chaser
+              user: Chase
+            - kamen_rider: Kamen Rider Dark Drive
+              user: Paradox Roidmude
+            - kamen_rider: Kamen Rider Jun
+              user: Jun Honganji
+            - kamen_rider: Kamen Rider Chaser Mach
+              user: Go Shijima
+            - kamen_rider: Kamen Rider Mach Chaser
+              user: Go Shijima
+            - kamen_rider: Kamen Rider Heart
+              user: Heart
+            - kamen_rider: Kamen Rider Brain
+              user: Brain
+        - name: Kamen Rider Ghost
+          riders:
+            - kamen_rider: Kamen Rider Ghost
+              user: Takeru Tenkuji
+            - kamen_rider: Kamen Rider Specter
+              user: Makoto Fukami
+            - kamen_rider: Kamen Rider Necrom
+              user: Alain
+            - kamen_rider: Kamen Rider Dark Necrom Pink
+              user: Alia
+            - kamen_rider: Kamen Rider Dark Ghost
+              user: Argos
+            - kamen_rider: Kamen Rider Dark Necrom Red
+              user: Jered
+            - kamen_rider: Kamen Rider Dark Necrom Blue
+              user: Jebil
+            - kamen_rider: Kamen Rider Dark Necrom Yellow
+              user: Jey
+            - kamen_rider: Kamen Rider Zero Specter
+              user: Daigo Fukami
+            - kamen_rider: Kamen Rider Extremer
+              user: Argos
+            - kamen_rider: Kamen Rider Kanon Specter
+              user: Kanon Fukami
+        - name: Kamen Rider Amazons
+          riders:
+            - kamen_rider: Kamen Rider Amazon Omega
+              user: Haruka Mizusawa
+            - kamen_rider: Kamen Rider Amazon Alpha
+              user: Jin Takayama
+            - kamen_rider: Kamen Rider Amazon Sigma
+              user: Jun Maehara
+            - kamen_rider: Kamen Rider Amazon Neo
+              user: Chihiro
+            - kamen_rider: Kamen Rider Amazon Neo Alpha
+              user: Einosuke Mido
+        - name: Kamen Rider Ex-Aid
+          riders:
+            - kamen_rider: Kamen Rider Ex-Aid
+              user: Emu Hojo
+            - kamen_rider: Kamen Rider Genm
+              user: Kuroto Dan
+            - kamen_rider: Kamen Rider Brave
+              user: Hiiro Kagami
+            - kamen_rider: Kamen Rider Snipe
+              user: Taiga Hanaya
+            - kamen_rider: Kamen Rider Lazer
+              user: Kiriya Kujo
+            - kamen_rider: Kamen Rider Para-DX
+              user: Parado
+            - kamen_rider: Kamen Rider True Brave
+              user: Another Hiiro
+            - kamen_rider: Aka-Rider
+              user: Emu Hojo
+            - kamen_rider: Ao-Rider
+              user: Yakumo KatouIcon-crosswiki.png
+            - kamen_rider: Mido-Rider
+              user: Shuichi Kitaoka
+            - kamen_rider: Ki-Rider
+              user: Masato JinIcon-crosswiki.png
+            - kamen_rider: Momo-Rider
+              user: Momotaros
+            - kamen_rider: Kamen Rider Poppy
+              user: Poppy Pipopapo
+            - kamen_rider: Kamen Rider Cronus
+              user: Masamune Dan
+            - kamen_rider: Kamen Rider Fuma
+              user: Kagenari Nagumo
+            - kamen_rider: Kamen Rider Another Para-DX
+              user: Black Parado
+        - name: Kamen Rider Build
+          riders:
+            - kamen_rider: Kamen Rider Build
+              user: Sento Kiryu
+            - kamen_rider: Kamen Rider Cross-Z
+              user: Ryuga Banjo
+            - kamen_rider: Kamen Rider Grease
+              user: Kazumi Sawatari
+            - kamen_rider: Kamen Rider Rogue
+              user: Gentoku Himuro
+            - kamen_rider: Kamen Rider Evol
+              user: Evolto
+            - kamen_rider: Kamen Rider MadRogue
+              user: Nariaki Utsumi
+            - kamen_rider: Kamen Rider Blood
+              user: Kengo Ino
+            - kamen_rider: Kamen Rider Killbus
+              user: Killbus
+            - kamen_rider: Kamen Rider Metal Build
+              user: Keiji Uraga
+        - name: Kamen Rider Zi-O
+          riders:
+            - kamen_rider: Kamen Rider Zi-O
+              user: Sougo Tokiwa
+            - kamen_rider: Kamen Rider Geiz
+              user: Geiz Myokoin
+            - kamen_rider: Kamen Rider Woz
+              user: Black Woz
+            - kamen_rider: Kamen Rider Shinobi
+              user: Rentaro Kagura
+            - kamen_rider: Kamen Rider Quiz
+              user: Mondo Douan
+            - kamen_rider: Kamen Rider Kikai
+              user: Rento Makina
+            - kamen_rider: Kamen Rider Hattari
+              user: Isamichi Konjo
+            - kamen_rider: Kamen Rider Ginga
+              user: Kamen Rider Ginga
+            - kamen_rider: Kamen Rider Barlckxs
+              user: SOUGO Tokiwa
+            - kamen_rider: Kamen Rider Zonjis
+              user: Kagen
+            - kamen_rider: Kamen Rider Zamonas
+              user: Jogen
+            - kamen_rider: Kamen Rider Tsukuyomi
+              user: Tsukuyomi
+      reiwa:
+        - name: Kamen Rider Zero-One
+          riders:
+            - kamen_rider: Kamen Rider Zero-One
+              user: Aruto Hiden
+            - kamen_rider: Kamen Rider Vulcan
+              user: Isamu Fuwa
+            - kamen_rider: Kamen Rider Valkyrie
+              user: Yua Yaiba
+            - kamen_rider: Kamen Rider Horobi
+              user: Horobi
+            - kamen_rider: Kamen Rider Jin
+              user: Jin
+            - kamen_rider: Kamen Rider Ikazuchi
+              user: Ikazuchi
+            - kamen_rider: Kamen Rider ZeroZero-One
+              user: Aruto Hiden
+            - kamen_rider: Kamen Rider Ichi-Gata
+              user: Soreo Hiden
+            - kamen_rider: Kamen Rider Thouser
+              user: Gai Amatsu
+            - kamen_rider: Kamen Rider Ark-Zero
+              user: Ark
+            - kamen_rider: Kamen Rider Naki
+              user: Naki
+            - kamen_rider: Kamen Rider Eden
+              user: Rihito Isshiki
+            - kamen_rider: Kamen Rider Abaddon
+              user: Behru
+            - kamen_rider: Kamen Rider Lucifer
+              user: Behru
+            - kamen_rider: Kamen Rider Zaia
+              user: Lyon Arkland
+            - kamen_rider: Kamen Rider MetsubouJinrai
+              user: MetsubouJinrai
+        - name: Kamen Rider Saber
+          riders:
+            - kamen_rider: Kamen Rider Saber
+              user: Touma Kamiyama
+            - kamen_rider: Kamen Rider Calibur
+              user: Daichi Kamijo
+            - kamen_rider: Kamen Rider Blades
+              user: Rintaro Shindo
+            - kamen_rider: Kamen Rider Buster
+              user: Ryo Ogami
+            - kamen_rider: Kamen Rider Espada
+              user: Kento Fukamiya
+            - kamen_rider: Kamen Rider Kenzan
+              user: Ren Akamichi
+            - kamen_rider: Kamen Rider Slash
+              user: Tetsuo Daishinji
+            - kamen_rider: Kamen Rider Falchion
+              user: Bahato
+            - kamen_rider: Kamen Rider Saikou
+              user: Yuri
+            - kamen_rider: Kamen Rider Sabela
+              user: Reika Shindai
+            - kamen_rider: Kamen Rider Durendal
+              user: Ryoga Shindai
+            - kamen_rider: Kamen Rider Solomon
+              user: Isaac
+            - kamen_rider: Kamen Rider Storious
+              user: Storious
+        - name: Kamen Rider Revice
+          riders:
+            - kamen_rider: Kamen Rider Revi
+              user: Ikki Igarashi
+            - kamen_rider: Kamen Rider Vice
+              user: Vice
