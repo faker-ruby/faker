@@ -6,8 +6,9 @@ module Faker
       class << self
         ERAS = %i[showa heisei reiwa].freeze
 
-        def eras=(*new_eras)
-          @eras = ERAS & new_eras
+        def eras=(new_eras)
+          selected_eras = ERAS & new_eras
+          @eras = selected_eras.empty? ? ERAS : selected_eras
         end
 
         ##
