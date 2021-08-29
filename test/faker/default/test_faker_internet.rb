@@ -333,6 +333,13 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, uuid)
   end
 
+  def test_base64
+    assert_match(/[[[:alnum:]]\-_]{16}/, @tester.base64)
+    assert_match(/[[[:alnum:]]\-_]{4}/, @tester.base64(length: 4))
+    assert_match(/[[[:alnum:]]\-_]{16}=/, @tester.base64(padding: true))
+    assert_match(/[[[:alnum:]]+\/]{16}/, @tester.base64(urlsafe: false))
+  end
+
   def test_user_with_args
     user = @tester.user('username', 'email', 'password')
     assert user[:username].match(/[a-z]+((_|\.)[a-z]+)?/)
