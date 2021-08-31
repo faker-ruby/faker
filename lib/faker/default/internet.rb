@@ -545,6 +545,8 @@ module Faker
       # @example
       #   Faker::Internet.base64(length: 4, padding: true, urlsafe: false)
       #     #=> "x1/R="
+      #
+      # @faker.version 2.11.0
       def base64(length: 16, padding: false, urlsafe: true)
         char_range = [
           Array('0'..'9'),
