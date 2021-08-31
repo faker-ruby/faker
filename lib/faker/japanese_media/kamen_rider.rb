@@ -19,9 +19,9 @@ module Faker
         # @example
         #   Faker::JapaneseMedia::KamenRider.kamen_rider #=> "Kamen Rider Revice"
         #
-        # @faker.version 1.8.0
+        # @faker.version next
         def kamen_rider(*eras)
-          series_from_eras(*eras)[:riders].sample[:kamen_rider]
+          from_eras(*eras, field: :kamen_riders)
         end
 
         ##
@@ -34,7 +34,7 @@ module Faker
         #
         # @faker.version next
         def user(*eras)
-          series_from_eras(*eras)[:riders].sample[:user]
+          from_eras(*eras, field: :users)
         end
 
         ##
@@ -47,7 +47,7 @@ module Faker
         #
         # @faker.version next
         def series(*eras)
-          series_from_eras(*eras)[:name]
+          from_eras(*eras, field: :series)
         end
 
         private
@@ -56,13 +56,13 @@ module Faker
           @eras ||= ERAS
         end
 
-        def series_from_eras(*input_eras)
+        def from_eras(*input_eras, field:)
           selected_eras = (ERAS & input_eras).yield_self do |selected|
             selected.empty? ? eras : selected
           end
-          selected_eras.map do |era|
-            fetch_all("kamen_rider.#{era}")
-          end.flatten.sample
+          selected_eras.sample.yield_self do |era|
+            fetch("kamen_rider.#{era}.#{field}")
+          end
         end
       end
     end
