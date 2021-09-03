@@ -5,6 +5,11 @@ require_relative '../../test_helper'
 class TestFakerInternet < Test::Unit::TestCase
   def setup
     @tester = Faker::Internet
+    @default_locale = Faker::Config.locale
+  end
+
+  def teardown
+    Faker::Config.locale = @default_locale
   end
 
   def test_email
@@ -288,8 +293,18 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
-  def test_slug
-    assert @tester.slug.match(/^[a-z]+(_|-)[a-z]+$/)
+  I18n.config.available_locales.each do |locale|
+    define_method("test_#{locale}_slug") do
+      Faker::Config.locale = locale
+
+      assert @tester.slug.match(/^[a-z]+(_|-)[a-z]+$/)
+    end
+
+    define_method("test_#{locale}_slug_with_glue_arg") do
+      Faker::Config.locale = locale
+
+      assert @tester.slug(words: nil, glue: '+').match(/^[a-z]+\+[a-z]+$/)
+    end
   end
 
   def test_slug_with_content_arg
@@ -298,10 +313,6 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_slug_with_unwanted_content_arg
     assert @tester.slug(words: 'Foo.. bAr., baZ,,').match(/^foo(_|\.|-)bar(_|\.|-)baz$/)
-  end
-
-  def test_slug_with_glue_arg
-    assert @tester.slug(words: nil, glue: '+').match(/^[a-z]+\+[a-z]+$/)
   end
 
   def test_url
