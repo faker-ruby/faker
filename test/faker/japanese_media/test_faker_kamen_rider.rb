@@ -66,4 +66,25 @@ class TestFakerJapaneseKamenRider < Test::Unit::TestCase
   def test_series_heisei_reiwa
     assert @tester.series(:heisei, :reiwa).match(/\w+\.?/)
   end
+
+  def test_collectible_device_all
+    assert @tester.collectible_device.match(/\w+\.?/)
+  end
+
+  # The Showa era had not introduced the concept of collectible devices.
+  def test_collectible_device_showa
+    assert_raise('Faker::JapaneseMedia::KamenRider::UnavailableInEra') { @tester.collectible_device(:showa) }
+  end
+
+  def test_collectible_device_heisei
+    assert @tester.collectible_device(:heisei).match(/\w+\.?/)
+  end
+
+  def test_collectible_device_reiwa
+    assert @tester.collectible_device(:reiwa).match(/\w+\.?/)
+  end
+
+  def test_collectible_device_heisei_reiwa
+    assert @tester.collectible_device(:heisei, :reiwa).match(/\w+\.?/)
+  end
 end

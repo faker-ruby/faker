@@ -50,6 +50,19 @@ module Faker
           from_eras(*eras, field: :series)
         end
 
+        ##
+        # Produces the name of a collectible device from a Kamen Rider series.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::JapaneseMedia::KamenRider.collectible_device #=> "Vistamp"
+        #
+        # @faker.version next
+        def collectible_device(*eras)
+          from_eras(*eras, field: :collectible_devices) { |e| e.delete(:showa) }
+        end
+
         private
 
         def eras
@@ -59,11 +72,17 @@ module Faker
         def from_eras(*input_eras, field:)
           selected_eras = (ERAS & input_eras).yield_self do |selected|
             selected.empty? ? eras : selected
-          end
+          end.dup
+          yield(selected_eras) if block_given?
+
+          raise UnavailableInEra, "#{field} is unavailable in the selected eras." if selected_eras.empty?
+
           selected_eras.sample.yield_self do |era|
             fetch("kamen_rider.#{era}.#{field}")
           end
         end
+
+        class UnavailableInEra < StandardError; end
       end
     end
   end
