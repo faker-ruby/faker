@@ -87,4 +87,24 @@ class TestFakerJapaneseKamenRider < Test::Unit::TestCase
   def test_collectible_device_heisei_reiwa
     assert @tester.collectible_device(:heisei, :reiwa).match(/\w+\.?/)
   end
+
+  def test_transformation_device_all
+    assert @tester.transformation_device.match(/\w+\.?/)
+  end
+
+  def test_transformation_device_showa
+    assert @tester.transformation_device(:showa).match(/\w+\.?/)
+  end
+
+  def test_transformation_device_heisei
+    assert @tester.transformation_device(:heisei).match(/\w+\.?/)
+  end
+
+  def test_transformation_device_reiwa
+    assert @tester.transformation_device(:reiwa).match(/\w+\.?/)
+  end
+
+  def test_transformation_device_heisei_reiwa
+    assert @tester.transformation_device(:heisei, :reiwa).match(/\w+\.?/)
+  end
 end

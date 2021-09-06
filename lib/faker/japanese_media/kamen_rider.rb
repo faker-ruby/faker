@@ -63,6 +63,19 @@ module Faker
           from_eras(*eras, field: :collectible_devices) { |e| e.delete(:showa) }
         end
 
+        # Produces the name of a transformation device used by a Kamen Rider
+        # from the given eras.
+        #
+        # @return [String]
+        #
+        # @example Faker::JapaneseMedia::KamenRider.transformation_device #=>
+        # "Revice Driver"
+        #
+        # @faker.version next
+        def transformation_device(*eras)
+          from_eras(*eras, field: :transformation_devices)
+        end
+
         private
 
         def eras
