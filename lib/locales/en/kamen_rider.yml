@@ -205,6 +205,30 @@ en:
           - Kagen
           - Jogen
           - Tsukuyomi
+        collectible_devices:
+          - Advent Card
+          - Mission Memory
+          - Rouse Card
+          - Disk Animal
+          - Zecter
+          - Rider Ticket
+          - Fuestle
+          - Rider Car
+          - Gaia Memory
+          - O Medal
+          - Astroswitch
+          - Wizard Ring
+          - Lockseed
+          - Shift Car
+          - Signal Bike
+          - Viral Core
+          - Ghost Eyecon
+          - Rider Gashat
+          - Energy Item
+          - Fullbottle
+          - Sclashjelly
+          - Ridewatch
+          - Miridewatch
       reiwa:
         series: ["Kamen Rider Zero-One", "Kamen Rider Saber", "Kamen Rider Revice"]
         kamen_riders: ["Kamen Rider Zero-One",  "Kamen Rider Vulcan",  "Kamen Rider Valkyrie",  "Kamen Rider Horobi",  "Kamen Rider Jin",  "Kamen Rider Ikazuchi",  "Kamen Rider ZeroZero-One",  "Kamen Rider Ichi-Gata",  "Kamen Rider Thouser",  "Kamen Rider Ark-Zero",  "Kamen Rider Naki",  "Kamen Rider Eden",  "Kamen Rider Abaddon",  "Kamen Rider Lucifer",  "Kamen Rider Zaia",  "Kamen Rider MetsubouJinrai",  "Kamen Rider Saber",  "Kamen Rider Calibur",  "Kamen Rider Blades",  "Kamen Rider Buster",  "Kamen Rider Espada",  "Kamen Rider Kenzan",  "Kamen Rider Slash",  "Kamen Rider Falchion",  "Kamen Rider Saikou",  "Kamen Rider Sabela",  "Kamen Rider Durendal",  "Kamen Rider Solomon",  "Kamen Rider Storious",  "Kamen Rider Revi",  "Kamen Rider Vice"]
@@ -238,3 +262,7 @@ en:
           - Storious
           - Ikki Igarashi
           - Vice
+        collectible_devices:
+          - Progrisekey
+          - Wonder Ride Book
+          - Vistamp
