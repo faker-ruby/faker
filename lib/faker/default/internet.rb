@@ -2,6 +2,18 @@
 
 module Faker
   class Internet < Base
+    # Private, Host, and Link-Local network address blocks as defined in https://en.wikipedia.org/wiki/IPv4#Special-use_addresses
+    PRIVATE_IPV4_ADDRESS_RANGES = [
+      [10..10,   0..255,   0..255, 1..255], # 10.0.0.0/8     - Used for local communications within a private network
+      [100..100, 64..127,  0..255, 1..255], # 100.64.0.0/10  - Shared address space for communications between an ISP and its subscribers
+      [127..127, 0..255,   0..255, 1..255], # 127.0.0.0/8    - Used for loopback addresses to the local host
+      [169..169, 254..254, 0..255, 1..255], # 169.254.0.0/16 - Used for link-local addresses between two hosts on a single link when
+      [172..172, 16..31,   0..255, 1..255], # 172.16.0.0/12  - Used for local communications within a private network
+      [192..192, 0..0,     0..0,   1..255], # 192.0.0.0/24   - IETF Protocol Assignments
+      [192..192, 168..168, 0..255, 1..255], # 192.168.0.0/16 - Used for local communications within a private network
+      [198..198, 18..19,   0..255, 1..255]  # 198.18.0.0/15  - Used for benchmark testing of inter-network communications between subnets
+    ].each(&:freeze).freeze
+
     class << self
       ##
       # Returns the email address
@@ -311,12 +323,7 @@ module Faker
       # @example
       #   Faker::Internet.private_ip_v4_address   #=> "127.120.80.42"
       def private_ip_v4_address
-        addr = nil
-        loop do
-          addr = ip_v4_address
-          break if private_net_checker[addr]
-        end
-        addr
+        sample(PRIVATE_IPV4_ADDRESS_RANGES).map { |range| rand(range) }.join('.')
       end
 
       ##
