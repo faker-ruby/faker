@@ -351,4 +351,25 @@ class TestFakerInternet < Test::Unit::TestCase
       @tester.user('xyx')
     end
   end
+
+  def test_user
+    user = @tester.user
+    assert user[:username].match(/[a-z]+((_|\.)[a-z]+)?/)
+    assert user[:email].match(/.+@.+\.\w+/)
+  end
+
+  def test_user_with_string_arguments
+    user = @tester.user(:username, :safe_email, :password, :uuid, :user_agent)
+    assert user[:username].match(/[a-z]+((_|\.)[a-z]+)?/)
+    assert user[:safe_email].match(/.+@example.(com|net|org)/)
+    assert user[:password].match(/\w{3}/)
+    assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, user[:uuid])
+    assert user[:user_agent].match(/Mozilla|Opera/)
+  end
+
+  def test_user_with_invalid_arguments
+    assert_raises NoMethodError do
+      @tester.user(:xyz)
+    end
+  end
 end
