@@ -44,7 +44,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    test-unit (3.4.5)
+    test-unit (3.4.7)
       power_assert
     timecop (0.9.4)
     unicode-display_width (2.0.0)
@@ -60,7 +60,7 @@ DEPENDENCIES
   rake (= 13.0.6)
   rubocop (= 1.20.0)
   simplecov (= 0.17.1, < 0.18)
-  test-unit (= 3.4.5)
+  test-unit (= 3.4.7)
   timecop (= 0.9.4)
   yard (= 0.9.26)
 
