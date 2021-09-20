@@ -14,7 +14,6 @@ module Faker
 
     class << self
       # rubocop:disable Metrics/ParameterLists
-      # rubocop:disable Style/AsciiComments
 
       ##
       # Produce a random time between two times.
@@ -51,7 +50,6 @@ module Faker
         time = Faker::Base.rand_in_range(from, to)
         time_with_format(time, format)
       end
-      # rubocop:enable Style/AsciiComments
 
       ##
       # Produce a random time between two dates.

@@ -17,8 +17,6 @@ module Faker
         fetch('nation.nationality')
       end
 
-      # rubocop:disable Style/AsciiComments
-
       ##
       # Produces a random national flag emoji.
       #
@@ -31,7 +29,6 @@ module Faker
       def flag
         sample(translate('faker.nation.flag')).pack('C*').force_encoding('utf-8')
       end
-      # rubocop:enable Style/AsciiComments
 
       ##
       # Produces a random national language.

@@ -227,8 +227,6 @@ module Faker
         end
       end
 
-      # rubocop:disable Style/AsciiComments
-
       ##
       # Fixes ä, ö, ü, ß characters in string passed with ae, oe, ue, ss resp.
       #
@@ -247,7 +245,6 @@ module Faker
 
         Char.fix_umlauts(string)
       end
-      # rubocop:enable Style/AsciiComments
 
       ##
       # Returns the domain word for internet
