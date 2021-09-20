@@ -34,7 +34,7 @@ module Faker
       end
 
       ##
-      # Returns the email address with doamin either gmail.com, yahoo.com or hotmail.com
+      # Returns the email address with domain either gmail.com, yahoo.com or hotmail.com
       #
       # @return [String]
       #
@@ -80,10 +80,10 @@ module Faker
       #
       # @return [String]
       #
-      # @param specifier [Integer, Range] When int value passed it returns the username longer than specifier. Max value can be 10^6
-      # @param separator [Array]
+      # @param specifier [Integer, Range, String] When int value passed it returns the username longer than specifier. Max value can be 10^6
+      # @param separators [Array]
       #
-      # @wxample
+      # @example
       #   Faker::Internet.username(specifier: 10)                     #=> "lulu.goodwin"
       #   Faker::Internet.username(specifier: 5..10)                  #=> "morris"
       #   Faker::Internet.username(specifier: 5..10)                  #=> "berryberry"
@@ -264,7 +264,7 @@ module Faker
       #
       # @return [String]
       #
-      # @wxample
+      # @example
       #   Faker::Internet.domain_suffix   #=> "com"
       #   Faker::Internet.domain_suffix   #=> "biz"
       def domain_suffix
@@ -387,7 +387,7 @@ module Faker
       end
 
       ##
-      # Returns lambda function to check address passed is reserverd or not
+      # Returns lambda function to check address passed is reserved or not
       #
       # @return [Lambda]
       #
