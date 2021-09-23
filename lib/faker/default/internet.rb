@@ -528,6 +528,35 @@ module Faker
       end
 
       ##
+      # Produces a random string of alphabetic characters, (no digits)
+      #
+      # @param length [Integer] The length of the string to generate
+      # @param padding [Boolean] Toggles if a final equal '=' will be added.
+      # @param urlsafe [Boolean] Toggles charset to '-' and '_' instead of '+' and '/'.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Internet.base64
+      #     #=> "r_hbZ2DSD-ZACzZT"
+      # @example
+      #   Faker::Internet.base64(length: 4, padding: true, urlsafe: false)
+      #     #=> "x1/R="
+      #
+      # @faker.version 2.11.0
+      def base64(length: 16, padding: false, urlsafe: true)
+        char_range = [
+          Array('0'..'9'),
+          Array('A'..'Z'),
+          Array('a'..'z'),
+          urlsafe ? %w[- _] : %w[+ /]
+        ].flatten
+        s = Array.new(length) { sample(char_range) }.join
+        s += '=' if padding
+        s
+      end
+
+      ##
       # Produces a randomized hash of internet user details
       # @example
       #   Faker::Internet.user #=> { username: 'alexie', email: 'alexie@example.net' }
