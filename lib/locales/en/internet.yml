@@ -1,8 +1,114 @@
 en:
   faker:
     internet:
-      free_email: [gmail.com, yahoo.com, hotmail.com]
-      domain_suffix: [com, biz, info, name, net, org, io, co]
+      domain_suffix:
+        - com
+        - biz
+        - info
+        - name
+        - net
+        - org
+        - io
+        - co
+      free_email:
+        - gmail.com
+        - yahoo.com
+        - hotmail.com
+      slug:
+        - report
+        - appointment
+        - highway
+        - premium
+        - shock
+        - general
+        - guess
+        - branch
+        - outside
+        - exhibition
+        - condition
+        - nursery
+        - trivial
+        - confuse
+        - design
+        - corn
+        - bless
+        - ambiguous
+        - diagram
+        - ample
+        - provision
+        - judge
+        - strict
+        - perception
+        - widen
+        - plain
+        - strap
+        - fruit
+        - distant
+        - arena
+        - twilight
+        - hope
+        - turkey
+        - deport
+        - brown
+        - agree
+        - exaggerate
+        - onion
+        - stuff
+        - hypothesis
+        - whole
+        - relationship
+        - linger
+        - corpse
+        - cutting
+        - dynamic
+        - thirsty
+        - authority
+        - award
+        - introduction
+        - seller
+        - push
+        - smile
+        - marine
+        - academy
+        - polish
+        - vegetarian
+        - drill
+        - miscarriage
+        - laser
+        - satisfaction
+        - copy
+        - angel
+        - rung
+        - glow
+        - publish
+        - figure
+        - scale
+        - story
+        - compete
+        - galaxy
+        - book
+        - conglomerate
+        - kidnap
+        - theorist
+        - cruelty
+        - inspiration
+        - doctor
+        - freckle
+        - transfer
+        - dictate
+        - thank
+        - midnight
+        - defend
+        - strikebreaker
+        - offensive
+        - wear
+        - minister
+        - curriculum
+        - capital
+        - patience
+        - notebook
+        - message
+        - horizon
       user_agent:
         aol:
           - Mozilla/5.0 (compatible; MSIE 9.0; AOL 9.7; AOLBuild 4343.19; Windows NT 6.1; WOW64; Trident/5.0; FunWebProducts)
@@ -18,4 +124,3 @@ en:
           - Opera/9.80 (X11; Linux i686; Ubuntu/14.10) Presto/2.12.388 Version/12.16
         safari:
           - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A
-

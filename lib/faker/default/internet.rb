@@ -476,7 +476,9 @@ module Faker
         end
 
         glue ||= sample(%w[- _])
-        (words || Faker::Lorem.words(number: 2).join(' ')).delete(',.').gsub(' ', glue).downcase
+        return words.delete(',.').gsub(' ', glue).downcase unless words.nil?
+
+        sample(translate('faker.internet.slug'), 2).join(glue)
       end
 
       ##
