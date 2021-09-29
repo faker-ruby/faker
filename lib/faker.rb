@@ -80,6 +80,7 @@ module Faker
       def regexify(reg)
         reg = reg.source if reg.respond_to?(:source) # Handle either a Regexp or a String that looks like a Regexp
         reg
+          .gsub(/((#\s).*$)/, '') # Remove Regexp comments
           .gsub(%r{^/?\^?}, '').gsub(%r{\$?/?$}, '') # Ditch the anchors
           .gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}') # All {2} become {2,2} and ? become {0,1}
           .gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # [12]{1,2} becomes [12] or [12][12]
