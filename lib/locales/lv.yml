@@ -52,4 +52,4 @@ lv:
     phone_number:
       formats: ["5# ### ###", "6# ### ###", "7# ### ###"]
     cell_phone:
-      formats: ["2## ### ###"]
+      formats: ["2# ### ###"]
