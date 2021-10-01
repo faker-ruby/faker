@@ -160,6 +160,22 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal verification_code, 0
   end
 
+  def test_croatian_id
+    sample = @tester.croatian_id
+    assert_match(/^\d{11}$/, sample)
+  end
+
+  def test_croatian_id_international
+    sample = @tester.croatian_id(international: true)
+    assert_match(/^HR\d{11}$/, sample)
+  end
+
+  def test_croatian_id_checksum_digit
+    digits = '8764670153'
+    checksum_digit = Faker::IDNumber.send(:croatian_id_checksum_digit, digits)
+    assert_equal checksum_digit, 5
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)

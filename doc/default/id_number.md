@@ -34,4 +34,9 @@ Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
 # Generate a Chilean ID (Rut with 8 digits)
 # For more advanced cases, please refer to Faker::ChileRut
 Faker::IDNumber.chilean_id #=> "15620613-K"
+
+# Generate a Croatian ID number (OIB)
+# Keyword arguments: international
+Faker::IDNumber.croatian_id #=> "88467617508"
+Faker::IDNumber.croatian_id(international: true) #=> "HR88467617508"
 ```

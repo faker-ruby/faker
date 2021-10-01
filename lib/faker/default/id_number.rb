@@ -200,7 +200,41 @@ module Faker
         "#{digits}-#{verification_code}"
       end
 
+      ##
+      # Produces a random Croatian ID number (OIB).
+      #
+      # @param international [Boolean] Specifies whether to add international prefix.
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.croatian_id #=> "88467617508"
+      #   Faker::IDNumber.croatian_id(international: true) #=> "HR88467617508"
+      #
+      # @faker.version next
+      def croatian_id(international: false)
+        prefix = international ? 'HR' : ''
+        digits = Faker::Number.number(digits: 10).to_s
+        checksum_digit = croatian_id_checksum_digit(digits)
+
+        "#{prefix}#{digits}#{checksum_digit}"
+      end
+
       private
+
+      def croatian_id_checksum_digit(digits)
+        control_sum = 10
+
+        digits.chars.map(&:to_i).each do |digit|
+          control_sum += digit
+          control_sum %= 10
+          control_sum = 10 if control_sum.zero?
+          control_sum *= 2
+          control_sum %= 11
+        end
+
+        control_sum = 11 - control_sum
+        control_sum % 10
+      end
 
       def chilean_verification_code(digits)
         # First digit is multiplied by 3, second by 2, and so on

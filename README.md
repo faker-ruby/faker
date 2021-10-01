@@ -161,6 +161,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Drone](doc/drone/drone.md)
   - [Faker::Educator](doc/default/educator.md)
   - [Faker::ElectricalComponents](doc/default/electrical_components.md)
+  - [Faker::Emotion](doc/default/emotion.md)
   - [Faker::Esport](doc/default/esport.md)
   - [Faker::File](doc/default/file.md)
   - [Faker::Fillmurray](doc/default/fillmurray.md)
@@ -171,6 +172,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::GreekPhilosophers](doc/default/greek_philosophers.md)
   - [Faker::Hacker](doc/default/hacker.md)
   - [Faker::Hipster](doc/default/hipster.md)
+  - [Faker::Hobby](doc/default/hobby.md)
   - [Faker::House](doc/default/house.md)
   - [Faker::IDNumber](doc/default/id_number.md)
   - [Faker::IndustrySegments](doc/default/industry_segments.md)
@@ -207,6 +209,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Stripe](doc/default/stripe.md)
   - [Faker::Subscription](doc/default/subscription.md)
   - [Faker::Superhero](doc/default/superhero.md)
+  - [Faker::Tea](doc/default/tea.md)
   - [Faker::Team](doc/default/team.md)
   - [Faker::Time](doc/default/time.md)
   - [Faker::Twitter](doc/default/twitter.md)
@@ -227,12 +230,14 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Books::CultureSeries](doc/books/culture_series.md)
   - [Faker::Books::Dune](doc/books/dune.md)
   - [Faker::Books::Lovecraft](doc/books/lovecraft.md)
+  - [Faker::Books::TheKingkillerChronicle](doc/books/the_kingkiller_chronicle.md)
 
 ### Fantasy
   - [Faker::Fantasy::Tolkien](doc/fantasy/tolkien.md)
 
 ### Creature
   - [Faker::Creature::Animal](doc/creature/animal.md)
+  - [Faker::Creature::Bird](doc/creature/bird.md)
   - [Faker::Creature::Cat](doc/creature/cat.md)
   - [Faker::Creature::Dog](doc/creature/dog.md)
   - [Faker::Creature::Horse](doc/creature/horse.md)
@@ -337,6 +342,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::Stargate](doc/tv_shows/stargate.md)
   - [Faker::TvShows::StrangerThings](doc/tv_shows/stranger_things.md)
   - [Faker::TvShows::Suits](doc/tv_shows/suits.md)
+  - [Faker::TvShows::Supernatural](doc/tv_shows/supernatural.md)
   - [Faker::TvShows::TheExpanse](doc/tv_shows/the_expanse.md)
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/tv_shows/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/tv_shows/the_it_crowd.md)

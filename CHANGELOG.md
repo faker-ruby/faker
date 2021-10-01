@@ -1,6 +1,99 @@
 # Change Log
 
-## [v2.17.0](https://github.com/faker-ruby/faker/tree/v2.17.0) (2020-03-10)
+## [v2.19.0](https://github.com/faker-ruby/faker/tree/v2.19.0) (2021-08-22)
+
+## Bug/Fixes
+
+- [PR #2356](https://github.com/faker-ruby/faker/pull/2356) fix broken link for placeholdit [@lilisako](https://github.com/lilisako)
+- [PR #2351](https://github.com/faker-ruby/faker/pull/2351) Fix spanish organisation number [@laulujan](https://github.com/laulujan)
+
+## Feature Request
+
+- [PR #2371](https://github.com/faker-ruby/faker/pull/2371) Add supernatural TV show [@vin1cius](https://github.com/vin1cius)
+- [PR #2369](https://github.com/faker-ruby/faker/pull/2369) Added more Science examples - science branches, modifiers and tools [@itay-grudev](https://github.com/itay-grudev)
+- [PR #2361](https://github.com/faker-ruby/faker/pull/2361) Add ethnic category to the food generator [@wolwire](https://github.com/wolwire)
+- [PR #2359](https://github.com/faker-ruby/faker/pull/2359) add stock_market to finance Faker::Finance [@lilisako](https://github.com/lilisako)
+- [PR #2341](https://github.com/faker-ruby/faker/pull/2341) add Hobby to default [@rohanphillips](https://github.com/rohanphillips)
+- [PR #2324](https://github.com/faker-ruby/faker/pull/2324) Add Faker::Emotion.word [@jayqui](https://github.com/jayqui)
+- [PR #2320](https://github.com/faker-ruby/faker/pull/2320) Add Faker::TvShows::TheOffice [@sandylcruz](https://github.com/sandylcruz)
+- [PR #2245](https://github.com/faker-ruby/faker/pull/2245) Add Faker::Australia class [@astley92](https://github.com/astley92)
+- [PR #1731](https://github.com/faker-ruby/faker/pull/1731) add brand, vendor support to commerce [@ashishra0](https://github.com/ashishra0)
+
+## Update locales
+
+- [PR #2343](https://github.com/faker-ruby/faker/pull/2343) Minor typo fixes to Community quotes [@sunny](https://github.com/sunny)
+- [PR #2340](https://github.com/faker-ruby/faker/pull/2340) Add JapaneseMedia StudioGhibli for locals/ja.yml [@ryogift](https://github.com/ryogift)
+- [PR #2339](https://github.com/faker-ruby/faker/pull/2339) Various locale specific and other fixes for faker [@psibi](https://github.com/psibi)
+- [PR #2338](https://github.com/faker-ruby/faker/pull/2338) Add Kazuya to Faker::Games::SuperSmashBros [@boardfish](https://github.com/boardfish)
+- [PR #2333](https://github.com/faker-ruby/faker/pull/2333) add FR translation for animals [@cprodhomme](https://github.com/cprodhomme)
+- [PR #2329](https://github.com/faker-ruby/faker/pull/2329) Fix Faker::Color.color_name for Japanese [@yujideveloper](https://github.com/yujideveloper)
+- [PR #2327](https://github.com/faker-ruby/faker/pull/2327) Remove trailing spaces from translations [@michebble](https://github.com/michebble)
+- [PR #2326](https://github.com/faker-ruby/faker/pull/2326) Faker::Address.postcode (locale=ja) should contains hyphen [@gongo](https://github.com/gongo)
+
+## Update local dependencies
+
+- Update rubocop requirement from = 1.18.3 to = 1.18.4 (#2362)
+- Update rake requirement from = 13.0.3 to = 13.0.6 (#2357)
+- Update rubocop requirement from = 1.18.1 to = 1.18.3 (#2353)
+- Update rubocop requirement from = 1.17.0 to = 1.18.1 (#2346)
+- Update rubocop requirement from = 1.16.0 to = 1.17.0 (#2337)
+- Update test-unit requirement from = 3.4.2 to = 3.4.4 (#2334)
+- Update rubocop requirement from = 1.15.0 to = 1.16.0 (#2332)
+- Update test-unit requirement from = 3.4.1 to = 3.4.2 (#2331)
+- Update rubocop requirement from = 1.14.0 to = 1.15.0 (#2325)
+
+------------------------------------------------------------------------------
+
+## [v2.18.0](https://github.com/faker-ruby/faker/tree/v2.18.0) (2021-05-15)
+
+## Bug/Fixes
+
+- [PR #2300](https://github.com/faker-ruby/faker/pull/2300) Fix space.company by adding missing quote [@koic](https://github.com/koic)
+- [PR #2044](https://github.com/faker-ruby/faker/pull/2044) Workaround for cc-test-reporter with SimpleCov 0.18 [@koic](https://github.com/koic)
+
+## Chores
+
+- [PR #2316](https://github.com/faker-ruby/faker/pull/2316) Fix typo in test method [@yujideveloper](https://github.com/yujideveloper)
+
+## Documentation
+
+- [PR #2290](https://github.com/faker-ruby/faker/pull/2290) Fix typo [@d-holbach](https://github.com/d-holbach)
+- [PR #2282](https://github.com/faker-ruby/faker/pull/2282) fixed small typo [@koic](https://github.com/koic)
+
+## Feature Request
+
+- [PR #2301](https://github.com/faker-ruby/faker/pull/2301) Add Faker::IDNumber.croatian_id method [@lovro-bikic](https://github.com/lovro-bikic)
+- [PR #2299](https://github.com/faker-ruby/faker/pull/2299) Add birds [@brotherjack](https://github.com/brotherjack)
+- [PR #2295](https://github.com/faker-ruby/faker/pull/2295) Add more methods to the Witcher class [@marcelobarreto](https://github.com/marcelobarreto)
+- [PR #2289](https://github.com/faker-ruby/faker/pull/2289) Increase french entropy [@meuble](https://github.com/meuble)
+- [PR #2287](https://github.com/faker-ruby/faker/pull/2287) Add Crypto.sha512 [@crondaemon](https://github.com/crondaemon)
+- [PR #2190](https://github.com/faker-ruby/faker/pull/2190) Add Faker::Tea [@snood1205](https://github.com/snood1205)
+- [PR #2175](https://github.com/faker-ruby/faker/pull/2175) Add two generators to Faker::Science [@RubyHuntsman](https://github.com/RubyHuntsman)
+- [PR #1910](https://github.com/faker-ruby/faker/pull/1910) Add Faker::Music#mambo_no_5, a Generator for Random First Names that Appear in Lou Bega's Mambo No. 5 [@NickyEXE](https://github.com/NickyEXE)
+
+## Update locales
+
+- [PR #2321](https://github.com/faker-ruby/faker/pull/2321) Canadian area code 226 included in array of US area codes [@jgarber623](https://github.com/jgarber623)
+- [PR #2317](https://github.com/faker-ruby/faker/pull/2317) Fix ci for es-AR [@yujideveloper](https://github.com/yujideveloper)
+- [PR #2315](https://github.com/faker-ruby/faker/pull/2315) Split JA translation file into one file per class [@yujideveloper](https://github.com/yujideveloper)
+- [PR #2313](https://github.com/faker-ruby/faker/pull/2313) Add Japanese translation for Faker::Subscription [@yujideveloper](https://github.com/yujideveloper)
+- [PR #2311](https://github.com/faker-ruby/faker/pull/2311) add yoda quotes to russian locale [@aka-nez](https://github.com/aka-nez)
+- [PR #2297](https://github.com/faker-ruby/faker/pull/2297) add Japanese actual zipcodes in locals/ja.yml [@POPPIN-FUMI](https://github.com/POPPIN-FUMI)
+- [PR #2291](https://github.com/faker-ruby/faker/pull/2291) Add Commerce for Japanese [@ima1zumi](https://github.com/ima1zumi)
+- [PR #2285](https://github.com/faker-ruby/faker/pull/2285) Fix update Brazilian phone country code [@ricardopacheco](https://github.com/ricardopacheco)
+- [PR #2154](https://github.com/faker-ruby/faker/pull/2154) Cleanup books. Add Fantasy::Tolkien to README. [@mathisto](https://github.com/mathisto)
+
+## Update local dependencies
+
+- Update rubocop requirement from = 1.13.0 to = 1.14.0 (#2314)
+- Upgrade to GitHub-native Dependabot (#2310)
+- Update rubocop requirement from = 1.12.1 to = 1.13.0 (#2305)
+- Update test-unit requirement from = 3.4.0 to = 3.4.1 (#2303)
+- Update pry requirement from = 0.14.0 to = 0.14.1 (#2298)
+- Update rubocop requirement from = 1.12.0 to = 1.12.1 (#2294)
+- Update rubocop requirement from = 1.11.0 to = 1.12.0 (#2288)
+
+## [v2.17.0](https://github.com/faker-ruby/faker/tree/v2.17.0) (2021-03-10)
 
 ## Chores
 
@@ -30,7 +123,7 @@
 
 ------------------------------------------------------------------------------
 
-## [v2.16.0](https://github.com/faker-ruby/faker/tree/v2.16.0) (2020-02-09)
+## [v2.16.0](https://github.com/faker-ruby/faker/tree/v2.16.0) (2021-02-09)
 
 ## Chores
 

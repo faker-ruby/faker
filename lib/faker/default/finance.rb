@@ -84,6 +84,19 @@ module Faker
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find market named #{market}"
       end
+
+      ##
+      # Returns a randomly-selected stock market.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Finance.stock_market #=> 'NASDAQ'
+      #
+      # @faker.version next
+      def stock_market
+        fetch('finance.stock_market')
+      end
     end
   end
 end

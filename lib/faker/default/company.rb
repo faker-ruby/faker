@@ -511,7 +511,6 @@ module Faker
         sum
       end
 
-      # rubocop:disable Style/AsciiComments
       #
       # For more on Russian tax number algorithm here:
       # https://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика#Вычисление_контрольных_цифр
@@ -526,7 +525,6 @@ module Faker
       #   Faker::Comnpany.russian_tax_number
       #   Faker::Comnpany.russian_tax_number(region: 'AZ')
       #   Faker::Comnpany.russian_tax_number(region: 'AZ', type: false)
-      # rubocop:enable Style/AsciiComments
       def inn_number(region, type)
         n10 = [2, 4, 10, 3, 5, 9, 4, 6, 8]
         n11 = [7, 2, 4, 10, 3, 5, 9, 4, 6, 8]
@@ -553,7 +551,7 @@ module Faker
       end
 
       def spanish_cif_control_digit(organization_type, code)
-        letters = %w[J A B C D E F G H]
+        letters = %w[J A B C D E F G H I]
 
         control = code.split('').each_with_index.inject(0) do |sum, (value, index)|
           if (index + 1).even?

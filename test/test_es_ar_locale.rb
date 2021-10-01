@@ -6,14 +6,14 @@ class TestEsArLocale < Test::Unit::TestCase
   def setup
     Faker::Config.locale = 'es-AR'
 
-    @no_words_pattern = /\w{0}$/u
-    @one_word_pattern = /\w+/u
-    @one_or_more_words_pattern = /(?:\w+\ )*\w+/u
-    @many_words_pattern = /(?:\w+\ )+\w+/u
+    @no_words_pattern = /(?u:\w{0})$/
+    @one_word_pattern = /(?u:\w+)/
+    @one_or_more_words_pattern = /(?u:(?:\w+\ )*\w+)/
+    @many_words_pattern = /(?u:(?:\w+\ )+\w+)/
 
-    @name_with_nickname_pattern = /(?:\'*\w+\'*\ )+(?:\'*\w+\'*)/u
+    @name_with_nickname_pattern = /(?u:(?:'*\w+'*\ )+(?:'*\w+'*))/
 
-    @compass_letter_pattern = /^[NEOS]{1,2}(?:p?[NEOS]{1,2})?$/u
+    @compass_letter_pattern = /^[NEOS]{1,2}(?:p?[NEOS]{1,2})?$/
     @compass_number_pattern = /^\d+(?:.\d\d?)?$/
   end
 

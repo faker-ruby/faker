@@ -1285,8 +1285,6 @@ es-AR:
                 - Zárate
             city:
                 - "#{city_names}"
-                - "#{city_names}"
-                - "#{city_names}"
                 - "#{male_city_saint_prefix} #{Name.male_first_name}"
                 - "#{female_city_saint_prefix} #{Name.female_first_name}"
                 - "#{city_prefix} #{male_city_saint_prefix} #{Name.male_first_name}"
@@ -1295,7 +1293,6 @@ es-AR:
                 - "#{female_city_saint_prefix} #{Name.female_first_name} #{city_suffix}"
                 - "#{army_city_prefix} #{Name.last_name}"
                 - "#{army_city_prefix} #{Name.last_name}"
-                - "#{city_prefix} #{army_city_prefix} #{Name.last_name}"
                 - "#{city_prefix} #{army_city_prefix} #{Name.last_name}"
 
             # -- state
@@ -3397,7 +3394,7 @@ es-AR:
                 - "2### 6#####"
                 - "3### 6#####"
                 - "11-7###-####"
-        country_code: "54"
+        country_code: ["54"]
 
         bank:
             name:

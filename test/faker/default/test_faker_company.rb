@@ -28,8 +28,8 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_spanish_organisation_number
-    cif = @tester.spanish_organisation_number(organization_type: 'A')
-    assert @tester.send(:spanish_cif_control_digit, 'A', cif[1..7]) == cif[-1].to_i
+    assert cif_valid?(@tester.spanish_organisation_number(organization_type: 'A'))
+    assert cif_valid?(@tester.spanish_organisation_number)
   end
 
   def test_swedish_organisation_number
@@ -268,5 +268,40 @@ class TestFakerCompany < Test::Unit::TestCase
     [2, 4, 10, 3, 5, 9, 4, 6, 8].map.with_index.reduce(0) do |v, i|
       v + i[0] * number[i[1]].to_i
     end % 11 % 10
+  end
+
+  def cif_valid?(cif)
+    letters_cif = %w[A B C D E F G H J N P Q R S U V W]
+    letter_cif_number = %w[P Q S W]
+    letters_cif_control = %w[J A B C D E F G H I]
+    regex_cif = /^(#{letters_cif.join('|')})-?(\d{7})-?(\d|#{letters_cif_control.join('|')})$/
+
+    if cif =~ regex_cif
+      number = Regexp.last_match(2)
+      first_letter = Regexp.last_match(1)
+      province_code = number[0..1]
+      actual_control = Regexp.last_match(3)
+
+      total = number.split('').each_with_index.inject(0) do |acc, (element, index)|
+        acc + if index.even?
+                (element.to_i * 2).digits.inject(:+)
+              else
+                element.to_i
+              end
+      end
+
+      decimal = total.digits.first
+      expected_control = decimal != 0 ? 10 - decimal : decimal
+
+      # Control code must be a letter
+      return letters_cif_control[expected_control] if letter_cif_number.include?(first_letter) ||
+                                                      province_code == '00'
+
+      # Control code will be a number or a letter
+      return [expected_control.to_s,
+              letters_cif_control[expected_control]].include?(actual_control)
+    end
+
+    false
   end
 end

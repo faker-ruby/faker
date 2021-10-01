@@ -108,6 +108,19 @@ module Faker
       def metric_measurement
         fetch('food.metric_measurements')
       end
+
+      ##
+      # Retrieves ethnic category
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.ethnic_category #=> "Indian cuisine"
+      #
+      # @faker.version next
+      def ethnic_category
+        fetch('food.ethnic_category')
+      end
     end
   end
 end

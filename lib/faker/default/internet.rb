@@ -2,6 +2,18 @@
 
 module Faker
   class Internet < Base
+    # Private, Host, and Link-Local network address blocks as defined in https://en.wikipedia.org/wiki/IPv4#Special-use_addresses
+    PRIVATE_IPV4_ADDRESS_RANGES = [
+      [10..10,   0..255,   0..255, 1..255], # 10.0.0.0/8     - Used for local communications within a private network
+      [100..100, 64..127,  0..255, 1..255], # 100.64.0.0/10  - Shared address space for communications between an ISP and its subscribers
+      [127..127, 0..255,   0..255, 1..255], # 127.0.0.0/8    - Used for loopback addresses to the local host
+      [169..169, 254..254, 0..255, 1..255], # 169.254.0.0/16 - Used for link-local addresses between two hosts on a single link when
+      [172..172, 16..31,   0..255, 1..255], # 172.16.0.0/12  - Used for local communications within a private network
+      [192..192, 0..0,     0..0,   1..255], # 192.0.0.0/24   - IETF Protocol Assignments
+      [192..192, 168..168, 0..255, 1..255], # 192.168.0.0/16 - Used for local communications within a private network
+      [198..198, 18..19,   0..255, 1..255]  # 198.18.0.0/15  - Used for benchmark testing of inter-network communications between subnets
+    ].each(&:freeze).freeze
+
     class << self
       ##
       # Returns the email address
@@ -34,7 +46,7 @@ module Faker
       end
 
       ##
-      # Returns the email address with doamin either gmail.com, yahoo.com or hotmail.com
+      # Returns the email address with domain either gmail.com, yahoo.com or hotmail.com
       #
       # @return [String]
       #
@@ -80,10 +92,10 @@ module Faker
       #
       # @return [String]
       #
-      # @param specifier [Integer, Range] When int value passed it returns the username longer than specifier. Max value can be 10^6
-      # @param separator [Array]
+      # @param specifier [Integer, Range, String] When int value passed it returns the username longer than specifier. Max value can be 10^6
+      # @param separators [Array]
       #
-      # @wxample
+      # @example
       #   Faker::Internet.username(specifier: 10)                     #=> "lulu.goodwin"
       #   Faker::Internet.username(specifier: 5..10)                  #=> "morris"
       #   Faker::Internet.username(specifier: 5..10)                  #=> "berryberry"
@@ -227,8 +239,6 @@ module Faker
         end
       end
 
-      # rubocop:disable Style/AsciiComments
-
       ##
       # Fixes ä, ö, ü, ß characters in string passed with ae, oe, ue, ss resp.
       #
@@ -247,7 +257,6 @@ module Faker
 
         Char.fix_umlauts(string)
       end
-      # rubocop:enable Style/AsciiComments
 
       ##
       # Returns the domain word for internet
@@ -264,7 +273,7 @@ module Faker
       #
       # @return [String]
       #
-      # @wxample
+      # @example
       #   Faker::Internet.domain_suffix   #=> "com"
       #   Faker::Internet.domain_suffix   #=> "biz"
       def domain_suffix
@@ -311,12 +320,7 @@ module Faker
       # @example
       #   Faker::Internet.private_ip_v4_address   #=> "127.120.80.42"
       def private_ip_v4_address
-        addr = nil
-        loop do
-          addr = ip_v4_address
-          break if private_net_checker[addr]
-        end
-        addr
+        sample(PRIVATE_IPV4_ADDRESS_RANGES).map { |range| rand(range) }.join('.')
       end
 
       ##
@@ -387,7 +391,7 @@ module Faker
       end
 
       ##
-      # Returns lambda function to check address passed is reserverd or not
+      # Returns lambda function to check address passed is reserved or not
       #
       # @return [Lambda]
       #
@@ -479,7 +483,9 @@ module Faker
         end
 
         glue ||= sample(%w[- _])
-        (words || Faker::Lorem.words(number: 2).join(' ')).delete(',.').gsub(' ', glue).downcase
+        return words.delete(',.').gsub(' ', glue).downcase unless words.nil?
+
+        sample(translate('faker.internet.slug'), 2).join(glue)
       end
 
       ##
@@ -557,6 +563,24 @@ module Faker
         s = Array.new(length) { sample(char_range) }.join
         s += '=' if padding
         s
+      end
+
+      ##
+      # Produces a randomized hash of internet user details
+      # @example
+      #   Faker::Internet.user #=> { username: 'alexie', email: 'alexie@example.net' }
+      #
+      # @example
+      #   Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'alexie@example.net', password: 'DtEf9P8wS31iMyC' }
+      #
+      # @return [hash]
+      #
+      # @faker.version next
+      def user(*args)
+        user_hash = {}
+        args = %w[username email] if args.empty?
+        args.each { |arg| user_hash[:"#{arg}"] = send(arg) }
+        user_hash
       end
 
       alias user_name username
