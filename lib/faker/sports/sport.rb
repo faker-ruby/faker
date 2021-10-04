@@ -4,16 +4,28 @@ module Faker
   class Sport < Base
     class << self
       ##
-      # Produces the name of a sport from any category.
+      # Produces a sport from the modern olympics or paralympics, summer or winter.
+      #
+      # @param include_ancient [Boolean] If true, may produce a sport from the ancient olympics
+      # @param include_unusual [Boolean] If true, may produce an unusual (definitely not olympic) sport
       #
       # @return [String]
       #
       # @example
       #   Faker::Sports.sport #=> "Football"
+      # @example
+      #   Faker::Sports.sport(include_ancient: true) #=> "Chariot racing"
+      # @example
+      #   Faker::Sports.sport(include_unsual: true) #=> "Flugtag/Birdman"
+      # @example
+      #   Faker::Sports.sport(include_ancient:true, include_unusual: true) #=> "Water polo"
       #
       # @faker.version next
-      def sport
-        sample(fetch_all('sport.summer_olympics') + fetch_all('sport.winter_olympics') + fetch_all('sport.summer_paralympics') + fetch_all('sport.winter_paralympics') + fetch_all('sport.ancient_olympics') + fetch_all('sport.unusual'))
+      def sport(include_ancient: false, include_unusual: false)
+        sports = fetch_all('sport.summer_olympics') + fetch_all('sport.winter_olympics') + fetch_all('sport.summer_paralympics') + fetch_all('sport.winter_paralympics')
+        sports << fetch_all('sport.ancient_olympics') if include_ancient
+        sports << fetch_all('sport.unusual') if include_unusual
+        sample(sports)
       end
 
       ##
@@ -79,19 +91,6 @@ module Faker
       # @faker.version next
       def unusual_sport
         fetch('sport.unusual')
-      end
-
-      ##
-      # Produces a sport from the modern olympics or paralympics, summer or winter.
-      #
-      # @return [String]
-      #
-      # @example
-      #   Faker::Sports.modern_olympics_sport #=> "Skeleton"
-      #
-      # @faker.version next
-      def modern_olympics_sport
-        sample(fetch_all('sport.summer_olympics') + fetch_all('sport.winter_olympics') + fetch_all('sport.summer_paralympics') + fetch_all('sport.winter_paralympics'))
       end
 
       ##

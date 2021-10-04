@@ -11,6 +11,18 @@ class TestFakerSports < Test::Unit::TestCase
     assert @tester.sport.match(/\w+/)
   end
 
+  def test_sport_with_ancient_allowed
+    assert @tester.sport(include_ancient: true).match(/\w+/)
+  end
+
+  def test_sport_with_unusual_allowed
+    assert @tester.sport(include_unusual: true).match(/\w+/)
+  end
+
+  def test_sport_with_ancient_and_unusual_allowed
+    assert @tester.sport(include_ancient: true, include_unusual: true).match(/\w+/)
+  end
+
   def test_summer_olympics
     assert @tester.summer_olympics_sport.match(/\w+/)
   end
@@ -29,10 +41,6 @@ class TestFakerSports < Test::Unit::TestCase
 
   def test_unusual_sports
     assert @tester.unusual_sport.match(/\w+/)
-  end
-
-  def test_modern_olympics
-    assert @tester.modern_olympics_sport.match(/\w+/)
   end
 
   def test_ancient_olympics
