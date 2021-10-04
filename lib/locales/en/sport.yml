@@ -1,0 +1,27 @@
+en:
+  faker:
+    sport:
+      summer_olympics: # Source https://olympics.com/en/sports/summer-olympics
+        - 3x3 basketball
+        - Archery
+        - Artistic gymnastics
+      winter_olympics: # Source https://olympics.com/en/sports/winter-olympics
+        - Alpine skiing
+        - Biathlon
+        - Bobsleigh
+      summer_paralympics: # Source https://www.paralympic.org/sports
+        - Archery
+        - Athletics
+        - Badminton
+      winter_paralympics: # Source https://www.paralympic.org/sports
+        - Alpine skiing
+        - Biathlon
+        - Cross-country skiing
+      ancient_olympics: # Source https://olympics.com/ioc/ancient-olympic-games/the-sports-events
+        - Boxing
+        - Chariot racing
+        - Discus
+      unusual:
+        - Apple Racing
+        - Ban'ei
+        - Bathtubbing

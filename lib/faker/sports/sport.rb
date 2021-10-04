@@ -13,7 +13,7 @@ module Faker
       #
       # @faker.version next
       def sport
-        'Football'
+        sample(fetch_all('sport.summer_olympics') + fetch_all('sport.winter_olympics') + fetch_all('sport.summer_paralympics') + fetch_all('sport.winter_paralympics') + fetch_all('sport.ancient_olympics') + fetch_all('sport.unusual'))
       end
 
       ##
@@ -26,7 +26,7 @@ module Faker
       #
       # @faker.version next
       def summer_olympics_sport
-        'Archery'
+        fetch('sport.summer_olympics')
       end
 
       ##
@@ -39,7 +39,7 @@ module Faker
       #
       # @faker.version next
       def winter_olympics_sport
-        'Bobsleigh'
+        fetch('sport.winter_olympics')
       end
 
       ##
@@ -52,7 +52,7 @@ module Faker
       #
       # @faker.version next
       def summer_paralympics_sport
-        'Wheelchair Basketball'
+        fetch('sport.summer_paralympics')
       end
 
       ##
@@ -65,7 +65,7 @@ module Faker
       #
       # @faker.version next
       def winter_paralympics_sport
-        'Para Ice Hockey'
+        fetch('sport.winter_paralympics')
       end
 
       ##
@@ -78,7 +78,7 @@ module Faker
       #
       # @faker.version next
       def unusual_sport
-        'Camel Jumping'
+        fetch('sport.unusual')
       end
 
       ##
@@ -91,7 +91,7 @@ module Faker
       #
       # @faker.version next
       def modern_olympics_sport
-        'Skeleton'
+        sample(fetch_all('sport.summer_olympics') + fetch_all('sport.winter_olympics') + fetch_all('sport.summer_paralympics') + fetch_all('sport.winter_paralympics'))
       end
 
       ##
@@ -104,7 +104,7 @@ module Faker
       #
       # @faker.version next
       def ancient_olympics_sport
-        'Pankration'
+        fetch('sport.ancient_olympics')
       end
     end
   end
