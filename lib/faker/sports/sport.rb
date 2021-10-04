@@ -12,13 +12,13 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Sports.sport #=> "Football"
+      #   Faker::Sport.sport #=> "Football"
       # @example
-      #   Faker::Sports.sport(include_ancient: true) #=> "Chariot racing"
+      #   Faker::Sport.sport(include_ancient: true) #=> "Chariot racing"
       # @example
-      #   Faker::Sports.sport(include_unsual: true) #=> "Flugtag/Birdman"
+      #   Faker::Sport.sport(include_unsual: true) #=> "Flugtag/Birdman"
       # @example
-      #   Faker::Sports.sport(include_ancient:true, include_unusual: true) #=> "Water polo"
+      #   Faker::Sport.sport(include_ancient:true, include_unusual: true) #=> "Water polo"
       #
       # @faker.version next
       def sport(include_ancient: false, include_unusual: false)
@@ -34,7 +34,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Sports.summer_olympics_sport #=> "Archery"
+      #   Faker::Sport.summer_olympics_sport #=> "Archery"
       #
       # @faker.version next
       def summer_olympics_sport
@@ -47,7 +47,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Sports.winter_olympics_sport #=> "Bobsleigh"
+      #   Faker::Sport.winter_olympics_sport #=> "Bobsleigh"
       #
       # @faker.version next
       def winter_olympics_sport
@@ -60,7 +60,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Sports.summer_paralympics_sport #=> "Wheelchair Basketball"
+      #   Faker::Sport.summer_paralympics_sport #=> "Wheelchair Basketball"
       #
       # @faker.version next
       def summer_paralympics_sport
@@ -73,7 +73,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Sports.winter_paralympics_sport #=> "Para Ice Hockey"
+      #   Faker::Sport.winter_paralympics_sport #=> "Para Ice Hockey"
       #
       # @faker.version next
       def winter_paralympics_sport
@@ -86,7 +86,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Sports.unusual_sport #=> "Camel Jumping"
+      #   Faker::Sport.unusual_sport #=> "Camel Jumping"
       #
       # @faker.version next
       def unusual_sport
@@ -99,7 +99,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Sports.ancient_olympics_sport #=> "Pankration"
+      #   Faker::Sport.ancient_olympics_sport #=> "Pankration"
       #
       # @faker.version next
       def ancient_olympics_sport
