@@ -17,6 +17,19 @@ module Faker
       end
 
       ##
+      # Produces a gender marker.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Gender.short_type #=> "x"
+      #
+      # @faker.version 1.9.0
+      def short_type
+        fetch('gender.short_types')
+      end
+
+      ##
       # Produces either 'Male' or 'Female'.
       #
       # @return [String]

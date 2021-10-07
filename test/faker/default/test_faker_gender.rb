@@ -11,6 +11,10 @@ class TestFakerGender < Test::Unit::TestCase
     assert @tester.type.match(/\w+/)
   end
 
+  def test_short_type
+    assert @tester.short_type.match(/f|m|x/)
+  end
+
   def test_binary_type
     assert @tester.binary_type.match(/\w+/)
   end
