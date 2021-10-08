@@ -20,8 +20,8 @@ Faker::Stripe.month #=> "10"
 Faker::Stripe.year #=> "2018" # This will always be a year in the future
 
 # Keyword arguments: card_type
-Faker::Stripe.ccv #=> "123"
-Faker::Stripe.ccv(card_type: "amex") #=> "1234"
+Faker::Stripe.cvc #=> "123"
+Faker::Stripe.cvc(card_type: "amex") #=> "1234"
 ```
 
 ProTip:
