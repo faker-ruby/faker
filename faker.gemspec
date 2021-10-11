@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   # Stop upgrading SimpleCov until the following issue will be resolved.
   # https://github.com/codeclimate/test-reporter/issues/418
   spec.add_development_dependency('simplecov', '0.17.1', '< 0.18')
-  spec.add_development_dependency('test-unit', '3.4.7')
+  spec.add_development_dependency('test-unit', '3.4.8')
   spec.add_development_dependency('timecop', '0.9.4')
   spec.add_development_dependency('yard', '0.9.26')
 end
