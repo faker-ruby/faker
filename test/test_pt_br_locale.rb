@@ -147,9 +147,6 @@ class TestPtBrLocale < Test::Unit::TestCase
   end
 
   def test_pt_br_animal_methods
-    assert Faker::Animal.name.is_a? String
-    assert Faker::Animal.gender.is_a? String
-    assert Faker::Animal.phylum.is_a? String
-    assert Faker::Animal.class.is_a? String
+    assert Faker::Creature::Animal.name.is_a? String
   end
 end
