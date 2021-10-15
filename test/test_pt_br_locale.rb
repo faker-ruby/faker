@@ -145,4 +145,8 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Gender.binary_type.is_a? String
     assert_includes(%w[Feminino Masculino], Faker::Gender.binary_type)
   end
+
+  def test_pt_br_animal_methods
+    assert Faker::Creature::Animal.name.is_a? String
+  end
 end
