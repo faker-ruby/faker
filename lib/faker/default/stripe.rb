@@ -138,27 +138,7 @@ module Faker
         (card_type.to_s == 'amex' ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s
       end
 
-      ##
-      # Produces a random cvc number.
-      #
-      # @param card_type [String] Specific valid card type.
-      # @return [String]
-      #
-      # @example
-      #   Faker::Stripe.cvc #=> "123"
-      #   Faker::Stripe.cvc(card_type: "amex") #=> "1234"
-      #
-      # @faker.version 1.9.0
-      def cvc(legacy_card_type = NOT_GIVEN, card_type: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :card_type if legacy_card_type != NOT_GIVEN
-        end
-
-        (card_type.to_s == 'amex' ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s
-      end
-
-      extend Gem::Deprecate
-      deprecate :ccv, :cvc, 2021, 12
+      alias cvc ccv
     end
   end
 end
