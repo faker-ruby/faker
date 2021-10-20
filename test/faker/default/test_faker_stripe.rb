@@ -55,6 +55,14 @@ class TestFakerStripe < Test::Unit::TestCase
     assert @tester.year.match(/\A\d{4}\z/)
   end
 
+  def test_valid_ccv
+    assert @tester.ccv.match(/\A\d{3}\z/)
+  end
+
+  def test_valid_amex_ccv
+    assert @tester.ccv(card_type: 'amex').match(/\A\d{4}\z/)
+  end
+
   def test_valid_cvc
     assert @tester.cvc.match(/\A\d{3}\z/)
   end
