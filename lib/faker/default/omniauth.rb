@@ -431,6 +431,50 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response from Auth0.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-auth0.
+      #
+      # @faker.version next
+      def auth0(name: nil, email: nil, uid: nil)
+        uid ||= "auth0|#{Number.hexadecimal(digits: 24)}"
+        auth = Omniauth.new(name: name, email: email)
+        {
+          provider: 'auth0',
+          uid: uid,
+          info: {
+            name: uid,
+            nickname: auth.name,
+            email: auth.email,
+            image: image
+          },
+          credentials: {
+            expires_at: Time.forward.to_i,
+            expires: true,
+            token_type: 'Bearer',
+            id_token: Crypto.sha256,
+            token: Crypto.md5,
+            refresh_token: Crypto.md5
+          },
+          extra: {
+            raw_info: {
+              email: auth.email,
+              email_verified: true,
+              iss: 'https://auth0.com/',
+              sub: uid,
+              aud: 'Auth012345',
+              iat: Time.forward.to_i,
+              exp: Time.forward.to_i
+            }
+          }
+        }
+      end
+
       private
 
       def gender
