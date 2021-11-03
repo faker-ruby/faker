@@ -161,7 +161,43 @@ module Faker
         between(from: from, to: to).to_date
       end
 
+      ##
+      # Produces a random weekday within the specified date range.
+      #
+      # @param from [Date, String] The start of the usable date range.
+      # @param to [Date, String] The end of the usable date range.
+      # @return [Date]
+      #
+      # @example if used with or without Rails (Active Support)
+      #   Faker::Date.weekday_between(from: '2021-01-02', to: '2021-01-04') #=> #<Date: 2021-01-04>
+      #
+      # @example if used with Rails (Active Support)
+      #   Faker::Date.weekday_between(from: 1.day.from_now, to: 1.year.from_now) #=> #<Date: 2020-11-03>
+      #
+      # @faker.version next
+      def weekday_between(from:, to:)
+        from = get_date_object(from)
+        to   = get_date_object(to)
+
+        raise ArgumentError, 'Date range must contain at least one weekday' unless contains_weekday?(from, to)
+
+        loop do
+          candidate_date = Faker::Base.rand_in_range(from, to)
+
+          break candidate_date if weekday?(candidate_date)
+        end
+      end
+
       private
+
+      def weekday?(day)
+        (1..5).cover?(day.wday)
+      end
+
+      def contains_weekday?(from, to)
+        from, to = to, from if to < from
+        (from..to).any? { |day| weekday?(day) }
+      end
 
       def birthday_date(date, age)
         year = date.year - age

@@ -180,4 +180,33 @@ class TestFakerDate < Test::Unit::TestCase
       assert date.year == year
     end
   end
+
+  def test_weekday_between
+    from = Date.parse('2012-01-01')
+    to   = Date.parse('2013-01-01')
+
+    100.times do
+      date = @tester.weekday_between(from: from, to: to)
+      assert (1..5).cover? date.wday
+    end
+  end
+
+  def test_weekday_between_with_range_containing_no_weekdays
+    from = Date.parse('2021-01-02')
+    to   = Date.parse('2021-01-03')
+
+    assert_raise ArgumentError do
+      @tester.weekday_between(from: from, to: to)
+    end
+  end
+
+  def test_weekday_between_with_reversed_range
+    from = Date.parse('2001-01-01')
+    to   = Date.parse('1999-01-01')
+
+    25.times do
+      date = @tester.weekday_between(from: from, to: to)
+      assert (1..5).cover? date.wday
+    end
+  end
 end

@@ -36,4 +36,9 @@ Faker::Date.in_date_period(year: 2018, month: 2) #=> #<Date: 2018-02-26>
 # Keyword arguments: month
 Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
 
+# Random weekday within the specified range
+# Keyword arguments: from ,to
+Faker::Date.weekday_between(from: '2021-01-02', to: '2021-01-04') #=> #<Date: 2021-01-04>
+# If used with Rails (the Active Support gem), additional options are available:
+Faker::Date.weekday_between(from: 1.day.from_now, to: 1.year.from_now) #=> #<Date: 2020-11-03>
 ```
