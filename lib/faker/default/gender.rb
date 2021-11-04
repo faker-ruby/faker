@@ -24,7 +24,7 @@ module Faker
       # @example
       #   Faker::Gender.short_type #=> "x"
       #
-      # @faker.version 1.9.0
+      # @faker.version next
       def short_type
         fetch('gender.short_types')
       end
