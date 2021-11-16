@@ -475,7 +475,84 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response from Keycloak.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-keycloak.
+      #
+      # @faker.version next
+      def keycloak(name: nil, email: nil, uid: nil)
+        uid ||= keycloak_id
+        session_id = keycloak_id
+        auth = Omniauth.new(name: name, email: email)
+        {
+          provider: 'keycloakopenid',
+          uid: uid,
+          info: {
+            name: auth.name,
+            email: auth.email,
+            first_name: auth.first_name,
+            last_name: auth.last_name
+          },
+          credentials: {
+            expires_at: Time.forward.to_i,
+            expires: true,
+            token: Crypto.md5,
+            refresh_token: Crypto.md5
+          },
+          extra: {
+            raw_info: {
+              email: auth.email,
+              email_verified: true,
+              iss: 'https://example.com/auth/realms/test_realms',
+              sub: uid,
+              aud: 'account',
+              iat: Time.forward.to_i,
+              exp: Time.forward.to_i,
+              auth_time: Time.forward.to_i,
+              typ: 'Bearer',
+              azp: 'keycloakapp',
+              jti: keycloak_id,
+              session_state: session_id,
+              acr: '0',
+              'allowed-origins': [
+                '/*'
+              ],
+              realm_access: {
+                roles: %w[
+                  offline_access
+                  uma_authorization
+                ]
+              },
+              resource_access: {
+                account: {
+                  roles: %w[
+                    manage-account
+                    manage-account-links
+                    view-profile
+                  ]
+                }
+              },
+              scope: 'openid profile email',
+              sid: session_id,
+              name: auth.name,
+              preferred_username: auth.name,
+              given_name: auth.last_name,
+              family_name: auth.first_name
+            }
+          }
+        }
+      end
+
       private
+
+      def keycloak_id
+        "#{Number.hexadecimal(digits: 8)}-#{Number.hexadecimal(digits: 4)}-#{Number.hexadecimal(digits: 4)}-#{Number.hexadecimal(digits: 4)}-#{Number.hexadecimal(digits: 12)}"
+      end
 
       def gender
         shuffle(%w[male female]).pop

@@ -321,4 +321,63 @@ Faker::Omniauth.auth0 #=>
     }
   }
 }
+
+Faker::Omniauth.keycloak #=>
+{
+  :provider => "keycloakopenid",
+  :uid => "b8b447aa-c1c6-86b4-c53d-b6032c30bc1b",
+  :info => {
+    :name => "Malcom Kuphal",
+    :email => "kuphal_malcom@example.net",
+    :first_name => "Malcom",
+    :last_name => "Kuphal"
+  },
+  :credentials => {
+    :expires_at => 1639923870,
+    :expires => true,
+    :token => "cf0ce5029fd8fadfd2b101775e3abe21",
+    :refresh_token => "54f93d469d45abf2b6f91e6526373914"
+  },
+  :extra => {
+    :raw_info => {
+      :email => "kuphal_malcom@example.net",
+      :email_verified => true,
+      :iss => "https://example.com/auth/realms/test_realms",
+      :sub => "b8b447aa-c1c6-86b4-c53d-b6032c30bc1b",
+      :aud => "account",
+      :iat => 1647719660,
+      :exp => 1643763126,
+      :auth_time => 1668119892,
+      :typ => "Bearer",
+      :azp => "keycloakapp",
+      :jti => "d2a105c8-248d-d86d-3a11-30d3bda55648",
+      :session_state => "ac8e6c51-0161-276b-aada-8b360aa16e15",
+      :acr => "0",
+      :"allowed-origins" => [
+          "/*"
+      ],
+      :realm_access => {
+        :roles => [
+          "offline_access",
+          "uma_authorization"
+        ]
+      },
+      :resource_access => {
+        :account => {
+          :roles => [
+            "manage-account",
+            "manage-account-links",
+            "view-profile"
+          ]
+        }
+      },
+      :scope => "openid profile email",
+      :sid => "ac8e6c51-0161-276b-aada-8b360aa16e15",
+      :name => "Malcom Kuphal",
+      :preferred_username => "Malcom Kuphal",
+      :given_name => "Kuphal",
+      :family_name => "Malcom"
+    }
+  }
+}
 ```

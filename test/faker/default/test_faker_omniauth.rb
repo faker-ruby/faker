@@ -534,6 +534,51 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert raw_info[:email_verified]
   end
 
+  def test_omniauth_keycloak
+    auth            = @tester.keycloak
+    info            = auth[:info]
+    credentials     = auth[:credentials]
+    extra           = auth[:extra]
+    raw_info        = extra[:raw_info]
+    first_name      = info[:first_name].downcase
+    last_name       = info[:last_name].downcase
+
+    assert_equal 'keycloakopenid', auth[:provider]
+    assert_instance_of String, auth[:uid]
+    assert_equal 36, auth[:uid].length
+    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert_instance_of String, info[:first_name]
+    assert_instance_of String, info[:last_name]
+    assert_instance_of String, info[:name]
+    assert_equal true, credentials[:expires]
+    assert_instance_of String, credentials[:token]
+    assert_instance_of String, credentials[:refresh_token]
+    assert_instance_of Integer, credentials[:expires_at]
+    assert_instance_of Integer, raw_info[:exp]
+    assert_instance_of Integer, raw_info[:iat]
+    assert_instance_of Integer, raw_info[:auth_time]
+    assert_equal 'https://example.com/auth/realms/test_realms', raw_info[:iss]
+    assert_instance_of String, raw_info[:aud]
+    assert_instance_of String, raw_info[:typ]
+    assert_instance_of String, raw_info[:azp]
+    assert_instance_of String, raw_info[:jti]
+    assert_instance_of String, raw_info[:acr]
+    assert_instance_of String, raw_info[:scope]
+    assert_instance_of String, raw_info[:session_state]
+    assert_instance_of String, raw_info[:sid]
+    assert_equal raw_info[:sid], raw_info[:session_state]
+    assert_equal auth[:uid], raw_info[:sub]
+    assert_equal info[:email], raw_info[:email]
+    assert_equal info[:name], raw_info[:name]
+    assert_equal info[:name], raw_info[:preferred_username]
+    assert_equal info[:first_name], raw_info[:family_name]
+    assert_equal info[:last_name], raw_info[:given_name]
+    assert raw_info[:email_verified]
+    assert_instance_of Array, raw_info['allowed-origins'.to_sym]
+    assert_instance_of Hash, raw_info[:realm_access]
+    assert_instance_of Hash, raw_info[:resource_access]
+  end
+
   def word_count(string)
     string.split(' ').length
   end
