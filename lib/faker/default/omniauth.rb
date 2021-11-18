@@ -65,7 +65,7 @@ module Faker
               picture: image,
               gender: gender,
               birthday: Date.backward(days: 36_400).strftime('%Y-%m-%d'),
-              local: 'en',
+              locale: 'en',
               hd: "#{Company.name.downcase}.com"
             },
             id_info: {

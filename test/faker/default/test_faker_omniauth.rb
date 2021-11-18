@@ -37,7 +37,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, extra_raw_info[:picture]
     assert gender?(extra_raw_info[:gender])
     assert_instance_of String, extra_raw_info[:birthday]
-    assert_equal 'en', extra_raw_info[:local]
+    assert_equal 'en', extra_raw_info[:locale]
     assert_instance_of String, extra_raw_info[:hd]
     assert_equal 'accounts.google.com', id_info[:iss]
     assert_instance_of String, id_info[:at_hash]
