@@ -19,8 +19,8 @@ de-AT:
       default_country: [Österreich]
 
     company:
-      suffix: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OHG]
-      legal_form: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OHG]
+      suffix: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OG]
+      legal_form: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OG]
       name:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name}-#{Name.last_name}"
