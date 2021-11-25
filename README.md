@@ -136,6 +136,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Boolean](doc/default/boolean.md)
   - [Faker::BossaNova](doc/default/bossa_nova.md)
   - [Faker::Business](doc/default/business.md)
+  - [Faker::Camera](doc/default/camera.md)
   - [Faker::Cannabis](doc/default/cannabis.md)
   - [Faker::ChileRut](doc/default/chile_rut.md)
   - [Faker::ChuckNorris](doc/default/chuck_norris.md)
