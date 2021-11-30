@@ -359,7 +359,7 @@ formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
 allowing you to get different formats by switching locales.
 Just set the locale you want as shown below, and Faker will take care of the rest.
 
-```
+```ruby
 Faker::Config.locale = 'es'
 # or
 Faker::Config.locale = :es
