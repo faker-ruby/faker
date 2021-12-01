@@ -356,9 +356,14 @@ Since you may want to make addresses and other types of data look different
 depending on where in the world you are (US postal codes vs. UK postal codes,
 for example), Faker uses the I18n gem to store strings (like state names) and
 formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
-allowing you to get different formats by switching locales.  Just set
-Faker::Config.locale to the locale you want, and Faker will take care of the
-rest.
+allowing you to get different formats by switching locales.
+Just set the locale you want as shown below, and Faker will take care of the rest.
+
+```ruby
+Faker::Config.locale = 'es'
+# or
+Faker::Config.locale = :es
+```
 
 If your locale doesn't already exist, create it in the `lib/locales` directory
 and you can then override or add elements to suit your needs. See more about how to
