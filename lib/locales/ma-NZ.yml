@@ -1,0 +1,40 @@
+# Te Reo Māori is the language of the Indigenous peoples of Aotearoa (and an official language of New Zealand)
+# Te Reo Māori names first names, last names and locations of Aotearoa
+
+# Sources: 
+#   - https://maorimaps.com/
+#   - https://maoridictionary.co.nz/
+
+ma-NZ:
+  faker:
+    name:
+      first_name: [
+        Anahera, Aroha, Ataahua, Awhina, Hana, Hoani, Hohepa, Hone, Ihaia, Ihaka, Kara, Kauri, Maia, Manaaki, Manaia, Manawa, Mārama, 
+        Matai, Mikaere, Moana, Ngaire, Nikau, Rangi, Rawiri, Ripeka, Tai, Taika, Tama, Tamati, Tane, Tangaroa, Tawhiri, 
+        Te Ao, Te Ariki, Te Aroha, Te Whiti, Tu, Tui, Whina, Wiremu, 
+      ]
+      surname: [
+        Arahanga, Heke, Henare, Hiko, Houra, Karaka, Mahia, Mako, Manawaiti, Matene, Mihaere, Mikaere, Ngata, Parata, Paratene, Ruakere, 
+        Tahere, Tamahori, Taumata, Tawhiao, Te Kanawa, Te Whiti, Timutimu, Tuhaka, Turei, Waikari, Waititi, Wharerau, Wikaira, Winiata, Wiparata, 
+      ]
+      last_name:
+        - "#{surname}"
+        - "#{surname}-#{surname}"
+        - "#{surname} #{surname}"
+      name_with_middle:
+        - "#{first_name} #{last_name} #{last_name}"
+        - "#{first_name} #{first_name} #{last_name}"
+    locations:
+      region: [Te Tai Hauāuru, Te Tai Rāwhiti, Te Tai Tonga, Te Tai Tokerau]
+      postcode: ['0###', '2###', '3###', '4###', '5###', '6###', '7###', '8###', '9###']
+      building_number: ['####', '###', '##', '#/##', '#/#', '#?', '?/##', '?/##?']
+      secondary_address: ['RD #', 'Apt #', 'Unit #', 'Level #']
+      landscape_elements: [
+        Tātahi, Roto, Moana, Awa, Pa, Maunga, Māra, Motu, Ngāhere
+      ]
+      default_country: [Aotearoa]
+      city: [
+        Ahuriri, Awaroa, Heretaunga, Hokitika, Kā Roimata o Hine Hukatere, Kaikōura, Kaitaia, Kaiwaewae, Kapanga, Kāpiti, Manawatu, Manukau, Māwhera, Ngāmotu, Ngāruawahia, Ngāruawahia, Ōamaru, Ōtaki,
+        Otautahi, Ōtepoti, Papawai, Pā nui o Hau, Rānui, Rotorua-nui-a-Kahumatamomoe, Tāmaki Makaurau, Taranaki, Taupo-nui-a-Tia, Tauranga-Moana, Te Moeka o Tūawe, Te Tai Poutini, Te Waipounamu, Te Whanganui-a-Tara, Te Tihi-o-MaruTōtaranui, 
+        Tūranganui-a-Kiwa, Waiharakeke, Waihōpai, Waikato, Whakatāne, Whakatū, Whanganui, Whangarei, Wharekākā,
+      ]
