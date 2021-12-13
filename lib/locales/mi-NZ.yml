@@ -1,4 +1,4 @@
-ma-NZ:
+mi-NZ:
   faker:
     name:
       first_name:
@@ -266,10 +266,10 @@ ma-NZ:
         - Whangarei
         - Wharekākā
       mail_box:
-        - 'PO Box ##'
-        - 'PO Box #####'
-        - 'CMB ##'
-        - CMB C#
+        - "PO Box ##"
+        - "PO Box #####"
+        - "CMB ##"
+        - "CMB C#"
       street_address:
         - "#{building_number} #{street_name}"
       full_address:
