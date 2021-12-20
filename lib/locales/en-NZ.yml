@@ -76,8 +76,6 @@ en-NZ:
       suffix: [Jr., Sr., I, II, III, IV, V, ONZM, OBE, GNZM, KNZM, CNZM, MNZM]
     company:
       suffix: [Ltd, Ltc, and Sons, Group, Brothers, Partners]
-    internet:
-      domain_suffix: [co.nz, com, net.nz, net, org.nz, org, govt.nz, iwi.nz]
     address:
       region_abbr: [NTL, AUK, WKO, BOP, GIS, HKB, TKI, MWT, WGN, TAS, NSN, MBH, WTC, CAN, OTA, STL]
       region: [Northland, Auckland, Waikato, Bay of Plenty, Gisborne, Hawkes Bay, Taranaki, Manawatu, Wellington, Tasman, Nelson, Marlborough, West Coast, Canterbury, Otago, Southland]

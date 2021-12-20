@@ -1705,9 +1705,6 @@ de-CH:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} und #{Name.last_name}"
 
-    internet:
-      domain_suffix: [com, net, biz, ch, de, li, at, ch, ch]
-
     country_code: ['41']
 
     phone_number:

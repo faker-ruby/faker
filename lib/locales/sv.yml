@@ -33,9 +33,6 @@ sv:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} #{suffix}"
 
-    internet:
-      domain_suffix: [se, nu, info, com, org]
-
     name:
       female_first_name: [Maria, Anna, Margareta, Elisabeth, Eva, Birgitta, Kristina, Karin, Elisabet, Marie, Åsa, Hjördis, Ingegärd]
       male_first_name: [Erik, Lars, Karl, Anders, Per, Johan, Nils, Lennart, Emil, Hans, Jörgen, Göran, Håkan, Kåre]

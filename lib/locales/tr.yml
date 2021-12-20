@@ -20,8 +20,6 @@ tr:
 
     internet:
       free_email: [gmail.com, hotmail.com.tr, yandex.com.tr]
-      domain_suffix: [co, com, com.tr, net, org]
-      safe_email: ['mesela.com']
 
     phone_number:
       formats: ["90-###-###-####", "90.###.###.####", "90 ### ### ####", "90##########"]

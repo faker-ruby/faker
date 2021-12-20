@@ -31,8 +31,6 @@ en-NG:
                   ]
       name_with_middle:
         - "#{first_name} #{last_name} #{last_name}"
-    internet:
-      domain_suffix: [com.ng, com, ng, net, edu.ng, org, gov.ng, org.ng, biz, co]
     address:
       street_suffix: [
                         Avenue, Branch, Bridge, Bypass, Road, Drive, Drive, Drives, Estate, Estates, Expressway, Extension, Falls, Flat, Flats, Freeway, Garden, Gardens,

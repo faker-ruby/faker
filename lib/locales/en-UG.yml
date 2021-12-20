@@ -1,7 +1,5 @@
 en-UG:
   faker:
-    internet:
-      domain_suffix: [ug, com, org, co.ug, org.ug, net]
     address:
       default_country: [Uganda, The Republic of Uganda, UG]
       # city names from http://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Uganda

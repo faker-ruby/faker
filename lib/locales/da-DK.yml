@@ -31,9 +31,6 @@ da-DK:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} #{suffix}"
 
-    internet:
-      domain_suffix: [dk, nu, com]
-
     name:
       first_name: [Peter, Jens, Lars, Michael, Henrik, Thomas, Søren, Jan, Christian, Niels, Anne, Kirsten, Hanne, Mette, Anna, Helle, Susanne, Lene, Maria, Marianne]
       last_name: [Nielsen, Jensen, Hansen, Pedersen, Andersen, Christensen, Larsen, Sørensen, Rasmussen, Jørgensen]

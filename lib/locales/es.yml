@@ -51,7 +51,6 @@ es:
 
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
-      domain_suffix: [com, es, info, com.es, org]
 
     name:
       male_first_name: [Adán, Agustín, Alberto, Alejandro, Alfonso, Alfredo, Andrés, Antonio, Armando, Arturo, Benito, Benjamín, Bernardo, Carlos, César, Claudio, Clemente, Cristian, Cristobal, Daniel, David, Diego, Eduardo, Emilio, Enrique, Ernesto, Esteban, Federico, Felipe, Fernando, Francisco, Gabriel, Gerardo, Germán, Gilberto, Gonzalo, Gregorio, Guillermo, Gustavo, Hernán, Homero, Horacio, Hugo, Ignacio, Jacobo, Jaime, Javier, Jerónimo, Jesús, Joaquín, Jorge, Jorge Luis, José, José Eduardo, José Emilio, José Luis, José María, Juan, Juan Carlos, Julio, Julio César, Lorenzo, Lucas, Luis, Luis Miguel, Manuel, Marco Antonio, Marcos, Mariano, Mario, Martín, Mateo, Miguel, Miguel Ángel, Nicolás, Octavio, Óscar, Pablo, Patricio, Pedro, Rafael, Ramiro, Ramón, Raúl, Ricardo, Roberto, Rodrigo, Rubén, Salvador, Samuel, Sancho, Santiago, Sergio, Teodoro, Timoteo, Tomás, Vicente, Víctor]

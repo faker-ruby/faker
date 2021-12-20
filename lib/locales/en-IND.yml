@@ -18,7 +18,6 @@ en-IND:
       default_country_code: ["IN"]
     internet:
       free_email: [gmail.com, yahoo.co.in, hotmail.com]
-      domain_suffix: [in, com, biz, info, name, net, org, co.in]
     company:
       suffix: [Pvt Ltd, Limited, Ltd, and Sons, Corp, Group, Brothers]
     phone_number:

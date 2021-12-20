@@ -11,7 +11,6 @@ en-PAK:
       default_country: [Pakistan, Islamic Republic of Pakistan]
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
-      domain_suffix: [pk, com, com.pk, name, net, org, html, edu]
     company:
       suffix: [Pvt Ltd, Limited, Ltd, and Sons, Corp, Group, Brothers, CO]
     country_code: ['92']

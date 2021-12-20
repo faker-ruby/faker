@@ -2,14 +2,7 @@ en:
   faker:
     internet:
       domain_suffix:
-        - com
-        - biz
-        - info
-        - name
-        - net
-        - org
-        - io
-        - co
+        - example
       free_email:
         - gmail.com
         - yahoo.com

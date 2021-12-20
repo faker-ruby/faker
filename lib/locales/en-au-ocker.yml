@@ -11,8 +11,6 @@ en-au-ocker:
       ocker_first_name: [Bazza, Bluey, Davo, Johno, Shano, Shazza, Wazza, Charl, Darl]
     company:
       suffix: [Pty Ltd, and Sons, Corp, Group, Brothers, Partners]
-    internet:
-      domain_suffix: [com.au, com, net.au, net, org.au, org]
     address:
       street_root: [Ramsay Street, Bonnie Doon, Cavill Avenue, Queen Street]
       street_name:
