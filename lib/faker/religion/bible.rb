@@ -6,7 +6,6 @@ module Faker
       flexible :bible
 
       class << self
-
         ##
         ## Returns a random bible character
         ##
@@ -40,7 +39,7 @@ module Faker
         ##
         ## Returns a random quote from the location
         ##
-        ## @param 
+        ## @param
         ##
         ## @return [String]
         ##
