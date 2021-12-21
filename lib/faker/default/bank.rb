@@ -23,7 +23,7 @@ module Faker
 
         output = ''
 
-        output += rand.to_s[2..-1] while output.length < digits
+        output += rand.to_s[2..] while output.length < digits
 
         output[0...digits]
       end
