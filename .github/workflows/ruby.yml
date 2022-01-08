@@ -40,9 +40,7 @@ jobs:
           - '2.7'
           - '3.0'
           - '3.1'
-          # FIXME: Workaround for https://github.com/faker-ruby/faker/issues/2260
-          # Resume ruby-head CI when https://github.com/travisjeffery/timecop/pull/279 will be resolved.
-          # - 'head'
+          - 'head'
           - truffleruby-head
     continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
     steps:
