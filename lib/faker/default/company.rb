@@ -334,7 +334,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_pty_ltd_registration_number
-        regexify(/\d{4}\/\d{4,10}\/07/)
+        regexify(%r{\d{4}/\d{4,10}/07})
       end
 
       ##
@@ -347,7 +347,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_close_corporation_registration_number
-        regexify(/(CK\d{2}|\d{4})\/\d{4,10}\/23/)
+        regexify(%r{(CK\d{2}|\d{4})/\d{4,10}/23})
       end
 
       ##
@@ -360,7 +360,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_listed_company_registration_number
-        regexify(/\d{4}\/\d{4,10}\/06/)
+        regexify(%r{\d{4}/\d{4,10}/06})
       end
 
       ##
@@ -373,7 +373,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_trust_registration_number
-        regexify(/IT\d{2,4}\/\d{2,10}/)
+        regexify(%r{IT\d{2,4}/\d{2,10}})
       end
 
       ##
