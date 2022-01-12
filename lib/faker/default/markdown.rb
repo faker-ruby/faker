@@ -133,7 +133,7 @@ module Faker
       def random(*args)
         method_list = available_methods
         args&.each { |ex| method_list.delete_if { |meth| meth == ex.to_sym } }
-        send(method_list[rand(0..method_list.length - 1)])
+        send(method_list[Faker::Config.random.rand(0..method_list.length - 1)])
       end
 
       ##
@@ -168,7 +168,7 @@ module Faker
       private
 
       def available_methods
-        Markdown.public_methods(false) - Base.methods
+        (Markdown.public_methods(false) - Base.methods).sort
       end
     end
   end
