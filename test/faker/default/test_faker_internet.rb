@@ -265,6 +265,14 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_mac_address_valid_prefix
+    assert_equal 2, @tester.mac_address_valid_prefix.count(':')
+
+    100.times do
+      assert @tester.mac_address(prefix: @tester.mac_address_valid_prefix).split(':').map { |d| d.to_i(16) }.max <= 255
+    end
+  end
+
   def test_mac_address
     assert_equal 5, @tester.mac_address.count(':')
     assert_equal 5, @tester.mac_address(prefix: '').count(':')

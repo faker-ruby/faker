@@ -307,6 +307,10 @@ module Faker
         end
         # rubocop:enable Style/GuardClause
       end
+
+      def root_dir
+        __dir__
+      end
     end
   end
 end

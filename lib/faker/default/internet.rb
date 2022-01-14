@@ -281,6 +281,25 @@ module Faker
       end
 
       ##
+      # Generate a valid mac address prefix from the ieee's oui database.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Internet.mac_address_valid_prefix #=> "5C:92:5E"
+      #
+      # @faker.version next
+      def mac_address_valid_prefix
+        load_path = ::File.join(root_dir, 'locales', 'oui.txt')
+        ::File.open(load_path, 'r') do |f|
+          # All mac addresses of the oui.txt database are of size 8 + one new
+          # line character.
+          f.seek rand(f.size / 9) * 9
+          f.read(8).gsub!(/-/, ':').downcase
+        end
+      end
+
+      ##
       # Returns the MAC address
       #
       # @return [String]
