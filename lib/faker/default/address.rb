@@ -219,7 +219,7 @@ module Faker
 
       ##
       # Produces a US state by postal abbreviation.
-      # https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations#Postal_codes
+      # https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations
       # on Wikipedia for a full list.
       #
       # @param abbr [String] The official USPS abbrevation of state.
@@ -239,7 +239,7 @@ module Faker
 
       ##
       # Produces a postal code abbreviation by US state.
-      # https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations#Postal_codes
+      # https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations
       #
       # @param state_name [String] State name in snake_case format.
       # @return [String]
