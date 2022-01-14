@@ -35,6 +35,12 @@ Faker::Address.state #=> "California"
 
 Faker::Address.state_abbr #=> "AP"
 
+# Keyword arguments: abbr
+Faker::Address.state_name_by_abbr(abbr: 'CA') #=> "California"
+
+# Keyword arguments: state_name
+Faker::Address.state_name_to_abbr(state_name: 'new_york') #=> "NY"
+
 Faker::Address.country #=> "French Guiana"
 
 # Keyword arguments: code

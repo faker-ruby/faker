@@ -218,6 +218,45 @@ module Faker
       end
 
       ##
+      # Produces a US state by postal abbreviation.
+      # https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations#Postal_codes
+      # on Wikipedia for a full list.
+      #
+      # @param abbr [String] The official USPS abbrevation of state.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Address.state_name_by_abbr(abbr: 'CA') #=> "California"
+      #
+      # @faker.version 2.20.0
+      def state_name_by_abbr(legacy_code = NOT_GIVEN, abbr: 'CA')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :abbr if legacy_code != NOT_GIVEN
+        end
+
+        fetch("address.state_by_abbr.#{abbr}")
+      end
+
+      ##
+      # Produces a postal code abbreviation by US state.
+      # https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations#Postal_codes
+      #
+      # @param state_name [String] State name in snake_case format.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Address.state_name_to_abbr(state_name: 'new_york') #=> "NY"
+      #
+      # @faker.version 2.20.0
+      def state_name_to_abbr(legacy_code = NOT_GIVEN, state_name: 'new_york')
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :state_name if legacy_code != NOT_GIVEN
+        end
+
+        fetch("address.abbr_by_state.#{state_name}")
+      end
+
+      ##
       # Produces the name of a country.
       #
       # @return [String]

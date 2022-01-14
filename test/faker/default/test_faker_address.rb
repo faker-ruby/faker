@@ -63,6 +63,14 @@ class TestFakerAddress < Test::Unit::TestCase
     assert @tester.state.match(/\w+/)
   end
 
+  def test_state_name_by_abbr
+    assert @tester.state_name_by_abbr(abbr: 'CA').match('California')
+  end
+
+  def test_state_name_to_abbr
+    assert @tester.state_name_to_abbr(state_name: 'new_york').match('NY')
+  end
+
   def test_country
     assert @tester.country.match(/\w+/)
   end
