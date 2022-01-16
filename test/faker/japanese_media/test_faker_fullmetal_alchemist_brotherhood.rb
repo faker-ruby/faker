@@ -14,4 +14,8 @@ class TestFakerFmaBrotherhood < Test::Unit::TestCase
   def test_city
     assert @tester.city.match(/\w+/)
   end
+
+  def test_country
+    assert @tester.country.match(/\w+/)
+  end
 end
