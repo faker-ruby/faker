@@ -18,7 +18,7 @@ module Faker
         end
 
         ##
-        # Produces a village from Naruto.
+        # Produces a cities from FmaBrotherhood.
         #
         # @return [String]
         #
@@ -31,7 +31,7 @@ module Faker
         end
 
         ##
-        # Produces a eye from Naruto.
+        # Produces a country from FmaBrotherhood.
         #
         # @return [String]
         #
