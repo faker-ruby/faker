@@ -276,6 +276,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::JapaneseMedia::Naruto](doc/japanese_media/naruto.md)
   - [Faker::JapaneseMedia::Doraemon](doc/japanese_media/doraemon.md)
   - [Faker::JapaneseMedia::Conan](doc/japanese_media/conan.md)
+  - [Faker::JapaneseMedia::FmaBrotherhood](doc/japanese_media/fullmetal_alchemist_brotherhood.md)
 
 ### Movies
   - [Faker::Movie](doc/movies/movie.md)
