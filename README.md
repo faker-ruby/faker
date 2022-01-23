@@ -136,6 +136,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Boolean](doc/default/boolean.md)
   - [Faker::BossaNova](doc/default/bossa_nova.md)
   - [Faker::Business](doc/default/business.md)
+  - [Faker::Camera](doc/default/camera.md)
   - [Faker::Cannabis](doc/default/cannabis.md)
   - [Faker::ChileRut](doc/default/chile_rut.md)
   - [Faker::ChuckNorris](doc/default/chuck_norris.md)
@@ -275,6 +276,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::JapaneseMedia::Naruto](doc/japanese_media/naruto.md)
   - [Faker::JapaneseMedia::Doraemon](doc/japanese_media/doraemon.md)
   - [Faker::JapaneseMedia::Conan](doc/japanese_media/conan.md)
+  - [Faker::JapaneseMedia::FmaBrotherhood](doc/japanese_media/fullmetal_alchemist_brotherhood.md)
 
 ### Movies
   - [Faker::Movie](doc/movies/movie.md)
@@ -355,9 +357,14 @@ Since you may want to make addresses and other types of data look different
 depending on where in the world you are (US postal codes vs. UK postal codes,
 for example), Faker uses the I18n gem to store strings (like state names) and
 formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
-allowing you to get different formats by switching locales.  Just set
-Faker::Config.locale to the locale you want, and Faker will take care of the
-rest.
+allowing you to get different formats by switching locales.
+Just set the locale you want as shown below, and Faker will take care of the rest.
+
+```ruby
+Faker::Config.locale = 'es'
+# or
+Faker::Config.locale = :es
+```
 
 If your locale doesn't already exist, create it in the `lib/locales` directory
 and you can then override or add elements to suit your needs. See more about how to

@@ -37,7 +37,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, extra_raw_info[:picture]
     assert gender?(extra_raw_info[:gender])
     assert_instance_of String, extra_raw_info[:birthday]
-    assert_equal 'en', extra_raw_info[:local]
+    assert_equal 'en', extra_raw_info[:locale]
     assert_instance_of String, extra_raw_info[:hd]
     assert_equal 'accounts.google.com', id_info[:iss]
     assert_instance_of String, id_info[:at_hash]
@@ -496,6 +496,40 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_instance_of String, raw_info[:aud]
     assert_equal auth[:uid], raw_info[:sub]
     assert_instance_of String, raw_info[:at_hash]
+    assert_equal info[:email], raw_info[:email]
+    assert raw_info[:email_verified]
+  end
+
+  def test_omniauth_auth0
+    auth            = @tester.auth0
+    info            = auth[:info]
+    credentials     = auth[:credentials]
+    extra           = auth[:extra]
+    raw_info        = extra[:raw_info]
+    nick_name       = info[:nickname].downcase
+    first_name      = nick_name.split(' ').first
+    last_name       = nick_name.split(' ').last
+
+    assert_equal 'auth0', auth[:provider]
+    assert_instance_of String, auth[:uid]
+    assert_equal 30, auth[:uid].length
+    assert info[:email].match safe_email_regex(first_name, last_name)
+    assert_equal auth[:uid], info[:name]
+    assert_instance_of String, info[:image]
+    assert_instance_of String, info[:nickname]
+    assert_instance_of String, info[:name]
+    assert_equal auth[:uid], info[:name]
+    assert_equal true, credentials[:expires]
+    assert_instance_of String, credentials[:token]
+    assert_instance_of String, credentials[:token_type]
+    assert_instance_of String, credentials[:id_token]
+    assert_instance_of String, credentials[:refresh_token]
+    assert_instance_of Integer, credentials[:expires_at]
+    assert_instance_of Integer, raw_info[:exp]
+    assert_instance_of Integer, raw_info[:iat]
+    assert_equal 'https://auth0.com/', raw_info[:iss]
+    assert_instance_of String, raw_info[:aud]
+    assert_equal auth[:uid], raw_info[:sub]
     assert_equal info[:email], raw_info[:email]
     assert raw_info[:email_verified]
   end
