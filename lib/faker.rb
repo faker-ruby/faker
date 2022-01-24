@@ -143,7 +143,8 @@ module Faker
           text + etc.to_s
         end
         # If the fetched key couldn't be parsed, then fallback to numerify
-        parts.any? ? parts.join : numerify(fetched)
+
+        (parts.any? ? parts.join : numerify(fetched)).strip
       end
 
       # Call I18n.translate with our configured locale if no

@@ -79,6 +79,7 @@ class TestFaker < Test::Unit::TestCase
     data = {
       faker: {
         simple: { lookup: 'a value' },
+        with_missing_value: { lookup: 'a missing value here: ' },
         class: {
           call_method: "\#{TestFake.a_class_method}",
           use_translation: "\#{TestFake.use_i18n}"
@@ -89,6 +90,7 @@ class TestFaker < Test::Unit::TestCase
     I18n.backend.store_translations(Faker::Config.locale, data)
 
     assert_equal(Faker::Base.parse('simple.lookup'), 'a value')
+    assert_equal(Faker::Base.parse('with_missing_value.lookup'), 'a missing value here:')
     assert_equal(Faker::Base.parse('class.call_method'), 'called a_class_method')
     assert_equal(Faker::Base.parse('class.use_translation'), 'used i18n for translation')
   end
