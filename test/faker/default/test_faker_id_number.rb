@@ -176,6 +176,11 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal checksum_digit, 5
   end
 
+  def test_french_insee_number
+    sample = @tester.french_insee_number
+    assert_match(/^(?<gnd>\d{1})(?<year>\d{2})(?<month>\d{2})(?<department1>\d{1})(?<department2>[0-9AB]{1})(?<place>\d{3})(?<indv>\d{3})(?<ctrl>\d{2})$/, sample)
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)

@@ -39,4 +39,7 @@ Faker::IDNumber.chilean_id #=> "15620613-K"
 # Keyword arguments: international
 Faker::IDNumber.croatian_id #=> "88467617508"
 Faker::IDNumber.croatian_id(international: true) #=> "HR88467617508"
+
+# Generate a valid French Social Security number (INSEE number)
+Faker::IDNumber.french_insee_number #=> "22510589696868"
 ```

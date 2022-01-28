@@ -219,6 +219,28 @@ module Faker
         "#{prefix}#{digits}#{checksum_digit}"
       end
 
+      ##
+      # Produces a random French social security number (INSEE number).
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.french_insee_number #=> "53290236-H"
+      #
+      # @faker.version next
+      def french_insee_number
+        num = [
+          [1, 2].sample, # gender
+          Faker::Number.between(from: 0, to: 99).to_s.rjust(2, '0'), # year of birth
+          Faker::Number.between(from: 1, to: 10).to_s.rjust(2, '0'), # month of birth
+          Faker::Number.number(digits: 5), # place of birth
+          Faker::Number.number(digits: 3) # order number
+        ].join
+        mod = num.to_i % 97
+        check = 97 - mod
+        "#{num}#{check}"
+      end
+
       private
 
       def croatian_id_checksum_digit(digits)
