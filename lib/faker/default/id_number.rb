@@ -237,7 +237,7 @@ module Faker
           Faker::Number.number(digits: 3) # order number
         ].join
         mod = num.to_i % 97
-        check = 97 - mod
+        check = (97 - mod).to_s.rjust(2, '0')
         "#{num}#{check}"
       end
 
