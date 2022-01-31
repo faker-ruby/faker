@@ -321,6 +321,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::BigBangTheory](doc/tv_shows/big_bang_theory.md)
   - [Faker::TvShows::BojackHorseman](doc/tv_shows/bojack_horseman.md)
   - [Faker::TvShows::BreakingBad](doc/tv_shows/breaking_bad.md)
+  - [Faker::TvShows::BrooklynNineNine](doc/tv_shows/brooklyn_nine_nine.md)
   - [Faker::TvShows::Buffy](doc/tv_shows/buffy.md)
   - [Faker::TvShows::Community](doc/tv_shows/community.md)
   - [Faker::TvShows::DrWho](doc/tv_shows/dr_who.md)
