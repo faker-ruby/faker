@@ -92,6 +92,29 @@ module Faker
         "#{rut(min_rut: min_rut, fixed: fixed)}-#{dv}"
       end
 
+      ##
+      # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits) with a dv (digito verificador, check-digit).
+      # with character passed in argument as separator.
+      #
+      # @param min_rut [Integer] Specifies the minimum value of the rut.
+      # @param fixed [Boolean] Determines if the rut is fixed (returns the min_rut value).
+      # @return [String]
+      #
+      # @example
+      #   Faker::ChileRut.full_rut_with_dots #=> "30.686.957-4"
+      #   Faker::ChileRut.full_rut_with_dots(min_rut: 20890156) #=> "30.686.957-4"
+      #   Faker::ChileRut.full_rut_with_dots(min_rut: 30686957, fixed: true) #=> "30.686.957-4"
+      #
+      # @faker.version 1.9.2
+      def full_rut_with_dots(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 0, fixed: false)
+        warn_for_deprecated_arguments do |keywords|
+          keywords << :min_rut if legacy_min_rut != NOT_GIVEN
+          keywords << :fixed if legacy_fixed != NOT_GIVEN
+        end
+
+        "#{rut(min_rut: min_rut, fixed: fixed).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse}-#{dv}"
+      end
+
       attr_reader :last_rut
     end
   end
