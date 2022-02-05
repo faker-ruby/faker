@@ -240,11 +240,11 @@ module Faker
               .split('.')
               .map { |domain_part| Char.prepare(domain_part) }
               .tap do |domain_elements|
-                domain_elements << domain_suffix(test) if domain_elements.length < 2
+                domain_elements << domain_suffix(test: test) if domain_elements.length < 2
                 domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
               end.join('.')
           else
-            [domain_word, domain_suffix(test)].tap do |domain_elements| # HACK
+            [domain_word, domain_suffix(test: test)].tap do |domain_elements| # HACK
               domain_elements.unshift(Char.prepare(domain_word)) if subdomain
             end.join('.')
           end
@@ -464,16 +464,20 @@ module Faker
       # @param scheme [String]
       #
       # @example
-      #   Faker::Internet.url                                                           #=> "http://sipes-okon.com/hung.macejkovic"
-      #   Faker::Internet.url(host: 'faker')                                            #=> "http://faker/shad"
-      #   Faker::Internet.url(host: 'faker', path: '/fake_test_path')                   #=> "http://faker/fake_test_path"
-      #   Faker::Internet.url(host: 'faker', path: '/fake_test_path', scheme: 'https')  #=> "https://faker/fake_test_path"
-      def url(legacy_host = NOT_GIVEN, legacy_path = NOT_GIVEN, legacy_scheme = NOT_GIVEN, host: domain_name, path: "/#{username}", scheme: 'http')
+      #   Faker::Internet.url                                                                         #=> "http://sipes-okon.test/hung.macejkovic"
+      #   Faker::Internet.url(test: false)                                                            #=> "http://sipes-okon.com/hung.macejkovic"
+      #   Faker::Internet.url(host: 'faker')                                                          #=> "http://faker/shad"
+      #   Faker::Internet.url(host: 'faker', test: false)                                             #=> "http://faker/shad"
+      #   Faker::Internet.url(host: 'faker', path: '/fake_test_path')                                 #=> "http://faker/fake_test_path"
+      #   Faker::Internet.url(host: 'faker', path: '/fake_test_path', scheme: 'https', test: false)   #=> "https://faker/fake_test_path"
+      def url(legacy_host = NOT_GIVEN, legacy_path = NOT_GIVEN, legacy_scheme = NOT_GIVEN, host: nil, path: "/#{username}", scheme: 'http', test: true)
         warn_for_deprecated_arguments do |keywords|
           keywords << :host if legacy_host != NOT_GIVEN
           keywords << :path if legacy_path != NOT_GIVEN
           keywords << :scheme if legacy_scheme != NOT_GIVEN
         end
+
+        host = domain_name(test: test) if host.nil?
 
         "#{scheme}://#{host}#{path}" # HACK
       end
