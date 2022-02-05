@@ -1,6 +1,11 @@
 en:
   faker:
     internet:
+      domain_suffix_test:
+        - test
+        - example
+        - invalid
+        - localhost
       domain_suffix:
         - com
         - biz

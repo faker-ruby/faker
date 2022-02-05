@@ -23,13 +23,18 @@ module Faker
       # @param name [String]
       # @param separators [Array]
       # @param domain [String]
+      # @param test [Bool]
       #
       # @example
-      #   Faker::Internet.email                                                           #=> "samsmith@faker.com"
-      #   Faker::Internet.email(name: 'smith')                                            #=> "smith@faker.com"
-      #   Faker::Internet.email(name: 'sam smith', separators: ['-'])                     #=> "sam-smith@faker.com"
-      #   Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'gmail')    #=> "sam-smith@gmail.com"
-      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil)
+      #   Faker::Internet.email                                                                         #=> "samsmith@faker.test"
+      #   Faker::Internet.email(test: false)                                                            #=> "samsmith@faker.com"
+      #   Faker::Internet.email(name: 'smith')                                                          #=> "smith@faker.example"
+      #   Faker::Internet.email(name: 'smith', test: false)                                             #=> "smith@faker.com"
+      #   Faker::Internet.email(name: 'sam smith', separators: ['-'])                                   #=> "sam-smith@faker.invalid"
+      #   Faker::Internet.email(name: 'sam smith', separators: ['-'], test: false)                      #=> "sam-smith@faker.com"
+      #   Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'gmail')                  #=> "sam-smith@gmail.localhost"
+      #   Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'gmail', test: false)     #=> "sam-smith@gmail.com"
+      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil, test: true)
         warn_for_deprecated_arguments do |keywords|
           keywords << :name if legacy_name != NOT_GIVEN
           keywords << :separators if legacy_separators != NOT_GIVEN
@@ -42,7 +47,7 @@ module Faker
                      end
 
         sanitized_local_part = sanitize_email_local_part(local_part)
-        construct_email(sanitized_local_part, domain_name(domain: domain))
+        construct_email(sanitized_local_part, domain_name(domain: domain, test: test)) # HACK
       end
 
       ##
@@ -211,13 +216,20 @@ module Faker
       #
       # @param subdomain [Bool] If true passed adds a subdomain in response
       # @param domain [String]
+      # @param test [Bool] If true it usses a reserved word for domain suffix,
+      # if false it will use a real domain_suffix like `.com`, `.org`, etc.
+      # Check this out: https://datatracker.ietf.org/doc/html/rfc2606
       #
       # @example
-      #   Faker::Internet.domain_name                                       #=> "test.net"
-      #   Faker::Internet.domain_name(subdomain: true)                      #=> "test.faker.io"
-      #   Faker::Internet.domain_name(subdomain: true, domain: 'example')   #=> "faker.example.com"
-      #   Faker::Internet.domain_name(domain: 'faker')                      #=> "faker.org"
-      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil)
+      #   Faker::Internet.domain_name                                                   #=> "test.test"
+      #   Faker::Internet.domain_name(test: false)                                      #=> "test.net"
+      #   Faker::Internet.domain_name(subdomain: true)                                  #=> "test.faker.example"
+      #   Faker::Internet.domain_name(subdomain: true, test: false)                     #=> "test.faker.io"
+      #   Faker::Internet.domain_name(subdomain: true, domain: 'example')               #=> "faker.example.invalid"
+      #   Faker::Internet.domain_name(subdomain: true, domain: 'example', test: false)  #=> "faker.example.com"
+      #   Faker::Internet.domain_name(domain: 'faker')                                  #=> "faker.localhost"
+      #   Faker::Internet.domain_name(domain: 'faker', test: false)                     #=> "faker.org"
+      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil, test: true)
         warn_for_deprecated_arguments do |keywords|
           keywords << :subdomain if legacy_subdomain != NOT_GIVEN
         end
@@ -228,11 +240,11 @@ module Faker
               .split('.')
               .map { |domain_part| Char.prepare(domain_part) }
               .tap do |domain_elements|
-                domain_elements << domain_suffix if domain_elements.length < 2
+                domain_elements << domain_suffix(test) if domain_elements.length < 2
                 domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
               end.join('.')
           else
-            [domain_word, domain_suffix].tap do |domain_elements|
+            [domain_word, domain_suffix(test)].tap do |domain_elements| # HACK
               domain_elements.unshift(Char.prepare(domain_word)) if subdomain
             end.join('.')
           end
@@ -265,19 +277,23 @@ module Faker
       #
       # @example
       #   Faker::Internet.domain_word   #=> "senger"
-      def domain_word
+      def domain_word # HACK
         with_locale(:en) { Char.prepare(Company.name.split(' ').first) }
       end
 
       ## Returns the domain suffix e.g. com, org, co, biz, info etc.
+      #
+      # @param test [Bool] If true it usses a reserved word for domain suffix,
+      # if false it will use a real domain_suffix like `.com`, `.org`, etc.
+      # Check this out: https://datatracker.ietf.org/doc/html/rfc2606
       #
       # @return [String]
       #
       # @example
       #   Faker::Internet.domain_suffix   #=> "com"
       #   Faker::Internet.domain_suffix   #=> "biz"
-      def domain_suffix
-        fetch('internet.domain_suffix')
+      def domain_suffix(legacy_string = NOT_GIVEN, test: true) # HACK suffix like .com, .org, etc.
+        fetch(test ? 'internet.domain_suffix_test' : 'internet.domain_suffix')
       end
 
       ##
@@ -459,7 +475,7 @@ module Faker
           keywords << :scheme if legacy_scheme != NOT_GIVEN
         end
 
-        "#{scheme}://#{host}#{path}"
+        "#{scheme}://#{host}#{path}" # HACK
       end
       # rubocop:enable Metrics/ParameterLists
 
