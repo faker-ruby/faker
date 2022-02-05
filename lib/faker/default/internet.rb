@@ -47,7 +47,7 @@ module Faker
                      end
 
         sanitized_local_part = sanitize_email_local_part(local_part)
-        construct_email(sanitized_local_part, domain_name(domain: domain, test: test)) # HACK
+        construct_email(sanitized_local_part, domain_name(domain: domain, test: test))
       end
 
       ##
@@ -244,7 +244,7 @@ module Faker
                 domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
               end.join('.')
           else
-            [domain_word, domain_suffix(test: test)].tap do |domain_elements| # HACK
+            [domain_word, domain_suffix(test: test)].tap do |domain_elements|
               domain_elements.unshift(Char.prepare(domain_word)) if subdomain
             end.join('.')
           end
@@ -277,7 +277,7 @@ module Faker
       #
       # @example
       #   Faker::Internet.domain_word   #=> "senger"
-      def domain_word # HACK
+      def domain_word
         with_locale(:en) { Char.prepare(Company.name.split(' ').first) }
       end
 
@@ -292,7 +292,7 @@ module Faker
       # @example
       #   Faker::Internet.domain_suffix   #=> "com"
       #   Faker::Internet.domain_suffix   #=> "biz"
-      def domain_suffix(legacy_string = NOT_GIVEN, test: true) # HACK suffix like .com, .org, etc.
+      def domain_suffix(test: true)
         fetch(test ? 'internet.domain_suffix_test' : 'internet.domain_suffix')
       end
 
@@ -479,7 +479,7 @@ module Faker
 
         host = domain_name(test: test) if host.nil?
 
-        "#{scheme}://#{host}#{path}" # HACK
+        "#{scheme}://#{host}#{path}"
       end
       # rubocop:enable Metrics/ParameterLists
 

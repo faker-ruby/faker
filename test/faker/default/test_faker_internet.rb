@@ -16,6 +16,20 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.email.match(/.+@.+\.\w+/)
   end
 
+  def test_email_test_default
+    assert_includes(
+      I18n.translate('faker.internet.domain_suffix_test'),
+      @tester.email.split('.')[-1]
+    )
+  end
+
+  def test_email_test_false
+    assert_includes(
+      I18n.translate('faker.internet.domain_suffix'),
+      @tester.email(test: false).split('.')[-1]
+    )
+  end
+
   def test_email_with_non_permitted_characters
     assert @tester.email(name: 'martín').match(/mart#n@.+\.\w+/)
   end
@@ -317,6 +331,27 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_url
     assert @tester.url(host: 'domain.com', path: '/username', scheme: 'https').match(%r{^https://domain\.com/username$})
+  end
+
+  def test_url_domain_suffix_test_default
+    assert_includes(
+      %w[test example invalid localhost],
+      @tester.url(path: '/username', scheme: 'https').split('//')[1].split('/')[0].split('.')[1]
+    )
+  end
+
+  def test_url_domain_suffix_test_default_2
+    assert_includes(
+      I18n.translate('faker.internet.domain_suffix_test'),
+      @tester.url(path: '/username', scheme: 'https').split('//')[1].split('/')[0].split('.')[1]
+    )
+  end
+
+  def test_url_domain_suffix_test_false
+    assert_includes(
+      I18n.translate('faker.internet.domain_suffix'),
+      @tester.url(path: '/username', scheme: 'https', test: false).split('//')[1].split('/')[0].split('.')[1]
+    )
   end
 
   def test_device_token
