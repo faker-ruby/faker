@@ -1,5 +1,45 @@
 # Change Log
 
+## [v2.20.0](https://github.com/faker-ruby/faker/tree/v2.20.0) (2022-03-05)
+
+## Documentation
+
+- [PR #2421](https://github.com/faker-ruby/faker/pull/2421) Add general documentation for Faker::Camera [@aleksandrilyin](https://github.com/aleksandrilyin)
+
+## Feature Request
+
+- [PR #2457](https://github.com/faker-ruby/faker/pull/2457) add Command & Conquer games [@Awilum](https://github.com/Awilum)
+- [PR #2456](https://github.com/faker-ruby/faker/pull/2456) fix heading for faker hobby doc [@Awilum](https://github.com/Awilum)
+- [PR #2411](https://github.com/faker-ruby/faker/pull/2411) Add mock data for Auth0 OAuth [@Norio4](https://github.com/Norio4)
+- [PR #2396](https://github.com/faker-ruby/faker/pull/2396) Add Brooklyn Nine Nine into tv shows category [@fralps](https://github.com/fralps)
+- [PR #2395](https://github.com/faker-ruby/faker/pull/2395) Add The Kingkiller Chronicle [@fblupi](https://github.com/fblupi)
+- [PR #2392](https://github.com/faker-ruby/faker/pull/2392) Update LV locale - cell phone numbers should be 8 symbols [@tmikoss](https://github.com/tmikoss)
+- [PR #2383](https://github.com/faker-ruby/faker/pull/2383) Add Faker::JapaneseMedia::KamenRider#transformation_device [@boardfish](https://github.com/boardfish)
+- [PR #2382](https://github.com/faker-ruby/faker/pull/2382) Add collectible devices [@boardfish](https://github.com/boardfish)
+- [PR #2378](https://github.com/faker-ruby/faker/pull/2378) Re-add the Faker::Internet.base64 method [@ashishra0](https://github.com/ashishra0)
+- [PR #2374](https://github.com/faker-ruby/faker/pull/2374) Add Faker::JapaneseMedia::KamenRider [@boardfish](https://github.com/boardfish)
+- [PR #1656](https://github.com/faker-ruby/faker/pull/1656) Add bible entries [@enowbi](https://github.com/enowbi)
+
+## Update locales
+
+- [PR #2462](https://github.com/faker-ruby/faker/pull/2462) Add Sora and Hollow Bastion to SuperSmashBros yml files [@gazayas](https://github.com/gazayas)
+- [PR #2458](https://github.com/faker-ruby/faker/pull/2458) Fix typo on Tom Jobim's name [@andrerferrer](https://github.com/andrerferrer)
+- [PR #2452](https://github.com/faker-ruby/faker/pull/2452) updated Timor-Leste in en/addresses.yml [@masukomi](https://github.com/masukomi)
+- [PR #2450](https://github.com/faker-ruby/faker/pull/2450) dividing male and female Arabic names [@Alfulayt](https://github.com/Alfulayt)
+- [PR #2381](https://github.com/faker-ruby/faker/pull/2381) Remove duplicates and clean up Faker::JapaneseMedia::KamenRider [@boardfish](https://github.com/boardfish)
+- [PR #2405](https://github.com/faker-ruby/faker/pull/2405) Add countries in Japanese [@lawriecate](https://github.com/lawriecate)
+- [PR #2403](https://github.com/faker-ruby/faker/pull/2403) add Faker::Animal in pt-BR [@thiago-henrique-leite](https://github.com/thiago-henrique-leite)
+- [PR #2377](https://github.com/faker-ruby/faker/pull/2377) Fix non striped coffe blender [@ngouy](https://github.com/ngouy)
+
+## Update local dependencies
+
+- Update rubocop to `1.25.0`
+- Update rake to `13.0.6`
+- Update test-unit to `3.5.3`
+- Update yard to `0.9.27`
+
+------------------------------------------------------------------------------
+
 ## [v2.19.0](https://github.com/faker-ruby/faker/tree/v2.19.0) (2021-08-22)
 
 ## Bug/Fixes
