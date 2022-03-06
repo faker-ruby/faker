@@ -32,6 +32,11 @@ class TestFrLocale < Test::Unit::TestCase
     assert_equal('France', Faker::Address.default_country)
   end
 
+  def test_fr_adjective_methods
+    assert Faker::Adjective.positive.is_a? String
+    assert Faker::Adjective.negative.is_a? String
+  end
+
   def test_fr_appliance_methods
     assert Faker::Appliance.equipment.is_a? String
   end
