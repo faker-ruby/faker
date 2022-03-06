@@ -34,6 +34,7 @@ class TestFrLocale < Test::Unit::TestCase
 
   def test_fr_adjective_methods
     assert Faker::Adjective.positive.is_a? String
+    assert Faker::Adjective.negative.is_a? String
   end
 
   def test_fr_appliance_methods
