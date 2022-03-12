@@ -39,6 +39,6 @@ Gem::Specification.new do |spec|
   # https://github.com/codeclimate/test-reporter/issues/418
   spec.add_development_dependency('simplecov', '0.17.1', '< 0.18')
   spec.add_development_dependency('test-unit', '3.5.3')
-  spec.add_development_dependency('timecop', '0.9.4')
+  spec.add_development_dependency('timecop', '0.9.5')
   spec.add_development_dependency('yard', '0.9.27')
 end
