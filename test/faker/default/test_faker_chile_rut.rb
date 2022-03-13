@@ -25,8 +25,8 @@ class TestChileRut < Test::Unit::TestCase
     assert @tester.dv == '4'
   end
 
-  def test_full_rut_with_dots_has_do
-    assert @tester.full_rut_with_dots(min_rut: 30_686_957, fixed: true).split('-')[0] == '30.686.957'
+  def test_full_formatted_rut_has_dv
+    assert @tester.full_formatted_rut(min_rut: 30_686_957, fixed: true).split('-')[0] == '30.686.957'
     assert @tester.dv == '4'
   end
 end

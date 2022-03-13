@@ -106,7 +106,7 @@ module Faker
       #   Faker::ChileRut.full_rut_with_dots(min_rut: 30686957, fixed: true) #=> "30.686.957-4"
       #
       # @faker.version 1.9.2
-      def full_rut_with_dots(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 0, fixed: false)
+      def full_formatted_rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 0, fixed: false)
         warn_for_deprecated_arguments do |keywords|
           keywords << :min_rut if legacy_min_rut != NOT_GIVEN
           keywords << :fixed if legacy_fixed != NOT_GIVEN
