@@ -77,6 +77,16 @@ Prefix your method call with `unique`. For example:
 Faker::Name.unique.name # This will return a unique name every time it is called
 ```
 
+You can also provide a scope for the unique generator.
+
+```ruby
+Faker::Name.unique(scope: :user).name # This will return a unique name for the :user scope
+Faker::Name.unique(scope: :customer).name # This will return a unique name for the :customer scope. This value may have already been returned in the :user scope.
+
+# The unique scope can be any ruby Object so you can make a scope for a particular class attribute like this:
+Faker::Name.unique(scope: [:customer, :name]).name
+```
+
 If too many unique values are requested from a generator that has a limited
 number of potential values, a `Faker::UniqueGenerator::RetryLimitExceeded`
 exception may be raised. It is possible to clear the record of unique values

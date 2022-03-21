@@ -217,9 +217,11 @@ module Faker
       # Return unique values from the generator every time.
       #
       # @param max_retries [Integer] The max number of retries that should be done before giving up.
+      # @param scope [Object] The scope of the unique values
       # @return [self]
-      def unique(max_retries = 10_000)
-        @unique ||= UniqueGenerator.new(self, max_retries)
+      def unique(max_retries = 10_000, scope: DefaultUniqueScope)
+        @unique ||= {}
+        @unique[scope] ||= UniqueGenerator.new(self, max_retries)
       end
 
       def sample(list, num = nil)
@@ -257,6 +259,8 @@ module Faker
       end
 
       private
+
+      class DefaultUniqueScope; end
 
       def warn_for_deprecated_arguments
         keywords = []

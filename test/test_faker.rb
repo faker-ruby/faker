@@ -117,10 +117,28 @@ class TestFaker < Test::Unit::TestCase
   end
 
   def test_unique
+    Faker::Base.unique.clear
+
     unique_numbers = Array.new(8) do
       Faker::Base.unique.numerify('#')
     end
 
     assert_equal(unique_numbers.uniq, unique_numbers)
+  end
+
+  def test_unique_scope
+    Faker::Base.unique.clear
+    Faker::Base.unique(scope: :other).clear
+
+    unique_numbers_default_scope = Array.new(8) do
+      Faker::Base.unique.numerify('#')
+    end
+
+    unique_numbers_other_scope = Array.new(8) do
+      Faker::Base.unique(scope: :other).numerify('#')
+    end
+
+    # Assert that the intersection of the "default" scope and the "other" scope is not empty
+    assert !(unique_numbers_default_scope & unique_numbers_other_scope).empty?
   end
 end
