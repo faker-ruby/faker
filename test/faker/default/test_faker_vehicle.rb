@@ -14,6 +14,10 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert_match Faker::Vehicle::VIN_REGEX, @tester.vin
   end
 
+  def test_vin_validity
+    assert_mach VALIDITY_MATCH, @tester.vin
+  end
+
   def test_manufacture
     assert_match WORD_MATCH, @tester.manufacture
   end
