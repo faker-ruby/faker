@@ -15,7 +15,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_vin_validity
-    assert_mach VALIDITY_MATCH, @tester.vin
+    assert_match VALIDITY_MATCH, @tester.vin
   end
 
   def test_manufacture
