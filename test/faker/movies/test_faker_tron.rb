@@ -2,7 +2,7 @@
 
 require_relative '../../test_helper'
 
-class TestFakerTRON < Test::Unit::TestCase
+class TestFakerTron < Test::Unit::TestCase
   CHARACTER_COUNT = 16
   GAME_COUNT = 14
   LOCATION_COUNT = 12
@@ -12,7 +12,7 @@ class TestFakerTRON < Test::Unit::TestCase
   VEHICLE_COUNT = 5
 
   def setup
-    @tester = Faker::Movies::TRON
+    @tester = Faker::Movies::Tron
   end
 
   def test_character

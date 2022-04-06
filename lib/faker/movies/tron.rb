@@ -2,15 +2,15 @@
 
 module Faker
   class Movies
-    class TRON < Base
+    class Tron < Base
       class << self
         ##
-        # Produces a character from TRON.
+        # Produces a character from Tron.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Movies::TRON.character #=> "Bit"
+        #   Faker::Movies::Tron.character #=> "Bit"
         #
         # @faker.version 2.15.1
         def character
@@ -18,12 +18,12 @@ module Faker
         end
 
         ##
-        # Produces a game from TRON.
+        # Produces a game from Tron.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Movies::TRON.game #=> "Space Paranoids"
+        #   Faker::Movies::Tron.game #=> "Space Paranoids"
         #
         # @faker.version 2.15.1
         def game
@@ -31,12 +31,12 @@ module Faker
         end
 
         ##
-        # Produces a location from TRON.
+        # Produces a location from Tron.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Movies::TRON.location #=> "Flynn's Arcade"
+        #   Faker::Movies::Tron.location #=> "Flynn's Arcade"
         #
         # @faker.version 2.15.1
         def location
@@ -44,12 +44,12 @@ module Faker
         end
 
         ##
-        # Produces a program from TRON.
+        # Produces a program from Tron.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Movies::TRON.program #=> "Clu"
+        #   Faker::Movies::Tron.program #=> "Clu"
         #
         # @faker.version 2.15.1
         def program
@@ -57,16 +57,16 @@ module Faker
         end
 
         ##
-        # Produces a quote from TRON.
+        # Produces a quote from Tron.
         #
         # @param character [String] The name of a character to derive a quote from.
         # @return [String]
         #
         # @example
-        #   Faker::Movies::TRON.quote #=> "Greetings, Programs!"
+        #   Faker::Movies::Tron.quote #=> "Greetings, Programs!"
         #
         # @example
-        #   Faker::Movies::TRON.quote(character: "mcp")
+        #   Faker::Movies::Tron.quote(character: "mcp")
         #     #=> "End of Line."
         #
         # @faker.version 2.15.1
@@ -90,12 +90,12 @@ module Faker
         end
 
         ##
-        # Produces a tagline from TRON.
+        # Produces a tagline from Tron.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Movies::TRON.tagline #=> "The Electronic Gladiator"
+        #   Faker::Movies::Tron.tagline #=> "The Electronic Gladiator"
         #
         # @faker.version 2.15.1
         def tagline
@@ -103,12 +103,12 @@ module Faker
         end
 
         ##
-        # Produces a user from TRON.
+        # Produces a user from Tron.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Movies::TRON.user #=> "Light Cycle"
+        #   Faker::Movies::Tron.user #=> "Light Cycle"
         #
         # @faker.version 2.15.1
         def user
@@ -116,12 +116,12 @@ module Faker
         end
 
         ##
-        # Produces a vehicle from TRON.
+        # Produces a vehicle from Tron.
         #
         # @return [String]
         #
         # @example
-        #   Faker::Movies::TRON.vehicle #=> "Light Cycle"
+        #   Faker::Movies::Tron.vehicle #=> "Light Cycle"
         #
         # @faker.version 2.15.1
         def vehicle
