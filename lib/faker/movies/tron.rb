@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Movies::Tron.character #=> "Bit"
         #
-        # @faker.version 2.15.1
+        # @faker.version next
         def character
           sample(characters)
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Movies::Tron.game #=> "Space Paranoids"
         #
-        # @faker.version 2.15.1
+        # @faker.version next
         def game
           sample(games)
         end
@@ -38,7 +38,7 @@ module Faker
         # @example
         #   Faker::Movies::Tron.location #=> "Flynn's Arcade"
         #
-        # @faker.version 2.15.1
+        # @faker.version next
         def location
           sample(locations)
         end
@@ -51,7 +51,7 @@ module Faker
         # @example
         #   Faker::Movies::Tron.program #=> "Clu"
         #
-        # @faker.version 2.15.1
+        # @faker.version next
         def program
           sample(programs)
         end
@@ -69,7 +69,7 @@ module Faker
         #   Faker::Movies::Tron.quote(character: "mcp")
         #     #=> "End of Line."
         #
-        # @faker.version 2.15.1
+        # @faker.version next
         def quote(character: nil)
           quoted_characters = translate('faker.tron.quotes')
 
@@ -97,7 +97,7 @@ module Faker
         # @example
         #   Faker::Movies::Tron.tagline #=> "The Electronic Gladiator"
         #
-        # @faker.version 2.15.1
+        # @faker.version next
         def tagline
           sample(taglines)
         end
@@ -110,7 +110,7 @@ module Faker
         # @example
         #   Faker::Movies::Tron.user #=> "Light Cycle"
         #
-        # @faker.version 2.15.1
+        # @faker.version next
         def user
           sample(users)
         end
@@ -123,7 +123,7 @@ module Faker
         # @example
         #   Faker::Movies::Tron.vehicle #=> "Light Cycle"
         #
-        # @faker.version 2.15.1
+        # @faker.version next
         def vehicle
           sample(vehicles)
         end

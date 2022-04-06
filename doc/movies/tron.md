@@ -1,7 +1,5 @@
 # Faker::Movies::Tron
 
-Available since version 2.21.0.
-
 ```ruby
 Faker::Movies::Tron.character #=> "bit"
 
