@@ -5,6 +5,7 @@ mydir = __dir__
 require 'psych'
 require 'i18n'
 require 'set' # Fixes a bug in i18n 0.6.11
+require 'ext/string'
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
 
