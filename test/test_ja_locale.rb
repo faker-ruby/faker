@@ -169,6 +169,17 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::JapaneseMedia::StudioGhibli.movie)
   end
 
+  def test_ja_naruto_methods
+    assert Faker::JapaneseMedia::Naruto.character.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.character)
+    assert Faker::JapaneseMedia::Naruto.village.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.village)
+    assert Faker::JapaneseMedia::Naruto.eye.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.eye)
+    assert Faker::JapaneseMedia::Naruto.demon.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.demon)
+  end
+
   def test_ja_subscription_methods
     assert Faker::Subscription.plan.is_a? String
     assert_not_english(Faker::Subscription.plan)
