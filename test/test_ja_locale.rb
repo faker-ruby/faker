@@ -121,7 +121,8 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_overwatch_methods
     assert Faker::Games::Overwatch.hero.is_a? String
-    assert_not_english(Faker::Games::Overwatch.hero)
+    hero = Faker::Games::Overwatch.hero
+    assert_not_english(hero) unless hero == 'D.Va'
   end
 
   def test_ja_pokemon_methods
