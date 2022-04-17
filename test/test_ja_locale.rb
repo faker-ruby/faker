@@ -121,7 +121,8 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_overwatch_methods
     assert Faker::Games::Overwatch.hero.is_a? String
-    assert_not_english(Faker::Games::Overwatch.hero)
+    hero = Faker::Games::Overwatch.hero
+    assert_not_english(hero) unless hero == 'D.Va'
   end
 
   def test_ja_pokemon_methods
@@ -167,6 +168,17 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::JapaneseMedia::StudioGhibli.quote)
     assert Faker::JapaneseMedia::StudioGhibli.movie.is_a? String
     assert_not_english(Faker::JapaneseMedia::StudioGhibli.movie)
+  end
+
+  def test_ja_naruto_methods
+    assert Faker::JapaneseMedia::Naruto.character.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.character)
+    assert Faker::JapaneseMedia::Naruto.village.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.village)
+    assert Faker::JapaneseMedia::Naruto.eye.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.eye)
+    assert Faker::JapaneseMedia::Naruto.demon.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.demon)
   end
 
   def test_ja_subscription_methods
