@@ -84,6 +84,13 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_match(/[a-zA-Z]/, Faker::Creature::Dog.breed)
   end
 
+  def test_ja_emotion_methods
+    assert Faker::Emotion.noun.is_a? String
+    assert_not_english(Faker::Emotion.noun)
+    assert Faker::Emotion.adjective.is_a? String
+    assert_not_english(Faker::Emotion.adjective)
+  end
+
   def test_ja_food_methods
     assert Faker::Food.sushi.is_a? String
     assert_not_english(Faker::Food.sushi)
