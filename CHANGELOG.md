@@ -1,10 +1,35 @@
 # Change Log
 
+## [v2.21.0](https://github.com/faker-ruby/faker/tree/v2.21.0) (2022-05-12)
+
+## Bug/Fixes
+
+- [PR #2443](https://github.com/faker-ruby/faker/pull/2443) Fixed error for random in markdown [@sudeeptarlekar](https://github.com/sudeeptarlekar)
+
+## Feature Request
+
+- [PR #2252](https://github.com/faker-ruby/faker/pull/2252) Add Faker::Movies::Tron [@craineum](https://github.com/craineum)
+
+## Update locales
+- [PR #2485](https://github.com/faker-ruby/faker/pull/2485) Add japanese translations for emotion [@kenboo0426](https://github.com/kenboo0426)
+- [PR #2479](https://github.com/faker-ruby/faker/pull/2479) Add japanese translations for naruto [@johnmanjiro13](https://github.com/johnmanjiro13)
+- [PR #2478](https://github.com/faker-ruby/faker/pull/2478) Add Japanese translation for relationships [@shouichi](https://github.com/shouichi)
+- [PR #2469](https://github.com/faker-ruby/faker/pull/2467) Fix blank row in game.yml [@KingYoSun](https://github.com/KingYoSun)
+- [PR #2467](https://github.com/faker-ruby/faker/pull/2467) French traduction of adjectives [@Beygs](https://github.com/Beygs)
+
+## Update local dependencies
+
+- Update rubocop to `1.26.0`
+- Update timecop to `0.95.0`
+
+------------------------------------------------------------------------------
+
 ## [v2.20.0](https://github.com/faker-ruby/faker/tree/v2.20.0) (2022-03-05)
 
 ## Documentation
 
 - [PR #2421](https://github.com/faker-ruby/faker/pull/2421) Add general documentation for Faker::Camera [@aleksandrilyin](https://github.com/aleksandrilyin)
+
 
 ## Feature Request
 
