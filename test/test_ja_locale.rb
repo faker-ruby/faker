@@ -30,6 +30,13 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::Address.street_name)
   end
 
+  def test_ja_adjective_methods
+    assert Faker::Adjective.positive.is_a? String
+    assert_not_english(Faker::Adjective.positive)
+    assert Faker::Adjective.negative.is_a? String
+    assert_not_english(Faker::Adjective.negative)
+  end
+
   def test_ja_ancient_methods
     assert Faker::Ancient.god.is_a? String
     assert_not_english(Faker::Ancient.god)
