@@ -355,11 +355,9 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::VentureBros](doc/tv_shows/venture_bros.md)
 
 ## Customization
-Since you may want to make addresses and other types of data look different
-depending on where in the world you are (US postal codes vs. UK postal codes,
-for example), Faker uses the I18n gem to store strings (like state names) and
-formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
-allowing you to get different formats by switching locales.
+You may want Faker to print information depending on your location in the world. 
+To assist you in this, Faker uses I18n gem to store strings and formats to 
+represent the names and postal codes of the area of your choosing.
 Just set the locale you want as shown below, and Faker will take care of the rest.
 
 ```ruby
