@@ -1,0 +1,12 @@
+en:
+  faker:
+    leaner:
+      unit:
+        - "ft"
+        - "g"
+        - "kg"
+        - "kW"
+        - "L"
+        - "m"
+        - "m2"
+        - "m3"
