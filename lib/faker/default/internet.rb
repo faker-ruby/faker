@@ -522,6 +522,23 @@ module Faker
       end
 
       ##
+      # Generate Web Crawler's user agents
+      #
+      # @return [String]
+      #
+      # @param vendor [String] Name of vendor, supported vendors are googlebot, bingbot, duckduckbot, baiduspider, yandexbot
+      #
+      # @example
+      #   Faker::Internet.bot_user_agent                        #=> "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)"
+      #   Faker::Internet.bot_user_agent(vendor: 'googlebot')   #=> "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/99.0.4844.84 Safari/537.36"
+      #   Faker::Internet.bot_user_agent(vendor: 'bingbot')     #=> "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/86.0.4240.68 Safari/537.36 Edg/86.0.622.31"
+      def bot_user_agent(vendor: nil)
+        agent_hash = translate('faker.internet.bot_user_agent')
+        agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
+        sample(agents)
+      end
+
+      ##
       # Generated universally unique identifier
       #
       # @return [String]

@@ -338,6 +338,21 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.user_agent(vendor: 1).match(/Mozilla|Opera/)
   end
 
+  def test_bot_user_agent_with_no_argument
+    assert @tester.bot_user_agent.match(/Baiduspider|Bot|bot/)
+  end
+
+  def test_bot_user_agent_with_valid_argument
+    assert @tester.bot_user_agent(vendor: :duckduckbot).match(/DuckDuckBot/)
+    assert @tester.bot_user_agent(vendor: 'duckduckbot').match(/DuckDuckBot/)
+  end
+
+  def test_bot_user_agent_with_invalid_argument
+    assert @tester.bot_user_agent(vendor: :ie).match(/Baiduspider|Bot|bot/)
+    assert @tester.bot_user_agent(vendor: nil).match(/Baiduspider|Bot|bot/)
+    assert @tester.bot_user_agent(vendor: 1).match(/Baiduspider|Bot|bot/)
+  end
+
   def test_uuid
     uuid = @tester.uuid
     assert_equal(36, uuid.size)
