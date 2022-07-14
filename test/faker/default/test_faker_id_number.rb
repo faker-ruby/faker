@@ -228,6 +228,22 @@ class TestFakerIdNumber < Test::Unit::TestCase
     end
   end
 
+  def test_danish_id_number_gender_female
+    sample = @tester.danish_id_number(gender: :female)
+    assert sample.chars.last.to_i.even?
+  end
+
+  def test_danish_id_number_gender_male
+    sample = @tester.danish_id_number(gender: :male)
+    assert sample.chars.last.to_i.odd?
+  end
+
+  def test_danish_id_number_invalid_gender
+    assert_raises ArgumentError do
+      @tester.danish_id_number(gender: :invalid)
+    end
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)

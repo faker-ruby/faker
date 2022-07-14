@@ -228,23 +228,38 @@ module Faker
       #
       # @param formatted [Boolean] Specifies if the number is formatted with dividers.
       # @param birthday [Date] Specifies the birthday for the id number.
+      # @param gender [Symbol] Specifies the gender for the id number. Must be one :male or :female if present.
       # @return [String]
       #
       # @example
       #   Faker::IDNumber.danish_id_number #=> "0503909980"
       #   Faker::IDNumber.danish_id_number(formatted: true) #=> "050390-9980"
       #   Faker::IDNumber.danish_id_number(birthday: Date.new(1990, 3, 5)) #=> "0503909980"
+      #   Faker::IDNumber.danish_id_number(gender: :female) #=> "0503909980"
       #
       # @faker.version next
-      def danish_id_number(formatted: false, birthday: Faker::Date.birthday)
+      def danish_id_number(formatted: false, birthday: Faker::Date.birthday, gender: nil)
         valid_control_digits = danish_control_digits(birthday)
         control_digit = sample(valid_control_digits)
+        digits = (0..9).to_a
+        gender = gender.to_sym if gender.respond_to?(:to_sym)
+        gender_digit = case gender
+                       when nil
+                         sample(digits)
+                       when :male
+                         sample(digits.select(&:odd?))
+                       when :female
+                         sample(digits.select(&:even?))
+                       else
+                         raise ArgumentError, "Invalid gender #{gender}. Must be one of male, female, or be omitted."
+                       end
 
         [
           birthday.strftime('%d%m%y'),
           formatted ? '-' : '',
           control_digit,
-          Faker::Number.number(digits: 3)
+          Faker::Number.number(digits: 2),
+          gender_digit
         ].join
       end
 
