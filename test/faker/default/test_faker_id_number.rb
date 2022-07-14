@@ -186,6 +186,48 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_match(/^\d{6}-\d{4}$/, sample)
   end
 
+  def test_danish_id_number_birthday
+    sample = @tester.danish_id_number(birthday: Date.new(1995, 1, 2))
+    assert_match(/^020195\d{4}$/, sample)
+  end
+
+  def test_danish_id_number_birthday_early_1800
+    assert_raises ArgumentError do
+      @tester.danish_id_number(birthday: Date.new(1815, 1, 2))
+    end
+  end
+
+  def test_danish_id_number_birthday_late_1800
+    sample = @tester.danish_id_number(birthday: Date.new(1895, 1, 2))
+    assert_match(/^020195[5678]\d{3}$/, sample)
+  end
+
+  def test_danish_id_number_birthday_early_1900
+    sample = @tester.danish_id_number(birthday: Date.new(1915, 1, 2))
+    assert_match(/^020115[0123]\d{3}$/, sample)
+  end
+
+  def test_danish_id_number_birthday_late_1900
+    sample = @tester.danish_id_number(birthday: Date.new(1995, 1, 2))
+    assert_match(/^020195[012349]\d{3}$/, sample)
+  end
+
+  def test_danish_id_number_birthday_early_2000
+    sample = @tester.danish_id_number(birthday: Date.new(2015, 1, 2))
+    assert_match(/^020115[456789]\d{3}$/, sample)
+  end
+
+  def test_danish_id_number_birthday_mid_2000
+    sample = @tester.danish_id_number(birthday: Date.new(2055, 1, 2))
+    assert_match(/^020155[5678]\d{3}$/, sample)
+  end
+
+  def test_danish_id_number_birthday_late_2000
+    assert_raises ArgumentError do
+      @tester.danish_id_number(birthday: Date.new(2095, 1, 2))
+    end
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)

@@ -44,4 +44,5 @@ Faker::IDNumber.croatian_id(international: true) #=> "HR88467617508"
 # Keyword arguments: formatted, gender, birthday
 Faker::IDNumber.danish_id_number #=> "050390-9980"
 Faker::IDNumber.danish_id_number(formatted: true) #=> "050390-9980"
+Faker::IDNumber.danish_id_number(birthday: Date.new(1990, 3, 5)) #=> "050390-9980"
 ```

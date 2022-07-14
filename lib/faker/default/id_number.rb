@@ -227,15 +227,16 @@ module Faker
       # Digit 10 reveals the gender: # even is female, odd is male.
       #
       # @param formatted [Boolean] Specifies if the number is formatted with dividers.
+      # @param birthday [Date] Specifies the birthday for the id number.
       # @return [String]
       #
       # @example
       #   Faker::IDNumber.danish_id_number #=> "0503909980"
       #   Faker::IDNumber.danish_id_number(formatted: true) #=> "050390-9980"
+      #   Faker::IDNumber.danish_id_number(birthday: Date.new(1990, 3, 5)) #=> "0503909980"
       #
       # @faker.version next
-      def danish_id_number(formatted: false)
-        birthday = Faker::Date.birthday
+      def danish_id_number(formatted: false, birthday: Faker::Date.birthday)
         valid_control_digits = danish_control_digits(birthday)
         control_digit = sample(valid_control_digits)
 
