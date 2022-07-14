@@ -176,6 +176,16 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal checksum_digit, 5
   end
 
+  def test_danish_id_number
+    sample = @tester.danish_id_number
+    assert_match(/^\d{10}$/, sample)
+  end
+
+  def test_danish_id_number_formatted
+    sample = @tester.danish_id_number(formatted: true)
+    assert_match(/^\d{6}-\d{4}$/, sample)
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)
