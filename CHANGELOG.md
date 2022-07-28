@@ -1,5 +1,36 @@
 # Change Log
 
+## [v2.22.0](https://github.com/faker-ruby/faker/tree/v2.22.0) (2022-07-28)
+
+## Bug/Fixes
+
+- [PR #2500](https://github.com/faker-ruby/faker/pull/2500) Fix: Duplicate array before concatenating [@mattr](https://github.com/mattr)
+- [PR #2488](https://github.com/faker-ruby/faker/pull/2488) Fixed random selection issue [@sudeeptarlekar](https://github.com/sudeeptarlekar)
+- [PR #2475](https://github.com/faker-ruby/faker/pull/2475) Update regex used for Faker::Vehicle#vin [@erayalkis](https://github.com/erayalkis)
+
+## Chores
+
+- [PR #2513](https://github.com/faker-ruby/faker/pull/2513) Remove broken docs [@vbrazo](https://github.com/vbrazo)
+- [PR #2502](https://github.com/faker-ruby/faker/pull/2502) Update actions/checkout version in GitHub actions [@jdufresne](https://github.com/jdufresne)
+- [PR #2501](https://github.com/faker-ruby/faker/pull/2501) Make ReadMe more consise [@jenniferdewan](https://github.com/jenniferdewan)
+- [PR #2489](https://github.com/faker-ruby/faker/pull/2489) Change a filename to follow naming conventions [@yasuhiron777](https://github.com/yasuhiron777)
+
+## Feature Request
+
+- [PR #2477](https://github.com/faker-ruby/faker/pull/2477) feat: add bot_user_agent method for generate web crawle's user agents [@a-chacon](https://github.com/a-chacon)
+- [PR #2465](https://github.com/faker-ruby/faker/pull/2465) Add a new sports section for mountaineers [@LeviLong01](https://github.com/LeviLong01)
+
+## Update locales
+
+- [PR #2509](https://github.com/faker-ruby/faker/pull/2509) Add all Dota 2 heroes [@JCFarrow](https://github.com/JCFarrow)
+- [PR #2507](https://github.com/faker-ruby/faker/pull/2507) Update dog.yml [@Kedaruma-Bond](https://github.com/Kedaruma-Bond)
+- [PR #2503](https://github.com/faker-ruby/faker/pull/2503) Update pl.yml [@marek-witkowski](https://github.com/marek-witkowski)
+- [PR #2499](https://github.com/faker-ruby/faker/pull/2499) Fix: Use pattern to define Australian cell phone formats [@mattr](https://github.com/mattr)
+- [PR #2497](https://github.com/faker-ruby/faker/pull/2497) Fix typos in Australia [@mattr](https://github.com/mattr)
+- [PR #2490](https://github.com/faker-ruby/faker/pull/2490) Added Japanese adjective translations [@yasuhiron777](https://github.com/yasuhiron777)
+
+------------------------------------------------------------------------------
+
 ## [v2.21.0](https://github.com/faker-ruby/faker/tree/v2.21.0) (2022-05-12)
 
 ## Bug/Fixes
