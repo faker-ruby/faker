@@ -58,8 +58,8 @@ module Faker
       #   Faker::File.mime_type #=> "application/pdf"
       #
       # @faker.version 1.6.4
-      def mime_type
-        fetch('file.mime_type')
+      def mime_type(media_type: nil)
+        media_type ? fetch("file.mime_type.#{media_type}") : sample(sample(translate('faker.file.mime_type').values))
       end
 
       # rubocop:disable Metrics/ParameterLists
