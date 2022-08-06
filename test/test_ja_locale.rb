@@ -30,6 +30,13 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::Address.street_name)
   end
 
+  def test_ja_adjective_methods
+    assert Faker::Adjective.positive.is_a? String
+    assert_not_english(Faker::Adjective.positive)
+    assert Faker::Adjective.negative.is_a? String
+    assert_not_english(Faker::Adjective.negative)
+  end
+
   def test_ja_ancient_methods
     assert Faker::Ancient.god.is_a? String
     assert_not_english(Faker::Ancient.god)
@@ -84,6 +91,13 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_match(/[a-zA-Z]/, Faker::Creature::Dog.breed)
   end
 
+  def test_ja_emotion_methods
+    assert Faker::Emotion.noun.is_a? String
+    assert_not_english(Faker::Emotion.noun)
+    assert Faker::Emotion.adjective.is_a? String
+    assert_not_english(Faker::Emotion.adjective)
+  end
+
   def test_ja_food_methods
     assert Faker::Food.sushi.is_a? String
     assert_not_english(Faker::Food.sushi)
@@ -121,7 +135,8 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_overwatch_methods
     assert Faker::Games::Overwatch.hero.is_a? String
-    assert_not_english(Faker::Games::Overwatch.hero)
+    hero = Faker::Games::Overwatch.hero
+    assert_not_english(hero) unless hero == 'D.Va'
   end
 
   def test_ja_pokemon_methods
@@ -167,6 +182,17 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::JapaneseMedia::StudioGhibli.quote)
     assert Faker::JapaneseMedia::StudioGhibli.movie.is_a? String
     assert_not_english(Faker::JapaneseMedia::StudioGhibli.movie)
+  end
+
+  def test_ja_naruto_methods
+    assert Faker::JapaneseMedia::Naruto.character.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.character)
+    assert Faker::JapaneseMedia::Naruto.village.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.village)
+    assert Faker::JapaneseMedia::Naruto.eye.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.eye)
+    assert Faker::JapaneseMedia::Naruto.demon.is_a? String
+    assert_not_english(Faker::JapaneseMedia::Naruto.demon)
   end
 
   def test_ja_subscription_methods

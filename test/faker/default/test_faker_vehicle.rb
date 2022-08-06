@@ -4,6 +4,7 @@ require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
   WORD_MATCH = /\w+\.?/.freeze
+  VALIDITY_MATCH = /^([A-HJ-NPR-Z0-9])+/.freeze
 
   def setup
     @tester = Faker::Vehicle
@@ -11,6 +12,10 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def test_vin
     assert_match Faker::Vehicle::VIN_REGEX, @tester.vin
+  end
+
+  def test_vin_validity
+    assert_match VALIDITY_MATCH, @tester.vin
   end
 
   def test_manufacture

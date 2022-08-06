@@ -1,4 +1,4 @@
-# Faker::Food
+# Faker::Hobby
 
 # @faker.version next
 
