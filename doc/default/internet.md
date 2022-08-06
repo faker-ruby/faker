@@ -1,7 +1,7 @@
 # Faker::Internet
 
 ```ruby
-# Keyword arguments: name, username, email, password, domain_name, user_agent, uuid etc... 
+# Keyword arguments: name, username, email, password, domain_name, user_agent, uuid etc...
 Faker::Internet.user #=> { username: 'alexie', email: 'alexie@example.net' }
 Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'alexie@example.net', password: 'DtEf9P8wS31iMyC' }
 
@@ -78,6 +78,10 @@ Faker::Internet.slug(words: 'foo bar', glue: '-') #=> "foo-bar"
 # Keyword arguments: vendor
 Faker::Internet.user_agent #=> "Mozilla/5.0 (compatible; MSIE 9.0; AOL 9.7; AOLBuild 4343.19; Windows NT 6.1; WOW64; Trident/5.0; FunWebProducts)"
 Faker::Internet.user_agent(vendor: :firefox) #=> "Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0"
+
+# Keyword arguments: vendor
+Faker::Internet.bot_user_agent #=> "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+Faker::Internet.bot_user_agent(vendor: :duckduckbot) #=> "Mozilla/5.0 (compatible; DuckDuckBot-Https/1.1; https://duckduckgo.com/duckduckbot)"
 
 Faker::Internet.uuid #=> "929ef6ef-b11f-38c9-111b-accd67a258b2"
 ```

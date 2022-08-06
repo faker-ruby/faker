@@ -1,7 +1,7 @@
 # Faker::BossaNova
 
 ```ruby
-Faker::BossaNova.artist #=> "Tom Jobin"
+Faker::BossaNova.artist #=> "Tom Jobim"
 
 Faker::BossaNova.song #=> "Chega de Saudade"
 ```

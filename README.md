@@ -6,7 +6,6 @@
 [![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=master)](https://inch-ci.org/github/faker-ruby/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
-[![SemVer compatibility](https://api.dependabot.com/badges/compatibility_score?dependency-name=faker&package-manager=bundler&version-scheme=semver)](https://dependabot.com/compatibility-score.html?dependency-name=faker&package-manager=bundler&version-scheme=semver)
 
 This gem is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker) that generates fake data.
 
@@ -291,6 +290,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Movies::LordOfTheRings](doc/movies/lord_of_the_rings.md)
   - [Faker::Movies::PrincessBride](doc/movies/princess_bride.md)
   - [Faker::Movies::StarWars](doc/movies/star_wars.md)
+  - [Faker::Movies::TRON](doc/movies/tron.md)
   - [Faker::Movies::VForVendetta](doc/movies/v_for_vendetta.md)
 
 ### Music
@@ -321,6 +321,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::BigBangTheory](doc/tv_shows/big_bang_theory.md)
   - [Faker::TvShows::BojackHorseman](doc/tv_shows/bojack_horseman.md)
   - [Faker::TvShows::BreakingBad](doc/tv_shows/breaking_bad.md)
+  - [Faker::TvShows::BrooklynNineNine](doc/tv_shows/brooklyn_nine_nine.md)
   - [Faker::TvShows::Buffy](doc/tv_shows/buffy.md)
   - [Faker::TvShows::Community](doc/tv_shows/community.md)
   - [Faker::TvShows::DrWho](doc/tv_shows/dr_who.md)
@@ -353,11 +354,9 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::VentureBros](doc/tv_shows/venture_bros.md)
 
 ## Customization
-Since you may want to make addresses and other types of data look different
-depending on where in the world you are (US postal codes vs. UK postal codes,
-for example), Faker uses the I18n gem to store strings (like state names) and
-formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
-allowing you to get different formats by switching locales.
+You may want Faker to print information depending on your location in the world. 
+To assist you in this, Faker uses I18n gem to store strings and formats to 
+represent the names and postal codes of the area of your choosing.
 Just set the locale you want as shown below, and Faker will take care of the rest.
 
 ```ruby

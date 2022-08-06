@@ -42,7 +42,7 @@ pl:
         - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
 
     internet:
-      free_email: [gmail.com, yahoo.com, hotmail.com]
+      free_email: [gmail.com, yahoo.com, hotmail.com, wp.pl, onet.pl, interia.pl]
       domain_suffix: [com, pl, com.pl, net, org]
 
     lorem:

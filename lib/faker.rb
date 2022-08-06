@@ -29,7 +29,7 @@ module Faker
       end
 
       def random
-        @random || Random.new
+        @random || Random
       end
     end
   end
