@@ -23,9 +23,9 @@ Faker::ChileRut.check_digit #=> "5"
 # Returns full rut
 # Keyword arguments: min_rut
 # Keyword arguments: fixed
-Faker::ChileRut.full_rut #=> "30.686.957-4"
-Faker::ChileRut.full_rut(min_rut: 20890156) #=> "30.686.957-4"
-Faker::ChileRut.full_rut(min_rut: 30686957, fixed: true) #=> "30.686.957-4"
+Faker::ChileRut.full_rut #=> "30686957-4"
+Faker::ChileRut.full_rut(min_rut: 20890156) #=> "30686957-4"
+Faker::ChileRut.full_rut(min_rut: 30686957, fixed: true) #=> "30686957-4"
 
 # Returns full formatted rut
 # Keyword arguments: min_rut
