@@ -13,23 +13,26 @@ I18n.reload! if I18n.backend.initialized?
 
 module Faker
   module Config
-    @locale = nil
-    @random = nil
-
     class << self
-      attr_writer :locale, :random
+      def locale=(new_locale)
+        Thread.current[:faker_config_locale] = new_locale
+      end
 
       def locale
         # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
-        @locale || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
+        Thread.current[:faker_config_locale] || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
       end
 
       def own_locale
-        @locale
+        Thread.current[:faker_config_locale]
+      end
+
+      def random=(new_random)
+        Thread.current[:faker_config_random] = new_random
       end
 
       def random
-        @random || Random
+        Thread.current[:faker_config_random] || Random
       end
     end
   end
