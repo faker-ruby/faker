@@ -230,9 +230,9 @@ module Faker
       # @faker.version next
       def french_insee_number
         num = [
-          [1, 2].sample, # gender
+          [1, 2].sample(random: Faker::Config.random), # gender
           Faker::Number.between(from: 0, to: 99).to_s.rjust(2, '0'), # year of birth
-          Faker::Number.between(from: 1, to: 10).to_s.rjust(2, '0'), # month of birth
+          Faker::Number.between(from: 1, to: 12).to_s.rjust(2, '0'), # month of birth
           Faker::Number.number(digits: 5), # place of birth
           Faker::Number.number(digits: 3) # order number
         ].join
