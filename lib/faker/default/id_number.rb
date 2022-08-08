@@ -261,6 +261,7 @@ module Faker
           Faker::Number.number(digits: 2),
           gender_digit
         ].join
+      end
 
       ##
       # Produces a random French social security number (INSEE number).
