@@ -40,6 +40,13 @@ Faker::IDNumber.chilean_id #=> "15620613-K"
 Faker::IDNumber.croatian_id #=> "88467617508"
 Faker::IDNumber.croatian_id(international: true) #=> "HR88467617508"
 
+# Generate a Danish ID number (CPR)
+# Keyword arguments: formatted, gender, birthday
+Faker::IDNumber.danish_id_number #=> "050390-9980"
+Faker::IDNumber.danish_id_number(formatted: true) #=> "050390-9980"
+Faker::IDNumber.danish_id_number(birthday: Date.new(1990, 3, 5)) #=> "050390-9980"
+Faker::IDNumber.danish_id_number(gender: :female) #=> "050390-9980"
+
 # Generate a valid French Social Security number (INSEE number)
 Faker::IDNumber.french_insee_number #=> "22510589696868"
 ```

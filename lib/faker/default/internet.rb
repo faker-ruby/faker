@@ -174,6 +174,8 @@ module Faker
           keywords << :special_characters if legacy_special_characters != NOT_GIVEN
         end
 
+        raise ArgumentError, 'Password of length 1 can not have both mixed case and special characters' if min_length <= 1 && mix_case && special_characters
+
         min_alpha = mix_case && min_length > 1 ? 2 : 0
         temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
         diff_length = max_length - min_length
@@ -199,6 +201,8 @@ module Faker
             temp[i] = chars[rand(chars.length)]
           end
         end
+
+        temp[rand(temp.size - 1)] = Lorem.characters(number: 1, min_alpha: 1).upcase if mix_case && special_characters && !temp.match(/[A-z]+/)
 
         temp
       end
