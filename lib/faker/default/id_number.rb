@@ -219,6 +219,50 @@ module Faker
         "#{prefix}#{digits}#{checksum_digit}"
       end
 
+      ##
+      # Produces a random Danish ID Number (CPR number).
+      # CPR number is 10 digits. Digit 1-6 is the birthdate (format "DDMMYY").
+      # Digit 7-10 is a sequence number.
+      # Digit 7 digit is a control digit that determines the century of birth.
+      # Digit 10 reveals the gender: # even is female, odd is male.
+      #
+      # @param formatted [Boolean] Specifies if the number is formatted with dividers.
+      # @param birthday [Date] Specifies the birthday for the id number.
+      # @param gender [Symbol] Specifies the gender for the id number. Must be one :male or :female if present.
+      # @return [String]
+      #
+      # @example
+      #   Faker::IDNumber.danish_id_number #=> "0503909980"
+      #   Faker::IDNumber.danish_id_number(formatted: true) #=> "050390-9980"
+      #   Faker::IDNumber.danish_id_number(birthday: Date.new(1990, 3, 5)) #=> "0503909980"
+      #   Faker::IDNumber.danish_id_number(gender: :female) #=> "0503909980"
+      #
+      # @faker.version next
+      def danish_id_number(formatted: false, birthday: Faker::Date.birthday, gender: nil)
+        valid_control_digits = danish_control_digits(birthday)
+        control_digit = sample(valid_control_digits)
+        digits = (0..9).to_a
+        gender = gender.to_sym if gender.respond_to?(:to_sym)
+        gender_digit = case gender
+                       when nil
+                         sample(digits)
+                       when :male
+                         sample(digits.select(&:odd?))
+                       when :female
+                         sample(digits.select(&:even?))
+                       else
+                         raise ArgumentError, "Invalid gender #{gender}. Must be one of male, female, or be omitted."
+                       end
+
+        [
+          birthday.strftime('%d%m%y'),
+          formatted ? '-' : '',
+          control_digit,
+          Faker::Number.number(digits: 2),
+          gender_digit
+        ].join
+      end
+
       private
 
       def croatian_id_checksum_digit(digits)
@@ -303,6 +347,45 @@ module Faker
         subtraction = 11 - remainder.to_i
         digits = { 10 => 'X', 11 => '0' }
         digits.include?(subtraction) ? digits[subtraction] : subtraction.to_s
+      end
+
+      def danish_control_digits(birthday)
+        year = birthday.year
+        century = year.to_s.slice(0, 2).to_i
+        year_digits = year.to_s.slice(2, 2).to_i
+        error_message = "Invalid birthday: #{birthday}. Danish CPR numbers are only distributed to persons born between 1858 and 2057."
+
+        case century
+        when 18
+          # If 5, 6, 7 or 8 and the year numbers are greater than or equal to 58, you were born in 18XX.
+          case year_digits
+          when 58..99
+            [5, 6, 7, 8]
+          else
+            raise ArgumentError, error_message
+          end
+        when 19
+          # If 0, 1, 2 or 3, you are always born in 19XX.
+          # If 4 or 9, you are born in 19XX if the year digits are greater than 36.
+
+          case year_digits
+          when 0..36
+            [0, 1, 2, 3]
+          else # 37..99
+            [0, 1, 2, 3, 4, 9]
+          end
+        else
+          # If 4, 5, 6, 7, 8 or 9 and the year digits are less than or equal to 36, you were born in 20XX.
+          # 5, 6, 7 and 8 are not distributed to persons, with year digits from and including 37 to and including 57.
+          case year_digits
+          when 0..36
+            [4, 5, 6, 7, 8, 9]
+          when 37..57
+            [5, 6, 7, 8]
+          else
+            raise ArgumentError, error_message
+          end
+        end
       end
 
       def _translate(key)
