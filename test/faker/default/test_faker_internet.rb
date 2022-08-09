@@ -364,7 +364,6 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_user_agent_with_invalid_argument
     assert @tester.user_agent(vendor: :ie).match(/Mozilla|Opera/)
-    assert @tester.user_agent(vendor: nil).match(/Mozilla|Opera/)
     assert @tester.user_agent(vendor: 1).match(/Mozilla|Opera/)
   end
 
@@ -379,7 +378,6 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_bot_user_agent_with_invalid_argument
     assert @tester.bot_user_agent(vendor: :ie).match(/Baiduspider|Bot|bot/)
-    assert @tester.bot_user_agent(vendor: nil).match(/Baiduspider|Bot|bot/)
     assert @tester.bot_user_agent(vendor: 1).match(/Baiduspider|Bot|bot/)
   end
 
