@@ -181,6 +181,11 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_match(/^\d{10}$/, sample)
   end
 
+  def test_french_insee_number
+    sample = @tester.french_insee_number
+    assert_match(/^(?<gnd>\d{1})(?<year>\d{2})(?<month>\d{2})(?<department1>\d{1})(?<department2>[0-9AB]{1})(?<place>\d{3})(?<indv>\d{3})(?<ctrl>\d{2})$/, sample)
+  end
+
   def test_danish_id_number_formatted
     sample = @tester.danish_id_number(formatted: true)
     assert_match(/^\d{6}-\d{4}$/, sample)
