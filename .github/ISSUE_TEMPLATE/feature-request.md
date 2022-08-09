@@ -11,7 +11,9 @@ assignees: ''
 A clear and concise description of what the problem is.
 
 **If you're adding new objects, please describe how you would use them**
-Provides examples of how the proposed feature could be useful in a real project.
+Provide examples of how the proposed feature could be useful and relevant.
+
+For example, if proposing a new generator, explain why it's useful and relevant to Faker, and examples of how to use it in a real project.
 
 **Describe alternatives you've considered**
 A clear and concise description of any alternative solutions or features you've considered.
