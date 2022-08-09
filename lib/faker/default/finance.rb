@@ -106,6 +106,8 @@ module Faker
       #
       # @example
       #   Faker::Finance.condominium_fiscal_code #=> "012345678"
+      #
+      # @faker.version next
       def condominium_fiscal_code(country: 'IT')
         numerify(fetch("finance.condominium_fiscal_code.#{country}"))
       end
