@@ -360,27 +360,27 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_user_agent_with_valid_argument
     assert @tester.user_agent(vendor: :opera).match(/Opera/)
     assert @tester.user_agent(vendor: 'opera').match(/Opera/)
+    assert @tester.user_agent(vendor: nil).match(/Mozilla|Opera/)
   end
 
   def test_user_agent_with_invalid_argument
-    assert @tester.user_agent(vendor: :ie).match(/Mozilla|Opera/)
-    assert @tester.user_agent(vendor: nil).match(/Mozilla|Opera/)
-    assert @tester.user_agent(vendor: 1).match(/Mozilla|Opera/)
+    refute_empty @tester.user_agent(vendor: :ie)
+    refute_empty @tester.user_agent(vendor: 1)
   end
 
   def test_bot_user_agent_with_no_argument
-    assert @tester.bot_user_agent.match(/Baiduspider|Bot|bot/)
+    refute_empty @tester.bot_user_agent
   end
 
   def test_bot_user_agent_with_valid_argument
     assert @tester.bot_user_agent(vendor: :duckduckbot).match(/DuckDuckBot/)
     assert @tester.bot_user_agent(vendor: 'duckduckbot').match(/DuckDuckBot/)
+    refute_empty @tester.bot_user_agent(vendor: nil)
   end
 
   def test_bot_user_agent_with_invalid_argument
-    assert @tester.bot_user_agent(vendor: :ie).match(/Baiduspider|Bot|bot/)
-    assert @tester.bot_user_agent(vendor: nil).match(/Baiduspider|Bot|bot/)
-    assert @tester.bot_user_agent(vendor: 1).match(/Baiduspider|Bot|bot/)
+    refute_empty @tester.bot_user_agent(vendor: :ie)
+    refute_empty @tester.bot_user_agent(vendor: 1)
   end
 
   def test_uuid
