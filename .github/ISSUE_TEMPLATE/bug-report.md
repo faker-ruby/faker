@@ -13,7 +13,7 @@ A clear and concise description of what the bug is.
 ## To Reproduce
 Describe a way to reproduce your bug. To get the Faker version, run `FAKER::VERSION`.
 
-Use the reproduction script below to reproduce the steps:
+Use the reproduction script below to reproduce the issue:
 
 ```
 # frozen_string_literal: true
@@ -32,8 +32,11 @@ end
 require "minitest/autorun"
 
 class BugTest < Minitest::Test
-  def test_bug
-    refute "".present?
+  def test_faker
+    # CHANGEME - Reproduce the issue here. Here's an example:
+    @tester = Faker::TvShows::SiliconValley
+    refute_empty @tester.company
+    assert @tester.company == "Intersite"
   end
 end
 
