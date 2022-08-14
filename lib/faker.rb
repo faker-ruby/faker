@@ -44,6 +44,8 @@ module Faker
     Letters = ULetters + LLetters
 
     class << self
+      attr_reader :flexible_key
+
       NOT_GIVEN = Object.new
 
       ## by default numerify results do not start with a zero
@@ -188,9 +190,9 @@ module Faker
       #     girls_name: ["Alice", "Cheryl", "Tatiana"]
       # Then you can call Faker::Name.girls_name and it will act like #first_name
       def method_missing(mth, *args, &block)
-        super unless @flexible_key
+        super unless flexible_key
 
-        if (translation = translate("faker.#{@flexible_key}.#{mth}"))
+        if (translation = translate("faker.#{flexible_key}.#{mth}"))
           sample(translation)
         else
           super

@@ -8,9 +8,7 @@ class TestFakerFood < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    flexible_key = @tester.instance_variable_get('@flexible_key')
-
-    assert flexible_key == :food
+    assert @tester.flexible_key == :food
   end
 
   def test_dish
