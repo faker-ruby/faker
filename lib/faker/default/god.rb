@@ -3,6 +3,9 @@ require 'faker\lib\locales\en\god.yml'
 
 module Faker
   class God < Base
+
+    flexible :god
+
     class << self
       ##
       # Produces a god name.
