@@ -1,0 +1,38 @@
+en:
+  faker:
+    god:
+      type:
+        - Greek
+        - Roman
+        - Norse
+        - Japanese
+        - Anglo-Saxon
+        - Etruscan
+        - Chinese
+        - Iranian
+        - Egyptian
+        - Hindu
+        - African
+        - Mayan
+        - Babylonian
+        - Korean
+        - Native American
+        - Celtic
+        - Australian
+        - Slavic
+        - Sumerian
+        - Aztec
+        - Inca
+      name:
+        - Ares
+        - Athena
+        - Hera
+        - Zeus
+        - Poseiden
+        - Hermes
+        - Hades
+        - Hephaestus
+        - Demeter
+        - Dionysus
+        - Apollo
+        - Aphrodite 
