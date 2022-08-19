@@ -97,6 +97,20 @@ module Faker
       def stock_market
         fetch('finance.stock_market')
       end
+
+      ##
+      # Returns a random condominium fiscal code.
+      #
+      # @param country [String] Two capital letter country code to use for the vat number.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Finance.condominium_fiscal_code #=> "012345678"
+      #
+      # @faker.version next
+      def condominium_fiscal_code(country: 'IT')
+        numerify(fetch("finance.condominium_fiscal_code.#{country}"))
+      end
     end
   end
 end
