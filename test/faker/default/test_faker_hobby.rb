@@ -8,9 +8,7 @@ class TestFakerHobby < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    flexible_key = @tester.instance_variable_get('@flexible_key')
-
-    assert flexible_key == :hobby
+    assert @tester.flexible_key == :hobby
   end
 
   def test_activity

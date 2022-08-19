@@ -27,9 +27,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    flexible_key = @tester.instance_variable_get('@flexible_key')
-
-    assert flexible_key == :vehicle
+    assert @tester.flexible_key == :vehicle
   end
 
   def test_transmission
