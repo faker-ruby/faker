@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::Vehicles::Car.brand #=> "Audi"
         #
-        # @faker.version 2.13.0
+        # @faker.version next
         def brand
           fetch('car.brand')
         end
@@ -27,7 +27,7 @@ module Faker
         # @example
         #  Faker::Vehicles::Car.model #=> "Q3"
         #
-        # @faker.version 2.13.0
+        # @faker.version next
         def model
           fetch('car.model')
         end
@@ -40,7 +40,7 @@ module Faker
         # @example
         #  Faker::Vehicles::Car.version #=> "40 TFSI Premium"
         #
-        # @faker.version 2.13.0
+        # @faker.version next
         def version
           fetch('car.version')
         end
