@@ -297,6 +297,19 @@ module Faker
         "#{plate_number}#{singapore_checksum(plate_number)}"
       end
 
+      ##
+      # Produces a car version
+      #
+      # @return [String]
+      #
+      # @example
+      #  Faker::Vehicle.version #=> "40 TFSI Premium"
+      #
+      # @faker.version next
+      def version
+        fetch('vehicle.version')
+      end
+
       private
 
       def first_eight(number)
