@@ -21,7 +21,7 @@ Faker::Vehicle.make_and_model #=> "Dodge Charger"
 # Random vehicle version
 Faker::Vehicle.version #=> "2.5 Turbo"
 
-Faker::Vehicle.make #=> "Altis Hybrid 1.8 16V CVT"
+Faker::Vehicle.version #=> "Altis Hybrid 1.8 16V CVT"
 
 # Random vehicle color
 Faker::Vehicle.color #=> "Red"
