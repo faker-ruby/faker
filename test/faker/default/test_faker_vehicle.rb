@@ -104,6 +104,10 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert standard_specs.length >= 5 && standard_specs.length < 10
   end
 
+  def test_version
+    assert_match WORD_MATCH, @tester.version
+  end
+
   private
 
   def doors_condition(doors)
