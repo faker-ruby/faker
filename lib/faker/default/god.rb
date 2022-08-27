@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'faker\lib\locales\en\god.yml'
+
 
 module Faker
   class God < Base
