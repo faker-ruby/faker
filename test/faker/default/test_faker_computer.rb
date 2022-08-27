@@ -17,7 +17,6 @@ class TestFakerComputer < Test::Unit::TestCase
   end
 
   def test_stack
-    # puts @tester.stack
     assert stack = @tester.stack
                           .match(/\A(?<platform>(?:[[:alnum:]]+\s?){1,5}), (?<os>(?:[[:alnum:]]+-?.?\)?\(?\s?){1,5})\z/)
 
