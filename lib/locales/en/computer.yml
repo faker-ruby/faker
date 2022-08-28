@@ -4,7 +4,7 @@ en:
       type:
         - server
         - workstation
-      platform: 
+      platform:
         - Linux
         - macOS
         - Windows
@@ -39,7 +39,7 @@ en:
           - OpenBSD 6
         templeos:
           - TempleOS 5.03
-        plannine:
+        plan 9:
           - Plan 9 Fourth Edition
         macos:
           - Catalina (10.15)
