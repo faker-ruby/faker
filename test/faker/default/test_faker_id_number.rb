@@ -58,12 +58,20 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_invalid_south_african_id_number
     sample = @tester.invalid_south_african_id_number
+    
+    assert_raises Date::Error do
+      Date.parse(south_african_id_number_to_date_of_birth_string(sample))
+    end
   end
 
   def test_brazilian_citizen_number
     sample = @tester.brazilian_citizen_number
     assert_match(/^\d{11}$/, sample)
     assert_match(/(\d)((?!\1)\d)+/, sample)
+
+    assert_raises Date::Error do
+      Date.parse(south_african_id_number_to_date_of_birth_string(sample))
+    end
   end
 
   def test_brazilian_citizen_number_formatted

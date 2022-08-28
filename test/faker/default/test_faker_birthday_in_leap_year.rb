@@ -19,5 +19,13 @@ class TestFakerBirthdayInLeapYear < Test::Unit::TestCase
     assert_nothing_raised ArgumentError do
       @tester.birthday
     end
+    
+    assert_raise Date::Error do
+      ::Date.new(@today.year - @min, @today.month, @today.day)
+    end
+
+    assert_raise Date::Error do
+      ::Date.new(@today.year - @max, @today.month, @today.day)
+    end
   end
 end
