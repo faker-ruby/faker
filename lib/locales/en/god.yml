@@ -1,7 +1,7 @@
 en:
   faker:
     god:
-      type:
+      mythology:
         - Greek
         - Roman
         - Norse
@@ -23,16 +23,250 @@ en:
         - Sumerian
         - Aztec
         - Inca
-      name:
-        - Ares
-        - Athena
-        - Hera
-        - Zeus
-        - Poseiden
-        - Hermes
-        - Hades
-        - Hephaestus
-        - Demeter
-        - Dionysus
-        - Apollo
-        - Aphrodite
+      greek:
+        name:
+          - Ares
+          - Athena
+          - Hera
+          - Zeus
+          - Poseiden
+          - Hermes
+          - Hades
+          - Hephaestus
+          - Demeter
+          - Dionysus
+          - Apollo
+          - Aphrodite
+
+      roman:
+        name:
+          - Jupiter
+          - Juno
+          - Mars
+          - Venus
+          - Minerva
+          - Apollo
+          - Diana
+          - Mercurio
+          - Vulcano
+          - Vesta
+          - Mitra
+          - Quirinus
+          - Lares and Penates
+          - Janus
+          - Ceres
+          - Pluto
+          - Saturno
+          - Neptune
+          - Bacchus
+          - Asclepius
+          - Fauno
+          - Isis
+      norse:
+        name:
+          - Baldur
+          - Borr
+          - Borr
+          - Búri
+          - Dagur
+          - Dagur
+          - Delling
+          - Eir
+          - Ēostre
+          - Elli
+          - Forseti
+          - Freyja
+          - Freyr 
+          - Frigg 
+          - Fulla
+          - Gefjun 
+          - Hel 
+          - Heimdallur
+          - Hermóður 
+          - Hlín 
+          - Höðr 
+          - Hœnir 
+          - Iðunn
+          - Jörð 
+          - Kvasir 
+          - Lofn 
+          - Loki 
+          - Magni 
+          - Máni
+          - Mímir 
+          - Nanna 
+          - Nerþus 
+          - Njörður
+          - Nótt 
+          - Óðinn 
+          - Sága 
+          - Rán 
+          - Sif 
+          - Sigyn 
+          - Sjöfn
+          - Skaði 
+          - Snotra 
+          - Sol
+          - Thor
+          - Thruer 
+          - Týr 
+          - Ullr
+          - Váli 
+          - Vár 
+          - Vé 
+          - Víðarr 
+          - Vör 
+          - Yggdrasil 
+
+      hindu:
+        name:
+          - Aditi
+          - Agni
+          - Ardhanarishvara
+          - Ayyappan
+          - Balarama
+          - Brahma
+          - Brihaspati
+          - Chandi
+          - Durga
+          - Ganesha
+          - Harihara
+          - Indra
+          - Jagannatha
+          - Kali
+          - Kalkin
+          - Krishna
+          - Kubera
+          - Kurma
+          - Lakshmi
+          - Lokapāla
+          - Matsya
+          - Mitra
+          - Narasimha
+          - Nataraja
+          - Parashurama
+          - Parvati
+          - Prajapati
+          - Rama
+          - Saptamatrika
+          - Sarasvati
+          - Shashthi
+          - Shiva
+          - Skanda
+          - Surya
+          - Trimurti
+          - Vamana
+          - Varaha
+          - Varuna
+          - Vasudeva
+          - Vishnu
+          - Vishvakarman
+          - Yama 
+
+      mayan:
+        name:
+          - Kukulcán 
+          - Itzamná
+          - Ix Chel
+          - Ah Puch
+          - Buluc Chabtan
+
+      chinese:
+        name:
+          - Bixia
+          - Caishen
+          - Cangjie
+          - Chang’e
+          - Changxi
+          - Di Jun
+          - Dianmu
+          - Doumu
+          - Dragon King
+          - Dragon King
+          - Eight Immortals
+          - Erlang Shen
+          - Fuxi
+          - Fuxi
+          - Guanyin
+          - Guanyin
+          - Jade Emperor
+          - Ji Gong
+          - Jiutian Xuannu
+          - Lei Gong
+          - Lu Ban
+          - Mazu
+          - Menshen
+
+      egyptian:
+        name:
+          - Aker
+          - Amun
+          - Anhur
+          - Aten
+          - Atum 
+          - Bennu 
+          - Geb
+          - Hapi
+          - Horus 
+          - Khepri 
+          - Khnum 
+          - Khonsu 
+          - Maahes 
+          - Montu 
+          - Nefertum 
+          - Nemty 
+          - Neper 
+          - Ptah
+          - Ra  
+          - Shu  
+          - Sobek 
+          - Sopdu 
+          - Thoth 
+          - Wadj-wer ]
+          - Amunet 
+          - Anuket ]
+          - Bastet
+          - Bat 
+          - Hathor 
+          - Hatmehit 
+          - Heqet 
+          - Hesat
+          - Isis 
+          - Maat 
+          - Menhit 
+          - Neith 
+          - Nekhbet 
+          - Nephthys
+          - Nepit 
+          - Nut
+          - Pakhet 
+          - Renenutet 
+          - Sekhmet  
+          - Tefnut 
+          - Wadjet
+          - Wosret 
+          - Anubis
+          - Heh 
+          - Kek 
+          - Nu 
+          - Ra 
+          - Tatenen 
+
+      aztec:
+        name:
+          - Huitzilopochtli
+          - Tlaloc
+          - Quetzalcoatl 
+          - Tezcatlipoca 
+          - Chicomecoatl
+          - Xochiquetzal 
+          - Chalchiuhtilicue
+          - Mixcoatl 
+          - Xolotl 
+          - Mictlantecuhtli 
+          - Chantico 
+          - Patecatl 
+          - Tepeyollotl 
+          - Tlahuizcalpantecuhtli 
+          - Xochipill           
+
