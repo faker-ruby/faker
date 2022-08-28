@@ -57,7 +57,7 @@ jobs:
         ./cc-test-reporter before-build
 
     - name: Run tests
-      run: CI=1 CC_TEST_REPORTER_ID=1 bundle exec rake test
+      run: bundle exec rake test
 
     - name: Publish code coverage
       env:
