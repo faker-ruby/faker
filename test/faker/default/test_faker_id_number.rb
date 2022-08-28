@@ -68,7 +68,6 @@ class TestFakerIdNumber < Test::Unit::TestCase
     sample = @tester.brazilian_citizen_number
     assert_match(/^\d{11}$/, sample)
     assert_match(/(\d)((?!\1)\d)+/, sample)
-    
   end
 
   def test_brazilian_citizen_number_formatted
