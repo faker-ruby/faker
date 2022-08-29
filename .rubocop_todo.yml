@@ -28,12 +28,6 @@ Style/FetchEnvVar:
     - 'tasks/website.rake'
 
 # Offense count: 1
-# This cop supports safe auto-correction (--auto-correct).
-Style/FileRead:
-  Exclude:
-    - 'script/txt2html'
-
-# Offense count: 1
 # This cop supports unsafe auto-correction (--auto-correct-all).
 Style/MapToHash:
   Exclude:
