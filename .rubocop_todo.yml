@@ -21,13 +21,6 @@ Style/DocumentDynamicEvalDefinition:
     - 'test/test_determinism.rb'
 
 # Offense count: 1
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: AllowedVars.
-Style/FetchEnvVar:
-  Exclude:
-    - 'tasks/website.rake'
-
-# Offense count: 1
 # This cop supports unsafe auto-correction (--auto-correct-all).
 Style/MapToHash:
   Exclude:
