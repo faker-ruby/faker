@@ -1,4 +1,7 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.7
 
 Layout/LineLength:
