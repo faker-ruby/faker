@@ -169,6 +169,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Food](doc/default/food.md)
   - [Faker::FunnyName](doc/default/funny_name.md)
   - [Faker::Gender](doc/default/gender.md)
+  - [Faker::God](doc/default/god.md)
   - [Faker::GreekPhilosophers](doc/default/greek_philosophers.md)
   - [Faker::Hacker](doc/default/hacker.md)
   - [Faker::Hipster](doc/default/hipster.md)
@@ -219,6 +220,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Verbs](doc/default/verbs.md)
   - [Faker::VulnerabilityIdentifier](doc/default/vulnerability_identifier.md)
   - [Faker::WorldCup](doc/default/world_cup.md)
+  
 
 ### Blockchain
   - [Faker::Blockchain::Aeternity](doc/blockchain/aeternity.md)
