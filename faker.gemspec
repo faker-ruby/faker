@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   # Requires Ruby I18n 1.8.11 or higher to resolve https://github.com/faker-ruby/faker/issues/2330.
   spec.add_dependency('i18n', '>= 1.8.11', '< 2')
 
-  spec.add_development_dependency('minitest', '5.15.0')
+  spec.add_development_dependency('minitest', '5.16.3')
   spec.add_development_dependency('pry', '0.14.1')
   spec.add_development_dependency('rake', '13.0.6')
   spec.add_development_dependency('rubocop', '1.28.2')
