@@ -14,12 +14,6 @@ Gemspec/RequireMFA:
   Exclude:
     - 'faker.gemspec'
 
-# Offense count: 1
-# This cop supports safe auto-correction (--auto-correct).
-Lint/DuplicateRegexpCharacterClassElement:
-  Exclude:
-    - 'lib/faker/default/vehicle.rb'
-
 # Offense count: 3
 Style/DocumentDynamicEvalDefinition:
   Exclude:
