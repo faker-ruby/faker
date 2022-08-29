@@ -291,7 +291,7 @@ class TestFakerCompany < Test::Unit::TestCase
       end
 
       decimal = total.digits.first
-      expected_control = decimal != 0 ? 10 - decimal : decimal
+      expected_control = decimal == 0 ? decimal : 10 - decimal
 
       # Control code must be a letter
       return letters_cif_control[expected_control] if letter_cif_number.include?(first_letter) ||
