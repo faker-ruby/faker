@@ -107,7 +107,7 @@ module Faker
 
         birthyear = Date.birthday(min_age: min_age, max_age: max_age).year
         prefix = birthyear < 2000 ? 'S' : 'T'
-        values = birthyear.to_s[-2..-1]
+        values = birthyear.to_s[-2..]
         values << regexify(/\d{5}/)
         check_alpha = generate_nric_check_alphabet(values, prefix)
         "#{prefix}#{values}#{check_alpha}"

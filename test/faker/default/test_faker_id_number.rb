@@ -59,15 +59,8 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_invalid_south_african_id_number
     sample = @tester.invalid_south_african_id_number
 
-    # The error raised here is changed in Ruby 2.7.
-    if RUBY_VERSION < '2.7'
-      assert_raises ArgumentError do
-        Date.parse(south_african_id_number_to_date_of_birth_string(sample))
-      end
-    elsif RUBY_VERSION >= '2.7'
-      assert_raises Date::Error do
-        Date.parse(south_african_id_number_to_date_of_birth_string(sample))
-      end
+    assert_raises Date::Error do
+      Date.parse(south_african_id_number_to_date_of_birth_string(sample))
     end
   end
 

@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
 
 Layout/LineLength:
   Description: This cop checks the length of lines in the source code. The maximum length is configurable.
