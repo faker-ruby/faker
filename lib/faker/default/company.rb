@@ -209,7 +209,7 @@ module Faker
           base << sample((0..9).to_a)
           sum += (weight * base.last)
         end
-        base << (11 - (sum % 11)) % 10
+        base << ((11 - (sum % 11)) % 10)
         base.join
       end
 
@@ -395,7 +395,7 @@ module Faker
         factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
 
         2.times do
-          checksum = digits.inject(0) { |acc, digit| acc + digit * factors.next } % 11
+          checksum = digits.inject(0) { |acc, digit| acc + (digit * factors.next) } % 11
           digits << (checksum < 2 ? 0 : 11 - checksum)
         end
 
@@ -478,7 +478,7 @@ module Faker
         if (sum % 10).zero?
           0
         else
-          (sum / 10 + 1) * 10 - sum
+          (((sum / 10) + 1) * 10) - sum
         end
       end
 
@@ -545,7 +545,7 @@ module Faker
       def inn_checksum(factor, number)
         (
           factor.map.with_index.reduce(0) do |v, i|
-            v + i[0] * number[i[1]].to_i
+            v + (i[0] * number[i[1]].to_i)
           end % 11 % 10
         ).to_s
       end

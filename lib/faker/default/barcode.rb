@@ -158,7 +158,7 @@ module Faker
       #
       # @faker.version 2.14.0
       def generate_check_digit(odd_sum, even_sum)
-        (10 - (odd_sum * 3 + even_sum) % 10) % 10
+        (10 - (((odd_sum * 3) + even_sum) % 10)) % 10
       end
     end
   end

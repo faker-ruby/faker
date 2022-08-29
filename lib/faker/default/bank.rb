@@ -147,9 +147,9 @@ module Faker
       def checksum(num_string)
         num_array = num_string.split('').map(&:to_i)
         (
-          7 * (num_array[0] + num_array[3] + num_array[6]) +
-            3 * (num_array[1] + num_array[4] + num_array[7]) +
-            9 * (num_array[2] + num_array[5])
+          (7 * (num_array[0] + num_array[3] + num_array[6])) +
+            (3 * (num_array[1] + num_array[4] + num_array[7])) +
+            (9 * (num_array[2] + num_array[5]))
         ) % 10
       end
 

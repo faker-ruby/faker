@@ -14,22 +14,6 @@ Gemspec/RequireMFA:
   Exclude:
     - 'faker.gemspec'
 
-# Offense count: 32
-# This cop supports safe auto-correction (--auto-correct).
-Lint/AmbiguousOperatorPrecedence:
-  Exclude:
-    - 'lib/faker/default/bank.rb'
-    - 'lib/faker/default/barcode.rb'
-    - 'lib/faker/default/code.rb'
-    - 'lib/faker/default/company.rb'
-    - 'lib/faker/default/id_number.rb'
-    - 'lib/faker/default/internet.rb'
-    - 'lib/faker/default/number.rb'
-    - 'lib/helpers/base58.rb'
-    - 'test/faker/default/test_faker_bank.rb'
-    - 'test/faker/default/test_faker_company.rb'
-    - 'test/faker/default/test_faker_number.rb'
-
 # Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
 Lint/DuplicateRegexpCharacterClassElement:

@@ -174,7 +174,7 @@ module Faker
         theta = 2 * Math::PI * rand
         rho = Math.sqrt(-2 * Math.log(1 - rand))
         scale = standard_deviation * rho
-        mean + scale * Math.cos(theta)
+        mean + (scale * Math.cos(theta))
       end
 
       ##

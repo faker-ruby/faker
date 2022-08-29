@@ -352,7 +352,7 @@ module Faker
 
       def brazilian_document_checksum(digits)
         digits.chars.each_with_index.inject(0) do |acc, (digit, i)|
-          acc + digit.to_i * (digits.size + 1 - i)
+          acc + (digit.to_i * (digits.size + 1 - i))
         end * 10
       end
 

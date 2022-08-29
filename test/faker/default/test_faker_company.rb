@@ -165,16 +165,16 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_match(/^\d{14}$/, sample)
 
     digit_sum = sample[0..11].chars.each_with_index.inject(0) do |acc, (digit, i)|
-      factor = 2 + (3 - i) % 8
-      acc + digit.to_i * factor
+      factor = 2 + ((3 - i) % 8)
+      acc + (digit.to_i * factor)
     end
     remainder = digit_sum % 11
     first_digit = remainder < 2 ? '0' : (11 - remainder).to_s
     assert_equal sample[12], first_digit
 
     digit_sum = sample[0..12].chars.each_with_index.inject(0) do |acc, (digit, i)|
-      factor = 2 + (4 - i) % 8
-      acc + digit.to_i * factor
+      factor = 2 + ((4 - i) % 8)
+      acc + (digit.to_i * factor)
     end
     remainder = digit_sum % 11
     second_digit = remainder < 2 ? '0' : (11 - remainder).to_s
@@ -266,7 +266,7 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def inn_checksum(number)
     [2, 4, 10, 3, 5, 9, 4, 6, 8].map.with_index.reduce(0) do |v, i|
-      v + i[0] * number[i[1]].to_i
+      v + (i[0] * number[i[1]].to_i)
     end % 11 % 10
   end
 

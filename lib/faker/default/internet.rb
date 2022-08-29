@@ -121,7 +121,7 @@ module Faker
               tries += 1
               break unless result.length < specifier && tries < 7
             end
-            return result * (specifier / result.length + 1) if specifier.positive?
+            return result * ((specifier / result.length) + 1) if specifier.positive?
           when Range
             tries = 0
             result = nil
@@ -521,7 +521,7 @@ module Faker
         end
 
         agent_hash = translate('faker.internet.user_agent')
-        agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
+        agents = (vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym]) || agent_hash[sample(agent_hash.keys)]
         sample(agents)
       end
 
@@ -538,7 +538,7 @@ module Faker
       #   Faker::Internet.bot_user_agent(vendor: 'bingbot')     #=> "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/86.0.4240.68 Safari/537.36 Edg/86.0.622.31"
       def bot_user_agent(vendor: nil)
         agent_hash = translate('faker.internet.bot_user_agent')
-        agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
+        agents = (vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym]) || agent_hash[sample(agent_hash.keys)]
         sample(agents)
       end
 
