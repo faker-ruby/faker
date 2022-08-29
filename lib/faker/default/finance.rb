@@ -28,9 +28,9 @@ module Faker
 
         # calculate the luhn checksum digit
         multiplier = 1
-        luhn_sum = template.gsub(/[^0-9]/, '').split('').reverse.map(&:to_i).inject(0) do |sum, digit|
+        luhn_sum = template.gsub(/[^0-9]/, '').chars.reverse.map(&:to_i).inject(0) do |sum, digit|
           multiplier = (multiplier == 2 ? 1 : 2)
-          sum + (digit * multiplier).to_s.split('').map(&:to_i).inject(0) { |digit_sum, cur| digit_sum + cur }
+          sum + (digit * multiplier).to_s.chars.map(&:to_i).inject(0) { |digit_sum, cur| digit_sum + cur }
         end
 
         # the sum plus whatever the last digit is must be a multiple of 10. So, the

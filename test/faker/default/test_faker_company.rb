@@ -201,7 +201,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_russian_tax_number_checksum
     base_number = @tester.russian_tax_number
     number = base_number[0..-2]
-    checksum = base_number.split('').last.to_i
+    checksum = base_number.chars.last.to_i
 
     assert((inn_checksum(number) - checksum).zero?)
   end
@@ -240,7 +240,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def czech_o_n_checksum(org_no)
     weights = [8, 7, 6, 5, 4, 3, 2]
     sum = 0
-    digits = org_no.split('').map(&:to_i)
+    digits = org_no.chars.map(&:to_i)
     weights.each_with_index.map do |w, i|
       sum += (w * digits[i])
     end
@@ -250,7 +250,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def abn_checksum(abn)
     abn_weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
-    abn.split('').map(&:to_i).each_with_index.map do |n, i|
+    abn.chars.map(&:to_i).each_with_index.map do |n, i|
       (i.zero? ? n - 1 : n) * abn_weights[i]
     end.inject(:+)
   end
@@ -282,7 +282,7 @@ class TestFakerCompany < Test::Unit::TestCase
       province_code = number[0..1]
       actual_control = Regexp.last_match(3)
 
-      total = number.split('').each_with_index.inject(0) do |acc, (element, index)|
+      total = number.chars.each_with_index.inject(0) do |acc, (element, index)|
         acc + if index.even?
                 (element.to_i * 2).digits.inject(:+)
               else
@@ -291,7 +291,7 @@ class TestFakerCompany < Test::Unit::TestCase
       end
 
       decimal = total.digits.first
-      expected_control = decimal != 0 ? 10 - decimal : decimal
+      expected_control = decimal.zero? ? decimal : 10 - decimal
 
       # Control code must be a letter
       return letters_cif_control[expected_control] if letter_cif_number.include?(first_letter) ||

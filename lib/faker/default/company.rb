@@ -296,7 +296,7 @@ module Faker
           result = Array.new(3) { rand(1..9) } + Array.new(7) { rand(10) }
           break if (weight_sum(result, weights) % 11) == result[9]
         end
-        result.join('')
+        result.join
       end
 
       ##
@@ -321,7 +321,7 @@ module Faker
           random_digits = Array.new(length) { rand(10) }
           break if collect_regon_sum(random_digits) == random_digits.last
         end
-        random_digits.join('')
+        random_digits.join
       end
 
       ##
@@ -459,7 +459,7 @@ module Faker
       def luhn_algorithm(number)
         multiplications = []
 
-        number.to_s.reverse.split(//).each_with_index do |digit, i|
+        number.to_s.reverse.chars.each_with_index do |digit, i|
           multiplications << if i.even?
                                digit.to_i * 2
                              else
@@ -553,7 +553,7 @@ module Faker
       def spanish_cif_control_digit(organization_type, code)
         letters = %w[J A B C D E F G H I]
 
-        control = code.split('').each_with_index.inject(0) do |sum, (value, index)|
+        control = code.chars.each_with_index.inject(0) do |sum, (value, index)|
           if (index + 1).even?
             sum + value.to_i
           else

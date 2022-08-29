@@ -278,7 +278,7 @@ class TestEsArLocale < Test::Unit::TestCase
   end
 
   def test_es_ar_cell_phone
-    assert Faker::PhoneNumber.cell_phone.match(/^(?:11|(?:2|3)\d{2,3})(?:\-| )(?:4|5|6|7)(?:\d{3}(?:-| )\d{4}|\d{2}(?:-| )\d{4}|\d{5})$/u)
+    assert Faker::PhoneNumber.cell_phone.match(/^(?:11|(?:2|3)\d{2,3})(?:-| )(?:4|5|6|7)(?:\d{3}(?:-| )\d{4}|\d{2}(?:-| )\d{4}|\d{5})$/u)
   end
 
   def test_es_ar_country_code
@@ -290,7 +290,7 @@ class TestEsArLocale < Test::Unit::TestCase
   end
 
   def test_es_ar_cell_phone_with_country_code
-    assert Faker::PhoneNumber.cell_phone_with_country_code.match(/^\+54 (?:11|(?:2|3)\d{2,3})(?:\-| )(?:4|5|6|7)(?:\d{3}(?:-| )\d{4}|\d{2}(?:-| )\d{4}|\d{5})$/u)
+    assert Faker::PhoneNumber.cell_phone_with_country_code.match(/^\+54 (?:11|(?:2|3)\d{2,3})(?:-| )(?:4|5|6|7)(?:\d{3}(?:-| )\d{4}|\d{2}(?:-| )\d{4}|\d{5})$/u)
   end
 
   def test_es_ar_cell_phone_in_e164

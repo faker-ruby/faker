@@ -21,8 +21,8 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert_equal 9, auth[:uid].length
     assert_equal 2, word_count(info[:name])
     assert info[:email].match safe_email_regex(info[:first_name], info[:last_name])
-    assert_equal info[:name].split(' ').first, info[:first_name]
-    assert_equal info[:name].split(' ').last, info[:last_name]
+    assert_equal info[:name].split.first, info[:first_name]
+    assert_equal info[:name].split.last, info[:last_name]
     assert_instance_of String, info[:image]
     assert_instance_of String, credentials[:token]
     assert_instance_of String, credentials[:refresh_token]
@@ -507,8 +507,8 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     extra           = auth[:extra]
     raw_info        = extra[:raw_info]
     nick_name       = info[:nickname].downcase
-    first_name      = nick_name.split(' ').first
-    last_name       = nick_name.split(' ').last
+    first_name      = nick_name.split.first
+    last_name       = nick_name.split.last
 
     assert_equal 'auth0', auth[:provider]
     assert_instance_of String, auth[:uid]
@@ -535,7 +535,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
   end
 
   def word_count(string)
-    string.split(' ').length
+    string.split.length
   end
 
   def boolean?(test)

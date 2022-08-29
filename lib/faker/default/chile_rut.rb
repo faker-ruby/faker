@@ -37,7 +37,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def dv
-        split_reversed_rut = @last_rut.to_s.reverse.split('')
+        split_reversed_rut = @last_rut.to_s.reverse.chars
         seq = [2, 3, 4, 5, 6, 7]
         i = 0
         digit_sum = split_reversed_rut.reduce(0) do |sum, n|

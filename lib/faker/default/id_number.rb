@@ -332,7 +332,7 @@ module Faker
                                             .with_index { |_, i| (i + 1).odd? }
 
         sum_of_odd_digits = odd_digits_without_last_character.map(&:to_i).reduce(:+)
-        even_digits_times_two = (even_digits.join('').to_i * 2).to_s
+        even_digits_times_two = (even_digits.join.to_i * 2).to_s
         sum_of_even_digits = even_digits_times_two.chars.map(&:to_i).reduce(:+)
 
         total_sum = sum_of_odd_digits + sum_of_even_digits

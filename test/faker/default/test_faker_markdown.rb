@@ -9,14 +9,14 @@ class TestFakerMarkdown < Test::Unit::TestCase
   end
 
   def test_headers
-    test_trigger = @tester.headers.split(' ')
+    test_trigger = @tester.headers.split
 
     assert(test_trigger.length == 2)
     assert(test_trigger.first.include?('#'))
   end
 
   def test_emphasis
-    test_trigger = @tester.emphasis.split('')
+    test_trigger = @tester.emphasis.chars
 
     assert(test_trigger.to_set.intersect?(['_', '~', '*', '**'].to_set))
   end
@@ -38,14 +38,14 @@ class TestFakerMarkdown < Test::Unit::TestCase
   end
 
   def test_inline_code
-    test_trigger = @tester.inline_code.split('')
+    test_trigger = @tester.inline_code.chars
 
     assert_equal(test_trigger.first, '`')
     assert_equal(test_trigger.last, '`')
   end
 
   def test_block_code
-    test_trigger = @tester.block_code.split('')
+    test_trigger = @tester.block_code.chars
 
     assert_equal(test_trigger[0], '`')
     assert_equal(test_trigger[1], '`')
@@ -88,8 +88,8 @@ class TestFakerMarkdown < Test::Unit::TestCase
 
     assert(test_array.length >= 3)
 
-    assert(test_array[0].split(' ').length == 2)
-    assert(test_array[0].split(' ').first.include?('#'))
+    assert(test_array[0].split.length == 2)
+    assert(test_array[0].split.first.include?('#'))
 
     assert_instance_of(String, test_array[0])
     assert_instance_of(String, test_array[1])

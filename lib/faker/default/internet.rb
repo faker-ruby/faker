@@ -270,7 +270,7 @@ module Faker
       # @example
       #   Faker::Internet.domain_word   #=> "senger"
       def domain_word
-        with_locale(:en) { Char.prepare(Company.name.split(' ').first) }
+        with_locale(:en) { Char.prepare(Company.name.split.first) }
       end
 
       ## Returns the domain suffix e.g. com, org, co, biz, info etc.
@@ -613,10 +613,10 @@ module Faker
           Array('0'..'9'),
           Array('A'..'Z'),
           Array('a'..'z'),
-          "!#$%&'*+-/=?^_`{|}~.".split(//)
+          "!#$%&'*+-/=?^_`{|}~.".chars
         ].flatten
 
-        local_part.split(//).map do |char|
+        local_part.chars.map do |char|
           char_range.include?(char) ? char : '#'
         end.join
       end

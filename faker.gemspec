@@ -3,6 +3,7 @@
 $LOAD_PATH.push File.expand_path('lib', __dir__)
 require 'faker/version'
 
+# rubocop:todo Gemspec/RequireMFA
 Gem::Specification.new do |spec|
   spec.name        = 'faker'
   spec.version     = Faker::VERSION
@@ -42,3 +43,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('timecop', '0.9.5')
   spec.add_development_dependency('yard', '0.9.27')
 end
+# rubocop:enable Gemspec/RequireMFA

@@ -34,14 +34,14 @@ class TestFakerAlphanum < Test::Unit::TestCase
   end
 
   def test_alphanumeric_with_min_alpha
-    letters = @tester.alphanumeric(number: 5, min_alpha: 2).split('').map do |char|
+    letters = @tester.alphanumeric(number: 5, min_alpha: 2).chars.map do |char|
       char =~ /[[:alpha:]]/
     end
     assert letters.compact.size >= 2
   end
 
   def test_alphanumeric_with_min_numeric
-    numbers = @tester.alphanumeric(number: 5, min_numeric: 4).split('').map do |char|
+    numbers = @tester.alphanumeric(number: 5, min_numeric: 4).chars.map do |char|
       char =~ /[[:digit:]]/
     end
     assert numbers.compact.size >= 4

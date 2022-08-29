@@ -15,9 +15,9 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_string_returns_correct_number_of_words
-    assert @tester.rb_string(words: 1).split(' ').length == 1
-    assert @tester.rb_string(words: 5).split(' ').length == 5
-    assert @tester.rb_string(words: 0).split(' ').empty?
+    assert @tester.rb_string(words: 1).split.length == 1
+    assert @tester.rb_string(words: 5).split.length == 5
+    assert @tester.rb_string(words: 0).split.empty?
   end
 
   def test_character

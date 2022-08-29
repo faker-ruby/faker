@@ -1,5 +1,11 @@
 AllCops:
   TargetRubyVersion: 2.7
+  NewCops: enable
+
+# Suppress noise for obvious operator precedence.
+Lint/AmbiguousOperatorPrecedence:
+  Description: Checks for expressions containing multiple binary operations with ambiguous precedence.
+  Enabled: false
 
 Layout/LineLength:
   Description: This cop checks the length of lines in the source code. The maximum length is configurable.
@@ -51,6 +57,10 @@ Style/DateTime:
 
 Style/Documentation:
   Description: This cop checks for missing top-level documentation of classes and modules.
+  Enabled: false
+
+Style/DocumentDynamicEvalDefinition:
+  Description: When using `class_eval` (or other `eval`) with string interpolation, add a comment block showing its appearance if interpolated.
   Enabled: false
 
 Style/EvalWithLocation:

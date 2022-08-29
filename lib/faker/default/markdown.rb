@@ -27,7 +27,7 @@ module Faker
       # @faker.version 1.8.0
       def emphasis
         paragraph = Faker::Lorem.paragraph(sentence_count: 3)
-        words = paragraph.split(' ')
+        words = paragraph.split
         position = rand(0..words.length - 1)
         formatting = fetch('markdown.emphasis')
         words[position] = "#{formatting}#{words[position]}#{formatting}"
@@ -50,7 +50,7 @@ module Faker
         number.times do |i|
           result << "#{i}. #{Faker::Lorem.sentence(word_count: 1)} \n"
         end
-        result.join('')
+        result.join
       end
 
       ##
@@ -69,7 +69,7 @@ module Faker
         number.times do |_i|
           result << "* #{Faker::Lorem.sentence(word_count: 1)} \n"
         end
-        result.join('')
+        result.join
       end
 
       ##

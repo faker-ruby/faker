@@ -145,7 +145,7 @@ module Faker
       private
 
       def checksum(num_string)
-        num_array = num_string.split('').map(&:to_i)
+        num_array = num_string.chars.map(&:to_i)
         (
           7 * (num_array[0] + num_array[3] + num_array[6]) +
             3 * (num_array[1] + num_array[4] + num_array[7]) +
@@ -194,8 +194,8 @@ module Faker
 
       def compile_fraction(routing_num)
         prefix = (1..50).to_a.map(&:to_s).sample
-        numerator = routing_num.split('')[5..8].join.to_i.to_s
-        denominator = routing_num.split('')[0..4].join.to_i.to_s
+        numerator = routing_num.chars[5..8].join.to_i.to_s
+        denominator = routing_num.chars[0..4].join.to_i.to_s
         "#{prefix}-#{numerator}/#{denominator}"
       end
 

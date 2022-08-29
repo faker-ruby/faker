@@ -9,7 +9,7 @@ module Faker
     VIN_LETTERS = 'ABCDEFGHJKLMNPRSTUVWXYZ'
     VIN_MAP = '0123456789X'
     VIN_WEIGHTS = '8765432X098765432'
-    VIN_REGEX = /^([A-HJ-NPR-Z0-9]){3}[A-HJ-NPR-Z0-9]{5}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-0]{1}[A-HJ-NPR-Z0-9]{1}\d{5}$/.freeze
+    VIN_REGEX = /^([A-HJ-NPR-Z0-9]){3}[A-HJ-NPR-Z0-9]{5}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-]{1}[A-HJ-NPR-Z0-9]{1}\d{5}$/.freeze
     SG_CHECKSUM_WEIGHTS = [3, 14, 2, 12, 2, 11, 1].freeze
     SG_CHECKSUM_CHARS = 'AYUSPLJGDBZXTRMKHEC'
 
@@ -333,7 +333,7 @@ module Faker
       end
 
       def vin_char_to_number(char)
-        index = VIN_LETTERS.split('').index(char)
+        index = VIN_LETTERS.chars.index(char)
 
         return char.to_i if index.nil?
 
@@ -341,14 +341,14 @@ module Faker
       end
 
       def singapore_checksum(plate_number)
-        padded_alphabets = format('%3s', plate_number[/^[A-Z]+/]).tr(' ', '-').split('')
-        padded_digits = format('%04d', plate_number[/\d+/]).split('').map(&:to_i)
+        padded_alphabets = format('%3s', plate_number[/^[A-Z]+/]).tr(' ', '-').chars
+        padded_digits = format('%04d', plate_number[/\d+/]).chars.map(&:to_i)
         sum = [*padded_alphabets, *padded_digits].each_with_index.reduce(0) do |memo, (char, i)|
           value = char.is_a?(Integer) ? char : char.ord - 64
           memo + (SG_CHECKSUM_WEIGHTS[i] * value)
         end
 
-        SG_CHECKSUM_CHARS.split('')[sum % 19]
+        SG_CHECKSUM_CHARS.chars[sum % 19]
       end
     end
   end

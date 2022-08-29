@@ -52,7 +52,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_exact_sentence_word_count
-    assert_equal 2, @tester.sentence(word_count: 2, supplemental: false, random_words_to_add: 0).split(' ').length
+    assert_equal 2, @tester.sentence(word_count: 2, supplemental: false, random_words_to_add: 0).split.length
   end
 
   def test_exact_count_param
