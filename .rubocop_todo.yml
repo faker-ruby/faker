@@ -45,14 +45,6 @@ Style/NegatedIfElseCondition:
   Exclude:
     - 'test/faker/default/test_faker_company.rb'
 
-# Offense count: 2
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: then, yield_self
-Style/ObjectThen:
-  Exclude:
-    - 'lib/faker/japanese_media/kamen_rider.rb'
-
 # Offense count: 26
 # This cop supports unsafe auto-correction (--auto-correct-all).
 # Configuration parameters: Methods.

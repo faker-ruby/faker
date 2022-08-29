@@ -83,14 +83,14 @@ module Faker
         end
 
         def from_eras(*input_eras, field:)
-          selected_eras = (ERAS & input_eras).yield_self do |selected|
+          selected_eras = (ERAS & input_eras).then do |selected|
             selected.empty? ? eras : selected
           end.dup
           yield(selected_eras) if block_given?
 
           raise UnavailableInEra, "#{field} is unavailable in the selected eras." if selected_eras.empty?
 
-          selected_eras.sample.yield_self do |era|
+          selected_eras.sample.then do |era|
             fetch("kamen_rider.#{era}.#{field}")
           end
         end
