@@ -1,5 +1,32 @@
 # Change Log
 
+## [v2.23.0](https://github.com/faker-ruby/faker/tree/v2.23.0) (2022-09-01)
+
+* Fix Japanese plural by @akmhmgc in https://github.com/faker-ruby/faker/pull/2517
+* Update rubocop requirement from = 1.26.0 to = 1.28.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2483
+* Add sports to `Faker::Sport` by @matt17r in https://github.com/faker-ruby/faker/pull/2397
+* [Internet::Password] Improve mix_case and special_characters support by @meuble in https://github.com/faker-ruby/faker/pull/2308
+* Danish id number by @jokklan in https://github.com/faker-ruby/faker/pull/2511
+* Add generator for vulnerability identifiers by @NobodysNightmare in https://github.com/faker-ruby/faker/pull/2367
+* Add the ability to generate a mime type of a specific media type by @ric2b in https://github.com/faker-ruby/faker/pull/2518
+* Add IDNumber.french_insee_number by @Spone in https://github.com/faker-ruby/faker/pull/2455
+* fix flaky user agent test by @thdaraujo in https://github.com/faker-ruby/faker/pull/2530
+* Update GitHub Issues and Pull Request Templates [ci-skip] by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2531
+* fix: ensure generated passwords have correct characters when mixed_case & special_characters enabled by @tiff-o in https://github.com/faker-ruby/faker/pull/2532
+* Thread safety by @kiskoza in https://github.com/faker-ruby/faker/pull/2520
+* Fix warning instance variable uninitialized by @akmhmgc in https://github.com/faker-ruby/faker/pull/2535
+* fix italy VAT and add italy condominium fiscal code generator by @FiloSpaTeam in https://github.com/faker-ruby/faker/pull/2491
+* Add ChileRut.full_formatted_rut by @KarlHeitmann in https://github.com/faker-ruby/faker/pull/2460
+* Updated versions and added more operating systems by @abrahamparayil in https://github.com/faker-ruby/faker/pull/2536
+* Add vehicle version generator by @trinaldi in https://github.com/faker-ruby/faker/pull/2540
+* Fix computer test by @trinaldi in https://github.com/faker-ruby/faker/pull/2543
+* Drop support for EOL Ruby versions (`2.5` and `2.6`) by @nickmendezFlatiron in https://github.com/faker-ruby/faker/pull/2538
+* Update minitest requirement from = 5.15.0 to = 5.16.3 by @dependabot in https://github.com/faker-ruby/faker/pull/2547
+* Update rubocop requirement from = 1.28.2 to = 1.35.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2548
+* Fix `fma_brotherhood` usage example by @y0n0zawa in https://github.com/faker-ruby/faker/pull/2552
+
+------------------------------------------------------------------------------
+
 ## [v2.22.0](https://github.com/faker-ruby/faker/tree/v2.22.0) (2022-07-28)
 
 ## Bug/Fixes
