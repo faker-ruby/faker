@@ -1,3 +1,6 @@
+require:
+  - rubocop-rake
+
 AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable
