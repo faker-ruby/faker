@@ -8,22 +8,22 @@ class TestFakerNation < Test::Unit::TestCase
   end
 
   def test_flag
-    assert @tester.flag.match(/\p{M}*+/)
+    assert_match @tester.flag, /\p{M}*+/
   end
 
   def test_nationality
-    assert @tester.nationality.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.nationality, /(\w+\.? ?){2,3}/
   end
 
   def test_language
-    assert @tester.language.match(/[A-Z][a-z]+\.?/)
+    assert_match @tester.language, /[A-Z][a-z]+\.?/
   end
 
   def test_capital_city
-    assert @tester.capital_city.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.capital_city, /(\w+\.? ?){2,3}/
   end
 
   def test_national_sport
-    assert @tester.national_sport.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.national_sport, /(\w+\.? ?){2,3}/
   end
 end

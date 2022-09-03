@@ -8,6 +8,6 @@ class TestFakerEthereum < Test::Unit::TestCase
   end
 
   def test_address
-    assert @tester.address.match(/0x([a-fA-F0-9]{40})/)
+    assert_match @tester.address, /0x([a-fA-F0-9]{40})/
   end
 end

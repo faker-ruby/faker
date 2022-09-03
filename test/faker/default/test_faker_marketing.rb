@@ -8,6 +8,6 @@ class TestFakerMarketing < Test::Unit::TestCase
   end
 
   def test_buzzwords
-    assert @tester.buzzwords.match(/\w+/)
+    assert_match @tester.buzzwords, /\w+/
   end
 end

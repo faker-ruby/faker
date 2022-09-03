@@ -8,14 +8,14 @@ class TestFakerGamesHalfLife < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_enemy
-    assert @tester.enemy.match(/\w+/)
+    assert_match @tester.enemy, /\w+/
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match @tester.location, /\w+/
   end
 end

@@ -8,14 +8,14 @@ class TestFakerJapaneseMediaStudioGhibli < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 
   def test_movie
-    assert @tester.movie.match(/\w+/)
+    assert_match @tester.movie, /\w+/
   end
 end

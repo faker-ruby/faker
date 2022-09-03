@@ -26,7 +26,7 @@ class TestFakerDate < Test::Unit::TestCase
     100.times do
       random_date = @tester.between_except(from: from, to: to, excepted: excepted)
       assert_not_nil random_date
-      assert random_date != excepted, "Expected != \"#{excepted}\", but got #{random_date}"
+      refute_equal random_date, excepted, "Expected != \"#{excepted}\", but got #{random_date}"
     end
   end
 
@@ -40,7 +40,7 @@ class TestFakerDate < Test::Unit::TestCase
     100.times do
       random_date = @tester.between_except(from: from, to: to, excepted: excepted)
       assert_not_nil random_date
-      assert random_date != excepted_date, "Expected != \"#{excepted}\", but got #{random_date}"
+      refute_equal random_date, excepted_date, "Expected != \"#{excepted}\", but got #{random_date}"
     end
   end
 
@@ -149,7 +149,7 @@ class TestFakerDate < Test::Unit::TestCase
     current_year = Date.today.year
     10.times do
       date = @tester.in_date_period
-      assert date.year == current_year
+      assert_equal date.year, current_year
     end
   end
 
@@ -157,7 +157,7 @@ class TestFakerDate < Test::Unit::TestCase
     year = 2015
     10.times do
       date = @tester.in_date_period(year: year)
-      assert date.year == year
+      assert_equal date.year, year
     end
   end
 
@@ -166,8 +166,8 @@ class TestFakerDate < Test::Unit::TestCase
     current_year = Date.today.year
     10.times do
       date = @tester.in_date_period(month: month)
-      assert date.month == month
-      assert date.year == current_year
+      assert_equal date.month, month
+      assert_equal date.year, current_year
     end
   end
 
@@ -176,8 +176,8 @@ class TestFakerDate < Test::Unit::TestCase
     month = 3
     10.times do
       date = @tester.in_date_period(year: year, month: month)
-      assert date.month == month
-      assert date.year == year
+      assert_equal date.month, month
+      assert_equal date.year, year
     end
   end
 end

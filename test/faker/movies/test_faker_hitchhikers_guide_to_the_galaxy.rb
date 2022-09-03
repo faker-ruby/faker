@@ -8,30 +8,30 @@ class TestFakerHitchhikersGuideToTheGalaxy < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match @tester.location, /\w+/
   end
 
   def test_marvin_quote
-    assert @tester.marvin_quote.match(/\w+/)
+    assert_match @tester.marvin_quote, /\w+/
   end
 
   def test_planet
-    assert @tester.planet.match(/\w+/)
+    assert_match @tester.planet, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 
   def test_specie
-    assert @tester.specie.match(/\w+/)
+    assert_match @tester.specie, /\w+/
   end
 
   def test_starship
-    assert @tester.starship.match(/\w+/)
+    assert_match @tester.starship, /\w+/
   end
 end

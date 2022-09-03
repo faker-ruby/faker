@@ -8,14 +8,14 @@ class TestFakerHiphop < Test::Unit::TestCase
   end
 
   def test_artist
-    assert @tester.artist.match(/\w+/)
+    assert_match @tester.artist, /\w+/
   end
 
   def test_groups
-    assert @tester.groups.match(/\w+/)
+    assert_match @tester.groups, /\w+/
   end
 
   def test_subgenres
-    assert @tester.subgenres.match(/\w+/)
+    assert_match @tester.subgenres, /\w+/
   end
 end

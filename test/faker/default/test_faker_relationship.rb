@@ -8,15 +8,15 @@ class TestFakerRelationship < Test::Unit::TestCase
   end
 
   def test_random_familial
-    assert @tester.familial.match(/\w+/)
+    assert_match @tester.familial, /\w+/
   end
 
   def test_familial_direct
-    assert @tester.familial(connection: 'direct').match(/\w+/)
+    assert_match @tester.familial(connection: 'direct'), /\w+/
   end
 
   def test_familial_extended
-    assert @tester.familial(connection: 'extended').match(/\w+/)
+    assert_match @tester.familial(connection: 'extended'), /\w+/
   end
 
   # test error on no match
@@ -27,18 +27,18 @@ class TestFakerRelationship < Test::Unit::TestCase
   end
 
   def test_in_law
-    assert @tester.in_law.match(/\w+/)
+    assert_match @tester.in_law, /\w+/
   end
 
   def test_spouse
-    assert @tester.spouse.match(/\w+/)
+    assert_match @tester.spouse, /\w+/
   end
 
   def test_parent
-    assert @tester.parent.match(/\w+/)
+    assert_match @tester.parent, /\w+/
   end
 
   def test_sibling
-    assert @tester.sibling.match(/\w+/)
+    assert_match @tester.sibling, /\w+/
   end
 end

@@ -8,10 +8,10 @@ class TestFakerRush < Test::Unit::TestCase
   end
 
   def test_player
-    assert @tester.player.match(/\w+/)
+    assert_match @tester.player, /\w+/
   end
 
   def test_album
-    assert @tester.album.match(/\w+/)
+    assert_match @tester.album, /\w+/
   end
 end

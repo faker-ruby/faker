@@ -8,12 +8,12 @@ class TestChileRut < Test::Unit::TestCase
   end
 
   def test_full_rut
-    assert @tester.full_rut(min_rut: 6, fixed: true) == '6-k'
-    assert @tester.full_rut(min_rut: 30_686_957, fixed: true) == '30686957-4'
+    assert_equal('6-k', @tester.full_rut(min_rut: 6, fixed: true))
+    assert_equal('30686957-4', @tester.full_rut(min_rut: 30_686_957, fixed: true))
   end
 
   def test_rut_length
-    assert !@tester.rut.to_s.empty?
+    refute_empty @tester.rut.to_s
     assert @tester.rut.to_s.length <= 8
   end
 
@@ -21,12 +21,12 @@ class TestChileRut < Test::Unit::TestCase
   # since the whole idea of the method revolves around calculating
   # the check digit for that specific rut.
   def test_check_digit
-    assert @tester.rut(min_rut: 30_686_957, fixed: true) == 30_686_957
-    assert @tester.dv == '4'
+    assert_equal(30_686_957, @tester.rut(min_rut: 30_686_957, fixed: true))
+    assert_equal('4', @tester.dv)
   end
 
   def test_full_formatted_rut
-    assert @tester.full_rut(min_rut: 30_686_957, fixed: true, formatted: true).split('-')[0] == '30.686.957'
-    assert @tester.dv == '4'
+    assert_equal('30.686.957', @tester.full_rut(min_rut: 30_686_957, fixed: true, formatted: true).split('-')[0])
+    assert_equal('4', @tester.dv)
   end
 end

@@ -25,6 +25,6 @@ class TestNoNOLocale < Test::Unit::TestCase
     assert Faker::Invoice.creditor_reference.is_a? String
     assert Faker::Invoice.reference.is_a? String
     assert Faker::Invoice.reference(ref: '699027016279494093882102#').is_a? String
-    assert Faker::Invoice.reference(ref: '699027016279494093882102#') == '6990270162794940938821025'
+    assert_equal('6990270162794940938821025', Faker::Invoice.reference(ref: '699027016279494093882102#'))
   end
 end

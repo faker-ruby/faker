@@ -8,10 +8,10 @@ class TestFakerCoin < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w+/)
+    assert_match @tester.name, /\w+/
   end
 
   def test_flip
-    assert @tester.flip.match(/\w+/)
+    assert_match @tester.flip, /\w+/
   end
 end

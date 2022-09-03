@@ -8,10 +8,10 @@ class TestFakerGamesSuperSmashBros < Test::Unit::TestCase
   end
 
   def test_fighter
-    assert @tester.fighter.match(/\w+/)
+    assert_match @tester.fighter, /\w+/
   end
 
   def test_stage
-    assert @tester.stage.match(/\w+/)
+    assert_match @tester.stage, /\w+/
   end
 end

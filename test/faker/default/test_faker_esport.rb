@@ -8,22 +8,22 @@ class TestFakerEsport < Test::Unit::TestCase
   end
 
   def test_team
-    assert @tester.team.match(/\w+/)
+    assert_match @tester.team, /\w+/
   end
 
   def test_league
-    assert @tester.league.match(/\w+/)
+    assert_match @tester.league, /\w+/
   end
 
   def test_game
-    assert @tester.game.match(/\w+/)
+    assert_match @tester.game, /\w+/
   end
 
   def test_player
-    assert @tester.player.match(/\w+/)
+    assert_match @tester.player, /\w+/
   end
 
   def test_event
-    assert @tester.event.match(/\w+/)
+    assert_match @tester.event, /\w+/
   end
 end

@@ -8,14 +8,14 @@ class TestFakerTvShowsFamilyGuy < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w/)
+    assert_match @tester.character, /\w/
   end
 
   def test_location
-    assert @tester.location.match(/\w/)
+    assert_match @tester.location, /\w/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w/)
+    assert_match @tester.quote, /\w/
   end
 end

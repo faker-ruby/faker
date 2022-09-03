@@ -8,10 +8,10 @@ class TestFakerMountain < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w+/)
+    assert_match @tester.name, /\w+/
   end
 
   def test_range
-    assert @tester.range.match(/\w+/)
+    assert_match @tester.range, /\w+/
   end
 end

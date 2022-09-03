@@ -8,18 +8,18 @@ class TestFakerJapaneseNaruto < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_village
-    assert @tester.village.match(/\w+/)
+    assert_match @tester.village, /\w+/
   end
 
   def test_eye
-    assert @tester.eye.match(/\w+/)
+    assert_match @tester.eye, /\w+/
   end
 
   def test_demon
-    assert @tester.demon.match(/\w+/)
+    assert_match @tester.demon, /\w+/
   end
 end

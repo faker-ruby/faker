@@ -8,10 +8,10 @@ class TestFakerMovie < Test::Unit::TestCase
   end
 
   def test_title
-    assert @tester.title.match(/\w+/)
+    assert_match @tester.title, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 end

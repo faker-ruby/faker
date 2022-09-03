@@ -8,7 +8,7 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_npi_regexp
-    assert @tester.npi.match(/[0-9]{10}/)
+    assert_match @tester.npi, /[0-9]{10}/
   end
 
   def test_deterministic_npi
@@ -16,39 +16,39 @@ class TestFakerCode < Test::Unit::TestCase
     v = @tester.npi
     Faker::Config.random = Random.new(42)
 
-    assert v == @tester.npi
+    assert_equal v, @tester.npi
   end
 
   def test_default_isbn_regexp
-    assert @tester.isbn.match(/^\d{9}-[\d|X]$/)
+    assert_match @tester.isbn, /^\d{9}-[\d|X]$/
   end
 
   def test_default_isbn13_regexp
-    assert @tester.isbn(base: 13).match(/^\d{12}-\d$/)
+    assert_match @tester.isbn(base: 13), /^\d{12}-\d$/
   end
 
   def test_default_ean_regexp
-    assert @tester.ean.match(/^\d{13}$/)
+    assert_match @tester.ean, /^\d{13}$/
   end
 
   def test_default_ean8_regexp
-    assert @tester.ean(base: 8).match(/^\d{8}$/)
+    assert_match @tester.ean(base: 8), /^\d{8}$/
   end
 
   def test_rut
-    assert @tester.rut.match(/^\d{1,8}-(\d|k)$/)
+    assert_match @tester.rut, /^\d{1,8}-(\d|k)$/
   end
 
   def test_asin
-    assert @tester.asin.match(/^B000([A-Z]|\d){6}$/)
+    assert_match @tester.asin, /^B000([A-Z]|\d){6}$/
   end
 
   def test_nric
-    assert @tester.nric.match(/^(S|T)\d{7}[A-JZ]$/)
+    assert_match @tester.nric, /^(S|T)\d{7}[A-JZ]$/
   end
 
   def test_imei_regexp
-    assert @tester.imei.match(/\A[\d.:\-\s]+\z/i)
+    assert_match @tester.imei, /\A[\d.:\-\s]+\z/i
   end
 
   def test_imei_luhn_value
@@ -56,8 +56,8 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_sin
-    assert @tester.sin.match(/\d{9}/)
-    assert @tester.sin.length == 9
+    assert_match @tester.sin, /\d{9}/
+    assert_equal(9, @tester.sin.length)
     assert luhn_checksum_valid(@tester.sin)
   end
 

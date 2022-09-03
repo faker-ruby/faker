@@ -8,14 +8,14 @@ class TestFakerTvShowsTheThickOfIt < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_department
-    assert @tester.department.match(/\w+/)
+    assert_match @tester.department, /\w+/
   end
 
   def test_position
-    assert @tester.position.match(/\w+/)
+    assert_match @tester.position, /\w+/
   end
 end

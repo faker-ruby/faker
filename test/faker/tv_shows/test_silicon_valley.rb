@@ -8,34 +8,34 @@ class TestFakerTvShowsSiliconValley < Test::Unit::TestCase
   end
 
   def test_characters
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_companies
-    assert @tester.company.match(/\w+/)
+    assert_match @tester.company, /\w+/
   end
 
   def test_quotes
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 
   def test_apps
-    assert @tester.app.match(/\w+/)
+    assert_match @tester.app, /\w+/
   end
 
   def test_inventions
-    assert @tester.invention.match(/\w+/)
+    assert_match @tester.invention, /\w+/
   end
 
   def test_mottos
-    assert @tester.motto.match(/\w+/)
+    assert_match @tester.motto, /\w+/
   end
 
   def test_urls
-    assert @tester.url.match(/\w+/)
+    assert_match @tester.url, /\w+/
   end
 
   def test_email
-    assert @tester.email.match(/\w+/)
+    assert_match @tester.email, /\w+/
   end
 end

@@ -8,14 +8,14 @@ class TestFakerJapaneseConan < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_gadget
-    assert @tester.gadget.match(/\w+/)
+    assert_match @tester.gadget, /\w+/
   end
 
   def test_vehicle
-    assert @tester.vehicle.match(/\w+/)
+    assert_match @tester.vehicle, /\w+/
   end
 end

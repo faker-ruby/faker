@@ -11,21 +11,21 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_rb_string_is_or_correct_type
-    assert @tester.rb_string.instance_of?(String)
+    assert_instance_of String, @tester.rb_string
   end
 
   def test_string_returns_correct_number_of_words
-    assert @tester.rb_string(words: 1).split.length == 1
-    assert @tester.rb_string(words: 5).split.length == 5
-    assert @tester.rb_string(words: 0).split.empty?
+    assert_equal(1, @tester.rb_string(words: 1).split.length)
+    assert_equal(5, @tester.rb_string(words: 5).split.length)
+    assert_empty @tester.rb_string(words: 0).split
   end
 
   def test_character
-    assert @tester.character.length == 1
+    assert_equal(1, @tester.character.length)
   end
 
   def test_integer
-    assert @tester.rb_integer.instance_of?(Integer)
+    assert_instance_of Integer, @tester.rb_integer
   end
 
   def test_rb_integer_between
@@ -36,47 +36,47 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_rb_hash_returns_a_hash
-    assert @tester.rb_hash.instance_of?(Hash)
+    assert_instance_of Hash, @tester.rb_hash
   end
 
   def test_hash_returns_the_correct_number_of_keys
-    assert @tester.rb_hash(number: 3).keys.length == 3
+    assert_equal(3, @tester.rb_hash(number: 3).keys.length)
     assert @tester.rb_hash(number: 3).values.uniq.length > 1
-    assert @tester.rb_hash(number: 0).keys.empty?
-    assert @tester.rb_hash.keys.length == 1
+    assert_empty @tester.rb_hash(number: 0).keys
+    assert_equal(1, @tester.rb_hash.keys.length)
   end
 
   def test_complex_rb_hash_returns_a_hash
-    assert @tester.complex_rb_hash.instance_of?(Hash)
+    assert_instance_of Hash, @tester.complex_rb_hash
   end
 
   def test_complex_hash_returns_the_correct_number_of_keys
-    assert @tester.complex_rb_hash(number: 3).keys.length == 3
+    assert_equal(3, @tester.complex_rb_hash(number: 3).keys.length)
     assert @tester.complex_rb_hash(number: 3).values.uniq.length > 1
-    assert @tester.complex_rb_hash(number: 0).keys.empty?
-    assert @tester.complex_rb_hash.keys.length == 1
+    assert_empty @tester.complex_rb_hash(number: 0).keys
+    assert_equal(1, @tester.complex_rb_hash.keys.length)
   end
 
   def test_rb_array_returns_array
-    assert @tester.rb_array.instance_of?(Array)
+    assert_instance_of Array, @tester.rb_array
   end
 
   def test_array_has_the_right_array
-    assert @tester.rb_array(len: 3).length == 3
-    assert @tester.rb_array(len: 0).empty?
-    assert @tester.rb_array.length == 1
+    assert_equal(3, @tester.rb_array(len: 3).length)
+    assert_empty @tester.rb_array(len: 0)
+    assert_equal(1, @tester.rb_array.length)
   end
 
   def test_titleize
     val = 'foobar'
     expected = 'Foobar'
-    assert @tester.send(:titleize, val) == expected
+    assert_equal @tester.send(:titleize, val), expected
   end
 
   def test_resolve
     array = [1, 2, 3]
     range = 1..10
-    assert array.include?(@tester.send(:resolve, array))
-    assert range.include?(@tester.send(:resolve, range))
+    assert_includes array, @tester.send(:resolve, array)
+    assert_includes range, @tester.send(:resolve, range)
   end
 end

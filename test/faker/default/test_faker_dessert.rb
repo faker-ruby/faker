@@ -8,14 +8,14 @@ class TestFakerDessert < Test::Unit::TestCase
   end
 
   def test_variety
-    assert @tester.variety.match(/\w+/)
+    assert_match @tester.variety, /\w+/
   end
 
   def test_topping
-    assert @tester.topping.match(/\w+/)
+    assert_match @tester.topping, /\w+/
   end
 
   def test_flavor
-    assert @tester.flavor.match(/\w+/)
+    assert_match @tester.flavor, /\w+/
   end
 end

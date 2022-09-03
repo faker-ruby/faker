@@ -8,11 +8,11 @@ class TestFakerCurrency < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/[\w' ]+/)
+    assert_match @tester.name, /[\w' ]+/
   end
 
   def test_code
-    assert @tester.code.match(/[A-Z]{3}/)
+    assert_match @tester.code, /[A-Z]{3}/
   end
 
   def test_symbol

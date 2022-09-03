@@ -8,28 +8,28 @@ class TestFakerDune < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_title
-    assert @tester.title.match(/\w+/)
+    assert_match @tester.title, /\w+/
   end
 
   def test_city
-    assert @tester.city.match(/\w+/)
+    assert_match @tester.city, /\w+/
   end
 
   def test_planet
-    assert @tester.planet.match(/\w+/)
+    assert_match @tester.planet, /\w+/
   end
 
   def test_random_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 
   # test good match
   def test_random_character_quote
-    assert @tester.quote(character: 'paul').match(/\w+/)
+    assert_match @tester.quote(character: 'paul'), /\w+/
   end
 
   # test error on no match
@@ -40,12 +40,12 @@ class TestFakerDune < Test::Unit::TestCase
   end
 
   def test_random_saying
-    assert @tester.saying.match(/\w+/)
+    assert_match @tester.saying, /\w+/
   end
 
   # test good match
   def test_random_source_saying
-    assert @tester.saying(source: 'fremen').match(/\w+/)
+    assert_match @tester.saying(source: 'fremen'), /\w+/
   end
 
   # test error on no match

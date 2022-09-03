@@ -8,10 +8,10 @@ class TestFakerGratefulDead < Test::Unit::TestCase
   end
 
   def test_player
-    assert @tester.player.match(/\w/)
+    assert_match @tester.player, /\w/
   end
 
   def test_song
-    assert @tester.song.match(/\w/)
+    assert_match @tester.song, /\w/
   end
 end

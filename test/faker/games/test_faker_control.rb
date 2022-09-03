@@ -8,34 +8,34 @@ class TestFakerGameControl < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match @tester.location, /\w+/
   end
 
   def test_object_of_power
-    assert @tester.object_of_power.match(/\w+/)
+    assert_match @tester.object_of_power, /\w+/
   end
 
   def test_altered_item
-    assert @tester.altered_item.match(/\w+/)
+    assert_match @tester.altered_item, /\w+/
   end
 
   def test_altered_world_event
-    assert @tester.altered_world_event.match(/\w+/)
+    assert_match @tester.altered_world_event, /\w+/
   end
 
   def test_hiss
-    assert @tester.hiss.match(/\w+/)
+    assert_match @tester.hiss, /\w+/
   end
 
   def test_the_board
-    assert @tester.the_board.match(/\w+/)
+    assert_match @tester.the_board, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 end

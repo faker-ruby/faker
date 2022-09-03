@@ -8,14 +8,14 @@ class TestFakerTvShowsSupernatural < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_creature
-    assert @tester.creature.match(/\w+/)
+    assert_match @tester.creature, /\w+/
   end
 
   def test_weapon
-    assert @tester.weapon.match(/\w+/)
+    assert_match @tester.weapon, /\w+/
   end
 end

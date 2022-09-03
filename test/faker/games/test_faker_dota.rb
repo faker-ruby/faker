@@ -14,23 +14,23 @@ class TestFakerDota < Test::Unit::TestCase
   end
 
   def test_building
-    assert @tester.building.match(/\w+/)
+    assert_match @tester.building, /\w+/
   end
 
   def test_hero
-    assert @tester.hero.match(/\w+/)
+    assert_match @tester.hero, /\w+/
   end
 
   def test_item
-    assert @tester.item.match(/\w+/)
+    assert_match @tester.item, /\w+/
   end
 
   def test_team
-    assert @tester.team.match(/\w+/)
+    assert_match @tester.team, /\w+/
   end
 
   def test_player
-    assert @tester.player.match(/\w+/)
+    assert_match @tester.player, /\w+/
   end
 
   def test_heroes_quotes

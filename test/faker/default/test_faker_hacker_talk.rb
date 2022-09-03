@@ -9,29 +9,29 @@ class TestFakerHacker < Test::Unit::TestCase
   end
 
   def test_phrases
-    assert @phrases.size == 8
+    assert_equal(8, @phrases.size)
     @phrases.each do |phrase|
-      refute phrase.to_s.empty?
+      refute_empty phrase.to_s
     end
   end
 
   def test_noun
-    assert @hacker.noun.match(/\w+/)
+    assert_match @hacker.noun, /\w+/
   end
 
   def test_abbreviation
-    assert @hacker.abbreviation.match(/\w+/)
+    assert_match @hacker.abbreviation, /\w+/
   end
 
   def test_adjective
-    assert @hacker.adjective.match(/\w+/)
+    assert_match @hacker.adjective, /\w+/
   end
 
   def test_verb
-    assert @hacker.verb.match(/\w+/)
+    assert_match @hacker.verb, /\w+/
   end
 
   def test_ingverb
-    assert @hacker.ingverb.match(/\w+/)
+    assert_match @hacker.ingverb, /\w+/
   end
 end

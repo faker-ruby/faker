@@ -8,18 +8,18 @@ class TestWorldOfWarcraft < Test::Unit::TestCase
   end
 
   def test_heroes
-    assert @tester.hero.match(/\w+/)
+    assert_match @tester.hero, /\w+/
   end
 
   def test_class_names
-    assert @tester.class_name.match(/\w+/)
+    assert_match @tester.class_name, /\w+/
   end
 
   def test_races
-    assert @tester.race.match(/\w+/)
+    assert_match @tester.race, /\w+/
   end
 
   def test_quotes
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 end

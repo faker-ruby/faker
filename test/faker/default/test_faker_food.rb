@@ -8,46 +8,46 @@ class TestFakerFood < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    assert @tester.flexible_key == :food
+    assert_equal(:food, @tester.flexible_key)
   end
 
   def test_dish
-    assert @tester.dish.match(/\w+/)
+    assert_match @tester.dish, /\w+/
   end
 
   def test_description
-    assert @tester.description.match(/\w+/)
+    assert_match @tester.description, /\w+/
   end
 
   def test_ingredient
-    assert @tester.ingredient.match(/\w+/)
+    assert_match @tester.ingredient, /\w+/
   end
 
   def test_fruits
-    assert @tester.fruits.match(/\w+/)
+    assert_match @tester.fruits, /\w+/
   end
 
   def test_vegetables
-    assert @tester.vegetables.match(/\w+/)
+    assert_match @tester.vegetables, /\w+/
   end
 
   def test_spice
-    assert @tester.spice.match(/\w+/)
+    assert_match @tester.spice, /\w+/
   end
 
   def test_sushi
-    assert @tester.sushi.match(/\w+/)
+    assert_match @tester.sushi, /\w+/
   end
 
   def test_measurement
-    assert @tester.measurement.split.length == 2
+    assert_equal(2, @tester.measurement.split.length)
   end
 
   def test_metric_measurement
-    assert @tester.metric_measurement.match(/\w+/)
+    assert_match @tester.metric_measurement, /\w+/
   end
 
   def test_ethnic_category
-    assert @tester.ethnic_category.match(/\w+/)
+    assert_match @tester.ethnic_category, /\w+/
   end
 end

@@ -8,6 +8,6 @@ class TestFakerChuckNorris < Test::Unit::TestCase
   end
 
   def test_fact
-    assert @tester.fact.match(/.*chuck.*/i)
+    assert_match @tester.fact, /.*chuck.*/i
   end
 end

@@ -8,10 +8,10 @@ class TestFakerHouse < Test::Unit::TestCase
   end
 
   def test_furniture
-    assert @tester.furniture.match(/\w+/)
+    assert_match @tester.furniture, /\w+/
   end
 
   def test_room
-    assert @tester.room.match(/\w+/)
+    assert_match @tester.room, /\w+/
   end
 end

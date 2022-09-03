@@ -8,27 +8,27 @@ class TestFakerConstruction < Test::Unit::TestCase
   end
 
   def test_material
-    assert Faker::Construction.material.match(/\w+/)
+    assert_match Faker::Construction.material, /\w+/
   end
 
   def test_heavy_equipment
-    assert Faker::Construction.heavy_equipment.match(/\w+/)
+    assert_match Faker::Construction.heavy_equipment, /\w+/
   end
 
   def test_trade
-    assert Faker::Construction.trade.match(/\w+/)
+    assert_match Faker::Construction.trade, /\w+/
   end
 
   def test_subcontract_category
-    assert Faker::Construction.subcontract_category.match(/\w+/)
+    assert_match Faker::Construction.subcontract_category, /\w+/
   end
 
   def test_standard_cost_code
-    assert Faker::Construction.standard_cost_code.match(/\w+/)
+    assert_match Faker::Construction.standard_cost_code, /\w+/
   end
 
   def test_role
-    assert Faker::Construction.role.match(/\w+/)
+    assert_match Faker::Construction.role, /\w+/
   end
 
   def test_locales

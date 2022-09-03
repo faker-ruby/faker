@@ -8,10 +8,10 @@ class TestFakerAdjective < Test::Unit::TestCase
   end
 
   def test_positive
-    assert @tester.positive.match(/\w+/)
+    assert_match @tester.positive, /\w+/
   end
 
   def test_negative
-    assert @tester.negative.match(/\w+/)
+    assert_match @tester.negative, /\w+/
   end
 end

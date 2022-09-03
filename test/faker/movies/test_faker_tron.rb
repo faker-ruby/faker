@@ -16,33 +16,33 @@ class TestFakerTron < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_game
-    assert @tester.game.match(/\w+/)
+    assert_match @tester.game, /\w+/
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match @tester.location, /\w+/
   end
 
   def test_program
-    assert @tester.program.match(/\w+/)
+    assert_match @tester.program, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 
   # test good match
   def test_quote_random_character
-    assert @tester.quote(character: 'dr_lora_baines').match(/\w+/)
+    assert_match @tester.quote(character: 'dr_lora_baines'), /\w+/
   end
 
   # test good alternate spelling match
   def test_quote_random_character_alt_spelling
-    assert @tester.quote(character: 'Laura Baines').match(/\w+/)
+    assert_match @tester.quote(character: 'Laura Baines'), /\w+/
   end
 
   # test error on no match
@@ -53,63 +53,63 @@ class TestFakerTron < Test::Unit::TestCase
   end
 
   def test_tagline
-    assert @tester.tagline.match(/\w+/)
+    assert_match @tester.tagline, /\w+/
   end
 
   def test_user
-    assert @tester.user.match(/\w+/)
+    assert_match @tester.user, /\w+/
   end
 
   def test_vehicle
-    assert @tester.vehicle.match(/\w+/)
+    assert_match @tester.vehicle, /\w+/
   end
 
   def test_characters
     characters = @tester.characters
 
     assert characters.is_a?(Array)
-    assert characters.length == CHARACTER_COUNT
+    assert_equal characters.length, CHARACTER_COUNT
   end
 
   def test_games
     games = @tester.games
 
     assert games.is_a?(Array)
-    assert games.length == GAME_COUNT
+    assert_equal games.length, GAME_COUNT
   end
 
   def test_locations
     locations = @tester.locations
 
     assert locations.is_a?(Array)
-    assert locations.length == LOCATION_COUNT
+    assert_equal locations.length, LOCATION_COUNT
   end
 
   def test_programs
     programs = @tester.programs
 
     assert programs.is_a?(Array)
-    assert programs.length == PROGRAM_COUNT
+    assert_equal programs.length, PROGRAM_COUNT
   end
 
   def test_taglines
     taglines = @tester.taglines
 
     assert taglines.is_a?(Array)
-    assert taglines.length == TAGLINE_COUNT
+    assert_equal taglines.length, TAGLINE_COUNT
   end
 
   def test_users
     users = @tester.users
 
     assert users.is_a?(Array)
-    assert users.length == USER_COUNT
+    assert_equal users.length, USER_COUNT
   end
 
   def test_vehicles
     vehicles = @tester.vehicles
 
     assert vehicles.is_a?(Array)
-    assert vehicles.length == VEHICLE_COUNT
+    assert_equal vehicles.length, VEHICLE_COUNT
   end
 end

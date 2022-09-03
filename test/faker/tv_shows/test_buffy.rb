@@ -8,27 +8,27 @@ class TestFakerTvShowsBuffy < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 
   def test_actor
-    assert @tester.actor.match(/\w+/)
+    assert_match @tester.actor, /\w+/
   end
 
   # deprecated
   def test_celebrity
-    assert @tester.celebrity.match(/\w+/)
+    assert_match @tester.celebrity, /\w+/
   end
 
   def test_big_bad
-    assert @tester.big_bad.match(/\w+/)
+    assert_match @tester.big_bad, /\w+/
   end
 
   def test_episode
-    assert @tester.episode.match(/\w+/)
+    assert_match @tester.episode, /\w+/
   end
 end

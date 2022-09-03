@@ -11,8 +11,8 @@ class TestFakerMarkdown < Test::Unit::TestCase
   def test_headers
     test_trigger = @tester.headers.split
 
-    assert(test_trigger.length == 2)
-    assert(test_trigger.first.include?('#'))
+    assert_equal(2, test_trigger.length)
+    assert_includes(test_trigger.first, '#')
   end
 
   def test_emphasis
@@ -40,19 +40,19 @@ class TestFakerMarkdown < Test::Unit::TestCase
   def test_inline_code
     test_trigger = @tester.inline_code.chars
 
-    assert_equal(test_trigger.first, '`')
-    assert_equal(test_trigger.last, '`')
+    assert_equal('`', test_trigger.first)
+    assert_equal('`', test_trigger.last)
   end
 
   def test_block_code
     test_trigger = @tester.block_code.chars
 
-    assert_equal(test_trigger[0], '`')
-    assert_equal(test_trigger[1], '`')
-    assert_equal(test_trigger[2], '`')
-    assert_equal(test_trigger[-1], '`')
-    assert_equal(test_trigger[-2], '`')
-    assert_equal(test_trigger[-3], '`')
+    assert_equal('`', test_trigger[0])
+    assert_equal('`', test_trigger[1])
+    assert_equal('`', test_trigger[2])
+    assert_equal('`', test_trigger[-1])
+    assert_equal('`', test_trigger[-2])
+    assert_equal('`', test_trigger[-3])
   end
 
   def test_table
@@ -61,8 +61,8 @@ class TestFakerMarkdown < Test::Unit::TestCase
     test_trigger.each do |table_data|
       assert_instance_of(String, table_data)
     end
-    assert_equal(test_trigger.length, 4)
-    assert_equal(test_trigger[1], '---- | ---- | ----')
+    assert_equal(4, test_trigger.length)
+    assert_equal('---- | ---- | ----', test_trigger[1])
   end
 
   def test_random
@@ -88,8 +88,8 @@ class TestFakerMarkdown < Test::Unit::TestCase
 
     assert(test_array.length >= 3)
 
-    assert(test_array[0].split.length == 2)
-    assert(test_array[0].split.first.include?('#'))
+    assert_equal(2, test_array[0].split.length)
+    assert_includes(test_array[0].split.first, '#')
 
     assert_instance_of(String, test_array[0])
     assert_instance_of(String, test_array[1])

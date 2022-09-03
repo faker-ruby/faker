@@ -13,30 +13,30 @@ class TestFakerCompass < Test::Unit::TestCase
   end
 
   def test_cardinal
-    assert @tester.cardinal.match(@word_pattern)
+    assert_match @tester.cardinal, @word_pattern
   end
 
   def test_ordinal
-    assert @tester.ordinal.match(@word_pattern)
+    assert_match @tester.ordinal, @word_pattern
   end
 
   def test_half_wind
-    assert @tester.half_wind.match(@word_pattern)
+    assert_match @tester.half_wind, @word_pattern
   end
 
   def test_quarter_wind
-    assert @tester.quarter_wind.match(@multiword_pattern)
+    assert_match @tester.quarter_wind, @multiword_pattern
   end
 
   def test_direction
-    assert @tester.direction.match(@combined_pattern)
+    assert_match @tester.direction, @combined_pattern
   end
 
   def test_abbreviation
-    assert @tester.abbreviation.match(@letter_pattern)
+    assert_match @tester.abbreviation, @letter_pattern
   end
 
   def test_azimuth
-    assert @tester.azimuth.match(@number_pattern)
+    assert_match @tester.azimuth, @number_pattern
   end
 end

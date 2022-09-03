@@ -8,38 +8,38 @@ class TestFakerBeer < Test::Unit::TestCase
   end
 
   def test_brand
-    assert @tester.brand.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.brand, /(\w+\.? ?){2,3}/
   end
 
   def test_name
-    assert @tester.name.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.name, /(\w+\.? ?){2,3}/
   end
 
   def test_style
-    assert @tester.style.match(/(\w+\.? ?){2,3}/) # TODO
+    assert_match @tester.style, /(\w+\.? ?){2,3}/ # TODO
   end
 
   def test_hop
-    assert @tester.hop.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.hop, /(\w+\.? ?){2,3}/
   end
 
   def test_yeast
-    assert @tester.yeast.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.yeast, /(\w+\.? ?){2,3}/
   end
 
   def test_malts
-    assert @tester.malts.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.malts, /(\w+\.? ?){2,3}/
   end
 
   def test_ibu
-    assert @tester.ibu.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.ibu, /(\w+\.? ?){2,3}/
   end
 
   def test_alcohol
-    assert @tester.alcohol.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.alcohol, /(\w+\.? ?){2,3}/
   end
 
   def test_blg
-    assert @tester.blg.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.blg, /(\w+\.? ?){2,3}/
   end
 end

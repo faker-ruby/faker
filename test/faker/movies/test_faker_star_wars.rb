@@ -8,33 +8,33 @@ class TestFakerStarWars < Test::Unit::TestCase
   end
 
   def test_call_sign
-    assert @tester.call_sign.match(/\w+/)
+    assert_match @tester.call_sign, /\w+/
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_droid
-    assert @tester.droid.match(/\w+/)
+    assert_match @tester.droid, /\w+/
   end
 
   def test_planet
-    assert @tester.planet.match(/\w+/)
+    assert_match @tester.planet, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 
   # test good match
   def test_random_character_quote
-    assert @tester.quote(character: 'admiral_ackbar').match(/\w+/)
+    assert_match @tester.quote(character: 'admiral_ackbar'), /\w+/
   end
 
   # test good alternate spelling match
   def test_random_character_alt_spelling_quote
-    assert @tester.quote(character: 'ackbar').match(/\w+/)
+    assert_match @tester.quote(character: 'ackbar'), /\w+/
   end
 
   # test error on no match
@@ -45,15 +45,15 @@ class TestFakerStarWars < Test::Unit::TestCase
   end
 
   def test_specie
-    assert @tester.specie.match(/\w+/)
+    assert_match @tester.specie, /\w+/
   end
 
   def test_vehicle
-    assert @tester.vehicle.match(/\w+/)
+    assert_match @tester.vehicle, /\w+/
   end
 
   def test_wookiee_sentence
-    assert @tester.wookiee_sentence.match(/\w+/)
+    assert_match @tester.wookiee_sentence, /\w+/
   end
 
   def test_call_numbers

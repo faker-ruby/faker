@@ -8,14 +8,14 @@ class TestFakerHowToTrainYourDragon < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match @tester.location, /\w+/
   end
 
   def test_dragon
-    assert @tester.dragon.match(/\w+/)
+    assert_match @tester.dragon, /\w+/
   end
 end

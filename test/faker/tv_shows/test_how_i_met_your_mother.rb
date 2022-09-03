@@ -8,18 +8,18 @@ class TestFakerTvShowsHowIMetYourMother < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_catch_phrase
-    assert @tester.catch_phrase.match(/\w+/)
+    assert_match @tester.catch_phrase, /\w+/
   end
 
   def test_high_five
-    assert @tester.high_five.match(/\w+/)
+    assert_match @tester.high_five, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 end

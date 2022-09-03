@@ -8,38 +8,38 @@ class TestFakerWitcher < Test::Unit::TestCase
   end
 
   def test_character
-    assert @witcher.character.match(/\w+/)
+    assert_match @witcher.character, /\w+/
   end
 
   def test_location
-    assert @witcher.location.match(/\w+/)
+    assert_match @witcher.location, /\w+/
   end
 
   def test_school
-    assert @witcher.school.match(/\w+/)
+    assert_match @witcher.school, /\w+/
   end
 
   def test_witcher
-    assert @witcher.witcher.match(/\w+/)
+    assert_match @witcher.witcher, /\w+/
   end
 
   def test_monster
-    assert @witcher.monster.match(/\w+/)
+    assert_match @witcher.monster, /\w+/
   end
 
   def test_quote
-    assert @witcher.quote.match(/\w+/)
+    assert_match @witcher.quote, /\w+/
   end
 
   def test_sign
-    assert @witcher.sign.match(/\w+/)
+    assert_match @witcher.sign, /\w+/
   end
 
   def test_potion
-    assert @witcher.potion.match(/\w+/)
+    assert_match @witcher.potion, /\w+/
   end
 
   def test_book
-    assert @witcher.book.match(/\w+/)
+    assert_match @witcher.book, /\w+/
   end
 end

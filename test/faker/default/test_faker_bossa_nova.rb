@@ -8,10 +8,10 @@ class TestFakerBossaNova < Test::Unit::TestCase
   end
 
   def test_artists
-    assert @tester.artist.match(/\w+/)
+    assert_match @tester.artist, /\w+/
   end
 
   def test_songs
-    assert @tester.song.match(/\w+/)
+    assert_match @tester.song, /\w+/
   end
 end

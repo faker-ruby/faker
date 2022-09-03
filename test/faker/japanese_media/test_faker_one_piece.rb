@@ -8,26 +8,26 @@ class TestFakerJapaneseOnePiece < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_sea
-    assert @tester.sea.match(/\w+/)
+    assert_match @tester.sea, /\w+/
   end
 
   def test_island
-    assert @tester.island.match(/\w+/)
+    assert_match @tester.island, /\w+/
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match @tester.location, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 
   def test_akuma_no_mi
-    assert @tester.akuma_no_mi.match(/\w+/)
+    assert_match @tester.akuma_no_mi, /\w+/
   end
 end

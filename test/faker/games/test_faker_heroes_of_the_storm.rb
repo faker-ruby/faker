@@ -8,18 +8,18 @@ class TestFakerHeroesOfTheStorm < Test::Unit::TestCase
   end
 
   def test_battleground
-    assert @tester.battleground.match(/\w+/)
+    assert_match @tester.battleground, /\w+/
   end
 
   def test_class_name
-    assert @tester.class_name.match(/\w+/)
+    assert_match @tester.class_name, /\w+/
   end
 
   def test_hero
-    assert @tester.hero.match(/\w+/)
+    assert_match @tester.hero, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 end

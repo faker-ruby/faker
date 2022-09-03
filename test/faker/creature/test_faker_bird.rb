@@ -9,23 +9,23 @@ class TestFakerCreatureBird < Test::Unit::TestCase
   end
 
   def test_orders
-    assert @tester.order.match(/[A-Z]\w+formes/)
+    assert_match @tester.order, /[A-Z]\w+formes/
   end
 
   def test_anatomies
-    assert @tester.anatomy.match(/[a-z]+/)
+    assert_match @tester.anatomy, /[a-z]+/
   end
 
   def test_anatomy_past_tenses
-    assert @tester.anatomy_past_tense.match(/[a-z]+ed$/)
+    assert_match @tester.anatomy_past_tense, /[a-z]+ed$/
   end
 
   def test_geos
-    assert @tester.geo.match(/[A-Za-z][a-z ]/)
+    assert_match @tester.geo, /[A-Za-z][a-z ]/
   end
 
   def test_colors
-    assert @tester.color.match(/[a-z]+/)
+    assert_match @tester.color, /[a-z]+/
   end
 
   def test_silly_adjectives
@@ -33,11 +33,11 @@ class TestFakerCreatureBird < Test::Unit::TestCase
   end
 
   def test_adjectives
-    assert @tester.adjective.match(/[a-z]+/)
+    assert_match @tester.adjective, /[a-z]+/
   end
 
   def test_common_names
-    assert @tester.common_name.match(/[a-z]+/)
+    assert_match @tester.common_name, /[a-z]+/
   end
 
   def test_common_names_with_specific_order
@@ -76,8 +76,8 @@ class TestFakerCreatureBird < Test::Unit::TestCase
       /[A-Z][a-z]+-[a-z]+ed [a-z]+/
     ]
     name = @tester.plausible_common_name
-    assert patterns.collect { |pattern| pattern.match? name }.any?,
-           "Faker::Creature::Bird#plausible_common_name failed on '#{name}'"
+    assert_predicate patterns.collect { |pattern| pattern.match? name }, :any?,
+                     "Faker::Creature::Bird#plausible_common_name failed on '#{name}'"
   end
 
   def test_implausable_common_names
@@ -87,7 +87,7 @@ class TestFakerCreatureBird < Test::Unit::TestCase
       /[A-Z][a-z]+-[a-z]+ed [a-z]+ [a-z]+/
     ]
     name = @tester.implausible_common_name
-    assert patterns.collect { |pattern| pattern.match? name }.any?,
-           "Faker::Creature::Bird#implausible_common_name failed on '#{name}'"
+    assert_predicate patterns.collect { |pattern| pattern.match? name }, :any?,
+                     "Faker::Creature::Bird#implausible_common_name failed on '#{name}'"
   end
 end

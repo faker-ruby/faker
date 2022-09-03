@@ -8,38 +8,38 @@ class TestFakerDnD < Test::Unit::TestCase
   end
 
   def test_alignment
-    assert @tester.alignment.match(/\w+/)
+    assert_match @tester.alignment, /\w+/
   end
 
   def test_background
-    assert @tester.background.match(/\w+/)
+    assert_match @tester.background, /\w+/
   end
 
   def test_city
-    assert @tester.city.match(/\w+/)
+    assert_match @tester.city, /\w+/
   end
 
   def test_klass
-    assert @tester.klass.match(/\w+/)
+    assert_match @tester.klass, /\w+/
   end
 
   def test_language
-    assert @tester.language.match(/\w+/)
+    assert_match @tester.language, /\w+/
   end
 
   def test_melee_weapon
-    assert @tester.melee_weapon.match(/\w+/)
+    assert_match @tester.melee_weapon, /\w+/
   end
 
   def test_monster
-    assert @tester.monster.match(/\w+/)
+    assert_match @tester.monster, /\w+/
   end
 
   def test_race
-    assert @tester.race.match(/\w+/)
+    assert_match @tester.race, /\w+/
   end
 
   def test_ranged_weapon
-    assert @tester.ranged_weapon.match(/\w+/)
+    assert_match @tester.ranged_weapon, /\w+/
   end
 end

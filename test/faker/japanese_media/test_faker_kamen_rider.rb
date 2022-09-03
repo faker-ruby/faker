@@ -8,67 +8,67 @@ class TestFakerJapaneseKamenRider < Test::Unit::TestCase
   end
 
   def test_kamen_rider
-    assert @tester.kamen_rider.match(/\w+\.?/)
+    assert_match @tester.kamen_rider, /\w+\.?/
   end
 
   def test_kamen_rider_showa
-    assert @tester.kamen_rider(:showa).match(/\w+\.?/)
+    assert_match @tester.kamen_rider(:showa), /\w+\.?/
   end
 
   def test_kamen_rider_heisei
-    assert @tester.kamen_rider(:heisei).match(/\w+\.?/)
+    assert_match @tester.kamen_rider(:heisei), /\w+\.?/
   end
 
   def test_kamen_rider_reiwa
-    assert @tester.kamen_rider(:reiwa).match(/\w+\.?/)
+    assert_match @tester.kamen_rider(:reiwa), /\w+\.?/
   end
 
   def test_kamen_rider_heisei_reiwa
-    assert @tester.kamen_rider(:heisei, :reiwa).match(/\w+\.?/)
+    assert_match @tester.kamen_rider(:heisei, :reiwa), /\w+\.?/
   end
 
   def test_user_all
-    assert @tester.user.match(/\w+\.?/)
+    assert_match @tester.user, /\w+\.?/
   end
 
   def test_user_showa
-    assert @tester.user(:showa).match(/\w+\.?/)
+    assert_match @tester.user(:showa), /\w+\.?/
   end
 
   def test_user_heisei
-    assert @tester.user(:heisei).match(/\w+\.?/)
+    assert_match @tester.user(:heisei), /\w+\.?/
   end
 
   def test_user_reiwa
-    assert @tester.user(:reiwa).match(/\w+\.?/)
+    assert_match @tester.user(:reiwa), /\w+\.?/
   end
 
   def test_user_heisei_reiwa
-    assert @tester.user(:heisei, :reiwa).match(/\w+\.?/)
+    assert_match @tester.user(:heisei, :reiwa), /\w+\.?/
   end
 
   def test_series_all
-    assert @tester.series.match(/\w+\.?/)
+    assert_match @tester.series, /\w+\.?/
   end
 
   def test_series_showa
-    assert @tester.series(:showa).match(/\w+\.?/)
+    assert_match @tester.series(:showa), /\w+\.?/
   end
 
   def test_series_heisei
-    assert @tester.series(:heisei).match(/\w+\.?/)
+    assert_match @tester.series(:heisei), /\w+\.?/
   end
 
   def test_series_reiwa
-    assert @tester.series(:reiwa).match(/\w+\.?/)
+    assert_match @tester.series(:reiwa), /\w+\.?/
   end
 
   def test_series_heisei_reiwa
-    assert @tester.series(:heisei, :reiwa).match(/\w+\.?/)
+    assert_match @tester.series(:heisei, :reiwa), /\w+\.?/
   end
 
   def test_collectible_device_all
-    assert @tester.collectible_device.match(/\w+\.?/)
+    assert_match @tester.collectible_device, /\w+\.?/
   end
 
   # The Showa era had not introduced the concept of collectible devices.
@@ -77,34 +77,34 @@ class TestFakerJapaneseKamenRider < Test::Unit::TestCase
   end
 
   def test_collectible_device_heisei
-    assert @tester.collectible_device(:heisei).match(/\w+\.?/)
+    assert_match @tester.collectible_device(:heisei), /\w+\.?/
   end
 
   def test_collectible_device_reiwa
-    assert @tester.collectible_device(:reiwa).match(/\w+\.?/)
+    assert_match @tester.collectible_device(:reiwa), /\w+\.?/
   end
 
   def test_collectible_device_heisei_reiwa
-    assert @tester.collectible_device(:heisei, :reiwa).match(/\w+\.?/)
+    assert_match @tester.collectible_device(:heisei, :reiwa), /\w+\.?/
   end
 
   def test_transformation_device_all
-    assert @tester.transformation_device.match(/\w+\.?/)
+    assert_match @tester.transformation_device, /\w+\.?/
   end
 
   def test_transformation_device_showa
-    assert @tester.transformation_device(:showa).match(/\w+\.?/)
+    assert_match @tester.transformation_device(:showa), /\w+\.?/
   end
 
   def test_transformation_device_heisei
-    assert @tester.transformation_device(:heisei).match(/\w+\.?/)
+    assert_match @tester.transformation_device(:heisei), /\w+\.?/
   end
 
   def test_transformation_device_reiwa
-    assert @tester.transformation_device(:reiwa).match(/\w+\.?/)
+    assert_match @tester.transformation_device(:reiwa), /\w+\.?/
   end
 
   def test_transformation_device_heisei_reiwa
-    assert @tester.transformation_device(:heisei, :reiwa).match(/\w+\.?/)
+    assert_match @tester.transformation_device(:heisei, :reiwa), /\w+\.?/
   end
 end

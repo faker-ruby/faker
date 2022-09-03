@@ -8,18 +8,18 @@ class TestFakerHeroes < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w+/)
+    assert_match @tester.name, /\w+/
   end
 
   def test_specialty
-    assert @tester.specialty.match(/\w+/)
+    assert_match @tester.specialty, /\w+/
   end
 
   def test_klass
-    assert @tester.klass.match(/\w+/)
+    assert_match @tester.klass, /\w+/
   end
 
   def test_artifact
-    assert @tester.artifact.match(/\w+/)
+    assert_match @tester.artifact, /\w+/
   end
 end

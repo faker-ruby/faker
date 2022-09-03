@@ -8,10 +8,10 @@ class TestFakerRockBand < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w+/)
+    assert_match @tester.name, /\w+/
   end
 
   def test_song
-    assert @tester.song.match(/\w+/)
+    assert_match @tester.song, /\w+/
   end
 end

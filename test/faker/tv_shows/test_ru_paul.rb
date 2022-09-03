@@ -8,10 +8,10 @@ class TestFakerRuPaul < Test::Unit::TestCase
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/i)
+    assert_match @tester.quote, /\w+/i
   end
 
   def test_queen
-    assert @tester.queen.match(/\w+/i)
+    assert_match @tester.queen, /\w+/i
   end
 end

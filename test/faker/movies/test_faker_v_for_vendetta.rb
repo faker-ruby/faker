@@ -8,14 +8,14 @@ class TestFakerVForVendetta < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match @tester.character, /\w+/
   end
 
   def test_speech
-    assert @tester.speech.match(/\w+/)
+    assert_match @tester.speech, /\w+/
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match @tester.quote, /\w+/
   end
 end

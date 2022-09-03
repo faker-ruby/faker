@@ -8,18 +8,18 @@ class TestFakerTvShowsFuturama < Test::Unit::TestCase
   end
 
   def test_characters
-    10.times { assert @tester.character.match(/\w+/) }
+    10.times { assert_match @tester.character, /\w+/ }
   end
 
   def test_locations
-    10.times { assert @tester.location.match(/\w+/) }
+    10.times { assert_match @tester.location, /\w+/ }
   end
 
   def test_quote
-    10.times { assert @tester.quote.match(/\w+/) }
+    10.times { assert_match @tester.quote, /\w+/ }
   end
 
   def test_hermes_catchphrases
-    10.times { assert @tester.hermes_catchphrase.match(/\w+/) }
+    10.times { assert_match @tester.hermes_catchphrase, /\w+/ }
   end
 end

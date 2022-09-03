@@ -8,14 +8,14 @@ class TestFakerCamera < Test::Unit::TestCase
   end
 
   def test_brand
-    assert @tester.brand.match(/\w+/)
+    assert_match @tester.brand, /\w+/
   end
 
   def test_model
-    assert @tester.model.match(/\w+/)
+    assert_match @tester.model, /\w+/
   end
 
   def test_brand_with_model
-    assert @tester.brand_with_model.match(/\w+/)
+    assert_match @tester.brand_with_model, /\w+/
   end
 end

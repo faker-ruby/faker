@@ -8,10 +8,10 @@ class TestFakerEmotion < Test::Unit::TestCase
   end
 
   def test_noun
-    assert @tester.noun.match(/\w+/)
+    assert_match @tester.noun, /\w+/
   end
 
   def test_adjective
-    assert @tester.adjective.match(/\w+/)
+    assert_match @tester.adjective, /\w+/
   end
 end

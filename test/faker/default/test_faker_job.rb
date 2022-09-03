@@ -8,18 +8,18 @@ class TestFakerJob < Test::Unit::TestCase
   end
 
   def test_title
-    assert @tester.title.match(/(\w+\.? ?){2,3}/)
+    assert_match @tester.title, /(\w+\.? ?){2,3}/
   end
 
   def test_field
-    assert @tester.field.match(/(\w+\.? ?)/)
+    assert_match @tester.field, /(\w+\.? ?)/
   end
 
   def test_key_skill
-    assert @tester.key_skill.match(/(\w+\.? ?)/)
+    assert_match @tester.key_skill, /(\w+\.? ?)/
   end
 
   def test_position
-    assert @tester.position.match(/(\w+\.? ?)/)
+    assert_match @tester.position, /(\w+\.? ?)/
   end
 end
