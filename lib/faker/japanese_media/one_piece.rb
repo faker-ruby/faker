@@ -79,7 +79,7 @@ module Faker
         #
         # @faker.version 1.8.5
         def akuma_no_mi
-          fetch('one_piece.akumas_no_mi')
+          fetch('one_piece.akuma_no_mi')
         end
       end
     end

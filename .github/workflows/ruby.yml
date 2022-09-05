@@ -18,7 +18,7 @@ jobs:
     name: RuboCop
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7'
@@ -35,17 +35,14 @@ jobs:
       fail-fast: false # don't fail all matrix builds if one fails
       matrix:
         ruby:
-          - '2.5'
-          - '2.6'
           - '2.7'
           - '3.0'
-          # FIXME: Workaround for https://github.com/faker-ruby/faker/issues/2260
-          # Resume ruby-head CI when https://github.com/travisjeffery/timecop/pull/279 will be resolved.
-          # - 'head'
+          - '3.1'
+          - 'head'
           - truffleruby-head
     continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}

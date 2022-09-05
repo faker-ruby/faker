@@ -18,6 +18,11 @@ Faker::Vehicle.model(make_of_model: 'Toyota') #=> "Prius"
 # Random vehicle make and model
 Faker::Vehicle.make_and_model #=> "Dodge Charger"
 
+# Random vehicle version
+Faker::Vehicle.version #=> "2.5 Turbo"
+
+Faker::Vehicle.version #=> "Altis Hybrid 1.8 16V CVT"
+
 # Random vehicle color
 Faker::Vehicle.color #=> "Red"
 

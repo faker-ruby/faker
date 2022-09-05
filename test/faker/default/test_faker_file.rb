@@ -15,6 +15,11 @@ class TestFakerFile < Test::Unit::TestCase
     assert @tester.mime_type.match(%r{(.*)/(.*)+})
   end
 
+  def test_mime_type_format_with_media_type
+    media_type = Faker::Base.translate('faker.file.mime_type').keys.sample
+    assert @tester.mime_type(media_type: media_type).match(%r{#{media_type}/(.*)+})
+  end
+
   def test_file_name
     assert @tester
       .file_name

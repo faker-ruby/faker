@@ -296,7 +296,7 @@ module Faker
           result = Array.new(3) { rand(1..9) } + Array.new(7) { rand(10) }
           break if (weight_sum(result, weights) % 11) == result[9]
         end
-        result.join('')
+        result.join
       end
 
       ##
@@ -321,7 +321,7 @@ module Faker
           random_digits = Array.new(length) { rand(10) }
           break if collect_regon_sum(random_digits) == random_digits.last
         end
-        random_digits.join('')
+        random_digits.join
       end
 
       ##
@@ -334,7 +334,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_pty_ltd_registration_number
-        regexify(/\d{4}\/\d{4,10}\/07/)
+        regexify(%r{\d{4}/\d{4,10}/07})
       end
 
       ##
@@ -347,7 +347,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_close_corporation_registration_number
-        regexify(/(CK\d{2}|\d{4})\/\d{4,10}\/23/)
+        regexify(%r{(CK\d{2}|\d{4})/\d{4,10}/23})
       end
 
       ##
@@ -360,7 +360,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_listed_company_registration_number
-        regexify(/\d{4}\/\d{4,10}\/06/)
+        regexify(%r{\d{4}/\d{4,10}/06})
       end
 
       ##
@@ -373,7 +373,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_trust_registration_number
-        regexify(/IT\d{2,4}\/\d{2,10}/)
+        regexify(%r{IT\d{2,4}/\d{2,10}})
       end
 
       ##
@@ -459,7 +459,7 @@ module Faker
       def luhn_algorithm(number)
         multiplications = []
 
-        number.to_s.reverse.split(//).each_with_index do |digit, i|
+        number.to_s.reverse.chars.each_with_index do |digit, i|
           multiplications << if i.even?
                                digit.to_i * 2
                              else
@@ -511,7 +511,6 @@ module Faker
         sum
       end
 
-      # rubocop:disable Style/AsciiComments
       #
       # For more on Russian tax number algorithm here:
       # https://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика#Вычисление_контрольных_цифр
@@ -526,7 +525,6 @@ module Faker
       #   Faker::Comnpany.russian_tax_number
       #   Faker::Comnpany.russian_tax_number(region: 'AZ')
       #   Faker::Comnpany.russian_tax_number(region: 'AZ', type: false)
-      # rubocop:enable Style/AsciiComments
       def inn_number(region, type)
         n10 = [2, 4, 10, 3, 5, 9, 4, 6, 8]
         n11 = [7, 2, 4, 10, 3, 5, 9, 4, 6, 8]
@@ -555,7 +553,7 @@ module Faker
       def spanish_cif_control_digit(organization_type, code)
         letters = %w[J A B C D E F G H I]
 
-        control = code.split('').each_with_index.inject(0) do |sum, (value, index)|
+        control = code.chars.each_with_index.inject(0) do |sum, (value, index)|
           if (index + 1).even?
             sum + value.to_i
           else

@@ -8,9 +8,7 @@ class TestFakerFood < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    flexible_key = @tester.instance_variable_get('@flexible_key')
-
-    assert flexible_key == :food
+    assert @tester.flexible_key == :food
   end
 
   def test_dish
@@ -42,10 +40,14 @@ class TestFakerFood < Test::Unit::TestCase
   end
 
   def test_measurement
-    assert @tester.measurement.split(' ').length == 2
+    assert @tester.measurement.split.length == 2
   end
 
   def test_metric_measurement
     assert @tester.metric_measurement.match(/\w+/)
+  end
+
+  def test_ethnic_category
+    assert @tester.ethnic_category.match(/\w+/)
   end
 end

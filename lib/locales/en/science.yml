@@ -1,6 +1,38 @@
 en:
   faker:
     science:
+      branch:
+        empirical_natural_basic:
+          - Physics
+          - Chemistry
+          - Biology
+          - Earth Science
+          - Space Science
+        empirical_natural_applied:
+          - Engineering
+          - Agricultural Science
+          - Medicine
+          - Materials Science
+        empirical_social_basic:
+          - Antropology
+          - Economics
+          - Political Science
+          - Human Geography
+          - Psychology
+          - Sociology
+        empirical_social_applied:
+          - Business Administration
+          - Public Policy
+          - Marketing
+          - Law
+          - Pedagogy
+          - International Development
+        formal_basic:
+          - Logic
+          - Mathematics
+          - Statistics
+        formal_applied:
+          - Computer Science
       element: 
       - Actinium
       - Aluminum
@@ -255,6 +287,49 @@ en:
       - Reactive nonmetal
       - Transition metal
       - Unknown chemical properties
+      modifier:
+        - Quantum
+        - Laser
+        - Radio
+        - Vacuum
+        - Gas
+        - Solid
+        - Liquid
+        - Fluid
+        - Microfluidic
+        - Mass
+        - Gamma
+        - X-ray
+        - Electon
+        - Proton
+        - Subatomic
+        - UV
+        - Visual
+        - Infrared
+        - Supercooled
+        - Superconductive
+        - Mobile
+        - Portable
+        - Stationary
+        - Inverted
+        - Continuous
+        - Luminescence
+        - Vibration
+        - Scanning
+        - Linear
+        - Circular
+        - Monofocal
+        - Confocal
+        - Trifocal
+        - Thermal
+        - Small
+        - Large
+        - Polar
+        - Conductive
+        - Semiconductive
+        - Non-conductive
+        - Particle
+        - Microparticle
       scientist: 
       - Albert Einstein
       - Albrecht von Haller
@@ -356,3 +431,54 @@ en:
       - William Bayliss
       - William Harvey
       - William Herschel
+      tool:
+        - Microscope
+        - Stereomicroscope
+        - Laser
+        - Interferometer
+        - Spectrophotometer
+        - Spectrometer
+        - Mass Spectrometer
+        - NMR Spectrometer
+        - Homogeniser
+        - PCR
+        - NMR
+        - SDR
+        - Electrophoresis
+        - Simulator
+        - Centrifuge
+        - Microcentrifuge
+        - Transducer
+        - Calorimeter
+        - Glucometers
+        - Bioreactor
+        - Telescope
+        - Autoclave
+        - Microwave
+        - Computer
+        - Supercomputer
+        - Analyzer
+        - Imager
+        - Fumehood
+        - Cleanroom
+        - Mastersizer
+        - Accelerator
+        - Microphone
+        - Fluorimeter
+        - 3D Scanner
+        - Data Logger
+        - Freezer
+        - Furnace
+        - Synthesiser
+        - Reflector
+        - Cryostat
+        - Diffractometer
+        - Manifold
+        - Pump
+        - Incubator
+        - Regulator
+        - Sonicator
+        - Chromatographer
+        - Viscometer
+        - Generator
+        - Reactor

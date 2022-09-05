@@ -61,7 +61,7 @@ module Faker
         def rand_strings(length = 50)
           hex_alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
           var = +''
-          length.times { var << sample(shuffle(hex_alphabet.split(''))) }
+          length.times { var << sample(shuffle(hex_alphabet.chars)) }
           var
         end
       end

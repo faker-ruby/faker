@@ -50,7 +50,7 @@ Include [YARD] style docs for all methods that includes:
 - The return type (`@return`)
 - At least one example of the output (`@example`)
 - The version that the method was added (`@faker.version`)
-  - Set as `next` for new methods
+  - Set as `next` for new methods or methods with new features 
 
 ```ruby
 ##

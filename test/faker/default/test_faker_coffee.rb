@@ -12,7 +12,7 @@ class TestFakerCoffee < Test::Unit::TestCase
     @varieties = Faker::Base.fetch_all('coffee.variety')
     blend_name_words_one = Faker::Base.fetch_all('coffee.name_1')
     blend_name_words_two = Faker::Base.fetch_all('coffee.name_2')
-    @name_words = blend_name_words_one.concat(blend_name_words_two)
+    @name_words = blend_name_words_one.dup.concat(blend_name_words_two)
   end
 
   def test_origin

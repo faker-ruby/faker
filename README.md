@@ -6,7 +6,6 @@
 [![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=master)](https://inch-ci.org/github/faker-ruby/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
-[![SemVer compatibility](https://api.dependabot.com/badges/compatibility_score?dependency-name=faker&package-manager=bundler&version-scheme=semver)](https://dependabot.com/compatibility-score.html?dependency-name=faker&package-manager=bundler&version-scheme=semver)
 
 This gem is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker) that generates fake data.
 
@@ -136,6 +135,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Boolean](doc/default/boolean.md)
   - [Faker::BossaNova](doc/default/bossa_nova.md)
   - [Faker::Business](doc/default/business.md)
+  - [Faker::Camera](doc/default/camera.md)
   - [Faker::Cannabis](doc/default/cannabis.md)
   - [Faker::ChileRut](doc/default/chile_rut.md)
   - [Faker::ChuckNorris](doc/default/chuck_norris.md)
@@ -217,6 +217,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::University](doc/default/university.md)
   - [Faker::Vehicle](doc/default/vehicle.md)
   - [Faker::Verbs](doc/default/verbs.md)
+  - [Faker::VulnerabilityIdentifier](doc/default/vulnerability_identifier.md)
   - [Faker::WorldCup](doc/default/world_cup.md)
 
 ### Blockchain
@@ -230,6 +231,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Books::CultureSeries](doc/books/culture_series.md)
   - [Faker::Books::Dune](doc/books/dune.md)
   - [Faker::Books::Lovecraft](doc/books/lovecraft.md)
+  - [Faker::Books::TheKingkillerChronicle](doc/books/the_kingkiller_chronicle.md)
 
 ### Fantasy
   - [Faker::Fantasy::Tolkien](doc/fantasy/tolkien.md)
@@ -274,6 +276,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::JapaneseMedia::Naruto](doc/japanese_media/naruto.md)
   - [Faker::JapaneseMedia::Doraemon](doc/japanese_media/doraemon.md)
   - [Faker::JapaneseMedia::Conan](doc/japanese_media/conan.md)
+  - [Faker::JapaneseMedia::FmaBrotherhood](doc/japanese_media/fullmetal_alchemist_brotherhood.md)
 
 ### Movies
   - [Faker::Movie](doc/movies/movie.md)
@@ -288,6 +291,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::Movies::LordOfTheRings](doc/movies/lord_of_the_rings.md)
   - [Faker::Movies::PrincessBride](doc/movies/princess_bride.md)
   - [Faker::Movies::StarWars](doc/movies/star_wars.md)
+  - [Faker::Movies::TRON](doc/movies/tron.md)
   - [Faker::Movies::VForVendetta](doc/movies/v_for_vendetta.md)
 
 ### Music
@@ -318,6 +322,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::BigBangTheory](doc/tv_shows/big_bang_theory.md)
   - [Faker::TvShows::BojackHorseman](doc/tv_shows/bojack_horseman.md)
   - [Faker::TvShows::BreakingBad](doc/tv_shows/breaking_bad.md)
+  - [Faker::TvShows::BrooklynNineNine](doc/tv_shows/brooklyn_nine_nine.md)
   - [Faker::TvShows::Buffy](doc/tv_shows/buffy.md)
   - [Faker::TvShows::Community](doc/tv_shows/community.md)
   - [Faker::TvShows::DrWho](doc/tv_shows/dr_who.md)
@@ -341,6 +346,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::Stargate](doc/tv_shows/stargate.md)
   - [Faker::TvShows::StrangerThings](doc/tv_shows/stranger_things.md)
   - [Faker::TvShows::Suits](doc/tv_shows/suits.md)
+  - [Faker::TvShows::Supernatural](doc/tv_shows/supernatural.md)
   - [Faker::TvShows::TheExpanse](doc/tv_shows/the_expanse.md)
   - [Faker::TvShows::TheFreshPrinceOfBelAir](doc/tv_shows/the_fresh_prince_of_bel_air.md)
   - [Faker::TvShows::TheITCrowd](doc/tv_shows/the_it_crowd.md)
@@ -349,13 +355,16 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
   - [Faker::TvShows::VentureBros](doc/tv_shows/venture_bros.md)
 
 ## Customization
-Since you may want to make addresses and other types of data look different
-depending on where in the world you are (US postal codes vs. UK postal codes,
-for example), Faker uses the I18n gem to store strings (like state names) and
-formats (US postal codes are NNNNN while UK postal codes are AAN NAA),
-allowing you to get different formats by switching locales.  Just set
-Faker::Config.locale to the locale you want, and Faker will take care of the
-rest.
+You may want Faker to print information depending on your location in the world. 
+To assist you in this, Faker uses I18n gem to store strings and formats to 
+represent the names and postal codes of the area of your choosing.
+Just set the locale you want as shown below, and Faker will take care of the rest.
+
+```ruby
+Faker::Config.locale = 'es'
+# or
+Faker::Config.locale = :es
+```
 
 If your locale doesn't already exist, create it in the `lib/locales` directory
 and you can then override or add elements to suit your needs. See more about how to

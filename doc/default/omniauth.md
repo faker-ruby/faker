@@ -290,4 +290,35 @@ Faker::Omniauth.apple #=>
     }
   }
 }
+
+Faker::Omniauth.auth0 #=>
+{
+  :provider => "auth0",
+  :uid => "auth0|d0584e3ab2d3816be9518a56",
+  :info=> {
+    :name => "auth0|d0584e3ab2d3816be9518a56",
+    :nickname => "Thurman DuBuque",
+    :email => "dubuque_thurman@example.com",
+    :image => "https://via.placeholder.com/300x300.png"
+  },
+  :credentials=> {
+    :expires_at => 1654345109,
+    :expires => true,
+    :token_type => "Bearer",
+    :id_token=> "fcc25a5b606dbf3211b792b634cf92f3857da4cce725a019b2c492c4845fd63f",
+    :token => "8e668c5b994f3bfc38e3067e6ed960c5",
+    :refresh_token => "19f82075f7c69133452614bd177f4380"
+  },
+  :extra=> {
+    :raw_info=> {
+      :email => "dubuque_thurman@example.com",
+      :email_verified => true,
+      :iss => "https://auth0.com/",
+      :sub => "auth0|d0584e3ab2d3816be9518a56",
+      :aud => "Auth012345",
+      :iat => 1663896480,
+      :exp => 1640375502
+    }
+  }
+}
 ```

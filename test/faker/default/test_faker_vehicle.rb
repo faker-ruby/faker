@@ -4,6 +4,7 @@ require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
   WORD_MATCH = /\w+\.?/.freeze
+  VALIDITY_MATCH = /^([A-HJ-NPR-Z0-9])+/.freeze
 
   def setup
     @tester = Faker::Vehicle
@@ -11,6 +12,10 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def test_vin
     assert_match Faker::Vehicle::VIN_REGEX, @tester.vin
+  end
+
+  def test_vin_validity
+    assert_match VALIDITY_MATCH, @tester.vin
   end
 
   def test_manufacture
@@ -22,9 +27,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    flexible_key = @tester.instance_variable_get('@flexible_key')
-
-    assert flexible_key == :vehicle
+    assert @tester.flexible_key == :vehicle
   end
 
   def test_transmission
@@ -99,6 +102,10 @@ class TestFakerVehicle < Test::Unit::TestCase
     standard_specs = @tester.standard_specs
 
     assert standard_specs.length >= 5 && standard_specs.length < 10
+  end
+
+  def test_version
+    assert_match WORD_MATCH, @tester.version
   end
 
   private

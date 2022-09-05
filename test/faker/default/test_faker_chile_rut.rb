@@ -24,4 +24,9 @@ class TestChileRut < Test::Unit::TestCase
     assert @tester.rut(min_rut: 30_686_957, fixed: true) == 30_686_957
     assert @tester.dv == '4'
   end
+
+  def test_full_formatted_rut
+    assert @tester.full_rut(min_rut: 30_686_957, fixed: true, formatted: true).split('-')[0] == '30.686.957'
+    assert @tester.dv == '4'
+  end
 end

@@ -17,7 +17,7 @@ module Faker
         def address
           hex_alphabet = '0123456789abcdef'
           var = +'0x'
-          40.times { var << sample(shuffle(hex_alphabet.split(''))) }
+          40.times { var << sample(shuffle(hex_alphabet.chars)) }
           var
         end
       end

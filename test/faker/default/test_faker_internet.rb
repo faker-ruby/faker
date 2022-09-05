@@ -5,6 +5,11 @@ require_relative '../../test_helper'
 class TestFakerInternet < Test::Unit::TestCase
   def setup
     @tester = Faker::Internet
+    @default_locale = Faker::Config.locale
+  end
+
+  def teardown
+    Faker::Config.locale = @default_locale
   end
 
   def test_email
@@ -171,6 +176,36 @@ class TestFakerInternet < Test::Unit::TestCase
     assert @tester.password(min_length: 8, max_length: 12, mix_case: true).match(/[^!@#$%\^&*]+/)
   end
 
+  def test_password_with_special_chars_and_mixed_case
+    32.times do
+      password = @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true)
+      assert password.match(/[!@#$%\^&*]+/)
+      assert password.match(/[A-z]+/)
+    end
+  end
+
+  def test_password_with_special_chars_and_mixed_case_on_2chars_password
+    16.times do
+      password = @tester.password(min_length: 2, max_length: 6, mix_case: true, special_characters: true)
+      assert password.match(/[!@#$%\^&*]+/)
+      assert password.match(/[A-z]+/)
+    end
+  end
+
+  def test_password_with_incompatible_min_length_and_requirements
+    assert_raise ArgumentError do
+      @tester.password(min_length: 1, mix_case: true, special_characters: true)
+    end
+  end
+
+  def test_password_with_compatible_min_length_and_requirements
+    assert_nothing_raised do
+      [false, true].each do |value|
+        @tester.password(min_length: 1, mix_case: value, special_characters: !value)
+      end
+    end
+  end
+
   def test_domain_name_without_subdomain
     assert @tester.domain_name.match(/[\w-]+\.\w+/)
   end
@@ -288,8 +323,18 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
-  def test_slug
-    assert @tester.slug.match(/^[a-z]+(_|-)[a-z]+$/)
+  I18n.config.available_locales.each do |locale|
+    define_method("test_#{locale}_slug") do
+      Faker::Config.locale = locale
+
+      assert @tester.slug.match(/^[a-z]+(_|-)[a-z]+$/)
+    end
+
+    define_method("test_#{locale}_slug_with_glue_arg") do
+      Faker::Config.locale = locale
+
+      assert @tester.slug(words: nil, glue: '+').match(/^[a-z]+\+[a-z]+$/)
+    end
   end
 
   def test_slug_with_content_arg
@@ -298,10 +343,6 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_slug_with_unwanted_content_arg
     assert @tester.slug(words: 'Foo.. bAr., baZ,,').match(/^foo(_|\.|-)bar(_|\.|-)baz$/)
-  end
-
-  def test_slug_with_glue_arg
-    assert @tester.slug(words: nil, glue: '+').match(/^[a-z]+\+[a-z]+$/)
   end
 
   def test_url
@@ -319,12 +360,27 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_user_agent_with_valid_argument
     assert @tester.user_agent(vendor: :opera).match(/Opera/)
     assert @tester.user_agent(vendor: 'opera').match(/Opera/)
+    assert @tester.user_agent(vendor: nil).match(/Mozilla|Opera/)
   end
 
   def test_user_agent_with_invalid_argument
-    assert @tester.user_agent(vendor: :ie).match(/Mozilla|Opera/)
-    assert @tester.user_agent(vendor: nil).match(/Mozilla|Opera/)
-    assert @tester.user_agent(vendor: 1).match(/Mozilla|Opera/)
+    refute_empty @tester.user_agent(vendor: :ie)
+    refute_empty @tester.user_agent(vendor: 1)
+  end
+
+  def test_bot_user_agent_with_no_argument
+    refute_empty @tester.bot_user_agent
+  end
+
+  def test_bot_user_agent_with_valid_argument
+    assert @tester.bot_user_agent(vendor: :duckduckbot).match(/DuckDuckBot/)
+    assert @tester.bot_user_agent(vendor: 'duckduckbot').match(/DuckDuckBot/)
+    refute_empty @tester.bot_user_agent(vendor: nil)
+  end
+
+  def test_bot_user_agent_with_invalid_argument
+    refute_empty @tester.bot_user_agent(vendor: :ie)
+    refute_empty @tester.bot_user_agent(vendor: 1)
   end
 
   def test_uuid
@@ -338,5 +394,24 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_match(/[[[:alnum:]]\-_]{4}/, @tester.base64(length: 4))
     assert_match(/[[[:alnum:]]\-_]{16}=/, @tester.base64(padding: true))
     assert_match(/[[[:alnum:]]+\/]{16}/, @tester.base64(urlsafe: false))
+  end
+
+  def test_user_with_args
+    user = @tester.user('username', 'email', 'password')
+    assert user[:username].match(/[a-z]+((_|\.)[a-z]+)?/)
+    assert user[:email].match(/.+@.+\.\w+/)
+    assert user[:password].match(/\w{3}/)
+  end
+
+  def test_user_without_args
+    user = @tester.user
+    assert user[:username].match(/[a-z]+((_|\.)[a-z]+)?/)
+    assert user[:email].match(/.+@.+\.\w+/)
+  end
+
+  def test_user_with_invalid_args
+    assert_raises NoMethodError do
+      @tester.user('xyx')
+    end
   end
 end

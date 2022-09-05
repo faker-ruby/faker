@@ -7,6 +7,8 @@ Faker::Food.description #=> "Three eggs with cilantro, tomatoes, onions, avocado
 
 Faker::Food.dish #=> "Caesar Salad"
 
+Faker::Food.ethnic_category #=> "Indian cuisine"
+
 Faker::Food.fruits #=> "Peaches"
 
 Faker::Food.ingredient #=> "Adzuki Beans"

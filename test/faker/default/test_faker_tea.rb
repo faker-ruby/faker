@@ -6,9 +6,9 @@ class TestFakerTea < Test::Unit::TestCase
   def setup
     @tester = Faker::Tea
     @types = Faker::Base.fetch_all('tea.type')
-    @varieties_by_type = @types.map do |type|
+    @varieties_by_type = @types.to_h do |type|
       [type, Faker::Base.fetch_all("tea.variety.#{type.downcase}")]
-    end.to_h
+    end
     @varieties = @varieties_by_type.values.flatten
   end
 

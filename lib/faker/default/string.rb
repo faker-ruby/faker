@@ -3,8 +3,6 @@
 module Faker
   class String < Base
     class << self
-      # rubocop:disable Style/AsciiComments
-
       ##
       # Produces a random UTF-8 string with optional nested length selectors.
       #
@@ -26,7 +24,6 @@ module Faker
 
         utf8string select_a length
       end
-      # rubocop:enable Style/AsciiComments
 
       private
 

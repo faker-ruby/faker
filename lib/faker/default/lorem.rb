@@ -82,8 +82,6 @@ module Faker
         Alphanumeric.alphanumeric(number: number, min_alpha: min_alpha, min_numeric: min_numeric)
       end
 
-      # rubocop:disable Style/AsciiComments
-
       ##
       # Generates the emoji
       #
@@ -97,8 +95,6 @@ module Faker
       def multibyte
         sample(translate('faker.lorem.multibyte')).pack('C*').force_encoding('utf-8')
       end
-      # rubocop:enable Style/AsciiComments
-
       # rubocop:disable Metrics/ParameterLists
 
       ##
