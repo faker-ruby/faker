@@ -99,11 +99,11 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::LoremFlickr.image #=> "https://loremflickr.com/red/300/300/all"
-      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue') #=> "https://loremflickr.com/blue/50/60/all"
-      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports']) #=> "https://loremflickr.com/blue/50/60/sports"
-      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/blue/50/60/sports,fitness"
-      #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/blue/50/60/sports,fitness/all"
+      #   Faker::LoremFlickr.colorized_image #=> "https://loremflickr.com/red/300/300/all"
+      #   Faker::LoremFlickr.colorized_image(size: "50x60", color: 'blue') #=> "https://loremflickr.com/blue/50/60/all"
+      #   Faker::LoremFlickr.colorized_image(size: "50x60", color: 'blue', search_terms: ['sports']) #=> "https://loremflickr.com/blue/50/60/sports"
+      #   Faker::LoremFlickr.colorized_image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness']) #=> "https://loremflickr.com/blue/50/60/sports,fitness"
+      #   Faker::LoremFlickr.colorized_image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/blue/50/60/sports,fitness/all"
       #
       # @faker.version 1.9.0
       def colorized_image(legacy_size = NOT_GIVEN, legacy_color = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', color: 'red', search_terms: ['all'], match_all: false)
