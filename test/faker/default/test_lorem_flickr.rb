@@ -57,7 +57,7 @@ class TestLoremFlickr < Test::Unit::TestCase
 
   def test_grayscale_image_without_search_terms
     assert_raise ArgumentError do
-      assert @tester.grayscale_image(search_terms: [])
+      assert @tester.grayscale_image(search_terms: nil)
     end
   end
 
@@ -67,7 +67,6 @@ class TestLoremFlickr < Test::Unit::TestCase
 
   def test_pixelated_image
     assert @tester.pixelated_image.match(%r{https://loremflickr\.com/p/\d+/\d+/.+})
-    # assert @tester.grayscale_image.match(%r{https://loremflickr\.com/g/\d+/\d+/.+})
   end
 
   def test_pixelated_image_with_custom_size
@@ -90,11 +89,53 @@ class TestLoremFlickr < Test::Unit::TestCase
 
   def test_pixelated_image_without_search_terms
     assert_raise ArgumentError do
-      assert @tester.pixelated_image(search_terms: [])
+      assert @tester.pixelated_image(search_terms: nil)
     end
   end
 
   def test_pixelated_image_with_search_terms_and_match_all
     assert @tester.pixelated_image(size: '300x300', search_terms: %w[sports fitness], match_all: true).match(%r{https://loremflickr\.com/.+/\d+/\d+/.+,.+/(.+)})[1] == 'all'
+  end
+
+  def test_colorized_image
+    assert @tester.colorized_image.match(%r{https://loremflickr\.com/.+/\d+/\d+/.+})
+  end
+
+  def test_colorized_image_with_custom_size
+    assert @tester.colorized_image(size: '3x3').match(%r{https://loremflickr\.com/.+/(\d+/\d+)/.+})[1] == '3/3'
+  end
+
+  def test_colorized_image_with_incorrect_size
+    assert_raise ArgumentError do
+      assert @tester.colorized_image(size: '300x300s')
+    end
+  end
+
+  def test_colorized_image_with_single_search_term
+    assert @tester.colorized_image(size: '300x300', search_terms: ['sports']).match(%r{https://loremflickr\.com/.+/\d+/\d+/(.+)})[1] == 'sports'
+  end
+
+  def test_colorized_image_with_multiple_search_terms
+    assert @tester.colorized_image(size: '300x300', search_terms: %w[sports fitness]).match(%r{https://loremflickr\.com/.+/\d+/\d+/(.+,.+)})[1] == 'sports,fitness'
+  end
+
+  def test_colorized_image_without_search_terms
+    assert_raise ArgumentError do
+      assert @tester.colorized_image(search_terms: nil)
+    end
+  end
+
+  def test_colorized_image_with_search_terms_and_match_all
+    assert @tester.colorized_image(size: '300x300', search_terms: %w[sports fitness], match_all: true).match(%r{https://loremflickr\.com/.+/\d+/\d+/.+,.+/(.+)})[1] == 'all'
+  end
+
+  def test_colorized_image_with_supported_color
+    assert @tester.colorized_image(color: 'blue').match(%r{https://loremflickr\.com/(.+)/\d+/\d+/.+})[1] == 'blue'
+  end
+
+  def test_colorized_image_with_incorrect_color
+    assert_raise ArgumentError do
+      assert @tester.colorized_image(color: 'wrong_color')
+    end
   end
 end
