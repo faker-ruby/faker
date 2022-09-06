@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('minitest', '5.16.3')
   spec.add_development_dependency('pry', '0.14.1')
   spec.add_development_dependency('rake', '13.0.6')
-  spec.add_development_dependency('rubocop', '1.35.1')
+  spec.add_development_dependency('rubocop', '1.36.0')
   spec.add_development_dependency('rubocop-rake', '0.6.0')
   # Workaround for cc-test-reporter with SimpleCov 0.18.
   # Stop upgrading SimpleCov until the following issue will be resolved.
