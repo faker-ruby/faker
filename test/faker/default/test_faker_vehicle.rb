@@ -27,7 +27,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    assert @tester.flexible_key == :vehicle
+    assert_equal(:vehicle, @tester.flexible_key)
   end
 
   def test_transmission
@@ -55,7 +55,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_engine
-    assert @tester.engine.match(/\d Cylinder Engine/)
+    assert_match(/\d Cylinder Engine/, @tester.engine)
   end
 
   def test_mileage
@@ -111,7 +111,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   private
 
   def doors_condition(doors)
-    assert doors.positive?
+    assert_predicate doors, :positive?
     assert doors.is_a?(Integer)
   end
 end

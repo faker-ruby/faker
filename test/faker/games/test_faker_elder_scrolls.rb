@@ -8,42 +8,42 @@ class TestFakerElderScrolls < Test::Unit::TestCase
   end
 
   def test_race
-    assert @tester.race.match(/\w+/)
+    assert_match(/\w+/, @tester.race)
   end
 
   def test_region
-    assert @tester.region.match(/\w+/)
+    assert_match(/\w+/, @tester.region)
   end
 
   def test_city
-    assert @tester.city.match(/\w+/)
+    assert_match(/\w+/, @tester.city)
   end
 
   def test_dragon
-    assert @tester.dragon.match(/\w+/)
+    assert_match(/\w+/, @tester.dragon)
   end
 
   def test_creature
-    assert @tester.creature.match(/\w+/)
+    assert_match(/\w+/, @tester.creature)
   end
 
   def test_name
-    assert @tester.name.match(/\w+/)
+    assert_match(/\w+/, @tester.name)
   end
 
   def test_first_name
-    assert @tester.first_name.match(/\w+/)
+    assert_match(/\w+/, @tester.first_name)
   end
 
   def test_last_name
-    assert @tester.last_name.match(/\w+/)
+    assert_match(/\w+/, @tester.last_name)
   end
 
   def test_weapon
-    assert @tester.weapon.match(/\w+/)
+    assert_match(/\w+/, @tester.weapon)
   end
 
   def jewelry
-    assert @tester.jewelry.match(/\w+/)
+    assert_match(/\w+/, @tester.jewelry)
   end
 end

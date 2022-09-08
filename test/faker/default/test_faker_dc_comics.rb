@@ -8,22 +8,22 @@ class TestFakerDcComics < Test::Unit::TestCase
   end
 
   def test_hero
-    assert @tester.hero.match(/\w+/)
+    assert_match(/\w+/, @tester.hero)
   end
 
   def test_heroine
-    assert @tester.heroine.match(/\w+/)
+    assert_match(/\w+/, @tester.heroine)
   end
 
   def test_villain
-    assert @tester.villain.match(/\w+/)
+    assert_match(/\w+/, @tester.villain)
   end
 
   def test_name
-    assert @tester.name.match(/\w+/)
+    assert_match(/\w+/, @tester.name)
   end
 
   def test_title
-    assert @tester.title.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.title)
   end
 end

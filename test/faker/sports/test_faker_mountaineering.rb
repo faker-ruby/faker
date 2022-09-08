@@ -8,6 +8,6 @@ class TestFakerMountaineering < Test::Unit::TestCase
   end
 
   def test_mountaineer
-    assert @tester.mountaineer.match(/\w+/)
+    assert_match(/\w+/, @tester.mountaineer)
   end
 end

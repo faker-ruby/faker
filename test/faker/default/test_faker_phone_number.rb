@@ -9,18 +9,18 @@ class TestFakerPhone < Test::Unit::TestCase
   end
 
   def test_country_code
-    assert @tester.country_code.match(/\A\+[\d|-]+\z/)
+    assert_match(/\A\+[\d|-]+\z/, @tester.country_code)
   end
 
   def test_phone_number_with_country_code
-    assert @tester.phone_number_with_country_code.match(@phone_with_country_code_regex)
+    assert_match @phone_with_country_code_regex, @tester.phone_number_with_country_code
   end
 
   def test_cell_phone_with_country_code
-    assert @tester.cell_phone_with_country_code.match(@phone_with_country_code_regex)
+    assert_match @phone_with_country_code_regex, @tester.cell_phone_with_country_code
   end
 
   def test_cell_phone_in_e164
-    assert @tester.cell_phone_in_e164.match(@phone_with_country_code_regex)
+    assert_match @phone_with_country_code_regex, @tester.cell_phone_in_e164
   end
 end

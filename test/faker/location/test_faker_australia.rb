@@ -8,14 +8,14 @@ class TestFakerAustralia < Test::Unit::TestCase
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match(/\w+/, @tester.location)
   end
 
   def test_animal
-    assert @tester.animal.match(/\w+/)
+    assert_match(/\w+/, @tester.animal)
   end
 
   def test_state
-    assert @tester.state.match(/\w+/)
+    assert_match(/\w+/, @tester.state)
   end
 end

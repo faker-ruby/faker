@@ -16,12 +16,12 @@ class TestFakerTea < Test::Unit::TestCase
     assert(@varieties.all? do |variety|
       variety.match?(/^(?:[A-Z]['.\-a-z]+[\s-])*(?:[A-Z]['.\-a-z]+)$/)
     end)
-    assert @varieties.include?(@tester.variety)
+    assert_includes @varieties, @tester.variety
   end
 
   def test_variety_with_argument
     @types.each do |type|
-      assert @varieties_by_type[type].include?(@tester.variety(type: type))
+      assert_includes @varieties_by_type[type], @tester.variety(type: type)
     end
   end
 

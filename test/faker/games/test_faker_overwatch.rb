@@ -8,14 +8,14 @@ class TestFakerOverwatch < Test::Unit::TestCase
   end
 
   def test_hero
-    assert @tester.hero.match(/\w+/)
+    assert_match(/\w+/, @tester.hero)
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match(/\w+/, @tester.location)
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match(/\w+/, @tester.quote)
   end
 end

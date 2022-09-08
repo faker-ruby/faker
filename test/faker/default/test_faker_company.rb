@@ -8,23 +8,23 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_ein
-    assert @tester.ein.match(/\d\d-\d\d\d\d\d\d\d/)
+    assert_match(/\d\d-\d\d\d\d\d\d\d/, @tester.ein)
   end
 
   def test_duns_number
-    assert @tester.duns_number.match(/\d\d-\d\d\d-\d\d\d\d/)
+    assert_match(/\d\d-\d\d\d-\d\d\d\d/, @tester.duns_number)
   end
 
   def test_logo
-    assert @tester.logo.match(%r{https://pigment.github.io/fake-logos/logos/medium/color/\d+\.png})
+    assert_match %r{https://pigment.github.io/fake-logos/logos/medium/color/\d+\.png}, @tester.logo
   end
 
   def test_buzzword
-    assert @tester.buzzword.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.buzzword)
   end
 
   def test_type
-    assert @tester.type.match(/\w+/)
+    assert_match(/\w+/, @tester.type)
   end
 
   def test_spanish_organisation_number
@@ -34,49 +34,49 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def test_swedish_organisation_number
     org_no = @tester.swedish_organisation_number
-    assert org_no.match(/\d{10}/)
-    assert [1, 2, 3, 5, 6, 7, 8, 9].include?(org_no[0].to_i)
+    assert_match(/\d{10}/, org_no)
+    assert_includes [1, 2, 3, 5, 6, 7, 8, 9], org_no[0].to_i
     assert org_no[2].to_i >= 2
-    assert org_no[9] == @tester.send(:luhn_algorithm, org_no[0..8]).to_s
+    assert_equal org_no[9], @tester.send(:luhn_algorithm, org_no[0..8]).to_s
   end
 
   def test_czech_organisation_number
     org_no = @tester.czech_organisation_number
-    assert org_no.match(/\d{8}/)
-    assert [0, 1, 2, 3, 5, 6, 7, 8, 9].include?(org_no[0].to_i)
-    assert czech_o_n_checksum(org_no) == org_no[-1].to_i
+    assert_match(/\d{8}/, org_no)
+    assert_includes [0, 1, 2, 3, 5, 6, 7, 8, 9], org_no[0].to_i
+    assert_equal czech_o_n_checksum(org_no), org_no[-1].to_i
   end
 
   def test_french_siren_number
     siren = @tester.french_siren_number
-    assert siren.match(/\A\d{9}\z/)
-    assert siren[8] == @tester.send(:luhn_algorithm, siren[0..-2]).to_s
+    assert_match(/\A\d{9}\z/, siren)
+    assert_equal siren[8], @tester.send(:luhn_algorithm, siren[0..-2]).to_s
   end
 
   def test_french_siret_number
     siret = @tester.french_siret_number
-    assert siret.match(/\A\d{14}\z/)
-    assert siret[8] == @tester.send(:luhn_algorithm, siret[0..7]).to_s
-    assert siret[13] == @tester.send(:luhn_algorithm, siret[0..-2]).to_s
+    assert_match(/\A\d{14}\z/, siret)
+    assert_equal siret[8], @tester.send(:luhn_algorithm, siret[0..7]).to_s
+    assert_equal siret[13], @tester.send(:luhn_algorithm, siret[0..-2]).to_s
   end
 
   def test_norwegian_organisation_number
     org_no = @tester.norwegian_organisation_number
-    assert org_no.match(/\d{9}/)
-    assert [8, 9].include?(org_no[0].to_i)
-    assert org_no[8] == @tester.send(:mod11, org_no[0..7]).to_s
+    assert_match(/\d{9}/, org_no)
+    assert_includes [8, 9], org_no[0].to_i
+    assert_equal org_no[8], @tester.send(:mod11, org_no[0..7]).to_s
   end
 
   def test_australian_business_number
     abn = @tester.australian_business_number
     checksum = abn_checksum(abn)
 
-    assert abn.match(/\d{11}/)
-    assert((checksum % 89).zero?)
+    assert_match(/\d{11}/, abn)
+    assert_predicate((checksum % 89), :zero?)
   end
 
   def test_profession
-    assert @tester.profession.match(/[a-z ]+\.?/)
+    assert_match(/[a-z ]+\.?/, @tester.profession)
   end
 
   def test_polish_taxpayer_identification_number
@@ -85,7 +85,7 @@ class TestFakerCompany < Test::Unit::TestCase
     [6, 5, 7, 2, 3, 4, 5, 6, 7].each_with_index do |control, index|
       control_sum += control * number[index].to_i
     end
-    assert control_sum.modulo(11) != 10
+    refute_equal control_sum.modulo(11), 10
   end
 
   def test_polish_register_of_national_economy
@@ -100,7 +100,7 @@ class TestFakerCompany < Test::Unit::TestCase
       control_sum += control * number[index].to_i
     end
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
-    assert control_number == number[8].to_i
+    assert_equal control_number, number[8].to_i
     # 14 length
     number = @tester.polish_register_of_national_economy(length: 14)
     control_sum = 0
@@ -108,7 +108,7 @@ class TestFakerCompany < Test::Unit::TestCase
       control_sum += control * number[index].to_i
     end
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
-    assert control_number == number[13].to_i
+    assert_equal control_number, number[13].to_i
   end
 
   def test_mod11
@@ -155,8 +155,8 @@ class TestFakerCompany < Test::Unit::TestCase
 
     even_control = "#{even_base}#{even_luhn_complement}"
 
-    assert((luhn_checksum(odd_control) % 10).zero?)
-    assert((luhn_checksum(even_control) % 10).zero?)
+    assert_predicate((luhn_checksum(odd_control) % 10), :zero?)
+    assert_predicate((luhn_checksum(even_control) % 10), :zero?)
   end
 
   def test_brazilian_company_number
@@ -187,15 +187,15 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_russian_tax_number_default
-    assert @tester.russian_tax_number.match(/\d{10}/)
+    assert_match(/\d{10}/, @tester.russian_tax_number)
   end
 
   def test_russian_tax_number_individual
-    assert @tester.russian_tax_number(type: :individual).match(/\d{12}/)
+    assert_match(/\d{12}/, @tester.russian_tax_number(type: :individual))
   end
 
   def test_russian_tax_number_region
-    assert @tester.russian_tax_number(region: '77').match(/^77/)
+    assert_match(/^77/, @tester.russian_tax_number(region: '77'))
   end
 
   def test_russian_tax_number_checksum
@@ -203,36 +203,36 @@ class TestFakerCompany < Test::Unit::TestCase
     number = base_number[0..-2]
     checksum = base_number.chars.last.to_i
 
-    assert((inn_checksum(number) - checksum).zero?)
+    assert_predicate((inn_checksum(number) - checksum), :zero?)
   end
 
   def test_sic_code
-    assert @tester.sic_code.match(/\d\d\d\d/)
+    assert_match(/\d\d\d\d/, @tester.sic_code)
   end
 
   def test_spanish_cif_control_digit
-    assert @tester.send(:spanish_cif_control_digit, 'A', '2217680') == 4
-    assert @tester.send(:spanish_cif_control_digit, 'B', '4031315') == 7
-    assert @tester.send(:spanish_cif_control_digit, 'C', '7191088') == 9
-    assert @tester.send(:spanish_cif_control_digit, 'D', '3178686') == 6
-    assert @tester.send(:spanish_cif_control_digit, 'E', '4484441') == 3
-    assert @tester.send(:spanish_cif_control_digit, 'F', '4830511') == 4
-    assert @tester.send(:spanish_cif_control_digit, 'G', '7676903') == 3
-    assert @tester.send(:spanish_cif_control_digit, 'H', '8888075') == 2
-    assert @tester.send(:spanish_cif_control_digit, 'J', '6840041') == 5
-    assert @tester.send(:spanish_cif_control_digit, 'N', '5350867') == 'G'
-    assert @tester.send(:spanish_cif_control_digit, 'P', '5669582') == 'H'
-    assert @tester.send(:spanish_cif_control_digit, 'Q', '5182823') == 'D'
-    assert @tester.send(:spanish_cif_control_digit, 'R', '1099088') == 'E'
-    assert @tester.send(:spanish_cif_control_digit, 'S', '2210399') == 'H'
-    assert @tester.send(:spanish_cif_control_digit, 'U', '3957325') == 8
-    assert @tester.send(:spanish_cif_control_digit, 'V', '7536342') == 4
-    assert @tester.send(:spanish_cif_control_digit, 'W', '6793772') == 'B'
+    assert_equal(4, @tester.send(:spanish_cif_control_digit, 'A', '2217680'))
+    assert_equal(7, @tester.send(:spanish_cif_control_digit, 'B', '4031315'))
+    assert_equal(9, @tester.send(:spanish_cif_control_digit, 'C', '7191088'))
+    assert_equal(6, @tester.send(:spanish_cif_control_digit, 'D', '3178686'))
+    assert_equal(3, @tester.send(:spanish_cif_control_digit, 'E', '4484441'))
+    assert_equal(4, @tester.send(:spanish_cif_control_digit, 'F', '4830511'))
+    assert_equal(3, @tester.send(:spanish_cif_control_digit, 'G', '7676903'))
+    assert_equal(2, @tester.send(:spanish_cif_control_digit, 'H', '8888075'))
+    assert_equal(5, @tester.send(:spanish_cif_control_digit, 'J', '6840041'))
+    assert_equal('G', @tester.send(:spanish_cif_control_digit, 'N', '5350867'))
+    assert_equal('H', @tester.send(:spanish_cif_control_digit, 'P', '5669582'))
+    assert_equal('D', @tester.send(:spanish_cif_control_digit, 'Q', '5182823'))
+    assert_equal('E', @tester.send(:spanish_cif_control_digit, 'R', '1099088'))
+    assert_equal('H', @tester.send(:spanish_cif_control_digit, 'S', '2210399'))
+    assert_equal(8, @tester.send(:spanish_cif_control_digit, 'U', '3957325'))
+    assert_equal(4, @tester.send(:spanish_cif_control_digit, 'V', '7536342'))
+    assert_equal('B', @tester.send(:spanish_cif_control_digit, 'W', '6793772'))
   end
 
   def test_spanish_b_algorithm
-    assert @tester.send(:spanish_b_algorithm, 2) == 4
-    assert @tester.send(:spanish_b_algorithm, 6) == 3
+    assert_equal(4, @tester.send(:spanish_b_algorithm, 2))
+    assert_equal(3, @tester.send(:spanish_b_algorithm, 6))
   end
 
   private

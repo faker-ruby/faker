@@ -40,7 +40,7 @@ class TestFakerCity < Test::Unit::TestCase
       100.times do
         cities = ['west alice', 'west smith', 'west aliceburg', 'west smithburg', 'aliceburg', 'smithburg']
         city = Faker::Address.city
-        assert cities.include?(city), "Expected <#{cities.join(' / ')}>, but got #{city}"
+        assert_includes cities, city, "Expected <#{cities.join(' / ')}>, but got #{city}"
       end
     end
   end
@@ -49,7 +49,7 @@ class TestFakerCity < Test::Unit::TestCase
     I18n.with_locale(:xy) do
       cities = ['big rocking town']
       city = Faker::Address.city
-      assert cities.include?(city), "Expected <#{cities.join(' / ')}>, but got #{city}"
+      assert_includes cities, city, "Expected <#{cities.join(' / ')}>, but got #{city}"
     end
   end
 end

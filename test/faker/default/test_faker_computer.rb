@@ -9,11 +9,11 @@ class TestFakerComputer < Test::Unit::TestCase
   end
 
   def test_type
-    assert @tester.type.match(/\w+/)
+    assert_match(/\w+/, @tester.type)
   end
 
   def test_platform
-    assert @tester.platform.match(/(\w+ ?\d?){1,3}/)
+    assert_match(/(\w+ ?\d?){1,3}/, @tester.platform)
   end
 
   def test_stack
@@ -26,7 +26,7 @@ class TestFakerComputer < Test::Unit::TestCase
 
     oses = Faker::Base.fetch_all("computer.os.#{search_format_platform}")
 
-    assert @platforms.include?(platform)
-    assert oses.include?(os)
+    assert_includes @platforms, platform
+    assert_includes oses, os
   end
 end

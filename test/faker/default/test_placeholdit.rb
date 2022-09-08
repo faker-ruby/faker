@@ -8,11 +8,11 @@ class TestPlaceholdit < Test::Unit::TestCase
   end
 
   def test_placeholdit
-    assert !@tester.image.match(%r{https://via\.placeholder\.com/(.+)(png?)})[1].nil?
+    refute_nil @tester.image.match(%r{https://via\.placeholder\.com/(.+)(png?)})[1]
   end
 
   def test_avatar_with_custom_size
-    assert @tester.image(size: '3x3').match(%r{https://via\.placeholder\.com/+(\d+x\d+)})[1] == '3x3'
+    assert_equal('3x3', @tester.image(size: '3x3').match(%r{https://via\.placeholder\.com/+(\d+x\d+)})[1])
   end
 
   def test_avatar_with_incorrect_size
@@ -22,7 +22,7 @@ class TestPlaceholdit < Test::Unit::TestCase
   end
 
   def test_avatar_with_supported_format
-    assert @tester.image(size: '300x300', format: 'jpg').match(%r{https://via\.placeholder\.com/(.+)(jpg?)})
+    assert_match %r{https://via\.placeholder\.com/(.+)(jpg?)}, @tester.image(size: '300x300', format: 'jpg')
   end
 
   def test_avatar_with_incorrect_format
@@ -32,15 +32,15 @@ class TestPlaceholdit < Test::Unit::TestCase
   end
 
   def test_avatar_background_with_correct_six_char_hex
-    assert @tester.image(size: '300x300', format: 'jpg', background_color: 'ffffff').match(%r{https://via\.placeholder\.com/(.+)(jpg?)/ffffff})
+    assert_match %r{https://via\.placeholder\.com/(.+)(jpg?)/ffffff}, @tester.image(size: '300x300', format: 'jpg', background_color: 'ffffff')
   end
 
   def test_avatar_background_with_correct_three_char_hex
-    assert @tester.image(size: '300x300', format: 'jpg', background_color: 'fff').match(%r{https://via\.placeholder\.com/(.+)(jpg?)/fff})
+    assert_match %r{https://via\.placeholder\.com/(.+)(jpg?)/fff}, @tester.image(size: '300x300', format: 'jpg', background_color: 'fff')
   end
 
   def test_avatar_background_with_random_color
-    assert @tester.image(size: '300x300', format: 'jpg', background_color: :random).match(%r{https://via\.placeholder\.com/(.+)(jpg?)/[a-f0-9]{6}})
+    assert_match %r{https://via\.placeholder\.com/(.+)(jpg?)/[a-f0-9]{6}}, @tester.image(size: '300x300', format: 'jpg', background_color: :random)
   end
 
   def test_avatar_background_with_wrong_six_char_hex
@@ -62,15 +62,15 @@ class TestPlaceholdit < Test::Unit::TestCase
   end
 
   def test_avatar_font_color_with_correct_six_char_hex
-    assert @tester.image(size: '300x300', format: 'jpg', background_color: 'ffffff', text_color: '000000').match(%r{https://via\.placeholder\.com/(.+)(jpg?)/ffffff/000000})
+    assert_match %r{https://via\.placeholder\.com/(.+)(jpg?)/ffffff/000000}, @tester.image(size: '300x300', format: 'jpg', background_color: 'ffffff', text_color: '000000')
   end
 
   def test_avatar_font_color_with_correct_three_char_hex
-    assert @tester.image(size: '300x300', format: 'jpg', background_color: 'fff', text_color: '000').match(%r{https://via\.placeholder\.com/(.+)(jpg?)/fff})
+    assert_match %r{https://via\.placeholder\.com/(.+)(jpg?)/fff}, @tester.image(size: '300x300', format: 'jpg', background_color: 'fff', text_color: '000')
   end
 
   def test_avatar_font_color_with_random_color
-    assert @tester.image(size: '300x300', format: 'jpg', background_color: 'fff', text_color: :random).match(%r{https://via\.placeholder\.com/(.+)(jpg?)/fff/[a-f0-9]{6}})
+    assert_match %r{https://via\.placeholder\.com/(.+)(jpg?)/fff/[a-f0-9]{6}}, @tester.image(size: '300x300', format: 'jpg', background_color: 'fff', text_color: :random)
   end
 
   def test_avatar_font_color_with_wrong_six_char_hex
@@ -92,10 +92,10 @@ class TestPlaceholdit < Test::Unit::TestCase
   end
 
   def test_text_not_present
-    assert @tester.image(size: '300x300', format: 'jpg', background_color: 'fff', text_color: '000').match(%r{https://via\.placeholder\.com/[^\\?]+$})
+    assert_match %r{https://via\.placeholder\.com/[^\\?]+$}, @tester.image(size: '300x300', format: 'jpg', background_color: 'fff', text_color: '000')
   end
 
   def test_text_present
-    assert @tester.image(size: '300x300', format: 'jpg', background_color: 'fff', text_color: '000', text: 'hello').match(%r{https://via\.placeholder\.com/(.+)\?text=hello})
+    assert_match %r{https://via\.placeholder\.com/(.+)\?text=hello}, @tester.image(size: '300x300', format: 'jpg', background_color: 'fff', text_color: '000', text: 'hello')
   end
 end

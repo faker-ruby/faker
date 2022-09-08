@@ -8,14 +8,14 @@ class TestFakerPokemon < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w+/)
+    assert_match(/\w+/, @tester.name)
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match(/\w+/, @tester.location)
   end
 
   def test_move
-    assert @tester.move.match(/\w+/)
+    assert_match(/\w+/, @tester.move)
   end
 end

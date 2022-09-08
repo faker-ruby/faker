@@ -31,19 +31,19 @@ class TestEnCaLocale < Test::Unit::TestCase
 
   def test_en_ca_subscriber_number_method
     assert Faker::PhoneNumber.subscriber_number.is_a? String
-    assert_equal Faker::PhoneNumber.subscriber_number.length, 4
-    assert_equal Faker::PhoneNumber.subscriber_number(length: 10).length, 10
+    assert_equal(4, Faker::PhoneNumber.subscriber_number.length)
+    assert_equal(10, Faker::PhoneNumber.subscriber_number(length: 10).length)
     assert_equal Faker::PhoneNumber.method(:extension), Faker::PhoneNumber.method(:subscriber_number)
   end
 
   def test_en_ca_phone_methods
     assert Faker::PhoneNumber.area_code.is_a? String
     assert Faker::PhoneNumber.area_code.to_i.is_a? Integer
-    assert_equal Faker::PhoneNumber.area_code.length, 3
+    assert_equal(3, Faker::PhoneNumber.area_code.length)
 
     assert Faker::PhoneNumber.exchange_code.is_a? String
     assert Faker::PhoneNumber.exchange_code.to_i.is_a? Integer
-    assert_equal Faker::PhoneNumber.exchange_code.length, 3
+    assert_equal(3, Faker::PhoneNumber.exchange_code.length)
   end
 
   def test_validity_of_phone_method_output

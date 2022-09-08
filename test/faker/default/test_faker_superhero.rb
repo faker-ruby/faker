@@ -8,10 +8,10 @@ class TestFakerSuperhero < Test::Unit::TestCase
   end
 
   def test_power
-    assert @tester.power.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.power)
   end
 
   def test_name
-    assert @tester.name.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.name)
   end
 end

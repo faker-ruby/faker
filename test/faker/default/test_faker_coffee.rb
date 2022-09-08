@@ -23,33 +23,33 @@ class TestFakerCoffee < Test::Unit::TestCase
     search_format_country = country.split.length > 1 ? country.downcase.split.join('_') : country.downcase
     regions = Faker::Base.fetch_all("coffee.regions.#{search_format_country}")
 
-    assert @countries.include?(country)
-    assert regions.include?(region)
+    assert_includes @countries, country
+    assert_includes regions, region
   end
 
   def test_notes
     assert notes = @tester.notes
                           .match(/\A(?<intensifier>[\s\w-]+), (?<body>[\s\w-]+), (?<f1>[!\s\w-]+), (?<f2>[!\s\w-]+), (?<f3>[!\s\w-]+)\z/)
 
-    assert @intensifiers.include?(notes[:intensifier])
-    assert @body_descriptors.include?(notes[:body])
+    assert_includes @intensifiers, notes[:intensifier]
+    assert_includes @body_descriptors, notes[:body]
 
     [notes[:f1], notes[:f2], notes[:f3]].each do |flavor|
-      assert @flavor_descriptors.include?(flavor)
+      assert_includes @flavor_descriptors, flavor
     end
   end
 
   def test_variety
-    assert @tester.variety.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.variety)
 
-    assert @varieties.include?(@tester.variety)
+    assert_includes @varieties, @tester.variety
   end
 
   def test_blend_name
     assert blend = @tester.blend_name.match(/(([[:alnum:]]+(-?\w*)*('?\w+)?) ?){1,}/)
 
     blend[0].split.each do |word|
-      assert @name_words.include?(word)
+      assert_includes @name_words, word
     end
   end
 end

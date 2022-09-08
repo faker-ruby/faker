@@ -15,8 +15,8 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
 
     generator = Faker::UniqueGenerator.new(stubbed_generator, 3)
 
-    assert_equal(generator.send(:respond_to_missing?, 'faker_address'), true)
-    assert_equal(generator.send(:respond_to_missing?, 'address'), false)
+    assert(generator.send(:respond_to_missing?, 'faker_address'))
+    refute(generator.send(:respond_to_missing?, 'address'))
   end
 
   def test_returns_error_when_retries_exceeded

@@ -8,22 +8,22 @@ class TestFakerTouhou < Test::Unit::TestCase
   end
 
   def test_game
-    assert @tester.game.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.game)
   end
 
   def test_character
-    assert @tester.character.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.character)
   end
 
   def test_location
-    assert @tester.location.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.location)
   end
 
   def test_spell_card
-    assert @tester.spell_card.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.spell_card)
   end
 
   def test_song
-    assert @tester.song.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.song)
   end
 end

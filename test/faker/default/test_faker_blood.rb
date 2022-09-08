@@ -8,14 +8,14 @@ class TestFakerBlood < Test::Unit::TestCase
   end
 
   def test_type
-    assert @tester.type.match(/^(AB|A|B|O)$/)
+    assert_match(/^(AB|A|B|O)$/, @tester.type)
   end
 
   def test_rh_factor
-    assert @tester.rh_factor.match(/[+-]/)
+    assert_match(/[+-]/, @tester.rh_factor)
   end
 
   def test_group
-    assert @tester.group.match(/^(AB|A|B|O)[+-]$/)
+    assert_match(/^(AB|A|B|O)[+-]$/, @tester.group)
   end
 end

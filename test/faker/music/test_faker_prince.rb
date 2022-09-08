@@ -8,18 +8,18 @@ class TestFakerPRince < Test::Unit::TestCase
   end
 
   def test_song
-    assert @tester.song.match(/\w+/)
+    assert_match(/\w+/, @tester.song)
   end
 
   def test_lyric
-    assert @tester.lyric.match(/\w+/)
+    assert_match(/\w+/, @tester.lyric)
   end
 
   def test_album
-    assert @tester.album.match(/\w+/)
+    assert_match(/\w+/, @tester.album)
   end
 
   def test_band
-    assert @tester.band.match(/\w+/)
+    assert_match(/\w+/, @tester.band)
   end
 end

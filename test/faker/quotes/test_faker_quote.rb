@@ -8,34 +8,34 @@ class TestFakerYoda < Test::Unit::TestCase
   end
 
   def test_famous_last_words
-    assert @tester.famous_last_words.match(/\w+/)
+    assert_match(/\w+/, @tester.famous_last_words)
   end
 
   def test_jack_handey
-    assert @tester.jack_handey.match(/\w+/)
+    assert_match(/\w+/, @tester.jack_handey)
   end
 
   def test_matz
-    assert @tester.matz.match(/\w+/)
+    assert_match(/\w+/, @tester.matz)
   end
 
   def test_most_interesting_man_in_the_world
-    assert @tester.most_interesting_man_in_the_world.match(/\w+/)
+    assert_match(/\w+/, @tester.most_interesting_man_in_the_world)
   end
 
   def test_robin
-    assert @tester.robin.match(/\w+/)
+    assert_match(/\w+/, @tester.robin)
   end
 
   def test_singular_siegler
-    assert @tester.singular_siegler.match(/\w+/)
+    assert_match(/\w+/, @tester.singular_siegler)
   end
 
   def test_yoda
-    assert @tester.yoda.match(/\w+/)
+    assert_match(/\w+/, @tester.yoda)
   end
 
   def test_fortune_cookie
-    assert @tester.fortune_cookie.match(/\w+/)
+    assert_match(/\w+/, @tester.fortune_cookie)
   end
 end

@@ -8,22 +8,22 @@ class TestFakerWorldCup < Test::Unit::TestCase
   end
 
   def test_team
-    assert @tester.team.match(/\w+/)
+    assert_match(/\w+/, @tester.team)
   end
 
   def test_stadium
-    assert @tester.stadium.match(/\w+/)
+    assert_match(/\w+/, @tester.stadium)
   end
 
   def test_city
-    assert @tester.city.match(/\w+/)
+    assert_match(/\w+/, @tester.city)
   end
 
   def test_group
-    assert @tester.group.match(/\w+/)
+    assert_match(/\w+/, @tester.group)
   end
 
   def test_roster
-    assert @tester.roster.match(/\w+/)
+    assert_match(/\w+/, @tester.roster)
   end
 end

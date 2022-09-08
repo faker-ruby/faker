@@ -8,22 +8,22 @@ class TestFakerSubscription < Test::Unit::TestCase
   end
 
   def test_plan
-    assert @tester.plan.match(/\w+/)
+    assert_match(/\w+/, @tester.plan)
   end
 
   def test_status
-    assert @tester.status.match(/\w+/)
+    assert_match(/\w+/, @tester.status)
   end
 
   def test_payment_method
-    assert @tester.payment_method.match(/\w+/)
+    assert_match(/\w+/, @tester.payment_method)
   end
 
   def test_subscription_term
-    assert @tester.subscription_term.match(/\w+/)
+    assert_match(/\w+/, @tester.subscription_term)
   end
 
   def test_payment_term
-    assert @tester.payment_term.match(/\w+/)
+    assert_match(/\w+/, @tester.payment_term)
   end
 end

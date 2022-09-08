@@ -9,7 +9,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_valid_ssn
     sample = @tester.valid
-    assert sample.length == 11
+    assert_equal(11, sample.length)
     assert_equal '-', sample[3]
     assert_equal '-', sample[6]
     assert sample[0..2].split.map { :to_i }.all? { :is_digit? }
@@ -19,7 +19,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_invalid_ssn
     sample = @tester.invalid
-    assert sample.length == 11
+    assert_equal(11, sample.length)
     assert_equal '-', sample[3]
     assert_equal '-', sample[6]
     assert sample[0..2].split.map { :to_i }.all? { :is_digit? }
@@ -31,7 +31,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
     sample = @tester.spanish_citizen_number
     assert_equal 10, sample.length
     assert sample[0..7].split.map { :to_i }.all? { :is_digit? }
-    assert_equal sample[8], '-'
+    assert_equal('-', sample[8])
     mod = sample[0..7].to_i % 23
     assert_equal Faker::IDNumber::CHECKS[mod], sample[9]
   end
@@ -39,7 +39,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_spanish_nie
     sample = @tester.spanish_foreign_citizen_number
     assert_equal 11, sample.length
-    assert 'XYZ'.include?(sample[0])
+    assert_includes 'XYZ', sample[0]
     assert_equal '-', sample[1]
     assert sample[2..8].split.map { :to_i }.all? { :is_digit? }
     assert_equal '-', sample[9]
@@ -89,22 +89,22 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_brazilian_citizen_number_checksum_digit
     digits = '128991760'
     checksum_digit = Faker::IDNumber.send(:brazilian_citizen_number_checksum_digit, digits)
-    assert_equal checksum_digit, '4'
+    assert_equal('4', checksum_digit)
     digits = '1289917604'
     checksum_digit = Faker::IDNumber.send(:brazilian_citizen_number_checksum_digit, digits)
-    assert_equal checksum_digit, '8'
+    assert_equal('8', checksum_digit)
   end
 
   def test_brazilian_id_checksum_digit
     digits = '41987080'
     checksum_digit = Faker::IDNumber.send(:brazilian_id_checksum_digit, digits)
-    assert_equal checksum_digit, '5'
+    assert_equal('5', checksum_digit)
   end
 
   def test_brazilian_document_checksum
     digits = '123456789'
     checksum = Faker::IDNumber.send(:brazilian_document_checksum, digits)
-    assert_equal checksum, 2100
+    assert_equal(2100, checksum)
   end
 
   def test_brazilian_document_digit
@@ -113,27 +113,27 @@ class TestFakerIdNumber < Test::Unit::TestCase
     id_digit10 = Faker::IDNumber.send(:brazilian_document_digit, 1, id: true)
     id_digit11 = Faker::IDNumber.send(:brazilian_document_digit, 0, id: true)
     id_digit_other = Faker::IDNumber.send(:brazilian_document_digit, 2, id: true)
-    assert_equal citizen_number_digit10, '0'
-    assert_equal citizen_number_digit_other, '9'
-    assert_equal id_digit10, 'X'
-    assert_equal id_digit11, '0'
-    assert_equal id_digit_other, '9'
+    assert_equal('0', citizen_number_digit10)
+    assert_equal('9', citizen_number_digit_other)
+    assert_equal('X', id_digit10)
+    assert_equal('0', id_digit11)
+    assert_equal('9', id_digit_other)
   end
 
   def test_brazilian_citizen_number_digit
     digit10 = Faker::IDNumber.send(:brazilian_citizen_number_digit, 10)
     digit_other = Faker::IDNumber.send(:brazilian_citizen_number_digit, 9)
-    assert_equal digit10, '0'
-    assert_equal digit_other, '9'
+    assert_equal('0', digit10)
+    assert_equal('9', digit_other)
   end
 
   def test_brazilian_id_digit
     digit10 = Faker::IDNumber.send(:brazilian_id_digit, 1)
     digit11 = Faker::IDNumber.send(:brazilian_id_digit, 0)
     digit_other = Faker::IDNumber.send(:brazilian_id_digit, 2)
-    assert_equal digit10, 'X'
-    assert_equal digit11, '0'
-    assert_equal digit_other, '9'
+    assert_equal('X', digit10)
+    assert_equal('0', digit11)
+    assert_equal('9', digit_other)
   end
 
   def test_chilean_id
@@ -144,13 +144,13 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_chilean_verification_code_k
     verification_code = Faker::IDNumber.send(:chilean_verification_code, 20_680_873)
 
-    assert_equal verification_code, 'K'
+    assert_equal('K', verification_code)
   end
 
   def test_chilean_verification_code_0
     verification_code = Faker::IDNumber.send(:chilean_verification_code, 13_196_022)
 
-    assert_equal verification_code, 0
+    assert_equal(0, verification_code)
   end
 
   def test_croatian_id
@@ -166,7 +166,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_croatian_id_checksum_digit
     digits = '8764670153'
     checksum_digit = Faker::IDNumber.send(:croatian_id_checksum_digit, digits)
-    assert_equal checksum_digit, 5
+    assert_equal(5, checksum_digit)
   end
 
   def test_danish_id_number
@@ -228,12 +228,12 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_danish_id_number_gender_female
     sample = @tester.danish_id_number(gender: :female)
-    assert sample.chars.last.to_i.even?
+    assert_predicate sample.chars.last.to_i, :even?
   end
 
   def test_danish_id_number_gender_male
     sample = @tester.danish_id_number(gender: :male)
-    assert sample.chars.last.to_i.odd?
+    assert_predicate sample.chars.last.to_i, :odd?
   end
 
   def test_danish_id_number_invalid_gender

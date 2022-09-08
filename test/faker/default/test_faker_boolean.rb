@@ -9,6 +9,6 @@ class TestFakerBoolean < Test::Unit::TestCase
   end
 
   def test_boolean
-    assert [true, false].include?(@tester.boolean)
+    assert_includes [true, false], @tester.boolean
   end
 end

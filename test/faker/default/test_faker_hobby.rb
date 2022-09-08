@@ -8,10 +8,10 @@ class TestFakerHobby < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    assert @tester.flexible_key == :hobby
+    assert_equal(:hobby, @tester.flexible_key)
   end
 
   def test_activity
-    assert @tester.activity.match(/\w+/)
+    assert_match(/\w+/, @tester.activity)
   end
 end

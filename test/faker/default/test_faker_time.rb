@@ -113,7 +113,7 @@ class TestFakerTime < Test::Unit::TestCase
       random_forward  = @tester.forward(days: 30, period: period)
 
       [random_backward, random_between, random_forward].each_with_index do |result, index|
-        assert period_range.include?(result.hour.to_i), "#{%i[random_backward random_between random_forward][index]}: \"#{result}\" expected to be included in Faker::Time::TIME_RANGES[:#{period}] range"
+        assert_includes period_range, result.hour.to_i, "#{%i[random_backward random_between random_forward][index]}: \"#{result}\" expected to be included in Faker::Time::TIME_RANGES[:#{period}] range"
       end
     end
   end

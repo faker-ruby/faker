@@ -8,26 +8,26 @@ class TestFakerKpop < Test::Unit::TestCase
   end
 
   def test_i_groups
-    assert @tester.i_groups.match(/\w+/)
+    assert_match(/\w+/, @tester.i_groups)
   end
 
   def test_ii_groups
-    assert @tester.ii_groups.match(/\w+/)
+    assert_match(/\w+/, @tester.ii_groups)
   end
 
   def test_iii_groups
-    assert @tester.iii_groups.match(/\w+/)
+    assert_match(/\w+/, @tester.iii_groups)
   end
 
   def test_girl_groups
-    assert @tester.girl_groups.match(/\w+/)
+    assert_match(/\w+/, @tester.girl_groups)
   end
 
   def test_boy_bands
-    assert @tester.boy_bands.match(/\w+/)
+    assert_match(/\w+/, @tester.boy_bands)
   end
 
   def test_solo
-    assert @tester.solo.match(/\w+/)
+    assert_match(/\w+/, @tester.solo)
   end
 end

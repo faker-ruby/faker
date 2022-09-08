@@ -8,15 +8,15 @@ class TestFakerName < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.name)
   end
 
   def test_name_with_middle
-    assert @tester.name_with_middle.match(/(\w+\.? ?){3,4}/)
+    assert_match(/(\w+\.? ?){3,4}/, @tester.name_with_middle)
   end
 
   def test_first_name
-    assert @tester.first_name.match(/(\w+\.? ?){3,4}/)
+    assert_match(/(\w+\.? ?){3,4}/, @tester.first_name)
   end
 
   def test_male_first_name
@@ -32,23 +32,23 @@ class TestFakerName < Test::Unit::TestCase
   end
 
   def test_middle_name
-    assert @tester.middle_name.match(/(\w+\.? ?){3,4}/)
+    assert_match(/(\w+\.? ?){3,4}/, @tester.middle_name)
   end
 
   def test_last_name
-    assert @tester.last_name.match(/(\w+\.? ?){3,4}/)
+    assert_match(/(\w+\.? ?){3,4}/, @tester.last_name)
   end
 
   def test_prefix
-    assert @tester.prefix.match(/[A-Z][a-z]+\.?/)
+    assert_match(/[A-Z][a-z]+\.?/, @tester.prefix)
   end
 
   def test_suffix
-    assert @tester.suffix.match(/[A-Z][a-z]*\.?/)
+    assert_match(/[A-Z][a-z]*\.?/, @tester.suffix)
   end
 
   def test_initials
-    assert @tester.initials.match(/[A-Z]{3}/)
-    assert @tester.initials(number: 2).match(/[A-Z]{2}/)
+    assert_match(/[A-Z]{3}/, @tester.initials)
+    assert_match(/[A-Z]{2}/, @tester.initials(number: 2))
   end
 end
