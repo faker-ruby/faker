@@ -44,6 +44,8 @@ class TestEnCaLocale < Test::Unit::TestCase
     assert Faker::PhoneNumber.exchange_code.is_a? String
     assert Faker::PhoneNumber.exchange_code.to_i.is_a? Integer
     assert_equal(3, Faker::PhoneNumber.exchange_code.length)
+
+    assert_equal('+1', Faker::PhoneNumber.country_code)
   end
 
   def test_validity_of_phone_method_output
