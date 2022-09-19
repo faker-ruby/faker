@@ -15,6 +15,20 @@ class TestFakerColor < Test::Unit::TestCase
     assert_match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, @tester.hex_color)
   end
 
+  # @see https://www.rapidtables.com/convert/color/rgb-to-hsl.html
+  def helper_hex_lightness(hex_color)
+    result = hex_color.scan(/([A-Fa-f0-9]{2})/).flatten.map { |x| x.hex / 255.0 }
+    (result.max + result.min) / 2
+  end
+
+  def test_hex_color_light
+    assert_in_delta(0.8, helper_hex_lightness(@tester.hex_color(:light)))
+  end
+
+  def test_hex_color_dark
+    assert_in_delta(0.2, helper_hex_lightness(@tester.hex_color(:dark)))
+  end
+
   def test_single_rgb_color
     assert @tester.single_rgb_color.between?(0, 255)
   end
