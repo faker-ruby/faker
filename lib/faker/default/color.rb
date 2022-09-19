@@ -51,14 +51,17 @@ module Faker
       # Produces an array of floats representing an HSL color.
       # The array is in the form of `[hue, saturation, lightness]`.
       #
+      # @param lightness [Float] Value to use for lightness
       # @return [Array(Float, Float, Float)]
       #
       # @example
       #   Faker::Color.hsl_color #=> [69.87, 0.66, 0.3]
+      # @example
+      #   Faker::Color.hsl_color(lightness: 0.6) #=> [69.87, 0.66, 0.6]
       #
       # @faker.version 1.5.0
-      def hsl_color
-        [sample((0..360).to_a), rand.round(2), rand.round(2)]
+      def hsl_color(lightness: nil)
+        [sample((0..360).to_a), rand.round(2), lightness || rand.round(2)]
       end
 
       ##
