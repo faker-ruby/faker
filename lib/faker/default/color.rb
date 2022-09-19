@@ -13,7 +13,7 @@ module Faker
       #
       # @faker.version 1.5.0
       def hex_color
-        format('#%06x', (rand * 0xffffff))
+        hsl_to_hex(hsl_color)
       end
 
       ##
@@ -76,6 +76,46 @@ module Faker
       # @faker.version 1.5.0
       def hsla_color
         hsl_color << rand.round(1)
+      end
+
+      private
+
+      ##
+      # Produces a hex code representation of an HSL color
+      #
+      # @param a_hsl_color [Array(Float, Float, Float)] The array that represents the HSL color
+      #
+      # @return [String]
+      #
+      # @example
+      #   hsl_to_hex([50, 100,80]) #=> #FFEE99
+      #
+      # @see https://en.wikipedia.org/wiki/HSL_and_HSV#HSL_to_RGB
+      # @see https://github.com/jpmckinney/color-generator/blob/master/lib/color-generator.rb
+      #
+      def hsl_to_hex(a_hsl_color)
+        h, s, l = a_hsl_color
+        c = (1 - (2 * l - 1).abs) * s
+        h_prime = h / 60
+        x = c * (1 - (h_prime % 2 - 1).abs)
+        m = l - 0.5 * c
+
+        rgb = case h_prime.to_i
+              when 0 # 0 <= H' < 1
+                [c, x, 0]
+              when 1 # 1 <= H' < 2
+                [x, c, 0]
+              when 2 # 2 <= H' < 3
+                [0, c, x]
+              when 3 # 3 <= H' < 4
+                [0, x, c]
+              when 4 # 4 <= H' < 5
+                [x, 0, c]
+              else # 5 <= H' < 6
+                [c, 0, x]
+              end.map { |value| ((value + m) * 255).round }
+
+        format('#%02x%02x%02x', rgb[0], rgb[1], rgb[2])
       end
     end
   end
