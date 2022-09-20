@@ -17,7 +17,7 @@ module Faker
       # @example
       #   Faker::Color.hex_color(:dark) #=> "#665500"
       #
-      # @faker.version 1.5.0
+      # @faker.version next
       def hex_color(lightness = nil)
         lightness_lookup = { light: 0.8, dark: 0.2 }
         hsl_to_hex(hsl_color(lightness: lightness_lookup[lightness]))
@@ -66,7 +66,7 @@ module Faker
       # @example
       #   Faker::Color.hsl_color(lightness: 0.6) #=> [69.87, 0.66, 0.6]
       #
-      # @faker.version 1.5.0
+      # @faker.version next
       def hsl_color(lightness: nil)
         [sample((0..360).to_a), rand.round(2), lightness || rand.round(2)]
       end
