@@ -54,7 +54,7 @@ class TestFakerColor < Test::Unit::TestCase
 
   def test_hsl_color_with_a_speficied_lightness
     @result = @tester.hsl_color(lightness: 0.5)
-    assert_equal(0.5, @result[2])
+    assert_in_delta(0.5, @result[2])
   end
 
   def test_hsla_color
