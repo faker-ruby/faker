@@ -271,9 +271,9 @@ module Faker
       #   Faker::Vehicle.license_plate(state_abbreviation: 'FL') #=> "977 UNU"
       #
       # @faker.version 1.6.4
-      def license_plate(legacy_state_abreviation = NOT_GIVEN, state_abbreviation: '')
+      def license_plate(legacy_state_abbreviation = NOT_GIVEN, state_abbreviation: '')
         warn_for_deprecated_arguments do |keywords|
-          keywords << :state_abbreviation if legacy_state_abreviation != NOT_GIVEN
+          keywords << :state_abbreviation if legacy_state_abbreviation != NOT_GIVEN
         end
 
         return regexify(bothify(fetch('vehicle.license_plate'))) if state_abbreviation.empty?
