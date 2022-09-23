@@ -1167,7 +1167,7 @@ Version 2 has several `breaking changes`. We replaced positional arguments with 
 - `Faker::Types.rb_integer(from = nil, to = nil)` becomes `Faker::Types.rb_integer(from: nil, to: nil)`
 - `Faker::Types.rb_string(words = nil)` becomes `Faker::Types.rb_string(words: nil)`
 - `Faker::Vehicle.kilometrage(min = nil, max = nil)` becomes `Faker::Vehicle.kilometrage(min: nil, max: nil)`
-- `Faker::Vehicle.license_plate(state_abreviation = nil)` becomes `Faker::Vehicle.license_plate(state_abreviation: nil)`
+- `Faker::Vehicle.license_plate(state_abbreviation = nil)` becomes `Faker::Vehicle.license_plate(state_abbreviation: nil)`
 - `Faker::Vehicle.mileage(min = nil, max = nil)` becomes `Faker::Vehicle.mileage(min: nil, max: nil)`
 - `Faker::Vehicle.model(make_of_model = nil)` becomes `Faker::Vehicle.model(make_of_model: nil)`
 - `Faker::WorldCup.group(group = nil)` becomes `Faker::WorldCup.group(group: nil)`
