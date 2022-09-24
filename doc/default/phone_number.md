@@ -31,6 +31,23 @@ This formatter will return one of the following formats:
   * +33333333333333
   * +3333333333333
 
+## Locale
+By setting the locale, you can generate a phone number with a valid area code in that locale (and valid exchange code, where relevant).
+
+### Locales with area codes
+```Faker::Config.locale = 'en-US'
+Faker::Config.locale = 'en-CA'
+Faker::Config.locale = 'fr-CA'
+Faker::Config.locale = 'en-AU'
+Faker::Config.locale = 'pt-BR'
+```
+
+### Locales with exchange codes
+```Faker::Config.locale = 'en-US'
+Faker::Config.locale = 'en-CA'
+Faker::Config.locale = 'fr-CA'
+```
+
 ## Usage
 
 Don't let the example output below fool you -- any format can be returned at random.
@@ -43,15 +60,15 @@ Faker::PhoneNumber.cell_phone #=> "(186)285-7925"
 Faker::PhoneNumber.cell_phone_in_e164 #=> "+944937040625"
 
 # NOTE NOTE NOTE NOTE
-# For the 'US only' methods below, first you must do the following:
+# For these two 'Locale-specific' methods, first you must set a relevant locale as mentioned above, such as:
 Faker::Config.locale = 'en-US'
 # or for Canada
 Faker::Config.locale = 'en-CA'
 
-# US only
+# Locale-specific
 Faker::PhoneNumber.area_code #=> "201"
 
-# US only
+# Locale-specific
 Faker::PhoneNumber.exchange_code #=> "208"
 
 # Keyword arguments: length
