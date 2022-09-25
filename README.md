@@ -47,6 +47,9 @@ development.
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
   List of all versions is [available here](https://github.com/stympy/faker/releases).
+* `Faker::Internet.email` and `Faker::Internet.url` generate potentially real domain names and email addresses.
+  To prevent generating real test data, set `Faker::Config.internet_safe_mode = true`.
+  Faker will generate/replace any URLs and email addresses domain name with `example.com`
 
 ## Installing
 ```bash
@@ -112,6 +115,10 @@ Faker::Config.random = nil # seeds the PRNG using default entropy sources
 Faker::Config.random.seed #=> 185180369676275068918401850258677722187
 Faker::Company.bs #=> "cultivate viral synergies"
 ```
+
+### Prevent Faker to Generate Potentially Real Domain Names and Email Addresses
+
+set `Faker::Config.internet_safe_mode = true` before executing any Faker code in your app. [Read more details](doc/default/internet.md)
 
 ## Generators
 **NOTE: Some of the generators below aren't released yet. If you want to use them, change the line in your gemfile to:**
