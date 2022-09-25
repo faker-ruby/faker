@@ -432,7 +432,7 @@ class TestFakerInternetSafeMode < Test::Unit::TestCase
   end
 
   def test_email_with_domain_option_given
-    assert 'janedoe@example.com' == @tester.email(name: 'jane doe', domain: 'customdomain')
+    assert_equal 'janedoe@example.com', @tester.email(name: 'jane doe', domain: 'customdomain')
   end
 
   def test_email_with_domain_option_given_with_domain_suffix
@@ -440,47 +440,38 @@ class TestFakerInternetSafeMode < Test::Unit::TestCase
   end
 
   def test_free_email
-    binding.pry
     assert_match(/.+@example.com/, @tester.free_email)
   end
 
   def test_safe_email
-    binding.pry
     assert_match(/.+@example.(com|net|org)/, @tester.safe_email)
   end
 
   def test_domain_name_without_subdomain
-    binding.pry
     assert_match(/[\w-]+\.\w+/, @tester.domain_name)
   end
 
   def test_domain_name_with_subdomain
-    binding.pry
-    assert_match(/[\w-]+\.[\w-]+\.\w+/, @tester.domain_name(subdomain: true))
+    assert_equal("true.example.com", @tester.domain_name(subdomain: true))
   end
 
   def test_domain_name_with_subdomain_and_with_domain_option_given
-    binding.pry
-    assert_match(/customdomain\.\w+/, @tester.domain_name(subdomain: true, domain: 'customdomain'))
+    assert_equal("true.example.com", @tester.domain_name(subdomain: true, domain: 'customdomain'))
   end
 
   def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffix
-    binding.pry
     assert_match(/customdomain\.customdomainsuffix/, @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix'))
   end
 
   def test_domain_word
-    binding.pry
-    assert_match(/^[\w-]+$/, @tester.domain_word)
+    assert_equal "example", @tester.domain_word
   end
 
   def test_domain_suffix
-    binding.pry
-    assert_match(/^\w+(\.\w+)?/, @tester.domain_suffix)
+    assert_equal "example", @tester.domain_suffix
   end
 
   def test_url
-    binding.pry
-    assert_match %r{^https://domain\.com/username$}, @tester.url(host: 'domain.com', path: '/username', scheme: 'https')
+    assert_match %r{^https://example\.com/username$}, @tester.url(host: 'domain.com', path: '/username', scheme: 'https')
   end
 end
