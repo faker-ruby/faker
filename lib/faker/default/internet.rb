@@ -1,7 +1,15 @@
 # frozen_string_literal: true
 
 module Faker
+  # Faker generates domain names or email addrress with "com", "biz", "info", "org" top level domain
+  # which potentially a real domain/email address, therefore there is internet_safe_mode feature to force Faker to use "example.com" domain instead
+  # To activate safe mode, update the config by execute "Faker::Config.internet_safe_mode = true"
+  # You may add that code in the config in the `spec_helper.rb` or Rails initializer file
   class Internet < Base
+    # see https://www.iana.org/domains/reserved
+    SAFE_DOMAIN = 'example.com'
+    SAFE_TLD = 'example'
+
     # Private, Host, and Link-Local network address blocks as defined in https://en.wikipedia.org/wiki/IPv4#Special-use_addresses
     PRIVATE_IPV4_ADDRESS_RANGES = [
       [10..10,   0..255,   0..255, 1..255], # 10.0.0.0/8     - Used for local communications within a private network
@@ -23,6 +31,9 @@ module Faker
       # @param name [String]
       # @param separators [Array]
       # @param domain [String]
+      #
+      # @note
+      # use internet_safe_mode to use domain test instead, e.g 'user@example.com'
       #
       # @example
       #   Faker::Internet.email                                                           #=> "samsmith@faker.com"
@@ -55,6 +66,9 @@ module Faker
       # @example
       #   Faker::Internet.free_email                                                           #=> "samsmith@gmail.com"
       #   Faker::Internet.free_email(name: 'smith')                                            #=> "smith@yahoo.com"
+      #
+      # @note
+      # use internet_safe_mode to use domain test instead, e.g 'user@example.com'
       def free_email(legacy_name = NOT_GIVEN, name: nil)
         warn_for_deprecated_arguments do |keywords|
           keywords << :name if legacy_name != NOT_GIVEN
@@ -216,6 +230,9 @@ module Faker
       # @param subdomain [Bool] If true passed adds a subdomain in response
       # @param domain [String]
       #
+      # @note
+      # use internet_safe_mode to use domain test instead, e.g 'user@example.com'
+      #
       # @example
       #   Faker::Internet.domain_name                                       #=> "test.net"
       #   Faker::Internet.domain_name(subdomain: true)                      #=> "test.faker.io"
@@ -234,8 +251,12 @@ module Faker
               .tap do |domain_elements|
                 domain_elements << domain_suffix if domain_elements.length < 2
                 domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
+                domain_elements[-1] = sanitize_domain_suffix(domain_elements[-1])
               end.join('.')
           else
+            return SAFE_DOMAIN if !subdomain && Faker::Config.internet_safe_mode?
+            return "#{subdomain}.#{SAFE_DOMAIN}" if subdomain && Faker::Config.internet_safe_mode?
+
             [domain_word, domain_suffix].tap do |domain_elements|
               domain_elements.unshift(Char.prepare(domain_word)) if subdomain
             end.join('.')
@@ -270,10 +291,15 @@ module Faker
       # @example
       #   Faker::Internet.domain_word   #=> "senger"
       def domain_word
+        return SAFE_DOMAIN.split('.').first if Faker::Config.internet_safe_mode?
+
         with_locale(:en) { Char.prepare(Company.name.split.first) }
       end
 
       ## Returns the domain suffix e.g. com, org, co, biz, info etc.
+      #
+      # @note
+      # use internet_safe_mode to use domain test instead, e.g 'user@example.com'
       #
       # @return [String]
       #
@@ -281,7 +307,9 @@ module Faker
       #   Faker::Internet.domain_suffix   #=> "com"
       #   Faker::Internet.domain_suffix   #=> "biz"
       def domain_suffix
-        fetch('internet.domain_suffix')
+        return SAFE_TLD if Faker::Config.internet_safe_mode?
+
+        sanitize_domain_suffix(fetch('internet.domain_suffix'))
       end
 
       ##
@@ -451,6 +479,9 @@ module Faker
       # @param path [String]
       # @param scheme [String]
       #
+      # @note
+      # use internet_safe_mode to use domain test instead, e.g 'user@example.com'
+      #
       # @example
       #   Faker::Internet.url                                                           #=> "http://sipes-okon.com/hung.macejkovic"
       #   Faker::Internet.url(host: 'faker')                                            #=> "http://faker/shad"
@@ -463,6 +494,11 @@ module Faker
           keywords << :scheme if legacy_scheme != NOT_GIVEN
         end
 
+        if Faker::Config.internet_safe_mode?
+          host = host.split('.').tap do |host_element|
+            host_element[-1] = sanitize_domain_suffix(host_element[-1])
+          end.join('.')
+        end
         "#{scheme}://#{host}#{path}"
       end
       # rubocop:enable Metrics/ParameterLists
@@ -607,6 +643,12 @@ module Faker
       alias user_name username
 
       private
+
+      def sanitize_domain_suffix(suffix)
+        return SAFE_DOMAIN if Faker::Config.internet_safe_mode?
+
+        suffix
+      end
 
       def sanitize_email_local_part(local_part)
         char_range = [

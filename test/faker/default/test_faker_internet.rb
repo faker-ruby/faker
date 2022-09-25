@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'pry'
 require_relative '../../test_helper'
 
 class TestFakerInternet < Test::Unit::TestCase
@@ -413,5 +414,64 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_raises NoMethodError do
       @tester.user('xyx')
     end
+  end
+end
+
+class TestFakerInternetSafeMode < Test::Unit::TestCase
+  def setup
+    Faker::Config.internet_safe_mode = true
+    @tester = Faker::Internet
+  end
+
+  def teardown
+    Faker::Config.internet_safe_mode = false
+  end
+
+  def test_email
+    assert_match(/.+@example.com/, @tester.email)
+  end
+
+  def test_email_with_domain_option_given
+    assert_equal 'janedoe@example.com', @tester.email(name: 'jane doe', domain: 'customdomain')
+  end
+
+  def test_email_with_domain_option_given_with_domain_suffix
+    assert 'janedoe@customdomain.example.com', @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix')
+  end
+
+  def test_free_email
+    assert_match(/.+@example.com/, @tester.free_email)
+  end
+
+  def test_safe_email
+    assert_match(/.+@example.(com|net|org)/, @tester.safe_email)
+  end
+
+  def test_domain_name_without_subdomain
+    assert_match(/[\w-]+\.\w+/, @tester.domain_name)
+  end
+
+  def test_domain_name_with_subdomain
+    assert_equal("true.example.com", @tester.domain_name(subdomain: true))
+  end
+
+  def test_domain_name_with_subdomain_and_with_domain_option_given
+    assert_equal("true.example.com", @tester.domain_name(subdomain: true, domain: 'customdomain'))
+  end
+
+  def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffix
+    assert_match(/customdomain\.customdomainsuffix/, @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix'))
+  end
+
+  def test_domain_word
+    assert_equal "example", @tester.domain_word
+  end
+
+  def test_domain_suffix
+    assert_equal "example", @tester.domain_suffix
+  end
+
+  def test_url
+    assert_match %r{^https://example\.com/username$}, @tester.url(host: 'domain.com', path: '/username', scheme: 'https')
   end
 end

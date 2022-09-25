@@ -33,6 +33,20 @@ module Faker
       def random
         Thread.current[:faker_config_random] || Random
       end
+
+      # force faker to use safe tld or domain for any instance of Faker::Internet class
+      # As Faker is extensively used in automated test environment, we don't want to use real email address (potentially) for testing
+      #
+      # @example:
+      #   Faker::Config.internet_safe_mode = true
+      #   Faker::Config.internet_safe_mode? # => true
+      def internet_safe_mode=(safe_mode)
+        Thread.current[:faker_internet_safe_mode] = safe_mode
+      end
+
+      def internet_safe_mode?
+        Thread.current[:faker_internet_safe_mode] == true
+      end
     end
   end
 
