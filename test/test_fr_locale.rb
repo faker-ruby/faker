@@ -37,6 +37,13 @@ class TestFrLocale < Test::Unit::TestCase
     assert Faker::Adjective.negative.is_a? String
   end
 
+  def test_fr_ancient_methods
+    assert Faker::Ancient.god.is_a? String
+    assert Faker::Ancient.primordial.is_a? String
+    assert Faker::Ancient.titan.is_a? String
+    assert Faker::Ancient.hero.is_a? String
+  end
+
   def test_fr_appliance_methods
     assert Faker::Appliance.equipment.is_a? String
   end
