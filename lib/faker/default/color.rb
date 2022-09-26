@@ -23,7 +23,9 @@ module Faker
       #
       # @faker.version next
       def hex_color(lightness = nil)
-        hsl_to_hex(hsl_color(lightness: LIGHTNESS_LOOKUP[lightness]))
+        hsl_hash = {}
+        hsl_hash = { lightness: LIGHTNESS_LOOKUP[lightness] } if %i[dark light].include?(lightness)
+        hsl_to_hex(hsl_color(**hsl_hash))
       end
 
       ##
