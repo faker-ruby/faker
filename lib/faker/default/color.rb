@@ -19,7 +19,7 @@ module Faker
       # @example
       #   Faker::Color.hex_color #=> "#31a785"
       # @example
-      #   Faker::Color.hex_color(hue: 118, saturation: 1,lightness: 0.53) #=> "#048700"
+      #   Faker::Color.hex_color(hue: 118, saturation: 1, lightness: 0.53) #=> "#048700"
       # @example
       #   Faker::Color.hex_color(:light) #=> "#FFEE99"
       # @example
