@@ -52,9 +52,29 @@ class TestFakerColor < Test::Unit::TestCase
     assert @result[2].between?(0.0, 1.0)
   end
 
+  def test_hsl_color_with_a_speficied_hue
+    @result = @tester.hsl_color(hue: 5)
+    assert_in_delta(5, @result[0])
+  end
+
+  def test_hsl_color_with_a_speficied_saturation
+    @result = @tester.hsl_color(saturation: 0.35)
+    assert_in_delta(0.35, @result[1])
+  end
+
+  def test_hsl_color_with_a_speficied_but_invalid_saturation
+    @result = @tester.hsl_color(saturation: 3.05)
+    assert_in_delta(1, @result[1])
+  end
+
   def test_hsl_color_with_a_speficied_lightness
     @result = @tester.hsl_color(lightness: 0.5)
     assert_in_delta(0.5, @result[2])
+  end
+
+  def test_hsl_color_with_a_speficied_but_invalid_lightness
+    @result = @tester.hsl_color(lightness: -2.5)
+    assert_in_delta(0, @result[2])
   end
 
   def test_hsla_color
