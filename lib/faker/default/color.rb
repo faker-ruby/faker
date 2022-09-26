@@ -10,7 +10,7 @@ module Faker
       ##
       # Produces a hex color code.
       #
-      # @param lightness [Symbol] Allows the client to specify light or dark colors
+      # @param args [Symbol] Allows the client to specify light or dark colors
       #
       # @return [String]
       #
@@ -22,9 +22,9 @@ module Faker
       #   Faker::Color.hex_color(:dark) #=> "#665500"
       #
       # @faker.version next
-      def hex_color(lightness = nil)
+      def hex_color(args = nil)
         hsl_hash = {}
-        hsl_hash = { lightness: LIGHTNESS_LOOKUP[lightness] } if %i[dark light].include?(lightness)
+        hsl_hash = { lightness: LIGHTNESS_LOOKUP[args] } if %i[dark light].include?(args)
         hsl_to_hex(hsl_color(**hsl_hash))
       end
 
