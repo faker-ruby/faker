@@ -29,6 +29,19 @@ class TestFakerColor < Test::Unit::TestCase
     assert_in_delta(0.2, helper_hex_lightness(@tester.hex_color(:dark)))
   end
 
+  def test_hex_color_with_hash_is_passed_to_hsl_color
+    mock_hsl_color = lambda do |args|
+      assert_equal(100, args[:hue])
+      assert_in_delta(0.2, args[:saturation])
+      assert_in_delta(0.8, args[:lightness])
+      [args[:hue], args[:saturation], args[:lightness]]
+    end
+    @tester.stub :hsl_color, mock_hsl_color do
+      result = @tester.hex_color(hue: 100, saturation: 0.2, lightness: 0.8)
+      assert_match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, result)
+    end
+  end
+
   def test_single_rgb_color
     assert @tester.single_rgb_color.between?(0, 255)
   end

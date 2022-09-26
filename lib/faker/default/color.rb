@@ -9,13 +9,17 @@ module Faker
       }.freeze
       ##
       # Produces a hex color code.
+      # Clients are able to specify the hue, saturation, or lightness of the required color.
+      # Alternatively a client can simply specify that they need a light or dark color.
       #
-      # @param args [Symbol] Allows the client to specify light or dark colors
+      # @param args [Hash, Symbol] Allows the client to specify what color should be return
       #
       # @return [String]
       #
       # @example
       #   Faker::Color.hex_color #=> "#31a785"
+      # @example
+      #   Faker::Color.hex_color(hue: 118, saturation: 1,lightness: 0.53) #=> "#048700"
       # @example
       #   Faker::Color.hex_color(:light) #=> "#FFEE99"
       # @example
@@ -25,6 +29,7 @@ module Faker
       def hex_color(args = nil)
         hsl_hash = {}
         hsl_hash = { lightness: LIGHTNESS_LOOKUP[args] } if %i[dark light].include?(args)
+        hsl_hash = args if args.is_a?(Hash)
         hsl_to_hex(hsl_color(**hsl_hash))
       end
 
