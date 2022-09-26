@@ -3,6 +3,10 @@
 module Faker
   class Color < Base
     class << self
+      LIGHTNESS_LOOKUP = {
+        light: 0.8,
+        dark: 0.2
+      }.freeze
       ##
       # Produces a hex color code.
       #
@@ -19,8 +23,7 @@ module Faker
       #
       # @faker.version next
       def hex_color(lightness = nil)
-        lightness_lookup = { light: 0.8, dark: 0.2 }
-        hsl_to_hex(hsl_color(lightness: lightness_lookup[lightness]))
+        hsl_to_hex(hsl_color(lightness: LIGHTNESS_LOOKUP[lightness]))
       end
 
       ##
