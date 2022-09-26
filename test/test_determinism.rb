@@ -22,6 +22,26 @@ class TestDeterminism < Test::Unit::TestCase
     end
   end
 
+  def test_thread_safety
+    expected_values = 2.times.map do |index|
+      Faker::Config.random = Random.new(index)
+      Faker::Number.digit
+    end
+
+    threads = expected_values.each_with_index.map do |expected_value, index|
+      Thread.new do
+        100_000.times.each do
+          Faker::Config.random = Random.new(index)
+          output = Faker::Number.digit
+
+          assert_equal output, expected_value
+        end
+      end
+    end
+
+    threads.each(&:join)
+  end
+
   private
 
   def deterministic_random?(first, method_name)

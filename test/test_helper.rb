@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+
+require 'simplecov_json_formatter'
+SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
+
 SimpleCov.start do
   add_filter ['.bundle', 'lib/extensions', 'test']
 end

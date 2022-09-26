@@ -8,14 +8,14 @@ class TestFakerGame < Test::Unit::TestCase
   end
 
   def test_title
-    assert @tester.title.match(/\w+/)
+    assert_match(/\w+/, @tester.title)
   end
 
   def test_genre
-    assert @tester.genre.match(/\w+/)
+    assert_match(/\w+/, @tester.genre)
   end
 
   def test_platform
-    assert @tester.platform.match(/\w+/)
+    assert_match(/\w+/, @tester.platform)
   end
 end

@@ -49,7 +49,7 @@ class TestFakerZipCode < Test::Unit::TestCase
       zip_codes = @zip_codes_without_state
       100.times do
         zip_code = @tester.zip_code
-        assert zip_codes.include?(zip_code), "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
+        assert_includes zip_codes, zip_code, "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
       end
     end
   end
@@ -59,7 +59,7 @@ class TestFakerZipCode < Test::Unit::TestCase
       zip_codes = @zip_codes_with_state
       100.times do
         zip_code = @tester.zip_code(state_abbreviation: 'NY')
-        assert zip_codes.include?(zip_code), "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
+        assert_includes zip_codes, zip_code, "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
       end
     end
   end

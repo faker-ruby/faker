@@ -8,58 +8,58 @@ class TestFakerSpace < Test::Unit::TestCase
   end
 
   def test_planet
-    assert @tester.planet.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.planet)
   end
 
   def test_moon
-    assert @tester.moon.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.moon)
   end
 
   def test_galaxy
-    assert @tester.galaxy.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.galaxy)
   end
 
   def test_nebula
-    assert @tester.nebula.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.nebula)
   end
 
   def test_star_cluster
-    assert @tester.star_cluster.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.star_cluster)
   end
 
   def test_constellation
-    assert @tester.constellation.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.constellation)
   end
 
   def test_star
-    assert @tester.star.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.star)
   end
 
   def test_agency
-    assert @tester.agency.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.agency)
   end
 
   def test_agency_abv
-    assert @tester.agency_abv.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.agency_abv)
   end
 
   def test_nasa_space_craft
-    assert @tester.nasa_space_craft.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.nasa_space_craft)
   end
 
   def test_company
-    assert @tester.company.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.company)
   end
 
   def test_distance_measurement
-    assert @tester.distance_measurement.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.distance_measurement)
   end
 
   def test_meteorite
-    assert @tester.meteorite.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.meteorite)
   end
 
   def test_launch_vehicle
-    assert @tester.launch_vehicle.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.launch_vehicle)
   end
 end

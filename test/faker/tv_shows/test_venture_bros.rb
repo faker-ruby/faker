@@ -8,18 +8,18 @@ class TestFakerTvShowsVentureBros < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match(/\w+/, @tester.character)
   end
 
   def test_vehicle
-    assert @tester.vehicle.match(/\w+/)
+    assert_match(/\w+/, @tester.vehicle)
   end
 
   def test_organization
-    assert @tester.organization.match(/\w+/)
+    assert_match(/\w+/, @tester.organization)
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match(/\w+/, @tester.quote)
   end
 end

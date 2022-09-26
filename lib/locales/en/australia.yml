@@ -5,7 +5,6 @@ en:
         - Brisbane
         - Sydney
         - Melbourne
-        - Brisbane
         - Perth
         - Adelaide
         - Gold Coast
@@ -85,7 +84,7 @@ en:
         - Cane Toad
         - Redback Spider
         - Funnel Web Spider
-        - Blue Ringed OCtopus
+        - Blue Ringed Octopus
         - Fresh Water Crocodile
         - Skink
         - Thorny Devil
@@ -98,11 +97,11 @@ en:
         - Saltwater Crocodile
         - Eastern Brown Snake
       states:
-        - New South wales
+        - New South Wales
         - Queensland
         - Western Australia
         - Northern Territory
         - South Australia
         - Australian Capital Territory
-        - Visctoria
+        - Victoria
         - Tasmania

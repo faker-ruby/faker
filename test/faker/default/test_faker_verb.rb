@@ -8,22 +8,22 @@ class TestFakerVerb < Test::Unit::TestCase
   end
 
   def test_base
-    assert @tester.base.match(/\w+/)
+    assert_match(/\w+/, @tester.base)
   end
 
   def test_past
-    assert @tester.past.match(/\w+/)
+    assert_match(/\w+/, @tester.past)
   end
 
   def test_past_participle
-    assert @tester.past_participle.match(/\w+/)
+    assert_match(/\w+/, @tester.past_participle)
   end
 
   def test_simple_present
-    assert @tester.simple_present.match(/\w+/)
+    assert_match(/\w+/, @tester.simple_present)
   end
 
   def test_ing_form
-    assert @tester.ing_form.match(/\w+/)
+    assert_match(/\w+/, @tester.ing_form)
   end
 end

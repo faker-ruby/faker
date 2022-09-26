@@ -14,21 +14,21 @@ class TestFakerFunnyName < Test::Unit::TestCase
 
   def test_two_word_name
     res = @tester.two_word_name
-    assert res.count(' ') == 1
+    assert_equal(1, res.count(' '))
   end
 
   def test_three_word_name
     res = @tester.three_word_name
-    assert res.count(' ') == 2
+    assert_equal(2, res.count(' '))
   end
 
   def test_four_word_name
     res = @tester.four_word_name
-    assert res.count(' ') == 3
+    assert_equal(3, res.count(' '))
   end
 
   def test_name_with_initial
     res = @tester.name_with_initial
-    assert res.count('.').positive?
+    assert_predicate res.count('.'), :positive?
   end
 end

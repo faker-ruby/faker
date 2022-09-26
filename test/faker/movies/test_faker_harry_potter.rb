@@ -8,26 +8,26 @@ class TestFakerHarryPotter < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match(/\w+/, @tester.character)
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match(/\w+/, @tester.location)
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match(/\w+/, @tester.quote)
   end
 
   def test_book
-    assert @tester.book.match(/\w+/)
+    assert_match(/\w+/, @tester.book)
   end
 
   def test_house
-    assert @tester.house.match(/\w+/)
+    assert_match(/\w+/, @tester.house)
   end
 
   def test_spell
-    assert @tester.spell.match(/\w+/)
+    assert_match(/\w+/, @tester.spell)
   end
 end

@@ -8,26 +8,26 @@ class TestFakerCultureSeries < Test::Unit::TestCase
   end
 
   def test_book
-    assert @tester.book.match(/\w+/)
+    assert_match(/\w+/, @tester.book)
   end
 
   def test_culture_ship
-    assert @tester.culture_ship.match(/\w+/)
+    assert_match(/\w+/, @tester.culture_ship)
   end
 
   def test_culture_ship_class
-    assert @tester.culture_ship_class.match(/\w+/)
+    assert_match(/\w+/, @tester.culture_ship_class)
   end
 
   def test_culture_ship_abv
-    assert @tester.culture_ship_class_abv.match(/\w+/)
+    assert_match(/\w+/, @tester.culture_ship_class_abv)
   end
 
   def test_civ
-    assert @tester.civ.match(/\w+/)
+    assert_match(/\w+/, @tester.civ)
   end
 
   def test_planet
-    assert @tester.planet.match(/\w+/)
+    assert_match(/\w+/, @tester.planet)
   end
 end

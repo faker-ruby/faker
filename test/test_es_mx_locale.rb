@@ -18,11 +18,11 @@ class TestEsMxLocale < Test::Unit::TestCase
     assert Faker::Address.building_number.is_a? String
     assert Faker::Address.street_name.is_a? String
     assert Faker::Address.street_address.is_a? String
-    assert Faker::Address.city_prefix.empty?
-    assert Faker::Address.city_suffix.empty?
+    assert_empty Faker::Address.city_prefix
+    assert_empty Faker::Address.city_suffix
     assert Faker::Address.city.is_a?(String)
     assert Faker::Address.city(options: { with_state: true }).is_a?(String)
-    assert Faker::Address.city(options: { with_state: true }).split(', ').count == 2
+    assert_equal(2, Faker::Address.city(options: { with_state: true }).split(', ').count)
     assert Faker::Address.secondary_address.is_a? String
   end
 

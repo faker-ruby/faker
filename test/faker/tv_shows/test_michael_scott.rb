@@ -8,6 +8,6 @@ class TestFakerMichaelScott < Test::Unit::TestCase
   end
 
   def test_quote
-    assert @tester.quote.match(/\w+/)
+    assert_match(/\w+/, @tester.quote)
   end
 end

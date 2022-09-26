@@ -1,10 +1,93 @@
 # Change Log
 
+## [v2.23.0](https://github.com/faker-ruby/faker/tree/v2.23.0) (2022-09-01)
+
+* Fix Japanese plural by @akmhmgc in https://github.com/faker-ruby/faker/pull/2517
+* Update rubocop requirement from = 1.26.0 to = 1.28.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2483
+* Add sports to `Faker::Sport` by @matt17r in https://github.com/faker-ruby/faker/pull/2397
+* [Internet::Password] Improve mix_case and special_characters support by @meuble in https://github.com/faker-ruby/faker/pull/2308
+* Danish id number by @jokklan in https://github.com/faker-ruby/faker/pull/2511
+* Add generator for vulnerability identifiers by @NobodysNightmare in https://github.com/faker-ruby/faker/pull/2367
+* Add the ability to generate a mime type of a specific media type by @ric2b in https://github.com/faker-ruby/faker/pull/2518
+* Add IDNumber.french_insee_number by @Spone in https://github.com/faker-ruby/faker/pull/2455
+* fix flaky user agent test by @thdaraujo in https://github.com/faker-ruby/faker/pull/2530
+* Update GitHub Issues and Pull Request Templates [ci-skip] by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2531
+* fix: ensure generated passwords have correct characters when mixed_case & special_characters enabled by @tiff-o in https://github.com/faker-ruby/faker/pull/2532
+* Thread safety by @kiskoza in https://github.com/faker-ruby/faker/pull/2520
+* Fix warning instance variable uninitialized by @akmhmgc in https://github.com/faker-ruby/faker/pull/2535
+* fix italy VAT and add italy condominium fiscal code generator by @FiloSpaTeam in https://github.com/faker-ruby/faker/pull/2491
+* Add ChileRut.full_formatted_rut by @KarlHeitmann in https://github.com/faker-ruby/faker/pull/2460
+* Updated versions and added more operating systems by @abrahamparayil in https://github.com/faker-ruby/faker/pull/2536
+* Add vehicle version generator by @trinaldi in https://github.com/faker-ruby/faker/pull/2540
+* Fix computer test by @trinaldi in https://github.com/faker-ruby/faker/pull/2543
+* Drop support for EOL Ruby versions (`2.5` and `2.6`) by @nickmendezFlatiron in https://github.com/faker-ruby/faker/pull/2538
+* Update minitest requirement from = 5.15.0 to = 5.16.3 by @dependabot in https://github.com/faker-ruby/faker/pull/2547
+* Update rubocop requirement from = 1.28.2 to = 1.35.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2548
+* Fix `fma_brotherhood` usage example by @y0n0zawa in https://github.com/faker-ruby/faker/pull/2552
+
+------------------------------------------------------------------------------
+
+## [v2.22.0](https://github.com/faker-ruby/faker/tree/v2.22.0) (2022-07-28)
+
+## Bug/Fixes
+
+- [PR #2500](https://github.com/faker-ruby/faker/pull/2500) Fix: Duplicate array before concatenating [@mattr](https://github.com/mattr)
+- [PR #2488](https://github.com/faker-ruby/faker/pull/2488) Fixed random selection issue [@sudeeptarlekar](https://github.com/sudeeptarlekar)
+- [PR #2475](https://github.com/faker-ruby/faker/pull/2475) Update regex used for Faker::Vehicle#vin [@erayalkis](https://github.com/erayalkis)
+
+## Chores
+
+- [PR #2513](https://github.com/faker-ruby/faker/pull/2513) Remove broken docs [@vbrazo](https://github.com/vbrazo)
+- [PR #2502](https://github.com/faker-ruby/faker/pull/2502) Update actions/checkout version in GitHub actions [@jdufresne](https://github.com/jdufresne)
+- [PR #2501](https://github.com/faker-ruby/faker/pull/2501) Make ReadMe more consise [@jenniferdewan](https://github.com/jenniferdewan)
+- [PR #2489](https://github.com/faker-ruby/faker/pull/2489) Change a filename to follow naming conventions [@yasuhiron777](https://github.com/yasuhiron777)
+
+## Feature Request
+
+- [PR #2477](https://github.com/faker-ruby/faker/pull/2477) feat: add bot_user_agent method for generate web crawle's user agents [@a-chacon](https://github.com/a-chacon)
+- [PR #2465](https://github.com/faker-ruby/faker/pull/2465) Add a new sports section for mountaineers [@LeviLong01](https://github.com/LeviLong01)
+
+## Update locales
+
+- [PR #2509](https://github.com/faker-ruby/faker/pull/2509) Add all Dota 2 heroes [@JCFarrow](https://github.com/JCFarrow)
+- [PR #2507](https://github.com/faker-ruby/faker/pull/2507) Update dog.yml [@Kedaruma-Bond](https://github.com/Kedaruma-Bond)
+- [PR #2503](https://github.com/faker-ruby/faker/pull/2503) Update pl.yml [@marek-witkowski](https://github.com/marek-witkowski)
+- [PR #2499](https://github.com/faker-ruby/faker/pull/2499) Fix: Use pattern to define Australian cell phone formats [@mattr](https://github.com/mattr)
+- [PR #2497](https://github.com/faker-ruby/faker/pull/2497) Fix typos in Australia [@mattr](https://github.com/mattr)
+- [PR #2490](https://github.com/faker-ruby/faker/pull/2490) Added Japanese adjective translations [@yasuhiron777](https://github.com/yasuhiron777)
+
+------------------------------------------------------------------------------
+
+## [v2.21.0](https://github.com/faker-ruby/faker/tree/v2.21.0) (2022-05-12)
+
+## Bug/Fixes
+
+- [PR #2443](https://github.com/faker-ruby/faker/pull/2443) Fixed error for random in markdown [@sudeeptarlekar](https://github.com/sudeeptarlekar)
+
+## Feature Request
+
+- [PR #2252](https://github.com/faker-ruby/faker/pull/2252) Add Faker::Movies::Tron [@craineum](https://github.com/craineum)
+
+## Update locales
+- [PR #2485](https://github.com/faker-ruby/faker/pull/2485) Add japanese translations for emotion [@kenboo0426](https://github.com/kenboo0426)
+- [PR #2479](https://github.com/faker-ruby/faker/pull/2479) Add japanese translations for naruto [@johnmanjiro13](https://github.com/johnmanjiro13)
+- [PR #2478](https://github.com/faker-ruby/faker/pull/2478) Add Japanese translation for relationships [@shouichi](https://github.com/shouichi)
+- [PR #2469](https://github.com/faker-ruby/faker/pull/2467) Fix blank row in game.yml [@KingYoSun](https://github.com/KingYoSun)
+- [PR #2467](https://github.com/faker-ruby/faker/pull/2467) French traduction of adjectives [@Beygs](https://github.com/Beygs)
+
+## Update local dependencies
+
+- Update rubocop to `1.26.0`
+- Update timecop to `0.95.0`
+
+------------------------------------------------------------------------------
+
 ## [v2.20.0](https://github.com/faker-ruby/faker/tree/v2.20.0) (2022-03-05)
 
 ## Documentation
 
 - [PR #2421](https://github.com/faker-ruby/faker/pull/2421) Add general documentation for Faker::Camera [@aleksandrilyin](https://github.com/aleksandrilyin)
+
 
 ## Feature Request
 
@@ -1084,7 +1167,7 @@ Version 2 has several `breaking changes`. We replaced positional arguments with 
 - `Faker::Types.rb_integer(from = nil, to = nil)` becomes `Faker::Types.rb_integer(from: nil, to: nil)`
 - `Faker::Types.rb_string(words = nil)` becomes `Faker::Types.rb_string(words: nil)`
 - `Faker::Vehicle.kilometrage(min = nil, max = nil)` becomes `Faker::Vehicle.kilometrage(min: nil, max: nil)`
-- `Faker::Vehicle.license_plate(state_abreviation = nil)` becomes `Faker::Vehicle.license_plate(state_abreviation: nil)`
+- `Faker::Vehicle.license_plate(state_abbreviation = nil)` becomes `Faker::Vehicle.license_plate(state_abbreviation: nil)`
 - `Faker::Vehicle.mileage(min = nil, max = nil)` becomes `Faker::Vehicle.mileage(min: nil, max: nil)`
 - `Faker::Vehicle.model(make_of_model = nil)` becomes `Faker::Vehicle.model(make_of_model: nil)`
 - `Faker::WorldCup.group(group = nil)` becomes `Faker::WorldCup.group(group: nil)`

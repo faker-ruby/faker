@@ -174,6 +174,8 @@ module Faker
           keywords << :special_characters if legacy_special_characters != NOT_GIVEN
         end
 
+        raise ArgumentError, 'Password of length 1 can not have both mixed case and special characters' if min_length <= 1 && mix_case && special_characters
+
         min_alpha = mix_case && min_length > 1 ? 2 : 0
         temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
         diff_length = max_length - min_length
@@ -199,6 +201,8 @@ module Faker
             temp[i] = chars[rand(chars.length)]
           end
         end
+
+        temp[rand(temp.size - 1)] = Lorem.characters(number: 1, min_alpha: 1).upcase if mix_case && special_characters && !temp.match(/[A-z]+/)
 
         temp
       end
@@ -266,7 +270,7 @@ module Faker
       # @example
       #   Faker::Internet.domain_word   #=> "senger"
       def domain_word
-        with_locale(:en) { Char.prepare(Company.name.split(' ').first) }
+        with_locale(:en) { Char.prepare(Company.name.split.first) }
       end
 
       ## Returns the domain suffix e.g. com, org, co, biz, info etc.
@@ -522,6 +526,23 @@ module Faker
       end
 
       ##
+      # Generate Web Crawler's user agents
+      #
+      # @return [String]
+      #
+      # @param vendor [String] Name of vendor, supported vendors are googlebot, bingbot, duckduckbot, baiduspider, yandexbot
+      #
+      # @example
+      #   Faker::Internet.bot_user_agent                        #=> "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)"
+      #   Faker::Internet.bot_user_agent(vendor: 'googlebot')   #=> "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/99.0.4844.84 Safari/537.36"
+      #   Faker::Internet.bot_user_agent(vendor: 'bingbot')     #=> "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/86.0.4240.68 Safari/537.36 Edg/86.0.622.31"
+      def bot_user_agent(vendor: nil)
+        agent_hash = translate('faker.internet.bot_user_agent')
+        agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
+        sample(agents)
+      end
+
+      ##
       # Generated universally unique identifier
       #
       # @return [String]
@@ -592,10 +613,10 @@ module Faker
           Array('0'..'9'),
           Array('A'..'Z'),
           Array('a'..'z'),
-          "!#$%&'*+-/=?^_`{|}~.".split(//)
+          "!#$%&'*+-/=?^_`{|}~.".chars
         ].flatten
 
-        local_part.split(//).map do |char|
+        local_part.chars.map do |char|
           char_range.include?(char) ? char : '#'
         end.join
       end

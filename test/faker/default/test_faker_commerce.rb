@@ -8,19 +8,19 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_color
-    assert @tester.color.match(/[a-z]+\.?/)
+    assert_match(/[a-z]+\.?/, @tester.color)
   end
 
   def test_promotion_code
-    assert @tester.promotion_code.match(/[A-Z][a-z]+[A-Z][a-z]+\d{6}/)
+    assert_match(/[A-Z][a-z]+[A-Z][a-z]+\d{6}/, @tester.promotion_code)
   end
 
   def test_promotion_code_should_have_specified_number_of_digits
-    assert @tester.promotion_code(digits: 3).match(/[A-Z][a-z]+[A-Z][a-z]+\d{3}/)
+    assert_match(/[A-Z][a-z]+[A-Z][a-z]+\d{3}/, @tester.promotion_code(digits: 3))
   end
 
   def test_department
-    assert @tester.department.match(/[A-Z][a-z]+\.?/)
+    assert_match(/[A-Z][a-z]+\.?/, @tester.department)
   end
 
   def test_single_department_should_not_contain_separators
@@ -68,11 +68,11 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_product_name
-    assert @tester.product_name.match(/[A-Z][a-z]+\.?/)
+    assert_match(/[A-Z][a-z]+\.?/, @tester.product_name)
   end
 
   def test_material
-    assert @tester.material.match(/[A-Z][a-z]+\.?/)
+    assert_match(/[A-Z][a-z]+\.?/, @tester.material)
   end
 
   def test_price
@@ -84,7 +84,7 @@ class TestFakerCommerce < Test::Unit::TestCase
 
   def test_price_with_srand
     Faker::Config.random = Random.new(12_345)
-    assert_equal 92.96, @tester.price
+    assert_in_delta(92.96, @tester.price)
   end
 
   def test_price_is_float
@@ -93,14 +93,14 @@ class TestFakerCommerce < Test::Unit::TestCase
 
   def test_when_as_string_is_true
     assert @tester.price(range: 0..100.0, as_string: true).is_a?(String)
-    assert @tester.price(range: 100..500.0, as_string: true).include?('.')
+    assert_includes @tester.price(range: 100..500.0, as_string: true), '.'
   end
 
   def test_brand
-    assert @tester.brand.match(/[A-Z][a-z]+\.?/)
+    assert_match(/[A-Z][a-z]+\.?/, @tester.brand)
   end
 
   def test_vendor
-    assert @tester.vendor.match(/[A-Z][a-z]+\.?/)
+    assert_match(/[A-Z][a-z]+\.?/, @tester.vendor)
   end
 end

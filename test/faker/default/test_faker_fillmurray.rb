@@ -8,11 +8,11 @@ class TestFakerFillmurray < Test::Unit::TestCase
   end
 
   def test_fillmurray
-    assert !@tester.image(grayscale: false, width: '300', height: '300').match(%r{https://www\.fillmurray\.com/(\d+)/(\d+)}).nil?
+    refute_nil @tester.image(grayscale: false, width: '300', height: '300').match(%r{https://www\.fillmurray\.com/(\d+)/(\d+)})
   end
 
   def test_fillmurray_with_grayscale
-    assert @tester.image(grayscale: true, width: '300', height: '300').match(%r{https://www\.fillmurray\.com/(g?/?)(\d+)/(\d+)})[1] == 'g/'
+    assert_equal('g/', @tester.image(grayscale: true, width: '300', height: '300').match(%r{https://www\.fillmurray\.com/(g?/?)(\d+)/(\d+)})[1])
   end
 
   def test_fillmurray_with_incorrect_height_format

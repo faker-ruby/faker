@@ -15,8 +15,8 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
 
     generator = Faker::UniqueGenerator.new(stubbed_generator, 3)
 
-    assert_equal(generator.send(:respond_to_missing?, 'faker_address'), true)
-    assert_equal(generator.send(:respond_to_missing?, 'address'), false)
+    assert(generator.send(:respond_to_missing?, 'faker_address'))
+    refute(generator.send(:respond_to_missing?, 'address'))
   end
 
   def test_returns_error_when_retries_exceeded
@@ -120,5 +120,44 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
       assert_equal(1, generator1.test)
       assert_equal(2, generator2.test)
     end
+  end
+
+  def test_thread_safety
+    stubbed_generator = Object.new
+    def stubbed_generator.test
+      1
+    end
+
+    generator = Faker::UniqueGenerator.new(stubbed_generator, 3)
+
+    Thread.new do
+      assert_equal(1, generator.test)
+
+      assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+        generator.test
+      end
+    end.join
+
+    Thread.new do
+      assert_equal(1, generator.test)
+    end.join
+
+    assert_equal(1, generator.test)
+
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator.test
+    end
+
+    Thread.new do
+      generator.clear
+    end.join
+
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator.test
+    end
+
+    generator.clear
+
+    assert_equal(1, generator.test)
   end
 end

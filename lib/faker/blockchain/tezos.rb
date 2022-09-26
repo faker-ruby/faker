@@ -125,7 +125,7 @@ module Faker
         # @return [String]
         def encode_tz(prefix, payload_size)
           prefix = PREFIXES.fetch(prefix)
-          packed = prefix.map(&:chr).join('') + Faker::Config.random.bytes(payload_size)
+          packed = prefix.map(&:chr).join + Faker::Config.random.bytes(payload_size)
           checksum = OpenSSL::Digest::SHA256.digest(OpenSSL::Digest::SHA256.digest(packed))[0..3]
           Faker::Base58.encode(packed + checksum)
         end

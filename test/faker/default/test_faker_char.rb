@@ -8,11 +8,11 @@ class TestFakerChar < Test::Unit::TestCase
   end
 
   def test_fix_umlauts
-    assert @tester.fix_umlauts('ä') == 'ae'
-    assert @tester.fix_umlauts('ö') == 'oe'
-    assert @tester.fix_umlauts('ü') == 'ue'
-    assert @tester.fix_umlauts('ß') == 'ss'
+    assert_equal('ae', @tester.fix_umlauts('ä'))
+    assert_equal('oe', @tester.fix_umlauts('ö'))
+    assert_equal('ue', @tester.fix_umlauts('ü'))
+    assert_equal('ss', @tester.fix_umlauts('ß'))
     # tests false positive
-    assert @tester.fix_umlauts('ss') == 'ss'
+    assert_equal('ss', @tester.fix_umlauts('ss'))
   end
 end

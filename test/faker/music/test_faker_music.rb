@@ -9,59 +9,59 @@ class TestFakerMusic < Test::Unit::TestCase
 
   def test_keys
     # rubocop:disable Style/HashEachMethods
-    assert @tester.keys.size == 7
+    assert_equal(7, @tester.keys.size)
     @tester.keys.each do |key|
-      refute key.to_s.empty?
+      refute_empty key.to_s
     end
     # rubocop:enable Style/HashEachMethods
   end
 
   def test_key_variants
-    assert @tester.key_variants.size == 3
+    assert_equal(3, @tester.key_variants.size)
     @tester.key_variants.each do |key_variant|
-      refute key_variant.nil?
+      refute_nil key_variant
     end
   end
 
   def test_key_types
-    assert @tester.key_types.size == 2
+    assert_equal(2, @tester.key_types.size)
     @tester.key_types.each do |key_type|
-      assert !key_type.nil?
+      refute_nil key_type
     end
   end
 
   def test_chord_types
-    assert @tester.chord_types.size == 12
+    assert_equal(12, @tester.chord_types.size)
     @tester.chord_types.each do |chord_type|
-      assert !chord_type.nil?
+      refute_nil chord_type
     end
   end
 
   def test_key
-    assert @tester.name.match(/([A-Z])\s*(b|#){0,1}\s*(m){0,1}/)
+    assert_match(/([A-Z])\s*(b|#){0,1}\s*(m){0,1}/, @tester.name)
   end
 
   def test_instrument
-    assert @tester.instrument.match(/\w+/)
+    assert_match(/\w+/, @tester.instrument)
   end
 
   def test_chord
-    assert @tester.name.match(/([A-Z])\s*(b|#){0,1}\s*([a-zA-Z0-9]{0,4})/)
+    assert_match(/([A-Z])\s*(b|#){0,1}\s*([a-zA-Z0-9]{0,4})/, @tester.name)
   end
 
   def test_band
-    assert @tester.band.match(/\w+/)
+    assert_match(/\w+/, @tester.band)
   end
 
   def test_album
-    assert @tester.album.match(/\w+/)
+    assert_match(/\w+/, @tester.album)
   end
 
   def test_genre
-    assert @tester.genre.match(/\w+/)
+    assert_match(/\w+/, @tester.genre)
   end
 
   def test_mambo_no_5
-    assert @tester.mambo_no_5.match(/\w+/)
+    assert_match(/\w+/, @tester.mambo_no_5)
   end
 end

@@ -8,50 +8,50 @@ class TestFakerScience < Test::Unit::TestCase
   end
 
   def test_science
-    assert @tester.science.match(/\w+/)
-    assert @tester.science(:empirical).match(/\w+/)
-    assert @tester.science(:formal).match(/\w+/)
-    assert @tester.science(:natural).match(/\w+/)
-    assert @tester.science(:social).match(/\w+/)
-    assert @tester.science(:basic).match(/\w+/)
-    assert @tester.science(:applied).match(/\w+/)
-    assert @tester.science(:empirical, :natural).match(/\w+/)
-    assert @tester.science(:empirical, :social).match(/\w+/)
-    assert @tester.science(:empirical, :natural, :basic).match(/\w+/)
-    assert @tester.science(:empirical, :natural, :applied).match(/\w+/)
-    assert @tester.science(:empirical, :social, :basic).match(/\w+/)
-    assert @tester.science(:empirical, :social, :applied).match(/\w+/)
-    assert @tester.science(:empirical, :basic).match(/\w+/)
-    assert @tester.science(:empirical, :applied).match(/\w+/)
-    assert @tester.science(:formal, :basic).match(/\w+/)
-    assert @tester.science(:formal, :applied).match(/\w+/)
+    assert_match(/\w+/, @tester.science)
+    assert_match(/\w+/, @tester.science(:empirical))
+    assert_match(/\w+/, @tester.science(:formal))
+    assert_match(/\w+/, @tester.science(:natural))
+    assert_match(/\w+/, @tester.science(:social))
+    assert_match(/\w+/, @tester.science(:basic))
+    assert_match(/\w+/, @tester.science(:applied))
+    assert_match(/\w+/, @tester.science(:empirical, :natural))
+    assert_match(/\w+/, @tester.science(:empirical, :social))
+    assert_match(/\w+/, @tester.science(:empirical, :natural, :basic))
+    assert_match(/\w+/, @tester.science(:empirical, :natural, :applied))
+    assert_match(/\w+/, @tester.science(:empirical, :social, :basic))
+    assert_match(/\w+/, @tester.science(:empirical, :social, :applied))
+    assert_match(/\w+/, @tester.science(:empirical, :basic))
+    assert_match(/\w+/, @tester.science(:empirical, :applied))
+    assert_match(/\w+/, @tester.science(:formal, :basic))
+    assert_match(/\w+/, @tester.science(:formal, :applied))
   end
 
   def test_element
-    assert @tester.element.match(/\w+/)
+    assert_match(/\w+/, @tester.element)
   end
 
   def test_element_symbol
-    assert @tester.element.match(/\w{1,2}/)
+    assert_match(/\w{1,2}/, @tester.element)
   end
 
   def test_element_state
-    assert @tester.element_state.match(/\w+/)
+    assert_match(/\w+/, @tester.element_state)
   end
 
   def test_element_subcategory
-    assert @tester.element_subcategory.match(/\w+/)
+    assert_match(/\w+/, @tester.element_subcategory)
   end
 
   def test_scientist
-    assert @tester.scientist.match(/\w+/)
+    assert_match(/\w+/, @tester.scientist)
   end
 
   def test_modifier
-    assert @tester.modifier.match(/\w+/)
+    assert_match(/\w+/, @tester.modifier)
   end
 
   def test_tool
-    assert @tester.tool.match(/\w+/)
+    assert_match(/\w+/, @tester.tool)
   end
 end

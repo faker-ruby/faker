@@ -9,30 +9,30 @@ class TestFakerUniversity < Test::Unit::TestCase
   end
 
   def test_prefix
-    assert @tester.prefix.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.prefix)
   end
 
   def test_suffix
-    assert @tester.suffix.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.suffix)
   end
 
   def test_name
-    assert @tester.name.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.name)
   end
 
   def test_greek_alphabet_has_24_characters
-    assert @alphabet.count == 24
+    assert_equal(24, @alphabet.count)
   end
 
   def test_greek_organization
-    assert @tester.greek_organization.match(/\p{Greek}|\w+/)
-    assert @tester.greek_organization.length == 3
+    assert_match(/\p{Greek}|\w+/, @tester.greek_organization)
+    assert_equal(3, @tester.greek_organization.length)
   end
 
   def test_greek_organization_is_assembled_from_greek_alphabet
     test_organization = @tester.greek_organization
     test_organization.each_char do |letter|
-      assert @alphabet.include?(letter)
+      assert_includes @alphabet, letter
     end
   end
 end

@@ -78,7 +78,7 @@ class TestFrLocale < Test::Unit::TestCase
   end
 
   def test_fr_demographic_methods
-    assert %w[Homme Femme].include?(Faker::Demographic.sex)
+    assert_includes %w[Homme Femme], Faker::Demographic.sex
   end
 
   def test_fr_internet_methods
@@ -87,7 +87,7 @@ class TestFrLocale < Test::Unit::TestCase
   end
 
   def test_fr_gender_methods
-    assert %w[Masculin Féminin].include?(Faker::Gender.binary_type)
+    assert_includes %w[Masculin Féminin], Faker::Gender.binary_type
   end
 
   def test_fr_lorem_methods

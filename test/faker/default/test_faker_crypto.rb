@@ -8,14 +8,14 @@ class TestFakerCrypto < Test::Unit::TestCase
   end
 
   def test_md5
-    assert @tester.md5.match(/\A[a-z0-9]{32}\z/)
+    assert_match(/\A[a-z0-9]{32}\z/, @tester.md5)
   end
 
   def test_sha1
-    assert @tester.sha1.match(/\A[a-z0-9]{40}\z/)
+    assert_match(/\A[a-z0-9]{40}\z/, @tester.sha1)
   end
 
   def test_sha256
-    assert @tester.sha256.match(/\A[a-z0-9]{64}\z/)
+    assert_match(/\A[a-z0-9]{64}\z/, @tester.sha256)
   end
 end

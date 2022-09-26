@@ -27,7 +27,7 @@ module Faker
       # @faker.version 1.8.0
       def emphasis
         paragraph = Faker::Lorem.paragraph(sentence_count: 3)
-        words = paragraph.split(' ')
+        words = paragraph.split
         position = rand(0..words.length - 1)
         formatting = fetch('markdown.emphasis')
         words[position] = "#{formatting}#{words[position]}#{formatting}"
@@ -50,7 +50,7 @@ module Faker
         number.times do |i|
           result << "#{i}. #{Faker::Lorem.sentence(word_count: 1)} \n"
         end
-        result.join('')
+        result.join
       end
 
       ##
@@ -69,7 +69,7 @@ module Faker
         number.times do |_i|
           result << "* #{Faker::Lorem.sentence(word_count: 1)} \n"
         end
-        result.join('')
+        result.join
       end
 
       ##
@@ -133,7 +133,7 @@ module Faker
       def random(*args)
         method_list = available_methods
         args&.each { |ex| method_list.delete_if { |meth| meth == ex.to_sym } }
-        send(method_list[rand(0..method_list.length - 1)])
+        send(method_list[Faker::Config.random.rand(0..method_list.length - 1)])
       end
 
       ##
@@ -168,7 +168,7 @@ module Faker
       private
 
       def available_methods
-        Markdown.public_methods(false) - Base.methods
+        (Markdown.public_methods(false) - Base.methods).sort
       end
     end
   end

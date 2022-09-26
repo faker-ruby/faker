@@ -8,18 +8,18 @@ class TestFakerFantasyTolkien < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.match(/\w+/)
+    assert_match(/\w+/, @tester.character)
   end
 
   def test_location
-    assert @tester.location.match(/\w+/)
+    assert_match(/\w+/, @tester.location)
   end
 
   def test_race
-    assert @tester.race.match(/\w+/)
+    assert_match(/\w+/, @tester.race)
   end
 
   def test_poem
-    assert @tester.poem.match(/\w+/)
+    assert_match(/\w+/, @tester.poem)
   end
 end

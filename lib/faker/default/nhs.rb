@@ -21,7 +21,7 @@ module Faker
                                                            .chars
                                                            .insert(3, ' ')
                                                            .insert(7, ' ')
-                                                           .join('')
+                                                           .join
       end
 
       ##

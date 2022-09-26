@@ -4,7 +4,6 @@ mydir = __dir__
 
 require 'psych'
 require 'i18n'
-require 'set' # Fixes a bug in i18n 0.6.11
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
 
@@ -13,23 +12,26 @@ I18n.reload! if I18n.backend.initialized?
 
 module Faker
   module Config
-    @locale = nil
-    @random = nil
-
     class << self
-      attr_writer :locale, :random
+      def locale=(new_locale)
+        Thread.current[:faker_config_locale] = new_locale
+      end
 
       def locale
         # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
-        @locale || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
+        Thread.current[:faker_config_locale] || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
       end
 
       def own_locale
-        @locale
+        Thread.current[:faker_config_locale]
+      end
+
+      def random=(new_random)
+        Thread.current[:faker_config_random] = new_random
       end
 
       def random
-        @random || Random.new
+        Thread.current[:faker_config_random] || Random
       end
     end
   end
@@ -41,6 +43,8 @@ module Faker
     Letters = ULetters + LLetters
 
     class << self
+      attr_reader :flexible_key
+
       NOT_GIVEN = Object.new
 
       ## by default numerify results do not start with a zero
@@ -87,7 +91,7 @@ module Faker
           .gsub(/(\\?.)\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
           .gsub(/\((.*?)\)/) { |match| sample(match.gsub(/[()]/, '').split('|')) } # (this|that) becomes 'this' or 'that'
           .gsub(/\[([^\]]+)\]/) { |match| match.gsub(/(\w-\w)/) { |range| sample(Array(Range.new(*range.split('-')))) } } # All A-Z inside of [] become C (or X, or whatever)
-          .gsub(/\[([^\]]+)\]/) { |_match| sample(Regexp.last_match(1).split('')) } # All [ABC] become B (or A or C)
+          .gsub(/\[([^\]]+)\]/) { |_match| sample(Regexp.last_match(1).chars) } # All [ABC] become B (or A or C)
           .gsub('\d') { |_match| sample(Numbers) }
           .gsub('\w') { |_match| sample(Letters) }
       end
@@ -185,9 +189,9 @@ module Faker
       #     girls_name: ["Alice", "Cheryl", "Tatiana"]
       # Then you can call Faker::Name.girls_name and it will act like #first_name
       def method_missing(mth, *args, &block)
-        super unless @flexible_key
+        super unless flexible_key
 
-        if (translation = translate("faker.#{@flexible_key}.#{mth}"))
+        if (translation = translate("faker.#{flexible_key}.#{mth}"))
           sample(translation)
         else
           super

@@ -25,7 +25,7 @@ class TestArLocale < Test::Unit::TestCase
     assert Faker::Address.street_address.is_a? String
     assert Faker::Address.full_address.is_a? String
     assert Faker::Address.default_country.is_a? String
-    assert_equal Faker::Address.default_country, 'المملكة العربية السعودية'
+    assert_equal('المملكة العربية السعودية', Faker::Address.default_country)
   end
 
   def test_ar_app_methods

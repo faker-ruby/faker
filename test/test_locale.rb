@@ -14,10 +14,10 @@ class TestLocale < Test::Unit::TestCase
   def test_locale_separate_from_i18n
     I18n.locale = :en
     Faker::Config.locale = :de
-    assert Faker::PhoneNumber.phone_number.match(/\(0\d+\) \d+|\d+-\d+/)
-    assert Faker::Address.street_name.match(//)
+    assert_match(/\(0\d+\) \d+|\d+-\d+/, Faker::PhoneNumber.phone_number)
+    assert_match(//, Faker::Address.street_name)
     Faker::Config.locale = :ru
-    assert Faker::Internet.domain_name.match(/([\da-z.-]+)\.([a-z.]{2,6})/)
+    assert_match(/([\da-z.-]+)\.([a-z.]{2,6})/, Faker::Internet.domain_name)
   end
 
   def test_configured_locale_translation
@@ -72,7 +72,7 @@ class TestLocale < Test::Unit::TestCase
   def test_regex
     Faker::Config.locale = 'en-GB'
     re = /[A-PR-UWYZ]([A-HK-Y][0-9][ABEHMNPRVWXY0-9]?|[0-9][ABCDEFGHJKPSTUW0-9]?) [0-9][ABD-HJLNP-UW-Z]{2}/
-    assert re.match(result = Faker::Address.postcode), "#{result} didn't match #{re}"
+    assert_match re, result = Faker::Address.postcode, "#{result} didn't match #{re}"
   end
 
   def test_available_locales

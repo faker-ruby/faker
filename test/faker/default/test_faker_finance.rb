@@ -8,7 +8,7 @@ class TestFakerFinance < Test::Unit::TestCase
   end
 
   def test_vat_number
-    assert Faker::Finance.vat_number.match(/\w+/)
+    assert_match(/\w+/, Faker::Finance.vat_number)
   end
 
   def test_vat_number_with_invalid_params
@@ -19,7 +19,7 @@ class TestFakerFinance < Test::Unit::TestCase
 
   def test_vat_number_with_valid_params
     Faker::Finance.vat_number_keys.each do |country|
-      assert Faker::Finance.vat_number(country: country).match(/\w+/)
+      assert_match(/\w+/, Faker::Finance.vat_number(country: country))
     end
   end
 
@@ -28,7 +28,7 @@ class TestFakerFinance < Test::Unit::TestCase
   end
 
   def test_ticker
-    assert Faker::Finance.ticker.match(/\w+/)
+    assert_match(/\w+/, Faker::Finance.ticker)
   end
 
   def test_ticker_with_invalid_params
@@ -39,10 +39,10 @@ class TestFakerFinance < Test::Unit::TestCase
 
   def test_ticker_with_valid_params
     ticker_return = Faker::Finance.ticker('nyse')
-    assert Faker::Base.fetch_all('finance.ticker.nyse').join(', ').include?(ticker_return)
+    assert_includes Faker::Base.fetch_all('finance.ticker.nyse').join(', '), ticker_return
   end
 
   def test_stock_market
-    assert Faker::Finance.stock_market.match(/\w+/)
+    assert_match(/\w+/, Faker::Finance.stock_market)
   end
 end

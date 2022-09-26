@@ -5,7 +5,9 @@ Available since version 1.6.4.
 ```ruby
 Faker::File.extension #=> "mp3"
 
+# Keyword arguments: media_type
 Faker::File.mime_type #=> "application/pdf"
+Faker::File.mime_type(media_type: 'image') #=> "image/png"
 
 # Keyword arguments: dir, name, extension, directory_separator
 Faker::File.file_name(dir: 'path/to') #=> "path/to/something_random.jpg"

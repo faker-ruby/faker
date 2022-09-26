@@ -19,26 +19,24 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
   spec.executables   = ['faker']
   spec.require_paths = ['lib']
-  spec.required_ruby_version = '>= 2.5'
+  spec.required_ruby_version = '>= 2.7'
 
   spec.metadata['changelog_uri'] = 'https://github.com/faker-ruby/faker/blob/master/CHANGELOG.md'
   spec.metadata['source_code_uri'] = 'https://github.com/faker-ruby/faker'
   spec.metadata['bug_tracker_uri'] = 'https://github.com/faker-ruby/faker/issues'
   spec.metadata['documentation_uri'] = 'https://rubydoc.info/github/faker-ruby/faker/master'
   spec.metadata['yard.run'] = 'yri'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 
-  # Requires Ruby I18n 1.8.11 or higher to resolve https://github.com/faker-ruby/faker/issues/2330.
   spec.add_dependency('i18n', '>= 1.8.11', '< 2')
-
-  spec.add_development_dependency('minitest', '5.15.0')
+  spec.add_development_dependency('minitest', '5.16.3')
   spec.add_development_dependency('pry', '0.14.1')
   spec.add_development_dependency('rake', '13.0.6')
-  spec.add_development_dependency('rubocop', '1.25.0')
-  # Workaround for cc-test-reporter with SimpleCov 0.18.
-  # Stop upgrading SimpleCov until the following issue will be resolved.
-  # https://github.com/codeclimate/test-reporter/issues/418
-  spec.add_development_dependency('simplecov', '0.17.1', '< 0.18')
+  spec.add_development_dependency('rubocop', '1.36.0')
+  spec.add_development_dependency('rubocop-minitest', '0.22.1')
+  spec.add_development_dependency('rubocop-rake', '0.6.0')
+  spec.add_development_dependency('simplecov', '0.21')
   spec.add_development_dependency('test-unit', '3.5.3')
-  spec.add_development_dependency('timecop', '0.9.4')
+  spec.add_development_dependency('timecop', '0.9.5')
   spec.add_development_dependency('yard', '0.9.27')
 end
