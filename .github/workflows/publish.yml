@@ -1,0 +1,68 @@
+name: Publish to RubyGems
+
+on:
+  release:
+    types:
+      - "created"
+  push:
+    tags:
+      - "v*"
+  pull_request:
+    branches: [ master ]
+
+
+jobs: 
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    env:
+      TARGET_URL: https://rubygems.org/gems/faker
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          target_url: ${{ env.TARGET_URL }}
+          environment: production
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+
+      - name: Build Gem
+        run: gem build -o faker.gem faker.gemspec
+
+        # - name: Install Ruby Dependencies
+        #   run: bundle install
+
+        # - name: Run tests
+        #   run: bundle exec rake test
+
+      - name: Push to RubyGems
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }}
+        run: gem push faker.gem
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target_url: ${{ env.TARGET_URL }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target_url: ${{ env.TARGET_URL }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
