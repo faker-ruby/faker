@@ -20,12 +20,7 @@ module Faker
       #     something to eat - it's all been wrong."}
       #
       # @faker.version 1.9.2
-      def shallow_json(legacy_width = NOT_GIVEN, legacy_options = NOT_GIVEN, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :width if legacy_width != NOT_GIVEN
-          keywords << :options if legacy_options != NOT_GIVEN
-        end
-
+      def shallow_json(_legacy_width = NOT_GIVEN, _legacy_options = NOT_GIVEN, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
         options[:key] = "Faker::#{options[:key]}"
         options[:value] = "Faker::#{options[:value]}"
 
@@ -73,17 +68,7 @@ module Faker
       #             {"Rick":"Wiza","Bonita":"Bayer","Gardner":"Auer","Felicity":"Abbott"}}}
       #
       # @faker.version 1.9.2
-      def add_depth_to_json(legacy_json = NOT_GIVEN, legacy_width = NOT_GIVEN, legacy_options = NOT_GIVEN, json: shallow_json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :json if legacy_json != NOT_GIVEN
-        end
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :width if legacy_width != NOT_GIVEN
-        end
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :options if legacy_options != NOT_GIVEN
-        end
-
+      def add_depth_to_json(_legacy_json = NOT_GIVEN, _legacy_width = NOT_GIVEN, _legacy_options = NOT_GIVEN, json: shallow_json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
         options[:key] = "Faker::#{options[:key]}"
         options[:value] = "Faker::#{options[:value]}"
 

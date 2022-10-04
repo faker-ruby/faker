@@ -20,13 +20,7 @@ module Faker
       #   Faker::File.dir(segment_count: 3, root: nil, directory_separator: '\\') #=> "aut-ullam\\quia_quisquam\\ut-eos"
       #
       # @faker.version 1.6.4
-      def dir(legacy_segment_count = NOT_GIVEN, legacy_root = NOT_GIVEN, legacy_directory_separator = NOT_GIVEN, segment_count: 3, root: nil, directory_separator: ::File::Separator)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :segment_count if legacy_segment_count != NOT_GIVEN
-          keywords << :root if legacy_root != NOT_GIVEN
-          keywords << :directory_separator if legacy_directory_separator != NOT_GIVEN
-        end
-
+      def dir(_legacy_segment_count = NOT_GIVEN, _legacy_root = NOT_GIVEN, _legacy_directory_separator = NOT_GIVEN, segment_count: 3, root: nil, directory_separator: ::File::Separator)
         Array
           .new(segment_count) { Faker::Internet.slug }
           .unshift(root)
@@ -80,14 +74,7 @@ module Faker
       #   Faker::File.file_name(dir: 'foo/bar', name: 'baz', ext: 'mp3', directory_separator: '\\') #=> "foo/bar\\baz.mp3"
       #
       # @faker.version 1.6.4
-      def file_name(legacy_dir = NOT_GIVEN, legacy_name = NOT_GIVEN, legacy_ext = NOT_GIVEN, legacy_directory_separator = NOT_GIVEN, dir: nil, name: nil, ext: nil, directory_separator: ::File::Separator)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :dir if legacy_dir != NOT_GIVEN
-          keywords << :name if legacy_name != NOT_GIVEN
-          keywords << :ext if legacy_ext != NOT_GIVEN
-          keywords << :directory_separator if legacy_directory_separator != NOT_GIVEN
-        end
-
+      def file_name(_legacy_dir = NOT_GIVEN, _legacy_name = NOT_GIVEN, _legacy_ext = NOT_GIVEN, _legacy_directory_separator = NOT_GIVEN, dir: nil, name: nil, ext: nil, directory_separator: ::File::Separator)
         dir ||= dir(segment_count: 1)
         name ||= Faker::Lorem.word.downcase
         ext ||= extension

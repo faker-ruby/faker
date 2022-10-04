@@ -38,15 +38,7 @@ module Faker
       #     #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
       #
       # @faker.version 1.4.3
-      def image(legacy_slug = NOT_GIVEN, legacy_size = NOT_GIVEN, legacy_format = NOT_GIVEN, legacy_set = NOT_GIVEN, legacy_bgset = NOT_GIVEN, slug: nil, size: '300x300', format: 'png', set: 'set1', bgset: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :slug if legacy_slug != NOT_GIVEN
-          keywords << :size if legacy_size != NOT_GIVEN
-          keywords << :format if legacy_format != NOT_GIVEN
-          keywords << :set if legacy_set != NOT_GIVEN
-          keywords << :bgset if legacy_bgset != NOT_GIVEN
-        end
-
+      def image(_legacy_slug = NOT_GIVEN, _legacy_size = NOT_GIVEN, _legacy_format = NOT_GIVEN, _legacy_set = NOT_GIVEN, _legacy_bgset = NOT_GIVEN, slug: nil, size: '300x300', format: 'png', set: 'set1', bgset: nil)
         raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
         raise ArgumentError, "Supported formats are #{SUPPORTED_FORMATS.join(', ')}" unless SUPPORTED_FORMATS.include?(format)
 

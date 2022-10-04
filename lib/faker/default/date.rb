@@ -17,12 +17,7 @@ module Faker
       #   Faker::Date.between(from: 2.days.ago, to: Date.today) #=> #<Date: 2014-09-24>
       #
       # @faker.version 1.0.0
-      def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from:, to:)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :from if legacy_from != NOT_GIVEN
-          keywords << :to if legacy_to != NOT_GIVEN
-        end
-
+      def between(_legacy_from = NOT_GIVEN, _legacy_to = NOT_GIVEN, from:, to:)
         from = get_date_object(from)
         to   = get_date_object(to)
 
@@ -46,17 +41,7 @@ module Faker
       #   Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today) #=> #<Date: 2014-10-03>
       #
       # @faker.version 1.6.2
-      def between_except(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_excepted = NOT_GIVEN, from:, to:, excepted:)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :from if legacy_from != NOT_GIVEN
-        end
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :to if legacy_to != NOT_GIVEN
-        end
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :excepted if legacy_excepted != NOT_GIVEN
-        end
-
+      def between_except(_legacy_from = NOT_GIVEN, _legacy_to = NOT_GIVEN, _legacy_excepted = NOT_GIVEN, from:, to:, excepted:)
         raise ArgumentError, 'From date, to date and excepted date must not be the same' if from == to && to == excepted
 
         excepted = get_date_object(excepted)
@@ -78,11 +63,7 @@ module Faker
       #   Faker::Date.forward(days: 23) #=> #<Date: 2014-10-03>
       #
       # @faker.version 1.0.0
-      def forward(legacy_days = NOT_GIVEN, days: 365)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :days if legacy_days != NOT_GIVEN
-        end
-
+      def forward(_legacy_days = NOT_GIVEN, days: 365)
         from = ::Date.today + 1
         to   = ::Date.today + days
 
@@ -99,11 +80,7 @@ module Faker
       #   Faker::Date.backward(days: 14) #=> #<Date: 2019-09-12>
       #
       # @faker.version 1.0.0
-      def backward(legacy_days = NOT_GIVEN, days: 365)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :days if legacy_days != NOT_GIVEN
-        end
-
+      def backward(_legacy_days = NOT_GIVEN, days: 365)
         from = ::Date.today - days
         to   = ::Date.today - 1
 
@@ -121,14 +98,7 @@ module Faker
       #   Faker::Date.birthday(min_age: 18, max_age: 65) #=> #<Date: 1986-03-28>
       #
       # @faker.version 1.4.3
-      def birthday(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :min_age if legacy_min_age != NOT_GIVEN
-        end
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :max_age if legacy_max_age != NOT_GIVEN
-        end
-
+      def birthday(_legacy_min_age = NOT_GIVEN, _legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
         t = ::Date.today
 
         from = birthday_date(t, max_age)

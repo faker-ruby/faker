@@ -30,12 +30,7 @@ module Faker
       #   Faker::Lorem.words(number: 4, supplemental: true)    #=> ["nisi", "sit", "allatus", "consequatur"]
       #
       # @faker.version 2.1.3
-      def words(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-          keywords << :supplemental if legacy_supplemental != NOT_GIVEN
-        end
-
+      def words(_legacy_number = NOT_GIVEN, _legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
         resolved_num = resolve(number)
         word_list = (
           translate('faker.lorem.words') +
@@ -74,11 +69,7 @@ module Faker
       #   Faker::Lorem.characters(number: 10, min_alpha: 4, min_numeric: 1) #=> "ang9cbhoa8"
       #
       # @faker.version 2.1.3
-      def characters(legacy_number = NOT_GIVEN, number: 255, min_alpha: 0, min_numeric: 0)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-        end
-
+      def characters(_legacy_number = NOT_GIVEN, number: 255, min_alpha: 0, min_numeric: 0)
         Alphanumeric.alphanumeric(number: number, min_alpha: min_alpha, min_numeric: min_numeric)
       end
 
@@ -113,13 +104,7 @@ module Faker
       #   Faker::Lorem.sentence(word_count: 5, supplemental: true, random_words_to_add:2)   #=> "Crinis quo cruentus velit animi vomer."
       #
       # @faker.version 2.1.3
-      def sentence(legacy_word_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 0)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :word_count if legacy_word_count != NOT_GIVEN
-          keywords << :supplemental if legacy_supplemental != NOT_GIVEN
-          keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
-        end
-
+      def sentence(_legacy_word_count = NOT_GIVEN, _legacy_supplemental = NOT_GIVEN, _legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 0)
         words(number: word_count + rand(random_words_to_add.to_i), supplemental: supplemental).join(locale_space).capitalize + locale_period
       end
       # rubocop:enable Metrics/ParameterLists
@@ -138,12 +123,7 @@ module Faker
       #   Faker::Lorem.sentences(number: 2, supplemental: true)   #=> ["Cito cena ad.", "Solvo animus allatus."]
       #
       # @faker.version 2.1.3
-      def sentences(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-          keywords << :supplemental if legacy_supplemental != NOT_GIVEN
-        end
-
+      def sentences(_legacy_number = NOT_GIVEN, _legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
         1.upto(resolve(number)).collect { sentence(word_count: 3, supplemental: supplemental) }
       end
 
@@ -169,13 +149,7 @@ module Faker
       #     #=> "Texo tantillus tamisium. Tribuo amissio tamisium. Facere aut canis."
       #
       # @faker.version 2.1.3
-      def paragraph(legacy_sentence_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_sentences_to_add = NOT_GIVEN, sentence_count: 3, supplemental: false, random_sentences_to_add: 0)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :sentence_count if legacy_sentence_count != NOT_GIVEN
-          keywords << :supplemental if legacy_supplemental != NOT_GIVEN
-          keywords << :random_sentences_to_add if legacy_random_sentences_to_add != NOT_GIVEN
-        end
-
+      def paragraph(_legacy_sentence_count = NOT_GIVEN, _legacy_supplemental = NOT_GIVEN, _legacy_random_sentences_to_add = NOT_GIVEN, sentence_count: 3, supplemental: false, random_sentences_to_add: 0)
         sentences(number: resolve(sentence_count) + rand(random_sentences_to_add.to_i), supplemental: supplemental).join(locale_space)
       end
       # rubocop:enable Metrics/ParameterLists
@@ -194,14 +168,7 @@ module Faker
       #   Faker::Lorem.paragraphs(number:2, supplemental: true)
       #
       # @faker.version 2.1.3
-      def paragraphs(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-        end
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :supplemental if legacy_supplemental != NOT_GIVEN
-        end
-
+      def paragraphs(_legacy_number = NOT_GIVEN, _legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
         1.upto(resolve(number)).collect { paragraph(sentence_count: 3, supplemental: supplemental) }
       end
 
@@ -219,12 +186,7 @@ module Faker
       #   Faker::Lorem.paragraph_by_chars(number: 20, supplemental: true)   #=> "Certus aveho admove."
       #
       # @faker.version 2.1.3
-      def paragraph_by_chars(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 256, supplemental: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-          keywords << :supplemental if legacy_supplemental != NOT_GIVEN
-        end
-
+      def paragraph_by_chars(_legacy_number = NOT_GIVEN, _legacy_supplemental = NOT_GIVEN, number: 256, supplemental: false)
         paragraph = paragraph(sentence_count: 3, supplemental: supplemental)
 
         paragraph += " #{paragraph(sentence_count: 3, supplemental: supplemental)}" while paragraph.length < number
@@ -250,13 +212,7 @@ module Faker
       #   Faker::Lorem.question(word_count: 2, supplemental: true, random_words_to_add: 2)    #=> "Depulso uter ut?"
       #
       # @faker.version 2.1.3
-      def question(legacy_word_count = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 0)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :word_count if legacy_word_count != NOT_GIVEN
-          keywords << :supplemental if legacy_supplemental != NOT_GIVEN
-          keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
-        end
-
+      def question(_legacy_word_count = NOT_GIVEN, _legacy_supplemental = NOT_GIVEN, _legacy_random_words_to_add = NOT_GIVEN, word_count: 4, supplemental: false, random_words_to_add: 0)
         words(number: word_count + rand(random_words_to_add), supplemental: supplemental).join(' ').capitalize + locale_question_mark
       end
       # rubocop:enable Metrics/ParameterLists
@@ -275,12 +231,7 @@ module Faker
       #   Faker::Lorem.questions(number: 2, supplemental: true)   #=> ["Acceptus subito cetera?", "Aro sulum cubicularis?"]
       #
       # @faker.version 2.1.3
-      def questions(legacy_number = NOT_GIVEN, legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-          keywords << :supplemental if legacy_supplemental != NOT_GIVEN
-        end
-
+      def questions(_legacy_number = NOT_GIVEN, _legacy_supplemental = NOT_GIVEN, number: 3, supplemental: false)
         1.upto(resolve(number)).collect { question(word_count: 3, supplemental: supplemental) }
       end
 

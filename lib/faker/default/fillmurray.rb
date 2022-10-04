@@ -26,13 +26,7 @@ module Faker
       #     #=> "https://fillmurray.com/200/400"
       #
       # @faker.version 1.7.1
-      def image(legacy_grayscale = NOT_GIVEN, legacy_width = NOT_GIVEN, legacy_height = NOT_GIVEN, grayscale: false, width: 200, height: 200)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :grayscale if legacy_grayscale != NOT_GIVEN
-          keywords << :width if legacy_width != NOT_GIVEN
-          keywords << :height if legacy_height != NOT_GIVEN
-        end
-
+      def image(_legacy_grayscale = NOT_GIVEN, _legacy_width = NOT_GIVEN, _legacy_height = NOT_GIVEN, grayscale: false, width: 200, height: 200)
         raise ArgumentError, 'Width should be a number' unless width.to_s =~ /^\d+$/
         raise ArgumentError, 'Height should be a number' unless height.to_s =~ /^\d+$/
         raise ArgumentError, 'Grayscale should be a boolean' unless [true, false].include?(grayscale)

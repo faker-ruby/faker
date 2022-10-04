@@ -29,13 +29,7 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-google.
       #
       # @faker.version 1.8.0
-      def google(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 9).to_s)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :name if legacy_name != NOT_GIVEN
-          keywords << :email if legacy_email != NOT_GIVEN
-          keywords << :uid if legacy_uid != NOT_GIVEN
-        end
-
+      def google(_legacy_name = NOT_GIVEN, _legacy_email = NOT_GIVEN, _legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 9).to_s)
         auth = Omniauth.new(name: name, email: email)
         {
           provider: 'google_oauth2',
@@ -95,14 +89,7 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-facebook.
       #
       # @faker.version 1.8.0
-      def facebook(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_username = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :name if legacy_name != NOT_GIVEN
-          keywords << :email if legacy_email != NOT_GIVEN
-          keywords << :username if legacy_username != NOT_GIVEN
-          keywords << :uid if legacy_uid != NOT_GIVEN
-        end
-
+      def facebook(_legacy_name = NOT_GIVEN, _legacy_email = NOT_GIVEN, _legacy_username = NOT_GIVEN, _legacy_uid = NOT_GIVEN, name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s)
         auth = Omniauth.new(name: name, email: email)
         username ||= "#{auth.first_name.downcase[0]}#{auth.last_name.downcase}"
         {
@@ -154,13 +141,7 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-twitter.
       #
       # @faker.version 1.8.0
-      def twitter(legacy_name = NOT_GIVEN, legacy_nickname = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, nickname: nil, uid: Number.number(digits: 6).to_s)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :name if legacy_name != NOT_GIVEN
-          keywords << :nickname if legacy_nickname != NOT_GIVEN
-          keywords << :uid if legacy_uid != NOT_GIVEN
-        end
-
+      def twitter(_legacy_name = NOT_GIVEN, _legacy_nickname = NOT_GIVEN, _legacy_uid = NOT_GIVEN, name: nil, nickname: nil, uid: Number.number(digits: 6).to_s)
         auth = Omniauth.new(name: name)
         nickname ||= auth.name.downcase.delete(' ')
         location = city_state
@@ -243,13 +224,7 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-linkedin.
       #
       # @faker.version 1.8.0
-      def linkedin(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 6).to_s)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :name if legacy_name != NOT_GIVEN
-          keywords << :email if legacy_email != NOT_GIVEN
-          keywords << :uid if legacy_uid != NOT_GIVEN
-        end
-
+      def linkedin(_legacy_name = NOT_GIVEN, _legacy_email = NOT_GIVEN, _legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 6).to_s)
         auth = Omniauth.new(name: name, email: email)
         first_name = auth.first_name.downcase
         last_name = auth.last_name.downcase
@@ -322,13 +297,7 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-github.
       #
       # @faker.version 1.8.0
-      def github(legacy_name = NOT_GIVEN, legacy_email = NOT_GIVEN, legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 8).to_s)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :name if legacy_name != NOT_GIVEN
-          keywords << :email if legacy_email != NOT_GIVEN
-          keywords << :uid if legacy_uid != NOT_GIVEN
-        end
-
+      def github(_legacy_name = NOT_GIVEN, _legacy_email = NOT_GIVEN, _legacy_uid = NOT_GIVEN, name: nil, email: nil, uid: Number.number(digits: 8).to_s)
         auth = Omniauth.new(name: name, email: email)
         login = auth.name.downcase.tr(' ', '-')
         html_url = "https://github.com/#{login}"

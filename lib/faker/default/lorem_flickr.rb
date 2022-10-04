@@ -23,13 +23,7 @@ module Faker
       #   Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/50/60/sports,fitness/all"
       #
       # @faker.version 1.9.0
-      def image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: [], match_all: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :size if legacy_size != NOT_GIVEN
-          keywords << :search_terms if legacy_search_terms != NOT_GIVEN
-          keywords << :match_all if legacy_match_all != NOT_GIVEN
-        end
-
+      def image(_legacy_size = NOT_GIVEN, _legacy_search_terms = NOT_GIVEN, _legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: [], match_all: false)
         build_url(size, nil, search_terms, match_all)
       end
 
@@ -49,13 +43,7 @@ module Faker
       #   Faker::LoremFlickr.grayscale_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/g/50/60/sports,fitness/all"
       #
       # @faker.version 1.9.0
-      def grayscale_image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :size if legacy_size != NOT_GIVEN
-          keywords << :search_terms if legacy_search_terms != NOT_GIVEN
-          keywords << :match_all if legacy_match_all != NOT_GIVEN
-        end
-
+      def grayscale_image(_legacy_size = NOT_GIVEN, _legacy_search_terms = NOT_GIVEN, _legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false)
         raise ArgumentError, 'Search terms must be specified for grayscale images' unless search_terms.any?
 
         build_url(size, 'g', search_terms, match_all)
@@ -77,13 +65,7 @@ module Faker
       #   Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/p/50/60/sports,fitness/all"
       #
       # @faker.version 1.9.0
-      def pixelated_image(legacy_size = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :size if legacy_size != NOT_GIVEN
-          keywords << :search_terms if legacy_search_terms != NOT_GIVEN
-          keywords << :match_all if legacy_match_all != NOT_GIVEN
-        end
-
+      def pixelated_image(_legacy_size = NOT_GIVEN, _legacy_search_terms = NOT_GIVEN, _legacy_match_all = NOT_GIVEN, size: '300x300', search_terms: ['all'], match_all: false)
         raise ArgumentError, 'Search terms must be specified for pixelated images' unless search_terms.any?
 
         build_url(size, 'p', search_terms, match_all)
@@ -106,14 +88,7 @@ module Faker
       #   Faker::LoremFlickr.image(size: "50x60", color: 'blue', search_terms: ['sports', 'fitness'], match_all: true) #=> "https://loremflickr.com/blue/50/60/sports,fitness/all"
       #
       # @faker.version 1.9.0
-      def colorized_image(legacy_size = NOT_GIVEN, legacy_color = NOT_GIVEN, legacy_search_terms = NOT_GIVEN, legacy_match_all = NOT_GIVEN, size: '300x300', color: 'red', search_terms: ['all'], match_all: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :size if legacy_size != NOT_GIVEN
-          keywords << :color if legacy_color != NOT_GIVEN
-          keywords << :search_terms if legacy_search_terms != NOT_GIVEN
-          keywords << :match_all if legacy_match_all != NOT_GIVEN
-        end
-
+      def colorized_image(_legacy_size = NOT_GIVEN, _legacy_color = NOT_GIVEN, _legacy_search_terms = NOT_GIVEN, _legacy_match_all = NOT_GIVEN, size: '300x300', color: 'red', search_terms: ['all'], match_all: false)
         raise ArgumentError, 'Search terms must be specified for colorized images' unless search_terms.any?
         raise ArgumentError, "Supported colorizations are #{SUPPORTED_COLORIZATIONS.join(', ')}" unless SUPPORTED_COLORIZATIONS.include?(color)
 
