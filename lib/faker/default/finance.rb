@@ -52,11 +52,7 @@ module Faker
       #   Faker::Finance.vat_number('ZA') #=> "ZA79494416181"
       #
       # @faker.version 1.9.2
-      def vat_number(legacy_country = NOT_GIVEN, country: 'BR')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :country if legacy_country != NOT_GIVEN
-        end
-
+      def vat_number(country: 'BR')
         numerify(fetch("finance.vat_number.#{country}"))
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find vat number for #{country}"

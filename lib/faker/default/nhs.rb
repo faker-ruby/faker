@@ -34,11 +34,7 @@ module Faker
       #   Faker::NationalHealthService.check_digit(number: 400_012_114) #=> 6
       #
       # @faker.version 1.9.2
-      def check_digit(legacy_number = NOT_GIVEN, number: 0)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-        end
-
+      def check_digit(number: 0)
         sum = 0
         number.to_s.chars.each_with_index do |digit, idx|
           position = idx + 1

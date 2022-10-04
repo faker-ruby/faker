@@ -29,11 +29,7 @@ module Faker
       #   Faker::Code.isbn #=> "170366802-2"
       #
       # @faker.version 2.2.0
-      def isbn(legacy_base = NOT_GIVEN, base: 10)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :base if legacy_base != NOT_GIVEN
-        end
-
+      def isbn(base: 10)
         case base
         when 10 then generate_base10_isbn
         when 13 then generate_base13_isbn
@@ -53,11 +49,7 @@ module Faker
       #   Faker::Code.ean #=> "9941880131907"
       #
       # @faker.version 2.2.0
-      def ean(legacy_base = NOT_GIVEN, base: 13)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :base if legacy_base != NOT_GIVEN
-        end
-
+      def ean(base: 13)
         case base
         when 8 then generate_base8_ean
         when 13 then generate_base13_ean
@@ -99,12 +91,7 @@ module Faker
       #   Faker::Code.nric #=> "S6372958B"
       #
       # @faker.version 2.2.0
-      def nric(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :min_age if legacy_min_age != NOT_GIVEN
-          keywords << :max_age if legacy_max_age != NOT_GIVEN
-        end
-
+      def nric(min_age: 18, max_age: 65)
         birthyear = Date.birthday(min_age: min_age, max_age: max_age).year
         prefix = birthyear < 2000 ? 'S' : 'T'
         values = birthyear.to_s[-2..]

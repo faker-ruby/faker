@@ -16,11 +16,7 @@ module Faker
       #   Faker::Types.rb_string #=> "foobar"
       #
       # @faker.version 1.8.6
-      def rb_string(legacy_words = NOT_GIVEN, words: 1)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :words if legacy_words != NOT_GIVEN
-        end
-
+      def rb_string(words: 1)
         resolved_num = resolve(words)
         word_list =
           translate('faker.lorem.words')
@@ -51,12 +47,7 @@ module Faker
       #   Faker::Types.rb_integer #=> 1
       #
       # @faker.version 1.8.6
-      def rb_integer(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 0, to: 100)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :from if legacy_from != NOT_GIVEN
-          keywords << :to if legacy_to != NOT_GIVEN
-        end
-
+      def rb_integer(from: 0, to: 100)
         rand(from..to).to_i
       end
 
@@ -72,12 +63,7 @@ module Faker
       #   Faker::Types.rb_hash(number: 2) #=> {name: "bob", last: "marley"}
       #
       # @faker.version 1.8.6
-      def rb_hash(legacy_number = NOT_GIVEN, legacy_type = NOT_GIVEN, number: 1, type: -> { random_type })
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-          keywords << :type if legacy_type != NOT_GIVEN
-        end
-
+      def rb_hash(number: 1, type: -> { random_type })
         {}.tap do |hsh|
           Lorem.words(number: number * 2).uniq.first(number).each do |s|
             value = type.is_a?(Proc) ? type.call : type
@@ -98,11 +84,7 @@ module Faker
       #   Faker::Types.complex_rb_hash(number: 2) #=> {user: {first: "bob", last: "marley"}, son: ["damien", "marley"]}
       #
       # @faker.version 1.8.6
-      def complex_rb_hash(legacy_number = NOT_GIVEN, number: 1)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-        end
-
+      def complex_rb_hash(number: 1)
         rb_hash(number: number, type: -> { random_complex_type })
       end
 
@@ -117,11 +99,7 @@ module Faker
       #   Faker::Types.rb_array(len: 4) #=> ["a", 1, 2, "bob"]
       #
       # @faker.version 1.8.6
-      def rb_array(legacy_len = NOT_GIVEN, len: 1)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :len if legacy_len != NOT_GIVEN
-        end
-
+      def rb_array(len: 1)
         [].tap do |ar|
           len.times do
             ar.push random_type

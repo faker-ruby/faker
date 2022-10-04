@@ -150,12 +150,7 @@ module Faker
       #   Faker::Markdown.sandwich(sentences: 6, repeat: 3) #=> returns newline separated content of 1 header, and then 3 sections consisting of, here, 1 6-sentence lorem paragraph and 1 random markdown element. The random markdown element is chosen at random in each iteration of the paragraph-markdown pairing.
       #
       # @faker.version 1.8.0
-      def sandwich(legacy_sentences = NOT_GIVEN, legacy_repeat = NOT_GIVEN, sentences: 3, repeat: 1)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :sentences if legacy_sentences != NOT_GIVEN
-          keywords << :repeat if legacy_repeat != NOT_GIVEN
-        end
-
+      def sandwich(sentences: 3, repeat: 1)
         text_block = []
         text_block << headers
         repeat.times do

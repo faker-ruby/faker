@@ -309,11 +309,7 @@ module Faker
       #
       # @faker.version 1.9.1
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
-      def polish_register_of_national_economy(legacy_length = NOT_GIVEN, length: 9)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :length if legacy_length != NOT_GIVEN
-        end
-
+      def polish_register_of_national_economy(length: 9)
         raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
 
         random_digits = []
@@ -385,11 +381,7 @@ module Faker
       #   Faker::Company.brazilian_company_number #=> "37205322000500"
       #
       # @faker.version 1.9.2
-      def brazilian_company_number(legacy_formatted = NOT_GIVEN, formatted: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :formatted if legacy_formatted != NOT_GIVEN
-        end
-
+      def brazilian_company_number(formatted: false)
         digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
 
         factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle

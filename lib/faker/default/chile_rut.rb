@@ -18,12 +18,7 @@ module Faker
       #   Faker::ChileRut.rut(min_rut: 20890156, fixed: true) #=> 20890156
       #
       # @faker.version 1.9.2
-      def rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 1, fixed: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :min_rut if legacy_min_rut != NOT_GIVEN
-          keywords << :fixed if legacy_fixed != NOT_GIVEN
-        end
-
+      def rut(min_rut: 1, fixed: false)
         @last_rut = fixed ? min_rut : rand_in_range(min_rut, 99_999_999)
       end
 
@@ -83,12 +78,7 @@ module Faker
       #   Faker::ChileRut.full_rut(min_rut: 30686957, fixed: true) #=> "30686957-4"
       #
       # @faker.version next
-      def full_rut(legacy_min_rut = NOT_GIVEN, legacy_fixed = NOT_GIVEN, min_rut: 0, fixed: false, formatted: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :min_rut if legacy_min_rut != NOT_GIVEN
-          keywords << :fixed if legacy_fixed != NOT_GIVEN
-        end
-
+      def full_rut(min_rut: 0, fixed: false, formatted: false)
         if formatted
           "#{rut(min_rut: min_rut, fixed: fixed).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse}-#{dv}"
         else

@@ -17,12 +17,7 @@ module Faker
       #   Faker::Finance.amount_between(0, 10) #=> 4.33
       #
       # @faker.version 1.9.0
-      def amount_between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, from: 0, to: 0)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :from if legacy_from != NOT_GIVEN
-          keywords << :to if legacy_to != NOT_GIVEN
-        end
-
+      def amount_between(from: 0, to: 0)
         Faker::Base.rand_in_range(from, to).round(2)
       end
 
@@ -36,11 +31,7 @@ module Faker
       #   Faker::Invoice.creditor_reference #=> "RF34118592570724925498"
       #
       # @faker.version 1.9.0
-      def creditor_reference(legacy_ref = NOT_GIVEN, ref: '')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :ref if legacy_ref != NOT_GIVEN
-        end
-
+      def creditor_reference(ref: '')
         ref = reference if ref.empty?
 
         "RF#{iban_checksum('RF', ref)}#{ref}"
@@ -56,11 +47,7 @@ module Faker
       #   Faker::Invoice.reference #=> "45656646957845"
       #
       # @faker.version 1.9.0
-      def reference(legacy_ref = NOT_GIVEN, ref: '')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :ref if legacy_ref != NOT_GIVEN
-        end
-
+      def reference(ref: '')
         pattern = fetch('invoice.reference.pattern')
 
         ref = Base.regexify(/#{pattern}/) if ref.empty?

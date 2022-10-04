@@ -19,11 +19,7 @@ module Faker
       #   Faker::Measurement.height(amount: "all") #=> "inches"
       #
       # @faker.version 1.7.3
-      def height(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def height(amount: rand(10))
         define_measurement_locale(amount, 'height')
       end
 
@@ -38,11 +34,7 @@ module Faker
       #   Faker::Measurement.length(amount: 1.4) #=> "1.4 yards"
       #
       # @faker.version 1.7.3
-      def length(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def length(amount: rand(10))
         define_measurement_locale(amount, 'length')
       end
 
@@ -57,11 +49,7 @@ module Faker
       #   Faker::Measurement.volume(amount: 1.4) #=> "1.4 cups"
       #
       # @faker.version 1.7.3
-      def volume(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def volume(amount: rand(10))
         define_measurement_locale(amount, 'volume')
       end
 
@@ -76,11 +64,7 @@ module Faker
       #   Faker::Measurement.weight(amount: 1.4) #=> "1.4 pounds"
       #
       # @faker.version 1.7.3
-      def weight(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def weight(amount: rand(10))
         define_measurement_locale(amount, 'weight')
       end
 
@@ -95,11 +79,7 @@ module Faker
       #   Faker::Measurement.metric_height(amount: 1.4) #=> "1.4 meters"
       #
       # @faker.version 1.7.3
-      def metric_height(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def metric_height(amount: rand(10))
         define_measurement_locale(amount, 'metric_height')
       end
 
@@ -114,11 +94,7 @@ module Faker
       #   Faker::Measurement.metric_length(amount: 1.4) #=> "1.4 decimeters"
       #
       # @faker.version 1.7.3
-      def metric_length(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def metric_length(amount: rand(10))
         define_measurement_locale(amount, 'metric_length')
       end
 
@@ -133,11 +109,7 @@ module Faker
       #   Faker::Measurement.metric_volume(amount: 1.4) #=> "1.4 liters"
       #
       # @faker.version 1.7.3
-      def metric_volume(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def metric_volume(amount: rand(10))
         define_measurement_locale(amount, 'metric_volume')
       end
 
@@ -152,11 +124,7 @@ module Faker
       #   Faker::Measurement.metric_weight(amount: 1.4) #=> "1.4 grams"
       #
       # @faker.version 1.7.3
-      def metric_weight(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def metric_weight(amount: rand(10))
         define_measurement_locale(amount, 'metric_weight')
       end
 
