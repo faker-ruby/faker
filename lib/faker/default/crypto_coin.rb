@@ -16,11 +16,7 @@ module Faker
       #   Faker::CryptoCoin.coin_name #=> "Bitcoin"
       #
       # @faker.version 1.9.2
-      def coin_name(legacy_coin = NOT_GIVEN, coin: coin_array)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :coin if legacy_coin != NOT_GIVEN
-        end
-
+      def coin_name(coin: coin_array)
         coin[COIN_NAME]
       end
 
@@ -33,11 +29,7 @@ module Faker
       #   Faker::CryptoCoin.acronym #=> "BTC"
       #
       # @faker.version 1.9.2
-      def acronym(legacy_coin = NOT_GIVEN, coin: coin_array)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :coin if legacy_coin != NOT_GIVEN
-        end
-
+      def acronym(coin: coin_array)
         coin[ACRONYM]
       end
 
@@ -50,11 +42,7 @@ module Faker
       #   Faker::CryptoCoin.url_logo #=> "https://i.imgur.com/EFz61Ei.png"
       #
       # @faker.version 1.9.2
-      def url_logo(legacy_coin = NOT_GIVEN, coin: coin_array)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :coin if legacy_coin != NOT_GIVEN
-        end
-
+      def url_logo(coin: coin_array)
         coin[URL_LOGO]
       end
 

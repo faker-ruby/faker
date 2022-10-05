@@ -14,11 +14,7 @@ module Faker
       #   Faker::Stripe.valid_card(card_type: "visa_debit") #=> "4000056655665556"
       #
       # @faker.version 1.9.0
-      def valid_card(legacy_card_type = NOT_GIVEN, card_type: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :card_type if legacy_card_type != NOT_GIVEN
-        end
-
+      def valid_card(card_type: nil)
         valid_cards = translate('faker.stripe.valid_cards').keys
 
         if card_type.nil?
@@ -44,11 +40,7 @@ module Faker
       #   Faker::Stripe.valid_token(card_type: "mc_debit") #=> "tok_mastercard_debit"
       #
       # @faker.version 1.9.0
-      def valid_token(legacy_card_type = NOT_GIVEN, card_type: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :card_type if legacy_card_type != NOT_GIVEN
-        end
-
+      def valid_token(card_type: nil)
         valid_tokens = translate('faker.stripe.valid_tokens').keys
 
         if card_type.nil?
@@ -73,11 +65,7 @@ module Faker
       #   Faker::Stripe.invalid_card(card_error: "addressZipFail") #=> "4000000000000010"
       #
       # @faker.version 1.9.0
-      def invalid_card(legacy_card_error = NOT_GIVEN, card_error: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :card_error if legacy_card_error != NOT_GIVEN
-        end
-
+      def invalid_card(card_error: nil)
         invalid_cards = translate('faker.stripe.invalid_cards').keys
 
         if card_error.nil?
@@ -130,11 +118,7 @@ module Faker
       #   Faker::Stripe.ccv(card_type: "amex") #=> "1234"
       #
       # @faker.version 1.9.0
-      def ccv(legacy_card_type = NOT_GIVEN, card_type: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :card_type if legacy_card_type != NOT_GIVEN
-        end
-
+      def ccv(card_type: nil)
         (card_type.to_s == 'amex' ? rand_in_range(1000, 9999) : rand_in_range(100, 999)).to_s
       end
     end

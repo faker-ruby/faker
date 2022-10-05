@@ -17,11 +17,7 @@ module Faker
       #   Faker::String.random(length: [1, (2..5), [3, 6], nil]) #=> "葓L#ћ"
       #
       # @faker.version 1.9.0
-      def random(legacy_length = NOT_GIVEN, length: 32)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :length if legacy_length != NOT_GIVEN
-        end
-
+      def random(length: 32)
         utf8string select_a length
       end
 

@@ -13,8 +13,6 @@ module Faker
     }.freeze
 
     class << self
-      # rubocop:disable Metrics/ParameterLists
-
       ##
       # Produce a random time between two times.
       #
@@ -37,13 +35,7 @@ module Faker
       #   Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long) #=> "2018年10月16日(火) 10時48分27秒 -0500"
       #
       # @faker.version 1.5.0
-      def between(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_format = NOT_GIVEN, from:, to:, format: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :from if legacy_from != NOT_GIVEN
-          keywords << :to if legacy_to != NOT_GIVEN
-          keywords << :format if legacy_format != NOT_GIVEN
-        end
-
+      def between(from:, to:, format: nil)
         from = get_time_object(from)
         to = get_time_object(to)
 
@@ -79,14 +71,7 @@ module Faker
       #     #=> "Fri, 19 Oct 2018 15:17:46 -0500"
       #
       # @faker.version 1.0.0
-      def between_dates(legacy_from = NOT_GIVEN, legacy_to = NOT_GIVEN, legacy_period = NOT_GIVEN, legacy_format = NOT_GIVEN, from:, to:, period: :all, format: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :from if legacy_from != NOT_GIVEN
-          keywords << :to if legacy_to != NOT_GIVEN
-          keywords << :period if legacy_period != NOT_GIVEN
-          keywords << :format if legacy_format != NOT_GIVEN
-        end
-
+      def between_dates(from:, to:, period: :all, format: nil)
         date = Faker::Date.between(from: from, to: to)
         time = date_with_random_time(date, period)
         time_with_format(time, format)
@@ -107,13 +92,7 @@ module Faker
       #     #=> "October 21, 2018 20:47"
       #
       # @faker.version 1.5.0
-      def forward(legacy_days = NOT_GIVEN, legacy_period = NOT_GIVEN, legacy_format = NOT_GIVEN, days: 365, period: :all, format: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :days if legacy_days != NOT_GIVEN
-          keywords << :period if legacy_period != NOT_GIVEN
-          keywords << :format if legacy_format != NOT_GIVEN
-        end
-
+      def forward(days: 365, period: :all, format: nil)
         time_with_format(date_with_random_time(Faker::Date.forward(days: days), period), format)
       end
 
@@ -132,16 +111,9 @@ module Faker
       #     #=> "14 Oct 07:44"
       #
       # @faker.version 1.5.0
-      def backward(legacy_days = NOT_GIVEN, legacy_period = NOT_GIVEN, legacy_format = NOT_GIVEN, days: 365, period: :all, format: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :days if legacy_days != NOT_GIVEN
-          keywords << :period if legacy_period != NOT_GIVEN
-          keywords << :format if legacy_format != NOT_GIVEN
-        end
-
+      def backward(days: 365, period: :all, format: nil)
         time_with_format(date_with_random_time(Faker::Date.backward(days: days), period), format)
       end
-      # rubocop:enable Metrics/ParameterLists
 
       private
 

@@ -62,11 +62,7 @@ module Faker
       #   Faker::Vehicle.model(make_of_model: 'Toyota') #=> "Prius"
       #
       # @faker.version 1.6.4
-      def model(legacy_make_of_model = NOT_GIVEN, make_of_model: '')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :make_of_model if legacy_make_of_model != NOT_GIVEN
-        end
-
+      def model(make_of_model: '')
         return fetch("vehicle.models_by_make.#{make}") if make_of_model.empty?
 
         fetch("vehicle.models_by_make.#{make_of_model}")
@@ -249,12 +245,7 @@ module Faker
       #   Faker::Vehicle.kilometrage #=> 35378
       #
       # @faker.version 1.6.4
-      def mileage(legacy_min = NOT_GIVEN, legacy_max = NOT_GIVEN, min: MILEAGE_MIN, max: MILEAGE_MAX)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :min if legacy_min != NOT_GIVEN
-          keywords << :max if legacy_max != NOT_GIVEN
-        end
-
+      def mileage(min: MILEAGE_MIN, max: MILEAGE_MAX)
         rand_in_range(min, max)
       end
 
@@ -271,11 +262,7 @@ module Faker
       #   Faker::Vehicle.license_plate(state_abbreviation: 'FL') #=> "977 UNU"
       #
       # @faker.version 1.6.4
-      def license_plate(legacy_state_abbreviation = NOT_GIVEN, state_abbreviation: '')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :state_abbreviation if legacy_state_abbreviation != NOT_GIVEN
-        end
-
+      def license_plate(state_abbreviation: '')
         return regexify(bothify(fetch('vehicle.license_plate'))) if state_abbreviation.empty?
 
         key = "vehicle.license_plate_by_state.#{state_abbreviation}"

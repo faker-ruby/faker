@@ -146,11 +146,7 @@ module Faker
       #   Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
       #
       # @faker.version 1.9.2
-      def brazilian_citizen_number(legacy_formatted = NOT_GIVEN, formatted: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :formatted if legacy_formatted != NOT_GIVEN
-        end
-
+      def brazilian_citizen_number(formatted: false)
         digits = Faker::Number.leading_zero_number(digits: 9) until digits&.match(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
@@ -171,11 +167,7 @@ module Faker
       #   Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
       #
       # @faker.version 2.1.2
-      def brazilian_id(legacy_formatted = NOT_GIVEN, formatted: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :formatted if legacy_formatted != NOT_GIVEN
-        end
-
+      def brazilian_id(formatted: false)
         digits = Faker::Number.between(to: BRAZILIAN_ID_FROM, from: BRAZILIAN_ID_TO).to_s
         check_digit = brazilian_id_checksum_digit(digits)
         number = [digits, check_digit].join

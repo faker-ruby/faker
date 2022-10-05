@@ -123,11 +123,7 @@ module Faker
       #   Faker::PhoneNumber.extension #=> "3764"
       #
       # @faker.version 1.3.0
-      def subscriber_number(legacy_length = NOT_GIVEN, length: 4)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :length if legacy_length != NOT_GIVEN
-        end
-
+      def subscriber_number(length: 4)
         rand.to_s[2..(1 + length)]
       end
 

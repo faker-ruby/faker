@@ -16,11 +16,7 @@ module Faker
       #   Faker::Bank.account_number(digits: 13) #=> 673858237902
       #
       # @faker.version 1.9.1
-      def account_number(legacy_digits = NOT_GIVEN, digits: 10)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :digits if legacy_digits != NOT_GIVEN
-        end
-
+      def account_number(digits: 10)
         output = ''
 
         output += rand.to_s[2..] while output.length < digits
@@ -40,14 +36,10 @@ module Faker
       #   Faker::Bank.iban(country_code: nil) #=> "DE45186738071857270067"
       #
       # @faker.version 1.7.0
-      def iban(legacy_country_code = NOT_GIVEN, country_code: 'GB')
+      def iban(country_code: 'GB')
         # Each country has its own format for bank accounts
         # Many of them use letters in certain parts of the account
         # Using regex patterns we can create virtually any type of bank account
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :country_code if legacy_country_code != NOT_GIVEN
-        end
-
         country_code ||= iban_country_code
 
         begin
