@@ -3,7 +3,7 @@
 # Faker
 [![Tests](https://github.com/faker-ruby/faker/workflows/Tests/badge.svg)](https://github.com/faker-ruby/faker/actions?query=workflow%3ATests)
 [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
-[![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=master)](https://inch-ci.org/github/faker-ruby/faker)
+[![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=main)](https://inch-ci.org/github/faker-ruby/faker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
 
@@ -44,7 +44,7 @@ development.
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
   You must explicitly specify when you require unique values, see [details](#ensuring-unique-values).
   Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
-* This is the `master` branch of Faker and may contain changes that are not yet released.
+* This is the `main` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
   List of all versions is [available here](https://github.com/stympy/faker/releases).
 
@@ -55,7 +55,7 @@ gem install faker
 Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your Gemfile to:
 
 ```ruby
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 ```
 
 ## Usage
@@ -117,7 +117,7 @@ Faker::Company.bs #=> "cultivate viral synergies"
 **NOTE: Some of the generators below aren't released yet. If you want to use them, change the line in your gemfile to:**
 
 ```ruby
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 ```
 
 ### Default
@@ -400,7 +400,7 @@ en-au-ocker:
 ```
 
 ## Contributing
-See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/master/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/main/CONTRIBUTING.md).
 
 ## Contact
 Comments and feedback are welcome. Send an email to Benjamin Curtis via the [google group](http://groups.google.com/group/ruby-faker).

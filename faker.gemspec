@@ -21,10 +21,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.required_ruby_version = '>= 2.7'
 
-  spec.metadata['changelog_uri'] = 'https://github.com/faker-ruby/faker/blob/master/CHANGELOG.md'
+  spec.metadata['changelog_uri'] = 'https://github.com/faker-ruby/faker/blob/main/CHANGELOG.md'
   spec.metadata['source_code_uri'] = 'https://github.com/faker-ruby/faker'
   spec.metadata['bug_tracker_uri'] = 'https://github.com/faker-ruby/faker/issues'
-  spec.metadata['documentation_uri'] = 'https://rubydoc.info/github/faker-ruby/faker/master'
+  spec.metadata['documentation_uri'] = 'https://rubydoc.info/github/faker-ruby/faker'
   spec.metadata['yard.run'] = 'yri'
   spec.metadata['rubygems_mfa_required'] = 'true'
 
