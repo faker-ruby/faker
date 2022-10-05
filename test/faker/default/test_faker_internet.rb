@@ -432,11 +432,11 @@ class TestFakerInternetSafeMode < Test::Unit::TestCase
   end
 
   def test_email_with_domain_option_given
-    assert_equal 'janedoe@example.com', @tester.email(name: 'jane doe', domain: 'customdomain')
+    assert_match(/.+@customdomain\.\w+/, @tester.email(name: 'jane doe', domain: 'customdomain'))
   end
 
   def test_email_with_domain_option_given_with_domain_suffix
-    assert 'janedoe@customdomain.example.com', @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix')
+    assert_match(/.+@customdomain\.customdomainsuffix/, @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix'))
   end
 
   def test_free_email
@@ -456,7 +456,7 @@ class TestFakerInternetSafeMode < Test::Unit::TestCase
   end
 
   def test_domain_name_with_subdomain_and_with_domain_option_given
-    assert_equal("true.example.com", @tester.domain_name(subdomain: true, domain: 'customdomain'))
+    assert_equal("true.customdomain.com", @tester.domain_name(subdomain: true, domain: 'customdomain'))
   end
 
   def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffix
