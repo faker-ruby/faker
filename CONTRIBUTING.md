@@ -27,11 +27,11 @@ We love pull requests. Here's a quick guide:
 
 For those of you with commit access, please check out Scott Chacon's blog post about [github flow](http://scottchacon.com/2011/08/31/github-flow.html)
 
-> * Anything in the master branch is deployable
-> * To work on something new, create a descriptively named branch off of master (ie: new-oauth2-scopes)
+> * Anything in the main branch is deployable
+> * To work on something new, create a descriptively named branch off of main (ie: new-oauth2-scopes)
 > * Commit to that branch locally and regularly push your work to the same named branch on the server
 > * When you need feedback or help, or you think the branch is ready for merging, open a pull request
-> * After someone else has reviewed and signed off on the feature, you can merge it into master
+> * After someone else has reviewed and signed off on the feature, you can merge it into main
 
 If you're reviewing a PR, you should ask yourself:
 > * Does it work as described? A PR should have a great description.
