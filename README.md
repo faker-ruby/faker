@@ -44,6 +44,8 @@ development.
 * While Faker generates data at random, returned values are not guaranteed to be unique by default.
   You must explicitly specify when you require unique values, see [details](#ensuring-unique-values).
   Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
+* Minitest and Faker >= 2.22 users might need to add the following to the `test_helper.rb` or `rails_helper.rb` file:
+  `Faker::Config.random = Random.new`. See [Issue #2534](https://github.com/faker-ruby/faker/issues/2534) for more details.
 * This is the `master` branch of Faker and may contain changes that are not yet released.
   Please refer the README of your version for the available methods.
   List of all versions is [available here](https://github.com/stympy/faker/releases).
