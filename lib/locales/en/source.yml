@@ -47,5 +47,5 @@ en:
                   IO.puts x
                 end)"
         clojure: "
-                (for ([i (in-range 1 11)])
-                (display i))"
+                (for [i (range 1 11)]
+                  (println i))"
