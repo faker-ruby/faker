@@ -3,13 +3,12 @@ name: Publish to RubyGems
 on:
   release:
     types:
-      - "created"
+      - [ created ]
   push:
     tags:
       - "v*"
   pull_request:
-    branches: [ master ]
-
+    branches: [ main ]
 
 jobs: 
   publish:
@@ -37,12 +36,6 @@ jobs:
 
       - name: Build Gem
         run: gem build -o faker.gem faker.gemspec
-
-        # - name: Install Ruby Dependencies
-        #   run: bundle install
-
-        # - name: Run tests
-        #   run: bundle exec rake test
 
       - name: Push to RubyGems
         env:
