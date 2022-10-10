@@ -486,11 +486,7 @@ module Faker
       end
 
       def collect_regon_sum(array)
-        weights = if array.size == 9
-                    [8, 9, 2, 3, 4, 5, 6, 7]
-                  else
-                    [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8]
-                  end
+        weights = array.size == 9 ? [8, 9, 2, 3, 4, 5, 6, 7] : [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8]
         sum = weight_sum(array, weights) % 11
         sum == 10 ? 0 : sum
       end
