@@ -47,6 +47,17 @@ module Faker
       def internet_safe_mode?
         Thread.current[:faker_internet_safe_mode] == true
       end
+
+      # @param domains [Array]
+      # @example
+      #   ['yourdomain.com', 'another-domain.com']
+      def internet_safe_domains=(domains)
+        Thread.current[:internet_safe_domains] = domains
+      end
+
+      def internet_safe_domains
+        Thread.current[:internet_safe_domains] ||= [Faker::Internet::DEFAULT_SAFE_DOMAIN]
+      end
     end
   end
 

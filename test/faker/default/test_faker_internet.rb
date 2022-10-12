@@ -428,19 +428,19 @@ class TestFakerInternetSafeMode < Test::Unit::TestCase
   end
 
   def test_email
-    assert_match(/.+@example.com/, @tester.email)
+    assert_match(/.+@example.example/, @tester.email)
   end
 
   def test_email_with_domain_option_given
-    assert_match(/.+@customdomain\.\w+/, @tester.email(name: 'jane doe', domain: 'customdomain'))
+    assert_match(/.+@example\.\w+/, @tester.email(name: 'jane doe', domain: 'customdomain'))
   end
 
   def test_email_with_domain_option_given_with_domain_suffix
-    assert_match(/.+@customdomain\.customdomainsuffix/, @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix'))
+    assert_match(/.+@example.example/, @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix'))
   end
 
   def test_free_email
-    assert_match(/.+@example.com/, @tester.free_email)
+    assert_match(/.+@example.example/, @tester.free_email)
   end
 
   def test_safe_email
@@ -452,15 +452,15 @@ class TestFakerInternetSafeMode < Test::Unit::TestCase
   end
 
   def test_domain_name_with_subdomain
-    assert_equal("true.example.com", @tester.domain_name(subdomain: true))
+    assert_equal("true.#{Faker::Internet::DEFAULT_SAFE_DOMAIN}", @tester.domain_name(subdomain: true))
   end
 
   def test_domain_name_with_subdomain_and_with_domain_option_given
-    assert_equal("true.customdomain.com", @tester.domain_name(subdomain: true, domain: 'customdomain'))
+    assert_equal("true.#{Faker::Internet::DEFAULT_SAFE_DOMAIN}", @tester.domain_name(subdomain: true, domain: 'customdomain'))
   end
 
   def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffix
-    assert_match(/customdomain\.customdomainsuffix/, @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix'))
+    assert_equal("true.#{Faker::Internet::DEFAULT_SAFE_DOMAIN}", @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix'))
   end
 
   def test_domain_word
@@ -472,6 +472,25 @@ class TestFakerInternetSafeMode < Test::Unit::TestCase
   end
 
   def test_url
-    assert_match %r{^https://example\.com/username$}, @tester.url(host: 'domain.com', path: '/username', scheme: 'https')
+    assert_match "https://#{Faker::Internet::DEFAULT_SAFE_DOMAIN}/username", @tester.url(host: 'domain.com', path: '/username', scheme: 'https')
+  end
+end
+
+class TestFakerInternetSafeModeCustomDomains < Test::Unit::TestCase
+  def setup
+    Faker::Config.internet_safe_mode = true
+    Faker::Config.internet_safe_domains = ['faker.com', 'faker.net']
+    @tester = Faker::Internet
+  end
+
+  def teardown
+    Faker::Config.internet_safe_domains = [Faker::Internet::DEFAULT_SAFE_DOMAIN]
+    Faker::Config.internet_safe_mode = false
+  end
+
+  def test_multiple_test_domains
+    10.times do
+      assert(Faker::Config.internet_safe_domains.include?(@tester.email.split('@').last))
+    end
   end
 end
