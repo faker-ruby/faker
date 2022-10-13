@@ -19,14 +19,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - uses: chrnorm/deployment-action@releases/v1
-        name: Create GitHub deployment
-        id: deployment
-        with:
-          token: "${{ github.token }}"
-          target_url: ${{ env.TARGET_URL }}
-          environment: production
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -39,21 +31,3 @@ jobs:
         env:
           GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }}
         run: gem push faker.gem
-
-      - name: Update deployment status (success)
-        if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: "${{ github.token }}"
-          target_url: ${{ env.TARGET_URL }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-
-      - name: Update deployment status (failure)
-        if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: "${{ github.token }}"
-          target_url: ${{ env.TARGET_URL }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
