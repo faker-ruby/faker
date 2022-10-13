@@ -55,7 +55,7 @@ module Faker
         # url_parts += [category, number, text].compact
         # url_parts.join('/')
         warn 'DEPRECATED, LoremPixel is going to be removed in the next release. Please use Faker::LoremFlickr instead.'
-        LoremFlickr.image(size: '300x300', search_terms: [category, number, text], match_all: false)
+        LoremFlickr.image(size: size, search_terms: [category, number, text], match_all: false)
       end
       # rubocop:enable Metrics/ParameterLists
     end
