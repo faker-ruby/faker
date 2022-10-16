@@ -8,6 +8,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: read
+
 jobs: 
   publish:
     name: Publish
