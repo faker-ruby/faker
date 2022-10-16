@@ -165,8 +165,9 @@ module Faker
           d =~ /[A-Z]/ ? (d.ord - 55).to_s : d
         end.join.to_i
 
-        # This is answer to (iban_to_num + checksum) % 97 == 1
-        checksum = (1 - account_to_number) % 97
+        # This is the correct answer to (iban_to_num + checksum) % 97 == 1
+        # See steps 6 & 7 - https://en.wikipedia.org/wiki/International_Bank_Account_Number#Generating_IBAN_check_digits
+        checksum = 98 - (account_to_number % 97)
 
         # Use leftpad to make the size always to 2
         checksum.to_s.rjust(2, '0')
