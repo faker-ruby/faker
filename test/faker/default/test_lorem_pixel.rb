@@ -19,16 +19,16 @@ class TestLoremPixel < Test::Unit::TestCase
   end
 
   def test_deprecation_message
-    begin
-      original_stderr = $stderr
-      fake_std_err    = FakeStdErr.new
-      $stderr         = fake_std_err
-      @tester.image
-      warn_message = "NOTE: Faker::LoremPixel.image is deprecated; use Faker::LoremFlickr.image instead. It will be removed on or after 2022-12"
-      assert(fake_std_err.messages[0].include?(warn_message))
-    ensure
-      $std_err = original_stderr
-    end
+    # rubocop:disable Style/GlobalVars
+    original_stderr = $stderr
+    fake_std_err    = FakeStdErr.new
+    $stderr         = fake_std_err
+    @tester.image
+    warn_message = 'NOTE: Faker::LoremPixel.image is deprecated; use Faker::LoremFlickr.image instead. It will be removed on or after 2022-12'
+    assert_includes(fake_std_err.messages[0], warn_message)
+  ensure
+    $std_err = original_stderr
+    # rubocop:enable Style/GlobalVars
   end
 
   def test_lorempixel
