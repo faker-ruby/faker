@@ -4,7 +4,6 @@ module Faker
   class LoremPixel < Base
     class << self
       extend Gem::Deprecate
-      singleton_methods(false).each { |method| deprecate(method, 'LoremFlickr') }
 
       SUPPORTED_CATEGORIES = %w[abstract
                                 animals
@@ -45,7 +44,6 @@ module Faker
       #
       # @faker.version 1.7.0
       def image(size: '300x300', is_gray: false, category: nil, number: nil, text: nil, secure: true)
-        warn 'DEPRECATED, LoremPixel is going to be removed in the next release. Please use Faker::LoremFlickr instead.'
         raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
         raise ArgumentError, "Supported categories are #{SUPPORTED_CATEGORIES.join(', ')}" unless category.nil? || SUPPORTED_CATEGORIES.include?(category)
         raise ArgumentError, 'Category required when number is passed' if !number.nil? && category.nil?
@@ -59,6 +57,7 @@ module Faker
         url_parts += [category, number, text].compact
         url_parts.join('/')
       end
+      deprecate :image, 'Faker::LoremFlickr.image', 2022, 12
       # rubocop:enable Metrics/ParameterLists
     end
   end
