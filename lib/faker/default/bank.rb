@@ -158,7 +158,7 @@ module Faker
       end
 
       # Calculates the mandatory checksum in 3rd and 4th characters in IBAN format
-      # source: https://en.wikipedia.org/wiki/International_Bank_Account_Number#Validating_the_IBAN
+      # source: https://en.wikipedia.org/wiki/International_Bank_Account_Number#Generating_IBAN_check_digits
       def iban_checksum(country_code, account)
         # Converts letters to numbers according the iban rules, A=10..Z=35
         account_to_number = "#{account}#{country_code}00".upcase.chars.map do |d|
@@ -166,7 +166,6 @@ module Faker
         end.join.to_i
 
         # This is the correct answer to (iban_to_num + checksum) % 97 == 1
-        # See steps 6 & 7 - https://en.wikipedia.org/wiki/International_Bank_Account_Number#Generating_IBAN_check_digits
         checksum = 98 - (account_to_number % 97)
 
         # Use leftpad to make the size always to 2

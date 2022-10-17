@@ -73,7 +73,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ad')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}\d{8}[A-Z0-9]{12}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # United Arab Emirates
@@ -81,7 +81,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ae')
     assert_equal(23, account.length)
     assert_match(/^#{IBAN_HEADER}\d{19}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Albania
@@ -89,7 +89,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'al')
     assert_equal(28, account.length)
     assert_match(/^#{IBAN_HEADER}\d{8}[A-Z0-9]{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Austria
@@ -97,7 +97,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'at')
     assert_equal(20, account.length)
     assert_match(/^#{IBAN_HEADER}\d{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Azerbaijan, Republic of
@@ -105,7 +105,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'az')
     assert_equal(28, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{20}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Bosnia
@@ -113,7 +113,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ba')
     assert_equal(20, account.length)
     assert_match(/^#{IBAN_HEADER}\d{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Belgium
@@ -121,7 +121,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'be')
     assert_equal(16, account.length)
     assert_match(/^#{IBAN_HEADER}\d{12}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Bulgaria
@@ -129,7 +129,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'bg')
     assert_equal(22, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{6}[A-Z0-9]{8}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Bahrain
@@ -137,7 +137,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'bh')
     assert_equal(22, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{14}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Brazil
@@ -145,7 +145,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'br')
     assert_equal(29, account.length)
     assert_match(/^#{IBAN_HEADER}[0-9]{8}[0-9]{5}[0-9]{10}[A-Z]{1}[A-Z0-9]{1}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Switzerland
@@ -153,7 +153,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ch')
     assert_equal(21, account.length)
     assert_match(/^#{IBAN_HEADER}\d{5}[A-Z0-9]{12}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Costa Rica
@@ -161,7 +161,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'cr')
     assert_equal(22, account.length)
     assert_match(/^#{IBAN_HEADER}0\d{3}\d{14}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Cyprus
@@ -169,7 +169,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'cy')
     assert_equal(28, account.length)
     assert_match(/^#{IBAN_HEADER}\d{8}[A-Z0-9]{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Czech Republic
@@ -177,7 +177,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'cz')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}\d{20}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Germany
@@ -185,7 +185,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'de')
     assert_equal(22, account.length)
     assert_match(/^#{IBAN_HEADER}\d{18}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Denmark
@@ -193,7 +193,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'dk')
     assert_equal(18, account.length)
     assert_match(/^#{IBAN_HEADER}\d{14}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Dominican Republic
@@ -201,7 +201,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'do')
     assert_equal(28, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{20}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Estonia
@@ -209,7 +209,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ee')
     assert_equal(20, account.length)
     assert_match(/^#{IBAN_HEADER}\d{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Spain
@@ -217,7 +217,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'es')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}\d{20}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Finland
@@ -225,7 +225,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'fi')
     assert_equal(18, account.length)
     assert_match(/^#{IBAN_HEADER}\d{14}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Faroe Islands
@@ -233,7 +233,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'fo')
     assert_equal(18, account.length)
     assert_match(/^#{IBAN_HEADER}\d{14}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # France
@@ -242,7 +242,7 @@ class TestFakerBank < Test::Unit::TestCase
       account = @tester.iban(country_code: 'fr')
       assert_equal(27, account.length)
       assert_match(/^#{IBAN_HEADER}\d{10}[A-Z0-9]{11}\d{2}$/, account)
-      assert iban_checksum(account), 'IBAN checksum is invalid'
+      assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
     end
   end
 
@@ -252,7 +252,7 @@ class TestFakerBank < Test::Unit::TestCase
       account = @tester.iban(country_code: 'gb')
       assert_equal(22, account.length)
       assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{14}$/, account)
-      assert iban_checksum(account), 'IBAN checksum is invalid'
+      assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
     end
   end
 
@@ -261,7 +261,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ge')
     assert_equal(22, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{2}\d{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Gibraltar
@@ -269,7 +269,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'gi')
     assert_equal(23, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{15}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Greenland
@@ -277,7 +277,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'gl')
     assert_equal(18, account.length)
     assert_match(/^#{IBAN_HEADER}\d{14}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Greece
@@ -285,7 +285,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'gr')
     assert_equal(27, account.length)
     assert_match(/^#{IBAN_HEADER}\d{7}[A-Z0-9]{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Guatemala
@@ -293,7 +293,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'gt')
     assert_equal(28, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z0-9]{4}\d{2}\d{2}[A-Z0-9]{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Croatia
@@ -301,7 +301,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'hr')
     assert_equal(21, account.length)
     assert_match(/^#{IBAN_HEADER}\d{17}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Hungary
@@ -309,7 +309,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'hu')
     assert_equal(28, account.length)
     assert_match(/^#{IBAN_HEADER}\d{24}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Ireland
@@ -317,7 +317,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ie')
     assert_equal(22, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{14}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Israel
@@ -325,7 +325,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'il')
     assert_equal(23, account.length)
     assert_match(/^#{IBAN_HEADER}\d{19}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Iceland
@@ -333,7 +333,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'is')
     assert_equal(26, account.length)
     assert_match(/^#{IBAN_HEADER}\d{22}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Italy
@@ -341,7 +341,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'it')
     assert_equal(27, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]\d{10}[A-Z0-9]{12}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Kuwait
@@ -349,7 +349,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'kw')
     assert_equal(30, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{22}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Kazakhstan
@@ -357,7 +357,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'kz')
     assert_equal(20, account.length)
     assert_match(/^#{IBAN_HEADER}[0-9]{3}[A-Z0-9]{13}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Lebanon
@@ -365,7 +365,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'lb')
     assert_equal(28, account.length)
     assert_match(/^#{IBAN_HEADER}\d{4}[A-Z0-9]{20}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Liechtenstein
@@ -373,7 +373,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'li')
     assert_equal(21, account.length)
     assert_match(/^#{IBAN_HEADER}\d{5}[A-Z0-9]{12}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Lithuania
@@ -381,7 +381,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'lt')
     assert_equal(20, account.length)
     assert_match(/^#{IBAN_HEADER}\d{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Luxembourg
@@ -389,7 +389,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'lu')
     assert_equal(20, account.length)
     assert_match(/^#{IBAN_HEADER}\d{3}[A-Z0-9]{13}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Latvia
@@ -397,7 +397,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'lv')
     assert_equal(21, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{13}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Monaco
@@ -405,7 +405,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'mc')
     assert_equal(27, account.length)
     assert_match(/^#{IBAN_HEADER}\d{10}[A-Z0-9]{11}\d{2}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Moldova
@@ -413,7 +413,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'md')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{2}[A-Z0-9]{18}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Montenegro
@@ -421,7 +421,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'me')
     assert_equal(22, account.length)
     assert_match(/^#{IBAN_HEADER}\d{18}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Macedonia
@@ -429,7 +429,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'mk')
     assert_equal(19, account.length)
     assert_match(/^#{IBAN_HEADER}\d{3}[A-Z0-9]{10}\d{2}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Mauritania
@@ -437,7 +437,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'mr')
     assert_equal(27, account.length)
     assert_match(/^#{IBAN_HEADER}\d{23}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Malta
@@ -445,7 +445,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'mt')
     assert_equal(31, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{5}[A-Z0-9]{18}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Mauritius
@@ -453,7 +453,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'mu')
     assert_equal(30, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{19}[A-Z]{3}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Netherlands
@@ -461,7 +461,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'nl')
     assert_equal(18, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{10}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Norway
@@ -469,7 +469,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'no')
     assert_equal(15, account.length)
     assert_match(/^#{IBAN_HEADER}\d{11}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Pakistan
@@ -477,7 +477,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'pk')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Poland
@@ -485,7 +485,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'pl')
     assert_equal(28, account.length)
     assert_match(/^#{IBAN_HEADER}\d{8}[A-Z0-9]{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Palestinian Territory, Occupied
@@ -493,7 +493,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ps')
     assert_equal(29, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{21}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Portugal
@@ -501,7 +501,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'pt')
     assert_equal(25, account.length)
     assert_match(/^#{IBAN_HEADER}\d{21}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Qatar
@@ -509,7 +509,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'qa')
     assert_equal(29, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{21}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Romania
@@ -517,7 +517,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ro')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}[A-Z0-9]{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Serbia
@@ -525,7 +525,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'rs')
     assert_equal(22, account.length)
     assert_match(/^#{IBAN_HEADER}\d{18}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Saudi Arabia
@@ -533,7 +533,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'sa')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}\d{2}[A-Z0-9]{18}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Sweden
@@ -541,7 +541,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'se')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}\d{20}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Slovenia
@@ -549,7 +549,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'si')
     assert_equal(19, account.length)
     assert_match(/^#{IBAN_HEADER}\d{15}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Slovakia
@@ -557,7 +557,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'sk')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}\d{20}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # San Marino
@@ -565,7 +565,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'sm')
     assert_equal(27, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]\d{10}[A-Z0-9]{12}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Timor-Leste
@@ -573,7 +573,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'tl')
     assert_equal(23, account.length)
     assert_match(/^#{IBAN_HEADER}\d{19}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Tunisia
@@ -581,7 +581,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'tn')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}\d{20}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Turkey
@@ -589,7 +589,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'tr')
     assert_equal(26, account.length)
     assert_match(/^#{IBAN_HEADER}\d{5}[A-Z0-9]{17}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Ukraine
@@ -597,7 +597,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'ua')
     assert_equal(29, account.length)
     assert_match(/^#{IBAN_HEADER}\d{25}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Virgin Islands, British
@@ -605,7 +605,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'vg')
     assert_equal(24, account.length)
     assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   # Kosovo, Republic of
@@ -613,7 +613,7 @@ class TestFakerBank < Test::Unit::TestCase
     account = @tester.iban(country_code: 'xk')
     assert_equal(20, account.length)
     assert_match(/^#{IBAN_HEADER}\d{16}$/, account)
-    assert iban_checksum(account), 'IBAN checksum is invalid'
+    assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
   end
 
   def test_iban_invalid
@@ -625,7 +625,7 @@ class TestFakerBank < Test::Unit::TestCase
   private
 
   # https://en.wikipedia.org/wiki/International_Bank_Account_Number#Validating_the_IBAN
-  def iban_checksum(iban)
+  def valid_iban_checksum?(iban)
     # Check digit should be between 2..98
     return false unless (2..98).include? iban[2, 2].to_i
 
