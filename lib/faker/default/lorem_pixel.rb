@@ -3,6 +3,9 @@
 module Faker
   class LoremPixel < Base
     class << self
+      extend Gem::Deprecate
+      singleton_methods(false).each { |method| deprecate(method, 'LoremFlickr') }
+
       SUPPORTED_CATEGORIES = %w[abstract
                                 animals
                                 business
@@ -42,20 +45,19 @@ module Faker
       #
       # @faker.version 1.7.0
       def image(size: '300x300', is_gray: false, category: nil, number: nil, text: nil, secure: true)
-        # raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
-        # raise ArgumentError, "Supported categories are #{SUPPORTED_CATEGORIES.join(', ')}" unless category.nil? || SUPPORTED_CATEGORIES.include?(category)
-        # raise ArgumentError, 'Category required when number is passed' if !number.nil? && category.nil?
-        # raise ArgumentError, 'Number must be between 1 and 10' unless number.nil? || (1..10).cover?(number)
-        # raise ArgumentError, 'Category and number must be passed when text is passed' if !text.nil? && number.nil? && category.nil?
-
-        # url_parts = secure ? ['https:/'] : ['http:/']
-        # url_parts << ['lorempixel.com']
-        # url_parts << 'g' if is_gray
-        # url_parts += size.split('x')
-        # url_parts += [category, number, text].compact
-        # url_parts.join('/')
         warn 'DEPRECATED, LoremPixel is going to be removed in the next release. Please use Faker::LoremFlickr instead.'
-        LoremFlickr.image(size: size, search_terms: [category, number, text], match_all: false)
+        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
+        raise ArgumentError, "Supported categories are #{SUPPORTED_CATEGORIES.join(', ')}" unless category.nil? || SUPPORTED_CATEGORIES.include?(category)
+        raise ArgumentError, 'Category required when number is passed' if !number.nil? && category.nil?
+        raise ArgumentError, 'Number must be between 1 and 10' unless number.nil? || (1..10).cover?(number)
+        raise ArgumentError, 'Category and number must be passed when text is passed' if !text.nil? && number.nil? && category.nil?
+
+        url_parts = secure ? ['https:/'] : ['http:/']
+        url_parts << ['lorempixel.com']
+        url_parts << 'g' if is_gray
+        url_parts += size.split('x')
+        url_parts += [category, number, text].compact
+        url_parts.join('/')
       end
       # rubocop:enable Metrics/ParameterLists
     end
