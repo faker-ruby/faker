@@ -104,7 +104,7 @@
     * Added bork locale for bork-ified lorem [johnbentcope]
     * Added IPv6 address generator [jc00ke]
     * Removed deprecation warnings for Array#rand [chrismarshall]
-    * Added German translation and I18n improvments [Matthias Kühnert]
+    * Added German translation and I18n improvements [Matthias Kühnert]
     * Added Dutch translation [moretea]
     * Added Lat/Long generator [Andy Callaghan]
     * Added buzzword-laden title generator [supercleanse]
