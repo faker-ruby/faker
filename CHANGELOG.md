@@ -426,7 +426,7 @@ This version:
 ## Bug/Fixes
 
 - [PR #2050](https://github.com/faker-ruby/faker/pull/2050) Fix random error in music tests [@martinjaimem](https://github.com/martinjaimem)
-- [PR #2037](https://github.com/faker-ruby/faker/pull/2037) Bug Fix: BIC Collission (Issue 1907) [@Newman101](https://github.com/Newman101)
+- [PR #2037](https://github.com/faker-ruby/faker/pull/2037) Bug Fix: BIC Collision (Issue 1907) [@Newman101](https://github.com/Newman101)
 - [PR #2026](https://github.com/faker-ruby/faker/pull/2026) Sanitize email when name has special characters [@Zeragamba](https://github.com/Zeragamba)
 - [PR #1785](https://github.com/faker-ruby/faker/pull/1785) Adds a fix for when :en is not one of the available locales [@jaimerodas](https://github.com/jaimerodas)
 
@@ -1276,7 +1276,7 @@ Fix lib/faker/version.rb
 
 ### Update/add locales
 
-- [PR #1629](https://github.com/stympy/faker/pull/1629) Fix sintax error on game.yml file [@ricardobsilva](https://github.com/ricardobsilva)
+- [PR #1629](https://github.com/stympy/faker/pull/1629) Fix syntax error on game.yml file [@ricardobsilva](https://github.com/ricardobsilva)
 - [PR #1627](https://github.com/stympy/faker/pull/1627) add more data for Faker::Games [@BlazingRockStorm](https://github.com/BlazingRockStorm)
 - [PR #1620](https://github.com/stympy/faker/pull/1620) Added Yuumi as a Champion [@eddorre](https://github.com/eddorre)
 - [PR #1621](https://github.com/stympy/faker/pull/1621) Updated classes to match the changes that Blizzard rolled out late last year. Updated hero pool to add the latest two heroes added to the game. [@eddorre](https://github.com/eddorre)
@@ -1539,7 +1539,7 @@ Fix lib/faker/version.rb
 - [PR #1220](https://github.com/stympy/faker/pull/1220) Updates for Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #1218](https://github.com/stympy/faker/pull/1218) Add Faker::Myst [@SpyMaster356](https://github.com/SpyMaster356)
 - [PR #818](https://github.com/stympy/faker/pull/818) LoremFlickr support [@mrstebo](https://github.com/mrstebo)
-- [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicule [@gauth-ier](https://github.com/Gauth-ier)
+- [PR #1192](https://github.com/stympy/faker/pull/1192) Space: Added space launch vehicle [@gauth-ier](https://github.com/Gauth-ier)
 - [PR #1211](https://github.com/stympy/faker/pull/1211) Add bands, genres, and albums to Music [@jmkoni](https://github.com/jmkoni)
 - [PR #1215](https://github.com/stympy/faker/pull/1215) Added Nato Phonetic Alphabet [@timcustard](https://github.com/timcustard)
 - [PR #1209](https://github.com/stympy/faker/pull/1209) Add Faker::Source [@graciano](https://github.com/graciano)
@@ -1659,7 +1659,7 @@ Fix lib/faker/version.rb
 
 **Other changes**
 
-- Changed i18n depedency from `~> 0.9.1` to `>= 0.7`
+- Changed i18n dependency from `~> 0.9.1` to `>= 0.7`
 
 ## [v1.8.5](https://github.com/stympy/faker/tree/v1.8.5) (2017-12-06)
 [Full Changelog](https://github.com/stympy/faker/compare/v1.8.4...v1.8.5)
@@ -2155,7 +2155,7 @@ Fix lib/faker/version.rb
     * Added bork locale for bork-ified lorem [johnbentcope]
     * Added IPv6 address generator [jc00ke]
     * Removed deprecation warnings for Array#rand [chrismarshall]
-    * Added German translation and I18n improvments [Matthias Kühnert]
+    * Added German translation and I18n improvements [Matthias Kühnert]
     * Added Dutch translation [moretea]
     * Added Lat/Long generator [Andy Callaghan]
     * Added buzzword-laden title generator [supercleanse]
