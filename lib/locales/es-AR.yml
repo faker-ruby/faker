@@ -2144,7 +2144,7 @@ es-AR:
                 NU: Niue
                 NF: Isla Norfolk
                 MP: Islas Marianas del Norte
-                NO: Noruega
+                "NO": Noruega
                 OM: Omán
                 PK: Pakistpan
                 PW: Palau
@@ -2624,7 +2624,7 @@ es-AR:
                 - Daniel Carnevali
                 - Daniel Killer
                 - Daniel Passarella
-                - Darío Benedetto
+                - Darío Benedetto
                 - Diego Armando Maradona
                 - Diego Milito
                 - Diego Placente
