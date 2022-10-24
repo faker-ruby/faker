@@ -4,9 +4,6 @@ on:
   release:
     types:
       - [ created ]
-  push:
-    tags:
-      - "v*"
 
 permissions:
   contents: read
