@@ -11,7 +11,8 @@ fi-FI:
       building_number: ['###', '##', '#']
       street_suffix: [katu, gatan, ranta]
       postcode: ['#####']
-      state: [Turun ja Porin lääni, Uudenmaan ja Hämeen lääni, Pohjanmaan lääni, Viipurin ja Savonlinnan lääni, Käkisalmen lääni, Savonlinnan ja Kymenkartanon lääni, Kymenkartanon ja Savon lääni]
+      # Source: https://www2.stat.fi/fi/luokitukset/maakunta/
+      state: [Uusimaa, Varsinais-Suomi, Satakunta, Kanta-Häme, Pirkanmaa, Päijät-Häme, Kymenlaakso, Etelä-Karjala, Etelä-Savo, Pohjois-Savo, Pohjois-Karjala, Keski-Suomi, Etelä-Pohjanmaa, Pohjanmaa, Keski-Pohjanmaa, Pohjois-Pohjanmaa, Kainuu, Lappi, Ahvenanmaa]
       city:
         - "#{city_prefix}#{city_suffix}"
       street_name:
