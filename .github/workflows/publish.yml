@@ -3,7 +3,7 @@ name: Publish to RubyGems
 on:
   release:
     types:
-      - [ created ]
+      - created
 
 permissions:
   contents: read
