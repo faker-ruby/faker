@@ -1,4 +1,49 @@
-# Change Log
+# CHANGELOG
+
+## [v3.0.0](https://github.com/faker-ruby/faker/tree/v3.0.0) (2022-10-28)
+
+### Breaking Changes
+* Drop support for positional arguments in favor of keyword arguments. Support for positional arguments was deprecated on v2 (#2576)
+
+### Bugfixes
+* Fix Faker::Vehicle.vin (#2562)
+* Fix typo abreviation -> abbreviation (#2567)
+* Fix some typos (#2594)
+* Removes NBSP from locales files (#2596)
+
+### Features
+* Add country code for `en-CA` phone numbers (#2561)
+* Add color luminosity options (#2566)
+* Add French Translation of Ancient (#2570)
+* Add `clojure` as a language option to `Faker::Source` generator (#2582)
+* Add movie Hackers  (#2585)
+* Added Game Escape From Tarkov (#2589)
+* Add quotes to "no"-key  (#2592)
+
+### What's Changed
+* Set true to `rubygems_mfa_required` gemspec metadata (#2549)
+* Use rubocop-rake to lint Rake tasks (#2557)
+* Update rubocop requirement from = 1.35.1 to = 1.36.0 (#2555)
+* Update simplecov gem (#2544)
+* Update rubocop-minitest requirement from = 0.22.0 to = 0.22.1 (#2565)
+* security: set explicit and strict token-permissions on GitHub workflows (#2551)
+* Remove unneeded require in lib/faker.rb (#2558)
+* Remove outdated comment from development dependencies (#2568)
+* Improve Phone Number Locale documentation (#2569)
+* Update rubocop-minitest requirement from = 0.22.1 to = 0.22.2 (#2574)
+* Update test-unit requirement from = 3.5.3 to = 3.5.4 (#2575)
+* Update test-unit requirement from = 3.5.4 to = 3.5.5 (#2578)
+* Add note about Random behavior on MiniTest (#2579)
+* Remove mentions to `master` and use `main` (#2580)
+* Change McCree to Cassidy on Overwatch generator (#2586)
+* Automate workflow to publish to RubyGems. (#2584, #2602, #2598)
+* Update fi-FI state listing from year 1721 to 2022 (#2604)
+* Update rubocop requirement from = 1.36.0 to = 1.37.0 (#2597)
+* Update rubocop requirement from = 1.37.0 to = 1.37.1 (#2603)
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v2.23.0...v3.0.0
+
+------------------------------------------------------------------------------
 
 ## [v2.23.0](https://github.com/faker-ruby/faker/tree/v2.23.0) (2022-09-01)
 
