@@ -68,6 +68,37 @@ class TestFakerBank < Test::Unit::TestCase
     assert_match(/^[A-Z]{2}\d{2}[A-Z\d]{10,30}$/, @tester.iban(country_code: nil))
   end
 
+  def test_iban_checksum
+    # Sourced IBANs from https://www.iban.com/structure
+    accounts = {
+      AL: { account: '202111090000000001234567', check_digit: '35' }, # AL35202111090000000001234567
+      BY: { account: 'AKBB10100000002966000000', check_digit: '86' }, # BY86AKBB10100000002966000000
+      CY: { account: '002001950000357001234567', check_digit: '21' }, # CY21002001950000357001234567
+      DO: { account: 'ACAU00000000000123456789', check_digit: '22' }, # DO22ACAU00000000000123456789
+      EG: { account: '0002000156789012345180002', check_digit: '80' }, # EG800002000156789012345180002
+      FR: { account: '30006000011234567890189', check_digit: '76' }, # FR7630006000011234567890189
+      GB: { account: 'BUKB20201555555555', check_digit: '33' }, # GB33BUKB20201555555555
+      HU: { account: '116000060000000012345676', check_digit: '93' }, # HU93116000060000000012345676
+      IT: { account: 'X0542811101000000123456', check_digit: '60' }, # IT60X0542811101000000123456
+      JO: { account: 'CBJO0000000000001234567890', check_digit: '71' }, # JO71CBJO0000000000001234567890
+      KW: { account: 'CBKU0000000000001234560101', check_digit: '81' }, # KW81CBKU0000000000001234560101
+      LB: { account: '000700000000123123456123', check_digit: '92' }, # LB92000700000000123123456123
+      MD: { account: 'EX000000000001234567', check_digit: '21' }, # MD21EX000000000001234567
+      NL: { account: 'ABNA0123456789', check_digit: '02' }, # NL02ABNA0123456789
+      PL: { account: '105000997603123456789123', check_digit: '10' }, # PL10105000997603123456789123
+      QA: { account: 'QNBA000000000000693123456', check_digit: '54' }, # QA54QNBA000000000000693123456
+      RU: { account: '04452560040702810412345678901', check_digit: '02' }, # RU0204452560040702810412345678901
+      SC: { account: 'MCBL01031234567890123456USD', check_digit: '74' }, # SC74MCBL01031234567890123456USD
+      TR: { account: '0010009999901234567890', check_digit: '32' }, # TR320010009999901234567890
+      UA: { account: '3052992990004149123456789', check_digit: '90' }, # UA903052992990004149123456789
+      VG: { account: 'ABVI0000000123456789', check_digit: '07' } # VG07ABVI0000000123456789
+    }
+
+    accounts.each do |country_code, data|
+      assert_equal data[:check_digit], @tester.send(:iban_checksum, country_code.to_s, data[:account])
+    end
+  end
+
   # Andorra
   def test_iban_ad
     account = @tester.iban(country_code: 'ad')
