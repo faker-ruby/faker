@@ -10,7 +10,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #  Faker::Games::Tarkov.location #=> "Customs"
+        #   Faker::Games::Tarkov.location #=> "Customs"
         #
         # @faker.version next
         def location
@@ -23,7 +23,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.trader #=> "Prapor"
+        #   Faker::Games::Tarkov.trader #=> "Prapor"
         #
         # @faker.version next
         def trader
@@ -36,7 +36,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.item #=> "Diary"
+        #   Faker::Games::Tarkov.item #=> "Diary"
         #
         # @faker.version next
         def item
@@ -49,7 +49,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.weapon #=> "AK-74N"
+        #   Faker::Games::Tarkov.weapon #=> "AK-74N"
         #
         # @faker.version next
         def weapon
@@ -62,7 +62,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.boss #=> "Tagilla"
+        #   Faker::Games::Tarkov.boss #=> "Tagilla"
         #
         # @faker.version next
         def boss
@@ -75,7 +75,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.faction #=> "USEC"
+        #   Faker::Games::Tarkov.faction #=> "USEC"
         #
         # @faker.version next
         def faction
@@ -88,7 +88,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.quest #=> "The Key to Success"
+        #   Faker::Games::Tarkov.quest #=> "The Key to Success"
         #
         # @faker.version next
         def quest
@@ -102,7 +102,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.prapor_quest #=> "Easy Job - Part 2
+        #   Faker::Games::Tarkov.prapor_quest #=> "Easy Job - Part 2
         #
         # @faker.version next
         def prapor_quest
@@ -115,7 +115,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.therapist_quest #=> "The Key to Success"
+        #   Faker::Games::Tarkov.therapist_quest #=> "Supply Plans"
         #
         # @faker.version next
         def therapist_quest
@@ -128,7 +128,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.skier_quest #=> "The Key to Success"
+        #   Faker::Games::Tarkov.skier_quest #=> "Safe Corridor"
         #
         # @faker.version next
         def skier_quest
@@ -136,12 +136,12 @@ module Faker
         end
 
         ##
-        # Produces a random quest from Skier from Escape from Tarkov.
+        # Produces a random quest from Peacekeeper from Escape from Tarkov.
         #
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.skier_quest #=> "The Key to Success"
+        #   Faker::Games::Tarkov.peacekeeper_quest #=> "Overpopulation"
         #
         # @faker.version next
         def peacekeeper_quest
@@ -149,12 +149,12 @@ module Faker
         end
 
         ##
-        # Produces a random quest from Skier from Escape from Tarkov.
+        # Produces a random quest from Mechanic from Escape from Tarkov.
         #
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.skier_quest #=> "The Key to Success"
+        #   Faker::Games::Tarkov.mechanic_quest #=> "Signal - Part 4"
         #
         # @faker.version next
         def mechanic_quest
@@ -162,12 +162,12 @@ module Faker
         end
 
         ##
-        # Produces a random quest from Skier from Escape from Tarkov.
+        # Produces a random quest from Ragman from Escape from Tarkov.
         #
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.skier_quest #=> "The Key to Success"
+        #   Faker::Games::Tarkov.ragman_quest #=> "Hot Delivery"
         #
         # @faker.version next
         def ragman_quest
@@ -175,12 +175,12 @@ module Faker
         end
 
         ##
-        # Produces a random quest from Skier from Escape from Tarkov.
+        # Produces a random quest from Jaeger from Escape from Tarkov.
         #
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.skier_quest #=> "The Key to Success"
+        #   Faker::Games::Tarkov.jaeger_quest #=> "The Tarkov Shooter - Part 1"
         #
         # @faker.version next
         def jaeger_quest
@@ -188,12 +188,12 @@ module Faker
         end
 
         ##
-        # Produces a random quest from Skier from Escape from Tarkov.
+        # Produces a random quest from Fence from Escape from Tarkov.
         #
         # @return [String]
         #
         # @example
-        # Faker::Games::Tarkov.skier_quest #=> "The Key to Success"
+        #   Faker::Games::Tarkov.fence_quest #=> "Compensation for Damage - Wager"
         #
         # @faker.version next
         def fence_quest
