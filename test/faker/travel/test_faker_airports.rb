@@ -7,7 +7,6 @@ class TestFakerAirport < Test::Unit::TestCase
     @tester = Faker::Travel::Airport
   end
 
-  # test using assert_match not assert
 
   def test_large_airport_us
     assert_match(/\w+/, @tester.large_airport_us)
