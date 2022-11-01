@@ -4,8 +4,15 @@ require 'find'
 require 'yaml'
 
 desc 'Reformat all yaml files into a common format'
-task :reformat_yaml_all do
-  reformat_yaml_enum('.')
+task :reformat_yaml_all, [:file_name] do |t, args|
+  args.with_defaults(file_name: '.') # Default to current directory
+  module YAML
+    class << self
+      alias_method :load, :unsafe_load if YAML.respond_to? :unsafe_load
+    end
+  end
+  
+  reformat_yaml_enum(args[:file_name])
 end
 
 ##
@@ -21,6 +28,8 @@ end
 #
 # #=> true
 # @faker version next
+
+
 def reformat_yaml_enum(path_name)
   files_touched = 0
   Find.find(path_name) do |file|
