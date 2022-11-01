@@ -1,34 +1,17 @@
 # frozen_string_literal: true
 
 require_relative '../../test_helper'
-class FakeStdErr
-  attr_accessor :messages
-
-  def initialize
-    @messages = []
-  end
-
-  def write(msg)
-    @messages << msg
-  end
-end
 
 class TestLoremPixel < Test::Unit::TestCase
   def setup
     @tester = Faker::LoremPixel
   end
 
-  def test_deprecation_message
-    # rubocop:disable Style/GlobalVars
-    original_stderr = $stderr
-    fake_std_err    = FakeStdErr.new
-    $stderr         = fake_std_err
-    @tester.image
-    warn_message = 'NOTE: Faker::LoremPixel.image is deprecated; use Faker::LoremFlickr.image instead. It will be removed on or after 2022-12'
-    assert_includes(fake_std_err.messages[0], warn_message)
-  ensure
-    $std_err = original_stderr
-    # rubocop:enable Style/GlobalVars
+  def test_image_deprecation_message
+    _out, err = capture_output do
+      @tester.image(size: '3x3')
+    end
+    assert_match(/Faker::LoremPixel.image is deprecated; use Faker::LoremFlickr.image instead\./, err)
   end
 
   def test_lorempixel
