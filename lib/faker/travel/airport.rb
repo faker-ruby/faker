@@ -68,6 +68,7 @@ module Faker
         def small_airport_us
           fetch('airport.small_airport_us')
         end
+        
         ##
         # Produces random large US Airport by IATA code.
         #
