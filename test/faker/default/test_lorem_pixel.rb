@@ -11,6 +11,7 @@ class TestLoremPixel < Test::Unit::TestCase
     _out, err = capture_output do
       @tester.image(size: '3x3')
     end
+
     assert_match(/Faker::LoremPixel.image is deprecated; use Faker::LoremFlickr.image instead\./, err)
   end
 
