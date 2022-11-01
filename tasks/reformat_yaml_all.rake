@@ -3,15 +3,17 @@
 require 'find'
 require 'yaml'
 
+# This monkey patch is related to the Ruby 3.1 / Psych 4.x incompatibility described in this issue: 
+# https://bugs.ruby-lang.org/issues/17866
+module YAML
+  class << self
+    alias_method :load, :unsafe_load if YAML.respond_to? :unsafe_load
+  end
+end
+
 desc 'Reformat all yaml files into a common format'
 task :reformat_yaml_all, [:file_name] do |t, args|
   args.with_defaults(file_name: '.') # Default to current directory
-  module YAML
-    class << self
-      alias_method :load, :unsafe_load if YAML.respond_to? :unsafe_load
-    end
-  end
-  
   reformat_yaml_enum(args[:file_name])
 end
 
