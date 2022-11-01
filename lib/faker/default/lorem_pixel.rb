@@ -3,6 +3,8 @@
 module Faker
   class LoremPixel < Base
     class << self
+      extend Gem::Deprecate
+
       SUPPORTED_CATEGORIES = %w[abstract
                                 animals
                                 business
@@ -55,6 +57,7 @@ module Faker
         url_parts += [category, number, text].compact
         url_parts.join('/')
       end
+      deprecate :image, 'Faker::LoremFlickr.image', 2022, 12
       # rubocop:enable Metrics/ParameterLists
     end
   end
