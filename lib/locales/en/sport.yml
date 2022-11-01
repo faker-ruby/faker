@@ -11,8 +11,8 @@ en:
         - Baseball # Technically part of "Baseball Softball" according to IOC website
         - Basketball
         - Beach volleyball
-        - BMX freestyle
-        - BMX racing
+        - BMX freestyle # Officially "Cycling BMX Freestyle"
+        - BMX racing # Officially "Cycling BMX Racing"
         - Boxing
         - Canoe/kayak flatwater
         - Canoe/kayak slalom
@@ -27,11 +27,11 @@ en:
         - Karate
         - Marathon swimming
         - Modern pentathlon
-        - Mountain bike
+        - Mountain bike # Officially "Cycling Mountain Bike"
         - Rhythmic gymnastics
-        - Road cycling
+        - Road cycling # Officially "Cycling Road"
         - Rowing
-        - Rugby
+        - Rugby # Officially "Rugby Sevens"
         - Sailing
         - Shooting
         - Skateboarding
@@ -42,7 +42,7 @@ en:
         - Table tennis
         - Taekwondo
         - Tennis
-        - Track cycling
+        - Track cycling # Officially "Cycling Track"
         - Trampoline
         - Triathlon
         - Volleyball
@@ -53,7 +53,7 @@ en:
         - Alpine skiing
         - Biathlon
         - Bobsleigh
-        - Cross-country
+        - Cross-country skiing
         - Curling
         - Figure skating
         - Freestyle skiing
@@ -63,17 +63,18 @@ en:
         - Short track speed skating
         - Skeleton
         - Ski jumping
+        - Ski mountaineering
         - Snowboard
         - Speed skating
       summer_paralympics: # Source https://www.paralympic.org/sports
         - Archery
         - Athletics
         - Badminton
+        - Blind football
         - Boccia
         - Canoe
         - Cycling
         - Equestrian
-        - Football (5-a-side)
         - Goalball
         - Judo
         - Powerlifting
@@ -110,6 +111,7 @@ en:
         - Ban'ei
         - Bathtubbing
         - Bed racing
+        - Bossaball
         - Botaoshi
         - Beer Can Regatta
         - Black pudding throwing
@@ -117,5 +119,12 @@ en:
         - Bottle kicking
         - Camel jumping
         - Camel wrestling
+        - Chess boxing
+        - Extreme ironing
         - Flugtag/Birdman
+        - Gurning
         - Kastenlauf (Beer crate running)
+        - Oil wrestling
+        - Poohsticks
+        - Wife carrying
+        - Zorbing

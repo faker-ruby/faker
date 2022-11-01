@@ -3,10 +3,7 @@ name: Publish to RubyGems
 on:
   release:
     types:
-      - [ created ]
-  push:
-    tags:
-      - "v*"
+      - created
 
 permissions:
   contents: read
