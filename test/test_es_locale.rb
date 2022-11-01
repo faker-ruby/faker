@@ -17,6 +17,7 @@ class TestEsLocale < Test::Unit::TestCase
 
   def test_locale_separate_from_i18n
     I18n.locale = :en
+
     assert_match(//, Faker::Address.street_name)
   end
 

@@ -34,6 +34,7 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def test_swedish_organisation_number
     org_no = @tester.swedish_organisation_number
+
     assert_match(/\d{10}/, org_no)
     assert_includes [1, 2, 3, 5, 6, 7, 8, 9], org_no[0].to_i
     assert org_no[2].to_i >= 2
@@ -42,6 +43,7 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def test_czech_organisation_number
     org_no = @tester.czech_organisation_number
+
     assert_match(/\d{8}/, org_no)
     assert_includes [0, 1, 2, 3, 5, 6, 7, 8, 9], org_no[0].to_i
     assert_equal czech_o_n_checksum(org_no), org_no[-1].to_i
@@ -49,12 +51,14 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def test_french_siren_number
     siren = @tester.french_siren_number
+
     assert_match(/\A\d{9}\z/, siren)
     assert_equal siren[8], @tester.send(:luhn_algorithm, siren[0..-2]).to_s
   end
 
   def test_french_siret_number
     siret = @tester.french_siret_number
+
     assert_match(/\A\d{14}\z/, siret)
     assert_equal siret[8], @tester.send(:luhn_algorithm, siret[0..7]).to_s
     assert_equal siret[13], @tester.send(:luhn_algorithm, siret[0..-2]).to_s
@@ -62,6 +66,7 @@ class TestFakerCompany < Test::Unit::TestCase
 
   def test_norwegian_organisation_number
     org_no = @tester.norwegian_organisation_number
+
     assert_match(/\d{9}/, org_no)
     assert_includes [8, 9], org_no[0].to_i
     assert_equal org_no[8], @tester.send(:mod11, org_no[0..7]).to_s
@@ -85,6 +90,7 @@ class TestFakerCompany < Test::Unit::TestCase
     [6, 5, 7, 2, 3, 4, 5, 6, 7].each_with_index do |control, index|
       control_sum += control * number[index].to_i
     end
+
     refute_equal control_sum.modulo(11), 10
   end
 
@@ -100,6 +106,7 @@ class TestFakerCompany < Test::Unit::TestCase
       control_sum += control * number[index].to_i
     end
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
+
     assert_equal control_number, number[8].to_i
     # 14 length
     number = @tester.polish_register_of_national_economy(length: 14)
@@ -108,6 +115,7 @@ class TestFakerCompany < Test::Unit::TestCase
       control_sum += control * number[index].to_i
     end
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
+
     assert_equal control_number, number[13].to_i
   end
 
@@ -170,6 +178,7 @@ class TestFakerCompany < Test::Unit::TestCase
     end
     remainder = digit_sum % 11
     first_digit = remainder < 2 ? '0' : (11 - remainder).to_s
+
     assert_equal sample[12], first_digit
 
     digit_sum = sample[0..12].chars.each_with_index.inject(0) do |acc, (digit, i)|
@@ -178,11 +187,13 @@ class TestFakerCompany < Test::Unit::TestCase
     end
     remainder = digit_sum % 11
     second_digit = remainder < 2 ? '0' : (11 - remainder).to_s
+
     assert_equal sample[13], second_digit
   end
 
   def test_brazilian_company_number_formatted
     sample = @tester.brazilian_company_number(formatted: true)
+
     assert_match(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, sample)
   end
 

@@ -7,6 +7,7 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
     generator = Faker::UniqueGenerator.new(Faker::Base, 10_000)
 
     result = [generator.rand_in_range(1, 2), generator.rand_in_range(1, 2)]
+
     assert_equal([1, 2], result.sort)
   end
 

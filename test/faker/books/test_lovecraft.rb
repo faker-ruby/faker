@@ -69,6 +69,7 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
   def test_sentence_with_open_compounds_allowed
     1000.times do
       sentence = @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: true)
+
       assert(sentence.split.length >= 5)
     end
   end
@@ -77,12 +78,14 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
   def test_sentence_without_open_compounds_allowed
     1000.times do
       sentence = @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: false)
+
       assert_equal(5, sentence.split.length)
     end
   end
 
   def test_paragraph_char_count
     paragraph = @tester.paragraph_by_chars
+
     assert_equal(256, paragraph.length)
   end
 

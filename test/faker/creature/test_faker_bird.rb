@@ -43,6 +43,7 @@ class TestFakerCreatureBird < Test::Unit::TestCase
   def test_common_names_with_specific_order
     specific_order = @tester.order
     name = @tester.common_name specific_order
+
     assert_includes @common_order_map[specific_order.to_sym].map(&:downcase), name
   end
 
@@ -65,6 +66,7 @@ class TestFakerCreatureBird < Test::Unit::TestCase
   def test_specific_order_with_common_names
     specific_order = @tester.order
     entry = @tester.order_with_common_name specific_order
+
     assert_includes(@common_order_map[specific_order.to_sym], entry[:common_name])
   end
 
@@ -76,6 +78,7 @@ class TestFakerCreatureBird < Test::Unit::TestCase
       /[A-Z][a-z]+-[a-z]+ed [a-z]+/
     ]
     name = @tester.plausible_common_name
+
     assert_predicate patterns.collect { |pattern| pattern.match? name }, :any?,
                      "Faker::Creature::Bird#plausible_common_name failed on '#{name}'"
   end
@@ -87,6 +90,7 @@ class TestFakerCreatureBird < Test::Unit::TestCase
       /[A-Z][a-z]+-[a-z]+ed [a-z]+ [a-z]+/
     ]
     name = @tester.implausible_common_name
+
     assert_predicate patterns.collect { |pattern| pattern.match? name }, :any?,
                      "Faker::Creature::Bird#implausible_common_name failed on '#{name}'"
   end

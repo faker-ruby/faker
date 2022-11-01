@@ -39,50 +39,62 @@ class TestFakerDrivingLicence < Test::Unit::TestCase
 
   def test_uk_licence
     sample = @tester.uk_driving_licence
+
     assert_includes [8, 16], sample.length
   end
 
   def test_british_licence_correctly_mangles_last_name
     padded = @tester.british_driving_licence(last_name: 'Judd')
+
     assert_equal 'JUDD9', padded[0..4]
     truncated = @tester.british_driving_licence(last_name: 'Hamilton')
+
     assert_match %r{HAMIL[0-9]}, truncated[0..5]
     cleaned = @tester.british_driving_licence(last_name: "O'Carroll")
+
     assert_equal 'OCARR', cleaned[0..4]
   end
 
   def test_british_licence_correctly_mangles_date_of_birth
     date_of_birth = Date.parse('1978-02-13')
     male = @tester.british_driving_licence(date_of_birth: date_of_birth, gender: :male)
+
     assert_equal '702138', male[5..10]
     female = @tester.british_driving_licence(date_of_birth: date_of_birth, gender: :female)
+
     assert_equal '752138', female[5..10]
   end
 
   def test_british_licence_correctly_builds_initials
     padded = @tester.british_driving_licence(initials: 'A')
+
     assert_equal 'A9', padded[11..12]
     truncated = @tester.british_driving_licence(initials: 'NLTC')
+
     assert_equal 'NL', truncated[11..12]
   end
 
   def test_usa_driving_licence
     # When state is not passed to method it returns CA licence format by default
     licence_number = @tester.usa_driving_licence
+
     assert_match %r{[A-Z][0-9]{7}}, licence_number
   end
 
   def test_usa_driving_licence_for_different_states
     # When state Washington is passed
     licence_number = @tester.usa_driving_licence('Washington')
+
     assert_match %r{[A-Z]{7,12}[0-9]{0,5}\**}, licence_number
 
     # When state Alaska is passed
     licence_number = @tester.usa_driving_licence('alaska')
+
     assert_match %r{[0-9]{6,7}}, licence_number
 
     # When state North Dakota is passed
     licence_number = @tester.usa_driving_licence('North Dakota')
+
     assert_match %r{([A-Z]{3}[0-9]{6})|([0-9]{9})}, licence_number
   end
 

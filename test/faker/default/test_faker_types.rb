@@ -32,6 +32,7 @@ class TestFakerTypes < Test::Unit::TestCase
     from = Faker::Number.number.to_i
     to = from + Faker::Number.number.to_i
     val = @tester.rb_integer(from: from, to: to)
+
     assert val < to && val >= from
   end
 
@@ -70,12 +71,14 @@ class TestFakerTypes < Test::Unit::TestCase
   def test_titleize
     val = 'foobar'
     expected = 'Foobar'
+
     assert_equal @tester.send(:titleize, val), expected
   end
 
   def test_resolve
     array = [1, 2, 3]
     range = 1..10
+
     assert_includes array, @tester.send(:resolve, array)
     assert_includes range, @tester.send(:resolve, range)
   end

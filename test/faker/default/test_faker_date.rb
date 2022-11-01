@@ -13,6 +13,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     100.times do
       random_date = @tester.between(from: from, to: to)
+
       assert random_date >= from, "Expected >= \"#{from}\", but got #{random_date}"
       assert random_date <= to, "Expected <= \"#{to}\", but got #{random_date}"
     end
@@ -25,6 +26,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     100.times do
       random_date = @tester.between_except(from: from, to: to, excepted: excepted)
+
       assert_not_nil random_date
       refute_equal random_date, excepted, "Expected != \"#{excepted}\", but got #{random_date}"
     end
@@ -39,6 +41,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     100.times do
       random_date = @tester.between_except(from: from, to: to, excepted: excepted)
+
       assert_not_nil random_date
       refute_equal random_date, excepted_date, "Expected != \"#{excepted}\", but got #{random_date}"
     end
@@ -55,6 +58,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     100.times do
       random_date = @tester.forward(days: 5)
+
       assert random_date > today, "Expected > \"#{today}\", but got #{random_date}"
     end
   end
@@ -64,6 +68,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     100.times do
       random_date = @tester.backward(days: 5)
+
       assert random_date < today, "Expected < \"#{today}\", but got #{random_date}"
     end
   end
@@ -94,6 +99,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     100.times do
       birthday = @tester.birthday(min_age: min, max_age: max)
+
       assert birthday >= birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
       assert birthday <= birthdate_max, "Expect <= \"#{birthdate_max}\", but got #{birthday}"
     end
@@ -140,6 +146,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     100.times do
       birthday = @tester.birthday
+
       assert birthday >= birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
       assert birthday < birthdate_max, "Expect < \"#{birthdate_max}\", but got #{birthday}"
     end
@@ -149,6 +156,7 @@ class TestFakerDate < Test::Unit::TestCase
     current_year = Date.today.year
     10.times do
       date = @tester.in_date_period
+
       assert_equal date.year, current_year
     end
   end
@@ -157,6 +165,7 @@ class TestFakerDate < Test::Unit::TestCase
     year = 2015
     10.times do
       date = @tester.in_date_period(year: year)
+
       assert_equal date.year, year
     end
   end
@@ -166,6 +175,7 @@ class TestFakerDate < Test::Unit::TestCase
     current_year = Date.today.year
     10.times do
       date = @tester.in_date_period(month: month)
+
       assert_equal date.month, month
       assert_equal date.year, current_year
     end
@@ -176,6 +186,7 @@ class TestFakerDate < Test::Unit::TestCase
     month = 3
     10.times do
       date = @tester.in_date_period(year: year, month: month)
+
       assert_equal date.month, month
       assert_equal date.year, year
     end

@@ -43,6 +43,7 @@ class TestFakerString < Test::Unit::TestCase
     16.times { assert_includes range, @tester.random(length: range).length }
 
     range = (42..42)
+
     assert_equal(42, @tester.random(length: range).length)
   end
 

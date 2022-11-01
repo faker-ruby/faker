@@ -11,6 +11,7 @@ class TestFakerBitcoin < Test::Unit::TestCase
     Faker::Config.random = Random.new(42)
     v = Faker::Blockchain::Bitcoin.address
     Faker::Config.random = Random.new(42)
+
     assert_equal v, Faker::Blockchain::Bitcoin.address
   end
 

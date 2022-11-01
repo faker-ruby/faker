@@ -11,27 +11,32 @@ class TestArraySampleMethodCompatibility < Test::Unit::TestCase
     source = []
 
     result = source.sample
+
     assert_nil result
 
     result = source.sample(1)
+
     assert_empty(result)
   end
 
   def test_returns_one_array_elem_without_param
     source = %w[foo bar]
     result = source.sample
+
     assert_includes source, result
   end
 
   def test_returns_empty_array_with_param_zero
     source = %w[foo bar]
     result = source.sample(0)
+
     assert_empty(result)
   end
 
   def test_returns_an_array_with_integer_param
     source = %w[foo bar baz]
     result = source.sample(2)
+
     assert result.is_a? Array
     assert_equal(2, result.length)
     assert_empty((result - source))
@@ -40,10 +45,12 @@ class TestArraySampleMethodCompatibility < Test::Unit::TestCase
   def test_returns_source_array_with_integer_param_equal_or_bigger_than_source_length
     source = %w[foo bar]
     result = source.sample(2)
+
     assert result.is_a? Array
     assert_predicate((source.sort <=> result.sort), :zero?)
 
     result = source.sample(3)
+
     assert result.is_a? Array
     assert_predicate((source.sort <=> result.sort), :zero?)
   end

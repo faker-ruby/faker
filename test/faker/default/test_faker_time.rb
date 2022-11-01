@@ -16,6 +16,7 @@ class TestFakerTime < Test::Unit::TestCase
 
     100.times do
       random_time = @tester.between(from: from, to: to)
+
       assert random_time >= from, "Expected >= \"#{from}\", but got #{random_time}"
       assert random_time <= to, "Expected <= \"#{to}\", but got #{random_time}"
     end
@@ -27,6 +28,7 @@ class TestFakerTime < Test::Unit::TestCase
 
     100.times do
       random_time = @tester.between(from: from, to: to)
+
       assert random_time.to_date >= from, "Expected >= \"#{from}\", but got #{random_time}"
       assert random_time.to_date <= to, "Expected <= \"#{to}\", but got #{random_time}"
     end
@@ -37,6 +39,7 @@ class TestFakerTime < Test::Unit::TestCase
 
     100.times do
       random_time = @tester.forward(days: 10)
+
       assert random_time > today.to_time, "Expected > \"#{today}\", but got #{random_time}"
     end
   end
@@ -46,6 +49,7 @@ class TestFakerTime < Test::Unit::TestCase
 
     100.times do
       random_time = @tester.backward(days: 10)
+
       assert random_time < tomorrow.to_time, "Expected < \"#{tomorrow}\", but got #{random_time}"
     end
   end
@@ -127,6 +131,7 @@ class TestFakerTime < Test::Unit::TestCase
 
     100.times do
       random_between = @tester.between(from: from, to: to)
+
       assert random_between >= from, "Expected >= \"#{from}\", but got #{random_between}"
       assert random_between <= to, "Expected <= \"#{to}\", but got #{random_between}"
     end
