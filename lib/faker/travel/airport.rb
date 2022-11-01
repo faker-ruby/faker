@@ -10,7 +10,7 @@ module Faker
         # @return [String]
         #
         # @example
-        # Faker::Travel::Airport.large_airport_us #=> "Los Angeles International Airport"
+        #   Faker::Travel::Airport.large_airport_us #=> "Los Angeles International Airport"
         #
         # @faker.version next
         def large_airport_us
