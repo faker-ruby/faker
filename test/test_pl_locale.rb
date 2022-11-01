@@ -21,11 +21,13 @@ class TestPlLocale < Test::Unit::TestCase
 
   def test_pl_phone_number
     prefixes = (0..999).map { Faker::PhoneNumber.phone_number[0, 2] }.uniq.sort
+
     assert_equal @phone_prefixes, prefixes
   end
 
   def test_pl_cell_phone
     prefixes = (0..999).map { Faker::PhoneNumber.cell_phone[0, 2] }.uniq.sort
+
     assert_equal @cell_prefixes, prefixes
   end
 

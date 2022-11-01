@@ -64,6 +64,7 @@ class TestFakerCommerce < Test::Unit::TestCase
     department = @tester.department(max: 10, fixed_amount: true)
 
     departments = department.split(/[,& ]+/)
+
     assert_equal departments, departments.uniq
   end
 
@@ -84,6 +85,7 @@ class TestFakerCommerce < Test::Unit::TestCase
 
   def test_price_with_srand
     Faker::Config.random = Random.new(12_345)
+
     assert_in_delta(92.96, @tester.price)
   end
 

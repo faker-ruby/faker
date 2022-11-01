@@ -28,6 +28,7 @@ class TestFrLocale < Test::Unit::TestCase
     assert_match(/^\d{5}$/, Faker::Address.postcode)
     assert_match(/^\d+$/, Faker::Address.building_number)
     full_address_regex = /(([-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s(\d{5})\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
+
     assert_match(full_address_regex, Faker::Address.full_address)
     assert_equal('France', Faker::Address.default_country)
   end
@@ -129,11 +130,13 @@ class TestFrLocale < Test::Unit::TestCase
 
   def test_fr_phone_format
     phone = Faker::PhoneNumber.phone_number_with_country_code.gsub(/\D/, '')
+
     assert_match(/^(0|33)\d{8,10}$/, phone)
   end
 
   def test_fr_cell_phone_format
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+
     assert_match(/^0?(6|7)\d{8}$/, mobile)
   end
 

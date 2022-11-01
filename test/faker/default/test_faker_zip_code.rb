@@ -41,6 +41,7 @@ class TestFakerZipCode < Test::Unit::TestCase
   def test_zip_code_can_have_leading_zero
     zip_codes = []
     1000.times { zip_codes << @tester.zip_code }
+
     assert zip_codes.any? { |zip_code| zip_code[0].to_i.zero? }
   end
 
@@ -49,6 +50,7 @@ class TestFakerZipCode < Test::Unit::TestCase
       zip_codes = @zip_codes_without_state
       100.times do
         zip_code = @tester.zip_code
+
         assert_includes zip_codes, zip_code, "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
       end
     end
@@ -59,6 +61,7 @@ class TestFakerZipCode < Test::Unit::TestCase
       zip_codes = @zip_codes_with_state
       100.times do
         zip_code = @tester.zip_code(state_abbreviation: 'NY')
+
         assert_includes zip_codes, zip_code, "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
       end
     end

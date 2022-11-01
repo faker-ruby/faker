@@ -46,6 +46,7 @@ class TestBgLocale < Test::Unit::TestCase
 
   def test_bg_cell_number_starts_wiht_08
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+
     assert_equal '08', mobile[0] + mobile[1]
   end
 end

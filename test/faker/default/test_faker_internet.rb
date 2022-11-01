@@ -79,6 +79,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_username_with_very_large_integer_arg
     exception = assert_raises(ArgumentError) { @tester.username(specifier: 10_000_000) }
+
     assert_equal('Given argument is too large', exception.message)
   end
 
@@ -86,6 +87,7 @@ class TestFakerInternet < Test::Unit::TestCase
     (1..32).each do |min_length|
       (min_length..32).each do |max_length|
         l = @tester.username(specifier: (min_length..max_length)).length
+
         assert l >= min_length
         assert l <= max_length
       end
@@ -96,6 +98,7 @@ class TestFakerInternet < Test::Unit::TestCase
     (1..32).each do |min_length|
       (min_length + 1..33).each do |max_length|
         l = @tester.username(specifier: (min_length...max_length)).length
+
         assert l >= min_length
         assert l <= max_length - 1
       end
@@ -106,6 +109,7 @@ class TestFakerInternet < Test::Unit::TestCase
     (1..32).each do |min_length|
       (min_length + 1..33).each do |max_length|
         u = @tester.username(specifier: (min_length...max_length), separators: %w[=])
+
         assert u.length.between? min_length, max_length - 1
         assert_match(/\A[a-z]+((=)?[a-z]*)*\z/, u)
       end
@@ -125,6 +129,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_password_max_with_integer_arg
     (1..32).each do |min_length|
       max_length = min_length + 4
+
       assert @tester.password(min_length: min_length, max_length: max_length, mix_case: false).length <= max_length
     end
   end
@@ -134,6 +139,7 @@ class TestFakerInternet < Test::Unit::TestCase
     64.times do
       passwords << @tester.password(min_length: 14, max_length: 16)
     end
+
     assert passwords.select { |item| item.length == 16 }.size >= 1
   end
 
@@ -146,6 +152,7 @@ class TestFakerInternet < Test::Unit::TestCase
         char.capitalize == char ? upcase_count += 1 : downcase_count += 1
       end
     end
+
     assert upcase_count >= 1
     assert downcase_count >= 1
   end
@@ -153,6 +160,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_password_with_min_length_eq_1
     min_length = 1
     password = @tester.password(min_length: min_length)
+
     assert_match(/\w+/, password)
   end
 
@@ -160,6 +168,7 @@ class TestFakerInternet < Test::Unit::TestCase
     min_length = 2
     max_length = 5
     password = @tester.password(min_length: min_length, max_length: max_length)
+
     assert_match(/\w+/, password)
     assert_includes (min_length..max_length), password.size, 'Password size is incorrect'
   end
@@ -179,6 +188,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_password_with_special_chars_and_mixed_case
     32.times do
       password = @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true)
+
       assert_match(/[!@#$%\^&*]+/, password)
       assert_match(/[A-z]+/, password)
     end
@@ -187,6 +197,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_password_with_special_chars_and_mixed_case_on_2chars_password
     16.times do
       password = @tester.password(min_length: 2, max_length: 6, mix_case: true, special_characters: true)
+
       assert_match(/[!@#$%\^&*]+/, password)
       assert_match(/[A-z]+/, password)
     end
@@ -254,6 +265,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
     1000.times do
       address = @tester.private_ip_v4_address
+
       assert_match expected, address
     end
   end
@@ -385,6 +397,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_uuid
     uuid = @tester.uuid
+
     assert_equal(36, uuid.size)
     assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, uuid)
   end
@@ -398,6 +411,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_user_with_args
     user = @tester.user('username', 'email', 'password')
+
     assert_match(/[a-z]+((_|\.)[a-z]+)?/, user[:username])
     assert_match(/.+@.+\.\w+/, user[:email])
     assert_match(/\w{3}/, user[:password])
@@ -405,6 +419,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_user_without_args
     user = @tester.user
+
     assert_match(/[a-z]+((_|\.)[a-z]+)?/, user[:username])
     assert_match(/.+@.+\.\w+/, user[:email])
   end

@@ -65,6 +65,7 @@ class TestEsMxLocale < Test::Unit::TestCase
 
   def test_es_mx_finance_vat_number
     vat = Faker::Finance.vat_number(country: 'MX')
+
     assert vat.is_a? String
     assert_match(/([A-ZÑ]){3,4}(\d){6}([A-Z0-9]){3}/, vat)
   end

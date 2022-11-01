@@ -9,6 +9,7 @@ class TestFakerTwitter < Test::Unit::TestCase
 
   def test_user
     user = @tester.user
+
     assert user.is_a?(Hash)
     assert_equal(41, user.keys.count)
     assert user[:status].is_a?(Hash)
@@ -17,6 +18,7 @@ class TestFakerTwitter < Test::Unit::TestCase
 
   def test_user_with_email
     user = @tester.user(include_email: true)
+
     assert user.is_a?(Hash)
     assert_equal(42, user.keys.count)
     assert user[:email].is_a?(String)
@@ -24,6 +26,7 @@ class TestFakerTwitter < Test::Unit::TestCase
 
   def test_user_without_status
     user = @tester.user(include_status: false)
+
     assert user.is_a?(Hash)
     assert_equal(40, user.keys.count)
     assert_nil user[:status]
@@ -31,6 +34,7 @@ class TestFakerTwitter < Test::Unit::TestCase
 
   def test_status
     status = @tester.status
+
     assert status.is_a?(Hash)
     assert_equal(25, status.keys.count)
     assert status[:entities].is_a?(Hash)
@@ -40,6 +44,7 @@ class TestFakerTwitter < Test::Unit::TestCase
 
   def test_status_without_user
     status = @tester.status(include_user: false)
+
     assert status.is_a?(Hash)
     assert_equal(24, status.keys.count)
     assert_nil status[:user]
@@ -47,6 +52,7 @@ class TestFakerTwitter < Test::Unit::TestCase
 
   def test_status_with_photo
     status = @tester.status(include_photo: true)
+
     assert status.is_a?(Hash)
     assert_equal(25, status.keys.count)
     assert status[:entities].is_a?(Hash)

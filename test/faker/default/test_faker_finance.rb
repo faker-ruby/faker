@@ -39,6 +39,7 @@ class TestFakerFinance < Test::Unit::TestCase
 
   def test_ticker_with_valid_params
     ticker_return = Faker::Finance.ticker('nyse')
+
     assert_includes Faker::Base.fetch_all('finance.ticker.nyse').join(', '), ticker_return
   end
 

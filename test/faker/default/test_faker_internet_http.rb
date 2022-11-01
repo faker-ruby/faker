@@ -35,6 +35,7 @@ class TestFakerInternetHTTP < Test::Unit::TestCase
     exception = assert_raises ArgumentError do
       @tester.status_code(group: :inexistent)
     end
+
     assert_equal('Invalid HTTP status code group', exception.message)
   end
 end

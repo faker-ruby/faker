@@ -39,6 +39,7 @@ class TestFaker < Test::Unit::TestCase
     v = Faker::Base.numerify('###')
 
     Faker::Config.random = Random.new(42)
+
     assert_equal v, Faker::Base.numerify('###')
   end
 
@@ -48,6 +49,7 @@ class TestFaker < Test::Unit::TestCase
     v = Faker::Base.regexify(re)
 
     Faker::Config.random = Random.new(42)
+
     assert_equal v, Faker::Base.regexify(re)
   end
 
@@ -56,6 +58,7 @@ class TestFaker < Test::Unit::TestCase
     v = Faker::Base.letterify('???')
 
     Faker::Config.random = Random.new(42)
+
     assert_equal v, Faker::Base.letterify('???')
   end
 
@@ -64,6 +67,7 @@ class TestFaker < Test::Unit::TestCase
     v = Faker::Base.fetch('name.first_name')
 
     Faker::Config.random = Random.new(42)
+
     assert_equal v, Faker::Base.fetch('name.first_name')
   end
 
@@ -72,6 +76,7 @@ class TestFaker < Test::Unit::TestCase
     v = Faker::Base.rand_in_range(0, 1000)
 
     Faker::Config.random = Random.new(42)
+
     assert_equal v, Faker::Base.rand_in_range(0, 1000)
   end
 
@@ -106,6 +111,7 @@ class TestFaker < Test::Unit::TestCase
     assert_nothing_raised ArgumentError do
       Faker::Base.rand(0)
     end
+
     assert_equal 0, Faker::Base.rand(0)
   end
 
@@ -113,6 +119,7 @@ class TestFaker < Test::Unit::TestCase
     assert_nothing_raised ArgumentError do
       Faker::Base.rand(0..6)
     end
+
     assert_includes 0..6, Faker::Base.rand(0..6)
   end
 

@@ -36,6 +36,7 @@ class TestEnNzLocale < Test::Unit::TestCase
 
   def test_en_nz_phone_number_methods
     cellphone = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+
     assert_equal '0', cellphone[0]
     assert_equal '2', cellphone[1]
   end
