@@ -9,6 +9,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_valid_ssn
     sample = @tester.valid
+
     assert_equal(11, sample.length)
     assert_equal '-', sample[3]
     assert_equal '-', sample[6]
@@ -19,6 +20,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_invalid_ssn
     sample = @tester.invalid
+
     assert_equal(11, sample.length)
     assert_equal '-', sample[3]
     assert_equal '-', sample[6]
@@ -29,15 +31,18 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_spanish_dni
     sample = @tester.spanish_citizen_number
+
     assert_equal 10, sample.length
     assert sample[0..7].split.map { :to_i }.all? { :is_digit? }
     assert_equal('-', sample[8])
     mod = sample[0..7].to_i % 23
+
     assert_equal Faker::IDNumber::CHECKS[mod], sample[9]
   end
 
   def test_spanish_nie
     sample = @tester.spanish_foreign_citizen_number
+
     assert_equal 11, sample.length
     assert_includes 'XYZ', sample[0]
     assert_equal '-', sample[1]
@@ -45,6 +50,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_equal '-', sample[9]
     prefix = 'XYZ'.index(sample[0]).to_s
     mod = "#{prefix}#{sample[2..8]}".to_i % 23
+
     assert_equal Faker::IDNumber::CHECKS[mod], sample[10]
   end
 
@@ -66,44 +72,52 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_brazilian_citizen_number
     sample = @tester.brazilian_citizen_number
+
     assert_match(/^\d{11}$/, sample)
     assert_match(/(\d)((?!\1)\d)+/, sample)
   end
 
   def test_brazilian_citizen_number_formatted
     sample = @tester.brazilian_citizen_number(formatted: true)
+
     assert_match(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, sample)
   end
 
   def test_brazilian_id
     sample = @tester.brazilian_id
+
     assert_match(/^\d{9}$/, sample)
     assert_match(/(\d)((?!\1)\d)+/, sample)
   end
 
   def test_brazilian_id_formatted
     sample = @tester.brazilian_id(formatted: true)
+
     assert_match(/^\d{1,2}.\d{3}.\d{3}-[\dX]$/, sample)
   end
 
   def test_brazilian_citizen_number_checksum_digit
     digits = '128991760'
     checksum_digit = Faker::IDNumber.send(:brazilian_citizen_number_checksum_digit, digits)
+
     assert_equal('4', checksum_digit)
     digits = '1289917604'
     checksum_digit = Faker::IDNumber.send(:brazilian_citizen_number_checksum_digit, digits)
+
     assert_equal('8', checksum_digit)
   end
 
   def test_brazilian_id_checksum_digit
     digits = '41987080'
     checksum_digit = Faker::IDNumber.send(:brazilian_id_checksum_digit, digits)
+
     assert_equal('5', checksum_digit)
   end
 
   def test_brazilian_document_checksum
     digits = '123456789'
     checksum = Faker::IDNumber.send(:brazilian_document_checksum, digits)
+
     assert_equal(2100, checksum)
   end
 
@@ -113,6 +127,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
     id_digit10 = Faker::IDNumber.send(:brazilian_document_digit, 1, id: true)
     id_digit11 = Faker::IDNumber.send(:brazilian_document_digit, 0, id: true)
     id_digit_other = Faker::IDNumber.send(:brazilian_document_digit, 2, id: true)
+
     assert_equal('0', citizen_number_digit10)
     assert_equal('9', citizen_number_digit_other)
     assert_equal('X', id_digit10)
@@ -123,6 +138,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_brazilian_citizen_number_digit
     digit10 = Faker::IDNumber.send(:brazilian_citizen_number_digit, 10)
     digit_other = Faker::IDNumber.send(:brazilian_citizen_number_digit, 9)
+
     assert_equal('0', digit10)
     assert_equal('9', digit_other)
   end
@@ -131,6 +147,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
     digit10 = Faker::IDNumber.send(:brazilian_id_digit, 1)
     digit11 = Faker::IDNumber.send(:brazilian_id_digit, 0)
     digit_other = Faker::IDNumber.send(:brazilian_id_digit, 2)
+
     assert_equal('X', digit10)
     assert_equal('0', digit11)
     assert_equal('9', digit_other)
@@ -138,6 +155,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_chilean_id
     sample = @tester.chilean_id
+
     assert_match(/^\d{8}-[K\d]$/, sample)
   end
 
@@ -155,37 +173,44 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_croatian_id
     sample = @tester.croatian_id
+
     assert_match(/^\d{11}$/, sample)
   end
 
   def test_croatian_id_international
     sample = @tester.croatian_id(international: true)
+
     assert_match(/^HR\d{11}$/, sample)
   end
 
   def test_croatian_id_checksum_digit
     digits = '8764670153'
     checksum_digit = Faker::IDNumber.send(:croatian_id_checksum_digit, digits)
+
     assert_equal(5, checksum_digit)
   end
 
   def test_danish_id_number
     sample = @tester.danish_id_number
+
     assert_match(/^\d{10}$/, sample)
   end
 
   def test_french_insee_number
     sample = @tester.french_insee_number
+
     assert_match(/^(?<gnd>\d{1})(?<year>\d{2})(?<month>\d{2})(?<department1>\d{1})(?<department2>[0-9AB]{1})(?<place>\d{3})(?<indv>\d{3})(?<ctrl>\d{2})$/, sample)
   end
 
   def test_danish_id_number_formatted
     sample = @tester.danish_id_number(formatted: true)
+
     assert_match(/^\d{6}-\d{4}$/, sample)
   end
 
   def test_danish_id_number_birthday
     sample = @tester.danish_id_number(birthday: Date.new(1995, 1, 2))
+
     assert_match(/^020195\d{4}$/, sample)
   end
 
@@ -197,26 +222,31 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_danish_id_number_birthday_late_1800
     sample = @tester.danish_id_number(birthday: Date.new(1895, 1, 2))
+
     assert_match(/^020195[5678]\d{3}$/, sample)
   end
 
   def test_danish_id_number_birthday_early_1900
     sample = @tester.danish_id_number(birthday: Date.new(1915, 1, 2))
+
     assert_match(/^020115[0123]\d{3}$/, sample)
   end
 
   def test_danish_id_number_birthday_late_1900
     sample = @tester.danish_id_number(birthday: Date.new(1995, 1, 2))
+
     assert_match(/^020195[012349]\d{3}$/, sample)
   end
 
   def test_danish_id_number_birthday_early_2000
     sample = @tester.danish_id_number(birthday: Date.new(2015, 1, 2))
+
     assert_match(/^020115[456789]\d{3}$/, sample)
   end
 
   def test_danish_id_number_birthday_mid_2000
     sample = @tester.danish_id_number(birthday: Date.new(2055, 1, 2))
+
     assert_match(/^020155[5678]\d{3}$/, sample)
   end
 
@@ -228,11 +258,13 @@ class TestFakerIdNumber < Test::Unit::TestCase
 
   def test_danish_id_number_gender_female
     sample = @tester.danish_id_number(gender: :female)
+
     assert_predicate sample.chars.last.to_i, :even?
   end
 
   def test_danish_id_number_gender_male
     sample = @tester.danish_id_number(gender: :male)
+
     assert_predicate sample.chars.last.to_i, :odd?
   end
 

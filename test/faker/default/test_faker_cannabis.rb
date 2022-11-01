@@ -50,6 +50,7 @@ class TestFakerCannabis < Test::Unit::TestCase
   def test_locales
     [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
+
       assert Faker::Cannabis.strain.is_a? String
       assert Faker::Cannabis.cannabinoid_abbreviation.is_a? String
       assert Faker::Cannabis.cannabinoid.is_a? String

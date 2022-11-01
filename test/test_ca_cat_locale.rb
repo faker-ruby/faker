@@ -28,11 +28,13 @@ class TestCaCatLocale < Test::Unit::TestCase
 
   def test_ca_cat_phone_numbers_start_with_9
     mobile = Faker::PhoneNumber.phone_number.gsub(/\D/, '')
+
     assert_equal '9', mobile[0]
   end
 
   def test_ca_cat_cell_numbers_start_with_6
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+
     assert_equal '6', mobile[0]
   end
 end

@@ -18,6 +18,7 @@ class TestFakerNumber < Test::Unit::TestCase
 
     10.times do |digits|
       digits += 1
+
       assert_match(/^[0-9]{#{digits}}$/, @tester.number(digits: digits).to_s)
     end
 
@@ -55,6 +56,7 @@ class TestFakerNumber < Test::Unit::TestCase
     times.times do
       assert num = @tester.digit
       stats[num] ||= 0
+
       assert stats[num] += 1
     end
 
@@ -77,6 +79,7 @@ class TestFakerNumber < Test::Unit::TestCase
   def test_between
     100.times do
       random_number = @tester.between(from: -50, to: 50)
+
       assert random_number >= -50, "Expected >= -50, but got #{random_number}"
       assert random_number <=  50, "Expected <= 50, but got #{random_number}"
     end
@@ -85,6 +88,7 @@ class TestFakerNumber < Test::Unit::TestCase
   def test_within
     100.times do
       random_number = @tester.within(range: -50..50)
+
       assert random_number >= -50, "Expected >= -50, but got #{random_number}"
       assert random_number <=  50, "Expected <= 50, but got #{random_number}"
     end
@@ -93,6 +97,7 @@ class TestFakerNumber < Test::Unit::TestCase
   def test_positive
     100.times do
       random_number = @tester.positive(from: 1, to: 100)
+
       assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
       assert random_number <= 100, "Expected <= 100, but got #{random_number}"
     end
@@ -101,6 +106,7 @@ class TestFakerNumber < Test::Unit::TestCase
   def test_negative
     100.times do
       random_number = @tester.negative(from: -1, to: -100)
+
       assert random_number <= -1,   "Expected <= -1, but got #{random_number}"
       assert random_number >= -100, "Expected >= -100, but got #{random_number}"
     end
@@ -108,18 +114,21 @@ class TestFakerNumber < Test::Unit::TestCase
 
   def test_force_positive
     random_number = @tester.positive(from: -1, to: -100)
+
     assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
     assert random_number <= 100, "Expected <= 100, but got #{random_number}"
   end
 
   def test_force_negative
     random_number = @tester.negative(from: 1, to: 100)
+
     assert random_number <= -1,   "Expected <= -1, but got #{random_number}"
     assert random_number >= -100, "Expected >= -100, but got #{random_number}"
   end
 
   def test_parameters_order
     random_number = @tester.between(from: 100, to: 1)
+
     assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
     assert random_number <= 100, "Expected <= 100, but got #{random_number}"
   end

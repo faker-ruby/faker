@@ -37,6 +37,7 @@ class TestZhCnLocale < Test::Unit::TestCase
     assert Faker::PhoneNumber.phone_number.is_a? String
 
     cn_cell_phone_validation_regex = /^1(3[0-9]|4[57]|5[0-35-9]|7[0-35-8]|8[0-9])\d{8}$/
+
     assert_match(cn_cell_phone_validation_regex, Faker::PhoneNumber.cell_phone)
   end
 

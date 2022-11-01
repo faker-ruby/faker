@@ -43,6 +43,7 @@ class TestEnAuOckerLocale < Test::Unit::TestCase
 
   def test_en_au_cell_phone_method
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+
     assert_equal '0', mobile[0]
     assert_equal '4', mobile[1]
   end

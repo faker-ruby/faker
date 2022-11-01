@@ -13,6 +13,7 @@ class TestFakerInvoice < Test::Unit::TestCase
 
     100.times do
       random_amount = @tester.amount_between(from: from, to: to)
+
       assert random_amount >= from, "Expected >= \"#{from}\", but got #{random_amount}"
       assert random_amount <= to, "Expected <= \"#{to}\", but got #{random_amount}"
     end

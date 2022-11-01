@@ -35,6 +35,7 @@ class TestFakerTezos < Test::Unit::TestCase
     Faker::Config.random = Random.new(42)
     v = Faker::Blockchain::Tezos.contract
     Faker::Config.random = Random.new(42)
+
     assert_equal v, Faker::Blockchain::Tezos.contract
   end
 end

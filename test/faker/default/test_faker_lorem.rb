@@ -115,6 +115,7 @@ class TestFakerLorem < Test::Unit::TestCase
 
   def test_paragraph_char_count
     paragraph = @tester.paragraph_by_chars(number: 256)
+
     assert_equal(256, paragraph.length)
   end
 

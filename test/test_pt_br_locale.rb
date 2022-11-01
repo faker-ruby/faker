@@ -53,6 +53,7 @@ class TestPtBrLocale < Test::Unit::TestCase
 
     assert Faker::Color.hsl_color.is_a? Array
     hue = Faker::Color.hsl_color[0]
+
     assert hue >= 0 && hue <= 360
     Faker::Color.hsl_color[1..2].each do |value|
       assert value >= 0 && value <= 1
@@ -61,6 +62,7 @@ class TestPtBrLocale < Test::Unit::TestCase
     assert Faker::Color.hsla_color.is_a? Array
     assert Faker::Color.hsl_color.is_a? Array
     hue = Faker::Color.hsl_color[0]
+
     assert hue >= 0 && hue <= 360
     Faker::Color.hsl_color[1..3].each do |value|
       assert value >= 0 && value <= 1

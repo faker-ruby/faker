@@ -55,6 +55,7 @@ class TestEeLocale < Test::Unit::TestCase
   def test_ee_phone_number
     100.times do
       phone_number_prefix = Faker::PhoneNumber.phone_number[0..1]
+
       assert_include @valid_phone_prefixes, phone_number_prefix
     end
   end
@@ -62,6 +63,7 @@ class TestEeLocale < Test::Unit::TestCase
   def test_ee_cell_phone
     100.times do
       cell_phone_prefix = Faker::PhoneNumber.cell_phone[0]
+
       assert_include @valid_cell_phone_prefixes, cell_phone_prefix
     end
   end

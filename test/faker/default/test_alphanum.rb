@@ -37,6 +37,7 @@ class TestFakerAlphanum < Test::Unit::TestCase
     letters = @tester.alphanumeric(number: 5, min_alpha: 2).chars.map do |char|
       char =~ /[[:alpha:]]/
     end
+
     assert letters.compact.size >= 2
   end
 
@@ -44,6 +45,7 @@ class TestFakerAlphanum < Test::Unit::TestCase
     numbers = @tester.alphanumeric(number: 5, min_numeric: 4).chars.map do |char|
       char =~ /[[:digit:]]/
     end
+
     assert numbers.compact.size >= 4
   end
 end

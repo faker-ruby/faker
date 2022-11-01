@@ -21,6 +21,7 @@ class TestEnCaLocale < Test::Unit::TestCase
     assert_equal 'CA', Faker::Address.country_code
 
     expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
+
     assert_match(expected, Faker::Address.postcode)
   end
 
@@ -51,6 +52,7 @@ class TestEnCaLocale < Test::Unit::TestCase
   def test_validity_of_phone_method_output
     # got the following regex from http://stackoverflow.com/a/123666/1210055 as an expression of the NANP standard.
     ca_number_validation_regex = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/
+
     assert_match(ca_number_validation_regex, Faker::PhoneNumber.phone_number)
   end
 
