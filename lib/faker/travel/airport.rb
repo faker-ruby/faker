@@ -148,7 +148,7 @@ module Faker
         # @faker.version next
         def eu_medium
           fetch('airport.european_union.medium')
-        end  
+        end
 
         ##
         # Produces random EU Airport by IATA code.
