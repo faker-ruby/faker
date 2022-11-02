@@ -87,7 +87,7 @@ class TestFakerCompany < Test::Unit::TestCase
   def test_polish_taxpayer_identification_number
     number = @tester.polish_taxpayer_identification_number
     control_sum = 0
-    [6, 5, 7, 2, 3, 4, 5, 6, 7].each_with_index do |control, index|
+    [6, 5, 7, 2, 3, 4, 5, 6, 7].each.with_index do |control, index|
       control_sum += control * number[index].to_i
     end
 
@@ -102,7 +102,7 @@ class TestFakerCompany < Test::Unit::TestCase
     # 9 length
     number = @tester.polish_register_of_national_economy
     control_sum = 0
-    [8, 9, 2, 3, 4, 5, 6, 7].each_with_index do |control, index|
+    [8, 9, 2, 3, 4, 5, 6, 7].each.with_index do |control, index|
       control_sum += control * number[index].to_i
     end
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
@@ -111,7 +111,7 @@ class TestFakerCompany < Test::Unit::TestCase
     # 14 length
     number = @tester.polish_register_of_national_economy(length: 14)
     control_sum = 0
-    [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8].each_with_index do |control, index|
+    [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8].each.with_index do |control, index|
       control_sum += control * number[index].to_i
     end
     control_number = control_sum.modulo(11) == 10 ? 0 : control_sum.modulo(11)
@@ -172,7 +172,7 @@ class TestFakerCompany < Test::Unit::TestCase
 
     assert_match(/^\d{14}$/, sample)
 
-    digit_sum = sample[0..11].chars.each_with_index.inject(0) do |acc, (digit, i)|
+    digit_sum = sample[0..11].chars.each.with_index.inject(0) do |acc, (digit, i)|
       factor = 2 + (3 - i) % 8
       acc + digit.to_i * factor
     end
@@ -181,7 +181,7 @@ class TestFakerCompany < Test::Unit::TestCase
 
     assert_equal sample[12], first_digit
 
-    digit_sum = sample[0..12].chars.each_with_index.inject(0) do |acc, (digit, i)|
+    digit_sum = sample[0..12].chars.each.with_index.inject(0) do |acc, (digit, i)|
       factor = 2 + (4 - i) % 8
       acc + digit.to_i * factor
     end
@@ -252,7 +252,7 @@ class TestFakerCompany < Test::Unit::TestCase
     weights = [8, 7, 6, 5, 4, 3, 2]
     sum = 0
     digits = org_no.chars.map(&:to_i)
-    weights.each_with_index.map do |w, i|
+    weights.each.with_index.map do |w, i|
       sum += (w * digits[i])
     end
     (11 - (sum % 11)) % 10
@@ -261,13 +261,13 @@ class TestFakerCompany < Test::Unit::TestCase
   def abn_checksum(abn)
     abn_weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
-    abn.chars.map(&:to_i).each_with_index.map do |n, i|
+    abn.chars.map(&:to_i).each.with_index.map do |n, i|
       (i.zero? ? n - 1 : n) * abn_weights[i]
     end.inject(:+)
   end
 
   def luhn_checksum(luhn)
-    luhn_split = luhn.each_char.map(&:to_i).reverse.each_with_index.map do |n, i|
+    luhn_split = luhn.each_char.map(&:to_i).reverse.each.with_index.map do |n, i|
       x = i.odd? ? n * 2 : n
       x > 9 ? x - 9 : x
     end
@@ -293,7 +293,7 @@ class TestFakerCompany < Test::Unit::TestCase
       province_code = number[0..1]
       actual_control = Regexp.last_match(3)
 
-      total = number.chars.each_with_index.inject(0) do |acc, (element, index)|
+      total = number.chars.each.with_index.inject(0) do |acc, (element, index)|
         acc + if index.even?
                 (element.to_i * 2).digits.inject(:+)
               else
