@@ -1,4 +1,53 @@
-# Change Log
+# Changelog
+
+## [v3.0.0](https://github.com/faker-ruby/faker/tree/v3.0.0) (2022-11-01)
+
+### Breaking Changes
+- [PR #2576](https://github.com/faker-ruby/faker/pull/2576) Drop support for positional arguments in favor of keyword arguments. Support for positional arguments was deprecated on v2 [@mauromorales](https://github.com/mauromorales)
+
+### Bug/Fixes
+- [PR #2562](https://github.com/faker-ruby/faker/pull/2562) Fix Faker::Vehicle.vin [@rmm5t](https://github.com/rmm5t)
+- [PR #2567](https://github.com/faker-ruby/faker/pull/2567) Fix typo abreviation -> abbreviation [@alextaujenis](https://github.com/alextaujenis)
+- [PR #2594](https://github.com/faker-ruby/faker/pull/2594) Fix some typos [@jdufresne](https://github.com/jdufresne)
+- [PR #2596](https://github.com/faker-ruby/faker/pull/2596) Removes NBSP from locales files [@hbontempo-br](https://github.com/hbontempo-br)
+
+### Features
+- [PR #2561](https://github.com/faker-ruby/faker/pull/2561) Add country code for `en-CA` phone numbers [@wjessop](https://github.com/wjessop)
+- [PR #2566](https://github.com/faker-ruby/faker/pull/2566) Add color luminosity options [@fbuys](https://github.com/fbuys)
+- [PR #2570](https://github.com/faker-ruby/faker/pull/2570) Add French Translation of Ancient [@Beygs](https://github.com/Beygs)
+- [PR #2582](https://github.com/faker-ruby/faker/pull/2582) Add `clojure` as a language option to `Faker::Source` generator [@professorjrod](https://github.com/professorjrod)
+- [PR #2585](https://github.com/faker-ruby/faker/pull/2585) Add movie Hackers  [@ericdain](https://github.com/ericdain)
+- [PR #2589](https://github.com/faker-ruby/faker/pull/2589) Add Game Escape From Tarkov [@professorjrod](https://github.com/professorjrod)
+- [PR #2592](https://github.com/faker-ruby/faker/pull/2592) Add quotes to "no"-key  [@Frubrecht](https://github.com/Frubrecht)
+
+### What's Changed
+- [PR #2549](https://github.com/faker-ruby/faker/pull/2549) Set true to `rubygems_mfa_required` gemspec metadata [@koic](https://github.com/koic)
+- [PR #2557](https://github.com/faker-ruby/faker/pull/2557) Use rubocop-rake to lint Rake tasks [@dmarcoux](https://github.com/dmarcoux)
+- [PR #2551](https://github.com/faker-ruby/faker/pull/2551) Security: set explicit and strict token-permissions on GitHub workflows [@sashashura](https://github.com/sashashura)
+- [PR #2558](https://github.com/faker-ruby/faker/pull/2558) Remove unneeded require]() lib/faker.rb [@dmarcoux](https://github.com/dmarcoux)
+- [PR #2568](https://github.com/faker-ruby/faker/pull/2568) Remove outdated comment from development dependencies [@stefannibrasil](https://github.com/stefannibrasil)
+- [PR #2569](https://github.com/faker-ruby/faker/pull/2569) Improve Phone Number Locale documentation [@calvinballing](https://github.com/calvinballing)
+- [PR #2579](https://github.com/faker-ruby/faker/pull/2579) Add note about Random behavior on MiniTest [@stefannibrasil](https://github.com/stefannibrasil)
+- [PR #2580](https://github.com/faker-ruby/faker/pull/2580) Remove mentions to `master` and use `main` [@stefannibrasil](https://github.com/stefannibrasil)
+- [PR #2586](https://github.com/faker-ruby/faker/pull/2586) Change McCree to Cassidy on Overwatch generator [@ericdain](https://github.com/ericdain)
+- [PR #2584](https://github.com/faker-ruby/faker/pull/2584) Automate workflow to publish to RubyGems. [@bijoysijo](https://github.com/bijoysijo)
+- [PR #2598](https://github.com/faker-ruby/faker/pull/2598) Remove tags from publish.yml [@vbrazo](https://github.com/vbrazo)
+- [PR #2604](https://github.com/faker-ruby/faker/pull/2604) Update fi-FI state listing from year 1721 to 2022 [@Newman101](https://github.com/Newman101)
+- [PR #2602](https://github.com/faker-ruby/faker/pull/2602) Fix publish action for release types [@thdaraujo](https://github.com/thdaraujo)
+- [PR #2591](https://github.com/faker-ruby/faker/pull/2591) Fixes iban checksum calculation [@srcoley](https://github.com/srcoley)
+- [PR #2599](https://github.com/faker-ruby/faker/pull/2599) Fix documentation for tarkov game [@kaushikhande](https://github.com/kaushikhande)
+- [PR #2600](https://github.com/faker-ruby/faker/pull/2600) Add sports documentation and update sports [@matt17r](https://github.com/matt17r)
+- [PR #2590](https://github.com/faker-ruby/faker/pull/2590) Deprecate LoremPixel [@uzorjchibuzor](https://github.com/uzorjchibuzor)
+
+### Update local dependencies
+- Update rubocop minitest to `0.23.0`
+- Update simplecov to `0.21.0`
+- Update test-unit to `3.5.5`
+- Update rubocop to `1.37.1`
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v2.23.0...v3.0.0
+
+------------------------------------------------------------------------------
 
 ## [v2.23.0](https://github.com/faker-ruby/faker/tree/v2.23.0) (2022-09-01)
 
