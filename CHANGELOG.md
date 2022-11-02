@@ -1,29 +1,83 @@
-# Change Log
+# Changelog
+
+## [v3.0.0](https://github.com/faker-ruby/faker/tree/v3.0.0) (2022-11-01)
+
+### Breaking Changes
+- [PR #2576](https://github.com/faker-ruby/faker/pull/2576) Drop support for positional arguments in favor of keyword arguments. Support for positional arguments was deprecated on v2 [@mauromorales](https://github.com/mauromorales)
+
+### Bug/Fixes
+- [PR #2562](https://github.com/faker-ruby/faker/pull/2562) Fix Faker::Vehicle.vin [@rmm5t](https://github.com/rmm5t)
+- [PR #2567](https://github.com/faker-ruby/faker/pull/2567) Fix typo abreviation -> abbreviation [@alextaujenis](https://github.com/alextaujenis)
+- [PR #2594](https://github.com/faker-ruby/faker/pull/2594) Fix some typos [@jdufresne](https://github.com/jdufresne)
+- [PR #2596](https://github.com/faker-ruby/faker/pull/2596) Removes NBSP from locales files [@hbontempo-br](https://github.com/hbontempo-br)
+
+### Features
+- [PR #2561](https://github.com/faker-ruby/faker/pull/2561) Add country code for `en-CA` phone numbers [@wjessop](https://github.com/wjessop)
+- [PR #2566](https://github.com/faker-ruby/faker/pull/2566) Add color luminosity options [@fbuys](https://github.com/fbuys)
+- [PR #2570](https://github.com/faker-ruby/faker/pull/2570) Add French Translation of Ancient [@Beygs](https://github.com/Beygs)
+- [PR #2582](https://github.com/faker-ruby/faker/pull/2582) Add `clojure` as a language option to `Faker::Source` generator [@professorjrod](https://github.com/professorjrod)
+- [PR #2585](https://github.com/faker-ruby/faker/pull/2585) Add movie Hackers  [@ericdain](https://github.com/ericdain)
+- [PR #2589](https://github.com/faker-ruby/faker/pull/2589) Add Game Escape From Tarkov [@professorjrod](https://github.com/professorjrod)
+- [PR #2592](https://github.com/faker-ruby/faker/pull/2592) Add quotes to "no"-key  [@Frubrecht](https://github.com/Frubrecht)
+
+### What's Changed
+- [PR #2549](https://github.com/faker-ruby/faker/pull/2549) Set true to `rubygems_mfa_required` gemspec metadata [@koic](https://github.com/koic)
+- [PR #2557](https://github.com/faker-ruby/faker/pull/2557) Use rubocop-rake to lint Rake tasks [@dmarcoux](https://github.com/dmarcoux)
+- [PR #2551](https://github.com/faker-ruby/faker/pull/2551) Security: set explicit and strict token-permissions on GitHub workflows [@sashashura](https://github.com/sashashura)
+- [PR #2558](https://github.com/faker-ruby/faker/pull/2558) Remove unneeded require]() lib/faker.rb [@dmarcoux](https://github.com/dmarcoux)
+- [PR #2568](https://github.com/faker-ruby/faker/pull/2568) Remove outdated comment from development dependencies [@stefannibrasil](https://github.com/stefannibrasil)
+- [PR #2569](https://github.com/faker-ruby/faker/pull/2569) Improve Phone Number Locale documentation [@calvinballing](https://github.com/calvinballing)
+- [PR #2579](https://github.com/faker-ruby/faker/pull/2579) Add note about Random behavior on MiniTest [@stefannibrasil](https://github.com/stefannibrasil)
+- [PR #2580](https://github.com/faker-ruby/faker/pull/2580) Remove mentions to `master` and use `main` [@stefannibrasil](https://github.com/stefannibrasil)
+- [PR #2586](https://github.com/faker-ruby/faker/pull/2586) Change McCree to Cassidy on Overwatch generator [@ericdain](https://github.com/ericdain)
+- [PR #2584](https://github.com/faker-ruby/faker/pull/2584) Automate workflow to publish to RubyGems. [@bijoysijo](https://github.com/bijoysijo)
+- [PR #2598](https://github.com/faker-ruby/faker/pull/2598) Remove tags from publish.yml [@vbrazo](https://github.com/vbrazo)
+- [PR #2604](https://github.com/faker-ruby/faker/pull/2604) Update fi-FI state listing from year 1721 to 2022 [@Newman101](https://github.com/Newman101)
+- [PR #2602](https://github.com/faker-ruby/faker/pull/2602) Fix publish action for release types [@thdaraujo](https://github.com/thdaraujo)
+- [PR #2591](https://github.com/faker-ruby/faker/pull/2591) Fixes iban checksum calculation [@srcoley](https://github.com/srcoley)
+- [PR #2599](https://github.com/faker-ruby/faker/pull/2599) Fix documentation for tarkov game [@kaushikhande](https://github.com/kaushikhande)
+- [PR #2600](https://github.com/faker-ruby/faker/pull/2600) Add sports documentation and update sports [@matt17r](https://github.com/matt17r)
+- [PR #2590](https://github.com/faker-ruby/faker/pull/2590) Deprecate LoremPixel [@uzorjchibuzor](https://github.com/uzorjchibuzor)
+
+### Update local dependencies
+- Update rubocop minitest to `0.23.0`
+- Update simplecov to `0.21.0`
+- Update test-unit to `3.5.5`
+- Update rubocop to `1.37.1`
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v2.23.0...v3.0.0
+
+------------------------------------------------------------------------------
 
 ## [v2.23.0](https://github.com/faker-ruby/faker/tree/v2.23.0) (2022-09-01)
 
-* Fix Japanese plural by @akmhmgc in https://github.com/faker-ruby/faker/pull/2517
-* Update rubocop requirement from = 1.26.0 to = 1.28.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2483
-* Add sports to `Faker::Sport` by @matt17r in https://github.com/faker-ruby/faker/pull/2397
-* [Internet::Password] Improve mix_case and special_characters support by @meuble in https://github.com/faker-ruby/faker/pull/2308
-* Danish id number by @jokklan in https://github.com/faker-ruby/faker/pull/2511
-* Add generator for vulnerability identifiers by @NobodysNightmare in https://github.com/faker-ruby/faker/pull/2367
-* Add the ability to generate a mime type of a specific media type by @ric2b in https://github.com/faker-ruby/faker/pull/2518
-* Add IDNumber.french_insee_number by @Spone in https://github.com/faker-ruby/faker/pull/2455
-* fix flaky user agent test by @thdaraujo in https://github.com/faker-ruby/faker/pull/2530
-* Update GitHub Issues and Pull Request Templates [ci-skip] by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2531
-* fix: ensure generated passwords have correct characters when mixed_case & special_characters enabled by @tiff-o in https://github.com/faker-ruby/faker/pull/2532
-* Thread safety by @kiskoza in https://github.com/faker-ruby/faker/pull/2520
-* Fix warning instance variable uninitialized by @akmhmgc in https://github.com/faker-ruby/faker/pull/2535
-* fix italy VAT and add italy condominium fiscal code generator by @FiloSpaTeam in https://github.com/faker-ruby/faker/pull/2491
-* Add ChileRut.full_formatted_rut by @KarlHeitmann in https://github.com/faker-ruby/faker/pull/2460
-* Updated versions and added more operating systems by @abrahamparayil in https://github.com/faker-ruby/faker/pull/2536
-* Add vehicle version generator by @trinaldi in https://github.com/faker-ruby/faker/pull/2540
-* Fix computer test by @trinaldi in https://github.com/faker-ruby/faker/pull/2543
-* Drop support for EOL Ruby versions (`2.5` and `2.6`) by @nickmendezFlatiron in https://github.com/faker-ruby/faker/pull/2538
-* Update minitest requirement from = 5.15.0 to = 5.16.3 by @dependabot in https://github.com/faker-ruby/faker/pull/2547
-* Update rubocop requirement from = 1.28.2 to = 1.35.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2548
-* Fix `fma_brotherhood` usage example by @y0n0zawa in https://github.com/faker-ruby/faker/pull/2552
+### Bug/Fixes
+- [PR #2517](https://github.com/faker-ruby/faker/pull/) Fix Japanese plural [@akmhmgc](https://github.com/akmhmgc) 
+- [PR #2308](https://github.com/faker-ruby/faker/pull/) Internet::Password - Improve mix_case and special_characters support [@meuble](https://github.com/meuble) 
+- [PR #2520](https://github.com/faker-ruby/faker/pull/) Add thread safety [@kiskoza](https://github.com/kiskoza) 
+- [PR #2543](https://github.com/faker-ruby/faker/pull/) Fix computer test [@trinaldi](https://github.com/trinaldi) 
+- [PR #2552](https://github.com/faker-ruby/faker/pull/) Fix `fma_brotherhood` usage example [@y0n0zawa](https://github.com/y0n0zawa) 
+
+### Features
+- [PR #2367](https://github.com/faker-ruby/faker/pull/) Add generator for vulnerability identifiers [@NobodysNightmare](https://github.com/NobodysNightmare) 
+- [PR #2397](https://github.com/faker-ruby/faker/pull/) Add sports to `Faker::Sport` [@matt17r](https://github.com/matt17r) 
+- [PR #2511](https://github.com/faker-ruby/faker/pull/) Add Danish id number [@jokklan](https://github.com/jokklan) 
+- [PR #2518](https://github.com/faker-ruby/faker/pull/) Add the ability to generate a mime type of a specific media type [@ric2b](https://github.com/ric2b) 
+- [PR #2455](https://github.com/faker-ruby/faker/pull/) Add IDNumber.french_insee_number [@Spone](https://github.com/Spone) 
+- [PR #2491](https://github.com/faker-ruby/faker/pull/) fix italy VAT and add italy condominium fiscal code generator [@FiloSpaTeam](https://github.com/FiloSpaTeam) 
+- [PR #2460](https://github.com/faker-ruby/faker/pull/) Add ChileRut.full_formatted_rut [@KarlHeitmann](https://github.com/KarlHeitmann) 
+- [PR #2540](https://github.com/faker-ruby/faker/pull/) Add vehicle version generator [@trinaldi](https://github.com/trinaldi) 
+
+### What's Changed
+- [PR #2530](https://github.com/faker-ruby/faker/pull/) Fix flaky user agent test [@thdaraujo](https://github.com/thdaraujo) 
+- [PR #2531](https://github.com/faker-ruby/faker/pull/) Update GitHub Issues and Pull Request Templates [ci-skip] [@stefannibrasil](https://github.com/stefannibrasil) 
+- [PR #2535](https://github.com/faker-ruby/faker/pull/) Fix warning instance variable uninitialized [@akmhmgc](https://github.com/akmhmgc) 
+- [PR #2536](https://github.com/faker-ruby/faker/pull/) Updated versions and added more operating systems [@abrahamparayil](https://github.com/abrahamparayil) 
+- [PR #2538](https://github.com/faker-ruby/faker/pull/) Drop support for EOL Ruby versions (`2.5` and `2.6`) [@nickmendezFlatiron](https://github.com/nickmendezFlatiron) 
+
+### Update local dependencies
+- Update minitest to `5.16.3`
+- Update rubocop to `1.35.1`
 
 ------------------------------------------------------------------------------
 
