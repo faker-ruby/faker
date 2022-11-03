@@ -22,9 +22,15 @@ module Faker
       #
       # @faker.version next
       def sport(include_ancient: false, include_unusual: false)
-        sports = fetch_all('sport.summer_olympics') + fetch_all('sport.winter_olympics') + fetch_all('sport.summer_paralympics') + fetch_all('sport.winter_paralympics')
-        sports << fetch_all('sport.ancient_olympics') if include_ancient
-        sports << fetch_all('sport.unusual') if include_unusual
+        sports = []
+        sports.concat(
+          fetch_all('sport.summer_olympics'),
+          fetch_all('sport.summer_paralympics'),
+          fetch_all('sport.winter_olympics'),
+          fetch_all('sport.winter_paralympics')
+        )
+        sports.concat(fetch_all('sport.ancient_olympics')) if include_ancient
+        sports.concat(fetch_all('sport.unusual')) if include_unusual
         sample(sports)
       end
 
