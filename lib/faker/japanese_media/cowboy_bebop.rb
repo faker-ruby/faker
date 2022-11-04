@@ -49,7 +49,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::JapaneseMedia::CowboyBebop.quote #=> "Bang!"
+        #   Faker::JapaneseMedia::CowboyBebop.quote #=> "Bang!!"
         #
         # @faker.version next
         def quote
