@@ -1,7 +1,7 @@
 en: 
   faker: 
     conan:
-      characters:
+      character:
         - Edward 
         - Ein 
         - Faye Valentine 
@@ -45,7 +45,7 @@ en:
         - Whitney Hagas Matsumoto 
         - Zebra
 
-      episodes:
+      episode:
         - Asteroid Blues
         - Stray Dog Strut
         - Honky Tonk Women
@@ -73,7 +73,7 @@ en:
         - The Real Folk Blues part 1
         - The Real Folk Blues part 2  
 
-      songs:
+      song:
         - Tank!
         - Rush
         - Spokey Dokey
@@ -150,7 +150,7 @@ en:
         - No Money. 
         - Rain
 
-      quotes:
+      quote:
         - Men always seem to think about their past before they die, as though they were frantically searching for proof that they truly lived.
         - I'm not going there to die. I'm going to find out if I'm really alive.
         - I felt like I was watching a dream I'd never wake up from. Before I knew it, the dream was all over.
