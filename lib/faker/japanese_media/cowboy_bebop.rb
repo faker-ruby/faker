@@ -52,10 +52,11 @@ module Faker
         #   Faker::JapaneseMedia::CowboyBebop.quote #=> "Bang!"
         #
         # @faker.version next
-        def songs
-          fetch('cowboy_bebop.qoute')
+        def quote
+          fetch('cowboy_bebop.quote')
         end
       end
     end
   end
 end
+
