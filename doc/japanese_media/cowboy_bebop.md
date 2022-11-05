@@ -1,6 +1,6 @@
 # Faker::JapaneseMedia::CowboyBebop
 
-Available since version 3.0.0.
+Available since version @faker.version next
 
 ```ruby
 Faker::JapaneseMedia::CowboyBebop.character #=> "Spike Spiegel"
