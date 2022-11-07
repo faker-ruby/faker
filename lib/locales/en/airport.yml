@@ -113,7 +113,7 @@ en:
             - Tulsa International Airport
             - Wilkes-Barre/Scranton International Airport
             - Wilmington International Airport
-          us_iata_code:
+          iata_code:
             large:
               - ATL
               - BWI
@@ -302,7 +302,7 @@ en:
             - Fontanarossa Airport
             - Linate Airport
             - Naples International Airport
-          eu_iata_code:
+          iata_code:
             large:
               - LGW
               - LHR

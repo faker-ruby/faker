@@ -238,6 +238,9 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 ### Fantasy
   - [Faker::Fantasy::Tolkien](doc/fantasy/tolkien.md)
 
+### Travel
+  - [Faker:Travel::Airport](doc/travel/airport.md)
+
 ### Creature
   - [Faker::Creature::Animal](doc/creature/animal.md)
   - [Faker::Creature::Bird](doc/creature/bird.md)

@@ -7,59 +7,11 @@ class TestFakerAirport < Test::Unit::TestCase
     @tester = Faker::Travel::Airport
   end
 
-  def test_united_states
-    assert_match(/\w+/, @tester.united_states)
+  def name
+    assert_match(/\w+/, @tester.name)
   end
 
-  def test_us_large
-    assert_match(/\w+/, @tester.us_large)
-  end
-
-  def test_us_medium
-    assert_match(/\w+/, @tester.us_medium)
-  end
-
-  def test_us_small
-    assert_match(/\w+/, @tester.us_small)
-  end
-
-  def test_us_iata
-    assert_match(/\w+/, @tester.us_iata)
-  end
-
-  def test_us_iata_large
-    assert_match(/\w+/, @tester.us_iata_large)
-  end
-
-  def test_us_iata_medium
-    assert_match(/\w+/, @tester.us_iata_medium)
-  end
-
-  def test_us_iata_small
-    assert_match(/\w+/, @tester.us_iata_small)
-  end
-
-  def test_european_union
-    assert_match(/\w+/, @tester.european_union)
-  end
-
-  def test_eu_large
-    assert_match(/\w+/, @tester.eu_large)
-  end
-
-  def test_eu_medium
-    assert_match(/\w+/, @tester.eu_large)
-  end
-
-  def test_eu_iata
-    assert_match(/\w+/, @tester.eu_iata)
-  end
-
-  def test_eu_iata_large
-    assert_match(/\w+/, @tester.eu_iata_large)
-  end
-
-  def test_eu_iata_medium
-    assert_match(/\w+/, @tester.eu_iata_medium)
+  def iata
+    assert_match(/\w+/, @tester.iata)
   end
 end
