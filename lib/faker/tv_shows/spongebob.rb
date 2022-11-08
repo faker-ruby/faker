@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::TvShows::Spongebob.character #=> "Patrick"
         #
-        # @faker.version 1.9.2
+        # @faker.version next
         def character
           fetch('spongebob.characters')
         end
@@ -27,7 +27,7 @@ module Faker
         # @example
         #   Faker::TvShows::Spongebob.quote #=> "I'm ready, I'm ready."
         #
-        # @faker.version 1.9.2
+        # @faker.version next
         def quote
           fetch('spongebob.quotes')
         end
@@ -40,7 +40,7 @@ module Faker
         # @example
         #   Faker::TvShows::Spongebob.episode #=> "Reef Blower"
         #
-        # @faker.version 1.9.2
+        # @faker.version next
         def episode
           fetch('spongebob.episodes')
         end
