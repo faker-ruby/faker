@@ -25,7 +25,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::TvShows::Spongebob.quote #=> "I'm ready, I'm ready."
+        #   Faker::TvShows::Spongebob.quote #=> "I'm ready! I'm ready!"
         #
         # @faker.version next
         def quote
