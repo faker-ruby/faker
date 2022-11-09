@@ -18,7 +18,7 @@ module Faker
       # @faker.version 1.7.3
       def user(include_status: true, include_email: false)
         user_id = id
-        background_image_url = Faker::LoremFlickr.image(size: '600x400') # TODO: Make the dimensions change
+        background_image_url = Faker::LoremFlickr.image(size: '600x400')
         profile_image_url = Faker::Avatar.image(slug: user_id, size: '48x48')
         user = {
           id: user_id,
@@ -163,8 +163,6 @@ module Faker
       end
 
       def photo_entity
-        # TODO: Dynamic image sizes
-        # TODO: Return accurate indices
         media_url = Faker::LoremFlickr.image(size: '1064x600')
         media_id = id
         {
