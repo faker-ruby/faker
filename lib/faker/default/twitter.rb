@@ -18,7 +18,7 @@ module Faker
       # @faker.version 1.7.3
       def user(include_status: true, include_email: false)
         user_id = id
-        background_image_url = Faker::LoremPixel.image(size: '600x400') # TODO: Make the dimensions change
+        background_image_url = Faker::LoremFlickr.image(size: '600x400')
         profile_image_url = Faker::Avatar.image(slug: user_id, size: '48x48')
         user = {
           id: user_id,
@@ -46,7 +46,7 @@ module Faker
           profile_background_image_url_https: background_image_url,
           profile_background_image_url: background_image_url.sub('https://', 'http://'),
           profile_background_tile: Faker::Boolean.boolean(true_ratio: 0.1),
-          profile_banner_url: Faker::LoremPixel.image(size: '1500x500'),
+          profile_banner_url: Faker::LoremFlickr.image(size: '1500x500'),
           profile_image_url_https: profile_image_url,
           profile_image_url: profile_image_url.sub('https://', 'http://'),
           profile_link_color: Faker::Color.hex_color,
@@ -163,9 +163,7 @@ module Faker
       end
 
       def photo_entity
-        # TODO: Dynamic image sizes
-        # TODO: Return accurate indices
-        media_url = Faker::LoremPixel.image(size: '1064x600')
+        media_url = Faker::LoremFlickr.image(size: '1064x600')
         media_id = id
         {
           id: media_id,
