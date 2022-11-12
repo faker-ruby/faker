@@ -16,6 +16,7 @@ class TestPlLocale < Test::Unit::TestCase
 
   def test_pl_names
     names = Faker::Base.fetch_all('name.first_name') + Faker::Base.fetch_all('name.last_name')
+
     names.each { |name| assert_match(/([\wĄąĆćĘęŁłÓóŚśŻżŹź]+\.? ?){2,3}/, name) }
   end
 

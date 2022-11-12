@@ -11,12 +11,14 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
   # Words delivered by this request should be on the wordlist.
   def test_words
     @words = @tester.words(number: 1000)
+
     @words.each { |w| assert_includes @wordlist, w }
   end
 
   # Words should not return any word with spaces
   def test_words_without_spaces
     @words = @tester.words(number: 1000)
+
     @words.each { |w| refute_match(/\s/, w) }
   end
 

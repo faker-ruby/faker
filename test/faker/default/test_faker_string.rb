@@ -40,6 +40,7 @@ class TestFakerString < Test::Unit::TestCase
 
   def test_range_length
     range = (-5..30)
+
     16.times { assert_includes range, @tester.random(length: range).length }
 
     range = (42..42)
@@ -49,10 +50,12 @@ class TestFakerString < Test::Unit::TestCase
 
   def test_array_length
     array = [0, -1, 1, 1024, rand(2048)]
+
     8.times { assert_includes array, @tester.random(length: array).length }
 
     num = rand(-2048..2047)
     array = [num, num, num]
+
     8.times { assert_equal @tester.random(length: array).length, [0, num].max }
   end
 
@@ -60,6 +63,7 @@ class TestFakerString < Test::Unit::TestCase
     test = lambda do
       @tester.random(length: [1, (2..5), [3, (-7...6)], nil])
     end
+
     16.times { assert(((0..5).cover? test.call.length)) }
   end
 end
