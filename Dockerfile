@@ -1,4 +1,4 @@
-FROM ruby:2.7 as app
+FROM ruby:latest as app
 
 COPY . .
 
