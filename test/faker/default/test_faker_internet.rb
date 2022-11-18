@@ -294,6 +294,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
     1000.times do
       address = @tester.public_ip_v4_address
+
       private.each { |reg| assert_not_match reg, address }
       reserved.each { |reg| assert_not_match reg, address }
     end

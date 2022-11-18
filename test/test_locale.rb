@@ -53,6 +53,7 @@ class TestLocale < Test::Unit::TestCase
 
   def test_with_locale_does_not_fail_without_the_locale_in_available_locales
     I18n.available_locales -= [:en]
+
     Faker::Base.with_locale(:en) do
       assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
     end
@@ -70,6 +71,7 @@ class TestLocale < Test::Unit::TestCase
 
   def test_with_locale_changes_locale_temporarily
     Faker::Config.locale = 'en-BORK'
+
     I18n.with_locale(:en) do
       assert_equal Faker::Base.translate('faker.separator'), LoadedYaml['en']['separator']
     end

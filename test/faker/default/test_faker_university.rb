@@ -31,6 +31,7 @@ class TestFakerUniversity < Test::Unit::TestCase
 
   def test_greek_organization_is_assembled_from_greek_alphabet
     test_organization = @tester.greek_organization
+
     test_organization.each_char do |letter|
       assert_includes @alphabet, letter
     end
