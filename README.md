@@ -7,21 +7,33 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
 
-This gem is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker) that generates fake data.
+Faker is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker).
+It's a library for generating fake data such as names, addresses, and phone numbers.
 
-It comes in very handy for taking screenshots (taking screenshots for my
-project, [Catch the Best](http://catchthebest.com/) was the original impetus
-for the creation of this gem), having real-looking test data, and having your
-database populated with more than one or two records while you're doing
-development.
+Faker helps you generate real-looking test data, and populate your
+database with more than a couple of records while you're doing development.
+
+It comes in very handy for taking screenshots (taking screenshots for a personal project)
+was the original impetus for the creation of this gem).
+
+## Quick links
+
+- 📖 **[Read the documentation for the latest version][rubydocs].**
+- 📢 **[See what's changed in recent versions][changelog].**
+
+[rubydocs]: https://www.rubydoc.info/gems/faker/
+[changelog]: CHANGELOG.md
+
+## Table of Contents
 
 - [Faker](#faker)
-    - [NOTE](#note)
-  - [Installing](#installing)
+    - [Notes](#notes)
+  - [Getting Started](#getting-started)
   - [Usage](#usage)
     - [CLI](#cli)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
+    - [Customization](#customization)
   - [Generators](#generators)
     - [Default](#default)
     - [Blockchain](#blockchain)
@@ -35,45 +47,82 @@ development.
     - [Quotes](#quotes)
     - [Sports](#sports)
     - [Tv Shows](#tv-shows)
-  - [Customization](#customization)
   - [Contributing](#contributing)
-  - [Contact](#contact)
+  - [Versioning](#versioning)
+  - [Team](#team)
   - [License](#license)
 
-### NOTE
-* While Faker generates data at random, returned values are not guaranteed to be unique by default.
-  You must explicitly specify when you require unique values, see [details](#ensuring-unique-values).
-  Values also can be deterministic if you use the deterministic feature, see [details](#deterministic-random)
-* Minitest and Faker >= 2.22 users might need to add the following to the `test_helper.rb` or `rails_helper.rb` file:
-  `Faker::Config.random = Random.new`. See [Issue #2534](https://github.com/faker-ruby/faker/issues/2534) for more details.
-* This is the `main` branch of Faker and may contain changes that are not yet released.
-  Please refer the README of your version for the available methods.
-  List of all versions is [available here](https://github.com/stympy/faker/releases).
+### Notes
 
-## Installing
-```bash
-gem install faker
+* While Faker generates data at random, returned values are not guaranteed to be unique by default.
+  To explicitly specify when you require unique values, see [Ensuring Unique Values](#ensuring-unique-values).
+  Values also can be deterministic if you use the deterministic feature, see [Deterministic Random](#deterministic-random)
+* This is the `main` branch of Faker and may contain changes that are not yet released.
+  Please refer to the README of your version for the available methods.
+  The list of all versions is [available here](https://github.com/stympy/faker/releases).
+
+## Getting Started
+
+Start by including `faker` in your Gemfile:
+
+```ruby
+gem 'faker'
 ```
-Note: if you are getting a `uninitialized constant Faker::[some_class]` error, your version of the gem is behind the one documented here. To make sure that your gem is the one documented here, change the line in your Gemfile to:
+
+Then run `bundle install`.
+
+### Minitest and Faker >= 2.22
+
+To prevent Faker (version >= 2.22) from generating duplicate values when using Minitest,
+you might need to add the following to the `test_helper.rb` or `rails_helper.rb` file:
+
+```ruby
+  Faker::Config.random = Random.new
+```
+
+See [Issue #2534](https://github.com/faker-ruby/faker/issues/2534) for more details.
+
+*Note*: if you get a `uninitialized constant Faker::[some_class]` error, your version of
+the gem is behind the one documented here. To make sure that your gem is the one
+documented here, change the line in your Gemfile to:
 
 ```ruby
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 ```
 
 ## Usage
+
+Here are some examples of how to use Faker:
+
 ```ruby
 require 'faker'
 
 Faker::Name.name      #=> "Christophe Bartell"
 
-Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+Faker::Address.full_address #=> "5479 William Way, East Sonnyhaven, LA 63637"
+
+Faker::Markdown.emphasis #=> "Quo qui aperiam. Amet corrupti distinctio. Sit quia *dolor.*"
+
+Faker::TvShows::RuPaul.queen #=> "Violet Chachki"
+
+Faker::Alphanumeric.alpha(number: 10) #=> "zlvubkrwga"
+
+Faker::ProgrammingLanguage.name #=> "Ruby"
 ```
 
-### CLI
+For a complete list of the generators, see [Generators](#generators).
+
+### Faker-bot CLI (command-line interface)
+
+[faker-bot](https://github.com/faker-ruby/faker-bot) is a tool to make it easier
+to pick theright Faker methods to generate the fake data you need.
+
 Instructions are available in the [faker-bot README](https://github.com/faker-ruby/faker-bot).
 
 ### Ensuring unique values
-Prefix your method call with `unique`. For example:
+
+To ensure Faker generates unique values, prefix your method call with `unique`:
+
 ```ruby
 Faker::Name.unique.name # This will return a unique name every time it is called
 ```
@@ -82,6 +131,7 @@ If too many unique values are requested from a generator that has a limited
 number of potential values, a `Faker::UniqueGenerator::RetryLimitExceeded`
 exception may be raised. It is possible to clear the record of unique values
 that have been returned, for example between tests.
+
 ```ruby
 Faker::Name.unique.clear # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
@@ -100,7 +150,9 @@ Faker::Lorem.unique.exclude :string, [number: 6], %w[azerty wxcvbn]
 ```
 
 ### Deterministic Random
-Faker supports seeding of its pseudo-random number generator (PRNG) to provide deterministic output of repeated method calls.
+
+Faker supports seeding of its pseudo-random number generator (PRNG)
+to provide deterministic output of repeated method calls.
 
 ```ruby
 Faker::Config.random = Random.new(42)
@@ -115,7 +167,60 @@ Faker::Config.random.seed #=> 185180369676275068918401850258677722187
 Faker::Company.bs #=> "cultivate viral synergies"
 ```
 
+### Customization
+
+You may want Faker to print information depending on your location in the world.
+To assist you in this, Faker uses the `I18n` gem to store strings and formats to
+represent the names and postal codes of the area of your choosing.
+
+Just set the locale you want as shown below, and Faker will take care of the rest.
+
+```ruby
+Faker::Config.locale = 'es'
+# or
+Faker::Config.locale = :es
+```
+
+Note: This customization is not thread-safe. See [Locale setting can be ignored #2563]
+(https://github.com/faker-ruby/faker/issues/2563) for more details.
+
+If your locale doesn't already exist, create it in the `lib/locales` directory
+and you can then override or add elements to suit your needs. See more about how to
+use locales [here](lib/locales/README.md)
+
+```yaml
+en-au-ocker:
+  faker:
+    name:
+      # Existing faker field, new data
+      first_name:
+        - Charlotte
+        - Ava
+        - Chloe
+        - Emily
+
+      # New faker fields
+      ocker_first_name:
+        - Bazza
+        - Bluey
+        - Davo
+        - Johno
+        - Shano
+        - Shazza
+      region:
+        - South East Queensland
+        - Wide Bay Burnett
+        - Margaret River
+        - Port Pirie
+        - Gippsland
+        - Elizabeth
+        - Barossa
+```
+
 ## Generators
+
+Here is the full list of generators available with this gem. If you need details about any of them, make sure to consult the documentation.
+
 **NOTE: Some of the generators below aren't released yet. If you want to use them, change the line in your gemfile to:**
 
 ```ruby
@@ -361,58 +466,27 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::TvShows::TwinPeaks](doc/tv_shows/twin_peaks.md)
   - [Faker::TvShows::VentureBros](doc/tv_shows/venture_bros.md)
 
-## Customization
-You may want Faker to print information depending on your location in the world.
-To assist you in this, Faker uses I18n gem to store strings and formats to
-represent the names and postal codes of the area of your choosing.
-Just set the locale you want as shown below, and Faker will take care of the rest.
-
-```ruby
-Faker::Config.locale = 'es'
-# or
-Faker::Config.locale = :es
-```
-
-If your locale doesn't already exist, create it in the `lib/locales` directory
-and you can then override or add elements to suit your needs. See more about how to
-use locales [here](lib/locales/README.md)
-
-```yaml
-en-au-ocker:
-  faker:
-    name:
-      # Existing faker field, new data
-      first_name:
-        - Charlotte
-        - Ava
-        - Chloe
-        - Emily
-
-      # New faker fields
-      ocker_first_name:
-        - Bazza
-        - Bluey
-        - Davo
-        - Johno
-        - Shano
-        - Shazza
-      region:
-        - South East Queensland
-        - Wide Bay Burnett
-        - Margaret River
-        - Port Pirie
-        - Gippsland
-        - Elizabeth
-        - Barossa
-```
-
 ## Contributing
-See [CONTRIBUTING.md](https://github.com/stympy/faker/blob/main/CONTRIBUTING.md).
 
-## Contact
-Comments and feedback are welcome. Send an email to Benjamin Curtis via the [google group](http://groups.google.com/group/ruby-faker).
+If you have problems, please create a [GitHub Issue](/.github/ISSUE_TEMPLATE/bug-report.md).
 
-You can also join our [discord channel](https://discord.gg/RMumTwB) to discuss anything regarding improvements or feature requests.
+Take a look at the [Contributing](CONTRIBUTING.md) document for
+instructions on setting up the repo on your machine, understanding the codebase,
+and creating a good pull request.
+
+There is a [discord channel](https://discord.gg/RMumTwB) to discuss anything
+regarding improvements or feature requests.
+
+Thank you, contributors!
+
+## Versioning
+
+Faker follows Semantic Versioning 2.0 as defined at https://semver.org.
+
+## Team
+
+Faker is maintained by [Vitor Oliveira](https://github.com/vbrazo), [Stefanni Brasil](https://github.com/stefannibrasil), [Thiago Araujo](https://github.com/thdaraujo), [Koichi ITO](https://github.com/koic), [Zeragamba](https://github.com/Zeragamba).
 
 ## License
+
 This code is free to use under the terms of the MIT license.
