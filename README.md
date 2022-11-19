@@ -181,12 +181,13 @@ Faker::Config.locale = 'es'
 Faker::Config.locale = :es
 ```
 
-Note: This customization is not thread-safe. See [Locale setting can be ignored #2563]
-(https://github.com/faker-ruby/faker/issues/2563) for more details.
+Note: This customization is not thread-safe. See [Locale setting can be ignored #2563](https://github.com/faker-ruby/faker/issues/2563) for more details.
 
 If your locale doesn't already exist, create it in the `lib/locales` directory
 and you can then override or add elements to suit your needs. See more about how to
-use locales [here](lib/locales/README.md)
+use locales [here](lib/locales/README.md).
+
+Here is an example:
 
 ```yaml
 en-au-ocker:
@@ -219,7 +220,7 @@ en-au-ocker:
 
 ## Generators
 
-Here is the full list of generators available with this gem. If you need details about any of them, make sure to consult the documentation.
+This is the full list of generators available with this gem. If you need details about any of them, make sure to consult the documentation.
 
 **NOTE: Some of the generators below aren't released yet. If you want to use them, change the line in your gemfile to:**
 
