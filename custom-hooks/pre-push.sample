@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Add this file to your .git/hooks folder without .sample extension
+#
+# Called by "git push" before anything has been pushed.
+# If this script exits with a non-zero status nothing will be pushed.
+
+echo "Running pre-push hook"
+bundle exec rake
+
+# $? stores exit value of the last command
+if [ $? -ne 0 ]; then
+ echo "Rubocop and Tests must pass before pushing!"
+ exit 1
+fi
