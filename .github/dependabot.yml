@@ -6,6 +6,10 @@ updates:
     interval: daily
   open-pull-requests-limit: 10
   ignore:
+  - dependency-name: rubocop-minitest
+    update-types: ["version-update:semver-patch"] # Ignore patch versions
+  - dependency-name: rubocop-rake
+    update-types: ["version-update:semver-patch"] # Ignore patch versions
   - dependency-name: test-unit
     versions:
     - 3.3.9
@@ -19,6 +23,7 @@ updates:
     versions:
     - 0.21.2
   - dependency-name: rubocop
+    update-types: ["version-update:semver-patch"] # Ignore patch versions
     versions:
     - 1.10.0
     - 1.8.1
