@@ -299,8 +299,8 @@ module Faker
       private
 
       def random_vin
-        front = 8.times.map { VIN_KEYSPACE.sample }.join
-        back = 8.times.map { VIN_KEYSPACE.sample }.join
+        front = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
+        back = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
         vin = "#{front}X#{back}"
         checksum = vin.chars.each_with_index.map do |char, index|
           (char[/\A\d\z/] ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
