@@ -150,7 +150,9 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_supermario_methods
     assert Faker::Games::SuperMario.character.is_a? String
-    assert_not_english(Faker::Games::SuperMario.character)
+    # this test is randomly failing because of クッパJr. character
+    # (notice the Jr. at the end of the character name)
+    # assert_not_english(Faker::Games::SuperMario.character)
     assert Faker::Games::SuperMario.game.is_a? String
     assert_not_english(Faker::Games::SuperMario.game)
     assert Faker::Games::SuperMario.location.is_a? String
