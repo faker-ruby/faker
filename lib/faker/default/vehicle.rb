@@ -6,9 +6,9 @@ module Faker
 
     MILEAGE_MIN = 10_000
     MILEAGE_MAX = 90_000
-    VIN_KEYSPACE = %w(A B C D E F G H J K L M N P R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9).freeze
-    VIN_TRANSLITERATION = {A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,J:1,K:2,L:3,M:4,N:5,P:7,R:9,S:2,T:3,U:4,V:5,W:6,X:7,Y:8,Z:9}.freeze
-    VIN_WEIGHT = [8,7,6,5,4,3,2,10,0,9,8,7,6,5,4,3,2].freeze
+    VIN_KEYSPACE = %w[A B C D E F G H J K L M N P R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9].freeze
+    VIN_TRANSLITERATION = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, J: 1, K: 2, L: 3, M: 4, N: 5, P: 7, R: 9, S: 2, T: 3, U: 4, V: 5, W: 6, X: 7, Y: 8, Z: 9 }.freeze
+    VIN_WEIGHT = [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2].freeze
     SG_CHECKSUM_WEIGHTS = [3, 14, 2, 12, 2, 11, 1].freeze
     SG_CHECKSUM_CHARS = 'AYUSPLJGDBZXTRMKHEC'
 
@@ -299,13 +299,13 @@ module Faker
       private
 
       def random_vin
-        front = 8.times.map {VIN_KEYSPACE.sample}.join
-        back = 8.times.map {VIN_KEYSPACE.sample}.join
+        front = 8.times.map { VIN_KEYSPACE.sample }.join
+        back = 8.times.map { VIN_KEYSPACE.sample }.join
         vin = "#{front}X#{back}"
-        checksum = vin.split('').each_with_index.map do |char,index|
+        checksum = vin.chars.each_with_index.map do |char, index|
           (char[/\A\d\z/] ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
         end.inject(:+) % 11
-        checksum = "X" if checksum == 10
+        checksum = 'X' if checksum == 10
         "#{front}#{checksum}#{back}"
       end
 
