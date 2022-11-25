@@ -3,6 +3,8 @@
 require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
+  VIN_TRANSLITERATION = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, J: 1, K: 2, L: 3, M: 4, N: 5, P: 7, R: 9, S: 2, T: 3, U: 4, V: 5, W: 6, X: 7, Y: 8, Z: 9 }.freeze
+  VIN_WEIGHT = [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2].freeze
   WORD_MATCH = /\w+\.?/.freeze
   VALIDITY_MATCH = /^([A-HJ-NPR-Z0-9]){17}$/.freeze
 
@@ -12,6 +14,10 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def test_vin
     assert_match Faker::Vehicle::VIN_REGEX, @tester.vin
+  end
+
+  def test_vin_checksum
+    assert valid_vin_checksum(@tester.vin)
   end
 
   def test_vin_validity
@@ -115,5 +121,18 @@ class TestFakerVehicle < Test::Unit::TestCase
   def doors_condition(doors)
     assert_predicate doors, :positive?
     assert doors.is_a?(Integer)
+  end
+
+  def valid_vin_checksum(vin)
+    if vin.present? && vin =~ /\A[A-HJ-NPR-Z0-9]{17}\z/
+      total = 0
+      vin.chars.each_with_index do |char, index|
+        total += (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
+      end
+      checksum = total % 11
+      checksum = "X" if checksum == 10
+      return vin[8] == checksum.to_s
+    end
+    false
   end
 end
