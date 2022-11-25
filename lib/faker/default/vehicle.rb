@@ -300,16 +300,16 @@ module Faker
       private
 
       def random_vin
-        output = ''
-        total = 0
+        _vin = ''
+        _total = 0
         17.times do |index|
-          char = VIN_KEYSPACE.sample(random: Faker::Config.random)
-          output << +char
-          total += (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
+          _char = VIN_KEYSPACE.sample(random: Faker::Config.random)
+          _vin << _char
+          _total += (_char =~ /\A\d\z/ ? _char.to_i : VIN_TRANSLITERATION[_char.to_sym]) * VIN_WEIGHT[index]
         end
-        checksum = total % 11
-        output[8] = checksum == 10 ? 'X' : checksum.to_s
-        output
+        _checksum = _total % 11
+        _vin[8] = _checksum == 10 ? 'X' : _checksum.to_s
+        _vin
       end
 
       def singapore_checksum(plate_number)
