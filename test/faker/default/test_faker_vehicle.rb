@@ -117,7 +117,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def valid_vin(vin)
-    if vin.present? && vin =~ Faker::Vehicle::VIN_REGEX
+    if vin && vin =~ Faker::Vehicle::VIN_REGEX
       total = 0
       vin.chars.each_with_index do |char, index|
         total += (char =~ /\A\d\z/ ? char.to_i : Faker::Vehicle::VIN_TRANSLITERATION[char.to_sym]) * Faker::Vehicle::VIN_WEIGHT[index]
