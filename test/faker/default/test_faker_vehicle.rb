@@ -130,7 +130,7 @@ class TestFakerVehicle < Test::Unit::TestCase
         total += (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
       end
       checksum = total % 11
-      checksum = "X" if checksum == 10
+      checksum = 'X' if checksum == 10
       return vin[8] == checksum.to_s
     end
     false
