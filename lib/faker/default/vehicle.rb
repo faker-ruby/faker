@@ -299,14 +299,16 @@ module Faker
       private
 
       def random_vin
-        front = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
-        back = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
-        vin = "#{front}0#{back}"
-        checksum = vin.chars.each_with_index.map do |char, index|
-          (char[/\A\d\z/] ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
-        end.inject(:+) % 11
-        checksum = 'X' if checksum == 10
-        "#{front}#{checksum}#{back}"
+        vin = ''
+        total = 0
+        17.times do |index|
+          char = VIN_KEYSPACE[rand(0..32)]
+          vin << char
+          total += (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
+        end
+        checksum = total % 11
+        vin[8] = checksum == 10 ? 'X' : checksum.to_s
+        vin
       end
 
       def singapore_checksum(plate_number)
