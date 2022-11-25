@@ -26,7 +26,7 @@ module Faker
         output = ''
         total = 0
         17.times do |index|
-          char = VIN_KEYSPACE[rand(0..32)].dup
+          char = VIN_KEYSPACE[Faker::Config.random.rand(0..32)]
           output << char
           total += (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
         end
