@@ -303,9 +303,9 @@ module Faker
         output = ''
         total = 0
         17.times do |index|
-          char = +VIN_KEYSPACE.sample(random: Faker::Config.random)
-          output << char
-          total += (char =~ /\A\d\z/ ? char.to_i : +VIN_TRANSLITERATION[char.to_sym]) * +VIN_WEIGHT[index]
+          char = VIN_KEYSPACE.sample(random: Faker::Config.random)
+          output << +char
+          total += (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[index]
         end
         checksum = total % 11
         output[8] = checksum == 10 ? 'X' : checksum.to_s
