@@ -475,7 +475,7 @@ Take a look at the [Contributing](CONTRIBUTING.md) document for
 instructions on setting up the repo on your machine, understanding the codebase,
 and creating a good pull request.
 
-There is a [discord channel](https://discord.gg/RMumTwB) to discuss anything
+There is a [Discord channel](https://discord.gg/RMumTwB) to discuss anything
 regarding improvements or feature requests.
 
 Thank you, contributors!
