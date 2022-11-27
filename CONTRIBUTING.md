@@ -164,7 +164,8 @@ When in doubt, run `bundle exec rake reformat_yaml['lib/path/to/file.yml']` to r
 
 ## Setup a custom pre-push git hook
 
-There is a custom git hooks pre-push file. Before the push occurs, it runs the tests and rubocop. If there are any tests failures, or Rubocop offenses, the push is aborted.
+There is a custom git hooks pre-push file. Before the push occurs, it runs the tests and Rubocop. If there are any tests failures, or Rubocop offenses, the push is aborted.
+
 
 To set up:
 - Copy the file `pre-push.sample` located in the `custom-hooks` folder.
