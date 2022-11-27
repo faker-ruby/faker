@@ -115,7 +115,7 @@ For a complete list of the generators, see [Generators](#generators).
 ### Faker-bot CLI (command-line interface)
 
 [faker-bot](https://github.com/faker-ruby/faker-bot) is a tool to make it easier
-to pick theright Faker methods to generate the fake data you need.
+to pick the right Faker methods to generate the fake data you need.
 
 Instructions are available in the [faker-bot README](https://github.com/faker-ruby/faker-bot).
 
