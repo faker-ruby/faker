@@ -10,7 +10,7 @@
 Faker is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker).
 It's a library for generating fake data such as names, addresses, and phone numbers.
 
-Faker helps you generate real-looking test data, and populate your
+Faker helps you generate realistic test data, and populate your
 database with more than a couple of records while you're doing development.
 
 It comes in very handy for taking screenshots (taking screenshots for a personal project)
