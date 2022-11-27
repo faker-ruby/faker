@@ -21,7 +21,8 @@ Although we maintain Faker in our free time, we try to respond to contributions 
 
 ## Setting up your environment
 
-Faker requires ruby version >= 2.7. After forking, and cloning the repo, navigate to the directory, and run:
+Faker requires Ruby version >= 2.7. After forking, and cloning the repo, navigate to the directory, and run:
+
 
 ```ruby
 bundle install
