@@ -79,7 +79,8 @@ There are a few ways to run RuboCop:
 - Use well-crafted commit messages and Pull Requests descriptions, providing context if possible.
 
 - Squash "WIP" commits and remove merge commits by rebasing your branch against main. We try to keep our commit history as clean as possible.
-- To prevent pushing with test failures or rubocop offenses, see [Setup a custom pre-push git hook](#setup-a-custom-pre-push-git-hook).
+- To prevent pushing with test failures or Rubocop offenses, see [Setup a custom pre-push git hook](#setup-a-custom-pre-push-git-hook).
+
 
 ## A word on the changelog
 
