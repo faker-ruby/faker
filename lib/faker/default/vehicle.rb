@@ -26,7 +26,8 @@ module Faker
         front = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
         back = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
         checksum = "#{front}A#{back}".chars.each_with_index.map do |char, i|
-          (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym]) * VIN_WEIGHT[i]
+          value = (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym])
+          value * VIN_WEIGHT[i]
         end.inject(:+) % 11
         checksum = 'X' if checksum == 10
         "#{front}#{checksum}#{back}"
