@@ -46,12 +46,6 @@ bundle exec rake test
 
 ```
 
-### A few notes about our tests
-
-When writing new tests, always use `sample`, `shuffle`, and `rand` from the Base class rather than `Array#sample`, `Array#shuffle` and `Kernel#rand` to preserve the deterministic feature.
-
-We care about code coverage and use `SimpleCov` to analyze the code and generate test coverage reports. It's possible to check the test coverage by running  `open coverage/index.html`. Please make sure to not decrease our `current % covered` by always adding tests to your changes.
-
 ## Code Style
 
 We use [RuboCop](https://github.com/bbatsov/rubocop) as our static code analyzer.
@@ -94,6 +88,7 @@ What happens if the build fails in some way? Don't fear! Click on a failed job a
 
 ## Adding new generators
 
+- Don't use `Array#sample`, `Array#shuffle` and `Kernel#rand` on your new generator if you want to randomly pick values. Instead, you should use the methods provided by the Base class: `sample`, `shuffle` and `rand`. The reason is that we want to preserve the deterministic feature of this gem.
 - Please make sure the generator doesn't exist already before opening a PR.
 - Add a new YAML file to `lib/locales/en` rather than adding translations to `lib/locales/en.yml`. For example, if you add `Faker::MyThing`, put your translations in `lib/locales/en/my_thing.yml`. See [the locale README](./lib/locales/en/README.md) for more info.
 
