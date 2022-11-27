@@ -42,7 +42,8 @@ docs are available in the `/doc` folder.
 To run all of the tests, simply run:
 
 ```ruby
-bundle exec rake tests
+bundle exec rake test
+
 ```
 
 ### A few notes about our tests
