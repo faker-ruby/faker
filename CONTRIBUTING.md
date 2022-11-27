@@ -34,7 +34,8 @@ Run `rake` to ensure the project is all setup. It runs the tests and rubocop. Th
 
 This project follows the typical structure for a gem: code is located in `/lib` and tests are in `/test`. Generators
 
-docs are available in the `/docs` folder.
+docs are available in the `/doc` folder.
+
 
 ## Running the tests
 
