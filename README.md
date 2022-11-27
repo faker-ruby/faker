@@ -181,7 +181,7 @@ Faker::Config.locale = 'es'
 Faker::Config.locale = :es
 ```
 
-Note: This customization is not thread-safe. See [Locale setting can be ignored #2563](https://github.com/faker-ruby/faker/issues/2563) for more details.
+Note: Overriding the default locale might not be thread-safe. See [Locale setting can be ignored #2563](https://github.com/faker-ruby/faker/issues/2563) for more details.
 
 If your locale doesn't already exist, create it in the `lib/locales` directory
 and you can then override or add elements to suit your needs. See more about how to
@@ -483,10 +483,6 @@ Thank you, contributors!
 ## Versioning
 
 Faker follows Semantic Versioning 2.0 as defined at https://semver.org.
-
-## Team
-
-Faker is maintained by [Vitor Oliveira](https://github.com/vbrazo), [Stefanni Brasil](https://github.com/stefannibrasil), [Thiago Araujo](https://github.com/thdaraujo), [Koichi ITO](https://github.com/koic), [Zeragamba](https://github.com/Zeragamba).
 
 ## License
 
