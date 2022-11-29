@@ -14,9 +14,10 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_vin_validity
-    100.times do
-      assert valid_vin(@tester.vin)
-    end
+    assert valid_vin("11111111111111111")  # known valid test string
+    assert valid_vin("FAKERGEM5FAKERGEM")  # valid checksum
+    assert !valid_vin("ABCDEFG1234567890") # invalid checksum
+    100.times { assert valid_vin(@tester.vin) }
   end
 
   def test_manufacture
