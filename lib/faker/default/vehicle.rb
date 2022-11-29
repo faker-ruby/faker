@@ -6,10 +6,10 @@ module Faker
 
     MILEAGE_MIN = 10_000
     MILEAGE_MAX = 90_000
-    VIN_LETTERS = 'ABCDEFGHJKLMNPRSTUVWXYZ'
-    VIN_MAP = '0123456789X'
-    VIN_WEIGHTS = '8765432X098765432'
-    VIN_REGEX = /^([A-HJ-NPR-Z0-9]){3}[A-HJ-NPR-Z0-9]{5}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-9]{1}\d{5}$/.freeze
+    VIN_KEYSPACE = %w[A B C D E F G H J K L M N P R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9].freeze
+    VIN_TRANSLITERATION = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, J: 1, K: 2, L: 3, M: 4, N: 5, P: 7, R: 9, S: 2, T: 3, U: 4, V: 5, W: 6, X: 7, Y: 8, Z: 9 }.freeze
+    VIN_WEIGHT = [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2].freeze
+    VIN_REGEX = /\A[A-HJ-NPR-Z0-9]{17}\z/.freeze
     SG_CHECKSUM_WEIGHTS = [3, 14, 2, 12, 2, 11, 1].freeze
     SG_CHECKSUM_CHARS = 'AYUSPLJGDBZXTRMKHEC'
 
@@ -23,7 +23,14 @@ module Faker
       #
       # @faker.version 1.6.4
       def vin
-        regexify(VIN_REGEX)
+        front = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
+        back = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
+        checksum = "#{front}A#{back}".chars.each_with_index.map do |char, i|
+          value = (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym])
+          value * VIN_WEIGHT[i]
+        end.inject(:+) % 11
+        checksum = 'X' if checksum == 10
+        "#{front}#{checksum}#{back}"
       end
 
       # Produces a random vehicle manufacturer.
@@ -298,34 +305,6 @@ module Faker
       end
 
       private
-
-      def first_eight(number)
-        return number[0...8] unless number.nil?
-
-        regexify(VIN_REGEX)
-      end
-      alias last_eight first_eight
-
-      def calculate_vin_check_digit(vin)
-        sum = 0
-
-        vin.each_char.with_index do |c, i|
-          n = vin_char_to_number(c).to_i
-          weight = VIN_WEIGHTS[i].to_i
-          sum += weight * n
-        end
-
-        mod = sum % 11
-        mod == 10 ? 'X' : mod
-      end
-
-      def vin_char_to_number(char)
-        index = VIN_LETTERS.chars.index(char)
-
-        return char.to_i if index.nil?
-
-        VIN_MAP[index]
-      end
 
       def singapore_checksum(plate_number)
         padded_alphabets = format('%3s', plate_number[/^[A-Z]+/]).tr(' ', '-').chars
