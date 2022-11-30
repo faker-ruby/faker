@@ -58,7 +58,8 @@ Please follow these guidelines when adding new code:
 * `MyClass.my_method(my_argument: my_arg)` not `my_method( my_arg )` or `my_method my_arg`.
 * `a = b` and not `a=b`.
 * In general, follow the conventions you see being used in the source already.
-* **ALL SHALL OBEY THE RUBOCOP**
+* Rubocop errors must be resolved for the PR to be approved.
+  * To fix all the offenses automatically with Rubocop's autocorrection tool, run `bundle exec rubocop -A`
 
 There are a few ways to run RuboCop:
 
@@ -74,7 +75,6 @@ There are a few ways to run RuboCop:
 
 - Squash "WIP" commits and remove merge commits by rebasing your branch against main. We try to keep our commit history as clean as possible.
 - To prevent pushing with test failures or Rubocop offenses, see [Setup a custom pre-push git hook](#setup-a-custom-pre-push-git-hook).
-
 
 ## A word on the changelog
 
@@ -132,7 +132,9 @@ To deprecate a method/argument, add `extend Gem::Deprecate` to the top of the cl
 
 ## YAML files
 
-Please use dash syntax for YAML arrays:
+Please use dash syntax for YAML arrays. The dash syntax faciliates code reviews by making it eaiser to see what items were added or removed from the lists.
+
+Here is an example:
 
 ```Yaml
 # this is preferred
