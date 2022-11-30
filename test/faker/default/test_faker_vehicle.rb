@@ -4,7 +4,6 @@ require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
   WORD_MATCH = /\w+\.?/.freeze
-  VALIDITY_MATCH = /^([A-HJ-NPR-Z0-9]){17}$/.freeze
 
   def setup
     @tester = Faker::Vehicle
@@ -16,7 +15,7 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def test_vin_validity
     100.times do
-      assert_match VALIDITY_MATCH, @tester.vin
+      assert valid_vin(@tester.vin)
     end
   end
 
@@ -115,5 +114,19 @@ class TestFakerVehicle < Test::Unit::TestCase
   def doors_condition(doors)
     assert_predicate doors, :positive?
     assert doors.is_a?(Integer)
+  end
+
+  def valid_vin(vin)
+    if vin && vin =~ Faker::Vehicle::VIN_REGEX
+      total = 0
+      vin.chars.each_with_index do |char, index|
+        value = (char =~ /\A\d\z/ ? char.to_i : Faker::Vehicle::VIN_TRANSLITERATION[char.to_sym])
+        total += value * Faker::Vehicle::VIN_WEIGHT[index]
+      end
+      checksum = total % 11
+      checksum = 'X' if checksum == 10
+      return vin[8] == checksum.to_s
+    end
+    false
   end
 end

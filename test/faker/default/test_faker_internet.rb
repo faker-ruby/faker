@@ -122,7 +122,9 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_integer_arg
     (1..32).each do |min_length|
-      assert @tester.password(min_length: min_length, mix_case: false).length >= min_length
+      max_length = min_length + 1
+
+      assert_includes (min_length..max_length), @tester.password(min_length: min_length, max_length: max_length, mix_case: false).length
     end
   end
 
@@ -157,9 +159,8 @@ class TestFakerInternet < Test::Unit::TestCase
     assert downcase_count >= 1
   end
 
-  def test_password_with_min_length_eq_1
-    min_length = 1
-    password = @tester.password(min_length: min_length)
+  def test_password_with_min_length_eq_1_without_mix_case
+    password = @tester.password(min_length: 1, mix_case: false)
 
     assert_match(/\w+/, password)
   end
@@ -171,6 +172,12 @@ class TestFakerInternet < Test::Unit::TestCase
 
     assert_match(/\w+/, password)
     assert_includes (min_length..max_length), password.size, 'Password size is incorrect'
+  end
+
+  def test_password_with_max_length_less_than_min_length
+    assert_raise 'max_length must be more than min_length' do
+      @tester.password(min_length: 8, max_length: 4)
+    end
   end
 
   def test_password_without_mixed_case
@@ -194,17 +201,24 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
-  def test_password_with_special_chars_and_mixed_case_on_2chars_password
+  def test_deterministic_password_with_special_chars_and_mixed_case
+    deterministically_verify -> { @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true) }, depth: 4 do |password|
+      assert_match(/[!@#$%\^&*]+/, password)
+      assert_match(/[A-z]+/, password)
+    end
+  end
+
+  def test_password_with_special_chars_and_mixed_case_on_3chars_password
     16.times do
-      password = @tester.password(min_length: 2, max_length: 6, mix_case: true, special_characters: true)
+      password = @tester.password(min_length: 3, max_length: 6, mix_case: true, special_characters: true)
 
       assert_match(/[!@#$%\^&*]+/, password)
       assert_match(/[A-z]+/, password)
     end
   end
 
-  def test_password_with_incompatible_min_length_and_requirements
-    assert_raise ArgumentError do
+  def test_password_with_invalid_min_length_for_mix_case_and_special_characters
+    assert_raise_message 'min_length should be at least 3 to enable mix_case, special_characters configuration' do
       @tester.password(min_length: 1, mix_case: true, special_characters: true)
     end
   end
@@ -212,7 +226,18 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_password_with_compatible_min_length_and_requirements
     assert_nothing_raised do
       [false, true].each do |value|
-        @tester.password(min_length: 1, mix_case: value, special_characters: !value)
+        min_length = value ? 2 : 1
+        @tester.password(min_length: min_length, mix_case: value, special_characters: !value)
+      end
+    end
+  end
+
+  def test_deterministic_password_with_compatible_min_length_and_requirements
+    [false, true].each do |value|
+      min_length = value ? 2 : 1
+
+      deterministically_verify -> { @tester.password(min_length: min_length, mix_case: value, special_characters: !value) }, depth: 4 do |subject|
+        assert_nothing_raised { subject }
       end
     end
   end

@@ -147,37 +147,48 @@ module Faker
       #
       # @faker.version 2.1.3
       def password(min_length: 8, max_length: 16, mix_case: true, special_characters: false)
-        raise ArgumentError, 'Password of length 1 can not have both mixed case and special characters' if min_length <= 1 && mix_case && special_characters
+        raise ArgumentError, 'max_length must be more than min_length' if max_length < min_length
 
-        min_alpha = mix_case && min_length > 1 ? 2 : 0
-        temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
-        diff_length = max_length - min_length
-
-        if diff_length.positive?
-          diff_rand = rand(diff_length + 1)
-          temp += Lorem.characters(number: diff_rand)
-        end
+        character_types = []
+        required_min_length = 0
 
         if mix_case
-          alpha_count = 0
-          temp.chars.each_with_index do |char, index|
-            if char =~ /[[:alpha:]]/
-              temp[index] = char.upcase if alpha_count.even?
-              alpha_count += 1
-            end
-          end
+          character_types << :mix_case
+          required_min_length += 2
         end
 
         if special_characters
-          chars = %w[! @ # $ % ^ & *]
-          rand(1..min_length).times do |i|
-            temp[i] = chars[rand(chars.length)]
-          end
+          character_types << :special_characters
+          required_min_length += 1
         end
 
-        temp[rand(temp.size - 1)] = Lorem.characters(number: 1, min_alpha: 1).upcase if mix_case && special_characters && !temp.match(/[A-z]+/)
+        raise ArgumentError, "min_length should be at least #{required_min_length} to enable #{character_types.join(', ')} configuration" if min_length < required_min_length
 
-        temp
+        target_length = rand(min_length..max_length)
+
+        password = []
+        character_bag = []
+
+        # use lower_chars by default and add upper_chars if mix_case
+        lower_chars = ('a'..'z').to_a
+        password << lower_chars[rand(lower_chars.count - 1)]
+        character_bag += lower_chars
+
+        if character_types.include?(:mix_case)
+          upper_chars = ('A'..'Z').to_a
+          password << upper_chars[rand(upper_chars.count - 1)]
+          character_bag += upper_chars
+        end
+
+        if character_types.include?(:special_characters)
+          special_chars = %w[! @ # $ % ^ & *]
+          password << special_chars[rand(special_chars.count - 1)]
+          character_bag += special_chars
+        end
+
+        password << character_bag[rand(character_bag.count - 1)] while password.length < target_length
+
+        shuffle(password).join
       end
 
       ##
