@@ -277,7 +277,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Kpop](doc/default/kpop.md)
   - [Faker::Lorem](doc/default/lorem.md)
   - [Faker::LoremFlickr](doc/default/lorem_flickr.md)
-  - [Faker::LoremPixel](doc/default/lorem_pixel.md)
   - [Faker::Markdown](doc/default/markdown.md)
   - [Faker::Marketing](doc/default/marketing.md)
   - [Faker::Measurement](doc/default/measurement.md)
