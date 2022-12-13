@@ -108,7 +108,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 The generators have the `@faker.version` tag on top of their implementation.
 From the tags, you can identify the version the generator was added:
 
-```
+```ruby
 # Faker::TvShows::ParksAndRec.character
 
 # @faker.version 1.9.0
