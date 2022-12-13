@@ -2,9 +2,9 @@
 
 require_relative '../../test_helper'
 
-class TestArrayType < Test::Unit::TestCase
+class TestArray < Test::Unit::TestCase
   def setup
-    @tester = Faker::ArrayType
+    @tester = Faker::Array
   end
 
   def test_integer_default_integer_size

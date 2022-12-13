@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class ArrayType < Base
+  class Array < Base
     class << self
       ##
       # Produces an array of integers of given size.
@@ -10,7 +10,7 @@ module Faker
       # @return [Array]
       #
       # @example
-      #   > Faker::ArrayType.integer #=> [99, 3, 19]
+      #   > Faker::Array.integer #=> [99, 3, 19]
       def integer(size: 3)
         raise ArgumentError, 'Size must be positive' if size.negative?
         return [] if size.zero?
@@ -24,7 +24,7 @@ module Faker
       # @return [Array]
       #
       # @example
-      #   > Faker::ArrayType.random_size_integer #=> [98, 3, 54, 18, 22, 33, 7, 99, 1, 7]
+      #   > Faker::Array.random_size_integer #=> [98, 3, 54, 18, 22, 33, 7, 99, 1, 7]
       def random_size_integer
         integer(size: Faker::Types.rb_integer)
       end
