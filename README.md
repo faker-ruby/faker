@@ -93,6 +93,8 @@ Faker::ProgrammingLanguage.name #=> "Ruby"
 
 For a complete list of the generators, see [Generators](#generators).
 
+Here's a [sample video](https://replayable.io/replay/639b3b8bd6b0d600636947d0/?share=3GB9k9dLZWnt6dvWhyRgsg) of using Faker in a Rails console.
+
 #### A note about the Generators versions
 
 If you get a `uninitialized constant Faker::[some_class]` error, your version of
