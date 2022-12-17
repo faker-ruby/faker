@@ -24,8 +24,8 @@ Although we maintain Faker in our free time, we try to respond to contributions 
 Faker requires Ruby version >= 2.7. After forking, and cloning the repo, navigate to the directory, and run:
 
 
-```ruby
-bundle install
+```sh
+bin/setup
 ```
 
 Run `rake` to ensure the project is all setup. It runs the tests and rubocop. That means you're good to go!
@@ -41,8 +41,8 @@ docs are available in the `/doc` folder.
 
 To run all of the tests, simply run:
 
-```ruby
-bundle exec rake test
+```sh
+bin/test
 
 ```
 
