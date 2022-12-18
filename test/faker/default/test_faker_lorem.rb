@@ -46,7 +46,7 @@ class TestFakerLorem < Test::Unit::TestCase
     @words.each { |w| assert_includes @complete_wordlist, w }
   end
 
-  # Faker::Lorem.word generates random word from standart wordlist
+  # Faker::Lorem.word generates random word from standard wordlist
   def test_word
     @tester = Faker::Lorem
     @standard_wordlist = I18n.translate('faker.lorem.words')

@@ -114,7 +114,7 @@ module Faker
       ##
       # Produces a random US or Canada-based extension / subscriber number. Can be used for both extensions and last four digits of phone number.
       #
-      # @param length [Integer] Speficies the length of the return value.
+      # @param length [Integer] Specifies the length of the return value.
       # @return [String]
       #
       # @example

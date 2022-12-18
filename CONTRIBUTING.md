@@ -132,7 +132,7 @@ To deprecate a method/argument, add `extend Gem::Deprecate` to the top of the cl
 
 ## YAML files
 
-Please use dash syntax for YAML arrays. The dash syntax faciliates code reviews by making it eaiser to see what items were added or removed from the lists.
+Please use dash syntax for YAML arrays. The dash syntax facilitates code reviews by making it easier to see what items were added or removed from the lists.
 
 Here is an example:
 

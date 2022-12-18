@@ -102,7 +102,7 @@ module Faker
         mod10_remainder(weighted_sum)
       end
 
-      # Calculates weigthed sum
+      # Calculates weighted sum
       #
       # For example with 12345678, [1,2]
       # Ref.num. 1 2 3 4 5 6 7 8
