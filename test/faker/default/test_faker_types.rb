@@ -59,7 +59,7 @@ class TestFakerTypes < Test::Unit::TestCase
   end
 
   def test_rb_array_returns_array
-    assert_instance_of Array, @tester.rb_array
+    assert_instance_of ::Array, @tester.rb_array
   end
 
   def test_array_has_the_right_array

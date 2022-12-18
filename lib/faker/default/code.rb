@@ -144,7 +144,7 @@ module Faker
         registry = Faker::Base.sample([1, 2, 3, 4, 5, 6, 7, 9]).to_s
 
         # generate 2nd to 8th
-        partial = Array.new(7) { Faker::Config.random.rand(0..9) }.join
+        partial = ::Array.new(7) { Faker::Config.random.rand(0..9) }.join
 
         # Generate 9th digit
         check_digit = generate_sin_check_digit("#{registry}#{partial}0").to_s
@@ -158,7 +158,7 @@ module Faker
       RBI = %w[01 10 30 33 35 44 45 49 50 51 52 53 54 86 91 98 99].freeze
 
       def generate_imei
-        str = Array.new(15, 0)
+        str = ::Array.new(15, 0)
         sum = 0
         len = 15
 

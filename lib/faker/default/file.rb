@@ -19,7 +19,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def dir(segment_count: 3, root: nil, directory_separator: ::File::Separator)
-        Array
+        ::Array
           .new(segment_count) { Faker::Internet.slug }
           .unshift(root)
           .compact

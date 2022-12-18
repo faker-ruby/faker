@@ -271,7 +271,7 @@ module Faker
       #   Faker::Internet.mac_address(prefix: 'aa:44')  #=> "aa:44:30:88:6e:95"
       def mac_address(prefix: '')
         prefix_digits = prefix.split(':').map { |d| d.to_i(16) }
-        address_digits = Array.new((6 - prefix_digits.size)) { rand(256) }
+        address_digits = ::Array.new((6 - prefix_digits.size)) { rand(256) }
         (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
       end
 
@@ -529,12 +529,12 @@ module Faker
       # @faker.version 2.11.0
       def base64(length: 16, padding: false, urlsafe: true)
         char_range = [
-          Array('0'..'9'),
-          Array('A'..'Z'),
-          Array('a'..'z'),
+          ('0'..'9').to_a,
+          ('A'..'Z').to_a,
+          ('a'..'z').to_a,
           urlsafe ? %w[- _] : %w[+ /]
         ].flatten
-        s = Array.new(length) { sample(char_range) }.join
+        s = ::Array.new(length) { sample(char_range) }.join
         s += '=' if padding
         s
       end
@@ -563,9 +563,9 @@ module Faker
 
       def sanitize_email_local_part(local_part)
         char_range = [
-          Array('0'..'9'),
-          Array('A'..'Z'),
-          Array('a'..'z'),
+          ('0'..'9').to_a,
+          ('A'..'Z').to_a,
+          ('a'..'z').to_a,
           "!#$%&'*+-/=?^_`{|}~.".chars
         ].flatten
 

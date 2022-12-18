@@ -46,7 +46,7 @@ class TestEnLocale < Test::Unit::TestCase
   def check_value(value)
     if value.is_a?(Hash)
       check_hash(value)
-    elsif value.is_a?(Array)
+    elsif value.is_a?(::Array)
       check_array(value)
     else
       assert_nil(value.strip!) unless value.nil?
