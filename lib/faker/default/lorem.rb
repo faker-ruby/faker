@@ -50,7 +50,7 @@ module Faker
       #
       # @faker.version 2.1.3
       def character
-        sample(Types::CHARACTERS)
+        sample(self::ALPHANUMERICS)
       end
 
       ##

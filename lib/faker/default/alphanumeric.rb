@@ -2,11 +2,6 @@
 
 module Faker
   class Alphanumeric < Base
-    ##
-    # List of characters allowed for alphanumeric strings
-    # @private
-    ALPHANUMS = (LOWERCASE_LETTERS + NUMBERS).freeze
-
     class << self
       ##
       # Produces a random string of alphabetic characters (no digits)
@@ -49,7 +44,7 @@ module Faker
         raise ArgumentError, 'min_alpha must be greater than or equal to 0' if min_alpha&.negative?
         raise ArgumentError, 'min_numeric must be greater than or equal to 0' if min_numeric&.negative?
 
-        return ::Array.new(char_count) { sample(ALPHANUMS) }.join if min_alpha.zero? && min_numeric.zero?
+        return ::Array.new(char_count) { sample(self::ALPHANUMERICS) }.join if min_alpha.zero? && min_numeric.zero?
 
         raise ArgumentError, 'min_alpha + min_numeric must be <= number' if min_alpha + min_numeric > char_count
 
@@ -57,7 +52,7 @@ module Faker
 
         alphas = ::Array.new(min_alpha) { sample(self::LOWERCASE_LETTERS) }
         numbers = ::Array.new(min_numeric) { sample(self::NUMBERS) }
-        randoms = ::Array.new(random_count) { sample(ALPHANUMS) }
+        randoms = ::Array.new(random_count) { sample(self::ALPHANUMERICS) }
 
         combined = alphas + numbers + randoms
         combined.shuffle.join

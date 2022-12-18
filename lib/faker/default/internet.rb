@@ -170,14 +170,12 @@ module Faker
         character_bag = []
 
         # use lower_chars by default and add upper_chars if mix_case
-        lower_chars = ('a'..'z').to_a
-        password << lower_chars[rand(lower_chars.count - 1)]
-        character_bag += lower_chars
+        password << self::LOWERCASE_LETTERS[rand(self::LOWERCASE_LETTERS.count - 1)]
+        character_bag += self::LOWERCASE_LETTERS
 
         if character_types.include?(:mix_case)
-          upper_chars = ('A'..'Z').to_a
-          password << upper_chars[rand(upper_chars.count - 1)]
-          character_bag += upper_chars
+          password << self::UPPERCASE_LETTERS[rand(self::UPPERCASE_LETTERS.count - 1)]
+          character_bag += self::UPPERCASE_LETTERS
         end
 
         if character_types.include?(:special_characters)
@@ -529,9 +527,9 @@ module Faker
       # @faker.version 2.11.0
       def base64(length: 16, padding: false, urlsafe: true)
         char_range = [
-          ('0'..'9').to_a,
-          ('A'..'Z').to_a,
-          ('a'..'z').to_a,
+          self::NUMBERS,
+          self::UPPERCASE_LETTERS,
+          self::LOWERCASE_LETTERS,
           urlsafe ? %w[- _] : %w[+ /]
         ].flatten
         s = ::Array.new(length) { sample(char_range) }.join
@@ -563,9 +561,9 @@ module Faker
 
       def sanitize_email_local_part(local_part)
         char_range = [
-          ('0'..'9').to_a,
-          ('A'..'Z').to_a,
-          ('a'..'z').to_a,
+          self::NUMBERS,
+          self::UPPERCASE_LETTERS,
+          self::LOWERCASE_LETTERS,
           "!#$%&'*+-/=?^_`{|}~.".chars
         ].flatten
 

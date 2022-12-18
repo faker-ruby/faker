@@ -37,10 +37,11 @@ module Faker
   end
 
   class Base
-    NUMBERS = (0..9).to_a.freeze
+    NUMBERS = ('0'..'9').to_a.freeze
     UPPERCASE_LETTERS = ('A'..'Z').to_a.freeze
     LOWERCASE_LETTERS = ('a'..'z').to_a.freeze
     LETTERS = (UPPERCASE_LETTERS + LOWERCASE_LETTERS).freeze
+    ALPHANUMERICS = (LOWERCASE_LETTERS + NUMBERS).freeze
 
     class << self
       attr_reader :flexible_key
