@@ -97,7 +97,7 @@ module Faker
       end
 
       ##
-      # Retrieves metric mesurements
+      # Retrieves metric measurements
       #
       # @return [String]
       #

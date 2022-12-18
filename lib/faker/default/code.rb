@@ -5,7 +5,7 @@ module Faker
     flexible :code
     class << self
       ##
-      # Produces a random NPI (National Provider Identifer) code.
+      # Produces a random NPI (National Provider Identifier) code.
       #
       # @return [String]
       #

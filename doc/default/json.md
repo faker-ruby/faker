@@ -1,6 +1,6 @@
 # Faker::Json
 
-**shallow_json(width: width_int, options: options_hash)** -> JSON formated string
+**shallow_json(width: width_int, options: options_hash)** -> JSON formatted string
 
  Takes a width_int and options_hash where the number of key value pairs in the
  returned JSON string is equal to the width_int.

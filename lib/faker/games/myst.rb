@@ -44,7 +44,7 @@ module Faker
         end
 
         ##
-        # Produces the name of a chracter from Myst.
+        # Produces the name of a character from Myst.
         #
         # @return [String]
         #
