@@ -7,10 +7,6 @@ class TestArray < Test::Unit::TestCase
     @tester = Faker::Array
   end
 
-  def test_integer_default_integer_size
-    assert_equal 3, @tester.integer.count
-  end
-
   def test_integer_zero_integers
     assert_equal 0, @tester.integer(size: 0).count
   end
@@ -25,9 +21,9 @@ class TestArray < Test::Unit::TestCase
     end
   end
 
-  def test_random_size_integer
+  def test_random_integer_size
     Faker::Types.stub :rb_integer, 3 do
-      assert_equal 3, @tester.random_size_integer.count
+      assert_equal 3, @tester.integer.count
     end
   end
 end
