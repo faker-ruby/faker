@@ -194,7 +194,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def car_options
-        ::Array.new(rand(5...10)) { fetch('vehicle.car_options') }
+        Array.new(rand(5...10)) { fetch('vehicle.car_options') }
       end
 
       ##
@@ -207,7 +207,7 @@ module Faker
       #
       # @faker.version 1.6.4
       def standard_specs
-        ::Array.new(rand(5...10)) { fetch('vehicle.standard_specs') }
+        Array.new(rand(5...10)) { fetch('vehicle.standard_specs') }
       end
 
       ##

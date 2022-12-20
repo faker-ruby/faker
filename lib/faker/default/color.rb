@@ -61,7 +61,7 @@ module Faker
       #
       # @faker.version 1.5.0
       def rgb_color
-        ::Array.new(3) { single_rgb_color }
+        Array.new(3) { single_rgb_color }
       end
 
       ##

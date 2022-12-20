@@ -37,11 +37,10 @@ module Faker
   end
 
   class Base
-    NUMBERS = ('0'..'9').to_a.freeze
-    UPPERCASE_LETTERS = ('A'..'Z').to_a.freeze
-    LOWERCASE_LETTERS = ('a'..'z').to_a.freeze
-    LETTERS = (UPPERCASE_LETTERS + LOWERCASE_LETTERS).freeze
-    ALPHANUMERICS = (LOWERCASE_LETTERS + NUMBERS).freeze
+    Numbers = Array(0..9)
+    ULetters = Array('A'..'Z')
+    LLetters = Array('a'..'z')
+    Letters = ULetters + LLetters
 
     class << self
       attr_reader :flexible_key
@@ -56,7 +55,7 @@ module Faker
       end
 
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { sample(UPPERCASE_LETTERS) }
+        letter_string.gsub(/\?/) { sample(ULetters) }
       end
 
       def bothify(string)
@@ -87,14 +86,14 @@ module Faker
         reg
           .gsub(%r{^/?\^?}, '').gsub(%r{\$?/?$}, '') # Ditch the anchors
           .gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}') # All {2} become {2,2} and ? become {0,1}
-          .gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i).to_a) }                # [12]{1,2} becomes [12] or [12][12]
-          .gsub(/(\([^)]+\))\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i).to_a) }                 # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
-          .gsub(/(\\?.)\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i).to_a) }                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+          .gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # [12]{1,2} becomes [12] or [12][12]
+          .gsub(/(\([^)]+\))\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                 # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+          .gsub(/(\\?.)\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
           .gsub(/\((.*?)\)/) { |match| sample(match.gsub(/[()]/, '').split('|')) } # (this|that) becomes 'this' or 'that'
-          .gsub(/\[([^\]]+)\]/) { |match| match.gsub(/(\w-\w)/) { |range| sample(Range.new(*range.split('-')).to_a) } } # All A-Z inside of [] become C (or X, or whatever)
+          .gsub(/\[([^\]]+)\]/) { |match| match.gsub(/(\w-\w)/) { |range| sample(Array(Range.new(*range.split('-')))) } } # All A-Z inside of [] become C (or X, or whatever)
           .gsub(/\[([^\]]+)\]/) { |_match| sample(Regexp.last_match(1).chars) } # All [ABC] become B (or A or C)
-          .gsub('\d') { |_match| sample(NUMBERS) }
-          .gsub('\w') { |_match| sample(LETTERS) }
+          .gsub('\d') { |_match| sample(Numbers) }
+          .gsub('\w') { |_match| sample(Letters) }
       end
 
       # Helper for the common approach of grabbing a translation
@@ -213,7 +212,7 @@ module Faker
       # All other values are simply returned.
       def resolve(value)
         case value
-        when ::Array then sample(value)
+        when Array then sample(value)
         when Range then rand value
         else value
         end

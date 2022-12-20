@@ -221,7 +221,7 @@ module Faker
       def generate(count)
         return [] if count.zero?
 
-        ::Array.new(count) { digit }
+        Array.new(count) { digit }
       end
 
       def greater_than_zero(number)

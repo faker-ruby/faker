@@ -30,7 +30,7 @@ module Faker
         #
         # @faker.version 1.9.3
         def fhtagn(number: 1)
-          ::Array.new(number) { fetch('lovecraft.fhtagn') }.join('. ')
+          Array.new(number) { fetch('lovecraft.fhtagn') }.join('. ')
         end
 
         ##

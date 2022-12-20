@@ -170,12 +170,14 @@ module Faker
         character_bag = []
 
         # use lower_chars by default and add upper_chars if mix_case
-        password << self::LOWERCASE_LETTERS[rand(self::LOWERCASE_LETTERS.count - 1)]
-        character_bag += self::LOWERCASE_LETTERS
+        lower_chars = ('a'..'z').to_a
+        password << lower_chars[rand(lower_chars.count - 1)]
+        character_bag += lower_chars
 
         if character_types.include?(:mix_case)
-          password << self::UPPERCASE_LETTERS[rand(self::UPPERCASE_LETTERS.count - 1)]
-          character_bag += self::UPPERCASE_LETTERS
+          upper_chars = ('A'..'Z').to_a
+          password << upper_chars[rand(upper_chars.count - 1)]
+          character_bag += upper_chars
         end
 
         if character_types.include?(:special_characters)
@@ -269,7 +271,7 @@ module Faker
       #   Faker::Internet.mac_address(prefix: 'aa:44')  #=> "aa:44:30:88:6e:95"
       def mac_address(prefix: '')
         prefix_digits = prefix.split(':').map { |d| d.to_i(16) }
-        address_digits = ::Array.new((6 - prefix_digits.size)) { rand(256) }
+        address_digits = Array.new((6 - prefix_digits.size)) { rand(256) }
         (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
       end
 
@@ -527,12 +529,12 @@ module Faker
       # @faker.version 2.11.0
       def base64(length: 16, padding: false, urlsafe: true)
         char_range = [
-          self::NUMBERS,
-          self::UPPERCASE_LETTERS,
-          self::LOWERCASE_LETTERS,
+          Array('0'..'9'),
+          Array('A'..'Z'),
+          Array('a'..'z'),
           urlsafe ? %w[- _] : %w[+ /]
         ].flatten
-        s = ::Array.new(length) { sample(char_range) }.join
+        s = Array.new(length) { sample(char_range) }.join
         s += '=' if padding
         s
       end
@@ -561,9 +563,9 @@ module Faker
 
       def sanitize_email_local_part(local_part)
         char_range = [
-          self::NUMBERS,
-          self::UPPERCASE_LETTERS,
-          self::LOWERCASE_LETTERS,
+          Array('0'..'9'),
+          Array('A'..'Z'),
+          Array('a'..'z'),
           "!#$%&'*+-/=?^_`{|}~.".chars
         ].flatten
 

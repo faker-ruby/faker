@@ -54,7 +54,7 @@ module Faker
       #
       # @faker.version 1.5.0
       def greek_organization
-        ::Array.new(3) { |_| sample(greek_alphabet) }.join
+        Array.new(3) { |_| sample(greek_alphabet) }.join
       end
 
       ##

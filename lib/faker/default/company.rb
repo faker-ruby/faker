@@ -293,7 +293,7 @@ module Faker
         result = []
         weights = [6, 5, 7, 2, 3, 4, 5, 6, 7]
         loop do
-          result = ::Array.new(3) { rand(1..9) } + ::Array.new(7) { rand(10) }
+          result = Array.new(3) { rand(1..9) } + Array.new(7) { rand(10) }
           break if (weight_sum(result, weights) % 11) == result[9]
         end
         result.join
@@ -314,7 +314,7 @@ module Faker
 
         random_digits = []
         loop do
-          random_digits = ::Array.new(length) { rand(10) }
+          random_digits = Array.new(length) { rand(10) }
           break if collect_regon_sum(random_digits) == random_digits.last
         end
         random_digits.join
@@ -382,7 +382,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def brazilian_company_number(formatted: false)
-        digits = ::Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
+        digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
 
         factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
 

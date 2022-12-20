@@ -2,6 +2,7 @@
 
 module Faker
   class Types < Base
+    CHARACTERS = ('0'..'9').to_a + ('a'..'z').to_a
     SIMPLE_TYPES = %i[string fixnum].freeze
     COMPLEX_TYPES = %i[hash array].freeze
 
@@ -34,7 +35,7 @@ module Faker
       #
       # @faker.version 1.8.6
       def character
-        sample(self::ALPHANUMERICS)
+        sample(CHARACTERS)
       end
 
       ##

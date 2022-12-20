@@ -54,7 +54,7 @@ module Faker
 
         categories = categories(num)
 
-        if categories.is_a?(::Array)
+        if categories.is_a?(Array)
           if categories.length > 1
             merge_categories(categories)
           else
