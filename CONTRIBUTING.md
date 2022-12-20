@@ -126,9 +126,23 @@ end
 
 ## Removing generators
 
-To remove a generator or any other public method, deprecate them first. We use the `Gem::Deprecate`[https://ruby-doc.org/stdlib-3.1.0/libdoc/rubygems/rdoc/Gem/Deprecate.html].
+To remove a generator or any other public method, deprecate them first. We use the [`Gem::Deprecate`](https://ruby-doc.org/stdlib-3.1.0/libdoc/rubygems/rdoc/Gem/Deprecate.html).
 
-To deprecate a method/argument, add `extend Gem::Deprecate` to the top of the class, and use the `deprecate` method.
+To deprecate a method/argument, add `extend Gem::Deprecate` to the top of the class, and use the `deprecate` method. For example:
+
+```rb
+module Faker
+  class LoremPixel < Base
+    class << self
+      extend Gem::Deprecate
+      def image
+      ...
+      end
+      deprecate :image, 'Faker::LoremFlickr.image', 2022, 12
+    end
+  end
+end
+```
 
 ## YAML files
 
