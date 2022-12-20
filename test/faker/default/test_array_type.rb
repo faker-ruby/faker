@@ -2,9 +2,9 @@
 
 require_relative '../../test_helper'
 
-class TestArray < Test::Unit::TestCase
+class TestArrayType < Test::Unit::TestCase
   def setup
-    @tester = Faker::Array
+    @tester = Faker::ArrayType
   end
 
   def test_integer_zero_integers
