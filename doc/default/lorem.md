@@ -10,6 +10,12 @@ Faker::Lorem.words(number: 4, supplemental: true) #=> ["colloco", "qui", "vergo"
 
 Faker::Lorem.multibyte #=> 😀
 
+# Keyword arguments: exclude_words (prevent specific words from being produced)
+Faker::Lorem.words #=> ["error", "cum", "nesciunt"]
+Faker::Lorem.words(number: 4, exclude_words: 'error') #=> ["nisi", "allatus", "consequatur", "aut"]
+Faker::Lorem.words(number: 4, exclude_words: 'error, cum') #=> ["nisi", "allatus", "consequatur", "aut"]
+Faker::Lorem.words(number: 4, exclude_words: ['error', 'cum']) #=> ["nisi", "allatus", "consequatur", "aut"]
+
 # Keyword arguments: number, min_alpha, min_numeric
 Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5wrj85fefue0y7y6m56b6omquh7br7dhqijwlawejpl765nb1716idmp3xnfo85v349pzy2o9rir23y2qhflwr71c1585fnynguiphkjm8p0vktwitcsm16lny7jzp9t4drwav3qmhz4yjq4k04x14gl6p148hulyqioo72tf8nwrxxcclfypz2lc58lsibgfe5w5p0xv95peafjjmm2frkhdc6duoky0aha"
 Faker::Lorem.characters(number: 10) #=> "ang9cbhoa8"
