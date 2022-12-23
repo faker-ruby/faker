@@ -37,7 +37,6 @@ and it was the original impetus for the creation of this gem).
   - [Generators](#generators)
   - [Contributing](#contributing)
   - [Versioning](#versioning)
-  - [Team](#team)
   - [License](#license)
 
 ### Notes
