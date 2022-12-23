@@ -30,7 +30,6 @@ and it was the original impetus for the creation of this gem).
     - [Notes](#notes)
   - [Getting Started](#getting-started)
   - [Usage](#usage)
-    - [CLI](#faker-bot-cli-command-line-interface)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
     - [Customization](#customization)
@@ -103,13 +102,6 @@ def character
   fetch('parks_and_rec.characters')
 end
 ```
-
-### Faker-bot CLI (command-line interface)
-
-[faker-bot](https://github.com/faker-ruby/faker-bot) is a tool to make it easier
-to pick the right Faker methods to generate the fake data you need.
-
-Instructions are available in the [faker-bot README](https://github.com/faker-ruby/faker-bot).
 
 ### Ensuring unique values
 
