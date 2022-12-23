@@ -3,7 +3,6 @@ en-ZA:
     internet:
       domain_suffix: [org.za, co.za, com]
     address:
-      country_code: ['ZA']
       default_country: [South Africa, The Replublic of South Africa, SA, Afrique du Sud, Zuid-Afrika]
       postcode: ['####', '#####']
       provinces: [Limpopo, Gauteng, Free State, North West, Northern Cape, Western Cape, KwaZulu-Natal, Mpumalanga, Eastern Cape]

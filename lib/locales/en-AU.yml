@@ -34,7 +34,6 @@ en-AU:
       street_suffix: [Approach, Avenue, Arcade, Boulevard, Circle, Circuit, Court, Crescent, Crest, Drive, Estate, Entrance, Gardens, Grove, Green, Heights, Hill, Junction, Lane, Loop, Lookout, Mall, Mews, Mount, Parade, Park, Parkway, Pass, Place, Plaza, Promenade, Ramble, Ridge, Retreat, Rise, Road, Run, Square, Street, Summit, Terrace, Track, Trail, Turn, Way, View, Walk]
       secondary_address: ['Apartment #', 'Apt #', 'Unit #', 'U#', 'Flat #', 'House #', 'Level #']
       full_address: ["#{street_address}, #{city} #{postcode}", "#{street_address}, #{secondary_address}, #{city} #{postcode}", "#{secondary_address}, #{street_address}, #{city} #{postcode}", "#{mail_box} #{city} #{postcode}"]
-      country_code: AU
       default_country: [Australia, Aus]
       time_zone: [Australia/Sydney, Australia/Brisbane, Australia/Melbourne, Australia/Hobart, Australia/Adelaide, Australia/Perth, Australia/Darwin, Australia/Canberra]
     country_code: '61'

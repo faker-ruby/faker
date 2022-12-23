@@ -1,7 +1,6 @@
 de-CH:
   faker:
     address:
-      country_code: [CH, CH, CH, DE, AT, US, LI, US, HK, VN]
       postcode: ['1###', '2###', '3###', '4###', '5###', '6###', '7###', '8###', '9###']
       default_country: [Schweiz]
 

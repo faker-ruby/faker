@@ -12,7 +12,6 @@ lt:
         - "#{city_name}"
       street_address:
         - "#{street_name} #{street_suffix} #{building_number}"
-      country_code: ['LT']
     country_code: ['370']
 
     company:
