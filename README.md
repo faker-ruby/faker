@@ -30,7 +30,7 @@ and it was the original impetus for the creation of this gem).
     - [Notes](#notes)
   - [Getting Started](#getting-started)
   - [Usage](#usage)
-    - [CLI](#cli)
+    - [CLI](#faker-bot-cli-command-line-interface)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
     - [Customization](#customization)
