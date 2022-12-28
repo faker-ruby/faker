@@ -11,6 +11,14 @@ class TestFakerFillmurray < Test::Unit::TestCase
     refute_nil @tester.image(grayscale: false, width: '300', height: '300').match(%r{https://www\.fillmurray\.com/(\d+)/(\d+)})
   end
 
+  def test_image_deprecation_message
+    _out, err = capture_output do
+      @tester.image(grayscale: false, width: '300', height: '300')
+    end
+
+    assert_match(/Faker::Fillmurray.image is deprecated; use Faker::LoremFlickr.image instead\./, err)
+  end
+
   def test_fillmurray_with_grayscale
     assert_equal('g/', @tester.image(grayscale: true, width: '300', height: '300').match(%r{https://www\.fillmurray\.com/(g?/?)(\d+)/(\d+)})[1])
   end
