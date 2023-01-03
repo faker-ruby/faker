@@ -17,6 +17,9 @@ class TestFakerVehicle < Test::Unit::TestCase
     100.times do
       assert valid_vin(@tester.vin)
     end
+    assert valid_vin('11111111111111111') # known valid test string
+    assert valid_vin('FAKERGEM5FAKERGEM') # valid checksum
+    refute valid_vin('ABCDEFG1234567890') # invalid checksum
   end
 
   def test_manufacture
