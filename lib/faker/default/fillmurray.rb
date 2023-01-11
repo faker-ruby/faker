@@ -32,7 +32,7 @@ module Faker
 
         "https://www.fillmurray.com#{'/g' if grayscale == true}/#{width}/#{height}"
       end
-      deprecate :image, 'Faker::LoremFlickr.image', 2022, 12
+      deprecate :image, 'Faker::LoremFlickr.image', 2023, 2
     end
   end
 end
