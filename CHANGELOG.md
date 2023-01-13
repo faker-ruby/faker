@@ -1,5 +1,65 @@
 # Changelog
 
+## [v3.1.0](https://github.com/faker-ruby/faker/tree/v3.1.0) (2022-12-23)
+
+Happy Holidays with a new Faker release! 🎉
+
+This version:
+
+- adds and removes generators
+- fixes bugs
+- updates dependencies
+
+## Features
+* Simple Japanesemedia::CowboyBebop module by @Ivan-P23994 in https://github.com/faker-ruby/faker/pull/2617
+* added travel folder and airports by @ZionMiller in https://github.com/faker-ruby/faker/pull/2601
+* Spongebob TV show collections by @kleinjm in https://github.com/faker-ruby/faker/pull/2619
+* Add pre-push hook example by @akanshak984 in https://github.com/faker-ruby/faker/pull/2606
+
+## Bug fixes
+* fix: ensure generated passwords have correct characters when mix_case & special_characters enabled by @tiff-o in https://github.com/faker-ruby/faker/pull/2533
+* Fix: ensure sport generator produces single sport unless a number of sports is requested by @si-lens in https://github.com/faker-ruby/faker/pull/2616
+* Remove typo in ISSUE_TEMPLATE to check Faker version by @loqimean in https://github.com/faker-ruby/faker/pull/2621
+* Typo in Ukrainian locale, fixes #2620 by @Newman101 in https://github.com/faker-ruby/faker/pull/2622
+* Remove english characters in ja locale file, fixes faker-ruby#2637 by @alextaujenis in https://github.com/faker-ruby/faker/pull/2638
+* Fix country code length for non EN locale by @vbrazo in https://github.com/faker-ruby/faker/pull/2669
+
+## What's Changed
+* Removed LoremPixel Files by @uzorjchibuzor in https://github.com/faker-ruby/faker/pull/2664
+* Document IBAN digits validity generator by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2625
+* Create random vehicle vin numbers with the correct check-digit by @alextaujenis in https://github.com/faker-ruby/faker/pull/2633
+* Fix formatting in internet/http.md documentation by @Newman101 in https://github.com/faker-ruby/faker/pull/2647
+* Remove deprecated ru paul documentation by @italopires in https://github.com/faker-ruby/faker/pull/2651
+* Add Ruby as specified language in code block by @luciagirasoles in https://github.com/faker-ruby/faker/pull/2654
+* Fix some typos by @jdufresne in https://github.com/faker-ruby/faker/pull/2662
+* Remove unnecessary executable bit from several files by @jdufresne in https://github.com/faker-ruby/faker/pull/2645
+* Remove broken readme links by @vbrazo in https://github.com/faker-ruby/faker/pull/2668
+* Update minecraft.rb by @lepinejf in https://github.com/faker-ruby/faker/pull/2635
+* Update README and CONTRIBUTING guides by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2630
+* Update dependabot ignore list by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2629
+
+## Update local dependencies
+* Update simplecov requirement from = 0.21.0 to = 0.21.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2636
+* Update timecop requirement from = 0.9.5 to = 0.9.6 by @dependabot in https://github.com/faker-ruby/faker/pull/2642
+* Update rubocop-minitest requirement from = 0.23.2 to = 0.25.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2653
+* Update test-unit requirement from = 3.5.6 to = 3.5.7 by @dependabot in https://github.com/faker-ruby/faker/pull/2659
+* Update rubocop requirement from = 1.41.0 to = 1.41.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2667
+
+## New Contributors
+* @si-lens made their first contribution in https://github.com/faker-ruby/faker/pull/2616
+* @Ivan-P23994 made their first contribution in https://github.com/faker-ruby/faker/pull/2617
+* @ZionMiller made their first contribution in https://github.com/faker-ruby/faker/pull/2601
+* @loqimean made their first contribution in https://github.com/faker-ruby/faker/pull/2621
+* @kleinjm made their first contribution in https://github.com/faker-ruby/faker/pull/2619
+* @akanshak984 made their first contribution in https://github.com/faker-ruby/faker/pull/2606
+* @lepinejf made their first contribution in https://github.com/faker-ruby/faker/pull/2635
+* @italopires made their first contribution in https://github.com/faker-ruby/faker/pull/2651
+* @luciagirasoles made their first contribution in https://github.com/faker-ruby/faker/pull/2654
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.0.0...v3.1.0
+
+------------------------------------------------------------------------------
+
 ## [v3.0.0](https://github.com/faker-ruby/faker/tree/v3.0.0) (2022-11-01)
 
 ### Breaking Changes

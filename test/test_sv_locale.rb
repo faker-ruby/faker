@@ -55,8 +55,8 @@ class TestSVLocale < Test::Unit::TestCase
   end
 
   def test_sv_phone_number_methods
-    assert_match(/^07[036]{1}[\-\s]?\d{3}[\-\s]?\d{4}$/, Faker::PhoneNumber.cell_phone)
-    assert_match(/^\d{4}[\s\-]?\d{4,6}$/, Faker::PhoneNumber.phone_number)
+    assert_match(/^07[036]{1}[-\s]?\d{3}[-\s]?\d{4}$/, Faker::PhoneNumber.cell_phone)
+    assert_match(/^\d{4}[\s-]?\d{4,6}$/, Faker::PhoneNumber.phone_number)
   end
 
   def test_sv_team_methods

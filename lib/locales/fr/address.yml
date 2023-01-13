@@ -1,7 +1,6 @@
 fr:
   faker:
     address:
-      country_code: ['FR']
       building_number: ['####', '###', '##', '#']
       street_prefix: ["Allée", "Anse", "Avenue", "Boulevard", "Carrefour", "Chaussée", "Chemin", "Cité", "Clos", "Côte", "Cour", "Cours", "Degré", "Descente", "Drève", "Escoussière", "Esplanade", "Gaffe", "Grand-route", "Impasse", "Liaison", "Mail", "Montée", "Passage", "Place", "Placette", "Pont", "Promenade", "Quai", "Résidence", "Rang", "Rampe", "Rond-point", "Route", "Rue", "Ruelle", "Sente", "Sentier", "Square", "Traboule", "Traverse", "Venelle", "Villa", "Voie"]
       secondary_address: ['Apt. ###', '# étage']

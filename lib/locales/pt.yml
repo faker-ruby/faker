@@ -27,7 +27,6 @@ pt:
                  "Suécia", "Suíça", "Síria", "Taiwan", "Tajiquistão", "Tanzânia", "Tailândia", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidá e Tobago", "Tunísia", 
                  "Turquia", "Turcomenistão", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ucrânia", "Emirados Árabes Unidos", "Reino Unido", "Estados Unidos da América", 
                  "Estados Unidos das Ilhas Virgens", "Uruguai", "Uzbequistão", "Vanuatu", "Venezuela", "Vietnã", "Wallis and Futuna", "Sahara", "Yemen", "Zâmbia", "Zimbábue"]
-      country_code: ['PT']
       building_number: ["#####", "####", "###"]
       street_suffix: ["Rua", "Avenida", "Travessa", "Ponté", "Alameda", "Marginal", "Viela", "Rodovia"]
       secondary_address: ["Apto. ###", "Sobrado ##", "Casa #", "Lote ##", "Quadra ##"]

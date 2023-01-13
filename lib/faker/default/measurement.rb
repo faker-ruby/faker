@@ -9,7 +9,7 @@ module Faker
       ##
       # Produces a random height measurement.
       #
-      # @param amount [Integer] Speficies the random height value.
+      # @param amount [Integer] Specifies the random height value.
       # @return [String]
       #
       # @example
@@ -26,7 +26,7 @@ module Faker
       ##
       # Produces a random length measurement.
       #
-      # @param amount [Integer] Speficies the random length value.
+      # @param amount [Integer] Specifies the random length value.
       # @return [String]
       #
       # @example
@@ -41,7 +41,7 @@ module Faker
       ##
       # Produces a random volume measurement.
       #
-      # @param amount [Integer] Speficies the random volume value.
+      # @param amount [Integer] Specifies the random volume value.
       # @return [String]
       #
       # @example
@@ -56,7 +56,7 @@ module Faker
       ##
       # Produces a random weight measurement.
       #
-      # @param amount [Integer] Speficies the random weight value.
+      # @param amount [Integer] Specifies the random weight value.
       # @return [String]
       #
       # @example
@@ -71,7 +71,7 @@ module Faker
       ##
       # Produces a random metric height measurement.
       #
-      # @param amount [Integer] Speficies the random height value.
+      # @param amount [Integer] Specifies the random height value.
       # @return [String]
       #
       # @example
@@ -86,7 +86,7 @@ module Faker
       ##
       # Produces a random metric length measurement.
       #
-      # @param amount [Integer] Speficies the random length value.
+      # @param amount [Integer] Specifies the random length value.
       # @return [String]
       #
       # @example
@@ -101,7 +101,7 @@ module Faker
       ##
       # Produces a random metric volume measurement.
       #
-      # @param amount [Integer] Speficies the random volume value.
+      # @param amount [Integer] Specifies the random volume value.
       # @return [String]
       #
       # @example
@@ -116,7 +116,7 @@ module Faker
       ##
       # Produces a random metric weight measurement.
       #
-      # @param amount [Integer] Speficies the random weight value.
+      # @param amount [Integer] Specifies the random weight value.
       # @return [String]
       #
       # @example

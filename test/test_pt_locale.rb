@@ -39,6 +39,6 @@ class TestPtLocale < Test::Unit::TestCase
   end
 
   def test_pt_phone_number
-    assert_match(/^(\+351)?[()\d\s\-]+$/, Faker::PhoneNumber.phone_number)
+    assert_match(/^(\+351)?[()\d\s-]+$/, Faker::PhoneNumber.phone_number)
   end
 end

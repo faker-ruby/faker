@@ -46,7 +46,7 @@ class TestFakerLorem < Test::Unit::TestCase
     @words.each { |w| assert_includes @complete_wordlist, w }
   end
 
-  # Faker::Lorem.word generates random word from standart wordlist
+  # Faker::Lorem.word generates random word from standard wordlist
   def test_word
     @tester = Faker::Lorem
     @standard_wordlist = I18n.translate('faker.lorem.words')
@@ -132,5 +132,33 @@ class TestFakerLorem < Test::Unit::TestCase
     values = ('a'..'z').to_a + ('0'..'9').to_a
     @tester.unique.exclude(:characters, [number: 1], values)
     assert_raise(Faker::UniqueGenerator::RetryLimitExceeded) { @tester.unique.characters(number: 1) }
+  end
+
+  def test_excluded_words_as_string
+    excluded_word_string = @tester.word
+    @words = @tester.words(number: 10_000, exclude_words: excluded_word_string)
+
+    @words.each { |w| assert_not_equal w, excluded_word_string }
+  end
+
+  def test_excluded_words_as_comma_delimited_string
+    excluded_words_array = @tester.words(number: 2)
+    excluded_words_string = excluded_words_array.join(', ')
+    @words = @tester.words(number: 10_000, exclude_words: excluded_words_string)
+
+    @words.each do |w|
+      assert_not_equal w, excluded_words_array[0]
+      assert_not_equal w, excluded_words_array[1]
+    end
+  end
+
+  def test_excluded_words_as_array
+    excluded_words_array = @tester.words(number: 2)
+    @words = @tester.words(number: 10_000, exclude_words: excluded_words_array)
+
+    @words.each do |w|
+      assert_not_equal w, excluded_words_array[0]
+      assert_not_equal w, excluded_words_array[1]
+    end
   end
 end

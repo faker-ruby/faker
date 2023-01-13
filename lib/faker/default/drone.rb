@@ -147,7 +147,7 @@ module Faker
       end
 
       ##
-      # Returns operating temprature for drone in Fahrenheit
+      # Returns operating temperature for drone in Fahrenheit
       #
       # @return [String]
       #

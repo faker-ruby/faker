@@ -41,7 +41,7 @@ class TestFiLocale < Test::Unit::TestCase
   end
 
   def test_fi_phone_number
-    assert_match(/0\d{2}[\-\s]?\d{6}/, Faker::PhoneNumber.cell_phone)
-    assert_match(/\d{2,3}[\s\-]?\d{5,6}/, Faker::PhoneNumber.phone_number)
+    assert_match(/0\d{2}[-\s]?\d{6}/, Faker::PhoneNumber.cell_phone)
+    assert_match(/\d{2,3}[\s-]?\d{5,6}/, Faker::PhoneNumber.phone_number)
   end
 end

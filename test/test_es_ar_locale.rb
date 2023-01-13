@@ -228,7 +228,7 @@ class TestEsArLocale < Test::Unit::TestCase
   end
 
   def test_es_ar_direction
-    assert_match(/^(?:\w+|\w+ por el \w+|[\w\-]+)$/u, Faker::Compass.direction)
+    assert_match(/^(?:\w+|\w+ por el \w+|[\w-]+)$/u, Faker::Compass.direction)
   end
 
   def test_es_ar_abbreviation

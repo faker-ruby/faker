@@ -90,7 +90,7 @@ class TestPtBrLocale < Test::Unit::TestCase
 
   def test_pt_br_internet_methods
     assert Faker::Internet.free_email.is_a? String
-    assert_match(/^[a-z0-9._\-]+@[a-z0-9]+.[a-z]+.([a-z]+)?$/i, Faker::Internet.free_email)
+    assert_match(/^[a-z0-9._-]+@[a-z0-9]+.[a-z]+.([a-z]+)?$/i, Faker::Internet.free_email)
 
     assert Faker::Internet.domain_suffix.is_a? String
   end
