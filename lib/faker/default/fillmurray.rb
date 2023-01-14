@@ -24,6 +24,7 @@ module Faker
       #     #=> "https://fillmurray.com/200/400"
       #
       # @faker.version 1.7.1
+      extend Gem::Deprecate
       def image(grayscale: false, width: 200, height: 200)
         raise ArgumentError, 'Width should be a number' unless width.to_s =~ /^\d+$/
         raise ArgumentError, 'Height should be a number' unless height.to_s =~ /^\d+$/
@@ -31,6 +32,7 @@ module Faker
 
         "https://www.fillmurray.com#{'/g' if grayscale == true}/#{width}/#{height}"
       end
+      deprecate :image, 'Faker::LoremFlickr.image', 2023, 2
     end
   end
 end
