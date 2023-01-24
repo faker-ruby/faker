@@ -4,18 +4,19 @@ require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
   WORD_MATCH = /\w+\.?/.freeze
+  VIN_REGEX = /\A[A-HJ-NPR-Z0-9]{17}\z/.freeze
 
   def setup
     @tester = Faker::Vehicle
   end
 
   def test_vin
-    assert_match Faker::Vehicle::VIN_REGEX, @tester.vin
-  end
+    assert valid_vin('11111111111111111') # known valid test string
+    assert valid_vin('FAKERGEM5FAKERGEM') # valid checksum
+    refute valid_vin('ABCDEFGH123456789') # invalid checksum
 
-  def test_vin_validity
-    100.times do
-      assert valid_vin(@tester.vin)
+    deterministically_verify -> { @tester.vin }, depth: 4 do |vin|
+      assert valid_vin(vin)
     end
   end
 
@@ -117,7 +118,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def valid_vin(vin)
-    if vin && vin =~ Faker::Vehicle::VIN_REGEX
+    if vin && vin =~ VIN_REGEX
       total = 0
       vin.chars.each_with_index do |char, index|
         value = (char =~ /\A\d\z/ ? char.to_i : Faker::Vehicle::VIN_TRANSLITERATION[char.to_sym])

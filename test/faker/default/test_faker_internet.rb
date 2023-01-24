@@ -62,8 +62,8 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_username_with_string_arg_determinism
-    deterministically_verify -> { @tester.username(specifier: 'bo peep') }, depth: 4 do |subject|
-      assert_match(/(bo(_|\.)peep|peep(_|\.)bo)/, subject)
+    deterministically_verify -> { @tester.username(specifier: 'bo peep') }, depth: 4 do |username|
+      assert_match(/(bo(_|\.)peep|peep(_|\.)bo)/, username)
     end
   end
 
@@ -236,8 +236,8 @@ class TestFakerInternet < Test::Unit::TestCase
     [false, true].each do |value|
       min_length = value ? 2 : 1
 
-      deterministically_verify -> { @tester.password(min_length: min_length, mix_case: value, special_characters: !value) }, depth: 4 do |subject|
-        assert_nothing_raised { subject }
+      deterministically_verify -> { @tester.password(min_length: min_length, mix_case: value, special_characters: !value) }, depth: 4 do |password|
+        assert_nothing_raised { password }
       end
     end
   end
