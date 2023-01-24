@@ -11,10 +11,6 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_vin
-    assert_match VIN_REGEX, @tester.vin
-  end
-
-  def test_vin_validity
     assert valid_vin('11111111111111111') # known valid test string
     assert valid_vin('FAKERGEM5FAKERGEM') # valid checksum
     refute valid_vin('ABCDEFGH123456789') # invalid checksum
