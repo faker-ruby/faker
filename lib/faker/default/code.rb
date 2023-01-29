@@ -93,11 +93,23 @@ module Faker
       # @faker.version 2.2.0
       def nric(min_age: 18, max_age: 65)
         birthyear = Date.birthday(min_age: min_age, max_age: max_age).year
-        prefix = birthyear < 2000 ? 'S' : 'T'
-        values = birthyear.to_s[-2..]
-        values << regexify(/\d{5}/)
-        check_alpha = generate_nric_check_alphabet(values, prefix)
-        "#{prefix}#{values}#{check_alpha}"
+
+        generate(:string) do |g|
+          g.computed(name: :prefix) do
+            if birthyear < 2000
+              'S'
+            else
+              'T'
+            end
+          end
+          g.computed(name: :yy) do
+            birthyear.to_s[-2..]
+          end
+          g.int(name: :values, length: 5)
+          g.computed(name: :check, deps: %i[prefix yy values]) do |prefix, yy, values|
+            generate_nric_check_alphabet("#{yy}#{values}", prefix)
+          end
+        end
       end
 
       ##
@@ -197,15 +209,29 @@ module Faker
       end
 
       def generate_base10_isbn
-        values = regexify(/\d{9}/)
-        remainder = sum(values) { |value, index| (index + 1) * value.to_i } % 11
-        values << "-#{remainder == 10 ? 'X' : remainder}"
+        generate(:string) do |g|
+          g.int(name: :values, length: 9)
+          g.lit('-')
+          g.computed(name: :checksum, deps: [:values]) do |values|
+            remainder = sum(values.to_s) { |value, offset| (offset + 1) * value.to_i } % 11
+            if remainder == 10
+              'X'
+            else
+              remainder.to_s
+            end
+          end
+        end
       end
 
       def generate_base13_isbn
-        values = regexify(/\d{12}/)
-        remainder = sum(values) { |value, index| index.even? ? value.to_i : value.to_i * 3 } % 10
-        values << "-#{(10 - remainder) % 10}"
+        generate(:string) do |g|
+          g.int(name: :values, length: 12)
+          g.lit('-')
+          g.computed(name: :checksum, deps: [:values]) do |values|
+            remainder = sum(values.to_s) { |value, offset| offset.even? ? value.to_i : value.to_i * 3 } % 10
+            (10 - remainder) % 10
+          end
+        end
       end
 
       def sum(values)
@@ -215,15 +241,31 @@ module Faker
       end
 
       def generate_base8_ean
-        values = regexify(/\d{7}/)
-        check_digit = 10 - values.chars.each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
-        values << (check_digit == 10 ? 0 : check_digit).to_s
+        generate(:string) do |g|
+          g.int(name: :values, length: 7)
+          g.computed(name: :checksum, deps: [:values]) do |values|
+            check_digit = 10 - values.to_s.chars.each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
+            if check_digit == 10
+              0
+            else
+              check_digit
+            end
+          end
+        end
       end
 
       def generate_base13_ean
-        values = regexify(/\d{12}/)
-        check_digit = 10 - values.chars.each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
-        values << (check_digit == 10 ? 0 : check_digit).to_s
+        generate(:string) do |g|
+          g.int(name: :values, length: 12)
+          g.computed(name: :checksum, deps: [:values]) do |values|
+            check_digit = 10 - values.to_s.chars.each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
+            if check_digit == 10
+              0
+            else
+              check_digit
+            end
+          end
+        end
       end
 
       EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3].freeze
