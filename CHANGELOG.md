@@ -1,5 +1,44 @@
 # Changelog
 
+## [v3.1.1](https://github.com/faker-ruby/faker/tree/v3.1.1) (2023-02-03)
+
+Happy Valentine's Day with a new Faker release! 🎉
+
+This version:
+
+- adds and deprecates generators
+- fixes bugs
+- updates development dependencies
+
+### Features
+* Add exclude_words keyword to Lorem Ipsum to prevent words from being produced by @philipfong in #2665
+* Deprecate FillMurray service by @ferblape in #2657
+* Airports by @ZionMiller in https://github.com/faker-ruby/faker/pull/2682
+
+### Bug fixes
+* Fix simple typo in es.yml by @hslzr in https://github.com/faker-ruby/faker/pull/2675
+* Test the Vehicle VIN validator with known good and bad values, fixes … by @alextaujenis in https://github.com/faker-ruby/faker/pull/2640
+* Fix you're/your typo and inaccuracy in Star Wars quote by @dwilsonactual in https://github.com/faker-ruby/faker/pull/2693
+* Revert "Typo in Ukrainian locale, fixes #2620" by @thdaraujo in https://github.com/faker-ruby/faker/pull/2690
+
+### Update local dependencies
+* Adds Ruby 3.2 to the CI matrix. Updates checkout action version. by @petergoldstein in https://github.com/faker-ruby/faker/pull/2673
+* Update rubocop-minitest requirement from = 0.25.0 to = 0.25.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2674
+* Update minitest requirement from = 5.16.3 to = 5.17.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2677
+* Update pry requirement from = 0.14.1 to = 0.14.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2680
+* Update simplecov requirement from = 0.21.2 to = 0.22.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2672
+* Update rubocop requirement from = 1.44.0 to = 1.44.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2691
+
+### New Contributors
+* @hslzr made their first contribution in https://github.com/faker-ruby/faker/pull/2675
+* @ferblape made their first contribution in https://github.com/faker-ruby/faker/pull/2657
+* @petergoldstein made their first contribution in https://github.com/faker-ruby/faker/pull/2673
+* @dwilsonactual made their first contribution in https://github.com/faker-ruby/faker/pull/2693
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.1.0...v.3.1.1
+
+------------------------------------------------------------------------------
+
 ## [v3.1.0](https://github.com/faker-ruby/faker/tree/v3.1.0) (2022-12-23)
 
 Happy Holidays with a new Faker release! 🎉
@@ -10,13 +49,13 @@ This version:
 - fixes bugs
 - updates dependencies
 
-## Features
+### Features
 * Simple Japanesemedia::CowboyBebop module by @Ivan-P23994 in https://github.com/faker-ruby/faker/pull/2617
 * added travel folder and airports by @ZionMiller in https://github.com/faker-ruby/faker/pull/2601
 * Spongebob TV show collections by @kleinjm in https://github.com/faker-ruby/faker/pull/2619
 * Add pre-push hook example by @akanshak984 in https://github.com/faker-ruby/faker/pull/2606
 
-## Bug fixes
+### Bug fixes
 * fix: ensure generated passwords have correct characters when mix_case & special_characters enabled by @tiff-o in https://github.com/faker-ruby/faker/pull/2533
 * Fix: ensure sport generator produces single sport unless a number of sports is requested by @si-lens in https://github.com/faker-ruby/faker/pull/2616
 * Remove typo in ISSUE_TEMPLATE to check Faker version by @loqimean in https://github.com/faker-ruby/faker/pull/2621
@@ -24,7 +63,7 @@ This version:
 * Remove english characters in ja locale file, fixes faker-ruby#2637 by @alextaujenis in https://github.com/faker-ruby/faker/pull/2638
 * Fix country code length for non EN locale by @vbrazo in https://github.com/faker-ruby/faker/pull/2669
 
-## What's Changed
+### What's Changed
 * Removed LoremPixel Files by @uzorjchibuzor in https://github.com/faker-ruby/faker/pull/2664
 * Document IBAN digits validity generator by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2625
 * Create random vehicle vin numbers with the correct check-digit by @alextaujenis in https://github.com/faker-ruby/faker/pull/2633
@@ -38,14 +77,14 @@ This version:
 * Update README and CONTRIBUTING guides by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2630
 * Update dependabot ignore list by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2629
 
-## Update local dependencies
+### Update local dependencies
 * Update simplecov requirement from = 0.21.0 to = 0.21.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2636
 * Update timecop requirement from = 0.9.5 to = 0.9.6 by @dependabot in https://github.com/faker-ruby/faker/pull/2642
 * Update rubocop-minitest requirement from = 0.23.2 to = 0.25.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2653
 * Update test-unit requirement from = 3.5.6 to = 3.5.7 by @dependabot in https://github.com/faker-ruby/faker/pull/2659
 * Update rubocop requirement from = 1.41.0 to = 1.41.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2667
 
-## New Contributors
+### New Contributors
 * @si-lens made their first contribution in https://github.com/faker-ruby/faker/pull/2616
 * @Ivan-P23994 made their first contribution in https://github.com/faker-ruby/faker/pull/2617
 * @ZionMiller made their first contribution in https://github.com/faker-ruby/faker/pull/2601
