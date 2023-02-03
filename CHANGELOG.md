@@ -49,13 +49,13 @@ This version:
 - fixes bugs
 - updates dependencies
 
-## Features
+### Features
 * Simple Japanesemedia::CowboyBebop module by @Ivan-P23994 in https://github.com/faker-ruby/faker/pull/2617
 * added travel folder and airports by @ZionMiller in https://github.com/faker-ruby/faker/pull/2601
 * Spongebob TV show collections by @kleinjm in https://github.com/faker-ruby/faker/pull/2619
 * Add pre-push hook example by @akanshak984 in https://github.com/faker-ruby/faker/pull/2606
 
-## Bug fixes
+### Bug fixes
 * fix: ensure generated passwords have correct characters when mix_case & special_characters enabled by @tiff-o in https://github.com/faker-ruby/faker/pull/2533
 * Fix: ensure sport generator produces single sport unless a number of sports is requested by @si-lens in https://github.com/faker-ruby/faker/pull/2616
 * Remove typo in ISSUE_TEMPLATE to check Faker version by @loqimean in https://github.com/faker-ruby/faker/pull/2621
@@ -63,7 +63,7 @@ This version:
 * Remove english characters in ja locale file, fixes faker-ruby#2637 by @alextaujenis in https://github.com/faker-ruby/faker/pull/2638
 * Fix country code length for non EN locale by @vbrazo in https://github.com/faker-ruby/faker/pull/2669
 
-## What's Changed
+### What's Changed
 * Removed LoremPixel Files by @uzorjchibuzor in https://github.com/faker-ruby/faker/pull/2664
 * Document IBAN digits validity generator by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2625
 * Create random vehicle vin numbers with the correct check-digit by @alextaujenis in https://github.com/faker-ruby/faker/pull/2633
@@ -77,14 +77,14 @@ This version:
 * Update README and CONTRIBUTING guides by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2630
 * Update dependabot ignore list by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2629
 
-## Update local dependencies
+### Update local dependencies
 * Update simplecov requirement from = 0.21.0 to = 0.21.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2636
 * Update timecop requirement from = 0.9.5 to = 0.9.6 by @dependabot in https://github.com/faker-ruby/faker/pull/2642
 * Update rubocop-minitest requirement from = 0.23.2 to = 0.25.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2653
 * Update test-unit requirement from = 3.5.6 to = 3.5.7 by @dependabot in https://github.com/faker-ruby/faker/pull/2659
 * Update rubocop requirement from = 1.41.0 to = 1.41.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2667
 
-## New Contributors
+### New Contributors
 * @si-lens made their first contribution in https://github.com/faker-ruby/faker/pull/2616
 * @Ivan-P23994 made their first contribution in https://github.com/faker-ruby/faker/pull/2617
 * @ZionMiller made their first contribution in https://github.com/faker-ruby/faker/pull/2601
