@@ -12,7 +12,7 @@ module Faker
         # @example
         #   Faker::Movies::Avatar.character #=> "Jake Sully"
         #
-        # @faker.version 3.1.1
+        # @faker.version next
         def character
           fetch('avatar.characters')
         end
@@ -25,7 +25,7 @@ module Faker
         # @example
         #   Faker::Movies::Avatar.date #=> "December 15, 2022"
         #
-        # @faker.version 3.1.1
+        # @faker.version next
         def date
           fetch('avatar.dates')
         end
@@ -39,7 +39,7 @@ module Faker
         #   Faker::Movies::Avatar.quote
         #     #=> "If it ain't raining, we ain't training."
         #
-        # @faker.version 3.1.1
+        # @faker.version next
         def quote
           fetch('avatar.quotes')
         end
