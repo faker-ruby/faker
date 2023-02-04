@@ -27,13 +27,18 @@ and it was the original impetus for the creation of this gem).
 ## Table of Contents
 
 - [Faker](#faker)
+  - [Quick links](#quick-links)
+  - [Table of Contents](#table-of-contents)
     - [Notes](#notes)
   - [Getting Started](#getting-started)
   - [Usage](#usage)
+      - [A note about the Generators versions](#a-note-about-the-generators-versions)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
     - [Customization](#customization)
+    - [Minitest and Faker \>= 2.22](#minitest-and-faker--222)
   - [Generators](#generators)
+    - [Travel](#travel)
   - [Contributing](#contributing)
   - [Versioning](#versioning)
   - [License](#license)
@@ -377,6 +382,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   <summary>Movies</summary>
 
   - [Faker::Movie](doc/movies/movie.md)
+  - [Faker::Movies::Avatar](doc/movies/avatar.md)
   - [Faker::Movies::BackToTheFuture](doc/movies/back_to_the_future.md)
   - [Faker::Movies::Departed](doc/movies/departed.md)
   - [Faker::Movies::Ghostbusters](doc/movies/ghostbusters.md)
