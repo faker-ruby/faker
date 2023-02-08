@@ -6,7 +6,7 @@ module Faker
 
     class << self
       ##
-      # Produces the name of a video game console or platform.
+      # Produces a few marketing buzzwords.
       #
       # @return [String]
       #
