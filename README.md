@@ -172,7 +172,7 @@ Faker::Config.locale = :es
 
 Note: Overriding the default locale might not be thread-safe. See [Locale setting can be ignored #2563](https://github.com/faker-ruby/faker/issues/2563) for more details.
 
-To override Faker's locales, 
+To override Faker's locales,
 check out the [locales README](lib/locales/README.md).
 
 ### Minitest and Faker >= 2.22
@@ -242,7 +242,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Emotion](doc/default/emotion.md)
   - [Faker::Esport](doc/default/esport.md)
   - [Faker::File](doc/default/file.md)
-  - [Faker::Fillmurray](doc/default/fillmurray.md)
   - [Faker::Finance](doc/default/finance.md)
   - [Faker::Food](doc/default/food.md)
   - [Faker::FunnyName](doc/default/funny_name.md)
