@@ -11,6 +11,10 @@ class TestFakerFood < Test::Unit::TestCase
     assert_equal(:food, @tester.flexible_key)
   end
 
+  def test_allergen
+    assert_match(/\w+/, @tester.allergen)
+  end
+
   def test_dish
     assert_match(/\w+/, @tester.dish)
   end

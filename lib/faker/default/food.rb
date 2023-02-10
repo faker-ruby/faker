@@ -6,6 +6,19 @@ module Faker
 
     class << self
       ##
+      # Retrieves an allergen.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Food.allergen #=> "Peanuts"
+      #
+      # @faker.version next
+      def allergen
+        fetch('food.allergens')
+      end
+
+      ##
       # Retrieves a typical dish from each country.
       #
       # @return [String]
