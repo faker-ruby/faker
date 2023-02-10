@@ -3,28 +3,39 @@ require_relative '../../test_helper'
 class TestFakerJson < Test::Unit::TestCase
   require 'json'
 
-  def setup
-    @tester = Faker::Json
+  def test_simple_json_lenght
+    expected_result_length = JSON.parse(simple_json).flatten.length
+
+    assert_same(expected_result_length, 6)
   end
 
-  def test_shallow_json
-    json = Faker::Json.shallow_json(width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
+  def test_nested_json_length
+    result = Faker::Json.add_depth_to_json(json: simple_json, options: { key: 'Name.first_name', value: 'Name.first_name' })
 
-    assert JSON.parse(json).flatten.length.equal?(6)
+    first_json_length = JSON.parse(result).flatten[1].flatten.length
+    second_json_length = JSON.parse(result).flatten[3].flatten.length
+    third_json_length = JSON.parse(result).flatten[5].flatten.length
+
+    assert_same(first_json_length, 6)
+    assert_same(second_json_length, 6)
+    assert_same(third_json_length, 6)
   end
 
-  def test_add_depth_to_json
-    json = Faker::Json.shallow_json(width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
-    json = Faker::Json.add_depth_to_json(json: json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
+  def test_nested_json_width_length
+    json = Faker::Json.add_depth_to_json(json: nested_json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
 
-    assert JSON.parse(json).flatten[1].flatten.length.equal?(6)
-    assert JSON.parse(json).flatten[3].flatten.length.equal?(6)
-    assert JSON.parse(json).flatten[5].flatten.length.equal?(6)
+    first_json_length = JSON.parse(json).flatten[1].flatten[1].flatten.length
+    second_json_length = JSON.parse(json).flatten[3].flatten[3].flatten.length
 
-    json = Faker::Json.add_depth_to_json(json: json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
+    assert_same(first_json_length, 6)
+    assert_same(second_json_length, 6)
+  end
 
-    assert JSON.parse(json).flatten[1].flatten[1].flatten.length.equal?(6)
-    assert JSON.parse(json).flatten[3].flatten[3].flatten.length.equal?(6)
-    assert JSON.parse(json).flatten[5].flatten[5].flatten.length.equal?(6)
+  def simple_json
+    Faker::Json.shallow_json(options: { key: 'Name.first_name', value: 'Name.first_name' })
+  end
+
+  def nested_json
+    Faker::Json.add_depth_to_json(json: simple_json, width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' })
   end
 end
