@@ -58,7 +58,7 @@ module Faker
           screen_name: screen_name,
           statuses_count: Faker::Number.between(to: 1, from: 100_000),
           time_zone: Faker::Address.time_zone,
-          url: Faker::Internet.url(host: 'example.com'),
+          url: Faker::Internet.safe_url,
           utc_offset: utc_offset,
           verified: Faker::Boolean.boolean(true_ratio: 0.1)
         }
@@ -104,7 +104,7 @@ module Faker
           retweet_count: Faker::Number.between(to: 1, from: 10_000),
           retweeted_status: nil,
           retweeted: false,
-          source: "<a href=\"#{Faker::Internet.url(host: 'example.com')}\" rel=\"nofollow\">#{Faker::Company.name}</a>",
+          source: "<a href=\"#{Faker::Internet.safe_url}\" rel=\"nofollow\">#{Faker::Company.name}</a>",
           text: Faker::Lorem.sentence,
           truncated: false
         }
@@ -174,9 +174,9 @@ module Faker
           ],
           media_url: media_url.sub('https://', 'http://'),
           media_url_https: media_url,
-          url: Faker::Internet.url(host: 'example.com'),
+          url: Faker::Internet.safe_url,
           display_url: 'example.com',
-          expanded_url: Faker::Internet.url(host: 'example.com'),
+          expanded_url: Faker::Internet.safe_url,
           type: 'photo',
           sizes: {
             medium: {
