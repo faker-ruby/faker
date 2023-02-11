@@ -13,31 +13,45 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_email
-    assert_match(/.+@.+\.\w+/, @tester.email)
+    Gem::Deprecate.skip_during do
+      assert_match(/.+@.+\.\w+/, @tester.email)
+    end
   end
 
   def test_email_with_non_permitted_characters
-    assert_match(/mart#n@.+\.\w+/, @tester.email(name: 'martín'))
+    Gem::Deprecate.skip_during do
+      assert_match(/mart#n@.+\.\w+/, @tester.email(name: 'martín'))
+    end
   end
 
   def test_email_with_separators
-    assert_match(/.+\+.+@.+\.\w+/, @tester.email(name: 'jane doe', separators: '+'))
+    Gem::Deprecate.skip_during do
+      assert_match(/.+\+.+@.+\.\w+/, @tester.email(name: 'jane doe', separators: '+'))
+    end
   end
 
   def test_email_with_domain_option_given
-    assert_match(/.+@customdomain\.\w+/, @tester.email(name: 'jane doe', domain: 'customdomain'))
+    Gem::Deprecate.skip_during do
+      assert_match(/.+@customdomain\.\w+/, @tester.email(name: 'jane doe', domain: 'customdomain'))
+    end
   end
 
   def test_email_with_domain_option_given_with_domain_suffix
-    assert_match(/.+@customdomain\.customdomainsuffix/, @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix'))
+    Gem::Deprecate.skip_during do
+      assert_match(/.+@customdomain\.customdomainsuffix/, @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix'))
+    end
   end
 
   def test_free_email
-    assert_match(/.+@(gmail|hotmail|yahoo)\.com/, @tester.free_email)
+    Gem::Deprecate.skip_during do
+      assert_match(/.+@(gmail|hotmail|yahoo)\.com/, @tester.free_email)
+    end
   end
 
   def test_free_email_with_non_permitted_characters
-    assert_match(/mart#n@.+\.\w+/, @tester.free_email(name: 'martín'))
+    Gem::Deprecate.skip_during do
+      assert_match(/mart#n@.+\.\w+/, @tester.free_email(name: 'martín'))
+    end
   end
 
   def test_safe_email
@@ -383,8 +397,14 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_match(/^foo(_|\.|-)bar(_|\.|-)baz$/, @tester.slug(words: 'Foo.. bAr., baZ,,'))
   end
 
+  def test_safe_url
+    assert_match %r{^https://example\.com/username$}, @tester.safe_url(path: '/username', scheme: 'https')
+  end
+
   def test_url
-    assert_match %r{^https://domain\.com/username$}, @tester.url(host: 'domain.com', path: '/username', scheme: 'https')
+    Gem::Deprecate.skip_during do
+      assert_match %r{^https://domain\.com/username$}, @tester.url(host: 'domain.com', path: '/username', scheme: 'https')
+    end
   end
 
   def test_device_token
@@ -447,7 +467,7 @@ class TestFakerInternet < Test::Unit::TestCase
     user = @tester.user
 
     assert_match(/[a-z]+((_|\.)[a-z]+)?/, user[:username])
-    assert_match(/.+@.+\.\w+/, user[:email])
+    assert_match(/.+@.+\.\w+/, user[:safe_email])
   end
 
   def test_user_with_invalid_args

@@ -15,6 +15,8 @@ module Faker
     ].each(&:freeze).freeze
 
     class << self
+      extend Gem::Deprecate
+
       ##
       # Returns the email address
       #
@@ -39,6 +41,7 @@ module Faker
         sanitized_local_part = sanitize_email_local_part(local_part)
         construct_email(sanitized_local_part, domain_name(domain: domain))
       end
+      deprecate :email, 'Faker::Internet.safe_email', 2023, 3
 
       ##
       # Returns the email address with domain either gmail.com, yahoo.com or hotmail.com
@@ -56,6 +59,7 @@ module Faker
           fetch('internet.free_email')
         )
       end
+      deprecate :free_email, 'Faker::Internet.safe_email', 2023, 3
 
       ##
       # Returns the email address with fixed domain name as 'example'
@@ -428,6 +432,23 @@ module Faker
       def url(host: domain_name, path: "/#{username}", scheme: 'http')
         "#{scheme}://#{host}#{path}"
       end
+      deprecate :url, 'Faker::Internet.safe_url', 2023, 3
+
+      ##
+      # Returns a URL with safe domain address (.example or .test)
+      #
+      # @return [String]
+      #
+      # @param path [String]
+      # @param scheme [String]
+      #
+      # @example
+      #   Faker::Internet.safe_url                                            #=> "http://example.com/hung.macejkovic"
+      #   Faker::Internet.safe_url(path: '/fake_test_path')                   #=> "http://example.com/fake_test_path"
+      #   Faker::Internet.safe_url(path: '/fake_test_path', scheme: 'https')  #=> "https://example.com/fake_test_path"
+      def safe_url(path: "/#{username}", scheme: 'http')
+        "#{scheme}://example.com#{path}"
+      end
 
       ##
       # Returns unique string in URL
@@ -552,7 +573,7 @@ module Faker
       # @faker.version next
       def user(*args)
         user_hash = {}
-        args = %w[username email] if args.empty?
+        args = %w[username safe_email] if args.empty?
         args.each { |arg| user_hash[:"#{arg}"] = send(arg) }
         user_hash
       end
