@@ -1,6 +1,18 @@
 en:
   faker:
     food:
+      allergens:
+        - Eggs
+        - Milk
+        - Mustard
+        - Peanuts
+        - Crustaceans and molluscs
+        - Fish
+        - Sesame seeds
+        - Soy
+        - Sulphites
+        - Tree Nuts
+        - Wheat and triticale
       dish:
         - Arepas
         - Barbecue Ribs
