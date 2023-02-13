@@ -19,8 +19,6 @@ module Faker
         # @faker.version next
         def name(size:, region:)
           fetch("airport.#{region}.#{size}")
-        rescue I18n::MissingTranslationData
-          p 'valid arguments are size && region -> US has size large medium small, EU has size large medium -- united_states || european_union'
         end
 
         ##
@@ -38,8 +36,6 @@ module Faker
         # @faker.version next
         def iata(size:, region:)
           fetch("airport.#{region}.iata_code.#{size}")
-        rescue I18n::MissingTranslationData
-          p 'valid arguments are size && region -> US has size large medium small, EU has size large medium -- united_states || european_union'
         end
       end
     end
