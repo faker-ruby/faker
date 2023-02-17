@@ -32,8 +32,3 @@ jobs:
 
       - name: Build Gem
         run: gem build -o faker.gem faker.gemspec
-
-      - name: Push to RubyGems
-        env:
-          GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }}
-        run: gem push faker.gem
