@@ -467,7 +467,7 @@ class TestFakerInternet < Test::Unit::TestCase
     user = @tester.user
 
     assert_match(/[a-z]+((_|\.)[a-z]+)?/, user[:username])
-    assert_match(/.+@.+\.\w+/, user[:safe_email])
+    assert_match(/.+@.+\.\w+/, user[:email])
   end
 
   def test_user_with_invalid_args

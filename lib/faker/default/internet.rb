@@ -573,7 +573,7 @@ module Faker
       # @faker.version next
       def user(*args)
         user_hash = {}
-        args = %w[username safe_email] if args.empty?
+        args = %w[username email] if args.empty?
         args.each { |arg| user_hash[:"#{arg}"] = send(arg) }
         user_hash
       end
