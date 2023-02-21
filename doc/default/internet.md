@@ -78,6 +78,7 @@ Faker::Internet.url(host: 'example.com', path: '/foobar.html') #=> "http://examp
 # Keyword arguments: path, scheme
 Faker::Internet.safe_url #=> "http://example.com/chauncey_simonis"
 Faker::Internet.safe_url(path: '/foobar.html') #=> "http://example.com/foobar.html"
+Faker::Internet.safe_url(path: '/fake_test_path', scheme: 'https')  #=> "https://example.com/fake_test_path"
 
 # Keyword arguments: words, glue
 Faker::Internet.slug #=> "pariatur_laudantium"
