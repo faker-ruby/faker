@@ -41,6 +41,13 @@ class TestEnNzLocale < Test::Unit::TestCase
     assert_equal '2', cellphone[1]
   end
 
+  def test_en_nz_cell_phone_in_e164
+    mobile = Faker::PhoneNumber.cell_phone_in_e164
+
+    assert_equal '+64', mobile[0..2]
+    assert_not_equal '0', mobile[3]
+  end
+
   def test_en_nz_team_methods
     assert Faker::Team.sport.is_a? String
     assert Faker::Team.name.is_a? String

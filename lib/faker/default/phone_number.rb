@@ -65,7 +65,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def cell_phone_with_country_code
-        "#{country_code} #{cell_phone}"
+        "#{country_code} #{cell_phone.gsub(/^0/, '')}"
       end
 
       ##

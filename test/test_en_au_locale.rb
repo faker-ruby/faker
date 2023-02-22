@@ -35,4 +35,11 @@ class TestEnAuLocale < Test::Unit::TestCase
     assert_equal '0', mobile[0]
     assert_equal '4', mobile[1]
   end
+
+  def test_aussie_cell_phone_in_e164
+    mobile = Faker::PhoneNumber.cell_phone_in_e164
+
+    assert_equal '+61', mobile[0..2]
+    assert_not_equal '0', mobile[3]
+  end
 end
