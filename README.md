@@ -38,7 +38,6 @@ and it was the original impetus for the creation of this gem).
     - [Customization](#customization)
     - [Minitest and Faker \>= 2.22](#minitest-and-faker--222)
   - [Generators](#generators)
-    - [Travel](#travel)
   - [Contributing](#contributing)
   - [Versioning](#versioning)
   - [License](#license)
@@ -323,10 +322,13 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 </details>
 
 <details>
-  <summary>Creature</summary>
+  <summary>Travel</summary>
 
-### Travel
   - [Faker:Travel::Airport](doc/travel/airport.md)
+</details>
+
+<details>
+  <summary>Creature</summary>
 
   - [Faker::Creature::Animal](doc/creature/animal.md)
   - [Faker::Creature::Bird](doc/creature/bird.md)
