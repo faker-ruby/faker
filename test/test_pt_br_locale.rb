@@ -89,10 +89,15 @@ class TestPtBrLocale < Test::Unit::TestCase
   end
 
   def test_pt_br_internet_methods
-    assert Faker::Internet.free_email.is_a? String
-    assert_match(/^[a-z0-9._-]+@[a-z0-9]+.[a-z]+.([a-z]+)?$/i, Faker::Internet.free_email)
+    deterministically_verify -> { Faker::Internet.email } do |result|
+      name, domain = result.split('@')
+      domain_name, domain_suffix = domain.split('.')
 
-    assert Faker::Internet.domain_suffix.is_a? String
+      assert name.is_a? String
+      assert domain_name.is_a? String
+      assert_includes(%w[example test], domain_suffix)
+      assert_match(/^[a-z0-9._-]+@[a-z0-9]+.[a-z]+.([a-z]+)?$/i, result)
+    end
   end
 
   def test_pt_br_job_methods

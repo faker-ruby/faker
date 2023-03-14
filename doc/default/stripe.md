@@ -31,5 +31,5 @@ Use some of the other handy Faker classes for Stripe charge amounts and email.
 # Keyword arguments: from, to
 Faker::Number.between(from: 3, to: 10) #=> 100
 
-Faker::Internet.free_email #=> "freddy@gmail.com"
+Faker::Internet.email #=> "niesha@swaniawski-lynch.test"
 ```

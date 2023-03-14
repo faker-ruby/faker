@@ -10,6 +10,9 @@ en:
         - org
         - io
         - co
+      safe_domain_suffix:
+        - example
+        - test
       free_email:
         - gmail.com
         - yahoo.com
