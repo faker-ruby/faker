@@ -24,6 +24,10 @@ class TestEnGbLocale < Test::Unit::TestCase
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
+  def test_en_gb_country_code
+    assert_equal('+44', Faker::PhoneNumber.country_code)
+  end
+
   def test_en_gb_phone_starts_with_zero
     phone = Faker::PhoneNumber.phone_number.gsub(/\D/, '')
 
