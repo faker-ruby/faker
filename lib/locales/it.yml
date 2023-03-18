@@ -22,6 +22,7 @@ it:
         - "#{street_name} #{building_number}"
         - "#{street_name} #{building_number}, #{secondary_address}"
       default_country: [Italia]
+      default_country_code: ["IT"]
 
     company:
       suffix: [SPA, e figli, Group, s.r.l.]

@@ -16,7 +16,7 @@ de-AT:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Österreich]
-
+      default_country_code: ["AT"]
     company:
       suffix: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OG]
       legal_form: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OG]

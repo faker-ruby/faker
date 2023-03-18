@@ -130,6 +130,7 @@ en-NZ:
         Mews, Parade, Pass, Place, Plaza, Ridge, Road, Run, Square, Street, St, Summit, Terrace, Track, Trail, View Road, Way, Esplanade
       ]
       default_country: [New Zealand]
+      default_country_code: ["NZ"]
       city: [
         Auckland, Wellington, Christchurch, Hamilton, Tauranga, Napier, Hastings, Dunedin,
         Palmerston North, Nelson, Rotorua, Whangarei, New Plymouth,

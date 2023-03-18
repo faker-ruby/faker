@@ -547,6 +547,7 @@ pt-BR:
         SC: ['88###-###', '89###-###']
         RS: '9####-###'
       default_country: [Brasil]
+      default_country_code: ["BR"]
 
     company:
       suffix: ["S.A.", "LTDA", "e Associados", "Comércio", "EIRELI"]

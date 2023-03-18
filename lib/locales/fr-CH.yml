@@ -15,6 +15,7 @@ fr-CH:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Suisse]
+      default_country_code: ["CH"]
 
     company:
       suffix: [AG, GmbH, et associés, "& Co.", Groupe, LLC, Inc.]

@@ -41,6 +41,7 @@ en-MS:
       street_address:
         - "No. #{building_number}, #{street_name}"
       default_country: [Malaysia]
+      default_country_code: ["MY"]
     country_code: ['603-56', '603-80']
     phone_number:
       formats: ['03#######', '01########']

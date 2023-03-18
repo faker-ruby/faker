@@ -31,6 +31,7 @@ en-US:
         - "#{street_address}, #{city}, #{state_abbr} #{postcode}"
         - "#{secondary_address} #{street_address}, #{city}, #{state_abbr} #{postcode}"
       default_country: [United States, United States of America, USA]
+      default_country_code: ["US"]
       postcode_by_state:
         AL: '350##'
         AK: '995##'

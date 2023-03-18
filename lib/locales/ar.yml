@@ -25,6 +25,7 @@ ar:
         - "#{street_address}, #{city}"
         - "#{secondary_address} #{street_address}, #{city}"
       default_country: [المملكة العربية السعودية]
+      default_country_code: ["SA"]
     company:
       suffix: [شركة, وأبناؤه, المحدودة]
       buzzwords:

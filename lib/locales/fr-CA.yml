@@ -12,6 +12,7 @@ fr-CA:
       street_address:
         - " #{street_name} #{building_number}"
       default_country: [Canada]
+      default_country_code: ["CA"]
 
     internet:
       free_email: [gmail.com, yahoo.ca, hotmail.com]

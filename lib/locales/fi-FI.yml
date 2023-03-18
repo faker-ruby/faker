@@ -20,6 +20,7 @@ fi-FI:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Suomi]
+      default_country_code: ["FI"]
 
     name:
       female_first_name: [Maria, Helena, Anneli, Johanna, Kaarina, Marjatta, Hannele, Kristiina, Liisa, Emilia, Elina, Tuulikki, Annikki, Maarit, Sofia, Susanna, Leena, Katariina, Anna, Marja, Sinikka, Inkeri, Riitta, Kyllikki, Aino, Tuula, Anne, Päivi, Orvokki, Ritva, Tellervo, Maija, Pirjo, Karoliina, Pauliina, Minna, Sari, Irmeli, Eeva, Tiina, Laura, Eveliina, Marika, Elisabet, Tarja, Pirkko, Satu, Anja, Mari, Hanna]

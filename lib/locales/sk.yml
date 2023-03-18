@@ -19,6 +19,7 @@ sk:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Slovensko]
+      default_country_code: ["SK"]
 
     company:
       suffix: [s.r.o., a.s., v.o.s.]

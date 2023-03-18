@@ -28,6 +28,7 @@ uk:
       full_address:
         - "#{street_address}, #{city}, #{state}, #{postcode}"
       default_country: [Україна]
+      default_country_code: ["UA"]
 
     internet:
       free_email: [ukr.net, ex.ua, e-mail.ua, i.ua, meta.ua, yandex.ua, gmail.com]
