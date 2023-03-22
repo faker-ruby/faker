@@ -15,6 +15,10 @@ module Faker
     @locale = nil
 
     class << self
+      def locale!(new_locale)
+        @locale = new_locale
+      end
+      
       def locale=(new_locale)
         Thread.current[:faker_config_locale] = new_locale
       end
