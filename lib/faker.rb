@@ -12,6 +12,8 @@ I18n.reload! if I18n.backend.initialized?
 
 module Faker
   module Config
+    @locale = nil
+
     class << self
       def locale=(new_locale)
         Thread.current[:faker_config_locale] = new_locale
@@ -19,7 +21,7 @@ module Faker
 
       def locale
         # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
-        Thread.current[:faker_config_locale] || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
+        Thread.current[:faker_config_locale] || @locale || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
       end
 
       def own_locale
