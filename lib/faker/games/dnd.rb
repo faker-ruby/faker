@@ -44,6 +44,19 @@ module Faker
         end
 
         ##
+        # Produces the first name of a character or monster from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.name #=> "Eilonwy"
+        #
+        # @faker.version next
+        def first_name
+          fetch('dnd.name.first_name')
+        end
+
+        ##
         # Produces the name of a class from Dungeons and Dragons (PHB).
         #
         # @return [String]
@@ -67,6 +80,19 @@ module Faker
         # @faker.version 2.14.0
         def language
           fetch('dnd.languages')
+        end
+
+        ##
+        # Produces a last name from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.last_name #=> "Leafwhisper"
+        #
+        # @faker.version next
+        def last_name
+          fetch('dnd.name.last_name')
         end
 
         ##
@@ -96,6 +122,19 @@ module Faker
         end
 
         ##
+        # Produces a full name from Dungeons and Dragons.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.name #=> "Drakon Blackthorn"
+        #
+        # @faker.version next
+        def name
+          "#{fetch('dnd.name.first_name')} #{fetch('dnd.name.last_name')}"
+        end
+
+        ##
         # Produces the name of a race from Dungeons and Dragons (PHB).
         #
         # @return [String]
@@ -121,14 +160,17 @@ module Faker
           fetch('dnd.ranged_weapons')
         end
 
-        # This method is deprecated. The implementation will be removed in a near future release.
-        # Use `DnD.race` instead.
+        ##
+        # Produces a last name from Dungeons and Dragons.
         #
-        # @deprecated Use {#race} instead.
-        def species
-          warn '`DnD.species` is deprecated. Use `DnD.race` instead.'
-
-          super
+        # @return [String]
+        #
+        # @example
+        #   Faker::Games::DnD.title_name #=> "Corvus the Cunning"
+        #
+        # @faker.version next
+        def title_name
+          "#{fetch('dnd.name.first_name')} #{fetch('dnd.name.title')}"
         end
       end
     end

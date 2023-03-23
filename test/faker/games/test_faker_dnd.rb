@@ -19,12 +19,20 @@ class TestFakerDnD < Test::Unit::TestCase
     assert_match(/\w+/, @tester.city)
   end
 
+  def test_first_name
+    assert_match(/\w+/, @tester.first_name)
+  end
+
   def test_klass
     assert_match(/\w+/, @tester.klass)
   end
 
   def test_language
     assert_match(/\w+/, @tester.language)
+  end
+
+  def test_last_name
+    assert_match(/\w+/, @tester.last_name)
   end
 
   def test_melee_weapon
@@ -35,11 +43,19 @@ class TestFakerDnD < Test::Unit::TestCase
     assert_match(/\w+/, @tester.monster)
   end
 
+  def test_name
+    assert_match(/\w+/, @tester.name)
+  end
+
   def test_race
     assert_match(/\w+/, @tester.race)
   end
 
   def test_ranged_weapon
     assert_match(/\w+/, @tester.ranged_weapon)
+  end
+
+  def test_title_name
+    assert_match(/\w+/, @tester.title_name)
   end
 end
