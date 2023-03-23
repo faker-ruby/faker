@@ -9,6 +9,7 @@ en-PAK:
       postcode: ['####0']
       state: [Balochistan, Khyber Pakhtunkhwa, Punjab, Sindh, Islamabad Capital Territory, Federally Administered Tribal Areas, Azad Jammu and Kashmir, Gilgit-Baltistan]
       default_country: [Pakistan, Islamic Republic of Pakistan]
+      default_country_code: ["PK"]
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [pk, com, com.pk, name, net, org, html, edu]

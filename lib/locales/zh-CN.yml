@@ -13,6 +13,7 @@ zh-CN:
       street_address:
         - "#{street_name}#{building_number}号"
       default_country: [中国]
+      default_country_code: ["CN"]
 
 
     name:

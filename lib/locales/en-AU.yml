@@ -35,6 +35,7 @@ en-AU:
       secondary_address: ['Apartment #', 'Apt #', 'Unit #', 'U#', 'Flat #', 'House #', 'Level #']
       full_address: ["#{street_address}, #{city} #{postcode}", "#{street_address}, #{secondary_address}, #{city} #{postcode}", "#{secondary_address}, #{street_address}, #{city} #{postcode}", "#{mail_box} #{city} #{postcode}"]
       default_country: [Australia, Aus]
+      default_country_code: ["AU"]
       time_zone: [Australia/Sydney, Australia/Brisbane, Australia/Melbourne, Australia/Hobart, Australia/Adelaide, Australia/Perth, Australia/Darwin, Australia/Canberra]
     country_code: '61'
     phone_number:

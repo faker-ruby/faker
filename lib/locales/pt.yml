@@ -33,6 +33,7 @@ pt:
       postcode: ["####"]
       state: ["Lisboa", "Leiria", "Santarém", "Setúbal", "Beja", "Faro", "Évora", "Portalegre", "Castelo Branco", "Guarda", "Coimbra", "Aveiro", "Viseu", "Bragança", "Vila Real", "Porto", "Braga", "Viana do Castelo"]
       default_country: [Portugal]
+      default_country_code: ["PT"]
 
     company:
       suffix: ["S.A.", "LTDA", "e Associados", "Comércio", "EIRELI"]

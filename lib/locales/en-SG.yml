@@ -29,6 +29,7 @@ en-SG:
       street_address:
         - "#{building_number} #{street_name}"
       default_country: [Singapore]
+      default_country_code: ["SG"]
     country_code: ['65']
     phone_number:
       formats: ['6### ####', '9### ####', '8### ####']

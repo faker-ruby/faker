@@ -32,6 +32,7 @@ tr:
         - "#{city_name}"
       country: [Afganistan, Amerika Birleşik Devletleri, Fransa, Hollanda, Belçika, Nepal, Hindistan, Kuala Lumpur, Rusya]
       default_country: [Turkey]
+      default_country_code: ["TR"]
 
     book:
       title: ['Taht Oyunları', 'Maymunlar Gezegeni', 'Benim Adım Kırmızı', 'Uykuların Doğusu', 'Yılanların Öcü']

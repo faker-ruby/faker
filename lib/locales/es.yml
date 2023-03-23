@@ -22,6 +22,7 @@ es:
         - "#{street_name}#{building_number}"
         - "#{street_name}#{building_number} #{secondary_address}"
       default_country: [España]
+      default_country_code: ["ES"]
 
     company:
       suffix: [S.L., e Hijos, S.A., Hermanos]

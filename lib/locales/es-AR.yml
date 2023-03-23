@@ -2481,6 +2481,7 @@ es-AR:
                 zambia: ZM
                 zimbabwe: ZW
             default_country: [Argentina]
+            default_country_code: ["AR"]
 
         football:
             teams:

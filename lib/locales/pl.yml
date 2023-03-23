@@ -17,6 +17,7 @@ pl:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Polska]
+      default_country_code: ["PL"]
 
     coin:
       flip:

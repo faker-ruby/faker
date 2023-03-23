@@ -26,6 +26,7 @@ es-MX:
         - "#{street_name} #{building_number}"
         - "#{street_name} #{building_number} #{secondary_address}"
       default_country: [México]
+      default_country_code: ["MX"]
 
     company:
       suffix: [S.A., S.A. de C.V., S.R.L, S.A.B., S.C.]

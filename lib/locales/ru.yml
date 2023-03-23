@@ -18,6 +18,7 @@ ru:
       street_address:
         - "#{street_name}, #{building_number}"
       default_country: [Россия]
+      default_country_code: ["RU"]
       full_address:
         - "#{postcode} #{default_country}, #{city}, #{street_address}"
         - "#{postcode} #{default_country}, #{city}, #{street_address} #{secondary_address}"

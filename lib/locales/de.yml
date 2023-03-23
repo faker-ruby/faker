@@ -22,6 +22,7 @@ de:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Deutschland]
+      default_country_code: ["DE"]
 
     company:
       suffix: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OHG]
