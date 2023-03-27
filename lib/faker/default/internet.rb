@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module Faker
-  # rubocop:disable Style/IfUnlessModifier
   class Internet < Base
     # Private, Host, and Link-Local network address blocks as defined in https://en.wikipedia.org/wiki/IPv4#Special-use_addresses
     PRIVATE_IPV4_ADDRESS_RANGES = [
@@ -607,4 +606,3 @@ module Faker
     end
   end
 end
-# rubocop:enable Style/IfUnlessModifier
