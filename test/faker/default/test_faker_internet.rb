@@ -145,6 +145,11 @@ class TestFakerInternet < Test::Unit::TestCase
     assert passwords.select { |item| item.length == 16 }.size >= 1
   end
 
+  def test_password_contains_numbers
+    password = @tester.password
+    assert_match(/\d+/, password)
+  end
+
   def test_password_with_mixed_case
     password = @tester.password
     upcase_count = 0

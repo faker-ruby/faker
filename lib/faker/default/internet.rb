@@ -169,10 +169,12 @@ module Faker
         password = []
         character_bag = []
 
-        # use lower_chars by default and add upper_chars if mix_case
+        # use lower_chars and numbers by default and add upper_chars if mix_case
         lower_chars = ('a'..'z').to_a
+        numbers = (0..9).to_a
         password << lower_chars[rand(lower_chars.count - 1)]
-        character_bag += lower_chars
+        password << numbers[rand(numbers.count - 1)]
+        character_bag += lower_chars+numbers
 
         if character_types.include?(:mix_case)
           upper_chars = ('A'..'Z').to_a
