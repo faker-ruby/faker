@@ -174,6 +174,10 @@ module Faker
         password << lower_chars[rand(lower_chars.count - 1)]
         character_bag += lower_chars
 
+        digits = ('1'..'9').to_a
+        password << digits[rand(digits.count - 1)]
+        character_bag += digits
+
         if character_types.include?(:mix_case)
           upper_chars = ('A'..'Z').to_a
           password << upper_chars[rand(upper_chars.count - 1)]
