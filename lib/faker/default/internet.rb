@@ -532,12 +532,18 @@ module Faker
       #
       # @example
       #   Faker::Internet.uuid  #=> "8a6cdd40-6d78-4fdb-912b-190e3057197f"
-      def uuid
-        # borrowed from: https://github.com/ruby/ruby/blob/d48783bb0236db505fe1205d1d9822309de53a36/lib/securerandom.rb#L250
-        ary = Faker::Config.random.bytes(16).unpack('NnnnnN')
-        ary[2] = (ary[2] & 0x0fff) | 0x4000
-        ary[3] = (ary[3] & 0x3fff) | 0x8000
-        '%08x-%04x-%04x-%04x-%04x%08x' % ary # rubocop:disable Style/FormatString
+      def uuid(pattern: false)
+        if pattern
+          chars = pattern * ((32 / pattern.size).ceil + 1)
+          blocks = chars.scan(/^(.{8})(.{4})(.{4})(.{4})(.{12})/)
+          blocks.join('-')
+        else
+          # borrowed from: https://github.com/ruby/ruby/blob/d48783bb0236db505fe1205d1d9822309de53a36/lib/securerandom.rb#L250
+          ary = Faker::Config.random.bytes(16).unpack('NnnnnN')
+          ary[2] = (ary[2] & 0x0fff) | 0x4000
+          ary[3] = (ary[3] & 0x3fff) | 0x8000
+          '%08x-%04x-%04x-%04x-%04x%08x' % ary # rubocop:disable Style/FormatString
+        end
       end
 
       ##

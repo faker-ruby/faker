@@ -552,6 +552,16 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_match(/\A\h{8}-\h{4}-4\h{3}-\h{4}-\h{12}\z/, uuid)
   end
 
+  def test_uuid_with_pattern_argument
+    uuid1 = @tester.uuid(pattern: '1')
+    uuid23 = @tester.uuid(pattern: '23')
+    uuid456 = @tester.uuid(pattern: '456')
+
+    assert_equal('11111111-1111-1111-1111-111111111111', uuid1)
+    assert_match('23232323-2323-2323-2323-232323232323', uuid23)
+    assert_match('45645645-6456-4564-5645-645645645645', uuid456)
+  end
+
   def test_base64
     assert_match(/[[[:alnum:]]\-_]{16}/, @tester.base64)
     assert_match(/[[[:alnum:]]\-_]{4}/, @tester.base64(length: 4))
