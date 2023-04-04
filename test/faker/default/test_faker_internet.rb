@@ -562,6 +562,16 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_match('45645645-6456-4564-5645-645645645645', uuid456)
   end
 
+  def test_uuid_with_invalid_pattern_argument
+    assert_raises ArgumentError do
+      @tester.uuid(pattern: 'z')
+    end
+
+    assert_raises ArgumentError do
+      @tester.uuid(pattern: "0\n1")
+    end
+  end
+
   def test_base64
     assert_match(/[[[:alnum:]]\-_]{16}/, @tester.base64)
     assert_match(/[[[:alnum:]]\-_]{4}/, @tester.base64(length: 4))

@@ -538,6 +538,9 @@ module Faker
       #   Faker::Internet.uuid(pattern: '123')  #=> "12312312-3123-1231-2312-312312312312"
       def uuid(pattern: false)
         if pattern
+          pattern = pattern.downcase
+          raise ArgumentError, "The pattern #{pattern.inspect} contains non-hexadecimal digits" unless pattern =~ /\A[0-9a-f]+\z/
+
           chars = pattern * ((32 / pattern.size).ceil + 1)
           blocks = chars.scan(/^(.{8})(.{4})(.{4})(.{4})(.{12})/)
           blocks.join('-')
