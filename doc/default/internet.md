@@ -109,5 +109,7 @@ Faker::Internet.user_agent(vendor: :firefox) #=> "Mozilla/5.0 (Windows NT x.y; W
 Faker::Internet.bot_user_agent #=> "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
 Faker::Internet.bot_user_agent(vendor: :duckduckbot) #=> "Mozilla/5.0 (compatible; DuckDuckBot-Https/1.1; https://duckduckgo.com/duckduckbot)"
 
+# Keyword arguments: pattern
 Faker::Internet.uuid #=> "929ef6ef-b11f-38c9-111b-accd67a258b2"
+Faker::Internet.uuid(pattern: '123')  #=> "12312312-3123-1231-2312-312312312312"
 ```

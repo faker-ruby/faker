@@ -530,8 +530,12 @@ module Faker
       #
       # @return [String]
       #
+      # @param pattern [String] A pattern that will be repeated to produce 32 characters.
+      #
       # @example
-      #   Faker::Internet.uuid  #=> "8a6cdd40-6d78-4fdb-912b-190e3057197f"
+      #   Faker::Internet.uuid                  #=> "8a6cdd40-6d78-4fdb-912b-190e3057197f"
+      #
+      #   Faker::Internet.uuid(pattern: '123')  #=> "12312312-3123-1231-2312-312312312312"
       def uuid(pattern: false)
         if pattern
           chars = pattern * ((32 / pattern.size).ceil + 1)
