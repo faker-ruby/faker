@@ -63,7 +63,7 @@ module Faker
           verified: Faker::Boolean.boolean(true_ratio: 0.1)
         }
         user[:status] = Faker::Twitter.status(include_user: false) if include_status
-        user[:email] = Faker::Internet.safe_email if include_email
+        user[:email] = Faker::Internet.email if include_email
         user
       end
 

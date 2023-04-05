@@ -104,8 +104,7 @@ class TestHyLocale < Test::Unit::TestCase
 
   def test_hy_internet_methods
     assert_kind_of String, Faker::Internet.email
-    assert_kind_of String, Faker::Internet.free_email
-    assert_kind_of String, Faker::Internet.safe_email
+    assert_kind_of String, Faker::Internet.email
     assert_kind_of String, Faker::Internet.domain_name
     assert_kind_of String, Faker::Internet.domain_suffix
     assert_kind_of String, Faker::Internet.domain_word

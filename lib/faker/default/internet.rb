@@ -15,6 +15,8 @@ module Faker
     ].each(&:freeze).freeze
 
     class << self
+      extend Gem::Deprecate
+
       ##
       # Returns the email address
       #
@@ -25,10 +27,11 @@ module Faker
       # @param domain [String]
       #
       # @example
-      #   Faker::Internet.email                                                           #=> "samsmith@faker.com"
-      #   Faker::Internet.email(name: 'smith')                                            #=> "smith@faker.com"
-      #   Faker::Internet.email(name: 'sam smith', separators: ['-'])                     #=> "sam-smith@faker.com"
-      #   Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'gmail')    #=> "sam-smith@gmail.com"
+      #   Faker::Internet.email                                                           #=> "renee@zieme.test"
+      #   Faker::Internet.email(name: 'smith')                                            #=> "smith@bergnaum.test"
+      #   Faker::Internet.email(name: 'sam smith', separators: ['-'])                     #=> "smith-sam@tromp.example"
+      #   Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'test')     #=> "sam-smith@test.example"
+      #   Faker::Internet.email(domain: 'gmail.com')                                      #=> "foo@gmail.com"
       def email(name: nil, separators: nil, domain: nil)
         local_part = if separators
                        username(specifier: name, separators: separators)
@@ -37,7 +40,14 @@ module Faker
                      end
 
         sanitized_local_part = sanitize_email_local_part(local_part)
-        construct_email(sanitized_local_part, domain_name(domain: domain))
+
+        generate_domain = if domain.nil?
+                            domain_name
+                          else
+                            domain_name(domain: domain)
+                          end
+
+        construct_email(sanitized_local_part, generate_domain)
       end
 
       ##
@@ -56,6 +66,7 @@ module Faker
           fetch('internet.free_email')
         )
       end
+      deprecate :free_email, :email, 2023, 10
 
       ##
       # Returns the email address with fixed domain name as 'example'
@@ -73,6 +84,7 @@ module Faker
           "example.#{sample(%w[org com net])}"
         )
       end
+      deprecate :safe_email, :email, 2023, 10
 
       ##
       # Returns the username
@@ -204,10 +216,12 @@ module Faker
       # @param domain [String]
       #
       # @example
-      #   Faker::Internet.domain_name                                       #=> "test.net"
-      #   Faker::Internet.domain_name(subdomain: true)                      #=> "test.faker.io"
-      #   Faker::Internet.domain_name(subdomain: true, domain: 'example')   #=> "faker.example.com"
-      #   Faker::Internet.domain_name(domain: 'faker')                      #=> "faker.org"
+      #   Faker::Internet.domain_name                                                   #=> "altenwerth-gerhold.example"
+      #   Faker::Internet.domain_name(subdomain: true)                                  #=> "metz.mclaughlin-brekke.test"
+      #   Faker::Internet.domain_name(subdomain: true, domain: 'faker')                 #=> "foo.faker.test"
+      #   Faker::Internet.domain_name(domain: 'faker-ruby.org')                         #=> "faker-ruby.org"
+      #   Faker::Internet.domain_name(subdomain: true, domain: 'faker-ruby.org')        #=> "foo.faker-ruby.org"
+      #   Faker::Internet.domain_name(subdomain: true, domain: 'faker.faker-ruby.org')  #=> "faker.faker-ruby.org"
       def domain_name(subdomain: false, domain: nil)
         with_locale(:en) do
           if domain
@@ -215,12 +229,18 @@ module Faker
               .split('.')
               .map { |domain_part| Char.prepare(domain_part) }
               .tap do |domain_elements|
-                domain_elements << domain_suffix if domain_elements.length < 2
-                domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
+                if domain_elements.length < 2
+                  domain_elements << domain_suffix(safe: true)
+                end
+                if subdomain && domain_elements.length < 3
+                  domain_elements.unshift(Char.prepare(domain_word))
+                end
               end.join('.')
           else
-            [domain_word, domain_suffix].tap do |domain_elements|
-              domain_elements.unshift(Char.prepare(domain_word)) if subdomain
+            [domain_word, domain_suffix(safe: true)].tap do |domain_elements|
+              if subdomain
+                domain_elements.unshift(Char.prepare(domain_word))
+              end
             end.join('.')
           end
         end
@@ -257,10 +277,16 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Internet.domain_suffix   #=> "com"
-      #   Faker::Internet.domain_suffix   #=> "biz"
-      def domain_suffix
-        fetch('internet.domain_suffix')
+      #   Faker::Internet.domain_suffix              #=> "com"
+      #   Faker::Internet.domain_suffix              #=> "biz"
+      #   Faker::Internet.domain_suffix(safe: true)  #=> "example"
+      #   Faker::Internet.domain_suffix(safe: true)  #=> "test"
+      def domain_suffix(safe: nil)
+        if safe
+          fetch('internet.safe_domain_suffix')
+        else
+          fetch('internet.domain_suffix')
+        end
       end
 
       ##
@@ -425,10 +451,10 @@ module Faker
       # @param scheme [String]
       #
       # @example
-      #   Faker::Internet.url                                                           #=> "http://sipes-okon.com/hung.macejkovic"
+      #   Faker::Internet.url                                                           #=> "http://treutel.test/demarcus"
       #   Faker::Internet.url(host: 'faker')                                            #=> "http://faker/shad"
-      #   Faker::Internet.url(host: 'faker', path: '/fake_test_path')                   #=> "http://faker/fake_test_path"
-      #   Faker::Internet.url(host: 'faker', path: '/fake_test_path', scheme: 'https')  #=> "https://faker/fake_test_path"
+      #   Faker::Internet.url(host: 'faker', path: '/docs')                             #=> "http://faker/docs"
+      #   Faker::Internet.url(host: 'faker', path: '/docs', scheme: 'https')            #=> "https://faker/docs"
       def url(host: domain_name, path: "/#{username}", scheme: 'http')
         "#{scheme}://#{host}#{path}"
       end
@@ -546,10 +572,10 @@ module Faker
       ##
       # Produces a randomized hash of internet user details
       # @example
-      #   Faker::Internet.user #=> { username: 'alexie', email: 'alexie@example.net' }
+      #   Faker::Internet.user #=> { username: 'alexie', email: 'trudie@grant.test' }
       #
       # @example
-      #   Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'alexie@example.net', password: 'DtEf9P8wS31iMyC' }
+      #   Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'gayle@kohler.test', password: 'DtEf9P8wS31iMyC' }
       #
       # @return [hash]
       #

@@ -35,7 +35,7 @@ class TestEeLocale < Test::Unit::TestCase
   end
 
   def test_ee_internet_methods
-    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 

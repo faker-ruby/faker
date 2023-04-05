@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../test_helper'
+require 'uri'
 
 class TestFakerInternet < Test::Unit::TestCase
   def setup
@@ -12,40 +13,93 @@ class TestFakerInternet < Test::Unit::TestCase
     Faker::Config.locale = @default_locale
   end
 
-  def test_email
-    assert_match(/.+@.+\.\w+/, @tester.email)
+  def test_email_with_no_arguments
+    deterministically_verify -> { @tester.email } do |result|
+      name, domain = result.split('@')
+
+      domain_name, domain_suffix = domain.split('.')
+
+      assert name.is_a? String
+      assert domain_name.is_a? String
+      assert_includes(%w[example test], domain_suffix)
+    end
   end
 
-  def test_email_with_non_permitted_characters
-    assert_match(/mart#n@.+\.\w+/, @tester.email(name: 'martín'))
+  def test_email_name_with_non_permitted_characters
+    deterministically_verify -> { @tester.email(name: 'martín') } do |result|
+      name, domain = result.split('@')
+      domain_name, domain_suffix = domain.split('.')
+
+      assert_equal('mart#n', name)
+      assert domain_name.is_a? String
+      assert_includes(%w[example test], domain_suffix)
+    end
   end
 
   def test_email_with_separators
-    assert_match(/.+\+.+@.+\.\w+/, @tester.email(name: 'jane doe', separators: '+'))
+    deterministically_verify -> { @tester.email(name: 'jane doe', separators: '+') } do |result|
+      name, domain = result.split('@')
+      domain_name, domain_suffix = domain.split('.')
+
+      assert_match(/(jane\+doe|doe\+jane)/, name)
+      assert domain_name.is_a? String
+      assert_includes(%w[example test], domain_suffix)
+    end
   end
 
-  def test_email_with_domain_option_given
-    assert_match(/.+@customdomain\.\w+/, @tester.email(name: 'jane doe', domain: 'customdomain'))
+  def test_email_with_domain_name_option_given
+    result = @tester.email(domain: 'customdomain')
+
+    name, domain = result.split('@')
+    domain_name, domain_suffix = domain.split('.')
+
+    assert name.is_a? String
+    assert_equal('customdomain', domain_name)
+    assert_includes(%w[example test], domain_suffix)
   end
 
-  def test_email_with_domain_option_given_with_domain_suffix
-    assert_match(/.+@customdomain\.customdomainsuffix/, @tester.email(name: 'jane doe', domain: 'customdomain.customdomainsuffix'))
+  def test_email_with_full_domain_option_given
+    deterministically_verify -> { @tester.email(domain: 'customdomain.org') } do |result|
+      name, domain = result.split('@')
+
+      assert name.is_a? String
+      assert_equal('customdomain.org', domain)
+    end
+  end
+
+  def test_email_with_name_seperators_domain
+    deterministically_verify -> { @tester.email(name: 'faker ruby', separators: '-', domain: 'test') } do |result|
+      name, domain = result.split('@')
+      domain_name, domain_suffix = domain.split('.')
+
+      assert_match(/(ruby-faker|faker-ruby)/, name)
+      assert_equal('test', domain_name)
+      assert_includes(%w[example test], domain_suffix)
+    end
   end
 
   def test_free_email
-    assert_match(/.+@(gmail|hotmail|yahoo)\.com/, @tester.free_email)
+    Gem::Deprecate.skip_during do
+      assert_match(/.+@(gmail|hotmail|yahoo)\.com/, @tester.free_email)
+    end
   end
 
   def test_free_email_with_non_permitted_characters
-    assert_match(/mart#n@.+\.\w+/, @tester.free_email(name: 'martín'))
+    Gem::Deprecate.skip_during do
+      assert_match(/mart#n@.+\.\w+/, @tester.free_email(name: 'martín'))
+    end
   end
 
   def test_safe_email
-    assert_match(/.+@example.(com|net|org)/, @tester.safe_email)
+    Gem::Deprecate.skip_during do
+      assert_match(/.+@example.(com|net|org)/, @tester.safe_email)
+    end
   end
 
   def test_safe_email_with_non_permitted_characters
-    assert_match(/mart#n@.+\.\w+/, @tester.safe_email(name: 'martín'))
+    Gem::Deprecate.skip_during do
+      assert_match(/mart#n@.+\.\w+/, @tester.safe_email(name: 'martín'))
+    end
   end
 
   def test_username
@@ -248,27 +302,73 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_domain_name_without_subdomain
-    assert_match(/[\w-]+\.\w+/, @tester.domain_name)
+    domain_name, domain_suffix = @tester.domain_name.split('.')
+
+    assert domain_name.is_a? String
+    assert_includes(%w[example test], domain_suffix)
   end
 
   def test_domain_name_with_subdomain
-    assert_match(/[\w-]+\.[\w-]+\.\w+/, @tester.domain_name(subdomain: true))
+    subdomain, domain_name, domain_suffix = @tester.domain_name(
+      subdomain: true
+    ).split('.')
+
+    assert domain_name.is_a? String
+    assert subdomain.is_a? String
+    assert_includes(%w[example test], domain_suffix)
   end
 
-  def test_domain_name_with_subdomain_and_with_domain_option_given
-    assert_match(/customdomain\.\w+/, @tester.domain_name(subdomain: true, domain: 'customdomain'))
+  def test_domain_name_with_subdomain_and_with_domain_name_option_given
+    subdomain, domain_name, domain_suffix = @tester.domain_name(
+      subdomain: true,
+      domain: 'customdomain'
+    ).split('.')
+
+    assert subdomain.is_a? String
+    assert_equal 'customdomain', domain_name
+    assert_includes(%w[example test], domain_suffix)
+  end
+
+  def test_domain_name_with_subdomain_and_with_full_domain_option_given
+    subdomain, domain_name, domain_suffix = @tester.domain_name(
+      subdomain: true,
+      domain: 'faker-ruby.org'
+    ).split('.')
+
+    assert subdomain.is_a? String
+    assert_equal 'faker-ruby', domain_name
+    assert_equal 'org', domain_suffix
   end
 
   def test_domain_name_with_subdomain_and_with_domain_option_given_with_domain_suffix
-    assert_match(/customdomain\.customdomainsuffix/, @tester.domain_name(subdomain: true, domain: 'customdomain.customdomainsuffix'))
+    subdomain, domain_name, domain_suffix = @tester.domain_name(
+      subdomain: true,
+      domain: 'faker.faker-ruby.org'
+    ).split('.')
+
+    assert_equal 'faker', subdomain
+    assert_equal 'faker-ruby', domain_name
+    assert_equal 'org', domain_suffix
   end
 
   def test_domain_word
     assert_match(/^[\w-]+$/, @tester.domain_word)
   end
 
-  def test_domain_suffix
-    assert_match(/^\w+(\.\w+)?/, @tester.domain_suffix)
+  def test_domain_suffix_with_no_arguments
+    result = @tester.domain_suffix
+
+    domain_suffixes_options = %w[com biz info name net org org io co]
+
+    assert_includes(domain_suffixes_options, result)
+  end
+
+  def test_domain_suffix_with_arguments
+    result = @tester.domain_suffix(safe: true)
+
+    safe_domain_suffixes_options = %w[example test]
+
+    assert_includes(safe_domain_suffixes_options, result)
   end
 
   def test_ip_v4_address
@@ -388,8 +488,27 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_match(/^foo(_|\.|-)bar(_|\.|-)baz$/, @tester.slug(words: 'Foo.. bAr., baZ,,'))
   end
 
-  def test_url
-    assert_match %r{^https://domain\.com/username$}, @tester.url(host: 'domain.com', path: '/username', scheme: 'https')
+  def test_url_with_arguments
+    deterministically_verify -> { @tester.url(host: 'domain.com', path: '/username', scheme: 'https') } do |result|
+      uri = URI.parse(result)
+
+      assert_equal 'https', uri.scheme
+      assert_includes('domain.com', uri.host)
+      assert_equal '/username', uri.path
+    end
+  end
+
+  def test_url_with_no_arguments
+    deterministically_verify -> { @tester.url } do |result|
+      uri = URI.parse(result)
+
+      # example: http://zieme-bosco.example/porsche
+      # we just care about the last part here
+      suffix = uri.host.split('.').last
+
+      assert_equal 'http', uri.scheme
+      assert_includes(%w[example test], suffix)
+    end
   end
 
   def test_device_token
