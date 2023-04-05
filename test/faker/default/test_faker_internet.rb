@@ -170,13 +170,16 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
-  def test_password
+  def test_password_with_no_arguments
     password = @tester.password
+    default_min_length = 8
+    default_max_length = 16
 
     assert_match(/\w{3}/, password)
-    assert_match(/\d/, password)
     assert_match(/[a-z]/, password)
     assert_match(/[A-Z]/, password)
+    assert_match(/[0-9]/, password)
+    assert_includes (default_min_length..default_max_length), password.length, 'Password length is incorrect'
   end
 
   def test_password_with_integer_arg
@@ -279,6 +282,24 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_password_with_invalid_min_length_for_mix_case_and_special_characters
     assert_raise_message 'min_length should be at least 3 to enable mix_case, special_characters configuration' do
       @tester.password(min_length: 1, mix_case: true, special_characters: true)
+    end
+  end
+
+  def test_password_with_invalid_min_length
+    assert_raise_message 'min_length must be atleast 1 char in length' do
+      @tester.password(min_length: 0, mix_case: false, special_characters: true)
+    end
+  end
+
+  def test_password_with_invalid_min_length_for_special_characters_only
+    assert_raise_message 'min_length should be at least 1 to enable special_characters configuration' do
+      @tester.password(min_length: 0, mix_case: false, special_characters: true)
+    end
+  end
+
+  def test_password_with_invalid_min_length_for_mix_case_only
+    assert_raise_message 'min_length should be at least 2 to enable mix_case configuration' do
+      @tester.password(min_length: 1, mix_case: true, special_characters: false)
     end
   end
 
