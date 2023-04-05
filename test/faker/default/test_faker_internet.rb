@@ -236,6 +236,13 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_includes (min_length..max_length), password.size, 'Password size is incorrect'
   end
 
+  def test_password_with_same_min_max_length
+    same_length = rand(5..9)
+    password = @tester.password(min_length: same_length, max_length: same_length)
+    assert_match(/\w+/, password)
+    assert_equal(same_length, password.length)
+  end
+
   def test_password_with_max_length_less_than_min_length
     assert_raise 'max_length must be more than min_length' do
       @tester.password(min_length: 8, max_length: 4)
@@ -285,9 +292,9 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
-  def test_password_with_invalid_min_length
-    assert_raise_message 'min_length must be atleast 1 char in length' do
-      @tester.password(min_length: 0, mix_case: false, special_characters: true)
+  def test_password_with_invalid_min_max_length
+    assert_raise_message 'min_length and max_length must be atleast 1 char in length' do
+      @tester.password(min_length: 0, max_length: 0, mix_case: false, special_characters: false)
     end
   end
 
