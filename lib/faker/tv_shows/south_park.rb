@@ -32,6 +32,10 @@ module Faker
         def quote
           fetch('south_park.quotes')
         end
+
+        def episode
+          fetch('south_park.episodes')
+        end
       end
     end
   end
