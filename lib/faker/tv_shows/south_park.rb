@@ -33,6 +33,17 @@ module Faker
           fetch('south_park.quotes')
         end
 
+        ##
+        # Produces an episode name from South Park.
+        #
+        # @return [String]
+        #
+        # @example
+        #   Faker::TvShows::SouthPark.episode
+        #     #=> "Make Love, Not Warcraft"
+        #
+        # @faker.version next
+
         def episode
           fetch('south_park.episodes')
         end
