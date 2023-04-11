@@ -105,7 +105,6 @@ en:
             - Westminster
           spain:
             - Alto del Arenal
-            - Antiguas cocheras de Portazgo
             - Antón Martín
             - Arco de Triunfo
             - Atocha
@@ -146,6 +145,41 @@ en:
             - Universitat
             - Urgell
             - Urquinaona
+          germany:
+            - Alexanderplatz
+            - Aufseßplatz
+            - Bismarckstraße
+            - Bülowstraße
+            - Central Station
+            - Gleisdreieck
+            - Görlitzer Bahnhof
+            - Hallesches Tor
+            - Hauptbahnhof
+            - Hausvogteiplatz
+            - Kaiserdamm
+            - Klosterstraße
+            - Kolumbusplatz
+            - Kottbusser Tor
+            - Kurfürstenstraße
+            - Märkisches Museum
+            - Mendelssohn-Bartholdy-Park
+            - Möckernbrücke
+            - Mohrenstraße
+            - Nollendorfplatz
+            - Potsdamer Platz
+            - Prinzenstraße
+            - Rathenauplatz
+            - Rosa-Luxemburg-Platz
+            - Rotkreuzplatz
+            - Scheidplatz
+            - Sendlinger Tor
+            - Senefelderplatz
+            - Spittelmarkt
+            - St. Johannis
+            - Stadtmitte
+            - Steinbühl
+            - Tiergarten
+            - Wittenbergplatz
         railway:
           united_kingdom:
             - Birmingham New Street railway station
@@ -171,17 +205,39 @@ en:
             - St Pancras railway station
             - York railway station
           spain:
-          - Madrid Atocha
-          - Barcelona Sants
-          - Seville-Santa Justa
-          - Zaragoza–Delicias
-          - Madrid Chamartín
-          - Valencia-Joaquín Sorolla
-          - Málaga-María Zambrano
-          - Granada
-          - Alicante Terminal
-          - Valladolid-Campo Grande
-          - A Coruña-San Cristóbal
-          - Santiago de Compostela railway station
-          - Ourense
-          - Córdoba
+            - Madrid Atocha
+            - Barcelona Sants
+            - Seville-Santa Justa
+            - Zaragoza–Delicias
+            - Madrid Chamartín
+            - Valencia-Joaquín Sorolla
+            - Málaga-María Zambrano
+            - Granada
+            - Alicante Terminal
+            - Valladolid-Campo Grande
+            - A Coruña-San Cristóbal
+            - Santiago de Compostela railway station
+            - Ourense
+            - Córdoba
+          germany:
+            - Berlin-Gesundbrunnen station
+            - Berlin Hauptbahnhof
+            - Berlin Ostbahnhof
+            - Berlin Südkreuz
+            - Dortmund Hauptbahnhof
+            - Dresden Hauptbahnhof
+            - Duisburg Hauptbahnhof
+            - Düsseldorf Hauptbahnhof
+            - Essen Hauptbahnhof
+            - Frankfurt Hauptbahnhof
+            - Hamburg-Altona station
+            - Hamburg Hauptbahnhof
+            - Hannover Hauptbahnhof
+            - Karlsruhe Hauptbahnhof
+            - Köln Hauptbahnhof
+            - Köln Messe/Deutz station
+            - Leipzig Hauptbahnhof
+            - München Hauptbahnhof
+            - München Ost
+            - Nürnberg Hauptbahnhof
+            - Stuttgart Hauptbahnhof
