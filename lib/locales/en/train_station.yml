@@ -1,8 +1,8 @@
 en:
   faker:
       train_station:
-        united_kingdom:
-          metro:
+        metro:
+          united_kingdom:
             - Aldgate
             - Aldgate East
             - Angel
@@ -103,7 +103,8 @@ en:
             - West Jesmond
             - West Street
             - Westminster
-          railway:
+        railway:
+          united_kingdom:
             - Birmingham New Street railway station
             - Blackfriars station
             - Bristol Temple Meads railway station
