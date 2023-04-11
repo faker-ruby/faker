@@ -103,6 +103,49 @@ en:
             - West Jesmond
             - West Street
             - Westminster
+          spain:
+            - Alto del Arenal
+            - Antiguas cocheras de Portazgo
+            - Antón Martín
+            - Arco de Triunfo
+            - Atocha
+            - Bellvitge Rambla Marina
+            - Bilbao
+            - Buenos Aires
+            - El Clot
+            - Estación del Arte
+            - Glòries
+            - Gran Vía
+            - Hospital de Bellvitge
+            - Hostafrancs
+            - Iglesia
+            - La Sagrera
+            - Marina
+            - Menéndez Pelayo
+            - Miguel Hernández
+            - Monumental
+            - Nueva Numancia
+            - Pacífico
+            - Plaça de Sants
+            - Plaza de Cataluña
+            - Plaza España
+            - Poble Sec
+            - Portazgo
+            - Puente de Vallecas
+            - Puerta del Sol
+            - Ríos Rosas
+            - Rocafort
+            - Sagrada Família
+            - Sant Andreu
+            - Santa Coloma
+            - Santa Eulàlia
+            - Sol
+            - Tirso de Molina
+            - Torrassa
+            - Tribunal
+            - Universitat
+            - Urgell
+            - Urquinaona
         railway:
           united_kingdom:
             - Birmingham New Street railway station
@@ -127,3 +170,18 @@ en:
             - Newcastle railway station
             - St Pancras railway station
             - York railway station
+          spain:
+          - Madrid Atocha
+          - Barcelona Sants
+          - Seville-Santa Justa
+          - Zaragoza–Delicias
+          - Madrid Chamartín
+          - Valencia-Joaquín Sorolla
+          - Málaga-María Zambrano
+          - Granada
+          - Alicante Terminal
+          - Valladolid-Campo Grande
+          - A Coruña-San Cristóbal
+          - Santiago de Compostela railway station
+          - Ourense
+          - Córdoba

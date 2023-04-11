@@ -7,8 +7,12 @@ class TestFakerTrainStation < Test::Unit::TestCase
     @tester = Faker::Travel::TrainStation
   end
 
-  def test_name
+  def test_name_UK
     assert_match(/\w+/, @tester.name(type: 'metro', region: 'united_kingdom'))
+  end
+
+  def test_name_esp
+    assert_match(/\w+/, @tester.name(type: 'railway', region: 'spain'))
   end
 
   def test_name_with_invalid_arguments
