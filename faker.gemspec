@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('minitest', '5.18.0')
   spec.add_development_dependency('pry', '0.14.2')
   spec.add_development_dependency('rake', '13.0.6')
-  spec.add_development_dependency('rubocop', '1.48.1')
+  spec.add_development_dependency('rubocop', '1.50.1')
   spec.add_development_dependency('rubocop-minitest', '0.30.0')
   spec.add_development_dependency('rubocop-rake', '0.6.0')
   spec.add_development_dependency('simplecov', '0.22.0')
