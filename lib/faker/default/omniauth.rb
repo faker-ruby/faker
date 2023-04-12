@@ -12,7 +12,7 @@ module Faker
       super()
 
       @name = name || "#{Name.first_name} #{Name.last_name}"
-      @email = email || Internet.safe_email(name: self.name)
+      @email = email || Internet.email(name: self.name)
       @first_name, @last_name = self.name.split
     end
 
