@@ -159,7 +159,7 @@ module Faker
       # @example
       #   Faker::Company.department #=> "Information Technology"
       #
-      # @faker.version 1.6.0
+      # @faker.version next
       def department
         fetch('company.department')
       end
