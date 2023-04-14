@@ -84,6 +84,10 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_match(/[a-z ]+\.?/, @tester.profession)
   end
 
+  def test_department
+    assert_match(/\w+/, @tester.department)
+  end
+
   def test_polish_taxpayer_identification_number
     number = @tester.polish_taxpayer_identification_number
     control_sum = 0

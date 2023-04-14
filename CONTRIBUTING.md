@@ -71,29 +71,25 @@ There are a few ways to run RuboCop:
 
 ## Managing your branch
 
-- Use well-crafted commit messages and Pull Requests descriptions, providing context if possible.
-
+- Use well-crafted commit messages and Pull Requests descriptions, providing context if possible. Please use the Pull Request template when opening a new PR.
 - Squash "WIP" commits and remove merge commits by rebasing your branch against main. We try to keep our commit history as clean as possible.
 - To prevent pushing with test failures or Rubocop offenses, see [Setup a custom pre-push git hook](#setup-a-custom-pre-push-git-hook).
 
-## A word on the changelog
-
-You may also notice that we have a changelog in the form of CHANGELOG.md. You may be tempted to include changes to this in your branch, but don't worry about this — we'll take care of it!
-
-## Continuous integration
-
-GitHub Actions will kick in after you push up a branch or open a PR. It takes a few minutes to run a complete build, which you are free to monitor as it progresses. First-time contributors may need to wait until a maintainer approves the build.
-
-What happens if the build fails in some way? Don't fear! Click on a failed job and scroll through its output to determine the cause of the failure. You'll want to make changes to your branch and push them up until the entire build is green. It may take a bit of time, but overall it is worth it and it helps us immensely!
-
 ## Adding new generators
 
+### General Guidelines
+
+- Don't include hurtful language that can convey exclusionary behavior, such as racism, sexism, homophobia. Be considerate and mindful of others.
 - Don't use `Array#sample`, `Array#shuffle` and `Kernel#rand` on your new generator if you want to randomly pick values. Instead, you should use the methods provided by the Base class: `sample`, `shuffle` and `rand`. The reason is that we want to preserve the deterministic feature of this gem.
 - Please make sure the generator doesn't exist already before opening a PR.
-- Add a new YAML file to `lib/locales/en` rather than adding translations to `lib/locales/en.yml`. For example, if you add `Faker::MyThing`, put your translations in `lib/locales/en/my_thing.yml`. See [the locale README](./lib/locales/en/README.md) for more info.
+- Add a new YAML file to `lib/locales/en` rather than adding translations to the `lib/locales/en.yml` file. For example, if you add `Faker::MyThing`, put your translations in `lib/locales/en/my_thing.yml`.
+  - When possible, consider adding the new YAML file inside a folder to keep things organized, for example: `lib/locales/en/quotes/parks_and_rec.yml`. See [the locale README](./lib/locales/en/README.md) for more info.
 
-### YARD docs
+### Documentation
 
+Add the new generator to the [Generators list in the README](./README.md#generators) so other people can find them.
+
+#### YARD docs
 - Include [YARD] style docs for all methods that includes:
 - A short description of what the method generates
 - Descriptions for all params (`@param`)
@@ -172,6 +168,16 @@ When in doubt, run `bundle exec rake reformat_yaml['lib/path/to/file.yml']` to r
 
 * Use the `rake console` task to start a session with Faker loaded.
 * Use `bundle exec yard server -r` to launch the YARD Doc server.
+
+## A word on the changelog
+
+You may also notice that we have a changelog in the form of CHANGELOG.md. You may be tempted to include changes to this in your branch, but don't worry about this — we'll take care of it!
+
+## Continuous integration
+
+GitHub Actions will kick in after you push up a branch or open a PR. It takes a few minutes to run a complete build, which you are free to monitor as it progresses. First-time contributors may need to wait until a maintainer approves the build.
+
+What happens if the build fails in some way? Don't fear! Click on a failed job and scroll through its output to determine the cause of the failure. You'll want to make changes to your branch and push them up until the entire build is green. It may take a bit of time, but overall it is worth it and it helps us immensely!
 
 ## Setup a custom pre-push git hook
 

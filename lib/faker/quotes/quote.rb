@@ -106,6 +106,19 @@ module Faker
       def fortune_cookie
         fetch('quote.fortune_cookie')
       end
+
+      ##
+      # Produces a quote from comedian Mitch Hedberg.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Quote.mitch_hedberg # => "I like Kit-Kats, unless I'm with four or more people."
+      #
+      # @faker.version next
+      def mitch_hedberg
+        fetch('quote.mitch_hedberg')
+      end
     end
   end
 end
