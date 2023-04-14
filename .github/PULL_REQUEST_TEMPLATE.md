@@ -38,6 +38,12 @@ This Pull Request has been created because [REPLACE ME]
 Before submitting the PR make sure the following are checked:
 
 * [ ] This Pull Request is related to one change. Changes that are unrelated should be opened in separate PRs.
-* [ ] This Pull Request is related to adding a new generator. I've reviewed and followed the [Documentation guidelines](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md#documentation).
 * [ ] Commit message has a detailed description of what changed and why. If this PR fixes a related issue include it in the commit message. Ex: `[Fix #issue-number]`
 * [ ] Tests are added or updated if you fix a bug, refactor something, or add a feature.
+* [ ] Tests and Rubocop are passing before submitting your proposed changes.
+
+If you're proposing a new generator:
+
+* [ ] Open an issue first for discussion before you write any code.
+* [ ] Double-check the existing generators documentation to make sure the new generator you want to add doesn't already exist.
+* [ ] You've reviewed and followed the [Documentation guidelines](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md#documentation).
