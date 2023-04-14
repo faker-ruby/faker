@@ -39,12 +39,12 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::TvShows::SouthPark.episode
+        #   Faker::TvShows::SouthPark.episode_name
         #     #=> "Make Love, Not Warcraft"
         #
         # @faker.version next
 
-        def episode
+        def episode_name
           fetch('south_park.episodes')
         end
       end
