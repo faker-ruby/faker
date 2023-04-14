@@ -78,6 +78,8 @@ There are a few ways to run RuboCop:
 ## Adding new generators
 
 ### General Guidelines
+
+- Don't include hurtful language that can convey exclusionary behavior, such as racism, sexism, homophobia. Be considerate and mindful of others.
 - Don't use `Array#sample`, `Array#shuffle` and `Kernel#rand` on your new generator if you want to randomly pick values. Instead, you should use the methods provided by the Base class: `sample`, `shuffle` and `rand`. The reason is that we want to preserve the deterministic feature of this gem.
 - Please make sure the generator doesn't exist already before opening a PR.
 - Add a new YAML file to `lib/locales/en` rather than adding translations to the `lib/locales/en.yml` file. For example, if you add `Faker::MyThing`, put your translations in `lib/locales/en/my_thing.yml`.
