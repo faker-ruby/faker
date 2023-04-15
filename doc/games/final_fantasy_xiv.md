@@ -13,6 +13,6 @@ Faker::Games::FinalFantasyXIV.race #=> "Miqo'te"
 # Generate a random data center from Final Fantasy XIV
 Faker::Games::FinalFantasyXIV.data_center #=> "Aether"
 
-# Generate a random zpme from Final Fantasy XIV
+# Generate a random zone from Final Fantasy XIV
 Faker::Games::FinalFantasyXIV.zone #=> "Eastern La Noscea"
 ```
