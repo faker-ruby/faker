@@ -38,4 +38,8 @@ class TestFakerYoda < Test::Unit::TestCase
   def test_fortune_cookie
     assert_match(/\w+/, @tester.fortune_cookie)
   end
+
+  def test_mitch_hedberg
+    assert_match(/\w+/, @tester.mitch_hedberg)
+  end
 end

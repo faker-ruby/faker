@@ -152,6 +152,19 @@ module Faker
       end
 
       ##
+      # Produces a company department.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Company.department #=> "Information Technology"
+      #
+      # @faker.version next
+      def department
+        fetch('company.department')
+      end
+
+      ##
       # Produces a company spanish organisation number.
       #
       # @return [String]

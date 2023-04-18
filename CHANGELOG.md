@@ -1,5 +1,68 @@
 # Changelog
 
+## [v3.2.0](https://github.com/faker-ruby/faker/tree/v3.2.0) (2023-04-14)
+
+Happy Spring with a new Faker release! 🌼
+
+This version changes `Faker::Internet.email`, `Faker::Internet.domain_name`, `Faker::Internet.safe_email`, and `Faker::Internet.free_email` default behavior.
+
+These generators email are now RFC 2606 compliant. They generate safe values by default using the Reserved Top Level DNS Names: `example` and `test`. To maintain backwards compatibility and give users the option to use non-safe domains at their own risk, custom domains are allowed.
+
+`Faker::Internet.safe_email`, and `Faker::Internet.free_email` have been deprecated. Users have until October 2023 to make the necessary changes.
+
+[More details and updated docs can be found here](https://github.com/faker-ruby/faker/blob/main/doc/default/internet.md#about-faker-ruby-transition-to-be-rfc-2606-compliant).
+
+Other changes included in this version:
+
+## Features
+* Generate safe `email` and `domain_name` by default (RFC 2606) by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2733
+* Add avatar movie by @lexisvar in https://github.com/faker-ruby/faker/pull/2699
+* add chess sport by @lexisvar in https://github.com/faker-ruby/faker/pull/2701
+* Remove FillMurray service by @ferblape in https://github.com/faker-ruby/faker/pull/2702
+* Add Allergens to Food by @AaronRustad in https://github.com/faker-ruby/faker/pull/2706
+* Update sport docs by @clementf in https://github.com/faker-ruby/faker/pull/2716
+* Add country code +44 to en-gb locale by @jremes-foss in https://github.com/faker-ruby/faker/pull/2731
+* Add names to DnD generator by @dollerbill in https://github.com/faker-ruby/faker/pull/2735
+* add digits to password by @wyattroyc in https://github.com/faker-ruby/faker/pull/2705
+* performance: remove unnecessary i18n locale reload by @codez in https://github.com/faker-ruby/faker/pull/2723
+* Add Faker::Company.department generator by @acuppy in https://github.com/faker-ruby/faker/pull/2737
+* Mitch Hedberg quotes by @MosDeef in https://github.com/faker-ruby/faker/pull/2721
+
+## Bug fixes
+* Fix explanation what Marketing.buzzwords does by @danieldiekmeier in https://github.com/faker-ruby/faker/pull/2700
+* fix: Typo in Faker::Travel::Airport docs by @evanlouden in https://github.com/faker-ruby/faker/pull/2712
+* Fix full changelog link for 3.1.1 by @rnestler in https://github.com/faker-ruby/faker/pull/2714
+* Stop publishing to RubyGem by @VladVadlja in https://github.com/faker-ruby/faker/pull/2711
+* Add default_country_code in locale by @ashwin-elangovan in https://github.com/faker-ruby/faker/pull/2732
+* Fix formatting in readme.md by @leon-vogt in https://github.com/faker-ruby/faker/pull/2722
+
+## Update local dependencies
+* Fix rubocop updates by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2708
+* Update rubocop-minitest requirement from = 0.29.0 to = 0.30.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2743
+* Update minitest requirement from = 5.17.0 to = 5.18.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2727
+* Update rubocop requirement from = 1.48.1 to = 1.50.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2747
+* Add Faker::Company.department generator by @acuppy in https://github.com/faker-ruby/faker/pull/2737
+* Update Pull Request template and guides by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2749
+
+## New Contributors
+* @lexisvar made their first contribution in https://github.com/faker-ruby/faker/pull/2699
+* @danieldiekmeier made their first contribution in https://github.com/faker-ruby/faker/pull/2700
+* @AaronRustad made their first contribution in https://github.com/faker-ruby/faker/pull/2706
+* @evanlouden made their first contribution in https://github.com/faker-ruby/faker/pull/2712
+* @rnestler made their first contribution in https://github.com/faker-ruby/faker/pull/2714
+* @VladVadlja made their first contribution in https://github.com/faker-ruby/faker/pull/2711
+* @clementf made their first contribution in https://github.com/faker-ruby/faker/pull/2716
+* @leon-vogt made their first contribution in https://github.com/faker-ruby/faker/pull/2722
+* @ashwin-elangovan made their first contribution in https://github.com/faker-ruby/faker/pull/2732
+* @wyattroyc made their first contribution in https://github.com/faker-ruby/faker/pull/2705
+* @codez made their first contribution in https://github.com/faker-ruby/faker/pull/2723
+* @acuppy made their first contribution in https://github.com/faker-ruby/faker/pull/2737
+* @MosDeef made their first contribution in https://github.com/faker-ruby/faker/pull/2721
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.1.1...v3.2.0
+
+------------------------------------------------------------------------------
+
 ## [v3.1.1](https://github.com/faker-ruby/faker/tree/v3.1.1) (2023-02-03)
 
 Happy Valentine's Day with a new Faker release! 🎉
