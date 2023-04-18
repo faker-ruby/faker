@@ -160,7 +160,7 @@ module Faker
       # @faker.version 2.1.3
       def password(min_length: 8, max_length: 16, mix_case: true, special_characters: false)
         raise ArgumentError, 'max_length must be more than min_length' if max_length < min_length
-        raise ArgumentError, 'min_length and max_length must be atleast 1 char in length' if(min_length == 0 && max_length == 0)
+        raise ArgumentError, 'min_length and max_length must have at least one character' if(min_length == 0 && max_length == 0)
 
         character_types = []
         required_min_length = 0
