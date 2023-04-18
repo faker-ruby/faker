@@ -346,6 +346,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Games::Dota](doc/games/dota.md)
   - [Faker::Games::ElderScrolls](doc/games/elder_scrolls.md)
   - [Faker::Games::Fallout](doc/games/fallout.md)
+  - [Faker::Games::FinalFantasyXIV](doc/games/final_fantasy_xiv.md)
   - [Faker::Games::HalfLife](doc/games/half_life.md)
   - [Faker::Games::Heroes](doc/games/heroes.md)
   - [Faker::Games::HeroesOfTheStorm](doc/games/heroes_of_the_storm.md)
