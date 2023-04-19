@@ -14,4 +14,8 @@ class TestFakerTvShowsSouthPark < Test::Unit::TestCase
   def test_quote
     assert_match(/\w+/, @tester.quote)
   end
+
+  def test_episode_name
+    assert_match(/\w+/, @tester.episode_name)
+  end
 end

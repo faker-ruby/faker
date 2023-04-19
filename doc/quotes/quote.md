@@ -16,4 +16,6 @@ Faker::Quote.robin #=> "Holy Razors Edge"
 Faker::Quote.singular_siegler #=> "Texas!"
 
 Faker::Quote.yoda #=> "Use your feelings, Obi-Wan, and find him you will."
+
+Faker::Quote.mitch_hedberg # => "I like Kit-Kats, unless I'm with four or more people."
 ```
