@@ -180,6 +180,27 @@ en:
             - Steinbühl
             - Tiergarten
             - Wittenbergplatz
+          united_states:
+            - Back Bay
+            - Belmont
+            - Braintree
+            - Downtown Crossing
+            - Forest Hills
+            - Haymarket
+            - Jefferson Park
+            - Kimball
+            - Malden Center
+            - North Hollywood
+            - North Station
+            - Park Street
+            - Quincy Center
+            - Redondo Beach
+            - Rosemont
+            - Ruggles
+            - South Station
+            - The Loop
+            - Union Station
+            - Wonderland
         railway:
           united_kingdom:
             - Birmingham New Street railway station
@@ -241,3 +262,17 @@ en:
             - München Ost
             - Nürnberg Hauptbahnhof
             - Stuttgart Hauptbahnhof
+          united_states:
+            - 30th Street Station
+            - Chicago Union Station
+            - Grand Central Terminal
+            - Hoboken Terminal
+            - Jamaica Station
+            - Los Angeles Union Station
+            - Millennium Station
+            - New York Penn Station
+            - Newark Penn Station
+            - Ogilvie Transportation Center
+            - Secaucus Junction
+            - South Station
+            - Washington Union Station
