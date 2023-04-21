@@ -238,6 +238,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_same_min_max_length
     password = @tester.password(min_length: 5, max_length: 5)
+    
     assert_match(/\w+/, password)
     assert_equal(5, password.length)
   end
@@ -295,6 +296,7 @@ class TestFakerInternet < Test::Unit::TestCase
     error = assert_raises(ArgumentError) do
       @tester.password(min_length: 0, max_length: 0, mix_case: false, special_characters: false)
     end
+
     assert_equal 'min_length and max_length must be greater than or equal to one', error.message
   end
 
@@ -302,6 +304,7 @@ class TestFakerInternet < Test::Unit::TestCase
     error = assert_raises(ArgumentError) do
       @tester.password(min_length: 0, mix_case: false, special_characters: true)
     end
+
     assert_equal 'min_length and max_length must be greater than or equal to one', error.message
   end
 
@@ -309,7 +312,8 @@ class TestFakerInternet < Test::Unit::TestCase
     error = assert_raises(ArgumentError) do
       @tester.password(min_length: 1, mix_case: true)
     end
-    assert_equal 'min_length should be at least 2 to enable mix_case configuration', error.message 
+
+    assert_equal 'min_length should be at least 2 to enable mix_case configuration', error.message
   end
 
   def test_password_with_compatible_min_length_and_requirements
