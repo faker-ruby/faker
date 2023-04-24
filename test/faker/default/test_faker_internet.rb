@@ -238,7 +238,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_same_min_max_length
     password = @tester.password(min_length: 5, max_length: 5)
-    
+
     assert_match(/\w+/, password)
     assert_equal(5, password.length)
   end
