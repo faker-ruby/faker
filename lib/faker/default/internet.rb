@@ -183,27 +183,27 @@ module Faker
         character_bag = []
 
         # use lower_chars by default and add upper_chars if mix_case
-        lower_chars = ('a'..'z').to_a
-        password << lower_chars[rand(lower_chars.count - 1)]
+        lower_chars = self::LLetters
+        password << sample(lower_chars)
         character_bag += lower_chars
 
         digits = ('0'..'9').to_a
-        password << digits[rand(digits.count - 1)]
+        password << sample(digits)
         character_bag += digits
 
-        if character_types.include?(:mix_case)
-          upper_chars = ('A'..'Z').to_a
-          password << upper_chars[rand(upper_chars.count - 1)]
+        if mix_case
+          upper_chars = self::ULetters
+          password << sample(upper_chars)
           character_bag += upper_chars
         end
 
-        if character_types.include?(:special_characters)
+        if special_characters
           special_chars = %w[! @ # $ % ^ & *]
-          password << special_chars[rand(special_chars.count - 1)]
+          password << sample(special_chars)
           character_bag += special_chars
         end
 
-        password << character_bag[rand(character_bag.count - 1)] while password.length < target_length
+        password << sample(character_bag) while password.length < target_length
 
         shuffle(password).join
       end
