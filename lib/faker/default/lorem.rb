@@ -10,10 +10,18 @@ module Faker
       #
       # @example
       #   Faker::Lorem.word   #=> "soluto"
+      #   Faker::Lorem.word(exclude_words: 'error') #=> "nisi"
+      #   Faker::Lorem.word(exclude_words: 'id, error') #=> "et"
+      #   Faker::Lorem.word(exclude_words: ['id', 'error']) #=> "consequatur"
       #
       # @faker.version 2.1.3
-      def word
-        sample(translate('faker.lorem.words'))
+      def word(exclude_words: nil)
+        word_list = translate('faker.lorem.words')
+        if exclude_words
+          exclude_words = exclude_words.split(', ') if exclude_words.instance_of?(::String)
+          word_list -= exclude_words
+        end
+        sample(word_list)
       end
 
       ##
