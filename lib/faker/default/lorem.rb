@@ -16,12 +16,7 @@ module Faker
       #
       # @faker.version 2.1.3
       def word(exclude_words: nil)
-        word_list = translate('faker.lorem.words')
-        if exclude_words
-          exclude_words = exclude_words.split(', ') if exclude_words.instance_of?(::String)
-          word_list -= exclude_words
-        end
-        sample(word_list)
+        words(number: 1, exclude_words: exclude_words).first
       end
 
       ##
