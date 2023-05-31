@@ -48,10 +48,26 @@ class TestFakerLorem < Test::Unit::TestCase
 
   # Faker::Lorem.word generates random word from standard wordlist
   def test_word
-    @tester = Faker::Lorem
     @standard_wordlist = I18n.translate('faker.lorem.words')
 
     100.times { assert_includes @standard_wordlist, @tester.word }
+  end
+
+  def test_excluded_words_on_word
+    excluded_words_array = @tester.words(number: 2)
+    w = @tester.word(exclude_words: excluded_words_array)
+
+    assert_not_equal w, excluded_words_array[0]
+    assert_not_equal w, excluded_words_array[1]
+  end
+
+  def test_excluded_words_as_string_on_word
+    excluded_words_array = @tester.words(number: 2)
+    excluded_word_string = excluded_words_array.join(', ')
+    w = @tester.word(exclude_words: excluded_word_string)
+
+    assert_not_equal w, excluded_words_array[0]
+    assert_not_equal w, excluded_words_array[1]
   end
 
   def test_exact_sentence_word_count
