@@ -1,7 +1,11 @@
 # Faker::Lorem
 
 ```ruby
+# Keyword arguments: exclude_words (prevent specific words from being produced)
 Faker::Lorem.word #=> "repellendus"
+Faker::Lorem.word(exclude_words: 'error') #=> "nisi"
+Faker::Lorem.word(exclude_words: 'id, error') #=> "et"
+Faker::Lorem.word(exclude_words: ['id', 'error']) #=> "consequatur"
 
 # Keyword arguments: number, supplemental (words from a supplementary list of Lorem-like words)
 Faker::Lorem.words #=> ["dolores", "adipisci", "nesciunt"]
