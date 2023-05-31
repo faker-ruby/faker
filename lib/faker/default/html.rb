@@ -131,8 +131,12 @@ module Faker
       #
       # @return [String]
       #
+      # @example
+      #   Faker::HTML.script #=> "<script src=\"http://gulgowski.name/jordan.weimann.js\"></script>"
+      #
+      # @faker.version next
       def script
-        "<script src=\"#{Faker::Internet.url}\"></script>"
+        "<script src=\"#{Faker::Internet.url}.js\"></script>"
       end
 
       ##
@@ -141,8 +145,12 @@ module Faker
       # @param rel [String] The rel of the link tag.
       # @return [String]
       #
+      # @example
+      #   Faker::HTML.script #=> "<link rel=\"stylesheet\" href=\"http://fay.io/darryl.barrows.css\">"
+      #
+      # @faker.version next
       def link(rel: 'stylesheet')
-        "<link rel=\"#{rel}\" href=\"#{Faker::Internet.url}\">"
+        "<link rel=\"#{rel}\" href=\"#{Faker::Internet.url}.css\">"
       end
 
       ##

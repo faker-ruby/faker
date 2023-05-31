@@ -216,4 +216,21 @@ class TestJaLocale < Test::Unit::TestCase
     assert Faker::University.name.is_a? String
     assert_not_english(Faker::University.name)
   end
+
+  def test_ja_sport_methods
+    assert Faker::Sport.sport.is_a? String
+    assert_not_english(Faker::Sport.sport)
+    assert Faker::Sport.summer_olympics_sport.is_a? String
+    assert_not_english(Faker::Sport.summer_olympics_sport)
+    assert Faker::Sport.winter_olympics_sport.is_a? String
+    assert_not_english(Faker::Sport.winter_olympics_sport)
+    assert Faker::Sport.summer_paralympics_sport.is_a? String
+    assert_not_english(Faker::Sport.summer_paralympics_sport)
+    assert Faker::Sport.winter_paralympics_sport.is_a? String
+    assert_not_english(Faker::Sport.winter_paralympics_sport)
+    assert Faker::Sport.ancient_olympics_sport.is_a? String
+    assert_not_english(Faker::Sport.ancient_olympics_sport)
+    assert Faker::Sport.unusual_sport.is_a? String
+    assert_not_english(Faker::Sport.unusual_sport)
+  end
 end
