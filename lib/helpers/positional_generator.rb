@@ -12,7 +12,7 @@
 # useful for computations -- and this object knows how to build that dependency
 # graph.
 #
-# See {PositionalGenerator::Builder}} for more.
+# See {PositionalGenerator::Builder} for more.
 class PositionalGenerator
   ##
   # @param as_type [Symbol] +:string+ to generate a String
