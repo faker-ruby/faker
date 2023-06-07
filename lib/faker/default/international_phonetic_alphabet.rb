@@ -6,15 +6,15 @@ module Faker
     class << self
 
       def consonant(amount: 1)
-        (0..amount).map{fetch('international_phonetic_alphabet.consonants')}.join
+        (1..amount).map{fetch('international_phonetic_alphabet.consonants')}.join
       end
 
       def vowel(amount: 1)
-        (0..amount).map{fetch('international_phonetic_alphabet.vowels')}.join
+        (1..amount).map{fetch('international_phonetic_alphabet.vowels')}.join
       end
 
       def character(amount: 1)
-        (0..amount).map{fetch('international_phonetic_alphabet.characters')}.join
+        (1..amount).map{fetch('international_phonetic_alphabet.characters')}.join
       end
 
     end
