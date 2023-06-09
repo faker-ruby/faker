@@ -52,7 +52,7 @@ class PositionalGenerator
     # @example a digit
     #   int
     #
-    # @example five digits named a
+    # @example five digits named :a
     #   int(name: :a, length: 5)
     #
     # @example digits of any length between 4 to 10
@@ -74,7 +74,7 @@ class PositionalGenerator
     # @example Generate a letter
     #   letter
     #
-    # @example Generate five uppercase letters named b
+    # @example Generate five uppercase letters named :b
     #   letter(name: :b, length: 5, ranges: ['A'..'Z'])
     #
     # @example Generate three-letter strings from within specific values
@@ -332,7 +332,9 @@ class PositionalGenerator
         end
       end
 
-      result.sort_by { |a| a[0] }
+      result.sort_by do |component_position, _, _|
+        component_position
+      end
     end
 
     ##
@@ -447,7 +449,7 @@ class PositionalGenerator
             raise ArgumentError, "unsupported range type: #{s.inspect}"
           end
         else
-          Faker::Base::Letters
+         Faker::Base.sample(Faker::Base::Letters)
         end
       end
     end
