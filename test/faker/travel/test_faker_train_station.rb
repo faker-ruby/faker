@@ -19,9 +19,17 @@ class TestFakerTrainStation < Test::Unit::TestCase
     assert_match(/\w+/, @tester.name(type: 'metro', region: 'united_states'))
   end
 
+  def test_name_no_args
+    assert_match(/\w+/, @tester.name)
+  end
+
+  # test for region only
+
+  # test for type only
+
   def test_name_with_invalid_arguments
     assert_raises ArgumentError do
-      @tester.name(cats: 'meow', dogs: 'woof')
+      @tester.name(bee: 'bzzz', fish: 'blub')
     end
   end
 end

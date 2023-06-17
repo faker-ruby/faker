@@ -325,6 +325,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   <summary>Travel</summary>
 
   - [Faker:Travel::Airport](doc/travel/airport.md)
+  - [Faker:Travel::TrainStation](doc/travel/train_station.md)
 </details>
 
 <details>
