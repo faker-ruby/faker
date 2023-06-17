@@ -8,18 +8,18 @@ class TestFakerTrainStation < Test::Unit::TestCase
   end
 
   def test_name_uk
-    assert_match(/\w+/, @tester.name(type: 'metro', region: 'united_kingdom'))
-    assert_match(/\w+/, @tester.name(type: 'metro', region: 'United_Kingdom'))
-    assert_match(/\w+/, @tester.name(type: 'metro', region: :united_kingdom))
-    assert_match(/\w+/, @tester.name(type: 'metro', region: :United_Kingdom))
+    assert_match(/\w+/, @tester.name(region: 'united_kingdom', type: 'metro'))
+    assert_match(/\w+/, @tester.name(region: 'United_Kingdom', type: 'metro'))
+    assert_match(/\w+/, @tester.name(region: :united_kingdom, type: 'metro'))
+    assert_match(/\w+/, @tester.name(region: :United_Kingdom, type: 'metro'))
   end
 
   def test_name_esp
-    assert_match(/\w+/, @tester.name(type: 'railway', region: 'spain'))
+    assert_match(/\w+/, @tester.name(region: 'spain', type: 'railway'))
   end
 
   def test_name_us
-    assert_match(/\w+/, @tester.name(type: 'metro', region: 'united_states'))
+    assert_match(/\w+/, @tester.name(region: 'united_states', type: 'metro'))
   end
 
   def test_name_no_args
