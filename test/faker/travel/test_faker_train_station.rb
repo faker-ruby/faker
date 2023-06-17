@@ -9,6 +9,9 @@ class TestFakerTrainStation < Test::Unit::TestCase
 
   def test_name_uk
     assert_match(/\w+/, @tester.name(type: 'metro', region: 'united_kingdom'))
+    assert_match(/\w+/, @tester.name(type: 'metro', region: 'United_Kingdom'))
+    assert_match(/\w+/, @tester.name(type: 'metro', region: :united_kingdom))
+    assert_match(/\w+/, @tester.name(type: 'metro', region: :United_Kingdom))
   end
 
   def test_name_esp
@@ -23,9 +26,17 @@ class TestFakerTrainStation < Test::Unit::TestCase
     assert_match(/\w+/, @tester.name)
   end
 
-  # test for region only
+  def test_region_only
+    assert_match(/\w+/, @tester.name(region: 'germany'))
+    assert_match(/\w+/, @tester.name(region: 'Germany'))
+    assert_match(/\w+/, @tester.name(region: :Germany))
+  end
 
-  # test for type only
+  def test_type_only
+    assert_match(/\w+/, @tester.name(type: :metro))
+    assert_match(/\w+/, @tester.name(type: :railway))
+    assert_match(/\w+/, @tester.name(type: 'railway'))
+  end
 
   def test_name_with_invalid_arguments
     assert_raises ArgumentError do

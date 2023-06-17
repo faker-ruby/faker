@@ -27,20 +27,20 @@ module Faker
             type = sample(types)
             region = sample(regions)
           elsif type.nil?
-            validate_arguments(region, regions)
+            validate_arguments(region, regions, 'region')
             type = sample(types)
           elsif region.nil?
-            validate_arguments(type, types)
+            validate_arguments(type, types, 'type')
             region = sample(regions)
           end
 
-          fetch("train_station.#{type.to_s.downcase}.#{region.to_s.downcase}")
+          fetch("train_station.#{type.downcase}.#{region.downcase}")
         end
 
-        def validate_arguments(argument, correct_values)
-          return if correct_values.include?(argument.to_sym)
+        def validate_arguments(argument, correct_values, argument_name)
+          return if correct_values.include?(argument.downcase.to_sym)
 
-          raise ArgumentError, "#{argument} can be blank, or one of the following #{correct_values.join(', ')}"
+          raise ArgumentError, "'#{argument.downcase}' not found, #{argument_name} can be blank, or one of the following: #{correct_values.join(', ')}"
         end
       end
     end
