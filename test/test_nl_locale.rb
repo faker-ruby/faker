@@ -5,7 +5,7 @@ require_relative 'test_helper'
 class TestNlLocale < Test::Unit::TestCase
   def setup
     @previous_locale = Faker::Config.locale
-    Faker::Config.locale = 'nl'
+    Faker::Config.locale = :nl
   end
 
   def teardown

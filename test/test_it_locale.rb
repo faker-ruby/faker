@@ -4,7 +4,7 @@ require_relative 'test_helper'
 
 class TestItLocale < Test::Unit::TestCase
   def setup
-    Faker::Config.locale = 'it'
+    Faker::Config.locale = :it
   end
 
   def teardown

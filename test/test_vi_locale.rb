@@ -5,7 +5,7 @@ require_relative 'test_helper'
 class TestViLocale < Test::Unit::TestCase
   def setup
     @previous_locale = Faker::Config.locale
-    Faker::Config.locale = 'vi'
+    Faker::Config.locale = :vi
   end
 
   def teardown

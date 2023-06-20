@@ -8,7 +8,7 @@ end
 
 class TestEsLocale < Test::Unit::TestCase
   def setup
-    Faker::Config.locale = 'es'
+    Faker::Config.locale = :es
   end
 
   def teardown
