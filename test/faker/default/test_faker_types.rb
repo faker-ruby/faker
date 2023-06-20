@@ -62,6 +62,12 @@ class TestFakerTypes < Test::Unit::TestCase
     assert_instance_of Array, @tester.rb_array
   end
 
+  def test_rb_array_returns_right_type_of_array
+    @tester.rb_array(len: 3, type: -> { @tester.rb_string }).each do |value|
+      assert_instance_of String, value
+    end
+  end
+
   def test_array_has_the_right_array
     assert_equal(3, @tester.rb_array(len: 3).length)
     assert_empty @tester.rb_array(len: 0)
