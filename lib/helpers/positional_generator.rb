@@ -433,7 +433,10 @@ class PositionalGenerator
       end
 
       def generate(_)
-        (0...@length).inject('') { |acc, _| "#{acc}#{char}" }
+        @length.times.inject('') do |acc, _index|
+          generated_character = char
+          "#{acc}#{generated_character}"
+        end
       end
 
       private
