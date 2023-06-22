@@ -63,6 +63,27 @@ class TestFakerDate < Test::Unit::TestCase
     end
   end
 
+  def test_forward_with_from_parameter
+    from = Date.parse('2012-01-01')
+    five_days_after_from = from + 5
+    random_date = @tester.forward(from: from, days: 5)
+
+    assert random_date > from, "Expected > \"#{from}\", but got #{random_date}"
+    assert five_days_after_from > from, "Expected < \"#{from}\", but got #{random_date}"
+  end
+
+  def test_forward_with_string_parameter
+    from = '2012-01-01'
+
+    from_date = Date.parse(from)
+
+    100.times do
+      random_date = @tester.forward(from: from, days: 5)
+
+      assert random_date > from_date, "Expected > \"#{from}\", but got #{random_date}"
+    end
+  end
+
   def test_backward
     today = Date.today
 

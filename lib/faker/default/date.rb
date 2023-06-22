@@ -53,18 +53,26 @@ module Faker
       ##
       # Produce a random date in the future (up to N days).
       #
+      # @param from [Integer] The start of the usable forward date range.
       # @param days [Integer] The maximum number of days to go into the future.
       # @return [Date]
       #
-      # @example
+      # @example if used with or without Rails (Active Support)
       #   Faker::Date.forward(days: 23) #=> #<Date: 2014-10-03>
       #
+      # @example if used with Rails (Active Support)
+      #  Faker::Date.forward(from: Date.current, days: 17) #=> #<Date: 2022-06-22>
+      #
+      # @example if used with or without Rails (Active Support)
+      #   Faker::Date.forward(from: '2022-06-03', days: 10) #=> #<Date: 2022-10-13>
+      #
       # @faker.version 1.0.0
-      def forward(days: 365)
-        from = ::Date.today + 1
-        to   = ::Date.today + days
+      def forward(from: ::Date.today, days: 365)
+        start_date = get_date_object(from)
+        since = start_date + 1
+        to = start_date + days
 
-        between(from: from, to: to).to_date
+        between(from: since, to: to).to_date
       end
 
       ##
