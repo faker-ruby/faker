@@ -159,7 +159,8 @@ module Faker
       #
       # @faker.version 2.1.3
       def password(min_length: 8, max_length: 16, mix_case: true, special_characters: false)
-        raise ArgumentError, 'max_length must be more than min_length' if max_length < min_length
+        raise ArgumentError, 'min_length and max_length must be greater than or equal to one' if min_length < 1 || max_length < 1
+        raise ArgumentError, 'min_length must be smaller than or equal to max_length' unless min_length <= max_length
 
         character_types = []
         required_min_length = 0
@@ -182,27 +183,27 @@ module Faker
         character_bag = []
 
         # use lower_chars by default and add upper_chars if mix_case
-        lower_chars = ('a'..'z').to_a
-        password << lower_chars[rand(lower_chars.count - 1)]
+        lower_chars = self::LLetters
+        password << sample(lower_chars)
         character_bag += lower_chars
 
-        digits = ('1'..'9').to_a
-        password << digits[rand(digits.count - 1)]
+        digits = ('0'..'9').to_a
+        password << sample(digits)
         character_bag += digits
 
-        if character_types.include?(:mix_case)
-          upper_chars = ('A'..'Z').to_a
-          password << upper_chars[rand(upper_chars.count - 1)]
+        if mix_case
+          upper_chars = self::ULetters
+          password << sample(upper_chars)
           character_bag += upper_chars
         end
 
-        if character_types.include?(:special_characters)
+        if special_characters
           special_chars = %w[! @ # $ % ^ & *]
-          password << special_chars[rand(special_chars.count - 1)]
+          password << sample(special_chars)
           character_bag += special_chars
         end
 
-        password << character_bag[rand(character_bag.count - 1)] while password.length < target_length
+        password << sample(character_bag) while password.length < target_length
 
         shuffle(password).join
       end

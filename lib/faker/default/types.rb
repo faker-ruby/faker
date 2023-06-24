@@ -97,12 +97,13 @@ module Faker
       # @example
       #   Faker::Types.rb_array #=> ["a"]
       #   Faker::Types.rb_array(len: 4) #=> ["a", 1, 2, "bob"]
+      #   Faker::Types.rb_array(len: 2, type: -> { Faker::Types.rb_string }) #=> ["cat", "foo"]
       #
       # @faker.version 1.8.6
-      def rb_array(len: 1)
+      def rb_array(len: 1, type: -> { random_type })
         [].tap do |ar|
           len.times do
-            ar.push random_type
+            ar.push type.is_a?(Proc) ? type.call : type
           end
         end
       end

@@ -29,6 +29,9 @@ Faker::Company.type #=> "Privately Held"
 # Get a random profession
 Faker::Company.profession #=> "firefighter"
 
+# Get a random department
+Faker::Company.department #=> "Information Technology"
+
 ###############################################################
 # Generate country specific identifiers
 ###############################################################

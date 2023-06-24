@@ -86,7 +86,7 @@ class TestFakerIdNumber < Test::Unit::TestCase
   def test_brazilian_id
     sample = @tester.brazilian_id
 
-    assert_match(/^\d{9}$/, sample)
+    assert_match(/^\d{8}(X|\d)?$/, sample)
     assert_match(/(\d)((?!\1)\d)+/, sample)
   end
 

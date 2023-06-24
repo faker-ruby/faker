@@ -170,13 +170,16 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
-  def test_password
+  def test_password_with_no_arguments
     password = @tester.password
+    default_min_length = 8
+    default_max_length = 16
 
     assert_match(/\w{3}/, password)
-    assert_match(/\d/, password)
     assert_match(/[a-z]/, password)
     assert_match(/[A-Z]/, password)
+    assert_match(/[0-9]/, password)
+    assert_includes((default_min_length..default_max_length), password.length, 'Generated password length is incorrect')
   end
 
   def test_password_with_integer_arg
@@ -233,8 +236,15 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_includes (min_length..max_length), password.size, 'Password size is incorrect'
   end
 
+  def test_password_with_same_min_max_length
+    password = @tester.password(min_length: 5, max_length: 5)
+
+    assert_match(/\w+/, password)
+    assert_equal(5, password.length)
+  end
+
   def test_password_with_max_length_less_than_min_length
-    assert_raise 'max_length must be more than min_length' do
+    assert_raise 'min_length must be smaller than or equal to max_length' do
       @tester.password(min_length: 8, max_length: 4)
     end
   end
@@ -280,6 +290,30 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_raise_message 'min_length should be at least 3 to enable mix_case, special_characters configuration' do
       @tester.password(min_length: 1, mix_case: true, special_characters: true)
     end
+  end
+
+  def test_password_with_invalid_min_max_length
+    error = assert_raises(ArgumentError) do
+      @tester.password(min_length: 0, max_length: 0, mix_case: false, special_characters: false)
+    end
+
+    assert_equal 'min_length and max_length must be greater than or equal to one', error.message
+  end
+
+  def test_password_with_invalid_min_length_for_special_characters_only
+    error = assert_raises(ArgumentError) do
+      @tester.password(min_length: 0, mix_case: false, special_characters: true)
+    end
+
+    assert_equal 'min_length and max_length must be greater than or equal to one', error.message
+  end
+
+  def test_password_with_invalid_min_length_for_mix_case_only
+    error = assert_raises(ArgumentError) do
+      @tester.password(min_length: 1, mix_case: true)
+    end
+
+    assert_equal 'min_length should be at least 2 to enable mix_case configuration', error.message
   end
 
   def test_password_with_compatible_min_length_and_requirements
