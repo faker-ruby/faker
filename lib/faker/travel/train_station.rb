@@ -20,8 +20,15 @@ module Faker
         #
         # @faker.version next
         def name(region: nil, type: nil)
-          regions = translate('faker.train_station').keys
-          types = translate('faker.train_station.united_kingdom').keys
+          region, type = fill_missing_inputs_with_samples(region, type)
+          fetch("train_station.#{region}.#{type}")
+        end
+
+        private
+
+        def fill_missing_inputs_with_samples(region, type)
+          regions = %w[germany spain united_kingdom united_states]
+          types = %w[metro railway]
 
           if region.nil? && type.nil?
             region = sample(regions)
@@ -33,15 +40,15 @@ module Faker
             validate_arguments(region, regions, 'region')
             type = sample(types)
           end
-
-          fetch("train_station.#{region.downcase}.#{type.downcase}")
+          [region, type]
         end
 
         def validate_arguments(argument, correct_values, argument_name)
-          return if correct_values.include?(argument.downcase.to_sym)
+          return if correct_values.include?(argument)
 
-          raise ArgumentError, "'#{argument.downcase}' not found, #{argument_name} can be blank, or one of the following: #{correct_values.join(', ')}"
+          raise ArgumentError, "'#{argument}' not found, #{argument_name} can be blank, or one of the following, as strings: #{correct_values.join(', ')}"
         end
+
       end
     end
   end
