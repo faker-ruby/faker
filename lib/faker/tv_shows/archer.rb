@@ -14,7 +14,7 @@ module Faker
         # @example
         #   Faker::TvShows::Archer.character #=> "Sterling Archer"
         #
-        # @faker.version 2.13.0
+        # @faker.version next
         def character
           fetch('archer.characters')
         end
@@ -27,7 +27,7 @@ module Faker
         # @example
         #   Faker::TvShows::Archer.location #=> "The Tuntmore Towers"
         #
-        # @faker.version 2.13.0
+        # @faker.version next
         def location
           fetch('archer.locations')
         end
@@ -41,7 +41,7 @@ module Faker
         #   Faker::TvShows::Archer.quote
         #     #=> "You're not my supervisor!"
         #
-        # @faker.version 2.13.0
+        # @faker.version next
         def quote
           fetch('archer.quotes')
         end
