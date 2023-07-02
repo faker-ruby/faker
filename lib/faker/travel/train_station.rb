@@ -48,7 +48,6 @@ module Faker
 
           raise ArgumentError, "'#{argument}' not found, #{argument_name} can be blank, or one of the following, as strings: #{correct_values.join(', ')}"
         end
-
       end
     end
   end
