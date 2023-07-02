@@ -7,91 +7,91 @@ class TestFakerOpera < Test::Unit::TestCase
     @tester = Faker::Music::Opera
   end
 
-  def verdi
+  def test_verdi
     assert_match(/\w+/i, @tester.verdi)
   end
 
-  def rossini
+  def test_rossini
     assert_match(/\w+/i, @tester.rossini)
   end
 
-  def donizetti
+  def test_donizetti
     assert_match(/\w+/i, @tester.donizetti)
   end
 
-  def bellini
+  def test_bellini
     assert_match(/\w+/i, @tester.bellini)
   end
 
-  def mozart
+  def test_mozart
     assert_match(/\w+/i, @tester.mozart)
   end
 
-  def mozart_italian
+  def test_mozart_italian
     assert_match(/\w+/i, @tester.mozart_italian)
   end
 
-  def mozart_german
+  def test_mozart_german
     assert_match(/\w+/i, @tester.mozart_german)
   end
 
-  def gluck
+  def test_gluck
     assert_match(/\w+/i, @tester.gluck)
   end
 
-  def gluck_italian
+  def test_gluck_italian
     assert_match(/\w+/i, @tester.gluck_italian)
   end
 
-  def gluck_french
+  def test_gluck_french
     assert_match(/\w+/i, @tester.gluck_french)
   end
 
-  def beethoven
+  def test_beethoven
     assert_match(/\w+/i, @tester.beethoven)
   end
 
-  def weber
+  def test_weber
     assert_match(/\w+/i, @tester.weber)
   end
 
-  def strauss
+  def test_strauss
     assert_match(/\w+/i, @tester.strauss)
   end
 
-  def wagner
+  def test_wagner
     assert_match(/\w+/i, @tester.wagner)
   end
 
-  def schumann
+  def test_schumann
     assert_match(/\w+/i, @tester.schumann)
   end
 
-  def schubert
+  def test_schubert
     assert_match(/\w+/i, @tester.schubert)
   end
 
-  def berg
+  def test_berg
     assert_match(/\w+/i, @tester.berg)
   end
 
-  def ravel
+  def test_ravel
     assert_match(/\w+/i, @tester.ravel)
   end
 
-  def berlioz
+  def test_berlioz
     assert_match(/\w+/i, @tester.berlioz)
   end
 
-  def bizet
+  def test_bizet
     assert_match(/\w+/i, @tester.bizet)
   end
 
-  def gounod
+  def test_gounod
     assert_match(/\w+/i, @tester.gounod)
   end
 
-  def saint_saens
+  def test_saint_saens
     assert_match(/\w+/i, @tester.saint_saens)
   end
 end
