@@ -452,7 +452,7 @@ class PositionalGenerator
             raise ArgumentError, "unsupported range type: #{s.inspect}"
           end
         else
-         Faker::Base.sample(Faker::Base::Letters)
+        Faker::Base.sample(Faker::Base::Letters)
         end
       end
     end
