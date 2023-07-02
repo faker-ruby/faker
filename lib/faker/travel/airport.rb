@@ -11,7 +11,7 @@ module Faker
         #
         # @param region [String] airport region, currently available -> united_states or european_union
         #
-        # @retrun [String]
+        # @return [String]
         #
         # @example
         # Faker::Travel::Airport.name(size: 'large', region: 'united_states') => "Los Angeles International Airport"
@@ -28,7 +28,7 @@ module Faker
         #
         # @param region [String] airport region, currently available -> united_states or european_union
         #
-        # @retrun [String]
+        # @return [String]
         #
         # @example
         # Faker::Travel::Airport.iata(size: 'large', region: 'united_states') => "LAX"
