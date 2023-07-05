@@ -329,6 +329,12 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 </details>
 
 <details>
+  <summary>Composite</summary>
+
+  - [Faker::Composite](doc/composite/composite.md)
+</details>
+
+<details>
   <summary>Creature</summary>
 
   - [Faker::Creature::Animal](doc/creature/animal.md)

@@ -7,7 +7,7 @@ class TestFakerComposite < Test::Unit::TestCase
     @tester = Faker::Composite.new(Faker::Creature::Dog, Faker::Bank, Faker::Games::Pokemon)
   end
 
-  # Common method should return expected responce
+  # Common method should return expected response
   def test_common_method
     assert_match(/\w+/, @tester.name)
   end
