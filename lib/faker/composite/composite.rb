@@ -6,6 +6,7 @@ module Faker
 
     def initialize(*generator_classes)
       @generator_classes = generator_classes
+      super()
     end
 
     def respond_to_missing?(method)
