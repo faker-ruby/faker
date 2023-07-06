@@ -48,13 +48,13 @@ module Faker
 
       ## by default numerify results do not start with a zero
       def numerify(number_string, leading_zero: false)
-        return number_string.gsub(/#/) { rand(10).to_s } if leading_zero
+        return number_string.gsub('#') { rand(10).to_s } if leading_zero
 
-        number_string.sub(/#/) { rand(1..9).to_s }.gsub(/#/) { rand(10).to_s }
+        number_string.sub('#') { rand(1..9).to_s }.gsub('#') { rand(10).to_s }
       end
 
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { sample(ULetters) }
+        letter_string.gsub('?') { sample(ULetters) }
       end
 
       def bothify(string)
@@ -84,7 +84,7 @@ module Faker
         reg = reg.source if reg.respond_to?(:source) # Handle either a Regexp or a String that looks like a Regexp
         reg
           .gsub(%r{^/?\^?}, '').gsub(%r{\$?/?$}, '') # Ditch the anchors
-          .gsub(/\{(\d+)\}/, '{\1,\1}').gsub(/\?/, '{0,1}') # All {2} become {2,2} and ? become {0,1}
+          .gsub(/\{(\d+)\}/, '{\1,\1}').gsub('?', '{0,1}') # All {2} become {2,2} and ? become {0,1}
           .gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # [12]{1,2} becomes [12] or [12][12]
           .gsub(/(\([^)]+\))\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                 # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
           .gsub(/(\\?.)\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d

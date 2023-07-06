@@ -567,7 +567,7 @@ module Faker
         end
 
         control = control.to_s[-1].to_i
-        control = control.zero? ? control : 10 - control
+        control = 10 - control unless control.zero?
 
         %w[A B C D E F G H J U V].include?(organization_type) ? control : letters[control]
       end
