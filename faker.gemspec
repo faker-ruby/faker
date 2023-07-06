@@ -29,14 +29,4 @@ Gem::Specification.new do |spec|
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.add_dependency('i18n', '>= 1.8.11', '< 2')
-  spec.add_development_dependency('minitest', '5.18.0')
-  spec.add_development_dependency('pry', '0.14.2')
-  spec.add_development_dependency('rake', '13.0.6')
-  spec.add_development_dependency('rubocop', '1.50.2')
-  spec.add_development_dependency('rubocop-minitest', '0.31.0')
-  spec.add_development_dependency('rubocop-rake', '0.6.0')
-  spec.add_development_dependency('simplecov', '0.22.0')
-  spec.add_development_dependency('test-unit', '3.5.9')
-  spec.add_development_dependency('timecop', '0.9.6')
-  spec.add_development_dependency('yard', '0.9.34')
 end
