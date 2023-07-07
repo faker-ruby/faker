@@ -40,7 +40,3 @@ Faker::HTML.random #=> returns output from a single method outlined above
 Faker::HTML.random(:table) #=> returns output from any single method outlined above except for "table"
 Faker::HTML.random(:ordered_list, :unordered_list) #=> returns output from any single method outlined above except for either ordered_list and unordered_list
 ```
-
-
-
-
