@@ -30,7 +30,7 @@ class TestFakerDota < Test::Unit::TestCase
   end
 
   def test_player
-    assert_match(/\w+/, @tester.player)
+    assert_match(/[\p{Katakana}\p{Han}\w]+/, @tester.player)
   end
 
   def test_heroes_quotes
