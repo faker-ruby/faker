@@ -9,7 +9,8 @@ class TestChileRut < Test::Unit::TestCase
 
   def test_full_rut
     assert_equal('6-k', @tester.full_rut(min_rut: 6, fixed: true))
-    assert_equal('8', @tester.full_rut(min_rut: 8, max_rut: 8)[0])
+    assert_equal('8-6', @tester.full_rut(min_rut: 8, max_rut: 8))
+    assert_equal('11.111.111-1', @tester.full_rut(min_rut: 11_111_111, max_rut: 11_111_111, formatted: true))
     assert_equal('30686957-4', @tester.full_rut(min_rut: 30_686_957, fixed: true))
   end
 
