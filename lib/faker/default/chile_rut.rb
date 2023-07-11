@@ -82,11 +82,17 @@ module Faker
       # @faker.version next
       def full_rut(min_rut: 1, max_rut: 99_999_999, fixed: false, formatted: false)
         this_rut = rut(min_rut: min_rut, max_rut: max_rut, fixed: fixed)
-        this_rut = this_rut.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse if formatted
+        this_rut = format_rut(this_rut) if formatted
         "#{this_rut}-#{dv}"
       end
 
       attr_reader :last_rut
+
+      private
+
+      def format_rut(rut)
+        rut.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse
+      end
     end
   end
 end
