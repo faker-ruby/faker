@@ -79,7 +79,7 @@ class PositionalGenerator
     #
     # @example Generate three-letter strings from within specific values
     #   letter(ranges: ['700'..'799', '7A0'..'7F9'])
-    def letter(name: nil, length: 1, ranges: 'a'..'Z')
+    def letter(name: nil, length: 1, ranges: ['a'..'z', 'A'..'Z'])
       @components << Component.new(@components.count, name, [], Letter.new(length, ranges))
     end
 
