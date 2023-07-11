@@ -343,7 +343,12 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_pty_ltd_registration_number
-        regexify(%r{\d{4}/\d{4,10}/07})
+        generate(:string) do |g|
+          g.int(length: 4)
+          g.lit('/')
+          g.int(ranges: [1000..9_999_999_999])
+          g.lit('/07')
+        end
       end
 
       ##
@@ -356,7 +361,18 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_close_corporation_registration_number
-        regexify(%r{(CK\d{2}|\d{4})/\d{4,10}/23})
+        generate(:string) do |g|
+          g.oneof do |one|
+            one.group do |g_|
+              g_.lit('CK')
+              g_.int(length: 2)
+            end
+            one.int(length: 4)
+          end
+          g.lit('/')
+          g.int(ranges: [1000..9_999_999_999])
+          g.lit('/23')
+        end
       end
 
       ##
@@ -369,7 +385,12 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_listed_company_registration_number
-        regexify(%r{\d{4}/\d{4,10}/06})
+        generate(:string) do |g|
+          g.int(length: 4)
+          g.lit('/')
+          g.int(ranges: [1000..9_999_999_999])
+          g.lit('/06')
+        end
       end
 
       ##
@@ -382,7 +403,12 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_trust_registration_number
-        regexify(%r{IT\d{2,4}/\d{2,10}})
+        generate(:string) do |g|
+          g.lit('IT')
+          g.int(ranges: [10..9999])
+          g.lit('/')
+          g.int(ranges: [10..9_999_999_999])
+        end
       end
 
       ##

@@ -61,6 +61,10 @@ module Faker
         letterify(numerify(string))
       end
 
+      def generate(as_type, &block)
+        PositionalGenerator.new(as_type, &block).generate
+      end
+
       # Given a regular expression, attempt to generate a string
       # that would match it.  This is a rather simple implementation,
       # so don't be shocked if it blows up on you in a spectacular fashion.
