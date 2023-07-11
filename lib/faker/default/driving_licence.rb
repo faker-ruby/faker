@@ -98,17 +98,28 @@ module Faker
       end
 
       def gb_licence_year(dob, gender)
-        decade = (dob.year / 10) % 10
-        year = dob.year % 10
-        month = gender == :female ? dob.month + 50 : dob.month
-        # Rubocop's preferred formatting is pretty gory
-        # rubocop:disable Style/FormatString
-        "#{decade}#{'%02d' % month}#{'%02d' % dob.day}#{year}"
-        # rubocop:enable Style/FormatString
+        generate(:string) do |g|
+          g.computed do
+            (dob.year / 10) % 10
+          end
+          g.computed do
+            gender_marker = gender == :female ? 50 : 0
+            format('%02d', (dob.month + gender_marker))
+          end
+          g.computed do
+            format('%02d', dob.day)
+          end
+          g.computed do
+            dob.year % 10
+          end
+        end
       end
 
       def gb_licence_checksum
-        regexify(/[0-9][A-Z][A-Z]/)
+        generate(:string) do |g|
+          g.int
+          g.letter(ranges: ['A'..'Z'], length: 2)
+        end
       end
     end
   end

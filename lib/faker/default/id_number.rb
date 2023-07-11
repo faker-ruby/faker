@@ -46,9 +46,23 @@ module Faker
       end
 
       def ssn_valid
-        ssn = regexify(/[0-8]\d{2}-\d{2}-\d{4}/)
-        # We could still have all 0s in one segment or another
-        INVALID_SSN.any? { |regex| regex =~ ssn } ? ssn_valid : ssn
+        generate(:string) do |g|
+          g.computed(name: :first) do
+            range = [1..665, 667..899].sample(random: Faker::Config.random)
+            n = Faker::Base.rand(range)
+            format('%03d', n)
+          end
+          g.lit('-')
+          g.computed(name: :second) do
+            n = Faker::Base.rand(1..99)
+            format('%02d', n)
+          end
+          g.lit('-')
+          g.computed(name: :third) do
+            n = Faker::Base.rand(1..9999)
+            format('%04d', n)
+          end
+        end
       end
 
       ##

@@ -22,14 +22,25 @@ module Faker
       #
       # @faker.version 1.6.4
       def vin
-        front = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
-        back = 8.times.map { VIN_KEYSPACE.sample(random: Faker::Config.random) }.join
-        checksum = "#{front}A#{back}".chars.each_with_index.map do |char, i|
-          value = (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym])
-          value * VIN_WEIGHT[i]
-        end.inject(:+) % 11
-        checksum = 'X' if checksum == 10
-        "#{front}#{checksum}#{back}"
+        generate(:string) do |g|
+          g.letter(name: :wmi, ranges: ['100'..'199', '400'..'499', '500'..'599', '700'..'799', '7A0'..'7F9'])
+          g.letter(name: :vds, length: 5, ranges: [VIN_KEYSPACE])
+          g.computed(name: :checksum, deps: %i[wmi vds model_year plant_code vis]) do |wmi, vds, model_year, plant_code, vis|
+            checksum = "#{wmi}#{vds}0#{model_year}#{plant_code}#{vis}".chars.each_with_index.map do |char, i|
+              value = (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym])
+              value * VIN_WEIGHT[i]
+            end.inject(:+) % 11
+
+            if checksum == 10
+              'X'
+            else
+              checksum
+            end
+          end
+          g.letter(name: :model_year, length: 1, ranges: [VIN_KEYSPACE - %w[U Z 0]])
+          g.letter(name: :plant_code, length: 1, ranges: [VIN_KEYSPACE])
+          g.int(name: :vis, length: 6)
+        end
       end
 
       # Produces a random vehicle manufacturer.
