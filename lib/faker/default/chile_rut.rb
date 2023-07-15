@@ -8,18 +8,19 @@ module Faker
       ##
       # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits).
       #
-      # @param min_rut [Integer] Specifies the minimum value of the rut.
-      # @param fixed [Boolean] Determines if the rut is fixed (returns the min_rut value).
+      # @param min_rut [Integer] Specifies the minimum value of the RUT.
+      # @param max_rut [Integer] Specifies the maximum value of the RUT.
+      # @param fixed [Boolean] Determines if the RUT is fixed (returns the min_rut value).
       # @return [Number]
       #
       # @example
       #   Faker::ChileRut.rut #=> 11235813
-      #   Faker::ChileRut.rut(min_rut: 20890156) #=> 31853211
-      #   Faker::ChileRut.rut(min_rut: 20890156, fixed: true) #=> 20890156
+      #   Faker::ChileRut.rut(min_rut: 10_000_000, max_rut: 30_000_000) #=> 21853211
+      #   Faker::ChileRut.rut(min_rut: 20_890_156, fixed: true) #=> 20890156
       #
-      # @faker.version 1.9.2
-      def rut(min_rut: 1, fixed: false)
-        @last_rut = fixed ? min_rut : rand_in_range(min_rut, 99_999_999)
+      # @faker.version next
+      def rut(min_rut: 1, max_rut: 99_999_999, fixed: false)
+        @last_rut = fixed ? min_rut : rand_in_range(min_rut, max_rut)
       end
 
       ##
@@ -68,25 +69,30 @@ module Faker
       ##
       # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits) with a dv (digito verificador, check-digit).
       #
-      # @param min_rut [Integer] Specifies the minimum value of the rut.
-      # @param fixed [Boolean] Determines if the rut is fixed (returns the min_rut value).
+      # @param min_rut [Integer] Specifies the minimum value of the RUT.
+      # @param max_rut [Integer] Specifies the maximum value of the RUT.
+      # @param fixed [Boolean] Determines if the RUT is fixed (returns the min_rut value).
       # @return [String]
       #
       # @example
       #   Faker::ChileRut.full_rut #=> "30686957-4"
-      #   Faker::ChileRut.full_rut(min_rut: 20890156) #=> "30686957-4"
-      #   Faker::ChileRut.full_rut(min_rut: 30686957, fixed: true) #=> "30686957-4"
+      #   Faker::ChileRut.full_rut(min_rut: 10_000_000, max_rut: 30_000_000) #=> "20686957-4"
+      #   Faker::ChileRut.full_rut(min_rut: 30_686_957, fixed: true) #=> "30686957-4"
       #
       # @faker.version next
-      def full_rut(min_rut: 0, fixed: false, formatted: false)
-        if formatted
-          "#{rut(min_rut: min_rut, fixed: fixed).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse}-#{dv}"
-        else
-          "#{rut(min_rut: min_rut, fixed: fixed)}-#{dv}"
-        end
+      def full_rut(min_rut: 1, max_rut: 99_999_999, fixed: false, formatted: false)
+        this_rut = rut(min_rut: min_rut, max_rut: max_rut, fixed: fixed)
+        this_rut = format_rut(this_rut) if formatted
+        "#{this_rut}-#{dv}"
       end
 
       attr_reader :last_rut
+
+      private
+
+      def format_rut(rut)
+        rut.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse
+      end
     end
   end
 end
