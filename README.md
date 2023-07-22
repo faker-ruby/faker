@@ -169,9 +169,7 @@ Faker::Config.locale = 'es'
 Faker::Config.locale = :es
 ```
 
-Note: Overriding the default locale might not be thread-safe. See [Locale setting can be ignored #2563](https://github.com/faker-ruby/faker/issues/2563) for more details.
-
-To override Faker's locales,
+To override Faker's locales, and set it on threaded server environments
 check out the [locales README](lib/locales/README.md).
 
 ### Minitest and Faker >= 2.22

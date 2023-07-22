@@ -81,7 +81,7 @@ class TestFakerNumber < Test::Unit::TestCase
       random_number = @tester.between(from: -50, to: 50)
 
       assert random_number >= -50, "Expected >= -50, but got #{random_number}"
-      assert random_number <=  50, "Expected <= 50, but got #{random_number}"
+      assert random_number <= 50, "Expected <= 50, but got #{random_number}"
     end
   end
 
@@ -90,7 +90,7 @@ class TestFakerNumber < Test::Unit::TestCase
       random_number = @tester.within(range: -50..50)
 
       assert random_number >= -50, "Expected >= -50, but got #{random_number}"
-      assert random_number <=  50, "Expected <= 50, but got #{random_number}"
+      assert random_number <= 50, "Expected <= 50, but got #{random_number}"
     end
   end
 
