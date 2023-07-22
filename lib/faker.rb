@@ -12,7 +12,7 @@ I18n.reload! if I18n.backend.initialized?
 
 module Faker
   module Config
-    @locale = nil
+    @default_locale = nil
 
     class << self
       def locale!(new_locale)
