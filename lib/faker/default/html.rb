@@ -13,20 +13,25 @@ module Faker
       #
       # @faker.version next
       def headers
-        "<h#{rand(1..6)}>#{Lorem.word.capitalize}</h#{rand(1..6)}>"
+        level = rand(1..6)
+        "<h#{level}>#{Lorem.word.capitalize}</h#{level}>"
       end
 
       ##
       # Produces a random HTML paragraph format.
       #
+      # @param sentence_count [Integer] The number of sentences in the paragraph.
+      # @param supplemental [Boolean] Include supplemental text.
+      # @param random_sentences_to_add [Integer] The number of random sentences to add to the paragraph.
+      # @param exclude_words [Array<String>] Words to exclude from the generated paragraph.
       # @return [String]
       #
       # @example
-      #   Faker::HTML.paragraphs #=> "<p>Incidunt atque quis</p>"
+      #   Faker::HTML.paragraph #=> "<p>Incidunt atque quis</p>"
       #
       # @faker.version next
-      def paragraphs
-        "<p>#{Faker::Lorem.paragraph(sentence_count: 3)}</p>"
+      def paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 0, exclude_words: nil)
+        "<p>#{Faker::Lorem.paragraph(sentence_count: sentence_count, supplemental: supplemental, random_sentences_to_add: random_sentences_to_add, exclude_words: exclude_words)}</p>"
       end
 
       ##
@@ -35,23 +40,15 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::HTML.emphasis #=> "<p>Incidunt atque quis <em>repellat</em> id impedit. Quas numquam quod incidunt dicta non. Blanditiis delectus laudantium atque reiciendis qui.</p>"
+      #   Faker::HTML.emphasis #=> "<em>repellat id impedit</em>"
       #
       # @faker.version next
       def emphasis
-        contents = []
-        2.times do
-          paragraph = paragraphs
-          words = paragraph.split
-          position = rand(0..words.length - 1)
-          words[position] = "<em>#{words[position]}</em>"
-          contents << words.join(' ')
-        end
-        contents.join("\n")
+        "<em>#{Lorem.words}</em>"
       end
 
       ##
-      # Produces a random ordered list of items between 1 and 10 randomly in HTML format.
+      # Produces a random ordered list in HTML format, with at least one element.
       #
       # @return [String]
       #
@@ -96,34 +93,37 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::HTML.block_code #=> "<pre><code>Eos quasi qui.</code></pre>"
+      #   Faker::HTML.code #=> "<code>Eos quasi qui.</code>"
       #
       # @faker.version next
-      def block_code
-        "<pre>\n<code>#{Lorem.sentence(word_count: 1)}</code>\n</pre>"
+      def code
+        "<code>#{Lorem.sentence(word_count: 1)}</code>"
       end
 
       ##
-      # Produces a random HTML table with 3 rows and 3 columns.
+      # Produces a random HTML table.
       #
       # @return [String]
       #
       # @example
-      #   Faker::HTML.table #=> "<table>\n<tr>\n<th>ad</th>\n<th>similique</th>\n<th>voluptatem</th>\n</tr>\n<tr>\n<td>corrupti</td>\n<td>est</td>\n<td>rerum</td>\n</tr>\n<tr>\n<td>molestiae</td>\n<td>quidem</td>\n<td>et</td>\n</tr>\n</table>"
+      #   Faker::HTML.table #=> "<table>\n<thead>\n<th>ad</th>\n<th>similique</th>\n<th>voluptatem</th>\n</thead>\n<tbody>\n<td>corrupti</td>\n<td>est</td>\n<td>rerum</td>\n<td>molestiae</td>\n<td>quidem</td>\n<td>et</td>\n<td>in</td>\n<td>tempora</td>\n<td>at</td>\n<\tbody>\n<tfoot>\n<td>voluptatem</td>\n<td>debitis</td>\n<td>rem</td>\n</tfoot>\n</table>"
       #
       # @faker.version next
       def table
-        rows = []
+        header_row = generate_table_row('th', 3)
+        footer_row = generate_table_row('td', 3)
+
+        body_rows = []
         3.times do
-          row = "<tr>\n"
-          3.times do
-            row += "<td>#{Lorem.word}</td>\n"
-          end
-          row += '</tr>'
-          rows << row
+          row = generate_table_row('td', 3)
+          body_rows << row
         end
 
-        "<table>\n#{rows.join("\n")}\n</table>"
+        thead = "<thead>\n#{header_row}</thead>"
+        tbody = "<tbody>\n#{body_rows.join("\n")}</tbody>"
+        tfoot = "<tfoot>\n#{footer_row}</tfoot>"
+
+        "<table>\n#{thead}\n#{tbody}\n#{tfoot}\n</table>"
       end
 
       ##
@@ -146,7 +146,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::HTML.script #=> "<link rel=\"stylesheet\" href=\"http://fay.io/darryl.barrows.css\">"
+      #   Faker::HTML.link #=> "<link rel=\"stylesheet\" href=\"http://fay.io/darryl.barrows.css\">"
       #
       # @faker.version next
       def link(rel: 'stylesheet')
@@ -162,10 +162,10 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::HTML.custom(tag: 'div', content: "This is a div with XSS attributes.", attributes: {class: 'xss', onclick: "alert('XSS')"}) #=> "<div class=\"xss\" onclick=\"alert('XSS')\">This is a div with XSS attributes.</div>"
+      #   Faker::HTML.element(tag: 'div', content: "This is a div with XSS attributes.", attributes: {class: 'xss', onclick: "alert('XSS')"}) #=> "<div class=\"xss\" onclick=\"alert('XSS')\">This is a div with XSS attributes.</div>"
       #
       # @faker.version next
-      def custom(tag: 'div', content: Lorem.sentence(word_count: 3), attributes: { class: Lorem.word, onclick: "#{Lorem.word}()" })
+      def element(tag: 'div', content: Lorem.sentence(word_count: 3), attributes: { class: Lorem.word, onclick: "#{Lorem.word}()" })
         attribute_string = attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
         "<#{tag} #{attribute_string}>#{content}</#{tag}>"
       end
@@ -190,10 +190,40 @@ module Faker
         send(method_list[Faker::Config.random.rand(0..method_list.length - 1)])
       end
 
+      ##
+      # Generates a random HTML content sandwich, starting with a header, followed by paragraphs, and random elements.
+      #
+      # @param sentences [Integer] The number of sentences in each paragraph.
+      # @param repeat [Integer] The number of times to repeat the pattern (header, paragraph, random).
+      # @return [String]
+      #
+      # @example
+      #   Faker::HTML.sandwich(sentences: 3, repeat: 2) #=> returns a sandwich of HTML content with 2 repetitions, each having a header, paragraph, and random element
+      #
+      # @faker.version next
+      def sandwich(sentences: 3, repeat: 1)
+        text_block = []
+        text_block << headers
+        repeat.times do
+          text_block << paragraph(sentence_count: sentences)
+          text_block << random
+        end
+        text_block.join("\n")
+      end
+
       private
 
       def available_methods
         (HTML.public_methods(false) - Base.methods).sort
+      end
+
+      def generate_table_row(tag, cell_count)
+        row = "<tr>\n"
+        cell_count.times do
+          row += "<#{tag == 'th' ? 'th' : 'td'}>#{Lorem.word}</#{tag == 'th' ? 'th' : 'td'}>\n"
+        end
+        row += "</tr>\n"
+        row
       end
     end
   end
