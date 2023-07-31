@@ -5,10 +5,10 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in faker.gemspec
 gemspec
 
-gem 'minitest', '5.18.1'
+gem 'minitest', '5.19.0'
 gem 'pry', '0.14.2'
 gem 'rake', '13.0.6'
-gem 'rubocop', '1.54.2'
+gem 'rubocop', '1.55.0'
 gem 'rubocop-minitest', '0.31.0'
 gem 'rubocop-rake', '0.6.0'
 gem 'simplecov', '0.22.0'
