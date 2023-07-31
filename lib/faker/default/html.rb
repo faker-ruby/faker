@@ -11,7 +11,7 @@ module Faker
       # @example
       #   Faker::HTML.headers #=> "<h5>Autem</h5>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def headers
         level = rand(1..6)
         "<h#{level}>#{Lorem.word.capitalize}</h#{level}>"
@@ -29,7 +29,7 @@ module Faker
       # @example
       #   Faker::HTML.paragraph #=> "<p>Incidunt atque quis</p>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 0, exclude_words: nil)
         "<p>#{Faker::Lorem.paragraph(sentence_count: sentence_count, supplemental: supplemental, random_sentences_to_add: random_sentences_to_add, exclude_words: exclude_words)}</p>"
       end
@@ -42,7 +42,7 @@ module Faker
       # @example
       #   Faker::HTML.emphasis #=> "<em>repellat id impedit</em>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def emphasis
         "<em>#{Lorem.words}</em>"
       end
@@ -55,7 +55,7 @@ module Faker
       # @example
       #   Faker::HTML.ordered_list #=> "<ol>\n<li>Qui reiciendis non consequatur atque.</li>\n<li>Quo doloremque veritatis tempora aut.</li>\n<li>Aspernatur.</li>\n<li>Ea ab.</li>\n<li>Qui.</li>\n<li>Sit pariatur nemo eveniet.</li>\n<li>Molestiae aut.</li>\n<li>Nihil molestias iure placeat.</li>\n<li>Dolore autem quisquam.</li>\n</ol>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def ordered_list
         number = rand(1..10)
 
@@ -75,7 +75,7 @@ module Faker
       # @example
       #   Faker::HTML.unordered_list #=> "<ul>\n<li>Voluptatum aliquid tempora molestiae facilis non sed.</li>\n<li>Nostrum omnis iste impedit voluptatum dolor.</li>\n<li>Esse quidem et facere.</li>\n</ul>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def unordered_list
         number = rand(1..10)
 
@@ -95,7 +95,7 @@ module Faker
       # @example
       #   Faker::HTML.code #=> "<code>Eos quasi qui.</code>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def code
         "<code>#{Lorem.sentence(word_count: 1)}</code>"
       end
@@ -108,7 +108,7 @@ module Faker
       # @example
       #   Faker::HTML.table #=> "<table>\n<thead>\n<th>ad</th>\n<th>similique</th>\n<th>voluptatem</th>\n</thead>\n<tbody>\n<td>corrupti</td>\n<td>est</td>\n<td>rerum</td>\n<td>molestiae</td>\n<td>quidem</td>\n<td>et</td>\n<td>in</td>\n<td>tempora</td>\n<td>at</td>\n<\tbody>\n<tfoot>\n<td>voluptatem</td>\n<td>debitis</td>\n<td>rem</td>\n</tfoot>\n</table>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def table
         header_row = generate_table_row('th', 3)
         footer_row = generate_table_row('td', 3)
@@ -134,7 +134,7 @@ module Faker
       # @example
       #   Faker::HTML.script #=> "<script src=\"http://gulgowski.name/jordan.weimann.js\"></script>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def script
         "<script src=\"#{Faker::Internet.url}.js\"></script>"
       end
@@ -148,7 +148,7 @@ module Faker
       # @example
       #   Faker::HTML.link #=> "<link rel=\"stylesheet\" href=\"http://fay.io/darryl.barrows.css\">"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def link(rel: 'stylesheet')
         "<link rel=\"#{rel}\" href=\"#{Faker::Internet.url}.css\">"
       end
@@ -164,7 +164,7 @@ module Faker
       # @example
       #   Faker::HTML.element(tag: 'div', content: "This is a div with XSS attributes.", attributes: {class: 'xss', onclick: "alert('XSS')"}) #=> "<div class=\"xss\" onclick=\"alert('XSS')\">This is a div with XSS attributes.</div>"
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def element(tag: 'div', content: Lorem.sentence(word_count: 3), attributes: { class: Lorem.word, onclick: "#{Lorem.word}()" })
         attribute_string = attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
         "<#{tag} #{attribute_string}>#{content}</#{tag}>"
@@ -180,13 +180,13 @@ module Faker
       #
       # @example
       #   Faker::HTML.random #=> returns output from a single method outlined above
-      #   Faker::HTML.random(:table) #=> returns output from any single method outlined above except for "table"
-      #   Faker::HTML.random(:ordered_list, :unordered_list) #=> returns output from any single method outlined above except for either ordered_list and unordered_list
+      #   Faker::HTML.random(exclude: [:table]) #=> returns output from any single method outlined above except for "table"
+      #   Faker::HTML.random(exclude: [:ordered_list, :unordered_list]) #=> returns output from any single method outlined above except for either ordered_list and unordered_list
       #
-      # @faker.version next
-      def random(*args)
+      # @faker.version 3.2.1
+      def random(exclude: [])
         method_list = available_methods
-        args&.each { |ex| method_list.delete_if { |meth| meth == ex.to_sym } }
+        exclude.each { |ex| method_list.delete_if { |meth| meth == ex.to_sym } }
         send(method_list[Faker::Config.random.rand(0..method_list.length - 1)])
       end
 
@@ -200,7 +200,7 @@ module Faker
       # @example
       #   Faker::HTML.sandwich(sentences: 3, repeat: 2) #=> returns a sandwich of HTML content with 2 repetitions, each having a header, paragraph, and random element
       #
-      # @faker.version next
+      # @faker.version 3.2.1
       def sandwich(sentences: 3, repeat: 1)
         text_block = []
         text_block << headers

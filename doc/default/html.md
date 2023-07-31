@@ -1,6 +1,6 @@
 # Faker::HTML
 
-Available since version next.
+Available since version 3.2.1.
 
 The `Faker::HTML` module provides methods for generating random HTML content.
 
@@ -37,8 +37,8 @@ Faker::HTML.element(tag: 'div', content: "This is a div with XSS attributes.", a
 
 # random - Produces a random output from one of the methods outlined above, excluding the methods listed in the arguments.
 Faker::HTML.random #=> returns output from a single method outlined above
-Faker::HTML.random(:table) #=> returns output from any single method outlined above except for "table"
-Faker::HTML.random(:ordered_list, :unordered_list) #=> returns output from any single method outlined above except for either ordered_list and unordered_list
+Faker::HTML.random(exclude: [:table]) #=> returns output from any single method outlined above except for "table"
+Faker::HTML.random(exclude: [:ordered_list, :unordered_list]) #=> returns output from any single method outlined above except for either ordered_list and unordered_list
 
 # sandwich - Generates a random sandwich-style HTML content with customizable attributes.
 Faker::HTML.sandwich #=> returns sandwich-style HTML content as a string
