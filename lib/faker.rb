@@ -7,7 +7,7 @@ require 'i18n'
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
 
-I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
+# I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 
 module Faker
   module Config
@@ -165,6 +165,7 @@ module Faker
         I18n.translate(*args, **opts)
       rescue I18n::MissingTranslationData
         opts[:locale] = :en
+        I18n.load_path += Dir[::File.join(__dir__, 'locales', 'en', "#{args[0].split('.')[1]}.yml")]
 
         # Super-simple fallback -- fallback to en if the
         # translation was missing.  If the translation isn't
