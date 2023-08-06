@@ -7,8 +7,8 @@ class TestFakerHTML < Test::Unit::TestCase
     @tester = Faker::HTML
   end
 
-  def test_headers
-    header = @tester.headers
+  def test_heading
+    header = @tester.heading
     level = header.match(/<h(\d)>/i)[1].to_i
     open_tag = "<h#{level}>"
     close_tag = "</h#{level}>"
@@ -66,7 +66,7 @@ class TestFakerHTML < Test::Unit::TestCase
   end
 
   def test_random
-    assert_match(/<[^>]+>.*<\/[^>]+>/, @tester.random)
+    assert_match(/<[^>]+>.*<\/[^>]+>|<link[^>]+>/, @tester.random)
   end
 
   def test_sandwich

@@ -5,8 +5,8 @@ Available since version 3.2.1.
 The `Faker::HTML` module provides methods for generating random HTML content.
 
 ```ruby
-# headers - Produces a random HTML header format.
-Faker::HTML.headers #=> "<h5>Autem</h5>"
+# heading - Produces a random HTML heading format.
+Faker::HTML.heading #=> "<h5>Autem</h5>"
 
 # paragraph - Produces a string representing an HTML paragraph.
 Faker::HTML.paragraph #=> "<p>Incidunt atque quis</p>"
@@ -30,7 +30,8 @@ Faker::HTML.table #=> "<table>\n<thead>\n<th>ad</th>\n<th>similique</th>\n<th>vo
 Faker::HTML.script #=> "<script src=\"http://gulgowski.name/jordan.weimann.js\"></script>"
 
 # link - Generates a random <link> tag with the rel attribute set to "stylesheet" and the href attribute set to a random URL.
-Faker::HTML.link(rel: 'stylesheet') #=> "<link rel=\"stylesheet\" href=\"http://fay.io/darryl.barrows.css\">"
+Faker::HTML.link #=> "<link rel=\"stylesheet\" href=\"http://fay.io/darryl.barrows.css\">"
+Faker::HTML.link(rel: 'icon') #=> "<link rel=\"icon\" href=\"http://fay.io/darryl.barrows.css\">"
 
 # element - Generates HTML content with customizable attributes for any HTML tag.
 Faker::HTML.element(tag: 'div', content: "This is a div with XSS attributes.", attributes: {class: 'xss', onclick: "alert('XSS')"}) #=> "<div class=\"xss\" onclick=\"alert('XSS')\">This is a div with XSS attributes.</div>"
@@ -38,7 +39,7 @@ Faker::HTML.element(tag: 'div', content: "This is a div with XSS attributes.", a
 # random - Produces a random output from one of the methods outlined above, excluding the methods listed in the arguments.
 Faker::HTML.random #=> returns output from a single method outlined above
 Faker::HTML.random(exclude: [:table]) #=> returns output from any single method outlined above except for "table"
-Faker::HTML.random(exclude: [:ordered_list, :unordered_list]) #=> returns output from any single method outlined above except for either ordered_list and unordered_list
+Faker::HTML.random(exclude: [:ordered_list, :unordered_list]) #=> returns output from any single method outlined above except for ordered_list and unordered_list
 
 # sandwich - Generates a random sandwich-style HTML content with customizable attributes.
 Faker::HTML.sandwich #=> returns sandwich-style HTML content as a string

@@ -9,10 +9,10 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::HTML.headers #=> "<h5>Autem</h5>"
+      #   Faker::HTML.heading #=> "<h5>Autem</h5>"
       #
       # @faker.version 3.2.1
-      def headers
+      def heading
         level = rand(1..6)
         "<h#{level}>#{Lorem.word.capitalize}</h#{level}>"
       end
@@ -44,7 +44,7 @@ module Faker
       #
       # @faker.version 3.2.1
       def emphasis
-        "<em>#{Lorem.words}</em>"
+        "<em>#{Faker::Lorem.paragraph(sentence_count: 1)}</em>"
       end
 
       ##
@@ -203,10 +203,10 @@ module Faker
       # @faker.version 3.2.1
       def sandwich(sentences: 3, repeat: 1)
         text_block = []
-        text_block << headers
+        text_block << heading
         repeat.times do
           text_block << paragraph(sentence_count: sentences)
-          text_block << random
+          text_block << random(exclude: %i[script link])
         end
         text_block.join("\n")
       end
