@@ -212,4 +212,41 @@ class TestFakerDate < Test::Unit::TestCase
       assert_equal date.year, year
     end
   end
+
+  def test_on_day_of_week_between
+    days = %i[tuesday saturday]
+    from = Date.parse('2012-01-01')
+    to   = Date.parse('2012-02-01')
+
+    deterministically_verify -> { @tester.on_day_of_week_between(day: days, from: from, to: to) } do |date|
+      assert date >= from, "Expected >= \"#{from}\", but got #{date}"
+      assert date <= to, "Expected <= \"#{to}\", but got #{date}"
+      assert date.tuesday? || date.saturday?, "Expected #{date} to be Tuesday or Saturday, but was #{Faker::Date::DAYS_OF_WEEK[date.wday].capitalize}"
+    end
+  end
+
+  def test_unknown_day_of_week
+    error = assert_raise ArgumentError do
+      @tester.on_day_of_week_between(day: :unknown, from: '2012-01-01', to: '2013-01-01')
+    end
+
+    assert_equal 'unknown is not a valid day of the week', error.message
+  end
+
+  def test_empty_day_of_week
+    error = assert_raise ArgumentError do
+      @tester.on_day_of_week_between(day: [], from: '2012-01-01', to: '2013-01-01')
+    end
+
+    assert_equal 'Day of week cannot be empty', error.message
+  end
+
+  def test_day_of_week_outside_date_range
+    error = assert_raise ArgumentError do
+      @tester.on_day_of_week_between(day: :friday, from: '2012-01-01', to: '2012-01-03')
+    end
+
+    assert_equal 'There is no Friday between 2012-01-01 and 2012-01-03. Increase the from/to date range or choose a different day of the week.',
+                 error.message
+  end
 end

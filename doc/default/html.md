@@ -11,7 +11,7 @@ Faker::HTML.heading #=> "<h5>Autem</h5>"
 # paragraph - Produces a string representing an HTML paragraph.
 Faker::HTML.paragraph #=> "<p>Incidunt atque quis</p>"
 
-# emphasis - Produces a random emphasis formatting on a random word in two HTML paragraphs.
+# emphasis - Produces a random emphasis formatting on a random sentence.
 Faker::HTML.emphasis #=> "<em>repellat id impedit.</em>
 
 # ordered_list - Produces a random ordered list of items between 1 and 10 in HTML format.
