@@ -94,7 +94,7 @@ class TestFakerCommerce < Test::Unit::TestCase
     assert @tester.price.is_a? Float
   end
 
-  def test_when_as_string_is_true
+  def test_price_when_as_string_is_true
     assert @tester.price(range: 0..100.0, as_string: true).is_a?(String)
     assert_includes @tester.price(range: 100..500.0, as_string: true), '.'
   end
@@ -105,5 +105,21 @@ class TestFakerCommerce < Test::Unit::TestCase
 
   def test_vendor
     assert_match(/[A-Z][a-z]+\.?/, @tester.vendor)
+  end
+
+  def test_rating
+    assert_includes 0..5, @tester.rating
+  end
+
+  def test_rating_with_range
+    assert_includes 1..2, @tester.rating(range: 1..2)
+  end
+
+  def test_rating_with_as_string
+    assert_instance_of String, @tester.rating(as_string: true)
+  end
+
+  def test_rating_with_decimals
+    assert_match(/\A\d\.\d{2}\z/, @tester.rating(decimals: 2, as_string: true))
   end
 end

@@ -17,6 +17,11 @@ Faker::Commerce.product_name #=> "Practical Granite Shirt"
 Faker::Commerce.price #=> 44.6
 Faker::Commerce.price(range: 0..10.0, as_string: true) #=> "2.18"
 
+# Produces a number between between 0 and 5
+# Keyword arguments: range, as_string, decimals
+Faker::Commerce.rating #=> 4
+Faker::Commerce.rating(range: 0..10, decimals: 2, as_string: true) #=> "8.92"
+
 # Generate a random promotion code.
 # Keyword arguments: digits
 Faker::Commerce.promotion_code #=> "AmazingDeal829102"

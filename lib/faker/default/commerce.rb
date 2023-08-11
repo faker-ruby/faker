@@ -140,6 +140,30 @@ module Faker
         fetch('commerce.vendor')
       end
 
+      ##
+      # Produces a random product rating.
+      #
+      # @param range [Range] A range to generate the rating number within. Defaults to 0..5.
+      # @param decimals [Integer] Max number of decimals to generate. Defaults to 0
+      #
+      # @return [Integer]
+      #
+      # @example
+      #   Faker::Commerce.rating #=> 3
+      #   Faker::Commerce.rating(range: 0..10.0, decimals: 2, as_string: true) #=> "8.92"
+      #
+      # @faker.version next
+      def rating(range: 0..5, decimals: 0, as_string: false)
+        random_value = rand(range)
+
+        if decimals.positive?
+          format_string = "%.#{decimals}f"
+          random_value = format(format_string, random_value)
+        end
+
+        as_string ? random_value.to_s : random_value
+      end
+
       private
 
       def categories(num)
