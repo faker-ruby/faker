@@ -58,7 +58,7 @@ GEM
     simplecov_json_formatter (0.1.4)
     test-unit (3.6.1)
       power_assert
-    timecop (0.9.6)
+    timecop (0.9.8)
     unicode-display_width (2.4.2)
     yard (0.9.34)
 
@@ -75,7 +75,7 @@ DEPENDENCIES
   rubocop-rake (= 0.6.0)
   simplecov (= 0.22.0)
   test-unit (= 3.6.1)
-  timecop (= 0.9.6)
+  timecop (= 0.9.8)
   yard (= 0.9.34)
 
 BUNDLED WITH
