@@ -65,8 +65,6 @@ GEM
 PLATFORMS
   ruby
   
-
-
 DEPENDENCIES
   faker!
   minitest (= 5.19.0)
