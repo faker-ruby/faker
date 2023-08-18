@@ -64,8 +64,6 @@ GEM
 
 PLATFORMS
   ruby
-  x64-mingw32
-
 
 DEPENDENCIES
   faker!
@@ -81,4 +79,4 @@ DEPENDENCIES
   yard (= 0.9.34)
 
 BUNDLED WITH
-   2.2.32
+   2.1.4
