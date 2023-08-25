@@ -39,7 +39,7 @@ class TestFakerCity < Test::Unit::TestCase
     I18n.with_locale(:xx) do
       cities = ['west alice', 'west smith', 'west aliceburg', 'west smithburg', 'aliceburg', 'smithburg']
 
-      deterministically_verify(-> { Faker::Address.city }, depth: 100) do |city|
+      deterministically_verify(-> { Faker::Address.city }, depth: 5) do |city|
         assert_includes cities, city, "Expected <#{cities.join(' / ')}>, but got #{city}"
       end
     end

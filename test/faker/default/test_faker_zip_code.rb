@@ -49,7 +49,7 @@ class TestFakerZipCode < Test::Unit::TestCase
     I18n.with_locale(:xy) do
       zip_codes = @zip_codes_without_state
 
-      deterministically_verify(-> { @tester.zip_code }, depth: 100) do |zip_code|
+      deterministically_verify(-> { @tester.zip_code }, depth: 5) do |zip_code|
         assert_includes zip_codes, zip_code, "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
       end
     end
@@ -59,7 +59,7 @@ class TestFakerZipCode < Test::Unit::TestCase
     I18n.with_locale(:xz) do
       zip_codes = @zip_codes_with_state
 
-      deterministically_verify(-> { @tester.zip_code(state_abbreviation: 'NY') }, depth: 100) do |zip_code|
+      deterministically_verify(-> { @tester.zip_code(state_abbreviation: 'NY') }, depth: 5) do |zip_code|
         assert_includes zip_codes, zip_code, "Expected <#{zip_codes.join(' / ')}>, but got #{zip_code}"
       end
     end

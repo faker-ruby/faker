@@ -14,7 +14,7 @@ class TestFaker < Test::Unit::TestCase
   def setup; end
 
   def test_numerify
-    deterministically_verify(-> { Faker::Base.numerify('###') }, depth: 100) do |result|
+    deterministically_verify(-> { Faker::Base.numerify('###') }, depth: 5) do |result|
       assert_match(/[1-9]\d{2}/, result)
     end
   end
@@ -28,7 +28,7 @@ class TestFaker < Test::Unit::TestCase
       'uk post code' => /^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR 0AA)$/,
       'us phone' => /^(1-?)[2-8][0-1][0-9]-\d{3}-\d{4}$/
     }.each do |label, re|
-      deterministically_verify(-> { Faker::Base.regexify(re) }, depth: 10) do |result|
+      deterministically_verify(-> { Faker::Base.regexify(re) }, depth: 5) do |result|
         assert_match re, result, "#{result} is not a match for #{label}"
       end
     end

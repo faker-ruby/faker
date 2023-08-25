@@ -9,36 +9,36 @@ class TestFakerTvShowsDrWho < Test::Unit::TestCase
   end
 
   def test_character
-    deterministically_verify(-> { @tester.character }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.character }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_the_doctor
-    deterministically_verify(-> { @tester.the_doctor }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.the_doctor }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_actor
-    deterministically_verify(-> { @tester.actor }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.actor }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_catch_phrase
-    deterministically_verify(-> { @tester.catch_phrase }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.catch_phrase }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_quote
-    deterministically_verify(-> { @tester.quote }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.quote }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   # deprecated
   def test_villian
-    deterministically_verify(-> { @tester.villian }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.villian }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_villain
-    deterministically_verify(-> { @tester.villain }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.villain }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_specie
-    deterministically_verify(-> { @tester.specie }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.specie }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_locales

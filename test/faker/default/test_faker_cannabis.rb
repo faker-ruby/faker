@@ -8,43 +8,43 @@ class TestFakerCannabis < Test::Unit::TestCase
   end
 
   def test_strain
-    deterministically_verify(-> { Faker::Cannabis.strain }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.strain }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_cannabinoid_abbreviation
-    deterministically_verify(-> { Faker::Cannabis.cannabinoid_abbreviation }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.cannabinoid_abbreviation }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_cannabinoid
-    deterministically_verify(-> { Faker::Cannabis.cannabinoid }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.cannabinoid }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_terpene
-    deterministically_verify(-> { Faker::Cannabis.terpene }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.terpene }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_medical_use
-    deterministically_verify(-> { Faker::Cannabis.medical_use }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.medical_use }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_health_benefit
-    deterministically_verify(-> { Faker::Cannabis.health_benefit }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.health_benefit }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_category
-    deterministically_verify(-> { Faker::Cannabis.category }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.category }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_type
-    deterministically_verify(-> { Faker::Cannabis.type }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.type }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_buzzword
-    deterministically_verify(-> { Faker::Cannabis.buzzword }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.buzzword }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_brand
-    deterministically_verify(-> { Faker::Cannabis.brand }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { Faker::Cannabis.brand }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_locales

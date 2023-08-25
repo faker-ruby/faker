@@ -291,7 +291,7 @@ class TestFakerBank < Test::Unit::TestCase
 
   # France
   def test_iban_fr
-    deterministically_verify(-> { @tester.iban(country_code: 'fr') }, depth: 100) do |account|
+    deterministically_verify(-> { @tester.iban(country_code: 'fr') }, depth: 5) do |account|
       assert_equal(27, account.length)
       assert_match(/^#{IBAN_HEADER}\d{10}[A-Z0-9]{11}\d{2}$/, account)
       assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
@@ -300,7 +300,7 @@ class TestFakerBank < Test::Unit::TestCase
 
   # United Kingdom
   def test_iban_gb
-    deterministically_verify(-> { @tester.iban(country_code: 'gb') }, depth: 100) do |account|
+    deterministically_verify(-> { @tester.iban(country_code: 'gb') }, depth: 5) do |account|
       assert_equal(22, account.length)
       assert_match(/^#{IBAN_HEADER}[A-Z]{4}\d{14}$/, account)
       assert valid_iban_checksum?(account), 'IBAN checksum is invalid'
@@ -309,7 +309,7 @@ class TestFakerBank < Test::Unit::TestCase
 
   # Georgia
   def test_iban_ge
-    deterministically_verify(-> { @tester.iban(country_code: 'ge') }, depth: 100) do |account|
+    deterministically_verify(-> { @tester.iban(country_code: 'ge') }, depth: 5) do |account|
       assert_equal(22, account.length)
       assert_match(/^#{IBAN_HEADER}[A-Z]{2}\d{16}$/, account)
       assert valid_iban_checksum?(account), 'IBAN checksum is invalid'

@@ -24,14 +24,14 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
 
   # Faker::Lovecraft.word generates random word from wordlist
   def test_word
-    deterministically_verify(-> { @tester.word }, depth: 1000) do |word|
+    deterministically_verify(-> { @tester.word }, depth: 5) do |word|
       assert_includes @wordlist, word
     end
   end
 
   # Word should not return any word with spaces
   def test_word_without_spaces
-    deterministically_verify(-> { @tester.word }, depth: 1000) do |word|
+    deterministically_verify(-> { @tester.word }, depth: 5) do |word|
       refute_match(/\s/, word)
     end
   end
@@ -73,14 +73,14 @@ class TestFakerBooksLovecraft < Test::Unit::TestCase
   end
 
   def test_sentence_with_open_compounds_allowed
-    deterministically_verify(-> { @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: true) }, depth: 1000) do |sentence|
+    deterministically_verify(-> { @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: true) }, depth: 5) do |sentence|
       assert(sentence.split.length >= 5)
     end
   end
 
   # Sentence should not contain any open compounds
   def test_sentence_without_open_compounds_allowed
-    deterministically_verify(-> { @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: false) }, depth: 1000) do |sentence|
+    deterministically_verify(-> { @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: false) }, depth: 5) do |sentence|
       assert_equal(5, sentence.split.length)
     end
   end

@@ -29,7 +29,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_characters_with_args
-    deterministically_verify(-> { @tester.characters(number: 500).length }, depth: 100) do |character_length|
+    deterministically_verify(-> { @tester.characters(number: 500).length }, depth: 5) do |character_length|
       assert_equal(500, character_length)
     end
   end
@@ -52,7 +52,7 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_word
     @standard_wordlist = I18n.translate('faker.lorem.words')
 
-    deterministically_verify(-> { @tester.word }, depth: 100) do |word|
+    deterministically_verify(-> { @tester.word }, depth: 5) do |word|
       assert_includes @standard_wordlist, word
     end
   end

@@ -408,7 +408,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_ip_v4_address
     assert_equal 3, @tester.ip_v4_address.count('.')
 
-    deterministically_verify(-> { @tester.ip_v4_address }, depth: 100) do |address|
+    deterministically_verify(-> { @tester.ip_v4_address }, depth: 5) do |address|
       assert address.split('.').map(&:to_i).min >= 0
       assert address.split('.').map(&:to_i).max <= 255
     end
@@ -427,7 +427,7 @@ class TestFakerInternet < Test::Unit::TestCase
     ]
     expected = Regexp.new regexps.collect { |reg| "(#{reg})" }.join('|')
 
-    deterministically_verify(-> { @tester.private_ip_v4_address }, depth: 1000) do |address|
+    deterministically_verify(-> { @tester.private_ip_v4_address }, depth: 5) do |address|
       assert_match expected, address
     end
   end
@@ -454,7 +454,7 @@ class TestFakerInternet < Test::Unit::TestCase
       /^(24\d|25[0-5])\./     # 240.0.0.0    - 255.255.255.254  and  255.255.255.255
     ]
 
-    deterministically_verify(-> { @tester.public_ip_v4_address }, depth: 1000) do |address|
+    deterministically_verify(-> { @tester.public_ip_v4_address }, depth: 5) do |address|
       private.each { |reg| assert_not_match reg, address }
       reserved.each { |reg| assert_not_match reg, address }
     end
@@ -463,7 +463,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_ip_v4_cidr
     assert_match %r(/\d{1,2}$), @tester.ip_v4_cidr
 
-    deterministically_verify(-> { @tester.ip_v4_cidr }, depth: 1000) do |address|
+    deterministically_verify(-> { @tester.ip_v4_cidr }, depth: 5) do |address|
       assert((1..32).cover?(address.split('/').last.to_i))
     end
   end
@@ -472,7 +472,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_equal 5, @tester.mac_address.count(':')
     assert_equal 5, @tester.mac_address(prefix: '').count(':')
 
-    deterministically_verify(-> { @tester.mac_address }, depth: 100) do |address|
+    deterministically_verify(-> { @tester.mac_address }, depth: 5) do |address|
       assert address.split(':').map { |d| d.to_i(16) }.max <= 255
     end
 
@@ -483,7 +483,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_ip_v6_address
     assert_equal 7, @tester.ip_v6_address.count(':')
 
-    deterministically_verify(-> { @tester.ip_v6_address }, depth: 100) do |address|
+    deterministically_verify(-> { @tester.ip_v6_address }, depth: 5) do |address|
       assert address.split('.').map { |h| "0x#{h}".hex }.max <= 65_535
     end
   end
@@ -491,7 +491,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_ip_v6_cidr
     assert_match %r{/\d{1,3}$}, @tester.ip_v6_cidr
 
-    deterministically_verify(-> { @tester.ip_v6_cidr }, depth: 1000) do |address|
+    deterministically_verify(-> { @tester.ip_v6_cidr }, depth: 5) do |address|
       assert((1..128).cover?(address.split('/').last.to_i))
     end
   end

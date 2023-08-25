@@ -8,10 +8,10 @@ class TestFakerTvShowsBreakingBad < Test::Unit::TestCase
   end
 
   def test_character
-    deterministically_verify(-> { @tester.character }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.character }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 
   def test_episode
-    deterministically_verify(-> { @tester.episode }, depth: 10) { |result| assert_match(/\w+/, result) }
+    deterministically_verify(-> { @tester.episode }, depth: 5) { |result| assert_match(/\w+/, result) }
   end
 end

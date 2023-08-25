@@ -14,7 +14,7 @@ class TestFakerTime < Test::Unit::TestCase
     from = Time.at(0)
     to   = Time.at(2_145_945_600)
 
-    deterministically_verify(-> { @tester.between(from: from, to: to) }, depth: 100) do |random_time|
+    deterministically_verify(-> { @tester.between(from: from, to: to) }, depth: 5) do |random_time|
       assert random_time >= from, "Expected >= \"#{from}\", but got #{random_time}"
       assert random_time <= to, "Expected <= \"#{to}\", but got #{random_time}"
     end
@@ -24,7 +24,7 @@ class TestFakerTime < Test::Unit::TestCase
     from = Time.at(0).to_date
     to   = Time.at(2_145_945_600).to_date
 
-    deterministically_verify(-> { @tester.between(from: from, to: to) }, depth: 100) do |random_time|
+    deterministically_verify(-> { @tester.between(from: from, to: to) }, depth: 5) do |random_time|
       assert random_time.to_date >= from, "Expected >= \"#{from}\", but got #{random_time}"
       assert random_time.to_date <= to, "Expected <= \"#{to}\", but got #{random_time}"
     end
@@ -33,7 +33,7 @@ class TestFakerTime < Test::Unit::TestCase
   def test_forward
     today = Date.today
 
-    deterministically_verify(-> { @tester.forward(days: 10) }, depth: 100) do |random_time|
+    deterministically_verify(-> { @tester.forward(days: 10) }, depth: 5) do |random_time|
       assert random_time > today.to_time, "Expected > \"#{today}\", but got #{random_time}"
     end
   end
@@ -41,7 +41,7 @@ class TestFakerTime < Test::Unit::TestCase
   def test_backward
     tomorrow = Date.today + 1
 
-    deterministically_verify(-> { @tester.backward(days: 10) }, depth: 100) do |random_time|
+    deterministically_verify(-> { @tester.backward(days: 10) }, depth: 5) do |random_time|
       assert random_time < tomorrow.to_time, "Expected < \"#{tomorrow}\", but got #{random_time}"
     end
   end

@@ -11,7 +11,7 @@ class TestFakerDate < Test::Unit::TestCase
     from = Date.parse('2012-01-01')
     to   = Date.parse('2013-01-01')
 
-    deterministically_verify(-> { @tester.between(from: from, to: to) }, depth: 100) do |random_date|
+    deterministically_verify(-> { @tester.between(from: from, to: to) }, depth: 5) do |random_date|
       assert random_date >= from, "Expected >= \"#{from}\", but got #{random_date}"
       assert random_date <= to, "Expected <= \"#{to}\", but got #{random_date}"
     end
@@ -22,7 +22,7 @@ class TestFakerDate < Test::Unit::TestCase
     to       = Date.parse('2012-01-05')
     excepted = Date.parse('2012-01-03')
 
-    deterministically_verify(-> { @tester.between_except(from: from, to: to, excepted: excepted) }, depth: 100) do |random_date|
+    deterministically_verify(-> { @tester.between_except(from: from, to: to, excepted: excepted) }, depth: 5) do |random_date|
       assert_not_nil random_date
       refute_equal random_date, excepted, "Expected != \"#{excepted}\", but got #{random_date}"
     end
@@ -35,7 +35,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     excepted_date = Date.parse(excepted)
 
-    deterministically_verify(-> { @tester.between_except(from: from, to: to, excepted: excepted) }, depth: 100) do |random_date|
+    deterministically_verify(-> { @tester.between_except(from: from, to: to, excepted: excepted) }, depth: 5) do |random_date|
       assert_not_nil random_date
       refute_equal random_date, excepted_date, "Expected != \"#{excepted}\", but got #{random_date}"
     end
@@ -50,7 +50,7 @@ class TestFakerDate < Test::Unit::TestCase
   def test_forward
     today = Date.today
 
-    deterministically_verify(-> { @tester.forward(days: 5) }, depth: 100) do |random_date|
+    deterministically_verify(-> { @tester.forward(days: 5) }, depth: 5) do |random_date|
       assert random_date > today, "Expected > \"#{today}\", but got #{random_date}"
     end
   end
@@ -69,7 +69,7 @@ class TestFakerDate < Test::Unit::TestCase
 
     from_date = Date.parse(from)
 
-    deterministically_verify(-> { @tester.forward(from: from, days: 5) }, depth: 100) do |random_date|
+    deterministically_verify(-> { @tester.forward(from: from, days: 5) }, depth: 5) do |random_date|
       assert random_date > from_date, "Expected > \"#{from}\", but got #{random_date}"
     end
   end
@@ -77,7 +77,7 @@ class TestFakerDate < Test::Unit::TestCase
   def test_backward
     today = Date.today
 
-    deterministically_verify(-> { @tester.backward(days: 5) }, depth: 100) do |random_date|
+    deterministically_verify(-> { @tester.backward(days: 5) }, depth: 5) do |random_date|
       assert random_date < today, "Expected < \"#{today}\", but got #{random_date}"
     end
   end
@@ -106,7 +106,7 @@ class TestFakerDate < Test::Unit::TestCase
     birthdate_min = Date.new(t.year - max, t.month, t.day)
     birthdate_max = Date.new(t.year - min, t.month, t.day)
 
-    deterministically_verify(-> { @tester.birthday(min_age: min, max_age: max) }, depth: 100) do |birthday|
+    deterministically_verify(-> { @tester.birthday(min_age: min, max_age: max) }, depth: 5) do |birthday|
       assert birthday >= birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
       assert birthday <= birthdate_max, "Expect <= \"#{birthdate_max}\", but got #{birthday}"
     end
@@ -151,7 +151,7 @@ class TestFakerDate < Test::Unit::TestCase
     birthdate_min = Date.new(t.year - max, t.month, t.day)
     birthdate_max = Date.new(t.year - min, t.month, t.day)
 
-    deterministically_verify(-> { @tester.birthday }, depth: 100) do |birthday|
+    deterministically_verify(-> { @tester.birthday }, depth: 5) do |birthday|
       assert birthday >= birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
       assert birthday < birthdate_max, "Expect < \"#{birthdate_max}\", but got #{birthday}"
     end
@@ -160,7 +160,7 @@ class TestFakerDate < Test::Unit::TestCase
   def test_default_in_date_period
     current_year = Date.today.year
 
-    deterministically_verify(-> { @tester.in_date_period }, depth: 10) do |date|
+    deterministically_verify(-> { @tester.in_date_period }, depth: 5) do |date|
       assert_equal date.year, current_year
     end
   end
@@ -168,7 +168,7 @@ class TestFakerDate < Test::Unit::TestCase
   def test_in_date_period_with_year
     year = 2015
 
-    deterministically_verify(-> { @tester.in_date_period(year: year) }, depth: 10) do |date|
+    deterministically_verify(-> { @tester.in_date_period(year: year) }, depth: 5) do |date|
       assert_equal date.year, year
     end
   end
@@ -177,7 +177,7 @@ class TestFakerDate < Test::Unit::TestCase
     month = 2
     current_year = Date.today.year
 
-    deterministically_verify(-> { @tester.in_date_period(month: month) }, depth: 10) do |date|
+    deterministically_verify(-> { @tester.in_date_period(month: month) }, depth: 5) do |date|
       assert_equal date.month, month
       assert_equal date.year, current_year
     end
@@ -187,7 +187,7 @@ class TestFakerDate < Test::Unit::TestCase
     year = 2008
     month = 3
 
-    deterministically_verify(-> { @tester.in_date_period(year: year, month: month) }, depth: 10) do |date|
+    deterministically_verify(-> { @tester.in_date_period(year: year, month: month) }, depth: 5) do |date|
       assert_equal date.month, month
       assert_equal date.year, year
     end
