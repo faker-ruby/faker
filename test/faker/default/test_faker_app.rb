@@ -12,7 +12,7 @@ class TestFakerApp < Test::Unit::TestCase
   end
 
   def test_basic_semantic_version
-    deterministically_verify -> { @tester.semantic_version.split('.') }, depth: 4 do |test_sem_vers|
+    deterministically_verify -> { @tester.semantic_version.split('.') } do |test_sem_vers|
       assert_match(/[0-9]{1}/, test_sem_vers[0])
       assert_match(/[0-9]{1}/, test_sem_vers[1])
       assert_match(/[1-9]{1}/, test_sem_vers[2])
