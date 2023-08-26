@@ -53,17 +53,13 @@ class TestEeLocale < Test::Unit::TestCase
   end
 
   def test_ee_phone_number
-    100.times do
-      phone_number_prefix = Faker::PhoneNumber.phone_number[0..1]
-
+    deterministically_verify -> { Faker::PhoneNumber.phone_number[0..1] }, depth: 5 do |phone_number_prefix|
       assert_include @valid_phone_prefixes, phone_number_prefix
     end
   end
 
   def test_ee_cell_phone
-    100.times do
-      cell_phone_prefix = Faker::PhoneNumber.cell_phone[0]
-
+    deterministically_verify -> { Faker::PhoneNumber.cell_phone[0] }, depth: 5 do |cell_phone_prefix|
       assert_include @valid_cell_phone_prefixes, cell_phone_prefix
     end
   end

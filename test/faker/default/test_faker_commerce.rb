@@ -56,8 +56,8 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_department_should_never_exceed_the_max_number_of_categories_when_random_amount
-    100.times do
-      assert_match(/\A([A-Za-z]+(, | & )){0,5}[A-Za-z]+\z/, @tester.department(max: 6))
+    deterministically_verify -> { @tester.department(max: 6) }, depth: 5 do |result|
+      assert_match(/\A([A-Za-z]+(, | & )){0,5}[A-Za-z]+\z/, result)
     end
   end
 
