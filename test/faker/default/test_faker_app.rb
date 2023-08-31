@@ -12,9 +12,7 @@ class TestFakerApp < Test::Unit::TestCase
   end
 
   def test_basic_semantic_version
-    10.times do |_digits|
-      test_sem_vers = @tester.semantic_version.split('.')
-
+    deterministically_verify -> { @tester.semantic_version.split('.') } do |test_sem_vers|
       assert_match(/[0-9]{1}/, test_sem_vers[0])
       assert_match(/[0-9]{1}/, test_sem_vers[1])
       assert_match(/[1-9]{1}/, test_sem_vers[2])
@@ -22,9 +20,7 @@ class TestFakerApp < Test::Unit::TestCase
   end
 
   def test_major_semantic_version
-    10.times do |_digits|
-      test_sem_vers = @tester.semantic_version(major: (1000..9999)).split('.')
-
+    deterministically_verify -> { @tester.semantic_version(major: (1000..9999)).split('.') } do |test_sem_vers|
       assert_match(/[0-9]{4}/, test_sem_vers[0])
       assert_match(/[0-9]{1}/, test_sem_vers[1])
       assert_match(/[1-9]{1}/, test_sem_vers[2])
@@ -32,9 +28,7 @@ class TestFakerApp < Test::Unit::TestCase
   end
 
   def test_minor_semantic_version
-    10.times do |_digits|
-      test_sem_vers = @tester.semantic_version(minor: (1000..9999)).split('.')
-
+    deterministically_verify -> { @tester.semantic_version(minor: (1000..9999)).split('.') } do |test_sem_vers|
       assert_match(/[0-9]{1}/, test_sem_vers[0])
       assert_match(/[0-9]{4}/, test_sem_vers[1])
       assert_match(/[1-9]{1}/, test_sem_vers[2])
@@ -42,9 +36,7 @@ class TestFakerApp < Test::Unit::TestCase
   end
 
   def test_patch_semantic_version
-    10.times do |_digits|
-      test_sem_vers = @tester.semantic_version(patch: (1000..9999)).split('.')
-
+    deterministically_verify -> { @tester.semantic_version(patch: (1000..9999)).split('.') } do |test_sem_vers|
       assert_match(/[0-9]{1}/, test_sem_vers[0])
       assert_match(/[0-9]{1}/, test_sem_vers[1])
       assert_match(/[0-9]{4}/, test_sem_vers[2])
@@ -52,9 +44,7 @@ class TestFakerApp < Test::Unit::TestCase
   end
 
   def test_all_semantic_version
-    10.times do |_digits|
-      test_sem_vers = @tester.semantic_version(major: (1000..9999), minor: (1000..9999), patch: (1000..9999)).split('.')
-
+    deterministically_verify -> { @tester.semantic_version(major: (1000..9999), minor: (1000..9999), patch: (1000..9999)).split('.') } do |test_sem_vers|
       assert_match(/[0-9]{4}/, test_sem_vers[0])
       assert_match(/[0-9]{4}/, test_sem_vers[1])
       assert_match(/[0-9]{4}/, test_sem_vers[2])
