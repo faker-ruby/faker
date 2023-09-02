@@ -1,0 +1,265 @@
+en:
+  faker:
+    ipa:
+      consonants:
+        - p
+        - b
+        - m
+        - ʙ
+        - ɸ
+        - β
+        - ʋ
+        - w
+        - ɱ
+        - f
+        - v
+        - θ
+        - ð
+        - t
+        - d
+        - n
+        - r
+        - ɾ
+        - s
+        - z
+        - ɬ
+        - ɮ
+        - ɹ
+        - l
+        - dʒ
+        - tʃ
+        - ʃ
+        - ʒ
+        - ʈ
+        - ɖ
+        - ɳ
+        - ɽ
+        - ʂ
+        - ʐ
+        - ɻ
+        - ɭ
+        - c
+        - ɟ
+        - ɲ
+        - ç
+        - ʝ
+        - j
+        - ʎ
+        - k
+        - g
+        - ŋ
+        - x
+        - ɣ
+        - ɰ
+        - ʟ
+        - q
+        - ɢ
+        - ɴ
+        - ʀ
+        - χ
+        - ʁ
+        - ħ
+        - ʕ
+        - ʔ
+        - h
+        - ɦ
+
+      vowels:
+        - i
+        - y
+        - ɪ
+        - ʏ
+        - ɨ
+        - ʉ
+        - ʊ
+        - ɯ
+        - u
+        - e
+        - ø
+        - ɘ
+        - ɵ
+        - ə
+        - ɤ
+        - o
+        - ɛ
+        - œ
+        - æ
+        - ɜ
+        - ɞ
+        - ɐ
+        - ʌ
+        - ɔ
+        - a
+        - ɶ
+        - ɑ
+        - ɒ
+
+      consonant:
+        bilabial:
+          oral:
+            - p
+            - b
+          nasal:
+            - m
+          trill:
+            - ʙ
+          fricative:
+            - ɸ
+            - β
+          approximant:
+            - ʋ
+            - w
+
+        labiodental:
+          nasal:
+            - ɱ
+          fricative:
+            - v
+
+        dental:
+          fricative:
+            - θ
+            - ð
+
+        alveolar:
+          oral:
+            - t
+            - d
+          nasal:
+            - n
+          trill:
+            - r
+          tap_or_flap:
+            - ɾ
+          fricative:
+            - s
+            - z
+          lateral_fricative:
+            - ɬ
+            - ɮ
+          approximant:
+            - ɹ
+          lateral_approximant:
+            - l
+
+        postalveolar:
+          affricate:
+            - dʒ
+            - tʃ
+          fricative:
+            - ʃ
+            - ʒ
+
+        retroflex:
+          oral:
+            - ʈ
+            - ɖ
+          nasal:
+            - ɳ
+          tap_or_flap:
+            - ɽ
+          fricative:
+            - ʂ
+            - ʐ
+          approximant:
+            - ɻ
+          lateral_approximant:
+            - ɭ
+
+        palatal:
+          oral:
+            - c
+            - ɟ
+          nasal:
+            - ɲ
+          fricative:
+            - ç
+            - ʝ
+          approximant:
+            - j
+          lateral_approximant:
+            - ʎ
+
+        velar:
+          oral:
+            - k
+            - g
+          nasal:
+            - ŋ
+          fricative:
+            - x
+            - ɣ
+          approximant:
+            - ɰ
+            - w
+          lateral_approximant:
+            - ʟ
+
+        uvular:
+          oral:
+            - q
+            - ɢ
+          nasal:
+            - ɴ
+          trill:
+            - ʀ
+          fricative:
+            - χ
+            - ʁ
+
+        pharyngeal:
+          fricative:
+            - ħ
+            - ʕ
+
+        global:
+          oral:
+            - ʔ
+          fricative:
+            - h
+            - ɦ
+
+      vowel:
+        high:
+          front:
+            - i
+            - y
+            - ɪ
+            - ʏ
+          central:
+            - ɨ
+            - ʉ
+            - ʊ
+          back:
+            - ɯ
+            - u
+        mid_high:
+          front:
+            - e
+            - ø
+          central:
+            - ɘ
+            - ɵ
+            - ə
+          back:
+            - ɤ
+            - o
+        mid_low:
+          front:
+            - ɛ
+            - œ
+            - æ
+          central:
+            - ɜ
+            - ɞ
+            - ɐ
+          back:
+            - ʌ
+            - ɔ
+        low:
+          front:
+            - a
+            - ɶ
+          back:
+            - ɑ
+            - ɒ
