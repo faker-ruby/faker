@@ -292,6 +292,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Verbs](doc/default/verbs.md)
   - [Faker::VulnerabilityIdentifier](doc/default/vulnerability_identifier.md)
   - [Faker::WorldCup](doc/default/world_cup.md)
+  - [Faker::InternationalPhoneticAlphabet](doc/default/international_phonetic_alphabet.md)
 </details>
 
 <details>
