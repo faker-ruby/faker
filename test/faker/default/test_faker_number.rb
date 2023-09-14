@@ -77,36 +77,28 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_between
-    100.times do
-      random_number = @tester.between(from: -50, to: 50)
-
+    deterministically_verify -> { @tester.between(from: -50, to: 50) }, depth: 5 do |random_number|
       assert random_number >= -50, "Expected >= -50, but got #{random_number}"
       assert random_number <= 50, "Expected <= 50, but got #{random_number}"
     end
   end
 
   def test_within
-    100.times do
-      random_number = @tester.within(range: -50..50)
-
+    deterministically_verify -> { @tester.within(range: -50..50) }, depth: 5 do |random_number|
       assert random_number >= -50, "Expected >= -50, but got #{random_number}"
       assert random_number <= 50, "Expected <= 50, but got #{random_number}"
     end
   end
 
   def test_positive
-    100.times do
-      random_number = @tester.positive(from: 1, to: 100)
-
+    deterministically_verify -> { @tester.positive(from: 1, to: 100) }, depth: 5 do |random_number|
       assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
       assert random_number <= 100, "Expected <= 100, but got #{random_number}"
     end
   end
 
   def test_negative
-    100.times do
-      random_number = @tester.negative(from: -1, to: -100)
-
+    deterministically_verify -> { @tester.negative(from: -1, to: -100) }, depth: 5 do |random_number|
       assert random_number <= -1,   "Expected <= -1, but got #{random_number}"
       assert random_number >= -100, "Expected >= -100, but got #{random_number}"
     end

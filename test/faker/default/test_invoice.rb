@@ -11,9 +11,7 @@ class TestFakerInvoice < Test::Unit::TestCase
     from = 1.0
     to   = 1000.0
 
-    100.times do
-      random_amount = @tester.amount_between(from: from, to: to)
-
+    deterministically_verify -> { @tester.amount_between(from: from, to: to) }, depth: 5 do |random_amount|
       assert random_amount >= from, "Expected >= \"#{from}\", but got #{random_amount}"
       assert random_amount <= to, "Expected <= \"#{to}\", but got #{random_amount}"
     end

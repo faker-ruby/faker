@@ -54,4 +54,10 @@ class TestDaDkLocale < Test::Unit::TestCase
     assert_match(/(20)|(30)|(40)[\d\s]+$/, Faker::PhoneNumber.cell_phone)
     assert_match(/(\d\d[\s-]?){4}$/, Faker::PhoneNumber.phone_number)
   end
+
+  def test_da_dk_counrty_code
+    assert_equal '+45', Faker::PhoneNumber.country_code
+    assert_match(/(\+45)[\s](\d\d[\s-]?){4}$/, Faker::PhoneNumber.phone_number_with_country_code)
+    assert_match(/(\+45)[\s](\d\d[\s-]?){4}$/, Faker::PhoneNumber.cell_phone_with_country_code)
+  end
 end

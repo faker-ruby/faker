@@ -29,7 +29,9 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_characters_with_args
-    100.times { assert_equal(500, @tester.characters(number: 500).length) }
+    deterministically_verify -> { @tester.characters(number: 500).length }, depth: 5 do |character_length|
+      assert_equal(500, character_length)
+    end
   end
 
   # Words delivered by a standard request should be on the standard wordlist.
@@ -50,7 +52,9 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_word
     @standard_wordlist = I18n.translate('faker.lorem.words')
 
-    100.times { assert_includes @standard_wordlist, @tester.word }
+    deterministically_verify -> { @tester.word }, depth: 5 do |word|
+      assert_includes @standard_wordlist, word
+    end
   end
 
   def test_excluded_words_on_word

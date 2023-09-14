@@ -36,14 +36,18 @@ class TestFakerHipster < Test::Unit::TestCase
     @tester = Faker::Hipster
     @standard_wordlist = I18n.translate('faker.hipster.words')
 
-    1000.times { assert_includes @standard_wordlist, @tester.word }
+    deterministically_verify -> { @tester.word }, depth: 5 do |word|
+      assert_includes @standard_wordlist, word
+    end
   end
 
   # Word should not return any word with spaces
   def test_word_without_spaces
     @tester = Faker::Hipster
 
-    1000.times { refute_match(/\s/, @tester.word) }
+    deterministically_verify -> { @tester.word }, depth: 5 do |word|
+      refute_match(/\s/, word)
+    end
   end
 
   def test_exact_count_param
@@ -83,18 +87,14 @@ class TestFakerHipster < Test::Unit::TestCase
   end
 
   def test_sentence_with_open_compounds_allowed
-    1000.times do
-      sentence = @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: true)
-
+    deterministically_verify -> { @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: true) }, depth: 5 do |sentence|
       assert(sentence.split.length >= 5)
     end
   end
 
   # Sentence should not contain any open compounds
   def test_sentence_without_open_compounds_allowed
-    1000.times do
-      sentence = @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: false)
-
+    deterministically_verify -> { @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: false) }, depth: 5 do |sentence|
       assert_equal(5, sentence.split.length)
     end
   end
