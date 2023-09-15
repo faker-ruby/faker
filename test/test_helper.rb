@@ -34,11 +34,11 @@ require File.expand_path("#{File.dirname(__FILE__)}/../lib/faker")
 def deterministically_verify(subject_proc, depth: 2, random: nil, &block)
   raise 'need block' unless block_given?
 
-  # rubocop:disable Style/MultilineBlockChain
-  depth.times.inject([]) do |results, _index|
+  results = depth.times.inject([]) do |r, _index|
     Faker::Config.stub :random, random.clone || Random.new(42) do
-      results << subject_proc.call.freeze.tap(&block)
+      r << subject_proc.call.freeze.tap(&block)
     end
-  end.combination(2) { |(first, second)| assert_equal first, second }
-  # rubocop:enable Style/MultilineBlockChain
+  end
+
+  results.combination(2) { |(first, second)| assert_equal first, second }
 end
