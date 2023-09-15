@@ -8,7 +8,7 @@ gemspec
 gem 'minitest', '5.20.0'
 gem 'pry', '0.14.2'
 gem 'rake', '13.0.6'
-gem 'rubocop', '1.56.2'
+gem 'rubocop', '1.56.3'
 gem 'rubocop-minitest', '0.31.1'
 gem 'rubocop-rake', '0.6.0'
 gem 'simplecov', '0.22.0'
