@@ -39,6 +39,6 @@ def deterministically_verify(subject_proc, depth: 2, random: nil, &block)
     Faker::Config.stub :random, random.clone || Random.new(42) do
       results << subject_proc.call.freeze.tap(&block)
     end
-  end.repeated_combination(2) { |(first, second)| assert_equal first, second }
+  end.combination(2) { |(first, second)| assert_equal first, second }
   # rubocop:enable Style/MultilineBlockChain
 end
