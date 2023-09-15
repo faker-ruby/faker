@@ -23,8 +23,8 @@ require File.expand_path("#{File.dirname(__FILE__)}/../lib/faker")
 #   times with the same deterministic_random seed.
 # @param subject_proc [Proc] a proc object that returns the subject under test
 #   when called.
-# @param depth [Integer] the depth of deterministic comparisons to run.
-# @param random [Integer] A random number seed; Used to override the default.
+# @param depth [Integer] the depth of deterministic comparisons to run; the default value is 2.
+# @param seed [Integer] A random number seed; Used to override the default value which is 42.
 #
 # @example
 #   deterministically_verify ->{ @tester.username('bo peep') } do |subject|
