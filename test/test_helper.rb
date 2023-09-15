@@ -31,12 +31,10 @@ require File.expand_path("#{File.dirname(__FILE__)}/../lib/faker")
 #     assert subject.match(/(bo(_|\.)peep|peep(_|\.)bo)/)
 #   end
 #
-def deterministically_verify(subject_proc, depth: 2, random: nil, &block)
-  raise 'need block' unless block_given?
-
+def deterministically_verify(subject_proc, depth: 2, random: nil)
   results = depth.times.map do
     Faker::Config.stub :random, random.clone || Random.new(42) do
-      subject_proc.call.freeze.tap(&block)
+      yield subject_proc.call.freeze
     end
   end
 
