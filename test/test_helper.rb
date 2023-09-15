@@ -34,9 +34,9 @@ require File.expand_path("#{File.dirname(__FILE__)}/../lib/faker")
 def deterministically_verify(subject_proc, depth: 2, random: nil, &block)
   raise 'need block' unless block_given?
 
-  results = depth.times.inject([]) do |r, _index|
+  results = depth.times.map do
     Faker::Config.stub :random, random.clone || Random.new(42) do
-      r << subject_proc.call.freeze.tap(&block)
+      subject_proc.call.freeze.tap(&block)
     end
   end
 
