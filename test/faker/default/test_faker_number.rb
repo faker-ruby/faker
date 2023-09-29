@@ -78,51 +78,51 @@ class TestFakerNumber < Test::Unit::TestCase
 
   def test_between
     deterministically_verify -> { @tester.between(from: -50, to: 50) }, depth: 5 do |random_number|
-      assert random_number >= -50, "Expected >= -50, but got #{random_number}"
-      assert random_number <= 50, "Expected <= 50, but got #{random_number}"
+      assert_operator random_number, :>=, -50, "Expected >= -50, but got #{random_number}"
+      assert_operator random_number, :<=, 50, "Expected <= 50, but got #{random_number}"
     end
   end
 
   def test_within
     deterministically_verify -> { @tester.within(range: -50..50) }, depth: 5 do |random_number|
-      assert random_number >= -50, "Expected >= -50, but got #{random_number}"
-      assert random_number <= 50, "Expected <= 50, but got #{random_number}"
+      assert_operator random_number, :>=, -50, "Expected >= -50, but got #{random_number}"
+      assert_operator random_number, :<=, 50, "Expected <= 50, but got #{random_number}"
     end
   end
 
   def test_positive
     deterministically_verify -> { @tester.positive(from: 1, to: 100) }, depth: 5 do |random_number|
-      assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
-      assert random_number <= 100, "Expected <= 100, but got #{random_number}"
+      assert_operator random_number, :>=, 1, "Expected >= 1, but got #{random_number}"
+      assert_operator random_number, :<=, 100, "Expected <= 100, but got #{random_number}"
     end
   end
 
   def test_negative
     deterministically_verify -> { @tester.negative(from: -1, to: -100) }, depth: 5 do |random_number|
-      assert random_number <= -1,   "Expected <= -1, but got #{random_number}"
-      assert random_number >= -100, "Expected >= -100, but got #{random_number}"
+      assert_operator random_number, :<=, -1, "Expected <= -1, but got #{random_number}"
+      assert_operator random_number, :>=, -100, "Expected >= -100, but got #{random_number}"
     end
   end
 
   def test_force_positive
     random_number = @tester.positive(from: -1, to: -100)
 
-    assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
-    assert random_number <= 100, "Expected <= 100, but got #{random_number}"
+    assert_operator random_number, :>=, 1, "Expected >= 1, but got #{random_number}"
+    assert_operator random_number, :<=, 100, "Expected <= 100, but got #{random_number}"
   end
 
   def test_force_negative
     random_number = @tester.negative(from: 1, to: 100)
 
-    assert random_number <= -1,   "Expected <= -1, but got #{random_number}"
-    assert random_number >= -100, "Expected >= -100, but got #{random_number}"
+    assert_operator random_number, :<=, -1, "Expected <= -1, but got #{random_number}"
+    assert_operator random_number, :>=, -100, "Expected >= -100, but got #{random_number}"
   end
 
   def test_parameters_order
     random_number = @tester.between(from: 100, to: 1)
 
-    assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
-    assert random_number <= 100, "Expected <= 100, but got #{random_number}"
+    assert_operator random_number, :>=, 1, "Expected >= 1, but got #{random_number}"
+    assert_operator random_number, :<=, 100, "Expected <= 100, but got #{random_number}"
   end
 
   def test_hexadecimal

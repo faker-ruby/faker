@@ -123,7 +123,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_username_with_integer_arg
     (1..32).each do |min_length|
-      assert @tester.username(specifier: min_length).length >= min_length
+      assert_operator @tester.username(specifier: min_length).length, :>=, min_length
     end
   end
 
@@ -142,8 +142,8 @@ class TestFakerInternet < Test::Unit::TestCase
       (min_length..32).each do |max_length|
         l = @tester.username(specifier: (min_length..max_length)).length
 
-        assert l >= min_length
-        assert l <= max_length
+        assert_operator l, :>=, min_length
+        assert_operator l, :<=, max_length
       end
     end
   end
@@ -153,8 +153,8 @@ class TestFakerInternet < Test::Unit::TestCase
       (min_length + 1..33).each do |max_length|
         l = @tester.username(specifier: (min_length...max_length)).length
 
-        assert l >= min_length
-        assert l <= max_length - 1
+        assert_operator l, :>=, min_length
+        assert_operator l, :<=, max_length - 1
       end
     end
   end
@@ -194,7 +194,7 @@ class TestFakerInternet < Test::Unit::TestCase
     (1..32).each do |min_length|
       max_length = min_length + 4
 
-      assert @tester.password(min_length: min_length, max_length: max_length, mix_case: false).length <= max_length
+      assert_operator @tester.password(min_length: min_length, max_length: max_length, mix_case: false).length, :<=, max_length
     end
   end
 
@@ -204,7 +204,7 @@ class TestFakerInternet < Test::Unit::TestCase
       passwords << @tester.password(min_length: 14, max_length: 16)
     end
 
-    assert passwords.select { |item| item.length == 16 }.size >= 1
+    assert_operator passwords.select { |item| item.length == 16 }.size, :>=, 1
   end
 
   def test_password_with_mixed_case
@@ -217,8 +217,8 @@ class TestFakerInternet < Test::Unit::TestCase
       end
     end
 
-    assert upcase_count >= 1
-    assert downcase_count >= 1
+    assert_operator upcase_count, :>=, 1
+    assert_operator downcase_count, :>=, 1
   end
 
   def test_password_with_min_length_eq_1_without_mix_case
@@ -409,8 +409,8 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_equal 3, @tester.ip_v4_address.count('.')
 
     deterministically_verify -> { @tester.ip_v4_address }, depth: 5 do |address|
-      assert address.split('.').map(&:to_i).min >= 0
-      assert address.split('.').map(&:to_i).max <= 255
+      assert_operator address.split('.').map(&:to_i).min, :>=, 0
+      assert_operator address.split('.').map(&:to_i).max, :<=, 255
     end
   end
 
@@ -473,7 +473,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_equal 5, @tester.mac_address(prefix: '').count(':')
 
     deterministically_verify -> { @tester.mac_address }, depth: 5 do |address|
-      assert address.split(':').map { |d| d.to_i(16) }.max <= 255
+      assert_operator address.split(':').map { |d| d.to_i(16) }.max, :<=, 255
     end
 
     assert @tester.mac_address(prefix: 'fa:fa:fa').start_with?('fa:fa:fa')
@@ -484,7 +484,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_equal 7, @tester.ip_v6_address.count(':')
 
     deterministically_verify -> { @tester.ip_v6_address }, depth: 5 do |address|
-      assert address.split('.').map { |h| "0x#{h}".hex }.max <= 65_535
+      assert_operator address.split('.').map { |h| "0x#{h}".hex }.max, :<=, 65_535
     end
   end
 

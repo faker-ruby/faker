@@ -21,8 +21,8 @@ class TestFakerChess < Test::Unit::TestCase
 
   def test_rating
     deterministically_verify -> { @tester.rating(from: 2000, to: 2900) }, depth: 5 do |random_number|
-      assert random_number >= 2000, "Expected >= 2000, but got #{random_number}"
-      assert random_number <= 2900, "Expected <= 2900, but got #{random_number}"
+      assert_operator random_number, :>=, 2000, "Expected >= 2000, but got #{random_number}"
+      assert_operator random_number, :<=, 2900, "Expected <= 2900, but got #{random_number}"
     end
   end
 

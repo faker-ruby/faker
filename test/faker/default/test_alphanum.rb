@@ -38,7 +38,7 @@ class TestFakerAlphanum < Test::Unit::TestCase
       char =~ /[[:alpha:]]/
     end
 
-    assert letters.compact.size >= 2
+    assert_operator letters.compact.size, :>=, 2
   end
 
   def test_alphanumeric_with_min_numeric
@@ -46,6 +46,6 @@ class TestFakerAlphanum < Test::Unit::TestCase
       char =~ /[[:digit:]]/
     end
 
-    assert numbers.compact.size >= 4
+    assert_operator numbers.compact.size, :>=, 4
   end
 end
