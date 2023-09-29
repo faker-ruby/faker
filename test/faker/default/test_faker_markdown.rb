@@ -87,7 +87,7 @@ class TestFakerMarkdown < Test::Unit::TestCase
     test_array = []
     test_trigger.each_line { |substr| test_array << substr }
 
-    assert(test_array.length >= 3)
+    assert_operator(test_array.length, :>=, 3)
 
     assert_equal(2, test_array[0].split.length)
     assert_includes(test_array[0].split.first, '#')

@@ -17,12 +17,12 @@ class TestFakerDevice < Test::Unit::TestCase
 
   def test_version
     assert_predicate @tester.version, :positive?
-    assert @tester.version <= 1000
+    assert_operator @tester.version, :<=, 1000
   end
 
   def test_build_number
     assert_predicate @tester.build_number, :positive?
-    assert @tester.build_number <= 500
+    assert_operator @tester.build_number, :<=, 500
   end
 
   def test_manufacturer

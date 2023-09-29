@@ -12,8 +12,8 @@ class TestFakerDate < Test::Unit::TestCase
     to   = Date.parse('2013-01-01')
 
     deterministically_verify -> { @tester.between(from: from, to: to) }, depth: 5 do |random_date|
-      assert random_date >= from, "Expected >= \"#{from}\", but got #{random_date}"
-      assert random_date <= to, "Expected <= \"#{to}\", but got #{random_date}"
+      assert_operator random_date, :>=, from, "Expected >= \"#{from}\", but got #{random_date}"
+      assert_operator random_date, :<=, to, "Expected <= \"#{to}\", but got #{random_date}"
     end
   end
 
@@ -51,7 +51,7 @@ class TestFakerDate < Test::Unit::TestCase
     today = Date.today
 
     deterministically_verify -> { @tester.forward(days: 5) }, depth: 5 do |random_date|
-      assert random_date > today, "Expected > \"#{today}\", but got #{random_date}"
+      assert_operator random_date, :>, today, "Expected > \"#{today}\", but got #{random_date}"
     end
   end
 
@@ -60,8 +60,8 @@ class TestFakerDate < Test::Unit::TestCase
     five_days_after_from = from + 5
     random_date = @tester.forward(from: from, days: 5)
 
-    assert random_date > from, "Expected > \"#{from}\", but got #{random_date}"
-    assert five_days_after_from > from, "Expected < \"#{from}\", but got #{random_date}"
+    assert_operator random_date, :>, from, "Expected > \"#{from}\", but got #{random_date}"
+    assert_operator five_days_after_from, :>, from, "Expected < \"#{from}\", but got #{random_date}"
   end
 
   def test_forward_with_string_parameter
@@ -70,7 +70,7 @@ class TestFakerDate < Test::Unit::TestCase
     from_date = Date.parse(from)
 
     deterministically_verify -> { @tester.forward(from: from, days: 5) }, depth: 5 do |random_date|
-      assert random_date > from_date, "Expected > \"#{from}\", but got #{random_date}"
+      assert_operator random_date, :>, from_date, "Expected > \"#{from}\", but got #{random_date}"
     end
   end
 
@@ -78,7 +78,7 @@ class TestFakerDate < Test::Unit::TestCase
     today = Date.today
 
     deterministically_verify -> { @tester.backward(days: 5) }, depth: 5 do |random_date|
-      assert random_date < today, "Expected < \"#{today}\", but got #{random_date}"
+      assert_operator random_date, :<, today, "Expected < \"#{today}\", but got #{random_date}"
     end
   end
 
@@ -107,8 +107,8 @@ class TestFakerDate < Test::Unit::TestCase
     birthdate_max = Date.new(t.year - min, t.month, t.day)
 
     deterministically_verify -> { @tester.birthday(min_age: min, max_age: max) }, depth: 5 do |birthday|
-      assert birthday >= birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
-      assert birthday <= birthdate_max, "Expect <= \"#{birthdate_max}\", but got #{birthday}"
+      assert_operator birthday, :>=, birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
+      assert_operator birthday, :<=, birthdate_max, "Expect <= \"#{birthdate_max}\", but got #{birthday}"
     end
   end
 
@@ -136,11 +136,11 @@ class TestFakerDate < Test::Unit::TestCase
 
       birthdays << birthday
 
-      assert birthday >= birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
-      assert birthday <= birthdate_max, "Expect <= \"#{birthdate_max}\", but got #{birthday}"
+      assert_operator birthday, :>=, birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
+      assert_operator birthday, :<=, birthdate_max, "Expect <= \"#{birthdate_max}\", but got #{birthday}"
     end
 
-    assert birthdays.uniq.size > 1
+    assert_operator birthdays.uniq.size, :>, 1
   end
 
   def test_default_birthday
@@ -152,8 +152,8 @@ class TestFakerDate < Test::Unit::TestCase
     birthdate_max = Date.new(t.year - min, t.month, t.day)
 
     deterministically_verify -> { @tester.birthday }, depth: 5 do |birthday|
-      assert birthday >= birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
-      assert birthday < birthdate_max, "Expect < \"#{birthdate_max}\", but got #{birthday}"
+      assert_operator birthday, :>=, birthdate_min, "Expect >= \"#{birthdate_min}\", but got #{birthday}"
+      assert_operator birthday, :<, birthdate_max, "Expect < \"#{birthdate_max}\", but got #{birthday}"
     end
   end
 
@@ -199,8 +199,8 @@ class TestFakerDate < Test::Unit::TestCase
     to   = Date.parse('2012-02-01')
 
     deterministically_verify -> { @tester.on_day_of_week_between(day: days, from: from, to: to) } do |date|
-      assert date >= from, "Expected >= \"#{from}\", but got #{date}"
-      assert date <= to, "Expected <= \"#{to}\", but got #{date}"
+      assert_operator date, :>=, from, "Expected >= \"#{from}\", but got #{date}"
+      assert_operator date, :<=, to, "Expected <= \"#{to}\", but got #{date}"
       assert date.tuesday? || date.saturday?, "Expected #{date} to be Tuesday or Saturday, but was #{Faker::Date::DAYS_OF_WEEK[date.wday].capitalize}"
     end
   end
