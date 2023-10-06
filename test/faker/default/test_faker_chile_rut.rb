@@ -16,7 +16,7 @@ class TestChileRut < Test::Unit::TestCase
 
   def test_rut_length
     refute_empty @tester.rut.to_s
-    assert @tester.rut.to_s.length <= 8
+    assert_operator @tester.rut.to_s.length, :<=, 8
   end
 
   def test_rut_min_max

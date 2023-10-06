@@ -17,7 +17,7 @@ GEM
     json (2.6.3)
     language_server-protocol (3.17.0.3)
     method_source (1.0.0)
-    minitest (5.19.0)
+    minitest (5.20.0)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -31,7 +31,7 @@ GEM
     rake (13.0.6)
     regexp_parser (2.8.1)
     rexml (3.2.6)
-    rubocop (1.56.2)
+    rubocop (1.56.4)
       base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -45,7 +45,7 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
-    rubocop-minitest (0.31.1)
+    rubocop-minitest (0.32.2)
       rubocop (>= 1.39, < 2.0)
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
@@ -67,11 +67,11 @@ PLATFORMS
 
 DEPENDENCIES
   faker!
-  minitest (= 5.19.0)
+  minitest (= 5.20.0)
   pry (= 0.14.2)
   rake (= 13.0.6)
-  rubocop (= 1.56.2)
-  rubocop-minitest (= 0.31.1)
+  rubocop (= 1.56.4)
+  rubocop-minitest (= 0.32.2)
   rubocop-rake (= 0.6.0)
   simplecov (= 0.22.0)
   test-unit (= 3.6.1)
@@ -79,4 +79,4 @@ DEPENDENCIES
   yard (= 0.9.34)
 
 BUNDLED WITH
-   2.1.4
+   2.2.33
