@@ -88,6 +88,7 @@ There are a few ways to run RuboCop:
 - When adding new generators, limit the number of values per generator in the YML file. Adding a long YML file makes it harder to review your PR.
 - Don't use `Array#sample`, `Array#shuffle` and `Kernel#rand` on your new generator if you want to randomly pick values. Instead, you should use the methods provided by the Base class: `sample`, `shuffle` and `rand`. The reason is that we want to preserve the deterministic feature of this gem.
 - Make sure the generator doesn't exist already before opening a PR.
+- Use the [PositionalGenerator](https://github.com/faker-ruby/faker/blob/main/lib/helpers/positional_generator.rb) helper when generating a list of generated values that fit a specific format, such as an ID, postal code, or phone number.
 - Add a new YAML file to `lib/locales/en` rather than adding translations to the `lib/locales/en.yml` file. For example, if you add `Faker::MyThing`, put your translations in `lib/locales/en/my_thing.yml`.
   - When possible, consider adding the new YAML file inside a folder to keep things organized, for example: `lib/locales/en/quotes/parks_and_rec.yml`. See [the locale README](./lib/locales/en/README.md) for more info.
 
