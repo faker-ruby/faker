@@ -4,7 +4,6 @@ We are always happy to make improvements to Faker. There are many ways to contri
 
 Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect by addressing your issue, assessing changes, and helping you finalize your pull requests.
 
-
 Have a fix for a problem you've been running into or an idea for a new feature you think would be useful? Here's what you need to do:
 
 - Fork this repo and clone your fork to somewhere on your machine.
@@ -64,7 +63,7 @@ Please follow these guidelines when adding new code:
 There are a few ways to run RuboCop:
 
 ```ruby
-`bundle exec rubocop` #-> to only run Rubocop
+`bundle exec rubocop` #-> to run Rubocop only
 
 `bundle exec rake` #-> to run the test suite and rubocop after.
 ```
@@ -72,6 +71,7 @@ There are a few ways to run RuboCop:
 ## Managing your branch
 
 - Use well-crafted commit messages and Pull Requests descriptions, providing context if possible. Please use the Pull Request template when opening a new PR.
+- When updating documentation, or README, [skip running worfklow runs](https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs).
 - Squash "WIP" commits and remove merge commits by rebasing your branch against main. We try to keep our commit history as clean as possible.
 - To prevent pushing with test failures or Rubocop offenses, see [Setup a custom pre-push git hook](#setup-a-custom-pre-push-git-hook).
 
@@ -79,9 +79,16 @@ There are a few ways to run RuboCop:
 
 ### General Guidelines
 
-- Don't include hurtful language that can convey exclusionary behavior, such as racism, sexism, homophobia. Be considerate and mindful of others.
+- Avoid:
+  - Hurtful language that can convey exclusionary behavior, such as racism, sexism, homophobia.
+  - Graphically violent or harmful terms towards any living beings.
+  - When possible, avoid the use of figurative language that can be interpreted as violent, such as hang, and hit.
+  - Unnecessarily gendered language.
+- Be considerate and mindful of others as much as possible.
+- When adding new generators, limit the number of values per generator in the YML file. Adding a long YML file makes it harder to review your PR.
 - Don't use `Array#sample`, `Array#shuffle` and `Kernel#rand` on your new generator if you want to randomly pick values. Instead, you should use the methods provided by the Base class: `sample`, `shuffle` and `rand`. The reason is that we want to preserve the deterministic feature of this gem.
-- Please make sure the generator doesn't exist already before opening a PR.
+- Make sure the generator doesn't exist already before opening a PR.
+- Use the [PositionalGenerator](https://github.com/faker-ruby/faker/blob/main/lib/helpers/positional_generator.rb) helper when generating a list of generated values that fit a specific format, such as an ID, postal code, or phone number.
 - Add a new YAML file to `lib/locales/en` rather than adding translations to the `lib/locales/en.yml` file. For example, if you add `Faker::MyThing`, put your translations in `lib/locales/en/my_thing.yml`.
   - When possible, consider adding the new YAML file inside a folder to keep things organized, for example: `lib/locales/en/quotes/parks_and_rec.yml`. See [the locale README](./lib/locales/en/README.md) for more info.
 
@@ -90,7 +97,8 @@ There are a few ways to run RuboCop:
 Add the new generator to the [Generators list in the README](./README.md#generators) so other people can find them.
 
 #### YARD docs
-- Include [YARD] style docs for all methods that includes:
+
+Include [YARD] style docs for all methods that includes:
 - A short description of what the method generates
 - Descriptions for all params (`@param`)
 - The return type (`@return`)
@@ -169,7 +177,7 @@ When in doubt, run `bundle exec rake reformat_yaml['lib/path/to/file.yml']` to r
 * Use the `rake console` task to start a session with Faker loaded.
 * Use `bundle exec yard server -r` to launch the YARD Doc server.
 
-## A word on the changelog
+## A word on the Changelog
 
 You may also notice that we have a changelog in the form of CHANGELOG.md. You may be tempted to include changes to this in your branch, but don't worry about this — we'll take care of it!
 
