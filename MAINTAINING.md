@@ -13,7 +13,7 @@ If you're reviewing a PR, you should ask yourself:
 ## Security
 
 - Please review [GitHub's Good security practices for using GitHub Actions features](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions) often.
-- Only [approve first time contributors PRs](https://github.blog/2021-04-22-github-actions-update-helping-maintainers-combat-bad-actors/) after reviewing the code carefully to prevent bac actors.
+- Only [approve first time contributors PRs](https://github.blog/2021-04-22-github-actions-update-helping-maintainers-combat-bad-actors/) after reviewing the code carefully to prevent bad actors.
 - When merging dependabot PRs, make sure to review the changes in the PR and to check the authenticity of the bot account.
 
 ### TODO
