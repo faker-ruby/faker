@@ -26,7 +26,6 @@ de-AT:
         - "#{Name.last_name}, #{Name.last_name} und #{Name.last_name}"
 
     internet:
-      free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, info, name, net, org, de, ch, at]
 
     name:

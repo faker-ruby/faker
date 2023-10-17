@@ -39,7 +39,6 @@ sk:
         - "#{Name.man_last_name} a #{Name.man_last_name} #{suffix}"
 
     internet:
-      free_email: [gmail.com, zoznam.sk, azet.sk]
       domain_suffix: [sk, com, net, eu, org]
 
     lorem:

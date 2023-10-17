@@ -24,7 +24,6 @@ ru:
         - "#{postcode} #{default_country}, #{city}, #{street_address} #{secondary_address}"
 
     internet:
-      free_email: [yandex.ru, ya.ru, mail.ru, gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, ru, info, рф, net, org]
 
     name:

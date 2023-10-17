@@ -354,7 +354,6 @@ hy:
       metric_measurements: [միլիլիտր, դեցիլիտր, սանտիլիտր, լիտր]
 
     internet:
-      free_email: [freenet.am, namag.net, yandex.ru, mail.ru, gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [am, com, info, net, org]
 
     job:

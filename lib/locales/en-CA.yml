@@ -8,7 +8,6 @@ en-CA:
       default_country_code: ["CA"]
 
     internet:
-      free_email: [gmail.com, yahoo.ca, hotmail.com]
       domain_suffix: [ca, com, biz, info, name, net, org]
 
     country_code: ['1']

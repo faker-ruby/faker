@@ -18,7 +18,6 @@ lt:
       suffix: [AB, UAB, IĮ, KB, VŠĮ, MB]
 
     internet:
-      free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [lt, com, net]
 
     name:
