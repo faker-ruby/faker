@@ -37,7 +37,7 @@ class TestFakerCompany < Test::Unit::TestCase
 
     assert_match(/\d{10}/, org_no)
     assert_includes [1, 2, 3, 5, 6, 7, 8, 9], org_no[0].to_i
-    assert org_no[2].to_i >= 2
+    assert_operator org_no[2].to_i, :>=, 2
     assert_equal org_no[9], @tester.send(:luhn_algorithm, org_no[0..8]).to_s
   end
 

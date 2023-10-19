@@ -88,7 +88,7 @@ class TestFakerHipster < Test::Unit::TestCase
 
   def test_sentence_with_open_compounds_allowed
     deterministically_verify -> { @tester.sentence(word_count: 5, random_words_to_add: 0, open_compounds_allowed: true) }, depth: 5 do |sentence|
-      assert(sentence.split.length >= 5)
+      assert_operator(sentence.split.length, :>=, 5)
     end
   end
 

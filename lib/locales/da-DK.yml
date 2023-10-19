@@ -52,6 +52,8 @@ da-DK:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
 
+    country_code: ['45']
+
     phone_number:
       formats:
         - '## ## ## ##'
