@@ -477,20 +477,44 @@ module Faker
       #
       # @faker.version 3.2.1
       def indian_gst_number(state_code: nil)
-        state_code_list = %w[01 02 03 04 05 06 07 08 09 10 11 12 13 14 97]
-        state_code = state_code_list.sample(random: Faker::Config.random) if state_code.nil?
-        taxpayer_number = Array.new(3) { ('A'..'Z').to_a.sample(random: Faker::Config.random) } + Array.new(1) {
-                                                                                                    %w[A B C F G H L J P T
-                                                                                                       K].to_a.sample(random: Faker::Config.random)
-                                                                                                  } + Array.new(1) {
-                                                                                                        ('A'..'Z').to_a.sample(random: Faker::Config.random)
-                                                                                                      } + Array.new(4) {
-                                                                                                            rand(10)
-                                                                                                          } + [('A'..'Z').to_a.sample(random: Faker::Config.random)]
-        taxpayer_number = taxpayer_number.join
-        registration_number = rand(10).to_s
-        checksum = calculate_gst_checksum(state_code, taxpayer_number, registration_number)
-        "#{state_code}#{taxpayer_number}#{registration_number}Z#{checksum}"
+        # Check if state code is valid
+        state_code_ranges = ['02'..'38', ['98']]
+        raise ArgumentError, 'state code must be in a range of 02 to 38 or 98' if state_code && (!state_code_ranges[0].cover?(state_code) || state_code_ranges[1][0] != '98')
+
+        PositionalGenerator.new(:string) do |gen|
+          # Generate a state code if not given
+          if state_code
+            gen.lit(state_code, name: :state_code_param)
+          else
+            gen.letter(name: :state_code_param, length: 1, ranges: state_code_ranges)
+          end
+
+          # Construct taxpayer number
+          gen.group(name: :taxpayer_number) do |g_|
+            g_.letter(length: 3, ranges: ['A'..'Z'])
+            g_.letter(length: 1, ranges: [%w[A B C F G H L J P T K]].to_a)
+            g_.letter(length: 1, ranges: ['A'..'Z'])
+            g_.int(length: 4, ranges: [0..9999])
+            g_.letter(length: 1, ranges: ['A'..'Z'])
+          end
+
+          gen.int(name: :registration_number, length: 1, ranges: [0..9])
+
+          gen.letter(name: :z_char, length: 1, ranges: [['Z']])
+
+          gen.computed(deps: %i[state_code_param taxpayer_number registration_number]) do |state_code_param, taxpayer_number, registration_number|
+            gst_base = "#{state_code_param}#{taxpayer_number}#{registration_number}"
+            chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.chars
+            values = gst_base.chars
+            sum = values.map.with_index do |char, index|
+              product = chars.index(char) * (index.odd? ? 2 : 1)
+              (product / chars.length).floor + (product % chars.length)
+            end.reduce(:+)
+
+            checksum = (chars.length - (sum % chars.length)) % chars.length
+            chars[checksum]
+          end
+        end.generate
       end
 
       private
