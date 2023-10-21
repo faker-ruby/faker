@@ -3504,8 +3504,6 @@ de-CH:
         - "#{ordinal_azimuth}"
         - "#{half_wind_azimuth}"
         - "#{quarter_wind_azimuth}"
-    country_code:
-      - "41"
     internet:
       free_email:
         - gmail.com
@@ -3870,8 +3868,9 @@ de-CH:
         - viral
         - vlog
     phone_number:
+      country_code: ["41"]
       formats:
-        - "+41 ## ### ## ##"
+        - "## ### ## ##"
         - "0800 ### ###"
         - "0800 ## ## ##"
         - "0## ### ## ##"

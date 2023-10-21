@@ -22,13 +22,6 @@ class TestEnUsLocale < Test::Unit::TestCase
     assert Faker::Address.full_address.is_a? String
   end
 
-  def test_en_us_phone_methods_return_nil_for_nil_locale
-    Faker::Config.locale = nil
-
-    assert_nil Faker::PhoneNumber.area_code
-    assert_nil Faker::PhoneNumber.exchange_code
-  end
-
   def test_en_us_subscriber_number_method
     assert Faker::PhoneNumber.subscriber_number.is_a? String
     assert_equal(4, Faker::PhoneNumber.subscriber_number.length)

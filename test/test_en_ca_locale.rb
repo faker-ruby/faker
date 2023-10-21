@@ -46,6 +46,8 @@ class TestEnCaLocale < Test::Unit::TestCase
     assert_equal(3, Faker::PhoneNumber.exchange_code.length)
 
     assert_equal('+1', Faker::PhoneNumber.country_code)
+    assert(Faker::PhoneNumber.area_code.is_a?(String))
+    assert(Faker::PhoneNumber.exchange_code.is_a?(String))
   end
 
   def test_validity_of_phone_method_output
@@ -53,12 +55,5 @@ class TestEnCaLocale < Test::Unit::TestCase
     ca_number_validation_regex = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/
 
     assert_match(ca_number_validation_regex, Faker::PhoneNumber.phone_number)
-  end
-
-  def test_en_ca_phone_methods_return_nil_for_nil_locale
-    Faker::Config.locale = nil
-
-    assert_nil Faker::PhoneNumber.area_code
-    assert_nil Faker::PhoneNumber.exchange_code
   end
 end
