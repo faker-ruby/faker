@@ -28,7 +28,7 @@ GEM
       method_source (~> 1.0)
     racc (1.7.1)
     rainbow (3.1.1)
-    rake (13.0.6)
+    rake (13.1.0)
     regexp_parser (2.8.2)
     rexml (3.2.6)
     rubocop (1.57.1)
@@ -69,7 +69,7 @@ DEPENDENCIES
   faker!
   minitest (= 5.20.0)
   pry (= 0.14.2)
-  rake (= 13.0.6)
+  rake (= 13.1.0)
   rubocop (= 1.57.1)
   rubocop-minitest (= 0.32.2)
   rubocop-rake (= 0.6.0)
