@@ -258,6 +258,9 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_raise ArgumentError do
       @tester.indian_gst_number(state_code: '01')
     end
+    assert_raise ArgumentError do
+      @tester.indian_gst_number(state_code: '100')
+    end
   end
 
   def test_indian_gst_number_with_state_code
