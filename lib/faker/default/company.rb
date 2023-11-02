@@ -479,7 +479,9 @@ module Faker
       def indian_gst_number(state_code: nil)
         # Check if state code is valid
         state_code_ranges = [('02'..'38'), ['98']]
-        raise ArgumentError, 'state code must be in a range of 02 to 38 or 98' if state_code && !(state_code_ranges[0].include?(state_code) || state_code == '98')
+        if state_code && !(state_code_ranges[0].include?(state_code) || state_code == '98')
+          raise ArgumentError, 'state code must be in a range of 02 to 38 or 98'
+        end
 
         PositionalGenerator.new(:string) do |gen|
           # Generate a state code if not given
