@@ -48,7 +48,7 @@ This version:
 * @redconfetti made their first contribution in https://github.com/faker-ruby/faker/pull/2817
 * @ankitkhadria made their first contribution in https://github.com/faker-ruby/faker/pull/2825
 
-**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.2.1...v.3.3.1
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.2.1...v3.2.2
 
 -------------------------
 
