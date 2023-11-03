@@ -1,5 +1,57 @@
 # Changelog
 
+## [v3.2.2](https://github.com/faker-ruby/faker/tree/v3.2.2) (2023-11-03)
+
+Happy November with a new faker-ruby release.
+
+This version:
+- adds generators
+- fixes bugs
+- updates dev and dependencies
+- updates docs
+
+### Features
+* feat: add danish country code by @hoshy in https://github.com/faker-ruby/faker/pull/2818
+* Add `zh-CN` translations for Bank names by @guxiaobai in https://github.com/faker-ruby/faker/pull/2840
+* Add Code Scanning by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2835
+* Add Japanese for Games Touhou by @shiroemons in https://github.com/faker-ruby/faker/pull/2829
+* Added Faker::Company.indian_gst_number fixed #2823 by @ankitkhadria in https://github.com/faker-ruby/faker/pull/2825
+* Adds Smashing Pumpkins to the Music module by @redconfetti in https://github.com/faker-ruby/faker/pull/2817
+
+
+### Bug fixes
+* Delete doc/default/michael_scott.md by @jmromer in https://github.com/faker-ruby/faker/pull/2837
+* Fix typo in `lib/locales/README.md` by @BelaBartok39 in https://github.com/faker-ruby/faker/pull/2812
+
+### What's Changed
+* Update contributing and maintaining guides by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2836
+* Changed tests from x.times loop to deterministically_verify helper. #2813 issue by @fernandomenolli in https://github.com/faker-ruby/faker/pull/2816
+* Improve `#deterministically_verify` helper by @erichmachado in https://github.com/faker-ruby/faker/pull/2828
+
+
+### Update local dependencies
+* Bump minitest from 5.19.0 to 5.20.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2826
+* Bump rake from 13.0.6 to 13.1.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2846
+* Bump rubocop-minitest from 0.32.2 to 0.33.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2843
+* Bump rubocop from 1.57.1 to 1.57.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2844
+* Bump timecop from 0.9.6 to 0.9.8 by @dependabot in https://github.com/faker-ruby/faker/pull/2811
+
+
+## New Contributors
+* @BelaBartok39 made their first contribution in https://github.com/faker-ruby/faker/pull/2812
+* @fernandomenolli made their first contribution in https://github.com/faker-ruby/faker/pull/2816
+* @hoshy made their first contribution in https://github.com/faker-ruby/faker/pull/2818
+* @shiroemons made their first contribution in https://github.com/faker-ruby/faker/pull/2829
+* @erichmachado made their first contribution in https://github.com/faker-ruby/faker/pull/2828
+* @jmromer made their first contribution in https://github.com/faker-ruby/faker/pull/2837
+* @guxiaobai made their first contribution in https://github.com/faker-ruby/faker/pull/2840
+* @redconfetti made their first contribution in https://github.com/faker-ruby/faker/pull/2817
+* @ankitkhadria made their first contribution in https://github.com/faker-ruby/faker/pull/2825
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.2.1...v3.2.2
+
+-------------------------
+
 ## [v3.2.1](https://github.com/faker-ruby/faker/tree/v3.2.1) (2023-08-11)
 
 Happy August with a new Faker release! 🎉
