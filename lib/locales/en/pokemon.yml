@@ -154,30 +154,897 @@ en:
           - Dragonite
           - Mewtwo
           - Mew
+          - Chikorita
+          - Bayleef
+          - Meganium
+          - Cyndaquil
+          - Quilava
+          - Typhlosion
+          - Totodile
+          - Croconaw
+          - Feraligatr
+          - Sentret
+          - Furret
+          - Hoothoot
+          - Noctowl
+          - Ledyba
+          - Ledian
+          - Spinarak
+          - Ariados
+          - Crobat
+          - Chinchou
+          - Lanturn
+          - Pichu
+          - Cleffa
+          - Igglybuff
+          - Togepi
+          - Togetic
+          - Natu
+          - Xatu
+          - Mareep
+          - Flaaffy
+          - Ampharos
+          - Bellossom
+          - Marill
+          - Azumarill
+          - Sudowoodo
+          - Politoed
+          - Hoppip
+          - Skiploom
+          - Jumpluff
+          - Aipom
+          - Sunkern
+          - Sunflora
+          - Yanma
+          - Wooper
+          - Quagsire
+          - Espeon
+          - Umbreon
+          - Murkrow
+          - Slowking
+          - Misdreavus
+          - Unown
+          - Wobbuffet
+          - Girafarig
+          - Pineco
+          - Forretress
+          - Dunsparce
+          - Gligar
+          - Steelix
+          - Snubbull
+          - Granbull
+          - Qwilfish
+          - Scizor
+          - Shuckle
+          - Heracross
+          - Sneasel
+          - Teddiursa
+          - Ursaring
+          - Slugma
+          - Magcargo
+          - Swinub
+          - Piloswine
+          - Corsola
+          - Remoraid
+          - Octillery
+          - Delibird
+          - Mantine
+          - Skarmory
+          - Houndour
+          - Houndoom
+          - Kingdra
+          - Phanpy
+          - Donphan
+          - Porygon2
+          - Stantler
+          - Smeargle
+          - Tyrogue
+          - Hitmontop
+          - Smoochum
+          - Elekid
+          - Magby
+          - Miltank
+          - Blissey
+          - Raikou
+          - Entei
+          - Suicune
+          - Larvitar
+          - Pupitar
+          - Tyranitar
+          - Lugia
+          - Ho-oh
+          - Celebi
+          - Treecko
+          - Grovyle
+          - Sceptile
+          - Torchic
+          - Combusken
+          - Blaziken
+          - Mudkip
+          - Marshtomp
+          - Swampert
+          - Poochyena
+          - Mightyena
+          - Zigzagoon
+          - Linoone
+          - Wurmple
+          - Silcoon
+          - Beautifly
+          - Cascoon
+          - Dustox
+          - Lotad
+          - Lombre
+          - Ludicolo
+          - Seedot
+          - Nuzleaf
+          - Shiftry
+          - Taillow
+          - Swellow
+          - Wingull
+          - Pelipper
+          - Ralts
+          - Kirlia
+          - Gardevoir
+          - Surskit
+          - Masquerain
+          - Shroomish
+          - Breloom
+          - Slakoth
+          - Vigoroth
+          - Slaking
+          - Nincada
+          - Ninjask
+          - Shedinja
+          - Whismur
+          - Loudred
+          - Exploud
+          - Makuhita
+          - Hariyama
+          - Azurill
+          - Nosepass
+          - Skitty
+          - Delcatty
+          - Sableye
+          - Mawile
+          - Aron
+          - Lairon
+          - Aggron
+          - Meditite
+          - Medicham
+          - Electrike
+          - Manectric
+          - Plusle
+          - Minun
+          - Volbeat
+          - Illumise
+          - Roselia
+          - Gulpin
+          - Swalot
+          - Carvanha
+          - Sharpedo
+          - Wailmer
+          - Wailord
+          - Numel
+          - Camerupt
+          - Torkoal
+          - Spoink
+          - Grumpig
+          - Spinda
+          - Trapinch
+          - Vibrava
+          - Flygon
+          - Cacnea
+          - Cacturne
+          - Swablu
+          - Altaria
+          - Zangoose
+          - Seviper
+          - Lunatone
+          - Solrock
+          - Barboach
+          - Whiscash
+          - Corphish
+          - Crawdaunt
+          - Baltoy
+          - Claydol
+          - Lileep
+          - Cradily
+          - Anorith
+          - Armaldo
+          - Feebas
+          - Milotic
+          - Castform
+          - Kecleon
+          - Shuppet
+          - Banette
+          - Duskull
+          - Dusclops
+          - Tropius
+          - Chimecho
+          - Absol
+          - Wynaut
+          - Snorunt
+          - Glalie
+          - Spheal
+          - Sealeo
+          - Walrein
+          - Clamperl
+          - Huntail
+          - Gorebyss
+          - Relicanth
+          - Luvdisc
+          - Bagon
+          - Shelgon
+          - Salamence
+          - Beldum
+          - Metang
+          - Metagross
+          - Regirock
+          - Regice
+          - Registeel
+          - Latias
+          - Latios
+          - Kyogre
+          - Groudon
+          - Rayquaza
+          - Jirachi
+          - Deoxys
+          - Turtwig
+          - Grotle
+          - Torterra
+          - Chimchar
+          - Monferno
+          - Infernape
+          - Piplup
+          - Prinplup
+          - Empoleon
+          - Starly
+          - Staravia
+          - Staraptor
+          - Bidoof
+          - Bibarel
+          - Kricketot
+          - Kricketune
+          - Shinx
+          - Luxio
+          - Luxray
+          - Budew
+          - Roserade
+          - Cranidos
+          - Rampardos
+          - Shieldon
+          - Bastiodon
+          - Burmy
+          - Wormadam
+          - Mothim
+          - Combee
+          - Vespiquen
+          - Pachirisu
+          - Buizel
+          - Floatzel
+          - Cherubi
+          - Cherrim
+          - Shellos
+          - Gastrodon
+          - Ambipom
+          - Drifloon
+          - Drifblim
+          - Buneary
+          - Lopunny
+          - Mismagius
+          - Honchkrow
+          - Glameow
+          - Purugly
+          - Chingling
+          - Stunky
+          - Skuntank
+          - Bronzor
+          - Bronzong
+          - Bonsly
+          - Mime Jr.
+          - Happiny
+          - Chatot
+          - Spiritomb
+          - Gible
+          - Gabite
+          - Garchomp
+          - Munchlax
+          - Riolu
+          - Lucario
+          - Hippopotas
+          - Hippowdon
+          - Skorupi
+          - Drapion
+          - Croagunk
+          - Toxicroak
+          - Carnivine
+          - Finneon
+          - Lumineon
+          - Mantyke
+          - Snover
+          - Abomasnow
+          - Weavile
+          - Magnezone
+          - Lickilicky
+          - Rhyperior
+          - Tangrowth
+          - Electivire
+          - Magmortar
+          - Togekiss
+          - Yanmega
+          - Leafeon
+          - Glaceon
+          - Gliscor
+          - Mamoswine
+          - Porygon-Z
+          - Gallade
+          - Probopass
+          - Dusknoir
+          - Froslass
+          - Rotom
+          - Uxie
+          - Mesprit
+          - Azelf
+          - Dialga
+          - Palkia
+          - Heatran
+          - Regigigas
+          - Giratina
+          - Cresselia
+          - Phione
+          - Manaphy
+          - Darkrai
+          - Shaymin
+          - Arceus
+          - Victini
+          - Snivy
+          - Servine
+          - Serperior
+          - Tepig
+          - Pignite
+          - Emboar
+          - Oshawott
+          - Dewott
+          - Samurott
+          - Patrat
+          - Watchog
+          - Lillipup
+          - Herdier
+          - Stoutland
+          - Purrloin
+          - Liepard
+          - Pansage
+          - Simisage
+          - Pansear
+          - Simisear
+          - Panpour
+          - Simipour
+          - Munna
+          - Musharna
+          - Pidove
+          - Tranquill
+          - Unfezant
+          - Blitzle
+          - Zebstrika
+          - Roggenrola
+          - Boldore
+          - Gigalith
+          - Woobat
+          - Swoobat
+          - Drilbur
+          - Excadrill
+          - Audino
+          - Timburr
+          - Gurdurr
+          - Conkeldurr
+          - Tympole
+          - Palpitoad
+          - Seismitoad
+          - Throh
+          - Sawk
+          - Sewaddle
+          - Swadloon
+          - Leavanny
+          - Venipede
+          - Whirlipede
+          - Scolipede
+          - Cottonee
+          - Whimsicott
+          - Petilil
+          - Lilligant
+          - Basculin
+          - Sandile
+          - Krokorok
+          - Krookodile
+          - Darumaka
+          - Darmanitan
+          - Maractus
+          - Dwebble
+          - Crustle
+          - Scraggy
+          - Scrafty
+          - Sigilyph
+          - Yamask
+          - Cofagrigus
+          - Tirtouga
+          - Carracosta
+          - Archen
+          - Archeops
+          - Trubbish
+          - Garbodor
+          - Zorua
+          - Zoroark
+          - Minccino
+          - Cinccino
+          - Gothita
+          - Gothorita
+          - Gothitelle
+          - Solosis
+          - Duosion
+          - Reuniclus
+          - Ducklett
+          - Swanna
+          - Vanillite
+          - Vanillish
+          - Vanilluxe
+          - Deerling
+          - Sawsbuck
+          - Emolga
+          - Karrablast
+          - Escavalier
+          - Foongus
+          - Amoonguss
+          - Frillish
+          - Jellicent
+          - Alomomola
+          - Joltik
+          - Galvantula
+          - Ferroseed
+          - Ferrothorn
+          - Klink
+          - Klang
+          - Klinklang
+          - Tynamo
+          - Eelektrik
+          - Eelektross
+          - Elgyem
+          - Beheeyem
+          - Litwick
+          - Lampent
+          - Chandelure
+          - Axew
+          - Fraxure
+          - Haxorus
+          - Cubchoo
+          - Beartic
+          - Cryogonal
+          - Shelmet
+          - Accelgor
+          - Stunfisk
+          - Mienfoo
+          - Mienshao
+          - Druddigon
+          - Golett
+          - Golurk
+          - Pawniard
+          - Bisharp
+          - Bouffalant
+          - Rufflet
+          - Braviary
+          - Vullaby
+          - Mandibuzz
+          - Heatmor
+          - Durant
+          - Deino
+          - Zweilous
+          - Hydreigon
+          - Larvesta
+          - Volcarona
+          - Cobalion
+          - Terrakion
+          - Virizion
+          - Tornadus
+          - Thundurus
+          - Reshiram
+          - Zekrom
+          - Landorus
+          - Kyurem
+          - Keldeo
+          - Meloetta
+          - Genesect
+          - Chespin
+          - Quilladin
+          - Chesnaught
+          - Fennekin
+          - Braixen
+          - Delphox
+          - Froakie
+          - Frogadier
+          - Greninja
+          - Bunnelby
+          - Diggersby
+          - Fletchling
+          - Fletchinder
+          - Talonflame
+          - Scatterbug
+          - Spewpa
+          - Vivillon
+          - Litleo
+          - Pyroar
+          - Flabébé
+          - Floette
+          - Florges
+          - Skiddo
+          - Gogoat
+          - Pancham
+          - Pangoro
+          - Furfrou
+          - Espurr
+          - Meowstic
+          - Honedge
+          - Doublade
+          - Aegislash
+          - Spritzee
+          - Aromatisse
+          - Swirlix
+          - Slurpuff
+          - Inkay
+          - Malamar
+          - Binacle
+          - Barbaracle
+          - Skrelp
+          - Dragalge
+          - Clauncher
+          - Clawitzer
+          - Helioptile
+          - Heliolisk
+          - Tyrunt
+          - Tyrantrum
+          - Amaura
+          - Aurorus
+          - Sylveon
+          - Hawlucha
+          - Dedenne
+          - Carbink
+          - Goomy
+          - Sliggoo
+          - Goodra
+          - Klefki
+          - Phantump
+          - Trevenant
+          - Pumpkaboo
+          - Gourgeist
+          - Bergmite
+          - Avalugg
+          - Noibat
+          - Noivern
+          - Xerneas
+          - Yveltal
+          - Zygarde
+          - Diancie
+          - Hoopa
+          - Volcanion
+          - Rowlet
+          - Dartrix
+          - Decidueye
+          - Litten
+          - Torracat
+          - Incineroar
+          - Popplio
+          - Brionne
+          - Primarina
+          - Pikipek
+          - Trumbeak
+          - Toucannon
+          - Yungoos
+          - Gumshoos
+          - Grubbin
+          - Charjabug
+          - Vikavolt
+          - Crabrawler
+          - Crabominable
+          - Oricorio
+          - Cutiefly
+          - Ribombee
+          - Rockruff
+          - Lycanroc
+          - Wishiwashi
+          - Mareanie
+          - Toxapex
+          - Mudbray
+          - Mudsdale
+          - Dewpider
+          - Araquanid
+          - Fomantis
+          - Lurantis
+          - Morelull
+          - Shiinotic
+          - Salandit
+          - Salazzle
+          - Stufful
+          - Bewear
+          - Bounsweet
+          - Steenee
+          - Tsareena
+          - Comfey
+          - Oranguru
+          - Passimian
+          - Wimpod
+          - Golisopod
+          - Sandygast
+          - Palossand
+          - Pyukumuku
+          - 'Type: Null'
+          - Silvally
+          - Minior
+          - Komala
+          - Turtonator
+          - Togedemaru
+          - Mimikyu
+          - Bruxish
+          - Drampa
+          - Dhelmise
+          - Jangmo-o
+          - Hakamo-o
+          - Kommo-o
+          - Tapu Koko
+          - Tapu Lele
+          - Tapu Bulu
+          - Tapu Fini
+          - Cosmog
+          - Cosmoem
+          - Solgaleo
+          - Lunala
+          - Nihilego
+          - Buzzwole
+          - Pheromosa
+          - Xurkitree
+          - Celesteela
+          - Kartana
+          - Guzzlord
+          - Necrozma
+          - Magearna
+          - Marshadow
+          - Poipole
+          - Naganadel
+          - Stakataka
+          - Blacephalon
+          - Zeraora
+          - Meltan
+          - Melmetal
+          - Grookey
+          - Thwackey
+          - Rillaboom
+          - Scorbunny
+          - Raboot
+          - Cinderace
+          - Sobble
+          - Drizzile
+          - Inteleon
+          - Skwovet
+          - Greedent
+          - Rookidee
+          - Corvisquire
+          - Corviknight
+          - Blipbug
+          - Dottler
+          - Orbeetle
+          - Nickit
+          - Thievul
+          - Gossifleur
+          - Eldegoss
+          - Wooloo
+          - Dubwool
+          - Chewtle
+          - Drednaw
+          - Yamper
+          - Boltund
+          - Rolycoly
+          - Carkol
+          - Coalossal
+          - Applin
+          - Flapple
+          - Appletun
+          - Silicobra
+          - Sandaconda
+          - Cramorant
+          - Arrokuda
+          - Barraskewda
+          - Toxel
+          - Toxtricity
+          - Sizzlipede
+          - Centiskorch
+          - Clobbopus
+          - Grapploct
+          - Sinistea
+          - Polteageist
+          - Hatenna
+          - Hattrem
+          - Hatterene
+          - Impidimp
+          - Morgrem
+          - Grimmsnarl
+          - Obstagoon
+          - Perrserker
+          - Cursola
+          - Sirfetch'd
+          - Mr. Rime
+          - Runerigus
+          - Milcery
+          - Alcremie
+          - Falinks
+          - Pincurchin
+          - Snom
+          - Frosmoth
+          - Stonjourner
+          - Eiscue
+          - Indeedee
+          - Morpeko
+          - Cufant
+          - Copperajah
+          - Dracozolt
+          - Arctozolt
+          - Dracovish
+          - Arctovish
+          - Duraludon
+          - Dreepy
+          - Drakloak
+          - Dragapult
+          - Zacian
+          - Zamazenta
+          - Eternatus
+          - Kubfu
+          - Urshifu
+          - Zarude
+          - Regieleki
+          - Regidrago
+          - Glastrier
+          - Spectrier
+          - Calyrex
+          - Wyrdeer
+          - Kleavor
+          - Ursaluna
+          - Basculegion
+          - Sneasler
+          - Overqwil
+          - Enamorus
+          - Sprigatito
+          - Floragato
+          - Meowscarada
+          - Fuecoco
+          - Crocalor
+          - Skeledirge
+          - Quaxly
+          - Quaxwell
+          - Quaquaval
+          - Lechonk
+          - Oinkologne
+          - Tarountula
+          - Spidops
+          - Nymble
+          - Lokix
+          - Pawmi
+          - Pawmo
+          - Pawmot
+          - Tandemaus
+          - Maushold
+          - Fidough
+          - Dachsbun
+          - Smoliv
+          - Dolliv
+          - Arboliva
+          - Squawkabilly
+          - Nacli
+          - Naclstack
+          - Garganacl
+          - Charcadet
+          - Armarouge
+          - Ceruledge
+          - Tadbulb
+          - Bellibolt
+          - Wattrel
+          - Kilowattrel
+          - Maschiff
+          - Mabosstiff
+          - Shroodle
+          - Grafaiai
+          - Bramblin
+          - Brambleghast
+          - Toedscool
+          - Toedscruel
+          - Klawf
+          - Capsakid
+          - Scovillain
+          - Rellor
+          - Rabsca
+          - Flittle
+          - Espathra
+          - Tinkatink
+          - Tinkatuff
+          - Tinkaton
+          - Wiglett
+          - Wugtrio
+          - Bombirdier
+          - Finizen
+          - Palafin
+          - Varoom
+          - Revavroom
+          - Cyclizar
+          - Orthworm
+          - Glimmet
+          - Glimmora
+          - Greavard
+          - Houndstone
+          - Flamigo
+          - Cetoddle
+          - Cetitan
+          - Veluza
+          - Dondozo
+          - Tatsugiri
+          - Annihilape
+          - Clodsire
+          - Farigiraf
+          - Dudunsparce
+          - Kingambit
+          - Great Tusk
+          - Scream Tail
+          - Brute Bonnet
+          - Flutter Mane
+          - Slither Wing
+          - Sandy Shocks
+          - Iron Treads
+          - Iron Bundle
+          - Iron Hands
+          - Iron Jugulis
+          - Iron Moth
+          - Iron Thorns
+          - Frigibax
+          - Arctibax
+          - Baxcalibur
+          - Gimmighoul
+          - Gholdengo
+          - Wo-Chien
+          - Chien-Pao
+          - Ting-Lu
+          - Chi-Yu
+          - Roaring Moon
+          - Iron Valiant
+          - Koraidon
+          - Miraidon
+          - Walking Wake
+          - Iron Leaves
         locations:
           - Accumula Town
+          - Alfornada
           - Ambrette Town
           - Anistar City
           - Anville Town
           - Aquacorde Town
+          - Artazon
           - Aspertia City
           - Azalea Town
+          - Ballonlea
           - Black City
           - Blackthorn City
+          - Cabo Poco
           - Camphrier Town
           - Canalave City
+          - Cascarrafa
           - Castelia City
           - Celadon City
           - Celestic Town
           - Cerulean City
           - Cherrygrove City
           - Cianwood City
+          - Circhester
           - Cinnabar Island
+          - Cortondo
           - Coumarine City
           - Couriway Town
           - Cyllage City
           - Dendemille Town
           - Dewford Town
+          - Diamond Settlement
           - Driftveil City
           - Ecruteak City
           - Eterna City
@@ -189,27 +1056,43 @@ en:
           - Floccesy Town
           - Fortree City
           - Four Island
+          - Freezington
           - Frontier Access
           - Fuchsia City
           - Geosenge Town
           - Goldenrod City
+          - Hammerlocke
+          - Hau'oli City
+          - Heahea City
           - Hearthome City
+          - Hulbury
           - Humilau City
           - Icirrus City
+          - Iki Town
           - Jubilife City
+          - Jubilife Village
           - Kiloude City
+          - Konikoni City
           - Lacunosa Town
           - Lavaridge Town
           - Lavender Town
           - Laverre City
           - Lentimas Town
+          - Levincia
           - Littleroot Town
           - Lilycove City
+          - Los Platos
           - Lumiose City
           - Mahogany Town
+          - Malie City
           - Mauville City
+          - Medali
+          - Mesagoza
           - Mistralton City
+          - Montenevera
           - Mossdeep City
+          - Mossui Town
+          - Motostoke
           - Nacrene City
           - New Bark Town
           - Nimbasa City
@@ -221,27 +1104,37 @@ en:
           - Oreburgh City
           - Pacifidlog Town
           - Pallet Town
+          - Paniola Town
           - Pastoria City
+          - Pearl Settlement
           - Petalburg City
           - Pewter City
+          - Po Town
+          - Porto Marinada
+          - Postwick
           - Resort Area
           - Rustboro City
           - Safari Zone Gate
           - Saffron City
           - Sandgem Town
           - Santalune City
-          - Striaton City
+          - Seafolk Village
           - Seven Island
           - Shalour City
           - Six Island
           - Slateport City
+          - Stow-on-Side
           - Snowbelle City
           - Snowpoint City
           - Solaceon Town
           - Sootopolis City
+          - Spikemuth
+          - Striaton City
           - Sunyshore City
           - Survival Area
+          - Tapu Village
           - Three Island
+          - Turffield
           - Twinleaf Town
           - Two Island
           - Undella Town
@@ -252,170 +1145,899 @@ en:
           - Violet City
           - Virbank City
           - Viridian City
+          - Wedgehurst
           - White Forest
+          - Wyndon
+          - Zapapico
         moves:
+          - 10,000,000 Volt Thunderbolt
           - Absorb
+          - Accelerock
           - Acid
           - Acid Armor
+          - Acid Downpour
+          - Acid Spray
+          - Acrobatics
+          - Acupressure
+          - Aerial Ace
+          - Aeroblast
+          - After You
           - Agility
+          - Air Cutter
+          - Air Slash
+          - All-Out Pummeling
+          - Ally Switch
           - Amnesia
+          - Anchor Shot
+          - Ancient Power
+          - Apple Acid
+          - Aqua Cutter
+          - Aqua Jet
+          - Aqua Ring
+          - Aqua Step
+          - Aqua Tail
+          - Arm Thrust
+          - Armor Cannon
+          - Aromatherapy
+          - Aromatic Mist
+          - Assist
+          - Assurance
+          - Astonish
+          - Astral Barrage
+          - Attack Order
+          - Attract
+          - Aura Sphere
+          - Aura Wheel
           - Aurora Beam
+          - Aurora Veil
+          - Autotomize
+          - Avalanche
+          - Axe Kick
+          - Baby-Doll Eyes
+          - Baddy Bad
+          - Baneful Bunker
+          - Barb Barrage
           - Barrage
           - Barrier
+          - Baton Pass
+          - Beak Blast
+          - Beat Up
+          - Behemoth Bash
+          - Behemoth Blade
+          - Belch
+          - Belly Drum
+          - Bestow
           - Bide
           - Bind
           - Bite
+          - Bitter Blade
+          - Bitter Malice
+          - Black Hole Eclipse
+          - Blast Burn
+          - Blaze Kick
+          - Blazing Torque
+          - Bleakwind Storm
           - Blizzard
+          - Block
+          - Blood Moon
+          - Bloom Doom
+          - Blue Flare
+          - Body Press
           - Body Slam
+          - Bolt Beak
+          - Bolt Strike
           - Bone Club
+          - Bone Rush
           - Bonemerang
+          - Boomburst
+          - Bounce
+          - Bouncy Bubble
+          - Branch Poke
+          - Brave Bird
+          - Breaking Swipe
+          - Breakneck Blitz
+          - Brick Break
+          - Brine
+          - Brutal Swing
           - Bubble
           - Bubble Beam
+          - Bug Bite
+          - Bug Buzz
+          - Bulk Up
+          - Bulldoze
+          - Bullet Punch
+          - Bullet Seed
+          - Burn Up
+          - Burning Jealousy
+          - Buzzy Buzz
+          - Calm Mind
+          - Camouflage
+          - Captivate
+          - Catastropika
+          - Ceaseless Edge
+          - Celebrate
+          - Charge
+          - Charge Beam
+          - Charm
+          - Chatter
+          - Chilling Water
+          - Chilly Reception
+          - Chip Away
+          - Chloroblast
+          - Circle Throw
           - Clamp
+          - Clanging Scales
+          - Clangorous Soul
+          - Clangorous Soulblaze
+          - Clear Smog
+          - Close Combat
+          - Coaching
+          - Coil
+          - Collision Course
+          - Combat Torque
           - Comet Punch
+          - Comeuppance
+          - Confide
           - Confuse Ray
           - Confusion
           - Constrict
+          - Continental Crush
           - Conversion
+          - Conversion 2
+          - Copycat
+          - Core Enforcer
+          - Corkscrew Crash
+          - Corrosive Gas
+          - Cosmic Power
+          - Cotton Guard
+          - Cotton Spore
           - Counter
+          - Court Change
+          - Covet
           - Crabhammer
+          - Crafty Shield
+          - Cross Chop
+          - Cross Poison
+          - Crunch
+          - Crush Claw
+          - Crush Grip
+          - Curse
           - Cut
+          - Dark Pulse
+          - Dark Void
+          - Darkest Lariat
+          - Dazzling Gleam
+          - Decorate
+          - Defend Order
           - Defense Curl
+          - Defog
+          - Destiny Bond
+          - Detect
+          - Devastating Drake
+          - Diamond Storm
           - Dig
+          - Dire Claw
           - Disable
+          - Disarming Voice
+          - Discharge
+          - Dive
           - Dizzy Punch
+          - Doodle
+          - Doom Desire
+          - Double Hit
+          - Double Iron Bash
           - Double Kick
+          - Double Shock
           - Double Slap
           - Double Team
           - Double-Edge
+          - Draco Meteor
+          - Dragon Ascent
+          - Dragon Breath
+          - Dragon Claw
+          - Dragon Dance
+          - Dragon Darts
+          - Dragon Energy
+          - Dragon Hammer
+          - Dragon Pulse
           - Dragon Rage
+          - Dragon Rush
+          - Dragon Tail
+          - Drain Punch
+          - Draining Kiss
           - Dream Eater
           - Drill Peck
+          - Drill Run
+          - Drum Beating
+          - Dual Chop
+          - Dual Wingbeat
+          - Dynamax Cannon
+          - Dynamic Punch
+          - Earth Power
           - Earthquake
+          - Echoed Voice
+          - Eerie Impulse
+          - Eerie Spell
           - Egg Bomb
+          - Electric Terrain
+          - Electrify
+          - Electro Ball
+          - Electro Drift
+          - Electro Shot
+          - Electroweb
+          - Embargo
           - Ember
+          - Encore
+          - Endeavor
+          - Endure
+          - Energy Ball
+          - Entrainment
+          - Eruption
+          - Esper Wing
+          - Eternabeam
+          - Expanding Force
           - Explosion
+          - Extrasensory
+          - Extreme Evoboost
+          - Extreme Speed
+          - Facade
+          - Fairy Lock
+          - Fairy Wind
+          - Fake Out
+          - Fake Tears
+          - False Surrender
+          - False Swipe
+          - Feather Dance
+          - Feint
+          - Feint Attack
+          - Fell Stinger
+          - Fiery Dance
+          - Fiery Wrath
+          - Fillet Away
+          - Final Gambit
           - Fire Blast
+          - Fire Fang
+          - Fire Lash
+          - Fire Pledge
           - Fire Punch
           - Fire Spin
+          - First Impression
+          - Fishious Rend
           - Fissure
+          - Flail
+          - Flame Burst
+          - Flame Charge
+          - Flame Wheel
           - Flamethrower
+          - Flare Blitz
           - Flash
+          - Flash Cannon
+          - Flatter
+          - Fleur Cannon
+          - Fling
+          - Flip Turn
+          - Floaty Fall
+          - Floral Healing
+          - Flower Shield
+          - Flower Trick
           - Fly
+          - Flying Press
+          - Focus Blast
           - Focus Energy
+          - Focus Punch
+          - Follow Me
+          - Force Palm
+          - Foresight
+          - Forest's Curse
+          - Foul Play
+          - Freeze Shock
+          - Freeze-Dry
+          - Freezing Glare
+          - Freezy Frost
+          - Frenzy Plant
+          - Frost Breath
+          - Frustration
           - Fury Attack
+          - Fury Cutter
           - Fury Swipes
+          - Fusion Bolt
+          - Fusion Flare
+          - Future Sight
+          - Gastro Acid
+          - Gear Grind
+          - Gear Up
+          - Genesis Supernova
+          - Geomancy
+          - Giga Drain
+          - Giga Impact
+          - Gigaton Hammer
+          - Gigavolt Havoc
+          - Glacial Lance
+          - Glaciate
+          - Glaive Rush
           - Glare
+          - Glitzy Glow
+          - Grass Knot
+          - Grass Pledge
+          - Grass Whistle
+          - Grassy Glide
+          - Grassy Terrain
+          - Grav Apple
+          - Gravity
           - Growl
           - Growth
+          - Grudge
+          - Guard Split
+          - Guard Swap
+          - Guardian of Alola
           - Guillotine
+          - Gunk Shot
           - Gust
+          - Gyro Ball
+          - Hail
+          - Hammer Arm
+          - Happy Hour
           - Harden
           - Haze
+          - Head Charge
+          - Head Smash
           - Headbutt
+          - Headlong Rush
+          - Heal Bell
+          - Heal Block
+          - Heal Order
+          - Heal Pulse
+          - Healing Wish
+          - Heart Stamp
+          - Heart Swap
+          - Heat Crash
+          - Heat Wave
+          - Heavy Slam
+          - Helping Hand
+          - Hex
+          - Hidden Power
+          - High Horsepower
           - High Jump Kick
+          - Hold Back
+          - Hold Hands
+          - Hone Claws
           - Horn Attack
           - Horn Drill
+          - Horn Leech
+          - Howl
+          - Hurricane
+          - Hydro Cannon
           - Hydro Pump
+          - Hydro Steam
+          - Hydro Vortex
           - Hyper Beam
+          - Hyper Drill
           - Hyper Fang
+          - Hyper Voice
+          - Hyperspace Fury
+          - Hyperspace Hole
           - Hypnosis
+          - Ice Ball
           - Ice Beam
+          - Ice Burn
+          - Ice Fang
+          - Ice Hammer
           - Ice Punch
+          - Ice Shard
+          - Ice Spinner
+          - Icicle Crash
+          - Icicle Spear
+          - Icy Wind
+          - Imprison
+          - Incinerate
+          - Infernal Parade
+          - Inferno
+          - Inferno Overdrive
+          - Infestation
+          - Ingrain
+          - Instruct
+          - Ion Deluge
+          - Iron Defense
+          - Iron Head
+          - Iron Tail
+          - Ivy Cudgel
+          - Jaw Lock
+          - Jet Punch
+          - Judgment
           - Jump Kick
+          - Jungle Healing
           - Karate Chop
           - Kinesis
+          - King's Shield
+          - Knock Off
+          - Kowtow Cleave
+          - Land's Wrath
+          - Laser Focus
+          - Lash Out
+          - Last Resort
+          - Last Respects
+          - Lava Plume
+          - Leaf Blade
+          - Leaf Storm
+          - Leaf Tornado
+          - Leafage
           - Leech Life
           - Leech Seed
           - Leer
+          - Let's Snuggle Forever
           - Lick
+          - Life Dew
+          - Light of Ruin
           - Light Screen
+          - Light That Burns the Sky
+          - Liquidation
+          - Lock-On
           - Lovely Kiss
           - Low Kick
+          - Low Sweep
+          - Lucky Chant
+          - Lumina Crash
+          - Lunar Blessing
+          - Lunar Dance
+          - Lunge
+          - Luster Purge
+          - Mach Punch
+          - Magic Coat
+          - Magic Powder
+          - Magic Room
+          - Magical Leaf
+          - Magical Torque
+          - Magma Storm
+          - Magnet Bomb
+          - Magnet Rise
+          - Magnetic Flux
+          - Magnitude
+          - Make It Rain
+          - Malicious Moonsault
+          - Mat Block
+          - Matcha Gotcha
+          - Max Airstream
+          - Max Darkness
+          - Max Flare
+          - Max Flutterby
+          - Max Geyser
+          - Max Guard
+          - Max Hailstorm
+          - Max Knuckle
+          - Max Lightning
+          - Max Mindstorm
+          - Max Ooze
+          - Max Overgrowth
+          - Max Phantasm
+          - Max Quake
+          - Max Rockfall
+          - Max Starfall
+          - Max Steelspike
+          - Max Strike
+          - Max Wyrmwind
+          - Me First
+          - Mean Look
           - Meditate
           - Mega Drain
           - Mega Kick
           - Mega Punch
+          - Megahorn
+          - Memento
+          - Menacing Moonraze Maelstrom
+          - Metal Burst
+          - Metal Claw
+          - Metal Sound
+          - Meteor Assault
+          - Meteor Beam
+          - Meteor Mash
           - Metronome
+          - Milk Drink
           - Mimic
+          - Mind Blown
+          - Mind Reader
           - Minimize
+          - Miracle Eye
+          - Mirror Coat
           - Mirror Move
+          - Mirror Shot
           - Mist
+          - Mist Ball
+          - Misty Explosion
+          - Misty Terrain
+          - Moonblast
+          - Moongeist Beam
+          - Moonlight
+          - Morning Sun
+          - Mortal Spin
+          - Mountain Gale
+          - Mud Bomb
+          - Mud Shot
+          - Mud Sport
+          - Mud-Slap
+          - Muddy Water
+          - Multi-Attack
+          - Mystical Fire
+          - Mystical Power
+          - Nasty Plot
+          - Natural Gift
+          - Nature Power
+          - Nature's Madness
+          - Needle Arm
+          - Never-Ending Nightmare
+          - Night Daze
           - Night Shade
+          - Night Slash
+          - Nightmare
+          - No Retreat
+          - Noble Roar
+          - Noxious Torque
+          - Nuzzle
+          - Oblivion Wing
+          - Obstruct
+          - Oceanic Operetta
+          - Octazooka
+          - Octolock
+          - Odor Sleuth
+          - Ominous Wind
+          - Order Up
+          - Origin Pulse
+          - Outrage
+          - Overdrive
+          - Overheat
+          - Pain Split
+          - Parabolic Charge
+          - Parting Shot
           - Pay Day
+          - Payback
           - Peck
+          - Perish Song
+          - Petal Blizzard
           - Petal Dance
+          - Phantom Force
+          - Photon Geyser
+          - Pika Papow
           - Pin Missile
+          - Plasma Fists
+          - Play Nice
+          - Play Rough
+          - Pluck
+          - Poison Fang
           - Poison Gas
+          - Poison Jab
           - Poison Powder
           - Poison Sting
+          - Poison Tail
+          - Pollen Puff
+          - Poltergeist
+          - Population Bomb
+          - Pounce
           - Pound
+          - Powder
+          - Powder Snow
+          - Power Gem
+          - Power Shift
+          - Power Split
+          - Power Swap
+          - Power Trick
+          - Power Trip
+          - Power Whip
+          - Power-Up Punch
+          - Precipice Blades
+          - Present
+          - Prismatic Laser
+          - Protect
           - Psybeam
+          - Psyblade
+          - Psych Up
           - Psychic
+          - Psychic Fangs
+          - Psychic Noise
+          - Psychic Terrain
+          - Psycho Boost
+          - Psycho Cut
+          - Psycho Shift
+          - Psyshield Bash
+          - Psyshock
+          - Psystrike
           - Psywave
+          - Pulverizing Pancake
+          - Punishment
+          - Purify
+          - Pursuit
+          - Pyro Ball
+          - Quash
           - Quick Attack
+          - Quick Guard
+          - Quiver Dance
           - Rage
+          - Rage Fist
+          - Rage Powder
+          - Raging Bull
+          - Raging Fury
+          - Rain Dance
+          - Rapid Spin
           - Razor Leaf
+          - Razor Shell
           - Razor Wind
           - Recover
+          - Recycle
           - Reflect
+          - Reflect Type
+          - Refresh
+          - Relic Song
           - Rest
+          - Retaliate
+          - Return
+          - Revelation Dance
+          - Revenge
+          - Reversal
+          - Revival Blessing
+          - Rising Voltage
           - Roar
+          - Roar of Time
+          - Rock Blast
+          - Rock Climb
+          - Rock Polish
           - Rock Slide
+          - Rock Smash
           - Rock Throw
+          - Rock Tomb
+          - Rock Wrecker
+          - Role Play
           - Rolling Kick
+          - Rollout
+          - Roost
+          - Rototiller
+          - Round
+          - Ruination
+          - Sacred Fire
+          - Sacred Sword
+          - Safeguard
+          - Salt Cure
           - Sand Attack
+          - Sand Tomb
+          - Sandsear Storm
+          - Sandstorm
+          - Sappy Seed
+          - Savage Spin-Out
+          - Scald
+          - Scale Shot
+          - Scary Face
+          - Scorching Sands
           - Scratch
           - Screech
+          - Searing Shot
+          - Searing Sunraze Smash
+          - Secret Power
+          - Secret Sword
+          - Seed Bomb
+          - Seed Flare
           - Seismic Toss
           - Self-Destruct
+          - Shadow Ball
+          - Shadow Bone
+          - Shadow Claw
+          - Shadow Force
+          - Shadow Punch
+          - Shadow Sneak
           - Sharpen
+          - Shattered Psyche
+          - Shed Tail
+          - Sheer Cold
+          - Shell Side Arm
+          - Shell Smash
+          - Shell Trap
+          - Shelter
+          - Shift Gear
+          - Shock Wave
+          - Shore Up
+          - Signal Beam
+          - Silk Trap
+          - Silver Wind
+          - Simple Beam
           - Sing
+          - Sinister Arrow Raid
+          - Sizzly Slide
+          - Sketch
+          - Skill Swap
+          - Skitter Smack
           - Skull Bash
           - Sky Attack
+          - Sky Drop
+          - Sky Uppercut
+          - Slack Off
           - Slam
           - Slash
           - Sleep Powder
+          - Sleep Talk
           - Sludge
+          - Sludge Bomb
+          - Sludge Wave
+          - Smack Down
+          - Smart Strike
+          - Smelling Salts
           - Smog
           - Smokescreen
+          - Snap Trap
+          - Snarl
+          - Snatch
+          - Snipe Shot
+          - Snore
+          - Snowscape
+          - Soak
           - Soft-Boiled
           - Solar Beam
+          - Solar Blade
           - Sonic Boom
+          - Soul-Stealing 7-Star Strike
+          - Spacial Rend
+          - Spark
+          - Sparkling Aria
+          - Sparkly Swirl
+          - Spectral Thief
+          - Speed Swap
+          - Spicy Extract
+          - Spider Web
           - Spike Cannon
+          - Spikes
+          - Spiky Shield
+          - Spin Out
+          - Spirit Break
+          - Spirit Shackle
+          - Spit Up
+          - Spite
           - Splash
+          - Splintered Stormshards
+          - Splishy Splash
           - Spore
+          - Spotlight
+          - Springtide Storm
+          - Stealth Rock
+          - Steam Eruption
+          - Steamroller
+          - Steel Beam
+          - Steel Roller
+          - Steel Wing
+          - Sticky Web
+          - Stockpile
+          - Stoked Sparksurfer
           - Stomp
+          - Stomping Tantrum
+          - Stone Axe
+          - Stone Edge
+          - Stored Power
+          - Storm Throw
+          - Strange Steam
           - Strength
+          - Strength Sap
           - String Shot
           - Struggle
+          - Struggle Bug
+          - Stuff Cheeks
           - Stun Spore
           - Submission
           - Substitute
+          - Subzero Slammer
+          - Sucker Punch
+          - Sunny Day
+          - Sunsteel Strike
           - Super Fang
+          - Superpower
           - Supersonic
+          - Supersonic Skystrike
           - Surf
+          - Surging Strikes
+          - Swagger
+          - Swallow
+          - Sweet Kiss
+          - Sweet Scent
           - Swift
+          - Switcheroo
           - Swords Dance
+          - Synchronoise
+          - Synthesis
+          - Syrup Bomb
+          - Tachyon Cutter
           - Tackle
+          - Tail Glow
+          - Tail Slap
           - Tail Whip
+          - Tailwind
           - Take Down
+          - Take Heart
+          - Tar Shot
+          - Taunt
+          - Tearful Look
+          - Teatime
+          - Techno Blast
+          - Tectonic Rage
+          - Teeter Dance
+          - Telekinesis
           - Teleport
+          - Tera Blast
+          - Terrain Pulse
+          - Thief
+          - Thousand Arrows
+          - Thousand Waves
           - Thrash
+          - Throat Chop
           - Thunder
+          - Thunder Cage
+          - Thunder Fang
           - Thunder Punch
           - Thunder Shock
           - Thunder Wave
           - Thunderbolt
+          - Thunderclap
+          - Thunderous Kick
+          - Tickle
+          - Tidy Up
+          - Topsy-Turvy
+          - Torch Song
+          - Torment
           - Toxic
+          - Toxic Spikes
+          - Toxic Thread
+          - Trailblaze
           - Transform
           - Tri Attack
+          - Trick
+          - Trick Room
+          - Trick-or-Treat
+          - Triple Arrows
+          - Triple Axel
+          - Triple Dive
+          - Triple Kick
+          - Trop Kick
+          - Trump Card
+          - Twin Beam
           - Twineedle
+          - Twinkle Tackle
+          - Twister
+          - U-turn
+          - Upper Hand
+          - Uproar
+          - V-create
+          - Vacuum Wave
+          - Veevee Volley
+          - Venom Drench
+          - Venoshock
           - Vice Grip
+          - Victory Dance
           - Vine Whip
+          - Vital Throw
+          - Volt Switch
+          - Volt Tackle
+          - Wake-Up Slap
           - Water Gun
+          - Water Pledge
+          - Water Pulse
+          - Water Shuriken
+          - Water Sport
+          - Water Spout
           - Waterfall
+          - Wave Crash
+          - Weather Ball
+          - Whirlpool
           - Whirlwind
+          - Wicked Blow
+          - Wicked Torque
+          - Wide Guard
+          - Wild Charge
+          - Wildbolt Storm
+          - Will-O-Wisp
           - Wing Attack
+          - Wish
           - Withdraw
+          - Wonder Room
+          - Wood Hammer
+          - Work Up
+          - Worry Seed
           - Wrap
+          - Wring Out
+          - X-Scissor
+          - Yawn
+          - Zap Cannon
+          - Zen Headbutt
+          - Zing Zap
+          - Zippy Zap
