@@ -1,6 +1,6 @@
 # Faker::PhoneNumber
 
-Phone numbers generate North American Numbering Plan formats. For different countries formats, see [Phone Numbers and Locales](#phone-number-and-locales).
+Phone numbers generate North American Numbering Plan formats (with +1 as the country code). For different countries formats, see [Phone Numbers and Locales](#phone-number-and-locales).
 
 ## Faker::PhoneNumber.phone_number
 
