@@ -1,4 +1,3 @@
-# encoding: utf-8
 es-AR:
   faker:
     name:
@@ -410,7 +409,7 @@ es-AR:
         - Yamila
         - Yanina
         - Zoe
-      neutral_first_name: ""
+      neutral_first_name: ''
       first_name:
         - "#{female_first_name}"
         - "#{male_first_name}"
@@ -693,10 +692,7 @@ es-AR:
       name_with_middle:
         - "#{female_first_name} #{female_first_name} #{last_name}"
         - "#{male_first_name} #{male_first_name} #{last_name}"
-
     address:
-      # -- city
-
       city_prefix:
         - Villa
         - Campo
@@ -1294,9 +1290,6 @@ es-AR:
         - "#{army_city_prefix} #{Name.last_name}"
         - "#{army_city_prefix} #{Name.last_name}"
         - "#{city_prefix} #{army_city_prefix} #{Name.last_name}"
-
-      # -- state
-
       state:
         - Buenos Aires
         - Ciudad Autónoma de Buenos Aires
@@ -1377,9 +1370,6 @@ es-AR:
         - "#{city}, #{state_abbr}"
         - "#{city} (#{state})"
         - "#{city} (#{state_abbr})"
-
-      # -- address
-
       building_number:
         - S/N
         - "##"
@@ -1387,17 +1377,17 @@ es-AR:
         - "####"
         - "#####"
       secondary_address:
-        - "Departamento #?"
-        - "Depto. #?"
-        - "Piso #"
-        - "Piso ##"
+        - 'Departamento #?'
+        - 'Depto. #?'
+        - 'Piso #'
+        - 'Piso ##'
         - PB
         - PA
-        - "Manzana ?#"
-        - "Lote #?"
-        - "Lote ##?"
-        - "UF N° #"
-        - "UF N° ##"
+        - Manzana ?#
+        - 'Lote #?'
+        - 'Lote ##?'
+        - 'UF N° #'
+        - 'UF N° ##'
       street:
         - 1° de Mayo
         - 12 de Octubre
@@ -1660,7 +1650,7 @@ es-AR:
         - Paseo
         - Peatonal
         - Camino
-      street_suffix: ""
+      street_suffix: ''
       street_name:
         - "#{street_prefix} #{street}"
         - "#{street}"
@@ -1668,17 +1658,17 @@ es-AR:
         - "#{street}"
         - "#{street}"
       road_prefix:
-        - "Camino a"
-        - "Acceso a"
+        - Camino a
+        - Acceso a
       road_suffix:
-        - "Km. #"
-        - "Km. ##"
-        - "Km. #,#"
-        - "Km. ##,#"
+        - 'Km. #'
+        - 'Km. ##'
+        - 'Km. #,#'
+        - 'Km. ##,#'
       road_name:
-        - "Ruta #"
-        - "Ruta ##"
-        - "Ruta ###"
+        - 'Ruta #'
+        - 'Ruta ##'
+        - 'Ruta ###'
       street_address:
         - "#{road_name}, #{road_suffix}"
         - "#{road_prefix} #{city}, #{road_suffix}"
@@ -1692,36 +1682,33 @@ es-AR:
         - "####"
         - "?####???"
       postcode_by_state:
-        BA: "B####???"
-        CABA: "C####???"
-        CA: "K####???"
-        CB: "X####???"
-        CR: "W####???"
-        CH: "H####???"
-        CT: "U####???"
-        ER: "E####???"
-        FO: "P####???"
-        JY: "Y####???"
-        LP: "L####???"
-        LR: "F####???"
-        MZ: "M####???"
-        MI: "N####???"
-        NQN: "Q####???"
-        RN: "R####???"
-        SA: "A####???"
-        SJ: "J####???"
-        SL: "D####???"
-        SC: "Z####???"
-        SF: "S####???"
-        SE: "G####???"
-        TU: "T####???"
-        TF: "V####???"
+        BA: B####???
+        CABA: C####???
+        CA: K####???
+        CB: X####???
+        CR: W####???
+        CH: H####???
+        CT: U####???
+        ER: E####???
+        FO: P####???
+        JY: Y####???
+        LP: L####???
+        LR: F####???
+        MZ: M####???
+        MI: N####???
+        NQN: Q####???
+        RN: R####???
+        SA: A####???
+        SJ: J####???
+        SL: D####???
+        SC: Z####???
+        SF: S####???
+        SE: G####???
+        TU: T####???
+        TF: V####???
       full_address:
         - "#{street_address}, (#{postcode}) #{city}, #{state}"
         - "#{street_address}, (#{postcode}) #{city}, #{state_abbr}"
-
-      # -- country
-
       country:
         - Afganistán
         - Albania
@@ -2144,7 +2131,7 @@ es-AR:
         NU: Niue
         NF: Isla Norfolk
         MP: Islas Marianas del Norte
-        "NO": Noruega
+        'NO': Noruega
         OM: Omán
         PK: Pakistpan
         PW: Palau
@@ -2397,7 +2384,7 @@ es-AR:
         niue: NU
         isla_norfolk: NF
         islas_marianas_del_norte: MP
-        noruega: NO
+        noruega: false
         oman: OM
         pakistpan: PK
         palau: PW
@@ -2480,9 +2467,10 @@ es-AR:
         yemen: YE
         zambia: ZM
         zimbabwe: ZW
-      default_country: [Argentina]
-      default_country_code: ["AR"]
-
+      default_country:
+        - Argentina
+      default_country_code:
+        - AR
     football:
       teams:
         - Acassuso
@@ -2572,54 +2560,54 @@ es-AR:
         - Villa Mitre
         - Villa San Carlos
       players:
-        - "Marcos 'Anguila' Gutiérrez"
-        - "Gustavo 'Cachete' Oberman"
-        - "Carlos 'El Chino' Luna"
-        - "Carlos 'Discoteca' Núñez"
-        - "Claudio 'El Mugre' Corvalán"
-        - "Fernando 'El Rifle' Pandolfi"
-        - "Jorge 'La Chancha' Rinaldi"
-        - "Gastón 'La Gata' Fernández"
-        - "Reinaldo 'Mostaza' Merlo"
-        - "Pablo 'El Payaso' Lugüercio"
-        - "César 'El Picante' Pereyra"
-        - "Fabián 'Poroto' Cubero"
-        - "Hernán 'El Sapito' Encina"
-        - "Sebastián 'Terremoto' Cejas"
-        - "Tomás 'El Trinche' Carlovich"
-        - "Nicolás 'Uvita' Fernández"
+        - Marcos 'Anguila' Gutiérrez
+        - Gustavo 'Cachete' Oberman
+        - Carlos 'El Chino' Luna
+        - Carlos 'Discoteca' Núñez
+        - Claudio 'El Mugre' Corvalán
+        - Fernando 'El Rifle' Pandolfi
+        - Jorge 'La Chancha' Rinaldi
+        - Gastón 'La Gata' Fernández
+        - Reinaldo 'Mostaza' Merlo
+        - Pablo 'El Payaso' Lugüercio
+        - César 'El Picante' Pereyra
+        - Fabián 'Poroto' Cubero
+        - Hernán 'El Sapito' Encina
+        - Sebastián 'Terremoto' Cejas
+        - Tomás 'El Trinche' Carlovich
+        - Nicolás 'Uvita' Fernández
         - Abel Balbo
         - Agustín Orión
-        - "Alberto 'Beto' Márcico"
+        - Alberto 'Beto' Márcico
         - Alberto Tarantini
         - Aldo Pedro Poy
         - Aldo Visconti
         - Alejandro Mancuso
-        - "Alfio 'Coco' Basile"
+        - Alfio 'Coco' Basile
         - Alfredo Rojas
-        - "Américo 'Tolo' Gallego"
+        - Américo 'Tolo' Gallego
         - Ángel Bargas
         - Ángel David Comizzo
-        - "Ángel 'Fideo' Di María"
+        - Ángel 'Fideo' Di María
         - Antonio Rattín
         - Antonio Roma
-        - "Ariel 'El Chino' Garcé"
-        - "Ariel 'El Burrito' Ortega"
+        - Ariel 'El Chino' Garcé
+        - Ariel 'El Burrito' Ortega
         - Augusto Fernández
         - Carlos Alfaro Moreno
         - Carlos Babington
         - Carlos Bianchi
         - Carlos Daniel Tapia
-        - "Carlos 'Lechuga' Roa"
+        - Carlos 'Lechuga' Roa
         - Carlos Squeo
         - Carlos Tévez
-        - "Carmelo 'Cholo' Simeone"
-        - "Claudio 'Bichi' Borghi"
+        - Carmelo 'Cholo' Simeone
+        - Claudio 'Bichi' Borghi
         - Claudio Caniggia
-        - "Claudio 'Turco' Husaín"
-        - "Claudio 'Piojo' López"
+        - Claudio 'Turco' Husaín
+        - Claudio 'Piojo' López
         - Clemente Rodríguez
-        - "Cristian 'El Kily' González"
+        - Cristian 'El Kily' González
         - Cristian Pavón
         - Daniel Bertoni
         - Daniel Carnevali
@@ -2630,37 +2618,37 @@ es-AR:
         - Diego Milito
         - Diego Placente
         - Diego Pozo
-        - "Diego 'Cholo' Simeone"
-        - "Edgardo 'Patón' Bauza"
-        - "Eduardo 'Toto' Salvio"
+        - Diego 'Cholo' Simeone
+        - Edgardo 'Patón' Bauza
+        - Eduardo 'Toto' Salvio
         - Enrique Chazarreta
-        - "Enrique 'Quique' Wolff"
+        - Enrique 'Quique' Wolff
         - Enzo Pérez
         - Ermindo Onega
-        - "Esteban 'Cuchu' Cambiasso"
+        - Esteban 'Cuchu' Cambiasso
         - Éver Banega
         - Ezequiel Garay
         - Ezequiel Lavezzi
         - Fabián Cancelarich
         - Fabricio Coloccini
         - Fernando Belluschi
-        - "Fernando 'El Negro' Cáceres"
+        - Fernando 'El Negro' Cáceres
         - Fernando Gago
         - Fernando Redondo
-        - "Francisco 'Pancho' Sa"
+        - Francisco 'Pancho' Sa
         - Franco Armani
         - Gabriel Batistuta
         - Gabriel Calderon
         - Gabriel Heinze
         - Gabriel Mercado
         - Gabriel Milito
-        - "Germán 'El Mono' Burgos"
+        - Germán 'El Mono' Burgos
         - Giovani Lo Celso
-        - "Gonzalo 'Pipita' Higuaín"
-        - "Gonzalo 'Pity' Martínez"
+        - Gonzalo 'Pipita' Higuaín
+        - Gonzalo 'Pity' Martínez
         - Guillermo Barros Schelotto
         - Guillermo Stábile
-        - "Héctor 'El Negro' Enrique"
+        - Héctor 'El Negro' Enrique
         - Héctor Yazalde
         - Hernán Crespo
         - Hernán Díaz
@@ -2670,7 +2658,7 @@ es-AR:
         - Javier Pastore
         - Javier Saviola
         - Javier Zanetti
-        - "Jonás 'El Galgo' Gutiérrez"
+        - Jonás 'El Galgo' Gutiérrez
         - Jorge Borelli
         - Jorge Burruchaga
         - Jorge Carrascosa
@@ -2679,19 +2667,19 @@ es-AR:
         - Jorge Valdano
         - José Basualdo
         - José Chamot
-        - "José 'Pepe' Chatruc"
+        - José 'Pepe' Chatruc
         - José Daniel Valencia
-        - "José Luis 'Tata' Brown"
+        - José Luis 'Tata' Brown
         - José Luis Cuciuffo
         - José Omar Pastoriza
         - José Serrizuela
-        - "Juan 'Pichi' Mercier"
+        - Juan 'Pichi' Mercier
         - Juan Pablo Sorín
         - Juan Román Riquelme
         - Juan Sebastián Verón
         - Juan Simón
-        - "Julio 'El Vasco' Olarticoechea"
-        - "Julio Ricardo 'El Jardinero' Cruz"
+        - Julio 'El Vasco' Olarticoechea
+        - Julio Ricardo 'El Jardinero' Cruz
         - Leandro Cufré
         - Leonardo Franco
         - Leonardo Astrada
@@ -2704,7 +2692,7 @@ es-AR:
         - "'Lucho' González"
         - Luis Artime
         - Luis Islas
-        - "Marcelo 'El Chelo' Delgado"
+        - Marcelo 'El Chelo' Delgado
         - Marcelo Gallardo
         - Marcelo Trobbiani
         - Marco Ruben
@@ -2719,18 +2707,18 @@ es-AR:
         - Mauro Laspada
         - Maxi Rodríguez
         - Miguel Ángel Brindisi
-        - "Miguel 'Pepé' Santoro"
+        - Miguel 'Pepé' Santoro
         - Nelson Vivas
         - Nereo Fernández
         - Nery Pumpido
         - Néstor Clausen
-        - "Néstor 'La Tota' Fabbri"
+        - Néstor 'La Tota' Fabbri
         - Néstor Ortigoza
         - Nicolás Burdisso
         - Nicolás Otamendi
         - Nicolás Tagliafico
-        - "Norberto 'Beto' Alonso"
-        - "Norberto 'El Gringo' Scoponi"
+        - Norberto 'Beto' Alonso
+        - Norberto 'El Gringo' Scoponi
         - Omar Larrosa
         - Oscar Garré
         - Oscar Ruggeri
@@ -2749,7 +2737,7 @@ es-AR:
         - Ricardo Bochini
         - Ricardo Giusti
         - Ricardo Villa
-        - "Roberto 'Pato' Abbondanzieri"
+        - Roberto 'Pato' Abbondanzieri
         - Roberto Ayala
         - Roberto Bonano
         - Roberto Perfumo
@@ -2757,10 +2745,10 @@ es-AR:
         - Rodrigo Palacio
         - Rolando Hugo Irusta
         - Rolando Schiavi
-        - "Sergio 'Kun' Agüero"
+        - Sergio 'Kun' Agüero
         - Sergio Almirón
-        - "Sergio 'Checho' Batista"
-        - "Sergio 'La Bruja' Berti"
+        - Sergio 'Checho' Batista
+        - Sergio 'La Bruja' Berti
         - Sergio Goycochea
         - Sergio Romero
         - Silvio Marzolini
@@ -2770,11 +2758,11 @@ es-AR:
         - Adolfo Pedernera
         - Alberto Pascutti
         - Alejandro Sabella
-        - "Alfio 'Coco' Basile"
+        - Alfio 'Coco' Basile
         - Alfredo Berti
         - Alfredo Di Stéfano
         - Alfredo Grelak
-        - "Américo 'Tolo' Gallego"
+        - Américo 'Tolo' Gallego
         - Ángel Cappa
         - Ángel Tulio Zof
         - Ariel Cuffaro Russo
@@ -2792,8 +2780,8 @@ es-AR:
         - Carlos Trullet
         - César Luis Menotti
         - "'El Chocho' Llop"
-        - "Claudio 'Bichi' Borghi"
-        - "Daniel 'El Indio' Bazán Vera"
+        - Claudio 'Bichi' Borghi
+        - Daniel 'El Indio' Bazán Vera
         - Daniel Bertoni
         - Daniel Oldrá
         - Daniel Passarella
@@ -2805,20 +2793,20 @@ es-AR:
         - Diego Monarriz
         - Diego Osella
         - Diego Simeone
-        - "Edgardo 'Patón' Bauza"
-        - "Eduardo 'Toto' Berizzo"
-        - "Eduardo 'Chacho' Coudet"
+        - Edgardo 'Patón' Bauza
+        - Eduardo 'Toto' Berizzo
+        - Eduardo 'Chacho' Coudet
         - Eduardo Domínguez
         - Eduardo Luján Manera
         - Facundo Sava
         - Fernando Gamboa
-        - "Fernando 'Teté' Quiroz"
-        - "Francisco 'Pancho' Ferraro"
+        - Fernando 'Teté' Quiroz
+        - Francisco 'Pancho' Ferraro
         - Frank Darío Kudelka
         - Gabriel Heinze
         - Gabriel Milito
         - Gabriel Schürrer
-        - "Gerardo 'Tata' Martino"
+        - Gerardo 'Tata' Martino
         - Guillermo Barros Schelotto
         - Guillermo Stábile
         - Gustavo Alfaro
@@ -2827,11 +2815,11 @@ es-AR:
         - Gustavo 'El Sapito' Coleoni
         - Gustavo Quinteros
         - Héctor Cúper
-        - "Héctor 'El Chulo' Rivoira"
-        - "Héctor 'El Bambino' Veira"
+        - Héctor 'El Chulo' Rivoira
+        - Héctor 'El Bambino' Veira
         - Helenio Herrera
         - Hernán Crespo
-        - "Hernán Darío 'El Indio' Ortiz"
+        - Hernán Darío 'El Indio' Ortiz
         - Hugo Tocalli
         - Humberto Maschio
         - Jaime Sarlanga
@@ -2840,7 +2828,7 @@ es-AR:
         - Jorge Sampaoli
         - Jorge Solari
         - Jorge Valdano
-        - "Jorge 'El Flaco' Vivaldo"
+        - Jorge 'El Flaco' Vivaldo
         - José D'Amico
         - José María 'El Chaucha' Bianco
         - José María Minella
@@ -2879,14 +2867,14 @@ es-AR:
         - Nery Pumpido
         - Néstor Apuzzo
         - Néstor Craviotto
-        - "Néstor 'Pipo' Gorosito"
+        - Néstor 'Pipo' Gorosito
         - Omar De Felippe
         - Omar Labruna
         - Omar Sívori
         - Oscar Malbernat
         - Oscar Ruggeri
         - Osvaldo Piazza
-        - "Osvaldo 'Chiche' Sosa"
+        - Osvaldo 'Chiche' Sosa
         - Osvaldo Zubeldía
         - Pablo Guede
         - Pablo Marini
@@ -2896,7 +2884,7 @@ es-AR:
         - Pedro Troglio
         - Ramón Cabrero
         - Ramón Díaz
-        - "Reinaldo 'Mostaza' Merlo"
+        - Reinaldo 'Mostaza' Merlo
         - Renato Cesarini
         - Ricardo Caruso Lombardi
         - Ricardo Gareca
@@ -2913,50 +2901,50 @@ es-AR:
         - Rubén Forestello
         - Salvador Pasini
         - Sebastián Beccacece
-        - "Sebastián 'El Gallego' Méndez"
+        - Sebastián 'El Gallego' Méndez
         - Sergio Batista
-        - "Sergio 'El Huevo' Rondina"
+        - Sergio 'El Huevo' Rondina
         - Silvio Marzolini
         - Vladislao Cap
         - Walter Lemma
         - Walter Otta
         - Wálter Perazzo
       competitions:
-        - "Copa Mundial de Fútbol"
-        - "Copa América"
-        - "Sudamericano Sub-20"
-        - "Copa Libertadores"
-        - "Copa Sudamericana"
-        - "Mundial de Clubes"
-        - "Copa Suruga Bank"
-        - "Copa África"
-        - "Copa de Oro de la Concacaf"
-        - "Copa Asiática"
-        - "Eurocopa"
-        - "Liga de Campeones de África"
-        - "Liga de Campeones de Asia"
-        - "Liga de Campeones de la Concacaf"
-        - "UEFA Champions League"
-        - "UEFA Europa League"
-        - "Supercopa de Europa"
-        - "Recopa Sudamericana"
-        - "Superliga Argentina"
-        - "Copa Diego Armando Maradona"
-        - "Torneo Apertura"
-        - "Torneo Clausura"
-        - "Primera División Argentina"
-        - "Primera Nacional"
-        - "Primera B Metropolitana"
-        - "Primera C"
-        - "Primera D"
-        - "Federal A"
-        - "Federal B"
-        - "Copa Argentina"
-        - "Supercopa Argentina"
-        - "Copa de la Liga Profesional"
-        - "Copa del Bicentenario"
-        - "Copa de la Superliga"
-        - "Trofeo de Campeones de la Superliga"
+        - Copa Mundial de Fútbol
+        - Copa América
+        - Sudamericano Sub-20
+        - Copa Libertadores
+        - Copa Sudamericana
+        - Mundial de Clubes
+        - Copa Suruga Bank
+        - Copa África
+        - Copa de Oro de la Concacaf
+        - Copa Asiática
+        - Eurocopa
+        - Liga de Campeones de África
+        - Liga de Campeones de Asia
+        - Liga de Campeones de la Concacaf
+        - UEFA Champions League
+        - UEFA Europa League
+        - Supercopa de Europa
+        - Recopa Sudamericana
+        - Superliga Argentina
+        - Copa Diego Armando Maradona
+        - Torneo Apertura
+        - Torneo Clausura
+        - Primera División Argentina
+        - Primera Nacional
+        - Primera B Metropolitana
+        - Primera C
+        - Primera D
+        - Federal A
+        - Federal B
+        - Copa Argentina
+        - Supercopa Argentina
+        - Copa de la Liga Profesional
+        - Copa del Bicentenario
+        - Copa de la Superliga
+        - Trofeo de Campeones de la Superliga
       positions:
         - Arquero
         - Defensor
@@ -2964,13 +2952,13 @@ es-AR:
         - Delantero
         - Lateral
         - Central
-        - "4"
-        - "2"
-        - "6"
-        - "3"
-        - "5"
+        - '4'
+        - '2'
+        - '6'
+        - '3'
+        - '5'
         - Doble 5
-        - "8"
+        - '8'
         - Lateral Izquierdo
         - Lateral Derecho
         - Central por la Izquierda
@@ -2980,12 +2968,12 @@ es-AR:
         - 5 de Quite
         - 5 de Juego
         - 5 Habilidoso
-        - "7"
+        - '7'
         - Volante por la Derecha
         - Volante por la Izquierda
-        - "10"
-        - "9"
-        - "11"
+        - '10'
+        - '9'
+        - '11'
         - Delantero Salidor
         - Delantero Centro
         - Enganche
@@ -2998,7 +2986,6 @@ es-AR:
         - Wing Derecho
         - Doble 9
         - 9 retrasado
-
     basketball:
       teams:
         - 9 de Julio de Río Tercero
@@ -3072,14 +3059,14 @@ es-AR:
       players:
         - Manu Ginóbili
         - Luis Scola
-        - "Andrés 'Chapu' Nocioni"
+        - Andrés 'Chapu' Nocioni
         - Pablo Prigioni
         - Fabricio Oberto
-        - "Juan Ignacio 'Pepe' Sánchez"
+        - Juan Ignacio 'Pepe' Sánchez
         - Walter Herrman
         - Carlos Delfino
         - Marcelo Milanesio
-        - "Héctor 'Pichi' Campana"
+        - Héctor 'Pichi' Campana
         - Oscar Furlong
         - Alejandro Montecchia
         - Hugo Sconochini
@@ -3144,7 +3131,6 @@ es-AR:
         - Alero
         - Ala-Pivot
         - Pivot
-
     team:
       sport:
         - fútbol
@@ -3198,7 +3184,6 @@ es-AR:
       name:
         - "#{team_prefix} #{Address.city}"
         - "#{Address.city} #{team_suffix}"
-
     military:
       army_rank:
         - Teniente General
@@ -3222,7 +3207,7 @@ es-AR:
         - Voluntario de Primera
         - Voluntario de Segunda
         - Voluntario de Segunda Comisión
-      marines_rank: ""
+      marines_rank: ''
       navy_rank:
         - Almirante
         - Vicealmirante
@@ -3284,8 +3269,7 @@ es-AR:
         - Cabo
         - Voluntario de Primera
         - Voluntario de Segunda
-      space_force_rank: ""
-
+      space_force_rank: ''
     compass:
       cardinal:
         word:
@@ -3294,7 +3278,7 @@ es-AR:
           - sur
           - oeste
         abbreviation:
-          - "N"
+          - N
           - E
           - S
           - O
@@ -3308,7 +3292,7 @@ es-AR:
           - NE
           - SE
           - SO
-          - "NO"
+          - 'NO'
       half-wind:
         word:
           - nornoreste
@@ -3363,9 +3347,9 @@ es-AR:
           - NOpO
           - NOpN
           - NpNO
-
     phone_number:
-      country_code: ["54"]
+      country_code:
+        - '54'
       formats:
         - "(011) 4### ####"
         - "(02##) 4##-####"
@@ -3380,23 +3364,22 @@ es-AR:
         - "(011) 6### ####"
     cell_phone:
       formats:
-        - "11-4###-####"
-        - "2## 4##-####"
-        - "3## 4##-####"
-        - "2### 4#####"
-        - "3### 4#####"
-        - "11-5###-####"
-        - "2## 5##-####"
-        - "3## 5##-####"
-        - "2### 5#####"
-        - "3### 5#####"
-        - "11-6###-####"
-        - "2## 6##-####"
-        - "3## 6##-####"
-        - "2### 6#####"
-        - "3### 6#####"
-        - "11-7###-####"
-
+        - 11-4###-####
+        - 2## 4##-####
+        - 3## 4##-####
+        - 2### 4#####
+        - 3### 4#####
+        - 11-5###-####
+        - 2## 5##-####
+        - 3## 5##-####
+        - 2### 5#####
+        - 3### 5#####
+        - 11-6###-####
+        - 2## 6##-####
+        - 3## 6##-####
+        - 2### 6#####
+        - 3### 6#####
+        - 11-7###-####
     bank:
       name:
         - Banco Galicia
@@ -3442,7 +3425,6 @@ es-AR:
         - Wilobank
         - Nuevo Banco de Entre Ríos
         - Banco Columbia
-
     color:
       name:
         - aguamarina
@@ -3511,7 +3493,6 @@ es-AR:
         - violeta
         - zafiro
         - zanahoria
-
     currency:
       name:
         - Afgani afgano
@@ -3666,9 +3647,7 @@ es-AR:
         - Yen japonés
         - Yuan chino
         - Złoty polaco
-
     nation:
-      # This list is taken from https://es.wikipedia.org/wiki/Anexo:Gentilicios
       nationality:
         - afgano
         - albanés
@@ -3908,7 +3887,6 @@ es-AR:
         - yibutiano
         - zambiano
         - zimbabuense
-      # This list is taken from https://es.wikipedia.org/wiki/Anexo:Gentilicios
       capital_city:
         - Abiyán
         - Abu Dabi
@@ -4148,8 +4126,6 @@ es-AR:
         - Yibuti
         - Yuba
         - Zagreb
-      # This list is taken from https://es.wikipedia.org/wiki/Anexo:Idiomas_por_el_total_de_hablantes
-      # Spanish languages added to that list
       language:
         - Alemán​
         - Amárico​
@@ -4192,7 +4168,6 @@ es-AR:
         - Urdu​
         - Valenciano
         - Vietnamita​
-
     company:
       prefix:
         - Grupo
@@ -4203,175 +4178,169 @@ es-AR:
         - SRL
         - Group
       bs:
-        - [
-            "implementar",
-            "utilizar",
-            "integrar",
-            "aerodinamizar",
-            "optimizar",
-            "evolucionar",
-            "transformar",
-            "adoptar",
-            "habilitar",
-            "orquestrar",
-            "apalancar",
-            "reinventar",
-            "sumar",
-            "arquitectar",
-            "realzar",
-            "incentivar",
-            "mutar",
-            "empoderar",
-            "visualizar",
-            "monetizar",
-            "aprovechar",
-            "facilitar",
-            "sujetar",
-            "desintermediar",
-            "sinergizar",
-            "estrategizar",
-            "desplegar",
-            "marcar",
-            "crecer",
-            "apuntar",
-            "vender",
-            "sintetizar",
-            "entregar",
-            "interconectar",
-            "incubar",
-            "involucrar",
-            "maximizar",
-            "comparar",
-            "expedir",
-            "reintermediar",
-            "diagramar",
-            "visualizar",
-            "reconvertir",
-            "innovar",
-            "escalar",
-            "desatar",
-            "impulsar",
-            "extender",
-            "construir",
-            "revolucionar",
-            "generar",
-            "explotar",
-            "transicionar",
-            "habilitar digitalmente",
-            "iterar",
-            "cultivar",
-            "conglomerar",
-            "productizar",
-            "redefinir",
-            "recontextualizar",
-          ]
-        - [
-            "la fisicalidad",
-            "el valor agregado",
-            "la verticalidad",
-            "la proactividad",
-            "la robustez",
-            "la revolucionaridad",
-            "la escalabilidad",
-            "la modernidad",
-            "la innovación",
-            "la intuitividad",
-            "la estrategicidad",
-            "el desarrollo comercial web",
-            "la cualidad crítica de las misiones",
-            "la adherencia",
-            "la individualidad",
-            "la disponibilidad 24/7",
-            "la disponibilidad punta a punta",
-            "la globalidad",
-            "la conexión negocio a negocios",
-            "la conexión negocio a cliente",
-            "la granularidad",
-            "la falta de fricción",
-            "la virtualidad",
-            "la viralidad",
-            "el dinamismo",
-            "la disponibilidad 24/365",
-            "la ejemplaridad",
-            "la superioridad",
-            "el magnetismo",
-            "el atractivo",
-            "la performance en el back-end",
-            "la simultaneidad",
-            "la eficiecia",
-            "la performance en el front-end",
-            "la distributividad",
-            "la continuidad",
-            "la extensibilidad",
-            "la preconfiguración",
-            "la clase mundial",
-            "la apertura",
-            "la interoperabilidad",
-            "la disponibilidad mediática",
-            "la originalidad",
-            "la cualidad empresarial",
-            "la integración",
-            "el impacto",
-            "la libertad",
-            "la transparencia",
-            "la cualidad de avanzada",
-            "la tecnología de punta",
-            "la experiencia centrada en el usuario",
-            "la visión",
-            "la adaptabilidad",
-            "la presencia contínua",
-            "la rápidez",
-            "la colaboratividad",
-            "la persuasión",
-            "la integralidad",
-            "la riqueza",
-          ]
-        - [
-            "de las sinergias",
-            "de la disposición web",
-            "de los paradigmas",
-            "de los mercados",
-            "de las sociedades",
-            "de las infraestructuras",
-            "de las plataformas",
-            "de las iniciativas",
-            "de los canales",
-            "de las visiones",
-            "de las comunidades",
-            "de los retornos",
-            "de las soluciones",
-            "de las ventas digiales",
-            "de los servicios digitales",
-            "de los puntos de acción",
-            "de los portales",
-            "de los nichos",
-            "de las tecnologías",
-            "de los contenidos",
-            "de los portales virtuales",
-            "de las cadenas de abastecimiento",
-            "de la convergencia",
-            "de las relaciones",
-            "de las arquitecturas",
-            "de las interfaces",
-            "de los mercados digitales",
-            "de el comercio digital",
-            "de los sistemas",
-            "de el ancho de banda",
-            "de los intermediarios",
-            "de los modelos",
-            "de el mindshare",
-            "de las entregas",
-            "de los usuarios",
-            "de los esquemas",
-            "de las redes",
-            "de las aplicaciones",
-            "de las métricas",
-            "de los negocios digitales",
-            "de las funcionalidades",
-            "de las experiencias",
-            "de los servicios web",
-            "de las metodologías",
-          ]
+        - - implementar
+          - utilizar
+          - integrar
+          - aerodinamizar
+          - optimizar
+          - evolucionar
+          - transformar
+          - adoptar
+          - habilitar
+          - orquestrar
+          - apalancar
+          - reinventar
+          - sumar
+          - arquitectar
+          - realzar
+          - incentivar
+          - mutar
+          - empoderar
+          - visualizar
+          - monetizar
+          - aprovechar
+          - facilitar
+          - sujetar
+          - desintermediar
+          - sinergizar
+          - estrategizar
+          - desplegar
+          - marcar
+          - crecer
+          - apuntar
+          - vender
+          - sintetizar
+          - entregar
+          - interconectar
+          - incubar
+          - involucrar
+          - maximizar
+          - comparar
+          - expedir
+          - reintermediar
+          - diagramar
+          - visualizar
+          - reconvertir
+          - innovar
+          - escalar
+          - desatar
+          - impulsar
+          - extender
+          - construir
+          - revolucionar
+          - generar
+          - explotar
+          - transicionar
+          - habilitar digitalmente
+          - iterar
+          - cultivar
+          - conglomerar
+          - productizar
+          - redefinir
+          - recontextualizar
+        - - la fisicalidad
+          - el valor agregado
+          - la verticalidad
+          - la proactividad
+          - la robustez
+          - la revolucionaridad
+          - la escalabilidad
+          - la modernidad
+          - la innovación
+          - la intuitividad
+          - la estrategicidad
+          - el desarrollo comercial web
+          - la cualidad crítica de las misiones
+          - la adherencia
+          - la individualidad
+          - la disponibilidad 24/7
+          - la disponibilidad punta a punta
+          - la globalidad
+          - la conexión negocio a negocios
+          - la conexión negocio a cliente
+          - la granularidad
+          - la falta de fricción
+          - la virtualidad
+          - la viralidad
+          - el dinamismo
+          - la disponibilidad 24/365
+          - la ejemplaridad
+          - la superioridad
+          - el magnetismo
+          - el atractivo
+          - la performance en el back-end
+          - la simultaneidad
+          - la eficiecia
+          - la performance en el front-end
+          - la distributividad
+          - la continuidad
+          - la extensibilidad
+          - la preconfiguración
+          - la clase mundial
+          - la apertura
+          - la interoperabilidad
+          - la disponibilidad mediática
+          - la originalidad
+          - la cualidad empresarial
+          - la integración
+          - el impacto
+          - la libertad
+          - la transparencia
+          - la cualidad de avanzada
+          - la tecnología de punta
+          - la experiencia centrada en el usuario
+          - la visión
+          - la adaptabilidad
+          - la presencia contínua
+          - la rápidez
+          - la colaboratividad
+          - la persuasión
+          - la integralidad
+          - la riqueza
+        - - de las sinergias
+          - de la disposición web
+          - de los paradigmas
+          - de los mercados
+          - de las sociedades
+          - de las infraestructuras
+          - de las plataformas
+          - de las iniciativas
+          - de los canales
+          - de las visiones
+          - de las comunidades
+          - de los retornos
+          - de las soluciones
+          - de las ventas digiales
+          - de los servicios digitales
+          - de los puntos de acción
+          - de los portales
+          - de los nichos
+          - de las tecnologías
+          - de los contenidos
+          - de los portales virtuales
+          - de las cadenas de abastecimiento
+          - de la convergencia
+          - de las relaciones
+          - de las arquitecturas
+          - de las interfaces
+          - de los mercados digitales
+          - de el comercio digital
+          - de los sistemas
+          - de el ancho de banda
+          - de los intermediarios
+          - de los modelos
+          - de el mindshare
+          - de las entregas
+          - de los usuarios
+          - de los esquemas
+          - de las redes
+          - de las aplicaciones
+          - de las métricas
+          - de los negocios digitales
+          - de las funcionalidades
+          - de las experiencias
+          - de los servicios web
+          - de las metodologías
       name:
         - "#{prefix} #{Name.last_name}"
         - "#{Name.last_name} #{suffix}"
