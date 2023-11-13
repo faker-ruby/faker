@@ -22,7 +22,7 @@ class TestHyLocale < Test::Unit::TestCase
     assert_equal 'ք.', Faker::Address.city_prefix
     assert_kind_of String, Faker::Address.village
     assert_equal 'գ.', Faker::Address.village_prefix
-    assert_includes %w[1-374 374], Faker::Address.country_code
+    assert_equal '+374', Faker::PhoneNumber.country_code
     assert Faker::Address.zip_code.start_with?('0', '1', '2', '3', '4')
     assert Faker::Address.zip(state_abbreviation: 'ԱԳ').start_with?('02', '03', '04', '05')
     assert Faker::Address.zip(state_abbreviation: 'ԱՐ').start_with?('06', '07', '08')

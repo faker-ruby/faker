@@ -1,3 +1,5 @@
 fr:
   faker:
-    country_code: ['33']
+    phone_number:
+      country_code:
+        - '33'
