@@ -464,6 +464,61 @@ module Faker
         fetch('company.sic_code')
       end
 
+      ##
+      # Get a random Indian Goods and Services Tax (GST) number.
+      # For more on Indian tax number here:
+      # https://simple.wikipedia.org/wiki/GSTIN
+      # @params state code [String] Any state code.
+      #
+      # @return [String]
+      # @example
+      #   Faker::Company.indian_gst_number #=> "15VQPNZ2126J2ZU"
+      #   Faker::Company.indian_gst_number(state_code: "22") #=> "22ZVWEY6632K0ZN"
+      #
+      # @faker.version 3.2.1
+      def indian_gst_number(state_code: nil)
+        # Check if state code is valid
+        state_code_ranges = [('02'..'38'), ['98']]
+        if state_code && !(state_code_ranges[0].include?(state_code) || state_code == '98')
+          raise ArgumentError, 'state code must be in a range of 02 to 38 or 98'
+        end
+
+        PositionalGenerator.new(:string) do |gen|
+          # Generate a state code if not given
+          if state_code
+            gen.lit(state_code, name: :state_code_param)
+          else
+            gen.letter(name: :state_code_param, length: 1, ranges: state_code_ranges)
+          end
+
+          # Construct taxpayer number
+          gen.group(name: :taxpayer_number) do |g_|
+            g_.letter(length: 3, ranges: ['A'..'Z'])
+            g_.letter(length: 1, ranges: [%w[A B C F G H L J P T K]].to_a)
+            g_.letter(length: 1, ranges: ['A'..'Z'])
+            g_.int(length: 4, ranges: [0..9999])
+            g_.letter(length: 1, ranges: ['A'..'Z'])
+          end
+
+          gen.int(name: :registration_number, length: 1, ranges: [0..9])
+
+          gen.letter(name: :z_char, length: 1, ranges: [['Z']])
+
+          gen.computed(deps: %i[state_code_param taxpayer_number registration_number]) do |state_code_param, taxpayer_number, registration_number|
+            gst_base = "#{state_code_param}#{taxpayer_number}#{registration_number}"
+            chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.chars
+            values = gst_base.chars
+            sum = values.map.with_index do |char, index|
+              product = chars.index(char) * (index.odd? ? 2 : 1)
+              (product / chars.length).floor + (product % chars.length)
+            end.reduce(:+)
+
+            checksum = (chars.length - (sum % chars.length)) % chars.length
+            chars[checksum]
+          end
+        end.generate
+      end
+
       private
 
       # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb
@@ -604,6 +659,19 @@ module Faker
         return result if result < 10
 
         result.to_s[0].to_i + result.to_s[1].to_i
+      end
+
+      def calculate_gst_checksum(state_code, taxpayer_number, registration_number)
+        gst_base = "#{state_code}#{taxpayer_number}#{registration_number}"
+        chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.chars
+        values = gst_base.upcase.chars
+        sum = values.map.with_index do |char, index|
+          product = chars.index(char) * (index.odd? ? 2 : 1)
+          (product / chars.length).floor + (product % chars.length)
+        end.reduce(:+)
+
+        checksum = (chars.length - (sum % chars.length)) % chars.length
+        chars[checksum]
       end
     end
   end
