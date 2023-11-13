@@ -1,24 +1,21 @@
 # frozen_string_literal: true
 
 module Faker
-  class Show < Base
+  class Theater < Base
     class << self
-      extend Gem::Deprecate
       ##
       # Produces the name of a musical for an older audience
       #
       # @return [String]
       #
       # @example
-      #   Faker::Alphanumeric.alpha
+      #   Faker::Theater.adult_musical
       #     #=> "West Side Story"
       #
       # @faker.version 2.13.0
       def adult_musical
-        fetch('musical.adult_musical')
+        fetch('theater.adult_musical')
       end
-
-      deprecate :adult_musical, 'Faker::Theater.adult_musical', 2024, 02
 
       ##
       # Produces the name of a musical for a younger audience
@@ -26,15 +23,13 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Alphanumeric.alpha
+      #   Faker::Theater.kids_musical
       #     #=> "Into the Woods JR."
       #
       # @faker.version 2.13.0
       def kids_musical
-        fetch('musical.kids_musical')
+        fetch('theater.kids_musical')
       end
-
-      deprecate :kids_musical, 'Faker::Theater.kids_musical', 2024, 02
 
       ##
       # Produces the name of a play
@@ -42,15 +37,13 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Alphanumeric.alpha
+      #   Faker::Theater.play
       #     #=> "Death of a Salesman"
       #
       # @faker.version 2.13.0
       def play
-        fetch('musical.play')
+        fetch('theater.play')
       end
-
-      deprecate :play, 'Faker::Theater.play', 2024, 02
     end
   end
 end
