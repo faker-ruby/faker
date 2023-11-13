@@ -96,7 +96,7 @@ Faker::PhoneNumber.extension(length: 2) => "37"
 
 ## Phone Number and Locales
 
-If no locale is set, Faker generates North American Numbering Plan formats. For more accurate values when generating US or CA formats, it's
+If no locale is set, Faker generates North American Numbering Plan formats (with +1 area code). For more accurate values when generating US or CA formats, it's
 recommended to set their locales accordingly:
 
 ```ruby
