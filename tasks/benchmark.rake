@@ -7,8 +7,8 @@ require 'faker'
 
 desc 'Benchmarking every Faker generator'
 task :benchmark do
-  count = BenchmarkHelper.all_methods.count
   all_methods = BenchmarkHelper.all_methods
+  count = all_methods.count
 
   Benchmark.bmbm do |x|
     x.report("Number of generators: #{count}") do
