@@ -15,7 +15,6 @@ module Faker
     ].each(&:freeze).freeze
 
     class << self
-
       ##
       # Returns the email address
       #
