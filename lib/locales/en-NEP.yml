@@ -205,11 +205,6 @@ en-NEP:
       default_country:
         - Nepal
     internet:
-      free_email:
-        - worldlink.com.np
-        - gmail.com
-        - yahoo.com
-        - hotmail.com
       domain_suffix:
         - np
         - com

@@ -355,14 +355,6 @@ uk:
       default_country_code:
         - UA
     internet:
-      free_email:
-        - ukr.net
-        - ex.ua
-        - e-mail.ua
-        - i.ua
-        - meta.ua
-        - yandex.ua
-        - gmail.com
       domain_suffix:
         - cherkassy.ua
         - cherkasy.ua

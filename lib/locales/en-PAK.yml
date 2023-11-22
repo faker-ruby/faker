@@ -350,10 +350,6 @@ en-PAK:
       default_country_code:
         - PK
     internet:
-      free_email:
-        - gmail.com
-        - yahoo.com
-        - hotmail.com
       domain_suffix:
         - pk
         - com

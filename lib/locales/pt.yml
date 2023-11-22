@@ -459,12 +459,6 @@ pt:
         - "#{Name.last_name}-#{Name.last_name}"
         - "#{Name.last_name}, #{Name.last_name} e #{Name.last_name}"
     internet:
-      free_email:
-        - gmail.com
-        - yahoo.com
-        - hotmail.com
-        - live.com
-        - bol.com.br
       domain_suffix:
         - pt
         - com
