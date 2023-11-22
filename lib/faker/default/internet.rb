@@ -15,7 +15,6 @@ module Faker
     ].each(&:freeze).freeze
 
     class << self
-      extend Gem::Deprecate
 
       ##
       # Returns the email address
