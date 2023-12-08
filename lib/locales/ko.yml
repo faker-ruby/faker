@@ -111,7 +111,6 @@ ko:
       binary_types: ['여성', '남성']
 
     internet:
-      free_email: [gmail.com, yahoo.co.kr, hanmail.net, naver.com]
       domain_suffix: [co.kr, com, biz, info, ne.kr, net, or.kr, org]
 
     lorem:

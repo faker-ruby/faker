@@ -2290,14 +2290,6 @@ hy:
         - սանտիլիտր
         - լիտր
     internet:
-      free_email:
-        - freenet.am
-        - namag.net
-        - yandex.ru
-        - mail.ru
-        - gmail.com
-        - yahoo.com
-        - hotmail.com
       domain_suffix:
         - am
         - com

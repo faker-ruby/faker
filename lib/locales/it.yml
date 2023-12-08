@@ -845,13 +845,6 @@ it:
         - "#{Name.last_name}-#{Name.last_name} #{suffix}"
         - "#{Name.last_name}, #{Name.last_name} e #{Name.last_name} #{suffix}"
     internet:
-      free_email:
-        - gmail.com
-        - yahoo.com
-        - hotmail.com
-        - email.it
-        - libero.it
-        - yahoo.it
       domain_suffix:
         - com
         - com

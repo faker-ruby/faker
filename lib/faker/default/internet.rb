@@ -15,8 +15,6 @@ module Faker
     ].each(&:freeze).freeze
 
     class << self
-      extend Gem::Deprecate
-
       ##
       # Returns the email address
       #
@@ -49,42 +47,6 @@ module Faker
 
         construct_email(sanitized_local_part, generate_domain)
       end
-
-      ##
-      # Returns the email address with domain either gmail.com, yahoo.com or hotmail.com
-      #
-      # @return [String]
-      #
-      # @param name [String]
-      #
-      # @example
-      #   Faker::Internet.free_email                                                           #=> "samsmith@gmail.com"
-      #   Faker::Internet.free_email(name: 'smith')                                            #=> "smith@yahoo.com"
-      def free_email(name: nil)
-        construct_email(
-          sanitize_email_local_part(username(specifier: name)),
-          fetch('internet.free_email')
-        )
-      end
-      deprecate :free_email, :email, 2023, 10
-
-      ##
-      # Returns the email address with fixed domain name as 'example'
-      #
-      # @return [String]
-      #
-      # @param name [String]
-      #
-      # @example
-      #   Faker::Internet.safe_email                                                           #=> "samsmith@example.com"
-      #   Faker::Internet.safe_email(name: 'smith')                                            #=> "smith@example.net"
-      def safe_email(name: nil)
-        construct_email(
-          sanitize_email_local_part(username(specifier: name)),
-          "example.#{sample(%w[org com net])}"
-        )
-      end
-      deprecate :safe_email, :email, 2023, 10
 
       ##
       # Returns the username

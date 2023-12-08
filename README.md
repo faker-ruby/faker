@@ -427,7 +427,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 <details>
   <summary>Sports</summary>
 
-  - [Faker::Sports](doc/sports/sports.md)
+  - [Faker::Sport](doc/sports/sport.md)
   - [Faker::Sports::Basketball](doc/sports/basketball.md)
   - [Faker::Sports::Chess](doc/sports/chess.md)
   - [Faker::Sports::Football](doc/sports/football.md)

@@ -3505,14 +3505,6 @@ de-CH:
         - "#{half_wind_azimuth}"
         - "#{quarter_wind_azimuth}"
     internet:
-      free_email:
-        - gmail.com
-        - yahoo.com
-        - hotmail.com
-        - gmx.de
-        - web.de
-        - mail.de
-        - freenet.de
       domain_suffix:
         - ch
         - com

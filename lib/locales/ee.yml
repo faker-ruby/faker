@@ -36,7 +36,6 @@ ee:
         - "#{suffix} #{Name.last_name}"
 
     internet:
-      free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, com.ee, ee, net, org]
 
     name:

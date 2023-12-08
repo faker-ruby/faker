@@ -13,10 +13,6 @@ en:
       safe_domain_suffix:
         - example
         - test
-      free_email:
-        - gmail.com
-        - yahoo.com
-        - hotmail.com
       slug:
         - report
         - appointment

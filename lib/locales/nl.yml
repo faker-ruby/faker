@@ -53,7 +53,6 @@ nl:
       suffix: [BV, V.O.F., Group, en Zonen]
 
     internet:
-      free_email: [gmail.com, yahoo.com, hotmail.nl, live.nl, outlook.com, kpnmail.nl]
       domain_suffix: [nl, com, net, org]
 
     lorem:

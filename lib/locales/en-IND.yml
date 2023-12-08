@@ -1241,10 +1241,6 @@ en-IND:
       default_country_code:
         - IN
     internet:
-      free_email:
-        - gmail.com
-        - yahoo.co.in
-        - hotmail.com
       domain_suffix:
         - in
         - com
