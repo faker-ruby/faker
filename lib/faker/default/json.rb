@@ -71,7 +71,7 @@ module Faker
         options[:value] = "Faker::#{options[:value]}"
 
         hash = JSON.parse(json)
-        hash.each do |key, _|
+        hash.each_key do |key|
           add_hash_to_bottom(hash, [key], width, options)
         end
         JSON.generate(hash)
@@ -93,7 +93,7 @@ module Faker
       def add_hash_to_bottom(hash, key_array, width, options)
         key_string = build_keys_from_array(key_array)
         if eval("hash#{key_string}").is_a?(::Hash)
-          eval("hash#{key_string}").each do |key, _|
+          eval("hash#{key_string}").each_key do |key|
             key_array << key
             add_hash_to_bottom(hash, key_array, width, options)
           end
