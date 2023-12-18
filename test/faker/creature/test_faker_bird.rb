@@ -59,7 +59,8 @@ class TestFakerCreatureBird < Test::Unit::TestCase
 
   def test_order_with_common_names
     entry = @tester.order_with_common_name
-    assert_includes(@common_order_map.keys, entry[:order].to_sym) && \
+
+    assert_includes(@common_order_map.keys, entry[:order].to_sym) &&
       assert_includes(@common_order_map[entry[:order]], entry[:common_name])
   end
 
