@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class IDNumber < Base
+  class IdNumber < Base
     CHECKS = 'TRWAGMYFPDXBNJZSQVHLCKE'
     INVALID_SSN = [
       /0{3}-\d{2}-\d{4}/,
@@ -25,7 +25,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.valid #=> "552-56-3593"
+      #   Faker::IdNumber.valid #=> "552-56-3593"
       #
       # @faker.version 1.6.0
       def valid
@@ -38,7 +38,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.invalid #=> "311-72-0000"
+      #   Faker::IdNumber.invalid #=> "311-72-0000"
       #
       # @faker.version 1.6.0
       def invalid
@@ -71,7 +71,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.spanish_citizen_number #=> "53290236-H"
+      #   Faker::IdNumber.spanish_citizen_number #=> "53290236-H"
       #
       # @faker.version 1.9.0
       def spanish_citizen_number
@@ -87,7 +87,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.spanish_foreign_citizen_number #=> "Z-1600870-Y"
+      #   Faker::IdNumber.spanish_foreign_citizen_number #=> "Z-1600870-Y"
       #
       # @faker.version 1.9.0
       def spanish_foreign_citizen_number
@@ -106,8 +106,8 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.south_african_id_number #=> "8105128870184"
-      #   Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
+      #   Faker::IdNumber.south_african_id_number #=> "8105128870184"
+      #   Faker::IdNumber.valid_south_african_id_number #=> "8105128870184"
       #
       # @faker.version 1.9.2
       def valid_south_african_id_number
@@ -129,7 +129,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
+      #   Faker::IdNumber.invalid_south_african_id_number #=> "1642972065088"
       #
       # @faker.version 1.9.2
       def invalid_south_african_id_number
@@ -156,8 +156,8 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
-      #   Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
+      #   Faker::IdNumber.brazilian_citizen_number #=> "53540542221"
+      #   Faker::IdNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
       #
       # @faker.version 1.9.2
       def brazilian_citizen_number(formatted: false)
@@ -177,8 +177,8 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.brazilian_id #=> "493054029"
-      #   Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
+      #   Faker::IdNumber.brazilian_id #=> "493054029"
+      #   Faker::IdNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
       #
       # @faker.version 2.1.2
       def brazilian_id(formatted: false)
@@ -196,7 +196,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.chilean_id #=> "15620613-K"
+      #   Faker::IdNumber.chilean_id #=> "15620613-K"
       #
       # @faker.version 2.1.2
       def chilean_id
@@ -213,8 +213,8 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.croatian_id #=> "88467617508"
-      #   Faker::IDNumber.croatian_id(international: true) #=> "HR88467617508"
+      #   Faker::IdNumber.croatian_id #=> "88467617508"
+      #   Faker::IdNumber.croatian_id(international: true) #=> "HR88467617508"
       #
       # @faker.version next
       def croatian_id(international: false)
@@ -238,10 +238,10 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.danish_id_number #=> "0503909980"
-      #   Faker::IDNumber.danish_id_number(formatted: true) #=> "050390-9980"
-      #   Faker::IDNumber.danish_id_number(birthday: Date.new(1990, 3, 5)) #=> "0503909980"
-      #   Faker::IDNumber.danish_id_number(gender: :female) #=> "0503909980"
+      #   Faker::IdNumber.danish_id_number #=> "0503909980"
+      #   Faker::IdNumber.danish_id_number(formatted: true) #=> "050390-9980"
+      #   Faker::IdNumber.danish_id_number(birthday: Date.new(1990, 3, 5)) #=> "0503909980"
+      #   Faker::IdNumber.danish_id_number(gender: :female) #=> "0503909980"
       #
       # @faker.version next
       def danish_id_number(formatted: false, birthday: Faker::Date.birthday, gender: nil)
@@ -275,7 +275,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::IDNumber.french_insee_number #=> "53290236-H"
+      #   Faker::IdNumber.french_insee_number #=> "53290236-H"
       #
       # @faker.version next
       def french_insee_number
