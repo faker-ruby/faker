@@ -63,6 +63,8 @@ en-KE:
         - Tharaka-Nithi
         - Wajir
         - West Pokot
+      county:
+        - "#{counties}"
       cities:
         - Bungoma
         - Busia
@@ -114,7 +116,7 @@ en-KE:
         - Webuye
       city:
         - "#{cities}"
-      company:
+    company:
       company_names:
         - ABSA Kenya
         - ARM Cement
