@@ -43,8 +43,13 @@ class TestFakerWine < Test::Unit::TestCase
 
   def test_score
     assert_match(/\w+/, @tester.score)
-    assert_match(/\w+/, @tester.score(with_review_org: true))
-    assert_match(/\w+/, @tester.score(with_review_person: true))
-    assert_match(/\w+/, @tester.score(with_review_org: true, with_review_person: true))
+  end
+
+  def test_score_with_org
+    assert_match(/\w+/, @tester.score_with_review_org)
+  end
+
+  def test_score_with_person
+    assert_match(/\w+/, @tester.score_with_review_person)
   end
 end

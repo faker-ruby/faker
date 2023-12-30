@@ -149,18 +149,36 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Wine.score(with_review_org: true) #=> 85 points, Wine Spectator
-      #   Faker::Wine.score(with_review_person: true) #=> 92 points, Jim Laube
       #   Faker::Wine.score #=> 78 points
       #
       # @faker.version v3.2.2
-      def score(with_review_org: false, with_review_person: false)
+      def score
         score_num = rand_in_range(70, 100)
-        return "#{score_num} points, #{fetch('wine.accolades.company')}" if with_review_org
-
-        return "#{score_num} points, #{fetch('wine.accolades.person')}" if with_review_person
-
         "#{score_num} points"
+      end
+
+      # Produces a random wine score with reviewer organization.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Wine.score_with_review_org #=> 85 points, Wine Spectator
+      #
+      # @faker.version v3.2.2
+      def score_with_review_org
+        "#{score} points, #{fetch('wine.accolades.company')}"
+      end
+
+      # Produces a random wine score with review person.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Wine.score_with_review_org #=> 85 points, Wine Spectator
+      #
+      # @faker.version v3.2.2
+      def score_with_review_person
+        "#{score} points, #{fetch('wine.accolades.person')}"
       end
     end
   end
