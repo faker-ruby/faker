@@ -10,7 +10,7 @@ module Faker
       # @example
       #   Faker::Wine.varietal #=> "Chardonnay"
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def varietal
         fetch('wine.varietal')
       end
@@ -22,7 +22,7 @@ module Faker
       # @example
       #   Faker::Wine.vintage #=> 2019
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def vintage
         rand_in_range(1990, ::Time.now.year - 1)
       end
@@ -34,7 +34,7 @@ module Faker
       # @example
       #   Faker::Wine.appellation #=> Central Coast
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def appellation
         fetch('wine.appellations')
       end
@@ -46,7 +46,7 @@ module Faker
       # @example
       #   Faker::Wine.corporation #=> Gallo
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def corporation
         fetch('wine.corporations')
       end
@@ -58,7 +58,7 @@ module Faker
       # @example
       #   Faker::Wine.wine_type #=> Red
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def wine_type
         fetch('wine.types')
       end
@@ -71,7 +71,7 @@ module Faker
       #   Faker::Wine.brand(real: true) #=> Caymus
       #   Faker::Wine.brand #=> Wisoky Family Estates
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def brand(real: false)
         return fetch('wine.real_brands') if real
 
@@ -85,7 +85,7 @@ module Faker
       # @example
       #   Faker::Wine.label #=> 2010 Wisoky Family Estates Cabernet Sauvignon
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def label
         descriptor_on = sample([false, false, false, true])
         label_ary = [vintage, brand]
@@ -102,7 +102,7 @@ module Faker
       #   Faker::Wine.accolades(bad: true) #=> unfortunately disappoints and has a sniff of rotten eggs and continues on with overripe prunes that offends the senses.
       #   Faker::Wine.accolades #=> delights the nose with cinnamon and fills your mouth with fresh raspberries that leaves you satisfied
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def accolade(bad: false)
         review_props = {}
         review_props[:visual_condition] = fetch('wine.wset.visual.condition')
@@ -149,11 +149,11 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Wine.score(with_review_org: true) #=> Wine Spectator 85 pts
-      #   Faker::Wine.score(with_review_person: true) #=> Jim Laube 92 pts
-      #   Faker::Wine.score #=> 78 pts
+      #   Faker::Wine.score(with_review_org: true) #=> 85 points, Wine Spectator
+      #   Faker::Wine.score(with_review_person: true) #=> 92 points, Jim Laube
+      #   Faker::Wine.score #=> 78 points
       #
-      # @faker.version v2.17.0
+      # @faker.version v3.2.2
       def score(with_review_org: false, with_review_person: false)
         score_num = rand_in_range(70, 100)
         return "#{score_num} points, #{fetch('wine.accolades.company')}" if with_review_org
