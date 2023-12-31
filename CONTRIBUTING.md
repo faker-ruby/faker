@@ -83,8 +83,8 @@ There are a few ways to run RuboCop:
 
 New generators will only be added to the gem after:
 
-- there's been a poll in the [community](https://github.com/orgs/faker-ruby/discussions/categories/new-generator). Use this to get feedback on how others would use it, what edge cases to cover, and get traction on your proposal.
-- there are at least 10 votes after 3 months the poll was created.
+- there's been a poll in the [community](https://github.com/orgs/faker-ruby/discussions/categories/new-feature-locale-generator). Use this to get feedback on how others would use it, what edge cases to cover, etc.
+- the community is interested in the feature.
 
 This allow us to measure the interest and see some traction before we decide to accept the proposal for a new generator.
 
