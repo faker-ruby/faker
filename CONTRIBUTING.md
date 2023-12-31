@@ -21,9 +21,10 @@ Have a fix for a problem you've been running into? Here's what you need to do:
 
 faker-ruby already has lots of generators and locales. We appreciate any efforts made into updating the **existing** locales by:
 
-- adding new translators
+- adding new translations
 - updating the existing translations
 - fixing any outdated/wrong translations
+
 
 Although we maintain Faker in our free time, we try to respond to contributions in a timely manner. Once we look at your pull request, we may give you feedback. For instance, we may suggest some changes to make to your code to fit within the project style or discuss alternate ways of addressing the issue in question. Assuming we're happy with everything, we'll then bring your changes into main. Now you're a contributor!
 
