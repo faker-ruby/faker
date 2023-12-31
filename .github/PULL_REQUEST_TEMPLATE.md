@@ -21,7 +21,7 @@ Feel free to discard it if you need to (e.g. when you just fix a typo). -->
 ### Motivation / Background
 
 <!--
-Describe why this Pull Request needs to be merged. What bug have you fixed? What feature have you added? Why is it important?
+Describe why this Pull Request needs to be merged. What bug have you fixed? Why is it important?
 If you are fixing a specific issue, include "Fixes #ISSUE" (replace with the issue number, remove the quotes) and the issue will be linked to this PR.
 
 If you're proposing a new generator or locale, please review and follow the [Contributing guidelines](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md) first.
@@ -44,6 +44,5 @@ Before submitting the PR make sure the following are checked:
 
 If you're proposing a new generator or locale:
 
-* [ ] The feature being added has received at least 10 votes after 3 months of being added to the [New Feature Poll](https://github.com/orgs/faker-ruby/discussions/categories/new-feature-locale-generator).
 * [ ] Double-check the existing generators documentation to make sure the new generator you want to add doesn't already exist.
 * [ ] You've reviewed and followed the [Contributing guidelines](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md).
