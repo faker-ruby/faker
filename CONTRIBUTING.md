@@ -4,24 +4,32 @@ We are always happy to make improvements to Faker. There are many ways to contri
 
 Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect by addressing your issue, assessing changes, and helping you finalize your pull requests.
 
-Have a fix for a problem you've been running into or an idea for a new feature you think would be useful? Here's what you need to do:
+## Reporting a bug
+
+Have a fix for a problem you've been running into? Here's what you need to do:
 
 - Fork this repo and clone your fork to somewhere on your machine.
 - [Ensure that you have a working environment](#setting-up-your-environment).
 - Read up on the [architecture of the gem](#architecture), [how to run tests](#running-the-tests), and [the code style we use in this project](#code-style).
 - Cut a new branch and write a failing test for the feature or bugfix you plan on implementing.
 - [Make sure your branch is well managed as you go along](#managing-your-branch).
-- Review the guidelines for [adding new generators](#adding-new-generators), [adding YAML files](#yaml-files), and [YARD docs](#yard-docs).
 - [Refrain from updating the changelog](#a-word-on-the-changelog).
 - Push to your fork and submit a pull request.
 - [Ensure that the test suite passes on GitHub Actions and make any necessary changes to your branch to bring it to green](#continuous-integration).
+
+## What contributions we are looking for
+
+faker-ruby already has lots of generators and locales. We appreciate any efforts made into updating the **existing** locales by:
+
+- adding new translations
+- updating the existing translations
+- fixing any outdated/wrong translations
 
 Although we maintain Faker in our free time, we try to respond to contributions in a timely manner. Once we look at your pull request, we may give you feedback. For instance, we may suggest some changes to make to your code to fit within the project style or discuss alternate ways of addressing the issue in question. Assuming we're happy with everything, we'll then bring your changes into main. Now you're a contributor!
 
 ## Setting up your environment
 
 Faker requires Ruby version >= 2.7. After forking, and cloning the repo, navigate to the directory, and run:
-
 
 ```ruby
 bundle install
@@ -32,9 +40,7 @@ Run `rake` to ensure the project is all setup. It runs the tests and rubocop. Th
 ## Architecture
 
 This project follows the typical structure for a gem: code is located in `/lib` and tests are in `/test`. Generators
-
 docs are available in the `/doc` folder.
-
 
 ## Running the tests
 
@@ -42,7 +48,6 @@ To run all of the tests, simply run:
 
 ```ruby
 bundle exec rake test
-
 ```
 
 ## Code Style
@@ -64,20 +69,30 @@ There are a few ways to run RuboCop:
 
 ```ruby
 `bundle exec rubocop` #-> to run Rubocop only
-
 `bundle exec rake` #-> to run the test suite and rubocop after.
 ```
 
 ## Managing your branch
 
 - Use well-crafted commit messages and Pull Requests descriptions, providing context if possible. Please use the Pull Request template when opening a new PR.
-- When updating documentation, or README, [skip running worfklow runs](https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs).
+- When updating documentation, or README, [skip running CI](https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs).
 - Squash "WIP" commits and remove merge commits by rebasing your branch against main. We try to keep our commit history as clean as possible.
 - To prevent pushing with test failures or Rubocop offenses, see [Setup a custom pre-push git hook](#setup-a-custom-pre-push-git-hook).
 
-## Adding new generators
+## Adding new generators/locales
+
+New generators will only be added to the gem after:
+
+- there's been a poll in the [community](https://github.com/orgs/faker-ruby/discussions/categories/new-feature-locale-generator). Use this to get feedback on how others would use it, what edge cases to cover, etc.
+- the community is interested in the feature.
+
+This allow us to measure the interest and see some traction before we decide to accept the proposal for a new generator.
+
+**Note**: we will not accept new generators/locales that do not follow the requirements above.
 
 ### General Guidelines
+
+Once the feature has met the requirements above, please review these guidelines before opening a PR:
 
 - Avoid:
   - Hurtful language that can convey exclusionary behavior, such as racism, sexism, homophobia.
