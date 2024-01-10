@@ -81,7 +81,7 @@ There are a few ways to run RuboCop:
 
 ## Adding new generators/locales
 
-The faker-ruby team has decided to stop accepting any new features, including generators and locales.
+The faker-ruby team has decided to stop accepting any new features, including generators and locales. Please see [What contributions we are looking for](#what-contributions-we-are-looking-for) for other ways you can help.
 
 This allows us to focus on improving the performance and organization of the library. We appreciate your understanding and we are looking forward to get your help with making faker faster and easier to use.
 
