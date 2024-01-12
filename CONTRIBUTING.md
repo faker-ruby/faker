@@ -81,14 +81,9 @@ There are a few ways to run RuboCop:
 
 ## Adding new generators/locales
 
-New generators will only be added to the gem after:
+The faker-ruby team has decided to stop accepting any new features, including generators and locales. Please see [What contributions we are looking for](#what-contributions-we-are-looking-for) for other ways you can help.
 
-- there's been a poll in the [community](https://github.com/orgs/faker-ruby/discussions/categories/new-feature-locale-generator). Use this to get feedback on how others would use it, what edge cases to cover, etc.
-- the community is interested in the feature.
-
-This allow us to measure the interest and see some traction before we decide to accept the proposal for a new generator.
-
-**Note**: we will not accept new generators/locales that do not follow the requirements above.
+This allows us to focus on improving the performance and organization of the library. We appreciate your understanding and we are looking forward to get your help with making faker faster and easier to use.
 
 ### General Guidelines
 
