@@ -17,7 +17,6 @@ bg:
       default_country: [България]
       default_country_code: ["BG"]
     internet:
-      free_email: [abv.bg, mail.bg, dir.bg, gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, bg, info, бг, net, org]
 
     name:

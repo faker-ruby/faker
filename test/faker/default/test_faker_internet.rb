@@ -78,30 +78,6 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
-  def test_free_email
-    Gem::Deprecate.skip_during do
-      assert_match(/.+@(gmail|hotmail|yahoo)\.com/, @tester.free_email)
-    end
-  end
-
-  def test_free_email_with_non_permitted_characters
-    Gem::Deprecate.skip_during do
-      assert_match(/mart#n@.+\.\w+/, @tester.free_email(name: 'martín'))
-    end
-  end
-
-  def test_safe_email
-    Gem::Deprecate.skip_during do
-      assert_match(/.+@example.(com|net|org)/, @tester.safe_email)
-    end
-  end
-
-  def test_safe_email_with_non_permitted_characters
-    Gem::Deprecate.skip_during do
-      assert_match(/mart#n@.+\.\w+/, @tester.safe_email(name: 'martín'))
-    end
-  end
-
   def test_username
     assert_match(/[a-z]+((_|\.)[a-z]+)?/, @tester.username(specifier: 0..3))
     assert_match(/[a-z]+((_|\.)[a-z]+)?/, @tester.username)

@@ -411,6 +411,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Music::Prince](doc/music/prince.md)
   - [Faker::Music::RockBand](doc/music/rock_band.md)
   - [Faker::Music::Rush](doc/music/rush.md)
+  - [Faker::Music::SmashingPumpkins](doc/music/smashing_pumpkins.md)
   - [Faker::Music::UmphreysMcgee](doc/music/umphreys_mcgee.md)
 </details>
 
@@ -426,7 +427,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 <details>
   <summary>Sports</summary>
 
-  - [Faker::Sports](doc/sports/sports.md)
+  - [Faker::Sport](doc/sports/sport.md)
   - [Faker::Sports::Basketball](doc/sports/basketball.md)
   - [Faker::Sports::Chess](doc/sports/chess.md)
   - [Faker::Sports::Football](doc/sports/football.md)
@@ -478,10 +479,10 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 
 ## Contributing
 
-If you have problems, please create a [GitHub Issue](/.github/ISSUE_TEMPLATE/bug-report.md).
+**Note**: We are not accepting proposals for new generators and locales. The [Contributing](CONTRIBUTING.md) guide has a few notes about this decision.
 
 Take a look at the [Contributing](CONTRIBUTING.md) document for
-instructions on setting up the repo on your machine, understanding the codebase,
+instructions on setting up the repo on your machine, opening bug reports, understanding the codebase,
 and creating a good pull request.
 
 There is a [Discord channel](https://discord.gg/RMumTwB) to discuss anything

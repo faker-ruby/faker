@@ -14,7 +14,7 @@ module Faker
         #
         # @faker.version next
         def actor
-          fetch('room.actors')
+          fetch('the_room.actors')
         end
 
         ##
@@ -27,7 +27,7 @@ module Faker
         #
         # @faker.version next
         def character
-          fetch('room.characters')
+          fetch('the_room.characters')
         end
 
         ##
@@ -40,7 +40,7 @@ module Faker
         #
         # @faker.version next
         def location
-          fetch('room.locations')
+          fetch('the_room.locations')
         end
 
         ##
@@ -55,7 +55,7 @@ module Faker
         #
         # @faker.version next
         def quote
-          fetch('room.quotes')
+          fetch('the_room.quotes')
         end
       end
     end

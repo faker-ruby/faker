@@ -1,18 +1,5 @@
 # Faker::Internet
 
-### About faker-ruby transition to be RFC 2606 compliant
-
-faker-ruby is transitioning to no longer generating real email and url addresses.
-
-The migration plan is:
-- First step:
-  - change `email` and `domain_name` to be RFC 2606 compliant. Both now generate safe values by default using the Reserved Top Level DNS Names: `example` and `test`. To maintain backwards compatibility and give users the option to use non-safe domains at their own risk, custom domains are allowed.
-  - add deprecation message for `free_email` and `safe_email` users to switch to `email` instead.
-- Second step (after October 2023):
-  - remove deprecated generators and locales.
-
-To give users time, once the first step is released, users will have until October 2023 to make the necessary changes.
-
 ```ruby
 # Keyword arguments: name, username, email, password, domain_name, user_agent, uuid etc...
 Faker::Internet.user #=> { username: 'alexie', email: 'trudie@grant.test' }
@@ -24,15 +11,6 @@ Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.test"
 Faker::Internet.email(name: 'Janelle Santiago', separators: ['+']) #=> "janelle+santiago@becker.example"
 Faker::Internet.email(domain: 'gmail.com')  #=> "foo@gmail.com"
 Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'test') #=> "sam-smith@test.test"
-
-# Keyword arguments: name
-Faker::Internet.free_email #=> "freddy@gmail.com"
-Faker::Internet.free_email(name: 'Nancy') #=> "nancy@yahoo.com"
-
-# Generates an RFC 2606 compliant fake email, which means it will never deliver successfully
-# Keyword arguments: name
-Faker::Internet.safe_email #=> "christelle@example.org"
-Faker::Internet.safe_email(name: 'Nancy') #=> "nancy@example.net"
 
 # Keyword arguments: specifier, separators
 Faker::Internet.username #=> "alexie"

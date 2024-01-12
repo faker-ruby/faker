@@ -35,7 +35,6 @@ fr-CH:
         - ["synergies", "web-readiness", "paradigms", "markets", "partnerships", "infrastructures", "platforms", "initiatives", "channels", "eyeballs", "communities", "ROI", "solutions", "e-tailers", "e-services", "action-items", "portals", "niches", "technologies", "content", "vortals", "supply-chains", "convergence", "relationships", "architectures", "interfaces", "e-markets", "e-commerce", "systems", "bandwidth", "infomediaries", "models", "mindshare", "deliverables", "users", "schemas", "networks", "applications", "metrics", "e-business", "functionalities", "experiences", "web services", "methodologies"]
 
     internet:
-      free_email: [gmail.com, yahoo.ch, hotmail.ch]
       domain_suffix: [com, net, biz, ch,  li, at, ch, ch]
 
     lorem:

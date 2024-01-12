@@ -15,8 +15,6 @@ module Faker
     ].each(&:freeze).freeze
 
     class << self
-      extend Gem::Deprecate
-
       ##
       # Returns the email address
       #
@@ -51,42 +49,6 @@ module Faker
       end
 
       ##
-      # Returns the email address with domain either gmail.com, yahoo.com or hotmail.com
-      #
-      # @return [String]
-      #
-      # @param name [String]
-      #
-      # @example
-      #   Faker::Internet.free_email                                                           #=> "samsmith@gmail.com"
-      #   Faker::Internet.free_email(name: 'smith')                                            #=> "smith@yahoo.com"
-      def free_email(name: nil)
-        construct_email(
-          sanitize_email_local_part(username(specifier: name)),
-          fetch('internet.free_email')
-        )
-      end
-      deprecate :free_email, :email, 2023, 10
-
-      ##
-      # Returns the email address with fixed domain name as 'example'
-      #
-      # @return [String]
-      #
-      # @param name [String]
-      #
-      # @example
-      #   Faker::Internet.safe_email                                                           #=> "samsmith@example.com"
-      #   Faker::Internet.safe_email(name: 'smith')                                            #=> "smith@example.net"
-      def safe_email(name: nil)
-        construct_email(
-          sanitize_email_local_part(username(specifier: name)),
-          "example.#{sample(%w[org com net])}"
-        )
-      end
-      deprecate :safe_email, :email, 2023, 10
-
-      ##
       # Returns the username
       #
       # @return [String]
@@ -98,7 +60,7 @@ module Faker
       #   Faker::Internet.username(specifier: 10)                     #=> "lulu.goodwin"
       #   Faker::Internet.username(specifier: 5..10)                  #=> "morris"
       #   Faker::Internet.username(specifier: 5..10)                  #=> "berryberry"
-      #   Faker::Internet.username(specifier: 20, separators: ['-'])  #=> "nikki_sawaynnikki_saway"
+      #   Faker::Internet.username(specifier: 20, separators: ['_'])  #=> "nikki_sawaynnikki_saway"
       def username(specifier: nil, separators: %w[. _])
         with_locale(:en) do
           return shuffle(specifier.scan(/[[:word:]]+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)

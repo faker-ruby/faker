@@ -47,7 +47,6 @@ es-MX:
               - "#{University.prefix} #{Address.state} #{University.suffix}"
 
     internet:
-      free_email: [gmail.com, yahoo.com, hotmail.com, prodigy.net.mx]
       domain_suffix: [com, com.mx, mx, info, me, org, org.mx]
 
     name:

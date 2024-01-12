@@ -60,8 +60,8 @@ class TestFakerNumber < Test::Unit::TestCase
       assert stats[num] += 1
     end
 
-    stats.each do |_k, v|
-      assert_in_delta 10.0, 100.0 * v / times, 2.0
+    stats.each_value do |value|
+      assert_in_delta 10.0, 100.0 * value / times, 2.0
     end
   end
 
