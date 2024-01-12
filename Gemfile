@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in faker.gemspec
 gemspec
 
-gem 'minitest', '5.21.1'
 gem 'benchmark'
+gem 'minitest', '5.21.1'
 gem 'pry', '0.14.2'
 gem 'rake', '13.1.0'
 gem 'rubocop', '1.59.0'
