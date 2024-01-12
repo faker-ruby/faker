@@ -19,7 +19,7 @@ GEM
     method_source (1.0.0)
     minitest (5.21.1)
     parallel (1.24.0)
-    parser (3.2.2.3)
+    parser (3.3.0.3)
       ast (~> 2.4.1)
       racc
     power_assert (2.0.3)
@@ -63,7 +63,7 @@ GEM
     yard (0.9.34)
 
 PLATFORMS
-  ruby
+  arm64-darwin-22
 
 DEPENDENCIES
   benchmark
