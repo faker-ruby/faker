@@ -1,5 +1,61 @@
 # Changelog
 
+## What's Changed
+
+## [v3.2.3](https://github.com/faker-ruby/faker/tree/v3.2.3) (2024-01-12)
+
+Happy 2024 with a new faker-ruby release.
+
+This version includes bug and documentation fixes, and some changes on the contributing guides.
+
+## faker-ruby is is not accepting new features proposals
+
+As we [discussed here](https://github.com/orgs/faker-ruby/discussions/2877), we want to improve faker's performance and organization. There hasn't been to many bug reports and most of the open issues are related to performance and confusion around using faker.
+
+As we have limited time to invest in faker, reviewing _new_ generators and locales prevent us from focusing on the big picture work. With this decision, we hope to make the necessary changes for faker to go to the next level. Please read the Contributing guides for ways to help us get there.
+
+## Bug fixes
+* Fix Phone number long number and other updates by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2842
+* Favor 'The Room' instead of 'Room' by @kirkkwang in https://github.com/faker-ruby/faker/pull/2854
+* Limit generated Discover cards to 19 digits by @jamie in https://github.com/faker-ruby/faker/pull/2845
+* Fix Typo in README Link: Update sports.md to sport.md by @hatsu38 in https://github.com/faker-ruby/faker/pull/2859
+* Fix country names and codes in address by @sudeeptarlekar in https://github.com/faker-ruby/faker/pull/2850
+* fixed typo for README. Faker::JapaneseMedia::CowboyBebop by @jacoyutorius in https://github.com/faker-ruby/faker/pull/2863
+* Fix typo in `Faker::Movies::HarryPotter.location` (Castelobruxo) by @leomartins1999 in https://github.com/faker-ruby/faker/pull/2866
+* Fix flaky spec on `TestFakerFile#test_file_name` by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2868
+* Update `Internet#username` separator param to match with the example by @AlexandreL0pes in https://github.com/faker-ruby/faker/pull/2882
+* fix polish bban_pattern by @artur1313 in https://github.com/faker-ruby/faker/pull/2887
+
+## What's Changed
+* Add benchmark by @salochara in https://github.com/faker-ruby/faker/pull/2855
+* Freeze new generator and locales by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2886
+* Remove deprecate safe_email and free_email methods by @hatsu38 in https://github.com/faker-ruby/faker/pull/2841
+* Update contribution guidelines and PULL_REQUEST_TEMPLATE by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2878
+* Remove unmaintained `History.md` by @y-yagi in https://github.com/faker-ruby/faker/pull/2880
+* Adds Ruby 3.3 to the CI matrix by @m-nakamura145 in https://github.com/faker-ruby/faker/pull/2883
+
+## Update local dependencies
+* Bump rubocop from 1.58.0 to 1.59.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2865
+* Bump rubocop-minitest from 0.34.3 to 0.34.4 by @dependabot in https://github.com/faker-ruby/faker/pull/2884
+* Bump minitest version by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2889
+
+## New Contributors
+* @kirkkwang made their first contribution in https://github.com/faker-ruby/faker/pull/2854
+* @jamie made their first contribution in https://github.com/faker-ruby/faker/pull/2845
+* @hatsu38 made their first contribution in https://github.com/faker-ruby/faker/pull/2859
+* @salochara made their first contribution in https://github.com/faker-ruby/faker/pull/2855
+* @jacoyutorius made their first contribution in https://github.com/faker-ruby/faker/pull/2863
+* @leomartins1999 made their first contribution in https://github.com/faker-ruby/faker/pull/2866
+* @keshavbiswa made their first contribution in https://github.com/faker-ruby/faker/pull/2868
+* @y-yagi made their first contribution in https://github.com/faker-ruby/faker/pull/2880
+* @AlexandreL0pes made their first contribution in https://github.com/faker-ruby/faker/pull/2882
+* @m-nakamura145 made their first contribution in https://github.com/faker-ruby/faker/pull/2883
+* @artur1313 made their first contribution in https://github.com/faker-ruby/faker/pull/2887
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.2.2...v.3.2.3
+
+-------------------------
+
 ## [v3.2.2](https://github.com/faker-ruby/faker/tree/v3.2.2) (2023-11-03)
 
 Happy November with a new faker-ruby release.
@@ -18,7 +74,6 @@ This version:
 * Added Faker::Company.indian_gst_number fixed #2823 by @ankitkhadria in https://github.com/faker-ruby/faker/pull/2825
 * Adds Smashing Pumpkins to the Music module by @redconfetti in https://github.com/faker-ruby/faker/pull/2817
 
-
 ### Bug fixes
 * Delete doc/default/michael_scott.md by @jmromer in https://github.com/faker-ruby/faker/pull/2837
 * Fix typo in `lib/locales/README.md` by @BelaBartok39 in https://github.com/faker-ruby/faker/pull/2812
@@ -28,14 +83,12 @@ This version:
 * Changed tests from x.times loop to deterministically_verify helper. #2813 issue by @fernandomenolli in https://github.com/faker-ruby/faker/pull/2816
 * Improve `#deterministically_verify` helper by @erichmachado in https://github.com/faker-ruby/faker/pull/2828
 
-
 ### Update local dependencies
 * Bump minitest from 5.19.0 to 5.20.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2826
 * Bump rake from 13.0.6 to 13.1.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2846
 * Bump rubocop-minitest from 0.32.2 to 0.33.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2843
 * Bump rubocop from 1.57.1 to 1.57.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2844
 * Bump timecop from 0.9.6 to 0.9.8 by @dependabot in https://github.com/faker-ruby/faker/pull/2811
-
 
 ## New Contributors
 * @BelaBartok39 made their first contribution in https://github.com/faker-ruby/faker/pull/2812
