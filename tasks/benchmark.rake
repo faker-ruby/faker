@@ -19,6 +19,23 @@ namespace :benchmark do
       end
     end
   end
+
+  desc 'Comparing loading translations from YML vs. JSON'
+  task :compare_loading_yml_vs_json do
+    Benchmark.bmbm do |x|
+      x.report('YML') do
+        100.times do
+          YAML.load_file(File.expand_path("#{File.dirname(__FILE__)}/../lib/locales/es-MX.yml"))
+        end
+      end
+
+      x.report('JSON') do
+        100.times do
+          JSON.parse(File.read(File.expand_path("#{File.dirname(__FILE__)}/../lib/locales/es-MX.json")))
+        end
+      end
+    end
+  end
 end
 
 class BenchmarkHelper
