@@ -31,7 +31,7 @@ namespace :benchmark do
 
       x.report('JSON') do
         100.times do
-          JSON.parse(File.read(File.expand_path("#{File.dirname(__FILE__)}/../lib/locales/es-MX.json")))
+          JSON.load_file("#{File.dirname(__FILE__)}/../lib/locales/es-MX.json")
         end
       end
     end
