@@ -22,7 +22,7 @@ class TestFakerFile < Test::Unit::TestCase
   end
 
   def test_file_name
-    assert_match %r{^([a-z\-_.]+)(\\|/)([a-z\-_]+)\.([a-z]+)$}, @tester
+    assert_match %r{^([a-z\-_.]+)(\\|/)([a-z\-_]+)\.([a-z0-9]+)$}, @tester
       .file_name
   end
 

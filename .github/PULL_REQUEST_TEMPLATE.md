@@ -21,13 +21,13 @@ Feel free to discard it if you need to (e.g. when you just fix a typo). -->
 ### Motivation / Background
 
 <!--
-Describe why this Pull Request needs to be merged. What bug have you fixed? What feature have you added? Why is it important?
+Describe why this Pull Request needs to be merged. What bug have you fixed? Why is it important?
 If you are fixing a specific issue, include "Fixes #ISSUE" (replace with the issue number, remove the quotes) and the issue will be linked to this PR.
 
-If you're proposing a new generator, please follow the [Documentation guidelines](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md#documentation).
+If you're proposing a new generator or locale, please review and follow the [Contributing guidelines](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md) first.
 -->
 
-This Pull Request has been created because [REPLACE ME]
+This Pull Request has been created because [REPLACE ME].
 
 ### Additional information
 
@@ -42,8 +42,7 @@ Before submitting the PR make sure the following are checked:
 * [ ] Tests are added or updated if you fix a bug, refactor something, or add a feature.
 * [ ] Tests and Rubocop are passing before submitting your proposed changes.
 
-If you're proposing a new generator:
+If you're proposing a new generator or locale:
 
-* [ ] Open an issue first for discussion before you write any code.
 * [ ] Double-check the existing generators documentation to make sure the new generator you want to add doesn't already exist.
-* [ ] You've reviewed and followed the [Documentation guidelines](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md#documentation).
+* [ ] You've reviewed and followed the [Contributing guidelines](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md).
