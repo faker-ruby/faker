@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'https://github.com/faker-ruby/faker'
   spec.license     = 'MIT'
 
-  spec.files         = Dir['lib/**/*'] + %w[History.md License.txt CHANGELOG.md README.md]
+  spec.files         = Dir['lib/**/*'] + %w[License.txt CHANGELOG.md README.md]
   spec.bindir        = 'bin'
   spec.executables   = ['faker']
   spec.require_paths = ['lib']
