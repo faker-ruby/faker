@@ -28,9 +28,15 @@ class TestEnKeLocale < Test::Unit::TestCase
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
-  def test_en_ke_phonenumber_starts_with_254
-    phone_number = Faker::PhoneNumber.phone_number
+  def test_en_ke_country_code_starts_with_254
+    phone_number = Faker::PhoneNumber.country_code
 
     assert_equal '+254', phone_number[0..3]
+  end
+
+  def test_en_ke_cell_phone_starts_with_0
+    cell_number = Faker::PhoneNumber.cell_phone
+
+    assert_equal '0', cell_number[0]
   end
 end
