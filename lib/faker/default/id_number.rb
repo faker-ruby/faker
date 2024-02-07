@@ -19,6 +19,10 @@ module Faker
     CHILEAN_MODULO = 11
 
     class << self
+
+    include Faker::Deprecator::DeprecatorConstantAccessor
+    deprecated_constant ' Faker::IDNumber', 'Faker::IdNumber'
+
       ##
       # Produces a random valid US Social Security number.
       #

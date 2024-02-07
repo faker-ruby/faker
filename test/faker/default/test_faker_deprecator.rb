@@ -2,9 +2,9 @@
 
 require_relative '../../test_helper'
 
-class TestFakerDeprecatedClass < Test::Unit::TestCase
+class TestFakerDeprecated < Test::Unit::TestCase
   def setup
-    @tester = Faker::DeprecatedClass
+    @tester = Faker::Deprecated
   end
 
   def test_non_nested_class_with_deprecated_class
