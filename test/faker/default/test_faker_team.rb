@@ -8,18 +8,18 @@ class TestFakerTeam < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/(\w+\.? ?){2}/)
+    assert_match(/(\w+\.? ?){2}/, @tester.name)
   end
 
   def test_creature
-    assert @tester.creature.match(/(\w+){1}/)
+    assert_match(/(\w+){1}/, @tester.creature)
   end
 
   def test_state
-    assert @tester.state.match(/(\w+){1}/)
+    assert_match(/(\w+){1}/, @tester.state)
   end
 
   def test_sport
-    assert @tester.sport.match(/(\w+){1}/)
+    assert_match(/(\w+){1}/, @tester.sport)
   end
 end

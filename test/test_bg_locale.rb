@@ -25,7 +25,7 @@ class TestBgLocale < Test::Unit::TestCase
   end
 
   def test_bg_internet_methods
-    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
@@ -46,6 +46,7 @@ class TestBgLocale < Test::Unit::TestCase
 
   def test_bg_cell_number_starts_wiht_08
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+
     assert_equal '08', mobile[0] + mobile[1]
   end
 end

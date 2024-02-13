@@ -5,7 +5,7 @@ module Faker
     flexible :code
     class << self
       ##
-      # Produces a random NPI (National Provider Identifer) code.
+      # Produces a random NPI (National Provider Identifier) code.
       #
       # @return [String]
       #
@@ -29,11 +29,7 @@ module Faker
       #   Faker::Code.isbn #=> "170366802-2"
       #
       # @faker.version 2.2.0
-      def isbn(legacy_base = NOT_GIVEN, base: 10)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :base if legacy_base != NOT_GIVEN
-        end
-
+      def isbn(base: 10)
         case base
         when 10 then generate_base10_isbn
         when 13 then generate_base13_isbn
@@ -53,11 +49,7 @@ module Faker
       #   Faker::Code.ean #=> "9941880131907"
       #
       # @faker.version 2.2.0
-      def ean(legacy_base = NOT_GIVEN, base: 13)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :base if legacy_base != NOT_GIVEN
-        end
-
+      def ean(base: 13)
         case base
         when 8 then generate_base8_ean
         when 13 then generate_base13_ean
@@ -99,18 +91,25 @@ module Faker
       #   Faker::Code.nric #=> "S6372958B"
       #
       # @faker.version 2.2.0
-      def nric(legacy_min_age = NOT_GIVEN, legacy_max_age = NOT_GIVEN, min_age: 18, max_age: 65)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :min_age if legacy_min_age != NOT_GIVEN
-          keywords << :max_age if legacy_max_age != NOT_GIVEN
-        end
-
+      def nric(min_age: 18, max_age: 65)
         birthyear = Date.birthday(min_age: min_age, max_age: max_age).year
-        prefix = birthyear < 2000 ? 'S' : 'T'
-        values = birthyear.to_s[-2..-1]
-        values << regexify(/\d{5}/)
-        check_alpha = generate_nric_check_alphabet(values, prefix)
-        "#{prefix}#{values}#{check_alpha}"
+
+        generate(:string) do |g|
+          g.computed(name: :prefix) do
+            if birthyear < 2000
+              'S'
+            else
+              'T'
+            end
+          end
+          g.computed(name: :yy) do
+            birthyear.to_s[-2..]
+          end
+          g.int(name: :values, length: 5)
+          g.computed(name: :check, deps: %i[prefix yy values]) do |prefix, yy, values|
+            generate_nric_check_alphabet("#{yy}#{values}", prefix)
+          end
+        end
       end
 
       ##
@@ -206,50 +205,80 @@ module Faker
         str[len - 1] = (10 - (sum % 10)) % 10
 
         # Output the IMEI value.
-        str.join('')
+        str.join
       end
 
       def generate_base10_isbn
-        values = regexify(/\d{9}/)
-        remainder = sum(values) { |value, index| (index + 1) * value.to_i } % 11
-        values << "-#{remainder == 10 ? 'X' : remainder}"
+        generate(:string) do |g|
+          g.int(name: :values, length: 9)
+          g.lit('-')
+          g.computed(name: :checksum, deps: [:values]) do |values|
+            remainder = sum(values.to_s) { |value, offset| (offset + 1) * value.to_i } % 11
+            if remainder == 10
+              'X'
+            else
+              remainder.to_s
+            end
+          end
+        end
       end
 
       def generate_base13_isbn
-        values = regexify(/\d{12}/)
-        remainder = sum(values) { |value, index| index.even? ? value.to_i : value.to_i * 3 } % 10
-        values << "-#{(10 - remainder) % 10}"
+        generate(:string) do |g|
+          g.int(name: :values, length: 12)
+          g.lit('-')
+          g.computed(name: :checksum, deps: [:values]) do |values|
+            remainder = sum(values.to_s) { |value, offset| offset.even? ? value.to_i : value.to_i * 3 } % 10
+            (10 - remainder) % 10
+          end
+        end
       end
 
       def sum(values)
-        values.split(//).each_with_index.inject(0) do |sum, (value, index)|
+        values.chars.each_with_index.inject(0) do |sum, (value, index)|
           sum + yield(value, index)
         end
       end
 
       def generate_base8_ean
-        values = regexify(/\d{7}/)
-        check_digit = 10 - values.split(//).each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
-        values << (check_digit == 10 ? 0 : check_digit).to_s
+        generate(:string) do |g|
+          g.int(name: :values, length: 7)
+          g.computed(name: :checksum, deps: [:values]) do |values|
+            check_digit = 10 - values.to_s.chars.each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT8[i] } % 10
+            if check_digit == 10
+              0
+            else
+              check_digit
+            end
+          end
+        end
       end
 
       def generate_base13_ean
-        values = regexify(/\d{12}/)
-        check_digit = 10 - values.split(//).each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
-        values << (check_digit == 10 ? 0 : check_digit).to_s
+        generate(:string) do |g|
+          g.int(name: :values, length: 12)
+          g.computed(name: :checksum, deps: [:values]) do |values|
+            check_digit = 10 - values.to_s.chars.each_with_index.inject(0) { |s, (v, i)| s + v.to_i * EAN_CHECK_DIGIT13[i] } % 10
+            if check_digit == 10
+              0
+            else
+              check_digit
+            end
+          end
+        end
       end
 
       EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3].freeze
       EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3].freeze
 
       def rut_verificator_digit(rut)
-        total = rut.to_s.rjust(8, '0').split(//).zip(%w[3 2 7 6 5 4 3 2]).collect { |a, b| a.to_i * b.to_i }.inject(:+)
-        (11 - total % 11).to_s.gsub(/10/, 'k').gsub(/11/, '0')
+        total = rut.to_s.rjust(8, '0').chars.zip(%w[3 2 7 6 5 4 3 2]).collect { |a, b| a.to_i * b.to_i }.inject(:+)
+        (11 - total % 11).to_s.gsub('10', 'k').gsub('11', '0')
       end
 
       def generate_nric_check_alphabet(values, prefix)
         weight = %w[2 7 6 5 4 3 2]
-        total = values.split(//).zip(weight).collect { |a, b| a.to_i * b.to_i }.inject(:+)
+        total = values.chars.zip(weight).collect { |a, b| a.to_i * b.to_i }.inject(:+)
         total += 4 if prefix == 'T'
         %w[A B C D E F G H I Z J][10 - total % 11]
       end

@@ -222,6 +222,8 @@ mi-NZ:
         - Esplanade
       default_country:
         - Aotearoa
+      default_country_code:
+        - NZ
       city:
         - Ahuriri
         - Awaroa

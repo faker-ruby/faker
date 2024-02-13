@@ -8,48 +8,49 @@ class TestFakerCannabis < Test::Unit::TestCase
   end
 
   def test_strain
-    10.times { assert Faker::Cannabis.strain.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.strain }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_cannabinoid_abbreviation
-    10.times { assert Faker::Cannabis.cannabinoid_abbreviation.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.cannabinoid_abbreviation }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_cannabinoid
-    10.times { assert Faker::Cannabis.cannabinoid.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.cannabinoid }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_terpene
-    10.times { assert Faker::Cannabis.terpene.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.terpene }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_medical_use
-    10.times { assert Faker::Cannabis.medical_use.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.medical_use }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_health_benefit
-    10.times { assert Faker::Cannabis.health_benefit.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.health_benefit }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_category
-    10.times { assert Faker::Cannabis.category.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.category }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_type
-    10.times { assert Faker::Cannabis.type.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.type }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_buzzword
-    10.times { assert Faker::Cannabis.buzzword.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.buzzword }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_brand
-    10.times { assert Faker::Cannabis.brand.match(/\w+/) }
+    deterministically_verify(-> { Faker::Cannabis.brand }) { |result| assert_match(/\w+/, result) }
   end
 
   def test_locales
     [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
+
       assert Faker::Cannabis.strain.is_a? String
       assert Faker::Cannabis.cannabinoid_abbreviation.is_a? String
       assert Faker::Cannabis.cannabinoid.is_a? String

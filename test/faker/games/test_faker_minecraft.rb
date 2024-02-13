@@ -8,34 +8,34 @@ class TestFakerMinecraft < Test::Unit::TestCase
   end
 
   def test_achievement
-    assert @minecraft.achievement.match(/\w+/)
+    assert_match(/\w+/, @minecraft.achievement)
   end
 
   def test_biome
-    assert @minecraft.biome.match(/\w+/)
+    assert_match(/\w+/, @minecraft.biome)
   end
 
   def test_block
-    assert @minecraft.block.match(/\w+/)
+    assert_match(/\w+/, @minecraft.block)
   end
 
   def test_enchantment
-    assert @minecraft.enchantment.match(/\w+/)
+    assert_match(/\w+/, @minecraft.enchantment)
   end
 
   def test_game_mode
-    assert @minecraft.game_mode.match(/\w+/)
+    assert_match(/\w+/, @minecraft.game_mode)
   end
 
   def test_item
-    assert @minecraft.item.match(/\w+/)
+    assert_match(/\w+/, @minecraft.item)
   end
 
   def test_mob
-    assert @minecraft.mob.match(/\w+/)
+    assert_match(/\w+/, @minecraft.mob)
   end
 
   def test_status_effect
-    assert @minecraft.status_effect.match(/\w+/)
+    assert_match(/\w+/, @minecraft.status_effect)
   end
 end

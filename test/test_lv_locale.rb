@@ -17,11 +17,13 @@ class TestLvLocale < Test::Unit::TestCase
 
   def test_lv_phone_number
     prefixes = (0..999).map { Faker::PhoneNumber.phone_number[0, 2] }.uniq.sort
+
     assert_equal @phone_prefixes, prefixes
   end
 
   def test_lv_cell_phone
     prefixes = (0..999).map { Faker::PhoneNumber.cell_phone[0, 2] }.uniq.sort
+
     assert_equal @cell_prefixes, prefixes
   end
 
@@ -44,7 +46,7 @@ class TestLvLocale < Test::Unit::TestCase
   end
 
   def test_lv_internet_methods
-    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 

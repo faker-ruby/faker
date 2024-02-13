@@ -8,18 +8,18 @@ class TestFakerChiquito < Test::Unit::TestCase
   end
 
   def test_expression
-    assert @tester.expression.match(/\w+/)
+    assert_match(/\w+/, @tester.expression)
   end
 
   def test_term
-    assert @tester.term.match(/\w+/)
+    assert_match(/\w+/, @tester.term)
   end
 
   def test_joke
-    assert @tester.joke.match(/\w+/)
+    assert_match(/\w+/, @tester.joke)
   end
 
   def test_sentence
-    assert @tester.sentence.match(/\w+/)
+    assert_match(/\w+/, @tester.sentence)
   end
 end

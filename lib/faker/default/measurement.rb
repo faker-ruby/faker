@@ -9,7 +9,7 @@ module Faker
       ##
       # Produces a random height measurement.
       #
-      # @param amount [Integer] Speficies the random height value.
+      # @param amount [Integer] Specifies the random height value.
       # @return [String]
       #
       # @example
@@ -19,18 +19,14 @@ module Faker
       #   Faker::Measurement.height(amount: "all") #=> "inches"
       #
       # @faker.version 1.7.3
-      def height(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def height(amount: rand(10))
         define_measurement_locale(amount, 'height')
       end
 
       ##
       # Produces a random length measurement.
       #
-      # @param amount [Integer] Speficies the random length value.
+      # @param amount [Integer] Specifies the random length value.
       # @return [String]
       #
       # @example
@@ -38,18 +34,14 @@ module Faker
       #   Faker::Measurement.length(amount: 1.4) #=> "1.4 yards"
       #
       # @faker.version 1.7.3
-      def length(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def length(amount: rand(10))
         define_measurement_locale(amount, 'length')
       end
 
       ##
       # Produces a random volume measurement.
       #
-      # @param amount [Integer] Speficies the random volume value.
+      # @param amount [Integer] Specifies the random volume value.
       # @return [String]
       #
       # @example
@@ -57,18 +49,14 @@ module Faker
       #   Faker::Measurement.volume(amount: 1.4) #=> "1.4 cups"
       #
       # @faker.version 1.7.3
-      def volume(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def volume(amount: rand(10))
         define_measurement_locale(amount, 'volume')
       end
 
       ##
       # Produces a random weight measurement.
       #
-      # @param amount [Integer] Speficies the random weight value.
+      # @param amount [Integer] Specifies the random weight value.
       # @return [String]
       #
       # @example
@@ -76,18 +64,14 @@ module Faker
       #   Faker::Measurement.weight(amount: 1.4) #=> "1.4 pounds"
       #
       # @faker.version 1.7.3
-      def weight(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def weight(amount: rand(10))
         define_measurement_locale(amount, 'weight')
       end
 
       ##
       # Produces a random metric height measurement.
       #
-      # @param amount [Integer] Speficies the random height value.
+      # @param amount [Integer] Specifies the random height value.
       # @return [String]
       #
       # @example
@@ -95,18 +79,14 @@ module Faker
       #   Faker::Measurement.metric_height(amount: 1.4) #=> "1.4 meters"
       #
       # @faker.version 1.7.3
-      def metric_height(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def metric_height(amount: rand(10))
         define_measurement_locale(amount, 'metric_height')
       end
 
       ##
       # Produces a random metric length measurement.
       #
-      # @param amount [Integer] Speficies the random length value.
+      # @param amount [Integer] Specifies the random length value.
       # @return [String]
       #
       # @example
@@ -114,18 +94,14 @@ module Faker
       #   Faker::Measurement.metric_length(amount: 1.4) #=> "1.4 decimeters"
       #
       # @faker.version 1.7.3
-      def metric_length(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def metric_length(amount: rand(10))
         define_measurement_locale(amount, 'metric_length')
       end
 
       ##
       # Produces a random metric volume measurement.
       #
-      # @param amount [Integer] Speficies the random volume value.
+      # @param amount [Integer] Specifies the random volume value.
       # @return [String]
       #
       # @example
@@ -133,18 +109,14 @@ module Faker
       #   Faker::Measurement.metric_volume(amount: 1.4) #=> "1.4 liters"
       #
       # @faker.version 1.7.3
-      def metric_volume(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def metric_volume(amount: rand(10))
         define_measurement_locale(amount, 'metric_volume')
       end
 
       ##
       # Produces a random metric weight measurement.
       #
-      # @param amount [Integer] Speficies the random weight value.
+      # @param amount [Integer] Specifies the random weight value.
       # @return [String]
       #
       # @example
@@ -152,11 +124,7 @@ module Faker
       #   Faker::Measurement.metric_weight(amount: 1.4) #=> "1.4 grams"
       #
       # @faker.version 1.7.3
-      def metric_weight(legacy_amount = NOT_GIVEN, amount: rand(10))
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :amount if legacy_amount != NOT_GIVEN
-        end
-
+      def metric_weight(amount: rand(10))
         define_measurement_locale(amount, 'metric_weight')
       end
 

@@ -14,15 +14,16 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_number
-    assert @tester.number(digits: 10).to_s.match(/[0-9]{10}/)
+    assert_match(/[0-9]{10}/, @tester.number(digits: 10).to_s)
 
     10.times do |digits|
       digits += 1
-      assert @tester.number(digits: digits).to_s.match(/^[0-9]{#{digits}}$/)
+
+      assert_match(/^[0-9]{#{digits}}$/, @tester.number(digits: digits).to_s)
     end
 
-    assert @tester.number(digits: 10).to_s.length == 10
-    assert @tester.number(digits: 1).to_s.length == 1
+    assert_equal(10, @tester.number(digits: 10).to_s.length)
+    assert_equal(1, @tester.number(digits: 1).to_s.length)
   end
 
   def test_number_with_one_digit
@@ -38,14 +39,14 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_decimal
-    assert @tester.decimal(l_digits: 1, r_digits: 1).to_s.match(/[0-9]{1}\.[1-9]{1}/)
-    assert @tester.decimal(l_digits: 2).to_s.match(/[0-9]{2}\.[0-9]{1}[1-9]{1}/)
-    assert @tester.decimal(l_digits: 4, r_digits: 5).to_s.match(/[0-9]{4}\.[0-9]{4}[1-9]{1}/)
+    assert_match(/[0-9]{1}\.[1-9]{1}/, @tester.decimal(l_digits: 1, r_digits: 1).to_s)
+    assert_match(/[0-9]{2}\.[0-9]{1}[1-9]{1}/, @tester.decimal(l_digits: 2).to_s)
+    assert_match(/[0-9]{4}\.[0-9]{4}[1-9]{1}/, @tester.decimal(l_digits: 4, r_digits: 5).to_s)
   end
 
   def test_digit
-    assert @tester.digit.to_s.match(/[0-9]{1}/)
-    assert((1..1000).collect { |_i| @tester.digit == 9 }.include?(true))
+    assert_match(/[0-9]{1}/, @tester.digit.to_s)
+    assert_includes((1..1000).collect { |_i| @tester.digit == 9 }, true)
   end
 
   def test_even_distribution
@@ -55,11 +56,12 @@ class TestFakerNumber < Test::Unit::TestCase
     times.times do
       assert num = @tester.digit
       stats[num] ||= 0
+
       assert stats[num] += 1
     end
 
-    stats.each do |_k, v|
-      assert_in_delta 10.0, 100.0 * v / times, 2.0
+    stats.each_value do |value|
+      assert_in_delta 10.0, 100.0 * value / times, 2.0
     end
   end
 
@@ -75,63 +77,62 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_between
-    100.times do
-      random_number = @tester.between(from: -50, to: 50)
-      assert random_number >= -50, "Expected >= -50, but got #{random_number}"
-      assert random_number <=  50, "Expected <= 50, but got #{random_number}"
+    deterministically_verify -> { @tester.between(from: -50, to: 50) }, depth: 5 do |random_number|
+      assert_operator random_number, :>=, -50, "Expected >= -50, but got #{random_number}"
+      assert_operator random_number, :<=, 50, "Expected <= 50, but got #{random_number}"
     end
   end
 
   def test_within
-    100.times do
-      random_number = @tester.within(range: -50..50)
-      assert random_number >= -50, "Expected >= -50, but got #{random_number}"
-      assert random_number <=  50, "Expected <= 50, but got #{random_number}"
+    deterministically_verify -> { @tester.within(range: -50..50) }, depth: 5 do |random_number|
+      assert_operator random_number, :>=, -50, "Expected >= -50, but got #{random_number}"
+      assert_operator random_number, :<=, 50, "Expected <= 50, but got #{random_number}"
     end
   end
 
   def test_positive
-    100.times do
-      random_number = @tester.positive(from: 1, to: 100)
-      assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
-      assert random_number <= 100, "Expected <= 100, but got #{random_number}"
+    deterministically_verify -> { @tester.positive(from: 1, to: 100) }, depth: 5 do |random_number|
+      assert_operator random_number, :>=, 1, "Expected >= 1, but got #{random_number}"
+      assert_operator random_number, :<=, 100, "Expected <= 100, but got #{random_number}"
     end
   end
 
   def test_negative
-    100.times do
-      random_number = @tester.negative(from: -1, to: -100)
-      assert random_number <= -1,   "Expected <= -1, but got #{random_number}"
-      assert random_number >= -100, "Expected >= -100, but got #{random_number}"
+    deterministically_verify -> { @tester.negative(from: -1, to: -100) }, depth: 5 do |random_number|
+      assert_operator random_number, :<=, -1, "Expected <= -1, but got #{random_number}"
+      assert_operator random_number, :>=, -100, "Expected >= -100, but got #{random_number}"
     end
   end
 
   def test_force_positive
     random_number = @tester.positive(from: -1, to: -100)
-    assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
-    assert random_number <= 100, "Expected <= 100, but got #{random_number}"
+
+    assert_operator random_number, :>=, 1, "Expected >= 1, but got #{random_number}"
+    assert_operator random_number, :<=, 100, "Expected <= 100, but got #{random_number}"
   end
 
   def test_force_negative
     random_number = @tester.negative(from: 1, to: 100)
-    assert random_number <= -1,   "Expected <= -1, but got #{random_number}"
-    assert random_number >= -100, "Expected >= -100, but got #{random_number}"
+
+    assert_operator random_number, :<=, -1, "Expected <= -1, but got #{random_number}"
+    assert_operator random_number, :>=, -100, "Expected >= -100, but got #{random_number}"
   end
 
   def test_parameters_order
     random_number = @tester.between(from: 100, to: 1)
-    assert random_number >= 1,   "Expected >= 1, but got #{random_number}"
-    assert random_number <= 100, "Expected <= 100, but got #{random_number}"
+
+    assert_operator random_number, :>=, 1, "Expected >= 1, but got #{random_number}"
+    assert_operator random_number, :<=, 100, "Expected <= 100, but got #{random_number}"
   end
 
   def test_hexadecimal
-    assert @tester.hexadecimal(digits: 4).match(/[0-9a-f]{4}/)
-    assert @tester.hexadecimal(digits: 7).match(/[0-9a-f]{7}/)
+    assert_match(/[0-9a-f]{4}/, @tester.hexadecimal(digits: 4))
+    assert_match(/[0-9a-f]{7}/, @tester.hexadecimal(digits: 7))
   end
 
   def test_binary
-    assert @tester.binary(digits: 4).match(/^[0-1]{4}$/)
-    assert @tester.binary(digits: 8).match(/^[0-1]{8}$/)
-    assert @tester.binary.match(/^[0-1]{4}$/)
+    assert_match(/^[0-1]{4}$/, @tester.binary(digits: 4))
+    assert_match(/^[0-1]{8}$/, @tester.binary(digits: 8))
+    assert_match(/^[0-1]{4}$/, @tester.binary)
   end
 end

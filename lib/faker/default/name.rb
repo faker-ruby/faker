@@ -144,11 +144,7 @@ module Faker
       #   Faker::Name.initials(number: 2) #=> "NM"
       #
       # @faker.version 1.8.5
-      def initials(legacy_number = NOT_GIVEN, number: 3)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :number if legacy_number != NOT_GIVEN
-        end
-
+      def initials(number: 3)
         (0...number).map { rand(65..90).chr }.join
       end
     end

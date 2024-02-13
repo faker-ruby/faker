@@ -9,9 +9,12 @@ name: Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
+
+permissions:
+  contents: read
 
 jobs:
   lint:
@@ -35,11 +38,11 @@ jobs:
       fail-fast: false # don't fail all matrix builds if one fails
       matrix:
         ruby:
-          - '2.5'
-          - '2.6'
           - '2.7'
           - '3.0'
           - '3.1'
+          - '3.2'
+          - '3.3'
           - 'head'
           - truffleruby-head
     continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
@@ -64,7 +67,6 @@ jobs:
     - name: Publish code coverage
       env:
         CC_TEST_REPORTER_ID: c9b8356df2031a5a72462555fe898245cf24d83c7bb82c40ddb5c6c6976c4319
-        # CC_TEST_REPORTER_ID:  ${{ secrets.CodeClimateReporterId }}
       run: |
         export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
         ./cc-test-reporter after-build -r $CC_TEST_REPORTER_ID

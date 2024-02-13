@@ -30,11 +30,13 @@ class TestEnNgLocale < Test::Unit::TestCase
 
   def test_en_ng_phonenumber_is_11_digits
     phone_number = Faker::PhoneNumber.phone_number
+
     assert_equal 11, phone_number.length
   end
 
   def test_en_ng_phonenumber_starts_with_0
     phone_number = Faker::PhoneNumber.phone_number
+
     assert_equal '0', phone_number[0]
   end
 end

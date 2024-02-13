@@ -8,18 +8,18 @@ class TestFakerBasketball < Test::Unit::TestCase
   end
 
   def test_team
-    assert @tester.team.match(/\w+/)
+    assert_match(/\w+/, @tester.team)
   end
 
   def test_player
-    assert @tester.player.match(/\w+/)
+    assert_match(/\w+/, @tester.player)
   end
 
   def test_coach
-    assert @tester.coach.match(/\w+/)
+    assert_match(/\w+/, @tester.coach)
   end
 
   def test_position
-    assert @tester.position.match(/\w+/)
+    assert_match(/\w+/, @tester.position)
   end
 end

@@ -8,34 +8,34 @@ class TestFakerDog < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.name)
   end
 
   def test_breed
-    assert @tester.breed.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.breed)
   end
 
   def test_sound
-    assert @tester.sound.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.sound)
   end
 
   def test_meme_phrase
-    assert @tester.meme_phrase.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.meme_phrase)
   end
 
   def test_age
-    assert @tester.age.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.age)
   end
 
   def test_gender
-    assert @tester.gender.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.gender)
   end
 
   def test_coat_length
-    assert @tester.coat_length.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.coat_length)
   end
 
   def test_size
-    assert @tester.size.match(/\w+\.?/)
+    assert_match(/\w+\.?/, @tester.size)
   end
 end

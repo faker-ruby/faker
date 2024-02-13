@@ -11,7 +11,7 @@ assignees: ''
 A clear and concise description of what the bug is.
 
 ## To Reproduce
-Describe a way to reproduce your bug. To get the Faker version, run `FAKER::VERSION`.
+Describe a way to reproduce your bug. To get the Faker version, run `Faker::VERSION`.
 
 Use the reproduction script below to reproduce the issue:
 
@@ -25,7 +25,7 @@ gemfile(true) do
 
   git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
   gem "minitest"
 end
 

@@ -8,6 +8,6 @@ class TestFakerUmphreysMcgee < Test::Unit::TestCase
   end
 
   def test_song
-    assert @tester.song.match(/\w+/)
+    assert_match(/\w+/, @tester.song)
   end
 end

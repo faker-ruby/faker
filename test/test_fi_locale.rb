@@ -37,11 +37,11 @@ class TestFiLocale < Test::Unit::TestCase
     assert Faker::Invoice.creditor_reference.is_a? String
     assert Faker::Invoice.reference.is_a? String
     assert Faker::Invoice.reference(ref: '515141803475128').is_a? String
-    assert Faker::Invoice.reference(ref: '515141803475128#') == '5151418034751285'
+    assert_equal('5151418034751285', Faker::Invoice.reference(ref: '515141803475128#'))
   end
 
   def test_fi_phone_number
-    assert_match(/0\d{2}[\-\s]?\d{6}/, Faker::PhoneNumber.cell_phone)
-    assert_match(/\d{2,3}[\s\-]?\d{5,6}/, Faker::PhoneNumber.phone_number)
+    assert_match(/0\d{2}[-\s]?\d{6}/, Faker::PhoneNumber.cell_phone)
+    assert_match(/\d{2,3}[\s-]?\d{5,6}/, Faker::PhoneNumber.phone_number)
   end
 end

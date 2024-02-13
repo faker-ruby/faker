@@ -8,18 +8,18 @@ class TestFakerTvShowsStarTrek < Test::Unit::TestCase
   end
 
   def test_characters
-    assert @tester.character.match(/\w+/)
+    assert_match(/\w+/, @tester.character)
   end
 
   def test_locations
-    assert @tester.location.match(/\w+/)
+    assert_match(/\w+/, @tester.location)
   end
 
   def test_species
-    assert @tester.specie.match(/\w+/)
+    assert_match(/\w+/, @tester.specie)
   end
 
   def test_villains
-    assert @tester.villain.match(/\w+/)
+    assert_match(/\w+/, @tester.villain)
   end
 end

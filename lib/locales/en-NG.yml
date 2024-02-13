@@ -73,5 +73,6 @@ en-NG:
         - "#{cities}"
       region: [South-West, North-East, South-South, North-Central, South-East, North-West]
       default_country: [Nigeria]
+      default_country_code: ["NG"]
     phone_number:
       formats: ['080########', '070########', '090########', '081########', '071########', '091########']

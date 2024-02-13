@@ -6,10 +6,9 @@ module Faker
 
     MILEAGE_MIN = 10_000
     MILEAGE_MAX = 90_000
-    VIN_LETTERS = 'ABCDEFGHJKLMNPRSTUVWXYZ'
-    VIN_MAP = '0123456789X'
-    VIN_WEIGHTS = '8765432X098765432'
-    VIN_REGEX = /^([A-HJ-NPR-Z0-9]){3}[A-HJ-NPR-Z0-9]{5}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-9]{1}[A-HJ-NPR-Z0-0]{1}[A-HJ-NPR-Z0-9]{1}\d{5}$/.freeze
+    VIN_KEYSPACE = %w[A B C D E F G H J K L M N P R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9].freeze
+    VIN_TRANSLITERATION = { A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, G: 7, H: 8, J: 1, K: 2, L: 3, M: 4, N: 5, P: 7, R: 9, S: 2, T: 3, U: 4, V: 5, W: 6, X: 7, Y: 8, Z: 9 }.freeze
+    VIN_WEIGHT = [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2].freeze
     SG_CHECKSUM_WEIGHTS = [3, 14, 2, 12, 2, 11, 1].freeze
     SG_CHECKSUM_CHARS = 'AYUSPLJGDBZXTRMKHEC'
 
@@ -23,7 +22,25 @@ module Faker
       #
       # @faker.version 1.6.4
       def vin
-        regexify(VIN_REGEX)
+        generate(:string) do |g|
+          g.letter(name: :wmi, ranges: ['100'..'199', '400'..'499', '500'..'599', '700'..'799', '7A0'..'7F9'])
+          g.letter(name: :vds, length: 5, ranges: [VIN_KEYSPACE])
+          g.computed(name: :checksum, deps: %i[wmi vds model_year plant_code vis]) do |wmi, vds, model_year, plant_code, vis|
+            checksum = "#{wmi}#{vds}0#{model_year}#{plant_code}#{vis}".chars.each_with_index.map do |char, i|
+              value = (char =~ /\A\d\z/ ? char.to_i : VIN_TRANSLITERATION[char.to_sym])
+              value * VIN_WEIGHT[i]
+            end.inject(:+) % 11
+
+            if checksum == 10
+              'X'
+            else
+              checksum
+            end
+          end
+          g.letter(name: :model_year, length: 1, ranges: [VIN_KEYSPACE - %w[U Z 0]])
+          g.letter(name: :plant_code, length: 1, ranges: [VIN_KEYSPACE])
+          g.int(name: :vis, length: 6)
+        end
       end
 
       # Produces a random vehicle manufacturer.
@@ -62,11 +79,7 @@ module Faker
       #   Faker::Vehicle.model(make_of_model: 'Toyota') #=> "Prius"
       #
       # @faker.version 1.6.4
-      def model(legacy_make_of_model = NOT_GIVEN, make_of_model: '')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :make_of_model if legacy_make_of_model != NOT_GIVEN
-        end
-
+      def model(make_of_model: '')
         return fetch("vehicle.models_by_make.#{make}") if make_of_model.empty?
 
         fetch("vehicle.models_by_make.#{make_of_model}")
@@ -249,12 +262,7 @@ module Faker
       #   Faker::Vehicle.kilometrage #=> 35378
       #
       # @faker.version 1.6.4
-      def mileage(legacy_min = NOT_GIVEN, legacy_max = NOT_GIVEN, min: MILEAGE_MIN, max: MILEAGE_MAX)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :min if legacy_min != NOT_GIVEN
-          keywords << :max if legacy_max != NOT_GIVEN
-        end
-
+      def mileage(min: MILEAGE_MIN, max: MILEAGE_MAX)
         rand_in_range(min, max)
       end
 
@@ -271,11 +279,7 @@ module Faker
       #   Faker::Vehicle.license_plate(state_abbreviation: 'FL') #=> "977 UNU"
       #
       # @faker.version 1.6.4
-      def license_plate(legacy_state_abreviation = NOT_GIVEN, state_abbreviation: '')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :state_abbreviation if legacy_state_abreviation != NOT_GIVEN
-        end
-
+      def license_plate(state_abbreviation: '')
         return regexify(bothify(fetch('vehicle.license_plate'))) if state_abbreviation.empty?
 
         key = "vehicle.license_plate_by_state.#{state_abbreviation}"
@@ -297,45 +301,30 @@ module Faker
         "#{plate_number}#{singapore_checksum(plate_number)}"
       end
 
+      ##
+      # Produces a car version
+      #
+      # @return [String]
+      #
+      # @example
+      #  Faker::Vehicle.version #=> "40 TFSI Premium"
+      #
+      # @faker.version next
+      def version
+        fetch('vehicle.version')
+      end
+
       private
 
-      def first_eight(number)
-        return number[0...8] unless number.nil?
-
-        regexify(VIN_REGEX)
-      end
-      alias last_eight first_eight
-
-      def calculate_vin_check_digit(vin)
-        sum = 0
-
-        vin.each_char.with_index do |c, i|
-          n = vin_char_to_number(c).to_i
-          weight = VIN_WEIGHTS[i].to_i
-          sum += weight * n
-        end
-
-        mod = sum % 11
-        mod == 10 ? 'X' : mod
-      end
-
-      def vin_char_to_number(char)
-        index = VIN_LETTERS.split('').index(char)
-
-        return char.to_i if index.nil?
-
-        VIN_MAP[index]
-      end
-
       def singapore_checksum(plate_number)
-        padded_alphabets = format('%3s', plate_number[/^[A-Z]+/]).tr(' ', '-').split('')
-        padded_digits = format('%04d', plate_number[/\d+/]).split('').map(&:to_i)
+        padded_alphabets = format('%3s', plate_number[/^[A-Z]+/]).tr(' ', '-').chars
+        padded_digits = format('%04d', plate_number[/\d+/]).chars.map(&:to_i)
         sum = [*padded_alphabets, *padded_digits].each_with_index.reduce(0) do |memo, (char, i)|
           value = char.is_a?(Integer) ? char : char.ord - 64
           memo + (SG_CHECKSUM_WEIGHTS[i] * value)
         end
 
-        SG_CHECKSUM_CHARS.split('')[sum % 19]
+        SG_CHECKSUM_CHARS.chars[sum % 19]
       end
     end
   end

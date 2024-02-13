@@ -8,90 +8,90 @@ class TestFakerOpera < Test::Unit::TestCase
   end
 
   def verdi
-    assert @tester.verdi.match(/\w+/i)
+    assert_match(/\w+/i, @tester.verdi)
   end
 
   def rossini
-    assert @tester.rossini.match(/\w+/i)
+    assert_match(/\w+/i, @tester.rossini)
   end
 
   def donizetti
-    assert @tester.donizetti.match(/\w+/i)
+    assert_match(/\w+/i, @tester.donizetti)
   end
 
   def bellini
-    assert @tester.bellini.match(/\w+/i)
+    assert_match(/\w+/i, @tester.bellini)
   end
 
   def mozart
-    assert @tester.mozart.match(/\w+/i)
+    assert_match(/\w+/i, @tester.mozart)
   end
 
   def mozart_italian
-    assert @tester.mozart_italian.match(/\w+/i)
+    assert_match(/\w+/i, @tester.mozart_italian)
   end
 
   def mozart_german
-    assert @tester.mozart_german.match(/\w+/i)
+    assert_match(/\w+/i, @tester.mozart_german)
   end
 
   def gluck
-    assert @tester.gluck.match(/\w+/i)
+    assert_match(/\w+/i, @tester.gluck)
   end
 
   def gluck_italian
-    assert @tester.gluck_italian.match(/\w+/i)
+    assert_match(/\w+/i, @tester.gluck_italian)
   end
 
   def gluck_french
-    assert @tester.gluck_french.match(/\w+/i)
+    assert_match(/\w+/i, @tester.gluck_french)
   end
 
   def beethoven
-    assert @tester.beethoven.match(/\w+/i)
+    assert_match(/\w+/i, @tester.beethoven)
   end
 
   def weber
-    assert @tester.weber.match(/\w+/i)
+    assert_match(/\w+/i, @tester.weber)
   end
 
   def strauss
-    assert @tester.strauss.match(/\w+/i)
+    assert_match(/\w+/i, @tester.strauss)
   end
 
   def wagner
-    assert @tester.wagner.match(/\w+/i)
+    assert_match(/\w+/i, @tester.wagner)
   end
 
   def schumann
-    assert @tester.schumann.match(/\w+/i)
+    assert_match(/\w+/i, @tester.schumann)
   end
 
   def schubert
-    assert @tester.schubert.match(/\w+/i)
+    assert_match(/\w+/i, @tester.schubert)
   end
 
   def berg
-    assert @tester.berg.match(/\w+/i)
+    assert_match(/\w+/i, @tester.berg)
   end
 
   def ravel
-    assert @tester.ravel.match(/\w+/i)
+    assert_match(/\w+/i, @tester.ravel)
   end
 
   def berlioz
-    assert @tester.berlioz.match(/\w+/i)
+    assert_match(/\w+/i, @tester.berlioz)
   end
 
   def bizet
-    assert @tester.bizet.match(/\w+/i)
+    assert_match(/\w+/i, @tester.bizet)
   end
 
   def gounod
-    assert @tester.gounod.match(/\w+/i)
+    assert_match(/\w+/i, @tester.gounod)
   end
 
   def saint_saens
-    assert @tester.saint_saens.match(/\w+/i)
+    assert_match(/\w+/i, @tester.saint_saens)
   end
 end

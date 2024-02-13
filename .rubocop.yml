@@ -1,5 +1,15 @@
+require:
+  - rubocop-minitest
+  - rubocop-rake
+
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
+  NewCops: enable
+
+# Suppress noise for obvious operator precedence.
+Lint/AmbiguousOperatorPrecedence:
+  Description: Checks for expressions containing multiple binary operations with ambiguous precedence.
+  Enabled: false
 
 Layout/LineLength:
   Description: This cop checks the length of lines in the source code. The maximum length is configurable.
@@ -53,6 +63,10 @@ Style/Documentation:
   Description: This cop checks for missing top-level documentation of classes and modules.
   Enabled: false
 
+Style/DocumentDynamicEvalDefinition:
+  Description: When using `class_eval` (or other `eval`) with string interpolation, add a comment block showing its appearance if interpolated.
+  Enabled: false
+
 Style/EvalWithLocation:
   Description: This cop checks eval method usage. eval can receive source location metadata, that are filename and line number.
   Exclude:
@@ -95,3 +109,7 @@ Security/Eval:
   Description: The use of eval represents a serious security risk.
   Exclude:
     - 'lib/faker/default/json.rb'
+
+Style/IfUnlessModifier:
+  Description: Checks for `if` and `unless` statements that would fit on one line if written as modifier `if`/`unless`. The cop also checks for modifier `if`/`unless` lines that exceed the maximum line length.
+  Enabled: false

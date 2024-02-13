@@ -25,6 +25,7 @@ sv:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Sverige]
+      default_country_code: ["SE"]
 
     company:
       suffix: ["Gruppen", "AB", "HB", "Group", "Investment", "Kommanditbolag", "Aktiebolag"]

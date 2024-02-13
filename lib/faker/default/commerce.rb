@@ -27,11 +27,7 @@ module Faker
       #   Faker::Commerce.promotion_code(digits: 2) #=> "AmazingPrice57"
       #
       # @faker.version 1.7.0
-      def promotion_code(legacy_digits = NOT_GIVEN, digits: 6)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :digits if legacy_digits != NOT_GIVEN
-        end
-
+      def promotion_code(digits: 6)
         [
           fetch('commerce.promotion_code.adjective'),
           fetch('commerce.promotion_code.noun'),
@@ -52,12 +48,7 @@ module Faker
       #   Faker::Commerce.department(max: 2, fixed_amount: true) #=> "Books & Tools"
       #
       # @faker.version 1.2.0
-      def department(legacy_max = NOT_GIVEN, legacy_fixed_amount = NOT_GIVEN, max: 3, fixed_amount: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :max if legacy_max != NOT_GIVEN
-          keywords << :fixed_amount if legacy_fixed_amount != NOT_GIVEN
-        end
-
+      def department(max: 3, fixed_amount: false)
         num = max if fixed_amount
         num ||= 1 + rand(max)
 
@@ -112,12 +103,7 @@ module Faker
       #   Faker::Commerce.price(range: 0..10.0, as_string: true) #=> "2.18"
       #
       # @faker.version 1.2.0
-      def price(legacy_range = NOT_GIVEN, legacy_as_string = NOT_GIVEN, range: 0..100.0, as_string: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :range if legacy_range != NOT_GIVEN
-          keywords << :as_string if legacy_as_string != NOT_GIVEN
-        end
-
+      def price(range: 0..100.0, as_string: false)
         price = (rand(range) * 100).floor / 100.0
         if as_string
           price_parts = price.to_s.split('.')

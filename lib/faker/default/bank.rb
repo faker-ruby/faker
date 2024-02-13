@@ -16,14 +16,10 @@ module Faker
       #   Faker::Bank.account_number(digits: 13) #=> 673858237902
       #
       # @faker.version 1.9.1
-      def account_number(legacy_digits = NOT_GIVEN, digits: 10)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :digits if legacy_digits != NOT_GIVEN
-        end
-
+      def account_number(digits: 10)
         output = ''
 
-        output += rand.to_s[2..-1] while output.length < digits
+        output += rand.to_s[2..] while output.length < digits
 
         output[0...digits]
       end
@@ -40,14 +36,10 @@ module Faker
       #   Faker::Bank.iban(country_code: nil) #=> "DE45186738071857270067"
       #
       # @faker.version 1.7.0
-      def iban(legacy_country_code = NOT_GIVEN, country_code: 'GB')
+      def iban(country_code: 'GB')
         # Each country has its own format for bank accounts
         # Many of them use letters in certain parts of the account
         # Using regex patterns we can create virtually any type of bank account
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :country_code if legacy_country_code != NOT_GIVEN
-        end
-
         country_code ||= iban_country_code
 
         begin
@@ -145,7 +137,7 @@ module Faker
       private
 
       def checksum(num_string)
-        num_array = num_string.split('').map(&:to_i)
+        num_array = num_string.chars.map(&:to_i)
         (
           7 * (num_array[0] + num_array[3] + num_array[6]) +
             3 * (num_array[1] + num_array[4] + num_array[7]) +
@@ -166,15 +158,15 @@ module Faker
       end
 
       # Calculates the mandatory checksum in 3rd and 4th characters in IBAN format
-      # source: https://en.wikipedia.org/wiki/International_Bank_Account_Number#Validating_the_IBAN
+      # source: https://en.wikipedia.org/wiki/International_Bank_Account_Number#Generating_IBAN_check_digits
       def iban_checksum(country_code, account)
         # Converts letters to numbers according the iban rules, A=10..Z=35
         account_to_number = "#{account}#{country_code}00".upcase.chars.map do |d|
           d =~ /[A-Z]/ ? (d.ord - 55).to_s : d
         end.join.to_i
 
-        # This is answer to (iban_to_num + checksum) % 97 == 1
-        checksum = (1 - account_to_number) % 97
+        # This is the correct answer to (iban_to_num + checksum) % 97 == 1
+        checksum = 98 - (account_to_number % 97)
 
         # Use leftpad to make the size always to 2
         checksum.to_s.rjust(2, '0')
@@ -194,8 +186,8 @@ module Faker
 
       def compile_fraction(routing_num)
         prefix = (1..50).to_a.map(&:to_s).sample
-        numerator = routing_num.split('')[5..8].join.to_i.to_s
-        denominator = routing_num.split('')[0..4].join.to_i.to_s
+        numerator = routing_num.chars[5..8].join.to_i.to_s
+        denominator = routing_num.chars[0..4].join.to_i.to_s
         "#{prefix}-#{numerator}/#{denominator}"
       end
 

@@ -80,11 +80,7 @@ module Faker
         #   Faker::Games::Dota.quote(hero: 'alchemist') #=> "Better living through alchemy!"
         #
         # @faker.version 1.9.0
-        def quote(legacy_hero = NOT_GIVEN, hero: 'abaddon')
-          warn_for_deprecated_arguments do |keywords|
-            keywords << :hero if legacy_hero != NOT_GIVEN
-          end
-
+        def quote(hero: 'abaddon')
           fetch("games.dota.#{hero}.quote")
         end
       end

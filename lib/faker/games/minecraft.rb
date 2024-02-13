@@ -88,7 +88,7 @@ module Faker
         # @return [String]
         #
         # @example
-        #   Faker::Games::Minecraft.item #=> "Sheep"
+        #   Faker::Games::Minecraft.mob #=> "Sheep"
         #
         # @faker.version 2.13.0
         def mob

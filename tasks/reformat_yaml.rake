@@ -19,7 +19,7 @@ def reformat_file(filename)
   input = YAML.load_file(filename)
   # Psych outputs non-indented hypendated array list items.
   output = input.to_yaml(line_width: -1)
-                .gsub(/(^ *- .+$)/, '  \1') # Indent hypenated list items
+                .gsub(/(^ *- .+$)/, '  \1') # Indent hyphenated list items
                 .sub(/^---\n/, '') # Remove header
 
   File.write(filename, output)

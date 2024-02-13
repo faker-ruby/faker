@@ -53,11 +53,7 @@ module Faker
       #   Faker::WorldCup.group #=> "Russia"
       #
       # @faker.version 2.13.0
-      def group(legacy_group = NOT_GIVEN, group: 'group_A')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :group if legacy_group != NOT_GIVEN
-        end
-
+      def group(group: 'group_A')
         fetch("world_cup.groups.#{group}")
       end
 
@@ -73,12 +69,7 @@ module Faker
       #   Faker::WorldCup.roster(country: 'Spain', type: 'forwards') #=> "Diego Costa"
       #
       # @faker.version 2.13.0
-      def roster(legacy_country = NOT_GIVEN, legacy_type = NOT_GIVEN, country: 'Egypt', type: 'coach')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :country if legacy_country != NOT_GIVEN
-          keywords << :type if legacy_type != NOT_GIVEN
-        end
-
+      def roster(country: 'Egypt', type: 'coach')
         fetch("world_cup.rosters.#{country}.#{type}")
       end
     end

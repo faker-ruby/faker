@@ -28,6 +28,7 @@ class TestFrLocale < Test::Unit::TestCase
     assert_match(/^\d{5}$/, Faker::Address.postcode)
     assert_match(/^\d+$/, Faker::Address.building_number)
     full_address_regex = /(([-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ'.]*\s)\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)*,)*\d*(\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']*)+,\s(\d{5})\s[-a-zA-ZéÉèÈàÀùÙâÂêÊîÎôÔûÛïÏëËüÜçÇæœ']+/
+
     assert_match(full_address_regex, Faker::Address.full_address)
     assert_equal('France', Faker::Address.default_country)
   end
@@ -35,6 +36,13 @@ class TestFrLocale < Test::Unit::TestCase
   def test_fr_adjective_methods
     assert Faker::Adjective.positive.is_a? String
     assert Faker::Adjective.negative.is_a? String
+  end
+
+  def test_fr_ancient_methods
+    assert Faker::Ancient.god.is_a? String
+    assert Faker::Ancient.primordial.is_a? String
+    assert Faker::Ancient.titan.is_a? String
+    assert Faker::Ancient.hero.is_a? String
   end
 
   def test_fr_appliance_methods
@@ -78,16 +86,16 @@ class TestFrLocale < Test::Unit::TestCase
   end
 
   def test_fr_demographic_methods
-    assert %w[Homme Femme].include?(Faker::Demographic.sex)
+    assert_includes %w[Homme Femme], Faker::Demographic.sex
   end
 
   def test_fr_internet_methods
-    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 
   def test_fr_gender_methods
-    assert %w[Masculin Féminin].include?(Faker::Gender.binary_type)
+    assert_includes %w[Masculin Féminin], Faker::Gender.binary_type
   end
 
   def test_fr_lorem_methods
@@ -122,11 +130,13 @@ class TestFrLocale < Test::Unit::TestCase
 
   def test_fr_phone_format
     phone = Faker::PhoneNumber.phone_number_with_country_code.gsub(/\D/, '')
+
     assert_match(/^(0|33)\d{8,10}$/, phone)
   end
 
   def test_fr_cell_phone_format
     mobile = Faker::PhoneNumber.cell_phone.gsub(/\D/, '')
+
     assert_match(/^0?(6|7)\d{8}$/, mobile)
   end
 

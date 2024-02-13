@@ -4,18 +4,20 @@ require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
   WORD_MATCH = /\w+\.?/.freeze
-  VALIDITY_MATCH = /^([A-HJ-NPR-Z0-9])+/.freeze
+  VIN_REGEX = /\A[A-HJ-NPR-Z0-9]{17}\z/.freeze
 
   def setup
     @tester = Faker::Vehicle
   end
 
   def test_vin
-    assert_match Faker::Vehicle::VIN_REGEX, @tester.vin
-  end
+    assert valid_vin('11111111111111111') # known valid test string
+    assert valid_vin('FAKERGEM5FAKERGEM') # valid checksum
+    refute valid_vin('ABCDEFGH123456789') # invalid checksum
 
-  def test_vin_validity
-    assert_match VALIDITY_MATCH, @tester.vin
+    deterministically_verify -> { @tester.vin }, depth: 4 do |vin|
+      assert valid_vin(vin)
+    end
   end
 
   def test_manufacture
@@ -27,9 +29,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_flexible_key
-    flexible_key = @tester.instance_variable_get('@flexible_key')
-
-    assert flexible_key == :vehicle
+    assert_equal(:vehicle, @tester.flexible_key)
   end
 
   def test_transmission
@@ -57,7 +57,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_engine
-    assert @tester.engine.match(/\d Cylinder Engine/)
+    assert_match(/\d Cylinder Engine/, @tester.engine)
   end
 
   def test_mileage
@@ -106,10 +106,28 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert standard_specs.length >= 5 && standard_specs.length < 10
   end
 
+  def test_version
+    assert_match WORD_MATCH, @tester.version
+  end
+
   private
 
   def doors_condition(doors)
-    assert doors.positive?
+    assert_predicate doors, :positive?
     assert doors.is_a?(Integer)
+  end
+
+  def valid_vin(vin)
+    if vin && vin =~ VIN_REGEX
+      total = 0
+      vin.chars.each_with_index do |char, index|
+        value = (char =~ /\A\d\z/ ? char.to_i : Faker::Vehicle::VIN_TRANSLITERATION[char.to_sym])
+        total += value * Faker::Vehicle::VIN_WEIGHT[index]
+      end
+      checksum = total % 11
+      checksum = 'X' if checksum == 10
+      return vin[8] == checksum.to_s
+    end
+    false
   end
 end

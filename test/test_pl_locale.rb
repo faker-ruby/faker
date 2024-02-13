@@ -16,16 +16,19 @@ class TestPlLocale < Test::Unit::TestCase
 
   def test_pl_names
     names = Faker::Base.fetch_all('name.first_name') + Faker::Base.fetch_all('name.last_name')
+
     names.each { |name| assert_match(/([\wĄąĆćĘęŁłÓóŚśŻżŹź]+\.? ?){2,3}/, name) }
   end
 
   def test_pl_phone_number
     prefixes = (0..999).map { Faker::PhoneNumber.phone_number[0, 2] }.uniq.sort
+
     assert_equal @phone_prefixes, prefixes
   end
 
   def test_pl_cell_phone
     prefixes = (0..999).map { Faker::PhoneNumber.cell_phone[0, 2] }.uniq.sort
+
     assert_equal @cell_prefixes, prefixes
   end
 
@@ -58,7 +61,7 @@ class TestPlLocale < Test::Unit::TestCase
   end
 
   def test_pl_internet_methods
-    assert Faker::Internet.free_email.is_a? String
+    assert Faker::Internet.email.is_a? String
     assert Faker::Internet.domain_suffix.is_a? String
   end
 

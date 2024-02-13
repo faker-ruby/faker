@@ -11,15 +11,15 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_character
-    assert @tester.character.length == 1
+    assert_equal(1, @tester.character.length)
   end
 
   def test_character_type
-    assert @tester.character.instance_of?(String)
+    assert_instance_of String, @tester.character
   end
 
   def test_characters
-    assert @tester.characters.length == 255
+    assert_equal(255, @tester.characters.length)
   end
 
   def test_characters_negatives
@@ -29,37 +29,60 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_characters_with_args
-    100.times { assert @tester.characters(number: 500).length == 500 }
+    deterministically_verify -> { @tester.characters(number: 500).length }, depth: 5 do |character_length|
+      assert_equal(500, character_length)
+    end
   end
 
   # Words delivered by a standard request should be on the standard wordlist.
   def test_standard_words
     @words = @tester.words(number: 1000)
-    @words.each { |w| assert @standard_wordlist.include?(w) }
+
+    @words.each { |w| assert_includes @standard_wordlist, w }
   end
 
   # Words requested from the supplemental list should all be in that list.
   def test_supplemental_words
     @words = @tester.words(number: 10_000, supplemental: true)
-    @words.each { |w| assert @complete_wordlist.include?(w) }
+
+    @words.each { |w| assert_includes @complete_wordlist, w }
   end
 
-  # Faker::Lorem.word generates random word from standart wordlist
+  # Faker::Lorem.word generates random word from standard wordlist
   def test_word
-    @tester = Faker::Lorem
     @standard_wordlist = I18n.translate('faker.lorem.words')
-    100.times { assert @standard_wordlist.include?(@tester.word) }
+
+    deterministically_verify -> { @tester.word }, depth: 5 do |word|
+      assert_includes @standard_wordlist, word
+    end
+  end
+
+  def test_excluded_words_on_word
+    excluded_words_array = @tester.words(number: 2)
+    w = @tester.word(exclude_words: excluded_words_array)
+
+    assert_not_equal w, excluded_words_array[0]
+    assert_not_equal w, excluded_words_array[1]
+  end
+
+  def test_excluded_words_as_string_on_word
+    excluded_words_array = @tester.words(number: 2)
+    excluded_word_string = excluded_words_array.join(', ')
+    w = @tester.word(exclude_words: excluded_word_string)
+
+    assert_not_equal w, excluded_words_array[0]
+    assert_not_equal w, excluded_words_array[1]
   end
 
   def test_exact_sentence_word_count
-    assert_equal 2, @tester.sentence(word_count: 2, supplemental: false, random_words_to_add: 0).split(' ').length
+    assert_equal 2, @tester.sentence(word_count: 2, supplemental: false, random_words_to_add: 0).split.length
   end
 
   def test_exact_count_param
-    assert(@tester.characters(number: 2).length == 2)
-    assert(@tester.words(number: 2).length == 2)
-    assert(@tester.sentences(number: 2).length == 2)
-    assert(@tester.paragraphs(number: 2).length == 2)
+    assert_equal(2, @tester.characters(number: 2).length)
+    assert_equal(2, @tester.words(number: 2).length)
+    assert_equal(2, @tester.sentences(number: 2).length)
+    assert_equal(2, @tester.paragraphs(number: 2).length)
   end
 
   def test_range_count_param
@@ -103,19 +126,20 @@ class TestFakerLorem < Test::Unit::TestCase
     range = @tester.words(number: 250..500)
     array = @tester.words(number: [250, 500])
 
-    assert(exact.length == 500)
+    assert_equal(500, exact.length)
     assert(range.length >= 250 && range.length <= 500)
     assert(array.length == 250 || array.length == 500)
   end
 
   def test_multibyte
     assert @tester.multibyte.is_a? String
-    assert %w[😀 ❤ 😡].include?(@tester.multibyte)
+    assert_includes %w[😀 ❤ 😡], @tester.multibyte
   end
 
   def test_paragraph_char_count
     paragraph = @tester.paragraph_by_chars(number: 256)
-    assert(paragraph.length == 256)
+
+    assert_equal(256, paragraph.length)
   end
 
   def test_unique_with_already_set_values
@@ -128,5 +152,33 @@ class TestFakerLorem < Test::Unit::TestCase
     values = ('a'..'z').to_a + ('0'..'9').to_a
     @tester.unique.exclude(:characters, [number: 1], values)
     assert_raise(Faker::UniqueGenerator::RetryLimitExceeded) { @tester.unique.characters(number: 1) }
+  end
+
+  def test_excluded_words_as_string
+    excluded_word_string = @tester.word
+    @words = @tester.words(number: 10_000, exclude_words: excluded_word_string)
+
+    @words.each { |w| assert_not_equal w, excluded_word_string }
+  end
+
+  def test_excluded_words_as_comma_delimited_string
+    excluded_words_array = @tester.words(number: 2)
+    excluded_words_string = excluded_words_array.join(', ')
+    @words = @tester.words(number: 10_000, exclude_words: excluded_words_string)
+
+    @words.each do |w|
+      assert_not_equal w, excluded_words_array[0]
+      assert_not_equal w, excluded_words_array[1]
+    end
+  end
+
+  def test_excluded_words_as_array
+    excluded_words_array = @tester.words(number: 2)
+    @words = @tester.words(number: 10_000, exclude_words: excluded_words_array)
+
+    @words.each do |w|
+      assert_not_equal w, excluded_words_array[0]
+      assert_not_equal w, excluded_words_array[1]
+    end
   end
 end

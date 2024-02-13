@@ -8,7 +8,7 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_valid_card
-    assert @tester.valid_card.match(/\A\d{14,16}\z/)
+    assert_match(/\A\d{14,16}\z/, @tester.valid_card)
   end
 
   def test_valid_card_error
@@ -20,19 +20,19 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_specific_valid_card
-    assert @tester.valid_card(card_type: 'visa').match(/\A\d{16}\z/)
+    assert_match(/\A\d{16}\z/, @tester.valid_card(card_type: 'visa'))
   end
 
   def test_valid_token
-    assert @tester.valid_token.match(/\w+/)
+    assert_match(/\w+/, @tester.valid_token)
   end
 
   def test_specific_valid_token
-    assert @tester.valid_token(card_type: 'visa').match(/\Atok_visa\z/)
+    assert_match(/\Atok_visa\z/, @tester.valid_token(card_type: 'visa'))
   end
 
   def test_invalid_card
-    assert @tester.invalid_card.match(/\A\d{16}\z/)
+    assert_match(/\A\d{16}\z/, @tester.invalid_card)
   end
 
   def test_invalid_card_error
@@ -44,22 +44,22 @@ class TestFakerStripe < Test::Unit::TestCase
   end
 
   def test_specific_error_invalid_card
-    assert @tester.invalid_card(card_error: 'zipFail').match(/\w+/)
+    assert_match(/\w+/, @tester.invalid_card(card_error: 'zipFail'))
   end
 
   def test_valid_exp_mo
-    assert @tester.month.match(/\A\d{2}\z/)
+    assert_match(/\A\d{2}\z/, @tester.month)
   end
 
   def test_valid_exp_yr
-    assert @tester.year.match(/\A\d{4}\z/)
+    assert_match(/\A\d{4}\z/, @tester.year)
   end
 
   def test_valid_ccv
-    assert @tester.ccv.match(/\A\d{3}\z/)
+    assert_match(/\A\d{3}\z/, @tester.ccv)
   end
 
   def test_valid_amex_ccv
-    assert @tester.ccv(card_type: 'amex').match(/\A\d{4}\z/)
+    assert_match(/\A\d{4}\z/, @tester.ccv(card_type: 'amex'))
   end
 end

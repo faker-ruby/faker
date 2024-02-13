@@ -29,11 +29,7 @@ module Faker
         #     #=> "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fht...
         #
         # @faker.version 1.9.3
-        def fhtagn(legacy_number = NOT_GIVEN, number: 1)
-          warn_for_deprecated_arguments do |keywords|
-            keywords << :number if legacy_number != NOT_GIVEN
-          end
-
+        def fhtagn(number: 1)
           Array.new(number) { fetch('lovecraft.fhtagn') }.join('. ')
         end
 
@@ -86,12 +82,7 @@ module Faker
         #     #=> "Effulgence unmentionable gambrel."
         #
         # @faker.version 1.9.3
-        def sentence(legacy_word_count = NOT_GIVEN, legacy_random_words_to_add = NOT_GIVEN, word_count: 4, random_words_to_add: 6, open_compounds_allowed: true)
-          warn_for_deprecated_arguments do |keywords|
-            keywords << :word_count if legacy_word_count != NOT_GIVEN
-            keywords << :random_words_to_add if legacy_random_words_to_add != NOT_GIVEN
-          end
-
+        def sentence(word_count: 4, random_words_to_add: 6, open_compounds_allowed: true)
           "#{words(number: word_count + rand(random_words_to_add.to_i).to_i, spaces_allowed: open_compounds_allowed).join(' ').capitalize}."
         end
 
@@ -138,12 +129,7 @@ module Faker
         #   #   ]
         #
         # @faker.version 1.9.3
-        def words(legacy_number = NOT_GIVEN, legacy_spaces_allowed = NOT_GIVEN, number: 3, spaces_allowed: false)
-          warn_for_deprecated_arguments do |keywords|
-            keywords << :number if legacy_number != NOT_GIVEN
-            keywords << :spaces_allowed if legacy_spaces_allowed != NOT_GIVEN
-          end
-
+        def words(number: 3, spaces_allowed: false)
           resolved_num = resolve(number)
           word_list = translate('faker.lovecraft.words')
           word_list *= ((resolved_num / word_list.length) + 1)
@@ -176,11 +162,7 @@ module Faker
         #   #   ]
         #
         # @faker.version 1.9.3
-        def sentences(legacy_number = NOT_GIVEN, number: 3)
-          warn_for_deprecated_arguments do |keywords|
-            keywords << :number if legacy_number != NOT_GIVEN
-          end
-
+        def sentences(number: 3)
           [].tap do |sentences|
             1.upto(resolve(number)) do
               sentences << sentence(word_count: 3)
@@ -207,12 +189,7 @@ module Faker
         #     #=> "Stench cyclopean fainted antiquarian nameless. Antiquarian ululate tenebrous non-euclidean effulgence."
         #
         # @faker.version 1.9.3
-        def paragraph(legacy_sentence_count = NOT_GIVEN, legacy_random_sentences_to_add = NOT_GIVEN, sentence_count: 3, random_sentences_to_add: 3)
-          warn_for_deprecated_arguments do |keywords|
-            keywords << :sentence_count if legacy_sentence_count != NOT_GIVEN
-            keywords << :random_sentences_to_add if legacy_random_sentences_to_add != NOT_GIVEN
-          end
-
+        def paragraph(sentence_count: 3, random_sentences_to_add: 3)
           sentences(number: resolve(sentence_count) + rand(random_sentences_to_add.to_i).to_i).join(' ')
         end
 
@@ -238,11 +215,7 @@ module Faker
         #   #   ]
         #
         # @faker.version 1.9.3
-        def paragraphs(legacy_number = NOT_GIVEN, number: 3)
-          warn_for_deprecated_arguments do |keywords|
-            keywords << :number if legacy_number != NOT_GIVEN
-          end
-
+        def paragraphs(number: 3)
           [].tap do |paragraphs|
             1.upto(resolve(number)) do
               paragraphs << paragraph(sentence_count: 3)
@@ -263,11 +236,7 @@ module Faker
         #     #=> "Effulgence madness noisome. Fungus stygian mortal madness amorphous dank. Decadent noisome hideous effulgence. Tentacles charne."
         #
         # @faker.version 1.9.3
-        def paragraph_by_chars(legacy_characters = NOT_GIVEN, characters: 256)
-          warn_for_deprecated_arguments do |keywords|
-            keywords << :characters if legacy_characters != NOT_GIVEN
-          end
-
+        def paragraph_by_chars(characters: 256)
           paragraph = paragraph(sentence_count: 3)
 
           paragraph += " #{paragraph(sentence_count: 3)}" while paragraph.length < characters

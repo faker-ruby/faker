@@ -24,6 +24,7 @@ vi:
               "Staffordshire", "Strathclyde", "Suffolk", "Surrey", "Tayside", "Tyne and Wear", "Việt Nam", "Warwickshire",
               "West Glamorgan", "West Midlands", "West Sussex", "West Yorkshire", "Wiltshire", "Worcestershire"]
       default_country: ["Việt Nam"]
+      default_country_code: ["VN"]
     internet:
       domain_suffix: [com, net, info, vn, com.vn]
     phone_number:

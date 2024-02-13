@@ -54,7 +54,7 @@ else
   exit!
 end
 
-template = ERB.new(File.open(template).read)
+template = ERB.new(File.read(template))
 
 title = nil
 body = nil

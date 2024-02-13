@@ -11,28 +11,27 @@ class TestFakerInvoice < Test::Unit::TestCase
     from = 1.0
     to   = 1000.0
 
-    100.times do
-      random_amount = @tester.amount_between(from: from, to: to)
-      assert random_amount >= from, "Expected >= \"#{from}\", but got #{random_amount}"
-      assert random_amount <= to, "Expected <= \"#{to}\", but got #{random_amount}"
+    deterministically_verify -> { @tester.amount_between(from: from, to: to) }, depth: 5 do |random_amount|
+      assert_operator random_amount, :>=, from, "Expected >= \"#{from}\", but got #{random_amount}"
+      assert_operator random_amount, :<=, to, "Expected <= \"#{to}\", but got #{random_amount}"
     end
   end
 
   def test_creditor_reference
     reference = @tester.creditor_reference
 
-    assert reference.match(/RF\d{2}\d{4,20}/)
+    assert_match(/RF\d{2}\d{4,20}/, reference)
   end
 
   def test_reference
     reference = @tester.reference
 
-    assert reference.match(/\d{4,20}/)
+    assert_match(/\d{4,20}/, reference)
   end
 
   def test_reference_checksum
     reference = @tester.reference(ref: '515141803475128#')
 
-    assert reference == '5151418034751285'
+    assert_equal('5151418034751285', reference)
   end
 end

@@ -29,6 +29,9 @@ Faker::Company.type #=> "Privately Held"
 # Get a random profession
 Faker::Company.profession #=> "firefighter"
 
+# Get a random department
+Faker::Company.department #=> "Information Technology"
+
 ###############################################################
 # Generate country specific identifiers
 ###############################################################
@@ -81,4 +84,8 @@ Faker::Company.russian_tax_number #=> "0965855857"
 Faker::Company.russian_tax_number(region: '77') #=> "7717152803"
 Faker::Company.russian_tax_number(type: :individual) #=> "488935903348"
 Faker::Company.russian_tax_number(region: '77', type: :individual) #=> "779124694601"
+
+# Get a random formatted Indian tax number (GST)
+Faker::Company.indian_gst_number #=> "15VQPNZ2126J2ZU"
+Faker::Company.indian_gst_number(state_code: "22") #=> "22ZVWEY6632K0ZN"
 ```

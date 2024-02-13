@@ -8,18 +8,18 @@ class TestFakerIndustrySegments < Test::Unit::TestCase
   end
 
   def test_industry
-    assert @tester.industry.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.industry)
   end
 
   def test_super_sector
-    assert @tester.super_sector.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.super_sector)
   end
 
   def test_sector
-    assert @tester.sector.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.sector)
   end
 
   def test_sub_sector
-    assert @tester.sub_sector.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.sub_sector)
   end
 end

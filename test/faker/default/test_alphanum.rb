@@ -8,11 +8,11 @@ class TestFakerAlphanum < Test::Unit::TestCase
   end
 
   def alpha
-    assert @tester.alpha(number: 5).match(/[a-z]{5}/)
+    assert_match(/[a-z]{5}/, @tester.alpha(number: 5))
   end
 
   def alphanum
-    assert @tester.alphanumeric(number: 5).match(/[a-z0-9]{5}/)
+    assert_match(/[a-z0-9]{5}/, @tester.alphanumeric(number: 5))
   end
 
   def test_alphanumeric_invalid_min_alpha
@@ -34,16 +34,18 @@ class TestFakerAlphanum < Test::Unit::TestCase
   end
 
   def test_alphanumeric_with_min_alpha
-    letters = @tester.alphanumeric(number: 5, min_alpha: 2).split('').map do |char|
+    letters = @tester.alphanumeric(number: 5, min_alpha: 2).chars.map do |char|
       char =~ /[[:alpha:]]/
     end
-    assert letters.compact.size >= 2
+
+    assert_operator letters.compact.size, :>=, 2
   end
 
   def test_alphanumeric_with_min_numeric
-    numbers = @tester.alphanumeric(number: 5, min_numeric: 4).split('').map do |char|
+    numbers = @tester.alphanumeric(number: 5, min_numeric: 4).chars.map do |char|
       char =~ /[[:digit:]]/
     end
-    assert numbers.compact.size >= 4
+
+    assert_operator numbers.compact.size, :>=, 4
   end
 end

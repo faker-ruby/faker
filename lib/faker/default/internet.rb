@@ -25,16 +25,12 @@ module Faker
       # @param domain [String]
       #
       # @example
-      #   Faker::Internet.email                                                           #=> "samsmith@faker.com"
-      #   Faker::Internet.email(name: 'smith')                                            #=> "smith@faker.com"
-      #   Faker::Internet.email(name: 'sam smith', separators: ['-'])                     #=> "sam-smith@faker.com"
-      #   Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'gmail')    #=> "sam-smith@gmail.com"
-      def email(legacy_name = NOT_GIVEN, legacy_separators = NOT_GIVEN, name: nil, separators: nil, domain: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :name if legacy_name != NOT_GIVEN
-          keywords << :separators if legacy_separators != NOT_GIVEN
-        end
-
+      #   Faker::Internet.email                                                           #=> "renee@zieme.test"
+      #   Faker::Internet.email(name: 'smith')                                            #=> "smith@bergnaum.test"
+      #   Faker::Internet.email(name: 'sam smith', separators: ['-'])                     #=> "smith-sam@tromp.example"
+      #   Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'test')     #=> "sam-smith@test.example"
+      #   Faker::Internet.email(domain: 'gmail.com')                                      #=> "foo@gmail.com"
+      def email(name: nil, separators: nil, domain: nil)
         local_part = if separators
                        username(specifier: name, separators: separators)
                      else
@@ -42,49 +38,14 @@ module Faker
                      end
 
         sanitized_local_part = sanitize_email_local_part(local_part)
-        construct_email(sanitized_local_part, domain_name(domain: domain))
-      end
 
-      ##
-      # Returns the email address with domain either gmail.com, yahoo.com or hotmail.com
-      #
-      # @return [String]
-      #
-      # @param name [String]
-      #
-      # @example
-      #   Faker::Internet.free_email                                                           #=> "samsmith@gmail.com"
-      #   Faker::Internet.free_email(name: 'smith')                                            #=> "smith@yahoo.com"
-      def free_email(legacy_name = NOT_GIVEN, name: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :name if legacy_name != NOT_GIVEN
-        end
+        generate_domain = if domain.nil?
+                            domain_name
+                          else
+                            domain_name(domain: domain)
+                          end
 
-        construct_email(
-          sanitize_email_local_part(username(specifier: name)),
-          fetch('internet.free_email')
-        )
-      end
-
-      ##
-      # Returns the email address with fixed domain name as 'example'
-      #
-      # @return [String]
-      #
-      # @param name [String]
-      #
-      # @example
-      #   Faker::Internet.safe_email                                                           #=> "samsmith@example.com"
-      #   Faker::Internet.safe_email(name: 'smith')                                            #=> "smith@example.net"
-      def safe_email(legacy_name = NOT_GIVEN, name: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :name if legacy_name != NOT_GIVEN
-        end
-
-        construct_email(
-          sanitize_email_local_part(username(specifier: name)),
-          "example.#{sample(%w[org com net])}"
-        )
+        construct_email(sanitized_local_part, generate_domain)
       end
 
       ##
@@ -99,13 +60,8 @@ module Faker
       #   Faker::Internet.username(specifier: 10)                     #=> "lulu.goodwin"
       #   Faker::Internet.username(specifier: 5..10)                  #=> "morris"
       #   Faker::Internet.username(specifier: 5..10)                  #=> "berryberry"
-      #   Faker::Internet.username(specifier: 20, separators: ['-'])  #=> "nikki_sawaynnikki_saway"
-      def username(legacy_specifier = NOT_GIVEN, legacy_separators = NOT_GIVEN, specifier: nil, separators: %w[. _])
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :specifier if legacy_specifier != NOT_GIVEN
-          keywords << :separators if legacy_separators != NOT_GIVEN
-        end
-
+      #   Faker::Internet.username(specifier: 20, separators: ['_'])  #=> "nikki_sawaynnikki_saway"
+      def username(specifier: nil, separators: %w[. _])
         with_locale(:en) do
           return shuffle(specifier.scan(/[[:word:]]+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
 
@@ -142,8 +98,6 @@ module Faker
         end
       end
 
-      # rubocop:disable Metrics/ParameterLists
-
       ##
       # Produces a randomized string of characters suitable for passwords
       #
@@ -166,47 +120,55 @@ module Faker
       #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
       #
       # @faker.version 2.1.3
-      def password(legacy_min_length = NOT_GIVEN, legacy_max_length = NOT_GIVEN, legacy_mix_case = NOT_GIVEN, legacy_special_characters = NOT_GIVEN, min_length: 8, max_length: 16, mix_case: true, special_characters: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :min_length if legacy_min_length != NOT_GIVEN
-          keywords << :max_length if legacy_max_length != NOT_GIVEN
-          keywords << :mix_case if legacy_mix_case != NOT_GIVEN
-          keywords << :special_characters if legacy_special_characters != NOT_GIVEN
-        end
+      def password(min_length: 8, max_length: 16, mix_case: true, special_characters: false)
+        raise ArgumentError, 'min_length and max_length must be greater than or equal to one' if min_length < 1 || max_length < 1
+        raise ArgumentError, 'min_length must be smaller than or equal to max_length' unless min_length <= max_length
 
-        raise ArgumentError, 'Password of length 1 can not have both mixed case and special characters' if min_length <= 1 && mix_case && special_characters
-
-        min_alpha = mix_case && min_length > 1 ? 2 : 0
-        temp = Lorem.characters(number: min_length, min_alpha: min_alpha)
-        diff_length = max_length - min_length
-
-        if diff_length.positive?
-          diff_rand = rand(diff_length + 1)
-          temp += Lorem.characters(number: diff_rand)
-        end
+        character_types = []
+        required_min_length = 0
 
         if mix_case
-          alpha_count = 0
-          temp.chars.each_with_index do |char, index|
-            if char =~ /[[:alpha:]]/
-              temp[index] = char.upcase if alpha_count.even?
-              alpha_count += 1
-            end
-          end
+          character_types << :mix_case
+          required_min_length += 2
         end
 
         if special_characters
-          chars = %w[! @ # $ % ^ & *]
-          rand(1..min_length).times do |i|
-            temp[i] = chars[rand(chars.length)]
-          end
+          character_types << :special_characters
+          required_min_length += 1
         end
 
-        temp[rand(temp.size - 1)] = Lorem.characters(number: 1, min_alpha: 1).upcase if mix_case && special_characters && !temp.match(/[A-z]+/)
+        raise ArgumentError, "min_length should be at least #{required_min_length} to enable #{character_types.join(', ')} configuration" if min_length < required_min_length
 
-        temp
+        target_length = rand(min_length..max_length)
+
+        password = []
+        character_bag = []
+
+        # use lower_chars by default and add upper_chars if mix_case
+        lower_chars = self::LLetters
+        password << sample(lower_chars)
+        character_bag += lower_chars
+
+        digits = ('0'..'9').to_a
+        password << sample(digits)
+        character_bag += digits
+
+        if mix_case
+          upper_chars = self::ULetters
+          password << sample(upper_chars)
+          character_bag += upper_chars
+        end
+
+        if special_characters
+          special_chars = %w[! @ # $ % ^ & *]
+          password << sample(special_chars)
+          character_bag += special_chars
+        end
+
+        password << sample(character_bag) while password.length < target_length
+
+        shuffle(password).join
       end
-      # rubocop:enable Metrics/ParameterLists
 
       ##
       # Returns the domain name
@@ -217,27 +179,31 @@ module Faker
       # @param domain [String]
       #
       # @example
-      #   Faker::Internet.domain_name                                       #=> "test.net"
-      #   Faker::Internet.domain_name(subdomain: true)                      #=> "test.faker.io"
-      #   Faker::Internet.domain_name(subdomain: true, domain: 'example')   #=> "faker.example.com"
-      #   Faker::Internet.domain_name(domain: 'faker')                      #=> "faker.org"
-      def domain_name(legacy_subdomain = NOT_GIVEN, subdomain: false, domain: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :subdomain if legacy_subdomain != NOT_GIVEN
-        end
-
+      #   Faker::Internet.domain_name                                                   #=> "altenwerth-gerhold.example"
+      #   Faker::Internet.domain_name(subdomain: true)                                  #=> "metz.mclaughlin-brekke.test"
+      #   Faker::Internet.domain_name(subdomain: true, domain: 'faker')                 #=> "foo.faker.test"
+      #   Faker::Internet.domain_name(domain: 'faker-ruby.org')                         #=> "faker-ruby.org"
+      #   Faker::Internet.domain_name(subdomain: true, domain: 'faker-ruby.org')        #=> "foo.faker-ruby.org"
+      #   Faker::Internet.domain_name(subdomain: true, domain: 'faker.faker-ruby.org')  #=> "faker.faker-ruby.org"
+      def domain_name(subdomain: false, domain: nil)
         with_locale(:en) do
           if domain
             domain
               .split('.')
               .map { |domain_part| Char.prepare(domain_part) }
               .tap do |domain_elements|
-                domain_elements << domain_suffix if domain_elements.length < 2
-                domain_elements.unshift(Char.prepare(domain_word)) if subdomain && domain_elements.length < 3
+                if domain_elements.length < 2
+                  domain_elements << domain_suffix(safe: true)
+                end
+                if subdomain && domain_elements.length < 3
+                  domain_elements.unshift(Char.prepare(domain_word))
+                end
               end.join('.')
           else
-            [domain_word, domain_suffix].tap do |domain_elements|
-              domain_elements.unshift(Char.prepare(domain_word)) if subdomain
+            [domain_word, domain_suffix(safe: true)].tap do |domain_elements|
+              if subdomain
+                domain_elements.unshift(Char.prepare(domain_word))
+              end
             end.join('.')
           end
         end
@@ -254,11 +220,7 @@ module Faker
       #   Faker::Internet.fix_umlauts                     #=> ""
       #   Faker::Internet.fix_umlauts(string: 'faker')    #=> "faker"
       #   Faker::Internet.fix_umlauts(string: 'faküer')   #=> "fakueer"
-      def fix_umlauts(legacy_string = NOT_GIVEN, string: '')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :string if legacy_string != NOT_GIVEN
-        end
-
+      def fix_umlauts(string: '')
         Char.fix_umlauts(string)
       end
 
@@ -270,7 +232,7 @@ module Faker
       # @example
       #   Faker::Internet.domain_word   #=> "senger"
       def domain_word
-        with_locale(:en) { Char.prepare(Company.name.split(' ').first) }
+        with_locale(:en) { Char.prepare(Company.name.split.first) }
       end
 
       ## Returns the domain suffix e.g. com, org, co, biz, info etc.
@@ -278,10 +240,16 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Internet.domain_suffix   #=> "com"
-      #   Faker::Internet.domain_suffix   #=> "biz"
-      def domain_suffix
-        fetch('internet.domain_suffix')
+      #   Faker::Internet.domain_suffix              #=> "com"
+      #   Faker::Internet.domain_suffix              #=> "biz"
+      #   Faker::Internet.domain_suffix(safe: true)  #=> "example"
+      #   Faker::Internet.domain_suffix(safe: true)  #=> "test"
+      def domain_suffix(safe: nil)
+        if safe
+          fetch('internet.safe_domain_suffix')
+        else
+          fetch('internet.domain_suffix')
+        end
       end
 
       ##
@@ -294,11 +262,7 @@ module Faker
       #   Faker::Internet.mac_address(prefix: 'a')      #=> "0a:91:ce:24:89:3b"
       #   Faker::Internet.mac_address(prefix: 'aa')     #=> "aa:38:a0:3e:e8:41"
       #   Faker::Internet.mac_address(prefix: 'aa:44')  #=> "aa:44:30:88:6e:95"
-      def mac_address(legacy_prefix = NOT_GIVEN, prefix: '')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :prefix if legacy_prefix != NOT_GIVEN
-        end
-
+      def mac_address(prefix: '')
         prefix_digits = prefix.split(':').map { |d| d.to_i(16) }
         address_digits = Array.new((6 - prefix_digits.size)) { rand(256) }
         (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
@@ -440,8 +404,6 @@ module Faker
         "#{ip_v6_address}/#{rand(1..127)}"
       end
 
-      # rubocop:disable Metrics/ParameterLists
-
       ##
       # Returns URL
       #
@@ -452,20 +414,13 @@ module Faker
       # @param scheme [String]
       #
       # @example
-      #   Faker::Internet.url                                                           #=> "http://sipes-okon.com/hung.macejkovic"
+      #   Faker::Internet.url                                                           #=> "http://treutel.test/demarcus"
       #   Faker::Internet.url(host: 'faker')                                            #=> "http://faker/shad"
-      #   Faker::Internet.url(host: 'faker', path: '/fake_test_path')                   #=> "http://faker/fake_test_path"
-      #   Faker::Internet.url(host: 'faker', path: '/fake_test_path', scheme: 'https')  #=> "https://faker/fake_test_path"
-      def url(legacy_host = NOT_GIVEN, legacy_path = NOT_GIVEN, legacy_scheme = NOT_GIVEN, host: domain_name, path: "/#{username}", scheme: 'http')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :host if legacy_host != NOT_GIVEN
-          keywords << :path if legacy_path != NOT_GIVEN
-          keywords << :scheme if legacy_scheme != NOT_GIVEN
-        end
-
+      #   Faker::Internet.url(host: 'faker', path: '/docs')                             #=> "http://faker/docs"
+      #   Faker::Internet.url(host: 'faker', path: '/docs', scheme: 'https')            #=> "https://faker/docs"
+      def url(host: domain_name, path: "/#{username}", scheme: 'http')
         "#{scheme}://#{host}#{path}"
       end
-      # rubocop:enable Metrics/ParameterLists
 
       ##
       # Returns unique string in URL
@@ -480,12 +435,7 @@ module Faker
       #   Faker::Internet.slug(words: 'test, faker')              #=> "test-faker"
       #   Faker::Internet.slug(words: 'test. faker')              #=> "test-faker"
       #   Faker::Internet.slug(words: 'test. faker', glue: '$')   #=> "test$faker"
-      def slug(legacy_words = NOT_GIVEN, legacy_glue = NOT_GIVEN, words: nil, glue: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :words if legacy_words != NOT_GIVEN
-          keywords << :glue if legacy_glue != NOT_GIVEN
-        end
-
+      def slug(words: nil, glue: nil)
         glue ||= sample(%w[- _])
         return words.delete(',.').gsub(' ', glue).downcase unless words.nil?
 
@@ -515,11 +465,7 @@ module Faker
       #   Faker::Internet.user_agent(vendor: 'chrome')  #=> "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
       #   Faker::Internet.user_agent(vendor: 'safari')  #=> "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A"
       #   Faker::Internet.user_agent(vendor: 'faker')   #=> "Mozilla/5.0 (Windows; U; Win 9x 4.90; SG; rv:1.9.2.4) Gecko/20101104 Netscape/9.1.0285"
-      def user_agent(legacy_vendor = NOT_GIVEN, vendor: nil)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :vendor if legacy_vendor != NOT_GIVEN
-        end
-
+      def user_agent(vendor: nil)
         agent_hash = translate('faker.internet.user_agent')
         agents = vendor.respond_to?(:to_sym) && agent_hash[vendor.to_sym] || agent_hash[sample(agent_hash.keys)]
         sample(agents)
@@ -589,10 +535,10 @@ module Faker
       ##
       # Produces a randomized hash of internet user details
       # @example
-      #   Faker::Internet.user #=> { username: 'alexie', email: 'alexie@example.net' }
+      #   Faker::Internet.user #=> { username: 'alexie', email: 'trudie@grant.test' }
       #
       # @example
-      #   Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'alexie@example.net', password: 'DtEf9P8wS31iMyC' }
+      #   Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'gayle@kohler.test', password: 'DtEf9P8wS31iMyC' }
       #
       # @return [hash]
       #
@@ -613,10 +559,10 @@ module Faker
           Array('0'..'9'),
           Array('A'..'Z'),
           Array('a'..'z'),
-          "!#$%&'*+-/=?^_`{|}~.".split(//)
+          "!#$%&'*+-/=?^_`{|}~.".chars
         ].flatten
 
-        local_part.split(//).map do |char|
+        local_part.chars.map do |char|
           char_range.include?(char) ? char : '#'
         end.join
       end

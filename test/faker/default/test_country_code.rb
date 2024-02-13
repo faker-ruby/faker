@@ -28,6 +28,6 @@ class TestCountryCode < Test::Unit::TestCase
       nil
     end
 
-    assert_equal([], lonely_codes)
+    assert_empty(lonely_codes)
   end
 end

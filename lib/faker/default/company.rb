@@ -152,6 +152,19 @@ module Faker
       end
 
       ##
+      # Produces a company department.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Company.department #=> "Information Technology"
+      #
+      # @faker.version next
+      def department
+        fetch('company.department')
+      end
+
+      ##
       # Produces a company spanish organisation number.
       #
       # @return [String]
@@ -296,7 +309,7 @@ module Faker
           result = Array.new(3) { rand(1..9) } + Array.new(7) { rand(10) }
           break if (weight_sum(result, weights) % 11) == result[9]
         end
-        result.join('')
+        result.join
       end
 
       ##
@@ -309,11 +322,7 @@ module Faker
       #
       # @faker.version 1.9.1
       # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
-      def polish_register_of_national_economy(legacy_length = NOT_GIVEN, length: 9)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :length if legacy_length != NOT_GIVEN
-        end
-
+      def polish_register_of_national_economy(length: 9)
         raise ArgumentError, 'Length should be 9 or 14' unless [9, 14].include? length
 
         random_digits = []
@@ -321,7 +330,7 @@ module Faker
           random_digits = Array.new(length) { rand(10) }
           break if collect_regon_sum(random_digits) == random_digits.last
         end
-        random_digits.join('')
+        random_digits.join
       end
 
       ##
@@ -334,7 +343,12 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_pty_ltd_registration_number
-        regexify(%r{\d{4}/\d{4,10}/07})
+        generate(:string) do |g|
+          g.int(length: 4)
+          g.lit('/')
+          g.int(ranges: [1000..9_999_999_999])
+          g.lit('/07')
+        end
       end
 
       ##
@@ -347,7 +361,18 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_close_corporation_registration_number
-        regexify(%r{(CK\d{2}|\d{4})/\d{4,10}/23})
+        generate(:string) do |g|
+          g.oneof do |one|
+            one.group do |g_|
+              g_.lit('CK')
+              g_.int(length: 2)
+            end
+            one.int(length: 4)
+          end
+          g.lit('/')
+          g.int(ranges: [1000..9_999_999_999])
+          g.lit('/23')
+        end
       end
 
       ##
@@ -360,7 +385,12 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_listed_company_registration_number
-        regexify(%r{\d{4}/\d{4,10}/06})
+        generate(:string) do |g|
+          g.int(length: 4)
+          g.lit('/')
+          g.int(ranges: [1000..9_999_999_999])
+          g.lit('/06')
+        end
       end
 
       ##
@@ -373,7 +403,12 @@ module Faker
       #
       # @faker.version 1.9.2
       def south_african_trust_registration_number
-        regexify(%r{IT\d{2,4}/\d{2,10}})
+        generate(:string) do |g|
+          g.lit('IT')
+          g.int(ranges: [10..9999])
+          g.lit('/')
+          g.int(ranges: [10..9_999_999_999])
+        end
       end
 
       ##
@@ -385,11 +420,7 @@ module Faker
       #   Faker::Company.brazilian_company_number #=> "37205322000500"
       #
       # @faker.version 1.9.2
-      def brazilian_company_number(legacy_formatted = NOT_GIVEN, formatted: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :formatted if legacy_formatted != NOT_GIVEN
-        end
-
+      def brazilian_company_number(formatted: false)
         digits = Array.new(8) { Faker::Number.digit.to_i } + [0, 0, 0, Faker::Number.non_zero_digit.to_i]
 
         factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
@@ -433,6 +464,61 @@ module Faker
         fetch('company.sic_code')
       end
 
+      ##
+      # Get a random Indian Goods and Services Tax (GST) number.
+      # For more on Indian tax number here:
+      # https://simple.wikipedia.org/wiki/GSTIN
+      # @params state code [String] Any state code.
+      #
+      # @return [String]
+      # @example
+      #   Faker::Company.indian_gst_number #=> "15VQPNZ2126J2ZU"
+      #   Faker::Company.indian_gst_number(state_code: "22") #=> "22ZVWEY6632K0ZN"
+      #
+      # @faker.version 3.2.1
+      def indian_gst_number(state_code: nil)
+        # Check if state code is valid
+        state_code_ranges = [('02'..'38'), ['98']]
+        if state_code && !(state_code_ranges[0].include?(state_code) || state_code == '98')
+          raise ArgumentError, 'state code must be in a range of 02 to 38 or 98'
+        end
+
+        PositionalGenerator.new(:string) do |gen|
+          # Generate a state code if not given
+          if state_code
+            gen.lit(state_code, name: :state_code_param)
+          else
+            gen.letter(name: :state_code_param, length: 1, ranges: state_code_ranges)
+          end
+
+          # Construct taxpayer number
+          gen.group(name: :taxpayer_number) do |g_|
+            g_.letter(length: 3, ranges: ['A'..'Z'])
+            g_.letter(length: 1, ranges: [%w[A B C F G H L J P T K]].to_a)
+            g_.letter(length: 1, ranges: ['A'..'Z'])
+            g_.int(length: 4, ranges: [0..9999])
+            g_.letter(length: 1, ranges: ['A'..'Z'])
+          end
+
+          gen.int(name: :registration_number, length: 1, ranges: [0..9])
+
+          gen.letter(name: :z_char, length: 1, ranges: [['Z']])
+
+          gen.computed(deps: %i[state_code_param taxpayer_number registration_number]) do |state_code_param, taxpayer_number, registration_number|
+            gst_base = "#{state_code_param}#{taxpayer_number}#{registration_number}"
+            chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.chars
+            values = gst_base.chars
+            sum = values.map.with_index do |char, index|
+              product = chars.index(char) * (index.odd? ? 2 : 1)
+              (product / chars.length).floor + (product % chars.length)
+            end.reduce(:+)
+
+            checksum = (chars.length - (sum % chars.length)) % chars.length
+            chars[checksum]
+          end
+        end.generate
+      end
+
       private
 
       # Mod11 functionality from https://github.com/badmanski/mod11/blob/master/lib/mod11.rb
@@ -459,7 +545,7 @@ module Faker
       def luhn_algorithm(number)
         multiplications = []
 
-        number.to_s.reverse.split(//).each_with_index do |digit, i|
+        number.to_s.reverse.chars.each_with_index do |digit, i|
           multiplications << if i.even?
                                digit.to_i * 2
                              else
@@ -553,7 +639,7 @@ module Faker
       def spanish_cif_control_digit(organization_type, code)
         letters = %w[J A B C D E F G H I]
 
-        control = code.split('').each_with_index.inject(0) do |sum, (value, index)|
+        control = code.chars.each_with_index.inject(0) do |sum, (value, index)|
           if (index + 1).even?
             sum + value.to_i
           else
@@ -562,7 +648,7 @@ module Faker
         end
 
         control = control.to_s[-1].to_i
-        control = control.zero? ? control : 10 - control
+        control = 10 - control unless control.zero?
 
         %w[A B C D E F G H J U V].include?(organization_type) ? control : letters[control]
       end
@@ -573,6 +659,19 @@ module Faker
         return result if result < 10
 
         result.to_s[0].to_i + result.to_s[1].to_i
+      end
+
+      def calculate_gst_checksum(state_code, taxpayer_number, registration_number)
+        gst_base = "#{state_code}#{taxpayer_number}#{registration_number}"
+        chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.chars
+        values = gst_base.upcase.chars
+        sum = values.map.with_index do |char, index|
+          product = chars.index(char) * (index.odd? ? 2 : 1)
+          (product / chars.length).floor + (product % chars.length)
+        end.reduce(:+)
+
+        checksum = (chars.length - (sum % chars.length)) % chars.length
+        chars[checksum]
       end
     end
   end

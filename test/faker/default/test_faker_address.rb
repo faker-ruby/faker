@@ -8,75 +8,75 @@ class TestFakerAddress < Test::Unit::TestCase
   end
 
   def test_city
-    assert @tester.city.match(/\w+/)
+    assert_match(/\w+/, @tester.city)
   end
 
   def test_city_with_state
-    assert @tester.city(options: { with_state: true }).match(/\w+,\s\w+/)
+    assert_match(/\w+,\s\w+/, @tester.city(options: { with_state: true }))
   end
 
   def test_street_name
-    assert @tester.street_name.match(/\w+\s\w+/)
+    assert_match(/\w+\s\w+/, @tester.street_name)
   end
 
   def test_street_address
-    assert @tester.street_address.match(/\d+\s\w+\s\w+/)
+    assert_match(/\d+\s\w+\s\w+/, @tester.street_address)
   end
 
   def test_secondary_address
-    assert @tester.secondary_address.match(/\w+\.?\s\d+/)
+    assert_match(/\w+\.?\s\d+/, @tester.secondary_address)
   end
 
   def test_building_number
-    assert @tester.building_number.match(/\d+/)
+    assert_match(/\d+/, @tester.building_number)
   end
 
   def test_mail_box
-    assert @tester.mail_box.match(/[\w ]+\d+/)
+    assert_match(/[\w ]+\d+/, @tester.mail_box)
   end
 
   def test_zip_code
-    assert @tester.zip_code.match(/^\d+-?\d*$/)
+    assert_match(/^\d+-?\d*$/, @tester.zip_code)
   end
 
   def test_time_zone
-    assert @tester.time_zone.match(%r{\w+/\w+})
+    assert_match %r{\w+/\w+}, @tester.time_zone
   end
 
   def test_street_suffix
-    assert @tester.street_suffix.match(/\w+/)
+    assert_match(/\w+/, @tester.street_suffix)
   end
 
   def test_city_suffix
-    assert @tester.city_suffix.match(/\w+/)
+    assert_match(/\w+/, @tester.city_suffix)
   end
 
   def test_city_prefix
-    assert @tester.city_prefix.match(/\w+/)
+    assert_match(/\w+/, @tester.city_prefix)
   end
 
   def test_state_abbr
-    assert @tester.state_abbr.match(/[A-Z]{2}/)
+    assert_match(/[A-Z]{2}/, @tester.state_abbr)
   end
 
   def test_state
-    assert @tester.state.match(/\w+/)
+    assert_match(/\w+/, @tester.state)
   end
 
   def test_country
-    assert @tester.country.match(/\w+/)
+    assert_match(/\w+/, @tester.country)
   end
 
   def test_country_by_code
-    assert @tester.country_by_code(code: 'NL').match('Netherlands')
+    assert_match @tester.country_by_code(code: 'NL'), 'Netherlands'
   end
 
   def test_country_name_to_code
-    assert @tester.country_name_to_code(name: 'united_states').match('US')
+    assert_match @tester.country_name_to_code(name: 'united_states'), 'US'
   end
 
   def test_country_code
-    assert @tester.country_code.match(/[A-Z]{2}/)
+    assert_match(/[A-Z]{2}/, @tester.country_code)
   end
 
   def test_latitude
@@ -88,7 +88,7 @@ class TestFakerAddress < Test::Unit::TestCase
   end
 
   def test_full_address
-    assert @tester.full_address.match(/\w*\.?\s?\d*\s?\d+\s\w+\s\w+,\s\w+\s?\w*,\s[A-Z]{2}\s\d+/)
+    assert_match(/\w*\.?\s?\d*\s?\d+\s\w+\s\w+,\s\w+\s?\w*,\s[A-Z]{2}\s\d+/, @tester.full_address)
   end
 
   def test_full_address_as_hash

@@ -8,18 +8,18 @@ class TestFakerBook < Test::Unit::TestCase
   end
 
   def test_title
-    assert @tester.title.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.title)
   end
 
   def test_author
-    assert @tester.author.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.author)
   end
 
   def test_publisher
-    assert @tester.publisher.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.publisher)
   end
 
   def test_genre
-    assert @tester.genre.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.genre)
   end
 end

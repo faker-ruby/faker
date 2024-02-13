@@ -8,69 +8,69 @@ class TestFakerBarcodes < Test::Unit::TestCase
   end
 
   def test_ean
-    assert @tester.ean.match(/[0-9]{8}/)
-    assert_equal @tester.ean.length, 8
+    assert_match(/[0-9]{8}/, @tester.ean)
+    assert_equal(8, @tester.ean.length)
 
-    assert @tester.ean(8).match(/[0-9]{8}/)
-    assert_equal @tester.ean(8).length, 8
+    assert_match(/[0-9]{8}/, @tester.ean(8))
+    assert_equal(8, @tester.ean(8).length)
 
-    assert @tester.ean(13).match(/[0-9]{13}/)
-    assert_equal @tester.ean(13).length, 13
+    assert_match(/[0-9]{13}/, @tester.ean(13))
+    assert_equal(13, @tester.ean(13).length)
   end
 
   def test_ean_with_composite_symbology
-    assert @tester.ean_with_composite_symbology.match(/[0-9]{8}|[A-Za-z0-9]{8}/)
-    assert_equal @tester.ean_with_composite_symbology.length, 17
+    assert_match(/[0-9]{8}|[A-Za-z0-9]{8}/, @tester.ean_with_composite_symbology)
+    assert_equal(17, @tester.ean_with_composite_symbology.length)
 
-    assert @tester.ean_with_composite_symbology(8).match(/[0-9]{8}|[A-Za-z0-9]{8}/)
-    assert_equal @tester.ean_with_composite_symbology(8).length, 17
+    assert_match(/[0-9]{8}|[A-Za-z0-9]{8}/, @tester.ean_with_composite_symbology(8))
+    assert_equal(17, @tester.ean_with_composite_symbology(8).length)
 
-    assert @tester.ean_with_composite_symbology(13).match(/[0-9]{13}|[A-Za-z0-9]{8}/)
-    assert_equal @tester.ean_with_composite_symbology(13).length, 22
+    assert_match(/[0-9]{13}|[A-Za-z0-9]{8}/, @tester.ean_with_composite_symbology(13))
+    assert_equal(22, @tester.ean_with_composite_symbology(13).length)
   end
 
   def test_upc_a
-    assert @tester.upc_a.match(/[0-9]{12}/)
-    assert_equal @tester.upc_a.length, 12
+    assert_match(/[0-9]{12}/, @tester.upc_a)
+    assert_equal(12, @tester.upc_a.length)
   end
 
   def test_upc_a_with_composite_symbol
-    assert @tester.upc_a_with_composite_symbology.match(/[0-9]{12}|[A-Za-z0-9]{8}/)
-    assert_equal @tester.upc_a_with_composite_symbology.length, 21
+    assert_match(/[0-9]{12}|[A-Za-z0-9]{8}/, @tester.upc_a_with_composite_symbology)
+    assert_equal(21, @tester.upc_a_with_composite_symbology.length)
   end
 
   def test_upc_e
-    assert @tester.upc_e.match(/[0-9]{8}/)
-    assert_equal @tester.upc_e.length, 8
+    assert_match(/[0-9]{8}/, @tester.upc_e)
+    assert_equal(8, @tester.upc_e.length)
   end
 
   def test_upc_e_with_composite_symbol
-    assert @tester.upc_e_with_composite_symbology.match(/[0-9]{8}|[A-Za-z0-9]{8}/)
-    assert_equal @tester.upc_e_with_composite_symbology.length, 17
+    assert_match(/[0-9]{8}|[A-Za-z0-9]{8}/, @tester.upc_e_with_composite_symbology)
+    assert_equal(17, @tester.upc_e_with_composite_symbology.length)
   end
 
   def test_isbn
-    assert @tester.isbn.match(/^(978|9798|97910|97911|97912)[0-9]{8,10}/)
-    assert_equal @tester.isbn.length, 13
+    assert_match(/^(978|9798|97910|97911|97912)[0-9]{8,10}/, @tester.isbn)
+    assert_equal(13, @tester.isbn.length)
   end
 
   def test_ismn
-    assert @tester.ismn.match(/9790[0-9]{9}/)
-    assert_equal @tester.ismn.length, 13
+    assert_match(/9790[0-9]{9}/, @tester.ismn)
+    assert_equal(13, @tester.ismn.length)
   end
 
   def test_issn
-    assert @tester.issn.match(/977[0-9]{10}/)
-    assert_equal @tester.issn.length, 13
+    assert_match(/977[0-9]{10}/, @tester.issn)
+    assert_equal(13, @tester.issn.length)
   end
 
   def test_sum_even_odd
-    assert_equal @tester.send(:sum_even_odd, 123_456), [12, 9]
-    assert_equal @tester.send(:sum_even_odd, 857_363), [11, 21]
+    assert_equal([12, 9], @tester.send(:sum_even_odd, 123_456))
+    assert_equal([11, 21], @tester.send(:sum_even_odd, 857_363))
   end
 
   def test_generate_check_digit
-    assert_equal @tester.send(:generate_check_digit, 18, 24), 2
-    assert_equal @tester.send(:generate_check_digit, 21, 13), 4
+    assert_equal(2, @tester.send(:generate_check_digit, 18, 24))
+    assert_equal(4, @tester.send(:generate_check_digit, 21, 13))
   end
 end

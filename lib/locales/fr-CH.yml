@@ -1,7 +1,6 @@
 fr-CH:
   faker:
     address:
-      country_code: [CH, CH, CH, DE, AT, US, LI, US, HK, VN]
       postcode: ['1###', '2###', '3###', '4###', '5###', '6###', '7###', '8###', '9###']
       building_number: ['####', '###', '##', '#']
       street_prefix: ["Allée, Voie", "Rue", "Avenue", "Boulevard", "Quai", "Passage", "Impasse", "Place"]
@@ -16,6 +15,7 @@ fr-CH:
       street_address:
         - "#{street_name} #{building_number}"
       default_country: [Suisse]
+      default_country_code: ["CH"]
 
     company:
       suffix: [AG, GmbH, et associés, "& Co.", Groupe, LLC, Inc.]
@@ -35,7 +35,6 @@ fr-CH:
         - ["synergies", "web-readiness", "paradigms", "markets", "partnerships", "infrastructures", "platforms", "initiatives", "channels", "eyeballs", "communities", "ROI", "solutions", "e-tailers", "e-services", "action-items", "portals", "niches", "technologies", "content", "vortals", "supply-chains", "convergence", "relationships", "architectures", "interfaces", "e-markets", "e-commerce", "systems", "bandwidth", "infomediaries", "models", "mindshare", "deliverables", "users", "schemas", "networks", "applications", "metrics", "e-business", "functionalities", "experiences", "web services", "methodologies"]
 
     internet:
-      free_email: [gmail.com, yahoo.ch, hotmail.ch]
       domain_suffix: [com, net, biz, ch,  li, at, ch, ch]
 
     lorem:

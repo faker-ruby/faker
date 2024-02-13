@@ -8,30 +8,30 @@ class TestFakerEducator < Test::Unit::TestCase
   end
 
   def test_university
-    assert @tester.university.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.university)
   end
 
   def test_degree
-    assert @tester.degree.match(/(\w+\.? ?\(?\)?){3,6}/)
+    assert_match(/(\w+\.? ?\(?\)?){3,6}/, @tester.degree)
   end
 
   def test_subject
-    assert @tester.subject.match(/(\w+\.? ?\(?\)?){1,3}/)
+    assert_match(/(\w+\.? ?\(?\)?){1,3}/, @tester.subject)
   end
 
   def test_course_name
-    assert @tester.course_name.match(/(\w+\.? ?\(?\)?){1,3} \d{3}/)
+    assert_match(/(\w+\.? ?\(?\)?){1,3} \d{3}/, @tester.course_name)
   end
 
   def test_secondary_school
-    assert @tester.secondary_school.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.secondary_school)
   end
 
   def test_primary_school
-    assert @tester.primary_school.match(/(\w+\.? ?){2,3}/)
+    assert_match(/(\w+\.? ?){2,3}/, @tester.primary_school)
   end
 
   def test_campus
-    assert @tester.campus.match(/(\w+\.? ?){1,2}/)
+    assert_match(/(\w+\.? ?){1,2}/, @tester.campus)
   end
 end

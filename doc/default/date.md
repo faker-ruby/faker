@@ -13,6 +13,13 @@ Faker::Date.between_except(from: '2014-09-23', to: '2015-09-25', excepted: '2015
 # If used with Rails (the Active Support gem), additional options are available:
 Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today) #=> #<Date: 2014-10-03>
 
+# Random date at given day(s) of week between dates
+# Keyword arguments: day, from, to
+Faker::Date.on_day_of_week_between(day: :tuesday, from: '2023-01-01', to: '2023-02-01') #=> "Tue, 10 Jan 2023"
+Faker::Date.on_day_of_week_between(day: [:saturday, :sunday], from: '2023-01-01', to: '2023-02-01') #=> "Sun, 22 Jan 2023"
+# If used with Rails (the Active Support gem), additional options are available:
+Faker::Date.on_day_of_week_between(day: [:monday, :wednesday, :friday], from: 1.year.ago, to: 1.year.from_now) #=> "Mon, 20 Feb 2023"
+
 # Random date in the future (up to maximum of N days)
 # Keyword arguments: days
 Faker::Date.forward(days: 23) # => "Fri, 03 Oct 2014"

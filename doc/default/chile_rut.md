@@ -19,4 +19,12 @@ Faker::ChileRut.dv #=> "k"
 # check_digit is an alias for dv, for English speaking devs
 Faker::ChileRut.rut #=> 30528772
 Faker::ChileRut.check_digit #=> "5"
+
+# Returns full rut
+# Keyword arguments: min_rut
+# Keyword arguments: fixed
+Faker::ChileRut.full_rut #=> "30686957-4"
+Faker::ChileRut.full_rut(min_rut: 20890156) #=> "20890156-4"
+Faker::ChileRut.full_rut(min_rut: 20890156, formatted: true) #=> "20.890.156-4"
+Faker::ChileRut.full_rut(min_rut: 30686957, fixed: true) #=> "30686957-4"
 ```

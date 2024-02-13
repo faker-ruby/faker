@@ -46,9 +46,23 @@ module Faker
       end
 
       def ssn_valid
-        ssn = regexify(/[0-8]\d{2}-\d{2}-\d{4}/)
-        # We could still have all 0s in one segment or another
-        INVALID_SSN.any? { |regex| regex =~ ssn } ? ssn_valid : ssn
+        generate(:string) do |g|
+          g.computed(name: :first) do
+            range = [1..665, 667..899].sample(random: Faker::Config.random)
+            n = Faker::Base.rand(range)
+            format('%03d', n)
+          end
+          g.lit('-')
+          g.computed(name: :second) do
+            n = Faker::Base.rand(1..99)
+            format('%02d', n)
+          end
+          g.lit('-')
+          g.computed(name: :third) do
+            n = Faker::Base.rand(1..9999)
+            format('%04d', n)
+          end
+        end
       end
 
       ##
@@ -146,11 +160,7 @@ module Faker
       #   Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
       #
       # @faker.version 1.9.2
-      def brazilian_citizen_number(legacy_formatted = NOT_GIVEN, formatted: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :formatted if legacy_formatted != NOT_GIVEN
-        end
-
+      def brazilian_citizen_number(formatted: false)
         digits = Faker::Number.leading_zero_number(digits: 9) until digits&.match(/(\d)((?!\1)\d)+/)
         first_digit = brazilian_citizen_number_checksum_digit(digits)
         second_digit = brazilian_citizen_number_checksum_digit(digits + first_digit)
@@ -171,11 +181,7 @@ module Faker
       #   Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
       #
       # @faker.version 2.1.2
-      def brazilian_id(legacy_formatted = NOT_GIVEN, formatted: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :formatted if legacy_formatted != NOT_GIVEN
-        end
-
+      def brazilian_id(formatted: false)
         digits = Faker::Number.between(to: BRAZILIAN_ID_FROM, from: BRAZILIAN_ID_TO).to_s
         check_digit = brazilian_id_checksum_digit(digits)
         number = [digits, check_digit].join
@@ -332,7 +338,7 @@ module Faker
                                             .with_index { |_, i| (i + 1).odd? }
 
         sum_of_odd_digits = odd_digits_without_last_character.map(&:to_i).reduce(:+)
-        even_digits_times_two = (even_digits.join('').to_i * 2).to_s
+        even_digits_times_two = (even_digits.join.to_i * 2).to_s
         sum_of_even_digits = even_digits_times_two.chars.map(&:to_i).reduce(:+)
 
         total_sum = sum_of_odd_digits + sum_of_even_digits

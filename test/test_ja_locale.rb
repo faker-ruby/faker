@@ -157,6 +157,19 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::Games::SuperMario.location)
   end
 
+  def test_ja_touhou_methods
+    assert Faker::Games::Touhou.game.is_a? String
+    assert_not_english(Faker::Games::Touhou.game)
+    assert Faker::Games::Touhou.character.is_a? String
+    assert_not_english(Faker::Games::Touhou.character)
+    assert Faker::Games::Touhou.location.is_a? String
+    assert_not_english(Faker::Games::Touhou.location)
+    assert Faker::Games::Touhou.spell_card.is_a? String
+    assert_not_english(Faker::Games::Touhou.spell_card)
+    assert Faker::Games::Touhou.song.is_a? String
+    assert_not_english(Faker::Games::Touhou.song)
+  end
+
   def test_ja_zelda_methods
     assert Faker::Games::Zelda.game.is_a? String
     assert_not_english(Faker::Games::Zelda.game)
@@ -215,5 +228,22 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::University.suffix)
     assert Faker::University.name.is_a? String
     assert_not_english(Faker::University.name)
+  end
+
+  def test_ja_sport_methods
+    assert Faker::Sport.sport.is_a? String
+    assert_not_english(Faker::Sport.sport)
+    assert Faker::Sport.summer_olympics_sport.is_a? String
+    assert_not_english(Faker::Sport.summer_olympics_sport)
+    assert Faker::Sport.winter_olympics_sport.is_a? String
+    assert_not_english(Faker::Sport.winter_olympics_sport)
+    assert Faker::Sport.summer_paralympics_sport.is_a? String
+    assert_not_english(Faker::Sport.summer_paralympics_sport)
+    assert Faker::Sport.winter_paralympics_sport.is_a? String
+    assert_not_english(Faker::Sport.winter_paralympics_sport)
+    assert Faker::Sport.ancient_olympics_sport.is_a? String
+    assert_not_english(Faker::Sport.ancient_olympics_sport)
+    assert Faker::Sport.unusual_sport.is_a? String
+    assert_not_english(Faker::Sport.unusual_sport)
   end
 end

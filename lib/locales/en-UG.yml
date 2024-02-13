@@ -4,6 +4,7 @@ en-UG:
       domain_suffix: [ug, com, org, co.ug, org.ug, net]
     address:
       default_country: [Uganda, The Republic of Uganda, UG]
+      default_country_code: ["UG"]
       # city names from http://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Uganda
       city_names: [
         Alebtong, Abim, Adjumani, Amolatar, Amuria, Amuru, Apac, Arua,

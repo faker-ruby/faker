@@ -31,7 +31,7 @@ module Faker
         end
 
         ##
-        # Produces the name of a defensive buiding from Clash Of Clans.
+        # Produces the name of a defensive building from Clash Of Clans.
         #
         # @return [String]
         #

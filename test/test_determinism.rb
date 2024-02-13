@@ -10,6 +10,7 @@ class TestDeterminism < Test::Unit::TestCase
 
   def test_determinism
     Faker::Config.random = Random.new(42)
+
     @all_methods.each_index do |index|
       store_result @all_methods[index]
     end
@@ -17,6 +18,7 @@ class TestDeterminism < Test::Unit::TestCase
     @first_run.freeze
 
     Faker::Config.random = Random.new(42)
+
     @all_methods.each_index do |index|
       assert deterministic_random? @first_run[index], @all_methods[index]
     end

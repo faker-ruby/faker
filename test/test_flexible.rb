@@ -24,7 +24,7 @@ class TestFlexible < Test::Unit::TestCase
 
   def test_flexible_multiple_values
     I18n.with_locale(:xx) do
-      assert %i[fudge chocolate caramel].include? Faker::Foodie.yummie
+      assert_includes %i[fudge chocolate caramel], Faker::Foodie.yummie
     end
   end
 
@@ -54,19 +54,19 @@ class TestFlexible < Test::Unit::TestCase
 
   def test_address_is_flexible
     I18n.with_locale(:home) do
-      assert %i[bed hospital airplane].include? Faker::Address.birthplace
+      assert_includes %i[bed hospital airplane], Faker::Address.birthplace
     end
   end
 
   def test_name_is_flexible
     I18n.with_locale(:kindergarden) do
-      assert %i[alice cheryl tatiana].include? Faker::Name.girls_name
+      assert_includes %i[alice cheryl tatiana], Faker::Name.girls_name
     end
   end
 
   def test_company_is_flexible
     I18n.with_locale(:work) do
-      assert Faker::Company.do_stuff == :work
+      assert_equal(:work, Faker::Company.do_stuff)
     end
   end
 end

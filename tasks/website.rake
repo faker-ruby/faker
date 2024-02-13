@@ -11,7 +11,7 @@ desc 'Upload website files to rubyforge'
 task :website_upload do
   remote_dir = '/var/www/gforge-projects/faker/'
   local_dir = 'website'
-  sh %(rsync -acCv #{local_dir}/ #{ENV['USER']}@rubyforge.org:#{remote_dir})
+  sh %(rsync -acCv #{local_dir}/ #{ENV.fetch('USER', nil)}@rubyforge.org:#{remote_dir})
 end
 
 desc 'Generate and upload website files'

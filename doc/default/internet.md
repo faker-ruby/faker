@@ -2,23 +2,15 @@
 
 ```ruby
 # Keyword arguments: name, username, email, password, domain_name, user_agent, uuid etc...
-Faker::Internet.user #=> { username: 'alexie', email: 'alexie@example.net' }
-Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'alexie@example.net', password: 'DtEf9P8wS31iMyC' }
+Faker::Internet.user #=> { username: 'alexie', email: 'trudie@grant.test' }
+Faker::Internet.user('username', 'email', 'password') #=> { username: 'alexie', email: 'gayle@kohler.test', password: 'DtEf9P8wS31iMyC' }
 
-# Keyword arguments: name, separators
-Faker::Internet.email #=> "eliza@mann.net"
-Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.biz"
-Faker::Internet.email(name: 'Janelle Santiago', separators: '+') #=> "janelle+santiago@becker.com"
-Faker::Internet.email(domain: 'example') #=> "alice@example.name"
-
-# Keyword arguments: name
-Faker::Internet.free_email #=> "freddy@gmail.com"
-Faker::Internet.free_email(name: 'Nancy') #=> "nancy@yahoo.com"
-
-# Generates an RFC 2606 compliant fake email, which means it will never deliver successfully
-# Keyword arguments: name
-Faker::Internet.safe_email #=> "christelle@example.org"
-Faker::Internet.safe_email(name: 'Nancy') #=> "nancy@example.net"
+# Keyword arguments: name, separators, domain
+Faker::Internet.email #=> "eliza@mann.test"
+Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.test"
+Faker::Internet.email(name: 'Janelle Santiago', separators: ['+']) #=> "janelle+santiago@becker.example"
+Faker::Internet.email(domain: 'gmail.com')  #=> "foo@gmail.com"
+Faker::Internet.email(name: 'sam smith', separators: ['-'], domain: 'test') #=> "sam-smith@test.test"
 
 # Keyword arguments: specifier, separators
 Faker::Internet.username #=> "alexie"
@@ -32,20 +24,30 @@ Faker::Internet.username(specifier: 5..8)
 Faker::Internet.username(specifier: 8)
 
 # Keyword arguments: min_length, max_length, mix_case, special_characters
+# Default configuration is mix_case: true && special_characters: false
 Faker::Internet.password #=> "Vg5mSvY1UeRg7"
 Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
 Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
+# min_length must be at least 1 if mix_case: false && special_characters: true
+Faker::Internet.password(min_length: 10, max_length: 20, mix_case: false, special_characters: true) #=> "$1109mw31h8359jm0!oo"
+# min_length must be at least 2 if mix_case: true && special_characters: false
 Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
+# min_length must be at least 3 if mix_case: true && special_characters: true
 Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
 
 # Keyword arguments: subdomain, domain
-Faker::Internet.domain_name #=> "effertz.info"
-Faker::Internet.domain_name(domain: "example") #=> "example.net"
-Faker::Internet.domain_name(subdomain: true, domain: "example") #=> "horse.example.org"
+Faker::Internet.domain_name #=> "herzog.example"
+Faker::Internet.domain_name(subdomain: true) #=> "tillman.kohler.test"
+Faker::Internet.domain_name(subdomain: true, domain: 'faker') #=> "ebert.faker.example"
+Faker::Internet.domain_name(domain: 'faker-ruby.org')  #=> "faker-ruby.org"
+Faker::Internet.domain_name(subdomain: true, domain: 'faker-ruby.org') #=> "foo.faker-ruby.org"
+Faker::Internet.domain_name(subdomain: true, domain: 'faker.faker-ruby.org')  #=> "faker.faker-ruby.org"
 
 Faker::Internet.domain_word #=> "haleyziemann"
 
+# Keyword arguments: safe ('example' and 'test' suffixes)
 Faker::Internet.domain_suffix #=> "info"
+Faker::Internet.domain_suffix(safe: true) #=> "example"
 
 Faker::Internet.ip_v4_address #=> "24.29.18.175"
 
@@ -66,7 +68,9 @@ Faker::Internet.mac_address #=> "e6:0d:00:11:ed:4f"
 Faker::Internet.mac_address(prefix: '55:44:33') #=> "55:44:33:02:1d:9b"
 
 # Keyword arguments: host, path, scheme
-Faker::Internet.url #=> "http://thiel.com/chauncey_simonis"
+Faker::Internet.url #=> "http://treutel.test/demarcus"
+Faker::Internet.url #=> "http://ullrich.example/fritz_braun"
+Faker::Internet.url(host: 'faker') #=> "http://faker/nakita"
 Faker::Internet.url(host: 'example.com') #=> "http://example.com/clotilde.swift"
 Faker::Internet.url(host: 'example.com', path: '/foobar.html') #=> "http://example.com/foobar.html"
 

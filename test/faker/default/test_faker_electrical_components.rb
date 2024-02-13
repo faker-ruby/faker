@@ -8,14 +8,14 @@ class TestFakerElectricalComponents < Test::Unit::TestCase
   end
 
   def test_active
-    assert @tester.active.match(/\w+/)
+    assert_match(/\w+/, @tester.active)
   end
 
   def test_passive
-    assert @tester.passive.match(/\w+/)
+    assert_match(/\w+/, @tester.passive)
   end
 
   def test_electromechanical
-    assert @tester.electromechanical.match(/\w+/)
+    assert_match(/\w+/, @tester.electromechanical)
   end
 end

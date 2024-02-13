@@ -28,9 +28,9 @@ module Faker
 
         # calculate the luhn checksum digit
         multiplier = 1
-        luhn_sum = template.gsub(/[^0-9]/, '').split('').reverse.map(&:to_i).inject(0) do |sum, digit|
+        luhn_sum = template.gsub(/[^0-9]/, '').chars.reverse.map(&:to_i).inject(0) do |sum, digit|
           multiplier = (multiplier == 2 ? 1 : 2)
-          sum + (digit * multiplier).to_s.split('').map(&:to_i).inject(0) { |digit_sum, cur| digit_sum + cur }
+          sum + (digit * multiplier).to_s.chars.map(&:to_i).inject(0) { |digit_sum, cur| digit_sum + cur }
         end
 
         # the sum plus whatever the last digit is must be a multiple of 10. So, the
@@ -52,11 +52,7 @@ module Faker
       #   Faker::Finance.vat_number('ZA') #=> "ZA79494416181"
       #
       # @faker.version 1.9.2
-      def vat_number(legacy_country = NOT_GIVEN, country: 'BR')
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :country if legacy_country != NOT_GIVEN
-        end
-
+      def vat_number(country: 'BR')
         numerify(fetch("finance.vat_number.#{country}"))
       rescue I18n::MissingTranslationData
         raise ArgumentError, "Could not find vat number for #{country}"
@@ -96,6 +92,20 @@ module Faker
       # @faker.version next
       def stock_market
         fetch('finance.stock_market')
+      end
+
+      ##
+      # Returns a random condominium fiscal code.
+      #
+      # @param country [String] Two capital letter country code to use for the vat number.
+      # @return [String]
+      #
+      # @example
+      #   Faker::Finance.condominium_fiscal_code #=> "012345678"
+      #
+      # @faker.version next
+      def condominium_fiscal_code(country: 'IT')
+        numerify(fetch("finance.condominium_fiscal_code.#{country}"))
       end
     end
   end

@@ -16,14 +16,9 @@ module Faker
       #   Faker::Twitter.user(include_email: true) # Simulate an authenticated user with the email permission
       #
       # @faker.version 1.7.3
-      def user(legacy_include_status = NOT_GIVEN, legacy_include_email = NOT_GIVEN, include_status: true, include_email: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :include_status if legacy_include_status != NOT_GIVEN
-          keywords << :include_email if legacy_include_email != NOT_GIVEN
-        end
-
+      def user(include_status: true, include_email: false)
         user_id = id
-        background_image_url = Faker::LoremPixel.image(size: '600x400') # TODO: Make the dimensions change
+        background_image_url = Faker::LoremFlickr.image(size: '600x400')
         profile_image_url = Faker::Avatar.image(slug: user_id, size: '48x48')
         user = {
           id: user_id,
@@ -51,7 +46,7 @@ module Faker
           profile_background_image_url_https: background_image_url,
           profile_background_image_url: background_image_url.sub('https://', 'http://'),
           profile_background_tile: Faker::Boolean.boolean(true_ratio: 0.1),
-          profile_banner_url: Faker::LoremPixel.image(size: '1500x500'),
+          profile_banner_url: Faker::LoremFlickr.image(size: '1500x500'),
           profile_image_url_https: profile_image_url,
           profile_image_url: profile_image_url.sub('https://', 'http://'),
           profile_link_color: Faker::Color.hex_color,
@@ -68,7 +63,7 @@ module Faker
           verified: Faker::Boolean.boolean(true_ratio: 0.1)
         }
         user[:status] = Faker::Twitter.status(include_user: false) if include_status
-        user[:email] = Faker::Internet.safe_email if include_email
+        user[:email] = Faker::Internet.email if include_email
         user
       end
 
@@ -85,12 +80,7 @@ module Faker
       #   Faker::Twitter.status(include_photo: true) # Includes entities for an attached image
       #
       # @faker.version 1.7.3
-      def status(legacy_include_user = NOT_GIVEN, legacy_include_photo = NOT_GIVEN, include_user: true, include_photo: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :include_user if legacy_include_user != NOT_GIVEN
-          keywords << :include_photo if legacy_include_photo != NOT_GIVEN
-        end
-
+      def status(include_user: true, include_photo: false)
         status_id = id
         status = {
           id: status_id,
@@ -161,11 +151,7 @@ module Faker
         }
       end
 
-      def status_entities(legacy_include_photo = NOT_GIVEN, include_photo: false)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :include_photo if legacy_include_photo != NOT_GIVEN
-        end
-
+      def status_entities(include_photo: false)
         entities = {
           hashtags: [],
           symbols: [],
@@ -177,9 +163,7 @@ module Faker
       end
 
       def photo_entity
-        # TODO: Dynamic image sizes
-        # TODO: Return accurate indices
-        media_url = Faker::LoremPixel.image(size: '1064x600')
+        media_url = Faker::LoremFlickr.image(size: '1064x600')
         media_id = id
         {
           id: media_id,

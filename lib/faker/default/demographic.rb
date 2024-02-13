@@ -80,11 +80,7 @@ module Faker
       #   Faker::Demographic.height(unit: :imperial) #=> "6 ft, 2 in"
       #
       # @faker.version 1.7.3
-      def height(legacy_unit = NOT_GIVEN, unit: :metric)
-        warn_for_deprecated_arguments do |keywords|
-          keywords << :unit if legacy_unit != NOT_GIVEN
-        end
-
+      def height(unit: :metric)
         case unit
         when :imperial
           inches = rand_in_range(57, 86)
