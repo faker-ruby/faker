@@ -171,11 +171,37 @@ en:
             - Feel the axe of Axe!
             - What happened? Axe happened!
             - No business but war. No family but death. No mercy but the grave!
+        bane:
+          quote:
+            - Your Nightmare is here.
+            - Nightmares, follow me into the light.
+            - Knock knees and blood run cold!
+            - I dreamt a field of war…and woke to find myself upon it.
+        batrider:
+          quote:
+            - Death from above!
+            - One forest fire coming up!
+            - I'll have the brisket. My hoss'll have your head.
+            - You wanna play rough? All right, we'll play rough.
         beastmaster:
           quote:
             - Meet your master…snuhg… beastmaster.
             - I'm a natural disaster.
             - A death not fit for man or beast.
+        bloodseeker:
+          quote:
+            - The search for blood begins.
+            - For the Flayed Twins, I seek blood.
+            - Enough hide and seek.
+            - Don't be negative...be positive!
+        bounty_hunter:
+          quote:
+            - There's a price on all their heads.
+            - No job is too big, no fee is too big.
+            - My blades will do the talking.
+            - Just business, nothing personal.
+            - Was there a bounty on me?
+            - It was just business before. Now it's personal.
         brewmaster:
           quote:
             - I fight any thing in the house.
@@ -186,6 +212,12 @@ en:
             - Time to mash some faces, I'd say.
             - A good bashing, never hurt nobody.
             - I'm more than a pretty face.
+        broodmother:
+          quote:
+            - The spider comes.
+            - You're not afraid of spiders, are you?
+            - I could kill you with five eyes closed.
+            - My enemies will pay with their liquified guts.
         centaur:
           quote:
             - Long shall my name be remembered.
