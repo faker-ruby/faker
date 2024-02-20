@@ -6,10 +6,10 @@ class TestFakerDota < Test::Unit::TestCase
   def setup
     @tester = Faker::Games::Dota
     @heroes = %w[abaddon alchemist ancient_apparition anti_mage arc_warden axe bane batrider beastmaster
-                 bloodseeker bounty_hunter brewmaster bristleback broodmother centaur chaos_knight clockwerk
-                 doom dragon_knight earth_spirit earthshaker elder_titan huskar io kunkka legion_commander
-                 lifestealer lycan magnus night_stalker omniknight phoenix pudge sand_king slardar
-                 spirit_breaker sven tidehunter timbersaw tiny treant_protector tusk
+                 bloodseeker bounty_hunter brewmaster bristleback broodmother centaur centaur_warrunner
+                 chaos_knight clockwerk doom dragon_knight earth_spirit earthshaker elder_titan huskar io
+                 kunkka legion_commander lifestealer lycan magnus night_stalker omniknight phoenix pudge
+                 sand_king slardar spirit_breaker sven tidehunter timbersaw tiny treant_protector tusk
                  underlord undying wraith_king]
   end
 

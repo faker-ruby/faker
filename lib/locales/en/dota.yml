@@ -223,6 +223,11 @@ en:
             - Long shall my name be remembered.
             - I don't always wear a saddlebag, but when I do, I put this one in it.
             - Hurts you more than it hurts me.
+        centaur_warrunner:
+          quote:
+            - Long shall my name be remembered.
+            - I don't always wear a saddlebag, but when I do, I put this one in it.
+            - Hurts you more than it hurts me.
         chaos_knight:
           quote:
             - All that is light shall be cast in darkness.
