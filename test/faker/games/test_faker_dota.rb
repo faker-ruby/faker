@@ -7,7 +7,8 @@ class TestFakerDota < Test::Unit::TestCase
     @tester = Faker::Games::Dota
     @heroes = %w[abaddon alchemist ancient_apparition anti_mage arc_warden axe bane batrider beastmaster
                  bloodseeker bounty_hunter brewmaster bristleback broodmother centaur centaur_warrunner
-                 chaos_knight chen clinkz clockwerk crystal_maiden doom dragon_knight earth_spirit earthshaker
+                 chaos_knight chen clinkz clockwerk crystal_maiden dark_seer dark_willow dawnbreaker dazzle
+                 death_prophet disruptor doom dragon_knight drow_ranger earth_spirit earthshaker
                  elder_titan huskar io kunkka legion_commander lifestealer lycan magnus night_stalker omniknight
                  phoenix pudge sand_king slardar spirit_breaker sven tidehunter timbersaw tiny treant_protector tusk
                  underlord undying wraith_king]

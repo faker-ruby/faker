@@ -261,6 +261,45 @@ en:
             - Swift as the wolves of Icewrack...
             - You're dead and that's a cold hard fact.
             - Once burned, ice shy...
+        dark_seer:
+          quote:
+            - From the land behind the wall, I come.
+            - Speed is the heart of battle.
+            - Face your enemy, face yourself.
+            - Your life, much like your head, lacked a point.
+            - Death is a wall I have overleapt.
+        dark_willow:
+          quote:
+            - Are you ready to have some fun, ya?
+            - No one will forget the name Mireska
+            - A little mischief never killed anyone... well, you I guess.
+            - Jex... whaddya say we find who did that and rip their eyes out?
+        dawnbreaker:
+          quote:
+            - Darkness fears the break of dawn!
+            - I was created to serve, but today I choose this fight.
+            - The first stars burned and faded into nothingness. Followed by countless more. I remain. And my hammer swings true.
+            - Even at a fraction of my best, I outshine you immeasurably.
+            - One must always remember that the sun also rises.
+        dazzle:
+          quote:
+            - Dazzle!
+            - Where my shadow falls, there falls my foe.
+            - You're under my protection.
+            - Resurrection comes easily to a Shadow Priest!
+        death_prophet:
+          quote:
+            - Who dares recall me from the grave?
+            - The doors of death open wide.
+            - You merely sipped at life. Now drink deep of death.
+            - The grave calls me back.
+            - Death is such a tease.
+        disruptor:
+          quote:
+            - The Stormcrafter comes!
+            - According to the forecast, this one is in the bag!
+            - Where you're going, the weather doesn't change.
+            - The storm charges my coil again.
         doom:
           quote:
             - Face your demons.
@@ -274,6 +313,12 @@ en:
             - Live by the sword, die by the dragon.
             - Good night, Sven. I mean bad knight. [Talking to Sven]
             - Never make a deal with a dragon, unless you're prepared to keep your end of it.
+        drow_ranger:
+          quote:
+            - My quiver and bow are ready!
+            - I thought they warned you not to speak with rangers.
+            - Autumn leaves for a deathbed.
+            - Faster than an arrow's flight.
         earth_spirit:
           quote:
             - Body is flesh, but spirit immortal.
