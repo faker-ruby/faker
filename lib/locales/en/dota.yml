@@ -146,6 +146,23 @@ en:
             - Easy now, this stuff is explosive!
             - Better living through alchemy!
             - Tell the ogre you're sorry.
+        ancient_apparition:
+          quote:
+            - Behold the apparition.
+            - Time to break the ice!
+            - I look again upon the cold light of day.
+        anti_mage:
+          quote:
+            - Truth compels me.
+            - I bring an end to magic.
+            - They who live by the wand shall die by my blade.
+            - It is not magic brings me back, but purity of will!
+        arc_warden:
+          quote:
+            - Matter has been split from its intended form. These must be made to unite.
+            - None escape the Self.
+            - These fools must learn what they stand against.
+            - Mercy is yours, for the end comes.
         axe:
           quote:
             - Let the carnage begin.

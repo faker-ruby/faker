@@ -5,10 +5,10 @@ require_relative '../../test_helper'
 class TestFakerDota < Test::Unit::TestCase
   def setup
     @tester = Faker::Games::Dota
-    @heroes = %w[abaddon alchemist axe beastmaster brewmaster bristleback centaur
-                 chaos_knight clockwerk doom dragon_knight earth_spirit earthshaker
-                 elder_titan huskar io kunkka legion_commander lifestealer lycan
-                 magnus night_stalker omniknight phoenix pudge sand_king slardar
+    @heroes = %w[abaddon alchemist ancient_apparition anti_mage arc_warden axe beastmaster
+                 brewmaster bristleback centaur chaos_knight clockwerk doom dragon_knight
+                 earth_spirit earthshaker elder_titan huskar io kunkka legion_commander
+                 lifestealer lycan magnus night_stalker omniknight phoenix pudge sand_king slardar
                  spirit_breaker sven tidehunter timbersaw tiny treant_protector tusk
                  underlord undying wraith_king]
   end
