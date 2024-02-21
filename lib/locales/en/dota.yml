@@ -235,11 +235,32 @@ en:
             - We descend into chaos.
             - The light shall be blackened, and chaos shall reign.
             - Chaos is Fun…damental.
+        chen:
+          quote:
+            - The Inquisitor has arrived.
+            - The persecution starts now!
+            - Only the penitent can be forgiven.
+            - God taketh whom he loveth best.
+            - In the name of Obelis, I fight again.
+        clinkz:
+          quote:
+            - A light to guide my way. A light to burn my foes.
+            - Clink goes my bones.
+            - It's time for your cremation.
+            - I've already paid my pound of flesh.
+            - The furnace of my heart cannot be quenched.
         clockwerk:
           quote:
             - I've a mind like a steel trap, and the physique to go with it!
             - What time is it? It's killing time.
             - A good offense is the best armor. Good armor is also good armor.
+        crystal_maiden:
+          quote:
+            - Who calls the Crystal Maiden?
+            - Behold the scourge of Icewrack!
+            - Swift as the wolves of Icewrack...
+            - You're dead and that's a cold hard fact.
+            - Once burned, ice shy...
         doom:
           quote:
             - Face your demons.
