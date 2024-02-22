@@ -17,7 +17,7 @@ GEM
     json (2.7.1)
     language_server-protocol (3.17.0.3)
     method_source (1.0.0)
-    minitest (5.21.2)
+    minitest (5.22.2)
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -69,7 +69,7 @@ PLATFORMS
 DEPENDENCIES
   benchmark
   faker!
-  minitest (= 5.21.2)
+  minitest (= 5.22.2)
   pry (= 0.14.2)
   rake (= 13.1.0)
   rubocop (= 1.60.2)
