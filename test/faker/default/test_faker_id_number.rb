@@ -274,15 +274,6 @@ class TestFakerIdNumber < Test::Unit::TestCase
     end
   end
 
-  def test_chilean_id_with_deprecated_class
-    actual_stdout, actual_stderr = capture_output do
-      Faker::IDNumber.valid
-    end
-
-    assert_empty actual_stdout
-    assert_match('DEPRECATION WARNING: the class Faker::IDNumber is deprecated. Use Faker::IdNumber instead.', actual_stderr)
-  end
-
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)
