@@ -235,7 +235,7 @@ en:
         pl:
           # Poland
           length: 28
-          bban_pattern: '\d{8}[A-Z0-9]{16}'
+          bban_pattern: '\d{8}\d{16}'
         ps:
           # Palestinian Territory, Occupied
           length: 29
