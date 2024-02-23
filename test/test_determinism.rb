@@ -99,7 +99,6 @@ class TestDeterminism < Test::Unit::TestCase
       Games
       GamesHalfLife
       HeroesOfTheStorm
-      IDNumber
       Internet
       JapaneseMedia
       LeagueOfLegends
