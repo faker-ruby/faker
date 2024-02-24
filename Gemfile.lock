@@ -17,7 +17,7 @@ GEM
     json (2.7.1)
     language_server-protocol (3.17.0.3)
     method_source (1.0.0)
-    minitest (5.21.2)
+    minitest (5.22.2)
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -56,7 +56,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    test-unit (3.6.1)
+    test-unit (3.6.2)
       power_assert
     timecop (0.9.8)
     unicode-display_width (2.5.0)
@@ -69,14 +69,14 @@ PLATFORMS
 DEPENDENCIES
   benchmark
   faker!
-  minitest (= 5.21.2)
+  minitest (= 5.22.2)
   pry (= 0.14.2)
   rake (= 13.1.0)
   rubocop (= 1.60.2)
   rubocop-minitest (= 0.34.4)
   rubocop-rake (= 0.6.0)
   simplecov (= 0.22.0)
-  test-unit (= 3.6.1)
+  test-unit (= 3.6.2)
   timecop (= 0.9.8)
   yard (= 0.9.34)
 
