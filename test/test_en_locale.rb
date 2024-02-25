@@ -23,15 +23,15 @@ class TestEnLocale < Test::Unit::TestCase
   end
 
   def test_valid_id_number
-    id_num = Faker::IDNumber.valid
+    id_num = Faker::IdNumber.valid
 
-    assert(Faker::IDNumber::INVALID_SSN.none? { |regex| id_num =~ regex })
+    assert(Faker::IdNumber::INVALID_SSN.none? { |regex| id_num =~ regex })
   end
 
   def test_invalid_id_number
-    id_num = Faker::IDNumber.invalid
+    id_num = Faker::IdNumber.invalid
 
-    assert(Faker::IDNumber::INVALID_SSN.any? { |regex| id_num =~ regex })
+    assert(Faker::IdNumber::INVALID_SSN.any? { |regex| id_num =~ regex })
   end
 
   def test_values_trimmed

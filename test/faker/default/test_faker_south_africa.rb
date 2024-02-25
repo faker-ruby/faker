@@ -10,7 +10,7 @@ class TestFakerSouthAfrica < Test::Unit::TestCase
   def test_id_number
     stubbed_id_number = '7201010001081'
 
-    Faker::IDNumber.stub :south_african_id_number, stubbed_id_number do
+    Faker::IdNumber.stub :south_african_id_number, stubbed_id_number do
       assert_equal stubbed_id_number, @tester.id_number
     end
   end
@@ -18,7 +18,7 @@ class TestFakerSouthAfrica < Test::Unit::TestCase
   def test_valid_id_number
     stubbed_id_number = '7201010001081'
 
-    Faker::IDNumber.stub :valid_south_african_id_number, stubbed_id_number do
+    Faker::IdNumber.stub :valid_south_african_id_number, stubbed_id_number do
       assert_equal stubbed_id_number, @tester.valid_id_number
     end
   end
@@ -26,7 +26,7 @@ class TestFakerSouthAfrica < Test::Unit::TestCase
   def test_invalid_id_number
     stubbed_id_number = '9999990001081'
 
-    Faker::IDNumber.stub :invalid_south_african_id_number, stubbed_id_number do
+    Faker::IdNumber.stub :invalid_south_african_id_number, stubbed_id_number do
       assert_equal stubbed_id_number, @tester.invalid_id_number
     end
   end
