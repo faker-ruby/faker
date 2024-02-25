@@ -67,7 +67,7 @@ class TestDeterminism < Test::Unit::TestCase
 
   def subclasses
     Faker.constants.delete_if do |subclass|
-      %i[Base Bank Books Cat Char Base58 ChileRut CLI Config Creature Date Dog DragonBall Dota ElderScrolls Fallout Games GamesHalfLife HeroesOfTheStorm Internet JapaneseMedia LeagueOfLegends Movies Myst Overwatch OnePiece Pokemon Religion Sports SwordArtOnline TvShows Time VERSION Witcher WorldOfWarcraft Zelda].include?(subclass)
+      skipped_classes.include?(subclass)
     end.sort
   end
 
@@ -75,6 +75,48 @@ class TestDeterminism < Test::Unit::TestCase
     eval("Faker::#{subclass}.public_methods(false) - Faker::Base.public_methods(false)").sort.map do |method|
       "Faker::#{subclass}.#{method}"
     end.sort
+  end
+
+  def skipped_classes
+    %i[
+      Bank
+      Base
+      Base58
+      Books
+      Cat
+      Char
+      ChileRut
+      CLI
+      Config
+      Creature
+      Date
+      Deprecator
+      Dog
+      DragonBall
+      Dota
+      ElderScrolls
+      Fallout
+      Games
+      GamesHalfLife
+      HeroesOfTheStorm
+      Internet
+      JapaneseMedia
+      LeagueOfLegends
+      Movies
+      Myst
+      Overwatch
+      OnePiece
+      Pokemon
+      Religion
+      Sports
+      SwordArtOnline
+      TvShows
+      Time
+      VERSION
+      Witcher
+      WorldOfWarcraft
+      Zelda
+    ]
   end
 end
 # rubocop:enable Security/Eval,Style/EvalWithLocation

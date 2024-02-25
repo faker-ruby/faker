@@ -248,7 +248,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Hipster](doc/default/hipster.md)
   - [Faker::Hobby](doc/default/hobby.md)
   - [Faker::House](doc/default/house.md)
-  - [Faker::IDNumber](doc/default/id_number.md)
+  - [Faker::IdNumber](doc/default/id_number.md)
   - [Faker::IndustrySegments](doc/default/industry_segments.md)
   - [Faker::Internet](doc/default/internet.md)
   - [Faker::Invoice](doc/default/invoice.md)
