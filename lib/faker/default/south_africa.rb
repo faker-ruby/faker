@@ -13,7 +13,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def id_number
-        Faker::IDNumber.south_african_id_number
+        Faker::IdNumber.south_african_id_number
       end
 
       ##
@@ -26,7 +26,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def valid_id_number
-        Faker::IDNumber.valid_south_african_id_number
+        Faker::IdNumber.valid_south_african_id_number
       end
 
       ##
@@ -39,7 +39,7 @@ module Faker
       #
       # @faker.version 1.9.2
       def invalid_id_number
-        Faker::IDNumber.invalid_south_african_id_number
+        Faker::IdNumber.invalid_south_african_id_number
       end
 
       ##
