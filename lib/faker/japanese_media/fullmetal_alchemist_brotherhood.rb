@@ -2,47 +2,50 @@
 
 module Faker
   class JapaneseMedia
-    class FmaBrotherhood < Base
+    class FullmetalAlchemistBrotherhood < Base
       class << self
         ##
-        # Produces a character from FmaBrotherhood.
+        # Produces a character from FullmetalAlchemistBrotherhood.
         #
         # @return [String]
         #
         # @example
-        #   Faker::JapaneseMedia::FmaBrotherhood.character #=> "Edward Elric"
+        #   Faker::JapaneseMedia::FullmetalAlchemistBrotherhood.character #=> "Edward Elric"
         #
         # @faker.version next
         def character
-          fetch('fma_brotherhood.characters')
+          fetch('fullmetal_alchemist_brotherhood.characters')
         end
 
         ##
-        # Produces a cities from FmaBrotherhood.
+        # Produces a cities from FullmetalAlchemistBrotherhood.
         #
         # @return [String]
         #
         # @example
-        #   Faker::JapaneseMedia::FmaBrotherhood.city #=> "Central City"
+        #   Faker::JapaneseMedia::FullmetalAlchemistBrotherhood.city #=> "Central City"
         #
         # @faker.version next
         def city
-          fetch('fma_brotherhood.cities')
+          fetch('fullmetal_alchemist_brotherhood.cities')
         end
 
         ##
-        # Produces a country from FmaBrotherhood.
+        # Produces a country from FullmetalAlchemistBrotherhood.
         #
         # @return [String]
         #
         # @example
-        #   Faker::JapaneseMedia::FmaBrotherhood.country #=> "Xing"
+        #   Faker::JapaneseMedia::FullmetalAlchemistBrotherhood.country #=> "Xing"
         #
         # @faker.version next
         def country
-          fetch('fma_brotherhood.countries')
+          fetch('fullmetal_alchemist_brotherhood.countries')
         end
       end
     end
+
+    include Faker::Deprecator
+    deprecate_generator('FmaBrotherhood', FullmetalAlchemistBrotherhood)
   end
 end

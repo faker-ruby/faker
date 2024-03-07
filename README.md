@@ -248,7 +248,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Hipster](doc/default/hipster.md)
   - [Faker::Hobby](doc/default/hobby.md)
   - [Faker::House](doc/default/house.md)
-  - [Faker::IDNumber](doc/default/id_number.md)
+  - [Faker::IdNumber](doc/default/id_number.md)
   - [Faker::IndustrySegments](doc/default/industry_segments.md)
   - [Faker::Internet](doc/default/internet.md)
   - [Faker::Invoice](doc/default/invoice.md)
@@ -376,7 +376,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::JapaneseMedia::Naruto](doc/japanese_media/naruto.md)
   - [Faker::JapaneseMedia::Doraemon](doc/japanese_media/doraemon.md)
   - [Faker::JapaneseMedia::Conan](doc/japanese_media/conan.md)
-  - [Faker::JapaneseMedia::FmaBrotherhood](doc/japanese_media/fullmetal_alchemist_brotherhood.md)
+  - [Faker::JapaneseMedia::FullmetalAlchemistBrotherhood](doc/japanese_media/fullmetal_alchemist_brotherhood.md)
 </details>
 
 <details>

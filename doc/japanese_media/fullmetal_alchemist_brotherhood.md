@@ -1,9 +1,9 @@
-# Faker::JapaneseMedia::FmaBrotherhood
+# Faker::JapaneseMedia::FullmetalAchemistBrotherhood
 
 ```ruby
-Faker::JapaneseMedia::FmaBrotherhood.character #=> "Edward Elric"
+Faker::JapaneseMedia::FullmetalAchemistBrotherhood.character #=> "Edward Elric"
 
-Faker::JapaneseMedia::FmaBrotherhood.city #=> "Central City"
+Faker::JapaneseMedia::FullmetalAchemistBrotherhood.city #=> "Central City"
 
-Faker::JapaneseMedia::FmaBrotherhood.country #=> "Xing"
+Faker::JapaneseMedia::FullmetalAchemistBrotherhood.country #=> "Xing"
 ```
