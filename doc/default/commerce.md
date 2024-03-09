@@ -22,8 +22,6 @@ Faker::Commerce.price(range: 0..10.0, as_string: true) #=> "2.18"
 Faker::Commerce.promotion_code #=> "AmazingDeal829102"
 Faker::Commerce.promotion_code(digits: 2) #=> "AmazingPrice57"
 
-Faker::Commerce.material #=> "Plastic"
-
 # Generate a random brand
 Faker::Commerce.brand #=> "Apple"
 
