@@ -441,6 +441,38 @@ module Faker
         }
       end
 
+      ##
+      # Generate a mock Omniauth response for Azure Active Directory v2.
+      #
+      # @param name [String, nil] A specific name to return in the response;
+      # @param email [String, nil] A specific email to return in the response;
+      # @param uid [String, nil] A specific UID to return in the response;
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-azure-activedirectory-v2.
+      #
+      # @faker.version next
+      def azure_activedirectory_v2(name: nil, email: nil, uid: nil)
+        auth = Omniauth.new(name: name, email: email)
+        uid ||= Config.random.uuid
+        {
+          provider: 'azure_activedirectory_v2',
+          uid: uid,
+          info: {
+            name: auth.name,
+            first_name: auth.first_name,
+            last_name: auth.last_name,
+            email: auth.email,
+            id: uid
+          },
+          credentials: {
+            token: Crypto.md5,
+            expires_at: Time.forward(days: 365).to_i,
+            expires: true
+          },
+          extra: {}
+        }
+      end
+
       private
 
       def gender

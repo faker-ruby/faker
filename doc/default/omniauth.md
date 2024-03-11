@@ -321,4 +321,23 @@ Faker::Omniauth.auth0 #=>
     }
   }
 }
+
+Faker::Omniauth.azure_activedirectory_v2 #=>
+{
+  provider: "azure_activedirectory_v2",
+  uid: "9e78c371-2ffc-4ca3-8589-6576182b79e2",
+  info: {
+    name: "John Doe",
+    first_name: "John",
+    last_name: "Doe",
+    email: "doe.john@example.com",
+    id: "9e78c371-2ffc-4ca3-8589-6576182b79e2"
+  },
+  credentials: {
+    token: "token",
+    expires_at: 1710138804,
+    expires: true
+  },
+  extra: {}
+}
 ```

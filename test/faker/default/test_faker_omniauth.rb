@@ -534,6 +534,27 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
     assert raw_info[:email_verified]
   end
 
+  def test_omniauth_azure_activedirectory_v2
+    auth            = @tester.azure_activedirectory_v2
+    provider        = auth[:provider]
+    uid             = auth[:uid]
+    info            = auth[:info]
+    credentials     = auth[:credentials]
+    extra           = auth[:extra]
+
+    assert_equal 'azure_activedirectory_v2', provider
+    assert_instance_of String, auth[:uid]
+    assert_instance_of String, info[:name]
+    assert_instance_of String, info[:first_name]
+    assert_instance_of String, info[:last_name]
+    assert_match email_regex(info[:first_name], info[:last_name]), info[:email]
+    assert_equal uid, info[:id]
+    assert_instance_of String, credentials[:token]
+    assert credentials[:expires]
+    assert_not_nil credentials[:expires_at]
+    assert_empty(extra)
+  end
+
   def word_count(string)
     string.split.length
   end
