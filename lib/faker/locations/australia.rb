@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Faker
+  extend Deprecator
+
   class Locations
     class Australia < Base
       class << self
@@ -46,4 +48,5 @@ module Faker
       end
     end
   end
+  deprecate_generator('Australia', Locations::Australia)
 end
