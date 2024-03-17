@@ -5,15 +5,34 @@
 require 'benchmark'
 require 'faker'
 
-desc 'Benchmarking every Faker generator'
-task :benchmark do
-  all_methods = BenchmarkHelper.all_methods
-  count = all_methods.count
+namespace :benchmark do
+  desc 'Benchmarking all methods'
+  task :all_methods do
+    all_methods = BenchmarkHelper.all_methods
+    count = all_methods.count
 
-  Benchmark.bmbm do |x|
-    x.report("Number of generators: #{count}") do
-      100.times do
-        all_methods.each { |method_name| eval(method_name) }
+    Benchmark.bmbm do |x|
+      x.report("Number of generators: #{count}") do
+        100.times do
+          all_methods.each { |method_name| eval(method_name) }
+        end
+      end
+    end
+  end
+
+  desc 'Comparing loading translations from YML vs. JSON'
+  task :compare_loading_yml_vs_json do
+    Benchmark.bmbm do |x|
+      x.report('YML') do
+        100.times do
+          YAML.load_file(File.expand_path("#{File.dirname(__FILE__)}/../lib/locales/es-MX.yml"))
+        end
+      end
+
+      x.report('JSON') do
+        100.times do
+          JSON.load_file("#{File.dirname(__FILE__)}/../test/fixtures/locales/es-MX.json")
+        end
       end
     end
   end
