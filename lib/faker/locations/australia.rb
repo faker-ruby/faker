@@ -17,7 +17,7 @@ module Faker
         #
         # @faker.version next
         def location
-          fetch('australia.locations')
+          fetch('locations.australia.locations')
         end
 
         # Produces an Australian animal
@@ -30,7 +30,7 @@ module Faker
         #
         # @faker.version next
         def animal
-          fetch('australia.animals')
+          fetch('locations.australia.animals')
         end
 
         # Produces an Australian State or Territory
@@ -43,7 +43,7 @@ module Faker
         #
         # @faker.version next
         def state
-          fetch('australia.states')
+          fetch('locations.australia.states')
         end
       end
     end
