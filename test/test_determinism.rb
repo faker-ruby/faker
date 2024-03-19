@@ -102,6 +102,7 @@ class TestDeterminism < Test::Unit::TestCase
       Internet
       JapaneseMedia
       LeagueOfLegends
+      Locations
       Movies
       Myst
       Overwatch

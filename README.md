@@ -477,6 +477,12 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::TvShows::VentureBros](doc/tv_shows/venture_bros.md)
 </details>
 
+<details>
+  <summary>Locations</summary>
+
+  - [Faker::Locations::Australia](doc/locations/australia.md)
+</details>
+
 ## Contributing
 
 **Note**: We are not accepting proposals for new generators and locales. The [Contributing](CONTRIBUTING.md) guide has a few notes about this decision.
