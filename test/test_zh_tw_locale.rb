@@ -12,26 +12,26 @@ class TestZhLocale < Test::Unit::TestCase
   end
 
   def test_zh_tw_address_methods
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.state.is_a? String
-    assert Faker::Address.state_abbr.is_a? String
-    assert Faker::Address.city_prefix.is_a? String
-    assert Faker::Address.city_suffix.is_a? String
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.street_name.is_a? String
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.state_abbr
+    assert_kind_of String, Faker::Address.city_prefix
+    assert_kind_of String, Faker::Address.city_suffix
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.street_name
   end
 
   def test_zh_tw_name_methods
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.name
+    assert_kind_of String, Faker::Name.name_with_middle
     assert_no_match(/\s/, Faker::Name.name_with_middle)
   end
 
   def test_zh_tw_university_methods
-    assert Faker::University.prefix.is_a? String
-    assert Faker::University.suffix.is_a? String
-    assert Faker::University.name.is_a? String
+    assert_kind_of String, Faker::University.prefix
+    assert_kind_of String, Faker::University.suffix
+    assert_kind_of String, Faker::University.name
   end
 end

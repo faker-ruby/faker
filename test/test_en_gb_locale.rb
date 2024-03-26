@@ -13,15 +13,15 @@ class TestEnGbLocale < Test::Unit::TestCase
   end
 
   def test_en_gb_address_methods
-    assert Faker::Address.county.is_a? String
-    assert Faker::Address.uk_country.is_a? String
-    assert Faker::Address.default_country.is_a? String
-    assert Faker::Address.country_code.is_a? String
-    assert Faker::Address.postcode.is_a? String
+    assert_kind_of String, Faker::Address.county
+    assert_kind_of String, Faker::Address.uk_country
+    assert_kind_of String, Faker::Address.default_country
+    assert_kind_of String, Faker::Address.country_code
+    assert_kind_of String, Faker::Address.postcode
   end
 
   def test_en_gb_internet_methods
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_en_gb_country_code

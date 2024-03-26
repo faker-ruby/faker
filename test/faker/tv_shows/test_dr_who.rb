@@ -45,13 +45,13 @@ class TestFakerTvShowsDrWho < Test::Unit::TestCase
     [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
 
-      assert @tester.character.is_a? String
-      assert @tester.the_doctor.is_a? String
-      assert @tester.catch_phrase.is_a? String
-      assert @tester.quote.is_a? String
-      assert @tester.villian.is_a? String # deprecated
-      assert @tester.villain.is_a? String
-      assert @tester.specie.is_a? String
+      assert_kind_of String, @tester.character
+      assert_kind_of String, @tester.the_doctor
+      assert_kind_of String, @tester.catch_phrase
+      assert_kind_of String, @tester.quote
+      assert_kind_of String, @tester.villian # deprecated
+      assert_kind_of String, @tester.villain
+      assert_kind_of String, @tester.specie
     end
   end
 end

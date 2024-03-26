@@ -12,17 +12,17 @@ class TestMaNzLocale < Test::Unit::TestCase
   end
 
   def test_mi_nz_address_methods
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.region.is_a? String
-    assert Faker::Address.region_abbr.is_a? String
-    assert Faker::Address.postcode.is_a? String
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.region
+    assert_kind_of String, Faker::Address.region_abbr
+    assert_kind_of String, Faker::Address.postcode
     assert_equal 'Aotearoa', Faker::Address.default_country
   end
 
   def test_mi_nz_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 end

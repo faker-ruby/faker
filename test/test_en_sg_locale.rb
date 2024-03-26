@@ -13,23 +13,23 @@ class TestEnSgLocale < Test::Unit::TestCase
   end
 
   def test_en_sg_address_methods
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.streets.is_a? String
-    assert Faker::Address.street_address.is_a? String
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.streets
+    assert_kind_of String, Faker::Address.street_address
     assert_equal('Singapore', Faker::Address.default_country)
   end
 
   def test_en_sg_name_methods
-    assert Faker::Name.male_first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.female_first_name.is_a? String
-    assert Faker::Name.male_english_name.is_a? String
-    assert Faker::Name.female_english_name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.name.is_a? String
+    assert_kind_of String, Faker::Name.male_first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.female_first_name
+    assert_kind_of String, Faker::Name.male_english_name
+    assert_kind_of String, Faker::Name.female_english_name
+    assert_kind_of String, Faker::Name.name_with_middle
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.name
   end
 
   def test_singapore_license_plate

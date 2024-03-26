@@ -51,16 +51,16 @@ class TestFakerCannabis < Test::Unit::TestCase
     [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
 
-      assert Faker::Cannabis.strain.is_a? String
-      assert Faker::Cannabis.cannabinoid_abbreviation.is_a? String
-      assert Faker::Cannabis.cannabinoid.is_a? String
-      assert Faker::Cannabis.terpene.is_a? String
-      assert Faker::Cannabis.medical_use.is_a? String
-      assert Faker::Cannabis.health_benefit.is_a? String
-      assert Faker::Cannabis.category.is_a? String
-      assert Faker::Cannabis.type.is_a? String
-      assert Faker::Cannabis.buzzword.is_a? String
-      assert Faker::Cannabis.brand.is_a? String
+      assert_kind_of String, Faker::Cannabis.strain
+      assert_kind_of String, Faker::Cannabis.cannabinoid_abbreviation
+      assert_kind_of String, Faker::Cannabis.cannabinoid
+      assert_kind_of String, Faker::Cannabis.terpene
+      assert_kind_of String, Faker::Cannabis.medical_use
+      assert_kind_of String, Faker::Cannabis.health_benefit
+      assert_kind_of String, Faker::Cannabis.category
+      assert_kind_of String, Faker::Cannabis.type
+      assert_kind_of String, Faker::Cannabis.buzzword
+      assert_kind_of String, Faker::Cannabis.brand
     end
   end
 end

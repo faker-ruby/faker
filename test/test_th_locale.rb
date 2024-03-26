@@ -12,7 +12,7 @@ class TestThLocale < Test::Unit::TestCase
   end
 
   def test_th_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
   end
 end

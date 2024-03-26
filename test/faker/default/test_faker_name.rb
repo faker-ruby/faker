@@ -20,15 +20,15 @@ class TestFakerName < Test::Unit::TestCase
   end
 
   def test_male_first_name
-    assert @tester.male_first_name.is_a? String
+    assert_kind_of String, @tester.male_first_name
   end
 
   def test_female_first_name
-    assert @tester.female_first_name.is_a? String
+    assert_kind_of String, @tester.female_first_name
   end
 
   def test_neutral_first_name
-    assert @tester.neutral_first_name.is_a? String
+    assert_kind_of String, @tester.neutral_first_name
   end
 
   def test_middle_name

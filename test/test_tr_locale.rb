@@ -12,35 +12,35 @@ class TestTRLocale < Test::Unit::TestCase
   end
 
   def test_tr_address_fields
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.city_name.is_a? String
-    assert Faker::Address.country.is_a? String
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.city_name
+    assert_kind_of String, Faker::Address.country
     assert_equal('Turkey', Faker::Address.default_country)
   end
 
   def test_tr_book_fields
-    assert Faker::Book.title.is_a? String
-    assert Faker::Book.author.is_a? String
-    assert Faker::Book.publisher.is_a? String
-    assert Faker::Book.quote.is_a? String
+    assert_kind_of String, Faker::Book.title
+    assert_kind_of String, Faker::Book.author
+    assert_kind_of String, Faker::Book.publisher
+    assert_kind_of String, Faker::Book.quote
   end
 
   def test_tr_internet_fields
-    assert Faker::Internet.email.is_a? String
-    assert Faker::Internet.domain_suffix.is_a? String
-    assert Faker::Internet.email.is_a? String
+    assert_kind_of String, Faker::Internet.email
+    assert_kind_of String, Faker::Internet.domain_suffix
+    assert_kind_of String, Faker::Internet.email
   end
 
   def test_tr_names
-    assert Faker::Name.name.is_a? String
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.name
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.prefix
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 
   def test_tr_phone_number_fields
-    assert Faker::PhoneNumber.phone_number.is_a? String
+    assert_kind_of String, Faker::PhoneNumber.phone_number
   end
 end
