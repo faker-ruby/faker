@@ -13,9 +13,9 @@
 
 ### What's changed
 
-* Refactor `Faker::IDNumber` to `Faker::IdNumber` to be more consistent with other generator's naming convention. by @Jamal-A-Mohamed in https://github.com/faker-ruby/faker/pull/2858
+* Fix/Deprecate `Faker::IDNumber` to `Faker::IdNumber` to be more consistent with other generator's naming convention. by @Jamal-A-Mohamed in https://github.com/faker-ruby/faker/pull/2858
 * Fix/Deprecate FmaBrotherhood Generator by @kirkkwang in https://github.com/faker-ruby/faker/pull/2856
-* Update Faker::Australia to Faker::Locations::Australia by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2869
+* Fix/Deprecate Faker::Australia to Faker::Locations::Australia by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2869
 * Add note about EOL dependencies by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2890
 
 ### Update local dependencies
@@ -26,7 +26,7 @@
 * Bump yard from 0.9.34 to 0.9.36 by @dependabot in https://github.com/faker-ruby/faker/pull/2909
 * Bump minitest from 5.22.2 to 5.22.3 by @dependabot in https://github.com/faker-ruby/faker/pull/2917
 
-## New Contributors
+### New Contributors
 
 * @AndrewNduati made their first contribution in https://github.com/faker-ruby/faker/pull/2871
 * @Jamal-A-Mohamed made their first contribution in https://github.com/faker-ruby/faker/pull/2858
