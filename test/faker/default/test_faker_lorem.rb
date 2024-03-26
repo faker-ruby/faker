@@ -132,7 +132,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_multibyte
-    assert @tester.multibyte.is_a? String
+    assert_kind_of String, @tester.multibyte
     assert_includes %w[😀 ❤ 😡], @tester.multibyte
   end
 

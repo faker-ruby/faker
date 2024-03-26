@@ -12,17 +12,17 @@ class TestCaCatLocale < Test::Unit::TestCase
   end
 
   def test_ca_cat_address_methods
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.country.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_suffix.is_a? String
-    assert Faker::Address.secondary_address.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.province.is_a? String
-    assert Faker::Address.state.is_a? String
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.street_address.is_a? String
-    assert Faker::Address.default_country.is_a? String
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.country
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_suffix
+    assert_kind_of String, Faker::Address.secondary_address
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.province
+    assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.street_address
+    assert_kind_of String, Faker::Address.default_country
     assert_equal 'Catalunya', Faker::Address.default_country
   end
 

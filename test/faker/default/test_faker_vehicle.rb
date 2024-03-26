@@ -114,7 +114,7 @@ class TestFakerVehicle < Test::Unit::TestCase
 
   def doors_condition(doors)
     assert_predicate doors, :positive?
-    assert doors.is_a?(Integer)
+    assert_kind_of Integer, doors
   end
 
   def valid_vin(vin)

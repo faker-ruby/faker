@@ -14,64 +14,64 @@ class TestFrChLocale < Test::Unit::TestCase
   end
 
   def test_fr_ch_address_methods
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_prefix.is_a? String
-    assert Faker::Address.secondary_address.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.state.is_a? String
-    assert Faker::Address.state_abbr.is_a? String
-    assert Faker::Address.country_code.is_a? String
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.street_suffix.is_a? String
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.street_address.is_a? String
-    assert Faker::Address.default_country.is_a? String
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_prefix
+    assert_kind_of String, Faker::Address.secondary_address
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.state_abbr
+    assert_kind_of String, Faker::Address.country_code
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.street_suffix
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.street_address
+    assert_kind_of String, Faker::Address.default_country
     assert_match(/^\d+$/, Faker::Address.building_number)
     assert_equal('Suisse', Faker::Address.default_country)
   end
 
   def test_fr_ch_book_methods
-    assert Faker::Book.title.is_a? String
-    assert Faker::Book.author.is_a? String
-    assert Faker::Book.publisher.is_a? String
-    assert Faker::Book.quote.is_a? String
+    assert_kind_of String, Faker::Book.title
+    assert_kind_of String, Faker::Book.author
+    assert_kind_of String, Faker::Book.publisher
+    assert_kind_of String, Faker::Book.quote
   end
 
   def test_fr_ch_company_methods
-    assert Faker::Company.suffix.is_a? String
-    assert Faker::Company.buzzword.is_a? String
-    assert Faker::Company.bs.is_a? String
-    assert Faker::Company.name.is_a? String
+    assert_kind_of String, Faker::Company.suffix
+    assert_kind_of String, Faker::Company.buzzword
+    assert_kind_of String, Faker::Company.bs
+    assert_kind_of String, Faker::Company.name
   end
 
   def test_fr_ch_internet_methods
-    assert Faker::Internet.email.is_a? String
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.email
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_fr_ch_lorem_methods
-    assert Faker::Lorem.word.is_a? String
+    assert_kind_of String, Faker::Lorem.word
     assert Faker::Lorem.words(number: 1000)
     assert Faker::Lorem.words(number: 10_000, supplemental: true)
   end
 
   def test_fr_ch_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.name
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 
   def test_fr_ch_phone_number
-    assert Faker::PhoneNumber.cell_phone.is_a? String
-    assert Faker::Games::Pokemon.name.is_a? String
-    assert Faker::Games::Pokemon.location.is_a? String
-    assert Faker::Games::Pokemon.move.is_a? String
+    assert_kind_of String, Faker::PhoneNumber.cell_phone
+    assert_kind_of String, Faker::Games::Pokemon.name
+    assert_kind_of String, Faker::Games::Pokemon.location
+    assert_kind_of String, Faker::Games::Pokemon.move
   end
 
   def test_fr_ch_pokemon_methods
-    assert Faker::Games::Pokemon.name.is_a? String
-    assert Faker::Games::Pokemon.location.is_a? String
-    assert Faker::Games::Pokemon.move.is_a? String
+    assert_kind_of String, Faker::Games::Pokemon.name
+    assert_kind_of String, Faker::Games::Pokemon.location
+    assert_kind_of String, Faker::Games::Pokemon.move
   end
 end

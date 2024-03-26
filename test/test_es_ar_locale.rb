@@ -100,7 +100,7 @@ class TestEsArLocale < Test::Unit::TestCase
   end
 
   def test_es_ar_street_address
-    assert Faker::Address.street_address.is_a? String
+    assert_kind_of String, Faker::Address.street_address
   end
 
   def test_es_ar_postcode
@@ -112,7 +112,7 @@ class TestEsArLocale < Test::Unit::TestCase
   end
 
   def test_es_ar_full_address
-    assert Faker::Address.full_address.is_a? String
+    assert_kind_of String, Faker::Address.full_address
   end
 
   # -- -- COUNTRY

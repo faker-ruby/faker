@@ -12,20 +12,20 @@ class TestEnKeLocale < Test::Unit::TestCase
   end
 
   def test_en_ke_address_methods
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.county.is_a? String
-    assert Faker::Address.default_country.is_a? String
-    assert Faker::Address.default_country_code.is_a? String
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.county
+    assert_kind_of String, Faker::Address.default_country
+    assert_kind_of String, Faker::Address.default_country_code
   end
 
   def test_en_ke_company_methods
-    assert Faker::Company.name.is_a? String
-    assert Faker::Company.suffix.is_a? String
-    assert Faker::Company.company_names.is_a? String
+    assert_kind_of String, Faker::Company.name
+    assert_kind_of String, Faker::Company.suffix
+    assert_kind_of String, Faker::Company.company_names
   end
 
   def test_en_ke_internet_methods
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_en_ke_country_code_starts_with_254

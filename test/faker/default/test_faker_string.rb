@@ -12,7 +12,7 @@ class TestFakerString < Test::Unit::TestCase
   end
 
   def test_is_string
-    assert @tester.random.is_a?(String)
+    assert_kind_of String, @tester.random
   end
 
   def test_has_valid_encoding

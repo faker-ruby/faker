@@ -12,28 +12,28 @@ class TestEnZaLocale < Test::Unit::TestCase
   end
 
   def test_en_za_address_methods
-    assert Faker::Address.country_code.is_a? String
-    assert Faker::Address.default_country.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.province.is_a? String
-    assert Faker::Address.state.is_a? String
-    assert Faker::Address.city.is_a? String
+    assert_kind_of String, Faker::Address.country_code
+    assert_kind_of String, Faker::Address.default_country
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.province
+    assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.city
   end
 
   def test_en_za_company_methods
-    assert Faker::Company.name.is_a? String
-    assert Faker::Company.type.is_a? String
-    assert Faker::Company.suffix.is_a? String
-    assert Faker::Company.company_names.is_a? String
+    assert_kind_of String, Faker::Company.name
+    assert_kind_of String, Faker::Company.type
+    assert_kind_of String, Faker::Company.suffix
+    assert_kind_of String, Faker::Company.company_names
   end
 
   def test_en_za_internet_methods
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_en_za_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 end

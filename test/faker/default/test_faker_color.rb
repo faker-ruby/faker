@@ -63,7 +63,7 @@ class TestFakerColor < Test::Unit::TestCase
     assert_equal(3, @result.length)
 
     assert @result[0].between?(0, 360)
-    assert @result[0].is_a?(Integer)
+    assert_kind_of Integer, @result[0]
     assert @result[1].between?(0.0, 1.0)
     assert @result[2].between?(0.0, 1.0)
   end
