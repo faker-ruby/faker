@@ -13,26 +13,26 @@ class TestIdLocale < Test::Unit::TestCase
   end
 
   def test_id_address_methods
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.province.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.street_address.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.city_name.is_a? String
-    assert Faker::Address.state_abbr.is_a? String
-    assert Faker::Address.street_prefix.is_a? String
-    assert Faker::Address.street_title.is_a? String
-    assert Faker::Address.street_name.is_a? String
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.province
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.street_address
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.city_name
+    assert_kind_of String, Faker::Address.state_abbr
+    assert_kind_of String, Faker::Address.street_prefix
+    assert_kind_of String, Faker::Address.street_title
+    assert_kind_of String, Faker::Address.street_name
   end
 
   def test_id_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.name
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 
   def test_id_phone_number_methods
-    assert Faker::PhoneNumber.phone_number.is_a? String
+    assert_kind_of String, Faker::PhoneNumber.phone_number
   end
 end

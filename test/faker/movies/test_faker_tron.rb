@@ -67,49 +67,49 @@ class TestFakerTron < Test::Unit::TestCase
   def test_characters
     characters = @tester.characters
 
-    assert characters.is_a?(Array)
+    assert_kind_of Array, characters
     assert_equal characters.length, CHARACTER_COUNT
   end
 
   def test_games
     games = @tester.games
 
-    assert games.is_a?(Array)
+    assert_kind_of Array, games
     assert_equal games.length, GAME_COUNT
   end
 
   def test_locations
     locations = @tester.locations
 
-    assert locations.is_a?(Array)
+    assert_kind_of Array, locations
     assert_equal locations.length, LOCATION_COUNT
   end
 
   def test_programs
     programs = @tester.programs
 
-    assert programs.is_a?(Array)
+    assert_kind_of Array, programs
     assert_equal programs.length, PROGRAM_COUNT
   end
 
   def test_taglines
     taglines = @tester.taglines
 
-    assert taglines.is_a?(Array)
+    assert_kind_of Array, taglines
     assert_equal taglines.length, TAGLINE_COUNT
   end
 
   def test_users
     users = @tester.users
 
-    assert users.is_a?(Array)
+    assert_kind_of Array, users
     assert_equal users.length, USER_COUNT
   end
 
   def test_vehicles
     vehicles = @tester.vehicles
 
-    assert vehicles.is_a?(Array)
+    assert_kind_of Array, vehicles
     assert_equal vehicles.length, VEHICLE_COUNT
   end
 end

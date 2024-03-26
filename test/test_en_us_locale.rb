@@ -12,30 +12,30 @@ class TestEnUsLocale < Test::Unit::TestCase
   end
 
   def test_en_us_internet_methods
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_en_us_address_methods
-    assert Faker::Address.full_address.is_a? String
-    assert Faker::Address.default_country.is_a? String
-    assert Faker::Address.country_code.is_a? String
-    assert Faker::Address.full_address.is_a? String
+    assert_kind_of String, Faker::Address.full_address
+    assert_kind_of String, Faker::Address.default_country
+    assert_kind_of String, Faker::Address.country_code
+    assert_kind_of String, Faker::Address.full_address
   end
 
   def test_en_us_subscriber_number_method
-    assert Faker::PhoneNumber.subscriber_number.is_a? String
+    assert_kind_of String, Faker::PhoneNumber.subscriber_number
     assert_equal(4, Faker::PhoneNumber.subscriber_number.length)
     assert_equal(10, Faker::PhoneNumber.subscriber_number(length: 10).length)
     assert_equal Faker::PhoneNumber.method(:extension), Faker::PhoneNumber.method(:subscriber_number)
   end
 
   def test_en_us_phone_methods_with_en_us_locale
-    assert Faker::PhoneNumber.area_code.is_a? String
-    assert Faker::PhoneNumber.area_code.to_i.is_a? Integer
+    assert_kind_of String, Faker::PhoneNumber.area_code
+    assert_kind_of Integer, Faker::PhoneNumber.area_code.to_i
     assert_equal(3, Faker::PhoneNumber.area_code.length)
 
-    assert Faker::PhoneNumber.exchange_code.is_a? String
-    assert Faker::PhoneNumber.exchange_code.to_i.is_a? Integer
+    assert_kind_of String, Faker::PhoneNumber.exchange_code
+    assert_kind_of Integer, Faker::PhoneNumber.exchange_code.to_i
     assert_equal(3, Faker::PhoneNumber.exchange_code.length)
   end
 

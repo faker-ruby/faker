@@ -35,12 +35,12 @@ class TestFakerConstruction < Test::Unit::TestCase
     [nil, 'en'].each do |locale_name|
       Faker::Config.locale = locale_name
 
-      assert Faker::Construction.material.is_a? String
-      assert Faker::Construction.subcontract_category.is_a? String
-      assert Faker::Construction.standard_cost_code.is_a? String
-      assert Faker::Construction.trade.is_a? String
-      assert Faker::Construction.role.is_a? String
-      assert Faker::Construction.heavy_equipment.is_a? String
+      assert_kind_of String, Faker::Construction.material
+      assert_kind_of String, Faker::Construction.subcontract_category
+      assert_kind_of String, Faker::Construction.standard_cost_code
+      assert_kind_of String, Faker::Construction.trade
+      assert_kind_of String, Faker::Construction.role
+      assert_kind_of String, Faker::Construction.heavy_equipment
     end
   end
 end

@@ -28,9 +28,9 @@ class TestFakerTvShowsSimpsons < Test::Unit::TestCase
     [nil, 'en', 'de'].each do |_locale_name|
       Faker::Config.locale = 'de'
 
-      assert @tester.character.is_a? String
-      assert @tester.location.is_a? String
-      assert @tester.quote.is_a? String
+      assert_kind_of String, @tester.character
+      assert_kind_of String, @tester.location
+      assert_kind_of String, @tester.quote
     end
   end
 end

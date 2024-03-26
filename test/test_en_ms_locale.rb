@@ -13,34 +13,34 @@ class TestEnMsLocale < Test::Unit::TestCase
   end
 
   def test_en_ms_address_methods
-    assert Faker::Address.city_name.is_a? String
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.province.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_prefix.is_a? String
-    assert Faker::Address.street_title.is_a? String
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.street_address.is_a? String
-    assert Faker::PhoneNumber.cell_phone.is_a? String
-    assert Faker::Bank.name.is_a? String
+    assert_kind_of String, Faker::Address.city_name
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.province
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_prefix
+    assert_kind_of String, Faker::Address.street_title
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.street_address
+    assert_kind_of String, Faker::PhoneNumber.cell_phone
+    assert_kind_of String, Faker::Bank.name
     assert_equal('Malaysia', Faker::Address.default_country)
   end
 
   def test_en_ms_bank_methods
-    assert Faker::Bank.name.is_a? String
+    assert_kind_of String, Faker::Bank.name
   end
 
   def test_en_ms_name_methods
-    assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.malay_male_first_name.is_a? String
-    assert Faker::Name.malay_female_first_name.is_a? String
-    assert Faker::Name.chinese_male_first_name.is_a? String
-    assert Faker::Name.chinese_male_last_name.is_a? String
-    assert Faker::Name.chinese_female_first_name.is_a? String
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.name.is_a? String
-    assert Faker::Name.male_first_name.is_a? String
-    assert Faker::Name.female_first_name.is_a? String
+    assert_kind_of String, Faker::Name.prefix
+    assert_kind_of String, Faker::Name.malay_male_first_name
+    assert_kind_of String, Faker::Name.malay_female_first_name
+    assert_kind_of String, Faker::Name.chinese_male_first_name
+    assert_kind_of String, Faker::Name.chinese_male_last_name
+    assert_kind_of String, Faker::Name.chinese_female_first_name
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.name
+    assert_kind_of String, Faker::Name.male_first_name
+    assert_kind_of String, Faker::Name.female_first_name
   end
 end

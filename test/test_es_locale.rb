@@ -36,71 +36,71 @@ class TestEsLocale < Test::Unit::TestCase
   end
 
   def test_es_address_methods
-    assert Faker::Address.city_prefix.is_a? String
-    assert Faker::Address.city_suffix.is_a? String
-    assert Faker::Address.state_abbr.is_a? String
-    assert Faker::Address.country.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_suffix.is_a? String
-    assert Faker::Address.secondary_address.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.state.is_a? String
-    assert Faker::Address.city.is_a? String
+    assert_kind_of String, Faker::Address.city_prefix
+    assert_kind_of String, Faker::Address.city_suffix
+    assert_kind_of String, Faker::Address.state_abbr
+    assert_kind_of String, Faker::Address.country
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_suffix
+    assert_kind_of String, Faker::Address.secondary_address
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.city
     assert Faker::Address.default_country, 'España'
   end
 
   def test_es_color_methods
-    assert Faker::Color.color_name.is_a? String
+    assert_kind_of String, Faker::Color.color_name
   end
 
   def test_es_company_methods
-    assert Faker::Company.name.is_a? String
-    assert Faker::Company.suffix.is_a? String
+    assert_kind_of String, Faker::Company.name
+    assert_kind_of String, Faker::Company.suffix
   end
 
   def test_es_commerce_methods
-    assert Faker::Commerce.color.is_a? String
-    assert Faker::Commerce.department.is_a? String
-    assert Faker::Commerce.product_name.is_a? String
-    assert Faker::Company.suffix.is_a? String
-    assert Faker::Company.name.is_a? String
+    assert_kind_of String, Faker::Commerce.color
+    assert_kind_of String, Faker::Commerce.department
+    assert_kind_of String, Faker::Commerce.product_name
+    assert_kind_of String, Faker::Company.suffix
+    assert_kind_of String, Faker::Company.name
   end
 
   def test_es_food_methods
-    assert Faker::Food.ingredient.is_a? String
-    assert Faker::Food.spice.is_a? String
-    assert Faker::Food.measurement.is_a? String
+    assert_kind_of String, Faker::Food.ingredient
+    assert_kind_of String, Faker::Food.spice
+    assert_kind_of String, Faker::Food.measurement
   end
 
   def test_es_internet_methods
-    assert Faker::Internet.email.is_a? String
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.email
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_es_name_methods
-    assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.suffix.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.middle_name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
-    assert Faker::Name.male_first_name.is_a? String
-    assert Faker::Name.female_first_name.is_a? String
-    assert Faker::Name.name.is_a? String
+    assert_kind_of String, Faker::Name.prefix
+    assert_kind_of String, Faker::Name.suffix
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.middle_name
+    assert_kind_of String, Faker::Name.name_with_middle
+    assert_kind_of String, Faker::Name.male_first_name
+    assert_kind_of String, Faker::Name.female_first_name
+    assert_kind_of String, Faker::Name.name
     assert_match(/[A-Z]{3}/, Faker::Name.initials)
     assert_match(/[A-Z]{2}/, Faker::Name.initials(number: 2))
   end
 
   def test_es_vehicle_methods
-    assert Faker::Vehicle.license_plate.is_a? String
+    assert_kind_of String, Faker::Vehicle.license_plate
     assert_match(/\d{4}[A-Z]{3}/, Faker::Vehicle.license_plate)
     assert_match(/GR\d{4}[A-Z]{1,2}/, Faker::Vehicle.license_plate(state_abbreviation: 'GR'))
   end
 
   def test_es_subscription_methods
-    assert Faker::Subscription.plan.is_a? String
-    assert Faker::Subscription.status.is_a? String
-    assert Faker::Subscription.payment_method.is_a? String
-    assert Faker::Subscription.subscription_term.is_a? String
-    assert Faker::Subscription.payment_term.is_a? String
+    assert_kind_of String, Faker::Subscription.plan
+    assert_kind_of String, Faker::Subscription.status
+    assert_kind_of String, Faker::Subscription.payment_method
+    assert_kind_of String, Faker::Subscription.subscription_term
+    assert_kind_of String, Faker::Subscription.payment_term
   end
 end

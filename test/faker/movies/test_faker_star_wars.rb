@@ -57,34 +57,34 @@ class TestFakerStarWars < Test::Unit::TestCase
   end
 
   def test_call_numbers
-    assert @tester.call_numbers.is_a?(Array)
+    assert_kind_of Array, @tester.call_numbers
   end
 
   def test_call_squadrons
-    assert @tester.call_squadrons.is_a?(Array)
+    assert_kind_of Array, @tester.call_squadrons
   end
 
   def test_characters
-    assert @tester.characters.is_a?(Array)
+    assert_kind_of Array, @tester.characters
   end
 
   def test_droids
-    assert @tester.droids.is_a?(Array)
+    assert_kind_of Array, @tester.droids
   end
 
   def test_planets
-    assert @tester.planets.is_a?(Array)
+    assert_kind_of Array, @tester.planets
   end
 
   def test_species
-    assert @tester.species.is_a?(Array)
+    assert_kind_of Array, @tester.species
   end
 
   def test_vehicles
-    assert @tester.vehicles.is_a?(Array)
+    assert_kind_of Array, @tester.vehicles
   end
 
   def test_wookiee_words
-    assert @tester.wookiee_words.is_a?(Array)
+    assert_kind_of Array, @tester.wookiee_words
   end
 end

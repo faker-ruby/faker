@@ -12,9 +12,9 @@ class TestFaLocale < Test::Unit::TestCase
   end
 
   def test_fa_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.prefix
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 end
