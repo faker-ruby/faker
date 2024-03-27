@@ -158,6 +158,38 @@ module Faker
 end
 ```
 
+## Deprecating Generators
+
+To deprecate entire generators and provide backwards compatibility when it's possible, use this custom [Faker::Deprecator](https://github.com/faker-ruby/faker/blob/main/lib/helpers/deprecator.rb) helper module. 
+It's useful for renaming a generator, for example, renaming `IDNumber` to `IdNumber`. Here's how to use it:
+
+- include the `Faker::Deprecator` module after the class definition.
+- add the `deprecate_generator` method with the old and new class names as arguments.
+
+```rb 
+module Faker
+  class IdNumber < Base
+    ## methods
+  end
+
+  include Faker::Deprecator
+  deprecate_generator('IDNumber', IdNumber)
+end
+```
+
+`Faker::IDNumber` is now deprecated. Despite the deprecation, it will still be available with logged warnings and will be removed in the next major release.
+
+```rb
+Faker::IDNumber.valid #=> "552-56-3593"
+
+## Deprecation warning
+DEPRECATION WARNING: Faker::IDNumber is deprecated. Use Faker::IdNumber instead.
+```
+
+We recommend adding tests for both the deprecated and new generators to ensure that the deprecation process is working as expected.
+Check out this [PR](https://github.com/faker-ruby/faker/pull/2856) for reference.
+
+
 ## YAML files
 
 Please use dash syntax for YAML arrays. The dash syntax facilitates code reviews by making it easier to see what items were added or removed from the lists.
