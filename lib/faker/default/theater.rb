@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Show < Base
+  class Theater < Base
     class << self
       ##
       # Produces the name of a musical for an older audience
@@ -9,12 +9,12 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Alphanumeric.alpha
-      #     #=> "West Side Story"
+      #   Faker::Theater.adult_musical
+      #     #=> "Mamma Mia!"
       #
       # @faker.version 2.13.0
       def adult_musical
-        fetch('show.adult_musical')
+        fetch('theater.adult_musical')
       end
 
       ##
@@ -23,12 +23,12 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Alphanumeric.alpha
+      #   Faker::Theater.kids_musical
       #     #=> "Into the Woods JR."
       #
       # @faker.version 2.13.0
       def kids_musical
-        fetch('show.kids_musical')
+        fetch('theater.kids_musical')
       end
 
       ##
@@ -37,13 +37,16 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Alphanumeric.alpha
+      #   Faker::Theater.play
       #     #=> "Death of a Salesman"
       #
       # @faker.version 2.13.0
       def play
-        fetch('show.play')
+        fetch('theater.play')
       end
     end
   end
+
+  include Faker::Deprecator
+  deprecate_generator('Show', Theater)
 end
