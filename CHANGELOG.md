@@ -1,5 +1,24 @@
 # Changelog
 
+## [v3.3.1](https://github.com/faker-ruby/faker/tree/v3.3.1) (2024-04-02)
+
+### Bug fixes
+
+* Fix bug on phone number generator for `en-US` locale caused by incorrect `.yml` file structure by @aprescott in https://github.com/faker-ruby/faker/pull/2924
+
+### What's Changed
+
+* Added docs for Deprecator in CONTRIBUTING.md by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2919
+* Rename Faker::show to Faker::Theater by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2921
+* renamed nhs to national_health_service by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2923
+
+### New Contributors
+* @aprescott made their first contribution in https://github.com/faker-ruby/faker/pull/2924
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.3.0...v3.3.1
+
+-------------------------
+
 ## [v3.3.0](https://github.com/faker-ruby/faker/tree/v3.3.0) (2024-03-25)
 
 ### Bug Fixes
