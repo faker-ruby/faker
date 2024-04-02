@@ -284,6 +284,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Superhero](doc/default/superhero.md)
   - [Faker::Tea](doc/default/tea.md)
   - [Faker::Team](doc/default/team.md)
+  - [Faker::Theater](doc/default/theater.md)
   - [Faker::Time](doc/default/time.md)
   - [Faker::Twitter](doc/default/twitter.md)
   - [Faker::Types](doc/default/types.md)
