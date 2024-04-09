@@ -26,6 +26,11 @@ class TestKoLocale < Test::Unit::TestCase
     assert_equal('대한민국', Faker::Address.default_country)
   end
 
+  def test_ko_adjective_methods
+    assert_kind_of String, Faker::Adjective.positive
+    assert_kind_of String, Faker::Adjective.negative
+  end
+
   def test_ko_color_methods
     assert_kind_of String, Faker::Color.color_name
   end
