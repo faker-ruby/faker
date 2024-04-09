@@ -31,6 +31,10 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Adjective.negative
   end
 
+  def test_ko_animal_methods
+    assert_kind_of String, Faker::Creature::Animal.name
+  end
+
   def test_ko_color_methods
     assert_kind_of String, Faker::Color.color_name
   end
