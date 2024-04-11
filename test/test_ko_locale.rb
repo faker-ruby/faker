@@ -58,6 +58,14 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Dessert.flavor
   end
 
+  def test_ko_food_methods
+    assert_kind_of String, Faker::Food.allergens
+    assert_kind_of String, Faker::Food.dish
+    assert_kind_of String, Faker::Food.ingredients
+    assert_kind_of String, Faker::Food.fruits
+    assert_kind_of String, Faker::Food.vegetables
+  end
+
   def test_ko_gender_methods
     assert_kind_of String, Faker::Gender.binary_type
     assert_not_english(Faker::Gender.binary_type)
