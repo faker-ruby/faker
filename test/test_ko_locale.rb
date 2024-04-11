@@ -71,6 +71,10 @@ class TestKoLocale < Test::Unit::TestCase
     assert_not_english(Faker::Gender.binary_type)
   end
 
+  def test_ko_hobby_methods
+    assert_kind_of String, Faker::Hobby.activity
+  end
+
   def test_ko_internet_methods
     assert_kind_of String, Faker::Internet.email
     assert_kind_of String, Faker::Internet.domain_suffix
