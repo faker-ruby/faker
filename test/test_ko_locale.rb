@@ -75,6 +75,11 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Hobby.activity
   end
 
+  def test_ko_house_methods
+    assert_kind_of String, Faker::House.furniture
+    assert_kind_of String, Faker::House.room
+  end
+
   def test_ko_internet_methods
     assert_kind_of String, Faker::Internet.email
     assert_kind_of String, Faker::Internet.domain_suffix
