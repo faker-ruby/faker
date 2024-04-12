@@ -85,6 +85,12 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Internet.domain_suffix
   end
 
+  def test_ko_kpop_methods
+    assert_kind_of String, Faker::Kpop.boy_bands
+    assert_kind_of String, Faker::Kpop.girl_groups
+    assert_kind_of String, Faker::Kpop.solo
+  end
+
   def test_ko_lorem_methods
     assert_kind_of Array, Faker::Lorem.words
   end
