@@ -22,7 +22,7 @@ module Faker
         # deterministically unique values. Mathematical proof:
         # 4^36 < 32^16 by -1204203453131759529492480
         # 5^36 > 32^16 by 13342989408752222631934449
-        OpenSSL::Digest::MD5.hexdigest(Lorem.characters(number: 5))
+        OpenSSL::Digest::MD5.hexdigest(Lorem.characters(number: 25))
       end
 
       ##
@@ -37,7 +37,7 @@ module Faker
       def sha1
         # 5^36 < 40^16 by   -28397757731633148193359375
         # 6^36 > 40^16 by 10271475125530535546171949056
-        OpenSSL::Digest::SHA1.hexdigest(Lorem.characters(number: 6))
+        OpenSSL::Digest::SHA1.hexdigest(Lorem.characters(number: 31))
       end
 
       ##
@@ -52,7 +52,7 @@ module Faker
       def sha256
         # 6^36 < 64^16 by  -68913737715773802047372001280
         # 7^36 > 64^16 by 2572502683345389134185479431265
-        OpenSSL::Digest::SHA256.hexdigest(Lorem.characters(number: 7))
+        OpenSSL::Digest::SHA256.hexdigest(Lorem.characters(number: 50))
       end
 
       ##
@@ -67,7 +67,7 @@ module Faker
       def sha512
         # 8^36 < 128^16 by -4867778304876400901747340308643840
         # 9^36 > 128^16 by 17336102686404346783309651545552545
-        OpenSSL::Digest::SHA512.hexdigest(Lorem.characters(number: 9))
+        OpenSSL::Digest::SHA512.hexdigest(Lorem.characters(number: 100))
       end
     end
   end
