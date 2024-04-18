@@ -15,7 +15,14 @@ module Faker
       #
       # @faker.version 1.6.4
       def md5
-        OpenSSL::Digest::MD5.hexdigest(Lorem.characters)
+        # The MD5 algorithm will experience a collision much sooner
+        # than Lorem.characters(number: 5) will. Setting the lorem
+        # character number lower than the default of 255 reduces the
+        # time complexity of this method while still returning
+        # deterministically unique values. Mathematical proof:
+        # 4^36 < 32^16 by -1204203453131759529492480
+        # 5^36 > 32^16 by 13342989408752222631934449
+        OpenSSL::Digest::MD5.hexdigest(Lorem.characters(number: 5))
       end
 
       ##
@@ -28,7 +35,9 @@ module Faker
       #
       # @faker.version 1.6.4
       def sha1
-        OpenSSL::Digest::SHA1.hexdigest(Lorem.characters)
+        # 5^36 < 40^16 by   -28397757731633148193359375
+        # 6^36 > 40^16 by 10271475125530535546171949056
+        OpenSSL::Digest::SHA1.hexdigest(Lorem.characters(number: 6))
       end
 
       ##
@@ -41,7 +50,9 @@ module Faker
       #
       # @faker.version 1.6.4
       def sha256
-        OpenSSL::Digest::SHA256.hexdigest(Lorem.characters)
+        # 6^36 < 64^16 by  -68913737715773802047372001280
+        # 7^36 > 64^16 by 2572502683345389134185479431265
+        OpenSSL::Digest::SHA256.hexdigest(Lorem.characters(number: 7))
       end
 
       ##
@@ -54,7 +65,9 @@ module Faker
       #
       # @faker.version next
       def sha512
-        OpenSSL::Digest::SHA512.hexdigest(Lorem.characters)
+        # 8^36 < 128^16 by -4867778304876400901747340308643840
+        # 9^36 > 128^16 by 17336102686404346783309651545552545
+        OpenSSL::Digest::SHA512.hexdigest(Lorem.characters(number: 9))
       end
     end
   end
