@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Style/ClassVars
-
 mydir = __dir__
 
 require 'psych'
@@ -41,6 +39,7 @@ module Faker
     end
   end
 
+  # rubocop:disable Style/ClassVars
   class Base
     Numbers = Array(0..9)
     ULetters = Array('A'..'Z')
@@ -272,6 +271,7 @@ module Faker
       end
     end
   end
+  # rubocop:enable Style/ClassVars
 end
 
 # require faker objects
