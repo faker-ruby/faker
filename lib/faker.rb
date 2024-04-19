@@ -44,6 +44,7 @@ module Faker
     ULetters = Array('A'..'Z')
     LLetters = Array('a'..'z')
     Letters = ULetters + LLetters
+    @@translate_cache = {}
 
     class << self
       attr_reader :flexible_key
@@ -161,8 +162,9 @@ module Faker
       # locale is specified
       def translate(*args, **opts)
         opts[:locale] ||= Faker::Config.locale
+        translate_key = args.to_s + opts.sort.join
         opts[:raise] = true
-        I18n.translate(*args, **opts)
+        @@translate_cache[translate_key] ||= I18n.translate(*args, **opts)
       rescue I18n::MissingTranslationData
         opts[:locale] = :en
 
