@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Style/ClassVars
+
 mydir = __dir__
 
 require 'psych'
