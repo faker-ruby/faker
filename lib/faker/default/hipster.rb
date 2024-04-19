@@ -41,6 +41,7 @@ module Faker
         word_list *= ((resolved_num / word_list.length) + 1)
         words = sample(word_list, resolved_num)
         return words if spaces_allowed
+
         words.each_with_index { |w, i| words[i] = word if w =~ /\s/ }
       end
 
