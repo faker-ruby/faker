@@ -58,6 +58,11 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Dessert.flavor
   end
 
+  def test_ko_emotion_methods
+    assert_kind_of String, Faker::Emotion.adjective
+    assert_kind_of String, Faker::Emotion.noun
+  end
+
   def test_ko_food_methods
     assert_kind_of String, Faker::Food.allergens
     assert_kind_of String, Faker::Food.dish
