@@ -120,4 +120,9 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Space.planet
     assert_kind_of String, Faker::Space.galaxy
   end
+
+  def test_ko_studio_ghibli_methods
+    assert_kind_of String, Faker::JapaneseMedia::StudioGhibli.character
+    assert_kind_of String, Faker::JapaneseMedia::StudioGhibli.movie
+  end
 end
