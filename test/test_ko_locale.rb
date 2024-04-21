@@ -31,6 +31,10 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Adjective.negative
   end
 
+  def test_ko_animal_methods
+    assert_kind_of String, Faker::Creature::Animal.name
+  end
+
   def test_ko_color_methods
     assert_kind_of String, Faker::Color.color_name
   end
@@ -48,14 +52,43 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Company.name
   end
 
+  def test_ko_dessert_methods
+    assert_kind_of String, Faker::Dessert.variety
+    assert_kind_of String, Faker::Dessert.topping
+    assert_kind_of String, Faker::Dessert.flavor
+  end
+
+  def test_ko_food_methods
+    assert_kind_of String, Faker::Food.allergens
+    assert_kind_of String, Faker::Food.dish
+    assert_kind_of String, Faker::Food.ingredients
+    assert_kind_of String, Faker::Food.fruits
+    assert_kind_of String, Faker::Food.vegetables
+  end
+
   def test_ko_gender_methods
     assert_kind_of String, Faker::Gender.binary_type
     assert_not_english(Faker::Gender.binary_type)
   end
 
+  def test_ko_hobby_methods
+    assert_kind_of String, Faker::Hobby.activity
+  end
+
+  def test_ko_house_methods
+    assert_kind_of String, Faker::House.furniture
+    assert_kind_of String, Faker::House.room
+  end
+
   def test_ko_internet_methods
     assert_kind_of String, Faker::Internet.email
     assert_kind_of String, Faker::Internet.domain_suffix
+  end
+
+  def test_ko_kpop_methods
+    assert_kind_of String, Faker::Kpop.boy_bands
+    assert_kind_of String, Faker::Kpop.girl_groups
+    assert_kind_of String, Faker::Kpop.solo
   end
 
   def test_ko_lorem_methods
