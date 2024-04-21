@@ -101,6 +101,10 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of Array, Faker::Lorem.words
   end
 
+  def test_ko_movie_methods
+    assert_kind_of String, Faker::Movie.title
+  end
+
   def test_ko_name_methods
     assert_kind_of String, Faker::Name.last_name
     assert_kind_of String, Faker::Name.first_name
