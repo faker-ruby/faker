@@ -66,6 +66,12 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Food.vegetables
   end
 
+  def test_ko_games_pokemon_methods
+    assert_kind_of String, Faker::Games::Pokemon.name
+    assert_kind_of String, Faker::Games::Pokemon.location
+    assert_kind_of String, Faker::Games::Pokemon.move
+  end
+
   def test_ko_gender_methods
     assert_kind_of String, Faker::Gender.binary_type
     assert_not_english(Faker::Gender.binary_type)
