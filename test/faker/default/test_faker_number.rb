@@ -131,7 +131,7 @@ class TestFakerNumber < Test::Unit::TestCase
   end
 
   def test_hexadecimal_range
-    random_hex = @tester.hexadecimal(digits: 1024)
+    random_hex = @tester.hexadecimal(digits: 1000)
     expected_range = Array('0'..'9') + Array('a'..'f')
 
     expected_range.each { |char| assert_include(random_hex, char) }
