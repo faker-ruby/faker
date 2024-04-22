@@ -130,6 +130,13 @@ class TestFakerNumber < Test::Unit::TestCase
     assert_match(/[0-9a-f]{7}/, @tester.hexadecimal(digits: 7))
   end
 
+  def test_hexadecimal_range
+    random_hex = @tester.hexadecimal(digits: 1024)
+    expected_range = Array('0'..'9') + Array('a'..'f')
+
+    expected_range.each { |char| assert_include(random_hex, char) }
+  end
+
   def test_binary
     assert_match(/^[0-1]{4}$/, @tester.binary(digits: 4))
     assert_match(/^[0-1]{8}$/, @tester.binary(digits: 8))
