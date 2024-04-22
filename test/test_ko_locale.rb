@@ -58,12 +58,23 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Dessert.flavor
   end
 
+  def test_ko_emotion_methods
+    assert_kind_of String, Faker::Emotion.adjective
+    assert_kind_of String, Faker::Emotion.noun
+  end
+
   def test_ko_food_methods
     assert_kind_of String, Faker::Food.allergens
     assert_kind_of String, Faker::Food.dish
     assert_kind_of String, Faker::Food.ingredients
     assert_kind_of String, Faker::Food.fruits
     assert_kind_of String, Faker::Food.vegetables
+  end
+
+  def test_ko_games_pokemon_methods
+    assert_kind_of String, Faker::Games::Pokemon.name
+    assert_kind_of String, Faker::Games::Pokemon.location
+    assert_kind_of String, Faker::Games::Pokemon.move
   end
 
   def test_ko_gender_methods
@@ -95,6 +106,10 @@ class TestKoLocale < Test::Unit::TestCase
     assert_kind_of Array, Faker::Lorem.words
   end
 
+  def test_ko_movie_methods
+    assert_kind_of String, Faker::Movie.title
+  end
+
   def test_ko_name_methods
     assert_kind_of String, Faker::Name.last_name
     assert_kind_of String, Faker::Name.first_name
@@ -109,5 +124,10 @@ class TestKoLocale < Test::Unit::TestCase
   def test_ko_space_methods
     assert_kind_of String, Faker::Space.planet
     assert_kind_of String, Faker::Space.galaxy
+  end
+
+  def test_ko_studio_ghibli_methods
+    assert_kind_of String, Faker::JapaneseMedia::StudioGhibli.character
+    assert_kind_of String, Faker::JapaneseMedia::StudioGhibli.movie
   end
 end
