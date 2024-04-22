@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'tzinfo'
 require_relative 'test_helper'
 
 class TestEnLocale < Test::Unit::TestCase
@@ -37,6 +38,13 @@ class TestEnLocale < Test::Unit::TestCase
   def test_values_trimmed
     en_file = YAML.load_file('lib/locales/en.yml')
     check_hash(en_file)
+  end
+
+  def test_en_timezones_are_valid_iana_identifiers
+    faker_time_zones = Faker::Address.translate('faker.address.time_zone')
+    iana_time_zones = TZInfo::Timezone.all_identifiers
+
+    assert_empty(faker_time_zones.difference(iana_time_zones), "Found a time zone that isn't a valid IANA time zone identifier")
   end
 
   def check_hash(hash)
