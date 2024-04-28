@@ -114,7 +114,7 @@ module Faker
       # @faker.version 1.0.0
       def hexadecimal(digits: 6)
         hex = ''
-        digits.times { hex += rand(15).to_s(16) }
+        digits.times { hex += rand(16).to_s(16) }
         hex
       end
 
