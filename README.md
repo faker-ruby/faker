@@ -14,7 +14,7 @@ Faker helps you generate realistic test data, and populate your
 database with more than a couple of records while you're doing development.
 
 It comes in very handy for taking screenshots (taking screenshots for a personal project)
-and it was the original impetus for the creation of this gem).
+and it was the original impetus for the creation of this gem.
 
 ## Quick links
 
