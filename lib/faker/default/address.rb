@@ -125,6 +125,27 @@ module Faker
       end
 
       ##
+      # Produces a Real US Zip Code available for US states and territories.
+      #
+      # @param state_abbreviation [String] an abbreviation for a state where the zip code should be located.
+      # @return [String] - 5 digit Zip Code only
+      #
+      # @example
+      #   Faker::Address.zip_code_real_us #=> "06390"
+      #   Faker::Address.zip_code_real_us(state_abbreviation: 'NH') #=> "03031"
+      #
+      # @faker.version 0.3.0
+      def zip_code_real_us(state_abbreviation: '')
+        if state_abbreviation.empty?
+          state_abbreviation = state_abbr
+        end
+
+        # uses real US zips previously imported from CSV
+        # source: https://simplemaps.com/data/us-zips
+        bothify(fetch("address.real_postcodes_by_state.#{state_abbreviation}"))
+      end
+
+      ##
       # Produces the name of a time zone.
       #
       # @return [String]

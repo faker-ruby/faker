@@ -39,6 +39,10 @@ class TestFakerAddress < Test::Unit::TestCase
     assert_match(/^\d+-?\d*$/, @tester.zip_code)
   end
 
+  def test_zip_code_real_us
+    assert_match(/^\d+-?\d*$/, @tester.zip_code_real_us)
+  end
+
   def test_time_zone
     assert_match %r{\w+/\w+}, @tester.time_zone
   end
