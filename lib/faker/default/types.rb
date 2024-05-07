@@ -18,11 +18,9 @@ module Faker
       # @faker.version 1.8.6
       def rb_string(words: 1)
         resolved_num = resolve(words)
-        word_list =
-          translate('faker.lorem.words')
-
+        word_list = translate('faker.lorem.words')
         word_list *= ((resolved_num / word_list.length) + 1)
-        shuffle(word_list)[0, resolved_num].join(' ')
+        sample(word_list, resolved_num).join(' ')
       end
 
       ##

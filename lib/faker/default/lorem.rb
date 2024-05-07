@@ -45,7 +45,7 @@ module Faker
           word_list -= exclude_words
         end
         word_list *= ((resolved_num / word_list.length) + 1)
-        shuffle(word_list)[0, resolved_num]
+        sample(word_list, resolved_num)
       end
 
       ##
