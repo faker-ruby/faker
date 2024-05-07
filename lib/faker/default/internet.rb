@@ -67,7 +67,7 @@ module Faker
             names = specifier&.split
             shuffled_names = shuffle(names)
 
-            return shuffled_names.join(sample(separators)).downcase 
+            return shuffled_names.join(sample(separators)).downcase
           end
 
           case specifier
