@@ -63,7 +63,12 @@ module Faker
       #   Faker::Internet.username(specifier: 20, separators: ['_'])  #=> "nikki_sawaynnikki_saway"
       def username(specifier: nil, separators: %w[. _])
         with_locale(:en) do
-          return shuffle(specifier.scan(/[[:word:]]+/)).join(sample(separators)).downcase if specifier.respond_to?(:scan)
+          if specifier.respond_to?(:scan)
+            names = specifier&.split
+            shuffled_names = shuffle(names)
+
+            return shuffled_names.join(sample(separators)).downcase 
+          end
 
           case specifier
           when Integer

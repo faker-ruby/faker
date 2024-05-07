@@ -341,7 +341,7 @@ class TestFakerInternetOmniauth < Test::Unit::TestCase
   end
 
   def test_omniauth_linkedin_with_name
-    custom_name           = 'Happy Gilmore'
+    custom_name           = "Alexis O'Connell"
     first_name, last_name = custom_name.split
     auth                  = @tester.linkedin(name: custom_name)
     info                  = auth[:info]
