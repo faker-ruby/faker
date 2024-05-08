@@ -444,11 +444,11 @@ module Faker
       private
 
       def gender
-        shuffle(%w[male female]).pop
+        sample(%w[male female])
       end
 
       def timezone
-        shuffle((-12..12).to_a).pop
+        sample((-12..12).to_a)
       end
 
       def image
@@ -460,11 +460,11 @@ module Faker
       end
 
       def random_number_from_range(range)
-        shuffle(range.to_a).pop
+        sample(range.to_a)
       end
 
       def random_boolean
-        shuffle([true, false]).pop
+        sample([true, false])
       end
     end
   end

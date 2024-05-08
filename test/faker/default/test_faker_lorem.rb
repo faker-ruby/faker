@@ -38,6 +38,7 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_standard_words
     @words = @tester.words(number: 1000)
 
+    assert_equal 1000, @words.length
     @words.each { |w| assert_includes @standard_wordlist, w }
   end
 
