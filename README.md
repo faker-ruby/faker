@@ -24,6 +24,14 @@ and it was the original impetus for the creation of this gem.
 [rubydocs]: https://www.rubydoc.info/gems/faker/
 [changelog]: CHANGELOG.md
 
+## In the media
+
+- 📰 [With Great Humor Comes Great Developer Engagement] - KTH Royal Institute of Technology research
+- 🎧 [Computer und Kommunikation 4.5.2024, komplette Sendung] - Deutschland Funk Radio Interview
+
+[With Great Humor Comes Great Developer Engagement]: https://arxiv.org/pdf/2312.01680
+[Computer und Kommunikation 4.5.2024, komplette Sendung]: https://www.deutschlandfunk.de/computer-und-kommunikation-4-5-2024-komplette-sendung-dlf-16492b03-100.html
+
 ## Table of Contents
 
 - [Faker](#faker)
