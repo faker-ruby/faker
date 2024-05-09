@@ -92,7 +92,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_username_with_apostrophes
-    assert_match(/\A[a-z']+([_.][a-z']+)*\z/, @tester.username(specifier: "Alexis O'Connell"))
+    assert_match(/\A[a-z]+([_.][a-z]+)*\z/, @tester.username(specifier: "Alexis O'Connell"))
   end
 
   def test_user_name_alias
