@@ -63,14 +63,12 @@ module Faker
       #   Faker::Internet.username(specifier: 20, separators: ['_'])  #=> "nikki_sawaynnikki_saway"
       def username(specifier: nil, separators: %w[. _])
         with_locale(:en) do
-          if specifier.respond_to?(:scan)
-            names = specifier&.split
+          case specifier
+          when ::String
+            names = specifier&.gsub("'", '')&.split
             shuffled_names = shuffle(names)
 
             return shuffled_names.join(sample(separators)).downcase
-          end
-
-          case specifier
           when Integer
             # If specifier is Integer and has large value, Argument error exception is raised to overcome memory full error
             raise ArgumentError, 'Given argument is too large' if specifier > 10**6

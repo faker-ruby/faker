@@ -36,6 +36,14 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_email_with_apostrophes
+    name = "Alexis O'Connell"
+
+    deterministically_verify -> { @tester.email(name: name) } do |result|
+      assert_email_regex 'Alexis', 'OConnell', result
+    end
+  end
+
   def test_email_with_separators
     deterministically_verify -> { @tester.email(name: 'jane doe', separators: '+') } do |result|
       name, domain = result.split('@')
