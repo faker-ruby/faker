@@ -10,5 +10,5 @@ def assert_email_regex(first_name, last_name, email)
 end
 
 def email_regex(first_name, last_name)
-  /(#{first_name}(.|_)#{last_name}|#{last_name}(.|_)#{first_name})@(.*).(example|test)/i
+  /(#{first_name}([_.])?#{last_name}|#{last_name}([_.])?#{first_name})@(.*)\.(example|test)/i
 end
