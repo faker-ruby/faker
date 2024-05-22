@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  extend Deprecator
+  include Deprecator
 
   class Locations
     class Australia < Base

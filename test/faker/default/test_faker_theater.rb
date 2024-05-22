@@ -19,14 +19,20 @@ end
 # with test_faker_show.rb
 class TestFakerShow < Test::Unit::TestCase
   def test_adult_musical
-    assert_match(/\w+/, Faker::Show.adult_musical)
+    Faker::Deprecator.skip_warning do
+      assert_match(/\w+/, Faker::Show.adult_musical)
+    end
   end
 
   def test_kids_musical
-    assert_match(/\w+/, Faker::Show.kids_musical)
+    Faker::Deprecator.skip_warning do
+      assert_match(/\w+/, Faker::Show.kids_musical)
+    end
   end
 
   def test_play
-    assert_match(/\w+/, Faker::Show.play)
+    Faker::Deprecator.skip_warning do
+      assert_match(/\w+/, Faker::Show.play)
+    end
   end
 end
