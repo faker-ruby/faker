@@ -23,7 +23,7 @@ class TestFakerShow < Test::Unit::TestCase
       @tester = Faker::Show
     end
   end
-  
+
   def test_adult_musical
     assert_match(/\w+/, Faker::Show.adult_musical)
   end
