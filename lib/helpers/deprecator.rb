@@ -27,7 +27,7 @@ module Faker
           class_variable_get(:@@_deprecated_constants)[old_generator_name] = { new_constant: new_generator_constant, old_generator: old_generator_name }
         end
       end
-    
+
       base.singleton_class.prepend extension
     end
 
