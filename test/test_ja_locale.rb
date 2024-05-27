@@ -246,4 +246,23 @@ class TestJaLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Sport.unusual_sport
     assert_not_english(Faker::Sport.unusual_sport)
   end
+
+  def test_ja_football_methods
+    # The translation of "team" includes alphabets, so we cannot use assert_not_english for assertion.
+    # Example: "FCバルセロナ" (FC Barcelona)
+    assert_kind_of String, Faker::Sports::Football.team
+
+    assert_kind_of String, Faker::Sports::Football.player
+    assert_not_english(Faker::Sports::Football.player)
+
+    assert_kind_of String, Faker::Sports::Football.coach
+    assert_not_english(Faker::Sports::Football.coach)
+
+    # The translation of "competition" includes alphabets, so we cannot use assert_not_english for assertion.
+    # Example: "UEFAチャンピオンズリーグ" (UEFA Champions League)
+    assert_kind_of String, Faker::Sports::Football.competition
+
+    assert_kind_of String, Faker::Sports::Football.position
+    assert_not_english(Faker::Sports::Football.position)
+  end
 end
