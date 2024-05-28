@@ -10,6 +10,7 @@ SimpleCov.start do
 end
 
 require_relative 'support/assert_not_english'
+require_relative 'support/assert_email_regex'
 require 'minitest/autorun'
 require 'test/unit'
 require 'rubygems'
