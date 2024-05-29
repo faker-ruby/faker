@@ -1,5 +1,45 @@
 # Changelog
 
+## [v3.4.1](https://github.com/faker-ruby/faker/tree/v3.4.1) (2024-05-28)
+
+### What's changed
+
+* Performance: Sample arrays instead of performing shuffle and slice by @alextaujenis in https://github.com/faker-ruby/faker/pull/2940
+* Performance: Reduce the time complexity of `Faker::Crypto` generators by @alextaujenis in https://github.com/faker-ruby/faker/pull/2938
+* Remove tzinfo dependency by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2952
+
+### Bug fixes
+
+* Fix invalid IANA time zone identifier for `Atlantic/Cape_Verde` by @andrelaszlo in https://github.com/faker-ruby/faker/pull/2927
+* Fix entry in faker.food.ingredients by @matthewmayer in https://github.com/faker-ruby/faker/pull/2933
+* Docs: add absolute links to CONTRIBUTING from README by @matthewmayer in https://github.com/faker-ruby/faker/pull/2934
+* Fix: `Faker::Number.hexadecimal` should include characters within the range of `[0-9a-f]` by @alextaujenis in https://github.com/faker-ruby/faker/pull/2942
+* Username splits names by space and doesn't regex match them by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2950
+
+### Features
+
+* Add animals, desserts, foods, hobbies, house, and k-pop translations to the Korean locale file by @connie-feng in https://github.com/faker-ruby/faker/pull/2935
+* Add adjectives to Korean locale file by @connie-feng in https://github.com/faker-ruby/faker/pull/2930
+* Add emotions, movies, Pokemon, and Studio Ghibli to the Korean locale by @connie-feng in https://github.com/faker-ruby/faker/pull/2941
+* Add Japanese translations for `Faker::Sports::Football`. by @yamat47 in https://github.com/faker-ruby/faker/pull/2903
+
+### Update local dependencies
+
+* Bump rake from 13.1.0 to 13.2.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2929
+* Bump i18n from 1.14.4 to 1.14.5 by @dependabot in https://github.com/faker-ruby/faker/pull/2949
+* Bump minitest from 5.22.3 to 5.23.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2957
+* Bump rubocop from 1.63.4 to 1.64.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2958
+
+## New Contributors
+
+* @connie-feng made their first contribution in https://github.com/faker-ruby/faker/pull/2930
+* @andrelaszlo made their first contribution in https://github.com/faker-ruby/faker/pull/2927
+* @matthewmayer made their first contribution in https://github.com/faker-ruby/faker/pull/2933
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.3.1...v.3.4.1
+
+---------------------------------
+
 ## [v3.3.1](https://github.com/faker-ruby/faker/tree/v3.3.1) (2024-04-02)
 
 ### Bug fixes
