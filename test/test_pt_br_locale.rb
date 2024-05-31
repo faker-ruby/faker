@@ -156,4 +156,12 @@ class TestPtBrLocale < Test::Unit::TestCase
   def test_pt_br_animal_methods
     assert_kind_of String, Faker::Creature::Animal.name
   end
+
+  def test_pt_br_subscription_methods
+    assert_kind_of String, Faker::Subscription.plan
+    assert_kind_of String, Faker::Subscription.status
+    assert_kind_of String, Faker::Subscription.payment_method
+    assert_kind_of String, Faker::Subscription.subscription_term
+    assert_kind_of String, Faker::Subscription.payment_term
+  end
 end
