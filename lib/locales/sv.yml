@@ -83,3 +83,95 @@ sv:
 
     bank:
       name: ["Swedbank", "Handelsbanken", "SEB", "Nordea", "Danske Bank","Skandiabanken","Länsförsäkringar Bank", "Sparbanken Syd", "ICA Banken", "Forex Bank", "Resurs Bank", "Avanza Bank", "Nordnet Bank", "SBAB", "Landshypotek Bank"]
+
+    sport:
+      summer_olympics: # Source https://sok.se/idrotter.html?ityp=Alla&iseason=Sommar&numberOfHitsToShow=48
+        - Badminton
+        - Baseboll/Softboll
+        - Basketboll
+        - Bordtennis
+        - Boxning
+        - Brottning
+        - Bågskytte
+        - Cricket
+        - Cykel
+        - Danssport
+        - Dragkamp
+        - Flaggfotboll
+        - Fotboll
+        - Friidrott
+        - Fäktning
+        - Golf
+        - Gymnastik
+        - Handboll
+        - Judo
+        - Kanot
+        - Karate
+        - Kickboxning
+        - Lacrosse
+        - Landhockey
+        - Modern femkamp
+        - Muay Thai
+        - Padel
+        - Ridsport
+        - Rodd
+        - Rugby
+        - Segling
+        - Simidrott
+        - Skateboard
+        - Skyttesport
+        - Sportklättring
+        - Squash
+        - Surfing
+        - Taekwondo
+        - Tennis
+        - Teqball
+        - Triathlon
+        - Tyngdlyftning
+        - Vattenskidor
+        - Volleyboll
+      winter_olympics: # Source https://sok.se/idrotter.html?ityp=Alla&iseason=Vinter&numberOfHitsToShow=48
+        - Alpint
+        - Backhoppning
+        - Curling
+        - Freeskiing
+        - Freestyle
+        - Ishockey
+        - Konståkning
+        - Kälksport
+        - Längdskidåkning
+        - Nordisk kombination
+        - Skidskytte
+        - Skimo
+        - Skridsko
+        - Snowboard
+      summer_paralympics: # Source https://www.paralympics.se/paralympics/paralympics/idrotter/sommar
+        - Badminton
+        - Boccia
+        - Bordtennis
+        - Bågskytte
+        - Bänkpress
+        - Cykel
+        - Fotboll 5-a-side
+        - Friidrott
+        - Fäktning
+        - Goalball
+        - Judo
+        - Kanot
+        - Ridsport
+        - Rodd
+        - Rullstolsbasket
+        - Rullstolsrugby
+        - Rullstolstennis
+        - Simning
+        - Sittande volleyboll
+        - Sportskytte
+        - Taekwondo
+        - Triathlon
+      winter_paralympics: # Source https://www.paralympics.se/paralympics/paralympics/idrotter/vinter
+        - Alpin skidåkning
+        - Längdskidor
+        - Paraishockey
+        - Rullstolscurling
+        - Skidskytte
+        - Snowboard
