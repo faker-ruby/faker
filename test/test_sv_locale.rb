@@ -63,4 +63,8 @@ class TestSVLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Team.suffix
     assert_kind_of String, Faker::Team.name
   end
+
+  def test_sv_bank_methods
+    assert_kind_of String, Faker::Bank.name
+  end
 end
