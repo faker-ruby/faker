@@ -61,6 +61,8 @@ sv:
         - "#{prefix} #{first_name} #{last_name}"
 
     phone_number:
+      country_code:
+        - '46'
       formats: ['####-#####', '####-######']
     cell_phone:
       formats:
