@@ -24,6 +24,8 @@ sv:
       secondary_address: ['Lgh. ###', 'Hus ###']
       street_address:
         - "#{street_name} #{building_number}"
+      full_address:
+        - "#{street_address}, #{postcode} #{city}"
       default_country: [Sverige]
       default_country_code: ["SE"]
 
