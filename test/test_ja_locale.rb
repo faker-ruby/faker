@@ -265,4 +265,15 @@ class TestJaLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Sports::Football.position
     assert_not_english(Faker::Sports::Football.position)
   end
+
+  def test_ja_baseball_methods
+    assert_kind_of String, Faker::Sports::Baseball.league
+    assert_not_english(Faker::Sports::Baseball.league)
+    assert_kind_of String, Faker::Sports::Baseball.team
+    assert_not_english(Faker::Sports::Baseball.team)
+    assert_kind_of String, Faker::Sports::Baseball.player
+    assert_not_english(Faker::Sports::Baseball.player)
+    assert_kind_of String, Faker::Sports::Baseball.position
+    assert_not_english(Faker::Sports::Baseball.position)
+  end
 end
