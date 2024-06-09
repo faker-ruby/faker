@@ -9,9 +9,9 @@ class TestFakerDota < Test::Unit::TestCase
                  bloodseeker bounty_hunter brewmaster bristleback broodmother centaur centaur_warrunner
                  chaos_knight chen clinkz clockwerk crystal_maiden dark_seer dark_willow dawnbreaker dazzle
                  death_prophet disruptor doom dragon_knight drow_ranger earth_spirit earthshaker
-                 elder_titan huskar io kunkka legion_commander lifestealer lycan magnus night_stalker omniknight
-                 phoenix pudge sand_king slardar spirit_breaker sven tidehunter timbersaw tiny treant_protector tusk
-                 underlord undying wraith_king]
+                 elder_titan huskar io kunkka legion_commander lifestealer lycan magnus meepo night_stalker
+                 omniknight phoenix pudge sand_king slardar spirit_breaker sven tidehunter timbersaw tiny
+                 treant_protector tusk underlord undying wraith_king]
   end
 
   def test_building
