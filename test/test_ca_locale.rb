@@ -12,17 +12,17 @@ class TestCaLocale < Test::Unit::TestCase
   end
 
   def test_ca_color_methods
-    assert Faker::Color.color_name.is_a? String
+    assert_kind_of String, Faker::Color.color_name
   end
 
   def test_ca_name_methods
-    assert Faker::Name.female_first_name.is_a? String
-    assert Faker::Name.female_prefix.is_a? String
-    assert Faker::Name.male_first_name.is_a? String
-    assert Faker::Name.male_prefix.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.female_first_name
+    assert_kind_of String, Faker::Name.female_prefix
+    assert_kind_of String, Faker::Name.male_first_name
+    assert_kind_of String, Faker::Name.male_prefix
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.name
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 end

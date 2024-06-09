@@ -88,7 +88,7 @@ class TestFakerDate < Test::Unit::TestCase
     random_between  = @tester.between(from: Date.today, to: Date.today + 5)
 
     [random_forward, random_backward, random_between].each do |result|
-      assert result.is_a?(Date), "Expected a Date object, but got #{result.class}"
+      assert_kind_of Date, result, "Expected a Date object, but got #{result.class}"
     end
   end
 

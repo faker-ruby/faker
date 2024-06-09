@@ -19,8 +19,8 @@ class TestFakerInternet < Test::Unit::TestCase
 
       domain_name, domain_suffix = domain.split('.')
 
-      assert name.is_a? String
-      assert domain_name.is_a? String
+      assert_kind_of String, name
+      assert_kind_of String, domain_name
       assert_includes(%w[example test], domain_suffix)
     end
   end
@@ -31,8 +31,16 @@ class TestFakerInternet < Test::Unit::TestCase
       domain_name, domain_suffix = domain.split('.')
 
       assert_equal('mart#n', name)
-      assert domain_name.is_a? String
+      assert_kind_of String, domain_name
       assert_includes(%w[example test], domain_suffix)
+    end
+  end
+
+  def test_email_with_apostrophes
+    name = "Alexis O'Connell"
+
+    deterministically_verify -> { @tester.email(name: name) } do |result|
+      assert_email_regex 'Alexis', 'OConnell', result
     end
   end
 
@@ -42,7 +50,7 @@ class TestFakerInternet < Test::Unit::TestCase
       domain_name, domain_suffix = domain.split('.')
 
       assert_match(/(jane\+doe|doe\+jane)/, name)
-      assert domain_name.is_a? String
+      assert_kind_of String, domain_name
       assert_includes(%w[example test], domain_suffix)
     end
   end
@@ -53,7 +61,7 @@ class TestFakerInternet < Test::Unit::TestCase
     name, domain = result.split('@')
     domain_name, domain_suffix = domain.split('.')
 
-    assert name.is_a? String
+    assert_kind_of String, name
     assert_equal('customdomain', domain_name)
     assert_includes(%w[example test], domain_suffix)
   end
@@ -62,7 +70,7 @@ class TestFakerInternet < Test::Unit::TestCase
     deterministically_verify -> { @tester.email(domain: 'customdomain.org') } do |result|
       name, domain = result.split('@')
 
-      assert name.is_a? String
+      assert_kind_of String, name
       assert_equal('customdomain.org', domain)
     end
   end
@@ -81,6 +89,10 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_username
     assert_match(/[a-z]+((_|\.)[a-z]+)?/, @tester.username(specifier: 0..3))
     assert_match(/[a-z]+((_|\.)[a-z]+)?/, @tester.username)
+  end
+
+  def test_username_with_apostrophes
+    assert_match(/\A[a-z]+([_\.][a-z]+)*\z/, @tester.username(specifier: "Alexis O'Connell"))
   end
 
   def test_user_name_alias
@@ -314,7 +326,7 @@ class TestFakerInternet < Test::Unit::TestCase
   def test_domain_name_without_subdomain
     domain_name, domain_suffix = @tester.domain_name.split('.')
 
-    assert domain_name.is_a? String
+    assert_kind_of String, domain_name
     assert_includes(%w[example test], domain_suffix)
   end
 
@@ -323,8 +335,8 @@ class TestFakerInternet < Test::Unit::TestCase
       subdomain: true
     ).split('.')
 
-    assert domain_name.is_a? String
-    assert subdomain.is_a? String
+    assert_kind_of String, domain_name
+    assert_kind_of String, subdomain
     assert_includes(%w[example test], domain_suffix)
   end
 
@@ -334,7 +346,7 @@ class TestFakerInternet < Test::Unit::TestCase
       domain: 'customdomain'
     ).split('.')
 
-    assert subdomain.is_a? String
+    assert_kind_of String, subdomain
     assert_equal 'customdomain', domain_name
     assert_includes(%w[example test], domain_suffix)
   end
@@ -345,7 +357,7 @@ class TestFakerInternet < Test::Unit::TestCase
       domain: 'faker-ruby.org'
     ).split('.')
 
-    assert subdomain.is_a? String
+    assert_kind_of String, subdomain
     assert_equal 'faker-ruby', domain_name
     assert_equal 'org', domain_suffix
   end

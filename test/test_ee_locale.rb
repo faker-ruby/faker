@@ -17,39 +17,39 @@ class TestEeLocale < Test::Unit::TestCase
   end
 
   def test_ee_address_methods
-    assert Faker::Address.state.is_a? String
-    assert Faker::Address.city_name.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_suffix.is_a? String
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.street_address.is_a? String
+    assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.city_name
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_suffix
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.street_address
   end
 
   def test_ee_company_methods
-    assert Faker::Company.suffix.is_a? String
-    assert Faker::Company.buzzwords.is_a? Array
-    assert Faker::Company.bs.is_a? String
-    assert Faker::Company.name.is_a? String
+    assert_kind_of String, Faker::Company.suffix
+    assert_kind_of Array, Faker::Company.buzzwords
+    assert_kind_of String, Faker::Company.bs
+    assert_kind_of String, Faker::Company.name
   end
 
   def test_ee_internet_methods
-    assert Faker::Internet.email.is_a? String
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.email
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_ee_invoice_methods
-    assert Faker::Invoice.creditor_reference.is_a? String
-    assert Faker::Invoice.reference.is_a? String
-    assert Faker::Invoice.reference(ref: '4106453482608858924').is_a? String
+    assert_kind_of String, Faker::Invoice.creditor_reference
+    assert_kind_of String, Faker::Invoice.reference
+    assert_kind_of String, Faker::Invoice.reference(ref: '4106453482608858924')
   end
 
   def test_ee_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.prefix.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.prefix
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 
   def test_ee_phone_number

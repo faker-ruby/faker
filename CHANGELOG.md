@@ -1,20 +1,115 @@
 # Changelog
 
-## What's Changed
+## [v3.4.1](https://github.com/faker-ruby/faker/tree/v3.4.1) (2024-05-28)
+
+### What's changed
+
+* Performance: Sample arrays instead of performing shuffle and slice by @alextaujenis in https://github.com/faker-ruby/faker/pull/2940
+* Performance: Reduce the time complexity of `Faker::Crypto` generators by @alextaujenis in https://github.com/faker-ruby/faker/pull/2938
+* Remove tzinfo dependency by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2952
+
+### Bug fixes
+
+* Fix invalid IANA time zone identifier for `Atlantic/Cape_Verde` by @andrelaszlo in https://github.com/faker-ruby/faker/pull/2927
+* Fix entry in faker.food.ingredients by @matthewmayer in https://github.com/faker-ruby/faker/pull/2933
+* Docs: add absolute links to CONTRIBUTING from README by @matthewmayer in https://github.com/faker-ruby/faker/pull/2934
+* Fix: `Faker::Number.hexadecimal` should include characters within the range of `[0-9a-f]` by @alextaujenis in https://github.com/faker-ruby/faker/pull/2942
+* Username splits names by space and doesn't regex match them by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2950
+
+### Features
+
+* Add animals, desserts, foods, hobbies, house, and k-pop translations to the Korean locale file by @connie-feng in https://github.com/faker-ruby/faker/pull/2935
+* Add adjectives to Korean locale file by @connie-feng in https://github.com/faker-ruby/faker/pull/2930
+* Add emotions, movies, Pokemon, and Studio Ghibli to the Korean locale by @connie-feng in https://github.com/faker-ruby/faker/pull/2941
+* Add Japanese translations for `Faker::Sports::Football`. by @yamat47 in https://github.com/faker-ruby/faker/pull/2903
+
+### Update local dependencies
+
+* Bump rake from 13.1.0 to 13.2.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2929
+* Bump i18n from 1.14.4 to 1.14.5 by @dependabot in https://github.com/faker-ruby/faker/pull/2949
+* Bump minitest from 5.22.3 to 5.23.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2957
+* Bump rubocop from 1.63.4 to 1.64.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2958
+
+## New Contributors
+
+* @connie-feng made their first contribution in https://github.com/faker-ruby/faker/pull/2930
+* @andrelaszlo made their first contribution in https://github.com/faker-ruby/faker/pull/2927
+* @matthewmayer made their first contribution in https://github.com/faker-ruby/faker/pull/2933
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.3.1...v.3.4.1
+
+---------------------------------
+
+## [v3.3.1](https://github.com/faker-ruby/faker/tree/v3.3.1) (2024-04-02)
+
+### Bug fixes
+
+* Fix bug on phone number generator for `en-US` locale caused by incorrect `.yml` file structure by @aprescott in https://github.com/faker-ruby/faker/pull/2924
+
+### What's Changed
+
+* Added docs for Deprecator in CONTRIBUTING.md by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2919
+* Rename Faker::show to Faker::Theater by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2921
+* renamed nhs to national_health_service by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2923
+
+### New Contributors
+* @aprescott made their first contribution in https://github.com/faker-ruby/faker/pull/2924
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.3.0...v3.3.1
+
+-------------------------
+
+## [v3.3.0](https://github.com/faker-ruby/faker/tree/v3.3.0) (2024-03-25)
+
+### Bug Fixes
+
+* Remove the duplicate method Faker::Commerce.material description by @mmarusyk in https://github.com/faker-ruby/faker/pull/2914
+
+### Features
+
+* Add Kenya to supported countries by @AndrewNduati in https://github.com/faker-ruby/faker/pull/2871
+* Benchmarking loading JSON file vs YML file by @salochara in https://github.com/faker-ruby/faker/pull/2897
+
+### What's changed
+
+* Fix/Deprecate `Faker::IDNumber` to `Faker::IdNumber` to be more consistent with other generator's naming convention. by @Jamal-A-Mohamed in https://github.com/faker-ruby/faker/pull/2858
+* Fix/Deprecate FmaBrotherhood Generator by @kirkkwang in https://github.com/faker-ruby/faker/pull/2856
+* Fix/Deprecate Faker::Australia to Faker::Locations::Australia by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2869
+* Add note about EOL dependencies by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2890
+
+### Update local dependencies
+
+* Bump test-unit from 3.6.1 to 3.6.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2906
+* Bump i18n from 1.14.1 to 1.14.4 by @dependabot in https://github.com/faker-ruby/faker/pull/2913
+* Bump rubocop from 1.60.2 to 1.62.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2916
+* Bump yard from 0.9.34 to 0.9.36 by @dependabot in https://github.com/faker-ruby/faker/pull/2909
+* Bump minitest from 5.22.2 to 5.22.3 by @dependabot in https://github.com/faker-ruby/faker/pull/2917
+
+### New Contributors
+
+* @AndrewNduati made their first contribution in https://github.com/faker-ruby/faker/pull/2871
+* @Jamal-A-Mohamed made their first contribution in https://github.com/faker-ruby/faker/pull/2858
+* @mmarusyk made their first contribution in https://github.com/faker-ruby/faker/pull/2914
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.2.3...v3.3.0
+
+-------------------------
 
 ## [v3.2.3](https://github.com/faker-ruby/faker/tree/v3.2.3) (2024-01-12)
+
+### What's Changed
 
 Happy 2024 with a new faker-ruby release.
 
 This version includes bug and documentation fixes, and some changes on the contributing guides.
 
-## faker-ruby is is not accepting new features proposals
+### faker-ruby is is not accepting new features proposals
 
 As we [discussed here](https://github.com/orgs/faker-ruby/discussions/2877), we want to improve faker's performance and organization. There hasn't been to many bug reports and most of the open issues are related to performance and confusion around using faker.
 
 As we have limited time to invest in faker, reviewing _new_ generators and locales prevent us from focusing on the big picture work. With this decision, we hope to make the necessary changes for faker to go to the next level. Please read the Contributing guides for ways to help us get there.
 
-## Bug fixes
+### Bug fixes
 * Fix Phone number long number and other updates by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2842
 * Favor 'The Room' instead of 'Room' by @kirkkwang in https://github.com/faker-ruby/faker/pull/2854
 * Limit generated Discover cards to 19 digits by @jamie in https://github.com/faker-ruby/faker/pull/2845
@@ -26,7 +121,7 @@ As we have limited time to invest in faker, reviewing _new_ generators and local
 * Update `Internet#username` separator param to match with the example by @AlexandreL0pes in https://github.com/faker-ruby/faker/pull/2882
 * fix polish bban_pattern by @artur1313 in https://github.com/faker-ruby/faker/pull/2887
 
-## What's Changed
+### What's Changed
 * Add benchmark by @salochara in https://github.com/faker-ruby/faker/pull/2855
 * Freeze new generator and locales by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2886
 * Remove deprecate safe_email and free_email methods by @hatsu38 in https://github.com/faker-ruby/faker/pull/2841
@@ -34,12 +129,12 @@ As we have limited time to invest in faker, reviewing _new_ generators and local
 * Remove unmaintained `History.md` by @y-yagi in https://github.com/faker-ruby/faker/pull/2880
 * Adds Ruby 3.3 to the CI matrix by @m-nakamura145 in https://github.com/faker-ruby/faker/pull/2883
 
-## Update local dependencies
+### Update local dependencies
 * Bump rubocop from 1.58.0 to 1.59.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2865
 * Bump rubocop-minitest from 0.34.3 to 0.34.4 by @dependabot in https://github.com/faker-ruby/faker/pull/2884
 * Bump minitest version by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2889
 
-## New Contributors
+### New Contributors
 * @kirkkwang made their first contribution in https://github.com/faker-ruby/faker/pull/2854
 * @jamie made their first contribution in https://github.com/faker-ruby/faker/pull/2845
 * @hatsu38 made their first contribution in https://github.com/faker-ruby/faker/pull/2859

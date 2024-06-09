@@ -12,70 +12,70 @@ class TestArLocale < Test::Unit::TestCase
   end
 
   def test_ar_address_methods
-    assert Faker::Address.country.is_a? String
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.street_address.is_a? String
-    assert Faker::Address.full_address.is_a? String
-    assert Faker::Address.city_prefix.is_a? String
-    assert Faker::Address.secondary_address.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.city_name.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_address.is_a? String
-    assert Faker::Address.full_address.is_a? String
-    assert Faker::Address.default_country.is_a? String
+    assert_kind_of String, Faker::Address.country
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.street_address
+    assert_kind_of String, Faker::Address.full_address
+    assert_kind_of String, Faker::Address.city_prefix
+    assert_kind_of String, Faker::Address.secondary_address
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.city_name
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_address
+    assert_kind_of String, Faker::Address.full_address
+    assert_kind_of String, Faker::Address.default_country
     assert_equal('المملكة العربية السعودية', Faker::Address.default_country)
   end
 
   def test_ar_app_methods
-    assert Faker::App.name.is_a? String
-    assert Faker::App.version.is_a? String
-    assert Faker::App.author.is_a? String
+    assert_kind_of String, Faker::App.name
+    assert_kind_of String, Faker::App.version
+    assert_kind_of String, Faker::App.author
   end
 
   def test_ar_book_methods
-    assert Faker::Book.title.is_a? String
-    assert Faker::Book.author.is_a? String
-    assert Faker::Book.publisher.is_a? String
-    assert Faker::Book.genre.is_a? String
+    assert_kind_of String, Faker::Book.title
+    assert_kind_of String, Faker::Book.author
+    assert_kind_of String, Faker::Book.publisher
+    assert_kind_of String, Faker::Book.genre
   end
 
   def test_ar_color_name
-    assert Faker::Color.color_name.is_a? String
+    assert_kind_of String, Faker::Color.color_name
   end
 
   def test_ar_commerce_methods
-    assert Faker::Commerce.department.is_a? String
-    assert Faker::Commerce.product_name.is_a? String
-    assert Faker::Commerce.promotion_code.is_a? String
+    assert_kind_of String, Faker::Commerce.department
+    assert_kind_of String, Faker::Commerce.product_name
+    assert_kind_of String, Faker::Commerce.promotion_code
   end
 
   def test_ar_company_methods
-    assert Faker::Company.name.is_a? String
-    assert Faker::Company.industry.is_a? String
-    assert Faker::Company.profession.is_a? String
-    assert Faker::Company.suffix.is_a? String
-    assert Faker::Company.buzzword.is_a? String
-    assert Faker::Company.bs.is_a? String
+    assert_kind_of String, Faker::Company.name
+    assert_kind_of String, Faker::Company.industry
+    assert_kind_of String, Faker::Company.profession
+    assert_kind_of String, Faker::Company.suffix
+    assert_kind_of String, Faker::Company.buzzword
+    assert_kind_of String, Faker::Company.bs
   end
 
   def test_ar_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
-    assert Faker::Name.prefix.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.name_with_middle
+    assert_kind_of String, Faker::Name.prefix
   end
 
   def test_ar_team_methods
-    assert Faker::Team.creature.is_a? String
-    assert Faker::Team.name.is_a? String
-    assert Faker::Team.sport.is_a? String
+    assert_kind_of String, Faker::Team.creature
+    assert_kind_of String, Faker::Team.name
+    assert_kind_of String, Faker::Team.sport
   end
 
   def test_ar_university_methods
-    assert Faker::University.name.is_a? String
-    assert Faker::University.prefix.is_a? String
-    assert Faker::University.suffix.is_a? String
+    assert_kind_of String, Faker::University.name
+    assert_kind_of String, Faker::University.prefix
+    assert_kind_of String, Faker::University.suffix
   end
 end

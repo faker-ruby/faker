@@ -69,7 +69,7 @@ class TestFakerTime < Test::Unit::TestCase
       random_between_with_time_args,
       random_forward
     ].each do |result|
-      assert result.is_a?(Time), "Expected a Time object, but got #{result.class}"
+      assert_kind_of Time, result, "Expected a Time object, but got #{result.class}"
     end
   end
 
@@ -86,7 +86,7 @@ class TestFakerTime < Test::Unit::TestCase
       random_forward  = @tester.forward(days: 30, period: period, format: format)
 
       [random_backward, random_between, random_between_dates, random_forward].each do |result|
-        assert result.is_a?(String), "Expected a String, but got #{result.class}"
+        assert_kind_of String, result, "Expected a String, but got #{result.class}"
         assert_nothing_raised 'Not a valid date string' do
           date_format = '%m/%d/%Y %I:%M %p'
           DateTime.strptime(result, date_format)

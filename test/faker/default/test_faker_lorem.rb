@@ -38,6 +38,7 @@ class TestFakerLorem < Test::Unit::TestCase
   def test_standard_words
     @words = @tester.words(number: 1000)
 
+    assert_equal 1000, @words.length
     @words.each { |w| assert_includes @standard_wordlist, w }
   end
 
@@ -132,7 +133,7 @@ class TestFakerLorem < Test::Unit::TestCase
   end
 
   def test_multibyte
-    assert @tester.multibyte.is_a? String
+    assert_kind_of String, @tester.multibyte
     assert_includes %w[😀 ❤ 😡], @tester.multibyte
   end
 

@@ -37,7 +37,7 @@ class TestArraySampleMethodCompatibility < Test::Unit::TestCase
     source = %w[foo bar baz]
     result = source.sample(2)
 
-    assert result.is_a? Array
+    assert_kind_of Array, result
     assert_equal(2, result.length)
     assert_empty((result - source))
   end
@@ -46,12 +46,12 @@ class TestArraySampleMethodCompatibility < Test::Unit::TestCase
     source = %w[foo bar]
     result = source.sample(2)
 
-    assert result.is_a? Array
+    assert_kind_of Array, result
     assert_predicate((source.sort <=> result.sort), :zero?)
 
     result = source.sample(3)
 
-    assert result.is_a? Array
+    assert_kind_of Array, result
     assert_predicate((source.sort <=> result.sort), :zero?)
   end
 

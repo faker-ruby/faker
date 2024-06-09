@@ -12,36 +12,36 @@ class TestBgLocale < Test::Unit::TestCase
   end
 
   def test_bg_methods
-    assert Faker::Address.country.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_suffix.is_a? String
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.street_title.is_a? String
-    assert Faker::Address.city_name.is_a? String
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.street_address.is_a? String
+    assert_kind_of String, Faker::Address.country
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_suffix
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.street_title
+    assert_kind_of String, Faker::Address.city_name
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.street_address
     assert_equal 'България', Faker::Address.default_country
   end
 
   def test_bg_internet_methods
-    assert Faker::Internet.email.is_a? String
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.email
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_bg_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.male_first_name.is_a? String
-    assert Faker::Name.male_middle_name.is_a? String
-    assert Faker::Name.male_last_name.is_a? String
-    assert Faker::Name.female_first_name.is_a? String
-    assert Faker::Name.female_middle_name.is_a? String
-    assert Faker::Name.female_middle_name.is_a? String
-    assert Faker::Name.name.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.male_first_name
+    assert_kind_of String, Faker::Name.male_middle_name
+    assert_kind_of String, Faker::Name.male_last_name
+    assert_kind_of String, Faker::Name.female_first_name
+    assert_kind_of String, Faker::Name.female_middle_name
+    assert_kind_of String, Faker::Name.female_middle_name
+    assert_kind_of String, Faker::Name.name
   end
 
   def test_bg_phone_number_methods
-    assert Faker::PhoneNumber.cell_phone.is_a? String
+    assert_kind_of String, Faker::PhoneNumber.cell_phone
   end
 
   def test_bg_cell_number_starts_wiht_08

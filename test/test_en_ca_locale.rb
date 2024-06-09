@@ -13,10 +13,10 @@ class TestEnCaLocale < Test::Unit::TestCase
   end
 
   def test_en_ca_address_methods
-    assert Faker::Address.postcode.is_a? String
-    assert Faker::Address.state.is_a? String
-    assert Faker::Address.state_abbr.is_a? String
-    assert Faker::Address.default_country.is_a? String
+    assert_kind_of String, Faker::Address.postcode
+    assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.state_abbr
+    assert_kind_of String, Faker::Address.default_country
     assert_equal 'Canada', Faker::Address.default_country
 
     expected = /[A-VX-Y][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
@@ -25,29 +25,29 @@ class TestEnCaLocale < Test::Unit::TestCase
   end
 
   def test_en_ca_internet_methods
-    assert Faker::Internet.email.is_a? String
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.email
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_en_ca_subscriber_number_method
-    assert Faker::PhoneNumber.subscriber_number.is_a? String
+    assert_kind_of String, Faker::PhoneNumber.subscriber_number
     assert_equal(4, Faker::PhoneNumber.subscriber_number.length)
     assert_equal(10, Faker::PhoneNumber.subscriber_number(length: 10).length)
     assert_equal Faker::PhoneNumber.method(:extension), Faker::PhoneNumber.method(:subscriber_number)
   end
 
   def test_en_ca_phone_methods
-    assert Faker::PhoneNumber.area_code.is_a? String
-    assert Faker::PhoneNumber.area_code.to_i.is_a? Integer
+    assert_kind_of String, Faker::PhoneNumber.area_code
+    assert_kind_of Integer, Faker::PhoneNumber.area_code.to_i
     assert_equal(3, Faker::PhoneNumber.area_code.length)
 
-    assert Faker::PhoneNumber.exchange_code.is_a? String
-    assert Faker::PhoneNumber.exchange_code.to_i.is_a? Integer
+    assert_kind_of String, Faker::PhoneNumber.exchange_code
+    assert_kind_of Integer, Faker::PhoneNumber.exchange_code.to_i
     assert_equal(3, Faker::PhoneNumber.exchange_code.length)
 
     assert_equal('+1', Faker::PhoneNumber.country_code)
-    assert(Faker::PhoneNumber.area_code.is_a?(String))
-    assert(Faker::PhoneNumber.exchange_code.is_a?(String))
+    assert_kind_of(String, Faker::PhoneNumber.area_code)
+    assert_kind_of(String, Faker::PhoneNumber.exchange_code)
   end
 
   def test_validity_of_phone_method_output

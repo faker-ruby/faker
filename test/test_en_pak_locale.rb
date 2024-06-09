@@ -13,24 +13,24 @@ class TestEnPakLocale < Test::Unit::TestCase
   end
 
   def test_en_pak_methods
-    assert Faker::Address.state.is_a? String
-    assert Faker::Address.default_country.is_a? String
-    assert Faker::Address.postcode.is_a? String
+    assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.default_country
+    assert_kind_of String, Faker::Address.postcode
     assert_match(/\A(Pakistan|Islamic Republic of Pakistan)\z/, Faker::Address.default_country)
   end
 
   def test_en_pak_company_methods
-    assert Faker::Company.suffix.is_a? String
+    assert_kind_of String, Faker::Company.suffix
   end
 
   def test_en_pak_internet_methods
-    assert Faker::Internet.email.is_a? String
-    assert Faker::Internet.domain_suffix.is_a? String
+    assert_kind_of String, Faker::Internet.email
+    assert_kind_of String, Faker::Internet.domain_suffix
   end
 
   def test_en_pak_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.name_with_middle
   end
 end

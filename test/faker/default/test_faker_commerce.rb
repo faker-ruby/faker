@@ -91,11 +91,11 @@ class TestFakerCommerce < Test::Unit::TestCase
   end
 
   def test_price_is_float
-    assert @tester.price.is_a? Float
+    assert_kind_of Float, @tester.price
   end
 
   def test_when_as_string_is_true
-    assert @tester.price(range: 0..100.0, as_string: true).is_a?(String)
+    assert_kind_of String, @tester.price(range: 0..100.0, as_string: true)
     assert_includes @tester.price(range: 100..500.0, as_string: true), '.'
   end
 

@@ -14,7 +14,7 @@ Faker helps you generate realistic test data, and populate your
 database with more than a couple of records while you're doing development.
 
 It comes in very handy for taking screenshots (taking screenshots for a personal project)
-and it was the original impetus for the creation of this gem).
+and it was the original impetus for the creation of this gem.
 
 ## Quick links
 
@@ -23,6 +23,14 @@ and it was the original impetus for the creation of this gem).
 
 [rubydocs]: https://www.rubydoc.info/gems/faker/
 [changelog]: CHANGELOG.md
+
+## In the media
+
+- 📰 [With Great Humor Comes Great Developer Engagement] - KTH Royal Institute of Technology research
+- 🎧 [Computer und Kommunikation 4.5.2024, komplette Sendung] - Deutschland Funk Radio Interview
+
+[With Great Humor Comes Great Developer Engagement]: https://arxiv.org/pdf/2312.01680
+[Computer und Kommunikation 4.5.2024, komplette Sendung]: https://www.deutschlandfunk.de/computer-und-kommunikation-4-5-2024-komplette-sendung-dlf-16492b03-100.html
 
 ## Table of Contents
 
@@ -248,7 +256,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Hipster](doc/default/hipster.md)
   - [Faker::Hobby](doc/default/hobby.md)
   - [Faker::House](doc/default/house.md)
-  - [Faker::IDNumber](doc/default/id_number.md)
+  - [Faker::IdNumber](doc/default/id_number.md)
   - [Faker::IndustrySegments](doc/default/industry_segments.md)
   - [Faker::Internet](doc/default/internet.md)
   - [Faker::Invoice](doc/default/invoice.md)
@@ -284,6 +292,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Superhero](doc/default/superhero.md)
   - [Faker::Tea](doc/default/tea.md)
   - [Faker::Team](doc/default/team.md)
+  - [Faker::Theater](doc/default/theater.md)
   - [Faker::Time](doc/default/time.md)
   - [Faker::Twitter](doc/default/twitter.md)
   - [Faker::Types](doc/default/types.md)
@@ -376,7 +385,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::JapaneseMedia::Naruto](doc/japanese_media/naruto.md)
   - [Faker::JapaneseMedia::Doraemon](doc/japanese_media/doraemon.md)
   - [Faker::JapaneseMedia::Conan](doc/japanese_media/conan.md)
-  - [Faker::JapaneseMedia::FmaBrotherhood](doc/japanese_media/fullmetal_alchemist_brotherhood.md)
+  - [Faker::JapaneseMedia::FullmetalAlchemistBrotherhood](doc/japanese_media/fullmetal_alchemist_brotherhood.md)
 </details>
 
 <details>
@@ -477,11 +486,17 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::TvShows::VentureBros](doc/tv_shows/venture_bros.md)
 </details>
 
+<details>
+  <summary>Locations</summary>
+
+  - [Faker::Locations::Australia](doc/locations/australia.md)
+</details>
+
 ## Contributing
 
-**Note**: We are not accepting proposals for new generators and locales. The [Contributing](CONTRIBUTING.md) guide has a few notes about this decision.
+**Note**: We are not accepting proposals for new generators and locales. The [Contributing](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md) guide has a few notes about this decision.
 
-Take a look at the [Contributing](CONTRIBUTING.md) document for
+Take a look at the [Contributing](https://github.com/faker-ruby/faker/blob/main/CONTRIBUTING.md) document for
 instructions on setting up the repo on your machine, opening bug reports, understanding the codebase,
 and creating a good pull request.
 

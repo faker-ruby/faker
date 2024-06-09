@@ -12,20 +12,20 @@ class TestHeLocale < Test::Unit::TestCase
   end
 
   def test_he_address_methods
-    assert Faker::Address.city_prefix.is_a? String
-    assert Faker::Address.city.is_a? String
-    assert Faker::Address.street_prefix.is_a? String
-    assert Faker::Address.building_number.is_a? String
-    assert Faker::Address.street_name.is_a? String
-    assert Faker::Address.street_address.is_a? String
-    assert Faker::Address.default_country.is_a? String
+    assert_kind_of String, Faker::Address.city_prefix
+    assert_kind_of String, Faker::Address.city
+    assert_kind_of String, Faker::Address.street_prefix
+    assert_kind_of String, Faker::Address.building_number
+    assert_kind_of String, Faker::Address.street_name
+    assert_kind_of String, Faker::Address.street_address
+    assert_kind_of String, Faker::Address.default_country
     assert_equal('ישראל', Faker::Address.default_country)
   end
 
   def test_he_name_methods
-    assert Faker::Name.first_name.is_a? String
-    assert Faker::Name.last_name.is_a? String
-    assert Faker::Name.name_with_middle.is_a? String
-    assert Faker::Name.name.is_a? String
+    assert_kind_of String, Faker::Name.first_name
+    assert_kind_of String, Faker::Name.last_name
+    assert_kind_of String, Faker::Name.name_with_middle
+    assert_kind_of String, Faker::Name.name
   end
 end
