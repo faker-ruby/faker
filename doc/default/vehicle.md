@@ -6,7 +6,7 @@ Available since version 1.6.4.
 Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
 
 # Random vehicle manufacturer
-Faker::Vehicle.manufacture #=> "Lamborghini"
+Faker::Vehicle.manufacturer #=> "Lamborghini"
 
 Faker::Vehicle.make #=> "Honda"
 
