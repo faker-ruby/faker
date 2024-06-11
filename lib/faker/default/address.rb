@@ -119,8 +119,8 @@ module Faker
           return numerify(letterified_string, leading_zero: true)
         end
 
-        # provide a zip code that is valid for the state provided
-        # see http://www.fincen.gov/forms/files/us_state_territory_zip_codes.pdf
+        # provide a zip code that may be valid for the state provided
+        # note: zip code may appear in the correct format for the state provided but may not be an actual state zip.
         bothify(fetch("address.postcode_by_state.#{state_abbreviation}"))
       end
 

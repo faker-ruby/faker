@@ -1,8 +1,9 @@
 # Faker::NationalHealthService
 
-```ruby
-Faker::NationalHealthService.british_number #=> "403 958 5577"
+The NHS sets aside a range of numbers from 999 000 0000 to 999 999 9999 for
+test purposes. For more details, see [NHS Digital documentation about
+synthetic data](https://digital.nhs.uk/services/e-referral-service/document-library/synthetic-data-in-live-environments#synthetic-data-naming-convention).
 
-# Keyword arguments: number
-Faker::NationalHealthService.check_digit(number: 400_012_114) #=> 6
+```ruby
+Faker::NationalHealthService.british_number #=> "999 464 0232"
 ```

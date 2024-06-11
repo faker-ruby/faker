@@ -6,14 +6,17 @@ module Faker
       ##
       # Produces a random British NHS number.
       #
+      # The NHS sets aside a range of numbers from 999 000 0000 to 999 999 9999
+      # for test purposes.
+      #
       # @return [String]
       #
       # @example
-      #   Faker::NationalHealthService.british_number #=> "403 958 5577"
+      #   Faker::NationalHealthService.british_number #=> "999 464 0232"
       #
       # @faker.version 1.9.2
       def british_number
-        base_number = rand(400_000_001...499_999_999)
+        base_number = rand(999_000_001...999_999_999)
         # If the check digit is equivalent to 10, the number is invalid.
         # See https://en.wikipedia.org/wiki/NHS_number
         base_number -= 1 if check_digit(number: base_number) == 10
@@ -23,6 +26,8 @@ module Faker
                                                            .insert(7, ' ')
                                                            .join
       end
+
+      private
 
       ##
       # Produces a random British NHS number's check digit.
