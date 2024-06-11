@@ -17,10 +17,13 @@ Faker::Address.mail_box #=> "PO Box 123"
 
 Faker::Address.community #=> "University Crossing"
 
+#note: #zip_code will return a random string in zipcode format; may or may not be a valid zip for locale
 Faker::Address.zip_code #=> "58517" or "23285-4905"
 
+#note: #zip will return a random string in zipcode format; may or may not be a valid zip for locale
 Faker::Address.zip #=> "58517" or "66259-8212"
 
+#note: #postcode will return a random string in postcode format; may or may not be a valid zip for locale
 Faker::Address.postcode #=> "76032-4907" or "58517"
 
 Faker::Address.time_zone #=> "Asia/Yakutsk"
