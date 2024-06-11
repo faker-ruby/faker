@@ -6873,7 +6873,7 @@ pt-BR:
         - "(#{PhoneNumber.area_code}) #{PhoneNumber.subscriber_number}-#{PhoneNumber.subscriber_number}"
       subscriber_number:
         - "####"
-    subcription:
+    subscription:
       plans:
         - Teste gratuito
         - Básico
