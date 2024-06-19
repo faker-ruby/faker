@@ -17,6 +17,21 @@ task :console do
   IRB.start
 end
 
+desc 'Convert all locales to json'
+task :convert_locales_to_json do
+  paths = Dir['lib/locales/**/*.yml'].select { |path| File.file? path }
+
+  paths.each do |yml_path|
+    yaml = YAML.load_file(yml_path, aliases: true)
+
+    json_path = yml_path.gsub(/.yml$/, '.json')
+    
+    File.open(json_path, 'w') do |f|
+      f.write(JSON.pretty_generate(yaml))
+    end
+  end
+end
+
 require 'rubocop/rake_task'
 RuboCop::RakeTask.new
 

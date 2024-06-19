@@ -7,7 +7,7 @@ require 'i18n'
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
 
-I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
+I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.json')]
 
 module Faker
   module Config
