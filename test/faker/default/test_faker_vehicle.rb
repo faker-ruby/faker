@@ -20,8 +20,8 @@ class TestFakerVehicle < Test::Unit::TestCase
     end
   end
 
-  def test_manufacture
-    assert_match WORD_MATCH, @tester.manufacture
+  def test_manufacturer
+    assert_match WORD_MATCH, @tester.manufacturer
   end
 
   def test_color

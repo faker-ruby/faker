@@ -48,12 +48,13 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Vehicle.manufacture #=> "Lamborghini"
+      #   Faker::Vehicle.manufacturer #=> "Lamborghini"
       #
       # @faker.version 1.6.4
-      def manufacture
-        fetch('vehicle.manufacture')
+      def manufacturer
+        fetch('vehicle.manufacturer')
       end
+      alias manufacture manufacturer
 
       ##
       # Produces a random vehicle make.
