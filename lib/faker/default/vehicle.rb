@@ -54,7 +54,7 @@ module Faker
       def manufacturer
         fetch('vehicle.manufacturer')
       end
-      alias_method :manufacture, :manufacturer
+      alias manufacture manufacturer
 
       ##
       # Produces a random vehicle make.
