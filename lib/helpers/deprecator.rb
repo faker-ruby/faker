@@ -12,7 +12,7 @@ module Faker
       extension = Module.new do
         def const_missing(missing_const_name)
           if class_variable_defined?(:@@_deprecated_constants) && (replacement = class_variable_get(:@@_deprecated_constants)[missing_const_name.to_s])
-            unless Faker::Deprecator.skip_warning?
+            if !Faker::Deprecator.skip_warning?
               $stdout.puts("DEPRECATION WARNING: #{name}::#{replacement[:old_generator]} is deprecated. Use #{replacement[:new_constant]} instead.")
             end
 
