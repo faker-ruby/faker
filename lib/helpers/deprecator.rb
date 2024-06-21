@@ -32,14 +32,22 @@ module Faker
     end
 
     def self.skip_warning
-      @@skip_warning = true
+      original = Faker::Deprecator.skip
+      Faker::Deprecator.skip = true
       yield
     ensure
-      @@skip_warning = false
+      Faker::Deprecator.skip = original
     end
-
+    
     def self.skip_warning?
-      @@skip_warning
+      skip == true
+    end
+    def self.skip
+      @skip ||= false
+    end
+    
+    def self.skip=(v)
+      @skip = v
     end
   end
 end
