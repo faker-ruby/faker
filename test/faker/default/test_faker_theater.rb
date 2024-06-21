@@ -25,14 +25,14 @@ class TestFakerShow < Test::Unit::TestCase
   end
 
   def test_adult_musical
-    assert_match(/\w+/, Faker::Show.adult_musical)
+    assert_match(/\w+/, @tester.adult_musical)
   end
 
   def test_kids_musical
-    assert_match(/\w+/, Faker::Show.kids_musical)
+    assert_match(/\w+/, @tester.kids_musical)
   end
 
   def test_play
-    assert_match(/\w+/, Faker::Show.play)
+    assert_match(/\w+/, @tester.play)
   end
 end
