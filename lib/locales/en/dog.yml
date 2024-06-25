@@ -106,7 +106,7 @@ en:
           - Harvey
         breed:
           - Affenpinscher
-          - African
+          - Africanis
           - Airedale
           - Akita
           - Appenzeller
@@ -118,7 +118,7 @@ en:
           - Boxer
           - Brabancon
           - Briard
-          - Boston Bulldog
+          - Boston Terrier
           - French Bulldog
           - Staffordshire Bullterrier
           - Cairn
@@ -136,32 +136,32 @@ en:
           - Doberman
           - Norwegian Elkhound
           - Entlebucher
-          - Eskimo
-          - Germanshepherd
+          - American Eskimo
+          - German Shepherd
           - Italian Greyhound
           - Groenendael
           - Ibizan Hound
           - Afghan Hound
           - Basset Hound
-          - Blood Hound
-          - English Hound
-          - Walker Hound
+          - Bloodhound
+          - English Foxhound
+          - Treeing Walker Coonhound
           - Husky
           - Keeshond
           - Kelpie
           - Komondor
           - Kuvasz
           - Labrador
-          - Leonberg
+          - Leonberger
           - Lhasa
           - Malamute
           - Malinois
           - Maltese
           - Bull Mastiff
           - Tibetan Mastiff
-          - Mexicanhairless
+          - Mexican Hairless
           - Bernese Mountain
-          - Swiss Mountain
+          - Greater Swiss Mountain
           - Newfoundland
           - Otterhound
           - Papillon
@@ -178,7 +178,7 @@ en:
           - Redbone
           - Chesapeake Retriever
           - Curly Retriever
-          - Flatcoated Retriever
+          - Flat-Coated Retriever
           - Golden Retriever
           - Rhodesian Ridgeback
           - Rottweiler
@@ -202,7 +202,7 @@ en:
           - Sussex Spaniel
           - Welsh Spaniel
           - English Springer
-          - Stbernard
+          - Saint Bernard
           - American Terrier
           - Australian Terrier
           - Bedlington Terrier
@@ -210,7 +210,7 @@ en:
           - Dandie Terrier
           - Fox Terrier
           - Irish Terrier
-          - Kerryblue Terrier
+          - Kerry Blue Terrier
           - Lakeland Terrier
           - Norfolk Terrier
           - Norwich Terrier
@@ -221,7 +221,7 @@ en:
           - Silky Terrier
           - Tibetan Terrier
           - Toy Terrier
-          - Westhighland Terrier
+          - West Highland White
           - Wheaten Terrier
           - Yorkshire Terrier
           - Vizsla
