@@ -25,6 +25,9 @@ faker-ruby already has lots of generators and locales. We appreciate any efforts
 - updating the existing translations
 - fixing any outdated/wrong translations
 
+> [!NOTE]
+> Please include the console output of the translations in the PR description. Run `bundle exec rake console` to confirm the translations are working as expected. [Here's an example](https://github.com/faker-ruby/faker/pull/2960#issuecomment-2159698291).
+
 Although we maintain Faker in our free time, we try to respond to contributions in a timely manner. Once we look at your pull request, we may give you feedback. For instance, we may suggest some changes to make to your code to fit within the project style or discuss alternate ways of addressing the issue in question. Assuming we're happy with everything, we'll then bring your changes into main. Now you're a contributor!
 
 ## Setting up your environment
