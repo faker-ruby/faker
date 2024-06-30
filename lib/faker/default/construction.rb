@@ -15,6 +15,10 @@ module Faker
       fetch('construction.materials')
     end
 
+    def self.hand_tool
+      fetch('construction.hand_tool')
+    end
+
     ##
     # Produces a random heavy equipment.
     #

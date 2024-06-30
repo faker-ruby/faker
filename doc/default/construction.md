@@ -1,13 +1,14 @@
 # Faker::Construction
 
-Available in future versions of faker
-
 ```ruby
 # Random material
 Faker::Construction.material #=> "Wood"
 
 # Random subcontract category
 Faker::Construction.subcontract_category #=> "Curb & Gutter"
+
+# Random hand_tool
+Faker::Construction.hand_tool #=> "Torpedo level"
 
 # Random heavy_equipment
 Faker::Construction.heavy_equipment #=> "Excavator"

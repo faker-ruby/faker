@@ -11,6 +11,10 @@ class TestFakerConstruction < Test::Unit::TestCase
     assert_match(/\w+/, Faker::Construction.material)
   end
 
+  def test_hand_tool
+    assert_match(/\w+/, Faker::Construction.hand_tool)
+  end
+
   def test_heavy_equipment
     assert_match(/\w+/, Faker::Construction.heavy_equipment)
   end
@@ -41,6 +45,7 @@ class TestFakerConstruction < Test::Unit::TestCase
       assert_kind_of String, Faker::Construction.trade
       assert_kind_of String, Faker::Construction.role
       assert_kind_of String, Faker::Construction.heavy_equipment
+      assert_kind_of String, Faker::Construction.hand_tool
     end
   end
 end
