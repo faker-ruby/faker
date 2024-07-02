@@ -291,7 +291,9 @@ end
 
 class TestFakerIDNumber < Test::Unit::TestCase
   def setup
-    @tester = Faker::IDNumber
+    Faker::Deprecator.skip_warning do
+      @tester = Faker::IDNumber
+    end
   end
 
   def test_valid_ssn

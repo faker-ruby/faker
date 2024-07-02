@@ -4,7 +4,9 @@ require_relative '../../test_helper'
 
 class TestFakerFmaBrotherhood < Test::Unit::TestCase
   def setup
-    @tester = Faker::JapaneseMedia::FmaBrotherhood
+    Faker::Deprecator.skip_warning do
+      @tester = Faker::JapaneseMedia::FmaBrotherhood
+    end
   end
 
   def test_character

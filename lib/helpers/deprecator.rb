@@ -6,11 +6,16 @@
 # rubocop:disable Style/ClassVars
 module Faker
   module Deprecator
+    @@skip_warning = false
+
     def self.included(base)
       extension = Module.new do
         def const_missing(missing_const_name)
           if class_variable_defined?(:@@_deprecated_constants) && (replacement = class_variable_get(:@@_deprecated_constants)[missing_const_name.to_s])
-            $stdout.puts("DEPRECATION WARNING: #{name}::#{replacement[:old_generator]} is deprecated. Use #{replacement[:new_constant]} instead.")
+            unless Faker::Deprecator.skip_warning?
+              $stdout.puts("DEPRECATION WARNING: #{name}::#{replacement[:old_generator]} is deprecated. Use #{replacement[:new_constant]} instead.")
+            end
+
             return replacement[:new_constant]
           end
 
@@ -24,6 +29,26 @@ module Faker
       end
 
       base.singleton_class.prepend extension
+    end
+
+    def self.skip_warning
+      original = Faker::Deprecator.skip
+      Faker::Deprecator.skip = true
+      yield
+    ensure
+      Faker::Deprecator.skip = original
+    end
+
+    def self.skip_warning?
+      skip == true
+    end
+
+    def self.skip
+      @skip ||= false
+    end
+
+    def self.skip=(value)
+      @skip = value
     end
   end
 end
