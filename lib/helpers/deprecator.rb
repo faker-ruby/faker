@@ -6,7 +6,6 @@
 # rubocop:disable Style/ClassVars
 module Faker
   module Deprecator
-    @@skip_warning = false
 
     def self.included(base)
       extension = Module.new do
