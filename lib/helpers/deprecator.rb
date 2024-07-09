@@ -6,7 +6,6 @@
 # rubocop:disable Style/ClassVars
 module Faker
   module Deprecator
-
     def self.included(base)
       extension = Module.new do
         def const_missing(missing_const_name)
