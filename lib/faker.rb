@@ -39,6 +39,7 @@ module Faker
     end
   end
 
+  # rubocop:disable Style/ClassVars
   class Base
     Numbers = Array(0..9)
     ULetters = Array('A'..'Z')
@@ -157,12 +158,17 @@ module Faker
         parts.any? ? parts.join : numerify(fetched)
       end
 
+      def translate_cache
+        Thread.current[:faker_translate_cache] ||= {}
+      end
+
       # Call I18n.translate with our configured locale if no
       # locale is specified
       def translate(*args, **opts)
         opts[:locale] ||= Faker::Config.locale
+        translate_key = args.to_s + opts.sort.join
         opts[:raise] = true
-        I18n.translate(*args, **opts)
+        translate_cache[translate_key] ||= I18n.translate(*args, **opts)
       rescue I18n::MissingTranslationData
         opts[:locale] = :en
 
@@ -268,6 +274,7 @@ module Faker
       end
     end
   end
+  # rubocop:enable Style/ClassVars
 end
 
 # require faker objects
