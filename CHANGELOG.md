@@ -2549,7 +2549,7 @@ Fix lib/faker/version.rb
 - Fixed typo in dutch translation [\#679](https://github.com/stympy/faker/pull/679) ([nschmoller](https://github.com/nschmoller))
 - Add pokemon [\#677](https://github.com/stympy/faker/pull/677) ([bakunyo](https://github.com/bakunyo))
 - Food [\#672](https://github.com/stympy/faker/pull/672) ([martymclaugh](https://github.com/martymclaugh))
-- Added charcaters and houses data for game of thrones in en.yml [\#670](https://github.com/stympy/faker/pull/670) ([vamsipavanmahesh](https://github.com/vamsipavanmahesh))
+- Added characters and houses data for game of thrones in en.yml [\#670](https://github.com/stympy/faker/pull/670) ([vamsipavanmahesh](https://github.com/vamsipavanmahesh))
 - add Faker::Commerce.promotion\_code [\#669](https://github.com/stympy/faker/pull/669) ([jGRUBBS](https://github.com/jGRUBBS))
 - Eliminate and prevent leading and trailing white space [\#665](https://github.com/stympy/faker/pull/665) ([retroGiant89](https://github.com/retroGiant89))
 - Fix for memory overflow error Issue: \#478 [\#664](https://github.com/stympy/faker/pull/664) ([anuj-verma](https://github.com/anuj-verma))

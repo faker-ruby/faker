@@ -22,7 +22,7 @@ module Faker
       end
 
       ##
-      # Produces a random valid reference accoring to the International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
+      # Produces a random valid reference according to the International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
       #
       # @param ref [String] Specifies reference base.
       # @return [String]

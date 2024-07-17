@@ -204,7 +204,7 @@ module Faker
         # @example
         #   Faker::Movies::StarWars.droids
         #
-        # @faker.versionn 1.6.2
+        # @faker.version 1.6.2
         def droids
           fetch_all('star_wars.droids')
         end
