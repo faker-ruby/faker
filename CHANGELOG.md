@@ -1,5 +1,54 @@
 # Changelog
 
+## [v3.4.2](https://github.com/faker-ruby/faker/tree/v3.4.2) (2024-07-16)
+
+Happy July with a new faker-ruby release.
+
+This version:
+
+- introduces a breaking change for `Faker::NationalHealthService.british_number` (more details below)
+- adds translation for some generators
+- fixes bugs
+
+### Breaking changes
+
+The NHS sets aside a range of numbers from 999 000 0000 to 999 999 9999 for test purposes. The old range could
+produce NHS numbers that were in use by real patients in the UK/England and Wales. In this version, `Faker::NationalHealthService.british_number` uses the test range for creating NHS numbers rather than the previous 400 000 0010 to 499 999 9999 range.
+
+Breaking change was introduced in "Add test range param to NHS numbers" by @neanias in https://github.com/faker-ruby/faker/pull/2947
+
+### Improvements & Bug fixes
+
+* Add Bank and Sport to Swedish locale by @twk-mn in https://github.com/faker-ruby/faker/pull/2961
+* docs: update with notes about validity for zips by @garrettgregor in https://github.com/faker-ruby/faker/pull/2963
+* `Faker::Games::Dota` missing quotes and new heroes by @arthurka-o in https://github.com/faker-ruby/faker/pull/2907
+* Add phone_number.country_code and address.full_address in locale sv by @larkro in https://github.com/faker-ruby/faker/pull/2965
+* Fix typo by @fynsta in https://github.com/faker-ruby/faker/pull/2968
+* fix: `Faker::Internet.username` should not generate duplicated punctuation by @thdaraujo in https://github.com/faker-ruby/faker/pull/2970
+* Update dog breed names for `en-US` locale by @mononoken in https://github.com/faker-ruby/faker/pull/2972
+* Add `Deprecator.skip_warning?` ability to silence deprecators on tests by @keshavbiswa in https://github.com/faker-ruby/faker/pull/2956
+
+### Update local dependencies
+
+* Bump timecop from 0.9.9 to 0.9.10 by @dependabot in https://github.com/faker-ruby/faker/pull/2969
+* Bump minitest from 5.23.1 to 5.24.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2975
+* Bump bundler version to `2.4.22` by @thdaraujo in https://github.com/faker-ruby/faker/pull/2978
+* Bump rubocop from 1.64.1 to 1.65.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2979
+* Bump rubocop-minitest from 0.35.0 to 0.35.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2980
+
+## New Contributors
+* @twk-mn made their first contribution in https://github.com/faker-ruby/faker/pull/2961
+* @neanias made their first contribution in https://github.com/faker-ruby/faker/pull/2947
+* @garrettgregor made their first contribution in https://github.com/faker-ruby/faker/pull/2963
+* @arthurka-o made their first contribution in https://github.com/faker-ruby/faker/pull/2907
+* @larkro made their first contribution in https://github.com/faker-ruby/faker/pull/2965
+* @fynsta made their first contribution in https://github.com/faker-ruby/faker/pull/2968
+* @mononoken made their first contribution in https://github.com/faker-ruby/faker/pull/2972
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v.3.4.1...v3.4.2
+
+---------------------------------
+
 ## [v3.4.1](https://github.com/faker-ruby/faker/tree/v3.4.1) (2024-05-28)
 
 ### What's changed
