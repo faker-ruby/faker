@@ -17,7 +17,7 @@ module Faker
       end
 
       ##
-      # Produces a quote from a movie.
+      # Produces a quote from a tv show.
       #
       # @return [String]
       #
