@@ -447,6 +447,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 <details>
   <summary>Tv Shows</summary>
 
+  - [Faker::TvShow](doc/tv_shows/tv_show.md)
   - [Faker::TvShows::AquaTeenHungerForce](doc/tv_shows/aqua_teen_hunger_force.md)
   - [Faker::TvShows::Archer](doc/tv_shows/archer.md)
   - [Faker::TvShows::BigBangTheory](doc/tv_shows/big_bang_theory.md)
