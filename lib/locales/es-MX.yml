@@ -94,10 +94,10 @@ es-MX:
         - "044 #{PhoneNumber.lada_dos}-####-####"
         - "044 #{PhoneNumber.lada_tres}-###-####"
     subscription:
-      plans: ["Prueba gratuita", "Basico", "Starter", "Essential", "Estudiante", Bronze", "Standard", "Silver", "Gold", "Platinum", "Profesional", "Business", "Diamond", "Premium"]
-      statuses: ["Activo", "Parado", "Bloqueado", "Pendiente"]
-      payment_methods: ["Tarjeta de credito", "Tarjeta de débito", "Paypal", "Efectivo", "Transferencia de dinero", "Bitcoins", "Cheque", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
-      subscription_terms: ["Diaria", "Semanal", "Mensual", "Anual", "Bienal", "Trienal", "Quinquenal", "De por vida"]
+      plans: ["Prueba gratuita", "Básico", "Inicial", "Escencial", "Estudiante", Bronce", "Estándar", "Plata", "Oro", "Platino", "Profesional", "Negocio", "Diamante", "Premium"]
+      statuses: ["Activo", "Detenido", "Bloqueado", "Pendiente"]
+      payment_methods: ["Tarjeta de credito", "Tarjeta de débito", "Paypal", "Efectivo", "Transferencia de dinero", "Bitcoin", "Cheque", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
+      subscription_terms: ["Diaria", "Semanal", "Mensual", "Anual", "Bimestral", "Trimestral", "Quincenal", "De por vida"]
       payment_terms: ["Pago por adelantado", "Mensual", "Anual", "Suscripción completa"]
     finance:
       vat_number:
