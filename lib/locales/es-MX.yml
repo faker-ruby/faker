@@ -97,7 +97,16 @@ es-MX:
       plans: ["Prueba gratuita", "Básico", "Inicial", "Escencial", "Estudiante", Bronce", "Estándar", "Plata", "Oro", "Platino", "Profesional", "Negocio", "Diamante", "Premium"]
       statuses: ["Activo", "Detenido", "Bloqueado", "Pendiente"]
       payment_methods: ["Tarjeta de credito", "Tarjeta de débito", "Paypal", "Efectivo", "Transferencia de dinero", "Bitcoin", "Cheque", "Apple Pay", "Google Pay", "WeChat Pay", "Alipay", "Visa Checkout"]
-      subscription_terms: ["Diaria", "Semanal", "Mensual", "Anual", "Bimestral", "Trimestral", "Quincenal", "De por vida"]
+      subscription_terms: [
+      - Diaria
+      - Semanal
+      - Mensual
+      - Anual
+      - Bimestral
+      - Trimestral
+      - Quincenal
+      - De por vida
+      ]
       payment_terms: ["Pago por adelantado", "Mensual", "Anual", "Suscripción completa"]
     finance:
       vat_number:
