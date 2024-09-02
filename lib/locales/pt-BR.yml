@@ -6878,14 +6878,14 @@ pt-BR:
         - Teste gratuito
         - Básico
         - Starter
-        - Essential
+        - Essencial
         - Estudante
         - Bronze
         - Standard
-        - Silver
-        - Gold
+        - Prata
+        - Ouro
         - Platinum
-        - Profesional
+        - Profissional
         - Business
         - Diamante
         - Premium
@@ -6907,6 +6907,8 @@ pt-BR:
         - WeChat Pay
         - Alipay
         - Visa Checkout
+        - Pix
+        - Boleto
       subscription_terms:
         - Diária
         - Semanal
