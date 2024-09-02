@@ -17,7 +17,7 @@ GEM
     json (2.7.2)
     language_server-protocol (3.17.0.3)
     method_source (1.0.0)
-    minitest (5.23.1)
+    minitest (5.24.1)
     parallel (1.25.1)
     parser (3.3.2.0)
       ast (~> 2.4.1)
@@ -60,7 +60,7 @@ GEM
     strscan (3.1.0)
     test-unit (3.6.2)
       power_assert
-    timecop (0.9.9)
+    timecop (0.9.10)
     unicode-display_width (2.5.0)
     yard (0.9.36)
 
@@ -71,7 +71,7 @@ PLATFORMS
 DEPENDENCIES
   benchmark
   faker!
-  minitest (= 5.23.1)
+  minitest (= 5.24.1)
   pry (= 0.14.2)
   rake (= 13.2.1)
   rubocop (= 1.64.1)
@@ -79,7 +79,7 @@ DEPENDENCIES
   rubocop-rake (= 0.6.0)
   simplecov (= 0.22.0)
   test-unit (= 3.6.2)
-  timecop (= 0.9.9)
+  timecop (= 0.9.10)
   yard (= 0.9.36)
 
 BUNDLED WITH
