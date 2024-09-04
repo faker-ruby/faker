@@ -60,7 +60,7 @@ module Faker
         randoms = Array.new(random_count) { sample(ALPHANUMS) }
 
         combined = alphas + numbers + randoms
-        shuffle(combined).join
+        shuffle!(combined).join
       end
     end
   end

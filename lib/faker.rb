@@ -249,6 +249,10 @@ module Faker
         list.shuffle(random: Faker::Config.random)
       end
 
+      def shuffle!(list)
+        list.shuffle!(random: Faker::Config.random)
+      end
+
       def rand(max = nil)
         if max.nil?
           Faker::Config.random.rand

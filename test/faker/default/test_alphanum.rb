@@ -49,19 +49,11 @@ class TestFakerAlphanum < Test::Unit::TestCase
     assert_operator numbers.compact.size, :>=, 4
   end
 
-  def test_alphanumeric_with_seed
-    seed = Faker::Config.random.seed
-    Faker::Config.random = Random.new(seed)
-
-    expected = @tester.alphanumeric(number: 10, min_alpha: 5, min_numeric: 5)
-
-    10.times do
-      # Reset the PRNG to ensure the same value is returned on every generation.
-      Faker::Config.random = Random.new(seed)
-
-      actual = @tester.alphanumeric(number: 10, min_alpha: 5, min_numeric: 5)
-
-      assert_equal expected, actual
+  def test_alphanumeric_with_min_alpha_and_min_numeric
+    deterministically_verify -> { @tester.alphanumeric(number: 10, min_alpha: 5, min_numeric: 5) } do |alphanum|
+      assert_equal 10, alphanum.size
+      assert_equal 5, alphanum.scan(/[[:alpha:]]/).size
+      assert_equal 5, alphanum.scan(/[[:digit:]]/).size
     end
   end
 end
