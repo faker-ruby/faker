@@ -6873,6 +6873,56 @@ pt-BR:
         - "(#{PhoneNumber.area_code}) #{PhoneNumber.subscriber_number}-#{PhoneNumber.subscriber_number}"
       subscriber_number:
         - "####"
+    subscription:
+      plans:
+        - Teste gratuito
+        - Básico
+        - Starter
+        - Essencial
+        - Estudante
+        - Bronze
+        - Standard
+        - Prata
+        - Ouro
+        - Platinum
+        - Profissional
+        - Business
+        - Diamante
+        - Premium
+      statuses:
+        - Ativo
+        - Inativo
+        - Bloqueado
+        - Pendente
+      payment_methods:
+        - Cartão de crédito
+        - Cartão de débito
+        - Paypal
+        - Dinheiro
+        - Transferência de dinheiro
+        - Bitcoins
+        - Cheque
+        - Apple Pay
+        - Google Pay
+        - WeChat Pay
+        - Alipay
+        - Visa Checkout
+        - Pix
+        - Boleto
+      subscription_terms:
+        - Diária
+        - Semanal
+        - Mensal
+        - Anual
+        - Bienal
+        - Trienal
+        - Quinquenal
+        - Vitalícia
+      payment_terms:
+        - Pagamento antecipado
+        - Mensal
+        - Anual
+        - Assinatura completa
     cell_phone:
       formats:
         - "(#{PhoneNumber.area_code}) 9#{PhoneNumber.subscriber_number}-#{PhoneNumber.subscriber_number}"
