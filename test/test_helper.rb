@@ -11,6 +11,7 @@ end
 
 require_relative 'support/assert_not_english'
 require_relative 'support/assert_email_regex'
+require_relative 'support/deprecation'
 require 'minitest/autorun'
 require 'test/unit'
 require 'rubygems'
