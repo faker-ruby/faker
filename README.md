@@ -4,8 +4,6 @@
 [![Tests](https://github.com/faker-ruby/faker/workflows/Tests/badge.svg)](https://github.com/faker-ruby/faker/actions?query=workflow%3ATests)
 [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
 [![Inline docs](https://inch-ci.org/github/faker-ruby/faker.svg?branch=main)](https://inch-ci.org/github/faker-ruby/faker)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/test_coverage)](https://codeclimate.com/github/stympy/faker/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/ef54c7f9df86e965d64b/maintainability)](https://codeclimate.com/github/stympy/faker/maintainability)
 
 Faker is a port of [Perl's Data::Faker library](https://metacpan.org/pod/Data::Faker).
 It's a library for generating fake data such as names, addresses, and phone numbers.
