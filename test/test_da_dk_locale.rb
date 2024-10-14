@@ -60,4 +60,8 @@ class TestDaDkLocale < Test::Unit::TestCase
     assert_match(/(\+45)[\s](\d\d[\s-]?){4}$/, Faker::PhoneNumber.phone_number_with_country_code)
     assert_match(/(\+45)[\s](\d\d[\s-]?){4}$/, Faker::PhoneNumber.cell_phone_with_country_code)
   end
+
+  def test_da_dk_license_plate
+    assert_match(/^[A-Z]{2}\d{5}$/, Faker::Vehicle.license_plate)
+  end
 end
