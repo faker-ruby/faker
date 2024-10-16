@@ -19,11 +19,6 @@ class TestFakerTvShowsBuffy < Test::Unit::TestCase
     assert_match(/\w+/, @tester.actor)
   end
 
-  # deprecated
-  def test_celebrity
-    assert_match(/\w+/, @tester.celebrity)
-  end
-
   def test_big_bad
     assert_match(/\w+/, @tester.big_bad)
   end
