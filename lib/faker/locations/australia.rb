@@ -46,7 +46,4 @@ module Faker
       end
     end
   end
-
-  include Deprecator
-  deprecate_generator('Australia', Locations::Australia)
 end

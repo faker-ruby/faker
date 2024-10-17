@@ -18,17 +18,6 @@ module Faker
         end
 
         ##
-        # This method is deprecated. The implementation will be removed in a near future release.
-        # Use `HeroesOfTheStorm.class_name` instead.
-        #
-        # @deprecated Use {#class_name} instead.
-        def class
-          warn '`HeroesOfTheStorm.class` is deprecated. Use `HeroesOfTheStorm.class_name` instead.'
-
-          super
-        end
-
-        ##
         # Produces a class name from Heroes of the Storm.
         #
         # @return [String]
