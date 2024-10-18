@@ -46,7 +46,4 @@ module Faker
       end
     end
   end
-
-  include Faker::Deprecator
-  deprecate_generator('Show', Theater)
 end

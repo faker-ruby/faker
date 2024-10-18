@@ -28,11 +28,6 @@ class TestFakerTvShowsDrWho < Test::Unit::TestCase
     deterministically_verify(-> { @tester.quote }) { |result| assert_match(/\w+/, result) }
   end
 
-  # deprecated
-  def test_villian
-    deterministically_verify(-> { @tester.villian }) { |result| assert_match(/\w+/, result) }
-  end
-
   def test_villain
     deterministically_verify(-> { @tester.villain }) { |result| assert_match(/\w+/, result) }
   end
@@ -49,7 +44,6 @@ class TestFakerTvShowsDrWho < Test::Unit::TestCase
       assert_kind_of String, @tester.the_doctor
       assert_kind_of String, @tester.catch_phrase
       assert_kind_of String, @tester.quote
-      assert_kind_of String, @tester.villian # deprecated
       assert_kind_of String, @tester.villain
       assert_kind_of String, @tester.specie
     end

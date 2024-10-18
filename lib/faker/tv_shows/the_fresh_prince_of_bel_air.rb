@@ -33,19 +33,6 @@ module Faker
         end
 
         ##
-        # Produces a actor from The Fresh Prince of Bel-Air.
-        #
-        # @return [String]
-        #
-        # @example
-        #   Faker::TvShows::TheFreshPrinceOfBelAir.celebrity #=> "Quincy Jones"
-        #
-        # @deprecated Use the `actor` method instead.
-        #
-        # @faker.version 1.8.3
-        alias celebrity actor
-
-        ##
         # Produces a quote from The Fresh Prince of Bel-Air.
         #
         # @return [String]
