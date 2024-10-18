@@ -15,11 +15,6 @@ class TestFakerTvShowsTheFreshPrinceOfBelAir < Test::Unit::TestCase
     assert_match(/\w+/, @tester.actor)
   end
 
-  # deprecated
-  def test_celebrity
-    assert_match(/\w+/, @tester.celebrity)
-  end
-
   def test_quote
     assert_match(/\w+/, @tester.quote)
   end
