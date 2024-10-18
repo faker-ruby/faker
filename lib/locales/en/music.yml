@@ -32,10 +32,8 @@ en:
       - Arctic Monkeys
       - B.B. King
       - Bauhaus
-      - The Beatles
       - Beck
       - Billy Idol
-      - The Birthday Party
       - Björk
       - Blinker The Star
       - Blondie
@@ -54,16 +52,11 @@ en:
       - Chris Isaak
       - Chrissie Hynde
       - Chuck Berry
-      - The Clash
       - Cliff Richard (and the Shadows)
       - Coldplay
       - Cootie Williams
       - Cortinas
-      - " The"
-      - The Cramps
-      - The Cranberries
       - Cream
-      - The Cure
       - David Bowie
       - David Gilmour
       - Deepest Blue
@@ -77,7 +70,6 @@ en:
       - Elvis Costello
       - Elvis Presley
       - Eric Clapton
-      - The Faces
       - Fats Domino
       - Flaming Lips
       - Florence and the Machine
@@ -94,7 +86,6 @@ en:
       - Hugh Masekela
       - Ian Dury
       - Iggy Pop
-      - The Jam
       - James Brown
       - Jeff Beck
       - Jeff Buckley
@@ -111,14 +102,11 @@ en:
       - Kate Bush
       - Keith Moon
       - Keith Richards
-      - The Kinks
       - Kiss
-      - The La's
       - Led Zeppelin
       - Lenny Kravitz
       - Leonard Cohen
       - Liam Gallagher
-      - The Libertines
       - Madness
       - Madonna
       - Manic Street Preachers
@@ -126,7 +114,6 @@ en:
       - Marianne Faithfull
       - Marilyn Manson
       - Maroon 5
-      - The Mars Volta
       - Max Roach
       - Michael Jackson
       - Miles Davis
@@ -145,6 +132,7 @@ en:
       - Oasis
       - Offspring
       - Ozzy Osbourne
+      - PJ Harvey
       - Paramore
       - Pat Metheny
       - Patti Smith
@@ -154,21 +142,16 @@ en:
       - Phil Collins
       - Phish
       - Pink Floyd
-      - PJ Harvey
-      - The Police
-      - The Pretenders
       - Primal Scream
       - Prince
       - Program The Dead
       - Pulp
       - Queen
-      - Radiohead
-      - The Ramones
-      - Red Hot Chili Peppers
       - R.E.M.
+      - Radiohead
+      - Red Hot Chili Peppers
       - Rick Wright
       - Rod Stewart
-      - The Rolling Stones
       - Rory Gallagher
       - Roxy Music
       - Roy Hargrove
@@ -179,15 +162,35 @@ en:
       - Simply Red
       - Sinead O'connor
       - Siouxsie and The Banshees
-      - The Slits
-      - The Smiths
       - Sonic Youth
-      - The Specials
       - Squeeze
       - Status Quo
       - Stereophonics
       - Stone Roses
       - Syd Barrett
+      - The Beatles
+      - The Birthday Party
+      - The Clash
+      - The Cramps
+      - The Cranberries
+      - The Cure
+      - The Faces
+      - The Jam
+      - The Killers
+      - The Kinks
+      - The La's
+      - The Libertines
+      - The Mars Volta
+      - The Police
+      - The Pretenders
+      - The Ramones
+      - The Rolling Stones
+      - The Slits
+      - The Smiths
+      - The Specials
+      - The Undertones
+      - The Who
+      - The Yardbirds
       - Thelonius Monk
       - Thin Lizzy
       - Thornley
@@ -196,12 +199,9 @@ en:
       - Tom Robinson
       - Tom Waits
       - U2
-      - The Undertones
       - Van Morrison
       - Velvet Revolver
       - White Stripes
-      - The Who
-      - The Yardbirds
       - Yumi Matsutoya
       albums:
       - Thriller
