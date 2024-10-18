@@ -13,7 +13,7 @@ If you're reviewing a PR, ask yourself:
 ## Managing libraries dependencies EOL
 
 As a guideline for Ruby's End of Life (EOL) versions, a good heuristic (that's not too hard on maintainers) is to keep support for 1 EOL version.
-In other words, once Ruby 3.0 is EOL, drop support for 2.7.
+In other words, once Ruby 3.1 is EOL, drop support for 3.0.
 
 ## Security
 

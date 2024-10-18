@@ -5,7 +5,7 @@ mydir = __dir__
 require 'psych'
 require 'i18n'
 
-Dir.glob(File.join(mydir, 'helpers', '*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(mydir, 'helpers', '*.rb')).each { |file| require file }
 
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 
@@ -275,4 +275,4 @@ module Faker
 end
 
 # require faker objects
-Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).sort.each { |file| require file }
+Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).each { |file| require file }

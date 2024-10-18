@@ -3,8 +3,8 @@
 require_relative '../../test_helper'
 
 class TestFakerVehicle < Test::Unit::TestCase
-  WORD_MATCH = /\w+\.?/.freeze
-  VIN_REGEX = /\A[A-HJ-NPR-Z0-9]{17}\z/.freeze
+  WORD_MATCH = /\w+\.?/
+  VIN_REGEX = /\A[A-HJ-NPR-Z0-9]{17}\z/
 
   def setup
     @tester = Faker::Vehicle
