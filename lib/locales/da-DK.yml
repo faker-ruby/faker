@@ -566,4 +566,4 @@ da-DK:
           - Ur
           - Pung
     vehicle:
-      license_plate: '[A-F]{2}\d{5}'
+      license_plate: '[A-Z]{2}[0-9]{5}'
