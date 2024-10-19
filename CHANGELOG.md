@@ -1,5 +1,62 @@
 # Changelog
 
+## [v3.5.1](https://github.com/faker-ruby/faker/tree/v3.5.1) (2024-10-18)
+
+Happy October! 🎃
+
+This version **drops support for Ruby < 3.0**. We only support one EOL Ruby version at a time. Please upgrade to Ruby 3.0 to update to this and future versions of faker-ruby.
+
+Besides that, this version removes deprecated generators, fixes some bugs, and adds a Security Policy.
+
+Thanks to all contributors!
+
+## Breaking Changes
+* Drop support for Ruby 2.7 by @tatheerf02 in https://github.com/faker-ruby/faker/pull/3006
+* Removes deprecated generators by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3014
+
+The following deprecated generators are being removed. Please use the new generators:
+
+
+| Deprecated                                          | New |
+| -------- | ------- |
+| Faker::TvShows::TheFreshPrinceOfBelAir.celebrity    | Faker::TvShows::TheFreshPrinceOfBelAir.actor        |
+| Faker::TvShows::Buffy.celebrity                     | Faker::TvShows::Buffy.actor                         |
+| Faker::TvShows::DrWho.villian                       | Faker::TvShows::DrWho.villain                       |
+| Faker::Games::HeroesOfTheStorm.class                | Faker::Games::HeroesOfTheStorm.class_name           |
+| Faker::JapaneseMedia::FmaBrotherhood                | Faker::JapaneseMedia::FullmetalAlchemistBrotherhood |
+| Faker::Show                                         | Faker::Theater                                      |
+| Faker::Australia                                    | Faker::Locations::Australia                         |
+| Faker::IDNumber                                     | Faker::IdNumber                                     |
+
+### Improvements & Bug fixes
+* Fix typos by @tagliala in https://github.com/faker-ruby/faker/pull/2982
+* Fix benchmark:all_methods task by excluding Faker::Deprecator module from benchmark target by @amatsuda in https://github.com/faker-ruby/faker/pull/2988
+* Add Brazilian Portuguese translations for `Faker::Subscription` by @murichristopher in https://github.com/faker-ruby/faker/pull/2960
+* Deprecator improvements by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2997
+* Faker::Alphanumeric.alphanumeric determinism fix by @admtnnr in https://github.com/faker-ruby/faker/pull/2996
+* Remove CodeClimate badges by @tagliala in https://github.com/faker-ruby/faker/pull/3003
+* Update Company.logo example url by @dirschn in https://github.com/faker-ruby/faker/pull/3007
+* fix(music.band): removes leading whitespace by @JeremasPosta in https://github.com/faker-ruby/faker/pull/3015
+* Create SECURITY.md by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3016
+
+### Update local dependencies
+* Bump i18n from 1.14.5 to 1.14.6 by @dependabot in https://github.com/faker-ruby/faker/pull/3005
+* Bump minitest from 5.24.1 to 5.25.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2991
+* Bump rubocop-minitest from 0.35.1 to 0.36.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2999
+* Bump yard from 0.9.36 to 0.9.37 by @dependabot in https://github.com/faker-ruby/faker/pull/3000
+* Bump rubocop from 1.65.1 to 1.66.1 by @dependabot in https://github.com/faker-ruby/faker/pull/3001
+
+## New Contributors
+* @murichristopher made their first contribution in https://github.com/faker-ruby/faker/pull/2960
+* @admtnnr made their first contribution in https://github.com/faker-ruby/faker/pull/2996
+* @dirschn made their first contribution in https://github.com/faker-ruby/faker/pull/3007
+* @tatheerf02 made their first contribution in https://github.com/faker-ruby/faker/pull/3006
+* @JeremasPosta made their first contribution in https://github.com/faker-ruby/faker/pull/3015
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.4.2...v3.5.1
+
+--------------------------------------
+
 ## [v3.4.2](https://github.com/faker-ruby/faker/tree/v3.4.2) (2024-07-16)
 
 Happy July with a new faker-ruby release.
