@@ -62,6 +62,6 @@ class TestDaDkLocale < Test::Unit::TestCase
   end
 
   def test_da_dk_license_plate
-    assert_match(/^(O[A-HJ-NPR-Z](?![BHBUCCCDDKDUEUKZMUYPSSUDUNVC])|[A-HJ-NPR-Z]{2})(\d{2,5})$/, Faker::Vehicle.license_plate)
+    assert_match(/[A-Z]{2}[0-9]{5}/, Faker::Vehicle.license_plate)
   end
 end
