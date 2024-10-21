@@ -565,3 +565,5 @@ da-DK:
           - Bænk
           - Ur
           - Pung
+    vehicle:
+      license_plate: '[A-Z]{2}[0-9]{5}'
