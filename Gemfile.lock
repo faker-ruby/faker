@@ -16,14 +16,14 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.7.5)
     language_server-protocol (3.17.0.3)
-    method_source (1.0.0)
+    method_source (1.1.0)
     minitest (5.25.1)
     parallel (1.26.3)
     parser (3.3.5.1)
       ast (~> 2.4.1)
       racc
     power_assert (2.0.3)
-    pry (0.14.2)
+    pry (0.15.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
     racc (1.8.1)
@@ -68,7 +68,7 @@ DEPENDENCIES
   benchmark
   faker!
   minitest (= 5.25.1)
-  pry (= 0.14.2)
+  pry (= 0.15.0)
   rake (= 13.2.1)
   rubocop (= 1.68.0)
   rubocop-minitest (= 0.36.0)
