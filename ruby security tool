@@ -1,0 +1,53 @@
+class FakeSecurityRemover
+  FAKE_SECURITY_SOFTWARES = [
+    "Super Antivirus",
+    "Secure PC Pro",
+    "Ultimate Protection",
+    "Malware Defender",
+    "Virus Killer 2023"
+  ]
+
+  def initialize
+    @installed_software = []
+  end
+
+  def scan_installed_software
+    puts "Scanning for installed software..."
+    # Simulate installed software (in a real scenario, you'd check the system)
+    @installed_software = [
+      "Super Antivirus",
+      "Real Antivirus",
+      "Malware Defender",
+      "Genuine Security Suite"
+    ]
+    puts "Installed software: #{@installed_software.join(', ')}"
+  end
+
+  def identify_fake_software
+    fake_software_found = @installed_software & FAKE_SECURITY_SOFTWARES
+    if fake_software_found.empty?
+      puts "No fake security software found."
+    else
+      puts "Fake security software detected: #{fake_software_found.join(', ')}"
+      fake_software_found.each { |software| remove_software(software) }
+    end
+  end
+
+  def remove_software(software)
+    puts "Removing #{software}..."
+    # Simulate removal (in a real scenario, you'd actually remove the software)
+    sleep(1) # Simulate time taken to remove software
+    puts "#{software} has been removed."
+  end
+
+  def run
+    scan_installed_software
+    identify_fake_software
+  end
+end
+
+# Example usage
+if __FILE__ == $0
+  remover = FakeSecurityRemover.new
+  remover.run
+end
