@@ -85,6 +85,9 @@ en-GB:
         - Northern Ireland
       default_country_code:
         - GB
+    id_number:
+      valid: '/[A-CEGHJ-NOPR-TW-Z][ACEHJLMOPRSW][0-9]{6}[ABCD]/'
+      invalid: '/(BG|GB|NK|KN|TN|NT|ZZ)[0-9]{6}[E-Z]{1}/'
     internet:
       domain_suffix:
         - co.uk
