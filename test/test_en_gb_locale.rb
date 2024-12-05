@@ -69,4 +69,18 @@ class TestEnGbLocale < Test::Unit::TestCase
     assert_match(/^[A-PR-UWYZ][A-HK-Y0-9]/, outcode)
     assert_match(/\w{1,2}\d{1,2}|\w\d[ABCDEFGHJKPSTUW]|\w\w\d[ABEHMNPRVWXY]/, outcode)
   end
+
+  def test_en_gb_id_number_valid_is_valid
+    id_code = Faker::IdNumber.valid
+
+    assert_equal(9, id_code.length)
+    assert_match(/^[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z][0-9]{6}[A-DFM]$/, id_code)
+  end
+
+  def test_en_gb_id_number_invalid_is_invalid
+    id_code = Faker::IdNumber.invalid
+
+    assert_equal(9, id_code.length)
+    assert_not_match(/^[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z][0-9]{6}[A-DFM]$/, id_code)
+  end
 end
