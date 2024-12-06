@@ -232,8 +232,8 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_password_with_min_length_and_max_length
-    min_length = 2
-    max_length = 5
+    min_length = 3
+    max_length = 6
     password = @tester.password(min_length: min_length, max_length: max_length)
 
     assert_match(/\w+/, password)
@@ -265,34 +265,45 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_match(/[^!@#$%\^&*]+/, @tester.password(min_length: 8, max_length: 12, mix_case: true))
   end
 
-  def test_password_with_special_chars_and_mixed_case
+  def test_password_with_digits
+    assert_match(/[0-9]+/, @tester.password(min_length: 8, max_length: 12, digits: true))
+  end
+
+  def test_password_without_digits
+    assert_match(/^[^0-9]+$/, @tester.password(min_length: 8, max_length: 12, digits: false))
+  end
+
+  def test_password_with_special_chars_and_mixed_case_and_digits
     32.times do
-      password = @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true)
+      password = @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true, digits: true)
 
       assert_match(/[!@#$%\^&*]+/, password)
       assert_match(/[A-z]+/, password)
+      assert_match(/[0-9]+/, password)
     end
   end
 
-  def test_deterministic_password_with_special_chars_and_mixed_case
-    deterministically_verify -> { @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true) }, depth: 4 do |password|
+  def test_deterministic_password_with_special_chars_and_mixed_case_and_digits
+    deterministically_verify -> { @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true, digits: true) }, depth: 4 do |password|
       assert_match(/[!@#$%\^&*]+/, password)
       assert_match(/[A-z]+/, password)
+      assert_match(/[0-9]+/, password)
     end
   end
 
-  def test_password_with_special_chars_and_mixed_case_on_3chars_password
+  def test_password_with_special_chars_and_mixed_case_and_digits_on_4chars_password
     16.times do
-      password = @tester.password(min_length: 3, max_length: 6, mix_case: true, special_characters: true)
+      password = @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true, digits: true)
 
       assert_match(/[!@#$%\^&*]+/, password)
       assert_match(/[A-z]+/, password)
+      assert_match(/[0-9]+/, password)
     end
   end
 
-  def test_password_with_invalid_min_length_for_mix_case_and_special_characters
-    assert_raise_message 'min_length should be at least 3 to enable mix_case, special_characters configuration' do
-      @tester.password(min_length: 1, mix_case: true, special_characters: true)
+  def test_password_with_invalid_min_length_for_mix_case_and_special_characters_and_digits
+    assert_raise_message 'min_length should be at least 4 to enable mix_case, special_characters, digits configuration' do
+      @tester.password(min_length: 1, mix_case: true, special_characters: true, digits: true)
     end
   end
 
@@ -306,7 +317,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_invalid_min_length_for_special_characters_only
     error = assert_raises(ArgumentError) do
-      @tester.password(min_length: 0, mix_case: false, special_characters: true)
+      @tester.password(min_length: 0, mix_case: false, special_characters: true, digits: false)
     end
 
     assert_equal 'min_length and max_length must be greater than or equal to one', error.message
@@ -314,27 +325,44 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_password_with_invalid_min_length_for_mix_case_only
     error = assert_raises(ArgumentError) do
-      @tester.password(min_length: 1, mix_case: true)
+      @tester.password(min_length: 1, mix_case: true, special_characters: false, digits: false)
     end
 
     assert_equal 'min_length should be at least 2 to enable mix_case configuration', error.message
   end
 
+  def test_password_with_invalid_min_length_for_digits_only
+    error = assert_raises(ArgumentError) do
+      @tester.password(min_length: 0, mix_case: false, special_characters: false, digits: true)
+    end
+
+    assert_equal 'min_length and max_length must be greater than or equal to one', error.message
+  end
+
   def test_password_with_compatible_min_length_and_requirements
     assert_nothing_raised do
-      [false, true].each do |value|
-        min_length = value ? 2 : 1
-        @tester.password(min_length: min_length, mix_case: value, special_characters: !value)
+      [false, true].each do |mix_case|
+        [false, true].each do |special_characters|
+          [false, true].each do |digits|
+            min_length = [[mix_case ? 2 : 0, special_characters ? 1 : 0, digits ? 1 : 0].sum, 1].max
+
+            @tester.password(min_length: min_length, mix_case: mix_case, special_characters: special_characters, digits: digits)
+          end
+        end
       end
     end
   end
 
   def test_deterministic_password_with_compatible_min_length_and_requirements
-    [false, true].each do |value|
-      min_length = value ? 2 : 1
+    [false, true].each do |mix_case|
+      [false, true].each do |special_characters|
+        [false, true].each do |digits|
+          min_length = [[mix_case ? 2 : 0, special_characters ? 1 : 0, digits ? 1 : 0].sum, 1].max
 
-      deterministically_verify -> { @tester.password(min_length: min_length, mix_case: value, special_characters: !value) }, depth: 4 do |password|
-        assert_nothing_raised { password }
+          deterministically_verify -> { @tester.password(min_length: min_length, mix_case: mix_case, special_characters: special_characters, digits: digits) }, depth: 4 do |password|
+            assert_nothing_raised { password }
+          end
+        end
       end
     end
   end

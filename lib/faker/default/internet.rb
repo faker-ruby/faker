@@ -108,6 +108,7 @@ module Faker
       # @param max_length [Integer] The maximum length of the password
       # @param mix_case [Boolean] Toggles if uppercased letters are allowed. If true, at least one will be added.
       # @param special_characters [Boolean] Toggles if special characters are allowed. If true, at least one will be added.
+      # @param digits [Boolean] Toggles if digits are allowed. If true, at least one will be added.
       #
       # @return [String]
       #
@@ -121,9 +122,13 @@ module Faker
       #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
       # @example
       #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
+      # @example
+      #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true, digits: true) #=> "$f%Ym*sc91e4O^"
+      # @example
+      #   Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true, digits: false) #=> "rI$XYZgmBONFKWIZ$B"
       #
       # @faker.version 2.1.3
-      def password(min_length: 8, max_length: 16, mix_case: true, special_characters: false)
+      def password(min_length: 8, max_length: 16, mix_case: true, special_characters: false, digits: true)
         raise ArgumentError, 'min_length and max_length must be greater than or equal to one' if min_length < 1 || max_length < 1
         raise ArgumentError, 'min_length must be smaller than or equal to max_length' unless min_length <= max_length
 
@@ -140,6 +145,11 @@ module Faker
           required_min_length += 1
         end
 
+        if digits
+          character_types << :digits
+          required_min_length += 1
+        end
+
         raise ArgumentError, "min_length should be at least #{required_min_length} to enable #{character_types.join(', ')} configuration" if min_length < required_min_length
 
         target_length = rand(min_length..max_length)
@@ -152,10 +162,6 @@ module Faker
         password << sample(lower_chars)
         character_bag += lower_chars
 
-        digits = ('0'..'9').to_a
-        password << sample(digits)
-        character_bag += digits
-
         if mix_case
           upper_chars = self::ULetters
           password << sample(upper_chars)
@@ -166,6 +172,12 @@ module Faker
           special_chars = %w[! @ # $ % ^ & *]
           password << sample(special_chars)
           character_bag += special_chars
+        end
+
+        if digits
+          digits_chars = ('0'..'9').to_a
+          password << sample(digits_chars)
+          character_bag += digits_chars
         end
 
         password << sample(character_bag) while password.length < target_length
