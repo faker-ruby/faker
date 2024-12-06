@@ -106,7 +106,7 @@ module Faker
       #
       # @param min_length [Integer] The minimum length of the password
       # @param max_length [Integer] The maximum length of the password
-      # @param mix_case [Boolean] Toggles if uppercased letters are allowed. If true, at least one will be added.
+      # @param mix_case [Boolean] Toggles if uppercased and lowercased letters are allowed. If true, at least one of each will be added. Otherwise, only lowercased letters will be used.
       # @param special_characters [Boolean] Toggles if special characters are allowed. If true, at least one will be added.
       #
       # @return [String]
@@ -144,21 +144,16 @@ module Faker
 
         target_length = rand(min_length..max_length)
 
-        password = []
-        character_bag = []
-
-        # use lower_chars by default and add upper_chars if mix_case
         lower_chars = self::LLetters
-        password << sample(lower_chars)
-        character_bag += lower_chars
-
         digits = ('0'..'9').to_a
-        password << sample(digits)
-        character_bag += digits
+
+        password = []
+        character_bag = lower_chars + digits
 
         if mix_case
           upper_chars = self::ULetters
           password << sample(upper_chars)
+          password << sample(lower_chars)
           character_bag += upper_chars
         end
 
