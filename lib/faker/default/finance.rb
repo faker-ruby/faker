@@ -101,7 +101,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Finance.condominium_fiscal_code #=> "012345678"
+      #   Faker::Finance.condominium_fiscal_code #=> "01234567890"
       #
       # @faker.version next
       def condominium_fiscal_code(country: 'IT')
