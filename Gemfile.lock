@@ -22,7 +22,7 @@ GEM
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
-    power_assert (2.0.3)
+    power_assert (2.0.5)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -54,7 +54,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    test-unit (3.6.2)
+    test-unit (3.6.7)
       power_assert
     timecop (0.9.10)
     unicode-display_width (3.1.3)
@@ -76,7 +76,7 @@ DEPENDENCIES
   rubocop-minitest (= 0.36.0)
   rubocop-rake (= 0.6.0)
   simplecov (= 0.22.0)
-  test-unit (= 3.6.2)
+  test-unit (= 3.6.7)
   timecop (= 0.9.10)
   yard (= 0.9.37)
 
