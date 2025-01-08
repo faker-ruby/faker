@@ -50,3 +50,25 @@ Faker::IdNumber.danish_id_number(gender: :female) #=> "050390-9980"
 # Generate a valid French Social Security number (INSEE number)
 Faker::IdNumber.french_insee_number #=> "22510589696868"
 ```
+
+## ID Number and Locales
+Besides the locale-specific ID Number methods. Faker supports retrieving localised calls to `.valid` and `.invalid`. 
+Here is an example:
+
+```ruby
+Faker::Config.locale = 'fr-FR'
+Faker::IdNumber.valid #=> "22510589696868"
+```
+
+Locales with specific intricacies are as such:
+
+### en-GB
+When provided with British English, unformatted'[National Insurance](https://www.gov.uk/national-insurance/your-national-insurance-number)' numbers are generated. 
+Note: Faker can only generate a subset of all possible legal/illegal national insurance numbers.
+
+```ruby
+Faker::Config.locale = 'en-GB'
+Faker::IdNumber.valid #=> "AJ405924A"
+Faker::IdNumber.invalid #=> "BG316764W"
+```
+
