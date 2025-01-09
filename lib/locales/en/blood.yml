@@ -7,7 +7,7 @@ en:
         - B
         - AB
       rh_factor:
-        - +
-        - '-'
+        - "+"
+        - "-"
       group:
         - "#{type}#{rh_factor}"
