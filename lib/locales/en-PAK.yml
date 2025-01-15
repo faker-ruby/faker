@@ -344,11 +344,23 @@ en-PAK:
         - Federally Administered Tribal Areas
         - Azad Jammu and Kashmir
         - Gilgit-Baltistan
+      state_abbr:
+        - PK-BA
+        - PK-KP
+        - PK-PB
+        - PK-SD
+        - PK-IS
+        - PK-TA
+        - PK-JK
+        - PK-GB
+
       default_country:
         - Pakistan
         - Islamic Republic of Pakistan
       default_country_code:
         - PK
+      default_time_zone:
+        - Asia/Karachi
     internet:
       domain_suffix:
         - pk
@@ -376,3 +388,17 @@ en-PAK:
         - "##########"
         - "### #######"
         - 03##-#######
+    cell_phone:
+      formats:
+        - "0311-#######"
+        - "0312-#######"          
+        - "0313-#######"
+        - "0314-#######"
+        - "0315-#######"
+        - "0300-#######"
+        - "0301-#######"
+        - "0321-#######"
+        - "0322-#######"
+        - "0345-#######"
+        - "0346-#######"
+        - "0346-#######"
