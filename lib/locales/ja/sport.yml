@@ -1,7 +1,7 @@
 ja:
   faker:
     sport:
-      summer_olympics: # Source https://olympics.com/jp/sports/summer-olympics
+      summer_olympics:
         - バスケットボール 3x3
         - アーチェリー
         - 体操
@@ -49,7 +49,7 @@ ja:
         - 水球
         - 重量挙げ
         - レスリング
-      winter_olympics: # Source https://olympics.com/jp/sports/winter-olympics
+      winter_olympics:
         - アルペンスキー
         - バイアスロン
         - ボブスレー
@@ -66,7 +66,7 @@ ja:
         - スキーマウンテニアリング
         - スノーボード
         - スピードスケート
-      summer_paralympics: # Source https://www.paralympic.org/jp/sports
+      summer_paralympics:
         - アーチェリー
         - 陸上競技
         - バドミントン
@@ -89,14 +89,14 @@ ja:
         - 車椅子フェンシング
         - 車椅子ラグビー
         - 車椅子テニス
-      winter_paralympics: # Source https://www.paralympic.org/jp/sports
+      winter_paralympics:
         - アルペンスキー
         - バイアスロン
         - クロスカントリースキー
         - アイスホッケー
         - スノーボード
         - 車椅子カーリング
-      ancient_olympics: # Source https://olympics.com/ioc/ancient-olympic-games/the-sports-events
+      ancient_olympics:
         - ボクシング
         - 戦車競走
         - 円盤投げ

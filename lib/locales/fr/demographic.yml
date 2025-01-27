@@ -1,4 +1,6 @@
 fr:
   faker:
     demographic:
-      sex: ["Homme", "Femme"]
+      sex:
+        - Homme
+        - Femme

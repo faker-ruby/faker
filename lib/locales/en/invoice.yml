@@ -3,4 +3,4 @@ en:
     invoice:
       reference:
         check_digit_method: method_731
-        pattern: '\d{3,19}#'
+        pattern: "\\d{3,19}#"

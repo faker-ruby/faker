@@ -1,18 +1,18 @@
 en:
   faker:
     sport:
-      summer_olympics: # Source https://olympics.com/en/sports/summer-olympics
+      summer_olympics:
         - 3x3 basketball
         - Archery
         - Artistic gymnastics
         - Artistic swimming
         - Athletics
         - Badminton
-        - Baseball # Technically part of "Baseball Softball" according to IOC website
+        - Baseball
         - Basketball
         - Beach volleyball
-        - BMX freestyle # Officially "Cycling BMX Freestyle"
-        - BMX racing # Officially "Cycling BMX Racing"
+        - BMX freestyle
+        - BMX racing
         - Boxing
         - Canoe/kayak flatwater
         - Canoe/kayak slalom
@@ -27,29 +27,29 @@ en:
         - Karate
         - Marathon swimming
         - Modern pentathlon
-        - Mountain bike # Officially "Cycling Mountain Bike"
+        - Mountain bike
         - Rhythmic gymnastics
-        - Road cycling # Officially "Cycling Road"
+        - Road cycling
         - Rowing
-        - Rugby # Officially "Rugby Sevens"
+        - Rugby
         - Sailing
         - Shooting
         - Skateboarding
-        - Softball # Technically part of "Baseball Softball" according to IOC website
+        - Softball
         - Sport climbing
         - Surfing
         - Swimming
         - Table tennis
         - Taekwondo
         - Tennis
-        - Track cycling # Officially "Cycling Track"
+        - Track cycling
         - Trampoline
         - Triathlon
         - Volleyball
         - Water polo
         - Weight lifting
         - Wrestling
-      winter_olympics: # Source https://olympics.com/en/sports/winter-olympics
+      winter_olympics:
         - Alpine skiing
         - Biathlon
         - Bobsleigh
@@ -66,7 +66,7 @@ en:
         - Ski mountaineering
         - Snowboard
         - Speed skating
-      summer_paralympics: # Source https://www.paralympic.org/sports
+      summer_paralympics:
         - Archery
         - Athletics
         - Badminton
@@ -89,14 +89,14 @@ en:
         - Wheelchair fencing
         - Wheelchair rugby
         - Wheelchair tennis
-      winter_paralympics: # Source https://www.paralympic.org/sports
+      winter_paralympics:
         - Alpine skiing
         - Biathlon
         - Cross-country skiing
         - Para ice hockey
         - Snowboard
         - Wheelchair curling
-      ancient_olympics: # Source https://olympics.com/ioc/ancient-olympic-games/the-sports-events
+      ancient_olympics:
         - Boxing
         - Chariot racing
         - Discus
