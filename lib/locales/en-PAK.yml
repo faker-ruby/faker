@@ -341,18 +341,16 @@ en-PAK:
         - Punjab
         - Sindh
         - Islamabad Capital Territory
-        - Federally Administered Tribal Areas
         - Azad Jammu and Kashmir
         - Gilgit-Baltistan
       state_abbr:
-        - PK-BA
-        - PK-KP
-        - PK-PB
-        - PK-SD
-        - PK-IS
-        - PK-TA
-        - PK-JK
-        - PK-GB
+        - BA
+        - KPK
+        - PB
+        - SD
+        - ICT
+        - AJK
+        - GB
 
       default_country:
         - Pakistan
