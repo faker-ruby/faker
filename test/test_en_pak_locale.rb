@@ -39,6 +39,6 @@ class TestEnPakLocale < Test::Unit::TestCase
   def test_en_pak_cell_phone_is_valid
     mobile = Faker::PhoneNumber.cell_phone
 
-    assert_match(/03\d{2}-\d{7}/, mobile)
+    assert_match(/03\d{2}\d{7}/, mobile)
   end
 end
