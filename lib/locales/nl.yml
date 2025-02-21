@@ -85,7 +85,13 @@ nl:
     phone_number:
       country_code:
         - '31'
-      formats: ["(####) ######", "##########", "06########", "06 #### ####"]
+      formats:
+        - "(####) ######"
+        - "##########"
+      cell_phone:
+        formats:
+          - "06########"
+          - "06 #### ####"
 
     university:
       prefix: [Universiteit, Hogeschool]
