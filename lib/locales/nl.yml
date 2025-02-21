@@ -83,6 +83,8 @@ nl:
         - "#{first_name} #{last_name} #{last_name}"
 
     phone_number:
+      country_code:
+        - '31'
       formats: ["(####) ######", "##########", "06########", "06 #### ####"]
 
     university:
