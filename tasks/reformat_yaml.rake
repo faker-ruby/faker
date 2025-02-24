@@ -2,6 +2,18 @@
 
 require 'yaml'
 
+desc 'Reformat all locales'
+task :reformat_locales do
+  path = File.absolute_path(File.join(__dir__, '..', 'lib', 'locales', '**', '*.yml'))
+  locales = Dir[path]
+
+  locales.each do |locale_path|
+    reformat_file(locale_path)
+  rescue StandardError => e
+    puts "Error reformatting #{locale_path}: #{e.message}"
+  end
+end
+
 desc 'Reformat a yaml file into a common format'
 task :reformat_yaml, [:filename] do |_, args|
   args.with_defaults(filename: nil)

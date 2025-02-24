@@ -113,7 +113,6 @@ ko:
         - 대한민국
       default_country_code:
         - KR
-
     adjective:
       positive:
         - 감사하는
@@ -250,7 +249,6 @@ ko:
         - 피곤한
         - 혼란스러운
         - 힘든
-
     creature:
       animal:
         name:
@@ -355,7 +353,6 @@ ko:
           - 호저
           - 황소
           - 흰개미
-
     color:
       name:
         - 빨간색
@@ -389,7 +386,6 @@ ko:
         - 검은색
         - 회색
         - 흰색
-
     commerce:
       department:
         - 의류
@@ -471,7 +467,6 @@ ko:
           - 특가
           - 시즌오프
           - 이벤트
-
     company:
       suffix:
         - 연구소
@@ -486,7 +481,6 @@ ko:
       name:
         - "#{prefix} #{Name.first_name}"
         - "#{Name.first_name} #{suffix}"
-
     dessert:
       variety:
         - 과일 케이크
@@ -564,7 +558,6 @@ ko:
         - 피스타치오
         - 호박
         - 흑임자
-
     food:
       allergens:
         - 게
@@ -803,7 +796,6 @@ ko:
         - 콩나물
         - 파
         - 호박
-
     emotion:
       adjective:
         - 걱정하는
@@ -892,7 +884,6 @@ ko:
         - 화
         - 후회
         - 희망
-
     games:
       pokemon:
         names:
@@ -1023,12 +1014,10 @@ ko:
           - 화염자동차
           - 환상빔
           - 흰안개
-
     gender:
       binary_types:
         - 여성
         - 남성
-
     hobby:
       activity:
         - 배드민턴
@@ -1064,7 +1053,6 @@ ko:
         - 태극권
         - 테니스
         - 플라잉 요가
-
     house:
       furniture:
         - 램프
@@ -1093,7 +1081,6 @@ ko:
         - 침실
         - 현관
         - 화장실
-
     internet:
       domain_suffix:
         - co.kr
@@ -1104,10 +1091,9 @@ ko:
         - net
         - or.kr
         - org
-
     kpop:
       girl_groups:
-        - (여자)아이들
+        - "(여자)아이들"
         - 뉴진스
         - 레드벨벳
         - 르세라핌
@@ -1190,7 +1176,6 @@ ko:
         - 탑
         - 헤이즈
         - 현아
-
     lorem:
       words:
         - 국가는
@@ -1321,7 +1306,6 @@ ko:
         - 같은
         - 효력을
         - 가진다.
-
     movie:
       title:
         - 7번방의 선물
@@ -1346,7 +1330,6 @@ ko:
         - 택시운전사
         - 포레스트 검프
         - 해리 포터와 마법사의 돌
-
     name:
       last_name:
         - 김
@@ -1395,13 +1378,11 @@ ko:
         - "#{last_name} #{first_name}"
       name_with_middle:
         - "#{first_name} #{last_name} #{last_name}"
-
     phone_number:
       formats:
-        - "0#-#####-####"
-        - "0##-###-####"
-        - "0##-####-####"
-
+        - 0#-#####-####
+        - 0##-###-####
+        - 0##-####-####
     space:
       planet:
         - 수성
@@ -1421,7 +1402,6 @@ ko:
         - 삼각형자리 은하
         - 센타우루스자리 A
         - 조각가자리 은하
-
     studio_ghibli:
       characters:
         - 가오나시
