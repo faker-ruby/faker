@@ -38,7 +38,7 @@ and it was the original impetus for the creation of this gem.
     - [Notes](#notes)
   - [Getting Started](#getting-started)
   - [Usage](#usage)
-      - [A note about the Generators versions](#a-note-about-the-generators-versions)
+    - [A note about the Generators versions](#a-note-about-the-generators-versions)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
     - [Customization](#customization)
@@ -89,7 +89,7 @@ Faker::ProgrammingLanguage.name #=> "Ruby"
 
 For a complete list of the generators, see [Generators](#generators).
 
-#### A note about the Generators versions
+### A note about the Generators versions
 
 If you get a `uninitialized constant Faker::[some_class]` error, your version of
 the gem is behind main.
