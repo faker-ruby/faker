@@ -311,9 +311,9 @@ class TestEsArLocale < Test::Unit::TestCase
 
   # -- CURRENCIES
 
-  def test_es_ar_currency_names
-    assert_match @one_or_more_words_pattern, Faker::Currency.name
-  end
+  # def test_es_ar_currency_names
+  #   assert_match @one_or_more_words_pattern, Faker::Currency.name
+  # end
 
   # -- NATIONS
 

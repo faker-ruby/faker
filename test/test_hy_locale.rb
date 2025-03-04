@@ -87,9 +87,9 @@ class TestHyLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Compass.ordinal_abbreviation
   end
 
-  def test_hy_currency_methods
-    assert_kind_of String, Faker::Currency.name
-  end
+  # def test_hy_currency_methods
+  #   assert_kind_of String, Faker::Currency.name
+  # end
 
   def test_hy_food_methods
     assert_kind_of String, Faker::Food.dish

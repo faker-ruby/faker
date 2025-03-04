@@ -1,6 +1,6 @@
 en:
   faker:
-    crypto_coin:
+    blockchain:
       coin:
         - "Bitcoin,          BTC,  https://i.imgur.com/psBNOBq.png"
         - "Bitcoin Cash,     BCC,  https://i.imgur.com/ViTjr9u.png"

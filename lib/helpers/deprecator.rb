@@ -79,6 +79,11 @@ module Faker
             new_constant: new_generator_constant,
             old_generator: old_generator_name
           }
+
+          # puts "HELLO"
+          # puts "new generator constant: #{new_generator_constant}"
+          # puts "old generator constant: #{old_generator_name}"
+          # puts "------------"
         end
       end
 

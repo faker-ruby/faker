@@ -40,8 +40,8 @@ module Faker
             image: image
           },
           credentials: {
-            token: Crypto.md5,
-            refresh_token: Crypto.md5,
+            token: Blockchain::Crypto.md5,
+            refresh_token: Blockchain::Crypto.md5,
             expires_at: Time.forward.to_i,
             expires: true
           },
@@ -62,7 +62,7 @@ module Faker
             },
             id_info: {
               iss: 'accounts.google.com',
-              at_hash: Crypto.md5,
+              at_hash: Blockchain::Crypto.md5,
               email_verified: true,
               sub: Number.number(digits: 28).to_s,
               azp: 'APP_ID',
@@ -102,7 +102,7 @@ module Faker
             verified: random_boolean
           },
           credentials: {
-            token: Crypto.md5,
+            token: Blockchain::Crypto.md5,
             expires_at: Time.forward.to_i,
             expires: true
           },
@@ -159,8 +159,8 @@ module Faker
             }
           },
           credentials: {
-            token: Crypto.md5,
-            secret: Crypto.md5
+            token: Blockchain::Crypto.md5,
+            secret: Blockchain::Crypto.md5
           },
           extra: {
             access_token: '',
@@ -228,8 +228,8 @@ module Faker
         last_name = auth.last_name.downcase
         location = city_state
         description = Lorem.sentence
-        token = Crypto.md5
-        secret = Crypto.md5
+        token = Blockchain::Crypto.md5
+        secret = Blockchain::Crypto.md5
         industry = Commerce.department
         url = "http://www.linkedin.com/in/#{first_name}#{last_name}"
         {
@@ -313,7 +313,7 @@ module Faker
             }
           },
           credentials: {
-            token: Crypto.md5,
+            token: Blockchain::Crypto.md5,
             expires: false
           },
           extra: {
@@ -376,8 +376,8 @@ module Faker
             last_name: auth.last_name
           },
           credentials: {
-            token: Crypto.md5,
-            refresh_token: Crypto.md5,
+            token: Blockchain::Crypto.md5,
+            refresh_token: Blockchain::Crypto.md5,
             expires_at: Time.forward.to_i,
             expires: true
           },
@@ -388,7 +388,7 @@ module Faker
               exp: Time.forward.to_i,
               iat: Time.forward.to_i,
               sub: uid,
-              at_hash: Crypto.md5,
+              at_hash: Blockchain::Crypto.md5,
               auth_time: Time.forward.to_i,
               email: auth.email,
               email_verified: true
@@ -423,9 +423,9 @@ module Faker
             expires_at: Time.forward.to_i,
             expires: true,
             token_type: 'Bearer',
-            id_token: Crypto.sha256,
-            token: Crypto.md5,
-            refresh_token: Crypto.md5
+            id_token: Blockchain::Crypto.sha256,
+            token: Blockchain::Crypto.md5,
+            refresh_token: Blockchain::Crypto.md5
           },
           extra: {
             raw_info: {

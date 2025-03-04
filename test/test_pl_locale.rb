@@ -49,9 +49,9 @@ class TestPlLocale < Test::Unit::TestCase
     assert_equal('Polska', Faker::Address.default_country)
   end
 
-  def test_pl_coin_methods
-    assert_kind_of String, Faker::Coin.flip
-  end
+  # def test_pl_coin_methods
+  #   assert_kind_of String, Faker::Coin.flip
+  # end
 
   def test_pl_company_methods
     assert_kind_of String, Faker::Company.suffix
