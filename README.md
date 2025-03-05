@@ -34,6 +34,7 @@ and it was the original impetus for the creation of this gem.
 
 - [Faker](#faker)
   - [Quick links](#quick-links)
+  - [In the media](#in-the-media)
   - [Table of Contents](#table-of-contents)
     - [Notes](#notes)
   - [Getting Started](#getting-started)
@@ -230,8 +231,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Computer](doc/default/computer.md)
   - [Faker::Construction](doc/default/construction.md)
   - [Faker::Cosmere](doc/default/cosmere.md)
-  - [Faker::Crypto](doc/default/crypto.md)
-  - [Faker::CryptoCoin](doc/default/crypto_coin.md)
   - [Faker::Currency](doc/default/currency.md)
   - [Faker::Date](doc/default/date.md)
   - [Faker::DcComics](doc/default/dc_comics.md)
@@ -306,6 +305,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 
   - [Faker::Blockchain::Aeternity](doc/blockchain/aeternity.md)
   - [Faker::Blockchain::Bitcoin](doc/blockchain/bitcoin.md)
+  - [Faker::Blockchain::Crypto](doc/blockchain/crypto.md)
+  - [Faker::Blockchain::Coin](doc/blockchain/coin.md)
   - [Faker::Blockchain::Ethereum](doc/blockchain/ethereum.md)
   - [Faker::Blockchain::Tezos](doc/blockchain/tezos.md)
 </details>

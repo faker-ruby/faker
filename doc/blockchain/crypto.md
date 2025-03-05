@@ -1,4 +1,4 @@
-# Faker::Crypto
+# Faker::Blockchain::Crypto
 
 Available since version 1.6.4.
 
