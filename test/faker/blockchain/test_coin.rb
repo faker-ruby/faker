@@ -53,29 +53,31 @@ class TestFakerCryptoCoin < Test::Unit::TestCase
   REGEX_URL_LOGO = /^https:\/\/i.imgur.com\/.......\./
 
   def setup
-    @tester = Faker::CryptoCoin
+    Faker::Deprecator.skip_warning do
+      @tester = Faker::CryptoCoin
+    end
   end
 
-  def test_coin_name
+  def test_deprecated_coin_name
     assert_match REGEX_COIN_NAME, @tester.coin_name
   end
 
-  def test_acronym
+  def test_deprecated_acronym
     assert_match REGEX_ACRONYM, @tester.acronym
   end
 
-  def test_url_logo
+  def test_deprecated_url_logo
     assert_match REGEX_URL_LOGO, @tester.url_logo
   end
 
-  def test_coin_array
+  def test_deprecated_coin_array
     assert_kind_of Array, @tester.coin_array
     assert_match REGEX_COIN_NAME, @tester.coin_array[COIN_NAME]
     assert_match REGEX_ACRONYM, @tester.coin_array[ACRONYM]
     assert_match REGEX_URL_LOGO, @tester.coin_array[URL_LOGO]
   end
 
-  def test_coin_hash
+  def test_deprecated_coin_hash
     assert_kind_of Hash, @tester.coin_hash
     assert @tester.coin_hash.key?(:name)
     assert @tester.coin_hash.key?(:acronym)
