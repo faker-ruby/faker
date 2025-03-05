@@ -2,7 +2,7 @@
 
 require_relative '../../test_helper'
 
-class TestFakerTezos < Test::Unit::TestCase
+class TestFakerBlockchainTezos < Test::Unit::TestCase
   def test_contract
     assert_match(/^KT1[1-9A-Za-z][^OIl]{20,40}/, Faker::Blockchain::Tezos.contract)
   end

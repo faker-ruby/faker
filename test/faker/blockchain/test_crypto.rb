@@ -2,7 +2,7 @@
 
 require_relative '../../test_helper'
 
-class TestFakerCrypto < Test::Unit::TestCase
+class TestFakerBlockchainCrypto < Test::Unit::TestCase
   def setup
     @tester = Faker::Blockchain::Crypto
   end

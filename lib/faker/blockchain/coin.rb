@@ -6,9 +6,9 @@ module Faker
       class << self
         extend Gem::Deprecate
 
-        NAME = 0
-        ACRONYM = 1
-        URL_LOGO = 2
+        ::NAME = 0
+        ::ACRONYM = 1
+        ::URL_LOGO = 2
 
         ##
         # [Deprecated] Produces a random blockchain coin name.
@@ -20,7 +20,7 @@ module Faker
         #
         # @faker.version 1.9.2
         def coin_name
-          coin[COIN_NAME]
+          coin[NAME]
         end
         deprecate :coin_name, :name, 2025, 4
 

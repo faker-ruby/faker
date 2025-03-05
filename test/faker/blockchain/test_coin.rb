@@ -2,7 +2,7 @@
 
 require_relative '../../test_helper'
 
-class TestFakerCoin < Test::Unit::TestCase
+class TestFakerBlockchainCoin < Test::Unit::TestCase
   REGEX_COIN_NAME = /[a-zA-Z .]{3,}/
   REGEX_ACRONYM = /\w+{3,}/
   REGEX_URL_LOGO = /^https:\/\/i.imgur.com\/.......\./
@@ -68,9 +68,9 @@ class TestFakerCryptoCoin < Test::Unit::TestCase
 
   def test_deprecated_coin_array
     assert_kind_of Array, @tester.coin_array
-    assert_match REGEX_COIN_NAME, @tester.coin_array[COIN_NAME]
-    assert_match REGEX_ACRONYM, @tester.coin_array[ACRONYM]
-    assert_match REGEX_URL_LOGO, @tester.coin_array[URL_LOGO]
+    assert_match REGEX_COIN_NAME, @tester.coin_array[Faker::Blockchain::Coin::NAME]
+    assert_match REGEX_ACRONYM, @tester.coin_array[Faker::Blockchain::Coin::ACRONYM]
+    assert_match REGEX_URL_LOGO, @tester.coin_array[Faker::Blockchain::Coin::URL_LOGO]
   end
 
   def test_deprecated_coin_hash
