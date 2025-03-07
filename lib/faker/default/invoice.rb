@@ -13,8 +13,8 @@ module Faker
       # @return [Integer]
       #
       # @example
-      #   Faker::Finance.amount_between #=> 0
-      #   Faker::Finance.amount_between(0, 10) #=> 4.33
+      #   Faker::Invoice.amount_between #=> 0
+      #   Faker::Invoice.amount_between(from: 0, to: 10) #=> 4.33
       #
       # @faker.version 1.9.0
       def amount_between(from: 0, to: 0)
