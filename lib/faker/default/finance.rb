@@ -97,11 +97,11 @@ module Faker
       ##
       # Returns a random condominium fiscal code.
       #
-      # @param country [String] Two capital letter country code to use for the vat number.
+      # @param country [String] Two capital letter country code to use for the condominium fiscal code number.
       # @return [String]
       #
       # @example
-      #   Faker::Finance.condominium_fiscal_code #=> "012345678"
+      #   Faker::Finance.condominium_fiscal_code #=> "01234567890"
       #
       # @faker.version next
       def condominium_fiscal_code(country: 'IT')

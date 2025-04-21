@@ -103,7 +103,7 @@ module Faker
     end
 
     def self.skip_warning?
-      skip == true
+      @skip == true
     end
 
     def self.skip
