@@ -1,0 +1,128 @@
+en:
+  faker:
+    airline:
+      US:
+        name:
+          - American Airlines
+          - United Airlines
+          - Delta Air Lines
+          - Southwest Airlines
+          - Alaska Airlines
+          - JetBlue Airways
+          - Spirit Airlines
+          - Frontier Airlines
+          - Hawaiian Airlines
+          - Allegiant Air
+        iata:
+          - AA
+          - UA
+          - DL
+          - WN
+          - AS
+          - B6
+          - NK
+          - F9
+          - HA
+          - G4
+      CA:
+        name:
+          - Air Canada
+          - WestJet
+          - Air Transat
+          - Porter Airlines
+          - Flair Airlines
+          - Air North
+          - Canadian North
+        iata:
+          - AC
+          - WS
+          - TS
+          - PD
+          - F8
+          - 4N
+          - 5T
+      GB:
+        name:
+          - British Airways
+          - Virgin Atlantic
+          - easyJet
+          - Jet2
+          - TUI Airways
+          - Loganair
+          - Eastern Airways
+        iata:
+          - BA
+          - VS
+          - U2
+          - LS
+          - BY
+          - LM
+          - T3
+      DE:
+        name:
+          - Lufthansa
+          - Eurowings
+          - Condor
+          - TUI fly Deutschland
+          - Hahn Air
+        iata:
+          - LH
+          - EW
+          - DE
+          - X3
+          - HR
+      AE:
+        name:
+          - Emirates
+          - Etihad Airways
+          - Air Arabia
+          - flydubai
+        iata:
+          - EK
+          - EY
+          - G9
+          - FZ
+      QA:
+        name:
+          - Qatar Airways
+        iata:
+          - QR
+      JP:
+        name:
+          - Japan Airlines
+          - All Nippon Airways
+          - Peach Aviation
+          - Skymark Airlines
+          - Japan Air Commuter
+          - StarFlyer
+          - Fuji Dream Airlines
+        iata:
+          - JL
+          - NH
+          - MM
+          - BC
+          - JC
+          - 7G
+          - JH
+      AU:
+        name:
+          - Qantas
+          - Virgin Australia
+          - Jetstar Airways
+          - Rex Airlines
+          - Alliance Airlines
+        iata:
+          - QF
+          - VA
+          - JQ
+          - ZL
+          - QQ
+      SG:
+        name:
+          - Singapore Airlines
+          - Scoot
+          - Jetstar Asia Airways
+        iata:
+          - SQ
+          - TR
+          - 3K 
