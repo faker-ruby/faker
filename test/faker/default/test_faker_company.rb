@@ -77,7 +77,7 @@ class TestFakerCompany < Test::Unit::TestCase
     checksum = abn_checksum(abn)
 
     assert_match(/\d{11}/, abn)
-    assert_predicate((checksum % 89), :zero?)
+    assert_predicate(checksum % 89, :zero?)
   end
 
   def test_profession
@@ -167,8 +167,8 @@ class TestFakerCompany < Test::Unit::TestCase
 
     even_control = "#{even_base}#{even_luhn_complement}"
 
-    assert_predicate((luhn_checksum(odd_control) % 10), :zero?)
-    assert_predicate((luhn_checksum(even_control) % 10), :zero?)
+    assert_predicate(luhn_checksum(odd_control) % 10, :zero?)
+    assert_predicate(luhn_checksum(even_control) % 10, :zero?)
   end
 
   def test_brazilian_company_number
@@ -218,7 +218,7 @@ class TestFakerCompany < Test::Unit::TestCase
     number = base_number[0..-2]
     checksum = base_number.chars.last.to_i
 
-    assert_predicate((inn_checksum(number) - checksum), :zero?)
+    assert_predicate(inn_checksum(number) - checksum, :zero?)
   end
 
   def test_sic_code
