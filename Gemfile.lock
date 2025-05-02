@@ -18,7 +18,7 @@ GEM
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
     method_source (1.1.0)
-    minitest (5.25.4)
+    minitest (5.25.5)
     parallel (1.26.3)
     parser (3.3.7.1)
       ast (~> 2.4.1)
@@ -73,7 +73,7 @@ PLATFORMS
 DEPENDENCIES
   benchmark
   faker!
-  minitest (= 5.25.4)
+  minitest (= 5.25.5)
   pry (= 0.15.2)
   rake (= 13.2.1)
   rubocop (= 1.73.0)
