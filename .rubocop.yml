@@ -78,9 +78,6 @@ Style/FormatStringToken:
 
 Style/FrozenStringLiteralComment:
   Description: Add the frozen_string_literal comment to the top of files to help transition from Ruby 2.3.0 to Ruby 3.0.
-  Exclude:
-    - 'lib/faker/default/json.rb'
-    - 'test/faker/default/test_faker_json.rb'
 
 Style/For:
   Description: Checks use of for or each in multiline loops.
