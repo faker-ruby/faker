@@ -63,7 +63,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   def test_mileage
     mileage = @tester.mileage(min: 5, max: 10)
 
-    assert mileage >= 5 && mileage <= 10
+    assert mileage.between?(5, 10)
   end
 
   def test_license_plate

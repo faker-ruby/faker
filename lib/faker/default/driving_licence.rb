@@ -104,7 +104,7 @@ module Faker
           end
           g.computed do
             gender_marker = gender == :female ? 50 : 0
-            format('%02d', (dob.month + gender_marker))
+            format('%02d', dob.month + gender_marker)
           end
           g.computed do
             format('%02d', dob.day)

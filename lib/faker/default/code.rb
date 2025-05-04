@@ -168,6 +168,7 @@ module Faker
 
       # Reporting body identifier
       RBI = %w[01 10 30 33 35 44 45 49 50 51 52 53 54 86 91 98 99].freeze
+      private_constant :RBI
 
       def generate_imei
         str = Array.new(15, 0)
@@ -269,7 +270,10 @@ module Faker
       end
 
       EAN_CHECK_DIGIT8 = [3, 1, 3, 1, 3, 1, 3].freeze
+      private_constant :EAN_CHECK_DIGIT8
+
       EAN_CHECK_DIGIT13 = [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3].freeze
+      private_constant :EAN_CHECK_DIGIT13
 
       def rut_verificator_digit(rut)
         total = rut.to_s.rjust(8, '0').chars.zip(%w[3 2 7 6 5 4 3 2]).collect { |a, b| a.to_i * b.to_i }.inject(:+)

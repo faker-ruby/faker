@@ -183,7 +183,7 @@ class TestFakerInternet < Test::Unit::TestCase
     assert_match(/[a-z]/, password)
     assert_match(/[A-Z]/, password)
     assert_match(/[0-9]/, password)
-    assert_includes((default_min_length..default_max_length), password.length, 'Generated password length is incorrect')
+    assert_includes(default_min_length..default_max_length, password.length, 'Generated password length is incorrect')
   end
 
   def test_password_with_integer_arg

@@ -12,7 +12,7 @@ class TestI18nLoad < Test::Unit::TestCase
 
       gemfile do
         source 'https://rubygems.org'
-        gem 'minitest', '5.25.4'
+        gem 'minitest', '5.25.5'
         gem 'i18n'
       end
 
