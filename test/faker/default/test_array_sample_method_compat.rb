@@ -39,7 +39,7 @@ class TestArraySampleMethodCompatibility < Test::Unit::TestCase
 
     assert_kind_of Array, result
     assert_equal(2, result.length)
-    assert_empty((result - source))
+    assert_empty(result - source)
   end
 
   def test_returns_source_array_with_integer_param_equal_or_bigger_than_source_length
@@ -47,12 +47,12 @@ class TestArraySampleMethodCompatibility < Test::Unit::TestCase
     result = source.sample(2)
 
     assert_kind_of Array, result
-    assert_predicate((source.sort <=> result.sort), :zero?)
+    assert_predicate(source.sort <=> result.sort, :zero?)
 
     result = source.sample(3)
 
     assert_kind_of Array, result
-    assert_predicate((source.sort <=> result.sort), :zero?)
+    assert_predicate(source.sort <=> result.sort, :zero?)
   end
 
   def test_raises_argument_error_with_negative_param

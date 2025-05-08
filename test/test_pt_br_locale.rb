@@ -48,24 +48,24 @@ class TestPtBrLocale < Test::Unit::TestCase
 
     assert_kind_of Array, Faker::Color.rgb_color
     Faker::Color.rgb_color.each do |value|
-      assert value >= 0 && value <= 255
+      assert value.between?(0, 255)
     end
 
     assert_kind_of Array, Faker::Color.hsl_color
     hue = Faker::Color.hsl_color[0]
 
-    assert hue >= 0 && hue <= 360
+    assert hue.between?(0, 360)
     Faker::Color.hsl_color[1..2].each do |value|
-      assert value >= 0 && value <= 1
+      assert value.between?(0, 1)
     end
 
     assert_kind_of Array, Faker::Color.hsla_color
     assert_kind_of Array, Faker::Color.hsl_color
     hue = Faker::Color.hsl_color[0]
 
-    assert hue >= 0 && hue <= 360
+    assert hue.between?(0, 360)
     Faker::Color.hsl_color[1..3].each do |value|
-      assert value >= 0 && value <= 1
+      assert value.between?(0, 1)
     end
   end
 
