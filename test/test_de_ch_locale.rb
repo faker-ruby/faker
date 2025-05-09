@@ -26,4 +26,8 @@ class TestDeChLocale < Test::Unit::TestCase
   def test_de_ch_internet_methods
     assert_kind_of String, Faker::Internet.domain_suffix
   end
+
+  def test_de_ch_mountain_methods
+    assert_kind_of String, Faker::Mountain.name
+  end
 end
