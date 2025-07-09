@@ -439,6 +439,7 @@ module Faker
         # If it's not numeric, or not 8 or 9 digits long, it can never be a valid Dutch BSN.
         return false unless /^\d{8,9}$/.match?(bsn)
 
+        # It must match the BSN-variant of the "Elf Proef" (see https://nl.wikipedia.org/wiki/Elfproef#Burgerservicenummer )
         sum = 0
         bsn.chars.each_with_index do |c, i|
           sum += Integer(c) * (i == length - 1 ? -1 : length - i)
