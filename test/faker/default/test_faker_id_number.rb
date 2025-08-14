@@ -274,6 +274,12 @@ class TestFakerIdNumber < Test::Unit::TestCase
     end
   end
 
+  def test_dutch_bsn
+    sample = @tester.dutch_bsn
+
+    assert_dutch_bsn sample
+  end
+
   private
 
   def south_african_id_number_to_date_of_birth_string(sample)
@@ -286,5 +292,11 @@ class TestFakerIdNumber < Test::Unit::TestCase
     assert_include Faker::IdNumber::ZA_CITIZENSHIP_DIGITS, sample[10]
     assert_equal Faker::IdNumber::ZA_RACE_DIGIT, sample[11]
     assert Date.parse(south_african_id_number_to_date_of_birth_string(sample))
+  end
+
+  def assert_dutch_bsn(sample)
+    assert_equal 9, sample.length
+    assert_kind_of String, sample
+    refute_nil Integer(sample)
   end
 end
