@@ -1,0 +1,10 @@
+ar:
+  faker:
+    university:
+      prefix: [ جامعة, كلّية, معهد, أكاديميّة ]
+      suffix: [ الشمالية, الغربيّة, الجنوبية, الشرقية, الأولى ]
+      name:
+        - "#{Name.last_name} #{University.suffix}"
+        - "#{University.prefix} #{Name.last_name} #{University.suffix}"
+        - "#{University.prefix} #{Name.last_name}"
+        - "#{University.prefix} #{Address.state} #{University.suffix}"

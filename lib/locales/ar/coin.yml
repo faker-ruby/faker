@@ -1,0 +1,6 @@
+ar:
+  faker:
+    coin:
+      flip:
+        - وجه
+        - كتابة
