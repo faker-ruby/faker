@@ -279,8 +279,6 @@ module Faker
       #
       # @faker.version next
       def dutch_bsn
-        bsn = ''
-
         bsn = Faker::Number.numerify('#########') until valid_dutch_bsn?(bsn)
 
         bsn
@@ -434,15 +432,14 @@ module Faker
       end
 
       def valid_dutch_bsn?(bsn)
-        length = bsn.length
-
         # If it's not numeric, or not 8 or 9 digits long, it can never be a valid Dutch BSN.
         return false unless /^\d{8,9}$/.match?(bsn)
 
         # It must match the BSN-variant of the "Elf Proef" (see https://nl.wikipedia.org/wiki/Elfproef#Burgerservicenummer )
         sum = 0
+        length = bsn.length
         bsn.chars.each_with_index do |c, i|
-          sum += Integer(c) * (i == length - 1 ? -1 : length - i)
+          sum += c.to_i * (i == length - 1 ? -1 : length - i)
         end
 
         (sum % 11).zero?
