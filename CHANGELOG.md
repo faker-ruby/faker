@@ -1,5 +1,62 @@
 # Changelog
 
+## [v3.5.2](https://github.com/faker-ruby/faker/tree/v3.5.2) (2025-07-01)
+
+Happy Canada Day! 🍁
+
+This version adds and improves some locales and fixes some bugs.
+
+Thanks to all contributors!
+
+### Improvements & Bug fixes
+* Correct `Faker::Address.city` and `Faker::Address.street_address` for `:fr` locale by @brupla6126 in https://github.com/faker-ruby/faker/pull/3018
+* fix condominium_fiscal_code generator length from 9 to 11 characters by @FiloSpaTeam in https://github.com/faker-ruby/faker/pull/3037
+* Add Cell Phone, Default Time Zone and State Abbreviation translation for en-PAK locale by @wonderer007 in https://github.com/faker-ruby/faker/pull/3024
+* Fix usage docs header indentation by @jaredsmithse in https://github.com/faker-ruby/faker/pull/3049
+* Fix nl phone format by @klaaspieter in https://github.com/faker-ruby/faker/pull/3050
+* Fix typo in `ja/book` locale by @thdaraujo in https://github.com/faker-ruby/faker/pull/3062
+* fix a typo by @jethrodaniel in https://github.com/faker-ruby/faker/pull/3060
+* Fix typo in `restaurant.yml` by @daniel-nerdgeschoss in https://github.com/faker-ruby/faker/pull/3067
+* Fix city address with number in `locales/fr/address.yml` by @brupla6126 in https://github.com/faker-ruby/faker/pull/3071
+* Fix unclosed quote in `locales/en/cosmere.yml` by @bensheldon in https://github.com/faker-ruby/faker/pull/3075
+* Remove inappropriate word from ja lorem by @se4weed in https://github.com/faker-ruby/faker/pull/3095
+* Add mountains to de-CH locale by @codez in https://github.com/faker-ruby/faker/pull/3066
+* Bump i18n from 1.14.6 to 1.14.7 by @dependabot in https://github.com/faker-ruby/faker/pull/3042
+
+### Chore
+* ci: run against Ruby 3.4 by @thdaraujo in https://github.com/faker-ruby/faker/pull/3079
+* Fix Broken CI by @wonderer007 in https://github.com/faker-ruby/faker/pull/3073
+
+### Update local dependencies
+* Bump rubocop from 1.67.0 to 1.68.0 by @dependabot in https://github.com/faker-ruby/faker/pull/3020
+* Bump rubocop from 1.68.0 to 1.69.2 by @dependabot in https://github.com/faker-ruby/faker/pull/3035
+* Bump rubocop version + offenses fixes by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3053
+* deps: update dev dependencies by @thdaraujo in https://github.com/faker-ruby/faker/pull/3078
+* Bump rubocop-minitest and fix rubocop's offense by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3052
+* Bump rubocop-minitest from 0.38.0 to 0.38.1 by @dependabot in https://github.com/faker-ruby/faker/pull/3088
+* Bump rubocop-rake from 0.6.0 to 0.7.1 by @dependabot in https://github.com/faker-ruby/faker/pull/3059
+* deps: bump `rubocop-minitest` from `0.37.1` to `0.38.0`. by @thdaraujo in https://github.com/faker-ruby/faker/pull/3080
+* Bump minitest from 5.25.1 to 5.25.4 by @dependabot in https://github.com/faker-ruby/faker/pull/3031
+* Bump test-unit from 3.6.2 to 3.6.7 by @dependabot in https://github.com/faker-ruby/faker/pull/3038
+* Bump benchmark from 0.3.0 to 0.4.0 by @dependabot in https://github.com/faker-ruby/faker/pull/3021
+* Bump benchmark from 0.4.0 to 0.4.1 by @dependabot in https://github.com/faker-ruby/faker/pull/3087
+* Bump pry from 0.14.2 to 0.15.2 by @dependabot in https://github.com/faker-ruby/faker/pull/3039
+* Bump rake from 13.2.1 to 13.3.0 by @dependabot in https://github.com/faker-ruby/faker/pull/3086
+* Bump test-unit from 3.6.8 to 3.6.9 by @dependabot in https://github.com/faker-ruby/faker/pull/3096
+
+### New Contributors
+* @brupla6126 made their first contribution in https://github.com/faker-ruby/faker/pull/3018
+* @jaredsmithse made their first contribution in https://github.com/faker-ruby/faker/pull/3049
+* @klaaspieter made their first contribution in https://github.com/faker-ruby/faker/pull/3050
+* @jethrodaniel made their first contribution in https://github.com/faker-ruby/faker/pull/3060
+* @daniel-nerdgeschoss made their first contribution in https://github.com/faker-ruby/faker/pull/3067
+* @bensheldon made their first contribution in https://github.com/faker-ruby/faker/pull/3075
+* @se4weed made their first contribution in https://github.com/faker-ruby/faker/pull/3095
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.5.1...v3.5.2
+
+---------------------------------
+
 ## [v3.5.1](https://github.com/faker-ruby/faker/tree/v3.5.1) (2024-10-18)
 
 Happy October! 🎃
@@ -10,7 +67,7 @@ Besides that, this version removes deprecated generators, fixes some bugs, and a
 
 Thanks to all contributors!
 
-## Breaking Changes
+### Breaking Changes
 * Drop support for Ruby 2.7 by @tatheerf02 in https://github.com/faker-ruby/faker/pull/3006
 * Removes deprecated generators by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3014
 
@@ -46,7 +103,7 @@ The following deprecated generators are being removed. Please use the new genera
 * Bump yard from 0.9.36 to 0.9.37 by @dependabot in https://github.com/faker-ruby/faker/pull/3000
 * Bump rubocop from 1.65.1 to 1.66.1 by @dependabot in https://github.com/faker-ruby/faker/pull/3001
 
-## New Contributors
+### New Contributors
 * @murichristopher made their first contribution in https://github.com/faker-ruby/faker/pull/2960
 * @admtnnr made their first contribution in https://github.com/faker-ruby/faker/pull/2996
 * @dirschn made their first contribution in https://github.com/faker-ruby/faker/pull/3007
@@ -93,7 +150,7 @@ Breaking change was introduced in "Add test range param to NHS numbers" by @nean
 * Bump rubocop from 1.64.1 to 1.65.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2979
 * Bump rubocop-minitest from 0.35.0 to 0.35.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2980
 
-## New Contributors
+### New Contributors
 * @twk-mn made their first contribution in https://github.com/faker-ruby/faker/pull/2961
 * @neanias made their first contribution in https://github.com/faker-ruby/faker/pull/2947
 * @garrettgregor made their first contribution in https://github.com/faker-ruby/faker/pull/2963
@@ -136,7 +193,7 @@ Breaking change was introduced in "Add test range param to NHS numbers" by @nean
 * Bump minitest from 5.22.3 to 5.23.1 by @dependabot in https://github.com/faker-ruby/faker/pull/2957
 * Bump rubocop from 1.63.4 to 1.64.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2958
 
-## New Contributors
+### New Contributors
 
 * @connie-feng made their first contribution in https://github.com/faker-ruby/faker/pull/2930
 * @andrelaszlo made their first contribution in https://github.com/faker-ruby/faker/pull/2927
@@ -291,7 +348,7 @@ This version:
 * Bump rubocop from 1.57.1 to 1.57.2 by @dependabot in https://github.com/faker-ruby/faker/pull/2844
 * Bump timecop from 0.9.6 to 0.9.8 by @dependabot in https://github.com/faker-ruby/faker/pull/2811
 
-## New Contributors
+### New Contributors
 * @BelaBartok39 made their first contribution in https://github.com/faker-ruby/faker/pull/2812
 * @fernandomenolli made their first contribution in https://github.com/faker-ruby/faker/pull/2816
 * @hoshy made their first contribution in https://github.com/faker-ruby/faker/pull/2818
@@ -355,7 +412,7 @@ Other changes included in this version:
 * Update rubocop-minitest requirement from = 0.30.0 to = 0.31.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2759
 * Bump minitest from 5.18.1 to 5.19.0 by @dependabot in https://github.com/faker-ruby/faker/pull/2804
 
-## New Contributors
+### New Contributors
 * @old-dead-account made their first contribution in https://github.com/faker-ruby/faker/pull/2742
 * @IvanReyesO7 made their first contribution in https://github.com/faker-ruby/faker/pull/2744
 * @DeepakRaj228 made their first contribution in https://github.com/faker-ruby/faker/pull/2741
@@ -422,7 +479,7 @@ Other changes included in this version:
 * Add Faker::Company.department generator by @acuppy in https://github.com/faker-ruby/faker/pull/2737
 * Update Pull Request template and guides by @stefannibrasil in https://github.com/faker-ruby/faker/pull/2749
 
-## New Contributors
+### New Contributors
 * @lexisvar made their first contribution in https://github.com/faker-ruby/faker/pull/2699
 * @danieldiekmeier made their first contribution in https://github.com/faker-ruby/faker/pull/2700
 * @AaronRustad made their first contribution in https://github.com/faker-ruby/faker/pull/2706
