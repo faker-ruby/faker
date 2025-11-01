@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'benchmark'
-gem 'minitest', '5.25.5'
+gem 'minitest', '5.26.0'
 gem 'pry', '0.15.2'
 gem 'rake', '13.3.1'
 gem 'rubocop', '1.75.4'
