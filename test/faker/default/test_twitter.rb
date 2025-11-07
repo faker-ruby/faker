@@ -8,28 +8,34 @@ class TestFakerTwitter < Test::Unit::TestCase
   end
 
   def test_user
-    user = @tester.user
+    assert_deprecated do
+      user = @tester.user
 
-    assert_kind_of Hash, user
-    assert_equal(41, user.keys.count)
-    assert_kind_of Hash, user[:status]
-    assert_nil user[:status][:user]
+      assert_kind_of Hash, user
+      assert_equal(41, user.keys.count)
+      assert_kind_of Hash, user[:status]
+      assert_nil user[:status][:user]
+    end
   end
 
   def test_user_with_email
-    user = @tester.user(include_email: true)
+    assert_deprecated do
+      user = @tester.user(include_email: true)
 
-    assert_kind_of Hash, user
-    assert_equal(42, user.keys.count)
-    assert_kind_of String, user[:email]
+      assert_kind_of Hash, user
+      assert_equal(42, user.keys.count)
+      assert_kind_of String, user[:email]
+    end
   end
 
   def test_user_without_status
-    user = @tester.user(include_status: false)
+    assert_deprecated do
+      user = @tester.user(include_status: false)
 
-    assert_kind_of Hash, user
-    assert_equal(40, user.keys.count)
-    assert_nil user[:status]
+      assert_kind_of Hash, user
+      assert_equal(40, user.keys.count)
+      assert_nil user[:status]
+    end
   end
 
   def test_status
@@ -58,5 +64,14 @@ class TestFakerTwitter < Test::Unit::TestCase
     assert_kind_of Hash, status[:entities]
     assert_equal(1, status[:entities][:media].count)
     assert_equal(10, status[:entities][:media].first.keys.count)
+  end
+
+  def assert_deprecated(&block)
+    warning = with_captured_stdout(&block)
+    result = yield block
+
+    refute_predicate warning, :empty?, 'Expected a deprecation warning within the block but received none'
+
+    result
   end
 end

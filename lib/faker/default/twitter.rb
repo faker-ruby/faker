@@ -17,6 +17,9 @@ module Faker
       #
       # @faker.version 1.7.3
       def user(include_status: true, include_email: false)
+        $stdout.puts('DEPRECATION WARNING: Faker::Internet is deprecated. Use Faker::X instead. Some return attributes \
+          will be removed, check the CHANGELOG for more details.')
+
         user_id = id
         background_image_url = Faker::LoremFlickr.image(size: '600x400')
         profile_image_url = Faker::Avatar.image(slug: user_id, size: '48x48')
