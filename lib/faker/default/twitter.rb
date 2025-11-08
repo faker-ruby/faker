@@ -17,8 +17,8 @@ module Faker
       #
       # @faker.version 1.7.3
       def user(include_status: true, include_email: false)
-        $stdout.puts('DEPRECATION WARNING: Faker::Internet is deprecated. Use Faker::X instead. Some return attributes \
-          will be removed, check the CHANGELOG for more details.')
+        warn('DEPRECATION WARNING: Faker::Twitter is deprecated. Use Faker::X instead. Some return attributes \
+          will be removed, check the docs for more details.')
 
         user_id = id
         background_image_url = Faker::LoremFlickr.image(size: '600x400')
@@ -84,6 +84,9 @@ module Faker
       #
       # @faker.version 1.7.3
       def status(include_user: true, include_photo: false)
+        warn('DEPRECATION WARNING: Faker::Twitter is deprecated. Use Faker::X instead. Some return attributes \
+          will be removed, check the docs for more details.')
+
         status_id = id
         status = {
           id: status_id,
@@ -126,6 +129,8 @@ module Faker
       #
       # @faker.version 1.7.3
       def screen_name
+        warn('DEPRECATION WARNING: Faker::Twitter is deprecated. Use Faker::X instead.')
+
         Faker::Internet.username(specifier: nil, separators: ['_'])[0...20]
       end
 
@@ -204,6 +209,179 @@ module Faker
             }
           }
         }
+      end
+    end
+  end
+
+  class X < Base
+    class << self
+      ##
+      # Produces a random X user based on X's v2 API.
+      #
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::X.user #=>  { data: [{:id=>"8821452687517076614", :name=>"Lincoln Paucek", :screen_name=>"cody"...
+      #
+      # @faker.version 1.7.3
+      def user
+        author_id = Faker::Number.between(from: 1, to: 9_223_372_036_854_775_807)
+
+        {
+          data: [
+            {
+              author_id: author_id.to_s,
+              id: id.to_s,
+              text: Faker::Lorem.sentence
+            }
+          ],
+          includes: {
+            users: [
+              {
+                public_metrics: {
+                  followers_count: Faker::Number.between(to: 1, from: 1_000),
+                  following_count: Faker::Number.between(to: 1, from: 200),
+                  tweet_count: Faker::Number.between(to: 1, from: 10_000),
+                  listed_count: Faker::Number.between(to: 1, from: 1_000)
+                },
+                username: screen_name,
+                pinned_tweet_id: Faker::Number.between(from: 1, to: 9_223_372_036_854_775_807).to_s,
+                entities: entities(url: url),
+                description: Faker::Lorem.sentence,
+                name: Faker::Name.name,
+                verified: Faker::Boolean.boolean(true_ratio: 0.1),
+                location: Faker::Internet.public_ip_v4_address,
+                id: author_id.to_s,
+                protected: Faker::Boolean.boolean(true_ratio: 0.1),
+                url: url,
+                profile_image_url: Faker::Avatar.image(slug: id, size: '48x48'),
+                created_at: created_at
+              }
+            ]
+          }
+        }
+      end
+
+      ##
+      # Produces a random X tweet with default attributes.
+      #
+      # @param include_user [Boolean] Include user details
+      # @param include_media [Boolean] Include user media (photo) details
+      # @return [Hash]
+      #
+      # @example
+      #   Faker::X.tweet #=> { data: [{:id=>"8821452687517076614", :text=>"Ea et laboriosam vel non."...
+      #   Faker::X.tweet(include_media: true) # Get a tweet object with a photo media attachment
+      #   Faker::X.tweet(include_user: true) # Get a tweet object with an user details
+      #
+      # @faker.version 1.7.3
+      def tweet(include_media: false, include_user: false)
+        tweet = {}
+        conversation_id = id.to_s
+
+        data = [
+          {
+            id: conversation_id,
+            text: Faker::Lorem.sentence,
+            lang: Faker::Address.country_code,
+            conversation_id: conversation_id,
+            created_at: created_at,
+            public_metrics: {
+              retweet_count: Faker::Number.between(to: 1, from: 100),
+              reply_count: Faker::Number.between(to: 1, from: 20),
+              like_count: Faker::Number.between(to: 1, from: 25),
+              quote_count: Faker::Number.between(to: 1, from: 10)
+            },
+            possibly_sensitive: Faker::Boolean.boolean(true_ratio: 0.1),
+            entities: entities(url: url),
+            in_reply_to_user_id: Faker::Boolean.boolean(true_ratio: 0.1)
+          }
+        ]
+
+        tweet[:data] = data
+        includes = {}
+
+        if include_media
+          media_key = Faker::Number.between(from: 1, to: 9_223_372_036_854_775_807).to_s
+
+          includes[:media] = media(media_key)
+          tweet[:data] << { attachments: { media_keys: [media_key] } }
+        end
+
+        includes[:users] = Faker::X.user[:includes][:users] if include_user
+
+        unless includes.empty?
+          tweet[:includes] = includes
+        end
+
+        tweet
+      end
+
+      ##
+      # Produces a random screen_name.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::X.screen_name #=> "audreanne_hackett"
+      #
+      # @faker.version 1.7.3
+      def screen_name
+        Faker::Internet.username(specifier: nil, separators: ['_'])[0...20]
+      end
+
+      private
+
+      def id
+        Faker::Number.between(from: 1, to: 9_223_372_036_854_775_807)
+      end
+
+      def created_at
+        Faker::Date.between(from: '2006-03-21', to: ::Date.today).strftime('%Y-%m-%dT%H:%M:%S%:z')
+      end
+
+      def url
+        "https://t.co/#{Faker::Lorem.characters(number: 10)}"
+      end
+
+      def entities(url:)
+        display_url = Faker::Internet.url(host: 'example.com')
+
+        {
+          url: {
+            urls: [
+              {
+                url: url,
+                expanded_url: display_url,
+                display_url: display_url.sub('http://', '')
+              }
+            ]
+          },
+          description: {
+            hashtags: [
+              {
+                tag: Faker::Lorem.word.capitalize
+              }
+            ]
+          }
+        }
+      end
+
+      def media(media_key)
+        expanded_url = Faker::LoremFlickr.image(size: '1064x600')
+
+        [{
+          type: 'photo',
+          indices: [103, 126],
+          height: Faker::Number.between(to: 1, from: 1000),
+          media_key: media_key,
+          preview_image_url: expanded_url,
+          width: Faker::Number.between(to: 1, from: 2000),
+          url: "https://t.co/#{Faker::Lorem.characters(number: 10)}",
+          expanded_url: expanded_url,
+          display_url: expanded_url.sub('https://', ''),
+          alt_text: Faker::Lorem.sentence
+        }]
       end
     end
   end

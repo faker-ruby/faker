@@ -8,34 +8,28 @@ class TestFakerTwitter < Test::Unit::TestCase
   end
 
   def test_user
-    assert_deprecated do
-      user = @tester.user
+    user = @tester.user
 
-      assert_kind_of Hash, user
-      assert_equal(41, user.keys.count)
-      assert_kind_of Hash, user[:status]
-      assert_nil user[:status][:user]
-    end
+    assert_kind_of Hash, user
+    assert_equal(41, user.keys.count)
+    assert_kind_of Hash, user[:status]
+    assert_nil user[:status][:user]
   end
 
   def test_user_with_email
-    assert_deprecated do
-      user = @tester.user(include_email: true)
+    user = @tester.user(include_email: true)
 
-      assert_kind_of Hash, user
-      assert_equal(42, user.keys.count)
-      assert_kind_of String, user[:email]
-    end
+    assert_kind_of Hash, user
+    assert_equal(42, user.keys.count)
+    assert_kind_of String, user[:email]
   end
 
   def test_user_without_status
-    assert_deprecated do
-      user = @tester.user(include_status: false)
+    user = @tester.user(include_status: false)
 
-      assert_kind_of Hash, user
-      assert_equal(40, user.keys.count)
-      assert_nil user[:status]
-    end
+    assert_kind_of Hash, user
+    assert_equal(40, user.keys.count)
+    assert_nil user[:status]
   end
 
   def test_status
@@ -66,12 +60,59 @@ class TestFakerTwitter < Test::Unit::TestCase
     assert_equal(10, status[:entities][:media].first.keys.count)
   end
 
-  def assert_deprecated(&block)
-    warning = with_captured_stdout(&block)
-    result = yield block
+  def test_screen_name
+    assert_kind_of String, @tester.screen_name
+  end
+end
 
-    refute_predicate warning, :empty?, 'Expected a deprecation warning within the block but received none'
+class TestFakerX < Test::Unit::TestCase
+  def setup
+    @tester = Faker::X
+  end
 
-    result
+  def test_user
+    user = @tester.user
+
+    assert_kind_of Hash, user
+    assert_kind_of Array, user[:data]
+    assert_kind_of Hash, user[:includes]
+    assert_kind_of Array, user[:includes][:users]
+  end
+
+  def test_tweet
+    tweet = @tester.tweet
+
+    assert_kind_of Hash, tweet
+    assert_kind_of Array, tweet[:data]
+    assert_nil tweet[:includes]
+  end
+
+  def test_tweet_with_include_media
+    tweet = @tester.tweet(include_media: true)
+
+    assert_kind_of Hash, tweet
+    assert_kind_of Array, tweet[:data]
+    assert_kind_of Array, tweet[:includes][:media]
+  end
+
+  def test_tweet_with_include_user
+    tweet = @tester.tweet(include_user: true)
+
+    assert_kind_of Hash, tweet
+    assert_kind_of Array, tweet[:data]
+    assert_kind_of Array, tweet[:includes][:users]
+  end
+
+  def test_tweet_with_include_user_and_include_media
+    tweet = @tester.tweet(include_user: true, include_media: true)
+
+    assert_kind_of Hash, tweet
+    assert_kind_of Array, tweet[:data]
+    assert_kind_of Array, tweet[:includes][:users]
+    assert_kind_of Array, tweet[:includes][:media]
+  end
+
+  def test_screen_name
+    assert_kind_of String, @tester.screen_name
   end
 end
