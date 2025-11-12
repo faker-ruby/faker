@@ -51,4 +51,20 @@ class TestFakerName < Test::Unit::TestCase
     assert_match(/[A-Z]{3}/, @tester.initials)
     assert_match(/[A-Z]{2}/, @tester.initials(number: 2))
   end
+
+  def test_first_name_with_except
+    excluded_name = 'John'
+    20.times do
+      name = @tester.except(excluded_name).first_name
+      assert_not_equal excluded_name, name, "Should not generate excluded name '#{excluded_name}'"
+    end
+  end
+
+  def test_last_name_with_except_array
+    excluded_names = %w[Smith Jones]
+    20.times do
+      last_name = @tester.except(excluded_names).last_name
+      assert_not_includes excluded_names, last_name, "Should not generate names in #{excluded_names.inspect}"
+    end
+  end
 end
