@@ -233,6 +233,19 @@ module Faker
         @unique ||= UniqueGenerator.new(self, max_retries)
       end
 
+      # Returns any other value than the given excluded value(s).
+      #
+      # @param values [Object, Array] The value(s) to exclude from generation.
+      # @param max_retries [Integer] The max number of retries that should be done before giving up.
+      # @return [self]
+      #
+      # @example
+      #   Faker::Name.except('Jane').first_name #=> 'John' (or any name except 'Jane')
+      #   Faker::Name.except(['Jane', 'John']).first_name #=> 'Bob' (or any name except 'Jane' or 'John')
+      def except(values, max_retries = 10_000)
+        ExceptGenerator.new(self, values, max_retries)
+      end
+
       def sample(list, num = nil)
         if list.respond_to?(:sample)
           if num

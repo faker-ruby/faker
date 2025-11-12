@@ -143,6 +143,15 @@ manually set values).
 Faker::Lorem.unique.exclude :string, [number: 6], %w[azerty wxcvbn]
 ```
 
+### Excluding specific values
+
+To exclude specific values from being generated, use the `except` method:
+
+```ruby
+Faker::Name.except('John').first_name # This will return any first name except 'John'
+Faker::Name.except(['Jane', 'John']).first_name # Exclude multiple values
+```
+
 ### Deterministic Random
 
 Faker supports seeding of its pseudo-random number generator (PRNG)
