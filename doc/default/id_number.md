@@ -47,6 +47,9 @@ Faker::IdNumber.danish_id_number(formatted: true) #=> "050390-9980"
 Faker::IdNumber.danish_id_number(birthday: Date.new(1990, 3, 5)) #=> "050390-9980"
 Faker::IdNumber.danish_id_number(gender: :female) #=> "050390-9980"
 
+# Generate a Dutch ID number (BSN)
+Faker::IdNumber.dutch_bsn # => "365371960"
+
 # Generate a valid French Social Security number (INSEE number)
 Faker::IdNumber.french_insee_number #=> "22510589696868"
 ```
