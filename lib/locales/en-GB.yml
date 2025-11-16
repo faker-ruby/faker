@@ -97,7 +97,7 @@ en-GB:
         - '44'
       formats:
         - '01#### #####'
-        - '01#1 496 0###' # Ofcom suggestion for "drama -> unused"
+        - '01#1 496 0###'
         - '02# #### ####'
         - '0306 999 0###' # Ofcom suggestion for "drama -> unused"
         - '055 #### ####'
