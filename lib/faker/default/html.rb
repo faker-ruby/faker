@@ -187,7 +187,7 @@ module Faker
       def random(exclude: [])
         method_list = available_methods
         exclude.each { |ex| method_list.delete_if { |meth| meth == ex.to_sym } }
-        send(method_list[Faker::Config.random.rand(0..method_list.length - 1)])
+        send(method_list[Faker::Config.random.rand(0..(method_list.length - 1))])
       end
 
       ##
