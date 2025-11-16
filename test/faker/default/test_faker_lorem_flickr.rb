@@ -35,7 +35,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_grayscale_image
-    @tester.grayscale_image == 'https://loremflickr.com/g/300/300/all'
+    assert_equal('https://loremflickr.com/g/300/300/all', @tester.grayscale_image)
   end
 
   def test_grayscale_image_with_incorrect_size
@@ -45,7 +45,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_grayscale_image_without_search_terms
-    @tester.grayscale_image(size: '50x60') == 'https://loremflickr.com/g/50/60/all'
+    assert_equal('https://loremflickr.com/g/50/60/all', @tester.grayscale_image(size: '50x60'))
   end
 
   def test_grayscale_image_with_single_search_term
@@ -61,7 +61,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_pixelated_image
-    @tester.pixelated_image == 'https://loremflickr.com/p/300/300/all'
+    assert_equal('https://loremflickr.com/p/300/300/all', @tester.pixelated_image)
   end
 
   def test_pixelated_image_with_incorrect_size
@@ -71,7 +71,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_pixelated_image_without_search_terms
-    @tester.pixelated_image(size: '50x60') == 'https://loremflickr.com/p/50/60/all'
+    assert_equal('https://loremflickr.com/p/50/60/all', @tester.pixelated_image(size: '50x60'))
   end
 
   def test_pixelated_image_with_single_search_term
@@ -87,7 +87,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_colorized_image
-    @tester.colorized_image == 'https://loremflickr.com/red/300/300/all'
+    assert_equal('https://loremflickr.com/red/300/300/all', @tester.colorized_image)
   end
 
   def test_colorized_image_with_incorrect_size
@@ -97,7 +97,7 @@ class TestFakerLoremFlickr < Test::Unit::TestCase
   end
 
   def test_colorized_image_without_search_terms
-    @tester.colorized_image(size: '50x60', color: 'red') == 'https://loremflickr.com/red/50/60/all'
+    assert_equal('https://loremflickr.com/red/50/60/all', @tester.colorized_image(size: '50x60', color: 'red'))
   end
 
   def test_colorized_image_with_unsupported_colorization

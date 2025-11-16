@@ -56,7 +56,7 @@ class TestFakerInternet < Test::Unit::TestCase
     deterministically_verify -> { @tester.email(name: Faker::Name.unique.name) } do |email|
       # reject emails with duplicated punctuation
       # e.g.: "mr._faker.jr.@example.com"
-      refute_match(/[\p{Punct}]{2,}/, email)
+      refute_match(/\p{Punct}{2,}/, email)
     end
   end
 
@@ -108,7 +108,7 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_username_with_apostrophes
-    assert_match(/\A[a-z]+([_\.][a-z]+)*\z/, @tester.username(specifier: "Alexis O'Connell"))
+    assert_match(/\A[a-z]+([_.][a-z]+)*\z/, @tester.username(specifier: "Alexis O'Connell"))
   end
 
   def test_user_name_alias
@@ -154,7 +154,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_username_with_open_range_arg
     (1..32).each do |min_length|
-      (min_length + 1..33).each do |max_length|
+      ((min_length + 1)..33).each do |max_length|
         l = @tester.username(specifier: (min_length...max_length)).length
 
         assert_operator l, :>=, min_length
@@ -165,7 +165,7 @@ class TestFakerInternet < Test::Unit::TestCase
 
   def test_username_with_range_and_separators
     (1..32).each do |min_length|
-      (min_length + 1..33).each do |max_length|
+      ((min_length + 1)..33).each do |max_length|
         u = @tester.username(specifier: (min_length...max_length), separators: %w[=])
 
         assert u.length.between? min_length, max_length - 1
@@ -270,14 +270,14 @@ class TestFakerInternet < Test::Unit::TestCase
       password = @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true)
 
       assert_match(/[!@#$%\^&*]+/, password)
-      assert_match(/[A-z]+/, password)
+      assert_match(/[A-Za-z]+/, password)
     end
   end
 
   def test_deterministic_password_with_special_chars_and_mixed_case
     deterministically_verify -> { @tester.password(min_length: 4, max_length: 6, mix_case: true, special_characters: true) }, depth: 4 do |password|
       assert_match(/[!@#$%\^&*]+/, password)
-      assert_match(/[A-z]+/, password)
+      assert_match(/[A-Za-z]+/, password)
     end
   end
 
@@ -286,7 +286,7 @@ class TestFakerInternet < Test::Unit::TestCase
       password = @tester.password(min_length: 3, max_length: 6, mix_case: true, special_characters: true)
 
       assert_match(/[!@#$%\^&*]+/, password)
-      assert_match(/[A-z]+/, password)
+      assert_match(/[A-Za-z]+/, password)
     end
   end
 
