@@ -111,7 +111,7 @@ en-GB:
         - '0500 ######'
     cell_phone:
       formats:
-        - '07000 900###' # Ofcom suggestion for "drama -> unused"
+        - '07000 900###'
         - '071## ######'
         - '073## ######'
         - '074## ######'
