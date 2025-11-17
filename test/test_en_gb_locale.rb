@@ -70,7 +70,7 @@ class TestEnGbLocale < Test::Unit::TestCase
     assert_match(/\w{1,2}\d{1,2}|\w\d[ABCDEFGHJKPSTUW]|\w\w\d[ABEHMNPRVWXY]/, outcode)
   end
 
-  def test_en_gb_id_number_valid_is_valid
+  def test_en_gb_id_number_valid
     id_code = Faker::IdNumber.valid
 
     assert_equal(9, id_code.length)
