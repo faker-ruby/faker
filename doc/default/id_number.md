@@ -62,12 +62,11 @@ Faker::IdNumber.valid #=> "22510589696868"
 Locales with specific intricacies are as such:
 
 ### en-GB
-When provided with British English, unformatted'[National Insurance](https://www.gov.uk/national-insurance/your-national-insurance-number)' numbers are generated. 
-Note: Faker can only generate a subset of all possible legal/illegal national insurance numbers.
+
+When the locale is set to British English, unformatted [National Insurance](https://www.gov.uk/national-insurance/your-national-insurance-number) numbers are generated:
 
 ```ruby
 Faker::Config.locale = 'en-GB'
 Faker::IdNumber.valid #=> "AJ405924A"
 Faker::IdNumber.invalid #=> "BG316764W"
-```
 
