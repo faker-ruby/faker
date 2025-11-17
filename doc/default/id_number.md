@@ -52,8 +52,7 @@ Faker::IdNumber.french_insee_number #=> "22510589696868"
 ```
 
 ## ID Number and Locales
-Besides the locale-specific ID Number methods. Faker supports retrieving localised calls to `.valid` and `.invalid`. 
-Here is an example:
+Besides the default ID numbers, faker supports localized `.valid` and `.invalid` values:
 
 ```ruby
 Faker::Config.locale = 'fr-FR'
