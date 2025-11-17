@@ -38,7 +38,7 @@ and it was the original impetus for the creation of this gem.
     - [Notes](#notes)
   - [Getting Started](#getting-started)
   - [Usage](#usage)
-      - [A note about the Generators versions](#a-note-about-the-generators-versions)
+    - [A note about the Generators versions](#a-note-about-the-generators-versions)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
     - [Customization](#customization)
@@ -89,7 +89,7 @@ Faker::ProgrammingLanguage.name #=> "Ruby"
 
 For a complete list of the generators, see [Generators](#generators).
 
-#### A note about the Generators versions
+### A note about the Generators versions
 
 If you get a `uninitialized constant Faker::[some_class]` error, your version of
 the gem is behind main.
@@ -214,7 +214,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Beer](doc/default/beer.md)
   - [Faker::Blood](doc/default/blood.md)
   - [Faker::Boolean](doc/default/boolean.md)
-  - [Faker::BossaNova](doc/default/bossa_nova.md)
   - [Faker::Business](doc/default/business.md)
   - [Faker::Camera](doc/default/camera.md)
   - [Faker::Cannabis](doc/default/cannabis.md)
@@ -420,6 +419,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Music::Rush](doc/music/rush.md)
   - [Faker::Music::SmashingPumpkins](doc/music/smashing_pumpkins.md)
   - [Faker::Music::UmphreysMcgee](doc/music/umphreys_mcgee.md)
+  - [Faker::Music::BossaNova](doc/music/bossa_nova.md)
 </details>
 
 <details>

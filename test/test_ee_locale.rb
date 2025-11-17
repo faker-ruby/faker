@@ -25,6 +25,7 @@ class TestEeLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Address.city
     assert_kind_of String, Faker::Address.street_name
     assert_kind_of String, Faker::Address.street_address
+    assert_kind_of String, Faker::Address.country_code
   end
 
   def test_ee_company_methods
@@ -56,6 +57,12 @@ class TestEeLocale < Test::Unit::TestCase
     deterministically_verify -> { Faker::PhoneNumber.phone_number[0..1] }, depth: 5 do |phone_number_prefix|
       assert_include @valid_phone_prefixes, phone_number_prefix
     end
+  end
+
+  def test_ee_cell_phone_with_country_code
+    phone_number = Faker::PhoneNumber.phone_number_with_country_code
+
+    assert_match(/\+372\s?\d{3}\s?\d{4}/, phone_number)
   end
 
   def test_ee_cell_phone

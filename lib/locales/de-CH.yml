@@ -4866,6 +4866,37 @@ de-CH:
         - Parsec
         - Kiloparsec
         - Megaparsec
+    mountain:
+      name:
+        - Aletschhorn
+        - Bietschhorn
+        - Blüemlisalp
+        - Chasseral
+        - Dent Blanche
+        - Dents du Midi
+        - Dom
+        - Dufourspitze
+        - Finsteraarhorn
+        - Grand Combin
+        - Gurten
+        - Jungfrau
+        - Matterhorn
+        - Grosser Mythen
+        - Napf
+        - Pilatus
+        - Piz Bernina
+        - Säntis
+        - Silvrettahorn
+        - Titlis
+        - Tödi
+        - Wildstrubel
+      range:
+        - Alpstein
+        - Berner Alpen
+        - Engadin
+        - Gotthardmassiv
+        - Jura
+        - Walliser Alpen
     music:
       instruments:
         - Akkordeon

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Faker
   class Json < Base
     require 'json'
@@ -104,17 +106,20 @@ module Faker
       end
 
       def add_hash(key_array, hash, width, options)
-        string_to_eval = 'hash'
+        string_to_eval = 'hash'.dup
+
         key_array.length.times do |index|
           string_to_eval << "['#{key_array[index]}']"
         end
         string_to_eval << " = #{build_shallow_hash(width, options)}"
         eval(string_to_eval)
+
         hash
       end
 
       def build_keys_from_array(key_array)
-        key_string = ''
+        key_string = ''.dup
+
         key_array.each do |value|
           key_string << "['#{value}']"
         end

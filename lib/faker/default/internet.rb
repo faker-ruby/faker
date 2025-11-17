@@ -267,7 +267,7 @@ module Faker
       #   Faker::Internet.mac_address(prefix: 'aa:44')  #=> "aa:44:30:88:6e:95"
       def mac_address(prefix: '')
         prefix_digits = prefix.split(':').map { |d| d.to_i(16) }
-        address_digits = Array.new((6 - prefix_digits.size)) { rand(256) }
+        address_digits = Array.new(6 - prefix_digits.size) { rand(256) }
         (prefix_digits + address_digits).map { |d| format('%02x', d) }.join(':')
       end
 

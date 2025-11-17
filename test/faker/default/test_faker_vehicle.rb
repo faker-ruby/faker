@@ -11,12 +11,12 @@ class TestFakerVehicle < Test::Unit::TestCase
   end
 
   def test_vin
-    assert valid_vin('11111111111111111') # known valid test string
-    assert valid_vin('FAKERGEM5FAKERGEM') # valid checksum
-    refute valid_vin('ABCDEFGH123456789') # invalid checksum
+    assert valid_vin?('11111111111111111') # known valid test string
+    assert valid_vin?('FAKERGEM5FAKERGEM') # valid checksum
+    refute valid_vin?('ABCDEFGH123456789') # invalid checksum
 
     deterministically_verify -> { @tester.vin }, depth: 4 do |vin|
-      assert valid_vin(vin)
+      assert valid_vin?(vin)
     end
   end
 
@@ -63,7 +63,7 @@ class TestFakerVehicle < Test::Unit::TestCase
   def test_mileage
     mileage = @tester.mileage(min: 5, max: 10)
 
-    assert mileage >= 5 && mileage <= 10
+    assert mileage.between?(5, 10)
   end
 
   def test_license_plate
@@ -117,7 +117,7 @@ class TestFakerVehicle < Test::Unit::TestCase
     assert_kind_of Integer, doors
   end
 
-  def valid_vin(vin)
+  def valid_vin?(vin)
     if vin && vin =~ VIN_REGEX
       total = 0
       vin.chars.each_with_index do |char, index|

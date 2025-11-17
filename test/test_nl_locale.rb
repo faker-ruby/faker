@@ -65,6 +65,12 @@ class TestNlLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::PhoneNumber.cell_phone
   end
 
+  def test_nl_cell_phone_countrycode
+    mobile = Faker::PhoneNumber.cell_phone_with_country_code.gsub(/\D/, '')
+
+    assert_match(/^(0|31)/, mobile)
+  end
+
   def test_nl_university_methods
     assert_kind_of String, Faker::University.prefix
     assert_kind_of String, Faker::University.name

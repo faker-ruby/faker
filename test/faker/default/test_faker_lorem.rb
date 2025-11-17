@@ -92,10 +92,10 @@ class TestFakerLorem < Test::Unit::TestCase
     ss = @tester.sentences(number: 2..5)
     ps = @tester.paragraphs(number: 2..5)
 
-    assert(cs.length >= 2 && cs.length <= 5)
-    assert(ws.length >= 2 && ws.length <= 5)
-    assert(ss.length >= 2 && ss.length <= 5)
-    assert(ps.length >= 2 && ps.length <= 5)
+    assert(cs.length.between?(2, 5))
+    assert(ws.length.between?(2, 5))
+    assert(ss.length.between?(2, 5))
+    assert(ps.length.between?(2, 5))
   end
 
   def test_exclusive_range_count_param
@@ -128,7 +128,7 @@ class TestFakerLorem < Test::Unit::TestCase
     array = @tester.words(number: [250, 500])
 
     assert_equal(500, exact.length)
-    assert(range.length >= 250 && range.length <= 500)
+    assert(range.length.between?(250, 500))
     assert(array.length == 250 || array.length == 500)
   end
 

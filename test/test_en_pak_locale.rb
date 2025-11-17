@@ -14,7 +14,9 @@ class TestEnPakLocale < Test::Unit::TestCase
 
   def test_en_pak_methods
     assert_kind_of String, Faker::Address.state
+    assert_kind_of String, Faker::Address.state_abbr
     assert_kind_of String, Faker::Address.default_country
+    assert_kind_of String, Faker::Address.default_time_zone
     assert_kind_of String, Faker::Address.postcode
     assert_match(/\A(Pakistan|Islamic Republic of Pakistan)\z/, Faker::Address.default_country)
   end
@@ -32,5 +34,11 @@ class TestEnPakLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Name.first_name
     assert_kind_of String, Faker::Name.last_name
     assert_kind_of String, Faker::Name.name_with_middle
+  end
+
+  def test_en_pak_cell_phone_is_valid
+    mobile = Faker::PhoneNumber.cell_phone
+
+    assert_match(/03\d{2}\d{7}/, mobile)
   end
 end

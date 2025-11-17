@@ -42,6 +42,11 @@ class TestJaLocale < Test::Unit::TestCase
     assert_not_english(Faker::Ancient.god)
   end
 
+  def test_ja_artist_method
+    assert_kind_of String, Faker::Artist.name
+    assert_not_english(Faker::Artist.name)
+  end
+
   def test_ja_cat_methods
     assert_kind_of String, Faker::Creature::Cat.breed
     assert_not_match(/[a-zA-Z]/, Faker::Creature::Cat.breed)
