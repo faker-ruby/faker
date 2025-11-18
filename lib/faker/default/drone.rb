@@ -225,7 +225,7 @@ module Faker
       end
 
       ##
-      # Returns max chargin power required for battery
+      # Returns max charging power required for battery
       #
       # @return [String]
       #
