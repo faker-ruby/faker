@@ -11,7 +11,8 @@ The generators are not a comprehensive match of the API. However, they are enoug
 Produces a random X user based on X's v2 API:
 
 ```ruby
-Faker::X.user => {
+Faker::X.user =>
+{
   data: [
     {
       author_id: "5688134805624042468",
@@ -67,22 +68,35 @@ Example outputs:
 ```ruby
 Faker::X.tweet =>
 {
-  data: [
-    {
-      id: "7999525033982409544",
-      text: "Molestias non possimus voluptatem.",
-      lang: "VA",
-      conversation_id: "7999525033982409544",
-      created_at: "2011-03-16T00:00:00+00:00",
-      public_metrics: {retweet_count: 69, reply_count: 17, like_count: 21, quote_count: 8},
-      possibly_sensitive: false,
-      entities: {
-        url: { urls: [{url: "https://t.co/gz4z8dvybe", expanded_url: "http://example.com/salley.grant", display_url: "example.com/salley.grant"}] },
-        description: { hashtags: [{tag: "Veritatis"}] }
-      },
-      in_reply_to_user_id: false
+  data: [{
+    id: "5530076569335337477",
+    text: "Omnis facere ullam velit.",
+    lang: "ja",
+    conversation_id: "5530076569335337477",
+    created_at: "2009-02-21T07:00:00.000Z",
+    author_id: "2788144046134446176",
+    public_metrics: {
+      retweet_count: 95,
+      reply_count: 3,
+      like_count: 10,
+      quote_count: 3
+    },
+    possibly_sensitive: false,
+    entities: {
+      urls: [{
+        start: 0,
+        end: 5,
+        url: "https://t.co/t6o3lav9z1",
+        expanded_url: "http://example.com/errol.upton",
+        display_url: "example.com/errol.upton"
+      }],
+      hashtags: [{
+        start: 0,
+        end: 5,
+        tag: "Odit"
+      }]
     }
-  ]
+  }]
 }
 ```
 
@@ -90,60 +104,85 @@ With additional fields:
 
 ```ruby
 Faker::X.tweet(include_media: true, include_user: true) =>
-
 {
-  data: [
-    {
-      id: "8194812886422142201",
-      text: "Eos sed quibusdam aperiam.",
-      lang: "AU",
-      conversation_id: "8194812886422142201",
-      created_at: "2017-10-24T00:00:00+00:00",
-      public_metrics: {retweet_count: 87, reply_count: 19, like_count: 14, quote_count: 4},
-      possibly_sensitive: false,
-      entities: {
-        url: { urls: [{url: "https://t.co/h9pi5f7q7j", expanded_url: "http://example.com/angelica_moore", display_url: "example.com/angelica_moore"}] },
-        description: { hashtags: [{tag: "Saepe"}] }
-      },
-      in_reply_to_user_id: false},
-      { attachments: {media_keys: ["466995304449852781"]}
+  data: [{
+    id: "5340086698567112794",
+    text: "Esse nulla minus qui.",
+    lang: "en",
+    conversation_id: "5340086698567112794",
+    created_at: "2009-07-04T06:00:00.000Z",
+    author_id: "5156189524741091965",
+    public_metrics: {
+      retweet_count: 56,
+      reply_count: 2,
+      like_count: 23,
+      quote_count: 1
+    },
+    possibly_sensitive: false,
+    entities: {
+      urls: [{
+        start: 0,
+        end: 5,
+        url: "https://t.co/mqplf9rhpn",
+        expanded_url: "http://example.com/mohamed_koelpin",
+        display_url: "example.com/mohamed_koelpin"
+      }],
+      hashtags: [{
+        start: 0,
+        end: 5,
+        tag: "Atque"
+      }]
+    },
+    attachments: {
+      media_keys: ["6992225089295851582"]
     }
-  ],
- includes: {
-    media: [
-      {
-        type: "photo",
-        indices: [103, 126],
-        height: 446,
-        media_key: "466995304449852781",
-        preview_image_url: "https://loremflickr.com/1064/600",
-        width: 1321,
-        url: "https://t.co/s3j25etwdj",
-        expanded_url: "https://loremflickr.com/1064/600",
-        display_url: "loremflickr.com/1064/600",
-        alt_text: "Et possimus repudiandae tenetur."
-      }
-    ],
-    users: [
-      {
-        public_metrics: {followers_count: 488, following_count: 180, tweet_count: 6368, listed_count: 209},
-        username: "shante",
-        pinned_tweet_id: "7350697183426089357",
-        entities: {
-          url: { urls: [{url: "https://t.co/cxwehs7i1z", expanded_url: "http://example.com/kirstie.reilly", display_url: "example.com/kirstie.reilly"}] },
-          description: { hashtags: [{tag: "Rem"}] }
+  }],
+  includes: {
+    media: [{
+      height: 526,
+      media_key: "6992225089295851582",
+      type: "photo",
+      preview_image_url: "https://loremflickr.com/1064/600",
+      width: 1571,
+      alt_text: "Qui ratione magnam et."
+    }],
+    users: [{
+      public_metrics: {
+        followers_count: 467,
+        following_count: 3,
+        tweet_count: 9006,
+        listed_count: 984
+      },
+      username: "gayle",
+      pinned_tweet_id: "2282479924658708548",
+      entities: {
+        url: {
+          urls: [{
+            start: 0,
+            end: 5,
+            url: "https://t.co/69eytnuwwu",
+            expanded_url: "http://example.com/werner",
+            display_url: "example.com/werner"
+          }]
         },
-        description: "Ipsa nihil velit adipisci.",
-        name: "Jerome Heathcote III",
-        verified: false,
-        location: "222.70.154.120",
-        id: "5679269981284870916",
-        protected: false,
-        url: "https://t.co/5xyjlv6ckv",
-        profile_image_url: "https://robohash.org/4106878141532070549.png?size=48x48&set=set1",
-        created_at: "2019-01-27T00:00:00+00:00"
-      }
-    ]
+        description: {
+          hashtags: [{
+            start: 0,
+            end: 5,
+            tag: "Soluta"
+          }]
+        }
+      },
+      description: "Esse harum voluptatem voluptate.",
+      name: "Elva Spinka",
+      verified: false,
+      location: "34.230.131.77",
+      id: "2365736908578621112",
+      protected: false,
+      url: "https://t.co/pyuqky3gdl",
+      profile_image_url: "https://robohash.org/2204799175591912732.png?size=48x48&set=set1",
+      created_at: "2025-01-30T07:00:00.000Z"
+    }]
   }
 }
 ```
@@ -153,7 +192,7 @@ Faker::X.tweet(include_media: true, include_user: true) =>
 Produces a random screen_name:
 
 ```ruby
-Faker::Twitter.screen_name #=> "audreanne_hackett"
+Faker::X.screen_name #=> "audreanne_hackett"
 ```
 
 # Faker::Twitter
