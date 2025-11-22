@@ -1,8 +1,8 @@
-`Faker::Twitter` has been deprecated. While it's still maintained, its docs can be found at [Faker::Twitter](#fakertwitter).
+`Faker::Twitter` has been deprecated in favor of `Faker::X`. While it's still maintained, its docs can be found at [Faker::Twitter](#fakertwitter).
 
 # Faker::X
 
-Generates approximate X (previous Twitter) user and tweet objects, based on X's API v2 responses.
+Generates approximate X (previously Twitter) user and tweet objects, based on X's API v2 responses.
 
 The generators are not a comprehensive match of the API. However, they are enough to create a demo app using X’s user or tweet data, for example.
 
