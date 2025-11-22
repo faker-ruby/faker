@@ -34,6 +34,7 @@ and it was the original impetus for the creation of this gem.
 
 - [Faker](#faker)
   - [Quick links](#quick-links)
+  - [In the media](#in-the-media)
   - [Table of Contents](#table-of-contents)
     - [Notes](#notes)
   - [Getting Started](#getting-started)
@@ -291,13 +292,13 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Team](doc/default/team.md)
   - [Faker::Theater](doc/default/theater.md)
   - [Faker::Time](doc/default/time.md)
-  - [Faker::Twitter](doc/default/twitter.md)
   - [Faker::Types](doc/default/types.md)
   - [Faker::University](doc/default/university.md)
   - [Faker::Vehicle](doc/default/vehicle.md)
   - [Faker::Verbs](doc/default/verbs.md)
   - [Faker::VulnerabilityIdentifier](doc/default/vulnerability_identifier.md)
   - [Faker::WorldCup](doc/default/world_cup.md)
+  - [Faker::X](doc/default/x.md)
 </details>
 
 <details>
