@@ -215,7 +215,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Beer](doc/default/beer.md)
   - [Faker::Blood](doc/default/blood.md)
   - [Faker::Boolean](doc/default/boolean.md)
-  - [Faker::BossaNova](doc/default/bossa_nova.md)
   - [Faker::Business](doc/default/business.md)
   - [Faker::Camera](doc/default/camera.md)
   - [Faker::Cannabis](doc/default/cannabis.md)
@@ -421,6 +420,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
   - [Faker::Music::Rush](doc/music/rush.md)
   - [Faker::Music::SmashingPumpkins](doc/music/smashing_pumpkins.md)
   - [Faker::Music::UmphreysMcgee](doc/music/umphreys_mcgee.md)
+  - [Faker::Music::BossaNova](doc/music/bossa_nova.md)
 </details>
 
 <details>
