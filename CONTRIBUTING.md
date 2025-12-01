@@ -24,6 +24,7 @@ faker-ruby already has lots of generators and locales. We appreciate any efforts
 - adding new translations
 - updating the existing translations
 - fixing any outdated/wrong translations
+- removing harmful/offensive words from locales
 
 > [!NOTE]
 > Please include the console output of the translations in the PR description. Run `bundle exec rake console` to confirm the translations are working as expected. [Here's an example](https://github.com/faker-ruby/faker/pull/2960#issuecomment-2159698291).
@@ -192,7 +193,6 @@ DEPRECATION WARNING: Faker::IDNumber is deprecated. Use Faker::IdNumber instead.
 We recommend adding tests for both the deprecated and new generators to ensure that the deprecation process is working as expected.
 Check out this [PR](https://github.com/faker-ruby/faker/pull/2856) for reference.
 
-
 ## YAML files
 
 Please use dash syntax for YAML arrays. The dash syntax facilitates code reviews by making it easier to see what items were added or removed from the lists.
@@ -235,7 +235,6 @@ What happens if the build fails in some way? Don't fear! Click on a failed job a
 ## Setup a custom pre-push git hook
 
 There is a custom git hooks pre-push file. Before the push occurs, it runs the tests and Rubocop. If there are any tests failures, or Rubocop offenses, the push is aborted.
-
 
 To set up:
 - Copy the file `pre-push.sample` located in the `custom-hooks` folder.

@@ -23,15 +23,15 @@
 
 ## Features
 
-- Internet: Generate Email addresses, Passwords, Domains, etc.
+- Internet: Email addresses, Passwords, Domains, etc.
 - Date and Time: Travel back in time or to the future.
-- Person: Generate Names, Genders, Bios, Job titles, and more.
-- Number and String: Generate random numbers and strings.
-- Location: Generate Addresses, Zip Codes, Street Names, States, and Countries.
-- Finance: Create Account Details, Transactions, and Crypto Addresses.
-- Localization - Pick from over 40 locales to generate realistic looking Names, Addresses, and Phone Numbers.
+- Person: Names, Genders, Bios, Job titles, and more.
+- Number add String: Random numbers and strings.
+- Location: Addresses, Zip Codes, Street Names, States, and Countries.
+- Finance: Account Details, Transactions, and Crypto Addresses.
+- Localization - Customize faker with over 40 locales to generate realistic-looking Names, Addresses, and Phone Numbers.
 
-> [!IMPORTANT] The generated names, addresses, emails, phone numbers, and/or other data might be coincidentally valid information. Please be careful when using faker for testing.
+> **Note** The generated names, addresses, emails, phone numbers, and/or other data might return valid information. Please be careful when using faker in your tests.
 
 For a complete list of the generators, see [Generators](./GENERATORS.md).
 
@@ -71,7 +71,7 @@ Faker::ProgrammingLanguage.name       #=> "Ruby"
     - [Notes](#notes)
     - [Ensuring unique values](#ensuring-unique-values)
     - [Deterministic Random](#deterministic-random)
-    - [Customization](#customization)
+    - [Localization](#localization)
     - [Minitest and Faker \>= 2.22](#minitest-and-faker--222)
   - [Generators](#generators)
   - [Contributing](#contributing)
@@ -122,19 +122,19 @@ to provide deterministic output of repeated method calls.
 
 ```ruby
 Faker::Config.random = Random.new(42)
-Faker::Lorem.word   #=> "velit"
-Faker::Lorem.word   #=> "quisquam"
+Faker::Lorem.word              #=> "velit"
+Faker::Lorem.word              #=> "quisquam"
 
 Faker::Config.random = Random.new(42)
-Faker::Lorem.word   #=> "velit"
-Faker::Lorem.word   #=> "quisquam"
+Faker::Lorem.word              #=> "velit"
+Faker::Lorem.word              #=> "quisquam"
 
-Faker::Config.random = nil # seeds the PRNG using default entropy sources
-Faker::Config.random.seed #=> 185180369676275068918401850258677722187
-Faker::Lorem.word   #=> "ipsam"
+Faker::Config.random = nil     # seeds the PRNG using default entropy sources
+Faker::Config.random.seed      #=> 185180369676275068918401850258677722187
+Faker::Lorem.word              #=> "ipsam"
 ```
 
-### Customization
+### Localization
 
 You may want Faker to print information depending on your location in the world.
 To assist you in this, Faker uses the `I18n` gem to store strings and formats to
