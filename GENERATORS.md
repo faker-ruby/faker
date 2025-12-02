@@ -40,7 +40,7 @@ Travel back in time or to future.
 
 ### Person
 
-Generate Names, Genders, Bios, Job titles, and more.
+Generate names, genders, bios, job titles, and more.
 
 - [Faker::Artist](doc/default/artist.md)
 - [Faker::Blood](doc/default/blood.md)
