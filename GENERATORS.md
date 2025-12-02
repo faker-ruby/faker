@@ -78,7 +78,7 @@ Generate random numbers and strings.
 
 ### Location
 
-Generate Addresses, Zip Codes, Street Names, States, and Countries.
+Generate addresses, zip codes, street names, states, and countries.
 
 - [Faker::Address](doc/default/address.md)
 - [Faker::Compass](doc/default/compass.md)
