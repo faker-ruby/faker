@@ -141,7 +141,7 @@ Generate breeds, names, sizes, etc.
 
 ### Arts and Media
 
-Generate entries for artistic needs, from TV Shows to Japanese Media.
+Generate entries for artistic needs, from TV Shows to Japanese media.
 
 - [Faker::DcComics](doc/default/dc_comics.md)
 - [Faker::Superhero](doc/default/superhero.md)
