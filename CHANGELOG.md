@@ -1,5 +1,59 @@
 # Changelog
 
+## [v3.5.3](https://github.com/faker-ruby/faker/tree/v3.5.3) (2025-12-02)
+
+Wishing you a cozy and calm Holiday season ☃️ 
+
+This version adds and improves some locales, fixes some bugs, and deprecates some generators.
+
+Thanks to all contributors!
+
+### Deprecated generators
+* Refactor: move `Faker::BossaNova` under `Faker::Music::BossaNova` by @thdaraujo in https://github.com/faker-ruby/faker/pull/3140
+* Deprecate `Faker::Twitter` in favor of `Faker::X` and update attributes by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3138
+
+### Improvements & Bug Fixes
+* Remove duplicate entry `amateur radio` from `locales/en/hobby.yml` by @Leenday in https://github.com/faker-ruby/faker/pull/3099
+* fix #3114: prevent scientific notation when generating bank account number by @AhmedHisham552 in https://github.com/faker-ruby/faker/pull/3118
+* Fix: typos in locales for `overwatch.yml`, `rajnikanth.yml` and `street_fighter.ym` by @smorttey in https://github.com/faker-ruby/faker/pull/3106
+* Add `Artist` translations for the japanese locale by @neco-nico in https://github.com/faker-ruby/faker/pull/3110
+* Add `country_code` to Estonia locale (`locales/ee.yml`) by @HassanAkbar in https://github.com/faker-ruby/faker/pull/3111
+* Reformat Arabic locale (`locales/ar.yml`) by @ramzieus in https://github.com/faker-ruby/faker/pull/3130
+* Refactor: Improve UK Phone number false failure hit-rate by @luke-hill in https://github.com/faker-ruby/faker/pull/3136
+* Improvements and fixes for Elder Scrolls locale (`elder_scrolls.yml`) by @SleekMutt in https://github.com/faker-ruby/faker/pull/3129
+* Add en-GB ID Numbers (aka National Insurance Numbers) by @stefanjcollier in https://github.com/faker-ruby/faker/pull/3032
+* Update ukrainian city locales to the modern ones by @SleekMutt in https://github.com/faker-ruby/faker/pull/3127
+* Revamp the docs to make them easier to find by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3151
+
+### Chores
+* test: fix flaky test on `Faker::IdNumber` by @thdaraujo in https://github.com/faker-ruby/faker/pull/3126
+* Remove minitest dependency on i18n reload test by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3149
+* Remove unused release workflow by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3133
+
+### Update local dependencies
+* Bump benchmark from 0.4.1 to 0.5.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3122
+* Bump rake from 13.3.0 to 13.3.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3124
+* Bump test-unit from 3.7.0 to 3.7.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3128
+* Bump rubocop-minitest from 0.38.1 to 0.38.2 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3116
+* deps: bump dependencies by @thdaraujo in https://github.com/faker-ruby/faker/pull/3141
+* deps: bump Minitest version to `v5.26.1` and fix issues by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3144
+* deps: bump rubocop version to `v1.81.7` by @thdaraujo in https://github.com/faker-ruby/faker/pull/3143
+
+### New Contributors
+* @Leenday made their first contribution in https://github.com/faker-ruby/faker/pull/3099
+* @AhmedHisham552 made their first contribution in https://github.com/faker-ruby/faker/pull/3118
+* @smorttey made their first contribution in https://github.com/faker-ruby/faker/pull/3106
+* @neco-nico made their first contribution in https://github.com/faker-ruby/faker/pull/3110
+* @HassanAkbar made their first contribution in https://github.com/faker-ruby/faker/pull/3111
+* @ramzieus made their first contribution in https://github.com/faker-ruby/faker/pull/3130
+* @luke-hill made their first contribution in https://github.com/faker-ruby/faker/pull/3136
+* @SleekMutt made their first contribution in https://github.com/faker-ruby/faker/pull/3129
+* @stefanjcollier made their first contribution in https://github.com/faker-ruby/faker/pull/3032
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.5.2...v3.5.3
+
+---------------------------------
+
 ## [v3.5.2](https://github.com/faker-ruby/faker/tree/v3.5.2) (2025-07-01)
 
 Happy Canada Day! 🍁
