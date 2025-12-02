@@ -199,7 +199,7 @@ Generate genres, titles, authors, etc.
 
 #### TV Shows
 
-Generate titles, characters, quotes and more from a variety of TV Shows.
+Generate titles, characters, quotes and more from a variety of TV shows.
 
 - [Faker::TvShows::AquaTeenHungerForce](doc/tv_shows/aqua_teen_hunger_force.md)
 - [Faker::TvShows::Archer](doc/tv_shows/archer.md)
