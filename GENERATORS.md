@@ -9,7 +9,7 @@ This is the full list of generators available, organized by most popular [use ca
 
 ### Internet
 
-Generate Email addresses, Passwords, Domains, etc.
+Generate email addresses, passwords, domains, etc.
 
 - [Faker::App](doc/default/app.md)
 - [Faker::Boolean](doc/default/boolean.md)
