@@ -487,7 +487,7 @@ Want to see a comprehensive list of all generators? Expand the sections below to
 </details>
 
 <details>
-  <summary>Tv Shows</summary>
+  <summary>TV Shows</summary>
 
   - [Faker::TvShows::AquaTeenHungerForce](doc/tv_shows/aqua_teen_hunger_force.md)
   - [Faker::TvShows::Archer](doc/tv_shows/archer.md)
