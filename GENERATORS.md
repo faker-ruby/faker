@@ -90,7 +90,7 @@ Generate addresses, zip codes, street names, states, and countries.
 
 ### Finance
 
-Create Account Details, Transactions, and Crypto Addresses.
+Create account details, transactions, and crypto addresses.
 
 - [Faker::Bank](doc/default/bank.md)
 - [Faker::Blockchain::Aeternity](doc/blockchain/aeternity.md)
