@@ -241,7 +241,7 @@ Generate titles, characters, quotes and more from a variety of TV Shows.
 
 ## All generators
 
-Want to see a compreheensive list of all generators? Expand the sections below to find **all** the available generators, categorized by their namespaces.
+Want to see a comprehensive list of all generators? Expand the sections below to find **all** the available generators, categorized by their namespaces.
 
 <details>
   <summary>Default</summary>
