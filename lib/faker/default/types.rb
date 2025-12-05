@@ -116,7 +116,7 @@ module Faker
       #
       # @faker.version 1.8.6
       def random_type
-        type_to_use = SIMPLE_TYPES[rand(0..SIMPLE_TYPES.length - 1)]
+        type_to_use = SIMPLE_TYPES[rand(0..(SIMPLE_TYPES.length - 1))]
         case type_to_use
         when :string
           rb_string
@@ -136,7 +136,7 @@ module Faker
       # @faker.version 1.8.6
       def random_complex_type
         types = SIMPLE_TYPES + COMPLEX_TYPES
-        type_to_use = types[rand(0..types.length - 1)]
+        type_to_use = types[rand(0..(types.length - 1))]
         case type_to_use
         when :string
           rb_string

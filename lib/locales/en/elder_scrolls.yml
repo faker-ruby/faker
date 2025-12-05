@@ -110,9 +110,9 @@ en:
           - Markarth
           - Daggerfall
           - Silvenar
-          - Tignus
+          - Tigonus
           - Lainlyn
-          - Dwyynen
+          - Dwynnen
           - Glenpoint
           - Whiterun
           - Falkreath
@@ -155,7 +155,6 @@ en:
           - Malborn
           - Tsun
           - Ysgramor
-          - Tsun
           - Gerdur
           - Dirge
           - Orgnar
@@ -232,7 +231,7 @@ en:
           - Ma'jhad
           - Ra'zhinda
           - Mjoll
-          - Brand-shei
+          - Brand-Shei
           - Inigo
         last_name:
           - The Old
@@ -277,7 +276,7 @@ en:
           - Bloodthorn
           - Borvir's Dagger
           - Daedric Dagger
-          - Dragonbone Dagger DG
+          - Dragonbone Dagger
           - Dragon Priest Dagger
           - Dwarven Dagger
           - Ebony Dagger
@@ -288,43 +287,43 @@ en:
           - Keening
           - Mehrunes' Razor
           - Nettlebane
-          - Nordic Dagger DR
+          - Nordic Dagger
           - Orcish Dagger
           - Rundi's Dagger
           - Shiv
           - Skyforge Steel Dagger
-          - Stalhrim Dagger DR
+          - Stalhrim Dagger
           - Steel Dagger
           - Valdr's Lucky Dagger
           - Daedric Mace
-          - Dragonbone Mace DG
+          - Dragonbone Mace
           - Dwarven Mace
           - Ebony Mace
           - Elven Mace
           - Glass Mace
-          - Horksbane DR
+          - Horksbane
           - Iron Mace
           - Lunar Iron Mace
           - Lunar Steel Mace
           - Mace of Molag Bal
-          - Nordic Mace DR
+          - Nordic Mace
           - Orcish Mace
-          - Prelate's Mace DG
+          - Prelate's Mace
           - Rusty Mace
-          - Stalhrim Mace DR
+          - Stalhrim Mace
           - Steel Mace
-          - Akaviri Sword DG
+          - Akaviri Sword
           - Amren's Family Sword
           - Ancient Nord Sword
           - Blades Sword
-          - Bloodscythe DR
+          - Bloodscythe
           - Bolar's Oathblade
           - Ceremonial Sword
           - Chillrend
           - Daedric Sword
           - Dawnbreaker
           - Dragonbane
-          - Dragonbone Sword DG
+          - Dragonbone Sword
           - Drainheart Sword
           - Dwarven Sword
           - Ebony Sword
@@ -336,7 +335,7 @@ en:
           - Ghostblade
           - Glass Sword
           - Grimsever
-          - Harkon's Sword DG
+          - Harkon's Sword
           - Herebane's Courage
           - Hjalti's Sword
           - Honed Ancient Nord Sword
@@ -345,10 +344,10 @@ en:
           - Iron Sword
           - Lunar Iron Sword
           - Lunar Steel Sword
-          - Miraak's Sword DR
+          - Miraak's Sword
           - Nightingale Blade
           - Nord Hero Sword
-          - Nordic Sword DR
+          - Nordic Sword
           - Orcish Sword
           - Phantom Sword
           - Queen Freydis's Sword
@@ -357,20 +356,20 @@ en:
           - Scimitar
           - Silver Sword
           - Skyforge Steel Sword
-          - Stalhrim Sword DR
+          - Stalhrim Sword
           - Steel Sword
-          - Soulrender DR
+          - Soulrender
           - The Pale Blade
           - Vilkas's Sword
           - Windshear
           - Wooden Sword HF
           - Ancient Nord War Axe
-          - Ancient Nordic Pickaxe DR
+          - Ancient Nordic Pickaxe
           - Ceremonial Axe
           - Daedric War Axe
-          - Dawnguard Rune Axe DG
-          - Dawnguard War Axe DG
-          - Dragonbone War Axe DG
+          - Dawnguard Rune Axe
+          - Dawnguard War Axe
+          - Dragonbone War Axe
           - Dwarven War Axe
           - Ebony War Axe
           - Elven War Axe
@@ -378,7 +377,7 @@ en:
           - Forsworn Axe
           - Ghorbash's Ancestral Axe
           - Glass War Axe
-          - Hoarfrost DR
+          - Hoarfrost
           - Honed Draugr War Axe
           - Honed Falmer War Axe
           - Illusory War Axe
@@ -386,20 +385,20 @@ en:
           - Lunar Iron War Axe
           - Lunar Steel War Axe
           - Nord Hero War Axe
-          - Nordic War Axe DR
+          - Nordic War Axe
           - Notched Pickaxe
           - Okin
           - Orcish War Axe
           - Pickaxe
           - Poacher's Axe
           - Skyforge Steel War Axe
-          - Stalhrim War Axe DR
+          - Stalhrim War Axe
           - Steel War Axe
           - Ulfric's War Axe
           - Woodcutter's Axe
           - Ancient Nord Battle Axe
           - Daedric Battleaxe
-          - Dragonbone Battleaxe DG
+          - Dragonbone Battleaxe
           - Drainblood Battleaxe
           - Dwarven Battleaxe
           - Ebony Battleaxe
@@ -409,10 +408,10 @@ en:
           - Honed Ancient Nord Battle Axe
           - Iron Battleaxe
           - Nord Hero Battle Axe
-          - Nordic Battleaxe DR
+          - Nordic Battleaxe
           - Orcish Battleaxe
           - Skyforge Steel Battleaxe
-          - Stalhrim Battleaxe DR
+          - Stalhrim Battleaxe
           - Steel Battleaxe of Fiery Souls
           - Steel Battleaxe
           - Rueful Axe
@@ -421,9 +420,9 @@ en:
           - Wuuthrad
           - Ancient Nord Greatsword
           - Balgruuf's Greatsword
-          - Bloodskal Blade DR
+          - Bloodskal Blade
           - Daedric Greatsword
-          - Dragonbone Greatsword DG
+          - Dragonbone Greatsword
           - Dwarven Greatsword
           - Ebony Greatsword
           - Ebony Blade
@@ -432,42 +431,42 @@ en:
           - Honed Ancient Nord Greatsword
           - Iron Greatsword
           - Nord Hero Greatsword
-          - Nordic Greatsword DR
+          - Nordic Greatsword
           - Orcish Greatsword
           - Silver Greatsword
           - Skyforge Steel Greatsword
-          - Stalhrim Greatsword DR
+          - Stalhrim Greatsword
           - Steel Greatsword
-          - Stormfang DR
+          - Stormfang
           - Aegisbane
-          - Champion's Cudgel DR
+          - Champion's Cudgel
           - Daedric Warhammer
-          - Dawnguard Warhammer DG
-          - Dawnguard Rune Hammer DG
-          - Dragonbone Warhammer DG
+          - Dawnguard Warhammer
+          - Dawnguard Rune Hammer
+          - Dragonbone Warhammer
           - Dwarven Warhammer
           - Ebony Warhammer
           - Elven Warhammer
           - Glass Warhammer
           - Iron Warhammer
-          - Nordic Warhammer DR
+          - Nordic Warhammer
           - Orcish Warhammer
           - Shagrol's Warhammer
-          - Stalhrim Warhammer DR
+          - Stalhrim Warhammer
           - Steel Warhammer
           - The Longhammer
           - Trollsbane
           - Volendrung
           - Ancient Nord Bow
           - Angi's Bow
-          - Auriel's Bow DG
+          - Auriel's Bow
           - Bow of the Hunt
           - Daedric Bow
-          - Dragonbone Bow DG
+          - Dragonbone Bow
           - Drainspell Bow
           - Dravin's Bow
           - Dwarven Bow
-          - Dwarven Black Bow of Fate DR
+          - Dwarven Black Bow of Fate
           - Ebony Bow
           - Elven Bow
           - Falmer Bow
@@ -477,18 +476,18 @@ en:
           - Froki's Bow
           - Gauldur Blackbow
           - Glass Bow
-          - Glass Bow of the Stag Prince DR
+          - Glass Bow of the Stag Prince
           - Hunting Bow
           - Imperial Bow
           - Karliah's Bow
           - Long Bow
           - Nord Hero Bow
-          - Nordic Bow DR
+          - Nordic Bow
           - Orcish Bow
-          - Stalhrim Bow DR
+          - Stalhrim Bow
           - Supple Ancient Nord Bow
           - Nightingale Bow
-          - Zephyr DG
+          - Zephyr
           - Crossbow
           - Dwarven Crossbow
           - Enhanced Crossbow
@@ -553,7 +552,7 @@ en:
           - Silver Emerald Necklace
           - Silver Jeweled Necklace
           - Silver Sapphire Necklace
-          - Bone Hawk AmuletDG
+          - Bone Hawk Amulet
           - Amulet of Akatosh
           - Amulet of Arkay
           - Amulet of Dibella
@@ -564,8 +563,8 @@ en:
           - Amulet of Talos
           - Amulet of Zenithar
           - Amulet of Articulation
-          - Amulet of BatsDG
-          - Amulet of the GargoyleDG
+          - Amulet of Bats
+          - Amulet of the Gargoyle
           - Andurs' Amulet of Arkay
           - Charmed Necklace
           - East Empire Pendant
@@ -573,7 +572,7 @@ en:
           - Grosta's Necklace
           - Jeweled Amulet
           - Kyne's Token
-          - Locket of Saint JiubDG
+          - Locket of Saint Jiub
           - Moon Amulet
           - Necromancer Amulet
           - Ogmund's Amulet of Talos

@@ -15,7 +15,8 @@ module Faker
       #   Faker::Boolean.boolean(true_ratio: 0.2) #=> false
       #
       # @faker.version 1.6.2
-      def boolean(true_ratio: 0.5)
+      #
+      def boolean(true_ratio: 0.5) # rubocop:disable Naming/PredicateMethod
         (rand < true_ratio)
       end
     end
