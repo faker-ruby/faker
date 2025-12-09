@@ -417,11 +417,11 @@ module Faker
       # @param scheme [String]
       #
       # @example
-      #   Faker::Internet.url                                                           #=> "http://treutel.test/demarcus"
-      #   Faker::Internet.url(host: 'faker')                                            #=> "http://faker/shad"
-      #   Faker::Internet.url(host: 'faker', path: '/docs')                             #=> "http://faker/docs"
-      #   Faker::Internet.url(host: 'faker', path: '/docs', scheme: 'https')            #=> "https://faker/docs"
-      def url(host: domain_name, path: "/#{username}", scheme: 'http')
+      #   Faker::Internet.url                                                           #=> "https://treutel.test/demarcus"
+      #   Faker::Internet.url(host: 'faker')                                            #=> "https://faker/shad"
+      #   Faker::Internet.url(host: 'faker', path: '/docs')                             #=> "https://faker/docs"
+      #   Faker::Internet.url(host: 'faker', path: '/docs', scheme: 'http')            #=> "http://faker/docs"
+      def url(host: domain_name, path: "/#{username}", scheme: 'https')
         "#{scheme}://#{host}#{path}"
       end
 
