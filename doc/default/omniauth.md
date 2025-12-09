@@ -321,4 +321,87 @@ Faker::Omniauth.auth0 #=>
     }
   }
 }
+
+Faker::Omniauth.microsoft #=>
+{
+  :provider => "entra_id",
+  :uid => "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+  :info => {
+    :name => "Jane Smith",
+    :email => "jane.smith@example.com",
+    :nickname => "jane.smith",
+    :first_name => "Jane",
+    :last_name => "Smith"
+  },
+  :credentials => {
+    :token => "8e668c5b994f3bfc38e3067e6ed960c5",
+    :refresh_token => "19f82075f7c69133452614bd177f4380",
+    :expires_at => 1654345109,
+    :expires => true
+  },
+  :extra => {
+    :raw_info => {
+      :iss => "https://login.microsoftonline.com/a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4/v2.0",
+      :sub => "1234567890abcdef1234567890ab",
+      :aud => "client_id",
+      :exp => 1654345109,
+      :iat => 1654341509,
+      :nbf => 1654341509,
+      :name => "Jane Smith",
+      :preferred_username => "jane.smith@example.com",
+      :oid => "e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+      :tid => "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+      :email => "jane.smith@example.com",
+      :email_verified => true,
+      :given_name => "Jane",
+      :family_name => "Smith"
+    }
+  }
+}
+
+Faker::Omniauth.oidc #=>
+{
+  :provider => "openid_connect",
+  :uid => "1234567890abcdef1234567890abcdef",
+  :info => {
+    :name => "John Doe",
+    :email => "john.doe@example.com",
+    :email_verified => true,
+    :nickname => "john.doe",
+    :first_name => "John",
+    :last_name => "Doe",
+    :gender => "male",
+    :image => "https://via.placeholder.com/300x300.png",
+    :phone => "+1-555-123-4567",
+    :urls => {
+      :website => "https://example.com"
+    }
+  },
+  :credentials => {
+    :id_token => "fcc25a5b606dbf3211b792b634cf92f3857da4cce725a019b2c492c4845fd63f",
+    :token => "8e668c5b994f3bfc38e3067e6ed960c5",
+    :refresh_token => "19f82075f7c69133452614bd177f4380",
+    :expires_in => 3600,
+    :scope => "openid profile email"
+  },
+  :extra => {
+    :raw_info => {
+      :sub => "1234567890abcdef1234567890abcdef",
+      :name => "John Doe",
+      :email => "john.doe@example.com",
+      :email_verified => true,
+      :preferred_username => "john.doe@example.com",
+      :given_name => "John",
+      :family_name => "Doe",
+      :gender => "male",
+      :picture => "https://via.placeholder.com/300x300.png",
+      :phone_number => "+1-555-123-4567",
+      :website => "https://example.com",
+      :iss => "https://example.com",
+      :aud => "client_id",
+      :exp => 1654345109,
+      :iat => 1654341509
+    }
+  }
+}
 ```

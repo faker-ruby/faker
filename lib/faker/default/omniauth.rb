@@ -27,10 +27,10 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-google.
       #
       # @faker.version 1.8.0
-      def google(name: nil, email: nil, uid: Number.number(digits: 9).to_s)
+      def google(provider: 'google_oauth2', name: nil, email: nil, uid: Number.number(digits: 9).to_s)
         auth = Omniauth.new(name: name, email: email)
         {
-          provider: 'google_oauth2',
+          provider: provider,
           uid: uid,
           info: {
             name: auth.name,
@@ -87,11 +87,11 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-facebook.
       #
       # @faker.version 1.8.0
-      def facebook(name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s)
+      def facebook(provider: 'facebook', name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s)
         auth = Omniauth.new(name: name, email: email)
         username ||= "#{auth.first_name.downcase[0]}#{auth.last_name.downcase}"
         {
-          provider: 'facebook',
+          provider: provider,
           uid: uid,
           info: {
             email: auth.email,
@@ -139,13 +139,13 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-twitter.
       #
       # @faker.version 1.8.0
-      def twitter(name: nil, nickname: nil, uid: Number.number(digits: 6).to_s)
+      def twitter(provider: 'twitter', name: nil, nickname: nil, uid: Number.number(digits: 6).to_s)
         auth = Omniauth.new(name: name)
         nickname ||= auth.name.downcase.delete(' ')
         location = city_state
         description = Lorem.sentence
         {
-          provider: 'twitter',
+          provider: provider,
           uid: uid,
           info: {
             nickname: nickname,
@@ -222,7 +222,7 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-linkedin.
       #
       # @faker.version 1.8.0
-      def linkedin(name: nil, email: nil, uid: Number.number(digits: 6).to_s)
+      def linkedin(provider: 'linkedin', name: nil, email: nil, uid: Number.number(digits: 6).to_s)
         auth = Omniauth.new(name: name, email: email)
         first_name = auth.first_name.downcase
         last_name = auth.last_name.downcase
@@ -233,7 +233,7 @@ module Faker
         industry = Commerce.department
         url = "http://www.linkedin.com/in/#{first_name}#{last_name}"
         {
-          provider: 'linkedin',
+          provider: provider,
           uid: uid,
           info: {
             name: auth.name,
@@ -295,13 +295,13 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-github.
       #
       # @faker.version 1.8.0
-      def github(name: nil, email: nil, uid: Number.number(digits: 8).to_s)
+      def github(provider: 'github', name: nil, email: nil, uid: Number.number(digits: 8).to_s)
         auth = Omniauth.new(name: name, email: email)
         login = auth.name.downcase.tr(' ', '-')
         html_url = "https://github.com/#{login}"
         api_url = "https://api.github.com/users/#{login}"
         {
-          provider: 'github',
+          provider: provider,
           uid: uid,
           info: {
             nickname: login,
@@ -363,11 +363,11 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-apple.
       #
       # @faker.version 2.3.0
-      def apple(name: nil, email: nil, uid: nil)
+      def apple(provider: 'apple', name: nil, email: nil, uid: nil)
         uid ||= "#{Number.number(digits: 6)}.#{Number.hexadecimal(digits: 32)}.#{Number.number(digits: 4)}"
         auth = Omniauth.new(name: name, email: email)
         {
-          provider: 'apple',
+          provider: provider,
           uid: uid,
           info: {
             sub: uid,
@@ -407,11 +407,11 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-auth0.
       #
       # @faker.version next
-      def auth0(name: nil, email: nil, uid: nil)
+      def auth0(provider: 'auth0', name: nil, email: nil, uid: nil)
         uid ||= "auth0|#{Number.hexadecimal(digits: 24)}"
         auth = Omniauth.new(name: name, email: email)
         {
-          provider: 'auth0',
+          provider: provider,
           uid: uid,
           info: {
             name: uid,
@@ -436,6 +436,117 @@ module Faker
               aud: 'Auth012345',
               iat: Time.forward.to_i,
               exp: Time.forward.to_i
+            }
+          }
+        }
+      end
+
+      ##
+      # Generate a mock Omniauth response from Microsoft Entra ID (Azure AD).
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-entra-id.
+      #
+      # @faker.version next
+      def microsoft(provider: 'entra_id', name: nil, email: nil, uid: nil)
+        auth = Omniauth.new(name: name, email: email)
+        tenant_id = Number.hexadecimal(digits: 32)
+        object_id = Number.hexadecimal(digits: 32)
+        uid ||= tenant_id + object_id
+        {
+          provider: provider,
+          uid: uid,
+          info: {
+            name: auth.name,
+            email: auth.email,
+            nickname: auth.name.downcase.tr(' ', '.'),
+            first_name: auth.first_name,
+            last_name: auth.last_name
+          },
+          credentials: {
+            token: Crypto.md5,
+            refresh_token: Crypto.md5,
+            expires_at: Time.forward.to_i,
+            expires: true
+          },
+          extra: {
+            raw_info: {
+              iss: "https://login.microsoftonline.com/#{tenant_id}/v2.0",
+              sub: Number.hexadecimal(digits: 28),
+              aud: 'client_id',
+              exp: Time.forward.to_i,
+              iat: Time.forward.to_i,
+              nbf: Time.forward.to_i,
+              name: auth.name,
+              preferred_username: auth.email,
+              oid: object_id,
+              tid: tenant_id,
+              email: auth.email,
+              email_verified: random_boolean,
+              given_name: auth.first_name,
+              family_name: auth.last_name
+            }
+          }
+        }
+      end
+
+      ##
+      # Generate a mock Omniauth response from OpenID Connect.
+      #
+      # @param name [String] A specific name to return in the response.
+      # @param email [String] A specific email to return in the response.
+      # @param uid [String] A specific UID to return in the response.
+      #
+      # @return [Hash] An auth hash in the format provided by omniauth-openid-connect.
+      #
+      # @faker.version next
+      def oidc(provider: 'openid_connect', name: nil, email: nil, uid: nil)
+        auth = Omniauth.new(name: name, email: email)
+        uid ||= Number.hexadecimal(digits: 32)
+        {
+          provider: provider,
+          uid: uid,
+          info: {
+            name: auth.name,
+            email: auth.email,
+            email_verified: random_boolean,
+            nickname: auth.name.downcase.tr(' ', '.'),
+            first_name: auth.first_name,
+            last_name: auth.last_name,
+            gender: gender,
+            image: image,
+            phone: PhoneNumber.phone_number,
+            urls: {
+              website: Internet.url
+            }
+          },
+          credentials: {
+            id_token: Crypto.sha256,
+            token: Crypto.md5,
+            refresh_token: Crypto.md5,
+            expires_in: 3600,
+            scope: 'openid profile email'
+          },
+          extra: {
+            raw_info: {
+              sub: uid,
+              name: auth.name,
+              email: auth.email,
+              email_verified: random_boolean,
+              preferred_username: auth.email,
+              given_name: auth.first_name,
+              family_name: auth.last_name,
+              gender: gender,
+              picture: image,
+              phone_number: PhoneNumber.phone_number,
+              website: Internet.url,
+              iss: 'https://example.com',
+              aud: 'client_id',
+              exp: Time.forward.to_i,
+              iat: Time.forward.to_i
             }
           }
         }
