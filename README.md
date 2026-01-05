@@ -26,12 +26,12 @@
 - Internet: Email addresses, Passwords, Domains, etc.
 - Date and Time: Travel back in time or to the future.
 - Person: Names, Genders, Bios, Job titles, and more.
-- Number add String: Random numbers and strings.
+- Number and String: Random numbers and strings.
 - Location: Addresses, Zip Codes, Street Names, States, and Countries.
 - Finance: Account Details, Transactions, and Crypto Addresses.
 - Localization - Customize faker with over 40 locales to generate realistic-looking Names, Addresses, and Phone Numbers.
 
-> **Note** The generated names, addresses, emails, phone numbers, and/or other data might return valid information. Please be careful when using faker in your tests.
+> **Note:** The generated names, addresses, emails, phone numbers, and/or other data might return valid information. Please be careful when using faker in your tests.
 
 For a complete list of the generators, see [Generators](./GENERATORS.md).
 
@@ -104,8 +104,8 @@ Faker::Name.unique.clear     # Clears used values for Faker::Name
 Faker::UniqueGenerator.clear # Clears used values for all generators
 ```
 
-You also can give some already used values to the unique generator if you have
-collisions with the generated data (i.e: using FactoryBot with random and
+You can also give some already-used values to the unique generator if you have
+collisions with the generated data (i.e., using FactoryBot with random and
 manually set values).
 
 ```ruby
@@ -153,7 +153,7 @@ check out the [locales README](lib/locales/README.md).
 
 ### Minitest and Faker >= 2.22
 
-To prevent Faker (version >= 2.22) from [generating duplicate values]((https://github.com/faker-ruby/faker/issues/2534)) when using Minitest,
+To prevent Faker (version >= 2.22) from [generating duplicate values](https://github.com/faker-ruby/faker/issues/2534) when using Minitest,
 you might need to add the following to the `test_helper.rb` or `rails_helper.rb` file:
 
 ```ruby
