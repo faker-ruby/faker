@@ -65,8 +65,8 @@ module Faker
         letterify(numerify(string))
       end
 
-      def generate(as_type, &block)
-        PositionalGenerator.new(as_type, &block).generate
+      def generate(as_type, &)
+        PositionalGenerator.new(as_type, &).generate
       end
 
       # Given a regular expression, attempt to generate a string
@@ -195,7 +195,7 @@ module Faker
       #   name:
       #     girls_name: ["Alice", "Cheryl", "Tatiana"]
       # Then you can call Faker::Name.girls_name and it will act like #first_name
-      def method_missing(mth, *args, &block)
+      def method_missing(mth, *args, &)
         super unless flexible_key
 
         if (translation = translate("faker.#{flexible_key}.#{mth}"))
