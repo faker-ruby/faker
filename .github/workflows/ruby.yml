@@ -53,7 +53,13 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
 
     - name: Install dependencies
-      run: bundle install
+      run:  |
+        if [[ "${{ matrix.ruby }}" < "3.1" ]]; then
+          gem install bundler:2.4.22
+          bundle _2.4.22_ install
+        else
+          bundle install
+        fi
 
     - name: Run tests
       run: bundle exec rake test
