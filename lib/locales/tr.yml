@@ -1,12 +1,36 @@
-# encoding: utf-8
 tr:
   faker:
     name:
-      first_name: [Mehmet, Yiğit, Batuhan, Burak, İrem, Buse, Selim, Caner]
-      last_name: [Davut, Sağdıç, Özdemir, Özkanlı, Ekkaldır, Zengel, Eren]
-      prefix: [Sn., Av., Dr.]
+      first_name:
+        - Mehmet
+        - Yiğit
+        - Batuhan
+        - Burak
+        - İrem
+        - Buse
+        - Selim
+        - Caner
+      last_name:
+        - Davut
+        - Sağdıç
+        - Özdemir
+        - Özkanlı
+        - Ekkaldır
+        - Zengel
+        - Eren
+      prefix:
+        - Sn.
+        - Av.
+        - Dr.
       title:
-        job: ['Müdür','Şef','Koordinatör', 'Ajan','Hacı','Başkan','Reyiz']
+        job:
+          - Müdür
+          - Şef
+          - Koordinatör
+          - Ajan
+          - Hacı
+          - Başkan
+          - Reyiz
       name:
         - "#{prefix} #{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
@@ -17,23 +41,58 @@ tr:
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
         - "#{first_name} #{last_name} #{last_name}"
-
     internet:
-      domain_suffix: [co, com, com.tr, net, org]
-
+      domain_suffix:
+        - co
+        - com
+        - com.tr
+        - net
+        - org
     phone_number:
-      formats: ["90-###-###-####", "90.###.###.####", "90 ### ### ####", "90##########"]
-
+      formats:
+        - "90-###-###-####"
+        - "90.###.###.####"
+        - "90 ### ### ####"
+        - "90##########"
     address:
-      city_name: ['İstanbul', 'İzmir', 'Eskişehir', 'Şırnak', 'Edirne', 'Van' ]
+      city_name:
+        - İstanbul
+        - İzmir
+        - Eskişehir
+        - Şırnak
+        - Edirne
+        - Van
       city:
         - "#{city_name}"
-      country: [Afganistan, Amerika Birleşik Devletleri, Fransa, Hollanda, Belçika, Nepal, Hindistan, Kuala Lumpur, Rusya]
-      default_country: [Turkey]
-      default_country_code: ["TR"]
-
+      country:
+        - Afganistan
+        - Amerika Birleşik Devletleri
+        - Fransa
+        - Hollanda
+        - Belçika
+        - Nepal
+        - Hindistan
+        - Kuala Lumpur
+        - Rusya
+      default_country:
+        - Turkey
+      default_country_code:
+        - TR
     book:
-      title: ['Taht Oyunları', 'Maymunlar Gezegeni', 'Benim Adım Kırmızı', 'Uykuların Doğusu', 'Yılanların Öcü']
+      title:
+        - Taht Oyunları
+        - Maymunlar Gezegeni
+        - Benim Adım Kırmızı
+        - Uykuların Doğusu
+        - Yılanların Öcü
       author: "#{Name.name}"
-      publisher: ['Babıali Kültür Yayıncılığı', 'İletişim Yayınları', 'Turkuvaz Kitap', 'Kaynak Yayınları']
-      quote: ['Sabır acıdır, meyvesi tatlıdır', 'Dost kara günde belli olur', 'Çıkmayan candan umit kesilmez', 'Gözden uzak olan gönülden de uzak olur.']
+      publisher:
+        - Babıali Kültür Yayıncılığı
+        - İletişim Yayınları
+        - Turkuvaz Kitap
+        - Kaynak Yayınları
+      quote:
+        - Sabır acıdır, meyvesi tatlıdır
+        - Dost kara günde belli olur
+        - Çıkmayan candan umit kesilmez
+        - Gözden uzak olan gönülden de uzak olur.

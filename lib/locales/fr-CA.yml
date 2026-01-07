@@ -498,7 +498,8 @@ fr-CA:
         - GIE
         - EI
       buzzwords:
-        - - Adaptive
+        -
+          - Adaptive
           - Advanced
           - Ameliorated
           - Assimilated
@@ -598,7 +599,8 @@ fr-CA:
           - Virtual
           - Visionary
           - Vision-oriented
-        - - 24 hour
+        -
+          - 24 hour
           - 24/7
           - 3rd generation
           - 4th generation
@@ -699,7 +701,8 @@ fr-CA:
           - zero administration
           - zero defect
           - zero tolerance
-        - - ability
+        -
+          - ability
           - access
           - adapter
           - algorithm
@@ -804,7 +807,8 @@ fr-CA:
           - website
           - workforce
       bs:
-        - - implement
+        -
+          - implement
           - utilize
           - integrate
           - streamline
@@ -864,7 +868,8 @@ fr-CA:
           - productize
           - redefine
           - recontextualize
-        - - clicks-and-mortar
+        -
+          - clicks-and-mortar
           - value-added
           - vertical
           - proactive
@@ -929,7 +934,8 @@ fr-CA:
           - compelling
           - holistic
           - rich
-        - - synergies
+        -
+          - synergies
           - web-readiness
           - paradigms
           - markets
