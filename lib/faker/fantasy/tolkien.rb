@@ -3,6 +3,8 @@
 module Faker
   class Fantasy
     class Tolkien < Base
+      Faker.lazy_load(self)
+
       flexible :tolkien
 
       class << self
