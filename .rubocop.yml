@@ -3,7 +3,7 @@ plugins:
   - rubocop-rake
 
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.1
   NewCops: enable
 
 # Suppress noise for obvious operator precedence.

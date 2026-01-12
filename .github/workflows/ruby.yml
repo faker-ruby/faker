@@ -38,11 +38,11 @@ jobs:
       fail-fast: false # don't fail all matrix builds if one fails
       matrix:
         ruby:
-          - '3.0'
           - '3.1'
           - '3.2'
           - '3.3'
           - '3.4'
+          - '4.0'
           - 'head'
           - truffleruby-head
     continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
@@ -53,13 +53,7 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
 
     - name: Install dependencies
-      run:  |
-        if [[ "${{ matrix.ruby }}" < "3.1" ]]; then
-          gem install bundler:2.4.22
-          bundle _2.4.22_ install
-        else
-          bundle install
-        fi
+      run: bundle install
 
     - name: Run tests
       run: bundle exec rake test
