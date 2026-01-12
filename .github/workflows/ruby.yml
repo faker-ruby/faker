@@ -53,7 +53,9 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
 
     - name: Install dependencies
-      run: bundle install
+      run: |
+        bundle config --without benchmark
+        bundle install
 
     - name: Run tests
       run: bundle exec rake test
