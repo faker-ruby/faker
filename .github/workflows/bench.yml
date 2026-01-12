@@ -1,0 +1,25 @@
+name: Bench
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Benchmarks
+    steps:
+    - uses: actions/checkout@v6
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.4'
+    - name: Install dependencies
+      run: bundle install
+
+    - name: Generators
+      run: RUBYOPT="-W0" bundle exec ruby benchmark/generators.rb
+    - name: Require
+      run: RUBYOPT="-W0" bundle exec ruby benchmark/require.rb
+
