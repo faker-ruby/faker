@@ -35,9 +35,10 @@ GEM
       prettyprint
     prettyprint (0.2.0)
     prism (1.6.0)
-    pry (0.15.2)
+    pry (0.16.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
+      reline (>= 0.6.0)
     psych (5.3.1)
       date
       stringio
@@ -98,7 +99,7 @@ DEPENDENCIES
   faker!
   irb
   minitest (= 5.26.1)
-  pry (= 0.15.2)
+  pry (= 0.16.0)
   rake (= 13.3.1)
   rdoc
   rubocop (= 1.81.7)

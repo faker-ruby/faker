@@ -8,7 +8,7 @@ gemspec
 gem 'benchmark'
 gem 'irb'
 gem 'minitest', '5.26.1'
-gem 'pry', '0.15.2'
+gem 'pry', '0.16.0'
 gem 'rake', '13.3.1'
 gem 'rdoc'
 gem 'rubocop', '1.81.7'
