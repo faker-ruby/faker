@@ -25,7 +25,7 @@ GEM
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     method_source (1.1.0)
-    minitest (5.26.1)
+    minitest (5.27.0)
     parallel (1.27.0)
     parser (3.3.10.0)
       ast (~> 2.4.1)
@@ -98,7 +98,7 @@ DEPENDENCIES
   benchmark
   faker!
   irb
-  minitest (= 5.26.1)
+  minitest (= 5.27.0)
   pry (= 0.16.0)
   rake (= 13.3.1)
   rdoc
