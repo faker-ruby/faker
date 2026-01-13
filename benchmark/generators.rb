@@ -3,13 +3,13 @@
 require 'benchmark/ips'
 require 'faker'
 
-def all_generators
-  generators.map do |klass|
-    subclass_methods(klass).flatten
-  end.flatten.sort
+def generators
+  constants.flat_map do |klass|
+    subclass_methods(klass)
+  end
 end
 
-def generators
+def constants
   Faker.constants.delete_if do |subclass|
     %i[
       Base
@@ -28,13 +28,19 @@ def generators
 end
 
 def subclass_methods(subclass)
-  eval("Faker::#{subclass}.public_methods(false) - Faker::Base.public_methods(false)").sort.map do |method|
-    "Faker::#{subclass}.#{method}"
-  end.sort
+  klass = Faker.const_get(subclass)
+
+  public_methods = klass.public_methods(false) - Faker::Base.public_methods(false)
+
+  public_methods.sort.map do |method|
+    [klass, method]
+  end
 end
+
+all_generators = generators
 
 Benchmark.ips do |x|
   x.report("Number of generators: #{all_generators.count}") do
-    all_generators.each { |generator| eval(generator) }
+    all_generators.each { |klass, generator| klass.send(generator) }
   end
 end
