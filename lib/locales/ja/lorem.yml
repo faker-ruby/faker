@@ -2,7 +2,7 @@ ja:
   faker:
     lorem:
       punctuation:
-        space: ""
+        space: ''
         period: "。"
         question_mark: "？"
       words:
