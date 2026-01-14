@@ -18,9 +18,8 @@ jobs:
     - uses: actions/checkout@v6
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4'
-    - name: Install dependencies
-      run: bundle install
+        ruby-version: '4.0'
+        bundler-cache: true
 
     - name: Generators
       run: RUBYOPT="-W0" bundle exec ruby benchmark/generators.rb
