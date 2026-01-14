@@ -523,7 +523,8 @@ it:
         - Group
         - s.r.l.
       buzzwords:
-        - - Abilità
+        -
+          - Abilità
           - Access
           - Adattatore
           - Algoritmo
@@ -612,7 +613,8 @@ it:
           - Utilizzazione
           - Sito web
           - Forza lavoro
-        - - adattiva
+        -
+          - adattiva
           - avanzata
           - migliorata
           - assimilata
@@ -669,7 +671,8 @@ it:
           - versatile
           - virtuale
           - visionaria
-        - - 24 ore
+        -
+          - 24 ore
           - 24/7
           - terza generazione
           - quarta generazione
@@ -740,7 +743,8 @@ it:
           - uniforme
           - valore aggiunto
       bs:
-        - - partnerships
+        -
+          - partnerships
           - comunità
           - ROI
           - soluzioni
@@ -766,7 +770,8 @@ it:
           - esperienze
           - webservices
           - metodologie
-        - - implementate
+        -
+          - implementate
           - utilizzo
           - integrate
           - ottimali
@@ -794,7 +799,8 @@ it:
           - transizionali
           - matrici
           - ricontestualizzate
-        - - valore aggiunto
+        -
+          - valore aggiunto
           - verticalizzate
           - proattive
           - forti
