@@ -37,7 +37,7 @@ module Faker
       #
       # @faker.version 1.4.3
       def image(slug: nil, size: '300x300', format: 'png', set: 'set1', bgset: nil)
-        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
+        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /\A[0-9]+x[0-9]+\z/
         raise ArgumentError, "Supported formats are #{SUPPORTED_FORMATS.join(', ')}" unless SUPPORTED_FORMATS.include?(format)
 
         slug ||= Faker::Lorem.words.join
