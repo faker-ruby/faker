@@ -1,5 +1,3 @@
-`Faker::Twitter` has been deprecated in favor of `Faker::X`. While it's still maintained, its docs can be found at [Faker::Twitter](#fakertwitter).
-
 # Faker::X
 
 Generates approximate X (previously Twitter) user and tweet objects, based on X's API v2 responses.
@@ -58,9 +56,9 @@ Produces a random X tweet with default attributes. Available extensions can be r
 
 ```ruby
 # Keyword arguments: include_user, include_media
-Faker::Twitter.tweet #=> { data: [{:id=>"8821452687517076614", :text=>"Ea et laboriosam vel non.",...
-Faker::Twitter.tweet(include_user: true) # Includes user attributes
-Faker::Twitter.tweet(include_media: true) # Includes media (photo) attributes
+Faker::X.tweet #=> { data: [{:id=>"8821452687517076614", :text=>"Ea et laboriosam vel non.",...
+Faker::X.tweet(include_user: true) # Includes user attributes
+Faker::X.tweet(include_media: true) # Includes media (photo) attributes
 ```
 
 Example outputs:
@@ -193,36 +191,4 @@ Produces a random screen_name:
 
 ```ruby
 Faker::X.screen_name #=> "audreanne_hackett"
-```
-
-# Faker::Twitter
-
-This generator has been deprecated. Please use `Faker::X` instead. Note that some attributes have been deprecated by [X's API](https://docs.x.com/x-api/migrate/data-format-migration).
-
-Available since version 1.7.3.
-
-Generate realistic Twitter user and status objects similar to what you would get back from the API.
-
-```json
-{
-  "created_at": "Mon Dec 10 00:00:00 +0000 2012",
-  "id": 8821452687517076614,
-  "id_str": "8821452687517076614",
-  "text": "Ea et laboriosam vel non.",
-  // ...
-}
-```
-
-```ruby
-# Keyword arguments: include_status, include_email
-Faker::Twitter.user #=>  {:id=>8821452687517076614, :name=>"Lincoln Paucek", :screen_name=>"cody"...
-Faker::Twitter.user(include_status: false) # Just get a user object with no embed status
-Faker::Twitter.user(include_email: true) # Simulate an authenticated user with the email permission
-
-# Keyword arguments: include_user, include_photo
-Faker::Twitter.status #=> {:id=>8821452687517076614, :text=>"Ea et laboriosam vel non."...
-Faker::Twitter.status(include_user: false) # Just get a status object with no embed user
-Faker::Twitter.status(include_photo: true) # Includes entities for an attached image
-
-Faker::Twitter.screen_name #=> "audreanne_hackett"
 ```
