@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-if ENV['AUTOLOAD'] != '1'
-  require 'openssl'
-end
 require 'securerandom'
 
 module Faker

@@ -5,9 +5,7 @@ mydir = __dir__
 require 'psych'
 require 'i18n'
 
-if ENV['AUTOLOAD'] == '1'
-  autoload(:OpenSSL, 'openssl')
-end
+autoload(:OpenSSL, 'openssl')
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).each { |file| require file }
 

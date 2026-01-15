@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-if ENV['AUTOLOAD'] != '1'
-  require 'openssl'
-end
-
 module Faker
   class Crypto < Base
     class << self
