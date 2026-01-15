@@ -5,6 +5,10 @@ mydir = __dir__
 require 'psych'
 require 'i18n'
 
+if ENV['AUTOLOAD'] == '1'
+  autoload(:OpenSSL, 'openssl')
+end
+
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).each { |file| require file }
 
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]

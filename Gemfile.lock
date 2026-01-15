@@ -27,6 +27,7 @@ GEM
     lint_roller (1.1.0)
     method_source (1.1.0)
     minitest (5.27.0)
+    optparse (0.8.1)
     parallel (1.27.0)
     parser (3.3.10.0)
       ast (~> 2.4.1)
@@ -36,6 +37,9 @@ GEM
       prettyprint
     prettyprint (0.2.0)
     prism (1.7.0)
+    profile-viewer (0.0.5)
+      optparse
+      webrick
     pry (0.16.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -89,10 +93,13 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.2.0)
+    vernier (1.9.0)
+    webrick (1.9.2)
     yard (0.9.38)
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
@@ -101,6 +108,7 @@ DEPENDENCIES
   faker!
   irb
   minitest (= 5.27.0)
+  profile-viewer
   pry (= 0.16.0)
   rake (= 13.3.1)
   rdoc
@@ -110,6 +118,7 @@ DEPENDENCIES
   simplecov (= 0.22.0)
   test-unit (= 3.7.7)
   timecop (= 0.9.10)
+  vernier
   yard (= 0.9.38)
 
 BUNDLED WITH
