@@ -18,9 +18,6 @@ gem 'test-unit', '3.7.7'
 gem 'timecop', '0.9.10'
 gem 'yard', '0.9.38'
 
-gem 'vernier'
-gem 'profile-viewer'
-
 group :benchmark do
   gem 'benchmark'
   gem 'benchmark-ips'
