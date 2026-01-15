@@ -20,6 +20,8 @@ gem 'yard', '0.9.38'
 
 # TODO: remove when Ruby 3.1 is no longer supported
 gem 'erb', '~> 4.0.4'
+gem 'vernier'
+gem 'profile-viewer'
 
 group :benchmark do
   gem 'benchmark'
