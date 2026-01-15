@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'openssl'
-
 module Faker
   class Crypto < Base
     class << self
