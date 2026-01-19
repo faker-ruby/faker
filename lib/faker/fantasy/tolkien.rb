@@ -3,6 +3,10 @@
 module Faker
   class Fantasy
     class Tolkien < Base
+      if ENV['LAZY_LOAD'] == '1'
+        Faker.lazy_load(self)
+      end
+
       flexible :tolkien
 
       class << self
