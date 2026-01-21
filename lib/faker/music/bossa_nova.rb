@@ -34,8 +34,4 @@ module Faker
       end
     end
   end
-
-  include Faker::Deprecator
-
-  deprecate_generator('BossaNova', Music::BossaNova)
 end
