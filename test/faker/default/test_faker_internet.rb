@@ -194,6 +194,12 @@ class TestFakerInternet < Test::Unit::TestCase
     end
   end
 
+  def test_password_with_specific_integer_arg
+    (1..32).each do |length|
+      assert_equal length, @tester.password(min_length: length, max_length: length, mix_case: false).length
+    end
+  end
+
   def test_password_max_with_integer_arg
     (1..32).each do |min_length|
       max_length = min_length + 4
@@ -241,10 +247,12 @@ class TestFakerInternet < Test::Unit::TestCase
   end
 
   def test_password_with_same_min_max_length
-    password = @tester.password(min_length: 5, max_length: 5)
+    (2..32).each do |length|
+      password = @tester.password(min_length: length, max_length: length)
 
-    assert_match(/\w+/, password)
-    assert_equal(5, password.length)
+      assert_match(/\w+/, password)
+      assert_equal(length, password.length)
+    end
   end
 
   def test_password_with_max_length_less_than_min_length
