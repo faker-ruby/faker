@@ -1,5 +1,51 @@
 # Changelog
 
+## [v3.6.0](https://github.com/faker-ruby/faker/tree/v3.6.0) (2026-01-21)
+
+First release of the new year!
+
+This version comes with some performance improvements (speeds faker load time by 17%!) and removal of deprecated generators.
+
+It also drops support to Ruby's EOL `3.0`. The minimum supported Ruby version is `3.1`.
+
+### Drops support for Ruby 3.0
+
+* Drop support for Ruby EOL 3.0 by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3167
+
+### Removes deprecated generators
+
+* `Faker::Twitter` and `Faker::BossaNova` have been removed. Please use the new generators `Faker::X` and `Faker::Music::BossaNova` and check the new docs for more details in https://github.com/faker-ruby/faker/pull/3190
+
+### Improvements and bug fixes
+
+* Autoload OpenSSL by @stefannibrasil and @thdaraujo in https://github.com/faker-ruby/faker/pull/3188 - this speeds faker load time by 17%!
+* Fix typos in README.md by @CarlosCalgaro in https://github.com/faker-ruby/faker/pull/3156
+* fix: badly anchored regexes by @thdaraujo in https://github.com/faker-ruby/faker/pull/3181
+* Benchmark revamp + run benchmark as part of CI by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3176
+* Add reformat locales rake task by @thdaraujo in https://github.com/faker-ruby/faker/pull/3061
+* Add option to trigger GH workflows manually by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3187
+
+### Update development dependencies
+
+* Bump bundler version by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3165
+* Add GitHub actions to dependabot workflow by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3168
+* Bump pry from 0.15.2 to 0.16.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3175
+* Bump i18n from 1.14.7 to 1.14.8 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3174
+* Bump yard from 0.9.37 to 0.9.38 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3173
+* Bump actions/checkout from 3 to 6 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3170
+* Bump test-unit from 3.7.1 to 3.7.7 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3172
+* Bump github/codeql-action from 2 to 4 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3169
+* Bump rubocop from 1.81.7 to 1.82.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3171
+* Bump minitest from 5.26.1 to 5.27.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3177
+* Bump 'rdoc' dependency, handle 'erb' version constraint with Ruby 3.1 and improve CI bundle cache by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3185
+
+### New Contributors
+* @CarlosCalgaro made their first contribution in https://github.com/faker-ruby/faker/pull/3156
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.5.3...v3.6.0
+
+---------------------------------
+
 ## [v3.5.3](https://github.com/faker-ruby/faker/tree/v3.5.3) (2025-12-02)
 
 Wishing you a cozy and calm Holiday season ☃️ 
