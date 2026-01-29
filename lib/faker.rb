@@ -133,7 +133,8 @@ module Faker
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
         fetched = fetch(key)
-        parts = fetched.scan(/(\(?)#\{([A-Za-z]+\.)?([^}]+)\}([^#]+)?/).map do |prefix, kls, meth, etc|
+
+        parts = fetched.scan(/(\(?)#\{([A-Za-z]+\.)?([^}]+)\}([^#]++)?/).map do |prefix, kls, meth, etc|
           # If the token had a class Prefix (e.g., Name.first_name)
           # grab the constant, otherwise use self
           cls = kls ? Faker.const_get(kls.chop) : self
