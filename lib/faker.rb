@@ -95,12 +95,12 @@ module Faker
         reg
           .gsub(%r{^/?\^?}, '').gsub(%r{\$?/?$}, '') # Ditch the anchors
           .gsub(/\{(\d+)\}/, '{\1,\1}').gsub('?', '{0,1}') # All {2} become {2,2} and ? become {0,1}
-          .gsub(/(\[[^\]]+\])\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # [12]{1,2} becomes [12] or [12][12]
-          .gsub(/(\([^)]+\))\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                 # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
-          .gsub(/(\\?.)\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                      # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
-          .gsub(/\((.*?)\)/) { |match| sample(match.gsub(/[()]/, '').split('|')) } # (this|that) becomes 'this' or 'that'
-          .gsub(/\[([^\]]+)\]/) { |match| match.gsub(/(\w-\w)/) { |range| sample(Array(Range.new(*range.split('-')))) } } # All A-Z inside of [] become C (or X, or whatever)
-          .gsub(/\[([^\]]+)\]/) { |_match| sample(Regexp.last_match(1).chars) } # All [ABC] become B (or A or C)
+          .gsub(/(\[[^\]]++\])\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                # [12]{1,2} becomes [12] or [12][12]
+          .gsub(/(\([^)]++\))\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                 # (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+          .gsub(/(\\?.)\{(\d+),(\d+)\}/) { |_match| Regexp.last_match(1) * sample(Array(Range.new(Regexp.last_match(2).to_i, Regexp.last_match(3).to_i))) }                       # A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+          .gsub(/\((.*?)\)/) { |match| sample(match.gsub(/[()]/, '').split('|')) }                                                                                                # (this|that) becomes 'this' or 'that'
+          .gsub(/\[([^\]]++)\]/) { |match| match.gsub(/(\w-\w)/) { |range| sample(Array(Range.new(*range.split('-')))) } }                                                        # All A-Z inside of [] become C (or X, or whatever)
+          .gsub(/\[([^\]]++)\]/) { |_match| sample(Regexp.last_match(1).chars) }                                                                                                  # All [ABC] become B (or A or C)
           .gsub('\d') { |_match| sample(Numbers) }
           .gsub('\w') { |_match| sample(Letters) }
       end
