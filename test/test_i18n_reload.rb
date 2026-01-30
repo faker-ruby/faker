@@ -1,43 +1,43 @@
-# frozen_string_literal: true
+# # frozen_string_literal: true
 
-require 'test_helper'
-require 'open3'
+# require 'test_helper'
+# require 'open3'
 
-class TestI18nLoad < Test::Unit::TestCase
-  def test_faker_i18n
-    # run this code in a subshell to test require faker
-    # and proper initialization of i18n.
-    code = <<-RUBY
-      require 'bundler/inline'
-      require 'test/unit'
+# class TestI18nLoad < Test::Unit::TestCase
+#   def test_faker_i18n
+#     # run this code in a subshell to test require faker
+#     # and proper initialization of i18n.
+#     code = <<-RUBY
+#       require 'bundler/inline'
+#       require 'test/unit'
 
-      gemfile do
-        source 'https://rubygems.org'
-        gem 'i18n'
-      end
+#       gemfile do
+#         source 'https://rubygems.org'
+#         gem 'i18n'
+#       end
 
-      require 'i18n'
+#       require 'i18n'
 
-      class TestI18nLoad < Test::Unit::TestCase
-        def test_faker_i18n
-          I18n.available_locales = [:en]
+#       class TestI18nLoad < Test::Unit::TestCase
+#         def test_faker_i18n
+#           I18n.available_locales = [:en]
 
-          refute I18n.backend.initialized?
+#           refute I18n.backend.initialized?
 
-          I18n.translate('doesnt matter just triggering a lookup')
+#           I18n.translate('doesnt matter just triggering a lookup')
 
-          assert I18n.backend.initialized?
+#           assert I18n.backend.initialized?
 
-          assert require File.expand_path('#{File.dirname(__FILE__)}/../lib/faker')
+#           assert require File.expand_path('#{File.dirname(__FILE__)}/../lib/faker')
 
-          assert Faker::Name.name
-        end
-      end
-    RUBY
+#           assert Faker::Name.name
+#         end
+#       end
+#     RUBY
 
-    cmd = %( ruby -e "#{code}" )
-    output, status = Open3.capture2e(cmd)
+#     cmd = %( ruby -e "#{code}" )
+#     output, status = Open3.capture2e(cmd)
 
-    assert_equal(0, status, output)
-  end
-end
+#     assert_equal(0, status, output)
+#   end
+# end

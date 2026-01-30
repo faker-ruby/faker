@@ -18,6 +18,8 @@ gem 'test-unit', '3.7.7'
 gem 'timecop', '0.9.10'
 gem 'yard', '0.9.38'
 
+gem "debug"
+
 # TODO: remove when Ruby 3.1 is no longer supported
 gem 'erb', '~> 4.0.4'
 

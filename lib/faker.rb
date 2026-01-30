@@ -11,6 +11,8 @@ Dir.glob(File.join(mydir, 'helpers', '*.rb')).each { |file| require file }
 
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 
+require 'debug'
+
 module Faker
   module Config
     @default_locale = nil
@@ -278,10 +280,7 @@ module Faker
 
   if ENV['LAZY_LOAD'] == '1'
     def self.load_path(*constants)
-      puts "calling load_path(#{constants.inspect})"
-
       constants.map do |class_name|
-        puts class_name
 
         class_name
           .to_s
@@ -295,17 +294,14 @@ module Faker
 
     def self.lazy_load(klass)
       def klass.const_missing(class_name)
-        puts "calling const_missing(#{class_name})"
-
         load_path = Faker.load_path(name, class_name)
 
-        puts "load_path = #{load_path}"
+        begin
+          require(load_path)
+        rescue LoadError
+          require(load_path.gsub("faker/", "faker/default/"))
+        end
 
-        # if require("./lib/" + load_path)
-
-        return unless require(load_path)
-
-        puts "const_get(#{class_name})"
         const_get(class_name)
       end
     end
