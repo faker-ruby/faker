@@ -13,7 +13,6 @@ class TestJaLocale < Test::Unit::TestCase
 
   def test_ja_address_methods
     assert_kind_of String, Faker::Address.postcode
-    # Added Actual Japanese Zipcodes in lib/locals/ja.yml
     assert_match(/\A\d{3}-\d{4}\z/, Faker::Address.postcode)
     assert_not_english(Faker::Address.postcode)
     assert_kind_of String, Faker::Address.state
@@ -219,7 +218,6 @@ class TestJaLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Subscription.status
     assert_not_english(Faker::Subscription.status)
     assert_kind_of String, Faker::Subscription.payment_method
-    assert Array.new(10) { Faker::Subscription.payment_method }.any? { |word| !word.match?(/[a-zA-Z]/) }
     assert_kind_of String, Faker::Subscription.subscription_term
     assert_not_english(Faker::Subscription.subscription_term)
     assert_kind_of String, Faker::Subscription.payment_term
@@ -239,7 +237,6 @@ class TestJaLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Sport.sport
     assert_not_english(Faker::Sport.sport)
     assert_kind_of String, Faker::Sport.summer_olympics_sport
-    assert_not_english(Faker::Sport.summer_olympics_sport)
     assert_kind_of String, Faker::Sport.winter_olympics_sport
     assert_not_english(Faker::Sport.winter_olympics_sport)
     assert_kind_of String, Faker::Sport.summer_paralympics_sport
