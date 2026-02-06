@@ -24,8 +24,13 @@ class TestNlLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Address.street_name
     assert_kind_of String, Faker::Address.street_address
     assert_kind_of String, Faker::Address.default_country
-    assert_match(/\A[1-9][0-9]{3} [A-Z]{2}(?<!SA|SS|SD)\z/, Faker::Address.postcode)
     assert_equal('Nederland', Faker::Address.default_country)
+  end
+
+  def test_post_code
+    deterministically_verify(-> { Faker::Address.postcode }, depth: 5) do |result|
+      assert_match(/\A[1-9][0-9]{3} [A-Z]{2}(?<!SA|SS|SD)\z/, result)
+    end
   end
 
   def test_nl_book_methods

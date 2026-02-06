@@ -115,6 +115,10 @@ module Faker
       # @faker.version 0.3.0
       def zip_code(state_abbreviation: '')
         if state_abbreviation.empty?
+          if Faker::Config.locale == 'nl'
+            return nl_post_code
+          end
+
           letterified_string = letterify(fetch('address.postcode'))
           return numerify(letterified_string, leading_zero: true)
         end
@@ -342,6 +346,22 @@ module Faker
         attrs.map do |attr|
           { "#{attr}": attrs_params[attr] ? send(attr, **attrs_params[attr]) : send(attr) }
         end.reduce({}, :merge)
+      end
+
+      private
+
+      def nl_post_code
+        PositionalGenerator.new(:string) do |gen|
+          gen.group(name: :digits) do |g_|
+            g_.int(length: 4, ranges: [1..9999])
+          end
+
+          gen.lit(" ")
+
+          gen.group(name: :letters) do |g_|
+            g_.letter(length: 2, ranges: [%w[A B C D E F G H I J K L M N O P Q R T U V X W], %w[A B C D E F G H I J K L M N O P Q R S T U V X W]])
+          end
+        end.generate
       end
     end
   end
