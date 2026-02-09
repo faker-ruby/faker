@@ -114,11 +114,9 @@ module Faker
       #
       # @faker.version 0.3.0
       def zip_code(state_abbreviation: '')
-        if state_abbreviation.empty?
-          if Faker::Config.locale == 'nl'
-            return nl_post_code
-          end
+        return nl_post_code if Faker::Config.locale == 'nl'
 
+        if state_abbreviation.empty?
           letterified_string = letterify(fetch('address.postcode'))
           return numerify(letterified_string, leading_zero: true)
         end
@@ -350,16 +348,17 @@ module Faker
 
       private
 
+      # avoids generating letters that should be avoided because of historical reasons, which justifies allowing this exception
       def nl_post_code
         PositionalGenerator.new(:string) do |gen|
           gen.group(name: :digits) do |g_|
-            g_.int(length: 4, ranges: [1..9999])
+            g_.int(length: 4)
           end
 
           gen.lit(" ")
 
           gen.group(name: :letters) do |g_|
-            g_.letter(length: 2, ranges: [%w[A B C D E F G H I J K L M N O P Q R T U V X W], %w[A B C D E F G H I J K L M N O P Q R S T U V X W]])
+            g_.letter(length: 1, ranges: ['AA'...'SA', 'SB'...'SD', 'SE'...'SS', 'ST'..'ZZ'])
           end
         end.generate
       end

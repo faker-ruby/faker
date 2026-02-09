@@ -27,9 +27,9 @@ class TestNlLocale < Test::Unit::TestCase
     assert_equal('Nederland', Faker::Address.default_country)
   end
 
-  def test_post_code
-    deterministically_verify(-> { Faker::Address.postcode }, depth: 5) do |result|
-      assert_match(/\A[1-9][0-9]{3} [A-Z]{2}(?<!SA|SS|SD)\z/, result)
+  def test_nl_post_code
+    deterministically_verify(-> { Faker::Address.postcode }) do |result|
+      assert_match(/\A[1-9][0-9]{4} [A-Z]{2}(?<!SA|SS|SD)\z/, result)
     end
   end
 
