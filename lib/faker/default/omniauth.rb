@@ -11,8 +11,8 @@ module Faker
     def initialize(name: nil, email: nil)
       super()
 
-      @name = name || "#{Name.first_name} #{Name.last_name}"
-      @email = email || Internet.email(name: self.name)
+      @name = name || "#{Faker::Name.first_name} #{Faker::Name.last_name}"
+      @email = email || Faker::Internet.email(name: self.name)
       @first_name, @last_name = self.name.split
     end
 
@@ -27,8 +27,8 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-google.
       #
       # @faker.version 1.8.0
-      def google(name: nil, email: nil, uid: Number.number(digits: 9).to_s)
-        auth = Omniauth.new(name: name, email: email)
+      def google(name: nil, email: nil, uid: Faker::Number.number(digits: 9).to_s)
+        auth = new(name: name, email: email)
         {
           provider: 'google_oauth2',
           uid: uid,
@@ -40,9 +40,9 @@ module Faker
             image: image
           },
           credentials: {
-            token: Crypto.md5,
-            refresh_token: Crypto.md5,
-            expires_at: Time.forward.to_i,
+            token: Faker::Crypto.md5,
+            refresh_token: Faker::Crypto.md5,
+            expires_at: Faker::Time.forward.to_i,
             expires: true
           },
           extra: {
@@ -56,20 +56,20 @@ module Faker
               profile: "https://plus.google.com/#{uid}",
               picture: image,
               gender: gender,
-              birthday: Date.backward(days: 36_400).strftime('%Y-%m-%d'),
+              birthday: Faker::Date.backward(days: 36_400).strftime('%Y-%m-%d'),
               locale: 'en',
-              hd: "#{Company.name.downcase}.com"
+              hd: "#{Faker::Company.name.downcase}.com"
             },
             id_info: {
               iss: 'accounts.google.com',
-              at_hash: Crypto.md5,
+              at_hash: Faker::Crypto.md5,
               email_verified: true,
-              sub: Number.number(digits: 28).to_s,
+              sub: Faker::Number.number(digits: 28).to_s,
               azp: 'APP_ID',
               email: auth.email,
               aud: 'APP_ID',
-              iat: Time.forward.to_i,
-              exp: Time.forward.to_i,
+              iat: Faker::Time.forward.to_i,
+              exp: Faker::Time.forward.to_i,
               openid_id: "https://www.google.com/accounts/o8/id?id=#{uid}"
             }
           }
@@ -87,8 +87,8 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-facebook.
       #
       # @faker.version 1.8.0
-      def facebook(name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s)
-        auth = Omniauth.new(name: name, email: email)
+      def facebook(name: nil, email: nil, username: nil, uid: Faker::Number.number(digits: 7).to_s)
+        auth = new(name: name, email: email)
         username ||= "#{auth.first_name.downcase[0]}#{auth.last_name.downcase}"
         {
           provider: 'facebook',
@@ -102,7 +102,7 @@ module Faker
             verified: random_boolean
           },
           credentials: {
-            token: Crypto.md5,
+            token: Faker::Crypto.md5,
             expires_at: Time.forward.to_i,
             expires: true
           },
@@ -115,7 +115,7 @@ module Faker
               link: "http://www.facebook.com/#{username}",
               username: username,
               location: {
-                id: Number.number(digits: 9).to_s,
+                id: Faker::Number.number(digits: 9).to_s,
                 name: city_state
               },
               gender: gender,
@@ -123,7 +123,7 @@ module Faker
               timezone: timezone,
               locale: 'en_US',
               verified: random_boolean,
-              updated_time: Time.backward.iso8601
+              updated_time: Faker::Time.backward.iso8601
             }
           }
         }
@@ -139,11 +139,11 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-twitter.
       #
       # @faker.version 1.8.0
-      def twitter(name: nil, nickname: nil, uid: Number.number(digits: 6).to_s)
-        auth = Omniauth.new(name: name)
+      def twitter(name: nil, nickname: nil, uid: Faker::Number.number(digits: 6).to_s)
+        auth = new(name: name)
         nickname ||= auth.name.downcase.delete(' ')
         location = city_state
-        description = Lorem.sentence
+        description = Faker::Lorem.sentence
         {
           provider: 'twitter',
           uid: uid,
@@ -159,26 +159,26 @@ module Faker
             }
           },
           credentials: {
-            token: Crypto.md5,
-            secret: Crypto.md5
+            token: Faker::Crypto.md5,
+            secret: Faker::Crypto.md5
           },
           extra: {
             access_token: '',
             raw_info: {
               name: auth.name,
               listed_count: random_number_from_range(1..10),
-              profile_sidebar_border_color: Color.hex_color,
+              profile_sidebar_border_color: Faker::Color.hex_color,
               url: nil,
               lang: 'en',
               statuses_count: random_number_from_range(1..1000),
               profile_image_url: image,
               profile_background_image_url_https: image,
               location: location,
-              time_zone: Address.city,
+              time_zone: Faker::Address.city,
               follow_request_sent: random_boolean,
               id: uid,
               profile_background_tile: random_boolean,
-              profile_sidebar_fill_color: Color.hex_color,
+              profile_sidebar_fill_color: Faker::Color.hex_color,
               followers_count: random_number_from_range(1..10_000),
               default_profile_image: random_boolean,
               screen_name: '',
@@ -186,7 +186,7 @@ module Faker
               utc_offset: timezone,
               verified: random_boolean,
               favourites_count: random_number_from_range(1..10),
-              profile_background_color: Color.hex_color,
+              profile_background_color: Faker::Color.hex_color,
               is_translator: random_boolean,
               friends_count: random_number_from_range(1..10_000),
               notifications: random_boolean,
@@ -194,8 +194,8 @@ module Faker
               profile_background_image_url: image,
               protected: random_boolean,
               description: description,
-              profile_link_color: Color.hex_color,
-              created_at: Time.backward.strftime('%a %b %d %H:%M:%S %z %Y'),
+              profile_link_color: Faker::Color.hex_color,
+              created_at: Faker::Time.backward.strftime('%a %b %d %H:%M:%S %z %Y'),
               id_str: uid,
               profile_image_url_https: image,
               default_profile: random_boolean,
@@ -222,15 +222,15 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-linkedin.
       #
       # @faker.version 1.8.0
-      def linkedin(name: nil, email: nil, uid: Number.number(digits: 6).to_s)
+      def linkedin(name: nil, email: nil, uid: Faker::Number.number(digits: 6).to_s)
         auth = Omniauth.new(name: name, email: email)
         first_name = auth.first_name.downcase
         last_name = auth.last_name.downcase
         location = city_state
-        description = Lorem.sentence
-        token = Crypto.md5
-        secret = Crypto.md5
-        industry = Commerce.department
+        description = Faker::Lorem.sentence
+        token = Faker::Crypto.md5
+        secret = Faker::Crypto.md5
+        industry = Faker::Commerce.department
         url = "http://www.linkedin.com/in/#{first_name}#{last_name}"
         {
           provider: 'linkedin',
@@ -244,7 +244,7 @@ module Faker
             location: location,
             description: description,
             image: image,
-            phone: PhoneNumber.phone_number,
+            phone: Faker::PhoneNumber.phone_number,
             headline: description,
             industry: industry,
             urls: {
@@ -275,7 +275,7 @@ module Faker
               industry: industry,
               lastName: auth.last_name,
               location: {
-                country: { code: Address.country_code.downcase },
+                country: { code: Faker::Address.country_code.downcase },
                 name: city_state.split(', ').first
               },
               pictureUrl: image,
@@ -295,8 +295,8 @@ module Faker
       # @return [Hash] An auth hash in the format provided by omniauth-github.
       #
       # @faker.version 1.8.0
-      def github(name: nil, email: nil, uid: Number.number(digits: 8).to_s)
-        auth = Omniauth.new(name: name, email: email)
+      def github(name: nil, email: nil, uid: Faker::Number.number(digits: 8).to_s)
+        auth = new(name: name, email: email)
         login = auth.name.downcase.tr(' ', '-')
         html_url = "https://github.com/#{login}"
         api_url = "https://api.github.com/users/#{login}"
@@ -346,8 +346,8 @@ module Faker
               public_gists: random_number_from_range(1..1000),
               followers: random_number_from_range(1..1000),
               following: random_number_from_range(1..1000),
-              created_at: Time.backward(days: 36_400).iso8601,
-              updated_at: Time.backward(days: 2).iso8601
+              created_at: Faker::Time.backward(days: 36_400).iso8601,
+              updated_at: Faker::Time.backward(days: 2).iso8601
             }
           }
         }
@@ -364,8 +364,8 @@ module Faker
       #
       # @faker.version 2.3.0
       def apple(name: nil, email: nil, uid: nil)
-        uid ||= "#{Number.number(digits: 6)}.#{Number.hexadecimal(digits: 32)}.#{Number.number(digits: 4)}"
-        auth = Omniauth.new(name: name, email: email)
+        uid ||= "#{Faker::Number.number(digits: 6)}.#{Faker::Number.hexadecimal(digits: 32)}.#{Faker::Number.number(digits: 4)}"
+        auth = new(name: name, email: email)
         {
           provider: 'apple',
           uid: uid,
@@ -376,20 +376,20 @@ module Faker
             last_name: auth.last_name
           },
           credentials: {
-            token: Crypto.md5,
-            refresh_token: Crypto.md5,
-            expires_at: Time.forward.to_i,
+            token: Faker::Crypto.md5,
+            refresh_token: Faker::Crypto.md5,
+            expires_at: Faker::Time.forward.to_i,
             expires: true
           },
           extra: {
             raw_info: {
               iss: 'https://appleid.apple.com',
               aud: 'CLIENT_ID',
-              exp: Time.forward.to_i,
-              iat: Time.forward.to_i,
+              exp: Faker::Time.forward.to_i,
+              iat: Faker::Time.forward.to_i,
               sub: uid,
-              at_hash: Crypto.md5,
-              auth_time: Time.forward.to_i,
+              at_hash: Faker::Crypto.md5,
+              auth_time: Faker::Time.forward.to_i,
               email: auth.email,
               email_verified: true
             }
@@ -408,8 +408,8 @@ module Faker
       #
       # @faker.version next
       def auth0(name: nil, email: nil, uid: nil)
-        uid ||= "auth0|#{Number.hexadecimal(digits: 24)}"
-        auth = Omniauth.new(name: name, email: email)
+        uid ||= "auth0|#{Faker::Number.hexadecimal(digits: 24)}"
+        auth = new(name: name, email: email)
         {
           provider: 'auth0',
           uid: uid,
@@ -423,9 +423,9 @@ module Faker
             expires_at: Time.forward.to_i,
             expires: true,
             token_type: 'Bearer',
-            id_token: Crypto.sha256,
-            token: Crypto.md5,
-            refresh_token: Crypto.md5
+            id_token: Faker::Crypto.sha256,
+            token: Faker::Crypto.md5,
+            refresh_token: Faker::Crypto.md5
           },
           extra: {
             raw_info: {
@@ -434,8 +434,8 @@ module Faker
               iss: 'https://auth0.com/',
               sub: uid,
               aud: 'Auth012345',
-              iat: Time.forward.to_i,
-              exp: Time.forward.to_i
+              iat: Faker::Time.forward.to_i,
+              exp: Faker::Time.forward.to_i
             }
           }
         }
@@ -452,11 +452,11 @@ module Faker
       end
 
       def image
-        Placeholdit.image
+        Faker::Placeholdit.image
       end
 
       def city_state
-        "#{Address.city}, #{Address.state}"
+        "#{Faker::Address.city}, #{Faker::Address.state}"
       end
 
       def random_number_from_range(range)

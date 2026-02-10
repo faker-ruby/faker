@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'music'
-
 module Faker
   class Music
     class BossaNova < Base

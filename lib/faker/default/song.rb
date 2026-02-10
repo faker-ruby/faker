@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Music < Base
+  class Song < Base
     class << self
       NOTE_LETTERS = %w[C D E F G A B].freeze
       ACCIDENTAL_SIGNS = ['b', '#', ''].freeze
@@ -14,7 +14,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Music.key #=> "A#"
+      #   Faker::Song.key #=> "A#"
       #
       # @faker.version 1.6.4
       def key
@@ -27,7 +27,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Music.chord #=> "Adim7"
+      #   Faker::Song.chord #=> "Adim7"
       #
       # @faker.version 1.6.4
       def chord
@@ -40,7 +40,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Music.instrument #=> "Acoustic Guitar"
+      #   Faker::Song.instrument #=> "Acoustic Guitar"
       #
       # @faker.version 1.6.4
       def instrument
@@ -73,7 +73,7 @@ module Faker
       # @return [Array<String>]
       #
       # @example
-      #   Faker::Music.key_types #=> ['', 'm']
+      #   Faker::Song.key_types #=> ['', 'm']
       #
       # @faker.version 1.6.4
       def key_types
@@ -96,7 +96,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Music.band #=> "The Beatles"
+      #   Faker::Song.band #=> "The Beatles"
       #
       # @faker.version 1.9.1
       def band
@@ -109,7 +109,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Music.album #=> "Sgt. Pepper's Lonely Hearts Club"
+      #   Faker::Song.album #=> "Sgt. Pepper's Lonely Hearts Club"
       #
       # @faker.version 1.9.1
       def album
@@ -122,7 +122,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Music.genre #=> "Rock"
+      #   Faker::Song.genre #=> "Rock"
       #
       # @faker.version 1.9.1
       def genre
@@ -135,7 +135,7 @@ module Faker
       # @return [String]
       #
       # @example
-      #   Faker::Music.mambo #=> "Monica"
+      #   Faker::Song.mambo #=> "Monica"
       # @faker.version next
       def mambo_no_5
         fetch('music.mambo_no_5')

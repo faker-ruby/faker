@@ -13,7 +13,7 @@ module Faker
       #
       # @faker.version 1.8.0
       def headers
-        "#{fetch('markdown.headers')} #{Lorem.word.capitalize}"
+        "#{fetch('markdown.headers')} #{Faker::Lorem.word.capitalize}"
       end
 
       ##
@@ -95,7 +95,7 @@ module Faker
       #
       # @faker.version 1.8.0
       def block_code
-        "```ruby\n#{Lorem.sentence(word_count: 1)}\n```"
+        "```ruby\n#{Faker::Lorem.sentence(word_count: 1)}\n```"
       end
 
       ##
@@ -110,7 +110,7 @@ module Faker
       def table
         table = []
         3.times do
-          table << "#{Lorem.word} | #{Lorem.word} | #{Lorem.word}"
+          table << "#{Faker::Lorem.word} | #{Faker::Lorem.word} | #{Faker::Lorem.word}"
         end
         table.insert(1, '---- | ---- | ----')
         table.join("\n")

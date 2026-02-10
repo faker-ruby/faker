@@ -82,41 +82,17 @@ class TestDeterminism < Test::Unit::TestCase
       Bank
       Base
       Base58
-      Books
-      Cat
       Char
       ChileRut
-      CLI
       Config
-      Creature
       Date
       Deprecator
-      Dog
-      DragonBall
-      Dota
-      ElderScrolls
-      Fallout
       Games
-      GamesHalfLife
-      HeroesOfTheStorm
+      HTTP
       Internet
-      JapaneseMedia
-      LeagueOfLegends
-      Locations
-      Movies
-      Myst
-      Overwatch
-      OnePiece
-      Pokemon
-      Religion
-      Sports
-      SwordArtOnline
-      TvShows
       Time
+      TvShows
       VERSION
-      Witcher
-      WorldOfWarcraft
-      Zelda
     ]
   end
 end
