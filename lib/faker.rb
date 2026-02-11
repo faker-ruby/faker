@@ -6,6 +6,20 @@ require 'psych'
 require 'i18n'
 
 autoload(:OpenSSL, 'openssl')
+require 'zeitwerk'
+
+loader = Zeitwerk::Loader.new
+loader.tag = 'faker'
+loader.push_dir("#{mydir}/faker")
+loader.inflector = Zeitwerk::GemInflector.new(__FILE__)
+loader.ignore(
+  "#{mydir}/faker.rb",
+  "#{mydir}/faker/version.rb"
+)
+loader.inflector.inflect(
+  'DnD' => 'Dnd'
+)
+loader.setup
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).each { |file| require file }
 
