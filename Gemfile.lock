@@ -3,6 +3,7 @@ PATH
   specs:
     faker (3.6.0)
       i18n (>= 1.8.11, < 2)
+      zeitwerk (~> 2.7.3)
 
 GEM
   remote: https://rubygems.org/
@@ -93,6 +94,7 @@ GEM
       unicode-emoji (~> 4.1)
     unicode-emoji (4.2.0)
     yard (0.9.38)
+    zeitwerk (2.7.4)
 
 PLATFORMS
   arm64-darwin
