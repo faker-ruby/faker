@@ -10,6 +10,7 @@ class TestI18nLoad < Test::Unit::TestCase
     code = <<-RUBY
       require 'bundler/inline'
       require 'test/unit'
+      require 'zeitwerk'
 
       gemfile do
         source 'https://rubygems.org'

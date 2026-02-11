@@ -29,5 +29,5 @@ Gem::Specification.new do |spec|
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.add_dependency('i18n', '>= 1.8.11', '< 2')
-  spec.add_runtime_dependency "zeitwerk", "~> 2.7.3"
+  spec.add_dependency 'zeitwerk', '~> 2.7.3'
 end
