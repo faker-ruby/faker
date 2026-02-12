@@ -24,7 +24,6 @@ loader.collapse(
   "#{mydir}/faker/default",
 )
 loader.setup
-# loader.log!
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).each { |file| require file }
 
