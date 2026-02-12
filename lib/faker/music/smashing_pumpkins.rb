@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'music'
-
 module Faker
-  class Music
+  module Music
     class SmashingPumpkins < Base
       class << self
         ##

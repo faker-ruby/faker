@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Creature
+  module Creature
     class Animal < Base
       class << self
         ##

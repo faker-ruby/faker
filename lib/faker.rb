@@ -6,20 +6,25 @@ require 'psych'
 require 'i18n'
 
 autoload(:OpenSSL, 'openssl')
-require 'zeitwerk'
+
+require "zeitwerk"
 
 loader = Zeitwerk::Loader.new
-loader.tag = 'faker'
-loader.push_dir("#{mydir}/faker")
-loader.inflector = Zeitwerk::GemInflector.new(__FILE__)
-loader.ignore(
-  "#{mydir}/faker.rb",
-  "#{mydir}/faker/version.rb"
-)
+loader.tag = "faker"
+loader.push_dir(File.join(mydir, "faker"), namespace: Faker)
+loader.ignore("#{mydir}/faker/version.rb")
 loader.inflector.inflect(
-  'DnD' => 'Dnd'
+  "dnd" => "DnD",
+  "final_fantasy_xiv" => "FinalFantasyXIV",
+  "html" => "HTML",
+  "the_it_crowd" => "TheITCrowd",
+  "http" => "HTTP"
+)
+loader.collapse(
+  "#{mydir}/faker/default",
 )
 loader.setup
+# loader.log!
 
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).each { |file| require file }
 
@@ -290,6 +295,3 @@ module Faker
     end
   end
 end
-
-# require faker objects
-Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).each { |file| require file }

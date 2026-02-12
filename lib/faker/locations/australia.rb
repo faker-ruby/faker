@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Locations
+  module Locations
     class Australia < Base
       class << self
         ##

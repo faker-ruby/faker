@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class TvShows
+  module TvShows
     class TheThickOfIt < Base
       flexible :the_thick_of_it
 

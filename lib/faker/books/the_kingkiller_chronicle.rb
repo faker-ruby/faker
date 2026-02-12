@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Books
+  module Books
     class TheKingkillerChronicle < Base
       class << self
         ##

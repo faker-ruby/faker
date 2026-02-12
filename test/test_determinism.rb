@@ -60,6 +60,7 @@ class TestDeterminism < Test::Unit::TestCase
   end
 
   def all_methods
+    puts "subclasses: #{subclasses}"
     subclasses.map do |subclass|
       subclass_methods(subclass).flatten
     end.flatten.sort
@@ -72,6 +73,7 @@ class TestDeterminism < Test::Unit::TestCase
   end
 
   def subclass_methods(subclass)
+    puts "subclass: #{subclass}"
     eval("Faker::#{subclass}.public_methods(false) - Faker::Base.public_methods(false)").sort.map do |method|
       "Faker::#{subclass}.#{method}"
     end.sort

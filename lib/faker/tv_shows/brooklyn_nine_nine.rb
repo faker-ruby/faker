@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class TvShows
+  module TvShows
     class BrooklynNineNine < Base
       flexible :brooklyn_nine_nine
 

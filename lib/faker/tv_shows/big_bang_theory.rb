@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class TvShows
+  module TvShows
     class BigBangTheory < Base
       flexible :big_bang_theory
 

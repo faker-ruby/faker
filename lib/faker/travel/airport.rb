@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Travel
+  module Travel
     class Airport < Base
       class << self
         ##
