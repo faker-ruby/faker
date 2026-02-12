@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Games
+  module Games
     class LeagueOfLegends < Base
       class << self
         ##

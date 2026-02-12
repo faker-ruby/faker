@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Quotes
+  module Quotes
     class Rajnikanth < Base
       flexible :rajnikanth
 

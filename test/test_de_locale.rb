@@ -105,7 +105,7 @@ class TestDeLocale < Test::Unit::TestCase
   end
 
   def test_de_music_methods
-    assert_kind_of String, Faker::Music.instrument
+    assert_kind_of String, Faker::Song.instrument
   end
 
   def test_de_pokemon_methods

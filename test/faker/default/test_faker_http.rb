@@ -2,9 +2,9 @@
 
 require_relative '../../test_helper'
 
-class TestFakerInternetHTTP < Test::Unit::TestCase
+class TestFakerHTTP < Test::Unit::TestCase
   def setup
-    @tester = Faker::Internet::HTTP
+    @tester = Faker::HTTP
   end
 
   def test_status_code

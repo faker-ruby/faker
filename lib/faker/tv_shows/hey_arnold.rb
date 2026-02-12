@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class TvShows
+  module TvShows
     class HeyArnold < Base
       flexible :hey_arnold
 
