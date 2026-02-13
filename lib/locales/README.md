@@ -52,5 +52,5 @@ Faker::Config.default_locale = :pt
 In threaded server environments, e.g., Puma, locale per thread can be set as the following:
 
 ```ruby
-  Faker::Config.locale = :es
+Faker::Config.locale = :es
 ```

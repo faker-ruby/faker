@@ -157,7 +157,7 @@ To prevent Faker (version >= 2.22) from [generating duplicate values](https://gi
 you might need to add the following to the `test_helper.rb` or `rails_helper.rb` file:
 
 ```ruby
-  Faker::Config.random = Random.new
+Faker::Config.random = Random.new
 ```
 
 ## Generators
