@@ -1,8 +1,7 @@
 # frozen_string_literal: true
-require 'debug'
+
 require_relative 'test_helper'
 
-# rubocop:disable Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
   def setup
     @all_methods = all_methods.freeze
@@ -47,78 +46,50 @@ class TestDeterminism < Test::Unit::TestCase
 
   private
 
-  def deterministic_random?(first, method_name)
-    second = eval(method_name)
-    (first == second) || raise(
-      "#{method_name} has an entropy leak; use \"Faker::Config.random.rand\" or \"Array#sample(random: Faker::Config.random)\". Method to lookup for: sample, shuffle, rand"
+  def deterministic_random?(first, entry)
+    klass, method = entry
+    second = klass.public_send(method)
+
+    first == second || raise(
+      "#{klass}.#{method} has an entropy leak; use Faker::Config.random"
     )
   end
 
-  def store_result(method_name)
-    @first_run << eval(method_name)
-  rescue StandardError => e
-    raise %(#{method_name} raised "#{e}")
+  def store_result(entry)
+    klass, method = entry
+    @first_run << klass.public_send(method)
   end
 
   def all_methods
-    subclasses.map do |subclass|
-      subclass_methods(subclass).flatten
-    end.flatten.sort
+    faker_base_descendants
+      .flat_map { |klass| subclass_methods(klass) }
+      .sort_by { |klass, method| "#{klass}.#{method}" }
   end
 
-  def subclasses
-    Faker.constants.delete_if do |subclass|
-      skipped_classes.include?(subclass)
-    end.sort
+  def faker_base_descendants
+    ObjectSpace.each_object(Class)
+               .select { |klass| klass < Faker::Base }
+               .reject { |klass| skipped?(klass) }
   end
 
-  def subclass_methods(subclass)
-    eval("Faker::#{subclass}.public_methods(false) - Faker::Base.public_methods(false)").sort.map do |method|
-      "Faker::#{subclass}.#{method}"
-    end.sort
+  def subclass_methods(klass)
+    (klass.singleton_methods(false) - Faker::Base.singleton_methods(false))
+      .map { |method| [klass, method] }
+  end
+
+  def skipped?(klass)
+    skipped_classes.include?(klass.name.split('::').last.to_sym)
   end
 
   def skipped_classes
     %i[
-      Bank
       Base
       Base58
-      Books
-      Cat
       Char
       ChileRut
-      CLI
       Config
-      Creature
-      Date
-      Deprecator
-      Dog
-      DragonBall
-      Dota
-      ElderScrolls
-      Fallout
-      Games
-      GamesHalfLife
-      HeroesOfTheStorm
       Internet
-      JapaneseMedia
-      LeagueOfLegends
-      Locations
-      Movies
-      Myst
-      Overwatch
-      OnePiece
-      Pokemon
-      Religion
-      Sports
-      SwordArtOnline
-      TvShows
-      Time
       VERSION
-      Witcher
-      WorldOfWarcraft
-      Zelda
     ]
   end
 end
-# rubocop:enable Security/Eval,Style/EvalWithLocation

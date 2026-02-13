@@ -7,21 +7,21 @@ require 'i18n'
 
 autoload(:OpenSSL, 'openssl')
 
-require "zeitwerk"
+require 'zeitwerk'
 
 loader = Zeitwerk::Loader.new
-loader.tag = "faker"
-loader.push_dir(File.join(mydir, "faker"), namespace: Faker)
+loader.tag = 'faker'
+loader.push_dir(File.join(mydir, 'faker'), namespace: Faker)
 loader.ignore("#{mydir}/faker/version.rb")
 loader.inflector.inflect(
-  "dnd" => "DnD",
-  "final_fantasy_xiv" => "FinalFantasyXIV",
-  "html" => "HTML",
-  "the_it_crowd" => "TheITCrowd",
-  "http" => "HTTP"
+  'dnd' => 'DnD',
+  'final_fantasy_xiv' => 'FinalFantasyXIV',
+  'html' => 'HTML',
+  'the_it_crowd' => 'TheITCrowd',
+  'http' => 'HTTP'
 )
 loader.collapse(
-  "#{mydir}/faker/default",
+  "#{mydir}/faker/default"
 )
 loader.setup
 
