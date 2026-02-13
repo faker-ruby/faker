@@ -9,22 +9,6 @@ autoload(:OpenSSL, 'openssl')
 
 require 'zeitwerk'
 
-loader = Zeitwerk::Loader.new
-loader.tag = 'faker'
-loader.push_dir(File.join(mydir, 'faker'), namespace: Faker)
-loader.ignore("#{mydir}/faker/version.rb")
-loader.inflector.inflect(
-  'dnd' => 'DnD',
-  'final_fantasy_xiv' => 'FinalFantasyXIV',
-  'html' => 'HTML',
-  'the_it_crowd' => 'TheITCrowd',
-  'http' => 'HTTP'
-)
-loader.collapse(
-  "#{mydir}/faker/default"
-)
-loader.setup
-
 Dir.glob(File.join(mydir, 'helpers', '*.rb')).each { |file| require file }
 
 I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
@@ -293,4 +277,25 @@ module Faker
       end
     end
   end
+end
+
+if ENV['AUTOLOAD'] == '1'
+  loader = Zeitwerk::Loader.new
+  loader.tag = 'faker'
+  loader.push_dir(File.join(mydir, 'faker'), namespace: Faker)
+  loader.ignore("#{mydir}/faker/version.rb")
+  loader.inflector.inflect(
+    'dnd' => 'DnD',
+    'final_fantasy_xiv' => 'FinalFantasyXIV',
+    'html' => 'HTML',
+    'the_it_crowd' => 'TheITCrowd',
+    'http' => 'HTTP'
+  )
+  loader.collapse(
+    "#{mydir}/faker/default"
+  )
+  loader.setup
+else
+  # require faker objects
+  Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).each { |file| require file }
 end
