@@ -2,6 +2,10 @@
 
 module Faker
   class Internet < Base
+    if ENV['LAZY_LOAD'] == '1'
+      Faker.lazy_load(self)
+    end
+
     # Private, Host, and Link-Local network address blocks as defined in https://en.wikipedia.org/wiki/IPv4#Special-use_addresses
     PRIVATE_IPV4_ADDRESS_RANGES = [
       [10..10,   0..255,   0..255, 1..255], # 10.0.0.0/8     - Used for local communications within a private network

@@ -10,14 +10,8 @@ Using `const_missing` to lazy load generators was an idea from talking with Jere
 
 ### Changes needed
 
-#### Namespace changes
-
-A few generators had namespaces that didn't match their file name, and most of them were manageable, but two needed to be renamed:
-
-- `Faker::Music` -> `Faker::Song`. `Faker::Music` is a nested namespace.
-- `Faker::Internet::HTTP` -> `Faker::HTTP`. `Faker::Internet` is another generator.
-
-Considering that only two generators would be renamed, it wouldn't be a huge burden for users to use this approach.
+Would require loading `faker/music` and `faker/internet` first, before the nested namespaces such as `Faker::Music::BossaNova`,
+as they inherit from class `Music`.
 
 #### File location changes
 

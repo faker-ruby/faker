@@ -4,7 +4,7 @@ require_relative '../../test_helper'
 
 class TestFakerSong < Test::Unit::TestCase
   def setup
-    @tester = Faker::Song
+    @tester = Faker::Music
   end
 
   def test_keys

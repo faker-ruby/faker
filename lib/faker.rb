@@ -313,5 +313,13 @@ module Faker
 end
 
 if ENV['LAZY_LOAD'] != '1'
+  # parent class must be loaded first
+  require 'faker/music'
+  require 'faker/internet'
+
+  # maybe we can load files in this order:
+  # faker/files first, followed by faker/default, then any nested folders.
+  # or manually require files
+
   Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).each { |file| require file }
 end

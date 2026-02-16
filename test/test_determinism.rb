@@ -88,10 +88,10 @@ class TestDeterminism < Test::Unit::TestCase
       Date
       Deprecator
       Games
-      HTTP
       Internet
       Time
       TvShows
+      Music
       VERSION
     ]
   end
