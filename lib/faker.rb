@@ -314,8 +314,8 @@ end
 
 if ENV['LAZY_LOAD'] != '1'
   # parent class must be loaded first
-  require 'faker/music'
-  require 'faker/internet'
+  require_relative 'faker/music'
+  require_relative 'faker/internet'
 
   # maybe we can load files in this order:
   # faker/files first, followed by faker/default, then any nested folders.
