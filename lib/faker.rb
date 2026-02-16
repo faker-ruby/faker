@@ -43,7 +43,7 @@ module Faker
     end
   end
 
-  class Base
+  module Base
     Numbers = Array(0..9)
     ULetters = Array('A'..'Z')
     LLetters = Array('a'..'z')
@@ -296,6 +296,9 @@ if ENV['AUTOLOAD'] == '1'
   )
   loader.setup
 else
-  # require faker objects
-  Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).each { |file| require file }
+  rb_files = []
+  rb_files << File.join(mydir, 'faker', '*.rb')
+  rb_files << File.join(mydir, 'faker', '/**/*.rb')
+
+  Dir.glob(rb_files).each { |file| require file }  
 end

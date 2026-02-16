@@ -3,17 +3,17 @@
 Available since version 1.6.4.
 
 ```ruby
-Faker::Song.key #=> "C"
+Faker::Music.key #=> "C"
 
-Faker::Song.chord #=> "Amaj7"
+Faker::Music.chord #=> "Amaj7"
 
-Faker::Song.instrument #=> "Ukelele"
+Faker::Music.instrument #=> "Ukelele"
 
-Faker::Song.band #=> "The Beatles"
+Faker::Music.band #=> "The Beatles"
 
-Faker::Song.album #=> "Sgt. Pepper's Lonely Hearts Club"
+Faker::Music.album #=> "Sgt. Pepper's Lonely Hearts Club"
 
-Faker::Song.genre #=> "Rock"
+Faker::Music.genre #=> "Rock"
 
-Faker::Song.mambo_no_5 #=> "Monica"
+Faker::Music.mambo_no_5 #=> "Monica"
 ```
