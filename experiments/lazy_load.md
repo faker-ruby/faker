@@ -1,8 +1,8 @@
 # Lazy load experiment results
 
-- Git Branch: [sb-ta/lazy-load-experiment](https://github.com/faker-ruby/faker/compare/main...sb-ta/lazy-load-experiment)
-- Date: February 10th, 2026
-- Owner(s): Stefanni Brasil and Thiago Araujo
+Branch: sb-ta/lazy-load-experiment
+Date: February 10th, 2026
+Owner(s): Stefanni Brasil and Thiago Araujo
 
 ## Impact
 
@@ -10,14 +10,8 @@ Using `const_missing` to lazy load generators was an idea from talking with Jere
 
 ### Changes needed
 
-#### Namespace changes
-
-A few generators had namespaces that didn't match their file name, and most of them were manageable, but two needed to be renamed:
-
-- `Faker::Music` -> `Faker::Song`. `Faker::Music` is a nested namespace.
-- `Faker::Internet::HTTP` -> `Faker::HTTP`. `Faker::Internet` is another generator.
-
-Considering that only two generators would be renamed, it wouldn't be a huge burden for users to use this approach.
+Would require loading `faker/music` and `faker/internet` first, before the nested namespaces such as `Faker::Music::BossaNova`,
+as they inherit from class `Music`.
 
 #### File location changes
 
@@ -27,21 +21,18 @@ To prevent other generators from erroring out due to namespace clashing, some ge
 
 - no additional dependencies needed
 - code is extremely faster
-- after changing these two generators, which would be breaking changes, we can enable this as an opt-in configuration
+- we can enable this as an opt-in configuration
 
 ## Results
 
+Machine specs: Apple M1 Pro 16GB memory on MacOS Sequoia 15.7.3..
+
 profiler:
 
-- [bundle exec vernier run -- ruby -e "require 'faker'" LAZY_LOAD=1](https://share.firefox.dev/3ZuCP55)
-- [bundle exec vernier run --interval 100 --allocation-interval 10 -- ruby -e "require 'faker'; Faker::Internet.email" LAZY_LOAD=1](https://share.firefox.dev/4601PoA)
+[LAZY_LOAD=1 bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/46biNAs)
+[bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/4ams9vM)
 
-benchmarks (Machine specs: Apple M1 Pro 16GB memory on MacOS Sequoia 15.7.3.)
-
-```sh
-benchmark % ruby require.rb
-took 250.0249999575317ms to load
-```
+benchmark:
 
 ```sh
 benchmark % ruby load.rb
@@ -50,17 +41,19 @@ Warming up --------------------------------------
              require     1.000 i/100ms
             lazyload     1.000 i/100ms
 Calculating -------------------------------------
-             require      5.874 (± 0.0%) i/s  (170.25 ms/i) -     30.000 in   5.115652s
-            lazyload     12.207 (± 8.2%) i/s   (81.92 ms/i) -     61.000 in   5.007059s
+             require      4.698 (± 0.0%) i/s  (212.88 ms/i) -     24.000 in   5.133782s
+            lazyload      9.751 (± 0.0%) i/s  (102.55 ms/i) -     49.000 in   5.032161s
 
 Comparison:
-             require:        5.9 i/s
-            lazyload:       12.2 i/s - 2.08x  faster
+             require:        4.7 i/s
+            lazyload:        9.8 i/s - 2.08x  faster
 ```
 
 ## Artifacts
 
-Constants were configured to be lazy loaded using this script:
+### Scripts
+
+Constants were registered using this script:
 
 ```ruby
 # lazy_load.rb
