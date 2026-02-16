@@ -29,8 +29,8 @@ Machine specs: Apple M1 Pro 16GB memory on MacOS Sequoia 15.7.3..
 
 profiler:
 
-[LAZY_LOAD=1 bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/3MMkRZ1)
-[bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/3MMkRZ1)
+[LAZY_LOAD=1 bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/46biNAs)
+[bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/4ams9vM)
 
 benchmark:
 
@@ -41,12 +41,12 @@ Warming up --------------------------------------
              require     1.000 i/100ms
             lazyload     1.000 i/100ms
 Calculating -------------------------------------
-             require      4.476 (± 0.0%) i/s  (223.41 ms/i) -     23.000 in   5.154639s
-            lazyload      9.856 (± 0.0%) i/s  (101.46 ms/i) -     50.000 in   5.084043s
+             require      4.698 (± 0.0%) i/s  (212.88 ms/i) -     24.000 in   5.133782s
+            lazyload      9.751 (± 0.0%) i/s  (102.55 ms/i) -     49.000 in   5.032161s
 
 Comparison:
-             require:        4.5 i/s
-            lazyload:        9.9 i/s - 2.20x  faster
+             require:        4.7 i/s
+            lazyload:        9.8 i/s - 2.08x  faster
 ```
 
 ## Artifacts
