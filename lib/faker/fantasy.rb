@@ -2,5 +2,6 @@
 
 module Faker
   class Fantasy
+    # reopening class
   end
 end

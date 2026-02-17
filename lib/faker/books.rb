@@ -2,5 +2,6 @@
 
 module Faker
   class Books
+    # reopening class
   end
 end

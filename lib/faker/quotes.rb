@@ -2,5 +2,6 @@
 
 module Faker
   class Quotes
+    # reopening class
   end
 end

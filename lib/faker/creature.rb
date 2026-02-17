@@ -2,5 +2,6 @@
 
 module Faker
   class Creature
+    # reopening class
   end
 end

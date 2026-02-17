@@ -2,5 +2,6 @@
 
 module Faker
   class Movies
+    # reopening class
   end
 end

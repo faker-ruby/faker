@@ -2,5 +2,6 @@
 
 module Faker
   class Games
+    # reopening class
   end
 end

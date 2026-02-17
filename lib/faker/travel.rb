@@ -2,5 +2,6 @@
 
 module Faker
   class Travel
+    # reopening class
   end
 end

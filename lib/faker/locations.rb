@@ -2,5 +2,6 @@
 
 module Faker
   class Locations
+    # reopening class
   end
 end

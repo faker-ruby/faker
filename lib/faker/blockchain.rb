@@ -2,5 +2,6 @@
 
 module Faker
   class Blockchain
+    # reopening class
   end
 end

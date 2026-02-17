@@ -8,7 +8,7 @@ class TestDeterminism < Test::Unit::TestCase
     @all_methods = all_methods.freeze
     @first_run = []
   end
-# 
+
   def test_determinism
     Faker::Config.random = Random.new(42)
 

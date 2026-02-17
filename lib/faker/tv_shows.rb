@@ -2,5 +2,6 @@
 
 module Faker
   class TvShows
+    # reopening class
   end
 end

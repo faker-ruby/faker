@@ -2,5 +2,6 @@
 
 module Faker
   module Religion
+    # reopening class
   end
 end

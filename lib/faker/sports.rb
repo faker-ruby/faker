@@ -2,5 +2,6 @@
 
 module Faker
   class Sports
+    # reopening class
   end
 end

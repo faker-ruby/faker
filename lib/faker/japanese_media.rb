@@ -2,5 +2,6 @@
 
 module Faker
   class JapaneseMedia
+    # reopening class
   end
 end

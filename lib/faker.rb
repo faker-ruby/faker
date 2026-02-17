@@ -301,5 +301,5 @@ if ENV['AUTOLOAD'] != '1'
   rb_files << File.join(mydir, 'faker', '*.rb')
   rb_files << File.join(mydir, 'faker', '/**/*.rb')
 
-  Dir.glob(rb_files).each { |file| require file }  
+  Dir.glob(rb_files).each { |file| require file }
 end

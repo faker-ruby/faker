@@ -37,6 +37,9 @@ Metrics/CyclomaticComplexity:
   Enabled: false
   Max: 6
 
+Lint/EmptyClass:
+  AllowComments: true
+
 Metrics/MethodLength:
   Description: This cop checks if the length of a method exceeds some maximum value.
   Enabled: false
