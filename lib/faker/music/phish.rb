@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Music
+  class Music
     class Phish < Base
       class << self
         ##
