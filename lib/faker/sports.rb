@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module Faker
-  module Sports
+  class Sports
   end
 end

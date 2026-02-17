@@ -3,7 +3,7 @@
 require 'securerandom'
 
 module Faker
-  module Blockchain
+  class Blockchain
     class Tezos < Base
       class << self
         # @private

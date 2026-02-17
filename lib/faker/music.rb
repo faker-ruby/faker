@@ -17,7 +17,7 @@ module Faker
       #   Faker::Music.key #=> "A#"
       #
       # @faker.version 1.6.4
-      def self.key
+      def key
         sample(keys) + sample(key_variants)
       end
 

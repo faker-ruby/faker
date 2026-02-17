@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Blockchain
+  class Blockchain
     class Ethereum < Base
       class << self
         ##

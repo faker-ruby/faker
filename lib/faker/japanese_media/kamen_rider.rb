@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module JapaneseMedia
+  class JapaneseMedia
     class KamenRider < Base
       class << self
         ERAS = %i[showa heisei reiwa].freeze

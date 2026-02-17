@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module Faker
-  module Locations
+  class Locations
   end
 end

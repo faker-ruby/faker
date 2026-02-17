@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module TvShows
+  class TvShows
     class AquaTeenHungerForce < Base
       flexible :aqua_teen_hunger_force
 

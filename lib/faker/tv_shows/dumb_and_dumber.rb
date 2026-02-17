@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module TvShows
+  class TvShows
     class DumbAndDumber < Base
       flexible :dumb_and_dumber
 

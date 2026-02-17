@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Fantasy
+  class Fantasy
     class Tolkien < Base
       flexible :tolkien
 

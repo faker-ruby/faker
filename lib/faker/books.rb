@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module Faker
-  module Books
+  class Books
   end
 end

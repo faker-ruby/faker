@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module TvShows
+  class TvShows
     class TheFreshPrinceOfBelAir < Base
       flexible :the_fresh_prince_of_bel_air
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Games
+  class Games
     class Touhou < Base
       flexible :touhou
       class << self
