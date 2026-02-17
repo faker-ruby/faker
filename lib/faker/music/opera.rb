@@ -2,7 +2,7 @@
 
 module Faker
   # A generator of titles of operas by various composers
-  class Music
+  module Music
     class Opera < Base
       class << self
         ##

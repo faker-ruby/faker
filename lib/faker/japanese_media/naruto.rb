@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class JapaneseMedia
+  module JapaneseMedia
     class Naruto < Base
       class << self
         ##

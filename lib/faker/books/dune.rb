@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Books
+  module Books
     ##
     # A Faker module beyond your dreams, test data beyond your imagination.
     class Dune < Base

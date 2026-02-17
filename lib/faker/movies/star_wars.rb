@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  class Movies
+  module Movies
     class StarWars < Base
       class << self
         ##
