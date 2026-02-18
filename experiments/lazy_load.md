@@ -1,6 +1,6 @@
 # Lazy load experiment results
 
-Branch: sb-ta/lazy-load-experiment
+Branch: [sb-ta/lazy-load-experiment](https://github.com/faker-ruby/faker/compare/main...sb-ta/lazy-load-experiment)
 Date: February 10th, 2026
 Owner(s): Stefanni Brasil and Thiago Araujo
 
@@ -21,11 +21,12 @@ To prevent other generators from erroring out due to namespace clashing, some ge
 
 - no additional dependencies needed
 - code is extremely faster
-- we can enable this as an opt-in configuration
+- no breaking changes
+- we can enable this as an opt-in configuration, but any other customization would need to be implemented
 
 ## Results
 
-Machine specs: Apple M1 Pro 16GB memory on MacOS Sequoia 15.7.3..
+Machine specs: Apple M1 Pro 16GB memory on MacOS Sequoia 15.7.3.
 
 profiler:
 
