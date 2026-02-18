@@ -18,6 +18,8 @@ Similarly to the [lazy load experiment](./lazy_load.md), it would be required to
 
 - added a runtime dependency for the library
 
+- Zeitwerk 2.7 requires Ruby >= 3.2. This isn't a deal breaker because we will remove EOL Ruby 3.1 soon, but it would require releasing that version separately.
+
 #### File location changes
 
 To prevent other generators from erroring out due to namespace clashing, some generators have to be moved around (ex. `Faker::Quote` was moved from `/faker/quotes/quote` to `faker/default/quote`). Users can still use the generators as before, their namespaces didn't change.
@@ -25,7 +27,6 @@ To prevent other generators from erroring out due to namespace clashing, some ge
 ### Benefits
 
 - less code changes than lazy loading, and lots of customization options available (i.e., eager loading)
-- no breaking changes
 - code is extremely faster, but a bit slower than lazy loading
 - we can enable this as an opt-in configuration
 
