@@ -1,6 +1,6 @@
 # Autoload with zeitwerk experiment results
 
-Branch: [sb-autoload-zeitwerk-experiment-3207]()
+Branch: [sb-autoload-zeitwerk-experiment-3207](https://github.com/faker-ruby/faker/compare/sb-autoload-zeitwerk-experiment-3207?expand=1)
 Date: February 17th, 2026
 Owner(s): Stefanni Brasil and Thiago Araujo
 
