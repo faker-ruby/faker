@@ -20,6 +20,8 @@ Similarly to the [lazy load experiment](./lazy_load.md), it would be required to
 
 - Zeitwerk 2.7 requires Ruby >= 3.2. This isn't a deal breaker because we will remove EOL Ruby 3.1 soon, but it would require releasing that version separately.
 
+- our other goal besides improving performance, is allowing users to create their own Faker generators. Zeitwerk scans the file systems to setup the autoloads, so it would not setup autoloads for these external generators.
+
 #### File location changes
 
 To prevent other generators from erroring out due to namespace clashing, some generators have to be moved around (ex. `Faker::Quote` was moved from `/faker/quotes/quote` to `faker/default/quote`). Users can still use the generators as before, their namespaces didn't change.
