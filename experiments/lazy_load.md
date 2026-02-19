@@ -1,8 +1,8 @@
 # Lazy load experiment results
 
-Branch: sb-ta/lazy-load-experiment
-Date: February 10th, 2026
-Owner(s): Stefanni Brasil and Thiago Araujo
+- Branch: sb-ta/lazy-load-experiment
+- Date: February 10th, 2026
+- Owner(s): Stefanni Brasil and Thiago Araujo
 
 ## Impact
 
@@ -22,6 +22,7 @@ To prevent other generators from erroring out due to namespace clashing, some ge
 - no additional dependencies needed
 - code is extremely faster
 - we can enable this as an opt-in configuration
+- allows for users to create external generators in a transparent way
 
 ## Results
 
@@ -29,8 +30,8 @@ Machine specs: Apple M1 Pro 16GB memory on MacOS Sequoia 15.7.3..
 
 profiler:
 
-[LAZY_LOAD=1 bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/46biNAs)
-[bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/4ams9vM)
+- [LAZY_LOAD=1 bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/46biNAs)
+- [bundle exec vernier run -- ruby -e "require 'faker'"](https://share.firefox.dev/4ams9vM)
 
 benchmark:
 
