@@ -11,7 +11,6 @@
 [github-actions]: https://github.com/faker-ruby/faker/actions
 [downloads-total]: https://img.shields.io/gem/dt/faker.svg
 [downloads-badge]: https://img.shields.io/gem/dtv/faker.svg
-[downloads-badge]: https://img.shields.io/gem/dtv/faker.svg
 
 ## Quick links
 
