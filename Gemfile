@@ -20,6 +20,7 @@ gem 'yard', '0.9.38'
 
 # TODO: remove when Ruby 3.1 is no longer supported
 gem 'erb', '~> 4.0.4'
+gem 'json-schema', '~> 5.2.2'
 gem 'public_suffix', '~> 6.0.2'
 
 group :benchmark do

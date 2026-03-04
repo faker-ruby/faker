@@ -12,7 +12,7 @@ GEM
     ast (2.4.3)
     benchmark (0.5.0)
     benchmark-ips (2.14.0)
-    bigdecimal (4.0.1)
+    bigdecimal (3.3.1)
     cgi (0.5.1)
     coderay (1.1.3)
     concurrent-ruby (1.3.6)
@@ -29,9 +29,9 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.18.1)
-    json-schema (6.1.0)
+    json-schema (5.2.2)
       addressable (~> 2.8)
-      bigdecimal (>= 3.1, < 5)
+      bigdecimal (~> 3.1)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     mcp (0.8.0)
@@ -114,6 +114,7 @@ DEPENDENCIES
   erb (~> 4.0.4)
   faker!
   irb
+  json-schema (~> 5.2.2)
   minitest (= 5.27.0)
   pry (= 0.16.0)
   public_suffix (~> 6.0.2)
