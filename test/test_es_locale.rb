@@ -2,8 +2,8 @@
 
 require_relative 'test_helper'
 
-LoadedEsYaml = %w[en es].each_with_object({}) do |locale, h|
-  h[locale] = YAML.load_file(File.expand_path(File.dirname(__FILE__) + "/../lib/locales/#{locale}.yml"))[locale]['faker']
+LoadedEsYaml = %w[en es].to_h do |locale|
+  [locale, YAML.load_file(File.expand_path(File.dirname(__FILE__) + "/../lib/locales/#{locale}.yml"))[locale]['faker']]
 end
 
 class TestEsLocale < Test::Unit::TestCase
