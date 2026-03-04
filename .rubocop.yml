@@ -104,6 +104,14 @@ Style/MultipleComparison:
 Style/NumericLiteralPrefix:
   Enabled: false
 
+Style/OneClassPerFile:
+  Description: Checks that each source file defines at most one top-level class or module.
+  Exclude:
+    - 'script/txt2html'
+    - 'test/helpers/test_faker_deprecator.rb'
+    - 'test/test_faker.rb'
+    - 'test/test_flexible.rb'
+
 Style/RegexpLiteral:
   Description: Use / or %r around regular expressions.
   StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#percent-r
