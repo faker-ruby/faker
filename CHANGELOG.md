@@ -1,5 +1,38 @@
 # Changelog
 
+## [v3.6.1](https://github.com/faker-ruby/faker/tree/v3.6.1) (2026-03-04)
+
+It's almost Spring time in the Northern hemisphere 🌸 
+
+### Security, performance improvements and bug fixes
+
+* fix: polynomial regex on uncontrolled input by @thdaraujo in https://github.com/faker-ruby/faker/pull/3196
+* perf: replaces list of postcodes in `ja/address.yml` with a 7-digit format by @thdaraujo in https://github.com/faker-ruby/faker/pull/3201
+* Remove unnecessary whitespace from code blocks in READMEs by @ryotaro-shirai in https://github.com/faker-ruby/faker/pull/3209
+* Document lazy load experiment results by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3205
+* [skip ci] Add-backtick by @OzuAkira in https://github.com/faker-ruby/faker/pull/3210
+* Zeitwerk experiment changes and results [skip ci] by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3213
+* Remove duplicate reference link in README.md by @yutasb in https://github.com/faker-ruby/faker/pull/3217
+
+### Update development dependencies
+
+* Bump rubocop from 1.84.0 to 1.84.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3202
+* Bump irb from 1.16.0 to 1.17.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3203
+* Bump rubocop version and fix offenses by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3198
+* Bump rdoc from 7.1.0 to 7.2.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3204
+* Bump rubocop to 1.84.2 by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3215
+* Bump rubocop-minitest from 0.38.2 to 0.39.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3216
+* Bump rubocop to v1.85.0 by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3220
+
+### New Contributors
+* @ryotaro-shirai made their first contribution in https://github.com/faker-ruby/faker/pull/3209
+* @OzuAkira made their first contribution in https://github.com/faker-ruby/faker/pull/3210
+* @yutasb made their first contribution in https://github.com/faker-ruby/faker/pull/3217
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.6.0...v3.6.1
+
+---------------------------------
+
 ## [v3.6.0](https://github.com/faker-ruby/faker/tree/v3.6.0) (2026-01-21)
 
 First release of the new year!
