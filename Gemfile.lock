@@ -114,10 +114,8 @@ DEPENDENCIES
   erb (~> 4.0.4)
   faker!
   irb
-  json-schema (~> 5.2.2)
   minitest (= 5.27.0)
   pry (= 0.16.0)
-  public_suffix (~> 6.0.2)
   rake (= 13.3.1)
   rdoc
   rubocop
