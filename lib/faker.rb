@@ -38,6 +38,14 @@ module Faker
       def random
         Thread.current[:faker_config_random] || Random
       end
+
+      def lazy_loading?
+        Thread.current[:faker_lazy_loading] == true
+      end
+
+      def lazy_loading=(value)
+        Thread.current[:faker_lazy_loading] = value
+      end
     end
   end
 
