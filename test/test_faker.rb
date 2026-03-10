@@ -80,6 +80,14 @@ class TestFaker < Test::Unit::TestCase
     assert_equal v, Faker::Base.rand_in_range(0, 1000)
   end
 
+  def test_config_lazy_loading
+    refute_predicate Faker::Config, :lazy_loading?
+
+    Faker::Config.lazy_loading = true
+
+    assert_predicate Faker::Config, :lazy_loading?
+  end
+
   def test_parse
     data = {
       faker: {
