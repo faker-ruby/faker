@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'test_helper'
+require_relative 'support/mock_env'
 
 module Faker
   class TestFake
@@ -80,12 +81,37 @@ class TestFaker < Test::Unit::TestCase
     assert_equal v, Faker::Base.rand_in_range(0, 1000)
   end
 
-  def test_config_lazy_loading
-    refute_predicate Faker::Config, :lazy_loading?
+  def test_lazy_loading_with_config
+    mock_env('FAKER_LAZY_LOAD' => nil) do
+      refute_predicate Faker::Config, :lazy_loading?
 
-    Faker::Config.lazy_loading = true
+      Faker::Config.lazy_loading = true
 
-    assert_predicate Faker::Config, :lazy_loading?
+      assert_predicate Faker::Config, :lazy_loading?
+
+      Faker::Config.lazy_loading = false
+
+      refute_predicate Faker::Config, :lazy_loading?
+    end
+  end
+
+  def test_lazy_loading_with_env
+    mock_env('FAKER_LAZY_LOAD' => '1') do
+      assert_predicate Faker::Config, :lazy_loading?
+
+      Faker::Config.lazy_loading = false
+
+      assert_predicate Faker::Config, :lazy_loading?
+    end
+
+    # ignore config if env is set
+    mock_env('FAKER_LAZY_LOAD' => '0') do
+      refute_predicate Faker::Config, :lazy_loading?
+
+      Faker::Config.lazy_loading = true
+
+      refute_predicate Faker::Config, :lazy_loading?
+    end
   end
 
   def test_parse

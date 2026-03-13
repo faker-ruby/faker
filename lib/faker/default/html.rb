@@ -14,7 +14,7 @@ module Faker
       # @faker.version 3.2.1
       def heading
         level = rand(1..6)
-        "<h#{level}>#{Lorem.word.capitalize}</h#{level}>"
+        "<h#{level}>#{Faker::Lorem.word.capitalize}</h#{level}>"
       end
 
       ##
@@ -97,7 +97,7 @@ module Faker
       #
       # @faker.version 3.2.1
       def code
-        "<code>#{Lorem.sentence(word_count: 1)}</code>"
+        "<code>#{Faker::Lorem.sentence(word_count: 1)}</code>"
       end
 
       ##
@@ -165,7 +165,7 @@ module Faker
       #   Faker::HTML.element(tag: 'div', content: "This is a div with XSS attributes.", attributes: {class: 'xss', onclick: "alert('XSS')"}) #=> "<div class=\"xss\" onclick=\"alert('XSS')\">This is a div with XSS attributes.</div>"
       #
       # @faker.version 3.2.1
-      def element(tag: 'div', content: Lorem.sentence(word_count: 3), attributes: { class: Lorem.word, onclick: "#{Lorem.word}()" })
+      def element(tag: 'div', content: Faker::Lorem.sentence(word_count: 3), attributes: { class: Faker::Lorem.word, onclick: "#{Faker::Lorem.word}()" })
         attribute_string = attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
         "<#{tag} #{attribute_string}>#{content}</#{tag}>"
       end

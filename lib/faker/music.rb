@@ -2,6 +2,10 @@
 
 module Faker
   class Music < Base
+    if Faker::Config.lazy_loading?
+      Faker.lazy_load(self)
+    end
+
     class << self
       NOTE_LETTERS = %w[C D E F G A B].freeze
       ACCIDENTAL_SIGNS = ['b', '#', ''].freeze
