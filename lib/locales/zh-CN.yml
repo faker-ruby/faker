@@ -209,7 +209,7 @@ zh-CN:
         - 栋
       postcode:
         - "######"
-      state:
+      province: &province
         - 北京市
         - 上海市
         - 天津市
@@ -217,13 +217,13 @@ zh-CN:
         - 黑龙江省
         - 吉林省
         - 辽宁省
-        - 内蒙古
+        - 内蒙古自治区
         - 河北省
-        - 新疆
+        - 新疆维吾尔自治区
         - 甘肃省
         - 青海省
         - 陕西省
-        - 宁夏
+        - 宁夏回族自治区
         - 河南省
         - 山东省
         - 山西省
@@ -234,16 +234,17 @@ zh-CN:
         - 四川省
         - 贵州省
         - 云南省
-        - 广西省
-        - 西藏
+        - 广西壮族自治区
+        - 西藏自治区
         - 浙江省
         - 江西省
         - 广东省
         - 福建省
         - 海南省
-        - 香港
-        - 澳门
-      state_abbr:
+        - 香港特别行政区
+        - 澳门特别行政区
+        - 台湾省
+      province_abbr: &province_abbr
         - 京
         - 沪
         - 津
@@ -277,6 +278,11 @@ zh-CN:
         - 琼
         - 港
         - 澳
+        - 台
+      state:
+        *province
+      state_abbr:
+        *province_abbr
       street_name:
         - "#{Name.last_name}#{street_suffix}"
       street_address:
