@@ -16,7 +16,7 @@ gem 'rubocop-rake', '0.7.1'
 gem 'simplecov', '0.22.0'
 gem 'test-unit', '3.7.7'
 gem 'timecop', '0.9.10'
-gem 'yard', '0.9.38'
+gem 'yard', '0.9.39'
 
 # TODO: remove when Ruby 3.1 is no longer supported
 gem 'erb', '~> 4.0.4'
