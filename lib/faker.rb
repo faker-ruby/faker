@@ -41,7 +41,7 @@ module Faker
 
       def lazy_loading?
         if ENV.key?('FAKER_LAZY_LOAD') && !ENV['FAKER_LAZY_LOAD'].nil?
-          ENV['FAKER_LAZY_LOAD'] == '1'
+          ENV['FAKER_LAZY_LOAD'] == '1' || ENV['FAKER_LAZY_LOAD'] == 'true' || ENV['FAKER_LAZY_LOAD'] == 'TRUE'
         else
           Thread.current[:faker_lazy_loading] == true
         end

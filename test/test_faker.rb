@@ -93,10 +93,38 @@ class TestFaker < Test::Unit::TestCase
 
       refute_predicate Faker::Config, :lazy_loading?
     end
+
+    mock_env('ANOTHER_ENV' => nil) do
+      refute_predicate Faker::Config, :lazy_loading?
+
+      Faker::Config.lazy_loading = true
+
+      assert_predicate Faker::Config, :lazy_loading?
+
+      Faker::Config.lazy_loading = false
+
+      refute_predicate Faker::Config, :lazy_loading?
+    end
   end
 
   def test_lazy_loading_with_env
     mock_env('FAKER_LAZY_LOAD' => '1') do
+      assert_predicate Faker::Config, :lazy_loading?
+
+      Faker::Config.lazy_loading = false
+
+      assert_predicate Faker::Config, :lazy_loading?
+    end
+
+    mock_env('FAKER_LAZY_LOAD' => 'true') do
+      assert_predicate Faker::Config, :lazy_loading?
+
+      Faker::Config.lazy_loading = false
+
+      assert_predicate Faker::Config, :lazy_loading?
+    end
+
+    mock_env('FAKER_LAZY_LOAD' => 'TRUE') do
       assert_predicate Faker::Config, :lazy_loading?
 
       Faker::Config.lazy_loading = false
