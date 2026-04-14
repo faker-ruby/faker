@@ -97,7 +97,7 @@ GEM
     stringio (3.2.0)
     test-unit (3.7.7)
       power_assert
-    timecop (0.9.10)
+    timecop (0.9.11)
     tsort (0.2.0)
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
@@ -123,7 +123,7 @@ DEPENDENCIES
   rubocop-rake (= 0.7.1)
   simplecov (= 0.22.0)
   test-unit (= 3.7.7)
-  timecop (= 0.9.10)
+  timecop (= 0.9.11)
   yard (= 0.9.40)
 
 BUNDLED WITH
