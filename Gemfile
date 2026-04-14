@@ -18,9 +18,6 @@ gem 'test-unit', '3.7.7'
 gem 'timecop', '0.9.11'
 gem 'yard', '0.9.40'
 
-# TODO: remove when Ruby 3.1 is no longer supported
-gem 'erb', '~> 4.0.4'
-
 group :benchmark do
   gem 'benchmark'
   gem 'benchmark-ips'
