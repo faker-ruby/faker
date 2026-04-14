@@ -48,7 +48,7 @@ GEM
       stringio
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (13.3.1)
+    rake (13.4.1)
     rdoc (7.2.0)
       erb
       psych (>= 4.0.0)
@@ -105,7 +105,7 @@ DEPENDENCIES
   irb
   minitest (= 5.27.0)
   pry (= 0.16.0)
-  rake (= 13.3.1)
+  rake (= 13.4.1)
   rdoc
   rubocop
   rubocop-minitest (= 0.39.1)
