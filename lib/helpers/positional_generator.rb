@@ -278,8 +278,6 @@ class PositionalGenerator
     #       [2]
     #     ]
     def build_stack(graph)
-      require 'set'
-
       terminals = graph.filter_map { |(from, to)| to.nil? && from }
       stack = [terminals]
       seen = Set.new(terminals)

@@ -101,7 +101,6 @@ PLATFORMS
 DEPENDENCIES
   benchmark
   benchmark-ips
-  erb (~> 4.0.4)
   faker!
   irb
   minitest (= 5.27.0)
