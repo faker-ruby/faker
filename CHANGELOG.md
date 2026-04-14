@@ -1,5 +1,31 @@
 # Changelog
 
+## [v3.7.1](https://github.com/faker-ruby/faker/tree/v3.7.1) (2026-04-14)
+
+Thanks to all contributors!
+
+### Drops support for Ruby 3.1
+
+* Drop support for Ruby EOL 3.1 by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3240
+
+### What's changed
+
+* Remove json_schema and public-suffix versions constraint by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3224
+* Added additional football teams by @John222 in https://github.com/faker-ruby/faker/pull/3231
+* Remove duplicate 'Recalled to Life' book title by @gkrimer in https://github.com/faker-ruby/faker/pull/3238
+
+### Update development dependencies
+
+* Bump yard from 0.9.38 to 0.9.40 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3237
+* Bump timecop from 0.9.10 to 0.9.11 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3236
+* Bump rubocop from 1.85.1 to 1.86.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3235
+
+### New Contributors
+* @John222 made their first contribution in https://github.com/faker-ruby/faker/pull/3231
+* @gkrimer made their first contribution in https://github.com/faker-ruby/faker/pull/3238
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.6.1...v3.7.1
+
 ## [v3.6.1](https://github.com/faker-ruby/faker/tree/v3.6.1) (2026-03-04)
 
 It's almost Spring time in the Northern hemisphere 🌸 
