@@ -38,6 +38,18 @@ module Faker
       def random
         Thread.current[:faker_config_random] || Random
       end
+
+      def lazy_loading?
+        if ENV.key?('FAKER_LAZY_LOAD') && !ENV['FAKER_LAZY_LOAD'].nil?
+          %w[true TRUE 1].include?(ENV.fetch('FAKER_LAZY_LOAD', nil))
+        else
+          Thread.current[:faker_lazy_loading] == true
+        end
+      end
+
+      def lazy_loading=(value)
+        Thread.current[:faker_lazy_loading] = value
+      end
     end
   end
 
@@ -275,7 +287,47 @@ module Faker
       end
     end
   end
+
+  if Faker::Config.lazy_loading?
+    def self.load_path(*constants)
+      constants.map do |class_name|
+        class_name
+          .to_s
+          .gsub('::', '/')
+          .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+          .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+          .tr('-', '_')
+          .downcase
+      end.join('/')
+    end
+
+    def self.lazy_load(klass)
+      def klass.const_missing(class_name)
+        load_path = case class_name
+                    when :DnD
+                      Faker.load_path('faker/games/dnd')
+                    else
+                      Faker.load_path(name, class_name)
+                    end
+
+        begin
+          require(load_path)
+        rescue LoadError
+          require(load_path.gsub('faker/', 'faker/default/'))
+        end
+
+        const_get(class_name)
+      end
+    end
+
+    lazy_load(self)
+  end
 end
 
-# require faker objects
-Dir.glob(File.join(mydir, 'faker', '/**/*.rb')).each { |file| require file }
+unless Faker::Config.lazy_loading?
+  rb_files = []
+  rb_files << File.join(mydir, 'faker', '*.rb')
+  rb_files << File.join(mydir, 'faker', '/**/*.rb')
+
+  Dir.glob(rb_files).each { |file| require file }
+end

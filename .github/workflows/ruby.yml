@@ -9,9 +9,13 @@ name: Tests
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - 'lazy-loading-beta'
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - 'lazy-loading-beta'
   workflow_dispatch:
 
 permissions:
@@ -58,3 +62,18 @@ jobs:
 
     - name: Run tests
       run: bundle exec rake test
+  test-with-lazy-loading:
+    name: Ruby 3.2 with lazy loading
+    runs-on: ubuntu-latest
+    env:
+      BUNDLE_WITHOUT: benchmark
+    steps:
+    - uses: actions/checkout@v6
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+        bundler-cache: true
+
+    - name: Run tests with lazy load enabled
+      run: FAKER_LAZY_LOAD=1 bundle exec rake test
+
