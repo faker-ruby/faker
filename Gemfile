@@ -16,7 +16,7 @@ gem 'rubocop-rake', '0.7.1'
 gem 'simplecov', '0.22.0'
 gem 'test-unit', '3.7.7'
 gem 'timecop', '0.9.11'
-gem 'yard', '0.9.40'
+gem 'yard', '0.9.42'
 
 group :benchmark do
   gem 'benchmark'
