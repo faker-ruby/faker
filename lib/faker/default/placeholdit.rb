@@ -3,10 +3,10 @@
 module Faker
   class Placeholdit < Base
     class << self
-      SUPPORTED_FORMATS = %w[png jpg gif jpeg].freeze
+      SUPPORTED_FORMATS = %w[avif gif jpg jpeg png svg webp].freeze
 
       ##
-      # Produces a random placeholder image from https://via.placeholder.com.
+      # Produces a random placeholder image from https://placehold.co.
       #
       # @param size [String] Specifies the image's size, dimensions separated by 'x'.
       # @param format [String] Specifies the image's extension.
@@ -17,13 +17,13 @@ module Faker
       #
       # @example
       #     # Keyword arguments: size, format, background_color, text_color, text
-      #   Faker::Placeholdit.image #=> "https://via.placeholder.com/300x300.png"
-      #   Faker::Placeholdit.image(size: '50x50') #=> "https://via.placeholder.com/50x50.png"
-      #   Faker::Placeholdit.image(size: '50x50', format: 'jpg') #=> "https://via.placeholder.com/50x50.jpg"
-      #   Faker::Placeholdit.image(size: '50x50', format: 'gif', background_color: 'ffffff') #=> "https://via.placeholder.com/50x50.gif/ffffff"
-      #   Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: :random) #=> "https://via.placeholder.com/50x50.jpeg/39eba7"
-      #   Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: 'ffffff', text_color: '000') #=> "https://via.placeholder.com/50x50.jpeg/ffffff/000"
-      #   Faker::Placeholdit.image(size: '50x50', format: 'jpg', background_color: 'ffffff', text_color: '000', text: 'Some Custom Text') #=> "https://via.placeholder.com/50x50.jpg/ffffff/000?text=Some Custom Text"
+      #   Faker::Placeholdit.image #=> "https://placehold.co/300x300.png"
+      #   Faker::Placeholdit.image(size: '50x50') #=> "https://placehold.co/50x50.png"
+      #   Faker::Placeholdit.image(size: '50x50', format: 'jpg') #=> "https://placehold.co/50x50.jpg"
+      #   Faker::Placeholdit.image(size: '50x50', format: 'gif', background_color: 'ffffff') #=> "https://placehold.co/50x50/ffffff/000.gif"
+      #   Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: :random) #=> "https://placehold.co/50x50/39eba7/000.jpeg"
+      #   Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: 'ffffff', text_color: '000') #=> "https://placehold.co/50x50/ffffff/000.jpeg"
+      #   Faker::Placeholdit.image(size: '50x50', format: 'jpg', background_color: 'ffffff', text_color: '000', text: 'Some Custom Text') #=> "https://placehold.co/50x50/ffffff/000.jpg?text=Some Custom Text"
       #
       # @faker.version 1.6.0
       def image(size: '300x300', format: 'png', background_color: nil, text_color: nil, text: nil)
@@ -35,9 +35,11 @@ module Faker
         raise ArgumentError, "background_color must be a hex value without '#'" unless background_color.nil? || background_color =~ /((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/
         raise ArgumentError, "text_color must be a hex value without '#'" unless text_color.nil? || text_color =~ /((?:^\h{3}$)|(?:^\h{6}$)){1}(?!.*\H)/
 
-        image_url = "https://via.placeholder.com/#{size}.#{format}"
-        image_url += "/#{background_color}" if background_color
-        image_url += "/#{text_color}" if text_color
+        image_url = "https://placehold.co/#{size}"
+        if background_color || text_color
+          image_url += "/#{background_color || 'fff'}/#{text_color || '000'}"
+        end
+        image_url += ".#{format}"
         image_url += "?text=#{text}" if text
         image_url
       end
