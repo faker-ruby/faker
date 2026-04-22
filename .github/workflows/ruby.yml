@@ -75,5 +75,5 @@ jobs:
         bundler-cache: true
 
     - name: Run tests with lazy load enabled
-      run: FAKER_LAZY_LOAD=1 bundle exec rake test
+      run: bundle exec rake test:lazy_load
 
