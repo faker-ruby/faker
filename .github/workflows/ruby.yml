@@ -12,6 +12,7 @@ on:
     branches:
       - main
       - 'lazy-loading-beta'
+      - 'lazy-load-test-and-fixes'
   pull_request:
     branches:
       - main
