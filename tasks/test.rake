@@ -36,33 +36,32 @@ namespace :test do
           )
 
           if status.success?
-            mutex.synchronize do
-              print '.'
-              $stdout.flush
-            end
+            mutex.synchronize { puts "PASS: #{file}" }
           else
             mutex.synchronize do
-              print 'F'
-              $stdout.flush
+              puts "FAIL: #{file}"
               failures << { file: file, stdout: stdout, stderr: stderr }
             end
           end
+        end
+      rescue StandardError => e
+        mutex.synchronize do
+          failures << { file: 'THREAD ERROR', stdout: e.message, stderr: e.backtrace&.join("\n") || '' }
         end
       end
     end
 
     threads.each(&:join)
-    puts # newline after progress dots
 
     unless failures.empty?
-      warn "\n#{'=' * 60}"
-      warn "LAZY LOAD FAILURES (#{failures.size} file(s)):"
+      puts "\n#{'=' * 60}"
+      puts "LAZY LOAD FAILURES (#{failures.size} file(s)):"
       failures.each do |f|
-        warn "\n--- #{f[:file]} ---"
-        warn f[:stdout] unless f[:stdout].empty?
-        warn f[:stderr] unless f[:stderr].empty?
+        puts "\n--- #{f[:file]} ---"
+        puts f[:stdout] unless f[:stdout].empty?
+        puts f[:stderr] unless f[:stderr].empty?
       end
-      warn '=' * 60
+      puts '=' * 60
       abort
     end
   end
