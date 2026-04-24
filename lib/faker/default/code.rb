@@ -67,7 +67,7 @@ module Faker
       #
       # @faker.version 1.9.4
       def rut
-        value = Number.number(digits: 8).to_s
+        value = Faker::Number.number(digits: 8).to_s
         vd = rut_verificator_digit(value)
         value << "-#{vd}"
       end
@@ -92,7 +92,7 @@ module Faker
       #
       # @faker.version 2.2.0
       def nric(min_age: 18, max_age: 65)
-        birthyear = Date.birthday(min_age: min_age, max_age: max_age).year
+        birthyear = Faker::Date.birthday(min_age: min_age, max_age: max_age).year
 
         generate(:string) do |g|
           g.computed(name: :prefix) do
