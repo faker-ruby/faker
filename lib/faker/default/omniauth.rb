@@ -103,7 +103,7 @@ module Faker
           },
           credentials: {
             token: Faker::Crypto.md5,
-            expires_at: Time.forward.to_i,
+            expires_at: Faker::Time.forward.to_i,
             expires: true
           },
           extra: {
@@ -263,8 +263,8 @@ module Faker
               params: {
                 oauth_token: token,
                 oauth_token_secret: secret,
-                oauth_expires_in: Time.forward.to_i,
-                oauth_authorization_expires_in: Time.forward.to_i
+                oauth_expires_in: Faker::Time.forward.to_i,
+                oauth_authorization_expires_in: Faker::Time.forward.to_i
               },
               response: nil
             },
@@ -420,7 +420,7 @@ module Faker
             image: image
           },
           credentials: {
-            expires_at: Time.forward.to_i,
+            expires_at: Faker::Time.forward.to_i,
             expires: true,
             token_type: 'Bearer',
             id_token: Faker::Crypto.sha256,
