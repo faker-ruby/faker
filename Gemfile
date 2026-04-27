@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'irb'
-gem 'minitest', '5.27.0'
+gem 'minitest', '6.0.5'
 gem 'pry', '0.16.0'
 gem 'rake', '13.4.2'
 gem 'rdoc'
