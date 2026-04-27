@@ -63,7 +63,7 @@ module Faker
       # @faker.version 1.8.6
       def rb_hash(number: 1, type: -> { random_type })
         {}.tap do |hsh|
-          Lorem.words(number: number * 2).uniq.first(number).each do |s|
+          Faker::Lorem.words(number: number * 2).uniq.first(number).each do |s|
             value = type.is_a?(Proc) ? type.call : type
             hsh.merge!(s.to_sym => value)
           end
