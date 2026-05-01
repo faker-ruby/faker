@@ -288,46 +288,62 @@ module Faker
     end
   end
 
-  if Faker::Config.lazy_loading?
-    def self.load_path(*constants)
-      constants.map do |class_name|
-        class_name
-          .to_s
-          .gsub('::', '/')
-          .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
-          .gsub(/([a-z\d])([A-Z])/, '\1_\2')
-          .tr('-', '_')
-          .downcase
-      end.join('/')
+  def self.load_path(*constants)
+    constants.map do |class_name|
+      class_name
+        .to_s
+        .gsub('::', '/')
+        .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+        .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+        .tr('-', '_')
+        .downcase
+    end.join('/')
+  end
+
+  # TODO: refactor this
+
+  def self.resolve_const(context_name, class_name)
+    load_path = case class_name
+                when :DnD
+                  load_path('faker/games/dnd')
+                else
+                  load_path(context_name, class_name)
+                end
+
+    begin
+      require(load_path)
+    rescue LoadError
+      require(load_path.gsub('faker/', 'faker/default/'))
     end
+  end
 
-    def self.lazy_load(klass)
-      def klass.const_missing(class_name)
-        load_path = case class_name
-                    when :DnD
-                      Faker.load_path('faker/games/dnd')
-                    else
-                      Faker.load_path(name, class_name)
-                    end
+  private_class_method :resolve_const
 
-        begin
-          require(load_path)
-        rescue LoadError
-          require(load_path.gsub('faker/', 'faker/default/'))
-        end
+  EAGER_LOAD_MUTEX = Mutex.new
+  private_constant :EAGER_LOAD_MUTEX
 
-        const_get(class_name)
+  # initial usage determines lazy loading or eager loading
+  # TODO: this can be a bit surprising and error-prone
+  def self.const_missing(class_name)
+    EAGER_LOAD_MUTEX.synchronize do
+      if Config.lazy_loading?
+        resolve_const(name, class_name)
+      elsif !@eager_load
+        @eager_load = true
+        Dir.glob(["#{__dir__}/faker/*.rb", "#{__dir__}/faker/**/*.rb"]).each { |f| require f }
       end
     end
 
-    lazy_load(self)
+    const_get(class_name)
   end
-end
 
-unless Faker::Config.lazy_loading?
-  rb_files = []
-  rb_files << File.join(mydir, 'faker', '*.rb')
-  rb_files << File.join(mydir, 'faker', '/**/*.rb')
+  def self.lazy_load(klass)
+    mutex = Mutex.new
 
-  Dir.glob(rb_files).each { |file| require file }
+    klass.define_singleton_method(:const_missing) do |class_name|
+      mutex.synchronize { Faker.resolve_const(name, class_name) }
+
+      const_get(class_name)
+    end
+  end
 end
