@@ -317,8 +317,6 @@ module Faker
     end
   end
 
-  private_class_method :resolve_const
-
   EAGER_LOAD_MUTEX = Mutex.new
   private_constant :EAGER_LOAD_MUTEX
 
