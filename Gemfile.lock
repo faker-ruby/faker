@@ -28,7 +28,7 @@ GEM
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     method_source (1.1.0)
-    minitest (6.0.5)
+    minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
     minitest-mock (5.27.0)
@@ -105,7 +105,7 @@ DEPENDENCIES
   benchmark-ips
   faker!
   irb
-  minitest (= 6.0.5)
+  minitest (= 6.0.6)
   minitest-mock
   pry (= 0.16.0)
   rake (= 13.4.2)
