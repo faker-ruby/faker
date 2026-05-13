@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'faker/loader'
+
 mydir = __dir__
 
 require 'psych'
@@ -14,9 +16,10 @@ I18n.load_path += Dir[File.join(mydir, 'locales', '**/*.yml')]
 module Faker
   module Config
     @default_locale = nil
+    @lazy_loading = false
 
     class << self
-      attr_writer :default_locale
+      attr_writer :default_locale, :lazy_loading
 
       def locale=(new_locale)
         Thread.current[:faker_config_locale] = new_locale
@@ -40,15 +43,11 @@ module Faker
       end
 
       def lazy_loading?
-        if ENV.key?('FAKER_LAZY_LOAD') && !ENV['FAKER_LAZY_LOAD'].nil?
-          %w[true TRUE 1].include?(ENV.fetch('FAKER_LAZY_LOAD', nil))
+        if ENV.key?('FAKER_LAZY_LOAD')
+          %w[true TRUE 1].include?(ENV['FAKER_LAZY_LOAD'])
         else
-          Thread.current[:faker_lazy_loading] == true
+          @lazy_loading
         end
-      end
-
-      def lazy_loading=(value)
-        Thread.current[:faker_lazy_loading] = value
       end
     end
   end
@@ -288,46 +287,20 @@ module Faker
     end
   end
 
-  if Faker::Config.lazy_loading?
-    def self.load_path(*constants)
-      constants.map do |class_name|
-        class_name
-          .to_s
-          .gsub('::', '/')
-          .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
-          .gsub(/([a-z\d])([A-Z])/, '\1_\2')
-          .tr('-', '_')
-          .downcase
-      end.join('/')
-    end
+  @loader = Loader.new(__dir__, Config)
 
-    def self.lazy_load(klass)
-      def klass.const_missing(class_name)
-        load_path = case class_name
-                    when :DnD
-                      Faker.load_path('faker/games/dnd')
-                    else
-                      Faker.load_path(name, class_name)
-                    end
+  # Resolves missing constants by either lazy or eager loading generator files,
+  # depending on +Config.lazy_loading?+ at the time of first use.
+  #
+  # The loading strategy is determined on the first access. Setting
+  # +Config.lazy_loading+ after any generator has been referenced has no effect.
+  def self.const_missing(class_name)
+    @loader.load_const(name, class_name)
 
-        begin
-          require(load_path)
-        rescue LoadError
-          require(load_path.gsub('faker/', 'faker/default/'))
-        end
-
-        const_get(class_name)
-      end
-    end
-
-    lazy_load(self)
+    const_get(class_name)
   end
-end
 
-unless Faker::Config.lazy_loading?
-  rb_files = []
-  rb_files << File.join(mydir, 'faker', '*.rb')
-  rb_files << File.join(mydir, 'faker', '/**/*.rb')
-
-  Dir.glob(rb_files).each { |file| require file }
+  def self.lazy_load(klass)
+    @loader.install_on(klass)
+  end
 end
