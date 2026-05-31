@@ -13,7 +13,7 @@ module Faker
 
     def load_const(context_name, class_name)
       @mutex.synchronize do
-        if lazy_loading?
+        if loading_strategy == :lazy
           resolve_const(context_name, class_name)
         else
           eager_load!
@@ -31,24 +31,36 @@ module Faker
       end
     end
 
-    def resolve_const(context_name, class_name)
-      load_path = build_path(context_name, class_name)
-
-      require(load_path)
-    rescue LoadError
-      # try to load default generators
-      require(load_path.gsub('faker/', 'faker/default/'))
+    def loading_strategy
+      @loading_strategy ||= if @config.lazy_loading?
+                              :lazy
+                            else
+                              :eager
+                            end
     end
 
     private
+
+    def resolve_const(context_name, class_name)
+      load_path = build_path(context_name, class_name)
+
+      require load_path
+    rescue LoadError
+      # try to load default generators
+      require load_path.gsub('faker/', 'faker/default/')
+    end
 
     def eager_load!
       return if @eager_loaded
 
       @eager_loaded = true
 
-      Dir.glob(["#{@base_dir}/faker/*.rb", "#{@base_dir}/faker/**/*.rb"])
-         .each { |f| require f }
+      paths = [
+        "#{@base_dir}/faker/*.rb",
+        "#{@base_dir}/faker/**/*.rb"
+      ]
+
+      Dir.glob(paths).uniq.each { |f| require f }
     end
 
     def build_path(*constants)
@@ -61,10 +73,6 @@ module Faker
           .tr('-', '_')
           .downcase
       end.join('/')
-    end
-
-    def lazy_loading?
-      @lazy_loading ||= @config.lazy_loading?
     end
   end
 end
