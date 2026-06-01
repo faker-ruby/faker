@@ -4,11 +4,12 @@ module Faker
   class Loader
     INFLECTIONS = { 'DnD' => 'dnd' }.freeze
 
-    def initialize(base_dir, config)
+    def initialize(base_dir, config, requirer: method(:require))
       @base_dir = base_dir
       @config = config
       @eager_loaded = false
       @mutex = Mutex.new
+      @requirer = requirer
     end
 
     def load_const(context_name, class_name)
@@ -39,16 +40,16 @@ module Faker
                             end
     end
 
-    private
-
     def resolve_const(context_name, class_name)
       load_path = build_path(context_name, class_name)
 
-      require load_path
+      @requirer.call(load_path)
     rescue LoadError
       # try to load default generators
-      require load_path.gsub('faker/', 'faker/default/')
+      @requirer.call load_path.gsub('faker/', 'faker/default/')
     end
+
+    private
 
     def eager_load!
       return if @eager_loaded
@@ -60,7 +61,7 @@ module Faker
         "#{@base_dir}/faker/**/*.rb"
       ]
 
-      Dir.glob(paths).uniq.each { |f| require f }
+      Dir.glob(paths).uniq.each { |f| @requirer.call(f) }
     end
 
     def build_path(*constants)

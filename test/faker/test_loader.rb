@@ -5,67 +5,68 @@ require_relative '../test_helper'
 class TestLoader < Test::Unit::TestCase
   FIXTURES_DIR = File.expand_path('../fixtures', __dir__)
 
-  FakeConfig = Struct.new(:lazy_loading?)
+  class FakeRequirer
+    attr_reader :loaded_files
 
-  def eager_loader = Faker::Loader.new(FIXTURES_DIR, FakeConfig.new(false))
-  def lazy_loader = Faker::Loader.new(FIXTURES_DIR, FakeConfig.new(true))
-
-  def with_require_spy(fail_if: nil)
-    original = Kernel.instance_method(:require)
-    loaded_files = []
-    mutex = Mutex.new
-
-    Kernel.define_method(:require) do |f|
-      if fail_if&.call(f)
-        raise LoadError
-      end
-
-      mutex.synchronize { loaded_files << f }
+    def initialize(failing_paths: [])
+      @failing_paths = failing_paths
+      @loaded_files = []
+      @mutex = Mutex.new
     end
 
-    yield loaded_files
-  ensure
-    Kernel.define_method(:require, original)
+    def call(path)
+      raise LoadError if @failing_paths.any? do |suffix|
+        path.end_with?(suffix)
+      end
+
+      @mutex.synchronize { @loaded_files << path }
+    end
+  end
+
+  FakeConfig = Struct.new(:lazy_loading?)
+
+  def eager_loader(requirer:)
+    Faker::Loader.new(FIXTURES_DIR, FakeConfig.new(false), requirer: requirer)
+  end
+
+  def lazy_loader(requirer:)
+    Faker::Loader.new(FIXTURES_DIR, FakeConfig.new(true), requirer: requirer)
   end
 
   def test_strategy_does_not_change_after_first_use
     config = FakeConfig.new(false)
-    loader = Faker::Loader.new(FIXTURES_DIR, config)
+    loader = Faker::Loader.new(FIXTURES_DIR, config, requirer: FakeRequirer.new)
 
-    with_require_spy do
-      loader.load_const('Faker', :Gadget)
+    loader.load_const('Faker', :Gadget)
+    config[:lazy_loading?] = true
 
-      config[:lazy_loading?] = true
-
-      assert_equal :eager, loader.loading_strategy
-    end
+    assert_equal :eager, loader.loading_strategy
   end
 
   def test_falls_back_to_default_path_on_load_error
-    loader = lazy_loader
+    non_default_path = ['faker/gadget']
+    requirer = FakeRequirer.new(failing_paths: non_default_path)
 
-    fail_when_requiring_non_default_path = ->(f) { f.end_with?('faker/gadget') }
+    loader = lazy_loader(requirer: requirer)
 
-    with_require_spy(fail_if: fail_when_requiring_non_default_path) do |loaded_files|
-      loader.load_const('Faker', :Gadget)
+    loader.load_const('Faker', :Gadget)
 
-      assert loaded_files.any? { |f| f.include?('faker/default/gadget') }
-    end
+    assert requirer.loaded_files.any? { |f| f.include?('faker/default/gadget') }
   end
 
   def test_inflection_resolves_correctly
-    loader = lazy_loader
+    requirer = FakeRequirer.new
+    loader = lazy_loader(requirer: requirer)
 
-    with_require_spy do |loaded_files|
-      loader.load_const('Faker::Games', :DnD)
+    loader.load_const('Faker::Games', :DnD)
 
-      assert_includes loaded_files.first, 'faker/games/dnd'
-      refute_includes loaded_files.first, 'dn_d'
-    end
+    assert_includes requirer.loaded_files.first, 'faker/games/dnd'
+    refute_includes requirer.loaded_files.first, 'dn_d'
   end
 
   def test_install_on_installs_const_missing
-    loader = lazy_loader
+    requirer = FakeRequirer.new
+    loader = lazy_loader(requirer: requirer)
     klass = Class.new
 
     loader.install_on(klass)
@@ -74,72 +75,71 @@ class TestLoader < Test::Unit::TestCase
   end
 
   def test_eager_loads_all_files_on_first_const_access
-    loader = eager_loader
+    requirer = FakeRequirer.new
+    loader = eager_loader(requirer: requirer)
 
-    with_require_spy do |loaded_files|
-      loader.load_const('Faker', :Gadget)
+    loader.load_const('Faker', :Gadget)
 
-      actual_files = loaded_files.map do |loaded|
-        loaded.match(/fixtures\/(?<path>.*)/)[:path]
-      end.uniq
+    actual_files = requirer.loaded_files.map do |loaded|
+      loaded.match(/fixtures\/(?<path>.*)/)[:path]
+    end.uniq
 
-      expected_files = %w[
-        faker/gadget.rb
-        faker/default/widget.rb
-        faker/games/dnd.rb
-      ]
+    expected_files = %w[
+      faker/gadget.rb
+      faker/default/widget.rb
+      faker/games/dnd.rb
+    ]
 
-      expected_files.each do |file|
-        assert_includes actual_files, file, "expected #{file} to be loaded"
-      end
+    expected_files.each do |file|
+      assert_includes actual_files, file, "expected #{file} to be loaded"
     end
   end
 
   def test_eager_loads_only_once
-    loader = eager_loader
+    requirer = FakeRequirer.new
+    loader = eager_loader(requirer: requirer)
 
-    with_require_spy do |loaded_files|
-      loader.load_const('Faker', :Gadget)
+    loader.load_const('Faker', :Gadget)
 
-      count = loaded_files.size
+    count = requirer.loaded_files.size
 
-      loader.load_const('Faker', :Gadget)
+    loader.load_const('Faker', :Gadget)
 
-      assert_equal count, loaded_files.size
-    end
+    assert_equal count, requirer.loaded_files.size
   end
 
   def test_lazy_loads_single_file_on_const_access
-    loader = lazy_loader
+    requirer = FakeRequirer.new
+    loader = lazy_loader(requirer: requirer)
 
-    with_require_spy do |loaded_files|
-      loader.load_const('Faker', :Gadget)
+    loader.load_const('Faker', :Gadget)
 
-      assert_equal 1, loaded_files.size
-      assert_includes loaded_files.first, 'faker/gadget'
-    end
+    assert_equal 1, requirer.loaded_files.size
+    assert_includes requirer.loaded_files.first, 'faker/gadget'
   end
 
   def test_eager_loads_only_once_across_threads
-    loader = eager_loader
+    requirer = FakeRequirer.new
+    loader = eager_loader(requirer: requirer)
 
-    with_require_spy do |loaded_files|
-      threads = 10.times.map do
-        Thread.new { loader.load_const('Faker', :Gadget) }
-      end
-
-      threads.each(&:join)
-
-      actual_files = loaded_files.map do |loaded|
-        loaded.match(/fixtures\/(?<path>.*)/)[:path]
-      end.compact
-
-      assert_equal actual_files.uniq, actual_files
+    threads = 10.times.map do
+      Thread.new { loader.load_const('Faker', :Gadget) }
     end
+
+    threads.each(&:join)
+
+    actual_files = requirer.loaded_files.map do |loaded|
+      loaded.match(/fixtures\/(?<path>.*)/)[:path]
+    end.compact
+
+    assert_equal actual_files.uniq, actual_files
   end
 
   def test_raises_on_unknown_const
-    loader = lazy_loader
+    non_existent_paths = ['faker/non_existent', 'faker/default/non_existent']
+    requirer = FakeRequirer.new(failing_paths: non_existent_paths)
+
+    loader = lazy_loader(requirer: requirer)
 
     assert_raises(LoadError) { loader.load_const('Faker', :NonExistent) }
   end

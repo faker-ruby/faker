@@ -6,6 +6,9 @@ require_relative 'test_helper'
 # rubocop:disable Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
   def setup
+    # TODO: can we expose loader?
+    Faker.instance_variable_get(:@loader).send(:eager_load!)
+
     @all_methods = all_methods.freeze
     @first_run = []
   end
@@ -94,6 +97,7 @@ class TestDeterminism < Test::Unit::TestCase
       Time
       TvShows
       Music
+      Loader
       VERSION
     ]
   end
