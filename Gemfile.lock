@@ -94,7 +94,7 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.2.0)
-    yard (0.9.43)
+    yard (0.9.44)
 
 PLATFORMS
   arm64-darwin
@@ -116,7 +116,7 @@ DEPENDENCIES
   simplecov (= 0.22.0)
   test-unit (= 3.7.7)
   timecop (= 0.9.11)
-  yard (= 0.9.43)
+  yard (= 0.9.44)
 
 BUNDLED WITH
   4.0.6
