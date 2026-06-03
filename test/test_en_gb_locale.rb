@@ -54,6 +54,23 @@ class TestEnGbLocale < Test::Unit::TestCase
     assert_equal 2, postcode.split.length
   end
 
+  POSTCODE_FORMATS = Regexp.union(
+    /\A[A-PR-UWYZ][0-9] [0-9][ABD-HJLNP-UW-Z]{2}\z/,                      # AN NAA
+    /\A[A-PR-UWYZ][0-9]{2} [0-9][ABD-HJLNP-UW-Z]{2}\z/,                   # ANN NAA
+    /\A[A-PR-UWYZ][A-HK-Y][0-9] [0-9][ABD-HJLNP-UW-Z]{2}\z/,              # AAN NAA
+    /\A[A-PR-UWYZ][A-HK-Y][0-9]{2} [0-9][ABD-HJLNP-UW-Z]{2}\z/,           # AANN NAA
+    /\A[A-PR-UWYZ][0-9][ABCDEFGHJKPSTUW] [0-9][ABD-HJLNP-UW-Z]{2}\z/,     # ANA NAA
+    /\A[A-PR-UWYZ][A-HK-Y][0-9][ABEHMNPRVWXY] [0-9][ABD-HJLNP-UW-Z]{2}\z/ # AANA NAA
+  )
+
+  def test_en_gb_postcode_always_matches_a_valid_format
+    100.times do
+      postcode = Faker::Address.postcode
+
+      assert_match POSTCODE_FORMATS, postcode, "#{postcode.inspect} is not a valid UK postcode format"
+    end
+  end
+
   def test_en_gb_postcode_incode_is_valid
     # The letters C I K M O V are not used in the second part of the Postcode.
     incode = Faker::Address.postcode.split[1]
