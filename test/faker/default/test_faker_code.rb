@@ -52,16 +52,16 @@ class TestFakerCode < Test::Unit::TestCase
   end
 
   def test_imei_luhn_value
-    assert luhn_checksum_valid(@tester.imei)
+    assert luhn_checksum_valid?(@tester.imei)
   end
 
   def test_sin
     assert_match(/\d{9}/, @tester.sin)
     assert_equal(9, @tester.sin.length)
-    assert luhn_checksum_valid(@tester.sin)
+    assert luhn_checksum_valid?(@tester.sin)
   end
 
-  def luhn_checksum_valid(numbers)
+  def luhn_checksum_valid?(numbers)
     sum = 0
     i = 0
 

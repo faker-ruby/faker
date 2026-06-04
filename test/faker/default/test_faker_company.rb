@@ -251,7 +251,7 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def text_indian_gst_number
-    assert_match(/^([0-2][0-9]|[3][0-7])[A-Z]{3}[ABCFGHLJPTK][A-Z]\d{4}[A-Z][A-Z0-9][Z][A-Z0-9]$/i, @tester.indian_gst_number)
+    assert_match(/^([0-2][0-9]|3[0-7])[A-Z]{3}[ABCFGHLJPTK][A-Z]\d{4}[A-Z][A-Z0-9]Z[A-Z0-9]$/i, @tester.indian_gst_number)
   end
 
   def test_state_code_in_indian_gst_number
@@ -264,7 +264,7 @@ class TestFakerCompany < Test::Unit::TestCase
   end
 
   def test_indian_gst_number_with_state_code
-    assert_match(/^(22)[A-Z]{3}[ABCFGHLJPTK][A-Z]\d{4}[A-Z][A-Z0-9][Z][A-Z0-9]$/i, @tester.indian_gst_number(state_code: '22'))
+    assert_match(/^(22)[A-Z]{3}[ABCFGHLJPTK][A-Z]\d{4}[A-Z][A-Z0-9]Z[A-Z0-9]$/i, @tester.indian_gst_number(state_code: '22'))
   end
 
   private

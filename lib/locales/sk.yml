@@ -1842,7 +1842,8 @@ sk:
         - a.s.
         - v.o.s.
       buzzwords:
-        - - Adaptive
+        -
+          - Adaptive
           - Advanced
           - Ameliorated
           - Assimilated
@@ -1942,7 +1943,8 @@ sk:
           - Virtual
           - Visionary
           - Vision-oriented
-        - - 24 hour
+        -
+          - 24 hour
           - 24/7
           - 3rd generation
           - 4th generation
@@ -2043,7 +2045,8 @@ sk:
           - zero administration
           - zero defect
           - zero tolerance
-        - - ability
+        -
+          - ability
           - access
           - adapter
           - algorithm
@@ -2148,7 +2151,8 @@ sk:
           - website
           - workforce
       bs:
-        - - implement
+        -
+          - implement
           - utilize
           - integrate
           - streamline
@@ -2208,7 +2212,8 @@ sk:
           - productize
           - redefine
           - recontextualize
-        - - clicks-and-mortar
+        -
+          - clicks-and-mortar
           - value-added
           - vertical
           - proactive
@@ -2273,7 +2278,8 @@ sk:
           - compelling
           - holistic
           - rich
-        - - synergies
+        -
+          - synergies
           - web-readiness
           - paradigms
           - markets

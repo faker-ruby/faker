@@ -1,7 +1,7 @@
 en:
   faker:
     chess:
-      players: 
+      players:
         - Alexander Alekhine
         - Alexei Shirov
         - Alexis Vargas
@@ -15,7 +15,7 @@ en:
         - Levon Aronian
         - Magnus Carlsen
         - Mikhail Botvinnik
-        - Radjabov Teimour 
+        - Radjabov Teimour
         - Sergey Karjakin
         - Tigran Petrosian
         - Viswanathan Anand
@@ -100,4 +100,3 @@ en:
         - AIM
         - AFM
         - ACM
-

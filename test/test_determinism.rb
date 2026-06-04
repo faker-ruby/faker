@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require 'minitest/mock'
 require_relative 'test_helper'
+
 # rubocop:disable Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
   def setup
@@ -82,41 +84,17 @@ class TestDeterminism < Test::Unit::TestCase
       Bank
       Base
       Base58
-      Books
-      Cat
       Char
       ChileRut
-      CLI
       Config
-      Creature
       Date
       Deprecator
-      Dog
-      DragonBall
-      Dota
-      ElderScrolls
-      Fallout
       Games
-      GamesHalfLife
-      HeroesOfTheStorm
       Internet
-      JapaneseMedia
-      LeagueOfLegends
-      Locations
-      Movies
-      Myst
-      Overwatch
-      OnePiece
-      Pokemon
-      Religion
-      Sports
-      SwordArtOnline
-      TvShows
       Time
+      TvShows
+      Music
       VERSION
-      Witcher
-      WorldOfWarcraft
-      Zelda
     ]
   end
 end

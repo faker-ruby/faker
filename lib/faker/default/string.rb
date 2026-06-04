@@ -24,7 +24,7 @@ module Faker
       private
 
       def select_a(length)
-        if length.class.included_modules.include? Enumerable
+        if length.class.include?(Enumerable)
           select_a sample(length.to_enum.to_a)
         else
           length # recursive base case

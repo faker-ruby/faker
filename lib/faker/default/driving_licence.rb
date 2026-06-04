@@ -61,11 +61,11 @@ module Faker
       #   Faker::DrivingLicence.uk_driving_licence             #=> "70702548"
       #
       # @faker.version 1.9.2
-      def uk_driving_licence(*args)
+      def uk_driving_licence(*)
         if Faker::Config.random.rand < NI_CHANCE
           northern_irish_driving_licence
         else
-          british_driving_licence(*args)
+          british_driving_licence(*)
         end
       end
 

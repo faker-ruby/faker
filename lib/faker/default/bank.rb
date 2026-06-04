@@ -17,11 +17,7 @@ module Faker
       #
       # @faker.version 1.9.1
       def account_number(digits: 10)
-        output = ''
-
-        output += rand.to_s[2..] while output.length < digits
-
-        output[0...digits]
+        Array.new(digits) { rand(10) }.join
       end
 
       ##

@@ -2,7 +2,7 @@
 
 require_relative '../../test_helper'
 
-class TestFakerYoda < Test::Unit::TestCase
+class TestFakerQuote < Test::Unit::TestCase
   def setup
     @tester = Faker::Quote
   end

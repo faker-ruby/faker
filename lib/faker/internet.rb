@@ -2,6 +2,10 @@
 
 module Faker
   class Internet < Base
+    if Faker::Config.lazy_loading?
+      Faker.lazy_load(self)
+    end
+
     # Private, Host, and Link-Local network address blocks as defined in https://en.wikipedia.org/wiki/IPv4#Special-use_addresses
     PRIVATE_IPV4_ADDRESS_RANGES = [
       [10..10,   0..255,   0..255, 1..255], # 10.0.0.0/8     - Used for local communications within a private network
@@ -93,8 +97,8 @@ module Faker
           end
 
           sample([
-                   Char.prepare(Name.first_name),
-                   [Name.first_name, Name.last_name].map do |name|
+                   Char.prepare(Faker::Name.first_name),
+                   [Faker::Name.first_name, Faker::Name.last_name].map do |name|
                      Char.prepare(name)
                    end.join(sample(separators))
                  ])
@@ -235,7 +239,7 @@ module Faker
       # @example
       #   Faker::Internet.domain_word   #=> "senger"
       def domain_word
-        with_locale(:en) { Char.prepare(Company.name.split.first) }
+        with_locale(:en) { Char.prepare(Faker::Company.name.split.first) }
       end
 
       ## Returns the domain suffix e.g. com, org, co, biz, info etc.

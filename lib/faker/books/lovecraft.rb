@@ -240,7 +240,7 @@ module Faker
 
           paragraph += " #{paragraph(sentence_count: 3)}" while paragraph.length < characters
 
-          "#{paragraph[0...characters - 1]}."
+          "#{paragraph[0...(characters - 1)]}."
         end
       end
     end

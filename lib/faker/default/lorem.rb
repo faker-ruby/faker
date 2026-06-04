@@ -58,7 +58,7 @@ module Faker
       #
       # @faker.version 2.1.3
       def character
-        sample(Types::CHARACTERS)
+        sample(Faker::Types::CHARACTERS)
       end
 
       ##
@@ -78,7 +78,7 @@ module Faker
       #
       # @faker.version 2.1.3
       def characters(number: 255, min_alpha: 0, min_numeric: 0)
-        Alphanumeric.alphanumeric(number: number, min_alpha: min_alpha, min_numeric: min_numeric)
+        Faker::Alphanumeric.alphanumeric(number: number, min_alpha: min_alpha, min_numeric: min_numeric)
       end
 
       ##
@@ -194,7 +194,7 @@ module Faker
 
         paragraph += " #{paragraph(sentence_count: 3, supplemental: supplemental)}" while paragraph.length < number
 
-        "#{paragraph[0...number - 1]}."
+        "#{paragraph[0...(number - 1)]}."
       end
 
       ##

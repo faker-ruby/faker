@@ -45,7 +45,6 @@ en:
           - Drop Ship (Skeleton)
           - Super P.E.K.K.A
           - Hog Glider (Hog Rider)
-
         ranks:
           - Unranked
           - Bronze III
@@ -70,7 +69,6 @@ en:
           - Titan II
           - Titan I
           - Legend
-
         defensive_buildings:
           - Cannon
           - Archer Tower

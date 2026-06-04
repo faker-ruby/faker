@@ -96,7 +96,7 @@ module Faker
       private
 
       def build_url(size, format, search_terms, match_all)
-        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /^[0-9]+x[0-9]+$/
+        raise ArgumentError, 'Size should be specified in format 300x300' unless size =~ /\A[0-9]+x[0-9]+\z/
 
         url_parts = ['https://loremflickr.com']
         url_parts << format

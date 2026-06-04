@@ -30,7 +30,7 @@ module Faker
       method_name.to_s.start_with?('faker_') || super
     end
 
-    RetryLimitExceeded = Class.new(StandardError)
+    class RetryLimitExceeded < StandardError; end
 
     def previous_results
       Thread.current[:faker_unique_generator_previous_results] ||= {}

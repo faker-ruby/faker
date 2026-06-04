@@ -49,5 +49,6 @@ module Faker
   end
 
   include Faker::Deprecator
+
   deprecate_generator('Dogs', Cats)
 end

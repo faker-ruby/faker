@@ -3,7 +3,7 @@ plugins:
   - rubocop-rake
 
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.2
   NewCops: enable
 
 # Suppress noise for obvious operator precedence.
@@ -50,6 +50,11 @@ Naming/VariableNumber:
   Description: Use the configured style when numbering symbols, methods and variables.
   Enabled: false
 
+Security/Eval:
+  Description: The use of eval represents a serious security risk.
+  Exclude:
+    - 'lib/faker/default/json.rb'
+
 Style/AsciiComments:
   Description: This cop checks for non-ascii (non-English) characters in comments.
   Exclude:
@@ -72,13 +77,6 @@ Style/EvalWithLocation:
   Exclude:
     - 'lib/faker/default/json.rb'
 
-Style/FormatStringToken:
-  Description: This cop checks for a consistent style for named format string tokens.
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Description: Add the frozen_string_literal comment to the top of files to help transition from Ruby 2.3.0 to Ruby 3.0.
-
 Style/For:
   Description: Checks use of for or each in multiline loops.
   StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#no-for-loops
@@ -88,8 +86,31 @@ Style/For:
   - for
   - each
 
+Style/FormatStringToken:
+  Description: This cop checks for a consistent style for named format string tokens.
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Description: Add the frozen_string_literal comment to the top of files to help transition from Ruby 2.3.0 to Ruby 3.0.
+
+Style/IfUnlessModifier:
+  Description: Checks for `if` and `unless` statements that would fit on one line if written as modifier `if`/`unless`. The cop also checks for modifier `if`/`unless` lines that exceed the maximum line length.
+  Enabled: false
+
+Style/MultipleComparison:
+  Description: Avoid comparing a variable with multiple items in a conditional, use Array#include? instead.
+  Enabled: false
+
 Style/NumericLiteralPrefix:
   Enabled: false
+
+Style/OneClassPerFile:
+  Description: Checks that each source file defines at most one top-level class or module.
+  Exclude:
+    - 'script/txt2html'
+    - 'test/helpers/test_faker_deprecator.rb'
+    - 'test/test_faker.rb'
+    - 'test/test_flexible.rb'
 
 Style/RegexpLiteral:
   Description: Use / or %r around regular expressions.
@@ -101,16 +122,3 @@ Style/RegexpLiteral:
   - percent_r
   - mixed
   AllowInnerSlashes: false
-
-Security/Eval:
-  Description: The use of eval represents a serious security risk.
-  Exclude:
-    - 'lib/faker/default/json.rb'
-
-Style/IfUnlessModifier:
-  Description: Checks for `if` and `unless` statements that would fit on one line if written as modifier `if`/`unless`. The cop also checks for modifier `if`/`unless` lines that exceed the maximum line length.
-  Enabled: false
-
-Style/MultipleComparison:
-  Description: Avoid comparing a variable with multiple items in a conditional, use Array#include? instead.
-  Enabled: false

@@ -1,5 +1,192 @@
 # Changelog
 
+## [v3.8.0](https://github.com/faker-ruby/faker/tree/v3.8.0) (2026-04-16)
+
+* Add Lazy loading config by @stefannibrasil and @thdaraujo in https://github.com/faker-ruby/faker/pull/3244
+
+### Enabling lazy load
+
+This version introduces lazy loading. It means users will only pay for what they use. Faker [loads 2x faster](https://github.com/faker-ruby/faker/blob/main/experiments/lazy_load.md) when it's enabled.
+
+Lazy loading the generators is disabled by default. To enable it, choose one of the configuration options below:
+
+#### 1 - Set lazy load as a Faker Config
+
+`Faker::Config.lazy_loading = true`
+
+#### 2 - Set lazy load as an environment variable
+
+`FAKER_LAZY_LOAD = 1`
+
+We hope you get to see the improvement by enabling it. Please file a bug report for any issues!
+
+Thanks to @jeremyevans for the mentoring, and to @thdaraujo for pairing and code reviews.
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.7.1...v3.8.0
+
+-----------------------
+
+## [v3.7.1](https://github.com/faker-ruby/faker/tree/v3.7.1) (2026-04-14)
+
+Thanks to all contributors!
+
+### Drops support for Ruby 3.1
+
+* Drop support for Ruby EOL 3.1 by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3240
+
+### What's changed
+
+* Remove json_schema and public-suffix versions constraint by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3224
+* Added additional football teams by @John222 in https://github.com/faker-ruby/faker/pull/3231
+* Remove duplicate 'Recalled to Life' book title by @gkrimer in https://github.com/faker-ruby/faker/pull/3238
+
+### Update development dependencies
+
+* Bump yard from 0.9.38 to 0.9.40 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3237
+* Bump timecop from 0.9.10 to 0.9.11 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3236
+* Bump rubocop from 1.85.1 to 1.86.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3235
+
+### New Contributors
+* @John222 made their first contribution in https://github.com/faker-ruby/faker/pull/3231
+* @gkrimer made their first contribution in https://github.com/faker-ruby/faker/pull/3238
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.6.1...v3.7.1
+
+--------------------------------
+
+## [v3.6.1](https://github.com/faker-ruby/faker/tree/v3.6.1) (2026-03-04)
+
+It's almost Spring time in the Northern hemisphere 🌸 
+
+### Security, performance improvements and bug fixes
+
+* fix: polynomial regex on uncontrolled input by @thdaraujo in https://github.com/faker-ruby/faker/pull/3196
+* perf: replaces list of postcodes in `ja/address.yml` with a 7-digit format by @thdaraujo in https://github.com/faker-ruby/faker/pull/3201
+* Remove unnecessary whitespace from code blocks in READMEs by @ryotaro-shirai in https://github.com/faker-ruby/faker/pull/3209
+* Document lazy load experiment results by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3205
+* [skip ci] Add-backtick by @OzuAkira in https://github.com/faker-ruby/faker/pull/3210
+* Zeitwerk experiment changes and results [skip ci] by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3213
+* Remove duplicate reference link in README.md by @yutasb in https://github.com/faker-ruby/faker/pull/3217
+
+### Update development dependencies
+
+* Bump rubocop from 1.84.0 to 1.84.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3202
+* Bump irb from 1.16.0 to 1.17.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3203
+* Bump rubocop version and fix offenses by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3198
+* Bump rdoc from 7.1.0 to 7.2.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3204
+* Bump rubocop to 1.84.2 by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3215
+* Bump rubocop-minitest from 0.38.2 to 0.39.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3216
+* Bump rubocop to v1.85.0 by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3220
+
+### New Contributors
+* @ryotaro-shirai made their first contribution in https://github.com/faker-ruby/faker/pull/3209
+* @OzuAkira made their first contribution in https://github.com/faker-ruby/faker/pull/3210
+* @yutasb made their first contribution in https://github.com/faker-ruby/faker/pull/3217
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.6.0...v3.6.1
+
+---------------------------------
+
+## [v3.6.0](https://github.com/faker-ruby/faker/tree/v3.6.0) (2026-01-21)
+
+First release of the new year!
+
+This version comes with some performance improvements (speeds faker load time by 17%!) and removal of deprecated generators.
+
+It also drops support to Ruby's EOL `3.0`. The minimum supported Ruby version is `3.1`.
+
+### Drops support for Ruby 3.0
+
+* Drop support for Ruby EOL 3.0 by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3167
+
+### Removes deprecated generators
+
+* `Faker::Twitter` and `Faker::BossaNova` have been removed. Please use the new generators `Faker::X` and `Faker::Music::BossaNova` and check the new docs for more details in https://github.com/faker-ruby/faker/pull/3190
+
+### Improvements and bug fixes
+
+* Autoload OpenSSL by @stefannibrasil and @thdaraujo in https://github.com/faker-ruby/faker/pull/3188 - this speeds faker load time by 17%!
+* Fix typos in README.md by @CarlosCalgaro in https://github.com/faker-ruby/faker/pull/3156
+* fix: badly anchored regexes by @thdaraujo in https://github.com/faker-ruby/faker/pull/3181
+* Benchmark revamp + run benchmark as part of CI by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3176
+* Add reformat locales rake task by @thdaraujo in https://github.com/faker-ruby/faker/pull/3061
+* Add option to trigger GH workflows manually by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3187
+
+### Update development dependencies
+
+* Bump bundler version by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3165
+* Add GitHub actions to dependabot workflow by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3168
+* Bump pry from 0.15.2 to 0.16.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3175
+* Bump i18n from 1.14.7 to 1.14.8 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3174
+* Bump yard from 0.9.37 to 0.9.38 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3173
+* Bump actions/checkout from 3 to 6 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3170
+* Bump test-unit from 3.7.1 to 3.7.7 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3172
+* Bump github/codeql-action from 2 to 4 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3169
+* Bump rubocop from 1.81.7 to 1.82.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3171
+* Bump minitest from 5.26.1 to 5.27.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3177
+* Bump 'rdoc' dependency, handle 'erb' version constraint with Ruby 3.1 and improve CI bundle cache by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3185
+
+### New Contributors
+* @CarlosCalgaro made their first contribution in https://github.com/faker-ruby/faker/pull/3156
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.5.3...v3.6.0
+
+---------------------------------
+
+## [v3.5.3](https://github.com/faker-ruby/faker/tree/v3.5.3) (2025-12-02)
+
+Wishing you a cozy and calm Holiday season ☃️ 
+
+This version adds and improves some locales, fixes some bugs, and deprecates some generators.
+
+Thanks to all contributors!
+
+### Deprecated generators
+* Refactor: move `Faker::BossaNova` under `Faker::Music::BossaNova` by @thdaraujo in https://github.com/faker-ruby/faker/pull/3140
+* Deprecate `Faker::Twitter` in favor of `Faker::X` and update attributes by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3138
+
+### Improvements & Bug Fixes
+* Remove duplicate entry `amateur radio` from `locales/en/hobby.yml` by @Leenday in https://github.com/faker-ruby/faker/pull/3099
+* fix #3114: prevent scientific notation when generating bank account number by @AhmedHisham552 in https://github.com/faker-ruby/faker/pull/3118
+* Fix: typos in locales for `overwatch.yml`, `rajnikanth.yml` and `street_fighter.ym` by @smorttey in https://github.com/faker-ruby/faker/pull/3106
+* Add `Artist` translations for the japanese locale by @neco-nico in https://github.com/faker-ruby/faker/pull/3110
+* Add `country_code` to Estonia locale (`locales/ee.yml`) by @HassanAkbar in https://github.com/faker-ruby/faker/pull/3111
+* Reformat Arabic locale (`locales/ar.yml`) by @ramzieus in https://github.com/faker-ruby/faker/pull/3130
+* Refactor: Improve UK Phone number false failure hit-rate by @luke-hill in https://github.com/faker-ruby/faker/pull/3136
+* Improvements and fixes for Elder Scrolls locale (`elder_scrolls.yml`) by @SleekMutt in https://github.com/faker-ruby/faker/pull/3129
+* Add en-GB ID Numbers (aka National Insurance Numbers) by @stefanjcollier in https://github.com/faker-ruby/faker/pull/3032
+* Update ukrainian city locales to the modern ones by @SleekMutt in https://github.com/faker-ruby/faker/pull/3127
+* Revamp the docs to make them easier to find by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3151
+
+### Chores
+* test: fix flaky test on `Faker::IdNumber` by @thdaraujo in https://github.com/faker-ruby/faker/pull/3126
+* Remove minitest dependency on i18n reload test by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3149
+* Remove unused release workflow by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3133
+
+### Update local dependencies
+* Bump benchmark from 0.4.1 to 0.5.0 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3122
+* Bump rake from 13.3.0 to 13.3.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3124
+* Bump test-unit from 3.7.0 to 3.7.1 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3128
+* Bump rubocop-minitest from 0.38.1 to 0.38.2 by @dependabot[bot] in https://github.com/faker-ruby/faker/pull/3116
+* deps: bump dependencies by @thdaraujo in https://github.com/faker-ruby/faker/pull/3141
+* deps: bump Minitest version to `v5.26.1` and fix issues by @stefannibrasil in https://github.com/faker-ruby/faker/pull/3144
+* deps: bump rubocop version to `v1.81.7` by @thdaraujo in https://github.com/faker-ruby/faker/pull/3143
+
+### New Contributors
+* @Leenday made their first contribution in https://github.com/faker-ruby/faker/pull/3099
+* @AhmedHisham552 made their first contribution in https://github.com/faker-ruby/faker/pull/3118
+* @smorttey made their first contribution in https://github.com/faker-ruby/faker/pull/3106
+* @neco-nico made their first contribution in https://github.com/faker-ruby/faker/pull/3110
+* @HassanAkbar made their first contribution in https://github.com/faker-ruby/faker/pull/3111
+* @ramzieus made their first contribution in https://github.com/faker-ruby/faker/pull/3130
+* @luke-hill made their first contribution in https://github.com/faker-ruby/faker/pull/3136
+* @SleekMutt made their first contribution in https://github.com/faker-ruby/faker/pull/3129
+* @stefanjcollier made their first contribution in https://github.com/faker-ruby/faker/pull/3032
+
+**Full Changelog**: https://github.com/faker-ruby/faker/compare/v3.5.2...v3.5.3
+
+---------------------------------
+
 ## [v3.5.2](https://github.com/faker-ruby/faker/tree/v3.5.2) (2025-07-01)
 
 Happy Canada Day! 🍁

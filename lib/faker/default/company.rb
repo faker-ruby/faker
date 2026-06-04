@@ -591,7 +591,7 @@ module Faker
 
       def weight_sum(array, weights)
         sum = 0
-        (0..weights.size - 1).each do |index|
+        (0..(weights.size - 1)).each do |index|
           sum += (array[index] * weights[index])
         end
         sum

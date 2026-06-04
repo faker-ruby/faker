@@ -20,7 +20,7 @@ Faker::Hipster.word #=> "kogi"
 
 ## How to update a locale with more translations
 
-To update a locale with more translation features, simply add a new field to the .yml file that corresponds to an existing piece of functionality in the "en.yml" file. In this example, that would mean providing Chinese hipster words.
+To update a locale with more translation features, simply add a new field to the `.yml` file that corresponds to an existing piece of functionality in the "en.yml" file. In this example, that would mean providing Chinese hipster words.
 
 ```yaml
 # /lib/locales/zh-CN.yml
@@ -52,5 +52,5 @@ Faker::Config.default_locale = :pt
 In threaded server environments, e.g., Puma, locale per thread can be set as the following:
 
 ```ruby
-  Faker::Config.locale = :es
+Faker::Config.locale = :es
 ```

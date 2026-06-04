@@ -137,7 +137,7 @@ module Faker
           Faker::Number.number(digits: 2),
           Faker::Number.between(from: 13, to: 99),
           Faker::Number.between(from: 32, to: 99)
-        ].map(&:to_s).join
+        ].join
 
         id_number = [
           invalid_date_of_birth,

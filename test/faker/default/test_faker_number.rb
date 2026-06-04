@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative '../../test_helper'
-require 'minitest/mock'
 
 class TestFakerNumber < Test::Unit::TestCase
   def setup

@@ -101,6 +101,6 @@ class TestFakerMarkdown < Test::Unit::TestCase
 
   def random_method
     method_list = Faker::Markdown.public_methods(false) - Faker::Base.methods
-    method_list[rand(0..method_list.length - 1)]
+    method_list[rand(0..(method_list.length - 1))]
   end
 end

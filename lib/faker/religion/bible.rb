@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Faker
-  module Religion
+  class Religion
     class Bible < Base
       flexible :bible
 
