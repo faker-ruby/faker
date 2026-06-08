@@ -1,0 +1,89 @@
+fr:
+  faker:
+    job:
+      field:
+        - Marketing
+        - Informatique
+        - Comptabilité
+        - Administration
+        - Publicité
+        - Banque
+        - Services sociaux
+        - Construction
+        - Conseil
+        - Design
+        - Éducation
+        - Agriculture
+        - Gouvernement
+        - Santé
+        - Hôtellerie
+        - Juridique
+        - Industrie
+        - Mines
+        - Immobilier
+        - Commerce de détail
+        - Ventes
+        - Technologie
+      seniority:
+        - Senior
+        - Junior
+        - Principal
+        - Régional
+        - National
+        - Mondial
+        - International
+        - Stratégique
+        - Technique
+        - Commercial
+        - Adjoint
+        - Délégué
+        - Exécutif
+        - Opérationnel
+        - Numérique
+        - Central
+        - Externe
+        - Interne
+        - Associé
+        - Référent
+      position:
+        - Superviseur
+        - Associé
+        - Cadre
+        - Responsable
+        - Gestionnaire
+        - Ingénieur
+        - Spécialiste
+        - Directeur
+        - Coordinateur
+        - Administrateur
+        - Architecte
+        - Analyste
+        - Concepteur
+        - Planificateur
+        - Technicien
+        - Développeur
+        - Producteur
+        - Consultant
+        - Assistant
+        - Agent
+        - Représentant
+        - Stratège
+      key_skills:
+        - Travail d'équipe
+        - Communication
+        - Résolution de problèmes
+        - Leadership
+        - Organisation
+        - Gestion du stress
+        - Confiance
+        - Autonomie
+        - Réseautage
+        - Proactivité
+        - Apprentissage rapide
+        - Aisance technique
+      title:
+        - "#{position} #{field} #{seniority}"
+        - "#{position} #{field}"
+        - "#{position} #{field}"
+        - "#{position} #{seniority}"
+        - "#{position} #{field}"
