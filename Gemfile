@@ -15,7 +15,7 @@ gem 'rubocop'
 gem 'rubocop-minitest', '0.39.1'
 gem 'rubocop-rake', '0.7.1'
 gem 'simplecov', '0.22.0'
-gem 'test-unit', '3.7.7'
+gem 'test-unit', '3.7.8'
 gem 'timecop', '0.9.11'
 gem 'yard', '0.9.43'
 
