@@ -215,7 +215,7 @@ Faker::Omniauth.github #=>
     :nickname => "jackson-keeling",
     :email => "jackson.keeling@example.com",
     :name => "Jackson Keeling",
-    :image => "https://via.placeholder.com/300x300.png",
+    :image => "https://placehold.co/300x300.png",
     :urls => {
       :GitHub => "https://github.com/jackson-keeling"
     }
@@ -228,7 +228,7 @@ Faker::Omniauth.github #=>
     :raw_info => {
       :login => "jackson-keeling",
       :id => "95144751",
-      :avatar_url => "https://via.placeholder.com/300x300.png",
+      :avatar_url => "https://placehold.co/300x300.png",
       :gravatar_id => "",
       :url => "https://api.github.com/users/jackson-keeling",
       :html_url => "https://github.com/jackson-keeling",
@@ -299,7 +299,7 @@ Faker::Omniauth.auth0 #=>
     :name => "auth0|d0584e3ab2d3816be9518a56",
     :nickname => "Thurman DuBuque",
     :email => "dubuque_thurman@example.com",
-    :image => "https://via.placeholder.com/300x300.png"
+    :image => "https://placehold.co/300x300.png"
   },
   :credentials=> {
     :expires_at => 1654345109,
