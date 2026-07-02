@@ -121,7 +121,7 @@ module Faker
       # with an array of values and selecting one of them.
       def fetch(key)
         fetched = sample(translate("faker.#{key}"))
-        if fetched&.match(%r{^/}) && fetched.match(%r{/$}) # A regex
+        if fetched.is_a?(::String) && fetched.start_with?('/') && fetched.end_with?('/') # A regex
           regexify(fetched)
         else
           fetched
@@ -133,7 +133,7 @@ module Faker
       def fetch_all(key)
         fetched = translate("faker.#{key}")
         fetched = fetched.last if fetched.size <= 1
-        if !fetched.respond_to?(:sample) && fetched.match(%r{^/}) && fetched.match(%r{/$}) # A regex
+        if !fetched.respond_to?(:sample) && fetched.is_a?(::String) && fetched.start_with?('/') && fetched.end_with?('/') # A regex
           regexify(fetched)
         else
           fetched
@@ -145,6 +145,9 @@ module Faker
       # formatted translation: e.g., "#{first_name} #{last_name}".
       def parse(key)
         fetched = fetch(key)
+
+        # A plain value cannot contain any tokens, so skip scanning for them
+        return numerify(fetched) unless fetched.include?('#{')
 
         parts = fetched.scan(/(\(?)#\{([A-Za-z]+\.)?([^}]+)\}([^#]++)?/).map do |prefix, kls, meth, etc|
           # If the token had a class Prefix (e.g., Name.first_name)
