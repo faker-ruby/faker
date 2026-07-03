@@ -12,7 +12,6 @@ GEM
     benchmark-ips (2.14.0)
     coderay (1.1.3)
     concurrent-ruby (1.3.6)
-    date (3.5.1)
     docile (1.4.1)
     drb (2.2.3)
     erb (6.0.4)
@@ -27,6 +26,7 @@ GEM
     json (2.19.3)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
+    logger (1.7.0)
     method_source (1.1.0)
     minitest (6.0.6)
       drb (~> 2.0)
@@ -45,15 +45,17 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
       reline (>= 0.6.0)
-    psych (5.3.1)
-      date
-      stringio
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.4.2)
-    rdoc (7.2.0)
+    rbs (4.0.3)
+      logger
+      prism (>= 1.6.0)
+      tsort
+    rdoc (8.0.0)
       erb
-      psych (>= 4.0.0)
+      prism (>= 1.6.0)
+      rbs (>= 4.0.0)
       tsort
     regexp_parser (2.12.0)
     reline (0.6.3)
@@ -86,7 +88,6 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
-    stringio (3.2.0)
     test-unit (3.7.7)
       power_assert
     timecop (0.9.11)
