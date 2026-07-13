@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org'
+source 'https://rubygems.org', cooldown: 7
 
 # Specify your gem's dependencies in faker.gemspec
 gemspec
 
 gem 'irb'
-gem 'minitest', '6.0.6'
+gem 'minitest'
 gem 'minitest-mock'
-gem 'pry', '0.16.0'
-gem 'rake', '13.4.2'
+gem 'pry'
+gem 'rake'
 gem 'rdoc'
 gem 'rubocop'
-gem 'rubocop-minitest', '0.39.1'
-gem 'rubocop-rake', '0.7.1'
-gem 'simplecov', '0.22.0'
-gem 'test-unit', '3.7.7'
-gem 'timecop', '0.9.11'
-gem 'yard', '0.9.43'
+gem 'rubocop-minitest'
+gem 'rubocop-rake'
+gem 'simplecov'
+gem 'test-unit'
+gem 'timecop'
+gem 'yard'
 
 group :benchmark do
   gem 'benchmark'
