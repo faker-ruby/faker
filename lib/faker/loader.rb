@@ -27,9 +27,16 @@ module Faker
 
       klass.define_singleton_method(:const_missing) do |class_name|
         loader.resolve_const(name, class_name)
-
-        const_get(class_name)
+        loader.fetch_const(self, name, class_name)
       end
+    end
+
+    def fetch_const(klass, context_name, class_name)
+      unless klass.const_defined?(class_name, false)
+        raise NameError, "uninitialized constant #{context_name}::#{class_name}"
+      end
+
+      klass.const_get(class_name)
     end
 
     def loading_strategy

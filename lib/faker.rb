@@ -299,8 +299,7 @@ module Faker
   # +Config.lazy_loading+ after any generator has been referenced has no effect.
   def self.const_missing(class_name)
     @loader.load_const(name, class_name)
-
-    const_get(class_name)
+    @loader.fetch_const(self, name, class_name)
   end
 
   def self.lazy_load(klass)
