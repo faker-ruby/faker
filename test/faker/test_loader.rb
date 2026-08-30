@@ -4,6 +4,7 @@ require_relative '../test_helper'
 
 class TestLoader < Test::Unit::TestCase
   FIXTURES_DIR = File.expand_path('../fixtures', __dir__)
+  LIB_DIR = File.expand_path('../../lib', __dir__)
 
   class FakeRequirer
     attr_reader :loaded_files
@@ -93,6 +94,19 @@ class TestLoader < Test::Unit::TestCase
     expected_files.each do |file|
       assert_includes actual_files, file, "expected #{file} to be loaded"
     end
+  end
+
+  def test_requires_namespace_parents_before_nested_generators
+    requirer = FakeRequirer.new
+    loader = Faker::Loader.new(LIB_DIR, FakeConfig.new(false), requirer: requirer)
+
+    loader.load_const('Faker', :Name)
+
+    parents, nested = requirer.loaded_files.partition do |file|
+      File.dirname(file).end_with?('/faker')
+    end
+
+    assert_equal requirer.loaded_files, parents + nested
   end
 
   def test_eager_loads_only_once

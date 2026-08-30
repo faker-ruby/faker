@@ -63,12 +63,10 @@ module Faker
 
       @eager_loaded = true
 
-      paths = [
-        "#{@base_dir}/faker/*.rb",
-        "#{@base_dir}/faker/**/*.rb"
-      ]
+      parents = Dir.glob("#{@base_dir}/faker/*.rb")
+      nested = Dir.glob("#{@base_dir}/faker/**/*.rb") - parents
 
-      Dir.glob(paths).uniq.each { |f| @requirer.call(f) }
+      (parents + nested).each { |f| @requirer.call(f) }
     end
 
     def build_path(*constants)
