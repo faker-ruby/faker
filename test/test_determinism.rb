@@ -3,7 +3,7 @@
 require 'minitest/mock'
 require_relative 'test_helper'
 
-# rubocop:disable Security/Eval,Style/EvalWithLocation
+# rubocop:disable-next Security/Eval,Style/EvalWithLocation
 class TestDeterminism < Test::Unit::TestCase
   def setup
     @all_methods = all_methods.freeze
@@ -98,4 +98,3 @@ class TestDeterminism < Test::Unit::TestCase
     ]
   end
 end
-# rubocop:enable Security/Eval,Style/EvalWithLocation

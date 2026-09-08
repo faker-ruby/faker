@@ -3,7 +3,7 @@
 # Based on Rails ActiveSupport Deprecator
 # https://github.com/rails/rails/blob/main/activesupport/lib/active_support/deprecation/constant_accessor.rb
 
-# rubocop:disable Style/ClassVars
+# rubocop:disable-next Style/ClassVars
 module Faker
   # Provides a way to rename generators, including their namespaces, with a deprecation cycle in which
   # both the old and new names work, but using the old one prints a deprecation message.
@@ -115,4 +115,3 @@ module Faker
     end
   end
 end
-# rubocop:enable Style/ClassVars

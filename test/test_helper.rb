@@ -6,7 +6,7 @@ require 'simplecov_json_formatter'
 SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
 
 SimpleCov.start do
-  add_filter ['.bundle', 'lib/extensions', 'test']
+  skip ['.bundle', 'lib/extensions', 'test']
 end
 
 require_relative 'support/assert_not_english'
