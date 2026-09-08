@@ -18,7 +18,7 @@ module Faker
         return rand(0..9).round if digits == 1
 
         # Ensure the first digit is not zero
-        ([non_zero_digit] + generate(digits - 1)).join.to_i
+        rand((10**(digits - 1))..(10**digits - 1))
       end
 
       ##
@@ -32,7 +32,9 @@ module Faker
       #
       # @faker.version 1.0.0
       def leading_zero_number(digits: 10)
-        "0#{(2..digits).collect { digit }.join}"
+        return '0' if digits < 2
+
+        "0#{rand(10**(digits - 1)).to_s.rjust(digits - 1, '0')}"
       end
 
       ##
@@ -71,7 +73,7 @@ module Faker
 
         # Ensure the last digit is not zero
         # so it does not get truncated on converting to float
-        r_d = generate(r_digits - 1).join + non_zero_digit.to_s
+        r_d = ((rand(10**(r_digits - 1)) * 10) + non_zero_digit).to_s.rjust(r_digits, '0')
 
         "#{l_d}.#{r_d}".to_f
       end
@@ -113,8 +115,8 @@ module Faker
       #
       # @faker.version 1.0.0
       def hexadecimal(digits: 6)
-        hex = ''
-        digits.times { hex += rand(16).to_s(16) }
+        hex = ::String.new('', capacity: digits)
+        digits.times { hex << rand(16).to_s(16) }
         hex
       end
 
@@ -128,8 +130,8 @@ module Faker
       #
       # @faker.version next
       def binary(digits: 4)
-        bin = ''
-        digits.times { bin += rand(2).to_s(2) }
+        bin = ::String.new('', capacity: digits)
+        digits.times { bin << rand(2).to_s(2) }
         bin
       end
 
