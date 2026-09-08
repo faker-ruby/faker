@@ -8,8 +8,10 @@ gemspec
 gem 'irb'
 gem 'minitest'
 gem 'minitest-mock'
+gem 'parallel', '< 2.0' # transitive dependency (requires Ruby 3.3)
 gem 'pry'
 gem 'rake'
+gem 'rbs', '< 4.2.0' # transitive dependency (requires Ruby 3.3)
 gem 'rdoc'
 gem 'rubocop'
 gem 'rubocop-minitest'

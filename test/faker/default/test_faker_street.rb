@@ -6,7 +6,7 @@ class TestFakerStreet < Test::Unit::TestCase
   def setup
     @tester = Faker::Address
     @old_locales = I18n.config.available_locales
-    # rubocop:disable Lint/InterpolationCheck
+    # rubocop:disable-next Lint/InterpolationCheck
     shire = {
       faker: {
         address: {
@@ -23,7 +23,6 @@ class TestFakerStreet < Test::Unit::TestCase
         }
       }
     }
-    # rubocop:enable Lint/InterpolationCheck
     I18n.config.available_locales += [:shire]
     I18n.backend.store_translations(:shire, shire)
   end
