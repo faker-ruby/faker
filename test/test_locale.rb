@@ -51,6 +51,19 @@ class TestLocale < Test::Unit::TestCase
     I18n.available_locales += [:en]
   end
 
+  # https://github.com/faker-ruby/faker/issues/2987
+  def test_translation_fallback_when_i18n_initialized_without_en_in_available_locales
+    old_available_locales = I18n.available_locales
+    I18n.available_locales = [:de]
+    I18n.reload! # force I18n to discard the :en translations
+    Faker::Config.locale = :de
+
+    assert_kind_of String, Faker::Company.catch_phrase
+  ensure
+    I18n.available_locales = old_available_locales
+    I18n.reload!
+  end
+
   def test_with_locale_does_not_fail_without_the_locale_in_available_locales
     I18n.available_locales -= [:en]
 
