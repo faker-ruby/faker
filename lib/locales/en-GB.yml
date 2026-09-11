@@ -1,7 +1,13 @@
 en-GB:
   faker:
     address:
-      postcode: "/[A-PR-UWYZ]([A-HK-Y][0-9][ABEHMNPRVWXY0-9]?|[0-9][ABCDEFGHJKPSTUW0-9]?) [0-9][ABD-HJLNP-UW-Z]{2}/"
+      postcode:
+        - "/[A-PR-UWYZ][0-9] [0-9][ABD-HJLNP-UW-Z]{2}/"                      # AN NAA   (e.g. M1 1AA)
+        - "/[A-PR-UWYZ][0-9]{2} [0-9][ABD-HJLNP-UW-Z]{2}/"                   # ANN NAA  (e.g. M60 1NW)
+        - "/[A-PR-UWYZ][A-HK-Y][0-9] [0-9][ABD-HJLNP-UW-Z]{2}/"              # AAN NAA  (e.g. CR2 6XH)
+        - "/[A-PR-UWYZ][A-HK-Y][0-9]{2} [0-9][ABD-HJLNP-UW-Z]{2}/"           # AANN NAA (e.g. DN55 1PT)
+        - "/[A-PR-UWYZ][0-9][ABCDEFGHJKPSTUW] [0-9][ABD-HJLNP-UW-Z]{2}/"     # ANA NAA  (e.g. W1A 1HQ)
+        - "/[A-PR-UWYZ][A-HK-Y][0-9][ABEHMNPRVWXY] [0-9][ABD-HJLNP-UW-Z]{2}/" # AANA NAA (e.g. EC1A 1BB)
       county:
         - Avon
         - Bedfordshire
