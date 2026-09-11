@@ -23,6 +23,13 @@ class TestDeChLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Company.name
   end
 
+  def test_de_ch_company_suffix_has_no_english_forms
+    suffixes = I18n.translate('faker.company.suffix', locale: :'de-CH')
+
+    assert_not_includes suffixes, 'LLC'
+    assert_not_includes suffixes, 'Inc.'
+  end
+
   def test_de_ch_internet_methods
     assert_kind_of String, Faker::Internet.domain_suffix
   end
