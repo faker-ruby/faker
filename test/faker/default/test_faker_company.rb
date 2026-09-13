@@ -201,6 +201,36 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_match(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, sample)
   end
 
+  def test_brazilian_company_alphanumeric
+    sample = @tester.brazilian_company_alphanumeric
+
+    assert_match(/\A[A-Z0-9]{14}\z/, sample)
+    assert_match(/\A.{12}\d{2}\z/, sample)
+
+    values = sample[0..11].chars.map { |c| c.ord - 48 }
+
+    weights1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+    sum1 = values.each_with_index.inject(0) { |acc, (v, i)| acc + v * weights1[i] }
+    remainder = sum1 % 11
+    first_digit = remainder < 2 ? '0' : (11 - remainder).to_s
+
+    assert_equal sample[12], first_digit
+
+    values << first_digit.to_i
+    weights2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+    sum2 = values.each_with_index.inject(0) { |acc, (v, i)| acc + v * weights2[i] }
+    remainder2 = sum2 % 11
+    second_digit = remainder2 < 2 ? '0' : (11 - remainder2).to_s
+
+    assert_equal sample[13], second_digit
+  end
+
+  def test_brazilian_company_alphanumeric_formatted
+    sample = @tester.brazilian_company_alphanumeric(formatted: true)
+
+    assert_match(/\A[A-Z0-9]{2}\.[A-Z0-9]{3}\.[A-Z0-9]{3}\/[A-Z0-9]{4}-\d{2}\z/, sample)
+  end
+
   def test_russian_tax_number_default
     assert_match(/\d{10}/, @tester.russian_tax_number)
   end
