@@ -660,19 +660,6 @@ module Faker
 
         result.to_s[0].to_i + result.to_s[1].to_i
       end
-
-      def calculate_gst_checksum(state_code, taxpayer_number, registration_number)
-        gst_base = "#{state_code}#{taxpayer_number}#{registration_number}"
-        chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.chars
-        values = gst_base.upcase.chars
-        sum = values.map.with_index do |char, index|
-          product = chars.index(char) * (index.odd? ? 2 : 1)
-          (product / chars.length).floor + (product % chars.length)
-        end.reduce(:+)
-
-        checksum = (chars.length - (sum % chars.length)) % chars.length
-        chars[checksum]
-      end
     end
   end
 end

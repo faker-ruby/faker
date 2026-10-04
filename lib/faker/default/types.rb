@@ -148,12 +148,6 @@ module Faker
           rb_array
         end
       end
-
-      private
-
-      def titleize(word)
-        word.split(/(\W)/).map(&:capitalize).join
-      end
     end
   end
 end
