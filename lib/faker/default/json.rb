@@ -87,7 +87,6 @@ module Faker
 
         hash = {}
         # Retry on duplicate keys, bounded for key generators with fewer than
-        # `width` distinct values.
         (width * 10).times do
           break if hash.size == width
 
