@@ -250,8 +250,8 @@ class TestFakerCompany < Test::Unit::TestCase
     assert_equal(3, @tester.send(:spanish_b_algorithm, 6))
   end
 
-  def text_indian_gst_number
-    assert_match(/^([0-2][0-9]|3[0-7])[A-Z]{3}[ABCFGHLJPTK][A-Z]\d{4}[A-Z][A-Z0-9]Z[A-Z0-9]$/i, @tester.indian_gst_number)
+  def test_indian_gst_number
+    assert_match(/^(0[2-9]|[12][0-9]|3[0-8]|98)[A-Z]{3}[ABCFGHLJPTK][A-Z]\d{4}[A-Z][A-Z0-9]Z[A-Z0-9]$/i, @tester.indian_gst_number)
   end
 
   def test_state_code_in_indian_gst_number
