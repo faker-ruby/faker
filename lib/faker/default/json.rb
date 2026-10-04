@@ -86,7 +86,10 @@ module Faker
         value = options[:value]
 
         hash = {}
-        width.times do
+        # retry on duplicate
+        (width * 10).times do
+          break if hash.size == width
+
           hash[eval(key)] = eval(value)
         end
         hash
