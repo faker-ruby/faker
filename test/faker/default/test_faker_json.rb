@@ -7,7 +7,6 @@ class TestFakerJson < Test::Unit::TestCase
   require 'json'
 
   def test_shallow_json_keeps_width_when_keys_collide
-    # Seed 0 draws the same boolean key twice in a row.
     Faker::Config.stub :random, Random.new(0) do
       json = Faker::Json.shallow_json(width: 2, options: { key: 'Boolean.boolean', value: 'Boolean.boolean' })
 
