@@ -86,7 +86,7 @@ module Faker
         value = options[:value]
 
         hash = {}
-        # Retry on duplicate keys, bounded for key generators with fewer than
+        # retry on duplicate
         (width * 10).times do
           break if hash.size == width
 
