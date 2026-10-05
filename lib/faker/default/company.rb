@@ -504,8 +504,9 @@ module Faker
 
           gen.letter(name: :z_char, length: 1, ranges: [['Z']])
 
-          gen.computed(deps: %i[state_code_param taxpayer_number registration_number]) do |state_code_param, taxpayer_number, registration_number|
-            gst_base = "#{state_code_param}#{taxpayer_number}#{registration_number}"
+          # The check character covers all 14 preceding characters, including the "Z"
+          gen.computed(deps: %i[state_code_param taxpayer_number registration_number z_char]) do |state_code_param, taxpayer_number, registration_number, z_char|
+            gst_base = "#{state_code_param}#{taxpayer_number}#{registration_number}#{z_char}"
             chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.chars
             values = gst_base.chars
             sum = values.map.with_index do |char, index|
