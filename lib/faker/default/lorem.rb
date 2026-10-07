@@ -36,15 +36,16 @@ module Faker
       # @faker.version 2.1.3
       def words(number: 3, supplemental: false, exclude_words: nil)
         resolved_num = resolve(number)
-        word_list = (
-          translate('faker.lorem.words') +
-          (supplemental ? translate('faker.lorem.supplemental') : [])
-        )
+        word_list = translate('faker.lorem.words')
+        word_list += translate('faker.lorem.supplemental') if supplemental
         if exclude_words
           exclude_words = exclude_words.split(', ') if exclude_words.instance_of?(::String)
           word_list -= exclude_words
         end
-        word_list *= ((resolved_num / word_list.length) + 1)
+        # Duplicate the word list only when more words are requested than the
+        # list contains. Never mutate word_list itself: it may be the array
+        # cached by the I18n backend.
+        word_list *= ((resolved_num / word_list.length) + 1) if resolved_num > word_list.length
         sample(word_list, resolved_num)
       end
 

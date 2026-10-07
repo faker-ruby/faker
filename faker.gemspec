@@ -28,5 +28,5 @@ Gem::Specification.new do |spec|
   spec.metadata['yard.run'] = 'yri'
   spec.metadata['rubygems_mfa_required'] = 'true'
 
-  spec.add_dependency('i18n', '>= 1.8.11', '< 2')
+  spec.add_dependency('i18n', '>= 1.8.11')
 end
