@@ -189,6 +189,15 @@ module Faker
         # in en either, then it will raise again.
         disable_enforce_available_locales do
           I18n.translate(*args, **opts)
+        rescue I18n::MissingTranslationData
+          # I18n discards translations for locales that are not in
+          # I18n.available_locales when it initializes. If the :en
+          # translations were discarded, load them and try once more.
+          raise if I18n.exists?('faker', :en)
+
+          en_files = Dir[::File.join(__dir__, 'locales', 'en.yml'), ::File.join(__dir__, 'locales', 'en', '**/*.yml')]
+          I18n.backend.load_translations(en_files)
+          I18n.translate(*args, **opts)
         end
       end
 
