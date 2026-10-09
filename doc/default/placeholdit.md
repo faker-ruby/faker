@@ -1,5 +1,8 @@
 # Faker::Placeholdit
 
+> [!WARNING]
+> `Faker::Placeholdit` is deprecated and will be removed in a future version. The via.placeholder.com service is no longer available. Use [`Faker::LoremFlickr`](lorem_flickr.md) instead.
+
 ```ruby
 # Keyword arguments: size, format, background_color, text_color, text
 Faker::Placeholdit.image #=> "https://via.placeholder.com/300x300.png"
