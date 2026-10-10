@@ -38,6 +38,11 @@ Faker::Address.state #=> "California"
 
 Faker::Address.state_abbr #=> "AP"
 
+#note: In some countries, "province" is used instead of "state".
+Faker::Address.province #=> "湖北省"
+
+Faker::Address.province_abbr #=> "鄂"
+
 Faker::Address.country #=> "French Guiana"
 
 # Keyword arguments: code
