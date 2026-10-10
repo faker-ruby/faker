@@ -215,7 +215,10 @@ module Faker
       #
       # @faker.version 0.3.0
       def country
-        fetch('address.country')
+        countries = fetch_all('address.countries')
+        @country = countries.sample(random: Faker::Config.random)
+
+        @country[:name]
       end
 
       ##
@@ -258,7 +261,8 @@ module Faker
       #
       # @faker.version 1.4.0
       def country_code
-        fetch('address.country_code')
+        return fetch("address.country_code") if @country.nil?
+        @country[:code]
       end
 
       ##
