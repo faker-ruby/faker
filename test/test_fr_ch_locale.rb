@@ -74,4 +74,16 @@ class TestFrChLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Games::Pokemon.location
     assert_kind_of String, Faker::Games::Pokemon.move
   end
+
+  def test_fr_ch_job_methods
+    assert_kind_of String, Faker::Job.title
+    assert_kind_of String, Faker::Job.field
+    assert_kind_of String, Faker::Job.position
+    assert_kind_of String, Faker::Job.key_skill
+
+    # Guard against Faker::Job silently falling back to the English data.
+    fields = I18n.translate('faker.job.field', locale: :'fr-CH')
+
+    assert_includes fields, Faker::Job.field
+  end
 end

@@ -383,6 +383,93 @@ de-CH:
         - Lugano
       city:
         - "#{city_name}"
+    job:
+      field:
+        - Marketing
+        - IT
+        - Buchhaltung
+        - Verwaltung
+        - Werbung
+        - Bankwesen
+        - Soziales
+        - Bauwesen
+        - Beratung
+        - Design
+        - Bildung
+        - Landwirtschaft
+        - Behörde
+        - Gesundheitswesen
+        - Gastgewerbe
+        - Recht
+        - Produktion
+        - Bergbau
+        - Immobilien
+        - Einzelhandel
+        - Vertrieb
+        - Technologie
+      seniority:
+        - Senior
+        - Junior
+        - Leitender
+        - Stellvertretender
+        - Regionaler
+        - Nationaler
+        - Globaler
+        - Internationaler
+        - Strategischer
+        - Technischer
+        - Kaufmännischer
+        - Erfahrener
+        - Operativer
+        - Digitaler
+        - Zentraler
+        - Externer
+        - Interner
+        - Verantwortlicher
+        - Führender
+        - Erster
+      position:
+        - Leiter
+        - Mitarbeiter
+        - Manager
+        - Referent
+        - Sachbearbeiter
+        - Ingenieur
+        - Spezialist
+        - Direktor
+        - Koordinator
+        - Administrator
+        - Architekt
+        - Analyst
+        - Designer
+        - Planer
+        - Techniker
+        - Entwickler
+        - Produzent
+        - Berater
+        - Assistent
+        - Agent
+        - Vertreter
+        - Stratege
+      key_skills:
+        - Teamfähigkeit
+        - Kommunikation
+        - Problemlösung
+        - Führung
+        - Organisation
+        - Belastbarkeit
+        - Selbstvertrauen
+        - Eigenmotivation
+        - Netzwerkfähigkeit
+        - Proaktivität
+        - Schnelle Auffassungsgabe
+        - Technisches Verständnis
+      title:
+        - "#{seniority} #{field} #{position}"
+        - "#{seniority} #{field} #{position}"
+        - "#{field} #{position}"
+        - "#{field} #{position}"
+        - "#{seniority} #{position}"
     name:
       male_first_name:
         - Aaron

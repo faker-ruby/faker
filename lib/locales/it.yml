@@ -860,6 +860,94 @@ it:
         - it
         - it
         - it
+    job:
+      field:
+        - Marketing
+        - Informatica
+        - Contabilità
+        - Amministrazione
+        - Pubblicità
+        - Banca
+        - Servizi sociali
+        - Edilizia
+        - Consulenza
+        - Design
+        - Istruzione
+        - Agricoltura
+        - Pubblica amministrazione
+        - Sanità
+        - Ospitalità
+        - Legale
+        - Produzione
+        - Estrazione mineraria
+        - Immobiliare
+        - Vendita al dettaglio
+        - Vendite
+        - Tecnologia
+      seniority:
+        - Senior
+        - Junior
+        - Principale
+        - Regionale
+        - Nazionale
+        - Globale
+        - Internazionale
+        - Strategico
+        - Tecnico
+        - Commerciale
+        - Esecutivo
+        - Operativo
+        - Digitale
+        - Centrale
+        - Esterno
+        - Interno
+        - Associato
+        - Anziano
+        - Esperto
+        - Delegato
+      position:
+        - Supervisore
+        - Associato
+        - Dirigente
+        - Referente
+        - Responsabile
+        - Manager
+        - Ingegnere
+        - Specialista
+        - Direttore
+        - Coordinatore
+        - Amministratore
+        - Architetto
+        - Analista
+        - Designer
+        - Pianificatore
+        - Tecnico
+        - Sviluppatore
+        - Produttore
+        - Consulente
+        - Assistente
+        - Agente
+        - Rappresentante
+        - Stratega
+      key_skills:
+        - Lavoro di squadra
+        - Comunicazione
+        - Risoluzione dei problemi
+        - Leadership
+        - Organizzazione
+        - Gestione dello stress
+        - Fiducia
+        - Automotivazione
+        - Capacità di networking
+        - Proattività
+        - Apprendimento rapido
+        - Competenza tecnica
+      title:
+        - "#{position} #{field} #{seniority}"
+        - "#{position} #{field}"
+        - "#{position} #{field}"
+        - "#{position} #{seniority}"
+        - "#{position} #{field}"
     name:
       first_name:
         - Alberto
