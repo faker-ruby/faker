@@ -34,6 +34,13 @@ class TestItLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Company.name
   end
 
+  def test_it_company_suffix_has_no_english_forms
+    suffixes = I18n.translate('faker.company.suffix', locale: :it)
+
+    assert_includes suffixes, 'Gruppo'
+    assert_not_includes suffixes, 'Group'
+  end
+
   def test_it_internet_methods
     assert_kind_of String, Faker::Internet.email
     assert_kind_of String, Faker::Internet.domain_suffix
