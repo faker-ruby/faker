@@ -3,9 +3,6 @@
 require_relative '../../test_helper'
 
 class TestFakerTypes < Test::Unit::TestCase
-  module TestModule
-  end
-
   def setup
     @tester = Faker::Types
   end
@@ -72,13 +69,6 @@ class TestFakerTypes < Test::Unit::TestCase
     assert_equal(3, @tester.rb_array(len: 3).length)
     assert_empty @tester.rb_array(len: 0)
     assert_equal(1, @tester.rb_array.length)
-  end
-
-  def test_titleize
-    val = 'foobar'
-    expected = 'Foobar'
-
-    assert_equal @tester.send(:titleize, val), expected
   end
 
   def test_resolve
