@@ -496,7 +496,7 @@ module Faker
             g_.letter(length: 3, ranges: ['A'..'Z'])
             g_.letter(length: 1, ranges: [%w[A B C F G H L J P T K]])
             g_.letter(length: 1, ranges: ['A'..'Z'])
-            g_.int(length: 4, ranges: [0..9999])
+            g_.int(length: 4)
             g_.letter(length: 1, ranges: ['A'..'Z'])
           end
 
