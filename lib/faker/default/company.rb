@@ -436,6 +436,32 @@ module Faker
       end
 
       ##
+      # Produces a company brazilian company alphanumeric.
+      #
+      # @return [String]
+      #
+      # @example
+      #   Faker::Company.brazilian_company_alphanumeric #=> "AB12CD34EFGH83"
+      #
+      # @faker.version next
+      def brazilian_company_alphanumeric(formatted: false)
+        base = Faker::Alphanumeric.alphanumeric(number: 12).upcase.chars
+
+        factors = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 6].cycle
+
+        2.times do
+          checksum = base.inject(0) do |acc, char|
+            acc + (char.ord - 48) * factors.next
+          end % 11
+          base << (checksum < 2 ? '0' : (11 - checksum).to_s)
+        end
+
+        alphanumeric = base.join
+
+        formatted ? format('%s.%s.%s/%s-%s', *alphanumeric.scan(/(.{2})(.{3})(.{3})(.{4})(.{2})/).flatten) : alphanumeric
+      end
+
+      ##
       # Get a random Russian tax number.
       # @param region [String] Any region string
       # @param type [Symbol] Legeal or not, defaults to :legal
