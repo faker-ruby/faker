@@ -48,6 +48,18 @@ class TestItLocale < Test::Unit::TestCase
     assert_equal('.', Faker::Name.prefix[-1, 1])
   end
 
+  def test_it_gendered_first_name_methods
+    assert_kind_of String, Faker::Name.male_first_name
+    assert_kind_of String, Faker::Name.female_first_name
+
+    # Guard against silently falling back to the English name list.
+    male_names = I18n.translate('faker.name.male_first_name', locale: :it)
+    female_names = I18n.translate('faker.name.female_first_name', locale: :it)
+
+    assert_includes male_names, Faker::Name.male_first_name
+    assert_includes female_names, Faker::Name.female_first_name
+  end
+
   def test_it_phone_number_methods
     assert_kind_of String, Faker::PhoneNumber.phone_number
   end
