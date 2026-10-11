@@ -51,6 +51,7 @@ module Faker
     end
 
     def exclude(name, arguments, values)
+      self.class.marked_unique.add(self)
       values ||= []
       values.each do |value|
         previous_results[[name, arguments]] << value

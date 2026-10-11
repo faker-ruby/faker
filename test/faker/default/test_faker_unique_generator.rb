@@ -123,6 +123,54 @@ class TestFakerUniqueGenerator < Test::Unit::TestCase
     end
   end
 
+  def test_global_clear_removes_exclusions_before_first_generation
+    source = Object.new
+    def source.value
+      1
+    end
+
+    generator = Faker::UniqueGenerator.new(source, 3)
+    generator.exclude(:value, [], [1])
+
+    Faker::UniqueGenerator.clear
+
+    assert_equal(1, generator.value)
+  end
+
+  def test_global_clear_removes_exclusions_after_previous_clear
+    source = Object.new
+    def source.value
+      1
+    end
+
+    generator = Faker::UniqueGenerator.new(source, 3)
+
+    assert_equal(1, generator.value)
+    Faker::UniqueGenerator.clear
+    generator.exclude(:value, [], [1])
+    Faker::UniqueGenerator.clear
+
+    assert_equal(1, generator.value)
+  end
+
+  def test_global_clear_keeps_exclusions_in_other_threads
+    source = Object.new
+    def source.value
+      1
+    end
+
+    generator = Faker::UniqueGenerator.new(source, 3)
+    generator.exclude(:value, [], [1])
+    Thread.new { Faker::UniqueGenerator.clear }.join
+
+    assert_raises Faker::UniqueGenerator::RetryLimitExceeded do
+      generator.value
+    end
+    Faker::UniqueGenerator.clear
+
+    assert_equal(1, generator.value)
+  end
+
   def test_thread_safety
     stubbed_generator = Object.new
     def stubbed_generator.test
