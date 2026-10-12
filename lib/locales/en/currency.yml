@@ -6,7 +6,6 @@ en:
         - AFN
         - ALL
         - AMD
-        - ANG
         - AOA
         - ARS
         - AUD
@@ -15,7 +14,6 @@ en:
         - BAM
         - BBD
         - BDT
-        - BGN
         - BHD
         - BIF
         - BMD
@@ -23,8 +21,9 @@ en:
         - BOB
         - BRL
         - BSD
+        - BTN
         - BWP
-        - BYR
+        - BYN
         - BZD
         - CAD
         - CDF
@@ -40,7 +39,6 @@ en:
         - DKK
         - DOP
         - DZD
-        - EEK
         - EGP
         - ERN
         - ETB
@@ -57,12 +55,10 @@ en:
         - GYD
         - HKD
         - HNL
-        - HRK
         - HTG
         - HUF
         - IDR
         - ILS
-        - INR
         - INR
         - IQD
         - IRR
@@ -83,8 +79,7 @@ en:
         - LBP
         - LKR
         - LRD
-        - LTL
-        - LVL
+        - LSL
         - LYD
         - MAD
         - MDL
@@ -93,13 +88,14 @@ en:
         - MMK
         - MNT
         - MOP
-        - MRO
+        - MRU
         - MUR
         - MVR
         - MWK
         - MXN
         - MYR
         - MZN
+        - NAD
         - NGN
         - NIO
         - NOK
@@ -125,10 +121,11 @@ en:
         - SEK
         - SGD
         - SHP
-        - SLL
+        - SLE
         - SOS
         - SRD
-        - STD
+        - SSP
+        - STN
         - SVC
         - SYP
         - SZL
@@ -146,7 +143,7 @@ en:
         - USD
         - UYU
         - UZS
-        - VEF
+        - VES
         - VND
         - VUV
         - WST
@@ -158,8 +155,8 @@ en:
         - XBC
         - XBD
         - XCD
+        - XCG
         - XDR
-        - XFU
         - XOF
         - XPD
         - XPF
@@ -167,16 +164,13 @@ en:
         - XTS
         - YER
         - ZAR
-        - ZAR
-        - ZAR
-        - ZMK
-        - ZWL
+        - ZMW
+        - ZWG
       name:
         - UAE Dirham
         - Afghani
         - Lek
         - Armenian Dram
-        - Netherlands Antillian Guilder
         - Kwanza
         - Argentine Peso
         - Australian Dollar
@@ -185,32 +179,31 @@ en:
         - Convertible Marks
         - Barbados Dollar
         - Taka
-        - Bulgarian Lev
         - Bahraini Dinar
         - Burundi Franc
         - Bermudian Dollar (customarily known as Bermuda Dollar)
         - Brunei Dollar
-        - Boliviano Mvdol
+        - Boliviano
         - Brazilian Real
         - Bahamian Dollar
+        - Ngultrum
         - Pula
-        - Belarussian Ruble
+        - Belarusian Ruble
         - Belize Dollar
         - Canadian Dollar
         - Congolese Franc
         - Swiss Franc
-        - Chilean Peso Unidades de fomento
+        - Chilean Peso
         - Yuan Renminbi
-        - Colombian Peso Unidad de Valor Real
+        - Colombian Peso
         - Costa Rican Colon
-        - Cuban Peso Peso Convertible
+        - Cuban Peso
         - Cape Verde Escudo
         - Czech Koruna
         - Djibouti Franc
         - Danish Krone
         - Dominican Peso
         - Algerian Dinar
-        - Kroon
         - Egyptian Pound
         - Nakfa
         - Ethiopian Birr
@@ -227,13 +220,11 @@ en:
         - Guyana Dollar
         - Hong Kong Dollar
         - Lempira
-        - Croatian Kuna
-        - Gourde US Dollar
+        - Gourde
         - Forint
         - Rupiah
         - New Israeli Sheqel
         - Indian Rupee
-        - Indian Rupee Ngultrum
         - Iraqi Dinar
         - Iranian Rial
         - Iceland Krona
@@ -253,8 +244,7 @@ en:
         - Lebanese Pound
         - Sri Lanka Rupee
         - Liberian Dollar
-        - Lithuanian Litas
-        - Latvian Lats
+        - Loti
         - Libyan Dinar
         - Moroccan Dirham
         - Moldovan Leu
@@ -267,16 +257,17 @@ en:
         - Mauritius Rupee
         - Rufiyaa
         - Kwacha
-        - Mexican Peso Mexican Unidad de Inversion (UDI)
+        - Mexican Peso
         - Malaysian Ringgit
         - Metical
+        - Namibia Dollar
         - Naira
         - Cordoba Oro
         - Norwegian Krone
         - Nepalese Rupee
         - New Zealand Dollar
         - Rial Omani
-        - Balboa US Dollar
+        - Balboa
         - Nuevo Sol
         - Kina
         - Philippine Peso
@@ -298,8 +289,9 @@ en:
         - Leone
         - Somali Shilling
         - Surinam Dollar
+        - South Sudanese Pound
         - Dobra
-        - El Salvador Colon US Dollar
+        - El Salvador Colon
         - Syrian Pound
         - Lilangeni
         - Baht
@@ -314,9 +306,9 @@ en:
         - Hryvnia
         - Uganda Shilling
         - US Dollar
-        - Peso Uruguayo Uruguay Peso en Unidades Indexadas
+        - Peso Uruguayo
         - Uzbekistan Sum
-        - Bolivar Fuerte
+        - Bolivar Soberano
         - Dong
         - Vatu
         - Tala
@@ -328,8 +320,8 @@ en:
         - European Unit of Account 9(E.U.A.-9)
         - European Unit of Account 17(E.U.A.-17)
         - East Caribbean Dollar
+        - Caribbean Guilder
         - SDR
-        - UIC-Franc
         - CFA Franc BCEAO
         - Palladium
         - CFP Franc
@@ -337,10 +329,8 @@ en:
         - Codes specifically reserved for testing purposes
         - Yemeni Rial
         - Rand
-        - Rand Loti
-        - Rand Namibia Dollar
         - Zambian Kwacha
-        - Zimbabwe Dollar
+        - Zimbabwe Gold
       symbol:
         - HK$
         - Ft
