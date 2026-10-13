@@ -3,6 +3,8 @@
 module Faker
   class Placeholdit < Base
     class << self
+      extend Gem::Deprecate
+
       SUPPORTED_FORMATS = %w[png jpg gif jpeg].freeze
 
       ##
@@ -41,6 +43,7 @@ module Faker
         image_url += "?text=#{text}" if text
         image_url
       end
+      deprecate :image, 'Faker::LoremFlickr.image', 2026, 12
 
       private
 
