@@ -220,7 +220,7 @@ module Faker
       def generate_table_row(tag, cell_count)
         row = "<tr>\n"
         cell_count.times do
-          row += "<#{tag == 'th' ? 'th' : 'td'}>#{Lorem.word}</#{tag == 'th' ? 'th' : 'td'}>\n"
+          row += "<#{tag == 'th' ? 'th' : 'td'}>#{Faker::Lorem.word}</#{tag == 'th' ? 'th' : 'td'}>\n"
         end
         row += "</tr>\n"
         row

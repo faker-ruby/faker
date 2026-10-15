@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'open3'
+require 'rbconfig'
 require_relative '../../test_helper'
 
 class TestFakerHTML < Test::Unit::TestCase
@@ -49,6 +51,22 @@ class TestFakerHTML < Test::Unit::TestCase
     assert_equal(3, count_occurrences(table_html, '<th>'))
     assert_equal(5, count_occurrences(table_html, '<tr>'))
     assert_equal(12, count_occurrences(table_html, '<td>'))
+  end
+
+  def test_table_with_lazy_loading
+    # A fresh process ensures another generator has not already loaded Lorem.
+    code = <<~RUBY
+      require 'faker'
+      abort 'Lorem was already loaded' if Faker.const_defined?(:Lorem, false)
+      puts Faker::HTML.table
+    RUBY
+    lib_dir = File.expand_path('../../../lib', __dir__)
+    output, status = Open3.capture2e({ 'FAKER_LAZY_LOAD' => '1' }, RbConfig.ruby, "-I#{lib_dir}", '-e', code)
+
+    assert_predicate status, :success?, output
+    assert_equal 3, count_occurrences(output, '<th>')
+    assert_equal 12, count_occurrences(output, '<td>')
+    assert_equal 5, count_occurrences(output, '<tr>')
   end
 
   def test_script
