@@ -33538,10 +33538,10 @@ nl:
       formats:
         - "(####) ######"
         - "##########"
-      cell_phone:
-        formats:
-          - '06########'
-          - '06 #### ####'
+    cell_phone:
+      formats:
+        - '06########'
+        - '06 #### ####'
     university:
       prefix:
         - Universiteit
