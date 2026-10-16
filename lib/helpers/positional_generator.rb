@@ -322,8 +322,8 @@ class PositionalGenerator
           component = @components[component_id]
           raise if component.nil?
 
-          values = result.filter_map do |(_id, name, value)|
-            value if component.deps.include?(name)
+          values = component.deps.map do |dependency|
+            result.find { |(_id, name, _value)| name == dependency }.last
           end
 
           result << [component.position, component.name, component.generator.generate(values)]
