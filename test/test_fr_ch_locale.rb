@@ -44,6 +44,15 @@ class TestFrChLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Company.name
   end
 
+  def test_fr_ch_company_suffix_uses_swiss_forms
+    suffixes = I18n.translate('faker.company.suffix', locale: :'fr-CH')
+
+    assert_includes suffixes, 'SA'
+    assert_includes suffixes, 'Sàrl'
+    assert_not_includes suffixes, 'LLC'
+    assert_not_includes suffixes, 'Inc.'
+  end
+
   def test_fr_ch_internet_methods
     assert_kind_of String, Faker::Internet.email
     assert_kind_of String, Faker::Internet.domain_suffix
