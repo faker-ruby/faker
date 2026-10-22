@@ -18,6 +18,23 @@ module Faker
       [198..198, 18..19,   0..255, 1..255]  # 198.18.0.0/15  - Used for benchmark testing of inter-network communications between subnets
     ].each(&:freeze).freeze
 
+    # Characters that are not allowed in the local part of an email address,
+    # i.e. anything other than alphanumerics and !#$%&'*+-/=?^_`{|}~.
+    # @private
+    INVALID_EMAIL_LOCAL_PART_CHARS = %r{[^0-9A-Za-z!#$%&'*+\-/=?^_`{|}~.]}
+
+    # Character sets used by #base64
+    # @private
+    BASE64_URLSAFE_CHARS = [*'0'..'9', *'A'..'Z', *'a'..'z', '-', '_'].freeze
+    # @private
+    BASE64_CHARS = [*'0'..'9', *'A'..'Z', *'a'..'z', '+', '/'].freeze
+
+    # Character sets used by #password
+    # @private
+    PASSWORD_DIGITS = Array('0'..'9').freeze
+    # @private
+    PASSWORD_SPECIAL_CHARS = %w[! @ # $ % ^ & *].freeze
+
     class << self
       ##
       # Returns the email address
@@ -96,12 +113,15 @@ module Faker
             return result[0...specifier.max]
           end
 
-          sample([
-                   Char.prepare(Faker::Name.first_name),
-                   [Faker::Name.first_name, Faker::Name.last_name].map do |name|
-                     Char.prepare(name)
-                   end.join(sample(separators))
-                 ])
+          # Pick the shape of the username first so we only generate the
+          # name parts we actually need.
+          if rand(2).zero?
+            Char.prepare(Faker::Name.first_name)
+          else
+            [Faker::Name.first_name, Faker::Name.last_name].map do |name|
+              Char.prepare(name)
+            end.join(sample(separators))
+          end
         end
       end
 
@@ -154,22 +174,22 @@ module Faker
         # use lower_chars by default and add upper_chars if mix_case
         lower_chars = self::LLetters
         password << sample(lower_chars)
-        character_bag += lower_chars
+        character_bag.concat(lower_chars)
 
-        digits = ('0'..'9').to_a
+        digits = PASSWORD_DIGITS
         password << sample(digits)
-        character_bag += digits
+        character_bag.concat(digits)
 
         if mix_case
           upper_chars = self::ULetters
           password << sample(upper_chars)
-          character_bag += upper_chars
+          character_bag.concat(upper_chars)
         end
 
         if special_characters
-          special_chars = %w[! @ # $ % ^ & *]
+          special_chars = PASSWORD_SPECIAL_CHARS
           password << sample(special_chars)
-          character_bag += special_chars
+          character_bag.concat(special_chars)
         end
 
         password << sample(character_bag) while password.length < target_length
@@ -528,14 +548,10 @@ module Faker
       #
       # @faker.version 2.11.0
       def base64(length: 16, padding: false, urlsafe: true)
-        char_range = [
-          Array('0'..'9'),
-          Array('A'..'Z'),
-          Array('a'..'z'),
-          urlsafe ? %w[- _] : %w[+ /]
-        ].flatten
-        s = Array.new(length) { sample(char_range) }.join
-        s += '=' if padding
+        char_range = urlsafe ? BASE64_URLSAFE_CHARS : BASE64_CHARS
+        s = ::String.new('', capacity: length + 1)
+        length.times { s << sample(char_range) }
+        s << '=' if padding
         s
       end
 
@@ -562,16 +578,7 @@ module Faker
       private
 
       def sanitize_email_local_part(local_part)
-        char_range = [
-          Array('0'..'9'),
-          Array('A'..'Z'),
-          Array('a'..'z'),
-          "!#$%&'*+-/=?^_`{|}~.".chars
-        ].flatten
-
-        local_part.chars.map do |char|
-          char_range.include?(char) ? char : '#'
-        end.join
+        local_part.gsub(INVALID_EMAIL_LOCAL_PART_CHARS, '#')
       end
 
       def construct_email(local_part, domain_name)
