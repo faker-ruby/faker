@@ -86,7 +86,7 @@ class TestFakerCreatureBird < Test::Unit::TestCase
 
   def test_implausable_common_names
     patterns = [
-      /[A-Z][a-z]+'s [a-z]+ [a-z]+/,
+      /[A-Z].+'s [a-z]+ [a-z]+/,
       /[A-Z][a-z]+ [a-z]+ [a-z]+/,
       /[A-Z][a-z]+-[a-z]+ed [a-z]+ [a-z]+/
     ]

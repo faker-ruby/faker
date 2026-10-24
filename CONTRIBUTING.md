@@ -31,9 +31,19 @@ faker-ruby already has lots of generators and locales. We appreciate any efforts
 
 Although we maintain Faker in our free time, we try to respond to contributions in a timely manner. Once we look at your pull request, we may give you feedback. For instance, we may suggest some changes to make to your code to fit within the project style or discuss alternate ways of addressing the issue in question. Assuming we're happy with everything, we'll then bring your changes into main. Now you're a contributor!
 
+## Generative Tools and LLMs
+
+We expect you to take full responsibility for your contributions.
+
+This means you must first check for open issues, review your own code, and deeply understand every change you propose before opening a PR. You must be available to engage with reviewers and answer their questions.
+
+Every contribution must be backed by a human. No LLM bots in `Co-authored-by` or links to commercial products.
+
+Always use your own voice to explain your contributions in PR descriptions and comments. Low-effort, AI-generated contributions are unacceptable and will be closed without review.
+
 ## Setting up your environment
 
-Faker requires Ruby version >= 2.7. After forking, and cloning the repo, navigate to the directory, and run:
+Faker requires Ruby version >= 3.2. After forking, and cloning the repo, navigate to the directory, and run:
 
 ```ruby
 bundle install

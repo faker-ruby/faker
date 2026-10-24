@@ -103,7 +103,7 @@ module Faker
       #
       # @faker.version 1.9.0
       def year
-        start_year = ::Time.new.year + 1
+        start_year = ::Time.now.year + 1
         rand_in_range(start_year, start_year + 5).to_s
       end
 

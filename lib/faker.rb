@@ -24,7 +24,10 @@ module Faker
 
       def locale
         # Because I18n.locale defaults to :en, if we don't have :en in our available_locales, errors will happen
-        Thread.current[:faker_config_locale] || @default_locale || (I18n.available_locales.include?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
+        # I18n.locale_available? is used here because it relies on a memoized
+        # set of locales, unlike I18n.available_locales which is recomputed
+        # on every call.
+        Thread.current[:faker_config_locale] || @default_locale || (I18n.locale_available?(I18n.locale) ? I18n.locale : I18n.available_locales.first)
       end
 
       def own_locale
