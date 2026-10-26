@@ -5,6 +5,24 @@ require_relative '../../test_helper'
 class TestPlaceholdit < Test::Unit::TestCase
   def setup
     @tester = Faker::Placeholdit
+    @original_skip = Gem::Deprecate.skip
+    Gem::Deprecate.skip = true
+  end
+
+  def teardown
+    Gem::Deprecate.skip = @original_skip
+  end
+
+  def test_image_is_deprecated
+    Gem::Deprecate.skip = false
+    original_stderr = $stderr
+    $stderr = StringIO.new
+
+    @tester.image
+
+    assert_match(/Placeholdit\.image is deprecated; use Faker::LoremFlickr\.image instead/, $stderr.string)
+  ensure
+    $stderr = original_stderr
   end
 
   def test_placeholdit
