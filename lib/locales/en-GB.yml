@@ -86,8 +86,8 @@ en-GB:
       default_country_code:
         - GB
     id_number:
-      valid: '/[A-CEGHJ-NOPR-TW-Z][A-CEGHJ-NOPR-TW-Z][0-9]{6}[ABCD]/'
-      invalid: '/(BG|GB|NK|KN|TN|NT|ZZ)[0-9]{6}[E-Z]{1}/'
+      valid: '/[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z][0-9]{6}[ABCD]/'
+      invalid: '/(BG|GB|KN|NK|NT|TN|ZZ)[0-9]{6}[A-Z]{1}/'
     internet:
       domain_suffix:
         - co.uk
