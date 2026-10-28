@@ -1714,7 +1714,7 @@ en:
         - America/Sao_Paulo
         - America/Argentina/Buenos_Aires
         - America/Guyana
-        - America/Godthab
+        - America/Nuuk
         - Atlantic/South_Georgia
         - Atlantic/Azores
         - Atlantic/Cape_Verde
@@ -1748,7 +1748,7 @@ en:
         - Europe/Bucharest
         - Africa/Cairo
         - Europe/Helsinki
-        - Europe/Kiev
+        - Europe/Kyiv
         - Europe/Riga
         - Europe/Sofia
         - Europe/Tallinn
@@ -1787,7 +1787,7 @@ en:
         - Asia/Colombo
         - Asia/Almaty
         - Asia/Novosibirsk
-        - Asia/Rangoon
+        - Asia/Yangon
         - Asia/Bangkok
         - Asia/Bangkok
         - Asia/Jakarta

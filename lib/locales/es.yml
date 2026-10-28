@@ -482,9 +482,9 @@ es:
         - Vas
         - Mur
       time_zone:
-        - Pacífico/Midway
-        - Pacífico/Pago_Pago
-        - Pacífico/Honolulu
+        - Pacific/Midway
+        - Pacific/Pago_Pago
+        - Pacific/Honolulu
         - America/Juneau
         - America/Los_Angeles
         - America/Tijuana
@@ -511,54 +511,54 @@ es:
         - America/Sao_Paulo
         - America/Argentina/Buenos_Aires
         - America/Guyana
-        - America/Godthab
+        - America/Nuuk
         - Atlantic/South_Georgia
         - Atlantic/Azores
         - Atlantic/Cape_Verde
-        - Europa/Dublin
-        - Europa/London
-        - Europa/Lisbon
-        - Europa/London
+        - Europe/Dublin
+        - Europe/London
+        - Europe/Lisbon
+        - Europe/London
         - Africa/Casablanca
         - Africa/Monrovia
         - Etc/UTC
-        - Europa/Belgrade
-        - Europa/Bratislava
-        - Europa/Budapest
-        - Europa/Ljubljana
-        - Europa/Prague
-        - Europa/Sarajevo
-        - Europa/Skopje
-        - Europa/Warsaw
-        - Europa/Zagreb
-        - Europa/Brussels
-        - Europa/Copenhagen
-        - Europa/Madrid
-        - Europa/Paris
-        - Europa/Amsterdam
-        - Europa/Berlin
-        - Europa/Berlin
-        - Europa/Rome
-        - Europa/Stockholm
-        - Europa/Vienna
+        - Europe/Belgrade
+        - Europe/Bratislava
+        - Europe/Budapest
+        - Europe/Ljubljana
+        - Europe/Prague
+        - Europe/Sarajevo
+        - Europe/Skopje
+        - Europe/Warsaw
+        - Europe/Zagreb
+        - Europe/Brussels
+        - Europe/Copenhagen
+        - Europe/Madrid
+        - Europe/Paris
+        - Europe/Amsterdam
+        - Europe/Berlin
+        - Europe/Berlin
+        - Europe/Rome
+        - Europe/Stockholm
+        - Europe/Vienna
         - Africa/Algiers
-        - Europa/Bucharest
+        - Europe/Bucharest
         - Africa/Cairo
-        - Europa/Helsinki
-        - Europa/Kiev
-        - Europa/Riga
-        - Europa/Sofia
-        - Europa/Tallinn
-        - Europa/Vilnius
-        - Europa/Athens
-        - Europa/Istanbul
-        - Europa/Minsk
-        - Asia/Jerusalen
+        - Europe/Helsinki
+        - Europe/Kyiv
+        - Europe/Riga
+        - Europe/Sofia
+        - Europe/Tallinn
+        - Europe/Vilnius
+        - Europe/Athens
+        - Europe/Istanbul
+        - Europe/Minsk
+        - Asia/Jerusalem
         - Africa/Harare
         - Africa/Johannesburg
-        - Europa/Moscú
-        - Europa/Moscú
-        - Europa/Moscú
+        - Europe/Moscow
+        - Europe/Moscow
+        - Europe/Moscow
         - Asia/Kuwait
         - Asia/Riyadh
         - Africa/Nairobi
@@ -584,7 +584,7 @@ es:
         - Asia/Colombo
         - Asia/Almaty
         - Asia/Novosibirsk
-        - Asia/Rangoon
+        - Asia/Yangon
         - Asia/Bangkok
         - Asia/Bangkok
         - Asia/Jakarta
@@ -612,19 +612,19 @@ es:
         - Australia/Brisbane
         - Australia/Hobart
         - Asia/Vladivostok
-        - Pacífico/Guam
-        - Pacífico/Port_Moresby
+        - Pacific/Guam
+        - Pacific/Port_Moresby
         - Asia/Magadan
         - Asia/Magadan
-        - Pacífico/Noumea
-        - Pacífico/Fiji
+        - Pacific/Noumea
+        - Pacific/Fiji
         - Asia/Kamchatka
-        - Pacífico/Majuro
-        - Pacífico/Auckland
-        - Pacífico/Auckland
-        - Pacífico/Tongatapu
-        - Pacífico/Fakaofo
-        - Pacífico/Apia
+        - Pacific/Majuro
+        - Pacific/Auckland
+        - Pacific/Auckland
+        - Pacific/Tongatapu
+        - Pacific/Fakaofo
+        - Pacific/Apia
       city:
         - "#{city_prefix}"
       street_name:
