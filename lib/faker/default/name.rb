@@ -41,11 +41,8 @@ module Faker
       #
       # @faker.version 0.9.0
       def first_name
-        if parse('name.first_name').empty?
-          fetch('name.first_name')
-        else
-          parse('name.first_name')
-        end
+        parsed = parse('name.first_name')
+        parsed.empty? ? fetch('name.first_name') : parsed
       end
 
       ##
