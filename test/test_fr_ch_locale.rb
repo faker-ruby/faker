@@ -62,6 +62,18 @@ class TestFrChLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Name.name_with_middle
   end
 
+  def test_fr_ch_gendered_first_name_methods
+    assert_kind_of String, Faker::Name.male_first_name
+    assert_kind_of String, Faker::Name.female_first_name
+
+    # Guard against silently falling back to the English name list.
+    male_names = I18n.translate('faker.name.male_first_name', locale: :'fr-CH')
+    female_names = I18n.translate('faker.name.female_first_name', locale: :'fr-CH')
+
+    assert_includes male_names, Faker::Name.male_first_name
+    assert_includes female_names, Faker::Name.female_first_name
+  end
+
   def test_fr_ch_phone_number
     assert_kind_of String, Faker::PhoneNumber.cell_phone
     assert_kind_of String, Faker::Games::Pokemon.name
