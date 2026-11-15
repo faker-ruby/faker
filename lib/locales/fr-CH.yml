@@ -141,13 +141,13 @@ fr-CH:
         - CH
     company:
       suffix:
+        - SA
+        - Sàrl
         - AG
         - GmbH
         - et associés
         - "& Co."
         - Groupe
-        - LLC
-        - Inc.
       name:
         - "#{Name.last_name} #{suffix}"
         - "#{Name.last_name}-#{Name.last_name}"
