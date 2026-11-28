@@ -25,6 +25,22 @@ class TestIdLocale < Test::Unit::TestCase
     assert_kind_of String, Faker::Address.street_name
   end
 
+  def test_id_provinces
+    provinces = I18n.translate('faker.address.province', locale: :id)
+
+    assert_equal 38, provinces.size
+    assert_includes provinces, 'Papua Barat Daya'
+    assert_includes provinces, 'Papua Pegunungan'
+    assert_includes provinces, 'Papua Selatan'
+    assert_includes provinces, 'Papua Tengah'
+  end
+
+  def test_id_state_abbr_includes_new_provinces
+    abbreviations = I18n.translate('faker.address.state_abbr', locale: :id)
+
+    %w[PD PE PS PT].each { |code| assert_includes abbreviations, code }
+  end
+
   def test_id_name_methods
     assert_kind_of String, Faker::Name.first_name
     assert_kind_of String, Faker::Name.last_name
